@@ -38,8 +38,11 @@ bx r3
 
 CasualCheck:
 push {lr}
-mov r0, #0xb0 @unused permanent event id
+ldr r0, CasualModeFlagID
 ldr r3,=0x8083da9
 bl goto_r3
 pop {pc}
+
+.ltorg
+CasualModeFlagID:
 

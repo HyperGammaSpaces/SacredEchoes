@@ -23,6 +23,24 @@ TURN
 WTAEvent:
 MUSC 0x09 // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
 MUSI
+/*
+	//casual mode prompt
+	EVBIT_MODIFY 0x1
+	SETVAL 0xB 0xFFFFFFFF
+	TUTORIALTEXTBOXSTART
+	TEXTSHOW2 OpeningScene_CasualMode
+	TEXTEND
+	REMA
+	SVAL 0x1 0x1
+	//"Enable casual mode?"
+	//yes = 1 no = 2
+	BNE 0x2 0xC 0x1
+		//yes = set event id
+		ENUT gCasualModeFlag
+		
+LABEL 0x2
+EVBIT_MODIFY 0x0
+*/
 STAL 30
 FlashCursor(Lukas, 60)
 Text(Ch1_1_LukasAdvice)

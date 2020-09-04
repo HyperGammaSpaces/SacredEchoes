@@ -4,6 +4,8 @@
 // eid $B0 enables Casual Mode (fallen units come back next chapter).
 // hack by circleseverywhere
 
+//check out C4918 for where the intro hooks
+
 #ifdef _FE8_
 
   {
@@ -16,7 +18,7 @@
   ALIGN 4
   CasualMode:
     #incbin "asm/CasualModeFE8.dmp"
-
+	WORD gCasualModeFlag
   }
 
 #else // _FE8_
