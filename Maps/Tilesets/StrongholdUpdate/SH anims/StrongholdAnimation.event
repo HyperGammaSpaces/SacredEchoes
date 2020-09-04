@@ -1,0 +1,40 @@
+#ifndef tilesetAnimation
+    #define tilesetAnimation(speed, size, pointer)    "BYTE speed 0; SHORT size; POIN pointer"
+#endif
+
+ALIGN 4
+StrongholdAnimation0:
+#incbin "StrongholdAnim.mapanime 1_000.dmp"
+ALIGN 4
+StrongholdAnimation1:
+#incbin "StrongholdAnim.mapanime 1_001.dmp"
+ALIGN 4
+StrongholdAnimation2:
+#incbin "StrongholdAnim.mapanime 1_002.dmp"
+ALIGN 4
+StrongholdAnimation3:
+#incbin "StrongholdAnim.mapanime 1_003.dmp"
+ALIGN 4
+StrongholdAnimation4:
+#incbin "StrongholdAnim.mapanime 1_004.dmp"
+ALIGN 4
+StrongholdAnimation5:
+#incbin "StrongholdAnim.mapanime 1_005.dmp"
+ALIGN 4
+StrongholdAnimation6:
+#incbin "StrongholdAnim.mapanime 1_006.dmp"
+ALIGN 4
+StrongholdAnimation7:
+#incbin "StrongholdAnim.mapanime 1_007.dmp"
+
+ALIGN 4
+StrongholdAnimation:
+tilesetAnimation(0xa,0x1000,StrongholdAnimation0)
+tilesetAnimation(0x8,0x1000,StrongholdAnimation1)
+tilesetAnimation(0xa,0x1000,StrongholdAnimation2)
+tilesetAnimation(0xb,0x1000,StrongholdAnimation3)
+tilesetAnimation(0x8,0x1000,StrongholdAnimation4)
+tilesetAnimation(0xb,0x1000,StrongholdAnimation5)
+tilesetAnimation(0xa,0x1000,StrongholdAnimation6)
+tilesetAnimation(0x8,0x1000,StrongholdAnimation7)
+WORD 0 0

@@ -1,0 +1,306 @@
+#ifndef FreeSpace
+  #define FreeSpace 0xb2a610
+  ORG FreeSpace
+  #include "Extensions/Hack Installation.txt"
+#endif
+
+/*
+//probably want to hook at 2b95c
+//Replace func at 2C534 ComputeExpFromBattle
+
+//+0x42	Byte	Option byte 3
+	+0x20	Set if not easy mode
+//F818 - example of how game tells if easy vs hard mode.
+ldr r2, =gChapterData
+mov r0, r2
+add r0, #0x42
+ldrb r0, [r0]
+lsl r0, r0, #0x1A
+cmp r0, #0x0
+blt NotEasy
+
+//2C4F0 - ModifyUnitSpecialEXP - makes gorgon eggs give 50 EXP, makes DK give 0 EXP, blocks Phantom class from receiving EXP
+
+BEXP Calc:
+Class Relative Power x LevelFactor
+div result, 5
+
+Gaiden EXP Calc: 
+(Enemy Level + 9)
+div result, 10
+mul result, EnemyEXP
+cmp result, #FF
+cap at 255
+mul result, ClassRelativePower
+mul result, LevelFactor
+div result, #64 (100)
+if (EasyMode) mul result, 3; div result, 2;
+if kill: goto cap at 100
+else: 
+mul result, damage
+div result, enemy max HP
+lsr result, #0x2
+cap at 100
+
+Level Factors:
+1-2 -> 10
+3 -> 9
+...
+10+ -> 2
+
+*/
+
+#define AutopromoTableEntry(UnitID, LevelEligible, EligibleClass) "BYTE UnitID LevelEligible EligibleClass 0"
+
+PUSH
+	ORG $2C66A	//change staff exp to be based on crit value
+	BL($17624)
+	SHORT $2105
+	
+	ORG $2C534
+	replaceWithHack(GaidenEXPCalcRework)
+
+	//Fix prep screen item usage
+	ORG $29f54 //Holy Ring
+	POIN $2A100
+	POIN $2A100 //Hide Shield
+	POIN $2A100 //Iron Shield
+	POIN $2A100 //Steel Shield
+	POIN $2A100 //Silver Shield
+	POIN $2A100 //Mage Ring
+	ORG $29FE8 //Royal Shield
+	POIN $2A100
+	ORG $2A024 //Angel Ring
+	POIN $2A100
+
+	ORG $2BD50
+	#incbin "GaidenStylePromotions.dmp"
+	
+	ORG $2BF4C //Change HP cap
+	BYTE $34
+	ORG $2BF64 //Change HP cap
+	BYTE $34
+	
+	ORG $CCCD6 		//check whether game has been beaten and third promo option can be shown
+	BYTE $01		//force true
+	
+	ORG $CC6FC
+	POIN NewAutopromoTable
+	
+	ORG $CC704				//set main lord of Celica mode to unit 0x0C Celica
+	BYTE $0C $20
+	
+	ORG $291B8
+	BYTE $0C $28
+	
+	ORG $291F6				//set promotion level to 7
+	BYTE $06 $28
+	
+	ORG $8ADF76
+	BYTE Cavalier Cavalier_F Paladin Paladin_F Soldier Knight Knight_F Thief Thief_F Mercenary Myrmidon DreadFighter 0x16 Archer Archer_F Sniper Sniper_F WyvernRider WyvernRider_F Mage Mage_F Villager Villager_F Fighter Brigand Pirate Priest PegasusKnight Cleric $0
+	
+	ORG $2F6A0
+	BYTE $00 $20 $00 $20    //no weapon display at promotion: promotion screen
+	
+	ORG $CD0EC				//no weapon display at promotion: branch screen
+	BYTE $00 $20 $00 $20
+	
+	ORG $CCE14				//pushing out the class descriptions a bit
+	BYTE $5A $33
+	
+	ORG $CDD1E				//pushing out the class descriptions from $38 to $5A
+	BYTE $5A $30
+	
+	ORG $CCF74 				//expanding VRAM to make room for class descriptions
+	BYTE $80 $00
+	
+	ORG $CC750				//turn off autopromote for lv10 villagers
+	SHORT $46C0
+	
+	ORG $CCE60
+	jumpToHack(NewBranchPromoEligibility)
+	
+	ORG $CDB54
+	jumpToHack(NewBranchPromoOptionSelect)
+
+	ORG $B129EC
+	POIN NewPromoMenuCommandDefs
+
+POP
+
+ALIGN 4
+NewAutopromoTable:
+	AutopromoTableEntry(Gray, 5, Villager)
+	AutopromoTableEntry(Tobin, 5, Villager)
+	AutopromoTableEntry(Kliff, 5, Villager)
+	AutopromoTableEntry(Faye, 5, Villager_F)
+	AutopromoTableEntry(Atlas, 5, Villager)
+
+ALIGN 4
+NewBranchPromoEligibility:
+#incbin "NewBranchPromoEligibility.dmp"
+
+ALIGN 4
+NewBranchPromoOptionSelect:
+#incbin "NewBranchPromoOptionSelect.dmp"
+
+ALIGN 4
+NewPromoMenuCommandDefs:
+#include "NewPromoMenuCommandDefs.event"
+
+
+ALIGN 4
+IsUnitEligibleToPromote:
+#incbin "IsUnitEligibleToPromote.dmp"
+POIN PromotionLevelTable
+ALIGN 4
+PromotionLevelTable:
+BYTE Cavalier 			0x07
+BYTE Cavalier_F 		0x07
+BYTE Paladin 			0x0A
+BYTE Paladin_F 			0x0A
+BYTE Soldier 			0x07
+BYTE Knight 			0x0A
+BYTE Knight_F 			0x0A
+BYTE Thief 				0x0E
+BYTE Thief_F 			0x0E
+BYTE Mercenary 			0x07
+BYTE Mercenary_F 		0x07
+BYTE Myrmidon 			0x0A
+BYTE Myrmidon_F 		0x0A
+BYTE DreadFighter 		0x0A
+BYTE DreadFighter_F 	0x0A
+BYTE Archer 			0x07
+BYTE Archer_F 			0x07
+BYTE Sniper 			0x0A
+BYTE Sniper_F 			0x0A
+BYTE Mage 				0x0C
+BYTE Mage_F 			0x0E
+BYTE Priestess 			0x0C
+BYTE Villager 			0x03
+BYTE Villager_F 		0x03
+BYTE Woodcutter 		0x07
+BYTE Axeman 			0x0A
+BYTE PegasusKnight 		0x0C
+BYTE Cleric 			0x0C
+BYTE $FF $FF //terminator
+ALIGN 4
+
+MilaTileCheck:
+#incbin "MilaTileCheck.dmp"
+ALIGN 4
+
+MilaUsability:
+#incbin "MilaUsability.dmp"
+POIN IsUnitEligibleToPromote
+POIN MilaTileCheck|1
+ALIGN 4
+
+MilaEffect:
+#incbin "MilaEffect.dmp"
+POIN MilaStatueEvent
+#include "MilaStatueEvent.event"
+ALIGN 4
+
+NewAutopromoteFunc:
+//#incbin "Autopromote_Func.dmp"
+#incbin "Autopromote_Func_2.dmp"
+ALIGN 4
+
+PUSH
+
+	ORG UM_Mila_Definition
+	POIN $D7E8C 
+	SHORT Cmd_Mila
+	SHORT Desc_Cmd_Mila
+	BYTE  NormalText
+	BYTE  $62
+	SHORT 0
+	POIN MilaUsability|1
+	WORD 0
+	POIN MilaEffect|1
+	WORD 0
+	WORD 0
+	WORD 0
+	
+	//here we'll overwrite another menu command (Arena)
+	//ORG $59CD10
+	//POIN MilaUsability+1
+
+	//ORG $59CD18
+	//POIN MilaEffect+1
+POP
+
+SetUnitAction(0xD, ActionRoutine(NewAutopromoteFunc+1))
+
+#include "BattlePaletteRework.event"
+
+GaidenEXPCalcRework:
+#incbin "NewCalcExpFromBattle.dmp"
+POIN LevelFactorTable
+POIN ClassEXPTable
+
+ApplyBonusEXPToParty:
+#incbin "BonusEXP.dmp"
+POIN LevelFactorTable
+
+LevelFactorTable:
+BYTE $0A $0A $0A $09 $08 $07 $06 $05 $04 $03 $02 $02 
+
+ClassEXPTable:
+BYTE $1 $28 $28 $50 $50 //Lords
+BYTE $28 $28 //Cavs
+BYTE $50 $50 //Paladins
+BYTE $46 $46 //Armors
+BYTE $C8 $C8 //Barons
+BYTE $1E $1E //Thiefs
+BYTE $28 $28 //Mercs
+BYTE $50 $50 //Myrms
+BYTE $28 $28 //dummy
+BYTE $B4 $B4 //DFs
+BYTE $46 $46 //Rogues
+BYTE $28 $28 //Archer
+BYTE $50 $50 //Sniper
+BYTE $B4 $B4 //Bow Knight
+BYTE $1 $1 $1 $1 $1 $1 //Wyverns (dummy)
+BYTE $50 $64 //Mages
+BYTE $B4 //Sage
+BYTE $B4 //Priestess
+BYTE $64 $64 //Witches
+BYTE $64 $64 //Saints
+BYTE $50 $50 //Shamans
+BYTE $78 $78 //Arcanists
+BYTE $B4 $B4 //Cantors
+BYTE $1 $1 //dummy
+BYTE $C8 $C8 //GKs
+BYTE $1 $1 $1 $1 //dummy trainees
+BYTE $C8 $C8 //manaketes
+BYTE $1E $1E //villagers
+BYTE $50 $C8
+BYTE $1E $1E $50 //brigand/pirate/zerker
+BYTE $1 $1 $1 //dummy
+BYTE $1E //woodcutter
+BYTE $28 $50 //peg/falco
+BYTE $3C //cleric
+BYTE $1 $1
+BYTE $3C //dancer
+BYTE $23 //soldier
+BYTE $B4 //jedah
+BYTE $50 //fleet
+BYTE $1 //phantom
+BYTE $1E //revenant
+BYTE $FF //entombed
+BYTE $46 $46 //bonewalkers
+BYTE $78 $78 //wights
+BYTE $28 $50 //bael/elder
+BYTE $78 $78 //cyclops and fiend
+BYTE $B4 //white dragon
+BYTE $28 $50 //tarvos/maelduin
+BYTE $3C $78 //mogall/archmogall
+BYTE $78 $1 //gorgon/eggs
+BYTE $28 $50 //gargoyle/deathgoyle
+BYTE $78 //necrodragon
+BYTE $1 //duma 0x66
+
+//Lets Alm and Celica T2 have different mugs
+//#include "ChangePortraitByFlag/Installer.event"

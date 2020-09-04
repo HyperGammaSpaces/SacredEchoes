@@ -1,0 +1,223 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	TurnwheelTheme_grp  voicegroup000
+	#define	TurnwheelTheme_pri  0
+	#define	TurnwheelTheme_rev  0
+	#define	TurnwheelTheme_mvl  85
+	#define	TurnwheelTheme_key  0
+	#define	TurnwheelTheme_tbs  1
+	#define	TurnwheelTheme_exg  0
+	#define	TurnwheelTheme_cmp  1
+
+	// .rodata
+	//	TurnwheelTheme
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+TurnwheelTheme_1:
+	BYTE	KEYSH   TurnwheelTheme_key+0
+// 000   ----------------------------------------
+	BYTE	TEMPO   89*TurnwheelTheme_tbs/2
+	BYTE		VOICE   77
+	BYTE		VOL     101*TurnwheelTheme_mvl/mxv
+	BYTE	W24
+	BYTE		N12     Dn3   v104
+	BYTE	W12
+	BYTE		        Ds3 
+	BYTE	W12
+	BYTE		        Fn3 
+	BYTE	W12
+	BYTE		        As3 
+	BYTE	W12
+// 001   ----------------------------------------
+	BYTE		        An3 
+	BYTE	W12
+	BYTE		        As3 
+	BYTE	W12
+	BYTE		N24     An3 
+	BYTE	W24
+	BYTE		        Fn3 
+	BYTE	W24
+// 002   ----------------------------------------
+	BYTE		        Gn3 
+	BYTE	W24
+	BYTE		N12     Dn3 
+	BYTE	W12
+	BYTE		        Ds3 
+	BYTE	W12
+	BYTE		        Dn3 
+	BYTE	W12
+	BYTE		        Ds3 
+	BYTE	W12
+// 003   ----------------------------------------
+	BYTE		N72     Fn3 
+	BYTE	W72
+// 004   ----------------------------------------
+	BYTE		N24     Gn3 
+	BYTE	W24
+	BYTE		N12     Dn3 
+	BYTE	W12
+	BYTE		        Ds3 
+	BYTE	W12
+	BYTE		        Fn3 
+	BYTE	W12
+	BYTE		        As3 
+	BYTE	W12
+// 005   ----------------------------------------
+	BYTE		        An3 
+	BYTE	W12
+	BYTE		        As3 
+	BYTE	W12
+	BYTE		N24     Cn4 
+	BYTE	W24
+	BYTE		N12     As3 
+	BYTE	W12
+	BYTE		        Cn4 
+	BYTE	W12
+// 006   ----------------------------------------
+	BYTE		N24     Dn4 
+	BYTE	W36
+	BYTE		N12     As3 
+	BYTE	W12
+	BYTE		        An3 
+	BYTE	W12
+	BYTE		        As3 
+	BYTE	W12
+// 007   ----------------------------------------
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+TurnwheelTheme_2:
+	BYTE	KEYSH   TurnwheelTheme_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   46
+	BYTE		VOL     97*TurnwheelTheme_mvl/mxv
+	BYTE		N12     Cn2   v104
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		N48   
+	BYTE	W48
+// 001   ----------------------------------------
+	BYTE		N72     Fn2 
+	BYTE		N72     Gn2 
+	BYTE		N48     Fn3 
+	BYTE	W72
+// 002   ----------------------------------------
+TurnwheelTheme_2_002:
+	BYTE		N12     Cn2   v104
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		N48   
+	BYTE	W48
+	BYTE	PEND
+// 003   ----------------------------------------
+	BYTE		N12     An2 
+	BYTE	W12
+	BYTE		        As2 
+	BYTE	W12
+	BYTE		N24     An2 
+	BYTE	W24
+	BYTE		        Fn2 
+	BYTE	W24
+// 004   ----------------------------------------
+	BYTE	PATT
+	 POIN2	TurnwheelTheme_2_002
+// 005   ----------------------------------------
+	BYTE		N24     Fn2   v104
+	BYTE		N72     Gn2 
+	BYTE	W24
+	BYTE		N24     Ds2 
+	BYTE	W24
+	BYTE		        Dn2 
+	BYTE	W24
+// 006   ----------------------------------------
+	BYTE		N12     Cn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		N24     Ds2 
+	BYTE		N48     Gn2 
+	BYTE	W24
+	BYTE		N24     Dn2 
+	BYTE	W24
+// 007   ----------------------------------------
+	BYTE		N72     Gn2 
+	BYTE		N48     Ds3 
+	BYTE	W72
+// 008   ----------------------------------------
+	BYTE		N12     Cn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		        Dn3 
+	BYTE	W12
+	BYTE		N36     Ds3 
+	BYTE	W36
+// 009   ----------------------------------------
+	BYTE		N12     Cn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+	BYTE		N48     Fn3 
+	BYTE	W48
+// 010   ----------------------------------------
+	BYTE		N12     Cn2 
+	BYTE		N12     Cn3 
+	BYTE	W12
+	BYTE		        An2 
+	BYTE	W12
+	BYTE		N24     Ds3 
+	BYTE	W24
+	BYTE		        Dn3 
+	BYTE	W24
+// 011   ----------------------------------------
+	BYTE		N12     Cn2 
+	BYTE		N24     Ds3 
+	BYTE	W12
+	BYTE		N12     Gn2 
+	BYTE	W12
+	BYTE		        Dn3 
+	BYTE	W12
+	BYTE		N36     Ds3 
+	BYTE	W36
+// 012   ----------------------------------------
+	BYTE		N12     Cs2 
+	BYTE	W12
+	BYTE		        Gs2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+	BYTE		N30     Fn3 
+	BYTE	W36
+// 013   ----------------------------------------
+	BYTE		N12     Cs2 
+	BYTE	W12
+	BYTE		        Gs2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+	BYTE		N36     Fn3 
+	BYTE	W36
+// 014   ----------------------------------------
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+TurnwheelTheme:
+	BYTE	2	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	TurnwheelTheme_pri	// Priority
+	BYTE	TurnwheelTheme_rev	// Reverb.
+
+	POIN2	TurnwheelTheme_grp
+
+	POIN2	TurnwheelTheme_1
+	POIN2	TurnwheelTheme_2
+
+	

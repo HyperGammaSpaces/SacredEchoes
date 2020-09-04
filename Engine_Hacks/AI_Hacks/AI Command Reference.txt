@@ -1,0 +1,88 @@
+AI Command Reference
+
+First, the AI tries to run AI1. If it doesn't get a command out of that, labelled as a command failing, it tries AI2. If that also fails, the unit does not move. Note that recovery mode and Door Key usage take place before AI1.
+
+The actual routines performed for each command are in a jump table at 0x81D3678
+
+AI Commands are done in order until 030013B0(??? Dynamic?) is a 1.
+The loop automatically sets this to a 1, so it's the routine's responsibility to change it to a 0 to continue.
+Most actions will end execution. Exceptions are noted.
+
+It seems that if the AI PC loops back to where it was when it started the turn, it just advances one and no action is performed.
+
+30013B8 is the command currently being processed.
+
+AI Command Format:
+[byte][byte][byte][byte][word][void*][void*] 
+That usually take on the roles of:
+[opcode][chance(For some commands)][0xFF][label/goto][word of data][void*(routine in 01, data in 00)][data*(parameter to the routine)]
+
+Opcodes:
+0x00 - Conditional Branch based on RAM location. Usually 0203A972
+	The 0x1 byte tells the mode to operate. The 0x3 byte tells where to GOTO.
+	The word(at 0x4) tells what it should compare against
+		00 : if word at 0x04 < memory then branch.
+		01 : if word at 0x04 <= memory then branch.
+		02 : if word at 0x04 == memory then branch.
+		03 : if word at 0x04 >= memory then branch.
+		04 : if word at 0x04 > memory then branch.
+		05 : if word at 0x04 != memory then branch.
+0x01 - Execute given routine (Might do an AI, might check a condition?)
+	@param: r0 = &Data
+	@return: 00 = continue AI execution 01 = execute AI
+0x02 - Change AI + Execute (Does not take up the unit's turn, that is)
+0x03 - Unconditional GOTO
+0x04 - If word2's character is deployed, attack them if they're in range (don't attack anyone else even if they are the only ones in range). If the character is not deployed, attack anyone in range.
+0x05 - Attack in range (takes a probability). Fails if it cannot take an action in range.
+0x06 - Nop (always fails)
+0x07 - Execute action without moving. Fails if it cannot take an action without moving.
+0x08 - Does nothing? Not seen in default AI codes?
+0x09 - Does nothing? Not seen in default AI codes?
+0x0A - Does nothing? Not seen in default AI codes?
+0x0B - Does nothing?
+0x0C - Move towards [Byte 0x1, Byte 0x3]. Takes the action and does not advance the AI-PC until the tile is stepped on.
+0x0D - Move towards character in 2nd word if not in range
+	Used in conjunction with []#define InitiateTalk(charsPointer) "RoutineAI(0x0803A58D, charsPointer)"]
+	Sets memory to: 
+	0x2 if target is in range (this itself does no action)
+	0x4 if target is not deployed
+	0x3 or 0x1 otherwise(?)
+	If target is in range, seems to indicate the location of the target for a subsequent InitateTalk?
+0x0E - Nop (always fails)
+0x0F - Does nothing? Not seen in default AI codes?
+0x10 - Loot/destroy villages. Doesn't proceed the AI-PC until the unit is unable to loot/destroy anymore.
+0x11 - Run away from opponents?
+0x12 - Move towards opponents, but not those in *(3rd word). Ignore when blocked
+0x13 - Move towards opponents. Move as close as possible when blocked.
+0x14 - Does nothing? Not seen in default AI codes?
+0x15 - Does nothing? Not seen in default AI codes?
+0x16 - Random Movement
+0x17 - Escape
+0x18 - Move towards and attack walls. If no more exist, turns into AttackInRange? Fails if no more walls and no enemy in range.
+0x19 - Attack in range?
+0x1A - Lags a lot, then moves randomly?
+0x1B - LABEL
+
+
+
+
+
+
+
+FE8 DIFFERENCES:
+0x0 - same
+0x1 - same
+0x2 - same
+0x3 - same
+
+0x5 - same
+
+
+
+
+
+
+0xD - same
+
+
+0x1C is now label

@@ -1,0 +1,41 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#endif
+
+PUSH
+ORG $192B8		//FE8U
+jumpToHack(ChangePortraitStatus)
+POP
+
+PUSH
+ORG $19308		//FE8U
+jumpToHack(ChangePortraitMiniMug)
+POP
+
+PUSH
+ORG $73DBC		//FE8U
+jumpToHack(ChangePortraitPormotion)
+POP
+
+ALIGN 4
+ChangePortraitStatus:
+#incbin "ChangePortraitStatus.dmp"
+POIN ChangePortrait_Table
+
+ALIGN 4
+ChangePortraitMiniMug:
+#incbin "ChangePortraitMiniMug.dmp"
+POIN ChangePortrait_Table
+
+ALIGN 4
+ChangePortraitPormotion:
+#incbin "ChangePortraitPormotion.dmp"
+
+ChangePortrait_Table:
+#include "ChangePortrait_Table.event"
+
+#else
+    ERROR This version of Portrait Change is for FE8!
+#endif

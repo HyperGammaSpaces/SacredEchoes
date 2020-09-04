@@ -1,0 +1,200 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x39, Ch2_1_ThisChapter)
+
+Ch2_1_ThisChapter:
+POIN Ch2_1_TurnBasedEvents
+POIN Ch2_1_CharacterBasedEvents
+POIN Ch2_1_LocationBasedEvents
+POIN Ch2_1_MiscBasedEvents
+POIN Ch2_1_Dunno Ch2_1_Dunno Ch2_1_Dunno
+POIN Ch2_1_Tutorial
+POIN Ch2_1_Ballista1 Ch2_1_Ballista2
+POIN Ch2_1_Units1 Ch2_1_Units1
+POIN Ch2_1_PlayerSkirmishUnits Ch2_1_PlayerSkirmishUnits Ch2_1_PlayerSkirmishUnits
+POIN EnemySkirmishUnits EnemySkirmishUnits EnemySkirmishUnits
+POIN Ch2_1_BeginningScene Ch2_1_EndingScene
+
+Ch2_1_TurnBasedEvents:
+OpeningTurnEvent(CelicaTalkEvent)
+TURN
+
+CelicaTalkEvent:
+	EVBIT_MODIFY 0x1
+	SVAL 0x1 0x1
+	CHECK_EVENTID gNovisCemeteryCompleted //has map been cleared?
+	IFNE 0x8 0xC 0x1 //if true, skip cutscene
+		EVBIT_MODIFY 0x0
+		MUSC 0x0A // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
+		MUSI
+		STAL 30
+		FlashCursor(Celica, 60)
+		Text(Ch2_1_TutorialText)
+		MUNO
+	LABEL 0x8
+	EVBIT_MODIFY 0x0
+	NoFade
+	ENDA
+
+CelicaTalkEvent2:
+	//CHECK_INAREA Celica, if not then just reset eventID
+	SVAL 0x1 0x1
+	CHECK_INAREA Celica [8,0] [16,7]
+	IFEQ 0x2 0xC 0x1
+		SVAL 0x1 0x1
+		CHECK_EVENTID gGraveyardTextShown //has map been cleared?
+		IFNE 0x3 0xC 0x1 //if true, skip cutscene
+			MUSI
+			STAL 30
+			FlashCursor(0xAD, 60)
+			Text(Ch2_1_CelicaRange)
+			MUNO
+			ENUT gGraveyardTextShown
+			GOTO 0x3
+		LABEL 0x2
+		ENUF 0x8
+	LABEL 0x3
+	NoFade
+	ENDA
+
+Ch2_1_CharacterBasedEvents:
+CHAR
+
+Ch2_1_LocationBasedEvents:
+#ifdef __DEBUG__
+  Seize(4,5)
+#endif
+LOCA
+
+Ch2_1_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	DefeatAll(Ch2_1_EndingScene)
+	AREA 0x8 CelicaTalkEvent2 [8,0] [16,7]
+	MournQuoteAFEVS
+	AFEV
+
+Ch2_1_Dunno:
+END_MAIN
+
+Ch2_1_Tutorial:
+END_MAIN
+
+Ch2_1_Ballista1:
+BLST
+
+Ch2_1_Ballista2:
+BLST
+ALIGN 4
+
+Ch2_1_Units1:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,12] 0x00 0x00 0x1 REDA2R10 [BaseSword, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [4,12] 0x00 0x00 0x1 REDA3R11 [Fire, Vulnerary] NoAI 
+	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [4,12] 0x00 0x00 0x1 REDA5R11 [Nosferatu, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [1,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [5,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [3,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [1,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,12] 0x00 0x00 0x1 REDA4R10 [Fire, Vulnerary] NoAI 
+	UNIT
+
+Ch2_1_PlayerSkirmishUnits:
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [2,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [4,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [1,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [5,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [3,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [1,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT
+
+EnemyUnits:
+	UNIT 0x5F Revenant 0x5F Level(3,Enemy,True) [9,9] DropItem 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI // A matter of personal preference, but I would not put spaces after commas.
+	UNIT 0xAA Revenant 0x5F Level(1,Enemy,True) [12,11] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI // Keeps things more compact, so "Level(1,Enemy,True)" instead of "Level(1, Enemy, 1)".
+	UNIT 0xAA Bonewalker 0x5F Level(1,Enemy,True) [10,7] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI // Also note my use of "True" instead of "1".
+	UNIT 0xAA Revenant 0x5F Level(2,Enemy,True) [15,1] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT 0xAA Revenant 0x5F Level(3,Enemy,True) [13,4] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT 0xAA Revenant 0x5F Level(1,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT 0xAD Bonewalker_Bow 0x5F Level(1,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT 0xAA Revenant 0x5F Level(1,Enemy,True) [5,5] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT 0xAA Revenant 0x5F Level(3,Enemy,True) [2,4] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT 0xAA Revenant 0x5F Level(2,Enemy,True) [6,8] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT
+
+EnemySkirmishUnits:
+	UNIT 0x5F Revenant 0x5F Level(3,Enemy,True) [9,9] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI 
+	UNIT 0xAA Random_RevBonewalker 0x5F Level(1,Enemy,True) [12,11] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT 0xAC Bonewalker 0x5F Level(1,Enemy,True) [10,7] RandomizePosition 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
+	UNIT 0xAA Random_RevBonewalker 0x5F Level(2,Enemy,True) [15,1] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT 0xAA Random_RevBonewalker 0x5F Level(3,Enemy,True) [13,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT 0xAA Random_RevBonewalker 0x5F Level(1,Enemy,True) [7,2] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT 0xAD Bonewalker_Bow 0x5F Level(1,Enemy,True) [14,7] RandomizePosition 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT 0xAA Random_RevBonewalker 0x5F Level(1,Enemy,True) [5,5] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT 0xAA Random_RevBonewalker 0x5F Level(3,Enemy,True) [2,4] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT 0xAA Random_RevBonewalker 0x5F Level(2,Enemy,True) [6,8] MonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT
+
+Ch2_1_BeginningScene:
+	//only do this the first time.
+	EVBIT_MODIFY 0x1
+	SVAL 0x1 0x1
+	CHECK_EVENTID gNovisCemeteryCompleted //has map been cleared?
+	IFNE 0x6 0xC 0x1 //if true, skip cutscene
+		EVBIT_MODIFY 0x0
+		MUSC 0x4A
+		FADU 5
+
+		LOAD3 0x1 Ch2_1_Units1
+		ENUN
+
+		Text(Ch2_1_PreBattle)
+
+		FADI 16
+		LOAD1 0x1 EnemyUnits
+		ENUN
+		FADU 16
+		//if not first, do following
+
+		NoFade
+		GOTO 0x07
+	LABEL 0x06
+		EVBIT_MODIFY 0x0
+		LOAD3 0x1 Ch2_1_PlayerSkirmishUnits
+		ENUN
+		SVAL 0x2 0x0 //Number of skirmish enemies to load
+		CALL EnemyRandomizerHelper
+		LOAD1 0x1 EnemySkirmishUnits
+		ENUN
+		GotoPrepScreen
+	LABEL 0x07
+	ENDA
+
+Ch2_1_EndingScene:
+	EVBIT_MODIFY 0x1
+	SVAL 0x1 0x1
+	CHECK_EVENTID gNovisCemeteryCompleted //has map been cleared?
+	IFNE 0x4 0xC 0x1 //if true, skip cutscene
+		EVBIT_MODIFY 0x0
+		CALL UnifiedBEXPCaller
+		MUSC 0x31 //victory
+		SetBackground(0x20)
+		Text(Ch2_1_PostBattle)
+		MNCH 0x09 //go to ch9
+		GOTO 0x05
+	LABEL 0x04
+		EVBIT_MODIFY 0x0
+		SVAL 0x3 0x3
+		ASMC 0x85C65
+		//SADD 0x32
+		CALL UnifiedBEXPCaller
+		SVAL 0x2 0x9
+		MNCH 0xFFFF //go to world map
+		//ASMC 0x37D59
+	LABEL 0x05
+	ENDA
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

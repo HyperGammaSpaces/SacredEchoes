@@ -1,0 +1,58 @@
+
+#define BaseConvoSize 32 // This NEEDS to be divisible by 4. Don't edit this unless you know what you're doing and you've properly updated the C source!
+// I'd really prefer to be able to access sizeof(BaseConvoEntry), but that's not really possible.
+
+ALIGN 4
+BaseConvoTable: // Allocate 0xFF * 8 entries. 0xFF chapters, max 8 entries per chapter.
+ORG CURRENTOFFSET + 0xFF*8*BaseConvoSize
+
+{
+#include "ConvoTableDefs.event"
+PUSH
+// Your base conversation entries go here between the PUSH/POP!
+// Refer to "ConvoTableDefs.event" for the list of fun and exciting macros at your disposal. Enjoy!
+
+/*
+EXAMPLE ENTRIES:
+Chapter(0x5)
+	Entry
+		bg(0x10)
+		name(Chapter5BaseConvo1NameText)
+		text(Chapter5BaseConvo1Text)
+		item(SteelBlade,YourMom)
+		music(Last_Battle_Decision)
+		importance(2)
+	Entry
+		bg(0x12)
+		name(Chapter5BaseConvo2NameText)
+		text(Chapter5BaseConvo2Text)
+Chapter(0x8)
+	Entry
+		bg(0x30)
+		name(Chapter8BaseConvo1NameText)
+		event(BaseConvoTestEvent)
+
+*/
+
+POP
+}
+
+/*
+ALIGN 4
+BaseConvoTestEvent: // Refer to the generic event in BaeConvos.event. This is an example custom event.
+EVBIT_T 0x4
+SetBackground(0x10) // REQUIRED, Load a background!
+MUSC A_Tragic_Decision
+TEXTSTART
+TEXTSHOW Chapter8BaseConvo2Text // Example usage of a custom event: TEXTCONT with music changes.
+TEXTEND
+MUSC Emergency
+TEXTCONT
+TEXTEND
+REMA
+FADI 0x5 // This fade is highly recommended.
+CLEAN // This is REQUIRED.
+SVAL 0xB 0x1 // REQUIRED to mark when events are finished running.
+NoFade
+ENDA
+*/

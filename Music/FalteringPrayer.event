@@ -1,0 +1,1726 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	FalteringPrayer_grp  voicegroup000
+	#define	FalteringPrayer_pri  0
+	#define	FalteringPrayer_rev  0
+	#define	FalteringPrayer_mvl  85
+	#define	FalteringPrayer_key  0
+	#define	FalteringPrayer_tbs  1
+	#define	FalteringPrayer_exg  0
+	#define	FalteringPrayer_cmp  1
+
+	// .rodata
+	//	FalteringPrayer
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+FalteringPrayer_1:
+	BYTE	KEYSH   FalteringPrayer_key+0
+// 000   ----------------------------------------
+	BYTE	TEMPO   93*FalteringPrayer_tbs/2
+	BYTE		VOICE   41
+	BYTE		VOL     64*FalteringPrayer_mvl/mxv
+	BYTE		PAN     c_v-20
+	BYTE		N23     Fn3   v096
+	BYTE		N23     Fn4   v076
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE		N90     Ds3   v096
+	BYTE		N90     Ds4   v072
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W15
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+// 001   ----------------------------------------
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE	TEMPO   85*FalteringPrayer_tbs/2
+	BYTE		N44     Cn3   v064
+	BYTE		N42     Ds3   v076
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W05
+	BYTE		N44     Cn3   v064
+	BYTE		N44     Ds3   v076
+	BYTE	W10
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+// 002   ----------------------------------------
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE		        Cn3   v064
+	BYTE		N44     Ds3   v076
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W06
+	BYTE		        Bn2   v064
+	BYTE		N44     Dn3   v080
+	BYTE	W09
+	BYTE	W03
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+// 003   ----------------------------------------
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+FalteringPrayer_1_B1:
+	BYTE		N44     Cn3   v076
+	BYTE		N44     Ds3   v092
+	BYTE	W06
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE		        Cn3   v080
+	BYTE		N44     Ds3   v096
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+// 004   ----------------------------------------
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W12
+	BYTE		        Cn3   v080
+	BYTE		N48     Fn3   v092
+	BYTE	W08
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W04
+	BYTE	TEMPO   82*FalteringPrayer_tbs/2
+	BYTE		N92     As2   v076
+	BYTE		N22     Ds3   v096
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	TEMPO   80*FalteringPrayer_tbs/2
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+// 005   ----------------------------------------
+	BYTE	TEMPO   77*FalteringPrayer_tbs/2
+	BYTE		N23     Dn3 
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	TEMPO   75*FalteringPrayer_tbs/2
+	BYTE	W02
+	BYTE	W02
+	BYTE	W08
+	BYTE	TEMPO   72*FalteringPrayer_tbs/2
+	BYTE		N24     Cn3 
+	BYTE	W07
+	BYTE	W03
+	BYTE	W01
+	BYTE	W01
+	BYTE	TEMPO   69*FalteringPrayer_tbs/2
+	BYTE	W02
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE	TEMPO   67*FalteringPrayer_tbs/2
+	BYTE		N22     Dn3 
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE	TEMPO   64*FalteringPrayer_tbs/2
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE	TEMPO   85*FalteringPrayer_tbs/2
+	BYTE		N44     Cn3   v064
+	BYTE		N42     Ds3   v076
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+// 006   ----------------------------------------
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W05
+	BYTE		N44     Cn3   v064
+	BYTE		N44     Ds3   v076
+	BYTE	W10
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE		        Cn3   v064
+	BYTE		N44     Ds3   v076
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+// 007   ----------------------------------------
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W06
+	BYTE		        Bn2   v064
+	BYTE		N44     Dn3   v080
+	BYTE	W09
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	GoTo
+	 POIN2	FalteringPrayer_1_B1
+FalteringPrayer_1_B2:
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+FalteringPrayer_2:
+	BYTE	KEYSH   FalteringPrayer_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   105
+	BYTE		VOL     91*FalteringPrayer_mvl/mxv
+	BYTE		PAN     c_v+19
+	BYTE		N23     As2   v112
+	BYTE		N23     Gs3   v076
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE		N90     Gn2   v104
+	BYTE		N90     Ds3   v088
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W15
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+// 001   ----------------------------------------
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE		TIE     Ds2   v072
+	BYTE		TIE     Gn2 
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+// 002   ----------------------------------------
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W17
+	BYTE	W06
+	BYTE	W06
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE		EOT     Ds2 
+	BYTE	W01
+	BYTE		N44     Dn2   v068
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+// 003   ----------------------------------------
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W02
+	BYTE	W02
+	BYTE		EOT     Gn2 
+FalteringPrayer_2_B1:
+	BYTE		N92     Ds2   v068
+	BYTE		N92     Gn2   v072
+	BYTE	W04
+	BYTE	W06
+	BYTE	W06
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W02
+// 004   ----------------------------------------
+	BYTE	W01
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W02
+	BYTE		N44     Fn2   v068
+	BYTE		N48     Gs2 
+	BYTE	W01
+	BYTE	W01
+	BYTE	W44
+	BYTE	W02
+	BYTE		N24     Ds2 
+	BYTE		N90     Fn2 
+	BYTE	W04
+	BYTE	W06
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W02
+// 005   ----------------------------------------
+	BYTE		N24     Dn2 
+	BYTE	W01
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W02
+	BYTE		        Cn2 
+	BYTE	W01
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W02
+	BYTE		        Dn2   v064
+	BYTE	W01
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W02
+	BYTE		TIE     Ds2   v072
+	BYTE		TIE     Gn2 
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+// 006   ----------------------------------------
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W17
+	BYTE	W06
+	BYTE	W06
+	BYTE	W03
+	BYTE	W04
+// 007   ----------------------------------------
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE		EOT     Ds2 
+	BYTE	W01
+	BYTE		N44     Dn2   v068
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W02
+	BYTE	W02
+	BYTE		EOT     Gn2 
+	BYTE	GoTo
+	 POIN2	FalteringPrayer_2_B1
+FalteringPrayer_2_B2:
+	BYTE	FINE
+
+//**************** Track 3 (Midi-Chn.3) ****************//
+
+FalteringPrayer_3:
+	BYTE	KEYSH   FalteringPrayer_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   49
+	BYTE		VOL     62*FalteringPrayer_mvl/mxv
+	BYTE		PAN     c_v+17
+	BYTE		N23     Gs3   v096
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE		N90     Ds3   v088
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W15
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+// 001   ----------------------------------------
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W02
+	BYTE		N44     Cn3   v072
+	BYTE	W04
+	BYTE	W06
+	BYTE	W06
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W02
+	BYTE		        As2 
+	BYTE	W01
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W02
+// 002   ----------------------------------------
+	BYTE	W01
+	BYTE	W02
+	BYTE	W21
+	BYTE		        Gs2 
+	BYTE	W08
+	BYTE	W06
+	BYTE	W06
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE		        Gn2 
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+// 003   ----------------------------------------
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W09
+	BYTE	W01
+FalteringPrayer_3_B1:
+	BYTE		N44     Cn3   v076
+	BYTE	W02
+	BYTE	W06
+	BYTE	W06
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE		        As2   v072
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+// 004   ----------------------------------------
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W06
+	BYTE		        Gs2   v076
+	BYTE	W36
+	BYTE	W02
+	BYTE	W06
+	BYTE	W03
+	BYTE	W01
+	BYTE		N88     As2 
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+// 005   ----------------------------------------
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE		N44     Cn3   v072
+	BYTE	W06
+	BYTE	W06
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+// 006   ----------------------------------------
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE		        As2 
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W21
+	BYTE		        Gs2 
+	BYTE	W08
+	BYTE	W06
+	BYTE	W06
+	BYTE	W03
+	BYTE	W01
+// 007   ----------------------------------------
+	BYTE	W05
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE		        Gn2 
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W10
+	BYTE	GoTo
+	 POIN2	FalteringPrayer_3_B1
+FalteringPrayer_3_B2:
+	BYTE	FINE
+
+//**************** Track 4 (Midi-Chn.4) ****************//
+
+FalteringPrayer_4:
+	BYTE	KEYSH   FalteringPrayer_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   2
+	BYTE		VOL     84*FalteringPrayer_mvl/mxv
+	BYTE		PAN     c_v+16
+	BYTE		N23     Ds1   v096
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE		N90     Ds1   v092
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W15
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+// 001   ----------------------------------------
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE		N44     Cn1   v080
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE		        As0   v076
+	BYTE	W24
+// 002   ----------------------------------------
+	BYTE	W24
+	BYTE		        Gs0 
+	BYTE	W48
+	BYTE		        Gn0   v080
+	BYTE	W24
+// 003   ----------------------------------------
+	BYTE	W24
+FalteringPrayer_4_B1:
+	BYTE		N44     Cn1   v088
+	BYTE	W48
+	BYTE		        As0   v080
+	BYTE	W24
+// 004   ----------------------------------------
+	BYTE	W24
+	BYTE		        Gs0   v088
+	BYTE	W48
+	BYTE		N92     As0   v084
+	BYTE	W24
+// 005   ----------------------------------------
+	BYTE	W24
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE		N44     Cn1   v080
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+// 006   ----------------------------------------
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W06
+	BYTE		        As0   v076
+	BYTE	W48
+	BYTE		        Gs0 
+	BYTE	W24
+// 007   ----------------------------------------
+	BYTE	W24
+	BYTE		        Gn0   v080
+	BYTE	W48
+	BYTE	GoTo
+	 POIN2	FalteringPrayer_4_B1
+FalteringPrayer_4_B2:
+	BYTE	FINE
+
+//**************** Track 5 (Midi-Chn.5) ****************//
+
+FalteringPrayer_5:
+	BYTE	KEYSH   FalteringPrayer_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   14
+	BYTE		VOL     60*FalteringPrayer_mvl/mxv
+	BYTE		PAN     c_v+17
+	BYTE	W13
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE		N78     Ds2   v080
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W36
+	BYTE	W02
+// 001   ----------------------------------------
+	BYTE	W96
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W24
+FalteringPrayer_5_B1:
+	BYTE	W72
+// 004   ----------------------------------------
+	BYTE	W96
+// 005   ----------------------------------------
+	BYTE	W96
+// 006   ----------------------------------------
+	BYTE	W96
+// 007   ----------------------------------------
+	BYTE	W72
+	BYTE	GoTo
+	 POIN2	FalteringPrayer_5_B1
+FalteringPrayer_5_B2:
+	BYTE	FINE
+
+//**************** Track 6 (Midi-Chn.6) ****************//
+
+FalteringPrayer_6:
+	BYTE	KEYSH   FalteringPrayer_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   6
+	BYTE		VOL     79*FalteringPrayer_mvl/mxv
+	BYTE		PAN     c_v-14
+	BYTE		N30     Fn3   v068
+	BYTE	W08
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE		N88     Ds3   v120
+	BYTE	W03
+	BYTE	W02
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W03
+// 001   ----------------------------------------
+	BYTE	W07
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE		N44     Cn2   v048
+	BYTE	W72
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W24
+FalteringPrayer_6_B1:
+	BYTE	W72
+// 004   ----------------------------------------
+	BYTE	W96
+// 005   ----------------------------------------
+	BYTE	W96
+// 006   ----------------------------------------
+	BYTE	W96
+// 007   ----------------------------------------
+	BYTE	W72
+	BYTE	GoTo
+	 POIN2	FalteringPrayer_6_B1
+FalteringPrayer_6_B2:
+	BYTE	FINE
+
+//**************** Track 7 (Midi-Chn.7) ****************//
+
+FalteringPrayer_7:
+	BYTE	KEYSH   FalteringPrayer_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   11
+	BYTE		VOL     51*FalteringPrayer_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v+63
+	BYTE		N23     Fn3   v096
+	BYTE		N23     Fn4   v076
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE	W01
+	BYTE		N90     Ds3   v096
+	BYTE		N90     Ds4   v072
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W15
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+// 001   ----------------------------------------
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE		N44     Cn3   v064
+	BYTE		N42     Ds3   v076
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W05
+	BYTE		N44     Cn3   v064
+	BYTE		N44     Ds3   v076
+	BYTE	W10
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+// 002   ----------------------------------------
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE		        Cn3   v064
+	BYTE		N44     Ds3   v076
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W06
+	BYTE		        Bn2   v064
+	BYTE		N44     Dn3   v080
+	BYTE	W09
+	BYTE	W03
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+// 003   ----------------------------------------
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+FalteringPrayer_7_B1:
+	BYTE	W02
+	BYTE	W01
+	BYTE		N44     Cn3   v076
+	BYTE		N44     Ds3   v092
+	BYTE	W06
+	BYTE	W03
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE		        Cn3   v080
+	BYTE		N44     Ds3   v096
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+// 004   ----------------------------------------
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W12
+	BYTE		        Cn3   v080
+	BYTE		N48     Fn3   v092
+	BYTE	W08
+	BYTE	W06
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W04
+	BYTE		N92     As2   v076
+	BYTE		N22     Ds3   v096
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+// 005   ----------------------------------------
+	BYTE	W02
+	BYTE	W01
+	BYTE		N23     Dn3 
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W02
+	BYTE	W08
+	BYTE		N24     Cn3 
+	BYTE	W07
+	BYTE	W03
+	BYTE	W01
+	BYTE	W03
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE		N22     Dn3 
+	BYTE	W01
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE		N44     Cn3   v064
+	BYTE		N42     Ds3   v076
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+// 006   ----------------------------------------
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W05
+	BYTE		N44     Cn3   v064
+	BYTE		N44     Ds3   v076
+	BYTE	W10
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W01
+	BYTE		        Cn3   v064
+	BYTE		N44     Ds3   v076
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+// 007   ----------------------------------------
+	BYTE	W02
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W06
+	BYTE		        Bn2   v064
+	BYTE		N44     Dn3   v080
+	BYTE	W09
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	GoTo
+	 POIN2	FalteringPrayer_7_B1
+FalteringPrayer_7_B2:
+	BYTE	W02
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+FalteringPrayer:
+	BYTE	7	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	FalteringPrayer_pri	// Priority
+	BYTE	FalteringPrayer_rev	// Reverb.
+
+	POIN2	FalteringPrayer_grp
+
+	POIN2	FalteringPrayer_1
+	POIN2	FalteringPrayer_2
+	POIN2	FalteringPrayer_3
+	POIN2	FalteringPrayer_4
+	POIN2	FalteringPrayer_5
+	POIN2	FalteringPrayer_6
+	POIN2	FalteringPrayer_7
+
+	

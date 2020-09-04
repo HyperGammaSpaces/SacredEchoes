@@ -1,0 +1,90 @@
+#define CharacterEndingTitle(unitID, textID) "SHORT unitID; SHORT 0; WORD textID"
+#define CharacterEndingDeathType(unitID, deathType) "BYTE unitID; BYTE deathType; SHORT 0"
+
+PUSH
+	ORG $B6728
+	POIN CharacterEndingTitleTable
+	ORG $B674C
+	POIN CharacterEndingDeathTypeTable
+POP
+
+//ORG $A3D1B0
+CharacterEndingTitleTable:
+	
+	CharacterEndingTitle(Alm, Alm_Ending_Title)
+	CharacterEndingTitle(Celica, Celica_Ending_Title)
+	CharacterEndingTitle(Nomah, Nomah_Ending_Title)
+	CharacterEndingTitle(Mycen, Mycen_Ending_Title)
+	CharacterEndingTitle(Lukas, Lukas_Ending_Title)
+	CharacterEndingTitle(Kliff, Kliff_Ending_Title)
+	CharacterEndingTitle(Tobin, Tobin_Ending_Title)
+	CharacterEndingTitle(Gray, Gray_Ending_Title)
+	CharacterEndingTitle(Faye, Faye_Ending_Title)
+	CharacterEndingTitle(Clair, Clair_Ending_Title)
+	CharacterEndingTitle(Clive, Clive_Ending_Title)
+	CharacterEndingTitle(Forsyth, Forsyth_Ending_Title)
+	CharacterEndingTitle(Python, Python_Ending_Title)
+	CharacterEndingTitle(Mathilda, Mathilda_Ending_Title)
+	CharacterEndingTitle(Mae, Mae_Ending_Title)
+	CharacterEndingTitle(Silque, Silque_Ending_Title)
+	CharacterEndingTitle(Genny, Genny_Ending_Title)
+	CharacterEndingTitle(Boey, Boey_Ending_Title)
+	CharacterEndingTitle(Conrad, Conrad_Ending_Title)
+	CharacterEndingTitle(Kamui, Kamui_Ending_Title)
+	CharacterEndingTitle(Leon, Leon_Ending_Title)
+	CharacterEndingTitle(Valbar, Valbar_Ending_Title)
+	CharacterEndingTitle(Atlas, Atlas_Ending_Title)
+	CharacterEndingTitle(Hyas, Hyas_Ending_Title)
+	CharacterEndingTitle(Jesse, Jesse_Ending_Title)
+	CharacterEndingTitle(Sonya, Sonya_Ending_Title)
+	CharacterEndingTitle(Deen, Deen_Ending_Title)
+	CharacterEndingTitle(Saber, Saber_Ending_Title)
+	CharacterEndingTitle(Acantha, Acantha_Ending_Title)
+	CharacterEndingTitle(Luthier, Luthier_Ending_Title)
+	CharacterEndingTitle(Delthea, Delthea_Ending_Title)
+	CharacterEndingTitle(Tatiana, Tatiana_Ending_Title)
+	CharacterEndingTitle(Catria, Catria_Ending_Title)
+	CharacterEndingTitle(Palla, Palla_Ending_Title)
+	CharacterEndingTitle(Est, Est_Ending_Title)
+	CharacterEndingTitle(Zeke, Zeke_Ending_Title)
+	WORD $0 $0 //term
+
+	//ORG $A3D2C0
+CharacterEndingDeathTypeTable:
+	CharacterEndingDeathType(Alm, 0x0)
+	CharacterEndingDeathType(Celica, 0x0)
+	CharacterEndingDeathType(Nomah, 0x0)
+	CharacterEndingDeathType(Mycen, 0x0)
+	CharacterEndingDeathType(Lukas, 0x0)
+	CharacterEndingDeathType(Kliff, 0x0)
+	CharacterEndingDeathType(Tobin, 0x0)
+	CharacterEndingDeathType(Gray, 0x0)
+	CharacterEndingDeathType(Faye, 0x0)
+	CharacterEndingDeathType(Clair, 0x0)
+	CharacterEndingDeathType(Clive, 0x0)
+	CharacterEndingDeathType(Forsyth, 0x0)
+	CharacterEndingDeathType(Python, 0x0)
+	CharacterEndingDeathType(Mathilda, 0x0)
+	CharacterEndingDeathType(Mae, 0x0)
+	CharacterEndingDeathType(Silque, 0x0)
+	CharacterEndingDeathType(Genny, 0x0)
+	CharacterEndingDeathType(Boey, 0x0)
+	CharacterEndingDeathType(Conrad, 0x0)
+	CharacterEndingDeathType(Kamui, 0x0)
+	CharacterEndingDeathType(Leon, 0x0)
+	CharacterEndingDeathType(Valbar, 0x0)
+	CharacterEndingDeathType(Atlas, 0x0)
+	CharacterEndingDeathType(Hyas, 0x0)
+	CharacterEndingDeathType(Jesse, 0x0)
+	CharacterEndingDeathType(Sonya, 0x0)
+	CharacterEndingDeathType(Deen, 0x0)
+	CharacterEndingDeathType(Saber, 0x0)
+	CharacterEndingDeathType(Acantha, 0x0)
+	CharacterEndingDeathType(Luthier, 0x0)
+	CharacterEndingDeathType(Delthea, 0x0)
+	CharacterEndingDeathType(Tatiana, 0x0)
+	CharacterEndingDeathType(Catria, 0x0)
+	CharacterEndingDeathType(Palla, 0x0)
+	CharacterEndingDeathType(Est, 0x0)
+	CharacterEndingDeathType(Zeke, 0x0)
+	WORD $0 //term

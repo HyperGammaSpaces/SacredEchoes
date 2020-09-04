@@ -1,0 +1,325 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x67, Ch3_2C_ThisChapter)
+
+Ch3_2C_ThisChapter:
+	POIN Ch3_2C_TurnBasedEvents
+	POIN Ch3_2C_CharacterBasedEvents
+	POIN Ch3_2C_LocationBasedEvents
+	POIN Ch3_2C_MiscBasedEvents
+	POIN Ch3_2C_Dunno Ch3_2C_Dunno Ch3_2C_Dunno
+	POIN Ch3_2C_Tutorial
+	POIN Ch3_2C_Ballista1 Ch3_2C_Ballista2
+	POIN Ch3_2C_Units1 Ch3_2C_Units1
+	POIN Ch3_2C_PlayerSkirmishUnits Ch3_2C_PlayerSkirmishUnits Ch3_2C_PlayerSkirmishUnits
+	POIN EnemyUnitsSkirmish1 EnemyUnitsSkirmish2 EnemyUnitsSkirmish3
+	//TODO: make variants for skirmishes
+	POIN Ch3_2C_BeginningScene Ch3_2C_EndingScene
+
+Ch3_2C_TurnBasedEvents:
+	TURN 0x0 LoadReinforcements [3,8] 0x0
+	TURN 0x0 LoadReinforcementBandits [5,7] 0x0
+	TURN 0x0 LoadReinforcementBackups [7,0] 0x0
+	TURN
+
+LoadReinforcements:
+	ReinforcementEvent(ReinforcementZombie)
+	NoFade
+	ENDA
+	
+LoadReinforcementBandits:
+	SVAL 0x1 0x1
+	CHECK_EVENTID gChapter3C2Completed //has map been cleared?
+	IFNE 0x9 0xC 0x1 //if true, skip load
+		ReinforcementEvent(BrigandsReinforcements)
+	LABEL 0x9
+	NoFade
+	ENDA
+	
+LoadReinforcementBackups:
+	ReinforcementEvent(BackupsReinforcements)
+	NoFade
+	ENDA
+
+Ch3_2C_CharacterBasedEvents:
+	//talk to atlas
+	CHAR
+
+Ch3_2C_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(4,5)
+	#endif
+	Village(8, VillageEvent, 15,3)
+	Armory(0xa3f00e, 17,11)
+	House(0, HouseEvent, 1,1)
+	House(0, HouseEvent2, 10,18)
+	LOCA
+
+HouseEvent:
+	HouseEvent(Ch3_2C_HouseText2,0x01)
+	ENDA
+
+HouseEvent2:
+	HouseEvent(Ch3_2C_HouseText,0x01)
+	ENDA
+
+VillageEvent:
+	ENUT 0x9
+	VillageEventItem(Ch3_2C_VillageText,0x05,0x7D) 
+	ENDA
+
+Ch3_2C_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	DefeatAll(Ch3_2C_EndingScene)
+	MournQuoteAFEVS
+	AFEV
+
+Ch3_2C_Dunno:
+	END_MAIN
+
+Ch3_2C_Tutorial:
+	END_MAIN
+
+Ch3_2C_Ballista1:
+	BLST
+
+Ch3_2C_Ballista2:
+	BLST
+	ALIGN 4
+
+Ch3_2C_CutsceneUnits:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x1 REDA15R15 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [11,19] 0x00 0x00 0x1 REDA17R15 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(10, Ally, False) [13,19] 0x00 0x00 0x1 REDA16R16 [Fire, Vulnerary] NoAI
+	UNIT
+	
+Ch3_2C_Units1:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [15,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [17,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [16,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [14,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [15,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [14,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [12,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [13,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [4,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [3,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [1,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [2,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT
+
+Ch3_2C_PlayerSkirmishUnits:
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [15,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [17,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [16,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [14,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [15,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [14,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [12,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [13,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [4,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [3,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [1,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [2,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT
+
+AxeBros:
+	UNIT Atlas Woodcutter 0x00 Level(6, Ally, False) [15,3] 0x00 0x00 0x1 REDA15R3 [BaseAxe, Hatchet, Vulnerary] NoAI 
+	UNIT Hyas Villager 0x00 Level(3, Ally, False) [15,3] 0x00 0x00 0x1 REDA15R3 [BaseSword, Vulnerary] NoAI
+	UNIT
+
+AtlasJoins:
+	UNIT Atlas Woodcutter 0x00 Level(6, Ally, False) [15,3] 0x00 0x00 0x1 REDA15R3 [BaseAxe, Hatchet, Vulnerary] NoAI 
+	UNIT
+
+EnemyUnits:
+	UNIT EntombedBoss Entombed EntombedBoss Level(3,Enemy,True) [4,1] DropItem 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI 
+	UNIT Terror_Bael Bael EntombedBoss Level(12,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SharpClaw] NoAI 
+	UNIT Terror_Bael Bael EntombedBoss Level(12,Enemy,True) [10,6] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI 
+	UNIT Terror_Bael Bael EntombedBoss Level(12,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [SharpClaw] NoAI 
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(9,Enemy,True) [2,10] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(8,Enemy,True) [6,12] 0x00 0x00 0x0 0x00 [Axereaver] NoAI 
+	UNIT Terror_Bonewalker Bonewalker EntombedBoss Level(7,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Bonewalker_Bow Bonewalker_Bow EntombedBoss Level(5,Enemy,True) [14,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
+	UNIT Terror_Revenant Revenant EntombedBoss Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT Terror_Revenant Revenant EntombedBoss Level(11,Enemy,True) [3,4] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI 
+	UNIT Terror_Revenant Revenant EntombedBoss Level(11,Enemy,True) [7,9] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT Terror_Revenant Revenant EntombedBoss Level(11,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT
+	
+BrigandsReinforcements:
+	UNIT GenericPirate Brigand EntombedBoss Level(13,Enemy,True) [14,9] 0x00 0x00 0x1 REDA14R9 [SteelAxe,Torch] BrigandAI
+	UNIT
+
+/*
+2B : configure next unit load (TODO)
+[2B20] - UnitCount
+[2B21] - Chance
+[2B22] -
+This is primarily used in the vanilla game to gain more control on loading units for dungeons (tower/ruins).
+
+[2B20] sets the number of units to load for the next load. A value of 0 (which is default) means that it will load up until the terminating unit (any unit definition with char id 0).
+[2B21] sets the chance (in percent) for units that are marked to be loaded at a random position to actually be loaded at a random position (More precisely, it sets the proportion of units in the load group to be loaded as such).
+[2B22] disables REDAs for the next load.
+For [2B20] and [2B21], if the argument is negative, it will be read from s2.
+
+//Randomized enemies will use flag RandomMonsterTemplate
+Example:
+UNIT 0xAA Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+UNIT
+*/
+
+EnemyUnitsSkirmish1:
+	UNIT EntombedBoss Entombed EntombedBoss Level(3,Enemy,True) [4,1] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [15,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [10,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(9,Enemy,True) [2,10] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain EntombedBoss Level(8,Enemy,True) [6,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Bonewalker Bonewalker EntombedBoss Level(7,Enemy,True) [7,2] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow EntombedBoss Level(5,Enemy,True) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [10,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [3,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [7,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT
+
+EnemyUnitsSkirmish2:
+	UNIT EntombedBoss Wight EntombedBoss Level(3,Enemy,True) [4,1] DropItemWithRandomPosition 0x00 0x0 0x00 [SteelSword,Item100G] AttackInRangeAI
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [15,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [10,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(9,Enemy,True) [2,10] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain EntombedBoss Level(8,Enemy,True) [6,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Bonewalker Bonewalker EntombedBoss Level(7,Enemy,True) [7,2] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow EntombedBoss Level(5,Enemy,True) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [10,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [3,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [7,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT
+
+EnemyUnitsSkirmish3:
+	UNIT EntombedBoss ElderBael EntombedBoss Level(3,Enemy,True) [4,1] DropItemWithRandomPosition 0x00 0x0 0x00 [SharpClaw,Item100G] AttackInRangeAI
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [15,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [10,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(9,Enemy,True) [2,10] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain EntombedBoss Level(8,Enemy,True) [6,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Bonewalker Bonewalker EntombedBoss Level(7,Enemy,True) [7,2] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow EntombedBoss Level(5,Enemy,True) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [10,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [3,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [7,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT
+
+ReinforcementZombie:
+	UNIT Terror_Revenant Revenant EntombedBoss Level(11,Enemy,True) [5,3] 0x00 0x00 0x1 REDA5R3 [RottenClaw] NoAI 
+	UNIT
+	
+BackupsReinforcements:
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(9,Enemy,True) [12,19] 0x00 0x00 0x1 REDA12R19 [ToxinLance] NoAI 
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(10,Enemy,True) [13,19] 0x00 0x00 0x1 REDA13R19 [HeavySpear] NoAI 
+	UNIT
+
+Ch3_2C_BeginningScene:
+	//only do this the first time.
+	EVBIT_MODIFY 0x1
+	SVAL 0x1 0x1
+	CHECK_EVENTID gChapter3C2Completed //has map been cleared?
+	IFNE 0x6 0xC 0x1 //if true, skip cutscene
+		EVBIT_MODIFY 0x0
+		MUSC 0x4A
+		LOAD1 0x1 EnemyUnits
+		ENUN
+		FADU 5	
+
+		LOAD2 0x1 Ch3_2C_CutsceneUnits
+		ENUN
+		CAM1 Celica
+		STAL 20
+		Text(Ch3_2C_OpeningText)
+
+		STAL 20
+		CAM1 EntombedBoss
+		STAL 20
+		FlashCursor(EntombedBoss, 60)
+		//if not first, do following
+		FADI 5
+		CLEA 0x0
+		LOAD3 0x1 Ch3_2C_Units1
+		ENUN
+		GOTO 0x07
+	LABEL 0x06
+		EVBIT_MODIFY 0x0
+		LOAD3 0x1 Ch3_2C_PlayerSkirmishUnits
+		ENUN
+		SVAL 0x2 0x0 //Number of skirmish enemies to load
+		CALL EnemyRandomizerHelper
+		LOAD1 0x1 EnemyUnitsSkirmish1
+		ENUN
+		NoFade
+	LABEL 0x07
+	GotoPrepScreen
+	ENDA
+
+Ch3_2C_EndingScene:
+	EVBIT_MODIFY 0x1
+	SVAL 0x1 0x1
+	CHECK_EVENTID gChapter3C2Completed //has map been cleared?
+	IFNE 0x4 0xC 0x1 //if true, skip cutscene
+		ENUT gChapter3C2Completed
+		EVBIT_MODIFY 0x0
+		CALL UnifiedBEXPCaller
+		MUSC 0x31 //victory
+		SetBackground(0x43)
+		Text(Ch3_2C_EndingText)
+		FADI 2
+		
+		STAL 20
+		
+		MUSC 0x3A
+		CHECK_EVENTID 0x9
+		BEQ 0x6 0xC 0x0
+			SetBackground(0x42) //night village
+			STAL 20
+			Text(Ch3_2C_EndingText_GetAxeBros)
+			//if the village is visited, you get both
+			REMA
+			FADI 2
+			
+			LOAD1 0x1 AxeBros
+			ENUN
+			GOTO 0x7
+		LABEL 0x6
+			SetBackground(0x42)
+			STAL 20
+			Text(Ch3_2C_EndingText_VillageDestroyed)
+			//if the village is destroyed you only get atlas
+			REMA
+			FADI 2
+			
+			LOAD1 0x1 AtlasJoins
+			ENUN
+		
+		LABEL 0x7
+		MNCH 0x18 
+		GOTO 0x05
+	LABEL 0x04
+		EVBIT_MODIFY 0x0
+		SVAL 0x3 0x3
+		ASMC 0x85C65
+		//SADD 0x32
+		CALL UnifiedBEXPCaller
+		SVAL 0x2 0x9
+		MNCH 0xFFFF //go to world map
+		//ASMC 0x37D59
+	LABEL 0x05
+	ENDA
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

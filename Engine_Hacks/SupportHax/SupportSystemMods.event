@@ -1,0 +1,118 @@
+
+/*
+Two Who Belong, PASSION!!!!02/12/2020
+[get unit]
+[check all 12 tiles within 2 tiles of this unit]
+[if any of those tiles have a unit on them, check their character ID]
+[if unit has same allegiance]
+[if unit and unit have a support]
+is pretty much the only way to be remotely efficient
+¯\_(ツ)_/¯
+*/
+
+
+PUSH
+
+	//Support menu
+	ORG $A36C4
+	BYTE 0x03 0x20 //Always say that there are three conversations.
+	/*
+	ORG $AB93A
+	BYTE 0x00 0x00 //Always display the support screen on the extra menu.
+	*/
+
+	ORG $18480
+	jumpToHack(FixCUSA)
+
+	ORG $285B0
+	jumpToHack(GetSupportBonusesFromTable)
+	
+	ORG $28290
+	replaceWithHack(AddSupportPoints)
+	
+	//28310: this is used by HPBars to show talk bubble for supports. 
+	//Make sure it checks the DenySupport code!
+	
+	ORG $28310
+	replaceWithHack(DenySupport)
+	
+	ORG $28476
+	BYTE $04 		//Max number of support convos
+	ORG $28508
+	BYTE $04 		//Max number of support convos
+	
+	ORG $876B4
+	BYTE $05 //how many supports needed to make it Glowy (normally 5)
+	
+	ORG $A208C		//Always display remaining max no. of convos on support screen
+	SHORT $2500 $E008
+	
+	ORG $2C1EC
+	BYTE $F0 $B5 	//PUSH {r4-r7,lr}
+	ORG $2C2CA
+	BYTE $F0 $BC	//POP {r4-r7}
+	
+	ORG $153c6			//This makes support points increase at the start of player phase
+	SHORT $46C0 $46C0   //nop out the BL as we're moving the call to after battle
+	
+	/*
+	
+	//A bunch of stuff obsoleted by our new $28310
+	ORG $2833E
+	BYTE $4			//Max number of support convos
+	ORG $2834E
+	BYTE $4			//Max number of support convos
+
+	ORG $256CA
+	BYTE 0x00 0x00
+	jumpToHack(DenySupport)
+	
+	*/
+	
+	//ORG $28286
+	//BYTE 0x00 0x20 //something to do with GetUnitTotalSupportLevels
+	
+	
+	//For mourning quotes: just make a master event which AFEV's when the mourned unit's death flag is set
+	//Clive will probably need a priority list because so many people mourn him lol
+	
+POP
+
+//Need to make new version of 59DABC Battle proc which calls AddSupportPointsAfterBattle.
+//5aa75c also calls, but this is for link arenas so w/e
+//pointer at 32340
+
+//FX for status clear is at 59e2d0, pointer at 35e08 and 35e1c
+ALIGN 4
+FixCUSA:
+#incbin "FixCUSA.dmp"
+ALIGN 4
+
+GetSupportBonusesFromTable:
+#incbin "GetSupportBonusesFromTable.dmp"
+POIN SupportReworkBonusTable
+ALIGN 4
+
+DenySupport:
+#incbin "DenySupport-Rework.dmp"
+POIN DenySupport_Table
+ALIGN 4
+
+AddSupportPoints:
+#incbin "AddSupportPoints.dmp"
+ALIGN 4
+
+//Show little bubbles like hearts etc. when support increasing actions are taken
+#include "EVENTSCRIPT_Show_map_emotion/Show_map_emotion_Install.event"
+ALIGN 4
+
+//DenySupport_Table:
+#include "DenySupport_Table.event"
+
+//Change ending by flag (use the unused "00" separator byte to set the flag)
+#include "CharacterEndingByFlag/installer.event"
+ALIGN 4
+//Change some other ending stuff to account for new party size
+#include "CharacterEndingByFlag/CharacterEndingTables.event"
+
+//28290: should trigger a heart mapanim. This isn't called when the convo is so wherever the "support lv increased" popup is, have it be after that too

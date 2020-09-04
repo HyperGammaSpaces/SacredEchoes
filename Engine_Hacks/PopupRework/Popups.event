@@ -1,0 +1,43 @@
+#ifndef POPUPS
+#define POPUPS
+
+#include "Extensions/PopupDefinitions.txt"
+#include "PopupRework.event"
+#include "Extensions/GaidenPopups.event"
+
+PopRSetPopupCodeHandlers(0x0D, PopRWeaponLevelComponent)
+
+ALIGN 4
+gBattlePopupTable:
+	// Vanilla
+	PopRBattlePopup(PopR_InitWeaponBroke, 0x592420, 80)
+
+	// Display new weapon level on WLevel-up
+	PopRBattlePopup(InitWeaponLevelUpPopup|1, WeaponRankUpPopup, 80)
+
+	// Spell system
+	PopRBattlePopup(InitLevelUpSpellPopup|1, SpellLearnedPopup, 80)
+	
+	// Mila icon thing
+	PopRBattlePopup(InitPromotionEligiblePopup|1, PromotionEligiblePopup, 80)
+
+	PopRBattlePopupEnd
+
+ALIGN 4
+gPromotionPopupTable:
+	// Vanilla
+	PopRBattlePopup(PopR_InitSwordRankNew, gPopup_PopR_NewWType, 80)
+	PopRBattlePopup(PopR_InitLanceRankNew, gPopup_PopR_NewWType, 80)
+	PopRBattlePopup(PopR_InitAxeRankNew,   gPopup_PopR_NewWType, 80)
+	PopRBattlePopup(PopR_InitBowRankNew,   gPopup_PopR_NewWType, 80)
+	PopRBattlePopup(PopR_InitStaffRankNew, gPopup_PopR_NewWType, 80)
+	PopRBattlePopup(PopR_InitAnimaRankNew, gPopup_PopR_NewWType, 80)
+	PopRBattlePopup(PopR_InitLightRankNew, gPopup_PopR_NewWType, 80)
+	PopRBattlePopup(PopR_InitElderRankNew, gPopup_PopR_NewWType, 80)
+
+	// Spell system
+	PopRBattlePopup(InitPromotionSpellPopup|1, SpellLearnedPopup, 80)
+
+	PopRBattlePopupEnd
+
+#endif // POPUPS

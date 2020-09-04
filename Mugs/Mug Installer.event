@@ -1,0 +1,280 @@
+#include "Tools/Tool Helpers.txt"
+#include "Preprocessed/MugData.event"
+
+PUSH
+	//Make Celica not smol
+	ORG $5C3C
+	BYTE $9C
+	//Make Luthier not smol
+	ORG $5C60
+	BYTE $9C
+	//Make Jesse not smol
+	ORG $5C80
+	BYTE $9C
+	//Make Sonya not smol
+	ORG $5C88
+	BYTE $9C
+	//Make Zeke not smol
+	ORG $5C94
+	BYTE $9C
+POP
+
+#define setMugEntry(mugEntry, portraitData, minimugData, paletteData, mouthData, mouthX, mouthY, eyeX, eyeY) "PUSH; ORG PortraitTable+mugEntry*0x1C; POIN portraitData; POIN minimugData; POIN paletteData; POIN mouthData; WORD 0x00000000; BYTE mouthX mouthY eyeX eyeY; WORD 0x01; POP"
+
+//format: MouthX MouthY EyeX EyeY
+
+//Don't use 0x00
+//Don't use 0x01
+setMugEntry(0x2,  almMug, 2,5,3,3)
+setMugEntry(0x3,  alm_2Mug, 2,5,3,3) //promoted
+//0x4=sad alm
+setMugEntry(0x5,  lukasMug, 3,5,3,3)
+setMugEntry(0x6,  grayMug, 3,5,3,3)
+setMugEntry(0x7,  tobinMug, 3,5,3,3)
+setMugEntry(0x8,  kliffMug, 3,6,3,4)
+setMugEntry(0x9,  fayeMug, 3,6,3,4)
+setMugEntry(0xa,  silqueMug, 4,6,4,4)
+setMugEntry(0xb,  clairMug, 3,6,3,4)
+setMugEntry(0xc,  cliveMug, 3,5,3,3)
+setMugEntry(0xd,  forsythMug, 3,5,3,3)
+setMugEntry(0xe,  pythonMug, 3,5,3,3)
+setMugEntry(0xf,  celicaMug, 3,5,3,3)
+setMugEntry(0x10, celica_2Mug, 3,5,3,3) //promoted
+setMugEntry(0x11, celica_angryMug, 3,5,3,3)
+setMugEntry(0x12, maeMug, 3,6,3,4)
+setMugEntry(0x13, boeyMug, 3,6,3,4)
+setMugEntry(0x14, gennyMug, 3,6,3,4)
+setMugEntry(0x15, saberMug, 3,5,3,3)
+setMugEntry(0x16, valbarMug, 3,6,3,4)
+setMugEntry(0x17, leonMug, 3,5,3,3)
+setMugEntry(0x18, kamuiMug, 3,5,3,3)
+setMugEntry(0x19, luthierMug, 3,5,3,3)
+setMugEntry(0x1a, mathildaMug, 3,5,3,3)
+setMugEntry(0x1b, deltheaMug, 3,6,3,4)
+setMugEntry(0x1c, delthea_2Mug, 3,6,3,4) //possessed
+setMugEntry(0x1d, pallaMug, 3,5,3,3)
+setMugEntry(0x1e, catriaMug, 3,5,3,3)
+setMugEntry(0x1f, atlasMug, 3,5,3,3)
+setMugEntry(0x20, hyasMug, 3,5,3,3)
+setMugEntry(0x21, jesseMug, 2,5,2,3)
+setMugEntry(0x22, deenMug, 3,5,3,3)
+setMugEntry(0x23, sonyaMug, 3,5,3,3)
+setMugEntry(0x24, estMug, 3,6,3,4)
+setMugEntry(0x25, tatianaMug, 3,5,3,3)
+setMugEntry(0x26, zekeMug, 3,5,3,3)
+setMugEntry(0x27, conrad_2Mug, 3,5,3,3) //maskless
+setMugEntry(0x28, conradMug, 3,5,3,3) //mask
+setMugEntry(0x29, nomahMug, 3,5,3,3)
+setMugEntry(0x2a, mycenMug, 3,5,3,3)
+setMugEntry(0x2b, mila2Mug, 3,5,3,3) //goddess form
+setMugEntry(0x2c, mila3Mug, 3,5,3,3) //statue form
+setMugEntry(0x2d, fernandMug, 3,5,3,3)
+setMugEntry(0x2e, slaydeMug, 3,4,3,2)
+setMugEntry(0x2f, desaixMug, 3,5,3,3)
+setMugEntry(0x30, clive_sepiaMug, 3,5,3,3)
+setMugEntry(0x31, fernand_sepiaMug, 3,5,3,3)
+setMugEntry(0x32, mathilda_sepiaMug, 3,5,3,3)
+setMugEntry(0x33, acanthaMug, 3,5,3,3)
+setMugEntry(0x34, rineaMug, 4,5,3,3) //unburnt
+setMugEntry(0x35, rinea_2Mug, 4,5,3,3) //toasty
+setMugEntry(0x36, berkutrightMug, 5,5,5,3) //normal
+setMugEntry(0x37, berkut_dumaMug, 4,5,4,3) //possessed
+
+setMugEntry(0x38, Echoes_BanditMug, 2, 5, 3, 3) //First boss
+setMugEntry(0x39, Echoes_Pirate2Mug, 2, 5, 3, 3) //meltyface guy
+setMugEntry(0x3a, brigandbossMug, 3, 5, 3, 3)
+setMugEntry(0x3b, Echoes_MercMug, 3, 5, 3, 3) //leather shield merc
+setMugEntry(0x3c, Echoes_Soldier_BlueMug, 3, 6, 3, 4)
+setMugEntry(0x3d, Echoes_SoldierMug, 3, 6, 3, 4) //1-5 boss
+setMugEntry(0x3e, Echoes_Soldier2Mug, 2, 6, 3, 4) //1-6 boss
+setMugEntry(0x3f, Echoes_CavalierMug, 2, 5, 2, 3) //1-7 boss
+setMugEntry(0x40, barthMug, barthMinimug, jarthPalette, barthFrames, 2, 5, 2, 3)
+//not bazba
+setMugEntry(0x41, Echoes_PirateMug, 3, 4, 3, 2) //fpirate boss
+setMugEntry(0x42, barthMug, barthMinimug, barthPalette, barthFrames, 2, 5, 2, 3)
+setMugEntry(0x43, DumaFaith_1Mug, 3, 6, 3, 4) //2-5 cantor boss
+setMugEntry(0x44, DumaFaith_2Mug, 2, 6, 3, 3) //2-6 shaman miniboss
+setMugEntry(0x45, DumaFaith_3Mug, 2, 6, 3, 4) //2-7 arcanist boss
+
+//46=zaxon
+setMugEntry(0x46, zaxonMug, 3, 5, 3, 3)
+//47=xyzas
+setMugEntry(0x47, xyzasMug, 3, 5, 3, 3)
+//48=lawson
+//49=gazelle
+//4a=tatarrah
+//4b=garth
+setMugEntry(0x4b, barthMug, barthMinimug, garthPalette, barthFrames, 2, 5, 2, 3)
+//4c=wolff
+setMugEntry(0x4c, wolffMug, 3, 5, 3, 3) 
+//4d=grieth
+setMugEntry(0x4d, griethMug, 3, 5, 3, 3)
+//4e=blake
+setMugEntry(0x4e, blakeMug, 2, 5, 3, 3)
+//4f=mikhail
+
+//50=garcia
+//51=dolth
+//52=jamil
+//53=xaizor
+//54=jerome
+//55=magnus
+//56=mueller
+//57=massena
+//58=hades
+//59=gharn
+//5a=rudolf
+//5b=jedah
+//5c=nuibaba
+//5d=argentum
+//5e=aurum
+//5f=cerberus
+//60=naberius
+//61=marla
+//62=hestia
+
+//63=moneyman
+setMugEntry(0x63,$843330,$843298,$842C78,$842C98,2,6,3,4)
+setMugEntry(0x64,annaMug,2,6,3,4)
+//0x65 Armory
+//0x66 Vendor
+//0x67 Arena Guy
+//0x68 Secret Shop
+
+//Generics block
+//69=oldman
+setMugEntry(0x69,$841C74,$841BDC,$8415BC,$8415DC,2,7,3,5)
+//6a=man1
+setMugEntry(0x6a,$8405B8,$840520,$83FF00,$83FF20,2,5,3,3)
+//6b=man2
+setMugEntry(0x6b,$83EEFC,$83EE64,$83E844,$83E864,2,6,3,4)
+//6c=youngman
+setMugEntry(0x6c,npc_youngman2Mug,2,5,3,3)
+//6d=boy
+setMugEntry(0x6d,$83AAC8,$83AA30,$83A410,$83A430,2,7,3,5)
+//6e=granny
+setMugEntry(0x6e,$83940C,$839374,$838D54,$838D74,2,6,3,4)
+//6f=woman
+setMugEntry(0x6f,npc_womanMug,2,6,3,4)
+//70=youngwoman
+setMugEntry(0x70,npc_youngwomanMug,2,6,3,4)
+//71=girl
+setMugEntry(0x71,$83391C,$833884,$833264,$833284,2,7,3,5)
+
+//class cards start at 0x72
+
+DFCard:
+#incbin "ClassCards/df-card.dmp"
+DFCardPalette:
+#incbin "ClassCards/df-card.pal.bin" 
+setCardEntry(0x73, DFCard, DFCardPalette)
+
+FPirateCard:
+#incbin "ClassCards/pirate_f.dmp"
+FPirateCardPalette:
+#incbin "ClassCards/pirate_f.pal.bin" 
+setCardEntry(0x74, FPirateCard, FPirateCardPalette)
+
+KnightCard:
+#incbin "ClassCards/KnightCard.dmp"
+KnightCardPalette:
+#incbin "ClassCards/KnightCard.pal.bin"
+setCardEntry(0x76, KnightCard, KnightCardPalette)
+
+BaronCard:
+#incbin "ClassCards/baron.dmp"
+BaronCardPalette:
+#incbin "ClassCards/baron.pal.bin"
+setCardEntry(0x77, BaronCard, BaronCardPalette)
+
+ClericCard:
+#incbin "ClassCards/flasuban-cleric.dmp"
+ClericCardPalette:
+#incbin "ClassCards/flasuban-cleric.pal.bin"
+setCardEntry(0x7A, ClericCard, ClericCardPalette)
+
+FMageCard:
+#incbin "ClassCards/l95-fmage.dmp"
+FMageCardPalette:
+#incbin "ClassCards/L95-fmage.pal.bin"
+setCardEntry(0x7B, FMageCard, FMageCardPalette)
+
+MageCard:
+#incbin "ClassCards/L95-mage.dmp"
+MageCardPalette:
+#incbin "ClassCards/L95-mage.pal.bin"
+setCardEntry(0x7C, MageCard, MageCardPalette)
+
+CavalierCard:
+#incbin "ClassCards/salvcav.dmp"
+CavalierCardPalette:
+#incbin "ClassCards/salvcav.pal.bin"
+setCardEntry(0x80, CavalierCard, CavalierCardPalette)
+
+PaladinCard:
+#incbin "ClassCards/flasuban-salvpal.dmp"
+PaladinCardPalette:
+#incbin "ClassCards/flasuban-salvpal.pal.bin"
+setCardEntry(0x81, PaladinCard, PaladinCardPalette)
+
+FArcherCard:
+#incbin "ClassCards/l95-farcher.dmp"
+FArcherCardPalette:
+#incbin "ClassCards/l95-farcher.pal.bin"
+setCardEntry(0x84, FArcherCard, FArcherCardPalette)
+
+FSniperCard:
+#incbin "ClassCards/l95-fsniper.dmp"
+FSniperCardPalette:
+#incbin "ClassCards/l95-fsniper.pal.bin"
+setCardEntry(0x85, FSniperCard, FSniperCardPalette)
+
+WRiderCard:
+#incbin "ClassCards/flasuban-wrider.dmp"
+WRiderCardPalette:
+#incbin "ClassCards/flasuban-wrider.pal.bin" 
+setCardEntry(0x88, WRiderCard, WRiderCardPalette)
+
+WLordCard:
+#incbin "ClassCards/flasuban-wlord.dmp"
+WLordCardPalette:
+#incbin "ClassCards/flasuban-wlord.pal.bin" 
+setCardEntry(0x89, WLordCard, WLordCardPalette)
+
+SoldierCard:
+#incbin "ClassCards/flasuban-soldier.dmp"
+SoldierCardPalette:
+#incbin "ClassCards/flasuban-soldier.pal.bin" 
+setCardEntry(0x8A, SoldierCard, SoldierCardPalette)
+
+BrigandCard:
+#incbin "ClassCards/brigand_classcard.dmp"
+BrigandCardPalette:
+#incbin "ClassCards/brigand_classcard.pal.bin" 
+setCardEntry(0x8B, BrigandCard, BrigandCardPalette)
+
+VillagerCard:
+#incbin "ClassCards/ghast-villager.dmp"
+VillagerCardPalette:
+#incbin "ClassCards/ghast-villager.pal.bin"
+setCardEntry(0x8F, VillagerCard, VillagerCardPalette)
+
+WitchCard:
+#incbin "ClassCards/L95_fsage.dmp"
+WitchCardPalette:
+#incbin "ClassCards/L95_fsage.pal.bin"
+setCardEntry(0x95, WitchCard, WitchCardPalette)
+
+GoldKnightCard:
+#incbin "ClassCards/GKCard.dmp" 
+GoldKnightCardPalette:
+#incbin "ClassCards/GKCard.pal.bin"
+setCardEntry(0x96, GoldKnightCard, GoldKnightCardPalette)
+
+BKCard:
+#incbin "ClassCards/bk_card.dmp"
+BKCardPalette:
+#incbin "ClassCards/bk_card.pal.bin" 
+setCardEntry(0x97, BKCard, BKCardPalette)
+
+//0xAA is supply, do not edit

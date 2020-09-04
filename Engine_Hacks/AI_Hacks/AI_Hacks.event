@@ -1,0 +1,59 @@
+#include "HipsterAiDefinitions.event"
+
+#include "DanceAI/DanceAi.event"
+ALIGN 4
+//commenting out cuz it doesn't play nice with damage flooring
+//#include "DontAttackIf0Damage/FcukTanks.event"
+//ALIGN 4
+#include "LeaderAIFix_stan/LeadAiFix.event"
+ALIGN 4
+
+PUSH
+// healer ai fix; stop them from healing max hp units
+// changes bhi to bhs
+    ORG $3FC9D
+    BYTE 0xD2
+    
+    ORG $3FE77
+    BYTE 0xD2
+	
+//Minimum accuracy for targeting with status staves
+	ORG $40312
+	BYTE $1C
+	
+	ORG $405b8
+	BYTE $1C
+	
+//Efficiency fix for FillAIDangerMap
+	ORG $3E320
+	#incbin "FillAIDangerMap.dmp"
+	
+//Terrain-seek AI
+	ORG $5A8818
+	POIN DefensiveTerrainList
+POP
+
+DefensiveTerrainList:
+BYTE $0B $1D $1F $39 //ID -1: gate, pillar, throne, supply
+WORD $0
+
+/*
+ALIGN 4
+AiAttackMathilda:
+    AiAttackCharacter(Mathilda)
+    AiRestart
+
+InjectAi1(0x07, AiAttackMathilda)
+*/
+
+
+
+/*
+- When you tell a unit to have an AI of [0x0, 0x3], that means it should use the primary AI that’s 0x0 in the first table, and if that fails, use the AI in the second table pointed to by the 0x3-rd pointer. In this case, that means if there’s something to attack in range, it’ll attack that. Otherwise it’ll fail and fall through to AI2 0x3, which always fails. When both AIs fail, the unit does nothing. Thus, the observed behavior is AttackInRange.
+
+Status staff:
+
+- Sleep/Berserk requires target to have usable weapon. Silence requires target to have usable staff.
+- Target needs to meet a minimum hit requirement. The staff-user needs 5+ hit with accuracy being calculated from the staff-user’s start-of-phase position. The initial position is used even if the staff-user must move forward to get the target within staff range. Also, the staff-user will retreat a few spaces if a target is close, so a status staff can be used at 0-4 hit as long as the initial 5+ hit test is passed.
+- The character furthest down in deployment list who meets the above requirements is targeted.
+*/

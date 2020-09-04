@@ -1,0 +1,3925 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	CaveTheme_grp  voicegroup000
+	#define	CaveTheme_pri  0
+	#define	CaveTheme_rev  0
+	#define	CaveTheme_mvl  85
+	#define	CaveTheme_key  0
+	#define	CaveTheme_tbs  1
+	#define	CaveTheme_exg  0
+	#define	CaveTheme_cmp  1
+
+	// .rodata
+	//	CaveTheme
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+CaveTheme_1:
+	BYTE		VOL     127*CaveTheme_mvl/mxv
+	BYTE	KEYSH   CaveTheme_key+0
+// 000   ----------------------------------------
+	BYTE	TEMPO   170*CaveTheme_tbs/2
+	BYTE		VOICE   10
+	BYTE		PAN     c_v-60
+	BYTE		N10     Bn4   v100
+	BYTE	W02
+	BYTE		PAN     c_v-58
+	BYTE	W05
+	BYTE		        c_v-56
+	BYTE	W05
+	BYTE		        c_v-54
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v-52
+	BYTE	W05
+	BYTE		        c_v-50
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v-48
+	BYTE	W05
+	BYTE		        c_v-46
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v-44
+	BYTE	W05
+	BYTE		        c_v-42
+	BYTE	W05
+	BYTE		        c_v-39
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v-37
+	BYTE	W05
+	BYTE		        c_v-35
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v-33
+	BYTE	W05
+	BYTE		        c_v-31
+	BYTE	W05
+	BYTE		        c_v-29
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-27
+	BYTE	W05
+	BYTE		        c_v-25
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-23
+	BYTE	W05
+	BYTE		        c_v-20
+	BYTE	W04
+// 001   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-18
+	BYTE	W05
+	BYTE		        c_v-16
+	BYTE	W05
+	BYTE		        c_v-14
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v-12
+	BYTE	W05
+	BYTE		        c_v-10
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-8
+	BYTE	W05
+	BYTE		        c_v-6
+	BYTE	W05
+	BYTE		        c_v-4
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v-2
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+3
+	BYTE	W05
+	BYTE		        c_v+5
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+7
+	BYTE	W05
+	BYTE		        c_v+9
+	BYTE	W05
+	BYTE		        c_v+11
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+13
+	BYTE	W05
+	BYTE		        c_v+15
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v+17
+	BYTE	W05
+	BYTE		        c_v+20
+	BYTE	W05
+// 002   ----------------------------------------
+	BYTE		        c_v+22
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v+24
+	BYTE	W05
+	BYTE		        c_v+26
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v+28
+	BYTE	W05
+	BYTE		        c_v+30
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+32
+	BYTE	W05
+	BYTE		        c_v+34
+	BYTE	W05
+	BYTE		        c_v+36
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+38
+	BYTE	W05
+	BYTE		        c_v+41
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v+43
+	BYTE	W05
+	BYTE		        c_v+45
+	BYTE	W05
+	BYTE		        c_v+47
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v+49
+	BYTE	W05
+	BYTE		        c_v+51
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+53
+	BYTE	W05
+	BYTE		        c_v+55
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+57
+	BYTE	W05
+	BYTE		        c_v+60
+	BYTE	W03
+	BYTE		        c_v+59
+	BYTE	W03
+// 003   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+60
+	BYTE	W05
+	BYTE		        c_v+58
+	BYTE	W05
+	BYTE		        c_v+56
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+54
+	BYTE	W05
+	BYTE		        c_v+52
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v+50
+	BYTE	W05
+	BYTE		        c_v+48
+	BYTE	W05
+	BYTE		        c_v+46
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v+43
+	BYTE	W05
+	BYTE		        c_v+41
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+39
+	BYTE	W05
+	BYTE		        c_v+37
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+35
+	BYTE	W05
+	BYTE		        c_v+33
+	BYTE	W05
+	BYTE		        c_v+31
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+28
+	BYTE	W05
+	BYTE		        c_v+26
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v+24
+	BYTE	W05
+	BYTE		        c_v+22
+	BYTE	W05
+// 004   ----------------------------------------
+	BYTE		        c_v+20
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v+18
+	BYTE	W05
+	BYTE		        c_v+16
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v+14
+	BYTE	W05
+	BYTE		        c_v+11
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+9
+	BYTE	W05
+	BYTE		        c_v+7
+	BYTE	W05
+	BYTE		        c_v+5
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+3
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-1
+	BYTE	W05
+	BYTE		        c_v-4
+	BYTE	W05
+	BYTE		        c_v-6
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v-8
+	BYTE	W05
+	BYTE		        c_v-10
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v-12
+	BYTE	W05
+	BYTE		        c_v-14
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v-16
+	BYTE	W05
+	BYTE		        c_v-18
+	BYTE	W05
+	BYTE		        c_v-21
+	BYTE	W01
+// 005   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v-23
+	BYTE	W05
+	BYTE		        c_v-25
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v-27
+	BYTE	W05
+	BYTE		        c_v-29
+	BYTE	W05
+	BYTE		        c_v-31
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-33
+	BYTE	W05
+	BYTE		        c_v-36
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-38
+	BYTE	W05
+	BYTE		        c_v-40
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-42
+	BYTE	W05
+	BYTE		        c_v-44
+	BYTE	W05
+	BYTE		        c_v-46
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v-48
+	BYTE	W05
+	BYTE		        c_v-51
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-53
+	BYTE	W05
+	BYTE		        c_v-55
+	BYTE	W05
+	BYTE		        c_v-57
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v-59
+	BYTE	W05
+	BYTE		        c_v-61
+	BYTE	W02
+// 006   ----------------------------------------
+	BYTE		        c_v-63
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-61
+	BYTE	W05
+	BYTE		        c_v-59
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-57
+	BYTE	W05
+	BYTE		        c_v-55
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-52
+	BYTE	W05
+	BYTE		        c_v-50
+	BYTE	W05
+	BYTE		        c_v-48
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v-46
+	BYTE	W05
+	BYTE		        c_v-43
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-41
+	BYTE	W05
+	BYTE		        c_v-39
+	BYTE	W05
+	BYTE		        c_v-37
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v-34
+	BYTE	W05
+	BYTE		        c_v-32
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v-30
+	BYTE	W05
+	BYTE		        c_v-28
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v-26
+	BYTE	W05
+	BYTE		        c_v-23
+	BYTE	W05
+	BYTE		        c_v-21
+	BYTE	W01
+// 007   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v-19
+	BYTE	W05
+	BYTE		        c_v-17
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v-14
+	BYTE	W05
+	BYTE		        c_v-12
+	BYTE	W05
+	BYTE		        c_v-10
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-8
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-3
+	BYTE	W05
+	BYTE		        c_v-1
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+1
+	BYTE	W05
+	BYTE		        c_v+3
+	BYTE	W05
+	BYTE		        c_v+6
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+8
+	BYTE	W05
+	BYTE		        c_v+10
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v+12
+	BYTE	W05
+	BYTE		        c_v+15
+	BYTE	W05
+	BYTE		        c_v+17
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v+19
+	BYTE	W05
+	BYTE		        c_v+21
+	BYTE	W02
+// 008   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+24
+	BYTE	W05
+	BYTE		        c_v+26
+	BYTE	W04
+	BYTE		N10     En5 
+	BYTE	W01
+	BYTE		PAN     c_v+28
+	BYTE	W05
+	BYTE		        c_v+30
+	BYTE	W05
+	BYTE		        c_v+32
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+35
+	BYTE	W05
+	BYTE		        c_v+37
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v+39
+	BYTE	W05
+	BYTE		        c_v+41
+	BYTE	W05
+	BYTE		        c_v+44
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v+46
+	BYTE	W05
+	BYTE		        c_v+48
+	BYTE	W02
+	BYTE		N10     En5 
+	BYTE	W03
+	BYTE		PAN     c_v+50
+	BYTE	W05
+	BYTE		        c_v+53
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+55
+	BYTE	W05
+	BYTE		        c_v+57
+	BYTE	W05
+	BYTE		        c_v+59
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+61
+	BYTE	W08
+// 009   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+60
+	BYTE	W05
+	BYTE		        c_v+58
+	BYTE	W04
+	BYTE		N10     En5 
+	BYTE	W01
+	BYTE		PAN     c_v+56
+	BYTE	W05
+	BYTE		        c_v+54
+	BYTE	W05
+	BYTE		        c_v+52
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+50
+	BYTE	W05
+	BYTE		        c_v+48
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v+46
+	BYTE	W05
+	BYTE		        c_v+44
+	BYTE	W05
+	BYTE		        c_v+42
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v+40
+	BYTE	W05
+	BYTE		        c_v+38
+	BYTE	W02
+	BYTE		N10     En5 
+	BYTE	W03
+	BYTE		PAN     c_v+36
+	BYTE	W05
+	BYTE		        c_v+34
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+32
+	BYTE	W05
+	BYTE		        c_v+30
+	BYTE	W05
+	BYTE		        c_v+28
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+26
+	BYTE	W05
+	BYTE		        c_v+24
+	BYTE	W03
+// 010   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v+22
+	BYTE	W05
+	BYTE		        c_v+20
+	BYTE	W05
+	BYTE		        c_v+18
+	BYTE		N10     En5 
+	BYTE	W05
+	BYTE		PAN     c_v+16
+	BYTE	W05
+	BYTE		        c_v+14
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+12
+	BYTE	W05
+	BYTE		        c_v+10
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+8
+	BYTE	W05
+	BYTE		        c_v+5
+	BYTE	W05
+	BYTE		        c_v+3
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+1
+	BYTE	W05
+	BYTE		        c_v-1
+	BYTE	W03
+	BYTE		N10     En5 
+	BYTE	W02
+	BYTE		PAN     c_v-3
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE	W05
+	BYTE		        c_v-7
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-9
+	BYTE	W05
+	BYTE		        c_v-11
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-13
+	BYTE	W05
+	BYTE		        c_v-15
+	BYTE	W04
+// 011   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-17
+	BYTE	W05
+	BYTE		        c_v-19
+	BYTE	W05
+	BYTE		        c_v-21
+	BYTE	W01
+	BYTE		N10     En5 
+	BYTE	W04
+	BYTE		PAN     c_v-23
+	BYTE	W05
+	BYTE		        c_v-25
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-27
+	BYTE	W05
+	BYTE		        c_v-29
+	BYTE	W05
+	BYTE		        c_v-31
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v-33
+	BYTE	W05
+	BYTE		        c_v-35
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v-37
+	BYTE	W05
+	BYTE		        c_v-39
+	BYTE	W04
+	BYTE		N10     En5 
+	BYTE	W01
+	BYTE		PAN     c_v-41
+	BYTE	W05
+	BYTE		        c_v-43
+	BYTE	W05
+	BYTE		        c_v-45
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v-48
+	BYTE	W05
+	BYTE		        c_v-50
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v-52
+	BYTE	W05
+	BYTE		        c_v-54
+	BYTE	W05
+// 012   ----------------------------------------
+	BYTE		        c_v-56
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-58
+	BYTE	W05
+	BYTE		        c_v-60
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-62
+	BYTE	W06
+	BYTE		        c_v-61
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-59
+	BYTE	W05
+	BYTE		        c_v-57
+	BYTE	W05
+	BYTE		        c_v-54
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v-52
+	BYTE	W05
+	BYTE		        c_v-50
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v-47
+	BYTE	W05
+	BYTE		        c_v-45
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v-43
+	BYTE	W05
+	BYTE		        c_v-40
+	BYTE	W05
+	BYTE		        c_v-38
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v-36
+	BYTE	W05
+	BYTE		        c_v-33
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v-31
+	BYTE	W05
+	BYTE		        c_v-29
+	BYTE	W05
+// 013   ----------------------------------------
+	BYTE		        c_v-26
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-24
+	BYTE	W05
+	BYTE		        c_v-22
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-19
+	BYTE	W05
+	BYTE		        c_v-17
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-15
+	BYTE	W05
+	BYTE		        c_v-12
+	BYTE	W05
+	BYTE		        c_v-10
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v-7
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-3
+	BYTE	W05
+	BYTE		        c_v+0
+	BYTE	W05
+	BYTE		        c_v+2
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v+4
+	BYTE	W05
+	BYTE		        c_v+7
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+9
+	BYTE	W05
+	BYTE		        c_v+11
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+14
+	BYTE	W05
+	BYTE		        c_v+16
+	BYTE	W05
+	BYTE		        c_v+18
+	BYTE	W01
+// 014   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+21
+	BYTE	W05
+	BYTE		        c_v+23
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v+25
+	BYTE	W05
+	BYTE		        c_v+28
+	BYTE	W05
+	BYTE		        c_v+30
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v+32
+	BYTE	W05
+	BYTE		        c_v+35
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v+37
+	BYTE	W05
+	BYTE		        c_v+39
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+42
+	BYTE	W05
+	BYTE		        c_v+44
+	BYTE	W05
+	BYTE		        c_v+47
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+49
+	BYTE	W05
+	BYTE		        c_v+51
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v+54
+	BYTE	W05
+	BYTE		        c_v+56
+	BYTE	W05
+	BYTE		        c_v+58
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v+61
+	BYTE	W07
+// 015   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+62
+	BYTE	W05
+	BYTE		        c_v+60
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+58
+	BYTE	W05
+	BYTE		        c_v+56
+	BYTE	W05
+	BYTE		        c_v+54
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+52
+	BYTE	W05
+	BYTE		        c_v+50
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v+48
+	BYTE	W05
+	BYTE		        c_v+46
+	BYTE	W05
+	BYTE		        c_v+44
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v+42
+	BYTE	W05
+	BYTE		        c_v+40
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v+38
+	BYTE	W05
+	BYTE		        c_v+36
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+34
+	BYTE	W05
+	BYTE		        c_v+32
+	BYTE	W05
+	BYTE		        c_v+30
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+28
+	BYTE	W05
+	BYTE		        c_v+25
+	BYTE	W03
+// 016   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v+23
+	BYTE	W05
+	BYTE		        c_v+21
+	BYTE	W05
+	BYTE		        c_v+19
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v+17
+	BYTE	W05
+	BYTE		        c_v+15
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+13
+	BYTE	W05
+	BYTE		        c_v+11
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+9
+	BYTE	W05
+	BYTE		        c_v+7
+	BYTE	W05
+	BYTE		        c_v+5
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+3
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v-1
+	BYTE	W05
+	BYTE		        c_v-3
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-7
+	BYTE	W05
+	BYTE		        c_v-9
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-12
+	BYTE	W05
+	BYTE		        c_v-14
+	BYTE	W04
+// 017   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-16
+	BYTE	W05
+	BYTE		        c_v-18
+	BYTE	W05
+	BYTE		        c_v-20
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v-22
+	BYTE	W05
+	BYTE		        c_v-24
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-26
+	BYTE	W05
+	BYTE		        c_v-28
+	BYTE	W05
+	BYTE		        c_v-30
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v-32
+	BYTE	W05
+	BYTE		        c_v-34
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v-36
+	BYTE	W05
+	BYTE		        c_v-38
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v-40
+	BYTE	W05
+	BYTE		        c_v-42
+	BYTE	W05
+	BYTE		        c_v-44
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v-46
+	BYTE	W05
+	BYTE		        c_v-49
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v-51
+	BYTE	W05
+	BYTE		        c_v-53
+	BYTE	W05
+// 018   ----------------------------------------
+	BYTE		        c_v-55
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-57
+	BYTE	W05
+	BYTE		        c_v-59
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-61
+	BYTE	W09
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v-59
+	BYTE	W05
+	BYTE		        c_v-57
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v-54
+	BYTE	W05
+	BYTE		        c_v-52
+	BYTE	W05
+	BYTE		        c_v-50
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v-47
+	BYTE	W05
+	BYTE		        c_v-45
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v-42
+	BYTE	W05
+	BYTE		        c_v-40
+	BYTE	W05
+	BYTE		        c_v-38
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-35
+	BYTE	W05
+	BYTE		        c_v-33
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-30
+	BYTE	W05
+	BYTE		        c_v-28
+	BYTE	W04
+// 019   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-26
+	BYTE	W05
+	BYTE		        c_v-23
+	BYTE	W05
+	BYTE		        c_v-21
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v-18
+	BYTE	W05
+	BYTE		        c_v-16
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-14
+	BYTE	W05
+	BYTE		        c_v-11
+	BYTE	W05
+	BYTE		        c_v-9
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v-7
+	BYTE	W05
+	BYTE		        c_v-4
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v-2
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+3
+	BYTE	W05
+	BYTE		        c_v+5
+	BYTE	W05
+	BYTE		        c_v+8
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+10
+	BYTE	W05
+	BYTE		        c_v+13
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v+15
+	BYTE	W05
+	BYTE		        c_v+17
+	BYTE	W05
+// 020   ----------------------------------------
+	BYTE		        c_v+20
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v+22
+	BYTE	W05
+	BYTE		        c_v+25
+	BYTE	W02
+	BYTE		N10     En5 
+	BYTE	W03
+	BYTE		PAN     c_v+27
+	BYTE	W05
+	BYTE		        c_v+29
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+32
+	BYTE	W05
+	BYTE		        c_v+34
+	BYTE	W05
+	BYTE		        c_v+36
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+39
+	BYTE	W05
+	BYTE		        c_v+41
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v+44
+	BYTE	W05
+	BYTE		        c_v+46
+	BYTE	W05
+	BYTE		        c_v+48
+	BYTE		N10     En5 
+	BYTE	W05
+	BYTE		PAN     c_v+51
+	BYTE	W05
+	BYTE		        c_v+53
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+56
+	BYTE	W05
+	BYTE		        c_v+58
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+60
+	BYTE	W11
+// 021   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W09
+	BYTE		PAN     c_v+58
+	BYTE	W03
+	BYTE		N10     En5 
+	BYTE	W02
+	BYTE		PAN     c_v+56
+	BYTE	W05
+	BYTE		        c_v+53
+	BYTE	W05
+	BYTE		        c_v+51
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v+48
+	BYTE	W05
+	BYTE		        c_v+46
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v+43
+	BYTE	W05
+	BYTE		        c_v+41
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+39
+	BYTE	W05
+	BYTE		        c_v+36
+	BYTE	W05
+	BYTE		        c_v+34
+	BYTE	W01
+	BYTE		N10     En5 
+	BYTE	W04
+	BYTE		PAN     c_v+31
+	BYTE	W05
+	BYTE		        c_v+29
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v+26
+	BYTE	W05
+	BYTE		        c_v+24
+	BYTE	W05
+	BYTE		        c_v+22
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v+19
+	BYTE	W05
+	BYTE		        c_v+17
+	BYTE	W02
+// 022   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+14
+	BYTE	W05
+	BYTE		        c_v+12
+	BYTE	W04
+	BYTE		N10     En5 
+	BYTE	W01
+	BYTE		PAN     c_v+9
+	BYTE	W05
+	BYTE		        c_v+7
+	BYTE	W05
+	BYTE		        c_v+5
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+2
+	BYTE	W05
+	BYTE		        c_v+0
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v-3
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE	W05
+	BYTE		        c_v-8
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-10
+	BYTE	W05
+	BYTE		        c_v-13
+	BYTE	W02
+	BYTE		N10     En5 
+	BYTE	W03
+	BYTE		PAN     c_v-15
+	BYTE	W05
+	BYTE		        c_v-17
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-20
+	BYTE	W05
+	BYTE		        c_v-22
+	BYTE	W05
+	BYTE		        c_v-25
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v-27
+	BYTE	W05
+	BYTE		        c_v-30
+	BYTE	W03
+// 023   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-32
+	BYTE	W05
+	BYTE		        c_v-34
+	BYTE	W05
+	BYTE		        c_v-37
+	BYTE		N10     En5 
+	BYTE	W05
+	BYTE		PAN     c_v-39
+	BYTE	W05
+	BYTE		        c_v-42
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v-44
+	BYTE	W05
+	BYTE		        c_v-47
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v-49
+	BYTE	W05
+	BYTE		        c_v-51
+	BYTE	W05
+	BYTE		        c_v-54
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v-56
+	BYTE	W05
+	BYTE		        c_v-59
+	BYTE	W03
+	BYTE		N10     En5 
+	BYTE	W02
+	BYTE		PAN     c_v-61
+	BYTE	W10
+	BYTE		        c_v-63
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-61
+	BYTE	W05
+	BYTE		        c_v-59
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-57
+	BYTE	W05
+	BYTE		        c_v-55
+	BYTE	W04
+// 024   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-53
+	BYTE	W05
+	BYTE		        c_v-51
+	BYTE	W05
+	BYTE		        c_v-49
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v-47
+	BYTE	W05
+	BYTE		        c_v-45
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-43
+	BYTE	W05
+	BYTE		        c_v-41
+	BYTE	W05
+	BYTE		        c_v-39
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v-37
+	BYTE	W05
+	BYTE		        c_v-35
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v-33
+	BYTE	W05
+	BYTE		        c_v-31
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v-29
+	BYTE	W05
+	BYTE		        c_v-27
+	BYTE	W05
+	BYTE		        c_v-25
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v-23
+	BYTE	W05
+	BYTE		        c_v-20
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v-18
+	BYTE	W05
+	BYTE		        c_v-16
+	BYTE	W05
+// 025   ----------------------------------------
+	BYTE		        c_v-14
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v-12
+	BYTE	W05
+	BYTE		        c_v-10
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v-8
+	BYTE	W05
+	BYTE		        c_v-6
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-4
+	BYTE	W05
+	BYTE		        c_v-2
+	BYTE	W05
+	BYTE		        c_v+0
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+2
+	BYTE	W05
+	BYTE		        c_v+4
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v+6
+	BYTE	W05
+	BYTE		        c_v+8
+	BYTE	W05
+	BYTE		        c_v+10
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v+12
+	BYTE	W05
+	BYTE		        c_v+14
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+16
+	BYTE	W05
+	BYTE		        c_v+18
+	BYTE	W04
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+21
+	BYTE	W05
+	BYTE		        c_v+23
+	BYTE	W05
+	BYTE		        c_v+25
+	BYTE	W01
+// 026   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W04
+	BYTE		PAN     c_v+27
+	BYTE	W05
+	BYTE		        c_v+29
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v+31
+	BYTE	W05
+	BYTE		        c_v+33
+	BYTE	W05
+	BYTE		        c_v+35
+	BYTE		N10     Bn4 
+	BYTE	W05
+	BYTE		PAN     c_v+37
+	BYTE	W05
+	BYTE		        c_v+39
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		PAN     c_v+41
+	BYTE	W05
+	BYTE		        c_v+43
+	BYTE	W04
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+45
+	BYTE	W05
+	BYTE		        c_v+47
+	BYTE	W05
+	BYTE		        c_v+49
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v+51
+	BYTE	W05
+	BYTE		        c_v+53
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v+55
+	BYTE	W05
+	BYTE		        c_v+57
+	BYTE	W05
+	BYTE		        c_v+59
+	BYTE		N10     An4 
+	BYTE	W05
+	BYTE		PAN     c_v+61
+	BYTE	W05
+	BYTE		VOL     100*CaveTheme_mvl/mxv
+	BYTE	W02
+// 027   ----------------------------------------
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		VOL     99*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        98*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v+59
+	BYTE		VOL     97*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		VOL     96*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+57
+	BYTE	W03
+	BYTE		VOL     95*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+55
+	BYTE	W02
+	BYTE		VOL     94*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v+53
+	BYTE		VOL     93*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        92*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+50
+	BYTE	W04
+	BYTE		VOL     91*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v+48
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		VOL     90*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v+46
+	BYTE	W02
+	BYTE		VOL     89*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        88*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+44
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		VOL     87*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v+41
+	BYTE	W02
+	BYTE		VOL     86*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v+39
+	BYTE	W02
+	BYTE		VOL     85*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v+37
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		VOL     84*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        83*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v+35
+	BYTE	W04
+	BYTE		VOL     82*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v+32
+	BYTE	W02
+	BYTE		VOL     81*CaveTheme_mvl/mxv
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		PAN     c_v+30
+	BYTE	W01
+	BYTE		VOL     80*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        79*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v+28
+	BYTE	W04
+	BYTE		VOL     78*CaveTheme_mvl/mxv
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v+26
+	BYTE	W02
+	BYTE		VOL     77*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v+24
+	BYTE	W01
+	BYTE		VOL     76*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		PAN     c_v+21
+	BYTE	W01
+// 028   ----------------------------------------
+	BYTE		VOL     75*CaveTheme_mvl/mxv
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		VOL     74*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v+19
+	BYTE	W03
+	BYTE		VOL     73*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+17
+	BYTE	W01
+	BYTE		VOL     72*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W02
+	BYTE		PAN     c_v+15
+	BYTE	W01
+	BYTE		VOL     71*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        70*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v+12
+	BYTE	W03
+	BYTE		VOL     69*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+10
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		VOL     68*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+8
+	BYTE	W01
+	BYTE		VOL     67*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		PAN     c_v+6
+	BYTE		VOL     66*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		VOL     65*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+3
+	BYTE	W03
+	BYTE		VOL     64*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+1
+	BYTE	W01
+	BYTE		VOL     63*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-1
+	BYTE		VOL     62*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        61*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-3
+	BYTE	W03
+	BYTE		VOL     60*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-5
+	BYTE	W01
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		VOL     59*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-8
+	BYTE		VOL     58*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        57*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-10
+	BYTE	W03
+	BYTE		VOL     56*CaveTheme_mvl/mxv
+	BYTE		N10     Bn4 
+	BYTE	W02
+	BYTE		PAN     c_v-12
+	BYTE	W02
+	BYTE		VOL     55*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-14
+	BYTE		VOL     54*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        53*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-17
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		VOL     52*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-19
+	BYTE	W02
+	BYTE		VOL     51*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-21
+	BYTE	W02
+// 029   ----------------------------------------
+	BYTE		VOL     50*CaveTheme_mvl/mxv
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		VOL     49*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-23
+	BYTE	W04
+	BYTE		VOL     48*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-26
+	BYTE	W02
+	BYTE		VOL     47*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		PAN     c_v-28
+	BYTE	W02
+	BYTE		VOL     46*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-30
+	BYTE	W01
+	BYTE		VOL     45*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        44*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-32
+	BYTE	W01
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		VOL     43*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-35
+	BYTE	W02
+	BYTE		VOL     42*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-37
+	BYTE	W01
+	BYTE		VOL     41*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		VOL     40*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-39
+	BYTE	W04
+	BYTE		VOL     39*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-41
+	BYTE	W02
+	BYTE		VOL     38*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-43
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		VOL     37*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		PAN     c_v-46
+	BYTE	W01
+	BYTE		VOL     36*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        35*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-48
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		VOL     34*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-50
+	BYTE	W01
+	BYTE		VOL     33*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		PAN     c_v-52
+	BYTE	W01
+	BYTE		VOL     32*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        31*CaveTheme_mvl/mxv
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		PAN     c_v-55
+	BYTE	W03
+	BYTE		VOL     30*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-57
+	BYTE	W03
+	BYTE		VOL     29*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-59
+	BYTE	W01
+	BYTE		VOL     28*CaveTheme_mvl/mxv
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		PAN     c_v-61
+	BYTE		VOL     27*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        26*CaveTheme_mvl/mxv
+	BYTE	W05
+// 030   ----------------------------------------
+	BYTE		        25*CaveTheme_mvl/mxv
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		VOL     24*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        23*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        22*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W03
+	BYTE		VOL     21*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        20*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        19*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W03
+	BYTE		VOL     18*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        17*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        16*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		VOL     15*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        14*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        13*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		VOL     12*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        11*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        10*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		N10     An4 
+	BYTE	W01
+	BYTE		VOL     9*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        8*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        7*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		N10     Bn4 
+	BYTE	W01
+	BYTE		VOL     6*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        5*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        4*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        3*CaveTheme_mvl/mxv
+	BYTE		N10     An4 
+	BYTE	W04
+	BYTE		VOL     2*CaveTheme_mvl/mxv
+	BYTE	W06
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+CaveTheme_2:
+	BYTE		VOL     127*CaveTheme_mvl/mxv
+	BYTE	KEYSH   CaveTheme_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   60
+	BYTE		PAN     c_v-22
+	BYTE	W03
+	BYTE		N14     An2   v100
+	BYTE	W16
+	BYTE		        En3 
+	BYTE	W16
+	BYTE		        Fn3 
+	BYTE	W16
+	BYTE		N42     Gn3 
+	BYTE	W44
+	BYTE	W01
+// 001   ----------------------------------------
+CaveTheme_2_001:
+	BYTE	W03
+	BYTE		N14     An2   v100
+	BYTE	W16
+	BYTE		        En3 
+	BYTE	W16
+	BYTE		        Fn3 
+	BYTE	W16
+	BYTE		N42     Gn3 
+	BYTE	W44
+	BYTE	W01
+	BYTE	PEND
+// 002   ----------------------------------------
+CaveTheme_2_002:
+	BYTE	W03
+	BYTE		N14     Gn2   v100
+	BYTE	W16
+	BYTE		        Dn3 
+	BYTE	W16
+	BYTE		        En3 
+	BYTE	W16
+	BYTE		N42     Fn3 
+	BYTE	W44
+	BYTE	W01
+	BYTE	PEND
+// 003   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_002
+// 004   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_001
+// 005   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_001
+// 006   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_002
+// 007   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_002
+// 008   ----------------------------------------
+CaveTheme_2_008:
+	BYTE	W04
+	BYTE		N14     An2   v100
+	BYTE	W16
+	BYTE		        En3 
+	BYTE	W16
+	BYTE		        Fn3 
+	BYTE	W16
+	BYTE		        Cn4 
+	BYTE	W16
+	BYTE		        Bn3 
+	BYTE	W16
+	BYTE		        An3 
+	BYTE	W12
+	BYTE	PEND
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_008
+// 010   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_008
+// 011   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_008
+// 012   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_001
+// 013   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_001
+// 014   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_002
+// 015   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_002
+// 016   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_001
+// 017   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_001
+// 018   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_002
+// 019   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_002
+// 020   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_008
+// 021   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_008
+// 022   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_008
+// 023   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_008
+// 024   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_001
+// 025   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_001
+// 026   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_2_002
+// 027   ----------------------------------------
+	BYTE	W02
+	BYTE		VOL     100*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N14     Gn2   v100
+	BYTE	W03
+	BYTE		VOL     99*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        98*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        97*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        96*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N14     Dn3 
+	BYTE	W02
+	BYTE		VOL     95*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        94*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        93*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        92*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		N14     En3 
+	BYTE	W01
+	BYTE		VOL     91*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        90*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        89*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        88*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        87*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N42     Fn3 
+	BYTE	W03
+	BYTE		VOL     86*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        85*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        84*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        83*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        82*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        81*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        80*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        79*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        78*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        77*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        76*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        75*CaveTheme_mvl/mxv
+	BYTE	W01
+// 028   ----------------------------------------
+	BYTE	W02
+	BYTE		        74*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N14     An2 
+	BYTE	W03
+	BYTE		VOL     73*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        72*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        71*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        70*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N14     En3 
+	BYTE	W02
+	BYTE		VOL     69*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        68*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        67*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        66*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        65*CaveTheme_mvl/mxv
+	BYTE		N14     Fn3 
+	BYTE	W04
+	BYTE		VOL     64*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        63*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        62*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        61*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N42     Gn3 
+	BYTE	W03
+	BYTE		VOL     60*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        59*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        58*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        57*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        56*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        55*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        54*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        53*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        52*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        51*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        50*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        49*CaveTheme_mvl/mxv
+	BYTE	W01
+// 029   ----------------------------------------
+	BYTE	W02
+	BYTE		        48*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N14     An2 
+	BYTE	W02
+	BYTE		VOL     47*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        46*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        45*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        44*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N14     En3 
+	BYTE	W01
+	BYTE		VOL     43*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        42*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        41*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        40*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        39*CaveTheme_mvl/mxv
+	BYTE		N14     Fn3 
+	BYTE	W04
+	BYTE		VOL     38*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        37*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        36*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        35*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N42     Gn3 
+	BYTE	W02
+	BYTE		VOL     34*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        33*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        32*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        31*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        30*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        29*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        28*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        27*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        26*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        25*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        24*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        23*CaveTheme_mvl/mxv
+	BYTE	W03
+// 030   ----------------------------------------
+	BYTE	W02
+	BYTE		        22*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N14     Gn2 
+	BYTE	W02
+	BYTE		VOL     21*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        20*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        19*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        18*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N14     Dn3 
+	BYTE	W01
+	BYTE		VOL     17*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        16*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        15*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        14*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        13*CaveTheme_mvl/mxv
+	BYTE		N14     En3 
+	BYTE	W03
+	BYTE		VOL     12*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        11*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        10*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        9*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N42     Fn3 
+	BYTE	W02
+	BYTE		VOL     8*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        7*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        6*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        5*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        4*CaveTheme_mvl/mxv
+	BYTE	W24
+	BYTE	W02
+	BYTE	FINE
+
+//**************** Track 3 (Midi-Chn.3) ****************//
+
+CaveTheme_3:
+	BYTE		VOL     127*CaveTheme_mvl/mxv
+	BYTE	KEYSH   CaveTheme_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   99
+	BYTE		PAN     c_v+26
+	BYTE		N14     An2   v100
+	BYTE	W16
+	BYTE		        En3 
+	BYTE	W16
+	BYTE		        Fn3 
+	BYTE	W16
+	BYTE		N42     Gn3 
+	BYTE	W48
+// 001   ----------------------------------------
+CaveTheme_3_001:
+	BYTE		N14     An2   v100
+	BYTE	W16
+	BYTE		        En3 
+	BYTE	W16
+	BYTE		        Fn3 
+	BYTE	W16
+	BYTE		N42     Gn3 
+	BYTE	W48
+	BYTE	PEND
+// 002   ----------------------------------------
+CaveTheme_3_002:
+	BYTE		N14     Gn2   v100
+	BYTE	W16
+	BYTE		        Dn3 
+	BYTE	W16
+	BYTE		        En3 
+	BYTE	W16
+	BYTE		N42     Fn3 
+	BYTE	W48
+	BYTE	PEND
+// 003   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_002
+// 004   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_001
+// 005   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_001
+// 006   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_002
+// 007   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_002
+// 008   ----------------------------------------
+CaveTheme_3_008:
+	BYTE		N14     An2   v100
+	BYTE	W16
+	BYTE		        En3 
+	BYTE	W16
+	BYTE		        Fn3 
+	BYTE	W16
+	BYTE		        Cn4 
+	BYTE	W16
+	BYTE		        Bn3 
+	BYTE	W16
+	BYTE		        An3 
+	BYTE	W16
+	BYTE	PEND
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_008
+// 010   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_008
+// 011   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_008
+// 012   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_001
+// 013   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_001
+// 014   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_002
+// 015   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_002
+// 016   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_001
+// 017   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_001
+// 018   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_002
+// 019   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_002
+// 020   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_008
+// 021   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_008
+// 022   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_008
+// 023   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_008
+// 024   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_001
+// 025   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_001
+// 026   ----------------------------------------
+	BYTE	PATT
+	 POIN2	CaveTheme_3_002
+// 027   ----------------------------------------
+	BYTE		N14     Gn2   v100
+	BYTE	W01
+	BYTE		VOL     99*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        98*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        97*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        96*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        95*CaveTheme_mvl/mxv
+	BYTE		N14     Dn3 
+	BYTE	W04
+	BYTE		VOL     94*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        93*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        92*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        91*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N14     En3 
+	BYTE	W03
+	BYTE		VOL     90*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        89*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        88*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        87*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N42     Fn3 
+	BYTE	W02
+	BYTE		VOL     86*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        85*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        84*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        83*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        82*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        81*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        80*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        79*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        78*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        77*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        76*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        75*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        74*CaveTheme_mvl/mxv
+	BYTE	W01
+// 028   ----------------------------------------
+	BYTE		N14     An2 
+	BYTE	W02
+	BYTE		VOL     73*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        72*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        71*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        70*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		N14     En3 
+	BYTE	W01
+	BYTE		VOL     69*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        68*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        67*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        66*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        65*CaveTheme_mvl/mxv
+	BYTE		N14     Fn3 
+	BYTE	W03
+	BYTE		VOL     64*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        63*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        62*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        61*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N42     Gn3 
+	BYTE	W02
+	BYTE		VOL     60*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        59*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        58*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        57*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        56*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        55*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        54*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        53*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        52*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        51*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        50*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        49*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        48*CaveTheme_mvl/mxv
+	BYTE	W01
+// 029   ----------------------------------------
+	BYTE		N14     An2 
+	BYTE	W04
+	BYTE		VOL     47*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        46*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        45*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        44*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		N14     En3 
+	BYTE	W01
+	BYTE		VOL     43*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        42*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        41*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        40*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        39*CaveTheme_mvl/mxv
+	BYTE		N14     Fn3 
+	BYTE	W05
+	BYTE		VOL     38*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        37*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        36*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        35*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		N42     Gn3 
+	BYTE	W04
+	BYTE		VOL     34*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        33*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        32*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        31*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        30*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        29*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        28*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        27*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        26*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        25*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        24*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        23*CaveTheme_mvl/mxv
+	BYTE	W04
+// 030   ----------------------------------------
+	BYTE		N14     Gn2 
+	BYTE	W01
+	BYTE		VOL     22*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        21*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        20*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        19*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        18*CaveTheme_mvl/mxv
+	BYTE		N14     Dn3 
+	BYTE	W03
+	BYTE		VOL     17*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        16*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        15*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        14*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		N14     En3 
+	BYTE	W02
+	BYTE		VOL     13*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        12*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        11*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        10*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		N42     Fn3 
+	BYTE	W01
+	BYTE		VOL     9*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        8*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        7*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        6*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        5*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        4*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        3*CaveTheme_mvl/mxv
+	BYTE	W20
+	BYTE	FINE
+
+//**************** Track 4 (Midi-Chn.4) ****************//
+
+CaveTheme_4:
+	BYTE		VOL     127*CaveTheme_mvl/mxv
+	BYTE	KEYSH   CaveTheme_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   122
+	BYTE		PAN     c_v+56
+	BYTE		        c_v+53
+	BYTE	W05
+	BYTE		        c_v+49
+	BYTE	W05
+	BYTE		        c_v+46
+	BYTE	W05
+	BYTE		        c_v+42
+	BYTE	W05
+	BYTE		        c_v+39
+	BYTE	W04
+	BYTE		TIE     Cn4   v100
+	BYTE	W01
+	BYTE		PAN     c_v+35
+	BYTE	W05
+	BYTE		        c_v+32
+	BYTE	W05
+	BYTE		        c_v+28
+	BYTE	W05
+	BYTE		        c_v+24
+	BYTE	W05
+	BYTE		        c_v+21
+	BYTE	W05
+	BYTE		        c_v+17
+	BYTE	W05
+	BYTE		        c_v+14
+	BYTE	W05
+	BYTE		        c_v+10
+	BYTE	W05
+	BYTE		        c_v+7
+	BYTE	W05
+	BYTE		        c_v+3
+	BYTE	W05
+	BYTE		        c_v-1
+	BYTE	W05
+	BYTE		        c_v-4
+	BYTE	W05
+	BYTE		        c_v-8
+	BYTE	W05
+	BYTE		        c_v-11
+	BYTE	W05
+	BYTE		        c_v-15
+	BYTE	W01
+// 001   ----------------------------------------
+	BYTE	W04
+	BYTE		        c_v-18
+	BYTE	W05
+	BYTE		        c_v-22
+	BYTE	W05
+	BYTE		        c_v-25
+	BYTE	W05
+	BYTE		        c_v-29
+	BYTE	W05
+	BYTE		        c_v-33
+	BYTE	W05
+	BYTE		        c_v-36
+	BYTE	W05
+	BYTE		        c_v-40
+	BYTE	W05
+	BYTE		        c_v-43
+	BYTE	W05
+	BYTE		        c_v-47
+	BYTE	W05
+	BYTE		        c_v-50
+	BYTE	W05
+	BYTE		        c_v-54
+	BYTE	W05
+	BYTE		        c_v-58
+	BYTE	W05
+	BYTE		        c_v-61
+	BYTE	W13
+	BYTE		        c_v-59
+	BYTE	W05
+	BYTE		        c_v-55
+	BYTE	W05
+	BYTE		        c_v-51
+	BYTE	W05
+	BYTE		        c_v-46
+	BYTE	W04
+// 002   ----------------------------------------
+	BYTE	W01
+	BYTE		        c_v-42
+	BYTE	W05
+	BYTE		        c_v-37
+	BYTE	W05
+	BYTE		        c_v-33
+	BYTE	W05
+	BYTE		        c_v-28
+	BYTE	W05
+	BYTE		        c_v-24
+	BYTE	W05
+	BYTE		        c_v-19
+	BYTE	W05
+	BYTE		        c_v-15
+	BYTE	W05
+	BYTE		        c_v-11
+	BYTE	W05
+	BYTE		        c_v-6
+	BYTE	W05
+	BYTE		        c_v-2
+	BYTE	W05
+	BYTE		        c_v+3
+	BYTE	W05
+	BYTE		        c_v+7
+	BYTE	W05
+	BYTE		        c_v+12
+	BYTE	W05
+	BYTE		        c_v+16
+	BYTE	W05
+	BYTE		        c_v+21
+	BYTE	W05
+	BYTE		        c_v+25
+	BYTE	W05
+	BYTE		        c_v+29
+	BYTE	W05
+	BYTE		        c_v+34
+	BYTE	W05
+	BYTE		        c_v+38
+	BYTE	W05
+// 003   ----------------------------------------
+	BYTE		        c_v+43
+	BYTE	W05
+	BYTE		        c_v+47
+	BYTE	W05
+	BYTE		        c_v+52
+	BYTE	W05
+	BYTE		        c_v+56
+	BYTE	W05
+	BYTE		        c_v+61
+	BYTE	W13
+	BYTE		        c_v+60
+	BYTE	W05
+	BYTE		        c_v+56
+	BYTE	W05
+	BYTE		        c_v+51
+	BYTE	W05
+	BYTE		        c_v+46
+	BYTE	W05
+	BYTE		        c_v+41
+	BYTE	W05
+	BYTE		        c_v+36
+	BYTE	W05
+	BYTE		        c_v+31
+	BYTE	W05
+	BYTE		        c_v+27
+	BYTE	W05
+	BYTE		        c_v+22
+	BYTE	W05
+	BYTE		        c_v+17
+	BYTE	W05
+	BYTE		        c_v+12
+	BYTE	W05
+	BYTE		        c_v+7
+	BYTE	W05
+	BYTE		        c_v+2
+	BYTE	W03
+// 004   ----------------------------------------
+	BYTE	W02
+	BYTE		        c_v-2
+	BYTE	W05
+	BYTE		        c_v-7
+	BYTE	W05
+	BYTE		        c_v-12
+	BYTE	W05
+	BYTE		        c_v-17
+	BYTE	W05
+	BYTE		        c_v-22
+	BYTE	W05
+	BYTE		        c_v-27
+	BYTE	W05
+	BYTE		        c_v-32
+	BYTE	W05
+	BYTE		        c_v-36
+	BYTE	W05
+	BYTE		        c_v-41
+	BYTE	W05
+	BYTE		        c_v-46
+	BYTE	W05
+	BYTE		        c_v-51
+	BYTE	W05
+	BYTE		        c_v-56
+	BYTE	W05
+	BYTE		        c_v-61
+	BYTE	W17
+	BYTE		        c_v-57
+	BYTE	W05
+	BYTE		        c_v-52
+	BYTE	W05
+	BYTE		        c_v-48
+	BYTE	W05
+	BYTE		        c_v-43
+	BYTE	W02
+// 005   ----------------------------------------
+	BYTE		TIE     En4 
+	BYTE	W03
+	BYTE		PAN     c_v-39
+	BYTE	W05
+	BYTE		        c_v-34
+	BYTE	W05
+	BYTE		        c_v-30
+	BYTE	W05
+	BYTE		        c_v-25
+	BYTE	W05
+	BYTE		        c_v-21
+	BYTE	W05
+	BYTE		        c_v-16
+	BYTE	W05
+	BYTE		        c_v-12
+	BYTE	W05
+	BYTE		        c_v-7
+	BYTE	W05
+	BYTE		        c_v-3
+	BYTE	W05
+	BYTE		        c_v+2
+	BYTE	W05
+	BYTE		        c_v+6
+	BYTE	W05
+	BYTE		        c_v+11
+	BYTE	W05
+	BYTE		        c_v+15
+	BYTE	W05
+	BYTE		        c_v+20
+	BYTE	W05
+	BYTE		        c_v+24
+	BYTE	W05
+	BYTE		        c_v+29
+	BYTE	W05
+	BYTE		        c_v+33
+	BYTE	W05
+	BYTE		        c_v+38
+	BYTE	W05
+	BYTE		        c_v+42
+	BYTE	W03
+	BYTE		EOT     Cn4 
+// 006   ----------------------------------------
+	BYTE	W02
+	BYTE		PAN     c_v+47
+	BYTE	W05
+	BYTE		        c_v+51
+	BYTE	W05
+	BYTE		        c_v+56
+	BYTE	W05
+	BYTE		        c_v+61
+	BYTE	W09
+	BYTE		        c_v+60
+	BYTE	W05
+	BYTE		        c_v+58
+	BYTE	W05
+	BYTE		        c_v+56
+	BYTE	W05
+	BYTE		        c_v+54
+	BYTE	W05
+	BYTE		        c_v+52
+	BYTE	W05
+	BYTE		        c_v+50
+	BYTE	W05
+	BYTE		        c_v+47
+	BYTE	W05
+	BYTE		        c_v+45
+	BYTE	W05
+	BYTE		        c_v+43
+	BYTE	W05
+	BYTE		        c_v+41
+	BYTE	W05
+	BYTE		        c_v+39
+	BYTE	W05
+	BYTE		        c_v+36
+	BYTE	W05
+	BYTE		        c_v+34
+	BYTE	W05
+	BYTE		        c_v+32
+	BYTE	W05
+// 007   ----------------------------------------
+	BYTE		        c_v+30
+	BYTE	W05
+	BYTE		        c_v+28
+	BYTE	W05
+	BYTE		        c_v+26
+	BYTE	W05
+	BYTE		        c_v+23
+	BYTE	W05
+	BYTE		        c_v+21
+	BYTE	W05
+	BYTE		        c_v+19
+	BYTE	W05
+	BYTE		        c_v+17
+	BYTE	W05
+	BYTE		        c_v+15
+	BYTE	W05
+	BYTE		        c_v+12
+	BYTE	W05
+	BYTE		        c_v+10
+	BYTE	W05
+	BYTE		        c_v+8
+	BYTE	W05
+	BYTE		        c_v+6
+	BYTE	W05
+	BYTE		        c_v+4
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W05
+	BYTE		        c_v-1
+	BYTE	W05
+	BYTE		        c_v-3
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE	W05
+	BYTE		        c_v-7
+	BYTE	W05
+	BYTE		        c_v-9
+	BYTE	W05
+	BYTE		        c_v-12
+	BYTE	W01
+// 008   ----------------------------------------
+	BYTE	W04
+	BYTE		        c_v-14
+	BYTE	W05
+	BYTE		        c_v-16
+	BYTE	W05
+	BYTE		        c_v-18
+	BYTE	W05
+	BYTE		        c_v-20
+	BYTE	W05
+	BYTE		        c_v-23
+	BYTE	W05
+	BYTE		        c_v-25
+	BYTE	W05
+	BYTE		        c_v-27
+	BYTE	W05
+	BYTE		        c_v-29
+	BYTE	W05
+	BYTE		        c_v-31
+	BYTE	W05
+	BYTE		        c_v-34
+	BYTE	W05
+	BYTE		        c_v-36
+	BYTE	W05
+	BYTE		        c_v-38
+	BYTE	W05
+	BYTE		        c_v-40
+	BYTE	W05
+	BYTE		        c_v-42
+	BYTE	W05
+	BYTE		        c_v-44
+	BYTE	W05
+	BYTE		        c_v-47
+	BYTE	W05
+	BYTE		        c_v-49
+	BYTE	W05
+	BYTE		        c_v-51
+	BYTE	W05
+	BYTE		        c_v-53
+	BYTE	W02
+// 009   ----------------------------------------
+	BYTE	W03
+	BYTE		        c_v-55
+	BYTE	W05
+	BYTE		        c_v-58
+	BYTE	W05
+	BYTE		        c_v-60
+	BYTE	W13
+	BYTE		        c_v-62
+	BYTE	W05
+	BYTE		        c_v-59
+	BYTE	W05
+	BYTE		        c_v-55
+	BYTE	W05
+	BYTE		        c_v-51
+	BYTE	W05
+	BYTE		        c_v-47
+	BYTE	W05
+	BYTE		        c_v-44
+	BYTE	W05
+	BYTE		        c_v-40
+	BYTE	W05
+	BYTE		        c_v-36
+	BYTE	W05
+	BYTE		        c_v-32
+	BYTE	W05
+	BYTE		        c_v-29
+	BYTE	W05
+	BYTE		        c_v-25
+	BYTE	W05
+	BYTE		        c_v-21
+	BYTE	W05
+	BYTE		        c_v-17
+	BYTE	W05
+	BYTE		        c_v-14
+	BYTE	W05
+// 010   ----------------------------------------
+	BYTE		        c_v-10
+	BYTE	W05
+	BYTE		        c_v-6
+	BYTE	W05
+	BYTE		        c_v-2
+	BYTE	W05
+	BYTE		        c_v+2
+	BYTE	W05
+	BYTE		        c_v+5
+	BYTE	W05
+	BYTE		        c_v+9
+	BYTE	W05
+	BYTE		        c_v+13
+	BYTE	W05
+	BYTE		        c_v+17
+	BYTE	W05
+	BYTE		        c_v+20
+	BYTE	W05
+	BYTE		        c_v+24
+	BYTE	W05
+	BYTE		        c_v+28
+	BYTE	W05
+	BYTE		        c_v+32
+	BYTE	W05
+	BYTE		        c_v+35
+	BYTE	W05
+	BYTE		        c_v+39
+	BYTE	W05
+	BYTE		        c_v+43
+	BYTE	W05
+	BYTE		        c_v+47
+	BYTE	W05
+	BYTE		        c_v+50
+	BYTE	W05
+	BYTE		        c_v+54
+	BYTE	W05
+	BYTE		        c_v+58
+	BYTE	W06
+// 011   ----------------------------------------
+	BYTE	W01
+	BYTE		        c_v+60
+	BYTE	W05
+	BYTE		        c_v+58
+	BYTE	W05
+	BYTE		        c_v+56
+	BYTE	W05
+	BYTE		        c_v+54
+	BYTE	W05
+	BYTE		        c_v+51
+	BYTE	W05
+	BYTE		        c_v+49
+	BYTE	W05
+	BYTE		        c_v+47
+	BYTE	W05
+	BYTE		        c_v+45
+	BYTE	W05
+	BYTE		        c_v+42
+	BYTE	W05
+	BYTE		        c_v+40
+	BYTE	W05
+	BYTE		        c_v+38
+	BYTE	W05
+	BYTE		        c_v+36
+	BYTE	W05
+	BYTE		        c_v+33
+	BYTE	W05
+	BYTE		        c_v+31
+	BYTE	W05
+	BYTE		        c_v+29
+	BYTE	W05
+	BYTE		        c_v+26
+	BYTE	W05
+	BYTE		        c_v+24
+	BYTE	W05
+	BYTE		        c_v+22
+	BYTE	W05
+	BYTE		        c_v+20
+	BYTE	W05
+	BYTE		EOT     En4 
+// 012   ----------------------------------------
+	BYTE		PAN     c_v+17
+	BYTE	W05
+	BYTE		        c_v+15
+	BYTE	W05
+	BYTE		        c_v+13
+	BYTE	W05
+	BYTE		        c_v+11
+	BYTE	W05
+	BYTE		        c_v+8
+	BYTE	W04
+	BYTE		TIE     Cn4 
+	BYTE	W01
+	BYTE		PAN     c_v+6
+	BYTE	W05
+	BYTE		        c_v+4
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W05
+	BYTE		        c_v-1
+	BYTE	W05
+	BYTE		        c_v-3
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE	W05
+	BYTE		        c_v-8
+	BYTE	W05
+	BYTE		        c_v-10
+	BYTE	W05
+	BYTE		        c_v-12
+	BYTE	W05
+	BYTE		        c_v-14
+	BYTE	W05
+	BYTE		        c_v-17
+	BYTE	W05
+	BYTE		        c_v-19
+	BYTE	W05
+	BYTE		        c_v-21
+	BYTE	W05
+	BYTE		        c_v-23
+	BYTE	W05
+	BYTE		        c_v-26
+	BYTE	W01
+// 013   ----------------------------------------
+	BYTE	W04
+	BYTE		        c_v-28
+	BYTE	W05
+	BYTE		        c_v-30
+	BYTE	W05
+	BYTE		        c_v-33
+	BYTE	W05
+	BYTE		        c_v-35
+	BYTE	W05
+	BYTE		        c_v-37
+	BYTE	W05
+	BYTE		        c_v-39
+	BYTE	W05
+	BYTE		        c_v-42
+	BYTE	W05
+	BYTE		        c_v-44
+	BYTE	W05
+	BYTE		        c_v-46
+	BYTE	W05
+	BYTE		        c_v-48
+	BYTE	W05
+	BYTE		        c_v-51
+	BYTE	W05
+	BYTE		        c_v-53
+	BYTE	W05
+	BYTE		        c_v-55
+	BYTE	W05
+	BYTE		        c_v-58
+	BYTE	W05
+	BYTE		        c_v-62
+	BYTE	W05
+	BYTE		        c_v-59
+	BYTE	W05
+	BYTE		        c_v-56
+	BYTE	W05
+	BYTE		        c_v-53
+	BYTE	W05
+	BYTE		        c_v-50
+	BYTE	W02
+// 014   ----------------------------------------
+	BYTE	W03
+	BYTE		        c_v-47
+	BYTE	W05
+	BYTE		        c_v-44
+	BYTE	W05
+	BYTE		        c_v-41
+	BYTE	W05
+	BYTE		        c_v-38
+	BYTE	W05
+	BYTE		        c_v-35
+	BYTE	W05
+	BYTE		        c_v-32
+	BYTE	W05
+	BYTE		        c_v-29
+	BYTE	W05
+	BYTE		        c_v-26
+	BYTE	W05
+	BYTE		        c_v-23
+	BYTE	W05
+	BYTE		        c_v-20
+	BYTE	W05
+	BYTE		        c_v-17
+	BYTE	W05
+	BYTE		        c_v-14
+	BYTE	W05
+	BYTE		        c_v-11
+	BYTE	W05
+	BYTE		        c_v-8
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE	W05
+	BYTE		        c_v-2
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W05
+	BYTE		        c_v+4
+	BYTE	W05
+	BYTE		        c_v+7
+	BYTE	W03
+// 015   ----------------------------------------
+	BYTE	W02
+	BYTE		        c_v+10
+	BYTE	W05
+	BYTE		        c_v+13
+	BYTE	W05
+	BYTE		        c_v+16
+	BYTE	W05
+	BYTE		        c_v+19
+	BYTE	W05
+	BYTE		        c_v+22
+	BYTE	W05
+	BYTE		        c_v+25
+	BYTE	W05
+	BYTE		        c_v+28
+	BYTE	W05
+	BYTE		        c_v+31
+	BYTE	W05
+	BYTE		        c_v+34
+	BYTE	W05
+	BYTE		        c_v+37
+	BYTE	W05
+	BYTE		        c_v+40
+	BYTE	W05
+	BYTE		        c_v+43
+	BYTE	W05
+	BYTE		        c_v+46
+	BYTE	W05
+	BYTE		        c_v+49
+	BYTE	W05
+	BYTE		        c_v+52
+	BYTE	W05
+	BYTE		        c_v+55
+	BYTE	W05
+	BYTE		        c_v+58
+	BYTE	W05
+	BYTE		        c_v+61
+	BYTE	W09
+// 016   ----------------------------------------
+	BYTE	W03
+	BYTE		        c_v+59
+	BYTE	W05
+	BYTE		        c_v+56
+	BYTE	W05
+	BYTE		        c_v+53
+	BYTE	W05
+	BYTE		        c_v+49
+	BYTE	W05
+	BYTE		        c_v+46
+	BYTE	W05
+	BYTE		        c_v+42
+	BYTE	W05
+	BYTE		        c_v+39
+	BYTE	W05
+	BYTE		        c_v+36
+	BYTE	W05
+	BYTE		        c_v+32
+	BYTE	W05
+	BYTE		        c_v+29
+	BYTE	W05
+	BYTE		        c_v+25
+	BYTE	W05
+	BYTE		        c_v+22
+	BYTE	W05
+	BYTE		        c_v+18
+	BYTE	W05
+	BYTE		        c_v+15
+	BYTE	W05
+	BYTE		        c_v+12
+	BYTE	W05
+	BYTE		        c_v+8
+	BYTE	W05
+	BYTE		        c_v+5
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W05
+	BYTE		        c_v-2
+	BYTE	W03
+// 017   ----------------------------------------
+	BYTE		TIE     En4 
+	BYTE	W02
+	BYTE		PAN     c_v-5
+	BYTE	W05
+	BYTE		        c_v-9
+	BYTE	W05
+	BYTE		        c_v-12
+	BYTE	W05
+	BYTE		        c_v-16
+	BYTE	W05
+	BYTE		        c_v-19
+	BYTE	W05
+	BYTE		        c_v-23
+	BYTE	W05
+	BYTE		        c_v-26
+	BYTE	W05
+	BYTE		        c_v-29
+	BYTE	W05
+	BYTE		        c_v-33
+	BYTE	W05
+	BYTE		        c_v-36
+	BYTE	W05
+	BYTE		        c_v-40
+	BYTE	W05
+	BYTE		        c_v-43
+	BYTE	W05
+	BYTE		        c_v-47
+	BYTE	W05
+	BYTE		        c_v-50
+	BYTE	W05
+	BYTE		        c_v-53
+	BYTE	W05
+	BYTE		        c_v-57
+	BYTE	W05
+	BYTE		        c_v-60
+	BYTE	W14
+	BYTE		EOT     Cn4 
+// 018   ----------------------------------------
+	BYTE		PAN     c_v-62
+	BYTE	W05
+	BYTE		        c_v-59
+	BYTE	W05
+	BYTE		        c_v-55
+	BYTE	W05
+	BYTE		        c_v-51
+	BYTE	W05
+	BYTE		        c_v-47
+	BYTE	W05
+	BYTE		        c_v-43
+	BYTE	W05
+	BYTE		        c_v-40
+	BYTE	W05
+	BYTE		        c_v-36
+	BYTE	W05
+	BYTE		        c_v-32
+	BYTE	W05
+	BYTE		        c_v-28
+	BYTE	W05
+	BYTE		        c_v-24
+	BYTE	W05
+	BYTE		        c_v-20
+	BYTE	W05
+	BYTE		        c_v-17
+	BYTE	W05
+	BYTE		        c_v-13
+	BYTE	W05
+	BYTE		        c_v-9
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE	W05
+	BYTE		        c_v-1
+	BYTE	W05
+	BYTE		        c_v+3
+	BYTE	W05
+	BYTE		        c_v+6
+	BYTE	W05
+	BYTE		        c_v+10
+	BYTE	W01
+// 019   ----------------------------------------
+	BYTE	W04
+	BYTE		        c_v+14
+	BYTE	W05
+	BYTE		        c_v+18
+	BYTE	W05
+	BYTE		        c_v+22
+	BYTE	W05
+	BYTE		        c_v+25
+	BYTE	W05
+	BYTE		        c_v+29
+	BYTE	W05
+	BYTE		        c_v+33
+	BYTE	W05
+	BYTE		        c_v+37
+	BYTE	W05
+	BYTE		        c_v+41
+	BYTE	W05
+	BYTE		        c_v+45
+	BYTE	W05
+	BYTE		        c_v+48
+	BYTE	W05
+	BYTE		        c_v+52
+	BYTE	W05
+	BYTE		        c_v+56
+	BYTE	W05
+	BYTE		        c_v+60
+	BYTE	W11
+	BYTE		        c_v+57
+	BYTE	W05
+	BYTE		        c_v+55
+	BYTE	W05
+	BYTE		        c_v+53
+	BYTE	W05
+	BYTE		        c_v+51
+	BYTE	W05
+	BYTE		        c_v+49
+	BYTE	W01
+// 020   ----------------------------------------
+	BYTE	W04
+	BYTE		        c_v+47
+	BYTE	W05
+	BYTE		        c_v+45
+	BYTE	W05
+	BYTE		        c_v+43
+	BYTE	W05
+	BYTE		        c_v+41
+	BYTE	W05
+	BYTE		        c_v+39
+	BYTE	W05
+	BYTE		        c_v+37
+	BYTE	W05
+	BYTE		        c_v+34
+	BYTE	W05
+	BYTE		        c_v+32
+	BYTE	W05
+	BYTE		        c_v+30
+	BYTE	W05
+	BYTE		        c_v+28
+	BYTE	W05
+	BYTE		        c_v+26
+	BYTE	W05
+	BYTE		        c_v+24
+	BYTE	W05
+	BYTE		        c_v+22
+	BYTE	W05
+	BYTE		        c_v+20
+	BYTE	W05
+	BYTE		        c_v+18
+	BYTE	W05
+	BYTE		        c_v+16
+	BYTE	W05
+	BYTE		        c_v+13
+	BYTE	W05
+	BYTE		        c_v+11
+	BYTE	W05
+	BYTE		        c_v+9
+	BYTE	W02
+// 021   ----------------------------------------
+	BYTE	W03
+	BYTE		        c_v+7
+	BYTE	W05
+	BYTE		        c_v+5
+	BYTE	W05
+	BYTE		        c_v+3
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W05
+	BYTE		        c_v-1
+	BYTE	W05
+	BYTE		        c_v-3
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE	W05
+	BYTE		        c_v-8
+	BYTE	W05
+	BYTE		        c_v-10
+	BYTE	W05
+	BYTE		        c_v-12
+	BYTE	W05
+	BYTE		        c_v-14
+	BYTE	W05
+	BYTE		        c_v-16
+	BYTE	W05
+	BYTE		        c_v-18
+	BYTE	W05
+	BYTE		        c_v-20
+	BYTE	W05
+	BYTE		        c_v-22
+	BYTE	W05
+	BYTE		        c_v-24
+	BYTE	W05
+	BYTE		        c_v-26
+	BYTE	W05
+	BYTE		        c_v-28
+	BYTE	W05
+	BYTE		        c_v-31
+	BYTE	W03
+// 022   ----------------------------------------
+	BYTE	W02
+	BYTE		        c_v-33
+	BYTE	W05
+	BYTE		        c_v-35
+	BYTE	W05
+	BYTE		        c_v-37
+	BYTE	W05
+	BYTE		        c_v-39
+	BYTE	W05
+	BYTE		        c_v-41
+	BYTE	W05
+	BYTE		        c_v-43
+	BYTE	W05
+	BYTE		        c_v-45
+	BYTE	W05
+	BYTE		        c_v-47
+	BYTE	W05
+	BYTE		        c_v-49
+	BYTE	W05
+	BYTE		        c_v-52
+	BYTE	W05
+	BYTE		        c_v-54
+	BYTE	W05
+	BYTE		        c_v-56
+	BYTE	W05
+	BYTE		        c_v-58
+	BYTE	W10
+	BYTE		        c_v-60
+	BYTE	W05
+	BYTE		        c_v-58
+	BYTE	W05
+	BYTE		        c_v-55
+	BYTE	W05
+	BYTE		        c_v-53
+	BYTE	W05
+	BYTE		        c_v-50
+	BYTE	W04
+// 023   ----------------------------------------
+	BYTE	W01
+	BYTE		        c_v-47
+	BYTE	W05
+	BYTE		        c_v-45
+	BYTE	W05
+	BYTE		        c_v-42
+	BYTE	W05
+	BYTE		        c_v-39
+	BYTE	W05
+	BYTE		        c_v-37
+	BYTE	W05
+	BYTE		        c_v-34
+	BYTE	W05
+	BYTE		        c_v-31
+	BYTE	W05
+	BYTE		        c_v-29
+	BYTE	W05
+	BYTE		        c_v-26
+	BYTE	W05
+	BYTE		        c_v-23
+	BYTE	W05
+	BYTE		        c_v-21
+	BYTE	W05
+	BYTE		        c_v-18
+	BYTE	W05
+	BYTE		        c_v-15
+	BYTE	W05
+	BYTE		        c_v-13
+	BYTE	W05
+	BYTE		        c_v-10
+	BYTE	W05
+	BYTE		        c_v-7
+	BYTE	W05
+	BYTE		        c_v-5
+	BYTE	W05
+	BYTE		        c_v-2
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W05
+	BYTE		EOT     En4 
+// 024   ----------------------------------------
+	BYTE		PAN     c_v+3
+	BYTE	W05
+	BYTE		        c_v+6
+	BYTE	W05
+	BYTE		        c_v+9
+	BYTE	W05
+	BYTE		        c_v+11
+	BYTE	W05
+	BYTE		        c_v+14
+	BYTE	W04
+	BYTE		TIE     Cn4 
+	BYTE	W01
+	BYTE		PAN     c_v+17
+	BYTE	W05
+	BYTE		        c_v+19
+	BYTE	W05
+	BYTE		        c_v+22
+	BYTE	W05
+	BYTE		        c_v+25
+	BYTE	W05
+	BYTE		        c_v+27
+	BYTE	W05
+	BYTE		        c_v+30
+	BYTE	W05
+	BYTE		        c_v+33
+	BYTE	W05
+	BYTE		        c_v+35
+	BYTE	W05
+	BYTE		        c_v+38
+	BYTE	W05
+	BYTE		        c_v+41
+	BYTE	W05
+	BYTE		        c_v+43
+	BYTE	W05
+	BYTE		        c_v+46
+	BYTE	W05
+	BYTE		        c_v+49
+	BYTE	W05
+	BYTE		        c_v+51
+	BYTE	W05
+	BYTE		        c_v+54
+	BYTE	W01
+// 025   ----------------------------------------
+	BYTE	W04
+	BYTE		        c_v+57
+	BYTE	W05
+	BYTE		        c_v+59
+	BYTE	W05
+	BYTE		        c_v+62
+	BYTE	W19
+	BYTE		        c_v+60
+	BYTE	W05
+	BYTE		        c_v+58
+	BYTE	W05
+	BYTE		        c_v+55
+	BYTE	W05
+	BYTE		        c_v+53
+	BYTE	W05
+	BYTE		        c_v+50
+	BYTE	W05
+	BYTE		        c_v+48
+	BYTE	W05
+	BYTE		        c_v+45
+	BYTE	W05
+	BYTE		        c_v+43
+	BYTE	W05
+	BYTE		        c_v+40
+	BYTE	W05
+	BYTE		        c_v+38
+	BYTE	W05
+	BYTE		        c_v+35
+	BYTE	W05
+	BYTE		        c_v+33
+	BYTE	W05
+	BYTE		        c_v+30
+	BYTE	W03
+// 026   ----------------------------------------
+	BYTE	W02
+	BYTE		        c_v+28
+	BYTE	W05
+	BYTE		        c_v+25
+	BYTE	W05
+	BYTE		        c_v+23
+	BYTE	W05
+	BYTE		        c_v+20
+	BYTE	W05
+	BYTE		        c_v+18
+	BYTE	W05
+	BYTE		        c_v+15
+	BYTE	W05
+	BYTE		        c_v+13
+	BYTE	W05
+	BYTE		        c_v+11
+	BYTE	W05
+	BYTE		        c_v+8
+	BYTE	W05
+	BYTE		        c_v+6
+	BYTE	W05
+	BYTE		        c_v+3
+	BYTE	W05
+	BYTE		        c_v+1
+	BYTE	W05
+	BYTE		        c_v-2
+	BYTE	W05
+	BYTE		        c_v-4
+	BYTE	W05
+	BYTE		        c_v-7
+	BYTE	W05
+	BYTE		        c_v-9
+	BYTE	W05
+	BYTE		        c_v-12
+	BYTE	W05
+	BYTE		        c_v-14
+	BYTE	W05
+	BYTE		        c_v-17
+	BYTE	W04
+// 027   ----------------------------------------
+	BYTE	W01
+	BYTE		VOL     100*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-19
+	BYTE	W04
+	BYTE		VOL     99*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-22
+	BYTE	W02
+	BYTE		VOL     98*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-24
+	BYTE	W02
+	BYTE		VOL     97*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        96*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-27
+	BYTE	W04
+	BYTE		VOL     95*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-29
+	BYTE	W02
+	BYTE		VOL     94*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-32
+	BYTE	W02
+	BYTE		VOL     93*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        92*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-34
+	BYTE	W04
+	BYTE		VOL     91*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-36
+	BYTE	W02
+	BYTE		VOL     90*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        89*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-39
+	BYTE	W05
+	BYTE		VOL     88*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-41
+	BYTE	W03
+	BYTE		VOL     87*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-44
+	BYTE	W02
+	BYTE		VOL     86*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        85*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-46
+	BYTE	W05
+	BYTE		VOL     84*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-49
+	BYTE	W03
+	BYTE		VOL     83*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-51
+	BYTE	W02
+	BYTE		VOL     82*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        81*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-54
+	BYTE	W03
+	BYTE		VOL     80*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-56
+	BYTE	W03
+	BYTE		VOL     79*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-59
+	BYTE	W01
+	BYTE		VOL     78*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        77*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-61
+	BYTE	W03
+	BYTE		VOL     76*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        75*CaveTheme_mvl/mxv
+	BYTE	W02
+// 028   ----------------------------------------
+	BYTE	W01
+	BYTE		        74*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        73*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-62
+	BYTE	W03
+	BYTE		VOL     72*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-60
+	BYTE	W03
+	BYTE		VOL     71*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-57
+	BYTE	W01
+	BYTE		VOL     70*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        69*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-54
+	BYTE	W03
+	BYTE		VOL     68*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-51
+	BYTE	W01
+	BYTE		VOL     67*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		PAN     c_v-48
+	BYTE	W01
+	BYTE		VOL     66*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        65*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-45
+	BYTE	W03
+	BYTE		VOL     64*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v-42
+	BYTE	W01
+	BYTE		VOL     63*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		PAN     c_v-39
+	BYTE	W01
+	BYTE		VOL     62*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        61*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-36
+	BYTE	W02
+	BYTE		VOL     60*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-33
+	BYTE	W01
+	BYTE		VOL     59*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        58*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-30
+	BYTE	W04
+	BYTE		VOL     57*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-27
+	BYTE	W02
+	BYTE		VOL     56*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-24
+	BYTE	W01
+	BYTE		VOL     55*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        54*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-21
+	BYTE	W04
+	BYTE		VOL     53*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-18
+	BYTE	W02
+	BYTE		VOL     52*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-15
+	BYTE	W01
+	BYTE		VOL     51*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        50*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-12
+	BYTE	W02
+	BYTE		VOL     49*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v-9
+	BYTE	W01
+// 029   ----------------------------------------
+	BYTE		TIE     En4 
+	BYTE	W01
+	BYTE		VOL     48*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        47*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v-6
+	BYTE	W04
+	BYTE		VOL     46*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v-3
+	BYTE	W02
+	BYTE		VOL     45*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		PAN     c_v+0
+	BYTE	W02
+	BYTE		VOL     44*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        43*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+3
+	BYTE	W04
+	BYTE		VOL     42*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v+6
+	BYTE	W02
+	BYTE		VOL     41*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        40*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+9
+	BYTE	W05
+	BYTE		VOL     39*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+12
+	BYTE	W03
+	BYTE		VOL     38*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+15
+	BYTE	W02
+	BYTE		VOL     37*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        36*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+18
+	BYTE	W05
+	BYTE		VOL     35*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+21
+	BYTE	W03
+	BYTE		VOL     34*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+24
+	BYTE	W02
+	BYTE		VOL     33*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        32*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+27
+	BYTE	W05
+	BYTE		VOL     31*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+30
+	BYTE	W03
+	BYTE		VOL     30*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+33
+	BYTE	W01
+	BYTE		VOL     29*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        28*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+36
+	BYTE	W03
+	BYTE		VOL     27*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+39
+	BYTE	W03
+	BYTE		VOL     26*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+42
+	BYTE	W01
+	BYTE		VOL     25*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        24*CaveTheme_mvl/mxv
+	BYTE		PAN     c_v+45
+	BYTE	W03
+	BYTE		VOL     23*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+47
+	BYTE	W02
+	BYTE		EOT     Cn4 
+// 030   ----------------------------------------
+	BYTE	W01
+	BYTE		VOL     22*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+50
+	BYTE	W01
+	BYTE		VOL     21*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        20*CaveTheme_mvl/mxv
+	BYTE	W01
+	BYTE		PAN     c_v+53
+	BYTE	W03
+	BYTE		VOL     19*CaveTheme_mvl/mxv
+	BYTE	W02
+	BYTE		PAN     c_v+56
+	BYTE	W01
+	BYTE		VOL     18*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		PAN     c_v+59
+	BYTE	W01
+	BYTE		VOL     17*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        16*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        15*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        14*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        13*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        12*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        11*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        10*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        9*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        8*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        7*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        6*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        5*CaveTheme_mvl/mxv
+	BYTE	W05
+	BYTE		        4*CaveTheme_mvl/mxv
+	BYTE	W03
+	BYTE		        3*CaveTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        4*CaveTheme_mvl/mxv
+	BYTE	W22
+	BYTE		EOT     En4 
+// 031   ----------------------------------------
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+CaveTheme:
+	BYTE	4	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	CaveTheme_pri	// Priority
+	BYTE	CaveTheme_rev	// Reverb.
+
+	POIN2	CaveTheme_grp
+
+	POIN2	CaveTheme_1
+	POIN2	CaveTheme_2
+	POIN2	CaveTheme_3
+	POIN2	CaveTheme_4
+
+	

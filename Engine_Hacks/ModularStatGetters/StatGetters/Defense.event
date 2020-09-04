@@ -1,0 +1,22 @@
+#ifndef MODULAR_GETTER_DEFENSE_EVENT
+#define MODULAR_GETTER_DEFENSE_EVENT
+
+#include "_Common.event"
+
+pDefenseModifiers: // Defense
+	POIN prAddUnitDefense prAddEquipDefense prItemPassiveDefense 
+	#ifdef __DebuffMinZero__
+	POIN prMinZero
+	#endif
+WORD 0
+
+prAddUnitDefense:
+	rAdd(rSByteAt(UNIT_DEFENSE))
+	
+prAddEquipDefense:
+	rAdd(rForUnitEquipped(rCallExternal(prGetItemDefBonus)))
+
+prItemPassiveDefense:
+	rPassiveStatBoosts(STAT_DEFENSE)
+
+#endif // MODULAR_GETTER_DEFENSE_EVENT

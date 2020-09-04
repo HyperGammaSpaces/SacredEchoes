@@ -1,0 +1,47 @@
+//include this under free space
+
+#include eastdlib.event
+#include "Extensions/Hack Installation.txt"
+PUSH
+ORG $89624
+jumpToHack(Chname)
+POP
+
+Chname:
+#include "fe8_chapter_names.lyn.event"
+ALIGN 4
+
+ALIGN 4
+Font_Graphic_Ptr:
+//#incext Png2Dmp "font.png" --lz77
+#incbin "font.png.dmp"	//HINT=BIN
+
+ALIGN 4
+ChnameCharTablePtr:
+#incbin "chartable.dmp"	//HINT=BIN
+
+ALIGN 4
+//Final and Prologue.
+SpecialChapterPtr:
+//SHORT 0x00 0x15A
+SHORT 0x2C 0x159
+SHORT 0x2D 0x159
+SHORT 0x2E SpecialMap_VillageName
+SHORT 0x2F SpecialMap_VillageName
+SHORT 0x30 SpecialMap_VillageName
+SHORT 0x31 SpecialMap_VillageName
+SHORT 0x32 SpecialMap_VillageName
+SHORT 0x33 SpecialMap_VillageName
+SHORT 0x34 SpecialMap_VillageName
+SHORT 0x35 SpecialMap_VillageName
+SHORT 0x3E SpecialMap_CaveName
+SHORT 0x3F SpecialMap_CaveName
+SHORT 0x40 SpecialMap_CaveName
+SHORT 0x41 SpecialMap_CaveName
+SHORT 0x42 SpecialMap_CaveName
+SHORT 0x43 SpecialMap_CaveName
+SHORT 0x44 SpecialMap_CaveName
+SHORT 0x45 SpecialMap_CaveName
+WORD 0x0
+
+ALIGN 4

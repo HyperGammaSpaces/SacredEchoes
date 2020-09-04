@@ -1,0 +1,55 @@
+#ifdef _FE8_
+
+#ifndef FreeSpace
+  #define FreeSpace 0xB2A610
+  ORG FreeSpace
+#endif
+
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $75F74
+POIN PromotionPopups
+ORG $75F94
+SHORT 0x46C0 //always do popups
+POP
+ALIGN 4
+PromotionPopups:
+SHORT 0x01 0x00; POIN $E82A8 	//name: ekrPopup2
+SHORT 0x03 0x00; POIN $7606C|1	//waits 10 cicles, then breaks proc loop
+	SHORT 0x0B 0x00; WORD 0 	//Label 0 - no idea, it jumps to this from the previous one for some reason
+//New "You can now use" popups start
+SHORT 0x02 0x00; POIN ClearBodyRanks|1	//apparently what I use isn't always 0, so I'm setting it to 0
+	//Label 1 - jump here to check next weapon ranks
+	SHORT 0x0B 0x01; WORD 0
+SHORT 0x02 0x00; POIN CheckRanksPopup1|1	//check if there's another weapon rank change, if not, jump to the end
+SHORT 0x03 0x00; POIN DoRanksPopup|1	//show 1st weapon rank - jumps to label 1 if there isn't one to learn
+SHORT 0x03 0x00; POIN $76290|1	//wait until popup is done
+SHORT 0x0E 0x14; WORD 0		//Sleep 20
+SHORT 0x02 0x00; POIN CheckRanksPopup2|1	//check if there are any ranks to check	
+	//Label 5 - No rank 1:
+	SHORT 0x0B 0x05; WORD 0		//Label 5 - jump over wait and popup if no weapon ranks left to display
+//New "You can now use" popups end
+SHORT 0x03 0x00; POIN $7621C|1	//end promotion and proc
+SHORT 0x03 0x00; POIN $7624C|1	//literally just bx lr, isn't even called but it was there so I'm leaving it there
+WORD 0 0			//End
+
+ALIGN 4
+CheckRanksPopup1:
+#incbin "youcannowuse1.dmp"
+
+ALIGN 4
+CheckRanksPopup2:
+#incbin "youcannowuse2.dmp"
+
+ALIGN 4
+DoRanksPopup:
+#incbin "youcannowuse3.dmp"
+
+ALIGN 4
+ClearBodyRanks:
+SHORT 0x2100 0x2254 0x5281 0x4770
+
+#else
+    ERROR Promotion Ranks Fix is for FE8 only!
+#endif

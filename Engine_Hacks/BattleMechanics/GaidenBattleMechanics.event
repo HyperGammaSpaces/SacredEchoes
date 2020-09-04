@@ -1,0 +1,208 @@
+#ifndef FreeSpace
+  #define FreeSpace 0xb2a610
+  ORG FreeSpace
+  #include "Extensions/Hack Installation.txt"
+#endif
+
+#define BC_DefRes $2aa44
+#define BC_Avo $2abe4
+#define BC_Crit $2ac18
+#define BC_Dodge $2ac54
+#define BC_Support $2a9d0
+#define BC_WRank $2ad54
+#define BC_Status $2ad90
+
+#include "repointbuffer.event"
+#include "GaidenMagic/SpellSystemInstaller.event"
+
+PUSH
+  ORG $16774
+  BYTE 00 $48 00 $47 //jumptohack with r0
+  POIN CanUseThisMagic|1
+
+  //ORG $2C81C //related to NegateWeaponTriangle
+  //BYTE $C0 $26 $B6 $00
+
+/*  
+  //Now handled by calc loop
+
+  ORG $2AFBC //changing doubling threshold
+  BYTE $01
+  
+  ORG $2AFCE
+  BYTE $01
+  
+  ORG $2AFFA //set eclipse to effect 05
+  BYTE $05
+*/
+  
+  ORG $2A95C  //minor hack to pass opponent's info to BattleLoadAvoid
+  //#incbin "FillPreBattleStats.dmp"
+  jumpToHack(CalcLoopParent)
+  
+//  ORG $2AB20
+//  BYTE $3C		//ragnarok is legendary
+
+  ORG $2AABC
+  BC_Power:
+  #incbin "BattleLoadAttack.dmp"
+  
+  ORG $2AB74
+  BC_ASpd:
+  #incbin "BattleLoadAS.dmp"
+  
+  //Moving the weight calc to MSG; makes this save raw AS.
+  ORG $2AB78
+  SHORT $2016 $5620 $1C21 $315E $8008
+  B($2AB9E)
+  SHORT $46C0
+  
+  ORG $2ABAC
+  BC_Hit:
+  #incbin "BattleLoadHit.dmp"
+  
+  ORG $2ABE8  //make sure not to add terrain avo to magic
+  jumpToHack(NewBattleLoadAvoid)
+  
+  ORG $2ADCC //Special Weapon Calcs
+  #incbin "specialweapons.dmp"
+    
+  //Damage Flooring to 1
+  ORG $2B53E
+  BYTE $01
+  ORG $2B542
+  BYTE $01
+  ORG $368CE
+  BYTE $01
+  ORG $368D2
+  BYTE $01
+  ORG $36964
+  BYTE $01
+  ORG $36968
+  BYTE $01
+  ORG $577DE
+  BYTE $01
+  ORG $577E2
+  BYTE $26
+  ORG $5781A
+  BYTE $01
+  ORG $5781E
+  BYTE $01
+  //thanks 7743
+  //Fix damage floor for misses on map anims
+  ORG $7A864
+  callHack_r4(FixDamageFloorMapMiss)
+  
+  ORG $2B63A 							//temp fix for eclipse - remove when status weapons fully impl'd
+  BYTE $05
+  
+  ORG $2B69C 							//temp fix
+  BYTE $06
+  
+  ORG $2B718 							//temp fix
+  BYTE $07
+  
+  ORG $2B766 							//temp fix
+  BYTE $0F 								//dummying out stone for now
+  
+  //Devil weapon underflow fix
+  ORG 0x02B6A6
+  BYTE 0x88 0x42 0x22 0xdd 0x40 0x1a
+  
+  //To do: dont write if weaponslot FF.
+
+  ORG $2C050
+  jumpToHack(Slotfix1)
+  ORG $2C074
+  jumpToHack(Slotfix2)
+
+  ORG $2B3EC
+  jumpToHack(ProcParent)
+  
+  ORG $2C7C0
+  replaceWithHack(NewWeaponTriangle)
+  
+  ORG $2ebd4
+  jumpToHack(WMagicCost)
+POP
+
+Slotfix1:
+#incbin "Slotfix1.dmp"
+ALIGN 4
+
+Slotfix2:
+#incbin "Slotfix2.dmp"
+ALIGN 4
+
+MinMaxBattleDamage:
+#incbin "MinMaxBattleDamage.dmp"
+ALIGN 4
+
+NewWeaponTriangle:
+#include "HandleWeaponTriangle.lyn.event"
+ALIGN 4
+
+WMagicCost:
+#incbin "MakeWMagicCostHP.dmp"
+WORD SelectedSpellPointer
+POIN SpellCostGetter
+ALIGN 4
+
+CalcLoopParent:
+#incbin "FE8_calc_loop.dmp"
+CalcLoopTable:
+POIN BC_DefRes BC_Power BC_ASpd BC_Hit BC_Avo BC_Crit BC_Dodge BC_Support BC_WRank BC_Status //these are the existing battle calculation routines
+POIN DamageHalvingSkillsBeforeBattle
+POIN BowDebuffCheck
+POIN 0 //terminator
+
+ProcParent:
+#incbin "proc_loop.dmp"
+ProcTable:
+POIN Proc_Start
+POIN MagicCostsHP
+//POIN DamageHalvingSkillsDuringBattle
+//POIN Proc_StatusWeapons2 
+POIN Proc_Finish 0
+
+ALIGN 4
+Proc_Start:
+#incbin "proc_start.dmp"
+
+ALIGN 4
+Proc_Finish:
+#incbin "proc_finish.dmp"
+
+ALIGN 4
+MagicCostsHP:
+#incbin "hpcost.dmp"
+POIN SpellCostGetter
+
+ALIGN 4
+#include "DF-Apotrope/ApotropeBeforeBattle.lyn.event"
+
+//Commented out because fuck dealing with skill activation anims
+ALIGN 4
+#include "DF-Apotrope/ApotropeDuringBattle.lyn.event"
+
+ALIGN 4
+BowDebuffCheck:
+#include "BowDebuff.lyn.event"
+
+ALIGN 4
+CanUseThisMagic:
+#incbin "canusethismagic.dmp"
+POIN SpellCostGetter
+
+ALIGN 4
+NewBattleLoadAvoid:
+#incbin "BattleLoadAvoid.dmp"
+
+ALIGN 4
+FixDamageFloorMapMiss:
+#incbin "FixDamageFloorForMapMiss.dmp"
+ALIGN 4
+
+//Doubling moves here
+#include "CanUnitDoubleCalcLoop.event"
+ALIGN 4

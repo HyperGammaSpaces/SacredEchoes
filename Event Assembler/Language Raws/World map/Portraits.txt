@@ -1,0 +1,17 @@
+
+##Load portrait.
+WM_SHOWPORTRAIT, 0xC460, 12, -game:FE8 -indexMode:8
+	Portrait ID, 6, 1
+	Position, 8, 2, -preferredBase:10
+
+WM_CLEARPORTRAIT, 0xC540, 8, -game:FE8 -indexMode:8
+#Always 0
+	Value1, 2, 2
+#0x000 = no movement, no fade
+#0x100 = left
+#0x200,all else = right
+	Direction, 4, 2
+	Delay, 6, 2
+
+
+

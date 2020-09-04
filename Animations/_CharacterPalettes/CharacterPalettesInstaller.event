@@ -1,0 +1,685 @@
+//Uses LZ77 compressed palettes
+
+PUSH
+ORG $C01924 //just overwriting the default dragon palette
+POIN WDragonPalette
+ORG $C00EA4 //shaman
+POIN ShamanPalette
+ORG $C00EE4 //druid
+POIN DruidPalette
+ORG $C00F04 //druid
+POIN DruidPalette
+ORG $C00F64 //cantor
+POIN CantorPalette
+ORG $C00F84 //cantor
+POIN CantorPalette
+POP
+
+ShamanPalette:
+#incbin "_shaman.cprs.pal.bin"
+DruidPalette:
+#incbin "_druid.cprs.pal.bin"
+CantorPalette:
+#incbin "_cantor.cprs.pal.bin"
+
+WDragonPalette:
+#incbin "_dragon.cprs.pal.bin"
+
+LukasSoldierPalette:
+#incbin "lukassoldier.cprs.pal.bin"
+
+LukasArmorPalette:
+#incbin "lukasarmor.cprs.pal.bin"
+
+LukasBaronPalette:
+#incbin "lukasbaron.cprs.pal.bin"
+
+SilqueSaintPalette:
+#incbin "silquesaint.cprs.pal.bin"
+
+ClairPegPalette:
+#incbin "clairpeg.cprs.pal.bin"
+
+ClairFalcoPalette:
+#incbin "clairfalco.cprs.pal.bin"
+
+FernandCavPalette:
+#incbin "fercav.cprs.pal.bin"
+
+FernandPaladinPalette:
+#incbin "fernandpal_new.cprs.pal.bin"
+
+FernandGKPalette:
+#incbin "ferGK.cprs.pal.bin"
+
+CliveCavPalette:
+#incbin "clivecav.cprs.pal.bin"
+
+ClivePaladinPalette:
+#incbin "clivepal_new.cprs.pal.bin"
+
+CliveGKPalette:
+#incbin "cliveGK.cprs.pal.bin"
+
+ForsythSoldierPalette:
+#incbin "forsythsoldier.cprs.pal.bin"
+
+ForsythArmorPalette:
+#incbin "forsytharmor.cprs.pal.bin"
+
+ForsythBaronPalette:
+#incbin "forsythbaron.cprs.pal.bin"
+
+PythonArcherPalette:
+#incbin "pythonarcher2.cprs.pal.bin"
+
+PythonSniperPalette:
+#incbin "pythonsniper.cprs.pal.bin"
+
+PythonBKPalette:
+#incbin "pythonbk.cprs.pal.bin"
+
+SlaydePaladinPalette:
+#incbin "slaydepal_new.cprs.pal.bin"
+
+SlaydeGKPalette:
+#incbin "slaydeGK.cprs.pal.bin"
+
+DesaixPalette:
+#incbin "desaixpal.cprs.pal.bin"
+
+//Villagers below here
+
+GrayVillagerPalette:
+#incbin "grayvill.cprs.pal.bin"
+
+GrayCavPalette:
+#incbin "graycav2.cprs.pal.bin"
+
+GrayPaladinPalette:
+#incbin "graypal_new.cprs.pal.bin"
+
+GrayGKPalette:
+#incbin "grayGK.cprs.pal.bin"
+
+GrayMercPalette:
+#incbin "graymerc_salv.cprs.pal.bin"
+
+GrayMyrmPalette:
+#incbin "grayhero_new.cprs.pal.bin"
+
+GrayDFPalette:
+#incbin "grayDF.cprs.pal.bin"
+
+GraySoldierPalette:
+#incbin "graysoldier.cprs.pal.bin"
+
+GrayArmorPalette:
+#incbin "grayarmor.cprs.pal.bin"
+
+GrayBaronPalette:
+#incbin "graybaron.cprs.pal.bin"
+
+GrayMagePalette:
+#incbin "graymage.cprs.pal.bin"
+
+GraySagePalette:
+#incbin "graysage.cprs.pal.bin"
+
+GrayArcherPalette:
+#incbin "grayarch2.cprs.pal.bin"
+
+GraySniperPalette:
+#incbin "graysniper.cprs.pal.bin"
+
+GrayBKPalette:
+#incbin "graybk.cprs.pal.bin"
+
+TobinVillagerPalette:
+#incbin "tobinvill.cprs.pal.bin"
+
+TobinCavPalette:
+#incbin "tobincav.cprs.pal.bin"
+
+TobinPaladinPalette:
+#incbin "tobinpal_new.cprs.pal.bin"
+
+TobinGKPalette:
+#incbin "tobinGK.cprs.pal.bin"
+
+TobinMercPalette:
+#incbin "tobinmerc_salv.cprs.pal.bin"
+
+TobinMyrmPalette:
+#incbin "tobinhero_new.cprs.pal.bin"
+
+TobinDFPalette:
+#incbin "tobinDF.cprs.pal.bin"
+
+TobinSoldierPalette:
+#incbin "tobinsoldier.cprs.pal.bin"
+
+TobinArmorPalette:
+#incbin "tobinarmor.cprs.pal.bin"
+
+TobinBaronPalette:
+#incbin "tobinbaron.cprs.pal.bin"
+
+TobinMagePalette:
+#incbin "tobinmage.cprs.pal.bin"
+
+TobinSagePalette:
+#incbin "tobinsage.cprs.pal.bin"
+
+TobinArcherPalette:
+#incbin "tobinarcher2.cprs.pal.bin"
+
+TobinSniperPalette:
+#incbin "tobinsniper.cprs.pal.bin"
+
+TobinBKPalette:
+#incbin "tobinbk.cprs.pal.bin"
+
+KliffVillagerPalette:
+#incbin "kliffvill.cprs.pal.bin"
+
+KliffCavPalette:
+#incbin "kliffcav.cprs.pal.bin"
+
+KliffPaladinPalette:
+#incbin "kliffpal_new.cprs.pal.bin"
+
+KliffGKPalette:
+#incbin "kliffGK.cprs.pal.bin"
+
+KliffMercPalette:
+#incbin "kliffmerc_salv.cprs.pal.bin"
+
+KliffMyrmPalette:
+#incbin "kliffhero_new.cprs.pal.bin"
+
+KliffDFPalette:
+#incbin "kliffDF.cprs.pal.bin"
+
+KliffSoldierPalette:
+#incbin "kliffsoldier.cprs.pal.bin"
+
+KliffArmorPalette:
+#incbin "kliffarmor.cprs.pal.bin"
+
+KliffBaronPalette:
+#incbin "kliffbaron.cprs.pal.bin"
+
+KliffMagePalette:
+#incbin "kliffmage.cprs.pal.bin"
+
+KliffSagePalette:
+#incbin "kliffsage.cprs.pal.bin"
+
+KliffArcherPalette:
+#incbin "kliffarcher2.cprs.pal.bin"
+
+KliffSniperPalette:
+#incbin "kliffsniper.cprs.pal.bin"
+
+KliffBKPalette:
+#incbin "kliffbk.cprs.pal.bin"
+
+FayeVillagerPalette:
+#incbin "fayevill.cprs.pal.bin"
+
+FayeCavPalette:
+#incbin "fayecav.cprs.pal.bin"
+
+FayePaladinPalette:
+#incbin "fayepal_new.cprs.pal.bin"
+
+FayeGKPalette:
+#incbin "fayeGK.cprs.pal.bin"
+
+FayeClericPalette:
+#incbin "fayecleric.cprs.pal.bin"
+
+FayeSaintPalette:
+#incbin "fayesaint.cprs.pal.bin"
+
+FayePegPalette:
+#incbin "fayepeg.cprs.pal.bin"
+
+FayeFalcoPalette:
+#incbin "fayefalco.cprs.pal.bin"
+
+FayeMagePalette:
+#incbin "fayemage.cprs.pal.bin"
+
+FayeSagePalette:
+#incbin "fayepriestess.cprs.pal.bin"
+
+FayeDFPalette:
+#incbin "fayeDF.cprs.pal.bin"
+
+FayeArcherPalette:
+#incbin "fayearch2.cprs.pal.bin"
+
+FayeSniperPalette:
+#incbin "fayesniper.cprs.pal.bin"
+
+FayeBKPalette:
+#incbin "fayebk.cprs.pal.bin"
+
+MaeVillagerPalette:
+#incbin "maevill.cprs.pal.bin"
+
+MaeCavPalette:
+#incbin "maecav.cprs.pal.bin"
+
+MaePaladinPalette:
+#incbin "maepal.cprs.pal.bin"
+
+MaeGKPalette:
+#incbin "maeGK.cprs.pal.bin"
+
+MaeClericPalette:
+#incbin "maecleric.cprs.pal.bin"
+
+MaeSaintPalette:
+#incbin "maesaint.cprs.pal.bin"
+
+MaePegPalette:
+#incbin "maepeg.cprs.pal.bin"
+
+MaeFalcoPalette:
+#incbin "maefalco.cprs.pal.bin"
+
+MaeMagePalette:
+#incbin "maemage.cprs.pal.bin"
+
+MaeSagePalette:
+#incbin "maepriestess.cprs.pal.bin"
+
+MaeDFPalette:
+#incbin "maeDF.cprs.pal.bin"
+
+MaeArcherPalette:
+#incbin "maearch2.cprs.pal.bin"
+
+MaeSniperPalette:
+#incbin "maesniper.cprs.pal.bin"
+
+MaeBKPalette:
+#incbin "maebk.cprs.pal.bin"
+
+BoeyMagePalette:
+#incbin "boeymage.cprs.pal.bin"
+
+BoeySagePalette:
+#incbin "boeysage.cprs.pal.bin"
+
+GennyClericPalette:
+#incbin "gennycleric.cprs.pal.bin"
+
+GennySaintPalette:
+#incbin "gennysaint.cprs.pal.bin"
+
+SaberVillagerPalette:
+#incbin "sabervill.cprs.pal.bin"
+
+SaberCavPalette:
+#incbin "sabercav.cprs.pal.bin"
+
+SaberPaladinPalette:
+#incbin "saberpal.cprs.pal.bin"
+
+SaberGKPalette:
+#incbin "saberGK.cprs.pal.bin"
+
+SaberMercPalette:
+#incbin "sabermerc_salv.cprs.pal.bin"
+
+SaberMyrmPalette:
+#incbin "saberhero_new.cprs.pal.bin"
+
+SaberDFPalette:
+#incbin "saberDF.cprs.pal.bin"
+
+SaberSoldierPalette:
+#incbin "sabersoldier.cprs.pal.bin"
+
+SaberArmorPalette:
+#incbin "saberarmor.cprs.pal.bin"
+
+SaberBaronPalette:
+#incbin "saberbaron.cprs.pal.bin"
+
+SaberMagePalette:
+#incbin "sabermage.cprs.pal.bin"
+
+SaberSagePalette:
+#incbin "sabersage.cprs.pal.bin"
+
+SaberArcherPalette:
+#incbin "saberarcher2.cprs.pal.bin"
+
+SaberSniperPalette:
+#incbin "sabersniper.cprs.pal.bin"
+
+SaberBKPalette:
+#incbin "saberbk.cprs.pal.bin"
+
+LeonArcherPalette:
+#incbin "leonarcher2.cprs.pal.bin"
+
+LeonSniperPalette:
+#incbin "leonsniper.cprs.pal.bin"
+
+LeonBKPalette:
+#incbin "leonbk.cprs.pal.bin"
+
+ValbarArmorPalette:
+#incbin "valbararmor.cprs.pal.bin"
+
+ValbarBaronPalette:
+#incbin "valbaron.cprs.pal.bin"
+
+KamuiVillagerPalette:
+#incbin "kamuivill.cprs.pal.bin"
+
+KamuiCavPalette:
+#incbin "kamuicav.cprs.pal.bin"
+
+KamuiPaladinPalette:
+#incbin "kamuipal.cprs.pal.bin"
+
+KamuiGKPalette:
+#incbin "kamuiGK.cprs.pal.bin"
+
+KamuiMercPalette:
+#incbin "kamuimerc_salv.cprs.pal.bin"
+
+KamuiMyrmPalette:
+#incbin "kamuihero_new.cprs.pal.bin"
+
+KamuiDFPalette:
+#incbin "kamuiDF.cprs.pal.bin"
+
+KamuiSoldierPalette:
+#incbin "kamuisoldier.cprs.pal.bin"
+
+KamuiArmorPalette:
+#incbin "kamuiarmor.cprs.pal.bin"
+
+KamuiBaronPalette:
+#incbin "kamuibaron.cprs.pal.bin"
+
+KamuiMagePalette:
+#incbin "kamuimage.cprs.pal.bin"
+
+KamuiSagePalette:
+#incbin "kamuisage.cprs.pal.bin"
+
+KamuiArcherPalette:
+#incbin "kamuiarcher2.cprs.pal.bin"
+
+KamuiSniperPalette:
+#incbin "kamuisniper.cprs.pal.bin"
+
+KamuiBKPalette:
+#incbin "kamuibk.cprs.pal.bin"
+
+MathildaPalPalette:
+#incbin "mathildapal_new.cprs.pal.bin"
+
+MathildaGKPalette:
+#incbin "mathildaGK.cprs.pal.bin"
+
+LuthierMagePalette:
+#incbin "luthiermage.cprs.pal.bin"
+
+LuthierSagePalette:
+#incbin "luthiersage.cprs.pal.bin"
+
+DeltheaVillagerPalette:
+#incbin "deltheavill.cprs.pal.bin"
+
+DeltheaCavPalette:
+#incbin "deltheacav.cprs.pal.bin"
+
+DeltheaPaladinPalette:
+#incbin "deltheapal.cprs.pal.bin"
+
+DeltheaGKPalette:
+#incbin "deltheaGK.cprs.pal.bin"
+
+DeltheaClericPalette:
+#incbin "deltheacleric.cprs.pal.bin"
+
+DeltheaSaintPalette:
+#incbin "deltheasaint.cprs.pal.bin"
+
+DeltheaPegPalette:
+#incbin "deltheapeg.cprs.pal.bin"
+
+DeltheaFalcoPalette:
+#incbin "deltheafalco.cprs.pal.bin"
+
+DeltheaMagePalette:
+#incbin "deltheamage.cprs.pal.bin"
+
+DeltheaSagePalette:
+#incbin "deltheapriestess.cprs.pal.bin"
+
+DeltheaDFPalette:
+#incbin "deltheaDF.cprs.pal.bin"
+
+DeltheaArcherPalette:
+#incbin "deltheaarch2.cprs.pal.bin"
+
+DeltheaSniperPalette:
+#incbin "deltheasniper.cprs.pal.bin"
+
+DeltheaBKPalette:
+#incbin "deltheabk.cprs.pal.bin"
+
+PallaPegPalette:
+#incbin "pallapeg.cprs.pal.bin"
+
+PallaFalcoPalette:
+#incbin "pallafalco.cprs.pal.bin"
+
+CatriaPegPalette:
+#incbin "catriapeg.cprs.pal.bin"
+
+CatriaFalcoPalette:
+#incbin "catriafalco.cprs.pal.bin"
+
+EstPegPalette:
+#incbin "estpeg.cprs.pal.bin"
+
+EstFalcoPalette:
+#incbin "estfalco.cprs.pal.bin"
+
+HyasVillagerPalette:
+#incbin "hyasvill.cprs.pal.bin"
+
+HyasCavPalette:
+#incbin "hyascav.cprs.pal.bin"
+
+HyasPaladinPalette:
+#incbin "hyaspal.cprs.pal.bin"
+
+HyasGKPalette:
+#incbin "hyasGK.cprs.pal.bin"
+
+HyasMercPalette:
+#incbin "hyasmerc_salv.cprs.pal.bin"
+
+HyasMyrmPalette:
+#incbin "hyashero.cprs.pal.bin"
+
+HyasDFPalette:
+#incbin "hyasDF.cprs.pal.bin"
+
+HyasSoldierPalette:
+#incbin "hyassoldier.cprs.pal.bin"
+
+HyasArmorPalette:
+#incbin "hyasarmor.cprs.pal.bin"
+
+HyasBaronPalette:
+#incbin "hyasbaron.cprs.pal.bin"
+
+HyasMagePalette:
+#incbin "hyasmage.cprs.pal.bin"
+
+HyasSagePalette:
+#incbin "hyassage.cprs.pal.bin"
+
+HyasArcherPalette:
+#incbin "hyasarcher2.cprs.pal.bin"
+
+HyasSniperPalette:
+#incbin "hyassniper.cprs.pal.bin"
+
+HyasBKPalette:
+#incbin "hyasbk.cprs.pal.bin"
+
+JesseThiefPalette:
+#incbin "jessethief.cprs.pal.bin"
+
+JesseRoguePalette:
+#incbin "jesserogue.cprs.pal.bin"
+
+SonyaVillagerPalette:
+#incbin "sonyavill.cprs.pal.bin"
+
+SonyaCavPalette:
+#incbin "sonyacav.cprs.pal.bin"
+
+SonyaPaladinPalette:
+#incbin "sonyapal.cprs.pal.bin"
+
+SonyaGKPalette:
+#incbin "sonyaGK.cprs.pal.bin"
+
+SonyaClericPalette:
+#incbin "sonyacleric.cprs.pal.bin"
+
+SonyaSaintPalette:
+#incbin "sonyasaint.cprs.pal.bin"
+
+SonyaPegPalette:
+#incbin "sonyapeg.cprs.pal.bin"
+
+SonyaFalcoPalette:
+#incbin "sonyafalco.cprs.pal.bin"
+
+SonyaMagePalette:
+#incbin "sonyamage.cprs.pal.bin"
+
+SonyaSagePalette:
+#incbin "sonyapriestess.cprs.pal.bin"
+
+SonyaDFPalette:
+#incbin "sonyaDF.cprs.pal.bin"
+
+SonyaArcherPalette:
+#incbin "sonyaarch2.cprs.pal.bin"
+
+SonyaSniperPalette:
+#incbin "sonyasniper.cprs.pal.bin"
+
+SonyaBKPalette:
+#incbin "sonyaBK.cprs.pal.bin"
+
+DeenVillagerPalette:
+#incbin "deenvill.cprs.pal.bin"
+
+DeenCavPalette:
+#incbin "deencav.cprs.pal.bin"
+
+DeenPaladinPalette:
+#incbin "deenpal.cprs.pal.bin"
+
+DeenGKPalette:
+#incbin "deenGK.cprs.pal.bin"
+
+DeenMercPalette:
+#incbin "deenmerc_salv.cprs.pal.bin"
+
+DeenMyrmPalette:
+#incbin "deenhero.cprs.pal.bin"
+
+DeenDFPalette:
+#incbin "deenDF.cprs.pal.bin"
+
+DeenSoldierPalette:
+#incbin "deensoldier.cprs.pal.bin"
+
+DeenArmorPalette:
+#incbin "deenarmor.cprs.pal.bin"
+
+DeenBaronPalette:
+#incbin "deenbaron.cprs.pal.bin"
+
+DeenMagePalette:
+#incbin "deenmage.cprs.pal.bin"
+
+DeenSagePalette:
+#incbin "deensage.cprs.pal.bin"
+
+DeenArcherPalette:
+#incbin "deenarcher2.cprs.pal.bin"
+
+DeenSniperPalette:
+#incbin "deensniper.cprs.pal.bin"
+
+DeenBKPalette:
+#incbin "deenbk.cprs.pal.bin"
+
+TatianaSaintPalette:
+#incbin "tatisaint.cprs.pal.bin"
+
+BerkutPaladinPalette:
+#incbin "berkutpal_new.cprs.pal.bin"
+
+BerkutGKPalette:
+#incbin "berkutGK.cprs.pal.bin"
+
+ConradPaladinPalette:
+#incbin "conradpal_new.cprs.pal.bin"
+
+ConradGKPalette:
+#incbin "conradGK.cprs.pal.bin"
+
+ZekeGKPalette:
+#incbin "zekeGK.cprs.pal.bin"
+
+MycenGKPalette:
+#incbin "mycenGK.cprs.pal.bin"
+
+NuibabaWitchPalette:
+#incbin "nuibabawitch.cprs.pal.bin"
+
+MarlaWitchPalette:
+#incbin "marlawitch.cprs.pal.bin"
+
+HestiaWitchPalette:
+#incbin "hestiawitch.cprs.pal.bin"
+
+RineaWitchPalette:
+#incbin "rineawitch.cprs.pal.bin"
+
+PhantomSoldierPalette:
+#incbin "phantom_soldier.cprs.pal.bin"
+
+PhantomPegPalette:
+#incbin "phantom_peg.cprs.pal.bin"
+
+PhantomDFPalette:
+#incbin "phantom_DF.cprs.pal.bin"
+
+FpirateBossPalette:
+#incbin "_fpirate.cprs.pal.bin"
+
+GriethDFPalette:
+#incbin "griethDF.cprs.pal.bin"

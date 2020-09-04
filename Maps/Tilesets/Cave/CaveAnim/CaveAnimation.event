@@ -1,0 +1,72 @@
+#ifndef tilesetAnimation
+    #define tilesetAnimation(speed, size, pointer)    "BYTE speed 0; SHORT size; POIN pointer"
+#endif
+
+ALIGN 4
+CaveAnimation0:
+#incbin "CaveAnim.mapanime 1_000.dmp"
+ALIGN 4
+CaveAnimation1:
+#incbin "CaveAnim.mapanime 1_001.dmp"
+ALIGN 4
+CaveAnimation2:
+#incbin "CaveAnim.mapanime 1_002.dmp"
+ALIGN 4
+CaveAnimation3:
+#incbin "CaveAnim.mapanime 1_003.dmp"
+ALIGN 4
+CaveAnimation4:
+#incbin "CaveAnim.mapanime 1_004.dmp"
+ALIGN 4
+CaveAnimation5:
+#incbin "CaveAnim.mapanime 1_005.dmp"
+ALIGN 4
+CaveAnimation6:
+#incbin "CaveAnim.mapanime 1_006.dmp"
+ALIGN 4
+CaveAnimation7:
+#incbin "CaveAnim.mapanime 1_007.dmp"
+ALIGN 4
+CaveAnimation8:
+#incbin "CaveAnim.mapanime 1_008.dmp"
+ALIGN 4
+CaveAnimation9:
+#incbin "CaveAnim.mapanime 1_009.dmp"
+ALIGN 4
+CaveAnimation10:
+#incbin "CaveAnim.mapanime 1_010.dmp"
+ALIGN 4
+CaveAnimation11:
+#incbin "CaveAnim.mapanime 1_011.dmp"
+ALIGN 4
+CaveAnimation12:
+#incbin "CaveAnim.mapanime 1_012.dmp"
+ALIGN 4
+CaveAnimation13:
+#incbin "CaveAnim.mapanime 1_013.dmp"
+ALIGN 4
+CaveAnimation14:
+#incbin "CaveAnim.mapanime 1_014.dmp"
+ALIGN 4
+CaveAnimation15:
+#incbin "CaveAnim.mapanime 1_015.dmp"
+
+ALIGN 4
+CaveAnimation:
+tilesetAnimation(0x1C,0x1000,CaveAnimation0)
+tilesetAnimation(0x1C,0x1000,CaveAnimation1)
+tilesetAnimation(0x1C,0x1000,CaveAnimation2)
+tilesetAnimation(0x1C,0x1000,CaveAnimation3)
+tilesetAnimation(0x1C,0x1000,CaveAnimation4)
+tilesetAnimation(0x1C,0x1000,CaveAnimation5)
+tilesetAnimation(0x1C,0x1000,CaveAnimation6)
+tilesetAnimation(0x1C,0x1000,CaveAnimation7)
+tilesetAnimation(0x1C,0x1000,CaveAnimation8)
+tilesetAnimation(0x1C,0x1000,CaveAnimation9)
+tilesetAnimation(0x1C,0x1000,CaveAnimation10)
+tilesetAnimation(0x1C,0x1000,CaveAnimation11)
+tilesetAnimation(0x1C,0x1000,CaveAnimation12)
+tilesetAnimation(0x1C,0x1000,CaveAnimation13)
+tilesetAnimation(0x1C,0x1000,CaveAnimation14)
+tilesetAnimation(0x1C,0x1000,CaveAnimation15)
+WORD 0 0

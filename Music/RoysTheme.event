@@ -1,0 +1,1163 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	RoysTheme_grp  voicegroup000
+	#define	RoysTheme_pri  0
+	#define	RoysTheme_rev  0
+	#define	RoysTheme_mvl  85
+	#define	RoysTheme_key  0
+	#define	RoysTheme_tbs  1
+	#define	RoysTheme_exg  0
+	#define	RoysTheme_cmp  1
+
+	// .rodata
+	//	RoysTheme
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+RoysTheme_1:
+	BYTE	KEYSH   RoysTheme_key+0
+// 000   ----------------------------------------
+	BYTE	TEMPO   126*RoysTheme_tbs/2
+	BYTE		VOICE   61
+	BYTE		VOL     95*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v+11
+	BYTE	W24
+	BYTE		N06     Cs3   v100
+	BYTE	W08
+	BYTE		N09     Dn3 
+	BYTE	W08
+	BYTE		N07     En3   v104
+	BYTE	W08
+	BYTE		N36     An3   v100
+	BYTE	W48
+// 001   ----------------------------------------
+	BYTE		N17     An3   v116
+	BYTE	W24
+	BYTE		N05     Gn3   v104
+	BYTE	W08
+	BYTE		N07     Fn3   v100
+	BYTE	W08
+	BYTE		        Cn3 
+	BYTE	W08
+	BYTE		N18     En3   v116
+	BYTE	W24
+	BYTE		N17     Dn3 
+	BYTE	W24
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE		VOL     78*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-4
+	BYTE	W36
+	BYTE		N05     Cs4   v088
+	BYTE	W06
+	BYTE		        En4   v096
+	BYTE	W06
+	BYTE		N32     An4   v100
+	BYTE	W28
+	BYTE	W01
+	BYTE		VOL     72*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        62*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        56*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        46*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        36*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        29*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        20*RoysTheme_mvl/mxv
+	BYTE	W13
+RoysTheme_1_B1:
+// 004   ----------------------------------------
+	BYTE		VOL     82*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-12
+	BYTE		N32     Cs3   v096
+	BYTE	W36
+	BYTE		N11     Dn3 
+	BYTE	W12
+	BYTE		N44     En3 
+	BYTE	W48
+// 005   ----------------------------------------
+RoysTheme_1_005:
+	BYTE		N32     Gn3   v096
+	BYTE	W36
+	BYTE		N05     Fn3 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE	W06
+	BYTE		N44     An2 
+	BYTE	W48
+	BYTE	PEND
+// 006   ----------------------------------------
+	BYTE		N32     En3 
+	BYTE	W36
+	BYTE		N05     Dn3 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE	W06
+	BYTE		N42     Bn2 
+	BYTE	W48
+// 007   ----------------------------------------
+RoysTheme_1_007:
+	BYTE		N32     Cs3   v096
+	BYTE	W36
+	BYTE		N11     Dn3 
+	BYTE	W12
+	BYTE		N44     En3 
+	BYTE	W48
+	BYTE	PEND
+// 008   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_1_007
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_1_005
+// 010   ----------------------------------------
+	BYTE		N32     En3   v096
+	BYTE	W36
+	BYTE		N11     Dn3 
+	BYTE	W12
+	BYTE		N30     Bn2 
+	BYTE	W36
+	BYTE		N11   
+	BYTE	W12
+// 011   ----------------------------------------
+	BYTE		N44     Dn3 
+	BYTE	W48
+	BYTE		N42     Cs3 
+	BYTE	W48
+// 012   ----------------------------------------
+	BYTE		N44     An2   v092
+	BYTE		N44     Cn3   v112
+	BYTE	W48
+	BYTE		N21     Gn2   v096
+	BYTE		N23     Bn2   v104
+	BYTE	W24
+	BYTE		        Fn2   v096
+	BYTE		N23     An2   v100
+	BYTE	W24
+// 013   ----------------------------------------
+	BYTE		N15     Gn2 
+	BYTE		N12     Bn2 
+	BYTE	W24
+	BYTE		N60   
+	BYTE		N60     Dn3   v120
+	BYTE	W72
+// 014   ----------------------------------------
+	BYTE		N44     Bn2   v108
+	BYTE		N44     Dn3   v116
+	BYTE	W48
+	BYTE		N23     An2   v100
+	BYTE		N23     Cn3   v084
+	BYTE	W24
+	BYTE		        Gn2   v096
+	BYTE		N23     Bn2   v092
+	BYTE	W24
+// 015   ----------------------------------------
+	BYTE		N18     An2   v096
+	BYTE		N17     Cn3   v108
+	BYTE	W24
+	BYTE		N56     Cn3   v116
+	BYTE		N56     En3   v104
+	BYTE	W72
+// 016   ----------------------------------------
+	BYTE		N44     Cn3 
+	BYTE		N44     En3   v108
+	BYTE	W48
+	BYTE		N23     Bn2   v100
+	BYTE		N23     Dn3   v104
+	BYTE	W24
+	BYTE		        An2   v092
+	BYTE		N22     Cn3   v096
+	BYTE	W24
+// 017   ----------------------------------------
+	BYTE		N80     Bn2   v104
+	BYTE		N80     Dn3   v112
+	BYTE	W96
+// 018   ----------------------------------------
+	BYTE		N40     An2   v100
+	BYTE		N44     Dn3   v127
+	BYTE	W48
+	BYTE		N18     An2   v100
+	BYTE		N23     Bn2 
+	BYTE	W24
+	BYTE		N19     An2   v104
+	BYTE		N23     Dn3   v116
+	BYTE	W24
+// 019   ----------------------------------------
+	BYTE		N78     An2   v096
+	BYTE		N80     Cs3 
+	BYTE	W92
+	BYTE	W03
+	BYTE	GoTo
+	 POIN2	RoysTheme_1_B1
+RoysTheme_1_B2:
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+RoysTheme_2:
+	BYTE	KEYSH   RoysTheme_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   86
+	BYTE		VOL     53*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-12
+	BYTE		BEND    c_v-1
+	BYTE	W24
+	BYTE		N07     Cs4   v100
+	BYTE	W08
+	BYTE		        Dn4 
+	BYTE	W08
+	BYTE		        En4   v104
+	BYTE	W08
+	BYTE		N40     An4   v100
+	BYTE	W48
+// 001   ----------------------------------------
+	BYTE		N18     An4   v116
+	BYTE	W24
+	BYTE		N06     Gn4   v104
+	BYTE	W08
+	BYTE		N07     Fn4   v100
+	BYTE	W08
+	BYTE		        Cn4 
+	BYTE	W08
+	BYTE		N19     En4   v116
+	BYTE	W24
+	BYTE		N18     Dn4 
+	BYTE	W23
+	BYTE		BEND    c_v+0
+	BYTE	W01
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE		VOL     78*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-4
+	BYTE	W36
+	BYTE		N04     An3   v076
+	BYTE	W06
+	BYTE		N05     Cs4 
+	BYTE	W06
+	BYTE		N32     En4   v080
+	BYTE	W28
+	BYTE	W01
+	BYTE		VOL     72*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        62*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        56*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        46*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        36*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        29*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        20*RoysTheme_mvl/mxv
+	BYTE	W13
+RoysTheme_2_B1:
+// 004   ----------------------------------------
+	BYTE		VOL     49*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-8
+	BYTE		BEND    c_v-4
+	BYTE	W05
+	BYTE		N32     Cs3   v080
+	BYTE	W36
+	BYTE		N11     Dn3 
+	BYTE	W12
+	BYTE		N44     En3 
+	BYTE	W42
+	BYTE	W01
+// 005   ----------------------------------------
+RoysTheme_2_005:
+	BYTE	W05
+	BYTE		N32     Gn3   v080
+	BYTE	W36
+	BYTE		N05     Fn3 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE	W06
+	BYTE		N44     An2 
+	BYTE	W42
+	BYTE	W01
+	BYTE	PEND
+// 006   ----------------------------------------
+	BYTE	W05
+	BYTE		N32     En3 
+	BYTE	W36
+	BYTE		N05     Dn3 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE	W06
+	BYTE		N42     Bn2 
+	BYTE	W42
+	BYTE	W01
+// 007   ----------------------------------------
+RoysTheme_2_007:
+	BYTE	W05
+	BYTE		N32     Cs3   v080
+	BYTE	W36
+	BYTE		N11     Dn3 
+	BYTE	W12
+	BYTE		N44     En3 
+	BYTE	W42
+	BYTE	W01
+	BYTE	PEND
+// 008   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_2_007
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_2_005
+// 010   ----------------------------------------
+	BYTE	W05
+	BYTE		N32     En3   v080
+	BYTE	W36
+	BYTE		N11     Dn3 
+	BYTE	W12
+	BYTE		N30     Bn2 
+	BYTE	W36
+	BYTE		N11   
+	BYTE	W07
+// 011   ----------------------------------------
+	BYTE	W05
+	BYTE		N44     Dn3 
+	BYTE	W48
+	BYTE		N42     Cs3 
+	BYTE	W42
+	BYTE	W01
+// 012   ----------------------------------------
+	BYTE	W96
+// 013   ----------------------------------------
+	BYTE	W96
+// 014   ----------------------------------------
+	BYTE	W96
+// 015   ----------------------------------------
+	BYTE	W96
+// 016   ----------------------------------------
+	BYTE	W96
+// 017   ----------------------------------------
+	BYTE	W96
+// 018   ----------------------------------------
+	BYTE	W96
+// 019   ----------------------------------------
+	BYTE	W92
+	BYTE	W03
+	BYTE	GoTo
+	 POIN2	RoysTheme_2_B1
+RoysTheme_2_B2:
+	BYTE	FINE
+
+//**************** Track 3 (Midi-Chn.3) ****************//
+
+RoysTheme_3:
+	BYTE	KEYSH   RoysTheme_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   41
+	BYTE		VOL     74*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-19
+	BYTE		N92     En2   v092
+	BYTE		N92     Cs3 
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE		N88     Fn2   v096
+	BYTE		N92     Dn3   v104
+	BYTE	W96
+// 002   ----------------------------------------
+	BYTE		N72     En2   v100
+	BYTE		N78     Cs3   v092
+	BYTE	W84
+	BYTE		N06     Fs2   v080
+	BYTE		N07     Dn3   v116
+	BYTE	W12
+// 003   ----------------------------------------
+	BYTE		N78     Gn2   v096
+	BYTE		N78     En3   v104
+	BYTE	W96
+RoysTheme_3_B1:
+// 004   ----------------------------------------
+	BYTE		VOL     70*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v+16
+	BYTE		N32     Cs3   v080
+	BYTE	W36
+	BYTE		N11     Dn3 
+	BYTE	W12
+	BYTE		N44     En3 
+	BYTE	W48
+// 005   ----------------------------------------
+RoysTheme_3_005:
+	BYTE		N32     Gn3   v080
+	BYTE	W36
+	BYTE		N05     Fn3 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE	W06
+	BYTE		N44     An2 
+	BYTE	W48
+	BYTE	PEND
+// 006   ----------------------------------------
+	BYTE		N32     En3 
+	BYTE	W36
+	BYTE		N05     Dn3 
+	BYTE	W06
+	BYTE		        Cn3   v076
+	BYTE	W06
+	BYTE		N42     Bn2   v080
+	BYTE	W48
+// 007   ----------------------------------------
+RoysTheme_3_007:
+	BYTE		N32     Cs3   v080
+	BYTE	W36
+	BYTE		N11     Dn3 
+	BYTE	W12
+	BYTE		N44     En3 
+	BYTE	W48
+	BYTE	PEND
+// 008   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_3_007
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_3_005
+// 010   ----------------------------------------
+	BYTE		N32     En3   v080
+	BYTE	W36
+	BYTE		N11     Dn3 
+	BYTE	W12
+	BYTE		N30     Bn2 
+	BYTE	W36
+	BYTE		N11   
+	BYTE	W12
+// 011   ----------------------------------------
+	BYTE		N44     Dn3 
+	BYTE	W48
+	BYTE		N42     Cs3   v072
+	BYTE	W48
+// 012   ----------------------------------------
+	BYTE		N44     Cn3   v112
+	BYTE	W48
+	BYTE		N23     Bn2   v104
+	BYTE	W24
+	BYTE		        An2   v100
+	BYTE	W24
+// 013   ----------------------------------------
+	BYTE		N12     Bn2 
+	BYTE	W18
+	BYTE		N05     Gn2   v084
+	BYTE	W06
+	BYTE		N60     Dn3   v120
+	BYTE	W72
+// 014   ----------------------------------------
+	BYTE		N44     Dn3   v116
+	BYTE	W48
+	BYTE		N23     Cn3   v084
+	BYTE	W24
+	BYTE		        Bn2   v092
+	BYTE	W24
+// 015   ----------------------------------------
+	BYTE		N11     Cn3   v108
+	BYTE	W18
+	BYTE		N05     An2   v084
+	BYTE	W06
+	BYTE		N56     En3   v104
+	BYTE	W72
+// 016   ----------------------------------------
+	BYTE		N44     En3   v108
+	BYTE	W48
+	BYTE		N23     Dn3   v104
+	BYTE	W24
+	BYTE		N22     Cn3   v096
+	BYTE	W24
+// 017   ----------------------------------------
+	BYTE		N80     Dn3   v112
+	BYTE	W96
+// 018   ----------------------------------------
+	BYTE		N44     Dn3   v127
+	BYTE	W48
+	BYTE		N23     Bn2   v100
+	BYTE	W24
+	BYTE		        Dn3   v116
+	BYTE	W24
+// 019   ----------------------------------------
+	BYTE		N80     Cs3   v096
+	BYTE	W92
+	BYTE	W03
+	BYTE	GoTo
+	 POIN2	RoysTheme_3_B1
+RoysTheme_3_B2:
+	BYTE	FINE
+
+//**************** Track 4 (Midi-Chn.4) ****************//
+
+RoysTheme_4:
+	BYTE	KEYSH   RoysTheme_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   52
+	BYTE		VOL     85*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-12
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE	W96
+// 002   ----------------------------------------
+	BYTE		VOL     90*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v+0
+	BYTE		TIE     An3   v096
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W84
+	BYTE		EOT   
+	BYTE	W12
+RoysTheme_4_B1:
+// 004   ----------------------------------------
+	BYTE		VOL     90*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v+0
+	BYTE		N92     An2   v104
+	BYTE	W96
+// 005   ----------------------------------------
+	BYTE		        Fn2   v100
+	BYTE	W96
+// 006   ----------------------------------------
+	BYTE		        Gn2 
+	BYTE	W96
+// 007   ----------------------------------------
+	BYTE		N88     An2   v096
+	BYTE	W96
+// 008   ----------------------------------------
+	BYTE		N92     An2   v108
+	BYTE	W96
+// 009   ----------------------------------------
+	BYTE		        An2   v096
+	BYTE	W96
+// 010   ----------------------------------------
+	BYTE		        Bn2 
+	BYTE	W96
+// 011   ----------------------------------------
+	BYTE		N78     Cs3   v100
+	BYTE	W96
+// 012   ----------------------------------------
+	BYTE		TIE     Fn3   v096
+	BYTE	W96
+// 013   ----------------------------------------
+	BYTE	W96
+// 014   ----------------------------------------
+	BYTE	W96
+// 015   ----------------------------------------
+	BYTE	W92
+	BYTE	W03
+	BYTE		EOT   
+	BYTE	W01
+// 016   ----------------------------------------
+	BYTE		TIE     Gn3 
+	BYTE	W96
+// 017   ----------------------------------------
+	BYTE	W92
+	BYTE	W03
+	BYTE		EOT   
+	BYTE	W01
+// 018   ----------------------------------------
+	BYTE		N92     An3 
+	BYTE	W96
+// 019   ----------------------------------------
+	BYTE		N90     An3   v092
+	BYTE	W92
+	BYTE	W03
+	BYTE	GoTo
+	 POIN2	RoysTheme_4_B1
+RoysTheme_4_B2:
+	BYTE	FINE
+
+//**************** Track 5 (Midi-Chn.5) ****************//
+
+RoysTheme_5:
+	BYTE	KEYSH   RoysTheme_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   48
+	BYTE		VOL     85*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-12
+	BYTE	W24
+	BYTE		N04     An2   v108
+	BYTE	W08
+	BYTE		        Bn2   v112
+	BYTE	W08
+	BYTE		        Cs3   v100
+	BYTE	W08
+	BYTE		N36     En3   v124
+	BYTE	W48
+// 001   ----------------------------------------
+	BYTE		N16     En3   v127
+	BYTE	W24
+	BYTE		N04     En3   v124
+	BYTE	W08
+	BYTE		        Dn3   v127
+	BYTE	W08
+	BYTE		        Gn2   v116
+	BYTE	W08
+	BYTE		N18     Cn3   v112
+	BYTE	W24
+	BYTE		N16     Bn2 
+	BYTE	W24
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W96
+RoysTheme_5_B1:
+// 004   ----------------------------------------
+	BYTE		VOL     52*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v+0
+	BYTE		N92     Cs3   v104
+	BYTE	W96
+// 005   ----------------------------------------
+	BYTE		        Cn3   v100
+	BYTE	W96
+// 006   ----------------------------------------
+	BYTE		        Dn3 
+	BYTE	W96
+// 007   ----------------------------------------
+	BYTE		N88     En3   v096
+	BYTE	W96
+// 008   ----------------------------------------
+	BYTE		N92     Cs3   v108
+	BYTE	W96
+// 009   ----------------------------------------
+	BYTE		        Cn3   v096
+	BYTE	W96
+// 010   ----------------------------------------
+	BYTE		VOL     24*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-4
+	BYTE		N92     Gn3   v112
+	BYTE	W03
+	BYTE		VOL     25*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        26*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        27*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        28*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        28*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        29*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        30*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        31*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        32*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        33*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        33*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        34*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        35*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        36*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        37*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        38*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        38*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        39*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        40*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        41*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        42*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        42*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        43*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        44*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        45*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        46*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        47*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        47*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        48*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        49*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        50*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        51*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        52*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        52*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        53*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        54*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        55*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        56*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        57*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        57*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        58*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        59*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        60*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        61*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        62*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        62*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        63*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        64*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        65*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        66*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        66*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        67*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        68*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        69*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        70*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        71*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        71*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        72*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        73*RoysTheme_mvl/mxv
+	BYTE	W02
+	BYTE		        74*RoysTheme_mvl/mxv
+	BYTE	W01
+	BYTE		        75*RoysTheme_mvl/mxv
+	BYTE	W02
+// 011   ----------------------------------------
+	BYTE		        76*RoysTheme_mvl/mxv
+	BYTE		N92     An3 
+	BYTE	W15
+	BYTE		VOL     76*RoysTheme_mvl/mxv
+	BYTE	W07
+	BYTE		        77*RoysTheme_mvl/mxv
+	BYTE	W08
+	BYTE		        78*RoysTheme_mvl/mxv
+	BYTE	W08
+	BYTE		        79*RoysTheme_mvl/mxv
+	BYTE	W07
+	BYTE		        80*RoysTheme_mvl/mxv
+	BYTE	W08
+	BYTE		        81*RoysTheme_mvl/mxv
+	BYTE	W08
+	BYTE		        81*RoysTheme_mvl/mxv
+	BYTE	W07
+	BYTE		        83*RoysTheme_mvl/mxv
+	BYTE	W04
+	BYTE		        57*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-4
+	BYTE	W24
+// 012   ----------------------------------------
+	BYTE		N44     Cn4   v080
+	BYTE	W48
+	BYTE		N23     Bn3 
+	BYTE	W24
+	BYTE		        An3 
+	BYTE	W24
+// 013   ----------------------------------------
+	BYTE		N12     Bn3 
+	BYTE	W18
+	BYTE		N05     Gn3 
+	BYTE	W06
+	BYTE		N60     Dn4 
+	BYTE	W72
+// 014   ----------------------------------------
+	BYTE		N44   
+	BYTE	W48
+	BYTE		N23     Cn4 
+	BYTE	W24
+	BYTE		        Bn3 
+	BYTE	W24
+// 015   ----------------------------------------
+	BYTE		N05     Cn4 
+	BYTE	W18
+	BYTE		        An3 
+	BYTE	W06
+	BYTE		N56     En4 
+	BYTE	W72
+// 016   ----------------------------------------
+	BYTE		N44   
+	BYTE	W48
+	BYTE		N23     Dn4 
+	BYTE	W24
+	BYTE		N22     Cn4 
+	BYTE	W24
+// 017   ----------------------------------------
+	BYTE		N80     Dn4 
+	BYTE	W96
+// 018   ----------------------------------------
+	BYTE		N44   
+	BYTE	W48
+	BYTE		N23     Bn3 
+	BYTE	W24
+	BYTE		        Dn4 
+	BYTE	W24
+// 019   ----------------------------------------
+	BYTE		N80     Cs4 
+	BYTE	W92
+	BYTE	W03
+	BYTE	GoTo
+	 POIN2	RoysTheme_5_B1
+RoysTheme_5_B2:
+	BYTE	FINE
+
+//**************** Track 6 (Midi-Chn.6) ****************//
+
+RoysTheme_6:
+	BYTE	KEYSH   RoysTheme_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   34
+	BYTE		VOL     81*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v+2
+	BYTE		N92     An1   v104
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE		        Gn1   v100
+	BYTE	W96
+// 002   ----------------------------------------
+	BYTE		N10     An1   v096
+	BYTE	W24
+	BYTE		        An1   v100
+	BYTE	W24
+	BYTE		N09     An1   v096
+	BYTE	W24
+	BYTE		N10     An1   v100
+	BYTE	W24
+// 003   ----------------------------------------
+	BYTE		N09   
+	BYTE	W24
+	BYTE		N09   
+	BYTE	W24
+	BYTE		N10   
+	BYTE	W24
+	BYTE		N10   
+	BYTE	W24
+RoysTheme_6_B1:
+// 004   ----------------------------------------
+	BYTE		N24     An2   v112
+	BYTE	W36
+	BYTE		N04     An2   v100
+	BYTE	W12
+	BYTE		N44     An2   v112
+	BYTE	W48
+// 005   ----------------------------------------
+	BYTE		N30     Fn2   v108
+	BYTE	W36
+	BYTE		N05     Fn2   v092
+	BYTE	W12
+	BYTE		N44     Fn2   v108
+	BYTE	W48
+// 006   ----------------------------------------
+	BYTE		N32     Gn2 
+	BYTE	W36
+	BYTE		N06   
+	BYTE	W12
+	BYTE		N44   
+	BYTE	W48
+// 007   ----------------------------------------
+	BYTE		N24     An2   v112
+	BYTE	W36
+	BYTE		N23     An2   v108
+	BYTE	W24
+	BYTE		        En2   v104
+	BYTE	W24
+	BYTE		N11     An1   v100
+	BYTE	W12
+// 008   ----------------------------------------
+	BYTE		N24     An2   v116
+	BYTE	W36
+	BYTE		N05     An2   v108
+	BYTE	W12
+	BYTE		N44     An2   v104
+	BYTE	W48
+// 009   ----------------------------------------
+	BYTE		N28     Fn2   v100
+	BYTE	W36
+	BYTE		N06   
+	BYTE	W12
+	BYTE		N44     Fn2   v108
+	BYTE	W48
+// 010   ----------------------------------------
+	BYTE		N28     Gn2   v104
+	BYTE	W36
+	BYTE		N06   
+	BYTE	W12
+	BYTE		N32     Gn2   v108
+	BYTE	W36
+	BYTE		N11     Gn2   v096
+	BYTE	W12
+// 011   ----------------------------------------
+	BYTE		N24     An2   v104
+	BYTE	W36
+	BYTE		N05   
+	BYTE	W12
+	BYTE		N11     An2   v116
+	BYTE	W12
+	BYTE		N23     En2   v104
+	BYTE	W24
+	BYTE		N05     An2   v108
+	BYTE	W12
+// 012   ----------------------------------------
+	BYTE		N23     Fn2   v104
+	BYTE	W36
+	BYTE		N05   
+	BYTE	W12
+	BYTE		N30     Fn2   v116
+	BYTE	W36
+	BYTE		N05     Fn2   v108
+	BYTE	W12
+// 013   ----------------------------------------
+	BYTE		N07     Fn2   v116
+	BYTE	W12
+	BYTE		N17     Fn2   v104
+	BYTE	W24
+	BYTE		N23     Fn2   v108
+	BYTE	W24
+	BYTE		N11     Cn2 
+	BYTE	W12
+	BYTE		        Fn2   v112
+	BYTE	W12
+	BYTE		        Cn2   v096
+	BYTE	W12
+// 014   ----------------------------------------
+	BYTE		N24     Fn2   v116
+	BYTE	W36
+	BYTE		N05     Fn2   v112
+	BYTE	W12
+	BYTE		N28   
+	BYTE	W36
+	BYTE		N16   
+	BYTE	W12
+// 015   ----------------------------------------
+	BYTE	W12
+	BYTE		N17   
+	BYTE	W24
+	BYTE		N06   
+	BYTE	W12
+	BYTE		N09     Fn2   v108
+	BYTE	W12
+	BYTE		N11     Cn2   v092
+	BYTE	W12
+	BYTE		        Fn2   v112
+	BYTE	W12
+	BYTE		        An2   v104
+	BYTE	W12
+// 016   ----------------------------------------
+	BYTE		N24     Gn2   v108
+	BYTE	W36
+	BYTE		N05     Gn2   v116
+	BYTE	W12
+	BYTE		N24   
+	BYTE	W36
+	BYTE		N23   
+	BYTE	W12
+// 017   ----------------------------------------
+	BYTE	W12
+	BYTE		N11     Dn2 
+	BYTE	W12
+	BYTE		        Gn2   v108
+	BYTE	W12
+	BYTE		        Dn2   v112
+	BYTE	W12
+	BYTE		N07     Gn2 
+	BYTE	W12
+	BYTE		        Gn1   v096
+	BYTE	W12
+	BYTE		N11     Dn2   v112
+	BYTE	W12
+	BYTE		N07     Gn2   v104
+	BYTE	W12
+// 018   ----------------------------------------
+	BYTE		N28     An2 
+	BYTE	W36
+	BYTE		N05     An2   v112
+	BYTE	W12
+	BYTE		N24   
+	BYTE	W36
+	BYTE		N08   
+	BYTE	W12
+// 019   ----------------------------------------
+	BYTE		N11     An2   v060
+	BYTE	W12
+	BYTE		N22     En2   v120
+	BYTE	W24
+	BYTE		N23     An1   v116
+	BYTE	W24
+	BYTE		N10     En2   v112
+	BYTE	W12
+	BYTE		N19     An2   v120
+	BYTE	W23
+	BYTE	GoTo
+	 POIN2	RoysTheme_6_B1
+RoysTheme_6_B2:
+	BYTE	FINE
+
+//**************** Track 7 (Midi-Chn.7) ****************//
+
+RoysTheme_7:
+	BYTE	KEYSH   RoysTheme_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   121
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE	W96
+// 002   ----------------------------------------
+	BYTE		VOL     78*RoysTheme_mvl/mxv
+	BYTE		PAN     c_v-7
+	BYTE		N23     Cn1   v100
+	BYTE	W24
+	BYTE		N23   
+	BYTE	W24
+	BYTE		N23   
+	BYTE	W24
+	BYTE		N23   
+	BYTE	W24
+// 003   ----------------------------------------
+RoysTheme_7_003:
+	BYTE		N23     Cn1   v100
+	BYTE	W24
+	BYTE		N23   
+	BYTE	W24
+	BYTE		N23   
+	BYTE	W24
+	BYTE		N11   
+	BYTE	W12
+	BYTE		        Dn1   v112
+	BYTE	W12
+	BYTE	PEND
+RoysTheme_7_B1:
+// 004   ----------------------------------------
+RoysTheme_7_004:
+	BYTE		N23     Cn1   v100
+	BYTE	W24
+	BYTE		N23   
+	BYTE	W24
+	BYTE		N23   
+	BYTE	W24
+	BYTE		N23   
+	BYTE	W24
+	BYTE	PEND
+// 005   ----------------------------------------
+RoysTheme_7_005:
+	BYTE		N23     Cn1   v100
+	BYTE	W24
+	BYTE		N11     Cn1   v080
+	BYTE	W12
+	BYTE		        Cn1   v040
+	BYTE	W12
+	BYTE		        Cn1   v092
+	BYTE	W12
+	BYTE		        Dn1   v084
+	BYTE	W12
+	BYTE		        Cn1   v100
+	BYTE	W12
+	BYTE		        Dn1   v108
+	BYTE	W12
+	BYTE	PEND
+// 006   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_003
+// 007   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_005
+// 008   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_004
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_005
+// 010   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_003
+// 011   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_005
+// 012   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_004
+// 013   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_005
+// 014   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_003
+// 015   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_005
+// 016   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_004
+// 017   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_005
+// 018   ----------------------------------------
+	BYTE	PATT
+	 POIN2	RoysTheme_7_003
+// 019   ----------------------------------------
+	BYTE		N23     Cn1   v100
+	BYTE	W24
+	BYTE		N11     Cn1   v080
+	BYTE	W12
+	BYTE		        Cn1   v040
+	BYTE	W12
+	BYTE		        Cn1   v092
+	BYTE	W12
+	BYTE		        Dn1   v084
+	BYTE	W12
+	BYTE		        Cn1   v100
+	BYTE	W12
+	BYTE		        Dn1   v108
+	BYTE	W11
+	BYTE	GoTo
+	 POIN2	RoysTheme_7_B1
+RoysTheme_7_B2:
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+RoysTheme:
+	BYTE	7	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	RoysTheme_pri	// Priority
+	BYTE	RoysTheme_rev	// Reverb.
+
+	POIN2	RoysTheme_grp
+
+	POIN2	RoysTheme_1
+	POIN2	RoysTheme_2
+	POIN2	RoysTheme_3
+	POIN2	RoysTheme_4
+	POIN2	RoysTheme_5
+	POIN2	RoysTheme_6
+	POIN2	RoysTheme_7
+
+	

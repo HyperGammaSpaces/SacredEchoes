@@ -1,0 +1,157 @@
+#######################################################
+#
+#
+#When importing to FEEditorAdv delete # and after each line.
+#######################################################
+/// - Mode 1                            #Melee Animation
+C03                                     #Start attack animation; should be followed by 0x07
+C07                                     #Start attack animation; should be preceeded by 0x03
+6 p- Standing.png
+C41                                     #EMPTY FE7:086EB188
+2 p- melee_ata_001.png
+15 p- melee_ata_002.png
+C42                                     #Refresh long axe swinging SFE
+2 p- melee_ata_003.png
+C30                                     #Show dirt kicking (as from dashing forward) animation
+2 p- melee_ata_prc_004.png
+2 p- melee_ata_prc_005.png
+2 p- melee_ata_prc_006.png
+2 p- melee_ata_prc_007.png
+C04                                     #Prepare HP depletion routine; needed to animate return to standing frame after hit
+C1B                                     #Refresh quick "heavy step" SFE
+C20                                     #Refresh hit SFE (sounds like Knight Lord with Durandal's hit)
+C1A                                     #Normal hit
+3 p- melee_ata_prc_008.png
+3 p- melee_ata_prc_009.png
+3 p- melee_ata_prc_010.png
+C01                                     #NOP
+2 p- melee_rtrn_001.png
+4 p- melee_rtrn_002.png
+C1B                                     #Refresh quick "heavy step" SFE
+6 p- melee_rtrn_003.png
+4 p- melee_rtrn_004.png
+4 p- melee_rtrn_005.png
+C1B                                     #Refresh quick "heavy step" SFE
+1 p- Standing.png
+C06                                     #Begin opponent's turn after hit.next code 0D.
+C0D                                     #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 3                            #Melee Critical Animation
+C03                                     #Start attack animation; should be followed by 0x07
+C07                                     #Start attack animation; should be preceeded by 0x03
+6 p- Standing.png
+C41                                     #EMPTY FE7:086EB188
+2 p- melee_crit_001.png
+15 p- melee_crit_002.png
+C42                                     #Refresh long axe swinging SFE
+3 p- melee_crit_003.png
+C15                                     #Slight vibration of screen
+3 p- melee_crit_004.png
+3 p- melee_crit_005.png
+9 p- Standing.png
+C41                                     #EMPTY FE7:086EB188
+2 p- melee_ata_001.png
+15 p- melee_ata_002.png
+C42                                     #Refresh long axe swinging SFE
+2 p- melee_ata_003.png
+C30                                     #Show dirt kicking (as from dashing forward) animation
+2 p- melee_ata_prc_004.png
+2 p- melee_ata_prc_005.png
+2 p- melee_ata_prc_006.png
+2 p- melee_ata_prc_007.png
+C04                                     #Prepare HP depletion routine; needed to animate return to standing frame after hit
+C1B                                     #Refresh quick "heavy step" SFE
+C20                                     #Refresh hit SFE (sounds like Knight Lord with Durandal's hit)
+C0C                               #Critical hit
+3 p- melee_ata_prc_008.png
+3 p- melee_ata_prc_009.png
+3 p- melee_ata_prc_010.png
+C01                                     #NOP
+2 p- melee_rtrn_001.png
+4 p- melee_rtrn_002.png
+C1B                                     #Refresh quick "heavy step" SFE
+6 p- melee_rtrn_003.png
+4 p- melee_rtrn_004.png
+4 p- melee_rtrn_005.png
+C1B                                     #Refresh quick "heavy step" SFE
+1 p- Standing.png
+C06                                     #Begin opponent's turn after hit.next code 0D.
+C0D                                     #End of dodge animation. preceeded by 0x06
+
+~~~
+/// - Mode 5                            #Ranged Animation 
+1 p- Standing.png
+C01                                     #NOP
+~~~
+/// - Mode 6                            #Ranged Critical Animation
+1 p- Standing.png
+C01                                     #NOP
+~~~
+/// - Mode 7                            #Dodge Melee Attack
+C02                                     #Start of dodge
+1 p- Standing.png
+C0E                                     #Start of dodging frames (should go after standing frame and before dodging animation)
+2 p- dodge_001.png
+3 p- dodge_002.png
+C01                                     #NOP
+2 p- dodge_001.png
+1 p- Standing.png
+C06                                     #Begin opponent's turn after hit.next code 0D.
+C0D                                     #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 8                            #Dodge Ranged Attack
+C02                                     #Start of dodge
+1 p- Standing.png
+C0E                                     #Start of dodging frames (should go after standing frame and before dodging animation)
+2 p- dodge_001.png
+3 p- dodge_002.png
+C01                                     #NOP
+2 p- dodge_001.png
+1 p- Standing.png
+C06                                     #Begin opponent's turn after hit.next code 0D.
+C0D                                     #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 9                            #Equiped with Melee Weapon
+1 p- Standing.png
+C01                                     #NOP
+~~~
+/// - Mode 10                           #standing motions?
+1 p- Standing.png
+C01                                     #NOP
+~~~
+/// - Mode 11                           #Equiped with Ranged weapon
+1 p- Standing.png
+C01                                     #NOP
+~~~
+/// - Mode 12                           #Attack Missed Animation
+C03                                     #Start attack animation; should be followed by 0x07
+C07                                     #Start attack animation; should be preceeded by 0x03
+6 p- Standing.png
+C41                                     #EMPTY FE7:086EB188
+2 p- melee_ata_001.png
+15 p- melee_ata_002.png
+C42                                     #Refresh long axe swinging SFE
+2 p- melee_ata_003.png
+C30                                     #Show dirt kicking (as from dashing forward) animation
+2 p- melee_ata_004.png
+2 p- melee_ata_005.png
+2 p- melee_ata_006.png
+2 p- melee_ata_007.png
+C04                                     #Prepare HP depletion routine; needed to animate return to standing frame after hit
+C1B                                     #Refresh quick "heavy step" SFE
+3 p- melee_ata_008.png
+3 p- melee_ata_009.png
+3 p- melee_ata_010.png
+C01                                     #NOP
+2 p- melee_rtrn_001.png
+4 p- melee_rtrn_002.png
+C1B                                     #Refresh quick "heavy step" SFE
+6 p- melee_rtrn_003.png
+4 p- melee_rtrn_004.png
+4 p- melee_rtrn_005.png
+C1B                                     #Refresh quick "heavy step" SFE
+1 p- Standing.png
+C06                                     #Begin opponent's turn after hit.next code 0D.
+C0D                                     #End of dodge animation. preceeded by 0x06
+~~~
+/// - End of animation

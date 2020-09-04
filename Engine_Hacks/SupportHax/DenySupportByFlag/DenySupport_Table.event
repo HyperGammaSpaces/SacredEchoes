@@ -1,0 +1,7 @@
+#define DenySupportEntry(Unit1,Unit2,MapID,SupportLevel,EventID) "BYTE Unit1 Unit2 MapID SupportLevel; SHORT EventID 0; "
+//Unit1, Unit2, MapID = use 0xFF for "any"
+//SupportLevel, EventID = use 0x00 for "any"
+
+DenySupport_Table:
+DenySupportEntry(Alm,Clair,0xFF,BSupport,gRouteSplit1Flag)  //Example: Do not allow Alm/Clair B until gRouteSplit1Flag is set
+DenySupportEntry(0x00,0x00,0x00,0x00,0x00)  // term

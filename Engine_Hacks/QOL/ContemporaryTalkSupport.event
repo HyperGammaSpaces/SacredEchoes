@@ -1,0 +1,44 @@
+//Contemporary talk and support 
+
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+	//Make them green
+	ORG $59CBEC
+	BYTE $04
+	
+	ORG $59CC10
+	BYTE $04
+	
+	ORG $323c2
+	BL(TalkFix)
+
+	ORG $32438
+	BL(SupportFix)
+	
+	ORG $DFA2C //some free space in BL range
+	TalkFix:
+	#incbin "TalkFix.dmp"
+	ALIGN 4
+	SupportFix:
+	#incbin "Supportfix.dmp"
+	ALIGN 4
+
+POP
+
+
+
+//actionsupport is at 323d4, AddSupportPoints is at 28290
+//282dc runs after the support
+
+//32454 is fucking it up.
+
+//Registers before branch to Supportfix:
+//r0=3 (Gray)
+//r1=6 (Faye)
+//r2=1 (from GetSupportLevelBySupportIndex)
+//r3=4 (idk)
+//r4=202bfb4 (Faye rampointer)
+//r5=6 (Faye id again)
+//r6=3 (Gray id again)
+//r7=4 (idk again)

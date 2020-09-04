@@ -1,0 +1,292 @@
+#include EAstdlib.event
+
+EventPointerTable(0x4f, Ch2_7_ThisChapter)
+
+Ch2_7_ThisChapter:
+	POIN Ch2_7_TurnBasedEvents
+	POIN Ch2_7_CharacterBasedEvents
+	POIN Ch2_7_LocationBasedEvents
+	POIN Ch2_7_MiscBasedEvents
+	POIN Ch2_7_Dunno Ch2_7_Dunno Ch2_7_Dunno
+	POIN Ch2_7_Tutorial
+	POIN Ch2_7_Ballista1 Ch2_7_Ballista3
+	POIN PlayerUnits PlayerUnits
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch2_7_BeginningScene Ch2_7_EndingScene
+
+Ch2_7_TurnBasedEvents:
+	TURN 0x0 PostPrep[1,0] 0x0
+	TURN 0x0 WaveFirst[4,0] 0x0
+	TURN 0x0 WaveSecond[5,0] 0x0
+	TURN
+
+PostPrep:
+	MUSC 0x4B
+		CHECK_EXISTS Leon
+		BEQ 0x3 0xC 0x0
+		CHECK_ALIVE Leon
+		BEQ 0x3 0xC 0x0
+		CHECK_EXISTS Kamui
+		BEQ 0x3 0xC 0x0
+		CHECK_ALIVE Kamui
+		BEQ 0x3 0xC 0x0
+			CAM1 Celica
+			Text(Ch2_7_PostPrep_1) //hmm...
+			CAM1 [4,16]
+			Text(Ch2_7_PostPrep_2) //we may have company later
+			GOTO 0x4
+	LABEL 0x3
+		CAM1 Celica
+		Text(Ch2_7_PostPrep_1_NoLeon) //hmm...
+		CAM1 [4,16]
+		Text(Ch2_7_PostPrep_2_NoLeon) //we may have company later
+	LABEL 0x4
+	REMA
+	NoFade
+	ENDA
+
+WaveFirst:
+	SVAL 0x1 0x0
+	CHAI 0x93
+	CHAI 0xA8
+	ReinforcementEvent(PirateSouthREDAs)
+	NoFade
+	ENDA
+
+WaveSecond:
+	ReinforcementEvent(PirateNorthREDAs)
+	ReinforcementEvent(CavWestREDAs)
+	NoFade
+	ENDA
+
+Ch2_7_CharacterBasedEvents:
+	CHAR
+
+Ch2_7_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(4,5)
+	#endif
+	Village(0x8, VillageEventWest, 4,8)
+	Village(0x9, VillageEventEast, 13,3)
+	House(0x0,House1,15,3)
+	LOCA
+
+VillageEventWest:
+	VillageEventItem(Ch2_7_Village_1, Village, 0x60) //ambrosia
+	ENDA
+
+VillageEventEast:
+	VillageEventItem(Ch2_7_Village_2, Village, KillerAxe)
+	ENDA
+
+House1:
+	HouseEvent(Ch2_7_House,HouseBG)
+	ENDA
+
+Ch2_7_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	DefeatAll(Ch2_7_EndingScene)
+	AFEV 0xA ChangeAIEvent1 0x8
+	AFEV 0xB ChangeAIEvent2 0x9
+	MournQuoteAFEVS
+	AFEV
+
+ChangeAIEvent1:
+	SVAL 0x1 0x0
+	CHAI 0x64
+	NoFade
+	ENDA
+
+ChangeAIEvent2:
+	SVAL 0x1 0x0
+	CHAI 0x6A
+	NoFade
+	ENDA
+
+Ch2_7_Dunno:
+	END_MAIN
+
+Ch2_7_Tutorial:
+	END_MAIN
+
+Ch2_7_Ballista1:
+	BLST
+
+Ch2_7_Ballista3:
+	BLST
+	ALIGN 4
+
+PlayerUnits:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA12R15 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA13R14 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R14 [Fire, Vulnerary] NoAI 
+	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x1 REDA10R15 [Nosferatu, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA12R13 [BaseSword, Vulnerary] NoAI 
+	UNIT Valbar Knight 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x1 REDA10R13 [BaseLance,BaseAxe,Vulnerary] NoAI
+	UNIT Leon Archer 0x00 Level(4, Ally, 1) [12,16] 0x00 0x00 0x1 REDA13R16 [IronBow, BaseBow, Vulnerary] NoAI
+	UNIT Kamui Mercenary 0x00 Level(3, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R16 [BaseSword] NoAI 
+	UNIT
+	
+EnemyUnits:
+	UNIT 0x91 Arcanist 0x91 Level(3,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [Miasma,AngelRing,Item100G] NeverMoveAI 
+	UNIT 0xA8 Mercenary 0x91 Level(9,Enemy,True) [3,3] 0x00 0x00 0x0 0x00 [Armorslayer] NeverMoveAI 
+	UNIT 0x65 Mage 0x91 Level(11,Enemy,True) [5,9] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI 
+	UNIT 0x66 Archer_F 0x91 Level(12,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
+	UNIT 0x65 Pirate 0x91 Level(13,Enemy,True) [2,14] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT 0x65 Pirate 0x91 Level(13,Enemy,True) [5,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI 
+	UNIT 0x67 Mercenary 0x91 Level(8,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	UNIT 0x65 Pirate 0x91 Level(13,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT 0x65 Mercenary 0x91 Level(9,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x66 Archer 0x91 Level(13,Enemy,True) [2,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
+	UNIT 0x8D Knight 0x91 Level(3,Enemy,False) [11,5] 0x00 0x00 0x0 0x00 [BaseAxe,Javelin] NeverMoveAI 
+	UNIT 0x67 Mercenary 0x91 Level(10,Enemy,True) [16,8] 0x00 0x00 0x0 0x00 [IronSword,HideShield] AttackInRangeAI 
+	UNIT 0x65 Pirate_F 0x91 Level(13,Enemy,True) [16,11] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT 0x92 Shaman 0x91 Level(9,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Miasma,Heal] HealUnits 
+	UNIT 0x93 Shaman 0x91 Level(8,Enemy,True) [2,2] 0x00 0x00 0x0 0x00 [Miasma,Heal] AttackInRangeAI 
+	UNIT 0x92 Shaman 0x91 Level(8,Enemy,True) [9,2] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI //Give this guy Silence once it's implemented.
+	UNIT 0x92 Shaman 0x91 Level(8,Enemy,True) [17,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT 0x8D Soldier 0x91 Level(12,Enemy,True) [9,8] 0x00 0x00 0x0 0x00 [BaseLance,HideShield] AttackInRangeAI 
+	UNIT 0x92 Shaman 0x91 Level(6,Enemy,True) [14,1] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT 0x67 Mercenary 0x91 Level(9,Enemy,True) [14,15] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT
+
+CavWestREDAs:
+	UNIT 0x8E Cavalier 0x91 Level(13,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [IronLance,IronShield] DefaultAI 
+	UNIT 0x8E Cavalier_F 0x91 Level(13,Enemy,True) [0,7] 0x00 0x00 0x1 REDA0R7 [Javelin] DefaultAI 
+	UNIT
+
+PirateSouthREDAs:
+	UNIT 0x64 Pirate_F 0x91 Level(13,Enemy,True) [3,16] 0x00 0x00 0x1 REDA3R16 [BaseAxe,Torch] BrigandAI 
+	UNIT 0x64 Pirate 0x91 Level(14,Enemy,True) [4,16] 0x00 0x00 0x1 REDA4R16 [BaseAxe,Torch] BrigandAI 
+	UNIT
+	
+PirateNorthREDAs:	
+	UNIT 0x6A Pirate 0x91 Level(15,Enemy,True) [10,0] 0x00 0x00 0x1 REDA10R0 [HandAxe,Torch] BrigandAI 
+	UNIT
+	
+ConradAppears:
+	UNIT Conrad Paladin 0x00 Level(7,NPC,True) [5,0] 0x00 0x00 0x1 REDA10R4 [BaseLance, Vulnerary] NoAI 
+	UNIT
+
+CutsceneUnits:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [10,2] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [11,1] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [10,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT
+	
+CutsceneEnemies1:
+	UNIT 0x91 Arcanist 0x00 Level(1, Enemy, 1) [4,1] 0x00 0x00 0x0 0x00 [Miasma, Vulnerary] NoAI 
+	UNIT
+CutsceneEnemies2:
+	UNIT 0x42 Paladin 0x00 Level(1, Enemy, 1) [0,7] 0x00 0x00 0x1 REDA0R7 [BaseLance] NoAI 
+	UNIT
+
+Ch2_7_BeginningScene:
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	CAM1 [11,16]
+	FADU 16
+	MUSC Tension
+	LOAD3 0x0 PlayerUnits
+	ENUN
+		CHECK_EXISTS Valbar
+		BEQ 0x1 0xC 0x0
+		CHECK_ALIVE Valbar
+		BEQ 0x1 0xC 0x0
+		CHECK_EXISTS Leon
+		BEQ 0x1 0xC 0x0
+		CHECK_ALIVE Leon
+		BEQ 0x1 0xC 0x0
+		CHECK_EXISTS Kamui
+		BEQ 0x1 0xC 0x0
+		CHECK_ALIVE Kamui
+		BEQ 0x1 0xC 0x0
+			Text(Ch2_7_OpeningScene) // bandits?
+			CAM1 [4,8]
+			STAL 20
+			CAM1 [11,3]
+			STAL 20
+			CAM1 Celica
+			Text(Ch2_7_OpeningScene_2) // lets get em
+			GOTO 0x2
+	LABEL 0x1
+		Text(Ch2_7_OpeningScene_NoValbar) // bandits?
+		CAM1 [4,8]
+		STAL 20
+		CAM1 [11,3]
+		STAL 20
+		CAM1 Celica
+		Text(Ch2_7_OpeningScene_2_NoValbar) // lets get em
+	LABEL 0x2
+	GotoPrepScreen
+	NoFade
+	ENDA
+
+Ch2_7_EndingScene:
+	CALL UnifiedBEXPCaller
+	MUSC 0x31 //victory (good ending)
+	FADI 16
+	CLEN 0x0
+	CLEA 0x0
+	CLEE 0x0
+	CAM1 [11,0]
+	SetBackground(0x24)
+	TEXTSTART
+	TEXTSHOW Ch2_7_EndingScene_1 // blah blah
+	TEXTEND
+	MUSC 0x32
+	TEXTCONT
+	TEXTEND
+	REMA
+	ClearBackgroundSmooth
+	STAL 20
+	
+	//Put the slayde/cantor scene here. Slayde is 0x42
+	CAM1 [11,12]
+	MUSCFAST 0x48
+	//warpin effect pls
+	LOAD1 0x0 CutsceneEnemies1
+	ENUN
+	LOAD1 0x0 CutsceneEnemies2
+	ENUN
+	MOVE 0x08 0x91 [11,9]
+	ENUN
+	STAL 20
+	MOVE 0x08 0x42 [12,9]
+	ENUN
+	FADI 16
+	CLEE 0x0
+	CAM1 [9,5]
+	SetBackground(0x24)
+	TEXTSTART
+	TEXTSHOW Ch2_Epilogue2 // blah blah
+	TEXTEND
+		MUSC 0x15
+	TEXTCONT
+	TEXTEND
+	REMA
+	FADI 3
+	ClearBackground
+
+	STAL 20
+	MUSCFAST 0x7FFF
+	STAL 20
+	LOAD1 0x1 ConradAppears
+	ENUN
+	FlashCursor(Conrad,60)
+	Text(Ch2_7_ConradAppears) // conrad goes ...
+	//MoveCoords(10,4,17,4)
+	MOVE 0x08 Conrad [17,4]
+
+	FADI 2
+	ENUN
+	ENUT gPart2Completed
+	ENUT gRouteSplit1Flag
+	MNCH 0x07
+	//MNTS 0x0 //kick to title screen
+	ENDA
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

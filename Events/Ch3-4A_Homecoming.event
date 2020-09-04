@@ -1,0 +1,418 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x61, Ch3_4A_ThisChapter)
+
+Ch3_4A_ThisChapter:
+	POIN Ch3_4A_TurnBasedEvents
+	POIN Ch3_4A_CharacterBasedEvents
+	POIN Ch3_4A_LocationBasedEvents
+	POIN Ch3_4A_MiscBasedEvents
+	POIN Ch3_4A_Dunno Ch3_4A_Dunno Ch3_4A_Dunno
+	POIN Ch3_4A_Tutorial
+	POIN Ch3_4A_Ballista1 Ch3_4A_Ballista2
+	POIN Ch3_4A_Units1 Ch3_4A_Units1
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch3_4A_BeginningScene Ch3_4A_EndingScene
+
+Ch3_4A_TurnBasedEvents:
+	TURN 0x0 LoadSummons [1,255] 0x0
+	TURN 0x0 LoadThief [8,0] 0x0
+	TurnEventPlayer(0x0,LoadRightCavalry,4)
+	TurnEventPlayer(0x0,LoadLeftCavalry,4)
+	TurnEventPlayer(0x0,LoadSnipers,3)
+	TURN
+
+Ch3_4A_CharacterBasedEvents:
+	CharacterEvent(8,TalkToMathilda,Clive,Mathilda)
+	CHAR
+	
+TalkToMathilda:
+	MUSS 0x30
+	STAL 0x20
+	Text(Ch3_4A_MathildaJoins)
+	SVAL 0x1 0x0
+	CHAI Mathilda
+	STAL 5
+	CUSA Mathilda
+	STAL 0x14
+	MURE 0x05
+	NoFade
+	ENDA
+
+Ch3_4A_LocationBasedEvents:
+	Seize(9,2)
+	Door(8, 17)
+	Door(9, 17)
+	Door(10, 17)
+	Door(9, 9)
+	Door(0, 2)
+	Door(1, 2)
+	Door(17, 2)
+	Door(18, 2)
+	Chest(Ridersbane, 1, 0) //TODO: replace item
+	LOCA
+
+LoadSummons:
+	CHECK_EVENTID 0x9 // summoner death quote
+	BNE 0 0xC 0x0 // branch label 0 if summoner dead
+	COUNTER_CHECK 0 // slot c = counter 0 value
+	SVAL 0x1 1 // number of turns between summons (1)
+	BNE 1 0xC 0x1 // branch label 1 if counter is not at value
+
+	// Counter at value
+	COUNTER_SET 0 0 // reset counter
+	CAM1 0x92 // cam on summoner
+	ENUN
+	SOUN 0x3BF // summoning SFX
+	STAL 20
+	ReinforcementEvent(ZombieGroup)
+	GOTO 0
+
+	LABEL 1
+	// Counter not at value
+	COUNTER_ADD 0 0 // counter 0 ++
+
+	LABEL 0
+	// event end
+	NoFade
+	ENDA
+	
+LoadThief:
+	ReinforcementEvent(ThiefReinforcement)
+
+LoadSnipers:
+	ReinforcementEvent(SniperReinforcement)
+
+LoadRightCavalry:
+	ReinforcementEvent(CavReinforcementRight)
+
+LoadLeftCavalry:
+	ReinforcementEvent(CavReinforcementLeft)
+	
+DesaixCommand:
+	MUSI
+	STAL 20
+	CAM1 DesaixCh1
+	STAL 20
+	FlashCursor(DesaixCh1,60)
+	STAL 20
+	Text(Ch3_4A_DesaixText2)
+	STAL 20
+	MUNO
+	//ReinforcementEvent(DesaixCommandUnits)
+	NoFade
+	ENDA
+
+Ch3_4A_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	MournQuoteAFEVS
+	AFEV 0x9 DesaixCommand 0x8
+	AFEV
+
+Ch3_4A_Dunno:
+	END_MAIN
+
+Ch3_4A_Tutorial:
+	END_MAIN
+
+Ch3_4A_Ballista1:
+	BLST
+	ALIGN 4
+
+Ch3_4A_Ballista2:
+	BLST
+	ALIGN 4
+
+CutsceneAllies:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,21] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+Ch3_4A_Units1:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,21] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [7,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [12,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [6,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [8,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [8,20] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [6,20] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Forsyth Soldier 0x00 Level(1, Ally, 1) [11,21] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Python Archer 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
+	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [13,21] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
+	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT
+
+EnemyUnits:
+
+	// Bosses
+	UNIT DesaixCh1 Baron 0x0 Level(5, Enemy, False) [9,2] 0x00 0x00 0x0 0x00 [Javelin, SteelSword] NeverMoveAI
+	UNIT 0x8F Cantor DesaixCh1 Level(5, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma] NeverMoveAI
+	
+	// Cell guard knight
+	UNIT 0x88 Knight	DesaixCh1 Level(5, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] NeverMoveAI
+
+	// Outside Witch
+	UNIT 0x8C Witch	DesaixCh1 Level(4, Enemy, True) [17,22]	0x00 0x00 0x0 0x00 [Fire,Thunder] AttackInRangeAI
+	
+	// Main gate guard
+	UNIT 0x88 Knight	DesaixCh1 Level(5, Enemy, True) [8,15]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
+	UNIT 0x88 Knight	DesaixCh1 Level(6, Enemy, True) [9,15]	DropItem 0x00 0x0 0x00 [Hammer] NeverMoveAI
+	UNIT 0x88 Knight	DesaixCh1 Level(5, Enemy, True) [10,15]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
+
+	// Main gate behind
+	UNIT 0x89 Archer DesaixCh1 Level(14, Enemy, True) [8,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT 0x89 Sniper DesaixCh1 Level(7, Enemy, True) [9,13]	DropItem 0x00 0x0 0x00 [SteelBow,Elixir] [0x00,0x03,0x04,0x00]
+	UNIT 0x89 Archer DesaixCh1 Level(14, Enemy, True) [10,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT 0x8B Mage	DesaixCh1 Level(9, Enemy, True) [7,11]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
+	UNIT 0x8B Mage	DesaixCh1 Level(8, Enemy, True) [11,11]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x8B Mercenary	DesaixCh1 Level(8, Enemy, True) [5,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x8B Mercenary	DesaixCh1 Level(8, Enemy, True) [13,13]	DropItem 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
+
+	// Throne room
+	UNIT 0x8B Shaman	DesaixCh1 Level(12, Enemy, True) [4,1]	0x00 0x00 0x0 0x00 [Miasma,Heal] [0x0E,0x06]
+	UNIT 0x8B Shaman	DesaixCh1 Level(12, Enemy, True) [14,1]	0x00 0x00 0x0 0x00 [Miasma,Heal] [0x0E,0x06]
+	UNIT 0x89 Archer	DesaixCh1 Level(14, Enemy, True) [7,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x89 Archer	DesaixCh1 Level(14, Enemy, True) [11,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x8D Soldier	DesaixCh1 Level(18, Enemy, True) [3,4]	0x00 0x00 0x0 0x00 [Ridersbane,IronShield] NeverMoveAI
+	UNIT 0x8D Soldier	DesaixCh1 Level(16, Enemy, True) [4,4]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT 0x8B Cleric	DesaixCh1 Level(8, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Physic,Nosferatu] [0x0E,0x03,0x0,0x20]
+	UNIT 0x8B Cleric	DesaixCh1 Level(8, Enemy, True) [5,2]	0x00 0x00 0x0 0x00 [Physic,Nosferatu] [0x0E,0x03,0x0,0x20]
+
+	// Left hall
+	UNIT 0x89 Archer	DesaixCh1 Level(12, Enemy, True) [18,9]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x89 Archer	DesaixCh1 Level(14, Enemy, True) [18,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x87 Soldier	DesaixCh1 Level(13, Enemy, True) [3,11]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x87 Mercenary	DesaixCh1 Level(12, Enemy, True) [2,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x88 Knight	DesaixCh1 Level(5, Enemy, True) [1,10]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
+	UNIT 0x88 Knight	DesaixCh1 Level(6, Enemy, True) [1,11]	0x00 0x00 0x0 0x00 [BaseAxe] NeverMoveAI
+	UNIT 0x87 Soldier	DesaixCh1 Level(13, Enemy, True) [1,6]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x87 Mercenary	DesaixCh1 Level(12, Enemy, True) [0,7]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT 0x8B Shaman	DesaixCh1 Level(10, Enemy, True) [3,5]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+
+	// Right hall
+	UNIT 0x89 Archer	DesaixCh1 Level(12, Enemy, True) [0,9]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x87 Mercenary	DesaixCh1 Level(13, Enemy, True) [16,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x87 Mage	DesaixCh1 Level(12, Enemy, True) [15,11]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x88 Knight	DesaixCh1 Level(6, Enemy, True) [17,10]	0x00 0x00 0x0 0x00 [BaseLance] NeverMoveAI
+	UNIT 0x88 Knight	DesaixCh1 Level(5, Enemy, True) [17,11]	0x00 0x00 0x0 0x00 [IronAxe] NeverMoveAI
+	UNIT 0x89 Archer	DesaixCh1 Level(14, Enemy, True) [15,4]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x8D Soldier	DesaixCh1 Level(14, Enemy, True) [16,5]	0x00 0x00 0x0 0x00 [IronLance,HideShield] NeverMoveAI
+	UNIT 0x8D Soldier	DesaixCh1 Level(14, Enemy, True) [16,6]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT
+
+ZombieGroup:
+	UNIT 0xAC Bonewalker 0x92 Level(7,Enemy,True) [14,5] 0x04 0x00 0x1 REDA14R5 [BaseSword] NoAI
+	UNIT 0xAC Bonewalker 0x92 Level(7,Enemy,True) [11,6] 0x04 0x00 0x1 REDA11R6 [BaseSword] NoAI
+	UNIT 0xAC Bonewalker 0x92 Level(7,Enemy,True) [14,6] 0x04 0x00 0x1 REDA14R6 [BaseLance] NoAI
+	UNIT
+	
+ThiefReinforcement:
+	UNIT 0x64 Thief DesaixCh1 Level(12,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [BaseSword, Lockpick] LootingThiefAI
+	UNIT 0x64 Thief DesaixCh1 Level(12,Enemy,True) [18,0] DropItem 0x00 0x1 REDA18R0 [SteelSword, Lockpick, 0x9F] [0x6,0xC,0x0,0x0]
+	UNIT
+	
+CavReinforcementRight:
+	UNIT 0x86 Cavalier_F DesaixCh1 Level(13,Enemy,True) [19,17] 0x00 0x00 0x1 REDA19R17 [Javelin] NoAI
+	UNIT 0x86 Cavalier DesaixCh1 Level(14,Enemy,True) [19,18] 0x00 0x00 0x1 REDA19R18 [SteelLance] NoAI
+	UNIT
+	
+CavReinforcementLeft:
+	UNIT 0x8E Cavalier DesaixCh1 Level(13,Enemy,True) [0,20] 0x00 0x00 0x1 REDA0R20 [Javelin] NoAI
+	UNIT 0x8E Cavalier_F DesaixCh1 Level(14,Enemy,True) [0,21] 0x00 0x00 0x1 REDA0R21 [SteelLance] NoAI
+	UNIT
+
+SniperReinforcement:
+	UNIT 0x89 Sniper DesaixCh1 Level(6, Enemy, True) [4,2]	0x00 0x00 1 REDA4R2 [SteelBow] [0x0,0x12,0x0,0x0]
+	UNIT 0x89 Sniper DesaixCh1 Level(6, Enemy, True) [14,2]	0x00 0x00 1 REDA14R2 [SteelBow] [0x0,0x12,0x0,0x0]
+	UNIT
+	
+CutsceneFernand:
+	UNIT FernandPaladin Paladin 0x00 Level(1, Enemy, False) [0,11] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+	
+MathildaJoins:
+	UNIT Mathilda Paladin_F 0x00 Level(1, NPC, False) [9,6] 0x00 0x00 0x0 0x00 [BaseLance] [0x06, 0x0D, 0x00, 0x00]
+	UNIT
+
+Ch3_4A_BeginningScene:
+	COUNTER_SET 0 0 // for summons
+	//Load Fernand and Mathilda, show CG, show textID FernandMathilda_Dungeon
+	MUSC 0x4E
+	LOAD1 0x1 MathildaJoins
+	ENUN
+	LOAD1 0x1 CutsceneFernand
+	ENUN
+	CAM1 Mathilda
+	STAL 4
+	FADU 5
+	MOVE 0x08 FernandPaladin [9,10]
+	ENUN
+	STAL 20
+	FlashCursor(FernandPaladin, 60)
+	FADI 5
+	
+	//SETVAL 0x2 (FernandMathildaCG)
+	//	REMOVEPORTRAITS
+	//	BACG 0xFFFF
+	
+	REMOVEPORTRAITS
+	SetBackground(FernandMathildaCG)
+	STAL 90
+		
+		_0x1A22
+		TEXTSHOW FernandMathilda_Dungeon_CGText_1
+		TEXTEND
+		_0x1A22
+		TEXTSHOW FernandMathilda_Dungeon_CGText_2
+		TEXTEND
+		_0x1A22
+		TEXTSHOW FernandMathilda_Dungeon_CGText_3
+		TEXTEND
+		FADI 5
+		REMA
+	
+	SetBackground(0x17)
+	TEXTSTART 
+	TEXTSHOW FernandMathilda_Dungeon
+	TEXTEND
+	MUSC 0x4F
+	STAL 20
+	MUSC 0x8
+	TEXTCONT
+	TEXTEND
+	REMA
+	ClearBackgroundSmooth
+	MOVE 0x08 FernandPaladin [18,6]
+	ENUN
+	STAL 20
+	FADI 2
+	MUSC 0x7FFF
+	CLEE 0x0
+	STAL 40
+	LOAD2 0x1 CutsceneAllies
+	ENUN
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	FADU 2
+
+	//Then load Desaix and set BG to 0xE
+	MUSC 0x2E
+	CAM1 DesaixCh1
+	STAL 20
+	FlashCursor(DesaixCh1, 60)
+	STAL 20
+
+	//SetBackground(0xE)
+	TEXTSTART
+	TEXTSHOW Ch3_4A_OpeningText
+	TEXTEND
+	FADI 16
+	REMA
+	CLEA 0x0
+	LOAD3 0x0 Ch3_4A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	ENUN
+	GotoPrepScreen
+	ENDA
+
+Ch3_4A_EndingScene:
+	CALL UnifiedBEXPCaller
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter3A4Completed
+	EVBIT_MODIFY 0x0
+	MUSC 0x3B
+	
+	CHECK_ALIVE Tobin 
+	BEQ 0x4 0xC 0x0
+	
+		//If Tobin is alive
+		SetBackground(0xE)
+		TEXTSTART
+		TEXTSHOW Ch3_4A_EndingText
+		TEXTEND
+		MUSI
+		TEXTCONT
+		TEXTEND
+		MUNO
+		MUSC 0x8
+		TEXTCONT
+		TEXTEND
+		REMA
+		
+		FADI 2
+		MUSC 0x7FFF
+		STAL 20
+		MUSC 0x27
+		SetBackground(0x49)
+		Text(Ch3_4A_EndingText_2)
+		//CG goes here
+		MUSC 0x7FFF
+		STAL 20
+		MUSC 0x51
+		
+		//REMOVEPORTRAITS
+		//_0x2141 RoyalSwordCG 0x1 0x4
+		//REMOVEPORTRAITS
+		
+		//FADI 5
+		REMOVEPORTRAITS
+		FADI 8
+		SetBackground(RoyalSwordCG)
+		REMOVEPORTRAITS
+		STAL 90
+		_0x1A22
+		TEXTSHOW Ch3_4A_CGText
+		TEXTEND
+		FADI 5
+		REMA
+		
+		MUSC 0x2B
+		SetBackground(0x49)
+		Text(Ch3_4A_EndingText_3)
+		GOTO 0x3
+	
+	LABEL 0x4
+		SetBackground(0xE)
+		Text(Ch3_4A_EndingText_NoTobin)
+		FADI 2
+		STAL 20
+		MUSC 0x3B
+		SetBackground(0x49)
+		Text(Ch3_4A_EndingText_2_NoTobin)
+		//CG goes here
+		MUSC 0x7FFF
+		STAL 20
+		MUSC 0x51
+		//FADI 5
+		REMOVEPORTRAITS
+		FADI 8
+		SetBackground(RoyalSwordCG)
+		REMOVEPORTRAITS
+		STAL 90
+		_0x1A22
+		TEXTSHOW Ch3_4A_CGText
+		TEXTEND
+		FADI 5
+		REMA
+		
+		MUSC 0x2B
+		SetBackground(0x49)
+		Text(Ch3_4A_EndingText_3_NoTobin)
+	
+	LABEL 0x3
+	
+	EVBIT_MODIFY 0x1
+	SetBackground(0x49)
+	SVAL 0x3 RoyalSword
+	GIVEITEMTO Alm
+	STAL 20
+	EVBIT_MODIFY 0x0
+	
+	FADI 2
+	MNCH 0x13
+	ENDA

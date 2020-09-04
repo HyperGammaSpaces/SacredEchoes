@@ -1,0 +1,22 @@
+//ShowEmotionBubble(0x02)
+//SADD 0x32 //move slot3 to slot2
+//ShowEmotionBubble(0x02)
+
+EVBIT_MODIFY 0x1
+ENUT 0x84				//save some vram space by turning off icons.
+STAL 10
+CAM1 0xFFFF
+STAL 10
+SVAL 0x3 0x40			//some unitID higher than any playable unit's
+LABEL 0x0
+SLOTS_SETFROMQUEUE 0x2  //get queued units for hearts
+BGT 0x1 0x2 0x3			//if we reach the 0xFF terminator, break out
+ShowEmotionBubble(0x02) //show Heart bubble over unit in slot2
+BLT 0x0 0x2 0x3			//if ID less than terminator, loop again
+LABEL 0x1
+SOUN 0xAA				//poison cure sfx
+STAL 60					//wait for animation to finish before moving
+ENUF 0x84				//turn icons/hpbars back on
+EVBIT_MODIFY 0x0
+NoFade
+ENDA

@@ -1,0 +1,363 @@
+/*
+
+At A3DD88 there is a table of World Map Location to BGM ID.
+
+Pointers to this are at 080B9F94 and 080B9FA4
+
+Function is at B9F54
+
+*/
+
+//World Map Node Icons loaded with data at B8E4C
+//Func is at B8E14
+//There is possibly a way to rewrite this so icon 0x0 can be 4 small icons.
+//Called by B8E60
+
+
+//Allows MNC2 To jump to any chapter ID.
+//  ORG 0xBD070
+//  SHORT 0xE0B8 // jumps to BD1E4 and returns 0 (disabling Retreat)
+//  ORG $BD1A8
+//  Do not check mode byte, instead check mapID and any required flags
+
+PUSH
+	ORG $BD068
+	#incbin "ShouldChapterBeSkirmish.dmp"
+	POIN WorldMapNodeList
+	
+	//Cuts out an unnecessary call to ShouldChapterBeSkirmish to not draw the "protect character" marker
+	ORG $275FE
+	SHORT $46C0 $46C0 $46C0 $46C0
+	
+	ORG $BB5B0
+	#incbin "GetChapterID.dmp"
+	POIN WorldMapNodeList
+POP
+
+//Changes how worldmap node data is stored and how many nodes you can have.
+#include "Worldmap_Nodes_Rework.event"
+
+//Changes how worldmap path data is stored and how many paths you can have.
+#include "Worldmap_Paths_Rework.event"
+
+AlmDestinationTable:
+BYTE gEnableLordSwitch		GMLoc_NorthZofia
+BYTE gChapter3A1Completed 	GMLoc_ForestVillage
+BYTE gChapter3A2Completed 	GMLoc_ZofiaForest1
+BYTE gChapter3A3Completed 	GMLoc_DesaixFort
+BYTE gChapter3A4Completed 	GMLoc_ZofiaForest2
+BYTE gChapter3A5Completed 	GMLoc_ForestNorthSide
+BYTE gChapter3A6Completed 	GMLoc_SluiceGate
+BYTE gChapter3A7Completed 	GMLoc_RigelForest1
+BYTE $0 $0 //term
+CelicaDestinationTable:
+BYTE gEnableLordSwitch		GMLoc_ZofiaBay
+BYTE gChapter3C1Completed 	GMLoc_MtnGraveyard
+BYTE gChapter3C2Completed 	GMLoc_DesertBastion
+BYTE gChapter3C3Completed 	GMLoc_ZofiaDesert
+BYTE gChapter3C4Completed 	GMLoc_GriethsBase
+BYTE gChapter3C5Completed 	GMLoc_ValleyApproach
+BYTE gChapter3C6Completed 	GMLoc_MilaTemple
+BYTE gChapter3C7Completed 	GMLoc_DeadMansMire
+BYTE $0 $0 //term
+
+//Create a menu option to switch between Alm and Celica. Should only be available with event flag. menudefs are at A3E04C
+#include "LordSwitchStuff.lyn.event"
+//TUTORIALTEXTBOX as soon as Act 3 begins, explaining how to switch
+//Store the other lord's MU data somewhere where there is a WORD free.
+//Set game mode to the other lord's.
+
+GmapMenuDefsNew:
+//Unit
+WORD $8206820		//jp name
+SHORT $645 $6DF		//eng name and helptext
+BYTE $00 $00 $00 $00
+POIN $4F449			//usability
+WORD $0				//drawing
+POIN $BC4C5			//effect
+WORD $0 $0 $0
+//Status
+WORD $8206818		//jp name
+SHORT $646 $6E0		//eng name and helptext
+BYTE $00 $01 $00 $00
+POIN $4F449			//usability
+WORD $0				//drawing
+POIN $BC4DD			//effect
+WORD $0 $0 $0
+//Guide
+WORD $8206810		//jp name
+SHORT $647 $6E5		//eng name and helptext
+BYTE $00 $02 $00 $00
+POIN $22661			//usability
+POIN $BC4F5			//drawing
+POIN $BC56D			//effect
+WORD $0 $0 $0
+//Switch
+WORD $8206818		//jp name
+SHORT SwitchMenu_Name SwitchMenu_Desc		//eng name and helptext
+BYTE $03 $03 $00 $00 //yellow text
+POIN SwitchCommandUsability|1	//usability
+WORD $0				//drawing
+POIN SwitchCommandEffect|1	//effect
+WORD $0 $0 $0
+//Options
+WORD $8206808		//jp name
+SHORT $648 $6E1		//eng name and helptext
+BYTE $00 $04 $00 $00
+POIN $4F449			//usability
+WORD $0				//drawing
+POIN $BC585			//effect
+WORD $0 $0 $0
+//Save
+WORD $8206800		//jp name
+SHORT $649 $679		//eng name and helptext
+BYTE $00 $05 $00 $00
+POIN $4F449			//usability
+WORD $0				//drawing
+POIN $BC59D			//effect
+WORD $0 $0 $0
+//Terminator
+WORD $0 $0 $0 $0 $0 $0 $0 $0 $0
+
+PUSH
+	ORG $B90FE
+	BYTE $05 //dont clear lord2
+	//ORG $B90BA
+	//BYTE $05 //dont draw lord2
+	ORG $BDE2C
+	BYTE $05 //dont clear lord2
+	//ORG $C1BCA
+	//BYTE $05 //dont draw lord2
+	ORG $C395C
+	BYTE $05 //dont draw lord2 as enemy
+	ORG $20686E
+	BYTE $2 //default allegiance palette for MU7
+
+	ORG $A3E12C
+	POIN GmapMenuDefsNew
+POP
+
+#define WorldMapBGMTableEntry(musicID) "BYTE musicID; BYTE 0; BYTE musicID; BYTE 0"
+#define WorldMapBGMTableEntry(musicID1, musicID2) "BYTE musicID1; BYTE 0; BYTE musicID2; BYTE 0"
+
+PUSH
+
+	ORG $B9F94
+	POIN WorldMapBGMTable
+
+	ORG $B9FA4
+	POIN WorldMapBGMTable
+
+POP
+
+WorldMapBGMTable:
+WorldMapBGMTableEntry(0x04) //Act 1
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04, 0x05) //Zofia Castle
+WorldMapBGMTableEntry(0x05) //Act 2
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x06) //Act 3
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x07) //Act 4
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x08, 0x07) //Duma Tower
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+
+PUSH
+	//Skip chapter intro thing for castle pt 2
+	ORG $1551C
+	BYTE $07	//zofia castle
+	ORG $15520
+	BYTE gPart2Completed
+
+	//Check out proc at 5916d4 (instruction at 591924, proc storage 0x2A). This is fucking with "next chapter" on repeatables
+	//9d98 is where it retrieves 0x2a storage
+	//We need to see where this is getting stored to. Good chance that proc location is staying at 02024e68
+	//9ce0? GameCtrl_PostChapterSwitch?
+	//9eec? SetChapterIdFrom6c?
+	//9f64 SetNextChapterId
+	//F42C MoveNextChapter. proc 02025aa4 (event interpreter)
+	//f442 is executed if MNCH 0xFFFF. loads value from slot2 and compares to 0x4
+	//solution iguess is to set slot 2 to the same chapterID via events, tower does this
+	//for ch8 i guess just set it to 9???
+	
+	//Make repeatables display as "ex. map" in prep screen - 96abc
+	ORG $96B16
+	SHORT $E015 //B($96b44)
+	ORG $96B46
+	BL($BD068) //check GetChapterThing instead of IsExtraMap_WorldMapSkirmishes
+	ORG $96B4C
+	SHORT $D00F //beq $96b6e to skip the final chapter checks for now
+	
+	//Fix Castle 2
+	ORG $A8B14
+	SHORT $2C07 $D011
+	ORG $A8B38
+	BYTE $07	//zofia castle
+	ORG $A8B3C
+	BYTE gPart2Completed
+	ORG $A8B48
+	//BYTE $07 //change as needed?
+	SHORT $46C0 $46C0
+	
+	//Fix fuckiness with skirmish prep screen save names
+	ORG $3412E
+	SHORT $E00A
+	
+	//Fix fuckiness with Thief Shrine chapter save name
+	ORG $A8B4E
+	BYTE 0x3
+	//Fix fuckiness around Route Split chapters
+	ORG $A8B52
+	BYTE 0x8
+	//ORG $A8B56
+	//BYTE 0xF (first Act 3 map)
+
+POP
+
+//Going into c1774, r0 is "next chapter ID", r1 is proc+2C, r2 is some WM event struct, r3 is next worldmap node?
+//C1788 - something to do with chapter 9 or below.
+//C1796 get mode data, 2 is Alm 3 is Celica
+//C17C8 process for celica mode
+//C17Ea - jumps to C16F4. Gets some random number (amount of skirmishes?) - we force this to be 1
+//C1834 - load locations
+//C186C - jumps to C1724
+//what if we change C1840 to BLT? $02 $DB
+//or BGE?
+//83400 - GetChapterSkirmishLeaderClasses
+
+//C1718 change to $01 $20
+
+//Get rid of weird World Map Skirmishes
+PUSH
+	ORG $C1710
+	SHORT $1C30 $46C0 $46C0 $46C0 $46C0 //only one skirmish may be active at a time.
+	ORG $C17D6
+	BYTE $09 //avoid a buffer overflow (prev. 0xA)
+	ORG $C17E0
+	SHORT $DBF8 //bne -> blt
+	
+	//prevent other lord from being removed on battle start.
+	ORG $C1ACA
+	BYTE $1
+	
+	//c1774
+	ORG $C1840
+	BYTE $02 $DB //change a bne to blt
+
+	ORG $206948 //Locations
+	SkirmishLocationTable:
+	BYTE $0B //N.Cemetery
+	BYTE $0B //Novis Cemetery
+	BYTE $14 //Z. Forest
+	BYTE $18 //Forest North
+	BYTE $1B //MountainGraveyard
+	BYTE $1E //Grieth Citadel
+	BYTE $23 //MireBoneyard
+	BYTE $2A //RigelForest
+	BYTE $2F //RigelValley
+	//206954 Monster occurrence table?
+	
+	ORG $2069d8 //Chapters that unlock - Alm
+	AlmModeSkirmishUnlockPoints:
+	BYTE $0A //after first boat map
+	BYTE $0F
+	BYTE $1C //after Luthier
+	BYTE $1C //after Delthea
+	BYTE $1C //after Catria/Palla
+	BYTE $1C //after Deen/Sonya
+	BYTE $20 //after lost woods
+	BYTE $25 //after nuibaba
+	BYTE $27 //after dragon's maw
+	BYTE $2A //after rigel castle
+	BYTE $2B //after duma tower
+	
+	ORG $2069e3 //Chapters that unlock - Celica
+	CelicaModeSkirmishUnlockPoints:
+	BYTE $0A //after first boat map
+	BYTE $0F
+	BYTE $18 //after desert bastion
+	BYTE $1C //after Delthea
+	BYTE $1C //after Catria/Palla
+	BYTE $1C //after Deen/Sonya
+	BYTE $20 //after lost woods
+	BYTE $25 //after nuibaba
+	BYTE $27 //after dragon's maw
+	BYTE $2A //after rigel castle
+	BYTE $2B //after duma tower
+	
+	ORG $2069EE //Appearance rates per location
+	AlmModeSkirmishUnlockRates:
+	BYTE $64 $00 $00 $00 $00 $00 $00 $00 $00 //Only spawn at Ram Valley
+	BYTE $00 $64 $00 $00 $00 $00 $00 $00 $00 //Only spawn at Novis Cemetery
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Only spawn at Z. Forest
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Spawn at Z. Forest and Forest North
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Only spawn at MtnGrave
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Spawn at MtnGrave and DesertBastion
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	
+	ORG $206A51 //Appearance rates per location
+	CelicaModeSkirmishUnlockRates:
+	BYTE $64 $00 $00 $00 $00 $00 $00 $00 $00 //Only spawn at Ram Valley
+	BYTE $00 $64 $00 $00 $00 $00 $00 $00 $00 //Only spawn at Novis Cemetery
+	BYTE $00 $00 $00 $00 $64 $00 $00 $00 $00 //Only spawn at MtnGrave
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Spawn at Z. Forest and Forest North
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Only spawn at MtnGrave
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Spawn at MtnGrave and DesertBastion
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	//206AB4 -Gmap Time Monsters
+POP
+
+//And fix skirmish behavior
+#include "zMasterSkirmishLoader.event"
+

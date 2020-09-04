@@ -1,0 +1,166 @@
+//#ifndef ConvoBackgroundTable
+//  #define ConvoBackgroundTable  $95DD1C
+//#endif
+
+#define SetConvoBackground(Index, ImagePointer, TSAPointer, PalettePointer) "PUSH; ORG ConvoBackgroundTable + (Index * 0xC); POIN ImagePointer TSAPointer PalettePointer; POP"
+
+//CGs/backgrounds/etc.
+//SetConvoBackground(AlmPrologueCG, AlmOpeningImg, AlmOpeningTSA, AlmOpeningPal)
+//SetConvoBackground(TurnwheelCG, TurnwheelImg, TurnwheelTSA, TurnwheelPal)
+//SetConvoBackground(CliveFernandCG, CliFerImg, CliFerTSA, CliFerPal)
+//SetConvoBackground(Part1EndCG, ChampionOfZofiaImg, ChampionOfZofiaTSA, ChampionOfZofiaPal)
+
+ALIGN 4
+CaveBGImg:
+#incbin "CaveBGImg.dmp"
+ALIGN 4
+CaveBGTSA:
+#incbin "CaveBGTSA.dmp"
+ALIGN 4
+CaveBGPal:
+#incbin "CaveBGPal.dmp"
+ALIGN 4
+
+ALIGN 4
+NightboatBGImg:
+#incbin "NightboatBGImg.dmp"
+ALIGN 4
+NightboatBGTSA:
+#incbin "NightboatBGTSA.dmp"
+ALIGN 4
+NightboatBGPal:
+#incbin "NightboatBGPal.dmp"
+ALIGN 4
+
+AlmOpeningImg:
+#incbin "opening.img.bin"
+AlmOpeningTSA:
+#incbin "opening.tsa.bin"
+AlmOpeningPal:
+#incbin "opening.pal.bin"
+
+TurnwheelImg:
+#incbin "turnwheel.img.bin"
+TurnwheelTSA:
+#incbin "turnwheel.tsa.bin"
+TurnwheelPal:
+#incbin "turnwheel.pal.bin"
+
+CliFerImg:
+#incbin "clifer.img.bin"
+CliFerTSA:
+#incbin "clifer.tsa.bin"
+CliFerPal:
+#incbin "clifer.pal.bin"
+
+ChampionOfZofiaImg:
+#incbin "ChampionOfZofia.img.bin"
+ChampionOfZofiaTSA:
+#incbin "ChampionOfZofia.tsa.bin"
+ChampionOfZofiaPal:
+#incbin "ChampionOfZofia.pal.bin"
+
+FarawayIslandImg:
+#incbin "FarawayIsland.img.bin"
+FarawayIslandTSA:
+#incbin "FarawayIsland.tsa.bin"
+FarawayIslandPal:
+#incbin "FarawayIsland.pal.bin"
+
+HiringSaberImg:
+#incbin "HiringSaber.img.bin"
+HiringSaberTSA:
+#incbin "HiringSaber.tsa.bin"
+HiringSaberPal:
+#incbin "HiringSaber.pal.bin"
+
+RepaymentImg:
+#incbin "Repayment.img.bin"
+RepaymentTSA:
+#incbin "Repayment.tsa.bin"
+RepaymentPal:
+#incbin "Repayment.pal.bin"
+
+AlmsCripplingOrangeAddictionImg:
+#incbin "AlmsCripplingOrangeAddiction.img.bin"
+AlmsCripplingOrangeAddictionTSA:
+#incbin "AlmsCripplingOrangeAddiction.tsa.bin"
+AlmsCripplingOrangeAddictionPal:
+#incbin "AlmsCripplingOrangeAddiction.pal.bin"
+
+RoyalSwordImg:
+#incbin "RoyalSword.img.bin"
+RoyalSwordTSA:
+#incbin "RoyalSword.tsa.bin"
+RoyalSwordPal:
+#incbin "RoyalSword.pal.bin"
+
+MathildaCellImg:
+#incbin "mathilda.img.bin"
+MathildaCellTSA:
+#incbin "mathilda.tsa.bin"
+MathildaCellPal:
+#incbin "mathilda.pal.bin"
+
+Village1BG_NightPal:
+#incbin "VillageBGNight.pal.bin"
+Village2BG_NightPal:
+#incbin "VillageBGNight2.pal.bin"
+Village3BG_NightPal:
+#incbin "VillageBGNight3.pal.bin"
+Fields_NightPal:
+#incbin "NightPlains.pal.bin"
+Fort_SnowPal:
+#incbin "SnowFortBG.pal.bin"
+
+SnowyPeaksBGImg:
+#incbin "SnowyPeaks.img.bin"
+SnowyPeaksBGTSA:
+#incbin "SnowyPeaks.tsa.bin"
+SnowyPeaksBGPal:
+#incbin "SnowyPeaks.pal.bin"
+SnowyPeaksBGNightPal:
+#incbin "SnowyPeaksNight.pal.bin"
+
+CastleRoomBGImg:
+#incbin "CastleRoom.img.bin"
+CastleRoomBGTSA:
+#incbin "CastleRoom.tsa.bin"
+CastleRoomBGPal:
+#incbin "CastleRoom.pal.bin"
+CastleRoomBGNightPal:
+#incbin "CastleRoomNight.pal.bin"
+
+RuinedVillageBGImg:
+#incbin "RuinedVillage.img.bin"
+RuinedVillageBGTSA:
+#incbin "RuinedVillage.tsa.bin"
+RuinedVillageBGPal:
+#incbin "RuinedVillage.pal.bin"
+
+//781dbc
+
+SupplyTentBGImg:
+#incbin "Supply.img.bin"
+SupplyTentBGTSA:
+#incbin "Supply.tsa.bin"
+SupplyTentBGPal:
+#incbin "Supply.pal.bin"
+
+//TODO: investigate $E8CC and see why numbers past 0x36 arent working.
+//at E8E4, r1 was 0x2 and r3 was 0x1 (from 2141)
+
+//branches to E91C
+//r6 holds param 2, r7 holds param 3
+
+//goes to E990 then to E9EC
+//loads 8591E00 proc?? calls EA85
+
+//ea85:
+//check eab4?? r4 is 0x0 when its fucking up
+//goes to eace if 0x0
+
+//ED50: load random background??
+//HMMMMM ED94 loads a RN and stores it.
+
+//a random image gets loaded... 0x21???

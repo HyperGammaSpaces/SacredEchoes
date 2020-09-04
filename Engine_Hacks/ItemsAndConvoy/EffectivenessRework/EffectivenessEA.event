@@ -1,0 +1,131 @@
+//FE8 Nullify, with potential weapon effectiveness and Slayer overhaul
+//By Tequila
+
+#ifndef _FE8_
+    ERROR "You're not assembling to an FE8 ROM!"
+#endif
+
+#include EAStdlib.event
+#include "Extensions/Hack Installation.txt"
+
+#ifndef FreeSpace
+    #define FreeSpace 0xB2A610
+    ORG FreeSpace
+#endif
+
+#ifndef EffectiveDamageBonus
+    #define EffectiveDamageBonus 0x5
+#endif
+
+	PUSH
+	
+	//slayer redux
+	ORG $16C88
+	jumpToHack(Redone_Slayer)
+	
+	//effectiveness redux
+	ORG $16BEC
+	jumpToHack(Redone_Effectiveness)
+	
+	//add bonus damage for effectiveness
+	ORG $2AB0C
+	BYTE $02
+	ORG $2AB12
+	BYTE EffectiveDamageBonus $30 $05 $1C
+	
+	POP
+	
+	ALIGN 4
+	Redone_Slayer:
+	#incbin "Redone_Slayer.dmp"
+	POIN SlayerTable
+	
+	ALIGN 4
+	Redone_Effectiveness:
+	#incbin "Redone_Effectiveness.dmp"
+	
+	#define SlayerTableEntry(class_id, type_list, coefficient_times_2) "BYTE class_id coefficient_times_2; SHORT type_list"
+	ALIGN 4
+	SlayerTable:
+	SlayerTableEntry(FalcoKnight, MonsterType, 6)
+	WORD 0 //terminator
+	
+	//Change existing effective items (class weaknesses are already part of the class data table)
+	#define ItemEffectivenessPtr(item_id, label_to_point_to) "PUSH; ORG ItemTable + 0x24*item_id + 0x10; POIN label_to_point_to; POP"
+	ItemEffectivenessPtr(Rapier, LordWeaponEffectiveness)
+	ItemEffectivenessPtr(Armorslayer, ArmorEffectiveness)
+	ItemEffectivenessPtr(Zanbato, HorseEffectiveness)
+	ItemEffectivenessPtr(Horseslayer, HorseEffectiveness)
+	ItemEffectivenessPtr(HeavySpear, ArmorEffectiveness)
+	ItemEffectivenessPtr(Halberd, HorseEffectiveness)
+	ItemEffectivenessPtr(Hammer, ArmorEffectiveness)
+	ItemEffectivenessPtr(Forscythe, HorseEffectiveness)
+	ItemEffectivenessPtr(0x2E, FlierEffectiveness) //iron bow
+	ItemEffectivenessPtr(0x2F, FlierEffectiveness)
+	ItemEffectivenessPtr(0x30, FlierEffectiveness)
+	ItemEffectivenessPtr(0x31, FlierEffectiveness)
+	ItemEffectivenessPtr(0x32, FlierEffectiveness)
+	ItemEffectivenessPtr(0x33, FlierAndMonster1) //holy bow
+	ItemEffectivenessPtr(0x34, FlierEffectiveness)
+	ItemEffectivenessPtr(0x35, FlierEffectiveness) //ballista
+	ItemEffectivenessPtr(0x36, FlierEffectiveness)
+	ItemEffectivenessPtr(0x37, FlierEffectiveness)
+	ItemEffectivenessPtr(Excalibur, FlierEffectiveness)
+	ItemEffectivenessPtr(Sagittae, FlierEffectiveness)
+	ItemEffectivenessPtr(Seraphim, MonsterEffectiveness)
+	ItemEffectivenessPtr(0x84, FlierEffectiveness) //luna bow
+	ItemEffectivenessPtr(Falchion, DragonEffectiveness)
+	ItemEffectivenessPtr(Gradivus, MonsterEffectiveness)
+	ItemEffectivenessPtr(Mercurius, MonsterEffectiveness)
+	ItemEffectivenessPtr(Hauteclere, MonsterEffectiveness)
+	ItemEffectivenessPtr(Parthia, FlierAndMonster1)
+	ItemEffectivenessPtr(HolySword, MonsterEffectiveness)
+	ItemEffectivenessPtr(HolyLance, MonsterEffectiveness)
+	ItemEffectivenessPtr(Dragonstone, MonsterEffectiveness)
+	
+	//Protector item (macro still works, even if it's wrongly named)
+	ItemEffectivenessPtr(DelphiShield, FlierProtection)
+	ItemEffectivenessPtr(DumaIcon, LordWeaponProtection)
+	
+	#define SetWeaponEffectiveness(type_list, coefficient_times_2) "BYTE 0 coefficient_times_2; SHORT type_list"
+	LordWeaponEffectiveness:
+	SetWeaponEffectiveness(ArmorType|HorseType, 6)
+	WORD 0 //terminator
+	ArmorEffectiveness:
+	SetWeaponEffectiveness(ArmorType, 6)
+	WORD 0
+	HorseEffectiveness:
+	SetWeaponEffectiveness(HorseType, 6)
+	WORD 0
+	DragonEffectiveness:
+	SetWeaponEffectiveness(DragonType, 6)
+	WORD 0
+	FlierEffectiveness:
+	SetWeaponEffectiveness(FlierType, 6)
+	WORD 0
+	SwordEffectiveness:
+	SetWeaponEffectiveness(SwordType, 6)
+	WORD 0
+	MonsterEffectiveness:
+	SetWeaponEffectiveness(MonsterType, 6)
+	WORD 0
+	SacredWeaponEffectiveness:
+	SetWeaponEffectiveness(MonsterType, 4)
+	WORD 0
+	FlierAndMonster1: //Beacon bow
+	SetWeaponEffectiveness(FlierType|MonsterType, 6)
+	WORD 0
+	FlierAndMonster2: //Nidhogg
+	SetWeaponEffectiveness(FlierType, 6)
+	SetWeaponEffectiveness(MonsterType, 4)
+	WORD 0
+	
+	#define SetProtection(type_list) "SHORT 0 type_list"
+	FlierProtection:
+	SetProtection(FlierType)
+	WORD 0
+	LordWeaponProtection:
+	SetProtection(ArmorType|HorseType)
+	WORD 0
+
+	

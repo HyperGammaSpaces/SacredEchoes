@@ -1,0 +1,121 @@
+PUSH
+ORG $52354
+POIN NewEfxHPBar
+
+ORG $52a40
+POIN NewEfxHPBarLive
+
+ORG $552D2
+SHORT $46C0 //nop
+jumpToHack_r6(MakeHPEffectsWorkOnMiss)
+
+ORG $55496
+SHORT $46C0 //nop
+jumpToHack(MakeHPEffectsWorkOnMiss_Nos)
+
+ORG $52980
+SHORT $1C68 $46C0 $46C0 //Make the avoid anim proc increment gBattleAnimeCounter instead of waiting for efxHpBar to finish.
+
+ORG $584A0
+jumpToHack(magicmiss_showhpchange)
+
+ORG $585ba
+SHORT $46C0 //nop
+jumpToHack(regularhit_showhpchange)
+
+ORG $52364
+jumpToHack(efxHPBarParent)
+
+ORG $52a50
+jumpToHack(efxHPBarLiveParent)
+
+ORG $58668 //loads the 3rd byte i.e. damage. we change this to the 4th byte.
+BYTE 4
+ORG $5866A
+SHORT $5E79 //ldsh instead of ldsb
+
+ORG $58602
+BYTE 4
+ORG $58604
+SHORT $5E79 //ldsh instead of ldsb
+
+
+//55298 seems to be where it's determined whether to call UpdateHP
+//Whatever is in r4 at 552d2 - if it's 1 it just goes to dodge at 5540E
+//if it's 0 it goes to 552E4, runs thru 553c8. We then need it to branch to 5540E following that
+
+/*
+ORG $5867A
+BYTE $0 $0
+jumpToHack(setAttackerHP)
+*/
+
+ORG $816da
+SHORT 0
+jumpToHack(animsoff_hpdrain)
+
+ORG $2b758
+BYTE 00 $48 00 $47 //jumptohack with r0
+POIN NosferaFix|1
+POP
+
+NewEfxHPBar:
+WORD 1
+POIN $da3e4
+WORD 3
+POIN efxHPBarRoutine|1
+
+WORD 3
+POIN $52505
+WORD 3
+POIN $525a5
+WORD 0 0
+
+NewEfxHPBarLive: //for healing
+WORD 1
+POIN $da3e4
+WORD 3
+POIN efxHPBarLiveRoutine|1
+
+WORD 3
+POIN $52505
+WORD 3
+POIN $525a5
+WORD 0 0
+
+/*
+setAttackerHP:
+#incbin "setAttackerHP.dmp"
+*/
+
+efxHPBarRoutine:
+#incbin "efxHPBar.dmp"
+
+efxHPBarParent:
+#incbin "efxHPBar_parent.dmp"
+
+efxHPBarLiveParent:
+#incbin "efxHPBarLive_parent.dmp"
+
+efxHPBarLiveRoutine:
+#incbin "efxHPBarLive.dmp"
+
+MakeHPEffectsWorkOnMiss:
+#incbin "PlayHpEffectsEvenIfMiss.dmp"
+POIN NewEfxHPBar
+POIN efxHPBarParent+1
+
+MakeHPEffectsWorkOnMiss_Nos:
+#incbin "PlayHpEffectsEvenIfMiss-nosferatu.dmp"
+
+magicmiss_showhpchange:
+#incbin "magicmiss_showhpchange.dmp"
+
+regularhit_showhpchange:
+#incbin "regularhit_showhpchange.dmp"
+
+NosferaFix:
+#incbin "nosferafix.dmp"
+
+animsoff_hpdrain:
+#incbin "animsoff_hpdrain.dmp"

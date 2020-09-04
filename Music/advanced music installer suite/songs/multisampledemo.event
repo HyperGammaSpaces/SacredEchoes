@@ -1,0 +1,407 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	multisampledemo_grp  MusicVoices
+	#define	multisampledemo_pri  0
+	#define	multisampledemo_rev  0
+	#define	multisampledemo_mvl  127
+	#define	multisampledemo_key  0
+	#define	multisampledemo_tbs  1
+	#define	multisampledemo_exg  0
+	#define	multisampledemo_cmp  1
+
+	// .rodata
+	//	multisampledemo
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+multisampledemo_1:
+	BYTE	KEYSH   multisampledemo_key+0
+multisampledemo_1_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   0
+	BYTE		VOL     60*multisampledemo_mvl/mxv
+	BYTE		N12     Cn2   v100
+	BYTE	W12
+	BYTE		        Dn2 
+	BYTE	W12
+	BYTE		        En2 
+	BYTE	W12
+	BYTE		        Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		        An2 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+// 001   ----------------------------------------
+multisampledemo_1_001:
+	BYTE		N12     Dn3   v100
+	BYTE	W12
+	BYTE		        En3 
+	BYTE	W12
+	BYTE		        Fn3 
+	BYTE	W12
+	BYTE		        Gn3 
+	BYTE	W12
+	BYTE		        An3 
+	BYTE	W12
+	BYTE		        Bn3 
+	BYTE	W12
+	BYTE		        Cn4 
+	BYTE	W12
+	BYTE		        Dn4 
+	BYTE	W12
+	BYTE	PEND
+// 002   ----------------------------------------
+	BYTE		VOICE   5
+	BYTE		N12     Cn2 
+	BYTE	W12
+	BYTE		        Dn2 
+	BYTE	W12
+	BYTE		        En2 
+	BYTE	W12
+	BYTE		        Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		        An2 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+// 003   ----------------------------------------
+	BYTE	PATT
+	 POIN2	multisampledemo_1_001
+// 004   ----------------------------------------
+	BYTE		VOICE   19
+	BYTE		N12     Cn2   v100
+	BYTE	W12
+	BYTE		        Dn2 
+	BYTE	W12
+	BYTE		        En2 
+	BYTE	W12
+	BYTE		        Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		        An2 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+// 005   ----------------------------------------
+	BYTE	PATT
+	 POIN2	multisampledemo_1_001
+// 006   ----------------------------------------
+	BYTE		VOICE   48
+	BYTE		N08     Cn1   v100
+	BYTE	W08
+	BYTE		        Dn1 
+	BYTE	W08
+	BYTE		        En1 
+	BYTE	W08
+	BYTE		        Fn1 
+	BYTE	W08
+	BYTE		        Gn1 
+	BYTE	W08
+	BYTE		        An1 
+	BYTE	W08
+	BYTE		        Bn1 
+	BYTE	W08
+	BYTE		        Cn2 
+	BYTE	W08
+	BYTE		        Dn2 
+	BYTE	W08
+	BYTE		        En2 
+	BYTE	W08
+	BYTE		        Fn2 
+	BYTE	W08
+	BYTE		        Gn2 
+	BYTE	W08
+// 007   ----------------------------------------
+	BYTE		        An2 
+	BYTE	W08
+	BYTE		        Bn2 
+	BYTE	W08
+	BYTE		        Cn3 
+	BYTE	W08
+	BYTE		        Dn3 
+	BYTE	W08
+	BYTE		        En3 
+	BYTE	W08
+	BYTE		        Fn3 
+	BYTE	W08
+	BYTE		        Gn3 
+	BYTE	W08
+	BYTE		        An3 
+	BYTE	W08
+	BYTE		        Bn3 
+	BYTE	W08
+	BYTE		        Cn4 
+	BYTE	W08
+	BYTE		        Dn4 
+	BYTE	W08
+	BYTE		        En4 
+	BYTE	W08
+// 008   ----------------------------------------
+	BYTE		VOICE   49
+	BYTE		N08     Cn3 
+	BYTE	W08
+	BYTE		        Dn3 
+	BYTE	W08
+	BYTE		        En3 
+	BYTE	W08
+	BYTE		        Fn3 
+	BYTE	W08
+	BYTE		        Gn3 
+	BYTE	W08
+	BYTE		        An3 
+	BYTE	W08
+	BYTE		        Bn3 
+	BYTE	W08
+	BYTE		        Cn4 
+	BYTE	W08
+	BYTE		        Dn4 
+	BYTE	W08
+	BYTE		        En4 
+	BYTE	W08
+	BYTE		        Fn4 
+	BYTE	W08
+	BYTE		        Gn4 
+	BYTE	W08
+// 009   ----------------------------------------
+	BYTE		        An4 
+	BYTE	W08
+	BYTE		        Bn4 
+	BYTE	W08
+	BYTE		        Cn5 
+	BYTE	W08
+	BYTE		        Dn5 
+	BYTE	W08
+	BYTE		        En5 
+	BYTE	W08
+	BYTE		        Fn5 
+	BYTE	W08
+	BYTE		        Gn5 
+	BYTE	W08
+	BYTE		        An5 
+	BYTE	W08
+	BYTE		        Bn5 
+	BYTE	W08
+	BYTE		        Cn6 
+	BYTE	W08
+	BYTE		        Dn6 
+	BYTE	W08
+	BYTE		        En6 
+	BYTE	W08
+// 010   ----------------------------------------
+	BYTE		VOICE   52
+	BYTE		N12     Cn2 
+	BYTE	W12
+	BYTE		        Dn2 
+	BYTE	W12
+	BYTE		        En2 
+	BYTE	W12
+	BYTE		        Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		        An2 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+// 011   ----------------------------------------
+	BYTE	PATT
+	 POIN2	multisampledemo_1_001
+// 012   ----------------------------------------
+	BYTE		VOICE   56
+	BYTE		N12     Cn2   v100
+	BYTE	W12
+	BYTE		        Dn2 
+	BYTE	W12
+	BYTE		        En2 
+	BYTE	W12
+	BYTE		        Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		        An2 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+// 013   ----------------------------------------
+	BYTE	PATT
+	 POIN2	multisampledemo_1_001
+// 014   ----------------------------------------
+	BYTE		VOICE   68
+	BYTE		N12     Cn2   v100
+	BYTE	W12
+	BYTE		        Dn2 
+	BYTE	W12
+	BYTE		        En2 
+	BYTE	W12
+	BYTE		        Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		        An2 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+// 015   ----------------------------------------
+	BYTE	PATT
+	 POIN2	multisampledemo_1_001
+// 016   ----------------------------------------
+	BYTE		VOICE   71
+	BYTE		N12     Cn2   v100
+	BYTE	W12
+	BYTE		        Dn2 
+	BYTE	W12
+	BYTE		        En2 
+	BYTE	W12
+	BYTE		        Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		        An2 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+// 017   ----------------------------------------
+	BYTE	PATT
+	 POIN2	multisampledemo_1_001
+// 018   ----------------------------------------
+	BYTE		VOICE   73
+	BYTE		N12     Cn3   v100
+	BYTE	W12
+	BYTE		        Dn3 
+	BYTE	W12
+	BYTE		        En3 
+	BYTE	W12
+	BYTE		        Fn3 
+	BYTE	W12
+	BYTE		        Gn3 
+	BYTE	W12
+	BYTE		        An3 
+	BYTE	W12
+	BYTE		        Bn3 
+	BYTE	W12
+	BYTE		        Cn4 
+	BYTE	W12
+// 019   ----------------------------------------
+	BYTE		        Dn4 
+	BYTE	W12
+	BYTE		        En4 
+	BYTE	W12
+	BYTE		        Fn4 
+	BYTE	W12
+	BYTE		        Gn4 
+	BYTE	W12
+	BYTE		        An4 
+	BYTE	W12
+	BYTE		        Bn4 
+	BYTE	W12
+	BYTE		        Cn5 
+	BYTE	W12
+	BYTE		        Dn5 
+	BYTE	W12
+// 020   ----------------------------------------
+	BYTE		VOICE   103
+	BYTE		N12     Cn2 
+	BYTE	W12
+	BYTE		        Dn2 
+	BYTE	W12
+	BYTE		        En2 
+	BYTE	W12
+	BYTE		        Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		        An2 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+// 021   ----------------------------------------
+	BYTE	PATT
+	 POIN2	multisampledemo_1_001
+// 022   ----------------------------------------
+	BYTE		VOICE   105
+	BYTE		N12     Cn2   v100
+	BYTE	W12
+	BYTE		        Dn2 
+	BYTE	W12
+	BYTE		        En2 
+	BYTE	W12
+	BYTE		        Fn2 
+	BYTE	W12
+	BYTE		        Gn2 
+	BYTE	W12
+	BYTE		        An2 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+// 023   ----------------------------------------
+	BYTE	PATT
+	 POIN2	multisampledemo_1_001
+// 024   ----------------------------------------
+	BYTE		N24     Cn3   v100
+	BYTE		N24     Fs3 
+	BYTE		N24     An3 
+	BYTE		N24     Cn4 
+	BYTE		N24     Ds4 
+	BYTE	W24
+	BYTE		N72     Dn3 
+	BYTE		N72     Gn3 
+	BYTE		N72     Bn3 
+	BYTE		N72     Dn4 
+	BYTE	W72
+// 025   ----------------------------------------
+	BYTE		VOICE   49
+	BYTE		N06     Cn3 
+	BYTE		N06     Ds3 
+	BYTE		N06     Gn3 
+	BYTE		N06     Cn4 
+	BYTE	W12
+	BYTE		        Cn3   v040
+	BYTE		N06     Ds3 
+	BYTE		N06     Gn3 
+	BYTE		N06     Cn4 
+	BYTE	W12
+	BYTE	GoTo
+	 POIN2	multisampledemo_1_B1
+multisampledemo_1_B2:
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+multisampledemo:
+	BYTE	1	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	multisampledemo_pri	// Priority
+	BYTE	multisampledemo_rev	// Reverb.
+
+	POIN2	multisampledemo_grp
+
+	POIN2	multisampledemo_1
+
+	

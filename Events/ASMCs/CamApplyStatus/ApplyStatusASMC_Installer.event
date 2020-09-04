@@ -1,0 +1,14 @@
+//Include in freespace.
+
+FindUnitByCharID:
+#incbin "finder_func.dmp"
+ALIGN 4
+
+FindUnitByCoords:
+#incbin "finder_func_2.dmp"
+ALIGN 4
+
+ApplyStatusByCharID:
+#incbin "apply_status.dmp"
+POIN FindUnitByCharID+1
+ALIGN 4

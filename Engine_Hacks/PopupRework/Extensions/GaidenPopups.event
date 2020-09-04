@@ -1,0 +1,37 @@
+//Init routines
+ALIGN 4
+InitLevelUpSpellPopup:
+	#incbin "asm/InitLevelUpSpellPopup.dmp"
+	POIN SpellAssociationTable
+
+InitPromotionSpellPopup:
+	#incbin "asm/InitPromotionSpellPopup.dmp"
+	POIN SpellAssociationTable
+	
+InitPromotionEligiblePopup:
+	#incbin "asm/InitPromotionEligiblePopup.dmp"
+	POIN IsUnitEligibleToPromote
+
+// Popup macros are defined in [PopupRework/]Extensions/PopupDefinitions.txt
+ALIGN 4
+SpellLearnedPopup:
+	
+	Popup_SetSound(0x5A)
+
+	Popup_StringId(LearnedSpellText) // "Learned " or whatever
+	WORD 0x9 0                       // Item icon component
+	// TODO: Spell name component?   //
+	Popup_StringId(1)                // Single space character
+
+	Popup_End
+	
+ALIGN 4
+PromotionEligiblePopup:
+
+	Popup_SetSound(0x5A)
+
+	WORD 0x9 0                         // Item icon component
+	Popup_StringId(YouCanPromotePopup) //stringID for "You can promote."
+
+	Popup_End
+

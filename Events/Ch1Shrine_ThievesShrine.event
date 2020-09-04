@@ -1,0 +1,102 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x17, ThiefShrine_ThisChapter)
+
+ThiefShrine_ThisChapter:
+POIN ThiefShrine_TurnBasedEvents
+POIN ThiefShrine_CharacterBasedEvents
+POIN ThiefShrine_LocationBasedEvents
+POIN ThiefShrine_MiscBasedEvents
+POIN ThiefShrine_Dunno ThiefShrine_Dunno ThiefShrine_Dunno
+POIN ThiefShrine_Tutorial
+POIN ThiefShrine_Ballista1 ThiefShrine_Ballista3
+POIN PlayerUnitsReplay PlayerUnitsReplay
+POIN PlayerUnitsReplay PlayerUnitsReplay PlayerUnitsReplay EnemyUnitsReplay EnemyUnitsReplay EnemyUnitsReplay
+POIN ThiefShrine_BeginningScene ThiefShrine_EndingScene
+
+ThiefShrine_TurnBasedEvents:
+TURN
+
+ThiefShrine_CharacterBasedEvents:
+CHAR
+
+ThiefShrine_LocationBasedEvents:
+#ifdef __DEBUG__
+  Seize(4,5)
+#endif
+LOCA
+
+ThiefShrine_MiscBasedEvents:
+CauseGameOverIfLordDies
+DefeatAll(ThiefShrine_EndingScene)
+MournQuoteAFEVS
+AFEV
+
+ThiefShrine_Dunno:
+END_MAIN
+
+ThiefShrine_Tutorial:
+END_MAIN
+
+ThiefShrine_Ballista1:
+BLST
+
+ThiefShrine_Ballista3:
+BLST
+ALIGN 4
+
+PlayerUnitsReplay:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,14] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [12,13] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,13] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,12] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,12] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,12] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,14] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,14] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
+	UNIT
+	
+EnemyUnitsReplay:
+	UNIT 0x65 Brigand 0x00 Level(7, Enemy, 1) [4,2] DropItemWithRandomPosition 0x00 0x0 0x00 [BaseAxe, Item50G] NeverMoveAI 
+	UNIT 0x65 Brigand 0x00 Level(6, Enemy, 1) [9,3] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT 0x65 Brigand 0x00 Level(6, Enemy, 1) [7,5] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT 0x65 Brigand 0x00 Level(6, Enemy, 1) [7,15] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT 0x65 Brigand 0x00 Level(6, Enemy, 1) [3,12] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT 0x65 Brigand 0x00 Level(6, Enemy, 1) [13,4] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT 0x65 Brigand 0x00 Level(5, Enemy, 1) [16,6] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT 0x65 Brigand 0x00 Level(5, Enemy, 1) [8,13] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT 0x65 Brigand 0x00 Level(5, Enemy, 1) [4,14] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT 0x65 Brigand 0x00 Level(5, Enemy, 1) [8,6] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT
+
+ThiefShrine_BeginningScene:
+
+	LOAD3 0x0 PlayerUnitsReplay //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	ENUN
+	
+	//ASMC 0x85C4D //Sets something with DungeonState
+	SVAL 0x2 0x0 //Number of skirmish enemies to load
+	
+	CALL EnemyRandomizerHelper
+	
+	LOAD1 0x1 EnemyUnitsReplay
+	ENUN
+	GotoPrepScreen
+	NoFade
+	ENDA
+
+ThiefShrine_EndingScene:
+	SVAL 0x3 0x3
+	ASMC 0x85C65
+	//SADD 0x32
+	CALL UnifiedBEXPCaller
+	SVAL 0x2 0x3E
+	MNCH 0xFFFF //go to world map
+	//ASMC 0x37D59
+	ENDA
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

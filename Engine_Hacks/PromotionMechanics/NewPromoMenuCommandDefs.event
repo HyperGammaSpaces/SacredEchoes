@@ -1,0 +1,15 @@
+#define PromoMenuCommand(optionNumber) "WORD 0; SHORT 0; SHORT $06DC; BYTE 0 optionNumber 0 0; POIN (0x4F448+1); POIN (0xCDCC4+1); POIN (0xCDB34+1); WORD 0; POIN (0xCDD00+1); WORD 0"
+#define PromoMenuCommandEnd "WORD 0 0 0 0 0 0 0 0 0"
+
+pNewPromoMenuCommands:
+	PromoMenuCommand(0)
+	PromoMenuCommand(1)
+	PromoMenuCommand(2)
+	PromoMenuCommand(3)
+	PromoMenuCommand(4)
+PromoMenuCommandEnd
+
+/*
+Add 1 PromoMenuCommand macro for each promotion you want selectable
+if you have some custom ASM to check whether an option is usable, make a copy of the PromoMenuCommand macro and change the POIN (0x0804F448+1) to point to (your ASM org +1)
+*/

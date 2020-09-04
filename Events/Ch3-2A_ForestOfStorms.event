@@ -1,0 +1,198 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x54, Ch3_2A_ThisChapter)
+
+Ch3_2A_ThisChapter:
+	POIN Ch3_2A_TurnBasedEvents
+	POIN Ch3_2A_CharacterBasedEvents
+	POIN Ch3_2A_LocationBasedEvents
+	POIN Ch3_2A_MiscBasedEvents
+	POIN Ch3_2A_Dunno Ch3_2A_Dunno Ch3_2A_Dunno
+	POIN Ch3_2A_Tutorial
+	POIN Ch3_2A_Ballista1 Ch3_2A_Ballista2
+	POIN Ch3_2A_Units1 Ch3_2A_Units1
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch3_2A_BeginningScene Ch3_2A_EndingScene
+
+Ch3_2A_TurnBasedEvents:
+	OpeningTurnEvent(LuthierAppearsEvent)
+	TURN 0x0 LoadReinforcementBandits [6,0] 0x0
+	TURN
+
+LoadReinforcementBandits:
+	ReinforcementEvent(BrigandsReinforcements)
+	NoFade
+	ENDA
+
+Ch3_2A_CharacterBasedEvents:
+	CharacterEvent(9, TalkToLuthier, Alm, Luthier)
+	CHAR
+
+Ch3_2A_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(4,5)
+	#endif
+	Village(0x8, VillageEvent, 14,13)
+	Armory(0xa3f00e, 12,1)
+	Seize(8,1)
+	LOCA
+
+VillageEvent:
+	VillageEventItem(Ch3_2A_Village, Village, PureWater)
+	ENDA
+
+Ch3_2A_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	MournQuoteAFEVS
+	AFEV
+
+Ch3_2A_Dunno:
+	END_MAIN
+
+Ch3_2A_Tutorial:
+	END_MAIN
+
+Ch3_2A_Ballista1:
+	BLST
+	ALIGN 4
+
+Ch3_2A_Ballista2:
+	BLST
+	ALIGN 4
+
+Ch3_2A_Units1:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,13] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [1,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [1,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [3,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [4,15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [0,13] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+CutsceneUnits:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x1 REDA2R13 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x1 REDA4R13 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x1 REDA3R14 [BaseLance] NoAI
+	UNIT
+
+EnemyUnits:
+	UNIT 0x91 Arcanist	0x00 Level(1, Enemy, False) [8,1]	0x00 0x00 0x0 0x00 [Mire,Heal] NeverMoveAI
+	UNIT 0x92 Mage	0x91 Level(7, Enemy, True) [2,2]	0x00 0x00 0x0 0x00 [Thunder] NoAI 
+	UNIT 0x92 Shaman	0x91 Level(8, Enemy, True) [5,4]	0x00 0x00 0x0 0x00 [Miasma] [0x0, 0xE, 0x4, 0x0]
+	UNIT 0x92 Shaman	0x91 Level(9, Enemy, True) [8,3]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT 0x93 Mage	0x91 Level(7, Enemy, True) [11,12]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
+	UNIT 0x93 Shaman	0x91 Level(8, Enemy, True) [9,5]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT 0x92 Shaman	0x91 Level(9, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Miasma] NoAI
+	UNIT 0x92 Shaman	0x91 Level(7, Enemy, True) [13,3]	0x00 0x00 0x0 0x00 [Miasma] NoAI
+	UNIT 0x92 Shaman	0x91 Level(8, Enemy, True) [7,5]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT 0x92 Mage	0x91 Level(9, Enemy, True) [13,8]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
+	UNIT
+	
+BrigandsReinforcements:
+	UNIT GenericPirate Brigand 0x91 Level(13,Enemy,True) [12,3] DropItem 0x00 0x1 REDA12R3 [SteelAxe,Torch] BrigandAI
+	UNIT
+
+SlaydeCutscene:
+	UNIT 0x91 Arcanist	0x00 Level(1, Enemy, False) [8,1]	0x00 0x00 0x0 0x00 [Mire,Heal] NeverMoveAI
+	UNIT SlaydePaladin Paladin 0x0 Level(1, Enemy, True) [14,13] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+LuthierJoins:
+	UNIT Luthier Mage 0x0 Level(7, NPC, False) [14,13] 0x00 0x00 0x1 REDA14R13 [Fire, Vulnerary] NoAI
+	UNIT
+
+Ch3_2A_BeginningScene:
+	MUSC 0x4A
+	CAM1 [8, 11]
+	VCWF 0x0
+	LOAD1 0x1 SlaydeCutscene
+	ENUN
+	FADU 5
+	MOVE 0x08 SlaydePaladin [8,2]
+	ENUN
+	CAM1 SlaydePaladin
+	STAL 20
+	FlashCursor(SlaydePaladin, 60)
+
+	SetBackground(0x20)
+	Text(Ch3_2A_OpeningText)
+	ClearBackground
+	STAL 20
+	MOVE 0x08 SlaydePaladin [15,2]
+	ENUN
+	DISA SlaydePaladin
+	STAL 40
+	
+	FADI 5
+	CAM1 [0,11]
+
+	EVBIT_MODIFY 0x1
+	VCWF 0x5
+	EVBIT_MODIFY 0x0
+	
+	LOAD2 0x1 CutsceneUnits
+	ENUN
+	FADU 5
+	
+	FlashCursor(Alm, 60)
+	Text(Ch3_2A_OpeningText_2)
+
+	FADI 5
+	CLEA 0x0
+	CLEE 0x0
+	LOAD3 0x0 Ch3_2A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	ENUN
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	GotoPrepScreen
+	ENDA
+
+LuthierAppearsEvent:
+	MUSC 0x26
+	LOAD1 0x1 LuthierJoins
+	ENUN
+	MOVE 0x08 Luthier [12,14]
+	ENUN
+	CAM1 Luthier
+	STAL 30
+	FlashCursor(Luthier, 60)
+	Text(Ch3_2A_LuthierAppears)
+	NoFade
+	ENDA
+
+TalkToLuthier:
+	MUSS 0x30
+	STAL 33
+	Text(Ch3_2A_LuthierJoins)
+	CUSA Luthier
+	STAL 20
+	NoFade
+	MURE 0x05
+	ENDA
+
+Ch3_2A_EndingScene:
+	CALL UnifiedBEXPCaller
+	MUSCSLOW 0x7FFF
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter3A2Completed
+	EVBIT_MODIFY 0x0
+	MUSC 0x3A
+	SetBackground(0x20)
+	TEXTSTART
+	TEXTSHOW Ch3_2A_EndingText
+	TEXTEND
+	STAL 20
+	MUSCSLOW 0x32
+	STAL 20
+	TEXTCONT
+	TEXTEND
+	REMA
+	FADI 2
+	MNCH 0x11
+	ENDA

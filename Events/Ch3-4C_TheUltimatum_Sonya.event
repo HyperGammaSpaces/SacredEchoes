@@ -1,0 +1,142 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x72, Ch3_4C_ThisChapter)
+
+Ch3_4C_ThisChapter:
+	POIN Ch3_4C_TurnBasedEvents
+	POIN Ch3_4C_CharacterBasedEvents
+	POIN Ch3_4C_LocationBasedEvents
+	POIN Ch3_4C_MiscBasedEvents
+	POIN Ch3_4C_Dunno Ch3_4C_Dunno Ch3_4C_Dunno
+	POIN Ch3_4C_Tutorial
+	POIN Ch3_4C_Ballista1 Ch3_4C_Ballista2
+	POIN Ch3_4C_UnitsNorth Ch3_4C_UnitsNorth
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch3_4C_BeginningScene Ch3_4C_EndingScene
+
+Ch3_4C_TurnBasedEvents:
+	TURN 0x0 LoadReinforcements [3,7] 0x0
+	TURN
+
+LoadReinforcements:
+	ReinforcementEvent(ReinforcementsSonya)
+	NoFade
+	ENDA
+
+//Call a LordSplitMenu in previous chapter to choose North (fight Deen) or South (fight Sonya).
+
+Ch3_4C_CharacterBasedEvents:
+	CHAR
+
+Ch3_4C_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(4,5)
+	#endif
+	House(0, HouseEvent, 11,0)
+	LOCA
+	
+HouseEvent:
+	HouseEvent(Ch3_4C_HouseText,0x01)
+	ENDA
+
+Ch3_4C_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	DefeatAll(Ch3_4C_EndingScene)
+	MournQuoteAFEVS
+	AFEV
+
+Ch3_4C_Dunno:
+	END_MAIN
+
+Ch3_4C_Tutorial:
+	END_MAIN
+
+Ch3_4C_Ballista1:
+	BLST
+	ALIGN 4
+
+Ch3_4C_Ballista2:
+	BLST
+	ALIGN 4
+
+Ch3_4C_CutsceneUnits:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [3,0] 0x00 0x00 0x1 REDA2R2 [BaseSword, Vulnerary] NoAI
+	UNIT
+//start from [3,0].
+
+Ch3_4C_UnitsNorth:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,2] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,1] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [1,1] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [2,0] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,1] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,1] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,2] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,2] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,2] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,3] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT
+
+EnemyUnitsSonya:
+	UNIT SonyaBoss Mage_F SonyaBoss Level(10, Enemy, False) [10,18] 0x00 0x00 0x0 0x00 [Excalibur,SteelShield] DefensiveTerrainAI
+	
+	UNIT 0x8C Witch	SonyaBoss Level(7, Enemy, True) [7,17]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
+	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [4,15]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
+	UNIT 0x8C Witch	SonyaBoss Level(5, Enemy, True) [14,3]	0x00 0x00 0x0 0x00 [Nosferatu] NoAI
+	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [7,12]	0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT 0x8C Witch	SonyaBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT 0x8C Mage_F	SonyaBoss Level(10, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [Thunder] NoAI
+	UNIT 0x8C Mage_F	SonyaBoss Level(12, Enemy, True) [6,14]	0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT 0x8C Mage_F	SonyaBoss Level(9, Enemy, True) [4,12]	0x00 0x00 0x0 0x00 [Aura] AttackInRangeAI
+	UNIT 0x8C Mage_F	SonyaBoss Level(12, Enemy, True) [8,8]	0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT 0x87 Mercenary	SonyaBoss Level(16, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+	UNIT
+	
+ReinforcementsSonya:
+	UNIT 0x87 Mercenary	SonyaBoss Level(14, Enemy, True) [15,8]	0x00 0x00 0x1 REDA15R8 [BraveSword] NoAI
+	UNIT
+	
+DeenJoins:
+	UNIT Deen Myrmidon	0x0 Level(5, Ally, False) [15,8]	0x00 0x00 0x0 0x00 [BaseSword,BraveSword,DeensSword] NoAI
+	UNIT
+
+Ch3_4C_BeginningScene:
+	MUSC 0x0D //desert theme
+
+	//due to sandstorm, load units on map.
+	LOAD2 0x1 Ch3_4C_CutsceneUnits
+	ENUN
+	STAL 20
+	FlashCursor(Celica,60)
+	STAL 20
+
+	SetBackground(0x30)
+	Text(Ch3_4C_OpeningText_SonyaChosen)
+	FADI 60
+	CLEA 0x0
+	LOAD1 0x1 EnemyUnitsSonya
+	ENUN
+	LOAD3 0x0 Ch3_4C_UnitsNorth //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	ENUN
+
+	GotoPrepScreen
+	ENDA
+
+
+Ch3_4C_EndingScene:
+	CALL UnifiedBEXPCaller
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter3C4Completed
+	EVBIT_MODIFY 0x0
+	LOAD1 0x1 DeenJoins
+	ENUN
+	MUSC 0x31
+	SetBackground(0x30)
+	Text(Ch3_4C_EndingText)
+	FADI 5
+	MNCH 0x1B
+	ENDA

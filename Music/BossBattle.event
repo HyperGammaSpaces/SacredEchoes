@@ -1,0 +1,736 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	BossBattle_grp  voicegroup000
+	#define	BossBattle_pri  0
+	#define	BossBattle_rev  0
+	#define	BossBattle_mvl  85
+	#define	BossBattle_key  0
+	#define	BossBattle_tbs  1
+	#define	BossBattle_exg  0
+	#define	BossBattle_cmp  1
+
+	// .rodata
+	//	BossBattle
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+BossBattle_1:
+	BYTE	KEYSH   BossBattle_key+0
+BossBattle_1_B1:
+// 000   ----------------------------------------
+	BYTE	TEMPO   211*BossBattle_tbs/2
+	BYTE		VOICE   61
+	BYTE		VOL     95*BossBattle_mvl/mxv
+	BYTE		PAN     c_v-32
+	BYTE	W12
+	BYTE		N12     Bn2   v064
+	BYTE	W12
+	BYTE		        Dn3 
+	BYTE	W12
+	BYTE		        Cs3 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+	BYTE		        Gn3 
+	BYTE	W12
+	BYTE		        Fs3 
+	BYTE	W12
+	BYTE		        Fn3 
+	BYTE	W12
+// 001   ----------------------------------------
+	BYTE		N96     En3 
+	BYTE	W96
+// 002   ----------------------------------------
+	BYTE	W12
+	BYTE		N12     Bn2 
+	BYTE	W12
+	BYTE		        Dn3 
+	BYTE	W12
+	BYTE		        Cs3 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+	BYTE		        Gn3 
+	BYTE	W12
+	BYTE		        Fs3 
+	BYTE	W12
+	BYTE		        Cn4 
+	BYTE	W12
+// 003   ----------------------------------------
+	BYTE		N96     Bn3 
+	BYTE	W96
+// 004   ----------------------------------------
+BossBattle_1_004:
+	BYTE	W12
+	BYTE		N12     Bn2   v064
+	BYTE	W24
+	BYTE		        Dn3 
+	BYTE	W24
+	BYTE		        Cs3 
+	BYTE	W24
+	BYTE		        Cn3 
+	BYTE	W12
+	BYTE	PEND
+// 005   ----------------------------------------
+	BYTE		N96     Bn2 
+	BYTE	W96
+// 006   ----------------------------------------
+	BYTE	W12
+	BYTE		N12     Bn2   v052
+	BYTE		N12     Bn3 
+	BYTE	W24
+	BYTE		        Dn3 
+	BYTE		N12     Dn4 
+	BYTE	W24
+	BYTE		        Cs3 
+	BYTE		N12     Cs4 
+	BYTE	W24
+	BYTE		        Cn3 
+	BYTE		N12     Cn4 
+	BYTE	W12
+// 007   ----------------------------------------
+	BYTE		N96     Bn2 
+	BYTE		N96     Bn3 
+	BYTE	W96
+// 008   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_1_004
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_1_004
+// 010   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_1_004
+// 011   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_1_004
+// 012   ----------------------------------------
+	BYTE		N12     Bn2   v064
+	BYTE	W12
+	BYTE		        Dn3 
+	BYTE	W12
+	BYTE		        Cs3 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+	BYTE		        Bn2 
+	BYTE	W12
+	BYTE		        Dn3 
+	BYTE	W12
+	BYTE		        Cs3 
+	BYTE	W12
+	BYTE		        Cn3 
+	BYTE	W12
+// 013   ----------------------------------------
+	BYTE		N06     Bn2 
+	BYTE	W06
+	BYTE		        Dn3 
+	BYTE	W06
+	BYTE		        Cs3 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE	W06
+	BYTE		        Bn2 
+	BYTE	W06
+	BYTE		        Dn3 
+	BYTE	W06
+	BYTE		        Cs3 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE	W06
+	BYTE		        Bn2 
+	BYTE	W06
+	BYTE		        Dn3 
+	BYTE	W06
+	BYTE		        Cs3 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE	W06
+	BYTE		        Bn2 
+	BYTE	W06
+	BYTE		        Dn3 
+	BYTE	W06
+	BYTE		        Cs3 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE	W06
+	BYTE	GoTo
+	 POIN2	BossBattle_1_B1
+BossBattle_1_B2:
+// 014   ----------------------------------------
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+BossBattle_2:
+	BYTE	KEYSH   BossBattle_key+0
+BossBattle_2_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   86
+	BYTE		VOL     94*BossBattle_mvl/mxv
+	BYTE		PAN     c_v+33
+	BYTE	W12
+	BYTE		N12     En3   v064
+	BYTE	W12
+	BYTE		        Gn3 
+	BYTE	W12
+	BYTE		        Fs3 
+	BYTE	W12
+	BYTE		        Fn3 
+	BYTE	W12
+	BYTE		        Cn4 
+	BYTE	W12
+	BYTE		        Bn3 
+	BYTE	W12
+	BYTE		        As3 
+	BYTE	W12
+// 001   ----------------------------------------
+	BYTE		N96     An3 
+	BYTE	W96
+// 002   ----------------------------------------
+	BYTE	W12
+	BYTE		N12     En3 
+	BYTE	W12
+	BYTE		        Gn3 
+	BYTE	W12
+	BYTE		        Fs3 
+	BYTE	W12
+	BYTE		        Fn3 
+	BYTE	W12
+	BYTE		        Cn4 
+	BYTE	W12
+	BYTE		        Bn3 
+	BYTE	W12
+	BYTE		        Fn4 
+	BYTE	W12
+// 003   ----------------------------------------
+	BYTE		N96     En4 
+	BYTE	W96
+// 004   ----------------------------------------
+BossBattle_2_004:
+	BYTE	W12
+	BYTE		N12     En3   v064
+	BYTE	W24
+	BYTE		        Gn3 
+	BYTE	W24
+	BYTE		        Fs3 
+	BYTE	W24
+	BYTE		        Fn3 
+	BYTE	W12
+	BYTE	PEND
+// 005   ----------------------------------------
+	BYTE		N96     En3 
+	BYTE	W96
+// 006   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_2_004
+// 007   ----------------------------------------
+	BYTE		N96     En3   v064
+	BYTE	W96
+// 008   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_2_004
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_2_004
+// 010   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_2_004
+// 011   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_2_004
+// 012   ----------------------------------------
+	BYTE		N12     En3   v064
+	BYTE	W12
+	BYTE		        Gn3 
+	BYTE	W12
+	BYTE		        Fs3 
+	BYTE	W12
+	BYTE		        Fn3 
+	BYTE	W12
+	BYTE		        En3 
+	BYTE	W12
+	BYTE		        Gn3 
+	BYTE	W12
+	BYTE		        Fs3 
+	BYTE	W12
+	BYTE		        Fn3 
+	BYTE	W12
+// 013   ----------------------------------------
+	BYTE		N06     En3 
+	BYTE	W06
+	BYTE		        Gn3 
+	BYTE	W06
+	BYTE		        Fs3 
+	BYTE	W06
+	BYTE		        Fn3 
+	BYTE	W06
+	BYTE		        En3 
+	BYTE	W06
+	BYTE		        Gn3 
+	BYTE	W06
+	BYTE		        Fs3 
+	BYTE	W06
+	BYTE		        Fn3 
+	BYTE	W06
+	BYTE		        En3 
+	BYTE	W06
+	BYTE		        Gn3 
+	BYTE	W06
+	BYTE		        Fs3 
+	BYTE	W06
+	BYTE		        Fn3 
+	BYTE	W06
+	BYTE		        En3 
+	BYTE	W06
+	BYTE		        Gn3 
+	BYTE	W06
+	BYTE		        Fs3 
+	BYTE	W06
+	BYTE		        Fn3 
+	BYTE	W06
+	BYTE	GoTo
+	 POIN2	BossBattle_2_B1
+BossBattle_2_B2:
+// 014   ----------------------------------------
+	BYTE	FINE
+
+//**************** Track 3 (Midi-Chn.3) ****************//
+
+BossBattle_3:
+	BYTE	KEYSH   BossBattle_key+0
+BossBattle_3_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   49
+	BYTE		VOL     75*BossBattle_mvl/mxv
+	BYTE		PAN     c_v-11
+	BYTE		N06     An2   v064
+	BYTE	W06
+	BYTE		N72   
+	BYTE	W90
+// 001   ----------------------------------------
+	BYTE	W12
+	BYTE		N78   
+	BYTE	W84
+// 002   ----------------------------------------
+	BYTE		N06     As2 
+	BYTE	W06
+	BYTE		N72   
+	BYTE	W90
+// 003   ----------------------------------------
+	BYTE	W12
+	BYTE		N84   
+	BYTE	W84
+// 004   ----------------------------------------
+	BYTE		TIE     An2 
+	BYTE	W96
+// 005   ----------------------------------------
+	BYTE	W96
+// 006   ----------------------------------------
+	BYTE	W96
+// 007   ----------------------------------------
+	BYTE	W90
+	BYTE		EOT   
+	BYTE	W06
+// 008   ----------------------------------------
+	BYTE		TIE     As2 
+	BYTE	W96
+// 009   ----------------------------------------
+	BYTE	W90
+	BYTE		EOT   
+	BYTE	W06
+// 010   ----------------------------------------
+	BYTE		N96     Bn2 
+	BYTE	W96
+// 011   ----------------------------------------
+	BYTE		        Cn3 
+	BYTE	W96
+// 012   ----------------------------------------
+	BYTE		N48     Dn3 
+	BYTE	W48
+	BYTE		        Cn3 
+	BYTE	W48
+// 013   ----------------------------------------
+	BYTE		        Bn2 
+	BYTE	W48
+	BYTE		        As2 
+	BYTE	W48
+	BYTE	GoTo
+	 POIN2	BossBattle_3_B1
+BossBattle_3_B2:
+// 014   ----------------------------------------
+	BYTE	FINE
+
+//**************** Track 4 (Midi-Chn.4) ****************//
+
+BossBattle_4:
+	BYTE	KEYSH   BossBattle_key+0
+BossBattle_4_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   127
+	BYTE		VOL     88*BossBattle_mvl/mxv
+	BYTE		N24     Dn1   v100
+	BYTE		N48     An2   v124
+	BYTE	W24
+	BYTE		N24     Dn1   v100
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W12
+	BYTE		N12     As1   v064
+	BYTE	W12
+	BYTE		N24     Dn1   v100
+	BYTE	W24
+// 001   ----------------------------------------
+BossBattle_4_001:
+	BYTE		N24     Dn1   v100
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W12
+	BYTE		N12     Dn2 
+	BYTE	W12
+	BYTE		N24     Dn1 
+	BYTE		N12     Dn2 
+	BYTE	W12
+	BYTE		        As1   v064
+	BYTE		N12     Dn2   v100
+	BYTE	W12
+	BYTE		N24     Dn1 
+	BYTE		N12     Bn1   v096
+	BYTE	W12
+	BYTE		        Gn1   v092
+	BYTE	W12
+	BYTE	PEND
+// 002   ----------------------------------------
+BossBattle_4_002:
+	BYTE		N24     Dn1   v100
+	BYTE		N48     Cs2   v124
+	BYTE	W24
+	BYTE		N24     Dn1   v100
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W12
+	BYTE		N12     As1   v064
+	BYTE	W12
+	BYTE		N24     Dn1   v100
+	BYTE	W24
+	BYTE	PEND
+// 003   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_4_001
+// 004   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_4_002
+// 005   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_4_001
+// 006   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_4_002
+// 007   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_4_001
+// 008   ----------------------------------------
+	BYTE		N24     Dn1   v100
+	BYTE		N48     Cs2   v124
+	BYTE	W24
+	BYTE		N24     Dn1   v100
+	BYTE	W12
+	BYTE		N12     Gs1   v064
+	BYTE	W12
+	BYTE		N24     Dn1   v100
+	BYTE	W12
+	BYTE		N12     As1   v064
+	BYTE	W12
+	BYTE		N24     Dn1   v100
+	BYTE	W12
+	BYTE		N12     Gs1   v064
+	BYTE	W12
+// 009   ----------------------------------------
+BossBattle_4_009:
+	BYTE		N24     Dn1   v100
+	BYTE	W12
+	BYTE		N12     As1   v064
+	BYTE	W12
+	BYTE		N24     Dn1   v100
+	BYTE	W12
+	BYTE		N12     Gs1   v064
+	BYTE	W12
+	BYTE		N24     Dn1   v100
+	BYTE	W12
+	BYTE		N12     As1   v064
+	BYTE	W12
+	BYTE		N24     Dn1   v100
+	BYTE	W12
+	BYTE		N12     Gs1   v064
+	BYTE	W12
+	BYTE	PEND
+// 010   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_4_009
+// 011   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_4_009
+// 012   ----------------------------------------
+BossBattle_4_012:
+	BYTE		N24     Dn1   v100
+	BYTE		N48     An2   v124
+	BYTE	W24
+	BYTE		N24     Dn1   v100
+	BYTE	W24
+	BYTE		N24   
+	BYTE		N48     An2   v124
+	BYTE	W24
+	BYTE		N24     Dn1   v100
+	BYTE	W24
+	BYTE	PEND
+// 013   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_4_012
+	BYTE	GoTo
+	 POIN2	BossBattle_4_B1
+BossBattle_4_B2:
+// 014   ----------------------------------------
+	BYTE	FINE
+
+//**************** Track 5 (Midi-Chn.5) ****************//
+
+BossBattle_5:
+	BYTE	KEYSH   BossBattle_key+0
+BossBattle_5_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   47
+	BYTE		VOL     98*BossBattle_mvl/mxv
+	BYTE		N48     An2   v116
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE	W72
+	BYTE		N24   
+	BYTE	W24
+// 002   ----------------------------------------
+	BYTE		N48     As2 
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W72
+	BYTE		N24   
+	BYTE	W24
+// 004   ----------------------------------------
+	BYTE		N48     An2 
+	BYTE	W96
+// 005   ----------------------------------------
+	BYTE	W72
+	BYTE		N24   
+	BYTE	W24
+// 006   ----------------------------------------
+	BYTE		N48   
+	BYTE	W96
+// 007   ----------------------------------------
+	BYTE	W72
+	BYTE		N24   
+	BYTE	W24
+// 008   ----------------------------------------
+BossBattle_5_008:
+	BYTE		N24     As2   v116
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE	PEND
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_5_008
+// 010   ----------------------------------------
+	BYTE		N24     Bn2   v116
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+// 011   ----------------------------------------
+	BYTE		        Cn3 
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+// 012   ----------------------------------------
+	BYTE		        Dn3 
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		        Cn3 
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+// 013   ----------------------------------------
+	BYTE		        Bn2 
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		        As2 
+	BYTE	W24
+	BYTE		        As1 
+	BYTE	W24
+	BYTE	GoTo
+	 POIN2	BossBattle_5_B1
+BossBattle_5_B2:
+// 014   ----------------------------------------
+	BYTE	FINE
+
+//**************** Track 6 (Midi-Chn.6) ****************//
+
+BossBattle_6:
+	BYTE	KEYSH   BossBattle_key+0
+BossBattle_6_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   40
+	BYTE		VOL     64*BossBattle_mvl/mxv
+	BYTE		PAN     c_v+14
+	BYTE		N12     Dn3   v088
+	BYTE	W12
+	BYTE		        Dn3   v068
+	BYTE	W12
+	BYTE		        Dn3   v088
+	BYTE	W12
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W12
+// 001   ----------------------------------------
+BossBattle_6_001:
+	BYTE		N12     Dn3   v088
+	BYTE	W12
+	BYTE		        Dn3   v068
+	BYTE	W12
+	BYTE		        Dn3   v088
+	BYTE	W12
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W12
+	BYTE	PEND
+// 002   ----------------------------------------
+BossBattle_6_002:
+	BYTE		N12     Ds3   v088
+	BYTE	W12
+	BYTE		        Ds3   v068
+	BYTE	W12
+	BYTE		        Ds3   v088
+	BYTE	W12
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W12
+	BYTE	PEND
+// 003   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_6_002
+// 004   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_6_001
+// 005   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_6_001
+// 006   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_6_001
+// 007   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_6_001
+// 008   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_6_002
+// 009   ----------------------------------------
+	BYTE	PATT
+	 POIN2	BossBattle_6_002
+// 010   ----------------------------------------
+	BYTE		N12     En3   v088
+	BYTE	W12
+	BYTE		        En3   v068
+	BYTE	W12
+	BYTE		        En3   v088
+	BYTE	W12
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W12
+// 011   ----------------------------------------
+	BYTE		        Fn3 
+	BYTE	W12
+	BYTE		        Fn3   v068
+	BYTE	W12
+	BYTE		        Fn3   v088
+	BYTE	W12
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W12
+// 012   ----------------------------------------
+	BYTE		        Gn3 
+	BYTE	W12
+	BYTE		        Gn3   v068
+	BYTE	W12
+	BYTE		        Gn3   v088
+	BYTE	W12
+	BYTE		N24     Fn3 
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W12
+// 013   ----------------------------------------
+	BYTE		        En3 
+	BYTE	W12
+	BYTE		        En3   v068
+	BYTE	W12
+	BYTE		        En3   v088
+	BYTE	W12
+	BYTE		N24     Ds3 
+	BYTE	W24
+	BYTE		N24   
+	BYTE	W24
+	BYTE		N12   
+	BYTE	W12
+	BYTE	GoTo
+	 POIN2	BossBattle_6_B1
+BossBattle_6_B2:
+// 014   ----------------------------------------
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+BossBattle:
+	BYTE	6	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	BossBattle_pri	// Priority
+	BYTE	BossBattle_rev	// Reverb.
+
+	POIN2	BossBattle_grp
+
+	POIN2	BossBattle_1
+	POIN2	BossBattle_2
+	POIN2	BossBattle_3
+	POIN2	BossBattle_4
+	POIN2	BossBattle_5
+	POIN2	BossBattle_6
+
+	

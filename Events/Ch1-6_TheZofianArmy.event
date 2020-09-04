@@ -1,0 +1,183 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x25, Ch1_6_ThisChapter)
+
+Ch1_6_ThisChapter:
+	POIN Ch1_6_TurnBasedEvents
+	POIN Ch1_6_CharacterBasedEvents
+	POIN Ch1_6_LocationBasedEvents
+	POIN Ch1_6_MiscBasedEvents
+	POIN Ch1_6_Dunno Ch1_6_Dunno Ch1_6_Dunno
+	POIN Ch1_6_Tutorial
+	POIN Ch1_6_Ballista1 Ch1_6_Ballista2
+	POIN Ch1_6_Units1 Ch1_6_Units1
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch1_6_BeginningScene Ch1_6_EndingScene
+
+Ch1_6_TurnBasedEvents:
+TURN
+
+Ch1_6_CharacterBasedEvents:
+CHAR
+
+Ch1_6_LocationBasedEvents:
+	Seize(0x0, Ch1_6_EndingScene, 13, 2)
+	Chest(0x07, 5, 1) //thunder sword
+	LOCA
+
+Ch1_6_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	MournQuoteAFEVS
+	AFEV
+
+Ch1_6_Dunno:
+END_MAIN
+
+Ch1_6_Tutorial:
+END_MAIN
+
+Ch1_6_Ballista1:
+BLST
+
+Ch1_6_Ballista2:
+BLST
+ALIGN 4
+
+Ch1_6_Units1:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,10] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [12,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [10,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [14,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [11,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [13,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [9,12] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+BeginningCutsceneUnits:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,12] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [0,1] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+CutsceneUnits:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,3] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [10,2] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [12,3] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [11,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [13,2] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+FernandJoins:
+	UNIT 0x2D Cavalier 0x00 Level(1, Ally, 1) [0,9] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+EnemyUnits:
+	UNIT 0x4a Soldier	0x00 Level(11, Enemy, 1) [13,2]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT 0x82 Soldier	0x4a Level(8, Enemy, 1) [11,2]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT 0x82 Soldier	0x4a Level(7, Enemy, 1) [14,3]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
+	UNIT 0x84 Mercenary	0x4a Level(3, Enemy, 1) [11,4]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI  
+	UNIT 0x82 Soldier	0x4a Level(8, Enemy, 1) [13,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
+	UNIT 0x82 Soldier	0x4a Level(7, Enemy, 1) [11,6]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT 0x81 Archer_F	0x4a Level(7, Enemy, 1) [9,6]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT 0x82 Soldier	0x4a Level(8, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT
+
+EnemyUnits2:
+	UNIT 0x85 Cavalier_F	0x4a Level(5, Enemy, 1) [1,4]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT 0x85 Cavalier	0x4a Level(6, Enemy, 1) [0,5]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT 0x81 Archer	0x4a Level(8, Enemy, 1) [6,2]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
+	UNIT 0x84 Mercenary	0x4a Level(4, Enemy, 1) [4,3]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI  
+	UNIT
+
+Ch1_6_BeginningScene:
+	MUSC 0x24
+	LOAD2 0x1 BeginningCutsceneUnits
+	ENUN
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	CAM1 [9,8]
+
+	SetBackground(0x1B)
+	Text(Ch1_6_OpeningScene)
+	EndConvo
+
+	STAL 20
+	MOVE 0x08 Clair [9, 12]
+	ENUN
+
+	FADI 10
+	CLEA 0x0
+	LOAD1 0x1 EnemyUnits2
+	ENUN
+	LOAD3 0x0 Ch1_6_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	ENUN
+
+	SetBackground(0x1B)
+	Text(Ch1_6_OpeningScene_2)
+	GotoPrepScreen
+	ENDA
+
+Ch1_6_EndingScene:
+	CALL UnifiedBEXPCaller
+	FADI 5
+	CLEA 0x0
+	CLEE 0x0
+	ENUN
+	MUSC 0x31
+	LOAD1 0x1 FernandJoins
+	ENUN
+	LOAD2 0x1 CutsceneUnits
+	ENUN
+	CAM1 [10, 5]
+	FADU 4
+
+	STAL 20
+
+	MOVE 0x08 0x2D [9,3]
+	ENUN
+	MOVE 0x10 Clair [9,2]
+	ENUN
+
+	SetBackground(0x26)
+	TEXTSTART 
+	TEXTSHOW Ch1_6_PostBattle_1
+	TEXTEND
+	MUSC 0x7FFF
+	TEXTCONT
+	TEXTEND
+	MUSC 0x32
+	TEXTCONT
+	TEXTEND
+	ClearBackgroundSmooth
+
+	MOVE 0x10 0x2D [0, 9]
+	ENUN
+	STAL 20
+
+	SVAL 0x1 0x1
+	CHECK_ALIVE Gray 
+	BEQ 0x4 0xC 0x0 //if not, goto NoFaye
+	CHECK_ALIVE Tobin 
+	BEQ 0x4 0xC 0x0 //if not, goto NoFaye
+		MOVE 0x10 Gray [9, 3]
+		MOVE 0x10 Tobin [8, 2]
+		ENUN
+		STAL 20
+		FlashCursor(Clair, 60)
+
+		SetBackground(0x26)
+		TEXTSTART 
+		TEXTSHOW Ch1_6_PostBattle_2
+		TEXTEND
+	LABEL 0x4
+	STARTFADE
+	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	MNCH 0x06 //go to ch6
+	ENDA
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

@@ -1,0 +1,25 @@
+#ifndef MODULAR_GETTER_SPEED_EVENT
+#define MODULAR_GETTER_SPEED_EVENT
+
+#include "_Common.event"
+
+pSpeedModifiers: // Speed
+	POIN prAddUnitSpeed prHalveIfRescuing prAddEquipSpeed prItemPassiveSpeed prShowItemWeight
+	#ifdef __DebuffMinZero__
+	POIN prMinZero
+	#endif
+WORD 0
+
+prAddUnitSpeed:
+	rAdd(rSByteAt(UNIT_SPEED))
+
+prAddEquipSpeed:
+	rAdd(rForUnitEquipped(rCallExternal(prGetItemSpdBonus)))
+
+prItemPassiveSpeed:
+	rPassiveStatBoosts(STAT_SPEED)
+	
+prShowItemWeight:
+	rSub(rForUnitEquipped(rCallExternal(prGetItemWeight)))
+
+#endif // MODULAR_GETTER_SPEED_EVENT

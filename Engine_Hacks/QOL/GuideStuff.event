@@ -1,0 +1,54 @@
+//Guide stuff
+//Making all entries viewable from the start.
+
+PUSH
+
+  ORG $22662
+  SHORT $2000 $46C0
+
+  ORG $2267E
+  SHORT $2000 $46C0
+  
+  ORG $BC508
+  SHORT $2001 $46C0
+  
+  ORG $CDF62
+  SHORT $2001 $46C0
+  
+  ORG $CE334
+  SHORT $2001 $46C0
+  
+  ORG $CE3C0
+  SHORT $2001 $46C0
+  
+  ORG $CE440
+  SHORT $2001 $46C0
+  
+  ORG $CE508
+  SHORT $2001 $46C0
+  
+  ORG $CEB12
+  SHORT $2001 $46C0
+  
+  ORG $CEBD4
+  SHORT $2001 $46C0
+  
+  ORG $CECD2
+  SHORT $2000 $46C0
+  
+  ORG $CF000
+  POIN $CF43A
+  
+  ORG $CF06E
+  SHORT $46C0 $46C0
+  
+  ORG $59CEBC
+  BYTE $0
+  
+  ORG $B19E90
+  BYTE $2
+  ORG $B1A094
+  BYTE $A
+
+POP
+

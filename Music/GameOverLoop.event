@@ -1,0 +1,300 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	GameOverLoop_grp  voicegroup000
+	#define	GameOverLoop_pri  0
+	#define	GameOverLoop_rev  0
+	#define	GameOverLoop_mvl  85
+	#define	GameOverLoop_key  0
+	#define	GameOverLoop_tbs  1
+	#define	GameOverLoop_exg  0
+	#define	GameOverLoop_cmp  1
+
+	// .rodata
+	//	GameOverLoop
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+GameOverLoop_1:
+	BYTE	KEYSH   GameOverLoop_key+0
+// 000   ----------------------------------------
+	BYTE	TEMPO   100*GameOverLoop_tbs/2
+	BYTE		VOICE   4
+	BYTE		VOL     127*GameOverLoop_mvl/mxv
+	BYTE		PAN     c_v+11
+	BYTE		N23     Gs3   v044
+	BYTE	W24
+	BYTE		N20     Ds4   v040
+	BYTE	W24
+	BYTE		N24     Gs4 
+	BYTE	W24
+	BYTE		N23     Ds4   v036
+	BYTE	W24
+// 001   ----------------------------------------
+	BYTE		N24     Gs3   v032
+	BYTE	W24
+	BYTE		        Ds4   v040
+	BYTE	W24
+	BYTE		        Gs4   v028
+	BYTE	W24
+	BYTE		N23     Ds4   v036
+	BYTE	W24
+GameOverLoop_1_B1:
+// 002   ----------------------------------------
+	BYTE		N24     Gs3   v028
+	BYTE	W24
+	BYTE		        Ds4   v040
+	BYTE	W24
+	BYTE		        Gs4   v036
+	BYTE	W24
+	BYTE		        Ds4   v032
+	BYTE	W24
+// 003   ----------------------------------------
+	BYTE		        Gs3   v036
+	BYTE	W24
+	BYTE		        Ds4   v040
+	BYTE	W24
+	BYTE		        Gs4   v032
+	BYTE	W24
+	BYTE		N15     Ds4   v040
+	BYTE	W24
+	BYTE	GoTo
+	 POIN2	GameOverLoop_1_B1
+GameOverLoop_1_B2:
+// 004   ----------------------------------------
+	BYTE	W07
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+GameOverLoop_2:
+	BYTE	KEYSH   GameOverLoop_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   4
+	BYTE		VOL     100*GameOverLoop_mvl/mxv
+	BYTE		PAN     c_v-15
+	BYTE	W08
+	BYTE		N23     Gs3   v040
+	BYTE	W24
+	BYTE		N20     Ds4   v036
+	BYTE	W24
+	BYTE		N24     Gs4 
+	BYTE	W24
+	BYTE		N23     Ds4   v032
+	BYTE	W16
+// 001   ----------------------------------------
+	BYTE	W08
+	BYTE		N24     Gs3   v028
+	BYTE	W24
+	BYTE		        Ds4   v036
+	BYTE	W24
+	BYTE		        Gs4   v024
+	BYTE	W24
+	BYTE		N23     Ds4   v032
+	BYTE	W16
+GameOverLoop_2_B1:
+// 002   ----------------------------------------
+	BYTE	W08
+	BYTE		N24     Gs3   v020
+	BYTE	W24
+	BYTE		        Ds4   v032
+	BYTE	W24
+	BYTE		        Gs4   v028
+	BYTE	W24
+	BYTE		        Ds4   v024
+	BYTE	W16
+// 003   ----------------------------------------
+	BYTE	W08
+	BYTE		        Gs3   v032
+	BYTE	W24
+	BYTE		        Ds4   v036
+	BYTE	W24
+	BYTE		        Gs4   v024
+	BYTE	W24
+	BYTE		N15     Ds4   v036
+	BYTE	W16
+	BYTE	GoTo
+	 POIN2	GameOverLoop_2_B1
+GameOverLoop_2_B2:
+// 004   ----------------------------------------
+	BYTE	W07
+	BYTE	FINE
+
+//**************** Track 3 (Midi-Chn.3) ****************//
+
+GameOverLoop_3:
+	BYTE	KEYSH   GameOverLoop_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   4
+	BYTE		VOL     100*GameOverLoop_mvl/mxv
+	BYTE		PAN     c_v+23
+	BYTE	W16
+	BYTE		N23     Gs3   v032
+	BYTE	W24
+	BYTE		N21     Ds4 
+	BYTE	W24
+	BYTE		N24     Gs4 
+	BYTE	W24
+	BYTE		N23     Ds4   v028
+	BYTE	W08
+// 001   ----------------------------------------
+	BYTE	W16
+	BYTE		N24     Gs3   v024
+	BYTE	W24
+	BYTE		        Ds4   v028
+	BYTE	W24
+	BYTE		        Gs4   v020
+	BYTE	W24
+	BYTE		N23     Ds4   v024
+	BYTE	W08
+GameOverLoop_3_B1:
+// 002   ----------------------------------------
+	BYTE	W16
+	BYTE		N24     Gs3   v016
+	BYTE	W24
+	BYTE		        Ds4   v028
+	BYTE	W24
+	BYTE		        Gs4   v024
+	BYTE	W24
+	BYTE		        Ds4   v020
+	BYTE	W08
+// 003   ----------------------------------------
+	BYTE	W16
+	BYTE		        Gs3   v028
+	BYTE	W24
+	BYTE		        Ds4 
+	BYTE	W24
+	BYTE		        Gs4   v020
+	BYTE	W24
+	BYTE		N15     Ds4   v032
+	BYTE	W08
+	BYTE	GoTo
+	 POIN2	GameOverLoop_3_B1
+GameOverLoop_3_B2:
+// 004   ----------------------------------------
+	BYTE	W07
+	BYTE	FINE
+
+//**************** Track 4 (Midi-Chn.4) ****************//
+
+GameOverLoop_4:
+	BYTE	KEYSH   GameOverLoop_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   4
+	BYTE		VOL     100*GameOverLoop_mvl/mxv
+	BYTE		PAN     c_v-41
+	BYTE	W24
+	BYTE		N23     Gs3   v032
+	BYTE	W24
+	BYTE		N20     Ds4 
+	BYTE	W24
+	BYTE		N24     Gs4 
+	BYTE	W24
+// 001   ----------------------------------------
+	BYTE		N23     Ds4   v028
+	BYTE	W24
+	BYTE		N24     Gs3   v024
+	BYTE	W24
+	BYTE		        Ds4   v028
+	BYTE	W24
+	BYTE		        Gs4   v020
+	BYTE	W24
+GameOverLoop_4_B1:
+// 002   ----------------------------------------
+	BYTE		N23     Ds4   v024
+	BYTE	W24
+	BYTE		N24     Gs3   v016
+	BYTE	W24
+	BYTE		        Ds4   v028
+	BYTE	W24
+	BYTE		        Gs4   v024
+	BYTE	W24
+// 003   ----------------------------------------
+	BYTE		        Ds4   v020
+	BYTE	W24
+	BYTE		        Gs3   v028
+	BYTE	W24
+	BYTE		        Ds4 
+	BYTE	W24
+	BYTE		        Gs4   v020
+	BYTE	W24
+	BYTE	GoTo
+	 POIN2	GameOverLoop_4_B1
+GameOverLoop_4_B2:
+// 004   ----------------------------------------
+	BYTE	W07
+	BYTE	FINE
+
+//**************** Track 5 (Midi-Chn.5) ****************//
+
+GameOverLoop_5:
+	BYTE	KEYSH   GameOverLoop_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   14
+	BYTE		VOL     74*GameOverLoop_mvl/mxv
+	BYTE		PAN     c_v-33
+	BYTE	W42
+	BYTE		N68     Gs3   v104
+	BYTE	W54
+// 001   ----------------------------------------
+	BYTE	W24
+	BYTE		        Gs3   v044
+	BYTE	W72
+GameOverLoop_5_B1:
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W96
+	BYTE	GoTo
+	 POIN2	GameOverLoop_5_B1
+GameOverLoop_5_B2:
+// 004   ----------------------------------------
+	BYTE	W07
+	BYTE	FINE
+
+//**************** Track 6 (Midi-Chn.6) ****************//
+
+GameOverLoop_6:
+	BYTE	KEYSH   GameOverLoop_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   14
+	BYTE		VOL     100*GameOverLoop_mvl/mxv
+	BYTE		PAN     c_v+26
+	BYTE		N68     Gs3   v100
+	BYTE	W78
+	BYTE		        Gs3   v052
+	BYTE	W18
+// 001   ----------------------------------------
+	BYTE	W96
+GameOverLoop_6_B1:
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W96
+	BYTE	GoTo
+	 POIN2	GameOverLoop_6_B1
+GameOverLoop_6_B2:
+// 004   ----------------------------------------
+	BYTE	W07
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+GameOverLoop:
+	BYTE	6	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	GameOverLoop_pri	// Priority
+	BYTE	GameOverLoop_rev	// Reverb.
+
+	POIN2	GameOverLoop_grp
+
+	POIN2	GameOverLoop_1
+	POIN2	GameOverLoop_2
+	POIN2	GameOverLoop_3
+	POIN2	GameOverLoop_4
+	POIN2	GameOverLoop_5
+	POIN2	GameOverLoop_6
+
+	

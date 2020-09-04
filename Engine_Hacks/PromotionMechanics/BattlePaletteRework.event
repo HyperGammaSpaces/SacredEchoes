@@ -1,0 +1,541 @@
+/*
+Battle palette rework
+
+Implement as a list. Each entry is 5 bytes.
+Key: class number
+Value: unit ID followed by pointer to palette
+
+If no entry then don't load a palette (use generic).
+
+Need to see if there's space to point to list entry from class data, or if a CSV association table is needed.
+
+Palette stuff gets loaded around $57382, $5739A, $5742C, $5746A-57484
+Also $CD108 for the promo screen
+
+*/
+
+#include "Extensions/Hack Installation.txt"
+
+#ifndef CharacterPaletteTable
+	#define CharacterPaletteTable $ef8008 //entry 0 which is invalid is here
+#endif
+
+PUSH
+	ORG $5742C
+	callHack_r7(PaletteLoadReworkPt2)
+	
+	ORG $5746A
+	ALIGN 4
+	callHack_r7(PaletteLoadReworkPt1)
+	
+	ORG $CD108
+	callHack_r5(PaletteLoadReworkPromoBranch)
+POP
+
+PaletteLoadReworkPt1:
+#incbin "PaletteLoadReworkPart1.dmp"
+POIN PaletteAssociationTable
+POIN CharacterPaletteTable
+
+PaletteLoadReworkPt2:
+#incbin "PaletteLoadReworkPart2.dmp"
+POIN PaletteAssociationTable
+POIN CharacterPaletteTable
+
+PaletteLoadReworkPromoBranch:
+#incbin "PaletteLoadReworkPromoBranch.dmp"
+POIN PaletteAssociationTable
+POIN CharacterPaletteTable
+
+#define PaletteEntry(index) "(CharacterPaletteTable) + (index*$10)"
+#define PaletteAssociationEntry(charID, index) "BYTE charID; BYTE $00 $00 $00; POIN PaletteEntry(index)"
+
+EmptyPaletteList: //point here for anything that doesnt need custom palettes (lords included)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+CavalierPaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($16)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($25)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($34)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($43)
+BYTE Clive; BYTE $00 $00 $00; POIN PaletteEntry($09)
+BYTE $2D; BYTE $00 $00 $00; POIN PaletteEntry($06) //Fernand
+BYTE $69; BYTE $00 $00 $00; POIN PaletteEntry($06)
+BYTE $6D; BYTE $00 $00 $00; POIN PaletteEntry($06)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($51)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($61)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($75)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($8A)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($9C)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($BA)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($C9)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+PaladinPaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($17)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($26)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($35)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($44)
+BYTE Clive; BYTE $00 $00 $00; POIN PaletteEntry($0A)
+BYTE $2D; BYTE $00 $00 $00; POIN PaletteEntry($07) //Fernand
+BYTE $69; BYTE $00 $00 $00; POIN PaletteEntry($07)
+BYTE $6D; BYTE $00 $00 $00; POIN PaletteEntry($07)
+BYTE $25; BYTE $00 $00 $00; POIN PaletteEntry($12) //Slayde
+BYTE $42; BYTE $00 $00 $00; POIN PaletteEntry($12) 
+BYTE $43; BYTE $00 $00 $00; POIN PaletteEntry($12) 
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($52)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($62)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($76)
+BYTE Mathilda; BYTE $00 $00 $00; POIN PaletteEntry($87)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($8B)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($9D)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($BB)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($CA)
+BYTE Conrad; BYTE $00 $00 $00; POIN PaletteEntry($DA)
+BYTE BerkutPaladin; BYTE $00 $00 $00; POIN PaletteEntry($DD)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+ArmorPaletteList:
+BYTE Lukas; BYTE $00 $00 $00; POIN PaletteEntry($01)
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($1D)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($2C)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($3B)
+BYTE Forsyth; BYTE $00 $00 $00; POIN PaletteEntry($0D)
+BYTE Valbar; BYTE $00 $00 $00; POIN PaletteEntry($6F)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($68)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($7C)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($A3)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($C1)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+BaronPaletteList:
+BYTE Lukas; BYTE $00 $00 $00; POIN PaletteEntry($02)
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($1E)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($2D)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($3C)
+BYTE Forsyth; BYTE $00 $00 $00; POIN PaletteEntry($0E)
+BYTE Valbar; BYTE $00 $00 $00; POIN PaletteEntry($70)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($69)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($7D)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($A4)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($C2)
+BYTE $45; BYTE $00 $00 $00; POIN PaletteEntry($14) //Desaix
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+ThiefPaletteList:
+BYTE Jesse; BYTE $00 $00 $00; POIN PaletteEntry($AA)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+MercPaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($19)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($28)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($37)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($64)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($78)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($9F)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($BD)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+HeroPaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($1A)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($29)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($38)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($65)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($79)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($A0)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($BE)
+BYTE DeenBoss; BYTE $00 $00 $00; POIN PaletteEntry($BE)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+Class13PaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+DFPaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($1B)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($2A)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($39)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($4C)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($5A)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($66)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($7A)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($93)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($A1)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($BF)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($D2)
+BYTE $3F; BYTE $00 $00 $00; POIN PaletteEntry($E4)
+BYTE Grieth; BYTE $00 $00 $00; POIN PaletteEntry($AC)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+AssassinPaletteList:
+BYTE Jesse; BYTE $00 $00 $00; POIN PaletteEntry($AB)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+ArcherPaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($21)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($30)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($3F)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($4D)
+BYTE Python; BYTE $00 $00 $00; POIN PaletteEntry($0F)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($5B)
+BYTE Leon; BYTE $00 $00 $00; POIN PaletteEntry($71)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($6C)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($80)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($94)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($A7)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($C5)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($D3)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+SniperPaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($22)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($31)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($40)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($4E)
+BYTE Python; BYTE $00 $00 $00; POIN PaletteEntry($10)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($5B)
+BYTE Leon; BYTE $00 $00 $00; POIN PaletteEntry($72)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($6D)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($81)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($95)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($A8)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($C6)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($D4)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+BowKnightPaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($23)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($32)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($41)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($4F)
+BYTE Python; BYTE $00 $00 $00; POIN PaletteEntry($11)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($5C)
+BYTE Leon; BYTE $00 $00 $00; POIN PaletteEntry($73)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($6E)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($82)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($96)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($A9)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($C7)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($D5)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+WyvRiderPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+WyvLordPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+WyvKnightPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+MagePaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($1F)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($2E)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($3D)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($4A)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($58)
+BYTE Boey; BYTE $00 $00 $00; POIN PaletteEntry($5E)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($6A)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($7E)
+BYTE Luthier; BYTE $00 $00 $00; POIN PaletteEntry($85)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($91)
+BYTE DeltheaBoss; BYTE $00 $00 $00; POIN PaletteEntry($91)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($A5)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($C3)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($D0)
+BYTE SonyaBoss; BYTE $00 $00 $00; POIN PaletteEntry($D0)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+SagePaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($20)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($2F)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($3E)
+BYTE Boey; BYTE $00 $00 $00; POIN PaletteEntry($5F)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($6B)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($7F)
+BYTE Luthier; BYTE $00 $00 $00; POIN PaletteEntry($86)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($A6)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($C4)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+PriestessPaletteList:
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($4B)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($59)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($92)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($D1)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+WitchPaletteList:
+BYTE Nuibaba; BYTE $00 $00 $00; POIN PaletteEntry(0xDF)
+BYTE MarlaCh3; BYTE $00 $00 $00; POIN PaletteEntry(0xE0)
+BYTE HestiaCh4; BYTE $00 $00 $00; POIN PaletteEntry(0xE1)
+BYTE MarlaFinal; BYTE $00 $00 $00; POIN PaletteEntry(0xE0)
+BYTE HestiaFinal; BYTE $00 $00 $00; POIN PaletteEntry(0xE1)
+BYTE RineaEnemy; BYTE $00 $00 $00; POIN PaletteEntry(0xE2)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+SaintPaletteList:
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($47)
+BYTE Silque; BYTE $00 $00 $00; POIN PaletteEntry($03)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($55)
+BYTE Genny; BYTE $00 $00 $00; POIN PaletteEntry($84)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($8E)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($CD)
+BYTE Tatiana; BYTE $00 $00 $00; POIN PaletteEntry($D8)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+ShamanPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+DruidPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+CantorPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+RoguePaletteList:
+BYTE Jesse; BYTE $00 $00 $00; POIN PaletteEntry($AB)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+GKPaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($18)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($27)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($36)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($45)
+BYTE Clive; BYTE $00 $00 $00; POIN PaletteEntry($0B)
+BYTE $2D; BYTE $00 $00 $00; POIN PaletteEntry($08) //Fernand
+BYTE $69; BYTE $00 $00 $00; POIN PaletteEntry($08)
+BYTE $6D; BYTE $00 $00 $00; POIN PaletteEntry($08)
+BYTE $25; BYTE $00 $00 $00; POIN PaletteEntry($13) //Slayde
+BYTE $42; BYTE $00 $00 $00; POIN PaletteEntry($13) 
+BYTE $43; BYTE $00 $00 $00; POIN PaletteEntry($13) 
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($53)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($63)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($77)
+BYTE Mathilda; BYTE $00 $00 $00; POIN PaletteEntry($88)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($8C)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($9E)
+BYTE Jesse; BYTE $00 $00 $00; POIN PaletteEntry($AD)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($BC)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($CB)
+BYTE Zeke; BYTE $00 $00 $00; POIN PaletteEntry($D9)
+BYTE Conrad; BYTE $00 $00 $00; POIN PaletteEntry($DB)
+BYTE Mycen; BYTE $00 $00 $00; POIN PaletteEntry($DC)
+BYTE BerkutGK; BYTE $00 $00 $00; POIN PaletteEntry($DE)
+//BYTE Rudolf; BYTE $00 $00 $00; POIN PaletteEntry($E3)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+VillagerPaletteList:
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($15)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($24)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($33)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($42)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($50)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($60)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($74)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($89)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($9B)
+BYTE Jesse; BYTE $00 $00 $00; POIN PaletteEntry($AA)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($B9)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($C8)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+ManaketePaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+AxeFighterPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+WarriorPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+BrigandPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+PiratePaletteList:
+BYTE 0x4D; BYTE $00 $00 $00; POIN PaletteEntry($E7) //pirate boss
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+BerserkerPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+MonkPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+PriestPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+BardPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+PegKnightPaletteList:
+BYTE Clair; BYTE $00 $00 $00; POIN PaletteEntry($04)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($48)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($56)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($8F)
+BYTE Palla; BYTE $00 $00 $00; POIN PaletteEntry($97)
+BYTE Catria; BYTE $00 $00 $00; POIN PaletteEntry($99)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($CE)
+BYTE Est; BYTE $00 $00 $00; POIN PaletteEntry($D6)
+BYTE $3F; BYTE $00 $00 $00; POIN PaletteEntry($E5)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+FalcoknightPaletteList:
+BYTE Clair; BYTE $00 $00 $00; POIN PaletteEntry($05)
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($49)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($57)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($90)
+BYTE Palla; BYTE $00 $00 $00; POIN PaletteEntry($98)
+BYTE Catria; BYTE $00 $00 $00; POIN PaletteEntry($9A)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($CF)
+BYTE Est; BYTE $00 $00 $00; POIN PaletteEntry($D7)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+ClericPaletteList:
+BYTE Faye; BYTE $00 $00 $00; POIN PaletteEntry($46)
+BYTE Mae; BYTE $00 $00 $00; POIN PaletteEntry($54)
+BYTE Genny; BYTE $00 $00 $00; POIN PaletteEntry($83)
+BYTE Delthea; BYTE $00 $00 $00; POIN PaletteEntry($8D)
+BYTE Sonya; BYTE $00 $00 $00; POIN PaletteEntry($CC)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+TroubadourPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+ValkyriePaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+DancerPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+SoldierPaletteList:
+BYTE Lukas; BYTE $00 $00 $00; POIN PaletteEntry($00)
+BYTE Gray; BYTE $00 $00 $00; POIN PaletteEntry($1C)
+BYTE Tobin; BYTE $00 $00 $00; POIN PaletteEntry($2B)
+BYTE Kliff; BYTE $00 $00 $00; POIN PaletteEntry($3A)
+BYTE Forsyth; BYTE $00 $00 $00; POIN PaletteEntry($0C)
+BYTE Saber; BYTE $00 $00 $00; POIN PaletteEntry($67)
+BYTE Kamui; BYTE $00 $00 $00; POIN PaletteEntry($7B)
+BYTE Hyas; BYTE $00 $00 $00; POIN PaletteEntry($A2)
+BYTE Jesse; BYTE $00 $00 $00; POIN PaletteEntry($B1)
+BYTE Deen; BYTE $00 $00 $00; POIN PaletteEntry($C0)
+BYTE $3F; BYTE $00 $00 $00; POIN PaletteEntry($E6)
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+NecromancerPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+RevenantPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+EntombedPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+BonewalkerPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+WightPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+BaelPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+ElderBaelPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+CyclopsPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+FiendPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+WdragonPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+TarvosPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+ChironPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+MogallPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+ArchMogallPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+GorgonPaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+GargoylePaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+DeathgoylePaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+DracozombiePaletteList:
+BYTE $00 $00 $00 $00 $00 $00 $00 $00
+ALIGN 4
+
+BYTE $FF $FF $FF $FF $FF $FF $FF $FF
+ALIGN 4

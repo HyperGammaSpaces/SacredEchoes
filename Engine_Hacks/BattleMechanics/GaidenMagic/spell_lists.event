@@ -1,0 +1,276 @@
+//Spell list by character ID
+//level learned, spell ID
+//promoted-only spells indicated by an $80 + level
+
+GraySpellList:
+BYTE $01 Fire
+BYTE $09 Sagittae
+BYTE $0A Thunder
+BYTE $81 Heal
+BYTE $86 Unlock
+BYTE $00 $00
+ALIGN 4
+
+TobinSpellList:
+BYTE $01 Fire
+BYTE $06 Excalibur
+BYTE $81 Heal
+BYTE $85 Physic
+BYTE $88 TorchStaff
+BYTE $00 $00
+ALIGN 4
+
+KliffSpellList:
+BYTE $01 Fire
+BYTE $04 Thunder
+BYTE $09 Excalibur
+BYTE $0F Sagittae
+BYTE $85 Aura
+BYTE $81 Heal
+BYTE $00 $00
+ALIGN 4
+
+FayeWSpellList:
+BYTE $01 Nosferatu
+BYTE $81 Seraphim
+BYTE $01 Heal
+BYTE $06 Physic
+BYTE $0A Rescue
+BYTE $8E Anew
+BYTE $00 $00
+ALIGN 4
+
+FayeBSpellList:
+BYTE $01 Fire
+BYTE $08 Seraphim
+BYTE $0C Sagittae
+BYTE $81 Heal
+BYTE $86 Freeze
+BYTE $00 $00
+ALIGN 4
+
+SilqueSpellList:
+BYTE $01 Nosferatu
+BYTE $81 Seraphim
+BYTE $01 Heal
+BYTE $07 Warp
+BYTE $0E Expel
+BYTE $12 Invoke
+BYTE $00 $00
+ALIGN 4
+
+CelicaSpellList:
+BYTE $01 Fire
+BYTE $05 Seraphim
+BYTE $08 Thunder
+BYTE $09 Heal
+BYTE $0F Excalibur
+BYTE $14 Ragnarok
+BYTE $00 $00
+ALIGN 4
+
+MaeSpellList:
+BYTE $01 Fire
+BYTE $01 Thunder
+BYTE $09 Aura
+BYTE $0E Seraphim
+BYTE $81 Heal
+BYTE $86 Silence
+BYTE $00 $00
+ALIGN 4
+
+MaeWSpellList:
+BYTE $01 Nosferatu
+BYTE $01 Heal
+BYTE $09 Aura
+BYTE $0E Seraphim
+BYTE $81 Physic
+BYTE $86 Silence
+BYTE $00 $00
+ALIGN 4
+
+BoeySpellList:
+BYTE $01 Fire
+BYTE $03 Thunder
+BYTE $0C Sagittae
+BYTE $12 Excalibur
+BYTE $81 Heal
+BYTE $86 Unlock
+BYTE $00 $00
+ALIGN 4
+
+/*
+//Use this for testing
+GennySpellList:
+BYTE $01 Nosferatu
+BYTE $81 Seraphim
+BYTE $01 $5A
+BYTE $04 Rewarp
+BYTE $08 Rescue
+BYTE $09 Unlock
+BYTE $00 $00
+ALIGN 4
+*/
+
+//Real version
+GennySpellList:
+BYTE $01 Nosferatu
+BYTE $81 Seraphim
+BYTE $01 Heal
+BYTE $04 Invoke
+BYTE $08 Physic
+BYTE $0C Expel
+BYTE $00 $00
+ALIGN 4
+
+
+SaberSpellList:
+BYTE $01 Fire
+BYTE $05 Seraphim
+BYTE $81 Heal
+BYTE $85 Physic
+BYTE $89 Unlock
+BYTE $00 $00
+ALIGN 4
+
+KamuiSpellList:
+BYTE $01 Fire
+BYTE $07 Excalibur
+BYTE $81 Heal
+BYTE $85 Freeze
+BYTE $89 TorchStaff
+BYTE $00 $00
+ALIGN 4
+
+LuthierSpellList:
+BYTE $01 Fire
+BYTE $01 Excalibur
+BYTE $0A Thunder
+BYTE $0F Sagittae
+BYTE $81 Heal
+BYTE $00 $00
+ALIGN 4
+
+DeltheaSpellList:
+BYTE $01 Fire
+BYTE $01 Aura
+BYTE $0B Seraphim
+BYTE $10 Ragnarok
+BYTE $81 Heal
+BYTE $8A Rewarp
+BYTE $00 $00
+ALIGN 4
+
+DeltheaWSpellList:
+BYTE $01 Nosferatu
+BYTE $01 Heal
+BYTE $0B Seraphim
+BYTE $10 Aura
+BYTE $81 Fortify
+BYTE $8A Rewarp
+BYTE $00 $00
+ALIGN 4
+
+AtlasSpellList:
+BYTE $01 Fire
+BYTE $08 Sagittae
+BYTE $81 Heal
+BYTE $84 Rescue
+BYTE $89 TorchStaff
+BYTE $00 $00
+ALIGN 4
+
+JesseSpellList:
+BYTE $01 Fire
+BYTE $02 Excalibur
+BYTE $09 Thunder
+BYTE $81 Heal
+BYTE $85 Unlock
+BYTE $00 $00
+ALIGN 4
+
+DeenSpellList:
+BYTE $01 Fire
+BYTE $03 Sagittae
+BYTE $81 Heal
+BYTE $85 Silence
+BYTE $00 $00
+ALIGN 4
+
+SonyaSpellList:
+BYTE $01 Fire
+BYTE $01 Thunder
+BYTE $01 Excalibur
+BYTE $81 Heal
+BYTE $85 Rewarp
+BYTE $8A Entrap
+BYTE $00 $00
+ALIGN 4
+
+SonyaWSpellList:
+BYTE $01 Nosferatu
+BYTE $01 Physic
+BYTE $01 Seraphim
+BYTE $81 Fortify
+BYTE $85 Rewarp
+BYTE $8A Entrap
+BYTE $00 $00
+ALIGN 4
+
+TatianaSpellList:
+BYTE $01 Nosferatu
+BYTE $81 Seraphim
+BYTE $01 Physic
+BYTE $84 Fortify
+BYTE $87 Invoke
+BYTE $88 Warp
+BYTE $00 $00
+ALIGN 4
+
+NomahSpellList:
+BYTE $01 Fire
+BYTE $01 Thunder
+BYTE $01 Excalibur
+BYTE $01 Sagittae
+BYTE $81 Heal
+BYTE $85 Warp
+BYTE $00 $00
+ALIGN 4
+
+JedahSpellList:
+BYTE $01 Mire
+BYTE $01 Sisyphus
+BYTE $01 Thanatos
+BYTE $00 $00
+ALIGN 4
+
+RineaSpellList:
+BYTE $01 Fire
+BYTE $01 Seraphim
+BYTE $01 Entrap
+BYTE $01 Rescue
+BYTE $00 $00
+ALIGN 4
+
+NuibabaSpellList:
+BYTE $01 Mire
+BYTE $01 Thanatos
+BYTE $01 Medusa
+BYTE $00 $00
+ALIGN 4
+
+MarlaSpellList:
+BYTE $01 Seraphim
+BYTE $01 Aura
+BYTE $01 Rewarp
+BYTE $01 Entrap
+BYTE $00 $00
+ALIGN 4
+
+HestiaSpellList:
+BYTE $01 Excalibur
+BYTE $01 Aura
+BYTE $01 Rewarp
+BYTE $01 Entrap
+BYTE $00 $00
+ALIGN 4

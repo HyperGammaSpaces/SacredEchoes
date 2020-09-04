@@ -1,0 +1,324 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x1F, Ch1_5_ThisChapter)
+
+Ch1_5_ThisChapter:
+	POIN Ch1_5_TurnBasedEvents
+	POIN Ch1_5_CharacterBasedEvents
+	POIN Ch1_5_LocationBasedEvents
+	POIN Ch1_5_MiscBasedEvents
+	POIN Ch1_5_Dunno Ch1_5_Dunno Ch1_5_Dunno
+	POIN Ch1_5_Tutorial
+	POIN Ch1_5_Ballista1 Ch1_5_Ballista2
+	POIN Ch1_5_Units1 Ch1_5_Units1
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch1_5_BeginningScene Ch1_5_EndingScene
+
+Ch1_5_TurnBasedEvents:
+	OpeningTurnEvent(ArcherEvent)
+	TURN 0x0 ChangeGuardAI[4,0] 0x0
+	TURN 0x0 ChangeGuardAI_2[5,0] 0x0
+	TURN
+
+ArcherEvent:
+	MUSC 0x09
+	MUSI
+	CAM1 [6,2]
+	STAL 30
+	FlashCursor(6, 2, 60)
+	Text(Ch1_5_ArcherText)
+	MUNO
+	NoFade
+	ENDA
+
+ChangeGuardAI:
+	SVAL 0x1 0x0
+	CHAI 0x84
+	ReinforcementEvent(ThiefReinforcement)
+	NoFade
+	ENDA
+
+ChangeGuardAI_2:
+	SVAL 0x1 0x0
+	CHAI 0x80
+	NoFade
+	ENDA
+
+Ch1_5_CharacterBasedEvents:
+	CharacterEvent(8, TalkToClair, Lukas, Clair)
+	CharacterEvent(8, TalkToClairWithAlm, Alm, Clair)
+	CharacterEvent(8, TalkToClairWithGray, Gray, Clair)
+	CHAR
+
+TalkToClair:
+	MUSS 0x30
+	STAL 33
+	TEXTSTART 
+	TEXTSHOW Ch1_5_ClairTalkEvent
+	TEXTEND
+	REMA
+	CALL $591F40
+	CUSA Clair
+	STAL 20
+	SVAL 0x3 BaseLance
+	GIVEITEMTO Clair
+	STAL 20
+	NoFade
+	MURE 0x05
+	ENDA
+
+TalkToClairWithAlm:
+	MUSS 0x30
+	STAL 33
+	TEXTSTART 
+	TEXTSHOW Ch1_5_ClairTalkEvent_Alm
+	TEXTEND
+	REMA
+	CALL $591F40
+	CUSA Clair
+	STAL 20
+	SVAL 0x3 BaseLance
+	GIVEITEMTO Clair
+	STAL 20
+	NoFade
+	MURE 0x05
+	ENDA
+
+TalkToClairWithGray:
+	MUSS 0x30
+	STAL 33
+	TEXTSTART 
+	TEXTSHOW Ch1_5_ClairTalkEvent_Gray
+	TEXTEND
+	REMA
+	CALL $591F40
+	CUSA Clair
+	STAL 20
+	SVAL 0x3 BaseLance
+	GIVEITEMTO Clair
+	STAL 20
+	NoFade
+	MURE 0x05
+	ENDA
+
+
+Ch1_5_LocationBasedEvents:
+	Seize(0x0, Ch1_5_EndingScene, 6, 1)
+	Door(5, 7)
+	Door(6, 7)
+	//Door(13, 12)
+	DOOR 0x9 [13, 12] 0x12
+	Chest(SteelBow, 15, 10)
+	Chest(IronLance, 16, 6)
+	LOCA
+
+Ch1_5_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	AFEV 0xA DoorEvent 0x9
+	MournQuoteAFEVS
+	AFEV
+
+DoorEvent:
+	LOAD1 0x1 ClairJoins
+	ENUN
+	MOVE 0x08 Clair [15,11]
+	ENUN
+	CAM1 Clair
+	STAL 30
+	FlashCursor(Clair, 60)
+	Text(Ch1_5_ClairIntro)
+	MUNO
+	NoFade
+	ENDA
+
+Ch1_5_Dunno:
+END_MAIN
+
+Ch1_5_Tutorial:
+END_MAIN
+
+Ch1_5_Ballista1:
+BLST
+
+Ch1_5_Ballista2:
+BLST
+ALIGN 4
+
+Ch1_5_Units1:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [4,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [3,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [7,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [2,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [8,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Acantha 0xE 0x00 Level(3, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Lockpick] NoAI
+	UNIT
+
+ClairJoins:
+	UNIT Clair PegasusKnight 0x00 Level(1, NPC, 1) [16,11] 0x00 0x00 0x0 0x00 [ChestKey] [0x06, 0x0A, 0x00, 0x00] //Should make her retreat towards Alm.
+	UNIT
+
+CutsceneUnits:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,10] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [6,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [7,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [5,9] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+CutsceneUnits_NoClair:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,10] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [6,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [7,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT
+
+CutsceneUnitsFaye:
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [7,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
+
+AllyClair:
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [5,9] 0x00 0x00 0x0 0x00 [BaseLance, ChestKey] NoAI
+	UNIT
+
+EnemyUnits:
+	UNIT 0x49 Soldier	0x00 Level(9, Enemy, 1) [6,1]	0x00 0x00 0x0 0x00 [BaseLance] NeverMoveAI
+	UNIT 0x81 Archer	0x49 Level(6, Enemy, 1) [6,2]	0x00 0x00 0x0 0x00 [SteelBow] NoAI
+	UNIT 0x82 Soldier	0x49 Level(6, Enemy, 1) [7,2]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT 0x84 Mercenary	0x49 Level(3, Enemy, 1) [5,2]	0x00 0x00 0x0 0x00 [BaseSword] NoAI 
+	UNIT 0x82 Soldier	0x49 Level(5, Enemy, 1) [6,3]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT 0x82 Soldier	0x49 Level(6, Enemy, 1) [3,5]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI 
+	UNIT 0x81 Archer	0x49 Level(5, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT 0x82 Soldier	0x49 Level(6, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT 0x82 Soldier	0x49 Level(6, Enemy, 1) [16,8]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT 0x81 Archer	0x49 Level(6, Enemy, 1) [15,6]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT 0x81 Archer	0x49 Level(5, Enemy, 1) [15,3]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT 0x84 Mercenary	0x49 Level(3, Enemy, 1) [11,6]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
+	UNIT 0x84 Soldier	0x49 Level(6, Enemy, 1) [12,6]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT 0x82 Soldier	0x49 Level(7, Enemy, 1) [12,12]	DropItem 0x00 0x0 0x00 [IronLance, DoorKey] GuardTileAI 
+	UNIT 0x82 Soldier	0x49 Level(7, Enemy, 1) [0,7]	DropItem 0x00 0x0 0x00 [IronLance, DoorKey] AttackInRangeAI 
+	UNIT 0x80 Archer_F	0x49 Level(6, Enemy, 1) [9,2]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT
+
+ThiefReinforcement:
+	UNIT 0x65 Thief 	0x49 Level(4, Enemy, 1) [16,1]	DropItem 0x00 0x1 REDA16R1  [BaseSword, Lockpick] LootingThiefAI
+	UNIT
+
+Ch1_5_BeginningScene:
+	MUSC 0x25
+	LOAD3 0x0 Ch1_5_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	ENUN
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	FADU 10
+	CAM1 0x49
+	STAL 6
+	FlashCursor(0x49, 60)
+	TEXTSTART
+	TEXTSHOW Ch1_5_OpeningScene
+	TEXTEND
+	CAM1 Alm
+	STAL 6
+	FlashCursor(Alm, 60)
+	TEXTCONT
+	TEXTEND
+	REMA
+	GotoPrepScreen
+	ENDA
+
+Ch1_5_EndingScene:
+	CALL UnifiedBEXPCaller
+	FADI 10
+	SVAL 0x1 0x1
+	CHECK_EVENTID 0x8
+	BEQ 0x1 0xC 0x0
+	SVAL 0x2 Clair
+	CHECK_EXISTS 0xFFFD
+	IFEQ 0x1 0xC 0x0
+	CHECK_ALIVE 0xFFFD
+	IFEQ 0x1 0xC 0x0
+	CHECK_ALLEGIANCE 0xFFFD //is Clair blue?
+	IFNE 0x1 0xC 0x0 //if not, goto NoClair
+		CLEA 0x0
+		CLEE 0x0
+		LOAD2 0x1 CutsceneUnits
+		ENUN
+		GOTO 0x2
+	LABEL 0x1
+		CLEN 0x0
+		CLEA 0x0
+		CLEE 0x0
+		LOAD2 0x1 CutsceneUnits_NoClair
+		ENUN
+		LOAD1 0x1 AllyClair
+		ENUN
+	LABEL 0x2
+	EVBIT_MODIFY 0x1
+		ENUT gClairJoined
+	EVBIT_MODIFY 0x0
+
+	CHECK_EVENTID gFayeRecruited
+	BEQ 0x5 0xC 0x0
+	CHECK_ALIVE Faye //is Faye alive?
+	BEQ 0x5 0xC 0x0 //if not, goto NoFaye
+		LOAD2 0x1 CutsceneUnitsFaye
+		ENUN
+	LABEL 0x5
+	CAM1 Alm
+	MUSC 0x31
+	SetBackground(0x25)
+	TEXTSTART 
+	TEXTSHOW Ch1_5_PostBattle_1
+	TEXTEND
+	CALL $9EE2C4
+	STAL 10
+	MOVE 0x10 Alm [1, 2]
+	MOVE 0x10 Clair [1, 2]
+	MOVE 0x10 Lukas [1, 2]
+	ENUN
+
+	SVAL 0x1 0x1
+	CHECK_ALIVE Gray 
+	BEQ 0x4 0xC 0x0 //if not, goto NoFaye
+	CHECK_ALIVE Tobin 
+	BEQ 0x4 0xC 0x0 //if not, goto NoFaye
+	CHECK_EVENTID gFayeRecruited
+	BEQ 0x3 0xC 0x0
+	CHECK_ALIVE Faye //is Faye alive?
+	BEQ 0x3 0xC 0x0 //if not, goto NoFaye
+		CAM1 [7, 10]
+		TEXTSTART 
+		TEXTSHOW Ch1_5_PostBattle_Faye
+		TEXTEND
+		REMA
+		MOVE 0x10 Faye [1,2]
+		ENUN
+		TEXTSTART 
+		TEXTSHOW Ch1_5_PostBattle_Faye_2
+		TEXTEND
+		REMA
+		MOVE 0x12 Gray [1,2]
+		MOVE 0x10 Tobin [1,2]
+		ENUN
+		GOTO 0x4
+	LABEL 0x3
+		CAM1 [7, 10]
+		TEXTSTART 
+		TEXTSHOW Ch1_5_PostBattle_NoFaye
+		TEXTEND
+		REMA
+		MOVE 0x12 Gray [1,2]
+		MOVE 0x10 Tobin [1,2]
+		ENUN
+	LABEL 0x4
+	STARTFADE
+	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	MNCH 0x05 //go to ch5
+	ENDA
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

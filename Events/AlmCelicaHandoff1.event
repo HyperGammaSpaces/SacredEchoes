@@ -1,0 +1,139 @@
+//ASMC 8659C autolevels the character before removing them from the party.
+//ASMC 86564 switches the active lord.
+
+
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0xC5, Ch2_1_ThisChapter)
+
+Ch2_1_ThisChapter:
+POIN Ch2_1_TurnBasedEvents
+POIN Ch2_1_CharacterBasedEvents
+POIN Ch2_1_LocationBasedEvents
+POIN Ch2_1_MiscBasedEvents
+POIN Ch2_1_Dunno Ch2_1_Dunno Ch2_1_Dunno
+POIN Ch2_1_Tutorial
+POIN Ch2_1_Ballista1 Ch2_1_Ballista2
+POIN PlayerUnits PlayerUnits
+POIN $0 $0 $0 $0 $0 $0
+POIN Ch2_1_BeginningScene Ch2_1_EndingScene
+
+Ch2_1_TurnBasedEvents:
+TURN
+
+Ch2_1_CharacterBasedEvents:
+CHAR
+
+Ch2_1_LocationBasedEvents:
+LOCA 0x3 [1,1] 0x11 //fake seize
+LOCA
+
+Ch2_1_MiscBasedEvents:
+CauseGameOverIfLordDies
+AFEV
+
+Ch2_1_Dunno:
+END_MAIN
+
+Ch2_1_Tutorial:
+END_MAIN
+
+Ch2_1_Ballista1:
+BLST
+
+Ch2_1_Ballista2:
+BLST
+ALIGN 4
+
+NewCelica:
+UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+UNIT Boey Mage 0x00 Level(1, Ally, 1) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+UNIT Genny Cleric 0x00 Level(1, Ally, 1) [5,11] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI  
+UNIT
+
+PlayerUnits:
+UNIT
+
+EnemyUnits:
+UNIT
+
+Ch2_1_BeginningScene:
+CALL DoCelicaStuff
+ENDA
+
+Ch2_1_EndingScene:
+ENDA
+
+DoCelicaStuff:
+EVBIT_MODIFY 0x4
+ENUT gRouteSplit1Flag
+EVBIT_MODIFY 0x0
+SetBackground(0x24) //Town idk
+SOUN LimaDiesBellSFX_ID
+STAL 60
+MUSCMID 0x7FFF
+MUSC 0x4C
+Text(CelicaHandoffScene)
+FADI 5
+
+LOAD1 0x1 NewCelica	//Add Celica first.
+ENUN
+
+MUSCSLOW 0x20 //novis church
+SetBackground(0x2E) //Shrine
+Text(CelicaHandoffScene_2)
+FADI 5
+
+MUSC 0x30
+SetBackground(0x0C) //Hall
+Text(CelicaHandoffScene_3)
+STAL 20
+CALL $591F40
+SVAL 0x3 0x5C //energy ring
+GIVEITEMTO Celica
+STAL 20
+CALL $591F40
+SVAL 0x3 0x5E //speedwing
+GIVEITEMTO Celica
+STAL 20
+FADI 5
+
+ASMC 0x86581 //Set Celica Mode.
+
+REMU 0x01 //Remove Alm
+//Check if Lukas is alive, then remove if true
+REMU 0x02 //Remove Lukas
+//Check if Gray is alive, then remove if true
+REMU 0x03 //Remove Gray
+//Check if Tobin is alive, then remove if true
+REMU 0x04 //Remove Tobin
+//Check if Kliff is alive, then remove if true
+REMU 0x05 //Remove Kliff
+//Check if Faye is alive, then remove if true
+REMU 0x06 //Remove Faye
+//Check if Silque is alive, then remove if true
+REMU 0x07 //Remove Silque
+//Check if Clair is alive, then remove if true
+REMU 0x08 //Remove Clair
+//Check if Clive is alive, then remove if true
+REMU 0x09 //Remove Clive
+//Check if Forsyth is alive, then remove if true
+REMU 0x0A //Remove Forsyth
+//Check if Python is alive, then remove if true
+REMU 0x0B //Remove Python
+//Check if Acantha is alive, then remove if true
+REMU 0x23 //Remove Acantha
+
+STARTFADE
+FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+_0xA640 0x0 0x0 0xA //do i need this?
+MNCH 0x08 //celica time
+EVBIT_MODIFY 0x0
+ENDB
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

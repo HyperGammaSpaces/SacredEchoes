@@ -1,0 +1,270 @@
+//World Map Events Installer
+// #define WorldMapIntroPointerTable(id,offset) "PUSH; ORG 0x8B3ad8+(4*id); POIN offset; POP"
+
+#define InlineEvents  0x1
+
+//ASMC helpers
+ALIGN 4
+ApplyStatusToUnitASMC:
+#incbin "ASMCs/ApplyStatusToUnit.dmp"
+ALIGN 4
+ApplyStatusToUnitIDASMC:
+#incbin "ASMCs/ApplyStatusToUnitID.dmp"
+ALIGN 4
+RemoveItemFromAnyASMC:
+#incbin "ASMCs/item_collect.bin"
+ALIGN 4
+#include "REDAs.event"
+ALIGN 4
+#include "DeathQuoteChecker.event"
+
+#define RemoveItemFromAny(itemID) "SHORT $0D40 itemID; POIN RemoveItemFromAnyASMC+1"
+
+TurnOnMapFlags:
+ENUF 0x84
+ENDA
+
+//BEXP call (in one place for easy updating)
+UnifiedBEXPCaller:
+ENUT 0x84 //turn off HPbars
+ASMC ApplyBonusEXPToParty|1 
+SOUN 0x5A
+//SETVAL 0xB 0xFFFFFFFF
+//TUTORIALTEXTBOXSTART
+//TEXTSHOW2 BEXP_Notif_Text
+//TEXTEND
+//REMA
+NOTIFY BEXP_Notif_Text 0x0 0x0
+ENDA
+
+ALIGN 4
+#define EventMenuCommand(aTextId) "WORD 0; SHORT aTextId 0; WORD 0; POIN (0x04F448+1); WORD 0; POIN (prEventMenuCommandEffect+1); WORD 0 0 0"
+#define EventMenuCommandEnd "WORD 0 0 0 0 0 0 0 0 0"
+		
+	pDeenSonyaCommandDefinition:
+		EventMenuCommand(Ch3_3C_DeenMenuOption)
+		EventMenuCommand(Ch3_3C_SonyaMenuOption)
+	EventMenuCommandEnd
+
+ALIGN 4
+prEventMenuCommandEffect:
+	SHORT 0xB500 0x203C 0x5C08 0x4B03 0x469E 0xF800 0x2017 0xBC02 0x4708 0x0000 0xD1F8 0x0800
+	
+ALIGN 4
+prCallDeenSonyaEventMenu:
+	SHORT 0xB510 0x1C04 0x4B10 0x469E 0xF800 0x4A10 0x7850 0x2101 0x4308 0x2102 0x4308 0x2104 0x4308 0x2108 0x4308 0x2110 0x4308 0x7050 0x2000 0x4B0A 0x469E 0xF800 0x4B09 0x469E 0xF800 0x4B09 0x469E 0xF800 0x4809 0x1C21 0x4B07 0x469E 0xF800 0xBC10 0xBC01 0x4700 0xE884 0x0804 0x3080 0x0300 0x3D38 0x0800 0x43A8 0x0800 0xEB68 0x0804 0xEBC8 0x0804
+	POIN pDeenSonyaMenuDefinition
+	
+ALIGN 4
+pDeenSonyaMenuDefinition:
+	BYTE 6 8 18 0           // Geometry, order: X, Y, Width, Height (Height doesn't matter)
+	WORD 1                  // style (change it if u want)
+	POIN pDeenSonyaCommandDefinition // Command Definitions
+	WORD 0 0 0 0 0 0        // No routines to handle B press/R press/construction/etc
+
+//Boss music table (may need to repoint)
+PUSH
+	ORG 0x72908
+	POIN BossMusicTable
+POP
+
+BossMusicTable:
+	WORD 0x42 0x1B //Slayde Act 1
+	WORD 0x45 0x1B //Desaix Act 1
+	WORD 0x46 0x1B 
+	WORD 0x47 0x1B //Brigand Boss
+	WORD 0x48 0x1B //Ram Valley Merc
+	WORD 0x49 0x1B 
+	WORD 0x4A 0x1B
+	WORD 0x4B 0x1B
+	WORD 0x4C 0x1B
+	WORD 0x4D 0x1B
+	WORD 0x4E 0x1B //Barth
+	WORD 0x4F 0x1B //Jarth
+	WORD 0x50 0x1B //Zaxon
+	WORD 0x51 0x1B 
+	WORD 0x52 0x1B 
+	WORD 0x53 0x1B 
+	WORD 0x54 0x1B 
+	WORD 0x55 0x1B 
+	WORD 0x56 0x1B 
+	WORD 0x57 0x1B 
+	WORD 0x58 0x1B 
+	WORD 0x59 0x1B 
+	WORD 0x5A 0x1B 
+	WORD 0x5B 0x1B 
+	WORD 0x5C 0x1B 
+	WORD 0x5D 0x1B 
+	WORD 0x5E 0x1B 
+	WORD 0x60 0x1B 
+	WORD 0x61 0x1B 
+	WORD 0x62 0x1B 
+	WORD 0x63 0x1B 
+	WORD 0x69 0x1B //fernand
+	WORD 0x6B 0x1B //rudolf
+	WORD 0x6C 0x1B //jedah 2
+	WORD 0x6D 0x1B //fernand 2
+	WORD 0x6E 0x1B //fernand 3
+	WORD 0x6F 0x1B //berkut 1
+	WORD 0x70 0x1B //berkut 2
+	WORD 0x71 0x1B //berkut 3
+	WORD 0x72 0x1B //nuibaba
+	WORD 0x77 0x1B //marla 1
+	WORD 0x78 0x1B //hestia 1
+	WORD 0x79 0x1B //marla 2
+	WORD 0x7A 0x1B //hestia 2
+	WORD 0x7B 0x1B //sonya boss
+	WORD 0x7C 0x1B //deen boss
+	WORD 0x59 0x1B //delthea boss
+	WORD 0x68 0x1B //Generic bandit 1
+	WORD 0x8F 0x1B //Generic shaman 1
+	WORD 0x90 0x1B //Generic shaman 2
+	WORD 0x91 0x1B //Generic shaman 3
+	WORD 0xFFFFFFFF 0xFFFFFFFF //terminator
+
+ALIGN 4
+Ch1_1_Events:
+{
+  #include "Ch1-1_AlmsDeparture.event"
+}
+ALIGN 4
+Ch1_2_Events:
+{
+  #include "Ch1-2_FleecersForest.event"
+}
+ALIGN 4
+Ch1_3_Events:
+{
+  #include "Ch1-3_ThievesShrine.event"
+}
+ALIGN 4
+{
+  #include "Ch1Shrine_ThievesShrine.event"
+}
+ALIGN 4
+Ch1_4_Events:
+{
+  #include "Ch1-4_RamValleyPass.event"
+}
+ALIGN 4
+Ch1_5_Events:
+{
+  #include "Ch1-5_SouthernOutpost.event"
+}
+ALIGN 4
+Ch1_6_Events:
+{
+  #include "Ch1-6_TheZofianArmy.event"
+}
+ALIGN 4
+Ch1_7_Events:
+{
+  #include "Ch1-7_TheDeliverance.event"
+}
+ALIGN 4
+{
+  #include "Ch1Shrine_DeliveranceHideout.event"
+}
+Ch1_7x_Events:
+ALIGN 4
+{
+  #include "Ch1-7x_RiseOfTheDeliverance.event"
+}
+ALIGN 4
+Ch1_8_Events:
+{
+  #include "Ch1-8_TheUsurper.event"
+}
+ALIGN 4
+{
+  #include "AlmCelicaHandoff1.event"
+}
+ALIGN 4
+{
+  #include "Ch2-1_CelicasDeparture.event"
+}
+ALIGN 4
+{
+  #include "Ch2-2_OneEyedSavior.event"
+}
+ALIGN 4
+{
+  #include "Ch2-3_TheSeaway.event"
+}
+ALIGN 4
+{
+  #include "Ch2-4_ThePiratesThrone.event"
+}
+ALIGN 4
+{
+  #include "Ch2Shrine_Seabound.event"
+}
+ALIGN 4
+{
+  #include "Ch2-5_TheResurrectionist.event"
+}
+ALIGN 4
+{
+  #include "Ch2-6_TheWarship.event"
+}
+ALIGN 4
+{
+  #include "Ch2-7_ZofiaHarbor.event"
+}
+ALIGN 4
+{
+  #include "Ch3-1A_NobleVengeance.event"
+}
+ALIGN 4
+{
+  #include "Ch3-2A_ForestOfStorms.event"
+}
+ALIGN 4
+{
+  #include "Ch3-3A_TheElite.event"
+}
+ALIGN 4
+{
+  #include "Ch3-4A_Homecoming.event"
+}
+ALIGN 4
+{
+  #include "Ch3-5A_InvadersDescend.event"
+}
+ALIGN 4
+{
+  #include "Ch3-6A_TheSiege.event"
+}
+ALIGN 4
+{
+  #include "Ch3-7A_ThePuppeteer.event"
+}
+ALIGN 4
+{
+  #include "Ch3-1C_TwoSisters.event"
+}
+ALIGN 4
+{
+  #include "Ch3-2C_MountainVillage.event"
+}
+ALIGN 4
+{
+  #include "Ch3-3C_DesertBastion.event"
+}
+ALIGN 4
+{
+  #include "Ch3-4C_TheUltimatum_Deen.event"
+}
+ALIGN 4
+{
+  #include "Ch3-4C_TheUltimatum_Sonya.event"
+}
+ALIGN 4
+{
+  #include "Ch3-5C_AThroneOfSand.event"
+}
+
+//CAM1 is to ensure the given tile is within the camera region
+//CAM2 is to center the camera into the given tile
+//(excect when it's for units, then it's reversed, because EA raws weirdness)
+

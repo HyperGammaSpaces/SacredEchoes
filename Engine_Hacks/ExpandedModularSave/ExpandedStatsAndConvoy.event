@@ -1,0 +1,176 @@
+//Installer for Stat Caps over 31 (max 63)
+//Also expands the convoy to 200.
+//Source: https://github.com/ngmansion/FE8/tree/master/break_save
+
+#define ConvoyExpansionRAM $0203B200
+
+PUSH
+
+  //Stat bar drawing
+  ORG $87132
+  BYTE $28 					//max stat cap to 40 (28h)
+  
+  ORG $87142
+  BYTE $28					//max stat cap to 40 (28h)
+  
+  ORG $870FE
+  BYTE $28 					//max stat cap to 40 (28h)
+  
+  ORG $87102
+  BYTE $28					//max stat cap to 40 (28h)
+  
+  ORG $872AE 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $2C016 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $2C01C 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $18250 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $18254 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $926FC 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $9C154 
+  BYTE $28					//max luck cap to 40 (28h)
+  
+  ORG $9C31C
+  BYTE $28					//max luck cap to 40 (28h)
+
+/*
+  ORG $A53E2
+  #incbin "break_save_n.bin"
+  
+  ORG $A5E8E
+  #incbin "break_save_c.bin"
+  
+  ORG $A6146
+  #incbin "break_load_c.bin"
+  
+  ORG $A572A
+  SHORT $46C0
+  ORG $A5730
+  SHORT $46C0
+  ORG $A5976
+  SHORT $46C0
+  ORG $A597C
+  SHORT $46C0
+  ORG $A6078
+  SHORT $46C0
+  ORG $A607E
+  SHORT $46C0
+  
+  ORG $A57E8				//manual jumptohack with r0
+  BYTE $00 $48 $87 $46
+  POIN breakLoadN
+*/
+
+/*  
+  //SaveConvoyItems
+  ORG $A31E4				//manual jumptohack with r3
+  BYTE $00 $4B $9F $46
+  POIN yusoSave
+
+  ORG $A324A
+  #incbin "DoubleConvoy/nya_A7C8E.bin"
+   
+  //LoadConvoyItems
+  ORG $A326C				//manual jumptohack with r3
+  BYTE $00 $4B $9F $46
+  POIN yusoLoad
+
+  ORG $A32D2
+  #incbin "DoubleConvoy/nya_0a7d16.bin"
+*/  
+
+  //Convoy size expansion
+  
+  ORG $1DFB2
+  BYTE $C7
+  
+  ORG $1E05A
+  BYTE $C7
+  
+  ORG $1E0EC
+  BYTE $C7
+
+  ORG $31504
+  WORD ConvoyExpansionRAM
+  ORG $31524
+  WORD ConvoyExpansionRAM
+  ORG $31590
+  WORD ConvoyExpansionRAM
+  ORG $315B4				//AddItemToConvoy
+  WORD ConvoyExpansionRAM
+  ORG $315E0				//i think this is called when removing item from convoy?
+  WORD ConvoyExpansionRAM
+  ORG $31604				//GetConvoyItemSlot
+  WORD ConvoyExpansionRAM
+
+  ORG $31528
+  BYTE $C8
+
+  ORG $31576
+  BYTE $C7
+
+  ORG $315BC
+  BYTE $C7
+
+  ORG $9828E
+  BYTE $C7
+
+  ORG $9A550
+  BYTE $C7
+
+  ORG $9A56A
+  BYTE $C7
+
+  ORG $9D676
+  BYTE $C8
+
+  ORG $9D73E
+  BYTE $C8
+
+  ORG $9D768
+  BYTE $C8
+
+  ORG $9DD10
+  BYTE $C7
+
+  ORG $9E902
+  BYTE $C8
+
+  ORG $B4738
+  BYTE $C7
+  
+/*
+  //Make CopySaveData account for double convoy size (total save data size: $DC8 -> $E78)
+  ORG $A4E68
+  WORD $E78
+  
+  //New adds
+  ORG $A4F84
+  SHORT $4650 $3001
+  ORG $A509C
+  SHORT $4650 $3001
+  ORG $A5B22
+  SHORT $2000
+*/
+  
+POP
+
+//$0A31E4 $0A326C
+
+ALIGN 4
+yusoSave:
+#incbin "DoubleConvoy/yuso_save_2.dmp"
+
+ALIGN 4
+yusoLoad:
+#incbin "DoubleConvoy/yuso_load.dmp"

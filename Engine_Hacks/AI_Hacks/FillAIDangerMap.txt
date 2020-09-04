@@ -1,0 +1,134 @@
+0803E320 B5F0   PUSH {r4,r5,r6,r7,lr}   //FillAiDangerMap
+0803E322 4657   MOV r7, r10
+0803E324 464E   MOV r6, r9
+0803E326 4645   MOV r5, r8
+0803E328 B4E0   PUSH {r5,r6,r7}
+0803E32A 2000   MOV r0, #0x0
+0803E32C 4680   MOV r8, r0
+0803E32E 4681   MOV r9, r0
+0803E330 2401   MOV r4, #0x1
+0803E332 1C20   MOV r0 ,r4
+0803E334 F7DB F87C   BL 0x08019430   //GetUnitStruct RET=RAM Unit:@UNIT
+0803E338 1C06   MOV r6 ,r0
+0803E33A 3401   ADD r4, #0x1
+0803E33C 46A2   MOV r10, r4
+0803E33E 2E00   CMP r6, #0x0
+0803E340 D06C   BEQ #0x803E41C
+    0803E342 6830   LDR r0, [r6, #0x0] r0=RAM r6=RAM
+    0803E344 2800   CMP r0, #0x0
+    0803E346 D069   BEQ #0x803E41C
+        0803E348 68F0   LDR r0, [r6, #0xC] r6=RAM
+        0803E34A 4939   LDR r1, [PC, #0xE4] # pointer:0803E430 -> 0001000D
+        0803E34C 4008   AND r0 ,r1
+        0803E34E 2800   CMP r0, #0x0
+        0803E350 D164   BNE #0x803E41C
+            0803E352 4838   LDR r0, [PC, #0xE0] # pointer:0803E434 -> 0202BE44 (gActiveUnitIndex )
+            0803E354 7800   LDRB r0, [r0, #0x0] # pointer:0202BE44 (gActiveUnitIndex )
+            0803E356 210B   MOV r1, #0xB
+            0803E358 5671   LDSB r1, [r6, r1] r6=RAM
+            0803E35A F7E6 FD17   BL 0x08024D8C   //AreUnitsAllied
+            0803E35E 0600   LSL r0 ,r0 ,#0x18
+            0803E360 2800   CMP r0, #0x0
+            0803E362 D15B   BNE #0x803E41C
+                0803E364 2500   MOV r5, #0x0
+                0803E366 8BF4   LDRH r4, [r6, #0x1E] r6=RAM
+                0803E368 2C00   CMP r4, #0x0
+                0803E36A D01C   BEQ #0x803E3A6
+                    0803E36C 1C30   MOV r0 ,r6
+                    0803E36E 1C21   MOV r1 ,r4
+                    0803E370 F7D8 F900   BL 0x08016574   //CanUnitUseAsWeapon
+                    0803E374 0600   LSL r0 ,r0 ,#0x18
+                    0803E376 2800   CMP r0, #0x0
+                    0803E378 D00B   BEQ #0x803E392
+                        0803E37A 1C20   MOV r0 ,r4
+                        0803E37C F7D9 F92E   BL 0x080175DC   //GetItemMight
+                        0803E380 4548   CMP r0, r9
+                        0803E382 DD06   BLE #0x803E392
+                            0803E384 46A0   MOV r8, r4
+                            0803E386 4640   MOV r0, r8
+                            0803E388 F7D9 F928   BL 0x080175DC   //GetItemMight
+                            0803E38C 0600   LSL r0 ,r0 ,#0x18
+                            0803E38E 0E00   LSR r0 ,r0 ,#0x18
+                            0803E390 4681   MOV r9, r0
+                    0803E392 3501   ADD r5, #0x1
+                    0803E394 2D04   CMP r5, #0x4
+                    0803E396 DC06   BGT #0x803E3A6
+                        0803E398 0069   LSL r1 ,r5 ,#0x1
+                        0803E39A 1C30   MOV r0 ,r6
+                        0803E39C 301E   ADD r0, #0x1E
+                        0803E39E 1840   ADD r0 ,r0, R1
+                        0803E3A0 8804   LDRH r4, [r0, #0x0] r0=RAM
+                        0803E3A2 2C00   CMP r4, #0x0
+                        0803E3A4 D1E2   BNE #0x803E36C
+                0803E3A6 4641   MOV r1, r8
+                0803E3A8 2900   CMP r1, #0x0
+                0803E3AA D037   BEQ #0x803E41C
+                    0803E3AC 4822   LDR r0, [PC, #0x88] # pointer:0803E438 -> 03004E50 (Pointer to work memory of operation character ) r0=RAM
+                    0803E3AE 6800   LDR r0, [r0, #0x0] # pointer:03004E50 (Pointer to work memory of operation character ) r0=Unit r0=Unit
+                    0803E3B0 1C31   MOV r1 ,r6
+                    0803E3B2 4642   MOV r2, r8
+                    0803E3B4 F7FC FC6C   BL 0x0803AC90   //CouldUnitBeInRangeHeuristic
+                    0803E3B8 0600   LSL r0 ,r0 ,#0x18
+                    0803E3BA 2800   CMP r0, #0x0
+                    0803E3BC D02E   BEQ #0x803E41C
+                        0803E3BE 1C30   MOV r0 ,r6
+                        0803E3C0 4641   MOV r1, r8
+                        0803E3C2 F7FD F8C9   BL 0x0803B558   //FillMovementAndRangeMapForItem
+                        0803E3C6 481D   LDR r0, [PC, #0x74] # pointer:0803E43C -> 0202E4D4 (gMapSize )
+                        0803E3C8 2202   MOV r2, #0x2
+                        0803E3CA 5E80   LDSH r0, [r0, r2] # pointer:0202E4D6 (MapSize@MapSize.Height )
+                        0803E3CC 1E41   SUB r1 ,r0, #0x1
+                        0803E3CE 2900   CMP r1, #0x0
+                        0803E3D0 DB24   BLT #0x803E41C
+                            0803E3D2 481A   LDR r0, [PC, #0x68] # pointer:0803E43C -> 0202E4D4 (gMapSize )
+                            0803E3D4 2200   MOV r2, #0x0
+                            0803E3D6 5E80   LDSH r0, [r0, r2] # pointer:0202E4D4 (gMapSize )
+                            0803E3D8 1E44   SUB r4 ,r0, #0x1
+                            0803E3DA 1E4F   SUB r7 ,r1, #0x1
+                            0803E3DC 2C00   CMP r4, #0x0
+                            0803E3DE DB1A   BLT #0x803E416
+                                0803E3E0 008D   LSL r5 ,r1 ,#0x2
+                                0803E3E2 4817   LDR r0, [PC, #0x5C] # pointer:0803E440 -> 0202E4E4 (gMapRange )
+                                0803E3E4 6800   LDR r0, [r0, #0x0] # pointer:0202E4E4 (gMapRange )
+                                0803E3E6 1828   ADD r0 ,r5, R0
+                                0803E3E8 6800   LDR r0, [r0, #0x0] # pointer:0803FFF8 -> 00000000 r0=RAM r0=RAM
+                                0803E3EA 1900   ADD r0 ,r0, R4
+                                0803E3EC 7800   LDRB r0, [r0, #0x0] # pointer:0800FFFE -> 00000000
+                                0803E3EE 0600   LSL r0 ,r0 ,#0x18
+                                0803E3F0 1600   ASR r0 ,r0 ,#0x18
+                                0803E3F2 2800   CMP r0, #0x0
+                                0803E3F4 D00C   BEQ #0x803E410
+                                    0803E3F6 1C30   MOV r0 ,r6
+                                    0803E3F8 F7DA FEDA   BL 0x080191B0   //GetUnitPower
+                                    0803E3FC 4911   LDR r1, [PC, #0x44] # pointer:0803E444 -> 0202E4F0 (gMapMovement2 ) r1=RAM
+                                    0803E3FE 6809   LDR r1, [r1, #0x0] # pointer:0202E4F0 (gMapMovement2 )
+                                    0803E400 1869   ADD r1 ,r5, R1
+                                    0803E402 6809   LDR r1, [r1, #0x0] # pointer:0803FFF8 -> 00000000 r1=RAM r1=RAM
+                                    0803E404 1909   ADD r1 ,r1, R4
+                                    0803E406 4448   ADD r0, r9
+                                    0803E408 1040   ASR r0 ,r0 ,#0x1
+                                    0803E40A 780A   LDRB r2, [r1, #0x0] # pointer:0800FFFE -> 00000000
+                                    0803E40C 1880   ADD r0 ,r0, R2
+                                    0803E40E 7008   STRB r0, [r1, #0x0]
+                                0803E410 3C01   SUB r4, #0x1
+                                0803E412 2C00   CMP r4, #0x0
+                                0803E414 DAE5   BGE #0x803E3E2
+                            0803E416 1C39   MOV r1 ,r7
+                            0803E418 2900   CMP r1, #0x0
+                            0803E41A DADA   BGE #0x803E3D2
+0803E41C 4654   MOV r4, r10
+0803E41E 2CBF   CMP r4, #0xBF
+0803E420 DD87   BLE #0x803E332
+0803E422 BC38   POP {r3,r4,r5}
+0803E424 4698   MOV r8, r3
+0803E426 46A1   MOV r9, r4
+0803E428 46AA   MOV r10, r5
+0803E42A BCF0   POP {r4,r5,r6,r7}
+0803E42C BC01   POP {r0}
+0803E42E 4700   BX r0
+0803E430 000D 0001   //LDRDATA
+0803E434 BE44 0202   //LDRDATA
+0803E438 4E50 0300   //LDRDATA
+0803E43C E4D4 0202   //LDRDATA
+0803E440 E4E4 0202   //LDRDATA
+0803E444 E4F0 0202   //LDRDATA

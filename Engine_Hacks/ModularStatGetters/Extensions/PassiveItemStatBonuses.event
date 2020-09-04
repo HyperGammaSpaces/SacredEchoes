@@ -1,0 +1,52 @@
+#ifndef MSG_EXT_PASSIVEITEMSTATBONUSES_EVENT
+#define MSG_EXT_PASSIVEITEMSTATBONUSES_EVENT
+
+#ifndef _FE8_
+	ERROR _file_ should be assembled for FE8
+#endif // _FE8_
+
+/*
+	This File Defines the following macros:
+
+	rIfItemHasPassiveStatBoosts
+	rIfItemHasPassiveStatBoosts(next)
+
+	rIfItemHasNotPassiveStatBoosts
+	rIfItemHasNotPassiveStatBoosts(next)
+
+	rAddItemPassiveStatBoosts(stat index)
+
+	Usage example: (add onto some modifier list)
+
+	prAddPowerPassiveItemBonus:
+		rForEachUnitItem
+			rIfItemHasPassiveStatBoosts
+				rAddItemPassiveStatBoosts(STAT_POWER)
+*/
+
+#ifndef PASSIVE_ITEM_BOOSTS_OFFSET
+	#define PASSIVE_ITEM_BOOSTS_OFFSET 0x00
+#endif
+
+#define rIfWithR1(aprRoutine) "SHORT 0xB570 0x2401 0x46A6 0x4B09 0x4063 0x1C04 0x1C0D 0x1C16 0x44FE 0x4718 0x4044 0x4060 0x4044 0xD003 0x1C29 0x1C32 0xF000 0xF806 0x1C21 0xBC70 0xBC08 0x4718; POIN aprRoutine"
+
+prCheckItemHasPassiveStatBoosts:
+{
+	rCallSequence(_prGetItemAttr _prAndArgument)
+	
+_prGetItemAttr:
+	rForItemROMStruct(rWordAt(0x08))
+	
+_prAndArgument:
+	rAnd(rConstant(Item_Flag_PassiveBoost))
+}
+
+#define rIfItemHasNotPassiveStatBoosts "rIfNot(prCheckItemHasPassiveStatBoosts)"
+#define rIfItemHasPassiveStatBoosts    "rIfWithR1(prCheckItemHasPassiveStatBoosts)"
+
+#define rIfItemHasNotPassiveStatBoosts(arNext) "rIfItemHasNotPassiveStatBoosts; arNext"
+#define rIfItemHasPassiveStatBoosts(arNext)    "rIfItemHasPassiveStatBoosts;    arNext"
+
+#define rAddItemPassiveStatBoosts(aStatId) "rForItemROMStruct(rForWordAt(0x0C, rIfSubjectIsNotNull(rAdd(rSByteAt(PASSIVE_ITEM_BOOSTS_OFFSET + aStatId)))))"
+
+#endif // MSG_EXT_PASSIVEITEMSTATBONUSES_EVENT

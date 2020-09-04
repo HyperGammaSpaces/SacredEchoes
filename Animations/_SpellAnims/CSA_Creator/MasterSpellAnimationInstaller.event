@@ -1,0 +1,46 @@
+//Master Animation Installer
+//Macros
+#define setCSATable(index, framedata, RTLFG, LTRFG, RTLBG, LTRBG) "PUSH; ORG CSATable+(index*20); POIN framedata RTLFG LTRFG RTLBG LTRBG; POP"
+#define setCustomSpell_dim(index) "PUSH; ORG SpellTable+(index*4); POIN CSAEngine_Dim|1; POP"
+#define setCustomSpell_nodim(index) "PUSH; ORG SpellTable+(index*4); POIN CSAEngine_NoDim|1; POP"
+
+PUSH
+	//Fix dodge to front glitch
+	ORG 0x4E9A
+	BYTE 0x00 0x00 0x00 0x4D 0xAF 0x46
+	POIN SpellFix
+	
+	//Allow separate melee vs range anim
+	ORG $58028
+	SHORT $4a00 $4710
+	POIN MeleeRangeSplit+1
+POP
+ALIGN 4
+SpellFix:
+#incbin "SpellFix.dmp"
+ALIGN 4
+MeleeRangeSplit:
+#incbin "MeleeRangeSplit.dmp"
+
+#ifdef _FE8_
+  #define SpellTable $5d4e60
+  #define CSATable $EF2F20 //CHANGE THIS TO A LOCATION WHERE YOU KNOW THERE ARE 0x13EC BYTES OF FREE SPACE
+
+  PUSH
+  ORG CSATable
+  #incbin BlankCSATable.dmp
+
+  ORG $95d780
+  CSAEngine:
+  #incbin "CSASystem_fe8.dmp" //the custom spell engine. All custom spells point here.
+  POIN CSATable //needed for the routine
+  POP
+
+  #define CSAEngine_Dim $95d7ec
+  #define CSAEngine_NoDim $95d898 //the last word in the dmp, this should be updated if you edit the engine.
+#endif
+
+//animations go here
+
+#include "SagittaeMelee/SagittaeMelee.event" 
+#include "SagittaeRanged/SagittaeRanged.event"

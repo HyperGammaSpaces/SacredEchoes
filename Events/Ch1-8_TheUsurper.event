@@ -1,0 +1,612 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x35, Ch1_8_ThisChapter)
+
+Ch1_8_ThisChapter:
+	POIN Ch1_8_TurnBasedEvents
+	POIN Ch1_8_CharacterBasedEvents
+	POIN Ch1_8_LocationBasedEvents
+	POIN Ch1_8_MiscBasedEvents
+	POIN Ch1_8_Dunno Ch1_8_Dunno Ch1_8_Dunno
+	POIN Ch1_8_Tutorial
+	POIN Ch1_8_Ballista1 Ch1_8_Ballista2
+	POIN Ch1_8_Units1 Ch1_8_Units1
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch1_8_BeginningScene Ch1_8_EndingScene
+
+Ch1_8_TurnBasedEvents:
+	OpeningTurnEvent(DesaixTalk)
+	TURN 0x0 WaveFirst[3,0] 0x0
+	TURN 0x0 WaveSecond[5,0] 0x0
+	TURN 0x0 WaveThird[6,0] 0x0
+	TURN 0x0 WaveFourth[7,0] 0x0
+	TURN
+
+WaveFirst:
+	ReinforcementEvent(Reinforcements1)
+
+WaveSecond:
+	ReinforcementEvent(Reinforcements2)
+
+WaveThird:
+	ReinforcementEvent(Reinforcements3)
+
+WaveFourth:
+	ReinforcementEvent(Reinforcements4)
+
+Ch1_8_CharacterBasedEvents:
+	CHAR
+
+Ch1_8_LocationBasedEvents:
+	Door(5, 3)
+	Door(18, 3)
+	Door(16, 13)
+	Door(4, 22)
+	Door(5, 22)
+	Chest(Ridersbane, 19, 1)
+	Chest(IronShield, 21, 1)
+	Seize(10, 4)
+	LOCA
+
+Ch1_8_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	AFEV 0x9 SlaydeDies 0x8
+	AFEV 0xA DesaixDies gDesaixAct1Death
+	MournQuoteAFEVS
+	AFEV
+
+Ch1_8_Dunno:
+	END_MAIN
+
+Ch1_8_Tutorial:
+	END_MAIN
+
+Ch1_8_Ballista1:
+	BLST
+
+Ch1_8_Ballista2:
+	BLST
+	ALIGN 4
+
+Ch1_8_Units1:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,25] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [19,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [11,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [9,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [8,24] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [7,24] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [7,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [17,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Forsyth Knight 0x00 Level(1, Ally, 1) [17,24] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Python Archer 0x00 Level(1, Ally, 1) [16,24] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+
+Bosses:
+	UNIT 0x45 General	0x00 Level(1, Enemy, 1) [10,4]	DropItem 0x00 0x0 0x00 [BaseLance, Dracoshield] NeverMoveAI 
+	UNIT
+
+BerkutRinea:
+	UNIT 0x6F Paladin 0x00 Level(1, Enemy, 1) [9, 4] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT 0x44 0x76 0x00 Level(1, Enemy, 1) [8, 4] 0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT 0x42 Paladin	0x45 Level(3, Enemy, 1) [10,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT 0x6D Cavalier 0x00 Level(1, Enemy, 1) [7, 4] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+BossesCutscene:
+	UNIT 0x6F Paladin 0x00 Level(1, Enemy, 1) [15, 0] 0x00 0x00 0x1 REDA15R1 [BaseLance] NoAI
+	UNIT 0x6D Cavalier 0x00 Level(1, Enemy, 1) [16, 0] 0x00 0x00 0x1 REDA16R1 [BaseLance] NoAI
+	UNIT
+
+EnemyUnits:
+	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [12,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT 0x81 Archer_F	0x45 Level(10, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT 0x82 Knight	0x45 Level(2, Enemy, 0) [11,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
+	UNIT 0x83 Shaman	0x45 Level(7, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] [0xE, 0x0, 0x0, 0x0]
+	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [11,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
+	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [9,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
+	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [3,20]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [6,20]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT 0x85 Cavalier_F	0x45 Level(10, Enemy, 1) [7,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI  
+	UNIT 0x85 Cavalier_F	0x42 Level(10, Enemy, 1) [8,7]	0x00 0x00 0x0 0x00 [Javelin] MoveWithLeaderAI 
+	UNIT 0x85 Cavalier	0x42 Level(11, Enemy, 1) [9,7]	0x00 0x00 0x0 0x00 [BaseLance] MoveWithLeaderAI 
+	UNIT 0x85 Cavalier	0x42 Level(11, Enemy, 1) [11,7]	0x00 0x00 0x0 0x00 [IronLance] MoveWithLeaderAI 
+	UNIT 0x85 Cavalier_F	0x42 Level(11, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] MoveWithLeaderAI  
+	UNIT 0x85 Cavalier	0x45 Level(11, Enemy, 1) [13,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI  
+	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [13,15]	0x00 0x00 0x0 0x00 [IronBow] NoAI 
+	UNIT 0x81 Archer_F	0x45 Level(11, Enemy, 1) [15,15]	0x00 0x00 0x0 0x00 [IronBow] NoAI 
+	UNIT 0x82 Soldier	0x45 Level(12, Enemy, 1) [16,14]	DropItem 0x00 0x0 0x00 [IronLance,DoorKey] AttackInRangeAI  
+	UNIT
+
+Reinforcements1:
+	UNIT 0x65 Thief 	0x67 Level(7, Enemy, 1) [19,15]	0x00 0x00 0x1 REDA19R15  [BaseSword, Lockpick] LootingThiefAI
+	UNIT
+
+Reinforcements2:
+	UNIT 0x65 Thief 	0x67 Level(7, Enemy, 1) [4,1]	0x00 0x00 0x1 REDA4R1  [BaseSword, Lockpick] LootingThiefAI
+	UNIT 0x82 Soldier	0x45 Level(12, Enemy, 1) [2,1]	0x00 0x00 0x1 REDA2R1 [IronLance] NoAI 
+	UNIT
+	
+Reinforcements3:
+	UNIT 0x85 Cavalier	0x45 Level(11, Enemy, 1) [0,13]	0x00 0x00 0x1 REDA0R13 [BaseLance] NoAI 
+	UNIT 0x85 Cavalier_F	0x45 Level(11, Enemy, 1) [0,15]	0x00 0x00 0x1 REDA0R15 [IronLance] NoAI 
+	UNIT
+	
+Reinforcements4:
+	UNIT 0x82 Soldier	0x45 Level(13, Enemy, 1) [22,6]	0x00 0x00 0x1 REDA22R6 [BaseLance] NoAI 
+	UNIT 0x82 Soldier	0x45 Level(12, Enemy, 1) [22,7]	0x00 0x00 0x1 REDA22R7 [IronLance] NoAI 
+	UNIT
+
+Ch1_8_BeginningScene:
+	CHECK_EVENTID gPart2Completed
+	BEQ 0x801C 0xC 0x0
+		CALL CelicaZofiaCastleEvent //celica castle stuff
+	LABEL 0x801C
+	MUSC 0x2E
+	LOAD3 0x0 Ch1_8_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	ENUN
+	LOAD1 0x1 Bosses
+	ENUN
+	CAM1 0x45
+	FADU 5
+	BROWNBOXTEXT Loc_ZofiaCastle [8,8]
+	FlashCursor(0x45, 60)
+	SetBackground(0x0E)
+	TEXTSTART
+	TEXTSHOW Ch1_8_OpeningScene
+	TEXTEND
+		FADI 3
+		STAL 60
+		FADU 5
+	TEXTCONT
+	TEXTEND
+	REMA
+	ClearBackgroundSmooth
+	MUSC 0x45
+	CAM1 Alm
+	STAL 0x20
+	LOAD1 0x1 BerkutRinea
+	ENUN
+	FlashCursor(Alm, 60)
+	Text(Ch1_8_OpeningScene_AlmClive)
+	STAL 0x20
+	CAM1 [12,5]
+	STAL 0x20
+	FlashCursor(0x45, 60)
+	MUSC 0x16
+	Text(Ch1_8_OpeningScene_Berkut)
+	MOVE 0x08 0x6F [5,11]
+	MOVE 0x08 0x6D [5,11]
+	MOVE 0x08 0x44 [5,11]
+	ENUN
+	DISA 0x44
+	DISA 0x6D
+	DISA 0x6F
+	FADI 5
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	GotoPrepScreen
+	NoFade
+	ENDA
+
+DesaixTalk:
+	MUSC 0x09
+	MUSI
+	CAM1 0x45
+	STAL 0x08
+	FlashCursor(0x45, 60)
+	TEXTSTART
+	TEXTSHOW Ch1_8_Desaix_OpeningLine
+	TEXTEND
+	REMA
+	CAM1 0x42
+	STAL 0x08
+	FlashCursor(0x42, 60)
+	TEXTSTART
+	TEXTSHOW Ch1_8_Slayde_OpeningLine
+	TEXTEND
+	REMA
+	MUNO
+	NoFade
+	ENDA
+
+Ch1_8_EndingScene:
+	CALL UnifiedBEXPCaller
+	FADI 5
+	STAL 20
+	CLEE 0x0
+	FADU 5
+	LOAD1 0x1 BossesCutscene
+	ENUN
+	CAM1 0x6F
+	FlashCursor(0x6F, 60)
+	MUSCSLOW 0x16
+	Text(Ch1_8_BerkutFernandLeave)
+	MOVE 0x08 0x6F [15,0]
+	MOVE 0x08 0x6D [16,0]
+	ENUN
+	DISA 0x6D
+	DISA 0x6F
+	STAL 60
+	MUSCSLOW 0x31
+	STAL 60
+	SetBackground(0x15)
+	STAL 0x08
+	SVAL 0x1 0x1
+	CHECK_ALIVE Gray 
+	IFEQ 0x3 0xC 0x1 //if not, goto NoFaye
+	CHECK_ALIVE Tobin 
+	IFEQ 0x3 0xC 0x1 //if not, goto NoFaye
+		Text(Ch1_8_PostBattle_1)
+		FADI 2
+		GOTO 0x4
+	LABEL 0x3
+		Text(Ch1_8_PostBattle_1_NoGray)
+		FADI 2
+	LABEL 0x4
+
+	MUSC 0x3B //ZofiaCastle
+	STAL 60
+	SetBackground(Castle_Hall)
+	Text(Ch1_8_PostBattle_2)
+	FADI 5
+
+	SVAL 0x1 0x1
+	CHECK_ALIVE Gray 
+	IFEQ 0x5 0xC 0x1 //if not, goto NoFaye
+	CHECK_ALIVE Tobin 
+	IFEQ 0x5 0xC 0x1 //if not, goto NoFaye
+		SetBackground(Castle_Hall)
+		Text(Ch1_8_PostBattle_2_GrayTobin)
+		FADI 5
+	LABEL 0x5
+	SetBackground(Castle_Room)
+	TEXTSTART
+	TEXTSHOW Ch1_8_OldMan
+	TEXTEND
+	MUSC 0x7FFF
+	TEXTCONT
+	TEXTEND
+	REMA
+	FADI 2
+
+	MUSCSLOW 0x48
+	SetBackground(Castle_Hall)
+	TEXTSTART
+	TEXTSHOW Ch1_8_PostBattle_Mycen
+	TEXTEND
+	STAL 60
+	TEXTCONT
+	TEXTEND
+	MUSC 0x2B //legacy
+	TEXTCONT
+	TEXTEND
+	MUSC 0x95 //crowd cheering
+	TEXTCONT
+	TEXTEND
+	REMA
+	REMOVEPORTRAITS
+
+	MUSCMID 0x7FFF //stop sound effect
+	MUSC 0x3B //ZofiaCastle
+
+	STAL 60
+
+	_0x2141 Part1EndCG 0x1 0x4
+	REMOVEPORTRAITS
+
+	STAL 60
+		_0x1A22
+		TEXTSHOW Ch1_8_PostBattle_CastleCG_1
+		TEXTEND
+		_0x1A22
+		TEXTSHOW Ch1_8_PostBattle_CastleCG_2
+		TEXTEND
+	FADI 5
+	REMOVEPORTRAITS
+
+
+	EVBIT_MODIFY 0x4
+	STAL 30
+	//FADU 16
+	SetBackground(Castle_Hall)
+	CenterTutorialTextBox
+	TUTORIALTEXTBOXSTART
+	TEXTSHOW Ch1_8_PostBattle_CGText
+	TEXTEND
+
+	STAL 30
+
+	FADI 2
+	//ASMC to change mode goes here.
+	MNC2 0x4D //celica time
+	_0xA640 0x0 0x0 0xA
+	EVBIT_MODIFY 0x0
+	ENDA
+
+SlaydeDies:
+	MUSI
+	CAM1 0x45
+	STAL 30
+	FlashCursor(0x45, 60)
+	TEXTSTART
+	TEXTSHOW SlaydeDies_DesaixRetreats
+	TEXTEND
+	REMA
+	NoFade
+	SVAL 0x2 0x45
+	CALL Warp_Out_Effect
+	STAL 0x08
+	DISA 0x45
+	MUNO
+	ENDA
+
+DesaixDies:
+	MUSI
+	CAM1 0x42
+	STAL 30
+	FlashCursor(0x42, 60)
+	TEXTSTART
+	TEXTSHOW DesaixAct1Dies
+	TEXTEND
+	REMA
+	NoFade
+	MOVE 0x10 0x42 [0,14]
+	ENUN
+	DISA 0x42
+	MUNO
+	ENDA
+
+Warp_Out_Effect:
+	CAM1 0xFFFD
+	CHECK_COORDS 0xFFFD
+	SADD 0xCB
+	WARP_OUT
+	STAL2 0x14
+	REMU 0xFFFD
+	_0x412F 0x0
+	ENDA
+
+CelicaZofiaCastleEvent:
+	SVAL 0x1 0x1
+	CHECK_EVENTID gKliffRecruited
+	BEQ 0x6 0x0 0xC //goto 6 if kliff is not recruited
+		//if kliff has been recruited, check faye here
+		CHECK_EVENTID gFayeRecruited
+		BEQ 0x6 0x0 0xC //goto 6 if faye is not recruited
+		GOTO 0x7
+	LABEL 0x6
+
+		//LOMA chapterID will load the map associated with the given chapter and sets the camera given the position in sB
+		SVAL 0xB Coords(12, 9)
+		LOMA 0x0
+		MUSC 0x24
+		SetBackground(0x15) //castle outside
+		Text(Ch2_CelicaVisitsRamVillage)
+		REMA
+		ClearBackgroundSmooth
+
+		BROWNBOXTEXT Loc_RamVillage [8,8]
+		STAL 20
+		LOAD2 0x0 CutsceneUnits_CelicaVillage
+		ENUN
+		CAM1 Celica
+		STAL 20
+		FlashCursor(Celica, 60)
+		STAL 20
+		Text(Ch2_CelicaVisitsRamVillage_AfterLOMA)
+		STAL 20
+		FADI 5
+		MUSC 0x30 //recruit theme
+
+		SVAL 0x1 0x1
+		CHECK_EVENTID gKliffRecruited
+		IFNE 0x8 0xC 0x1
+			SetBackground(0x04) //sunset village
+			Text(Ch2_KliffJoins)
+			FADI 5
+			LOAD1 0x0 KliffJoins
+			ENUN
+			REMA
+
+		LABEL 0x8
+		CHECK_EVENTID gFayeRecruited
+		IFNE 0x9 0xC 0x1
+			SetBackground(0x04) //sunset village
+			Text(Ch2_FayeJoins)
+			FADI 5
+			LOAD1 0x0 FayeJoins
+			ENUN
+			REMA
+			
+
+		LABEL 0x9
+	//	ClearBackground
+		SVAL 0xB Coords(16, 21)
+		LOMA 0x07
+
+	//label for "both recruited" here
+	LABEL 0x7
+	MUSC 0x7FFF
+	CAM1 [16,18]
+	FADU 5
+	LOAD2 0x0 CutsceneUnits_CelicaCastle
+	ENUN
+	CAM1 Celica
+	BROWNBOXTEXT Loc_ZofiaCastle [8,8]
+	MUSC 0x3B //ZofiaCastle
+	STAL 20
+
+	//Show mae/boey/celica walking on the map, with Saber slightly behind.
+
+	SetBackground(Castle_Hall)
+	TEXTSTART
+	TEXTSHOW Ch2_Epilogue1 //mae and co.
+	TEXTEND
+		MUSI
+	TEXTCONT
+	TEXTEND
+	REMA
+	MUNO
+	FADI 2
+
+	MUSC 0x7FFF
+	STAL 20
+	SetBackground(Castle_Room)
+	TEXTSTART
+	TEXTSHOW Ch2_Epilogue3 //mycen
+	TEXTEND
+		MUSC 0x2B
+	TEXTCONT
+	TEXTEND
+	REMA
+	FADI 5
+
+	MUSC 0x2F //happy reunion music
+	SetBackground(Castle_Hall)
+	TEXTSTART
+	TEXTSHOW Ch2_Epilogue4 //alm and celica reunite
+	TEXTEND
+		FADI 3
+		STAL 60
+		FADU 5
+		MUSC 0x3B //zofia castle
+	TEXTCONT
+	TEXTEND
+		MUSC 0x7FFF
+	TEXTCONT
+	TEXTEND
+		MUSC 0x8 //truth
+	TEXTCONT
+	TEXTEND
+	REMA
+	REMOVEPORTRAITS
+
+	_0x2141 AlmsCripplingOrangeAddictionCG 0x1 0x4
+	REMOVEPORTRAITS
+	STAL 60
+	_0x1A22
+	TEXTSHOW Ch2_OrangeCGText 
+	TEXTEND
+	MUSI 
+	_0x2141 Castle_Hall 0x1 0x4
+	REMOVEPORTRAITS
+
+	Text(Ch2_Epilogue5) //alm regrets everything
+	MUNO
+	FADI 5
+
+	EVBIT_MODIFY 0x4
+	MUSC 0x8 //truth
+	STAL 30
+	FADU 16
+	CenterTutorialTextBox
+	TUTORIALTEXTBOXSTART
+	TEXTSHOW Ch2_Epilogue_EndNarration
+	TEXTEND
+	REMA
+	STAL 30
+	FADI 2
+
+	//comment out these two lines when act 3 is ready
+	/*
+	FADI 2
+	STAL 60
+	MUSC 0x6
+	STAL 60
+	FADU 5
+	EVBIT_MODIFY 0x0
+	Text(Celica_EndDemo)
+	*/
+	//end comment
+
+	ENUT gEnableLordSwitch
+	ENUF gChapter3A1Completed
+	ENUF gChapter3A2Completed
+	ENUF gChapter3A3Completed
+	ENUF gChapter3A4Completed
+	ENUF gChapter3A5Completed
+	ENUF gChapter3A6Completed
+	ENUF gChapter3A7Completed
+	ENUF gChapter3C1Completed
+	ENUF gChapter3C2Completed
+	ENUF gChapter3C3Completed
+	ENUF gChapter3C4Completed
+	ENUF gChapter3C5Completed
+	ENUF gChapter3C6Completed
+	ENUF gChapter3C7Completed
+	ASMC Act3SetupASMC|1 //0x86581
+
+	REVEAL Alm
+	REVEAL Lukas
+	REVEAL Gray
+	REVEAL Tobin
+	REVEAL Silque
+	REVEAL Clair
+	REVEAL Clive
+	REVEAL Forsyth
+	REVEAL Python
+	REVEAL Acantha
+
+	//special
+	CHECK_EVENTID gKliffRecruited
+	BEQ 0xA 0xC 0x0
+		REVEAL Kliff
+		GOTO 0xB
+	LABEL 0xA
+		REMU Kliff
+	LABEL 0xB
+	CHECK_EVENTID gFayeRecruited
+	BEQ 0xC 0xC 0x0
+		REVEAL Faye
+		GOTO 0xD
+	LABEL 0xC
+		REMU Faye
+
+	LABEL 0xD
+	//celica cleanup
+	REMU Celica
+	REMU Mae
+	REMU Boey
+	REMU Genny
+	REMU Saber
+	REMU Valbar
+	REMU Leon
+	REMU Kamui
+
+	
+	//MNTS 0x0 //kick to title screen
+	MNCH 0xF //alm 3-1
+	EVBIT_MODIFY 0x0
+	ENDB
+
+CelicaVillageREDA:
+	REDA [6,7] 0x10 0x00 0x00 0x0
+
+SaberCastleREDA:
+	REDA [10,17] 0xC 0x00 0x20 0x0
+
+CutsceneUnits_CelicaVillage:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [19,7] 0x00 0x00 0x1 CelicaVillageREDA [BaseSword, Vulnerary] NoAI 
+	UNIT
+	
+CutsceneUnits_CelicaCastle:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [22,25] 0x00 0x00 0x1 REDA10R15 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,25] 0x00 0x00 0x1 REDA9R16 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [22,25] 0x00 0x00 0x1 REDA11R16 [Fire, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [22,26] 0x00 0x00 0x1 SaberCastleREDA [BaseSword, Vulnerary] NoAI 
+	UNIT
+
+KliffJoins:
+	UNIT Kliff Villager 0x00 Level(7, Ally, 1) [6,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
+FayeJoins:
+	UNIT Faye Villager_F 0x00 Level(7, Ally, 1) [6,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

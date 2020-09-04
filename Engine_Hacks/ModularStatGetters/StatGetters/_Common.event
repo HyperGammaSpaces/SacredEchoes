@@ -1,0 +1,24 @@
+#ifndef MODULAR_GETTER_COMMON_EVENT
+#define MODULAR_GETTER_COMMON_EVENT
+
+#define __DebuffMinZero__ 0x1
+
+#define rPassiveStatBoosts(aStatOffset) "rForEachUnitItemUntil; rIfItemHasPassiveStatBoosts; rAddItemPassiveStatBoosts(aStatOffset)"
+
+#define rPassiveStatBoostsStacking(aStatOffset) "rForEachUnitItem; rIfItemHasPassiveStatBoosts; rAddItemPassiveStatBoosts(aStatOffset)"
+
+prHalveIfRescuing:
+	rIfUnitHasState(US_RESCUING)
+		rHalved
+	
+prMinZero:
+{
+	rIf(Check)
+	ConstantZero:
+	rConstant(0)
+
+	Check:
+	prCheckLessThan(ConstantZero)
+}
+
+#endif // MODULAR_GETTER_COMMON_EVENT

@@ -1,0 +1,208 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x45, SeaboundShrine_ThisChapter)
+
+SeaboundShrine_ThisChapter:
+POIN SeaboundShrine_TurnBasedEvents
+POIN SeaboundShrine_CharacterBasedEvents
+POIN SeaboundShrine_LocationBasedEvents
+POIN SeaboundShrine_MiscBasedEvents
+POIN SeaboundShrine_Dunno SeaboundShrine_Dunno SeaboundShrine_Dunno
+POIN SeaboundShrine_Tutorial
+POIN SeaboundShrine_Ballista1 SeaboundShrine_Ballista3
+POIN PlayerUnitsReplay PlayerUnitsReplay
+POIN $0 $0 $0 $0 $0 $0
+POIN SeaboundShrine_BeginningScene SeaboundShrine_EndingScene
+
+SeaboundShrine_TurnBasedEvents:
+OpeningTurnEvent(SeraphimEvent)
+TURN
+
+SeaboundShrine_CharacterBasedEvents:
+CHAR
+
+SeaboundShrine_LocationBasedEvents:
+#ifdef __DEBUG__
+  Seize(4,5)
+#endif
+CHES 0x9 Vulnerary [1,16] 0x14
+LOCA
+
+SeaboundShrine_MiscBasedEvents:
+CauseGameOverIfLordDies
+DefeatAll(SeaboundShrine_EndingScene)
+AFEV 0xA ChestEvent 0x9
+MournQuoteAFEVS
+AFEV
+
+SeaboundShrine_Dunno:
+END_MAIN
+
+SeaboundShrine_Tutorial:
+END_MAIN
+
+SeaboundShrine_Ballista1:
+BLST
+
+SeaboundShrine_Ballista3:
+BLST
+ALIGN 4
+
+PlayerUnitsReplay:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [13,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [14,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT
+	
+BossMonster_Round1:
+	UNIT 0xAA DracoZombie 0x00 Level(1, Enemy, 0) [3,5] DropItemWithRandomPosition 0x00 0x0 0x00 [FireFang, HolyRing] AttackInRangeAI 
+	UNIT
+	
+BossMonster_Round2:
+	UNIT 0xAA Entombed 0x00 Level(1, Enemy, 0) [3,5] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw, Item50G] AttackInRangeAI 
+	UNIT
+	
+EnemyUnits: 
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [9,3] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAD Bonewalker_Bow 0x00 Level(5, Enemy, 1) [7,5] RandomizePosition 0x00 0x0 0x00 [BaseBow] NoAI
+	UNIT 0xAC Bonewalker 0x00 Level(7, Enemy, 1) [3,16] RandomizePosition 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [4,10] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [1,8] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [7,11] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [4,14] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAA Revenant 0x00 Level(7, Enemy, 1) [8,6] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [14,6] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Bonewalker 0x00 Level(6, Enemy, 1) [10,1] 0x00 0x00 0x0 0x00 [BaseSword] NeverMoveAI
+	UNIT
+	
+EnemyUnitsReplay: 
+	UNIT 0xAA Random_RevEntombed 0x00 Level(3, Enemy, 1) [9,3] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAD Bonewalker_Bow 0x00 Level(5, Enemy, 1) [7,5] RandomizePosition 0x00 0x0 0x00 [BaseBow] NoAI
+	UNIT 0xAC Random_Bonewalker 0x00 Level(7, Enemy, 1) [3,16] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [4,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [1,8] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [7,11] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAA Random_RevBonewalker 0x00 Level(7, Enemy, 1) [8,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAA Random_AnyMonster 0x00 Level(3, Enemy, 1) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT 0xAC Bonewalker 0x00 Level(6, Enemy, 1) [10,1] 0x00 0x00 0x0 0x00 [SteelSword] NeverMoveAI
+	UNIT
+
+SeaboundShrine_BeginningScene:
+	LOAD3 0x0 PlayerUnitsReplay //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	ENUN
+	SVAL 0x1 0x1
+	CHECK_EVENTID gSeaboundShrineCompleted
+	IFNE 0x3 0xC 0x1 
+		LOAD1 0x1 BossMonster_Round1
+		ENUN
+		MUSC 0x4A
+		SetBackground(0x34)
+		//If Kamui is alive, show SeaboundShrine_KamuiIntro
+		CHECK_EXISTS Kamui
+		BEQ 0x1 0xC 0x0
+		CHECK_ALIVE Kamui
+		BEQ 0x1 0xC 0x0
+			TEXTSTART
+			TEXTSHOW SeaboundShrine_KamuiIntro
+			TEXTEND
+			SOUN 0x37B //necrodragon roar
+			STAL 20
+			//kamuiscream.wav
+			TEXTCONT
+			TEXTEND
+			GOTO 0x2
+		LABEL 0x1
+			TEXTSTART
+			TEXTSHOW SeaboundShrine_BoeyIntro
+			TEXTEND
+			SOUN 0x37B //necrodragon roar
+			STAL 20
+			//boeyscream.wav
+			TEXTCONT
+			TEXTEND
+		LABEL 0x2
+		FADI 60
+		REMA
+		GOTO 0x4
+	LABEL 0x3
+		//If this is a replay, load the weaker boss
+		LOAD1 0x1 BossMonster_Round2
+		ENUN
+		SVAL 0x2 0x0 //Number of skirmish enemies to load
+	
+		CALL EnemyRandomizerHelper
+		LOAD1 0x1 EnemyUnitsReplay
+		ENUN
+		GOTO 0x5
+	LABEL 0x4
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LABEL 0x5
+	GotoPrepScreen
+	NoFade
+	ENDA
+	
+ChestEvent:
+	SVAL 0x1 0x1
+	CHECK_EVENTID gSeaboundShrineCompleted 
+	IFNE 0x6 0xC 0x1 
+		SVAL 0x3 HolySword
+		GIVEITEMTO 0xFFFF
+		GOTO 0x6
+	LABEL 0x6
+	NoFade
+	ENDA
+	
+SeraphimEvent:
+	SVAL 0x1 0x1
+	CHECK_EVENTID gSeaboundShrineCompleted 
+	IFNE 0x8 0xC 0x1 
+		MUSC 0x0A
+		MUSI
+		STAL 30
+		CAM1 [3,5]
+		FlashCursor(3,5, 60)
+		Text(SeaboundShrine_Seraphim)
+		MUNO
+		GOTO 0x8
+	LABEL 0x8
+	NoFade
+	ENDA
+
+SeaboundShrine_EndingScene:
+	EVBIT_MODIFY 0x1
+	SVAL 0x1 0x1
+	CHECK_EVENTID gSeaboundShrineCompleted 
+	IFNE 0x6 0xC 0x1 
+		//EVBIT_MODIFY 0x0
+		SVAL 0x3 0x3
+		ASMC 0x85C65
+		CALL UnifiedBEXPCaller
+		
+		//If I decide to add dialogue it goes here
+		
+		EVBIT_MODIFY 0x1
+		ENUT gSeaboundShrineCompleted
+		EVBIT_MODIFY 0x0
+		GOTO 0x7
+	LABEL 0x6
+		SVAL 0x3 0x3
+		ASMC 0x85C65
+		CALL UnifiedBEXPCaller
+		EVBIT_MODIFY 0x0
+	LABEL 0x7
+		SVAL 0x2 0x40
+		MNCH 0xFFFF //go to world map
+	ENDA
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

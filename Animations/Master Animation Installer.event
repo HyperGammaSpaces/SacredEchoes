@@ -1,0 +1,488 @@
+#ifndef ClassAnimTable
+  #ifdef _FE8_
+    #define ClassAnimTable (0xc00008-0x20)
+  #endif
+  #ifdef _FE7_
+    #define ClassAnimTable (0xe00008-0x20)
+  #endif
+#endif
+
+#define AnimTableEntry(index) "ORG ClassAnimTable + (index * 0x20)"
+
+//////////////Installed animations go here:
+
+  //#include "my animation Installer.event"
+  
+  ALIGN 4
+  AlmT1Sword:
+  {
+    #include "NuraAlmT1/Sword/lorm_sw1 Installer.event"
+  }
+  ALIGN 4
+  AlmT1RoyalSword:
+  {
+    #include "NuraAlmT1/RoyalSword/lorm_sw2 Installer.event"
+  }
+  ALIGN 4
+  AlmT1Unarmed:
+  {
+    #include "NuraAlmT1/Unarmed/lorm_ua1 Installer.event"
+  }
+  ALIGN 4
+  CelicaT1Sword:
+  {
+    #include "PriestessCelicaRedbean/Sword/Sword Installer.event"
+  }
+  ALIGN 4
+  CelicaT1Magic:
+  {
+    #include "PriestessCelicaRedbean/Magic/Magic Installer.event"
+  }
+  ALIGN 4
+  CavLance:
+  {
+    #include "SalvCavM/Lance/Lance Installer.event"
+  }
+  ALIGN 4
+  CavUnarmed:
+  {
+    #include "SalvCavM/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  CavFLance:
+  {
+    #include "SalvCavF/Lance/Lance Installer.event"
+  }
+  ALIGN 4
+  CavFUnarmed:
+  {
+    #include "SalvCavF/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  PalLance:
+  {
+    #include "ImprovedSalvPal/Lance/Lance Installer.event"
+  }
+  ALIGN 4
+  PalUnarmed:
+  {
+    #include "ImprovedSalvPal/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  PalFLance:
+  {
+    #include "ImprovedSalvPal/FLance/Lance Installer.event"
+  }
+  ALIGN 4
+  PalFUnarmed:
+  {
+    #include "ImprovedSalvPal/FUnarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  GK_Lance:
+  {
+    #include "NuraGoldKnight/Lance/grkm_sp1 Installer.event"
+  }
+  ALIGN 4
+  GK_Unarmed:
+  {
+    #include "NuraGoldKnight/Unarmed/grkm_ua1 Installer.event"
+  }
+  ALIGN 4
+  Merc_Sword:
+  {
+	#include "SalvMerc/Sword/merm_sw1 Installer.event"
+  }
+  ALIGN 4
+  Merc_Unarmed:
+  {
+    #include "SalvMerc/Unarmed/merm_ua1 Installer.event"
+  }
+  ALIGN 4
+  Hero_Sword:
+  {
+	#include "WanZaneMyrm/Sword/Sword Installer.event"
+  }
+  ALIGN 4
+  Hero_Unarmed:
+  {
+    #include "WanZaneMyrm/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  DF_Sword:
+  {
+	#include "NuraDreadFighter/Sword/Sword Installer.event"
+  }
+  ALIGN 4
+  DF_Unarmed:
+  {
+    #include "NuraDreadFighter/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  DF_F_Sword:
+  {
+	#include "NuraDreadFighterF/Sword/dref_sw1 Installer.event"
+  }
+  ALIGN 4
+  DF_F_Magic:
+  {
+    #include "NuraDreadFighterF/Magic/drem_mg1 Installer.event"
+  }
+  ALIGN 4
+  Thief_Sword:
+  {
+	#include "EAThiefM/Sword/Sword Installer.event"
+  }
+  ALIGN 4
+  Thief_Unarmed:
+  {
+    #include "EAThiefM/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  ThiefF_Sword:
+  {
+	#include "ThiefF/Sword/ThiefF_Sword Installer.event"
+  }
+  ALIGN 4
+  ThiefF_Unarmed:
+  {
+    #include "ThiefF/Disarmed/ThiefF_Disarmed Installer.event"
+  }
+  ALIGN 4
+  RogueF_Sword:
+  {
+	#include "RogueRepalette/Female/Sword Installer.event"
+  }
+  ALIGN 4
+  RogueF_Unarmed:
+  {
+    #include "RogueRepalette/Female/Unarmed Installer.event"
+  }
+  ALIGN 4
+  Rogue_Sword:
+  {
+	#include "RogueRepalette/Male/Sword Installer.event"
+  }
+  ALIGN 4
+  Rogue_Unarmed:
+  {
+    #include "RogueRepalette/Male/Unarmed Installer.event"
+  }
+  ALIGN 4
+  FMage_Magic:
+  {
+	#include "fmage/Magic/Magic Installer.event"
+  }
+  ALIGN 4
+  FSage_Sword:
+  {
+	#include "PriestessGeneric/Sword/Sword Installer.event"
+  }
+  ALIGN 4
+  FSage_Magic:
+  {
+	#include "PriestessGeneric/Magic/Magic Installer.event"
+  }
+  ALIGN 4
+  FSage_Staff:
+  {
+    #include "PriestessGeneric/WMagic/WMagic Installer.event"
+  }
+  ALIGN 4
+  VillagerM_Sword:
+  {
+	#include "Villager_M/Sword/vilm_sw1 Installer.event"
+  }
+  ALIGN 4
+  VillagerM_Unarmed:
+  {
+	#include "Villager_M/unarmed/vilm_ua1 Installer.event"
+  }
+  ALIGN 4
+  VillagerF_Sword:
+  {
+	#include "Villager_F/Sword/vilf_sw1 Installer.event"
+  }
+  ALIGN 4
+  VillagerF_Unarmed:
+  {
+	#include "Villager_F/unarmed/vilf_ua11 Installer.event"
+  }
+  ALIGN 4
+  Woodcutter_Unarmed:
+  {
+	#include "DerPirate/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  Woodcutter_Axe:
+  {
+	#include "DerPirate/Axe/Axe Installer.event"
+  }
+  ALIGN 4
+  Woodcutter_Handaxe:
+  {
+	#include "DerPirate/Handaxe/Handaxe Installer.event"
+  }
+  ALIGN 4
+  Axeman_Unarmed:
+  {
+	#include "Derzerker/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  Axeman_Axe:
+  {
+	#include "Derzerker/Axe/Axe Installer.event"
+  }
+  ALIGN 4
+  Axeman_Handaxe:
+  {
+	#include "Derzerker/Handaxe/Handaxe Installer.event"
+  }
+  ALIGN 4
+  Highlander_Unarmed:
+  {
+	#include "Barbarian/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  Highlander_Axe:
+  {
+	#include "Barbarian/Axe/Axe Installer.event"
+  }
+  ALIGN 4
+  Highlander_Handaxe:
+  {
+	#include "Barbarian/Handaxe/Handaxe Installer.event"
+  }
+  ALIGN 4
+  Highlander_Bow:
+  {
+	#include "Barbarian/Bow/warm_ar1 Installer.event"
+  }
+  ALIGN 4
+  Armor_Lance:
+  {
+	#include "SalvKnight/Lance/armm_sp1 Installer.event"
+  }
+  ALIGN 4
+  Armor_Unarmed:
+  {
+	#include "SalvKnight/Unarmed/armm_ua1 Installer.event"
+  }
+  ALIGN 4
+  Armor_Axe:
+  {
+	#include "SalvKnight/Axe/armm_ax1 Installer.event"
+  }
+  ALIGN 4
+  Armor_Handaxe:
+  {
+	#include "SalvKnight/Handaxe/armm_ax2 Installer.event"
+  }
+  ALIGN 4
+  Baron_Lance:
+  {
+	#include "Baron/Lance/Lance Installer.event"
+  }
+  ALIGN 4
+  Baron_Axe:
+  {
+	#include "Baron/Axe/Axe Installer.event"
+  }
+  ALIGN 4
+  Baron_Handaxe:
+  {
+	#include "Baron/Handaxe/Handaxe Installer.event"
+  }
+  ALIGN 4
+  Baron_Sword:
+  {
+	#include "Baron/Sword/Sword Installer.event"
+  }
+  ALIGN 4
+  Baron_Unarmed:
+  {
+	#include "Baron/Unarmed/Unarmed Installer.event"
+  }
+  //Fiend is lance locked for now
+  ALIGN 4
+  Fiend_Lance:
+  {
+	#include "CapeGeneral/Lance/Lance Installer.event"
+  }
+  ALIGN 4
+  Fiend_Unarmed:
+  {
+	#include "CapeGeneral/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  PegKnight_Lance:
+  {
+	#include "OreoStyxPeg/Lance/Lance Installer.event"
+  }
+  ALIGN 4
+  PegKnight_Unarmed:
+  {
+	#include "OreoStyxPeg/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  FalcoKnight_Lance:
+  {
+	#include "TBAFalco/Lance/Lance Installer.event"
+  }
+  ALIGN 4
+  FalcoKnight_Unarmed:
+  {
+	#include "TBAFalco/Unarmed/Unarmed Installer.event"
+  }
+  //Use the Magic anim for Unarmed too
+  ALIGN 4
+  Cleric_Staff:
+  {
+	#include "MagicCleric/Staff/Staff Installer.event"
+  }
+  ALIGN 4
+  Cleric_Unarmed:
+  {
+	#include "MagicCleric/Unarmed/prif_ro1 Installer.event"
+  }
+  ALIGN 4
+  Saint_Staff:
+  {
+	#include "MeliaSaint/Staff/Staff Installer.event"
+  }
+  ALIGN 4
+  Saint_Unarmed:
+  {
+	#include "MeliaSaint/Magic/Magic Installer.event"
+  }
+  ALIGN 4
+  Bishop_Staff:
+  {
+	#include "EABishop_Nomah/Magic/Magic Installer.event"
+  }
+  ALIGN 4
+  Bishop_Unarmed:
+  {
+	#include "EABishop_Nomah/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  Witch_Staff:
+  {
+	#include "PikLuerockWitch/Staff/Staff Installer.event"
+  }
+  ALIGN 4
+  Witch_Unarmed:
+  {
+	#include "PikLuerockWitch/Magic/Magic Installer.event"
+  }
+  ALIGN 4
+  ArcherM_Bow:
+  {
+    #include "DerArcherM/Bow/Bow Installer.event"
+  }
+  ALIGN 4
+  ArcherM_Unarmed:
+  {
+    #include "DerArcherM/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  ArcherF_Bow:
+  {
+    #include "DerArcherF/Bow/Bow Installer.event"
+  }
+  ALIGN 4
+  ArcherF_Unarmed:
+  {
+    #include "DerArcherF/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  SniperM_Bow:
+  {
+    #include "NuraSniperM/Bow/Bow Installer.event"
+  }
+  ALIGN 4
+  SniperM_Unarmed:
+  {
+    #include "NuraSniperM/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  SniperF_Bow:
+  {
+    #include "NuraSniperF/Bow/Bow Installer.event"
+  }
+  ALIGN 4
+  SniperF_Unarmed:
+  {
+    #include "NuraSniperF/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  BowKnight_Bow:
+  {
+	#include "SpudBowKnight/Bow/Bow Installer.event"
+  }
+  ALIGN 4
+  BowKnight_Unarmed:
+  {
+	#include "SpudBowKnight/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  Soldier_Lance:
+  {
+	#include "AlusqSoldier/Lance/solm_sp1 Installer.event"
+  }
+  ALIGN 4
+  Soldier_Unarmed:
+  {
+	#include "AlusqSoldier/Disarmed/solm_sp1 Installer.event"
+  }
+  ALIGN 4
+  Brigand_Axe:
+  {
+	#include "ImprovedBrigand/Axe/Axe Installer.event"
+  }
+  ALIGN 4
+  Brigand_Handaxe:
+  {
+	#include "ImprovedBrigand/Handaxe/Handaxe Installer.event"
+  }
+  ALIGN 4
+  Brigand_Unarmed:
+  {
+	#include "ImprovedBrigand/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  Pirate_Axe:
+  {
+	#include "PirateWan/Axe/Axe Installer.event"
+  }
+  ALIGN 4
+  Pirate_Handaxe:
+  {
+	#include "PirateWan/Handaxe/Handaxe Installer.event"
+  }
+  ALIGN 4
+  Pirate_Unarmed:
+  {
+	#include "PirateWan/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  PirateF_Axe:
+  {
+	#include "NuraPirateF/Axe/pirf_ax1 Installer.event"
+  }
+  ALIGN 4
+  PirateF_Handaxe:
+  {
+	#include "NuraPirateF/Handaxe/pirf_ax2 Installer.event"
+  }
+  ALIGN 4
+  PirateF_Unarmed:
+  {
+	#include "NuraPirateF/Unarmed/pirf_ua1 Installer.event"
+  }
+  ALIGN 4
+
+#include "_CharacterPalettes/CharacterPalettesInstaller.event"
+ALIGN 4
+#include "_SpellAnims/CSA_Creator/MasterSpellAnimationInstaller.event"
+ALIGN 4

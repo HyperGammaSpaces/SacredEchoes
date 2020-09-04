@@ -1,0 +1,16 @@
+//cmp r*, 0x38 (looking for Castle Frelia hardcoding)
+
+ 8009DEC - CallActualSaveMenu 9DE0
+ 8015518 - MapMain_StartIntroFX 1550C. Checks the RouteSplitFlag on Chapter 6 as well (5x weirdness)
+ 8031632 - HasConvoyAccess
+ 8031648 - also HasConvoyAccess (nop'd out by essential fixes)
+ 80A8B14 - SaveMenu_LoadNextChapterName A8AF0
+ 80C178C - CanSkirmishesSpawn C1774
+ 
+ 
+ 80C7B08 - intro sequence proc? is this chapter intro or game intro?
+ 80C82EC - another intro sequence proc? is this chapter intro or game intro?
+ 80D5DCC - __pack_d D5D64 - relevant??
+ 80D5FDC - _fpadd_parts D5F84 - relevant??
+ 80D62DC - _muldf3 d6258 - relevant??
+ 80D6574 - _divdf3 d6500 - relevant?? 

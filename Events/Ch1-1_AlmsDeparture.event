@@ -1,0 +1,309 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x07, Ch1_1_ThisChapter)
+
+Ch1_1_ThisChapter:
+POIN Ch1_1_TurnBasedEvents
+POIN Ch1_1_CharacterBasedEvents
+POIN Ch1_1_LocationBasedEvents
+POIN Ch1_1_MiscBasedEvents
+POIN Ch1_1_Dunno Ch1_1_Dunno Ch1_1_Dunno
+POIN Ch1_1_Tutorial
+POIN Ch1_1_Ballista1 Ch1_1_Ballista2
+POIN Ch1_1_Units1 Ch1_1_Units1
+POIN $0 $0 $0 $0 $0 $0
+POIN Ch1_1_BeginningScene Ch1_1_EndingScene
+
+Ch1_1_TurnBasedEvents:
+OpeningTurnEvent(WTAEvent)
+TURN
+
+WTAEvent:
+MUSC 0x09 // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
+MUSI
+STAL 30
+FlashCursor(Lukas, 60)
+Text(Ch1_1_LukasAdvice)
+MUNO
+NoFade
+ENDA
+
+Ch1_1_CharacterBasedEvents:
+CharacterEvent(gKliffRecruited, TalkToKliff, Alm, Kliff)
+CharacterEvent(gKliffRecruited, TalkToKliff, Tobin, Kliff)
+CharacterEvent(gKliffRecruited, TalkToKliff, Gray, Kliff)
+CharacterEvent(gKliffRecruited, TalkToKliff, Faye, Kliff)
+CharacterEvent(gFayeRecruited, TalkToFaye, Alm, Faye)
+CHAR
+
+Ch1_1_LocationBasedEvents:
+#ifdef __DEBUG__
+  Seize(4,5)
+#endif
+Village(0xA, VillageEvent, 1,2)
+House(0x0,House1,4,3)
+House(0x0,House2,2,8)
+LOCA
+
+VillageEvent:
+VillageEventItem(Ch1_House3, Village, MetissTome)
+ENDA
+
+House1:
+HouseEvent(Ch1_House1,HouseBG)
+ENDA
+
+House2:
+HouseEvent(Ch1_House2,HouseBG)
+ENDA
+
+Ch1_1_MiscBasedEvents:
+CauseGameOverIfLordDies
+DefeatAll(Ch1_1_EndingScene)
+MournQuoteAFEVS
+AFEV
+
+Ch1_1_Dunno:
+END_MAIN
+
+Ch1_1_Tutorial:
+END_MAIN
+
+Ch1_1_Ballista1:
+BLST
+
+Ch1_1_Ballista2:
+BLST
+ALIGN 4
+
+Ch1_1_Units1:
+UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+UNIT Lukas Soldier 0x00 Level(3, Ally, 1) [9,7] 0x00 0x00 0x0 0x00 [IronLance, BaseLance, Vulnerary] NoAI 
+UNIT Tobin Villager 0x00 Level(2, Ally, 1) [8,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+UNIT Gray Villager 0x00 Level(5, Ally, 1) [8,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+UNIT
+
+EnemyUnits:
+UNIT 0x68 Brigand 0x68 Level(3,Enemy,True) [19,7] DropItem 0x00 0x1 REDA18R4 [BaseAxe,_200G] AttackInRangeAI // A matter of personal preference, but I would not put spaces after commas.
+UNIT 0x65 Brigand 0x68 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA15R6 [BaseAxe] NoAI // Keeps things more compact, so "Level(1,Enemy,True)" instead of "Level(1, Enemy, 1)".
+UNIT 0x65 Brigand 0x68 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA16R4 [BaseAxe] NoAI // Also note my use of "True" instead of "1".
+UNIT 0x65 Brigand 0x68 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA14R3 [BaseAxe] NoAI // It doesn't affect much, but I like to make the boss' leader him/herself. Really more of a consistency thing.
+UNIT 0x65 Brigand 0x68 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA15R10 [BaseAxe] AttackInRangeAI // I suggest using my REDA Helpers. They make single-command REDAs easier.
+UNIT 0x65 Brigand 0x68 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA17R8 [BaseAxe] NoAI
+UNIT
+
+NeutralUnits:
+UNIT Kliff Villager 0x00 Level(1, NPC, 1) [6,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] [0x03, 0x03, 0x0, 0x0]
+UNIT Faye Villager_F 0x00 Level(1, NPC, 1) [6,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] [0x03, 0x03, 0x0, 0x0]
+UNIT
+
+Ch1_1_CutsceneUnits:
+UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [1,2] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+UNIT
+
+Ch1_1_Mycen_Green:
+UNIT Mycen GoldKnight 0x00 Level(1, NPC, 1) [1,2] 0x00 0x00 0x00 0x00 [BaseLance] NoAI
+UNIT
+
+Ch1_1_CutsceneUnits_Green:
+UNIT Lukas Soldier 0x00 Level(3, NPC, 1) [18,7] 0x00 0x00 0x0 0x00 [IronLance, BaseLance, Vulnerary] NoAI 
+UNIT Tobin Villager 0x00 Level(2, NPC, 1) [5,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+UNIT Gray Villager 0x00 Level(5, NPC, 1) [5,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+UNIT Kliff Villager 0x00 Level(1, NPC, 1) [6,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+UNIT Faye Villager_F 0x00 Level(1, NPC, 1) [6,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+UNIT
+
+Ch1_1_BeginningScene:
+MUSC 0x24
+LOAD1 0x1 Ch1_1_CutsceneUnits
+ENUN
+LOAD1 0x1 Ch1_1_CutsceneUnits_Green
+ENUN
+
+SetBackground(HouseBG)
+Text(OpeningScene_1)
+EndConvo
+STAL 0x08
+MOVE 0x5 Lukas [7, 7]
+ENUN
+
+CAM1 [5, 7]
+MOVE 0x8 Alm [5, 7]
+STAL 0x40
+FlashCursor(Lukas, 60)
+SetBackground(Village)
+TEXTSTART
+TEXTSHOW OpeningScene_2
+TEXTEND
+MUSC 0x32
+TEXTCONT
+TEXTEND
+REMA
+ClearBackground
+CAM1 [7, 5]
+STAL 0x08
+MOVE 0x10 Lukas [1, 2]
+MOVE 0x10 Alm [1, 2]
+ENUN
+REMU Lukas
+REMU Alm
+MUSC 0x4C
+
+FlashCursor(Kliff, 60)
+Text(Village,OpeningScene_3)
+STAL 0x14
+
+MUSC 0x24
+FlashCursor(1, 2, 60)
+SetBackground(HouseBG)
+TEXTSHOW OpeningScene_4
+TEXTEND
+MUSC 0x7FFF
+TEXTCONT
+TEXTEND
+MUSC 0x26
+TEXTCONT
+TEXTEND
+EndConvo
+
+LOAD1 0x1 Ch1_1_Mycen_Green
+ENUN
+STAL 0x30
+MOVE 0x10 Mycen [17, 7]
+ENUN
+
+REVEAL Lukas
+STAL 0x30
+MOVE 0x08 Lukas [9, 7]
+ENUN
+CAM1 [7, 7]
+
+STAL 0x30
+REVEAL Alm
+STAL 0x14
+MOVE 0x10 Alm [8, 7]
+ENUN
+SetBackground(Outside_Village_Day)
+TEXTSHOW OpeningScene_5
+TEXTEND
+MUSC 0x27
+TEXTCONT
+TEXTEND
+EndConvo
+
+MUSC 0x24
+STAL 0x14
+MOVE 0x10 Gray [4, 3]
+MOVE 0x10 Tobin [2, 8]
+ENUN
+REMU Gray
+REMU Tobin
+STAL 60
+REVEAL Gray
+REVEAL Tobin
+STAL 0x14
+MOVE 0x10 Gray [8, 6]
+MOVE 0x10 Tobin [8, 8]
+ENUN
+
+STAL 0x20
+
+CUSA Gray
+CUSA Tobin
+
+STAL 0x40
+FlashCursor(Alm, 60)
+FADI 0x5
+CLEA 0x0
+CLEE 0x0
+CLEN 0x0
+LOAD1 0x1 Ch1_1_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+LOAD1 0x1 NeutralUnits
+ENUN
+SetBackground(Outside_Village_Day)
+TEXTSTART 
+TEXTSHOW OpeningScene_GetGrayAndTobin
+TEXTEND
+REMA
+REMOVEPORTRAITS
+_0x2141 AlmPrologueCG 0x1 0x4
+REMOVEPORTRAITS
+STAL 60
+_0x1A22
+TEXTSHOW OpeningScene_CelicaCG
+TEXTEND
+EndConvo
+
+MUSC 0x25
+CAM1 [12, 4]
+LOAD1 0x1 EnemyUnits
+ENUN
+
+FlashCursor(0x68, 60)
+Text(Ch1_1_PreBattle)
+
+MOVE 0x10 Alm [10,6]
+MOVE 0x10 Lukas [10,8]
+MOVE 0x10 Tobin [9,7]
+MOVE 0x10 Gray [8,7]
+ENUN
+
+NoFade
+// GotoPrepScreen
+ENDA
+
+Ch1_1_EndingScene:
+EVBIT_MODIFY 0x1
+ENUT gEnableWorldMap			//enable world map
+EVBIT_MODIFY 0x0
+CALL UnifiedBEXPCaller
+MUSC 0x31 //victory
+FADI 16
+CLEN 0x0
+SetBackground(Plain)
+Text(Ch1_1_PostBattle)
+MNCH 0x01 //go to ch1
+ENDA
+
+TalkToKliff:
+MUSS 0x30
+STAL 0x20
+Text(Ch1_1_GetKliff)
+SVAL 0x1 0x0
+CHAI Kliff
+STAL 5
+CUSA Kliff
+STAL 0x14
+MURE 0x05
+NoFade
+ENDA
+
+TalkToFaye:
+MUSS 0x30
+STAL 0x20
+Text(Ch1_1_GetFaye)
+SVAL 0x1 0x0
+CHAI Faye
+STAL 5
+CUSA Faye
+STAL 0x14
+MURE 0x05
+NoFade
+ENDA
+
+loadCG:
+CHECK_EVBIT 0x8
+BNE 0x80D2 0xC 0x0
+FADI 16
+LABEL 0x80D2
+REMOVEPORTRAITS
+BACG 0xFFFF
+FADU 16
+ENDA
+
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

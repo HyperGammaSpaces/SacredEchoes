@@ -1,0 +1,435 @@
+//use this for narration etc.
+
+/*
+
+WM_CLEARPORTRAIT, 0xC540, 8, -game:FE8 -indexMode:8
+#Always 0
+	Value1, 2, 2
+#0x000 = no movement, no fade
+#0x100 = left
+#0x200,all else = right
+	Direction, 4, 2
+	Delay, 6, 2
+
+FE8:
+   WM_MOVECAM val1 X Y val2 val3 Speed Delay 
+
+   Parameters:
+    val1
+    X
+    Y
+    val2
+	val3
+    Speed
+    Delay
+
+  FE8:
+   WM_MOVECAMTO StartX StartY LocationID Speed Delay 
+
+   Parameters:
+    StartX
+    StartY
+    LocationID
+    Speed
+    Delay
+
+*/
+
+//#define ColdOpen(Source, Dest) "EVBIT_MODIFY 0x1; STAL 6; WM_MOVECAM 0x0 0xFFFF 0xFFFF 0x0 0x20 0x2D 0x0; WM_WAITFORCAM; WM_MOVESPRITETO 0x0 0x0 0x2 Source Dest 0xFFF9 0x0; WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF; STAL 2 20; FADI 16; ENDA"
+
+#define ColdOpen(Source, Dest) "EVBIT_MODIFY 0x1; STAL 6; WM_MOVECAMTO 0xFFFF 0xFFFF Dest 0x20 0x1; WM_WAITFORCAM; WM_MOVESPRITETO 0x0 0x0 0x2 Source Dest 0xFFF9 0x0; WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF; STAL 2 20; FADI 16; ENDA"
+
+//#define ColdOpen2(Source, Dest) "EVBIT_MODIFY 0x1; STAL 6; WM_MOVECAM 0x0 0xFFFF 0xFFFF 0x0 0x7A 0x3C 0x0; WM_WAITFORCAM; WM_MOVESPRITETO 0x0 0x0 0x2 Source Dest 0xFFF9 0x0; WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF; STAL 2 20; FADI 16; ENDA"
+
+#define ColdOpen2(Source, Dest) "EVBIT_MODIFY 0x1; STAL 6; WM_MOVECAMTO 0xFFFF 0xFFFF Dest 0xA 0x1; WM_WAITFORCAM; WM_MOVESPRITETO 0x0 0x0 0x2 Source Dest 0xFFF9 0x0; WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF; STAL 5; FADI 16; ENDA"
+
+FadeOut:
+FADI 16
+ENDA
+
+//WorldMapIntroPointerTable(0x0, 0)
+WorldMapIntroPointerTable(0x1,WMIntro_PrologueCutscene)
+WorldMapIntroPointerTable(0x2,WMIntro_PrologueCh1)
+WorldMapIntroPointerTable(0x3,SkipIntro)
+WorldMapIntroPointerTable(0x4,WMIntro_Ch3)
+WorldMapIntroPointerTable(0x5,WMIntro_Ch4)
+WorldMapIntroPointerTable(0x6,WMIntro_Ch5) 
+WorldMapIntroPointerTable(0x7,WMIntro_Ch6)
+WorldMapIntroPointerTable(0x8,WMIntro_ZofiaCastle)
+WorldMapIntroPointerTable(0x9,WMIntro_Act2Start)
+WorldMapIntroPointerTable(0xa,WMIntro_Ch9)
+WorldMapIntroPointerTable(0xb,WMIntro_Ch10)
+WorldMapIntroPointerTable(0xc,WMIntro_Ch11) //skip
+WorldMapIntroPointerTable(0xd,WMIntro_Ch12) //dont skip
+WorldMapIntroPointerTable(0xe,WMIntro_Ch13)
+WorldMapIntroPointerTable(0xf,WMIntro_Ch14)
+WorldMapIntroPointerTable(0x10,WMIntro_Act3Start)
+WorldMapIntroPointerTable(0x11,WMIntro_Ch16)
+WorldMapIntroPointerTable(0x12,WMIntro_Ch17)
+WorldMapIntroPointerTable(0x13,WMIntro_DesaixFort)
+WorldMapIntroPointerTable(0x14,WMIntro_Ch19)
+WorldMapIntroPointerTable(0x15,WMIntro_Ch20)
+WorldMapIntroPointerTable(0x16,WMIntro_SluiceGate)
+WorldMapIntroPointerTable(0x17,WMIntro_Ch22_Act3Celica1)
+WorldMapIntroPointerTable(0x18,WMIntro_Ch23)
+WorldMapIntroPointerTable(0x19,WMIntro_Ch24_DesertBastion)
+WorldMapIntroPointerTable(0x1a,WMIntro_Ch25)
+WorldMapIntroPointerTable(0x1b,WMIntro_Ch26_GriethsBase)
+WorldMapIntroPointerTable(0x1c,WMIntro_Ch27_ValleyApproach)
+WorldMapIntroPointerTable(0x1d,WMIntro_Ch28_TempleOfMila)
+WorldMapIntroPointerTable(0x1e,WMIntro_Act4Start)
+WorldMapIntroPointerTable(0x1f,SkipIntro)
+WorldMapIntroPointerTable(0x20,SkipIntro)
+WorldMapIntroPointerTable(0x21,SkipIntro)
+WorldMapIntroPointerTable(0x22,SkipIntro)
+WorldMapIntroPointerTable(0x23,SkipIntro)
+WorldMapIntroPointerTable(0x24,SkipIntro)
+WorldMapIntroPointerTable(0x38,WMIntro_Ch6x)
+WorldMapIntroPointerTable(0x39,HideoutIntro) //hideout
+WorldMapIntroPointerTable(0x3a,SkipIntro) //shrines
+
+SkipIntro: //just point all of them here, they're the same
+EVBIT_MODIFY 0x1
+SKIPWN
+ENDA
+
+WMIntro_PrologueCutscene:
+EVBIT_MODIFY 0x1
+ENUT gEnableWorldMap
+ENDA
+
+/*
+//Bare-bones
+WMIntro_PrologueCh1:
+EVBIT_MODIFY 0x1
+CHECK_EVENTID gEnableWorldMap
+BEQ 0x1 0xC 0x0
+	STAL 6
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_RamForest 0x20 0x1
+	WM_WAITFORCAM
+	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_RamVillage GMLoc_RamForest 0xFFF9 0x0
+	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
+	STAL 2 20
+	FADI 16
+	GOTO 0x2
+LABEL 0x1
+	EVBIT_MODIFY 0x1
+	SKIPWN
+LABEL 0x2
+ENDA
+*/
+
+//With narration
+WMIntro_PrologueCh1:
+EVBIT_MODIFY 0x1
+CHECK_EVENTID gEnableWorldMap
+BEQ 0x1 0xC 0x0
+	STAL 6
+	//maybe put in a music change?? idk
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_RamForest 0x20 0x1
+	WM_WAITFORCAM
+	CALL 0xA3974C //darkens the map
+	WM_TEXTSTART
+	PUTSPRITE 0x3 AlmFighter 0x0 GMLoc_RamVillage //ID, Class, Allegiance, Location
+	WM_MAKELORDVISIBLE 0x3 //i think this has to be same as PUTSPRITE ID?
+	WM_MAKELORDDISAPPEAR //basically replacing the lord sprite with this PUTSPRITE that we can move wherever without triggering a location transition
+	WM_SHOWPORTRAIT 0x5 700 //Load Lukas on right
+	STAL 6 46
+	WM_TEXT Act1_WMIntro
+	TEXTEND
+	
+	//Move camera to S.Outpost
+	STAL 62
+	WM_LOADLOCATION2 0x0 GMLoc_SouthernOutpost 0x0	//MOVECAM is broken, so my workaround is to load the actual location temporarily and then MOVECAMTO that location
+	WM_LOADLOCATION2 0x0 GMLoc_ZofiaCastle 0x0
+	WM_WAITFORFX
+	WM_MAKELORDVISIBLE 0x0 //put the lord sprite back where it was
+	REMSPRITE 0x3 //and hide the putsprite version
+	WM_CLEARPORTRAIT 0x0 0x1BC 0x0 //clears a right facing portrait
+	STAL 46
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_SouthernOutpost 0x20 0x1
+	//WM_MOVECAM 0x0 0x28 0x52 0x1 0x34 0x14 0x0
+	//For MOVECAM, X and Y seem to be "top left corner of screen"
+	WM_WAITFORCAM
+	STAL 6 46
+	
+	//Show Desaix and soldiers moving
+	WM_SHOWPORTRAIT 0x2F 1332 //2c = Desaix, on left
+	STAL 20
+	PUTSPRITE 0x2 Soldier 0x1 GMLoc_ZofiaCastle //ID, Class, Affiliation, NodeID
+	PUTSPRITE 0x3 Soldier 0x1 GMLoc_ZofiaCastle
+	PUTSPRITE 0x4 Soldier 0x1 GMLoc_ZofiaCastle
+	WM_PUTMOVINGSPRITE 0x0 0x2 0x0 0xB8 0x67 0x78 0x78 0xD2 0x3 0xA 0x0
+	//Dunno, ID, Accel, XStart, YStart, XEnd, YEnd, time, flags, delay
+	//#Flags are: 0x1 = don't disappear until overwritten, 0x3 = Fade to black at ending position
+	//On the fullsize worldmap all coords are absolute locations (rather than relative to screen view)
+	WM_PUTMOVINGSPRITE 0x0 0x3 0x0 0xB8 0x78 0x78 0x78 0xAA 0x3 0xA 0x0
+	WM_PUTMOVINGSPRITE 0x0 0x4 0x0 0xB8 0x89 0x78 0x78 0x96 0x3 0xA 0x0
+	STAL 20
+	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF //seems to be "wait for all"
+	WM_WAITFORSPRITELOAD
+	REMSPRITE 0x2
+	REMSPRITE 0x3
+	REMSPRITE 0x4
+	WM_CLEARPORTRAIT 0x0 0x634 0x0 //Clear left portrait
+	STAL 6 46
+	TEXTCONT
+	TEXTEND
+	WM_REMOVETEXT
+	
+	//Move Alm to next location
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_RamForest 0x20 0x1
+	WM_WAITFORCAM
+	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_RamVillage GMLoc_RamForest 0xFFF9 0x0
+	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
+	
+
+	STAL 2 20
+	FADI 16
+	EVBIT_MODIFY 0x1
+	WM_REMOVELOCATION 0x0 GMLoc_SouthernOutpost 0x0 //getting rid of these locations we used for cutscene
+	WM_REMOVELOCATION 0x0 GMLoc_ZofiaCastle 0x0
+	GOTO 0x2
+LABEL 0x1
+	EVBIT_MODIFY 0x1
+	SKIPWN
+LABEL 0x2
+ENDA
+
+WMIntro_Ch2:
+ColdOpen2(GMLoc_RamForest, GMLoc_ThiefShrineStory)
+
+WMIntro_Ch3:
+ColdOpen2(GMLoc_RamForest, GMLoc_RamValley)
+
+WMIntro_Ch4:
+ColdOpen2(GMLoc_RamValley, GMLoc_SouthernOutpost)
+
+WMIntro_Ch5:
+ColdOpen2(GMLoc_SouthernOutpost, GMLoc_SouthZofia1)
+
+WMIntro_Ch6:
+ColdOpen2(GMLoc_SouthZofia1, GMLoc_SouthZofia2)
+
+WMIntro_Ch6x:
+ENDA
+
+HideoutIntro:
+MUSCFAST 0x7FFF
+FADI 16
+EVBIT_MODIFY 0x1
+CHECK_EVENTID gDeliveranceHideoutCompleted //is Clive here?
+BNE 0x1 0xC 0x0 //if he is, skip following
+/*
+	STAL 6
+	//maybe put in a music change?? idk
+	WM_MOVECAMTO 0xFFFF 0xFFFF 0x7 0x20 0x1
+	WM_WAITFORCAM
+	CALL 0xA3974C //darkens the map
+	WM_TEXTSTART
+	PUTSPRITE 0x3 0x2 0x0 0x7 //ID, Class, Allegiance, Location
+	WM_MAKELORDVISIBLE 0x3 //i think this has to be same as PUTSPRITE ID?
+	WM_MAKELORDDISAPPEAR //basically replacing the lord sprite with this PUTSPRITE that we can move wherever without triggering a location transition
+	WM_SHOWPORTRAIT 0xA 700 //Load Clair on right
+	STAL 6 46
+	WM_TEXT Act1_WM_DeliveranceHideout
+	TEXTEND
+	
+	//Move camera to Hideout
+	STAL 62
+	WM_MAKELORDVISIBLE 0x0 //put the lord sprite back where it was
+	REMSPRITE 0x3 //and hide the putsprite version
+	WM_CLEARPORTRAIT 0x0 0x1BC 0x0 //clears a right facing portrait
+	STAL 46
+	WM_MOVECAMTO 0xFFFF 0xFFFF 0x8 0x20 0x1
+	WM_WAITFORCAM
+	
+	//Show Clive on map
+	PUTSPRITE 0x2 0x5 0x0 0x8 //ID, Class, Affiliation, NodeID
+	STAL 6 46
+	REMSPRITE 0x2
+	STAL 6 46
+	TEXTCONT
+	TEXTEND
+	
+	//Show Clive and Forsyth portraits
+	WM_SHOWPORTRAIT 0xB 1332 //Clive on left
+	STAL 20
+	WM_SHOWPORTRAIT 0xC 700 //Load Forsyth on right
+	
+	STAL 6 46
+	TEXTCONT
+	TEXTEND
+	WM_REMOVETEXT
+
+	STAL 2 20
+	FADI 16
+*/
+	WM_DRAWPATH2 0x0 0x8 0x0 //enable path to castle
+LABEL 0x1
+ENDA
+
+//Castle
+WMIntro_ZofiaCastle:
+CHECK_EVENTID gPart2Completed
+BNE 0x3 0xC 0x0
+	EVBIT_MODIFY 0x1
+	STAL 6
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_ZofiaCastle 0x20 0x1
+	WM_WAITFORCAM
+	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_SouthZofia2 GMLoc_ZofiaCastle 0xFFF9 0x0
+	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
+	STAL 2 20
+	FADI 16
+	GOTO 0x4
+LABEL 0x3
+	//Celica stuff
+	EVBIT_MODIFY 0x1
+	STAL 6
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_ZofiaCastle 0x20 0x1
+	WM_WAITFORCAM
+	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_ZofiaHarbor GMLoc_ZofiaCastle 0xFFF9 0x0
+	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
+	STAL 2 20
+	FADI 16
+LABEL 0x4
+ENDA
+
+//Act 2
+
+WMIntro_Act2Start:
+CHECK_EVENTID gNovisCemeteryCompleted 
+BNE 0x2 0xC 0x0
+	//narration goes here
+	STAL 6
+	//maybe put in a music change?? idk
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_NovisPriory 0x20 0x1
+	WM_WAITFORCAM
+	CALL 0xA3974C //darkens the map
+	WM_TEXTSTART
+	WM_TEXT Act2_WMIntro
+	TEXTEND
+	
+	//Move camera to Temple of Mila, then back to Priory
+	WM_LOADLOCATION2 0x0 GMLoc_MilaTemple 0x0
+	WM_WAITFORFX
+	STAL 46
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_MilaTemple 0x20 0x1
+	WM_WAITFORCAM
+	STAL 6 46
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_NovisPriory 0x20 0x1
+	WM_WAITFORCAM
+	STAL 6 46
+	TEXTCONT
+	TEXTEND
+	
+	//Move camera to Zofia Harbor, then back to Priory
+	PUTSPRITE 0x2 0x50 0x2 GMLoc_NovisPort //ID, Class, Affiliation, NodeID
+	WM_PUTMOVINGSPRITE 0x0 0x2 0x0 0x60 0xE8 0xB0 0xB0 0xD2 0x3 0xA 0x0
+	STAL 20
+	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF //seems to be "wait for all"
+	WM_WAITFORSPRITELOAD
+	STAL 20
+	REMSPRITE 0x2
+	STAL 6 46
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_NovisPriory 0x20 0x1
+	WM_WAITFORCAM
+	STAL 6 46
+	TEXTCONT
+	TEXTEND
+	
+	//Show monsters
+//	STAL 20
+//	PUTSPRITE 0x4 0x52 0x1 0xB
+//	WM_PUTSPRITE 0x0 0x4 0x52 0x1 0x48 0xF8 //ID, Class, Affiliation, X, Y
+//	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF //seems to be "wait for all"
+//	WM_WAITFORSPRITELOAD
+//	STAL 6 46
+//	TEXTCONT
+//	TEXTEND
+	
+	//Move Celica to next location
+	STAL 46
+	REMSPRITE 0x4
+	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_NovisPriory GMLoc_NovisCemetery 0xFFF9 0x0
+	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
+	STAL 6 46
+	TEXTCONT
+	TEXTEND
+	WM_REMOVETEXT
+
+	STAL 2 20
+	FADI 16
+	EVBIT_MODIFY 0x1
+	WM_REMOVELOCATION 0x0 GMLoc_MilaTemple 0x0
+	//ColdOpen2(10, 11)
+	GOTO 0x3
+LABEL 0x2
+	EVBIT_MODIFY 0x1
+	SKIPWN
+LABEL 0x3
+ENDA
+
+WMIntro_Ch9:
+ColdOpen2(GMLoc_NovisCemetery, GMLoc_NovisPort)
+
+WMIntro_Ch10:			
+ColdOpen2(GMLoc_NovisPort, GMLoc_PirateThrone)
+
+WMIntro_Ch11:
+//ColdOpen2(13, 14)
+ENDA
+
+WMIntro_Ch12:
+ColdOpen2(GMLoc_PirateThrone, GMLoc_ZofiaStrait) //pirate throne -> resurr
+
+WMIntro_Ch13:
+ColdOpen2(GMLoc_ZofiaStrait, GMLoc_Meridium) //skip seabound shrine
+
+WMIntro_Ch14:
+ColdOpen2(GMLoc_Meridium, GMLoc_ZofiaHarbor) //proceed to zofia harbor
+
+WMIntro_Act3Start:
+ColdOpen2(GMLoc_ZofiaCastle, GMLoc_NorthZofia)
+
+WMIntro_Ch16:
+ColdOpen2(GMLoc_NorthZofia, GMLoc_ForestVillage)
+
+WMIntro_Ch17:
+ColdOpen2(GMLoc_ForestVillage, GMLoc_ZofiaForest1)
+
+WMIntro_DesaixFort:
+ColdOpen2(GMLoc_ZofiaForest1, GMLoc_DesaixFort)
+
+WMIntro_Ch19:
+ColdOpen2(GMLoc_DesaixFort, GMLoc_ZofiaForest2)
+
+WMIntro_Ch20:
+ColdOpen2(GMLoc_ZofiaForest2, GMLoc_ForestNorthSide)
+
+WMIntro_SluiceGate:
+ColdOpen2(GMLoc_ForestNorthSide, GMLoc_SluiceGate)
+
+WMIntro_Ch22_Act3Celica1:
+ColdOpen2(GMLoc_ZofiaHarbor, GMLoc_ZofiaBay)
+
+WMIntro_Ch23:
+ColdOpen2(GMLoc_ZofiaBay, GMLoc_MtnGraveyard)
+
+WMIntro_Ch24_DesertBastion:
+ColdOpen2(GMLoc_MtnGraveyard, GMLoc_DesertBastion)
+
+WMIntro_Ch25:
+ColdOpen2(GMLoc_DesertBastion, GMLoc_ZofiaDesert)
+
+WMIntro_Ch26_GriethsBase:
+ColdOpen2(GMLoc_ZofiaDesert, GMLoc_GriethsBase)
+
+WMIntro_Ch27_ValleyApproach:
+ColdOpen2(GMLoc_GriethsBase, GMLoc_ValleyApproach)
+
+WMIntro_Ch28_TempleOfMila:
+ColdOpen2(GMLoc_ValleyApproach, GMLoc_MilaTemple)
+
+WMIntro_Act4Start:
+ColdOpen2(GMLoc_MilaTemple, GMLoc_DeadMansMire)

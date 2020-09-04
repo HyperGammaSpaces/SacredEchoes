@@ -1,0 +1,25 @@
+These modules deal with some aspects of randomized enemies - both their class and their inventory.
+
+For the "Class Changer" Module, Rando Classes refers to the unit's declared class ID in chapter unit data, before
+randomization takes place.
+
+The Random Item Table Editor allows editing the relative probabilities of items showing up in a randomized unit's inventory.
+
+NOTE: If you expand the Random Item Table Editor, ensure that the final entry has Class ID 0xFF so that the game knows to stop checking.
+
+The default probabilities can be found here: http://www.serenesforest.net/fe8/miscellaneous/random-items/monsters/
+
+For example:
+The first entry of the Random Item Table Editor is class 0x52 Revenant.
+
+The First Slot Item Group 1 is 0x15.
+The First Slot Probability 1 is 100.
+The First Slot Probability Group 1 is 0x1.
+
+This means the first slot has a 100% chance of being an item from group 0x15 (Rotten Claw/Fetid Claw).
+Which item from group 0x15 is determined using Probability Group 0x1 (95/5).
+So, the item has a 95% chance to be Rotten Claw and 5% chance to be Fetid Claw.
+
+The second slot has Item Group 1 = 0x1F with probability 1 = 10 and probability group 1 = 0x2.
+It also has Item Group 2 = 0, probability 2 = 90, probability group 2 = 0.
+So, the second slot has a 90% chance of being empty and a 10% chance of having an item from Item Group 0x1F using probability 0x2.

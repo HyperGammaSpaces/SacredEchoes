@@ -1,0 +1,400 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	Healing_grp  voicegroup000
+	#define	Healing_pri  0
+	#define	Healing_rev  0
+	#define	Healing_mvl  85
+	#define	Healing_key  0
+	#define	Healing_tbs  1
+	#define	Healing_exg  0
+	#define	Healing_cmp  1
+
+	// .rodata
+	//	Healing
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+Healing_1:
+	BYTE	KEYSH   Healing_key+0
+Healing_1_B1:
+// 000   ----------------------------------------
+	BYTE	TEMPO   123*Healing_tbs/2
+	BYTE		VOICE   91
+	BYTE		VOL     82*Healing_mvl/mxv
+	BYTE		PAN     c_v+0
+	BYTE		N11     Cn4   v088
+	BYTE	W12
+	BYTE		        Cs4   v072
+	BYTE	W12
+	BYTE		        Ds4   v092
+	BYTE	W12
+	BYTE		        Fn4   v088
+	BYTE	W12
+	BYTE		        Cn4   v092
+	BYTE	W12
+	BYTE		        Cs4 
+	BYTE	W12
+	BYTE		        Ds4 
+	BYTE	W12
+	BYTE		        Fn4 
+	BYTE	W12
+// 001   ----------------------------------------
+Healing_1_001:
+	BYTE		N11     Cn4   v088
+	BYTE	W12
+	BYTE		        Cs4   v072
+	BYTE	W12
+	BYTE		        Ds4   v092
+	BYTE	W12
+	BYTE		        Fn4   v088
+	BYTE	W12
+	BYTE		        Cn4   v092
+	BYTE	W12
+	BYTE		        Cs4 
+	BYTE	W12
+	BYTE		        Ds4 
+	BYTE	W12
+	BYTE		        Fn4 
+	BYTE	W12
+	BYTE	PEND
+// 002   ----------------------------------------
+	BYTE	PATT
+	 POIN2	Healing_1_001
+// 003   ----------------------------------------
+	BYTE		N11     Cn4   v088
+	BYTE	W12
+	BYTE		        Cs4   v072
+	BYTE	W12
+	BYTE		        Ds4   v092
+	BYTE	W12
+	BYTE		        Fn4   v088
+	BYTE	W12
+	BYTE		        Cn4   v092
+	BYTE	W12
+	BYTE		        Cs4 
+	BYTE	W12
+	BYTE		        Ds4 
+	BYTE	W12
+	BYTE		        Fn4 
+	BYTE	W11
+	BYTE	GoTo
+	 POIN2	Healing_1_B1
+Healing_1_B2:
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+Healing_2:
+	BYTE	KEYSH   Healing_key+0
+Healing_2_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   11
+	BYTE		VOL     67*Healing_mvl/mxv
+	BYTE		PAN     c_v-7
+	BYTE		N04     As4   v088
+	BYTE	W06
+	BYTE		        As4   v036
+	BYTE	W06
+	BYTE		        Gs4   v072
+	BYTE	W06
+	BYTE		        Gs4   v016
+	BYTE	W06
+	BYTE		        Dn5   v092
+	BYTE	W06
+	BYTE		        Dn5   v036
+	BYTE	W06
+	BYTE		        Gn4   v088
+	BYTE	W06
+	BYTE		        Gn4   v036
+	BYTE	W06
+	BYTE		N05     As4   v092
+	BYTE	W06
+	BYTE		        As4   v040
+	BYTE	W06
+	BYTE		        Gs4   v092
+	BYTE	W06
+	BYTE		        Gs4   v040
+	BYTE	W06
+	BYTE		        Dn5   v092
+	BYTE	W06
+	BYTE		        Dn5   v036
+	BYTE	W06
+	BYTE		N04     Gn4   v092
+	BYTE	W06
+	BYTE		        Gn4   v036
+	BYTE	W06
+// 001   ----------------------------------------
+Healing_2_001:
+	BYTE		N05     As4   v088
+	BYTE	W06
+	BYTE		        As4   v036
+	BYTE	W06
+	BYTE		        Gs4   v072
+	BYTE	W06
+	BYTE		        Gs4   v016
+	BYTE	W06
+	BYTE		        Dn5   v092
+	BYTE	W06
+	BYTE		        Dn5   v036
+	BYTE	W06
+	BYTE		N04     Gn4   v088
+	BYTE	W06
+	BYTE		        Gn4   v036
+	BYTE	W06
+	BYTE		N05     As4   v092
+	BYTE	W06
+	BYTE		        As4   v040
+	BYTE	W06
+	BYTE		        Gs4   v092
+	BYTE	W06
+	BYTE		        Gs4   v040
+	BYTE	W06
+	BYTE		        Dn5   v092
+	BYTE	W06
+	BYTE		        Dn5   v036
+	BYTE	W06
+	BYTE		N04     Gn4   v092
+	BYTE	W06
+	BYTE		        Gn4   v036
+	BYTE	W06
+	BYTE	PEND
+// 002   ----------------------------------------
+	BYTE	PATT
+	 POIN2	Healing_2_001
+// 003   ----------------------------------------
+	BYTE		N05     As4   v088
+	BYTE	W06
+	BYTE		        As4   v036
+	BYTE	W06
+	BYTE		        Gs4   v072
+	BYTE	W06
+	BYTE		        Gs4   v016
+	BYTE	W06
+	BYTE		        Dn5   v092
+	BYTE	W06
+	BYTE		        Dn5   v036
+	BYTE	W06
+	BYTE		N04     Gn4   v088
+	BYTE	W06
+	BYTE		        Gn4   v036
+	BYTE	W06
+	BYTE		N05     As4   v092
+	BYTE	W06
+	BYTE		        As4   v040
+	BYTE	W06
+	BYTE		        Gs4   v092
+	BYTE	W06
+	BYTE		        Gs4   v040
+	BYTE	W06
+	BYTE		        Dn5   v092
+	BYTE	W06
+	BYTE		        Dn5   v036
+	BYTE	W06
+	BYTE		N04     Gn4   v092
+	BYTE	W06
+	BYTE		        Gn4   v036
+	BYTE	W05
+	BYTE	GoTo
+	 POIN2	Healing_2_B1
+Healing_2_B2:
+	BYTE	FINE
+
+//**************** Track 3 (Midi-Chn.3) ****************//
+
+Healing_3:
+	BYTE	KEYSH   Healing_key+0
+Healing_3_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   52
+	BYTE		VOL     70*Healing_mvl/mxv
+	BYTE		PAN     c_v+0
+	BYTE		BEND    c_v+0
+	BYTE		TIE     Cs3   v072
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE	W76
+	BYTE		BEND    c_v+0
+	BYTE	W03
+	BYTE		        c_v+2
+	BYTE	W03
+	BYTE		        c_v+5
+	BYTE	W02
+	BYTE		        c_v+8
+	BYTE	W01
+	BYTE		        c_v+9
+	BYTE	W02
+	BYTE		        c_v+11
+	BYTE	W01
+	BYTE		        c_v+13
+	BYTE	W01
+	BYTE		        c_v+15
+	BYTE	W01
+	BYTE		        c_v+18
+	BYTE	W01
+	BYTE		        c_v+22
+	BYTE	W01
+	BYTE		        c_v+30
+	BYTE	W01
+	BYTE		        c_v+36
+	BYTE	W01
+	BYTE		        c_v+45
+	BYTE	W01
+	BYTE		        c_v+48
+	BYTE	W01
+// 002   ----------------------------------------
+	BYTE		        c_v+55
+	BYTE	W01
+	BYTE		        c_v+57
+	BYTE	W01
+	BYTE		        c_v+58
+	BYTE	W01
+	BYTE		        c_v+60
+	BYTE	W03
+	BYTE		        c_v+61
+	BYTE	W02
+	BYTE		        c_v+63
+	BYTE	W88
+// 003   ----------------------------------------
+	BYTE	W92
+	BYTE	W02
+	BYTE		EOT   
+	BYTE	W01
+	BYTE	GoTo
+	 POIN2	Healing_3_B1
+Healing_3_B2:
+	BYTE	FINE
+
+//**************** Track 4 (Midi-Chn.4) ****************//
+
+Healing_4:
+	BYTE	KEYSH   Healing_key+0
+Healing_4_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   52
+	BYTE		VOL     62*Healing_mvl/mxv
+	BYTE		PAN     c_v+0
+	BYTE		BEND    c_v+0
+	BYTE		TIE     Fn3   v072
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE	W92
+	BYTE	W02
+	BYTE		EOT   
+	BYTE	W02
+// 002   ----------------------------------------
+	BYTE		TIE     As3 
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W92
+	BYTE	W03
+	BYTE		EOT   
+	BYTE	GoTo
+	 POIN2	Healing_4_B1
+Healing_4_B2:
+	BYTE	FINE
+
+//**************** Track 5 (Midi-Chn.5) ****************//
+
+Healing_5:
+	BYTE	KEYSH   Healing_key+0
+Healing_5_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   121
+	BYTE		VOL     103*Healing_mvl/mxv
+	BYTE		N06     Gn1   v064
+	BYTE	W12
+	BYTE		N03   
+	BYTE	W24
+	BYTE		N06   
+	BYTE	W12
+	BYTE		        Ds0 
+	BYTE	W36
+	BYTE		        Gn1 
+	BYTE	W12
+// 001   ----------------------------------------
+	BYTE	W12
+	BYTE		N03   
+	BYTE	W24
+	BYTE		N06   
+	BYTE	W12
+	BYTE		        Ds0 
+	BYTE	W36
+	BYTE		        Gn1 
+	BYTE	W12
+// 002   ----------------------------------------
+	BYTE		N06   
+	BYTE	W12
+	BYTE		N03   
+	BYTE	W24
+	BYTE		N06   
+	BYTE	W12
+	BYTE		        Ds0 
+	BYTE	W36
+	BYTE		        Gn1 
+	BYTE	W12
+// 003   ----------------------------------------
+	BYTE	W12
+	BYTE		N03   
+	BYTE	W24
+	BYTE		N06   
+	BYTE	W12
+	BYTE		        Ds0 
+	BYTE	W36
+	BYTE		        Gn1 
+	BYTE	W11
+	BYTE	GoTo
+	 POIN2	Healing_5_B1
+Healing_5_B2:
+	BYTE	FINE
+
+//**************** Track 6 (Midi-Chn.6) ****************//
+
+Healing_6:
+	BYTE	KEYSH   Healing_key+0
+Healing_6_B1:
+// 000   ----------------------------------------
+	BYTE		VOICE   105
+	BYTE		VOL     84*Healing_mvl/mxv
+	BYTE		N44     As2   v084
+	BYTE	W48
+	BYTE		N12   
+	BYTE	W48
+// 001   ----------------------------------------
+	BYTE	W84
+	BYTE		N10     Gs2   v064
+	BYTE	W12
+// 002   ----------------------------------------
+	BYTE		N44     As2   v084
+	BYTE	W48
+	BYTE		N12   
+	BYTE	W48
+// 003   ----------------------------------------
+	BYTE	W84
+	BYTE		N10     Gs2   v064
+	BYTE	W11
+	BYTE	GoTo
+	 POIN2	Healing_6_B1
+Healing_6_B2:
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+Healing:
+	BYTE	6	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	Healing_pri	// Priority
+	BYTE	Healing_rev	// Reverb.
+
+	POIN2	Healing_grp
+
+	POIN2	Healing_1
+	POIN2	Healing_2
+	POIN2	Healing_3
+	POIN2	Healing_4
+	POIN2	Healing_5
+	POIN2	Healing_6
+
+	

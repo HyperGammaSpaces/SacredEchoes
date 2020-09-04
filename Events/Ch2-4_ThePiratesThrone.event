@@ -1,0 +1,272 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x42, Ch2_4_ThisChapter)
+
+Ch2_4_ThisChapter:
+	POIN Ch2_4_TurnBasedEvents
+	POIN Ch2_4_CharacterBasedEvents
+	POIN Ch2_4_LocationBasedEvents
+	POIN Ch2_4_MiscBasedEvents
+	POIN Ch2_4_Dunno Ch2_4_Dunno Ch2_4_Dunno
+	POIN Ch2_4_Tutorial
+	POIN Ch2_4_Ballista1 Ch2_4_Ballista2
+	POIN Ch2_4_Units1 Ch2_4_Units1
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch2_4_BeginningScene Ch2_4_EndingScene
+
+Ch2_4_TurnBasedEvents:
+	OpeningTurnEvent(CelicaTalkEvent)
+	TURN 0x0 BoatWave[6,0] 0x0
+	TURN
+	
+BoatWave:
+ReinforcementEvent(ReinforcementsSouth)
+ENDA
+
+CelicaTalkEvent:
+	MUSC 0x0A // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
+	MUSI
+	STAL 20
+	CAM1 Valbar
+	STAL 30
+	FlashCursor(Valbar, 60)
+	STAL 30
+	CAM1 Celica
+	STAL 30
+	FlashCursor(Celica, 60)
+	Text(Ch2_4_PreBattle_CelicaTalk)
+	MUNO
+	NoFade
+	ENDA
+
+Ch2_4_CharacterBasedEvents:
+	CharacterEvent(0x8, TalkToValbar, Celica, Valbar)
+	CharacterEvent(0x9, TalkToKamui, Valbar, Kamui)
+	CharacterEvent(0x9, TalkToKamuiCelica, Celica, Kamui)
+	CHAR
+
+Ch2_4_LocationBasedEvents:
+	Chest(IronSword, 18, 0)
+	LOCA 0xA VillageEvent [18,10] 0x10
+	Seize(15, 1)
+	LOCA
+
+VillageEvent:
+	MUSI
+	SetBackground(0x09)
+	Text(Ch2_4_PirateInn)
+	EndConvo
+	MUNO
+	CALL $591F40
+	SMOV 0x3 SteelSword
+	GIVEITEMTO 0xFFFF
+	EVBIT_T 0x7
+	ENDA
+	//VillageEventItem(Ch2_4_PirateInn, 0x09, SteelSword)
+	ENDA
+
+Ch2_4_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	MournQuoteAFEVS
+	AFEV
+
+Ch2_4_Dunno:
+	END_MAIN
+
+Ch2_4_Tutorial:
+	END_MAIN
+
+Ch2_4_Ballista1:
+	BLST
+
+Ch2_4_Ballista2:
+	BLST
+	ALIGN 4
+
+Ch2_4_Units1:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [2,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [1,13] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [1,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT
+
+ValbarJoins:
+	UNIT Valbar Knight 0x00 Level(1, NPC, 1) [5,4] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe] AttackInRangeAI 
+	UNIT Leon Archer 0x00 Level(4, NPC, 1) [7,3] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] [AttackInRange,DoNotMove,DefaultRecovery,GuardTile] 
+	UNIT Kamui Mercenary 0x00 Level(3, NPC, 1) [6,3] 0x00 0x00 0x0 0x00 [BaseSword,Vulnerary] AttackInRangeAI 
+	UNIT
+
+EnemyUnits:
+	UNIT Barth Pirate Barth Level(10,Enemy,False) [15,1] DropItem 0x00 0x0 0x00 [SteelAxe,HandAxe,Item100G] NeverMoveAI // A matter of personal preference, but I would not put spaces after commas.
+	UNIT 0x67 Mercenary Barth Level(7,Enemy,True) [13,1] 0x00 0x00 0x0 0x00 [Armorslayer] NeverMoveAI //Make this guy bulky
+	UNIT 0x65 Mage Barth Level(7,Enemy,True) [17,1] DropItem 0x00 0x0 0x00 [Fire, HideShield, ChestKey] NeverMoveAI //Make this guy bulky
+	UNIT 0x66 Archer Barth Level(7,Enemy,True) [14,2] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI // Also note my use of "True" instead of "1".
+	UNIT 0x65 Pirate_F Barth Level(8,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT 0x67 Thief Barth Level(7,Enemy,True) [13,7] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
+	UNIT 0x65 Pirate Barth Level(9,Enemy,True) [12,8] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT 0x65 Pirate Barth Level(7,Enemy,True) [8,7] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT 0x67 Mercenary Barth Level(8,Enemy,True) [17,7] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x66 Archer_F Barth Level(8,Enemy,True) [16,13] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
+	UNIT 0x65 Pirate Barth Level(7,Enemy,True) [5,1] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
+	UNIT 0x65 Pirate_F Barth Level(9,Enemy,True) [15,10] DropItem 0x00 0x0 0x00 [BaseAxe,IronShield] AttackInRangeAI 
+	UNIT 0x65 Pirate Barth Level(7,Enemy,True) [17,5] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT
+
+EnemyUnitsREDAs:
+	UNIT 0x65 Pirate_F Barth Level(7,Enemy,True) [4,0] 0x00 0x00 0x1 REDA6R10 [BaseAxe] NoAI 
+	UNIT 0x65 Pirate Barth Level(6,Enemy,True) [4,0] 0x00 0x00 0x1 REDA7R9 [BaseAxe] NoAI 
+	UNIT 0x65 Pirate_F Barth Level(8,Enemy,True) [4,0] 0x00 0x00 0x1 REDA5R9 [BaseAxe] NoAI 
+	UNIT 0x66 Archer Barth Level(7,Enemy,True) [4,0] 0x00 0x00 0x1 REDA6R9 [BaseBow] AttackInRangeAI
+	UNIT
+	
+ReinforcementsSouth:
+	UNIT 0x65 Pirate Barth Level(5,Enemy,True) [16,16] 0x00 0x00 0x1 REDA15R16 [IronAxe] NoAI 
+	UNIT 0x65 Pirate_F Barth Level(7,Enemy,True) [16,16] 0x00 0x00 0x1 REDA16R15 [SteelAxe] NoAI 
+	UNIT 0x66 Archer Barth Level(6,Enemy,True) [16,16] 0x00 0x00 0x1 REDA17R16 [SteelBow] NoAI
+	UNIT
+
+Ch2_4_BeginningScene:
+	MUSC 0x25
+	LOAD3 0x1 Ch2_4_Units1
+	ENUN
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD1 0x1 ValbarJoins
+	ENUN
+
+	SetBackground(0x07)
+	Text(Ch2_4_PreBattle)
+	EndConvo
+
+	CAM1 Valbar
+	STAL 20
+	LOAD1 0x1 EnemyUnitsREDAs
+	ENUN
+	FlashCursor(Valbar, 60)
+	STAL 30
+	Text(Ch2_4_PreBattle_Valbar)
+
+	NoFade
+	GotoPrepScreen
+	ENDA
+
+Ch2_4_EndingScene:
+	CALL UnifiedBEXPCaller
+	//Check if Valbar is dead. If he's OK call the following
+	EVBIT_MODIFY 0x1
+	SVAL 0x1 0x1
+	CHECK_ALIVE Valbar
+	IFEQ 0x6 0xC 0x1 //if not, goto NoFaye
+		EVBIT_MODIFY 0x0
+		MUSC 0x31 //victory (good ending)
+		SetBackground(0x07)
+		TEXTSTART
+		TEXTSHOW Ch2_4_PostBattle
+		TEXTEND
+		REMA
+		REMOVEPORTRAITS
+		
+		_0x2141 LeonValbarKamuiCG 0x1 0x4
+		REMOVEPORTRAITS
+		STAL 20
+		_0x1A22
+		TEXTSHOW Ch2_4_CGText
+		TEXTEND
+		REMA
+		STAL 20
+		_0x2141 0x07 0x1 0x4
+		REMOVEPORTRAITS
+		Text(Ch2_4_PostBattle_2)
+		EVBIT_MODIFY 0x1
+		REMA
+		FADI 16
+		CUSA Valbar
+		CUSA Leon
+		CUSA Kamui
+		GOTO 0x8
+	LABEL 0x6 //if Valbar is dead
+	EVBIT_MODIFY 0x0
+	MUSC 0x32
+	SetBackground(0x07)
+	Text(Ch2_4_PostBattle_NoValbar_1)
+	REMA
+	FADI 16
+	EVBIT_MODIFY 0x1
+	SVAL 0x1 0x1
+	CHECK_ALIVE Leon
+	IFEQ 0x7 0xC 0x1 //if not, goto NoFaye
+		EVBIT_MODIFY 0x0
+		SetBackground(0x07)
+		Text(Ch2_4_PostBattle_NoValbar_Leon)
+		REMA
+		FADI 16
+		EVBIT_MODIFY 0x1
+		CUSA Leon
+	LABEL 0x7
+	SVAL 0x1 0x1
+	CHECK_ALIVE Kamui
+	IFEQ 0x8 0xC 0x1 //if not, goto NoFaye
+		EVBIT_MODIFY 0x0
+		SetBackground(0x07)
+		Text(Ch2_4_PostBattle_NoValbar_Kamui)
+		REMA
+		FADI 16
+		EVBIT_MODIFY 0x1
+		CUSA Kamui
+	LABEL 0x8
+	EVBIT_MODIFY 0x0
+	MNCH 0x0C
+	ENDA
+
+TalkToValbar:
+	MUSS 0x30
+	STAL 0x20
+	SVAL 0x1 0x1
+	CHECK_ALIVE Leon 
+	IFEQ 0x2 0xC 0x1 //if not, goto NoFaye
+		Text(Ch2_4_GetValbar)
+		CUSA Leon
+		GOTO 0x3
+	LABEL 0x2
+	Text(Ch2_4_GetValbar_NoLeon)
+	LABEL 0x3
+	CUSA Valbar
+	STAL 0x14
+	MURE 0x05
+	NoFade
+	ENDA
+
+TalkToKamui:
+	MUSS 0x30
+	STAL 0x20
+	Text(Ch2_4_GetKamui)
+	CUSA Kamui
+	STAL 0x14
+	MURE 0x05
+	NoFade
+	ENDA
+
+TalkToKamuiCelica:
+	MUSS 0x30
+	STAL 0x20
+	SVAL 0x1 0x1
+	CHECK_ALIVE Valbar 
+	IFEQ 0x4 0xC 0x1 //if not, goto NoFaye
+		Text(Ch2_4_GetKamui_NoValbar)
+		ENUF 0x9
+		GOTO 0x5
+	LABEL 0x4
+	Text(Ch2_4_GetKamui_ValbarDead)
+	CUSA Kamui
+	LABEL 0x5
+	STAL 0x14
+	MURE 0x05
+	NoFade
+	ENDA
+
+#ifndef InlineEvents
+  MESSAGE Events end at offset currentOffset
+#endif

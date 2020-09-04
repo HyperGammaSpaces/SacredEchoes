@@ -1,0 +1,35 @@
+instructions:
+[1:47:15 AM] Cam: finder_func is the version that finds a unit based on character ID
+[1:47:23 AM] Cam: finder_func2 finds a unit based on coords
+[1:47:32 AM | Edited 1:47:39 AM] Cam: you'll want to patch those in somewhere random (that's 4-aligned)
+[1:47:53 AM] Cam: i have no idea
+[1:48:08 AM] Cam: once you've patched those in
+[1:48:12 AM] Cam: take the offset where you patched it
+[1:48:16 AM] Cam: +1
+[1:48:40 AM] Cam: and then, in apply_status.dmp
+[1:48:56 AM] Cam: replace the "DEADBEEF" with a pointer to wherever you patched the finder function to
+[1:49:05 AM] Super Duper Dancing_Skitty: deadbeef?
+[1:49:06 AM] Cam: (note that you need to add one to the offset)
+[1:49:20 AM] Cam: http://puu.sh/9J54a/c7a3dacfd5.png
+[1:49:51 AM | Edited 1:49:55 AM] Cam: so for example, if I patched my finder func to 0xD80000, I'll replace the DEADBEEF with 01 00 D8 08
+[1:50:25 AM] Cam: Then just edit the "apply_status" dmp to get your desired status
+[1:51:02 AM] Cam: 00 B5 FF 20 FF 21 00 F0 05 F8 00 21 50 31 30 22 81 54 00 BD 00 4A 10 47 DE AD BE EF
+
+FF 20 - replace FF to specify X coordinate or character ID
+FF 21 - replace FF to specify Y coordinate (irrelevant if you use character ID finder)
+[1:51:24 AM] Super Duper Dancing_Skitty: lol wow
+[1:51:26 AM] Super Duper Dancing_Skitty: how clever
+[1:51:33 AM] Cam: 00 21 - replace 00 to specify which status you want to use
+[1:51:44 AM] Cam: as according to that list you posted earlier
+[1:52:00 AM] Cam: if it doesn't work, let me know
+
+--
+
+[1:23:21 AM] Super Duper Dancing_Skitty: 1 - Poison
+2 - Sleep
+3 - Silence
+4 - Berserk
+5 - Attack Boost (Fila’s Might)
+6 - Defense Boost (Ninis’s Grace)
+7 - Critical Boost (Thor’s Ire)
+8 - Avoid Boost (Set’s Litany)

@@ -1,0 +1,173 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(0x52, Ch3_1A_ThisChapter)
+
+Ch3_1A_ThisChapter:
+	POIN Ch3_1A_TurnBasedEvents
+	POIN Ch3_1A_CharacterBasedEvents
+	POIN Ch3_1A_LocationBasedEvents
+	POIN Ch3_1A_MiscBasedEvents
+	POIN Ch3_1A_Dunno Ch3_1A_Dunno Ch3_1A_Dunno
+	POIN Ch3_1A_Tutorial
+	POIN Ch3_1A_Ballista1 Ch3_1A_Ballista2
+	POIN Ch3_1A_Units1 Ch3_1A_Units1
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch3_1A_BeginningScene Ch3_1A_EndingScene
+
+Ch3_1A_TurnBasedEvents:
+	TURN 0x0 WaveFirst[9,0] 0x0
+	TURN
+	
+WaveFirst:
+	ReinforcementEvent(Reinforcements1)
+	NoFade
+	ENDA
+
+Ch3_1A_CharacterBasedEvents:
+	CHAR
+
+Ch3_1A_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(4,5)
+	#endif
+	Village(0x8, VillageEvent, 2,14)
+	Seize(4,2)
+	LOCA
+
+VillageEvent:
+	VillageEventItem(Ch3_1A_Village, Village, HeavySpear)
+	ENDA
+
+Ch3_1A_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	MournQuoteAFEVS
+	AFEV
+
+Ch3_1A_Dunno:
+	END_MAIN
+
+Ch3_1A_Tutorial:
+	END_MAIN
+
+Ch3_1A_Ballista1:
+	BLST
+	ALIGN 4
+
+Ch3_1A_Ballista2:
+	BLST
+	ALIGN 4
+
+Ch3_1A_Units1:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [15,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [14,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [19,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [19,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [18,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [19,16] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [18,17] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [16,17] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+CutsceneUnits:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [19,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+EnemyUnits:
+	UNIT ZaxonCh3_1A Knight	0x00 Level(8, Enemy, False) [4,2]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT 0x8B Shaman	ZaxonCh3_1A Level(9, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI 
+	UNIT 0x8C Witch	ZaxonCh3_1A Level(2, Enemy, True) [7,1]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x8C Witch	ZaxonCh3_1A Level(2, Enemy, True) [9,2]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x88 Soldier	ZaxonCh3_1A Level(11, Enemy, True) [14,10]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT 0x88 Soldier	ZaxonCh3_1A Level(9, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT 0x88 Soldier	ZaxonCh3_1A Level(11, Enemy, True) [15,10]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x88 Knight	ZaxonCh3_1A Level(3, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT 0x88 Knight	ZaxonCh3_1A Level(4, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT 0x89 Archer	ZaxonCh3_1A Level(10, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x89 Archer	ZaxonCh3_1A Level(11, Enemy, True) [15,8]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT 0x86 Cavalier_F	ZaxonCh3_1A Level(11, Enemy, True) [6,5]	0x00 0x00 0x0 0x00 [Axereaver] AttackInRangeAI
+	UNIT 0x86 Cavalier	ZaxonCh3_1A Level(11, Enemy, True) [8,5]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x89 Archer_F	ZaxonCh3_1A Level(13, Enemy, True) [7,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT
+
+FernandUnpromoted:
+	UNIT FernandEnemy1 Cavalier	ZaxonCh3_1A Level(11, Enemy, False) [2,14]	DropItem 0x00 0x1 REDA3R16 [SteelLance, Vulnerary] AttackInRangeAI 
+	UNIT
+
+FernandPromoted:
+	UNIT FernandEnemy1 Paladin ZaxonCh3_1A Level(3, Enemy, False) [2,14]	DropItem 0x00 0x1 REDA3R16 [SteelLance, DumaIcon] AttackInRangeAI 
+	UNIT
+
+CavalierGroup:
+	UNIT 0x86 Cavalier	FernandEnemy1 Level(10, Enemy, True) [6,14]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT 0x86 Cavalier_F	FernandEnemy1 Level(11, Enemy, True) [6,15]	0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
+	UNIT 0x86 Cavalier	FernandEnemy1 Level(10, Enemy, True) [5,16]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT
+	
+Reinforcements1:
+	UNIT 0x86 Cavalier	ZaxonCh3_1A Level(10, Enemy, True) [17,16]	0x00 0x00 0x1 REDA17R16 [IronLance] AttackInRangeAI
+	UNIT 0x86 Cavalier	ZaxonCh3_1A Level(8, Enemy, True) [18,14]	0x00 0x00 0x1 REDA18R14 [SteelLance] AttackInRangeAI
+	UNIT
+
+
+Ch3_1A_BeginningScene:
+	MUSC 0x48
+	CAM1 [16, 15]
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD2 0x1 CutsceneUnits
+	ENUN
+
+	SetBackground(0x1B)
+	Text(Ch3_1A_OpeningText)
+	ClearBackground
+
+	SVAL 0x1 0x1
+	CHECK_EVENTID gPlayerPromotedFernand 
+	IFNE 0x2 0xC 0x1 //if true, skip cutscene
+		LOAD1 0x1 FernandPromoted
+		ENUN
+		GOTO 0x3
+	LABEL 0x2
+	LOAD1 0x1 FernandUnpromoted
+	ENUN
+
+	LABEL 0x3
+	CAM1 FernandEnemy1
+	STAL 20
+	FlashCursor(FernandEnemy1, 60)
+	STAL 20
+	Text(Ch3_1A_OpeningText_2)
+	MOVE 0x10 Clive [4,16]
+	ENUN
+	MUSC 0x28
+	STAL 20
+	Text(Ch3_1A_OpeningText_3)
+	FADI 2
+
+	CLEA 0x0
+	LOAD1 0x1 CavalierGroup
+	ENUN
+	LOAD3 0x0 Ch3_1A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	ENUN
+	GotoPrepScreen
+	ENDA
+
+Ch3_1A_EndingScene:
+	CALL UnifiedBEXPCaller
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter3A1Completed
+	EVBIT_MODIFY 0x0
+	MUSC 0x32
+	SetBackground(0x1B)
+	Text(Ch3_1A_EndingText)
+	STARTFADE
+	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	MNCH 0x10 //go to ch16
+	ENDA

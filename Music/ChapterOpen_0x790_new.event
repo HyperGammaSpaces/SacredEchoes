@@ -1,0 +1,496 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	ChapterOpen_0x790_new_grp  voicegroup000
+	#define	ChapterOpen_0x790_new_pri  0
+	#define	ChapterOpen_0x790_new_rev  0
+	#define	ChapterOpen_0x790_new_mvl  85
+	#define	ChapterOpen_0x790_new_key  0
+	#define	ChapterOpen_0x790_new_tbs  1
+	#define	ChapterOpen_0x790_new_exg  0
+	#define	ChapterOpen_0x790_new_cmp  1
+
+	// .rodata
+	//	ChapterOpen_0x790_new
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+ChapterOpen_0x790_new_1:
+	BYTE	KEYSH   ChapterOpen_0x790_new_key+0
+// 000   ----------------------------------------
+	BYTE	TEMPO   150*ChapterOpen_0x790_new_tbs/2
+	BYTE		VOICE   1
+	BYTE		VOL     105*ChapterOpen_0x790_new_mvl/mxv
+	BYTE		PAN     c_v+0
+	BYTE	W96
+// 001   ----------------------------------------
+	BYTE		VOL     47*ChapterOpen_0x790_new_mvl/mxv
+	BYTE		TIE     Cn1   v127
+	BYTE	W03
+	BYTE		VOL     48*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        49*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        50*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        51*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        52*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        52*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        53*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        54*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        55*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        56*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        57*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        57*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        58*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        59*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        60*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        61*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        62*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        62*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        63*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        64*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        65*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        66*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        66*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        67*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        68*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        69*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        70*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        71*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        71*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        72*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        73*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        74*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        75*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        76*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        76*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        77*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        78*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        79*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        80*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        81*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        81*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        82*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        83*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        84*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        85*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        85*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        86*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        87*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        88*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        89*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        90*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        90*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        91*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        92*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        93*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        94*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        95*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+// 002   ----------------------------------------
+	BYTE	W01
+	BYTE		        95*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        96*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        97*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        98*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        99*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        100*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        100*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        101*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        102*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        103*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        104*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		        105*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W04
+	BYTE		        104*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        103*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        102*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        101*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        100*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        100*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        99*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        98*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        97*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        96*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        95*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        95*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        94*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        93*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        92*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        91*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        90*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        90*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        89*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        88*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        87*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        86*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        85*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        85*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        84*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        83*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        82*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        81*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        81*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        80*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        79*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        78*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        77*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        76*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        76*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+// 003   ----------------------------------------
+	BYTE		        75*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        74*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        73*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        72*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        71*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        71*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        70*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        69*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        68*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        67*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        66*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        66*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        65*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        64*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        63*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        62*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        62*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        61*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        60*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        59*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        58*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        57*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        57*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        56*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        55*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        54*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        53*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        52*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        52*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        51*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        50*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        49*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        48*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        47*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        47*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        46*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        45*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        44*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        43*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        42*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        42*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        41*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        40*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        39*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        38*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+// 004   ----------------------------------------
+	BYTE		        38*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        37*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        36*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        35*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        34*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        33*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        33*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        32*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        31*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        30*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        29*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        28*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        28*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        27*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        26*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        25*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        24*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        23*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        23*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        22*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        21*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        20*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        19*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        19*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        18*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        17*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        16*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        15*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        14*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        14*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        13*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        12*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        11*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        10*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        9*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        9*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        8*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        7*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W03
+	BYTE		        6*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        5*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        4*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        4*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        3*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        2*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        1*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W02
+	BYTE		        0*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	W01
+	BYTE		EOT   
+// 005   ----------------------------------------
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+ChapterOpen_0x790_new_2:
+	BYTE		VOL     127*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	KEYSH   ChapterOpen_0x790_new_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   47
+	BYTE	W60
+	BYTE		N09     En1   v028
+	BYTE	W12
+	BYTE		        En1   v052
+	BYTE	W12
+	BYTE		        En1   v076
+	BYTE	W12
+// 001   ----------------------------------------
+	BYTE		N48     En1   v104
+	BYTE	W96
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W96
+// 004   ----------------------------------------
+	BYTE	W96
+// 005   ----------------------------------------
+	BYTE	FINE
+
+//**************** Track 3 (Midi-Chn.3) ****************//
+
+ChapterOpen_0x790_new_3:
+	BYTE		VOL     127*ChapterOpen_0x790_new_mvl/mxv
+	BYTE	KEYSH   ChapterOpen_0x790_new_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   121
+	BYTE	W48
+	BYTE		N48     En2   v104
+	BYTE	W48
+// 001   ----------------------------------------
+	BYTE		N24     Cn1 
+	BYTE		N12     Dn1 
+	BYTE		N96     Fn2 
+	BYTE	W12
+	BYTE		N06     Dn1 
+	BYTE	W84
+// 002   ----------------------------------------
+	BYTE	W96
+// 003   ----------------------------------------
+	BYTE	W96
+// 004   ----------------------------------------
+	BYTE	W96
+// 005   ----------------------------------------
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+ChapterOpen_0x790_new:
+	BYTE	3	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	ChapterOpen_0x790_new_pri	// Priority
+	BYTE	ChapterOpen_0x790_new_rev	// Reverb.
+
+	POIN2	ChapterOpen_0x790_new_grp
+
+	POIN2	ChapterOpen_0x790_new_1
+	POIN2	ChapterOpen_0x790_new_2
+	POIN2	ChapterOpen_0x790_new_3
+
+	

@@ -1,0 +1,81 @@
+//Spell cost list
+
+PUSH
+	ORG $CC24C //freespace in the H&S screen because we have the skip installed
+	SpellCostGetter:
+	#include "CostGetter.lyn.event"
+POP
+
+//for simplicity's sake, covers all of 0x38 to 0x5A with no gaps
+SpellCostList:
+BYTE Fire			$01	//38
+BYTE Thunder		$02
+BYTE Sagittae		$08
+BYTE Bolting		$09
+BYTE Ragnarok		$0A
+BYTE $3D 			$01 //dummy
+BYTE Excalibur		$03
+BYTE Nosferatu		$00
+BYTE Shine			$02
+BYTE Seraphim		$04
+BYTE Purge			$08
+BYTE Aura			$06
+BYTE $44 			$03 //dummy
+BYTE Miasma			$01
+BYTE Selene			$03
+BYTE Sisyphus		$00
+BYTE Mire			$02
+BYTE Medusa			$07
+BYTE Thanatos		$05
+BYTE Heal			$01
+BYTE Expel			$0E
+BYTE Recover		$06
+BYTE Physic			$03
+BYTE Fortify		$0C
+BYTE Restore		$04
+BYTE Silence		$0A
+BYTE Freeze			$0B
+BYTE Entrap			$0C
+BYTE Warp			$08
+BYTE Rescue			$06
+BYTE TorchStaff		$02
+BYTE Invoke			$0C
+BYTE Unlock			$03
+BYTE Rewarp			$05
+BYTE Anew			$18	//5A
+BYTE $00 $00
+ALIGN 4
+
+//For HP cost func:
+//r0 = unit pointer, r1 = item ID
+//Check if item ID 0x75 is in inventory
+//If not, check if item ID is between 0x38 and 0x5A
+//if true, apply cost from table
+
+//push {r4, r5, r14}
+//mov r4, r0
+//mov r5, #0x1C
+//Loop1Start:
+//add r5, #0x2
+//ldrb r4, [r5]
+//cmp r4, #0x75 @animus ring
+//beq EndHPCost @if found, do not cost
+//cmp r5, #0x26
+//blt Loop1Start
+//CheckItemID:
+//cmp r1, #0x38
+//blt EndHPCost
+//mov r4, #0x38
+//sub r4, r1, r4 
+//cmp r4, #0x22
+//bgt EndHPCost
+//ldr r5, =SpellCostList
+//lsl r4, r4, #0x1
+//add r5, r4, #0x1
+//ldrb r0, r5
+//EndHPCost:
+//pop {r4, r5}
+//pop {r1}
+//bx r1
+
+

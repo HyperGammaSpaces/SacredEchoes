@@ -1,0 +1,22 @@
+#ifndef MODULAR_GETTER_LUCK_EVENT
+#define MODULAR_GETTER_LUCK_EVENT
+
+#include "_Common.event"
+
+pLuckModifiers: // Luck
+	POIN prAddUnitLuck prAddEquipLuck prItemPassiveLuck
+	#ifdef __DebuffMinZero__
+	POIN prMinZero
+	#endif
+WORD 0
+
+prAddUnitLuck:
+	rAdd(rSByteAt(UNIT_LUCK))
+
+prAddEquipLuck:
+	rAdd(rForUnitEquipped(rCallExternal(prGetItemLckBonus)))
+
+prItemPassiveLuck:
+	rPassiveStatBoosts(STAT_LUCK)
+
+#endif // MODULAR_GETTER_LUCK_EVENT

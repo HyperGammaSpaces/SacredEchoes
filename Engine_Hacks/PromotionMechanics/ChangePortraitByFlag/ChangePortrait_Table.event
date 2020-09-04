@@ -1,0 +1,17 @@
+#define PortraitChangeTableEntry(Portrait_ID,Unit_ID,Class_ID,Map_ID,VersionFlag,Event_ID) "SHORT Portrait_ID; BYTE Unit_ID Class_ID Map_ID VersionFlag; SHORT Event_ID; "
+
+//@struct ChangePortrait_Table
+//@{
+//@	short	portrait_id				require
+//@	byte	unit_id;				require
+//@	byte	class_id;				00=ANY or FF=any
+//@	byte	map_id;					FF=ANY
+//@	byte	editon					FF=ANY
+//@	ushort	flag_id;	Flag		00=ANY
+//@}//sizeof(16bytes)
+
+
+PortraitChangeByFlag_Table:
+PortraitChangeTableEntry(0x03,0x01,0x04,0xFF,0xFF,0x00)  // Alm
+PortraitChangeTableEntry(0x0F,0x0C,0x03,0xFF,0xFF,0x00)  // Celica
+PortraitChangeTableEntry(0x00,0x00,0x00,0x00,0x00,0x00)  // term
