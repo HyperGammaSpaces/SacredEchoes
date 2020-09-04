@@ -3,7 +3,7 @@ copy "FE8_clean.gba" "SacredEchoes.gba"
 cd "%~dp0Tables"
 echo: | (c2ea "%~dp0FE8_clean.gba")
 cd "%~dp0Text"
-echo: | (textprocess_v2 text_buildfile.txt)
+echo: | (text-process-classic text_buildfile.txt --parser-exe "%~dp0Event Assembler/Tools/ParseFile.exe")
 cd "%~dp0Event Assembler"
 ColorzCore A FE8 "-output:%~dp0SacredEchoes.gba" "-input:%~dp0ROM Buildfile.event" "--nocash-sym"
 cd "%~dp0sym"

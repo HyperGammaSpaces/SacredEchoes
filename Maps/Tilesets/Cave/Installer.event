@@ -1,0 +1,25 @@
+
+#include "CaveAnim/CaveAnimation.event"
+
+ALIGN 4
+CaveTiles:
+#incbin "Cave_comp.dmp"
+
+ALIGN 4
+CaveObjects:
+#incbin "Cave.dmp"
+
+ALIGN 4
+CavePalette1:
+#incbin "CavePalette.pal.bin"
+
+ALIGN 4
+CavePalette2:
+#incbin "CavePalette2.pal.bin"
+
+EventPointerTable(0x10, CaveObjects)
+EventPointerTable(0x11, CavePalette1)
+EventPointerTable(0x12, CaveTiles)
+EventPointerTable(0x53, CaveAnimation)
+//EventPointerTable(0x91, CavePalette2)
+//EventPointerTable(0x92, CavePalette3)

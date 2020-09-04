@@ -1,0 +1,15 @@
+
+ALIGN 4
+CastleTiles:
+#incbin "FE8_26_comp.dmp"
+
+PUSH
+ORG $1AE1F0
+CastlePalette1:
+#incbin "castle1.pal.bin"
+POP
+
+EventPointerTable(0x2F, 0x18B89C) //castle obj
+EventPointerTable(0x30, CastlePalette1) //castle pal
+EventPointerTable(0x31, CastleTiles) //castle tile
+EventPointerTable(0x33, 0x59D6F8) //castle anim

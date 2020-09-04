@@ -1,0 +1,18 @@
+
+ALIGN 4
+TowerTiles:
+#incbin "FE8_43_comp.dmp"
+
+ALIGN 4
+TowerObjects:
+#incbin "TombTiles.dmp"
+
+PUSH
+ORG $1AD570
+TowerPalette:
+#incbin "tower.pal.bin"
+POP
+
+EventPointerTable(0x29, TowerObjects) //tower obj
+EventPointerTable(0x2A, TowerPalette) //tower pal
+EventPointerTable(0x2B, TowerTiles) //tower tile

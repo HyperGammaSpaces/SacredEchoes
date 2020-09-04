@@ -1,6 +1,6 @@
 #ifdef _FE8_
     #include "EAstdlib.event"
-    #include "Custom Definitions.event"
+    #include "Definitions/_Master Definition Installer.event"
 	#include "Animations/AnimationAssociationTable.event"
 
     ORG FreeSpace
@@ -18,7 +18,7 @@
     MESSAGE Used hax space ends at currentOffset
 	
 	PUSH
-	ORG $1000000
+	ORG EndSpace
 	//Music
     #include "Music/Music Installer.event"
 	//GFX

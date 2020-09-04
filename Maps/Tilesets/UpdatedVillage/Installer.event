@@ -1,0 +1,24 @@
+
+ALIGN 4
+VillageTiles:
+#incbin "Village_comp.dmp"
+
+ALIGN 4
+VillageObjects:
+#incbin "Village.dmp"
+
+ALIGN 4
+VillageNightPalette:
+#incbin "villagepal-night.pal.bin"
+
+PUSH
+ORG $1AEAB0
+VillagePalette:
+#incbin "villagepal.pal.bin" 
+POP
+
+EventPointerTable(0x01, VillageObjects) //village obj
+EventPointerTable(0x02, VillagePalette) //village pal
+EventPointerTable(0x03, VillageTiles) //village tile
+EventPointerTable(0x05, 0x59D568) //village anim
+EventPointerTable(0x49, VillageNightPalette) //village night pal
