@@ -1,28 +1,54 @@
-#ifdef CASUAL_MODE
-
-
-// eid $B0 enables Casual Mode (fallen units come back next chapter).
-// hack by circleseverywhere
-
-//check out C4918 for where the intro hooks
-
-#ifdef _FE8_
-
-  {
+// option byte 0x42&40 enables Casual Mode (fallen units come back next chapter).
+// hack by circleseverywhere and 7743, menu by hypergammaspaces
 
   PUSH
     ORG $18418
-      jumpToHack(CasualMode)
+      jumpToHack(CasualMode_Main)
+	ORG $30D18
+	  SHORT $2D01 //cmp r5, #0x1
+	  SHORT $DD03 //ble 30D24
+	ORG $30D24
+	  //leave r6 for later, it will set casual mode.
+	  SHORT $2001 //mov r0, #0x1
+	  SHORT $2D01 //cmp r5, #0x1
+	  SHORT $DA00 //bge 30D2A
+	  SHORT $2000 //mov r0, #0x0
+	  SHORT $2142 //mov r1, #0x42
+	  SHORT $19C9 //add r1, r1, r7
+	  SHORT $468C //mov r12, r1
+	  SHORT $2101 //mov r1, #0x1
+	  SHORT $4008 //and r0, r1
+	  SHORT $0140 //lsl r0, r0, #0x5
+	  //r1 and r2 are scratch now
+	  jumpToHack(CheckCasualModeInNewSave)
+	ORG $A4E98
+	  B($A4EA4)
+	ORG $A9250
+	  replaceWithHack(New_SetOptionsFromDifficultySelect)
   POP
 
-  ALIGN 4
-  CasualMode:
-    #incbin "asm/CasualModeFE8.dmp"
-	WORD gCasualModeFlag
-  }
+#include "asm/CasualModeMenu.lyn.event"
 
-#else // _FE8_
-  ERROR Casual mode hack is for FE8
-#endif // _FE8_
+ALIGN 4
+CMTextIDs:
+SHORT CasualModeMenuOption ClassicModeMenuOption
 
-#endif // CASUAL_MODE
+ALIGN 4
+CasualModeSelectProc:
+WORD $00004 $080AC078+1 //set destructor
+WORD $00002 $080AD5B4+1 //call routine (i/o register setup)
+WORD $0000E $0 //sleep 0frame
+WORD $00002; POIN CM_CallGraphicsSetup+1 //call routine
+WORD $1000E $0 //sleep 1frame
+WORD $00002 $080AD5D8+1 //call routine EnableAllGfx
+WORD $80018 $080AE2D0+1 //call routine NewFadeIn
+WORD $00014 $080AE2A0+1 //call routine FadeInExists
+WORD $0000B $0 //label 0
+WORD $00003; POIN CM_HandleUserInput+1 //set loop routine
+WORD $1000B $0 //label 1
+WORD $A000E $0 //sleep 10frame
+WORD $2000B $0 //label 2
+WORD $80018 $080AE2F4+1 //call routine NewFadeOut
+WORD $00014 $080AE2B8+1 //call routine FadeOutExists
+WORD $00002 $080AC3DC+1 //call routine
+WORD $0 $0 //term
