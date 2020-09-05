@@ -1,0 +1,30 @@
+//Scrolling bg
+PUSH
+  ORG $b12db4
+  #incbin "scrollybg.dmp"
+  
+/*  ORG $b1754c
+  #incbin "bin\scrollybg_pal.dmp" //warning: this includes the second palette not in image
+
+  ORG $b19dec //the two glowing balls
+  #incbin "bin\chapter_start_sparkles_pal.dmp"
+  
+  ORG $B19854 //swirly fog FX
+  #incbin "chapterintrofogFX.pal.bin"
+*/
+  ORG $202B0
+  POIN NewChapterIntroThingy
+  
+  ORG $1F310
+  POIN NewPhaseFrame
+  ORG $4D354
+  POIN NewPhaseFrame
+POP
+
+ALIGN 4
+NewChapterIntroThingy:
+#incbin "chaptertitle_08B19874_edited.dmp"
+
+ALIGN 4
+NewPhaseFrame:
+#incbin "PHASE_FRAME_0859F020_new.dmp"

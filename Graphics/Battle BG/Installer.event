@@ -1,0 +1,23 @@
+
+PUSH
+
+//battle bg entry 43
+ORG $75AAAC
+POIN CaveBattleBGImg
+ORG $75AAB0
+POIN CaveBattleBGTSA
+ORG $75AAB4
+POIN CaveBattleBGPal
+POP
+
+ALIGN 4
+CaveBattleBGImg:
+#incbin "CaveBattleBGImg.dmp"
+
+ALIGN 4
+CaveBattleBGTSA:
+#incbin "CaveBattleBGTSA.dmp"
+
+ALIGN 4
+CaveBattleBGPal:
+#incbin "CaveBattleBGPal.dmp"

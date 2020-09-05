@@ -1,0 +1,37 @@
+PUSH
+  	ORG $AC188
+	POIN NewDifficultyButtons
+	//difficulty select palettes
+	ORG $A29498
+	#incbin "difficulty_A29498_easyactive_SUNSET.pal.bin"
+	ORG $A294B8
+	#incbin "difficulty_A294B8_easyinactive_SUNSET.pal.bin"
+	ORG $A294D8
+	#incbin "difficulty_A294D8_normalactive_SUNSET.pal.bin"
+	ORG $A294F8
+	#incbin "difficulty_A294F8_normalinactive_SUNSET.pal.bin"
+	ORG $A29518
+	#incbin "difficulty_A29518_hardactive_SUNSET.pal.bin"
+	ORG $A29538
+	#incbin "difficulty_A29538_hardinactive_SUNSET.pal.bin"
+
+	ORG $A1B638
+	#incbin "pal-a1b638.pal.bin"
+	ORG $A1E0D8
+	#incbin "pal-a1b638.pal.bin"
+	ORG $A27F68
+	#incbin "pal-a1b638.pal.bin"
+	ORG $A2E1D8
+	#incbin "pal-a1b638.pal.bin"
+	ORG $A29438
+	#incbin "difficulty.pal.bin"
+	ORG $A27FE8
+	#incbin "pal-a27fe8.pal.bin"
+	ORG $A2E1B8
+	#incbin "pal-a2e1b8.pal.bin"
+
+POP
+
+ALIGN 4
+NewDifficultyButtons:
+#incbin "difficulty.dmp" 

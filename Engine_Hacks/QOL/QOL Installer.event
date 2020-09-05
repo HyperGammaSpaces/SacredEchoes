@@ -1,0 +1,96 @@
+
+PUSH
+
+  ORG 0x18a58
+  #incbin "MeleeMagicFix/Melee and Magic Fix_fe8.dmp"
+
+  ORG $16004
+  SHORT $4900
+  SHORT $468F
+  POIN music10change
+
+  ORG $20fac
+  #incbin "KillChapterPrologueBGM/kill_chapter_prologue_bgm.bin"
+  ORG $20CF0
+  #incbin "KillChapterPrologueBGM/kill_chapter_prologue_bgm2.bin"
+  ORG $20D84
+  #incbin "KillChapterPrologueBGM/kill_chapter_prologue_bgm2.bin"
+  ORG $20D94
+  #incbin "KillChapterPrologueBGM/kill_chapter_prologue_bgm3.bin"
+  ORG $20D00
+  #incbin "KillChapterPrologueBGM/kill_chapter_prologue_bgm3.bin"
+
+  //Fast promo dings
+  #define Time_Between_Stats 5 //default is 20
+  ORG $7F464
+  BYTE Time_Between_Stats
+  ORG $741E0
+  BYTE Time_Between_Stats+1
+  
+  //lords and thieves can pick
+  ORG $23E8C
+  jumpToHack(MultiPick)
+
+POP
+
+//Give several classes pick
+MultiPick:
+#incbin "Multipick/doubleRogueSkillFE8.dmp"
+POIN LockpickClassTable
+
+LockpickClassTable:
+BYTE 0x01 0x02 0x03 0x04 0x17 0x18 0x33 0x00 
+ALIGN 4
+  
+//Talk and Support don't end your turn
+ALIGN 4
+#include "ContemporaryTalkSupport/ContemporaryTalkSupport.event"
+
+//HP Bars (and effective weapon warning)
+ALIGN 4
+#include "HpBars/HpBars.event"
+
+//Improved Sound Mixer
+ALIGN 4
+#include "SoundEngine/SoundMixer.event"
+
+//Danger Zone (select button)
+ALIGN 4
+#include "DangerZone/DangerZone.event"
+  
+//Negative stat boosts
+ALIGN 4
+#include "NegativeStatBoosts/NegativeStatBoosts.event"
+  
+//Chapter names as text
+ALIGN 4
+#include "FE8_ChapterNames2/fe8_chnames.event"
+
+//Updates to the Unit Action menu
+ALIGN 4
+#include "UnitActionRework/UnitActionRework.event"
+  
+//Battle stats with anims off
+ALIGN 4
+#include "BattleStatswithAnimsOff/BattleStatsMasterEAFile.event"
+
+//Set cond ASMC
+ALIGN 4
+#include "SetConditionASMC/Set_Condition.event"
+  
+//Guide stuff
+ALIGN 4
+#include "Guide/GuideStuff.event"
+
+//Pressing A on an enemy lets you move next to them and attack  
+ALIGN 4
+#include "MovementArrowHack/MovementArrowHack.event"
+  
+//Casual mode
+ALIGN 4
+#include "CasualMode/CasualMode.event"
+
+//Music 10 change
+ALIGN 4
+music10change:
+#incbin "Music10Change/music10change.dmp"

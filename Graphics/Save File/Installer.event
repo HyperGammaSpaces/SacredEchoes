@@ -1,0 +1,88 @@
+
+PUSH
+    //Save File Palettes
+	/*
+	//Stone theme
+	ORG $A07B18
+	#incbin "SavePalette/savepalette_A07B18_normalactive_STONE.pal.bin"
+	ORG $A07B38
+	#incbin "SavePalette/savepalette_A07B38_normalinactive_STONE.pal.bin"
+	ORG $A07C98
+	#incbin "SaveText/savetext_A07C98_normalactive_STONE.pal.bin"
+	ORG $A07CB8
+	#incbin "SaveText/savetext_A07CB8_normalinactive_STONE.pal.bin"
+	*/
+	
+	/*
+	//Sunset theme
+	*/
+	//easy mode
+	ORG $A07AD8
+	#incbin "SavePalette/savepalette_A07AD8_easyactive_SUNSET.pal.bin"
+	ORG $A07AF8
+	#incbin "SavePalette/savepalette_A07AF8_easyinactive_SUNSET.pal.bin"
+	//normal mode
+	ORG $A07B18
+	#incbin "SavePalette/savepalette_A07B18_normalactive_SUNSET.pal.bin"
+	ORG $A07B38
+	#incbin "SavePalette/savepalette_A07B38_normalinactive_SUNSET.pal.bin"
+	//celica mode
+	ORG $A07B58
+	#incbin "SavePalette/savepalette_A07B58_celicaactive_SUNSET.pal.bin"
+	ORG $A07B78
+	#incbin "SavePalette/savepalette_A07B78_celicainactive_SUNSET.pal.bin"
+	//hard mode
+	ORG $A07B98
+	#incbin "SavePalette/savepalette_A07B98_hardactive_SUNSET.pal.bin"
+	ORG $A07BB8
+	#incbin "SavePalette/savepalette_A07BB8_hardinactive_SUNSET.pal.bin"
+	//celica hardmode
+	ORG $A07BD8
+	#incbin "SavePalette/savepalette_A07BD8_celicahardactive_SUNSET.pal.bin"
+	ORG $A07BF8
+	#incbin "SavePalette/savepalette_A07BF8_celicahardinactive_SUNSET.pal.bin"
+	
+	//text palettes
+	//easy mode
+	ORG $A07C58
+	#incbin "SaveText/savetext_A07C58_easyactive_SUNSET.pal.bin"
+	ORG $A07C78
+	#incbin "SaveText/savetext_A07C78_easyinactive_SUNSET.pal.bin"
+	//normal mode
+	ORG $A07C98
+	#incbin "SaveText/savetext_A07C98_normalactive_SUNSET.pal.bin"
+	ORG $A07CB8
+	#incbin "SaveText/savetext_A07CB8_normalinactive_SUNSET.pal.bin"
+	//celica mode
+	ORG $A07CD8
+	#incbin "SaveText/savetext_A07C98_normalactive_SUNSET.pal.bin"
+	ORG $A07CF8
+	#incbin "SaveText/savetext_A07CB8_normalinactive_SUNSET.pal.bin"
+	//hard mode
+	ORG $A07D18
+	#incbin "SaveText/savetext_A07D18_hardactive_SUNSET.pal.bin"
+	ORG $A07D38
+	#incbin "SaveText/savetext_A07D38_hardinactive_SUNSET.pal.bin"
+	//celica hard mode
+	ORG $A07D58
+	#incbin "SaveText/savetext_A07D18_hardactive_SUNSET.pal.bin"
+	ORG $A07D78
+	#incbin "SaveText/savetext_A07D38_hardinactive_SUNSET.pal.bin"
+	
+	ORG $A8EDC
+	POIN NewSaveMenu
+	ORG $AA43C
+	POIN NewSaveMenu
+
+	ORG $896a4
+	POIN ColumnGfx
+
+POP
+
+ALIGN 4
+NewSaveMenu:
+#incbin "savemenu-A26A74.dmp" 
+
+ALIGN 4
+ColumnGfx:
+#incbin "a09e4c.dmp"

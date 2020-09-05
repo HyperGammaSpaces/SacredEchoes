@@ -1,0 +1,68 @@
+
+PUSH
+  //Monster Weapon display fix
+  ORG $16e20
+  #incbin "ItemsAndConvoy/Monsterweapon.dmp"
+  ORG $892f2
+  BYTE 6
+  ORG $1e7fc
+  BYTE 0xC
+
+  //Legendary weapon flash
+  ORG 0x58AD2
+  #incbin "ItemsAndConvoy/weapon_battle_flash.dmp"
+  POIN weapon_battle_flash_Table
+POP
+
+//Legendary weapon flash table
+ALIGN 4
+#include "ItemsAndConvoy/weapon_battle_flash_Table.event"
+
+//Bow and handaxe anim fix
+ALIGN 4
+#include "ItemsAndConvoy/RangedAnimation.event"
+
+//Can't remove key items
+ALIGN 4
+#include "ItemsAndConvoy/trade_fix/TradeabilityChanges.event"
+
+//Item effectiveness rework
+ALIGN 4
+#include "ItemsAndConvoy/EffectivenessRework/EffectivenessEA.event"
+
+//Range mods
+ALIGN 4
+#include "ItemsAndConvoy/RangeFix/RangeModifiers.event"
+
+//Battle mechanics
+ALIGN 4
+#include "BattleMechanics/GaidenBattleMechanics.event"
+
+//Promotion mechanics	
+ALIGN 4
+#include "PromotionMechanics/GaidenPromotionMechanics.event"
+
+//Support mechanics
+ALIGN 4
+#include "SupportHax/SupportSystemMods.event"
+
+//Post action loop
+ALIGN 4
+#include "PostActionEvents/PostActionEvents.event"
+
+//Convoy split
+ALIGN 4
+#include "ItemsAndConvoy/Convoy_Split_Merge/FE8-Convoy_Stuff_EA.event"
+
+//Various healing items and checks
+ALIGN 4
+#include "ItemsAndConvoy/PassiveHealing/HPRestorationCalcLoop.event"
+
+//Magic HP costs
+ALIGN 4
+#include "HPCost/HPHealingFixes.event"
+
+//HP regen items
+//ALIGN 4
+//Healing_Items_Hack:
+//#incbin "ItemsAndConvoy/HealingWeapons.dmp"

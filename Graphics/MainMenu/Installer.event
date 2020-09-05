@@ -1,0 +1,19 @@
+PUSH
+	ORG $AF7D0
+	POIN NewMainMenuGfx
+	ORG $8e088
+	POIN NewMainMenuGfx
+
+	//Main Menu bg
+	  ORG $a21658
+	  #incbin "mainmenu-new.dmp"
+	  ORG $a25dcc
+	  #incbin "mainmenu-new.pal.bin"
+	//Remove fog
+	  ORG $a26380
+	  #incbin "no_fog_comp.dmp"
+POP
+
+ALIGN 4
+NewMainMenuGfx:
+#incbin "a2d32c.dmp"

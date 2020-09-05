@@ -1,0 +1,12 @@
+PUSH
+ORG $1C21E4 
+#define inBLRange
+  //menu semitransparency
+  #include "Semitransparency/Semitransparency_changes.event"
+  
+  //press L to turn battle anims on or off
+  #include "LToggle/LToggle.event"
+  
+#undef inBLRange
+#define CurrentEndOfBLRange CURRENTOFFSET
+POP

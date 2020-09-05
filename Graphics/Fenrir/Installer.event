@@ -1,0 +1,28 @@
+//Jedah-themed Fenrir
+//Repoint and compress: 652948, 65AF3C
+PUSH
+ORG $5D66DC
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic LaughingSkullsGraphic
+POIN LaughingSkullsGraphic
+ORG $60ED4
+POIN DeathSpellSigil
+POP
+
+ALIGN 4
+LaughingSkullsGraphic:
+#incbin "652948.dmp"
+
+ALIGN 4
+DeathSpellSigil:
+#incbin "65AF3C.dmp"

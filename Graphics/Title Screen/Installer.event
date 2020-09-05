@@ -1,0 +1,49 @@
+//Make the FE8 title screen background not be cut up in a way that seems like a psychotic clown did it
+//By Tequila
+
+	ALIGN 4
+
+	titlebackgroundimage:
+	#incext compress "titlebackgroundimage.img.bin"
+	
+	ALIGN 4
+	
+	titlebackgroundpalette:
+	#incbin "titlebackgroundimage.pal.bin"
+	
+	ALIGN 4
+	
+	titlebackgroundtsa:
+	#incbin "titlebackgroundtsa.bin"
+	
+	//no intro cinematic, from essential fixes
+	PUSH; ORG $C6714; SHORT 0; POP
+	
+	//make an alternative option to just skip the problematic part?
+	
+	PUSH
+	//draw our thing instead of the regular background
+	ORG $C5724; jumpToHack(titlebackgrounddrawer)
+	//skip a bunch of stuff
+	ORG $C5738; SHORT 0xE030
+	ORG $C57A8; SHORT 0xE048
+	ORG $C579E; SHORT 0x46C0
+	//ORG $C5894; SHORT 0x46C0
+	//ORG $C625E; SHORT 0x46C0 0x46C0
+	
+	//new title scroll
+	ORG $c5830
+	POIN NewTitleScroll
+	
+	POP
+	
+	ALIGN 4
+	titlebackgrounddrawer:
+	#incbin "titlebackgroundasm.dmp"
+	POIN titlebackgroundimage
+	POIN titlebackgroundpalette
+	POIN titlebackgroundtsa
+	
+	ALIGN 4
+	NewTitleScroll:
+	#incbin "TitleScroll.dmp"

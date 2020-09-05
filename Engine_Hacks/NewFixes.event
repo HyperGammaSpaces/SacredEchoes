@@ -1,0 +1,133 @@
+PUSH
+	//Set Celica as main character
+	//22FDC is seize usability
+	ORG $37B8A 
+	BYTE $0C
+	ORG $37B96 
+	BYTE $0C
+	ORG $33274
+	BYTE $0C	
+	ORG $3327C
+	BYTE $0C
+	ORG $23F94
+	BYTE $0C
+	
+	//Give Falcoknights Slayer
+//	ORG $16C94
+//	BYTE $49
+//	ORG $16C98
+//	BYTE $49
+
+//	//Determines which class growths to use when autoleveling ("previous" class or current class).
+//	//$7954 for vanilla, $7914 for smooth autolevel.
+//	ORG $18138
+//	SHORT $7914
+
+	//Do not autolevel promoted enemies.
+	ORG $18134
+	SHORT $46C0 $E007
+	
+	//Remove the 1G item
+	ORG $115AA
+	BYTE $9B
+	
+	//Don't draw uses for unbreakables
+	ORG $16A60
+	//BL($A3B8)
+	SHORT $1C01 $4640
+	BL($4004) //Text_DrawString
+	SHORT $68B0 $2308 $4018 $2800
+	SHORT $D124 //BNE($16ABC) //$16A70
+	SHORT $2400 $2D01 $D100 $2401
+	SHORT $1C38 $3018 $1C21 $2216
+	BL($4b0c) //DrawSpecialUIChar
+	SHORT $2401 $2D01 $D000 $2402
+	SHORT $1C38 $3016 $464B $121A $1C21
+	BL($4b94) //DrawUINumberOr2Dashes
+	SHORT $1C39 $311C $7D32 $1C08 $1C21
+	BL($4b94) //DrawUINumberOr2Dashes
+	B($16ABC)
+	
+	//Give Atlas/Palla a support
+	
+	//Disable Link Arena
+	ORG $AB90E
+	BYTE $00 $00 $00 $20
+	
+	//remove Record from tower/ruins maps
+	ORG $24C49
+	BYTE $E0
+	
+	//set thunder sword to always use ranged anim
+	//ORG $582a8
+	//BYTE $7
+	//ORG $58290
+	//BYTE $7
+	
+	//faster walk movement with A button
+	ORG $79514
+	BYTE $80
+	
+	//gain support by being within 2 tiles
+	ORG $284E4
+	BYTE $02 $28 $04 $DD
+	ORG $28442
+	BYTE $6D $D0
+	
+	//fix various things in 5x
+	ORG $3327B
+	BYTE $E0
+	ORG $24DF2
+	SHORT $0
+	ORG $3164C
+	BYTE $04 $E0 $00 $00
+	ORG $37B95
+	BYTE $E0
+	
+	//fix supply before ch2
+	ORG $31644
+	WORD $0
+	ORG $31648
+	WORD $0
+    ORG $23f6e //Access Supply
+    SHORT 0
+	ORG $31630
+	SHORT $DB0E //Access supply in overworld
+    ORG $31646 //send to supply
+    SHORT 0
+	
+	//allow all classes to S rank
+	ORG $2c1a2
+	BYTE $FB
+	ORG $2c1a6
+	BYTE $FB
+	
+	//Plot-important cutscene units
+	ORG $84864 
+	POIN CutsceneImportantUnitsTable
+	
+	//Don't boost HP even if applying hard mode bonuses
+	ORG $17FE0
+	BYTE 0x00 0x00
+	
+	//Fix ballista palette weirdness for archer/sniper
+	ORG 0x599B6
+	BYTE 0x14 0xE0
+	
+	//Fix forced range animation when an uncounterable weapon is used
+	ORG 0x057278
+	BYTE 0x16 0xD0
+	
+	// Remove arrow wiggling advancing RN
+    ORG 0x1A774
+    SHORT 0x2000 0
+	
+	//tutorial killer
+	ORG $0E120
+	SHORT $0
+
+POP
+
+ALIGN 4
+CutsceneImportantUnitsTable:
+BYTE Lukas Clair Clive Mathilda Saber Mae Conrad Nomah Mycen 0x00

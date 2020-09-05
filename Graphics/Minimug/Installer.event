@@ -1,0 +1,39 @@
+PUSH
+	//Generic minimugs
+	ORG $D77C0
+	POIN RigelMinimug
+	ORG $D77C4
+	POIN DumaFaithfulMinimug
+	ORG $D77E4 //palette
+	POIN $599F54
+	ORG $D77C8
+	POIN ZofiaMinimug
+	ORG $D77CC
+	POIN MonsterMinimug
+	ORG $D77D4
+	POIN BanditMinimug
+	ORG $D77D8
+	POIN MonsterMinimug
+	ORG $599F54
+	#incbin "genericminimug_enemy.pal.bin"
+POP
+
+ALIGN 4
+RigelMinimug:
+#incbin "genericminimug_rigel.dmp"
+
+ALIGN 4
+DumaFaithfulMinimug:
+#incbin "genericminimug_duma.dmp"
+
+ALIGN 4
+ZofiaMinimug:
+#incbin "genericminimug_zofia.dmp"
+
+ALIGN 4
+MonsterMinimug:
+#incbin "genericminimug_monster.dmp"
+
+ALIGN 4
+BanditMinimug:
+#incbin "genericminimug_bandit.dmp"
