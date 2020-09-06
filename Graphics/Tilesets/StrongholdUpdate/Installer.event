@@ -1,0 +1,19 @@
+
+#include "SH anims/StrongholdAnimation.event"
+
+ALIGN 4
+StrongholdTiles:
+#incbin "StrongholdConfig_comp.dmp"
+
+ALIGN 4
+StrongholdObjects:
+#incbin "StrongholdObjects.dmp"
+
+ALIGN 4
+StrongholdPalette:
+#incbin "StrongholdPalette.pal.bin"
+
+EventPointerTable(0x5B, StrongholdObjects) //stronghold obj
+EventPointerTable(0x5C, StrongholdPalette) //stronghold pal
+EventPointerTable(0x5D, StrongholdTiles) //stronghold tile
+EventPointerTable(0x5E, StrongholdAnimation) //stronghold anims

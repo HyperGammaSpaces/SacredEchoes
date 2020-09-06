@@ -1,0 +1,22 @@
+PUSH
+	ORG $8E070 //chapter status screen
+	POIN PlayerEnemyPalette
+
+	//Minimug box, may not be needed for some but shrug
+	ORG $8C2EC
+	POIN PlayerEnemyPalette //Ally
+	ORG $8C2F4
+	POIN PlayerEnemyPalette+0x20 //Enemy
+	ORG $8C2FC
+	POIN PlayerEnemyPalette+0x40 //Green unit
+
+	//Battle Preview
+	ORG 0x36D2C
+	POIN PlayerEnemyPalette
+	ORG 0x36D34
+	POIN PlayerEnemyPalette+0x20 
+POP
+
+ALIGN 4
+PlayerEnemyPalette:
+#incbin "player-enemy-pal.pal.bin"

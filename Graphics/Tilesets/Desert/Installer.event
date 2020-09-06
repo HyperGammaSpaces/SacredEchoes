@@ -1,0 +1,15 @@
+ALIGN 4
+DesertTiles:
+#incbin "DesertTiles_comp.dmp"
+
+ALIGN 4
+DesertObjects:
+#incbin "DesertObjects.dmp"
+
+ALIGN 4
+DesertPalette:
+#incbin "DesertPalette.pal.bin"
+
+EventPointerTable(0x68, DesertObjects) //desert obj
+EventPointerTable(0x69, DesertPalette) //desert pal
+EventPointerTable(0x6A, DesertTiles) //desert tile

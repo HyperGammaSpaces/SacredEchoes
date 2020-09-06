@@ -1,0 +1,98 @@
+//Event flags
+#define gDesaixAct1Death 0x86
+#define gPlayerUnitDied 0x87
+#define gRouteSplit1Flag 0x88
+#define gEnableWorldMap 0x89
+#define gThiefShrineCompleted 0x8a
+#define gKliffRecruited 0x8b
+#define gFayeRecruited 0x8c
+#define gClairJoined 0x8d     //used for supports
+#define gPart2Completed 0x8e  //used for supports
+#define gPart3Completed 0x8f  //used for supports
+#define gDeliveranceHideoutCompleted 0x90
+#define gGraveyardTextShown 0x91
+#define gNovisCemeteryCompleted 0x92
+#define gSeaboundShrineCompleted 0x93
+#define gPlayerPromotedFernand 0x94 //used for bonus scenes/gaiden
+#define gEnableLordSwitch 0x95
+#define gFightSonyaChosen 0x96
+#define gJesseRecruited 0x97
+#define gPeddlerEventActive 0x98 //enabled when talking to a peddler to allow depositing into other party's convoy
+#define gCasualModeFlag 0xAF
+//Character death flags - 0xB0 + charID
+#define gGrayDied 0xB3
+#define gTobinDied 0xB4
+#define gSilqueDied 0xB7
+#define gClairDied 0xB8
+#define gCliveDied 0xB9
+#define gForsythDied 0xBA
+#define gPythonDied 0xBB
+#define gMaeDied 0xBD
+#define gBoeyDied 0xBE
+#define gValbarDied 0xC1
+#define gLeonDied 0xC2
+#define gLuthierDied 0xC4
+#define gMathildaDied 0xC5
+#define gDeltheaDied 0xC6
+#define gPallaDied 0xC7
+#define gCatriaDied 0xC8
+#define gAtlasDied 0xC9
+#define gJesseDied 0xCA
+#define gEstDied 0xCD
+#define gTatianaDied 0xCE
+#define gZekeDied 0xCF
+#define gHyasDied 0xD4
+//Act 3/4 story flags because lordswitch
+#define gChapter3A1Completed 0xE0
+#define gChapter3A2Completed 0xE1
+#define gChapter3A3Completed 0xE2
+#define gChapter3A4Completed 0xE3
+#define gChapter3A5Completed 0xE4
+#define gChapter3A6Completed 0xE5
+#define gChapter3A7Completed 0xE6
+#define gChapter3C1Completed 0xE7
+#define gChapter3C2Completed 0xE8
+#define gChapter3C3Completed 0xE9
+#define gChapter3C4Completed 0xEA
+#define gChapter3C5Completed 0xEB
+#define gChapter3C6Completed 0xEC
+#define gChapter3C7Completed 0xED
+#define gChapter4C1Completed 0xEE
+#define gChapter4C2Completed 0xEF
+#define gChapter4C3Completed 0xF0
+#define gChapter4C4Completed 0xF1
+#define gChapter4C5Completed 0xF2
+#define gChapter4A1Completed 0xF3
+#define gChapter4A2Completed 0xF4
+#define gChapter4A3Completed 0xF5
+#define gChapter4A4Completed 0xF6
+#define gChapter4A5Completed 0xF7
+#define gChapter4A6Completed 0xF8
+#define gChapter4A7Completed 0xF9
+#define gChapter4A8Completed 0xFA
+#define gChapter4A9Completed 0xFB
+#define gChapter4A10Completed 0xFC
+
+//Character mournquote flags - 0x100 + charID
+#define gGrayMourned 0x103
+#define gTobinMourned 0x104
+#define gSilqueMourned 0x107
+#define gClairMourned 0x108
+#define gCliveMourned 0x109
+#define gForsythMourned 0x10A
+#define gPythonMourned 0x10B
+#define gMaeMourned 0x10D
+#define gBoeyMourned 0x10E
+#define gValbarMourned 0x111
+#define gLeonMourned 0x112
+#define gLuthierMourned 0x114
+#define gMathildaMourned 0x115
+#define gDeltheaMourned 0x116
+#define gPallaMourned 0x117
+#define gCatriaMourned 0x118
+#define gAtlasMourned 0x119
+#define gJesseMourned 0x11A
+#define gEstMourned 0x11D
+#define gTatianaMourned 0x11E
+#define gZekeMourned 0x11F
+#define gHyasMourned 0x124

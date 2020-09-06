@@ -1,0 +1,31 @@
+PUSH
+	ORG $5B6470
+	MenuStyleGraphicsTable:
+	POIN MenuTilesGraphics
+	POIN MenuTilesGraphics
+	POIN MenuTilesGraphics
+	POIN MenuTilesGraphics
+
+	ORG $9C7FC
+	POIN MenuTilesExtraForItemUse
+POP
+
+//replaces 85B6BB4
+ALIGN 4
+MenuStylePaletteTable:
+POIN MenuTilesPalette      //replaces 8a1738c
+POIN MenuTilesPalette+0x20
+POIN MenuTilesPalette+0x40
+POIN MenuTilesPalette+0x60
+
+ALIGN 4
+MenuTilesExtraForItemUse:
+#incbin "A1BAB8.dmp"
+
+ALIGN 4
+MenuTilesGraphics:
+#incbin "menutiles-5b65c0-edited.dmp"
+
+ALIGN 4
+MenuTilesPalette:
+#incbin "menutiles-palette-master.pal.bin"

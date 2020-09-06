@@ -1,0 +1,13 @@
+//ASMC helpers
+ALIGN 4
+ApplyStatusToUnitASMC:
+#incbin "ApplyStatusToUnit.dmp"
+ALIGN 4
+ApplyStatusToUnitIDASMC:
+#incbin "ApplyStatusToUnitID.dmp"
+ALIGN 4
+RemoveItemFromAnyASMC:
+#incbin "item_collect.bin"
+
+#define RemoveItemFromAny(itemID) "SHORT $0D40 itemID; POIN RemoveItemFromAnyASMC+1"
+

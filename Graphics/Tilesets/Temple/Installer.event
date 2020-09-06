@@ -1,0 +1,33 @@
+
+ALIGN 4
+TempleObjects:
+#incbin "MountainShrineDark.dmp"
+
+ALIGN 4
+TempleTiles:
+#incbin "FE8_34_thiefshrine_comp.dmp"
+
+ALIGN 4
+SluiceGatePalette:
+#incbin "SluiceGatePalette.pal.bin" 
+
+PUSH
+ORG $1AD930
+MountainFortPalette:
+#incbin "mountainfort.pal.bin"
+
+ORG $1A1FC0
+MountainFortPaletteDark:
+#incbin "MountainShrineDark.pal.bin"
+
+ORG $1AD430
+ThiefshrinePalette:
+#incbin "MountainShrine.pal.bin"
+POP
+
+EventPointerTable(0x20, TempleObjects) //temple obj
+EventPointerTable(0x21, MountainFortPalette) //temple pal
+EventPointerTable(0x22, TempleTiles)
+EventPointerTable(0x38, MountainFortPaletteDark)
+EventPointerTable(0x77, SluiceGatePalette)
+EventPointerTable(0x36, ThiefshrinePalette)

@@ -186,7 +186,6 @@ BYTE 0x00 0x20 0x02 0xE0
 #include "Extensions/Hack Installation.txt"
 
 //Animation Hacks by Hextator
-PUSH
 {
 //C01 hack
 ORG $46446c
@@ -202,4 +201,5 @@ WORD $8464400
 ORG $464400
 WORD 0x3D046A3D 0x022D682D 0xA5020C28 0x46AE3501 0x47284D01 0x47004801 0x08071991 0x080596CD
 }
+
 POP

@@ -1,0 +1,24 @@
+
+ALIGN 4
+FieldsTiles:
+#incbin "Fields_comp.dmp"
+
+ALIGN 4
+FieldsObjects:
+#incbin "Fields.dmp"
+
+ALIGN 4
+NightFieldPalette:
+#incbin "NightFields.pal.bin"
+
+PUSH
+ORG $1AE5B0
+FieldsPalette:
+#incbin "Fields.pal.bin"
+POP
+
+EventPointerTable(0x08, FieldsObjects) //fields obj
+EventPointerTable(0x09, FieldsPalette) //fields pal
+EventPointerTable(0x0A, FieldsTiles) //fields tile
+EventPointerTable(0x0C, 0x59D498) //fields anim
+EventPointerTable(0x57, NightFieldPalette) //fields night pal

@@ -1,0 +1,23 @@
+PUSH
+	//Prep screen stuff
+	ORG $9a8d8
+	POIN NewPrepScreenTiles
+	
+	ORG $95c78
+	POIN PrepScreenChapterNumber
+	
+	ORG $98468
+	POIN MorePrepScreenTiles
+POP
+
+ALIGN 4
+NewPrepScreenTiles:
+#incbin "A1B730-edited.dmp"
+
+ALIGN 4
+MorePrepScreenTiles:
+#incbin "A1B1FC_pal1.dmp"
+
+ALIGN 4
+PrepScreenChapterNumber:
+#incbin "chapter_number_of_prep_08A1AC88.dmp" 

@@ -1,0 +1,50 @@
+PUSH
+
+//Background fixes (Monster maps)
+ORG $80CFE6
+BYTE $0F $26 $26 $28 $28 $28 $28 $28 $0F $0F $37 $37 $1C $1C $08 $08
+BYTE $32 $36 $36 $32 $32 $2D $2D $0F $0F $0F
+BYTE $0F $0F $0F $0F $0F $0F $0F $0F $37 $37 $36 $23
+
+//starting from cliff
+BYTE $36
+ORG $80D018
+
+//starting from fence
+BYTE $28 $1C $32 $36 $2D $37 $28
+
+//Cave background type (0xE)
+ORG $80D0A9
+BYTE $43 $43 $43 $43 $43 $43 $43 $43 $43 $43 $43 $43 $43 $43 
+
+//Sand
+BYTE $08 $08 $43 $43 $43 
+
+//Bridge
+BYTE $2D $2D $2D $2D 
+
+//Floor
+BYTE $0F $0F $43 $0F $0F $0F 
+
+//Pillar
+BYTE $2A $0F $2C $43 $43
+
+//Roof
+BYTE $43 $43 $43 $43 $43 $43 $43 $43 $43 $43 $43 
+
+//Stairs
+BYTE $0F $43 $43 $43 $43 $43 $43 
+
+//Bridge
+BYTE $2D $43 $2D $43 $43 $43 $43 $43 
+
+//Water
+BYTE $2D $2D $2D $2D 
+
+//Battle platform fixes (Monster maps)
+ORG $80CA91
+BYTE $59 $5E $12 $58 $58
+ORG $80CAB0
+BYTE $5C
+
+POP

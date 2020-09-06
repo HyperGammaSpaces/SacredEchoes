@@ -1,0 +1,35 @@
+PUSH
+
+	ORG $4E130
+	POIN MenuStyleGraphicsTable
+	ORG $4E1B4
+	POIN MenuStyleGraphicsTable
+	ORG $4E0D0
+	POIN MenuStylePaletteTable
+
+	ORG $A1D448 //Palette of Glowy UI bar that goes underneath currently highlighted item
+	#incbin "A1D448_glowy.pal.bin"
+	
+	ORG $B3A48
+	POIN PromotionTextbox
+	ORG $CCC1C
+	POIN PromotionTextbox
+	
+	ORG $8c450
+	POIN StatusTextImage
+	
+	ORG $C0DC4
+	POIN MapStatusScreenGFX
+	ORG $a98dec
+	#incbin "MapStatusScreenPalette.pal.bin"
+	  
+POP
+
+PromotionTextbox:
+#incbin "a30800-promotiontextbox.dmp" 
+
+MapStatusScreenGFX:
+#incbin "a986c0.dmp" 
+
+StatusTextImage:
+#incbin "statusnames-A16DEC.dmp"

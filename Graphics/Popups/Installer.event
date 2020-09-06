@@ -1,0 +1,20 @@
+PUSH
+	ORG $98CB4
+	POIN LittlePopupBoxThingy
+	
+	ORG $4D828
+	POIN SupportBoxThingy
+	ORG $A10F0
+	POIN SupportBoxThingy
+	ORG $A2434
+	POIN SupportBoxThingy
+POP
+
+ALIGN 4
+LittlePopupBoxThingy:
+#incbin "A1D7DC.dmp"
+
+ALIGN 4
+SupportBoxThingy:
+#incbin "a1dd0c.dmp"
+
