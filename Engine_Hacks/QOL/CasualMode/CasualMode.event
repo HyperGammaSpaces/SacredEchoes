@@ -29,7 +29,7 @@
 	  replaceWithHack(New_SetOptionsFromDifficultySelect)
 	  
 	ORG $AA466
-	BYTE $14 //makes sure game fades back in when backing out
+	BYTE $17 //makes sure game fades back in when backing out
 	ORG $AA470
 	BYTE $13 //proc label for casual mode select
 	
@@ -49,9 +49,12 @@
 @ r2 = difficulty option selected
 @ r3 = casual mode on/off
 
+The graphics load before the loop routine takes over. Fsr the CM b button is reloading the wrong gfx
+//proc +2C???
+
 */
 
-ALIGN 4
+ALIGN 8
 Proc_SaveMenu_Main: //A200B8
 WORD $00001 $08205dd4 	//set name
 WORD $0000B $0 			//label 0
@@ -79,28 +82,34 @@ WORD $F000C $0 			//goto label F
 	WORD $00002 $080AC3E0+1 //Start NewGameDifficultySelect Proc
 
 	WORD $0000E $0 			//sleep 0frame
-	WORD $00002 $080AA30C+1 //call routine
-	WORD $00002 $080AA1EC+1 //call routine
+//	WORD $00002 $080AA30C+1 //call routine
+//	WORD $00002 $080AA1EC+1 //call routine
 //	WORD $80018 $080AE2D0+1 //call routine NewFadeIn
 //	WORD $00014 $080AE2A0+1 //call routine FadeInExists
-	WORD $00002 $080AA458+1 //call routine
+	WORD $00002 $080AA458+1 //call routine Check_ValidDifficultySelected
 	
 	//New stuff here
 		WORD $13000B $0 //label 13: casual mode
+		//WORD $0000E $0 			//sleep 0frame
 		WORD $00002 $080AA1EC+1 //call routine
 //		WORD $80018 $080AE2F4+1 //call routine NewFadeOut
 //		WORD $00014 $080AE2B8+1 //call routine FadeOutExists
-		WORD $00002 $080AD5B4+1 //call routine
+		WORD $00002 $080AD5B4+1 //call routine something LCD registers?
 
 		WORD $00002; POIN New_StartDifficultyMenus+1 //Start NewGameDifficultySelect Proc
 
 		WORD $0000E $0 			//sleep 0frame
-		WORD $00002 $080AA30C+1 //call routine
-		WORD $00002 $080AA1EC+1 //call routine
+		WORD $00002 $080AA30C+1 //call routine setup graphics
+		WORD $00002 $080AA1EC+1 //call routine setup I/O registers
+		WORD $00002; POIN Check_ValidModeSelected+1 //call routine
+		WORD $16000B $0 		//label 16
 		WORD $80018 $080AE2D0+1 //call routine NewFadeIn
 		WORD $00014 $080AE2A0+1 //call routine FadeInExists
-		WORD $00002; POIN Check_ValidModeSelected+1 //call routine
 		WORD $5000C $0 			//goto label 5
+		
+		WORD $17000B $0 		//label 17
+		WORD $00002 $080AA30C+1 //call routine setup graphics
+		WORD $00002 $080AA1EC+1 //call routine setup I/O registers
 		WORD $14000B $0 		//label 14
 		WORD $80018 $080AE2D0+1 //call routine NewFadeIn
 		WORD $00014 $080AE2A0+1 //call routine FadeInExists
@@ -190,7 +199,7 @@ WORD $A000E $0 //sleep 10frame
 WORD $2000B $0 //label 2
 WORD $80018 $080AE2F4+1 //call routine NewFadeOut
 WORD $00014 $080AE2B8+1 //call routine FadeOutExists
-WORD $00002 $080AC3DC+1 //call routine
+WORD $00002; POIN CM_Finish+1 //call routine
 WORD $0 $0 //term
 
 #include "asm/CasualModeMenu.lyn.event"

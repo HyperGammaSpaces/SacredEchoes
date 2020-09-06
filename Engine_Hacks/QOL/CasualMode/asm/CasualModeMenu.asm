@@ -13,6 +13,7 @@
 .global New_SetOptionsFromDifficultySelect
 .global New_StartDifficultyMenus
 .global Check_ValidModeSelected
+.global CM_Finish
 
 CasualMode_Main:
 	push {r4}
@@ -146,7 +147,7 @@ Check_ValidModeSelected:
 	bne ValidMode_Continue1
 		mov  r0, r1
 	InvalidMode:
-		mov  r1, #0x2
+		mov  r1, #0x14
 		blh  0x08002F24   @Goto6CLabel
 		b    ValidMode_Exit
 ValidMode_Continue1:
@@ -156,12 +157,17 @@ ValidMode_Continue1:
 	cmp  r1, #0x2
 	bge  InvalidMode
 ValidMode_Continue2:
-	mov  r1, #0x5
+	mov  r1, #0x16
 	blh  0x08002F24   @Goto6CLabel
 ValidMode_Exit:
 	pop  {r0}
 	bx   r0
 
+CM_Finish:
+	push {lr}
+	
+	pop  {r0}
+	bx   r0
 	
 SetCMChoice:
 	push {r4,r5,lr}
@@ -557,7 +563,7 @@ CM_HandleUserInput:
 		ldr  r0, [r0, #0x0] 
 		ldrh r1, [r0, #0x8]
 		mov  r0, #0x2 @ b button
-		and  r0 ,r1
+		and  r0, r1
 		cmp  r0, #0x0
 		beq  ExitCMInputLoop
 		
