@@ -1,6 +1,6 @@
 //Example song
 //SongTable(99,My_song,MapMusicGroup)
-//#include "S Files/My_song.event"
+//#include "S_Files/My_song.event"
 
 #include "advanced music installer suite/music installer.event"
 
@@ -26,211 +26,211 @@ PUSH
 POP
 
 {
-	#include "S Files/MapIntroOpening.event"
+	#include "S_Files/MapIntroOpening.event"
 	SongTable(0x3,MapIntroOpening,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/WhereTheWindRustles.event"
+	#include "S_Files/WhereTheWindRustles.event"
 	SongTable(0x4,WhereTheWindRustles,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/CelicaDeparts.event"
+	#include "S_Files/CelicaDeparts.event"
 	SongTable(0x5,CelicaDeparts,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/WorldMapCh3.event"
+	#include "S_Files/WorldMapCh3.event"
 	SongTable(0x6,WorldMapCh3,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/LandOfSorrow.event"
+	#include "S_Files/LandOfSorrow.event"
 	SongTable(0x7,LandOfSorrow,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/Truth_0.event"
+	#include "S_Files/Truth_0.event"
 	SongTable(0x8,Truth_0,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/AlmPlayerPhase1.event"
+	#include "S_Files/AlmPlayerPhase1.event"
 	SongTable(0x9,AlmPlayerPhase1,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/CelicaPlayerPhase1.event"
+	#include "S_Files/CelicaPlayerPhase1.event"
 	SongTable(0xA,CelicaPlayerPhase1,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/FootstepsOfFate.event"
+	#include "DS_S_Files/FootstepsOfFate.event"
 	SongTable(0xB,FootstepsOfFate,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/EndlessBattle.event"
+	#include "DS_S_Files/EndlessBattle.event"
 	SongTable(0xC,EndlessBattle,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/DesertTheme.event"
+	#include "S_Files/DesertTheme.event"
 	SongTable(0xD,DesertTheme,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/AlmVictory.event"
+	#include "S_Files/AlmVictory.event"
 	SongTable(0x10,AlmVictory,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/CelicaVictory.event"
+	#include "S_Files/CelicaVictory.event"
 	SongTable(0x11,CelicaVictory,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/AlmEnemyPhase.event"
+	#include "S_Files/AlmEnemyPhase.event"
 	SongTable(0x13,AlmEnemyPhase,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/CelicaEnemyPhase.event"
+	#include "S_Files/CelicaEnemyPhase.event"
 	SongTable(0x14,CelicaEnemyPhase,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/PrinceOfDarkness.event"
+	#include "S_Files/PrinceOfDarkness.event"
 	SongTable(0x16,PrinceOfDarkness,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/LordOfADeadEmpire_Insertable.event"
+	#include "S_Files/LordOfADeadEmpire_Insertable.event"
 	SongTable(0x18,LordOfADeadEmpire_Insertable,BattleMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/Defend1.event"
+	#include "S_Files/Defend1.event"
 	SongTable(0x1A,Defend1,BattleMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/BossBattle.event"
+	#include "S_Files/BossBattle.event"
 	SongTable(0x1B,BossBattle,BattleMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/NovisPriory.event"
+	#include "S_Files/NovisPriory.event"
 	SongTable(0x20,NovisPriory,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/NewHealing.event"
+	#include "S_Files/NewHealing.event"
 	SongTable(0x22,NewHealing,BattleMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/DarkCloudsGather.event"
+	#include "S_Files/DarkCloudsGather.event"
 	SongTable(0x25,DarkCloudsGather,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/VillageTension.event"
+	#include "S_Files/VillageTension.event"
 	SongTable(0x26,VillageTension,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/Recruitment_Reprise.event"
+	#include "S_Files/Recruitment_Reprise.event"
 	SongTable(0x2F,Recruitment_Reprise,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/RecruitmentTheme.event"
+	#include "S_Files/RecruitmentTheme.event"
 	SongTable(0x30,RecruitmentTheme,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/Victory_A_Insertable.event"
+	#include "S_Files/Victory_A_Insertable.event"
 	SongTable(0x31,Victory_A_Insertable,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/Victory_B_Insertable.event"
+	#include "S_Files/Victory_B_Insertable.event"
 	SongTable(0x32,Victory_B_Insertable,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/PrepScreenFE5.event"
+	#include "S_Files/PrepScreenFE5.event"
 	SongTable(0x34,PrepScreenFE5,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/MilaIdolBGM.event"
+	#include "S_Files/MilaIdolBGM.event"
 	SongTable(0x37,MilaIdolBGM,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/SilentGround_insertable.event"
+	#include "S_Files/SilentGround_insertable.event"
 	SongTable(0x3A,SilentGround_insertable,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/ZofiaCastleTheme.event"
+	#include "S_Files/ZofiaCastleTheme.event"
 	SongTable(0x3B,ZofiaCastleTheme,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/FalteringPrayer.event"
+	#include "S_Files/FalteringPrayer.event"
 	SongTable(0x3F,FalteringPrayer,BattleMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/TheInn.event"
+	#include "S_Files/TheInn.event"
 	SongTable(0x54,TheInn,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/PortTown.event"
+	#include "S_Files/PortTown.event"
 	SongTable(0x55,PortTown,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S Files/LimaDiesBellSFX.event"
+	#include "S_Files/LimaDiesBellSFX.event"
 	SongTable(0xE4,LimaDiesBellSFX,SFXGroup)
 }
 ALIGN 4
