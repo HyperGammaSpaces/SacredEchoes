@@ -11,6 +11,8 @@
 .global CM_HandleUserInput
 .global CheckCasualModeInNewSave
 .global New_SetOptionsFromDifficultySelect
+.global New_StartDifficultyMenus
+.global Check_ValidModeSelected
 
 CasualMode_Main:
 	push {r4}
@@ -89,13 +91,25 @@ CM_CallGraphicsSetup:
 	bl   SetupCMGraphics
 	pop  {r0}
 	bx   r0
+	
+New_StartDifficultyMenus:
+	push {lr}
+	mov  r1, r0
+	ldr  r0, =CasualModeSelectProc
+	blh  0x08002CE0   @NewBlocking6C
+	pop  {r0}
+	bx   r0
+
+
+.align
+.ltorg
 
 CheckCasualModeInNewSave:
 @r0 has ChapterData+0x42 value. r6 has casual mode flag. r1/r2 are free
 	cmp  r6, #0x0
 	beq ContinueNewCasualMode
 		mov r1, #0x40
-		and r0, r1
+		orr r0, r1
 	ContinueNewCasualMode:
 	mov  r2, r12
 	ldrb r1, [r2]
@@ -116,23 +130,60 @@ StoreSomeProcThing:
 	add  r0, #0x29
 	ldrb r1, [r0, #0x0]
 	mov  r2, #0x1
-	orr  r1 ,r2
+	orr  r1, r2
 	strb r1, [r0, #0x0]
 	bx   lr
+	
+.align
+.ltorg
+
+Check_ValidModeSelected:
+	push {lr}
+	mov  r1, r0
+	add  r0, #0x2a
+	ldrb r0, [r0, #0x0]
+	cmp  r0, #0x3 @the invalid value used for "go back"
+	bne ValidMode_Continue1
+		mov  r0, r1
+	InvalidMode:
+		mov  r1, #0x2
+		blh  0x08002F24   @Goto6CLabel
+		b    ValidMode_Exit
+ValidMode_Continue1:
+	mov  r0, r1
+	add  r1, #0x50
+	ldrb r1, [r1, #0x0]
+	cmp  r1, #0x2
+	bge  InvalidMode
+ValidMode_Continue2:
+	mov  r1, #0x5
+	blh  0x08002F24   @Goto6CLabel
+ValidMode_Exit:
+	pop  {r0}
+	bx   r0
+
 	
 SetCMChoice:
 	push {r4,r5,lr}
 	mov  r4, r0
 	mov  r5, r1
-	ldr  r0, =0x08a200b8
+	ldr  r0, =Proc_SaveMenu_Main
 	blh  0x08002e9c   @Find6C
 	cmp  r0, #0x0
 	beq  ExitSetCMChoice
+		cmp  r4, #0x3
+		bne Continue_SetCMChoice1
+		mov  r1, r0
+		add  r1, #0x2a
+		strb r4, [r1, #0x0]
+		b Continue_SetCMChoice2
+	Continue_SetCMChoice1:
 		mov  r2, #0x1
 		eor  r2, r4
 		mov  r1, r0
-		add  r1, #0x40 @ casual mode
+		add  r1, #0x50 @ casual mode
 		strb r2, [r1, #0x0]
+	Continue_SetCMChoice2:
 		add  r0, #0x3d
 		strb r5, [r0, #0x0]
 	ExitSetCMChoice:
@@ -146,7 +197,7 @@ SetCMChoice:
 @ A9250
 
 New_SetOptionsFromDifficultySelect:
-	push {lr}
+	push {r4, lr}
 	mov  r2, r0
 	add  r2, #0x2a @difficulty
 	ldrb r2, [r2, #0x0]
@@ -173,14 +224,14 @@ HardMode:
 	
 GetCasualMode:
 	mov  r3, r0
-	add  r3, #0x40 @ casual mode
+	add  r3, #0x50 @ casual mode
 	ldrb r3, [r3]
 GetSlotNumber:
 	add  r0, #0x2c @slot number?
 	ldrb r0, [r0, #0x0]
 	lsl  r3, r3, #0x18
 	asr  r3, r3, #0x18
-	mov  r2, #0x1
+@	mov  r2, #0x1
 
 @ vanilla:
 @ r0 = slot number
@@ -194,7 +245,8 @@ GetSlotNumber:
 @ r2 = difficulty option selected
 @ r3 = casual mode on/off
 
-	blh  0x080A4E70   @SaveNewGame
+	blh  0x080A4E70,r4   @SaveNewGame
+	pop  {r4}
 	pop  {r0}
 	bx   r0
 

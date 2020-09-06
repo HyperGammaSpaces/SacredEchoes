@@ -344,7 +344,7 @@ Thus called because it contains things like where the current character is movin
 CHAPTER DATA STRUCT (202BCF0) (FE7: 202BBF8) (FE6: 202AA48) (FE7J: 202BBF4) (FE8J: 202BCEC)
 
 +0x08	Word	Money
-+0x0C	Byte	?
++0x0C	Byte	Save slot number
 +0x0D	Byte	Vision range (0 if there's no fog)
 +0x0E	Byte	Chapter ID
 +0x0F	Byte	Phase (0x0 for player, 0x40 for allied, 0x80 for enemy)
@@ -361,11 +361,11 @@ CHAPTER DATA STRUCT (202BCF0) (FE7: 202BBF8) (FE6: 202AA48) (FE7J: 202BBF4) (FE8
 	+0x80	Don't gain weapon exp (not sure what this is for, link arena?)
 +0x15	Byte	Weather (0=clear, 1=snow, 2=snowstorm, 4=rain) (funnily enough, if non-zero, arena battles take support bonuses into account)
 +0x16	Short	Number of support points gained this chapter?
-+0x18	Byte	? (Set at A4F14 when starting a new game, but no idea what it does)
++0x18	Byte	Unique playthrough ID, used to prevent cheesing clearing both Eirika/Ephraim mode from the same root save
 +0x1B	Byte	Mode (1 for prologue-8, 2 for Eirika route, 3 for Ephraim route)
 +0x20	Byte	?
 +0x28	Word	? Something
-+0x2C	Word	? Something ^ if hard mode (Loaded as both a word and a short, so idk) (seems to be treated as a word though, at A4EEE)
++0x2C	Word	? Something ^ if hard mode (Loaded as both a word and a short, so idk) (seems to be treated as a word though, at A4EEE) (bitfield; I know this counts number of cleared playthroughs prior to this one)
 The following 3 bytes are at 0x1C/D/E in FE6, dunno why
 +0x40	Byte	Option byte 1
 	+0x01	In FE6, changes battle palettes to link arena player1 palette...or something, if set. Seems useless. Option only appears after at least one playthrough.

@@ -11,7 +11,7 @@
 	  //leave r6 for later, it will set casual mode.
 	  SHORT $2001 //mov r0, #0x1
 	  SHORT $2D01 //cmp r5, #0x1
-	  SHORT $DA00 //bge 30D2A
+	  SHORT $DA00 //bge 30D2C
 	  SHORT $2000 //mov r0, #0x0
 	  SHORT $2142 //mov r1, #0x42
 	  SHORT $19C9 //add r1, r1, r7
@@ -23,18 +23,158 @@
 	  jumpToHack(CheckCasualModeInNewSave)
 	ORG $A4E98
 	  B($A4EA4)
+	ORG $A4EF8
+	  SHORT $2102 //sets mode byte for new game, change to 2101 if you need FE8's "prologue-ch8" mode
 	ORG $A9250
 	  replaceWithHack(New_SetOptionsFromDifficultySelect)
+	  
+	ORG $AA466
+	BYTE $14 //makes sure game fades back in when backing out
+	ORG $AA470
+	BYTE $13 //proc label for casual mode select
+	
+	ORG $AA4F0
+	POIN Proc_SaveMenu_Main
+	ORG $AA54C
+	POIN Proc_SaveMenu_Main
   POP
+  
+//02024F40: main proc.
+//02024F6A: option no.
+//02024F90: casual flag?
+/*
+@ InitClearChapter new plan:
+@ r0 = slot number
+@ r1 = difficulty level
+@ r2 = difficulty option selected
+@ r3 = casual mode on/off
 
-#include "asm/CasualModeMenu.lyn.event"
+*/
 
 ALIGN 4
-CMTextIDs:
-SHORT CasualModeMenuOption ClassicModeMenuOption
+Proc_SaveMenu_Main: //A200B8
+WORD $00001 $08205dd4 	//set name
+WORD $0000B $0 			//label 0
+WORD $0000E $0 			//sleep 0frame
+WORD $00002 $080a8c2c+1 //call routine
+WORD $0000E $0 			//sleep 0frame
+WORD $00002 $080a8cd4+1
+WORD $00002 $080a8f04+1
+WORD $0000E $0 			//sleep 0frame
+WORD $80018 $080AE2D0+1 //call routine NewFadeIn
+WORD $00014 $080AE2A0+1 //call routine FadeInExists
+WORD $0000E $0 			//sleep 0frame
+WORD $00014 $08002a6c+1 //call routine AtMenu
+WORD $00002 $080a9014+1 //call routine SaveMenu
+WORD $2000B $0 			//label 2
+WORD $00003 $080A9024+1 //set loop routine
+WORD $F000C $0 			//goto label F
+
+	WORD $1000B $0 			//label 1
+	WORD $00002 $080AA1EC+1 //call routine
+	WORD $80018 $080AE2F4+1 //call routine NewFadeOut
+	WORD $00014 $080AE2B8+1 //call routine FadeOutExists
+	WORD $00002 $080AD5B4+1 //call routine
+
+	WORD $00002 $080AC3E0+1 //Start NewGameDifficultySelect Proc
+
+	WORD $0000E $0 			//sleep 0frame
+	WORD $00002 $080AA30C+1 //call routine
+	WORD $00002 $080AA1EC+1 //call routine
+//	WORD $80018 $080AE2D0+1 //call routine NewFadeIn
+//	WORD $00014 $080AE2A0+1 //call routine FadeInExists
+	WORD $00002 $080AA458+1 //call routine
+	
+	//New stuff here
+		WORD $13000B $0 //label 13: casual mode
+		WORD $00002 $080AA1EC+1 //call routine
+//		WORD $80018 $080AE2F4+1 //call routine NewFadeOut
+//		WORD $00014 $080AE2B8+1 //call routine FadeOutExists
+		WORD $00002 $080AD5B4+1 //call routine
+
+		WORD $00002; POIN New_StartDifficultyMenus+1 //Start NewGameDifficultySelect Proc
+
+		WORD $0000E $0 			//sleep 0frame
+		WORD $00002 $080AA30C+1 //call routine
+		WORD $00002 $080AA1EC+1 //call routine
+		WORD $80018 $080AE2D0+1 //call routine NewFadeIn
+		WORD $00014 $080AE2A0+1 //call routine FadeInExists
+		WORD $00002; POIN Check_ValidModeSelected+1 //call routine
+		WORD $5000C $0 			//goto label 5
+		WORD $14000B $0 		//label 14
+		WORD $80018 $080AE2D0+1 //call routine NewFadeIn
+		WORD $00014 $080AE2A0+1 //call routine FadeInExists
+		WORD $2000C $0 			//goto label 2
+
+WORD $5000B $0 			//label 5
+WORD $00002 $080AA47C+1 //call routine
+WORD $0000E $0 			//sleep 0frame
+WORD $00003 $080A9494+1 //set loop routine
+WORD $F000C $0 			//goto label F
+WORD $7000B $0 			//label 7
+WORD $5000E $0 			//sleep 5frame
+WORD $00002 $080A96D0+1 //call routine
+WORD $5000C $0 			//goto label 5
+WORD $6000B $0 			//label 6
+WORD $1000E $0 			//sleep 1frame
+WORD $00002 $080A96DC+1 //call routine
+WORD $1000E $0 			//sleep 1frame
+WORD $00003 $080A96EC+1 //set loop routine
+WORD $5000C $0 			//goto label 5
+WORD $3000B $0 			//label 3
+WORD $00003 $080A99C0+1 //set loop routine
+WORD $5000C $0 			//goto label 5
+WORD $4000B $0 			//label 4
+WORD $00002 $080AA4B4+1 //call routine
+WORD $00003 $080A9A18+1 //set loop routine
+WORD $2000C $0 			//goto label 2
+WORD $8000B $0 			//label 8
+WORD $00003 $080A9A68+1 //set loop routine
+WORD $9000B $0 			//label 9
+WORD $00003 $080A9AB0+1 //set loop routine
+WORD $C000B $0 			//label C
+WORD $00002 $080A9A08+1 //call routine
+WORD $00003 $080A9AF4+1 //set loop routine
+WORD $D000B $0 			//label D
+WORD $00003 $080A9B44+1 //set loop routine
+WORD $A000B $0 			//label A
+WORD $00003 $080A9B90+1 //set loop routine
+WORD $B000B $0 			//label B
+WORD $00002 $080AA49C+1 //call routine
+WORD $0000E $0 			//sleep 0frame
+WORD $00003 $080A9E1C+1 //set loop routine
+WORD $E000B $0 			//label E
+WORD $80018 $080AE2F4+1 //call routine NewFadeOut
+WORD $00014 $080AE2B8+1 //call routine FadeOutExists
+WORD $00014 $08002950+1 //call routine
+WORD $00002 $080AA158+1
+WORD $0000E $0			//sleep 0frame
+WORD $00002 $080A8C2C+1
+WORD $0000E $0			//sleep 0frame
+WORD $00002 $080A8CD4+1
+WORD $00002 $080A8F04+1
+WORD $0000E $0			//sleep 0frame
+WORD $80018 $080AE2D0+1 //call routine NewFadeIn
+WORD $00014 $080AE2A0+1 //call routine FadeInExists
+WORD $00014 $08002950+1 //call routine
+WORD $00002 $080AA1BC+1 //call routine
+WORD $15000B $0			//label 15
+WORD $000010 $0			//yield
+WORD $12000B $0			//label 12
+WORD $80018 $080AE2F4+1 //call routine NewFadeOut
+WORD $00014 $080AE2B8+1 //call routine FadeOutExists
+WORD $F000C $0 			//goto label F
+WORD $11000B $0			//label 11
+WORD $80018 $080AE2F4+1 //call routine NewFadeOut
+WORD $00014 $080AE2B8+1 //call routine FadeOutExists
+WORD $F000B $0			//label F
+WORD $0000E $0			//sleep 0frame
+WORD $00002 $080AA030+1 //call routine
+WORD $0000E $0			//sleep 0frame
+WORD $0 $0 //term
 
 ALIGN 4
-CasualModeSelectProc:
+CasualModeSelectProc: //based on A20A10
 WORD $00004 $080AC078+1 //set destructor
 WORD $00002 $080AD5B4+1 //call routine (i/o register setup)
 WORD $0000E $0 //sleep 0frame
@@ -52,3 +192,10 @@ WORD $80018 $080AE2F4+1 //call routine NewFadeOut
 WORD $00014 $080AE2B8+1 //call routine FadeOutExists
 WORD $00002 $080AC3DC+1 //call routine
 WORD $0 $0 //term
+
+#include "asm/CasualModeMenu.lyn.event"
+
+ALIGN 4
+CMTextIDs:
+SHORT CasualModeMenuOption ClassicModeMenuOption
+
