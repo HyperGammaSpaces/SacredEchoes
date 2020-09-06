@@ -7,6 +7,7 @@
 .endm
 
 .global CasualMode_Main
+.global CasualCheck_ASMC
 .global CM_CallGraphicsSetup
 .global CM_HandleUserInput
 .global CheckCasualModeInNewSave
@@ -44,6 +45,18 @@ CM_Main:
 	ldr  r3,=0x801842d
 goto_r3:
 	bx r3
+
+@Return: bool in slot "C"
+CasualCheck_ASMC:
+	push {lr}
+	bl   CasualCheck
+	lsl  r0, r0, #0x18
+	lsr  r0, r0, #0x18
+	ldr  r1, =0x030004B8 @slot 0
+	str  r0, [r1, #0x30] @store to slot C
+	mov  r0, #0x0
+	pop  {r1}
+	bx   r1
 
 CasualCheck:
 	push {lr}

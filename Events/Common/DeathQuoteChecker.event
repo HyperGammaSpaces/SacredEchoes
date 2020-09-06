@@ -27,18 +27,22 @@ AFEV 7 HyasMournQuotes gHyasDied
 
 #define DoubleMournQuote(TextId1,TextId2) "MUSI; Text(TextId1); Text(TextId2); MUNO"
 
-#define StandardMournQuote(Mourner,TextId) "CHECK_EXISTS Mourner ; BEQ 1 0x0 0xC ; CHECK_DEPLOYED Mourner ; BEQ 1 0x0 0xC ; MournQuote(TextId) ; LABEL 1 ; NoFade ; ENDA"
+#define StandardMournQuote(Mourner,TextId) "CasualCheckASMC ; BNE 1 0x0 0xC ; CHECK_EXISTS Mourner ; BEQ 1 0x0 0xC ; CHECK_DEPLOYED Mourner ; BEQ 1 0x0 0xC ; MournQuote(TextId) ; LABEL 1 ; NoFade ; ENDA"
 
 /*
-CHECK_DEPLOYED Mourner ; 
-BEQ 1 0x0 0xC ; 
-	MournQuote(TextId) ; 
-LABEL 1 ; 
-NoFade ; 
+CasualCheckASMC
+BNE 1 0x0 0xC
+CHECK_EXISTS Mourner
+BEQ 1 0x0 0xC
+CHECK_DEPLOYED Mourner
+BEQ 1 0x0 0xC
+MournQuote(TextId)
+LABEL 1
+NoFade
 ENDA
 */
 
-#define DoubleStandardMournQuote(Mourner1,Mourner2,TextId1,TextId2) "CHECK_EXISTS Mourner1 ; BEQ 1 0x0 0xC ; CHECK_DEPLOYED Mourner1 ; BEQ 1 0x0 0xC ; CHECK_EXISTS Mourner2 ; BEQ 2 0x0 0xC ; CHECK_DEPLOYED Mourner2 ; BEQ 2 0x0 0xC ; DoubleMournQuote(TextId1,TextId2) ; GOTO 3 ; LABEL 2 ;MournQuote(TextId1) ; GOTO 3 ; LABEL 1 ; StandardMournQuote(Mourner2,TextId2) ; LABEL 3 ; NoFade ; ENDA"
+#define DoubleStandardMournQuote(Mourner1,Mourner2,TextId1,TextId2) "CasualCheckASMC ; BNE 3 0x0 0xC ; CHECK_EXISTS Mourner1 ; BEQ 1 0x0 0xC ; CHECK_DEPLOYED Mourner1 ; BEQ 1 0x0 0xC ; CHECK_EXISTS Mourner2 ; BEQ 2 0x0 0xC ; CHECK_DEPLOYED Mourner2 ; BEQ 2 0x0 0xC ; DoubleMournQuote(TextId1,TextId2) ; GOTO 3 ; LABEL 2 ;MournQuote(TextId1) ; GOTO 3 ; LABEL 1 ; StandardMournQuote(Mourner2,TextId2) ; LABEL 3 ; NoFade ; ENDA"
 
 /*
 CHECK_DEPLOYED Mourner1 ; 
@@ -116,6 +120,8 @@ StandardMournQuote(Atlas,AtlasMournsHyas)
 
 // Mathilda > Clair > Fernand > Forsyth > Lukas
 CliveMournQuotes:
+CasualCheckASMC
+BNE 99 0x0 0xC
 CHECK_EXISTS Mathilda
 BEQ 1 0x0 0xC
 CHECK_DEPLOYED Mathilda

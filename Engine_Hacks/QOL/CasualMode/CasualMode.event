@@ -54,6 +54,9 @@ The graphics load before the loop routine takes over. Fsr the CM b button is rel
 
 */
 
+ALIGN 4
+#define CasualCheckASMC "SHORT $0D40 $0; POIN CasualCheck_ASMC+1"
+
 ALIGN 8
 Proc_SaveMenu_Main: //A200B8
 WORD $00001 $08205dd4 	//set name
