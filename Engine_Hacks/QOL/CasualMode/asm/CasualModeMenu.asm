@@ -8,6 +8,7 @@
 
 .global CasualMode_Main
 .global CasualCheck_ASMC
+.global CallRetreatQuote
 .global CM_CallGraphicsSetup
 .global CM_HandleUserInput
 .global CheckCasualModeInNewSave
@@ -63,8 +64,8 @@ CasualCheck:
 	ldr  r0, =0x0202BCF0 @gChapterData
 	add  r0, #0x42
 	ldrb r0, [r0] @bit 40 = casual mode
-	lsl  r0, r0, #0x1
-	lsr  r0, r0, #0x7
+	lsl  r0, r0, #0x19
+	lsr  r0, r0, #0x1F
 	cmp  r0, #0x0
 	beq  CasualCheck_exit
 	mov  r0, #0x1
@@ -91,6 +92,47 @@ CasualUnset:
 	and  r0, r2
 	strb r0, [r1]
 	pop {pc}
+
+.align
+.ltorg
+
+CallRetreatQuote:
+	@r5 = unit ID
+	mov  r0, #0x3F  @Death songID
+	mov  r1, #0x0
+	blh  0x080024d4 @SwitchBGM
+	bl   CasualCheck
+	cmp  r0, #0x0
+	beq  RetreatQuote_NotFound
+	
+	@Check for entry in Retreat Quote table, 0-terminated
+	ldr  r2, =RetreatQuoteTable
+FindRetreatQuote:
+	ldrb r0, [r2]
+	cmp  r0, #0x0
+	beq  RetreatQuote_NotFound
+	cmp  r0, r5
+	bne  RQ_LoopNext
+	
+		@Do retreat quote
+		ldrh r0, [r2, #0x2]
+		cmp  r0, #0x0
+		beq  RQ_LoopNext
+			blh  0x0800D284 @CallBattleQuoteEvents
+		b    RetreatQuote_Found
+	
+RQ_LoopNext:
+	add  r2, #0x4
+	b    FindRetreatQuote
+
+RetreatQuote_NotFound:
+	@Return to vanilla, process text/eventIDs
+	ldr  r3, =0x08083631
+	bx   r3
+RetreatQuote_Found:
+	@Exit vanilla.
+	ldr  r3, =0x0808364F
+	bx   r3
 
 .align
 .ltorg

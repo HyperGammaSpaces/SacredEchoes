@@ -2,8 +2,15 @@
 // hack by circleseverywhere and 7743, menu by hypergammaspaces
 
   PUSH
+	//Actually unkill the unit
     ORG $18418
       jumpToHack(CasualMode_Main)
+	  
+	//Display retreat quote for allies rather than death quote
+	ORG $83628
+	  jumpToHack(CallRetreatQuote)
+	  
+	//Setup new save to recognize casual mode
 	ORG $30D18
 	  SHORT $2D01 //cmp r5, #0x1
 	  SHORT $DD03 //ble 30D24
@@ -27,7 +34,8 @@
 	  SHORT $2102 //sets mode byte for new game, change to 2101 if you need FE8's "prologue-ch8" mode
 	ORG $A9250
 	  replaceWithHack(New_SetOptionsFromDifficultySelect)
-	  
+	
+	//Updating procs to jump to correct labels
 	ORG $AA466
 	BYTE $17 //makes sure game fades back in when backing out
 	ORG $AA470
