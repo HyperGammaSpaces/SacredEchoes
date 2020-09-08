@@ -1,0 +1,129 @@
+//For Expel: MAG/2 range, 65 hit, make target list from all enemies in range which are MonsterType, grant exp for killing strongest monster hit.
+
+PUSH
+
+	//Repoint old Mend to new Expel function, which replaces the Mine
+	ORG $288B4
+	POIN $28BA8
+	
+	//Repoint old Mine usability check with Expel usability check
+	//This has to be in BL range
+	ORG $28BA8
+	ExpelUsabilityCheck:
+		New_Use(ExpelStaff_RangeSetup)
+	
+	//Moved these up to the big target select rework
+	//Expel P4 (Target Selection)
+	//ORG $28E90
+	//POIN $0802901C 
+	
+	//ORG $2901C //Mine Range Setup - mimic Fortify here. It just goes to 2951c
+	//SHORT $1C28 //mov r0, r5
+	//BL($2951C)
+	//B(P4Ladder_End)
+	
+	//Expel P1 (Use Effect)
+	ORG $2FC94
+	POIN $2FF50 //mine jump
+	
+	//Expel Exec (WIP)
+	ORG $2FA4C
+	//Just push lr and bx to hack in R3
+	SHORT $B500
+	SHORT $46C0 //nop
+	callHack_r3(ExecuteExpelStaff)
+	SHORT $BC01
+	SHORT $4700
+	
+	//SHORT $B5F0 //push {r4-r7, lr}
+	//SHORT $46C0
+	//jumpToHack(ExecuteExpelStaff)
+	
+	ORG $2FA82 //End of old Mine
+	SHORT $BCF0 //pop {r4-r7}
+	
+POP
+
+//Expel stuff
+
+ExpelStaff_RangeSetup:
+	rfItemRangeSetup(TryAddUnitToExpelTargetList+1,Item_TURange)
+ALIGN 4
+TryAddUnitToExpelTargetList:
+#incbin "ExpelUsabilityCheck.dmp"
+ALIGN 4
+
+//If it's short enough i'm just going to incbin it since it's just wrapping a ForEach. Func is at $2FA4C.
+//This will need to "for each in range" check if unit is Monster Type, roll d100, if <65 then reduce unit's HP to 0. No need to select a target.
+	
+Target_Routine_For_Expel: //push r14; ldrb r1,[r4,#0x12]; lsl r1,r1,#0x1; add r1,#0x1E; add r1,r1,r0; ldrh r2,[r1]; bl somewhere; pop r0; bx r0 (r4+0x12 has inventory slot, r0 has char data)
+//Modify to check spell index.
+SHORT 0xB500 0x7CA1 0x0049 0x311E 0x1809 
+//SHORT 0x880A
+SHORT $224C //mov r2, #0x4c
+BL(ExpelStaff_RangeSetup)
+SHORT 0xBC01 0x4700
+
+ExecuteExpelStaff:
+#incbin "ExecExpel.dmp"
+POIN Target_Routine_For_Expel
+WORD SelectedSpellPointer
+POIN ExpelEffectProc
+POIN SpellCostGetter
+ALIGN 4
+
+ExpelMapAnimProc:
+SHORT $2; SHORT $0;  POIN $30C24+1 //init. We need to set a proc field to 0
+SHORT $2; SHORT $0;  POIN $81E48+1 //Darkens map? Wraps 7f568
+SHORT $E; SHORT $1;  WORD $0 //sleep 1 frame
+SHORT $2; SHORT $0;  POIN $81278+1 //MapAnim_AnimateSubjectIdle. Moves staff user.
+SHORT $E; SHORT $1E; WORD $0 //sleep 30 frames
+
+SHORT $2; SHORT $0;  POIN $819E8+1 //jumps to 7d0b4 - displays the circles
+
+SHORT $E; SHORT $2;  WORD $0 //sleep 2 frames
+SHORT $E; SHORT $C8; WORD $0 //sleep 200 frames
+SHORT $E; SHORT $A;  WORD $0 //sleep 10 frames
+SHORT $2; SHORT $0;  POIN $8129C+1 //MapAnim_SubjectResetAnim. Returns staff user to idle anim.
+SHORT $E; SHORT $1E; WORD $0 //sleep 30 frames
+SHORT $2; SHORT $0;  POIN $81E54+1 //Un-darkens map? Wraps 7f5c8
+SHORT $E; SHORT $1;  WORD $0 //sleep 1 frame
+SHORT $2; SHORT $0;  POIN $30C40+1 //LoadTitleAnimations2Only
+WORD $0; WORD $0 //end proc
+
+ExpelEffectProc:
+SHORT $E; SHORT $1;  WORD $0 //sleep 1 frame
+SHORT $2; SHORT $0;  POIN $2CC1C+1 //SaveInstigatorFromBattle
+SHORT $E; SHORT $1;  WORD $0 //sleep 1 frame
+
+SHORT $2; SHORT $0;  POIN ExpelLoopInit+1 //its dying here.
+
+SHORT $B; SHORT $0;  WORD $0 //set label 0
+SHORT $2; SHORT $0;  POIN ExpelCheckLoopVariables+1 //handles "if target list empty goto 1"
+SHORT $2; SHORT $0;  POIN $35ED8+1 //puts camera on current target
+SHORT $E; SHORT $0;  WORD $0 //sleep 0 frame
+SHORT $2; SHORT $0;  POIN ExpelEffectFunc+1
+SHORT $E; SHORT $0;  WORD $0 //sleep 0 frame
+SHORT $2; SHORT $0;  POIN $35F40+1 //resets unit motion
+
+SHORT $B; SHORT $1;  WORD $0 //set label 1
+SHORT $2; SHORT $0;  POIN $3601C+1 //does some cleanup idk
+SHORT $E; SHORT $0;  WORD $0 //sleep 0 frame
+SHORT $C; SHORT $0;  WORD $0 //goto label 0
+WORD $0; WORD $0 //end proc
+
+
+ExpelLoopInit:
+#incbin "ExpelLoopInit.dmp"
+POIN Target_Routine_For_Expel
+ALIGN 4
+
+ExpelCheckLoopVariables:
+#incbin "ExpelCheckLoopVariables.dmp"
+POIN Target_Routine_For_Expel
+ALIGN 4
+
+ExpelEffectFunc:
+#incbin "ExpelEffectFunc.dmp"
+POIN Target_Routine_For_Expel
+ALIGN 4

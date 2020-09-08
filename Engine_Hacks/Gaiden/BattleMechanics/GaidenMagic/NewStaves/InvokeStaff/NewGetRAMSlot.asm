@@ -38,7 +38,7 @@ mov r4,	#0xC0		@start of green summons
 mov r7, #0xF3
 
 LoopStart:
-MOV r0 ,r4
+mov r0, r4
 ldr r3, =GetUnitStruct
 bl JumpWithR3
 CMP r0, #0x0
@@ -46,13 +46,13 @@ BEQ LoopNext
     LDR r0, [r0, #0x0]
     CMP r0, #0x0
     BEQ LoopNext
-        LSL r0 ,r5 ,#0x18
-        ASR r0 ,r0 ,#0x18
+        LSL r0, r5, #0x18
+        ASR r0, r0, #0x18
         CMP r0, #0x27
         BGT ProceedToProcLabel
             ADD r0, #0x1
-            LSL r0 ,r0 ,#0x18
-            LSR r5 ,r0 ,#0x18
+            LSL r0, r0, #0x18
+            LSR r5, r0, #0x18
 	LoopNext:
     ADD r4, #0x1
     CMP r4, r7
