@@ -54,15 +54,17 @@ ldr  r3, =ModRN
 bl   JumpWithR3
 lsl  r0, r0, #0x18
 lsr  r2, r0, #0x18
-add  r2, #0x2			@8 - (2 + rand(1,4)) = number summoned
+add  r2, #0x3			@8 - (2 + rand(1,4)) = number summoned
 mov  r1, r5
 
 add  r3, r1, r2
 cmp  r3, #8
 ble  NoCap
-	mov  r2, #8
-	sub  r2, r2, r1
+	mov  r3, #8
+	sub  r2, r3, r1
 NoCap:
+mov  r1, #8
+sub  r2, r1, r2
 
 mov  r0, r4
 mov  r1, r4

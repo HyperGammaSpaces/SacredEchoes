@@ -41,7 +41,7 @@ mov  r5, r1		@y
 			cmp  r0, r7
 			bne  KeepLooping
 				add  r5, #0x1
-				cmp  r5, #0x8
+				cmp  r5, #0x7
 				ble  KeepLooping
 					@More than 8 summons; can't use.
 					pop  {r5}
