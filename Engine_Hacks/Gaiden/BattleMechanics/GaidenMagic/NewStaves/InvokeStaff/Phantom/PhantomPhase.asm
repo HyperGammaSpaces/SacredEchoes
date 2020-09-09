@@ -8,6 +8,7 @@
 
 .global PhantomPhase_Init
 .global PhantomOrder_Init
+.global HandlePhantomSpriteHover
 
 PhantomPhase_Init:
 	push {r4-r6,lr}   
@@ -16,8 +17,8 @@ PhantomPhase_Init:
 	mov  r2, r0
 	add  r2, #0x7b
 	
-	mov  r1, #0x4       @berserk flag, checked at 39df4. right below some gorgon egg checks. also at 39e50
-	strb r1, [r2, #0x0] @gAiData.aiConfig
+	@mov  r1, #0x4       @berserk flag, checked at 39df4. right below some gorgon egg checks. also at 39e50
+	@strb r1, [r2, #0x0] @gAiData.aiConfig
 	
 	add  r2, #0x3
 	mov  r1, #0xff
@@ -137,6 +138,36 @@ PhantomOrder_Init_Exit:
 
 .align
 .ltorg
+
+HandlePhantomSpriteHover:
+	ldr  r0, [r4, #0x0]
+	ldr  r1, [r4, #0x4]
+	ldr  r0, [r0, #0x28]
+	ldr  r1, [r1, #0x28]
+	orr  r0, r1
+	mov  r1, #0x80
+	lsl  r1, r1, #0xD
+	and  r0, r1
+	cmp  r0, #0x0
+	beq  Hover_CheckStatus
+		b DontDraw
+	
+@handle sleep/berserk
+Hover_CheckStatus:
+	mov  r0, r4
+	add  r0, #0x30 @status byte
+	ldrb r0, [r0]
+	mov  r1, #0xF
+	and  r1, r0
+	cmp  r1, #0x4
+	beq  DontDraw
+	cmp  r1, #0x2
+	beq  DontDraw
+		ldr  r3, =0x08027a99
+		bx   r3
+	DontDraw:
+		ldr  r3, =0x08027ac1
+		bx   r3
 
 @3d3e4 AiDoBerserkAction
 

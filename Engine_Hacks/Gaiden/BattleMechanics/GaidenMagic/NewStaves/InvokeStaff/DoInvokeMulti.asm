@@ -189,6 +189,8 @@ ldrb r0, [r6, #0x0]
 mov r4, r0
 ldr r6, =0x0859A5D0
 mov r5, #0x1
+ldr r7, =0x03004E50	
+ldr r7, [r7, #0x0]		@summoner's ram slot
 
 StartLoopingThroughSummons:
 mov r0, r5
@@ -205,19 +207,32 @@ cmp r0, r4
 bne LoopToNextUnit
 
 FoundAUnit:
-mov r3, r2				@summoned unit ram pointer
-ldr r1, =0x03004E50		
-ldr r0, [r1, #0x0]
-ldrb r0, [r0, #0x8]		@level of summoner
+mov r3, r2				@summoned unit ram pointer	
+ldrb r0, [r7, #0x8]		@level of summoner
 strb r0, [r3, #0x8]		@store to summoned unit
 mov r0, #0xFF
 strb r0, [r3, #0x9]		@no exp for summoned unit
+
+mov r2, #0xB
+ldsb r2, [r7, r2]		@Unit party data index
+mov r0, #0xC0			@used to check allegiance
+and r2, r0
+cmp r2, #0x0
+bne LoopToNextUnit
+
+	@set "use 4th palette" for player summons
+	ldr r1, [r3, #0xC]
+	mov r0, #0x80
+	lsl r0, r0, #0x14
+	orr r1, r0
+	str r1, [r3, #0xC]
 
 LoopToNextUnit:
 add r5, #0x1
 cmp r5, #0x40
 blt StartLoopingThroughSummons
 
+EndFunc:
 pop {r4,r5,r6,r7}
 pop {r0}
 bx r0
