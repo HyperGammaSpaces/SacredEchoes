@@ -101,10 +101,22 @@ PUSH
 	ORG $7B29E
 	BYTE $01
 
+	//Replace BerserkPhase with PhantomPhase
+    ORG $155C0
+	POIN PhantomPhase_Proc
+	ORG $59a2ec
+	POIN PhantomPhase_Proc
+	ORG $59a394
+	POIN PhantomPhase_Proc
+	ORG $59a3bc
+	POIN PhantomPhase_Proc
+	ORG $59a424
+	POIN PhantomPhase_Proc
+
+	//Use with unit/class flag 0x00100000 Disable Unit Select to make phantoms unselectable. (breaks tents but lol)
+	ORG $1D584
+	BYTE $03
 POP
-
-
-//Invoke stuff
 
 StartMultiSummon:
 #incbin "StartMultiSummon.dmp"
@@ -138,10 +150,28 @@ BYTE 0 			0 		0 				0
 Invoke_Usability:
 #incbin "InvokeUsability.dmp"
 
+PhantomPhase_Proc: //based on 5A7F30
+WORD $1 $080D80A0 //set name
+WORD $2; POIN PhantomPhase_Init+1 
+WORD $E $0 //sleep 0frame
+WORD $2; POIN $39778+1 //CpPhase_Cleanup
+WORD $0 $0 //end
 
+PhantomOrder_Proc: //based on 5A7F74
+WORD $1 $080D80B8 //set name
+WORD $2; POIN PhantomOrder_Init+1 
+WORD $3; POIN $39ABC+1 //CPORDER_End
+WORD $0 $0 //end
 
+#include "Phantom/PhantomPhase.lyn.event"
 
-//Phantom fixes
+PUSH
+	//testing
+	ORG PhantomPhase_Init+$A
+	SHORT $46C0 $46C0
+POP
+
+//General phantom fixes
 
 PUSH	
 	//Don't draw portrait on item select menu if unit is generic
