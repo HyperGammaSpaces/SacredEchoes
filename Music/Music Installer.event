@@ -230,6 +230,12 @@ ALIGN 4
 ALIGN 4
 
 {
+	#include "S_Files/something0.event"
+	SongTable(0x1,something0,MapMusicGroup)
+}
+ALIGN 4
+
+{
 	#include "S_Files/LimaDiesBellSFX.event"
 	SongTable(0xE4,LimaDiesBellSFX,SFXGroup)
 }
