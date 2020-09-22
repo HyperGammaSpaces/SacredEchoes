@@ -13,6 +13,6 @@ TowerPalette:
 #incbin "tower.pal.bin"
 POP
 
-EventPointerTable(0x29, TowerObjects) //tower obj
-EventPointerTable(0x2A, TowerPalette) //tower pal
-EventPointerTable(0x2B, TowerTiles) //tower tile
+EventPointerTable(plTowerObj, TowerObjects) //tower obj
+EventPointerTable(plTowerPal, TowerPalette) //tower pal
+EventPointerTable(plTowerConf, TowerTiles) //tower tile

@@ -9,6 +9,6 @@ FortPalette:
 #incbin "fort.pal.bin"
 POP
 
-EventPointerTable(0x1A, 0x1816B8) //fort obj
-EventPointerTable(0x1B, FortPalette) //fort pal
-EventPointerTable(0x1C, FortTiles) //fort tile
+EventPointerTable(plFortObj, 0x1816B8) //fort obj
+EventPointerTable(plFortPal, FortPalette) //fort pal
+EventPointerTable(plFortConf, FortTiles) //fort tile

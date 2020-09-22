@@ -64,6 +64,7 @@ PUSH
   POIN FixedConfigGFX
 POP
 
+//oh there's a whole bunch of headers from probably the unit sort menu in a compressed image at A1CDC4, then the Animation one is a compressed image at A1D288
 ALIGN 4
 FixedConfigGFX:
 #incbin "Config.dmp"

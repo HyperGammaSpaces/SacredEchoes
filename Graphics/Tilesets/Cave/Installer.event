@@ -17,9 +17,13 @@ ALIGN 4
 CavePalette2:
 #incbin "CavePalette2.pal.bin"
 
-EventPointerTable(0x10, CaveObjects)
-EventPointerTable(0x11, CavePalette1)
-EventPointerTable(0x12, CaveTiles)
-EventPointerTable(0x53, CaveAnimation)
-//EventPointerTable(0x91, CavePalette2)
+ALIGN 4
+DragonShrinePalette:
+#incbin "DragonShrine.pal.bin"
+
+EventPointerTable(plCaveObj, CaveObjects)
+EventPointerTable(plCavePal, CavePalette1)
+EventPointerTable(plCaveConf, CaveTiles)
+EventPointerTable(plCaveAnim, CaveAnimation)
+EventPointerTable(plDragonShrinePalette, DragonShrinePalette)
 //EventPointerTable(0x92, CavePalette3)

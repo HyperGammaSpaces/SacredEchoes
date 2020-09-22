@@ -2,8 +2,8 @@
 
 #include eastdlib.event
 
-SetChapterData(0x12,0x5B,0,0x5C,0x5D,0x5F,Map,0x5E,0,0x60)
-EventPointerTable(0x60, MapChanges)
+SetChapterData(0x12,plStrongholdObj,0,plStrongholdPal,plStrongholdConf,plCh3A_4_Map,Map,plStrongholdAnim,0,plCh3A_4_Chg)
+EventPointerTable(plCh3A_4_Chg, MapChanges)
 Map:
 #incbin "ch3A-4_new_data.dmp"
 

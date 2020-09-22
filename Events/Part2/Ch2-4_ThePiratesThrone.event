@@ -2,7 +2,7 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(0x42, Ch2_4_ThisChapter)
+EventPointerTable(plCh2_4_Event, Ch2_4_ThisChapter)
 
 Ch2_4_ThisChapter:
 	POIN Ch2_4_TurnBasedEvents

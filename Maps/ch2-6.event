@@ -2,8 +2,8 @@
 
 #include eastdlib.event
 
-SetChapterData(0x0D,0x01,0,0x49,0x03,0x4A,Map,0x05,0x0,0x4B)
-EventPointerTable(0x4B, MapChanges)
+SetChapterData(0x0D,plVillageObj,0,plVillageNightPalette,plVillageConf,plCh2_6_Map,Map,plVillageAnim,0x0,plCh2_6_Chg)
+EventPointerTable(plCh2_6_Chg, MapChanges)
 Map:
 #incbin "ch2-6_data.dmp"
 

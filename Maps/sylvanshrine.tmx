@@ -5,15 +5,15 @@
  </tileset>
  <layer name="Tile Layer 1" width="20" height="34">
   <properties>
-   <property name="Anims1" value="0x0C"/>
+   <property name="Anims1" value="plTempleAnim"/>
    <property name="Anims2" value="0x0"/>
    <property name="ChapterID" value="0x41"/>
    <property name="Main" value=""/>
-   <property name="MapChangesID" value="0x7D"/>
-   <property name="MapID" value="0x7C"/>
-   <property name="ObjectType" value="0x20"/>
-   <property name="PaletteID" value="0x77"/>
-   <property name="TileConfig" value="0x22"/>
+   <property name="MapChangesID" value="plSylvanShrineChg"/>
+   <property name="MapID" value="plSylvanShrineMap"/>
+   <property name="ObjectType" value="plTempleObj"/>
+   <property name="PaletteID" value="plSylvanShrinePalette"/>
+   <property name="TileConfig" value="plTempleConf"/>
   </properties>
   <data>
    <tile gid="875"/>
@@ -22,11 +22,11 @@
    <tile gid="841"/>
    <tile gid="810"/>
    <tile gid="811"/>
-   <tile gid="775"/>
-   <tile gid="776"/>
-   <tile gid="775"/>
-   <tile gid="776"/>
-   <tile gid="841"/>
+   <tile gid="908"/>
+   <tile gid="965"/>
+   <tile gid="967"/>
+   <tile gid="908"/>
+   <tile gid="780"/>
    <tile gid="810"/>
    <tile gid="811"/>
    <tile gid="810"/>
@@ -41,12 +41,12 @@
    <tile gid="912"/>
    <tile gid="912"/>
    <tile gid="808"/>
-   <tile gid="368"/>
-   <tile gid="369"/>
-   <tile gid="370"/>
-   <tile gid="370"/>
-   <tile gid="369"/>
-   <tile gid="370"/>
+   <tile gid="247"/>
+   <tile gid="851"/>
+   <tile gid="724"/>
+   <tile gid="725"/>
+   <tile gid="851"/>
+   <tile gid="247"/>
    <tile gid="808"/>
    <tile gid="975"/>
    <tile gid="808"/>
@@ -61,12 +61,12 @@
    <tile gid="1007"/>
    <tile gid="907"/>
    <tile gid="808"/>
-   <tile gid="400"/>
-   <tile gid="401"/>
-   <tile gid="402"/>
-   <tile gid="402"/>
-   <tile gid="401"/>
-   <tile gid="402"/>
+   <tile gid="247"/>
+   <tile gid="921"/>
+   <tile gid="277"/>
+   <tile gid="278"/>
+   <tile gid="921"/>
+   <tile gid="247"/>
    <tile gid="808"/>
    <tile gid="943"/>
    <tile gid="808"/>
@@ -82,10 +82,10 @@
    <tile gid="809"/>
    <tile gid="906"/>
    <tile gid="975"/>
-   <tile gid="912"/>
-   <tile gid="912"/>
-   <tile gid="912"/>
-   <tile gid="912"/>
+   <tile gid="889"/>
+   <tile gid="1008"/>
+   <tile gid="1008"/>
+   <tile gid="889"/>
    <tile gid="912"/>
    <tile gid="808"/>
    <tile gid="907"/>

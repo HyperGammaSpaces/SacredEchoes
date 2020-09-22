@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.1" tiledversion="2018.08.22" orientation="orthogonal" renderorder="right-down" width="20" height="14" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="1">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="20" height="14" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
  <tileset firstgid="1" name="01000203" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/01000203.png" trans="ffffff" width="512" height="512"/>
  </tileset>
- <layer id="1" name="Tile Layer 1" width="20" height="14">
+ <layer name="Tile Layer 1" width="20" height="14">
   <properties>
-   <property name="Anims1" value="0x05"/>
+   <property name="Anims1" value="plVillageAnim"/>
    <property name="Anims2" value="0x0"/>
    <property name="ChapterID" value="0x0"/>
    <property name="Main" value=""/>
-   <property name="MapChangesID" value="0x06"/>
-   <property name="MapID" value="0x04"/>
-   <property name="ObjectType1" value="0x01"/>
-   <property name="PaletteID" value="0x02"/>
-   <property name="TileConfig" value="0x03"/>
+   <property name="MapChangesID" value="plCh1_1_Chg"/>
+   <property name="MapID" value="plCh1_1_Map"/>
+   <property name="ObjectType1" value="plVillageObj"/>
+   <property name="PaletteID" value="plVillagePal"/>
+   <property name="TileConfig" value="plVillageConf"/>
   </properties>
   <data>
    <tile gid="878"/>
@@ -298,7 +298,7 @@
    <tile gid="450"/>
   </data>
  </layer>
- <layer id="2" name="Map Change 0" width="20" height="14">
+ <layer name="Map Change 0" width="20" height="14">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="0"/>

@@ -2,8 +2,8 @@
 
 #include eastdlib.event
 
-SetChapterData(0x40,0x10,0,0x11,0x12,0x43,Map,0x53,0x0,0x44)
-EventPointerTable(0x44, MapChanges)
+SetChapterData(0x40,plCaveObj,0,plCavePal,plCaveConf,plSeaboundMap,Map,plCaveAnim,0x0,plSeaboundChg)
+EventPointerTable(plSeaboundChg, MapChanges)
 Map:
 #incbin "seaboundshrine_data.dmp"
 

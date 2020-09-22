@@ -13,7 +13,7 @@ ALIGN 4
 StrongholdPalette:
 #incbin "StrongholdPalette.pal.bin"
 
-EventPointerTable(0x5B, StrongholdObjects) //stronghold obj
-EventPointerTable(0x5C, StrongholdPalette) //stronghold pal
-EventPointerTable(0x5D, StrongholdTiles) //stronghold tile
-EventPointerTable(0x5E, StrongholdAnimation) //stronghold anims
+EventPointerTable(plStrongholdObj, StrongholdObjects) //stronghold obj
+EventPointerTable(plStrongholdPal, StrongholdPalette) //stronghold pal
+EventPointerTable(plStrongholdConf, StrongholdTiles) //stronghold tile
+EventPointerTable(plStrongholdAnim, StrongholdAnimation) //stronghold anims

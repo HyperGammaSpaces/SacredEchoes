@@ -2,8 +2,8 @@
 
 #include eastdlib.event
 
-SetChapterData(0x3F,0x29,0,0x2A,0x2B,0x2C,Map,0x0,0x0,0x2D)
-EventPointerTable(0x2D, MapChanges)
+SetChapterData(0x3F,plTowerObj,0,plTowerPal,plTowerConf,plHideoutMap,Map,plTowerAnim,0x0,plHideoutChg)
+EventPointerTable(plHideoutChg, MapChanges)
 Map:
 #incbin "deliverancehideout_data.dmp"
 

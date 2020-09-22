@@ -13,11 +13,11 @@ SluiceGatePalette:
 
 PUSH
 ORG $1AD930
-MountainFortPalette:
+TemplePalette:
 #incbin "mountainfort.pal.bin"
 
 ORG $1A1FC0
-MountainFortPaletteDark:
+TemplePaletteDark:
 #incbin "MountainShrineDark.pal.bin"
 
 ORG $1AD430
@@ -25,9 +25,9 @@ ThiefshrinePalette:
 #incbin "MountainShrine.pal.bin"
 POP
 
-EventPointerTable(0x20, TempleObjects) //temple obj
-EventPointerTable(0x21, MountainFortPalette) //temple pal
-EventPointerTable(0x22, TempleTiles)
-EventPointerTable(0x38, MountainFortPaletteDark)
-EventPointerTable(0x77, SluiceGatePalette)
-EventPointerTable(0x36, ThiefshrinePalette)
+EventPointerTable(plTempleObj, TempleObjects) //temple obj
+EventPointerTable(plTemplePal, TemplePalette) //temple pal
+EventPointerTable(plTempleConf, TempleTiles)
+EventPointerTable(plTempleNightPalette, TemplePaletteDark)
+EventPointerTable(plSluiceGatePalette, SluiceGatePalette)
+EventPointerTable(plThiefshrinePalette, ThiefshrinePalette)

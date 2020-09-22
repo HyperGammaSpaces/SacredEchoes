@@ -17,8 +17,8 @@ VillagePalette:
 #incbin "villagepal.pal.bin" 
 POP
 
-EventPointerTable(0x01, VillageObjects) //village obj
-EventPointerTable(0x02, VillagePalette) //village pal
-EventPointerTable(0x03, VillageTiles) //village tile
-EventPointerTable(0x05, 0x59D568) //village anim
-EventPointerTable(0x49, VillageNightPalette) //village night pal
+EventPointerTable(plVillageObj, VillageObjects) //village obj
+EventPointerTable(plVillagePal, VillagePalette) //village pal
+EventPointerTable(plVillageConf, VillageTiles) //village tile
+EventPointerTable(plVillageAnim, 0x59D568) //village anim
+EventPointerTable(plVillageNightPalette, VillageNightPalette) //village night pal

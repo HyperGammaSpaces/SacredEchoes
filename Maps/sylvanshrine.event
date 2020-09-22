@@ -2,8 +2,8 @@
 
 #include eastdlib.event
 
-SetChapterData(0x41,0x20,0,0x77,0x22,0x7C,Map,0x0C,0x0,0x7D)
-EventPointerTable(0x7D, MapChanges)
+SetChapterData(0x41,plTempleObj,0,plSylvanShrinePalette,plTempleConf,plSylvanShrineMap,Map,plTempleAnim,0x0,plSylvanShrineChg)
+EventPointerTable(plSylvanShrineChg, MapChanges)
 Map:
 #incbin "sylvanshrine_data.dmp"
 
