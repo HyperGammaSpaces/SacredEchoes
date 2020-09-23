@@ -1,0 +1,18 @@
+
+ALIGN 4
+SnowCastleTiles:
+#incbin "SnowCastle_comp.dmp"
+
+ALIGN 4
+SnowCastleObjects:
+#incbin "SnowCastle.dmp"
+
+ALIGN 4
+SnowCastlePalette:
+#incbin "SnowCastle.pal.bin"
+
+//SnowCastle
+EventPointerTable(plSnowCastleObj, SnowCastleObjects) 
+EventPointerTable(plSnowCastlePal, SnowCastlePalette) 
+EventPointerTable(plSnowCastleConf, SnowCastleTiles) 
+EventPointerTable(plSnowCastleAnim, 0x59D740)

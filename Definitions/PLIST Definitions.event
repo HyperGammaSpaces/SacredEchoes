@@ -39,10 +39,14 @@
 #define plLavaCavePal 		0x22
 #define plLavaCaveConf 		0x23
 #define plLavaCaveAnim 		0x24
-#define plSnowfieldObj 		0x25
-#define plSnowfieldPal 		0x26
-#define plSnowfieldConf 	0x27
-#define plSnowfieldAnim 	0x28
+#define plFrontierObj 		0x25
+#define plFrontierPal 		0x26
+#define plFrontierConf 		0x27
+#define plFrontierAnim 		plFieldsAnim
+#define plSnowCastleObj 	0x28
+#define plSnowCastlePal 	0x29
+#define plSnowCastleConf 	0x2A
+#define plSnowCastleAnim 	0x2B
 #define plBoatAnim 			0x30
 //Reserved up to 0x30
 
@@ -168,6 +172,9 @@
 #define plCh4_1A_Map 		plDummy_Map
 #define plCh4_1A_Chg 		0x0
 #define plCh4_1A_Event 		plDummy_Event
+#define plFearMtnPassMap 	0xBF //dummy value
+#define plDragonsmawMap		0xC0 //dummy value
+#define plLastBastionMap	0xC1 //dummy value
 
 //Special maps
 #define plCh1_7x_Map 		0xC2

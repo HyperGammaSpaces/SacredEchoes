@@ -1,0 +1,18 @@
+
+ALIGN 4
+FrontierTiles:
+#incbin "Frontier_comp.dmp"
+
+ALIGN 4
+FrontierObjects:
+#incbin "Frontier.dmp"
+
+ALIGN 4
+FrontierPalette:
+#incbin "Frontier_barren.pal.bin"
+
+//Frontier
+EventPointerTable(plFrontierObj, FrontierObjects) 
+EventPointerTable(plFrontierPal, FrontierPalette) 
+EventPointerTable(plFrontierConf, FrontierTiles) 
+//EventPointerTable(plFrontierAnim, 0x59D740)
