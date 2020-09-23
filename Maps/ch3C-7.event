@@ -2,7 +2,7 @@
 
 #include eastdlib.event
 
-SetChapterData(0x1D,plTowerObj,0,plTowerPal,plTowerConf,plHideoutMap,Map,plTowerAnim,0x0,plHideoutChg)
+SetChapterData(0x1D,plTowerObj,0,plMilaTemplePalette,plTowerConf,plHideoutMap,Map,plTowerAnim,0x0,plHideoutChg)
 EventPointerTable(plHideoutChg, MapChanges)
 Map:
 #incbin "ch3C-7_data.dmp"

@@ -56,8 +56,9 @@
 #define plVillageNightPalette 0x33
 #define plFieldsNightPalette 0x34
 #define plSluiceGatePalette 0x35
-#define plSylvanShrinePalette plSluiceGatePalette
-#define plDragonShrinePalette 0x36
+#define plSylvanShrinePalette plSluiceGatePalette //0x36
+#define plDragonShrinePalette 0x37
+#define plMilaTemplePalette 0x38
 
 //Map and event pointers
 #define plActChangeMap		0x41
@@ -160,10 +161,10 @@
 #define plCh3C_5_Event 		0x8F
 #define plCh3C_6_Map 		0x90
 #define plCh3C_6_Chg 		0x91
-#define plCh3C_6_Event 		plDummy_Event //0x92
-#define plCh3C_7_Map 		plDummy_Map //0x93
-#define plCh3C_7_Chg 		0x0 //0x94
-#define plCh3C_7_Event 		plDummy_Event //0x95
+#define plCh3C_6_Event 		0x92
+#define plCh3C_7_Map 		0x93
+#define plCh3C_7_Chg 		0x94
+#define plCh3C_7_Event 		0x95
 
 //Act 4
 #define plCh4_1C_Map 		plDummy_Map
@@ -191,10 +192,10 @@
 #define plSeaboundEvent 	0xCB
 #define plSylvanShrineMap 	0xCC
 #define plSylvanShrineChg	0xCD
-#define plSylvanShrineEvent plDummy_Event //0xCE
+#define plSylvanShrineEvent 0xCE
 #define plDragonShrineMap 	0xCF
 #define plDragonShrineChg	0xD0
-#define plDragonShrineEvent plDummy_Event //0xD1
+#define plDragonShrineEvent 0xD1
 #define plLostwoodsMap 		plDummy_Map //0xD2
 #define plLostwoodsChg		plDummy_Chg //0xD3
 #define plLostwoodsEvent 	plDummy_Event //0xD4

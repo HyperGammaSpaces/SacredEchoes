@@ -13,6 +13,11 @@ TowerPalette:
 #incbin "tower.pal.bin"
 POP
 
+ALIGN 4
+MilaTemplePalette:
+#incbin "milatemplepal.pal.bin"
+
 EventPointerTable(plTowerObj, TowerObjects) //tower obj
 EventPointerTable(plTowerPal, TowerPalette) //tower pal
 EventPointerTable(plTowerConf, TowerTiles) //tower tile
+EventPointerTable(plMilaTemplePalette, MilaTemplePalette) 
