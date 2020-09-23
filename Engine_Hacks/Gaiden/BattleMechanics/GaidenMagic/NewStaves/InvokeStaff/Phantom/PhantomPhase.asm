@@ -6,9 +6,23 @@
   .short 0xf800
 .endm
 
+.macro phantom_check, reg=r4
+  ldr  r0, [\reg, #0x0]
+  ldr  r1, [\reg, #0x4]
+  ldr  r0, [r0, #0x28]
+  ldr  r1, [r1, #0x28]
+  orr  r0, r1
+  mov  r1, #0x80
+  lsl  r1, r1, #0xD
+  and  r0, r1
+  cmp  r0, #0x0
+.endm
+
 .global PhantomPhase_Init
 .global PhantomOrder_Init
+.global HandleSpriteHover
 .global HandlePhantomSpriteHover
+.global HandleStatscreenHover
 
 PhantomPhase_Init:
 	push {r4-r6,lr}   
@@ -86,15 +100,7 @@ PhantomOrder_Init:
 		cmp  r0, #0x0
 		beq  PhantomOrder_LoopNextUnit
 		
-			ldr  r0, [r2, #0x0]		@char data
-			ldr  r1, [r2, #0x4]		@class data
-			ldr  r0, [r0, #0x28]	@bitfield
-			ldr  r1, [r1, #0x28]	@bitfield
-			orr  r0, r1
-			mov  r1, #0x80
-			lsl  r1, r1, #0xD		@Disable Unit Select flag
-			and  r0, r1
-			cmp  r0, #0x0
+			phantom_check @macro
 			beq  PhantomOrder_LoopNextUnit
 
 				ldr  r0, [r2, #0xC] 
@@ -139,21 +145,28 @@ PhantomOrder_Init_Exit:
 .align
 .ltorg
 
+HandleSpriteHover:
+	phantom_check @macro
+	beq  Hover_CheckStatus_1
+		b DontHover
+	
+Hover_CheckStatus_1:
+		ldr  r3, =0x0801d589
+		bx   r3
+	DontHover:
+		ldr  r3, =0x0801d59f
+		bx   r3
+
+.align
+.ltorg
+
 HandlePhantomSpriteHover:
-	ldr  r0, [r4, #0x0]
-	ldr  r1, [r4, #0x4]
-	ldr  r0, [r0, #0x28]
-	ldr  r1, [r1, #0x28]
-	orr  r0, r1
-	mov  r1, #0x80
-	lsl  r1, r1, #0xD
-	and  r0, r1
-	cmp  r0, #0x0
-	beq  Hover_CheckStatus
+	phantom_check @macro
+	beq  Hover_CheckStatus_2
 		b DontDraw
 	
 @handle sleep/berserk
-Hover_CheckStatus:
+Hover_CheckStatus_2:
 	mov  r0, r4
 	add  r0, #0x30 @status byte
 	ldrb r0, [r0]
@@ -169,7 +182,23 @@ Hover_CheckStatus:
 		ldr  r3, =0x08027ac1
 		bx   r3
 
-@3d3e4 AiDoBerserkAction
+HandleStatscreenHover:
+	push {lr}   
+	mov r2, r0
+	ldr r1, [r2, #0xc]
+	mov r0, #0x80
+	lsl r0, r0, #0x14
+	and r0, r1
+	cmp r0, #0x0
+	beq NotFourthColor
+		mov r0, #0xb
+		b ExitStatscreenHover
+	NotFourthColor:
+		mov r0, r2
+		blh 0x08027168   @GetUnitMapspritePaletteIndex
+ExitStatscreenHover:
+	pop {r1}
+	bx r1
 
-@3d404 AiDoBerserkMove
-
+.align
+.ltorg

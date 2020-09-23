@@ -114,14 +114,18 @@ PUSH
 	POIN PhantomPhase_Proc
 
 	//Use with unit/class flag 0x00100000 Disable Unit Select to make phantoms unselectable. (breaks tents but lol)
-	ORG $1D584
-	BYTE $03
+	ORG $1D570
+	jumpToHack(HandleSpriteHover)
 	
 	ORG $27a88
 	jumpToHack(HandlePhantomSpriteHover)
 	
 	ORG $784A2
-	BL($2713c) //forces hover anims to check "use light rune palette"
+	BL(StatscreenHoverLadder) //forces hover anims to check "use light rune palette"
+	
+	ORG $87194 //statscreen freespace
+	StatscreenHoverLadder:
+	replaceWithHack(HandleStatscreenHover)
 POP
 
 StartMultiSummon:
