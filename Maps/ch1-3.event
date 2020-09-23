@@ -5,7 +5,7 @@
 SetChapterData(0x02,plTempleObj,0,plThiefshrinePalette,plTempleConf,plCh1_3_Map,Map,plTempleAnim,0x0,plCh1_3_Chg)
 EventPointerTable(plCh1_3_Chg, MapChanges)
 Map:
-#incbin "ch1-3-new_data.dmp"
+#incbin "ch1-3_data.dmp"
 
 MapChanges:
 TileMap(0,12,8,1,1,Map_Change_0)

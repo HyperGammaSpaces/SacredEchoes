@@ -5,7 +5,7 @@
 SetChapterData(0x01,plFieldsObj,0,plFieldsPal,plFieldsConf,plCh1_2_Map,Map,plFieldsAnim,0x0,plCh1_2_Chg)
 EventPointerTable(plCh1_2_Chg, MapChanges)
 Map:
-#incbin "ch1-2-new_data.dmp"
+#incbin "ch1-2_data.dmp"
 
 MapChanges:
 TileMap(0,8,3,3,1,Map_Change_0)
