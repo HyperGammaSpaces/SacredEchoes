@@ -65,22 +65,22 @@ bl		GetConvoyPartitionEntry
 ldrb	r0,[r0,#1]			@ partition length
 pop		{r1}
 bx		r1
-
+.ltorg
 
 
 .align
 GetConvoyPartitionStartOffset:
-push	{r14}
-bl		GetConvoyPartitionEntry
-ldrb	r0,[r0]				@ partition start
-lsl		r0,#1
-ldr		r1,=gpConvoyItemArray
-ldr		r1,[r1]
-add		r0,r1
-pop		{r1}
-bx		r1
-.ltorg
-
+	push	{r14}
+	bl		GetConvoyPartitionEntry
+	ldrb	r0,[r0]				@ partition start
+	lsl		r0,#1
+	ldr		r1,=gpConvoyItemArray
+	ldr		r1,[r1]
+	add		r0,r1
+	pop		{r1}
+	bx		r1
+	.align
+	.ltorg
 
 
 .align
