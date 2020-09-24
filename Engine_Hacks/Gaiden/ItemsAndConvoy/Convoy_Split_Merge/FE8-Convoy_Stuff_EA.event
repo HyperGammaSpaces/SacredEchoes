@@ -10,8 +10,11 @@
 
 //NOTE: This hack does NOT expand the amount of items saved! It changes the items you can have, yes, but you're responsible for using Modular Save or some other hack to actually save more stuff.
 
+#ifndef gConvoyItemArray
+	#define gConvoyItemArray $0203B200
+#endif
+
 #define ConvoyTotalSize 200
-#define gConvoyItemArray $0203B200
 #define gChapterData $0202BCF0
 
 #define ConvoyPartition(start_slot, length, function) "BYTE start_slot length 0 0; POIN function"
@@ -99,8 +102,8 @@ callHack_r3(Hook_9E8F4)
 SHORT 0x46C0 0x2800 0xD01A //nop; cmp r0,#0; beq 9E93C
 
 //funds ranking fix
-ORG $17380
-BL(GetConvoyItemArrayStart)
+//ORG $17380
+//BL(GetConvoyItemArrayStart)
 
 //which proc to call if convoy and inventory are full
 ORG $1DFAC
