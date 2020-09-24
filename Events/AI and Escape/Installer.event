@@ -20,6 +20,7 @@ SetEscapePoints(0x07, Ch1_8_ThiefEscape)
 SetEscapePoints(0x0B, Ch2_4_ThiefEscape)
 SetEscapePoints(0x18, Ch3_3C_ThiefEscape)
 SetEscapePoints(0x12, Ch3_4A_ThiefEscape)
+SetEscapePoints(0x13, Ch3_5A_ThiefEscape)
 
 //Set whether AI can use door keys for a chapter (use OR | to combine bits)
 SetEnemyItemAI(0x07, LockpickAI)
@@ -70,5 +71,10 @@ BYTE $FF $00 $00 $00 //terminator
 Ch3_3C_ThiefEscape:
 BYTE $17 $09 //coords(23,9)
 BYTE $01 //move right
+BYTE $00 //separator
+BYTE $FF $00 $00 $00 //terminator
+Ch3_5A_ThiefEscape:
+BYTE 14 0 // coords
+BYTE $03 // move up
 BYTE $00 //separator
 BYTE $FF $00 $00 $00 //terminator
