@@ -6,6 +6,9 @@ ALIGN 4
 ApplyStatusToUnitIDASMC:
 #incbin "ApplyStatusToUnitID.dmp"
 ALIGN 4
+#include "ASMCCheckSuite/ASMCGetterSetterInstaller.event"
+
+ALIGN 4
 RemoveItemFromAnyASMC:
 #incbin "item_collect.bin"
 
