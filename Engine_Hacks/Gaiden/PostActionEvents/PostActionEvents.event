@@ -59,3 +59,14 @@ AddSupportPointsAfterBattle:
 #incbin "../SupportHax/PostBattleSupports.dmp"
 POIN SupportUpEvent
 ALIGN 4
+
+	/* Post-action calculation loop*/
+	
+#ifdef ESCAPE_ARRIVE_INSTALLED
+	#include "PostActionCalcLoop.lyn.event"
+	PostActionCalcFunctions: // Parameters: r0 = character struct. Immediately after "Turn ended" bit in the turn status bitfield is set.
+	POIN FinalEscapeThing
+	WORD 0
+
+	PROTECT $1879A $187B4
+#endif

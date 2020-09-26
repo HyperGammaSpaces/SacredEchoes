@@ -53,7 +53,7 @@ blh SetupBattleStructForStaffUser
 ldr r0, =0x0203a56c
 ldrb r1, [r4, #0x13] @target x
 strb r1, [r0, #0x10]
-ldrb r2, [r3, #0x14] @target y
+ldrb r2, [r4, #0x14] @target y
 strb r2, [r0, #0x11]
 	mov r3, r0
 	add r3, #0x73
