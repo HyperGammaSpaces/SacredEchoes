@@ -99,12 +99,22 @@ PUSH
 	// In SaveNewGame
 	ORG $0A4E84
 		WORD $46C046C0 // nop nop; don't get target save address
-	ORG $0A4F34
-		WORD $46C046C0 // nop nop; don't save chapter state just yet
-	ORG $0A4F40
-		WORD $46C046C0 // nop nop; don't save bonus content claim flags just yet
-	ORG $0A4F44
-		SHORT $E022 // b later; don't save units just yet
+	#ifdef LION_HEADS_ENABLED
+		ORG $0A4F34
+			SHORT $2000
+			BL($A43D4)
+			SHORT $46C0
+			LynJump(InitLionheadsForNewSavefile)
+			SHORT $1C38
+			B($A4F8C)
+	#else
+		ORG $0A4F34
+			WORD $46C046C0 // nop nop; don't save chapter state just yet
+		ORG $0A4F40
+			WORD $46C046C0 // nop nop; don't save bonus content claim flags just yet
+		ORG $0A4F44
+			SHORT $E022 // b later; don't save units just yet
+	#endif
 	ORG $0A412C
 		SHORT $E024 // b later; don't save bwl and chapter wins just yet
 	ORG $0A4F92

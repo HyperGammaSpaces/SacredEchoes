@@ -1,0 +1,90 @@
+//Lion Heads
+
+#define LION_HEADS_ENABLED
+#define gLionHeadRAMData 0x0201AFF0 //former pathfinding buffer, we can reuse for lion head storage or repoint later
+
+#define gLionHeadThiefshrine 		0x0
+#define gLionHeadHideout 			0x1
+#define gLionHeadPriory 			0x2
+#define gLionHeadSeaboundShrine1 	0x3
+#define gLionHeadSeaboundShrine2 	0x4
+#define gLionHeadSylvanShrine1 		0x5
+#define gLionHeadSylvanShrine2 		0x6
+#define gLionHeadDragonshrine 		0x7
+#define gLionHeadMilaTemple 		0x8
+#define gLionHeadFearMountain1 		0x9
+#define gLionHeadFearMountain2 		0xA
+#define gLionHeadSecretShrine1 		0xB
+#define gLionHeadSecretShrine2 		0xC
+#define gLionHeadLostwoods 			0xD
+
+#define Text_MaxHPUp 0x1C
+#define Text_StrUp 0x13
+#define Text_SklUp 0x15
+#define Text_SpdUp 0x16
+#define Text_LuckUp 0x17
+#define Text_DefUp 0x18
+#define Text_ResUp 0x19
+
+#include "../../../Events/ASMCs/ASMCCheckSuite/ASMCGetterSetterInstaller.event"
+#include "LionHeads.lyn.event"
+
+//Initial usage table
+LionheadUsesTable:
+BYTE gLionHeadThiefshrine 		0x3
+BYTE gLionHeadHideout 			0x3
+BYTE gLionHeadPriory 			0x3
+BYTE gLionHeadSeaboundShrine1 	0x4
+BYTE gLionHeadSeaboundShrine2 	0x3
+BYTE gLionHeadSylvanShrine1 	0x2
+BYTE gLionHeadSylvanShrine2 	0x3
+BYTE gLionHeadDragonshrine 		0x3
+BYTE gLionHeadMilaTemple 		0x2
+BYTE gLionHeadFearMountain1 	0x3
+BYTE gLionHeadFearMountain2 	0x3
+BYTE gLionHeadSecretShrine1 	0x3
+BYTE gLionHeadSecretShrine2 	0x3
+BYTE gLionHeadLostwoods 		0x3
+BYTE $FF $FF //terminator
+
+#define CheckLionheadUses(LionheadID) "SVAL 0x2 LionheadID; ASMC CheckLionheadASMC|1"
+#define IncrementLionheadUses(LionheadID) "SVAL 0x2 LionheadID; ASMC IncrementLionheadASMC|1"
+
+ALIGN 4
+LionHeadExampleEvent:
+	//Check uses, if 0 goto 0x99
+	CheckLionheadUses(gLionHeadThiefshrine)
+	BEQ 0x98 0xC 0x0
+	SETVAL 0xB 0xFFFFFFFF
+	TUTORIALTEXTBOXSTART
+	TEXTSHOW2 LionHead_MaxHP //"Accept Water of HP?"
+	TEXTEND
+	REMA
+	SVAL 0x1 0x1
+	//yes = 1 no = 2
+	BNE 0x99 0xC 0x1
+		GiveMaxHP(0xFFFF,0x1)
+		//Success is returned in slot C
+		BEQ 0x97 0xC 0x0
+			NOTIFY Text_MaxHPUp 0x0 0x0
+			IncrementLionheadUses(gLionHeadThiefshrine)
+			GOTO 0x99
+	LABEL 0x97
+		SETVAL 0xB 0xFFFFFFFF
+		TUTORIALTEXTBOXSTART
+		TEXTSHOW2 LionHead_CantDrink
+		TEXTEND
+		REMA
+		GOTO 0x99
+	LABEL 0x98
+		SETVAL 0xB 0xFFFFFFFF
+		TUTORIALTEXTBOXSTART
+		TEXTSHOW2 LionHead_RunDry
+		TEXTEND
+		REMA
+	LABEL 0x99
+	NoFade
+	ENDA
+	
+
+

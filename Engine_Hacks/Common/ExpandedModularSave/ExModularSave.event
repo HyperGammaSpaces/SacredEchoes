@@ -124,7 +124,10 @@ gGameSaveChunks:
 	DeclSaveChunk($061C, $00C0, $0A4288+1,            $0A4248+1,            EMS_CHUNK_WINDATA)
 	DeclSaveChunk($06DC, $0019, $0A3150+1,            $0A3198+1,            EMS_CHUNK_EIDS_PERMANENT)
 	DeclSaveChunk($0700, $0004, MSa_SaveBonusClaim,   MSa_LoadBonusClaim,   EMS_CHUNK_BONUSCLAIMDATA)
-	DeclSaveChunk($0708, $0048, MSa_SaveWMStuff,      MSa_LoadWMStuff,      EMS_CHUNK_WMDATA) //we actually only need 0x30 to save expanded data, so this can be cut down if needed
+	DeclSaveChunk($0708, $0030, MSa_SaveWMStuff,      MSa_LoadWMStuff,      EMS_CHUNK_WMDATA) //we actually only need 0x30 to save expanded data, so this can be cut down if needed
+	#ifdef LION_HEADS_ENABLED
+		DeclSaveChunk($0738, $0018, MSa_SaveLionheads,      MSa_LoadLionheads)
+	#endif
 	DeclSaveChunk($0750, $0018, MSa_SaveDungeonState, MSa_LoadDungeonState) // Valni/Lagdou permanent data
 
 	// $0768
@@ -156,7 +159,10 @@ gSuspendSaveChunks:
 	DeclSaveChunk($091C, $0010, MSu_SaveMenuRelated,  MSu_LoadMenuRelated)  // "menu related list" related
 	DeclSaveChunk($092C, $0019, $0A3150+1,            $0A3198+1)            // Permanent eids
 	DeclSaveChunk($0945, $0005, $0A3130+1,            $0A3170+1)            // Temporary eids
-	DeclSaveChunk($094C, $0048, MSa_SaveWMStuff,      MSa_LoadWMStuff,      EMS_CHUNK_WMDATA) //we actually only need 0x30 to save expanded data, so this can be cut down if needed
+	DeclSaveChunk($094C, $0030, MSa_SaveWMStuff,      MSa_LoadWMStuff,      EMS_CHUNK_WMDATA) //we actually only need 0x30 to save expanded data, so this can be cut down if needed
+	#ifdef LION_HEADS_ENABLED
+		DeclSaveChunk($097C, $0018, MSa_SaveLionheads,      MSa_LoadLionheads)
+	#endif
 	DeclSaveChunk($0994, $000C, MSu_SaveDungeonState, MSu_LoadDungeonState) // Valni/Lagdou active run data
 	DeclSaveChunk($09A0, $0004, MSu_SaveEventCounter, MSu_LoadEventCounter) // Event counter
 
