@@ -6,6 +6,7 @@
   .short 0xf800
 .endm
 
+.equ gLionHeadRAMData, 0x0201AFF0
 .equ MemorySlot2, 0x030004C0
 .equ MemorySlot3, 0x030004C4
 .equ MemorySlotC, 0x030004E8
@@ -25,7 +26,7 @@ LionheadInitLoop:
 	cmp  r2, #0xFF
 	beq  LionheadInit_End
 	strb r2, [r0]
-	add  r0, #0x2
+	add  r0, #0x1
 	add  r1, #0x2
 	b    LionheadInitLoop
 LionheadInit_End:
@@ -56,7 +57,7 @@ IncrementLionheadASMC:
 	ldrb r0, [r1, r0]
 	mov  r2, #0x1
 	sub  r0, r0, r2
-	str  r0, [r1]
+	strb r0, [r1]
 	pop  {r0}
 	bx   r0
 

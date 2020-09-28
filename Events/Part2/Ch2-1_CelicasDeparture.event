@@ -66,6 +66,12 @@ Ch2_1_LocationBasedEvents:
 #ifdef __DEBUG__
   Seize(4,5)
 #endif
+
+#ifdef LION_HEADS_ENABLED
+	//Lion heads
+	LionHead(LionHeadPriorySpd, 0, 8)
+	LionHead(LionHeadPrioryAtk, 6, 8)
+#endif
 LOCA
 
 Ch2_1_MiscBasedEvents:

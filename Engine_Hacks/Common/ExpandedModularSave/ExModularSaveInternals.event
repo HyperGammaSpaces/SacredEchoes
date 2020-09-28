@@ -102,9 +102,9 @@ PUSH
 	#ifdef LION_HEADS_ENABLED
 		ORG $0A4F34
 			SHORT $2000
-			BL($A43D4)
+			BL($A4D34)
 			SHORT $46C0
-			LynJump(InitLionheadsForNewSavefile)
+			callHack_r3(InitLionheadsForNewSavefile)
 			SHORT $1C38
 			B($A4F8C)
 	#else

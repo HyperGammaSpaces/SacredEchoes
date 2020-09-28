@@ -33,6 +33,10 @@ Ch3_3A_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
+	#ifdef LION_HEADS_ENABLED
+		//Lion heads
+		LionHead(LionHeadDragonshrine, 14, 2)
+	#endif
 	LOCA
 
 Ch3_3A_MiscBasedEvents:

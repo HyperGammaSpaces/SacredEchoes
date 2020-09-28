@@ -126,7 +126,7 @@ gGameSaveChunks:
 	DeclSaveChunk($0700, $0004, MSa_SaveBonusClaim,   MSa_LoadBonusClaim,   EMS_CHUNK_BONUSCLAIMDATA)
 	DeclSaveChunk($0708, $0030, MSa_SaveWMStuff,      MSa_LoadWMStuff,      EMS_CHUNK_WMDATA) //we actually only need 0x30 to save expanded data, so this can be cut down if needed
 	#ifdef LION_HEADS_ENABLED
-		DeclSaveChunk($0738, $0018, MSa_SaveLionheads,      MSa_LoadLionheads)
+		DeclSaveChunk($0738, $0018, MSa_SaveLionheads|1,      MSa_LoadLionheads|1)
 	#endif
 	DeclSaveChunk($0750, $0018, MSa_SaveDungeonState, MSa_LoadDungeonState) // Valni/Lagdou permanent data
 
@@ -161,7 +161,7 @@ gSuspendSaveChunks:
 	DeclSaveChunk($0945, $0005, $0A3130+1,            $0A3170+1)            // Temporary eids
 	DeclSaveChunk($094C, $0030, MSa_SaveWMStuff,      MSa_LoadWMStuff,      EMS_CHUNK_WMDATA) //we actually only need 0x30 to save expanded data, so this can be cut down if needed
 	#ifdef LION_HEADS_ENABLED
-		DeclSaveChunk($097C, $0018, MSa_SaveLionheads,      MSa_LoadLionheads)
+		DeclSaveChunk($097C, $0018, MSa_SaveLionheads|1,      MSa_LoadLionheads|1)
 	#endif
 	DeclSaveChunk($0994, $000C, MSu_SaveDungeonState, MSu_LoadDungeonState) // Valni/Lagdou active run data
 	DeclSaveChunk($09A0, $0004, MSu_SaveEventCounter, MSu_LoadEventCounter) // Event counter

@@ -33,6 +33,12 @@ Ch3_3A_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
+	#ifdef LION_HEADS_ENABLED
+		//Lion heads
+		LionHead(LionHeadSylvanRes, 9, 30)
+		LionHead(LionHeadSylvanHP, 6, 3)
+		LionHead(LionHeadSylvanExp, 9, 3)
+	#endif
 	LOCA
 
 Ch3_3A_MiscBasedEvents:

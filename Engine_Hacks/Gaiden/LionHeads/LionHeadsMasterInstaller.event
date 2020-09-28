@@ -50,24 +50,84 @@ BYTE $FF $FF //terminator
 #define CheckLionheadUses(LionheadID) "SVAL 0x2 LionheadID; ASMC CheckLionheadASMC|1"
 #define IncrementLionheadUses(LionheadID) "SVAL 0x2 LionheadID; ASMC IncrementLionheadASMC|1"
 
+//macros for use in events
+#define LionHead(offset,locaX,locaY)       "LOCA 0 offset [locaX,locaY] 0x10"
+#define LionHeadHpUp(LionID) "CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_MaxHP; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x99 0xC 0x1; GiveMaxHP(0xFFFF,0x1); BEQ 0x97 0xC 0x0; NOTIFY Text_MaxHPUp 0x0 0x0; IncrementLionheadUses(LionID); GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; NoFade; ENDA"
+#define LionHeadStrUp(LionID) "CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Strength; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x99 0xC 0x1; GiveStrength(0xFFFF,0x1); BEQ 0x97 0xC 0x0; NOTIFY Text_StrUp 0x0 0x0; IncrementLionheadUses(LionID); GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; NoFade; ENDA"
+#define LionHeadSklUp(LionID) "CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Skill; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x99 0xC 0x1; GiveSkill(0xFFFF,0x1); BEQ 0x97 0xC 0x0; NOTIFY Text_SklUp 0x0 0x0; IncrementLionheadUses(LionID); GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; NoFade; ENDA"
+#define LionHeadSpdUp(LionID) "CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Speed; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x99 0xC 0x1; GiveSpeed(0xFFFF,0x1); BEQ 0x97 0xC 0x0; NOTIFY Text_SpdUp 0x0 0x0; IncrementLionheadUses(LionID); GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; NoFade; ENDA"
+#define LionHeadLuckUp(LionID) "CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Luck; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x99 0xC 0x1; GiveLuck(0xFFFF,0x1); BEQ 0x97 0xC 0x0; NOTIFY Text_LuckUp 0x0 0x0; IncrementLionheadUses(LionID); GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; NoFade; ENDA"
+#define LionHeadDefUp(LionID) "CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Defense; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x99 0xC 0x1; GiveDefense(0xFFFF,0x1); BEQ 0x97 0xC 0x0; NOTIFY Text_DefUp 0x0 0x0; IncrementLionheadUses(LionID); GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; NoFade; ENDA"
+#define LionHeadResUp(LionID) "CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Resistance; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x99 0xC 0x1; GiveResistance(0xFFFF,0x1); BEQ 0x97 0xC 0x0; NOTIFY Text_ResUp 0x0 0x0; IncrementLionheadUses(LionID); GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; NoFade; ENDA"
+#define LionHeadExpUp(LionID) "CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Exp; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x99 0xC 0x1; GiveExperience(0xFFFF,0x64); BEQ 0x97 0xC 0x0; IncrementLionheadUses(LionID); GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; NoFade; ENDA"
+
 ALIGN 4
+
+LionHeadThiefshrineSpeed:
+	LionHeadSpdUp(gLionHeadThiefshrine)
+	ALIGN 4
+LionHeadThiefshrineHP:
+	LionHeadHpUp(gLionHeadThiefshrine)
+	ALIGN 4
+LionHeadHideoutDef:
+	LionHeadDefUp(gLionHeadHideout)
+	ALIGN 4
+LionHeadHideoutAtk:
+	LionHeadStrUp(gLionHeadHideout)
+	ALIGN 4
+LionHeadPriorySpd:
+	LionHeadSpdUp(gLionHeadPriory)
+	ALIGN 4
+LionHeadPrioryAtk:
+	LionHeadStrUp(gLionHeadPriory)
+	ALIGN 4
+LionHeadSeaboundRes:
+	LionHeadResUp(gLionHeadSeaboundShrine1)
+	ALIGN 4
+LionHeadSeaboundExp:
+	LionHeadExpUp(gLionHeadSeaboundShrine1)
+	ALIGN 4
+LionHeadSeaboundSkill:
+	LionHeadSklUp(gLionHeadSeaboundShrine2)
+	ALIGN 4
+LionHeadSeaboundHP:
+	LionHeadHpUp(gLionHeadSeaboundShrine2)
+	ALIGN 4
+LionHeadSylvanRes:
+	LionHeadResUp(gLionHeadSylvanShrine1)
+	ALIGN 4
+LionHeadSylvanHP:
+	LionHeadHpUp(gLionHeadSylvanShrine2)
+	ALIGN 4
+LionHeadSylvanExp:
+	LionHeadExpUp(gLionHeadSylvanShrine2)
+	ALIGN 4
+LionHeadMilaTempleAtk:
+	LionHeadStrUp(gLionHeadMilaTemple)
+	ALIGN 4
+LionHeadMilaTempleExp:
+	LionHeadExpUp(gLionHeadMilaTemple)
+	ALIGN 4
+LionHeadDragonshrine:
+	//Resurrection, dummy out for now
+	//LionHeadRevival(gLionHeadDragonshrine)
+	//ALIGN 4
 LionHeadExampleEvent:
 	//Check uses, if 0 goto 0x99
-	CheckLionheadUses(gLionHeadThiefshrine)
+	CheckLionheadUses(gLionHeadDragonshrine)
 	BEQ 0x98 0xC 0x0
 	SETVAL 0xB 0xFFFFFFFF
 	TUTORIALTEXTBOXSTART
-	TEXTSHOW2 LionHead_MaxHP //"Accept Water of HP?"
+	TEXTSHOW2 LionHead_Exp //"Accept Water of Exp?"
 	TEXTEND
 	REMA
 	SVAL 0x1 0x1
 	//yes = 1 no = 2
 	BNE 0x99 0xC 0x1
-		GiveMaxHP(0xFFFF,0x1)
+		GiveExperience(0xFFFF,0x64)
 		//Success is returned in slot C
 		BEQ 0x97 0xC 0x0
-			NOTIFY Text_MaxHPUp 0x0 0x0
-			IncrementLionheadUses(gLionHeadThiefshrine)
+			IncrementLionheadUses(gLionHeadDragonshrine)
 			GOTO 0x99
 	LABEL 0x97
 		SETVAL 0xB 0xFFFFFFFF
@@ -85,6 +145,3 @@ LionHeadExampleEvent:
 	LABEL 0x99
 	NoFade
 	ENDA
-	
-
-

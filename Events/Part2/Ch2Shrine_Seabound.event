@@ -28,6 +28,12 @@ SeaboundShrine_LocationBasedEvents:
   Seize(4,5)
 #endif
 CHES 0x9 Vulnerary [1,16] 0x14
+
+#ifdef LION_HEADS_ENABLED
+	//Lion heads
+	LionHead(LionHeadSeaboundSkill, 12, 4)
+	LionHead(LionHeadSeaboundHP, 14, 4)
+#endif
 LOCA
 
 SeaboundShrine_MiscBasedEvents:

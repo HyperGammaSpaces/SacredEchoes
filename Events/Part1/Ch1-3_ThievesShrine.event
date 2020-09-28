@@ -77,6 +77,12 @@ Ch1_3_LocationBasedEvents:
 #endif
 Chest(IronSword, 12, 8)
 Door(12, 6)
+
+#ifdef LION_HEADS_ENABLED
+	//Lion heads
+	LionHead(LionHeadThiefshrineSpeed, 4, 1)
+	LionHead(LionHeadThiefshrineHP, 12, 1)
+#endif
 LOCA
 
 Ch1_3_MiscBasedEvents:
