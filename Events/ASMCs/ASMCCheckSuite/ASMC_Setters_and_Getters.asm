@@ -88,6 +88,37 @@ GiveExpToActiveUnitWrapper:
 .align
 .ltorg
 
+BeginMapAnimExp:
+	push {r4, lr}
+	ldr  r1, =0x0203e1f0		@ gMapAnimStruct
+	mov  r12, r1
+	add  r1, #0x5F				@ unknown 1
+	mov  r3, #0x0
+	strb r3, [r1]
+	mov  r2, r12
+	add  r2, #0x62				@ unknown 2
+	mov  r1, #0x2
+	strb r1, [r2]
+	mov  r1, r12
+	add  r1, #0x5E				@ actor count
+	mov  r2, #0x1
+	strb r2, [r1]
+	sub  r1, #0x6				@ attacking actor id
+	strb r3, [r1]
+	add  r1, #0x1				@ defending actor id
+	strb r2, [r1]
+	ldr  r0, =0x0203a4ec		@ gBattleActor
+	ldr  r1, =0x0203A56C		@ gBattleTarget
+	ldr  r2, =0x0807b738
+	ldr  r2, [r2]				@ battle buffer
+	blh  0x0807b900 			@ SetupMapBattleAnim
+	ldr  r0, =MapAnimGetExp
+	mov  r1, #0x3
+	blh  0x08002c7c 			@ Proc_New
+	pop  {r4}
+	pop  {r0}
+	bx   r0
+
 GiveExperienceASMC:
 	push {r4,r5,r14}
 	mov  r5, r0
@@ -103,8 +134,10 @@ GiveExperienceASMC:
 	@get amount
 	ldr  r1, =MemorySlot3
 	ldrh r1, [r1]
-	mov  r0, r5
-	bl   GiveExpToActiveUnitWrapper
+	mov  r0, r1
+	bl   GiveExpToActiveUnit
+	blh  0x080790a4 @ClearMOVEUNITs
+	bl   BeginMapAnimExp
 	
 		ldr  r1, =MemorySlotC
 		str  r0, [r1]
