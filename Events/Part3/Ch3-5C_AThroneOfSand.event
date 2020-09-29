@@ -2,21 +2,21 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plCh3C_5_Event, Ch3_3C_ThisChapter)
+EventPointerTable(plCh3C_5_Event, Ch3_5C_ThisChapter)
 
-Ch3_3C_ThisChapter:
-	POIN Ch3_3C_TurnBasedEvents
-	POIN Ch3_3C_CharacterBasedEvents
-	POIN Ch3_3C_LocationBasedEvents
-	POIN Ch3_3C_MiscBasedEvents
-	POIN Ch3_3C_Dunno Ch3_3C_Dunno Ch3_3C_Dunno
-	POIN Ch3_3C_Tutorial
-	POIN Ch3_3C_Ballista1 Ch3_3C_Ballista2
-	POIN Ch3_3C_Units1 Ch3_3C_Units1
+Ch3_5C_ThisChapter:
+	POIN Ch3_5C_TurnBasedEvents
+	POIN Ch3_5C_CharacterBasedEvents
+	POIN Ch3_5C_LocationBasedEvents
+	POIN Ch3_5C_MiscBasedEvents
+	POIN Ch3_5C_Dunno Ch3_5C_Dunno Ch3_5C_Dunno
+	POIN Ch3_5C_Tutorial
+	POIN Ch3_5C_Ballista1 Ch3_5C_Ballista2
+	POIN Ch3_5C_Units1 Ch3_5C_Units1
 	POIN $0 $0 $0 $0 $0 $0
-	POIN Ch3_3C_BeginningScene Ch3_3C_EndingScene
+	POIN Ch3_5C_BeginningScene Ch3_5C_EndingScene
 
-Ch3_3C_TurnBasedEvents:
+Ch3_5C_TurnBasedEvents:
 	TURN 0x0 LoadReinforcements [3,6] 0x0
 	TURN
 
@@ -25,10 +25,10 @@ LoadReinforcements:
 	NoFade
 	ENDA
 
-Ch3_3C_CharacterBasedEvents:
+Ch3_5C_CharacterBasedEvents:
 	CHAR
 
-Ch3_3C_LocationBasedEvents:
+Ch3_5C_LocationBasedEvents:
 	Seize(20, 2)
 	Door(15, 4)
 	Door(15, 5)
@@ -41,26 +41,26 @@ Ch3_3C_LocationBasedEvents:
 	Chest(SteelLance, 8, 10)
 	LOCA
 
-Ch3_3C_MiscBasedEvents:
+Ch3_5C_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	MournQuoteAFEVS
 	AFEV
 
-Ch3_3C_Dunno:
+Ch3_5C_Dunno:
 	END_MAIN
 
-Ch3_3C_Tutorial:
+Ch3_5C_Tutorial:
 	END_MAIN
 
-Ch3_3C_Ballista1:
+Ch3_5C_Ballista1:
 	BLST
 	ALIGN 4
 
-Ch3_3C_Ballista2:
+Ch3_5C_Ballista2:
 	BLST
 	ALIGN 4
 
-Ch3_3C_Units1:
+Ch3_5C_Units1:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -126,40 +126,105 @@ Reinforcements4:
 Reinforcements5:
 	UNIT 0x8B Shaman	Grieth Level(12, Enemy, True) [13,3]	0x00 0x00 0x1 REDA13R3 [Miasma] NoAI
 	UNIT
+	
+SonyaJoins:
+	UNIT Sonya Mage_F	0x0 Level(5, Ally, False) [15,8]	0x00 0x00 0x0 0x00 [Fire,SteelShield,MageRing] NoAI
+	UNIT
+	
+DeenJoins:
+	UNIT Deen Myrmidon	0x0 Level(5, Ally, False) [15,8]	0x00 0x00 0x0 0x00 [BaseSword,BraveSword,DeensSword] NoAI
+	UNIT
 
-Ch3_3C_BeginningScene:
-
-	//DEBUG ONLY
-	SetBackground(0x1D)
-	Text(Placeholder_Text)
-	MNTS 0x0
-	//END DEBUG
-
+Ch3_5C_BeginningScene:
 	MUSC 0x25
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	SetBackground(0x30) //desert
-	Text(Ch3_3C_OpeningText)
+	SetBackground(0x0C) //fortress hall
+	Text(Ch3_5C_OpeningText) //grieth and bandit
 	FADI 60
 	REMA
-	LOAD3 0x0 Ch3_3C_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	LOAD3 0x0 Ch3_5C_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
+	FADU 60
+	STAL 20
+	CAM1 Celica
+	STAL 20
+	Text(Ch3_5C_OpeningText_2) //celica yells at grieth
+	FADI 60
+	REMA
 	GotoPrepScreen
 	ENDA
 
-Ch3_3C_EndingScene:
+Ch3_5C_EndingScene:
 	CALL UnifiedBEXPCaller
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C5Completed
 	EVBIT_MODIFY 0x0
 	FADI 2
 	
-	MUSC 0x2E
-	SetBackground(0x0C)
-	Text(Ch3_3C_EndingText_Grieth)
-	//FADI 2
+	MUSC 0x31 //victory
+	SetBackground(0x17) //dungeon cell
+	TEXTSTART
+	TEXTSHOW Ch3_5C_EndingText //irma
+	TEXTEND
+	MUSC 0x2B //legacy
+	TEXTCONT
+	TEXTEND
+	REMA
 	
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x19
+	//cutscene Ch3_5C_EndingText_CG
+	REMOVEPORTRAITS
+	FADI 8
+//	SetBackground(LipricaCG) //actual cg
+	SetBackground(0x3C) //test cg
+	REMOVEPORTRAITS
+	STAL 90
+	_0x1A22
+	TEXTSHOW Ch3_5C_EndingText_CG
+	TEXTEND
+	FADI 5
+	REMA
+	
+	SetBackground(0x17) //dungeon cell
+	Text(Ch3_5C_EndingText_2) //irma 2
+	
+	MUSC 0x31 //victory
+	//atlas finds his bros
+	CHECK_ALIVE Atlas
+	BEQ 0x3 0xC 0x0
+		SetBackground(0x0C)
+		CHECK_ALIVE Hyas
+		BEQ 0x4 0xC 0x0
+			Text(Ch3_5C_EndingText_AtlasHyas)
+		LABEL 0x4 //atlas only
+		Text(Ch3_5C_EndingText_AtlasOnly)
+	LABEL 0x3 //atlas dead
+	
+	//get est
+	SetBackground(0x17) //dungeon cell
+	CHECK_ALIVE Palla
+	BEQ 0x5 0xC 0x0
+		CHECK_ALIVE Catria
+		BEQ 0x5 0xC 0x0
+			Text(Ch3_5C_EndingText_GetEst)
+	LABEL 0x5
+	Text(Ch3_5C_EndingText_EstOnly)
+	
+	//get deen or sonya
+	SetBackground(0x0C)
+	CHECK_EVENTID gFightSonyaChosen
+	BEQ 0x6 0xC 0x0
+		Text(Ch3_5C_EndingText_GetDeen)
+		FADI 2
+		LOAD1 0x1 DeenJoins
+		ENUN
+		GOTO 0x7
+	LABEL 0x6
+		Text(Ch3_5C_EndingText_GetSonya)
+		FADI 2
+		LOAD1 0x1 SonyaJoins
+		ENUN
+	LABEL 0x7
+	
+	MNCH 0x1C
 	ENDA

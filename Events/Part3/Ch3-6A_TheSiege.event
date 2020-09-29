@@ -78,6 +78,14 @@ Reinforcements1:
 	UNIT
 
 Ch3_3A_BeginningScene:
+
+	//debug only
+	SetBackground(0x1D)
+	Text(Celica_EndDemo)
+	MNTS 0x0
+	ENDA
+	//end debug
+
 	MUSC 0x25
 	LOAD2 0x1 CutsceneUnits
 	ENUN
@@ -98,7 +106,7 @@ Ch3_3A_EndingScene:
 	CALL UnifiedBEXPCaller
 	FADI 2
 	EVBIT_MODIFY 0x1
-	ENUT gChapter3A5Completed
+	ENUT gChapter3A6Completed
 	EVBIT_MODIFY 0x0
 	MUSC 0x31
 	SetBackground(0x1D)

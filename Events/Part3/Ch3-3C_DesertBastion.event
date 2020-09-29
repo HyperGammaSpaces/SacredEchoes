@@ -272,6 +272,7 @@ Ch3_3C_EndingScene:
 	//Call a lordsplit menu and store the result to gFightSonyaChosen.
 	STAL 20
 	EVBIT_MODIFY 0x1
+	SetBackground(0x28)
 	ASMC prCallDeenSonyaEventMenu+1 // Call the Split Menu
 	
 	SVAL  r1 True 

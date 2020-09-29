@@ -17,7 +17,7 @@ Ch3_4C_ThisChapter:
 	POIN Ch3_4C_BeginningScene Ch3_4C_EndingScene
 
 Ch3_4C_TurnBasedEvents:
-	TURN 0x0 LoadReinforcements [3,7] 0x0
+	TURN 0x0 LoadReinforcements [3,6] 0x0
 	TURN
 
 LoadReinforcements:
@@ -97,10 +97,6 @@ EnemyUnitsDeen:
 ReinforcementsDeen:
 	UNIT 0x8C Mage_F	DeenBoss Level(13, Enemy, True) [15,8]	0x00 0x00 0x1 REDA15R8 [Thunder] NoAI
 	UNIT
-	
-SonyaJoins:
-	UNIT Sonya Mage_F	0x0 Level(5, Ally, False) [15,8]	0x00 0x00 0x0 0x00 [Fire,SteelShield,MageRing] NoAI
-	UNIT
 
 Ch3_4C_BeginningScene:
 	MUSC 0x0D //desert theme
@@ -113,7 +109,12 @@ Ch3_4C_BeginningScene:
 	STAL 20
 
 	SetBackground(0x30)
-	Text(Ch3_4C_OpeningText_DeenChosen)
+	CHECK_ALIVE Atlas
+	BEQ 0x2 0xC 0x0
+		Text(Ch3_4C_OpeningText_DeenChosen_Atlas)
+	LABEL 0x2
+		Text(Ch3_4C_OpeningText_DeenChosen)
+	LABEL 0x3
 	FADI 60
 	CLEA 0x0
 	LOAD1 0x1 EnemyUnitsDeen
@@ -131,11 +132,12 @@ Ch3_4C_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C4Completed
 	EVBIT_MODIFY 0x0
-	LOAD1 0x1 SonyaJoins
-	ENUN
 	MUSC 0x31
 	SetBackground(0x30)
 	Text(Ch3_4C_EndingText)
+	FADI 5
+	SetBackground(0x4C)
+	Text(Ch3_4C_EndingText_SonyaRetreats)
 	FADI 5
 	MNCH 0x1B
 	ENDA
