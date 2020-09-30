@@ -112,6 +112,7 @@ Ch3_4C_BeginningScene:
 	CHECK_ALIVE Atlas
 	BEQ 0x2 0xC 0x0
 		Text(Ch3_4C_OpeningText_DeenChosen_Atlas)
+		GOTO 0x3
 	LABEL 0x2
 		Text(Ch3_4C_OpeningText_DeenChosen)
 	LABEL 0x3

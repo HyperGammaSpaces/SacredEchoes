@@ -38,10 +38,10 @@ POIN ShowDifficultyTable
 
 ShowDifficultyTable:
 //TextID   SaveSlotPopupTextColor  StatusScreenTextColor
-SHORT Mode_EasyCasual; BYTE 0x2; BYTE 0x2; //Easy Casual
-SHORT Mode_EasyClassic; BYTE 0x2; BYTE 0x2; //Easy Classic
-SHORT Mode_NormalCasual; BYTE 0x2; BYTE 0x0; //Normal Casual
-SHORT Mode_NormalClassic; BYTE 0x2; BYTE 0x0; //Normal Classic
-SHORT Mode_HardCasual; BYTE 0x2; BYTE 0x4; //Hard Casual
-SHORT Mode_HardClassic; BYTE 0x4; BYTE 0x4; //Hard Classic
+SHORT Mode_EasyCasual; BYTE 0x7; BYTE 0x2; //Easy Casual
+SHORT Mode_EasyClassic; BYTE 0x7; BYTE 0x2; //Easy Classic
+SHORT Mode_NormalCasual; BYTE 0x7; BYTE 0x0; //Normal Casual
+SHORT Mode_NormalClassic; BYTE 0x7; BYTE 0x0; //Normal Classic
+SHORT Mode_HardCasual; BYTE 0x7; BYTE 0x4; //Hard Casual
+SHORT Mode_HardClassic; BYTE 0x7; BYTE 0x4; //Hard Classic
 WORD $0 //term

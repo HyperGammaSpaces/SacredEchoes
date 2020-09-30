@@ -113,6 +113,7 @@ Ch3_4C_BeginningScene:
 	CHECK_ALIVE Catria
 	BEQ 0x2 0xC 0x0
 		Text(Ch3_4C_OpeningText_SonyaChosen_Catria)
+		GOTO 0x3
 	LABEL 0x2
 		Text(Ch3_4C_OpeningText_SonyaChosen)
 	LABEL 0x3

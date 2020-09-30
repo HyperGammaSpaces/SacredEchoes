@@ -6,7 +6,7 @@
   .short 0xf800
 .endm
 
-.equ gLionHeadRAMData, 0x0201AFF0
+.equ gLionHeadRAMData, 0x02028BD8
 .equ MemorySlot2, 0x030004C0
 .equ MemorySlot3, 0x030004C4
 .equ MemorySlotC, 0x030004E8
