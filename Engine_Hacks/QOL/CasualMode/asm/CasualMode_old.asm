@@ -11,15 +11,11 @@
 .global CallRetreatQuote
 .global CM_CallGraphicsSetup
 .global CM_HandleUserInput
-
 .global CheckCasualModeInNewSave
 .global New_SetOptionsFromDifficultySelect
 .global New_StartDifficultyMenus
 .global Check_ValidModeSelected
-
-.global CasualMode_SetFlag
 .global CM_Finish
-.global CM_Kill_SaveMenuCursor
 
 CasualMode_Main:
 	push {r4}
@@ -102,16 +98,9 @@ CasualUnset:
 
 CallRetreatQuote:
 	@r5 = unit ID
-    mov r1, #0xc0
-    and r0 ,r1
-    cmp r0, #0x0
-    bne RetreatQuote_NotFound
-
-	ldr  r0, =0x08083628	
-	ldrb r0 ,[r0]      @Get BGM 0x3F Death songID
+	mov  r0, #0x3F  @Death songID
 	mov  r1, #0x0
-	blh  0x080024d4 @SwitchBGM	
-
+	blh  0x080024d4 @SwitchBGM
 	bl   CasualCheck
 	cmp  r0, #0x0
 	beq  RetreatQuote_NotFound
@@ -124,18 +113,7 @@ FindRetreatQuote:
 	beq  RetreatQuote_NotFound
 	cmp  r0, r5
 	bne  RQ_LoopNext
-
-	ldrb r0, [r2,#0x1] @Map
-	cmp  r0, #0xFF
-	beq  CallRetreatQuote_Match
 	
-	ldr  r1, =0x0202BCF0 @gChapterData
-
-	ldrb r1,[r1,#0xE]    @gChapterData->MapID
-	cmp  r0, r1
-	bne  RQ_LoopNext
-	
-	CallRetreatQuote_Match:
 		@Do retreat quote
 		ldrh r0, [r2, #0x2]
 		cmp  r0, #0x0
@@ -169,9 +147,34 @@ CM_CallGraphicsSetup:
 	bl   SetupCMGraphics
 	pop  {r0}
 	bx   r0
+	
+New_StartDifficultyMenus:
+	push {lr}
+	mov  r1, r0
+	ldr  r0, =CasualModeSelectProc
+	blh  0x08002CE0   @NewBlocking6C
+	pop  {r0}
+	bx   r0
+
 
 .align
 .ltorg
+
+CheckCasualModeInNewSave:
+@r0 has ChapterData+0x42 value. r6 has casual mode flag. r1/r2 are free
+	cmp  r6, #0x0
+	beq ContinueNewCasualMode
+		mov r1, #0x40
+		orr r0, r1
+	ContinueNewCasualMode:
+	mov  r2, r12
+	ldrb r1, [r2]
+	mov  r3, #0x21
+	neg  r3, r3
+	and  r3, r1
+	orr  r3, r0
+	ldr  r4, =0x08030d41
+	bx   r4
 
 StoreSomeProcThing:
 	ldrh r3, [r0, #0x2c]
@@ -190,6 +193,31 @@ StoreSomeProcThing:
 .align
 .ltorg
 
+Check_ValidModeSelected:
+	push {lr}
+	mov  r1, r0
+	add  r0, #0x2a
+	ldrb r0, [r0, #0x0]
+	cmp  r0, #0x3 @the invalid value used for "go back"
+	bne ValidMode_Continue1
+		mov  r0, r1
+	InvalidMode:
+		mov  r1, #0x14
+		blh  0x08002F24   @Goto6CLabel
+		b    ValidMode_Exit
+ValidMode_Continue1:
+	mov  r0, r1
+	add  r1, #0x50
+	ldrb r1, [r1, #0x0]
+	cmp  r1, #0x2
+	bge  InvalidMode
+ValidMode_Continue2:
+	mov  r1, #0x16
+	blh  0x08002F24   @Goto6CLabel
+ValidMode_Exit:
+	pop  {r0}
+	bx   r0
+
 CM_Finish:
 	push {lr}
 	
@@ -200,9 +228,8 @@ SetCMChoice:
 	push {r4,r5,lr}
 	mov  r4, r0
 	mov  r5, r1
-	ldr  r0, =0x080AA4F0	@Proc_SaveMenu_Main	Pointer 
-	ldr  r0, [r0]
-	blh  0x08002e9c   @Find6C	
+	ldr  r0, =Proc_SaveMenu_Main
+	blh  0x08002e9c   @Find6C
 	cmp  r0, #0x0
 	beq  ExitSetCMChoice
 		cmp  r4, #0x3
@@ -224,44 +251,66 @@ SetCMChoice:
 	pop  {r4,r5}
 	pop  {r0}
 	bx   r0
+	
+@ Look at 30CF4 InitClearChapter which is where the difficulty is getting written for the file
+@ whatever is coming in at r0 tells it to set hard mode if true.
+@ Called by A4E70 SaveNewGame; r1 gets passed to r0 of 30CF4.
+@ A9250
 
-.align
-.ltorg
+New_SetOptionsFromDifficultySelect:
+	push {r4, lr}
+	mov  r2, r0
+	add  r2, #0x2a @difficulty
+	ldrb r2, [r2, #0x0]
+	cmp  r2, #0x1
+	beq  NormalMode
+		cmp  r2, #0x1
+		bgt  CheckHardMode
+			cmp  r2, #0x0
+			beq  EasyMode
+				b    GetCasualMode
+		CheckHardMode:
+			cmp  r2, #0x2
+			beq  HardMode
+				b    GetCasualMode
+		EasyMode:
+			mov  r1, #0x0
+			b    GetCasualMode
+	NormalMode:
+		mov  r1, #0x1
+		b    GetCasualMode
+	
+HardMode:
+	mov  r1, #0x2
+	
+GetCasualMode:
+	mov  r3, r0
+	add  r3, #0x50 @ casual mode
+	ldrb r3, [r3]
+GetSlotNumber:
+	add  r0, #0x2c @slot number?
+	ldrb r0, [r0, #0x0]
+	lsl  r3, r3, #0x18
+	asr  r3, r3, #0x18
+@	mov  r2, #0x1
 
-@Call from 08030DAC 
-CasualMode_SetFlag:
-	@Retransmission of breaking code.
-	mov r0, #0x11
-	neg r0, r0
-	and r1, r0
-	mov r2, r10
-	strb r1, [r2, #0x0]
+@ vanilla:
+@ r0 = slot number
+@ r1 = set hard mode
+@ r2 = difficulty option selected
+@ r3 = set not easy mode
 
-	@Set judgment of casual mode.
-	ldr  r0, =0x080AA4F0	@Proc_SaveMenu_Main	Pointer 
-	ldr  r0, [r0]
-	blh  0x08002e9c   @Find6C	
+@ new plan:
+@ r0 = slot number
+@ r1 = difficulty level
+@ r2 = difficulty option selected
+@ r3 = casual mode on/off
 
-	@Check for errors just in case.
-	cmp  r0, #0x0
-	beq  CasualMode_SetFlag_Exit
+	blh  0x080A4E70,r4   @SaveNewGame
+	pop  {r4}
+	pop  {r0}
+	bx   r0
 
-	add  r0, #0x50 @ casual mode
-	ldrb r2, [r0, #0x0]
-	cmp  r2, #0x00   @if r2==1 then casual. r2==0 then classic
-	beq  CasualMode_SetFlag_Exit
-
-	@Set Casual mode flag
-	ldr  r1, =0x0202BCF0 @gChapterData
-	add  r1, #0x42
-	ldrb r0, [r1] @bit 40 = casual mode
-	mov  r2, #0x40
-	orr  r0, r2
-	strb r0, [r1]
-
-CasualMode_SetFlag_Exit:
-	ldr r3, =0x08030DB6|1
-	bx r3
 
 .align
 .ltorg
@@ -596,19 +645,6 @@ CM_HandleUserInput:
 	pop  {r4}
 	pop  {r0}
 	bx   r0
-
-.align
-.ltorg
-
-CM_Kill_SaveMenuCursor:
-	push {lr}
-
-	ldr r0, =0x08A20B1C	@SaveMenuCursor
-	blh  0x08002e9c   @Find6C
-	blh  0x08002d6c   @Delete6C
-
-	pop {r0}
-	bx r0
 
 .align
 .ltorg

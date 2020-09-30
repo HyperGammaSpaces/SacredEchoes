@@ -88,8 +88,9 @@ PUSH
 
 	// I don't want to load units from save for now
 	// So I'll just """disable""" save menu R-text info
-	ORG $0A8964
-		SHORT $E036
+	// Commenting out for "Show Difficulty" patch
+	//ORG $0A8964
+	//	SHORT $E036
 
 	// Make BWL save look for the BWL chunk
 	ORG $0A460E

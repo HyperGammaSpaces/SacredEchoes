@@ -1,0 +1,47 @@
+//This patch will display the difficulty level in the status menu and the R button in the save slot.
+
+PUSH
+//Chapter status screen hook
+ORG 0x8E5C4	
+jumpToHack(ShowDifficultyOnStatusScreen)
+
+//Show difficulty when pressing R on the save slot.
+//Removes "Level" text
+ORG 0x89DD6
+BYTE 0x0 0x0 0x0 0x0
+
+//Create data
+ORG 0xA896E	
+BYTE 0x00 0x00
+jumpToHack(ShowDifficultyOnSaveSlot_MakeData)
+
+//Display data
+ORG 0x89DE8
+jumpToHack(ShowDifficultyOnSaveSlot_ShowData)
+
+POP
+
+ALIGN 4
+ShowDifficultyOnSaveSlot_MakeData:
+#incbin "asm/ShowDifficultyOnSaveSlot_MakeData.dmp"
+
+ALIGN 4
+ShowDifficultyOnSaveSlot_ShowData:
+#incbin "asm/ShowDifficultyOnSaveSlot_ShowData.dmp"
+POIN ShowDifficultyTable
+
+ALIGN 4
+ShowDifficultyOnStatusScreen:
+#incbin "asm/ShowDifficultyOnStatusScreen.dmp"
+POIN ShowDifficultyTable
+
+
+ShowDifficultyTable:
+//TextID   SaveSlotPopupTextColor  StatusScreenTextColor
+SHORT Mode_EasyCasual; BYTE 0x2; BYTE 0x2; //Easy Casual
+SHORT Mode_EasyClassic; BYTE 0x2; BYTE 0x2; //Easy Classic
+SHORT Mode_NormalCasual; BYTE 0x2; BYTE 0x0; //Normal Casual
+SHORT Mode_NormalClassic; BYTE 0x2; BYTE 0x0; //Normal Classic
+SHORT Mode_HardCasual; BYTE 0x2; BYTE 0x4; //Hard Casual
+SHORT Mode_HardClassic; BYTE 0x4; BYTE 0x4; //Hard Classic
+WORD $0 //term
