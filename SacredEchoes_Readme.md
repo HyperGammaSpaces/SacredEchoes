@@ -34,6 +34,7 @@ Specifically:
   - Expel has been buffed to 100% accuracy but only affects monster classes. It will destroy enemies in Mag/2 range which are of a Monster class type.
   - Promoted magic units will learn their whole unpromoted spell list. (This is why Mage/Cleric promotion levels are so high)
 - A (mostly) working world map that you can explore, with two lords you can alternate between after a certain point in the story.
+- Lion Heads/Sacred Springs which can be visited in the repeatable maps to gain statboosts, experience, and (coming soon) even revive dead units...
 
 Optional QOL fixes to GBAFE are included:
 
@@ -41,6 +42,7 @@ Optional QOL fixes to GBAFE are included:
 - Includes HP bars and effective weapon notices on the map
 - Includes danger zone highlighting with Select button
 - Includes battle stats with animations off (with a UI inspired by the original Gaiden battle frame)
+- Includes the option to play on Casual mode, selected at the beginning of a new file.
 - The Guide has been updated to include details on the game's mechanics. The doubling threshold is viewable in-game by checking the help text of the Speed stat on the statscreen.
 
 #Promotion levels
@@ -209,6 +211,7 @@ Some things are still under development for later releases.
 - macplustrees’ base-stat promotion gains
 - Teraspark’s staff/item range rework
 - Stan's Movement Skills
+- laqieer's world map installation utilities
 - Assorted small tweaks and patches by Stan, Tequila, Crazycolorz5, Vennobennu, Leonarth, 7743 and aera
 - Music hacking utilities by Sme and Alusq
 - Music arrangements based on Echoes OST and on Gaiden MIDI remixes by 雨原
@@ -247,12 +250,13 @@ Some things are still under development for later releases.
 - RandomWizard for text formatting help
 - Pikmin1211 for eventing and enemy placement on "The Warship" and "Zofia Harbor"
 - ZoramineFae for "The Warship" map
+- RandomWizard for "The Siege" map
 - KrashBoomBang for "Invaders Descend", "Unholy Blade" and Sylvan Shrine map
 - Dancer_A for Grieth's Citadel and Nuibaba's Abode maps
 - Sme for assistance with summoner AI
 - Vennobennu's Improved FE8 Boat/Village Tileset
 - DerTheVaporeon's improved cave tileset
 - Improved Stronghold tileset by ZoramineFae, flasuban, and N426
-- Additional bridge tiles by WAve
+- Western Isles Extended tileset and additional bridge tiles for Fields by WAve
 
 Please let me know if I missed anyone.

@@ -17,8 +17,13 @@ gMS_WMDataChunkId:        BYTE EMS_CHUNK_WMDATA
 #include "SrcCore/MSSizeHook.lyn.event"
 #include "SrcCore/MSBWLHook.lyn.event"
 #include "SrcModules/SaveConvoyExpanded.lyn.event"
+#include "SrcModules/FixEMSGameover.lyn.event"
 
 PUSH
+	// Fix suspend issue with game over
+	//ORG $83570
+	//	replaceWithHack(SetDeathQuoteFlag)
+
 	// Checksum computation function now returns a constant
 	// Because we don't care (should we?)
 	ORG $0A6408
