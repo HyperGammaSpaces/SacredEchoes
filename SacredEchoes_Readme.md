@@ -200,10 +200,12 @@ Some things are still under development for later releases.
 
 - There is a gaiden chapter planned based around the Rise of the Deliverance DLC; however I've been unable to find text dumps from the original mission and thus there was not enough time to implement text or events.
 - There is a placeholder fix for enemies attacking with magic when they've run out of HP to cast. Witches are not yet able to teleport. The next release will address various AI fixes and features.
-- The game has only been balanced for Normal mode (hard mode results may vary). It is recommended to only play on Normal for now.
+- The game has only been balanced for Normal mode (hard mode results may vary). It is recommended to only play on Easy or Normal for now.
 - Some support conversations have been implemented while others are still placeholders.
 - Some sprites and animations have not been finalized yet and are using placeholders. (Axeman, Seraphim)
 - Expel is visually kind of buggy but should not affect gameplay.
+- Irma is using a placeholder portrait.
+- Some chapters are not yet playable and will be released in the next update. (3-5A, 3-6A, 3-7A, 3-6C, 3-7C, Dragon Shrine, Sylvan Shrine)
 
 #Credits
 

@@ -84,6 +84,14 @@ Reinforcements1:
 	UNIT
 
 Ch3_3A_BeginningScene:
+
+	//debug only
+	SetBackground(0x1D)
+	Text(Celica_EndDemo)
+	MNTS 0x0
+	ENDA
+	//end debug
+
 	MUSC 0x25
 	LOAD2 0x1 CutsceneUnits
 	ENUN
