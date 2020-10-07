@@ -6,6 +6,8 @@
   .short 0xf800
 .endm
 
+/*
+@old=based on unit flag 0x
 .macro phantom_check, reg=r4
   ldr  r0, [\reg, #0x0]
   ldr  r1, [\reg, #0x4]
@@ -16,6 +18,18 @@
   lsl  r1, r1, #0xD
   and  r0, r1
   cmp  r0, #0x0
+.endm
+*/
+
+.macro phantom_check2, reg=r2
+  ldr  r0, [\reg, #0x0]
+  ldrb r0, [r0, #0x4]
+  cmp  r0, #0x3F
+.endm
+.macro phantom_check4, reg=r4
+  ldr  r0, [\reg, #0x0]
+  ldrb r0, [r0, #0x4]
+  cmp  r0, #0x3F
 .endm
 
 .global PhantomPhase_Init
@@ -100,8 +114,8 @@ PhantomOrder_Init:
 		cmp  r0, #0x0
 		beq  PhantomOrder_LoopNextUnit
 		
-			phantom_check @macro
-			beq  PhantomOrder_LoopNextUnit
+			phantom_check2 @macro
+			bne  PhantomOrder_LoopNextUnit
 
 				ldr  r0, [r2, #0xC] 
 				ldr  r1, =0x00000427 @bits for Not drawn, Unselectable, Dead, Being Rescued, and Has been moved by AI
@@ -146,8 +160,8 @@ PhantomOrder_Init_Exit:
 .ltorg
 
 HandleSpriteHover:
-	phantom_check @macro
-	beq  Hover_CheckStatus_1
+	phantom_check4 @macro
+	bne  Hover_CheckStatus_1
 		b DontHover
 	
 Hover_CheckStatus_1:
@@ -161,8 +175,8 @@ Hover_CheckStatus_1:
 .ltorg
 
 HandlePhantomSpriteHover:
-	phantom_check @macro
-	beq  Hover_CheckStatus_2
+	phantom_check4 @macro
+	bne  Hover_CheckStatus_2
 		b DontDraw
 	
 @handle sleep/berserk

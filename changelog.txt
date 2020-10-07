@@ -1,0 +1,40 @@
+Last public patch: 2020-05-07
+Since then:
+- ExpandedModularSave has been implemented, fixing some issues with world map locations persisting, copying save data, and the convoy storage. This also allows for more world map locations to be saved and displayed, allowing all of Valentia to appear. Saves from the 2020-05-07 patch or before will not work with patches from July 2020 or later.
+- Durability has been added to certain rarer weapons (irons/steels/silvers etc that can be purchased in the prep screen and in Act 3's armories, as well as PRF weapons belonging to secondary characters).
+- The Guide menu has been updated and its flags have been repurposed to handle death and mourning quotes (this will also fix them re-triggering on maps after the unit died)
+- Bows now have WTD at 1-range, and a falloff of 5 hit for every tile over 2-range. Lukas alludes to this in the second map when you first face an archer.
+- In Act 3, both lords will appear on the world map. The lord you are not currently controlling will be shown as a green unit and will wait where you last left them. To change between lords, use the menu on the map and select "Switch".
+- Spell cost calculation has changed behind the scenes, which should make weapon ranks work more intuitively.
+- Skirmishes and dungeons now have properly randomized enemies and inventory. You may get lucky and find something rare... (RN burning by wiggling the movement arrow has been removed as a consequence, sorry TASers.)
+- Infinite-use items no longer display durability, no more --/-- showing on everything.
+- Fixed an issue with enemy mages' HP not depleting properly, causing them to sometimes appear to be left at 1HP when killed.
+- Fixed an issue with weird screen scrolling when enemies miss with magic.
+- The class attributes Apotrope (Dread Fighter, reduces magic damage by half) and Heavy Armor (Barons, reduces bow damage by half) will now factor into battle preview calculations. (previously they just did the great shield anim during battle)
+- AI decision-making lag time has been cut in half due to some manual optimization of vanilla code.
+- Fixed some issues with Bonus EXP being given to undeployed characters.
+- Enemy growths and levels have been adjusted to emphasize different class roles. Overall, enemies should be somewhat more challenging but still doable on Normal difficulty. Hard Mode is still in need of additional reinforcements and fine-tuning.
+- Some issues with popups have been fixed and streamlined.
+- Fixed a bug where staff users were sometimes able to target themselves.
+- Weapon weights now show as a debuff on the stat screen.
+- Brigands and pirates who can destroy villages are indicated by a Torch in their inventory, to better allow players to plan around them.
+- Fixed some issues with chapter save names and upgraded to 7743's fixes to ChapterNamesAsText.
+- Sweet new anim for Thanatos (Death) spell which will be used for some enemies in act 4. (Thanks L95)
+- Upgraded to Alusq's Advanced Music Installer, adjusted volume and instrumentation on custom tracks. Added some tracks from FE7 and DSFE. Added Lord of a Dead Empire to the soundroom, original GBA adaptation courtesy of Mycahel.
+- Replaced the Priestess animation (previously the Battle Sage by St jack) with a new one I based on Jono's Beta Eirika fix.
+- Added 2 new battle animations by Eldritch Abomination (Thief repalette and one other that will be saved for Act 4)
+- Added/replaced map sprites: flasuban's Improved Cleric, DerTheVaporeon's DS Pirate (as Woodcutter), blood's T2 Celica, Nura's Hero as Myrmidon, plus vanilla/self-made replacements for Cantor, Witch, and Priestess
+- Added/replaced class cards: Cleric/Soldier/Paladin by flasuban, Mages/Archer_F/Sniper_F by L95, Baron update by me
+- Improved Stronghold tileset by ZoramineFae, flasuban, and N426
+- Additional bridge tiles for Field tileset by WAve
+- Maps: Grieth's Citadel and "The Elite" by Dancer_A, "Invaders Descend" by KrashBoomBang
+- ASM source: Antihuffman fix/Bow falloff by Snek, additional calc loops by Sme
+- New CG done, now I am never touching my tablet again
+- Made the brigand in Ch.4 spawn one turn later because reaching him without a mount in the party was unreasonable
+- Ladyblade bonus for female wielders
+- Cleaned up some dialogue (line breaks, pauses between sentences, fixed start-quote character)
+- Added Modular Minimug Box with item display
+- Added Casual Mode with an actual menu interface before the start of the game
+- Updated the difficulty descriptions to reflect what the modes actually do (easy = increased exp + shared convoy, hard = decreased exp + buffed enemy levels)
+- Made summons work like they do in Echoes (8 per map, glowy mapsprite palette, move on their own/unselectable)
+- Lion Heads are now set up (aside from Spring of Revival, which will be done separately)
