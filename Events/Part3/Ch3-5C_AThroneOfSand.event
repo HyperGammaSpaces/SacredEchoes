@@ -72,9 +72,9 @@ Ch3_5C_Units1:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [18,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [18,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
 
 Ch3_5C_CutsceneUnits:
@@ -131,6 +131,10 @@ Reinforcements4:
 	
 Reinforcements5:
 	UNIT 0x8B Shaman	Grieth Level(12, Enemy, True) [13,3]	0x00 0x00 0x1 REDA13R3 [Miasma] NoAI
+	UNIT
+	
+EstJoins:
+	UNIT Est PegasusKnight	0x0 Level(3, Ally, False) [16,8]	0x00 0x00 0x0 0x00 [BaseLance,Elixir] NoAI
 	UNIT
 	
 SonyaJoins:
@@ -215,6 +219,9 @@ Ch3_5C_EndingScene:
 			Text(Ch3_5C_EndingText_GetEst)
 	LABEL 0x5
 	Text(Ch3_5C_EndingText_EstOnly)
+	FADI 5
+	LOAD1 0x1 EstJoins
+	ENUN
 	
 	//get deen or sonya
 	SetBackground(0x0C)
