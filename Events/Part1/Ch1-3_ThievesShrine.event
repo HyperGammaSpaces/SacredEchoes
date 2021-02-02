@@ -27,18 +27,31 @@ OpeningTurnEvent(ChestEvent)
 TURN
 
 ChestEvent:
-MUSC 0x09
-MUSI
-CAM1 Alm
-STAL 30
-FlashCursor(12, 8, 60)
-Text(ChestText_1_3)
-STAL 30
-FlashCursor(8, 2, 60)
-Text(StatueText_1_3)
-MUNO
-NoFade
-ENDA
+	MUSC 0x09
+	MUSI
+	CAM1 Alm
+	STAL 30
+	FlashCursor(12, 8, 60)
+	Text(ChestText_1_3)
+	STAL 30
+	FlashCursor(8, 2, 60)
+	TEXTSTART
+	#ifdef LION_HEADS_ENABLED
+		TEXTSHOW StatueFountainText_1_3
+		TEXTEND
+		STAL 30
+		FlashCursor(4, 1, 60)
+		FlashCursor(12,1, 60)
+		TEXTCONT
+		TEXTEND
+	#else
+		TEXTSHOW StatueText_1_3
+		TEXTEND
+	#endif
+	REMA
+	MUNO
+	NoFade
+	ENDA
 
 WaveFirst:
 LoadReinforcements(Reinforcements1)

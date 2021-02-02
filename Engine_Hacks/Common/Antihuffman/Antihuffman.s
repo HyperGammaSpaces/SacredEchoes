@@ -17,10 +17,14 @@
 AntihuffmanString_GetFromIndex: @ Autohook to 0x0800A240.
 push { r4 - r6, lr }
 mov r5, r0
+cmp r0, #0
+beq Next
 ldr r6, =gCurrentTextIndex
 ldr r0, [ r6 ]
 cmp r0, r5
 beq ReturnCurrent
+
+Next:
 	mov r0, r5
 	ldr r1, =gCurrentTextString
 	blh String_GetFromIndexExt, r2 @ This function is actually unchanged.

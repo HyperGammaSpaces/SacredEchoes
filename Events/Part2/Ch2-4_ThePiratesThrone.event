@@ -105,7 +105,7 @@ EnemyUnits:
 	UNIT 0x65 Mage Barth Level(7,Enemy,True) [17,1] DropItem 0x00 0x0 0x00 [Fire, HideShield, ChestKey] NeverMoveAI //Make this guy bulky
 	UNIT 0x66 Archer Barth Level(7,Enemy,True) [14,2] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI // Also note my use of "True" instead of "1".
 	UNIT 0x65 Pirate_F Barth Level(8,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT 0x67 Thief Barth Level(7,Enemy,True) [13,7] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
+	UNIT 0x67 Thief Barth Level(7,Enemy,True) [13,7] DropItem 0x00 0x0 0x00 [IronSword] AttackInRangeAI 
 	UNIT 0x65 Pirate Barth Level(9,Enemy,True) [12,8] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
 	UNIT 0x65 Pirate Barth Level(7,Enemy,True) [8,7] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	UNIT 0x67 Mercenary Barth Level(8,Enemy,True) [17,7] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI

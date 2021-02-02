@@ -18,6 +18,7 @@
 	.equ WRAMDisplay, 			0x08003870
 	.equ CurrentCharPtr, 		0x030044B0
 	.equ Can_Equip_Item, 		0x08016538
+	@ .equ Get_Unit_Max_Hp, TODO
 	.equ Get_Item_Crit, 		0x08017224
 	.equ Check_Effectiveness, 	0x08016A10
 	.equ Talk_Check, 			0x0806AF4C
@@ -37,6 +38,7 @@
 	.equ WRAMDisplay, 			0x08004388
 	.equ CurrentCharPtr,		0x03004690
 	.equ Can_Equip_Item, 		0x080161A4
+	@ .equ Get_Unit_Max_Hp, TODO
 	.equ Get_Item_Crit, 		0x08017328
 	.equ Check_Effectiveness, 	0x08016820
 	.equ Talk_Check, 			0x080789FC
@@ -56,6 +58,8 @@
 	.equ WRAMDisplay, 			0x08002BB8
 	.equ CurrentCharPtr,		0x03004E50
 	.equ Can_Equip_Item, 		0x08016574
+	.equ Get_Unit_Max_Hp, 		0x08019190
+	.equ Get_Unit_Cur_HP,		0x08019150
 	.equ Get_Item_Crit, 		0x08017624
 	.equ Check_Effectiveness, 	0x08016BEC
 	.equ Slayer_Check, 			0x08016C88
@@ -80,6 +84,11 @@ mov		r1,#0x20
 tst		r0,r1
 beq		HpBars					@if bit isn't set, hp bars are on (at the very least)
 b		GoBack
+
+
+
+
+
 
 HpBars:
 mov		r0,#0
@@ -114,13 +123,28 @@ str		r2,[sp,#0x8]			@sp+8 = y - y'
 ldr		r1,=#0x201
 str		r1,[sp,#0xC]			@constant to determine where things get drawn
 @Find out whether we even need to display an hp bar
+@	mov		r0,#current_hp
+@	ldsb	r0,[r4,r0]
+@	mov		r1,#maximum_hp
+@	ldsb	r1,[r4,r1]
+@	cmp		r0,r1
+@	beq		CheckIfSelected			@if hp is max, don't show the bar
+@	sub		r0,r1,r0				@r0 = damage
+
+mov		r0,#maximum_hp
+ldsb	r0,[r4,r0]
+push 	{r7}
+mov		r7,r0
 mov		r0,#current_hp
 ldsb	r0,[r4,r0]
-mov		r1,#maximum_hp
-ldsb	r1,[r4,r1]
-cmp		r0,r1
-beq		CheckIfSelected			@if hp is max, don't show the bar
-sub		r0,r1,r0				@r0 = damage
+mov 	r2,r0
+mov 	r0,r7
+pop		{r7}
+cmp		r2,r0
+bge		CheckIfSelected			@if hp is max, don't show the bar
+mov		r1,r0 @ arg r1 = mhp
+sub		r0,r2
+
 mov		r2,#11
 mul		r0,r2
 swi		#6						@damage*11/maxHP
@@ -128,7 +152,7 @@ swi		#6						@damage*11/maxHP
 ldr		r1,=WRAMDisplay
 mov		r14,r1
 lsl		r2,r0,#2
-ldr		r3,FramePointers		@EA defined
+ldr		r3,=HPFramePointers		@EA defined
 add		r2,r3
 ldr		r2,[r2]
 ldr		r1,[sp,#0xC]			@0x201
@@ -145,10 +169,7 @@ mov		r3,#0
 b CheckIfSelected
 
 .align
-FramePointers:
-.long 0xffffffff
 .ltorg
-.align
 
 @This section is for effectiveness/talk/wta/whatever, which only display if a unit is selected. Since checking for this every frame makes it super laggy, we create a cache. First byte will be reserved for status of the operation: 0 if unit isn't selected, 1 if filling the cache, 2 if done
 CheckIfSelected:
@@ -185,6 +206,9 @@ bgt		FirstPass				@we haven't looped through all the units yet if current>previo
 mov		r1,#2
 strb	r1,[r0]					@first pass is complete
 b		DisplayOtherIcons
+
+.align
+.ltorg
 
 FirstPass:
 strb	r2,[r0,#1]				@replace previous looked-at unit with current one
@@ -259,8 +283,7 @@ ldr		r0,=WarningCache
 add		r0,#2					@first 2 bytes are occupied
 ldrb	r1,[r4,#0xB]
 add		r0,r1
-strb	r7,[r0]
-//b		GoBack					
+strb	r7,[r0]					
 
 SupportCheck:
 @28310 should work, but it needs to check the SupportDenier code.
@@ -324,6 +347,9 @@ lsr		r0,#0x1C
 ldr		r1,=return_addr
 bx		r1
 
+.align
+.ltorg
+
 Draw_Warning_Sign:
 @r0=thing to determine what we're drawing, r1=sp (to retrieve x and y stuff)
 push	{r4,r5,r14}
@@ -344,9 +370,7 @@ ldr		r1,[r5,#0x8]			@y-y'
 add		r1,#0xEE				@y coordinate tweak?
 mov		r2,#0xFF
 and		r1,r2
-mov 	r2,#(WS_FrameData - LoadFrameData - 4)
-LoadFrameData:
-add 	r2,pc
+ldr 	r2, =WS_FrameData
 add 	r2,r4
 mov		r3,#0
 .short	0xF800					@call routine to display bars
@@ -355,18 +379,8 @@ pop		{r4-r5}
 pop		{r0}
 bx		r0
 
-WS_FrameData: @should be the OAM data
-.long 0x000f0001 @8x8 sprite
-.long 0x087601ff @the tile is 0x76
-Killer_FrameData:
-.long 0x000f0001
-.long 0x087701ff @tile #0x77
-Talk_FrameData:
-.long 0x400f0001 @16x8 sprite
-.long 0x087001ee @tile #0x70
-
-.ltorg
 .align
+.ltorg
 
 SupportCheckerFunction: @r0=unit struct, r1=unitID. Check if unitID is in unit's support list
 push {r3,r4,lr}
@@ -401,3 +415,6 @@ EndSupportCheckerFunc:
 pop {r3,r4}
 pop {r1}
 bx r1
+
+.align
+.ltorg

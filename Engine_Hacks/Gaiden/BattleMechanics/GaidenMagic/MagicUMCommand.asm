@@ -76,6 +76,9 @@ mov r1, #0x1
 and r1, r0
 cmp r1, #0x0
 beq MoveNext
+
+@TODO: keep track of lowest spell cost
+
 mov r0, r4
 mov r1, r5
 blh CanUnitUseWeapon
@@ -102,6 +105,9 @@ b False
 CheckHP:
 mov r0, r4
 ldrb r1, [r0, #0x13] @current HP
+
+@TODO: use lowest spell cost here
+
 cmp r1, #0x1
 ble GreyedOut
 

@@ -48,6 +48,11 @@ PUSH
 	BL($4b94) //DrawUINumberOr2Dashes
 	B($16ABC)
 	
+	ORG $169FC
+	B($16A06)
+	
+	//174f4 GetItemNameString
+	
 	//Give Atlas/Palla a support
 	
 	//Disable Link Arena

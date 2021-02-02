@@ -73,7 +73,7 @@ bne CombatCase
 	blh GetUnitStruct
 	mov r4, r0					@r4 = this unit
 	mov r1, #0x0
-	sub r1, #0x0
+	sub r1, #0x1
 	ldr r2, [r5, #0x0]
 	ldrb r2, [r2, #0x4]			@target's ID
 	FindStaffTarget:

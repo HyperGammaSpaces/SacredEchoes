@@ -98,11 +98,6 @@ FAILURE:
 	orr     r0,r1                   
 	str     r0,[r6]    			@store the new battle buffer 
 	
-@	mov 	r0, r4				@ experimental - unequip
-@	add		r0, #0x48			@ equip before battle
-@	mov		r1, #0x0
-@	strh	r1, [r0, #0x0]
-	
 	mov		r2, #0x0
 	mov		r1, r4
 	add		r1, #0x52			@ "can counter" byte

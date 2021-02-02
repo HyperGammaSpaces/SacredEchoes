@@ -32,7 +32,7 @@ mov lr, r7
 mov r1, r4 						@get active unit
 ldrb r1, [r4, #0x13]			@current hp
 cmp r1, r0
-blt CantUse
+ble CantUse
 
 lsl r0, r0, #0x8
 mov r1, r3
