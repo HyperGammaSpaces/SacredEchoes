@@ -36,9 +36,9 @@ Ch3_5C_LocationBasedEvents:
 	Door(4, 11)
 	Door(9, 9)
 	Door(9, 10)
-	Chest(SteelLance, 8, 8)
-	Chest(SteelLance, 7, 9)
-	Chest(SteelLance, 8, 10)
+	Chest(Swordreaver, 8, 8)
+	Chest(Javelin, 7, 9)
+	Chest(KillerBow, 8, 10)
 	LOCA
 
 Ch3_5C_MiscBasedEvents:
@@ -206,6 +206,7 @@ Ch3_5C_EndingScene:
 		CHECK_ALIVE Hyas
 		BEQ 0x4 0xC 0x0
 			Text(Ch3_5C_EndingText_AtlasHyas)
+			GOTO 0x3
 		LABEL 0x4 //atlas only
 		Text(Ch3_5C_EndingText_AtlasOnly)
 	LABEL 0x3 //atlas dead

@@ -70,8 +70,8 @@ SHORT 0x4800 0x4770
 WORD gConvoyItemArray
 jumpToClearConvoyPartition:		//^
 jumpToHack(ClearConvoyPartition)
-jumpToStartCombine:				//^
-jumpToHack(StartCombineDisplayProc)
+//jumpToStartCombine:				//^
+//jumpToHack(StartCombineDisplayProc)
 
 //This function looks like it should be called RemoveItemFromConvoy, but it doesn't appear to be called from anywhere. We shall update the convoy array pointer anyway, just in case.
 ORG $315E0
@@ -150,7 +150,7 @@ BYTE ConvoyTotalSize-1
 //ORG $A327C
 //BL(GetConvoyItemArrayStart)
 
-
+/*
 
 //Combine items when taking them out of the convoy
 ORG $9E320
@@ -172,6 +172,7 @@ SHORT 0x1C20 0x2100 //mov r0,r4; mov r1,#0
 BL(jumpToStartCombine)
 ORG $8952C //thing to display R: Info
 jumpToHack(Delete_Proc_DisplayCombine)
+*/
 
 POP
 
@@ -185,6 +186,8 @@ ALIGN 4
 gpConvoyItemArray:
 WORD gConvoyItemArray
 
+
+/*
 ALIGN 4
 gProc_DisplayCombine:
 _6C_YIELD
@@ -211,3 +214,4 @@ Combine_Image_Graphics:
 ALIGN 4
 Combine_Image_Palette:
 #incext Png2Dmp "Combine.png" --palette-only
+*/

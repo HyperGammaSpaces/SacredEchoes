@@ -83,7 +83,15 @@ Ch1_8_Units1:
 	UNIT Forsyth Knight 0x00 Level(1, Ally, 1) [17,24] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT Python Archer 0x00 Level(1, Ally, 1) [16,24] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
-
+	
+CutsceneUnits_AlmVictory:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [9,6] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [9,5] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [11,5] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [11,6] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,6] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
 
 Bosses:
 	UNIT 0x45 General	0x00 Level(1, Enemy, 1) [10,4]	DropItem 0x00 0x0 0x00 [BaseLance, Dracoshield] NeverMoveAI 
@@ -217,7 +225,10 @@ Ch1_8_EndingScene:
 	CALL UnifiedBEXPCaller
 	FADI 5
 	STAL 20
+	CLEA 0x0
 	CLEE 0x0
+	LOAD2 0x0 CutsceneUnits_AlmVictory
+	ENUN
 	FADU 5
 	LOAD1 0x1 BossesCutscene
 	ENUN

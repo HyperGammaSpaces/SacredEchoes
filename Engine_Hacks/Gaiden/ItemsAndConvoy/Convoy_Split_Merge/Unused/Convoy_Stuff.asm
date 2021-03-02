@@ -437,6 +437,22 @@ ldr		r0,[sp]
 cmp		r6,r0
 bge		End_Loop_9A550	@ convoy is full
 
+ldr		r0,=#0x858791C		@ gKeyStatus
+ldr		r0,[r0]
+ldrh	r0,[r0,#4]
+mov		r1,#2
+lsl		r1,#8				@ 0x200, L button
+tst		r0,r1
+beq		AddItem1
+ldrh	r0,[r5,#0x1E]
+bl 		CanItemBeSentToConvoy
+cmp 	r0,#0
+beq 	SkipItem
+ldrh	r0,[r5,#0x1E]
+bl		TryToCombineInConvoy	@ returns updated item/uses short
+cmp		r0,#0
+beq		RemoveItem1
+strh	r0,[r5,#0x1E]
 AddItem1:
 ldrh	r0,[r5,#0x1E]
 bl 		CanItemBeSentToConvoy
@@ -514,6 +530,162 @@ pop		{r4-r5}
 pop		{r0}
 bx		r0
 .ltorg
+
+
+
+.align
+CombineWhenTaking:			@ called at 9E320
+push	{r4-r7,r14}
+add		r0,r6
+ldrh	r0,[r0]
+lsl		r0,#2
+add		r0,r4
+ldrh	r4,[r0,#2]			@ item id/uses from PrepScreenList
+mov		r5,r1				@ place in char struct to store item
+ldr		r0,=#0x858791C		@ gKeyStatus
+ldr		r0,[r0]
+ldrh	r0,[r0,#4]
+mov		r1,#2
+lsl		r1,#8				@ 0x200, L button
+tst		r0,r1
+beq		End_CombineWhenTaking
+mov		r0,r4
+ldr		r3,=#0x80175B0		@ GetItemMaxUses
+mov		r14,r3
+.short	0xF800
+cmp		r0,#0xFF
+beq		End_CombineWhenTaking	@ if infinite uses, can't combine anything
+mov		r6,r0
+ldr		r7,[r7,#0x2C]		@ unit pointer
+add		r7,#0x1E
+InventoryLoop1:
+ldrb	r0,[r7]
+cmp		r0,#0
+beq		End_CombineWhenTaking
+lsl		r3,r4,#0x18
+lsr		r3,#0x18
+cmp		r0,r3
+bne		NextItem1
+ldrb	r1,[r7,#1]
+lsr		r2,r4,#8
+add		r3,r2,r1
+cmp		r3,r6
+bgt		DecrementSomeUses1
+lsl		r3,#8
+add		r3,r0
+strh	r3,[r7]
+mov		r4,#0
+b		End_CombineWhenTaking
+DecrementSomeUses1:
+sub		r3,r6,r1
+sub		r2,r2,r3
+lsl		r2,#8
+add		r4,r2,r0			@ decrement uses
+lsl		r1,r6,#8
+add		r1,r0
+strh	r1,[r7]
+NextItem1:
+add		r7,#2
+b		InventoryLoop1
+End_CombineWhenTaking:
+strh	r4,[r5]
+pop		{r4-r7}
+pop		{r0}
+bx		r0
+.ltorg
+
+
+
+.align
+CombineWhenGivingOne:		@ called at 9E894
+@ r4=item id/uses
+push	{r14}
+strb	r0,[r6]
+mov		r0,r4
+ldr		r2,=#0x858791C		@ gKeyStatus
+ldr		r2,[r2]
+ldrh	r2,[r2,#4]
+mov		r1,#2
+lsl		r1,#8				@ 0x200, L button
+tst		r2,r1
+beq		AddOneItemToConvoy
+bl		TryToCombineInConvoy	@ returns updated item/uses short
+cmp		r0,#0
+beq		ItemWasUsedUp2
+AddOneItemToConvoy:
+ldr		r3,=#0x8031594		@ AddItemToConvoy
+mov		r14,r3
+.short	0xF800
+ItemWasUsedUp2:
+ldr		r0,[r5,#0x2C]
+ldrb	r1,[r6]
+pop		{r2}
+bx		r2
+.ltorg
+
+
+.align
+TryToCombineInConvoy:
+@ r0=item id/uses; return the updated id/uses (or 0 if item was used up)
+push	{r4-r7,r14}
+mov		r4,r0
+ldr		r3,=#0x80175B0		@ GetItemMaxUses
+mov		r14,r3
+.short	0xF800
+cmp		r0,#0xFF
+beq		End_TryToCombineInConvoy
+mov		r7,r0
+bl		GetConvoyPartitionStartOffset
+mov		r5,r0
+bl		GetConvoyPartitionSize
+lsl		r6,r0,#1
+add		r6,r5
+TryToCombineInConvoy_Loop:
+ldrh	r0,[r5]
+cmp		r0,#0
+beq		End_TryToCombineInConvoy
+lsl		r1,r0,#0x18
+lsr		r1,#0x18
+lsl		r2,r4,#0x18
+lsr		r2,#0x18
+cmp		r1,r2
+bne		NextItem3
+lsl		r1,r0,#0x10
+lsr		r1,#0x18
+sub		r2,r7,r1			@ how many uses convoy item is missing
+lsl		r3,r4,#0x10
+lsr		r3,#0x18			@ uses current item has
+cmp		r2,r3
+blt		RemoveSomeUses
+@ if we got here, item is used up
+add		r1,r3
+lsl		r1,#8
+lsl		r0,#0x18
+lsr		r0,#0x18
+add		r0,r1
+strh	r0,[r5]
+mov		r4,#0
+b		End_TryToCombineInConvoy
+RemoveSomeUses:
+lsl		r0,#0x18
+lsr		r0,#0x18
+lsl		r1,r7,#8
+add		r1,r0
+strh	r1,[r5]
+sub		r3,r3,r2
+lsl		r3,#8
+add		r4,r3,r0
+NextItem3:
+add		r5,#2
+cmp		r5,r6
+blt		TryToCombineInConvoy_Loop
+End_TryToCombineInConvoy:
+mov		r0,r4
+pop		{r4-r7}
+pop		{r1}
+bx		r1
+.ltorg
+
 
 
 
@@ -616,10 +788,166 @@ add		sp,#4
 pop		{r4-r7}
 pop		{r0}
 bx		r0
-.align
 .ltorg
 
 
+
+.align
+StartCombineDisplayProc:
+@ r0=parent proc, r1=0 for prep screen, 2 for supply screen
+push	{r4-r6,r14}
+mov		r4,r0
+mov		r5,r1
+ldr		r0,=Combine_Image_Graphics
+ldr		r1,=#0x2020188		@ gGenericBuffer
+ldr		r3,=#0x8012F50		@ Decompress
+mov		r14,r3
+.short	0xF800
+ldr		r0,=#0x2020188		@ gGenericBuffer
+ldr		r3,=#0x8013020		@ CopyTileGfxForObj
+mov		r14,r3
+ldr		r1,=#(0x6010000 + (0x38<<5))	@ tile number; if this is changed, change baseOAM data too
+mov		r2,#8				@ length
+mov		r3,#2				@ height
+.short	0xF800
+ldr		r0,=gProc_DisplayCombine
+ldr		r3,=#0x8002E9C		@ FindProc
+mov		r14,r3
+.short	0xF800
+cmp		r0,#0
+bne		Label20
+ldr		r0,=gProc_DisplayCombine
+mov		r1,r4
+ldr		r3,=#0x8002C7C		@ StartProc
+mov		r14,r3
+.short	0xF800
+Label20:
+mov		r6,r0
+cmp		r5,#0
+bne		Label21
+@ if 0, we want to check if it should be 1
+mov		r0,#0x2E
+ldrb	r0,[r4,r0]
+cmp		r0,#3				@ Give all
+bne		Label21
+mov		r5,#1
+Label21:
+strh	r5,[r6,#0x2C]		@ index
+mov		r0,#12
+mul		r5,r0
+ldr		r0,=CombineGraphicTable
+add		r5,r0
+ldrb	r1,[r5,#2]
+add		r1,#0x10
+lsl		r1,#5
+ldr		r0,[r5,#8]			@ palette
+mov		r2,#0x20
+ldr		r3,=#0x8000DB8		@ CopyToPaletteBuffer
+mov		r14,r3
+.short	0xF800
+@ delete the old R: Info graphic
+ldr		r0,=#0x8A00B20		@ gProc_8A00B20
+ldr		r3,=#0x8002E9C		@ FindProc
+mov		r14,r3
+.short	0xF800
+cmp		r0,#0
+beq		End_StartCombineDisplayProc
+ldr		r3,=#0x8002D6C		@ EndProc (no idea if this is the right one)
+mov		r14,r3
+.short	0xF800
+End_StartCombineDisplayProc:
+pop		{r4-r6}
+pop		{r0}
+bx		r0
+.ltorg
+
+
+
+.align
+CombineDisplayLoop:
+push	{r4-r5,r14}
+add		sp,#-4
+mov		r4,r0
+ldrh	r0,[r4,#0x2C]		@ index
+mov		r2,#0				@ flag
+cmp		r0,#2
+bge		Label22
+@ if 0 or 1, then we need to check where the cursor is
+@ and also check whether it should be displayed at all (shouldn't show when selecting who to trade with)
+ldr		r1,[r4,#0x14]		@ parent proc
+mov		r2,#0x32
+ldrb	r2,[r1,r2]
+cmp		r2,#0
+beq		EndCombineDisplay
+add		r1,#0x2E
+ldrb	r1,[r1]
+cmp		r1,#3
+beq		HandOnGiveAll
+cmp		r0,#0
+beq		Label22				@ if 0, all is well
+mov		r0,#0
+b		Label23
+HandOnGiveAll:
+cmp		r0,#1
+beq		Label22				@ if 1, all is well
+mov		r0,#1
+Label23:
+strh	r0,[r4,#0x2C]		@ update index
+mov		r2,#1				@ update flag
+Label22:
+ldrh	r5,[r4,#0x2C]		@ index
+mov		r0,#12
+mul		r5,r0
+ldr		r0,=CombineGraphicTable
+add		r5,r0
+cmp		r2,#0
+beq		Label24
+ldrb	r1,[r5,#2]			@ palette bank id
+add		r1,#0x10
+lsl		r1,#5
+ldr		r0,[r5,#8]			@ palette
+mov		r2,#0x20
+ldr		r3,=#0x8000DB8		@ CopyToPaletteBuffer
+mov		r14,r3
+.short	0xF800
+Label24:
+ldrb	r1,[r5]				@ x
+ldrb	r2,[r5,#1]			@ y
+ldr		r3,[r5,#4]			@ rom oam data ptr
+ldrb	r0,[r5,#2]
+lsl		r0,#0xC
+str		r0,[sp]				@ base oam2 data
+ldr		r0,=#0x80053E8		@ RegisterObjectSafe
+mov		r14,r0
+mov		r0,#0
+.short	0xF800
+EndCombineDisplay:
+add		sp,#4
+pop		{r4-r5}
+pop		{r0}
+bx		r0
+.ltorg
+
+
+Delete_Proc_DisplayCombine:
+@ jumped to from 8952C
+mov		r9,r4
+mov		r4,r0				@ return value; I don't think it actually needs to be saved, but just in case...
+ldr		r0,=gProc_DisplayCombine
+ldr		r3,=#0x8002E9C		@ FindProc
+mov		r14,r3
+.short	0xF800
+cmp		r0,#0
+beq		Label26
+ldr		r3,=#0x8002D6C		@ EndProc (no idea if this is the right one)
+mov		r14,r3
+.short	0xF800
+Label26:
+mov		r0,r4
+pop		{r4-r7}
+pop		{r1}
+bx		r1
+.ltorg
 
 .align
 CanItemBeSentToConvoy:

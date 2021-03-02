@@ -6,17 +6,17 @@ GraySpellList:
 BYTE $01 Fire
 BYTE $09 Sagittae
 BYTE $0A Thunder
-BYTE $81 Heal
-BYTE $86 Unlock
+BYTE $21 Heal
+BYTE $26 Unlock
 BYTE $00 $00
 ALIGN 4
 
 TobinSpellList:
 BYTE $01 Fire
 BYTE $06 Excalibur
-BYTE $81 Heal
-BYTE $85 Physic
-BYTE $88 TorchStaff
+BYTE $21 Heal
+BYTE $25 Physic
+BYTE $28 TorchStaff
 BYTE $00 $00
 ALIGN 4
 
@@ -25,18 +25,18 @@ BYTE $01 Fire
 BYTE $04 Thunder
 BYTE $09 Excalibur
 BYTE $0F Sagittae
-BYTE $85 Aura
-BYTE $81 Heal
+BYTE $25 Aura
+BYTE $21 Heal
 BYTE $00 $00
 ALIGN 4
 
 FayeWSpellList:
 BYTE $01 Nosferatu
-BYTE $81 Seraphim
+BYTE $21 Seraphim
 BYTE $01 Heal
 BYTE $06 Physic
 BYTE $0A Rescue
-BYTE $8E Anew
+BYTE $2E Anew
 BYTE $00 $00
 ALIGN 4
 
@@ -44,14 +44,14 @@ FayeBSpellList:
 BYTE $01 Fire
 BYTE $08 Seraphim
 BYTE $0C Sagittae
-BYTE $81 Heal
-BYTE $86 Freeze
+BYTE $21 Heal
+BYTE $26 Freeze
 BYTE $00 $00
 ALIGN 4
 
 SilqueSpellList:
 BYTE $01 Nosferatu
-BYTE $81 Seraphim
+BYTE $21 Seraphim
 BYTE $01 Heal
 BYTE $07 Warp
 BYTE $0E Expel
@@ -74,8 +74,8 @@ BYTE $01 Fire
 BYTE $01 Thunder
 BYTE $09 Aura
 BYTE $0E Seraphim
-BYTE $81 Heal
-BYTE $86 Silence
+BYTE $21 Heal
+BYTE $26 Silence
 BYTE $00 $00
 ALIGN 4
 
@@ -84,8 +84,8 @@ BYTE $01 Nosferatu
 BYTE $01 Heal
 BYTE $09 Aura
 BYTE $0E Seraphim
-BYTE $81 Physic
-BYTE $86 Silence
+BYTE $21 Physic
+BYTE $26 Silence
 BYTE $00 $00
 ALIGN 4
 
@@ -94,8 +94,8 @@ BYTE $01 Fire
 BYTE $03 Thunder
 BYTE $0C Sagittae
 BYTE $12 Excalibur
-BYTE $81 Heal
-BYTE $86 Unlock
+BYTE $21 Heal
+BYTE $26 Unlock
 BYTE $00 $00
 ALIGN 4
 
@@ -103,7 +103,7 @@ ALIGN 4
 //Use this for testing
 GennySpellList:
 BYTE $01 Nosferatu
-BYTE $81 Seraphim
+BYTE $21 Seraphim
 BYTE $01 $5A
 BYTE $04 Rewarp
 BYTE $08 Rescue
@@ -115,7 +115,7 @@ ALIGN 4
 //Real version
 GennySpellList:
 BYTE $01 Nosferatu
-BYTE $81 Seraphim
+BYTE $21 Seraphim
 BYTE $01 Heal
 BYTE $04 Invoke
 BYTE $08 Physic
@@ -127,18 +127,18 @@ ALIGN 4
 SaberSpellList:
 BYTE $01 Fire
 BYTE $05 Seraphim
-BYTE $81 Heal
-BYTE $85 Physic
-BYTE $89 Unlock
+BYTE $21 Heal
+BYTE $25 Physic
+BYTE $29 Unlock
 BYTE $00 $00
 ALIGN 4
 
 KamuiSpellList:
 BYTE $01 Fire
 BYTE $07 Excalibur
-BYTE $81 Heal
-BYTE $85 Freeze
-BYTE $89 TorchStaff
+BYTE $21 Heal
+BYTE $25 Freeze
+BYTE $29 TorchStaff
 BYTE $00 $00
 ALIGN 4
 
@@ -147,7 +147,7 @@ BYTE $01 Fire
 BYTE $01 Excalibur
 BYTE $0A Thunder
 BYTE $0F Sagittae
-BYTE $81 Heal
+BYTE $21 Heal
 BYTE $00 $00
 ALIGN 4
 
@@ -156,8 +156,8 @@ BYTE $01 Fire
 BYTE $01 Aura
 BYTE $0B Seraphim
 BYTE $10 Ragnarok
-BYTE $81 Heal
-BYTE $8A Rewarp
+BYTE $21 Heal
+BYTE $2A Rewarp
 BYTE $00 $00
 ALIGN 4
 
@@ -166,17 +166,17 @@ BYTE $01 Nosferatu
 BYTE $01 Heal
 BYTE $0B Seraphim
 BYTE $10 Aura
-BYTE $81 Fortify
-BYTE $8A Rewarp
+BYTE $21 Fortify
+BYTE $2A Rewarp
 BYTE $00 $00
 ALIGN 4
 
 AtlasSpellList:
 BYTE $01 Fire
 BYTE $08 Sagittae
-BYTE $81 Heal
-BYTE $84 Rescue
-BYTE $89 TorchStaff
+BYTE $21 Heal
+BYTE $24 Rescue
+BYTE $29 TorchStaff
 BYTE $00 $00
 ALIGN 4
 
@@ -184,16 +184,16 @@ JesseSpellList:
 BYTE $01 Fire
 BYTE $02 Excalibur
 BYTE $09 Thunder
-BYTE $81 Heal
-BYTE $85 Unlock
+BYTE $21 Heal
+BYTE $25 Unlock
 BYTE $00 $00
 ALIGN 4
 
 DeenSpellList:
 BYTE $01 Fire
 BYTE $03 Sagittae
-BYTE $81 Heal
-BYTE $85 Silence
+BYTE $21 Heal
+BYTE $25 Silence
 BYTE $00 $00
 ALIGN 4
 
@@ -201,9 +201,9 @@ SonyaSpellList:
 BYTE $01 Fire
 BYTE $01 Thunder
 BYTE $01 Excalibur
-BYTE $81 Heal
-BYTE $85 Rewarp
-BYTE $8A Entrap
+BYTE $21 Heal
+BYTE $25 Rewarp
+BYTE $2A Entrap
 BYTE $00 $00
 ALIGN 4
 
@@ -211,29 +211,29 @@ SonyaWSpellList:
 BYTE $01 Nosferatu
 BYTE $01 Physic
 BYTE $01 Seraphim
-BYTE $81 Fortify
-BYTE $85 Rewarp
-BYTE $8A Entrap
+BYTE $21 Silence
+BYTE $25 Rewarp
+BYTE $2A Entrap
 BYTE $00 $00
 ALIGN 4
 
 TatianaSpellList:
 BYTE $01 Nosferatu
-BYTE $81 Seraphim
+BYTE $21 Seraphim
 BYTE $01 Physic
-BYTE $84 Fortify
-BYTE $87 Invoke
-BYTE $88 Warp
+BYTE $24 Fortify
+BYTE $27 Invoke
+BYTE $28 Warp
 BYTE $00 $00
 ALIGN 4
 
 NomahSpellList:
 BYTE $01 Fire
-BYTE $01 Thunder
 BYTE $01 Excalibur
 BYTE $01 Sagittae
-BYTE $81 Heal
-BYTE $85 Warp
+BYTE $21 Fortify
+BYTE $21 Restore
+BYTE $25 Warp
 BYTE $00 $00
 ALIGN 4
 

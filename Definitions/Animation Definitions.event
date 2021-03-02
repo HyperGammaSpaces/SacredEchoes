@@ -4,8 +4,8 @@
 #define AlmFighterSword 0x03
 #define AlmFighterRegalSword 0x04
 #define AlmFighterUnarmed 0x05
-#define CelicaPrincessSword 0x06
-#define CelicaPrincessMagic 0x07
+#define CelicaPrincessSword 0x06 //to insert
+#define CelicaPrincessMagic 0x07 //to insert
 #define AlmHeroSword 0x08
 #define AlmHeroRegalSword 0x09
 #define AlmHeroBow 0x0A
@@ -18,8 +18,8 @@
 #define DFUnarmed 0x11
 #define FDFSword 0x12
 #define FDFMagic 0x13
-#define RineaWitchStaff 0x14
-#define RineaWitchMagic 0x15
+#define RineaWitchStaff 0x14 //placeholder
+#define RineaWitchMagic 0x15 //placeholder
 #define WoodcutterAxe 0x16
 #define WoodcutterHandaxe 0x17
 #define WoodcutterUnarmed 0x18
@@ -33,7 +33,7 @@
 #define BrigandAxe 0x20
 #define BrigandHandaxe 0x21
 #define BrigandUnarmed 0x22
-#define BerserkerAxe 0x23
+#define BerserkerAxe 0x23      //yetizerker this?
 #define BerserkerHandaxe 0x24
 #define BerserkerUnarmed 0x25
 #define ArcherMBow 0x26
@@ -46,8 +46,8 @@
 #define SniperFUnarmed 0x2D
 #define BKMBow 0x2E
 #define BKMUnarmed 0x2F
-#define BowKnightFBow 0x2E
-#define BowKnightFUnarmed 0x2F
+#define BowKnightFBow 0x2E      //add female anim
+#define BowKnightFUnarmed 0x2F  //add female anim
 #define CavalierLance 0x30
 #define CavalierUnarmed 0x31
 #define CavalierFLance 0x32
@@ -75,14 +75,14 @@
 #define PegKnightUnarmed 0x48
 #define FalcoKnightLance 0x49
 #define FalcoKnightUnarmed 0x4A
-#define DracoKnightLance 0x4B
-#define DracoKnightUnarmed 0x4C
-#define WyvernRiderAxe 0x4D
-#define WyvernRiderHandaxe 0x4E
-#define WyvernRiderUnarmed 0x4F
-#define WyvernLordAxe 0x50
-#define WyvernLordHandaxe 0x51
-#define WyvernLordUnarmed 0x52
+#define DracoKnightLance 0x4B     //to insert
+#define DracoKnightUnarmed 0x4C   //to insert
+#define WyvernRiderAxe 0x4D       //to insert
+#define WyvernRiderHandaxe 0x4E   //to insert
+#define WyvernRiderUnarmed 0x4F   //to insert
+#define WyvernLordAxe 0x50        //to insert
+#define WyvernLordHandaxe 0x51    //to insert
+#define WyvernLordUnarmed 0x52    //to insert
 #define ThiefSword 0x53
 #define ThiefUnarmed 0x54
 #define ThiefFSword 0x55
@@ -97,14 +97,16 @@
 #define PirateFAxe 0x5E
 #define PirateFHandaxe 0x5F
 #define PirateFUnarmed 0x60
-#define BerserkerFAxe 0x61
-#define BerserkerFHandaxe 0x62
-#define BerserkerFUnarmed 0x63
+#define BerserkerFAxe 0x61         //to insert
+#define BerserkerFHandaxe 0x62     //to insert
+#define BerserkerFUnarmed 0x63     //to insert
 #define VillagerSword 0x64
 #define VillagerUnarmed 0x65
 #define VillagerFSword 0x66
 #define VillagerFUnarmed 0x67
-
+//0x68 free
+//0x69 free
+//0x6A free
 #define MageMagic 0x6B
 #define MageFMagic 0x6C
 #define SageStaff 0x6E
@@ -123,23 +125,28 @@
 #define ArcanistFStaff 0x7A
 #define CantorMagic 0x7B
 #define CantorStaff 0x7C
+//0x7d free
+//0x7e free
 #define ClericStaff 0x7F
 #define ClericUnarmed 0x80
 #define BishopStaff 0x81
 #define BishopUnarmed 0x82
 #define SaintStaff 0x83
 #define SaintUnarmed 0x84
-
+//0x85-0x9c free
 #define JedahStaff 0x9D
 #define JedahMagic 0x9E
+//0x9f ballista, do not edit
 #define RevenantClaw 0xA0
 #define EntombedClaw 0xA1
 #define BonewalkerSword 0xA2
 #define BonewalkerLance 0xA3
+#define FiendLance 0xA4
 #define BonewalkerBow 0xA5
 #define BonewalkerUnarmed 0xA6
 #define WightSword 0xA7
 #define WightLance 0xA8
+#define FiendUnarmed 0xA9
 #define WightBow 0xAA
 #define WightUnarmed 0xAB
 #define BaelClaw 0xAC
@@ -147,8 +154,8 @@
 #define CyclopsAxe 0xAE
 #define CyclopsHandaxe 0xAF
 #define CyclopsUnarmed 0xB0
-#define FiendLance 0xB1
-#define FiendUnarmed 0xB2
+#define HellhoundFang 0xB1
+#define KerberosFang 0xB2
 #define TarvosAxe 0xB3
 #define TarvosHandAxe 0xB4
 #define TarvosUnarmed 0xB5

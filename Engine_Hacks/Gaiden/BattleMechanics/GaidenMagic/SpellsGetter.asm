@@ -23,13 +23,17 @@ ble ClearOutLoop
 mov r0, r4
 ldrb r7, [r0, #0x8] @unit level
 ldr r1, [r0, #0x4] @class
+cmp r1, #0x16
+bne NotDF
+	add r7, #0x20
+NotDF:
 mov r2, #0x29
 ldrb r1, [r1, r2] @class ability 2
 mov r2, #0x1 @check "promoted"
 and r1, r2
 cmp r1, #0x1
 bne NotPromoted
-add r7, #0x80 @add 0x80 to level if promoted
+add r7, #0x20 @add 0x20 to level if promoted
 
 NotPromoted:
 ldr r1, [r0, #0x0] @character data

@@ -27,12 +27,12 @@ SeaboundShrine_LocationBasedEvents:
 #ifdef __DEBUG__
   Seize(4,5)
 #endif
-CHES 0x9 Vulnerary [1,16] 0x14
+CHES 0x9 Vulnerary [1,17] 0x14
 
 #ifdef LION_HEADS_ENABLED
 	//Lion heads
-	LionHead(LionHeadSeaboundSkill, 12, 4)
-	LionHead(LionHeadSeaboundHP, 14, 4)
+	LionHead(LionHeadSeaboundSkill, 12, 5)
+	LionHead(LionHeadSeaboundHP, 14, 5)
 #endif
 LOCA
 
@@ -57,48 +57,48 @@ BLST
 ALIGN 4
 
 PlayerUnitsReplay:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [13,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [14,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [14,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
 	
 BossMonster_Round1:
-	UNIT 0xAA DracoZombie 0x00 Level(1, Enemy, 0) [3,5] DropItemWithRandomPosition 0x00 0x0 0x00 [FireFang, HolyRing] AttackInRangeAI 
+	UNIT 0xAA DracoZombie 0x00 Level(1, Enemy, 0) [3,6] DropItemWithRandomPosition 0x00 0x0 0x00 [FireFang, HolyRing] AttackInRangeAI 
 	UNIT
 	
 BossMonster_Round2:
-	UNIT 0xAA Entombed 0x00 Level(1, Enemy, 0) [3,5] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw, Item50G] AttackInRangeAI 
+	UNIT 0xAA Entombed 0x00 Level(1, Enemy, 0) [3,6] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw, Item50G] AttackInRangeAI 
 	UNIT
 	
 EnemyUnits: 
-	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [9,3] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
-	UNIT 0xAD Bonewalker_Bow 0x00 Level(5, Enemy, 1) [7,5] RandomizePosition 0x00 0x0 0x00 [BaseBow] NoAI
-	UNIT 0xAC Bonewalker 0x00 Level(7, Enemy, 1) [3,16] RandomizePosition 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
-	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [4,10] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
-	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [1,8] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
-	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [7,11] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
-	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [4,14] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
-	UNIT 0xAA Revenant 0x00 Level(7, Enemy, 1) [8,6] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
-	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [14,6] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
-	UNIT 0xAC Bonewalker 0x00 Level(6, Enemy, 1) [10,1] 0x00 0x00 0x0 0x00 [BaseSword] NeverMoveAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [9,4] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAD Bonewalker_Bow 0x00 Level(5, Enemy, 1) [7,6] RandomizePosition 0x00 0x0 0x00 [BaseBow] NoAI
+	UNIT 0xAC Bonewalker 0x00 Level(7, Enemy, 1) [3,17] RandomizePosition 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [4,11] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [1,9] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [7,12] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [4,15] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAA Revenant 0x00 Level(7, Enemy, 1) [8,7] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
+	UNIT 0xAA Revenant 0x00 Level(3, Enemy, 1) [14,7] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Bonewalker 0x00 Level(6, Enemy, 1) [5,3] 0x00 0x00 0x0 0x00 [BaseSword] NeverMoveAI
 	UNIT
 	
 EnemyUnitsReplay: 
-	UNIT 0xAA Random_RevEntombed 0x00 Level(3, Enemy, 1) [9,3] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
-	UNIT 0xAD Bonewalker_Bow 0x00 Level(5, Enemy, 1) [7,5] RandomizePosition 0x00 0x0 0x00 [BaseBow] NoAI
-	UNIT 0xAC Random_Bonewalker 0x00 Level(7, Enemy, 1) [3,16] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
-	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [4,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
-	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [1,8] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
-	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [7,11] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
-	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
-	UNIT 0xAA Random_RevBonewalker 0x00 Level(7, Enemy, 1) [8,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
-	UNIT 0xAA Random_AnyMonster 0x00 Level(3, Enemy, 1) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
-	UNIT 0xAC Bonewalker 0x00 Level(6, Enemy, 1) [10,1] 0x00 0x00 0x0 0x00 [SteelSword] NeverMoveAI
+	UNIT 0xAA Random_RevEntombed 0x00 Level(3, Enemy, 1) [9,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAD Bonewalker_Bow 0x00 Level(5, Enemy, 1) [7,6] RandomizePosition 0x00 0x0 0x00 [BaseBow] NoAI
+	UNIT 0xAC Random_Bonewalker 0x00 Level(7, Enemy, 1) [3,17] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [4,11] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [1,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [7,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAA Random_RevBonewalker 0x00 Level(3, Enemy, 1) [4,15] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAA Random_RevBonewalker 0x00 Level(7, Enemy, 1) [8,7] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT 0xAA Random_AnyMonster 0x00 Level(3, Enemy, 1) [14,7] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT 0xAC Bonewalker 0x00 Level(6, Enemy, 1) [5,3] 0x00 0x00 0x0 0x00 [SteelSword] NeverMoveAI
 	UNIT
 
 SeaboundShrine_BeginningScene:
@@ -174,8 +174,8 @@ SeraphimEvent:
 		MUSC 0x0A
 		MUSI
 		STAL 30
-		CAM1 [3,5]
-		FlashCursor(3,5, 60)
+		CAM1 [3,6]
+		FlashCursor(3,6, 60)
 		Text(SeaboundShrine_Seraphim)
 		MUNO
 		GOTO 0x8
