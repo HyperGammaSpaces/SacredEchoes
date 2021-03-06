@@ -2,21 +2,21 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plCh3A_7_Event, Ch3_3A_ThisChapter)
+EventPointerTable(plCh3A_7_Event, Ch3_7A_ThisChapter)
 
-Ch3_3A_ThisChapter:
-	POIN Ch3_3A_TurnBasedEvents
-	POIN Ch3_3A_CharacterBasedEvents
-	POIN Ch3_3A_LocationBasedEvents
-	POIN Ch3_3A_MiscBasedEvents
-	POIN Ch3_3A_Dunno Ch3_3A_Dunno Ch3_3A_Dunno
-	POIN Ch3_3A_Tutorial
-	POIN Ch3_3A_Ballista1 Ch3_3A_Ballista2
-	POIN Ch3_3A_Units1 Ch3_3A_Units1
+Ch3_7A_ThisChapter:
+	POIN Ch3_7A_TurnBasedEvents
+	POIN Ch3_7A_CharacterBasedEvents
+	POIN Ch3_7A_LocationBasedEvents
+	POIN Ch3_7A_MiscBasedEvents
+	POIN Ch3_7A_Dunno Ch3_7A_Dunno Ch3_7A_Dunno
+	POIN Ch3_7A_Tutorial
+	POIN Ch3_7A_Ballista1 Ch3_7A_Ballista2
+	POIN Ch3_7A_Units1 Ch3_7A_Units1
 	POIN $0 $0 $0 $0 $0 $0
-	POIN Ch3_3A_BeginningScene Ch3_3A_EndingScene
+	POIN Ch3_7A_BeginningScene Ch3_7A_EndingScene
 
-Ch3_3A_TurnBasedEvents:
+Ch3_7A_TurnBasedEvents:
 	TURN 0x0 LoadReinforcements [3,255] 0x0
 	TURN
 
@@ -25,36 +25,36 @@ LoadReinforcements:
 	NoFade
 	ENDA
 
-Ch3_3A_CharacterBasedEvents:
+Ch3_7A_CharacterBasedEvents:
 	CHAR
 
-Ch3_3A_LocationBasedEvents:
+Ch3_7A_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
 	LOCA
 
-Ch3_3A_MiscBasedEvents:
+Ch3_7A_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch3_3A_EndingScene)
+	DefeatAll(Ch3_7A_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
-Ch3_3A_Dunno:
+Ch3_7A_Dunno:
 	END_MAIN
 
-Ch3_3A_Tutorial:
+Ch3_7A_Tutorial:
 	END_MAIN
 
-Ch3_3A_Ballista1:
+Ch3_7A_Ballista1:
 	BLST
 	ALIGN 4
 
-Ch3_3A_Ballista2:
+Ch3_7A_Ballista2:
 	BLST
 	ALIGN 4
 
-Ch3_3A_Units1:
+Ch3_7A_Units1:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
@@ -72,7 +72,7 @@ Reinforcements1:
 	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [11,3]	0x00 0x00 0x1 REDA11R3 [IronLance] NoAI
 	UNIT
 
-Ch3_3A_BeginningScene:
+Ch3_7A_BeginningScene:
 
 	//debug only
 	SetBackground(0x1D)
@@ -85,19 +85,19 @@ Ch3_3A_BeginningScene:
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	SetBackground(0x1D)
-	Text(Ch3_3A_OpeningText)
+	Text(Ch3_7A_OpeningText)
 
 	FADI 60
 	REMA
 	CLEA 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	LOAD3 0x0 Ch3_3A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	LOAD3 0x0 Ch3_7A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	GotoPrepScreen
 	ENDA
 
-Ch3_3A_EndingScene:
+Ch3_7A_EndingScene:
 	CALL UnifiedBEXPCaller
 	FADI 2
 	EVBIT_MODIFY 0x1
@@ -105,7 +105,16 @@ Ch3_3A_EndingScene:
 	EVBIT_MODIFY 0x0
 	MUSC 0x31
 	SetBackground(0x1D)
-	Text(Ch3_3A_EndingText)
+	Text(Ch3_7A_EndingText)
+	
+	
+		//If gChapter3C7Completed
+		//Ch3_EndingText_SluiceGate_Alm
+		//Ch3_EndingText_BrownBoxText
+		//Ch3_EndingText_Jedah
+		//else
+		//Ch3_EndingText_SluiceGate_NotOpen
+	
 	STARTFADE
 	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
 	MNCH 0x12

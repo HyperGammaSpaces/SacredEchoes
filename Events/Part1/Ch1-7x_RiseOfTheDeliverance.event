@@ -17,10 +17,14 @@ POIN $0 $0 $0 $0 $0 $0
 POIN Ch1_7x_BeginningScene Ch1_7x_EndingScene
 
 Ch1_7x_TurnBasedEvents:
+	TurnEventPlayer(0x0,StairsSpawn,5)
 	TURN
+	
+StairsSpawn:
+	LoadReinforcements(Reinforcements_Right)
+	ReinforcementEvent(Reinforcements_Left)
 
 Ch1_7x_CharacterBasedEvents:
-	CharacterEvent(0x9, TalkToSlayde, Clive, SlaydeCav)
 	CHAR
 
 Ch1_7x_LocationBasedEvents:
@@ -50,62 +54,57 @@ Ch1_7x_Ballista2:
 	ALIGN 4
 
 Ch1_7x_Units1:
-	UNIT Clive Cavalier 0x00 Level(6,Ally,1) [5,14] 0x00 0x00 0x0 0x00 [SteelLance, BaseLance] NoAI
-	UNIT Forsyth Soldier 0x00 Level(4,Ally,1) [6,15] 0x00 0x00 0x0 0x00 [BaseLance,Forscythe] NoAI
-	UNIT Python Archer 0x00 Level(3,Ally,1) [4,15] 0x00 0x00 0x0 0x00 [IronBow, BaseBow] NoAI
+	UNIT Clive Cavalier 0x00 Level(6,Ally,1) [10,11] 0x00 0x00 0x0 0x00 [SteelLance, BaseLance] NoAI
+	UNIT Forsyth Soldier 0x00 Level(4,Ally,1) [8,9] 0x00 0x00 0x0 0x00 [BaseLance,Forscythe] NoAI
+	UNIT Python Archer 0x00 Level(3,Ally,1) [8,13] 0x00 0x00 0x0 0x00 [IronBow, BaseBow] NoAI
 	UNIT
 
 LoadFernandMathilda:
-	UNIT FernandPlayable Cavalier 0x00 Level(4, Ally, 1) [3,14] 0x00 0x00 0x0 0x00 [BaseLance,Javelin,Vulnerary] NoAI
-	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, False) [9,6] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance,HeavySpear] NoAI
+	UNIT FernandPlayable Cavalier 0x00 Level(4, Ally, 1) [9,10] 0x00 0x00 0x0 0x00 [BaseLance,Javelin,Vulnerary] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, False) [9,12] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance,HeavySpear] NoAI
 	UNIT
 
 EnemyUnits:
-	UNIT Jarth Mercenary	0x00 Level(8, Enemy, False) [19,1]	0x00 0x00 0x0 0x00 [BaseSword] NeverMoveAI
-	UNIT 0x65 Mage Jarth Level(3, Enemy, True) [20,2] 0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT 0x65 Mage Jarth Level(3, Enemy, True) [17,1] 0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT 0x65 Brigand Jarth Level(3, Enemy, True) [19,3] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-	UNIT 0x65 Brigand Jarth Level(3, Enemy, True) [20,4] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-	UNIT 0x65 Brigand Jarth Level(3, Enemy, True) [18,4] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-	UNIT 0x65 Mercenary Jarth Level(3, Enemy, True) [4,9] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
-	UNIT 0x65 Brigand Jarth Level(3, Enemy, True) [3,10] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-	UNIT 0x65 Brigand Jarth Level(3, Enemy, True) [5,9] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-	UNIT 0x65 Archer Jarth Level(3, Enemy, True) [12,14] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
-	UNIT 0x65 Brigand Jarth Level(3, Enemy, True) [13,13] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-	UNIT 0x65 Brigand Jarth Level(3, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+//Left
+	UNIT 0x83 Mage Zopyrus Level(3, Enemy, True) [4,15] 0x00 0x00 0x1 REDA7R5 [Fire] NoAI
+	UNIT 0x81 Archer Zopyrus Level(3, Enemy, True) [4,15] 0x00 0x00 0x1 REDA9R16 [BaseBow] NoAI
+	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [4,15] 0x00 0x00 0x1 REDA2R9 [BaseLance] NoAI
+	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [4,15] 0x00 0x00 0x1 REDA3R6 [BaseLance] NoAI
+	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [4,15] 0x00 0x00 0x1 REDA3R12 [BaseLance] NoAI
+	UNIT 0x84 Mercenary Zopyrus Level(3, Enemy, True) [4,15] 0x00 0x00 0x1 REDA5R15 [BaseSword] NoAI
+//Right
+	UNIT 0x84 Mercenary Zopyrus Level(3, Enemy, True) [20,15] 0x00 0x00 0x1 REDA15R5 [BaseSword] NoAI
+	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [20,15] 0x00 0x00 0x1 REDA19R5 [BaseLance] NoAI
+	UNIT 0x81 Archer Zopyrus Level(3, Enemy, True) [20,15] 0x00 0x00 0x1 REDA15R16 [BaseBow] NoAI
+	UNIT 0x83 Mage Zopyrus Level(3, Enemy, True) [20,15] 0x00 0x00 0x1 REDA21R11 [Fire] NoAI
+	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [20,15] 0x00 0x00 0x1 REDA19R15 [BaseLance] NoAI
+	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [20,15] 0x00 0x00 0x1 REDA22R9 [BaseLance] NoAI
+//Armors
+	UNIT 0x82 Knight Zopyrus Level(3, Enemy, True) [12,0] 0x00 0x00 0x1 REDA12R6 [KillerAxe] NeverMoveAI
+	UNIT 0x82 Knight Zopyrus Level(3, Enemy, True) [20,15] 0x00 0x00 0x1 REDA12R17 [KillerAxe] NeverMoveAI
 	UNIT
 
-SlaydeGroup:
-	UNIT SlaydeCav Cavalier	0x00 Level(8, NPC, False) [19,14]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
-	UNIT 0x82 Soldier	SlaydeCav Level(3, NPC, False) [18,13]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
-	UNIT 0x85 Soldier	SlaydeCav Level(3, NPC, False) [20,13]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
+Enemy_Envoy:
+	UNIT Zopyrus Cavalier	0x00 Level(8, NPC, False) [0,22]	DropItem 0x00 0x1 REDA14R11 [SteelLance, IronShield] NeverMoveAI
+	UNIT 0x85 Cavalier	Zopyrus Level(3, NPC, False) [0,22]	0x00 0x00 0x1 REDA15R10 [IronLance] NeverMoveAI
+	UNIT 0x85 Cavalier	Zopyrus Level(3, NPC, False) [0,22]	0x00 0x00 0x1 REDA15R12 [IronLance] NeverMoveAI
 	UNIT
 
-Reinforcements1:
-	UNIT 0x65 Archer SlaydeCav Level(3, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
-	UNIT 0x65 Mercenary SlaydeCav Level(3, Enemy, True) [9,7] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
-	UNIT 0x65 Mage SlaydeCav Level(3, Enemy, True) [5,7] 0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT 0x65 Brigand SlaydeCav Level(3, Enemy, True) [4,8] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-	UNIT 0x65 Brigand SlaydeCav Level(3, Enemy, True) [5,8] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+Reinforcements_Left:
+	UNIT 0x81 Archer Zopyrus Level(3, Enemy, True) [4,15] 0x00 0x00 0x1 REDA5R14 [BaseBow] NoAI
+	UNIT 0x84 Mercenary Zopyrus Level(3, Enemy, True) [4,15] 0x00 0x00 0x1 REDA3R14 [BaseSword] NoAI
+	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [4,15] 0x00 0x00 0x1 REDA6R16 [BaseLance] NoAI
+	UNIT
+	
+Reinforcements_Right:
+	UNIT 0x81 Archer Zopyrus Level(3, Enemy, True) [20,15] 0x00 0x00 0x1 REDA19R14 [BaseBow] NoAI
+	UNIT 0x83 Mage Zopyrus Level(3, Enemy, True) [20,15] 0x00 0x00 0x1 REDA21R14 [Fire] NoAI
+	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [20,15] 0x00 0x00 0x1 REDA18R16 [BaseLance] NoAI
 	UNIT
 
 Ch1_7x_BeginningScene:
-
-//Uncomment when re-adding
-/*
 	MUSC 0x25
-	CAM1 [8, 11]
-	LOAD1 0x1 EnemyUnits
-	ENUN
-
-	SetBackground(0x1B)
-	TEXTSTART
-	TEXTSHOW Ch1_7x_OpeningText
-	TEXTEND
-	FADI 60
-	REMA
 	CLEA 0x0
-*/
 
 	REMU Alm
 	REMU Lukas
@@ -116,49 +115,34 @@ Ch1_7x_BeginningScene:
 	REMU Silque
 	REMU Clair
 	REMU Acantha
-
+	
 	LOAD2 0x0 Ch1_7x_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
-	
-	//Debug
-		SetBackground(0x1B)
-		Text(Ch1_7x_PlaceholderText)
-		CALL Ch1_7x_EndingScene
-		ENDA
-	
-	LOAD1 0x1 LoadFernandMathilda
+	LOAD1 0x0 LoadFernandMathilda
 	ENUN
-	LOAD1 0x1 SlaydeGroup
+	
+	FADU 5
+	BROWNBOXTEXT Ch1_7x_BrownboxText [8,8]
+	STAL 60
+	
+	SetBackground(0x1B)
+	Text(Ch1_7x_OpeningText)
+	
+	STAL 20
+	CAM1 [12, 0]
+	//Boss walks in
+	LOAD1 0x1 Enemy_Envoy
 	ENUN
-	NoFade
-	ENDA
 	
-DebugSeizeEvent2:
-	SVAL 0x1 0x1
-	CHECK_INAREA Clive [0,0] [22,13]
-	IFEQ 0x2 0xC 0x1
-		MUSI
-		STAL 30
-		FlashCursor(Clive, 60)
-		Text(Ch1_7x_EndingText)
-		MUNO
-		CALL Ch1_7x_EndingScene
-		ENDA
-	LABEL 0x2
-		ENUF 0x8
-	LABEL 0x3
-	NoFade
-	ENDA
-	
-TalkToSlayde:
-	MUSS 0x15 //evil sounding idk
-	STAL 0x20
-	Text(Ch1_7x_SlaydeText)
-	CUSE SlaydeCav
-	CUSE 0x82
-	CUSE 0x85
-	STAL 0x14
-	MURE 0x05
+	SetBackground(0x1B)
+	Text(Ch1_7x_BossIntro)
+
+	//Enemy ambush
+	CAM1 [12, 11]
+	LOAD1 0x1 EnemyUnits
+	ENUN
+
+	Text(Ch1_7x_EnemiesAppear)
 	NoFade
 	ENDA
 
@@ -195,9 +179,9 @@ Ch1_7x_EndingScene:
 
 //Uncomment when re-enabling
 
-//	MUSC 0x4A
-//	SetBackground(0x20)
-//	Text(Ch1_7x_EndingText)
-//	FADI 5
+	MUSC 0x4A
+	SetBackground(0x20)
+	Text(Ch1_7x_EndingText)
+	FADI 5
 	MNCH 0x07 //go to ch7
 ENDA

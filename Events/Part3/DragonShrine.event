@@ -2,34 +2,28 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plDragonShrineEvent, Ch3_3A_ThisChapter)
+EventPointerTable(plDragonShrineEvent, DShrine_ThisChapter)
 
-Ch3_3A_ThisChapter:
-	POIN Ch3_3A_TurnBasedEvents
-	POIN Ch3_3A_CharacterBasedEvents
-	POIN Ch3_3A_LocationBasedEvents
-	POIN Ch3_3A_MiscBasedEvents
-	POIN Ch3_3A_Dunno Ch3_3A_Dunno Ch3_3A_Dunno
-	POIN Ch3_3A_Tutorial
-	POIN Ch3_3A_Ballista1 Ch3_3A_Ballista2
-	POIN Ch3_3A_Units1 Ch3_3A_Units1
-	POIN $0 $0 $0 
-	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
-	POIN Ch3_3A_BeginningScene Ch3_3A_EndingScene
+DShrine_ThisChapter:
+	POIN DShrine_TurnBasedEvents
+	POIN DShrine_CharacterBasedEvents
+	POIN DShrine_LocationBasedEvents
+	POIN DShrine_MiscBasedEvents
+	POIN DShrine_Dunno DShrine_Dunno DShrine_Dunno
+	POIN DShrine_Tutorial
+	POIN DShrine_Ballista1 DShrine_Ballista2
+	POIN DShrine_PlayerSkirmishUnits DShrine_PlayerSkirmishUnits
+	POIN DShrine_PlayerSkirmishUnits DShrine_PlayerSkirmishUnits DShrine_PlayerSkirmishUnits 
+	POIN EnemyUnits EnemyUnits EnemyUnits
+	POIN DShrine_BeginningScene DShrine_EndingScene
 
-Ch3_3A_TurnBasedEvents:
-	TURN 0x0 LoadReinforcements [3,255] 0x0
+DShrine_TurnBasedEvents:
 	TURN
 
-LoadReinforcements:
-	ReinforcementEvent(Reinforcements1)
-	NoFade
-	ENDA
-
-Ch3_3A_CharacterBasedEvents:
+DShrine_CharacterBasedEvents:
 	CHAR
 
-Ch3_3A_LocationBasedEvents:
+DShrine_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
@@ -39,83 +33,92 @@ Ch3_3A_LocationBasedEvents:
 	#endif
 	LOCA
 
-Ch3_3A_MiscBasedEvents:
+DShrine_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch3_3A_EndingScene)
+	DefeatAll(DShrine_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
-Ch3_3A_Dunno:
+DShrine_Dunno:
 	END_MAIN
 
-Ch3_3A_Tutorial:
+DShrine_Tutorial:
 	END_MAIN
 
-Ch3_3A_Ballista1:
+DShrine_Ballista1:
 	BLST
 	ALIGN 4
 
-Ch3_3A_Ballista2:
+DShrine_Ballista2:
 	BLST
 	ALIGN 4
 
-Ch3_3A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+DShrine_PlayerSkirmishUnits:
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [15,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [17,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [16,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [14,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [15,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [14,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [12,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [13,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [4,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [3,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
 
-CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT
-
-EnemyUnits:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+Ch3_5C_CutsceneUnits:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT
 	
-SkirmishEnemies:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+EnemyUnits:
+	UNIT EntombedBoss DracoZombie EntombedBoss Level(6,Enemy,True) [4,1] DropItemWithRandomPosition 0x00 0x0 0x00 [FireFang,Item100G] AttackInRangeAI
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [15,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [10,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT Terror_Bael Random_Bael EntombedBoss Level(12,Enemy,True) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(9,Enemy,True) [2,10] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain EntombedBoss Level(8,Enemy,True) [6,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Bonewalker Bonewalker EntombedBoss Level(7,Enemy,True) [7,2] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow EntombedBoss Level(5,Enemy,True) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [10,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [3,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [7,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Revenant Random_RevBonewalker EntombedBoss Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
 	UNIT
 
-Reinforcements1:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [11,3]	0x00 0x00 0x1 REDA11R3 [IronLance] NoAI
+ReinforcementZombie:
+	UNIT Terror_Revenant Revenant EntombedBoss Level(11,Enemy,True) [5,3] 0x00 0x00 0x1 REDA5R3 [RottenClaw] NoAI 
+	UNIT
+	
+BackupsReinforcements:
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(9,Enemy,True) [12,19] 0x00 0x00 0x1 REDA12R19 [ToxinLance] NoAI 
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(10,Enemy,True) [13,19] 0x00 0x00 0x1 REDA13R19 [HeavySpear] NoAI 
 	UNIT
 
-Ch3_3A_BeginningScene:
-
-	//debug only
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	//end debug
-
+DShrine_BeginningScene:
+	/*
 	MUSC 0x25
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	SetBackground(0x1D)
-	Text(Ch3_3A_OpeningText)
+	Text(DShrine_OpeningText)
 
 	FADI 60
 	REMA
 	CLEA 0x0
+	*/
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	LOAD3 0x0 Ch3_3A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	LOAD3 0x0 DShrine_PlayerSkirmishUnits //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	GotoPrepScreen
 	ENDA
 
-Ch3_3A_EndingScene:
-	CALL UnifiedBEXPCaller
-	FADI 2
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3A5Completed
+DShrine_EndingScene:
 	EVBIT_MODIFY 0x0
-	MUSC 0x31
-	SetBackground(0x1D)
-	Text(Ch3_3A_EndingText)
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x12
+	SVAL 0x3 0x3
+	ASMC 0x85C65
+	//SADD 0x32
+	CALL UnifiedBEXPCaller
+	SVAL 0x2 0x9
+	MNCH 0xFFFF //go to world map
 	ENDA

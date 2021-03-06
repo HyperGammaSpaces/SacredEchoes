@@ -2,22 +2,22 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plCh3C_6_Event, Ch3_3A_ThisChapter)
+EventPointerTable(plCh3C_6_Event, Ch3_6C_ThisChapter)
 
-Ch3_3A_ThisChapter:
-	POIN Ch3_3A_TurnBasedEvents
-	POIN Ch3_3A_CharacterBasedEvents
-	POIN Ch3_3A_LocationBasedEvents
-	POIN Ch3_3A_MiscBasedEvents
-	POIN Ch3_3A_Dunno Ch3_3A_Dunno Ch3_3A_Dunno
-	POIN Ch3_3A_Tutorial
-	POIN Ch3_3A_Ballista1 Ch3_3A_Ballista2
-	POIN Ch3_3A_Units1 Ch3_3A_Units1
+Ch3_6C_ThisChapter:
+	POIN Ch3_6C_TurnBasedEvents
+	POIN Ch3_6C_CharacterBasedEvents
+	POIN Ch3_6C_LocationBasedEvents
+	POIN Ch3_6C_MiscBasedEvents
+	POIN Ch3_6C_Dunno Ch3_6C_Dunno Ch3_6C_Dunno
+	POIN Ch3_6C_Tutorial
+	POIN Ch3_6C_Ballista1 Ch3_6C_Ballista2
+	POIN Ch3_6C_Units1 Ch3_6C_Units1
 	POIN $0 $0 $0 
 	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
-	POIN Ch3_3A_BeginningScene Ch3_3A_EndingScene
+	POIN Ch3_6C_BeginningScene Ch3_6C_EndingScene
 
-Ch3_3A_TurnBasedEvents:
+Ch3_6C_TurnBasedEvents:
 	TURN 0x0 LoadReinforcements [3,255] 0x0
 	TURN
 
@@ -26,83 +26,108 @@ LoadReinforcements:
 	NoFade
 	ENDA
 
-Ch3_3A_CharacterBasedEvents:
+Ch3_6C_CharacterBasedEvents:
 	CHAR
 
-Ch3_3A_LocationBasedEvents:
+Ch3_6C_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
 	LOCA
 
-Ch3_3A_MiscBasedEvents:
+Ch3_6C_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch3_3A_EndingScene)
+	DefeatAll(Ch3_6C_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
-Ch3_3A_Dunno:
+Ch3_6C_Dunno:
 	END_MAIN
 
-Ch3_3A_Tutorial:
+Ch3_6C_Tutorial:
 	END_MAIN
 
-Ch3_3A_Ballista1:
+Ch3_6C_Ballista1:
 	BLST
 	ALIGN 4
 
-Ch3_3A_Ballista2:
+Ch3_6C_Ballista2:
 	BLST
 	ALIGN 4
 
-Ch3_3A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+Ch3_6C_Units1:
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [16,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [17,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [18,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [3,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT
 
 EnemyUnits:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	//total: ~22
+	UNIT Blake Myrmidon	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [Shadowblade] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
 	
 SkirmishEnemies:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
 
 Reinforcements1:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [11,3]	0x00 0x00 0x1 REDA11R3 [IronLance] NoAI
+	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [11,3]	0x00 0x00 0x1 REDA11R3 [IronLance] NoAI
 	UNIT
 
-Ch3_3A_BeginningScene:
-
-	//debug only
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	//end debug
-
+Ch3_6C_BeginningScene:
 	MUSC 0x25
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	SetBackground(0x1D)
-	Text(Ch3_3A_OpeningText)
+	Text(Ch3_6C_OpeningText)
 
 	FADI 60
 	REMA
 	CLEA 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	LOAD3 0x0 Ch3_3A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	LOAD3 0x0 Ch3_6C_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	GotoPrepScreen
 	ENDA
 
-Ch3_3A_EndingScene:
+Ch3_6C_EndingScene:
 	CALL UnifiedBEXPCaller
 	FADI 2
 	EVBIT_MODIFY 0x1
@@ -110,7 +135,7 @@ Ch3_3A_EndingScene:
 	EVBIT_MODIFY 0x0
 	MUSC 0x31
 	SetBackground(0x1D)
-	Text(Ch3_3A_EndingText)
+	Text(Ch3_6C_EndingText)
 	STARTFADE
 	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
 	MNCH 0x12
