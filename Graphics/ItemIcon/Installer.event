@@ -29,8 +29,10 @@ PUSH
   #incbin "item192.img.bin"
   ORG $5986F4
   #incbin "item208.img.bin"
+  ORG $598EF4
+  #incbin "item224.img.bin"
 
-// New Weapon Icons
+// New Weapon Rank Icons
   SetItemIcon(0x70)
   #incbin "WRankIcons.dmp"
   

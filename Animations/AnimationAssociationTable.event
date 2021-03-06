@@ -224,7 +224,7 @@ UnarmedAnim(BishopUnarmed)
 WORD 0x0
 
 ShamanAnim:
-WMagicAnim(ShamanMagic)
+WMagicAnim(ShamanStaff)
 BMagicAnim(ShamanMagic)
 UnarmedAnim(ShamanMagic)
 WORD 0x0
@@ -294,6 +294,12 @@ HandAxeAnim(BerserkerHandaxe)
 UnarmedAnim(BerserkerUnarmed)
 WORD 0x0
 
+BerserkerFAnim:
+AxeAnim(BerserkerFAxe)
+HandAxeAnim(BerserkerFHandaxe)
+UnarmedAnim(BerserkerFUnarmed)
+WORD 0x0
+
 PegKnightAnim:
 SpearAnim(PegKnightLance)
 UnarmedAnim(PegKnightUnarmed)
@@ -302,6 +308,23 @@ WORD 0x0
 FalcoKnightAnim:
 SpearAnim(FalcoKnightLance)
 UnarmedAnim(FalcoKnightUnarmed)
+WORD 0x0
+
+DracoKnightAnim:
+SpearAnim(DracoKnightLance)
+UnarmedAnim(DracoKnightUnarmed)
+WORD 0x0
+
+WyvernRiderAnim:
+AxeAnim(WyvernRiderAxe)
+HandAxeAnim(WyvernRiderHandaxe)
+UnarmedAnim(WyvernRiderUnarmed)
+WORD 0x0
+
+WyvernLordAnim:
+AxeAnim(WyvernLordAxe)
+HandAxeAnim(WyvernLordHandaxe)
+UnarmedAnim(WyvernLordUnarmed)
 WORD 0x0
 
 JedahAnim:
@@ -391,6 +414,16 @@ WORD 0x0
 DeathgoyleAnim:
 SpearAnim(DeathgoyleLance)
 UnarmedAnim(DeathgoyleUnarmed)
+WORD 0x0
+
+HellhoundAnim:
+UnarmedAnim(HellhoundFang)
+MonsterAnim(HellhoundFang)
+WORD 0x0
+
+KerberosAnim:
+UnarmedAnim(KerberosFang)
+MonsterAnim(KerberosFang)
 WORD 0x0
 
 NecroDragonAnim:
