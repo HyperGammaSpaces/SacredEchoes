@@ -55,7 +55,20 @@ Ch3_7A_Ballista2:
 	ALIGN 4
 
 Ch3_7A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [8,24] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [7,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [9,24] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [7,24] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [10,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [6,23] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [5,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [5,24] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Forsyth Soldier 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Python Archer 0x00 Level(1, Ally, 1) [11,24] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
+	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [4,23] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
+	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [12,23] 0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 CutsceneUnits:
@@ -65,7 +78,53 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT TatarrahCh3_7A Arcanist 0x00 Level(5,Enemy,False) [8,1] 0x00 0x00 0x0 0x00 [Thanatos, Fortify] NeverMoveAI
+	UNIT DeltheaBoss Mage_F 0x00 Level(5,Enemy,False) [8,1] 0x00 0x00 0x0 0x00 [Aura, PrayerRing] NeverMoveAI
+	
+	UNIT 0x86 Sage TatarrahCh3_7A Level(1,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Bolting,Fire,Physic] NeverMoveAI
+	UNIT 0x86 Sniper TatarrahCh3_7A Level(3,Enemy,True) [10,0] DropItem 0x00 0x0 0x00 [SilverBow,Longbow,Elixir] NeverMoveAI
+
+	UNIT 0x86 Cavalier TatarrahCh3_7A Level(9,Enemy,True) [14,16] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
+	UNIT 0x86 Cavalier_F TatarrahCh3_7A Level(9,Enemy,True) [2,15] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
+
+	UNIT 0x86 Sniper TatarrahCh3_7A Level(1,Enemy,True) [8,17] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT 0x86 Mage TatarrahCh3_7A Level(8,Enemy,True) [7,19] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+
+	UNIT 0x86 Paladin TatarrahCh3_7A Level(2,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
+	UNIT 0x86 Cavalier_F TatarrahCh3_7A Level(9,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x86 Archer_F TatarrahCh3_7A Level(12,Enemy,True) [17,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x86 PegasusKnight TatarrahCh3_7A Level(11,Enemy,True) [18,8] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x86 Knight TatarrahCh3_7A Level(12,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [SteelAxe,Javelin] AttackInRangeAI
+
+	UNIT 0x86 Paladin_F TatarrahCh3_7A Level(2,Enemy,True) [1,10] 0x00 0x00 0x0 0x00 [IronLance,HideShield] AttackInRangeAI
+	UNIT 0x86 Archer TatarrahCh3_7A Level(13,Enemy,True) [2,11] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+
+	UNIT 0x86 Cleric TatarrahCh3_7A Level(3,Enemy,True) [5,12] 0x00 0x00 0x0 0x00 [Nosferatu,Physic] HealUnits
+	UNIT 0x86 Mage TatarrahCh3_7A Level(9,Enemy,True) [7,13] DropItem 0x00 0x0 0x00 [Thunder,IronShield] AttackInRangeAI
+	UNIT 0x86 Mercenary TatarrahCh3_7A Level(9,Enemy,True) [9,15] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x86 Soldier TatarrahCh3_7A Level(16,Enemy,True) [5,16] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x86 Archer TatarrahCh3_7A Level(12,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+
+	UNIT 0x86 Archer_F TatarrahCh3_7A Level(14,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x86 Archer TatarrahCh3_7A Level(14,Enemy,True) [1,5] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+
+	UNIT 0x64 Thief TatarrahCh3_7A Level(12,Enemy,True) [10,14] DropItem 0x00 0x0 0x00 [IronSword,Soma] [0x6,0xC,0x0,0x0]
+
+	UNIT 0x86 PegasusKnight TatarrahCh3_7A Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+    UNIT 0x86 PegasusKnight TatarrahCh3_7A Level(12,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+
+    UNIT 0x86 Mercenary TatarrahCh3_7A Level(9,Enemy,True) [13,20] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+    UNIT 0x86 Mage_F TatarrahCh3_7A Level(9,Enemy,True) [14,19] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+
+    UNIT 0x86 Sniper TatarrahCh3_7A Level(3,Enemy,True) [9,4] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT 0x86 Knight TatarrahCh3_7A Level(14,Enemy,True) [12,4] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+    UNIT 0x86 Myrmidon TatarrahCh3_7A Level(3,Enemy,True) [4,6] DropItem 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+
+    UNIT 0x86 Paladin_F TatarrahCh3_7A Level(3,Enemy,True) [15,3] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+    UNIT 0x86 Paladin TatarrahCh3_7A Level(3,Enemy,True) [2,3] 0x00 0x00 0x0 0x00 [HeavySpear,IronShield] AttackInRangeAI
+
+    UNIT 0x86 Mercenary TatarrahCh3_7A Level(11,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	
 	UNIT
 
 Reinforcements1:
@@ -73,13 +132,6 @@ Reinforcements1:
 	UNIT
 
 Ch3_7A_BeginningScene:
-
-	//debug only
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	//end debug
 
 	MUSC 0x25
 	LOAD2 0x1 CutsceneUnits
