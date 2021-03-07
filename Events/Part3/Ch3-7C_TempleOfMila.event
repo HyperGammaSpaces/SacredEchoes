@@ -18,11 +18,31 @@ Ch3_7C_ThisChapter:
 	POIN Ch3_7C_BeginningScene Ch3_7C_EndingScene
 
 Ch3_7C_TurnBasedEvents:
-	TURN 0x0 LoadReinforcements [3,255] 0x0
+	TURN 0x0 LoadSummons [3,255] 0x0
 	TURN
 
-LoadReinforcements:
-	ReinforcementEvent(Reinforcements1)
+LoadSummons:
+	CHECK_EVENTID 0x2 // boss death quote
+	BNE 0 0xC 0x0 // branch label 0 if summoner dead
+	COUNTER_CHECK 0 // slot c = counter 0 value
+	SVAL 0x1 1 // number of turns between summons (1)
+	BNE 1 0xC 0x1 // branch label 1 if counter is not at value
+
+	// Counter at value
+	COUNTER_SET 0 0 // reset counter
+	CAM1 Mikhail // cam on summoner
+	ENUN
+	SOUN 0x3BF // summoning SFX
+	STAL 20
+	ReinforcementEvent(MikhailSummons)
+	GOTO 0
+
+	LABEL 1
+	// Counter not at value
+	COUNTER_ADD 0 0 // counter 0 ++
+
+	LABEL 0
+	// event end
 	NoFade
 	ENDA
 
@@ -30,15 +50,11 @@ Ch3_7C_CharacterBasedEvents:
 	CHAR
 
 Ch3_7C_LocationBasedEvents:
-	#ifdef __DEBUG__
-	  Seize(4,5)
-	#endif
 	Seize(14,5)
 	LOCA
 
 Ch3_7C_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch3_7C_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
@@ -57,55 +73,62 @@ Ch3_7C_Ballista2:
 	ALIGN 4
 
 Ch3_7C_Units1:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [16,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [17,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [18,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [14,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [14,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	//Left
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	//Right
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [24,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [23,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [24,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [3,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1, Ally, 1) [4,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [14,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [13,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [15,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT
 
 EnemyUnits:
 	//put 25ish guys down
 	UNIT Mikhail Cantor	Mikhail Level(9, Enemy, True) [14,5]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Terror_Wight_Bow Wight_Bow Mikhail Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
+	UNIT Terror_Wight_Bow Wight_Bow Mikhail Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
+	//gargoyles
+	UNIT Terror_Deathgoyle Deathgoyle	Mikhail Level(5, Enemy, True) [3,4]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Terror_Deathgoyle Deathgoyle	Mikhail Level(5, Enemy, True) [25,4]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	//main hallway
+	UNIT Terror_Gargoyle Gargoyle	Mikhail Level(14, Enemy, True) [13,9]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Terror_Deathgoyle Deathgoyle	Mikhail Level(5, Enemy, True) [14,10]	0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
+	UNIT Terror_Gargoyle Gargoyle	Mikhail Level(14, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x94 Witch	Mikhail Level(9, Enemy, True) [12,13]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT Terror_Entombed Entombed	Mikhail Level(5, Enemy, True) [14,12]	0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
+	UNIT 0x94 Witch	Mikhail Level(9, Enemy, True) [16,13]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	//tarvos
+	UNIT Terror_Tarvos Tarvos	Mikhail Level(15, Enemy, True) [1,11]	0x00 0x00 0x0 0x00 [Hammer] NoAI
+	UNIT Terror_Tarvos Tarvos	Mikhail Level(15, Enemy, True) [2,12]	0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Terror_Tarvos Tarvos	Mikhail Level(15, Enemy, True) [26,12]	0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+	UNIT Terror_Tarvos Tarvos	Mikhail Level(15, Enemy, True) [27,11]	0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	//fat wights
+	UNIT Terror_Wight Wight	Mikhail Level(9, Enemy, True) [7,11]	0x00 0x00 0x0 0x00 [IronLance,IronShield] NeverMoveAI
+	UNIT Terror_Wight Wight	Mikhail Level(9, Enemy, True) [7,12]	0x00 0x00 0x0 0x00 [IronSword,SteelShield] NeverMoveAI
+	UNIT Terror_Wight Wight	Mikhail Level(9, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [IronLance, SteelShield] NeverMoveAI
+	UNIT Terror_Wight Wight	Mikhail Level(9, Enemy, True) [21,12]	0x00 0x00 0x0 0x00 [IronSword,IronShield] NeverMoveAI
+	//misc mix
+	UNIT 0x92 Shaman	Mikhail Level(15, Enemy, True) [3,9]	0x00 0x00 0x0 0x00 [Sisyphus] NoAI
+	UNIT 0x92 Arcanist	Mikhail Level(9, Enemy, True) [25,9]	0x00 0x00 0x0 0x00 [Miasma, Physic] MoveAndHealAI
+	UNIT 0x92 Arcanist	Mikhail Level(9, Enemy, True) [6,9]	0x00 0x00 0x0 0x00 [Miasma, Physic] MoveAndHealAI
+	UNIT 0x92 Shaman	Mikhail Level(15, Enemy, True) [22,9]	0x00 0x00 0x0 0x00 [Selene] NoAI
+	UNIT Terror_ElderBael ElderBael	Mikhail Level(9, Enemy, True) [5,12]	0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT Terror_ElderBael ElderBael	Mikhail Level(9, Enemy, True) [23,12]	0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
 	UNIT
 	
 SkirmishEnemies:
@@ -117,9 +140,6 @@ MikhailSummons:
 	UNIT 0xBB Gargoyle Mikhail Level(15, Enemy, True) [15,6] 0x00 0x00 0x1 REDA15R6 [BaseLance] NoAI
 	UNIT
 
-Reinforcements1:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [11,3]	0x00 0x00 0x1 REDA11R3 [IronLance] NoAI
-	UNIT
 
 Ch3_7C_BeginningScene:
 	MUSC 0x25
@@ -145,29 +165,80 @@ Ch3_7C_EndingScene:
 	ENUT gChapter3C7Completed
 	EVBIT_MODIFY 0x0
 	MUSC 0x31
-	SetBackground(0x1D)
+	SetBackground(0x2F)
 	Text(Ch3_7C_EndingText)
-	//fade
-	//unfade
-	//Ch3_7C_EndingText_2
+	FADI 16
+	MUSC 0x8
+	SetBackground(0x2F)
+	TEXTSTART
+	TEXTSHOW Ch3_7C_EndingText_2
+	TEXTEND
+	MUSC 0x7FFF
+	TEXTCONT
+	TEXTEND
+	MUSC 0x2B
+	TEXTCONT
+	TEXTEND
+	REMA
+	FADI 16
 	
 	//Celica promotes
+	PROM Celica CelicaPrincess ZofianCrown
+	EVBIT_MODIFY 0x4
+	REMOVEPORTRAITS
+	BACG 0x2F
+	
+	MUSC 0x3B
 	
 	//CG
-	//Ch3_7C_CGText_1
-	//Ch3_7C_CGText_2
-	
+	EVBIT_MODIFY 0x0
+	SETVAL 0x2 (FealtyCG)
+	REMOVEPORTRAITS
+	BACG 0xFFFF
+	STAL 60
+	_0x1A22
+	TEXTSHOW Ch3_7C_CGText_1
+	TEXTEND
+	_0x1A22
+	TEXTSHOW Ch3_7C_CGText_2
+	TEXTEND
+	FADI 5
+	REMA
+
 	//Ending continues
-	//Ch3_7C_EndingText_3
-	//Ch3_7C_EndingText_SluiceGate
+	SetBackground(0x2F)
+	Text(Ch3_7C_EndingText_3)
+	Text(Ch3_7C_EndingText_SluiceGate)
+	EVBIT_MODIFY 0x1
+	SVAL 0x1 0x1
+	CHECK_EVENTID gChapter3A7Completed
+	IFNE 0x1 0xC 0x1
 		//If gChapter3A7Completed
-		//Ch3_EndingText_SluiceGate_Alm
-		//Ch3_EndingText_BrownBoxText
-		//Ch3_EndingText_Jedah
+		FADI 16
+		SetBackground(0x0B)
+		Text(Ch3_EndingText_SluiceGate_Alm)
+		FADI 5
+		EVBIT_MODIFY 0x4
+		MUSC 0x6
+		STAL 30
+		FADU 16
+		CenterTutorialTextBox
+		TUTORIALTEXTBOXSTART
+		TEXTSHOW Ch3_EndingText_BrownBoxText
+		TEXTEND
+		REMA
+		STAL 30
+		MUSC 0xE
+		FADI 16
+		SetBackground(0x33)
+		Text(Ch3_EndingText_Jedah)
+		GOTO 0x2
 	//else
-	//Ch3_7C_EndingText_SluiceGate_NotOpen
+	LABEL 0x1
+	Text(Ch3_7C_EndingText_SluiceGate_NotOpen)
+	LABEL 0x2
 	
 	STARTFADE
 	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x12
+	MNCH 0x1E
 	ENDA
