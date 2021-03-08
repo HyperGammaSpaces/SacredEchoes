@@ -1,6 +1,7 @@
 //Made by CrazyColorz5 of Fire Emblem Universe
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
+#define DeltheaLocalFlag 0x20
 
 EventPointerTable(plCh3A_7_Event, Ch3_7A_ThisChapter)
 
@@ -17,12 +18,113 @@ Ch3_7A_ThisChapter:
 	POIN Ch3_7A_BeginningScene Ch3_7A_EndingScene
 
 Ch3_7A_TurnBasedEvents:
-	TURN 0x0 LoadReinforcements [3,255] 0x0
+	TurnEventPlayer(0x0,SluiceGateStart,3)
+	TurnEventPlayer(0x0,SluiceGateDrain1,4)
+	TurnEventPlayer(0x0,SluiceGateDrain2,5)
+	//Wall starts to crack
+	TurnEventPlayer(0x0,SluiceGateWallCrack1,9)
+	TurnEventPlayer(0x0,SluiceGateWallCrack2,10)
+	TurnEventPlayer(0x0,SluiceGateWallCrack3,11)
+	TurnEventPlayer(0x0,SluiceGateWallCrack4,12)
+	TurnEventPlayer(0x0,SluiceGateFlood,13)
 	TURN
-
-LoadReinforcements:
-	ReinforcementEvent(Reinforcements1)
-	NoFade
+	
+SluiceGateStart:
+	CAM1 TatarrahCh3_7A
+	FlashCursor(TatarrahCh3_7A, 60)
+	Text(Ch3_7A_SluiceGateStart)
+	EARTHQUAKE_START 0x100
+	STAL 30
+	FADI 16
+	STAL 30
+	EARTHQUAKE_END
+	TILECHANGE 0x0 //tilechange 0x00
+	STAL 30
+	FADU 16
+	STAL 30
+	ENDA
+	
+SluiceGateDrain1:
+	EARTHQUAKE_START 0x100
+	STAL 30
+	FADI 16
+	STAL 30
+	EARTHQUAKE_END
+	TILECHANGE 0x1 //tilechange 0x01
+	STAL 30
+	FADU 16
+	SOUN 0xBD //water going down
+	STAL 30
+	ENDA
+	
+SluiceGateDrain2:
+	EARTHQUAKE_START 0x100
+	STAL 30
+	FADI 16
+	STAL 30
+	EARTHQUAKE_END
+	TILECHANGE 0x2 //tilechange 0x02
+	STAL 30
+	FADU 16
+	SOUN 0xBD //water going down
+	STAL 30
+	ENDA
+	
+SluiceGateWallCrack1:
+	CAM1 TatarrahCh3_7A
+	EARTHQUAKE_START 0x100
+	STAL 60
+	EARTHQUAKE_END
+	TILECHANGE 0x3 //tilechange 0x03
+	STAL 30
+	SOUN 0xB0 //cracking wall
+	STAL 30
+	CAM1 Alm
+	FlashCursor(Alm, 60)
+	Text(Ch3_7A_SluiceGateCracking)
+	ENDA
+	
+SluiceGateWallCrack2:
+	CAM1 TatarrahCh3_7A
+	EARTHQUAKE_START 0x100
+	STAL 60
+	EARTHQUAKE_END
+	TILECHANGE 0x4 //tilechange 0x04
+	STAL 30
+	SOUN 0xB0 //cracking wall
+	STAL 30
+	ENDA
+	
+SluiceGateWallCrack3:
+	CAM1 TatarrahCh3_7A
+	EARTHQUAKE_START 0x100
+	STAL 60
+	EARTHQUAKE_END
+	TILECHANGE 0x5 //tilechange 0x05
+	STAL 30
+	SOUN 0xB0 //cracking wall
+	STAL 30
+	ENDA
+	
+SluiceGateWallCrack4:
+	CAM1 TatarrahCh3_7A
+	EARTHQUAKE_START 0x100
+	STAL 60
+	EARTHQUAKE_END
+	TILECHANGE 0x6 //tilechange 0x06
+	STAL 30
+	SOUN 0xB0 //cracking wall
+	STAL 30
+	ENDA
+	
+SluiceGateFlood:
+	CAM1 TatarrahCh3_7A
+	FlashCursor(TatarrahCh3_7A, 60)
+	EARTHQUAKE_START 0x100
+	STAL 60
+	Text(Ch3_7A_Flood)
+	FADI 2
+	CALL $08592104 //game over
 	ENDA
 
 Ch3_7A_CharacterBasedEvents:
@@ -32,11 +134,12 @@ Ch3_7A_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
+	Seize(12,5)
 	LOCA
 
 Ch3_7A_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch3_7A_EndingScene)
+	DefeatBoss(DeltheaWakesUp)
 	MournQuoteAFEVS
 	AFEV
 
@@ -55,98 +158,122 @@ Ch3_7A_Ballista2:
 	ALIGN 4
 
 Ch3_7A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [8,24] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [7,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [9,24] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [7,24] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [10,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [6,23] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [5,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [5,24] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT Forsyth Soldier 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT Python Archer 0x00 Level(1, Ally, 1) [11,24] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
-	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [4,23] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
-	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [12,23] 0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [11,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [9,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [7,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [6,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [8,22] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Forsyth Soldier 0x00 Level(1, Ally, 1) [13,21] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Python Archer 0x00 Level(1, Ally, 1) [14,22] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
+	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [15,21] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Luthier Soldier 0x00 Level(1, Ally, 1) [11,21] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 EnemyUnits:
-	UNIT TatarrahCh3_7A Arcanist 0x00 Level(5,Enemy,False) [8,1] 0x00 0x00 0x0 0x00 [Thanatos, Fortify] NeverMoveAI
-	UNIT DeltheaBoss Mage_F 0x00 Level(5,Enemy,False) [8,1] 0x00 0x00 0x0 0x00 [Aura, PrayerRing] NeverMoveAI
+	//Boss room
+	UNIT TatarrahCh3_7A Arcanist 0x00 Level(5,Enemy,False) [12,5] 0x00 0x00 0x0 0x00 [Thanatos, Fortify] NeverMoveAI
+	UNIT DeltheaBoss Mage_F 0x00 Level(5,Enemy,False) [12,6] 0x00 0x00 0x0 0x00 [Aura, PrayerRing] NoAI
+	UNIT 0x89 Sniper TatarrahCh3_7A Level(1,Enemy,True) [13,7] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT 0x88 Knight TatarrahCh3_7A Level(14,Enemy,True) [13,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT 0x92 Shaman TatarrahCh3_7A Level(16,Enemy,True) [11,5] 0x00 0x00 0x0 0x00 [Mire] [0x0,0x12,0x0,0x0]
+	UNIT 0x94 Witch TatarrahCh3_7A Level(9,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [Thunder] [0x0,0x12,0x0,0x0]
 	
-	UNIT 0x86 Sage TatarrahCh3_7A Level(1,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Bolting,Fire,Physic] NeverMoveAI
-	UNIT 0x86 Sniper TatarrahCh3_7A Level(3,Enemy,True) [10,0] DropItem 0x00 0x0 0x00 [SilverBow,Longbow,Elixir] NeverMoveAI
+	//Left hall
+	UNIT 0x89 Archer_F TatarrahCh3_7A Level(12,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x92 Mage TatarrahCh3_7A Level(12,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	
+	//Main hall
+	UNIT 0x86 PegasusKnight TatarrahCh3_7A Level(11,Enemy,True) [5,3] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+    UNIT 0x86 PegasusKnight TatarrahCh3_7A Level(12,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x87 Myrmidon TatarrahCh3_7A Level(5,Enemy,True) [15,3] DropItem 0x00 0x0 0x00 [Zweihander,SteelShield] NeverMoveAI
 
-	UNIT 0x86 Cavalier TatarrahCh3_7A Level(9,Enemy,True) [14,16] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
-	UNIT 0x86 Cavalier_F TatarrahCh3_7A Level(9,Enemy,True) [2,15] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
+    UNIT 0x92 Arcanist TatarrahCh3_7A Level(3,Enemy,True) [8,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+    UNIT 0x92 Arcanist TatarrahCh3_7A Level(3,Enemy,True) [9,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+    UNIT 0x94 Witch TatarrahCh3_7A Level(4,Enemy,True) [9,7] 0x00 0x00 0x0 0x00 [Nosferatu,IronShield] AttackInRangeAI
+	UNIT 0x92 Arcanist TatarrahCh3_7A Level(3,Enemy,True) [8,8] 0x00 0x00 0x0 0x00 [Selene,IronShield] AttackInRangeAI
+	
+	//Bridge
+	UNIT 0x93 Arcanist TatarrahCh3_7A Level(4,Enemy,True) [17,14] 0x00 0x00 0x0 0x00 [Selene,Mire,Physic] NeverMoveAI
+	UNIT 0x92 Shaman TatarrahCh3_7A Level(16,Enemy,True) [16,14] DropItem 0x00 0x0 0x00 [Miasma,Elixir] NeverMoveAI
+	UNIT 0x87 Myrmidon TatarrahCh3_7A Level(7,Enemy,True) [16,16] 0x00 0x00 0x0 0x00 [Rapier,IronShield] AttackInRangeAI
+    UNIT 0x94 Mage_F TatarrahCh3_7A Level(9,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	
+	//Frontline
+	UNIT 0x8A WyvernRider TatarrahCh3_7A Level(12,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT 0x8A WyvernRider TatarrahCh3_7A Level(12,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT 0x8A WyvernRider TatarrahCh3_7A Level(13,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] AttackInRangeAI
 
-	UNIT 0x86 Sniper TatarrahCh3_7A Level(1,Enemy,True) [8,17] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
-	UNIT 0x86 Mage TatarrahCh3_7A Level(8,Enemy,True) [7,19] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x88 Knight TatarrahCh3_7A Level(7,Enemy,True) [16,11] DropItem 0x00 0x0 0x00 [IronLance,PureWater] AttackInRangeAI
+	UNIT 0x89 Sniper TatarrahCh3_7A Level(7,Enemy,True) [17,11] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
 
-	UNIT 0x86 Paladin TatarrahCh3_7A Level(2,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
-	UNIT 0x86 Cavalier_F TatarrahCh3_7A Level(9,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-	UNIT 0x86 Archer_F TatarrahCh3_7A Level(12,Enemy,True) [17,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x86 PegasusKnight TatarrahCh3_7A Level(11,Enemy,True) [18,8] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x86 Knight TatarrahCh3_7A Level(12,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [SteelAxe,Javelin] AttackInRangeAI
-
-	UNIT 0x86 Paladin_F TatarrahCh3_7A Level(2,Enemy,True) [1,10] 0x00 0x00 0x0 0x00 [IronLance,HideShield] AttackInRangeAI
-	UNIT 0x86 Archer TatarrahCh3_7A Level(13,Enemy,True) [2,11] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-
-	UNIT 0x86 Cleric TatarrahCh3_7A Level(3,Enemy,True) [5,12] 0x00 0x00 0x0 0x00 [Nosferatu,Physic] HealUnits
-	UNIT 0x86 Mage TatarrahCh3_7A Level(9,Enemy,True) [7,13] DropItem 0x00 0x0 0x00 [Thunder,IronShield] AttackInRangeAI
-	UNIT 0x86 Mercenary TatarrahCh3_7A Level(9,Enemy,True) [9,15] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT 0x86 Soldier TatarrahCh3_7A Level(16,Enemy,True) [5,16] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x86 Archer TatarrahCh3_7A Level(12,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-
-	UNIT 0x86 Archer_F TatarrahCh3_7A Level(14,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x86 Archer TatarrahCh3_7A Level(14,Enemy,True) [1,5] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-
-	UNIT 0x64 Thief TatarrahCh3_7A Level(12,Enemy,True) [10,14] DropItem 0x00 0x0 0x00 [IronSword,Soma] [0x6,0xC,0x0,0x0]
-
-	UNIT 0x86 PegasusKnight TatarrahCh3_7A Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-    UNIT 0x86 PegasusKnight TatarrahCh3_7A Level(12,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-
-    UNIT 0x86 Mercenary TatarrahCh3_7A Level(9,Enemy,True) [13,20] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-    UNIT 0x86 Mage_F TatarrahCh3_7A Level(9,Enemy,True) [14,19] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-
-    UNIT 0x86 Sniper TatarrahCh3_7A Level(3,Enemy,True) [9,4] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT 0x86 Knight TatarrahCh3_7A Level(14,Enemy,True) [12,4] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-    UNIT 0x86 Myrmidon TatarrahCh3_7A Level(3,Enemy,True) [4,6] DropItem 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
-
-    UNIT 0x86 Paladin_F TatarrahCh3_7A Level(3,Enemy,True) [15,3] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-    UNIT 0x86 Paladin TatarrahCh3_7A Level(3,Enemy,True) [2,3] 0x00 0x00 0x0 0x00 [HeavySpear,IronShield] AttackInRangeAI
-
-    UNIT 0x86 Mercenary TatarrahCh3_7A Level(11,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x87 Myrmidon TatarrahCh3_7A Level(6,Enemy,True) [8,10] 0x00 0x00 0x0 0x00 [Lancereaver] NoAI
+	UNIT 0x87 Myrmidon TatarrahCh3_7A Level(6,Enemy,True) [9,10] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
 	
 	UNIT
 
 Reinforcements1:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [11,3]	0x00 0x00 0x1 REDA11R3 [IronLance] NoAI
+	UNIT 0x8A WyvernRider	TatarrahCh3_7A Level(14, Enemy, True) [19,10]	0x00 0x00 0x1 REDA19R10 [SteelAxe] NoAI
 	UNIT
 
 Ch3_7A_BeginningScene:
-
-	MUSC 0x25
+	MUSC 0x24
 	LOAD2 0x1 CutsceneUnits
 	ENUN
-	SetBackground(0x1D)
-	Text(Ch3_7A_OpeningText)
-
-	FADI 60
-	REMA
-	CLEA 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
+	FADU 5
+	Text(Ch3_7A_OpeningText)
+	STAL 20
+	CAM1 TatarrahCh3_7A
+	FlashCursor(TatarrahCh3_7A, 60)
+	MUSC 0x15
+	SetBackground(0x21)
+	Text(Ch3_7A_OpeningText_2)
+	CHECK_EXISTS Luthier
+	BEQ 0x3 0xC 0x0
+		CAM1 DeltheaBoss
+		FlashCursor(DeltheaBoss, 60)
+		Text(Ch3_7A_OpeningText_LuthierExists)
+		CHECK_ALIVE Luthier
+		BEQ 0x3 0xC 0x0
+			CAM1 Luthier
+			FlashCursor(Luthier, 60)
+			Text(Ch3_7A_OpeningText_LuthierAlive)
+	LABEL 0x3
+	FADI 5
+	CLEA 0x0
 	LOAD3 0x0 Ch3_7A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	GotoPrepScreen
+	ENDA
+	
+DeltheaWakesUp:
+	CHECK_ALIVE DeltheaBoss
+	BEQ 0x2 0xC 0x0
+		ENUT DeltheaLocalFlag
+		MUSI
+		CAM1 DeltheaBoss
+		STAL 20
+		FlashCursor(DeltheaBoss, 60)
+		STAL 20
+		Text(Ch3_7A_DeltheaWakesUp)
+		STAL 20
+		MOVE 0x08 DeltheaBoss [10,19]
+		ENUN
+		CUSN DeltheaBoss
+		STAL 20
+		DISA DeltheaBoss
+		MUNO
+	LABEL 0x2
 	ENDA
 
 Ch3_7A_EndingScene:
@@ -155,17 +282,60 @@ Ch3_7A_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A7Completed
 	EVBIT_MODIFY 0x0
-	MUSC 0x31
-	SetBackground(0x1D)
-	Text(Ch3_7A_EndingText)
-	
-	
-		//If gChapter3C7Completed
-		//Ch3_EndingText_SluiceGate_Alm
-		//Ch3_EndingText_BrownBoxText
-		//Ch3_EndingText_Jedah
-		//else
-		//Ch3_EndingText_SluiceGate_NotOpen
+	SetBackground(0x0B)
+	CHECK_ALIVE Luthier
+	BEQ 0x4 0xC 0x0
+		CHECK_EVENTID DeltheaLocalFlag
+		BEQ 0x5 0xC 0x0
+			MUSC 0x2F
+			TEXTSTART
+			TEXTSHOW Ch3_7A_EndingText //both alive
+			TEXTEND
+			FADI 2
+			STAL 20
+			FADU 2
+			TEXTCONT
+			TEXTEND
+			MUSC 0x3B
+			TEXTCONT
+			TEXTEND
+			REMA
+			GOTO 0x6
+		LABEL 0x5
+			MUSC 0x3A
+			Text(Ch3_7A_Ending_LuthierOnly) //luthier alive, delthea dead
+			FADI 2
+			GOTO 0x6
+	LABEL 0x4 //luthier dead
+	CHECK_EVENTID DeltheaLocalFlag
+		BEQ 0x6 0xC 0x0
+		MUSC 0x30
+		TEXTSTART
+		TEXTSHOW Ch3_7A_Ending_DeltheaOnly //only delthea
+		TEXTEND
+		FADI 2
+		STAL 20
+		FADU 2
+		TEXTCONT
+		TEXTEND
+		MUSC 0x3B
+		TEXTCONT
+		TEXTEND
+		REMA
+	LABEL 0x6
+	EVBIT_MODIFY 0x1
+	SVAL 0x1 0x1
+	CHECK_EVENTID gChapter3C7Completed
+	IFNE 0x1 0xC 0x1
+		//If gChapter3A7Completed
+		CALL Ch3_EndingScene
+		GOTO 0x2
+	//else
+	LABEL 0x1
+	EVBIT_MODIFY 0x0
+	SetBackground(0x0B)
+	Text(Ch3_EndingText_SluiceGate_NotOpen)
+	LABEL 0x2
 	
 	STARTFADE
 	FADECOLORS 0x2000 0x8 0x80 0x80 0x80

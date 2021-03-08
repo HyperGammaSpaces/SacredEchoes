@@ -33,6 +33,8 @@ SShrine_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
+	Chest(Elixir, 15, 5)
+	Chest(PureWater, 2, 21)
 	#ifdef LION_HEADS_ENABLED
 		//Lion heads
 		LionHead(LionHeadSylvanRes, 9, 30)

@@ -82,7 +82,7 @@ Ch3_5C_CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Grieth DreadFighter Grieth Level(5, Enemy, False) [20,2] 0x00 0x00 0x0 0x00 [SteelSword] NeverMoveAI
+	UNIT Grieth DreadFighter Grieth Level(5, Enemy, False) [20,2] DropItem 0x00 0x0 0x00 [SteelSword,Pegacheese] NeverMoveAI
 	UNIT 0x8B Arcanist	Grieth Level(6, Enemy, True) [20,3]	0x00 0x00 0x0 0x00 [Miasma, Heal] ChaseOnceApproachedAI
 	UNIT 0x67 Myrmidon	Grieth Level(8, Enemy, True) [18,3]	0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
 	UNIT 0x8B Arcanist	Grieth Level(6, Enemy, True) [18,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] ChaseOnceApproachedAI
@@ -105,7 +105,7 @@ EnemyUnits:
 	UNIT 0x8C Witch	Grieth Level(7, Enemy, True) [3,5]	0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT 0x89 Sniper	Grieth Level(8, Enemy, True) [4,7]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT 0x67 Mercenary	Grieth Level(15, Enemy, True) [5,9]	0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT 0x88 Knight	Grieth Level(8, Enemy, True) [3,13]	0x00 0x00 0x0 0x00 [IronAxe] NeverMoveAI
+	UNIT 0x88 Knight	Grieth Level(8, Enemy, True) [3,13]	0x00 0x00 0x0 0x00 [SteelAxe] NeverMoveAI
 	UNIT 0x88 Knight	Grieth Level(8, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
 	UNIT 0x89 Sniper	Grieth Level(9, Enemy, True) [13,16]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT 0x8B Shaman	Grieth Level(13, Enemy, True) [16,16]	0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI

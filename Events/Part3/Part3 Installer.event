@@ -1,4 +1,26 @@
 ALIGN 4
+Ch3_EndingScene:
+	FADI 16
+	SetBackground(0x0B)
+	Text(Ch3_EndingText_SluiceGate_Alm)
+	FADI 5
+	EVBIT_MODIFY 0x4
+	MUSC 0x6
+	STAL 30
+	FADU 16
+	CenterTutorialTextBox
+	TUTORIALTEXTBOXSTART
+	TEXTSHOW Ch3_EndingText_BrownBoxText
+	TEXTEND
+	REMA
+	STAL 30
+	MUSC 0xE
+	FADI 2
+	SetBackground(0x33)
+	Text(Ch3_EndingText_Jedah)
+	ENDA
+
+ALIGN 4
 {
   #include "Ch3-1A_NobleVengeance.event"
 }

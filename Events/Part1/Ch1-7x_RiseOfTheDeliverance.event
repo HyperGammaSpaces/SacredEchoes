@@ -23,6 +23,17 @@ Ch1_7x_TurnBasedEvents:
 StairsSpawn:
 	LoadReinforcements(Reinforcements_Right)
 	ReinforcementEvent(Reinforcements_Left)
+	
+ArriveAtExitCheck:
+	CHECK_ALLEGIANCE 0xFFFF
+	BNE 1 0xC 0x0 // branch label 1 if not ally
+		ENUT 0x3
+		GOTO 2
+	LABEL 1
+		ENUF 0x8
+		LABEL 2
+	NoFade
+	ENDA
 
 Ch1_7x_CharacterBasedEvents:
 	CHAR
@@ -37,6 +48,7 @@ Ch1_7x_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	DefeatAll(Ch1_7x_EndingScene)
 	MournQuoteAFEVS
+	AREA 0x8 ArriveAtExitCheck [10,22] [14,22]
 	AFEV
 
 Ch1_7x_Dunno:
@@ -85,7 +97,7 @@ EnemyUnits:
 	UNIT
 
 Enemy_Envoy:
-	UNIT Zopyrus Cavalier	0x00 Level(8, NPC, False) [0,22]	DropItem 0x00 0x1 REDA14R11 [SteelLance, IronShield] NeverMoveAI
+	UNIT Zopyrus Paladin	0x00 Level(8, NPC, False) [0,22]	DropItem 0x00 0x1 REDA14R11 [SteelLance, IronShield] NeverMoveAI
 	UNIT 0x85 Cavalier	Zopyrus Level(3, NPC, False) [0,22]	0x00 0x00 0x1 REDA15R10 [IronLance] NeverMoveAI
 	UNIT 0x85 Cavalier	Zopyrus Level(3, NPC, False) [0,22]	0x00 0x00 0x1 REDA15R12 [IronLance] NeverMoveAI
 	UNIT
@@ -120,12 +132,13 @@ Ch1_7x_BeginningScene:
 	ENUN
 	LOAD1 0x0 LoadFernandMathilda
 	ENUN
+	CAM1 Clive
 	
 	FADU 5
 	BROWNBOXTEXT Ch1_7x_BrownboxText [8,8]
 	STAL 60
 	
-	SetBackground(0x1B)
+	SetBackground(0x26)
 	Text(Ch1_7x_OpeningText)
 	
 	STAL 20
@@ -134,11 +147,16 @@ Ch1_7x_BeginningScene:
 	LOAD1 0x1 Enemy_Envoy
 	ENUN
 	
-	SetBackground(0x1B)
+	SetBackground(0x26)
 	Text(Ch1_7x_BossIntro)
 
 	//Enemy ambush
 	CAM1 [12, 11]
+	CUSE Zopyrus
+	SVAL 0xB Coords(15,10)
+	CUSE 0xFFFE
+	SVAL 0xB Coords(15,12)
+	CUSE 0xFFFE
 	LOAD1 0x1 EnemyUnits
 	ENUN
 
@@ -179,8 +197,8 @@ Ch1_7x_EndingScene:
 
 //Uncomment when re-enabling
 
-	MUSC 0x4A
-	SetBackground(0x20)
+	MUSC 0x26
+	SetBackground(0x25)
 	Text(Ch1_7x_EndingText)
 	FADI 5
 	MNCH 0x07 //go to ch7

@@ -79,6 +79,8 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
+	//witches and bow guys
+	//Boss chases you from left to right
 	UNIT GazelleCh3_6A BowKnight 0x00 Level(5,Enemy,False) [8,1] 0x00 0x00 0x0 0x00 [SilverBow, IronShield] NeverMoveAI
 	UNIT 0x86 Sage GazelleCh3_6A Level(1,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Bolting,Fire,Physic] NeverMoveAI
 	UNIT 0x86 Sniper GazelleCh3_6A Level(3,Enemy,True) [10,0] DropItem 0x00 0x0 0x00 [SilverBow,Longbow,Elixir] NeverMoveAI
@@ -161,6 +163,22 @@ Ch3_6A_EndingScene:
 	MUSC 0x31
 	SetBackground(0x1D)
 	Text(Ch3_6A_EndingText)
+	
+	//scene change
+	FADI 2
+	MUSC 0x7FFF
+	SetBackground(0x0E)
+	TEXTSTART
+	TEXTSHOW Ch3_6A_RigelCastle_1
+	TEXTEND
+	MUSC 0x0E
+	TEXTCONT
+	TEXTEND
+	REMA
+	FADI 5
+	MUSC 0x16
+	SetBackground(0x0B)
+	Text(Ch3_6A_RigelCastle_2)
 	STARTFADE
 	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
 	MNCH 0x15
