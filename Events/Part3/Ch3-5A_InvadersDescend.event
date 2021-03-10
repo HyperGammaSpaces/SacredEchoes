@@ -118,87 +118,87 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT LawsonCh3_5A Paladin 0x00 Level(5,Enemy,False) [8,1] 0x00 0x00 0x0 0x00 [Ridersbane, Javelin, IronShield] NeverMoveAI
-	UNIT 0x8B Sage LawsonCh3_5A Level(1,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Bolting,Fire,Physic] NeverMoveAI
-	UNIT 0x89 Sniper LawsonCh3_5A Level(3,Enemy,True) [10,0] DropItem 0x00 0x0 0x00 [SilverBow,Longbow,Elixir] NeverMoveAI
+	UNIT Lawson Paladin 0x00 Level(5,Enemy,False) [8,1] 0x00 0x00 0x0 0x00 [Ridersbane, Javelin, IronShield] NeverMoveAI
+	UNIT 0x8B Sage Lawson Level(1,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Bolting,Fire,Physic] NeverMoveAI
+	UNIT 0x89 Sniper Lawson Level(3,Enemy,True) [10,0] DropItem 0x00 0x0 0x00 [SilverBow,Longbow,Elixir] NeverMoveAI
 
-	UNIT 0x86 Cavalier LawsonCh3_5A Level(9,Enemy,True) [14,16] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
-	UNIT 0x86 Cavalier_F LawsonCh3_5A Level(9,Enemy,True) [2,15] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
+	UNIT 0x86 Cavalier Lawson Level(9,Enemy,True) [14,16] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
+	UNIT 0x86 Cavalier_F Lawson Level(9,Enemy,True) [2,15] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
 
-	UNIT 0x89 Sniper LawsonCh3_5A Level(1,Enemy,True) [8,17] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
-	UNIT 0x8B Mage LawsonCh3_5A Level(8,Enemy,True) [7,19] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x89 Sniper Lawson Level(1,Enemy,True) [8,17] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT 0x8B Mage Lawson Level(8,Enemy,True) [7,19] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 
-	UNIT 0x86 Paladin LawsonCh3_5A Level(2,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
-	UNIT 0x86 Cavalier_F LawsonCh3_5A Level(9,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-	UNIT 0x89 Archer_F LawsonCh3_5A Level(12,Enemy,True) [17,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x8A PegasusKnight LawsonCh3_5A Level(11,Enemy,True) [18,8] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x88 Knight LawsonCh3_5A Level(12,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [SteelAxe,Javelin] AttackInRangeAI
+	UNIT 0x86 Paladin Lawson Level(2,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
+	UNIT 0x86 Cavalier_F Lawson Level(9,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x89 Archer_F Lawson Level(12,Enemy,True) [17,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x8A PegasusKnight Lawson Level(11,Enemy,True) [18,8] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x88 Knight Lawson Level(12,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [SteelAxe,Javelin] AttackInRangeAI
 
-	UNIT 0x86 Paladin_F LawsonCh3_5A Level(2,Enemy,True) [1,10] 0x00 0x00 0x0 0x00 [IronLance,HideShield] AttackInRangeAI
-	UNIT 0x89 Archer LawsonCh3_5A Level(13,Enemy,True) [2,11] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT 0x86 Paladin_F Lawson Level(2,Enemy,True) [1,10] 0x00 0x00 0x0 0x00 [IronLance,HideShield] AttackInRangeAI
+	UNIT 0x89 Archer Lawson Level(13,Enemy,True) [2,11] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 
-	UNIT 0x8C Cleric LawsonCh3_5A Level(3,Enemy,True) [5,12] 0x00 0x00 0x0 0x00 [Nosferatu,Physic] HealUnits
-	UNIT 0x8B Mage LawsonCh3_5A Level(9,Enemy,True) [7,13] DropItem 0x00 0x0 0x00 [Thunder,IronShield] AttackInRangeAI
-	UNIT 0x87 Mercenary LawsonCh3_5A Level(9,Enemy,True) [9,15] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT 0x88 Soldier LawsonCh3_5A Level(16,Enemy,True) [5,16] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x89 Archer LawsonCh3_5A Level(12,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x8C Cleric Lawson Level(3,Enemy,True) [5,12] 0x00 0x00 0x0 0x00 [Nosferatu,Physic] HealUnits
+	UNIT 0x8B Mage Lawson Level(9,Enemy,True) [7,13] DropItem 0x00 0x0 0x00 [Thunder,IronShield] AttackInRangeAI
+	UNIT 0x87 Mercenary Lawson Level(9,Enemy,True) [9,15] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x88 Soldier Lawson Level(16,Enemy,True) [5,16] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x89 Archer Lawson Level(12,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 
-	UNIT 0x89 Archer_F LawsonCh3_5A Level(14,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x89 Archer LawsonCh3_5A Level(14,Enemy,True) [1,5] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT 0x89 Archer_F Lawson Level(14,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x89 Archer Lawson Level(14,Enemy,True) [1,5] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 
-	UNIT 0x64 Thief LawsonCh3_5A Level(12,Enemy,True) [10,14] DropItem 0x00 0x0 0x00 [IronSword,Soma] [0x6,0xC,0x0,0x0]
+	UNIT 0x64 Thief Lawson Level(12,Enemy,True) [10,14] DropItem 0x00 0x0 0x00 [IronSword,Soma] [0x6,0xC,0x0,0x0]
 
-	UNIT 0x8A PegasusKnight LawsonCh3_5A Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-    UNIT 0x8A PegasusKnight LawsonCh3_5A Level(12,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x8A PegasusKnight Lawson Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+    UNIT 0x8A PegasusKnight Lawson Level(12,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
 
-    UNIT 0x87 Mercenary LawsonCh3_5A Level(9,Enemy,True) [13,20] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-    UNIT 0x8C Mage_F LawsonCh3_5A Level(9,Enemy,True) [14,19] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+    UNIT 0x87 Mercenary Lawson Level(9,Enemy,True) [13,20] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+    UNIT 0x8C Mage_F Lawson Level(9,Enemy,True) [14,19] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 
-    UNIT 0x89 Sniper LawsonCh3_5A Level(3,Enemy,True) [9,4] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT 0x88 Knight LawsonCh3_5A Level(14,Enemy,True) [12,4] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-    UNIT 0x87 Myrmidon LawsonCh3_5A Level(3,Enemy,True) [4,6] DropItem 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+    UNIT 0x89 Sniper Lawson Level(3,Enemy,True) [9,4] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT 0x88 Knight Lawson Level(14,Enemy,True) [12,4] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+    UNIT 0x87 Myrmidon Lawson Level(3,Enemy,True) [4,6] DropItem 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
 
-    UNIT 0x86 Paladin_F LawsonCh3_5A Level(3,Enemy,True) [15,3] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-    UNIT 0x86 Paladin LawsonCh3_5A Level(3,Enemy,True) [2,3] 0x00 0x00 0x0 0x00 [HeavySpear,IronShield] AttackInRangeAI
+    UNIT 0x86 Paladin_F Lawson Level(3,Enemy,True) [15,3] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+    UNIT 0x86 Paladin Lawson Level(3,Enemy,True) [2,3] 0x00 0x00 0x0 0x00 [HeavySpear,IronShield] AttackInRangeAI
 
-    UNIT 0x87 Mercenary LawsonCh3_5A Level(11,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+    UNIT 0x87 Mercenary Lawson Level(11,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
 	
 	UNIT
 
 LeftCavs:
-	UNIT 0x86 Cavalier LawsonCh3_5A Level(11,Enemy,True) [1,0] 0x00 0x00 0x1 REDA1R1 [SteelLance] NoAI
-	UNIT 0x86 Cavalier_F LawsonCh3_5A Level(11,Enemy,True) [1,0] 0x00 0x00 0x1 REDA2R1 [IronLance] NoAI
+	UNIT 0x86 Cavalier Lawson Level(11,Enemy,True) [1,0] 0x00 0x00 0x1 REDA1R1 [SteelLance] NoAI
+	UNIT 0x86 Cavalier_F Lawson Level(11,Enemy,True) [1,0] 0x00 0x00 0x1 REDA2R1 [IronLance] NoAI
 	UNIT
 
 RightCavs:
-	UNIT 0x86 Cavalier LawsonCh3_5A Level(11,Enemy,True) [14,0] 0x00 0x00 0x1 REDA15R1 [IronLance] NoAI
-	UNIT 0x86 Cavalier_F LawsonCh3_5A Level(11,Enemy,True) [14,0] 0x00 0x00 0x1 REDA14R1 [Javelin] NoAI
+	UNIT 0x86 Cavalier Lawson Level(11,Enemy,True) [14,0] 0x00 0x00 0x1 REDA15R1 [IronLance] NoAI
+	UNIT 0x86 Cavalier_F Lawson Level(11,Enemy,True) [14,0] 0x00 0x00 0x1 REDA14R1 [Javelin] NoAI
 	UNIT
 
 FortCavs:
-	UNIT 0x86 Cavalier LawsonCh3_5A Level(12,Enemy,True) [0,17] 0x00 0x00 0x0 0x00 [Javelin] NoAI
-	UNIT 0x86 Cavalier_F LawsonCh3_5A Level(12,Enemy,True) [1,18] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT 0x86 Cavalier Lawson Level(12,Enemy,True) [0,17] 0x00 0x00 0x0 0x00 [Javelin] NoAI
+	UNIT 0x86 Cavalier_F Lawson Level(12,Enemy,True) [1,18] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
 	UNIT
 
 FortPals:
-	UNIT 0x86 Paladin LawsonCh3_5A Level(10,Enemy,True) [0,17] 0x00 0x00 0x0 0x00 [SilverLance,SteelShield] NoAI
-	UNIT 0x86 Paladin_F LawsonCh3_5A Level(10,Enemy,True) [1,18] 0x00 0x00 0x0 0x00 [Ridersbane,Javelin,HideShield] NoAI
+	UNIT 0x86 Paladin Lawson Level(10,Enemy,True) [0,17] 0x00 0x00 0x0 0x00 [SilverLance,SteelShield] NoAI
+	UNIT 0x86 Paladin_F Lawson Level(10,Enemy,True) [1,18] 0x00 0x00 0x0 0x00 [Ridersbane,Javelin,HideShield] NoAI
 	UNIT
 
 MiddleFortArchers:
-	UNIT 0x89 Archer LawsonCh3_5A Level(15,Enemy,True) [8,10] 0x00 0x00 0x0 0x00 [SteelBow] NoAI
-	UNIT 0x89 Archer_F LawsonCh3_5A Level(15,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [RadiantBow] NoAI
+	UNIT 0x89 Archer Lawson Level(15,Enemy,True) [8,10] 0x00 0x00 0x0 0x00 [SteelBow] NoAI
+	UNIT 0x89 Archer_F Lawson Level(15,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [RadiantBow] NoAI
 	UNIT
 
 SideFortMages:
-	UNIT 0x8B Sage LawsonCh3_5A Level(1,Enemy,True) [12,6] 0x00 0x00 0x0 0x00 [Thunder,Physic] NoAI
-	UNIT 0x8C Witch LawsonCh3_5A Level(1,Enemy,True) [2,5] 0x00 0x00 0x0 0x00 [Thunder,Physic] NoAI
+	UNIT 0x8B Sage Lawson Level(1,Enemy,True) [12,6] 0x00 0x00 0x0 0x00 [Thunder,Physic] NoAI
+	UNIT 0x8C Witch Lawson Level(1,Enemy,True) [2,5] 0x00 0x00 0x0 0x00 [Thunder,Physic] NoAI
 	UNIT
 
 BossFortUnits:
-	UNIT 0x87 Myrmidon LawsonCh3_5A Level(3,Enemy,True) [8,1] 0x00 0x00 0x1 REDA7R1 [SteelSword] NoAI
-	UNIT 0x88 Knight LawsonCh3_5A Level(3,Enemy,True) [8,1] 0x00 0x00 0x1 REDA9R1 [IronAxe] NoAI
-	UNIT 0x8C Witch LawsonCh3_5A Level(3,Enemy,True) [8,1] 0x00 0x00 0x1 REDA8R0 [Fire,Heal] NoAI
+	UNIT 0x87 Myrmidon Lawson Level(3,Enemy,True) [8,1] 0x00 0x00 0x1 REDA7R1 [SteelSword] NoAI
+	UNIT 0x88 Knight Lawson Level(3,Enemy,True) [8,1] 0x00 0x00 0x1 REDA9R1 [IronAxe] NoAI
+	UNIT 0x8C Witch Lawson Level(3,Enemy,True) [8,1] 0x00 0x00 0x1 REDA8R0 [Fire,Heal] NoAI
 	UNIT
 
 Ch3_5A_BeginningScene:
@@ -212,8 +212,8 @@ Ch3_5A_BeginningScene:
 	Text(Ch3_5A_OpeningText)
 	ClearBackground
 	
-	CAM1 LawsonCh3_5A
-	FlashCursor(LawsonCh3_5A, 60)
+	CAM1 Lawson
+	FlashCursor(Lawson, 60)
 	Text(Ch3_5A_BossWarningText)
 	FADI 5
 	REMA

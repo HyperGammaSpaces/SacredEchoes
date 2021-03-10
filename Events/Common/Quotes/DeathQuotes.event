@@ -10,7 +10,7 @@ POP
 ALIGN 4
 DeathQuoteTable:
 //Regular boss quotes
-SetKillBossQuoteEntry(0x68,0x0,Boss1_1_DeathQuote)
+SetKillBossQuoteEntry(BanditAlm1,0x0,Boss1_1_DeathQuote)
 SetKillBossQuoteEntry(BanditAlm2,0x1,Boss1_2_DeathQuote)
 SetKillBossQuoteEntry(BrigandBoss,0x2,Boss1_3_DeathQuote)
 SetKillBossQuoteEntry(LeatherShieldMerc,0x3,Boss1_4_DeathQuote)
@@ -26,12 +26,12 @@ SetKillBossQuoteEntry(CantorBoss,0xc,Ch2_5_BossDeathQuote)
 SetKillBossQuoteEntry(SorcererBoss,0xd,Ch2_6_BossDeathQuote)
 SetKillBossQuoteEntry(ArcanistBoss,0xe,Ch2_7_BossDeathQuote)
 //Act 3 Alm
-SetKillBossQuoteEntry(ZaxonCh3_1A,0xf,Ch3_1A_ZaxonDeathQuote)
+SetKillBossQuoteEntry(Zaxon,0xf,Ch3_1A_ZaxonDeathQuote)
 SetKillBossQuoteEntry(ArcanistBoss,0x10,Ch3_2A_BossDeathQuote)
-SetKillBossQuoteEntry(DesaixCh1,0x12,Ch3_4A_DesaixDeathQuote)
-SetKillBossQuoteEntry(LawsonCh3_5A,0x13,Ch3_5A_LawsonDeath)
-SetKillBossQuoteEntry(GazelleCh3_6A,0x14,Ch3_6A_GazelleDeath)
-SetKillBossQuoteEntry(TatarrahCh3_7A,0x15,Ch3_7A_TatarrahDeath)
+SetKillBossQuoteEntry(Desaix,0x12,Ch3_4A_DesaixDeathQuote)
+SetKillBossQuoteEntry(Lawson,0x13,Ch3_5A_LawsonDeath)
+SetKillBossQuoteEntry(Gazelle,0x14,Ch3_6A_GazelleDeath)
+SetKillBossQuoteEntry(Tatarrah,0x15,Ch3_7A_TatarrahDeath)
 //Act 3 Celica
 SetKillBossQuoteEntry(Garth,0x16,Ch3_1C_BossDeathQuote)
 SetKillBossQuoteEntry(Wolff,0x18,Ch3_3C_WolffDeathQuote)
@@ -43,12 +43,12 @@ SetKillBossQuoteEntry(Mikhail,0x1d,Ch3_7C_BossDeathQuote)
 
 //Special enemies
 SetDeathQuoteEntry(SlaydePaladin,0x7,0x8,SlaydeDeath_ZofiaCastle)
-SetDeathQuoteEntry(DesaixCh1,0x7,gDesaixAct1Death,FakeDesaix_Death)
+SetDeathQuoteEntry(Desaix,0x7,gDesaixAct1Death,FakeDesaix_Death)
 SetDeathQuoteEntry(Jarth,0xd,0x0,Ch2_6_Boss2DeathQuote)
 SetDeathQuoteEntry(FernandEnemy1,0xf,0x0,Ch3_1A_FernandDefeatQuote)
 SetDeathQuoteEntry(BerkutPaladin,0x11,0xb,Ch3_3A_BerkutDefeatQuote)
 SetDeathQuoteEntry(FernandEnemy2,0x11,0xc,Ch3_3A_FernandDefeatQuote)
-SetDeathQuoteEntry(XyzasCh3_3A,0x11,0xd,Ch3_3A_XyzasDefeatQuote)
+SetDeathQuoteEntry(Xyzas,0x11,0xd,Ch3_3A_XyzasDefeatQuote)
 SetDeathQuoteEntry(CantorBoss,0x12,0x9,0x0)
 SetDeathQuoteEntry(DeltheaBoss,0x15,gDeltheaDied,Ch3_7A_DeltheaDeath)
 

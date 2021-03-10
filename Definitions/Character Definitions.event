@@ -54,7 +54,8 @@
 #define SlaydePaladin 0x42
 #define SlaydeGK 0x43
 #define RineaEnemy 0x44
-#define DesaixCh1 0x45
+#define Desaix 0x45
+#define BanditAlm1 0x68
 #define BanditAlm2 0x46
 #define BrigandBoss 0x47
 #define LeatherShieldMerc 0x48
@@ -66,11 +67,11 @@
 #define Barth 0x4E
 #define Jarth 0x4F
 //all these guys below here are Rigelian except Grieth
-#define ZaxonCh3_1A 0x50
-#define XyzasCh3_3A 0x51
-#define LawsonCh3_5A 0x52
-#define GazelleCh3_6A 0x53
-#define TatarrahCh3_7A 0x54
+#define Zaxon 0x50
+#define Xyzas 0x51
+#define Lawson 0x52
+#define Gazelle 0x53
+#define Tatarrah 0x54
 #define Garth 0x55
 #define Wolff 0x56
 #define Grieth 0x57
@@ -81,16 +82,12 @@
 #define Jamil 0x5C
 #define XaizorCh4_2 0x5D
 #define JeromeCh4_5 0x5E
-#define EntombedBoss 0x5F
 #define MagnusCh4_7 0x60
 #define MuellerCh4_8 0x61
 #define Hades 0x62
 #define Gharn 0x63
-#define GenericPirate 0x65
-#define Bandit 0x66
-#define ONeill 0x68
+
 #define FernandEnemy1 0x69
-#define StrongGenericPirate 0x6A
 #define RudolfEnemy 0x6B
 #define JedahFinal 0x6C
 #define FernandEnemy2 0x6D
@@ -103,18 +100,24 @@
 #define Aurum 0x74
 #define Cerberus 0x75
 #define Naberius 0x76
-#define MarlaCh3 0x77
+#define MarlaCh4 0x77
 #define HestiaCh4 0x78
 #define MarlaFinal 0x79
 #define HestiaFinal 0x7A
 #define SonyaBoss 0x7B
 #define DeenBoss 0x7C
 #define DeltheaBoss 0x7D
+
+#define EntombedBoss 0x5F
+#define GenericPirate 0x65
+#define Bandit 0x66
+#define StrongGenericPirate 0x6A
 #define GenericSoldier 0x80
 #define Zofia_Archer 0x81
 #define CantorBoss 0x8f
 #define SorcererBoss 0x90
 #define ArcanistBoss 0x91
+
 #define Terror_Revenant 0xAA
 #define Terror_Entombed 0xAB
 #define Terror_Bonewalker 0xAC

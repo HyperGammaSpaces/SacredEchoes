@@ -1,0 +1,15 @@
+#define SetForceDeployEntry(UnitID,Mode,ChapterID) "BYTE UnitID 0 Mode ChapterID "
+
+PUSH
+ORG 0x9ed64c
+ForceDeployTable:
+	SetForceDeployEntry(Alm,0x1,0xff)
+	SetForceDeployEntry(Alm,0x2,0xff)
+	SetForceDeployEntry(Celica,0x3,0xff)
+	SetForceDeployEntry(Silque,0xff,0x2)
+	SetForceDeployEntry(Clair,0xff,0x6)
+	SetForceDeployEntry(Luthier,0xff,0x15)
+	SetForceDeployEntry(Conrad,0xff,0x22)
+	SetForceDeployEntry(Celica,0x2,0x2d)
+	SetForceDeployEntry(Alm,0x3,0x2d)
+POP

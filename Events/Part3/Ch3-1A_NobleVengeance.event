@@ -79,28 +79,28 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT ZaxonCh3_1A Knight	0x00 Level(8, Enemy, False) [4,2]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-	UNIT 0x8B Shaman	ZaxonCh3_1A Level(9, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI 
-	UNIT 0x8C Witch	ZaxonCh3_1A Level(2, Enemy, True) [7,1]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	UNIT 0x8C Witch	ZaxonCh3_1A Level(2, Enemy, True) [9,2]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	UNIT 0x88 Soldier	ZaxonCh3_1A Level(11, Enemy, True) [14,10]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-	UNIT 0x88 Soldier	ZaxonCh3_1A Level(9, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
-	UNIT 0x88 Soldier	ZaxonCh3_1A Level(11, Enemy, True) [15,10]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x88 Knight	ZaxonCh3_1A Level(3, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
-	UNIT 0x88 Knight	ZaxonCh3_1A Level(4, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
-	UNIT 0x89 Archer	ZaxonCh3_1A Level(10, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x89 Archer	ZaxonCh3_1A Level(11, Enemy, True) [15,8]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
-	UNIT 0x86 Cavalier_F	ZaxonCh3_1A Level(11, Enemy, True) [6,5]	0x00 0x00 0x0 0x00 [Axereaver] AttackInRangeAI
-	UNIT 0x86 Cavalier	ZaxonCh3_1A Level(11, Enemy, True) [8,5]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x89 Archer_F	ZaxonCh3_1A Level(13, Enemy, True) [7,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT Zaxon Knight	0x00 Level(8, Enemy, False) [4,2]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT 0x8B Shaman	Zaxon Level(9, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI 
+	UNIT 0x8C Witch	Zaxon Level(2, Enemy, True) [7,1]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x8C Witch	Zaxon Level(2, Enemy, True) [9,2]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x88 Soldier	Zaxon Level(11, Enemy, True) [14,10]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT 0x88 Soldier	Zaxon Level(9, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT 0x88 Soldier	Zaxon Level(11, Enemy, True) [15,10]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x88 Knight	Zaxon Level(3, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT 0x88 Knight	Zaxon Level(4, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT 0x89 Archer	Zaxon Level(10, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x89 Archer	Zaxon Level(11, Enemy, True) [15,8]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT 0x86 Cavalier_F	Zaxon Level(11, Enemy, True) [6,5]	0x00 0x00 0x0 0x00 [Axereaver] AttackInRangeAI
+	UNIT 0x86 Cavalier	Zaxon Level(11, Enemy, True) [8,5]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x89 Archer_F	Zaxon Level(13, Enemy, True) [7,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
 	UNIT
 
 FernandUnpromoted:
-	UNIT FernandEnemy1 Cavalier	ZaxonCh3_1A Level(11, Enemy, False) [2,14]	DropItem 0x00 0x1 REDA3R16 [SteelLance, Vulnerary] AttackInRangeAI 
+	UNIT FernandEnemy1 Cavalier	Zaxon Level(11, Enemy, False) [2,14]	DropItem 0x00 0x1 REDA3R16 [SteelLance, Vulnerary] AttackInRangeAI 
 	UNIT
 
 FernandPromoted:
-	UNIT FernandEnemy1 Paladin ZaxonCh3_1A Level(3, Enemy, False) [2,14]	DropItem 0x00 0x1 REDA3R16 [SteelLance, DumaIcon] AttackInRangeAI 
+	UNIT FernandEnemy1 Paladin Zaxon Level(3, Enemy, False) [2,14]	DropItem 0x00 0x1 REDA3R16 [SteelLance, DumaIcon] AttackInRangeAI 
 	UNIT
 
 CavalierGroup:
@@ -110,8 +110,8 @@ CavalierGroup:
 	UNIT
 	
 Reinforcements1:
-	UNIT 0x86 Cavalier	ZaxonCh3_1A Level(10, Enemy, True) [17,16]	0x00 0x00 0x1 REDA17R16 [IronLance] AttackInRangeAI
-	UNIT 0x86 Cavalier	ZaxonCh3_1A Level(8, Enemy, True) [18,14]	0x00 0x00 0x1 REDA18R14 [SteelLance] AttackInRangeAI
+	UNIT 0x86 Cavalier	Zaxon Level(10, Enemy, True) [17,16]	0x00 0x00 0x1 REDA17R16 [IronLance] AttackInRangeAI
+	UNIT 0x86 Cavalier	Zaxon Level(8, Enemy, True) [18,14]	0x00 0x00 0x1 REDA18R14 [SteelLance] AttackInRangeAI
 	UNIT
 
 

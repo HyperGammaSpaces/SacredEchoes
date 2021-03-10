@@ -1,0 +1,67 @@
+#define SetBossMusic(UnitID) "WORD UnitID 0x1B"
+#define SetCustomBossMusic(UnitID,MusicID) "WORD UnitID MusicID"
+
+//Boss music table (may need to repoint)
+PUSH
+	ORG 0x72908
+	POIN BossMusicTable
+POP
+
+BossMusicTable:
+	SetBossMusic(SlaydePaladin) //Slayde Act 1
+	SetBossMusic(Desaix) 
+	SetBossMusic(BanditAlm1) 
+	SetBossMusic(BanditAlm2) 
+	SetBossMusic(BrigandBoss) 
+	SetBossMusic(LeatherShieldMerc) 
+	SetBossMusic(SoldierAlm5) 
+	SetBossMusic(SoldierAlm6)
+	SetBossMusic(CavalierAlm7)
+	SetBossMusic(Zopyrus)
+	SetBossMusic(PirateCelica1)
+	SetBossMusic(PirateCelica2)
+	SetBossMusic(Barth)
+	SetBossMusic(Jarth) 
+	SetBossMusic(Zaxon)
+	SetBossMusic(Xyzas) 
+	SetBossMusic(Lawson) 
+	SetBossMusic(Gazelle) 
+	SetBossMusic(Tatarrah) 
+	SetBossMusic(Garth) 
+	SetBossMusic(Wolff) 
+	SetBossMusic(Grieth) 
+	SetBossMusic(Blake) 
+	SetBossMusic(Mikhail) 
+	SetBossMusic(Garcia) 
+	SetBossMusic(Dolth) 
+	SetBossMusic(Jamil) 
+	SetBossMusic(XaizorCh4_2) 
+	SetBossMusic(JeromeCh4_5) 
+	SetBossMusic(MagnusCh4_7) 
+	SetBossMusic(MuellerCh4_8) 
+	SetBossMusic(Hades) 
+	SetBossMusic(Gharn) 
+	SetCustomBossMusic(RudolfEnemy, 0x1B) //rudolf
+	SetCustomBossMusic(Jedah_Ch4, 0x1B) //jedah 1
+	SetCustomBossMusic(JedahFinal, 0x1B) //jedah 2
+	SetCustomBossMusic(Duma, 0x1B)
+	SetBossMusic(FernandEnemy1) //fernand
+	SetBossMusic(FernandEnemy2) //fernand 2
+	SetBossMusic(FernandPaladin) //fernand 3
+	SetBossMusic(BerkutPaladin) //berkut 1
+	SetBossMusic(BerkutGK) //berkut 2
+	SetCustomBossMusic(BerkutPossessed, 0x1B) //berkut 3
+	SetBossMusic(Nuibaba) //nuibaba
+	SetBossMusic(MarlaCh4) //marla 1
+	SetBossMusic(HestiaCh4) //hestia 1
+	SetBossMusic(MarlaFinal) //marla 2
+	SetBossMusic(HestiaFinal) //hestia 2
+	SetBossMusic(SonyaBoss) //sonya boss
+	SetBossMusic(DeenBoss) //deen boss
+	SetBossMusic(DeltheaBoss) //delthea boss
+	SetBossMusic(CantorBoss) //Generic shaman 1
+	SetBossMusic(SorcererBoss) //Generic shaman 2
+	SetBossMusic(ArcanistBoss) //Generic shaman 3
+	//terminator
+	WORD 0xFFFFFFFF 0xFFFFFFFF
+	

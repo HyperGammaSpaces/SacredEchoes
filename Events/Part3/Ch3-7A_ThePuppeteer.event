@@ -30,8 +30,8 @@ Ch3_7A_TurnBasedEvents:
 	TURN
 	
 SluiceGateStart:
-	CAM1 TatarrahCh3_7A
-	FlashCursor(TatarrahCh3_7A, 60)
+	CAM1 Tatarrah
+	FlashCursor(Tatarrah, 60)
 	Text(Ch3_7A_SluiceGateStart)
 	EARTHQUAKE_START 0x100
 	STAL 30
@@ -71,7 +71,7 @@ SluiceGateDrain2:
 	ENDA
 	
 SluiceGateWallCrack1:
-	CAM1 TatarrahCh3_7A
+	CAM1 Tatarrah
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
@@ -85,7 +85,7 @@ SluiceGateWallCrack1:
 	ENDA
 	
 SluiceGateWallCrack2:
-	CAM1 TatarrahCh3_7A
+	CAM1 Tatarrah
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
@@ -96,7 +96,7 @@ SluiceGateWallCrack2:
 	ENDA
 	
 SluiceGateWallCrack3:
-	CAM1 TatarrahCh3_7A
+	CAM1 Tatarrah
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
@@ -107,7 +107,7 @@ SluiceGateWallCrack3:
 	ENDA
 	
 SluiceGateWallCrack4:
-	CAM1 TatarrahCh3_7A
+	CAM1 Tatarrah
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
@@ -118,8 +118,8 @@ SluiceGateWallCrack4:
 	ENDA
 	
 SluiceGateFlood:
-	CAM1 TatarrahCh3_7A
-	FlashCursor(TatarrahCh3_7A, 60)
+	CAM1 Tatarrah
+	FlashCursor(Tatarrah, 60)
 	EARTHQUAKE_START 0x100
 	STAL 60
 	Text(Ch3_7A_Flood)
@@ -180,48 +180,48 @@ CutsceneUnits:
 
 EnemyUnits:
 	//Boss room
-	UNIT TatarrahCh3_7A Arcanist 0x00 Level(5,Enemy,False) [12,5] 0x00 0x00 0x0 0x00 [Thanatos, Fortify] NeverMoveAI
+	UNIT Tatarrah Arcanist 0x00 Level(5,Enemy,False) [12,5] 0x00 0x00 0x0 0x00 [Thanatos, Fortify] NeverMoveAI
 	UNIT DeltheaBoss Mage_F 0x00 Level(5,Enemy,False) [12,6] 0x00 0x00 0x0 0x00 [Aura, PrayerRing] NoAI
-	UNIT 0x89 Sniper TatarrahCh3_7A Level(1,Enemy,True) [13,7] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
-	UNIT 0x88 Knight TatarrahCh3_7A Level(14,Enemy,True) [13,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
-	UNIT 0x92 Shaman TatarrahCh3_7A Level(16,Enemy,True) [11,5] 0x00 0x00 0x0 0x00 [Mire] [0x0,0x12,0x0,0x0]
-	UNIT 0x94 Witch TatarrahCh3_7A Level(9,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [Thunder] [0x0,0x12,0x0,0x0]
+	UNIT 0x89 Sniper Tatarrah Level(1,Enemy,True) [13,7] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT 0x88 Knight Tatarrah Level(14,Enemy,True) [13,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT 0x92 Shaman Tatarrah Level(16,Enemy,True) [11,5] 0x00 0x00 0x0 0x00 [Mire] [0x0,0x12,0x0,0x0]
+	UNIT 0x94 Witch Tatarrah Level(9,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [Thunder] [0x0,0x12,0x0,0x0]
 	
 	//Left hall
-	UNIT 0x89 Archer_F TatarrahCh3_7A Level(12,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x92 Mage TatarrahCh3_7A Level(12,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x89 Archer_F Tatarrah Level(12,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x92 Mage Tatarrah Level(12,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	
 	//Main hall
-	UNIT 0x86 PegasusKnight TatarrahCh3_7A Level(11,Enemy,True) [5,3] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-    UNIT 0x86 PegasusKnight TatarrahCh3_7A Level(12,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-	UNIT 0x87 Myrmidon TatarrahCh3_7A Level(5,Enemy,True) [15,3] DropItem 0x00 0x0 0x00 [Zweihander,SteelShield] NeverMoveAI
+	UNIT 0x86 PegasusKnight Tatarrah Level(11,Enemy,True) [5,3] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+    UNIT 0x86 PegasusKnight Tatarrah Level(12,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x87 Myrmidon Tatarrah Level(5,Enemy,True) [15,3] DropItem 0x00 0x0 0x00 [Zweihander,SteelShield] NeverMoveAI
 
-    UNIT 0x92 Arcanist TatarrahCh3_7A Level(3,Enemy,True) [8,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-    UNIT 0x92 Arcanist TatarrahCh3_7A Level(3,Enemy,True) [9,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-    UNIT 0x94 Witch TatarrahCh3_7A Level(4,Enemy,True) [9,7] 0x00 0x00 0x0 0x00 [Nosferatu,IronShield] AttackInRangeAI
-	UNIT 0x92 Arcanist TatarrahCh3_7A Level(3,Enemy,True) [8,8] 0x00 0x00 0x0 0x00 [Selene,IronShield] AttackInRangeAI
+    UNIT 0x92 Arcanist Tatarrah Level(3,Enemy,True) [8,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+    UNIT 0x92 Arcanist Tatarrah Level(3,Enemy,True) [9,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+    UNIT 0x94 Witch Tatarrah Level(4,Enemy,True) [9,7] 0x00 0x00 0x0 0x00 [Nosferatu,IronShield] AttackInRangeAI
+	UNIT 0x92 Arcanist Tatarrah Level(3,Enemy,True) [8,8] 0x00 0x00 0x0 0x00 [Selene,IronShield] AttackInRangeAI
 	
 	//Bridge
-	UNIT 0x93 Arcanist TatarrahCh3_7A Level(4,Enemy,True) [17,14] 0x00 0x00 0x0 0x00 [Selene,Mire,Physic] NeverMoveAI
-	UNIT 0x92 Shaman TatarrahCh3_7A Level(16,Enemy,True) [16,14] DropItem 0x00 0x0 0x00 [Miasma,Elixir] NeverMoveAI
-	UNIT 0x87 Myrmidon TatarrahCh3_7A Level(7,Enemy,True) [16,16] 0x00 0x00 0x0 0x00 [Rapier,IronShield] AttackInRangeAI
-    UNIT 0x94 Mage_F TatarrahCh3_7A Level(9,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x93 Arcanist Tatarrah Level(4,Enemy,True) [17,14] 0x00 0x00 0x0 0x00 [Selene,Mire,Physic] NeverMoveAI
+	UNIT 0x92 Shaman Tatarrah Level(16,Enemy,True) [16,14] DropItem 0x00 0x0 0x00 [Miasma,Elixir] NeverMoveAI
+	UNIT 0x87 Myrmidon Tatarrah Level(7,Enemy,True) [16,16] 0x00 0x00 0x0 0x00 [Rapier,IronShield] AttackInRangeAI
+    UNIT 0x94 Mage_F Tatarrah Level(9,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	
 	//Frontline
-	UNIT 0x8A WyvernRider TatarrahCh3_7A Level(12,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
-	UNIT 0x8A WyvernRider TatarrahCh3_7A Level(12,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
-	UNIT 0x8A WyvernRider TatarrahCh3_7A Level(13,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] AttackInRangeAI
+	UNIT 0x8A WyvernRider Tatarrah Level(12,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT 0x8A WyvernRider Tatarrah Level(12,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT 0x8A WyvernRider Tatarrah Level(13,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] AttackInRangeAI
 
-	UNIT 0x88 Knight TatarrahCh3_7A Level(7,Enemy,True) [16,11] DropItem 0x00 0x0 0x00 [IronLance,PureWater] AttackInRangeAI
-	UNIT 0x89 Sniper TatarrahCh3_7A Level(7,Enemy,True) [17,11] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x88 Knight Tatarrah Level(7,Enemy,True) [16,11] DropItem 0x00 0x0 0x00 [IronLance,PureWater] AttackInRangeAI
+	UNIT 0x89 Sniper Tatarrah Level(7,Enemy,True) [17,11] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
 
-	UNIT 0x87 Myrmidon TatarrahCh3_7A Level(6,Enemy,True) [8,10] 0x00 0x00 0x0 0x00 [Lancereaver] NoAI
-	UNIT 0x87 Myrmidon TatarrahCh3_7A Level(6,Enemy,True) [9,10] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT 0x87 Myrmidon Tatarrah Level(6,Enemy,True) [8,10] 0x00 0x00 0x0 0x00 [Lancereaver] NoAI
+	UNIT 0x87 Myrmidon Tatarrah Level(6,Enemy,True) [9,10] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
 	
 	UNIT
 
 Reinforcements1:
-	UNIT 0x8A WyvernRider	TatarrahCh3_7A Level(14, Enemy, True) [19,10]	0x00 0x00 0x1 REDA19R10 [SteelAxe] NoAI
+	UNIT 0x8A WyvernRider	Tatarrah Level(14, Enemy, True) [19,10]	0x00 0x00 0x1 REDA19R10 [SteelAxe] NoAI
 	UNIT
 
 Ch3_7A_BeginningScene:
@@ -233,8 +233,8 @@ Ch3_7A_BeginningScene:
 	FADU 5
 	Text(Ch3_7A_OpeningText)
 	STAL 20
-	CAM1 TatarrahCh3_7A
-	FlashCursor(TatarrahCh3_7A, 60)
+	CAM1 Tatarrah
+	FlashCursor(Tatarrah, 60)
 	MUSC 0x15
 	SetBackground(0x21)
 	Text(Ch3_7A_OpeningText_2)

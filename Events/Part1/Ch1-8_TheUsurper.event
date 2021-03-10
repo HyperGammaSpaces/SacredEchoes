@@ -94,39 +94,39 @@ CutsceneUnits_AlmVictory:
 	UNIT
 
 Bosses:
-	UNIT 0x45 General	0x00 Level(1, Enemy, 1) [10,4]	DropItem 0x00 0x0 0x00 [BaseLance, Dracoshield] NeverMoveAI 
+	UNIT Desaix General	0x00 Level(1, Enemy, 1) [10,4]	DropItem 0x00 0x0 0x00 [BaseLance, Dracoshield] NeverMoveAI 
 	UNIT
 
 BerkutRinea:
-	UNIT 0x6F Paladin 0x00 Level(1, Enemy, 1) [9, 4] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT 0x44 0x76 0x00 Level(1, Enemy, 1) [8, 4] 0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT 0x42 Paladin	0x45 Level(3, Enemy, 1) [10,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-	UNIT 0x6D Cavalier 0x00 Level(1, Enemy, 1) [7, 4] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT BerkutPaladin Paladin 0x00 Level(1, Enemy, 1) [9, 4] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT RineaEnemy 0x76 0x00 Level(1, Enemy, 1) [8, 4] 0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT SlaydePaladin Paladin	Desaix Level(3, Enemy, 1) [10,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT FernandEnemy1 Cavalier 0x00 Level(1, Enemy, 1) [7, 4] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 BossesCutscene:
-	UNIT 0x6F Paladin 0x00 Level(1, Enemy, 1) [15, 0] 0x00 0x00 0x1 REDA15R1 [BaseLance] NoAI
-	UNIT 0x6D Cavalier 0x00 Level(1, Enemy, 1) [16, 0] 0x00 0x00 0x1 REDA16R1 [BaseLance] NoAI
+	UNIT BerkutPaladin Paladin 0x00 Level(1, Enemy, 1) [15, 0] 0x00 0x00 0x1 REDA15R1 [BaseLance] NoAI
+	UNIT FernandEnemy1 Cavalier 0x00 Level(1, Enemy, 1) [16, 0] 0x00 0x00 0x1 REDA16R1 [BaseLance] NoAI
 	UNIT
 
 EnemyUnits:
-	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [12,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT 0x81 Archer_F	0x45 Level(10, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT 0x82 Knight	0x45 Level(2, Enemy, 0) [11,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
-	UNIT 0x83 Shaman	0x45 Level(7, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] [0xE, 0x0, 0x0, 0x0]
-	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [11,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
-	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [9,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
-	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [3,20]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [6,20]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT 0x85 Cavalier_F	0x45 Level(10, Enemy, 1) [7,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI  
-	UNIT 0x85 Cavalier_F	0x42 Level(10, Enemy, 1) [8,7]	0x00 0x00 0x0 0x00 [Javelin] MoveWithLeaderAI 
-	UNIT 0x85 Cavalier	0x42 Level(11, Enemy, 1) [9,7]	0x00 0x00 0x0 0x00 [BaseLance] MoveWithLeaderAI 
-	UNIT 0x85 Cavalier	0x42 Level(11, Enemy, 1) [11,7]	0x00 0x00 0x0 0x00 [IronLance] MoveWithLeaderAI 
-	UNIT 0x85 Cavalier_F	0x42 Level(11, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] MoveWithLeaderAI  
-	UNIT 0x85 Cavalier	0x45 Level(11, Enemy, 1) [13,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI  
-	UNIT 0x81 Archer	0x45 Level(10, Enemy, 1) [13,15]	0x00 0x00 0x0 0x00 [IronBow] NoAI 
-	UNIT 0x81 Archer_F	0x45 Level(11, Enemy, 1) [15,15]	0x00 0x00 0x0 0x00 [IronBow] NoAI 
-	UNIT 0x82 Soldier	0x45 Level(12, Enemy, 1) [16,14]	DropItem 0x00 0x0 0x00 [IronLance,DoorKey] AttackInRangeAI  
+	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [12,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT 0x81 Archer_F	Desaix Level(10, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT 0x82 Knight	Desaix Level(2, Enemy, 0) [11,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
+	UNIT 0x83 Shaman	Desaix Level(7, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] [0xE, 0x0, 0x0, 0x0]
+	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [11,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
+	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [9,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
+	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [3,20]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [6,20]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT 0x85 Cavalier_F	Desaix Level(10, Enemy, 1) [7,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI  
+	UNIT 0x85 Cavalier_F	SlaydePaladin Level(10, Enemy, 1) [8,7]	0x00 0x00 0x0 0x00 [Javelin] MoveWithLeaderAI 
+	UNIT 0x85 Cavalier	SlaydePaladin Level(11, Enemy, 1) [9,7]	0x00 0x00 0x0 0x00 [BaseLance] MoveWithLeaderAI 
+	UNIT 0x85 Cavalier	SlaydePaladin Level(11, Enemy, 1) [11,7]	0x00 0x00 0x0 0x00 [IronLance] MoveWithLeaderAI 
+	UNIT 0x85 Cavalier_F	SlaydePaladin Level(11, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] MoveWithLeaderAI  
+	UNIT 0x85 Cavalier	Desaix Level(11, Enemy, 1) [13,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI  
+	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [13,15]	0x00 0x00 0x0 0x00 [IronBow] NoAI 
+	UNIT 0x81 Archer_F	Desaix Level(11, Enemy, 1) [15,15]	0x00 0x00 0x0 0x00 [IronBow] NoAI 
+	UNIT 0x82 Soldier	Desaix Level(12, Enemy, 1) [16,14]	DropItem 0x00 0x0 0x00 [IronLance,DoorKey] AttackInRangeAI  
 	UNIT
 
 Reinforcements1:
@@ -135,17 +135,17 @@ Reinforcements1:
 
 Reinforcements2:
 	UNIT 0x65 Thief 	0x67 Level(7, Enemy, 1) [4,1]	0x00 0x00 0x1 REDA4R1  [BaseSword, Lockpick] LootingThiefAI
-	UNIT 0x82 Soldier	0x45 Level(12, Enemy, 1) [2,1]	0x00 0x00 0x1 REDA2R1 [IronLance] NoAI 
+	UNIT 0x82 Soldier	Desaix Level(12, Enemy, 1) [2,1]	0x00 0x00 0x1 REDA2R1 [IronLance] NoAI 
 	UNIT
 	
 Reinforcements3:
-	UNIT 0x85 Cavalier	0x45 Level(11, Enemy, 1) [0,13]	0x00 0x00 0x1 REDA0R13 [BaseLance] NoAI 
-	UNIT 0x85 Cavalier_F	0x45 Level(11, Enemy, 1) [0,15]	0x00 0x00 0x1 REDA0R15 [IronLance] NoAI 
+	UNIT 0x85 Cavalier	Desaix Level(11, Enemy, 1) [0,13]	0x00 0x00 0x1 REDA0R13 [BaseLance] NoAI 
+	UNIT 0x85 Cavalier_F	Desaix Level(11, Enemy, 1) [0,15]	0x00 0x00 0x1 REDA0R15 [IronLance] NoAI 
 	UNIT
 	
 Reinforcements4:
-	UNIT 0x82 Soldier	0x45 Level(13, Enemy, 1) [22,6]	0x00 0x00 0x1 REDA22R6 [BaseLance] NoAI 
-	UNIT 0x82 Soldier	0x45 Level(12, Enemy, 1) [22,7]	0x00 0x00 0x1 REDA22R7 [IronLance] NoAI 
+	UNIT 0x82 Soldier	Desaix Level(13, Enemy, 1) [22,6]	0x00 0x00 0x1 REDA22R6 [BaseLance] NoAI 
+	UNIT 0x82 Soldier	Desaix Level(12, Enemy, 1) [22,7]	0x00 0x00 0x1 REDA22R7 [IronLance] NoAI 
 	UNIT
 
 Ch1_8_BeginningScene:
@@ -158,10 +158,10 @@ Ch1_8_BeginningScene:
 	ENUN
 	LOAD1 0x1 Bosses
 	ENUN
-	CAM1 0x45
+	CAM1 Desaix
 	FADU 5
 	BROWNBOXTEXT Loc_ZofiaCastle [8,8]
-	FlashCursor(0x45, 60)
+	FlashCursor(Desaix, 60)
 	SetBackground(0x0E)
 	TEXTSTART
 	TEXTSHOW Ch1_8_OpeningScene
@@ -183,16 +183,16 @@ Ch1_8_BeginningScene:
 	STAL 0x20
 	CAM1 [12,5]
 	STAL 0x20
-	FlashCursor(0x45, 60)
+	FlashCursor(Desaix, 60)
 	MUSC 0x16
 	Text(Ch1_8_OpeningScene_Berkut)
-	MOVE 0x08 0x6F [5,11]
-	MOVE 0x08 0x6D [5,11]
-	MOVE 0x08 0x44 [5,11]
+	MOVE 0x08 BerkutPaladin [5,11]
+	MOVE 0x08 FernandEnemy1 [5,11]
+	MOVE 0x08 RineaEnemy [5,11]
 	ENUN
-	DISA 0x44
-	DISA 0x6D
-	DISA 0x6F
+	DISA RineaEnemy
+	DISA FernandEnemy1
+	DISA BerkutPaladin
 	FADI 5
 	LOAD1 0x1 EnemyUnits
 	ENUN
@@ -203,16 +203,16 @@ Ch1_8_BeginningScene:
 DesaixTalk:
 	MUSC 0x09
 	MUSI
-	CAM1 0x45
+	CAM1 Desaix
 	STAL 0x08
-	FlashCursor(0x45, 60)
+	FlashCursor(Desaix, 60)
 	TEXTSTART
 	TEXTSHOW Ch1_8_Desaix_OpeningLine
 	TEXTEND
 	REMA
-	CAM1 0x42
+	CAM1 SlaydePaladin
 	STAL 0x08
-	FlashCursor(0x42, 60)
+	FlashCursor(SlaydePaladin, 60)
 	TEXTSTART
 	TEXTSHOW Ch1_8_Slayde_OpeningLine
 	TEXTEND
@@ -232,15 +232,15 @@ Ch1_8_EndingScene:
 	FADU 5
 	LOAD1 0x1 BossesCutscene
 	ENUN
-	CAM1 0x6F
-	FlashCursor(0x6F, 60)
+	CAM1 BerkutPaladin
+	FlashCursor(BerkutPaladin, 60)
 	MUSCSLOW 0x16
 	Text(Ch1_8_BerkutFernandLeave)
-	MOVE 0x08 0x6F [15,0]
-	MOVE 0x08 0x6D [16,0]
+	MOVE 0x08 BerkutPaladin [15,0]
+	MOVE 0x08 FernandEnemy1 [16,0]
 	ENUN
-	DISA 0x6D
-	DISA 0x6F
+	DISA FernandEnemy1
+	DISA BerkutPaladin
 	STAL 60
 	MUSCSLOW 0x31
 	STAL 60
@@ -340,34 +340,34 @@ Ch1_8_EndingScene:
 
 SlaydeDies:
 	MUSI
-	CAM1 0x45
+	CAM1 Desaix
 	STAL 30
-	FlashCursor(0x45, 60)
+	FlashCursor(Desaix, 60)
 	TEXTSTART
 	TEXTSHOW SlaydeDies_DesaixRetreats
 	TEXTEND
 	REMA
 	NoFade
-	SVAL 0x2 0x45
+	SVAL 0x2 Desaix
 	CALL Warp_Out_Effect
 	STAL 0x08
-	DISA 0x45
+	DISA Desaix
 	MUNO
 	ENDA
 
 DesaixDies:
 	MUSI
-	CAM1 0x42
+	CAM1 SlaydePaladin
 	STAL 30
-	FlashCursor(0x42, 60)
+	FlashCursor(SlaydePaladin, 60)
 	TEXTSTART
 	TEXTSHOW DesaixAct1Dies
 	TEXTEND
 	REMA
 	NoFade
-	MOVE 0x10 0x42 [0,14]
+	MOVE 0x10 SlaydePaladin [0,14]
 	ENUN
-	DISA 0x42
+	DISA SlaydePaladin
 	MUNO
 	ENDA
 

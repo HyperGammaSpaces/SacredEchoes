@@ -94,9 +94,9 @@ LoadLeftCavalry:
 DesaixCommand:
 	MUSI
 	STAL 20
-	CAM1 DesaixCh1
+	CAM1 Desaix
 	STAL 20
-	FlashCursor(DesaixCh1,60)
+	FlashCursor(Desaix,60)
 	STAL 20
 	Text(Ch3_4A_DesaixText2)
 	STAL 20
@@ -150,59 +150,59 @@ Ch3_4A_Units1:
 EnemyUnits:
 
 	// Bosses
-	UNIT DesaixCh1 Baron 0x0 Level(5, Enemy, False) [9,2] 0x00 0x00 0x0 0x00 [Javelin, SteelSword] NeverMoveAI
-	UNIT 0x8F Cantor DesaixCh1 Level(5, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma] NeverMoveAI
+	UNIT Desaix Baron 0x0 Level(5, Enemy, False) [9,2] 0x00 0x00 0x0 0x00 [Javelin, SteelSword] NeverMoveAI
+	UNIT 0x8F Cantor Desaix Level(5, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma] NeverMoveAI
 	
 	// Cell guard knight
-	UNIT 0x88 Knight	DesaixCh1 Level(5, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] NeverMoveAI
+	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] NeverMoveAI
 
 	// Outside Witch
-	UNIT 0x8C Witch	DesaixCh1 Level(4, Enemy, True) [17,22]	0x00 0x00 0x0 0x00 [Fire,Thunder] AttackInRangeAI
+	UNIT 0x8C Witch	Desaix Level(4, Enemy, True) [17,22]	0x00 0x00 0x0 0x00 [Fire,Thunder] AttackInRangeAI
 	
 	// Main gate guard
-	UNIT 0x88 Knight	DesaixCh1 Level(5, Enemy, True) [8,15]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
-	UNIT 0x88 Knight	DesaixCh1 Level(6, Enemy, True) [9,15]	DropItem 0x00 0x0 0x00 [Hammer] NeverMoveAI
-	UNIT 0x88 Knight	DesaixCh1 Level(5, Enemy, True) [10,15]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
+	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [8,15]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
+	UNIT 0x88 Knight	Desaix Level(6, Enemy, True) [9,15]	DropItem 0x00 0x0 0x00 [Hammer] NeverMoveAI
+	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [10,15]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
 
 	// Main gate behind
-	UNIT 0x89 Archer DesaixCh1 Level(14, Enemy, True) [8,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
-	UNIT 0x89 Sniper DesaixCh1 Level(7, Enemy, True) [9,13]	DropItem 0x00 0x0 0x00 [SteelBow,Elixir] [0x00,0x03,0x04,0x00]
-	UNIT 0x89 Archer DesaixCh1 Level(14, Enemy, True) [10,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
-	UNIT 0x8B Mage	DesaixCh1 Level(9, Enemy, True) [7,11]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
-	UNIT 0x8B Mage	DesaixCh1 Level(8, Enemy, True) [11,11]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	UNIT 0x8B Mercenary	DesaixCh1 Level(8, Enemy, True) [5,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT 0x8B Mercenary	DesaixCh1 Level(8, Enemy, True) [13,13]	DropItem 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
+	UNIT 0x89 Archer Desaix Level(14, Enemy, True) [8,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT 0x89 Sniper Desaix Level(7, Enemy, True) [9,13]	DropItem 0x00 0x0 0x00 [SteelBow,Elixir] [0x00,0x03,0x04,0x00]
+	UNIT 0x89 Archer Desaix Level(14, Enemy, True) [10,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT 0x8B Mage	Desaix Level(9, Enemy, True) [7,11]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
+	UNIT 0x8B Mage	Desaix Level(8, Enemy, True) [11,11]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x8B Mercenary	Desaix Level(8, Enemy, True) [5,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x8B Mercenary	Desaix Level(8, Enemy, True) [13,13]	DropItem 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
 
 	// Throne room
-	UNIT 0x8B Shaman	DesaixCh1 Level(12, Enemy, True) [4,1]	0x00 0x00 0x0 0x00 [Miasma,Heal] [0x0E,0x06]
-	UNIT 0x8B Shaman	DesaixCh1 Level(12, Enemy, True) [14,1]	0x00 0x00 0x0 0x00 [Miasma,Heal] [0x0E,0x06]
-	UNIT 0x89 Archer	DesaixCh1 Level(14, Enemy, True) [7,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x89 Archer	DesaixCh1 Level(14, Enemy, True) [11,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x8D Soldier	DesaixCh1 Level(18, Enemy, True) [3,4]	0x00 0x00 0x0 0x00 [Ridersbane,IronShield] NeverMoveAI
-	UNIT 0x8D Soldier	DesaixCh1 Level(16, Enemy, True) [4,4]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-	UNIT 0x8B Cleric	DesaixCh1 Level(8, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Physic,Nosferatu] [0x0E,0x03,0x0,0x20]
-	UNIT 0x8B Cleric	DesaixCh1 Level(8, Enemy, True) [5,2]	0x00 0x00 0x0 0x00 [Physic,Nosferatu] [0x0E,0x03,0x0,0x20]
+	UNIT 0x8B Shaman	Desaix Level(12, Enemy, True) [4,1]	0x00 0x00 0x0 0x00 [Miasma,Heal] [0x0E,0x06]
+	UNIT 0x8B Shaman	Desaix Level(12, Enemy, True) [14,1]	0x00 0x00 0x0 0x00 [Miasma,Heal] [0x0E,0x06]
+	UNIT 0x89 Archer	Desaix Level(14, Enemy, True) [7,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x89 Archer	Desaix Level(14, Enemy, True) [11,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x8D Soldier	Desaix Level(18, Enemy, True) [3,4]	0x00 0x00 0x0 0x00 [Ridersbane,IronShield] NeverMoveAI
+	UNIT 0x8D Soldier	Desaix Level(16, Enemy, True) [4,4]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT 0x8B Cleric	Desaix Level(8, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Physic,Nosferatu] [0x0E,0x03,0x0,0x20]
+	UNIT 0x8B Cleric	Desaix Level(8, Enemy, True) [5,2]	0x00 0x00 0x0 0x00 [Physic,Nosferatu] [0x0E,0x03,0x0,0x20]
 
 	// Left hall
-	UNIT 0x89 Archer	DesaixCh1 Level(12, Enemy, True) [18,9]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x89 Archer	DesaixCh1 Level(14, Enemy, True) [18,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x87 Soldier	DesaixCh1 Level(13, Enemy, True) [3,11]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x87 Mercenary	DesaixCh1 Level(12, Enemy, True) [2,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT 0x88 Knight	DesaixCh1 Level(5, Enemy, True) [1,10]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
-	UNIT 0x88 Knight	DesaixCh1 Level(6, Enemy, True) [1,11]	0x00 0x00 0x0 0x00 [BaseAxe] NeverMoveAI
-	UNIT 0x87 Soldier	DesaixCh1 Level(13, Enemy, True) [1,6]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x87 Mercenary	DesaixCh1 Level(12, Enemy, True) [0,7]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
-	UNIT 0x8B Shaman	DesaixCh1 Level(10, Enemy, True) [3,5]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT 0x89 Archer	Desaix Level(12, Enemy, True) [18,9]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x89 Archer	Desaix Level(14, Enemy, True) [18,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x87 Soldier	Desaix Level(13, Enemy, True) [3,11]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x87 Mercenary	Desaix Level(12, Enemy, True) [2,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [1,10]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
+	UNIT 0x88 Knight	Desaix Level(6, Enemy, True) [1,11]	0x00 0x00 0x0 0x00 [BaseAxe] NeverMoveAI
+	UNIT 0x87 Soldier	Desaix Level(13, Enemy, True) [1,6]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x87 Mercenary	Desaix Level(12, Enemy, True) [0,7]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT 0x8B Shaman	Desaix Level(10, Enemy, True) [3,5]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 
 	// Right hall
-	UNIT 0x89 Archer	DesaixCh1 Level(12, Enemy, True) [0,9]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x87 Mercenary	DesaixCh1 Level(13, Enemy, True) [16,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT 0x87 Mage	DesaixCh1 Level(12, Enemy, True) [15,11]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	UNIT 0x88 Knight	DesaixCh1 Level(6, Enemy, True) [17,10]	0x00 0x00 0x0 0x00 [BaseLance] NeverMoveAI
-	UNIT 0x88 Knight	DesaixCh1 Level(5, Enemy, True) [17,11]	0x00 0x00 0x0 0x00 [IronAxe] NeverMoveAI
-	UNIT 0x89 Archer	DesaixCh1 Level(14, Enemy, True) [15,4]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x8D Soldier	DesaixCh1 Level(14, Enemy, True) [16,5]	0x00 0x00 0x0 0x00 [IronLance,HideShield] NeverMoveAI
-	UNIT 0x8D Soldier	DesaixCh1 Level(14, Enemy, True) [16,6]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT 0x89 Archer	Desaix Level(12, Enemy, True) [0,9]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x87 Mercenary	Desaix Level(13, Enemy, True) [16,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x87 Mage	Desaix Level(12, Enemy, True) [15,11]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x88 Knight	Desaix Level(6, Enemy, True) [17,10]	0x00 0x00 0x0 0x00 [BaseLance] NeverMoveAI
+	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [17,11]	0x00 0x00 0x0 0x00 [IronAxe] NeverMoveAI
+	UNIT 0x89 Archer	Desaix Level(14, Enemy, True) [15,4]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x8D Soldier	Desaix Level(14, Enemy, True) [16,5]	0x00 0x00 0x0 0x00 [IronLance,HideShield] NeverMoveAI
+	UNIT 0x8D Soldier	Desaix Level(14, Enemy, True) [16,6]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
 	UNIT
 
 ZombieGroup:
@@ -212,23 +212,23 @@ ZombieGroup:
 	UNIT
 	
 ThiefReinforcement:
-	UNIT 0x64 Thief DesaixCh1 Level(12,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [BaseSword, Lockpick] LootingThiefAI
-	UNIT 0x64 Thief DesaixCh1 Level(12,Enemy,True) [18,0] DropItem 0x00 0x1 REDA18R0 [SteelSword, Lockpick, 0x9F] [0x6,0xC,0x0,0x0]
+	UNIT 0x64 Thief Desaix Level(12,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [BaseSword, Lockpick] LootingThiefAI
+	UNIT 0x64 Thief Desaix Level(12,Enemy,True) [18,0] DropItem 0x00 0x1 REDA18R0 [SteelSword, Lockpick, 0x9F] [0x6,0xC,0x0,0x0]
 	UNIT
 	
 CavReinforcementRight:
-	UNIT 0x86 Cavalier_F DesaixCh1 Level(13,Enemy,True) [19,17] 0x00 0x00 0x1 REDA19R17 [Javelin] NoAI
-	UNIT 0x86 Cavalier DesaixCh1 Level(14,Enemy,True) [19,18] 0x00 0x00 0x1 REDA19R18 [SteelLance] NoAI
+	UNIT 0x86 Cavalier_F Desaix Level(13,Enemy,True) [19,17] 0x00 0x00 0x1 REDA19R17 [Javelin] NoAI
+	UNIT 0x86 Cavalier Desaix Level(14,Enemy,True) [19,18] 0x00 0x00 0x1 REDA19R18 [SteelLance] NoAI
 	UNIT
 	
 CavReinforcementLeft:
-	UNIT 0x8E Cavalier DesaixCh1 Level(13,Enemy,True) [0,20] 0x00 0x00 0x1 REDA0R20 [Javelin] NoAI
-	UNIT 0x8E Cavalier_F DesaixCh1 Level(14,Enemy,True) [0,21] 0x00 0x00 0x1 REDA0R21 [SteelLance] NoAI
+	UNIT 0x8E Cavalier Desaix Level(13,Enemy,True) [0,20] 0x00 0x00 0x1 REDA0R20 [Javelin] NoAI
+	UNIT 0x8E Cavalier_F Desaix Level(14,Enemy,True) [0,21] 0x00 0x00 0x1 REDA0R21 [SteelLance] NoAI
 	UNIT
 
 SniperReinforcement:
-	UNIT 0x89 Sniper DesaixCh1 Level(6, Enemy, True) [4,2]	0x00 0x00 1 REDA4R2 [SteelBow] [0x0,0x12,0x0,0x0]
-	UNIT 0x89 Sniper DesaixCh1 Level(6, Enemy, True) [14,2]	0x00 0x00 1 REDA14R2 [SteelBow] [0x0,0x12,0x0,0x0]
+	UNIT 0x89 Sniper Desaix Level(6, Enemy, True) [4,2]	0x00 0x00 1 REDA4R2 [SteelBow] [0x0,0x12,0x0,0x0]
+	UNIT 0x89 Sniper Desaix Level(6, Enemy, True) [14,2]	0x00 0x00 1 REDA14R2 [SteelBow] [0x0,0x12,0x0,0x0]
 	UNIT
 	
 CutsceneFernand:
@@ -302,9 +302,9 @@ Ch3_4A_BeginningScene:
 
 	//Then load Desaix and set BG to 0xE
 	MUSC 0x2E
-	CAM1 DesaixCh1
+	CAM1 Desaix
 	STAL 20
-	FlashCursor(DesaixCh1, 60)
+	FlashCursor(Desaix, 60)
 	STAL 20
 
 	//SetBackground(0xE)
