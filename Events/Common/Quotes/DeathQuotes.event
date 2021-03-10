@@ -1,0 +1,106 @@
+#define SetDeathQuoteEntry(UnitID,ChapterID,EventID,TextID) "BYTE UnitID $00 $FF; BYTE ChapterID EventID 0x0; SHORT TextID; WORD 0"
+#define SetKillBossQuoteEntry(UnitID,ChapterID,TextID) "BYTE UnitID $00 $FF; BYTE ChapterID 0x2 0x0; SHORT TextID; WORD 0"
+#define SetGameOverQuoteEntry(UnitID,ChapterID,TextID) "BYTE UnitID $00 $FF; BYTE ChapterID 0x65 0x0; SHORT TextID; WORD 0"
+
+PUSH
+	ORG $8472C
+	POIN DeathQuoteTable
+POP
+
+ALIGN 4
+DeathQuoteTable:
+//Regular boss quotes
+SetKillBossQuoteEntry(0x68,0x0,Boss1_1_DeathQuote)
+SetKillBossQuoteEntry(BanditAlm2,0x1,Boss1_2_DeathQuote)
+SetKillBossQuoteEntry(BrigandBoss,0x2,Boss1_3_DeathQuote)
+SetKillBossQuoteEntry(LeatherShieldMerc,0x3,Boss1_4_DeathQuote)
+SetKillBossQuoteEntry(SoldierAlm5,0x4,Ch1_5_BossDeathQuote)
+SetKillBossQuoteEntry(SoldierAlm6,0x5,Ch1_6_BossDeathQuote)
+SetKillBossQuoteEntry(CavalierAlm7,0x6,Ch1_7_BossDeathQuote)
+SetKillBossQuoteEntry(Zopyrus,0x3d,Ch1_7x_DeathQuote)
+//Act 2
+SetKillBossQuoteEntry(PirateCelica1,0x9,Ch2_2_BossDeathQuote)
+SetKillBossQuoteEntry(PirateCelica2,0xa,Ch2_3_BossDeathQuote)
+SetKillBossQuoteEntry(Barth,0xb,Barth_DeathQuote)
+SetKillBossQuoteEntry(CantorBoss,0xc,Ch2_5_BossDeathQuote)
+SetKillBossQuoteEntry(SorcererBoss,0xd,Ch2_6_BossDeathQuote)
+SetKillBossQuoteEntry(ArcanistBoss,0xe,Ch2_7_BossDeathQuote)
+//Act 3 Alm
+SetKillBossQuoteEntry(ZaxonCh3_1A,0xf,Ch3_1A_ZaxonDeathQuote)
+SetKillBossQuoteEntry(ArcanistBoss,0x10,Ch3_2A_BossDeathQuote)
+SetKillBossQuoteEntry(DesaixCh1,0x12,Ch3_4A_DesaixDeathQuote)
+SetKillBossQuoteEntry(LawsonCh3_5A,0x13,Ch3_5A_LawsonDeath)
+SetKillBossQuoteEntry(GazelleCh3_6A,0x14,Ch3_6A_GazelleDeath)
+SetKillBossQuoteEntry(TatarrahCh3_7A,0x15,Ch3_7A_TatarrahDeath)
+//Act 3 Celica
+SetKillBossQuoteEntry(Garth,0x16,Ch3_1C_BossDeathQuote)
+SetKillBossQuoteEntry(Wolff,0x18,Ch3_3C_WolffDeathQuote)
+SetKillBossQuoteEntry(DeenBoss,0x19,Ch3_4C_DeenDeathQuote)
+SetKillBossQuoteEntry(SonyaBoss,0x1a,Ch3_4C_SonyaDeathQuote)
+SetKillBossQuoteEntry(Grieth,0x1b,Ch3_5C_GriethDeath)
+SetKillBossQuoteEntry(Blake,0x1c,Ch3_6C_BossDeathQuote)
+SetKillBossQuoteEntry(Mikhail,0x1d,Ch3_7C_BossDeathQuote)
+
+//Special enemies
+SetDeathQuoteEntry(SlaydePaladin,0x7,0x8,SlaydeDeath_ZofiaCastle)
+SetDeathQuoteEntry(DesaixCh1,0x7,gDesaixAct1Death,FakeDesaix_Death)
+SetDeathQuoteEntry(Jarth,0xd,0x0,Ch2_6_Boss2DeathQuote)
+SetDeathQuoteEntry(FernandEnemy1,0xf,0x0,Ch3_1A_FernandDefeatQuote)
+SetDeathQuoteEntry(BerkutPaladin,0x11,0xb,Ch3_3A_BerkutDefeatQuote)
+SetDeathQuoteEntry(FernandEnemy2,0x11,0xc,Ch3_3A_FernandDefeatQuote)
+SetDeathQuoteEntry(XyzasCh3_3A,0x11,0xd,Ch3_3A_XyzasDefeatQuote)
+SetDeathQuoteEntry(CantorBoss,0x12,0x9,0x0)
+SetDeathQuoteEntry(DeltheaBoss,0x15,gDeltheaDied,Ch3_7A_DeltheaDeath)
+
+//Playables
+//Game over triggers
+SetGameOverQuoteEntry(Silque,0x2,Silque_Death)
+SetGameOverQuoteEntry(Clair,0x4,Clair_Death)
+SetGameOverQuoteEntry(Clive,0x3d,Clive_Death)
+SetGameOverQuoteEntry(Mathilda,0x3d,Mathilda_Death)
+SetGameOverQuoteEntry(FernandPlayable,0x3d,FernandPlayable_Death)
+SetGameOverQuoteEntry(Forsyth,0x3d,Forsyth_Death)
+SetGameOverQuoteEntry(Python,0x3d,Python_Death)
+SetGameOverQuoteEntry(Alm,0xff,Alm_Death)
+SetGameOverQuoteEntry(Celica,0xff,Celica_Death)
+
+//Standard death quotes
+SetDeathQuoteEntry(Lukas,0xff,gLukasDied,Lukas_Death)
+SetDeathQuoteEntry(Gray,0xff,gGrayDied,Gray_Death)
+SetDeathQuoteEntry(Tobin,0xff,gTobinDied,Tobin_Death)
+SetDeathQuoteEntry(Kliff,0xff,gKliffDied,Kliff_Death)
+SetDeathQuoteEntry(Faye,0xff,gFayeDied,Faye_Death)
+SetDeathQuoteEntry(Silque,0xff,gSilqueDied,Silque_Death)
+SetDeathQuoteEntry(Clair,0xff,gClairDied,Clair_Death)
+SetDeathQuoteEntry(Clive,0xff,gCliveDied,Clive_Death)
+SetDeathQuoteEntry(Forsyth,0xff,gForsythDied,Forsyth_Death)
+SetDeathQuoteEntry(Python,0xff,gPythonDied,Python_Death)
+SetDeathQuoteEntry(Mae,0xff,gMaeDied,Mae_Death)
+SetDeathQuoteEntry(Boey,0xff,gBoeyDied,Boey_Death)
+SetDeathQuoteEntry(Genny,0xff,gGennyDied,Genny_Death)
+SetDeathQuoteEntry(Saber,0xff,gSaberDied,Saber_Death)
+SetDeathQuoteEntry(Valbar,0xff,gValbarDied,Valbar_Death)
+SetDeathQuoteEntry(Leon,0xff,gLeonDied,Leon_Death)
+SetDeathQuoteEntry(Kamui,0xff,gKamuiDied,Kamui_Death)
+SetDeathQuoteEntry(Luthier,0xff,gLuthierDied,Luthier_Death)
+SetDeathQuoteEntry(Mathilda,0xff,gMathildaDied,Mathilda_Death)
+SetDeathQuoteEntry(Delthea,0xff,gDeltheaDied,Delthea_Death)
+SetDeathQuoteEntry(Palla,0xff,gPallaDied,Palla_Death)
+SetDeathQuoteEntry(Catria,0xff,gCatriaDied,Catria_Death)
+SetDeathQuoteEntry(Atlas,0xff,gAtlasDied,Atlas_Death)
+SetDeathQuoteEntry(Jesse,0xff,gJesseDied,Jesse_Death)
+SetDeathQuoteEntry(Deen,0xff,gDeenDied,Deen_Death)
+SetDeathQuoteEntry(Sonya,0xff,gSonyaDied,Sonya_Death)
+SetDeathQuoteEntry(Est,0xff,gEstDied,Est_Death)
+SetDeathQuoteEntry(Tatiana,0xff,gTatianaDied,Tatiana_Death)
+SetDeathQuoteEntry(Zeke,0xff,gZekeDied,Zeke_Death)
+SetDeathQuoteEntry(Conrad,0xff,gConradDied,Conrad_Death)
+SetDeathQuoteEntry(Nomah,0xff,gNomahDied,Nomah_Death)
+SetDeathQuoteEntry(Mycen,0xff,gMycenDied,Mycen_Death)
+SetDeathQuoteEntry(Acantha,0xff,gAcanthaDied,Acantha_Death)
+SetDeathQuoteEntry(Hyas,0xff,gHyasDied,Hyas_Death)
+SetDeathQuoteEntry(FernandPlayable,0xff,gFernandDied,FernandPlayable_Death)
+//term
+BYTE $FF $FF $00 $00
+WORD 0 0
+ALIGN 4

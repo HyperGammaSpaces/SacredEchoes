@@ -20,8 +20,11 @@
 #define gPeddlerEventActive 0x98 //enabled when talking to a peddler to allow depositing into other party's convoy
 #define gCasualModeFlag 0xAF
 //Character death flags - 0xB0 + charID
+#define gLukasDied 0xB2
 #define gGrayDied 0xB3
 #define gTobinDied 0xB4
+#define gKliffDied 0xB5
+#define gFayeDied 0xB6
 #define gSilqueDied 0xB7
 #define gClairDied 0xB8
 #define gCliveDied 0xB9
@@ -29,8 +32,11 @@
 #define gPythonDied 0xBB
 #define gMaeDied 0xBD
 #define gBoeyDied 0xBE
+#define gGennyDied 0xBF
+#define gSaberDied 0xC0
 #define gValbarDied 0xC1
 #define gLeonDied 0xC2
+#define gKamuiDied 0xC3
 #define gLuthierDied 0xC4
 #define gMathildaDied 0xC5
 #define gDeltheaDied 0xC6
@@ -38,10 +44,17 @@
 #define gCatriaDied 0xC8
 #define gAtlasDied 0xC9
 #define gJesseDied 0xCA
+#define gDeenDied 0xCB
+#define gSonyaDied 0xCC
 #define gEstDied 0xCD
 #define gTatianaDied 0xCE
 #define gZekeDied 0xCF
+#define gConradDied 0xD0
+#define gNomahDied 0xD1
+#define gMycenDied 0xD2
+#define gAcanthaDied 0xD3
 #define gHyasDied 0xD4
+#define gFernandDied 0xD5
 //Act 3/4 story flags because lordswitch
 #define gChapter3A1Completed 0xE0
 #define gChapter3A2Completed 0xE1
@@ -57,6 +70,7 @@
 #define gChapter3C5Completed 0xEB
 #define gChapter3C6Completed 0xEC
 #define gChapter3C7Completed 0xED
+
 #define gChapter4C1Completed 0xEE
 #define gChapter4C2Completed 0xEF
 #define gChapter4C3Completed 0xF0
