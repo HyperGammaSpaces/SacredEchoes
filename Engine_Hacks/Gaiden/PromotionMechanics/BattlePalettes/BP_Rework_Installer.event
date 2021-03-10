@@ -1,0 +1,42 @@
+#include "Extensions/Hack Installation.txt"
+
+#ifndef CharacterPaletteTable
+	#define CharacterPaletteTable $ef8008 //entry 0 which is invalid is here
+#endif
+
+PUSH
+	ORG $5742C
+	callHack_r7(PaletteLoadReworkPt2)
+	
+	ORG $5746A
+	ALIGN 4
+	callHack_r7(PaletteLoadReworkPt1)
+	
+	ORG $CD108
+	callHack_r5(PaletteLoadReworkPromoBranch)
+POP
+
+ALIGN 4
+PaletteLoadReworkPt1:
+#incbin "PaletteLoadReworkPart1.dmp"
+POIN PaletteAssociationTable
+POIN CharacterPaletteTable
+ALIGN 4
+
+PaletteLoadReworkPt2:
+#incbin "PaletteLoadReworkPart2.dmp"
+POIN PaletteAssociationTable
+POIN CharacterPaletteTable
+ALIGN 4
+
+PaletteLoadReworkPromoBranch:
+#incbin "PaletteLoadReworkPromoBranch.dmp"
+POIN PaletteAssociationTable
+POIN CharacterPaletteTable
+ALIGN 4
+
+#include "PaletteEntries.event"
+ALIGN 4
+#include "ClassPaletteList.event"
+ALIGN 4
+#include "PaletteViewerTables.event" //convenience table for looking at palettes in builder

@@ -233,8 +233,6 @@ POP
 
 SetUnitAction(0xD, ActionRoutine(NewAutopromoteFunc+1))
 
-#include "BattlePaletteRework.event"
-
 GaidenEXPCalcRework:
 #incbin "NewCalcExpFromBattle.dmp"
 POIN LevelFactorTable
@@ -301,6 +299,8 @@ BYTE $78 $1 //gorgon/eggs
 BYTE $28 $50 //gargoyle/deathgoyle
 BYTE $78 //necrodragon
 BYTE $1 //duma 0x66
+
+#include "BattlePalettes/BP_Rework_Installer.event"
 
 //Lets Alm and Celica T2 have different mugs
 //#include "ChangePortraitByFlag/Installer.event"

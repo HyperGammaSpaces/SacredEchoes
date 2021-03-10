@@ -1,0 +1,515 @@
+#define PaletteEntry(index) "(CharacterPaletteTable) + (index*$10)"
+#define SetPaletteForUnit(charID, index) "BYTE charID; BYTE $00 $00 $00; POIN PaletteEntry(index)"
+
+NO_PALETTE: //point here for anything that doesnt need custom palettes (lords included)
+WORD 0 0
+ALIGN 4
+
+VillagerPaletteList:
+SetPaletteForUnit(Gray,$15)
+SetPaletteForUnit(Tobin,$24)
+SetPaletteForUnit(Kliff,$33)
+SetPaletteForUnit(Faye,$42)
+SetPaletteForUnit(Mae,$50)
+SetPaletteForUnit(Saber,$60)
+SetPaletteForUnit(Kamui,$74)
+SetPaletteForUnit(Delthea,$89)
+SetPaletteForUnit(Hyas,$9B)
+SetPaletteForUnit(Jesse,$AA)
+SetPaletteForUnit(Deen,$B9)
+SetPaletteForUnit(Sonya,$C8)
+WORD 0 0
+ALIGN 4
+
+CavalierPaletteList:
+SetPaletteForUnit(Gray,$16)
+SetPaletteForUnit(Tobin,$25)
+SetPaletteForUnit(Kliff,$34)
+SetPaletteForUnit(Faye,$43)
+SetPaletteForUnit(Clive,$09)
+SetPaletteForUnit(FernandPlayable,$06) //Fernand
+SetPaletteForUnit(FernandEnemy1,$06)
+SetPaletteForUnit(FernandEnemy2,$06)
+SetPaletteForUnit(FernandPaladin,$06)
+SetPaletteForUnit(Mae,$51)
+SetPaletteForUnit(Saber,$61)
+SetPaletteForUnit(Kamui,$75)
+SetPaletteForUnit(Delthea,$8A)
+SetPaletteForUnit(Hyas,$9C)
+SetPaletteForUnit(Deen,$BA)
+SetPaletteForUnit(Sonya,$C9)
+WORD 0 0
+ALIGN 4
+
+PaladinPaletteList:
+SetPaletteForUnit(Gray,$17)
+SetPaletteForUnit(Tobin,$26)
+SetPaletteForUnit(Kliff,$35)
+SetPaletteForUnit(Faye,$44)
+SetPaletteForUnit(Clive,$0A)
+SetPaletteForUnit(FernandPlayable,$07) //Fernand
+SetPaletteForUnit(FernandEnemy1,$07)
+SetPaletteForUnit(FernandEnemy2,$07)
+SetPaletteForUnit(FernandPaladin,$07)
+SetPaletteForUnit(SlaydeCC,$12) //Slayde
+SetPaletteForUnit(SlaydePaladin,$12) 
+SetPaletteForUnit(SlaydeGK,$12)  
+SetPaletteForUnit(Mae,$52)
+SetPaletteForUnit(Saber,$62)
+SetPaletteForUnit(Kamui,$76)
+SetPaletteForUnit(Mathilda,$87)
+SetPaletteForUnit(Delthea,$8B)
+SetPaletteForUnit(Hyas,$9D)
+SetPaletteForUnit(Deen,$BB)
+SetPaletteForUnit(Sonya,$CA)
+SetPaletteForUnit(Conrad,$DA)
+SetPaletteForUnit(BerkutPaladin,$DD)
+WORD 0 0
+ALIGN 4
+
+GKPaletteList:
+SetPaletteForUnit(Gray,$18)
+SetPaletteForUnit(Tobin,$27)
+SetPaletteForUnit(Kliff,$36)
+SetPaletteForUnit(Faye,$45)
+SetPaletteForUnit(Clive,$0B)
+SetPaletteForUnit(FernandPlayable,$08) //Fernand
+SetPaletteForUnit(FernandEnemy1,$08)
+SetPaletteForUnit(FernandEnemy2,$08)
+SetPaletteForUnit(FernandPaladin,$08)
+SetPaletteForUnit(SlaydeCC,$13) //Slayde
+SetPaletteForUnit(SlaydePaladin,$13) 
+SetPaletteForUnit(SlaydeGK,$13) 
+SetPaletteForUnit(Mae,$53)
+SetPaletteForUnit(Saber,$63)
+SetPaletteForUnit(Kamui,$77)
+SetPaletteForUnit(Mathilda,$88)
+SetPaletteForUnit(Delthea,$8C)
+SetPaletteForUnit(Hyas,$9E)
+SetPaletteForUnit(Jesse,$AD)
+SetPaletteForUnit(Deen,$BC)
+SetPaletteForUnit(Sonya,$CB)
+SetPaletteForUnit(Zeke,$D9)
+SetPaletteForUnit(Conrad,$DB)
+SetPaletteForUnit(Mycen,$DC)
+SetPaletteForUnit(BerkutGK,$DE)
+//SetPaletteForUnit(Rudolf,$E3)
+WORD 0 0
+ALIGN 4
+
+SoldierPaletteList:
+SetPaletteForUnit(Lukas,$00)
+SetPaletteForUnit(Gray,$1C)
+SetPaletteForUnit(Tobin,$2B)
+SetPaletteForUnit(Kliff,$3A)
+SetPaletteForUnit(Forsyth,$0C)
+SetPaletteForUnit(Saber,$67)
+SetPaletteForUnit(Kamui,$7B)
+SetPaletteForUnit(Hyas,$A2)
+SetPaletteForUnit(Jesse,$B1)
+SetPaletteForUnit(Deen,$C0)
+SetPaletteForUnit($3F,$E6)
+WORD 0 0
+ALIGN 4
+
+ArmorPaletteList:
+SetPaletteForUnit(Lukas,$01)
+SetPaletteForUnit(Gray,$1D)
+SetPaletteForUnit(Tobin,$2C)
+SetPaletteForUnit(Kliff,$3B)
+SetPaletteForUnit(Forsyth,$0D)
+SetPaletteForUnit(Valbar,$6F)
+SetPaletteForUnit(Saber,$68)
+SetPaletteForUnit(Kamui,$7C)
+SetPaletteForUnit(Hyas,$A3)
+SetPaletteForUnit(Deen,$C1)
+WORD 0 0
+ALIGN 4
+
+BaronPaletteList:
+SetPaletteForUnit(Lukas,$02)
+SetPaletteForUnit(Gray,$1E)
+SetPaletteForUnit(Tobin,$2D)
+SetPaletteForUnit(Kliff,$3C)
+SetPaletteForUnit(Forsyth,$0E)
+SetPaletteForUnit(Valbar,$70)
+SetPaletteForUnit(Saber,$69)
+SetPaletteForUnit(Kamui,$7D)
+SetPaletteForUnit(Hyas,$A4)
+SetPaletteForUnit(Deen,$C2)
+SetPaletteForUnit(Desaix,$14) //Desaix
+WORD 0 0
+ALIGN 4
+
+MercPaletteList:
+SetPaletteForUnit(Gray,$19)
+SetPaletteForUnit(Tobin,$28)
+SetPaletteForUnit(Kliff,$37)
+SetPaletteForUnit(Saber,$64)
+SetPaletteForUnit(Kamui,$78)
+SetPaletteForUnit(Hyas,$9F)
+SetPaletteForUnit(Deen,$BD)
+WORD 0 0
+ALIGN 4
+
+HeroPaletteList:
+SetPaletteForUnit(Gray,$1A)
+SetPaletteForUnit(Tobin,$29)
+SetPaletteForUnit(Kliff,$38)
+SetPaletteForUnit(Saber,$65)
+SetPaletteForUnit(Kamui,$79)
+SetPaletteForUnit(Hyas,$A0)
+SetPaletteForUnit(Deen,$BE)
+SetPaletteForUnit(DeenBoss,$BE)
+WORD 0 0
+ALIGN 4
+
+DFPaletteList:
+SetPaletteForUnit(Gray,$1B)
+SetPaletteForUnit(Tobin,$2A)
+SetPaletteForUnit(Kliff,$39)
+SetPaletteForUnit(Faye,$4C)
+SetPaletteForUnit(Mae,$5A)
+SetPaletteForUnit(Saber,$66)
+SetPaletteForUnit(Kamui,$7A)
+SetPaletteForUnit(Delthea,$93)
+SetPaletteForUnit(Hyas,$A1)
+SetPaletteForUnit(Deen,$BF)
+SetPaletteForUnit(Sonya,$D2)
+SetPaletteForUnit($3F,$E4)
+SetPaletteForUnit(Grieth,$AC)
+WORD 0 0
+ALIGN 4
+
+ThiefPaletteList:
+SetPaletteForUnit(Jesse,$AA)
+WORD 0 0
+ALIGN 4
+
+RoguePaletteList:
+SetPaletteForUnit(Jesse,$AB)
+WORD 0 0
+ALIGN 4
+
+ArcherPaletteList:
+SetPaletteForUnit(Gray,$21)
+SetPaletteForUnit(Tobin,$30)
+SetPaletteForUnit(Kliff,$3F)
+SetPaletteForUnit(Faye,$4D)
+SetPaletteForUnit(Python,$0F)
+SetPaletteForUnit(Mae,$5B)
+SetPaletteForUnit(Leon,$71)
+SetPaletteForUnit(Saber,$6C)
+SetPaletteForUnit(Kamui,$80)
+SetPaletteForUnit(Delthea,$94)
+SetPaletteForUnit(Hyas,$A7)
+SetPaletteForUnit(Deen,$C5)
+SetPaletteForUnit(Sonya,$D3)
+WORD 0 0
+ALIGN 4
+
+SniperPaletteList:
+SetPaletteForUnit(Gray,$22)
+SetPaletteForUnit(Tobin,$31)
+SetPaletteForUnit(Kliff,$40)
+SetPaletteForUnit(Faye,$4E)
+SetPaletteForUnit(Python,$10)
+SetPaletteForUnit(Mae,$5B)
+SetPaletteForUnit(Leon,$72)
+SetPaletteForUnit(Saber,$6D)
+SetPaletteForUnit(Kamui,$81)
+SetPaletteForUnit(Delthea,$95)
+SetPaletteForUnit(Hyas,$A8)
+SetPaletteForUnit(Deen,$C6)
+SetPaletteForUnit(Sonya,$D4)
+WORD 0 0
+ALIGN 4
+
+BowKnightPaletteList:
+SetPaletteForUnit(Gray,$23)
+SetPaletteForUnit(Tobin,$32)
+SetPaletteForUnit(Kliff,$41)
+SetPaletteForUnit(Faye,$4F)
+SetPaletteForUnit(Python,$11)
+SetPaletteForUnit(Mae,$5C)
+SetPaletteForUnit(Leon,$73)
+SetPaletteForUnit(Saber,$6E)
+SetPaletteForUnit(Kamui,$82)
+SetPaletteForUnit(Delthea,$96)
+SetPaletteForUnit(Hyas,$A9)
+SetPaletteForUnit(Deen,$C7)
+SetPaletteForUnit(Sonya,$D5)
+WORD 0 0
+ALIGN 4
+
+WyvRiderPaletteList:
+WORD 0 0
+ALIGN 4
+
+WyvLordPaletteList:
+WORD 0 0
+ALIGN 4
+
+PegKnightPaletteList:
+SetPaletteForUnit(Clair,$04)
+SetPaletteForUnit(Faye,$48)
+SetPaletteForUnit(Mae,$56)
+SetPaletteForUnit(Delthea,$8F)
+SetPaletteForUnit(Palla,$97)
+SetPaletteForUnit(Catria,$99)
+SetPaletteForUnit(Sonya,$CE)
+SetPaletteForUnit(Est,$D6)
+SetPaletteForUnit($3F,$E5)
+WORD 0 0
+ALIGN 4
+
+FalcoknightPaletteList:
+SetPaletteForUnit(Clair,$05)
+SetPaletteForUnit(Faye,$49)
+SetPaletteForUnit(Mae,$57)
+SetPaletteForUnit(Delthea,$90)
+SetPaletteForUnit(Palla,$98)
+SetPaletteForUnit(Catria,$9A)
+SetPaletteForUnit(Sonya,$CF)
+SetPaletteForUnit(Est,$D7)
+WORD 0 0
+ALIGN 4
+
+DracoKnightPaletteList:
+WORD 0 0
+ALIGN 4
+
+MagePaletteList:
+SetPaletteForUnit(Gray,$1F)
+SetPaletteForUnit(Tobin,$2E)
+SetPaletteForUnit(Kliff,$3D)
+SetPaletteForUnit(Faye,$4A)
+SetPaletteForUnit(Mae,$58)
+SetPaletteForUnit(Boey,$5E)
+SetPaletteForUnit(Saber,$6A)
+SetPaletteForUnit(Kamui,$7E)
+SetPaletteForUnit(Luthier,$85)
+SetPaletteForUnit(Delthea,$91)
+SetPaletteForUnit(DeltheaBoss,$91)
+SetPaletteForUnit(Hyas,$A5)
+SetPaletteForUnit(Deen,$C3)
+SetPaletteForUnit(Sonya,$D0)
+SetPaletteForUnit(SonyaBoss,$D0)
+WORD 0 0
+ALIGN 4
+
+SagePaletteList:
+SetPaletteForUnit(Gray,$20)
+SetPaletteForUnit(Tobin,$2F)
+SetPaletteForUnit(Kliff,$3E)
+SetPaletteForUnit(Boey,$5F)
+SetPaletteForUnit(Saber,$6B)
+SetPaletteForUnit(Kamui,$7F)
+SetPaletteForUnit(Luthier,$86)
+SetPaletteForUnit(Hyas,$A6)
+SetPaletteForUnit(Deen,$C4)
+WORD 0 0
+ALIGN 4
+
+PriestessPaletteList:
+SetPaletteForUnit(Faye,$4B)
+SetPaletteForUnit(Mae,$59)
+SetPaletteForUnit(Delthea,$92)
+SetPaletteForUnit(Sonya,$D1)
+WORD 0 0
+ALIGN 4
+
+WitchPaletteList:
+SetPaletteForUnit(Nuibaba,0xDF)
+SetPaletteForUnit(MarlaCh4,0xE0)
+SetPaletteForUnit(HestiaCh4,0xE1)
+SetPaletteForUnit(MarlaFinal,0xE0)
+SetPaletteForUnit(HestiaFinal,0xE1)
+SetPaletteForUnit(RineaEnemy,0xE2)
+WORD 0 0
+ALIGN 4
+
+ClericPaletteList:
+SetPaletteForUnit(Faye,$46)
+SetPaletteForUnit(Mae,$54)
+SetPaletteForUnit(Genny,$83)
+SetPaletteForUnit(Delthea,$8D)
+SetPaletteForUnit(Sonya,$CC)
+WORD 0 0
+ALIGN 4
+
+SaintPaletteList:
+SetPaletteForUnit(Faye,$47)
+SetPaletteForUnit(Silque,$03)
+SetPaletteForUnit(Mae,$55)
+SetPaletteForUnit(Genny,$84)
+SetPaletteForUnit(Delthea,$8E)
+SetPaletteForUnit(Sonya,$CD)
+SetPaletteForUnit(Tatiana,$D8)
+WORD 0 0
+ALIGN 4
+
+ShamanPaletteList:
+WORD 0 0
+ALIGN 4
+
+DruidPaletteList:
+WORD 0 0
+ALIGN 4
+
+CantorPaletteList:
+WORD 0 0
+ALIGN 4
+
+PiratePaletteList:
+SetPaletteForUnit(PirateCelica2,$E7) //pirate boss
+WORD 0 0
+ALIGN 4
+
+BerserkerPaletteList:
+WORD 0 0
+ALIGN 4
+
+BYTE $FF $FF $FF $FF $FF $FF $FF $FF
+ALIGN 4
+
+
+
+/*
+ *
+ * Now to hook these groups up to classIDs
+ *
+ */
+
+#define SetClassPaletteTable(classID,palette) "POIN palette"
+
+PaletteAssociationTable:
+	WORD 0 //class 0
+	SetClassPaletteTable(CelicaPriestess,NO_PALETTE)
+	SetClassPaletteTable(AlmFighter,NO_PALETTE)
+	SetClassPaletteTable(CelicaPrincess,NO_PALETTE)
+	SetClassPaletteTable(AlmHero,NO_PALETTE)
+	SetClassPaletteTable(Cavalier,CavalierPaletteList)
+	SetClassPaletteTable(Cavalier_F,CavalierPaletteList)
+	SetClassPaletteTable(Paladin,PaladinPaletteList)
+	SetClassPaletteTable(Paladin_F,PaladinPaletteList)
+	SetClassPaletteTable(Knight,ArmorPaletteList)
+	SetClassPaletteTable(0xA,ArmorPaletteList)
+	SetClassPaletteTable(Baron,BaronPaletteList)
+	SetClassPaletteTable(0xC,BaronPaletteList)
+	SetClassPaletteTable(Thief,ThiefPaletteList)
+	SetClassPaletteTable(Thief_F,ThiefPaletteList)
+	SetClassPaletteTable(Mercenary,MercPaletteList)
+	SetClassPaletteTable(0x10,NO_PALETTE)
+	SetClassPaletteTable(Myrmidon,HeroPaletteList)
+	SetClassPaletteTable(0x12,NO_PALETTE)
+	SetClassPaletteTable(0x13,NO_PALETTE)
+	SetClassPaletteTable(0x14,NO_PALETTE)
+	SetClassPaletteTable(DreadFighter,DFPaletteList)
+	SetClassPaletteTable(DreadFighter_F,DFPaletteList)
+	SetClassPaletteTable(Rogue,RoguePaletteList)
+	SetClassPaletteTable(Rogue_F,RoguePaletteList)
+	SetClassPaletteTable(Archer,ArcherPaletteList)
+	SetClassPaletteTable(Archer_F,ArcherPaletteList)
+	SetClassPaletteTable(Sniper,SniperPaletteList)
+	SetClassPaletteTable(Sniper_F,SniperPaletteList)
+	SetClassPaletteTable(BowKnight,BowKnightPaletteList)
+	SetClassPaletteTable(BowKnight_F,BowKnightPaletteList)
+	SetClassPaletteTable(WyvernRider,WyvRiderPaletteList)
+	SetClassPaletteTable(WyvernRider,WyvRiderPaletteList)
+	SetClassPaletteTable(WyvernLord,WyvLordPaletteList)
+	SetClassPaletteTable(WyvernLord,WyvLordPaletteList)
+	SetClassPaletteTable(Dracoknight,DracoKnightPaletteList)
+	SetClassPaletteTable(Dracoknight_F,DracoKnightPaletteList)
+	SetClassPaletteTable(Mage,MagePaletteList)
+	SetClassPaletteTable(Mage_F,MagePaletteList)
+	SetClassPaletteTable(Sage,SagePaletteList)
+	SetClassPaletteTable(Priestess,PriestessPaletteList)
+	SetClassPaletteTable(Witch_Rinea,WitchPaletteList)
+	SetClassPaletteTable(Witch,WitchPaletteList)
+	SetClassPaletteTable(Bishop,NO_PALETTE)
+	SetClassPaletteTable(Saint,SaintPaletteList)
+	SetClassPaletteTable(Shaman,ShamanPaletteList)
+	SetClassPaletteTable(0x2E,NO_PALETTE)
+	SetClassPaletteTable(Arcanist,DruidPaletteList)
+	SetClassPaletteTable(0x30,NO_PALETTE)
+	SetClassPaletteTable(Cantor,CantorPaletteList)
+	SetClassPaletteTable(0x32,NO_PALETTE)
+	SetClassPaletteTable(0x33,NO_PALETTE)
+	SetClassPaletteTable(0x34,NO_PALETTE)
+	SetClassPaletteTable(GoldKnight,GKPaletteList)
+	SetClassPaletteTable(GoldKnight_F,GKPaletteList)
+	SetClassPaletteTable(0x37,NO_PALETTE)
+	SetClassPaletteTable(0x38,NO_PALETTE)
+	SetClassPaletteTable(0x39,NO_PALETTE)
+	SetClassPaletteTable(0x3A,NO_PALETTE)
+	SetClassPaletteTable(0x3B,NO_PALETTE)
+	SetClassPaletteTable(0x3C,NO_PALETTE)
+	SetClassPaletteTable(Villager,VillagerPaletteList)
+	SetClassPaletteTable(Villager_F,VillagerPaletteList)
+	SetClassPaletteTable(Axeman,NO_PALETTE)
+	SetClassPaletteTable(Highlander,NO_PALETTE)
+	SetClassPaletteTable(Brigand,NO_PALETTE)
+	SetClassPaletteTable(Pirate,PiratePaletteList)
+	SetClassPaletteTable(Pirate_F,PiratePaletteList)
+	SetClassPaletteTable(Berserker,BerserkerPaletteList)
+	SetClassPaletteTable(Berserker_F,BerserkerPaletteList)
+	SetClassPaletteTable(0x46,NO_PALETTE)
+	SetClassPaletteTable(Woodcutter,NO_PALETTE)
+	SetClassPaletteTable(PegasusKnight,PegKnightPaletteList)
+	SetClassPaletteTable(FalcoKnight,FalcoknightPaletteList)
+	SetClassPaletteTable(Cleric,ClericPaletteList)
+	SetClassPaletteTable(0x4B,NO_PALETTE)
+	SetClassPaletteTable(0x4C,NO_PALETTE)
+	SetClassPaletteTable(0x4D,NO_PALETTE)
+	SetClassPaletteTable(Soldier,SoldierPaletteList)
+	SetClassPaletteTable(Necromancer,NO_PALETTE)
+	SetClassPaletteTable(0x50,NO_PALETTE)
+	SetClassPaletteTable(0x51,NO_PALETTE)
+	SetClassPaletteTable(0x52,NO_PALETTE)
+	SetClassPaletteTable(0x53,NO_PALETTE)
+	SetClassPaletteTable(0x54,NO_PALETTE)
+	SetClassPaletteTable(0x55,NO_PALETTE)
+	SetClassPaletteTable(0x56,NO_PALETTE)
+	SetClassPaletteTable(0x57,NO_PALETTE)
+	SetClassPaletteTable(0x58,NO_PALETTE)
+	SetClassPaletteTable(0x59,NO_PALETTE)
+	SetClassPaletteTable(0x5A,NO_PALETTE)
+	SetClassPaletteTable(0x5B,NO_PALETTE)
+	SetClassPaletteTable(0x5C,NO_PALETTE)
+	SetClassPaletteTable(0x5D,NO_PALETTE)
+	SetClassPaletteTable(0x5E,NO_PALETTE)
+	SetClassPaletteTable(0x5F,NO_PALETTE)
+	SetClassPaletteTable(0x60,NO_PALETTE)
+	SetClassPaletteTable(0x61,NO_PALETTE)
+	SetClassPaletteTable(0x62,NO_PALETTE)
+	SetClassPaletteTable(0x63,NO_PALETTE)
+	SetClassPaletteTable(0x64,NO_PALETTE)
+	SetClassPaletteTable(0x65,NO_PALETTE)
+	SetClassPaletteTable(0x66,NO_PALETTE)
+	SetClassPaletteTable(0x67,NO_PALETTE)
+	SetClassPaletteTable(0x68,NO_PALETTE)
+	SetClassPaletteTable(0x69,NO_PALETTE)
+	SetClassPaletteTable(0x6A,NO_PALETTE)
+	SetClassPaletteTable(0x6B,NO_PALETTE)
+	SetClassPaletteTable(0x6C,NO_PALETTE)
+	SetClassPaletteTable(0x6D,NO_PALETTE)
+	SetClassPaletteTable(0x6E,NO_PALETTE)
+	SetClassPaletteTable(0x6F,NO_PALETTE)
+	SetClassPaletteTable(0x70,NO_PALETTE)
+	SetClassPaletteTable(0x71,NO_PALETTE)
+	SetClassPaletteTable(0x72,NO_PALETTE)
+	SetClassPaletteTable(0x73,NO_PALETTE)
+	SetClassPaletteTable(0x74,NO_PALETTE)
+	SetClassPaletteTable(0x75,NO_PALETTE)
+	SetClassPaletteTable(0x76,NO_PALETTE)
+	SetClassPaletteTable(0x77,NO_PALETTE)
+	SetClassPaletteTable(0x78,NO_PALETTE)
+	SetClassPaletteTable(0x79,NO_PALETTE)
+	SetClassPaletteTable(0x7A,NO_PALETTE)
+	SetClassPaletteTable(0x7B,NO_PALETTE)
+	SetClassPaletteTable(0x7C,NO_PALETTE)
+	SetClassPaletteTable(0x7D,NO_PALETTE)
+	SetClassPaletteTable(0x7E,NO_PALETTE)
+	SetClassPaletteTable(0x7F,NO_PALETTE)
+	WORD 0 //term
