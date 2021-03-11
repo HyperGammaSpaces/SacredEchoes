@@ -5,6 +5,12 @@ ALIGN 4
 Alm_Map_Move:
 #incbin "Dmp/AlmFighterMove.dmp"
 ALIGN 4
+Alm2_Map_Stand:
+#incbin "Dmp/almt2-stand.dmp"
+ALIGN 4
+Alm2_Map_Move:
+#incbin "Dmp/almt2-move.dmp"
+ALIGN 4
 
 Celica_Map_Stand:
 #incbin "Dmp/CelicaT1Standing.dmp"
@@ -12,7 +18,6 @@ ALIGN 4
 Celica_Map_Move:
 #incbin "Dmp/CelicaT1Moving.dmp"
 ALIGN 4
-
 Celica2_Map_Stand:
 #incbin "Dmp/celica2-stand.dmp"
 ALIGN 4
@@ -26,47 +31,98 @@ ALIGN 4
 Cav_Map_Move:
 #incbin "Dmp/Cav-move.dmp"
 ALIGN 4
-
 Fcav_Map_Stand:
 #incbin "Dmp/FCav-stand.dmp"
 ALIGN 4
 Fcav_Map_Move:
 #incbin "Dmp/FCav-move.dmp"
 ALIGN 4
-
 Pal_Map_Stand:
-#incbin "Dmp/pal-stand.dmp"
+#incbin "Dmp/paladin-stand.dmp"
 ALIGN 4
 Pal_Map_Move:
-#incbin "Dmp/pal-move.dmp"
+#incbin "Dmp/paladin-move.dmp"
 ALIGN 4
-
 Fpal_Map_Stand:
-#incbin "Dmp/FPal-stand.dmp"
+#incbin "Dmp/paladinf-stand.dmp"
 ALIGN 4
 Fpal_Map_Move:
-#incbin "Dmp/FPal-move.dmp"
+#incbin "Dmp/paladinf-move.dmp"
+ALIGN 4
+GoldKnight_Map_Stand:
+#incbin "Dmp/GKnightStanding.dmp"
+ALIGN 4
+GoldKnight_Map_Move:
+#incbin "Dmp/GKnightMoving.dmp"
 ALIGN 4
 
 Soldier_Map_Stand:
-#incbin "Dmp/soldier-stand.dmp"
+#incbin "Dmp/soldier2-stand.dmp"
 ALIGN 4
 Soldier_Map_Move:
-#incbin "Dmp/soldier-move.dmp"
+#incbin "Dmp/soldier2-move.dmp"
 ALIGN 4
-
 Knight_Map_Stand:
-#incbin "Dmp/SalvKnightStanding_Sprite_Spear_16x32.dmp"
+#incbin "Dmp/knight-stand.dmp"
 ALIGN 4
 Knight_Map_Move:
-#incbin "Dmp/SalvKnightMoving_Sprite_Spear.dmp"
+#incbin "Dmp/knight-move.dmp"
 ALIGN 4
-
 Baron_Map_Stand:
 #incbin "Dmp/baron-stand.dmp"
 ALIGN 4
 Baron_Map_Move:
 #incbin "Dmp/baron-move.dmp"
+ALIGN 4
+Fiend_Map_Stand:
+#incbin "Dmp/fiend-stand.dmp"
+ALIGN 4
+Fiend_Map_Move:
+#incbin "Dmp/fiend-move.dmp"
+ALIGN 4
+
+MercF_Map_Stand:
+#incbin "Dmp/mercf-stand.dmp"
+ALIGN 4
+MercF_Map_Move:
+#incbin "Dmp/mercf-move.dmp"
+ALIGN 4
+Myrm_Map_Stand:
+#incbin "Dmp/myrm-stand.dmp"
+ALIGN 4
+Myrm_Map_Move:
+#incbin "Dmp/myrm-move.dmp"
+ALIGN 4
+DF_Map_Stand:
+#incbin "Dmp/df-stand.dmp"
+ALIGN 4
+DF_Map_Move:
+#incbin "Dmp/df-move.dmp"
+ALIGN 4
+FDF_Map_Stand:
+#incbin "Dmp/fdf-stand.dmp"
+ALIGN 4
+FDF_Map_Move:
+#incbin "Dmp/fdf-move.dmp"
+ALIGN 4
+
+Archer_Map_Stand:
+#incbin "Dmp/archer-stand.dmp"
+ALIGN 4
+Archer_Map_Move:
+#incbin "Dmp/archer-move.dmp"
+ALIGN 4
+ArcherF_Map_Stand:
+#incbin "Dmp/archerf-stand.dmp"
+ALIGN 4
+ArcherF_Map_Move:
+#incbin "Dmp/archerf-move.dmp"
+ALIGN 4
+BowKnight_Map_Stand:
+#incbin "Dmp/ranger-stand.dmp"
+ALIGN 4
+BowKnight_Map_Move:
+#incbin "Dmp/ranger-move.dmp"
 ALIGN 4
 
 Cleric_Map_Stand:
@@ -75,14 +131,12 @@ ALIGN 4
 Cleric_Map_Move:
 #incbin "Dmp/cleric-move.dmp"
 ALIGN 4
-
 Saint_Map_Stand:
 #incbin "Dmp/saint_stand.dmp"
 ALIGN 4
 Saint_Map_Move:
 #incbin "Dmp/saint_move.dmp"
 ALIGN 4
-
 Nomah_Map_Stand:
 #incbin "Dmp/nomah-stand.dmp"
 ALIGN 4
@@ -96,7 +150,6 @@ ALIGN 4
 SageF_Map_Move:
 #incbin "Dmp/priestess-move.dmp"
 ALIGN 4
-
 Witch_Map_Stand:
 #incbin "Dmp/witch-stand.dmp"
 ALIGN 4
@@ -110,7 +163,6 @@ ALIGN 4
 ThiefF_Map_Move:
 #incbin "Dmp/ThiefFMove.dmp"
 ALIGN 4
-
 RogueF_Map_Stand:
 #incbin "Dmp/FRogue-stand.dmp"
 ALIGN 4
@@ -118,13 +170,18 @@ RogueF_Map_Move:
 #incbin "Dmp/FRogue-move.dmp"
 ALIGN 4
 
+Dancer_Map_Stand:
+#incbin "Dmp/dancer-stand.dmp"
+ALIGN 4
+Dancer_Map_Move:
+#incbin "Dmp/dancer-move.dmp"
+ALIGN 4
 Villager_Map_Stand:
 #incbin "Dmp/VillagerMStand.dmp"
 ALIGN 4
 Villager_Map_Move:
 #incbin "Dmp/VillagerMMove.dmp"
 ALIGN 4
-
 Villager_F_Map_Stand:
 #incbin "Dmp/VillagerFStand.dmp"
 ALIGN 4
@@ -132,32 +189,23 @@ Villager_F_Map_Move:
 #incbin "Dmp/VillagerFMove.dmp"
 ALIGN 4
 
-Myrm_Map_Stand:
-#incbin "Dmp/myrm-stand.dmp"
-ALIGN 4
-Myrm_Map_Move:
-#incbin "Dmp/myrm-move.dmp"
-ALIGN 4
-
-DF_Map_Stand:
-#incbin "Dmp/df-stand.dmp"
-ALIGN 4
-DF_Map_Move:
-#incbin "Dmp/df-move.dmp"
-ALIGN 4
-
-FDF_Map_Stand:
-#incbin "Dmp/fdf-stand.dmp"
-ALIGN 4
-FDF_Map_Move:
-#incbin "Dmp/fdf-move.dmp"
-ALIGN 4
-
 MagSeal_Map_Stand:
 #incbin "Dmp/mseal-stand.dmp"
 ALIGN 4
 MagSeal_Map_Move:
 #incbin "Dmp/mseal-move.dmp"
+ALIGN 4
+Jedah_Map_Stand:
+#incbin "Dmp/jedah-stand.dmp"
+ALIGN 4
+Jedah_Map_Move:
+#incbin "Dmp/jedah-move.dmp"
+ALIGN 4
+Duma_Map_Stand:
+#incbin "Dmp/duma-stand.dmp"
+ALIGN 4
+Duma_Map_Move:
+#incbin "Dmp/duma-move.dmp"
 ALIGN 4
 
 WyvRider_Map_Stand:
@@ -181,27 +229,18 @@ Brigand_Map_Move:
 #incbin "Dmp/brigand_moving.dmp"
 ALIGN 4
 
-PirateF_Map_Stand:
-#incbin "Dmp/fpirate-stand.dmp"
-ALIGN 4
-PirateF_Map_Move:
-#incbin "Dmp/fpirate-move.dmp"
-ALIGN 4
-
 Woodcutter_Map_Stand:
 #incbin "Dmp/woodcutter-stand.dmp"
 ALIGN 4
 Woodcutter_Map_Move:
 #incbin "Dmp/woodcutter-move.dmp"
 ALIGN 4
-
 Axeman_Map_Stand:
 #incbin "Dmp/axeman-stand.dmp"
 ALIGN 4
 Axeman_Map_Move:
 #incbin "Dmp/axeman-move.dmp"
 ALIGN 4
-
 Highlander_Map_Stand:
 #incbin "Dmp/highlander-stand.dmp"
 ALIGN 4
@@ -209,6 +248,12 @@ Highlander_Map_Move:
 #incbin "Dmp/highlander-move.dmp"
 ALIGN 4
 
+PirateF_Map_Stand:
+#incbin "Dmp/fpirate-stand.dmp"
+ALIGN 4
+PirateF_Map_Move:
+#incbin "Dmp/fpirate-move.dmp"
+ALIGN 4
 BerserkerF_Map_Stand:
 #incbin "Dmp/fzerk-stand.dmp"
 ALIGN 4
@@ -216,19 +261,7 @@ BerserkerF_Map_Move:
 #incbin "Dmp/fzerk-move.dmp"
 ALIGN 4
 
-GoldKnight_Map_Stand:
-#incbin "Dmp/GKnightStanding.dmp"
-ALIGN 4
-GoldKnight_Map_Move:
-#incbin "Dmp/GKnightMoving.dmp"
-ALIGN 4
 
-BowKnight_Map_Stand:
-#incbin "Dmp/ranger-stand.dmp"
-ALIGN 4
-BowKnight_Map_Move:
-#incbin "Dmp/ranger-move.dmp"
-ALIGN 4
 
 BonewalkerBow_Map_Stand:
 #incbin "Dmp/bownewalker.dmp"
@@ -242,17 +275,29 @@ ALIGN 4
 Entombed_Map_Stand:
 #incbin "Dmp/zombie2.dmp"
 ALIGN 4
+Hellhound_Map_Stand:
+#incbin "Dmp/hellhound-stand.dmp"
+ALIGN 4
+Kerberos_Map_Stand:
+#incbin "Dmp/kerberos-stand.dmp"
+ALIGN 4
 Gargoyle_Map_Stand:
 #incbin "Dmp/garg1.dmp"
 ALIGN 4
 Deathgoyle_Map_Stand:
 #incbin "Dmp/garg2.dmp"
 ALIGN 4
+Deathgoyle_Map_Move:
+#incbin "Dmp/garg2-move.dmp"
+ALIGN 4
 Bael_Map_Stand:
 #incbin "Dmp/spider1.dmp"
 ALIGN 4
 ElderBael_Map_Stand:
 #incbin "Dmp/spider2.dmp"
+ALIGN 4
+Fleet_Map_Stand:
+#incbin "Dmp/pushwall-fleetfix.dmp"
 ALIGN 4
 
 //Animation pointers
@@ -318,9 +363,9 @@ PUSH
 	//Wyvern Lord
 	WyvLord_Map_AP:
 	#incbin "APData/AP_4_1.romtcs.ap.bin"
-	//FE8 Dancer
+	//FE7 Dancer
 	Dancer_Map_AP:
-	#incbin "APData/AP_6_1.romtcs.ap.bin"
+	#incbin "APData/AP_5_1.romtcs.ap.bin"
 	//Bards (anyone can refresh, compatible with AP1)
 	Bard_Map_AP:
 	#incbin "APData/AP_7_1.romtcs.ap.bin"
