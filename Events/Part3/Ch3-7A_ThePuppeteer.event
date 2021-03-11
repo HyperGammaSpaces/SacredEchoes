@@ -205,7 +205,7 @@ EnemyUnits:
 	UNIT 0x93 Arcanist Tatarrah Level(4,Enemy,True) [17,14] 0x00 0x00 0x0 0x00 [Selene,Mire,Physic] NeverMoveAI
 	UNIT 0x92 Shaman Tatarrah Level(16,Enemy,True) [16,14] DropItem 0x00 0x0 0x00 [Miasma,Elixir] NeverMoveAI
 	UNIT 0x87 Myrmidon Tatarrah Level(7,Enemy,True) [16,16] 0x00 0x00 0x0 0x00 [Rapier,IronShield] AttackInRangeAI
-    UNIT 0x94 Mage_F Tatarrah Level(9,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+    UNIT 0x94 Witch Tatarrah Level(6,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	
 	//Frontline
 	UNIT 0x8A WyvernRider Tatarrah Level(12,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
@@ -262,15 +262,16 @@ DeltheaWakesUp:
 		ENUT DeltheaLocalFlag
 		MUSI
 		CAM1 DeltheaBoss
-		STAL 20
+		STAL 30
 		FlashCursor(DeltheaBoss, 60)
-		STAL 20
 		Text(Ch3_7A_DeltheaWakesUp)
+		NoFade
 		STAL 20
-		MOVE 0x08 DeltheaBoss [10,19]
-		ENUN
 		CUSN DeltheaBoss
 		STAL 20
+		SVAL 0x2 DeltheaBoss
+		CALL Warp_Out_Effect
+		STAL 0x08
 		DISA DeltheaBoss
 		MUNO
 	LABEL 0x2

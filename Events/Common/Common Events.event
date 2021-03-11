@@ -31,6 +31,71 @@ UnifiedBEXPCaller:
 	//REMA
 	NOTIFY BEXP_Notif_Text 0x0 0x0
 	ENDA
+	
+ALIGN 4
+//usage example: 
+//AREA 0x15 HiddenItem(itemID) [20,7] [23,10]
+
+#define HiddenItem(itemID) "SVAL 0x2 0x0; CALL Area_Allegiance_Check; CHECK_LUCK 0xFFFF; SADD 0xC2; SVAL 0x3 itemID; CALL HiddenItem_Check; BNE 0x81C5 0xC 0x0; CALL Area_Unset_Flag; LABEL 0x81C5; EVBIT_T 0x7; ENDA"
+
+Area_Allegiance_Check:
+	CHECK_ALLEGIANCE 0xFFFF
+	BEQ 0x0 0xC 0x2
+	CALL Area_Unset_Flag
+	LABEL 0x0
+	ENDA
+
+Area_Unset_Flag:
+	CHECK_EVENTID
+	SADD 0xC2
+	ENUF_SLOT2
+	EVBIT_T 0x7
+	ENDB
+
+HiddenItem_Check:
+	CHECK_CLASS 0xFFFF
+	SVAL 0x7 Thief
+	BEQ 0x0 0xC 0x7
+	SVAL 0x7 Thief_F
+	BEQ 0x0 0xC 0x7
+	SVAL 0x7 Rogue
+	BEQ 0x0 0xC 0x7
+	SVAL 0x7 Rogue_F
+	BEQ 0x0 0xC 0x7
+	RANDOMNUMBER 0x64
+	BLT 0x1 0x2 0xC
+	LABEL 0x0
+	CALL $591F40
+	GIVEITEMTO 0xFFFF
+	SVAL 0xC 0x1
+	GOTO 0x2
+	LABEL 0x1
+	SVAL 0xC 0x0
+	LABEL 0x2
+	ENDA
+
+ALIGN 4
+Warp_In_Effect:
+	REMU 0xFFFD
+	CAM1 0xFFFD
+	CHECK_COORDS 0xFFFD
+	SADD 0xCB
+	WARP_IN
+	STAL2 0xA
+	REVEAL 0xFFFD
+	_0x412F 0x0
+	ENDA
+
+ALIGN 4
+Warp_Out_Effect:
+	CAM1 0xFFFD
+	CHECK_COORDS 0xFFFD
+	SADD 0xCB
+	WARP_OUT
+	STAL2 0x14
+	REMU 0xFFFD
+	_0x412F 0x0
+	ENDA
 
 ALIGN 4
 #define EventMenuCommand(aTextId) "WORD 0; SHORT aTextId 0; WORD 0; POIN (0x04F448+1); WORD 0; POIN (prEventMenuCommandEffect+1); WORD 0 0 0"

@@ -99,7 +99,7 @@ Bosses:
 
 BerkutRinea:
 	UNIT BerkutPaladin Paladin 0x00 Level(1, Enemy, 1) [9, 4] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT RineaEnemy 0x76 0x00 Level(1, Enemy, 1) [8, 4] 0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT RineaEnemy Dancer 0x00 Level(1, Enemy, 1) [8, 4] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT SlaydePaladin Paladin	Desaix Level(3, Enemy, 1) [10,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
 	UNIT FernandEnemy1 Cavalier 0x00 Level(1, Enemy, 1) [7, 4] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
@@ -369,16 +369,6 @@ DesaixDies:
 	ENUN
 	DISA SlaydePaladin
 	MUNO
-	ENDA
-
-Warp_Out_Effect:
-	CAM1 0xFFFD
-	CHECK_COORDS 0xFFFD
-	SADD 0xCB
-	WARP_OUT
-	STAL2 0x14
-	REMU 0xFFFD
-	_0x412F 0x0
 	ENDA
 
 CelicaZofiaCastleEvent:
