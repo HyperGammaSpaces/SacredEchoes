@@ -1,0 +1,126 @@
+#ifndef StandingMapSpriteTable
+	#define StandingMapSpriteTable $08AF880
+#endif
+
+#define StandingMapSprite(aId, unknown, size, gfxPointer) "PUSH; ORG StandingMapSpriteTable + (aId * 8); SHORT unknown size; POIN gfxPointer; POP"
+
+#define MapSprite16x16 0
+#define MapSprite16x32 1
+#define MapSprite32x32 2
+
+StandingMapSprite($00,$02,MapSprite16x16,Celica_Map_Stand)
+StandingMapSprite($01,$00,MapSprite16x32,Alm_Map_Stand)
+StandingMapSprite($02,$02,MapSprite16x16,Celica2_Map_Stand)
+StandingMapSprite($03,$02,MapSprite16x32,$1b7cd4) //alm 2
+
+StandingMapSprite($04,$02,MapSprite16x32,Cav_Map_Stand)
+StandingMapSprite($05,$02,MapSprite16x32,Fcav_Map_Stand)
+StandingMapSprite($06,$02,MapSprite16x32,Pal_Map_Stand)
+StandingMapSprite($07,$02,MapSprite16x32,Fpal_Map_Stand)
+StandingMapSprite($08,$02,MapSprite16x32,GoldKnight_Map_Stand)
+
+StandingMapSprite($09,$02,MapSprite16x16,Soldier_Map_Stand)
+StandingMapSprite($0a,$02,MapSprite16x32,Knight_Map_Stand)
+StandingMapSprite($0b,$03,MapSprite32x32,Baron_Map_Stand)
+
+StandingMapSprite($0c,$02,MapSprite16x16,$1b8504) //thief
+StandingMapSprite($0d,$02,MapSprite16x16,ThiefF_Map_Stand)
+StandingMapSprite($0e,$02,MapSprite16x16,$1bb1b8) //rogue
+StandingMapSprite($0f,$02,MapSprite16x16,RogueF_Map_Stand)
+
+StandingMapSprite($10,$02,MapSprite16x16,$1b8678) //merc
+StandingMapSprite($11,$02,MapSprite32x32,$1b87b0) //merc f
+StandingMapSprite($12,$02,MapSprite16x16,Myrm_Map_Stand)
+StandingMapSprite($13,$02,MapSprite16x16,Myrm_Map_Stand)
+StandingMapSprite($14,$02,MapSprite16x16,DF_Map_Stand)
+StandingMapSprite($15,$02,MapSprite16x16,FDF_Map_Stand)
+
+StandingMapSprite($16,$02,MapSprite16x16,$1b9234) //archer
+StandingMapSprite($17,$02,MapSprite16x16,$1b934c) //archer f
+StandingMapSprite($18,$02,MapSprite16x16,$1b9460) //sniper
+StandingMapSprite($19,$02,MapSprite16x16,$1b95a4) //sniper f
+StandingMapSprite($1a,$02,MapSprite16x32,BowKnight_Map_Stand)
+
+StandingMapSprite($1b,$02,MapSprite16x32,WyvRider_Map_Stand)
+StandingMapSprite($1c,$02,MapSprite16x32,WyvLord_Map_Stand)
+StandingMapSprite($1d,$02,MapSprite16x32,$1bc774) //peg
+StandingMapSprite($1e,$02,MapSprite16x32,$1bc918) //falco
+StandingMapSprite($1f,$03,MapSprite16x32,$1ba068) //dracoknight
+
+StandingMapSprite($20,$02,MapSprite16x16,$1ba274) //mage
+StandingMapSprite($21,$02,MapSprite16x16,$1ba3ac) //mage f
+StandingMapSprite($22,$02,MapSprite16x16,$1ba4ec) //sage
+StandingMapSprite($23,$02,MapSprite16x16,SageF_Map_Stand)
+StandingMapSprite($24,$02,MapSprite16x32,$1ba7a8) //rinea
+StandingMapSprite($25,$02,MapSprite16x16,Witch_Map_Stand)
+
+StandingMapSprite($26,$02,MapSprite16x16,Nomah_Map_Stand)
+StandingMapSprite($27,$02,MapSprite16x16,Cleric_Map_Stand)
+StandingMapSprite($28,$02,MapSprite16x16,Saint_Map_Stand)
+
+StandingMapSprite($29,$02,MapSprite16x16,$1badcc) //shaman
+StandingMapSprite($2a,$02,MapSprite16x16,$1baf24) //druid
+StandingMapSprite($2b,$02,MapSprite16x16,MagSeal_Map_Stand)
+
+StandingMapSprite($2c,$02,MapSprite16x16,Woodcutter_Map_Stand)
+StandingMapSprite($2d,$02,MapSprite16x16,Villager_Map_Stand)
+StandingMapSprite($2e,$02,MapSprite16x16,Villager_F_Map_Stand)
+
+StandingMapSprite($2f,$02,MapSprite16x16,Axeman_Map_Stand)
+StandingMapSprite($30,$02,MapSprite16x32,Highlander_Map_Stand)
+StandingMapSprite($31,$02,MapSprite16x16,Brigand_Map_Stand)
+StandingMapSprite($32,$02,MapSprite16x16,$1bc0f0) //pirate
+StandingMapSprite($33,$02,MapSprite16x16,PirateF_Map_Stand)
+StandingMapSprite($34,$02,MapSprite16x32,$1bc26c) //zerker
+StandingMapSprite($35,$02,MapSprite16x32,BerserkerF_Map_Stand)
+
+StandingMapSprite($36,$02,MapSprite16x16,$1bcf54) //dancer
+
+StandingMapSprite($37,$03,MapSprite16x16,$1bd1e0) //necro
+StandingMapSprite($38,$03,MapSprite32x32,$1bd2dc) //fleet
+StandingMapSprite($39,$02,MapSprite32x32,$1bd444) //phantom
+StandingMapSprite($3a,$03,MapSprite16x16,Revenant_Map_Stand)
+StandingMapSprite($3b,$03,MapSprite16x16,Entombed_Map_Stand)
+StandingMapSprite($3c,$03,MapSprite16x16,$1bd864) //bone
+StandingMapSprite($3d,$03,MapSprite16x16,BonewalkerBow_Map_Stand)
+StandingMapSprite($3e,$03,MapSprite16x16,$1bdad0) //wight
+StandingMapSprite($3f,$03,MapSprite16x16,$1bdc10) //wight bow
+StandingMapSprite($40,$03,MapSprite16x16,Bael_Map_Stand)
+StandingMapSprite($41,$03,MapSprite16x16,ElderBael_Map_Stand)
+StandingMapSprite($42,$03,MapSprite16x32,$1be048) //cyclops
+StandingMapSprite($43,$03,MapSprite16x32,$1be1d8) //hellhound
+StandingMapSprite($44,$03,MapSprite32x32,$1be2ec) //kerberos
+StandingMapSprite($45,$03,MapSprite16x32,$1be504) //tarvos
+StandingMapSprite($46,$03,MapSprite16x32,Chiron_Map_Stand)
+StandingMapSprite($47,$03,MapSprite16x32,$1be988) //mogall
+StandingMapSprite($48,$00,MapSprite16x32,$1beb04) //arch mogall
+StandingMapSprite($49,$03,MapSprite16x32,$1bec84) //gorgon
+StandingMapSprite($4a,$03,MapSprite16x16,$1bb2dc) //egg
+StandingMapSprite($4b,$03,MapSprite16x16,$1bedd0) //egg 2
+StandingMapSprite($4c,$03,MapSprite16x32,Gargoyle_Map_Stand)
+StandingMapSprite($4d,$03,MapSprite16x32,Deathgoyle_Map_Stand)
+StandingMapSprite($4e,$03,MapSprite16x32,$1bf29c) //necrodragon
+StandingMapSprite($4f,$03,MapSprite32x32,$1bb910) //dragon
+StandingMapSprite($50,$03,MapSprite32x32,$1bf418) //duma
+StandingMapSprite($51,$02,MapSprite16x32,$1bf690)
+StandingMapSprite($52,$02,MapSprite16x32,$1bf824)
+StandingMapSprite($53,$02,MapSprite16x32,$1bf9b8)
+StandingMapSprite($54,$02,MapSprite16x32,$1bfb4c)
+StandingMapSprite($55,$02,MapSprite16x32,$1bfcc0)
+StandingMapSprite($56,$02,MapSprite16x32,$1bfe34)
+StandingMapSprite($57,$02,MapSprite16x16,$1bffa8)
+StandingMapSprite($58,$02,MapSprite16x16,$1c0078)
+StandingMapSprite($59,$02,MapSprite16x16,$1c014c)
+StandingMapSprite($5a,$02,MapSprite16x16,$1c022c)
+StandingMapSprite($5b,$02,MapSprite16x16,$1c0310)
+StandingMapSprite($5c,$02,MapSprite16x32,$1c03ec)
+StandingMapSprite($5d,$02,MapSprite16x16,$1c0500)
+StandingMapSprite($5e,$02,MapSprite16x16,$1c05d8)
+StandingMapSprite($5f,$02,MapSprite16x16,$1c07bc)
+StandingMapSprite($60,$02,MapSprite16x32,$1c0840)
+StandingMapSprite($61,$02,MapSprite16x32,$1c0934)
+StandingMapSprite($62,$00,MapSprite16x16,$1c0a70)
+
+StandingMapSprite($66,$00,MapSprite16x16,$1c068c) //light rune
+SHORT $FFFF $0 $0 $0 //term
+
