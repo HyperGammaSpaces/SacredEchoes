@@ -119,6 +119,10 @@ PUSH
 	
 	ORG $27a88
 	jumpToHack(HandlePhantomSpriteHover)
+
+	ORG $90DC4
+	//fix phantom palette on unit menu
+	SHORT $E005
 	
 	ORG $784A2
 	BL(StatscreenHoverLadder) //forces hover anims to check "use light rune palette"
@@ -126,6 +130,8 @@ PUSH
 	ORG $87194 //statscreen freespace
 	StatscreenHoverLadder:
 	replaceWithHack(HandleStatscreenHover)
+	//UnitMenuLadder:
+	//replaceWithHack(HandlePhantomUnitMenu)
 POP
 
 StartMultiSummon:
