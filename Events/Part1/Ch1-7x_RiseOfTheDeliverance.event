@@ -11,7 +11,7 @@ POIN Ch1_7x_LocationBasedEvents
 POIN Ch1_7x_MiscBasedEvents
 POIN Ch1_7x_Dunno Ch1_7x_Dunno Ch1_7x_Dunno
 POIN Ch1_7x_Tutorial
-POIN Ch1_7x_Ballista1 Ch1_7x_Ballista2
+POIN TrapList1 TrapList2
 POIN Ch1_7x_Units1 Ch1_7x_Units1
 POIN $0 $0 $0 $0 $0 $0
 POIN Ch1_7x_BeginningScene Ch1_7x_EndingScene
@@ -48,7 +48,7 @@ Ch1_7x_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	DefeatAll(Ch1_7x_EndingScene)
 	MournQuoteAFEVS
-	AREA 0x8 ArriveAtExitCheck [10,22] [14,22]
+	AREA 0x8 ArriveAtExitCheck [11,22] [13,22]
 	AFEV
 
 Ch1_7x_Dunno:
@@ -57,11 +57,14 @@ Ch1_7x_Dunno:
 Ch1_7x_Tutorial:
 	END_MAIN
 
-Ch1_7x_Ballista1:
+TrapList1:
+	BlueSigil(11,22)
+	BlueSigil(12,22)
+	BlueSigil(13,22)
 	BLST
 	ALIGN 4
 
-Ch1_7x_Ballista2:
+TrapList2:
 	BLST
 	ALIGN 4
 
