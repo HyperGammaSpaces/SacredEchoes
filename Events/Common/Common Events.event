@@ -2,6 +2,20 @@
 //CAM2 is to center the camera into the given tile
 //(excect when it's for units, then it's reversed, because EA raws weirdness)
 
+#define MaxTurns(TurnNum) "256 - TurnNum"
+#define InfiniteTurnEventPlayer(flag,event,turn) "TurnEventPlayer(flag,event,turn,MaxTurns(turn))"
+#define SetAI(unitid,ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24); CHAI unitid"
+#define SetAI(x,y,ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24); CHAI [x,y]"
+#define SetAI(unitid,ai1,ai2)"SVAL 0x1 ai1|(ai2<<8); CHAI unitid"
+#define SetAI(x,y,ai1,ai2) "SVAL 0x1 ai1|(ai2<<8); CHAI [x,y]"
+#define DoorFlag(flag,doorx,doory) "DOOR flag [doorx,doory] 0x12"
+#define CenterTextbox(textid) "CenterTutorialTextBox; TUTORIALTEXTBOXSTART; TEXTSHOW textid; TEXTEND"
+#define CharacterConditionalDialog(character,alivetext,deadtext) "CHECK_ALIVE character; BEQ 1 0x0 0xC; Text(alivetext); GOTO 2; LABEL 1; Text(deadtext); LABEL 2"
+#define IfAliveDialog(character,alivetext,label) "CHECK_ALIVE character; BEQ label 0x0 0xC; Text(alivetext); LABEL label"
+#define CameraCursor(character) "CAM1 character; STAL 20; FlashCursor(character,60)"
+#define FadeOutMusic "MUSCMID 0x7FFF"
+
+
 ALIGN 4
 #include "REDAs.event"
 ALIGN 4

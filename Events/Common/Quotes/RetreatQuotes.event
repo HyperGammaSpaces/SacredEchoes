@@ -1,6 +1,7 @@
 #define SetRetreatQuoteEntry(UnitID,ChapterID,TextID) "BYTE UnitID ChapterID ;SHORT TextID "
 
 ALIGN 4
+EscapeQuoteTable:
 RetreatQuoteTable:
 SetRetreatQuoteEntry(Lukas,0xff,Lukas_Retreat)
 SetRetreatQuoteEntry(Gray,0xff,Gray_Retreat)

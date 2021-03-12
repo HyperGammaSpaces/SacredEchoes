@@ -56,12 +56,12 @@ pActionRoutineTable:
 	ActionRoutine(0x32271)        // 0x10 Visit
 	ActionRoutine(0x32271)        // 0x11 Sieze
 	ActionRoutine(0x2FC49, True)  // 0x12 Door
-	NoActionRoutine               // 0x13 ?
+	NoActionRoutine               // 0x13 Bridge?
 	ActionRoutine(0x2FC49, True)  // 0x14 Chest
 	ActionRoutine(0x2FFB5, True)  // 0x15 Pick
-	NoActionRoutine               // 0x16 ?
-	NoActionRoutine               // 0x17 Post Shopping
-	NoActionRoutine               // 0x18 ?
+	NoActionRoutine               // 0x16 Armory
+	NoActionRoutine               // 0x17 Vendor
+	NoActionRoutine               // 0x18 Secret
 	ActionRoutine(0x32345)        // 0x19 Arena
 	ActionRoutine(0x2FC49, True)  // 0x1A Use Item
 	NoActionRoutine               // 0x1B ?
@@ -69,7 +69,7 @@ pActionRoutineTable:
 	NoActionRoutine               // 0x1D Post Trade/Supply
 	NoActionRoutine               // 0x1E Wait 2 (needs more research)
 	NoActionRoutine               // 0x1F Backing out (from a trap?)
-	NoActionRoutine               // 0x20 ?
+	NoActionRoutine               // 0x20 Raid
 	NoActionRoutine               // 0x21 Ride Ballista
 	NoActionRoutine               // 0x22 Exit Ballista
 	NoActionRoutine               // 0x23 FREE
