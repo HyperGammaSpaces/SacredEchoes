@@ -9,6 +9,11 @@ ALIGN 4
 ALIGN 4
 
 PUSH
+//modify CHAI to be able to change 3 and 4, not just 1 and 2
+
+	ORG $10644
+	jumpToHack(New_CHAI)
+
 // healer ai fix; stop them from healing max hp units
 // changes bhi to bhs
     ORG $3FC9D
@@ -33,9 +38,14 @@ PUSH
 	POIN DefensiveTerrainList
 POP
 
+ALIGN 4
+New_CHAI:
+#incbin "New_CHAI.dmp"
+
 DefensiveTerrainList:
 BYTE $0B $1D $1F $39 //ID -1: gate, pillar, throne, supply
 WORD $0
+
 
 /*
 ALIGN 4
