@@ -37,9 +37,9 @@ SShrine_LocationBasedEvents:
 	Chest(PureWater, 2, 21)
 	#ifdef LION_HEADS_ENABLED
 		//Lion heads
-		LionHead(LionHeadSylvanRes, 9, 30)
-		LionHead(LionHeadSylvanHP, 6, 3)
-		LionHead(LionHeadSylvanExp, 9, 3)
+		LionHead(LionheadLocalTrigger1,LionHeadSylvanRes, 9, 30)
+		LionHead(LionheadLocalTrigger2,LionHeadSylvanHP, 6, 3)
+		LionHead(LionheadLocalTrigger2,LionHeadSylvanExp, 9, 3)
 	#endif
 	LOCA
 

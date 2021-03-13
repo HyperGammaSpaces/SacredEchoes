@@ -27,9 +27,11 @@ DShrine_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
+	Chest(Elixir, 12, 2)
+	Chest(PureWater, 16, 2)
 	#ifdef LION_HEADS_ENABLED
 		//Lion heads
-		LionHead(LionHeadDragonshrine, 14, 2)
+		LionHead(LionheadLocalTrigger1,LionHeadDragonshrine, 14, 2)
 	#endif
 	LOCA
 

@@ -57,6 +57,7 @@ BYTE $FF $FF //terminator
 #define LionHead(offset,locaX,locaY)       "LOCA 0 offset [locaX,locaY] 0x10"
 #define LionHead(eventID,offset,locaX,locaY)       "LOCA eventID offset [locaX,locaY] 0x10"
 
+//TODO: make the trigger actually fire
 #define LionHeadHpUp(LionID,Trigger) "EVBIT_MODIFY 0x4; CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_MaxHP; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x96 0xC 0x1; GiveMaxHP(0xFFFF,0x1); BEQ 0x97 0xC 0x0; SOUN ItemGetSFX; NOTIFY Text_MaxHPUp 0x0 0x0; IncrementLionheadUses(LionID); ENUF Trigger; GOTO 0x99; LABEL 0x96; ENUF Trigger; GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; ENUF Trigger; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; EVBIT_MODIFY 0x0; NoFade; ENDA"
 #define LionHeadStrUp(LionID,Trigger) "EVBIT_MODIFY 0x4; CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Strength; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x96 0xC 0x1; GiveStrength(0xFFFF,0x1); BEQ 0x97 0xC 0x0; SOUN ItemGetSFX; NOTIFY Text_StrUp 0x0 0x0; IncrementLionheadUses(LionID); ENUF Trigger; GOTO 0x99; LABEL 0x96; ENUF Trigger; GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; ENUF Trigger; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; EVBIT_MODIFY 0x0; NoFade; ENDA"
 #define LionHeadSklUp(LionID,Trigger) "EVBIT_MODIFY 0x4; CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Skill; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x96 0xC 0x1; GiveSkill(0xFFFF,0x1); BEQ 0x97 0xC 0x0; SOUN ItemGetSFX; NOTIFY Text_SklUp 0x0 0x0; IncrementLionheadUses(LionID); ENUF Trigger; GOTO 0x99; LABEL 0x96; ENUF Trigger; GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_CantDrink; TEXTEND; REMA; ENUF Trigger; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; EVBIT_MODIFY 0x0; NoFade; ENDA"
@@ -116,7 +117,8 @@ LionHeadMilaTempleExp:
 LionHeadDragonshrine:
 	//Resurrection, dummy out for now
 	//LionHeadRevival(gLionHeadDragonshrine,LionheadLocalTrigger1)
-	//ALIGN 4
+	LionHeadExpUp(gLionHeadMilaTemple,LionheadLocalTrigger1)
+	ALIGN 4
 LionHeadExampleEvent:
 	//Check uses, if 0 goto 0x99
 	CheckLionheadUses(gLionHeadDragonshrine)

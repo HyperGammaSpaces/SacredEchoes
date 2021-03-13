@@ -31,8 +31,8 @@ CHES 0x9 Vulnerary [1,17] 0x14
 
 #ifdef LION_HEADS_ENABLED
 	//Lion heads
-	LionHead(LionHeadSeaboundSkill, 12, 5)
-	LionHead(LionHeadSeaboundHP, 14, 5)
+	LionHead(LionheadLocalTrigger2,LionHeadSeaboundSkill, 12, 5)
+	LionHead(LionheadLocalTrigger2,LionHeadSeaboundHP, 14, 5)
 #endif
 LOCA
 
