@@ -33,7 +33,14 @@ Ch3_6A_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
+	Seize(19,1)
+	Village(8, Village1Event, 23,7)
 	LOCA
+	
+ALIGN 4
+Village1Event:
+	VillageEventItem(Ch3_6A_VillageText,0x05,HolyBow) //make fear mountain give holy lance instead
+	ENDA
 
 Ch3_6A_MiscBasedEvents:
 	CauseGameOverIfLordDies

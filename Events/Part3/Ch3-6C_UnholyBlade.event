@@ -19,6 +19,7 @@ Ch3_6C_ThisChapter:
 
 Ch3_6C_TurnBasedEvents:
 	TurnEventPlayer(0x0,LoadBrigands,5)
+	TurnEventPlayer(0x0,GargsSpawn,8)
 	TurnEventPlayer(0x0,FortMercsSpawn,10)
 	TurnEventPlayer(0x0,FortMagesSpawn,12)
 	TURN
@@ -28,6 +29,9 @@ LoadBrigands:
 	ReinforcementEvent(ReinforcementsTopRight)
 	NoFade
 	ENDA
+	
+GargsSpawn:
+	ReinforcementEvent(GargsTopLeft)
 	
 FortMercsSpawn:
 	ReinforcementEvent(FortTop)
@@ -63,11 +67,11 @@ Ch3_6C_Ballista2:
 	ALIGN 4
 
 Village1Event:
-	VillageEventItem(Placeholder_Text,0x05,Longbow) 
+	VillageEventItem(Ch3_6C_VillageText1,0x05,Longbow) 
 	ENDA
 	
 Village2Event:
-	VillageEventItem(Placeholder_Text,0x05,SilverLance) 
+	VillageEventItem(Ch3_6C_VillageText2,0x05,CoralRing) 
 	ENDA
 
 Ch3_6C_Units1:
@@ -131,6 +135,10 @@ ReinforcementsTopLeft:
 	
 ReinforcementsTopRight:
 	UNIT 0x64 Brigand	Blake Level(17, Enemy, True) [27,3]	0x00 0x00 0x1 REDA27R3 [IronAxe,TorchItem] BrigandAI
+	UNIT
+	
+GargsTopLeft:
+	UNIT 0xBB Gargoyle	Blake Level(17, Enemy, True) [0,0]	0x00 0x00 0x1 REDA0R0 [IronLance] NoAI
 	UNIT
 	
 //Two forts could spawn some guys too? [13,2] and [15,2]
