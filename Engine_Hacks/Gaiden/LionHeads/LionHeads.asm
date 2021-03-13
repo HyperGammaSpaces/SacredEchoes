@@ -94,10 +94,14 @@ LoadLionheadsLoop:
 	cmp  r3, #0x18 @datasize
 	bge  LoadLionheads_End
 	ldrb r2, [r1, r3]
+	cmp  r2, #0x5
+	bge  FoundCorruptedSaveData
 	strb r2, [r0]
 	add  r0, #0x1
 	add  r3, #0x1
 	b    LoadLionheadsLoop
+FoundCorruptedSaveData:
+	bl InitLionheadsForNewSavefile
 LoadLionheads_End:
 	pop  {r0}
 	bx   r0
