@@ -376,6 +376,7 @@ ldr r0,=ReturnPoint_ForceAnims1
 b ForceAnims_GoBack
 
 ForceAnims_RetFalse:
+ldr r3,=0x0203E104
 ldr r0,=ReturnPoint_ForceAnims2
 
 ForceAnims_GoBack:

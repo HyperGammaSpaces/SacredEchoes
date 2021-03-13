@@ -24,9 +24,36 @@
 		ORG $1A174
 		jumpToHack(TrapRework_NewRefreshTrapFogVision)
 	
+		/*
+		ORG $59A2B4 //MapMain "call new child proc TerrainHealLoop"
+		POIN NewTerrainHealLoopProc
+		*/
+	
 		ORG $02e470
 		jumpToHack(TrapRework_NewUpdateAllLightRunes)	
 	POP
+	
+	/*
+	ALIGN 4
+	NewTerrainHealLoopProc:
+		PROC_CALL_ROUTINE(TrapRework_NewUpdateAllLightRunes|1)	
+		PROC_CALL_ROUTINE($8035E21) 
+
+	PROC_LABEL(0)
+		PROC_CALL_ROUTINE($8035E51)
+		PROC_CALL_ROUTINE($8035ED9)
+		PROC_YIELD
+
+		PROC_CALL_ROUTINE($8035EFD)
+		PROC_YIELD
+
+		PROC_CALL_ROUTINE($8035F41)
+
+	PROC_LABEL(1)
+		PROC_CALL_ROUTINE($8035F6D)
+		PROC_GOTO(0)
+	PROC_END
+	*/
 	
 	ALIGN 4
 	TrapInitFromEventsJumpTable: //functions here get the pointer to trap data in  events in r5(!)

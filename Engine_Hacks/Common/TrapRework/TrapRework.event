@@ -135,6 +135,13 @@
 	TrapBreakableTerrainListEnd
 	
 
+	//This is here to satiate a hardcoded requirement if heal tiles are not installed.
+	#ifndef HEAL_TILES
+	HealTileTrapIDLink:
+	WORD 0
+	#endif // HEAL_TILES
+
+	
 	//Example usages
 	//#include "Modules/DragonVeins/DragonVeins.event"
 	#include "Modules/HealTiles/HealTiles.event"
