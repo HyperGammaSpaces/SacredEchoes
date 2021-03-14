@@ -41,7 +41,7 @@ Ch3_6A_LocationBasedEvents:
 	
 ALIGN 4
 Village1Event:
-	VillageEventItem(Ch3_6A_VillageText,0x05,HolyBow) //make fear mountain give holy lance instead
+	VillageEventMoney(Ch3_6A_VillageText,0x05,3000) 
 	ENDA
 
 Ch3_6A_MiscBasedEvents:
@@ -77,18 +77,18 @@ Ch3_6A_Units1:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,10] 0x00 0x00 0x1 REDA1R7 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [0,10] 0x00 0x00 0x1 REDA3R7 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [0,10] 0x00 0x00 0x1 REDA3R5 [BaseLance] NoAI
 	UNIT
 
 BrigandUnit:
-	UNIT 0x65 Brigand 0x0 Level(13,Enemy,True) [24,1] 0x00 0x00 1 REDA24R1 [IronAxe] BrigandAI
+	UNIT 0x65 Brigand 0x0 Level(15,Enemy,True) [24,1] 0x00 0x00 1 REDA24R1 [SteelAxe] BrigandAI
 	UNIT
 
 WitchUnits:
 	UNIT 0x86 Witch 0x0 Level(3,Enemy,True) [6,1] 0x00 0x00 1 REDA6R1 [Fire, HolyRing] AttackInRangeAI
-	UNIT 0x86 Witch 0x0 Level(3,Enemy,True) [10,2] 0x00 0x00 1 REDA10R2 [Nosferatu, MageRing] AttackInRangeAI
+	UNIT 0x86 Witch 0x0 Level(3,Enemy,True) [10,2] 0x00 0x00 1 REDA10R2 [Nosferatu, CoralRing] AttackInRangeAI
 	UNIT
 
 EnemyUnits:
@@ -139,16 +139,22 @@ SkirmishEnemies:
 Ch3_6A_BeginningScene:
 
 	MUSC 0x25
-	LOAD2 0x1 CutsceneUnits
-	ENUN
-	SetBackground(0x1D)
-	Text(Ch3_6A_OpeningText)
-
-	FADI 60
-	REMA
-	CLEA 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
+	CAM1 [1,10]
+	SetBackground(0x1D)
+	Text(Ch3_6A_OpeningText)
+	ClearBackgroundSmooth
+	
+	STAL 20
+	LOAD2 0x1 CutsceneUnits
+	ENUN
+	CAM1 Gazelle
+	FlashCursor(Gazelle,60)
+	Text(Ch3_6A_OpeningText_2)
+
+	FADI 60
+	CLEA 0x0
 	LOAD3 0x0 Ch3_6A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	GotoPrepScreen
@@ -160,12 +166,15 @@ Ch3_6A_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A6Completed
 	EVBIT_MODIFY 0x0
-	MUSC 0x31
-	SetBackground(0x1D)
+	MUSC 0x32
+	SetBackground(0x04)
 	Text(Ch3_6A_EndingText)
-	
-	//scene change
+	SVAL 0x3 HolyBow //make fear mountain give holy lance instead
+	GIVEITEMTO Alm
 	FADI 2
+	
+	STAL 20
+	//scene change (todo: add LOMA and BROWNBOXTEXT)
 	MUSC 0x7FFF
 	SetBackground(0x0E)
 	TEXTSTART
@@ -181,5 +190,6 @@ Ch3_6A_EndingScene:
 	Text(Ch3_6A_RigelCastle_2)
 	STARTFADE
 	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	//TODO: LOMA back to this map 0x14 before MNCH to avoid breaking save screen
 	MNCH 0x15
 	ENDA
