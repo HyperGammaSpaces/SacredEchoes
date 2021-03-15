@@ -230,10 +230,42 @@ Ch3_5A_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A5Completed
 	EVBIT_MODIFY 0x0
-	MUSC 0x31
-	SetBackground(0x1D)
-	Text(Ch3_5A_EndingText)
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	
+	MUSC 0x3A //Silent Ground
+	SetBackground(0x44)
+	
+	//check Gray and Tobin
+	CHECK_ALIVE Gray
+	BEQ 6 0x0 0xC
+		CHECK_ALIVE Tobin
+		BEQ 6 0x0 0xC
+		//check mathilda
+			CHECK_EXISTS Mathilda
+			BEQ 7 0x0 0xC
+			CHECK_ALIVE Mathilda
+			BEQ 7 0x0 0xC
+			//alive: 
+			Text(Ch3_5A_EndingText)
+			GOTO 9
+			//dead: 
+			LABEL 7
+			Text(Ch3_5A_EndingText_NoMathilda)
+			GOTO 9
+	LABEL 6
+	//else
+		//check mathilda
+		CHECK_EXISTS Mathilda
+		BEQ 8 0x0 0xC
+		CHECK_ALIVE Mathilda
+		BEQ 8 0x0 0xC
+			//alive: 
+			Text(Ch3_5A_EndingText_NoGray)
+			GOTO 9
+			LABEL 8
+			//dead:
+			Text(Ch3_5A_EndingText_EveryoneDied)
+	
+	LABEL 9
+	FADI 2
 	MNCH 0x14
 	ENDA

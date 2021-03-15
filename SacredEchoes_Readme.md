@@ -2,7 +2,7 @@
 
 This is a demake of Fire Emblem Echoes: Shadows of Valentia on the GBA. It includes reworked maps and a few new characters, as well as a few changes to the writing and game mechanics. Otherwise, it is largely faithful to the original games. The base game is FE8U.
 
-Currently playable halfway through Act 3 (4 maps complete on Alm route, 3 maps complete and one split-map partially complete on Celica's. 6 total story maps remaining, plus two dungeons on the way.)
+Currently playable through Act 3, with 28 story maps, 1 gaiden chapter, and 5 repeatable maps.
 
 Specifically:
 
@@ -151,6 +151,20 @@ Spell lists are largely the same as SoV.
   - Lv10 Thunder
   - Lv15 Sagittae
   - Lv1 (Sage) Heal
+- Delthea (Mage)
+  - Lv1 Fire
+  - Lv1 Aura
+  - Lv11 Seraphim
+  - Lv16 Ragnarok
+  - Lv1 (Priestess) Heal
+  - Lv10 (Priestess) Rewarp
+- Delthea (Cleric)
+  - Lv1 Nosferatu
+  - Lv1 Heal
+  - Lv11 Seraphim
+  - Lv16 Aura
+  - Lv1 (Saint) Fortify
+  - Lv10 (Saint) Rewarp
 - Hyas (uses Atlas's)
   - Lv1 Fire
   - Lv8 Sagittae
@@ -198,14 +212,12 @@ This hack does not make use of the skill system, but there are some skills which
 
 Some things are still under development for later releases.
 
-- There is a gaiden chapter planned based around the Rise of the Deliverance DLC; however I've been unable to find text dumps from the original mission and thus there was not enough time to implement text or events.
 - There is a placeholder fix for enemies attacking with magic when they've run out of HP to cast. Witches are not yet able to teleport. The next release will address various AI fixes and features.
 - The game has only been balanced for Normal mode (hard mode results may vary). It is recommended to only play on Easy or Normal for now.
 - Some support conversations have been implemented while others are still placeholders.
 - Some sprites and animations have not been finalized yet and are using placeholders. (Axeman, Seraphim)
 - Expel is visually kind of buggy but should not affect gameplay.
-- Irma is using a placeholder portrait.
-- Some chapters are not yet playable and will be released in the next update. (3-5A, 3-6A, 3-7A, 3-6C, 3-7C, Dragon Shrine, Sylvan Shrine)
+- Some issues have been reported with Rewarp.
 
 #Credits
 
@@ -215,13 +227,20 @@ Some things are still under development for later releases.
 - Stan's Movement Skills
 - laqieer's world map installation utilities
 - Assorted small tweaks and patches by Stan, Tequila, Crazycolorz5, Vennobennu, Leonarth, 7743 and aera
+  - Extra shout out to Stan and Snakey1 for finally squashing the remaining bugs in the magic system!
 - Music hacking utilities by Sme and Alusq
 - Music arrangements based on Echoes OST and on Gaiden MIDI remixes by 雨原
   - "Lord of a Dead Empire" arrangement by Mycahel
 - NGMansion for original save expansion patch; Stan for Expanded Modular Save and Tequila for Convoy Split
+- Portraits:
+  - Jedah and Duma by L95
+  - Zopyrus by RandomWizard and Levin64
+  - all others by hypergammaspaces or IS
 - Battle Animations: 
-  - Alm, Villagers, Sniper, Pirate (F), Dread Fighter, Gold Knight and Cape General by Nura
+  - Alm, Villagers, Snipers, Pirate (F), Dread Fighter, Wyvern Lord, Gold Knight and Cape General by Nura
   - Pirate (M) Repalette by Wan
+  - Berserker (M) by BwdYeti
+  - Berserker (F) by serif, eCut, Skitty, and Pikmin1211
   - Soldier by Alusq
   - Mercenary and Armor Knight by Team SALVAGED
   - Caped Baron by Iscaneus, Nuramon and Leo_Link
@@ -234,28 +253,34 @@ Some things are still under development for later releases.
   - Rogue Repalette by Pikmin1211, Maiser6, Ukelele, SD9k, Temp, Black Mage and Wan
   - Priestess by hypergammaspaces and Jono the Red
   - Bow Knight by Spud
-  - Celica by RedBean
+  - Celica (Promoted and Unpromoted) by RedBean
   - Witch by Luerock and Pikmin1211
-  - Archer and Woodcutter by DerTheVaporeon
+  - Shaman Staff by Temp and Shin19
+  - Archers and Woodcutter by DerTheVaporeon
   - Axeman by DerTheVaporeon, Aruka, Kenpuhu
   - Barbarian by Orihara_Saki (Bow edit by me)
   - Pegasus Knight by OreoStyx
   - Falcoknight by TBA
-- Map sprites and class cards by flasuban, Tordo45, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, and Team SALVAGED
+  - Wyvern Rider by flasuban and eCut
+  - Dracoknight repalette by Feaw and St jack
+  - Fiend (Generic King by Huichelaar, DerTheVaporeon, L95 and Pikmin1211)
+  - Deathgoyle by Teraspark and L95
+  - Duma mapsprite by SHYUTERz, HIROTO, and SHIRMER
+- Map sprites and class cards by flasuban, Tordo45, SkidMarc25, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, Snewping, MeatOfJustice, DerTheVaporeon, FEier, and Team SALVAGED
 - Battle palettes by Hypergammaspaces and Dancer_A
-- LordGlenn's Cipher icons for weapon ranks
+- LordGlenn's Cipher icons for weapon ranks, weapon icons for Regalia weapons
 - Cardcafe’s Echoes item icons and FEier's Weapon icons
 - New support writing contributed by Meadows, Flare and Ese
   - Meadows: Alm/Tobin, Kliff/Gray, Kliff/Silque, Tobin/Clair
   - Flare: Clive/Mathilda B and A
 - Snakey1's REDA helpers, Support rework, MSS fixes and event cleanup
-- RandomWizard for text formatting help
-- Pikmin1211 for eventing and enemy placement on "The Warship" and "Zofia Harbor"
+- RandomWizard for boss conversations and text formatting help, and "The Siege" map
+- Levin64 for story writing assistance
+- Pikmin1211 for eventing and enemy placement on "The Warship", "Zofia Harbor", "Invaders Descend" and "The Siege"
 - ZoramineFae for "The Warship" map
-- RandomWizard for "The Siege" map
 - KrashBoomBang for "Invaders Descend", "Unholy Blade" and Sylvan Shrine map
-- Dancer_A for Grieth's Citadel and Nuibaba's Abode maps
-- Sme for assistance with summoner AI
+- Dancer_A for Grieth's Citadel and Nuibaba's Abode maps, boss conversations
+- Sme for TrapRework and assistance with summoner AI
 - Vennobennu's Improved FE8 Boat/Village Tileset
 - DerTheVaporeon's improved cave tileset
 - Improved Stronghold tileset by ZoramineFae, flasuban, and N426

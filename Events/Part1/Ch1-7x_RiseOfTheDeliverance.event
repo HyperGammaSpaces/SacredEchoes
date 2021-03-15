@@ -143,6 +143,7 @@ Ch1_7x_BeginningScene:
 	
 	SetBackground(0x26)
 	Text(Ch1_7x_OpeningText)
+	ClearBackground
 	
 	STAL 20
 	CAM1 [12, 0]
@@ -152,6 +153,7 @@ Ch1_7x_BeginningScene:
 	
 	SetBackground(0x26)
 	Text(Ch1_7x_BossIntro)
+	ClearBackground
 
 	//Enemy ambush
 	CAM1 [12, 11]
