@@ -158,6 +158,8 @@ PUSH
 	BYTE Worldmap_Node_Count
 	ORG $BD03A
 	BYTE Worldmap_Node_Count
+	ORG $BD1FE
+	BYTE Worldmap_Node_Count
 	
 	//Map size scroll controls
 	//Check out B9472 for where to break to troubleshoot.
