@@ -47,7 +47,7 @@ ChangeGuardAI_2:
 	ENDA
 
 Ch1_5_CharacterBasedEvents:
-	CharacterEvent(8, TalkToClair, Lukas, Clair)
+	CharacterEventBothWays(8, TalkToClair, Lukas, Clair)
 	CharacterEvent(8, TalkToClairWithAlm, Alm, Clair)
 	CharacterEvent(8, TalkToClairWithGray, Gray, Clair)
 	CHAR
@@ -158,7 +158,7 @@ Ch1_5_Units1:
 	UNIT
 
 ClairJoins:
-	UNIT Clair PegasusKnight 0x00 Level(1, NPC, 1) [16,11] 0x00 0x00 0x0 0x00 [ChestKey] [0x06, 0x0A, 0x00, 0x00] //Should make her retreat towards Alm.
+	UNIT Clair PegasusKnight 0x00 Level(1, NPC, 1) [16,11] 0x00 0x00 0x0 0x00 [ChestKey] ClairTalkAI //Should make her retreat towards Lukas.
 	UNIT
 
 CutsceneUnits:
