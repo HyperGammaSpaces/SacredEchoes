@@ -30,6 +30,12 @@ PUSH
   //lords and thieves can pick
   ORG $23E8C
   jumpToHack(MultiPick)
+  ORG $40C6A
+  BYTE $17 //new rogue id
+  
+  //continue map bgm into battle if same ID
+  ORG $71A68
+  jumpToHack(ContinueBattleBGM)
 
 POP
 
@@ -38,8 +44,9 @@ MultiPick:
 #incbin "Multipick/doubleRogueSkillFE8.dmp"
 POIN LockpickClassTable
 
+ALIGN 4
 LockpickClassTable:
-BYTE 0x01 0x02 0x03 0x04 0x17 0x18 0x33 0x00 
+BYTE 0x01 0x02 0x03 0x04 0x17 0x18 0x00 
 ALIGN 4
   
 //Talk and Support don't end your turn
@@ -98,3 +105,6 @@ music10change:
 //Walking Sounds Fix
 ALIGN 4
 #include "WalkingSoundsFix/Installer.event"
+
+ContinueBattleBGM:
+#incbin "ContinueBattleBGM/ContinueBattleBGM.dmp"

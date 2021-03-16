@@ -127,6 +127,32 @@ PUSH
     ORG 0x1A774
     SHORT 0x2000 0
 	
+	//Fix issue with playtime over 100 hours
+	ORG $AA8B4
+	SHORT $4370 $1A24 $802C $1C20 $E003
+	
+	//Allow saving in tower/ruins maps
+	ORG $9500A
+	SHORT $46C0 $46C0 $E005
+	//(alternately, BYTE $XX 38 $YY where X = unsaveable range start and Y = length)
+	
+	//Evaluate completion data for all chapters
+	ORG $A4404
+	SHORT $2001 $4770 //mov r0, #1; bx lr
+	
+	//Crash prevention for ending clear turn list
+	ORG $B78CC
+	SHORT $4800 $4687
+	POIN FixDrawClearturnGlitch|1
+	
+	//ChapterID to not call save menu on when MNCH'd to
+	ORG $9DEC
+	BYTE $38
+	
+	//Fix Aircalibur SFX
+	ORG $224CB0
+	SHORT $2A50 $0858 $0006 $0006 $2A6C $0858 $0006 $0006
+	
 	//tutorial killer
 	ORG $0E120
 	SHORT $0
@@ -136,3 +162,9 @@ POP
 ALIGN 4
 CutsceneImportantUnitsTable:
 BYTE Lukas Clair Clive Mathilda Saber Mae Conrad Nomah Mycen 0x00
+
+ALIGN 4
+FixDrawClearturnGlitch:
+SHORT $6818 $0640 $E004 $4906 $4288 $DA02 $4682 $4902 $4708 $4902 $4708 $46C0
+POIN $B78D5 $B7B17
+WORD 0x4f

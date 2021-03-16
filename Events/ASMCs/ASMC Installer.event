@@ -14,3 +14,17 @@ RemoveItemFromAnyASMC:
 
 #define RemoveItemFromAny(itemID) "SHORT $0D40 itemID; POIN RemoveItemFromAnyASMC+1"
 
+ALIGN 4
+Change_AI_All:
+#incbin "change_ai_all.dmp"
+
+#define ChangeAIForEnemyClass(ai1, ai2, classID) "SHORT $0540 $0001; BYTE ai1 ai2; SHORT $0 $0D40; BYTE $0 classID; POIN Change_AI_All+1"
+
+ALIGN 4
+GetTotalTurnCountASMC:
+SHORT $B500 $4B03 $469E $F800 $4B02 $6318 $BC02 $4708
+POIN $A43D8
+WORD $030004B8
+
+#define GetTotalTurnCount "SHORT $0D40 $0; POIN GetTotalTurnCountASMC+1"
+
