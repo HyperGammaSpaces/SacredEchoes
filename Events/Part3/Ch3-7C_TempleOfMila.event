@@ -210,19 +210,17 @@ Ch3_7C_EndingScene:
 	Text(Ch3_7C_EndingText_3)
 	Text(Ch3_7C_EndingText_SluiceGate)
 	EVBIT_MODIFY 0x1
-	SVAL 0x1 0x1
 	CHECK_EVENTID gChapter3A7Completed
-	IFNE 0x1 0xC 0x1
+	BEQ 0x13 0xC 0x0
 		//If gChapter3A7Completed
 		CALL Ch3_EndingScene
-		GOTO 0x2
 	//else
-	LABEL 0x1
+	LABEL 0x13
 	EVBIT_MODIFY 0x0
 	Text(Ch3_7C_EndingText_SluiceGate_NotOpen)
-	LABEL 0x2
+	FADI 2
 	
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
 	MNCH 0x1E
+	SHORT $0D40 $0
+	POIN Act3EndSwitch|1
 	ENDA

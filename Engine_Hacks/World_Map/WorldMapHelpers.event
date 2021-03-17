@@ -232,15 +232,8 @@ PUSH
 	SHORT $D00F //beq $96b6e to skip the final chapter checks for now
 	
 	//Fix Castle 2
-	ORG $A8B14
-	SHORT $2C07 $D011
-	ORG $A8B38
-	BYTE $07	//zofia castle
-	ORG $A8B3C
-	BYTE gPart2Completed
-	ORG $A8B48
-	//BYTE $07 //change as needed?
-	SHORT $46C0 $46C0
+	ORG $A8AF0
+	replaceWithHack(HandleActClosureSaves)
 	
 	//Fix fuckiness with skirmish prep screen save names
 	ORG $3412E
@@ -256,6 +249,14 @@ PUSH
 	//BYTE 0xF (first Act 3 map)
 
 POP
+
+ALIGN 4
+Part2FlagLink:
+WORD gPart2Completed
+
+Part3FlagLink:
+WORD gChapter3A7Completed
+WORD gChapter3C7Completed
 
 //Going into c1774, r0 is "next chapter ID", r1 is proc+2C, r2 is some WM event struct, r3 is next worldmap node?
 //C1788 - something to do with chapter 9 or below.
@@ -360,4 +361,3 @@ POP
 
 //And fix skirmish behavior
 #include "zMasterSkirmishLoader.event"
-
