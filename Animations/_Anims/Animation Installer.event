@@ -179,9 +179,14 @@
     #include "RogueRepalette/Male/Unarmed Installer.event"
   }
   ALIGN 4
+  Mage_Magic:
+  {
+	#include "Mage_M/Magic/Magic Installer.event"
+  }
+  ALIGN 4
   FMage_Magic:
   {
-	#include "fmage/Magic/Magic Installer.event"
+	#include "GaidenFMage/Magic/Magic Installer.event"
   }
   ALIGN 4
   FSage_Sword:
