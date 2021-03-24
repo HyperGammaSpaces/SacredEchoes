@@ -124,6 +124,8 @@ DShrine_BeginningScene:
 	ENDA
 
 DShrine_EndingScene:
+	EVBIT_MODIFY 0x1
+	ENUT gDragonShrineCompleted
 	EVBIT_MODIFY 0x0
 	SVAL 0x3 0x3
 	ASMC 0x85C65

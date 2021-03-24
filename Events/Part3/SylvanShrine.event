@@ -33,6 +33,10 @@ SShrine_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
+	Door(8, 25)
+	Door(9, 25)
+	Door(7, 11)
+	Door(8, 11)
 	Chest(Elixir, 15, 5)
 	Chest(PureWater, 2, 21)
 	#ifdef LION_HEADS_ENABLED
@@ -137,6 +141,8 @@ SShrine_BeginningScene:
 	ENDA
 
 SShrine_EndingScene:
+	EVBIT_MODIFY 0x1
+	ENUT gSylvanShrineCompleted
 	EVBIT_MODIFY 0x0
 	SVAL 0x3 0x3
 	ASMC 0x85C65
