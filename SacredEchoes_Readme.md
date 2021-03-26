@@ -241,23 +241,25 @@ Some things are still under development for later releases.
   - Pirate (M) Repalette by Wan
   - Berserker (M) by BwdYeti
   - Berserker (F) by serif, eCut, Skitty, and Pikmin1211
-  - Soldier by Alusq
+  - Soldier by flasuban, Leo_Link, Nuramon
   - Mercenary and Armor Knight by Team SALVAGED
   - Caped Baron by Iscaneus, Nuramon and Leo_Link
   - Saint by Melia
   - Bishop and Thief repalettes by Eldritch Abomination
-  - Myrmidon/Hero by Wan and Zane
+  - Myrmidon/Hero by Wan and Zane with sword by Nuramon
   - Cavaliers by Team SALVAGED and Flasuban
   - Paladins by Team SALVAGED (female edit by me)
   - Improved Brigand by flasuban
   - Rogue Repalette by Pikmin1211, Maiser6, Ukelele, SD9k, Temp, Black Mage and Wan
+  - Mage (M) by Leo_Link, L95 and Flasuban
+  - Mage (F) by hypergammaspaces and Obsidian_Daddy
   - Priestess by hypergammaspaces and Jono the Red
   - Bow Knight by Spud
   - Celica (Promoted and Unpromoted) by RedBean
   - Witch by Luerock and Pikmin1211
   - Shaman Staff by Temp and Shin19
-  - Archers and Woodcutter by DerTheVaporeon
-  - Axeman by DerTheVaporeon, Aruka, Kenpuhu
+  - Archers by DerTheVaporeon
+  - Woodcutter and Axeman by Leo_Link
   - Barbarian by Orihara_Saki (Bow edit by me)
   - Pegasus Knight by OreoStyx
   - Falcoknight by TBA
