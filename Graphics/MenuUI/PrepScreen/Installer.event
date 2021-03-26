@@ -7,8 +7,8 @@ PUSH
 	POIN MorePrepScreenTiles
 
 	//"Preparations" graphic at top
-	//ZIMAGE_POINTER=0x095E20//0xA1A4C8
-	//PALETTE_POINTER=0x095E30//0xA1B154
+	ORG $95E20
+	POIN PrepScreenGraphic
 
 POP
 
@@ -19,3 +19,7 @@ MorePrepScreenTiles:
 ALIGN 4
 PrepScreenChapterNumber:
 #incbin "chapter_number_of_prep_08A1AC88.dmp" 
+
+ALIGN 4
+PrepScreenGraphic:
+#incbin "A1A4C8.dmp" 

@@ -8,8 +8,8 @@ PUSH
 	POIN SupportBoxThingy
 	
 	//"Support" text at top
-	//ZIMAGE_POINTER=0x000A14E4//0x08A1A8E4
-	//PALETTE_POINTER=0x00095C80//0x08A1B174
+	ORG $A14E4
+	POIN SupportHeaderGraphic
 	
 POP
 
@@ -17,3 +17,6 @@ ALIGN 4
 SupportBoxThingy:
 #incbin "a1dd0c.dmp"
 
+ALIGN 4
+SupportHeaderGraphic:
+#incbin "A1A8E4.dmp"
