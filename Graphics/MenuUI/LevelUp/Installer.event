@@ -1,0 +1,14 @@
+PUSH
+
+	ORG $73D88
+	POIN NewLevelupScreenGfx
+	ORG $7EB84
+	POIN NewLevelupScreenGfx
+	ORG $803b10
+	#incbin "8035b0-levelup.pal.bin"
+
+POP
+
+ALIGN 4
+NewLevelupScreenGfx:
+#incbin "8035b0-levelup.dmp"

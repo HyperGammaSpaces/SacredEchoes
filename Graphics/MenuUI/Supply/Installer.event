@@ -1,0 +1,45 @@
+PUSH
+
+	//Weapon rank icons in Supply
+	ORG $9D2F4
+	POIN SupplyIcons1
+	ORG $9D2F8
+	POIN SupplyIcons2
+	ORG $9DC5C
+	POIN SupplyIconsForeground
+	ORG $9DC64
+	POIN SupplyIconsForegroundPal
+	ORG $9F0E0
+	POIN SupplyIconsForeground
+	ORG $9F0E8
+	POIN SupplyIconsForegroundPal
+	ORG $9D2F0
+	POIN SupplyIconsBackgroundPal
+
+	//Give/Take menu popup thingy
+	ORG $98CB4
+	POIN SupplyMenuBox
+	
+POP
+
+ALIGN 4
+SupplyMenuBox:
+#incbin "A1D7DC.dmp"
+
+ALIGN 4
+SupplyIcons1:
+#incbin "A1A0A4.img.bin"
+
+ALIGN 4
+SupplyIcons2:
+#incbin "A1A23C.img.bin"
+
+ALIGN 4
+SupplyIconsForeground:
+#incbin "A19CCC.img.bin"
+
+ALIGN 4
+SupplyIconsForegroundPal:
+#incbin "A19CCC.pal.bin"
+SupplyIconsBackgroundPal:
+#incbin "A1A0A4.pal.bin"

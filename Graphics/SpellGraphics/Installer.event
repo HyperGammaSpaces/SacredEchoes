@@ -1,0 +1,8 @@
+#include "NosResire/NosResire.event"
+#include "Fenrir/Installer.event"
+
+PUSH
+	//Mire slime
+	ORG $6F01E4
+	#incbin "slime_all_green.pal.bin"
+POP

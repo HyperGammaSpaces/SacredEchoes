@@ -1,0 +1,12 @@
+PUSH
+
+	ORG $75D14
+	POIN NewPopupGfx
+	ORG $803CB0
+	#incbin "803b30-popup.pal.bin"
+
+POP
+
+ALIGN 4
+NewPopupGfx:
+#incbin "803b30-popup.dmp"

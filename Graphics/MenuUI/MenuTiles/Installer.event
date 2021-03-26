@@ -1,10 +1,24 @@
 PUSH
+
+	ORG $4E130
+	POIN MenuStyleGraphicsTable
+	ORG $4E1B4
+	POIN MenuStyleGraphicsTable
+	ORG $4E0D0
+	POIN MenuStylePaletteTable
+
+	ORG $A1D448 //Palette of Glowy UI bar that goes underneath currently highlighted item
+	#incbin "A1D448_glowy.pal.bin"
+	
 	ORG $5B6470
 	MenuStyleGraphicsTable:
 	POIN MenuTilesGraphics
 	POIN MenuTilesGraphics
 	POIN MenuTilesGraphics
 	POIN MenuTilesGraphics
+	
+	ORG $9a8d8
+	POIN MenuTilesExtraForPrepScreen
 
 	ORG $9C7FC
 	POIN MenuTilesExtraForItemUse
@@ -21,6 +35,10 @@ POIN MenuTilesPalette+0x60
 ALIGN 4
 MenuTilesExtraForItemUse:
 #incbin "A1BAB8.dmp"
+
+ALIGN 4
+MenuTilesExtraForPrepScreen:
+#incbin "A1B730-edited.dmp"
 
 ALIGN 4
 MenuTilesGraphics:

@@ -1,14 +1,4 @@
 PUSH
-
-	ORG $4E130
-	POIN MenuStyleGraphicsTable
-	ORG $4E1B4
-	POIN MenuStyleGraphicsTable
-	ORG $4E0D0
-	POIN MenuStylePaletteTable
-
-	ORG $A1D448 //Palette of Glowy UI bar that goes underneath currently highlighted item
-	#incbin "A1D448_glowy.pal.bin"
 	
 	ORG $B3A48
 	POIN PromotionTextbox
@@ -22,10 +12,7 @@ PUSH
 	POIN MapStatusScreenGFX
 	ORG $a98dec
 	#incbin "MapStatusScreenPalette.pal.bin"
-	  
-	//phantom map palette (replaces link arena 4)
-	ORG $59EEC0
-	#incbin "59EEA0_phantom_map_pal.pal.bin"
+
 POP
 
 PromotionTextbox:

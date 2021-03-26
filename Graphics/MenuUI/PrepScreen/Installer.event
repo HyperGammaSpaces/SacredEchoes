@@ -1,18 +1,16 @@
 PUSH
 	//Prep screen stuff
-	ORG $9a8d8
-	POIN NewPrepScreenTiles
-	
 	ORG $95c78
 	POIN PrepScreenChapterNumber
 	
 	ORG $98468
 	POIN MorePrepScreenTiles
-POP
 
-ALIGN 4
-NewPrepScreenTiles:
-#incbin "A1B730-edited.dmp"
+	//"Preparations" graphic at top
+	//ZIMAGE_POINTER=0x095E20//0xA1A4C8
+	//PALETTE_POINTER=0x095E30//0xA1B154
+
+POP
 
 ALIGN 4
 MorePrepScreenTiles:

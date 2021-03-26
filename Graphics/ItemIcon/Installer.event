@@ -3,33 +3,20 @@
 
 //Item icons start at $5926F4 with $800 between each block of 32
 PUSH
-  ORG $5926F4
+  ORG ItemIconSheetOffset
   #incbin "item16.img.bin"
-  ORG $592EF4
   #incbin "item32.img.bin"
-  ORG $5936F4
   #incbin "item48.img.bin"
-  ORG $593EF4
   #incbin "item64.img.bin"
-  ORG $5946F4
   #incbin "item80.img.bin"
-  ORG $594EF4
   #incbin "item96.img.bin"
-  ORG $5956F4
   #incbin "item112.img.bin"
-  ORG $595EF4
   #incbin "item128.img.bin"
-  ORG $5966F4
   #incbin "item144.img.bin"
-  ORG $596EF4
   #incbin "item160.img.bin"
-  ORG $5976F4
   #incbin "item176.img.bin"
-  ORG $597EF4
   #incbin "item192.img.bin"
-  ORG $5986F4
   #incbin "item208.img.bin"
-  ORG $598EF4
   #incbin "item224.img.bin"
 
 // New Weapon Rank Icons
@@ -64,9 +51,10 @@ PUSH
 
   ORG $B1C74
   POIN FixedConfigGFX
+  
 POP
 
-//oh there's a whole bunch of headers from probably the unit sort menu in a compressed image at A1CDC4, then the Animation one is a compressed image at A1D288
+//oh there's a whole bunch of headers from probably the unit sort menu in a compressed image at A1CDC4, then the Animation one is a compressed image at A1D288 (func: 90d80)
 ALIGN 4
 FixedConfigGFX:
 #incbin "Config.dmp"

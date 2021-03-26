@@ -1,18 +1,17 @@
 PUSH
-	ORG $98CB4
-	POIN LittlePopupBoxThingy
-	
+
 	ORG $4D828
 	POIN SupportBoxThingy
 	ORG $A10F0
 	POIN SupportBoxThingy
 	ORG $A2434
 	POIN SupportBoxThingy
+	
+	//"Support" text at top
+	//ZIMAGE_POINTER=0x000A14E4//0x08A1A8E4
+	//PALETTE_POINTER=0x00095C80//0x08A1B174
+	
 POP
-
-ALIGN 4
-LittlePopupBoxThingy:
-#incbin "A1D7DC.dmp"
 
 ALIGN 4
 SupportBoxThingy:
