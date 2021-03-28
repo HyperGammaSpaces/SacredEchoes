@@ -5,7 +5,8 @@ ORG CURRENTOFFSET+$68;Trade_Fix_WM:
 ORG CURRENTOFFSET+$68;Untradeable_Give_All:
 ORG CURRENTOFFSET+$78;Untradeable_Steal_Fix:
 ORG CURRENTOFFSET+$3c;Untradeable_Inventory_Full:
-ORG CURRENTOFFSET+$a8;Untradeable_Supply_Fix:
+ORG CURRENTOFFSET+$54;Untradeable_Inventory_Full_2:
+ORG CURRENTOFFSET+$54;Untradeable_Supply_Fix:
 POP
 SHORT $B530 $1C0C $1C15 $8820 $4913 $468E
 BYTE $0 $F8

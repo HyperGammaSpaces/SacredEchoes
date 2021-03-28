@@ -17,7 +17,7 @@
     #define EffectiveDamageBonus 0x5
 #endif
 
-	PUSH
+PUSH
 	
 	//slayer redux
 	ORG $16C88
@@ -33,7 +33,7 @@
 	ORG $2AB12
 	BYTE EffectiveDamageBonus $30 $05 $1C
 	
-	POP
+POP
 	
 	ALIGN 4
 	Redone_Slayer:

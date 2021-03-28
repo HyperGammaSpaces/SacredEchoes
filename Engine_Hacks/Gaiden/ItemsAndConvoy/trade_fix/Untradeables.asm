@@ -18,6 +18,7 @@
 .global Trade_Fix_WM
 .global Untradeable_Give_All
 .global Untradeable_Inventory_Full
+.global Untradeable_Inventory_Full_2
 .global Untradeable_Steal_Fix
 .global Untradeable_Supply_Fix
 

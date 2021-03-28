@@ -9,12 +9,12 @@
 
 PUSH
 
-//Trade Fix
+//Trade Fix (2d72c)
 ORG $2d760
 BL(Trade_Fix)
 WORD $0
 
-//Trade Fix WM
+//Trade Fix WM (9b538)
 ORG $9b550
 BL(Trade_Fix_WM)
 
