@@ -54,7 +54,8 @@ IncrementLionheadASMC:
 	ldr  r0, =MemorySlot2
 	ldrh r0, [r0]
 	ldr  r1, =gLionHeadRAMData
-	ldrb r0, [r1, r0]
+	add  r1, r0
+	ldrb r0, [r1]
 	mov  r2, #0x1
 	sub  r0, r0, r2
 	strb r0, [r1]
