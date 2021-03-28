@@ -20,46 +20,27 @@ BL(Trade_Fix_WM)
 
 //Supply Fix
 ORG $9e872
-BL(Supply_Fix)
+BL(Untradeable_Supply_Fix)
 
 //Give All
 //ORG $1948a
 //BYTE $D2 $19			//fucks up shops, apparently
 
 ORG $9a554
-BL(Give_All)
+BL(Untradeable_Give_All)
 
 //Inventory Full
 ORG $1e19e
-BL(Inventory_Full)
+BL(Untradeable_Inventory_Full)
+ORG $1e1e2
+BL(Untradeable_Inventory_Full_2)
 
 ORG $17058
-BL(Steal_Fix)
+BL(Untradeable_Steal_Fix)
 B($17078)
 
 ORG $e17e8				//unused space in BL range
-Trade_Fix:
-#incbin "trade_fix.dmp"
-ALIGN 4
-
-Trade_Fix_WM:
-#incbin "trade_fix_WM.dmp"
-ALIGN 4
-
-Supply_Fix:
-#incbin "supply_fix.dmp"
-ALIGN 4
-
-Give_All:
-#incbin "giveall_fix2.dmp"
-ALIGN 4
-
-Inventory_Full:
-#incbin "inventory_full.dmp"
-ALIGN 4
-
-Steal_Fix:
-#incbin "steal_fix.dmp"
+#include "Untradeables.lyn.event"
 
 POP
 
