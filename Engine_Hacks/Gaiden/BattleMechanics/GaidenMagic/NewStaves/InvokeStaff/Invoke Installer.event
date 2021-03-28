@@ -152,6 +152,15 @@ PUSH
 	//phantom map palette (replaces link arena 4)
 	ORG $59EEC0
 	#incbin "Phantom/59EEA0_phantom_map_pal.pal.bin"
+	
+	//Allow NPCs to drop
+	ORG $32942
+	BYTE $80
+	
+	//1e098 - r0 is unit ptr, r1 is item short, r2 is proc
+	//hook at 1e09c
+	ORG $1E09C
+	jumpToHack(SendPhantomItemsToConvoy)
 
 	//Use with unit/class flag 0x00100000 Disable Unit Select to make phantoms unselectable. (breaks tents but lol)
 	ORG $1D570
@@ -159,6 +168,9 @@ PUSH
 	
 	ORG $27a88
 	jumpToHack(HandlePhantomSpriteHover)
+	
+	ORG $27EA8
+	BL(StatscreenHoverLadder)
 
 	ORG $90DC4
 	//fix phantom palette on unit menu

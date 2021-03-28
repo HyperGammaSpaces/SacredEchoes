@@ -1,4 +1,5 @@
 .thumb
+.equ gChapterData, 0x0202BCF0
 
 .global ReturnOne
 .global IsEirika
@@ -60,7 +61,7 @@ push {r2,r3,r14}
 				b Label2
 		CheckFaye1:
 			cmp		r1, #6			@faye
-			bne		CheckIfAlmUnit
+			bne		CheckPhantom1
 			HandleFaye1:
 				mov 	r0, #0x8c
 				ldr 	r3, =#0x8083DA8		@ CheckFlag
@@ -71,6 +72,11 @@ push {r2,r3,r14}
 				beq		NotUsable1
 					mov 	r0, #1
 					b Label2
+	CheckPhantom1:
+		cmp r1, #0x3F
+		bne CheckIfAlmUnit
+		mov r0, #1
+		b Label2
 	CheckIfAlmUnit:
 		ldr 	r3, =AlmModeUnits
 		AlmLoopStart:
@@ -90,6 +96,7 @@ Label2:
 pop {r2,r3}
 pop {r1}
 bx r1
+.align
 .ltorg
 
 
@@ -129,7 +136,7 @@ push {r2,r3,r14}
 				b Label3
 		CheckFaye2:
 			cmp		r1, #6			@faye
-			bne		CheckIfCelicaUnit
+			bne		CheckPhantom2
 			HandleFaye2:
 				mov 	r0, #0x8c
 				ldr 	r3, =#0x8083DA8		@ CheckFlag
@@ -140,6 +147,11 @@ push {r2,r3,r14}
 				bne		NotUsable2
 					mov 	r0, #1
 					b Label3
+	CheckPhantom2:
+		cmp r1, #0x3F
+		bne CheckIfCelicaUnit
+		mov r0, #1
+		b Label3
 	CheckIfCelicaUnit:
 		ldr 	r3, =CelicaModeUnits
 		CelicaLoopStart:
@@ -159,5 +171,6 @@ Label3:
 pop {r2,r3}
 pop {r1}
 bx r1
+.align
 .ltorg
 

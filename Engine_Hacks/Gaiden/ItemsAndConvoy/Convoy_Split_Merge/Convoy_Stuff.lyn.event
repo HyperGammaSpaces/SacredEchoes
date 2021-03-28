@@ -1,6 +1,7 @@
 ALIGN 4
 PUSH
-ORG CURRENTOFFSET+$38;GetConvoyPartitionStartOffset:
+ORG CURRENTOFFSET+$2c;GetConvoyPartitionSize:
+ORG CURRENTOFFSET+$c;GetConvoyPartitionStartOffset:
 ORG CURRENTOFFSET+$18;GetConvoyItemCount:
 ORG CURRENTOFFSET+$28;AddItemToConvoy:
 ORG CURRENTOFFSET+$3c;GetConvoyItemSlot:

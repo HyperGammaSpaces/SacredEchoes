@@ -30,6 +30,7 @@
 .global Delete_Proc_DisplayCombine
 
 .global CanItemBeSentToConvoy
+.global GetConvoyPartitionSize
 
 
 GetConvoyPartitionEntry:
