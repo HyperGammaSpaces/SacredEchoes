@@ -7,7 +7,7 @@ BYTE $32 $36 $36 $32 $32 $2D $2D $0F $0F $0F
 BYTE $0F $0F $0F $0F $0F $0F $0F $0F $37 $37 $36 $23
 
 //starting from cliff
-BYTE $36
+BYTE $36 $8 $8 $8 $8 $8 $F $F $F
 ORG $80D018
 
 //starting from fence
@@ -45,6 +45,6 @@ BYTE $2D $2D $2D $2D
 ORG $80CA91
 BYTE $59 $5E $12 $58 $58
 ORG $80CAB0
-BYTE $5C
+BYTE $5C $5A $5A $15 $22 $F $7 $5 $21 $21 $21 $2 $7 $3 $59 $59
 
 POP
