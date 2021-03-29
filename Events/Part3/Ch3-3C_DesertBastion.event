@@ -136,7 +136,7 @@ Reinforcements1:
 	
 Reinforcements2:
 	UNIT 0x92 Shaman	Wolff Level(11, Enemy, True) [23,9]	0x00 0x00 0x1 REDA23R9 [Miasma,Heal] MoveAndHealAI
-	UNIT 0x82 Shaman	Wolff Level(10, Enemy, True) [23,10]	0x00 0x00 0x1 REDA23R9 [Miasma] NoAI
+	UNIT 0x92 Shaman	Wolff Level(10, Enemy, True) [23,10]	0x00 0x00 0x1 REDA23R9 [Miasma] NoAI
 	UNIT
 	
 JesseJoins:
@@ -280,7 +280,15 @@ Ch3_3C_EndingScene:
 		//Sonya
 		ENUT gFightSonyaChosen
 		EVBIT_MODIFY 0x0
-		Text(Ch3_3C_EndingText_SonyaChosen)
+		CHECK_EVENTID gJesseRecruited
+		BEQ 0x4 rC r0
+		CHECK_ALIVE Jesse
+		BEQ 0x4 rC r0
+			Text(Ch3_3C_EndingText_SonyaChosen)
+			GOTO 0x5
+		LABEL 0x4
+			Text(Ch3_3C_EndingText_SonyaChosen_NoJesse)
+		LABEL 0x5
 		STARTFADE
 		FADECOLORS 0x2000 0x8 0x80 0x80 0x80
 		MNCH 0x1A
@@ -289,7 +297,15 @@ Ch3_3C_EndingScene:
 		//Deen
 		ENUF gFightSonyaChosen
 		EVBIT_MODIFY 0x0
-		Text(Ch3_3C_EndingText_DeenChosen)
+		CHECK_EVENTID gJesseRecruited
+		BEQ 0x6 rC r0
+		CHECK_ALIVE Jesse
+		BEQ 0x6 rC r0
+			Text(Ch3_3C_EndingText_DeenChosen)
+			GOTO 0x7
+		LABEL 0x6
+			Text(Ch3_3C_EndingText_DeenChosen_NoJesse)
+		LABEL 0x7
 		STARTFADE
 		FADECOLORS 0x2000 0x8 0x80 0x80 0x80
 		MNCH 0x19
