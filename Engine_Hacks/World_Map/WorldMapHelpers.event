@@ -225,7 +225,9 @@ PUSH
 	
 	//Make repeatables display as "ex. map" in prep screen - 96abc
 	ORG $96B16
-	SHORT $E015 //B($96b44)
+	SHORT $2C3E //cmp r4, #0x3e
+	SHORT $DA19 //bge 96b4e
+	SHORT $E013 //B($96b44)
 	ORG $96B46
 	BL($BD068) //check GetChapterThing instead of IsExtraMap_WorldMapSkirmishes
 	ORG $96B4C
