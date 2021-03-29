@@ -265,7 +265,7 @@ blh GetCharacterData
 pop {r2}
 str r0,[r4]
 ldrb r0,[r2,#2]
-strb r0,[r4,#0x12]
+//strb r0,[r4,#0x12] //causes the funky hp bar
 b MakeTarget_GoBack
 
 MakeTarget_GoBack:
