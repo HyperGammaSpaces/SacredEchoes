@@ -63,7 +63,7 @@ LoadSummons:
 
 	// Counter at value
 	COUNTER_SET 0 0 // reset counter
-	CAM1 0x92 // cam on summoner
+	CAM1 CantorBoss // cam on summoner
 	ENUN
 	SOUN 0x3BF // summoning SFX
 	STAL 20
@@ -151,7 +151,7 @@ EnemyUnits:
 
 	// Bosses
 	UNIT Desaix Baron 0x0 Level(5, Enemy, False) [9,2] 0x00 0x00 0x0 0x00 [Javelin, SteelSword] NeverMoveAI
-	UNIT 0x8F Cantor Desaix Level(5, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma] NeverMoveAI
+	UNIT CantorBoss Cantor Desaix Level(5, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma] NeverMoveAI
 	
 	// Cell guard knight
 	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] NeverMoveAI
@@ -206,9 +206,9 @@ EnemyUnits:
 	UNIT
 
 ZombieGroup:
-	UNIT 0xAC Bonewalker 0x92 Level(7,Enemy,True) [14,5] 0x04 0x00 0x1 REDA14R5 [BaseSword] NoAI
-	UNIT 0xAC Bonewalker 0x92 Level(7,Enemy,True) [11,6] 0x04 0x00 0x1 REDA11R6 [BaseSword] NoAI
-	UNIT 0xAC Bonewalker 0x92 Level(7,Enemy,True) [14,6] 0x04 0x00 0x1 REDA14R6 [BaseLance] NoAI
+	UNIT 0xAC Bonewalker CantorBoss Level(7,Enemy,True) [14,5] 0x04 0x00 0x1 REDA14R5 [BaseSword] NoAI
+	UNIT 0xAC Bonewalker CantorBoss Level(7,Enemy,True) [11,6] 0x04 0x00 0x1 REDA11R6 [BaseSword] NoAI
+	UNIT 0xAC Bonewalker CantorBoss Level(7,Enemy,True) [14,6] 0x04 0x00 0x1 REDA14R6 [BaseLance] NoAI
 	UNIT
 	
 ThiefReinforcement:

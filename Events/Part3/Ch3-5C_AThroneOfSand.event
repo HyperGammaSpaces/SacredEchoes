@@ -17,11 +17,37 @@ Ch3_5C_ThisChapter:
 	POIN Ch3_5C_BeginningScene Ch3_5C_EndingScene
 
 Ch3_5C_TurnBasedEvents:
+	TURN 0x0 LoadSummons [1,255] 0x0
 	TURN 0x0 LoadReinforcements [3,6] 0x0
 	TURN
 
 LoadReinforcements:
 	ReinforcementEvent(Reinforcements1)
+	NoFade
+	ENDA
+	
+LoadSummons:
+	CHECK_EVENTID 0x9 // summoner death quote
+	BNE 0 0xC 0x0 // branch label 0 if summoner dead
+	COUNTER_CHECK 0 // slot c = counter 0 value
+	SVAL 0x1 1 // number of turns between summons (1)
+	BNE 1 0xC 0x1 // branch label 1 if counter is not at value
+
+	// Counter at value
+	COUNTER_SET 0 0 // reset counter
+	CAM1 CantorBoss // cam on summoner
+	ENUN
+	SOUN 0x3BF // summoning SFX
+	STAL 20
+	ReinforcementEvent(ZombieGroup)
+	GOTO 0
+
+	LABEL 1
+	// Counter not at value
+	COUNTER_ADD 0 0 // counter 0 ++
+
+	LABEL 0
+	// event end
 	NoFade
 	ENDA
 
@@ -83,6 +109,7 @@ Ch3_5C_CutsceneUnits:
 
 EnemyUnits:
 	UNIT Grieth DreadFighter Grieth Level(5, Enemy, False) [20,2] DropItem 0x00 0x0 0x00 [SteelSword,Pegacheese] NeverMoveAI
+	UNIT CantorBoss Cantor Grieth Level(5, Enemy, True) [16,2] 0x00 0x00 0x0 0x00 [Miasma] NeverMoveAI
 	UNIT 0x8B Arcanist	Grieth Level(6, Enemy, True) [20,3]	0x00 0x00 0x0 0x00 [Miasma, Heal] ChaseOnceApproachedAI
 	UNIT 0x67 Myrmidon	Grieth Level(8, Enemy, True) [18,3]	0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
 	UNIT 0x8B Arcanist	Grieth Level(6, Enemy, True) [18,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] ChaseOnceApproachedAI
@@ -109,6 +136,12 @@ EnemyUnits:
 	UNIT 0x88 Knight	Grieth Level(8, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
 	UNIT 0x89 Sniper	Grieth Level(9, Enemy, True) [13,16]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT 0x8B Shaman	Grieth Level(13, Enemy, True) [16,16]	0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT
+
+ZombieGroup:
+	UNIT 0xAC Bonewalker CantorBoss Level(7,Enemy,True) [17,2] 0x04 0x00 0x1 REDA17R2 [BaseSword] NoAI
+	UNIT 0xAC Bonewalker CantorBoss Level(7,Enemy,True) [16,3] 0x04 0x00 0x1 REDA16R3 [BaseSword] NoAI
+	UNIT 0xAC Bonewalker CantorBoss Level(7,Enemy,True) [14,2] 0x04 0x00 0x1 REDA14R2 [BaseLance] NoAI
 	UNIT
 
 Reinforcements1:
