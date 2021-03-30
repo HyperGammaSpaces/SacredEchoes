@@ -256,7 +256,6 @@ Some things are still under development for later releases.
   - Priestess by hypergammaspaces and Jono the Red
   - Bow Knight by Spud
   - Celica (Promoted and Unpromoted) by RedBean
-  - Witch by Luerock and Pikmin1211
   - Shaman Staff by Temp and Shin19
   - Archers by DerTheVaporeon
   - Woodcutter and Axeman by Leo_Link
