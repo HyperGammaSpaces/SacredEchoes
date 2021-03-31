@@ -394,6 +394,35 @@ The following 3 bytes are at 0x1C/D/E in FE6, dunno why
 	+0x20	Set if not easy mode
 	
 ############
+BATTLE MAP GAME STATE (202bcb0)
+
+    +00 | byte  | Main loop ended flag
+    +01 | byte  | Proc tree #2 lock count (Proc tree #2 will be skipped if this is non 0)
+    +02 | byte  | Battle map gfx lock count (non zero means that map sprites and weather effects don't get updated)
+    +04 | byte  | Battle Map State bitfield
+        & 0x01 : something related to map displaying
+        & 0x02 : cursor movement gets blocked by movement range edge
+        & 0x04 : cursor movement sound played this frame (this is to make it play every other frame, I think)
+        & 0x08 : danger zone? viewing attack range?
+        & 0x10 : prep screen
+        & 0x20 : something related to sound not playing during battle?
+        & 0x40 : When set, prevents things like gaining wexp, leveling up or recieving support bonuses (Link Arena Flag Maybe?)
+        & 0x80 : 
+    +06 | short | VerticalCounter (IOReg:04000006) state at the end of the last main loop iteration
+    +0C | word  | (2 shorts) camera position from top-left of the map (in pixels)
+    +10 | word  | ??
+    +14 | word  | (2 shorts) cursor position from top-left of the map (in tiles)
+    +18 | word  | (2 shorts) previous cursor position
+    +1C | word  | (2 shorts) Another Real Camera Pos?
+    +20 | word  | (2 shorts) cursor display position from top-left of the map (in pixels)
+    +24 | word  | (2 shorts) Some Real Camera *Offset* (Used When Setting Up Backgrounds)
+    +3D | byte  | partial actions taken bitfield (actions that do not end the user's turn, but disallow cancel
+        & 0x01: take/give action taken
+        & 0x02: trade action taken
+        & 0x04: supply action taken
+        & 0x08: ride/exit ballista action taken
+
+############
 CHARACTER BATTLE STATISTIC STRUCT (203E884) (FE6: 203D524)
 More commonly known as the B/W/L table, this holds a bunch of (relatively useless) statistics that no one cares about. If you need room to save something, odds are this is a good place to start. There are 0x45 entries, each 0x10 bytes long.
 

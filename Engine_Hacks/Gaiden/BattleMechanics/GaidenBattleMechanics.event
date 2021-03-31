@@ -107,6 +107,8 @@ PUSH
   BYTE $0F 								//dummying out stone for now
   
   //Devil weapon underflow fix
+  ORG $2B6A4
+  BYTE 0x29
   ORG 0x02B6A6
   BYTE 0x88 0x42 0x22 0xdd 0x40 0x1a
   
