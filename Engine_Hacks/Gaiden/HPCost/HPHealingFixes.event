@@ -16,6 +16,14 @@ jumpToHack(MakeHPEffectsWorkOnMiss_Nos)
 ORG $52980
 SHORT $1C68 $46C0 $46C0 //Make the avoid anim proc increment gBattleAnimeCounter instead of waiting for efxHpBar to finish.
 
+//58522 devil2
+ORG $5857E //loads the 3rd byte i.e. damage. we change this to the 4th byte.
+BYTE 4
+ORG $58580
+SHORT $5E79 //ldsh instead of ldsb
+ORG $08585AC
+WORD $0203ac34 //displayed hp buffer
+
 ORG $584A0
 jumpToHack(magicmiss_showhpchange)
 
