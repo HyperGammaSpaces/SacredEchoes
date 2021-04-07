@@ -1,10 +1,15 @@
 #include "Modular_WindMagic.lyn.event"
 
+#ifndef SpellTable
+  #define SpellTable $5d4e60
+  #define setCustomSpell(index, startFunc) "PUSH; ORG SpellTable+(index*4); POIN startFunc|1; POP"
+#endif
+
 PUSH
 
 	//Add to spell effect pointer table at 5D4E60
-	ORG $5D4F6C
-	POIN StartSpellAnimForWindMagic+1
+	//Index 0x1C is Aircalibur
+	setCustomSpell(0x1C, StartSpellAnimForWindMagic)
 	
 	
 	//Since this is all vanilla data I'm overwriting vanilla procs. For custom spells, create these in freespace

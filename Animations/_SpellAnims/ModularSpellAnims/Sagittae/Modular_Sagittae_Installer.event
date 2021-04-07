@@ -1,0 +1,82 @@
+#include "Modular_Sagittae.lyn.event"
+
+#ifndef SpellTable
+  #define SpellTable $5d4e60
+  #define setCustomSpell(index, startFunc) "PUSH; ORG SpellTable+(index*4); POIN startFunc|1; POP"
+#endif
+
+PUSH
+
+	//Add to spell effect pointer table at 5D4E60
+	//Index 0x1C is unused
+	setCustomSpell(0x17, StartSpellAnimForSagittae)
+	
+	
+	//Since this is all vanilla data I'm overwriting vanilla procs. For custom spells, create these in freespace
+	ORG $5D7F00
+	Sagittae_MainProcLoop:
+	SHORT $01 $00; WORD $080DE9D0 //set name pointer
+	SHORT $03 $00; POIN SagittaeAnim_Main+1
+	WORD 0 0
+	
+	ORG $5D7F18
+	Sagittae_BG1Proc:
+	SHORT $01 $00; WORD $080DE9DC //set name pointer
+	SHORT $03 $00; POIN SagittaeAnim_BG1_Loop+1
+	WORD 0 0
+	
+	ORG $5D8020
+	Sagittae_BG2Proc:
+	SHORT $01 $00; WORD $080DEA3C //set name pointer
+	SHORT $03 $00; POIN SagittaeAnim_BG2_Loop+1
+	WORD 0 0
+	
+	ORG $5D8098
+	Sagittae_ObjProc:
+	SHORT $01 $00; WORD $080DEA64 //set name pointer
+	SHORT $03 $00; POIN SagittaeAnim_OAM_Loop+1
+	WORD 0 0
+	
+	//using lyn to get around compiler issues :)
+	ORG BGPalette_30
+	POIN Sagittae_BG1PalPointer
+	ORG BGPalette_37
+	POIN Sagittae_BG2PalPointer
+
+POP
+
+Sagittae_Palette_1:
+#incbin "evileye_green_1.pal.bin"
+
+Sagittae_Palette_2:
+#incbin "evileye_green_2.pal.bin"
+
+Sagittae_BG1PalPointer:
+POIN Sagittae_Palette_1
+POIN Sagittae_Palette_1+0x20
+POIN Sagittae_Palette_1+0x40
+POIN Sagittae_Palette_1+0x60
+POIN Sagittae_Palette_1+0x80
+POIN Sagittae_Palette_1+0xA0
+POIN Sagittae_Palette_1+0xC0
+POIN Sagittae_Palette_1+0xE0
+POIN Sagittae_Palette_1+0x100
+POIN Sagittae_Palette_1+0x120
+POIN Sagittae_Palette_1+0x140
+POIN Sagittae_Palette_1+0x160
+POIN Sagittae_Palette_1+0x180
+POIN Sagittae_Palette_1+0x1A0
+POIN Sagittae_Palette_1+0x1C0
+POIN Sagittae_Palette_1+0x1E0
+POIN Sagittae_Palette_1+0x200
+POIN Sagittae_Palette_1+0x220
+POIN Sagittae_Palette_1+0x240
+POIN Sagittae_Palette_1+0x260
+
+Sagittae_BG2PalPointer:
+POIN Sagittae_Palette_2
+POIN Sagittae_Palette_2+0x20
+POIN Sagittae_Palette_2+0x40
+POIN Sagittae_Palette_2+0x60
+POIN Sagittae_Palette_2+0x80
+POIN Sagittae_Palette_2+0xA0
