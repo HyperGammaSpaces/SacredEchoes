@@ -11,39 +11,47 @@ PUSH
 	//Index 0x1C is Aircalibur
 	setCustomSpell(0x1C, StartSpellAnimForWindMagic)
 	
-	
-	//Since this is all vanilla data I'm overwriting vanilla procs. For custom spells, create these in freespace
-	ORG $5D7F00
-	WindMagic_MainProcLoop:
-	SHORT $01 $00; WORD $080DE9D0 //set name pointer
-	SHORT $03 $00; POIN WindMagicAnim_Main+1
-	WORD 0 0
-	
-	ORG $5D7F18
-	WindMagic_BG1Proc:
-	SHORT $01 $00; WORD $080DE9DC //set name pointer
-	SHORT $03 $00; POIN WindMagicAnim_BG1_Loop+1
-	WORD 0 0
-	
-	ORG $5D8020
-	WindMagic_BG2Proc:
-	SHORT $01 $00; WORD $080DEA3C //set name pointer
-	SHORT $03 $00; POIN WindMagicAnim_BG2_Loop+1
-	WORD 0 0
-	
-	ORG $5D8098
-	WindMagic_ObjProc:
-	SHORT $01 $00; WORD $080DEA64 //set name pointer
-	SHORT $03 $00; POIN WindMagicAnim_OAM_Loop+1
-	WORD 0 0
+	ORG $6C93FC
+	#incbin "dustspin.pal.bin"
 	
 	//using lyn to get around compiler issues :)
 	ORG BGPalette_30
 	POIN WindMagic_BG1PalPointer
 	ORG BGPalette_37
 	POIN WindMagic_BG2PalPointer
+	ORG BGProcPointer_30
+	POIN WindMagic_BG1Proc
+	ORG BGProcPointer_37
+	POIN WindMagic_BG2Proc
+	ORG OAMProcPointer_45
+	POIN WindMagic_ObjProc
 
 POP
+
+ALIGN 4
+
+	WindMagic_MainProcLoop:
+	SHORT $01 $00; WORD $080DE9D0 //set name pointer
+	SHORT $03 $00; POIN WindMagicAnim_Main+1
+	WORD 0 0
+	
+
+	WindMagic_BG1Proc:
+	SHORT $01 $00; WORD $080DE9DC //set name pointer
+	SHORT $03 $00; POIN WindMagicAnim_BG1_Loop+1
+	WORD 0 0
+	
+
+	WindMagic_BG2Proc:
+	SHORT $01 $00; WORD $080DEA3C //set name pointer
+	SHORT $03 $00; POIN WindMagicAnim_BG2_Loop+1
+	WORD 0 0
+	
+
+	WindMagic_ObjProc:
+	SHORT $01 $00; WORD $080DEA64 //set name pointer
+	SHORT $03 $00; POIN WindMagicAnim_OAM_Loop+1
+	WORD 0 0
 
 WindMagic_Palette_1:
 #incbin "evileye_green_1.pal.bin"

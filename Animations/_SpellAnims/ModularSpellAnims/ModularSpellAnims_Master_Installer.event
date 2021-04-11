@@ -1,3 +1,11 @@
+#define SpellFrameData(id,duration) "SHORT id duration"
+#define SpellFrameDataLoop "SHORT $FFFE"
+#define SpellFrameDataTerm "SHORT $FFFF"
+
+#define SpellLoopProc(loopFunc) "SHORT $19 $00; WORD 0; SHORT $03 $00; POIN loopFunc+1; WORD 0 0"
 
 ALIGN 4
 #include "WindMagic/Modular_WindMagic_Installer.event"
+
+ALIGN 4
+#include "Sagittae/Modular_Sagittae_Installer.event"

@@ -17,7 +17,7 @@
 .global WindMagic_BG2PalPointer_Lyn
 
 @Vanilla data since this is a vanilla spell proof-of-concept:
-.equ WindMagic_MainProcLoop, 			0x085D7F00
+
 .equ WindMagic_BG1Proc,				0x085D7F18
 .equ WindMagic_BG2Proc,				0x085D8020
 .equ WindMagic_ObjProc,				0x085D8098
@@ -118,12 +118,12 @@ WindMagicAnim_Main:
 @image loaders
 
 WindMagicAnim_BG1_Init:
-	spell_bg_load WindMagic_BG1Proc, WindMagic_BG1FrameData, WindMagic_BG1ImagePointer, WindMagic_BG1MeleeTSA, WindMagic_BG1RangeTSA, WindMagic_BG1PalPointer, storePalette=0, storeBgTiles=0, relativeToOpponent=1
+	spell_bg_load WindMagic_BG1Proc, WindMagic_BG1FrameData, WindMagic_BG1ImagePointer, WindMagic_BG1MeleeTSA, WindMagic_BG1RangeTSA, WindMagic_BG1PalPointer, storePalette=0, storeBgTiles=0, relativeToOpponent=1, tileCount=0x86, leftShift=0xE8, rightShift=0x18
 	.align
 	.ltorg
 
 WindMagicAnim_BG2_Init:
-	spell_bg_load WindMagic_BG2Proc, WindMagic_BG2FrameData, WindMagic_BG2ImagePointer, WindMagic_BG2MeleeTSA, WindMagic_BG2RangeTSA, WindMagic_BG2PalPointer, storePalette=WindMagic_BG2Palette, storeBgTiles=0, relativeToOpponent=1
+	spell_bg_load WindMagic_BG2Proc, WindMagic_BG2FrameData, WindMagic_BG2ImagePointer, WindMagic_BG2MeleeTSA, WindMagic_BG2RangeTSA, WindMagic_BG2PalPointer, storePalette=WindMagic_BG2Palette, storeBgTiles=0, relativeToOpponent=1, tileCount=0x86, leftShift=0xE8, rightShift=0x18
 	.align
 	.ltorg
 

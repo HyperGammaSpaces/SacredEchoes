@@ -5,78 +5,430 @@
   #define setCustomSpell(index, startFunc) "PUSH; ORG SpellTable+(index*4); POIN startFunc|1; POP"
 #endif
 
+
 PUSH
 
 	//Add to spell effect pointer table at 5D4E60
-	//Index 0x1C is unused
 	setCustomSpell(0x17, StartSpellAnimForSagittae)
 	
 	
-	//Since this is all vanilla data I'm overwriting vanilla procs. For custom spells, create these in freespace
-	ORG $5D7F00
+	//using lyn to get around compiler issues :)
+	ORG BGProcPointer_44
+		POIN Sagittae_BG1Proc
+		
+	ORG BGFrameData_44
+		POIN SagittaeBG1FrameData
+		
+	ORG BGTSAData_44 //two pointers
+		POIN Sagittae_BG1_TSAPointer_Melee //melee
+		POIN Sagittae_BG1_TSAPointer_Range //ranged
+		
+	ORG BGPalette_44
+		POIN Sagittae_BG1PalettePointer
+		POIN Sagittae_Palette
+		
+	ORG BGImage_44
+		POIN Sagittae_BG1_Img
+		
+		
+		
+	ORG BGProcPointer_61
+		POIN Sagittae_BG2Proc
+		
+	ORG BGFrameData_61
+		POIN SagittaeBG2FrameData
+		
+	ORG BGTSAData_61 //two pointers
+		POIN Sagittae_BG2_TSAPointer_Melee 
+		POIN Sagittae_BG2_TSAPointer_Range
+		
+	ORG BGPalette_61
+		POIN Sagittae_BG2PalettePointer
+		POIN Sagittae_Palette
+		
+	ORG BGImage_61
+		POIN Sagittae_BG1_Img
+
+POP
+
+ALIGN 4
 	Sagittae_MainProcLoop:
 	SHORT $01 $00; WORD $080DE9D0 //set name pointer
 	SHORT $03 $00; POIN SagittaeAnim_Main+1
 	WORD 0 0
 	
-	ORG $5D7F18
 	Sagittae_BG1Proc:
 	SHORT $01 $00; WORD $080DE9DC //set name pointer
 	SHORT $03 $00; POIN SagittaeAnim_BG1_Loop+1
 	WORD 0 0
 	
-	ORG $5D8020
 	Sagittae_BG2Proc:
-	SHORT $01 $00; WORD $080DEA3C //set name pointer
+	SHORT $01 $00; WORD $080DE9DC //set name pointer
 	SHORT $03 $00; POIN SagittaeAnim_BG2_Loop+1
 	WORD 0 0
 	
-	ORG $5D8098
-	Sagittae_ObjProc:
-	SHORT $01 $00; WORD $080DEA64 //set name pointer
-	SHORT $03 $00; POIN SagittaeAnim_OAM_Loop+1
-	WORD 0 0
-	
-	//using lyn to get around compiler issues :)
-	ORG BGPalette_30
-	POIN Sagittae_BG1PalPointer
-	ORG BGPalette_37
-	POIN Sagittae_BG2PalPointer
+ALIGN 4
+Sagittae_BG1PalettePointer:
+POIN Sagittae_Palette
+POIN Sagittae_Palette
+POIN Sagittae_Palette+0x20
+POIN Sagittae_Palette+0x20
+POIN Sagittae_Palette+0x40
+POIN Sagittae_Palette+0x40
+POIN Sagittae_Palette+0x40
+POIN Sagittae_Palette+0x60
+POIN Sagittae_Palette+0x40
+POIN Sagittae_Palette+0x40
 
-POP
+ALIGN 4
+Sagittae_BG1_TSAPointer_Melee:
+POIN Sagittae_BG1_TSA1
+POIN Sagittae_BG1_TSA2
+POIN Sagittae_BG1_TSA3
+POIN Sagittae_BG1_TSA4
+POIN Sagittae_BG1_TSA5
+POIN Sagittae_BG1_TSA6
+POIN Sagittae_BG1_TSA7
+POIN Sagittae_BG1_TSA8
+POIN Sagittae_BG1_TSA9
+POIN Sagittae_BG1_TSA10
 
-Sagittae_Palette_1:
-#incbin "evileye_green_1.pal.bin"
+ALIGN 4
+Sagittae_BG1_TSAPointer_Range:
+POIN Sagittae_BG1_TSA1_Range
+POIN Sagittae_BG1_TSA2_Range
+POIN Sagittae_BG1_TSA3_Range
+POIN Sagittae_BG1_TSA4_Range
+POIN Sagittae_BG1_TSA5_Range
+POIN Sagittae_BG1_TSA6_Range
+POIN Sagittae_BG1_TSA7_Range
+POIN Sagittae_BG1_TSA8_Range
+POIN Sagittae_BG1_TSA9_Range
+POIN Sagittae_BG1_TSA10_Range
 
-Sagittae_Palette_2:
-#incbin "evileye_green_2.pal.bin"
+ALIGN 4
+SagittaeBG1FrameData:
+SpellFrameData($00, 2)
+SpellFrameData($01, 2)
+SpellFrameData($02, 2)
+SpellFrameData($03, 2)
+SpellFrameData($04, 2)
+SpellFrameData($05, 2)
+SpellFrameData($06, 2)
+SpellFrameData($07, 24)
+SpellFrameData($08, 2)
+SpellFrameData($09, 2)
+SpellFrameDataTerm
 
-Sagittae_BG1PalPointer:
-POIN Sagittae_Palette_1
-POIN Sagittae_Palette_1+0x20
-POIN Sagittae_Palette_1+0x40
-POIN Sagittae_Palette_1+0x60
-POIN Sagittae_Palette_1+0x80
-POIN Sagittae_Palette_1+0xA0
-POIN Sagittae_Palette_1+0xC0
-POIN Sagittae_Palette_1+0xE0
-POIN Sagittae_Palette_1+0x100
-POIN Sagittae_Palette_1+0x120
-POIN Sagittae_Palette_1+0x140
-POIN Sagittae_Palette_1+0x160
-POIN Sagittae_Palette_1+0x180
-POIN Sagittae_Palette_1+0x1A0
-POIN Sagittae_Palette_1+0x1C0
-POIN Sagittae_Palette_1+0x1E0
-POIN Sagittae_Palette_1+0x200
-POIN Sagittae_Palette_1+0x220
-POIN Sagittae_Palette_1+0x240
-POIN Sagittae_Palette_1+0x260
+ALIGN 4
+SagittaeBG2FrameData:
+SpellFrameData($00, 6) //starts at frame 42
+SpellFrameData($01, 5)
+SpellFrameData($02, 3)
+SpellFrameData($03, 2)
+SpellFrameData($04, 5) //58
+SpellFrameData($05, 4)
+SpellFrameData($06, 3)
+SpellFrameData($07, 2)
+SpellFrameData($08, 6) //72
+SpellFrameData($09, 5)
+SpellFrameData($0A, 3)
+SpellFrameData($0B, 2)
+SpellFrameData($0C, 5) //88
+SpellFrameData($0D, 2) //93
+SpellFrameData($0E, 2) //95
+SpellFrameData($0F, 3) //97
+SpellFrameData($10, 3) //100
+SpellFrameData($11, 4) //103
+SpellFrameData($12, 4) //107
+SpellFrameData($13, 4) //111 (final hit)
+SpellFrameData($14, 4)
+SpellFrameData($15, 4)
+SpellFrameData($16, 4)
+SpellFrameDataTerm
 
-Sagittae_BG2PalPointer:
-POIN Sagittae_Palette_2
-POIN Sagittae_Palette_2+0x20
-POIN Sagittae_Palette_2+0x40
-POIN Sagittae_Palette_2+0x60
-POIN Sagittae_Palette_2+0x80
-POIN Sagittae_Palette_2+0xA0
+ALIGN 4
+Sagittae_BG2_TSAPointer_Melee:
+POIN Sagittae_BG2_TSA1
+POIN Sagittae_BG2_TSA2
+POIN Sagittae_BG2_TSA3
+POIN Sagittae_BG2_TSA4
+POIN Sagittae_BG2_TSA5
+POIN Sagittae_BG2_TSA6
+POIN Sagittae_BG2_TSA7
+POIN Sagittae_BG2_TSA8
+POIN Sagittae_BG2_TSA9
+POIN Sagittae_BG2_TSA10
+POIN Sagittae_BG2_TSA11
+POIN Sagittae_BG2_TSA12
+POIN Sagittae_BG2_TSA13
+POIN Sagittae_BG2_TSA14
+POIN Sagittae_BG2_TSA15
+POIN Sagittae_BG2_TSA16
+POIN Sagittae_BG2_TSA17
+POIN Sagittae_BG2_TSA18
+POIN Sagittae_BG2_TSA19
+POIN Sagittae_BG2_TSA20
+POIN Sagittae_BG2_TSA21
+POIN Sagittae_BG2_TSA22
+POIN Sagittae_BG2_TSA22
+
+ALIGN 4
+Sagittae_BG2_TSAPointer_Range:
+POIN Sagittae_BG2_TSA1_Range
+POIN Sagittae_BG2_TSA2_Range
+POIN Sagittae_BG2_TSA3_Range
+POIN Sagittae_BG2_TSA4_Range
+POIN Sagittae_BG2_TSA5_Range
+POIN Sagittae_BG2_TSA6_Range
+POIN Sagittae_BG2_TSA7_Range
+POIN Sagittae_BG2_TSA8_Range
+POIN Sagittae_BG2_TSA9_Range
+POIN Sagittae_BG2_TSA10_Range
+POIN Sagittae_BG2_TSA11_Range
+POIN Sagittae_BG2_TSA12_Range
+POIN Sagittae_BG2_TSA13_Range
+POIN Sagittae_BG2_TSA14_Range
+POIN Sagittae_BG2_TSA15_Range
+POIN Sagittae_BG2_TSA16_Range
+POIN Sagittae_BG2_TSA17_Range
+POIN Sagittae_BG2_TSA18_Range
+POIN Sagittae_BG2_TSA19_Range
+POIN Sagittae_BG2_TSA20_Range
+POIN Sagittae_BG2_TSA21_Range
+POIN Sagittae_BG2_TSA22_Range
+POIN Sagittae_BG2_TSA22_Range
+
+ALIGN 4
+Sagittae_BG2PalettePointer:
+POIN Sagittae_Palette+0x80
+POIN Sagittae_Palette+0x60
+POIN Sagittae_Palette+0x40
+POIN Sagittae_Palette+0x20
+POIN Sagittae_Palette+0x80
+POIN Sagittae_Palette+0x60
+POIN Sagittae_Palette+0x40
+POIN Sagittae_Palette+0x20
+POIN Sagittae_Palette+0x80
+POIN Sagittae_Palette+0x60
+POIN Sagittae_Palette+0x40
+POIN Sagittae_Palette+0x20
+POIN Sagittae_Palette+0x80
+POIN Sagittae_Palette+0x60
+POIN Sagittae_Palette+0x40
+POIN Sagittae_Palette+0x20
+POIN Sagittae_Palette+0x20
+POIN Sagittae_Palette+0x20
+POIN Sagittae_Palette+0x20
+POIN Sagittae_Palette+0x60
+POIN Sagittae_Palette+0x40
+POIN Sagittae_Palette+0x20
+POIN Sagittae_Palette
+
+ALIGN 4
+Sagittae_Palette:
+#incbin "pal/Sagittae_pal1.pal.bin"
+#incbin "pal/Sagittae_pal2.pal.bin"
+#incbin "pal/Sagittae_pal3.pal.bin"
+#incbin "pal/Sagittae_pal4.pal.bin"
+#incbin "pal/Sagittae_pal5.pal.bin"
+#incbin "pal/Sagittae_pal6.pal.bin"
+
+Sagittae_BG1_Img:
+#incbin "img/bg1/Sagittae_all.img.bin"
+ALIGN 4
+
+Sagittae_BG1_TSA1:
+#incbin "tsa/sag_bg1_1.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA2:
+#incbin "tsa/sag_bg1_2.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA3:
+#incbin "tsa/sag_bg1_3.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA4:
+#incbin "tsa/sag_bg1_4.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA5:
+#incbin "tsa/sag_bg1_5.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA6:
+#incbin "tsa/sag_bg1_6.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA7:
+#incbin "tsa/sag_bg1_7.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA8:
+#incbin "tsa/sag_bg1_8.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA9:
+#incbin "tsa/sag_bg1_9.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA10:
+#incbin "tsa/sag_bg1_10.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA1_Range:
+#incbin "tsa/sag_bg1_1_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA2_Range:
+#incbin "tsa/sag_bg1_2_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA3_Range:
+#incbin "tsa/sag_bg1_3_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA4_Range:
+#incbin "tsa/sag_bg1_4_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA5_Range:
+#incbin "tsa/sag_bg1_5_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA6_Range:
+#incbin "tsa/sag_bg1_6_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA7_Range:
+#incbin "tsa/sag_bg1_7_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA8_Range:
+#incbin "tsa/sag_bg1_8_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA9_Range:
+#incbin "tsa/sag_bg1_9_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG1_TSA10_Range:
+#incbin "tsa/sag_bg1_10_range.tmx.tsa.bin"
+ALIGN 4
+
+Sagittae_BG2_TSA1:
+#incbin "tsa/sag_bg2_1.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA2:
+#incbin "tsa/sag_bg2_2.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA3:
+#incbin "tsa/sag_bg2_3.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA4:
+#incbin "tsa/sag_bg2_4.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA5:
+#incbin "tsa/sag_bg2_5.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA6:
+#incbin "tsa/sag_bg2_6.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA7:
+#incbin "tsa/sag_bg2_7.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA8:
+#incbin "tsa/sag_bg2_8.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA9:
+#incbin "tsa/sag_bg2_9.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA10:
+#incbin "tsa/sag_bg2_10.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA11:
+#incbin "tsa/sag_bg2_11.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA12:
+#incbin "tsa/sag_bg2_12.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA13:
+#incbin "tsa/sag_bg2_13.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA14:
+#incbin "tsa/sag_bg2_14.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA15:
+#incbin "tsa/sag_bg2_15.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA16:
+#incbin "tsa/sag_bg2_16.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA17:
+#incbin "tsa/sag_bg2_17.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA18:
+#incbin "tsa/sag_bg2_18.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA19:
+#incbin "tsa/sag_bg2_19.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA20:
+#incbin "tsa/sag_bg2_20.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA21:
+#incbin "tsa/sag_bg2_21.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA22:
+#incbin "tsa/sag_bg2_22.tmx.tsa.bin"
+ALIGN 4
+
+Sagittae_BG2_TSA1_Range:
+#incbin "tsa/sag_bg2_1_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA2_Range:
+#incbin "tsa/sag_bg2_2_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA3_Range:
+#incbin "tsa/sag_bg2_3_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA4_Range:
+#incbin "tsa/sag_bg2_4_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA5_Range:
+#incbin "tsa/sag_bg2_5_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA6_Range:
+#incbin "tsa/sag_bg2_6_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA7_Range:
+#incbin "tsa/sag_bg2_7_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA8_Range:
+#incbin "tsa/sag_bg2_8_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA9_Range:
+#incbin "tsa/sag_bg2_9_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA10_Range:
+#incbin "tsa/sag_bg2_10_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA11_Range:
+#incbin "tsa/sag_bg2_11_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA12_Range:
+#incbin "tsa/sag_bg2_12_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA13_Range:
+#incbin "tsa/sag_bg2_13_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA14_Range:
+#incbin "tsa/sag_bg2_14_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA15_Range:
+#incbin "tsa/sag_bg2_15_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA16_Range:
+#incbin "tsa/sag_bg2_16_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA17_Range:
+#incbin "tsa/sag_bg2_17_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA18_Range:
+#incbin "tsa/sag_bg2_18_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA19_Range:
+#incbin "tsa/sag_bg2_19_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA20_Range:
+#incbin "tsa/sag_bg2_20_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA21_Range:
+#incbin "tsa/sag_bg2_21_range.tmx.tsa.bin"
+ALIGN 4
+Sagittae_BG2_TSA22_Range:
+#incbin "tsa/sag_bg2_22_range.tmx.tsa.bin"
+ALIGN 4

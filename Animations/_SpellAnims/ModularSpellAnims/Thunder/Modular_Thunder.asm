@@ -108,7 +108,7 @@ ThunderAnim_OAM_Init:
 @loop controllers
 
 ThunderAnim_BG_Loop:
-	spell_bg_loop Bool_WriteImageMap, NoPalette, Bool_FillBGRect,Bool_LoopForFrameDataLength, 0
+	spell_bg_loop Bool_WriteImageMap, NoPalette, Bool_FillBGRect, Bool_LoopForFrameDataLength, 0
 	.align
 	.ltorg
 

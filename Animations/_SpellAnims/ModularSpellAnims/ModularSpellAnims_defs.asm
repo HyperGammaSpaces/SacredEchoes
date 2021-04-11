@@ -64,8 +64,17 @@
 	MOV  r0, #0x2C
 	LDSH r1, [\procReg, r0]
 	MOV  r0, r6
-	ADD  r0, #\frameID
+	MOV  r2, #\frameID
+	ADD  r0, r0, r2
 	CMP  r1, r0
+.endm
+
+
+
+.macro if_was_miss procReg=r4
+	MOV  r0, #0x29
+	LDRB r1, [\procReg, r0]
+	CMP  r1, #0x1
 .endm
 
 
@@ -102,7 +111,7 @@
 	MOV  r0, \procReg
 	ADD  r0, #0x29
 	LDRB r1, [r0]
-	CMP  r0, #0x0
+	CMP  r1, #0x0
 	BNE  DoneMagicHitFX
 		MOV  r0, \aisReg
 		BLH  PlaySpellHitSound
@@ -208,7 +217,7 @@
 
 
 
-.macro spell_bg_load procPointer, framePointer, imagePointer, meleeTsaPointer, rangeTsaPointer, palettePointer, storePalette=0, storeBgTiles=0, relativeToOpponent=0
+.macro spell_bg_load procPointer, framePointer, imagePointer, meleeTsaPointer, rangeTsaPointer, palettePointer, storePalette=0, storeBgTiles=0, relativeToOpponent=0, tileCount=0x86, leftShift=0x18, rightShift=0xE8
 	
 	PUSH {r4-r6,lr}
 	MOV  r4, r0
@@ -217,6 +226,10 @@
 	LDR  r0, [r1, #0x0]
 	ADD  r0, #0x1
 	STR  r0, [r1, #0x0]
+	B    DoneCounterIncrement\@
+		.align
+		.ltorg
+	DoneCounterIncrement\@:
 	LDR  r0, =\procPointer
 	MOV  r1, #0x3
 	BLH  0x08002C7C @New6C
@@ -230,6 +243,13 @@
 		STR  r4, [r6, #0x5C]
 	.endif
 	
+	B    DoneProcSetup\@
+		.align
+		BGProcPointer_\@:
+		.global BGProcPointer_\@
+		.ltorg
+	DoneProcSetup\@:
+	
 	MOV  r0, #0x0
 	STRH r0, [r6, #0x2C]
 	STRH r0, [r6, #0x2E]
@@ -237,13 +257,22 @@
 	STR  r0, [r6, #0x44]
 	LDR  r0, =\framePointer
 	STR  r0, [r6, #0x48]
+	B    DoneFrameData\@
+		.align
+		BGFrameData_\@:
+		.global BGFrameData_\@
+		.ltorg
+	DoneFrameData\@:
 	LDR  r0, =\meleeTsaPointer
 	STR  r0, [r6, #0x4C]
 	LDR  r0, =\rangeTsaPointer
 	STR  r0, [r6, #0x50]
 	B    DoneTsa\@
 		.align
+		BGTSAData_\@:
+		.global BGTSAData_\@
 		.ltorg
+		.word 0xDEADBEEF
 	DoneTsa\@:
 	
 	.if \palettePointer
@@ -261,13 +290,14 @@
 			BGPalette_\@:
 			.global BGPalette_\@
 			.ltorg
+			.word 0xDEADBEEF
 		DoneBGPalette\@:
 	.endif
 	.if \imagePointer
 		LDR  r0, =\imagePointer
 		STR  r0, [r6, #0x54]
 		.if \storeBgTiles
-			MOV  r1, #0x86
+			MOV  r1, #\tileCount
 			LSL  r1, r1, #0x5
 			BLH  0x0805581C @SpellAnim_StoreBGTiles
 		.endif
@@ -293,22 +323,14 @@
 			
 			DrawBG\@LongrangeOnLeftSide:
 			MOV  r0, #0x1
-			.if \relativeToOpponent
-				MOV  r1, #0xE8
-			.else
-				MOV  r1, #0x18
-			.endif
+			MOV  r1, #\leftShift
 			MOV  r2, #0x0
 			BLH  0x0800148C @BG_SetPosition
 			B    DoneBG\@Load
 		
 		DrawBG\@LongrangeOnRightSide:
 		MOV  r0, #0x1
-		.if \relativeToOpponent
-			MOV  r1, #0x18
-		.else
-			MOV  r1, #0xE8
-		.endif
+		MOV  r1, #\rightShift
 		MOV  r2, #0x0
 		BLH  0x0800148C @BG_SetPosition
 		
@@ -332,6 +354,10 @@
 	LDR  r0, [r1, #0x0]
 	ADD  r0, #0x1
 	STR  r0, [r1, #0x0]
+	B    DoneCounterIncrement\@
+		.align
+		.ltorg
+	DoneCounterIncrement\@:
 	LDR  r0, =\procPointer
 	MOV  r1, #0x3
 	BLH  0x08002C7C @New6C
@@ -339,10 +365,28 @@
 	MOV  r1, #0x0
 	STRH r1, [r0, #0x2C]
 	STR  r1, [r0, #0x44]
+	B    DoneProcSetup\@
+		.align
+		PaletteFXProcPointer_\@:
+		.global PaletteFXProcPointer_\@
+		.ltorg
+	DoneProcSetup\@:
 	LDR  r1, =\framePointer
 	STR  r1, [r0, #0x48]
+	B    DoneFrameData\@
+		.align
+		PaletteFrameData_\@:
+		.global PaletteFrameData_\@
+		.ltorg
+	DoneFrameData\@:
 	LDR  r1, =\palettePointer
 	STR  r1, [r0, #0x4C]
+	B    DonePalette\@
+		.align
+		PaletteFXData_\@:
+		.global PaletteFXData_\@
+		.ltorg
+	DonePalette\@:
 	MOV  r0, r1
 	MOV  r1, #0x20
 	BLH  0x08055844 @SpellAnim_StoreBGPalette
@@ -367,6 +411,10 @@
 	LDR  r0, [r1, #0x0]
 	ADD  r0, #0x1
 	STR  r0, [r1, #0x0]
+	B    DoneCounterIncrement\@
+		.align
+		.ltorg
+	DoneCounterIncrement\@:
 	LDR  r0, =\procPointer
 	MOV  r1, #0x3
 	BLH  0x08002C7C @New6C
@@ -380,6 +428,13 @@
 		STR  r4, [r6, #0x5C]
 	.endif
 	
+	B    DoneProcSetup\@
+		.align
+		OAMProcPointer_\@:
+		.global OAMProcPointer_\@
+		.ltorg
+	DoneProcSetup\@:
+	
 	STRH r5, [r6, #0x2E] @OAM puts timer in 2E instead of 30
 	MOV  r0, #0x0
 	STRH r0, [r6, #0x2C]
@@ -388,6 +443,10 @@
 		.if \relativeToOpponent
 			MOV  r0, r4
 			BLH  0x0805A16C @getSubjectAIS
+			B    GotSubjectAIS_\@
+				.align
+				.ltorg
+			GotSubjectAIS_\@:
 			CMP  r0, #0x0
 			BNE  LeftSide\@
 				LDR r1, =\oamRangePointer
@@ -408,6 +467,14 @@
 			MOV  r0, r4
 			MOV  r1, r3
 		.endif
+		
+		B    GotOAMData_\@
+			.align
+			OAMDataPointer_\@:
+			.global OAMDataPointer_\@
+			.ltorg
+		GotOAMData_\@:
+		
 		BLH  0x08055554, r7 @SpellAnim_OAMSetup
 		POP  {r7}
 	STR  r0, [r6, #0x60]
@@ -421,13 +488,31 @@
 		STRH r1, [r0, #0xA]
 		BLH  0x08004FAC @AIS_Sort
 	.endif
+	
+	B    DoneAIS\@
+		.align
+		.ltorg
+	DoneAIS\@:
+	
 	LDR  r0, =\palettePointer
 	MOV  r1, #0x20
 	BLH  0x08055800 @SpellAnim_StoreSpritePalette
+	B    DonePalette\@
+		.align
+		OAMPalettePointer_\@:
+		.global OAMPalettePointer_\@
+		.ltorg
+	DonePalette\@:
 	LDR  r0, =\imagePointer
 	MOV  r1, #0x80
 	LSL  r1, r1, #0x5
 	BLH  0x080557D8 @SpellAnim_StoreSpriteTiles
+	B    DoneImage\@
+		.align
+		OAMImagePointer_\@:
+		.global OAMImagePointer_\@
+		.ltorg
+	DoneImage\@:
 	ADD  SP, #0x4
 	POP  {r4-r6}
 	POP  {r0}
@@ -453,7 +538,7 @@
 
 
 
-.macro spell_bg_loop storeBgTiles=0, storePalette=0, fill_extra_space=1, infiniteLoop=1, deleteSelf=0
+.macro spell_bg_loop storeBgTiles=0, storePalette=0, fill_extra_space=1, fillTileLeft=0x11F, fillTileRight=0x150, infiniteLoop=1, deleteSelf=0, clearColorFx=1
 
 	PUSH {r4-r7,lr}
 	SUB  SP, #0x4
@@ -499,14 +584,15 @@
 		
 		.if \fill_extra_space
 			MOV  r6, #0x0
-			CMP  r4, #0x0
+			LDR  r0, [r7, #0x5C]
+			BLH  0x0805A16C @GetAISSubjectId
+			CMP  r0, #0x0
 			BNE  BGRangeMaybe\@
-				LDR  r6, =0x0000011F
+				LDR  r6, =\fillTileLeft
 			BGRangeMaybe\@:
-			CMP  r4, #0x1
+			CMP  r0, #0x1
 			BNE  BGLoop_\@_FillRect
-				MOV  r6, #0xA8
-				LSL  r6, r6, #0x1
+				LDR  r6, =\fillTileRight
 			
 			BGLoop_\@_FillRect:
 			PUSH {r4}
@@ -535,7 +621,9 @@
 		LDR  r0, [r1, #0x0]
 		SUB  r0, #0x1
 		STR  r0, [r1, #0x0]
-		BLH  0x0805526C @SpellFx_ClearColorEffects
+		.if \clearColorFx
+			BLH  0x0805526C @SpellFx_ClearColorEffects
+		.endif
 		MOV  r0, r7
 		.if \deleteSelf
 			BLH  0x08002D6C @Delete6C
