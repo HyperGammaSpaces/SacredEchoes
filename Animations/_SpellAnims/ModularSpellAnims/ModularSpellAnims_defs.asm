@@ -19,6 +19,7 @@
 
 .equ gSomeSubAnim6CCounter, 0x0201774C
 .equ gSomethingRelatedToAnimAndDistance, 0x0203E120
+.equ SomeRAMAddressMaybe, 0x0202003c @i dont know what this is but some OAM procs use it as a counter
 
 .equ StartHPGauge_Normal, 0x08055278
 .equ StartHPGauge_ResireDrain, 0x08055424
@@ -60,10 +61,10 @@
 
 
 
-.macro if_current_frame_is frameID=1, procReg=r4
+.macro if_current_frame_is frameID=1, procReg=r4, startFrameReg=r6
 	MOV  r0, #0x2C
 	LDSH r1, [\procReg, r0]
-	MOV  r0, r6
+	MOV  r0, \startFrameReg
 	MOV  r2, #\frameID
 	ADD  r0, r0, r2
 	CMP  r1, r0
@@ -217,7 +218,7 @@
 
 
 
-.macro spell_bg_load procPointer, framePointer, imagePointer, meleeTsaPointer, rangeTsaPointer, palettePointer, storePalette=0, storeBgTiles=0, relativeToOpponent=0, tileCount=0x86, leftShift=0x18, rightShift=0xE8
+.macro spell_bg_load procPointer, framePointer, imagePointer, meleeTsaPointer, rangeTsaPointer, palettePointer, storePalette=0, storeBgTiles=0, relativeToOpponent=0, tileCount=0x86, leftShift=0x18, rightShift=0xE8, doubleTilecount=0
 	
 	PUSH {r4-r6,lr}
 	MOV  r4, r0
@@ -298,7 +299,11 @@
 		STR  r0, [r6, #0x54]
 		.if \storeBgTiles
 			MOV  r1, #\tileCount
+			.if \doubleTilecount
+			LSL  r1, r1, #0x6
+			.else
 			LSL  r1, r1, #0x5
+			.endif
 			BLH  0x0805581C @SpellAnim_StoreBGTiles
 		.endif
 		B   DoneBGImage\@
@@ -348,8 +353,9 @@
 
 .macro spell_palette_fx_load procPointer, framePointer, palettePointer
 
-	PUSH {r4,lr}
+	PUSH {r4-r6,lr}
 	MOV  r4, r0
+	MOV  r5, r1
 	LDR  r1, =gSomeSubAnim6CCounter 
 	LDR  r0, [r1, #0x0]
 	ADD  r0, #0x1
@@ -361,10 +367,14 @@
 	LDR  r0, =\procPointer
 	MOV  r1, #0x3
 	BLH  0x08002C7C @New6C
-	STR  r4, [r0, #0x5C]
+	MOV  r6, r0
+	
+	STR  r4, [r6, #0x5C]
 	MOV  r1, #0x0
-	STRH r1, [r0, #0x2C]
-	STR  r1, [r0, #0x44]
+	STRH r1, [r6, #0x2C]
+	STRH r1, [r6, #0x2E]
+	STRH r5, [r6, #0x30]
+	STR  r1, [r6, #0x44]
 	B    DoneProcSetup\@
 		.align
 		PaletteFXProcPointer_\@:
@@ -372,7 +382,7 @@
 		.ltorg
 	DoneProcSetup\@:
 	LDR  r1, =\framePointer
-	STR  r1, [r0, #0x48]
+	STR  r1, [r6, #0x48]
 	B    DoneFrameData\@
 		.align
 		PaletteFrameData_\@:
@@ -380,7 +390,7 @@
 		.ltorg
 	DoneFrameData\@:
 	LDR  r1, =\palettePointer
-	STR  r1, [r0, #0x4C]
+	STR  r1, [r6, #0x4C]
 	B    DonePalette\@
 		.align
 		PaletteFXData_\@:
@@ -390,7 +400,7 @@
 	MOV  r0, r1
 	MOV  r1, #0x20
 	BLH  0x08055844 @SpellAnim_StoreBGPalette
-	POP  {r4}
+	POP  {r4-r6}
 	POP  {r0}
 	BX   r0
 	.align
@@ -401,7 +411,7 @@
 
 
 
-.macro spell_obj_load procPointer, imagePointer, oamMeleePointer, oamRangePointer, palettePointer, sortAIS=0, relativeToOpponent=0
+.macro spell_obj_load procPointer, imagePointer, oamMeleePointer, oamRangePointer, palettePointer, sortAIS=0, relativeToOpponent=0, useModulatedOam=0
 
 	PUSH {r4-r6,lr}
 	SUB  SP, #0x4
@@ -434,10 +444,23 @@
 		.global OAMProcPointer_\@
 		.ltorg
 	DoneProcSetup\@:
+
+	.if \useModulatedOam
+		
+		MOV  r0, #0x0
+		STRH r0, [r6, #0x2C]
+		STRH r0, [r6, #0x2E]
+		STRH r5, [r6, #0x30]
+		MOV  r1, #0x2
+		STR  r1, [r6, #0x44]
+		STR  r0, [r6, #0x48]
+		
+	.else
 	
-	STRH r5, [r6, #0x2E] @OAM puts timer in 2E instead of 30
-	MOV  r0, #0x0
-	STRH r0, [r6, #0x2C]
+		STRH r5, [r6, #0x2E] @standard OAM puts timer in 2E instead of 30
+		MOV  r0, #0x0
+		STRH r0, [r6, #0x2C]
+	
 		@this needs r3 and also writes to the stack, so we push here
 		PUSH {r7}
 		.if \relativeToOpponent
@@ -477,22 +500,24 @@
 		
 		BLH  0x08055554, r7 @SpellAnim_OAMSetup
 		POP  {r7}
-	STR  r0, [r6, #0x60]
-	.if \sortAIS
-		LDRH r1, [r0, #0x4]
-		ADD  r1, #0x18
-		STRH r1, [r0, #0x4]
-		MOV  r1, #0x0
-		STRH r1, [r0, #0x6]
-		MOV  r1, #0x14
-		STRH r1, [r0, #0xA]
-		BLH  0x08004FAC @AIS_Sort
-	.endif
+		STR  r0, [r6, #0x60]
+		
+		.if \sortAIS
+			LDRH r1, [r0, #0x4]
+			ADD  r1, #0x18
+			STRH r1, [r0, #0x4]
+			MOV  r1, #0x0
+			STRH r1, [r0, #0x6]
+			MOV  r1, #0x14
+			STRH r1, [r0, #0xA]
+			BLH  0x08004FAC @AIS_Sort
+		.endif
 	
-	B    DoneAIS\@
-		.align
-		.ltorg
-	DoneAIS\@:
+		B    DoneAIS\@
+			.align
+			.ltorg
+		DoneAIS\@:
+	.endif
 	
 	LDR  r0, =\palettePointer
 	MOV  r1, #0x20
@@ -524,13 +549,55 @@
 
 
 
-.macro spell_loop_timer_wait procReg=r4
+.macro spell_palette_flash procPointer
 
-	LDRH r0, [\procReg, #0x2E]
+	PUSH {r4-r6,lr}
+	MOV  r4, r0
+	MOV  r6, r1
+	MOV  r5, r2
+	LDR  r1, =gSomeSubAnim6CCounter
+	LDR  r0, [r1, #0x0]
 	ADD  r0, #0x1
-	STRH r0, [\procReg, #0x2E]
+	STR  r0, [r1, #0x0]
+	B    DoneCounterIncrement\@
+		.align
+		.ltorg
+	DoneCounterIncrement\@:
+	LDR  r0, =\procPointer
+	MOV  r1, #0x3
+	BLH  0x08002C7C   @New6C
+	STR  r4, [r0, #0x5C]
+	B    DoneProcSetup\@
+		.align
+		PaletteFlashProcPointer_\@:
+		.global PaletteFlashProcPointer_\@
+		.ltorg
+	DoneProcSetup\@:
+	MOV  r1, #0x0
+	STRH r1, [r0, #0x2C]
+	STRH r5, [r0, #0x2E]
+	MOV  r0, r4
+	MOV  r1, r6
+	BLH  0x08053f10   @StartSpellBG_FLASH
+	POP  {r4-r6}
+	POP  {r0}
+	BX   r0
+	
+	.align
+	.ltorg
+	
+.endm
+
+
+
+
+.macro spell_loop_timer_wait procReg=r4, counterOffset=0x2E, durationOffset=0x30
+
+	LDRH r0, [\procReg, #\counterOffset]
+	ADD  r0, #0x1
+	STRH r0, [\procReg, #\counterOffset]
 	LSL  r0, r0, #0x10
-	LDRH r2, [\procReg, #0x30]
+	LDRH r2, [\procReg, #\durationOffset]
 	LSL  r1, r2, #0x10
 	CMP  r0, r1
 
@@ -541,7 +608,6 @@
 .macro spell_bg_loop storeBgTiles=0, storePalette=0, fill_extra_space=1, fillTileLeft=0x11F, fillTileRight=0x150, infiniteLoop=1, deleteSelf=0, clearColorFx=1
 
 	PUSH {r4-r7,lr}
-	SUB  SP, #0x4
 	MOV  r7, r0
 	ADD  r0, #0x2C
 	MOV  r1, r7
@@ -596,25 +662,30 @@
 			
 			BGLoop_\@_FillRect:
 			PUSH {r4}
+			SUB  SP, #0x4
 			LDR  r0, =0x020234E4	@offset
 			STR  r6, [SP, #0x0]		@tile to fill with
 			MOV  r1, #0x2 			@width
 			MOV  r2, #0x14 			@height
 			MOV  r3, #0x1 			@palette ID
 			BLH  0x08070D7C, r4 	@FillBGRect
+			ADD  SP, #0x4
 			POP  {r4}
 		.endif
-		B    BG1Loop_\@_Exit
+		.if \infiniteLoop
+			B    BG1Loop_\@_Exit
+		.endif
 
 	BG1Loop_\@_WaitForCounter:
 	.if \infiniteLoop
 	MOV  r0, #0x1
 	NEG  r0, r0
 	CMP  r4, r0
-	.else
-		spell_loop_timer_wait, r7
-	.endif
 	BNE  BG1Loop_\@_Exit
+	.else
+		spell_loop_timer_wait procReg=r7
+		BLE  BG1Loop_\@_Exit
+	.endif
 
 		BLH  0x08055188 @ClearBG1
 		LDR  r1, =gSomeSubAnim6CCounter
@@ -632,11 +703,11 @@
 		.endif
 		
 	BG1Loop_\@_Exit:
-	ADD  SP, #0x4
 	POP  {r4-r7}
 	POP  {r0}
 	BX   r0
 	.align
+	.ltorg
 
 .endm
 
@@ -661,17 +732,20 @@
 		ADD  r0, r0, R1
 		MOV  r1, #0x20
 		BLH  0x08055844 @SpellAnim_StoreBGPalettes
+		.if \infiniteLoop
 		B    PaletteFXLoop_\@_Exit
+		.endif
 		
 	PaletteFXLoop_\@_WaitForCounter:
 	.if \infiniteLoop
 	MOV  r0, #0x1
 	NEG  r0, r0
 	CMP  r1, r0
-	.else
-		spell_loop_timer_wait, r4
-	.endif
 	BNE  PaletteFXLoop_\@_Exit
+	.else
+		spell_loop_timer_wait procReg=r4
+		BLE  PaletteFXLoop_\@_Exit
+	.endif
 
 		.if \clearPaletteFx
 			BLH  0x0805526C @SpellFx_ClearColorEffects
@@ -689,6 +763,7 @@
 	BX   r0
 
 	.align
+	.ltorg
 	
 .endm
 
@@ -717,11 +792,250 @@
 		SUB r0, #0x1
 		STR r0, [r1, #0x0]
 		MOV r0, r4
-		BLH 0x08002E94   //Break6CLoop
+		BLH 0x08002E94   @Break6CLoop
 	SpellObjLoop_\@_Exit:
 	POP  {r4}
 	POP  {r0}
 	BX   r0
 	.align
+	.ltorg
 
 .endm
+
+
+
+.macro spell_obj_loop_to_modulation_start loaderFunc
+
+	PUSH {r4,lr}
+	MOV  r4, r0
+	LDRH r0, [r4, #0x2C]
+	ADD  r0, #0x1
+	STRH r0, [r4, #0x2C]
+	LSL  r0, r0, #0x10
+	LDRH r2, [r4, #0x30]
+	LSL  r1, r2, #0x10
+	CMP  r0, r1
+	BNE  ContinueObjLoop\@
+	
+		LDR  r1, =SomeRAMAddressMaybe
+		MOV  r0, #0x1
+		STR  r0, [r1, #0x0]
+		LDR  r1, =gSomeSubAnim6CCounter
+		LDR  r0, [r1, #0x0]
+		SUB  r0, #0x1
+		STR  r0, [r1, #0x0]
+		MOV  r0, r4
+		BLH  0x08002e94   @Break6CLoop
+		B    EndObjLoop\@
+
+	ContinueObjLoop\@:
+	LDRH r0, [r4, #0x2E]
+	ADD  r0, #0x1
+	STRH r0, [r4, #0x2E]
+	LSL  r0, r0, #0x10
+	ASR  r0, r0, #0x10
+	LDR  r1, [r4, #0x44]
+	CMP  r0, r1
+	BNE  EndObjLoop\@
+
+		MOV  r0, #0x0
+		STRH r0, [r4, #0x2E]
+		MOV  r0, #0x2
+		STR  r0, [r4, #0x44]
+		BLH  0x080034d4   @Some6CPoolFunc
+		CMP  r0, #0x4
+		BLE  NextObjProcPool\@
+		
+			LDR  r0, [r4, #0x5C]
+			LDR  r2, [r4, #0x48]
+			MOV  r1, r2
+			ADD  r2, #0x1
+			STR  r2, [r4, #0x48]
+			BL   \loaderFunc
+			
+		NextObjProcPool\@:
+		BLH  0x080034d4   @Some6CPoolFunc
+		CMP  r0, #0x4
+		BLE  EndObjLoop\@
+		
+			LDR  r0, [r4, #0x5C]
+			LDR  r2, [r4, #0x48]
+			MOV  r1, r2
+			ADD  r2, #0x1
+			STR  r2, [r4, #0x48]
+			BL   \loaderFunc
+			
+	EndObjLoop\@:
+	POP  {r4}
+	POP  {r0}
+	BX   r0
+
+	.align
+	.ltorg
+
+.endm
+
+
+
+@i have no idea what these params do but theyre for 12DCC MysteriousCalc
+.macro spell_obj_modulation_loop r0param, r1param, r2param, modulateBySine=0, useRamCounter=0
+
+	@r4=sine_lookup
+	@r5=proc
+	@r6=ais
+	PUSH {r4-r7,lr}
+	SUB  SP, #0x4
+	MOV  r5, r0
+	LDR  r6, [r5, #0x60]
+	.if \useRamCounter
+		LDR  r0, =SomeRAMAddressMaybe
+		LDR  r0, [r0, #0x0]
+		CMP  r0, #0x1
+		BEQ  ObjModulationLoop\@_Break
+	.endif
+
+		MOV  r0, #0x2C
+		LDSH r1, [r5, r0]
+		MOV  r2, #0x2E
+		LDSH r0, [r5, r2]
+		CMP  r1, r0
+		BLE  ObjModulationLoop\@_Continue
+		
+		ObjModulationLoop\@_Break:
+		LDR  r1, =gSomeSubAnim6CCounter
+		LDR  r0, [r1, #0x0]
+		SUB  r0, #0x1
+		STR  r0, [r1, #0x0]
+		MOV  r0, r6
+		BLH  0x08005004   @AIS_Free
+		MOV  r0, r5
+		BLH  0x08002e94   @Break6CLoop
+		B    ObjModulationLoop\@_End
+
+	ObjModulationLoop\@_Continue:
+	MOV  r4, #0x2C
+	LDSH r3, [r5, r4]
+	MOV  r7, #0x2E
+	LDSH r0, [r5, r7]
+	STR  r0, [SP, #0x0]
+	MOV  r0, #\r0param
+	MOV  r1, #\r1param
+	MOV  r2, #\r2param
+	BLH  0x08012dcc, r4   @MysteriousCalc
+	STRH r0, [r6, #0x4]
+	LDRH r1, [r5, #0x2C]
+	ADD  r1, #0x1
+	STRH r1, [r5, #0x2C]
+	
+	.if \modulateBySine
+		LDR  r4, =0x080D751C   @sine lookup
+		MOV  r2, #0x30
+		LDSH r1, [r5, r2]
+		ADD  r1, #0x40
+		LSL  r1, r1, #0x1
+		ADD  r1, r1, R4
+		LDRH r1, [r1, #0x0]
+		LSL  r3, r1, #0x10
+		ASR  r3, r3, #0x1A
+		LDRH r1, [r5, #0x30]
+		ADD  r1, #0x6
+		MOV  r2, #0xFF
+		AND  r1, r2
+		STRH r1, [r5, #0x30]
+		LDR  r2, [r5, #0x44]
+		MOV  r1, #0xFF
+		AND  r2, r1
+		LSL  r1, r2, #0x1
+		ADD  r1, r1, R4
+		MOV  r7, #0x0
+		LDSH r1, [r1, r7]
+		ADD  r2, #0x40
+		LSL  r2, r2, #0x1
+		ADD  r2, r2, R4
+		MOV  r4, #0x0
+		LDSH r2, [r2, r4]
+		MUL  r1, r0
+		MUL  r0, r2
+		ASR  r1, r1, #0xC
+		ASR  r0, r0, #0xC
+		LDRH r7, [r5, #0x32]
+		ADD  r3, r7, R3
+		SUB  r3, r3, R1
+		STRH r3, [r6, #0x2]
+		LDRH r5, [r5, #0x3A]
+		SUB  r0, r5, R0
+		STRH r0, [r6, #0x4]
+	.endif
+
+	ObjModulationLoop\@_End:
+	ADD  SP, #0x4
+	POP  {r4-r7}
+	POP  {r0}
+	BX   r0
+
+	.align
+	.ltorg
+
+.endm
+
+
+
+.macro spell_palette_flash_loop r0param, r1param, r2param, infiniteLoop=0
+
+	PUSH {r4-r6,lr}
+	SUB  SP, #0x4
+	MOV  r6, r0
+	MOV  r0, #0x2C
+	LDSH r3, [r6, r0]
+	MOV  r1, #0x2E
+	LDSH r0, [r6, r1]
+	STR  r0, [SP, #0x0]
+	MOV  r0, #\r0param
+	MOV  r1, #\r1param
+	MOV  r2, #\r2param
+	PUSH {r4}
+	BLH  0x08012dcc, r4   @MysteriousCalc
+	POP  {r4}
+	MOV  r5, r0
+	LDR  r0, =0x020228A8  @palette buffer
+	LDR  r4, =0x020165C8
+	MOV  r2, #0x80
+	LSL  r2, r2, #0x1
+	MOV  r1, r4
+	BLH  0x080D1674   @CPUFastSet
+	MOV  r0, r4
+	MOV  r1, #0x0
+	MOV  r2, #0x20
+	MOV  r3, r5
+	PUSH {r4}
+	BLH  0x0807132C, r4   @ApplyFlashingPaletteAnimation
+	POP  {r4}
+	PaletteFXLoop_\@_WaitForCounter:
+	.if \infiniteLoop
+	MOV  r0, #0x1
+	NEG  r0, r0
+	CMP  r1, r0
+	BNE  PaletteFlashLoop_\@_Exit
+	.else
+		spell_loop_timer_wait procReg=r6, counterOffset=0x2C, durationOffset=0x2E
+		BLE  PaletteFlashLoop_\@_Exit
+	.endif
+
+		LDR  r1, =gSomeSubAnim6CCounter
+		LDR  r0, [r1, #0x0]
+		SUB  r0, #0x1
+		STR  r0, [r1, #0x0]
+		MOV  r0, r6
+		BLH  0x08002e94   @Break6CLoop
+
+	PaletteFlashLoop_\@_Exit:
+	ADD  SP, #0x4
+	POP  {r4-r6}
+	POP  {r0}
+	BX   r0
+
+	.align
+	.ltorg
+
+.endm
+

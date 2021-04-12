@@ -1,0 +1,434 @@
+#include "Modular_Ragnarok.lyn.event"
+
+#ifndef SpellTable
+  #define SpellTable $5d4e60
+  #define setCustomSpell(index, startFunc) "PUSH; ORG SpellTable+(index*4); POIN startFunc|1; POP"
+#endif
+
+
+PUSH
+
+	//Add to spell effect pointer table at 5D4E60
+	setCustomSpell(0x18, StartSpellAnimForRagnarok)
+	
+	
+	//using lyn to get around compiler issues :)
+	
+	//Embers
+	ORG OAMProcPointer_43
+	POIN Ragnarok_EmbersLoopProc
+	ORG OAMPalettePointer_43
+	POIN Ragnarok_EmbersPalette
+	ORG OAMImagePointer_43
+	POIN Ragnarok_EmbersImage
+	
+	//Swirl
+	ORG BGProcPointer_47
+	POIN Ragnarok_SwirlProc
+	ORG BGFrameData_47
+	POIN Ragnarok_SwirlBGFrameData
+	ORG BGTSAData_47
+	POIN Ragnarok_SwirlBGTSA
+	ORG BGPalette_47
+	POIN Ragnarok_SwirlBGPalette
+	ORG BGImage_47
+	POIN Ragnarok_SwirlBGImage
+	
+	//Meteor
+	ORG BGProcPointer_54
+	POIN Ragnarok_MeteorProc
+	ORG BGFrameData_54
+	POIN Ragnarok_MeteorBGFrameData
+	ORG BGTSAData_54
+	POIN Ragnarok_MeteorBGTSAPointer
+	ORG BGImage_54
+	POIN Ragnarok_MeteorBGImage
+	
+	//Meteor Palette
+	ORG PaletteFXProcPointer_61
+	POIN Ragnarok_MeteorPaletteProc
+	ORG PaletteFrameData_61
+	POIN Ragnarok_MeteorPaletteFrame
+	ORG PaletteFXData_61
+	POIN Ragnarok_MeteorPalettePointer
+	
+	//Flash Effect
+	ORG PaletteFlashProcPointer_64
+	POIN Ragnarok_FlashLoopProc
+	
+	//Rocks
+	ORG OAMProcPointer_67
+	POIN Ragnarok_RocksLoopProc
+	ORG OAMPalettePointer_67
+	POIN Ragnarok_RocksPalette
+	ORG OAMImagePointer_67
+	POIN Ragnarok_RocksImage
+	
+	//Fire BG
+	ORG BGProcPointer_71
+	POIN Ragnarok_FireBGLoopProc
+	ORG BGFrameData_71
+	POIN Ragnarok_FireBGFrameData
+	ORG BGTSAData_71
+	POIN Ragnarok_FireBGTSA
+	ORG BGPalette_71
+	POIN Ragnarok_FireBGPalette
+	ORG BGImage_71
+	POIN Ragnarok_FireBGImage
+
+POP
+
+ALIGN 4
+	Ragnarok_MainProcLoop:
+	SHORT $19 $00; WORD 0
+	SHORT $03 $00; POIN RagnarokAnim_Main+1
+	WORD 0 0
+
+	Ragnarok_EmbersLoopProc:
+	SHORT $19 $00; WORD 0
+	SHORT $03 $00; POIN Ragnarok_EmbersLoop+1
+	WORD 0 0
+
+	Ragnarok_EmbersRiseLoopProc:
+	SHORT $19 $00; WORD 0
+	SHORT $03 $00; POIN Ragnarok_EmbersModulationLoop+1
+	WORD 0 0
+	
+	Ragnarok_SwirlProc:
+	SHORT $19 $00; WORD 0
+	SHORT $03 $00; POIN Ragnarok_SwirlLoop+1
+	WORD 0 0
+
+	Ragnarok_MeteorProc:
+	SHORT $19 $00; WORD 0
+	SHORT $03 $00; POIN Ragnarok_MeteorLoop+1
+	WORD 0 0
+
+	Ragnarok_MeteorPaletteProc:
+	SHORT $19 $00; WORD 0
+	SHORT $0F $0A; WORD 0
+	SHORT $03 $00; POIN Ragnarok_MeteorGlowLoop+1
+	WORD 0 0
+
+	Ragnarok_RocksLoopProc:
+	SHORT $19 $00; WORD 0
+	SHORT $03 $00; POIN Ragnarok_RocksLoop+1
+	WORD 0 0
+
+	Ragnarok_RocksScatterProc:
+	SHORT $19 $00; WORD 0
+	SHORT $03 $00; POIN Ragnarok_RocksModulationLoop+1
+	WORD 0 0
+	
+	Ragnarok_FireBGLoopProc:
+	SHORT $19 $00; WORD 0
+	SHORT $03 $00; POIN Ragnarok_FireBackgroundLoop+1
+	WORD 0 0
+
+	Ragnarok_FlashLoopProc:
+	SHORT $19 $00; WORD 0
+	SHORT $03 $00; POIN Ragnarok_FlashLoop+1
+	WORD 0 0
+	
+//Sound data
+PUSH
+	ORG $212594
+	BYTE $0 $3C $0 $0
+	POIN RagnarokSample_4
+	BYTE $FF $0 $FF $0
+	BYTE $0 $3C $0 $0
+	POIN RagnarokSample_5
+	BYTE $FF $0 $FF $0
+POP
+
+RagnarokSample_4:
+#incbin "bin/inst_18h.wav.bin"
+RagnarokSample_5:
+#incbin "bin/inst_38h.wav.bin"
+
+#include "sfx/song02CA.event"
+SongTable(0x2CA,song02CA,SFXGroup)
+
+#include "sfx/song02CB.event"
+SongTable(0x2CB,song02CB,SFXGroup)
+
+//Animation data	
+ALIGN 4
+	
+//embers
+Ragnarok_EmberFrames1:
+	SHORT $23 $28 $2F $32 $21 $3A $33 $30
+	ALIGN 4
+Ragnarok_EmberFrames2:
+	SHORT $13 $10 $18 $0E $14 $0A $12 $08
+	ALIGN 4
+Ragnarok_EmberFrames3:
+	SHORT $20 $B0 $50 $90 $C0 $65 $38 $80
+	ALIGN 4
+Ragnarok_EmberOAM1:
+	SHORT $0 $0 $0 //size, size, tile id
+	SHORT $FFFC $FFFC $0 //x, y, padding
+	WORD $1 $0 $0 //term
+Ragnarok_EmberOAM2:
+	SHORT $0 $0 $1
+	SHORT $FFFC $FFFC $0
+	WORD $1 $0 $0
+Ragnarok_EmberOAM3:
+	SHORT $0 $0 $2
+	SHORT $FFFC $FFFC $0
+	WORD $1 $0 $0
+Ragnarok_EmberAIS1:
+	POIN Ragnarok_EmberOAM1+1 Ragnarok_EmberOAM2+1 
+	WORD $82000000
+Ragnarok_EmberAIS2:
+	POIN Ragnarok_EmberOAM3+1 Ragnarok_EmberOAM2+1 
+	WORD $82000000
+	
+//rocks
+Ragnarok_RockFrame1:
+	SHORT $05 $0A $07 $0A $0D $12 $0B $08
+	ALIGN 4
+Ragnarok_RockFrame2: //frame data??
+	#incbin "bin/1E88DA.bin"
+	ALIGN 4
+Ragnarok_RockOAM1:
+	SHORT $0000 $8000 $00
+	SHORT $FFE7 $FFDA $0
+	SHORT $8000 $8000 $04
+	SHORT $0007 $FFDA $0
+	SHORT $0000 $8000 $06
+	SHORT $FFEC $FFFA $0
+	SHORT $8000 $8000 $10
+	SHORT $0008 $FFF0 $0
+	WORD $1 $0 $0
+Ragnarok_RockOAM2:
+	SHORT $0000 $8000 $0C
+	SHORT $FFE8 $FFF0 $0
+	SHORT $8000 $8000 $10
+	SHORT $0008 $FFF0 $0
+	WORD $1 $0 $0
+Ragnarok_RockOAM3:
+	SHORT $4000 $8000 $12
+	SHORT $FFF0 $FFF0 $0
+	SHORT $4000 $4000 $52
+	SHORT $FFF0 $0000 $0
+	WORD $1 $0 $0
+Ragnarok_RockOAM4:
+	SHORT $0000 $4000 $16
+	SHORT $FFF8 $FFF8 $0
+	WORD $1 $0 $0
+Ragnarok_RockOAM5:
+	SHORT $0000 $0000 $74
+	SHORT $FFF8 $FFF8 $0
+	WORD $1 $0 $0
+Ragnarok_RockOAM6:
+	SHORT $0000 $B000 $0C 
+	SHORT $FFF8 $FFF0 $0
+	SHORT $8000 $B000 $10
+	SHORT $FFE8 $FFF0 $0
+	WORD $1 $0 $0
+	
+ALIGN 4
+Ragnarok_RockAIS1:
+	WORD Ragnarok_RockOAM1+$18000000 $80000000
+Ragnarok_RockAIS2:
+	WORD Ragnarok_RockOAM2+$18000000 $80000000
+Ragnarok_RockAIS3:
+	WORD Ragnarok_RockOAM3+$18000000 $80000000
+Ragnarok_RockAIS4:
+	WORD Ragnarok_RockOAM4+$18000000 $80000000
+Ragnarok_RockAIS5:
+	WORD Ragnarok_RockOAM5+$18000000 $80000000
+Ragnarok_RockAIS6:
+	WORD Ragnarok_RockOAM6+$18000000 $80000000
+
+//swirly
+Ragnarok_SwirlBGFrameData: 
+	SpellFrameData($00, 3)
+	SpellFrameData($01, 3)
+	SpellFrameData($02, 3)
+	SpellFrameDataLoop
+	ALIGN 4
+
+Ragnarok_SwirlBGPalette:
+	#incbin "bin/SwirlBG.pal.bin"
+	ALIGN 4
+
+Ragnarok_SwirlBGTSA:
+	POIN Ragnarok_SwirlBGTSA_data
+	POIN Ragnarok_SwirlBGTSA_data
+	POIN Ragnarok_SwirlBGTSA_data
+
+Ragnarok_SwirlBGImage:
+	POIN Ragnarok_SwirlImage1_data
+	POIN Ragnarok_SwirlImage2_data
+	POIN Ragnarok_SwirlImage3_data
+
+//falling meteors
+Ragnarok_MeteorPaletteFrame:
+	SpellFrameData($00,2)
+	SpellFrameData($01,2)
+	SpellFrameData($02,2)
+	SpellFrameData($01,2)
+	SpellFrameDataLoop
+	ALIGN 4
+	
+Ragnarok_MeteorBGFrameData: 
+    SpellFrameData($00,2)
+	SpellFrameData($01,2)
+	SpellFrameData($02,2)
+	SpellFrameData($03,2)
+	SpellFrameData($04,2)
+	SpellFrameData($05,2)
+	SpellFrameData($06,2)
+	SpellFrameData($07,2)
+	SpellFrameData($08,2)
+	SpellFrameData($09,2)
+	SpellFrameData($0A,2)
+	SpellFrameData($0B,2)
+	SpellFrameDataLoop
+	ALIGN 4
+	
+Ragnarok_MeteorPalettePointer:
+	#incbin "bin/Meteors.pal.bin" //3 palettes
+	ALIGN 4
+	
+Ragnarok_MeteorBGTSAPointer:
+	POIN Ragnarok_MeteorTSA1_data
+	POIN Ragnarok_MeteorTSA2_data
+	POIN Ragnarok_MeteorTSA3_data
+	POIN Ragnarok_MeteorTSA4_data
+	POIN Ragnarok_MeteorTSA5_data
+	POIN Ragnarok_MeteorTSA6_data
+	POIN Ragnarok_MeteorTSA7_data
+	POIN Ragnarok_MeteorTSA8_data
+	POIN Ragnarok_MeteorTSA9_data
+	POIN Ragnarok_MeteorTSA10_data
+	POIN Ragnarok_MeteorTSA11_data
+	POIN Ragnarok_MeteorTSA12_data
+	ALIGN 4
+
+Ragnarok_MeteorBGImage:
+	#incbin "bin/Meteors.img.bin"
+	ALIGN 4
+
+//fire BG
+#define Ragnarok_FireBGFrameIteration "SpellFrameData($00,2); SpellFrameData($01,2); SpellFrameData($02,2); SpellFrameData($03,2); SpellFrameData($04,2)"
+
+Ragnarok_FireBGFrameData: 
+	Ragnarok_FireBGFrameIteration
+	Ragnarok_FireBGFrameIteration
+	Ragnarok_FireBGFrameIteration
+	Ragnarok_FireBGFrameIteration
+	Ragnarok_FireBGFrameIteration
+	Ragnarok_FireBGFrameIteration
+	Ragnarok_FireBGFrameIteration
+	Ragnarok_FireBGFrameIteration
+	Ragnarok_FireBGFrameIteration
+	SpellFrameDataTerm
+	ALIGN 4
+
+Ragnarok_FireBGPalette:
+	#incbin "bin/FireBG.pal.bin"
+	ALIGN 4
+
+Ragnarok_FireBGTSA:
+	POIN Ragnarok_FireBGTSA_data
+	POIN Ragnarok_FireBGTSA_data
+	POIN Ragnarok_FireBGTSA_data
+	POIN Ragnarok_FireBGTSA_data
+	POIN Ragnarok_FireBGTSA_data
+
+Ragnarok_FireBGImage:
+	POIN Ragnarok_FireImage1_data
+	POIN Ragnarok_FireImage2_data
+	POIN Ragnarok_FireImage3_data
+	POIN Ragnarok_FireImage4_data
+	POIN Ragnarok_FireImage5_data
+	
+//Data binaries below here
+ALIGN 4
+Ragnarok_EmbersImage: 
+#incbin "bin/Embers.img.bin"
+ALIGN 4
+Ragnarok_EmbersPalette: 
+#incbin "bin/Embers.pal.bin"
+
+ALIGN 4
+Ragnarok_RocksImage:
+#incbin "bin/Rocks.img.bin"
+ALIGN 4
+Ragnarok_RocksPalette:
+#incbin "bin/Rocks.pal.bin"
+
+Ragnarok_SwirlImage1_data:
+#incbin "bin/SwirlBG_1.img.bin"
+ALIGN 4
+Ragnarok_SwirlImage2_data:
+#incbin "bin/SwirlBG_2.img.bin"
+ALIGN 4
+Ragnarok_SwirlImage3_data:
+#incbin "bin/SwirlBG_3.img.bin"
+ALIGN 4
+
+Ragnarok_SwirlBGTSA_data:
+#incbin "bin/SwirlBG.tsa.bin"
+ALIGN 4
+
+ALIGN 4
+Ragnarok_MeteorTSA1_data:
+#incbin "bin/Meteor_1.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA2_data:
+#incbin "bin/Meteor_2.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA3_data:
+#incbin "bin/Meteor_3.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA4_data:
+#incbin "bin/Meteor_4.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA5_data:
+#incbin "bin/Meteor_5.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA6_data:
+#incbin "bin/Meteor_6.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA7_data:
+#incbin "bin/Meteor_7.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA8_data:
+#incbin "bin/Meteor_8.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA9_data:
+#incbin "bin/Meteor_9.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA10_data:
+#incbin "bin/Meteor_10.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA11_data:
+#incbin "bin/Meteor_11.tsa.bin"
+ALIGN 4
+Ragnarok_MeteorTSA12_data:
+#incbin "bin/Meteor_12.tsa.bin"
+ALIGN 4
+
+Ragnarok_FireImage1_data:
+#incbin "bin/FireBG_1.img.bin"
+ALIGN 4
+Ragnarok_FireImage2_data:
+#incbin "bin/FireBG_2.img.bin"
+ALIGN 4
+Ragnarok_FireImage3_data:
+#incbin "bin/FireBG_3.img.bin"
+ALIGN 4
+Ragnarok_FireImage4_data:
+#incbin "bin/FireBG_4.img.bin"
+ALIGN 4
+Ragnarok_FireImage5_data:
+#incbin "bin/FireBG_5.img.bin"
+ALIGN 4
+
+Ragnarok_FireBGTSA_data:
+#incbin "bin/FireBG.tsa.bin"
+ALIGN 4
