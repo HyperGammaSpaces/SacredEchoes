@@ -1,72 +1,70 @@
-#include "Modular_Sagittae.lyn.event"
+{
+	#include "Modular_Sagittae.lyn.event"
 
-#ifndef SpellTable
-  #define SpellTable $5d4e60
-  #define setCustomSpell(index, startFunc) "PUSH; ORG SpellTable+(index*4); POIN startFunc|1; POP"
-#endif
+	PUSH
+
+		//Add to spell effect pointer table at 5D4E60
+		setCustomSpell(0x17, StartSpellAnimForSagittae)
+		
+		
+		//using lyn to get around compiler issues :)
+		ORG BGProcPointer_44
+			POIN Sagittae_BG1Proc
+			
+		ORG BGFrameData_44
+			POIN SagittaeBG1FrameData
+			
+		ORG BGTSAData_44 //two pointers
+			POIN Sagittae_BG1_TSAPointer_Melee //melee
+			POIN Sagittae_BG1_TSAPointer_Range //ranged
+			
+		ORG BGPalette_44
+			POIN Sagittae_BG1PalettePointer
+			POIN Sagittae_Palette
+			
+		ORG BGImage_44
+			POIN Sagittae_BG1_Img
+			
+			
+			
+		ORG BGProcPointer_61
+			POIN Sagittae_BG2Proc
+			
+		ORG BGFrameData_61
+			POIN SagittaeBG2FrameData
+			
+		ORG BGTSAData_61 //two pointers
+			POIN Sagittae_BG2_TSAPointer_Melee 
+			POIN Sagittae_BG2_TSAPointer_Range
+			
+		ORG BGPalette_61
+			POIN Sagittae_BG2PalettePointer
+			POIN Sagittae_Palette
+			
+		ORG BGImage_61
+			POIN Sagittae_BG1_Img
+
+	POP
 
 
-PUSH
+	ALIGN 4
+		Sagittae_MainProcLoop:
+		SHORT $01 $00; WORD $080DE9D0 //set name pointer
+		SHORT $03 $00; POIN SagittaeAnim_Main+1
+		WORD 0 0
+		
+		Sagittae_BG1Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN SagittaeAnim_BG1_Loop+1
+		WORD 0 0
+		
+		Sagittae_BG2Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN SagittaeAnim_BG2_Loop+1
+		WORD 0 0
+		
+}
 
-	//Add to spell effect pointer table at 5D4E60
-	setCustomSpell(0x17, StartSpellAnimForSagittae)
-	
-	
-	//using lyn to get around compiler issues :)
-	ORG BGProcPointer_44
-		POIN Sagittae_BG1Proc
-		
-	ORG BGFrameData_44
-		POIN SagittaeBG1FrameData
-		
-	ORG BGTSAData_44 //two pointers
-		POIN Sagittae_BG1_TSAPointer_Melee //melee
-		POIN Sagittae_BG1_TSAPointer_Range //ranged
-		
-	ORG BGPalette_44
-		POIN Sagittae_BG1PalettePointer
-		POIN Sagittae_Palette
-		
-	ORG BGImage_44
-		POIN Sagittae_BG1_Img
-		
-		
-		
-	ORG BGProcPointer_61
-		POIN Sagittae_BG2Proc
-		
-	ORG BGFrameData_61
-		POIN SagittaeBG2FrameData
-		
-	ORG BGTSAData_61 //two pointers
-		POIN Sagittae_BG2_TSAPointer_Melee 
-		POIN Sagittae_BG2_TSAPointer_Range
-		
-	ORG BGPalette_61
-		POIN Sagittae_BG2PalettePointer
-		POIN Sagittae_Palette
-		
-	ORG BGImage_61
-		POIN Sagittae_BG1_Img
-
-POP
-
-ALIGN 4
-	Sagittae_MainProcLoop:
-	SHORT $01 $00; WORD $080DE9D0 //set name pointer
-	SHORT $03 $00; POIN SagittaeAnim_Main+1
-	WORD 0 0
-	
-	Sagittae_BG1Proc:
-	SHORT $01 $00; WORD $080DE9DC //set name pointer
-	SHORT $03 $00; POIN SagittaeAnim_BG1_Loop+1
-	WORD 0 0
-	
-	Sagittae_BG2Proc:
-	SHORT $01 $00; WORD $080DE9DC //set name pointer
-	SHORT $03 $00; POIN SagittaeAnim_BG2_Loop+1
-	WORD 0 0
-	
 ALIGN 4
 Sagittae_BG1PalettePointer:
 POIN Sagittae_Palette

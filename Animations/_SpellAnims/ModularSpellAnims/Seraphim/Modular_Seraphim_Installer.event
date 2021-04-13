@@ -1,0 +1,126 @@
+{
+	#include "Modular_Seraphim.lyn.event"
+
+	PUSH
+
+		//Add to spell effect pointer table at 5D4E57
+		setCustomSpell(0x21, StartSpellAnimForSeraphim)
+		
+		
+		//using lyn to get around compiler issues :)
+		ORG BGProcPointer_30
+			POIN Seraphim_BG1Proc
+		
+		ORG BGFrameData_30
+			POIN Seraphim_BG1FrameData
+			
+		ORG BGTSAData_30 //two pointers
+			POIN $5d772c //melee
+			POIN $5d772c //ranged
+			
+		ORG BGPalette_30
+			POIN $5d7784
+			
+		ORG BGImage_30
+			POIN $5d7758
+
+		ORG BGPalette_43
+			POIN Seraphim_BG2PalettePointer
+			POIN Seraphim_BG2Palette
+			
+		ORG OAMProcPointer_57
+			POIN Seraphim_ObjProc
+		//ORG OAMDataPointer_57
+		//	POIN Seraphim_FeatherAIS
+		ORG OAMPalettePointer_57
+			POIN Seraphim_FeatherPalette
+		ORG OAMImagePointer_57
+			POIN Seraphim_FeatherImg
+
+	POP
+
+
+	ALIGN 4
+		Seraphim_MainProcLoop:
+		SHORT $01 $00; WORD $080DE9D0 //set name pointer
+		SHORT $03 $00; POIN SeraphimAnim_Main+1
+		WORD 0 0
+		
+		Seraphim_BG1Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN SeraphimAnim_BG1_Loop+1
+		WORD 0 0
+		
+		Seraphim_BG2Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN SeraphimAnim_BG2_Loop+1
+		WORD 0 0
+		
+		Seraphim_ObjProc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN SeraphimAnim_Obj_Loop+1
+		WORD 0 0
+		
+		Seraphim_ObjModulationProc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN SeraphimAnim_Obj_ModulationLoop+1
+		WORD 0 0
+	
+}
+	
+ALIGN 4
+Seraphim_FeatherOAM1:
+	SHORT $0000 $4000 $00 //16x16, tileID $0
+	SHORT $0000 $0000 $0
+	WORD $1 $0 $0
+Seraphim_FeatherOAM2:
+	SHORT $0000 $4000 $02 //16x16, tileID $2
+	SHORT $0000 $0000 $0
+	WORD $1 $0 $0
+Seraphim_FeatherOAM3:
+	SHORT $0000 $4000 $04 //16x16, tileID $4
+	SHORT $0000 $0000 $0
+	WORD $1 $0 $0
+Seraphim_FeatherOAM4:
+	SHORT $0000 $4000 $06 //16x16, tileID $6
+	SHORT $0000 $0000 $0
+	WORD $1 $0 $0
+Seraphim_FeatherAIS:
+	POIN Seraphim_FeatherOAM1+1 
+	WORD $84000002
+	POIN Seraphim_FeatherOAM2+1
+	WORD $84000002
+	POIN Seraphim_FeatherOAM3+1
+	WORD $84000002
+	POIN Seraphim_FeatherOAM4+1
+	WORD $84000002
+	WORD $82000000
+	
+ALIGN 4
+Seraphim_BG1FrameData:
+SpellFrameData($00, 4)
+SpellFrameData($01, 4)
+SpellFrameData($02, 4)
+SpellFrameData($03, 4)
+SpellFrameData($04, 4)
+SpellFrameData($05, 4)
+SpellFrameData($06, 40)
+SpellFrameData($07, 4)
+SpellFrameData($08, 2)
+SpellFrameData($09, 2)
+SpellFrameData($0A, 2)
+SpellFrameDataTerm
+
+ALIGN 4
+Seraphim_BG2PalettePointer:
+POIN Seraphim_BG2Palette
+
+ALIGN 4
+Seraphim_FeatherImg:
+#incbin "img/feather.dmp"
+ALIGN 4
+Seraphim_FeatherPalette:
+#incbin "img/feather_pal.dmp"
+
+Seraphim_BG2Palette:
+#incbin "pal/Seraphim_BG2.pal.bin"
