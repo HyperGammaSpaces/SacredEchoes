@@ -596,16 +596,16 @@ After each set of module options are definitions that you can use to adjust the 
 
 // Number modules
 
-	//#define MMBASNumber
-	//#define MMBATKNumber
+	#define MMBASNumber
+	#define MMBATKNumber
 	//#define MMBAVONumber
 	//#define MMBCHRNumber // Useless without skill system
 	//#define MMBCRTNumber
 	//#define MMBDEFNumber
 	//#define MMBDODNumber
-	#define MMBEXPNumber
+	//#define MMBEXPNumber
 	//#define MMBHITNumber
-	#define MMBLevelNumber
+	//#define MMBLevelNumber
 	//#define MMBRESNumber
 	//#define MMBRTGNumber
 	//#define MMBCurrentHPNumber
@@ -621,12 +621,12 @@ After each set of module options are definitions that you can use to adjust the 
 	// Coordinates are for the rightmost digit
 
 	// AS Number
-	//#define MMBASX 128
-	//#define MMBASY 48
+	#define MMBASX 89
+	#define MMBASY 16
 
 	// ATK Number
-	//#define MMBATKX 128
-	//#define MMBATKY 24
+	#define MMBATKX 64
+	#define MMBATKY 16
 
 	// AVO Number
 	//#define MMBAVOX 96
@@ -678,16 +678,16 @@ After each set of module options are definitions that you can use to adjust the 
 
 // Label modules
 
-	//#define MMBASLabel
-	//#define MMBATKLabel
+	#define MMBASLabel
+	#define MMBATKLabel
 	//#define MMBAVOLabel
 	//#define MMBCHRLabel
 	//#define MMBCRTLabel
 	//#define MMBDEFLabel
 	//#define MMBDODLabel
-	#define MMBEXPLabel
+	//#define MMBEXPLabel
 	//#define MMBHITLabel
-	#define MMBLevelLabel
+	//#define MMBLevelLabel
 	//#define MMBRESLabel
 	//#define MMBRTGLabel
 	//#define MMBHPLabel
@@ -702,18 +702,18 @@ After each set of module options are definitions that you can use to adjust the 
 	// Coordinates are in 8x8 pixel tiles
 
 	// AS label
-	//#define MMBASLabelX 13
-	//#define MMBASLabelY 6
-	//#define MMBASLabelVRAMTile 0x100
-	//#define MMBASLabelPaletteIndex 2
-	//#define MMBASLabelTileCount 2
+	#define MMBASLabelX 9
+	#define MMBASLabelY 2
+	#define MMBASLabelVRAMTile 0x100
+	#define MMBASLabelPaletteIndex 2
+	#define MMBASLabelTileCount 2
 
 	// ATK label
-	//#define MMBATKLabelX 13
-	//#define MMBATKLabelY 3
-	//#define MMBATKLabelVRAMTile 0x102
-	//#define MMBATKLabelPaletteIndex 2
-	//#define MMBATKLabelTileCount 2
+	#define MMBATKLabelX 5
+	#define MMBATKLabelY 2
+	#define MMBATKLabelVRAMTile 0x102
+	#define MMBATKLabelPaletteIndex 2
+	#define MMBATKLabelTileCount 2
 
 	// AVO label
 	//#define MMBAVOLabelX 9
