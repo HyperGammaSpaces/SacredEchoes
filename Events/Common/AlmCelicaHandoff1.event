@@ -95,6 +95,7 @@ CALL $591F40
 SVAL 0x3 0x5D //secret book
 GIVEITEMTO Celica
 STAL 20
+CharacterJoinedNotification(Notif_MaeBoeyGennyJoin)
 FADI 5
 
 ASMC 0x86581 //Set Celica Mode.

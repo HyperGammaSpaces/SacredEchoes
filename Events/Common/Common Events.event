@@ -46,6 +46,8 @@ UnifiedBEXPCaller:
 	NOTIFY BEXP_Notif_Text 0x0 0x0
 	ENDA
 	
+#define CharacterJoinedNotification(textID) "SOUN 0x5A; NOTIFY textID 0x0 0x0; STAL 30"
+	
 ALIGN 4
 //usage example: 
 //AREA 0x15 HiddenItem(itemID) [20,7] [23,10]

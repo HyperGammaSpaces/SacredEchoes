@@ -212,8 +212,9 @@ Ch1_1_BeginningScene:
 
 	CUSA Gray
 	CUSA Tobin
+	CharacterJoinedNotification(Notif_GrayTobinJoin)
 
-	STAL 0x40
+	STAL 0x20
 	FlashCursor(Alm, 60)
 	FADI 0x5
 	CLEA 0x0
@@ -275,6 +276,7 @@ TalkToKliff:
 	CHAI Kliff
 	STAL 5
 	CUSA Kliff
+	CharacterJoinedNotification(Notif_KliffJoin)
 	STAL 0x14
 	MURE 0x05
 	NoFade
@@ -288,6 +290,7 @@ TalkToFaye:
 	CHAI Faye
 	STAL 5
 	CUSA Faye
+	CharacterJoinedNotification(Notif_FayeJoin)
 	STAL 0x14
 	MURE 0x05
 	NoFade

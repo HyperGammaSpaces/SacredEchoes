@@ -62,6 +62,7 @@ TalkToClair:
 	CALL $591F40
 	CUSA Clair
 	STAL 20
+	CharacterJoinedNotification(Notif_ClairJoin)
 	SVAL 0x3 BaseLance
 	GIVEITEMTO Clair
 	STAL 20
@@ -79,6 +80,7 @@ TalkToClairWithAlm:
 	CALL $591F40
 	CUSA Clair
 	STAL 20
+	CharacterJoinedNotification(Notif_ClairJoin)
 	SVAL 0x3 BaseLance
 	GIVEITEMTO Clair
 	STAL 20
@@ -96,6 +98,7 @@ TalkToClairWithGray:
 	CALL $591F40
 	CUSA Clair
 	STAL 20
+	CharacterJoinedNotification(Notif_ClairJoin)
 	SVAL 0x3 BaseLance
 	GIVEITEMTO Clair
 	STAL 20

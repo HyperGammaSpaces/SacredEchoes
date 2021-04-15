@@ -267,7 +267,7 @@ Some things are still under development for later releases.
   - Fiend (Generic King by Huichelaar, DerTheVaporeon, L95 and Pikmin1211)
   - Deathgoyle by Teraspark and L95
   - Duma mapsprite by SHYUTERz, HIROTO, and SHIRMER
-- Map sprites and class cards by flasuban, Tordo45, SkidMarc25, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, Snewping, MeatOfJustice, DerTheVaporeon, FEier, and Team SALVAGED
+- Map sprites and class cards by flasuban, Tordo45, SkidMarc25, Leif, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, Snewping, MeatOfJustice, DerTheVaporeon, FEier, and Team SALVAGED
 - Battle palettes by Hypergammaspaces and Dancer_A
 - LordGlenn's Cipher icons for weapon ranks, weapon icons for Regalia weapons
 - Cardcafe’s Echoes item icons and FEier's Weapon icons

@@ -412,6 +412,7 @@ CelicaZofiaCastleEvent:
 			LOAD1 0x0 KliffJoins
 			ENUN
 			REMA
+			CharacterJoinedNotification(Notif_KliffJoin)
 
 		LABEL 0x8
 		CHECK_EVENTID gFayeRecruited
@@ -422,6 +423,7 @@ CelicaZofiaCastleEvent:
 			LOAD1 0x0 FayeJoins
 			ENUN
 			REMA
+			CharacterJoinedNotification(Notif_FayeJoin)
 			
 
 		LABEL 0x9

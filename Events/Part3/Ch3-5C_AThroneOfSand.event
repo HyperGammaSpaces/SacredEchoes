@@ -256,6 +256,7 @@ Ch3_5C_EndingScene:
 	FADI 5
 	LOAD1 0x1 EstJoins
 	ENUN
+	CharacterJoinedNotification(Notif_EstJoin)
 	
 	//get deen or sonya
 	SetBackground(0x0C)
@@ -265,12 +266,14 @@ Ch3_5C_EndingScene:
 		FADI 2
 		LOAD1 0x1 DeenJoins
 		ENUN
+		CharacterJoinedNotification(Notif_DeenJoin)
 		GOTO 0x7
 	LABEL 0x6
 		Text(Ch3_5C_EndingText_GetSonya)
 		FADI 2
 		LOAD1 0x1 SonyaJoins
 		ENUN
+		CharacterJoinedNotification(Notif_SonyaJoin)
 	LABEL 0x7
 	
 	MNCH 0x1C

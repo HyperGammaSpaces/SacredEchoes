@@ -185,7 +185,14 @@ Ch2_4_EndingScene:
 		FADI 16
 		CUSA Valbar
 		CUSA Leon
+		CHECK_EVENTID 0x8
+		BEQ 0x9 0xC 0x0
+			CharacterJoinedNotification(Notif_ValbarLeonJoin)
 		CUSA Kamui
+		LABEL 0x09
+		CHECK_EVENTID 0x9
+		BEQ 0x8 0xC 0x0
+			CharacterJoinedNotification(Notif_KamuiJoin)
 		GOTO 0x8
 	LABEL 0x6 //if Valbar is dead
 	EVBIT_MODIFY 0x0
@@ -205,6 +212,7 @@ Ch2_4_EndingScene:
 		FADI 16
 		EVBIT_MODIFY 0x1
 		CUSA Leon
+		CharacterJoinedNotification(Notif_LeonJoin)
 	LABEL 0x7
 	SVAL 0x1 0x1
 	CHECK_ALIVE Kamui
@@ -216,6 +224,9 @@ Ch2_4_EndingScene:
 		FADI 16
 		EVBIT_MODIFY 0x1
 		CUSA Kamui
+		CHECK_EVENTID 0x9
+		BEQ 0x8 0xC 0x0
+			CharacterJoinedNotification(Notif_KamuiJoin)
 	LABEL 0x8
 	EVBIT_MODIFY 0x0
 	MNCH 0x0C
@@ -229,9 +240,11 @@ TalkToValbar:
 	IFEQ 0x2 0xC 0x1 //if not, goto NoFaye
 		Text(Ch2_4_GetValbar)
 		CUSA Leon
+		CharacterJoinedNotification(Notif_ValbarLeonJoin)
 		GOTO 0x3
 	LABEL 0x2
 	Text(Ch2_4_GetValbar_NoLeon)
+	CharacterJoinedNotification(Notif_ValbarJoin)
 	LABEL 0x3
 	CUSA Valbar
 	STAL 0x14
@@ -245,6 +258,7 @@ TalkToKamui:
 	Text(Ch2_4_GetKamui)
 	CUSA Kamui
 	STAL 0x14
+	CharacterJoinedNotification(Notif_KamuiJoin)
 	MURE 0x05
 	NoFade
 	ENDA
@@ -261,6 +275,7 @@ TalkToKamuiCelica:
 	LABEL 0x4
 	Text(Ch2_4_GetKamui_ValbarDead)
 	CUSA Kamui
+	CharacterJoinedNotification(Notif_KamuiJoin)
 	LABEL 0x5
 	STAL 0x14
 	MURE 0x05

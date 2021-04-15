@@ -320,6 +320,8 @@ Hideout_EndingScene:
 		TEXTSTART 
 		TEXTSHOW DeliveranceHideout_AfterCGText
 		TEXTEND
+		CharacterJoinedNotification(Notif_ForsythPythonJoin)
+		CharacterJoinedNotification(Notif_CliveJoin)
 		REMA
 		
 		EVBIT_MODIFY 0x1

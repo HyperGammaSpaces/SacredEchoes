@@ -288,7 +288,7 @@ Ch3_2C_EndingScene:
 			STAL 20
 			Text(Ch3_2C_EndingText_GetAxeBros)
 			//if the village is visited, you get both
-			REMA
+			CharacterJoinedNotification(Notif_AtlasHyasJoin)
 			FADI 2
 			
 			LOAD1 0x1 AxeBros
@@ -299,7 +299,7 @@ Ch3_2C_EndingScene:
 			STAL 20
 			Text(Ch3_2C_EndingText_VillageDestroyed)
 			//if the village is destroyed you only get atlas
-			REMA
+			CharacterJoinedNotification(Notif_AtlasJoin)
 			FADI 2
 			
 			LOAD1 0x1 AtlasJoins

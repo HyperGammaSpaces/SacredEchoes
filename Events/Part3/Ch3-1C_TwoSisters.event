@@ -173,6 +173,7 @@ Ch3_1C_EndingScene:
 			FADI 5
 			CUSA Palla
 			CUSA Catria
+			CharacterJoinedNotification(Notif_PallaCatriaJoin)
 			GOTO 0x3
 		LABEL 0x4 //only palla
 		MUSC 0x32 //victory (bad ending)
@@ -180,6 +181,7 @@ Ch3_1C_EndingScene:
 		Text(Ch3_1C_EndingText_CatriaDied)
 		FADI 5
 		CUSA Palla
+		CharacterJoinedNotification(Notif_PallaJoin)
 		GOTO 0x3
 	LABEL 0x1
 	MUSC 0x32 //victory (bad ending)
@@ -190,6 +192,7 @@ Ch3_1C_EndingScene:
 		Text(Ch3_1C_EndingText_PallaDied)
 		FADI 5
 		CUSA Catria
+		CharacterJoinedNotification(Notif_CatriaJoin)
 		GOTO 0x3 
 	LABEL 0x2 //both died
 		SetBackground(0x29)

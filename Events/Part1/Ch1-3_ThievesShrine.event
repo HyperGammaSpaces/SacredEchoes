@@ -255,6 +255,7 @@ STAL 33
 Text(RecruitAcantha_Text)
 CUSA Acantha
 STAL 20
+CharacterJoinedNotification(Notif_AcanthaJoin)
 NoFade
 MURE 0x05
 ENDA
@@ -265,6 +266,7 @@ STAL 33
 Text(RecruitAcantha_Silque_Text)
 CUSA Acantha
 STAL 20
+CharacterJoinedNotification(Notif_AcanthaJoin)
 NoFade
 MURE 0x05
 ENDA
@@ -299,6 +301,7 @@ Ch1_3_EndingScene:
 	TEXTSTART 
 	TEXTSHOW Ch1_3_PostBattle_AfterCG
 	TEXTEND
+	CharacterJoinedNotification(Notif_SilqueJoin)
 	REMA
 	STARTFADE
 	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
