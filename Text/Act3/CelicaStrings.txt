@@ -1,3 +1,70 @@
+## Ch3_Celica_Start
+Celica: Phew...
+
+Mae: Celica! Hey, Celica!
+
+Celica: ...Hmm? I'm sorry, Mae. I was lost in thought. Did you need something?
+
+Mae: Me? Naw, I'm fine like always. But what about YOU?! That guy leading the Deliverance is a friend of yours, right? I know we're in a rush, but surely we had time for you to say good-bye!
+
+Celica: It's fine. That isn't necessary.
+
+Mae: But Celi--
+
+Celica: Mae, I need to reach the Temple of Mila as soon as possible. I know the Mother will reveal a path to save Zofia that doesn't involve violence.
+
+Mae: I dunno about this, Boey... Celica's acting all weird. I wonder what happened?
+
+Boey: Well, can you blame her? I'm sure she's more than a little conflicted. If the Deliverance defeats Desaix and drives the empire back, what next? Zofia will need a ruler, and who better than a boy who cast off tyranny's yoke?
+
+Mae: What?! But Celica's the rightful heir!
+
+Boey: Yeah, but she can't exactly just go and announce that to everyone. If she did, she'd be made to lead the Deliverance effort herself. Believe me, that's the last thing Celica wants right now.
+
+Mae: I hate it when you make sense. Boey. But that just means we have to haul tail to the Temple of Mila! The Earth Mother will know what to do. She'll take care of everything!
+
+Boey: I pray it's truly so simple.
+
+Celica: Once we cross this mountain, we'll finally reach the coast. It's a hard climb, but I know we'll make it.
+[X]
+
+## Ch3_Celica_Start_2
+Saber: Waugh! Earthquake?!
+
+Mae: Gah! I c-can't even stand!
+
+Saber: Look out! The cliff is crumbling!
+
+Boey: Oh, you have to be joking! As if anything else could have gone wrong on this blasted adventure!
+
+Celica: Everyone, be careful!
+[X]
+
+## Ch3_Celica_Start_3
+[MidLeft][LoadCelica]
+[MidRight][LoadConrad]
+Are you unhurt?[AN]
+[MidLeft][MoveMidLeft]
+Wh-[.4]Who are you?[AN]
+[MidRight]
+My identity is of no consequence.[NL]
+All that matters is that you're safe.[AN]
+I came to warn you of the fault line[NL]
+that crosses this pass--[.4]but alas,[AN]
+my steed was no match for the speed[NL]
+of a force of nature.[AN]
+[MidLeft][LoadCelica_Angry]
+And am I meant to accept that as[NL]
+the entire story here?[AN]
+I've been pursued tirelessly by strange[NL]
+men in hoods for most of this journey.[AN]
+Why, then, should I take a masked man[NL]
+with no name at his word?[AN]
+[MidRight]
+...It's true, you've no[NL]
+reason to trust me.[AN] 
+[X]
+
 ## Ch3_1C_OpeningText
 [FarLeft][LoadMae]
 [Left][LoadCelica]
@@ -671,7 +738,7 @@ Ready your weapons, everyone![AN]
 
 ## Ch3_3C_EndingText_Grieth
 [MidRight][LoadGrieth]
-[FarFarLeft][LoadBandit]
+[FarFarLeft][LoadBrigand1]
 [FarFarLeft][MoveMidLeft]
 Say, boss?[.5] I got some...[.5] uh...[.5] news.[NL]
 Kinda bad, like.[AN]
@@ -931,7 +998,7 @@ how this plays out.[AN]
 
 ## Ch3_4C_HouseText
 [MidLeft][LoadCurrent]
-[MidRight][LoadGranny]
+[MidRight][LoadOldwoman]
 This place used to be a grassy steppe,[NL]
 full of horses and sheep.[AN]
 But when the rains dried up,[NL]
@@ -949,7 +1016,7 @@ guide their feet.[AN]
 
 ## Ch3_5C_OpeningText
 [MidRight][LoadGrieth]
-[MidLeft][LoadBandit]
+[MidLeft][LoadBrigand1]
 Grieth![.4] Boss![.4] That girl and her[NL]
 band of idiots are here![AN]
 [MidRight]
@@ -973,7 +1040,7 @@ this stupid girl ALL BY MYSELF![AN]
 [MidRight][LoadGrieth]
 Well, lookie here--[.4]it's Zofia's[NL]
 crown princess! Ain't you just FANCY![AN]
-[MidLeft][LoadCelicaAngry]
+[MidLeft][LoadCelica_Angry]
 How...[.4] Who told you that?[AN]
 [MidRight]
 Well, lemme think a second...[NL]
@@ -1627,7 +1694,7 @@ Er, [.4]Your Highness?![NL]
 [X]
 
 ##Ch3_7C_EndingText_3
-[Left][LoadCelicaPrincess]
+[Left][LoadCelica_Promoted]
 [FarLeft][LoadSaber]
 [MidRight][LoadConrad]
 [Left][ToggleSmile]
@@ -1677,7 +1744,7 @@ I'm near him, though I've no clue why.[AN]
 [X]
 
 ##Ch3_7C_EndingText_SluiceGate
-[MidRight][LoadCelicaPrincess]
+[MidRight][LoadCelica_Promoted]
 [MidLeft][LoadOldman]
 By the Mother! That circlet![NL]
 Symbol of the Zofian throne, it is![AN]
@@ -1692,7 +1759,7 @@ All is as Your Highness desires.[AN]
 [X]
 
 ##Ch3_7C_EndingText_SluiceGate_NotOpen
-[MidRight][LoadCelicaPrincess]
+[MidRight][LoadCelica_Promoted]
 [MidLeft][LoadOldman]
 Er, one small issue, Your Highness.[AN]
 Openin' this here gate isn't enough[NL]

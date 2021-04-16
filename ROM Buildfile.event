@@ -7,29 +7,38 @@
     ORG FreeSpace
 	
 	//Text installer first for ID definitions
-	#include "Text/Install Text Data.event"
-	MESSAGE Used text space ends at currentOffset
+	TextSpace:
+	#include "Text/InstallTextData.event"
+	MESSAGE Text space used is__ (currentOffset - TextSpace)
 	
 	//CSV tables
+	TableSpace:
     #include "Tables/Table Installer.event"
-    //MESSAGE Used table space ends at currentOffset
+    MESSAGE Table space used is__ (currentOffset - TableSpace)
 	
     //Engine Hacks
+	HaxSpace:
     #include "Engine_Hacks/GaidenMechanicsMasterInstaller.event"
-    MESSAGE Used hax space ends at currentOffset
+    MESSAGE Hax space used is__ (currentOffset - HaxSpace)
 	
 	PUSH
 
 	ORG EndSpace
 
 	//Music
+	MusicSpace:
     #include "Music/Music Installer.event"
+	MESSAGE Music space used is__ (currentOffset - MusicSpace)
 
 	//GFX
+	GfxSpace:
 	#include "Graphics/Master Graphics Installer.event"
+	MESSAGE Gfx space used is__ (currentOffset - GfxSpace)
 
 	//Animations
+	AnimSpace:
     #include "Animations/Master Animation Installer.event"
+	MESSAGE Anim space used is__ (currentOffset - AnimSpace)
 
 	ALIGN 16 // ups correction
     WORD 0 0 0 0
