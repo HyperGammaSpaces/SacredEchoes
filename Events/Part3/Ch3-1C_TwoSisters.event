@@ -50,8 +50,21 @@ BLST
 ALIGN 4
 
 PlayerUnitsCutscene:
-	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [3,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [3,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1,Ally,True) [1,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [2,9] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT
+	
+PlayerUnitsCutscene2:
+	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [3,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [3,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1,Ally,True) [1,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [2,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT
+	
+ConradAppears:
+	UNIT Conrad Paladin 0x00 Level(1, NPC, True) [0,10] 0x00 0x00 0x1 REDA4R9 [BaseLance] NoAI
 	UNIT
 
 PlayerUnits:
@@ -102,8 +115,34 @@ PegasusKnights:
 	UNIT
 
 Ch3_1C_BeginningScene:
-	MUSC 0x25
+	//earthquake stuff w/conrad
+	MUSC 0x3A
+	LOMA 0x39
 	LOAD2 0x0 PlayerUnitsCutscene
+	ENUN
+	SetBackground(0x1F)
+	Text(Ch3_Celica_Start)
+	ClearBackground
+	EARTHQUAKE_START 0x100
+	STAL 60
+	Text(Ch3_Celica_Start_2)
+	STAL 30
+	EARTHQUAKE_END
+	STAL 20
+	LOAD1 0x1 ConradAppears
+	ENUN
+	CAM1 Conrad
+	FlashCursor(Conrad, 60)
+	SetBackground(0x1F)
+	Text(Ch3_Celica_Start_3)
+	FADI 2
+	
+	//actual map stuff
+	CLEA 0x0
+	CLEN 0x0
+	LOMA 0x16
+	MUSC 0x25
+	LOAD2 0x0 PlayerUnitsCutscene2
 	ENUN
 	CAM1 Celica
 	LOAD1 0x1 EnemyUnits

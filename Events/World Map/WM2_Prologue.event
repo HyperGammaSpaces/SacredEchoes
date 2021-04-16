@@ -124,6 +124,7 @@ WMIntro_PrologueCh1:
 EVBIT_MODIFY 0x1
 CHECK_EVENTID gEnableWorldMap
 BEQ 0x1 0xC 0x0
+	EVBIT_MODIFY 0x0
 	STAL 6
 	//maybe put in a music change?? idk
 	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_RamForest 0x20 0x1
@@ -133,7 +134,7 @@ BEQ 0x1 0xC 0x0
 	PUTSPRITE 0x3 AlmFighter 0x0 GMLoc_RamVillage //ID, Class, Allegiance, Location
 	WM_MAKELORDVISIBLE 0x3 //i think this has to be same as PUTSPRITE ID?
 	WM_MAKELORDDISAPPEAR //basically replacing the lord sprite with this PUTSPRITE that we can move wherever without triggering a location transition
-	WM_SHOWPORTRAIT 0x5 700 //Load Lukas on right
+	WM_SHOWPORTRAIT Portrait_Lukas 700 //Load Lukas on right
 	STAL 6 46
 	WM_TEXT Act1_WMIntro
 	TEXTEND
@@ -154,7 +155,7 @@ BEQ 0x1 0xC 0x0
 	STAL 6 46
 	
 	//Show Desaix and soldiers moving
-	WM_SHOWPORTRAIT 0x2F 1332 //2c = Desaix, on left
+	WM_SHOWPORTRAIT Portrait_Desaix 0x534 //2c = Desaix, on left
 	STAL 20
 	PUTSPRITE 0x2 Soldier 0x1 GMLoc_ZofiaCastle //ID, Class, Affiliation, NodeID
 	PUTSPRITE 0x3 Soldier 0x1 GMLoc_ZofiaCastle
@@ -177,16 +178,15 @@ BEQ 0x1 0xC 0x0
 	TEXTEND
 	WM_REMOVETEXT
 	
+	EVBIT_MODIFY 0x1
 	//Move Alm to next location
 	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_RamForest 0x20 0x1
 	WM_WAITFORCAM
 	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_RamVillage GMLoc_RamForest 0xFFF9 0x0
 	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
 	
-
-	STAL 2 20
+	STAL 4
 	FADI 16
-	EVBIT_MODIFY 0x1
 	WM_REMOVELOCATION 0x0 GMLoc_SouthernOutpost 0x0 //getting rid of these locations we used for cutscene
 	WM_REMOVELOCATION 0x0 GMLoc_ZofiaCastle 0x0
 	GOTO 0x2
@@ -301,6 +301,7 @@ WMIntro_Act2Start:
 CHECK_EVENTID gNovisCemeteryCompleted 
 BNE 0x2 0xC 0x0
 	//narration goes here
+	EVBIT_MODIFY 0x0
 	STAL 6
 	//maybe put in a music change?? idk
 	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_NovisPriory 0x20 0x1
@@ -351,16 +352,16 @@ BNE 0x2 0xC 0x0
 	//Move Celica to next location
 	STAL 46
 	REMSPRITE 0x4
-	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_NovisPriory GMLoc_NovisCemetery 0xFFF9 0x0
-	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
-	STAL 6 46
+	STAL 6
 	TEXTCONT
 	TEXTEND
 	WM_REMOVETEXT
-
-	STAL 2 20
-	FADI 16
 	EVBIT_MODIFY 0x1
+	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_NovisPriory GMLoc_NovisCemetery 0xFFF9 0x0
+	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
+
+	STAL 4
+	FADI 16
 	WM_REMOVELOCATION 0x0 GMLoc_MilaTemple 0x0
 	//ColdOpen2(10, 11)
 	GOTO 0x3

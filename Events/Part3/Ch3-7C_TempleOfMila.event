@@ -208,6 +208,9 @@ Ch3_7C_EndingScene:
 	//Ending continues
 	SetBackground(0x2F)
 	Text(Ch3_7C_EndingText_3)
+	FADI 5
+	STAL 10
+	SetBackground(0x2F)
 	Text(Ch3_7C_EndingText_SluiceGate)
 	EVBIT_MODIFY 0x1
 	CHECK_EVENTID gChapter3A7Completed

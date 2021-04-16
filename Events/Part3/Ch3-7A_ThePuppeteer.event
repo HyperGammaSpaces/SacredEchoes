@@ -187,10 +187,10 @@ Ch3_7A_Units1:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,21] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [9,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x1 REDA10R20 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x1 REDA11R21 [BaseLance, Vulnerary] NoAI 
+	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x1 REDA9R21 [Fire, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x1 REDA12R22 [BaseLance] NoAI
 	UNIT
 	
 CutsceneBosses:
@@ -249,44 +249,59 @@ DeltheaJoins:
 	UNIT
 
 Ch3_7A_BeginningScene:
-	MUSC 0x24
+	MUSC 0x15
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	FADU 5
+	SVAL 0xA 0x0
+	CHECK_EXISTS Luthier
+	SADD 0xCA
 	LOAD2 0x1 CutsceneUnits
 	ENUN
+	CAM1 [12, 5]
+	STAL 30
 	CAM1 Alm
-	FADU 5
+	FlashCursor(Alm, 60)
 	Text(Ch3_7A_OpeningText)
 	
-	LOAD1 0x1 CutsceneBosses
-	ENUN
 	SVAL 0x2 Tatarrah
 	_WARP 0xFFFF 0xFFFD [9,17]
 	CALL Warp_In_Effect
-
 	STAL 20
-	FlashCursor(Tatarrah, 60)
-	MUSC 0x15
-	SetBackground(0x21)
-	Text(Ch3_7A_OpeningText_2)
-	SVAL 0x2 Delthea
+	SVAL 0x2 DeltheaBoss
 	_WARP 0xFFFF 0xFFFD [8,17]
 	CALL Warp_In_Effect
 	STAL 20
 	
-	CHECK_EXISTS Luthier
-	BEQ 0x3 0xC 0x0
-		ClearBackground
-		CAM1 DeltheaBoss
-		FlashCursor(DeltheaBoss, 60)
+	FlashCursor(Tatarrah, 60)
+	Text(Ch3_7A_OpeningText_2)
+
+	SVAL 0x2 Tatarrah
+	CALL Warp_Out_Effect
+	STAL 0x08
+	DISA Tatarrah
+	
+	CAM1 DeltheaBoss
+	MOVE 0x08 DeltheaBoss [10, 18]
+	ENUN
 		
-		//Add scripted battle here. Alm dodges
+	StartBattle
+	MissedAttack(0,0)
+	EndAttack
+	FIG1 DeltheaBoss Alm Aura
+	
+	CHECK_EXISTS Luthier
+	BNE 0x3 0xC 0xA
 		
 		Text(Ch3_7A_OpeningText_LuthierExists)
 		CHECK_ALIVE Luthier
-		BEQ 0x3 0xC 0x0
+		BEQ 0x4 0xC 0x0
 			CAM1 Luthier
 			FlashCursor(Luthier, 60)
 			Text(Ch3_7A_OpeningText_LuthierAlive)
 	LABEL 0x3
+		Text(Ch3_7A_OpeningText_NoLuthier)
+	LABEL 0x4
 	STAL 20
 	SVAL 0x2 DeltheaBoss
 	CALL Warp_Out_Effect

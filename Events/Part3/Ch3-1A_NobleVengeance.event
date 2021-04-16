@@ -116,13 +116,29 @@ Reinforcements1:
 
 
 Ch3_1A_BeginningScene:
+	CHECK_ALIVE Gray
+	BEQ 0x6 0xC 0x0
+		CHECK_ALIVE Tobin
+		BEQ 0x6 0xC 0x0
+			MUSC 0x3A
+			SetBackground(0x1B)
+			Text(Ch3_Alm_Start)
+			ClearBackgroundSmooth
+			MUSC 0x48
+			CAM1 [16, 15]
+			LOAD1 0x1 EnemyUnits
+			ENUN
+			LOAD2 0x1 CutsceneUnits
+			ENUN
+			GOTO 0x7
+	LABEL 0x6
 	MUSC 0x48
 	CAM1 [16, 15]
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	LOAD2 0x1 CutsceneUnits
 	ENUN
-
+	LABEL 0x7
 	SetBackground(0x1B)
 	Text(Ch3_1A_OpeningText)
 	ClearBackground

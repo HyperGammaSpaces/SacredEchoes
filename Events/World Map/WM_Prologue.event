@@ -309,7 +309,7 @@ WM_Ch14:
 WM_Act3Start: //setup act 3 routes and remove path between harbor and castle
 	//routes 0x10 and 0x18 need to be drawn
 	EVBIT_MODIFY 0x1
-	WM_REMOVEPATH 0x34 //castle <-> harbor
+	
 	WM_DRAWPATH2 0x0 0x8 0x0 //castle <-> s. zofia2
 	WM_SPAWNLORD 0x0 0x0 Alm GMLoc_ZofiaCastle 0x0 //set Alm at Zofia Castle
 	WM_CENTERCAMONLORD
@@ -331,13 +331,32 @@ WM_Act3Start: //setup act 3 routes and remove path between harbor and castle
 	WM_DRAWPATH 0x0 0x10 0x0 //alm path
 	STAL 70
 	//tutorial
+	
+	CALL 0xA3974C //darkens the map
+	WM_TEXTSTART
+	WM_TEXT Act3_WMIntro
+	TEXTEND
+	
+	WM_REMOVEPATH 0x34 //castle <-> harbor
+	TEXTCONT
+	TEXTEND
+	
+	WM_SHOWPORTRAIT Portrait_Celica 0x2BC //on right
+	WM_SHOWPORTRAIT Portrait_Alm 0x534 //on left
+	TEXTCONT
+	TEXTEND
+	WM_CLEARPORTRAIT 0x0 0x1BC 0x0 //clears a right facing portrait
+	WM_CLEARPORTRAIT 0x0 0x634 0x0 //Clear left portrait
+	TEXTCONT
+	TEXTEND
+	WM_REMOVETEXT
+	
 	MUSC 0x6
 	_0x1A25
 	SVAL 0xB 0xC000C
 	TEXTSHOW LordSplitExplanationText
 	TEXTEND
 	REMA
-	ENDA
 	//end tutorial
 	WM_MAKELORDVISIBLE 0x0
 	EVBIT_MODIFY 0x1
