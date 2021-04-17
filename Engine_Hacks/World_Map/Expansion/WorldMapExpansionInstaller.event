@@ -1,0 +1,83 @@
+//Changes how worldmap node data is stored and how many nodes you can have.
+#include "Worldmap_Nodes_Rework.event"
+
+//Changes how worldmap path data is stored and how many paths you can have.
+#include "Worldmap_Paths_Rework.event"
+
+/*
+
+At A3DD88 there is a table of World Map Location to BGM ID.
+
+Pointers to this are at 080B9F94 and 080B9FA4
+
+Function is at B9F54
+
+*/
+
+#define WorldMapBGMTableEntry(musicID) "BYTE musicID; BYTE 0; BYTE musicID; BYTE 0"
+#define WorldMapBGMTableEntry(musicID1, musicID2) "BYTE musicID1; BYTE 0; BYTE musicID2; BYTE 0"
+
+PUSH
+
+	ORG $B9F94
+	POIN WorldMapBGMTable
+
+	ORG $B9FA4
+	POIN WorldMapBGMTable
+
+POP
+
+WorldMapBGMTable:
+WorldMapBGMTableEntry(0x04) //Act 1
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04)
+WorldMapBGMTableEntry(0x04, 0x05) //Zofia Castle
+WorldMapBGMTableEntry(0x05) //Act 2
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x05)
+WorldMapBGMTableEntry(0x06) //Act 3
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x06)
+WorldMapBGMTableEntry(0x07) //Act 4
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x08, 0x07) //Duma Tower
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)
+WorldMapBGMTableEntry(0x07)

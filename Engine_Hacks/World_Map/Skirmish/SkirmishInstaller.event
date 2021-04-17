@@ -1,0 +1,106 @@
+//Going into c1774, r0 is "next chapter ID", r1 is proc+2C, r2 is some WM event struct, r3 is next worldmap node?
+//C1788 - something to do with chapter 9 or below.
+//C1796 get mode data, 2 is Alm 3 is Celica
+//C17C8 process for celica mode
+//C17Ea - jumps to C16F4. Gets some random number (amount of skirmishes?) - we force this to be 1
+//C1834 - load locations
+//C186C - jumps to C1724
+//what if we change C1840 to BLT? $02 $DB
+//or BGE?
+//83400 - GetChapterSkirmishLeaderClasses
+
+//C1718 change to $01 $20
+
+//Get rid of weird World Map Skirmishes
+PUSH
+	ORG $C1710
+	SHORT $1C30 $46C0 $46C0 $46C0 $46C0 //only one skirmish may be active at a time.
+	ORG $C17D6
+	BYTE $09 //avoid a buffer overflow (prev. 0xA)
+	ORG $C17E0
+	SHORT $DBF8 //bne -> blt
+	//c1774
+	ORG $C1840
+	BYTE $02 $DB //change a bne to blt
+
+	ORG $BD068
+	#incbin "ShouldChapterBeSkirmish.dmp"
+	POIN WorldMapNodeList
+
+	//Fix fuckiness with skirmish prep screen save names
+	ORG $3412E
+	SHORT $E00A
+
+	ORG $206948 //Locations
+	SkirmishLocationTable:
+	BYTE $0B //N.Cemetery
+	BYTE $0B //Novis Cemetery
+	BYTE $14 //Z. Forest
+	BYTE $18 //Forest North
+	BYTE $1B //MountainGraveyard
+	BYTE $1E //Grieth Citadel
+	BYTE $23 //MireBoneyard
+	BYTE $2A //RigelForest
+	BYTE $2F //RigelValley
+	//206954 Monster occurrence table?
+	
+	ORG $2069d8 //Chapters that unlock - Alm
+	AlmModeSkirmishUnlockPoints:
+	BYTE $0A //after first boat map
+	BYTE $0F
+	BYTE $1C //after Luthier
+	BYTE $1C //after Delthea
+	BYTE $1C //after Catria/Palla
+	BYTE $1C //after Deen/Sonya
+	BYTE $20 //after lost woods
+	BYTE $25 //after nuibaba
+	BYTE $27 //after dragon's maw
+	BYTE $2A //after rigel castle
+	BYTE $2B //after duma tower
+	
+	ORG $2069e3 //Chapters that unlock - Celica
+	CelicaModeSkirmishUnlockPoints:
+	BYTE $0A //after first boat map
+	BYTE $0F
+	BYTE $18 //after desert bastion
+	BYTE $1C //after Delthea
+	BYTE $1C //after Catria/Palla
+	BYTE $1C //after Deen/Sonya
+	BYTE $20 //after lost woods
+	BYTE $25 //after nuibaba
+	BYTE $27 //after dragon's maw
+	BYTE $2A //after rigel castle
+	BYTE $2B //after duma tower
+	
+	ORG $2069EE //Appearance rates per location
+	AlmModeSkirmishUnlockRates:
+	BYTE $64 $00 $00 $00 $00 $00 $00 $00 $00 //Only spawn at Ram Valley
+	BYTE $00 $64 $00 $00 $00 $00 $00 $00 $00 //Only spawn at Novis Cemetery
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Only spawn at Z. Forest
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Spawn at Z. Forest and Forest North
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Only spawn at MtnGrave
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Spawn at MtnGrave and DesertBastion
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	
+	ORG $206A51 //Appearance rates per location
+	CelicaModeSkirmishUnlockRates:
+	BYTE $64 $00 $00 $00 $00 $00 $00 $00 $00 //Only spawn at Ram Valley
+	BYTE $00 $64 $00 $00 $00 $00 $00 $00 $00 //Only spawn at Novis Cemetery
+	BYTE $00 $00 $00 $00 $64 $00 $00 $00 $00 //Only spawn at MtnGrave
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Spawn at Z. Forest and Forest North
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Only spawn at MtnGrave
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //Spawn at MtnGrave and DesertBastion
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	BYTE $00 $00 $00 $00 $00 $00 $00 $00 $00 //just disabling for part 4 i guess
+	//206AB4 -Gmap Time Monsters
+POP
+
+//And fix skirmish behavior
+#include "zMasterSkirmishLoader.event"

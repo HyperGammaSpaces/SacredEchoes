@@ -1,0 +1,101 @@
+AlmDestinationTable:
+BYTE gEnableLordSwitch		GMLoc_NorthZofia
+BYTE gChapter3A1Completed 	GMLoc_ForestVillage
+BYTE gChapter3A2Completed 	GMLoc_ZofiaForest1
+BYTE gChapter3A3Completed 	GMLoc_DesaixFort
+BYTE gChapter3A4Completed 	GMLoc_ZofiaForest2
+BYTE gChapter3A5Completed 	GMLoc_ForestNorthSide
+BYTE gChapter3A6Completed 	GMLoc_SluiceGate
+BYTE gChapter3A7Completed 	GMLoc_RigelForest1
+BYTE $0 $0 //term
+CelicaDestinationTable:
+BYTE gEnableLordSwitch		GMLoc_ZofiaBay
+BYTE gChapter3C1Completed 	GMLoc_MtnGraveyard
+BYTE gChapter3C2Completed 	GMLoc_DesertBastion
+BYTE gChapter3C3Completed 	GMLoc_ZofiaDesert
+BYTE gChapter3C4Completed 	GMLoc_GriethsBase
+BYTE gChapter3C5Completed 	GMLoc_ValleyApproach
+BYTE gChapter3C6Completed 	GMLoc_MilaTemple
+BYTE gChapter3C7Completed 	GMLoc_DeadMansMire
+BYTE $0 $0 //term
+
+//Create a menu option to switch between Alm and Celica. Should only be available with event flag. menudefs are at A3E04C
+#include "LordSwitchStuff.lyn.event"
+//TUTORIALTEXTBOX as soon as Act 3 begins, explaining how to switch
+//Store the other lord's MU data somewhere where there is a WORD free.
+//Set game mode to the other lord's.
+
+GmapMenuDefsNew:
+//Unit
+WORD $8206820		//jp name
+SHORT $645 $6DF		//eng name and helptext
+BYTE $00 $00 $00 $00
+POIN $4F449			//usability
+WORD $0				//drawing
+POIN $BC4C5			//effect
+WORD $0 $0 $0
+//Status
+WORD $8206818		//jp name
+SHORT $646 $6E0		//eng name and helptext
+BYTE $00 $01 $00 $00
+POIN $4F449			//usability
+WORD $0				//drawing
+POIN $BC4DD			//effect
+WORD $0 $0 $0
+//Guide
+WORD $8206810		//jp name
+SHORT $647 $6E5		//eng name and helptext
+BYTE $00 $02 $00 $00
+POIN $22661			//usability
+POIN $BC4F5			//drawing
+POIN $BC56D			//effect
+WORD $0 $0 $0
+//Switch
+WORD $8206818		//jp name
+SHORT SwitchMenu_Name SwitchMenu_Desc		//eng name and helptext
+BYTE $03 $03 $00 $00 //yellow text
+POIN SwitchCommandUsability|1	//usability
+WORD $0				//drawing
+POIN SwitchCommandEffect|1	//effect
+WORD $0 $0 $0
+//Options
+WORD $8206808		//jp name
+SHORT $648 $6E1		//eng name and helptext
+BYTE $00 $04 $00 $00
+POIN $4F449			//usability
+WORD $0				//drawing
+POIN $BC585			//effect
+WORD $0 $0 $0
+//Save
+WORD $8206800		//jp name
+SHORT $649 $679		//eng name and helptext
+BYTE $00 $05 $00 $00
+POIN $4F449			//usability
+WORD $0				//drawing
+POIN $BC59D			//effect
+WORD $0 $0 $0
+//Terminator
+WORD $0 $0 $0 $0 $0 $0 $0 $0 $0
+
+PUSH
+	ORG $B90FE
+	BYTE $05 //dont clear lord2
+	//ORG $B90BA
+	//BYTE $05 //dont draw lord2
+	ORG $BDE2C
+	BYTE $05 //dont clear lord2
+	//ORG $C1BCA
+	//BYTE $05 //dont draw lord2
+	ORG $C395C
+	BYTE $05 //dont draw lord2 as enemy
+	ORG $20686E
+	BYTE $2 //default allegiance palette for MU7
+
+	ORG $A3E12C
+	POIN GmapMenuDefsNew
+	
+	//prevent other lord from being removed on battle start.
+	ORG $C1ACA
+	BYTE $1
+POP
+
