@@ -1,0 +1,58 @@
+WM Flag is drawn at 0800931C
+part of TCS!
+
+GmapScreen2 procstate
++0x2C word.
++0x32 byte. Bit 0 is some flag set to 1 in Init. If 0, main loop does nothing. Other bits are uninitialized.
+            Bit 1, Skips past 080BB898 to end if unset. Set by WM_SETDESTINATION, probably indicates flag needs 
+            to be drawn over a destination.
++0x33 byte. Newest destination NodeID. WM_SETDESTINATION changes this.
++0x34 byte. Holds which node should blend?
++0x38 word. Pointer to TCS stuff.
++0x3C word. Poin to GmapScreen, 8A3DE84 procstate, whose +0x34 and +0x36 holds X & Y of camera.
+
+Main Loop: start to 080BB898 seems to be a loop that draws world map node icons.
+
+080BB8FA coordinates & corrections are added here, to draw stuff in the right place.
+080BB92E if X too high, skip
+080BB93C if Y too high, skip?
+080BB984 draws the flag by updating TCS.
+
+080BB96E, move regs r8, r5, r4 to r1, r2, r3 here and then hook, on return go to 080BB988
+
+GmapScreen2 only draws flag over the newest destination, stored in +0x33. We can find the other destinations in WMDatastruct+0x30
+
+
+Worldmap_icon_data_address, 0x8205FA0, contains data about each WMNode icon. Entries are 0x10 sized. 0x11 entries.
+
++0x0, word. TileID
++0x4, word. OAM pointer?
++0x8, word. Idk, but if differs based on node icon size?
++0xC, short. Idk.
++0xE, short. padding? Always zero.
+
+Actually, FEBuilder detailed these, woops.
+
+WMMap RegisterObject priorities:
+
+small red flag: 0
+small avatar: 0
+small cursor: 0
+avatar: 8
+nodes: 12
+red flag: 11
+cursor: 4
+
+flag update:
+13, 12, 13, 13
+
+
+080C3770 draws small red flag. Called as part of 080C3A64 which seems to draw a bunch of different sprites. Called as part of 080C3B40, which is a loop routine of Procs_Gmap_Rader, 08A3EE74+0x40.
+
+C3A64 calls:
+  C3770: draws mini flag
+  C38BC: draws mini enemies
+  C380C: draws mini avatar
+  C36E8: draws mini cursor
+  C3A28: updates object palette 9 colours 7 & 9. Used by mini enemies & mini avatar.
+  

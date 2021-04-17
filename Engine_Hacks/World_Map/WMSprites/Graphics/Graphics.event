@@ -1,0 +1,11 @@
+// Repoint image containing vanilla flags
+PUSH
+
+  ORG 0xB8E4C
+  POIN FlagTiles
+
+POP
+
+ALIGN 4
+FlagTiles:
+#incbin "FlagTiles.dmp"
