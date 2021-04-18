@@ -34,6 +34,19 @@ Spells this unit[NL]
 has learned.
 [X]
 
+#0x876 Warp_ScrollyText
+Select a target for this spell.[X]
+
+#0x878 Invoke_ScrollyText
+Select a space to summon into.[X]
+
+#0x515 Freeze_StatusName
+Freeze[X]
+
+#0x554 Freeze_StatusDesc
+Frozen to the ground.[NL]
+Can't move.[X]
+
 #0x354 BaseSword_Name
 Sword[X]
 
@@ -247,6 +260,14 @@ Forscythe
 
 ## Hatchet_Name
 Hatchet
+[X]
+
+## HolyAxe_Name
+Holy Axe
+[X]
+
+## AetherAxe_Name
+Aether
 [X]
 
 ## Hauteclere_Name
@@ -499,6 +520,10 @@ Magic Shield
 
 ## RoyalShield_Name
 Royal Shield
+[X]
+
+## EmperorShield_Name
+Rigel Shield
 [X]
 
 ## IoteShield_Name
@@ -933,6 +958,14 @@ Reverses Weapon Triangle.
 Doubles as ranged attack.
 [X]
 
+## HolyAxe_Desc
+Restores HP each turn.
+[X]
+
+## AetherAxe_Desc
+Negates enemy defense.
+[X]
+
 ## Hauteclere_Desc
 Restores HP each turn.
 [X]
@@ -985,7 +1018,7 @@ Restores HP each turn.
 [X]
 
 ## LunaBow_Desc
-Restores HP each turn.
+Sure to hit its mark.
 [X]
 
 ## Parthia_Desc
@@ -1155,7 +1188,9 @@ Protects against armor and[NL]
 cavalry effectiveness.[X]
 
 ## SpeedRing_Desc
-DUMMY[X]
+Speed +10, Mov +1.[NL]
+Restores HP each turn.
+[X]
 
 ## PrayerRing_Desc
 Blocks critical hits.[X]
@@ -1187,8 +1222,12 @@ Res +7, Spd -3.[X]
 A splendid shield.[NL]
 Def +3, Res +3, Spd -2.[X]
 
+## EmperorShield_Desc
+The Emperor's shield.[NL]
+Str/Def/Res +4, Spd -4.[X]
+
 ## HolyShield_Desc
-DUMMY[X]
+Halves damage from Terrors.[X]
 
 ## IoteShield_Desc
 Protects fliers from[NL]
@@ -1306,7 +1345,7 @@ Long-range dark magic.[X]
 Breath of an evil dragon.[X]
 
 ## Dragonstone_Desc
-DUMMY[X]
+A manakete's source of power.[X]
 
 ## OcularBeam_Desc
 A malefic flash that destroys[NL]
@@ -1487,16 +1526,3 @@ when she's ready.[X]
 ## DanceItem_UseScreen
 Allows allies[NL]
 to move again.[X]
-
-#0x876 Warp_ScrollyText
-Select a target for this spell.[X]
-
-#0x878 Invoke_ScrollyText
-Select a space to summon into.[X]
-
-#0x515 Freeze_StatusName
-Freeze[X]
-
-#0x554 Freeze_StatusDesc
-Frozen to the ground.[NL]
-Can't move.[X]
