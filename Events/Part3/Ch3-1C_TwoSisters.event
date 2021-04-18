@@ -49,22 +49,22 @@ Ch3_1C_Ballista3:
 BLST
 ALIGN 4
 
-PlayerUnitsCutscene:
-	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [3,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [3,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1,Ally,True) [1,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [2,9] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT
-	
-PlayerUnitsCutscene2:
-	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [3,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [3,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1,Ally,True) [1,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [2,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+MountainCutscene_Allies:
+	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [4,3] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1,Ally,True) [3,4] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [2,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT
 	
 ConradAppears:
-	UNIT Conrad Paladin 0x00 Level(1, NPC, True) [0,10] 0x00 0x00 0x1 REDA4R9 [BaseLance] NoAI
+	UNIT Conrad Paladin 0x00 Level(1, NPC, True) [0,5] 0x00 0x00 0x1 REDA6R4 [BaseLance] NoAI
+	UNIT
+	
+Cutscene_ChapterIntro:
+	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA3R14 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA3R13 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA1R13 [Fire, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA2R13 [BaseSword, Vulnerary] NoAI 
 	UNIT
 
 PlayerUnits:
@@ -118,7 +118,7 @@ Ch3_1C_BeginningScene:
 	//earthquake stuff w/conrad
 	MUSC 0x3A
 	LOMA 0x39
-	LOAD2 0x0 PlayerUnitsCutscene
+	LOAD2 0x0 MountainCutscene_Allies
 	ENUN
 	SetBackground(0x1F)
 	Text(Ch3_Celica_Start)
@@ -127,10 +127,10 @@ Ch3_1C_BeginningScene:
 	STAL 60
 	Text(Ch3_Celica_Start_2)
 	STAL 30
-	EARTHQUAKE_END
-	STAL 20
 	LOAD1 0x1 ConradAppears
 	ENUN
+	STAL 20
+	EARTHQUAKE_END
 	CAM1 Conrad
 	FlashCursor(Conrad, 60)
 	SetBackground(0x1F)
@@ -142,14 +142,27 @@ Ch3_1C_BeginningScene:
 	CLEN 0x0
 	LOMA 0x16
 	MUSC 0x25
-	LOAD2 0x0 PlayerUnitsCutscene2
-	ENUN
-	CAM1 Celica
 	LOAD1 0x1 EnemyUnits
 	ENUN
+	CAM1 [0,16]
+	FADU 5
+	
+	LOAD2 0x0 Cutscene_ChapterIntro
+	ENUN
+	CAM1 Celica
 	
 	SetBackground(0x29)
-	Text(Ch3_1C_OpeningText)
+	TEXTSTART
+	TEXTSHOW Ch3_1C_OpeningText
+	TEXTEND
+	CAM1 Garth
+	FlashCursor(Garth, 60)
+	TEXTCONT
+	TEXTEND
+	CAM1 Celica
+	TEXTCONT
+	TEXTEND
+	REMA
 	ClearBackground
 	
 	CAM1 [11,0]

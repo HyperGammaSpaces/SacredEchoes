@@ -75,7 +75,7 @@ Ch3_1A_Units1:
 CutsceneUnits:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [19,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [14,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 EnemyUnits:
@@ -116,30 +116,24 @@ Reinforcements1:
 
 
 Ch3_1A_BeginningScene:
-	CHECK_ALIVE Gray
-	BEQ 0x6 0xC 0x0
-		CHECK_ALIVE Tobin
-		BEQ 0x6 0xC 0x0
-			MUSC 0x3A
-			SetBackground(0x1B)
-			Text(Ch3_Alm_Start)
-			ClearBackgroundSmooth
-			MUSC 0x48
-			CAM1 [16, 15]
-			LOAD1 0x1 EnemyUnits
-			ENUN
-			LOAD2 0x1 CutsceneUnits
-			ENUN
-			GOTO 0x7
-	LABEL 0x6
-	MUSC 0x48
 	CAM1 [16, 15]
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	LOAD2 0x1 CutsceneUnits
 	ENUN
+	
+	CHECK_ALIVE Gray
+	BEQ 0x6 0xC 0x0
+		CHECK_ALIVE Tobin
+		BEQ 0x6 0xC 0x0
+			MUSC 0x3A
+			SetBackground(0x1F)
+			Text(Ch3_Alm_Start)
+			FADI 2
+	LABEL 0x6
+	MUSC 0x48
 	LABEL 0x7
-	SetBackground(0x1B)
+	SetBackground(0x4C)
 	Text(Ch3_1A_OpeningText)
 	ClearBackground
 
@@ -164,6 +158,10 @@ Ch3_1A_BeginningScene:
 	MUSC 0x28
 	STAL 20
 	Text(Ch3_1A_OpeningText_3)
+	MOVE 0x10 Clive [5,16]
+	ENUN
+	STAL 20
+	MOVE 0x10 Clive [14,16]
 	FADI 2
 
 	CLEA 0x0
