@@ -151,10 +151,11 @@ Ch3_1C_BeginningScene:
 	ENUN
 	CAM1 Celica
 	
-	SetBackground(0x29)
+	//SetBackground(0x29)
 	TEXTSTART
 	TEXTSHOW Ch3_1C_OpeningText
 	TEXTEND
+	
 	CAM1 Garth
 	FlashCursor(Garth, 60)
 	TEXTCONT
@@ -162,6 +163,7 @@ Ch3_1C_BeginningScene:
 	CAM1 Celica
 	TEXTCONT
 	TEXTEND
+	
 	REMA
 	ClearBackground
 	
