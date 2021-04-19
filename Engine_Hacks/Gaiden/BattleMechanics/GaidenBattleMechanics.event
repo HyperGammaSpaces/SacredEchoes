@@ -163,9 +163,11 @@ ProcParent:
 #incbin "proc_loop.dmp"
 ProcTable:
 POIN Proc_Start
-POIN MagicCostsHP
+POIN Proc_Sureshot
+POIN Proc_PrayerRing
 //POIN DamageHalvingSkillsDuringBattle
 //POIN Proc_StatusWeapons2 
+POIN MagicCostsHP
 POIN Proc_Finish 0
 
 ALIGN 4
@@ -180,6 +182,14 @@ ALIGN 4
 MagicCostsHP:
 #incbin "hpcost.dmp"
 POIN SpellCostGetter
+
+ALIGN 4
+Proc_Sureshot:
+#incbin "ItemSkills/SureShot.dmp"
+
+ALIGN 4
+Proc_PrayerRing:
+#incbin "ItemSkills/PrayerRing.dmp"
 
 ALIGN 4
 #include "DF-Apotrope/ApotropeBeforeBattle.lyn.event"

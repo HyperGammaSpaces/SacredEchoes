@@ -12,6 +12,7 @@ PUSH
   POIN NewMiniMap
   ORG $AA188C
   #incbin "valentia-minimap.pal.bin"
+  /*
   ORG $B8E4C
   POIN NewWMIcons
   ORG $205fa0	//WMIconData table entry 0
@@ -19,12 +20,13 @@ PUSH
   POIN $590F4C
   BYTE $08 $08 $10 $10
   BYTE $08 $02
+  */
 POP
 
 ALIGN 4
 NewMiniMap:
 #incbin "valentia-minimap.dmp"
 
-ALIGN 4
-NewWMIcons:
-#incbin "A96308_mapicons_pal_a97a40.dmp"
+//ALIGN 4
+//NewWMIcons:
+//#incbin "A96308_mapicons_pal_a97a40.dmp"
