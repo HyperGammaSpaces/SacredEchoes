@@ -7,34 +7,27 @@
 #include "EAstdlib.event"
 
 {
-  // Definitions
-  #include "Extensions/ProcDefinitions.event"
+	// Definitions
+	#include "Extensions/ProcDefinitions.event"
+	
+	ALIGN 4
+	#include "ASM/WMFlags.lyn.event"
   
 	PUSH
-    
-    // Repoint GmapScreen2's loop to ours, which does our stuff, and calls the original.
-    ORG 0xA3DF84
-    PROC_LOOP_ROUTINE(DrawSprites|1)
-    
-    // NOP the original flag drawer
-    ORG 0xBB984
-    SHORT 0x46C0 0x46C0
-    
-    // Hook our miniflagdrawer in vanilla miniflagdrawer
-    ORG 0xC3774
-    callHack_r3(DrawMiniFlags)
-    SHORT 0xE033
+		// Repoint GmapScreen2's loop to ours, which does our stuff, and calls the original.
+		ORG 0xA3DF84
+		PROC_LOOP_ROUTINE(DrawWMSprites|1)
+		
+		// NOP the original flag drawer
+		ORG 0xBB984
+		SHORT 0x46C0 0x46C0
+		
+		// Hook our miniflagdrawer in vanilla miniflagdrawer
+		ORG 0xC3774
+		callHack_r3(DrawWMMiniFlags)
+		SHORT 0xE033
     
 	POP
-  
-  ALIGN 4
-  DrawSprites:
-  #include "ASM/DrawSprites.lyn.event"
-  ALIGN 4
-  DrawFlags:
-  #include "ASM/DrawFlags.lyn.event"
-  ALIGN 4
-  DrawMiniFlags:
-  #include "ASM/DrawMiniFlags.lyn.event"
-}
+}  
+
 #include "Graphics/Graphics.event"
