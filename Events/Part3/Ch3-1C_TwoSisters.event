@@ -123,6 +123,7 @@ Ch3_1C_BeginningScene:
 	SetBackground(0x1F)
 	Text(Ch3_Celica_Start)
 	ClearBackground
+	MUSS 0x0
 	EARTHQUAKE_START 0x100
 	STAL 60
 	Text(Ch3_Celica_Start_2)
@@ -131,6 +132,7 @@ Ch3_1C_BeginningScene:
 	ENUN
 	STAL 20
 	EARTHQUAKE_END
+	MURE 0x0
 	CAM1 Conrad
 	FlashCursor(Conrad, 60)
 	SetBackground(0x1F)
@@ -165,7 +167,7 @@ Ch3_1C_BeginningScene:
 	TEXTEND
 	
 	REMA
-	ClearBackground
+	//ClearBackground
 	
 	CAM1 [11,0]
 	STAL 20

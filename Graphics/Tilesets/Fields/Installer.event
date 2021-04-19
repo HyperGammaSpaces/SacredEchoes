@@ -11,6 +11,10 @@ ALIGN 4
 NightFieldPalette:
 #incbin "NightFields.pal.bin"
 
+ALIGN 4
+SunsetFieldPalette:
+#incbin "SunsetFields.pal.bin"
+
 PUSH
 ORG $1AE5B0
 FieldsPalette:
@@ -22,3 +26,4 @@ EventPointerTable(plFieldsPal, FieldsPalette) //fields pal
 EventPointerTable(plFieldsConf, FieldsTiles) //fields tile
 EventPointerTable(plFieldsAnim, 0x59D498) //fields anim
 EventPointerTable(plFieldsNightPalette, NightFieldPalette) //fields night pal
+EventPointerTable(plFieldsSunsetPalette, SunsetFieldPalette) //fields night pal
