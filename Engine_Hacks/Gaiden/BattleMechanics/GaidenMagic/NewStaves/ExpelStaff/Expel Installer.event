@@ -1,10 +1,8 @@
-//For Expel: MAG/2 range, 65 hit, make target list from all enemies in range which are MonsterType, grant exp for killing strongest monster hit.
-
 PUSH
 
 	//Repoint old Mend to new Expel function, which replaces the Mine
 	ORG $288B4
-	POIN $28BA8
+	POIN ExpelUsabilityCheck
 	
 	//Repoint old Mine usability check with Expel usability check
 	//This has to be in BL range
@@ -24,10 +22,10 @@ PUSH
 	
 	//Expel P1 (Use Effect)
 	ORG $2FC94
-	POIN $2FF50 //mine jump
+	POIN $2FE7C //mine jump
 	
 	//Expel Exec (WIP)
-	ORG $2FA4C
+	ORG $2F1D8
 	//Just push lr and bx to hack in R3
 	SHORT $B500
 	SHORT $46C0 //nop
@@ -35,16 +33,18 @@ PUSH
 	SHORT $BC01
 	SHORT $4700
 	
-	//SHORT $B5F0 //push {r4-r7, lr}
-	//SHORT $46C0
-	//jumpToHack(ExecuteExpelStaff)
-	
-	ORG $2FA82 //End of old Mine
-	SHORT $BCF0 //pop {r4-r7}
-	
 POP
 
 //Expel stuff
+ExpelEvent:
+	CAM1 0xFFFF
+	EARTHQUAKE_START 0x100
+	STAL 30
+	SOUN 0x101 //purge hit
+	STAL 30
+	EARTHQUAKE_END
+	NoFade
+	ENDA
 
 ExpelStaff_RangeSetup:
 	rfItemRangeSetup(TryAddUnitToExpelTargetList+1,Item_TURange)
@@ -53,20 +53,9 @@ TryAddUnitToExpelTargetList:
 #incbin "ExpelUsabilityCheck.dmp"
 ALIGN 4
 
-//If it's short enough i'm just going to incbin it since it's just wrapping a ForEach. Func is at $2FA4C.
-//This will need to "for each in range" check if unit is Monster Type, roll d100, if <65 then reduce unit's HP to 0. No need to select a target.
-	
-Target_Routine_For_Expel: //push r14; ldrb r1,[r4,#0x12]; lsl r1,r1,#0x1; add r1,#0x1E; add r1,r1,r0; ldrh r2,[r1]; bl somewhere; pop r0; bx r0 (r4+0x12 has inventory slot, r0 has char data)
-//Modify to check spell index.
-SHORT 0xB500 0x7CA1 0x0049 0x311E 0x1809 
-//SHORT 0x880A
-SHORT $224C //mov r2, #0x4c
-BL(ExpelStaff_RangeSetup)
-SHORT 0xBC01 0x4700
-
 ExecuteExpelStaff:
-#incbin "ExecExpel.dmp"
-POIN Target_Routine_For_Expel
+#incbin "ExecExpel_New.dmp"
+WORD 0
 WORD SelectedSpellPointer
 POIN ExpelEffectProc
 POIN SpellCostGetter
@@ -94,36 +83,5 @@ WORD $0; WORD $0 //end proc
 ExpelEffectProc:
 SHORT $E; SHORT $1;  WORD $0 //sleep 1 frame
 SHORT $2; SHORT $0;  POIN $2CC1C+1 //SaveInstigatorFromBattle
-SHORT $E; SHORT $1;  WORD $0 //sleep 1 frame
-
-SHORT $2; SHORT $0;  POIN ExpelLoopInit+1 //its dying here.
-
-SHORT $B; SHORT $0;  WORD $0 //set label 0
-SHORT $2; SHORT $0;  POIN ExpelCheckLoopVariables+1 //handles "if target list empty goto 1"
-SHORT $2; SHORT $0;  POIN $35ED8+1 //puts camera on current target
-SHORT $E; SHORT $0;  WORD $0 //sleep 0 frame
-SHORT $2; SHORT $0;  POIN ExpelEffectFunc+1
-SHORT $E; SHORT $0;  WORD $0 //sleep 0 frame
-SHORT $2; SHORT $0;  POIN $35F40+1 //resets unit motion
-
-SHORT $B; SHORT $1;  WORD $0 //set label 1
-SHORT $2; SHORT $0;  POIN $3601C+1 //does some cleanup idk
-SHORT $E; SHORT $0;  WORD $0 //sleep 0 frame
-SHORT $C; SHORT $0;  WORD $0 //goto label 0
+SHORT $E; SHORT $1E;  WORD $0 //sleep 30 frame
 WORD $0; WORD $0 //end proc
-
-
-ExpelLoopInit:
-#incbin "ExpelLoopInit.dmp"
-POIN Target_Routine_For_Expel
-ALIGN 4
-
-ExpelCheckLoopVariables:
-#incbin "ExpelCheckLoopVariables.dmp"
-POIN Target_Routine_For_Expel
-ALIGN 4
-
-ExpelEffectFunc:
-#incbin "ExpelEffectFunc.dmp"
-POIN Target_Routine_For_Expel
-ALIGN 4

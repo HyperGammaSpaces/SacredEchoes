@@ -111,6 +111,11 @@ PUSH
 	ORG $28F90					//old (8C) anew
 	POIN FortifyStaffP4Jump
 	
+	//Force battle anims off for certain staff
+	ORG $581D0
+	SHORT $2A4C $D003 //beq 0x4C
+	SHORT $2A53 $DB03 //blt 0x53
+	SHORT $2A59 $DC01 //bgt 0x59
 	
 	
 	//Actual function changes below

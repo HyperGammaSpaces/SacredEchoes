@@ -27,7 +27,8 @@ PostCombatLoop:
 POIN PostCombatActions
 
 PostCombatActions: 
-POIN GiveNewItemTo UnlockStaffCheck AddSupportPointsAfterBattle 
+POIN PostCombat_Upheaval PostCombat_Expel PostCombat_Unlock
+POIN GiveNewItemTo AddSupportPointsAfterBattle 
 POIN Canto //this works i guess
 WORD 0 //Terminator
 
@@ -36,12 +37,14 @@ PROTECT $1D308 $1D314
 #include "../PromotionMechanics/GiveNewWeapon.event"
 ALIGN 4
 
+#include "../BattleMechanics/GaidenMagic/NewStaves/staves_after.lyn.event"
 ALIGN 4
+
 GiveNewItemTo:
 #incbin "../PromotionMechanics/GiveNewItemTo.dmp"
 POIN GiveSwordEvent GiveAxeEvent GiveBowEvent
-
 ALIGN 4
+
 Canto:
 #incbin "canto.dmp"
 POIN prMovGetter
@@ -51,8 +54,19 @@ SupportUpEvent:
 #include "../SupportHax/SupportUpEvent.event"
 ALIGN 4
 
-UnlockStaffCheck:
-#incbin "../BattleMechanics/GaidenMagic/NewStaves/unlockafter.dmp"
+UpheavalEvent:
+	CAM1 0xFFFF
+	EARTHQUAKE_START 0x100
+	STAL 60
+	SOUN 0xCB //woosh
+	STAL 0x16
+	SOUN 0xCB //woosh
+	STAL 0x16
+	SOUN 0xD5 //map kill
+	STAL 0x16
+	EARTHQUAKE_END
+	NoFade
+	ENDA
 ALIGN 4
 
 AddSupportPointsAfterBattle:
