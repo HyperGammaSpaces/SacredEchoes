@@ -16,20 +16,50 @@ jumpToHack(MakeHPEffectsWorkOnMiss_Nos)
 ORG $52980
 SHORT $1C68 $46C0 $46C0 //Make the avoid anim proc increment gBattleAnimeCounter instead of waiting for efxHpBar to finish.
 
+ORG $584A0
+jumpToHack(magicmiss_showhpchange)
+
 //58522 devil2
 ORG $5857E //loads the 3rd byte i.e. damage. we change this to the 4th byte.
 BYTE 4
 ORG $58580
 SHORT $5E79 //ldsh instead of ldsb
-ORG $08585AC
+ORG $585AC
 WORD $0203ac34 //displayed hp buffer
-
-ORG $584A0
-jumpToHack(magicmiss_showhpchange)
 
 ORG $585ba
 SHORT $46C0 //nop
 jumpToHack(regularhit_showhpchange)
+
+//586ea poison/status
+
+//58706 lethality
+
+//58722 attacker skill/sureshot
+
+//5873a pierce
+
+//58756 defender skill/pavise
+
+
+//called from 52316
+ORG $52322
+SHORT $46C0 //make defender skill not skip the hp bar
+
+//fix defender skill anim check
+ORG $5908c
+SHORT $1C38 //mov r0, r7
+BL($5a16c) //GetAisSubjectId
+SHORT $2101 //mov r1, #1
+SHORT $4041 //eor r1, r0
+SHORT $89F8 //ldrh r0, [r7, #0xE]
+SHORT $3801 //sub r0, #0x1
+SHORT $0040 //lsl r0, r0, #0x1
+SHORT $1840 //add r0, r0, r1
+BL($58A34) //GetBattleAnimRoundTypeFlags
+SHORT $2180 //mov r1, #0x80
+SHORT $00C9 //lsl r1, r1, #3
+SHORT $4001 //tst r1, r0
 
 ORG $52364
 jumpToHack(efxHPBarParent)
