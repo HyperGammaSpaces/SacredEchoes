@@ -22,8 +22,12 @@ __TEXTPROCESS14A:
 setText($14A, __TEXTPROCESS14A)
 
 __TEXTPROCESS14B:
-#incbin ".TextEntries\text_buildfileDesc_HardMode.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileDesc_HardMode_Temp.fetxt.dmp"
 setText($14B, __TEXTPROCESS14B)
+
+__TEXTPROCESS057:
+#incbin ".TextEntries\text_buildfileDesc_HardMode.fetxt.dmp"
+setText($57, __TEXTPROCESS057)
 
 __TEXTPROCESS051:
 #incbin ".TextEntries\text_buildfileMode_EasyCasual.fetxt.dmp"
@@ -2553,133 +2557,133 @@ __TEXTPROCESS7C7:
 #incbin ".TextEntries\text_buildfileSong3C_Name.fetxt.dmp"
 setText($7C7, __TEXTPROCESS7C7)
 
-__TEXTPROCESS057:
-#incbin ".TextEntries\text_buildfileNotif_GrayTobinJoin.fetxt.dmp"
-setText($57, __TEXTPROCESS057)
-
 __TEXTPROCESS058:
-#incbin ".TextEntries\text_buildfileNotif_FayeJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_GrayTobinJoin.fetxt.dmp"
 setText($58, __TEXTPROCESS058)
 
 __TEXTPROCESS059:
-#incbin ".TextEntries\text_buildfileNotif_KliffJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_FayeJoin.fetxt.dmp"
 setText($59, __TEXTPROCESS059)
 
 __TEXTPROCESS05A:
-#incbin ".TextEntries\text_buildfileNotif_SilqueJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_KliffJoin.fetxt.dmp"
 setText($5A, __TEXTPROCESS05A)
 
 __TEXTPROCESS05B:
-#incbin ".TextEntries\text_buildfileNotif_AcanthaJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_SilqueJoin.fetxt.dmp"
 setText($5B, __TEXTPROCESS05B)
 
 __TEXTPROCESS05C:
-#incbin ".TextEntries\text_buildfileNotif_ClairJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_AcanthaJoin.fetxt.dmp"
 setText($5C, __TEXTPROCESS05C)
 
 __TEXTPROCESS05D:
-#incbin ".TextEntries\text_buildfileNotif_FernandJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_ClairJoin.fetxt.dmp"
 setText($5D, __TEXTPROCESS05D)
 
 __TEXTPROCESS05E:
-#incbin ".TextEntries\text_buildfileNotif_CliveJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_FernandJoin.fetxt.dmp"
 setText($5E, __TEXTPROCESS05E)
 
 __TEXTPROCESS05F:
-#incbin ".TextEntries\text_buildfileNotif_ForsythPythonJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_CliveJoin.fetxt.dmp"
 setText($5F, __TEXTPROCESS05F)
 
 __TEXTPROCESS060:
-#incbin ".TextEntries\text_buildfileNotif_MaeBoeyGennyJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_ForsythPythonJoin.fetxt.dmp"
 setText($60, __TEXTPROCESS060)
 
 __TEXTPROCESS061:
-#incbin ".TextEntries\text_buildfileNotif_SaberJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_MaeBoeyGennyJoin.fetxt.dmp"
 setText($61, __TEXTPROCESS061)
 
 __TEXTPROCESS062:
-#incbin ".TextEntries\text_buildfileNotif_ValbarLeonJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_SaberJoin.fetxt.dmp"
 setText($62, __TEXTPROCESS062)
 
 __TEXTPROCESS063:
-#incbin ".TextEntries\text_buildfileNotif_ValbarJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_ValbarLeonJoin.fetxt.dmp"
 setText($63, __TEXTPROCESS063)
 
 __TEXTPROCESS064:
-#incbin ".TextEntries\text_buildfileNotif_LeonJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_ValbarJoin.fetxt.dmp"
 setText($64, __TEXTPROCESS064)
 
 __TEXTPROCESS065:
-#incbin ".TextEntries\text_buildfileNotif_KamuiJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_LeonJoin.fetxt.dmp"
 setText($65, __TEXTPROCESS065)
 
 __TEXTPROCESS066:
-#incbin ".TextEntries\text_buildfileNotif_LuthierJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_KamuiJoin.fetxt.dmp"
 setText($66, __TEXTPROCESS066)
 
 __TEXTPROCESS067:
-#incbin ".TextEntries\text_buildfileNotif_MathildaJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_LuthierJoin.fetxt.dmp"
 setText($67, __TEXTPROCESS067)
 
 __TEXTPROCESS068:
-#incbin ".TextEntries\text_buildfileNotif_DeltheaJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_MathildaJoin.fetxt.dmp"
 setText($68, __TEXTPROCESS068)
 
 __TEXTPROCESS069:
-#incbin ".TextEntries\text_buildfileNotif_PallaCatriaJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_DeltheaJoin.fetxt.dmp"
 setText($69, __TEXTPROCESS069)
 
 __TEXTPROCESS06A:
-#incbin ".TextEntries\text_buildfileNotif_PallaJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_PallaCatriaJoin.fetxt.dmp"
 setText($6A, __TEXTPROCESS06A)
 
 __TEXTPROCESS06B:
-#incbin ".TextEntries\text_buildfileNotif_CatriaJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_PallaJoin.fetxt.dmp"
 setText($6B, __TEXTPROCESS06B)
 
 __TEXTPROCESS06C:
-#incbin ".TextEntries\text_buildfileNotif_AtlasHyasJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_CatriaJoin.fetxt.dmp"
 setText($6C, __TEXTPROCESS06C)
 
 __TEXTPROCESS06D:
-#incbin ".TextEntries\text_buildfileNotif_AtlasJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_AtlasHyasJoin.fetxt.dmp"
 setText($6D, __TEXTPROCESS06D)
 
 __TEXTPROCESS06E:
-#incbin ".TextEntries\text_buildfileNotif_JesseJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_AtlasJoin.fetxt.dmp"
 setText($6E, __TEXTPROCESS06E)
 
 __TEXTPROCESS06F:
-#incbin ".TextEntries\text_buildfileNotif_DeenJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_JesseJoin.fetxt.dmp"
 setText($6F, __TEXTPROCESS06F)
 
 __TEXTPROCESS070:
-#incbin ".TextEntries\text_buildfileNotif_SonyaJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_DeenJoin.fetxt.dmp"
 setText($70, __TEXTPROCESS070)
 
 __TEXTPROCESS071:
-#incbin ".TextEntries\text_buildfileNotif_EstJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_SonyaJoin.fetxt.dmp"
 setText($71, __TEXTPROCESS071)
 
 __TEXTPROCESS072:
-#incbin ".TextEntries\text_buildfileNotif_TatianaJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_EstJoin.fetxt.dmp"
 setText($72, __TEXTPROCESS072)
 
 __TEXTPROCESS073:
-#incbin ".TextEntries\text_buildfileNotif_ZekeJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_TatianaJoin.fetxt.dmp"
 setText($73, __TEXTPROCESS073)
 
 __TEXTPROCESS074:
-#incbin ".TextEntries\text_buildfileNotif_ConradJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_ZekeJoin.fetxt.dmp"
 setText($74, __TEXTPROCESS074)
 
 __TEXTPROCESS075:
-#incbin ".TextEntries\text_buildfileNotif_NomahJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_ConradJoin.fetxt.dmp"
 setText($75, __TEXTPROCESS075)
 
 __TEXTPROCESS076:
-#incbin ".TextEntries\text_buildfileNotif_MycenJoin.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileNotif_NomahJoin.fetxt.dmp"
 setText($76, __TEXTPROCESS076)
+
+__TEXTPROCESS077:
+#incbin ".TextEntries\text_buildfileNotif_MycenJoin.fetxt.dmp"
+setText($77, __TEXTPROCESS077)
 
 __TEXTPROCESS212:
 #incbin ".TextEntries\text_buildfileName_Alm.fetxt.dmp"
