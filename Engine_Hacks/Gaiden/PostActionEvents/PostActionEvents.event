@@ -28,6 +28,7 @@ POIN PostCombatActions
 
 PostCombatActions: 
 POIN PostCombat_Upheaval PostCombat_Expel PostCombat_Unlock
+POIN Lifetaker
 POIN GiveNewItemTo AddSupportPointsAfterBattle 
 POIN Canto //this works i guess
 WORD 0 //Terminator
@@ -48,6 +49,19 @@ ALIGN 4
 Canto:
 #incbin "canto.dmp"
 POIN prMovGetter
+ALIGN 4
+
+Lifetaker:
+#incbin "../BattleMechanics/ItemSkills/Lifetaker.dmp"
+POIN LifetakerEvent
+ALIGN 4
+
+LifetakerEvent:
+CAM1 0xFFFF
+WARP_IN
+STAL 0x32
+NoFade
+ENDA
 ALIGN 4
 
 SupportUpEvent:
