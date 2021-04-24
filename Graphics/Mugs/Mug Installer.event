@@ -4,6 +4,10 @@ PUSH
 	//Portrait table repointing
 	ORG $5524
 	POIN PortraitTable
+	
+	//Fix top-right tiles in statscreen
+	ORG $5D20
+    BYTE 5
 
 	//Make Celica not smol
 	ORG $5C3C

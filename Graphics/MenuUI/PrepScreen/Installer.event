@@ -9,6 +9,11 @@ PUSH
 	//"Preparations" graphic at top
 	ORG $95E20
 	POIN PrepScreenGraphic
+	
+	ORG $95EB4
+	WORD $02023546
+	ORG $95E6A
+	SHORT $34E4
 
 POP
 
