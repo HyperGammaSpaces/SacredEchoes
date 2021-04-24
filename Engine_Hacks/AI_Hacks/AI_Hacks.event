@@ -1,5 +1,3 @@
-#include "HipsterAiDefinitions.event"
-
 #include "DanceAI/DanceAi.event"
 ALIGN 4
 //commenting out cuz it doesn't play nice with damage flooring
@@ -8,6 +6,8 @@ ALIGN 4
 #include "LeaderAIFix_stan/LeadAiFix.event"
 ALIGN 4
 #include "AI_TalkAI/TalkAI.event"
+
+#include "AiPerformExtension/AiPerformExt.event"
 
 PUSH
 //modify CHAI to be able to change 3 and 4, not just 1 and 2

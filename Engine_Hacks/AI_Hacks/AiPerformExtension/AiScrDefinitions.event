@@ -26,6 +26,8 @@
 #define AiGotoIfNE(aLabel, aRValue)            "BYTE 0x00 5 0xFF (aLabel); WORD (aRValue) (AiResultAddr) 0"
 #define AiFunc(aFuncAddr, aParamAddr)          "BYTE 0x01 0 0xFF 0; WORD 0; POIN (aFuncAddr) (aParamAddr)"
 #define AiFunc(aFuncAddr)                      "BYTE 0x01 0 0xFF 0; WORD 0; POIN (aFuncAddr); WORD 0"
+#define AiFuncPercentChance(aFuncAddr, percent)                      "BYTE 0x01 percent 0xFF 0; WORD 0; POIN (aFuncAddr); WORD 0"
+#define AiFuncPercentChance(aFuncAddr, aParamAddr, percent)          "BYTE 0x01 percent 0xFF 0; WORD 0; POIN (aFuncAddr) (aParamAddr)"
 #define AiChangeAi(aNewAi1, aNewAi2)           "BYTE 0x02 (aNewAi1) (aNewAi2) 0; WORD 0 0 0"
 #define AiGoto(aLabel)                         "BYTE 0x03 0 0xFF (aLabel); WORD 0 0 0"
 #define AiMaybeAttackCharacter(aChar, aChance) "BYTE 0x04 (aChance) 0xFF 0; WORD (aChar) 0 0"

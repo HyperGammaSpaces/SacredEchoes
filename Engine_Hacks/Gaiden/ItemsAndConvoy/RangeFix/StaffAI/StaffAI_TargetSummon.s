@@ -101,6 +101,9 @@ EmptySpace:
 add 	r0, sp, #spNewDestination
 strh 	r5, [r0]
 strh 	r6, [r0,#0x2]
+add 	r0, sp, #spTargetTile
+strh 	r5, [r0]
+strh 	r6, [r0,#0x2]
 
 @check staff specific condition routine
 mov 	r0, sp
@@ -117,8 +120,8 @@ cmp 	r1, #0x0
 beq x_reloop
 mov 	r0, sp
 mov 	r1, #0x0
-mov 	r2, #0xFF
-mov 	r3, #0xFF
+mov 	r2, r5
+mov 	r3, r6
 bl ItemAI_PocketWrite
 
 UpdatePriority:
@@ -150,7 +153,7 @@ b y_loop
 
 loopexit:
 mov 	r0, sp
-mov 	r1, #0x5
+mov 	r1, #0xC
 bl ItemAI_ConfirmAction
 
 End:
