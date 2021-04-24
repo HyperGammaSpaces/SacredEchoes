@@ -1,0 +1,497 @@
+PUSH
+
+//Normal
+ORG $80CD1B //$00
+BattleBackgrounds_Normal:
+BYTE BattleBG_Field
+BYTE BattleBG_Field
+BYTE BattleBG_Field
+BYTE BattleBG_Village2
+BYTE BattleBG_Village2
+BYTE BattleBG_Village2
+BYTE BattleBG_Village2
+BYTE BattleBG_Village2
+BYTE BattleBG_Village2
+BYTE BattleBG_Village2
+BYTE BattleBG_FortGate
+BYTE BattleBG_FortGate
+BYTE BattleBG_Forest
+BYTE BattleBG_Thicket
+BYTE BattleBG_Sea
+BYTE BattleBG_Desert
+BYTE BattleBG_River
+BYTE BattleBG_Mountain
+BYTE BattleBG_Peak_Brown
+BYTE BattleBG_River
+BYTE BattleBG_River
+BYTE BattleBG_Sea
+BYTE BattleBG_Lake
+BYTE BattleBG_CastleGray
+BYTE BattleBG_CastleGray
+BYTE BattleBG_Field
+BYTE BattleBG_CastleGray
+BYTE BattleBG_CastleGray
+BYTE BattleBG_CastleGray
+BYTE BattleBG_CastleGray
+BYTE BattleBG_CastleGray
+BYTE BattleBG_ThroneGray
+BYTE BattleBG_CastleGray
+BYTE BattleBG_CastleGray
+BYTE BattleBG_CastleGray
+BYTE BattleBG_FortGate
+BYTE BattleBG_Field
+BYTE BattleBG_Ruins
+BYTE BattleBG_Field
+BYTE BattleBG_Field
+BYTE BattleBG_Field
+BYTE BattleBG_Field
+BYTE BattleBG_Peak_Brown
+BYTE BattleBG_Village2
+BYTE BattleBG_FortGate
+BYTE BattleBG_CastleGray
+BYTE BattleBG_CastleGray
+BYTE BattleBG_Glacier
+BYTE BattleBG_CastleGray
+BYTE BattleBG_Peak_Brown
+BYTE BattleBG_Field
+BYTE BattleBG_River //snag
+BYTE BattleBG_River //snag down
+BYTE BattleBG_Peak_Gray
+BYTE BattleBG_Sea
+BYTE BattleBG_Fort_Archway
+BYTE BattleBG_Village2 //inn
+BYTE BattleBG_Village2 //supply
+BYTE BattleBG_Peak_Brown
+BYTE BattleBG_Peak_Brown
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+
+//Snow
+ORG $80CD5C //$01
+BattleBackgrounds_Snow:
+BYTE BattleBG_Field_Snow
+BYTE BattleBG_Field_Snow
+BYTE BattleBG_Field_Snow
+BYTE BattleBG_Village_Snow
+BYTE BattleBG_Village_Snow
+BYTE BattleBG_Village_Snow
+BYTE BattleBG_Village_Snow
+BYTE BattleBG_Village_Snow
+BYTE BattleBG_Village_Snow
+BYTE BattleBG_Village_Snow
+BYTE BattleBG_FortGate_Snow
+BYTE BattleBG_FortGate_Snow
+BYTE BattleBG_Forest_Snow
+BYTE BattleBG_Forest_Snow
+BYTE BattleBG_Peak_Brown
+BYTE BattleBG_Desert
+BYTE BattleBG_River_Snow
+BYTE BattleBG_Mountain_Snow
+BYTE BattleBG_Peak_Snow
+BYTE BattleBG_River_Snow
+BYTE BattleBG_River_Snow
+BYTE BattleBG_Sea
+BYTE BattleBG_Glacier
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_FortGate_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_ThroneGray
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_FortGate_Snow
+BYTE BattleBG_Field_Snow
+BYTE BattleBG_Village_Snow
+BYTE BattleBG_Peak_Snow
+BYTE BattleBG_Field_Snow
+BYTE BattleBG_Field_Snow
+BYTE BattleBG_Field_Snow
+BYTE BattleBG_Peak_Brown
+BYTE BattleBG_Village_Snow
+BYTE BattleBG_FortGate_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_Glacier
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_Peak_Snow
+BYTE BattleBG_Castle_Snow
+BYTE BattleBG_River_Snow //snag
+BYTE BattleBG_River_Snow //snag down
+BYTE BattleBG_Peak_Snow
+BYTE BattleBG_Sea
+BYTE BattleBG_Village_Snow
+BYTE BattleBG_Village_Snow //inn
+BYTE BattleBG_Village_Snow //supply
+BYTE BattleBG_Peak_Snow
+BYTE BattleBG_Peak_Snow
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+
+ORG $80CD9D //$02
+BattleBackgrounds_LavaCave:
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_LavaBridge
+BYTE BattleBG_LavaBridge
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_LavaBridge
+BYTE BattleBG_LavaBridge
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+BYTE BattleBG_Volcano
+
+ORG $80CEE2 //$07
+BattleBackgrounds_Town:
+
+ORG $80CF23 //$08
+BattleBackgrounds_Ship:
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+
+ORG $80CF64 //$09
+BattleBackgrounds_Desert:
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Archway
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Glacier
+BYTE BattleBG_Fort_Interior
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Sea
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Desert
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+BYTE BattleBG_Sea
+
+ORG $80CFE6 //$0B
+BattleBackgrounds_Shrine:
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_FortGate_Night
+BYTE BattleBG_FortGate_Night
+BYTE BattleBG_Thicket_DeepSunset
+BYTE BattleBG_Thicket_DeepSunset
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Mountain_Night
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Valni //floor
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_FortGate_Night
+BYTE BattleBG_Mountain_Night
+BYTE BattleBG_Ruins_Night
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave //2C
+BYTE BattleBG_Valni
+BYTE BattleBG_Valni
+BYTE BattleBG_Glacier
+BYTE BattleBG_Valni
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+
+ORG $80D0A9 //$0E
+BattleBackgrounds_Night:
+BYTE BattleBG_Field_Night
+BYTE BattleBG_Field_Night
+BYTE BattleBG_Field_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Mountain_Night
+BYTE BattleBG_Mountain_Night
+BYTE BattleBG_FortGate_Night
+BYTE BattleBG_FortGate_Night
+BYTE BattleBG_Forest_Night
+BYTE BattleBG_Thicket_Night
+BYTE BattleBG_Sea_Night
+BYTE BattleBG_Cave
+BYTE BattleBG_River_Night
+BYTE BattleBG_Mountain_Night
+BYTE BattleBG_Mountain_Night
+BYTE BattleBG_River_Night
+BYTE BattleBG_River_Night
+BYTE BattleBG_Sea_Night
+BYTE BattleBG_Sea_Night
+BYTE BattleBG_Castle_Night //floor
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Throne_Night
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_FortGate_Night
+BYTE BattleBG_Mountain_Night
+BYTE BattleBG_Ruins_Night
+BYTE BattleBG_Field_Night
+BYTE BattleBG_Field_Night
+BYTE BattleBG_Field_Night
+BYTE BattleBG_Field_Night
+BYTE BattleBG_Mountain_Night
+BYTE BattleBG_Ruins_Night
+BYTE BattleBG_Cave //2C
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Glacier
+BYTE BattleBG_Castle_Night
+BYTE BattleBG_Mountain_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_River_Night
+BYTE BattleBG_River_Night
+BYTE BattleBG_Mountain_Night
+BYTE BattleBG_Sea_Night
+BYTE BattleBG_Ruins_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Village_Night
+BYTE BattleBG_Cave
+BYTE BattleBG_Cave
+BYTE BattleBG_Sea_Night
+BYTE BattleBG_Sea_Night
+BYTE BattleBG_Sea_Night
+BYTE BattleBG_Sea_Night
+BYTE BattleBG_Sea_Night
+
+ORG $80D0EA //$0F
+BattleBackgrounds_CastleGray:
+
+ORG $80D12B //$10
+BattleBackgrounds_CastleGold:
+
+ORG $80D1AD //$12
+BattleBackgrounds_Mountain:
+
+ORG $80D22F //$14
+BattleBackgrounds_Swamp:
+
+
+POP
