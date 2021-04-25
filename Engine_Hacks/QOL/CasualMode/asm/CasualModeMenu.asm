@@ -36,18 +36,18 @@ CM_Retreat:
 
 	@original code:
 CM_Main:
-	ldr  r0,[r4,#0xc]
-	mov  r1,#5
-	mvn  r1,r1
-	and  r0,r1 @unkill unit (needed for pair up compatibility)
-	mov  r1,r3 @5 for dead, 9 for retreated
-	orr  r0,r1
-	str  r0,[r4,#0xc]
-	mov  r0,r4
-	ldr  r3,=0x80283e1
+	ldr  r0, [r4,#0xc]
+	mov  r1, #5
+	mvn  r1, r1
+	and  r0, r1 @unkill unit 
+	mov  r1, r3 @5 for dead, 9 for retreated
+	orr  r0, r1
+	str  r0, [r4,#0xc]
+	mov  r0, r4
+	ldr  r3, =0x80283e1   @ ClearUnitSupports
 	bl   goto_r3
 	pop  {r4}
-	ldr  r3,=0x801842d
+	ldr  r3, =0x801842d
 goto_r3:
 	bx r3
 
@@ -103,12 +103,12 @@ CasualUnset:
 CallRetreatQuote:
 	@r5 = unit ID
     mov r1, #0xc0
-    and r0 ,r1
+    and r0, r1
     cmp r0, #0x0
     bne RetreatQuote_NotFound
 
 	ldr  r0, =0x08083628	
-	ldrb r0 ,[r0]      @Get BGM 0x3F Death songID
+	ldrb r0, [r0]      @Get BGM 0x3F Death songID
 	mov  r1, #0x0
 	blh  0x080024d4 @SwitchBGM	
 
@@ -161,7 +161,7 @@ RetreatQuote_Found:
 
 CM_CallGraphicsSetup:
 	push {lr}
-	mov  r2 ,r0
+	mov  r2, r0
 	add  r2, #0x30
 	mov  r1, #0x0
 	strb r1, [r2, #0x0]
