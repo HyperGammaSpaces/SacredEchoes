@@ -17,8 +17,9 @@ Ch3_5C_ThisChapter:
 	POIN Ch3_5C_BeginningScene Ch3_5C_EndingScene
 
 Ch3_5C_TurnBasedEvents:
-	TURN 0x0 LoadSummons [1,255] 0x0
+	//TURN 0x0 LoadSummons [1,255] 0x0
 	TURN 0x0 LoadReinforcements [3,6] 0x0
+	//add some thieves?
 	TURN
 
 LoadReinforcements:
@@ -35,7 +36,7 @@ LoadSummons:
 
 	// Counter at value
 	COUNTER_SET 0 0 // reset counter
-	CAM1 CantorBoss // cam on summoner
+	CAM1 CantorBoss_Bonewalkers // cam on summoner
 	ENUN
 	SOUN 0x3BF // summoning SFX
 	STAL 20
@@ -109,7 +110,7 @@ Ch3_5C_CutsceneUnits:
 
 EnemyUnits:
 	UNIT Grieth DreadFighter Grieth Level(5, Enemy, False) [20,2] DropItem 0x00 0x0 0x00 [SteelSword,Pegacheese] NeverMoveAI
-	UNIT CantorBoss Cantor Grieth Level(5, Enemy, True) [16,2] 0x00 0x00 0x0 0x00 [Miasma] NeverMoveAI
+	UNIT CantorBoss_Bonewalkers Cantor Grieth Level(5, Enemy, True) [16,2] 0x00 0x00 0x0 0x00 [Miasma, Invoke] CantorAI
 	UNIT 0x8B Arcanist	Grieth Level(6, Enemy, True) [20,3]	0x00 0x00 0x0 0x00 [Miasma, Heal] ChaseOnceApproachedAI
 	UNIT 0x67 Myrmidon	Grieth Level(8, Enemy, True) [18,3]	0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
 	UNIT 0x8B Arcanist	Grieth Level(6, Enemy, True) [18,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] ChaseOnceApproachedAI
@@ -139,9 +140,9 @@ EnemyUnits:
 	UNIT
 
 ZombieGroup:
-	UNIT 0xAC Bonewalker CantorBoss Level(7,Enemy,True) [17,2] 0x04 0x00 0x1 REDA17R2 [BaseSword] NoAI
-	UNIT 0xAC Bonewalker CantorBoss Level(7,Enemy,True) [16,3] 0x04 0x00 0x1 REDA16R3 [BaseSword] NoAI
-	UNIT 0xAC Bonewalker CantorBoss Level(7,Enemy,True) [14,2] 0x04 0x00 0x1 REDA14R2 [BaseLance] NoAI
+	UNIT 0xAC Bonewalker CantorBoss_Bonewalkers Level(7,Enemy,True) [17,2] 0x04 0x00 0x1 REDA17R2 [BaseSword] NoAI
+	UNIT 0xAC Bonewalker CantorBoss_Bonewalkers Level(7,Enemy,True) [16,3] 0x04 0x00 0x1 REDA16R3 [BaseSword] NoAI
+	UNIT 0xAC Bonewalker CantorBoss_Bonewalkers Level(7,Enemy,True) [14,2] 0x04 0x00 0x1 REDA14R2 [BaseLance] NoAI
 	UNIT
 
 Reinforcements1:

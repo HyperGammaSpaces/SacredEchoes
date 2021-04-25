@@ -34,7 +34,7 @@ LoadSummons:
 	ENUN
 	SOUN 0x3BF // summoning SFX
 	STAL 20
-	ReinforcementEvent(MikhailSummons)
+	SummonReinforcementEvent(MikhailSummons)
 	GOTO 0
 
 	LABEL 1
@@ -136,8 +136,8 @@ SkirmishEnemies:
 	UNIT
 	
 MikhailSummons:
-	UNIT 0xBB Gargoyle Mikhail Level(15, Enemy, True) [13,6] 0x00 0x00 0x1 REDA13R6 [BaseLance] NoAI
-	UNIT 0xBB Gargoyle Mikhail Level(15, Enemy, True) [15,6] 0x00 0x00 0x1 REDA15R6 [BaseLance] NoAI
+	UNIT 0xBB Random_Gargoyle_FliersOnly Mikhail Level(15, Enemy, True) [13,6] RandomMonsterTemplate 0x00 0x1 REDA13R6 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_FliersOnly Mikhail Level(15, Enemy, True) [15,6] RandomMonsterTemplate 0x00 0x1 REDA15R6 NoItems NoAI
 	UNIT
 
 

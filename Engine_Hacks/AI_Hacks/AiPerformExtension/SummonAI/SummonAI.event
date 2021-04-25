@@ -1,0 +1,23 @@
+#include "../AiScrDefinitions.event"
+
+InjectAi1(0x14, EnemySummonAI)
+
+EnemySummonAI:
+AiFunc(CheckIfCanSummon|1) //checks if unit is 1. on the summon table and 2. if turn number is odd. result in 203aa8a
+AiNop
+AiGotoIfEQ(1, 0) //if can't summon, attack
+AiFuncPercentChance(DoTheSummoning|1, 100)
+//AiNop
+AiRestart
+AiLabel(1)
+AiFuncPercentChance(AttackOnlyNoStaff|1, 100)
+AiNop
+AiRestart
+
+ALIGN 4
+#include "SummonAI.lyn.event"
+
+PUSH
+ORG $3a362
+BYTE $7 //summon action id
+POP

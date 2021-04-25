@@ -55,62 +55,62 @@ mov  r4, r0		@unit pointer
 @here we will check user's allegiance.
  
 	mov  r2, #0xB
-	ldsb r2, [r0, r2]		@Unit party data index
-	mov  r0, #0xC0			@used to check allegiance
+	ldsb r2, [r0, r2]		@ Unit party data index
+	mov  r0, #0xC0			@ used to check allegiance
 	and  r2, r0
 	cmp  r2, #0x0
-	bne  EnemyCase	@no limitation for enemy summoners
+	beq  CantSummon	        @ just exit if player
 
-	PlayerCase:
-	mov  r5, #0x0			@count of summons
-	mov  r6, #0x0			@start of player units
-	mov  r7, #0x3F			@unitID to look for
+	GetSlot_EnemyCase:
+	cmp  r2, #0x80
+	bne  GetSlot_GreenCase
+	mov  r4, #0x81          @start of enemy slots
+	mov  r7, #0xB2          @max enemy slot
+	b    GetTotalCount
 
-	LoopStart:
-	mov  r0, r6
-	_blh  0x08019430 		@GetUnitRAMSlot
-	cmp  r0, #0x0			@is slot valid?
-	beq  KeepLooping
-		ldr  r1, [r0]
-		cmp  r1, #0x0		@is there a unit here?
-		beq  KeepLooping
-			ldrb r0, [r1, #0x4] @unit id
-			cmp  r0, r7
-			bne  KeepLooping
-				add  r5, #0x1
-				cmp  r5, #0x7
-				ble  KeepLooping
-					@More than 8 summons; can't use.
-					mov  r0, #0x0
-					b    InvokeUsability_Exit
-	KeepLooping:
-	add  r6, #0x1
-	cmp  r6, #0x3F 			@end of ally units
-	bgt  NoSpace
-	b    LoopStart
-
-EnemyCase:
-	mov r5, #0x0
-	mov r6, #0x80
-	EnemyLoopStart:
-	mov r0, r6
-	_blh 0x08018f48 @IsUnitSlotAvailable
-	cmp r0, #0x0
-	beq KeepLooping_Enemy
-		add r5, #0x1
-	KeepLooping_Enemy:
-	add r6, #0x1
-	cmp r6, #0xB2
-	bgt DoneEnemyLoop
-	b EnemyLoopStart
+	GetSlot_GreenCase:
+	mov  r4, #0x41          @start of green summons
+	mov  r7, #0x54          @max green slot
 	
-DoneEnemyLoop:
-	mov r0, r5
-	b InvokeUsability_Exit
+	GetTotalCount:
+	sub  r6, r7, r4			@slot count
 
-NoSpace:
-	mov r0, #0x0
-	b InvokeUsability_Exit
+	RAMUnit_LoopStart:
+	mov  r0, r4
+	_blh 0x08019430         @GetUnitStruct
+	cmp  r0, #0x0
+	beq  RAMUnit_LoopNext
+
+		ldr  r0, [r0, #0x0]
+		cmp  r0, #0x0
+		beq  RAMUnit_LoopNext
+		
+			lsl  r0, r5, #0x18
+			asr  r0, r0, #0x18
+			cmp  r0, r6           @how many times to loop
+			bgt  CheckFreeSlots
+			
+				add  r0, #0x1
+				lsl  r0, r0, #0x18
+				lsr  r5, r0, #0x18
+				
+		RAMUnit_LoopNext:
+		add  r4, #0x1
+		cmp  r4, r7
+		ble  RAMUnit_LoopStart
+		
+		CheckFreeSlots:
+		sub  r6, #0x1
+		cmp  r5, r6
+		bge  CantSummon
+			
+			@if we're here, we can summon one more unit
+			sub  r0, r6, r5
+			b InvokeUsability_Exit
+	
+	CantSummon:
+		mov r0, #0x0
+		b InvokeUsability_Exit
 	
 StillSummonSpace:
 	mov  r0, #0x1

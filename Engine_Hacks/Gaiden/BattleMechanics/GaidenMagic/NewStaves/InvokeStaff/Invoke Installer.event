@@ -1,4 +1,5 @@
 //Invoke functionality
+#include "MultiSummons.lyn.event"
 PUSH
 	/*
 	//should be in main staff targeting rework
@@ -39,29 +40,12 @@ PUSH
 	ORG $2F2B4
 		SHORT $B570 $BC70 $BC01 $4700 //does nothing
 	
-	//Invoke P4
-	//ORG $2900E
-	//BL(InvokeOnSelect)
-	
 	ORG $262A8
 	Invoke_Jump:
 		SHORT 0xB500 0x1C22 0x4902
 		BL($D18C4)
 		SHORT 0xBC01 0x4700 0x0
 		POIN InvokeStaff_RangeSetup|1
-	
-	
-	ORG $7AD1C
-		#incbin "DoInvoke.dmp"
-		POIN SummonTable
-	ORG $7B1C0
-		#incbin "NewHandleSummonBatch.dmp"
-	ORG $7B090
-		#incbin "NewGetSummonPositions.dmp"
-	
-	//Switch Summon proc to DKSummon proc
-	ORG $7B794
-		WORD $089A33C0
 	
 	//Specify Invoke, Rewarp, Entrap and Expel as non-healing staves
 	//Expel
@@ -77,19 +61,28 @@ PUSH
 	ORG $725CC
 		POIN $726A4
 		
+	//Switch Summon proc to DKSummon proc
+	ORG $7B794
+		WORD $089A33C0
+		
 	//Change DKSummon to use Summon Rework
+	ORG $7AD1C
+	DoInvoke_Main_Jump:
+		replaceWithHack(DoInvoke_Main)
+	ORG $7B1C0
+	HandleSummonBatch_Jump:
+		replaceWithHack(NewHandleSummonBatch)
+		
 	ORG $9A33CC
-		POIN StartMultiSummon|1
+		POIN StartMultiSummon|1 //7afd0
 	ORG $9A33EC
-		POIN NewMultiSummon|1
+		POIN DoInvoke_Multi|1 //7b2b4
 	ORG $9A341C
-		POIN NewMultiSummon|1
+		POIN DoInvoke_Multi|1 //7b2b4
 	ORG $9A344C
-		POIN NewMultiSummon|1
+		POIN DoInvoke_Multi|1 //7b2b4
 	ORG $9A347C
-		POIN NewMultiSummon|1
-	ORG $7AFFC
-	replaceWithHack(NewGetRAMSlot)
+		POIN DoInvoke_Multi|1 //7b2b4
 	
 	//Bring summons closer
 	ORG $7B23E
@@ -103,19 +96,6 @@ PUSH
 
 POP
 
-StartMultiSummon:
-#incbin "StartMultiSummon.dmp"
-ALIGN 4
-
-NewGetRAMSlot:
-#incbin "NewGetRAMSlot.dmp"
-ALIGN 4
-
-NewMultiSummon:
-#incbin "DoInvokeMulti.dmp"
-POIN SummonTable
-ALIGN 4
-
 InvokeStaff_RangeSetup:
 	SHORT 0xB500 0x4903		//load usability routine
 	SHORT 0x4803 0x6800		//Load unitID into r0
@@ -125,16 +105,93 @@ InvokeStaff_RangeSetup:
 	WORD 0x03004E50			//unit pointer
 ALIGN 4
 
+Invoke_Usability:
+#incbin "InvokeUsability.dmp"
+ALIGN 4
+
+
+
+
+
 SummonTable:
 BYTE Silque 	0x3F 	DreadFighter 	0
 BYTE Tatiana 	0x3F 	PegasusKnight 	0
 BYTE Genny 		0x3F 	Soldier 		0
-BYTE 0x8F 		0xAA 	Revenant 		0			//some generic enemy
+BYTE Mikhail	Terror_Gargoyle	Gargoyle		0
+BYTE CantorBoss Terror_Revenant 	Revenant 		0
+BYTE CantorBoss_Bonewalkers Terror_Bonewalker Bonewalker 0
 BYTE 0 			0 		0 				0
 
-Invoke_Usability:
-#incbin "InvokeUsability.dmp"
+//General phantom fixes
+PUSH	
+	//Change class check for unitID check on KillUnitIfNoHP
+	ORG $1840C
+	SHORT $6810 $7900 $283F
 
+	//Don't draw portrait on item select menu if unit is generic
+	ORG $22BE8
+	SHORT $6808 $88C0 $2800
+	
+	//Remove hardcoded checks for phantom class - use 0x3F as summon unit ID
+	ORG $18EDA
+	SHORT $6810 $7900 $283F
+	ORG $23046
+	SHORT $6811 $7909 $1C04 $293F
+	ORG $232C8
+	SHORT $6810 $7900 $283F
+	ORG $23F74
+	SHORT $6800 $7900 $283F
+	ORG $23FDE
+	SHORT $6810 $7900 $283F
+	ORG $2403A
+	SHORT $6810 $7900 $283F
+	ORG $24096
+	SHORT $6810 $7900 $283F
+	ORG $2523A
+	SHORT $6810 $7900 $283F
+	ORG $25242
+	SHORT $6823 $7918 $283F
+	ORG $2C524
+	SHORT $6818 $7900 $283F
+	ORG $3122A
+	SHORT $6808 $7900 $283F
+	
+	//Update Trade command to block summoned units
+	ORG $22F38
+	jumpToHack(NewTradeUsability)
+	ORG $25518
+	jumpToHack(NewGiveToEligibility)
+	
+	//don't let summons rescue/take
+	ORG UM_Rescue_Definition+0xC
+	//ORG $59CD34
+	POIN NewRescueMenuUsability|1
+	//ORG $59CD7C
+	ORG UM_Take_Definition+0xC
+	POIN NewTakeUsability|1
+POP
+
+NewRescueMenuUsability:
+#incbin "Phantom/NewRescueUsability.dmp"
+ALIGN 4
+
+NewTakeUsability:
+#incbin "Phantom/NewTakeUsability.dmp"
+ALIGN 4
+
+NewGiveToEligibility:
+#incbin "Phantom/GivenToUsability.dmp"
+ALIGN 4
+
+NewTradeUsability:
+#incbin "Phantom/TradeUsability.dmp"
+ALIGN 4
+
+
+
+
+
+//Phantom stuff for Echoes phantoms
 PUSH
 
 	//Replace BerserkPhase with PhantomPhase
@@ -200,65 +257,3 @@ WORD $3; POIN $39ABC+1 //CPORDER_End
 WORD $0 $0 //end
 
 #include "Phantom/PhantomPhase.lyn.event"
-
-//General phantom fixes
-
-PUSH	
-	//Don't draw portrait on item select menu if unit is generic
-	ORG $22BE8
-	SHORT $6808 $88C0 $2800
-	
-	//Remove hardcoded checks for phantom class - use 0x3F as summon unit ID
-	ORG $18EDA
-	SHORT $6810 $7900 $283F
-	ORG $23046
-	SHORT $6811 $7909 $1C04 $293F
-	ORG $232C8
-	SHORT $6810 $7900 $283F
-	ORG $23F74
-	SHORT $6800 $7900 $283F
-	ORG $23FDE
-	SHORT $6810 $7900 $283F
-	ORG $2403A
-	SHORT $6810 $7900 $283F
-	ORG $24096
-	SHORT $6810 $7900 $283F
-	ORG $2523A
-	SHORT $6810 $7900 $283F
-	ORG $25242
-	SHORT $6823 $7918 $283F
-	ORG $2C524
-	SHORT $6818 $7900 $283F
-	ORG $3122A
-	SHORT $6808 $7900 $283F
-	
-	//Update Trade command to block summoned units
-	ORG $22F38
-	jumpToHack(NewTradeUsability)
-	ORG $25518
-	jumpToHack(NewGiveToEligibility)
-	
-	//don't let summons rescue/take
-	ORG UM_Rescue_Definition+0xC
-	//ORG $59CD34
-	POIN NewRescueMenuUsability|1
-	//ORG $59CD7C
-	ORG UM_Take_Definition+0xC
-	POIN NewTakeUsability|1
-POP
-
-NewRescueMenuUsability:
-#incbin "Phantom/NewRescueUsability.dmp"
-ALIGN 4
-
-NewTakeUsability:
-#incbin "Phantom/NewTakeUsability.dmp"
-ALIGN 4
-
-NewGiveToEligibility:
-#incbin "Phantom/GivenToUsability.dmp"
-ALIGN 4
-
-NewTradeUsability:
-#incbin "Phantom/TradeUsability.dmp"
-ALIGN 4
