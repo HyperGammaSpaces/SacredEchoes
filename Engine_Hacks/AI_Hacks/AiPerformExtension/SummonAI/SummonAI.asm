@@ -49,9 +49,6 @@ AttackOnlyNoStaff:
 		strb r1, [r0, #0x0]
 		
 	AttackScript_End:
-	ldrb r0, [r5, #0x0]
-	add  r0, #0x1
-	strb r0, [r5, #0x0]
 	pop  {r4,r5}
 	pop  {r0}
 	bx   r0

@@ -1,0 +1,29 @@
+/*
+	- Both AIs use a RNG call to determine whether to use the special skill or behave normally. 25% for starters?
+	- Prioritize attacking in range before attempting to warp
+	- Prioritize warping to isolated targets
+	- no more than 3 warps per turn
+	- rank target units by hp+res
+	- Needs to be in the Primary AI table for both.
+	- When you tell a unit to have an AI of [0x0, 0x3], that means it should use the primary AI that’s 0x0 in the first table, and if that fails, use the AI in the second table pointed to by the 0x3-rd pointer. In this case, that means if there’s something to attack in range, it’ll attack that. Otherwise it’ll fail and fall through to AI2 0x3, which always fails. When both AIs fail, the unit does nothing. Thus, the observed behavior is AttackInRange.
+*/
+
+#include "../AiScrDefinitions.event"
+
+InjectAi1(0x13, WitchAIScript)
+InjectAiPerformer(0x0E, InitWarping)
+SetUnitAction(0x27, ActionRoutine(DoTheWarping|1))
+
+WitchAIScript:
+AiFuncPercentChance(AttackOnlyNoStaff|1, 100)
+AiNop
+AiGotoIfEQ(1, 0) //if can't attack, warp
+AiRestart
+AiLabel(1)
+AiFuncPercentChance(CheckForWitchWarp|1), 50)
+AiAttack
+AiRestart
+
+//CheckForWitchWarp will find a target and mark actionID 0xE if one is found.
+//InitWarping will then set the actionID that UnitActionRework uses and any parameters (position etc)
+//DoTheWarping will do the actual animation and place the unit in its new location
