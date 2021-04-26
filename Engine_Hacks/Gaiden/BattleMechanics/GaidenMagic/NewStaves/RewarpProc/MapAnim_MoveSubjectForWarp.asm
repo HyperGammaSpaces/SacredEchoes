@@ -14,26 +14,26 @@
 
 PUSH {r4,r5,r6,lr}   //MapAnim_MoveTargetForWarp
 LDR r2, =gMapAnimStruct 
-MOV r0 ,r2
+MOV r0, r2
 ADD r0, #0x58 //attacking unit id
 LDRB r1, [r0, #0x0] 
-LSL r0 ,r1 ,#0x2
-ADD r0 ,r0, R1
-LSL r0 ,r0 ,#0x2
-ADD r1 ,r0, R2
+LSL r0, r1, #0x2
+ADD r0, r0, R1
+LSL r0, r0, #0x2
+ADD r1, r0, R2
 LDR r6, [r1, #0x0] 
-MOV r1 ,r2
+MOV r1, r2
 	ADD r1, #0x8
-ADD r0 ,r0, R1
+ADD r0, r0, R1
 LDR r0, [r0, #0x0] 
-MOV r5 ,r2
+MOV r5, r2
 ADD r5, #0x60 //some x
 LDRB r1, [r5, #0x0] 
-LSL r1 ,r1 ,#0x4
-MOV r4 ,r2
+LSL r1, r1, #0x4
+MOV r4, r2
 ADD r4, #0x61 //some y
 LDRB r2, [r4, #0x0] 
-LSL r2 ,r2 ,#0x4
+LSL r2, r2, #0x4
 blh 0x080797E4   //MOVEUNIT6C_SetDisplayPos
 
 @Update gActionData coords as well.

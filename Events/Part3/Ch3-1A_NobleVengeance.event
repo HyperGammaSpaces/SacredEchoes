@@ -80,8 +80,8 @@ CutsceneUnits:
 
 EnemyUnits:
 	UNIT Zaxon Knight	0x00 Level(8, Enemy, False) [4,2]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-	UNIT 0x8B Shaman	Zaxon Level(9, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI 
-	UNIT 0x8C Witch	Zaxon Level(2, Enemy, True) [7,1]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x8B Shaman	Zaxon Level(9, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI 
+	UNIT 0x8C Witch	Zaxon Level(2, Enemy, True) [7,1]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
 	UNIT 0x8C Witch	Zaxon Level(2, Enemy, True) [9,2]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	UNIT 0x88 Soldier	Zaxon Level(11, Enemy, True) [14,10]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
 	UNIT 0x88 Soldier	Zaxon Level(9, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI

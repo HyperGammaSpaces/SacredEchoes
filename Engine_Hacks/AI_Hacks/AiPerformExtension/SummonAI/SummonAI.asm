@@ -60,13 +60,15 @@ AttackOnlyNoStaff:
 CheckIfCanSummon:
 	push {r4-r7,r14}
 
-	@check turn number
-	ldr  r0, =gChapterData
-	ldrh r0, [r0, #0x10] @ turn number
-	mov  r1, #0x1
-	and  r0, r1
-	cmp  r0, #0x0        @ only summon on odd turns
-	beq  CantSummon
+	mov  r0, #0x64
+	blh  0x08000C80 @NextRN
+	lsl  r0, r0, #0x18
+	lsr  r0, r0, #0x18
+	ldr  r1, =0x030017D0 @gpAiScriptCurrent
+	ldr  r1, [r1, #0x0]
+	ldrb r1, [r1, #0x1]
+	cmp  r0, r1
+	bhi  CantSummon
 
 	ldr  r0, =ActiveUnitDataPointer
 	ldr  r0, [r0]     @ load location of struct

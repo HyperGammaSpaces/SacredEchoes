@@ -119,7 +119,7 @@ CutsceneUnits:
 
 EnemyUnits:
 	UNIT Lawson Paladin 0x00 Level(5,Enemy,False) [8,1] 0x00 0x00 0x0 0x00 [Ridersbane, Javelin, IronShield] NeverMoveAI
-	UNIT 0x8B Sage Lawson Level(1,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Bolting,Fire,Physic] NeverMoveAI
+	UNIT 0x8B Sage Lawson Level(1,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Bolting,Fire,Physic] [0x0F,0x03,0x04,0x20]
 	UNIT 0x89 Sniper Lawson Level(3,Enemy,True) [10,0] DropItem 0x00 0x0 0x00 [SilverBow,Longbow,Elixir] NeverMoveAI
 
 	UNIT 0x86 Cavalier Lawson Level(9,Enemy,True) [14,16] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
@@ -191,14 +191,14 @@ MiddleFortArchers:
 	UNIT
 
 SideFortMages:
-	UNIT 0x8B Sage Lawson Level(1,Enemy,True) [12,6] 0x00 0x00 0x0 0x00 [Thunder,Physic] NoAI
-	UNIT 0x8C Witch Lawson Level(1,Enemy,True) [2,5] 0x00 0x00 0x0 0x00 [Thunder,Physic] NoAI
+	UNIT 0x8B Sage Lawson Level(1,Enemy,True) [12,6] 0x00 0x00 0x0 0x00 [Thunder,Physic] MoveAndHealAI
+	UNIT 0x8C Witch Lawson Level(1,Enemy,True) [2,5] 0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
 	UNIT
 
 BossFortUnits:
 	UNIT 0x87 Myrmidon Lawson Level(3,Enemy,True) [8,1] 0x00 0x00 0x1 REDA7R1 [SteelSword] NoAI
 	UNIT 0x88 Knight Lawson Level(3,Enemy,True) [8,1] 0x00 0x00 0x1 REDA9R1 [IronAxe] NoAI
-	UNIT 0x8C Witch Lawson Level(3,Enemy,True) [8,1] 0x00 0x00 0x1 REDA8R0 [Fire,Heal] NoAI
+	UNIT 0x8C Witch Lawson Level(3,Enemy,True) [8,1] 0x00 0x00 0x1 REDA8R0 [Fire,Heal] MoveAndHealAI
 	UNIT
 
 Ch3_5A_BeginningScene:

@@ -11,19 +11,53 @@
 #include "../AiScrDefinitions.event"
 
 InjectAi1(0x13, WitchAIScript)
-InjectAiPerformer(0x0E, InitWarping)
+InjectAiPerformer(0x0E, InitWarping|1)
 SetUnitAction(0x27, ActionRoutine(DoTheWarping|1))
 
 WitchAIScript:
-AiFuncPercentChance(AttackOnlyNoStaff|1, 100)
-AiNop
-AiGotoIfEQ(1, 0) //if can't attack, warp
-AiRestart
-AiLabel(1)
-AiFuncPercentChance(CheckForWitchWarp|1), 50)
-AiAttack
-AiRestart
+	AiFunc(CheckIfAttackPossible|1)
+	AiNop
+	AiGotoIfEQ(1, 0) //if can't attack, warp
+	AiAttack
+	AiRestart
+	AiLabel(1)
+	AiFuncPercentChance(CheckForWitchWarp|1, 50)
+	AiGotoIfEQ(2, 0) //if warped, change AI
+	AiChangeAi(0x00, 0x12)
+	AiLabel(2)
+	AiRestart
+
+ALIGN 4
+#include "WitchAI.lyn.event"
 
 //CheckForWitchWarp will find a target and mark actionID 0xE if one is found.
 //InitWarping will then set the actionID that UnitActionRework uses and any parameters (position etc)
 //DoTheWarping will do the actual animation and place the unit in its new location
+//9a3bdc calls the warp gfx
+
+
+MapAnimProcWitchWarp:
+//SHORT $000E $00; WORD $0
+SHORT $0002 $00; WORD $08015361 //AddSkipThread
+SHORT $0002 $00; POIN StartWitchWarpAnim+1
+SHORT $000E $0A; WORD $0 //Sleep for 10 frames
+SHORT $0002 $00; POIN MapAnim_SubjectUnitFlashOut+1	
+SHORT $000E $14; WORD $0 //Sleep for 20 frames
+//SHORT $0002 $00; POIN MapAnim_SubjectStarExplosion+1	
+//SHORT $000E $02; WORD $0 //Sleep for 2 frames
+SHORT $0002 $00; POIN MapAnim_SubjectHide+1
+SHORT $000E $08; WORD $0 //Sleep for 8 frames
+SHORT $0002 $00; POIN Witchwarp_Move+1
+SHORT $000E $1E; WORD $0 //Sleep for 30 frames
+SHORT $0002 $00; POIN Witchwarp_Camera+1	
+SHORT $000E $02; WORD $0 //Sleep for 2 frames
+//SHORT $0002 $00; POIN MapAnim_SubjectStarImplosion+1	
+//SHORT $000E $28; WORD $0 //Sleep for 40 frames
+SHORT $0002 $00; POIN MapAnim_WarpSubjectWarpRing+1	
+SHORT $000E $0A; WORD $0 //Sleep for 10 frames
+SHORT $0002 $00; POIN MapAnim_SubjectShow+1
+SHORT $0002 $00; POIN MapAnim_SubjectUnitFlashIn+1	
+SHORT $000E $10; WORD $0 //Sleep for 16 frames
+SHORT $000E $0A; WORD $0 //Sleep for 10 frames
+SHORT $000D $00; WORD $089A35B0 //Jump to MapAnimEnd
+WORD $0; WORD $0	//End (Deletes Self)
