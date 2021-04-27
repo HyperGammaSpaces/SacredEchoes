@@ -7,6 +7,9 @@
 */
 
 PUSH //let 0x202b6d0 + charnum * 10 = available spells
+	//Prevent AI from trying to attack if too low on HP
+	ORG $3D544
+	jumpToHack(AIMagicCostCheck)
 
 	ORG $16B2C
 	jumpToHack(NewGetUnitEquippedWeapon)
@@ -113,6 +116,9 @@ RangeHoverFix:
 #incbin "RangeHoverFix.dmp"
 POIN Spells_Getter
 WORD SelectedSpellPointer
+
+AIMagicCostCheck:
+#include "AIMagicCostCheck.lyn.event"
 
 PUSH
 	ORG $1c1ec0

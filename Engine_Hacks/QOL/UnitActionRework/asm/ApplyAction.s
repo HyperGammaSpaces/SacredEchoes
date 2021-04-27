@@ -1,15 +1,9 @@
 .thumb
-
 .include "_Definitions.h.s"
 
 .set pActionEffectTable, EALiterals+0x00
-.set SpellCostGetter, EALiterals+0x04
 
 .set prActionStaffDoorChestUseItemNightmare, 0x0802FC48
-
-.set prGetItemWeaponExp, 0x08017798
-
-.set prGetItemAttributes, 0x0801756C 
 
 ApplyAction:
 	push {r4-r5, lr}
@@ -21,7 +15,7 @@ ApplyAction:
 	ldr r5, =pActionStruct
 	
 	ldrb r0, [r5, #0x0C] @ Action Unit Index
-	_blh prGetUnitStruct
+	_blh prUnit_GetStruct
 	
 	@ Storing Active Unit
 	ldr r1, =ppActiveUnit
@@ -46,39 +40,8 @@ ApplyAction:
 	and r0, r1 @ Getting the Index Id from the Item Short
 	
 	cmp r0, #0xA6 @ Freaking Nightmare, of course
-	beq ShittyHardcodedNightmareCheck
+	bne SkipShittyHardcodedNightmareCheck
 	
-	@ Prevent magic users from starting a battle without a weapon
-	@ r0 is our itemID
-	
-	mov r2, r0				@ store item id
-	_blh prGetItemAttributes
-	
-	mov	r1, #0x2			@ load "Magic" attr
-	and	r0, r1				@
-	cmp	r0, #0x0			@ if it does not hit res
-	beq	SkipShittyHardcodedNightmareCheck
-	
-	ldr r1, =ppActiveUnit
-	ldr r0, [r1]			@unit in r0
-	mov r1, r2				@item in r1
-	ldr r3, SpellCostGetter
-	_blr r3	@return cost in r0
-	
-	ldr r1, =ppActiveUnit
-	ldr r1, [r1]
-	ldrb r1, [r1, #0x13]	@current hp
-	cmp r1, r0
-	bgt SkipShittyHardcodedNightmareCheck
-	
-	@ If we're here, there is too little HP to initiate combat
-	
-	@ Continue with null routine
-	
-	b Continue
-	
-ShittyHardcodedNightmareCheck:
-
 	@ NIGHTMARE SPECIAL CASE BEGIN
 	
 	mov r0, r4
@@ -93,11 +56,6 @@ ShittyHardcodedNightmareCheck:
 .ltorg
 	
 SkipShittyHardcodedNightmareCheck:
-	
-	@ Now continue where we left off
-	@ r2 = Action Id
-	ldrb r2, [r5, #0x11]
-
 	ldr r3, pActionEffectTable
 	lsl r0, r2, #2 @ r0 = (Action Id * 4)
 	add r0, r3     @ r0 = Offset of table index
@@ -142,4 +100,3 @@ BXR2:
 
 EALiterals:
 	@ POIN Action Effect Table
-	@ POIN SpellCostGetter

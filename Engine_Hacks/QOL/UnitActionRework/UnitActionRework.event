@@ -18,9 +18,8 @@ POP
 
 ALIGN 4
 prNewActionApplication:
-	#incbin "asm/ApplyAction.dmp"
+	#incbin "asm/ApplyAction.bin"
 	POIN pActionRoutineTable
-	POIN SpellCostGetter
 
 ALIGN 4
 prWaitAction:
