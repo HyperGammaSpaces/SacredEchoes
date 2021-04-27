@@ -333,7 +333,35 @@ CheckIfAttackPossible:
 			mov  r0, #0x1
 			neg  r0, r0
 			blh  0x0801B950   @MapSetInMagicSealedRange
-			@check spell cost here
+				@check for spell cost
+				ldr    r0, =0x03004E50
+				ldr    r0, [r0]
+				ldrh   r2, [r0, #0x1E]
+				mov    r0, r2
+				ldr    r1, =0x0801756c @GetItemAttributes
+				mov    lr, r1
+				.short 0xf800
+				mov    r1, #0x2 @magic bit
+				and    r0, r1
+				cmp    r0, #0x0
+				beq    DoneMagicCheck
+				
+					ldr    r0, =0x03004E50
+					ldr    r0, [r0]
+					mov    r1, r2
+					ldr    r2, =SpellCostGetter
+					mov    lr, r2
+					.short 0xf800
+					cmp    r0, #0x0
+					beq    DoneMagicCheck
+					
+					ldr    r1, =0x03004E50
+					ldr    r1, [r1]
+					ldrb   r1, [r1, #0x13] @current hp
+					cmp    r1, r0
+					bgt    DoneMagicCheck
+						
+						b CantAttack
 		
 	DoneMagicCheck:
 	ldr  r0, =0x0202E4E4 @gMapRange
