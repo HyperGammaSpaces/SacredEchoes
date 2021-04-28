@@ -57,6 +57,10 @@ PUSH
 	BL($17624)
 	SHORT $2105
 	
+	ORG $17E98
+	callHack_r3(CheckForEXPLevelCap)
+	SHORT 0xE005 
+	
 	ORG $2C534
 	replaceWithHack(GaidenEXPCalcRework)
 
@@ -232,6 +236,15 @@ PUSH
 POP
 
 SetUnitAction(0xD, ActionRoutine(NewAutopromoteFunc+1))
+
+ALIGN 4
+Class_Level_Cap_Table:
+#incbin "Class_Level_Cap_Table.dmp"
+
+ALIGN 4
+CheckForEXPLevelCap:
+#incbin "CheckForEXPLevelCap.dmp"
+POIN Class_Level_Cap_Table
 
 GaidenEXPCalcRework:
 #incbin "NewCalcExpFromBattle.dmp"

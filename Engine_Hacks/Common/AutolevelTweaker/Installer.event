@@ -1,0 +1,125 @@
+#ifndef AUTOLEVELTWEAKER
+#define AUTOLEVELTWEAKER
+
+#ifdef _FE8_
+
+// AutolevelTweaker. Hack by Zeta/Gilgamesh. Credits to decomp ( https://github.com/FireEmblemUniverse/fireemblem8u/blob/master/src/bmunit.c ) for making it far easier for me to understand how autoleveling works.
+// Free to use/modify
+
+// IMPORTANT NOTE:
+// This hack only affects the normal autoleveling routine
+// There are a few conditions that can cause different behaviour:
+// - Autoleveling blue units
+// - Autoleveling bosses (why would you do this)
+// - Autoleveling anything with a CharacterID (0x4 in character struct) of less than 0x40
+// In all of these cases, the game will use 'realistic' autoleveling.
+// Realistic autoleveling is functionally the same as a unit gaining levels one by one through the level up screen.
+
+// Normally the game adds extra variance to autoleveled growths
+// This means stats can end up randomly higher than you'd expect (not lower, it's purely a bonus)
+// Put 100 here for 100% of vanilla, 50 for 50%, 0 for no extra variance, etc.
+ALIGN 4
+VarianceMultiplier:
+WORD 0
+
+// How many extra levels to add to promoted units in Hard Mode.
+// In vanilla this is 19 (as if every promoted enemy promoted at level 20)
+HardPromotedLevelBonus:
+BYTE 14
+
+// How many extra levels to add to promoted units in Normal/Easy Mode.
+// In vanilla this is 9 (as if every promoted enemy promoted at level 10)
+NormalPromotedLevelBonus:
+BYTE 7
+
+// In vanilla, bosses get bonus levels (or level penalties) from difficulty the same as other units
+// Setting this to 0 turns that behaviour off, meaning bosses will be identical across difficulties.
+BossBonusLevel:
+BYTE 1
+
+// !! READ CAREFULLY BEFORE USING !!
+// Normally, in vanilla, the game autolevels promoted enemies like this:
+// 1. Check what class the unit promoted from (0x5 in the class struct)
+// 2. Autolevel the unit in that class, to represent their levels before promotion
+// 3. Autolevel the unit in their current class.
+// Now, this means two seperate growth rolls are performed for each stat, which means more randomness.
+// What this option does is that it just totals the levels and autolevels once, using the promoted class' growths.
+// This means there is less variance involved, as there's only one roll.
+// HOWEVER, this uses the promoted class' growths for all levels. 
+// If you are using this option, you will probably want to adjust promoted class' growth rates with it in mind.
+// Especially because vanilla classes typically have flat out worse growth rates than their unpromoted counterparts.
+SmoothPromotedAutolevel:
+BYTE 1
+
+// In vanilla, bonus levels (or level penalties) from difficulty are applied seperately from autoleveling
+// This means yet another growth roll, and thus more variance.
+// This option folds the level bonus into the autoleveling routine, reducing variance.
+// With a VarianceMultiplier of 0, SmoothPromotedAutoLevel and SmoothBonusLevel, your enemy stats will only vary by 0-1 points.
+// This option does have one small side effect, though: Enemies that are neither autoleveled or bosses will no longer recieve difficulty level bonus/penalty.
+// But why would you use non autoleveled enemy generics anyway?
+SmoothBonusLevel:
+BYTE 1
+
+
+// lyn output of AutolevelTweaker.c
+PUSH
+ORG $180cc
+ALIGN 4
+SHORT $4778 $46C0
+WORD $E59FC000 $E12FFF1C
+POIN UnitApplyBonusLevels
+POP
+PUSH
+ORG $18120
+ALIGN 4
+SHORT $4778 $46C0
+WORD $E59FC000 $E12FFF1C
+POIN UnitAutolevel
+POP
+PUSH
+ORG $2b9c4
+ALIGN 4
+SHORT $4778 $46C0
+WORD $E59FC000 $E12FFF1C
+POIN GetAutoleveledStatIncrease
+POP
+PUSH
+ORG $37b44
+ALIGN 4
+SHORT $4778 $46C0
+WORD $E59FC000 $E12FFF1C
+POIN GetCurrentPromotedLevelBonus
+POP
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$1;GetChapterLevelBonus:
+ORG CURRENTOFFSET+$28;GetAutoleveledStatIncrease:
+ORG CURRENTOFFSET+$50;GetCurrentPromotedLevelBonus:
+ORG CURRENTOFFSET+$20;UnitAutolevel:
+ORG CURRENTOFFSET+$48;UnitApplyBonusLevels:
+POP
+SHORT $4B08 $2 $7D19 $7D00 $900 $649 $D408 $3342 $781B $7D52 $4240 $69B $D500 $4250 $600 $E00 $4770 $46C0
+BYTE $F0 $BC $2 $2
+SHORT $B510 $C $4344 $2003 $17E2 $4010 $1900 $1083 $2007 $4010 $1900 $10C0 $1A18 $4B09 $F000 $F87A $2 $4B08 $681B $2164 $10 $4358 $4B06 $F000 $F871 $4B06 $1900 $F000 $F86D $BC10 $BC02 $4708
+BYTE $81 $C $0 $8
+POIN VarianceMultiplier
+BYTE $FD $18 $D $8 $A1 $B9 $2 $8
+SHORT $4B04 $7D1B $65B $D502 $4B03 $7818 $4770 $4B03 $E7FB $46C0
+BYTE $F0 $BC $2 $2
+POIN HardPromotedLevelBonus
+POIN NormalPromotedLevelBonus
+SHORT $B510 $4B0D $4 $7818 $2800 $D006 $4B0B $7B98 $4B0B $F000 $F847 $F7FF $FFA7 $7A22 $3A01 $6863 $1882 $612 $7919 $E12 $20 $4B06 $F000 $F83A $BC10 $BC01 $4700 $46C0
+POIN SmoothBonusLevel
+BYTE $F0 $BC $2 $2 $19 $46 $3 $8 $C5 $7F $1 $8
+SHORT $B510 $4B11 $781B $4 $A $2B00 $D115 $2900 $D013 $6843 $7919 $2962 $D00F $2934 $D00D $2A00 $DD0E $4B0A $F000 $F81A $20 $4B09 $F000 $F816 $20 $4B08 $F000 $F812 $74E0 $BC10 $BC01 $4700 $4252 $4B05 $E7EE $46C0
+POIN SmoothBonusLevel
+BYTE $C5 $7F $1 $8 $C9 $81 $1 $8 $91 $91 $1 $8 $65 $80 $1 $8
+SHORT $4718 $46C0
+
+MESSAGE AAAAAAAAAAAAAAAAAAA GetAutoleveledStatIncrease AAAAAAAAAAAAAAAAAA
+
+#else // _FE8_
+  ERROR Autolevel Tweaker is for FE8
+#endif // _FE8_
+
+#endif // AUTOLEVELTWEAKER
