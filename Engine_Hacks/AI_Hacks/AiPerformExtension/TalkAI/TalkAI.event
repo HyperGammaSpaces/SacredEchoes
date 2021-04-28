@@ -16,9 +16,6 @@ ALIGN 4
 
 ClairTalkAI_Script:
 {
-	#define TalkFrom Clair
-	#define TalkTo   Lukas	
-	
 	AiMoveTowardsCharacter(Lukas)
 	AiGotoIfEQ($01, $04)
 	AiGotoIfEQ($00, $03)
@@ -32,14 +29,11 @@ ClairTalkAI_Script:
 	ALIGN 4
 
 	TalkData:
-	BYTE TalkFrom TalkTo 0x00 0x00
+	BYTE Clair Lukas 0x00 0x00
 }
 
 WhitewingTalkAI_Script:
 {
-	#define TalkFrom Catria
-	#define TalkTo   Celica	
-	
 //	AiMoveTowardsEnemy
 //  AiChangeAi($06, $FF)
 //	AiGoto($02)
@@ -57,5 +51,5 @@ WhitewingTalkAI_Script:
 	ALIGN 4
 
 	TalkData:
-	BYTE TalkFrom TalkTo 0x00 0x00
+	BYTE Catria Celica 0x00 0x00
 }
