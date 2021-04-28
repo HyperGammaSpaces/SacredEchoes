@@ -1,0 +1,72 @@
+/*stat screen R menu is at 8a00b38
+find by breaking on key press while R menu open
+
+Each entry is 6 words
+  Pointer 1 (up)
+  POinter 2 (down)
+  POinter 3 (left)
+  Pointer 4 (right)
+  x,y,Txtid
+  Zero
+  (Optional Pointer for alternate text routine)
+
+ST_Name:
+WORD 0
+POIN ST_Class
+WORD 0
+POIN ST_Luck
+BYTE 0x18
+BYTE 0x50
+SHORT 0
+WORD 0
+*/
+
+#ifdef _FE8_
+
+	#define RMenu(up,down,left,right,xcoord,ycoord,TID) "POIN up down left right;BYTE xcoord ycoord; SHORT TID; WORD 0 0;"
+	#define RMenu(up,down,left,right,xcoord,ycoord,TID,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT TID; POIN 0 Getter|1"
+	#define RMenu(up,down,left,right,xcoord,ycoord,SlotID,Looper,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT SlotID; POIN Looper|1 Getter|1"
+
+	#define NameDescGetter 0x88BD4
+	#define ClassDescGetter 0x88C00
+	#define ConditionGetter 0x88A2C
+	#define StrMagGetter 0x88B08
+	#define ItemMenuRtextGetter 0x88A00
+	#define ItemMenuRtextLooper 0x88B40
+	
+	PUSH
+	
+		ORG $889D0
+		SHORT $E010 //Temporary r-text fix to prevent freezing
+		ORG $889F2  
+		SHORT $BD30
+		BL(RText_Page4_ladder) //this has to be in bl range somewhere
+		
+		ORG $87184
+		RText_Page4_ladder:
+		#incbin "GetPage4Rtext.dmp"
+		POIN RText_Page4
+		
+	POP
+
+	RText_Page1:
+	{
+		#include "RText_Page1.event"
+	}
+
+	RText_Page2:
+	{
+		#include "RText_Page2.event"
+	}
+
+	RText_Page3:
+	{
+		#include "RText_Page3.event"
+	}
+
+	RText_Page4:
+	{
+		#include "RText_Page4.event"
+	}
+
+#endif

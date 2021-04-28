@@ -4,565 +4,150 @@
 #define Spd_Arrow_Y 0x38
 #define Trv_Icon_X 0xB8
 #define Trv_Icon_Y 0x2E
+//comment this define out if you don't want to use Select to display growths
+#define Display_Growths_Toggle
 
-#include "Display Growths Options/Display Growths Options.event"
+//Display growths hack
+#ifdef Display_Growths_Toggle
+    #include "GrowthsDisplay/Installer.event"
+#endif
+#include "RText/Installer.event"
  
-  PUSH
-  ORG 0x205b24 //24 for stat screen
-  POIN MSS_page1|1 MSS_page2|1 MSS_page3|1 MSS_page4|1
+PUSH
 
-  ORG $88690
-  //BYTE 4 //make 4 pages (To be replaced by Snek's hack for optional 4th)
-  jumpToHack(Page4Supports)
+	ORG 0x205b24 //24 for stat screen
+	POIN MSS_page1|1 MSS_page2|1 MSS_page3|1 MSS_page4|1
 
-  ORG $88650
-  POIN NewPageNameGraphic
+	ORG $88690
+	jumpToHack(Page4Supports)
 
-  ORG $87f38
-  POIN NewPageNameLayout
+	ORG $88650
+	POIN NewPageNameGraphic
 
-  ORG $87f3c
-  POIN NewPageNameTiles
+	ORG $87f38
+	POIN NewPageNameLayout
 
-  ORG $87f40
-  POIN NewPageNamePalette
+	ORG $87f3c
+	POIN NewPageNameTiles
 
-  ORG $889d0
-  SHORT $e010 //Temporary r-text fix to prevent freezing
-  ORG $889f2  
-  SHORT $BD30
-  BL(RText_Page4_ladder) //this has to be in bl range somewhere
+	ORG $87f40
+	POIN NewPageNamePalette
 
-  //Move BWL to page 3 and always display it
-  ORG $86fe4
-  SHORT $46C0 $46C0
+	//Move BWL to page 3 and always display it
+	ORG $86FE4
+	SHORT $46C0 $46C0
 
-  //Make all the arrows line up with the stats and stuff
-  ORG $883C0
-  BYTE Skl_Arrow_X 0x20 Skl_Arrow_Y
-  ORG $883CA
-  BYTE Spd_Arrow_X 0x20 Spd_Arrow_Y
-  ORG $883F6
-  BYTE Trv_Icon_X 0x21 Trv_Icon_Y
+	ORG $870D8
+	BYTE 0x00 0x4C 0x20 0x47
+	POIN (Move_Bar_Number|0x1)
 
-  //Display growths hack
-  #ifdef Display_Growths_Toggle
-    ORG $8888C
-    BYTE 0x82
-  #endif
+	ORG $870F0
+	BYTE 0x00 0x4A 0x10 0x47
+	POIN (Move_Bonus_Number|0x1)
+
+	//Make all the arrows line up with the stats and stuff
+	ORG $883C0
+	BYTE Skl_Arrow_X 0x20 Skl_Arrow_Y
+	ORG $883CA
+	BYTE Spd_Arrow_X 0x20 Spd_Arrow_Y
+	ORG $883F6
+	BYTE Trv_Icon_X 0x21 Trv_Icon_Y
+
+	//make bars always red
+	ORG $4E142
+	SHORT $4807 $3004 $46C0 $46C0 $46C0 $46C0 $46C0
   
-  ORG $88896
-  SHORT 0x46C0
-  jumpToHack(Button_Branch)
+	ORG $884CE //box on item screen
+	BL(LoadDefaultUIPal)
   
-  //Remember whether we were looking at growths or stats
-  ORG $8895C //Loads byte to store 1 before stat screen struct
-  callHack_r1(Load_Page)
+	//we have a few bytes at CC21C-CC2BA available
+	ORG $CC21C
+	HS_Skip:
+	SHORT $B001 $BC38 $4698 $46A1 $46AA $BCF0 $BC01 $4700
 	
-  ORG $888BC //Stores byte to store 1 before stat screen struct
-  callHack_r3(Store_Page)
+	ALIGN 4
+	LoadDefaultUIPal:
+	SHORT $B500 $1C03 $2B00 $DA00 $2301
+	SHORT $4804 $46C0 $6800 $0159 $2220 //replace 46c0 with 3004 if 2nd, 3008 if 3rd etc
+	BL($DB8)
+	SHORT $BC01 $4700
+	ALIGN 4
+	POIN MenuStylePaletteTable
+	
+	ORG $CC216
+	B(HS_Skip)
   
-  //Display an R-button text about pressing Select, since I can't seem to fit it nicely, and make that the default
-  ORG $889D8
-  POIN PersonalDataRText
+	//Add an icon if the unit can promote
+	ORG $86E70
+	jumpToHack(Draw_Promo_Statscreen_Icon) 
   
-  //HP name color
-  ORG $86ED4
-  callHack_r3(HP_Name_Color)
-  
-  //Look for a read from 202BD31, UI color byte is here
-  //884CE there's a jump to LoadNewUIPal, replace with a bl ladder in range
-  ORG $884CE
-  BL(LoadDefaultUIPal)
-  
-  //we have a few bytes at CC21C-CC2BA available
-  ORG $CC21C
-  HS_Skip:
-  SHORT $B001 $BC38 $4698 $46A1 $46AA $BCF0 $BC01 $4700
-  ALIGN 4
-	  LoadDefaultUIPal:
-	  SHORT $B500 $1C03 $2B00 $DA00 $2301
-	  SHORT $4804 $46C0 $6800 $0159 $2220 //replace 46c0 with 3004 if 2nd, 3008 if 3rd etc
-	  BL($DB8)
-	  SHORT $BC01 $4700
-	  ALIGN 4
-	  POIN MenuStylePaletteTable
-  ORG $CC216
-  B(HS_Skip)
-  
-  //make bars always red
-  ORG $4E142
-  SHORT $4807 $3004 $46C0 $46C0 $46C0 $46C0 $46C0
-  
-  ORG $870D8
-  BYTE 0x00 0x4C 0x20 0x47
-  POIN (Move_Bar_Number|0x1)
-  
-  ORG $870F0
-  BYTE 0x00 0x4A 0x10 0x47
-  POIN (Move_Bonus_Number|0x1)
-  
-  //Add an icon if the unit can promote
-  ORG $86E70
-  jumpToHack(Draw_Promo_Statscreen_Icon)
+	//Moving support text around
+	ORG $876A4
+	BYTE $01 //how many lines down to move from top
 
-  ORG $2BA28
-  jumpToHack(Write_Growths_To_Battle_Struct)
+	ORG $876CE
+	BYTE $40 //allocating more space for support names
 
-  ORG $2B9C4
-  jumpToHack(Enemy_Autolevel)
-
-  ORG $17E98
-  callHack_r3(New_Unit_Exp)
-  SHORT 0xE005  
+	ORG $87784
+	WORD $02003D2E //scoot stuff to the left - was 02003D34
   
-  ORG $087184
+POP
 
-      // This is Vanilla Stat Screen Page
-      // This is now free (because unused) space
-      // We'll use this for stuff that needs to
-      // be in BL range
+ALIGN 4
+MSS_page1:
+	#incbin "mss_page1_growthsonly.dmp"
+	WORD SS_TalkText
+	WORD SS_RatingText
+	WORD Growth_Options
+	POIN Growth_Getter_Table
+	POIN Get_Palette_Index 
+	POIN IsUnitEligibleToPromote //in GaidenPromotionMechanics.event
 
-    RText_Page4_ladder:
-      // page 4 helptext hook
-      #incbin "rtext_page4.dmp"
-      POIN RText_Page4
-  
-  POP
-  ALIGN 4
-  MSS_page1:
-  #incbin "mss_page1_growthsonly.dmp"
-  WORD SS_TalkText
-  WORD SS_RatingText
-  WORD Growth_Options
-  POIN Growth_Getter_Table
-  POIN Get_Palette_Index 
-  POIN IsUnitEligibleToPromote //in GaidenPromotionMechanics.event
-  ALIGN 4
-  MSS_page2:
-  #incbin "mss_page2_original.dmp"
-  POIN IsUnitEligibleToPromote
-  ALIGN 4
-  MSS_page3:
-  #incbin "mss_page3_spells.dmp"
-  POIN Spells_Getter
-  POIN IsUnitEligibleToPromote
-  ALIGN 4
-  MSS_page4:
-  #incbin "mss_page4.dmp"
-  POIN IsUnitEligibleToPromote
-  ALIGN 4
-  
+ALIGN 4
+MSS_page2:
+	#incbin "mss_page2_original.dmp"
+	POIN IsUnitEligibleToPromote
 
-	NewPageNameGraphic:
+ALIGN 4
+MSS_page3:
+	#incbin "mss_page3_spells.dmp"
+	POIN Spells_Getter
+	POIN IsUnitEligibleToPromote
+
+ALIGN 4
+MSS_page4:
+#incbin "mss_page4.dmp"
+	POIN IsUnitEligibleToPromote
+
+ALIGN 4
+NewPageNameGraphic:
 	#incbin "pagenamegraphic.dmp"
 
-	ALIGN 4
-	NewPageNameLayout:
-	POIN $a008bc $a008d0 $a008de $a008bc
-	NewPageNameTiles:
+ALIGN 4
+NewPageNameLayout:
+	POIN $A008BC $A008D0 $A008DE $A008BC
+	
+ALIGN 4
+NewPageNameTiles:
 	SHORT 0 $40 $e $80
-	ALIGN 4
-	NewPageNamePalette:
+
+ALIGN 4
+NewPageNamePalette:
 	#incbin "palettecycler.dmp"
 
-	ALIGN 4
-	Move_Bar_Number:
+ALIGN 4
+Move_Bar_Number:
 	#incbin "move_bar_number.dmp"
 	
-	ALIGN 4
-	Move_Bonus_Number:
+ALIGN 4
+Move_Bonus_Number:
 	#incbin "move_bonus_number.dmp"
-
-	ALIGN 4
-	Button_Branch:
-	#incbin "Button Branch.dmp"
 	
-	ALIGN 4
-	Draw_Promo_Statscreen_Icon:
+ALIGN 4
+Draw_Promo_Statscreen_Icon:
 	#incbin "drawstatscreenleft.dmp"
 	POIN IsUnitEligibleToPromote
-	
-	ALIGN 4
-	Growth_Getter_Table:
-	POIN Get_Hp_Growth Get_Str_Growth Get_Skl_Growth Get_Spd_Growth Get_Luk_Growth Get_Def_Growth Get_Res_Growth
-	
-	ALIGN 4
-	Get_Hp_Growth:
-	#incbin "Growth Getters/Get_Hp_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-	ALIGN 4
-	Get_Str_Growth:
-	#incbin "Growth Getters/Get_Str_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-	ALIGN 4
-	Get_Skl_Growth:
-	#incbin "Growth Getters/Get_Skl_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-	ALIGN 4
-	Get_Spd_Growth:
-	#incbin "Growth Getters/Get_Spd_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-	ALIGN 4
-	Get_Def_Growth:
-	#incbin "Growth Getters/Get_Def_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-	ALIGN 4
-	Get_Res_Growth:
-	#incbin "Growth Getters/Get_Res_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-	ALIGN 4
-	Get_Luk_Growth:
-	#incbin "Growth Getters/Get_Luk_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-	
-	ALIGN 4
-	Extra_Growth_Boosts:
-	#incbin "Growth Getters/Extra_Growth_Boosts.dmp"
-	WORD Growth_Options
-	POIN ItemTable
-	
-	ALIGN 4
-	Load_Page:
-	#incbin "Load Page.dmp"
-	WORD Stat_Page_Ram_Loc
-	
-	ALIGN 4
-	Store_Page:
-	#incbin "Store Page.dmp"
-	WORD Stat_Page_Ram_Loc
 
-	
-	ALIGN 4
-	Get_Palette_Index:
-	#incbin "Get_Palette_Index.dmp"
-	POIN Growth_Color_Table
-	
-	ALIGN 4
-	HP_Name_Color:
-	#incbin "HP Name Color.dmp"
-	POIN New_Palettes
-	WORD Growth_Options
-	POIN Get_Hp_Growth
-	POIN Get_Palette_Index
-	
-	ALIGN 4
-	Write_Growths_To_Battle_Struct:
-	#incbin "Write_Growths_To_Battle_Struct.dmp"
-	POIN Class_Level_Cap_Table Get_Hp_Growth Get_Str_Growth Get_Skl_Growth Get_Spd_Growth Get_Def_Growth Get_Res_Growth Get_Luk_Growth
-	WORD Growth_Options
-	
-	ALIGN 4
-	Class_Level_Cap_Table:
-	#incbin "Display Growths Options/Class_Level_Cap_Table.dmp"
-	
-	ALIGN 4
-	Enemy_Autolevel:
-	#incbin "Enemy_Autolevel.dmp"
-	WORD Growth_Options
-	
-	ALIGN 4
-	New_Unit_Exp:
-	#incbin "New_Unit_Exp.dmp"
-	POIN Class_Level_Cap_Table
-	
-	Growth_Color_Table:
-	#include "Display Growths Options/Growth Colors Table.event"
-
-	ALIGN 4
-	New_Palettes:
-	#include "Display Growths Options/New Palette.event"
-  
-  /*stat screen R menu is at 8a00b38
-find by breaking on key press while R menu open
-
-Each entry is 6 words
-  Pointer 1 (up)
-  POinter 2 (down)
-  POinter 3 (left)
-  Pointer 4 (right)
-  x,y,Txtid
-  Zero
-  (Optional Pointer for alternate text routine)
-
-ST_Name:
-WORD 0
-POIN ST_Class
-WORD 0
-POIN ST_Luck
-BYTE 0x18
-BYTE 0x50
-SHORT 0
-WORD 0
-*/
-
-//#include eastdlib.event
-
-#ifdef _FE8_
-
-#define RMenu(up,down,left,right,xcoord,ycoord,TID) "POIN up down left right;BYTE xcoord ycoord; SHORT TID; WORD 0 0;"
-#define RMenu(up,down,left,right,xcoord,ycoord,TID,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT TID; POIN 0 Getter|1"
-#define RMenu(up,down,left,right,xcoord,ycoord,SlotID,Looper,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT SlotID; POIN Looper|1 Getter|1"
-
-#define NameDescGetter 0x88bd5
-#define ClassDescGetter 0x88c01
-#define ConditionGetter 0x88a2d
-#define StrMagGetter 0x88b09
-
-PUSH // R menu
-ORG 0xa00b38
-ST_Name:
-  RMenu(0,ST_Class,0,ST_Luck,0x18,0x50,0x0,NameDescGetter)
-ST_Class:
-  RMenu(ST_Name,ST_Level,0,ST_Def,0x6,0x68,0x6E8,ClassDescGetter)
-ST_Level:
-  RMenu(ST_Class,ST_HP,0,ST_Exp,0x6,0x78,0x542)
-ST_Exp:
-  RMenu(ST_Class,ST_HP,ST_Level,ST_Res,0x26,0x78,0x543)
-ST_HP:
-  RMenu(ST_Level,0,0,ST_Rating,0x6,0x88,0x544)
-
-ST_Str:
-  RMenu(PersonalDataRText,ST_Skl,ST_Name,ST_Mov,0x66,0x18,0x546,StrMagGetter)
-ST_Skl:
-  RMenu(ST_Str,ST_Spd,ST_Name,ST_Con,0x66,0x28,0x548)
-ST_Spd:
-  RMenu(ST_Skl,ST_Luck,ST_Name,ST_Aid,0x66,0x38,0x549)
-ST_Luck:
-  RMenu(ST_Spd,ST_Def,ST_Name,ST_Trv,0x66,0x48,0x54a)
-ST_Def:
-  RMenu(ST_Luck,ST_Res,ST_Class,ST_Affin,0x66,0x58,0x54b)
-ST_Res:
-  RMenu(ST_Def,ST_Rating,ST_Exp,ST_Cond,0x66,0x68,0x54c)
-ST_Rating:
-  RMenu(ST_Res,0,ST_HP,ST_Talk,0x66,0x78,SS_RatingRText)
-ST_Mov:
-  RMenu(PersonalDataRText,ST_Con,ST_Str,0,0xae,0x18,0x54d)
-POP
-//the rest of these are here because space
-ST_Con:
-  RMenu(ST_Mov,ST_Aid,ST_Skl,0,0xae,0x28,0x54e)
-ST_Aid:
-  RMenu(ST_Con,ST_Trv,ST_Spd,0,0xae,0x38,0x54F)
-ST_Trv:
-  RMenu(ST_Aid,ST_Affin,ST_Luck,0,0xae,0x48,0x550)
-ST_Affin:
-  RMenu(ST_Trv,ST_Cond,ST_Def,0,0xae,0x58,0x551)
-ST_Cond:
-  RMenu(ST_Affin,ST_Talk,ST_Res,0,0xae,0x68,0x552,ConditionGetter)
-ST_Talk:
-  RMenu(ST_Cond,0,ST_Rating,0,0xae,0x78,SS_TalkRText)
-#ifdef Display_Growths_Toggle
-  PersonalDataRText:
-  RMenu(0,ST_Str,ST_Name,0,0x76,0x4,PersonalDataDesc1)
-#else
-  PersonalDataRText:
-  RMenu(0,ST_Str,ST_Name,0,0x76,0x4,PersonalDataDesc2)
-#endif
-
-#define ItemMenuRtextGetter 0x88A00
-#define ItemMenuRtextLooper 0x88B40
-
-PUSH
-//Looks like page2 RMenu stuff starts at A00D14
-//Macro-fied version:
-ORG $A00D14 //sidebar
-IT_Name:
-  RMenu(0,IT_Class,0,InventoryRtext4,0x18,0x50,0x0,NameDescGetter)
-IT_Class:
-  RMenu(IT_Name,IT_Level,0,Inventory_Rng,0x6,0x68,0x6E8,ClassDescGetter)
-IT_Level:
-  RMenu(IT_Class,IT_HP,0,IT_Exp,0x6,0x78,0x542)
-IT_Exp:
-  RMenu(IT_Class,IT_HP,IT_Level,Inventory_Atk,0x26,0x78,0x543)
-IT_HP:
-  RMenu(IT_Level,0,0,Inventory_Hit,0x6,0x88,0x544)
-
-ORG $A00DA0 //items start here
-InventoryRtext1:
-  RMenu(0,InventoryRtext2,IT_Name,0,0x68,0x18,0x00,ItemMenuRtextLooper,ItemMenuRtextGetter)
-InventoryRtext2:
-  RMenu(InventoryRtext1,InventoryRtext3,IT_Name,0,0x68,0x28,0x0001,ItemMenuRtextLooper,ItemMenuRtextGetter)
-InventoryRtext3:
-  RMenu(InventoryRtext2,InventoryRtext4,IT_Name,0,0x68,0x38,0x0002,ItemMenuRtextLooper,ItemMenuRtextGetter)
-InventoryRtext4:
-  RMenu(InventoryRtext3,InventoryRtext5,IT_Name,0,0x68,0x48,0x0003,ItemMenuRtextLooper,ItemMenuRtextGetter)
-InventoryRtext5:
-  RMenu(InventoryRtext4,Inventory_Atk,IT_Name,Inventory_Rng,0x68,0x58,0x0004,ItemMenuRtextLooper,ItemMenuRtextGetter)
-
-ORG $A00E2C //bottom thing with atk/crit/etc
-Inventory_Atk:
-  RMenu(InventoryRtext5,Inventory_Hit,IT_Exp,Inventory_Crt,0x76,0x78,0x55C)
-Inventory_Hit:
-  RMenu(Inventory_Atk,0,IT_HP,Inventory_Avo,0x76,0x88,0x55D)
-Inventory_Rng:
-  RMenu(InventoryRtext5,Inventory_Crt,IT_Class,0,0xae,0x68,0x55E)
-Inventory_Crt:
-  RMenu(Inventory_Rng,Inventory_Avo,Inventory_Atk,0,0xae,0x78,0x55F)
-Inventory_Avo:
-  RMenu(Inventory_Crt,0,Inventory_Hit,0,0xae,0x88,0x560)
-
-//weapon ranks display fix
-ORG $A00EB8
-//#incbin "FE8_weaponranks_fix.dmp"
-WR_Name:
-  RMenu(0,WR_Class,WR_Class,ST_Weaponrank,0x18,0x50,0x0,NameDescGetter)
-WR_Class:
-  RMenu(WR_Name,WR_Level,0,ST_Spells_5,0x6,0x68,0x6E8,ClassDescGetter)
-WR_Level:
-  RMenu(WR_Class,WR_HP,0,WR_Exp,0x6,0x78,0x542)
-WR_Exp:
-  RMenu(WR_Class,WR_HP,WR_Level,ST_Spells_6,0x26,0x78,0x543)
-WR_HP:
-  RMenu(WR_Level,0,0,0,0x6,0x88,0x544)
-
-//now for spell stats
-
-ORG $A00F44
-ST_Weaponrank:
-  RMenu(0, 0, WR_Name, ST_Spells_1, 0x68, 0x18, 0x568)//0x568
-ST_Spells_1:
-  RMenu(0, ST_Spells_2, ST_Weaponrank, 0, 0xA8, 0x18, 0x00, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
-ST_Spells_2:
-  RMenu(ST_Spells_1, ST_Spells_3, ST_Weaponrank, 0, 0xA8, 0x28, 0x0001, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
-ST_Spells_3:
-  RMenu(ST_Spells_2, ST_Spells_4, ST_Weaponrank, 0, 0xA8, 0x38, 0x0002, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
-ST_Spells_4:
-  RMenu(ST_Spells_3, ST_Spells_5, ST_Weaponrank, 0, 0xA8, 0x48, 0x0003, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
-ST_Spells_5:
-  RMenu(ST_Spells_4, ST_Spells_6, WR_Class, 0, 0xA8, 0x58, 0x0004, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
-ST_Spells_6:
-  RMenu(ST_Spells_5, 0, WR_Exp, 0, 0xA8, 0x68, 0x0005, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
-
-PROTECT $A00FD0 $A00FEC //not sure what this is, best not to overwrite
-
-//Moving support text around
-ORG $876A4
-BYTE $01 //how many lines down to move from top
-
-ORG $876CE
-BYTE $40 //allocating more space for support names
-
-ORG $87784
-WORD $02003D2E //scoot stuff to the left - was 02003D34
-
-ORG $892D4
-jumpToHack(Hack892D4) //allocates a new R-text box type (4) for supports
-
-ORG $89336
-SHORT $DB03 //change BNE 0x03 to BLT 0x03
-
-ORG $891D4
-SHORT $DA12 //change BEQ 0x03 to BGE 0x03
-
-ORG $88F50 //copies unit1, unit2 and support level to the R-text draw proc
-jumpToHack(PassSupportDataToRtextHandler)
-
-ORG $89F70 //draws labels for "Atk/Def/Crit/Hit/Avo/CEv" like in the item R-text
-jumpToHack(DrawRtextStatLabelsForSupport)
-
-ORG $89FD8 //fills in number values for the support bonuses
-jumpToHack(DrawRtextStatValuesForSupport)
-
-
-
-//some Rtext for page 3 idk
-ORG $889F8
-BYTE $B8 $0E $A0 $08
-
-POP
-
-  /*stat screen R menu is at 8a00b38
-find by breaking on key press while R menu open
-
-Each entry is 6 words
-  Pointer 1 (up)
-  POinter 2 (down)
-  POinter 3 (left)
-  Pointer 4 (right)
-  x,y,Txtid
-  Zero
-  (Optional Pointer for alternate text routine)
-
-ST_Name:
-WORD 0
-POIN ST_Class
-WORD 0
-POIN ST_Luck
-BYTE 0x18
-BYTE 0x50
-SHORT 0
-WORD 0
-*/
-
-//Page4 stuff
-RText_Page4:
-SP_Name:
-  RMenu(0,SP_Class,0,SP_Support_1,0x18,0x50,0x0,NameDescGetter)
-SP_Class:
-  RMenu(SP_Name,SP_Level,0,SP_Support_1,0x6,0x68,0x6E8,ClassDescGetter)
-SP_Level:
-  RMenu(SP_Class,SP_HP,0,SP_Exp,0x6,0x78,0x542)
-SP_Exp:
-  RMenu(SP_Class,SP_HP,SP_Level,SP_Support_1,0x26,0x78,0x543)
-SP_HP:
-  RMenu(SP_Level,0,0,SP_Support_1,0x6,0x88,0x544)
-  
-//SP_Support_1:
-  //RMenu(0,0,SP_Name,0,0x66,0x18,StatScreenSupports) //placeholder text until this is a proper list with getters/loopers
-SP_Support_1:
-  RMenu(0, SP_Support_2, SP_Name, 0, 0x66, 0x18, 0x00, SupportScreenRtextLooper, SupportScreenRtextGetter)
-SP_Support_2:
-  RMenu(SP_Support_1, SP_Support_3, SP_Name, 0, 0x66, 0x28, 0x0001, SupportScreenRtextLooper, SupportScreenRtextGetter)
-SP_Support_3:
-  RMenu(SP_Support_2, SP_Support_4, SP_Name, 0, 0x66, 0x38, 0x0002, SupportScreenRtextLooper, SupportScreenRtextGetter)
-SP_Support_4:
-  RMenu(SP_Support_3, SP_Support_5, SP_Name, 0, 0x66, 0x48, 0x0003, SupportScreenRtextLooper, SupportScreenRtextGetter)
-SP_Support_5:
-  RMenu(SP_Support_4, SP_Support_6, SP_Class, 0, 0x66, 0x58, 0x0004,SupportScreenRtextLooper, SupportScreenRtextGetter)
-SP_Support_6:
-  RMenu(SP_Support_5, SP_Support_7, SP_Exp, 0, 0x66, 0x68, 0x0005, SupportScreenRtextLooper, SupportScreenRtextGetter)
-SP_Support_7:
-  RMenu(SP_Support_6, 0, SP_HP, 0, 0x66, 0x78, 0x0006, SupportScreenRtextLooper, SupportScreenRtextGetter)
-
-//Put new stuff for Spells down here.
-SpellStatscreenRtextGetter:
-#incbin "GetSpellRtext.dmp"
-POIN Spells_Getter
-
-SpellStatscreenRtextLooper:
-#incbin "LoopSpellRtext.dmp"
-POIN Spells_Getter
-
-SupportScreenRtextGetter:
-#incbin "GetSupportRtext.dmp"
-ALIGN 4
-SupportScreenRtextLooper:
-#incbin "LoopSupportRtext.dmp"
-ALIGN 4
-
-Hack892D4:
-#incbin "892d4.dmp"
-ALIGN 4
-
-PassSupportDataToRtextHandler:
-#incbin "PassSupportDataToRtextHandler.dmp"
-ALIGN 4
-
-DrawRtextStatLabelsForSupport:
-#incbin "DrawRtextStatLabelsForSupport.dmp"
-ALIGN 4
-
-DrawRtextStatValuesForSupport:
-#incbin "DrawRtextStatValuesForSupport.dmp"
-POIN SupportReworkBonusTable
-ALIGN 4
-
+ALIGN 4	
 Page4Supports:
-#incbin "SupportsPage4.dmp"
-
-// POP
-#endif
-
-
-
+	#incbin "SupportsPage4.dmp"

@@ -1,0 +1,71 @@
+PUSH
+
+	ORG $892D4
+	jumpToHack(New_RtextType_SupportInfo) //allocates a new R-text box type (4) for supports
+
+	ORG $89336
+	SHORT $DB03 //change BNE 0x03 to BLT 0x03
+
+	ORG $891D4
+	SHORT $DA12 //change BEQ 0x03 to BGE 0x03
+
+	ORG $88F50 //copies unit1, unit2 and support level to the R-text draw proc
+	jumpToHack(PassSupportDataToRtextHandler)
+
+	ORG $89F70 //draws labels for "Atk/Def/Crit/Hit/Avo/CEv" like in the item R-text
+	jumpToHack(DrawRtextStatLabelsForSupport)
+
+	ORG $89FD8 //fills in number values for the support bonuses
+	jumpToHack(DrawRtextStatValuesForSupport)
+
+POP
+
+SP_Name:
+	RMenu(0,SP_Class,0,SP_Support_1,0x18,0x50,0x0,NameDescGetter)
+SP_Class:
+	RMenu(SP_Name,SP_Level,0,SP_Support_1,0x6,0x68,0x6E8,ClassDescGetter)
+SP_Level:
+	RMenu(SP_Class,SP_HP,0,SP_Exp,0x6,0x78,0x542)
+SP_Exp:
+	RMenu(SP_Class,SP_HP,SP_Level,SP_Support_1,0x26,0x78,0x543)
+SP_HP:
+	RMenu(SP_Level,0,0,SP_Support_1,0x6,0x88,0x544)  
+
+SP_Support_1:
+	RMenu(0, SP_Support_2, SP_Name, 0, 0x66, 0x18, 0x00, SupportScreenRtextLooper, SupportScreenRtextGetter)
+SP_Support_2:
+	RMenu(SP_Support_1, SP_Support_3, SP_Name, 0, 0x66, 0x28, 0x0001, SupportScreenRtextLooper, SupportScreenRtextGetter)
+SP_Support_3:
+	RMenu(SP_Support_2, SP_Support_4, SP_Name, 0, 0x66, 0x38, 0x0002, SupportScreenRtextLooper, SupportScreenRtextGetter)
+SP_Support_4:
+	RMenu(SP_Support_3, SP_Support_5, SP_Name, 0, 0x66, 0x48, 0x0003, SupportScreenRtextLooper, SupportScreenRtextGetter)
+SP_Support_5:
+	RMenu(SP_Support_4, SP_Support_6, SP_Class, 0, 0x66, 0x58, 0x0004,SupportScreenRtextLooper, SupportScreenRtextGetter)
+SP_Support_6:
+	RMenu(SP_Support_5, SP_Support_7, SP_Exp, 0, 0x66, 0x68, 0x0005, SupportScreenRtextLooper, SupportScreenRtextGetter)
+SP_Support_7:
+	RMenu(SP_Support_6, 0, SP_HP, 0, 0x66, 0x78, 0x0006, SupportScreenRtextLooper, SupportScreenRtextGetter)
+
+SupportScreenRtextGetter:
+#incbin "GetSupportRtext.dmp"
+ALIGN 4
+SupportScreenRtextLooper:
+#incbin "LoopSupportRtext.dmp"
+ALIGN 4
+
+New_RtextType_SupportInfo:
+#incbin "NewRtextType.dmp"
+ALIGN 4
+
+PassSupportDataToRtextHandler:
+#incbin "PassSupportDataToRtextHandler.dmp"
+ALIGN 4
+
+DrawRtextStatLabelsForSupport:
+#incbin "DrawRtextStatLabelsForSupport.dmp"
+ALIGN 4
+
+DrawRtextStatValuesForSupport:
+#incbin "DrawRtextStatValuesForSupport.dmp"
+POIN SupportReworkBonusTable
+ALIGN 4

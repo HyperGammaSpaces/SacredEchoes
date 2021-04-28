@@ -1,6 +1,3 @@
-//comment this define out if you don't want to use Select to display growths
-#define Display_Growths_Toggle
-
 //Write 0 if you don't want fixed growth mode to exist, or 1 if you want it to be an option
 #define Growth_Opt1 0
 
@@ -11,7 +8,7 @@
 #define Growth_Opt3 1
 
 //Write 0 if you don't want fixed growths mode to apply to enemy/npc autolevels, or 1 if you do
-#define Growth_Opt4 1
+#define Growth_Opt4 0
 
 //Write 0 if you don't want the color of the stat name to reflect the unit's growth in that stat, or 1 if you do (player units only)
 #define Stat_Colors 1

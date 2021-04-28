@@ -1,0 +1,138 @@
+#include "DisplayGrowthsOptions.event"
+
+PUSH
+	
+	#define Stat_Page_Ram_Loc 0x203FFFF //if things don't work properly, this might be getting overwritten (shouldn't, though)
+	
+	//Load growths for display
+	ORG $2BA28
+	jumpToHack(Write_Growths_To_Battle_Struct)
+	
+	ORG $8888C //select + R button check
+	BYTE 0x82
+	
+	ORG $88896
+	SHORT 0x46C0
+	jumpToHack(Button_Branch)
+	
+	ORG $871E6
+	SHORT 0x4977 0x4708 //ldr r1,Write_Numbers|1; bx r1
+	
+	ORG $873C4
+	POIN Write_Numbers|1
+	
+	ORG $87474 //Call updates of bg layers 0 and 2
+	jumpToHack(Update_Layers)
+	
+	ORG $883B4 //Only display rescue arrows if not on growths page
+	jumpToHack(Check_Rescue_Arrows)
+	
+	//Remember whether we were looking at growths or stats
+	ORG $8895C //Loads byte to store 1 before stat screen struct
+	callHack_r1(Load_Page)
+	
+	ORG $888BC //Stores byte to store 1 before stat screen struct
+	callHack_r3(Store_Page)
+	
+	//HP name color
+	ORG $86ED4
+	callHack_r3(HP_Name_Color)
+	
+POP
+	
+ALIGN 4
+Button_Branch:
+	#incbin "ButtonBranch.dmp"
+
+ALIGN 4
+Write_Numbers:
+	#incbin "WriteNumbers.dmp"
+	POIN Growths_Order_Table
+
+ALIGN 4
+Update_Layers:
+	#incbin "UpdateLayers.dmp"
+
+ALIGN 4
+Check_Rescue_Arrows:
+	#incbin "CheckRescueArrows.dmp"
+
+ALIGN 4
+Growths_Order_Table:
+	BYTE 29 30 31 34 32 33 28
+
+ALIGN 4
+Write_Growths_To_Battle_Struct:
+	#incbin "GrowthGetters/Write_Growths_To_Battle_Struct.dmp"
+	POIN Class_Level_Cap_Table Get_Hp_Growth Get_Str_Growth Get_Skl_Growth Get_Spd_Growth Get_Def_Growth Get_Res_Growth Get_Luk_Growth
+	WORD Growth_Options
+
+ALIGN 4
+Load_Page:
+	#incbin "LoadPage.dmp"
+	WORD Stat_Page_Ram_Loc
+
+ALIGN 4
+Store_Page:
+	#incbin "StorePage.dmp"
+	WORD Stat_Page_Ram_Loc
+
+ALIGN 4
+Get_Palette_Index:
+	#incbin "Get_Palette_Index.dmp"
+	POIN Growth_Color_Table
+
+ALIGN 4
+HP_Name_Color:
+	#incbin "HP_NameColor.dmp"
+	POIN New_Palettes
+	WORD Growth_Options
+	POIN Get_Hp_Growth
+	POIN Get_Palette_Index
+
+ALIGN 4
+Growth_Color_Table:
+	#include "GrowthColorsTable.event"
+
+ALIGN 4
+New_Palettes:
+	#include "NewGrowthsPalette.event"
+
+ALIGN 4
+Growth_Getter_Table:
+	POIN Get_Hp_Growth Get_Str_Growth Get_Skl_Growth Get_Spd_Growth Get_Luk_Growth Get_Def_Growth Get_Res_Growth
+
+ALIGN 4
+Get_Hp_Growth:
+	#incbin "GrowthGetters/Get_Hp_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+ALIGN 4
+Get_Str_Growth:
+	#incbin "GrowthGetters/Get_Str_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+ALIGN 4
+Get_Skl_Growth:
+	#incbin "GrowthGetters/Get_Skl_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+ALIGN 4
+Get_Spd_Growth:
+	#incbin "GrowthGetters/Get_Spd_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+ALIGN 4
+Get_Def_Growth:
+	#incbin "GrowthGetters/Get_Def_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+ALIGN 4
+Get_Res_Growth:
+	#incbin "GrowthGetters/Get_Res_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+ALIGN 4
+Get_Luk_Growth:
+	#incbin "GrowthGetters/Get_Luk_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+	
+ALIGN 4
+Extra_Growth_Boosts:
+	#incbin "GrowthGetters/Extra_Growth_Boosts.dmp"
+	WORD Growth_Options
+	POIN ItemTable

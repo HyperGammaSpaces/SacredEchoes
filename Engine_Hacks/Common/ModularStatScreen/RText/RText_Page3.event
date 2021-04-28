@@ -1,0 +1,44 @@
+PUSH
+	
+ORG $889F8
+	POIN $A00EB8
+
+ORG $A00EB8 //weapon rank left
+WR_Name:
+	RMenu(0,WR_Class,WR_Class,ST_Weaponrank,0x18,0x50,0x0,NameDescGetter)
+WR_Class:
+	RMenu(WR_Name,WR_Level,0,ST_Spells_5,0x6,0x68,0x6E8,ClassDescGetter)
+WR_Level:
+	RMenu(WR_Class,WR_HP,0,WR_Exp,0x6,0x78,0x542)
+WR_Exp:
+	RMenu(WR_Class,WR_HP,WR_Level,ST_Spells_6,0x26,0x78,0x543)
+WR_HP:
+	RMenu(WR_Level,0,0,0,0x6,0x88,0x544)
+
+ORG $A00F44 //weapon rank page right
+ST_Weaponrank:
+	RMenu(0, 0, WR_Name, ST_Spells_1, 0x68, 0x18, 0x568)
+ST_Spells_1:
+	RMenu(0, ST_Spells_2, ST_Weaponrank, 0, 0xA8, 0x18, 0x00, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
+ST_Spells_2:
+	RMenu(ST_Spells_1, ST_Spells_3, ST_Weaponrank, 0, 0xA8, 0x28, 0x0001, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
+ST_Spells_3:
+	RMenu(ST_Spells_2, ST_Spells_4, ST_Weaponrank, 0, 0xA8, 0x38, 0x0002, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
+ST_Spells_4:
+	RMenu(ST_Spells_3, ST_Spells_5, ST_Weaponrank, 0, 0xA8, 0x48, 0x0003, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
+ST_Spells_5:
+	RMenu(ST_Spells_4, ST_Spells_6, WR_Class, 0, 0xA8, 0x58, 0x0004, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
+ST_Spells_6:
+	RMenu(ST_Spells_5, 0, WR_Exp, 0, 0xA8, 0x68, 0x0005, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
+
+	PROTECT $A00FD0 $A00FEC //not sure what this is, best not to overwrite
+	
+POP
+
+SpellStatscreenRtextGetter:
+	#incbin "GetSpellRtext.dmp"
+	POIN Spells_Getter
+
+SpellStatscreenRtextLooper:
+	#incbin "LoopSpellRtext.dmp"
+	POIN Spells_Getter
