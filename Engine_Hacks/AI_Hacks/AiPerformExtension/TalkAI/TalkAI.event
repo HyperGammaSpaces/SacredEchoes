@@ -1,0 +1,61 @@
+#include "../AiScrDefinitions.event"
+
+InjectAi2(0x1, SeekSafetyAI_Script)
+InjectAi2(0x8, ClairTalkAI_Script)
+InjectAi2(0xA, WhitewingTalkAI_Script)
+
+#define ClairTalkAI [0x6, 0x8, 0x0, 0x0]
+#define WhitewingTalkAI [0x0, 0xA, 0x0, 0x0]
+
+ALIGN 4
+
+SeekSafetyAI_Script:
+	AiMoveTowardsSafety
+	AiRestart
+ALIGN 4
+
+ClairTalkAI_Script:
+{
+	#define TalkFrom Clair
+	#define TalkTo   Lukas	
+	
+	AiMoveTowardsCharacter(Lukas)
+	AiGotoIfEQ($01, $04)
+	AiGotoIfEQ($00, $03)
+	AiGotoIfNE($00, $02)
+	AiFunc($3F4EC+1, TalkData)
+	AiRestart
+	AiLabel($01)
+	AiDoNothing
+	AiChangeAi($06, $01)
+	AiRestart
+	ALIGN 4
+
+	TalkData:
+	BYTE TalkFrom TalkTo 0x00 0x00
+}
+
+WhitewingTalkAI_Script:
+{
+	#define TalkFrom Catria
+	#define TalkTo   Celica	
+	
+//	AiMoveTowardsEnemy
+//  AiChangeAi($06, $FF)
+//	AiGoto($02)
+//	AiLabel($01)
+	AiMoveTowardsCharacter(Celica)
+	AiGotoIfEQ($02, $04)
+	AiGotoIfEQ($00, $03)
+	AiGotoIfNE($00, $02)
+	AiFunc($3F4EC+1, TalkData)
+	AiRestart
+	AiLabel($02)
+	AiDoNothing
+	AiChangeAi($00, $00)
+	AiRestart
+	ALIGN 4
+
+	TalkData:
+	BYTE TalkFrom TalkTo 0x00 0x00
+}

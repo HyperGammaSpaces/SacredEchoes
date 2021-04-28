@@ -18,8 +18,8 @@ Ch3_1C_TurnBasedEvents:
 TURN
 
 Ch3_1C_CharacterBasedEvents:
-CharacterEvent(8, TalkToCatria, Celica, Catria)
-CharacterEvent(8, TalkToPalla, Celica, Palla)
+CharacterEventBothWays(8, TalkToCatria, Celica, Catria)
+CharacterEventBothWays(8, TalkToPalla, Celica, Palla)
 CHAR
 
 Ch3_1C_LocationBasedEvents:
@@ -111,7 +111,7 @@ EnemyUnits:
 	
 PegasusKnights:
 	UNIT Palla PegasusKnight 0x00 Level(8,NPC,False) [10,0] 0x00 0x00 0x1 REDA11R1 [Javelin, BaseLance] NoAI 
-	UNIT Catria PegasusKnight 0x00 Level(5,NPC,False) [9,0] 0x00 0x00 0x1 REDA10R1 [BaseLance, AngelRing] NoAI 
+	UNIT Catria PegasusKnight 0x00 Level(5,NPC,False) [9,0] 0x00 0x00 0x1 REDA10R1 [BaseLance, AngelRing] WhitewingTalkAI 
 	UNIT
 
 Ch3_1C_BeginningScene:
