@@ -17,6 +17,8 @@ lsl r0, r0, #0x5	@nodeID
 ldr r1, WorldMapNodeList
 add r0, r0, r1
 ldrb r0, [r0, #0x6]
+cmp r0, #0xFF
+beq FlagSet
 bl CheckFlag
 ldr r1, WorldMapNodeList
 lsl r4, r4, #0x5

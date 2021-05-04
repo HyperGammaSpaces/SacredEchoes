@@ -11,6 +11,7 @@
 .equ FillRangeByRangeMask, 0x0801B460
 .equ DisplayMoveRangeGraphics, 0x0801DA98
 .equ SelectedSpellPointer, SpellHoverHelper+4
+.equ All_Weapons_One_Square, SelectedSpellPointer+4
 
 @08022D84 B530   PUSH {r4,r5,lr}   @MenuDef15_ Action Pointer When Selected 
 @08022D86 1C0D   mov r5 ,r1
@@ -72,10 +73,11 @@ ldr r4, =0x03004E50 @(Pointer to the work memory of the operation character )
 ldr r0, [r4, #0x0] 
 mov r1, #0x0
 ldsb r1, [r5, r1]
-blh GetUnitRangeMask 
-mov r1 ,r0
-ldr r0, [r4, #0x0] 
-blh FillRangeByRangeMask 
+
+ldr r3, All_Weapons_One_Square
+mov lr, r3
+.short 0xf800
+
 mov r0, #0x2
 blh DisplayMoveRangeGraphics 
 mov r0, #0x0

@@ -394,7 +394,7 @@ Act3EndSwitch:
 .ltorg
 
 HandleActClosureSaves:
-	push {r4,r5,lr}   //SaveMenu_LoadNextChapterName
+	push {r4,r5,lr}
 	sub  sp, #0x4
 	ldr  r5, =0x0202bcf0 
 	ldrb r1, [r5, #0x14] 
