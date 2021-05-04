@@ -262,9 +262,8 @@ Ch3_3C_EndingScene:
 		
 		MOVE 0x8 Celica [7, 2]
 		ENUN
-		REMU Celica
+		CLEA 0x0
 		FADU 5
-		REVEAL Celica
 		
 		SetBackground(0x17) //dungeon cell
 		Text(Ch3_3C_EndingText_NoJesse)

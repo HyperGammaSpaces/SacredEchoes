@@ -184,9 +184,17 @@ SearchForTargetTiles:
 	b y_loop
 
 	loopexit:
+	ldr     r0, [sp, #spPriority]
+	cmp     r0, #0x0
+	bgt     ConfirmWarp
+	mov     r0, #0x0
+	b       End
+	
+	ConfirmWarp:
 	mov 	r0, sp
 	mov 	r1, #0xE
 	blh ItemAI_ConfirmAction
+	mov     r0, #0x1
 
 	End:
 	add 	sp, #spSize

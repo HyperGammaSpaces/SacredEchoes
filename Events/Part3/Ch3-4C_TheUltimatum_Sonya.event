@@ -35,17 +35,35 @@ Ch3_4C_LocationBasedEvents:
 	  Seize(4,5)
 	#endif
 	House(0, HouseEvent, 11,0)
+	House(0, HouseEvent2, 4,18)
 	LOCA
 	
 HouseEvent:
 	HouseEvent(Ch3_4C_HouseText,0x01)
 	ENDA
+	
+HouseEvent2:
+	HouseEvent(Ch3_4C_HouseText_2,0x01)
+	ENDA
 
 Ch3_4C_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch3_4C_EndingScene)
+	DefeatBoss(Ch3_4C_EndingScene)
 	MournQuoteAFEVS
+	AREA 0x15 BootsEvent [0,14] [2,14]
+	AREA 0x16 IoteShieldEvent [7,0] [8,1]
+	AREA 0x17 MemberCardEvent [0,6] [1,8]
 	AFEV
+	
+BootsEvent:
+	HiddenItem(Swiftsole)
+	ENDA
+IoteShieldEvent:
+	HiddenItem(DelphiShield)
+	ENDA
+MemberCardEvent:
+	HiddenItem(MemberCard)
+	ENDA
 
 Ch3_4C_Dunno:
 	END_MAIN
@@ -62,7 +80,8 @@ Ch3_4C_Ballista2:
 	ALIGN 4
 
 Ch3_4C_CutsceneUnits:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [3,0] 0x00 0x00 0x1 REDA2R2 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,0] 0x00 0x00 0x1 REDA2R2 [BaseSword, Vulnerary] NoAI
+	UNIT Catria PegasusKnight 0x00 Level(1, Ally, 1) [3,0] 0x00 0x00 0x1 REDA3R1 [BaseLance, Vulnerary] NoAI
 	UNIT
 //start from [3,0].
 
@@ -71,10 +90,7 @@ Ch3_4C_UnitsNorth:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,1] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [1,1] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [2,0] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,1] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,1] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,2] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [1,3] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,2] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,2] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,3] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -82,25 +98,30 @@ Ch3_4C_UnitsNorth:
 
 EnemyUnitsSonya:
 	UNIT SonyaBoss Mage_F SonyaBoss Level(10, Enemy, False) [10,18] 0x00 0x00 0x0 0x00 [Excalibur,SteelShield] DefensiveTerrainAI
-	
-	UNIT 0x8C Witch	SonyaBoss Level(7, Enemy, True) [7,17]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
-	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [4,15]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
-	UNIT 0x8C Witch	SonyaBoss Level(5, Enemy, True) [14,3]	0x00 0x00 0x0 0x00 [Nosferatu] NoAI
+	UNIT 0x87 Mercenary	SonyaBoss Level(15, Enemy, True) [9,5]	0x00 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
+	UNIT 0x8C Witch	SonyaBoss Level(7, Enemy, True) [9,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
+	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [11,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
+	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [8,18]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x8C Witch	SonyaBoss Level(5, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [Nosferatu] NoAI
 	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [7,12]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
-	UNIT 0x8C Witch	SonyaBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [Fire, Rewarp] WitchWarpAI
+	UNIT 0x8C Witch	SonyaBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
 	UNIT 0x8C Mage_F	SonyaBoss Level(10, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [Thunder] NoAI
-	UNIT 0x8C Mage_F	SonyaBoss Level(12, Enemy, True) [6,14]	0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT 0x8C Mage_F	SonyaBoss Level(9, Enemy, True) [4,12]	0x00 0x00 0x0 0x00 [Aura] AttackInRangeAI
+	UNIT 0x8C Mage_F	SonyaBoss Level(12, Enemy, True) [7,17]	0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT 0x8C Mage_F	SonyaBoss Level(9, Enemy, True) [5,6]	0x00 0x00 0x0 0x00 [Aura] AttackInRangeAI
 	UNIT 0x8C Mage_F	SonyaBoss Level(12, Enemy, True) [8,8]	0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT 0x87 Mercenary	SonyaBoss Level(16, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+	UNIT 0x87 Mercenary	SonyaBoss Level(15, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
 	UNIT
 	
 ReinforcementsSonya:
-	UNIT 0x87 Mercenary	SonyaBoss Level(14, Enemy, True) [15,8]	0x00 0x00 0x1 REDA15R8 [BraveSword] NoAI
+	UNIT 0x87 Mercenary	SonyaBoss Level(14, Enemy, True) [15,8]	0x00 0x00 0x1 REDA15R8 [Rapier] NoAI
 	UNIT
 
 Ch3_4C_BeginningScene:
 	MUSC 0x0D //desert theme
+	LOAD1 0x1 EnemyUnitsSonya
+	ENUN
+	FADU 5
+	WEA1 0x6
 
 	//due to sandstorm, load units on map.
 	LOAD2 0x1 Ch3_4C_CutsceneUnits
@@ -117,10 +138,9 @@ Ch3_4C_BeginningScene:
 	LABEL 0x2
 		Text(Ch3_4C_OpeningText_SonyaChosen)
 	LABEL 0x3
-	FADI 60
+	FADI 5
 	CLEA 0x0
-	LOAD1 0x1 EnemyUnitsSonya
-	ENUN
+	
 	LOAD3 0x0 Ch3_4C_UnitsNorth //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 

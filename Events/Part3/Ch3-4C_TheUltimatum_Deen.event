@@ -35,17 +35,35 @@ Ch3_4C_LocationBasedEvents:
 	  Seize(4,5)
 	#endif
 	House(0, HouseEvent, 11,0)
+	House(0, HouseEvent2, 4,18)
 	LOCA
 	
 HouseEvent:
 	HouseEvent(Ch3_4C_HouseText,0x01)
 	ENDA
+	
+HouseEvent2:
+	HouseEvent(Ch3_4C_HouseText_2,0x01)
+	ENDA
 
 Ch3_4C_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch3_4C_EndingScene)
+	DefeatBoss(Ch3_4C_EndingScene)
 	MournQuoteAFEVS
+	AREA 0x15 BootsEvent [0,14] [2,14]
+	AREA 0x16 IoteShieldEvent [7,0] [8,1]
+	AREA 0x17 MemberCardEvent [0,6] [1,8]
 	AFEV
+	
+BootsEvent:
+	HiddenItem(Swiftsole)
+	ENDA
+IoteShieldEvent:
+	HiddenItem(DelphiShield)
+	ENDA
+MemberCardEvent:
+	HiddenItem(MemberCard)
+	ENDA
 
 Ch3_4C_Dunno:
 	END_MAIN
@@ -62,16 +80,14 @@ Ch3_4C_Ballista2:
 	ALIGN 4
 	
 Ch3_4C_CutsceneUnits:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [7,19] 0x00 0x00 0x1 REDA5R17 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [7,19] 0x00 0x00 0x1 REDA7R17 [BaseSword, Vulnerary] NoAI
+	UNIT Atlas Woodcutter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x1 REDA9R17 [BaseLance, Vulnerary] NoAI
 	UNIT
 //start from [7,19].
 	
 Ch3_4C_UnitsSouth:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [5,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [9,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [10,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [8,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [10,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -82,14 +98,16 @@ Ch3_4C_UnitsSouth:
 	
 EnemyUnitsDeen:
 	UNIT DeenBoss Myrmidon DeenBoss Level(12, Enemy, False) [2,1] 0x00 0x00 0x0 0x00 [BraveSword,DeensSword] DefensiveTerrainAI
+	UNIT 0x87 Mercenary	DeenBoss Level(14, Enemy, True) [3,3]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+	UNIT 0x87 Mercenary	DeenBoss Level(13, Enemy, True) [2,4]	0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
 	UNIT 0x87 Myrmidon	DeenBoss Level(6, Enemy, True) [6,2]	0x00 0x00 0x0 0x00 [IronSword] DelayedRushAI
 	UNIT 0x87 Myrmidon	DeenBoss Level(7, Enemy, True) [4,4]	0x00 0x00 0x0 0x00 [BaseSword] DelayedRushAI
 	UNIT 0x87 Myrmidon	DeenBoss Level(6, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
-	UNIT 0x87 Myrmidon	DeenBoss Level(6, Enemy, True) [6,9]	0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT 0x87 Myrmidon	DeenBoss Level(6, Enemy, True) [5,12]	0x00 0x00 0x0 0x00 [IronSword] NoAI
 	UNIT 0x87 Myrmidon	DeenBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
-	UNIT 0x87 Mercenary	DeenBoss Level(16, Enemy, True) [6,7]	0x00 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
+	UNIT 0x87 Mercenary	DeenBoss Level(15, Enemy, True) [6,7]	0x00 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
 	UNIT 0x8C Mage_F	DeenBoss Level(12, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Thunder] NoAI
-	UNIT 0x87 Mercenary	DeenBoss Level(16, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT 0x87 Mercenary	DeenBoss Level(14, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
 	UNIT 0x87 Mercenary	DeenBoss Level(15, Enemy, True) [8,4]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
 	UNIT 0x87 Mercenary	DeenBoss Level(13, Enemy, True) [8,7]	0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
 	UNIT
@@ -100,6 +118,10 @@ ReinforcementsDeen:
 
 Ch3_4C_BeginningScene:
 	MUSC 0x0D //desert theme
+	LOAD1 0x1 EnemyUnitsDeen
+	ENUN
+	FADU 5
+	WEA1 0x6
 	
 	//due to sandstorm, load units on map.
 	LOAD2 0x1 Ch3_4C_CutsceneUnits
@@ -116,10 +138,9 @@ Ch3_4C_BeginningScene:
 	LABEL 0x2
 		Text(Ch3_4C_OpeningText_DeenChosen)
 	LABEL 0x3
-	FADI 60
+	FADI 5
 	CLEA 0x0
-	LOAD1 0x1 EnemyUnitsDeen
-	ENUN
+	
 	LOAD3 0x0 Ch3_4C_UnitsSouth //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 
