@@ -69,6 +69,11 @@ BYTE $FF $FF //terminator
 
 ALIGN 4
 
+//When revival is ready, uncomment this
+#include "RevivalMenu.event"
+
+ALIGN 4
+
 LionHeadThiefshrineSpeed:
 	LionHeadSpdUp(gLionHeadThiefshrine,LionheadLocalTrigger1)
 	ALIGN 4
@@ -114,11 +119,7 @@ LionHeadMilaTempleAtk:
 LionHeadMilaTempleExp:
 	LionHeadExpUp(gLionHeadMilaTemple,LionheadLocalTrigger1)
 	ALIGN 4
-LionHeadDragonshrine:
-	//Resurrection, dummy out for now
-	//LionHeadRevival(gLionHeadDragonshrine,LionheadLocalTrigger1)
-	LionHeadExpUp(gLionHeadMilaTemple,LionheadLocalTrigger1)
-	ALIGN 4
+
 LionHeadExampleEvent:
 	//Check uses, if 0 goto 0x99
 	CheckLionheadUses(gLionHeadDragonshrine)

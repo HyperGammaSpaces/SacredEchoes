@@ -1,0 +1,66 @@
+#include "Revival.lyn.event"
+
+#define LionHeadRevival(LionID,Trigger) "EVBIT_MODIFY 0x4; CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; ASMC AreAnyUnitsRevivable+1; BEQ 0x97 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Revival; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x96 0xC 0x1; ASMC prCallRevivalMenu+1; SOUN 0x13B; FAWI 0x4; STAL 20; FAWU 2; IncrementLionheadUses(LionID); ENUF Trigger; GOTO 0x99; LABEL 0x96; ENUF Trigger; GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Revival_NoDead; TEXTEND; REMA; ENUF Trigger; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; EVBIT_MODIFY 0x0; NoFade; ENDA"
+
+LionHeadDragonshrine:
+	LionHeadRevival(gLionHeadDragonshrine,LionheadLocalTrigger1)
+
+#define RevivalMenuCommand(unitID) "WORD 0 0; BYTE $0 unitID $0 $0; POIN (Revival_IsUnitEligible+1); POIN (Revival_DrawName+1); POIN (Revival_Effect+1); WORD 0 0 0"
+
+//5b64d0 is default menu proc
+//a177a0 is units menu proc
+
+ALIGN 4
+prCallRevivalMenu:
+	SHORT 0xB510 0x1C04 0x4B10 0x469E 0xF800 0x4A10 0x7850 0x2101 0x4308 0x2102 0x4308 0x2104 0x4308 0x2108 0x4308 0x2110 0x4308 0x7050 0x2000 0x4B0A 0x469E 0xF800 0x4B09 0x469E 0xF800 0x4B09 0x469E 0xF800 0x4809 0x1C21 0x4B07 0x469E 0xF800 0xBC10 0xBC01 0x4700 0xE884 0x0804 0x3080 0x0300 0x3D38 0x0800 0x43A8 0x0800 0xEB68 0x0804 0xEBC8 0x0804
+	POIN pRevivalMenuDefinition
+
+ALIGN 4
+pRevivalMenuDefinition:
+	BYTE 6 8 18 0           // Geometry, order: X, Y, Width, Height (Height doesn't matter)
+	WORD 1                  // style (change it if u want)
+	POIN pRevivalCommandDefinition // Command Definitions
+	WORD 0 0 0 0 0 0        // No routines to handle B press/R press/construction/etc
+	
+ALIGN 4
+pRevivalCommandDefinition:
+	RevivalMenuCommand(Alm)
+	RevivalMenuCommand(Lukas)
+	RevivalMenuCommand(Gray)
+	RevivalMenuCommand(Tobin)
+	RevivalMenuCommand(Kliff)
+	RevivalMenuCommand(Faye)
+	RevivalMenuCommand(Silque)
+	RevivalMenuCommand(Clair)
+	RevivalMenuCommand(Clive)
+	RevivalMenuCommand(Forsyth)
+	RevivalMenuCommand(Python)
+	RevivalMenuCommand(Celica)
+	RevivalMenuCommand(Mae)
+	RevivalMenuCommand(Boey)
+	RevivalMenuCommand(Genny)
+	RevivalMenuCommand(Saber)
+	RevivalMenuCommand(Valbar)
+	RevivalMenuCommand(Leon)
+	RevivalMenuCommand(Kamui)
+	RevivalMenuCommand(Luthier)
+	RevivalMenuCommand(Mathilda)
+	RevivalMenuCommand(Delthea)
+	RevivalMenuCommand(Palla)
+	RevivalMenuCommand(Catria)
+	RevivalMenuCommand(Atlas)
+	RevivalMenuCommand(Jesse)
+	RevivalMenuCommand(Deen)
+	RevivalMenuCommand(Sonya)
+	RevivalMenuCommand(Est)
+	RevivalMenuCommand(Tatiana)
+	RevivalMenuCommand(Zeke)
+	RevivalMenuCommand(Conrad)
+	RevivalMenuCommand(Nomah)
+	RevivalMenuCommand(Mycen)
+	RevivalMenuCommand(Acantha)
+	RevivalMenuCommand(Hyas)
+	WORD 0 0 0 0 0 0 0 0 0
+	
+LionHead_HelpTextPointer:
+	WORD LionHead_Revival_ChooseUnit
