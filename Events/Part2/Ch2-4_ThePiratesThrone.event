@@ -94,9 +94,9 @@ Ch2_4_Units1:
 	UNIT
 
 ValbarJoins:
-	UNIT Valbar Knight 0x00 Level(1, NPC, 1) [5,4] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe] AttackInRangeAI 
+	UNIT Valbar Knight 0x00 Level(1, NPC, 1) [6,3] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe] AttackInRangeAI 
 	UNIT Leon Archer 0x00 Level(4, NPC, 1) [7,3] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] [AttackInRange,DoNotMove,DefaultRecovery,GuardTile] 
-	UNIT Kamui Mercenary 0x00 Level(3, NPC, 1) [6,3] 0x00 0x00 0x0 0x00 [BaseSword,Vulnerary] AttackInRangeAI 
+	UNIT Kamui Mercenary 0x00 Level(3, NPC, 1) [7,4] 0x00 0x00 0x0 0x00 [BaseSword,Vulnerary] AttackInRangeAI 
 	UNIT
 
 EnemyUnits:
@@ -107,10 +107,11 @@ EnemyUnits:
 	UNIT 0x65 Pirate_F Barth Level(8,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
 	UNIT 0x67 Thief Barth Level(7,Enemy,True) [13,7] DropItem 0x00 0x0 0x00 [IronSword] AttackInRangeAI 
 	UNIT 0x65 Pirate Barth Level(9,Enemy,True) [12,8] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
-	UNIT 0x65 Pirate Barth Level(7,Enemy,True) [8,7] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT 0x65 Pirate Barth Level(7,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT 0x65 Pirate Barth Level(7,Enemy,True) [4,5] 0x00 0x00 0x0 0x00 [HandAxe] NeverMoveAI
 	UNIT 0x67 Mercenary Barth Level(8,Enemy,True) [17,7] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
 	UNIT 0x66 Archer_F Barth Level(8,Enemy,True) [16,13] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
-	UNIT 0x65 Pirate Barth Level(7,Enemy,True) [5,1] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI 
+	UNIT 0x65 Pirate Barth Level(7,Enemy,True) [5,1] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
 	UNIT 0x65 Pirate_F Barth Level(9,Enemy,True) [15,10] DropItem 0x00 0x0 0x00 [BaseAxe,IronShield] AttackInRangeAI 
 	UNIT 0x65 Pirate Barth Level(7,Enemy,True) [17,5] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
 	UNIT

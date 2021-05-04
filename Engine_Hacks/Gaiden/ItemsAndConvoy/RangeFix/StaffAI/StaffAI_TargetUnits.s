@@ -80,6 +80,14 @@ and 	r0, r1
 cmp 	r0, #0x0
 bne reloop
 
+@make sure unit is not targeting itself
+ldr 	r1, [r7]
+mov 	r2, #0xB
+ldsb	r0, [r6, r2]
+ldsb	r1, [r1, r2]
+cmp 	r0, r1
+beq reloop
+
 ldr 	r0, [sp, #spUnitMove]
 add 	r1, sp, #spItemRange	@get pointer to staff range
 ldrh 	r1, [r1]	@get max range
