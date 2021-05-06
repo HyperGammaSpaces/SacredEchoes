@@ -237,7 +237,7 @@ Some things are still under development for later releases.
   - Zopyrus by RandomWizard and Levin64
   - all others by hypergammaspaces or IS
 - Battle Animations: 
-  - Alm, Villagers, Snipers, Pirate (F), Dread Fighter, Wyvern Lord, Gold Knight and Cape General by Nura
+  - Alm, Villagers, Snipers, Pirate (F), Dread Fighter, Vestal, Wyvern Lord, Gold Knight and Cape General by Nura
   - Pirate (M) Repalette by Wan
   - Berserker (M) by BwdYeti
   - Berserker (F) by serif, eCut, Skitty, and Pikmin1211
