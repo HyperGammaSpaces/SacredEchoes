@@ -94,12 +94,14 @@ ENUN
 MUSC 0x2C
 SetBackground(0x06)
 BROWNBOXTEXT Ch1_2_FlashbackTimeframe [8,8]
-STAL 60
+STAL 30
 Text(Ch1_2_Flashback)
+MUSCSLOW 0x7FFF
+STAL 20
 FADI 2
 
 //map start
-MUSC 0x24
+MUSCSLOW 0x24
 SetBackground(Woodland)
 Text(Ch1_2_OpeningScene_1)
 EndConvo

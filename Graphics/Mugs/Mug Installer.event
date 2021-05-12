@@ -57,6 +57,7 @@ setMugEntry(Portrait_SecretShop,secretMug,0,secretPalette,secretFrames,3,3,2,0)
 
 //Prioritize playables for remaining slots below 0xC7
 setMugEntry(Portrait_Alm,  almMug, 2,5,3,3)
+setMugEntry(Portrait_AlmEyesClosed,  almMug, 2,5,3,3,0x6)
 setMugEntry(Portrait_Alm_Promoted,  alm_2Mug, 2,5,3,3) //promoted
 setMugEntry(Portrait_Alm_Sad,  almMug, 2,5,3,3)
 setMugEntry(Portrait_AlmYoung,  almChildMug, 4,7,4,5)
@@ -71,6 +72,7 @@ setMugEntry(Portrait_Clive,  cliveMug, 3,5,3,3)
 setMugEntry(Portrait_Forsyth,  forsythMug, 3,5,3,3)
 setMugEntry(Portrait_Python,  pythonMug, 3,5,3,3)
 setMugEntry(Portrait_Celica,  celicaMug, 3,5,3,3)
+setMugEntry(Portrait_CelicaEyesClosed,  celicaMug, 3,5,3,3,0x6)
 setMugEntry(Portrait_Celica_Promoted, celica_2Mug, 3,5,3,3) //promoted
 setMugEntry(Portrait_Celica_Angry, celica_angryMug, 3,5,3,3)
 setMugEntry(Portrait_CelicaYoung,  celicaChildMug, 2,8,3,6)
@@ -99,14 +101,16 @@ setMugEntry(Portrait_Conrad_Maskless, conrad_2Mug, 3,5,3,3) //maskless
 setMugEntry(Portrait_Conrad, conradMug, 3,5,3,3) //mask
 setMugEntry(Portrait_Nomah, nomahMug, 3,5,3,3)
 setMugEntry(Portrait_Mycen, mycenMug, 3,5,3,3)
+setMugEntry(Portrait_MycenSepia, mycenMug, mycenMinimug, mycenSepiaPalette, mycenFrames, 3,5,3,3)
 setMugEntry(Portrait_Mila, mila2Mug, 3,5,3,3) //goddess form
 setMugEntry(Portrait_MilaStatue, mila3Mug, 3,5,3,3) //statue form
 setMugEntry(Portrait_Fernand, fernandMug, 3,5,3,3)
+setMugEntry(Portrait_Fernand_Sepia, fernandMug, fernandMinimug, fernandSepiaPalette, fernandFrames, 3,5,3,3)
+setMugEntry(Portrait_Clive_Sepia, cliveMug, cliveMinimug, cliveSepiaPalette, cliveFrames, 3,5,3,3)
+setMugEntry(Portrait_Mathilda_Sepia, mathildaMug, mathildaMinimug, mathildaSepiaPalette, mathildaFrames, 3,5,3,3)
+
 setMugEntry(Portrait_Slayde, slaydeMug, 3,4,3,2)
 setMugEntry(Portrait_Desaix, desaixMug, 3,5,3,3)
-setMugEntry(Portrait_Clive_Sepia, clive_sepiaMug, 3,5,3,3)
-setMugEntry(Portrait_Fernand_Sepia, fernand_sepiaMug, 3,5,3,3)
-setMugEntry(Portrait_Mathilda_Sepia, mathilda_sepiaMug, 3,5,3,3)
 setMugEntry(Portrait_Acantha, acanthaMug, 3,5,3,3)
 setMugEntry(Portrait_Rinea, rineaMug, 4,5,3,3) //unburnt
 setMugEntry(Portrait_Rinea_Witch, rinea_2Mug, 4,5,3,3) //toasty

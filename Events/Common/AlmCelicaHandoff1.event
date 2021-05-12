@@ -1,9 +1,7 @@
 //ASMC 8659C autolevels the character before removing them from the party.
 //ASMC 86564 switches the active lord.
+//Add Celica dreaming about leaving Ram village.
 
-
-//Made by CrazyColorz5 of Fire Emblem Universe
-//Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
 EventPointerTable(plActChangeEvent, Ch2_1_ThisChapter)
@@ -71,6 +69,17 @@ DoCelicaStuff:
 EVBIT_MODIFY 0x4
 ENUT gRouteSplit1Flag
 EVBIT_MODIFY 0x0
+
+//flashback scene w celica
+MUSC 0x2C
+SetBackground(0x06)
+BROWNBOXTEXT Ch1_2_FlashbackTimeframe [8,8]
+STAL 30
+Text(Ch2C_1_Flashback)
+MUSCSLOW 0x7FFF
+STAL 20
+FADI 2
+
 SetBackground(0x24) //Town idk
 SOUN LimaDiesBellSFX_ID
 STAL 60
