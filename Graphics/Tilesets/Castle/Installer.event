@@ -3,6 +3,10 @@ ALIGN 4
 CastleTiles:
 #incbin "FE8_26_comp.dmp"
 
+ALIGN 4
+CastleNightPalette:
+#incbin "castle-night.pal.bin"
+
 PUSH
 ORG $1AE1F0
 CastlePalette1:
@@ -13,3 +17,4 @@ EventPointerTable(plCastleObj, 0x18B89C) //castle obj
 EventPointerTable(plCastlePal, CastlePalette1) //castle pal
 EventPointerTable(plCastleConf, CastleTiles) //castle tile
 EventPointerTable(plCastleAnim, 0x59D6F8) //castle anim
+EventPointerTable(plCastleNightPalette, CastleNightPalette) //castle pal

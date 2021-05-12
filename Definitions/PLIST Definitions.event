@@ -60,6 +60,8 @@
 #define plDragonShrinePalette 0x37
 #define plMilaTemplePalette 0x38
 #define plFieldsSunsetPalette 0x39
+#define plNuibabaPalette 0x3A
+#define plCastleNightPalette 0x3B
 
 //Map and event pointers
 #define plActChangeMap		0x41
@@ -67,7 +69,7 @@
 //Null and dummy values so stuff doesnt explode
 #define plDummy_Map			plActChangeMap
 #define plDummy_Chg 		0x0
-#define plDummy_Event 		0x97
+#define plDummy_Event 		0x40
 #define plNoAnim			0x0
 
 //Alm Act 1
@@ -131,42 +133,42 @@
 #define plCh3A_4_Chg 		0x78
 #define plCh3A_4_Event 		0x79
 #define plCh3A_5_Map 		0x7A
-#define plCh3A_5_Chg 		0x0
-#define plCh3A_5_Event 		0x7B
-#define plCh3A_6_Map 		0x7C
-#define plCh3A_6_Chg 		0x7D
-#define plCh3A_6_Event 		0x7E
-#define plCh3A_7_Map 		0x7F
-#define plCh3A_7_Chg 		0x80
-#define plCh3A_7_Event 		0x81
+#define plCh3A_5_Chg 		0x7B
+#define plCh3A_5_Event 		0x7C
+#define plCh3A_6_Map 		0x7D
+#define plCh3A_6_Chg 		0x7E
+#define plCh3A_6_Event 		0x7F
+#define plCh3A_7_Map 		0x80
+#define plCh3A_7_Chg 		0x81
+#define plCh3A_7_Event 		0x82
 //Act 3 Celica
-#define plCh3C_1_Map 		0x82
+#define plCh3C_1_Map 		0x83
 #define plCh3C_1_Chg 		0x0
-#define plCh3C_1_Event 		0x83
-#define plCh3C_2_Map 		0x84
-#define plCh3C_2_Chg 		0x85
-#define plCh3C_2_Event 		0x86
-#define plCh3C_3_Map 		0x87
-#define plCh3C_3_Chg 		0x88
-#define plCh3C_3_Event 		0x89
-#define plCh3C_4_Map 		0x8A
+#define plCh3C_1_Event 		0x84
+#define plCh3C_2_Map 		0x85
+#define plCh3C_2_Chg 		0x86
+#define plCh3C_2_Event 		0x87
+#define plCh3C_3_Map 		0x88
+#define plCh3C_3_Chg 		0x89
+#define plCh3C_3_Event 		0x8A
+#define plCh3C_4_Map 		0x8B
 #define plCh3C_4_Chg 		0x0
 #define plCh3C_4D_Map 		plCh3C_4_Map
 #define plCh3C_4D_Chg 		plCh3C_4_Chg
-#define plCh3C_4D_Event 	0x8B
+#define plCh3C_4D_Event 	0x8C
 #define plCh3C_4S_Map 		plCh3C_4_Map
 #define plCh3C_4S_Chg 		plCh3C_4_Chg
-#define plCh3C_4S_Event 	0x8C
-#define plCh3C_5_Map 		0x8D
-#define plCh3C_5_Chg 		0x8E
-#define plCh3C_5_Event 		0x8F
-#define plCh3C_6_Map 		0x90
-#define plCh3C_6_Chg 		0x91
-#define plCh3C_6_Event 		0x92
-#define plCh3C_7_Map 		0x93
-#define plCh3C_7_Chg 		0x94
-#define plCh3C_7_Event 		0x95
-#define plMtnCutscene_Map   0x96
+#define plCh3C_4S_Event 	0x8D
+#define plCh3C_5_Map 		0x8E
+#define plCh3C_5_Chg 		0x8F
+#define plCh3C_5_Event 		0x90
+#define plCh3C_6_Map 		0x91
+#define plCh3C_6_Chg 		0x92
+#define plCh3C_6_Event 		0x93
+#define plCh3C_7_Map 		0x94
+#define plCh3C_7_Chg 		0x95
+#define plCh3C_7_Event 		0x96
+#define plMtnCutscene_Map   0x97
 
 //Act 4
 #define plCh4_1C_Map 		plDummy_Map
@@ -175,7 +177,12 @@
 #define plCh4_1A_Map 		plDummy_Map
 #define plCh4_1A_Chg 		0x0
 #define plCh4_1A_Event 		plDummy_Event
-#define plFearMtnPassMap 	0xBF //dummy value
+#define plCh4_3A_Event 		plDummy_Event
+#define plCh4_3A_Map     	0xA0
+#define plCh4_4A_Map		0xA1
+#define plCh4_4A_Chg		0xA2
+#define plCh4_5A_Map		0xA3
+#define plCh4_5A_Chg		0xA4
 #define plDragonsmawMap		0xC0 //dummy value
 #define plLastBastionMap	0xC1 //dummy value
 

@@ -30,7 +30,7 @@ LOCA
 
 Ch3_1C_MiscBasedEvents:
 CauseGameOverIfLordDies
-DefeatAll(Ch3_1C_EndingScene)
+DefeatBoss(Ch3_1C_EndingScene)
 MournQuoteAFEVS
 AFEV
 
@@ -84,9 +84,9 @@ EnemyUnits:
 	UNIT 0x66 Archer Garth Level(9, Enemy,True) [20,15] 0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
 	UNIT GenericPirate Mercenary Garth Level(10,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [IronSword] NoAI
 	UNIT GenericPirate Pirate Garth Level(12,Enemy,True) [13,13] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
-	UNIT GenericPirate Pirate Garth Level(14,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [HandAxe] NeverMoveAI
-	UNIT 0x67 Mercenary Garth Level(10,Enemy,True) [18,11] 0x00 0x00 0x0 0x00 [Lancereaver] NeverMoveAI
-	UNIT GenericPirate Mercenary Garth Level(10,Enemy,True) [19,10] 0x00 0x00 0x0 0x00 [SteelSword] NeverMoveAI
+	UNIT GenericPirate Pirate Garth Level(14,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [HandAxe] StallOneTurnAI
+	UNIT 0x67 Mercenary Garth Level(10,Enemy,True) [18,11] 0x00 0x00 0x0 0x00 [Lancereaver] StallOneTurnAI
+	UNIT GenericPirate Mercenary Garth Level(10,Enemy,True) [19,10] 0x00 0x00 0x0 0x00 [SteelSword] StallOneTurnAI
 	UNIT StrongGenericPirate Pirate_F Garth Level(11,Enemy,True) [11,9] 0x00 0x00 0x0 0x00 [Hammer,IronShield] NeverMoveAI
 	//West block
 	UNIT 0x67 Mercenary Garth Level(10,Enemy,True) [8,7] 0x00 0x00 0x0 0x00 [IronSword] NoAI

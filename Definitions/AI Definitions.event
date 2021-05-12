@@ -17,6 +17,9 @@
 #define DemonKingAI					[0x14,0x03]
 */
 
+#define SetAIParameters(ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24)"
+#define SetAIParameters(ai1,ai2) "SVAL 0x1 ai1|(ai2<<8)"
+
 #define WitchWarpAI [0x13, 0x06, 0x02, 0x00]
 #define CantorAI [0x14, 0x03, 0x04, 0x20]
 #define MoveAndHealAI [0x0F,0x00]

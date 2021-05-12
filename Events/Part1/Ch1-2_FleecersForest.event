@@ -84,11 +84,22 @@ UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [15,7] 0x00 0x00 0x0 0x00   [BaseAxe] 
 UNIT
 
 Ch1_2_BeginningScene:
-MUSC 0x24
+
 LOAD2 0x0 Ch1_2_CutsceneAlm //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 //ENUN // Unecessary here.
 LOAD1 0x1 EnemyUnits
 ENUN
+
+//flashback scene w celica
+MUSC 0x2C
+SetBackground(0x06)
+BROWNBOXTEXT Ch1_2_FlashbackTimeframe [8,8]
+STAL 60
+Text(Ch1_2_Flashback)
+FADI 2
+
+//map start
+MUSC 0x24
 SetBackground(Woodland)
 Text(Ch1_2_OpeningScene_1)
 EndConvo

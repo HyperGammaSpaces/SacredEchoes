@@ -19,9 +19,9 @@ Ch3_4A_ThisChapter:
 Ch3_4A_TurnBasedEvents:
 	//TURN 0x0 LoadSummons [1,255] 0x0
 	TURN 0x0 LoadThief [8,0] 0x0
-	TurnEventPlayer(0x0,LoadRightCavalry,4)
-	TurnEventPlayer(0x0,LoadLeftCavalry,4)
-	TurnEventPlayer(0x0,LoadSnipers,3)
+	TurnEventPlayer(0x0,LoadRightCavalry,6)
+	TurnEventPlayer(0x0,LoadLeftCavalry,6)
+	TurnEventPlayer(0x0,LoadSnipers,4)
 	TURN
 
 Ch3_4A_CharacterBasedEvents:
@@ -44,9 +44,9 @@ TalkToMathilda:
 
 Ch3_4A_LocationBasedEvents:
 	Seize(9,2)
-	Door(8, 17)
-	Door(9, 17)
-	Door(10, 17)
+	Door(8, 15)
+	Door(9, 15)
+	Door(10, 15)
 	Door(9, 9)
 	Door(0, 2)
 	Door(1, 2)
@@ -127,25 +127,25 @@ Ch3_4A_Ballista2:
 	ALIGN 4
 
 CutsceneAllies:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,21] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,18] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 Ch3_4A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,21] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [7,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [12,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [6,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [8,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [8,20] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [6,20] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT Forsyth Soldier 0x00 Level(1, Ally, 1) [11,21] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT Python Archer 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
-	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [13,21] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
-	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [7,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [6,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [8,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [8,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [6,18] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,18] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Forsyth Soldier 0x00 Level(1, Ally, 1) [11,19] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Python Archer 0x00 Level(1, Ally, 1) [12,18] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
+	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [13,19] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
+	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT
 
 EnemyUnits:
@@ -158,21 +158,19 @@ EnemyUnits:
 	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] NeverMoveAI
 
 	// Outside Witch
-	UNIT 0x8C Witch	Desaix Level(4, Enemy, True) [17,22]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
+	UNIT 0x8C Witch	Desaix Level(4, Enemy, True) [17,20]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
 	
 	// Main gate guard
-	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [8,15]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
-	UNIT 0x88 Knight	Desaix Level(6, Enemy, True) [9,15]	DropItem 0x00 0x0 0x00 [Hammer] NeverMoveAI
-	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [10,15]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
+	UNIT 0x88 Soldier	Desaix Level(13, Enemy, True) [8,13]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT 0x88 Knight	Desaix Level(6, Enemy, True) [9,13]	DropItem 0x00 0x0 0x00 [Hammer] NeverMoveAI
+	UNIT 0x88 Soldier	Desaix Level(14, Enemy, True) [10,13]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
 
 	// Main gate behind
-	UNIT 0x89 Archer Desaix Level(14, Enemy, True) [8,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
-	UNIT 0x89 Sniper Desaix Level(7, Enemy, True) [9,13]	DropItem 0x00 0x0 0x00 [SteelBow,Elixir] [0x00,0x03,0x04,0x00]
-	UNIT 0x89 Archer Desaix Level(14, Enemy, True) [10,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
-	UNIT 0x8B Mage	Desaix Level(9, Enemy, True) [7,11]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
-	UNIT 0x8B Mage	Desaix Level(8, Enemy, True) [11,11]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	UNIT 0x8B Mercenary	Desaix Level(8, Enemy, True) [5,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT 0x8B Mercenary	Desaix Level(8, Enemy, True) [13,13]	DropItem 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
+	UNIT 0x89 Archer Desaix Level(13, Enemy, True) [8,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT 0x89 Sniper Desaix Level(7, Enemy, True) [9,11]	DropItem 0x00 0x0 0x00 [SteelBow,Elixir] [0x00,0x03,0x04,0x00]
+	UNIT 0x89 Archer Desaix Level(13, Enemy, True) [10,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT 0x8B Mage	Desaix Level(8, Enemy, True) [13,10]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT 0x8B Mercenary	Desaix Level(9, Enemy, True) [15,11]	DropItem 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
 
 	// Throne room
 	UNIT 0x8B Shaman	Desaix Level(12, Enemy, True) [4,1]	0x00 0x00 0x0 0x00 [Miasma,Heal] [0x0E,0x06]
@@ -188,7 +186,6 @@ EnemyUnits:
 	UNIT 0x89 Archer	Desaix Level(12, Enemy, True) [18,9]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT 0x89 Archer	Desaix Level(14, Enemy, True) [18,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT 0x87 Soldier	Desaix Level(13, Enemy, True) [3,11]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x87 Mercenary	Desaix Level(12, Enemy, True) [2,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
 	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [1,10]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
 	UNIT 0x88 Knight	Desaix Level(6, Enemy, True) [1,11]	0x00 0x00 0x0 0x00 [BaseAxe] NeverMoveAI
 	UNIT 0x87 Soldier	Desaix Level(13, Enemy, True) [1,6]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
@@ -197,12 +194,9 @@ EnemyUnits:
 
 	// Right hall
 	UNIT 0x89 Archer	Desaix Level(12, Enemy, True) [0,9]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x87 Mercenary	Desaix Level(13, Enemy, True) [16,13]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT 0x87 Mage	Desaix Level(12, Enemy, True) [15,11]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	UNIT 0x88 Knight	Desaix Level(6, Enemy, True) [17,10]	0x00 0x00 0x0 0x00 [BaseLance] NeverMoveAI
 	UNIT 0x88 Knight	Desaix Level(5, Enemy, True) [17,11]	0x00 0x00 0x0 0x00 [IronAxe] NeverMoveAI
-	UNIT 0x89 Archer	Desaix Level(14, Enemy, True) [15,4]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x8D Soldier	Desaix Level(14, Enemy, True) [16,5]	0x00 0x00 0x0 0x00 [IronLance,HideShield] NeverMoveAI
+	UNIT 0x8D Soldier	Desaix Level(11, Enemy, True) [16,5]	0x00 0x00 0x0 0x00 [IronLance,HideShield] NeverMoveAI
 	UNIT 0x8D Soldier	Desaix Level(14, Enemy, True) [16,6]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
 	UNIT
 
@@ -213,18 +207,18 @@ ZombieGroup:
 	UNIT
 	
 ThiefReinforcement:
-	UNIT 0x64 Thief Desaix Level(12,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [BaseSword, Lockpick] LootingThiefAI
-	UNIT 0x64 Thief Desaix Level(12,Enemy,True) [18,0] DropItem 0x00 0x1 REDA18R0 [SteelSword, Lockpick, 0x9F] [0x6,0xC,0x0,0x0]
+	UNIT 0x64 Thief Desaix Level(10,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [BaseSword, Lockpick] LootingThiefAI
+	UNIT 0x64 Thief Desaix Level(11,Enemy,True) [18,0] DropItem 0x00 0x1 REDA18R0 [SteelSword, Lockpick, 0x9F] [0x6,0xC,0x0,0x0]
 	UNIT
 	
 CavReinforcementRight:
 	UNIT 0x86 Cavalier_F Desaix Level(13,Enemy,True) [19,17] 0x00 0x00 0x1 REDA19R17 [Javelin] NoAI
-	UNIT 0x86 Cavalier Desaix Level(14,Enemy,True) [19,18] 0x00 0x00 0x1 REDA19R18 [SteelLance] NoAI
+	UNIT 0x86 Cavalier Desaix Level(14,Enemy,True) [19,16] 0x00 0x00 0x1 REDA19R16 [SteelLance] NoAI
 	UNIT
 	
 CavReinforcementLeft:
-	UNIT 0x8E Cavalier Desaix Level(13,Enemy,True) [0,20] 0x00 0x00 0x1 REDA0R20 [Javelin] NoAI
-	UNIT 0x8E Cavalier_F Desaix Level(14,Enemy,True) [0,21] 0x00 0x00 0x1 REDA0R21 [SteelLance] NoAI
+	UNIT 0x8E Cavalier Desaix Level(13,Enemy,True) [0,19] 0x00 0x00 0x1 REDA0R19 [Javelin] NoAI
+	UNIT 0x8E Cavalier_F Desaix Level(14,Enemy,True) [0,20] 0x00 0x00 0x1 REDA0R20 [SteelLance] NoAI
 	UNIT
 
 SniperReinforcement:

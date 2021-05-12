@@ -11,6 +11,10 @@ ALIGN 4
 SluiceGatePalette:
 #incbin "SluiceGatePalette.pal.bin" 
 
+ALIGN 4
+NuibabaMapPalette:
+#incbin "Nuibaba.pal.bin" 
+
 PUSH
 ORG $1AD930
 TemplePalette:
@@ -32,3 +36,4 @@ EventPointerTable(plTempleNightPalette, TemplePaletteDark)
 EventPointerTable(plSluiceGatePalette, SluiceGatePalette)
 EventPointerTable(plSylvanShrinePalette, SluiceGatePalette) //to replace
 EventPointerTable(plThiefshrinePalette, ThiefshrinePalette)
+EventPointerTable(plNuibabaPalette, NuibabaMapPalette)

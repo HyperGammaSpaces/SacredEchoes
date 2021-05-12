@@ -19,8 +19,8 @@ Ch3_2C_ThisChapter:
 	POIN Ch3_2C_BeginningScene Ch3_2C_EndingScene
 
 Ch3_2C_TurnBasedEvents:
-	TURN 0x0 LoadReinforcements [3,8] 0x0
-	TURN 0x0 LoadReinforcementBandits [5,7] 0x0
+	TURN 0x0 LoadReinforcements [4,8] 0x0
+	TURN 0x0 LoadReinforcementBandits [6,7] 0x0
 	TURN 0x0 LoadReinforcementBackups [7,0] 0x0
 	TURN
 
@@ -138,15 +138,23 @@ EnemyUnits:
 	UNIT EntombedBoss Entombed EntombedBoss Level(3,Enemy,True) [4,1] DropItem 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI 
 	UNIT Terror_Bael Bael EntombedBoss Level(12,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SharpClaw] NoAI 
 	UNIT Terror_Bael Bael EntombedBoss Level(12,Enemy,True) [10,6] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI 
-	UNIT Terror_Bael Bael EntombedBoss Level(12,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [SharpClaw] NoAI 
-	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(9,Enemy,True) [2,10] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(8,Enemy,True) [6,12] 0x00 0x00 0x0 0x00 [Axereaver] NoAI 
-	UNIT Terror_Bonewalker Bonewalker EntombedBoss Level(7,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Bael Bael EntombedBoss Level(10,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [SharpClaw] NoAI 
+	UNIT Terror_Bael Bael EntombedBoss Level(10,Enemy,True) [5,13] 0x00 0x00 0x0 0x00 [SharpClaw] NoAI 
+	UNIT Terror_Bael Bael EntombedBoss Level(11,Enemy,True) [6,14] 0x00 0x00 0x0 0x00 [SharpClaw] NoAI 
+	UNIT Terror_Bael Bael EntombedBoss Level(10,Enemy,True) [9,16] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI 
+	UNIT Terror_Bael Bael EntombedBoss Level(11,Enemy,True) [10,15] 0x00 0x00 0x0 0x00 [SharpClaw] NoAI 
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(7,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Gargoyle Gargoyle EntombedBoss Level(6,Enemy,True) [3,10] 0x00 0x00 0x0 0x00 [Axereaver] NoAI 
+	UNIT Terror_Bonewalker Bonewalker EntombedBoss Level(5,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
 	UNIT Terror_Bonewalker_Bow Bonewalker_Bow EntombedBoss Level(5,Enemy,True) [14,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
+	UNIT Terror_Bonewalker_Bow Bonewalker_Bow EntombedBoss Level(6,Enemy,True) [3,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI 
 	UNIT Terror_Revenant Revenant EntombedBoss Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
 	UNIT Terror_Revenant Revenant EntombedBoss Level(11,Enemy,True) [3,4] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI 
 	UNIT Terror_Revenant Revenant EntombedBoss Level(11,Enemy,True) [7,9] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
 	UNIT Terror_Revenant Revenant EntombedBoss Level(11,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT Terror_Revenant Revenant EntombedBoss Level(13,Enemy,True) [4,6] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT Terror_Revenant Revenant EntombedBoss Level(13,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI 
+	UNIT Terror_Revenant Revenant EntombedBoss Level(13,Enemy,True) [4,8] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
 	UNIT
 	
 BrigandsReinforcements:

@@ -17,11 +17,19 @@ Ch3_1A_ThisChapter:
 	POIN Ch3_1A_BeginningScene Ch3_1A_EndingScene
 
 Ch3_1A_TurnBasedEvents:
+	TURN 0x0 LoadReinforcementBandits [6,7] 0x0
 	TURN 0x0 WaveFirst[9,0] 0x0
+	TURN 0x0 WaveFirst[12,0] 0x0
 	TURN
 	
 WaveFirst:
-	ReinforcementEvent(Reinforcements1)
+	LoadReinforcements(Reinforcements1)
+	ReinforcementEvent(Reinforcements2)
+	NoFade
+	ENDA
+	
+LoadReinforcementBandits:
+	ReinforcementEvent(BrigandsReinforcements)
 	NoFade
 	ENDA
 
@@ -83,9 +91,9 @@ EnemyUnits:
 	UNIT 0x8B Shaman	Zaxon Level(9, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI 
 	UNIT 0x8C Witch	Zaxon Level(2, Enemy, True) [7,1]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
 	UNIT 0x8C Witch	Zaxon Level(2, Enemy, True) [9,2]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	UNIT 0x88 Soldier	Zaxon Level(11, Enemy, True) [14,10]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT 0x88 Soldier	Zaxon Level(11, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT 0x88 Soldier	Zaxon Level(11, Enemy, True) [12,3]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
 	UNIT 0x88 Soldier	Zaxon Level(9, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
-	UNIT 0x88 Soldier	Zaxon Level(11, Enemy, True) [15,10]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
 	UNIT 0x88 Knight	Zaxon Level(3, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	UNIT 0x88 Knight	Zaxon Level(4, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
 	UNIT 0x89 Archer	Zaxon Level(10, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
@@ -104,14 +112,20 @@ FernandPromoted:
 	UNIT
 
 CavalierGroup:
-	UNIT 0x86 Cavalier	FernandEnemy1 Level(10, Enemy, True) [6,14]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-	UNIT 0x86 Cavalier_F	FernandEnemy1 Level(11, Enemy, True) [6,15]	0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
-	UNIT 0x86 Cavalier	FernandEnemy1 Level(10, Enemy, True) [5,16]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT 0x86 Cavalier	FernandEnemy1 Level(9, Enemy, True) [6,14]	0x00 0x00 0x0 0x00 [Javelin] MoveWithLeaderAI
+	UNIT 0x86 Cavalier_F	FernandEnemy1 Level(11, Enemy, True) [6,15]	0x00 0x00 0x0 0x00 [HeavySpear] MoveWithLeaderAI
+	UNIT 0x86 Cavalier	FernandEnemy1 Level(10, Enemy, True) [5,16]	0x00 0x00 0x0 0x00 [IronLance] MoveWithLeaderAI
 	UNIT
 	
 Reinforcements1:
-	UNIT 0x86 Cavalier	Zaxon Level(10, Enemy, True) [17,16]	0x00 0x00 0x1 REDA17R16 [IronLance] AttackInRangeAI
+	UNIT 0x86 Cavalier	Zaxon Level(10, Enemy, True) [16,1]	0x00 0x00 0x1 REDA16R1 [IronLance] AttackInRangeAI
+	UNIT
+Reinforcements2:
 	UNIT 0x86 Cavalier	Zaxon Level(8, Enemy, True) [18,14]	0x00 0x00 0x1 REDA18R14 [SteelLance] AttackInRangeAI
+	UNIT
+	
+BrigandsReinforcements:
+	UNIT GenericPirate Brigand Zaxon Level(13,Enemy,True) [17,16] 0x00 0x00 0x1 REDA17R16 [SteelAxe,Torch] BrigandAI
 	UNIT
 
 
