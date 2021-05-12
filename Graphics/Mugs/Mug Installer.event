@@ -1,3 +1,6 @@
+PortraitTable:
+	FILL (256*28)
+
 #include "Preprocessed/MugData.event"
 
 PUSH
@@ -24,20 +27,39 @@ PUSH
 	//Make Zeke not smol
 	ORG $5C94
 	BYTE $9C
+	
+	//Shopkeeper/supply portraits
+	ORG $9D70E
+	BYTE Portrait_Supply
+	ORG $A00BA
+	BYTE Portrait_Supply
 POP
 
 #define setMugEntry(mugEntry, mugLocation, mouthX, mouthY, eyeX, eyeY) "PUSH; ORG PortraitTable+mugEntry*0x1C; POIN mugLocation; POIN mugLocation+0x1624; POIN mugLocation+0x1604; POIN mugLocation+0x1004; WORD 0x00000000; BYTE mouthX mouthY eyeX eyeY; WORD 0x01; POP"
 #define setMugEntry(mugEntry, mugLocation, mouthX, mouthY, eyeX, eyeY, eyeControl) "PUSH; ORG PortraitTable+mugEntry*0x1C; POIN mugLocation; POIN mugLocation+0x1624; POIN mugLocation+0x1604; POIN mugLocation+0x1004; WORD 0x00000000; BYTE mouthX mouthY eyeX eyeY; WORD eyeControl; POP"
 #define setMugEntry(mugEntry, portraitData, minimugData, paletteData, mouthData, mouthX, mouthY, eyeX, eyeY) "PUSH; ORG PortraitTable+mugEntry*0x1C; POIN portraitData; POIN minimugData; POIN paletteData; POIN mouthData; WORD 0x00000000; BYTE mouthX mouthY eyeX eyeY; WORD 0x01; POP"
 #define setCardEntry(cardEntry,cardLocation,cardPaletteLocation) "PUSH; ORG PortraitTable+cardEntry*0x1C; POIN 0 0 cardPaletteLocation 0 cardLocation; POP"
+#define setBlankMug(cardEntry) "PUSH; ORG PortraitTable+cardEntry*0x1C; POIN $8ABBDC $8ABB44 $8AB524 $8AB544; WORD $0; BYTE $2 $5 $3 $3; WORD $1; POP"
 
 //format: MouthX MouthY EyeX EyeY
 
 //Don't use 0x00
-//Don't use 0x01
+//Blank
+setBlankMug(0x01)
+setMugEntry(Portrait_Supply, $80DBE8, $80DA18, $80D3F8, $80D418, 2, 5, 3, 3)
+setMugEntry(Portrait_Anna,annaMug,2,6,3,4)
+setMugEntry(Portrait_Armory,armoryMug,0,armoryPalette,armoryFrames,3,2,2,0)
+setMugEntry(Portrait_Vendor,vendorMug,0,vendorPalette,vendorFrames,3,3,2,0)
+setMugEntry(Portrait_SecretShop,secretMug,0,secretPalette,secretFrames,3,3,2,0)
+
+
+
+
+//Prioritize playables for remaining slots below 0xC7
 setMugEntry(Portrait_Alm,  almMug, 2,5,3,3)
 setMugEntry(Portrait_Alm_Promoted,  alm_2Mug, 2,5,3,3) //promoted
-//0x4=sad alm
+setMugEntry(Portrait_Alm_Sad,  almMug, 2,5,3,3)
+setMugEntry(Portrait_AlmYoung,  almChildMug, 4,7,4,5)
 setMugEntry(Portrait_Lukas,  lukasMug, 3,5,3,3)
 setMugEntry(Portrait_Gray,  grayMug, 3,5,3,3)
 setMugEntry(Portrait_Tobin,  tobinMug, 3,5,3,3)
@@ -51,6 +73,7 @@ setMugEntry(Portrait_Python,  pythonMug, 3,5,3,3)
 setMugEntry(Portrait_Celica,  celicaMug, 3,5,3,3)
 setMugEntry(Portrait_Celica_Promoted, celica_2Mug, 3,5,3,3) //promoted
 setMugEntry(Portrait_Celica_Angry, celica_angryMug, 3,5,3,3)
+setMugEntry(Portrait_CelicaYoung,  celicaChildMug, 2,8,3,6)
 setMugEntry(Portrait_Mae, maeMug, 3,6,3,4)
 setMugEntry(Portrait_Boey, boeyMug, 3,6,3,4)
 setMugEntry(Portrait_Genny, gennyMug, 3,6,3,4)
@@ -128,16 +151,25 @@ setMugEntry(Portrait_Blake, blakeMug, 2, 5, 3, 3)
 setMugEntry(Portrait_Mikhail, mikhailMug, 3, 6, 3, 4) //2-5 cantor boss
 
 //50=garcia
+setBlankMug(Portrait_Garcia)
 //51=dolth
+setBlankMug(Portrait_Dolth)
 //52=jamil
+setBlankMug(Portrait_Jamil)
 //53=xaizor
+setBlankMug(Portrait_Xaizor)
 //54=jerome
+setBlankMug(Portrait_Jerome)
 //55=magnus
+setBlankMug(Portrait_Magnus)
 //56=mueller
+setBlankMug(Portrait_Mueller)
 //57=zopyrus
 setMugEntry(Portrait_Zopyrus, zopyrusMug, 3, 5, 3, 3)
 //58=hades
+setBlankMug(Portrait_Hades)
 //59=gharn
+setBlankMug(Portrait_Gharn)
 //5a=rudolf
 setMugEntry(Portrait_Rudolf, rudolfMug, 3, 5, 3, 3)
 //5b=jedah
@@ -145,46 +177,40 @@ setMugEntry(Portrait_Jedah, jedahMug, 2, 6, 2, 4)
 //5c=nuibaba
 setMugEntry(Portrait_Nuibaba, nuibabaMug, 3, 4, 3, 2)
 //5d=argentum
+setBlankMug(Portrait_Argentum)
 //5e=aurum
+setBlankMug(Portrait_Aurum)
 //5f=cerberus
+setBlankMug(Portrait_Cerberus)
 //60=naberius
+setBlankMug(Portrait_Naberius)
 //61=marla
+setBlankMug(Portrait_Marla)
 //62=hestia
-
-//63=moneyman
-setMugEntry(Portrait_Moneyman,$843330,$843298,$842C78,$842C98,2,6,3,4)
-setMugEntry(Portrait_Anna,annaMug,2,6,3,4)
-//0x65 Armory
-setMugEntry(Portrait_Armory,armoryMug,0,armoryPalette,armoryFrames,3,2,2,0)
-//0x66 Vendor
-setMugEntry(Portrait_Vendor,vendorMug,0,vendorPalette,vendorFrames,3,3,2,0)
-//0x67 Arena Guy
-//0x68 Secret Shop
-setMugEntry(Portrait_SecretShop,secretMug,0,secretPalette,secretFrames,3,3,2,0)
-
-//Generics block
-//69=oldman
-setMugEntry(Portrait_Oldman,$841C74,$841BDC,$8415BC,$8415DC,2,7,3,5)
-//6a=man1
-setMugEntry(Portrait_Man1,$8405B8,$840520,$83FF00,$83FF20,2,5,3,3)
-//6b=man2
-setMugEntry(Portrait_Man2,$83EEFC,$83EE64,$83E844,$83E864,2,6,3,4)
-//6c=youngman
-setMugEntry(Portrait_Youngman,npc_youngman2Mug,2,5,3,3)
-//6d=boy
-setMugEntry(Portrait_Boy,$83AAC8,$83AA30,$83A410,$83A430,2,7,3,5)
-//6e=granny
-setMugEntry(Portrait_Oldwoman,$83940C,$839374,$838D54,$838D74,2,6,3,4)
-//6f=woman
-setMugEntry(Portrait_Woman,npc_womanMug,2,6,3,4)
-//70=youngwoman
-setMugEntry(Portrait_Youngwoman,npc_youngwomanMug,2,6,3,4)
-//71=girl
-setMugEntry(Portrait_Girl,$83391C,$833884,$833264,$833284,2,7,3,5)
-//72=irma
+setBlankMug(Portrait_Hestia)
+//63=irma
 setMugEntry(Portrait_Irma, irmaMug, 3,6,3,4)
 
-//class cards start at 0x73
+
+
+
+//Generics block
+setMugEntry(Portrait_Moneyman,$843330,$843298,$842C78,$842C98,2,6,3,4)
+setMugEntry(Portrait_Oldman,$841C74,$841BDC,$8415BC,$8415DC,2,7,3,5)
+setMugEntry(Portrait_Man1,$8405B8,$840520,$83FF00,$83FF20,2,5,3,3)
+setMugEntry(Portrait_Man2,$83EEFC,$83EE64,$83E844,$83E864,2,6,3,4)
+setMugEntry(Portrait_Youngman,npc_youngman2Mug,2,5,3,3)
+setMugEntry(Portrait_Boy,$83AAC8,$83AA30,$83A410,$83A430,2,7,3,5)
+setMugEntry(Portrait_Oldwoman,$83940C,$839374,$838D54,$838D74,2,6,3,4)
+setMugEntry(Portrait_Woman,npc_womanMug,2,6,3,4)
+setMugEntry(Portrait_Youngwoman,npc_youngwomanMug,2,6,3,4)
+setMugEntry(Portrait_Girl,$83391C,$833884,$833264,$833284,2,7,3,5)
+
+
+
+
+
+//class cards start at 0xC7
 ALIGN 4
 CavalierCard:
 #incbin "ClassCards/salvcav.dmp"
@@ -222,25 +248,25 @@ ALIGN 4
 BaronCardPalette:
 #incbin "ClassCards/baron.pal.bin"
 ALIGN 4
-DFCard:
+DFCard: //by Nura
 #incbin "ClassCards/df-card.dmp"
 ALIGN 4
 DFCardPalette:
 #incbin "ClassCards/df-card.pal.bin"
 ALIGN 4
-ArcherCard:
+ArcherCard: //by Der
 #incbin "ClassCards/archer_card.dmp"
 ALIGN 4
 ArcherCardPalette:
 #incbin "ClassCards/archer_card.pal.bin"
 ALIGN 4
-FArcherCard:
+FArcherCard: //by Der
 #incbin "ClassCards/archer_card_f.dmp"
 ALIGN 4
 FArcherCardPalette:
 #incbin "ClassCards/archer_card_f.pal.bin"
 ALIGN 4
-FSniperCard:
+FSniperCard: //by L95
 #incbin "ClassCards/l95-fsniper.dmp"
 ALIGN 4
 FSniperCardPalette:
@@ -325,6 +351,12 @@ ALIGN 4
 VillagerCardPalette:
 #incbin "ClassCards/ghast-villager.pal.bin"
 ALIGN 4
+BrigandCard:
+#incbin "ClassCards/brigand_classcard.dmp"
+ALIGN 4
+BrigandCardPalette:
+#incbin "ClassCards/brigand_classcard.pal.bin"
+ALIGN 4
 FPirateCard:
 #incbin "ClassCards/pirate_f.dmp"
 ALIGN 4
@@ -337,7 +369,7 @@ ALIGN 4
 FZerkerCardPalette:
 #incbin "ClassCards/der-fzerker.pal.bin"
 ALIGN 4
-EntombedCard:
+EntombedCard: //by SkidMarc25
 #incbin "ClassCards/entombed.dmp"
 ALIGN 4
 EntombedCardPalette:
@@ -414,6 +446,8 @@ setCardEntry(CC_Cantor, CantorCard, CantorCardPalette)
 
 //Villager
 setCardEntry(CC_Villager, VillagerCard, VillagerCardPalette)
+//Brigand
+setCardEntry(CC_Brigand, BrigandCard, BrigandCardPalette)
 
 //Pirate
 setCardEntry(CC_Pirate, $81CD28, $81CD08)
