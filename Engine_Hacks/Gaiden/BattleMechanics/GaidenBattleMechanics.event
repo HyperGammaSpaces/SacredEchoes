@@ -94,17 +94,21 @@ PUSH
   ORG $7A864
   callHack_r4(FixDamageFloorMapMiss)
   
+  ORG $2A4B8
+  //runesword halving str thing
+  BYTE RadiantBow
+  
   ORG $2B63A 							//temp fix for eclipse - remove when status weapons fully impl'd
-  BYTE $05
+  BYTE W_Effect_Eclipse
   
-  ORG $2B69C 							//temp fix
-  BYTE $06
+  ORG $2B69C 							
+  BYTE W_Effect_Devil
   
-  ORG $2B718 							//temp fix
-  BYTE $07
+  ORG $2B718 							
+  BYTE W_Effect_Drain
   
-  ORG $2B766 							//temp fix
-  BYTE $0F 								//dummying out stone for now
+  ORG $2B766 							
+  BYTE W_Effect_Stone				//dummying out stone for now
   
   //Devil weapon underflow fix
   ORG $2B6A4
