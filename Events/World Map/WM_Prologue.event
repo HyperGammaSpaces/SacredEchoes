@@ -331,12 +331,13 @@ WM_Act3Start: //setup act 3 routes and remove path between harbor and castle
 	WM_DRAWPATH 0x0 0x10 0x0 //alm path
 	STAL 70
 	//tutorial
-	
+
+/*	
 	CALL 0xA3974C //darkens the map
 	WM_TEXTSTART
 	WM_TEXT Act3_WMIntro
 	TEXTEND
-	
+
 	WM_REMOVEPATH 0x34 //castle <-> harbor
 	TEXTCONT
 	TEXTEND
@@ -350,13 +351,14 @@ WM_Act3Start: //setup act 3 routes and remove path between harbor and castle
 	TEXTCONT
 	TEXTEND
 	WM_REMOVETEXT
-	
+*/	
 	MUSC 0x6
 	_0x1A25
 	SVAL 0xB 0xC000C
 	TEXTSHOW LordSplitExplanationText
 	TEXTEND
 	REMA
+	WM_REMOVEPATH 0x34 //castle <-> harbor
 	//end tutorial
 	WM_MAKELORDVISIBLE 0x0
 	EVBIT_MODIFY 0x1
