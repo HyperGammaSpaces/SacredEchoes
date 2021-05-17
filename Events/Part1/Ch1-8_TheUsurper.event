@@ -40,6 +40,9 @@ Ch1_8_CharacterBasedEvents:
 	CHAR
 
 Ch1_8_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(13,25)
+	#endif
 	Door(5, 3)
 	Door(18, 3)
 	Door(16, 13)

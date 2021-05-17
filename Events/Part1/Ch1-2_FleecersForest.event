@@ -5,135 +5,135 @@
 EventPointerTable(plCh1_2_Event, Ch1_2_ThisChapter)
 
 Ch1_2_ThisChapter:
-POIN Ch1_2_TurnBasedEvents
-POIN Ch1_2_CharacterBasedEvents
-POIN Ch1_2_LocationBasedEvents
-POIN Ch1_2_MiscBasedEvents
-POIN Ch1_2_Dunno Ch1_2_Dunno Ch1_2_Dunno
-POIN Ch1_2_Tutorial
-POIN Ch1_2_Ballista1 Ch1_2_Ballista2
-POIN Ch1_2_Units1 Ch1_2_Units1
-POIN $0 $0 $0 $0 $0 $0
-POIN Ch1_2_BeginningScene Ch1_2_EndingScene
+	POIN Ch1_2_TurnBasedEvents
+	POIN Ch1_2_CharacterBasedEvents
+	POIN Ch1_2_LocationBasedEvents
+	POIN Ch1_2_MiscBasedEvents
+	POIN Ch1_2_Dunno Ch1_2_Dunno Ch1_2_Dunno
+	POIN Ch1_2_Tutorial
+	POIN Ch1_2_Ballista1 Ch1_2_Ballista2
+	POIN Ch1_2_Units1 Ch1_2_Units1
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch1_2_BeginningScene Ch1_2_EndingScene
 
 Ch1_2_TurnBasedEvents:
-OpeningTurnEvent(ArcherEvent)
-TURN
+	OpeningTurnEvent(ArcherEvent)
+	TURN
 
 ArcherEvent:
-MUSC 0x09 // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
-MUSI
-STAL 30
-FlashCursor(10, 2, 60)
-Text(Ch1_2_ArcherText)
-MUNO
-NoFade
-ENDA
+	MUSC 0x09 // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
+	MUSI
+	STAL 30
+	FlashCursor(10, 2, 60)
+	Text(Ch1_2_ArcherText)
+	MUNO
+	NoFade
+	ENDA
 
 Ch1_2_CharacterBasedEvents:
-CHAR
+	CHAR
 
 Ch1_2_LocationBasedEvents:
-#ifdef __DEBUG__
-  Seize(4,5)
-#endif
-LOCA
+	#ifdef __DEBUG__
+	  Seize(5,7)
+	#endif
+	LOCA
 
 Ch1_2_MiscBasedEvents:
-CauseGameOverIfLordDies
-DefeatAll(Ch1_2_EndingScene)
-MournQuoteAFEVS
-AFEV
+	CauseGameOverIfLordDies
+	DefeatAll(Ch1_2_EndingScene)
+	MournQuoteAFEVS
+	AFEV
 
 Ch1_2_Dunno:
-END_MAIN
+	END_MAIN
 
 Ch1_2_Tutorial:
-END_MAIN
+	END_MAIN
 
 Ch1_2_Ballista1:
-BLST
+	BLST
 
 Ch1_2_Ballista2:
-BLST
-ALIGN 4
+	BLST
+	ALIGN 4
 
 Ch1_2_CutsceneAlm:
-UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-UNIT
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT
 
 Ch1_2_Units1:
-UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,6] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-UNIT Tobin Villager 0x00 Level(1, Ally, 1) [2,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-UNIT Gray Villager 0x00 Level(1, Ally, 1) [4,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-UNIT Kliff Villager 0x00 Level(1, Ally, 1) [2,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [1,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-UNIT
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,6] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [2,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [4,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [2,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [1,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 
 EnemyUnits:
-UNIT 0x46 Brigand 0x00 Level(5, Enemy, 1) [15,1] DropItem 0x00 0x0 0x00 [IronAxe, _200G] NeverMoveAI
-UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [13,2] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
-UNIT 0x65 Archer 0x46 Level(3, Enemy, 1) [10,2] 0x00 0x00 0x0 0x00  [BaseBow]  AttackSnagsAI
-UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [16,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
-UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [6,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing 
-UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [7,7] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 
-UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [8,8] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 
-UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [14,6] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI 
-UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [15,7] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
-UNIT
+	UNIT 0x46 Brigand 0x00 Level(5, Enemy, 1) [15,1] DropItem 0x00 0x0 0x00 [IronAxe, _200G] NeverMoveAI
+	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [13,2] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
+	UNIT 0x65 Archer 0x46 Level(3, Enemy, 1) [10,2] 0x00 0x00 0x0 0x00  [BaseBow]  AttackSnagsAI
+	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [16,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
+	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [6,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing 
+	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [7,7] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 
+	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [8,8] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 
+	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [14,6] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI 
+	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [15,7] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT
 
 Ch1_2_BeginningScene:
 
-LOAD2 0x0 Ch1_2_CutsceneAlm //0x0 instead of 0x1 seems to be for allies on maps with prep screens
-//ENUN // Unecessary here.
-LOAD1 0x1 EnemyUnits
-ENUN
+	LOAD2 0x0 Ch1_2_CutsceneAlm //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	//ENUN // Unecessary here.
+	LOAD1 0x1 EnemyUnits
+	ENUN
 
-//flashback scene w celica
-MUSC 0x2C
-SetBackground(0x06)
-BROWNBOXTEXT Ch1_2_FlashbackTimeframe [8,8]
-STAL 30
-Text(Ch1_2_Flashback)
-MUSCSLOW 0x7FFF
-STAL 20
-FADI 2
+	//flashback scene w celica
+	MUSC 0x2C
+	SetBackground(0x06,5)
+	BROWNBOXTEXT Ch1_2_FlashbackTimeframe [8,8]
+	STAL 30
+	Text(Ch1_2_Flashback)
+	MUSCSLOW 0x7FFF
+	STAL 20
+	FADI 2
 
-//map start
-MUSCSLOW 0x24
-SetBackground(Woodland)
-Text(Ch1_2_OpeningScene_1)
-EndConvo
-MUSC 0x25
-MOVE 0x0 Alm [5, 7]
-ENUN
-FADI 0x5
-CLEA 0x0
-LOAD3 0x0 Ch1_2_Units1
-SetBackground(Woodland)
-Text(Ch1_2_OpeningScene_2) // Changed around the text here.
-GotoPrepScreen
-NoFade
-ENDA // The NoFade and ENDA are unecessary here. The GotoPrepScreen macro includes ending the event.
+	//map start
+	MUSCSLOW 0x24
+	SetBackground(Woodland,2)
+	Text(Ch1_2_OpeningScene_1)
+	EndConvo
+	MUSC 0x25
+	MOVE 0x0 Alm [5, 7]
+	ENUN
+	FADI 0x5
+	CLEA 0x0
+	LOAD3 0x0 Ch1_2_Units1
+	SetBackground(Woodland)
+	Text(Ch1_2_OpeningScene_2) // Changed around the text here.
+	GotoPrepScreen
+	NoFade
+	ENDA 
 
 Ch1_2_EndingScene:
-CALL UnifiedBEXPCaller
-FADI 10
-MUSC 0x31
-//Text(Woodland, Ch1_2_Postbattle) // Changed this text. This will avoid your fading issue as you fade out of the cutscene and immediately fade in to the save screen
-SetBackground(Woodland)
-	CHECK_EXISTS Gray
-	BEQ 0x1 0xC 0x0
-	CHECK_ALIVE Gray
-	BEQ 0x1 0xC 0x0
-	Text(Ch1_2_Postbattle)
-	GOTO 0x2
-LABEL 0x1
-	Text(Ch1_2_Postbattle_NoGray)
-LABEL 0x2
-MNCH 0x02 //go to ch2
-ENDA
+	CALL UnifiedBEXPCaller
+	FADI 10
+	MUSC 0x31
+
+	SetBackground(Woodland)
+		CHECK_EXISTS Gray
+		BEQ 0x1 0xC 0x0
+		CHECK_ALIVE Gray
+		BEQ 0x1 0xC 0x0
+		Text(Ch1_2_Postbattle)
+		GOTO 0x2
+	LABEL 0x1
+		Text(Ch1_2_Postbattle_NoGray)
+	LABEL 0x2
+	MNCH 0x02 //go to ch2
+	ENDA
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

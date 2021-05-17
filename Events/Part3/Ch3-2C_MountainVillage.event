@@ -49,7 +49,7 @@ Ch3_2C_CharacterBasedEvents:
 
 Ch3_2C_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(15,15)
 	#endif
 	Village(8, VillageEvent, 15,3)
 	Armory(0xa3f00e, 17,11)
@@ -96,6 +96,19 @@ Ch3_2C_CutsceneUnits:
 	UNIT
 	
 Ch3_2C_Units1:
+#ifdef __DEBUG__
+	UNIT Celica CelicaPriestess 0x00 Level(10,Ally,True) [15,15] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(10,Ally,True) [17,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(10,Ally,True) [16,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(10,Ally,True) [14,16] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI
+	UNIT Saber Myrmidon 0x00 Level(4,Ally,True) [15,17] 0x00 0x00 0x0 0x00 [BaseSword, 0x78, Vulnerary] NoAI
+	UNIT Valbar Knight 0x00 Level(7,Ally,True) [14,18] 0x00 0x00 0x0 0x00 [BaseAxe, BaseLance, Vulnerary] NoAI
+	UNIT Leon Sniper 0x00 Level(4,Ally,True) [12,18] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
+	UNIT Kamui Mercenary 0x00 Level(10,Ally,True) [13,19] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
+	UNIT Palla PegasusKnight 0x00 Level(9,Ally,True) [4,18] 0x00 0x00 0x0 0x00 [BaseLance, Javelin, Vulnerary] NoAI
+	UNIT Catria PegasusKnight 0x00 Level(9,Ally,True) [3,19] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing, Vulnerary] NoAI
+	UNIT
+#else
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [15,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [17,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [16,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -109,6 +122,7 @@ Ch3_2C_Units1:
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [1,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [2,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
+#endif
 
 Ch3_2C_PlayerSkirmishUnits:
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [15,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
@@ -258,8 +272,13 @@ Ch3_2C_BeginningScene:
 		//if not first, do following
 		FADI 5
 		CLEA 0x0
-		LOAD3 0x1 Ch3_2C_Units1
-		ENUN
+		#ifdef __DEBUG__
+			LOAD1 0x1 Ch3_2C_Units1
+			ENUN
+		#else
+			LOAD3 0x0 Ch3_2C_Units1
+			ENUN
+		#endif
 		GOTO 0x07
 	LABEL 0x06
 		EVBIT_MODIFY 0x0

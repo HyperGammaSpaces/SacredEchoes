@@ -3,52 +3,63 @@
 EventPointerTable(plCh2_5_Event, Ch2_5_ThisChapter)
 
 Ch2_5_ThisChapter:
-POIN Ch2_5_TurnBasedEvents
-POIN Ch2_5_CharacterBasedEvents
-POIN Ch2_5_LocationBasedEvents
-POIN Ch2_5_MiscBasedEvents
-POIN Ch2_5_Dunno Ch2_5_Dunno Ch2_5_Dunno
-POIN Ch2_5_Tutorial
-POIN Ch2_5_Ballista1 Ch2_5_Ballista3
-POIN PlayerUnits PlayerUnits
-POIN $0 $0 $0 $0 $0 $0
-POIN Ch2_5_BeginningScene Ch2_5_EndingScene
+	POIN Ch2_5_TurnBasedEvents
+	POIN Ch2_5_CharacterBasedEvents
+	POIN Ch2_5_LocationBasedEvents
+	POIN Ch2_5_MiscBasedEvents
+	POIN Ch2_5_Dunno Ch2_5_Dunno Ch2_5_Dunno
+	POIN Ch2_5_Tutorial
+	POIN Ch2_5_Ballista1 Ch2_5_Ballista3
+	POIN PlayerUnits PlayerUnits
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch2_5_BeginningScene Ch2_5_EndingScene
 
 Ch2_5_TurnBasedEvents:
-TurnEventEnemy(0x00, CastingSummon, 1)
-TURN 0x0 LoadSummons [1,255] 0x0
-TURN
+	TurnEventEnemy(0x00, CastingSummon, 1)
+	TURN 0x0 LoadSummons [1,255] 0x0
+	TURN
 
 Ch2_5_CharacterBasedEvents:
-CHAR
+	CHAR
 
 Ch2_5_LocationBasedEvents:
-#ifdef __DEBUG__
-  Seize(4,5)
-#endif
-Chest(0x5D, 15, 12) //skill statbooster
-LOCA
+	#ifdef __DEBUG__
+	  Seize(5,12)
+	#endif
+	Chest(0x5D, 15, 12) //skill statbooster
+	LOCA
 
 Ch2_5_MiscBasedEvents:
-CauseGameOverIfLordDies
-DefeatAll(Ch2_5_EndingScene)
-MournQuoteAFEVS
-AFEV
+	CauseGameOverIfLordDies
+	DefeatAll(Ch2_5_EndingScene)
+	MournQuoteAFEVS
+	AFEV
 
 Ch2_5_Dunno:
-END_MAIN
+	END_MAIN
 
 Ch2_5_Tutorial:
-END_MAIN
+	END_MAIN
 
 Ch2_5_Ballista1:
-BLST
+	BLST
 
 Ch2_5_Ballista3:
-BLST
-ALIGN 4
+	BLST
+	ALIGN 4
 
 PlayerUnits:
+#ifdef __DEBUG__
+	UNIT Celica CelicaPriestess 0x00 Level(6,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(5,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(5,Ally,True) [5,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Genny Cleric 0x00 Level(5,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(5,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Valbar Knight 0x00 Level(2,Ally,True) [3,10] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe,Vulnerary] NoAI
+	UNIT Leon Archer 0x00 Level(5,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
+	UNIT Kamui Mercenary 0x00 Level(4,Ally,True) [4,8] 0x00 0x00 0x0 0x00 [BaseSword] NoAI 
+	UNIT
+#else
 	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(1,Ally,True) [5,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
@@ -58,6 +69,7 @@ PlayerUnits:
 	UNIT Leon Archer 0x00 Level(4,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
 	UNIT Kamui Mercenary 0x00 Level(3,Ally,True) [4,8] 0x00 0x00 0x0 0x00 [BaseSword] NoAI 
 	UNIT
+#endif
 	
 EnemyUnits:
 	UNIT 0x8F Cantor 0x8F Level(1,Enemy,True) [13,5] 0x06 0x00 0x0 0x00 [Miasma, Lifefruit] NeverMoveAI 
@@ -74,8 +86,13 @@ ZombieGroup:
 	UNIT
 
 Ch2_5_BeginningScene:
-	LOAD3 0x0 PlayerUnits 
-	ENUN
+	#ifdef __DEBUG__
+		LOAD1 0x1 PlayerUnits
+		ENUN
+	#else
+		LOAD3 0x0 PlayerUnits 
+		ENUN
+	#endif
 	
 	FADU 5
 	MUSC 0x4B

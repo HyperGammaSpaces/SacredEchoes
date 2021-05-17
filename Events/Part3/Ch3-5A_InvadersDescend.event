@@ -70,7 +70,7 @@ Ch3_5A_CharacterBasedEvents:
 
 Ch3_5A_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(8,23)
+	  Seize(12,5)
 	#endif
 	LOCA
 
@@ -98,6 +98,23 @@ Ch3_5A_Ballista2:
 	ALIGN 4
 
 Ch3_5A_Units1:
+#ifdef __DEBUG__
+	UNIT Alm AlmFighter 0x00 Level(13,Ally,True) [12,5] 0x00 0x00 0x0 0x00 [BaseSword, RoyalSword, Vulnerary] NoAI 
+	UNIT Lukas Knight 0x00 Level(8,Ally,True) [13,5] 0x00 0x00 0x0 0x00 [BaseLance, BaseAxe, Vulnerary] NoAI 
+	UNIT Tobin Sniper 0x00 Level(7,Ally,True) [14,4] 0x00 0x00 0x0 0x00 [BaseBow, SteelBow, Vulnerary] NoAI 
+	UNIT Gray Myrmidon 0x00 Level(7,Ally,True) [11,4] 0x00 0x00 0x0 0x00 [BaseSword, Armorslayer, Vulnerary] NoAI 
+	UNIT Kliff Mage 0x00 Level(13,Ally,True) [14,6] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Faye Cleric 0x00 Level(10,Ally,True) [11,6] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(13,Ally,True) [10,5] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(13,Ally,True) [15,5] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
+	UNIT Clive Paladin 0x00 Level(6,Ally,True) [12,3] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance,HeavySpear] NoAI
+	UNIT Forsyth Knight 0x00 Level(6,Ally,True) [13,3] 0x00 0x00 0x0 0x00 [BaseAxe,BaseLance,Forscythe] NoAI
+	UNIT Python Archer 0x00 Level(13,Ally,True) [10,3] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
+	UNIT Acantha Thief_F 0x00 Level(13,Ally,True) [15,3] 0x00 0x00 0x0 0x00 [BaseSword,Lockpick,Thunderblade] NoAI
+	UNIT Luthier Mage 0x00 Level(11,Ally,True) [12,7] 0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(3,Ally,True) [13,7] 0x00 0x00 0x0 0x00 [BaseLance,Ridersbane] NoAI
+	UNIT
+#else
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,5] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,5] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
 	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [14,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -113,6 +130,7 @@ Ch3_5A_Units1:
 	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [12,7] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [13,7] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
+#endif
 
 CutsceneUnits:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -225,9 +243,14 @@ Ch3_5A_BeginningScene:
 	REMA
 	
 	CLEA 0x0
-	LOAD3 0x0 Ch3_5A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
-	ENUN
-	GotoPrepScreen
+	#ifdef __DEBUG__
+		LOAD1 0x1 Ch3_5A_Units1
+		ENUN
+	#else
+		LOAD3 0x0 Ch3_5A_Units1 
+		ENUN
+		GotoPrepScreen
+	#endif
 	ENDA
 
 Ch3_5A_EndingScene:

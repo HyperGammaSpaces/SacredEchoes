@@ -40,7 +40,7 @@ Ch1_7x_CharacterBasedEvents:
 
 Ch1_7x_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(5,14)
+	  Seize(10,11)
 	#endif
 	LOCA
 
@@ -118,7 +118,7 @@ Reinforcements_Right:
 	UNIT
 
 Ch1_7x_BeginningScene:
-	MUSC 0x25
+	MUSC 0x4C
 	CLEA 0x0
 
 	REMU Alm
@@ -137,25 +137,28 @@ Ch1_7x_BeginningScene:
 	ENUN
 	CAM1 Clive
 	
-	FADU 5
+	FADU 2
 	BROWNBOXTEXT Ch1_7x_BrownboxText [8,8]
-	STAL 60
+	FlashCursor(Clive, 60)
 	
 	SetBackground(0x26)
 	Text(Ch1_7x_OpeningText)
 	ClearBackground
 	
 	STAL 20
-	CAM1 [12, 0]
+	CAM1 [12, 18]
 	//Boss walks in
 	LOAD1 0x1 Enemy_Envoy
 	ENUN
+	CAM1 Zopyrus
+	STAL 20
 	
 	SetBackground(0x26)
 	Text(Ch1_7x_BossIntro)
 	ClearBackground
 
 	//Enemy ambush
+	MUSC 0x25
 	CAM1 [12, 11]
 	CUSE Zopyrus
 	SVAL 0xB Coords(15,10)

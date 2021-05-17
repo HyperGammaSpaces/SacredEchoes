@@ -5,26 +5,26 @@
 EventPointerTable(plCh1_3_Event, Ch1_3_ThisChapter)
 
 Ch1_3_ThisChapter:
-POIN Ch1_3_TurnBasedEvents
-POIN Ch1_3_CharacterBasedEvents
-POIN Ch1_3_LocationBasedEvents
-POIN Ch1_3_MiscBasedEvents
-POIN Ch1_3_Dunno Ch1_3_Dunno Ch1_3_Dunno
-POIN Ch1_3_Tutorial
-POIN Ch1_3_Ballista1 Ch1_3_Ballista3
-POIN Ch1_3_Units1 Ch1_3_Units1
-POIN $0 $0 $0 $0 $0 $0
-POIN Ch1_3_BeginningScene Ch1_3_EndingScene
+	POIN Ch1_3_TurnBasedEvents
+	POIN Ch1_3_CharacterBasedEvents
+	POIN Ch1_3_LocationBasedEvents
+	POIN Ch1_3_MiscBasedEvents
+	POIN Ch1_3_Dunno Ch1_3_Dunno Ch1_3_Dunno
+	POIN Ch1_3_Tutorial
+	POIN Ch1_3_Ballista1 Ch1_3_Ballista3
+	POIN Ch1_3_Units1 Ch1_3_Units1
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch1_3_BeginningScene Ch1_3_EndingScene
 
 Ch1_3_TurnBasedEvents:
-TURN 0x0 WaveFirst[2,0] 0x0
-TURN 0x0 WaveBottom1[3,0] 0x0
-TURN 0x0 WaveSecond[4,0] 0x0
-TURN 0x0 WaveThird[5,0] 0x0
-TURN 0x0 WaveFourth[6,0] 0x0
-TurnEventPlayer(0x0, Ch1_3_EndingScene, 8)
-OpeningTurnEvent(ChestEvent)
-TURN
+	TURN 0x0 WaveFirst[2,0] 0x0
+	TURN 0x0 WaveBottom1[3,0] 0x0
+	TURN 0x0 WaveSecond[4,0] 0x0
+	TURN 0x0 WaveThird[5,0] 0x0
+	TURN 0x0 WaveFourth[6,0] 0x0
+	TurnEventPlayer(0x0, Ch1_3_EndingScene, 8)
+	OpeningTurnEvent(ChestEvent)
+	TURN
 
 ChestEvent:
 	MUSC 0x09
@@ -54,68 +54,68 @@ ChestEvent:
 	ENDA
 
 WaveFirst:
-LoadReinforcements(Reinforcements1)
-STAL 30
-LoadReinforcements(AcanthaJoins)
-ENUN
-CAM1 Acantha
-FlashCursor(Acantha, 60)
-ConvoEvent(AcanthaAppears_Text)
-ENDA
+	LoadReinforcements(Reinforcements1)
+	STAL 30
+	LoadReinforcements(AcanthaJoins)
+	ENUN
+	CAM1 Acantha
+	FlashCursor(Acantha, 60)
+	ConvoEvent(AcanthaAppears_Text)
+	ENDA
 
 WaveBottom1:
-ReinforcementEvent(ReinforcementsBottom)
-ENDA
+	ReinforcementEvent(ReinforcementsBottom)
+	ENDA
 
 WaveSecond:
-ReinforcementEvent(Reinforcements2)
-ENDA
+	ReinforcementEvent(Reinforcements2)
+	ENDA
 
 WaveThird:
-ReinforcementEvent(Reinforcements3)
-ENDA
+	ReinforcementEvent(Reinforcements3)
+	ENDA
 
 WaveFourth:
-ReinforcementEvent(Reinforcements4)
-ENDA
+	ReinforcementEvent(Reinforcements4)
+	ENDA
 
 Ch1_3_CharacterBasedEvents:
-CharacterEvent(9, TalkToAcanthaWithSilque, Silque, Acantha)
-CharacterEvent(9, TalkToAcantha, Alm, Acantha)
-CHAR
+	CharacterEvent(9, TalkToAcanthaWithSilque, Silque, Acantha)
+	CharacterEvent(9, TalkToAcantha, Alm, Acantha)
+	CHAR
 
 Ch1_3_LocationBasedEvents:
-#ifdef __DEBUG__
-  Seize(4,5)
-#endif
-Chest(IronSword, 12, 8)
-Door(12, 6)
+	#ifdef __DEBUG__
+	  Seize(8,5)
+	#endif
+	Chest(IronSword, 12, 8)
+	Door(12, 6)
 
-#ifdef LION_HEADS_ENABLED
-	//Lion heads
-	LionHead(LionheadLocalTrigger1,LionHeadThiefshrineSpeed, 4, 1)
-	LionHead(LionheadLocalTrigger1,LionHeadThiefshrineHP, 12, 1)
-#endif
-LOCA
+	#ifdef LION_HEADS_ENABLED
+		//Lion heads
+		LionHead(LionheadLocalTrigger1,LionHeadThiefshrineSpeed, 4, 1)
+		LionHead(LionheadLocalTrigger1,LionHeadThiefshrineHP, 12, 1)
+	#endif
+	LOCA
 
 Ch1_3_MiscBasedEvents:
-CauseGameOverIfLordDies
-DefeatAll(Ch1_3_EndingScene)
-MournQuoteAFEVS
-AFEV
+	CauseGameOverIfLordDies
+	DefeatAll(Ch1_3_EndingScene)
+	MournQuoteAFEVS
+	AFEV
 
 Ch1_3_Dunno:
-END_MAIN
+	END_MAIN
 
 Ch1_3_Tutorial:
-END_MAIN
+	END_MAIN
 
 Ch1_3_Ballista1:
-BLST
+	BLST
 
 Ch1_3_Ballista3:
-BLST
-ALIGN 4
+	BLST
+	ALIGN 4
 
 Ch1_3_Units1:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,5] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
@@ -230,46 +230,46 @@ Ch1_3_BeginningScene:
 
 
 TalkToSilque:
-MUSS 0x30
-STAL 33
-Text(RecruitSilque_Text)
-CUSA Silque
-STAL 20
-NoFade
-MURE 0x05
-ENDA
+	MUSS 0x30
+	STAL 33
+	Text(RecruitSilque_Text)
+	CUSA Silque
+	STAL 20
+	NoFade
+	MURE 0x05
+	ENDA
 
 TalkToSilqueWithAcantha:
-MUSS 0x30
-STAL 33
-Text(RecruitSilque_Acantha_Text)
-CUSA Silque
-STAL 20
-NoFade
-MURE 0x05
-ENDA
+	MUSS 0x30
+	STAL 33
+	Text(RecruitSilque_Acantha_Text)
+	CUSA Silque
+	STAL 20
+	NoFade
+	MURE 0x05
+	ENDA
 
 TalkToAcantha:
-MUSS 0x30
-STAL 33
-Text(RecruitAcantha_Text)
-CUSA Acantha
-STAL 20
-CharacterJoinedNotification(Notif_AcanthaJoin)
-NoFade
-MURE 0x05
-ENDA
+	MUSS 0x30
+	STAL 33
+	Text(RecruitAcantha_Text)
+	CUSA Acantha
+	STAL 20
+	CharacterJoinedNotification(Notif_AcanthaJoin)
+	NoFade
+	MURE 0x05
+	ENDA
 
 TalkToAcanthaWithSilque:
-MUSS 0x30
-STAL 33
-Text(RecruitAcantha_Silque_Text)
-CUSA Acantha
-STAL 20
-CharacterJoinedNotification(Notif_AcanthaJoin)
-NoFade
-MURE 0x05
-ENDA
+	MUSS 0x30
+	STAL 33
+	Text(RecruitAcantha_Silque_Text)
+	CUSA Acantha
+	STAL 20
+	CharacterJoinedNotification(Notif_AcanthaJoin)
+	NoFade
+	MURE 0x05
+	ENDA
 
 Ch1_3_EndingScene:
 	EVBIT_MODIFY 0x1

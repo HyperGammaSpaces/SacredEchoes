@@ -42,6 +42,9 @@ Ch3_6C_CharacterBasedEvents:
 	CHAR
 
 Ch3_6C_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(4,11)
+	#endif
 	Seize(23,1)
 	Village(8, Village1Event, 6,2)
 	Village(9, Village2Event, 19,5)
@@ -75,6 +78,21 @@ Village2Event:
 	ENDA
 
 Ch3_6C_Units1:
+#ifdef __DEBUG__
+	UNIT Celica CelicaPriestess 0x00 Level(14,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(14,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(14,Ally,True) [3,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(14,Ally,True) [4,13] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI
+	UNIT Saber Myrmidon 0x00 Level(6,Ally,True) [2,11] 0x00 0x00 0x0 0x00 [BaseSword, 0x78, Vulnerary] NoAI
+	UNIT Valbar Knight 0x00 Level(9,Ally,True) [2,13] 0x00 0x00 0x0 0x00 [BaseAxe, BaseLance, Vulnerary] NoAI
+	UNIT Leon Sniper 0x00 Level(6,Ally,True) [1,12] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
+	UNIT Kamui Mercenary 0x00 Level(14,Ally,True) [1,10] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
+	UNIT Palla PegasusKnight 0x00 Level(11,Ally,True) [0,11] 0x00 0x00 0x0 0x00 [BaseLance, Javelin, Vulnerary] NoAI
+	UNIT Catria PegasusKnight 0x00 Level(11,Ally,True) [0,13] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing, Vulnerary] NoAI
+	UNIT Est PegasusKnight 0x00 Level(8,Ally,True) [1,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Atlas Axeman 0x00 Level(4,Ally,True) [3,14] 0x00 0x00 0x0 0x00 [BaseAxe, Hatchet, Vulnerary] NoAI
+	UNIT
+#else
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -88,6 +106,7 @@ Ch3_6C_Units1:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [1,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
+#endif
 
 CutsceneUnits:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -164,9 +183,14 @@ Ch3_6C_BeginningScene:
 	CLEA 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	LOAD3 0x0 Ch3_6C_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
-	ENUN
-	GotoPrepScreen
+	#ifdef __DEBUG__
+		LOAD1 0x1 Ch3_6C_Units1
+		ENUN
+	#else
+		LOAD3 0x0 Ch3_6C_Units1 
+		ENUN
+		GotoPrepScreen
+	#endif
 	ENDA
 
 Ch3_6C_EndingScene:

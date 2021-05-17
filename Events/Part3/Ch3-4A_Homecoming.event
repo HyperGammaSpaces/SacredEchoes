@@ -43,6 +43,9 @@ TalkToMathilda:
 	ENDA
 
 Ch3_4A_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(9,19)
+	#endif
 	Seize(9,2)
 	Door(8, 15)
 	Door(9, 15)
@@ -133,6 +136,22 @@ CutsceneAllies:
 	UNIT
 
 Ch3_4A_Units1:
+#ifdef __DEBUG__
+	UNIT Alm AlmFighter 0x00 Level(12,Ally,True) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Knight 0x00 Level(7,Ally,True) [5,19] 0x00 0x00 0x0 0x00 [BaseLance, BaseAxe, Vulnerary] NoAI  
+	UNIT Tobin Sniper 0x00 Level(6,Ally,True) [7,19] 0x00 0x00 0x0 0x00 [BaseBow, SteelBow, Vulnerary] NoAI 
+	UNIT Gray Myrmidon 0x00 Level(6,Ally,True) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Mage 0x00 Level(12,Ally,True) [6,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Faye Cleric 0x00 Level(9,Ally,True) [8,20] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(12,Ally,True) [8,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(12,Ally,True) [6,18] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
+	UNIT Clive Paladin 0x00 Level(5,Ally,True) [10,18] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance,HeavySpear] NoAI
+	UNIT Forsyth Knight 0x00 Level(5,Ally,True) [11,19] 0x00 0x00 0x0 0x00 [BaseAxe,BaseLance,Forscythe] NoAI
+	UNIT Python Archer 0x00 Level(12,Ally,True) [12,18] 0x00 0x00 0x0 0x00 [BaseBow,IronBow] NoAI
+	UNIT Acantha Thief_F 0x00 Level(12,Ally,True) [13,19] 0x00 0x00 0x0 0x00 [BaseSword,Lockpick,Thunderblade] NoAI
+	UNIT Luthier Mage 0x00 Level(10,Ally,True) [10,20] 0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT
+#else
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
 	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [7,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -143,10 +162,11 @@ Ch3_4A_Units1:
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [6,18] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,18] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT Forsyth Soldier 0x00 Level(1, Ally, 1) [11,19] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT Python Archer 0x00 Level(1, Ally, 1) [12,18] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
+	UNIT Python Archer 0x00 Level(1, Ally, 1) [12,18] 0x00 0x00 0x0 0x00 [BaseBow,IronBow] NoAI
 	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [13,19] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
 	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT
+#endif
 
 EnemyUnits:
 
@@ -309,9 +329,14 @@ Ch3_4A_BeginningScene:
 	FADI 16
 	REMA
 	CLEA 0x0
-	LOAD3 0x0 Ch3_4A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
-	ENUN
-	GotoPrepScreen
+	#ifdef __DEBUG__
+		LOAD1 0x1 Ch3_4A_Units1
+		ENUN
+	#else
+		LOAD3 0x0 Ch3_4A_Units1 
+		ENUN
+		GotoPrepScreen
+	#endif
 	ENDA
 
 Ch3_4A_EndingScene:

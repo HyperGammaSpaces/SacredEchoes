@@ -2,64 +2,60 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-#ifndef CliveFernandCG
-	#define CliveFernandCG 0x1
-#endif
-
 EventPointerTable(plHideoutEvent, Hideout_ThisChapter)
 
 Hideout_ThisChapter:
-POIN Hideout_TurnBasedEvents
-POIN Hideout_CharacterBasedEvents
-POIN Hideout_LocationBasedEvents
-POIN Hideout_MiscBasedEvents
-POIN Hideout_Dunno Hideout_Dunno Hideout_Dunno
-POIN Hideout_Tutorial
-POIN Hideout_Ballista1 Hideout_Ballista3
-POIN PlayerUnits PlayerUnits
-POIN $0 $0 $0 $0 $0 $0
-POIN Hideout_BeginningScene Hideout_EndingScene
+	POIN Hideout_TurnBasedEvents
+	POIN Hideout_CharacterBasedEvents
+	POIN Hideout_LocationBasedEvents
+	POIN Hideout_MiscBasedEvents
+	POIN Hideout_Dunno Hideout_Dunno Hideout_Dunno
+	POIN Hideout_Tutorial
+	POIN Hideout_Ballista1 Hideout_Ballista3
+	POIN PlayerUnits PlayerUnits
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Hideout_BeginningScene Hideout_EndingScene
 
 Hideout_TurnBasedEvents:
-TURN
+	TURN
 
 Hideout_CharacterBasedEvents:
-CHAR
+	CHAR
 
 Hideout_LocationBasedEvents:
-#ifdef __DEBUG__
-  Seize(4,5)
-#endif
-CHES 0x9 Vulnerary [4,9] 0x14
-Door(4, 7)
-Door(4, 12)
+	#ifdef __DEBUG__
+	  Seize(6,18)
+	#endif
+	CHES 0x9 Vulnerary [4,9] 0x14
+	Door(4, 7)
+	Door(4, 12)
 
-#ifdef LION_HEADS_ENABLED
-	//Lion heads
-	LionHead(LionheadLocalTrigger1,LionHeadHideoutDef, 1, 17)
-	LionHead(LionheadLocalTrigger1,LionHeadHideoutAtk, 21, 17)
-#endif
-LOCA
+	#ifdef LION_HEADS_ENABLED
+		//Lion heads
+		LionHead(LionheadLocalTrigger1,LionHeadHideoutDef, 1, 17)
+		LionHead(LionheadLocalTrigger1,LionHeadHideoutAtk, 21, 17)
+	#endif
+	LOCA
 
 Hideout_MiscBasedEvents:
-CauseGameOverIfLordDies
-DefeatAll(Hideout_EndingScene)
-AFEV 0xA ChestEvent 0x9
-MournQuoteAFEVS
-AFEV
+	CauseGameOverIfLordDies
+	DefeatAll(Hideout_EndingScene)
+	AFEV 0xA ChestEvent 0x9
+	MournQuoteAFEVS
+	AFEV
 
 Hideout_Dunno:
-END_MAIN
+	END_MAIN
 
 Hideout_Tutorial:
-END_MAIN
+	END_MAIN
 
 Hideout_Ballista1:
-BLST
+	BLST
 
 Hideout_Ballista3:
-BLST
-ALIGN 4
+	BLST
+	ALIGN 4
 
 PlayerUnits:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [6,18] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 

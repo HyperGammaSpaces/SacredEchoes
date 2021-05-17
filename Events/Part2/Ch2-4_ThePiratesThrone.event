@@ -22,8 +22,8 @@ Ch2_4_TurnBasedEvents:
 	TURN
 	
 BoatWave:
-ReinforcementEvent(ReinforcementsSouth)
-ENDA
+	ReinforcementEvent(ReinforcementsSouth)
+	ENDA
 
 CelicaTalkEvent:
 	MUSC 0x0A // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
@@ -48,6 +48,9 @@ Ch2_4_CharacterBasedEvents:
 	CHAR
 
 Ch2_4_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(2,14)
+	#endif
 	Chest(IronSword, 18, 0)
 	LOCA 0xA VillageEvent [18,10] 0x10
 	Seize(15, 1)
@@ -86,11 +89,11 @@ Ch2_4_Ballista2:
 	ALIGN 4
 
 Ch2_4_Units1:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1, Ally, 1) [2,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [1,13] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [1,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(4,Ally,True) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(4,Ally,True) [2,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(4,Ally,True) [2,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Genny Cleric 0x00 Level(4,Ally,True) [1,13] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(4,Ally,True) [1,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT
 
 ValbarJoins:
@@ -131,8 +134,13 @@ ReinforcementsSouth:
 
 Ch2_4_BeginningScene:
 	MUSC 0x25
-	LOAD3 0x1 Ch2_4_Units1
-	ENUN
+	#ifdef __DEBUG__
+		LOAD1 0x1 Ch2_4_Units1
+		ENUN
+	#else
+		LOAD3 0x0 Ch2_4_Units1
+		ENUN
+	#endif
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	LOAD1 0x1 ValbarJoins

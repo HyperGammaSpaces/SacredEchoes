@@ -64,7 +64,7 @@ Ch2_7_CharacterBasedEvents:
 
 Ch2_7_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(12,16)
 	#endif
 	Village(0x8, VillageEventWest, 4,8)
 	Village(0x9, VillageEventEast, 13,3)
@@ -117,6 +117,17 @@ Ch2_7_Ballista3:
 	ALIGN 4
 
 PlayerUnits:
+#ifdef __DEBUG__
+	UNIT Celica CelicaPriestess 0x00 Level(8,Ally,True) [12,16] 0x00 0x00 0x1 REDA12R15 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(8,Ally,True) [12,16] 0x00 0x00 0x1 REDA13R14 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(7,Ally,True) [11,16] 0x00 0x00 0x1 REDA11R14 [Fire, Vulnerary] NoAI 
+	UNIT Genny Cleric 0x00 Level(8,Ally,True) [11,16] 0x00 0x00 0x1 REDA10R15 [Nosferatu, Vulnerary] NoAI 
+	UNIT Saber Myrmidon 0x00 Level(1,Ally,True) [12,16] 0x00 0x00 0x1 REDA12R13 [BaseSword, Vulnerary] NoAI 
+	UNIT Valbar Knight 0x00 Level(3,Ally,True) [11,16] 0x00 0x00 0x1 REDA10R13 [BaseLance,BaseAxe,Vulnerary] NoAI
+	UNIT Leon Sniper 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA13R16 [IronBow, BaseBow, Vulnerary] NoAI
+	UNIT Kamui Mercenary 0x00 Level(8, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R16 [BaseSword] NoAI 
+	UNIT
+#else
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA12R15 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA13R14 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R14 [Fire, Vulnerary] NoAI 
@@ -126,6 +137,7 @@ PlayerUnits:
 	UNIT Leon Archer 0x00 Level(4, Ally, 1) [12,16] 0x00 0x00 0x1 REDA13R16 [IronBow, BaseBow, Vulnerary] NoAI
 	UNIT Kamui Mercenary 0x00 Level(3, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R16 [BaseSword] NoAI 
 	UNIT
+#endif
 	
 EnemyUnits:
 	UNIT 0x91 Arcanist 0x91 Level(3,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [Miasma,AngelRing,Item100G] NeverMoveAI 
@@ -188,8 +200,13 @@ Ch2_7_BeginningScene:
 	CAM1 [11,16]
 	FADU 16
 	MUSC Tension
-	LOAD3 0x0 PlayerUnits
-	ENUN
+	#ifdef __DEBUG__
+		LOAD1 0x1 PlayerUnits
+		ENUN
+	#else
+		LOAD3 0x0 PlayerUnits
+		ENUN
+	#endif
 		CHECK_EXISTS Valbar
 		BEQ 0x1 0xC 0x0
 		CHECK_ALIVE Valbar

@@ -108,6 +108,9 @@ TalkToClairWithGray:
 
 
 Ch1_5_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(5,13)
+	#endif
 	Seize(0x0, Ch1_5_EndingScene, 6, 1)
 	Door(5, 7)
 	Door(6, 7)

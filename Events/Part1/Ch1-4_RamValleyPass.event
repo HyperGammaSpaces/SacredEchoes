@@ -5,142 +5,170 @@
 EventPointerTable(plCh1_4_Event, Ch1_4_ThisChapter)
 
 Ch1_4_ThisChapter:
-POIN Ch1_4_TurnBasedEvents
-POIN Ch1_4_CharacterBasedEvents
-POIN Ch1_4_LocationBasedEvents
-POIN Ch1_4_MiscBasedEvents
-POIN Ch1_4_Dunno Ch1_4_Dunno Ch1_4_Dunno
-POIN Ch1_4_Tutorial
-POIN Ch1_4_Ballista1 Ch1_4_Ballista2
-POIN Ch1_4_Units1 Ch1_4_Units1
-POIN $0 $0 $0 $0 $0 $0
-POIN Ch1_4_BeginningScene Ch1_4_EndingScene
+	POIN Ch1_4_TurnBasedEvents
+	POIN Ch1_4_CharacterBasedEvents
+	POIN Ch1_4_LocationBasedEvents
+	POIN Ch1_4_MiscBasedEvents
+	POIN Ch1_4_Dunno Ch1_4_Dunno Ch1_4_Dunno
+	POIN Ch1_4_Tutorial
+	POIN Ch1_4_Ballista1 Ch1_4_Ballista2
+	POIN Ch1_4_Units1 Ch1_4_Units1
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch1_4_BeginningScene Ch1_4_EndingScene
 
 Ch1_4_TurnBasedEvents:
-OpeningTurnEvent(MercEvent)
-TURN 0x0 WaveFirst[4,0] 0x0
-TURN
+	OpeningTurnEvent(MercEvent)
+	TURN 0x0 WaveFirst[4,0] 0x0
+	TURN
 
 MercEvent:
-MUSC 0x09
-CAM1 Alm
-STAL 30
-MUSI
-CAM1 0x48
-STAL 30
-FlashCursor(1, 6, 60)
-Text(Ch1_4_MercText)
-MUNO
-NoFade
-ENDA
+	MUSC 0x09
+	CAM1 Alm
+	STAL 30
+	MUSI
+	CAM1 0x48
+	STAL 30
+	FlashCursor(1, 6, 60)
+	Text(Ch1_4_MercText)
+	MUNO
+	NoFade
+	ENDA
 
 WaveFirst:
-ReinforcementEvent(Reinforcements1)
+	ReinforcementEvent(Reinforcements1)
 
 Ch1_4_CharacterBasedEvents:
-CHAR
+	CHAR
 
 Ch1_4_LocationBasedEvents:
-#ifdef __DEBUG__
-  Seize(4,5)
-#endif
-Village(0x8, VillageEvent, 6,3)
-LOCA
+	#ifdef __DEBUG__
+	  Seize(2,14)
+	#endif
+	Village(0x8, VillageEvent, 6,3)
+	LOCA
 
 VillageEvent:
-VillageEventItem(Ch1_4_Village, Village, Talisman)
-ENDA
+	VillageEventItem(Ch1_4_Village, Village, Talisman)
+	ENDA
 
 Ch1_4_MiscBasedEvents:
-CauseGameOverIfLordDies
-DefeatAll(Ch1_4_EndingScene)
-MournQuoteAFEVS
-AFEV
+	CauseGameOverIfLordDies
+	DefeatAll(Ch1_4_EndingScene)
+	MournQuoteAFEVS
+	AFEV
 
 Ch1_4_Dunno:
-END_MAIN
+	END_MAIN
 
 Ch1_4_Tutorial:
-END_MAIN
+	END_MAIN
 
 Ch1_4_Ballista1:
-BLST
+	BLST
 
 Ch1_4_Ballista2:
-BLST
-ALIGN 4
+	BLST
+	ALIGN 4
 
 Ch1_4_Units1:
-UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-UNIT Gray Villager 0x00 Level(1, Ally, 1) [6,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-UNIT Kliff Villager 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [5,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-UNIT Silque Cleric 0x00 Level(1, Ally, 1) [3, 15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-UNIT Acantha 0xE 0x00 Level(3, Ally, 1) [1,15] 0x00 0x00 0x0 0x00 [BaseSword, Lockpick] NoAI
-UNIT
+#ifdef __DEBUG__
+	UNIT Alm AlmFighter 0x00 Level(4,Ally,True) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(6,Ally,True) [4,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Archer 0x00 Level(1,Ally,True) [8,14] 0x00 0x00 0x0 0x00 [BaseBow, Vulnerary] NoAI 
+	UNIT Gray Mercenary 0x00 Level(1,Ally,True) [6,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Mage 0x00 Level(1,Ally,True) [7,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Faye Cleric 0x00 Level(1,Ally,True) [5,15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(3,Ally,True) [3, 15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Acantha 0xE 0x00 Level(3,Ally,True) [1,15] 0x00 0x00 0x0 0x00 [BaseSword, Lockpick] NoAI
+	UNIT
+#else
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [6,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [5,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [3, 15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Acantha 0xE 0x00 Level(3, Ally, 1) [1,15] 0x00 0x00 0x0 0x00 [BaseSword, Lockpick] NoAI
+	UNIT
+#endif
 
 EnemyUnits:
-UNIT 0x48 Mercenary 0x00 Level(8, Enemy, 0) [1,6] DropItem 0x00 0x0 0x00 [BaseSword, HideShield] NoAI
-UNIT 0x65 Brigand 0x48 Level(8, Enemy, 1) [11,2] DropItem 0x00 0x0 0x00 [BaseAxe, _200G] AttackInRangeAI
-UNIT 0x65 Archer 0x48 Level(5, Enemy, 1) [9,3] 0x00 0x00 0x0 0x00  [BaseBow] NoAI
-UNIT 0x65 Archer 0x48 Level(4, Enemy, 1) [14,9] 0x00 0x00 0x0 0x00  [BaseBow] AttackInRangeAI 
-UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [14,3] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI //turn 1 
-UNIT 0x65 Brigand 0x48 Level(5, Enemy, 1) [13,4] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI 
-UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [14,4] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI //turn 2
-UNIT 0x65 Brigand 0x48 Level(5, Enemy, 1) [11,5] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI 
-UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [12,9] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
-UNIT 0x65 Brigand 0x48 Level(5, Enemy, 1) [13,10] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
-UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [14,11] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
-UNIT
+	UNIT 0x48 Mercenary 0x00 Level(8, Enemy, 0) [1,6] DropItem 0x00 0x0 0x00 [BaseSword, HideShield] NoAI
+	UNIT 0x65 Brigand 0x48 Level(8, Enemy, 1) [11,2] DropItem 0x00 0x0 0x00 [BaseAxe, _200G] AttackInRangeAI
+	UNIT 0x65 Archer 0x48 Level(5, Enemy, 1) [9,3] 0x00 0x00 0x0 0x00  [BaseBow] NoAI
+	UNIT 0x65 Archer 0x48 Level(4, Enemy, 1) [14,9] 0x00 0x00 0x0 0x00  [BaseBow] AttackInRangeAI 
+	UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [14,3] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI //turn 1 
+	UNIT 0x65 Brigand 0x48 Level(5, Enemy, 1) [13,4] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI 
+	UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [14,4] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI //turn 2
+	UNIT 0x65 Brigand 0x48 Level(5, Enemy, 1) [11,5] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI 
+	UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [12,9] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT 0x65 Brigand 0x48 Level(5, Enemy, 1) [13,10] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [14,11] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT
 
 Reinforcements1:
 	UNIT 0x65 Brigand 0x48 Level(7, Enemy, 1) [15,2] 0x00 0x00 0x1 REDA15R3  [BaseAxe,Torch] BrigandAI
 	UNIT
 
 Ch1_4_BeginningScene:
-MUSC 0x25
-LOAD3 0x0 Ch1_4_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
-ENUN
-LOAD1 0x1 EnemyUnits
-ENUN
-FADU 10
-CAM1 Alm
-STAL 6
-FlashCursor(Alm, 60)
-TEXTSTART
-TEXTSHOW Ch1_4_OpeningScene
-TEXTEND
-CAM1 0x48
-STAL 6
-FlashCursor(0x48, 60)
-TEXTCONT
-TEXTEND
-CAM1 Alm
-STAL 6
-FlashCursor(Alm, 60)
-TEXTCONT
-TEXTEND
-REMA
-GotoPrepScreen
-ENDA
+	MUSC 0x25
+	#ifdef __DEBUG__
+		LOAD1 0x1 Ch1_4_Units1 
+		ENUN
+	#else
+		LOAD3 0x0 Ch1_4_Units1 
+		ENUN
+	#endif
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	FADU 10
+	CAM1 Alm
+	STAL 6
+	FlashCursor(Alm, 60)
+	TEXTSTART
+	TEXTSHOW Ch1_4_OpeningScene
+	TEXTEND
+	CAM1 0x48
+	STAL 6
+	FlashCursor(0x48, 60)
+	TEXTCONT
+	TEXTEND
+	CAM1 Alm
+	STAL 6
+	FlashCursor(Alm, 60)
+	TEXTCONT
+	TEXTEND
+	REMA
+	GotoPrepScreen
+	ENDA
 
 Ch1_4_EndingScene:
-CALL UnifiedBEXPCaller
-FADI 10
-MUSC 0x31
-SetBackground(Woodland)
-	CHECK_EXISTS Gray
-	BEQ 0x1 0xC 0x0
-	CHECK_ALIVE Gray
-	BEQ 0x1 0xC 0x0
-	CHECK_EXISTS Tobin
-	BEQ 0x1 0xC 0x0
-	CHECK_ALIVE Tobin
-	BEQ 0x1 0xC 0x0
+	CALL UnifiedBEXPCaller
+	FADI 10
+	MUSC 0x31
+	SetBackground(Woodland)
+		CHECK_EXISTS Gray
+		BEQ 0x1 0xC 0x0
+		CHECK_ALIVE Gray
+		BEQ 0x1 0xC 0x0
+		CHECK_EXISTS Tobin
+		BEQ 0x1 0xC 0x0
+		CHECK_ALIVE Tobin
+		BEQ 0x1 0xC 0x0
+			TEXTSTART 
+			TEXTSHOW Ch1_4_PostBattle_1
+			TEXTEND
+			MUSC 0x28
+			TEXTCONT
+			TEXTEND
+			MUSC 0x27
+			TEXTCONT
+			TEXTEND
+			GOTO 0x2
+	LABEL 0x1
 		TEXTSTART 
-		TEXTSHOW Ch1_4_PostBattle_1
+		TEXTSHOW Ch1_4_PostBattle_1_NoGray
 		TEXTEND
 		MUSC 0x28
 		TEXTCONT
@@ -148,23 +176,12 @@ SetBackground(Woodland)
 		MUSC 0x27
 		TEXTCONT
 		TEXTEND
-		GOTO 0x2
-LABEL 0x1
-	TEXTSTART 
-	TEXTSHOW Ch1_4_PostBattle_1_NoGray
-	TEXTEND
-	MUSC 0x28
-	TEXTCONT
-	TEXTEND
-	MUSC 0x27
-	TEXTCONT
-	TEXTEND
-LABEL 0x2
-REMA
-STARTFADE
-FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-MNCH 0x04 //go to ch4
-ENDA
+	LABEL 0x2
+	REMA
+	STARTFADE
+	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	MNCH 0x04 //go to ch4
+	ENDA
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

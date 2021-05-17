@@ -39,7 +39,7 @@ Ch2_3_CharacterBasedEvents:
 
 Ch2_3_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(10,11)
 	#endif
 	LOCA
 
@@ -63,11 +63,11 @@ Ch2_3_Ballista2:
 	ALIGN 4
 
 Ch2_3_Units1:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [10,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [10,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1, Ally, 1) [10,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [9,11] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [9,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(3,Ally,True) [10,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(3,Ally,True) [10,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(3,Ally,True) [10,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Genny Cleric 0x00 Level(3,Ally,True) [9,11] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(3,Ally,True) [9,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT
 
 EnemyUnits:
@@ -93,8 +93,13 @@ Boat2Enemies:
 
 Ch2_3_BeginningScene:
 	MUSC 0x4B
-	LOAD3 0x1 Ch2_3_Units1
-	ENUN
+	#ifdef __DEBUG__
+		LOAD1 0x1 Ch2_3_Units1
+		ENUN
+	#else
+		LOAD3 0x0 Ch2_3_Units1
+		ENUN
+	#endif
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	SetBackground(0x08) //Boat

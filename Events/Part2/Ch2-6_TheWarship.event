@@ -3,87 +3,98 @@
 EventPointerTable(plCh2_6_Event, Ch2_6_ThisChapter)
 
 Ch2_6_ThisChapter:
-POIN Ch2_6_TurnBasedEvents
-POIN Ch2_6_CharacterBasedEvents
-POIN Ch2_6_LocationBasedEvents
-POIN Ch2_6_MiscBasedEvents
-POIN Ch2_6_Dunno Ch2_6_Dunno Ch2_6_Dunno
-POIN Ch2_6_Tutorial
-POIN Ch2_6_Ballista1 Ch2_6_Ballista3
-POIN PlayerUnits PlayerUnits
-POIN $0 $0 $0 $0 $0 $0
-POIN Ch2_6_BeginningScene Ch2_6_EndingScene
+	POIN Ch2_6_TurnBasedEvents
+	POIN Ch2_6_CharacterBasedEvents
+	POIN Ch2_6_LocationBasedEvents
+	POIN Ch2_6_MiscBasedEvents
+	POIN Ch2_6_Dunno Ch2_6_Dunno Ch2_6_Dunno
+	POIN Ch2_6_Tutorial
+	POIN Ch2_6_Ballista1 Ch2_6_Ballista3
+	POIN PlayerUnits PlayerUnits
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch2_6_BeginningScene Ch2_6_EndingScene
 
 Ch2_6_TurnBasedEvents:
-TURN 0x0 SecondBoat[4,0] 0x0
-TURN 0x0 WitchesAppear[6,0] 0x0
-TURN
+	TURN 0x0 SecondBoat[4,0] 0x0
+	TURN 0x0 WitchesAppear[6,0] 0x0
+	TURN
 
 SecondBoat:
-CAM1 [11,0]
-EARTHQUAKE_START 0x100
-STAL 30
-FADI 16
-STAL 30
-EARTHQUAKE_END
-TILECHANGE 0x1 // Boat
-//ReinforcementEvent(EnemyUnitsBoat2)
-SMOV 0x2 (EnemyUnitsBoat2|0x8000000)
-CALL $9EE274
-//
-FADU 16
-STAL 20
-CAM1 0x90
-FlashCursor(0x90,60)
-MUSI
-STAL 20
-Text(Ch2_6_Reinforcements1) // duma leader says something spooky
-MUNO
-NoFade
-ENDA
+	CAM1 [11,0]
+	EARTHQUAKE_START 0x100
+	STAL 30
+	FADI 16
+	STAL 30
+	EARTHQUAKE_END
+	TILECHANGE 0x1 // Boat
+	//ReinforcementEvent(EnemyUnitsBoat2)
+	SMOV 0x2 (EnemyUnitsBoat2|0x8000000)
+	CALL $9EE274
+	//
+	FADU 16
+	STAL 20
+	CAM1 0x90
+	FlashCursor(0x90,60)
+	MUSI
+	STAL 20
+	Text(Ch2_6_Reinforcements1) // duma leader says something spooky
+	MUNO
+	NoFade
+	ENDA
 
 WitchesAppear:
-//ReinforcementEvent(EnemyUnitsWitches)
-SMOV 0x2 (EnemyUnitsWitches|0x8000000)
-CALL $9EE274
-//
-STAL 20
-CAM1 Celica
-FlashCursor(Celica,60)
-Text(Ch2_6_Reinforcements2) // oh no, witches
-NoFade
-ENDA
+	//ReinforcementEvent(EnemyUnitsWitches)
+	SMOV 0x2 (EnemyUnitsWitches|0x8000000)
+	CALL $9EE274
+	//
+	STAL 20
+	CAM1 Celica
+	FlashCursor(Celica,60)
+	Text(Ch2_6_Reinforcements2) // oh no, witches
+	NoFade
+	ENDA
 
 Ch2_6_CharacterBasedEvents:
-CHAR
+	CHAR
 
 Ch2_6_LocationBasedEvents:
-#ifdef __DEBUG__
-  Seize(4,5)
-#endif
-ChestMoney(3000, 1, 2)
-LOCA
+	#ifdef __DEBUG__
+	  Seize(11,18)
+	#endif
+	ChestMoney(3000, 1, 2)
+	LOCA
 
 Ch2_6_MiscBasedEvents:
-CauseGameOverIfLordDies
-DefeatAll(Ch2_6_EndingScene)
-MournQuoteAFEVS
-AFEV
+	CauseGameOverIfLordDies
+	DefeatAll(Ch2_6_EndingScene)
+	MournQuoteAFEVS
+	AFEV
 
 Ch2_6_Dunno:
-END_MAIN
+	END_MAIN
 
 Ch2_6_Tutorial:
-END_MAIN
+	END_MAIN
 
 Ch2_6_Ballista1:
-BLST
+	BLST
 
 Ch2_6_Ballista3:
-BLST
-ALIGN 4
+	BLST
+	ALIGN 4
 
 PlayerUnits:
+#ifdef __DEBUG__
+	UNIT Celica CelicaPriestess 0x00 Level(7,Ally,True) [11,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(6,Ally,True) [10,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(6,Ally,True) [10,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Genny Cleric 0x00 Level(6,Ally,True) [12,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(7,Ally,True) [11,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Valbar Knight 0x00 Level(2,Ally,True) [12,16] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe,Vulnerary] NoAI
+	UNIT Leon Archer 0x00 Level(7,Ally,True) [12,17] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
+	UNIT Kamui Mercenary 0x00 Level(6,Ally,True) [11,15] 0x00 0x00 0x0 0x00 [BaseSword] NoAI 
+	UNIT
+#else
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [11,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [10,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(1, Ally, 1) [10,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
@@ -93,6 +104,7 @@ PlayerUnits:
 	UNIT Leon Archer 0x00 Level(4, Ally, 1) [12,17] 0x00 0x00 0x0 0x00 [IronBow, IronBow, Vulnerary] NoAI
 	UNIT Kamui Mercenary 0x00 Level(3, Ally, 1) [11,15] 0x00 0x00 0x0 0x00 [IronSword] NoAI 
 	UNIT
+#endif
 	
 EnemyUnits:
 	// Upper Deck
@@ -133,8 +145,13 @@ EnemyUnitsWitches:
 	UNIT
 
 Ch2_6_BeginningScene:
-	LOAD3 0x0 PlayerUnits 
-	ENUN
+	#ifdef __DEBUG__
+		LOAD1 0x1 PlayerUnits
+		ENUN
+	#else
+		LOAD3 0x0 PlayerUnits 
+		ENUN
+	#endif
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	MUSC 0x4B // Water

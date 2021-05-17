@@ -146,7 +146,7 @@ Ch3_7A_CharacterBasedEvents:
 
 Ch3_7A_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(10,20)
 	#endif
 	Seize(12,5)
 	LOCA
@@ -172,6 +172,21 @@ Ch3_7A_Ballista2:
 	ALIGN 4
 
 Ch3_7A_Units1:
+#ifdef __DEBUG__
+	UNIT Alm AlmFighter 0x00 Level(15,Ally,True) [10,20] 0x00 0x00 0x0 0x00 [BaseSword, RoyalSword, Vulnerary] NoAI 
+	UNIT Luthier Mage 0x00 Level(12,Ally,True) [11,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Tobin Sniper 0x00 Level(8,Ally,True) [8,20] 0x00 0x00 0x0 0x00 [BaseBow, HolyBow, Vulnerary] NoAI 
+	UNIT Gray Myrmidon 0x00 Level(8,Ally,True) [9,21] 0x00 0x00 0x0 0x00 [BaseSword, Zweihander, Vulnerary] NoAI 
+	UNIT Kliff Sage 0x00 Level(2,Ally,True) [7,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(5,Ally,True) [6,22] 0x00 0x00 0x0 0x00 [BaseLance,Ridersbane] NoAI
+	UNIT Silque Cleric 0x00 Level(15,Ally,True) [8,22] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(15,Ally,True) [10,22] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
+	UNIT Clive Paladin 0x00 Level(7,Ally,True) [12,22] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance,HeavySpear] NoAI
+	UNIT Forsyth Knight 0x00 Level(8,Ally,True) [13,21] 0x00 0x00 0x0 0x00 [BaseAxe,BaseLance,Forscythe] NoAI
+	UNIT Python Archer 0x00 Level(15,Ally,True) [14,22] 0x00 0x00 0x0 0x00 [BaseBow, SteelBow] NoAI
+	UNIT Acantha Thief_F 0x00 Level(15,Ally,True) [15,21] 0x00 0x00 0x0 0x00 [BaseSword,Lockpick,Thunderblade] NoAI
+	UNIT
+#else
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [11,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -185,6 +200,7 @@ Ch3_7A_Units1:
 	UNIT Python Archer 0x00 Level(1, Ally, 1) [14,22] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
 	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [15,21] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
 	UNIT
+#endif
 
 CutsceneUnits:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x1 REDA10R20 [BaseSword, Vulnerary] NoAI 
@@ -311,11 +327,16 @@ Ch3_7A_BeginningScene:
 	FADI 5
 	CLEA 0x0
 	CLEE 0x0
-	LOAD3 0x0 Ch3_7A_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	ENUN
-	GotoPrepScreen
+	#ifdef __DEBUG__
+		LOAD1 0x1 Ch3_7A_Units1
+		ENUN
+	#else
+		LOAD3 0x0 Ch3_7A_Units1 
+		ENUN
+		GotoPrepScreen
+	#endif
 	ENDA
 	
 DeltheaWakesUp:

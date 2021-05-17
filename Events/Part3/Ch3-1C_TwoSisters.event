@@ -24,7 +24,7 @@ CHAR
 
 Ch3_1C_LocationBasedEvents:
 #ifdef __DEBUG__
-  Seize(4,5)
+  Seize(5,12)
 #endif
 LOCA
 
@@ -68,6 +68,17 @@ Cutscene_ChapterIntro:
 	UNIT
 
 PlayerUnits:
+#ifdef __DEBUG__
+	UNIT Celica CelicaPriestess 0x00 Level(9,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI  
+	UNIT Mae Mage_F 0x00 Level(9,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(9,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Genny Cleric 0x00 Level(9,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI 
+	UNIT Saber Myrmidon 0x00 Level(3,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, 0x78, Vulnerary] NoAI 
+	UNIT Valbar Knight 0x00 Level(6,Ally,True) [11,8] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe,Vulnerary] NoAI
+	UNIT Leon Sniper 0x00 Level(3,Ally,True) [12,8] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
+	UNIT Kamui Mercenary 0x00 Level(9,Ally,True) [13,8] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
+	UNIT
+#else
 	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(1,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
@@ -77,6 +88,7 @@ PlayerUnits:
 	UNIT Leon Archer 0x00 Level(4,Ally,True) [12,8] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
 	UNIT Kamui Mercenary 0x00 Level(3,Ally,True) [13,8] 0x00 0x00 0x0 0x00 [BaseSword] NoAI 
 	UNIT
+#endif
 	
 EnemyUnits:
 	//Pier
@@ -187,9 +199,14 @@ Ch3_1C_BeginningScene:
 	Text(Ch3_1C_OpeningText_3)
 	
 	FADI 16
-	LOAD3 0x0 PlayerUnits 
-	ENUN
-	GotoPrepScreen
+	#ifdef __DEBUG__
+		LOAD1 0x1 PlayerUnits
+		ENUN
+	#else
+		LOAD3 0x0 PlayerUnits 
+		ENUN
+		GotoPrepScreen
+	#endif
 	ENDA
 	
 TalkToCatria:

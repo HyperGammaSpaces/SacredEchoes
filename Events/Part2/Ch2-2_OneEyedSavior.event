@@ -26,7 +26,7 @@ CHAR
 
 Ch2_2_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(2,9)
 	#endif
 	Chest(HideShield, 10, 3)
 	//Defend point is [4,10]
@@ -52,11 +52,11 @@ Ch2_2_Ballista2:
 	ALIGN 4
 
 Ch2_2_Units1:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,9] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,8] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1, Ally, 1) [3,9]0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [3,10] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [4,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(2,Ally,True) [2,9] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(2,Ally,True) [3,8] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(2,Ally,True) [3,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Genny Cleric 0x00 Level(2,Ally,True) [3,10] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
+	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [4,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT
 
 SaberJoins:
@@ -122,8 +122,13 @@ Ch2_2_BeginningScene:
 	CharacterJoinedNotification(Notif_SaberJoin)
 	FADI 2
 
-	LOAD3 0x1 Ch2_2_Units1
-	ENUN
+	#ifdef __DEBUG__
+		LOAD1 0x1 Ch2_2_Units1
+		ENUN
+	#else
+		LOAD3 0x0 Ch2_2_Units1
+		ENUN
+	#endif
 
 	STAL 30
 
