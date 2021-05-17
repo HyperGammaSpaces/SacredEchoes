@@ -18,37 +18,35 @@ Ch3_5C_ThisChapter:
 
 Ch3_5C_TurnBasedEvents:
 	//TURN 0x0 LoadSummons [1,255] 0x0
-	TURN 0x0 LoadReinforcements [3,6] 0x0
+	TURN 0x0 LoadReinforcements [4,6] 0x0
+	TURN 0x0 LoadCantor [5,0] 0x0
+	TURN 0x0 LoadReinforcements2 [6,7] 0x0
+	TURN 0x0 LoadThief [8,0] 0x0
+	TURN 0x0 LoadReinforcements3 [12,14] 0x0
 	//add some thieves?
 	TURN
 
-LoadReinforcements:
-	ReinforcementEvent(Reinforcements1)
+LoadCantor:
+	ReinforcementEvent(SpawnCantor)
+	SHORT $4320 CantorBoss_Bonewalkers
+	FlashCursor(CantorBoss_Bonewalkers,60)
 	NoFade
 	ENDA
-	
-LoadSummons:
-	CHECK_EVENTID 0x9 // summoner death quote
-	BNE 0 0xC 0x0 // branch label 0 if summoner dead
-	COUNTER_CHECK 0 // slot c = counter 0 value
-	SVAL 0x1 1 // number of turns between summons (1)
-	BNE 1 0xC 0x1 // branch label 1 if counter is not at value
 
-	// Counter at value
-	COUNTER_SET 0 0 // reset counter
-	CAM1 CantorBoss_Bonewalkers // cam on summoner
-	ENUN
-	SOUN 0x3BF // summoning SFX
-	STAL 20
-	ReinforcementEvent(ZombieGroup)
-	GOTO 0
-
-	LABEL 1
-	// Counter not at value
-	COUNTER_ADD 0 0 // counter 0 ++
-
-	LABEL 0
-	// event end
+LoadReinforcements:
+	ReinforcementEvent(ArcherReinforcements)
+	NoFade
+	ENDA
+LoadReinforcements2:
+	ReinforcementEvent(PirateReinforcements)
+	NoFade
+	ENDA
+LoadReinforcements3:
+	ReinforcementEvent(ShamanReinforcements)
+	NoFade
+	ENDA
+LoadThief:
+	ReinforcementEvent(ThiefReinforcement)
 	NoFade
 	ENDA
 
@@ -56,16 +54,22 @@ Ch3_5C_CharacterBasedEvents:
 	CHAR
 
 Ch3_5C_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(4,17)
+	#endif
+
 	Seize(20, 2)
 	Door(15, 4)
 	Door(15, 5)
+	Door(14, 13)
+	Door(15, 13)
 	Door(3, 11)
 	Door(4, 11)
-	Door(9, 9)
-	Door(9, 10)
-	Chest(Swordreaver, 8, 8)
-	Chest(Javelin, 7, 9)
-	Chest(KillerBow, 8, 10)
+	Door(9, 8)
+	Door(18, 6)
+	Chest(Swordreaver, 7, 8)
+	Chest(Javelin, 8, 9)
+	Chest(KillerBow, 7, 10)
 	LOCA
 
 Ch3_5C_MiscBasedEvents:
@@ -88,83 +92,98 @@ Ch3_5C_Ballista2:
 	ALIGN 4
 
 Ch3_5C_Units1:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [16,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [17,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [18,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,22] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+#ifdef __DEBUG__
+	UNIT Celica CelicaPriestess 0x00 Level(13,Ally,True) [4,17] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(13,Ally,True) [5,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(13,Ally,True) [4,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(13,Ally,True) [3,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI
+	//group 2
+	UNIT Saber Myrmidon 0x00 Level(6,Ally,True) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, 0x78, Vulnerary] NoAI
+	UNIT Valbar Knight 0x00 Level(9,Ally,True) [11,21] 0x00 0x00 0x0 0x00 [BaseAxe, BaseLance, Vulnerary] NoAI
+	UNIT Leon Sniper 0x00 Level(13,Ally,True) [10,20] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
+	UNIT Kamui Mercenary 0x00 Level(13,Ally,True) [13,21] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
+	//group 3
+	UNIT Jesse Thief 0x00 Level(7,Ally,True) [18,20] 0x00 0x00 0x0 0x00 [BaseSword, Rapier, Lockpick] NoAI
+	UNIT Palla PegasusKnight 0x00 Level(10,Ally,True) [19,21] 0x00 0x00 0x0 0x00 [BaseLance, Javelin, Vulnerary] NoAI
+	UNIT Catria PegasusKnight 0x00 Level(10,Ally,True) [20,20] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing, Vulnerary] NoAI
+	UNIT Atlas Axeman 0x00 Level(3,Ally,True) [19,19] 0x00 0x00 0x0 0x00 [BaseAxe, Hatchet, Vulnerary] NoAI
+	UNIT Hyas Cavalier 0x00 Level(6,Ally,True) [21,19] 0x00 0x00 0x0 0x00 [BaseLance, SteelLance, Vulnerary] NoAI
 	UNIT
+#else
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	//group 2
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	//group 3
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [18,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT
+#endif
 
 Ch3_5C_CutsceneUnits:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT
 
 EnemyUnits:
 	UNIT Grieth DreadFighter Grieth Level(5, Enemy, False) [20,2] DropItem 0x00 0x0 0x00 [SteelSword,Pegacheese] NeverMoveAI
-	UNIT CantorBoss_Bonewalkers Cantor Grieth Level(5, Enemy, True) [16,2] 0x00 0x00 0x0 0x00 [Miasma, Invoke] CantorAI
-	UNIT 0x8B Arcanist	Grieth Level(6, Enemy, True) [20,3]	0x00 0x00 0x0 0x00 [Miasma, Heal] ChaseOnceApproachedAI
-	UNIT 0x67 Myrmidon	Grieth Level(8, Enemy, True) [18,3]	0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
-	UNIT 0x8B Arcanist	Grieth Level(6, Enemy, True) [18,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] ChaseOnceApproachedAI
-	UNIT 0x67 Myrmidon	Grieth Level(8, Enemy, True) [20,5]	0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
+	
+	UNIT 0x8B Arcanist	Grieth Level(6, Enemy, True) [19,3]	0x00 0x00 0x0 0x00 [Miasma, Heal] MoveAndHealAI
+	UNIT 0x8B Arcanist	Grieth Level(6, Enemy, True) [21,3]	0x00 0x00 0x0 0x00 [Miasma, Heal] MoveAndHealAI
+
 	//outside throne room
-	UNIT 0x88 Knight	Grieth Level(9, Enemy, True) [14,4]	0x00 0x00 0x0 0x00 [IronAxe] NeverMoveAI
-	UNIT 0x89 Sniper	Grieth Level(8, Enemy, True) [12,4]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x88 Knight	Grieth Level(5, Enemy, True) [14,4]	0x00 0x00 0x0 0x00 [SteelAxe] NeverMoveAI
 	UNIT 0x8B Shaman	Grieth Level(13, Enemy, True) [8,5]	0x00 0x00 0x0 0x00 [Miasma] NoAI
-	UNIT 0x67 Mercenary	Grieth Level(15, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [IronSword] DelayedRushAI
-	UNIT 0x8C Witch	Grieth Level(6, Enemy, True) [13,7]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
-	UNIT 0x8C Witch	Grieth Level(6, Enemy, True) [11,7]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
-	UNIT 0x89 Sniper	Grieth Level(8, Enemy, True) [11,10]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x67 Myrmidon	Grieth Level(7, Enemy, True) [10,13]	0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT 0x88 Knight	Grieth Level(9, Enemy, True) [9,17]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
-	UNIT 0x65 Pirate_F	Grieth Level(17, Enemy, True) [14,12]	0x00 0x00 0x0 0x00 [IronAxe] NoAI
-	UNIT 0x65 Pirate	Grieth Level(17, Enemy, True) [15,12]	0x00 0x00 0x0 0x00 [IronAxe] NoAI
-	UNIT 0x89 Sniper	Grieth Level(8, Enemy, True) [18,11]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x67 Myrmidon	Grieth Level(7, Enemy, True) [19,13]	0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT 0x88 Knight	Grieth Level(9, Enemy, True) [20,17]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x8C Witch	Grieth Level(7, Enemy, True) [3,5]	0x00 0x00 0x0 0x00 [Fire, Rewarp] WitchWarpAI
-	UNIT 0x89 Sniper	Grieth Level(8, Enemy, True) [4,7]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x67 Mercenary	Grieth Level(15, Enemy, True) [5,9]	0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT 0x88 Knight	Grieth Level(8, Enemy, True) [3,13]	0x00 0x00 0x0 0x00 [SteelAxe] NeverMoveAI
-	UNIT 0x88 Knight	Grieth Level(8, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
-	UNIT 0x89 Sniper	Grieth Level(9, Enemy, True) [13,16]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x8B Shaman	Grieth Level(13, Enemy, True) [16,16]	0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	
+	UNIT 0x67 Myrmidon	Grieth Level(6, Enemy, True) [12,6]	DropItem 0x00 0x0 0x00 [Zanbato,SteelShield,DoorKey] AttackInHalfRangeAI
+	UNIT 0x8C Witch	Grieth Level(6, Enemy, True) [13,7]	0x00 0x00 0x0 0x00 [Fire] AttackInHalfRangeAI
+	UNIT 0x8C Witch	Grieth Level(6, Enemy, True) [11,7]	0x00 0x00 0x0 0x00 [Nosferatu] AttackInHalfRangeAI
+	
+	UNIT 0x89 Sniper	Grieth Level(5, Enemy, True) [11,4]	DropItem 0x00 0x0 0x00 [RadiantBow,DoorKey] AttackInRangeAI
+	UNIT 0x67 Mercenary	Grieth Level(15, Enemy, True) [10,12]	0x00 0x00 0x0 0x00 [Armorslayer] DelayedRushAI
+	UNIT 0x65 Pirate_F	Grieth Level(15, Enemy, True) [14,12]	0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT 0x65 Pirate	Grieth Level(15, Enemy, True) [15,12]	0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT 0x67 Mercenary	Grieth Level(14, Enemy, True) [19,12]	0x00 0x00 0x0 0x00 [SteelSword] DelayedRushAI
+	UNIT 0x88 Knight	Grieth Level(4, Enemy, True) [20,17]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT 0x88 Knight	Grieth Level(4, Enemy, True) [10,17]	0x00 0x00 0x0 0x00 [HeavySpear] NeverMoveAI
+	UNIT 0x88 Knight	Grieth Level(4, Enemy, True) [19,17]	0x00 0x00 0x0 0x00 [Hammer] NeverMoveAI
+	UNIT 0x88 Knight	Grieth Level(4, Enemy, True) [9,17]	DropItem 0x00 0x0 0x00 [HandAxe] NeverMoveAI
+	UNIT 0x8C Witch	Grieth Level(7, Enemy, True) [11,14]	0x00 0x00 0x0 0x00 [Fire, Rewarp] WitchWarpAI
+	UNIT 0x89 Sniper	Grieth Level(5, Enemy, True) [4,7]	0x00 0x00 0x0 0x00 [IronBow] AttackInHalfRangeAI
+	UNIT 0x67 Mercenary	Grieth Level(14, Enemy, True) [5,9]	DropItem 0x00 0x0 0x00 [Ilwoon] NoAI
+	UNIT 0x88 Knight	Grieth Level(5, Enemy, True) [3,13]	0x00 0x00 0x0 0x00 [SteelAxe] NeverMoveAI
+	UNIT 0x88 Knight	Grieth Level(6, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
+	UNIT 0x89 Sniper	Grieth Level(4, Enemy, True) [14,15]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x89 Sniper	Grieth Level(4, Enemy, True) [15,15]	DropItem 0x00 0x0 0x00 [IronBow,DoorKey] AttackInRangeAI
+	UNIT 0x8B Shaman	Grieth Level(11, Enemy, True) [16,15]	0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT 0x8B Shaman	Grieth Level(11, Enemy, True) [13,15]	0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT
 
-ZombieGroup:
-	UNIT 0xAC Bonewalker CantorBoss_Bonewalkers Level(7,Enemy,True) [17,2] 0x04 0x00 0x1 REDA17R2 [BaseSword] NoAI
-	UNIT 0xAC Bonewalker CantorBoss_Bonewalkers Level(7,Enemy,True) [16,3] 0x04 0x00 0x1 REDA16R3 [BaseSword] NoAI
-	UNIT 0xAC Bonewalker CantorBoss_Bonewalkers Level(7,Enemy,True) [14,2] 0x04 0x00 0x1 REDA14R2 [BaseLance] NoAI
+SpawnCantor:
+	UNIT CantorBoss_Bonewalkers Cantor Grieth Level(5, Enemy, True) [16,2] 0x00 0x00 0x0 0x00 [Miasma, Invoke] CantorAI
 	UNIT
 
-Reinforcements1:
-	UNIT 0x67 Mercenary	Grieth Level(15, Enemy, True) [14,16]	0x00 0x00 0x1 REDA14R16 [IronSword] NoAI
-	UNIT 0x67 Mercenary	Grieth Level(15, Enemy, True) [15,16]	0x00 0x00 0x1 REDA15R16 [IronSword] NoAI
+ArcherReinforcements:
+	UNIT 0x67 Archer	Grieth Level(14, Enemy, True) [19,7]	0x00 0x00 0x1 REDA19R7 [SteelBow] NoAI
 	UNIT
 	
-Reinforcements2:
+ThiefReinforcement:
 	UNIT 0x67 Thief 0x00 Level(15, Enemy, True) [4,5]	0x00 0x00 0x1 REDA4R5 [BaseSword,Lockpick] StealingThiefAI
 	UNIT
 	
-Reinforcements3:
-	UNIT 0x67 0x17 0x00 Level(4, Enemy, True) [17,6]	0x00 0x00 0x1 REDA17R6 [BaseSword,Lockpick] StealingThiefAI
+PirateReinforcements:
+	UNIT 0x65 Pirate_F	Grieth Level(17, Enemy, True) [4,5]	0x00 0x00 0x1 REDA4R5 [SteelAxe] NoAI
 	UNIT
 	
-Reinforcements4:
-	UNIT 0x65 Pirate	Grieth Level(18, Enemy, True) [19,3]	0x00 0x00 0x1 REDA19R3 [IronAxe] NoAI
-	UNIT 0x65 Pirate_F	Grieth Level(18, Enemy, True) [20,4]	0x00 0x00 0x1 REDA20R4 [IronAxe] NoAI
-	UNIT
-	
-Reinforcements5:
-	UNIT 0x8B Shaman	Grieth Level(12, Enemy, True) [13,3]	0x00 0x00 0x1 REDA13R3 [Miasma] NoAI
+ShamanReinforcements:
+	UNIT 0x8B Shaman	Grieth Level(11, Enemy, True) [19,7]	0x00 0x00 0x1 REDA19R7 [Mire] NoAI
 	UNIT
 	
 EstJoins:
@@ -195,8 +214,13 @@ Ch3_5C_BeginningScene:
 	STAL 20
 	Text(Ch3_5C_OpeningText_2) //celica yells at grieth
 	FADI 60
-	LOAD3 0x0 Ch3_5C_Units1 
-	ENUN
+	#ifdef __DEBUG__
+		LOAD1 0x1 Ch3_5C_Units1
+		ENUN
+	#else
+		LOAD3 0x0 Ch3_5C_Units1 
+		ENUN
+	#endif
 	GotoPrepScreen
 	ENDA
 
@@ -218,9 +242,10 @@ Ch3_5C_EndingScene:
 	REMA
 	
 	//cutscene Ch3_5C_EndingText_CG
+	FADI 2
 	REMOVEPORTRAITS
-	FADI 8
-	SetBackground(LipricaCG) //actual cg
+	BACG LipricaCG //actual cg
+	FADU 2
 	REMOVEPORTRAITS
 	STAL 90
 	_0x1A22
@@ -229,7 +254,7 @@ Ch3_5C_EndingScene:
 	FADI 5
 	REMA
 	
-	SetBackground(0x17) //dungeon cell
+	SetBackground(0x17, 2) //dungeon cell
 	Text(Ch3_5C_EndingText_2) //irma 2
 	
 	MUSC 0x31 //victory
@@ -252,29 +277,30 @@ Ch3_5C_EndingScene:
 		CHECK_ALIVE Catria
 		BEQ 0x5 0xC 0x0
 			Text(Ch3_5C_EndingText_GetEst)
+			NoFade
 	LABEL 0x5
 	Text(Ch3_5C_EndingText_EstOnly)
+	CharacterJoinedNotification(Notif_EstJoin)
 	FADI 5
 	LOAD1 0x1 EstJoins
 	ENUN
-	CharacterJoinedNotification(Notif_EstJoin)
 	
 	//get deen or sonya
 	SetBackground(0x0C)
 	CHECK_EVENTID gFightSonyaChosen
 	BEQ 0x6 0xC 0x0
 		Text(Ch3_5C_EndingText_GetDeen)
+		CharacterJoinedNotification(Notif_DeenJoin)
 		FADI 2
 		LOAD1 0x1 DeenJoins
 		ENUN
-		CharacterJoinedNotification(Notif_DeenJoin)
 		GOTO 0x7
 	LABEL 0x6
 		Text(Ch3_5C_EndingText_GetSonya)
+		CharacterJoinedNotification(Notif_SonyaJoin)
 		FADI 2
 		LOAD1 0x1 SonyaJoins
 		ENUN
-		CharacterJoinedNotification(Notif_SonyaJoin)
 	LABEL 0x7
 	
 	MNCH 0x1C

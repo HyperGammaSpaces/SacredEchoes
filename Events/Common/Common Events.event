@@ -47,6 +47,8 @@ UnifiedBEXPCaller:
 	ENDA
 	
 #define CharacterJoinedNotification(textID) "SOUN 0x5A; NOTIFY textID 0x0 0x0; STAL 30"
+
+#define SetBackground(background,speed) "REMOVEPORTRAITS; BACG background; FADU speed"
 	
 ALIGN 4
 //usage example: 
@@ -54,7 +56,7 @@ ALIGN 4
 
 #define HiddenItem(itemID) "SVAL 0x2 0x0; CALL Area_Allegiance_Check; CHECK_LUCK 0xFFFF; SADD 0xC2; SVAL 0x3 itemID; CALL HiddenItem_Check; BNE 0x81C5 0xC 0x0; CALL Area_Unset_Flag; LABEL 0x81C5; EVBIT_T 0x7; ENDA"
 
-#define SummonReinforcementEvent(unitPtr) "SVAL 0x2 0x0; CALL EnemyRandomizerHelper; SMOV 0x2 (unitPtr|0x8000000); CALL $9EE274; EVBIT_T 0x7; ENDA"
+#define SummonReinforcementEvent(unitPtr) "SVAL 0x2 0x0; CALL EnemyRandomizerHelper; SMOV 0x2 (unitPtr|0x8000000); CALL $9EE274; EVBIT_T 0x7"
 
 Area_Allegiance_Check:
 	CHECK_ALLEGIANCE 0xFFFF

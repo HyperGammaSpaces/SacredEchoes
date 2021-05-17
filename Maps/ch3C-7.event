@@ -2,16 +2,6 @@
 
 #include eastdlib.event
 
-SetChapterData(0x1D,plTowerObj,0,plMilaTemplePalette,plTowerConf,plCh3C_7_Map,Map,plTowerAnim,0x0,plCh3C_7_Chg)
-EventPointerTable(plCh3C_7_Chg, MapChanges)
+SetChapterData(0x1D,plTowerObj,0,plMilaTemplePalette,plTowerConf,plCh3C_7_Map,Map,plTowerAnim,0x0,0)
 Map:
 #incbin "ch3C-7_data.dmp"
-
-MapChanges:
-TileMap(0,4,9,1,1,Map_Change_0)
-TileMapEnd
-
-Map_Change_0:
-SHORT 0x110 
-ALIGN 4
-
