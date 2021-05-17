@@ -5,6 +5,24 @@
 
 #include eastdlib.event
 
+//Chapter Data definitions:
+//Weather:
+#define Weather_None 0x0
+#define Weather_Snow 0x1
+#define Weather_Blizzard 0x2
+#define Weather_Blue 0x3
+#define Weather_Rain 0x4
+#define Weather_Lava 0x5
+#define Weather_Sandstorm 0x6
+#define Weather_CloudBG 0x7
+
+//Objective
+#define Obj_Seize 0x0
+#define Obj_Rout 0x1
+#define Obj_Defend 0x2
+#define Obj_Boss 0x3
+#define Obj_Escape 0x4
+
 //Weapon Ability 1 definitions:
 #define IsWeapon 0x1
 #define IsMagic 0x2
@@ -51,6 +69,9 @@
 #define CritBoost 0x40
 #define UseBallista 0x80
 
+#define MountWithCanto 0x3
+#define ThiefAbility 0xC
+
 //Ability 2 definitions:
 #define IsPromoted 0x1
 #define IsSupply 0x2
@@ -93,6 +114,48 @@
   #define UnlockLock3 0x40
   #define UnlockLock4 0x80
 #endif
+#define UnlockAlm 0x10
+#define UnlockCelica 0x20
+
+//Walk Speed
+#define Walk_Slow 0x1
+
+//Terrain bonus/Movement cost
+#define LordMovement 0x880b808
+#define InfantryMovement 0x880b849
+#define ArmorMovement 0x880b88a
+#define AxemanMovement 0x880b8cb
+#define BerserkerMovement 0x880b90c
+#define BrigandMovement 0x880b94d
+#define PirateMovement 0x880b98e
+#define ThiefMovement 0x880b9cf
+#define MageMovement 0x880ba10
+#define CivilianMovement 0x880ba51
+#define Horse1Movement 0x880ba92
+#define Horse2Movement 0x880bad3
+#define Beast1Movement 0x880bb14
+#define Beast2Movement 0x880bb55
+#define FlierMovement 0x880bb96
+#define DumaMovement 0x880bbd7
+
+#define TerrainBonus_Infantry_Avo 0x880c479
+#define TerrainBonus_Flier_Avo 0x880c53c
+#define TerrainBonus_Infantry_Def 0x880c4ba
+#define TerrainBonus_Flier_Def 0x880c57d
+
+//Weapon rank
+#define W_Rank_E 0x1
+#define W_Rank_D 0x1F
+#define W_Rank_C 0x47
+#define W_Rank_B 0x79
+#define W_Rank_A 0xB5
+#define W_Rank_S 0xFB
+
+#define W_Effect_Poison 0x1
+#define W_Effect_Eclipse 0x5
+#define W_Effect_Devil 0x6
+#define W_Effect_Drain 0x7
+#define W_Effect_Stone 0xF
 
 //Custom definitions go here:
 #define IsPointer 0x8000000
