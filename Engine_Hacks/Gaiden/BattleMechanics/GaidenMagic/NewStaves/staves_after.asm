@@ -13,6 +13,36 @@
 .equ ExpelID, 0x4C
 .thumb
 
+.global PostCombat_SpellClear
+PostCombat_SpellClear:
+	push {lr}
+	ldrb 	r0, [r6,#0x11]	@action taken this turn
+	cmp 	r0, #0x1 @waited
+	beq		ClearStart
+	cmp		r0, #0x2 @attacked
+	beq 	ClearStart
+	cmp	    r0, #0x3 @used a staff
+	beq 	ClearStart
+	b EndClear
+	
+	ClearStart:
+	ldrb 	r0, [r6, #0x0C]	@allegiance byte of the current character taking action
+	ldrb	r1, [r4, #0x0B]	@allegiance byte of the character we are checking
+	cmp	    r0, r1		@check if same character
+	bne	    EndClear
+	
+		ldr 	r2, =SelectedSpellPointer
+		mov 	r0, #0x0
+		str 	r0, [r2]
+		strb	r0, [r6, #0x6] @item id
+		
+	EndClear:
+	pop	{r0}
+	bx	r0
+
+	.align
+	.ltorg
+
 .global PostCombat_Unlock
 PostCombat_Unlock:
 	push	{lr}

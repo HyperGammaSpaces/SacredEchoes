@@ -62,7 +62,7 @@ ExecExpel:
 	ldrb r1, [r4, #0x12] @itemSlotIndex
 	blh  SetupBattleStructForStaffUser
 
-	mov  r0, r5
+	mov  r0, r7
 	blh  FinishUpItemBattle
 	blh  BeginBattleAnimations 
 
