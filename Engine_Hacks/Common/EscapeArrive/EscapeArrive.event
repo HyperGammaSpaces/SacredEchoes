@@ -4,17 +4,26 @@
 #define LordMustEscapeLastFlag 0x128
 #define AllUnitsMustEscapeFlag 0x129
 
-/*
-ALIGN 4
-LordMustEscapeLastFlagLink:
-SHORT LordMustEscapeLastFlag
-ALIGN 4
-AllUnitsMustEscapeFlagLink:
-SHORT AllUnitsMustEscapeFlag
-ALIGN 4
-LordMustEscapeLastTextIDLink:
-SHORT LordMustEscapeLastText
-*/
+#include "UnitMenu.lyn.event"
+
+SetUnitAction(0x28, ActionRoutine(0x32270+1))
+PUSH
+
+	ORG UM_Arrive_Definition
+	POIN $D7E9C 
+	SHORT Cmd_Arrive
+	SHORT Desc_Cmd_Arrive
+	BYTE  NormalText
+	BYTE  $4E
+	SHORT 0
+	POIN ArriveCommandUsability|1
+	WORD 0
+	POIN ArriveCommandEffect|1
+	WORD 0
+	WORD 0
+	WORD 0
+
+POP
 
 ALIGN 4
 RefEscapeTable:
