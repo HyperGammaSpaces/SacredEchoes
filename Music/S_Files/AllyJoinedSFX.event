@@ -1,0 +1,97 @@
+//Event file generated from Sappy .s format.
+	#include "MPlayDef.event"
+
+	#define	AllyJoinedSFX_grp  voicegroup000
+	#define	AllyJoinedSFX_pri  0
+	#define	AllyJoinedSFX_rev  0
+	#define	AllyJoinedSFX_mvl  85
+	#define	AllyJoinedSFX_key  0
+	#define	AllyJoinedSFX_tbs  1
+	#define	AllyJoinedSFX_exg  0
+	#define	AllyJoinedSFX_cmp  1
+
+	// .rodata
+	//	AllyJoinedSFX
+	ALIGN 4
+
+//**************** Track 1 (Midi-Chn.1) ****************//
+
+AllyJoinedSFX_1:
+	BYTE	KEYSH   AllyJoinedSFX_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   86
+	BYTE		PAN     c_v+12
+	BYTE		VOL     90*AllyJoinedSFX_mvl/mxv
+	BYTE		N04     Cn3   v080
+	BYTE		N04     Cn4 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE		N04     Cn4 
+	BYTE	W06
+	BYTE		        Cn3 
+	BYTE		N04     Cn4 
+	BYTE	W06
+	BYTE		N30     Dn3 
+	BYTE		N30     As3 
+	BYTE	W36
+	BYTE		N06   
+	BYTE	W18
+	BYTE	FINE
+
+//**************** Track 2 (Midi-Chn.2) ****************//
+
+AllyJoinedSFX_2:
+	BYTE	KEYSH   AllyJoinedSFX_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   85
+	BYTE		VOL     82*AllyJoinedSFX_mvl/mxv
+	BYTE		PAN     c_v-14
+	BYTE		N06     Gs2   v080
+	BYTE	W06
+	BYTE		N06   
+	BYTE	W06
+	BYTE		N06   
+	BYTE	W06
+	BYTE		N30     As2 
+	BYTE	W54
+	BYTE	FINE
+
+//**************** Track 3 (Midi-Chn.3) ****************//
+
+AllyJoinedSFX_3:
+	BYTE	KEYSH   AllyJoinedSFX_key+0
+// 000   ----------------------------------------
+	BYTE		VOICE   127
+	BYTE		VOL     100*AllyJoinedSFX_mvl/mxv
+	BYTE		N06     Dn1   v080
+	BYTE	W06
+	BYTE		N06   
+	BYTE	W06
+	BYTE		N06   
+	BYTE	W06
+	BYTE		N30     Ds1 
+	BYTE	W30
+	BYTE		N06     Dn1 
+	BYTE		N06     An1 
+	BYTE	W06
+	BYTE		        Fn1 
+	BYTE		N18     Cs2 
+	BYTE	W18
+	BYTE	FINE
+
+//******************************************************//
+	ALIGN 4
+
+AllyJoinedSFX:
+	BYTE	3	// NumTrks
+	BYTE	0	// NumBlks
+	BYTE	AllyJoinedSFX_pri	// Priority
+	BYTE	AllyJoinedSFX_rev	// Reverb.
+
+	POIN2	AllyJoinedSFX_grp
+
+	POIN2	AllyJoinedSFX_1
+	POIN2	AllyJoinedSFX_2
+	POIN2	AllyJoinedSFX_3
+
+	
