@@ -46,7 +46,7 @@ UnifiedBEXPCaller:
 	NOTIFY BEXP_Notif_Text 0x0 0x0
 	ENDA
 	
-#define CharacterJoinedNotification(textID) "SOUN 0xE8; NOTIFY textID 0x0 0x0; STAL 30"
+#define CharacterJoinedNotification(textID) "EVBIT_T 0x5; EVBIT_T 0x7; SOUN 0xE8; NOTIFY textID 0x0 0x0;EVBIT_F 0x5; STAL 30; EVBIT_F 0x7"
 
 #define SetBackground(background,speed) "REMOVEPORTRAITS; BACG background; FADU speed"
 	

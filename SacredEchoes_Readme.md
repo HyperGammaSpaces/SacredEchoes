@@ -226,18 +226,22 @@ Some things are still under development for later releases.
 - Teraspark’s staff/item range rework
 - Stan's Movement Skills
 - laqieer's world map installation utilities
+- Huichelaar's world map flags upgrades
 - Assorted small tweaks and patches by Stan, Tequila, Crazycolorz5, Vennobennu, Leonarth, 7743 and aera
   - Extra shout out to Stan and Snakey1 for finally squashing the remaining bugs in the magic system!
 - Music hacking utilities by Sme and Alusq
 - Music arrangements based on Echoes OST and on Gaiden MIDI remixes by 雨原
   - "Lord of a Dead Empire" arrangement by Mycahel
+  - "What Lies at the End" sheet music by TorbyBrand on Musescore
+  - "Revelations" sheet music by hinaflower on Musescore
+  - Title theme sheet music by Spencer Riffle on Musescore
 - NGMansion for original save expansion patch; Stan for Expanded Modular Save and Tequila for Convoy Split
 - Portraits:
   - Jedah and Duma by L95
   - Zopyrus by RandomWizard and Levin64
   - all others by hypergammaspaces or IS
 - Battle Animations: 
-  - Alm, Villagers, Snipers, Pirate (F), Dread Fighter, Vestal, Wyvern Lord, Gold Knight and Cape General by Nura
+  - Alm, Villagers, Snipers, Pirate (F), Dread Fighter, Vestal, Nuibaba, Wyvern Lord, Gold Knight and Cape General by Nura
   - Pirate (M) Repalette by Wan
   - Berserker (M) by BwdYeti
   - Berserker (F) by serif, eCut, Skitty, and Pikmin1211
@@ -267,7 +271,7 @@ Some things are still under development for later releases.
   - Fiend (Generic King by Huichelaar, DerTheVaporeon, L95 and Pikmin1211)
   - Deathgoyle by Teraspark and L95
   - Duma mapsprite by SHYUTERz, HIROTO, and SHIRMER
-- Map sprites and class cards by flasuban, Tordo45, SkidMarc25, Leif, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, Snewping, MeatOfJustice, DerTheVaporeon, FEier, and Team SALVAGED
+- Map sprites and class cards by flasuban, Tordo45, SkidMarc25, Leif, TAS20XX, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, Snewping, MeatOfJustice, DerTheVaporeon, FEier, and Team SALVAGED
 - Battle palettes by Hypergammaspaces and Dancer_A
 - LordGlenn's Cipher icons for weapon ranks, weapon icons for Regalia weapons
 - Cardcafe’s Echoes item icons and FEier's Weapon icons
@@ -276,10 +280,11 @@ Some things are still under development for later releases.
   - Flare: Clive/Mathilda B and A
 - Snakey1's REDA helpers, Support rework, MSS fixes and event cleanup
 - RandomWizard for boss conversations and text formatting help, and "The Siege" map
-- Levin64 for story writing assistance
+- Levin64 and Tea for story writing assistance and proofreading
 - Pikmin1211 for eventing and enemy placement on "The Warship", "Zofia Harbor", "Invaders Descend" and "The Siege"
 - ZoramineFae for "The Warship" map
-- KrashBoomBang for "Invaders Descend", "Unholy Blade" and Sylvan Shrine map
+- KrashBoomBang for "Unholy Blade" and Sylvan Shrine map
+- Frigid for "Maiden of Darkness" and "Breaking the Chains" maps
 - Dancer_A for Grieth's Citadel and Nuibaba's Abode maps, boss conversations
 - Sme for TrapRework and assistance with summoner AI
 - Vennobennu's Improved FE8 Boat/Village Tileset
