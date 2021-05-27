@@ -25,6 +25,12 @@ PUSH
   
 POP
 
+
+{
+	#include "S_Files/TitleTheme.event"
+	SongTable(0x43,TitleTheme,BattleMusicGroup)
+}
+ALIGN 4
 {
 	#include "S_Files/MapIntroOpening.event"
 	SongTable(0x3,MapIntroOpening,MapMusicGroup)
@@ -88,6 +94,11 @@ ALIGN 4
 {
 	#include "S_Files/DesertTheme.event"
 	SongTable(0xD,DesertTheme,MapMusicGroup)
+}
+ALIGN 4
+{
+	#include "S_Files/WhatLiesAtTheEnd.event"
+	SongTable(0xE,WhatLiesAtTheEnd,MapMusicGroup)
 }
 ALIGN 4
 
@@ -193,6 +204,13 @@ ALIGN 4
 }
 ALIGN 4
 
+
+{
+	#include "S_Files/TurnwheelTheme.event"
+	SongTable(0x2C,TurnwheelTheme,MapMusicGroup)
+}
+ALIGN 4
+
 {
 	#include "S_Files/MilaIdolBGM.event"
 	SongTable(0x37,MilaIdolBGM,MapMusicGroup)
@@ -238,5 +256,11 @@ ALIGN 4
 {
 	#include "S_Files/LimaDiesBellSFX.event"
 	SongTable(0xE4,LimaDiesBellSFX,SFXGroup)
+}
+ALIGN 4
+
+{
+	#include "S_Files/AllyJoinedSFX.event"
+	SongTable(0xE8,AllyJoinedSFX,SFXGroup)
 }
 ALIGN 4
