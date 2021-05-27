@@ -147,8 +147,8 @@ CutsceneUnits:
 	
 NomahJoins:
 	UNIT Nomah Bishop 0x00 Level(7,Ally,False) [12,21] 0x00 0x00 0x1 REDA12R19 [Fire, Elixir] NoAI
-	UNIT 0xC0 Priestess Nomah Level(5,NPC,True) [12,21] 0x00 0x00 0x1 REDA13R20 [BaseSword,Fire] MoveWithLeaderAI
-	UNIT 0xC1 Saint Nomah Level(5,NPC,True) [12,21] 0x00 0x00 0x1 REDA11R20 [Nosferatu,Physic,Elixir] MoveAndHealAI
+	UNIT 0xC0 Priestess Nomah Level(7,NPC,True) [12,21] 0x00 0x00 0x1 REDA13R20 [HolySword,Fire,HideShield] MoveWithLeaderAI
+	UNIT 0xC1 Saint Nomah Level(7,NPC,True) [12,21] 0x00 0x00 0x1 REDA11R20 [Nosferatu,Physic,HideShield,Elixir] MoveAndHealAI
 	UNIT
 
 EnemyUnits:
@@ -157,50 +157,50 @@ EnemyUnits:
 	UNIT Terror_Wight_Bow Wight_Bow Mikhail Level(2, Enemy, True) [7,5] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
 	UNIT Terror_Wight_Bow Wight_Bow Mikhail Level(2, Enemy, True) [17,5] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
 	//gargoyles
-	UNIT Terror_Deathgoyle Deathgoyle	Mikhail Level(4, Enemy, True) [3,4]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT Terror_Deathgoyle Deathgoyle	Mikhail Level(4, Enemy, True) [21,4]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Terror_Deathgoyle Deathgoyle	Mikhail Level(2, Enemy, True) [3,4]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Terror_Deathgoyle Deathgoyle	Mikhail Level(2, Enemy, True) [21,4]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
 	
 	//fat wights
 	UNIT Terror_Wight Wight	Mikhail Level(2, Enemy, True) [5,9]	0x00 0x00 0x0 0x00 [SteelLance] NeverMoveAI
-	UNIT Terror_Wight_Bow Wight_Bow	Mikhail Level(2, Enemy, True) [5,10]	0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
+	UNIT Terror_Wight_Bow Wight_Bow	Mikhail Level(2, Enemy, True) [5,10]	DropItem 0x00 0x0 0x00 [IronBow] NeverMoveAI
 	UNIT Terror_Wight Wight	Mikhail Level(2, Enemy, True) [19,9]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
 	UNIT Terror_Wight_Bow Wight_Bow	Mikhail Level(2, Enemy, True) [19,10]	0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
 	
 	//main hallway
-	UNIT Terror_Gargoyle Gargoyle	Mikhail Level(14, Enemy, True) [11,8]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
-	UNIT Terror_Deathgoyle Deathgoyle	Mikhail Level(5, Enemy, True) [12,9]	0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
-	UNIT Terror_Gargoyle Gargoyle	Mikhail Level(14, Enemy, True) [13,8]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Terror_Gargoyle Gargoyle	Mikhail Level(12, Enemy, True) [11,8]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Terror_Deathgoyle Deathgoyle	Mikhail Level(2, Enemy, True) [12,9]	0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
+	UNIT Terror_Gargoyle Gargoyle	Mikhail Level(12, Enemy, True) [13,8]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
 	UNIT 0x94 Witch	Mikhail Level(9, Enemy, True) [10,12]	0x00 0x00 0x0 0x00 [Fire, Rewarp] WitchWarpAI
 	UNIT Terror_Entombed Entombed	Mikhail Level(5, Enemy, True) [12,11]	0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
 	UNIT 0x94 Witch	Mikhail Level(9, Enemy, True) [14,12]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	
 	//tarvos
-	UNIT Terror_Tarvos Tarvos	Mikhail Level(15, Enemy, True) [2,10]	0x00 0x00 0x0 0x00 [Hammer] NoAI
-	UNIT Terror_Tarvos Tarvos	Mikhail Level(15, Enemy, True) [3,11]	0x00 0x00 0x0 0x00 [IronAxe] NoAI
-	UNIT Terror_Tarvos Tarvos	Mikhail Level(15, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [SteelAxe] NoAI
-	UNIT Terror_Tarvos Tarvos	Mikhail Level(15, Enemy, True) [22,10]	0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Terror_Tarvos Tarvos	Mikhail Level(11, Enemy, True) [2,10]	0x00 0x00 0x0 0x00 [Hammer] DelayedRushAI
+	UNIT Terror_Tarvos Tarvos	Mikhail Level(11, Enemy, True) [3,11]	DropItem 0x00 0x0 0x00 [IronAxe] DelayedRushAI
+	UNIT Terror_Tarvos Tarvos	Mikhail Level(11, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [SteelAxe] DelayedRushAI
+	UNIT Terror_Tarvos Tarvos	Mikhail Level(11, Enemy, True) [22,10]	0x00 0x00 0x0 0x00 [IronAxe] DelayedRushAI
 	
 	//misc mix
-	UNIT 0x92 Shaman	Mikhail Level(15, Enemy, True) [11,10]	0x00 0x00 0x0 0x00 [Sisyphus] NoAI
-	UNIT 0x92 Arcanist	Mikhail Level(9, Enemy, True) [8,11]	0x00 0x00 0x0 0x00 [Miasma, Physic] MoveAndHealAI
-	UNIT 0x92 Arcanist	Mikhail Level(9, Enemy, True) [13,10]	0x00 0x00 0x0 0x00 [Miasma, Physic] MoveAndHealAI
-	UNIT 0x92 Shaman	Mikhail Level(15, Enemy, True) [16,11]	0x00 0x00 0x0 0x00 [Selene] NoAI
-	UNIT 0x92 Shaman	Mikhail Level(15, Enemy, True) [17,16]	0x00 0x00 0x0 0x00 [Mire] NoAI
-	UNIT 0x92 Shaman	Mikhail Level(15, Enemy, True) [7,16]	0x00 0x00 0x0 0x00 [Selene] NoAI
-	UNIT Terror_ElderBael ElderBael	Mikhail Level(5, Enemy, True) [9,17]	0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
-	UNIT Terror_ElderBael ElderBael	Mikhail Level(5, Enemy, True) [15,17]	0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
-	UNIT Terror_Bael Bael	Mikhail Level(14, Enemy, True) [20,14]	0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
-	UNIT Terror_Bael Bael	Mikhail Level(14, Enemy, True) [4,14]	0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
+	UNIT 0x92 Shaman	Mikhail Level(14, Enemy, True) [11,10]	0x00 0x00 0x0 0x00 [Sisyphus] AttackInHalfRangeAI
+	UNIT 0x92 Arcanist	Mikhail Level(7, Enemy, True) [8,11]	0x00 0x00 0x0 0x00 [Miasma, Physic] [0x0F, 0x03]
+	UNIT 0x92 Arcanist	Mikhail Level(7, Enemy, True) [13,10]	0x00 0x00 0x0 0x00 [Miasma, Physic] [0x0F, 0x03]
+	UNIT 0x92 Shaman	Mikhail Level(14, Enemy, True) [16,11]	0x00 0x00 0x0 0x00 [Selene] AttackInHalfRangeAI
+	UNIT 0x92 Shaman	Mikhail Level(12, Enemy, True) [17,16]	0x00 0x00 0x0 0x00 [Mire] NoAI
+	UNIT 0x92 Shaman	Mikhail Level(14, Enemy, True) [7,16]	0x00 0x00 0x0 0x00 [Selene] NoAI
+	UNIT Terror_ElderBael ElderBael	Mikhail Level(3, Enemy, True) [9,17]	0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT Terror_ElderBael ElderBael	Mikhail Level(2, Enemy, True) [15,17]	0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
+	UNIT Terror_Bael Bael	Mikhail Level(13, Enemy, True) [20,14]	0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT Terror_Bael Bael	Mikhail Level(12, Enemy, True) [4,14]	0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
 	UNIT
 	
 MikhailSummons:
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(15, Enemy, True) [11,4] RandomMonsterTemplate 0x00 0x1 REDA11R4 NoItems NoAI
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(15, Enemy, True) [13,4] RandomMonsterTemplate 0x00 0x1 REDA13R4 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,4] RandomMonsterTemplate 0x00 0x1 REDA11R4 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,4] RandomMonsterTemplate 0x00 0x1 REDA13R4 NoItems NoAI
 	UNIT
 	
 RearSummons:
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(15, Enemy, True) [11,21] RandomMonsterTemplate 0x00 0x1 REDA11R21 NoItems NoAI
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(15, Enemy, True) [13,21] RandomMonsterTemplate 0x00 0x1 REDA13R21 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,21] RandomMonsterTemplate 0x00 0x1 REDA11R21 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,21] RandomMonsterTemplate 0x00 0x1 REDA13R21 NoItems NoAI
 	UNIT
 	
 
@@ -237,7 +237,7 @@ Ch3_7C_EndingScene:
 	Text(Ch3_7C_EndingText)
 	FADI 16
 	MUSC 0x8
-	SetBackground(0x2F)
+	SetBackground(0x2F, 2)
 	TEXTSTART
 	TEXTSHOW Ch3_7C_EndingText_2
 	TEXTEND
@@ -248,6 +248,11 @@ Ch3_7C_EndingScene:
 	TEXTCONT
 	TEXTEND
 	REMA
+	REMOVEPORTRAITS 
+	SVAL 0x3 TheZofia 
+	GIVEITEMTO Celica
+	EVBIT_T 0x7
+	
 	FADI 16
 	
 	//Celica promotes
@@ -278,9 +283,22 @@ Ch3_7C_EndingScene:
 	//Ending continues
 	SetBackground(0x2F, 2)
 	Text(Ch3_7C_EndingText_3)
+	
+	
+	//Nomah and priestesses here
+	CHECK_OTHERS
+	SVAL 0x2 0x1
+	BLE 0x12 0xC 0x2
+		//2 alive
+		Text(Ch3_7C_TwoPriestesses)
+		REMOVEPORTRAITS
+		SVAL 0x3 MilasBow 
+		GIVEITEMTO Celica
+		EVBIT_T 0x7
+	LABEL 0x12
 	FADI 5
 	STAL 10
-	SetBackground(0x2F)
+	SetBackground(0x2F,5)
 	Text(Ch3_7C_EndingText_SluiceGate)
 	EVBIT_MODIFY 0x1
 	CHECK_EVENTID gChapter3A7Completed

@@ -18,20 +18,31 @@ Ch3_6C_ThisChapter:
 	POIN Ch3_6C_BeginningScene Ch3_6C_EndingScene
 
 Ch3_6C_TurnBasedEvents:
-	TurnEventPlayer(0x0,LoadBrigands,5)
-	TurnEventPlayer(0x0,GargsSpawn,8)
-	TurnEventPlayer(0x0,FortMercsSpawn,10)
-	TurnEventPlayer(0x0,FortMagesSpawn,12)
+	TurnEventPlayer(0x0,LoadBrigandsLeft,1)
+	TurnEventPlayer(0x0,LoadBrigandsRight,4)
+	TurnEventPlayer(0x0,GargsSpawn,5)
+	TurnEventPlayer(0x0,GargsSpawn,6)
+	TurnEventPlayer(0x0,FortMercsSpawn,7)
+	TurnEventPlayer(0x0,FortMagesSpawn,9)
 	TURN
 
-LoadBrigands:
+//consider adding an AREA or TURN event to make the enemies on the right start rushing
+
+LoadBrigandsLeft:
 	LoadReinforcements(ReinforcementsTopLeft)
+	NoFade
+	ENDA
+	
+LoadBrigandsRight:
 	ReinforcementEvent(ReinforcementsTopRight)
 	NoFade
 	ENDA
 	
 GargsSpawn:
-	ReinforcementEvent(GargsTopLeft)
+	ReinforcementEvent(GargoylesLeft)
+	ReinforcementEvent(GargoylesRight)
+	NoFade
+	ENDA
 	
 FortMercsSpawn:
 	ReinforcementEvent(FortTop)
@@ -118,29 +129,29 @@ EnemyUnits:
 	//total: ~22
 	UNIT Blake Myrmidon	Blake Level(5, Enemy, False) [23,1]	DropItem 0x00 0x0 0x00 [Shadowblade] NeverMoveAI
 	//witches, mercs, myrms, sorcerers, archers, snipers
-	UNIT 0x92 Arcanist	Blake Level(7, Enemy, True) [24,2]	0x00 0x00 0x0 0x00 [Miasma,Physic] NeverMoveAI
+	UNIT 0x92 Arcanist	Blake Level(7, Enemy, True) [24,2]	0x00 0x00 0x0 0x00 [Miasma,Physic] [0x0F,0x03]
 	UNIT 0x92 Arcanist	Blake Level(7, Enemy, True) [22,2]	0x00 0x00 0x0 0x00 [Selene] NeverMoveAI
-	UNIT 0x87 Myrmidon	Blake Level(7, Enemy, True) [25,5]	0x00 0x00 0x0 0x00 [Rapier] AttackInRangeAI
-	UNIT 0x87 Myrmidon	Blake Level(8, Enemy, True) [24,8]	0x00 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
+	UNIT 0x87 Myrmidon	Blake Level(7, Enemy, True) [25,5]	0x00 0x00 0x0 0x00 [Rapier] DelayedRushAI
+	UNIT 0x87 Myrmidon	Blake Level(5, Enemy, True) [24,8]	0x00 0x00 0x0 0x00 [Lancereaver] DelayedRushAI
 	UNIT 0x94 Witch	Blake Level(6, Enemy, True) [20,6]	0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
 	//Snipers
-	UNIT 0x89 Sniper	Blake Level(7, Enemy, True) [12,11]	0x00 0x00 0x0 0x00 [SilverBow] ChaseOnceApproachedAI
-	UNIT 0x89 Sniper	Blake Level(9, Enemy, True) [6,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
-	UNIT 0x89 Sniper	Blake Level(8, Enemy, True) [3,9]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT 0x89 Sniper	Blake Level(4, Enemy, True) [12,11]	DropItem 0x00 0x0 0x00 [SilverBow] ChaseOnceApproachedAI
+	UNIT 0x89 Sniper	Blake Level(7, Enemy, True) [6,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper	Blake Level(6, Enemy, True) [3,9]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	//Forts North
-	UNIT 0x87 Mercenary	Blake Level(16, Enemy, True) [14,3]	0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT 0x87 Mercenary	Blake Level(16, Enemy, True) [14,4]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT 0x87 Mercenary	Blake Level(15, Enemy, True) [14,3]	0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT 0x87 Mercenary	Blake Level(15, Enemy, True) [14,4]	DropItem 0x00 0x0 0x00 [SteelSword] NoAI
 	//Middle area
-	UNIT 0x87 Mercenary	Blake Level(17, Enemy, True) [17,7]	0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT 0x87 Mercenary	Blake Level(14, Enemy, True) [18,8]	0x00 0x00 0x0 0x00 [Zweihander] NoAI
-	UNIT 0x87 Mercenary	Blake Level(16, Enemy, True) [19,9]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT 0x87 Mercenary	Blake Level(15, Enemy, True) [17,7]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT 0x87 Mercenary	Blake Level(13, Enemy, True) [18,8]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+	UNIT 0x87 Mercenary	Blake Level(14, Enemy, True) [19,9]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
 	UNIT 0x93 Shaman	Blake Level(14, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Miasma, Heal] AttackInRangeAI
 	UNIT 0x92 Shaman	Blake Level(14, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT 0x89 Archer	Blake Level(13, Enemy, True) [10,7]	0x00 0x00 0x0 0x00 [KillerBow] NeverMoveAI
 	UNIT 0x92 Shaman	Blake Level(9, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [Mire] NoAI
 	//South fort
-	UNIT 0x93 Shaman	Blake Level(14, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [Miasma] NoAI
-	UNIT 0x92 Shaman	Blake Level(10, Enemy, True) [21,12]	0x00 0x00 0x0 0x00 [Mire] NoAI
+	UNIT 0x93 Shaman	Blake Level(14, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT 0x92 Shaman	Blake Level(10, Enemy, True) [21,12]	0x00 0x00 0x0 0x00 [Mire] DelayedRushAI
 	UNIT
 	
 SkirmishEnemies:
@@ -156,33 +167,45 @@ ReinforcementsTopRight:
 	UNIT 0x64 Brigand	Blake Level(17, Enemy, True) [27,3]	0x00 0x00 0x1 REDA27R3 [IronAxe,TorchItem] BrigandAI
 	UNIT
 	
-GargsTopLeft:
-	UNIT 0xBB Gargoyle	Blake Level(17, Enemy, True) [0,0]	0x00 0x00 0x1 REDA0R0 [IronLance] NoAI
+GargoylesLeft:
+	UNIT 0xBB Gargoyle	Blake Level(12, Enemy, True) [9,1]	0x00 0x00 0x1 REDA9R1 [SteelLance] NoAI
+	UNIT
+	
+GargoylesRight:
+	UNIT 0xBB Gargoyle	Blake Level(12, Enemy, True) [27,3]	0x00 0x00 0x1 REDA27R3 [IronLance] NoAI
 	UNIT
 	
 //Two forts could spawn some guys too? [13,2] and [15,2]
 FortTop:
-	UNIT 0x87 Myrmidon	Blake Level(9, Enemy, True) [13,2]	0x00 0x00 0x1 REDA13R2 [SteelSword] NoAI
-	UNIT 0x87 Myrmidon	Blake Level(9, Enemy, True) [15,2]	0x00 0x00 0x1 REDA15R2 [IronSword] NoAI
+	UNIT 0x87 Myrmidon	Blake Level(3, Enemy, True) [13,2]	0x00 0x00 0x1 REDA13R2 [SteelSword] NoAI
+	UNIT 0x87 Myrmidon	Blake Level(5, Enemy, True) [15,2]	0x00 0x00 0x1 REDA15R2 [IronSword] NoAI
 	UNIT
 //Two forts could spawn some guys too? [22,14] and [24,14]
 FortBottom:
-	UNIT 0x92 Arcanist	Blake Level(9, Enemy, True) [22,14]	0x00 0x00 0x1 REDA22R14 [Sisyphus] NoAI
-	UNIT 0x92 Arcanist	Blake Level(9, Enemy, True) [24,14]	0x00 0x00 0x1 REDA24R14 [Miasma,Heal] NoAI
+	UNIT 0x92 Arcanist	Blake Level(5, Enemy, True) [22,14]	0x00 0x00 0x1 REDA22R14 [Sisyphus] NoAI
+	UNIT 0x92 Arcanist	Blake Level(5, Enemy, True) [24,14]	0x00 0x00 0x1 REDA24R14 [Miasma,Heal] NoAI
 	UNIT
 
 Ch3_6C_BeginningScene:
-	MUSC 0x25
+	MUSC 0x24
 	LOAD2 0x1 CutsceneUnits
+	ENUN
+	CAM1 Celica
+	LOAD1 0x1 EnemyUnits
 	ENUN
 	SetBackground(0x1D)
 	Text(Ch3_6C_OpeningText)
+	ClearBackgroundSmooth
+	STAL 30
+	CAM1 Blake
+	MUSC 0x15
+	FlashCursor(Blake,60)
+	Text(Ch3_6C_OpeningText_2)
 
 	FADI 60
 	REMA
 	CLEA 0x0
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	
 	#ifdef __DEBUG__
 		LOAD1 0x1 Ch3_6C_Units1
 		ENUN
