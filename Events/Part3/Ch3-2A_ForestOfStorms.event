@@ -122,9 +122,11 @@ LuthierJoins:
 Ch3_2A_BeginningScene:
 	MUSC 0x4A
 	CAM1 [8, 11]
+	EVBIT_T 0x9
 	VCWF 0x0
 	LOAD1 0x1 SlaydeCutscene
 	ENUN
+	EVBIT_F 0x9
 	FADU 5
 	MOVE 0x08 SlaydePaladin [8,2]
 	ENUN
@@ -136,8 +138,10 @@ Ch3_2A_BeginningScene:
 	Text(Ch3_2A_OpeningText)
 	ClearBackground
 	STAL 20
+	EVBIT_T 0x9
 	MOVE 0x08 SlaydePaladin [15,2]
 	ENUN
+	EVBIT_F 0x9
 	DISA SlaydePaladin
 	STAL 40
 	

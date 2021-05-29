@@ -40,6 +40,7 @@ WorldMapPointerTable(0x1B,WM_Ch26_GriethsBase)
 WorldMapPointerTable(0x1C,WM_Ch27_ValleyApproach)
 WorldMapPointerTable(0x1D,WM_Ch28_TempleOfMila)
 WorldMapPointerTable(0x1E,WM_Act4Start) //act 4 start
+WorldMapPointerTable(0x23,WM_Act4Start) //act 4 start
 WorldMapPointerTable(0x37,WM_NovisPriory)//do some celica stuff
 WorldMapPointerTable(0x38,WM_Ch6x)
 WorldMapPointerTable(0x39,WM_Hideout)
@@ -456,6 +457,58 @@ WM_Ch28_TempleOfMila: //temple of mila
 WM_Act4Start:
 	//Draw routes 0x20 and 0x27
 	EVBIT_MODIFY 0x1
+	CHECK_EVENTID gPart3Completed
+	BEQ 0x2 0xC 0x0 
+		
+		//If already drawn
+		SVAL 0x3 0x3
+		CHECK_MODE
+		BEQ 0xCA 0xC 0x3
+		
+			//Alm case
+			WM_SPAWNLORD 0x0 0x0 Alm GMLoc_SluiceGate 0x0
+			WM_CENTERCAMONLORD
+			_0xA640 0x0 0x0 GMLoc_SluiceGate
+			GOTO 0xE
+			
+		LABEL 0xCA //celica case
+		WM_SPAWNLORD 0x0 0x0 Celica GMLoc_MilaTemple 0x0
+		WM_CENTERCAMONLORD
+		_0xA640 0x0 0x0 GMLoc_MilaTemple
+		LABEL 0xE
+		SKIPWN
+		ENDA
+	
+	//check mode
+	LABEL 0x02
+	SVAL 0x3 0x3
+	CHECK_MODE
+	BEQ 0xCE 0xC 0x3
+		
+		//Alm case
+		ENUT gPart3Completed
+		WM_SPAWNLORD 0x0 0x0 Alm GMLoc_SluiceGate 0x0 //set Alm at Sluice Gate
+		WM_CENTERCAMONLORD
+		WM_FADEOUT 0x0 0x0 0x0
+		WM_TEXTDECORATE
+		EVBIT_MODIFY 0x0
+		STAL 20
+		//move camera to celica part of map
+		WM_LOADLOCATION2 0x0 GMLoc_DeadMansMire 0x0 
+		WM_WAITFORFX
+		STAL 40
+		WM_DRAWPATH 0x0 0x20 0x0 //celica path
+		STAL 40
+		WM_CENTERCAMONLORD
+		WM_LOADLOCATION2 0x0 GMLoc_RigelForest1 0x0
+		WM_SETDESTINATION 0x0 GMLoc_RigelForest1 0x0 
+		WM_WAITFORFX
+		STAL 40
+		WM_DRAWPATH 0x0 0x27 0x0 //alm path
+		GOTO 0xF
+		
+	LABEL 0xCE
+	ENUT gPart3Completed
 	WM_SPAWNLORD 0x0 0x0 Celica GMLoc_MilaTemple 0x0 //set Celica at Mila Temple
 	WM_CENTERCAMONLORD
 	WM_FADEOUT 0x0 0x0 0x0
@@ -474,6 +527,8 @@ WM_Act4Start:
 	WM_WAITFORFX
 	STAL 40
 	WM_DRAWPATH 0x0 0x20 0x0 //celica path
+	
+	LABEL 0xF
 	STAL 70
 	WM_MAKELORDVISIBLE 0x0
 	EVBIT_MODIFY 0x1

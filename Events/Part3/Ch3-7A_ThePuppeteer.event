@@ -315,6 +315,7 @@ Ch3_7A_BeginningScene:
 			CAM1 Luthier
 			FlashCursor(Luthier, 60)
 			Text(Ch3_7A_OpeningText_LuthierAlive)
+			GOTO 0x4
 	LABEL 0x3
 		Text(Ch3_7A_OpeningText_NoLuthier)
 	LABEL 0x4

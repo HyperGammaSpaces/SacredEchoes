@@ -19,13 +19,16 @@ Function is at B9F54
 
 PUSH
 
-	ORG $B9F94
-	POIN WorldMapBGMTable
-
-	ORG $B9FA4
-	POIN WorldMapBGMTable
+	ORG $B9F54
+	replaceWithHack(GetWorldMapBGM)
 
 POP
+
+GetWorldMapBGM:
+#include "ChangeWorldmapBGMByFlag.lyn.event"
+
+Act3EndEIDLoc:
+WORD gPart3Completed
 
 WorldMapBGMTable:
 WorldMapBGMTableEntry(0x04) //Act 1

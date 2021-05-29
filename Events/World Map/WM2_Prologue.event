@@ -77,12 +77,12 @@ WorldMapIntroPointerTable(0x1a,WMIntro_Ch25)
 WorldMapIntroPointerTable(0x1b,WMIntro_Ch26_GriethsBase)
 WorldMapIntroPointerTable(0x1c,WMIntro_Ch27_ValleyApproach)
 WorldMapIntroPointerTable(0x1d,WMIntro_Ch28_TempleOfMila)
-WorldMapIntroPointerTable(0x1e,WMIntro_Act4Start)
+WorldMapIntroPointerTable(0x1e,WMIntro_Act4Start_Celica)
 WorldMapIntroPointerTable(0x1f,SkipIntro)
 WorldMapIntroPointerTable(0x20,SkipIntro)
 WorldMapIntroPointerTable(0x21,SkipIntro)
 WorldMapIntroPointerTable(0x22,SkipIntro)
-WorldMapIntroPointerTable(0x23,SkipIntro)
+WorldMapIntroPointerTable(0x23,WMIntro_Act4Start_Alm)
 WorldMapIntroPointerTable(0x24,SkipIntro)
 WorldMapIntroPointerTable(0x38,WMIntro_Ch6x)
 WorldMapIntroPointerTable(0x39,HideoutIntro) //hideout
@@ -432,6 +432,8 @@ ColdOpen2(GMLoc_MtnGraveyard, GMLoc_ValleyApproach)
 WMIntro_Ch28_TempleOfMila:
 ColdOpen2(GMLoc_ValleyApproach, GMLoc_MilaTemple)
 
-WMIntro_Act4Start:
-MNTS 0x0
+WMIntro_Act4Start_Celica:
 ColdOpen2(GMLoc_MilaTemple, GMLoc_DeadMansMire)
+
+WMIntro_Act4Start_Alm:
+ColdOpen2(GMLoc_SluiceGate, GMLoc_RigelForest1)

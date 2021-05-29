@@ -214,6 +214,7 @@ Ch3_5A_BeginningScene:
 	ClearBackground
 	
 	//move alm and lukas around
+	EVBIT_T 0x9
 	MOVE 0x08 Alm [12, 10]
 	MOVE 0x08 Lukas [13, 11]
 	ENUN
@@ -221,7 +222,9 @@ Ch3_5A_BeginningScene:
 	MOVE 0x08 Alm [12, 5]
 	MOVE 0x08 Lukas [13, 5]
 	ENUN
+	EVBIT_F 0x9
 	STAL 20
+	VCWF 0x4
 	
 	SetBackground(0x4A)
 	Text(Ch3_5A_OpeningText_2)
@@ -229,7 +232,6 @@ Ch3_5A_BeginningScene:
 	
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	VCWF 0xFFFF
 	FADU 2
 	SOUN 0x9B
 	STAL 5
