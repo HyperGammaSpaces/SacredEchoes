@@ -189,7 +189,7 @@ mov     r0,#0x0
 strb    r0,[r1]
 
 mov     r0, #0x80
-ldrb    r0, [r5 , r0]             @MapSetting->ChapterID
+ldrb    r0, [r5, r0]             @MapSetting->ChapterID
 
 CheckSpecialChapter:              @終章や序章等の特殊な章のチェック
 ldr     r3, =SpecialChapterPtr
@@ -227,8 +227,35 @@ bl      strcat_gBuffer_with_atoi
 @mov r0, #0xe0    @章         FE8Jのみ {J}
 @bl      strcat_gBuffer_with_decode   @{J}
 
+@add Alm/Celica marker
 mov     r0, #0x80
-ldrb    r1, [r5 , r0]   @MapSetting->ChapterID
+ldrb    r1, [r5, r0]   @MapSetting->ChapterID
+cmp     r1, #0x1F
+ble     CheckGaiden
+cmp 	r1, #0x3F
+bge 	CheckGaiden
+
+	@check mode
+	mov     r0, #0x76
+	ldrb    r0, [r5, r0]   @MapSetting->ModeID
+	cmp 	r0, #0x3
+	beq 	CelicaMode
+	
+	AlmMode:
+	ldr 	r0, =AlmModeChapterTextID
+	b 		AppendMode
+	
+	CelicaMode:
+	ldr 	r0, =CelicaModeChapterTextID
+	
+	AppendMode:
+	ldrh	r0, [r0]
+	bl      strcat_gBuffer_with_decode
+
+
+CheckGaiden:
+mov     r0, #0x80
+ldrb    r1, [r5, r0]   @MapSetting->ChapterID
 mov     r2,#0x01
 and     r1,r2
 cmp     r1,#0x00
