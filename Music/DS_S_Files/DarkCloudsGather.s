@@ -3,7 +3,7 @@
 	.equ	DarkCloudsGather_grp, voicegroup000
 	.equ	DarkCloudsGather_pri, 0
 	.equ	DarkCloudsGather_rev, 0
-	.equ	DarkCloudsGather_mvl, 85
+	.equ	DarkCloudsGather_mvl, 72
 	.equ	DarkCloudsGather_key, 0
 	.equ	DarkCloudsGather_tbs, 1
 	.equ	DarkCloudsGather_exg, 0

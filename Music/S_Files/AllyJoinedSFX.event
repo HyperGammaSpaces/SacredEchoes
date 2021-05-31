@@ -19,23 +19,73 @@
 AllyJoinedSFX_1:
 	BYTE	KEYSH   AllyJoinedSFX_key+0
 // 000   ----------------------------------------
+	BYTE	TEMPO   180*AllyJoinedSFX_tbs/2
 	BYTE		VOICE   86
-	BYTE		PAN     c_v+12
-	BYTE		VOL     90*AllyJoinedSFX_mvl/mxv
-	BYTE		N04     Cn3   v080
-	BYTE		N04     Cn4 
-	BYTE	W06
-	BYTE		        Cn3 
-	BYTE		N04     Cn4 
-	BYTE	W06
-	BYTE		        Cn3 
-	BYTE		N04     Cn4 
-	BYTE	W06
-	BYTE		N30     Dn3 
-	BYTE		N30     As3 
-	BYTE	W36
-	BYTE		N06   
+	BYTE		VOL     75*AllyJoinedSFX_mvl/mxv
+	BYTE		N05     Fs2   v092
+	BYTE		N05     Bn2 
+	BYTE	W08
+	BYTE		        Fs2 
+	BYTE		N05     Bn2 
+	BYTE	W08
+	BYTE		        Fs2 
+	BYTE		N05     Bn2 
+	BYTE	W08
+	BYTE		N64     Gs2 
+	BYTE		N60     Bn2 
+	BYTE	W21
+	BYTE	W03
+	BYTE	W01
 	BYTE	W18
+	BYTE	W05
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+// 001   ----------------------------------------
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W48
+	BYTE	W03
+// 002   ----------------------------------------
+	BYTE	W06
 	BYTE	FINE
 
 //**************** Track 2 (Midi-Chn.2) ****************//
@@ -43,17 +93,72 @@ AllyJoinedSFX_1:
 AllyJoinedSFX_2:
 	BYTE	KEYSH   AllyJoinedSFX_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   85
-	BYTE		VOL     82*AllyJoinedSFX_mvl/mxv
-	BYTE		PAN     c_v-14
-	BYTE		N06     Gs2   v080
+	BYTE		VOICE   86
+	BYTE		VOL     75*AllyJoinedSFX_mvl/mxv
+	BYTE		N05     Fs3   v092
+	BYTE		N05     Bn3 
+	BYTE	W08
+	BYTE		        Fs3 
+	BYTE		N05     Bn3 
+	BYTE	W08
+	BYTE		        Fs3 
+	BYTE		N05     Bn3 
+	BYTE	W08
+	BYTE		N64     Gs3 
+	BYTE		N60     Bn3 
+	BYTE	W21
+	BYTE	W03
+	BYTE	W01
+	BYTE	W18
+	BYTE	W05
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+// 001   ----------------------------------------
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W48
+	BYTE	W03
+// 002   ----------------------------------------
 	BYTE	W06
-	BYTE		N06   
-	BYTE	W06
-	BYTE		N06   
-	BYTE	W06
-	BYTE		N30     As2 
-	BYTE	W54
 	BYTE	FINE
 
 //**************** Track 3 (Midi-Chn.3) ****************//
@@ -61,22 +166,68 @@ AllyJoinedSFX_2:
 AllyJoinedSFX_3:
 	BYTE	KEYSH   AllyJoinedSFX_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   127
-	BYTE		VOL     100*AllyJoinedSFX_mvl/mxv
-	BYTE		N06     Dn1   v080
-	BYTE	W06
-	BYTE		N06   
-	BYTE	W06
-	BYTE		N06   
-	BYTE	W06
-	BYTE		N30     Ds1 
-	BYTE	W30
-	BYTE		N06     Dn1 
-	BYTE		N06     An1 
-	BYTE	W06
-	BYTE		        Fn1 
-	BYTE		N18     Cs2 
+	BYTE		VOICE   61
+	BYTE		VOL     75*AllyJoinedSFX_mvl/mxv
+	BYTE		N05     En2   v092
+	BYTE	W08
+	BYTE		N05   
+	BYTE	W08
+	BYTE		N05   
+	BYTE	W08
+	BYTE		N64   
+	BYTE	W21
+	BYTE	W03
+	BYTE	W01
 	BYTE	W18
+	BYTE	W05
+	BYTE	W03
+	BYTE	W03
+	BYTE	W03
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+// 001   ----------------------------------------
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W01
+	BYTE	W02
+	BYTE	W48
+	BYTE	W03
+// 002   ----------------------------------------
+	BYTE	W06
 	BYTE	FINE
 
 //******************************************************//

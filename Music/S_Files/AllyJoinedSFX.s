@@ -18,23 +18,73 @@
 AllyJoinedSFX_1:
 	.byte	KEYSH , AllyJoinedSFX_key+0
 @ 000   ----------------------------------------
+	.byte	TEMPO , 180*AllyJoinedSFX_tbs/2
 	.byte		VOICE , 86
-	.byte		PAN   , c_v+12
-	.byte		VOL   , 90*AllyJoinedSFX_mvl/mxv
-	.byte		N04   , Cn3 , v080
-	.byte		N04   , Cn4 
-	.byte	W06
-	.byte		        Cn3 
-	.byte		N04   , Cn4 
-	.byte	W06
-	.byte		        Cn3 
-	.byte		N04   , Cn4 
-	.byte	W06
-	.byte		N30   , Dn3 
-	.byte		N30   , As3 
-	.byte	W36
-	.byte		N06   
+	.byte		VOL   , 75*AllyJoinedSFX_mvl/mxv
+	.byte		N05   , Fs2 , v092
+	.byte		N05   , Bn2 
+	.byte	W08
+	.byte		        Fs2 
+	.byte		N05   , Bn2 
+	.byte	W08
+	.byte		        Fs2 
+	.byte		N05   , Bn2 
+	.byte	W08
+	.byte		N64   , Gs2 
+	.byte		N60   , Bn2 
+	.byte	W21
+	.byte	W03
+	.byte	W01
 	.byte	W18
+	.byte	W05
+	.byte	W03
+	.byte	W03
+	.byte	W03
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+@ 001   ----------------------------------------
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W48
+	.byte	W03
+@ 002   ----------------------------------------
+	.byte	W06
 	.byte	FINE
 
 @**************** Track 2 (Midi-Chn.2) ****************@
@@ -42,17 +92,72 @@ AllyJoinedSFX_1:
 AllyJoinedSFX_2:
 	.byte	KEYSH , AllyJoinedSFX_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 85
-	.byte		VOL   , 82*AllyJoinedSFX_mvl/mxv
-	.byte		PAN   , c_v-14
-	.byte		N06   , Gs2 , v080
+	.byte		VOICE , 86
+	.byte		VOL   , 75*AllyJoinedSFX_mvl/mxv
+	.byte		N05   , Fs3 , v092
+	.byte		N05   , Bn3 
+	.byte	W08
+	.byte		        Fs3 
+	.byte		N05   , Bn3 
+	.byte	W08
+	.byte		        Fs3 
+	.byte		N05   , Bn3 
+	.byte	W08
+	.byte		N64   , Gs3 
+	.byte		N60   , Bn3 
+	.byte	W21
+	.byte	W03
+	.byte	W01
+	.byte	W18
+	.byte	W05
+	.byte	W03
+	.byte	W03
+	.byte	W03
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+@ 001   ----------------------------------------
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W48
+	.byte	W03
+@ 002   ----------------------------------------
 	.byte	W06
-	.byte		N06   
-	.byte	W06
-	.byte		N06   
-	.byte	W06
-	.byte		N30   , As2 
-	.byte	W54
 	.byte	FINE
 
 @**************** Track 3 (Midi-Chn.3) ****************@
@@ -60,22 +165,68 @@ AllyJoinedSFX_2:
 AllyJoinedSFX_3:
 	.byte	KEYSH , AllyJoinedSFX_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 127
-	.byte		VOL   , 100*AllyJoinedSFX_mvl/mxv
-	.byte		N06   , Dn1 , v080
-	.byte	W06
-	.byte		N06   
-	.byte	W06
-	.byte		N06   
-	.byte	W06
-	.byte		N30   , Ds1 
-	.byte	W30
-	.byte		N06   , Dn1 
-	.byte		N06   , An1 
-	.byte	W06
-	.byte		        Fn1 
-	.byte		N18   , Cs2 
+	.byte		VOICE , 61
+	.byte		VOL   , 75*AllyJoinedSFX_mvl/mxv
+	.byte		N05   , En2 , v092
+	.byte	W08
+	.byte		N05   
+	.byte	W08
+	.byte		N05   
+	.byte	W08
+	.byte		N64   
+	.byte	W21
+	.byte	W03
+	.byte	W01
 	.byte	W18
+	.byte	W05
+	.byte	W03
+	.byte	W03
+	.byte	W03
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+@ 001   ----------------------------------------
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W01
+	.byte	W02
+	.byte	W48
+	.byte	W03
+@ 002   ----------------------------------------
+	.byte	W06
 	.byte	FINE
 
 @******************************************************@
