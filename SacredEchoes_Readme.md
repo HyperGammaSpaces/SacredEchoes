@@ -190,6 +190,13 @@ Spell lists are largely the same as SoV.
   - Lv1 (Saint) Fortify
   - Lv5 (Saint) Rewarp
   - Lv10 (Saint) Entrap
+- Nomah
+  - Lv1 Fire
+  - Lv1 Excalibur
+  - Lv1 Sagittae
+  - Lv1 (Bishop) Fortify
+  - Lv1 (Bishop) Restore
+  - Lv5 (Bishop) Warp
 
   
 #Class skills
@@ -248,6 +255,7 @@ Some things are still under development for later releases.
   - Soldier by flasuban, Leo_Link, Nuramon
   - Mercenary and Armor Knight by Team SALVAGED
   - Caped Baron by Iscaneus, Nuramon and Leo_Link
+  - Cleric by Eldritch Abomination and Flasuban
   - Saint by Melia
   - Bishop and Thief repalettes by Eldritch Abomination
   - Myrmidon/Hero by Wan and Zane with sword by Nuramon
@@ -257,6 +265,7 @@ Some things are still under development for later releases.
   - Rogue Repalette by Pikmin1211, Maiser6, Ukelele, SD9k, Temp, Black Mage and Wan
   - Mage (M) by Leo_Link, L95 and Flasuban
   - Mage (F) by hypergammaspaces and Obsidian_Daddy
+  - Sage (M) by Greentea and Ruby
   - Priestess by hypergammaspaces and Jono the Red
   - Bow Knight by Spud
   - Celica (Promoted and Unpromoted) by RedBean

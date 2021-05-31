@@ -143,9 +143,9 @@
 	BL(Non_Unlock_Jump)
 	ORG $2987E //Warp
 	BL(Non_Unlock_Jump)
-	*/
 	ORG $2F178 //UBER-SPECIAL-SNOWFLAKE Fortify
 	BL(Fortify_Jump)
+	*/
 	//####### HIGHLIGHTED SQUARES #######
 	
 	//Fix my ballista issues the lazy way (instead of not passing in bool via r12, just make range function not use r12)
@@ -279,10 +279,13 @@
 	Non_Unlock_Jump: //ldr r3, bx r3
 	SHORT 0x4B00 0x4718
 	POIN Target_Routine_For_Non_Unlock|1
-	*/
 	Fortify_Jump:
 	SHORT 0x4B00 0x4718
 	POIN Target_Routine_For_Fortify|1
+	*/
+	//Space where Fortify_Jump once was
+	WORD 0
+	WORD 0
 	
 	ALIGN 4
 	Can_Attack_Target:
@@ -378,12 +381,12 @@ POP
 	SHORT 0xB500 0x1C21
 	BL(Unlock_Range)
 	SHORT 0xBC01 0x4700	
-	*/
+	
 	Target_Routine_For_Fortify: //push r14; ldrb r1,[r4,#0x12]; lsl r1,r1,#0x1; add r1,#0x1E; add r1,r1,r0; ldrh r2,[r1]; bl somewhere; pop r0; bx r0 (r4+0x12 has inventory slot, r0 has char data)
 	SHORT 0xB500 0x7CA1 0x0049 0x311E 0x1809 0x880A
 	BL(HealStaff_RangeSetup)
 	SHORT 0xBC01 0x4700
-	/*
+	
 	ALIGN 4
 	Non_Unlock_Range:
 	SHORT 0xB500

@@ -168,6 +168,34 @@ PUSH
 	ORG $2F2A4
 	SHORT $BC70 //pop {r4-r6}
 	
+	ORG $2F178 //UBER-SPECIAL-SNOWFLAKE Fortify
+	BL(Fortify_Jump)
+	
+	ORG $2F184
+	jumpToHack(FortifyHP)
+	
+	ORG $1ACF4
+	Fortify_Jump:
+	SHORT 0x4B00 0x4718
+	POIN Target_Routine_For_Fortify|1
+	
+POP
+	
+ALIGN 4
+Target_Routine_For_Fortify: //push r14; mov r2, #Fortify; bl somewhere; pop r0; bx r0 (r4+0x12 has inventory slot, r0 has char data)
+	SHORT 0xB500 
+	BYTE Fortify 0x22
+	BL(HealStaff_RangeSetup)
+	SHORT 0xBC01 0x4700
+ALIGN 4
+FortifyHP:
+#incbin "FortifyHP.dmp"
+WORD SelectedSpellPointer
+POIN SpellCostGetter
+ALIGN 4
+
+PUSH
+	
 	//Fix warp target selection
 	ORG $59BA14
 	POIN NewWarpTargetSelectCancel+1
