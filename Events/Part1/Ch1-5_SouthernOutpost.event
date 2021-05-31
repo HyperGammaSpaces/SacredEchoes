@@ -28,6 +28,12 @@ ArcherEvent:
 	CAM1 [6,2]
 	STAL 30
 	FlashCursor(6, 2, 60)
+	STAL 5
+	SVAL 0xB Coords(6, 2)
+	SHOW_ATTACK_RANGE UnitAtCoords
+	STAL 60
+	HIDE_ATTACK_RANGE
+	
 	Text(Ch1_5_ArcherText)
 	MUNO
 	NoFade

@@ -24,7 +24,11 @@ ArcherEvent:
 	MUSC 0x09 // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
 	MUSI
 	STAL 30
-	FlashCursor(10, 2, 60)
+	//SHOW_ATTACK_RANGE 0x66
+	//STAL 5
+	FlashCursor(0x66, 60)
+	//HIDE_ATTACK_RANGE
+	//STAL 5
 	Text(Ch1_2_ArcherText)
 	MUNO
 	NoFade
@@ -74,7 +78,7 @@ Ch1_2_Units1:
 EnemyUnits:
 	UNIT 0x46 Brigand 0x00 Level(5, Enemy, 1) [15,1] DropItem 0x00 0x0 0x00 [IronAxe, _200G] NeverMoveAI
 	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [13,2] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
-	UNIT 0x65 Archer 0x46 Level(3, Enemy, 1) [10,2] 0x00 0x00 0x0 0x00  [BaseBow]  AttackSnagsAI
+	UNIT 0x66 Archer 0x46 Level(3, Enemy, 1) [10,2] 0x00 0x00 0x0 0x00  [BaseBow]  AttackSnagsAI
 	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [16,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
 	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [6,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing 
 	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [7,7] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 

@@ -1,5 +1,25 @@
 PUSH
 
+	ORG $507D4
+	POIN NewExpBarGfx
+	ORG $508E0
+	POIN NewExpBarGfx+0x380
+	ORG $508E4
+	POIN NewExpBarGfx+0x680
+	ORG $50A74
+	POIN NewExpBarGfx+0x380
+	ORG $50A78
+	POIN NewExpBarGfx+0x680
+	ORG $7C0B8
+	POIN NewExpBarGfx
+	ORG $7C0C0
+	POIN NewExpBarGfx+0x380
+	ORG $7C0C8
+	POIN NewExpBarGfx+0x680
+	
+	ORG $803590
+	#incbin "802D44_exp.pal.bin"
+
 	ORG $73D88
 	POIN NewLevelupScreenGfx
 	ORG $7EB84
@@ -12,3 +32,7 @@ POP
 ALIGN 4
 NewLevelupScreenGfx:
 #incbin "8035b0-levelup.dmp"
+
+ALIGN 4
+NewExpBarGfx:
+#incbin "802D44_exp.dmp"
