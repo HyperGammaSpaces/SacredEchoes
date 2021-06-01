@@ -93,7 +93,7 @@ POP
 ALIGN 4
 
 GetChapterLevelBonus:
-SHORT $4B05 $1C02 $7D19 $2340 $4219 $D102 $7D00 $900 $E000 $2000 $4770 $46C0
+SHORT $4B05 $1C02 $7D19 $2340 $4219 $D002 $7D00 $900 $E000 $2000 $4770 $46C0
 BYTE $F0 $BC $2 $2
 
 GetAutoleveledStatIncrease:
@@ -108,8 +108,11 @@ BYTE $F0 $BC $2 $2
 POIN HardPromotedLevelBonus
 POIN NormalPromotedLevelBonus
 
+//this needs to return to the same place as vanilla. (17C90)
 UnitAutolevel:
-SHORT $B510 $4B0D $4 $7818 $2800 $D006 $4B0B $7B98 $4B0B $F000 $F847 $F7FF $FFA7 $7A22 $3A01 $6863 $1882 $612 $7919 $E12 $20 $4B06 $F000 $F83A $BC10 $BC01 $4700 $46C0
+SHORT $B510 $4B0D $4 $7818 $2800 $D006 $4B0B $7B98 $4B0B $F000 $F847 
+BL(GetChapterLevelBonus)
+SHORT $7A22 $3A01 $6863 $1882 $612 $7919 $E12 $20 $4B06 $F000 $F83A $BC10 $BC01 $4700 $46C0
 POIN SmoothBonusLevel
 BYTE $F0 $BC $2 $2 $19 $46 $3 $8 $C5 $7F $1 $8
 
