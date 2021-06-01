@@ -32,11 +32,11 @@ u8 GetChapterLevelBonus(struct ROMChapterData* chapter)
 	}
 	else if (!gChapterData.unk42_6) // easy mode
 	{
-		return -easyMalus;
+		return 0;
 	}
 	else
 	{
-		return -normalMalus;
+		return 0;
 	}
 }
 

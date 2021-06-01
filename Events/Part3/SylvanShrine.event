@@ -93,7 +93,7 @@ EnemyUnits:
 	UNIT Terror_Wight_Bow Random_Wight_Bow EntombedBoss Level(1,Enemy,True) [18,3] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
 	UNIT Terror_Wight_Bow Random_Wight_Bow EntombedBoss Level(1,Enemy,True) [3,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
 	UNIT Terror_Wight_Bow Random_Wight_Bow EntombedBoss Level(1,Enemy,True) [3,2] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
-	UNIT Terror_Wight_Bow Wight_Bow EntombedBoss Level(1,Enemy,True) [17,27] RandomMonsterTemplate 0x00 0x0 0x00 [Longbow] NeverMoveAI
+	UNIT Terror_Wight_Bow Wight_Bow EntombedBoss Level(1,Enemy,True) [17,27] RandomizePosition 0x00 0x0 0x00 [Longbow] NeverMoveAI
 	UNIT Terror_Wight Random_Wight EntombedBoss Level(1,Enemy,True) [14,8] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
 	UNIT Terror_Wight Random_Wight EntombedBoss Level(1,Enemy,True) [16,8] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI
 	
