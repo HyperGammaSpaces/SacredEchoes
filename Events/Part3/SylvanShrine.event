@@ -38,8 +38,8 @@ SShrine_LocationBasedEvents:
 	Door(4, 15)
 	Door(7, 11)
 	Door(8, 11)
-	Chest(Elixir, 15, 5)
-	Chest(PureWater, 2, 21)
+	CHESRANDOM 0x0 Act3RandomChest [15, 5]
+	CHESRANDOM 0x0 Act3RandomChest [2, 21]
 	#ifdef LION_HEADS_ENABLED
 		//Lion heads
 		LionHead(LionheadLocalTrigger1,LionHeadSylvanRes, 9, 30)
