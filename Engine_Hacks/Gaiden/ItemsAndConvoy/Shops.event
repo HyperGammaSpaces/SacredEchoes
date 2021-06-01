@@ -1,0 +1,59 @@
+PUSH
+
+	ORG $99E64
+	POIN PrepsShop
+
+POP
+
+ALIGN 4
+PrepsShop:
+	SHORT IronSword IronLance IronAxe IronBow Vulnerary 0
+	WORD 0
+	
+ALIGN 4
+RamVillageShop:
+	SHORT Vulnerary DoorKey ChestKey Torch Antitoxin 0
+	WORD 0
+	
+ALIGN 4
+NovisPortShop:
+	SHORT Vulnerary DoorKey ChestKey Torch Elixir Antitoxin
+	WORD 0
+	
+ALIGN 4
+Act3Armory_1:
+	SHORT IronSword SteelSword SilverSword
+	SHORT IronLance SteelLance SilverLance Javelin
+	SHORT IronAxe SteelAxe SilverAxe HandAxe
+	SHORT IronBow SteelBow SilverBow
+	WORD 0
+	
+ALIGN 4
+Act3Armory_2:
+	SHORT Zanbato Armorslayer Rapier
+	SHORT Ridersbane HeavySpear Rhomphaia
+	SHORT Halberd Hammer DevilAxe 0
+	WORD 0
+	
+ALIGN 4
+Shop_Armorer1:
+	SHORT HideShield IronShield SteelShield SilverShield RoyalShield 0
+	WORD 0
+	
+ALIGN 4
+Shop_Armorer2:
+	SHORT IronShield SteelShield SilverShield DelphiShield Dracoshield 0
+	WORD 0
+	
+ALIGN 4
+Act4Armory_1:
+	SHORT SilverSword BraveSword Lancereaver
+	SHORT SilverLance Saunion Axereaver
+	SHORT SilverAxe KillerAxe Swordreaver
+	SHORT SilverBow KillerBow Longbow
+	WORD 0
+
+ALIGN 4
+SecretShop:
+	SHORT Lifefruit Soma Persephone Pegacheese Nectar Ambrosia Lockpick Pugi RadiantBow Thunderblade
+	WORD 0

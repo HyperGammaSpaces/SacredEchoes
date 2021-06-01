@@ -143,6 +143,66 @@ pDeenSonyaMenuDefinition:
 	WORD 0 0 0 0 0 0        // No routines to handle B press/R press/construction/etc
 
 ALIGN 4
+
+//Probabilities must add up to 100.
+Act1RandomChest:
+	BYTE Vulnerary 44
+	BYTE HideShield 22
+	BYTE SteelSword 11
+	BYTE SteelLance 11
+	BYTE SteelBow 8
+	BYTE Pegacheese 4
+	BYTE $0 $0 //term
+	ALIGN 4
+
+Act2RandomChest:
+	BYTE Vulnerary 44
+	BYTE IronShield 22
+	BYTE SteelBow 11
+	BYTE SteelSword 11
+	BYTE HolySword 8
+	BYTE Nectar 4
+	BYTE $0 $0 //term
+	ALIGN 4
+
+Act3RandomChest:
+	BYTE SteelShield 22
+	BYTE HolyRing 22
+	BYTE SilverLance 11
+	BYTE SilverBow 11
+	BYTE SilverSword 11
+	BYTE SilverAxe 11
+	BYTE HolyLance 5
+	BYTE HolyAxe 5
+	BYTE Soma 2
+	BYTE $0 $0 //term
+	ALIGN 4
+
+Act4RandomChest:
+	BYTE SilverShield 22
+	BYTE DumaIcon 22
+	BYTE BraveSword 11
+	BYTE DumasLance 11
+	BYTE KillerAxe 11
+	BYTE KillerBow 11
+	BYTE GrimoireRing 8
+	BYTE Talisman 2
+	BYTE Swiftsole 2
+	BYTE $0 $0 //term
+	ALIGN 4
+
+SecretRandomChest:
+	BYTE Persephone 21
+	BYTE Lifefruit 21
+	BYTE Nectar 21
+	BYTE Ambrosia 11
+	BYTE Soma 11
+	BYTE Pegacheese 11
+	BYTE SpeedRing 4
+	BYTE $0 $0 //term
+	ALIGN 4
+
+ALIGN 4
 {
   #include "AlmCelicaHandoff1.event"
 }
