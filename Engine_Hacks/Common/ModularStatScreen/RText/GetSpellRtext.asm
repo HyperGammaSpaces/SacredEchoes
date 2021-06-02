@@ -11,11 +11,13 @@ mov r5, r0					//save the slot no. in r5
 //replace this with spell getter
 
 mov r0, r1
-ldr r2, SpellsGetter
+ldr r2, SpellsGetter_Statscreen
 mov lr, r2
 .short 0xf800
 
-ldrb r0, [r0, r5]
+lsl r1, r5, #0x1
+add r1, #0x1
+ldrb r0, [r0, r1]
 
 mov r1, #0xFF
 lsl r1, r1, #0x8
@@ -40,5 +42,5 @@ bx r3
 
 .align
 
-SpellsGetter:
+SpellsGetter_Statscreen:
 @POIN SpellsGetter

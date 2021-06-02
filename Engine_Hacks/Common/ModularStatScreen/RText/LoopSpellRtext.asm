@@ -11,7 +11,7 @@ LDR r5, =0x02003BFC //(Stat Screens StatScreenStruct )
 LDR r0, [r5, #0xC] //(gpStatScreenUnit )
 //load spell 0 here instead
 
-ldr r2, SpellsGetter
+ldr r2, Spells_Getter_Statscreen
 mov lr, r2
 .short 0xf800
 mov r6, r0 //save spell pointer
@@ -29,8 +29,9 @@ LDRH r0, [r0, #0x12] //slot no.
 mov r5, r0					//save the slot no. in r5
 //replace with "get spell at"
 
-
-ldrb r0, [r6, r5] //just the byte is fine
+lsl r1, r5, #0x1
+add r1, #0x1
+ldrb r0, [r6, r1]
 
 //once spell is in r0..
 CMP r0, #0x0 //is there an item?
@@ -71,5 +72,5 @@ bx r3
 
 .align
 
-SpellsGetter:
+Spells_Getter_Statscreen:
 @POIN SpellsGetter

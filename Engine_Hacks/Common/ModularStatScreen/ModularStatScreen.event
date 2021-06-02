@@ -111,13 +111,18 @@ MSS_page2:
 ALIGN 4
 MSS_page3:
 	#incbin "mss_page3_spells.dmp"
-	POIN Spells_Getter
+	POIN Spells_Getter_Statscreen
 	POIN IsUnitEligibleToPromote
 
 ALIGN 4
 MSS_page4:
 #incbin "mss_page4.dmp"
 	POIN IsUnitEligibleToPromote
+	
+ALIGN 4
+Spells_Getter_Statscreen:
+#incbin "SpellsGetter_Statscreen.dmp"
+	POIN SpellAssociationTable
 
 ALIGN 4
 NewPageNameGraphic:
