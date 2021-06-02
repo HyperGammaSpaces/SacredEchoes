@@ -164,7 +164,8 @@ blh		0x08083da8 		@CheckEventId
 lsl 	r0,r0,#0x18
 cmp 	r0,#0x0
 bne		chapter_text
-ldr 	r0,=Loc_NovisPriory		@text ID --Novis Priory--
+ldr 	r0,=Loc_NovisPriory_Pointer		@text ID --Novis Priory--
+ldrh    r0, [r0]
 blh     0x800a240     @GetStringFromIndex {U}
 b       end_80822a4
 
@@ -174,7 +175,8 @@ blh		0x08083da8 		@CheckEventId
 lsl 	r0,r0,#0x18
 cmp 	r0,#0x0
 beq		chapter_text
-ldr 	r0,=Loc_ZofiaCastle		@text ID --Zofia Castle--
+ldr 	r0,=Loc_ZofiaCastle_Pointer		@text ID --Zofia Castle--
+ldrh    r0, [r0]
 blh     0x800a240     @GetStringFromIndex {U}
 b       end_80822a4
 .ltorg

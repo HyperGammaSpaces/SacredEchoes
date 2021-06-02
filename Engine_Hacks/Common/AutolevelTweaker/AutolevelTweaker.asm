@@ -3,7 +3,7 @@
 @growth in r0, levelcount in r1
 push {r4, r14}
 mov r4, r1
-mul r4, r0
+mul r4, r0 @growth total
 mov r0, #0x3
 asr r2, r4, #0x1F
 and r0, r2
