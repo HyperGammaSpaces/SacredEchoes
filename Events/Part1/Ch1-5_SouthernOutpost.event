@@ -29,11 +29,12 @@ ArcherEvent:
 	STAL 30
 	FlashCursor(6, 2, 60)
 	STAL 5
+	EVBIT_MODIFY 0x4
 	SVAL 0xB Coords(6, 2)
 	SHOW_ATTACK_RANGE UnitAtCoords
 	STAL 60
 	HIDE_ATTACK_RANGE
-	
+	EVBIT_MODIFY 0x0
 	Text(Ch1_5_ArcherText)
 	MUNO
 	NoFade
