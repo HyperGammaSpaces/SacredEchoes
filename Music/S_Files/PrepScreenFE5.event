@@ -1,1507 +1,1489 @@
 //Event file generated from Sappy .s format.
-	#include "MPlayDef.event"
+        #include "MPlayDef.event"
 
-	#define	PrepScreenFE5_grp  voicegroup000
-	#define	PrepScreenFE5_pri  0
-	#define	PrepScreenFE5_rev  0
-	#define	PrepScreenFE5_mvl  85
-	#define	PrepScreenFE5_key  0
-	#define	PrepScreenFE5_tbs  1
-	#define	PrepScreenFE5_exg  0
-	#define	PrepScreenFE5_cmp  1
+        #define    PrepScreenFE5_grp  voicegroup000
+        #define    PrepScreenFE5_pri  0
+        #define    PrepScreenFE5_rev  0
+        #define    PrepScreenFE5_key  0
 
-	// .rodata
-	//	PrepScreenFE5
-	ALIGN 4
+        // .rodata
+        // PrepScreenFE5
+        ALIGN 4
 
-//**************** Track 1 (Midi-Chn.1) ****************//
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+PrepScreenFE5_0:
+        BYTE   KEYSH   PrepScreenFE5_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   106/2
+PrepScreenFE5_0_LOOP:
+        BYTE           VOICE   61
+        BYTE           VOL     40
+        BYTE   W01
+        BYTE           TIE     Dn3   v098
+        BYTE   W92
+        BYTE   W03
+// 001   ----------------------------------------
+PrepScreenFE5_0_1:
+        BYTE   W36
+        BYTE           EOT     Dn3
+        BYTE   W13
+        BYTE           N32     Fn3   v108   gtp3
+        BYTE   W44
+        BYTE   W03
+        BYTE   PEND
+// 002   ----------------------------------------
+PrepScreenFE5_0_2:
+        BYTE   W01
+        BYTE           N80     En3   v091   gtp2
+        BYTE   W92
+        BYTE   W03
+        BYTE   PEND
+// 003   ----------------------------------------
+PrepScreenFE5_0_3:
+        BYTE   W01
+        BYTE           N84     Cn3   v099   gtp3
+        BYTE   W92
+        BYTE   W03
+        BYTE   PEND
+// 004   ----------------------------------------
+        BYTE   W01
+        BYTE           TIE     Dn3   v108
+        BYTE   W92
+        BYTE   W03
+// 005   ----------------------------------------
+PrepScreenFE5_0_5:
+        BYTE   W32
+        BYTE   W01
+        BYTE           EOT     Dn3
+        BYTE   W16
+        BYTE           N32     An3   v102
+        BYTE   W44
+        BYTE   W03
+        BYTE   PEND
+// 006   ----------------------------------------
+PrepScreenFE5_0_6:
+        BYTE   W01
+        BYTE           N80     En3   v104   gtp2
+        BYTE   W92
+        BYTE   W03
+        BYTE   PEND
+// 007   ----------------------------------------
+PrepScreenFE5_0_7:
+        BYTE   W01
+        BYTE           N84     Cn3   v100   gtp1
+        BYTE   W92
+        BYTE   W03
+        BYTE   PEND
+// 008   ----------------------------------------
+        BYTE   W05
+        BYTE           N44     Dn4   v089   gtp2
+        BYTE   W48
+        BYTE                   As3
+        BYTE   W42
+        BYTE   W01
+// 009   ----------------------------------------
+        BYTE   W05
+        BYTE                   Fn3
+        BYTE   W48
+        BYTE           N14     Dn3
+        BYTE   W16
+        BYTE                   Fn3
+        BYTE   W16
+        BYTE                   As3
+        BYTE   W11
+// 010   ----------------------------------------
+        BYTE   W05
+        BYTE           N92     Cn4   v089   gtp2
+        BYTE   W90
+        BYTE   W01
+// 011   ----------------------------------------
+        BYTE   W05
+        BYTE           N90     Gn3
+        BYTE   W90
+        BYTE   W01
+// 012   ----------------------------------------
+        BYTE   W76
+        BYTE   W01
+        BYTE           N02     Dn3   v108
+        BYTE   W08
+        BYTE           N03     Dn3   v103
+        BYTE   W08
+        BYTE           N02
+        BYTE   W03
+// 013   ----------------------------------------
+        BYTE   W05
+        BYTE           N32     Dn3   v113
+        BYTE   W48
+        BYTE           N02     Fn3   v103
+        BYTE   W08
+        BYTE           N03
+        BYTE   W08
+        BYTE           N04
+        BYTE   W08
+        BYTE           N20     As3   v108
+        BYTE   W19
+// 014   ----------------------------------------
+        BYTE   W05
+        BYTE           N60     Cn4
+        BYTE   W72
+        BYTE           N07     Gn3   v102
+        BYTE   W16
+        BYTE           N03     En3   v099
+        BYTE   W03
+// 015   ----------------------------------------
+        BYTE   W05
+        BYTE           N21     Gn3   v108
+        BYTE   W24
+        BYTE           N48     Cn3   v112
+        BYTE   W64
+        BYTE           N03     Gn2   v108
+        BYTE   W03
+// 016   ----------------------------------------
+        BYTE   W05
+        BYTE           N19     As2   v105
+        BYTE   W32
+        BYTE           N04     Dn3   v108
+        BYTE   W08
+        BYTE           N03     Fn3   v096
+        BYTE   W08
+        BYTE           N24     As3
+        BYTE   W42
+        BYTE   W01
+// 017   ----------------------------------------
+        BYTE   W05
+        BYTE           N04     Dn3   v107
+        BYTE   W08
+        BYTE                   Fn3   v104
+        BYTE   W08
+        BYTE                   As3   v094
+        BYTE   W08
+        BYTE           N36     Dn4   v108
+        BYTE   W48
+        BYTE           N05     Fn4   v113
+        BYTE   W16
+        BYTE           N03     Fn4   v109
+        BYTE   W03
+// 018   ----------------------------------------
+        BYTE   W05
+        BYTE           N66     En4   v116
+        BYTE   W90
+        BYTE   W01
+// 019   ----------------------------------------
+        BYTE   W05
+        BYTE           N72     Cn4   v112   gtp2
+        BYTE   W90
+        BYTE   W01
+// 020   ----------------------------------------
+        BYTE   W06
+        BYTE           N44     Dn4   v089   gtp2
+        BYTE   W48
+        BYTE                   As3
+        BYTE   W42
+// 021   ----------------------------------------
+        BYTE   W06
+        BYTE                   Fn3
+        BYTE   W48
+        BYTE           N14     Dn3
+        BYTE   W16
+        BYTE                   Fn3
+        BYTE   W16
+        BYTE                   As3
+        BYTE   W10
+// 022   ----------------------------------------
+        BYTE   W06
+        BYTE           N92     Cn4   v089   gtp2
+        BYTE   W90
+// 023   ----------------------------------------
+        BYTE   W06
+        BYTE           N68     Gn3
+        BYTE   W90
+// 024   ----------------------------------------
+        BYTE   W96
+// 025   ----------------------------------------
+        BYTE   W24
+        BYTE   W03
+        BYTE           N06     Gn2   v107
+        BYTE   W08
+        BYTE                   Cn3   v108
+        BYTE   W08
+        BYTE                   Dn3   v113
+        BYTE   W08
+        BYTE           N36     Gn3   v108   gtp1
+        BYTE   W44
+        BYTE   W01
+// 026   ----------------------------------------
+        BYTE   W03
+        BYTE           N76     Dn3   v103
+        BYTE   W92
+        BYTE   W01
+// 027   ----------------------------------------
+        BYTE   W96
+// 028   ----------------------------------------
+        BYTE   GoTo
+         POIN2  PrepScreenFE5_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
 
 PrepScreenFE5_1:
-	BYTE	KEYSH   PrepScreenFE5_key+0
-PrepScreenFE5_1_B1:
+        BYTE   KEYSH   PrepScreenFE5_key+0
 // 000   ----------------------------------------
-	BYTE	TEMPO   105*PrepScreenFE5_tbs/2
-	BYTE		VOICE   61
-	BYTE		VOL     60*PrepScreenFE5_mvl/mxv
-	BYTE	W01
-	BYTE		TIE     Dn3   v100
-	BYTE	W92
-	BYTE	W03
+PrepScreenFE5_1_LOOP:
+        BYTE           VOICE   56
+        BYTE           VOL     40
+        BYTE   W05
+        BYTE           TIE     Dn3   v098
+        BYTE   W90
+        BYTE   W01
 // 001   ----------------------------------------
-	BYTE	W36
-	BYTE		EOT   
-	BYTE	W13
-	BYTE		N32     Fn3   v108
-	BYTE	W44
-	BYTE	W03
+        BYTE   W40
+        BYTE           EOT
+        BYTE   W13
+        BYTE           N32     Fn3   v108   gtp3
+        BYTE   W42
+        BYTE   W01
 // 002   ----------------------------------------
-	BYTE	W01
-	BYTE		N80     En3   v092
-	BYTE	W92
-	BYTE	W03
+        BYTE   W05
+        BYTE           N80     En3   v091   gtp2
+        BYTE   W90
+        BYTE   W01
 // 003   ----------------------------------------
-PrepScreenFE5_1_003:
-	BYTE	W01
-	BYTE		N84     Cn3   v100
-	BYTE	W92
-	BYTE	W03
-	BYTE	PEND
+        BYTE   W05
+        BYTE           N84     Cn3   v099   gtp3
+        BYTE   W90
+        BYTE   W01
 // 004   ----------------------------------------
-	BYTE	W01
-	BYTE		TIE     Dn3   v108
-	BYTE	W92
-	BYTE	W03
+        BYTE   W05
+        BYTE           TIE     Dn3   v108
+        BYTE   W90
+        BYTE   W01
 // 005   ----------------------------------------
-	BYTE	W32
-	BYTE	W01
-	BYTE		EOT   
-	BYTE	W16
-	BYTE		N32     An3   v104
-	BYTE	W44
-	BYTE	W03
+        BYTE   W36
+        BYTE   W01
+        BYTE           EOT
+        BYTE   W16
+        BYTE           N32     An3   v102
+        BYTE   W42
+        BYTE   W01
 // 006   ----------------------------------------
-	BYTE	W01
-	BYTE		N80     En3 
-	BYTE	W92
-	BYTE	W03
+        BYTE   W05
+        BYTE           N80     En3   v104   gtp2
+        BYTE   W90
+        BYTE   W01
 // 007   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_1_003
+        BYTE   W05
+        BYTE                   Cn3   v100
+        BYTE   W90
+        BYTE   W01
 // 008   ----------------------------------------
-	BYTE	W05
-	BYTE		N44     Dn4   v092
-	BYTE	W48
-	BYTE		        As3 
-	BYTE	W42
-	BYTE	W01
+        BYTE   W01
+        BYTE           N44     Dn4   v089   gtp2
+        BYTE   W48
+        BYTE                   As3
+        BYTE   W44
+        BYTE   W03
 // 009   ----------------------------------------
-	BYTE	W05
-	BYTE		        Fn3 
-	BYTE	W48
-	BYTE		N14     Dn3 
-	BYTE	W16
-	BYTE		        Fn3 
-	BYTE	W16
-	BYTE		        As3 
-	BYTE	W11
+        BYTE   W01
+        BYTE                   Fn3
+        BYTE   W48
+        BYTE           N14     Dn3
+        BYTE   W16
+        BYTE                   Fn3
+        BYTE   W16
+        BYTE                   As3
+        BYTE   W15
 // 010   ----------------------------------------
-	BYTE	W05
-	BYTE		N92     Cn4 
-	BYTE	W90
-	BYTE	W01
+        BYTE   W01
+        BYTE           N92     Cn4   v089   gtp2
+        BYTE   W92
+        BYTE   W03
 // 011   ----------------------------------------
-	BYTE	W05
-	BYTE		N90     Gn3 
-	BYTE	W90
-	BYTE	W01
+        BYTE   W01
+        BYTE                   Gn3
+        BYTE   W92
+        BYTE   W03
 // 012   ----------------------------------------
-	BYTE	W76
-	BYTE	W01
-	BYTE		N02     Dn3   v108
-	BYTE	W08
-	BYTE		N03     Dn3   v104
-	BYTE	W08
-	BYTE		N02   
-	BYTE	W03
+        BYTE   W72
+        BYTE   W02
+        BYTE           N02     Dn3   v108
+        BYTE   W08
+        BYTE           N03     Dn3   v103
+        BYTE   W08
+        BYTE           N02
+        BYTE   W06
 // 013   ----------------------------------------
-	BYTE	W05
-	BYTE		N32     Dn3   v116
-	BYTE	W48
-	BYTE		N02     Fn3   v104
-	BYTE	W08
-	BYTE		N03   
-	BYTE	W08
-	BYTE		N04   
-	BYTE	W08
-	BYTE		N20     As3   v108
-	BYTE	W19
+        BYTE   W02
+        BYTE           N32     Dn3   v113
+        BYTE   W48
+        BYTE           N02     Fn3   v103
+        BYTE   W08
+        BYTE           N03
+        BYTE   W08
+        BYTE           N04
+        BYTE   W08
+        BYTE           N20     As3   v108
+        BYTE   W22
 // 014   ----------------------------------------
-	BYTE	W05
-	BYTE		N60     Cn4 
-	BYTE	W72
-	BYTE		N07     Gn3   v104
-	BYTE	W16
-	BYTE		N03     En3   v100
-	BYTE	W03
+        BYTE   W02
+        BYTE           N60     Cn4
+        BYTE   W72
+        BYTE           N07     Gn3   v102
+        BYTE   W16
+        BYTE           N03     En3   v099
+        BYTE   W06
 // 015   ----------------------------------------
-	BYTE	W05
-	BYTE		N21     Gn3   v108
-	BYTE	W24
-	BYTE		N48     Cn3   v112
-	BYTE	W64
-	BYTE		N03     Gn2   v108
-	BYTE	W03
+        BYTE   W02
+        BYTE           N21     Gn3   v108
+        BYTE   W24
+        BYTE           N48     Cn3   v112
+        BYTE   W64
+        BYTE           N03     Gn2   v108
+        BYTE   W06
 // 016   ----------------------------------------
-	BYTE	W05
-	BYTE		N19     As2 
-	BYTE	W32
-	BYTE		N04     Dn3 
-	BYTE	W08
-	BYTE		N03     Fn3   v096
-	BYTE	W08
-	BYTE		N24     As3 
-	BYTE	W42
-	BYTE	W01
+        BYTE   W02
+        BYTE           N19     As2   v105
+        BYTE   W32
+        BYTE           N04     Dn3   v108
+        BYTE   W08
+        BYTE           N03     Fn3   v096
+        BYTE   W08
+        BYTE           N24     As3
+        BYTE   W44
+        BYTE   W02
 // 017   ----------------------------------------
-	BYTE	W05
-	BYTE		N04     Dn3   v108
-	BYTE	W08
-	BYTE		        Fn3   v104
-	BYTE	W08
-	BYTE		        As3   v096
-	BYTE	W08
-	BYTE		N36     Dn4   v108
-	BYTE	W48
-	BYTE		N05     Fn4   v116
-	BYTE	W16
-	BYTE		N03     Fn4   v112
-	BYTE	W03
+        BYTE   W02
+        BYTE           N04     Dn3   v107
+        BYTE   W08
+        BYTE                   Fn3   v104
+        BYTE   W08
+        BYTE                   As3   v094
+        BYTE   W08
+        BYTE           N36     Dn4   v108
+        BYTE   W48
+        BYTE           N05     Fn4   v113
+        BYTE   W16
+        BYTE           N03     Fn4   v109
+        BYTE   W06
 // 018   ----------------------------------------
-	BYTE	W05
-	BYTE		N66     En4   v116
-	BYTE	W90
-	BYTE	W01
+        BYTE   W02
+        BYTE           N66     En4   v116
+        BYTE   W92
+        BYTE   W02
 // 019   ----------------------------------------
-	BYTE	W05
-	BYTE		N72     Cn4   v112
-	BYTE	W90
-	BYTE	W01
+        BYTE   W02
+        BYTE           N76     Cn4   v112
+        BYTE   W92
+        BYTE   W02
 // 020   ----------------------------------------
-	BYTE	W06
-	BYTE		N44     Dn4   v092
-	BYTE	W48
-	BYTE		        As3 
-	BYTE	W42
+        BYTE   W02
+        BYTE           N44     Dn4   v089   gtp2
+        BYTE   W48
+        BYTE                   As3
+        BYTE   W44
+        BYTE   W02
 // 021   ----------------------------------------
-	BYTE	W06
-	BYTE		        Fn3 
-	BYTE	W48
-	BYTE		N14     Dn3 
-	BYTE	W16
-	BYTE		        Fn3 
-	BYTE	W16
-	BYTE		        As3 
-	BYTE	W10
+        BYTE   W02
+        BYTE                   Fn3
+        BYTE   W48
+        BYTE           N14     Dn3
+        BYTE   W16
+        BYTE                   Fn3
+        BYTE   W16
+        BYTE                   As3
+        BYTE   W14
 // 022   ----------------------------------------
-	BYTE	W06
-	BYTE		N92     Cn4 
-	BYTE	W90
+        BYTE   W02
+        BYTE           N92     Cn4   v089   gtp2
+        BYTE   W92
+        BYTE   W02
 // 023   ----------------------------------------
-	BYTE	W06
-	BYTE		N68     Gn3 
-	BYTE	W90
+        BYTE   W02
+        BYTE           N68     Gn3   v089   gtp3
+        BYTE   W92
+        BYTE   W02
 // 024   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 025   ----------------------------------------
-	BYTE	W24
-	BYTE	W03
-	BYTE		N06     Gn2   v108
-	BYTE	W08
-	BYTE		        Cn3 
-	BYTE	W08
-	BYTE		        Dn3   v116
-	BYTE	W08
-	BYTE		N36     Gn3   v108
-	BYTE	W44
-	BYTE	W01
+        BYTE   W96
 // 026   ----------------------------------------
-	BYTE	W03
-	BYTE		N76     Dn3   v104
-	BYTE	W92
-	BYTE	W01
+        BYTE   W80
+        BYTE   W03
+        BYTE           N02     Dn3   v107
+        BYTE   W08
+        BYTE                   Dn3   v114
+        BYTE   W05
 // 027   ----------------------------------------
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	PrepScreenFE5_1_B1
-PrepScreenFE5_1_B2:
+        BYTE   W03
+        BYTE           N24     Dn3   v112
+        BYTE   W32
+        BYTE           N02     Bn2   v091
+        BYTE   W08
+        BYTE                   Bn2   v094
+        BYTE   W08
+        BYTE           N32     Bn2   v082   gtp2
+        BYTE   W44
+        BYTE   W01
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  PrepScreenFE5_1_LOOP
+        BYTE   FINE
 
-//**************** Track 2 (Midi-Chn.2) ****************//
+//****************** Track 2 (Midi-Chn.2) ******************//
 
 PrepScreenFE5_2:
-	BYTE	KEYSH   PrepScreenFE5_key+0
-PrepScreenFE5_2_B1:
+        BYTE   KEYSH   PrepScreenFE5_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   56
-	BYTE		VOL     60*PrepScreenFE5_mvl/mxv
-	BYTE	W05
-	BYTE		TIE     Dn3   v100
-	BYTE	W90
-	BYTE	W01
+PrepScreenFE5_2_LOOP:
+        BYTE           VOICE   40
+        BYTE           VOL     46
+        BYTE   W01
+        BYTE                   43
+        BYTE   W01
+        BYTE           TIE     Fn2   v089
+        BYTE   W92
+        BYTE   W02
 // 001   ----------------------------------------
-	BYTE	W40
-	BYTE		EOT   
-	BYTE	W13
-	BYTE		N32     Fn3   v108
-	BYTE	W42
-	BYTE	W01
+        BYTE   W32
+        BYTE   W03
+        BYTE           EOT
+        BYTE   W15
+        BYTE           N36     An2   v091
+        BYTE   W44
+        BYTE   W02
 // 002   ----------------------------------------
-	BYTE	W05
-	BYTE		N80     En3   v092
-	BYTE	W90
-	BYTE	W01
+        BYTE   W02
+        BYTE           N84     Gn2   v095
+        BYTE   W92
+        BYTE   W02
 // 003   ----------------------------------------
-	BYTE	W05
-	BYTE		N84     Cn3   v100
-	BYTE	W90
-	BYTE	W01
+        BYTE   W02
+        BYTE                   En2   v094   gtp1
+        BYTE   W92
+        BYTE   W02
 // 004   ----------------------------------------
-	BYTE	W05
-	BYTE		TIE     Dn3   v108
-	BYTE	W90
-	BYTE	W01
+        BYTE   W02
+        BYTE           TIE     Fn2
+        BYTE   W92
+        BYTE   W02
 // 005   ----------------------------------------
-	BYTE	W36
-	BYTE	W01
-	BYTE		EOT   
-	BYTE	W16
-	BYTE		N32     An3   v104
-	BYTE	W42
-	BYTE	W01
+        BYTE   W32
+        BYTE           EOT
+        BYTE   W18
+        BYTE           N32     Cn3   v099   gtp1
+        BYTE   W44
+        BYTE   W02
 // 006   ----------------------------------------
-	BYTE	W05
-	BYTE		N80     En3 
-	BYTE	W90
-	BYTE	W01
+        BYTE   W02
+        BYTE           N80     Gn2   v085   gtp2
+        BYTE   W92
+        BYTE   W02
 // 007   ----------------------------------------
-	BYTE	W05
-	BYTE		        Cn3   v100
-	BYTE	W90
-	BYTE	W01
+        BYTE   W02
+        BYTE           N84     En2   v089
+        BYTE   W92
+        BYTE   W02
 // 008   ----------------------------------------
-	BYTE	W01
-	BYTE		N44     Dn4   v092
-	BYTE	W48
-	BYTE		        As3 
-	BYTE	W44
-	BYTE	W03
+        BYTE   W02
+        BYTE           TIE     Fn2   v094
+        BYTE   W92
+        BYTE   W02
 // 009   ----------------------------------------
-	BYTE	W01
-	BYTE		        Fn3 
-	BYTE	W48
-	BYTE		N14     Dn3 
-	BYTE	W16
-	BYTE		        Fn3 
-	BYTE	W16
-	BYTE		        As3 
-	BYTE	W15
+        BYTE   W84
+        BYTE   W03
+        BYTE           EOT
+        BYTE   W09
 // 010   ----------------------------------------
-	BYTE	W01
-	BYTE		N92     Cn4 
-	BYTE	W92
-	BYTE	W03
+        BYTE   W02
+        BYTE           N84     Fn2   v077   gtp3
+        BYTE   W92
+        BYTE   W02
 // 011   ----------------------------------------
-	BYTE	W01
-	BYTE		        Gn3 
-	BYTE	W92
-	BYTE	W03
+        BYTE   W02
+        BYTE           N80     En2   v096   gtp3
+        BYTE   W92
+        BYTE   W02
 // 012   ----------------------------------------
-	BYTE	W72
-	BYTE	W02
-	BYTE		N02     Dn3   v108
-	BYTE	W08
-	BYTE		N03     Dn3   v104
-	BYTE	W08
-	BYTE		N02   
-	BYTE	W06
+        BYTE   W03
+        BYTE           TIE     Fn2   v099
+        BYTE   W92
+        BYTE   W01
 // 013   ----------------------------------------
-	BYTE	W02
-	BYTE		N32     Dn3   v116
-	BYTE	W48
-	BYTE		N02     Fn3   v104
-	BYTE	W08
-	BYTE		N03   
-	BYTE	W08
-	BYTE		N04   
-	BYTE	W08
-	BYTE		N20     As3   v108
-	BYTE	W22
+        BYTE   W32
+        BYTE           EOT
+        BYTE   W19
+        BYTE           N36     An2   v087   gtp2
+        BYTE   W44
+        BYTE   W01
 // 014   ----------------------------------------
-	BYTE	W02
-	BYTE		N60     Cn4 
-	BYTE	W72
-	BYTE		N07     Gn3   v104
-	BYTE	W16
-	BYTE		N03     En3   v100
-	BYTE	W06
+        BYTE   W03
+        BYTE           N88     Gn2   v090   gtp1
+        BYTE   W92
+        BYTE   W01
 // 015   ----------------------------------------
-	BYTE	W02
-	BYTE		N21     Gn3   v108
-	BYTE	W24
-	BYTE		N48     Cn3   v112
-	BYTE	W64
-	BYTE		N03     Gn2   v108
-	BYTE	W06
+PrepScreenFE5_2_15:
+        BYTE   W03
+        BYTE           N84     En2   v096
+        BYTE   W92
+        BYTE   W01
+        BYTE   PEND
 // 016   ----------------------------------------
-	BYTE	W02
-	BYTE		N19     As2 
-	BYTE	W32
-	BYTE		N04     Dn3 
-	BYTE	W08
-	BYTE		N03     Fn3   v096
-	BYTE	W08
-	BYTE		N24     As3 
-	BYTE	W44
-	BYTE	W02
+        BYTE   W03
+        BYTE           TIE     Fn2   v090
+        BYTE   W92
+        BYTE   W01
 // 017   ----------------------------------------
-	BYTE	W02
-	BYTE		N04     Dn3   v108
-	BYTE	W08
-	BYTE		        Fn3   v104
-	BYTE	W08
-	BYTE		        As3   v096
-	BYTE	W08
-	BYTE		N36     Dn4   v108
-	BYTE	W48
-	BYTE		N05     Fn4   v116
-	BYTE	W16
-	BYTE		N03     Fn4   v112
-	BYTE	W06
+        BYTE   W30
+        BYTE   W01
+        BYTE           EOT
+        BYTE   W20
+        BYTE           N36     Cn3   v103   gtp3
+        BYTE   W44
+        BYTE   W01
 // 018   ----------------------------------------
-	BYTE	W02
-	BYTE		N66     En4   v116
-	BYTE	W92
-	BYTE	W02
+        BYTE   W03
+        BYTE           N88     Gn2   v094
+        BYTE   W92
+        BYTE   W01
 // 019   ----------------------------------------
-	BYTE	W02
-	BYTE		N76     Cn4   v112
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_2_15
 // 020   ----------------------------------------
-	BYTE	W02
-	BYTE		N44     Dn4   v092
-	BYTE	W48
-	BYTE		        As3 
-	BYTE	W44
-	BYTE	W02
+        BYTE   W03
+        BYTE           TIE     Fn2   v102
+        BYTE   W92
+        BYTE   W01
 // 021   ----------------------------------------
-	BYTE	W02
-	BYTE		        Fn3 
-	BYTE	W48
-	BYTE		N14     Dn3 
-	BYTE	W16
-	BYTE		        Fn3 
-	BYTE	W16
-	BYTE		        As3 
-	BYTE	W14
+        BYTE   W88
+        BYTE           EOT
+        BYTE   W08
 // 022   ----------------------------------------
-	BYTE	W02
-	BYTE		N92     Cn4 
-	BYTE	W92
-	BYTE	W02
+        BYTE   W03
+        BYTE           N88     Fn2   v081
+        BYTE   W92
+        BYTE   W01
 // 023   ----------------------------------------
-	BYTE	W02
-	BYTE		N68     Gn3 
-	BYTE	W92
-	BYTE	W02
+        BYTE   W03
+        BYTE           N78     Gn2   v080
+        BYTE   W92
+        BYTE   W01
 // 024   ----------------------------------------
-	BYTE	W96
+        BYTE   W03
+        BYTE           PAN     c_v+25
+        BYTE           N80     Fn4   v102   gtp2
+        BYTE   W84
+        BYTE           N04     Ds4   v084
+        BYTE   W06
+        BYTE                   Dn4   v090
+        BYTE   W03
 // 025   ----------------------------------------
-	BYTE	W96
+        BYTE   W03
+        BYTE           N40     Cn4   v094
+        BYTE   W48
+        BYTE           N32     Fn4   v090   gtp3
+        BYTE   W44
+        BYTE   W01
 // 026   ----------------------------------------
-	BYTE	W80
-	BYTE	W03
-	BYTE		N02     Dn3   v108
-	BYTE	W08
-	BYTE		        Dn3   v116
-	BYTE	W05
+        BYTE   W03
+        BYTE           N68     Gn4   v102   gtp1
+        BYTE   W80
+        BYTE           PAN     c_v+14
+        BYTE           N02     Gn3   v081
+        BYTE   W08
+        BYTE           N03     Gn3   v100
+        BYTE   W05
 // 027   ----------------------------------------
-	BYTE	W03
-	BYTE		N24     Dn3   v112
-	BYTE	W32
-	BYTE		N02     Bn2   v092
-	BYTE	W08
-	BYTE		        Bn2   v096
-	BYTE	W08
-	BYTE		N32     Bn2   v084
-	BYTE	W44
-	BYTE	W01
-	BYTE	GoTo
-	 POIN2	PrepScreenFE5_2_B1
-PrepScreenFE5_2_B2:
+        BYTE   W03
+        BYTE           N22     Gn3   v096
+        BYTE   W32
+        BYTE           N02     Gn3   v104
+        BYTE   W08
+        BYTE                   Gn3   v098
+        BYTE   W08
+        BYTE           N44     Gn3   v095   gtp1
+        BYTE   W44
+        BYTE   W01
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOL     46
+        BYTE           PAN     c_v+0
+        BYTE   GoTo
+         POIN2  PrepScreenFE5_2_LOOP
+        BYTE   FINE
 
-//**************** Track 3 (Midi-Chn.3) ****************//
+//****************** Track 3 (Midi-Chn.3) ******************//
 
 PrepScreenFE5_3:
-	BYTE	KEYSH   PrepScreenFE5_key+0
-PrepScreenFE5_3_B1:
+        BYTE   KEYSH   PrepScreenFE5_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   40
-	BYTE		VOL     69*PrepScreenFE5_mvl/mxv
-	BYTE	W01
-	BYTE		PAN     c_v+0
-	BYTE	W01
-	BYTE		TIE     Fn2   v092
-	BYTE	W92
-	BYTE	W02
+PrepScreenFE5_3_LOOP:
+        BYTE           VOICE   41
+        BYTE           VOL     43
+        BYTE   W01
+        BYTE                   40
+        BYTE           TIE     Dn3   v098
+        BYTE   W92
+        BYTE   W03
 // 001   ----------------------------------------
-	BYTE	W32
-	BYTE	W03
-	BYTE		EOT   
-	BYTE	W15
-	BYTE		N36     An2 
-	BYTE	W44
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_0_1
 // 002   ----------------------------------------
-	BYTE	W02
-	BYTE		N84     Gn2   v096
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_0_2
 // 003   ----------------------------------------
-	BYTE	W02
-	BYTE		        En2 
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_0_3
 // 004   ----------------------------------------
-PrepScreenFE5_3_004:
-	BYTE	W02
-	BYTE		TIE     Fn2   v096
-	BYTE	W92
-	BYTE	W02
-	BYTE	PEND
+        BYTE   W01
+        BYTE           TIE     Dn3   v108
+        BYTE   W92
+        BYTE   W03
 // 005   ----------------------------------------
-	BYTE	W32
-	BYTE		EOT   
-	BYTE	W18
-	BYTE		N32     Cn3   v100
-	BYTE	W44
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_0_5
 // 006   ----------------------------------------
-	BYTE	W02
-	BYTE		N80     Gn2   v088
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_0_6
 // 007   ----------------------------------------
-	BYTE	W02
-	BYTE		N84     En2   v092
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_0_7
 // 008   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_3_004
+        BYTE   W01
+        BYTE           TIE     Dn3   v107
+        BYTE   W92
+        BYTE   W03
 // 009   ----------------------------------------
-	BYTE	W84
-	BYTE	W03
-	BYTE		EOT     Fn2 
-	BYTE	W09
+        BYTE   W84
+        BYTE   W01
+        BYTE           EOT
+        BYTE   W11
 // 010   ----------------------------------------
-	BYTE	W02
-	BYTE		N84     Fn2   v080
-	BYTE	W92
-	BYTE	W02
+        BYTE   W01
+        BYTE           N84     Dn3   v103   gtp3
+        BYTE   W92
+        BYTE   W03
 // 011   ----------------------------------------
-	BYTE	W02
-	BYTE		N80     En2   v096
-	BYTE	W92
-	BYTE	W02
+        BYTE   W01
+        BYTE                   Cn3   v102
+        BYTE   W92
+        BYTE   W03
 // 012   ----------------------------------------
-	BYTE	W02
-	BYTE		PAN     c_v+0
-	BYTE	W01
-	BYTE		TIE     Fn2   v100
-	BYTE	W92
-	BYTE	W01
+        BYTE   W02
+        BYTE           TIE     Dn3   v099
+        BYTE   W92
+        BYTE   W02
 // 013   ----------------------------------------
-	BYTE	W32
-	BYTE		EOT   
-	BYTE	W19
-	BYTE		N36     An2   v088
-	BYTE	W44
-	BYTE	W01
+        BYTE   W32
+        BYTE   W01
+        BYTE           EOT
+        BYTE   W17
+        BYTE           N36     Fn3   v102   gtp2
+        BYTE   W44
+        BYTE   W02
 // 014   ----------------------------------------
-	BYTE	W03
-	BYTE		N88     Gn2   v092
-	BYTE	W92
-	BYTE	W01
+        BYTE   W02
+        BYTE           N84     En3   v099   gtp3
+        BYTE   W92
+        BYTE   W02
 // 015   ----------------------------------------
-PrepScreenFE5_3_015:
-	BYTE	W03
-	BYTE		N84     En2   v096
-	BYTE	W92
-	BYTE	W01
-	BYTE	PEND
+        BYTE   W02
+        BYTE           N84     Cn3   v102   gtp1
+        BYTE   W92
+        BYTE   W02
 // 016   ----------------------------------------
-	BYTE	W03
-	BYTE		TIE     Fn2   v092
-	BYTE	W92
-	BYTE	W01
+        BYTE   W02
+        BYTE           TIE     Dn3   v107
+        BYTE   W92
+        BYTE   W02
 // 017   ----------------------------------------
-	BYTE	W30
-	BYTE	W01
-	BYTE		EOT   
-	BYTE	W20
-	BYTE		N36     Cn3   v104
-	BYTE	W44
-	BYTE	W01
+        BYTE   W32
+        BYTE   W02
+        BYTE           EOT
+        BYTE   W16
+        BYTE           N36     An3   v099   gtp1
+        BYTE   W44
+        BYTE   W02
 // 018   ----------------------------------------
-	BYTE	W03
-	BYTE		N88     Gn2   v096
-	BYTE	W92
-	BYTE	W01
+        BYTE   W02
+        BYTE           N80     En3   v109   gtp2
+        BYTE   W92
+        BYTE   W02
 // 019   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_3_015
+        BYTE   W02
+        BYTE           N84     Cn3   v104   gtp3
+        BYTE   W92
+        BYTE   W02
 // 020   ----------------------------------------
-	BYTE	W03
-	BYTE		TIE     Fn2   v104
-	BYTE	W92
-	BYTE	W01
+        BYTE   W02
+        BYTE           TIE     Dn3   v112
+        BYTE   W92
+        BYTE   W02
 // 021   ----------------------------------------
-	BYTE	W88
-	BYTE		EOT   
-	BYTE	W08
+        BYTE   W88
+        BYTE   W01
+        BYTE           EOT
+        BYTE   W07
 // 022   ----------------------------------------
-	BYTE	W03
-	BYTE		N88     Fn2   v084
-	BYTE	W92
-	BYTE	W01
+        BYTE   W02
+        BYTE           N92     Dn3   v095   gtp2
+        BYTE   W92
+        BYTE   W02
 // 023   ----------------------------------------
-	BYTE	W03
-	BYTE		N78     Gn2   v080
-	BYTE	W92
-	BYTE	W01
+        BYTE   W02
+        BYTE           N78     En3   v098   gtp1
+        BYTE   W92
+        BYTE   W02
 // 024   ----------------------------------------
-	BYTE	W03
-	BYTE		PAN     c_v+0
-	BYTE		        c_v+25
-	BYTE		N80     Fn4   v104
-	BYTE	W84
-	BYTE		N04     Ds4   v084
-	BYTE	W06
-	BYTE		        Dn4   v092
-	BYTE	W03
+        BYTE   W04
+        BYTE           TIE     Gs2   v089
+        BYTE   W92
 // 025   ----------------------------------------
-	BYTE	W03
-	BYTE		N40     Cn4   v096
-	BYTE	W48
-	BYTE		N32     Fn4   v092
-	BYTE	W44
-	BYTE	W01
+        BYTE   W78
+        BYTE   W01
+        BYTE           EOT
+        BYTE   W17
 // 026   ----------------------------------------
-	BYTE	W03
-	BYTE		N68     Gn4   v104
-	BYTE	W80
-	BYTE		PAN     c_v+14
-	BYTE		N02     Gn3   v084
-	BYTE	W08
-	BYTE		N03     Gn3   v100
-	BYTE	W05
+        BYTE   W04
+        BYTE           N88     Bn2   v102   gtp1
+        BYTE   W92
 // 027   ----------------------------------------
-	BYTE	W03
-	BYTE		N22     Gn3   v096
-	BYTE	W32
-	BYTE		N02     Gn3   v104
-	BYTE	W08
-	BYTE		        Gn3   v100
-	BYTE	W08
-	BYTE		N44     Gn3   v096
-	BYTE	W44
-	BYTE	W01
-	BYTE	GoTo
-	 POIN2	PrepScreenFE5_3_B1
-PrepScreenFE5_3_B2:
+        BYTE   W03
+        BYTE           N92     Gn2   v102   gtp1
+        BYTE   W92
+        BYTE   W01
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOL     43
+        BYTE   GoTo
+         POIN2  PrepScreenFE5_3_LOOP
+        BYTE   FINE
 
-//**************** Track 4 (Midi-Chn.4) ****************//
+//****************** Track 4 (Midi-Chn.4) ******************//
 
 PrepScreenFE5_4:
-	BYTE	KEYSH   PrepScreenFE5_key+0
-PrepScreenFE5_4_B1:
+        BYTE   KEYSH   PrepScreenFE5_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   41
-	BYTE		VOL     64*PrepScreenFE5_mvl/mxv
-	BYTE	W01
-	BYTE		PAN     c_v+0
-	BYTE		TIE     Dn3   v100
-	BYTE	W92
-	BYTE	W03
+PrepScreenFE5_4_LOOP:
+        BYTE           VOICE   66
+        BYTE           VOL     31
+        BYTE   W01
+        BYTE                   29
+        BYTE           N13     Gn2   v121
+        BYTE   W24
+        BYTE                   Gn2   v114
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE           N11
+        BYTE   W23
 // 001   ----------------------------------------
-	BYTE	W36
-	BYTE		EOT   
-	BYTE	W13
-	BYTE		N32     Fn3   v108
-	BYTE	W44
-	BYTE	W03
+        BYTE   W01
+        BYTE           N10     Gn2   v121
+        BYTE   W24
+        BYTE           N11     Gn2   v114
+        BYTE   W24
+        BYTE           N10
+        BYTE   W24
+        BYTE           N13
+        BYTE   W23
 // 002   ----------------------------------------
-	BYTE	W01
-	BYTE		N80     En3   v092
-	BYTE	W92
-	BYTE	W03
+        BYTE   W01
+        BYTE           N11     Gn2   v121
+        BYTE   W24
+        BYTE                   Gn2   v114
+        BYTE   W24
+        BYTE           N12
+        BYTE   W24
+        BYTE           N13
+        BYTE   W23
 // 003   ----------------------------------------
-PrepScreenFE5_4_003:
-	BYTE	W01
-	BYTE		N84     Cn3   v100
-	BYTE	W92
-	BYTE	W03
-	BYTE	PEND
+        BYTE   W01
+        BYTE           N12     Gn2   v121
+        BYTE   W24
+        BYTE           N10     Gn2   v114
+        BYTE   W24
+        BYTE           N11
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W23
 // 004   ----------------------------------------
-PrepScreenFE5_4_004:
-	BYTE	W01
-	BYTE		TIE     Dn3   v108
-	BYTE	W92
-	BYTE	W03
-	BYTE	PEND
+        BYTE   W01
+        BYTE           N10     Gn2   v121
+        BYTE   W24
+        BYTE           N09     Gn2   v114
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE           N11
+        BYTE   W23
 // 005   ----------------------------------------
-	BYTE	W32
-	BYTE	W01
-	BYTE		EOT   
-	BYTE	W16
-	BYTE		N32     An3   v104
-	BYTE	W44
-	BYTE	W03
+        BYTE   W01
+        BYTE           N10     Gn2   v121
+        BYTE   W24
+        BYTE           N09     Gn2   v114
+        BYTE   W24
+        BYTE           N10
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W23
 // 006   ----------------------------------------
-	BYTE	W01
-	BYTE		N80     En3 
-	BYTE	W92
-	BYTE	W03
+        BYTE   W01
+        BYTE           N09     Gn2   v121
+        BYTE   W24
+        BYTE                   Gn2   v114
+        BYTE   W24
+        BYTE           N10
+        BYTE   W24
+        BYTE           N12
+        BYTE   W23
 // 007   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_4_003
+        BYTE   W01
+        BYTE           N11     Gn2   v121
+        BYTE   W24
+        BYTE           N09     Gn2   v114
+        BYTE   W24
+        BYTE           N10
+        BYTE   W24
+        BYTE           N11
+        BYTE   W23
 // 008   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_4_004
+        BYTE   W01
+        BYTE                   Gn2   v121
+        BYTE   W24
+        BYTE                   Gn2   v114
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE           N09
+        BYTE   W23
 // 009   ----------------------------------------
-	BYTE	W84
-	BYTE	W01
-	BYTE		EOT     Dn3 
-	BYTE	W11
+        BYTE   W01
+        BYTE           N11     Gn2   v121
+        BYTE   W24
+        BYTE           N09     Gn2   v114
+        BYTE   W24
+        BYTE           N11
+        BYTE   W24
+        BYTE           N10
+        BYTE   W23
 // 010   ----------------------------------------
-	BYTE	W01
-	BYTE		N84     Dn3   v104
-	BYTE	W92
-	BYTE	W03
+        BYTE   W01
+        BYTE           N12     Cn3   v121
+        BYTE   W24
+        BYTE           N11     Cn3   v114
+        BYTE   W24
+        BYTE           N12
+        BYTE   W24
+        BYTE           N13
+        BYTE   W23
 // 011   ----------------------------------------
-	BYTE	W01
-	BYTE		        Cn3 
-	BYTE	W92
-	BYTE	W03
+        BYTE   W01
+        BYTE           N11     Cn3   v121
+        BYTE   W24
+        BYTE           N10     Cn3   v114
+        BYTE   W24
+        BYTE           N12
+        BYTE   W24
+        BYTE           N10
+        BYTE   W23
 // 012   ----------------------------------------
-	BYTE	W02
-	BYTE		PAN     c_v+0
-	BYTE		TIE     Dn3   v100
-	BYTE	W92
-	BYTE	W02
+        BYTE   W24
+        BYTE   W02
+        BYTE           N11     Gn2   v121
+        BYTE   W24
+        BYTE                   Gn2   v114
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W22
 // 013   ----------------------------------------
-	BYTE	W32
-	BYTE	W01
-	BYTE		EOT   
-	BYTE	W17
-	BYTE		N36     Fn3   v104
-	BYTE	W44
-	BYTE	W02
+PrepScreenFE5_4_13:
+        BYTE   W02
+        BYTE           N11     Gn2   v121
+        BYTE   W24
+        BYTE                   Gn2   v114
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W22
+        BYTE   PEND
 // 014   ----------------------------------------
-	BYTE	W02
-	BYTE		N84     En3   v100
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_4_13
 // 015   ----------------------------------------
-PrepScreenFE5_4_015:
-	BYTE	W02
-	BYTE		N84     Cn3   v104
-	BYTE	W92
-	BYTE	W02
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  PrepScreenFE5_4_13
 // 016   ----------------------------------------
-	BYTE	W02
-	BYTE		TIE     Dn3   v108
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_4_13
 // 017   ----------------------------------------
-	BYTE	W32
-	BYTE	W02
-	BYTE		EOT   
-	BYTE	W16
-	BYTE		N36     An3   v100
-	BYTE	W44
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_4_13
 // 018   ----------------------------------------
-	BYTE	W02
-	BYTE		N80     En3   v112
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_4_13
 // 019   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_4_015
+        BYTE   PATT
+         POIN2  PrepScreenFE5_4_13
 // 020   ----------------------------------------
-	BYTE	W02
-	BYTE		TIE     Dn3   v112
-	BYTE	W92
-	BYTE	W02
+        BYTE   W02
+        BYTE           N92     Gn2   v121   gtp2
+        BYTE   W92
+        BYTE   W02
 // 021   ----------------------------------------
-	BYTE	W88
-	BYTE	W01
-	BYTE		EOT   
-	BYTE	W07
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE	W02
-	BYTE		N92     Dn3   v096
-	BYTE	W92
-	BYTE	W02
+PrepScreenFE5_4_22:
+        BYTE   W02
+        BYTE           N92     Cn3   v121   gtp2
+        BYTE   W92
+        BYTE   W02
+        BYTE   PEND
 // 023   ----------------------------------------
-	BYTE	W02
-	BYTE		N78     En3   v100
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_4_22
 // 024   ----------------------------------------
-	BYTE	W03
-	BYTE		PAN     c_v+0
-	BYTE	W01
-	BYTE		TIE     Gs2   v092
-	BYTE	W92
+        BYTE   W03
+        BYTE           PAN     c_v-14
+        BYTE           N80     Fn3   v102   gtp2
+        BYTE   W84
+        BYTE           N04     Ds3   v084
+        BYTE   W06
+        BYTE                   Dn3   v090
+        BYTE   W03
 // 025   ----------------------------------------
-	BYTE	W78
-	BYTE	W01
-	BYTE		EOT   
-	BYTE	W17
+        BYTE   W03
+        BYTE           N40     Cn3   v094
+        BYTE   W48
+        BYTE           N32     Fn3   v090   gtp3
+        BYTE   W44
+        BYTE   W01
 // 026   ----------------------------------------
-	BYTE	W04
-	BYTE		N88     Bn2   v104
-	BYTE	W92
+        BYTE   W03
+        BYTE           N80     Gn3   v102   gtp2
+        BYTE   W92
+        BYTE   W01
 // 027   ----------------------------------------
-	BYTE	W03
-	BYTE		N92     Gn2 
-	BYTE	W01
-	BYTE		PAN     c_v+0
-	BYTE	W92
-	BYTE	GoTo
-	 POIN2	PrepScreenFE5_4_B1
-PrepScreenFE5_4_B2:
+        BYTE   W03
+        BYTE           N92     Dn3   v107   gtp1
+        BYTE   W92
+        BYTE   W01
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOL     31
+        BYTE           PAN     c_v+0
+        BYTE   GoTo
+         POIN2  PrepScreenFE5_4_LOOP
+        BYTE   FINE
 
-//**************** Track 5 (Midi-Chn.5) ****************//
+//****************** Track 5 (Midi-Chn.5) ******************//
 
 PrepScreenFE5_5:
-	BYTE	KEYSH   PrepScreenFE5_key+0
-PrepScreenFE5_5_B1:
+        BYTE   KEYSH   PrepScreenFE5_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   66
-	BYTE		VOL     47*PrepScreenFE5_mvl/mxv
-	BYTE	W01
-	BYTE		PAN     c_v+0
-	BYTE		N13     Gn2   v124
-	BYTE	W24
-	BYTE		        Gn2   v116
-	BYTE	W24
-	BYTE		N13   
-	BYTE	W24
-	BYTE		N11   
-	BYTE	W23
+PrepScreenFE5_5_LOOP:
+        BYTE           VOICE   47
+        BYTE           VOL     58
+        BYTE   W01
+        BYTE           PAN     c_v-14
+        BYTE           VOL     55
+        BYTE           N36     Gn2   v116   gtp2
+        BYTE   W92
+        BYTE   W03
 // 001   ----------------------------------------
-	BYTE	W01
-	BYTE		N10     Gn2   v124
-	BYTE	W24
-	BYTE		N11     Gn2   v116
-	BYTE	W24
-	BYTE		N10   
-	BYTE	W24
-	BYTE		N13   
-	BYTE	W23
+        BYTE   W84
+        BYTE   W01
+        BYTE           N02     Dn2   v107
+        BYTE   W11
 // 002   ----------------------------------------
-	BYTE	W01
-	BYTE		N11     Gn2   v124
-	BYTE	W24
-	BYTE		        Gn2   v116
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N13   
-	BYTE	W23
+        BYTE   W01
+        BYTE           N36     Gn2   v109   gtp2
+        BYTE   W92
+        BYTE   W03
 // 003   ----------------------------------------
-	BYTE	W01
-	BYTE		N12     Gn2   v124
-	BYTE	W24
-	BYTE		N10     Gn2   v116
-	BYTE	W24
-	BYTE		N11   
-	BYTE	W24
-	BYTE		N11   
-	BYTE	W23
+        BYTE   W84
+        BYTE   W01
+        BYTE           N01     Dn2   v108
+        BYTE   W06
+        BYTE           N02     Dn2   v090
+        BYTE   W05
 // 004   ----------------------------------------
-	BYTE	W01
-	BYTE		N10     Gn2   v124
-	BYTE	W24
-	BYTE		N09     Gn2   v116
-	BYTE	W24
-	BYTE		N09   
-	BYTE	W24
-	BYTE		N11   
-	BYTE	W23
+        BYTE   W01
+        BYTE           N36     Gn2   v121   gtp2
+        BYTE   W92
+        BYTE   W03
 // 005   ----------------------------------------
-	BYTE	W01
-	BYTE		N10     Gn2   v124
-	BYTE	W24
-	BYTE		N09     Gn2   v116
-	BYTE	W24
-	BYTE		N10   
-	BYTE	W24
-	BYTE		N10   
-	BYTE	W23
+        BYTE   W01
+        BYTE           N32     Gn2   v104   gtp1
+        BYTE   W84
+        BYTE           N01     Dn2   v096
+        BYTE   W06
+        BYTE                   Dn2   v090
+        BYTE   W05
 // 006   ----------------------------------------
-	BYTE	W01
-	BYTE		N09     Gn2   v124
-	BYTE	W24
-	BYTE		        Gn2   v116
-	BYTE	W24
-	BYTE		N10   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W23
+        BYTE   W01
+        BYTE           N36     Gn2   v119   gtp2
+        BYTE   W92
+        BYTE   W03
 // 007   ----------------------------------------
-	BYTE	W01
-	BYTE		N11     Gn2   v124
-	BYTE	W24
-	BYTE		N09     Gn2   v116
-	BYTE	W24
-	BYTE		N10   
-	BYTE	W24
-	BYTE		N11   
-	BYTE	W23
+        BYTE   W84
+        BYTE   W01
+        BYTE           N02     Dn2   v112
+        BYTE   W11
 // 008   ----------------------------------------
-	BYTE	W01
-	BYTE		        Gn2   v124
-	BYTE	W24
-	BYTE		        Gn2   v116
-	BYTE	W24
-	BYTE		N11   
-	BYTE	W24
-	BYTE		N09   
-	BYTE	W23
+        BYTE   W01
+        BYTE           N32     Gn2   v116   gtp1
+        BYTE   W84
+        BYTE           N03     Dn2   v093
+        BYTE   W11
 // 009   ----------------------------------------
-	BYTE	W01
-	BYTE		N11     Gn2   v124
-	BYTE	W24
-	BYTE		N09     Gn2   v116
-	BYTE	W24
-	BYTE		N11   
-	BYTE	W24
-	BYTE		N10   
-	BYTE	W23
+        BYTE   W01
+        BYTE           N32     Gn2   v112   gtp1
+        BYTE   W84
+        BYTE           N02     Dn2   v108
+        BYTE   W11
 // 010   ----------------------------------------
-	BYTE	W01
-	BYTE		N12     Cn3   v124
-	BYTE	W24
-	BYTE		N11     Cn3   v116
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N13   
-	BYTE	W23
+        BYTE   W01
+        BYTE           N32     Dn2   v102   gtp1
+        BYTE   W84
+        BYTE           N02     Gn2   v109
+        BYTE   W11
 // 011   ----------------------------------------
-	BYTE	W01
-	BYTE		N11     Cn3   v124
-	BYTE	W24
-	BYTE		N10     Cn3   v116
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N10   
-	BYTE	W23
+        BYTE   W01
+        BYTE           N17     Dn2   v114
+        BYTE   W60
+        BYTE           N02     Gn2   v108
+        BYTE   W12
+        BYTE           N03     Dn2   v114
+        BYTE   W12
+        BYTE           N02     Gn2   v112
+        BYTE   W11
 // 012   ----------------------------------------
-	BYTE	W02
-	BYTE		PAN     c_v+0
-	BYTE	W24
-	BYTE		N11     Gn2   v124
-	BYTE	W24
-	BYTE		        Gn2   v116
-	BYTE	W24
-	BYTE		N11   
-	BYTE	W22
+        BYTE   W02
+        BYTE           N09     Gn2   v114
+        BYTE   W92
+        BYTE   W02
 // 013   ----------------------------------------
-PrepScreenFE5_5_013:
-	BYTE	W02
-	BYTE		N11     Gn2   v124
-	BYTE	W24
-	BYTE		        Gn2   v116
-	BYTE	W24
-	BYTE		N11   
-	BYTE	W24
-	BYTE		N11   
-	BYTE	W22
-	BYTE	PEND
+        BYTE   W84
+        BYTE   W02
+        BYTE           N02     Dn2   v108
+        BYTE   W10
 // 014   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_5_013
+        BYTE   W02
+        BYTE           N08     Gn2   v109
+        BYTE   W84
+        BYTE           N04     Dn2   v104
+        BYTE   W10
 // 015   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_5_013
+        BYTE   W02
+        BYTE           N05     Gn2   v112
+        BYTE   W60
+        BYTE           N03     Dn2   v116
+        BYTE   W12
+        BYTE                   Gn2   v114
+        BYTE   W12
+        BYTE                   Dn2   v124
+        BYTE   W10
 // 016   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_5_013
+        BYTE   W02
+        BYTE           N09     Gn2   v116
+        BYTE   W92
+        BYTE   W02
 // 017   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_5_013
+        BYTE   W84
+        BYTE   W02
+        BYTE           N02     Dn2   v107
+        BYTE   W10
 // 018   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_5_013
+        BYTE   W02
+        BYTE           N09     Gn2   v109
+        BYTE   W92
+        BYTE   W02
 // 019   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_5_013
+        BYTE   W84
+        BYTE   W02
+        BYTE           N01     Dn2   v108
+        BYTE   W06
+        BYTE           N02     Dn2   v090
+        BYTE   W04
 // 020   ----------------------------------------
-	BYTE	W02
-	BYTE		N92     Gn2   v124
-	BYTE	W92
-	BYTE	W02
+        BYTE   W02
+        BYTE           N01     Gn2   v096
+        BYTE   W12
+        BYTE                   Gn2   v025
+        BYTE   W06
+        BYTE           N04     Dn2   v056
+        BYTE   W06
+        BYTE           N02     Gn2   v065
+        BYTE   W12
+        BYTE           N03     Gn2   v051
+        BYTE   W06
+        BYTE           N04     Dn2
+        BYTE   W06
+        BYTE           N01     Gn2   v063
+        BYTE   W12
+        BYTE           N04     Gn2   v075
+        BYTE   W06
+        BYTE           N03     Dn2   v056
+        BYTE   W06
+        BYTE                   Gn2   v082
+        BYTE   W12
+        BYTE           N02     Dn2
+        BYTE   W10
 // 021   ----------------------------------------
-	BYTE	W96
+        BYTE   W02
+        BYTE           N03     Gn2   v099
+        BYTE   W12
+        BYTE                   Gn2   v072
+        BYTE   W06
+        BYTE           N04     Dn2   v067
+        BYTE   W06
+        BYTE           N02     Gn2   v059
+        BYTE   W12
+        BYTE           N03     Gn2   v058
+        BYTE   W06
+        BYTE           N04     Dn2   v056
+        BYTE   W06
+        BYTE           N01     Gn2   v059
+        BYTE   W12
+        BYTE           N04     Gn2   v073
+        BYTE   W06
+        BYTE                   Dn2   v067
+        BYTE   W06
+        BYTE           N02     Gn2   v095
+        BYTE   W12
+        BYTE                   Dn2   v093
+        BYTE   W10
 // 022   ----------------------------------------
-PrepScreenFE5_5_022:
-	BYTE	W02
-	BYTE		N92     Cn3   v124
-	BYTE	W92
-	BYTE	W02
-	BYTE	PEND
+        BYTE   W02
+        BYTE                   Gn2   v096
+        BYTE   W12
+        BYTE                   Gn2   v077
+        BYTE   W06
+        BYTE           N03     Dn2   v057
+        BYTE   W06
+        BYTE           N02     Gn2   v067
+        BYTE   W12
+        BYTE                   Gn2   v059
+        BYTE   W06
+        BYTE           N04     Dn2   v076
+        BYTE   W06
+        BYTE           N02     Gn2   v077
+        BYTE   W12
+        BYTE           N01     Gn2   v066
+        BYTE   W06
+        BYTE                   Dn2
+        BYTE   W06
+        BYTE           N02     Gn2   v081
+        BYTE   W12
+        BYTE                   Dn2   v095
+        BYTE   W10
 // 023   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_5_022
+        BYTE   W02
+        BYTE                   Gn2   v099
+        BYTE   W12
+        BYTE                   Gn2   v079
+        BYTE   W06
+        BYTE           N03     Dn2   v044
+        BYTE   W06
+        BYTE           N01     Gn2   v073
+        BYTE   W12
+        BYTE           N04     Gn2   v075
+        BYTE   W06
+        BYTE                   Dn2   v070
+        BYTE   W06
+        BYTE           N02     Gn2   v100
+        BYTE   W12
+        BYTE           N03     Gn2   v093
+        BYTE   W06
+        BYTE           N04     Dn2   v098
+        BYTE   W06
+        BYTE           N02     Gn2   v118
+        BYTE   W12
+        BYTE                   Dn2   v117
+        BYTE   W10
 // 024   ----------------------------------------
-	BYTE	W03
-	BYTE		PAN     c_v+0
-	BYTE		        c_v-14
-	BYTE		N80     Fn3   v104
-	BYTE	W84
-	BYTE		N04     Ds3   v084
-	BYTE	W06
-	BYTE		        Dn3   v092
-	BYTE	W03
+        BYTE   W03
+        BYTE           N08     Gn2   v116
+        BYTE   W84
+        BYTE           N03     Dn2   v093
+        BYTE   W09
 // 025   ----------------------------------------
-	BYTE	W03
-	BYTE		N40     Cn3   v096
-	BYTE	W48
-	BYTE		N32     Fn3   v092
-	BYTE	W44
-	BYTE	W01
+        BYTE   W03
+        BYTE           N08     Gn2   v112
+        BYTE   W84
+        BYTE           N02     Dn2   v108
+        BYTE   W09
 // 026   ----------------------------------------
-	BYTE	W03
-	BYTE		N80     Gn3   v104
-	BYTE	W92
-	BYTE	W01
+        BYTE   W03
+        BYTE           N11     Gn2
+        BYTE   W48
+        BYTE           N02     Dn2
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W32
+        BYTE   W01
 // 027   ----------------------------------------
-	BYTE	W03
-	BYTE		N92     Dn3   v108
-	BYTE	W92
-	BYTE	W01
-	BYTE	GoTo
-	 POIN2	PrepScreenFE5_5_B1
-PrepScreenFE5_5_B2:
+        BYTE   W84
+        BYTE   W01
+        BYTE                   Dn2   v102
+        BYTE   W11
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOL     58
+        BYTE           PAN     c_v+0
+        BYTE   GoTo
+         POIN2  PrepScreenFE5_5_LOOP
+        BYTE   FINE
 
-//**************** Track 6 (Midi-Chn.6) ****************//
+//****************** Track 6 (Midi-Chn.6) ******************//
 
 PrepScreenFE5_6:
-	BYTE	KEYSH   PrepScreenFE5_key+0
-PrepScreenFE5_6_B1:
+        BYTE   KEYSH   PrepScreenFE5_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   47
-	BYTE		VOL     87*PrepScreenFE5_mvl/mxv
-	BYTE	W01
-	BYTE		PAN     c_v-14
-	BYTE		N36     Gn2   v116
-	BYTE	W92
-	BYTE	W03
+PrepScreenFE5_6_LOOP:
+        BYTE           VOICE   127
+        BYTE           VOL     66
+        BYTE   W01
+        BYTE           N01     Dn1   v089
+        BYTE   W12
+        BYTE                   Dn1   v067
+        BYTE   W06
+        BYTE                   Dn1   v076
+        BYTE   W06
+        BYTE           N02     Dn1   v082
+        BYTE   W06
+        BYTE           N01     Dn1   v072
+        BYTE   W06
+        BYTE           N02
+        BYTE   W06
+        BYTE           N01     Dn1   v057
+        BYTE   W06
+        BYTE                   Dn1   v085
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE   W06
+        BYTE           N02     Dn1   v091
+        BYTE   W12
+        BYTE                   Dn1   v073
+        BYTE   W06
+        BYTE           N01     Dn1   v057
+        BYTE   W06
+        BYTE                   Dn1   v068
+        BYTE   W06
+        BYTE                   Dn1   v070
+        BYTE   W05
 // 001   ----------------------------------------
-	BYTE	W84
-	BYTE	W01
-	BYTE		N02     Dn2   v108
-	BYTE	W11
+PrepScreenFE5_6_1:
+        BYTE   W01
+        BYTE           N01     Dn1   v089
+        BYTE   W12
+        BYTE                   Dn1   v067
+        BYTE   W06
+        BYTE                   Dn1   v076
+        BYTE   W06
+        BYTE           N02     Dn1   v082
+        BYTE   W06
+        BYTE           N01     Dn1   v072
+        BYTE   W06
+        BYTE           N02
+        BYTE   W06
+        BYTE           N01     Dn1   v057
+        BYTE   W06
+        BYTE                   Dn1   v085
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE   W06
+        BYTE           N02     Dn1   v091
+        BYTE   W12
+        BYTE                   Dn1   v073
+        BYTE   W06
+        BYTE           N01     Dn1   v057
+        BYTE   W06
+        BYTE                   Dn1   v068
+        BYTE   W06
+        BYTE                   Dn1   v070
+        BYTE   W05
+        BYTE   PEND
 // 002   ----------------------------------------
-	BYTE	W01
-	BYTE		N36     Gn2   v112
-	BYTE	W92
-	BYTE	W03
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_1
 // 003   ----------------------------------------
-	BYTE	W84
-	BYTE	W01
-	BYTE		N01     Dn2   v108
-	BYTE	W06
-	BYTE		N02     Dn2   v092
-	BYTE	W05
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_1
 // 004   ----------------------------------------
-	BYTE	W01
-	BYTE		N36     Gn2   v124
-	BYTE	W92
-	BYTE	W03
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_1
 // 005   ----------------------------------------
-	BYTE	W01
-	BYTE		N32     Gn2   v104
-	BYTE	W84
-	BYTE		N01     Dn2   v096
-	BYTE	W06
-	BYTE		        Dn2   v092
-	BYTE	W05
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_1
 // 006   ----------------------------------------
-	BYTE	W01
-	BYTE		N36     Gn2   v120
-	BYTE	W92
-	BYTE	W03
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_1
 // 007   ----------------------------------------
-	BYTE	W84
-	BYTE	W01
-	BYTE		N02     Dn2   v112
-	BYTE	W11
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_1
 // 008   ----------------------------------------
-	BYTE	W01
-	BYTE		N32     Gn2   v116
-	BYTE	W84
-	BYTE		N03     Dn2   v096
-	BYTE	W11
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_1
 // 009   ----------------------------------------
-	BYTE	W01
-	BYTE		N32     Gn2   v112
-	BYTE	W84
-	BYTE		N02     Dn2   v108
-	BYTE	W11
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_1
 // 010   ----------------------------------------
-	BYTE	W01
-	BYTE		N32     Dn2   v104
-	BYTE	W84
-	BYTE		N02     Gn2   v112
-	BYTE	W11
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_1
 // 011   ----------------------------------------
-	BYTE	W01
-	BYTE		N17     Dn2   v116
-	BYTE	W60
-	BYTE		N02     Gn2   v108
-	BYTE	W12
-	BYTE		N03     Dn2   v116
-	BYTE	W12
-	BYTE		N02     Gn2   v112
-	BYTE	W11
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_1
 // 012   ----------------------------------------
-	BYTE	W02
-	BYTE		PAN     c_v-14
-	BYTE		N09     Gn2   v116
-	BYTE	W92
-	BYTE	W02
+PrepScreenFE5_6_12:
+        BYTE   W02
+        BYTE           N01     Dn1   v089
+        BYTE   W12
+        BYTE                   Dn1   v067
+        BYTE   W06
+        BYTE                   Dn1   v076
+        BYTE   W06
+        BYTE           N02     Dn1   v082
+        BYTE   W06
+        BYTE           N01     Dn1   v072
+        BYTE   W06
+        BYTE           N02
+        BYTE   W06
+        BYTE           N01     Dn1   v057
+        BYTE   W06
+        BYTE                   Dn1   v085
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE   W06
+        BYTE           N02     Dn1   v091
+        BYTE   W12
+        BYTE                   Dn1   v073
+        BYTE   W06
+        BYTE           N01     Dn1   v057
+        BYTE   W06
+        BYTE                   Dn1   v068
+        BYTE   W06
+        BYTE                   Dn1   v070
+        BYTE   W04
+        BYTE   PEND
 // 013   ----------------------------------------
-PrepScreenFE5_6_013:
-	BYTE	W84
-	BYTE	W02
-	BYTE		N02     Dn2   v108
-	BYTE	W10
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_12
 // 014   ----------------------------------------
-	BYTE	W02
-	BYTE		N08     Gn2   v112
-	BYTE	W84
-	BYTE		N04     Dn2   v104
-	BYTE	W10
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_12
 // 015   ----------------------------------------
-	BYTE	W02
-	BYTE		N05     Gn2   v112
-	BYTE	W60
-	BYTE		N03     Dn2   v116
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        Dn2   v124
-	BYTE	W10
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_12
 // 016   ----------------------------------------
-	BYTE	W02
-	BYTE		N09     Gn2   v116
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_12
 // 017   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_6_013
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_12
 // 018   ----------------------------------------
-	BYTE	W02
-	BYTE		N09     Gn2   v112
-	BYTE	W92
-	BYTE	W02
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_12
 // 019   ----------------------------------------
-	BYTE	W84
-	BYTE	W02
-	BYTE		N01     Dn2   v108
-	BYTE	W06
-	BYTE		N02     Dn2   v092
-	BYTE	W04
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_12
 // 020   ----------------------------------------
-	BYTE	W02
-	BYTE		N01     Gn2   v096
-	BYTE	W12
-	BYTE		        Gn2   v028
-	BYTE	W06
-	BYTE		N04     Dn2   v056
-	BYTE	W06
-	BYTE		N02     Gn2   v068
-	BYTE	W12
-	BYTE		N03     Gn2   v052
-	BYTE	W06
-	BYTE		N04     Dn2 
-	BYTE	W06
-	BYTE		N01     Gn2   v064
-	BYTE	W12
-	BYTE		N04     Gn2   v076
-	BYTE	W06
-	BYTE		N03     Dn2   v056
-	BYTE	W06
-	BYTE		        Gn2   v084
-	BYTE	W12
-	BYTE		N02     Dn2 
-	BYTE	W10
+        BYTE   W96
 // 021   ----------------------------------------
-	BYTE	W02
-	BYTE		N03     Gn2   v100
-	BYTE	W12
-	BYTE		        Gn2   v072
-	BYTE	W06
-	BYTE		N04     Dn2   v068
-	BYTE	W06
-	BYTE		N02     Gn2   v060
-	BYTE	W12
-	BYTE		N03   
-	BYTE	W06
-	BYTE		N04     Dn2   v056
-	BYTE	W06
-	BYTE		N01     Gn2   v060
-	BYTE	W12
-	BYTE		N04     Gn2   v076
-	BYTE	W06
-	BYTE		        Dn2   v068
-	BYTE	W06
-	BYTE		N02     Gn2   v096
-	BYTE	W12
-	BYTE		        Dn2 
-	BYTE	W10
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE	W02
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        Gn2   v080
-	BYTE	W06
-	BYTE		N03     Dn2   v060
-	BYTE	W06
-	BYTE		N02     Gn2   v068
-	BYTE	W12
-	BYTE		        Gn2   v060
-	BYTE	W06
-	BYTE		N04     Dn2   v076
-	BYTE	W06
-	BYTE		N02     Gn2   v080
-	BYTE	W12
-	BYTE		N01     Gn2   v068
-	BYTE	W06
-	BYTE		        Dn2 
-	BYTE	W06
-	BYTE		N02     Gn2   v084
-	BYTE	W12
-	BYTE		        Dn2   v096
-	BYTE	W10
+        BYTE   W96
 // 023   ----------------------------------------
-	BYTE	W02
-	BYTE		        Gn2   v100
-	BYTE	W12
-	BYTE		        Gn2   v080
-	BYTE	W06
-	BYTE		N03     Dn2   v044
-	BYTE	W06
-	BYTE		N01     Gn2   v076
-	BYTE	W12
-	BYTE		N04   
-	BYTE	W06
-	BYTE		        Dn2   v072
-	BYTE	W06
-	BYTE		N02     Gn2   v100
-	BYTE	W12
-	BYTE		N03     Gn2   v096
-	BYTE	W06
-	BYTE		N04     Dn2   v100
-	BYTE	W06
-	BYTE		N02     Gn2   v120
-	BYTE	W12
-	BYTE		        Dn2 
-	BYTE	W10
+        BYTE   W72
+        BYTE   W02
+        BYTE           N02     Dn1   v079
+        BYTE   W06
+        BYTE           N01     Dn1   v062
+        BYTE   W06
+        BYTE                   Dn1   v073
+        BYTE   W06
+        BYTE                   Dn1   v075
+        BYTE   W04
 // 024   ----------------------------------------
-	BYTE	W03
-	BYTE		PAN     c_v-14
-	BYTE		N08     Gn2   v116
-	BYTE	W84
-	BYTE		N03     Dn2   v096
-	BYTE	W09
+PrepScreenFE5_6_24:
+        BYTE   W03
+        BYTE           N10     Dn1   v094
+        BYTE   W12
+        BYTE           N04     Dn1   v072
+        BYTE   W06
+        BYTE                   Dn1   v081
+        BYTE   W06
+        BYTE                   Dn1   v087
+        BYTE   W06
+        BYTE                   Dn1   v076
+        BYTE   W06
+        BYTE                   Dn1   v077
+        BYTE   W06
+        BYTE                   Dn1   v062
+        BYTE   W06
+        BYTE                   Dn1   v090
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE   W06
+        BYTE           N10     Dn1   v096
+        BYTE   W12
+        BYTE           N04     Dn1   v079
+        BYTE   W06
+        BYTE                   Dn1   v062
+        BYTE   W06
+        BYTE                   Dn1   v073
+        BYTE   W06
+        BYTE                   Dn1   v075
+        BYTE   W03
+        BYTE   PEND
 // 025   ----------------------------------------
-	BYTE	W03
-	BYTE		N08     Gn2   v112
-	BYTE	W84
-	BYTE		N02     Dn2   v108
-	BYTE	W09
+        BYTE   PATT
+         POIN2  PrepScreenFE5_6_24
 // 026   ----------------------------------------
-	BYTE	W03
-	BYTE		N11     Gn2 
-	BYTE	W48
-	BYTE		N02     Dn2 
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W32
-	BYTE	W01
+        BYTE   W03
+        BYTE           N10     Dn1   v094
+        BYTE   W12
+        BYTE           N04     Dn1   v072
+        BYTE   W06
+        BYTE                   Dn1   v081
+        BYTE   W06
+        BYTE                   Dn1   v087
+        BYTE   W06
+        BYTE                   Dn1   v076
+        BYTE   W06
+        BYTE                   Dn1   v077
+        BYTE   W06
+        BYTE                   Dn1   v062
+        BYTE   W06
+        BYTE           N10     Dn1   v090
+        BYTE   W12
+        BYTE                   Dn1   v096
+        BYTE   W32
+        BYTE   W01
 // 027   ----------------------------------------
-	BYTE	W84
-	BYTE	W01
-	BYTE		N01     Dn2   v104
-	BYTE	W11
-	BYTE	GoTo
-	 POIN2	PrepScreenFE5_6_B1
-PrepScreenFE5_6_B2:
+        BYTE   W84
+        BYTE           N03     Dn1   v102
+        BYTE   W12
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  PrepScreenFE5_6_LOOP
+        BYTE   FINE
 
-//**************** Track 7 (Midi-Chn.7) ****************//
 
-PrepScreenFE5_7:
-	BYTE	KEYSH   PrepScreenFE5_key+0
-PrepScreenFE5_7_B1:
-// 000   ----------------------------------------
-	BYTE		VOICE   127
-	BYTE		VOL     100*PrepScreenFE5_mvl/mxv
-	BYTE	W01
-	BYTE		N01     Dn1   v092
-	BYTE	W12
-	BYTE		        Dn1   v068
-	BYTE	W06
-	BYTE		        Dn1   v076
-	BYTE	W06
-	BYTE		N02     Dn1   v084
-	BYTE	W06
-	BYTE		N01     Dn1   v072
-	BYTE	W06
-	BYTE		N02   
-	BYTE	W06
-	BYTE		N01     Dn1   v060
-	BYTE	W06
-	BYTE		        Dn1   v088
-	BYTE	W06
-	BYTE		N01   
-	BYTE	W06
-	BYTE		N02     Dn1   v092
-	BYTE	W12
-	BYTE		        Dn1   v076
-	BYTE	W06
-	BYTE		N01     Dn1   v060
-	BYTE	W06
-	BYTE		        Dn1   v068
-	BYTE	W06
-	BYTE		        Dn1   v072
-	BYTE	W05
-// 001   ----------------------------------------
-PrepScreenFE5_7_001:
-	BYTE	W01
-	BYTE		N01     Dn1   v092
-	BYTE	W12
-	BYTE		        Dn1   v068
-	BYTE	W06
-	BYTE		        Dn1   v076
-	BYTE	W06
-	BYTE		N02     Dn1   v084
-	BYTE	W06
-	BYTE		N01     Dn1   v072
-	BYTE	W06
-	BYTE		N02   
-	BYTE	W06
-	BYTE		N01     Dn1   v060
-	BYTE	W06
-	BYTE		        Dn1   v088
-	BYTE	W06
-	BYTE		N01   
-	BYTE	W06
-	BYTE		N02     Dn1   v092
-	BYTE	W12
-	BYTE		        Dn1   v076
-	BYTE	W06
-	BYTE		N01     Dn1   v060
-	BYTE	W06
-	BYTE		        Dn1   v068
-	BYTE	W06
-	BYTE		        Dn1   v072
-	BYTE	W05
-	BYTE	PEND
-// 002   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_001
-// 003   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_001
-// 004   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_001
-// 005   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_001
-// 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_001
-// 007   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_001
-// 008   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_001
-// 009   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_001
-// 010   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_001
-// 011   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_001
-// 012   ----------------------------------------
-PrepScreenFE5_7_012:
-	BYTE	W02
-	BYTE		N01     Dn1   v092
-	BYTE	W12
-	BYTE		        Dn1   v068
-	BYTE	W06
-	BYTE		        Dn1   v076
-	BYTE	W06
-	BYTE		N02     Dn1   v084
-	BYTE	W06
-	BYTE		N01     Dn1   v072
-	BYTE	W06
-	BYTE		N02   
-	BYTE	W06
-	BYTE		N01     Dn1   v060
-	BYTE	W06
-	BYTE		        Dn1   v088
-	BYTE	W06
-	BYTE		N01   
-	BYTE	W06
-	BYTE		N02     Dn1   v092
-	BYTE	W12
-	BYTE		        Dn1   v076
-	BYTE	W06
-	BYTE		N01     Dn1   v060
-	BYTE	W06
-	BYTE		        Dn1   v068
-	BYTE	W06
-	BYTE		        Dn1   v072
-	BYTE	W04
-	BYTE	PEND
-// 013   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_012
-// 014   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_012
-// 015   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_012
-// 016   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_012
-// 017   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_012
-// 018   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_012
-// 019   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_012
-// 020   ----------------------------------------
-	BYTE	W96
-// 021   ----------------------------------------
-	BYTE	W96
-// 022   ----------------------------------------
-	BYTE	W96
-// 023   ----------------------------------------
-	BYTE	W72
-	BYTE	W02
-	BYTE		N02     Dn1   v080
-	BYTE	W06
-	BYTE		N01     Dn1   v064
-	BYTE	W06
-	BYTE		        Dn1   v076
-	BYTE	W06
-	BYTE		N01   
-	BYTE	W04
-// 024   ----------------------------------------
-PrepScreenFE5_7_024:
-	BYTE	W03
-	BYTE		N10     Dn1   v096
-	BYTE	W12
-	BYTE		N04     Dn1   v072
-	BYTE	W06
-	BYTE		        Dn1   v084
-	BYTE	W06
-	BYTE		        Dn1   v088
-	BYTE	W06
-	BYTE		        Dn1   v076
-	BYTE	W06
-	BYTE		        Dn1   v080
-	BYTE	W06
-	BYTE		        Dn1   v064
-	BYTE	W06
-	BYTE		        Dn1   v092
-	BYTE	W06
-	BYTE		N04   
-	BYTE	W06
-	BYTE		N10     Dn1   v096
-	BYTE	W12
-	BYTE		N04     Dn1   v080
-	BYTE	W06
-	BYTE		        Dn1   v064
-	BYTE	W06
-	BYTE		        Dn1   v076
-	BYTE	W06
-	BYTE		N04   
-	BYTE	W03
-	BYTE	PEND
-// 025   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrepScreenFE5_7_024
-// 026   ----------------------------------------
-	BYTE	W03
-	BYTE		N10     Dn1   v096
-	BYTE	W12
-	BYTE		N04     Dn1   v072
-	BYTE	W06
-	BYTE		        Dn1   v084
-	BYTE	W06
-	BYTE		        Dn1   v088
-	BYTE	W06
-	BYTE		        Dn1   v076
-	BYTE	W06
-	BYTE		        Dn1   v080
-	BYTE	W06
-	BYTE		        Dn1   v064
-	BYTE	W06
-	BYTE		N10     Dn1   v092
-	BYTE	W12
-	BYTE		        Dn1   v096
-	BYTE	W32
-	BYTE	W01
-// 027   ----------------------------------------
-	BYTE	W84
-	BYTE		N03     Dn1   v104
-	BYTE	W12
-	BYTE	GoTo
-	 POIN2	PrepScreenFE5_7_B1
-PrepScreenFE5_7_B2:
-// 028   ----------------------------------------
-	BYTE	FINE
+//********************** End of Song ***********************//
 
-//******************************************************//
-	ALIGN 4
-
+        ALIGN 4
 PrepScreenFE5:
-	BYTE	7	// NumTrks
-	BYTE	0	// NumBlks
-	BYTE	PrepScreenFE5_pri	// Priority
-	BYTE	PrepScreenFE5_rev	// Reverb.
+        BYTE   7                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   PrepScreenFE5_pri       // Priority
+        BYTE   PrepScreenFE5_rev       // Reverb
 
-	POIN2	PrepScreenFE5_grp
+        POIN2   PrepScreenFE5_grp      
 
-	POIN2	PrepScreenFE5_1
-	POIN2	PrepScreenFE5_2
-	POIN2	PrepScreenFE5_3
-	POIN2	PrepScreenFE5_4
-	POIN2	PrepScreenFE5_5
-	POIN2	PrepScreenFE5_6
-	POIN2	PrepScreenFE5_7
+        POIN2   PrepScreenFE5_0
+        POIN2   PrepScreenFE5_1
+        POIN2   PrepScreenFE5_2
+        POIN2   PrepScreenFE5_3
+        POIN2   PrepScreenFE5_4
+        POIN2   PrepScreenFE5_5
+        POIN2   PrepScreenFE5_6
 
-	
+        

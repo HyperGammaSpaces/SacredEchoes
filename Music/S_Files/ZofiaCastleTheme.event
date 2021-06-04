@@ -1,2418 +1,2295 @@
 //Event file generated from Sappy .s format.
-	#include "MPlayDef.event"
+        #include "MPlayDef.event"
 
-	#define	ZofiaCastleTheme_grp  voicegroup000
-	#define	ZofiaCastleTheme_pri  0
-	#define	ZofiaCastleTheme_rev  0
-	#define	ZofiaCastleTheme_mvl  85
-	#define	ZofiaCastleTheme_key  0
-	#define	ZofiaCastleTheme_tbs  1
-	#define	ZofiaCastleTheme_exg  0
-	#define	ZofiaCastleTheme_cmp  1
+        #define    ZofiaCastleTheme_grp  voicegroup000
+        #define    ZofiaCastleTheme_pri  0
+        #define    ZofiaCastleTheme_rev  0
+        #define    ZofiaCastleTheme_key  0
 
-	// .rodata
-	//	ZofiaCastleTheme
-	ALIGN 4
+        // .rodata
+        // ZofiaCastleTheme
+        ALIGN 4
 
-//**************** Track 1 (Midi-Chn.1) ****************//
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+ZofiaCastleTheme_0:
+        BYTE   KEYSH   ZofiaCastleTheme_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   120/2
+        BYTE           VOICE   61
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W96
+// 002   ----------------------------------------
+        BYTE   W96
+// 003   ----------------------------------------
+        BYTE   W96
+// 004   ----------------------------------------
+ZofiaCastleTheme_0_LOOP:
+        BYTE   W96
+// 005   ----------------------------------------
+        BYTE   W96
+// 006   ----------------------------------------
+        BYTE   W96
+// 007   ----------------------------------------
+        BYTE   W96
+// 008   ----------------------------------------
+        BYTE   W96
+// 009   ----------------------------------------
+        BYTE   W96
+// 010   ----------------------------------------
+        BYTE   W96
+// 011   ----------------------------------------
+        BYTE   W96
+// 012   ----------------------------------------
+        BYTE           PAN     c_v-36
+        BYTE           VOL     48
+        BYTE   W96
+// 013   ----------------------------------------
+        BYTE   W96
+// 014   ----------------------------------------
+        BYTE   W96
+// 015   ----------------------------------------
+        BYTE   W72
+        BYTE           N21     Fs2   v100
+        BYTE           N21     Bn2
+        BYTE   W24
+// 016   ----------------------------------------
+        BYTE           N32
+        BYTE           N32     En3
+        BYTE   W36
+        BYTE           N05     Gs2
+        BYTE           N05     Ds3
+        BYTE   W06
+        BYTE                   An2
+        BYTE           N05     En3
+        BYTE   W06
+        BYTE           N21     Bn2
+        BYTE           N21     Fs3
+        BYTE   W24
+        BYTE           N16     Bn2
+        BYTE           N16     Bn3
+        BYTE   W18
+        BYTE           N05     Fs3
+        BYTE           N05     An3
+        BYTE   W06
+// 017   ----------------------------------------
+ZofiaCastleTheme_0_17:
+        BYTE           N42     Bn2   v100   gtp1
+        BYTE                   Gs3
+        BYTE   W48
+        BYTE                   An2
+        BYTE           N42     Fs3   v100   gtp1
+        BYTE   W48
+        BYTE   PEND
+// 018   ----------------------------------------
+ZofiaCastleTheme_0_18:
+        BYTE           N21     An2   v100
+        BYTE           N21     En3
+        BYTE   W24
+        BYTE           N16     An2
+        BYTE           N16     Ds3
+        BYTE   W18
+        BYTE           N05     An2
+        BYTE           N05     En3
+        BYTE   W06
+        BYTE           N19     Bn2
+        BYTE           N21     Fs3
+        BYTE   W24
+        BYTE           N16     Fs2
+        BYTE           N16     Bn2
+        BYTE   W18
+        BYTE           N05     Fs2
+        BYTE           N05     Fs3
+        BYTE   W06
+        BYTE   PEND
+// 019   ----------------------------------------
+ZofiaCastleTheme_0_19:
+        BYTE           N42     En2   v100   gtp1
+        BYTE                   Gs3
+        BYTE   W48
+        BYTE                   Bn2
+        BYTE           N42     Fs3   v100   gtp1
+        BYTE   W48
+        BYTE   PEND
+// 020   ----------------------------------------
+ZofiaCastleTheme_0_20:
+        BYTE           N32     Bn2   v100
+        BYTE           N32     En3
+        BYTE   W36
+        BYTE           N05     Gs2
+        BYTE           N05     Ds3
+        BYTE   W06
+        BYTE                   An2
+        BYTE           N05     En3
+        BYTE   W06
+        BYTE           N21     Bn2
+        BYTE           N21     Fs3
+        BYTE   W24
+        BYTE           N16     Fs2   v110
+        BYTE           N16     Bn2
+        BYTE   W18
+        BYTE           N05     An2   v100
+        BYTE           N05     Fs3
+        BYTE   W06
+        BYTE   PEND
+// 021   ----------------------------------------
+ZofiaCastleTheme_0_21:
+        BYTE           N42     Bn2   v100   gtp1
+        BYTE                   Gs3
+        BYTE   W48
+        BYTE                   Ds3
+        BYTE           N42     Bn3   v100   gtp1
+        BYTE   W48
+        BYTE   PEND
+// 022   ----------------------------------------
+ZofiaCastleTheme_0_22:
+        BYTE           N21     Cs3   v100
+        BYTE           N21     En4
+        BYTE   W24
+        BYTE           N16     Bn2
+        BYTE           N16     Ds4
+        BYTE   W18
+        BYTE           N05     Cs3
+        BYTE           N05     En4
+        BYTE   W06
+        BYTE           N21     Ds3
+        BYTE           N21     Fs4
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE           N21     Bn3
+        BYTE   W24
+        BYTE   PEND
+// 023   ----------------------------------------
+ZofiaCastleTheme_0_23:
+        BYTE           N84     En3   v100   gtp2
+        BYTE                   En4
+        BYTE   W96
+        BYTE   PEND
+// 024   ----------------------------------------
+        BYTE   W96
+// 025   ----------------------------------------
+        BYTE   W96
+// 026   ----------------------------------------
+        BYTE   W96
+// 027   ----------------------------------------
+        BYTE   W72
+        BYTE           N21     Bn2   v122
+        BYTE   W24
+// 028   ----------------------------------------
+        BYTE           N32     En3   v100
+        BYTE           N32     Gs3
+        BYTE   W36
+        BYTE           N05     En3
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE                   En3
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE           N21     En3
+        BYTE           N21     Gs3
+        BYTE   W24
+        BYTE           N42     En3   v100   gtp1
+        BYTE           N44     Gs3   v100   gtp1
+        BYTE   W24
+// 029   ----------------------------------------
+ZofiaCastleTheme_0_29:
+        BYTE   W24
+        BYTE           N21     Bn3   v100
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   Gs3
+        BYTE   W24
+        BYTE   PEND
+// 030   ----------------------------------------
+        BYTE           N32     Bn2
+        BYTE           N32     Gs3
+        BYTE   W36
+        BYTE           N05     Bn2
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE                   Bn2
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE           N21     Bn2
+        BYTE           N21     Gs3
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE           N21     An3
+        BYTE   W24
+// 031   ----------------------------------------
+ZofiaCastleTheme_0_31:
+        BYTE           N84     Ds3   v100   gtp2
+        BYTE                   Fs3
+        BYTE   W96
+        BYTE   PEND
+// 032   ----------------------------------------
+        BYTE           N32     An2
+        BYTE           N32     Gs3
+        BYTE   W36
+        BYTE           N05     An2
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE                   An2
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE           N21     An2
+        BYTE           N21     Gs3
+        BYTE   W24
+        BYTE           N42     An2   v100   gtp1
+        BYTE           N44     Gs3   v100   gtp1
+        BYTE   W24
+// 033   ----------------------------------------
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_29
+// 034   ----------------------------------------
+        BYTE           N24     Bn2   v100   gtp3
+        BYTE                   Gs3
+        BYTE   W32
+        BYTE           N07     Fs2
+        BYTE           N07     Fs3
+        BYTE   W08
+        BYTE                   Fs2
+        BYTE           N07     Fs3
+        BYTE   W08
+        BYTE           N32     Fs2
+        BYTE           N32     Fs3
+        BYTE   W40
+        BYTE           N07     An2
+        BYTE           N07     Cs4
+        BYTE   W08
+// 035   ----------------------------------------
+        BYTE           N24     An2   v100   gtp3
+        BYTE                   Cs4
+        BYTE   W32
+        BYTE           N07     Gs2
+        BYTE           N07     Bn3
+        BYTE   W08
+        BYTE                   Gs2
+        BYTE           N07     Bn3
+        BYTE   W08
+        BYTE           N21     Gs2
+        BYTE           N21     Bn3
+        BYTE   W24
+        BYTE                   Fs2
+        BYTE           N21     An3
+        BYTE   W24
+// 036   ----------------------------------------
+        BYTE           N32     En3
+        BYTE           N32     Gs3
+        BYTE   W36
+        BYTE           N05     En3
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE                   En3
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE           N21     En3
+        BYTE           N21     Gs3
+        BYTE   W24
+        BYTE                   En3
+        BYTE           N21     Gs3
+        BYTE   W24
+// 037   ----------------------------------------
+        BYTE           N84     En3   v100   gtp2
+        BYTE                   Gs3
+        BYTE   W96
+// 038   ----------------------------------------
+        BYTE           N32     En3
+        BYTE           N32     Gs3
+        BYTE   W36
+        BYTE           N05     En3
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE                   En3
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE           N21     En3
+        BYTE           N21     Gs3
+        BYTE   W24
+        BYTE                   En3
+        BYTE           N21     An3
+        BYTE   W24
+// 039   ----------------------------------------
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_31
+// 040   ----------------------------------------
+        BYTE           VOL     100
+        BYTE           PAN     c_v+0
+        BYTE   GoTo
+         POIN2  ZofiaCastleTheme_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
 
 ZofiaCastleTheme_1:
-	BYTE	KEYSH   ZofiaCastleTheme_key+0
+        BYTE   KEYSH   ZofiaCastleTheme_key+0
 // 000   ----------------------------------------
-	BYTE	TEMPO   120*ZofiaCastleTheme_tbs/2
-	BYTE		VOICE   61
-	BYTE	W96
+        BYTE           VOICE   6
+        BYTE           VOL     40
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 002   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 003   ----------------------------------------
-	BYTE	W96
-ZofiaCastleTheme_1_B1:
+        BYTE   W96
 // 004   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_1_LOOP:
+        BYTE   W96
 // 005   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 006   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 007   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 008   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 009   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 010   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 011   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 012   ----------------------------------------
-	BYTE		PAN     c_v-36
-	BYTE		VOL     72*ZofiaCastleTheme_mvl/mxv
-	BYTE	W96
+        BYTE   W96
 // 013   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 014   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 015   ----------------------------------------
-	BYTE	W72
-	BYTE		N21     Fs2   v100
-	BYTE		N21     Bn2 
-	BYTE	W24
+        BYTE   W72
+        BYTE           N09     Fs2   v102
+        BYTE           N09     Bn1
+        BYTE           N09     Bn2
+        BYTE   W21
+        BYTE           PAN     c_v-10
+        BYTE   W03
 // 016   ----------------------------------------
-	BYTE		N32   
-	BYTE		N32     En3 
-	BYTE	W36
-	BYTE		N05     Gs2 
-	BYTE		N05     Ds3 
-	BYTE	W06
-	BYTE		        An2 
-	BYTE		N05     En3 
-	BYTE	W06
-	BYTE		N21     Bn2 
-	BYTE		N21     Fs3 
-	BYTE	W24
-	BYTE		N16     Bn2 
-	BYTE		N16     Bn3 
-	BYTE	W18
-	BYTE		N05     Fs3 
-	BYTE		N05     An3 
-	BYTE	W06
+        BYTE           N09     Bn2   v100
+        BYTE           N09     En2
+        BYTE           N09     Gs2
+        BYTE   W24
+        BYTE           N10
+        BYTE           N10     Bn2
+        BYTE           N09     En2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE           N10     Fs2
+        BYTE           N10     Bn2
+        BYTE   W24
+        BYTE           N09     Bn1
+        BYTE           N10     Fs2
+        BYTE           N10     Bn2
+        BYTE   W24
 // 017   ----------------------------------------
-	BYTE		N42     Bn2 
-	BYTE		N42     Gs3 
-	BYTE	W48
-	BYTE		        An2 
-	BYTE		N42     Fs3 
-	BYTE	W48
+        BYTE           N09
+        BYTE           N09     En2
+        BYTE           N09     Gs2
+        BYTE   W24
+        BYTE           N10
+        BYTE           N10     Bn2
+        BYTE           N09     En2
+        BYTE   W24
+        BYTE           N17     Bn1
+        BYTE           N16     Fs2
+        BYTE           N17     Bn2
+        BYTE   W24
+        BYTE           N09     Bn1
+        BYTE           N10     Fs2
+        BYTE           N10     Bn2
+        BYTE   W24
 // 018   ----------------------------------------
-	BYTE		N21     An2 
-	BYTE		N21     En3 
-	BYTE	W24
-	BYTE		N16     An2 
-	BYTE		N16     Ds3 
-	BYTE	W18
-	BYTE		N05     An2 
-	BYTE		N05     En3 
-	BYTE	W06
-	BYTE		N19     Bn2 
-	BYTE		N21     Fs3 
-	BYTE	W24
-	BYTE		N16     Fs2 
-	BYTE		N16     Bn2 
-	BYTE	W18
-	BYTE		N05     Fs2 
-	BYTE		N05     Fs3 
-	BYTE	W06
+        BYTE                   Cs2
+        BYTE           N09     Cs3
+        BYTE           N10     En2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE           N09     Cs3
+        BYTE           N10     En2
+        BYTE   W24
+        BYTE           N09     Fs2
+        BYTE           N09     Bn2
+        BYTE   W24
+        BYTE                   Fs2
+        BYTE           N09     Bn2
+        BYTE   W24
 // 019   ----------------------------------------
-	BYTE		N42     En2 
-	BYTE		N42     Gs3 
-	BYTE	W48
-	BYTE		        Bn2 
-	BYTE		N42     Fs3 
-	BYTE	W48
+        BYTE           N10     En2
+        BYTE           N11     Gs2
+        BYTE   W24
+        BYTE           N10     En2
+        BYTE           N11     Gs2
+        BYTE   W24
+        BYTE           N21     An2
+        BYTE           N21     Fs2
+        BYTE   W24
+        BYTE                   An2
+        BYTE           N21     Fs2
+        BYTE   W24
 // 020   ----------------------------------------
-	BYTE		N32     Bn2 
-	BYTE		N32     En3 
-	BYTE	W36
-	BYTE		N05     Gs2 
-	BYTE		N05     Ds3 
-	BYTE	W06
-	BYTE		        An2 
-	BYTE		N05     En3 
-	BYTE	W06
-	BYTE		N21     Bn2 
-	BYTE		N21     Fs3 
-	BYTE	W24
-	BYTE		N16     Fs2   v112
-	BYTE		N16     Bn2 
-	BYTE	W18
-	BYTE		N05     An2   v100
-	BYTE		N05     Fs3 
-	BYTE	W06
+        BYTE           N09     En2
+        BYTE           N09     Gs2
+        BYTE           N21     En4
+        BYTE           N09     Bn2
+        BYTE   W24
+        BYTE           N10     Gs2
+        BYTE           N10     Bn2
+        BYTE           N09     En2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE           N10     Fs2
+        BYTE           N10     Bn2
+        BYTE   W24
+        BYTE           N09     Bn1
+        BYTE           N10     Fs2
+        BYTE           N10     Bn2
+        BYTE   W24
 // 021   ----------------------------------------
-	BYTE		N42     Bn2 
-	BYTE		N42     Gs3 
-	BYTE	W48
-	BYTE		        Ds3 
-	BYTE		N42     Bn3 
-	BYTE	W48
+        BYTE                   Gs2
+        BYTE           N09     Bn2
+        BYTE           N10     En2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE           N09     Bn2
+        BYTE           N10     En2
+        BYTE   W24
+        BYTE           N11     Bn2
+        BYTE           N11     Fs2
+        BYTE           N10     Ds2
+        BYTE   W24
+        BYTE           N21     Bn2
+        BYTE           N21     Fs2
+        BYTE           N21     Ds2
+        BYTE   W24
 // 022   ----------------------------------------
-	BYTE		N21     Cs3 
-	BYTE		N21     En4 
-	BYTE	W24
-	BYTE		N16     Bn2 
-	BYTE		N16     Ds4 
-	BYTE	W18
-	BYTE		N05     Cs3 
-	BYTE		N05     En4 
-	BYTE	W06
-	BYTE		N21     Ds3 
-	BYTE		N21     Fs4 
-	BYTE	W24
-	BYTE		        Bn2 
-	BYTE		N21     Bn3 
-	BYTE	W24
+        BYTE           N10     An2
+        BYTE           N09     En2
+        BYTE           N10     Cs2
+        BYTE   W24
+        BYTE                   An2
+        BYTE           N09     En2
+        BYTE           N10     Cs2
+        BYTE   W24
+        BYTE           N09     Bn1
+        BYTE           N10     Fs2
+        BYTE           N10     Bn2
+        BYTE   W24
+        BYTE           N09     Bn1
+        BYTE           N10     Fs2
+        BYTE           N10     Bn2
+        BYTE   W24
 // 023   ----------------------------------------
-	BYTE		N84     En3 
-	BYTE		N84     En4 
-	BYTE	W96
+        BYTE           N21     Gs2
+        BYTE           N21     En2
+        BYTE           N21     En3
+        BYTE   W24
+        BYTE                   En3
+        BYTE           N21     En2
+        BYTE           N21     Gs2
+        BYTE   W24
+        BYTE                   En3
+        BYTE           N21     En2
+        BYTE           N21     Gs2
+        BYTE   W24
+        BYTE                   En3
+        BYTE           N21     En2
+        BYTE           N21     Gs2
+        BYTE   W24
 // 024   ----------------------------------------
-	BYTE	W96
+        BYTE           N11     En2
+        BYTE           N11     Cs2
+        BYTE           N11     An2
+        BYTE   W24
+        BYTE                   En2
+        BYTE           N11     Cs2
+        BYTE           N11     An2
+        BYTE   W24
+        BYTE                   En2
+        BYTE           N11     Cs2
+        BYTE           N11     An2
+        BYTE   W24
+        BYTE                   En2
+        BYTE           N11     Cs2
+        BYTE           N11     An2
+        BYTE   W24
 // 025   ----------------------------------------
-	BYTE	W96
+        BYTE           N09     Bn2
+        BYTE           N09     Fs2
+        BYTE           N10     Ds2
+        BYTE   W24
+        BYTE           N09     Bn2
+        BYTE           N09     Fs2
+        BYTE           N10     Ds2
+        BYTE   W24
+        BYTE           N20     Bn2
+        BYTE           N19     Fs2
+        BYTE           N19     Ds2
+        BYTE   W24
+        BYTE           N09     Bn2
+        BYTE           N09     Fs2
+        BYTE           N10     Ds2
+        BYTE   W24
 // 026   ----------------------------------------
-	BYTE	W96
+        BYTE           N09     Cs2
+        BYTE           N10     Gs2
+        BYTE           N09     En2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE           N10     Gs2
+        BYTE           N09     En2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE           N10     Gs2
+        BYTE           N09     En2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE           N10     Gs2
+        BYTE           N09     En2
+        BYTE   W24
 // 027   ----------------------------------------
-	BYTE	W72
-	BYTE		N21     Bn2   v124
-	BYTE	W24
+        BYTE           N21     Ds2
+        BYTE           N21     Fs2
+        BYTE           N21     Bn2
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE           N21     Fs2
+        BYTE           N21     Bn2
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE           N21     Fs2
+        BYTE           N21     Bn2
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE           N21     Fs2
+        BYTE           N21     Bn2
+        BYTE   W24
 // 028   ----------------------------------------
-	BYTE		N32     En3   v100
-	BYTE		N32     Gs3 
-	BYTE	W36
-	BYTE		N05     En3 
-	BYTE		N05     Gs3 
-	BYTE	W06
-	BYTE		        En3 
-	BYTE		N05     Gs3 
-	BYTE	W06
-	BYTE		N21     En3 
-	BYTE		N21     Gs3 
-	BYTE	W24
-	BYTE		N42     En3 
-	BYTE		N44     Gs3 
-	BYTE	W24
+        BYTE           N44     En2   v100   gtp1
+        BYTE                   Bn2
+        BYTE           N44     Gs2   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Bn2
+        BYTE           N21     Gs2
+        BYTE           N21     En2
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE           N21     En2
+        BYTE           N21     Gs2
+        BYTE   W24
 // 029   ----------------------------------------
-ZofiaCastleTheme_1_029:
-	BYTE	W24
-	BYTE		N21     Bn3   v100
-	BYTE	W24
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		        Gs3 
-	BYTE	W24
-	BYTE	PEND
+        BYTE           N84     Bn2   v100   gtp2
+        BYTE                   En2
+        BYTE           N84     Gs2   v100   gtp2
+        BYTE   W96
 // 030   ----------------------------------------
-	BYTE		N32     Bn2 
-	BYTE		N32     Gs3 
-	BYTE	W36
-	BYTE		N05     Bn2 
-	BYTE		N05     Gs3 
-	BYTE	W06
-	BYTE		        Bn2 
-	BYTE		N05     Gs3 
-	BYTE	W06
-	BYTE		N21     Bn2 
-	BYTE		N21     Gs3 
-	BYTE	W24
-	BYTE		        Bn2 
-	BYTE		N21     An3 
-	BYTE	W24
+        BYTE           N21     Fs2
+        BYTE           N21     Ds2
+        BYTE           N21     Bn2
+        BYTE           N21     Bn1
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE           N21     Fs2
+        BYTE           N21     Bn1
+        BYTE           N21     Bn2
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE           N21     Fs2
+        BYTE           N21     Bn1
+        BYTE           N21     Bn2
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE           N21     Fs2
+        BYTE           N21     Bn1
+        BYTE           N21     Bn2
+        BYTE   W24
 // 031   ----------------------------------------
-	BYTE		N84     Ds3 
-	BYTE		N84     Fs3 
-	BYTE	W96
+        BYTE           N84     Ds2   v100   gtp2
+        BYTE                   Fs2
+        BYTE           N84     Bn1   v100   gtp2
+        BYTE                   Bn2
+        BYTE   W96
 // 032   ----------------------------------------
-	BYTE		N32     An2 
-	BYTE		N32     Gs3 
-	BYTE	W36
-	BYTE		N05     An2 
-	BYTE		N05     Gs3 
-	BYTE	W06
-	BYTE		        An2 
-	BYTE		N05     Gs3 
-	BYTE	W06
-	BYTE		N21     An2 
-	BYTE		N21     Gs3 
-	BYTE	W24
-	BYTE		N42     An2 
-	BYTE		N44     Gs3 
-	BYTE	W24
+ZofiaCastleTheme_1_32:
+        BYTE           N44     An2   v100   gtp1
+        BYTE                   En2
+        BYTE   W48
+        BYTE           N21     An2
+        BYTE           N21     En2
+        BYTE   W24
+        BYTE                   An2
+        BYTE           N21     En2
+        BYTE   W24
+        BYTE   PEND
 // 033   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_1_029
+ZofiaCastleTheme_1_33:
+        BYTE           N84     An2   v100   gtp2
+        BYTE                   En2
+        BYTE   W96
+        BYTE   PEND
 // 034   ----------------------------------------
-	BYTE		N24     Bn2   v100
-	BYTE		N24     Gs3 
-	BYTE	W32
-	BYTE		N07     Fs2 
-	BYTE		N07     Fs3 
-	BYTE	W08
-	BYTE		        Fs2 
-	BYTE		N07     Fs3 
-	BYTE	W08
-	BYTE		N32     Fs2 
-	BYTE		N32     Fs3 
-	BYTE	W40
-	BYTE		N07     An2 
-	BYTE		N07     Cs4 
-	BYTE	W08
+ZofiaCastleTheme_1_34:
+        BYTE           N21     Bn2   v100
+        BYTE           N21     Ds2
+        BYTE           N21     Fs2
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE           N21     Bn2
+        BYTE           N21     Fs2
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE           N21     Ds2
+        BYTE           N21     Fs2
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE           N21     Bn2
+        BYTE           N21     Fs2
+        BYTE   W24
+        BYTE   PEND
 // 035   ----------------------------------------
-	BYTE		N24     An2 
-	BYTE		N24     Cs4 
-	BYTE	W32
-	BYTE		N07     Gs2 
-	BYTE		N07     Bn3 
-	BYTE	W08
-	BYTE		        Gs2 
-	BYTE		N07     Bn3 
-	BYTE	W08
-	BYTE		N21     Gs2 
-	BYTE		N21     Bn3 
-	BYTE	W24
-	BYTE		        Fs2 
-	BYTE		N21     An3 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_1_34
 // 036   ----------------------------------------
-	BYTE		N32     En3 
-	BYTE		N32     Gs3 
-	BYTE	W36
-	BYTE		N05     En3 
-	BYTE		N05     Gs3 
-	BYTE	W06
-	BYTE		        En3 
-	BYTE		N05     Gs3 
-	BYTE	W06
-	BYTE		N21     En3 
-	BYTE		N21     Gs3 
-	BYTE	W24
-	BYTE		        En3 
-	BYTE		N21     Gs3 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_1_32
 // 037   ----------------------------------------
-	BYTE		N84     En3 
-	BYTE		N84     Gs3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_1_33
 // 038   ----------------------------------------
-	BYTE		N32     En3 
-	BYTE		N32     Gs3 
-	BYTE	W36
-	BYTE		N05     En3 
-	BYTE		N05     Gs3 
-	BYTE	W06
-	BYTE		        En3 
-	BYTE		N05     Gs3 
-	BYTE	W06
-	BYTE		N21     En3 
-	BYTE		N21     Gs3 
-	BYTE	W24
-	BYTE		        En3 
-	BYTE		N21     An3 
-	BYTE	W24
+        BYTE           N44     Bn2   v100   gtp1
+        BYTE                   Fs2
+        BYTE           N44     Ds2   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Bn2
+        BYTE           N21     Ds2
+        BYTE           N21     Fs2
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE           N21     Ds2
+        BYTE           N21     Fs2
+        BYTE   W24
 // 039   ----------------------------------------
-	BYTE		N84     Ds3 
-	BYTE		N84     Fs3 
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	ZofiaCastleTheme_1_B1
-ZofiaCastleTheme_1_B2:
+        BYTE           N84     Bn2   v100   gtp2
+        BYTE                   Ds2
+        BYTE           N84     Ds3   v100   gtp2
+        BYTE   W96
 // 040   ----------------------------------------
-	BYTE	FINE
+        BYTE           PAN     c_v+0
+        BYTE   GoTo
+         POIN2  ZofiaCastleTheme_1_LOOP
+        BYTE   FINE
 
-//**************** Track 2 (Midi-Chn.2) ****************//
+//****************** Track 2 (Midi-Chn.2) ******************//
 
 ZofiaCastleTheme_2:
-	BYTE	KEYSH   ZofiaCastleTheme_key+0
+        BYTE   KEYSH   ZofiaCastleTheme_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   6
-	BYTE		VOL     60*ZofiaCastleTheme_mvl/mxv
-	BYTE	W96
+        BYTE           VOICE   34
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 002   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 003   ----------------------------------------
-	BYTE	W96
-ZofiaCastleTheme_2_B1:
+        BYTE           VOL     46
+        BYTE   W92
+        BYTE   W02
+        BYTE           PAN     c_v-17
+        BYTE   W02
 // 004   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_2_LOOP:
+        BYTE           N21     En2   v100
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
 // 005   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_2_5:
+        BYTE           N21     En2   v100
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE   PEND
 // 006   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_2_6:
+        BYTE           N21     An1   v100
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE   PEND
 // 007   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_5
 // 008   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_5
 // 009   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_2_9:
+        BYTE           N21     En2   v100
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE   W24
+        BYTE   PEND
 // 010   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_2_10:
+        BYTE           N21     Cs2   v100
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE   PEND
 // 011   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_2_11:
+        BYTE           N21     En2   v100
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE   PEND
 // 012   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_2_12:
+        BYTE           N21     An1   v100
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE   PEND
 // 013   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_2_13:
+        BYTE           N21     Bn1   v100
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE   PEND
 // 014   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_12
 // 015   ----------------------------------------
-	BYTE	W72
-	BYTE		N09     Bn1   v104
-	BYTE		N09     Fs2 
-	BYTE		N09     Bn2 
-	BYTE	W21
-	BYTE		PAN     c_v-10
-	BYTE	W03
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_13
 // 016   ----------------------------------------
-	BYTE		N09     En2   v100
-	BYTE		N09     Gs2 
-	BYTE		N09     Bn2 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N10     Gs2 
-	BYTE		N10     Bn2 
-	BYTE	W24
-	BYTE		N09     Bn1 
-	BYTE		N10     Fs2 
-	BYTE		N10     Bn2 
-	BYTE	W24
-	BYTE		N09     Bn1 
-	BYTE		N10     Fs2 
-	BYTE		N10     Bn2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_5
 // 017   ----------------------------------------
-	BYTE		N09     En2 
-	BYTE		N09     Gs2 
-	BYTE		N09     Bn2 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N10     Gs2 
-	BYTE		N10     Bn2 
-	BYTE	W24
-	BYTE		N17     Bn1 
-	BYTE		N16     Fs2 
-	BYTE		N17     Bn2 
-	BYTE	W24
-	BYTE		N09     Bn1 
-	BYTE		N10     Fs2 
-	BYTE		N10     Bn2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_5
 // 018   ----------------------------------------
-	BYTE		        Cs2 
-	BYTE		N10     En2 
-	BYTE		N09     Cs3 
-	BYTE	W24
-	BYTE		N10     Cs2 
-	BYTE		N10     En2 
-	BYTE		N09     Cs3 
-	BYTE	W24
-	BYTE		        Fs2 
-	BYTE		N09     Bn2 
-	BYTE	W24
-	BYTE		        Fs2 
-	BYTE		N09     Bn2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_6
 // 019   ----------------------------------------
-	BYTE		N10     En2 
-	BYTE		N11     Gs2 
-	BYTE	W24
-	BYTE		N10     En2 
-	BYTE		N11     Gs2 
-	BYTE	W24
-	BYTE		N21     Fs2 
-	BYTE		N21     An2 
-	BYTE	W24
-	BYTE		        Fs2 
-	BYTE		N21     An2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_5
 // 020   ----------------------------------------
-	BYTE		N09     En2 
-	BYTE		N09     Gs2 
-	BYTE		N09     Bn2 
-	BYTE		N21     En4 
-	BYTE	W24
-	BYTE		N09     En2 
-	BYTE		N10     Gs2 
-	BYTE		N10     Bn2 
-	BYTE	W24
-	BYTE		N09     Bn1 
-	BYTE		N10     Fs2 
-	BYTE		N10     Bn2 
-	BYTE	W24
-	BYTE		N09     Bn1 
-	BYTE		N10     Fs2 
-	BYTE		N10     Bn2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_5
 // 021   ----------------------------------------
-	BYTE		        En2 
-	BYTE		N10     Gs2 
-	BYTE		N09     Bn2 
-	BYTE	W24
-	BYTE		N10     En2 
-	BYTE		N10     Gs2 
-	BYTE		N09     Bn2 
-	BYTE	W24
-	BYTE		N10     Ds2 
-	BYTE		N11     Fs2 
-	BYTE		N11     Bn2 
-	BYTE	W24
-	BYTE		N21     Ds2 
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_9
 // 022   ----------------------------------------
-	BYTE		N10     Cs2 
-	BYTE		N09     En2 
-	BYTE		N10     An2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N09     En2 
-	BYTE		N10     An2 
-	BYTE	W24
-	BYTE		N09     Bn1 
-	BYTE		N10     Fs2 
-	BYTE		N10     Bn2 
-	BYTE	W24
-	BYTE		N09     Bn1 
-	BYTE		N10     Fs2 
-	BYTE		N10     Bn2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_10
 // 023   ----------------------------------------
-	BYTE		N21     En2 
-	BYTE		N21     Gs2 
-	BYTE		N21     En3 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N21     Gs2 
-	BYTE		N21     En3 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N21     Gs2 
-	BYTE		N21     En3 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N21     Gs2 
-	BYTE		N21     En3 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_11
 // 024   ----------------------------------------
-	BYTE		N11     Cs2 
-	BYTE		N11     En2 
-	BYTE		N11     An2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N11     En2 
-	BYTE		N11     An2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N11     En2 
-	BYTE		N11     An2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N11     En2 
-	BYTE		N11     An2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_12
 // 025   ----------------------------------------
-	BYTE		N10     Ds2 
-	BYTE		N09     Fs2 
-	BYTE		N09     Bn2 
-	BYTE	W24
-	BYTE		N10     Ds2 
-	BYTE		N09     Fs2 
-	BYTE		N09     Bn2 
-	BYTE	W24
-	BYTE		N19     Ds2 
-	BYTE		N19     Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		N10     Ds2 
-	BYTE		N09     Fs2 
-	BYTE		N09     Bn2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_13
 // 026   ----------------------------------------
-	BYTE		        Cs2 
-	BYTE		N09     En2 
-	BYTE		N10     Gs2 
-	BYTE	W24
-	BYTE		N09     Cs2 
-	BYTE		N09     En2 
-	BYTE		N10     Gs2 
-	BYTE	W24
-	BYTE		N09     Cs2 
-	BYTE		N09     En2 
-	BYTE		N10     Gs2 
-	BYTE	W24
-	BYTE		N09     Cs2 
-	BYTE		N09     En2 
-	BYTE		N10     Gs2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_12
 // 027   ----------------------------------------
-ZofiaCastleTheme_2_027:
-	BYTE		N21     Ds2   v100
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
-	BYTE		        Ds2 
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
-	BYTE		        Ds2 
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
-	BYTE		        Ds2 
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_13
 // 028   ----------------------------------------
-	BYTE		N44     En2 
-	BYTE		N44     Gs2 
-	BYTE		N44     Bn2 
-	BYTE	W48
-	BYTE		N21     En2 
-	BYTE		N21     Gs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N21     Gs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
+ZofiaCastleTheme_2_28:
+        BYTE           N21     En2   v100
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+        BYTE   PEND
 // 029   ----------------------------------------
-	BYTE		N84     En2 
-	BYTE		N84     Gs2 
-	BYTE		N84     Bn2 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_28
 // 030   ----------------------------------------
-	BYTE		N21     Bn1 
-	BYTE		N21     Ds2 
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE		N21     Ds2 
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE		N21     Ds2 
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE		N21     Ds2 
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_13
 // 031   ----------------------------------------
-	BYTE		N84     Bn1 
-	BYTE		N84     Ds2 
-	BYTE		N84     Fs2 
-	BYTE		N84     Bn2 
-	BYTE	W96
+ZofiaCastleTheme_2_31:
+        BYTE           N21     Bn1   v100
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   Gs1
+        BYTE   W24
+        BYTE                   Fs1
+        BYTE   W24
+        BYTE   PEND
 // 032   ----------------------------------------
-ZofiaCastleTheme_2_032:
-	BYTE		N44     En2   v100
-	BYTE		N44     An2 
-	BYTE	W48
-	BYTE		N21     En2 
-	BYTE		N21     An2 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N21     An2 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_12
 // 033   ----------------------------------------
-	BYTE		N84     En2 
-	BYTE		N84     An2 
-	BYTE	W96
+        BYTE           N21     En2   v100
+        BYTE           N21     An1
+        BYTE   W24
+        BYTE                   En2
+        BYTE           N21     An1
+        BYTE   W24
+        BYTE                   En2
+        BYTE           N21     An1
+        BYTE   W24
+        BYTE                   En2
+        BYTE           N21     An1
+        BYTE   W24
 // 034   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_2_027
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_13
 // 035   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_2_027
+        BYTE           N21     Bn1   v100
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
 // 036   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_2_032
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_12
 // 037   ----------------------------------------
-	BYTE		N84     En2   v100
-	BYTE		N84     An2 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_12
 // 038   ----------------------------------------
-	BYTE		N44     Ds2 
-	BYTE		N44     Fs2 
-	BYTE		N44     Bn2 
-	BYTE	W48
-	BYTE		N21     Ds2 
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
-	BYTE		        Ds2 
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_13
 // 039   ----------------------------------------
-	BYTE		N84     Ds2 
-	BYTE		N84     Bn2 
-	BYTE		N84     Ds3 
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	ZofiaCastleTheme_2_B1
-ZofiaCastleTheme_2_B2:
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_2_31
 // 040   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  ZofiaCastleTheme_2_LOOP
+        BYTE   FINE
 
-//**************** Track 3 (Midi-Chn.3) ****************//
+//****************** Track 3 (Midi-Chn.3) ******************//
 
 ZofiaCastleTheme_3:
-	BYTE	KEYSH   ZofiaCastleTheme_key+0
+        BYTE   KEYSH   ZofiaCastleTheme_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   34
-	BYTE	W96
+        BYTE           VOICE   14
+        BYTE           N72     Bn2   v102
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 002   ----------------------------------------
-	BYTE	W96
+        BYTE                   Bn2
+        BYTE   W96
 // 003   ----------------------------------------
-	BYTE		VOL     70*ZofiaCastleTheme_mvl/mxv
-	BYTE	W92
-	BYTE	W02
-	BYTE		PAN     c_v-17
-	BYTE	W02
-ZofiaCastleTheme_3_B1:
+        BYTE           VOL     43
+        BYTE   W56
+        BYTE   W03
+        BYTE                   37
+        BYTE   W03
+        BYTE                   38
+        BYTE   W09
+        BYTE                   39
+        BYTE   W24
+        BYTE   W01
 // 004   ----------------------------------------
-	BYTE		N21     En2   v100
-	BYTE	W03
-	BYTE	W06
-	BYTE	W15
-	BYTE		N21   
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
+ZofiaCastleTheme_3_LOOP:
+        BYTE           N84     En5   v123   gtp2
+        BYTE   W96
 // 005   ----------------------------------------
-ZofiaCastleTheme_3_005:
-	BYTE		N21     En2   v100
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W96
 // 006   ----------------------------------------
-ZofiaCastleTheme_3_006:
-	BYTE		N21     An1   v100
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W96
 // 007   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_005
+        BYTE   W96
 // 008   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_005
+        BYTE                   En5   v124
+        BYTE   W96
 // 009   ----------------------------------------
-ZofiaCastleTheme_3_009:
-	BYTE		N21     En2   v100
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		        Ds2 
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W96
 // 010   ----------------------------------------
-ZofiaCastleTheme_3_010:
-	BYTE		N21     Cs2   v100
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE	PEND
+ZofiaCastleTheme_3_10:
+        BYTE   W48
+        BYTE           N21     Fs5   v100
+        BYTE   W24
+        BYTE                   Bn4
+        BYTE   W24
+        BYTE   PEND
 // 011   ----------------------------------------
-ZofiaCastleTheme_3_011:
-	BYTE		N21     En2   v100
-	BYTE	W24
-	BYTE		        Ds2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE	W24
-	BYTE	PEND
+ZofiaCastleTheme_3_11:
+        BYTE           N21     En5   v125
+        BYTE   W24
+        BYTE                   Ds5
+        BYTE   W24
+        BYTE                   Cs5   v126
+        BYTE   W24
+        BYTE                   Bn4
+        BYTE   W24
+        BYTE   PEND
 // 012   ----------------------------------------
-ZofiaCastleTheme_3_012:
-	BYTE		N21     An1   v100
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W96
 // 013   ----------------------------------------
-ZofiaCastleTheme_3_013:
-	BYTE		N21     Bn1   v100
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W96
 // 014   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_012
+        BYTE   W96
 // 015   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_013
+        BYTE                   Bn4   v123
+        BYTE   W24
+        BYTE                   An4   v124
+        BYTE   W24
+        BYTE                   Gs4   v125
+        BYTE   W24
+        BYTE                   Fs4
+        BYTE   W24
 // 016   ----------------------------------------
-	BYTE		N21     En2   v100
-	BYTE	W03
-	BYTE	W06
-	BYTE	W15
-	BYTE		N21   
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
+        BYTE           N84     En5   v123   gtp2
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_005
+        BYTE   W96
 // 018   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_006
+        BYTE   W96
 // 019   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_005
+        BYTE   W96
 // 020   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_005
+        BYTE                   En5   v124
+        BYTE   W96
 // 021   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_009
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_010
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_3_10
 // 023   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_011
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_3_11
 // 024   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_012
+        BYTE   W96
 // 025   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_013
+        BYTE   W96
 // 026   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_012
+        BYTE   W96
 // 027   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_013
+        BYTE           N21     Bn4   v123
+        BYTE   W24
+        BYTE                   An4   v125
+        BYTE   W24
+        BYTE                   Gs4   v127
+        BYTE   W24
+        BYTE                   Fs4   v125
+        BYTE   W24
 // 028   ----------------------------------------
-ZofiaCastleTheme_3_028:
-	BYTE		N21     En2   v100
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE	PEND
+        BYTE           N84     Gs4   v126   gtp2
+        BYTE   W96
 // 029   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_028
+        BYTE   W96
 // 030   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_013
+        BYTE   W96
 // 031   ----------------------------------------
-ZofiaCastleTheme_3_031:
-	BYTE		N21     Bn1   v100
-	BYTE	W24
-	BYTE		        An1 
-	BYTE	W24
-	BYTE		        Gs1 
-	BYTE	W24
-	BYTE		        Fs1 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W96
 // 032   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_012
+        BYTE                   Gs5   v123
+        BYTE   W96
 // 033   ----------------------------------------
-	BYTE		N21     An1   v100
-	BYTE		N21     En2 
-	BYTE	W24
-	BYTE		        An1 
-	BYTE		N21     En2 
-	BYTE	W24
-	BYTE		        An1 
-	BYTE		N21     En2 
-	BYTE	W24
-	BYTE		        An1 
-	BYTE		N21     En2 
-	BYTE	W24
+        BYTE   W96
 // 034   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_013
+        BYTE   W96
 // 035   ----------------------------------------
-	BYTE		N21     Bn1   v100
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		        An1 
-	BYTE	W24
+        BYTE   W96
 // 036   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_012
+        BYTE                   Gs5
+        BYTE   W96
 // 037   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_012
+        BYTE   W96
 // 038   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_013
+        BYTE                   Gs5   v125
+        BYTE   W96
 // 039   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_3_031
-	BYTE	GoTo
-	 POIN2	ZofiaCastleTheme_3_B1
-ZofiaCastleTheme_3_B2:
+        BYTE           N21     Bn5
+        BYTE   W24
+        BYTE                   An5
+        BYTE   W24
+        BYTE                   Gs5   v126
+        BYTE   W24
+        BYTE                   Fs5   v127
+        BYTE   W24
 // 040   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  ZofiaCastleTheme_3_LOOP
+        BYTE   FINE
 
-//**************** Track 4 (Midi-Chn.4) ****************//
+//****************** Track 4 (Midi-Chn.4) ******************//
 
 ZofiaCastleTheme_4:
-	BYTE		VOL     127*ZofiaCastleTheme_mvl/mxv
-	BYTE	KEYSH   ZofiaCastleTheme_key+0
+        BYTE   KEYSH   ZofiaCastleTheme_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   14
-	BYTE		N72     Bn2   v104
-	BYTE	W96
+        BYTE           VOICE   48
+        BYTE           VOL     38
+        BYTE           TIE     Bn0   v100
+        BYTE           TIE     Fs1
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE	W96
+        BYTE   W84
+        BYTE           EOT
+        BYTE           EOT     Bn0
+        BYTE   W12
 // 002   ----------------------------------------
-	BYTE		N72   
-	BYTE	W96
+        BYTE           TIE     Fs1
+        BYTE           TIE     Bn0
+        BYTE   W96
 // 003   ----------------------------------------
-	BYTE		VOL     64*ZofiaCastleTheme_mvl/mxv
-	BYTE	W36
-	BYTE	W02
-	BYTE	W20
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W01
-	BYTE	W02
-	BYTE	W03
-	BYTE	W02
-	BYTE	W06
-	BYTE	W05
-	BYTE	W04
-	BYTE	W02
-ZofiaCastleTheme_4_B1:
+        BYTE           PAN     c_v-22
+        BYTE   W66
+        BYTE           EOT
+        BYTE           EOT     Fs1
+        BYTE   W06
+        BYTE           N21     Fs2
+        BYTE           N21     Bn2
+        BYTE   W24
 // 004   ----------------------------------------
-	BYTE		N84     En5   v124
-	BYTE	W04
-	BYTE	W92
+ZofiaCastleTheme_4_LOOP:
+        BYTE           N32     Bn2   v100
+        BYTE           N32     En3
+        BYTE   W36
+        BYTE           N05     Gs2
+        BYTE           N05     Ds3
+        BYTE   W06
+        BYTE                   An2
+        BYTE           N05     En3
+        BYTE   W06
+        BYTE           N21     Bn2
+        BYTE           N21     Fs3
+        BYTE   W24
+        BYTE           N16     Bn2
+        BYTE           N16     Bn3
+        BYTE   W18
+        BYTE           N05     Fs3
+        BYTE           N05     An3
+        BYTE   W06
 // 005   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_17
 // 006   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_18
 // 007   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_19
 // 008   ----------------------------------------
-	BYTE		N84   
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_20
 // 009   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_21
 // 010   ----------------------------------------
-ZofiaCastleTheme_4_010:
-	BYTE	W36
-	BYTE	W03
-	BYTE	W09
-	BYTE		N21     Fs5   v100
-	BYTE	W24
-	BYTE		        Bn4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_22
 // 011   ----------------------------------------
-ZofiaCastleTheme_4_011:
-	BYTE		N21     En5   v127
-	BYTE	W24
-	BYTE		        Ds5 
-	BYTE	W24
-	BYTE		        Cs5 
-	BYTE	W24
-	BYTE		        Bn4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_23
 // 012   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_4_12:
+        BYTE           N56     An3   v100   gtp2
+        BYTE                   Cs4
+        BYTE   W60
+        BYTE           N10     An3
+        BYTE           N10     Cs4
+        BYTE   W12
+        BYTE                   Bn3
+        BYTE           N10     Ds4
+        BYTE   W12
+        BYTE                   Cs4
+        BYTE           N10     En4
+        BYTE   W12
+        BYTE   PEND
 // 013   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_4_13:
+        BYTE           N32     Cs4   v100
+        BYTE           N32     En4
+        BYTE   W36
+        BYTE           N05     Bn3
+        BYTE           N05     Ds4
+        BYTE   W06
+        BYTE                   An3
+        BYTE           N05     Cs4
+        BYTE   W06
+        BYTE           N42     Bn3   v100   gtp1
+        BYTE                   Ds4
+        BYTE   W48
+        BYTE   PEND
 // 014   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_4_14:
+        BYTE           N56     En4   v100   gtp2
+        BYTE                   Cs4
+        BYTE   W60
+        BYTE           N10     En4
+        BYTE           N10     Cs4
+        BYTE   W12
+        BYTE                   Fs4
+        BYTE           N10     Ds4
+        BYTE   W12
+        BYTE                   Gs4
+        BYTE           N10     En4
+        BYTE   W12
+        BYTE   PEND
 // 015   ----------------------------------------
-	BYTE		        Bn4   v124
-	BYTE	W24
-	BYTE		        An4 
-	BYTE	W24
-	BYTE		        Gs4   v127
-	BYTE	W24
-	BYTE		        Fs4 
-	BYTE	W24
+ZofiaCastleTheme_4_15:
+        BYTE           N32     Gs4   v100
+        BYTE           N32     En4
+        BYTE   W36
+        BYTE           N05     Fs4
+        BYTE           N05     Ds4
+        BYTE   W06
+        BYTE                   En4
+        BYTE           N05     Cs4
+        BYTE   W06
+        BYTE           N42     Fs4   v100   gtp1
+        BYTE                   Ds4
+        BYTE   W48
+        BYTE   PEND
 // 016   ----------------------------------------
-	BYTE		N84     En5   v124
-	BYTE	W04
-	BYTE	W92
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 018   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 019   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 020   ----------------------------------------
-	BYTE		N84   
-	BYTE	W96
+        BYTE   W96
 // 021   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_4_010
+        BYTE   W96
 // 023   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_4_011
+        BYTE   W96
 // 024   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_4_12
 // 025   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_4_13
 // 026   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_4_14
 // 027   ----------------------------------------
-	BYTE		N21     Bn4   v124
-	BYTE	W24
-	BYTE		        An4   v127
-	BYTE	W24
-	BYTE		        Gs4 
-	BYTE	W24
-	BYTE		        Fs4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_4_15
 // 028   ----------------------------------------
-	BYTE		N84     Gs4 
-	BYTE	W96
+        BYTE   W96
 // 029   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 030   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 031   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 032   ----------------------------------------
-	BYTE		        Gs5   v124
-	BYTE	W96
+        BYTE   W96
 // 033   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 034   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 035   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 036   ----------------------------------------
-	BYTE		N84   
-	BYTE	W96
+        BYTE           N32     En4   v100
+        BYTE           N32     Gs4
+        BYTE   W36
+        BYTE           N05     En4
+        BYTE           N05     Gs4
+        BYTE   W06
+        BYTE                   En4
+        BYTE           N05     Gs4
+        BYTE   W06
+        BYTE           N21     En4
+        BYTE           N21     Gs4
+        BYTE   W24
+        BYTE                   En4
+        BYTE           N21     Gs4
+        BYTE   W24
 // 037   ----------------------------------------
-	BYTE	W96
+        BYTE           N84     En4   v100   gtp2
+        BYTE                   Gs4
+        BYTE   W96
 // 038   ----------------------------------------
-	BYTE		        Gs5   v127
-	BYTE	W96
+        BYTE           N32     En4
+        BYTE           N32     Gs4
+        BYTE   W36
+        BYTE           N05     En4
+        BYTE           N05     Gs4
+        BYTE   W06
+        BYTE                   En4
+        BYTE           N05     Gs4
+        BYTE   W06
+        BYTE           N21     En4
+        BYTE           N21     Gs4
+        BYTE   W24
+        BYTE                   En4
+        BYTE           N21     An4
+        BYTE   W24
 // 039   ----------------------------------------
-	BYTE		N21     Bn5 
-	BYTE	W24
-	BYTE		        An5 
-	BYTE	W24
-	BYTE		        Gs5 
-	BYTE	W24
-	BYTE		        Fs5 
-	BYTE	W24
-	BYTE	GoTo
-	 POIN2	ZofiaCastleTheme_4_B1
-ZofiaCastleTheme_4_B2:
+ZofiaCastleTheme_4_39:
+        BYTE           N84     Ds4   v100   gtp2
+        BYTE                   Fs4
+        BYTE   W96
+        BYTE   PEND
 // 040   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  ZofiaCastleTheme_4_LOOP
+        BYTE   FINE
 
-//**************** Track 5 (Midi-Chn.5) ****************//
+//****************** Track 5 (Midi-Chn.5) ******************//
 
 ZofiaCastleTheme_5:
-	BYTE	KEYSH   ZofiaCastleTheme_key+0
+        BYTE   KEYSH   ZofiaCastleTheme_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   48
-	BYTE		VOL     57*ZofiaCastleTheme_mvl/mxv
-	BYTE		TIE     Bn0   v100
-	BYTE		TIE     Fs1 
-	BYTE	W96
+        BYTE           VOICE   57
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE	W84
-	BYTE		EOT     Bn0 
-	BYTE		        Fs1 
-	BYTE	W12
+        BYTE   W96
 // 002   ----------------------------------------
-	BYTE		TIE     Bn0 
-	BYTE		TIE     Fs1 
-	BYTE	W96
+        BYTE   W96
 // 003   ----------------------------------------
-	BYTE		PAN     c_v-22
-	BYTE	W66
-	BYTE		EOT     Bn0 
-	BYTE		        Fs1 
-	BYTE	W06
-	BYTE		N21     Fs2 
-	BYTE		N21     Bn2 
-	BYTE	W24
-ZofiaCastleTheme_5_B1:
+        BYTE           VOL     70
+        BYTE   W96
 // 004   ----------------------------------------
-	BYTE		N32     Bn2   v100
-	BYTE		N32     En3 
-	BYTE	W36
-	BYTE		N05     Gs2 
-	BYTE		N05     Ds3 
-	BYTE	W06
-	BYTE		        An2 
-	BYTE		N05     En3 
-	BYTE	W06
-	BYTE		N21     Bn2 
-	BYTE		N21     Fs3 
-	BYTE	W24
-	BYTE		N16     Bn2 
-	BYTE		N16     Bn3 
-	BYTE	W18
-	BYTE		N05     Fs3 
-	BYTE		N05     An3 
-	BYTE	W06
+ZofiaCastleTheme_5_LOOP:
+        BYTE   W96
 // 005   ----------------------------------------
-	BYTE		N42     Bn2 
-	BYTE		N42     Gs3 
-	BYTE	W48
-	BYTE		        An2 
-	BYTE		N42     Fs3 
-	BYTE	W48
+        BYTE   W96
 // 006   ----------------------------------------
-	BYTE		N21     An2 
-	BYTE		N21     En3 
-	BYTE	W24
-	BYTE		N16     An2 
-	BYTE		N16     Ds3 
-	BYTE	W18
-	BYTE		N05     An2 
-	BYTE		N05     En3 
-	BYTE	W06
-	BYTE		N19     Bn2 
-	BYTE		N21     Fs3 
-	BYTE	W24
-	BYTE		N16     Fs2 
-	BYTE		N16     Bn2 
-	BYTE	W18
-	BYTE		N05     Fs2 
-	BYTE		N05     Fs3 
-	BYTE	W06
+        BYTE   W96
 // 007   ----------------------------------------
-	BYTE		N42     En2 
-	BYTE		N42     Gs3 
-	BYTE	W48
-	BYTE		        Bn2 
-	BYTE		N42     Fs3 
-	BYTE	W48
+        BYTE   W96
 // 008   ----------------------------------------
-	BYTE		N32     Bn2 
-	BYTE		N32     En3 
-	BYTE	W36
-	BYTE		N05     Gs2 
-	BYTE		N05     Ds3 
-	BYTE	W06
-	BYTE		        An2 
-	BYTE		N05     En3 
-	BYTE	W06
-	BYTE		N21     Bn2 
-	BYTE		N21     Fs3 
-	BYTE	W24
-	BYTE		N16     Fs2   v112
-	BYTE		N16     Bn2 
-	BYTE	W18
-	BYTE		N05     An2   v100
-	BYTE		N05     Fs3 
-	BYTE	W06
+        BYTE   W96
 // 009   ----------------------------------------
-	BYTE		N42     Bn2 
-	BYTE		N42     Gs3 
-	BYTE	W48
-	BYTE		        Ds3 
-	BYTE		N42     Bn3 
-	BYTE	W48
+        BYTE   W96
 // 010   ----------------------------------------
-	BYTE		N21     Cs3 
-	BYTE		N21     En4 
-	BYTE	W24
-	BYTE		N16     Bn2 
-	BYTE		N16     Ds4 
-	BYTE	W18
-	BYTE		N05     Cs3 
-	BYTE		N05     En4 
-	BYTE	W06
-	BYTE		N21     Ds3 
-	BYTE		N21     Fs4 
-	BYTE	W24
-	BYTE		        Bn2 
-	BYTE		N21     Bn3 
-	BYTE	W24
+        BYTE   W96
 // 011   ----------------------------------------
-	BYTE		N84     En3 
-	BYTE		N84     En4 
-	BYTE	W84
-	BYTE	W02
-	BYTE	W03
-	BYTE	W03
-	BYTE	W03
-	BYTE	W01
+        BYTE   W96
 // 012   ----------------------------------------
-ZofiaCastleTheme_5_012:
-	BYTE		N56     An3   v100
-	BYTE		N56     Cs4 
-	BYTE	W01
-	BYTE	W03
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W48
-	BYTE	W03
-	BYTE		N10     An3 
-	BYTE		N10     Cs4 
-	BYTE	W12
-	BYTE		        Bn3 
-	BYTE		N10     Ds4 
-	BYTE	W12
-	BYTE		        Cs4 
-	BYTE		N10     En4 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W96
 // 013   ----------------------------------------
-ZofiaCastleTheme_5_013:
-	BYTE		N32     Cs4   v100
-	BYTE		N32     En4 
-	BYTE	W36
-	BYTE		N05     Bn3 
-	BYTE		N05     Ds4 
-	BYTE	W06
-	BYTE		        An3 
-	BYTE		N05     Cs4 
-	BYTE	W06
-	BYTE		N42     Bn3 
-	BYTE		N42     Ds4 
-	BYTE	W48
-	BYTE	PEND
+        BYTE   W96
 // 014   ----------------------------------------
-ZofiaCastleTheme_5_014:
-	BYTE		N56     Cs4   v100
-	BYTE		N56     En4 
-	BYTE	W60
-	BYTE		N10     Cs4 
-	BYTE		N10     En4 
-	BYTE	W12
-	BYTE		        Ds4 
-	BYTE		N10     Fs4 
-	BYTE	W12
-	BYTE		        En4 
-	BYTE		N10     Gs4 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W96
 // 015   ----------------------------------------
-ZofiaCastleTheme_5_015:
-	BYTE		N32     En4   v100
-	BYTE		N32     Gs4 
-	BYTE	W36
-	BYTE		N05     Ds4 
-	BYTE		N05     Fs4 
-	BYTE	W06
-	BYTE		        Cs4 
-	BYTE		N05     En4 
-	BYTE	W06
-	BYTE		N42     Ds4 
-	BYTE		N42     Fs4 
-	BYTE	W48
-	BYTE	PEND
+        BYTE   W96
 // 016   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 018   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 019   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 020   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 021   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 023   ----------------------------------------
-	BYTE	W84
-	BYTE	W02
-	BYTE	W03
-	BYTE	W03
-	BYTE	W03
-	BYTE	W01
+        BYTE   W96
 // 024   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_5_012
+        BYTE   W96
 // 025   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_5_013
+        BYTE   W96
 // 026   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_5_014
+        BYTE   W96
 // 027   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_5_015
+        BYTE   W96
 // 028   ----------------------------------------
-	BYTE	W96
+        BYTE           VOL     55
+        BYTE   W92
+        BYTE   W01
+        BYTE           PAN     c_v+20
+        BYTE   W03
 // 029   ----------------------------------------
-	BYTE	W96
+        BYTE   W24
+        BYTE           N03     Bn2   v103
+        BYTE           N02     En3   v109
+        BYTE           N04     Gs3   v105
+        BYTE   W08
+        BYTE           N03     Bn2   v091
+        BYTE           N04     En3   v084
+        BYTE           N02     Gs3   v105
+        BYTE   W08
+        BYTE           N03     Bn2   v101
+        BYTE           N04     En3   v093
+        BYTE           N02     Gs3   v105
+        BYTE   W08
+        BYTE           N42     Gs3   v119
+        BYTE           N44     Bn2   v107   gtp2
+        BYTE           N42     Bn3   v121   gtp1
+        BYTE           N48     En3   v097
+        BYTE   W48
 // 030   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 031   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 032   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 033   ----------------------------------------
-	BYTE	W96
+        BYTE   W24
+        BYTE           N03     En2   v103
+        BYTE           N02     An2   v109
+        BYTE           N04     Cs3   v105
+        BYTE   W08
+        BYTE           N03     En2   v091
+        BYTE           N04     An2   v084
+        BYTE           N02     Cs3   v105
+        BYTE   W08
+        BYTE           N03     En2   v101
+        BYTE           N04     An2   v093
+        BYTE           N02     Cs3   v105
+        BYTE   W08
+        BYTE           N42     Cs4   v100   gtp1
+        BYTE           N48     An2   v097
+        BYTE           N42     Gs3   v100   gtp1
+        BYTE           N42     Cs3   v119
+        BYTE   W48
 // 034   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 035   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 036   ----------------------------------------
-	BYTE		N32     En4   v100
-	BYTE		N32     Gs4 
-	BYTE	W36
-	BYTE		N05     En4 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		        En4 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		N21     En4 
-	BYTE		N21     Gs4 
-	BYTE	W24
-	BYTE		        En4 
-	BYTE		N21     Gs4 
-	BYTE	W24
+        BYTE   W96
 // 037   ----------------------------------------
-	BYTE		N84     En4 
-	BYTE		N84     Gs4 
-	BYTE	W96
+        BYTE   W24
+        BYTE           N03     En2   v103
+        BYTE           N02     An2   v109
+        BYTE           N04     Cs3   v105
+        BYTE   W08
+        BYTE           N03     En2   v091
+        BYTE           N04     An2   v084
+        BYTE           N02     Cs3   v105
+        BYTE   W08
+        BYTE           N03     En2   v101
+        BYTE           N04     An2   v093
+        BYTE           N02     Cs3   v105
+        BYTE   W08
+        BYTE           N44     En2   v107   gtp2
+        BYTE           N48     An2   v097
+        BYTE           N42     Gs3   v119   gtp1
+        BYTE           N42     Cs3
+        BYTE   W48
 // 038   ----------------------------------------
-	BYTE		N32     En4 
-	BYTE		N32     Gs4 
-	BYTE	W36
-	BYTE		N05     En4 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		        En4 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		N21     En4 
-	BYTE		N21     Gs4 
-	BYTE	W24
-	BYTE		        En4 
-	BYTE		N21     An4 
-	BYTE	W24
+        BYTE   W96
 // 039   ----------------------------------------
-	BYTE		N84     Ds4 
-	BYTE		N84     Fs4 
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	ZofiaCastleTheme_5_B1
-ZofiaCastleTheme_5_B2:
+        BYTE   W24
+        BYTE           N03     Fs2   v103
+        BYTE           N02     Bn2   v109
+        BYTE           N04     Ds3   v105
+        BYTE   W08
+        BYTE           N03     Fs2   v091
+        BYTE           N04     Bn2   v084
+        BYTE           N02     Ds3   v105
+        BYTE   W08
+        BYTE           N03     Fs2   v101
+        BYTE           N04     Bn2   v093
+        BYTE           N02     Ds3   v105
+        BYTE   W08
+        BYTE           N48     Bn2   v097
+        BYTE           N42     Ds3   v119
+        BYTE           N42     Bn3   v120   gtp1
+        BYTE           N44     Fs2   v107   gtp2
+        BYTE   W48
 // 040   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOL     70
+        BYTE           PAN     c_v+0
+        BYTE   GoTo
+         POIN2  ZofiaCastleTheme_5_LOOP
+        BYTE   FINE
 
-//**************** Track 6 (Midi-Chn.6) ****************//
+//****************** Track 6 (Midi-Chn.6) ******************//
 
 ZofiaCastleTheme_6:
-	BYTE	KEYSH   ZofiaCastleTheme_key+0
+        BYTE   KEYSH   ZofiaCastleTheme_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   57
-	BYTE	W96
+        BYTE           VOICE   86
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 002   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 003   ----------------------------------------
-	BYTE		VOL     106*ZofiaCastleTheme_mvl/mxv
-	BYTE	W96
-ZofiaCastleTheme_6_B1:
+        BYTE   W96
 // 004   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_6_LOOP:
+        BYTE   W96
 // 005   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 006   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 007   ----------------------------------------
-	BYTE	W96
+        BYTE   W92
+        BYTE   W01
+        BYTE           PAN     c_v+36
+        BYTE           VOL     41
+        BYTE   W03
 // 008   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_20
 // 009   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_21
 // 010   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_22
 // 011   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_0_23
 // 012   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_6_12:
+        BYTE           N56     An2   v100   gtp2
+        BYTE                   Cs3
+        BYTE   W60
+        BYTE           N10     An2
+        BYTE           N10     Cs3
+        BYTE   W12
+        BYTE                   Bn2
+        BYTE           N10     Ds3
+        BYTE   W12
+        BYTE                   Cs3
+        BYTE           N10     En3
+        BYTE   W12
+        BYTE   PEND
 // 013   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_6_13:
+        BYTE           N32     Cs3   v100
+        BYTE           N32     En3
+        BYTE   W36
+        BYTE           N05     Bn2
+        BYTE           N05     Ds3
+        BYTE   W06
+        BYTE                   An2
+        BYTE           N05     Cs3
+        BYTE   W06
+        BYTE           N42     Bn2   v100   gtp1
+        BYTE                   Ds3
+        BYTE   W48
+        BYTE   PEND
 // 014   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_6_14:
+        BYTE           N56     En3   v100   gtp2
+        BYTE                   Cs3
+        BYTE   W60
+        BYTE           N10     En3
+        BYTE           N10     Cs3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE           N10     Ds3
+        BYTE   W12
+        BYTE                   Gs3
+        BYTE           N10     En3
+        BYTE   W12
+        BYTE   PEND
 // 015   ----------------------------------------
-	BYTE	W96
+        BYTE           N32     Gs3
+        BYTE           N32     En3
+        BYTE   W36
+        BYTE           N05     Fs3
+        BYTE           N05     Ds3
+        BYTE   W06
+        BYTE                   En3
+        BYTE           N05     Cs3
+        BYTE   W06
+        BYTE           N42     Ds3   v100   gtp1
+        BYTE   W24
+        BYTE           N21     Fs3
+        BYTE           N21     Bn3
+        BYTE   W24
 // 016   ----------------------------------------
-	BYTE	W96
+        BYTE           N32
+        BYTE           N32     En4
+        BYTE   W36
+        BYTE           N05     Gs3
+        BYTE           N05     Ds4
+        BYTE   W06
+        BYTE                   An3
+        BYTE           N05     En4
+        BYTE   W06
+        BYTE           N21     Bn3
+        BYTE           N21     Fs4
+        BYTE   W24
+        BYTE           N16     Bn3
+        BYTE           N16     Bn4
+        BYTE   W18
+        BYTE           N05     Fs4
+        BYTE           N05     An4
+        BYTE   W06
 // 017   ----------------------------------------
-	BYTE	W96
+        BYTE           N42     Bn3   v100   gtp1
+        BYTE                   Gs4
+        BYTE   W48
+        BYTE                   An3
+        BYTE           N42     Fs4   v100   gtp1
+        BYTE   W48
 // 018   ----------------------------------------
-	BYTE	W96
+        BYTE           N21     An3
+        BYTE           N21     En4
+        BYTE   W24
+        BYTE           N16     An3
+        BYTE           N16     Ds4
+        BYTE   W18
+        BYTE           N05     An3
+        BYTE           N05     En4
+        BYTE   W06
+        BYTE           N19     Bn3
+        BYTE           N21     Fs4
+        BYTE   W24
+        BYTE           N16     Fs3
+        BYTE           N16     Bn3
+        BYTE   W18
+        BYTE           N05     Fs3
+        BYTE           N05     Fs4
+        BYTE   W06
 // 019   ----------------------------------------
-	BYTE	W96
+        BYTE           N42     En3   v100   gtp1
+        BYTE                   Gs4
+        BYTE   W48
+        BYTE                   Bn3
+        BYTE           N42     Fs4   v100   gtp1
+        BYTE   W48
 // 020   ----------------------------------------
-	BYTE	W96
+        BYTE           N32     Bn3
+        BYTE           N32     En4
+        BYTE   W36
+        BYTE           N05     Gs3
+        BYTE           N05     Ds4
+        BYTE   W06
+        BYTE                   An3
+        BYTE           N05     En4
+        BYTE   W06
+        BYTE           N21     Bn3
+        BYTE           N21     Fs4
+        BYTE   W24
+        BYTE           N16     Fs3   v110
+        BYTE           N16     Bn3
+        BYTE   W18
+        BYTE           N05     An3   v100
+        BYTE           N05     Fs4
+        BYTE   W06
 // 021   ----------------------------------------
-	BYTE	W96
+        BYTE           N42     Bn3   v100   gtp1
+        BYTE                   Gs4
+        BYTE   W48
+        BYTE                   Ds4
+        BYTE           N42     Bn4   v100   gtp1
+        BYTE   W48
 // 022   ----------------------------------------
-	BYTE	W96
+        BYTE           N21     Cs4
+        BYTE           N21     En5
+        BYTE   W24
+        BYTE           N16     Bn3
+        BYTE           N16     Ds5
+        BYTE   W18
+        BYTE           N05     Cs4
+        BYTE           N05     En5
+        BYTE   W06
+        BYTE           N21     Ds4
+        BYTE           N21     Fs5
+        BYTE   W24
+        BYTE                   Bn3
+        BYTE           N21     Bn4
+        BYTE   W24
 // 023   ----------------------------------------
-	BYTE	W96
+        BYTE           N84     En4   v100   gtp2
+        BYTE                   En5
+        BYTE   W96
 // 024   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_6_12
 // 025   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_6_13
 // 026   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_6_14
 // 027   ----------------------------------------
-	BYTE	W96
+        BYTE           N32     Gs3   v100
+        BYTE           N32     En3
+        BYTE   W36
+        BYTE           N05     Fs3
+        BYTE           N05     Ds3
+        BYTE   W06
+        BYTE                   En3
+        BYTE           N05     Cs3
+        BYTE   W06
+        BYTE           N42     Fs3   v100   gtp1
+        BYTE                   Ds3
+        BYTE   W24
+        BYTE           N21     Bn3   v122
+        BYTE   W24
 // 028   ----------------------------------------
-	BYTE		BEND    c_v+0
-	BYTE	W68
-	BYTE	W03
-	BYTE	W03
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W03
-	BYTE	W10
-	BYTE		PAN     c_v+20
-	BYTE	W03
+        BYTE           N32     En4   v100
+        BYTE           N32     Gs4
+        BYTE   W36
+        BYTE           N05     En4
+        BYTE           N05     Gs4
+        BYTE   W06
+        BYTE                   En4
+        BYTE           N05     Gs4
+        BYTE   W06
+        BYTE           N21     En4
+        BYTE           N21     Gs4
+        BYTE   W24
+        BYTE           N42     En4   v100   gtp1
+        BYTE           N44     Gs4   v100   gtp1
+        BYTE   W24
 // 029   ----------------------------------------
-	BYTE	W24
-	BYTE		N03     Bn2   v104
-	BYTE		N02     En3   v112
-	BYTE		N04     Gs3   v108
-	BYTE	W08
-	BYTE		N03     Bn2   v092
-	BYTE		N04     En3   v084
-	BYTE		N02     Gs3   v108
-	BYTE	W08
-	BYTE		N03     Bn2   v104
-	BYTE		N04     En3   v096
-	BYTE		N02     Gs3   v108
-	BYTE	W08
-	BYTE		N44     Bn2 
-	BYTE		N48     En3   v100
-	BYTE		N42     Gs3   v120
-	BYTE		N42     Bn3   v124
-	BYTE	W48
+ZofiaCastleTheme_6_29:
+        BYTE   W24
+        BYTE           N21     Bn4   v100
+        BYTE   W24
+        BYTE                   An4
+        BYTE   W24
+        BYTE                   Gs4
+        BYTE   W24
+        BYTE   PEND
 // 030   ----------------------------------------
-	BYTE	W96
+        BYTE           N32     Bn3
+        BYTE           N32     Gs4
+        BYTE   W36
+        BYTE           N05     Bn3
+        BYTE           N05     Gs4
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE           N05     Gs4
+        BYTE   W06
+        BYTE           N21     Bn3
+        BYTE           N21     Gs4
+        BYTE   W24
+        BYTE                   Bn3
+        BYTE           N21     An4
+        BYTE   W24
 // 031   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_4_39
 // 032   ----------------------------------------
-	BYTE	W96
+        BYTE           N32     An3   v100
+        BYTE           N32     Gs4
+        BYTE   W36
+        BYTE           N05     An3
+        BYTE           N05     Gs4
+        BYTE   W06
+        BYTE                   An3
+        BYTE           N05     Gs4
+        BYTE   W06
+        BYTE           N21     An3
+        BYTE           N21     Gs4
+        BYTE   W24
+        BYTE           N42     An3   v100   gtp1
+        BYTE           N44     Gs4   v100   gtp1
+        BYTE   W24
 // 033   ----------------------------------------
-	BYTE	W24
-	BYTE		N03     En2   v104
-	BYTE		N02     An2   v112
-	BYTE		N04     Cs3   v108
-	BYTE	W08
-	BYTE		N03     En2   v092
-	BYTE		N04     An2   v084
-	BYTE		N02     Cs3   v108
-	BYTE	W08
-	BYTE		N03     En2   v104
-	BYTE		N04     An2   v096
-	BYTE		N02     Cs3   v108
-	BYTE	W08
-	BYTE		N48     An2   v100
-	BYTE		N42     Cs3   v120
-	BYTE		N42     Gs3   v100
-	BYTE		N42     Cs4 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  ZofiaCastleTheme_6_29
 // 034   ----------------------------------------
-	BYTE	W96
+        BYTE           N24     Bn3   v100   gtp3
+        BYTE                   Gs4
+        BYTE   W32
+        BYTE           N07     Fs3
+        BYTE           N07     Fs4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE           N07     Fs4
+        BYTE   W08
+        BYTE           N32     Fs3
+        BYTE           N32     Fs4
+        BYTE   W40
+        BYTE           N07     An3
+        BYTE           N07     Cs5
+        BYTE   W08
 // 035   ----------------------------------------
-	BYTE	W96
+        BYTE           N24     An3   v100   gtp3
+        BYTE                   Cs5
+        BYTE   W32
+        BYTE           N07     Gs3
+        BYTE           N07     Bn4
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE           N07     Bn4
+        BYTE   W08
+        BYTE           N21     Gs3
+        BYTE           N21     Bn4
+        BYTE   W24
+        BYTE                   Fs3
+        BYTE           N21     An4
+        BYTE   W24
 // 036   ----------------------------------------
-	BYTE	W96
+        BYTE           N32     En4
+        BYTE           N32     Gs4
+        BYTE           N32     En3
+        BYTE           N32     Gs3
+        BYTE   W36
+        BYTE           N05     En4
+        BYTE           N05     Gs4
+        BYTE           N05     En3
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE                   En4
+        BYTE           N05     Gs4
+        BYTE           N05     En3
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE           N21     En4
+        BYTE           N21     Gs4
+        BYTE           N21     En3
+        BYTE           N21     Gs3
+        BYTE   W24
+        BYTE                   En4
+        BYTE           N21     Gs4
+        BYTE           N21     En3
+        BYTE           N21     Gs3
+        BYTE   W24
 // 037   ----------------------------------------
-	BYTE	W24
-	BYTE		N03     En2   v104
-	BYTE		N02     An2   v112
-	BYTE		N04     Cs3   v108
-	BYTE	W08
-	BYTE		N03     En2   v092
-	BYTE		N04     An2   v084
-	BYTE		N02     Cs3   v108
-	BYTE	W08
-	BYTE		N03     En2   v104
-	BYTE		N04     An2   v096
-	BYTE		N02     Cs3   v108
-	BYTE	W08
-	BYTE		N44     En2 
-	BYTE		N48     An2   v100
-	BYTE		N42     Cs3   v120
-	BYTE		N42     Gs3 
-	BYTE	W48
+        BYTE           N84     En4   v100   gtp2
+        BYTE                   Gs4
+        BYTE           N84     En3   v100   gtp2
+        BYTE                   Gs3
+        BYTE   W96
 // 038   ----------------------------------------
-	BYTE	W96
+        BYTE           N32     En4
+        BYTE           N32     Gs4
+        BYTE           N32     En3
+        BYTE           N32     Gs3
+        BYTE   W36
+        BYTE           N05     En4
+        BYTE           N05     Gs4
+        BYTE           N05     En3
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE                   En4
+        BYTE           N05     Gs4
+        BYTE           N05     En3
+        BYTE           N05     Gs3
+        BYTE   W06
+        BYTE           N21     En4
+        BYTE           N21     Gs4
+        BYTE           N21     En3
+        BYTE           N21     Gs3
+        BYTE   W24
+        BYTE                   En4
+        BYTE           N21     An4
+        BYTE           N21     En3
+        BYTE           N21     An3
+        BYTE   W24
 // 039   ----------------------------------------
-	BYTE	W24
-	BYTE		N03     Fs2   v104
-	BYTE		N02     Bn2   v112
-	BYTE		N04     Ds3   v108
-	BYTE	W08
-	BYTE		N03     Fs2   v092
-	BYTE		N04     Bn2   v084
-	BYTE		N02     Ds3   v108
-	BYTE	W08
-	BYTE		N03     Fs2   v104
-	BYTE		N04     Bn2   v096
-	BYTE		N02     Ds3   v108
-	BYTE	W08
-	BYTE		N44     Fs2 
-	BYTE		N48     Bn2   v100
-	BYTE		N42     Ds3   v120
-	BYTE		N42     Bn3 
-	BYTE	W48
-	BYTE	GoTo
-	 POIN2	ZofiaCastleTheme_6_B1
-ZofiaCastleTheme_6_B2:
+        BYTE           N84     Ds4   v100   gtp2
+        BYTE                   Fs4
+        BYTE           N84     Ds3   v100   gtp2
+        BYTE                   Fs3
+        BYTE   W96
 // 040   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOL     100
+        BYTE           PAN     c_v+0
+        BYTE   GoTo
+         POIN2  ZofiaCastleTheme_6_LOOP
+        BYTE   FINE
 
-//**************** Track 7 (Midi-Chn.7) ****************//
+//****************** Track 7 (Midi-Chn.7) ******************//
 
 ZofiaCastleTheme_7:
-	BYTE	KEYSH   ZofiaCastleTheme_key+0
+        BYTE   KEYSH   ZofiaCastleTheme_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   86
-	BYTE	W96
+        BYTE           VOICE   105
+        BYTE           VOL     38
+        BYTE           PAN     c_v-22
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 002   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 003   ----------------------------------------
-	BYTE	W96
-ZofiaCastleTheme_7_B1:
+        BYTE   W72
+        BYTE           N19     Fs2   v102
+        BYTE           N19     Bn1
+        BYTE           N19     Bn2
+        BYTE   W24
 // 004   ----------------------------------------
-	BYTE	W96
+ZofiaCastleTheme_7_LOOP:
+        BYTE           N20     Bn2   v100
+        BYTE           N20     En2
+        BYTE           N20     Gs2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE           N20     Bn2
+        BYTE           N20     En2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE           N20     Fs2
+        BYTE           N20     Bn2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE           N20     Fs2
+        BYTE           N20     Bn2
+        BYTE   W24
 // 005   ----------------------------------------
-	BYTE	W96
+        BYTE                   Bn2
+        BYTE           N20     En2
+        BYTE           N20     Gs2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE           N20     Bn2
+        BYTE           N20     En2
+        BYTE   W24
+        BYTE           N22     Bn1
+        BYTE           N22     Fs2
+        BYTE           N22     Bn2
+        BYTE   W24
+        BYTE           N20     Bn1
+        BYTE           N20     Fs2
+        BYTE           N20     Bn2
+        BYTE   W24
 // 006   ----------------------------------------
-	BYTE	W96
+        BYTE                   Cs2
+        BYTE           N20     Cs3
+        BYTE           N20     En2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE           N20     Cs3
+        BYTE           N20     En2
+        BYTE   W24
+        BYTE                   Fs2
+        BYTE           N20     Bn2
+        BYTE   W24
+        BYTE                   Fs2
+        BYTE           N20     Bn2
+        BYTE   W24
 // 007   ----------------------------------------
-	BYTE	W92
-	BYTE	W01
-	BYTE		PAN     c_v+36
-	BYTE		VOL     62*ZofiaCastleTheme_mvl/mxv
-	BYTE	W03
+        BYTE                   En2
+        BYTE           N20     Gs2
+        BYTE   W24
+        BYTE                   En2
+        BYTE           N20     Gs2
+        BYTE   W24
+        BYTE           N23     An2
+        BYTE           N23     Fs2
+        BYTE   W24
+        BYTE                   An2
+        BYTE           N23     Fs2
+        BYTE   W24
 // 008   ----------------------------------------
-	BYTE		N32     Bn2   v100
-	BYTE		N32     En3 
-	BYTE	W36
-	BYTE		N05     Gs2 
-	BYTE		N05     Ds3 
-	BYTE	W06
-	BYTE		        An2 
-	BYTE		N05     En3 
-	BYTE	W06
-	BYTE		N21     Bn2 
-	BYTE		N21     Fs3 
-	BYTE	W24
-	BYTE		N16     Fs2   v112
-	BYTE		N16     Bn2 
-	BYTE	W18
-	BYTE		N05     An2   v100
-	BYTE		N05     Fs3 
-	BYTE	W06
+        BYTE           N20     En2
+        BYTE           N20     Gs2
+        BYTE           N20     Bn2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE           N20     Bn2
+        BYTE           N20     En2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE           N20     Fs2
+        BYTE           N20     Bn2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE           N20     Fs2
+        BYTE           N20     Bn2
+        BYTE   W24
 // 009   ----------------------------------------
-	BYTE		N42     Bn2 
-	BYTE		N42     Gs3 
-	BYTE	W48
-	BYTE		        Ds3 
-	BYTE		N42     Bn3 
-	BYTE	W48
+        BYTE                   Gs2
+        BYTE           N20     Bn2
+        BYTE           N20     En2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE           N20     Bn2
+        BYTE           N20     En2
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE           N20     Fs2
+        BYTE           N20     Ds2
+        BYTE   W24
+        BYTE           N23     Bn2
+        BYTE           N23     Fs2
+        BYTE           N23     Ds2
+        BYTE   W24
 // 010   ----------------------------------------
-	BYTE		N21     Cs3 
-	BYTE		N21     En4 
-	BYTE	W24
-	BYTE		N16     Bn2 
-	BYTE		N16     Ds4 
-	BYTE	W18
-	BYTE		N05     Cs3 
-	BYTE		N05     En4 
-	BYTE	W06
-	BYTE		N21     Ds3 
-	BYTE		N21     Fs4 
-	BYTE	W24
-	BYTE		        Bn2 
-	BYTE		N21     Bn3 
-	BYTE	W24
+        BYTE           N20     An2
+        BYTE           N20     En2
+        BYTE           N20     Cs2
+        BYTE   W24
+        BYTE                   An2
+        BYTE           N20     En2
+        BYTE           N20     Cs2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE           N20     Fs2
+        BYTE           N20     Bn2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE           N20     Fs2
+        BYTE           N20     Bn2
+        BYTE   W24
 // 011   ----------------------------------------
-	BYTE		N84     En3 
-	BYTE		N84     En4 
-	BYTE	W84
-	BYTE	W02
-	BYTE	W03
-	BYTE	W03
-	BYTE	W03
-	BYTE	W01
+        BYTE           N23     Gs2
+        BYTE           N23     En2
+        BYTE           N23     En3
+        BYTE   W24
+        BYTE                   En3
+        BYTE           N23     En2
+        BYTE           N23     Gs2
+        BYTE   W24
+        BYTE                   En3
+        BYTE           N23     En2
+        BYTE           N23     Gs2
+        BYTE   W24
+        BYTE                   En3
+        BYTE           N23     En2
+        BYTE           N23     Gs2
+        BYTE   W24
 // 012   ----------------------------------------
-ZofiaCastleTheme_7_012:
-	BYTE		N56     An2   v100
-	BYTE		N56     Cs3 
-	BYTE	W01
-	BYTE	W03
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W48
-	BYTE	W03
-	BYTE		N10     An2 
-	BYTE		N10     Cs3 
-	BYTE	W12
-	BYTE		        Bn2 
-	BYTE		N10     Ds3 
-	BYTE	W12
-	BYTE		        Cs3 
-	BYTE		N10     En3 
-	BYTE	W12
-	BYTE	PEND
+        BYTE           N20     En2
+        BYTE           N20     Cs2
+        BYTE           N20     An2
+        BYTE   W24
+        BYTE                   En2
+        BYTE           N20     Cs2
+        BYTE           N20     An2
+        BYTE   W24
+        BYTE                   En2
+        BYTE           N20     Cs2
+        BYTE           N20     An2
+        BYTE   W24
+        BYTE                   En2
+        BYTE           N20     Cs2
+        BYTE           N20     An2
+        BYTE   W24
 // 013   ----------------------------------------
-ZofiaCastleTheme_7_013:
-	BYTE		N32     Cs3   v100
-	BYTE		N32     En3 
-	BYTE	W36
-	BYTE		N05     Bn2 
-	BYTE		N05     Ds3 
-	BYTE	W06
-	BYTE		        An2 
-	BYTE		N05     Cs3 
-	BYTE	W06
-	BYTE		N42     Bn2 
-	BYTE		N42     Ds3 
-	BYTE	W48
-	BYTE	PEND
+        BYTE                   Bn2
+        BYTE           N20     Fs2
+        BYTE           N20     Ds2
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE           N20     Fs2
+        BYTE           N20     Ds2
+        BYTE   W24
+        BYTE           N23     Bn2
+        BYTE           N22     Fs2
+        BYTE           N22     Ds2
+        BYTE   W24
+        BYTE           N20     Bn2
+        BYTE           N20     Fs2
+        BYTE           N20     Ds2
+        BYTE   W24
 // 014   ----------------------------------------
-ZofiaCastleTheme_7_014:
-	BYTE		N56     Cs3   v100
-	BYTE		N56     En3 
-	BYTE	W60
-	BYTE		N10     Cs3 
-	BYTE		N10     En3 
-	BYTE	W12
-	BYTE		        Ds3 
-	BYTE		N10     Fs3 
-	BYTE	W12
-	BYTE		        En3 
-	BYTE		N10     Gs3 
-	BYTE	W12
-	BYTE	PEND
+        BYTE                   Cs2
+        BYTE           N20     Gs2
+        BYTE           N20     En2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE           N20     Gs2
+        BYTE           N20     En2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE           N20     Gs2
+        BYTE           N20     En2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE           N20     Gs2
+        BYTE           N20     En2
+        BYTE   W24
 // 015   ----------------------------------------
-	BYTE		N32     En3 
-	BYTE		N32     Gs3 
-	BYTE	W36
-	BYTE		N05     Ds3 
-	BYTE		N05     Fs3 
-	BYTE	W06
-	BYTE		        Cs3 
-	BYTE		N05     En3 
-	BYTE	W06
-	BYTE		N42     Ds3 
-	BYTE	W24
-	BYTE		N21     Fs3 
-	BYTE		N21     Bn3 
-	BYTE	W24
+        BYTE           N68     Fs2   v102   gtp3
+        BYTE                   Bn2
+        BYTE           N68     Ds2   v102   gtp3
+        BYTE   W96
 // 016   ----------------------------------------
-	BYTE		N32   
-	BYTE		N32     En4 
-	BYTE	W36
-	BYTE		N05     Gs3 
-	BYTE		N05     Ds4 
-	BYTE	W06
-	BYTE		        An3 
-	BYTE		N05     En4 
-	BYTE	W06
-	BYTE		N21     Bn3 
-	BYTE		N21     Fs4 
-	BYTE	W24
-	BYTE		N16     Bn3 
-	BYTE		N16     Bn4 
-	BYTE	W18
-	BYTE		N05     Fs4 
-	BYTE		N05     An4 
-	BYTE	W06
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE		N42     Bn3 
-	BYTE		N42     Gs4 
-	BYTE	W48
-	BYTE		        An3 
-	BYTE		N42     Fs4 
-	BYTE	W48
+        BYTE   W96
 // 018   ----------------------------------------
-	BYTE		N21     An3 
-	BYTE		N21     En4 
-	BYTE	W24
-	BYTE		N16     An3 
-	BYTE		N16     Ds4 
-	BYTE	W18
-	BYTE		N05     An3 
-	BYTE		N05     En4 
-	BYTE	W06
-	BYTE		N19     Bn3 
-	BYTE		N21     Fs4 
-	BYTE	W24
-	BYTE		N16     Fs3 
-	BYTE		N16     Bn3 
-	BYTE	W18
-	BYTE		N05     Fs3 
-	BYTE		N05     Fs4 
-	BYTE	W06
+        BYTE   W96
 // 019   ----------------------------------------
-	BYTE		N42     En3 
-	BYTE		N42     Gs4 
-	BYTE	W48
-	BYTE		        Bn3 
-	BYTE		N42     Fs4 
-	BYTE	W48
+        BYTE   W96
 // 020   ----------------------------------------
-	BYTE		N32     Bn3 
-	BYTE		N32     En4 
-	BYTE	W36
-	BYTE		N05     Gs3 
-	BYTE		N05     Ds4 
-	BYTE	W06
-	BYTE		        An3 
-	BYTE		N05     En4 
-	BYTE	W06
-	BYTE		N21     Bn3 
-	BYTE		N21     Fs4 
-	BYTE	W24
-	BYTE		N16     Fs3   v112
-	BYTE		N16     Bn3 
-	BYTE	W18
-	BYTE		N05     An3   v100
-	BYTE		N05     Fs4 
-	BYTE	W06
+        BYTE   W96
 // 021   ----------------------------------------
-	BYTE		N42     Bn3 
-	BYTE		N42     Gs4 
-	BYTE	W48
-	BYTE		        Ds4 
-	BYTE		N42     Bn4 
-	BYTE	W48
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE		N21     Cs4 
-	BYTE		N21     En5 
-	BYTE	W24
-	BYTE		N16     Bn3 
-	BYTE		N16     Ds5 
-	BYTE	W18
-	BYTE		N05     Cs4 
-	BYTE		N05     En5 
-	BYTE	W06
-	BYTE		N21     Ds4 
-	BYTE		N21     Fs5 
-	BYTE	W24
-	BYTE		        Bn3 
-	BYTE		N21     Bn4 
-	BYTE	W24
+        BYTE   W96
 // 023   ----------------------------------------
-	BYTE		N84     En4 
-	BYTE		N84     En5 
-	BYTE	W84
-	BYTE	W02
-	BYTE	W03
-	BYTE	W03
-	BYTE	W03
-	BYTE	W01
+        BYTE   W96
 // 024   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_7_012
+        BYTE   W96
 // 025   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_7_013
+        BYTE   W96
 // 026   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_7_014
+        BYTE   W96
 // 027   ----------------------------------------
-	BYTE		N32     En3   v100
-	BYTE		N32     Gs3 
-	BYTE	W36
-	BYTE		N05     Ds3 
-	BYTE		N05     Fs3 
-	BYTE	W06
-	BYTE		        Cs3 
-	BYTE		N05     En3 
-	BYTE	W06
-	BYTE		N42     Ds3 
-	BYTE		N42     Fs3 
-	BYTE	W24
-	BYTE		N21     Bn3   v124
-	BYTE	W24
+        BYTE   W96
 // 028   ----------------------------------------
-	BYTE		N32     En4   v100
-	BYTE		N32     Gs4 
-	BYTE	W36
-	BYTE		N05     En4 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		        En4 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		N21     En4 
-	BYTE		N21     Gs4 
-	BYTE	W24
-	BYTE		N42     En4 
-	BYTE		N44     Gs4 
-	BYTE	W24
+        BYTE   W96
 // 029   ----------------------------------------
-ZofiaCastleTheme_7_029:
-	BYTE	W24
-	BYTE		N21     Bn4   v100
-	BYTE	W24
-	BYTE		        An4 
-	BYTE	W24
-	BYTE		        Gs4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W96
 // 030   ----------------------------------------
-	BYTE		N32     Bn3 
-	BYTE		N32     Gs4 
-	BYTE	W36
-	BYTE		N05     Bn3 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		        Bn3 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		N21     Bn3 
-	BYTE		N21     Gs4 
-	BYTE	W24
-	BYTE		        Bn3 
-	BYTE		N21     An4 
-	BYTE	W24
+        BYTE   W96
 // 031   ----------------------------------------
-	BYTE		N84     Ds4 
-	BYTE		N84     Fs4 
-	BYTE	W96
+        BYTE   W96
 // 032   ----------------------------------------
-	BYTE		N32     An3 
-	BYTE		N32     Gs4 
-	BYTE	W36
-	BYTE		N05     An3 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		        An3 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		N21     An3 
-	BYTE		N21     Gs4 
-	BYTE	W24
-	BYTE		N42     An3 
-	BYTE		N44     Gs4 
-	BYTE	W24
+        BYTE   W96
 // 033   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_7_029
+        BYTE   W96
 // 034   ----------------------------------------
-	BYTE		N24     Bn3   v100
-	BYTE		N24     Gs4 
-	BYTE	W32
-	BYTE		N07     Fs3 
-	BYTE		N07     Fs4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE		N07     Fs4 
-	BYTE	W08
-	BYTE		N32     Fs3 
-	BYTE		N32     Fs4 
-	BYTE	W40
-	BYTE		N07     An3 
-	BYTE		N07     Cs5 
-	BYTE	W08
+        BYTE   W96
 // 035   ----------------------------------------
-	BYTE		N24     An3 
-	BYTE		N24     Cs5 
-	BYTE	W32
-	BYTE		N07     Gs3 
-	BYTE		N07     Bn4 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE		N07     Bn4 
-	BYTE	W08
-	BYTE		N21     Gs3 
-	BYTE		N21     Bn4 
-	BYTE	W24
-	BYTE		        Fs3 
-	BYTE		N21     An4 
-	BYTE	W24
+        BYTE   W96
 // 036   ----------------------------------------
-	BYTE		N32     En3 
-	BYTE		N32     Gs3 
-	BYTE		N32     En4 
-	BYTE		N32     Gs4 
-	BYTE	W36
-	BYTE		N05     En3 
-	BYTE		N05     Gs3 
-	BYTE		N05     En4 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		        En3 
-	BYTE		N05     Gs3 
-	BYTE		N05     En4 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		N21     En3 
-	BYTE		N21     Gs3 
-	BYTE		N21     En4 
-	BYTE		N21     Gs4 
-	BYTE	W24
-	BYTE		        En3 
-	BYTE		N21     Gs3 
-	BYTE		N21     En4 
-	BYTE		N21     Gs4 
-	BYTE	W24
+        BYTE   W96
 // 037   ----------------------------------------
-	BYTE		N84     En3 
-	BYTE		N84     Gs3 
-	BYTE		N84     En4 
-	BYTE		N84     Gs4 
-	BYTE	W96
+        BYTE   W96
 // 038   ----------------------------------------
-	BYTE		N32     En3 
-	BYTE		N32     Gs3 
-	BYTE		N32     En4 
-	BYTE		N32     Gs4 
-	BYTE	W36
-	BYTE		N05     En3 
-	BYTE		N05     Gs3 
-	BYTE		N05     En4 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		        En3 
-	BYTE		N05     Gs3 
-	BYTE		N05     En4 
-	BYTE		N05     Gs4 
-	BYTE	W06
-	BYTE		N21     En3 
-	BYTE		N21     Gs3 
-	BYTE		N21     En4 
-	BYTE		N21     Gs4 
-	BYTE	W24
-	BYTE		        En3 
-	BYTE		N21     An3 
-	BYTE		N21     En4 
-	BYTE		N21     An4 
-	BYTE	W24
+        BYTE   W96
 // 039   ----------------------------------------
-	BYTE		N84     Ds3 
-	BYTE		N84     Fs3 
-	BYTE		N84     Ds4 
-	BYTE		N84     Fs4 
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	ZofiaCastleTheme_7_B1
-ZofiaCastleTheme_7_B2:
+        BYTE   W96
 // 040   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  ZofiaCastleTheme_7_LOOP
+        BYTE   FINE
 
-//**************** Track 8 (Midi-Chn.8) ****************//
+//****************** Track 8 (Midi-Chn.8) ******************//
 
 ZofiaCastleTheme_8:
-	BYTE	KEYSH   ZofiaCastleTheme_key+0
+        BYTE   KEYSH   ZofiaCastleTheme_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   105
-	BYTE		VOL     57*ZofiaCastleTheme_mvl/mxv
-	BYTE		PAN     c_v-22
-	BYTE	W96
+        BYTE           VOICE   127
+        BYTE           VOL     48
+        BYTE   W48
+        BYTE           N12     Ds1   v102
+        BYTE   W12
+        BYTE           N03     Dn1
+        BYTE   W06
+        BYTE           N06
+        BYTE   W12
+        BYTE                   Dn1
+        BYTE   W12
+        BYTE           N03
+        BYTE   W06
 // 001   ----------------------------------------
-	BYTE	W96
+        BYTE           N06
+        BYTE   W96
 // 002   ----------------------------------------
-	BYTE	W96
+        BYTE   W48
+        BYTE           N12     Ds1
+        BYTE   W12
+        BYTE           N03     Dn1
+        BYTE   W06
+        BYTE           N06
+        BYTE   W12
+        BYTE                   Dn1
+        BYTE   W12
+        BYTE           N03
+        BYTE   W06
 // 003   ----------------------------------------
-	BYTE	W72
-	BYTE		N19     Bn1   v104
-	BYTE		N19     Fs2 
-	BYTE		N19     Bn2 
-	BYTE	W24
-ZofiaCastleTheme_8_B1:
+        BYTE           N06
+        BYTE   W84
+        BYTE           N18     Fn1
+        BYTE   W12
 // 004   ----------------------------------------
-ZofiaCastleTheme_8_004:
-	BYTE		N20     En2   v100
-	BYTE		N20     Gs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N20     Gs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE		N20     Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE		N20     Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE	PEND
+ZofiaCastleTheme_8_LOOP:
+        BYTE           N24     An2   v102
+        BYTE           N24     Cs2
+        BYTE   W96
 // 005   ----------------------------------------
-	BYTE		        En2 
-	BYTE		N20     Gs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N20     Gs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		N22     Bn1 
-	BYTE		N22     Fs2 
-	BYTE		N22     Bn2 
-	BYTE	W24
-	BYTE		N20     Bn1 
-	BYTE		N20     Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
+        BYTE   W96
 // 006   ----------------------------------------
-	BYTE		        Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     Cs3 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     Cs3 
-	BYTE	W24
-	BYTE		        Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		        Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
+        BYTE   W96
 // 007   ----------------------------------------
-	BYTE		        En2 
-	BYTE		N20     Gs2 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N20     Gs2 
-	BYTE	W24
-	BYTE		N23     Fs2 
-	BYTE		N23     An2 
-	BYTE	W24
-	BYTE		        Fs2 
-	BYTE		N23     An2 
-	BYTE	W24
+        BYTE   W72
+        BYTE           N03     Dn1
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE   W03
+        BYTE           N18     Ds1
+        BYTE   W09
 // 008   ----------------------------------------
-	BYTE	PATT
-	 POIN2	ZofiaCastleTheme_8_004
+        BYTE   W96
 // 009   ----------------------------------------
-	BYTE		N20     En2   v100
-	BYTE		N20     Gs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N20     Gs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		        Ds2 
-	BYTE		N20     Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		N23     Ds2 
-	BYTE		N23     Fs2 
-	BYTE		N23     Bn2 
-	BYTE	W24
+        BYTE   W96
 // 010   ----------------------------------------
-	BYTE		N20     Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     An2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     An2 
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE		N20     Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		        Bn1 
-	BYTE		N20     Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
+        BYTE   W96
 // 011   ----------------------------------------
-	BYTE		N23     En2 
-	BYTE		N23     Gs2 
-	BYTE		N23     En3 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N23     Gs2 
-	BYTE		N23     En3 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N23     Gs2 
-	BYTE		N23     En3 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE		N23     Gs2 
-	BYTE		N23     En3 
-	BYTE	W24
+        BYTE           N24     An2
+        BYTE           N24     Cs2
+        BYTE   W72
+        BYTE           N03     Dn1
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE   W03
+        BYTE           N18     Ds1
+        BYTE   W09
 // 012   ----------------------------------------
-	BYTE		N20     Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     An2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     An2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     An2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     An2 
-	BYTE	W24
+        BYTE   W24
+        BYTE           N03     Dn1
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE   W24
 // 013   ----------------------------------------
-	BYTE		        Ds2 
-	BYTE		N20     Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		        Ds2 
-	BYTE		N20     Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
-	BYTE		N22     Ds2 
-	BYTE		N22     Fs2 
-	BYTE		N23     Bn2 
-	BYTE	W24
-	BYTE		N20     Ds2 
-	BYTE		N20     Fs2 
-	BYTE		N20     Bn2 
-	BYTE	W24
+        BYTE                   Dn1
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE   W24
 // 014   ----------------------------------------
-	BYTE		        Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     Gs2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     Gs2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     Gs2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE		N20     En2 
-	BYTE		N20     Gs2 
-	BYTE	W24
+        BYTE           N24     An2
+        BYTE           N24     Cs2
+        BYTE           N03     Dn1
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE   W24
 // 015   ----------------------------------------
-	BYTE		N68     Ds2   v104
-	BYTE		N68     Fs2 
-	BYTE		N68     Bn2 
-	BYTE	W96
+        BYTE                   Dn1
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE   W24
+        BYTE           N24     Ds1
+        BYTE   W24
 // 016   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 018   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 019   ----------------------------------------
-	BYTE	W96
+        BYTE   W72
+        BYTE                   Ds1
+        BYTE   W24
 // 020   ----------------------------------------
-	BYTE	W96
+        BYTE           N48     An2
+        BYTE           N48     Cs2
+        BYTE   W96
 // 021   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 023   ----------------------------------------
-	BYTE	W96
+        BYTE           N21     Ds1
+        BYTE   W24
+        BYTE                   Ds1
+        BYTE   W24
+        BYTE                   Ds1
+        BYTE   W24
+        BYTE           N06     Dn1
+        BYTE   W12
+        BYTE           N03
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE   W06
 // 024   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 025   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 026   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 027   ----------------------------------------
-	BYTE	W96
+        BYTE           N48     Ds1
+        BYTE   W96
 // 028   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 029   ----------------------------------------
-	BYTE	W96
+        BYTE                   Ds1
+        BYTE   W96
 // 030   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 031   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 032   ----------------------------------------
-	BYTE	W96
+        BYTE                   Cs2
+        BYTE           N48     An2
+        BYTE   W96
 // 033   ----------------------------------------
-	BYTE	W96
+        BYTE                   Ds1
+        BYTE   W96
 // 034   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 035   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 036   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 037   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 038   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 039   ----------------------------------------
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	ZofiaCastleTheme_8_B1
-ZofiaCastleTheme_8_B2:
+        BYTE   W96
 // 040   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  ZofiaCastleTheme_8_LOOP
+        BYTE   FINE
 
-//**************** Track 9 (Midi-Chn.9) ****************//
 
-ZofiaCastleTheme_9:
-	BYTE	KEYSH   ZofiaCastleTheme_key+0
-// 000   ----------------------------------------
-	BYTE		VOICE   127
-	BYTE		VOL     72*ZofiaCastleTheme_mvl/mxv
-	BYTE	W48
-	BYTE		N12     Ds1   v104
-	BYTE	W12
-	BYTE		N03     Dn1 
-	BYTE	W06
-	BYTE		N06   
-	BYTE	W12
-	BYTE		N06   
-	BYTE	W12
-	BYTE		N03   
-	BYTE	W06
-// 001   ----------------------------------------
-	BYTE		N06   
-	BYTE	W96
-// 002   ----------------------------------------
-	BYTE	W48
-	BYTE		N12     Ds1 
-	BYTE	W12
-	BYTE		N03     Dn1 
-	BYTE	W06
-	BYTE		N06   
-	BYTE	W12
-	BYTE		N06   
-	BYTE	W12
-	BYTE		N03   
-	BYTE	W06
-// 003   ----------------------------------------
-	BYTE		N06   
-	BYTE	W84
-	BYTE		N18     Fn1 
-	BYTE	W12
-ZofiaCastleTheme_9_B1:
-// 004   ----------------------------------------
-	BYTE		N24     Cs2   v104
-	BYTE		N24     An2 
-	BYTE	W96
-// 005   ----------------------------------------
-	BYTE	W96
-// 006   ----------------------------------------
-	BYTE	W96
-// 007   ----------------------------------------
-	BYTE	W72
-	BYTE		N03     Dn1 
-	BYTE	W06
-	BYTE		N03   
-	BYTE	W06
-	BYTE		N03   
-	BYTE	W03
-	BYTE		N18     Ds1 
-	BYTE	W09
-// 008   ----------------------------------------
-	BYTE	W96
-// 009   ----------------------------------------
-	BYTE	W96
-// 010   ----------------------------------------
-	BYTE	W96
-// 011   ----------------------------------------
-	BYTE		N24     Cs2 
-	BYTE		N24     An2 
-	BYTE	W72
-	BYTE		N03     Dn1 
-	BYTE	W06
-	BYTE		N03   
-	BYTE	W06
-	BYTE		N03   
-	BYTE	W03
-	BYTE		N18     Ds1 
-	BYTE	W09
-// 012   ----------------------------------------
-	BYTE	W24
-	BYTE		N03     Dn1 
-	BYTE	W24
-	BYTE		N03   
-	BYTE	W24
-	BYTE		N03   
-	BYTE	W24
-// 013   ----------------------------------------
-	BYTE		N03   
-	BYTE	W24
-	BYTE		N03   
-	BYTE	W24
-	BYTE		N03   
-	BYTE	W24
-	BYTE		N03   
-	BYTE	W24
-// 014   ----------------------------------------
-	BYTE		N03   
-	BYTE		N24     Cs2 
-	BYTE		N24     An2 
-	BYTE	W24
-	BYTE		N03     Dn1 
-	BYTE	W24
-	BYTE		N03   
-	BYTE	W24
-	BYTE		N03   
-	BYTE	W24
-// 015   ----------------------------------------
-	BYTE		N03   
-	BYTE	W24
-	BYTE		N03   
-	BYTE	W24
-	BYTE		N03   
-	BYTE	W24
-	BYTE		N24     Ds1 
-	BYTE	W24
-// 016   ----------------------------------------
-	BYTE	W96
-// 017   ----------------------------------------
-	BYTE	W96
-// 018   ----------------------------------------
-	BYTE	W96
-// 019   ----------------------------------------
-	BYTE	W72
-	BYTE		N24   
-	BYTE	W24
-// 020   ----------------------------------------
-	BYTE		N48     Cs2 
-	BYTE		N48     An2 
-	BYTE	W96
-// 021   ----------------------------------------
-	BYTE	W96
-// 022   ----------------------------------------
-	BYTE	W96
-// 023   ----------------------------------------
-	BYTE		N21     Ds1 
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		N21   
-	BYTE	W24
-	BYTE		N06     Dn1 
-	BYTE	W12
-	BYTE		N03   
-	BYTE	W06
-	BYTE		N03   
-	BYTE	W06
-// 024   ----------------------------------------
-	BYTE	W96
-// 025   ----------------------------------------
-	BYTE	W96
-// 026   ----------------------------------------
-	BYTE	W96
-// 027   ----------------------------------------
-	BYTE		N48     Ds1 
-	BYTE	W96
-// 028   ----------------------------------------
-	BYTE	W96
-// 029   ----------------------------------------
-	BYTE		N48   
-	BYTE	W96
-// 030   ----------------------------------------
-	BYTE	W96
-// 031   ----------------------------------------
-	BYTE	W96
-// 032   ----------------------------------------
-	BYTE		        Cs2 
-	BYTE		N48     An2 
-	BYTE	W96
-// 033   ----------------------------------------
-	BYTE		        Ds1 
-	BYTE	W96
-// 034   ----------------------------------------
-	BYTE	W96
-// 035   ----------------------------------------
-	BYTE	W96
-// 036   ----------------------------------------
-	BYTE	W96
-// 037   ----------------------------------------
-	BYTE	W96
-// 038   ----------------------------------------
-	BYTE	W96
-// 039   ----------------------------------------
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	ZofiaCastleTheme_9_B1
-ZofiaCastleTheme_9_B2:
-// 040   ----------------------------------------
-	BYTE	FINE
+//********************** End of Song ***********************//
 
-//******************************************************//
-	ALIGN 4
-
+        ALIGN 4
 ZofiaCastleTheme:
-	BYTE	9	// NumTrks
-	BYTE	0	// NumBlks
-	BYTE	ZofiaCastleTheme_pri	// Priority
-	BYTE	ZofiaCastleTheme_rev	// Reverb.
+        BYTE   9                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   ZofiaCastleTheme_pri    // Priority
+        BYTE   ZofiaCastleTheme_rev    // Reverb
 
-	POIN2	ZofiaCastleTheme_grp
+        POIN2   ZofiaCastleTheme_grp   
 
-	POIN2	ZofiaCastleTheme_1
-	POIN2	ZofiaCastleTheme_2
-	POIN2	ZofiaCastleTheme_3
-	POIN2	ZofiaCastleTheme_4
-	POIN2	ZofiaCastleTheme_5
-	POIN2	ZofiaCastleTheme_6
-	POIN2	ZofiaCastleTheme_7
-	POIN2	ZofiaCastleTheme_8
-	POIN2	ZofiaCastleTheme_9
+        POIN2   ZofiaCastleTheme_0
+        POIN2   ZofiaCastleTheme_1
+        POIN2   ZofiaCastleTheme_2
+        POIN2   ZofiaCastleTheme_3
+        POIN2   ZofiaCastleTheme_4
+        POIN2   ZofiaCastleTheme_5
+        POIN2   ZofiaCastleTheme_6
+        POIN2   ZofiaCastleTheme_7
+        POIN2   ZofiaCastleTheme_8
 
-	
+        

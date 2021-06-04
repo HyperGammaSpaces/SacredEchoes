@@ -1,114 +1,106 @@
 //Event file generated from Sappy .s format.
-	#include "MPlayDef.event"
+        #include "MPlayDef.event"
 
-	#define	SupportLevelUp_grp  voicegroup000
-	#define	SupportLevelUp_pri  0
-	#define	SupportLevelUp_rev  0
-	#define	SupportLevelUp_mvl  85
-	#define	SupportLevelUp_key  0
-	#define	SupportLevelUp_tbs  1
-	#define	SupportLevelUp_exg  0
-	#define	SupportLevelUp_cmp  1
+        #define    SupportLevelUp_grp  voicegroup000
+        #define    SupportLevelUp_pri  0
+        #define    SupportLevelUp_rev  0
+        #define    SupportLevelUp_key  0
 
-	// .rodata
-	//	SupportLevelUp
-	ALIGN 4
+        // .rodata
+        // SupportLevelUp
+        ALIGN 4
 
-//**************** Track 1 (Midi-Chn.1) ****************//
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+SupportLevelUp_0:
+        BYTE   KEYSH   SupportLevelUp_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   84
+        BYTE           VOL     53
+        BYTE           PAN     c_v+10
+        BYTE           N03     Cn4   v127
+        BYTE   W06
+        BYTE                   Gn4
+        BYTE   W06
+        BYTE                   Ds4
+        BYTE   W06
+        BYTE                   Gn4
+        BYTE   W06
+        BYTE                   As4
+        BYTE   W06
+        BYTE                   Cn5
+        BYTE   W06
+        BYTE           N44     Dn5
+        BYTE   W44
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
 
 SupportLevelUp_1:
-	BYTE	KEYSH   SupportLevelUp_key+0
+        BYTE   KEYSH   SupportLevelUp_key+0
 // 000   ----------------------------------------
-	BYTE	TEMPO   150*SupportLevelUp_tbs/2
-	BYTE		VOICE   84
-	BYTE		VOL     80*SupportLevelUp_mvl/mxv
-	BYTE		PAN     c_v+10
-	BYTE		N03     Cn4   v127
-	BYTE	W06
-	BYTE		        Gn4 
-	BYTE	W06
-	BYTE		        Ds4 
-	BYTE	W06
-	BYTE		        Gn4 
-	BYTE	W06
-	BYTE		        As4 
-	BYTE	W06
-	BYTE		        Cn5 
-	BYTE	W06
-	BYTE		N44     Dn5 
-	BYTE	W60
-// 001   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOICE   84
+        BYTE           VOL     53
+        BYTE           PAN     c_v-10
+        BYTE           N03     Gn3   v127
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   As3
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   Fn4
+        BYTE   W06
+        BYTE                   Gn4
+        BYTE   W06
+        BYTE           N44     An4
+        BYTE   W44
+        BYTE   FINE
 
-//**************** Track 2 (Midi-Chn.2) ****************//
+//****************** Track 2 (Midi-Chn.2) ******************//
 
 SupportLevelUp_2:
-	BYTE	KEYSH   SupportLevelUp_key+0
+        BYTE   KEYSH   SupportLevelUp_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   84
-	BYTE		VOL     80*SupportLevelUp_mvl/mxv
-	BYTE		PAN     c_v-10
-	BYTE		N03     Gn3   v127
-	BYTE	W06
-	BYTE		        Dn4 
-	BYTE	W06
-	BYTE		        As3 
-	BYTE	W06
-	BYTE		        Dn4 
-	BYTE	W06
-	BYTE		        Fn4 
-	BYTE	W06
-	BYTE		        Gn4 
-	BYTE	W06
-	BYTE		N44     An4 
-	BYTE	W60
-// 001   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOICE   84
+        BYTE           VOL     53
+        BYTE           PAN     c_v+20
+        BYTE           N32     Ds3   v127
+        BYTE   W36
+        BYTE           N44     Gn3
+        BYTE   W44
+        BYTE   FINE
 
-//**************** Track 3 (Midi-Chn.3) ****************//
+//****************** Track 3 (Midi-Chn.3) ******************//
 
 SupportLevelUp_3:
-	BYTE	KEYSH   SupportLevelUp_key+0
+        BYTE   KEYSH   SupportLevelUp_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   84
-	BYTE		VOL     80*SupportLevelUp_mvl/mxv
-	BYTE		PAN     c_v+20
-	BYTE		N32     Ds3   v127
-	BYTE	W36
-	BYTE		N44     Gn3 
-	BYTE	W60
-// 001   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOICE   84
+        BYTE           VOL     53
+        BYTE           PAN     c_v-20
+        BYTE           N32     As2   v127
+        BYTE   W36
+        BYTE           N44     Cn3
+        BYTE   W44
+        BYTE   FINE
 
-//**************** Track 4 (Midi-Chn.4) ****************//
 
-SupportLevelUp_4:
-	BYTE	KEYSH   SupportLevelUp_key+0
-// 000   ----------------------------------------
-	BYTE		VOICE   84
-	BYTE		VOL     80*SupportLevelUp_mvl/mxv
-	BYTE		PAN     c_v-20
-	BYTE		N32     As2   v127
-	BYTE	W36
-	BYTE		N44     Cn3 
-	BYTE	W60
-// 001   ----------------------------------------
-	BYTE	FINE
+//********************** End of Song ***********************//
 
-//******************************************************//
-	ALIGN 4
-
+        ALIGN 4
 SupportLevelUp:
-	BYTE	4	// NumTrks
-	BYTE	0	// NumBlks
-	BYTE	SupportLevelUp_pri	// Priority
-	BYTE	SupportLevelUp_rev	// Reverb.
+        BYTE   4                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   SupportLevelUp_pri      // Priority
+        BYTE   SupportLevelUp_rev      // Reverb
 
-	POIN2	SupportLevelUp_grp
+        POIN2   SupportLevelUp_grp     
 
-	POIN2	SupportLevelUp_1
-	POIN2	SupportLevelUp_2
-	POIN2	SupportLevelUp_3
-	POIN2	SupportLevelUp_4
+        POIN2   SupportLevelUp_0
+        POIN2   SupportLevelUp_1
+        POIN2   SupportLevelUp_2
+        POIN2   SupportLevelUp_3
 
-	
+        

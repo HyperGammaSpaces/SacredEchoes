@@ -1,2436 +1,2348 @@
-	.include "MPlayDef.s"
+        .include "MPlayDef.s"
 
-	.equ	CelicaPlayerPhase1_grp, voicegroup000
-	.equ	CelicaPlayerPhase1_pri, 0
-	.equ	CelicaPlayerPhase1_rev, 0
-	.equ	CelicaPlayerPhase1_mvl, 85
-	.equ	CelicaPlayerPhase1_key, 0
-	.equ	CelicaPlayerPhase1_tbs, 1
-	.equ	CelicaPlayerPhase1_exg, 0
-	.equ	CelicaPlayerPhase1_cmp, 1
+        .equ    CelicaPlayerPhase1_grp, voicegroup000
+        .equ    CelicaPlayerPhase1_pri, 0
+        .equ    CelicaPlayerPhase1_rev, 0
+        .equ    CelicaPlayerPhase1_key, 0
 
-	.section .rodata
-	.global	CelicaPlayerPhase1
-	.align	2
+        .section .rodata
+        .global CelicaPlayerPhase1
+        .align  2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@****************** Track 0 (Midi-Chn.0) ******************@
+
+CelicaPlayerPhase1_0:
+        .byte   KEYSH , CelicaPlayerPhase1_key+0
+@ 000   ----------------------------------------
+        .byte   TEMPO , 158/2
+        .byte           VOICE , 76
+        .byte           VOL   , 48
+        .byte           PAN   , c_v+14
+        .byte   W96
+@ 001   ----------------------------------------
+CelicaPlayerPhase1_0_LOOP:
+        .byte           N96   , As3 , v064
+        .byte           TIE   , Fn4 , v111
+        .byte   W96
+@ 002   ----------------------------------------
+        .byte   W12
+        .byte           EOT
+        .byte           N05   , Bn3
+        .byte           N05   , Ds4
+        .byte   W06
+        .byte                   Cs4
+        .byte           N05   , Fn4
+        .byte   W06
+        .byte                   Ds4
+        .byte           N10   , Fs4
+        .byte   W12
+        .byte           N05   , Cs4
+        .byte           N05   , Fn4
+        .byte   W06
+        .byte                   Ds4
+        .byte           N06   , Fs4
+        .byte   W06
+        .byte           N05   , En4
+        .byte           N10   , Gs4
+        .byte   W12
+        .byte           N05   , Ds4
+        .byte           N05   , Fs4
+        .byte   W06
+        .byte                   En4
+        .byte           N05   , Gs4
+        .byte   W06
+        .byte                   Fs4
+        .byte           N10   , As4
+        .byte   W12
+        .byte           N05   , Gs4
+        .byte           N05   , Bn4
+        .byte   W06
+        .byte                   En4
+        .byte           N05   , Gs4
+        .byte   W06
+@ 003   ----------------------------------------
+CelicaPlayerPhase1_0_3:
+        .byte           N96   , As4 , v111
+        .byte           N84   , Fn4 , v081
+        .byte   W96
+        .byte   PEND
+@ 004   ----------------------------------------
+        .byte   W12
+        .byte           N05   , En4 , v111
+        .byte           N05   , Gs4
+        .byte   W06
+        .byte                   Fs4
+        .byte           N05   , As4
+        .byte   W06
+        .byte                   Gs4
+        .byte           N10   , Bn4
+        .byte   W12
+        .byte           N05   , Fs4
+        .byte           N05   , As4
+        .byte   W06
+        .byte                   Gs4
+        .byte           N05   , Bn4
+        .byte   W06
+        .byte                   As4
+        .byte           N10   , Cs5
+        .byte   W12
+        .byte           N05   , Gs4
+        .byte           N05   , Bn4
+        .byte   W06
+        .byte                   As4
+        .byte           N05   , Cs5
+        .byte   W06
+        .byte                   Bn4
+        .byte           N10   , Ds5
+        .byte   W12
+        .byte           N05   , Cs5
+        .byte           N05   , En5
+        .byte   W06
+        .byte                   Fs4
+        .byte           N05   , Bn4
+        .byte   W06
+@ 005   ----------------------------------------
+        .byte   PATT
+         .word  CelicaPlayerPhase1_0_3
+@ 006   ----------------------------------------
+        .byte   W09
+        .byte           N02   , Fs3 , v111
+        .byte   W03
+        .byte           N05   , Fn4
+        .byte   W06
+        .byte                   As3
+        .byte   W06
+        .byte           N10   , Fn4
+        .byte   W12
+        .byte           N05   , As3
+        .byte   W06
+        .byte                   Fn4
+        .byte   W06
+        .byte           N10   , As3
+        .byte   W12
+        .byte           N05   , Fn4
+        .byte   W06
+        .byte                   As3
+        .byte   W06
+        .byte           N10   , Fn4
+        .byte   W12
+        .byte           N05   , As3
+        .byte   W06
+        .byte                   Fn4
+        .byte   W06
+@ 007   ----------------------------------------
+        .byte           N10   , As3
+        .byte   W12
+        .byte           N05   , Fn4
+        .byte   W06
+        .byte                   As3
+        .byte   W06
+        .byte           N10   , Fn4
+        .byte   W12
+        .byte           N05   , As3
+        .byte   W06
+        .byte                   Fn4
+        .byte   W06
+        .byte           N10   , As3
+        .byte   W12
+        .byte           N05   , Fn4
+        .byte   W06
+        .byte                   As3
+        .byte   W06
+        .byte           N10   , Fn4
+        .byte   W12
+        .byte           N05   , As3
+        .byte   W06
+        .byte                   Fn4
+        .byte   W06
+@ 008   ----------------------------------------
+        .byte           N10   , Bn3
+        .byte   W12
+        .byte           N05   , Fn4
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           N10   , Fn4
+        .byte   W12
+        .byte           N05   , Bn3
+        .byte   W06
+        .byte                   Fn4
+        .byte   W06
+        .byte           N10   , Bn3
+        .byte   W12
+        .byte           N05   , Fn4
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           N10   , Fn4
+        .byte   W12
+        .byte           N05   , Bn3
+        .byte   W06
+        .byte                   Fn4
+        .byte   W06
+@ 009   ----------------------------------------
+        .byte   W96
+@ 010   ----------------------------------------
+        .byte   W96
+@ 011   ----------------------------------------
+        .byte   W96
+@ 012   ----------------------------------------
+        .byte   W96
+@ 013   ----------------------------------------
+        .byte   W96
+@ 014   ----------------------------------------
+        .byte   W96
+@ 015   ----------------------------------------
+        .byte   W96
+@ 016   ----------------------------------------
+        .byte   W96
+@ 017   ----------------------------------------
+        .byte   W96
+@ 018   ----------------------------------------
+        .byte   W96
+@ 019   ----------------------------------------
+        .byte   W96
+@ 020   ----------------------------------------
+        .byte   W96
+@ 021   ----------------------------------------
+        .byte   W96
+@ 022   ----------------------------------------
+        .byte   W96
+@ 023   ----------------------------------------
+        .byte   W96
+@ 024   ----------------------------------------
+        .byte           N16   , As3
+        .byte   W18
+        .byte                   As4
+        .byte   W18
+        .byte           N10   , Fn4
+        .byte   W12
+        .byte           N21   , As3
+        .byte   W24
+        .byte                   As4
+        .byte   W24
+@ 025   ----------------------------------------
+        .byte           N16   , Bn3
+        .byte   W18
+        .byte                   Bn4
+        .byte   W18
+        .byte           N10   , Fs4
+        .byte   W12
+        .byte           N21   , Bn3
+        .byte   W24
+        .byte                   Bn4
+        .byte   W24
+@ 026   ----------------------------------------
+        .byte           N16   , Cn4
+        .byte   W18
+        .byte                   Cn5
+        .byte   W18
+        .byte           N10   , Gn4
+        .byte   W12
+        .byte           N21   , Cn4
+        .byte   W24
+        .byte                   Cn5
+        .byte   W24
+@ 027   ----------------------------------------
+        .byte           N16   , Cs4
+        .byte   W18
+        .byte                   Cs5
+        .byte   W18
+        .byte           N10   , Gs4
+        .byte   W12
+        .byte           N21   , Cs4
+        .byte   W24
+        .byte                   Cs5
+        .byte   W24
+@ 028   ----------------------------------------
+        .byte   GOTO
+         .word  CelicaPlayerPhase1_0_LOOP
+        .byte   W96
+@ 029   ----------------------------------------
+        .byte   W96
+@ 030   ----------------------------------------
+        .byte   W96
+@ 031   ----------------------------------------
+        .byte   W96
+@ 032   ----------------------------------------
+        .byte   W96
+@ 033   ----------------------------------------
+        .byte   W96
+@ 034   ----------------------------------------
+        .byte   W96
+@ 035   ----------------------------------------
+        .byte   W96
+@ 036   ----------------------------------------
+        .byte   W96
+@ 037   ----------------------------------------
+        .byte   W96
+@ 038   ----------------------------------------
+        .byte   W96
+@ 039   ----------------------------------------
+        .byte   W96
+@ 040   ----------------------------------------
+        .byte   W96
+@ 041   ----------------------------------------
+        .byte   W96
+@ 042   ----------------------------------------
+        .byte   W96
+@ 043   ----------------------------------------
+        .byte   W96
+@ 044   ----------------------------------------
+        .byte   W96
+@ 045   ----------------------------------------
+        .byte   W96
+@ 046   ----------------------------------------
+        .byte   W96
+@ 047   ----------------------------------------
+        .byte   W96
+@ 048   ----------------------------------------
+        .byte   W96
+@ 049   ----------------------------------------
+        .byte   W96
+@ 050   ----------------------------------------
+        .byte   W96
+@ 051   ----------------------------------------
+        .byte   W96
+@ 052   ----------------------------------------
+        .byte   W96
+@ 053   ----------------------------------------
+        .byte   W96
+@ 054   ----------------------------------------
+        .byte   W96
+@ 055   ----------------------------------------
+        .byte   FINE
+
+@****************** Track 1 (Midi-Chn.1) ******************@
 
 CelicaPlayerPhase1_1:
-	.byte	KEYSH , CelicaPlayerPhase1_key+0
+        .byte   KEYSH , CelicaPlayerPhase1_key+0
 @ 000   ----------------------------------------
-	.byte	TEMPO , 157*CelicaPlayerPhase1_tbs/2
-	.byte		VOICE , 76
-	.byte		VOL   , 72*CelicaPlayerPhase1_mvl/mxv
-	.byte		PAN   , c_v+14
-	.byte	W96
-CelicaPlayerPhase1_1_B1:
+        .byte           VOICE , 46
+        .byte           VOL   , 43
+        .byte           PAN   , c_v-14
+        .byte   W96
 @ 001   ----------------------------------------
-	.byte		N96   , As3 , v064
-	.byte		TIE   , Fn4 , v112
-	.byte	W96
+CelicaPlayerPhase1_1_LOOP:
+        .byte   W48
+        .byte           N06   , As3 , v064
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           N12   , Cs4
+        .byte   W12
+        .byte                   As3
+        .byte   W12
+        .byte                   Fs3
+        .byte   W12
 @ 002   ----------------------------------------
-	.byte	W12
-	.byte		EOT   
-	.byte		N05   , Bn3 
-	.byte		N05   , Ds4 
-	.byte	W06
-	.byte		        Cs4 
-	.byte		N05   , Fn4 
-	.byte	W06
-	.byte		        Ds4 
-	.byte		N10   , Fs4 
-	.byte	W12
-	.byte		N05   , Cs4 
-	.byte		N05   , Fn4 
-	.byte	W06
-	.byte		        Ds4 
-	.byte		N06   , Fs4 
-	.byte	W06
-	.byte		N05   , En4 
-	.byte		N10   , Gs4 
-	.byte	W12
-	.byte		N05   , Ds4 
-	.byte		N05   , Fs4 
-	.byte	W06
-	.byte		        En4 
-	.byte		N05   , Gs4 
-	.byte	W06
-	.byte		        Fs4 
-	.byte		N10   , As4 
-	.byte	W12
-	.byte		N05   , Gs4 
-	.byte		N05   , Bn4 
-	.byte	W06
-	.byte		        En4 
-	.byte		N05   , Gs4 
-	.byte	W06
+        .byte                   Gs3
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
+        .byte                   Cs3
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Cs3
+        .byte   W12
+        .byte                   Gs2
+        .byte   W12
 @ 003   ----------------------------------------
-CelicaPlayerPhase1_1_003:
-	.byte		N84   , Fn4 , v084
-	.byte		N96   , As4 , v112
-	.byte	W96
-	.byte	PEND
+CelicaPlayerPhase1_1_3:
+        .byte   W48
+        .byte           N06   , As3 , v064
+        .byte   W06
+        .byte                   Cn4
+        .byte   W06
+        .byte           N12   , Cs4
+        .byte   W12
+        .byte                   As3
+        .byte   W12
+        .byte                   Fs3
+        .byte   W12
+        .byte   PEND
 @ 004   ----------------------------------------
-	.byte	W12
-	.byte		N05   , En4 
-	.byte		N05   , Gs4 
-	.byte	W06
-	.byte		        Fs4 
-	.byte		N05   , As4 
-	.byte	W06
-	.byte		        Gs4 
-	.byte		N10   , Bn4 
-	.byte	W12
-	.byte		N05   , Fs4 
-	.byte		N05   , As4 
-	.byte	W06
-	.byte		        Gs4 
-	.byte		N05   , Bn4 
-	.byte	W06
-	.byte		        As4 
-	.byte		N10   , Cs5 
-	.byte	W12
-	.byte		N05   , Gs4 
-	.byte		N05   , Bn4 
-	.byte	W06
-	.byte		        As4 
-	.byte		N05   , Cs5 
-	.byte	W06
-	.byte		        Bn4 
-	.byte		N10   , Ds5 
-	.byte	W12
-	.byte		N05   , Cs5 
-	.byte		N05   , En5 
-	.byte	W06
-	.byte		        Fs4 
-	.byte		N05   , Bn4 
-	.byte	W06
+        .byte                   Gs3
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
+        .byte                   Cs3
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Cs3
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
 @ 005   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_1_003
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_3
 @ 006   ----------------------------------------
-	.byte	W09
-	.byte		N02   , Fs3 , v112
-	.byte	W03
-	.byte		N05   , Fn4 
-	.byte	W06
-	.byte		        As3 
-	.byte	W06
-	.byte		N10   , Fn4 
-	.byte	W12
-	.byte		N05   , As3 
-	.byte	W06
-	.byte		        Fn4 
-	.byte	W06
-	.byte		N10   , As3 
-	.byte	W12
-	.byte		N05   , Fn4 
-	.byte	W06
-	.byte		        As3 
-	.byte	W06
-	.byte		N10   , Fn4 
-	.byte	W12
-	.byte		N05   , As3 
-	.byte	W06
-	.byte		        Fn4 
-	.byte	W06
+        .byte           N12   , Gs3 , v064
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
+        .byte                   Cs3
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Cs3
+        .byte   W12
+        .byte                   Gs2 , v081
+        .byte   W12
 @ 007   ----------------------------------------
-	.byte		N10   , As3 
-	.byte	W12
-	.byte		N05   , Fn4 
-	.byte	W06
-	.byte		        As3 
-	.byte	W06
-	.byte		N10   , Fn4 
-	.byte	W12
-	.byte		N05   , As3 
-	.byte	W06
-	.byte		        Fn4 
-	.byte	W06
-	.byte		N10   , As3 
-	.byte	W12
-	.byte		N05   , Fn4 
-	.byte	W06
-	.byte		        As3 
-	.byte	W06
-	.byte		N10   , Fn4 
-	.byte	W12
-	.byte		N05   , As3 
-	.byte	W06
-	.byte		        Fn4 
-	.byte	W06
+        .byte           N15   , As2
+        .byte   W18
+        .byte           N16   , As3
+        .byte   W18
+        .byte           N10   , Fn3
+        .byte   W12
+        .byte           N21   , As2
+        .byte   W24
+        .byte                   As3
+        .byte   W24
 @ 008   ----------------------------------------
-	.byte		N10   , Bn3 
-	.byte	W12
-	.byte		N05   , Fn4 
-	.byte	W06
-	.byte		        Bn3 
-	.byte	W06
-	.byte		N10   , Fn4 
-	.byte	W12
-	.byte		N05   , Bn3 
-	.byte	W06
-	.byte		        Fn4 
-	.byte	W06
-	.byte		N10   , Bn3 
-	.byte	W12
-	.byte		N05   , Fn4 
-	.byte	W06
-	.byte		        Bn3 
-	.byte	W06
-	.byte		N10   , Fn4 
-	.byte	W12
-	.byte		N05   , Bn3 
-	.byte	W06
-	.byte		        Fn4 
-	.byte	W06
+        .byte           N16   , Bn2
+        .byte   W18
+        .byte                   Bn3
+        .byte   W18
+        .byte           N10   , Fs3
+        .byte   W12
+        .byte           N21   , Bn2
+        .byte   W24
+        .byte                   Bn3
+        .byte   W24
 @ 009   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 010   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 011   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 012   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 013   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 014   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 015   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 016   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 017   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 018   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 019   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 020   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_1_20:
+        .byte           N16   , As2 , v100
+        .byte   W18
+        .byte                   As3
+        .byte   W18
+        .byte           N10   , Fn3
+        .byte   W12
+        .byte           N21   , As2
+        .byte   W24
+        .byte                   As3
+        .byte   W24
+        .byte   PEND
 @ 021   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_1_21:
+        .byte           N16   , Bn2 , v100
+        .byte   W18
+        .byte                   Bn3
+        .byte   W18
+        .byte           N10   , Fs3
+        .byte   W12
+        .byte           N21   , Bn2
+        .byte   W24
+        .byte                   Bn3
+        .byte   W24
+        .byte   PEND
 @ 022   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_1_22:
+        .byte           N16   , Cn3 , v100
+        .byte   W18
+        .byte                   Cn4
+        .byte   W18
+        .byte           N10   , Gn3
+        .byte   W12
+        .byte           N21   , Cn3
+        .byte   W24
+        .byte                   Cn4
+        .byte   W24
+        .byte   PEND
 @ 023   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_1_23:
+        .byte           N16   , Cs3 , v100
+        .byte   W18
+        .byte                   Cs4
+        .byte   W18
+        .byte           N10   , Gs3
+        .byte   W12
+        .byte           N21   , Cs3
+        .byte   W24
+        .byte                   Cs4
+        .byte   W24
+        .byte   PEND
 @ 024   ----------------------------------------
-	.byte		N16   , As3 
-	.byte	W18
-	.byte		        As4 
-	.byte	W18
-	.byte		N10   , Fn4 
-	.byte	W12
-	.byte		N21   , As3 
-	.byte	W24
-	.byte		        As4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_20
 @ 025   ----------------------------------------
-	.byte		N16   , Bn3 
-	.byte	W18
-	.byte		        Bn4 
-	.byte	W18
-	.byte		N10   , Fs4 
-	.byte	W12
-	.byte		N21   , Bn3 
-	.byte	W24
-	.byte		        Bn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_21
 @ 026   ----------------------------------------
-	.byte		N16   , Cn4 
-	.byte	W18
-	.byte		        Cn5 
-	.byte	W18
-	.byte		N10   , Gn4 
-	.byte	W12
-	.byte		N21   , Cn4 
-	.byte	W24
-	.byte		        Cn5 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_22
 @ 027   ----------------------------------------
-	.byte		N16   , Cs4 
-	.byte	W18
-	.byte		        Cs5 
-	.byte	W18
-	.byte		N10   , Gs4 
-	.byte	W12
-	.byte		N21   , Cs4 
-	.byte	W24
-	.byte		        Cs5 
-	.byte	W24
-	.byte	GOTO
-	 .word	CelicaPlayerPhase1_1_B1
-CelicaPlayerPhase1_1_B2:
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_23
 @ 028   ----------------------------------------
-	.byte	W96
+        .byte   GOTO
+         .word  CelicaPlayerPhase1_1_LOOP
+        .byte   W96
 @ 029   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 030   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 031   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 032   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 033   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 034   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 035   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 036   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 037   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 038   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 039   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 040   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 041   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 042   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 043   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 044   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 045   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 046   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 047   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 048   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 049   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 050   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 051   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 052   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 053   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 054   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 055   ----------------------------------------
-	.byte	FINE
+        .byte   FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@****************** Track 2 (Midi-Chn.2) ******************@
 
 CelicaPlayerPhase1_2:
-	.byte	KEYSH , CelicaPlayerPhase1_key+0
+        .byte   KEYSH , CelicaPlayerPhase1_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 46
-	.byte		VOL   , 64*CelicaPlayerPhase1_mvl/mxv
-	.byte		PAN   , c_v-14
-	.byte	W96
-CelicaPlayerPhase1_2_B1:
+        .byte           VOICE , 36
+        .byte           PAN   , c_v+17
+        .byte           VOL   , 48
+        .byte   W96
 @ 001   ----------------------------------------
-	.byte	W48
-	.byte		N06   , As3 , v064
-	.byte	W06
-	.byte		        Bn3 
-	.byte	W06
-	.byte		N12   , Cs4 
-	.byte	W12
-	.byte		        As3 
-	.byte	W12
-	.byte		        Fs3 
-	.byte	W12
+CelicaPlayerPhase1_2_LOOP:
+        .byte           N10   , As1 , v100
+        .byte   W12
+        .byte                   As1
+        .byte   W12
+        .byte                   Fn1
+        .byte   W12
+        .byte                   As1
+        .byte   W12
+        .byte           N21
+        .byte   W24
+        .byte           N10   , Fn1
+        .byte   W12
+        .byte                   As1
+        .byte   W12
 @ 002   ----------------------------------------
-	.byte		        Gs3 
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
-	.byte		        Cs3 
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Cs3 
-	.byte	W12
-	.byte		        Gs2 
-	.byte	W12
+CelicaPlayerPhase1_2_2:
+        .byte           N10   , Bn1 , v100
+        .byte   W12
+        .byte                   Bn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W12
+        .byte                   Bn1
+        .byte   W12
+        .byte           N20
+        .byte   W24
+        .byte           N10   , Fs1
+        .byte   W12
+        .byte                   Bn1
+        .byte   W12
+        .byte   PEND
 @ 003   ----------------------------------------
-CelicaPlayerPhase1_2_003:
-	.byte	W48
-	.byte		N06   , As3 , v064
-	.byte	W06
-	.byte		        Cn4 
-	.byte	W06
-	.byte		N12   , Cs4 
-	.byte	W12
-	.byte		        As3 
-	.byte	W12
-	.byte		        Fs3 
-	.byte	W12
-	.byte	PEND
+CelicaPlayerPhase1_2_3:
+        .byte           N10   , As1 , v100
+        .byte   W12
+        .byte                   As1
+        .byte   W12
+        .byte                   Fn1
+        .byte   W12
+        .byte                   As1
+        .byte   W12
+        .byte           N21
+        .byte   W24
+        .byte           N10   , Fn1
+        .byte   W12
+        .byte                   As1
+        .byte   W12
+        .byte   PEND
 @ 004   ----------------------------------------
-	.byte		        Gs3 
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
-	.byte		        Cs3 
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Cs3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 005   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_2_003
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 006   ----------------------------------------
-	.byte		N12   , Gs3 , v064
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
-	.byte		        Cs3 
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Cs3 
-	.byte	W12
-	.byte		        Gs2 , v084
-	.byte	W12
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 007   ----------------------------------------
-	.byte		N15   , As2 
-	.byte	W18
-	.byte		N16   , As3 
-	.byte	W18
-	.byte		N10   , Fn3 
-	.byte	W12
-	.byte		N21   , As2 
-	.byte	W24
-	.byte		        As3 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 008   ----------------------------------------
-	.byte		N16   , Bn2 
-	.byte	W18
-	.byte		        Bn3 
-	.byte	W18
-	.byte		N10   , Fs3 
-	.byte	W12
-	.byte		N21   , Bn2 
-	.byte	W24
-	.byte		        Bn3 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 009   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_2_9:
+        .byte           N10   , As1 , v100
+        .byte   W12
+        .byte           N21
+        .byte   W24
+        .byte           N10
+        .byte   W12
+        .byte           N21
+        .byte   W24
+        .byte           N10
+        .byte   W12
+        .byte           N20
+        .byte   W12
+        .byte   PEND
 @ 010   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_2_10:
+        .byte   W12
+        .byte           N10   , As1 , v100
+        .byte   W12
+        .byte           N21
+        .byte   W24
+        .byte           N10   , Bn1
+        .byte   W12
+        .byte                   Bn1
+        .byte   W24
+        .byte                   Bn1
+        .byte   W12
+        .byte   PEND
 @ 011   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_9
 @ 012   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_10
 @ 013   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 014   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 015   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 016   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 017   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 018   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 019   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 020   ----------------------------------------
-CelicaPlayerPhase1_2_020:
-	.byte		N16   , As2 , v100
-	.byte	W18
-	.byte		        As3 
-	.byte	W18
-	.byte		N10   , Fn3 
-	.byte	W12
-	.byte		N21   , As2 
-	.byte	W24
-	.byte		        As3 
-	.byte	W24
-	.byte	PEND
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 021   ----------------------------------------
-CelicaPlayerPhase1_2_021:
-	.byte		N16   , Bn2 , v100
-	.byte	W18
-	.byte		        Bn3 
-	.byte	W18
-	.byte		N10   , Fs3 
-	.byte	W12
-	.byte		N21   , Bn2 
-	.byte	W24
-	.byte		        Bn3 
-	.byte	W24
-	.byte	PEND
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 022   ----------------------------------------
-CelicaPlayerPhase1_2_022:
-	.byte		N16   , Cn3 , v100
-	.byte	W18
-	.byte		        Cn4 
-	.byte	W18
-	.byte		N10   , Gn3 
-	.byte	W12
-	.byte		N21   , Cn3 
-	.byte	W24
-	.byte		        Cn4 
-	.byte	W24
-	.byte	PEND
+CelicaPlayerPhase1_2_22:
+        .byte           N10   , Cn2 , v100
+        .byte   W12
+        .byte                   Cn2
+        .byte   W12
+        .byte                   Gn1
+        .byte   W12
+        .byte                   Cn2
+        .byte   W12
+        .byte           N21
+        .byte   W24
+        .byte           N10   , Gn1
+        .byte   W12
+        .byte                   Cn2
+        .byte   W12
+        .byte   PEND
 @ 023   ----------------------------------------
-CelicaPlayerPhase1_2_023:
-	.byte		N16   , Cs3 , v100
-	.byte	W18
-	.byte		        Cs4 
-	.byte	W18
-	.byte		N10   , Gs3 
-	.byte	W12
-	.byte		N21   , Cs3 
-	.byte	W24
-	.byte		        Cs4 
-	.byte	W24
-	.byte	PEND
+CelicaPlayerPhase1_2_23:
+        .byte           N10   , Cs2 , v100
+        .byte   W12
+        .byte                   Cs2
+        .byte   W12
+        .byte                   Gs1
+        .byte   W12
+        .byte                   Cs2
+        .byte   W12
+        .byte           N21
+        .byte   W24
+        .byte           N10   , Gs1
+        .byte   W12
+        .byte                   Cs2
+        .byte   W12
+        .byte   PEND
 @ 024   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_2_020
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 025   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_2_021
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 026   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_2_022
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_22
 @ 027   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_2_023
-	.byte	GOTO
-	 .word	CelicaPlayerPhase1_2_B1
-CelicaPlayerPhase1_2_B2:
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_23
 @ 028   ----------------------------------------
-	.byte	W96
+        .byte   GOTO
+         .word  CelicaPlayerPhase1_2_LOOP
+        .byte   W96
 @ 029   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 030   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 031   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 032   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 033   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 034   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 035   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 036   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 037   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 038   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 039   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 040   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 041   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 042   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 043   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 044   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 045   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 046   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 047   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 048   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 049   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 050   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 051   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 052   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 053   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 054   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 055   ----------------------------------------
-	.byte	FINE
+        .byte   FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@****************** Track 3 (Midi-Chn.3) ******************@
 
 CelicaPlayerPhase1_3:
-	.byte	KEYSH , CelicaPlayerPhase1_key+0
+        .byte   KEYSH , CelicaPlayerPhase1_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 36
-	.byte		PAN   , c_v+17
-	.byte		VOL   , 73*CelicaPlayerPhase1_mvl/mxv
-	.byte	W96
-CelicaPlayerPhase1_3_B1:
+        .byte           VOICE , 63
+        .byte           PAN   , c_v+34
+        .byte           VOL   , 44
+        .byte   W96
 @ 001   ----------------------------------------
-CelicaPlayerPhase1_3_001:
-	.byte		N10   , As1 , v100
-	.byte	W12
-	.byte		N10   
-	.byte	W12
-	.byte		        Fn1 
-	.byte	W12
-	.byte		        As1 
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   , Fn1 
-	.byte	W12
-	.byte		        As1 
-	.byte	W12
-	.byte	PEND
+CelicaPlayerPhase1_3_LOOP:
+        .byte   W96
 @ 002   ----------------------------------------
-CelicaPlayerPhase1_3_002:
-	.byte		N10   , Bn1 , v100
-	.byte	W12
-	.byte		N10   
-	.byte	W12
-	.byte		        Fs1 
-	.byte	W12
-	.byte		        Bn1 
-	.byte	W12
-	.byte		N20   
-	.byte	W24
-	.byte		N10   , Fs1 
-	.byte	W12
-	.byte		        Bn1 
-	.byte	W12
-	.byte	PEND
+        .byte   W96
 @ 003   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_001
+        .byte   W96
 @ 004   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_002
+        .byte   W96
 @ 005   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_001
+        .byte   W96
 @ 006   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_002
+        .byte   W96
 @ 007   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_001
+        .byte   W96
 @ 008   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_002
+        .byte   W96
 @ 009   ----------------------------------------
-CelicaPlayerPhase1_3_009:
-	.byte		N10   , As1 , v100
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   
-	.byte	W12
-	.byte		N20   
-	.byte	W12
-	.byte	PEND
+CelicaPlayerPhase1_3_9:
+        .byte           N10   , Fn3 , v100
+        .byte           N10   , As3
+        .byte   W12
+        .byte                   Fn3
+        .byte           N10   , As3
+        .byte   W24
+        .byte                   Fn3
+        .byte           N10   , As3
+        .byte   W12
+        .byte                   Fn3
+        .byte           N10   , As3
+        .byte   W24
+        .byte                   Fn3
+        .byte           N10   , As3
+        .byte   W12
+        .byte                   Fn3
+        .byte           N10   , As3
+        .byte   W12
+        .byte   PEND
 @ 010   ----------------------------------------
-CelicaPlayerPhase1_3_010:
-	.byte	W12
-	.byte		N10   , As1 , v100
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   , Bn1 
-	.byte	W12
-	.byte		N10   
-	.byte	W24
-	.byte		N10   
-	.byte	W12
-	.byte	PEND
+CelicaPlayerPhase1_3_10:
+        .byte   W12
+        .byte           N10   , Fn3 , v100
+        .byte           N10   , As3
+        .byte   W12
+        .byte                   Fn3
+        .byte           N10   , As3
+        .byte   W24
+        .byte                   Fs3
+        .byte           N10   , Bn3
+        .byte   W12
+        .byte                   Fs3
+        .byte           N10   , Bn3
+        .byte   W24
+        .byte                   Fs3
+        .byte           N10   , Bn3
+        .byte   W12
+        .byte   PEND
 @ 011   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_009
+        .byte   PATT
+         .word  CelicaPlayerPhase1_3_9
 @ 012   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_010
+        .byte   PATT
+         .word  CelicaPlayerPhase1_3_10
 @ 013   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 014   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_001
+        .byte   W96
 @ 015   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_002
+        .byte   W96
 @ 016   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_001
+        .byte   W96
 @ 017   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_002
+        .byte   W96
 @ 018   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_001
+        .byte   W96
 @ 019   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_002
+        .byte   W96
 @ 020   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_001
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_20
 @ 021   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_002
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_21
 @ 022   ----------------------------------------
-CelicaPlayerPhase1_3_022:
-	.byte		N10   , Cn2 , v100
-	.byte	W12
-	.byte		N10   
-	.byte	W12
-	.byte		        Gn1 
-	.byte	W12
-	.byte		        Cn2 
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   , Gn1 
-	.byte	W12
-	.byte		        Cn2 
-	.byte	W12
-	.byte	PEND
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_22
 @ 023   ----------------------------------------
-CelicaPlayerPhase1_3_023:
-	.byte		N10   , Cs2 , v100
-	.byte	W12
-	.byte		N10   
-	.byte	W12
-	.byte		        Gs1 
-	.byte	W12
-	.byte		        Cs2 
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   , Gs1 
-	.byte	W12
-	.byte		        Cs2 
-	.byte	W12
-	.byte	PEND
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_23
 @ 024   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_001
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_20
 @ 025   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_002
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_21
 @ 026   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_022
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_22
 @ 027   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_3_023
-	.byte	GOTO
-	 .word	CelicaPlayerPhase1_3_B1
-CelicaPlayerPhase1_3_B2:
+        .byte   PATT
+         .word  CelicaPlayerPhase1_1_23
 @ 028   ----------------------------------------
-	.byte	W96
+        .byte   GOTO
+         .word  CelicaPlayerPhase1_3_LOOP
+        .byte   W96
 @ 029   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 030   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 031   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 032   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 033   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 034   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 035   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 036   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 037   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 038   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 039   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 040   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 041   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 042   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 043   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 044   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 045   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 046   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 047   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 048   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 049   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 050   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 051   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 052   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 053   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 054   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 055   ----------------------------------------
-	.byte	FINE
+        .byte   FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@****************** Track 4 (Midi-Chn.4) ******************@
 
 CelicaPlayerPhase1_4:
-	.byte	KEYSH , CelicaPlayerPhase1_key+0
+        .byte   KEYSH , CelicaPlayerPhase1_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 63
-	.byte		PAN   , c_v+34
-	.byte		VOL   , 67*CelicaPlayerPhase1_mvl/mxv
-	.byte	W96
-CelicaPlayerPhase1_4_B1:
+        .byte           VOICE , 49
+        .byte           VOL   , 44
+        .byte   W96
 @ 001   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_4_LOOP:
+        .byte   W96
 @ 002   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 003   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 004   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 005   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 006   ----------------------------------------
-	.byte	W96
+        .byte   W08
+        .byte           BEND  , c_v-14
+        .byte   W02
+        .byte                   c_v-9
+        .byte   W01
+        .byte                   c_v-3
+        .byte   W02
+        .byte                   c_v+2
+        .byte   W08
+        .byte                   c_v+1
+        .byte   W72
+        .byte   W03
 @ 007   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 008   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 009   ----------------------------------------
-CelicaPlayerPhase1_4_009:
-	.byte		N10   , Fn3 , v100
-	.byte		N10   , As3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte		N10   , As3 
-	.byte	W24
-	.byte		        Fn3 
-	.byte		N10   , As3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte		N10   , As3 
-	.byte	W24
-	.byte		        Fn3 
-	.byte		N10   , As3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte		N10   , As3 
-	.byte	W12
-	.byte	PEND
+        .byte   W96
 @ 010   ----------------------------------------
-CelicaPlayerPhase1_4_010:
-	.byte	W12
-	.byte		N10   , Fn3 , v100
-	.byte		N10   , As3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte		N10   , As3 
-	.byte	W24
-	.byte		        Fs3 
-	.byte		N10   , Bn3 
-	.byte	W12
-	.byte		        Fs3 
-	.byte		N10   , Bn3 
-	.byte	W24
-	.byte		        Fs3 
-	.byte		N10   , Bn3 
-	.byte	W12
-	.byte	PEND
+        .byte   W96
 @ 011   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_4_009
+        .byte   W96
 @ 012   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_4_010
+        .byte   W76
+        .byte           VOL   , 36
+        .byte   W20
 @ 013   ----------------------------------------
-	.byte	W96
+        .byte   W72
+        .byte           N10   , As3 , v102
+        .byte   W06
+        .byte                   Cn4 , v107
+        .byte   W06
+        .byte                   Cs4 , v112
+        .byte   W06
+        .byte                   Ds4 , v117
+        .byte   W06
 @ 014   ----------------------------------------
-	.byte	W96
+        .byte           N84   , Fn4 , v125 , gtp2
+        .byte                   As3 , v100
+        .byte           N84   , Cs4 , v100 , gtp2
+        .byte   W96
 @ 015   ----------------------------------------
-	.byte	W96
+        .byte           N10   , As3
+        .byte           N16   , Fn4 , v126
+        .byte   W18
+        .byte           N10   , Bn3 , v100
+        .byte           N16   , Fs4 , v126
+        .byte   W18
+        .byte           N10   , Gs3 , v100
+        .byte           N10   , Ds4 , v126
+        .byte   W12
+        .byte                   As3 , v100
+        .byte           N16   , Fn4 , v127
+        .byte   W18
+        .byte           N10   , Fs3 , v100
+        .byte           N16   , Cs4 , v127
+        .byte   W18
+        .byte           N10   , Gs3 , v100
+        .byte           N10   , Ds4 , v127
+        .byte   W12
 @ 016   ----------------------------------------
-	.byte	W96
+        .byte                   Fs3 , v100
+        .byte           N16   , Cn4 , v123
+        .byte   W18
+        .byte           N10   , Gs3 , v100
+        .byte           N16   , Cs4 , v123
+        .byte   W18
+        .byte           N10   , Fn3 , v100
+        .byte           N10   , As3 , v123
+        .byte   W12
+        .byte                   Gs3 , v100
+        .byte           N16   , Cn4 , v123
+        .byte   W18
+        .byte           N10   , Ds3 , v100
+        .byte           N16   , Gs3 , v123
+        .byte   W18
+        .byte           N10   , Fn3 , v100
+        .byte           N10   , As3 , v123
+        .byte   W12
 @ 017   ----------------------------------------
-	.byte	W96
+        .byte                   Cs3
+        .byte           N16   , Fs3
+        .byte   W18
+        .byte           N10   , Ds3
+        .byte           N16   , Gs3
+        .byte   W18
+        .byte           N10   , Cn3
+        .byte           N10   , Fn3
+        .byte   W12
+        .byte                   Cs3
+        .byte           N16   , Fs3
+        .byte   W18
+        .byte           N10   , As2
+        .byte           N16   , Ds3
+        .byte   W18
+        .byte           N10   , Cn3
+        .byte           N10   , Fn3
+        .byte   W12
 @ 018   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 019   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 020   ----------------------------------------
-CelicaPlayerPhase1_4_020:
-	.byte		N16   , As2 , v100
-	.byte	W18
-	.byte		        As3 
-	.byte	W18
-	.byte		N10   , Fn3 
-	.byte	W12
-	.byte		N21   , As2 
-	.byte	W24
-	.byte		        As3 
-	.byte	W24
-	.byte	PEND
+        .byte   W96
 @ 021   ----------------------------------------
-CelicaPlayerPhase1_4_021:
-	.byte		N16   , Bn2 , v100
-	.byte	W18
-	.byte		        Bn3 
-	.byte	W18
-	.byte		N10   , Fs3 
-	.byte	W12
-	.byte		N21   , Bn2 
-	.byte	W24
-	.byte		        Bn3 
-	.byte	W24
-	.byte	PEND
+        .byte   W96
 @ 022   ----------------------------------------
-CelicaPlayerPhase1_4_022:
-	.byte		N16   , Cn3 , v100
-	.byte	W18
-	.byte		        Cn4 
-	.byte	W18
-	.byte		N10   , Gn3 
-	.byte	W12
-	.byte		N21   , Cn3 
-	.byte	W24
-	.byte		        Cn4 
-	.byte	W24
-	.byte	PEND
+        .byte   W96
 @ 023   ----------------------------------------
-CelicaPlayerPhase1_4_023:
-	.byte		N16   , Cs3 , v100
-	.byte	W18
-	.byte		        Cs4 
-	.byte	W18
-	.byte		N10   , Gs3 
-	.byte	W12
-	.byte		N21   , Cs3 
-	.byte	W24
-	.byte		        Cs4 
-	.byte	W24
-	.byte	PEND
+        .byte   W96
 @ 024   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_4_020
+        .byte   W96
 @ 025   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_4_021
+        .byte   W96
 @ 026   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_4_022
+        .byte   W96
 @ 027   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_4_023
-	.byte	GOTO
-	 .word	CelicaPlayerPhase1_4_B1
-CelicaPlayerPhase1_4_B2:
+        .byte   W96
 @ 028   ----------------------------------------
-	.byte	W96
+        .byte           VOL   , 44
+        .byte           BEND  , c_v+0
+        .byte   GOTO
+         .word  CelicaPlayerPhase1_4_LOOP
+        .byte   W96
 @ 029   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 030   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 031   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 032   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 033   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 034   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 035   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 036   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 037   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 038   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 039   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 040   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 041   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 042   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 043   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 044   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 045   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 046   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 047   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 048   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 049   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 050   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 051   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 052   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 053   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 054   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 055   ----------------------------------------
-	.byte	FINE
+        .byte   FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@****************** Track 5 (Midi-Chn.5) ******************@
 
 CelicaPlayerPhase1_5:
-	.byte	KEYSH , CelicaPlayerPhase1_key+0
+        .byte   KEYSH , CelicaPlayerPhase1_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 49
-	.byte		VOL   , 66*CelicaPlayerPhase1_mvl/mxv
-	.byte		PAN   , c_v+0
-	.byte	W96
-CelicaPlayerPhase1_5_B1:
+        .byte           VOICE , 52
+        .byte           VOL   , 38
+        .byte   W96
 @ 001   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_5_LOOP:
+        .byte   W96
 @ 002   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 003   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 004   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 005   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 006   ----------------------------------------
-	.byte	W08
-	.byte		BEND  , c_v-15
-	.byte	W02
-	.byte		        c_v-9
-	.byte	W01
-	.byte		        c_v-4
-	.byte	W02
-	.byte		        c_v+2
-	.byte	W08
-	.byte		        c_v+0
-	.byte	W72
-	.byte	W03
+        .byte   W96
 @ 007   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 008   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 009   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 010   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 011   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 012   ----------------------------------------
-	.byte	W76
-	.byte	W02
-	.byte	W01
-	.byte	W17
+        .byte   W96
 @ 013   ----------------------------------------
-	.byte	W72
-	.byte		N10   , As3 , v104
-	.byte	W06
-	.byte		        Cn4 , v108
-	.byte	W06
-	.byte		        Cs4 , v112
-	.byte	W06
-	.byte		        Ds4 , v120
-	.byte	W06
+        .byte   W96
 @ 014   ----------------------------------------
-	.byte		N84   , As3 , v100
-	.byte		N84   , Cs4 
-	.byte		N84   , Fn4 , v127
-	.byte	W96
+        .byte           N92   , Cs3 , v100 , gtp3
+        .byte                   Fn3
+        .byte           N96   , Fn4 , v102
+        .byte   W96
 @ 015   ----------------------------------------
-	.byte		N10   , As3 , v100
-	.byte		N16   , Fn4 , v127
-	.byte	W18
-	.byte		N10   , Bn3 , v100
-	.byte		N16   , Fs4 , v127
-	.byte	W18
-	.byte		N10   , Gs3 , v100
-	.byte		N10   , Ds4 , v127
-	.byte	W12
-	.byte		        As3 , v100
-	.byte		N16   , Fn4 , v127
-	.byte	W18
-	.byte		N10   , Fs3 , v100
-	.byte		N16   , Cs4 , v127
-	.byte	W18
-	.byte		N10   , Gs3 , v100
-	.byte		N10   , Ds4 , v127
-	.byte	W12
+        .byte           N92   , Ds3 , v100 , gtp3
+        .byte                   Fs3
+        .byte           N16   , Fn4 , v126
+        .byte   W18
+        .byte                   Fs4
+        .byte   W18
+        .byte           N10   , Ds4
+        .byte   W12
+        .byte           N16   , Fn4 , v127
+        .byte   W18
+        .byte                   Cs4
+        .byte   W18
+        .byte           N10   , Ds4
+        .byte   W12
 @ 016   ----------------------------------------
-	.byte		        Fs3 , v100
-	.byte		N16   , Cn4 , v124
-	.byte	W18
-	.byte		N10   , Gs3 , v100
-	.byte		N16   , Cs4 , v124
-	.byte	W18
-	.byte		N10   , Fn3 , v100
-	.byte		N10   , As3 , v124
-	.byte	W12
-	.byte		        Gs3 , v100
-	.byte		N16   , Cn4 , v124
-	.byte	W18
-	.byte		N10   , Ds3 , v100
-	.byte		N16   , Gs3 , v124
-	.byte	W18
-	.byte		N10   , Fn3 , v100
-	.byte		N10   , As3 , v124
-	.byte	W12
+CelicaPlayerPhase1_5_16:
+        .byte           N92   , Cs3 , v100 , gtp3
+        .byte                   Fn3
+        .byte   W96
+        .byte   PEND
 @ 017   ----------------------------------------
-	.byte		        Cs3 
-	.byte		N16   , Fs3 
-	.byte	W18
-	.byte		N10   , Ds3 
-	.byte		N16   , Gs3 
-	.byte	W18
-	.byte		N10   , Cn3 
-	.byte		N10   , Fn3 
-	.byte	W12
-	.byte		        Cs3 
-	.byte		N16   , Fs3 
-	.byte	W18
-	.byte		N10   , As2 
-	.byte		N16   , Ds3 
-	.byte	W18
-	.byte		N10   , Cn3 
-	.byte		N10   , Fn3 
-	.byte	W12
+CelicaPlayerPhase1_5_17:
+        .byte           N92   , Ds3 , v100 , gtp3
+        .byte                   Fs3
+        .byte   W96
+        .byte   PEND
 @ 018   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_5_16
 @ 019   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_5_17
 @ 020   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_5_16
 @ 021   ----------------------------------------
-	.byte	W96
+        .byte           N92   , Fs3 , v100 , gtp3
+        .byte           N84   , Dn3 , v100 , gtp2
+        .byte   W96
 @ 022   ----------------------------------------
-	.byte	W96
+        .byte           N92   , Ds3 , v100 , gtp3
+        .byte                   Gn3
+        .byte   W96
 @ 023   ----------------------------------------
-	.byte	W96
+        .byte                   En3
+        .byte           N92   , Gs3 , v100 , gtp3
+        .byte   W96
 @ 024   ----------------------------------------
-	.byte	W96
+        .byte                   Cs3
+        .byte           N92   , As4 , v065 , gtp3
+        .byte                   Fn3 , v100
+        .byte   W96
 @ 025   ----------------------------------------
-	.byte	W96
+        .byte           N84   , Dn3 , v100 , gtp2
+        .byte           N92   , Bn4 , v068 , gtp3
+        .byte                   Fs3 , v100
+        .byte   W96
 @ 026   ----------------------------------------
-	.byte	W96
+        .byte                   Ds3
+        .byte           N92   , Cn5 , v066 , gtp3
+        .byte                   Gn3 , v100
+        .byte   W96
 @ 027   ----------------------------------------
-	.byte	W96
-	.byte	GOTO
-	 .word	CelicaPlayerPhase1_5_B1
-CelicaPlayerPhase1_5_B2:
+        .byte                   Gs3
+        .byte           N92   , Cs5 , v063 , gtp3
+        .byte                   En3 , v100
+        .byte   W96
 @ 028   ----------------------------------------
-	.byte	W96
+        .byte   GOTO
+         .word  CelicaPlayerPhase1_5_LOOP
+        .byte   W96
 @ 029   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 030   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 031   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 032   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 033   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 034   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 035   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 036   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 037   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 038   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 039   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 040   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 041   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 042   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 043   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 044   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 045   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 046   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 047   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 048   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 049   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 050   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 051   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 052   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 053   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 054   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 055   ----------------------------------------
-	.byte	FINE
+        .byte   FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@****************** Track 6 (Midi-Chn.6) ******************@
 
 CelicaPlayerPhase1_6:
-	.byte	KEYSH , CelicaPlayerPhase1_key+0
+        .byte   KEYSH , CelicaPlayerPhase1_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 52
-	.byte		VOL   , 57*CelicaPlayerPhase1_mvl/mxv
-	.byte		PAN   , c_v+0
-	.byte	W96
-CelicaPlayerPhase1_6_B1:
+        .byte           VOICE , 17
+        .byte           VOL   , 32
+        .byte           PAN   , c_v-23
+        .byte   W84
+        .byte           VOL   , 30
+        .byte   W12
 @ 001   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_6_LOOP:
+        .byte           N10   , As1 , v100
+        .byte   W12
+        .byte                   As1
+        .byte   W12
+        .byte                   Fn1
+        .byte   W12
+        .byte                   As1
+        .byte   W12
+        .byte           N21
+        .byte   W24
+        .byte           N10   , Fn1
+        .byte   W12
+        .byte                   As1
+        .byte   W12
 @ 002   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 003   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 004   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 005   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 006   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 007   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 008   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 009   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_9
 @ 010   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_10
 @ 011   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_9
 @ 012   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_10
 @ 013   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 014   ----------------------------------------
-	.byte		N92   , Cs3 , v100
-	.byte		N92   , Fn3 
-	.byte		N96   , Fn4 , v104
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 015   ----------------------------------------
-	.byte		N92   , Ds3 , v100
-	.byte		N92   , Fs3 
-	.byte		N16   , Fn4 , v127
-	.byte	W18
-	.byte		        Fs4 
-	.byte	W18
-	.byte		N10   , Ds4 
-	.byte	W12
-	.byte		N16   , Fn4 
-	.byte	W18
-	.byte		        Cs4 
-	.byte	W18
-	.byte		N10   , Ds4 
-	.byte	W12
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 016   ----------------------------------------
-	.byte		N92   , Cs3 , v100
-	.byte		N92   , Fn3 
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 017   ----------------------------------------
-	.byte		        Ds3 
-	.byte		N92   , Fs3 
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 018   ----------------------------------------
-	.byte		        Cs3 
-	.byte		N92   , Fn3 
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 019   ----------------------------------------
-	.byte		        Ds3 
-	.byte		N92   , Fs3 
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 020   ----------------------------------------
-	.byte		        Cs3 
-	.byte		N92   , Fn3 
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 021   ----------------------------------------
-	.byte		N84   , Dn3 
-	.byte		N92   , Fs3 
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 022   ----------------------------------------
-	.byte		        Ds3 
-	.byte		N92   , Gn3 
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_22
 @ 023   ----------------------------------------
-	.byte		        En3 
-	.byte		N92   , Gs3 
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_23
 @ 024   ----------------------------------------
-	.byte		        Cs3 
-	.byte		N92   , Fn3 
-	.byte		N92   , As4 , v068
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_3
 @ 025   ----------------------------------------
-	.byte		N84   , Dn3 , v100
-	.byte		N92   , Fs3 
-	.byte		N92   , Bn4 , v068
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_2
 @ 026   ----------------------------------------
-	.byte		        Ds3 , v100
-	.byte		N92   , Gn3 
-	.byte		N92   , Cn5 , v068
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_22
 @ 027   ----------------------------------------
-	.byte		        En3 , v100
-	.byte		N92   , Gs3 
-	.byte		N92   , Cs5 , v064
-	.byte	W96
-	.byte	GOTO
-	 .word	CelicaPlayerPhase1_6_B1
-CelicaPlayerPhase1_6_B2:
+        .byte   PATT
+         .word  CelicaPlayerPhase1_2_23
 @ 028   ----------------------------------------
-	.byte	W96
+        .byte   GOTO
+         .word  CelicaPlayerPhase1_6_LOOP
+        .byte   W96
 @ 029   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 030   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 031   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 032   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 033   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 034   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 035   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 036   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 037   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 038   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 039   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 040   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 041   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 042   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 043   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 044   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 045   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 046   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 047   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 048   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 049   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 050   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 051   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 052   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 053   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 054   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 055   ----------------------------------------
-	.byte	FINE
+        .byte   FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
+@****************** Track 7 (Midi-Chn.7) ******************@
 
 CelicaPlayerPhase1_7:
-	.byte	KEYSH , CelicaPlayerPhase1_key+0
+        .byte   KEYSH , CelicaPlayerPhase1_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 17
-	.byte		VOL   , 48*CelicaPlayerPhase1_mvl/mxv
-	.byte		PAN   , c_v-23
-	.byte	W84
-	.byte	W12
-CelicaPlayerPhase1_7_B1:
+        .byte           VOICE , 61
+        .byte           VOL   , 48
+        .byte   W32
+        .byte           PAN   , c_v-33
+        .byte   W64
 @ 001   ----------------------------------------
-CelicaPlayerPhase1_7_001:
-	.byte		N10   , As1 , v100
-	.byte	W12
-	.byte		N10   
-	.byte	W12
-	.byte		        Fn1 
-	.byte	W12
-	.byte		        As1 
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   , Fn1 
-	.byte	W12
-	.byte		        As1 
-	.byte	W12
-	.byte	PEND
+CelicaPlayerPhase1_7_LOOP:
+        .byte   W96
 @ 002   ----------------------------------------
-CelicaPlayerPhase1_7_002:
-	.byte		N10   , Bn1 , v100
-	.byte	W12
-	.byte		N10   
-	.byte	W12
-	.byte		        Fs1 
-	.byte	W12
-	.byte		        Bn1 
-	.byte	W12
-	.byte		N20   
-	.byte	W24
-	.byte		N10   , Fs1 
-	.byte	W12
-	.byte		        Bn1 
-	.byte	W12
-	.byte	PEND
+        .byte   W96
 @ 003   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_001
+        .byte   W96
 @ 004   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_002
+        .byte   W96
 @ 005   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_001
+        .byte   W96
 @ 006   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_002
+        .byte   W08
+        .byte           BEND  , c_v-14
+        .byte   W01
+        .byte           N02   , Fs2 , v070
+        .byte   W01
+        .byte           BEND  , c_v-9
+        .byte   W01
+        .byte                   c_v-3
+        .byte   W01
+        .byte           N05   , Fn3
+        .byte   W01
+        .byte           BEND  , c_v+2
+        .byte   W05
+        .byte           N05   , As2
+        .byte   W03
+        .byte           BEND  , c_v+1
+        .byte   W03
+        .byte           N10   , Fn3
+        .byte   W12
+        .byte           N05   , As2
+        .byte   W06
+        .byte                   Fn3
+        .byte   W06
+        .byte           N10   , As2
+        .byte   W12
+        .byte           N05   , Fn3
+        .byte   W06
+        .byte                   As2
+        .byte   W06
+        .byte           N10   , Fn3
+        .byte   W12
+        .byte           N05   , As2
+        .byte   W06
+        .byte                   Fn3
+        .byte   W06
 @ 007   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_001
+        .byte           PAN   , c_v+56
+        .byte           N10   , As2
+        .byte   W12
+        .byte           N05   , Fn3
+        .byte   W06
+        .byte                   As2
+        .byte   W06
+        .byte           N10   , Fn3
+        .byte   W12
+        .byte           N05   , As2
+        .byte   W06
+        .byte                   Fn3
+        .byte   W06
+        .byte           N10   , As2
+        .byte   W12
+        .byte           N05   , Fn3
+        .byte   W06
+        .byte                   As2
+        .byte   W06
+        .byte           N10   , Fn3
+        .byte   W12
+        .byte           N05   , As2
+        .byte   W06
+        .byte                   Fn3
+        .byte   W06
 @ 008   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_002
+        .byte           N10   , Bn2
+        .byte   W01
+        .byte           PAN   , c_v-2
+        .byte   W11
+        .byte           N05   , Fn3
+        .byte   W06
+        .byte                   Bn2
+        .byte   W06
+        .byte           N10   , Fn3
+        .byte   W12
+        .byte           N05   , Bn2
+        .byte   W06
+        .byte                   Fn3
+        .byte   W06
+        .byte           N10   , Bn2
+        .byte   W12
+        .byte           N05   , Fn3
+        .byte   W06
+        .byte                   Bn2
+        .byte   W06
+        .byte           N10   , Fn3
+        .byte   W12
+        .byte           N05   , Bn2
+        .byte   W06
+        .byte                   Fn3
+        .byte   W06
 @ 009   ----------------------------------------
-CelicaPlayerPhase1_7_009:
-	.byte		N10   , As1 , v100
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   
-	.byte	W12
-	.byte		N20   
-	.byte	W12
-	.byte	PEND
+        .byte   W96
 @ 010   ----------------------------------------
-CelicaPlayerPhase1_7_010:
-	.byte	W12
-	.byte		N10   , As1 , v100
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   , Bn1 
-	.byte	W12
-	.byte		N10   
-	.byte	W24
-	.byte		N10   
-	.byte	W12
-	.byte	PEND
+        .byte   W72
+        .byte                   Bn3 , v077
+        .byte   W06
+        .byte                   Cs4 , v080
+        .byte   W06
+        .byte                   Ds4 , v084
+        .byte   W06
+        .byte                   En4 , v087
+        .byte   W06
 @ 011   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_009
+        .byte           N10   , Fn4 , v090
+        .byte           N10   , As4
+        .byte   W12
+        .byte                   Fn4 , v100
+        .byte           N10   , As4
+        .byte   W24
+        .byte                   Fn4
+        .byte           N10   , As4
+        .byte   W12
+        .byte                   Fn4
+        .byte           N10   , As4
+        .byte   W24
+        .byte                   Fn4
+        .byte           N10   , As4
+        .byte   W12
+        .byte                   Fn4
+        .byte           N10   , As4
+        .byte   W12
 @ 012   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_010
+        .byte   W12
+        .byte                   Fn4
+        .byte           N10   , As4
+        .byte   W12
+        .byte                   Fn4
+        .byte           N10   , As4
+        .byte   W24
+        .byte                   Fs4
+        .byte           N10   , Bn4
+        .byte   W12
+        .byte                   Fs4
+        .byte           N10   , Bn4
+        .byte   W24
+        .byte                   Fs4
+        .byte           N10   , Bn4
+        .byte   W12
 @ 013   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 014   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_001
+        .byte   W96
 @ 015   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_002
+        .byte   W96
 @ 016   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_001
+        .byte   W96
 @ 017   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_002
+        .byte   W96
 @ 018   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_001
+        .byte                   Gs2 , v084
+        .byte           N16   , Cs3
+        .byte   W18
+        .byte           N10   , As2
+        .byte           N16   , Ds3
+        .byte   W18
+        .byte           N10   , Fn2
+        .byte           N10   , Cn3
+        .byte   W12
+        .byte                   As2
+        .byte           N16   , Cs3
+        .byte   W18
+        .byte           N10   , Fn2
+        .byte           N16   , As2
+        .byte   W18
+        .byte           N10   , Gn2
+        .byte           N10   , Cn3
+        .byte   W12
 @ 019   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_002
+        .byte                   Cs2
+        .byte           N16   , Gs2
+        .byte   W18
+        .byte           N10   , Ds2
+        .byte           N16   , As2
+        .byte   W18
+        .byte           N10   , Cn2
+        .byte           N10   , Fs2
+        .byte   W12
+        .byte                   Cs2
+        .byte           N16   , Gs2
+        .byte   W18
+        .byte           N10   , As1
+        .byte           N16   , Fn2
+        .byte   W18
+        .byte           N10   , Cn2
+        .byte           N10   , Fs2
+        .byte   W12
 @ 020   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_001
+        .byte   W96
 @ 021   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_002
+        .byte   W96
 @ 022   ----------------------------------------
-CelicaPlayerPhase1_7_022:
-	.byte		N10   , Cn2 , v100
-	.byte	W12
-	.byte		N10   
-	.byte	W12
-	.byte		        Gn1 
-	.byte	W12
-	.byte		        Cn2 
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   , Gn1 
-	.byte	W12
-	.byte		        Cn2 
-	.byte	W12
-	.byte	PEND
+        .byte   W96
 @ 023   ----------------------------------------
-CelicaPlayerPhase1_7_023:
-	.byte		N10   , Cs2 , v100
-	.byte	W12
-	.byte		N10   
-	.byte	W12
-	.byte		        Gs1 
-	.byte	W12
-	.byte		        Cs2 
-	.byte	W12
-	.byte		N21   
-	.byte	W24
-	.byte		N10   , Gs1 
-	.byte	W12
-	.byte		        Cs2 
-	.byte	W12
-	.byte	PEND
+        .byte   W96
 @ 024   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_001
+        .byte           N90   , As3 , v065
+        .byte   W96
 @ 025   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_002
+        .byte                   Bn3 , v068
+        .byte   W96
 @ 026   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_022
+        .byte                   Cn4 , v066
+        .byte   W96
 @ 027   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_7_023
-	.byte	GOTO
-	 .word	CelicaPlayerPhase1_7_B1
-CelicaPlayerPhase1_7_B2:
+        .byte                   Cs4 , v063
+        .byte   W96
 @ 028   ----------------------------------------
-	.byte	W96
+        .byte           PAN   , c_v-33
+        .byte           BEND  , c_v+0
+        .byte   GOTO
+         .word  CelicaPlayerPhase1_7_LOOP
+        .byte   W96
 @ 029   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 030   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 031   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 032   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 033   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 034   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 035   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 036   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 037   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 038   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 039   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 040   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 041   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 042   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 043   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 044   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 045   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 046   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 047   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 048   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 049   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 050   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 051   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 052   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 053   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 054   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 055   ----------------------------------------
-	.byte	FINE
+        .byte   FINE
 
-@**************** Track 8 (Midi-Chn.8) ****************@
+@****************** Track 8 (Midi-Chn.8) ******************@
 
 CelicaPlayerPhase1_8:
-	.byte	KEYSH , CelicaPlayerPhase1_key+0
+        .byte   KEYSH , CelicaPlayerPhase1_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 61
-	.byte		VOL   , 72*CelicaPlayerPhase1_mvl/mxv
-	.byte	W32
-	.byte		PAN   , c_v-33
-	.byte	W64
-CelicaPlayerPhase1_8_B1:
+        .byte           VOICE , 127
+        .byte           VOL   , 52
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Fs1
+        .byte           N03   , Gn1
+        .byte   W24
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte           N03   , Gn1
+        .byte   W24
+        .byte                   Cn1
+        .byte           N03   , Fs1
+        .byte           N03   , Gn1
+        .byte   W24
+        .byte                   Cn1
+        .byte           N03   , As1
+        .byte           N03   , Dn2
+        .byte           N03   , Bn1
+        .byte           N03   , Fs1
+        .byte   W06
+        .byte                   Dn2
+        .byte           N03   , An1
+        .byte   W06
+        .byte                   Gn1
+        .byte           N03   , Bn1
+        .byte           N03   , Gs1
+        .byte   W12
 @ 001   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_8_LOOP:
+        .byte           N03   , Fs1 , v081
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W24
+        .byte                   Cn1
+        .byte           N03   , Fs1
+        .byte   W12
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W24
 @ 002   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_8_2:
+        .byte           N03   , Fs1 , v081
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W24
+        .byte                   Cn1
+        .byte           N03   , Fs1
+        .byte   W12
+        .byte                   Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte                   En1
+        .byte   W12
+        .byte   PEND
 @ 003   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_8_3:
+        .byte           N03   , Fs1 , v081
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W24
+        .byte                   Cn1
+        .byte           N03   , Fs1
+        .byte   W12
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W24
+        .byte   PEND
 @ 004   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_2
 @ 005   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_3
 @ 006   ----------------------------------------
-	.byte	W08
-	.byte		BEND  , c_v-15
-	.byte	W01
-	.byte		N02   , Fs2 , v072
-	.byte	W01
-	.byte		BEND  , c_v-9
-	.byte	W01
-	.byte		        c_v-4
-	.byte	W01
-	.byte		N05   , Fn3 
-	.byte	W01
-	.byte		BEND  , c_v+2
-	.byte	W05
-	.byte		N05   , As2 
-	.byte	W03
-	.byte		BEND  , c_v+0
-	.byte	W03
-	.byte		N10   , Fn3 
-	.byte	W12
-	.byte		N05   , As2 
-	.byte	W06
-	.byte		        Fn3 
-	.byte	W06
-	.byte		N10   , As2 
-	.byte	W12
-	.byte		N05   , Fn3 
-	.byte	W06
-	.byte		        As2 
-	.byte	W06
-	.byte		N10   , Fn3 
-	.byte	W12
-	.byte		N05   , As2 
-	.byte	W06
-	.byte		        Fn3 
-	.byte	W06
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_2
 @ 007   ----------------------------------------
-	.byte		PAN   , c_v+56
-	.byte		N10   , As2 
-	.byte	W12
-	.byte		N05   , Fn3 
-	.byte	W06
-	.byte		        As2 
-	.byte	W06
-	.byte		N10   , Fn3 
-	.byte	W12
-	.byte		N05   , As2 
-	.byte	W06
-	.byte		        Fn3 
-	.byte	W06
-	.byte		N10   , As2 
-	.byte	W12
-	.byte		N05   , Fn3 
-	.byte	W06
-	.byte		        As2 
-	.byte	W06
-	.byte		N10   , Fn3 
-	.byte	W12
-	.byte		N05   , As2 
-	.byte	W06
-	.byte		        Fn3 
-	.byte	W06
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_3
 @ 008   ----------------------------------------
-	.byte		N10   , Bn2 
-	.byte	W01
-	.byte		PAN   , c_v-2
-	.byte	W11
-	.byte		N05   , Fn3 
-	.byte	W06
-	.byte		        Bn2 
-	.byte	W06
-	.byte		N10   , Fn3 
-	.byte	W12
-	.byte		N05   , Bn2 
-	.byte	W06
-	.byte		        Fn3 
-	.byte	W06
-	.byte		N10   , Bn2 
-	.byte	W12
-	.byte		N05   , Fn3 
-	.byte	W06
-	.byte		        Bn2 
-	.byte	W06
-	.byte		N10   , Fn3 
-	.byte	W12
-	.byte		N05   , Bn2 
-	.byte	W06
-	.byte		        Fn3 
-	.byte	W06
+        .byte           N03   , Fs1 , v081
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W24
+        .byte                   Cn1
+        .byte           N03   , Fs1
+        .byte   W12
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Cn1 , v064
+        .byte           N03   , Fs1
+        .byte   W12
 @ 009   ----------------------------------------
-	.byte	W96
+        .byte                   Cn1
+        .byte           N03   , Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Bn1
+        .byte           N06   , En1 , v102
+        .byte   W24
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Bn1
+        .byte           N06   , En1 , v102
+        .byte   W24
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Bn1
+        .byte           N06   , En1 , v102
+        .byte   W12
 @ 010   ----------------------------------------
-	.byte	W72
-	.byte		        Bn3 , v080
-	.byte	W06
-	.byte		        Cs4 
-	.byte	W06
-	.byte		        Ds4 , v084
-	.byte	W06
-	.byte		        En4 , v088
-	.byte	W06
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Bn1
+        .byte           N06   , En1 , v102
+        .byte   W24
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Bn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Dn1 , v081
+        .byte           N03   , As1
+        .byte           N03   , Ds2
+        .byte   W24
 @ 011   ----------------------------------------
-	.byte		N10   , Fn4 , v092
-	.byte		N10   , As4 
-	.byte	W12
-	.byte		        Fn4 , v100
-	.byte		N10   , As4 
-	.byte	W24
-	.byte		        Fn4 
-	.byte		N10   , As4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte		N10   , As4 
-	.byte	W24
-	.byte		        Fn4 
-	.byte		N10   , As4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte		N10   , As4 
-	.byte	W12
+        .byte                   Cs2
+        .byte           N03   , Fs1
+        .byte           N03   , Dn1
+        .byte           N03   , Cn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Bn1
+        .byte           N06   , En1 , v102
+        .byte   W24
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Bn1
+        .byte           N06   , En1 , v102
+        .byte   W24
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Bn1
+        .byte           N06   , En1 , v102
+        .byte   W12
 @ 012   ----------------------------------------
-	.byte	W12
-	.byte		        Fn4 
-	.byte		N10   , As4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte		N10   , As4 
-	.byte	W24
-	.byte		        Fs4 
-	.byte		N10   , Bn4 
-	.byte	W12
-	.byte		        Fs4 
-	.byte		N10   , Bn4 
-	.byte	W24
-	.byte		        Fs4 
-	.byte		N10   , Bn4 
-	.byte	W12
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Bn1
+        .byte           N06   , En1 , v102
+        .byte   W24
+        .byte           N03   , Ds2 , v081
+        .byte           N03   , Cn1
+        .byte           N03   , Cs2
+        .byte           N03   , Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Bn1 , v081
+        .byte           N03   , Ds2
+        .byte           N03   , Cn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Dn1 , v081
+        .byte           N03   , As1
+        .byte           N03   , Ds2
+        .byte   W24
 @ 013   ----------------------------------------
-	.byte	W96
+        .byte                   Cn1
+        .byte           N03   , Fs1
+        .byte           N03   , An2
+        .byte           N03   , Gn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N02
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Fs1
+        .byte           N03   , Gn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N02
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , Fs1
+        .byte           N03   , Gn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N02
+        .byte   W12
+        .byte           N03   , Cn1 , v081
+        .byte           N03   , As1
+        .byte           N03   , Dn2
+        .byte           N03   , Bn1
+        .byte           N03   , Fs1
+        .byte           N06   , En1 , v102
+        .byte   W06
+        .byte           N03   , Dn2 , v081
+        .byte           N03   , An1
+        .byte   W06
+        .byte                   Gn1
+        .byte           N03   , Bn1
+        .byte           N03   , Gs1
+        .byte           N02   , En1 , v102
+        .byte   W12
 @ 014   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_8_14:
+        .byte           N03   , Fs1 , v081
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W04
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W08
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte   PEND
 @ 015   ----------------------------------------
-	.byte	W96
+CelicaPlayerPhase1_8_15:
+        .byte           N03   , Fs1 , v081
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W04
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W08
+        .byte                   Dn1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Fs1 , v081
+        .byte           N06   , En1 , v102
+        .byte   W06
+        .byte           N03   , Fs1 , v081
+        .byte   W06
+        .byte   PEND
 @ 016   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_14
 @ 017   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_15
 @ 018   ----------------------------------------
-	.byte		        Gs2 , v084
-	.byte		N16   , Cs3 
-	.byte	W18
-	.byte		N10   , As2 
-	.byte		N16   , Ds3 
-	.byte	W18
-	.byte		N10   , Fn2 
-	.byte		N10   , Cn3 
-	.byte	W12
-	.byte		        As2 
-	.byte		N16   , Cs3 
-	.byte	W18
-	.byte		N10   , Fn2 
-	.byte		N16   , As2 
-	.byte	W18
-	.byte		N10   , Gn2 
-	.byte		N10   , Cn3 
-	.byte	W12
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_14
 @ 019   ----------------------------------------
-	.byte		        Cs2 
-	.byte		N16   , Gs2 
-	.byte	W18
-	.byte		N10   , Ds2 
-	.byte		N16   , As2 
-	.byte	W18
-	.byte		N10   , Cn2 
-	.byte		N10   , Fs2 
-	.byte	W12
-	.byte		        Cs2 
-	.byte		N16   , Gs2 
-	.byte	W18
-	.byte		N10   , As1 
-	.byte		N16   , Fn2 
-	.byte	W18
-	.byte		N10   , Cn2 
-	.byte		N10   , Fs2 
-	.byte	W12
+        .byte           N03   , Fs1 , v081
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W04
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W08
+        .byte                   Dn2
+        .byte           N03   , As1
+        .byte           N06   , En1 , v102
+        .byte   W12
+        .byte           N03   , Bn1 , v081
+        .byte           N03   , Fs1
+        .byte           N06   , En1 , v102
+        .byte   W06
+        .byte           N03   , Gn1 , v081
+        .byte           N03   , Fs1
+        .byte   W06
 @ 020   ----------------------------------------
-	.byte	W96
+        .byte                   Cn1
+        .byte           N03   , An2
+        .byte           N03   , Fs1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W04
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W08
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
 @ 021   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_15
 @ 022   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_14
 @ 023   ----------------------------------------
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_15
 @ 024   ----------------------------------------
-	.byte		N90   , As3 , v068
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_14
 @ 025   ----------------------------------------
-	.byte		        Bn3 
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_15
 @ 026   ----------------------------------------
-	.byte		        Cn4 
-	.byte	W96
+        .byte   PATT
+         .word  CelicaPlayerPhase1_8_14
 @ 027   ----------------------------------------
-	.byte		        Cs4 , v064
-	.byte	W96
-	.byte	GOTO
-	 .word	CelicaPlayerPhase1_8_B1
-CelicaPlayerPhase1_8_B2:
+        .byte           N03   , Fs1 , v081
+        .byte           N03   , Cn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   As1
+        .byte           N03   , Dn1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Cn1
+        .byte           N03   , Fs1
+        .byte           N03   , Dn2
+        .byte   W06
+        .byte                   Dn2
+        .byte   W06
+        .byte                   Fs1
+        .byte           N03   , Dn2
+        .byte   W04
+        .byte                   Fs1
+        .byte           N03   , Cn1
+        .byte   W02
+        .byte                   Dn2
+        .byte   W06
+        .byte                   Gn2
+        .byte           N03   , Dn1
+        .byte           N03   , Bn1
+        .byte           N03   , As1
+        .byte   W06
+        .byte                   Bn1
+        .byte   W06
+        .byte                   Fs1
+        .byte           N03   , Bn1
+        .byte           N03   , Gn2
+        .byte   W06
+        .byte           N01   , DnM2
+        .byte           N03   , Bn1
+        .byte           N03   , Gn1
+        .byte           N03   , Fs1
+        .byte   W06
 @ 028   ----------------------------------------
-	.byte	W96
+        .byte   GOTO
+         .word  CelicaPlayerPhase1_8_LOOP
+        .byte   W96
 @ 029   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 030   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 031   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 032   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 033   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 034   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 035   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 036   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 037   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 038   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 039   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 040   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 041   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 042   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 043   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 044   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 045   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 046   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 047   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 048   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 049   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 050   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 051   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 052   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 053   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 054   ----------------------------------------
-	.byte	W96
+        .byte   W96
 @ 055   ----------------------------------------
-	.byte	FINE
+        .byte   FINE
 
-@**************** Track 9 (Midi-Chn.9) ****************@
 
-CelicaPlayerPhase1_9:
-	.byte	KEYSH , CelicaPlayerPhase1_key+0
-@ 000   ----------------------------------------
-	.byte		VOICE , 127
-	.byte		VOL   , 79*CelicaPlayerPhase1_mvl/mxv
-	.byte		N03   , Cn1 , v084
-	.byte		N03   , Fs1 
-	.byte		N03   , Gn1 
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte		N03   , Gn1 
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte		N03   , Gn1 
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte		N03   , As1 
-	.byte		N03   , Bn1 
-	.byte		N03   , Dn2 
-	.byte	W06
-	.byte		        An1 
-	.byte		N03   , Dn2 
-	.byte	W06
-	.byte		        Gn1 
-	.byte		N03   , Gs1 
-	.byte		N03   , Bn1 
-	.byte	W12
-CelicaPlayerPhase1_9_B1:
-@ 001   ----------------------------------------
-CelicaPlayerPhase1_9_001:
-	.byte		N03   , Cn1 , v084
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W24
-	.byte	PEND
-@ 002   ----------------------------------------
-CelicaPlayerPhase1_9_002:
-	.byte		N03   , Cn1 , v084
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		        Dn1 
-	.byte		N06   , En1 , v104
-	.byte	W12
-	.byte		N06   
-	.byte	W12
-	.byte	PEND
-@ 003   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_001
-@ 004   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_002
-@ 005   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_001
-@ 006   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_002
-@ 007   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_001
-@ 008   ----------------------------------------
-	.byte		N03   , Cn1 , v084
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Cn1 , v064
-	.byte		N03   , Fs1 
-	.byte	W12
-@ 009   ----------------------------------------
-	.byte		        Cn1 
-	.byte		N03   , Dn1 
-	.byte		N06   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Bn1 , v084
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Dn1 
-	.byte		N06   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Bn1 , v084
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Dn1 
-	.byte		N06   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Bn1 , v084
-	.byte	W12
-@ 010   ----------------------------------------
-	.byte	W12
-	.byte		        Cn1 
-	.byte		N03   , Dn1 
-	.byte		N06   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Bn1 , v084
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Dn1 
-	.byte		N06   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Bn1 , v084
-	.byte	W12
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte		N03   , Ds2 
-	.byte	W24
-@ 011   ----------------------------------------
-	.byte		        Cn1 
-	.byte		N03   , Dn1 
-	.byte		N06   , En1 , v104
-	.byte		N03   , Fs1 , v084
-	.byte		N03   , Cs2 
-	.byte	W12
-	.byte		        Cn1 
-	.byte		N06   , En1 , v104
-	.byte		N03   , Bn1 , v084
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Dn1 
-	.byte		N06   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Bn1 , v084
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Dn1 
-	.byte		N06   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Bn1 , v084
-	.byte	W12
-@ 012   ----------------------------------------
-	.byte	W12
-	.byte		        Cn1 
-	.byte		N03   , Dn1 
-	.byte		N06   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Bn1 , v084
-	.byte	W24
-	.byte		        Cn1 
-	.byte		N03   , Dn1 
-	.byte		N06   , En1 , v104
-	.byte		N03   , Cs2 , v084
-	.byte		N03   , Ds2 
-	.byte	W12
-	.byte		        Cn1 
-	.byte		N06   , En1 , v104
-	.byte		N03   , Bn1 , v084
-	.byte		N03   , Ds2 
-	.byte	W12
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte		N03   , Ds2 
-	.byte	W24
-@ 013   ----------------------------------------
-	.byte		        Cn1 
-	.byte		N06   , En1 , v104
-	.byte		N03   , Fs1 , v084
-	.byte		N03   , Gn1 
-	.byte		N03   , An2 
-	.byte	W12
-	.byte		N02   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Fs1 , v084
-	.byte		N03   , Gn1 
-	.byte	W12
-	.byte		N02   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Fs1 , v084
-	.byte		N03   , Gn1 
-	.byte	W12
-	.byte		N02   , En1 , v104
-	.byte	W12
-	.byte		N03   , Cn1 , v084
-	.byte		N06   , En1 , v104
-	.byte		N03   , Fs1 , v084
-	.byte		N03   , As1 
-	.byte		N03   , Bn1 
-	.byte		N03   , Dn2 
-	.byte	W06
-	.byte		        An1 
-	.byte		N03   , Dn2 
-	.byte	W06
-	.byte		N02   , En1 , v104
-	.byte		N03   , Gn1 , v084
-	.byte		N03   , Gs1 
-	.byte		N03   , Bn1 
-	.byte	W12
-@ 014   ----------------------------------------
-CelicaPlayerPhase1_9_014:
-	.byte		N03   , Cn1 , v084
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		N03   
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Fs1 
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		N03   
-	.byte	W04
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W08
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Fs1 
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte	PEND
-@ 015   ----------------------------------------
-CelicaPlayerPhase1_9_015:
-	.byte		N03   , Cn1 , v084
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		N03   
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Fs1 
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		N03   
-	.byte	W04
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W08
-	.byte		        Dn1 
-	.byte		N06   , En1 , v104
-	.byte	W12
-	.byte		N06   
-	.byte		N03   , Fs1 , v084
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte	PEND
-@ 016   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_014
-@ 017   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_015
-@ 018   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_014
-@ 019   ----------------------------------------
-	.byte		N03   , Cn1 , v084
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		N03   
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Fs1 
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		N03   
-	.byte	W04
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W08
-	.byte		N06   , En1 , v104
-	.byte		N03   , As1 , v084
-	.byte		N03   , Dn2 
-	.byte	W12
-	.byte		N06   , En1 , v104
-	.byte		N03   , Fs1 , v084
-	.byte		N03   , Bn1 
-	.byte	W06
-	.byte		        Fs1 
-	.byte		N03   , Gn1 
-	.byte	W06
-@ 020   ----------------------------------------
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte		N03   , An2 
-	.byte	W12
-	.byte		        Fs1 
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Fs1 
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		N03   
-	.byte	W04
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W08
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Fs1 
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-@ 021   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_015
-@ 022   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_014
-@ 023   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_015
-@ 024   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_014
-@ 025   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_015
-@ 026   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaPlayerPhase1_9_014
-@ 027   ----------------------------------------
-	.byte		N03   , Cn1 , v084
-	.byte		N03   , Fs1 
-	.byte	W12
-	.byte		N03   
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte	W12
-	.byte		        Fs1 
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte		N03   , Dn2 
-	.byte	W06
-	.byte		N03   
-	.byte	W06
-	.byte		        Fs1 
-	.byte		N03   , Dn2 
-	.byte	W04
-	.byte		        Cn1 
-	.byte		N03   , Fs1 
-	.byte	W02
-	.byte		        Dn2 
-	.byte	W06
-	.byte		        Dn1 
-	.byte		N03   , As1 
-	.byte		N03   , Bn1 
-	.byte		N03   , Gn2 
-	.byte	W06
-	.byte		        Bn1 
-	.byte	W06
-	.byte		        Fs1 
-	.byte		N03   , Bn1 
-	.byte		N03   , Gn2 
-	.byte	W06
-	.byte		N01   , DnM2
-	.byte		N03   , Fs1 
-	.byte		N03   , Gn1 
-	.byte		N03   , Bn1 
-	.byte	W06
-	.byte	GOTO
-	 .word	CelicaPlayerPhase1_9_B1
-CelicaPlayerPhase1_9_B2:
-@ 028   ----------------------------------------
-	.byte	W96
-@ 029   ----------------------------------------
-	.byte	W96
-@ 030   ----------------------------------------
-	.byte	W96
-@ 031   ----------------------------------------
-	.byte	W96
-@ 032   ----------------------------------------
-	.byte	W96
-@ 033   ----------------------------------------
-	.byte	W96
-@ 034   ----------------------------------------
-	.byte	W96
-@ 035   ----------------------------------------
-	.byte	W96
-@ 036   ----------------------------------------
-	.byte	W96
-@ 037   ----------------------------------------
-	.byte	W96
-@ 038   ----------------------------------------
-	.byte	W96
-@ 039   ----------------------------------------
-	.byte	W96
-@ 040   ----------------------------------------
-	.byte	W96
-@ 041   ----------------------------------------
-	.byte	W96
-@ 042   ----------------------------------------
-	.byte	W96
-@ 043   ----------------------------------------
-	.byte	W96
-@ 044   ----------------------------------------
-	.byte	W96
-@ 045   ----------------------------------------
-	.byte	W96
-@ 046   ----------------------------------------
-	.byte	W96
-@ 047   ----------------------------------------
-	.byte	W96
-@ 048   ----------------------------------------
-	.byte	W96
-@ 049   ----------------------------------------
-	.byte	W96
-@ 050   ----------------------------------------
-	.byte	W96
-@ 051   ----------------------------------------
-	.byte	W96
-@ 052   ----------------------------------------
-	.byte	W96
-@ 053   ----------------------------------------
-	.byte	W96
-@ 054   ----------------------------------------
-	.byte	W96
-@ 055   ----------------------------------------
-	.byte	FINE
+@********************** End of Song ***********************@
 
-@******************************************************@
-	.align	2
-
+        .align  2
 CelicaPlayerPhase1:
-	.byte	9	@ NumTrks
-	.byte	0	@ NumBlks
-	.byte	CelicaPlayerPhase1_pri	@ Priority
-	.byte	CelicaPlayerPhase1_rev	@ Reverb.
+        .byte   9                       @ Num Tracks
+        .byte   0                       @ Unknown
+        .byte   CelicaPlayerPhase1_pri  @ Priority
+        .byte   CelicaPlayerPhase1_rev  @ Reverb
 
-	.word	CelicaPlayerPhase1_grp
+        .word   CelicaPlayerPhase1_grp 
 
-	.word	CelicaPlayerPhase1_1
-	.word	CelicaPlayerPhase1_2
-	.word	CelicaPlayerPhase1_3
-	.word	CelicaPlayerPhase1_4
-	.word	CelicaPlayerPhase1_5
-	.word	CelicaPlayerPhase1_6
-	.word	CelicaPlayerPhase1_7
-	.word	CelicaPlayerPhase1_8
-	.word	CelicaPlayerPhase1_9
+        .word   CelicaPlayerPhase1_0
+        .word   CelicaPlayerPhase1_1
+        .word   CelicaPlayerPhase1_2
+        .word   CelicaPlayerPhase1_3
+        .word   CelicaPlayerPhase1_4
+        .word   CelicaPlayerPhase1_5
+        .word   CelicaPlayerPhase1_6
+        .word   CelicaPlayerPhase1_7
+        .word   CelicaPlayerPhase1_8
 
-	.end
+        .end

@@ -1,1926 +1,1932 @@
-	.include "MPlayDef.s"
+        .include "MPlayDef.s"
 
-	.equ	CelicaDeparts_grp, voicegroup000
-	.equ	CelicaDeparts_pri, 0
-	.equ	CelicaDeparts_rev, 0
-	.equ	CelicaDeparts_mvl, 85
-	.equ	CelicaDeparts_key, 0
-	.equ	CelicaDeparts_tbs, 1
-	.equ	CelicaDeparts_exg, 0
-	.equ	CelicaDeparts_cmp, 1
+        .equ    CelicaDeparts_grp, voicegroup000
+        .equ    CelicaDeparts_pri, 0
+        .equ    CelicaDeparts_rev, 0
+        .equ    CelicaDeparts_key, 0
 
-	.section .rodata
-	.global	CelicaDeparts
-	.align	2
+        .section .rodata
+        .global CelicaDeparts
+        .align  2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@****************** Track 0 (Midi-Chn.0) ******************@
+
+CelicaDeparts_0:
+        .byte   KEYSH , CelicaDeparts_key+0
+@ 000   ----------------------------------------
+        .byte   TEMPO , 140/2
+CelicaDeparts_0_LOOP:
+        .byte           VOICE , 41
+        .byte           VOL   , 50
+        .byte           PAN   , c_v+12
+        .byte   W72
+@ 001   ----------------------------------------
+        .byte   W24
+        .byte   W01
+        .byte           VOL   , 41
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   43
+        .byte   W03
+        .byte                   44
+        .byte   W36
+        .byte   W02
+@ 002   ----------------------------------------
+        .byte           N64   , Fn3 , v100
+        .byte           N42   , Dn4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , An4
+        .byte   W24
+@ 003   ----------------------------------------
+        .byte           N64   , Fn3
+        .byte           N42   , En4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , Cn4
+        .byte   W24
+@ 004   ----------------------------------------
+        .byte                   Dn3
+        .byte           N21   , An3
+        .byte   W24
+        .byte                   En3
+        .byte           N21   , En4
+        .byte   W24
+        .byte                   Fn3
+        .byte           N21   , Fn4
+        .byte   W24
+@ 005   ----------------------------------------
+        .byte                   En4
+        .byte           N60   , Fn3 , v102 , gtp3
+        .byte   W24
+        .byte           N21   , Dn4 , v100
+        .byte   W24
+        .byte                   Cn4
+        .byte   W24
+@ 006   ----------------------------------------
+        .byte           N64   , Dn3
+        .byte           N42   , As3 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , An4
+        .byte   W24
+@ 007   ----------------------------------------
+        .byte           N64   , Gn3
+        .byte           N42   , Gn4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , Fn4
+        .byte   W24
+@ 008   ----------------------------------------
+        .byte                   Gn3
+        .byte           N21   , En4
+        .byte   W24
+        .byte                   An3
+        .byte           N21   , Fn4
+        .byte   W24
+        .byte                   As3
+        .byte           N21   , Gn4
+        .byte   W24
+@ 009   ----------------------------------------
+        .byte                   As3
+        .byte           N21   , Fn4
+        .byte   W24
+        .byte                   En4
+        .byte   W24
+        .byte                   Dn4
+        .byte   W24
+@ 010   ----------------------------------------
+        .byte           N64   , En3
+        .byte           N42   , Cn4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , Dn4
+        .byte   W24
+@ 011   ----------------------------------------
+        .byte           N64   , Gn3
+        .byte           N42   , En4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , Fn4
+        .byte   W24
+@ 012   ----------------------------------------
+        .byte           N64   , As3
+        .byte           N42   , Gn4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , An4
+        .byte   W24
+@ 013   ----------------------------------------
+        .byte           N64   , Cn4
+        .byte           N42   , As4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , Cn5
+        .byte   W24
+@ 014   ----------------------------------------
+        .byte           TIE   , An4
+        .byte           TIE   , Fn4
+        .byte           TIE   , Cn4
+        .byte   W72
+@ 015   ----------------------------------------
+        .byte   W32
+        .byte   W03
+        .byte           VOL   , 43
+        .byte   W02
+        .byte                   42
+        .byte   W01
+        .byte                   41
+        .byte   W02
+        .byte                   40
+        .byte   W01
+        .byte                   39
+        .byte   W03
+        .byte                   37
+        .byte   W03
+        .byte                   36
+        .byte   W02
+        .byte                   35
+        .byte   W01
+        .byte                   34
+        .byte   W02
+        .byte                   33
+        .byte   W01
+        .byte                   32
+        .byte   W02
+        .byte                   31
+        .byte   W01
+        .byte                   30
+        .byte   W02
+        .byte                   29
+        .byte   W01
+        .byte                   28
+        .byte   W02
+        .byte                   27
+        .byte   W01
+        .byte                   26
+        .byte   W02
+        .byte                   25
+        .byte   W03
+        .byte                   23
+        .byte   W03
+        .byte                   22
+        .byte   W01
+        .byte                   21
+        .byte   W01
+@ 016   ----------------------------------------
+        .byte   W01
+        .byte                   20
+        .byte   W01
+        .byte                   19
+        .byte   W02
+        .byte                   18
+        .byte   W01
+        .byte                   17
+        .byte   W02
+        .byte                   16
+        .byte   W01
+        .byte                   15
+        .byte   W02
+        .byte                   14
+        .byte   W03
+        .byte                   12
+        .byte   W01
+        .byte           EOT   , An4
+        .byte                   Fn4
+        .byte                   Cn4
+        .byte   W02
+        .byte           VOL   , 11
+        .byte   W01
+        .byte                   10
+        .byte   W02
+        .byte                   9
+        .byte   W01
+        .byte                   8
+        .byte   W02
+        .byte                   7
+        .byte   W16
+        .byte                   42
+        .byte   W02
+        .byte                   45
+        .byte   W03
+        .byte                   46
+        .byte   W05
+        .byte           N21   , Gn4
+        .byte   W24
+@ 017   ----------------------------------------
+        .byte           N42   , Fn4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , En4
+        .byte   W24
+@ 018   ----------------------------------------
+CelicaDeparts_0_18:
+        .byte           N64   , Ds3 , v100
+        .byte           N42   , Dn4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , Cn4
+        .byte   W24
+        .byte   PEND
+@ 019   ----------------------------------------
+CelicaDeparts_0_19:
+        .byte           N64   , Gn3 , v100
+        .byte           N42   , Dn4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , Ds4
+        .byte   W24
+        .byte   PEND
+@ 020   ----------------------------------------
+CelicaDeparts_0_20:
+        .byte           N64   , As3 , v100
+        .byte           N48   , Fn4
+        .byte   W48
+        .byte           N42   , Gn4 , v100 , gtp1
+        .byte   W24
+        .byte   PEND
+@ 021   ----------------------------------------
+        .byte           N21   , Cn4
+        .byte   W24
+        .byte           N42   , As3 , v100 , gtp1
+        .byte           N21   , Fn4
+        .byte   W24
+        .byte                   Ds4
+        .byte   W24
+@ 022   ----------------------------------------
+        .byte           N64   , Fn3
+        .byte           N42   , Dn4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , Cn4
+        .byte   W24
+@ 023   ----------------------------------------
+        .byte           N64   , An3
+        .byte           N42   , Dn4 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , Ds4
+        .byte   W24
+@ 024   ----------------------------------------
+        .byte           N64   , Dn4
+        .byte           N48   , Fn4
+        .byte   W48
+        .byte           N42   , Gn4 , v100 , gtp1
+        .byte   W24
+@ 025   ----------------------------------------
+        .byte   W24
+        .byte                   Cn4
+        .byte           N21   , Fn4
+        .byte   W24
+        .byte                   Ds4
+        .byte   W24
+@ 026   ----------------------------------------
+        .byte   PATT
+         .word  CelicaDeparts_0_18
+@ 027   ----------------------------------------
+        .byte   PATT
+         .word  CelicaDeparts_0_19
+@ 028   ----------------------------------------
+        .byte   PATT
+         .word  CelicaDeparts_0_20
+@ 029   ----------------------------------------
+        .byte   W24
+        .byte           N21   , Fn4 , v100
+        .byte           N48   , As3
+        .byte   W24
+        .byte           N21   , Ds4
+        .byte   W24
+@ 030   ----------------------------------------
+        .byte           TIE   , Bn3
+        .byte           TIE   , Dn4
+        .byte   W72
+@ 031   ----------------------------------------
+        .byte   W64
+        .byte           EOT   , Bn3
+        .byte                   Dn4
+        .byte   W08
+@ 032   ----------------------------------------
+        .byte           N64   , Dn3
+        .byte           N42   , Bn3 , v100 , gtp1
+        .byte   W48
+        .byte           N21   , Gn3
+        .byte   W24
+@ 033   ----------------------------------------
+        .byte           N64   , Bn3
+        .byte           N42   , Gn4 , v100 , gtp1
+        .byte   W24
+        .byte   TEMPO , 130/2
+        .byte   W12
+        .byte   TEMPO , 120/2
+        .byte   W12
+        .byte   TEMPO , 110/2
+        .byte           N21   , Fn4
+        .byte   W12
+        .byte   TEMPO , 100/2
+        .byte   W12
+@ 034   ----------------------------------------
+        .byte   TEMPO , 140/2
+        .byte   W72
+@ 035   ----------------------------------------
+        .byte   W72
+@ 036   ----------------------------------------
+        .byte   W72
+@ 037   ----------------------------------------
+        .byte   W72
+@ 038   ----------------------------------------
+        .byte   W72
+@ 039   ----------------------------------------
+        .byte   W72
+@ 040   ----------------------------------------
+        .byte   W72
+@ 041   ----------------------------------------
+        .byte   W72
+@ 042   ----------------------------------------
+        .byte   W72
+@ 043   ----------------------------------------
+        .byte   W72
+@ 044   ----------------------------------------
+        .byte   W72
+@ 045   ----------------------------------------
+        .byte   W72
+@ 046   ----------------------------------------
+        .byte   W72
+@ 047   ----------------------------------------
+        .byte   W72
+@ 048   ----------------------------------------
+        .byte   W72
+@ 049   ----------------------------------------
+        .byte   W72
+@ 050   ----------------------------------------
+        .byte   W72
+@ 051   ----------------------------------------
+        .byte   W72
+@ 052   ----------------------------------------
+        .byte   W12
+        .byte   TEMPO , 130/2
+        .byte   W12
+        .byte   TEMPO , 120/2
+        .byte   W24
+        .byte   TEMPO , 180/2
+        .byte           N48   , Dn5 , v102 , gtp3
+        .byte           N42   , Gn4
+        .byte   W24
+@ 053   ----------------------------------------
+        .byte   W24
+        .byte           N21   , Gn4 , v111
+        .byte           N21   , Cn5
+        .byte   W24
+        .byte           N42   , Fn4 , v111 , gtp1
+        .byte           N48   , As4 , v111 , gtp1
+        .byte   W24
+@ 054   ----------------------------------------
+        .byte   W24
+        .byte           N21   , An4
+        .byte           N21   , Fn4
+        .byte   W12
+        .byte   TEMPO , 170/2
+        .byte   W12
+        .byte           N42   , Gn4 , v111 , gtp1
+        .byte           N48   , As4 , v111 , gtp1
+        .byte   W24
+@ 055   ----------------------------------------
+        .byte   TEMPO , 166/2
+        .byte   W12
+        .byte   TEMPO , 158/2
+        .byte   W12
+        .byte   TEMPO , 146/2
+        .byte           N21   , An4
+        .byte           N21   , Fn4
+        .byte   W24
+        .byte   TEMPO , 140/2
+        .byte           N48   , Gn4 , v102
+        .byte           N48   , Ds4
+        .byte   W24
+@ 056   ----------------------------------------
+        .byte   W24
+        .byte           N84   , Dn4
+        .byte           TIE   , Fn4
+        .byte   W48
+@ 057   ----------------------------------------
+        .byte   W66
+        .byte           EOT
+        .byte   W06
+@ 058   ----------------------------------------
+        .byte           VOL   , 50
+        .byte   GOTO
+         .word  CelicaDeparts_0_LOOP
+        .byte   FINE
+
+@****************** Track 1 (Midi-Chn.1) ******************@
 
 CelicaDeparts_1:
-	.byte	KEYSH , CelicaDeparts_key+0
-CelicaDeparts_1_B1:
+        .byte   KEYSH , CelicaDeparts_key+0
 @ 000   ----------------------------------------
-	.byte	TEMPO , 140*CelicaDeparts_tbs/2
-	.byte		VOICE , 41
-	.byte		VOL   , 76*CelicaDeparts_mvl/mxv
-	.byte		PAN   , c_v+12
-	.byte	W72
+CelicaDeparts_1_LOOP:
+        .byte           VOICE , 0
+        .byte           PAN   , c_v-13
+        .byte           VOL   , 39
+        .byte           N21   , Dn2 , v100
+        .byte   W12
+        .byte                   Fn2
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte                   Cn3
+        .byte   W12
+        .byte                   En3
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
 @ 001   ----------------------------------------
-	.byte	W24
-	.byte	W01
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W19
-	.byte	W19
+CelicaDeparts_1_1:
+        .byte           N21   , Dn2 , v100
+        .byte   W12
+        .byte                   Fn2
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte                   Cn3
+        .byte   W12
+        .byte                   En3
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
+        .byte   PEND
 @ 002   ----------------------------------------
-	.byte		N64   , Fn3 , v100
-	.byte		N42   , Dn4 
-	.byte	W48
-	.byte		N21   , An4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_1
 @ 003   ----------------------------------------
-	.byte		N64   , Fn3 
-	.byte		N42   , En4 
-	.byte	W48
-	.byte		N21   , Cn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_1
 @ 004   ----------------------------------------
-	.byte		        Dn3 
-	.byte		N21   , An3 
-	.byte	W24
-	.byte		        En3 
-	.byte		N21   , En4 
-	.byte	W24
-	.byte		        Fn3 
-	.byte		N21   , Fn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_1
 @ 005   ----------------------------------------
-	.byte		N60   , Fn3 , v104
-	.byte		N21   , En4 , v100
-	.byte	W24
-	.byte		        Dn4 
-	.byte	W24
-	.byte		        Cn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_1
 @ 006   ----------------------------------------
-	.byte		N64   , Dn3 
-	.byte		N42   , As3 
-	.byte	W48
-	.byte		N21   , An4 
-	.byte	W24
+CelicaDeparts_1_6:
+        .byte           N21   , Gn2 , v100
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Dn3
+        .byte   W12
+        .byte                   Gn3
+        .byte   W12
+        .byte                   As3
+        .byte   W12
+        .byte                   Dn4
+        .byte   W12
+        .byte   PEND
 @ 007   ----------------------------------------
-	.byte		N64   , Gn3 
-	.byte		N42   , Gn4 
-	.byte	W48
-	.byte		N21   , Fn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_6
 @ 008   ----------------------------------------
-	.byte		        Gn3 
-	.byte		N21   , En4 
-	.byte	W24
-	.byte		        An3 
-	.byte		N21   , Fn4 
-	.byte	W24
-	.byte		        As3 
-	.byte		N21   , Gn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_6
 @ 009   ----------------------------------------
-	.byte		        As3 
-	.byte		N21   , Fn4 
-	.byte	W24
-	.byte		        En4 
-	.byte	W24
-	.byte		        Dn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_6
 @ 010   ----------------------------------------
-	.byte		N64   , En3 
-	.byte		N42   , Cn4 
-	.byte	W48
-	.byte		N21   , Dn4 
-	.byte	W24
+CelicaDeparts_1_10:
+        .byte           N21   , Cn2 , v100
+        .byte   W12
+        .byte                   En2
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Cn3
+        .byte   W12
+        .byte                   En3
+        .byte   W12
+        .byte   PEND
 @ 011   ----------------------------------------
-	.byte		N64   , Gn3 
-	.byte		N42   , En4 
-	.byte	W48
-	.byte		N21   , Fn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_10
 @ 012   ----------------------------------------
-	.byte		N64   , As3 
-	.byte		N42   , Gn4 
-	.byte	W48
-	.byte		N21   , An4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_10
 @ 013   ----------------------------------------
-	.byte		N64   , Cn4 
-	.byte		N42   , As4 
-	.byte	W48
-	.byte		N21   , Cn5 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_10
 @ 014   ----------------------------------------
-	.byte		TIE   , Cn4 
-	.byte		TIE   , Fn4 
-	.byte		TIE   , An4 
-	.byte	W72
+CelicaDeparts_1_14:
+        .byte           N21   , Fn2 , v100
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte                   Cn3
+        .byte   W12
+        .byte                   En3
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
+        .byte                   An3
+        .byte   W12
+        .byte   PEND
 @ 015   ----------------------------------------
-	.byte	W32
-	.byte	W03
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W01
+        .byte   PATT
+         .word  CelicaDeparts_1_14
 @ 016   ----------------------------------------
-	.byte	W01
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte		EOT   , Cn4 
-	.byte		        Fn4 
-	.byte		        An4 
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W16
-	.byte	W02
-	.byte	W03
-	.byte	W03
-	.byte	W02
-	.byte		N21   , Gn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_14
 @ 017   ----------------------------------------
-	.byte		N42   , Fn4 
-	.byte	W48
-	.byte		N21   , En4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_14
 @ 018   ----------------------------------------
-CelicaDeparts_1_018:
-	.byte		N64   , Ds3 , v100
-	.byte		N42   , Dn4 
-	.byte	W48
-	.byte		N21   , Cn4 
-	.byte	W24
-	.byte	PEND
+CelicaDeparts_1_18:
+        .byte           N21   , Ds2 , v100
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte                   Gn3
+        .byte   W12
+        .byte                   As3
+        .byte   W12
+        .byte   PEND
 @ 019   ----------------------------------------
-CelicaDeparts_1_019:
-	.byte		N64   , Gn3 , v100
-	.byte		N42   , Dn4 
-	.byte	W48
-	.byte		N21   , Ds4 
-	.byte	W24
-	.byte	PEND
+        .byte   PATT
+         .word  CelicaDeparts_1_18
 @ 020   ----------------------------------------
-CelicaDeparts_1_020:
-	.byte		N64   , As3 , v100
-	.byte		N48   , Fn4 
-	.byte	W48
-	.byte		N42   , Gn4 
-	.byte	W24
-	.byte	PEND
+        .byte   PATT
+         .word  CelicaDeparts_1_18
 @ 021   ----------------------------------------
-	.byte		N21   , Cn4 
-	.byte	W24
-	.byte		N42   , As3 
-	.byte		N21   , Fn4 
-	.byte	W24
-	.byte		        Ds4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_18
 @ 022   ----------------------------------------
-	.byte		N64   , Fn3 
-	.byte		N42   , Dn4 
-	.byte	W48
-	.byte		N21   , Cn4 
-	.byte	W24
+CelicaDeparts_1_22:
+        .byte           N21   , Dn2 , v100
+        .byte   W12
+        .byte                   Fn2
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte                   Cn3
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
+        .byte                   An3
+        .byte   W12
+        .byte   PEND
 @ 023   ----------------------------------------
-	.byte		N64   , An3 
-	.byte		N42   , Dn4 
-	.byte	W48
-	.byte		N21   , Ds4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_22
 @ 024   ----------------------------------------
-	.byte		N64   , Dn4 
-	.byte		N48   , Fn4 
-	.byte	W48
-	.byte		N42   , Gn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_22
 @ 025   ----------------------------------------
-	.byte	W24
-	.byte		        Cn4 
-	.byte		N21   , Fn4 
-	.byte	W24
-	.byte		        Ds4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_22
 @ 026   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_1_018
+CelicaDeparts_1_26:
+        .byte           N21   , Cn2 , v100
+        .byte   W12
+        .byte                   Ds2
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Cn3
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte   PEND
 @ 027   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_1_019
+        .byte   PATT
+         .word  CelicaDeparts_1_26
 @ 028   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_1_020
+        .byte   PATT
+         .word  CelicaDeparts_1_26
 @ 029   ----------------------------------------
-	.byte	W24
-	.byte		N48   , As3 , v100
-	.byte		N21   , Fn4 
-	.byte	W24
-	.byte		        Ds4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_26
 @ 030   ----------------------------------------
-	.byte		TIE   , Bn3 
-	.byte		TIE   , Dn4 
-	.byte	W72
+CelicaDeparts_1_30:
+        .byte           N21   , Bn1 , v100
+        .byte   W12
+        .byte                   Dn2
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte                   Bn2
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte                   Dn2
+        .byte   W12
+        .byte   PEND
 @ 031   ----------------------------------------
-	.byte	W64
-	.byte		EOT   , Bn3 
-	.byte		        Dn4 
-	.byte	W08
+        .byte   PATT
+         .word  CelicaDeparts_1_30
 @ 032   ----------------------------------------
-	.byte		N64   , Dn3 
-	.byte		N42   , Bn3 
-	.byte	W48
-	.byte		N21   , Gn3 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_1_30
 @ 033   ----------------------------------------
-	.byte		N64   , Bn3 
-	.byte		N42   , Gn4 
-	.byte	W24
-	.byte	TEMPO , 130*CelicaDeparts_tbs/2
-	.byte	W12
-	.byte	TEMPO , 120*CelicaDeparts_tbs/2
-	.byte	W12
-	.byte	TEMPO , 110*CelicaDeparts_tbs/2
-	.byte		N21   , Fn4 
-	.byte	W12
-	.byte	TEMPO , 100*CelicaDeparts_tbs/2
-	.byte	W12
+        .byte           N21   , Bn1 , v100
+        .byte   W12
+        .byte                   Dn2
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte                   Bn2
+        .byte   W12
+        .byte                   Dn3
+        .byte   W12
+        .byte                   Gn3
+        .byte   W12
 @ 034   ----------------------------------------
-	.byte	TEMPO , 140*CelicaDeparts_tbs/2
-	.byte	W72
+CelicaDeparts_1_34:
+        .byte           N21   , Cn2 , v100
+        .byte   W12
+        .byte                   Ds2
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Dn2
+        .byte   W12
+        .byte                   Fn2
+        .byte   W12
+        .byte   PEND
 @ 035   ----------------------------------------
-	.byte	W72
+CelicaDeparts_1_35:
+        .byte           N21   , An2 , v100
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
+        .byte                   Ds2
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Dn3
+        .byte   W12
+        .byte   PEND
 @ 036   ----------------------------------------
-	.byte	W72
+CelicaDeparts_1_36:
+        .byte           N21   , Fn2 , v100
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte                   Cn3
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte                   Cn2
+        .byte   W12
+        .byte                   Ds2
+        .byte   W12
+        .byte   PEND
 @ 037   ----------------------------------------
-	.byte	W72
+CelicaDeparts_1_37:
+        .byte           N21   , Gn2 , v100
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Dn2
+        .byte   W12
+        .byte                   Fn2
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
+        .byte   PEND
 @ 038   ----------------------------------------
-	.byte	W72
+CelicaDeparts_1_38:
+        .byte           N21   , Ds2 , v100
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Dn3
+        .byte   W12
+        .byte                   Fn2
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte   PEND
 @ 039   ----------------------------------------
-	.byte	W72
+CelicaDeparts_1_39:
+        .byte           N21   , Cn3 , v100
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte                   Cn2
+        .byte   W12
+        .byte                   Ds2
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte   PEND
 @ 040   ----------------------------------------
-	.byte	W72
+CelicaDeparts_1_40:
+        .byte           N21   , Dn2 , v100
+        .byte   W12
+        .byte                   Fn2
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte                   Fn3
+        .byte   W12
+        .byte                   Ds2
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+        .byte   PEND
 @ 041   ----------------------------------------
-	.byte	W72
+CelicaDeparts_1_41:
+        .byte           N21   , As2 , v100
+        .byte   W12
+        .byte                   Dn3
+        .byte   W12
+        .byte                   Fn2
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte                   Cn3
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte   PEND
 @ 042   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_1_34
 @ 043   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_1_35
 @ 044   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_1_36
 @ 045   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_1_37
 @ 046   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_1_38
 @ 047   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_1_39
 @ 048   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_1_40
 @ 049   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_1_41
 @ 050   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_1_34
 @ 051   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_1_35
 @ 052   ----------------------------------------
-	.byte	W12
-	.byte	TEMPO , 130*CelicaDeparts_tbs/2
-	.byte	W12
-	.byte	TEMPO , 120*CelicaDeparts_tbs/2
-	.byte	W24
-	.byte	TEMPO , 180*CelicaDeparts_tbs/2
-	.byte		N42   , Gn4 , v104
-	.byte		N48   , Dn5 
-	.byte	W24
+        .byte           N21   , Fn2 , v100
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte                   Cn3
+        .byte   W12
+        .byte                   Ds3
+        .byte   W12
+        .byte           N42   , Gn2 , v100 , gtp1
+        .byte   W24
 @ 053   ----------------------------------------
-	.byte	W24
-	.byte		N21   , Gn4 , v112
-	.byte		N21   , Cn5 
-	.byte	W24
-	.byte		N42   , Fn4 
-	.byte		N48   , As4 
-	.byte	W24
+        .byte                   As2
+        .byte   W24
+        .byte                   Dn3
+        .byte   W24
+        .byte                   Fn2
+        .byte   W24
 @ 054   ----------------------------------------
-	.byte	W24
-	.byte		N21   , Fn4 
-	.byte		N21   , An4 
-	.byte	W12
-	.byte	TEMPO , 170*CelicaDeparts_tbs/2
-	.byte	W12
-	.byte		N42   , Gn4 
-	.byte		N48   , As4 
-	.byte	W24
+        .byte                   An2
+        .byte   W24
+        .byte                   Cn3
+        .byte   W24
+        .byte                   Ds2
+        .byte   W24
 @ 055   ----------------------------------------
-	.byte	TEMPO , 165*CelicaDeparts_tbs/2
-	.byte	W12
-	.byte	TEMPO , 157*CelicaDeparts_tbs/2
-	.byte	W12
-	.byte	TEMPO , 145*CelicaDeparts_tbs/2
-	.byte		N21   , Fn4 
-	.byte		N21   , An4 
-	.byte	W24
-	.byte	TEMPO , 140*CelicaDeparts_tbs/2
-	.byte		N48   , Ds4 , v104
-	.byte		N48   , Gn4 
-	.byte	W24
+        .byte                   Gn2
+        .byte   W24
+        .byte           N42   , As2
+        .byte   W24
+        .byte           N48   , Dn3 , v102
+        .byte   W24
 @ 056   ----------------------------------------
-	.byte	W24
-	.byte		N84   , Dn4 
-	.byte		TIE   , Fn4 
-	.byte	W48
+        .byte   PATT
+         .word  CelicaDeparts_1_1
 @ 057   ----------------------------------------
-	.byte	W66
-	.byte		EOT   
-	.byte	W06
-	.byte	GOTO
-	 .word	CelicaDeparts_1_B1
-CelicaDeparts_1_B2:
+        .byte           N21   , Dn2 , v100
+        .byte   W12
+        .byte                   Fn2
+        .byte   W12
+        .byte                   An2
+        .byte   W12
+        .byte                   Cn3
+        .byte   W12
+        .byte                   En3
+        .byte   W12
+        .byte           N12   , Fn3
+        .byte   W12
 @ 058   ----------------------------------------
-	.byte	FINE
+        .byte   GOTO
+         .word  CelicaDeparts_1_LOOP
+        .byte   FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@****************** Track 2 (Midi-Chn.2) ******************@
 
 CelicaDeparts_2:
-	.byte	KEYSH , CelicaDeparts_key+0
-CelicaDeparts_2_B1:
+        .byte   KEYSH , CelicaDeparts_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 0
-	.byte		VOL   , 69*CelicaDeparts_mvl/mxv
-	.byte		PAN   , c_v-13
-	.byte		N21   , Dn2 , v100
-	.byte	W12
-	.byte		        Fn2 
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte		        Cn3 
-	.byte	W12
-	.byte		        En3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
+CelicaDeparts_2_LOOP:
+        .byte           VOICE , 40
+        .byte           VOL   , 36
+        .byte   W72
 @ 001   ----------------------------------------
-CelicaDeparts_2_001:
-	.byte		N21   , Dn2 , v100
-	.byte	W12
-	.byte		        Fn2 
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte		        Cn3 
-	.byte	W12
-	.byte		        En3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
-	.byte	PEND
+        .byte   W24
+        .byte   W01
+        .byte                   29
+        .byte   W03
+        .byte                   30
+        .byte   W02
+        .byte                   34
+        .byte   W11
+        .byte                   31
+        .byte   W30
+        .byte   W01
 @ 002   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_001
+        .byte           N44   , Dn4 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , An4
+        .byte   W24
 @ 003   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_001
+        .byte           N44   , En4 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , Cn4
+        .byte   W24
 @ 004   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_001
+        .byte                   An3
+        .byte   W24
+        .byte                   En4
+        .byte   W24
+        .byte                   Fn4
+        .byte   W24
 @ 005   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_001
+        .byte                   En4
+        .byte   W24
+        .byte                   Dn4
+        .byte   W24
+        .byte                   Cn4
+        .byte   W24
 @ 006   ----------------------------------------
-CelicaDeparts_2_006:
-	.byte		N21   , Gn2 , v100
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Dn3 
-	.byte	W12
-	.byte		        Gn3 
-	.byte	W12
-	.byte		        As3 
-	.byte	W12
-	.byte		        Dn4 
-	.byte	W12
-	.byte	PEND
+        .byte           N44   , As3 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , An4
+        .byte   W24
 @ 007   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_006
+CelicaDeparts_2_7:
+        .byte           N44   , Gn4 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , Fn4
+        .byte   W24
+        .byte   PEND
 @ 008   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_006
+        .byte                   En4
+        .byte   W24
+        .byte                   Fn4
+        .byte   W24
+        .byte                   Gn4
+        .byte   W24
 @ 009   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_006
+        .byte                   Fn4
+        .byte   W24
+        .byte                   En4
+        .byte   W24
+        .byte                   Dn4
+        .byte   W24
 @ 010   ----------------------------------------
-CelicaDeparts_2_010:
-	.byte		N21   , Cn2 , v100
-	.byte	W12
-	.byte		        En2 
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Cn3 
-	.byte	W12
-	.byte		        En3 
-	.byte	W12
-	.byte	PEND
+        .byte           N44   , Cn4 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , Dn4
+        .byte   W24
 @ 011   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_010
+        .byte           N44   , En4 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , Fn4
+        .byte   W24
 @ 012   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_010
+        .byte           N44   , Gn4 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , An4
+        .byte   W24
 @ 013   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_010
+        .byte           N44   , As4 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , Cn5
+        .byte   W24
 @ 014   ----------------------------------------
-CelicaDeparts_2_014:
-	.byte		N21   , Fn2 , v100
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte		        Cn3 
-	.byte	W12
-	.byte		        En3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
-	.byte		        An3 
-	.byte	W12
-	.byte	PEND
+        .byte           TIE   , An4
+        .byte   W72
 @ 015   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_014
+        .byte   W32
+        .byte   W03
+        .byte           VOL   , 30
+        .byte   W03
+        .byte                   29
+        .byte   W03
+        .byte                   28
+        .byte   W02
+        .byte                   27
+        .byte   W03
+        .byte                   26
+        .byte   W01
+        .byte                   25
+        .byte   W03
+        .byte                   24
+        .byte   W02
+        .byte                   23
+        .byte   W03
+        .byte                   22
+        .byte   W01
+        .byte                   21
+        .byte   W03
+        .byte                   20
+        .byte   W02
+        .byte                   19
+        .byte   W03
+        .byte                   18
+        .byte   W03
+        .byte                   17
+        .byte   W01
+        .byte                   16
+        .byte   W03
+        .byte                   15
+        .byte   W01
 @ 016   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_014
+        .byte   W01
+        .byte                   14
+        .byte   W03
+        .byte                   13
+        .byte   W01
+        .byte                   12
+        .byte   W03
+        .byte                   11
+        .byte   W02
+        .byte                   10
+        .byte   W03
+        .byte                   9
+        .byte   W01
+        .byte           EOT
+        .byte           VOL   , 8
+        .byte   W03
+        .byte                   7
+        .byte   W02
+        .byte                   6
+        .byte   W03
+        .byte                   5
+        .byte   W16
+        .byte                   30
+        .byte   W02
+        .byte                   32
+        .byte   W06
+        .byte                   33
+        .byte   W02
+        .byte           N21   , Gn4
+        .byte   W24
 @ 017   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_014
+        .byte           N44   , Fn4 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , En4
+        .byte   W24
 @ 018   ----------------------------------------
-CelicaDeparts_2_018:
-	.byte		N21   , Ds2 , v100
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte		        Gn3 
-	.byte	W12
-	.byte		        As3 
-	.byte	W12
-	.byte	PEND
+CelicaDeparts_2_18:
+        .byte           N44   , Dn4 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , Cn4
+        .byte   W24
+        .byte   PEND
 @ 019   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_018
+CelicaDeparts_2_19:
+        .byte           N44   , Dn4 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , Ds4
+        .byte   W24
+        .byte   PEND
 @ 020   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_018
+        .byte           N44   , Fn4 , v086 , gtp1
+        .byte   W48
+        .byte           N42   , Gn4 , v086 , gtp1
+        .byte   W24
 @ 021   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_018
+CelicaDeparts_2_21:
+        .byte   W24
+        .byte           N23   , Fn4 , v086
+        .byte   W24
+        .byte                   Ds4
+        .byte   W24
+        .byte   PEND
 @ 022   ----------------------------------------
-CelicaDeparts_2_022:
-	.byte		N21   , Dn2 , v100
-	.byte	W12
-	.byte		        Fn2 
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte		        Cn3 
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
-	.byte		        An3 
-	.byte	W12
-	.byte	PEND
+        .byte   PATT
+         .word  CelicaDeparts_2_18
 @ 023   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_022
+        .byte   PATT
+         .word  CelicaDeparts_2_19
 @ 024   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_022
+CelicaDeparts_2_24:
+        .byte           N44   , Fn4 , v086 , gtp3
+        .byte   W48
+        .byte           N42   , Gn4 , v086 , gtp1
+        .byte   W24
+        .byte   PEND
 @ 025   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_022
+        .byte   PATT
+         .word  CelicaDeparts_2_21
 @ 026   ----------------------------------------
-CelicaDeparts_2_026:
-	.byte		N21   , Cn2 , v100
-	.byte	W12
-	.byte		        Ds2 
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Cn3 
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte	PEND
+        .byte   PATT
+         .word  CelicaDeparts_2_18
 @ 027   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_026
+        .byte   PATT
+         .word  CelicaDeparts_2_19
 @ 028   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_026
+        .byte   PATT
+         .word  CelicaDeparts_2_24
 @ 029   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_026
+        .byte   PATT
+         .word  CelicaDeparts_2_21
 @ 030   ----------------------------------------
-CelicaDeparts_2_030:
-	.byte		N21   , Bn1 , v100
-	.byte	W12
-	.byte		        Dn2 
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte		        Bn2 
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte		        Dn2 
-	.byte	W12
-	.byte	PEND
+        .byte           TIE   , Dn4 , v086
+        .byte   W72
 @ 031   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_030
+        .byte   W68
+        .byte   W03
+        .byte           EOT
+        .byte   W01
 @ 032   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_030
+        .byte           N44   , Bn3 , v086 , gtp3
+        .byte   W48
+        .byte           N23   , Gn3
+        .byte   W24
 @ 033   ----------------------------------------
-	.byte		N21   , Bn1 , v100
-	.byte	W12
-	.byte		        Dn2 
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte		        Bn2 
-	.byte	W12
-	.byte		        Dn3 
-	.byte	W12
-	.byte		        Gn3 
-	.byte	W12
+        .byte   PATT
+         .word  CelicaDeparts_2_7
 @ 034   ----------------------------------------
-CelicaDeparts_2_034:
-	.byte		N21   , Cn2 , v100
-	.byte	W12
-	.byte		        Ds2 
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Dn2 
-	.byte	W12
-	.byte		        Fn2 
-	.byte	W12
-	.byte	PEND
+        .byte   W72
 @ 035   ----------------------------------------
-CelicaDeparts_2_035:
-	.byte		N21   , An2 , v100
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
-	.byte		        Ds2 
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Dn3 
-	.byte	W12
-	.byte	PEND
+        .byte   W72
 @ 036   ----------------------------------------
-CelicaDeparts_2_036:
-	.byte		N21   , Fn2 , v100
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte		        Cn3 
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte		        Cn2 
-	.byte	W12
-	.byte		        Ds2 
-	.byte	W12
-	.byte	PEND
+        .byte   W72
 @ 037   ----------------------------------------
-CelicaDeparts_2_037:
-	.byte		N21   , Gn2 , v100
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Dn2 
-	.byte	W12
-	.byte		        Fn2 
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
-	.byte	PEND
+        .byte   W72
 @ 038   ----------------------------------------
-CelicaDeparts_2_038:
-	.byte		N21   , Ds2 , v100
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Dn3 
-	.byte	W12
-	.byte		        Fn2 
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte	PEND
+        .byte   W72
 @ 039   ----------------------------------------
-CelicaDeparts_2_039:
-	.byte		N21   , Cn3 , v100
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte		        Cn2 
-	.byte	W12
-	.byte		        Ds2 
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte	PEND
+        .byte   W72
 @ 040   ----------------------------------------
-CelicaDeparts_2_040:
-	.byte		N21   , Dn2 , v100
-	.byte	W12
-	.byte		        Fn2 
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte		        Fn3 
-	.byte	W12
-	.byte		        Ds2 
-	.byte	W12
-	.byte		        Gn2 
-	.byte	W12
-	.byte	PEND
+        .byte   W72
 @ 041   ----------------------------------------
-CelicaDeparts_2_041:
-	.byte		N21   , As2 , v100
-	.byte	W12
-	.byte		        Dn3 
-	.byte	W12
-	.byte		        Fn2 
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte		        Cn3 
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte	PEND
+        .byte   W72
 @ 042   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_034
+        .byte   W72
 @ 043   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_035
+        .byte   W72
 @ 044   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_036
+        .byte   W72
 @ 045   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_037
+        .byte   W72
 @ 046   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_038
+        .byte   W72
 @ 047   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_039
+        .byte   W72
 @ 048   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_040
+        .byte   W72
 @ 049   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_041
+        .byte   W72
 @ 050   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_034
+        .byte   W72
 @ 051   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_035
+        .byte   W72
 @ 052   ----------------------------------------
-	.byte		N21   , Fn2 , v100
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte		        Cn3 
-	.byte	W12
-	.byte		        Ds3 
-	.byte	W12
-	.byte		N42   , Gn2 
-	.byte	W24
+        .byte   W72
 @ 053   ----------------------------------------
-	.byte		        As2 
-	.byte	W24
-	.byte		        Dn3 
-	.byte	W24
-	.byte		        Fn2 
-	.byte	W24
+        .byte   W72
 @ 054   ----------------------------------------
-	.byte		        An2 
-	.byte	W24
-	.byte		        Cn3 
-	.byte	W24
-	.byte		        Ds2 
-	.byte	W24
+        .byte   W72
 @ 055   ----------------------------------------
-	.byte		        Gn2 
-	.byte	W24
-	.byte		        As2 
-	.byte	W24
-	.byte		N48   , Dn3 , v104
-	.byte	W24
+        .byte   W72
 @ 056   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_2_001
+        .byte   W72
 @ 057   ----------------------------------------
-	.byte		N21   , Dn2 , v100
-	.byte	W12
-	.byte		        Fn2 
-	.byte	W12
-	.byte		        An2 
-	.byte	W12
-	.byte		        Cn3 
-	.byte	W12
-	.byte		        En3 
-	.byte	W12
-	.byte		N12   , Fn3 
-	.byte	W12
-	.byte	GOTO
-	 .word	CelicaDeparts_2_B1
-CelicaDeparts_2_B2:
+        .byte   W72
 @ 058   ----------------------------------------
-	.byte	FINE
+        .byte           VOL   , 36
+        .byte   GOTO
+         .word  CelicaDeparts_2_LOOP
+        .byte   FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@****************** Track 3 (Midi-Chn.3) ******************@
 
 CelicaDeparts_3:
-	.byte	KEYSH , CelicaDeparts_key+0
-CelicaDeparts_3_B1:
+        .byte   KEYSH , CelicaDeparts_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 40
-	.byte		VOL   , 54*CelicaDeparts_mvl/mxv
-	.byte	W72
+CelicaDeparts_3_LOOP:
+        .byte           VOICE , 73
+        .byte           VOL   , 52
+        .byte           PAN   , c_v-47
+        .byte   W72
 @ 001   ----------------------------------------
-	.byte	W24
-	.byte	W01
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W01
-	.byte	W07
-	.byte	W04
-	.byte	W06
-	.byte	W14
-	.byte	W06
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W01
+        .byte   W72
 @ 002   ----------------------------------------
-	.byte		N44   , Dn4 , v088
-	.byte	W48
-	.byte		N23   , An4 
-	.byte	W24
+        .byte   W72
 @ 003   ----------------------------------------
-	.byte		N44   , En4 
-	.byte	W48
-	.byte		N23   , Cn4 
-	.byte	W24
+        .byte   W72
 @ 004   ----------------------------------------
-	.byte		        An3 
-	.byte	W24
-	.byte		        En4 
-	.byte	W24
-	.byte		        Fn4 
-	.byte	W24
+        .byte   W72
 @ 005   ----------------------------------------
-	.byte		        En4 
-	.byte	W24
-	.byte		        Dn4 
-	.byte	W24
-	.byte		        Cn4 
-	.byte	W24
+        .byte   W72
 @ 006   ----------------------------------------
-	.byte		N44   , As3 
-	.byte	W48
-	.byte		N23   , An4 
-	.byte	W24
+        .byte   W72
 @ 007   ----------------------------------------
-CelicaDeparts_3_007:
-	.byte		N44   , Gn4 , v088
-	.byte	W48
-	.byte		N23   , Fn4 
-	.byte	W24
-	.byte	PEND
+        .byte   W72
 @ 008   ----------------------------------------
-	.byte		        En4 
-	.byte	W24
-	.byte		        Fn4 
-	.byte	W24
-	.byte		        Gn4 
-	.byte	W24
+        .byte   W72
 @ 009   ----------------------------------------
-	.byte		        Fn4 
-	.byte	W24
-	.byte		        En4 
-	.byte	W24
-	.byte		        Dn4 
-	.byte	W24
+        .byte   W72
 @ 010   ----------------------------------------
-	.byte		N44   , Cn4 
-	.byte	W48
-	.byte		N23   , Dn4 
-	.byte	W24
+        .byte   W72
 @ 011   ----------------------------------------
-	.byte		N44   , En4 
-	.byte	W48
-	.byte		N23   , Fn4 
-	.byte	W24
+        .byte   W72
 @ 012   ----------------------------------------
-	.byte		N44   , Gn4 
-	.byte	W48
-	.byte		N23   , An4 
-	.byte	W24
+        .byte   W72
 @ 013   ----------------------------------------
-	.byte		N44   , As4 
-	.byte	W48
-	.byte		N23   , Cn5 
-	.byte	W24
+        .byte   W72
 @ 014   ----------------------------------------
-	.byte		TIE   , An4 
-	.byte	W72
+        .byte   W72
 @ 015   ----------------------------------------
-	.byte	W32
-	.byte	W03
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W01
+        .byte   W72
 @ 016   ----------------------------------------
-	.byte	W01
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte		EOT   
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W01
-	.byte	W02
-	.byte	W16
-	.byte	W02
-	.byte	W03
-	.byte	W03
-	.byte	W02
-	.byte		N21   , Gn4 
-	.byte	W24
+        .byte   W72
 @ 017   ----------------------------------------
-	.byte		N44   , Fn4 
-	.byte	W48
-	.byte		N23   , En4 
-	.byte	W24
+        .byte   W72
 @ 018   ----------------------------------------
-CelicaDeparts_3_018:
-	.byte		N44   , Dn4 , v088
-	.byte	W48
-	.byte		N23   , Cn4 
-	.byte	W24
-	.byte	PEND
+        .byte   W72
 @ 019   ----------------------------------------
-CelicaDeparts_3_019:
-	.byte		N44   , Dn4 , v088
-	.byte	W48
-	.byte		N23   , Ds4 
-	.byte	W24
-	.byte	PEND
+        .byte   W72
 @ 020   ----------------------------------------
-CelicaDeparts_3_020:
-	.byte		N44   , Fn4 , v088
-	.byte	W48
-	.byte		N42   , Gn4 
-	.byte	W24
-	.byte	PEND
+        .byte   W72
 @ 021   ----------------------------------------
-CelicaDeparts_3_021:
-	.byte	W24
-	.byte		N23   , Fn4 , v088
-	.byte	W24
-	.byte		        Ds4 
-	.byte	W24
-	.byte	PEND
+        .byte   W72
 @ 022   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_3_018
+        .byte   W72
 @ 023   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_3_019
+        .byte   W72
 @ 024   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_3_020
+        .byte   W72
 @ 025   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_3_021
+        .byte   W72
 @ 026   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_3_018
+        .byte   W72
 @ 027   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_3_019
+        .byte   W72
 @ 028   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_3_020
+        .byte   W72
 @ 029   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_3_021
+        .byte   W72
 @ 030   ----------------------------------------
-	.byte		TIE   , Dn4 , v088
-	.byte	W72
+        .byte   W72
 @ 031   ----------------------------------------
-	.byte	W68
-	.byte	W03
-	.byte		EOT   
-	.byte	W01
+        .byte   W72
 @ 032   ----------------------------------------
-	.byte		N44   , Bn3 
-	.byte	W48
-	.byte		N23   , Gn3 
-	.byte	W24
+        .byte   W72
 @ 033   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_3_007
+        .byte   W72
 @ 034   ----------------------------------------
-	.byte	W72
+CelicaDeparts_3_34:
+        .byte           N42   , Ds4 , v082 , gtp1
+        .byte   W48
+        .byte                   Dn4
+        .byte   W24
+        .byte   PEND
 @ 035   ----------------------------------------
-	.byte	W72
+CelicaDeparts_3_35:
+        .byte   W24
+        .byte           N42   , Ds4 , v082 , gtp1
+        .byte   W48
+        .byte   PEND
 @ 036   ----------------------------------------
-	.byte	W72
+CelicaDeparts_3_36:
+        .byte           N10   , Fn4 , v082
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
+        .byte                   An4
+        .byte   W12
+        .byte                   Cn5
+        .byte   W12
+        .byte           N42   , As4 , v082 , gtp1
+        .byte   W24
+        .byte   PEND
 @ 037   ----------------------------------------
-	.byte	W72
+CelicaDeparts_3_37:
+        .byte   W24
+        .byte           N42   , An4 , v082 , gtp1
+        .byte   W48
+        .byte   PEND
 @ 038   ----------------------------------------
-	.byte	W72
+CelicaDeparts_3_38:
+        .byte           N42   , Gn4 , v082 , gtp1
+        .byte   W48
+        .byte           N21   , Fn4
+        .byte   W24
+        .byte   PEND
 @ 039   ----------------------------------------
-	.byte	W72
+CelicaDeparts_3_39:
+        .byte           N10   , Ds4 , v082
+        .byte   W12
+        .byte                   Dn4
+        .byte   W12
+        .byte           N42   , Ds4 , v082 , gtp1
+        .byte   W48
+        .byte   PEND
 @ 040   ----------------------------------------
-	.byte	W72
+CelicaDeparts_3_40:
+        .byte           N42   , Fn4 , v082 , gtp1
+        .byte   W48
+        .byte                   Gn4
+        .byte   W24
+        .byte   PEND
 @ 041   ----------------------------------------
-	.byte	W72
+CelicaDeparts_3_41:
+        .byte   W24
+        .byte           N10   , An4 , v082
+        .byte   W12
+        .byte                   As4
+        .byte   W12
+        .byte                   An4
+        .byte   W12
+        .byte                   Fn4
+        .byte   W12
+        .byte   PEND
 @ 042   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 043   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 044   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 045   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 046   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 047   ----------------------------------------
-	.byte	W72
+CelicaDeparts_3_47:
+        .byte   W24
+        .byte           N21   , Dn5 , v053
+        .byte   W12
+        .byte                   Cn5
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
+        .byte           N42   , Dn5 , v053 , gtp1
+        .byte   W12
+        .byte   PEND
 @ 048   ----------------------------------------
-	.byte	W72
+CelicaDeparts_3_48:
+        .byte   W12
+        .byte           N42   , Cn5 , v053 , gtp1
+        .byte   W24
+        .byte           N21   , Gn4
+        .byte   W12
+        .byte                   An4
+        .byte   W12
+        .byte                   As4
+        .byte   W12
+        .byte   PEND
 @ 049   ----------------------------------------
-	.byte	W72
+        .byte           N64   , Cn5
+        .byte   W72
 @ 050   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 051   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 052   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 053   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 054   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 055   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 056   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 057   ----------------------------------------
-	.byte	W72
-	.byte	GOTO
-	 .word	CelicaDeparts_3_B1
-CelicaDeparts_3_B2:
+        .byte   W72
 @ 058   ----------------------------------------
-	.byte	FINE
+        .byte   GOTO
+         .word  CelicaDeparts_3_LOOP
+        .byte   FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@****************** Track 4 (Midi-Chn.4) ******************@
 
 CelicaDeparts_4:
-	.byte	KEYSH , CelicaDeparts_key+0
-CelicaDeparts_4_B1:
+        .byte   KEYSH , CelicaDeparts_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 73
-	.byte		VOL   , 79*CelicaDeparts_mvl/mxv
-	.byte		PAN   , c_v-47
-	.byte	W72
+CelicaDeparts_4_LOOP:
+        .byte           VOICE , 76
+        .byte           VOL   , 48
+        .byte           PAN   , c_v+45
+        .byte   W72
 @ 001   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 002   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 003   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 004   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 005   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 006   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 007   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 008   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 009   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 010   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 011   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 012   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 013   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 014   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 015   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 016   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 017   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 018   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 019   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 020   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 021   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 022   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 023   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 024   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 025   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 026   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 027   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 028   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 029   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 030   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 031   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 032   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 033   ----------------------------------------
-	.byte	W52
-	.byte	W01
-	.byte	W12
-	.byte	W03
-	.byte	W01
-	.byte	W03
+        .byte   W72
 @ 034   ----------------------------------------
-	.byte		N42   , Ds4 , v084
-	.byte	W48
-	.byte		        Dn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_3_34
 @ 035   ----------------------------------------
-	.byte	W24
-	.byte		        Ds4 
-	.byte	W48
+        .byte   PATT
+         .word  CelicaDeparts_3_35
 @ 036   ----------------------------------------
-	.byte		N10   , Fn4 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		        An4 
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte		N42   , As4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_3_36
 @ 037   ----------------------------------------
-	.byte	W24
-	.byte		        An4 
-	.byte	W48
+        .byte   PATT
+         .word  CelicaDeparts_3_37
 @ 038   ----------------------------------------
-	.byte		        Gn4 
-	.byte	W48
-	.byte		N21   , Fn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_3_38
 @ 039   ----------------------------------------
-	.byte		N10   , Ds4 
-	.byte	W12
-	.byte		        Dn4 
-	.byte	W12
-	.byte		N42   , Ds4 
-	.byte	W48
+        .byte   PATT
+         .word  CelicaDeparts_3_39
 @ 040   ----------------------------------------
-	.byte		        Fn4 
-	.byte	W48
-	.byte		        Gn4 
-	.byte	W24
+        .byte   PATT
+         .word  CelicaDeparts_3_40
 @ 041   ----------------------------------------
-	.byte	W24
-	.byte		N10   , An4 
-	.byte	W12
-	.byte		        As4 
-	.byte	W12
-	.byte		        An4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte	W12
+        .byte   PATT
+         .word  CelicaDeparts_3_41
 @ 042   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 043   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 044   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 045   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 046   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 047   ----------------------------------------
-	.byte	W24
-	.byte		N21   , Dn5 , v056
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		N42   , Dn5 
-	.byte	W12
+        .byte   PATT
+         .word  CelicaDeparts_3_47
 @ 048   ----------------------------------------
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W24
-	.byte		N21   , Gn4 
-	.byte	W12
-	.byte		        An4 
-	.byte	W12
-	.byte		        As4 
-	.byte	W12
+        .byte   PATT
+         .word  CelicaDeparts_3_48
 @ 049   ----------------------------------------
-	.byte		N64   , Cn5 
-	.byte	W72
+        .byte           N64   , Cn5 , v053
+        .byte   W72
 @ 050   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 051   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 052   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 053   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 054   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 055   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 056   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 057   ----------------------------------------
-	.byte	W72
-	.byte	GOTO
-	 .word	CelicaDeparts_4_B1
-CelicaDeparts_4_B2:
+        .byte   W72
 @ 058   ----------------------------------------
-	.byte	FINE
+        .byte   GOTO
+         .word  CelicaDeparts_4_LOOP
+        .byte   FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@****************** Track 5 (Midi-Chn.5) ******************@
 
 CelicaDeparts_5:
-	.byte	KEYSH , CelicaDeparts_key+0
-CelicaDeparts_5_B1:
+        .byte   KEYSH , CelicaDeparts_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 76
-	.byte		VOL   , 73*CelicaDeparts_mvl/mxv
-	.byte		PAN   , c_v+45
-	.byte	W72
+CelicaDeparts_5_LOOP:
+        .byte           VOICE , 99
+        .byte           VOL   , 41
+        .byte           PAN   , c_v-28
+        .byte   W72
 @ 001   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 002   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 003   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 004   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 005   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 006   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 007   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 008   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 009   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 010   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 011   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 012   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 013   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 014   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 015   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 016   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 017   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 018   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 019   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 020   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 021   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 022   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 023   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 024   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 025   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 026   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 027   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 028   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 029   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 030   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 031   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 032   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 033   ----------------------------------------
-	.byte	W52
-	.byte	W01
-	.byte	W12
-	.byte	W03
-	.byte	W01
-	.byte	W03
+        .byte   W72
 @ 034   ----------------------------------------
-	.byte		N42   , Ds4 , v084
-	.byte	W48
-	.byte		        Dn4 
-	.byte	W24
+        .byte   W72
 @ 035   ----------------------------------------
-	.byte	W24
-	.byte		        Ds4 
-	.byte	W48
+        .byte   W72
 @ 036   ----------------------------------------
-	.byte		N10   , Fn4 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		        An4 
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte		N42   , As4 
-	.byte	W24
+        .byte   W72
 @ 037   ----------------------------------------
-	.byte	W24
-	.byte		        An4 
-	.byte	W48
+        .byte   W72
 @ 038   ----------------------------------------
-	.byte		        Gn4 
-	.byte	W48
-	.byte		N21   , Fn4 
-	.byte	W24
+        .byte   W72
 @ 039   ----------------------------------------
-	.byte		N10   , Ds4 
-	.byte	W12
-	.byte		        Dn4 
-	.byte	W12
-	.byte		N42   , Ds4 
-	.byte	W48
+        .byte   W72
 @ 040   ----------------------------------------
-	.byte		        Fn4 
-	.byte	W48
-	.byte		        Gn4 
-	.byte	W24
+        .byte   W72
 @ 041   ----------------------------------------
-	.byte	W24
-	.byte		N10   , An4 
-	.byte	W12
-	.byte		        As4 
-	.byte	W12
-	.byte		        An4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte	W12
+        .byte   W72
 @ 042   ----------------------------------------
-	.byte	W72
+        .byte           VOL   , 38
+        .byte           N21   , Gn4 , v105
+        .byte   W12
+        .byte                   Dn5
+        .byte   W12
+        .byte                   Cn5
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
+        .byte                   Dn5
+        .byte   W12
+        .byte                   Cn5
+        .byte   W12
 @ 043   ----------------------------------------
-	.byte	W72
+CelicaDeparts_5_43:
+        .byte           N21   , Gn4 , v105
+        .byte   W12
+        .byte                   Dn5
+        .byte   W12
+        .byte                   Cn5
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
+        .byte                   Dn5
+        .byte   W12
+        .byte                   Cn5
+        .byte   W12
+        .byte   PEND
 @ 044   ----------------------------------------
-	.byte	W72
+        .byte   PATT
+         .word  CelicaDeparts_5_43
 @ 045   ----------------------------------------
-	.byte	W72
+        .byte           N21   , Gn4 , v105
+        .byte   W12
+        .byte           N42   , Dn5 , v105 , gtp1
+        .byte   W24
+        .byte                   Cn5
+        .byte   W24
+        .byte           N21   , Gn4
+        .byte   W12
 @ 046   ----------------------------------------
-	.byte	W72
+        .byte                   Ds4
+        .byte   W12
+        .byte                   Fn4
+        .byte   W12
+        .byte           N64   , Gn4
+        .byte   W48
 @ 047   ----------------------------------------
-	.byte	W24
-	.byte		N21   , Dn5 , v056
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		N42   , Dn5 
-	.byte	W12
+        .byte   W24
+        .byte           N21   , Dn5
+        .byte   W12
+        .byte                   Cn5
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
+        .byte           N42   , Dn5 , v105 , gtp1
+        .byte   W12
 @ 048   ----------------------------------------
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W24
-	.byte		N21   , Gn4 
-	.byte	W12
-	.byte		        An4 
-	.byte	W12
-	.byte		        As4 
-	.byte	W12
+        .byte   W12
+        .byte                   Cn5
+        .byte   W24
+        .byte           N21   , Gn4
+        .byte   W12
+        .byte                   An4
+        .byte   W12
+        .byte                   As4
+        .byte   W12
 @ 049   ----------------------------------------
-	.byte		N64   , Cn5 
-	.byte	W72
+        .byte           N64   , Cn5
+        .byte   W72
 @ 050   ----------------------------------------
-	.byte	W72
+        .byte           N21   , Cn4 , v100
+        .byte   W12
+        .byte                   Ds4
+        .byte           N21   , Gn4
+        .byte   W12
+        .byte                   Dn4
+        .byte           N21   , Fn4
+        .byte   W12
+        .byte                   An4
+        .byte           N21   , Cn5
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
+        .byte                   Fn4
+        .byte   W12
 @ 051   ----------------------------------------
-	.byte	W72
+        .byte                   Cn5
+        .byte   W12
+        .byte                   Cn4
+        .byte           N21   , Gn4
+        .byte   W12
+        .byte                   As4
+        .byte   W12
+        .byte                   Dn4
+        .byte           N21   , Fn4
+        .byte   W12
+        .byte                   As4
+        .byte           N21   , Dn5
+        .byte   W12
+        .byte                   Fn4
+        .byte           N21   , An4
+        .byte   W12
 @ 052   ----------------------------------------
-	.byte	W72
+        .byte                   Gn4
+        .byte           N21   , As4
+        .byte   W12
+        .byte                   Fn4
+        .byte           N21   , An4
+        .byte   W12
+        .byte                   Dn5
+        .byte           N21   , Fn5
+        .byte   W12
+        .byte           N18   , Cn5
+        .byte           N18   , An4
+        .byte   W12
+        .byte           N36   , Dn5 , v102
+        .byte           N36   , Gn4
+        .byte   W24
 @ 053   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 054   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 055   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 056   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 057   ----------------------------------------
-	.byte	W72
-	.byte	GOTO
-	 .word	CelicaDeparts_5_B1
-CelicaDeparts_5_B2:
+        .byte   W72
 @ 058   ----------------------------------------
-	.byte	FINE
+        .byte           VOL   , 41
+        .byte   GOTO
+         .word  CelicaDeparts_5_LOOP
+        .byte   FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@****************** Track 6 (Midi-Chn.6) ******************@
 
 CelicaDeparts_6:
-	.byte	KEYSH , CelicaDeparts_key+0
-CelicaDeparts_6_B1:
+        .byte   KEYSH , CelicaDeparts_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 99
-	.byte		VOL   , 62*CelicaDeparts_mvl/mxv
-	.byte		PAN   , c_v-28
-	.byte	W72
+CelicaDeparts_6_LOOP:
+        .byte           VOICE , 1
+        .byte           VOL   , 44
+        .byte           PAN   , c_v+27
+        .byte   W72
 @ 001   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 002   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 003   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 004   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 005   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 006   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 007   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 008   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 009   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 010   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 011   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 012   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 013   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 014   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 015   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 016   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 017   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 018   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 019   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 020   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 021   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 022   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 023   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 024   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 025   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 026   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 027   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 028   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 029   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 030   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 031   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 032   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 033   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 034   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 035   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 036   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 037   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 038   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 039   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 040   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 041   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 042   ----------------------------------------
-	.byte		N21   , Gn4 , v108
-	.byte	W12
-	.byte		        Dn5 
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		        Dn5 
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
+CelicaDeparts_6_42:
+        .byte           N21   , Gn4 , v100
+        .byte   W12
+        .byte                   Dn5
+        .byte   W12
+        .byte                   Cn5
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
+        .byte                   Dn5
+        .byte   W12
+        .byte                   Cn5
+        .byte   W12
+        .byte   PEND
 @ 043   ----------------------------------------
-CelicaDeparts_6_043:
-	.byte		N21   , Gn4 , v108
-	.byte	W12
-	.byte		        Dn5 
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		        Dn5 
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte	PEND
+        .byte   PATT
+         .word  CelicaDeparts_6_42
 @ 044   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_6_043
+        .byte   PATT
+         .word  CelicaDeparts_6_42
 @ 045   ----------------------------------------
-	.byte		N21   , Gn4 , v108
-	.byte	W12
-	.byte		N42   , Dn5 
-	.byte	W24
-	.byte		        Cn5 
-	.byte	W24
-	.byte		N21   , Gn4 
-	.byte	W12
+        .byte           N21   , Gn4 , v100
+        .byte   W12
+        .byte           N42   , Dn5 , v100 , gtp1
+        .byte   W24
+        .byte                   Cn5
+        .byte   W24
+        .byte           N21   , Gn4
+        .byte   W12
 @ 046   ----------------------------------------
-	.byte		        Ds4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte	W12
-	.byte		N64   , Gn4 
-	.byte	W48
+        .byte                   Ds4
+        .byte   W12
+        .byte                   Fn4
+        .byte   W12
+        .byte           N64   , Gn4
+        .byte   W48
 @ 047   ----------------------------------------
-	.byte	W24
-	.byte		N21   , Dn5 
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		N42   , Dn5 
-	.byte	W12
+        .byte   W24
+        .byte           N21   , Dn5
+        .byte   W12
+        .byte                   Cn5
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
+        .byte           N42   , Dn5 , v100 , gtp1
+        .byte   W12
 @ 048   ----------------------------------------
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W24
-	.byte		N21   , Gn4 
-	.byte	W12
-	.byte		        An4 
-	.byte	W12
-	.byte		        As4 
-	.byte	W12
+        .byte   W12
+        .byte                   Cn5
+        .byte   W24
+        .byte           N21   , Gn4
+        .byte   W12
+        .byte                   An4
+        .byte   W12
+        .byte                   As4
+        .byte   W12
 @ 049   ----------------------------------------
-	.byte		N64   , Cn5 
-	.byte	W72
+        .byte           N64   , Cn5
+        .byte   W72
 @ 050   ----------------------------------------
-	.byte		N21   , Cn4 , v100
-	.byte	W12
-	.byte		        Ds4 
-	.byte		N21   , Gn4 
-	.byte	W12
-	.byte		        Dn4 
-	.byte		N21   , Fn4 
-	.byte	W12
-	.byte		        An4 
-	.byte		N21   , Cn5 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte	W12
+        .byte           N21   , Cn4 , v097
+        .byte   W12
+        .byte                   Ds4
+        .byte           N21   , Gn4
+        .byte   W12
+        .byte                   Dn4
+        .byte           N21   , Fn4
+        .byte   W12
+        .byte                   An4
+        .byte           N21   , Cn5
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
+        .byte                   Fn4
+        .byte   W12
 @ 051   ----------------------------------------
-	.byte		        Cn5 
-	.byte	W12
-	.byte		        Cn4 
-	.byte		N21   , Gn4 
-	.byte	W12
-	.byte		        As4 
-	.byte	W12
-	.byte		        Dn4 
-	.byte		N21   , Fn4 
-	.byte	W12
-	.byte		        As4 
-	.byte		N21   , Dn5 
-	.byte	W12
-	.byte		        Fn4 
-	.byte		N21   , An4 
-	.byte	W12
+        .byte                   Cn5
+        .byte   W12
+        .byte                   Cn4
+        .byte           N21   , Gn4
+        .byte   W12
+        .byte                   As4
+        .byte   W12
+        .byte                   Dn4
+        .byte           N21   , Fn4
+        .byte   W12
+        .byte                   As4
+        .byte           N21   , Dn5
+        .byte   W12
+        .byte                   Fn4
+        .byte           N21   , An4
+        .byte   W12
 @ 052   ----------------------------------------
-	.byte		        Gn4 
-	.byte		N21   , As4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte		N21   , An4 
-	.byte	W12
-	.byte		        Dn5 
-	.byte		N21   , Fn5 
-	.byte	W12
-	.byte		N18   , An4 
-	.byte		N18   , Cn5 
-	.byte	W12
-	.byte		N36   , Gn4 , v104
-	.byte		N36   , Dn5 
-	.byte	W24
+        .byte                   Gn4
+        .byte           N21   , As4
+        .byte   W12
+        .byte                   Fn4
+        .byte           N21   , An4
+        .byte   W12
+        .byte                   Dn5
+        .byte           N21   , Fn5
+        .byte   W12
+        .byte                   An4
+        .byte           N21   , Cn5
+        .byte   W12
+        .byte           N36   , Gn4 , v102
+        .byte           N36   , Dn5
+        .byte   W24
 @ 053   ----------------------------------------
-	.byte	W48
-	.byte	W24
+        .byte   W72
 @ 054   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 055   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 056   ----------------------------------------
-	.byte	W72
+        .byte   W72
 @ 057   ----------------------------------------
-	.byte	W72
-	.byte	GOTO
-	 .word	CelicaDeparts_6_B1
-CelicaDeparts_6_B2:
+        .byte   W72
 @ 058   ----------------------------------------
-	.byte	FINE
+        .byte   GOTO
+         .word  CelicaDeparts_6_LOOP
+        .byte   FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
 
-CelicaDeparts_7:
-	.byte	KEYSH , CelicaDeparts_key+0
-CelicaDeparts_7_B1:
-@ 000   ----------------------------------------
-	.byte		VOICE , 1
-	.byte		VOL   , 67*CelicaDeparts_mvl/mxv
-	.byte		PAN   , c_v+27
-	.byte	W72
-@ 001   ----------------------------------------
-	.byte	W72
-@ 002   ----------------------------------------
-	.byte	W72
-@ 003   ----------------------------------------
-	.byte	W72
-@ 004   ----------------------------------------
-	.byte	W72
-@ 005   ----------------------------------------
-	.byte	W72
-@ 006   ----------------------------------------
-	.byte	W72
-@ 007   ----------------------------------------
-	.byte	W72
-@ 008   ----------------------------------------
-	.byte	W72
-@ 009   ----------------------------------------
-	.byte	W72
-@ 010   ----------------------------------------
-	.byte	W72
-@ 011   ----------------------------------------
-	.byte	W72
-@ 012   ----------------------------------------
-	.byte	W72
-@ 013   ----------------------------------------
-	.byte	W72
-@ 014   ----------------------------------------
-	.byte	W72
-@ 015   ----------------------------------------
-	.byte	W72
-@ 016   ----------------------------------------
-	.byte	W72
-@ 017   ----------------------------------------
-	.byte	W72
-@ 018   ----------------------------------------
-	.byte	W72
-@ 019   ----------------------------------------
-	.byte	W72
-@ 020   ----------------------------------------
-	.byte	W72
-@ 021   ----------------------------------------
-	.byte	W72
-@ 022   ----------------------------------------
-	.byte	W72
-@ 023   ----------------------------------------
-	.byte	W72
-@ 024   ----------------------------------------
-	.byte	W72
-@ 025   ----------------------------------------
-	.byte	W72
-@ 026   ----------------------------------------
-	.byte	W72
-@ 027   ----------------------------------------
-	.byte	W72
-@ 028   ----------------------------------------
-	.byte	W72
-@ 029   ----------------------------------------
-	.byte	W72
-@ 030   ----------------------------------------
-	.byte	W72
-@ 031   ----------------------------------------
-	.byte	W72
-@ 032   ----------------------------------------
-	.byte	W72
-@ 033   ----------------------------------------
-	.byte	W72
-@ 034   ----------------------------------------
-	.byte	W72
-@ 035   ----------------------------------------
-	.byte	W72
-@ 036   ----------------------------------------
-	.byte	W72
-@ 037   ----------------------------------------
-	.byte	W72
-@ 038   ----------------------------------------
-	.byte	W72
-@ 039   ----------------------------------------
-	.byte	W72
-@ 040   ----------------------------------------
-	.byte	W72
-@ 041   ----------------------------------------
-	.byte	W72
-@ 042   ----------------------------------------
-CelicaDeparts_7_042:
-	.byte		N21   , Gn4 , v100
-	.byte	W12
-	.byte		        Dn5 
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		        Dn5 
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte	PEND
-@ 043   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_7_042
-@ 044   ----------------------------------------
-	.byte	PATT
-	 .word	CelicaDeparts_7_042
-@ 045   ----------------------------------------
-	.byte		N21   , Gn4 , v100
-	.byte	W12
-	.byte		N42   , Dn5 
-	.byte	W24
-	.byte		        Cn5 
-	.byte	W24
-	.byte		N21   , Gn4 
-	.byte	W12
-@ 046   ----------------------------------------
-	.byte		        Ds4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte	W12
-	.byte		N64   , Gn4 
-	.byte	W48
-@ 047   ----------------------------------------
-	.byte	W24
-	.byte		N21   , Dn5 
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		N42   , Dn5 
-	.byte	W12
-@ 048   ----------------------------------------
-	.byte	W12
-	.byte		        Cn5 
-	.byte	W24
-	.byte		N21   , Gn4 
-	.byte	W12
-	.byte		        An4 
-	.byte	W12
-	.byte		        As4 
-	.byte	W12
-@ 049   ----------------------------------------
-	.byte		N64   , Cn5 
-	.byte	W72
-@ 050   ----------------------------------------
-	.byte		N21   , Cn4 
-	.byte	W12
-	.byte		        Ds4 
-	.byte		N21   , Gn4 
-	.byte	W12
-	.byte		        Dn4 
-	.byte		N21   , Fn4 
-	.byte	W12
-	.byte		        An4 
-	.byte		N21   , Cn5 
-	.byte	W12
-	.byte		        Gn4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte	W12
-@ 051   ----------------------------------------
-	.byte		        Cn5 
-	.byte	W12
-	.byte		        Cn4 
-	.byte		N21   , Gn4 
-	.byte	W12
-	.byte		        As4 
-	.byte	W12
-	.byte		        Dn4 
-	.byte		N21   , Fn4 
-	.byte	W12
-	.byte		        As4 
-	.byte		N21   , Dn5 
-	.byte	W12
-	.byte		        Fn4 
-	.byte		N21   , An4 
-	.byte	W12
-@ 052   ----------------------------------------
-	.byte		        Gn4 
-	.byte		N21   , As4 
-	.byte	W12
-	.byte		        Fn4 
-	.byte		N21   , An4 
-	.byte	W12
-	.byte		        Dn5 
-	.byte		N21   , Fn5 
-	.byte	W12
-	.byte		        An4 
-	.byte		N21   , Cn5 
-	.byte	W12
-	.byte		N36   , Gn4 , v104
-	.byte		N36   , Dn5 
-	.byte	W24
-@ 053   ----------------------------------------
-	.byte	W72
-@ 054   ----------------------------------------
-	.byte	W72
-@ 055   ----------------------------------------
-	.byte	W72
-@ 056   ----------------------------------------
-	.byte	W72
-@ 057   ----------------------------------------
-	.byte	W72
-	.byte	GOTO
-	 .word	CelicaDeparts_7_B1
-CelicaDeparts_7_B2:
-@ 058   ----------------------------------------
-	.byte	FINE
+@********************** End of Song ***********************@
 
-@******************************************************@
-	.align	2
-
+        .align  2
 CelicaDeparts:
-	.byte	7	@ NumTrks
-	.byte	0	@ NumBlks
-	.byte	CelicaDeparts_pri	@ Priority
-	.byte	CelicaDeparts_rev	@ Reverb.
+        .byte   7                       @ Num Tracks
+        .byte   0                       @ Unknown
+        .byte   CelicaDeparts_pri       @ Priority
+        .byte   CelicaDeparts_rev       @ Reverb
 
-	.word	CelicaDeparts_grp
+        .word   CelicaDeparts_grp      
 
-	.word	CelicaDeparts_1
-	.word	CelicaDeparts_2
-	.word	CelicaDeparts_3
-	.word	CelicaDeparts_4
-	.word	CelicaDeparts_5
-	.word	CelicaDeparts_6
-	.word	CelicaDeparts_7
+        .word   CelicaDeparts_0
+        .word   CelicaDeparts_1
+        .word   CelicaDeparts_2
+        .word   CelicaDeparts_3
+        .word   CelicaDeparts_4
+        .word   CelicaDeparts_5
+        .word   CelicaDeparts_6
 
-	.end
+        .end

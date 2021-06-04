@@ -1,3058 +1,3036 @@
 //Event file generated from Sappy .s format.
-	#include "MPlayDef.event"
+        #include "MPlayDef.event"
 
-	#define	LordOfADeadEmpire_Insertable_grp  voicegroup000
-	#define	LordOfADeadEmpire_Insertable_pri  0
-	#define	LordOfADeadEmpire_Insertable_rev  0
-	#define	LordOfADeadEmpire_Insertable_mvl  85
-	#define	LordOfADeadEmpire_Insertable_key  0
-	#define	LordOfADeadEmpire_Insertable_tbs  1
-	#define	LordOfADeadEmpire_Insertable_exg  0
-	#define	LordOfADeadEmpire_Insertable_cmp  1
+        #define    LordOfADeadEmpire_Insertable_grp  voicegroup000
+        #define    LordOfADeadEmpire_Insertable_pri  0
+        #define    LordOfADeadEmpire_Insertable_rev  0
+        #define    LordOfADeadEmpire_Insertable_key  0
 
-	// .rodata
-	//	LordOfADeadEmpire_Insertable
-	ALIGN 4
+        // .rodata
+        // LordOfADeadEmpire_Insertable
+        ALIGN 4
 
-//**************** Track 1 (Midi-Chn.1) ****************//
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+LordOfADeadEmpire_Insertable_0:
+        BYTE   KEYSH   LordOfADeadEmpire_Insertable_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   134/2
+LordOfADeadEmpire_Insertable_0_LOOP:
+        BYTE           VOICE   77
+        BYTE           VOL     27
+        BYTE           PAN     c_v-45
+        BYTE           N24     Dn4   v127
+        BYTE   W24
+        BYTE           N08
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+// 001   ----------------------------------------
+        BYTE           N24     Cs4
+        BYTE   W24
+        BYTE           N08
+        BYTE   W08
+        BYTE                   Cs4   v124
+        BYTE   W08
+        BYTE                   Cs4   v100
+        BYTE   W08
+        BYTE                   Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4   v116
+        BYTE   W08
+        BYTE                   Cs4   v108
+        BYTE   W08
+        BYTE                   Cs4   v112
+        BYTE   W08
+        BYTE                   Cs4   v120
+        BYTE   W08
+        BYTE                   Cs4   v124
+        BYTE   W08
+// 002   ----------------------------------------
+        BYTE           N24     Cn4   v120
+        BYTE   W24
+        BYTE           N08     Cn4   v127
+        BYTE   W08
+        BYTE                   Cn4   v120
+        BYTE   W08
+        BYTE                   Cn4   v104
+        BYTE   W08
+        BYTE                   Cn4   v127
+        BYTE   W08
+        BYTE                   Cn4   v116
+        BYTE   W08
+        BYTE                   Cn4   v127
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Cn4   v120
+        BYTE   W08
+        BYTE                   Cn4   v104
+        BYTE   W08
+// 003   ----------------------------------------
+LordOfADeadEmpire_Insertable_0_3:
+        BYTE           N24     Bn3   v104
+        BYTE   W24
+        BYTE           N08     Bn3   v096
+        BYTE   W08
+        BYTE                   Bn3   v127
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE   PEND
+// 004   ----------------------------------------
+        BYTE           N24     As3   v084
+        BYTE   W24
+        BYTE           N08     As3   v116
+        BYTE   W08
+        BYTE                   As3   v064
+        BYTE   W08
+        BYTE                   As3   v127
+        BYTE   W08
+        BYTE                   As3
+        BYTE   W08
+        BYTE                   As3   v108
+        BYTE   W08
+        BYTE                   As3   v124
+        BYTE   W08
+        BYTE                   As3   v100
+        BYTE   W08
+        BYTE                   As3   v120
+        BYTE   W08
+        BYTE                   As3   v127
+        BYTE   W08
+// 005   ----------------------------------------
+        BYTE           N24     An3   v112
+        BYTE   W24
+        BYTE           N08     An3   v127
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   An3   v108
+        BYTE   W08
+        BYTE                   An3   v127
+        BYTE   W08
+        BYTE                   An3   v096
+        BYTE   W08
+        BYTE                   An3   v116
+        BYTE   W08
+        BYTE                   An3   v104
+        BYTE   W08
+        BYTE                   An3   v127
+        BYTE   W08
+// 006   ----------------------------------------
+        BYTE           N24     Gs3
+        BYTE   W24
+        BYTE           N08
+        BYTE   W08
+        BYTE                   Gs3   v096
+        BYTE   W08
+        BYTE                   Gs3   v127
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+// 007   ----------------------------------------
+        BYTE           VOL     43
+        BYTE           VOICE   66
+        BYTE           N08     An3
+        BYTE   W08
+        BYTE                   Cs4   v120
+        BYTE   W08
+        BYTE                   En4   v127
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cs4   v124
+        BYTE   W08
+        BYTE                   En4   v127
+        BYTE   W08
+        BYTE                   An4
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   An3   v112
+        BYTE   W08
+        BYTE                   En3   v127
+        BYTE   W08
+        BYTE                   Cs3
+        BYTE   W08
+// 008   ----------------------------------------
+        BYTE           VOL     27
+        BYTE           VOICE   77
+        BYTE           N24     Dn4
+        BYTE   W24
+        BYTE           N08
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+// 009   ----------------------------------------
+        BYTE           N24     Cs4   v120
+        BYTE   W24
+        BYTE           N08     Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4   v120
+        BYTE   W08
+        BYTE                   Cs4   v104
+        BYTE   W08
+        BYTE                   Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4   v116
+        BYTE   W08
+        BYTE                   Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4   v120
+        BYTE   W08
+        BYTE                   Cs4   v104
+        BYTE   W08
+// 010   ----------------------------------------
+LordOfADeadEmpire_Insertable_0_10:
+        BYTE           N24     En4   v104
+        BYTE   W24
+        BYTE           N08     En4   v096
+        BYTE   W08
+        BYTE                   En4   v127
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE   PEND
+// 011   ----------------------------------------
+        BYTE           N24     Fn4   v084
+        BYTE   W24
+        BYTE           N08     Fn4   v116
+        BYTE   W08
+        BYTE                   Fn4   v064
+        BYTE   W08
+        BYTE                   Fn4   v127
+        BYTE   W08
+        BYTE                   Fn4
+        BYTE   W08
+        BYTE                   Fn4   v108
+        BYTE   W08
+        BYTE                   Fn4   v124
+        BYTE   W08
+        BYTE                   Fn4   v100
+        BYTE   W08
+        BYTE                   Fn4   v120
+        BYTE   W08
+        BYTE                   Fn4   v127
+        BYTE   W08
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_10
+// 013   ----------------------------------------
+        BYTE           N24     Ds4   v127
+        BYTE   W24
+        BYTE           N08
+        BYTE   W08
+        BYTE                   Ds4   v096
+        BYTE   W08
+        BYTE                   Ds4   v127
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+// 014   ----------------------------------------
+        BYTE           N24     Dn4
+        BYTE   W24
+        BYTE           N08
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+// 015   ----------------------------------------
+        BYTE   W96
+// 016   ----------------------------------------
+        BYTE   W96
+// 017   ----------------------------------------
+        BYTE   W96
+// 018   ----------------------------------------
+        BYTE   W96
+// 019   ----------------------------------------
+        BYTE   W96
+// 020   ----------------------------------------
+        BYTE   W96
+// 021   ----------------------------------------
+        BYTE           N24     Ds4   v104
+        BYTE   W24
+        BYTE           N08     Ds4   v096
+        BYTE   W08
+        BYTE                   Ds4   v127
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+// 022   ----------------------------------------
+LordOfADeadEmpire_Insertable_0_22:
+        BYTE           N24     Dn4   v104
+        BYTE   W24
+        BYTE           N08     Dn4   v096
+        BYTE   W08
+        BYTE                   Dn4   v127
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE   PEND
+// 023   ----------------------------------------
+LordOfADeadEmpire_Insertable_0_23:
+        BYTE           N24     Cs4   v104
+        BYTE   W24
+        BYTE           N08     Cs4   v096
+        BYTE   W08
+        BYTE                   Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE   PEND
+// 024   ----------------------------------------
+LordOfADeadEmpire_Insertable_0_24:
+        BYTE           N24     Cn4   v084
+        BYTE   W24
+        BYTE           N08     Cn4   v116
+        BYTE   W08
+        BYTE                   Cn4   v064
+        BYTE   W08
+        BYTE                   Cn4   v127
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Cn4   v108
+        BYTE   W08
+        BYTE                   Cn4   v124
+        BYTE   W08
+        BYTE                   Cn4   v100
+        BYTE   W08
+        BYTE                   Cn4   v120
+        BYTE   W08
+        BYTE                   Cn4   v127
+        BYTE   W08
+        BYTE   PEND
+// 025   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_3
+// 026   ----------------------------------------
+LordOfADeadEmpire_Insertable_0_26:
+        BYTE           N24     Cn4   v112
+        BYTE   W24
+        BYTE           N08     Cn4   v127
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Cn4   v108
+        BYTE   W08
+        BYTE                   Cn4   v127
+        BYTE   W08
+        BYTE                   Cn4   v096
+        BYTE   W08
+        BYTE                   Cn4   v116
+        BYTE   W08
+        BYTE                   Cn4   v104
+        BYTE   W08
+        BYTE                   Cn4   v127
+        BYTE   W08
+        BYTE   PEND
+// 027   ----------------------------------------
+LordOfADeadEmpire_Insertable_0_27:
+        BYTE           N08     Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4   v108
+        BYTE   W08
+        BYTE                   Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4   v096
+        BYTE   W08
+        BYTE                   Cs4   v116
+        BYTE   W08
+        BYTE                   Cs4   v104
+        BYTE   W08
+        BYTE                   Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE   PEND
+// 028   ----------------------------------------
+        BYTE                   Cs4   v108
+        BYTE   W08
+        BYTE                   Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4   v096
+        BYTE   W08
+        BYTE                   Cs4   v116
+        BYTE   W08
+        BYTE                   Cs4   v104
+        BYTE   W08
+        BYTE                   Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4   v108
+        BYTE   W08
+        BYTE                   Cs4   v127
+        BYTE   W08
+        BYTE                   Cs4   v096
+        BYTE   W08
+        BYTE                   Cs4   v116
+        BYTE   W08
+        BYTE                   Cs4   v104
+        BYTE   W08
+        BYTE                   Cs4   v127
+        BYTE   W08
+// 029   ----------------------------------------
+        BYTE           N24     Ds4
+        BYTE   W24
+        BYTE           N08
+        BYTE   W08
+        BYTE                   Ds4   v124
+        BYTE   W08
+        BYTE                   Ds4   v100
+        BYTE   W08
+        BYTE                   Ds4   v127
+        BYTE   W08
+        BYTE                   Ds4   v116
+        BYTE   W08
+        BYTE                   Ds4   v108
+        BYTE   W08
+        BYTE                   Ds4   v112
+        BYTE   W08
+        BYTE                   Ds4   v120
+        BYTE   W08
+        BYTE                   Ds4   v124
+        BYTE   W08
+// 030   ----------------------------------------
+        BYTE           N24     Dn4   v120
+        BYTE   W24
+        BYTE           N08     Dn4   v127
+        BYTE   W08
+        BYTE                   Dn4   v120
+        BYTE   W08
+        BYTE                   Dn4   v104
+        BYTE   W08
+        BYTE                   Dn4   v127
+        BYTE   W08
+        BYTE                   Dn4   v116
+        BYTE   W08
+        BYTE                   Dn4   v127
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Dn4   v120
+        BYTE   W08
+        BYTE                   Dn4   v104
+        BYTE   W08
+// 031   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_23
+// 032   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_24
+// 033   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_3
+// 034   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_26
+// 035   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_27
+// 036   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_22
+// 037   ----------------------------------------
+LordOfADeadEmpire_Insertable_0_37:
+        BYTE           N08     Ds4   v116
+        BYTE   W08
+        BYTE                   As3   v104
+        BYTE   W08
+        BYTE                   Fs3   v127
+        BYTE   W08
+        BYTE                   Dn4   v116
+        BYTE   W08
+        BYTE                   As3   v104
+        BYTE   W08
+        BYTE                   Fn3   v127
+        BYTE   W08
+        BYTE                   Cs4   v116
+        BYTE   W08
+        BYTE                   An3   v104
+        BYTE   W08
+        BYTE                   Fn3   v127
+        BYTE   W08
+        BYTE                   Cn4   v116
+        BYTE   W08
+        BYTE                   Gs3   v104
+        BYTE   W08
+        BYTE                   En3   v127
+        BYTE   W08
+        BYTE   PEND
+// 038   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_37
+// 039   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_37
+// 040   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_37
+// 041   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_37
+// 042   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_37
+// 043   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_37
+// 044   ----------------------------------------
+        BYTE           N08     Ds4   v116
+        BYTE   W08
+        BYTE                   As3   v104
+        BYTE   W08
+        BYTE                   Fs3   v127
+        BYTE   W08
+        BYTE                   Dn4   v116
+        BYTE   W08
+        BYTE                   As3   v104
+        BYTE   W08
+        BYTE                   Fn3   v127
+        BYTE   W08
+        BYTE                   Cs4   v116
+        BYTE   W08
+        BYTE                   An3   v104
+        BYTE   W08
+        BYTE                   Fn3   v127
+        BYTE   W08
+        BYTE                   Cn4   v116
+        BYTE   W08
+        BYTE                   Bn3   v104
+        BYTE   W08
+        BYTE                   Fs3   v127
+        BYTE   W08
+// 045   ----------------------------------------
+LordOfADeadEmpire_Insertable_0_45:
+        BYTE           N18     Ds3   v108
+        BYTE   W18
+        BYTE           N06     Fs3
+        BYTE   W06
+        BYTE           N08     Fn3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE           N18     Ds3
+        BYTE   W18
+        BYTE           N06     Fs3
+        BYTE   W06
+        BYTE           N08     Fn3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE   PEND
+// 046   ----------------------------------------
+LordOfADeadEmpire_Insertable_0_46:
+        BYTE           N18     Ds3   v108
+        BYTE   W18
+        BYTE           N06     Fs3
+        BYTE   W06
+        BYTE           N08     Fn3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Ds3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE   PEND
+// 047   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_45
+// 048   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_46
+// 049   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_45
+// 050   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_46
+// 051   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_45
+// 052   ----------------------------------------
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_0_46
+// 053   ----------------------------------------
+        BYTE   GoTo
+         POIN2  LordOfADeadEmpire_Insertable_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
 
 LordOfADeadEmpire_Insertable_1:
-	BYTE	KEYSH   LordOfADeadEmpire_Insertable_key+0
-LordOfADeadEmpire_Insertable_1_B1:
+        BYTE   KEYSH   LordOfADeadEmpire_Insertable_key+0
 // 000   ----------------------------------------
-	BYTE	TEMPO   134*LordOfADeadEmpire_Insertable_tbs/2
-	BYTE		VOICE   77
-	BYTE		VOL     41*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		PAN     c_v-45
-	BYTE		N24     Dn4   v127
-	BYTE	W24
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
+LordOfADeadEmpire_Insertable_1_LOOP:
+        BYTE           VOICE   42
+        BYTE           VOL     27
+        BYTE           N96     An3   v104
+        BYTE           N96     Fn4   v108
+        BYTE           N96     Dn5   v100
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE		N24     Cs4 
-	BYTE	W24
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Cs4   v124
-	BYTE	W08
-	BYTE		        Cs4   v100
-	BYTE	W08
-	BYTE		        Cs4   v127
-	BYTE	W08
-	BYTE		        Cs4   v116
-	BYTE	W08
-	BYTE		        Cs4   v108
-	BYTE	W08
-	BYTE		        Cs4   v112
-	BYTE	W08
-	BYTE		        Cs4   v120
-	BYTE	W08
-	BYTE		        Cs4   v124
-	BYTE	W08
+        BYTE                   Gn3   v104
+        BYTE           N96     Gn4   v108
+        BYTE           N96     Cs5   v100
+        BYTE   W96
 // 002   ----------------------------------------
-	BYTE		N24     Cn4   v120
-	BYTE	W24
-	BYTE		N08     Cn4   v127
-	BYTE	W08
-	BYTE		        Cn4   v120
-	BYTE	W08
-	BYTE		        Cn4   v104
-	BYTE	W08
-	BYTE		        Cn4   v127
-	BYTE	W08
-	BYTE		        Cn4   v116
-	BYTE	W08
-	BYTE		        Cn4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Cn4   v120
-	BYTE	W08
-	BYTE		        Cn4   v104
-	BYTE	W08
+        BYTE                   Cn4   v104
+        BYTE           N96     En4   v108
+        BYTE           N96     Cn5   v100
+        BYTE   W96
 // 003   ----------------------------------------
-LordOfADeadEmpire_Insertable_1_003:
-	BYTE		N24     Bn3   v104
-	BYTE	W24
-	BYTE		N08     Bn3   v096
-	BYTE	W08
-	BYTE		        Bn3   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE	PEND
+        BYTE           N48     En3   v104
+        BYTE           N96     Fn4   v108
+        BYTE           N48     Bn4   v100
+        BYTE   W48
+        BYTE                   Dn3   v104
+        BYTE           N48     Bn4   v100
+        BYTE   W48
 // 004   ----------------------------------------
-	BYTE		N24     As3   v084
-	BYTE	W24
-	BYTE		N08     As3   v116
-	BYTE	W08
-	BYTE		        As3   v064
-	BYTE	W08
-	BYTE		        As3   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        As3   v108
-	BYTE	W08
-	BYTE		        As3   v124
-	BYTE	W08
-	BYTE		        As3   v100
-	BYTE	W08
-	BYTE		        As3   v120
-	BYTE	W08
-	BYTE		        As3   v127
-	BYTE	W08
+        BYTE           N96     An3   v096
+        BYTE           N96     Gn4   v108
+        BYTE           N96     As4   v100
+        BYTE   W96
 // 005   ----------------------------------------
-	BYTE		N24     An3   v112
-	BYTE	W24
-	BYTE		N08     An3   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        An3   v108
-	BYTE	W08
-	BYTE		        An3   v127
-	BYTE	W08
-	BYTE		        An3   v096
-	BYTE	W08
-	BYTE		        An3   v116
-	BYTE	W08
-	BYTE		        An3   v104
-	BYTE	W08
-	BYTE		        An3   v127
-	BYTE	W08
+        BYTE                   Gn3   v096
+        BYTE           N96     Fn4   v108
+        BYTE           N96     An4   v100
+        BYTE   W96
 // 006   ----------------------------------------
-	BYTE		N24     Gs3 
-	BYTE	W24
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Gs3   v096
-	BYTE	W08
-	BYTE		        Gs3   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
+        BYTE                   Fn3   v096
+        BYTE           N96     Fn4   v108
+        BYTE           N96     Gs4   v100
+        BYTE   W96
 // 007   ----------------------------------------
-	BYTE		VOICE   66
-	BYTE		VOL     64*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		N08     An3 
-	BYTE	W08
-	BYTE		        Cs4   v120
-	BYTE	W08
-	BYTE		        En4   v127
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cs4   v124
-	BYTE	W08
-	BYTE		        En4   v127
-	BYTE	W08
-	BYTE		        An4 
-	BYTE	W08
-	BYTE		        En4 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		        An3   v112
-	BYTE	W08
-	BYTE		        En3   v127
-	BYTE	W08
-	BYTE		        Cs3 
-	BYTE	W08
+        BYTE           N48     Dn4   v096
+        BYTE           N96     En4   v108
+        BYTE           N96     An4   v100
+        BYTE   W48
+        BYTE           N48     Cs4   v096
+        BYTE   W48
 // 008   ----------------------------------------
-	BYTE		VOICE   77
-	BYTE		VOL     41*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		N24     Dn4 
-	BYTE	W24
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
+        BYTE           N96     An3
+        BYTE           N96     Fn4   v108
+        BYTE           N96     Dn5   v100
+        BYTE   W96
 // 009   ----------------------------------------
-	BYTE		N24     Cs4   v120
-	BYTE	W24
-	BYTE		N08     Cs4   v127
-	BYTE	W08
-	BYTE		        Cs4   v120
-	BYTE	W08
-	BYTE		        Cs4   v104
-	BYTE	W08
-	BYTE		        Cs4   v127
-	BYTE	W08
-	BYTE		        Cs4   v116
-	BYTE	W08
-	BYTE		        Cs4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Cs4   v120
-	BYTE	W08
-	BYTE		        Cs4   v104
-	BYTE	W08
+        BYTE                   Gn3   v096
+        BYTE           N96     Gn4   v108
+        BYTE           N96     Cs5   v100
+        BYTE   W96
 // 010   ----------------------------------------
-LordOfADeadEmpire_Insertable_1_010:
-	BYTE		N24     En4   v104
-	BYTE	W24
-	BYTE		N08     En4   v096
-	BYTE	W08
-	BYTE		        En4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE	PEND
+        BYTE                   Cs4   v096
+        BYTE           N96     En4   v108
+        BYTE           N96     En5   v100
+        BYTE   W96
 // 011   ----------------------------------------
-	BYTE		N24     Fn4   v084
-	BYTE	W24
-	BYTE		N08     Fn4   v116
-	BYTE	W08
-	BYTE		        Fn4   v064
-	BYTE	W08
-	BYTE		        Fn4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Fn4   v108
-	BYTE	W08
-	BYTE		        Fn4   v124
-	BYTE	W08
-	BYTE		        Fn4   v100
-	BYTE	W08
-	BYTE		        Fn4   v120
-	BYTE	W08
-	BYTE		        Fn4   v127
-	BYTE	W08
+        BYTE           N48     En4   v096
+        BYTE           N96     An4   v108
+        BYTE           N96     Dn5   v100
+        BYTE   W48
+        BYTE           N48     Dn4   v096
+        BYTE   W48
 // 012   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_010
+        BYTE           N96     As3
+        BYTE           N96     Fn4   v108
+        BYTE           N96     As4   v100
+        BYTE   W96
 // 013   ----------------------------------------
-	BYTE		N24     Ds4   v127
-	BYTE	W24
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Ds4   v096
-	BYTE	W08
-	BYTE		        Ds4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
+        BYTE                   An3   v096
+        BYTE           N96     En4   v108
+        BYTE           N96     An4   v100
+        BYTE   W96
 // 014   ----------------------------------------
-	BYTE		N24     Dn4 
-	BYTE	W24
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
+        BYTE                   En4   v096
+        BYTE           N96     An4   v108
+        BYTE           N96     En5   v100
+        BYTE   W96
 // 015   ----------------------------------------
-	BYTE	TEMPO   134*LordOfADeadEmpire_Insertable_tbs/2
-	BYTE	W96
+        BYTE           TIE     Fn3   v096
+        BYTE           TIE     Dn4   v108
+        BYTE           TIE     An4   v100
+        BYTE           TIE     Dn5
+        BYTE   W96
 // 016   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 018   ----------------------------------------
-	BYTE	W96
+        BYTE           EOT     Fn3
+        BYTE                   Dn4
+        BYTE                   An4
+        BYTE                   Dn5
+        BYTE           N72     Fn3   v096
+        BYTE           TIE     Dn4   v108
+        BYTE           N72     An4   v100
+        BYTE           TIE     Dn5
+        BYTE   W96
 // 019   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 020   ----------------------------------------
-	BYTE	W96
+        BYTE           EOT     Dn4
+        BYTE                   Dn5
+        BYTE           N48     Bn3   v108
+        BYTE           N96     Cs5   v100
+        BYTE   W48
+        BYTE           N48     As3   v108
+        BYTE   W48
 // 021   ----------------------------------------
-	BYTE	TEMPO   134*LordOfADeadEmpire_Insertable_tbs/2
-	BYTE		N24     Ds4   v104
-	BYTE	W24
-	BYTE		N08     Ds4   v096
-	BYTE	W08
-	BYTE		        Ds4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
+        BYTE           N96     Fn3   v081
+        BYTE           N96     Fs4   v100
+        BYTE           N96     As4   v108
+        BYTE           N96     Ds5   v100
+        BYTE   W96
 // 022   ----------------------------------------
-LordOfADeadEmpire_Insertable_1_022:
-	BYTE		N24     Dn4   v104
-	BYTE	W24
-	BYTE		N08     Dn4   v096
-	BYTE	W08
-	BYTE		        Dn4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_1_22:
+        BYTE           N96     Fn4   v100
+        BYTE           N96     Gs4   v108
+        BYTE           N96     Dn5   v100
+        BYTE   W96
+        BYTE   PEND
 // 023   ----------------------------------------
-LordOfADeadEmpire_Insertable_1_023:
-	BYTE		N24     Cs4   v104
-	BYTE	W24
-	BYTE		N08     Cs4   v096
-	BYTE	W08
-	BYTE		        Cs4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_1_23:
+        BYTE           N96     En4   v100
+        BYTE           N96     Gs4   v108
+        BYTE           N96     Cs5   v100
+        BYTE   W96
+        BYTE   PEND
 // 024   ----------------------------------------
-LordOfADeadEmpire_Insertable_1_024:
-	BYTE		N24     Cn4   v084
-	BYTE	W24
-	BYTE		N08     Cn4   v116
-	BYTE	W08
-	BYTE		        Cn4   v064
-	BYTE	W08
-	BYTE		        Cn4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Cn4   v108
-	BYTE	W08
-	BYTE		        Cn4   v124
-	BYTE	W08
-	BYTE		        Cn4   v100
-	BYTE	W08
-	BYTE		        Cn4   v120
-	BYTE	W08
-	BYTE		        Cn4   v127
-	BYTE	W08
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_1_24:
+        BYTE           N96     Ds4   v100
+        BYTE           N96     Gn4   v108
+        BYTE           N96     Cs5   v100
+        BYTE   W96
+        BYTE   PEND
 // 025   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_003
+LordOfADeadEmpire_Insertable_1_25:
+        BYTE           N96     Cs4   v100
+        BYTE           N96     Gn4   v108
+        BYTE           N96     Bn4   v100
+        BYTE   W96
+        BYTE   PEND
 // 026   ----------------------------------------
-LordOfADeadEmpire_Insertable_1_026:
-	BYTE		N24     Cn4   v112
-	BYTE	W24
-	BYTE		N08     Cn4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Cn4   v108
-	BYTE	W08
-	BYTE		        Cn4   v127
-	BYTE	W08
-	BYTE		        Cn4   v096
-	BYTE	W08
-	BYTE		        Cn4   v116
-	BYTE	W08
-	BYTE		        Cn4   v104
-	BYTE	W08
-	BYTE		        Cn4   v127
-	BYTE	W08
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_1_26:
+        BYTE           N96     Bn3   v100
+        BYTE           N96     Fn4   v108
+        BYTE           N96     As4   v100
+        BYTE   W96
+        BYTE   PEND
 // 027   ----------------------------------------
-LordOfADeadEmpire_Insertable_1_027:
-	BYTE		N08     Cs4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Cs4   v108
-	BYTE	W08
-	BYTE		        Cs4   v127
-	BYTE	W08
-	BYTE		        Cs4   v096
-	BYTE	W08
-	BYTE		        Cs4   v116
-	BYTE	W08
-	BYTE		        Cs4   v104
-	BYTE	W08
-	BYTE		        Cs4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_1_27:
+        BYTE           TIE     Dn4   v100
+        BYTE           TIE     Fn4   v108
+        BYTE           N96     Cs5   v104
+        BYTE   W96
+        BYTE   PEND
 // 028   ----------------------------------------
-	BYTE		        Cs4   v108
-	BYTE	W08
-	BYTE		        Cs4   v127
-	BYTE	W08
-	BYTE		        Cs4   v096
-	BYTE	W08
-	BYTE		        Cs4   v116
-	BYTE	W08
-	BYTE		        Cs4   v104
-	BYTE	W08
-	BYTE		        Cs4   v127
-	BYTE	W08
-	BYTE		        Cs4   v108
-	BYTE	W08
-	BYTE		        Cs4   v127
-	BYTE	W08
-	BYTE		        Cs4   v096
-	BYTE	W08
-	BYTE		        Cs4   v116
-	BYTE	W08
-	BYTE		        Cs4   v104
-	BYTE	W08
-	BYTE		        Cs4   v127
-	BYTE	W08
+        BYTE                   Cn5
+        BYTE   W96
 // 029   ----------------------------------------
-	BYTE		N24     Ds4 
-	BYTE	W24
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Ds4   v124
-	BYTE	W08
-	BYTE		        Ds4   v100
-	BYTE	W08
-	BYTE		        Ds4   v127
-	BYTE	W08
-	BYTE		        Ds4   v116
-	BYTE	W08
-	BYTE		        Ds4   v108
-	BYTE	W08
-	BYTE		        Ds4   v112
-	BYTE	W08
-	BYTE		        Ds4   v120
-	BYTE	W08
-	BYTE		        Ds4   v124
-	BYTE	W08
+        BYTE           EOT     Dn4
+        BYTE                   Fn4
+        BYTE           N96     Cs5   v077
+        BYTE           N96     Fs4   v100
+        BYTE           N96     As4   v108
+        BYTE           N96     Ds5   v100
+        BYTE   W96
 // 030   ----------------------------------------
-	BYTE		N24     Dn4   v120
-	BYTE	W24
-	BYTE		N08     Dn4   v127
-	BYTE	W08
-	BYTE		        Dn4   v120
-	BYTE	W08
-	BYTE		        Dn4   v104
-	BYTE	W08
-	BYTE		        Dn4   v127
-	BYTE	W08
-	BYTE		        Dn4   v116
-	BYTE	W08
-	BYTE		        Dn4   v127
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		        Dn4   v120
-	BYTE	W08
-	BYTE		        Dn4   v104
-	BYTE	W08
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_1_22
 // 031   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_023
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_1_23
 // 032   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_024
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_1_24
 // 033   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_003
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_1_25
 // 034   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_026
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_1_26
 // 035   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_027
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_1_27
 // 036   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_022
+        BYTE           N96     Cn5   v104
+        BYTE   W96
 // 037   ----------------------------------------
-LordOfADeadEmpire_Insertable_1_037:
-	BYTE		N08     Ds4   v116
-	BYTE	W08
-	BYTE		        As3   v104
-	BYTE	W08
-	BYTE		        Fs3   v127
-	BYTE	W08
-	BYTE		        Dn4   v116
-	BYTE	W08
-	BYTE		        As3   v104
-	BYTE	W08
-	BYTE		        Fn3   v127
-	BYTE	W08
-	BYTE		        Cs4   v116
-	BYTE	W08
-	BYTE		        An3   v104
-	BYTE	W08
-	BYTE		        Fn3   v127
-	BYTE	W08
-	BYTE		        Cn4   v116
-	BYTE	W08
-	BYTE		        Gs3   v104
-	BYTE	W08
-	BYTE		        En3   v127
-	BYTE	W08
-	BYTE	PEND
+        BYTE           EOT     Fn4
+        BYTE                   Dn4
+        BYTE           N96     As3   v100
+        BYTE           N96     Ds4   v108
+        BYTE           N96     As4   v104
+        BYTE   W96
 // 038   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_037
+LordOfADeadEmpire_Insertable_1_38:
+        BYTE           N96     An3   v100
+        BYTE           N96     Dn4   v108
+        BYTE           N96     As4   v104
+        BYTE   W96
+        BYTE   PEND
 // 039   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_037
+LordOfADeadEmpire_Insertable_1_39:
+        BYTE           N96     As3   v100
+        BYTE           N96     Ds4   v108
+        BYTE           N96     As4   v104
+        BYTE   W96
+        BYTE   PEND
 // 040   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_037
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_1_38
 // 041   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_037
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_1_39
 // 042   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_037
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_1_38
 // 043   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_037
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_1_39
 // 044   ----------------------------------------
-	BYTE		N08     Ds4   v116
-	BYTE	W08
-	BYTE		        As3   v104
-	BYTE	W08
-	BYTE		        Fs3   v127
-	BYTE	W08
-	BYTE		        Dn4   v116
-	BYTE	W08
-	BYTE		        As3   v104
-	BYTE	W08
-	BYTE		        Fn3   v127
-	BYTE	W08
-	BYTE		        Cs4   v116
-	BYTE	W08
-	BYTE		        An3   v104
-	BYTE	W08
-	BYTE		        Fn3   v127
-	BYTE	W08
-	BYTE		        Cn4   v116
-	BYTE	W08
-	BYTE		        Bn3   v104
-	BYTE	W08
-	BYTE		        Fs3   v127
-	BYTE	W08
+        BYTE           N96     Gs3   v100
+        BYTE           N96     Cs4   v108
+        BYTE           N96     Gs4   v104
+        BYTE   W96
 // 045   ----------------------------------------
-LordOfADeadEmpire_Insertable_1_045:
-	BYTE		N18     Ds3   v108
-	BYTE	W18
-	BYTE		N06     Fs3 
-	BYTE	W06
-	BYTE		N08     Fn3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Fn3 
-	BYTE	W08
-	BYTE		N18     Ds3 
-	BYTE	W18
-	BYTE		N06     Fs3 
-	BYTE	W06
-	BYTE		N08     Fn3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Fn3 
-	BYTE	W08
-	BYTE	PEND
+        BYTE           TIE     Bn3   v100
+        BYTE           TIE     Ds4   v108
+        BYTE           TIE     Fs4   v104
+        BYTE   W96
 // 046   ----------------------------------------
-LordOfADeadEmpire_Insertable_1_046:
-	BYTE		N18     Ds3   v108
-	BYTE	W18
-	BYTE		N06     Fs3 
-	BYTE	W06
-	BYTE		N08     Fn3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Fn3 
-	BYTE	W08
-	BYTE		        Ds3 
-	BYTE	W08
-	BYTE		        Fn3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Fn3 
-	BYTE	W08
-	BYTE	PEND
+        BYTE   W96
 // 047   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_045
+        BYTE           EOT     Bn3
+        BYTE                   Ds4
+        BYTE                   Fs4
+        BYTE           TIE     Cn4   v100
+        BYTE           TIE     Ds4   v108
+        BYTE           N96     Fs4   v104
+        BYTE   W96
 // 048   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_046
+        BYTE   W96
 // 049   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_045
+        BYTE           EOT     Cn4
+        BYTE                   Ds4
+        BYTE           TIE     Ds4   v108
+        BYTE           N96     Fs4   v104
+        BYTE           N96     Bn3   v075
+        BYTE   W96
 // 050   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_046
+        BYTE                   Cn4   v100
+        BYTE   W96
 // 051   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_045
+        BYTE           EOT     Ds4
+        BYTE           N96     Cs4   v075
+        BYTE           N96     Fs4
+        BYTE           TIE     Gs4   v104
+        BYTE   W96
 // 052   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_1_046
-	BYTE	GoTo
-	 POIN2	LordOfADeadEmpire_Insertable_1_B1
-LordOfADeadEmpire_Insertable_1_B2:
+        BYTE           N96     Fn4   v108
+        BYTE           N96     Dn4   v100
+        BYTE   W96
 // 053   ----------------------------------------
-	BYTE	FINE
+        BYTE           EOT     Gs4
+        BYTE   GoTo
+         POIN2  LordOfADeadEmpire_Insertable_1_LOOP
+        BYTE   FINE
 
-//**************** Track 2 (Midi-Chn.2) ****************//
+//****************** Track 2 (Midi-Chn.2) ******************//
 
 LordOfADeadEmpire_Insertable_2:
-	BYTE	KEYSH   LordOfADeadEmpire_Insertable_key+0
-LordOfADeadEmpire_Insertable_2_B1:
+        BYTE   KEYSH   LordOfADeadEmpire_Insertable_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   42
-	BYTE		VOL     41*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		N96     An3   v104
-	BYTE		N96     Fn4   v108
-	BYTE		N96     Dn5   v100
-	BYTE	W96
+LordOfADeadEmpire_Insertable_2_LOOP:
+        BYTE           VOICE   109
+        BYTE           VOL     43
+        BYTE           PAN     c_v+42
+        BYTE           N96     Dn3   v100
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE		        Gn3   v104
-	BYTE		N96     Gn4   v108
-	BYTE		N96     Cs5   v100
-	BYTE	W96
+LordOfADeadEmpire_Insertable_2_1:
+        BYTE           N24     Cs3   v100
+        BYTE   W24
+        BYTE                   An2
+        BYTE   W24
+        BYTE                   Cs3
+        BYTE   W24
+        BYTE                   Fn3
+        BYTE   W24
+        BYTE   PEND
 // 002   ----------------------------------------
-	BYTE		        Cn4   v104
-	BYTE		N96     En4   v108
-	BYTE		N96     Cn5   v100
-	BYTE	W96
+        BYTE           TIE     Gn3
+        BYTE   W96
 // 003   ----------------------------------------
-	BYTE		N48     En3   v104
-	BYTE		N96     Fn4   v108
-	BYTE		N48     Bn4   v100
-	BYTE	W48
-	BYTE		        Dn3   v104
-	BYTE		N48     Bn4   v100
-	BYTE	W48
+LordOfADeadEmpire_Insertable_2_3:
+        BYTE   W24
+        BYTE           EOT     Gn3
+        BYTE           N24     Fn3   v100
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W24
+        BYTE   PEND
 // 004   ----------------------------------------
-	BYTE		N96     An3   v096
-	BYTE		N96     Gn4   v108
-	BYTE		N96     As4   v100
-	BYTE	W96
+        BYTE           TIE     An3
+        BYTE   W96
 // 005   ----------------------------------------
-	BYTE		        Gn3   v096
-	BYTE		N96     Fn4   v108
-	BYTE		N96     An4   v100
-	BYTE	W96
+LordOfADeadEmpire_Insertable_2_5:
+        BYTE   W24
+        BYTE           EOT     An3
+        BYTE           N24     Dn3   v100
+        BYTE   W24
+        BYTE                   Dn3
+        BYTE   W24
+        BYTE                   Gn3
+        BYTE   W24
+        BYTE   PEND
 // 006   ----------------------------------------
-	BYTE		        Fn3   v096
-	BYTE		N96     Fn4   v108
-	BYTE		N96     Gs4   v100
-	BYTE	W96
+        BYTE           N48     En3
+        BYTE   W48
+        BYTE                   Fn3
+        BYTE   W48
 // 007   ----------------------------------------
-	BYTE		N48     Dn4   v096
-	BYTE		N96     En4   v108
-	BYTE		N96     An4   v100
-	BYTE	W48
-	BYTE		N48     Cs4   v096
-	BYTE	W48
+        BYTE                   Cn4
+        BYTE   W48
+        BYTE                   As3
+        BYTE   W48
 // 008   ----------------------------------------
-	BYTE		N96     An3 
-	BYTE		N96     Fn4   v108
-	BYTE		N96     Dn5   v100
-	BYTE	W96
+        BYTE           N96     Dn3
+        BYTE   W96
 // 009   ----------------------------------------
-	BYTE		        Gn3   v096
-	BYTE		N96     Gn4   v108
-	BYTE		N96     Cs5   v100
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_2_1
 // 010   ----------------------------------------
-	BYTE		        Cs4   v096
-	BYTE		N96     En4   v108
-	BYTE		N96     En5   v100
-	BYTE	W96
+        BYTE           TIE     Gn3   v100
+        BYTE   W96
 // 011   ----------------------------------------
-	BYTE		N48     En4   v096
-	BYTE		N96     An4   v108
-	BYTE		N96     Dn5   v100
-	BYTE	W48
-	BYTE		N48     Dn4   v096
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_2_3
 // 012   ----------------------------------------
-	BYTE		N96     As3 
-	BYTE		N96     Fn4   v108
-	BYTE		N96     As4   v100
-	BYTE	W96
+        BYTE           TIE     An3   v100
+        BYTE   W96
 // 013   ----------------------------------------
-	BYTE		        An3   v096
-	BYTE		N96     En4   v108
-	BYTE		N96     An4   v100
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_2_5
 // 014   ----------------------------------------
-	BYTE		        En4   v096
-	BYTE		N96     An4   v108
-	BYTE		N96     En5   v100
-	BYTE	W96
+        BYTE           N96     En3   v100
+        BYTE   W96
 // 015   ----------------------------------------
-	BYTE		TIE     Fn3   v096
-	BYTE		TIE     Dn4   v108
-	BYTE		TIE     An4   v100
-	BYTE		TIE     Dn5 
-	BYTE	W96
+        BYTE           TIE     Fn3
+        BYTE   W96
 // 016   ----------------------------------------
-	BYTE	W96
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT     Fn3 
-	BYTE		        Dn4 
-	BYTE		        An4 
-	BYTE		        Dn5 
+        BYTE   W96
 // 018   ----------------------------------------
-	BYTE		N72     Fn3   v096
-	BYTE		TIE     Dn4   v108
-	BYTE		N72     An4   v100
-	BYTE		TIE     Dn5 
-	BYTE	W96
+        BYTE           EOT
+        BYTE           TIE     Dn3
+        BYTE   W96
 // 019   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT     Dn4 
-	BYTE		        Dn5 
+        BYTE   W96
 // 020   ----------------------------------------
-	BYTE		N48     Bn3   v108
-	BYTE		N96     Cs5   v100
-	BYTE	W48
-	BYTE		N48     As3   v108
-	BYTE	W48
+        BYTE           EOT
+        BYTE           N48     Cn3
+        BYTE   W48
+        BYTE                   Bn2
+        BYTE   W48
 // 021   ----------------------------------------
-	BYTE		N96     Fn3   v084
-	BYTE		N96     Fs4   v100
-	BYTE		N96     As4   v108
-	BYTE		N96     Ds5   v100
-	BYTE	W96
+        BYTE           N96     Ds3
+        BYTE   W96
 // 022   ----------------------------------------
-LordOfADeadEmpire_Insertable_2_022:
-	BYTE		N96     Fn4   v100
-	BYTE		N96     Gs4   v108
-	BYTE		N96     Dn5   v100
-	BYTE	W96
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_2_22:
+        BYTE           N24     Dn3   v100
+        BYTE   W24
+        BYTE                   As2
+        BYTE   W24
+        BYTE                   Dn3
+        BYTE   W24
+        BYTE                   Fn3
+        BYTE   W24
+        BYTE   PEND
 // 023   ----------------------------------------
-LordOfADeadEmpire_Insertable_2_023:
-	BYTE		N96     En4   v100
-	BYTE		N96     Gs4   v108
-	BYTE		N96     Cs5   v100
-	BYTE	W96
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_2_23:
+        BYTE           N48     Gs3   v100
+        BYTE   W48
+        BYTE                   Fs3
+        BYTE   W48
+        BYTE   PEND
 // 024   ----------------------------------------
-LordOfADeadEmpire_Insertable_2_024:
-	BYTE		N96     Ds4   v100
-	BYTE		N96     Gn4   v108
-	BYTE		N96     Cs5   v100
-	BYTE	W96
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_2_24:
+        BYTE           N48     Fn3   v100
+        BYTE   W48
+        BYTE                   Ds3
+        BYTE   W48
+        BYTE   PEND
 // 025   ----------------------------------------
-LordOfADeadEmpire_Insertable_2_025:
-	BYTE		N96     Cs4   v100
-	BYTE		N96     Gn4   v108
-	BYTE		N96     Bn4   v100
-	BYTE	W96
-	BYTE	PEND
+        BYTE           N96     Bn2
+        BYTE   W96
 // 026   ----------------------------------------
-LordOfADeadEmpire_Insertable_2_026:
-	BYTE		N96     Bn3   v100
-	BYTE		N96     Fn4   v108
-	BYTE		N96     As4   v100
-	BYTE	W96
-	BYTE	PEND
+        BYTE                   Cn3
+        BYTE   W96
 // 027   ----------------------------------------
-LordOfADeadEmpire_Insertable_2_027:
-	BYTE		TIE     Dn4   v100
-	BYTE		TIE     Fn4   v108
-	BYTE		N96     Cs5   v104
-	BYTE	W96
-	BYTE	PEND
+        BYTE                   Dn3
+        BYTE   W96
 // 028   ----------------------------------------
-	BYTE		        Cn5 
-	BYTE	W96
-	BYTE		EOT     Dn4 
-	BYTE		        Fn4 
+        BYTE                   Ds3
+        BYTE   W96
 // 029   ----------------------------------------
-	BYTE		N96     Fs4   v100
-	BYTE		N96     As4   v108
-	BYTE		N96     Cs5   v080
-	BYTE		N96     Ds5   v100
-	BYTE	W96
+        BYTE           N06
+        BYTE   W96
 // 030   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_022
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_2_22
 // 031   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_023
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_2_23
 // 032   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_024
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_2_24
 // 033   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_025
+        BYTE           N96     Bn2   v100
+        BYTE   W96
 // 034   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_026
+        BYTE                   Cn3
+        BYTE   W96
 // 035   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_027
+        BYTE                   Dn3
+        BYTE   W96
 // 036   ----------------------------------------
-	BYTE		N96     Cn5   v104
-	BYTE	W96
-	BYTE		EOT     Dn4 
-	BYTE		        Fn4 
+        BYTE                   Ds3
+        BYTE   W96
 // 037   ----------------------------------------
-LordOfADeadEmpire_Insertable_2_037:
-	BYTE		N96     As3   v100
-	BYTE		N96     Ds4   v108
-	BYTE		N96     As4   v104
-	BYTE	W96
-	BYTE	PEND
+        BYTE                   As2
+        BYTE   W96
 // 038   ----------------------------------------
-LordOfADeadEmpire_Insertable_2_038:
-	BYTE		N96     An3   v100
-	BYTE		N96     Dn4   v108
-	BYTE		N96     As4   v104
-	BYTE	W96
-	BYTE	PEND
+        BYTE                   An2
+        BYTE   W96
 // 039   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_037
+        BYTE                   As2
+        BYTE   W96
 // 040   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_038
+        BYTE                   Bn2
+        BYTE   W96
 // 041   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_037
+        BYTE                   As2
+        BYTE   W96
 // 042   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_038
+        BYTE                   An2
+        BYTE   W96
 // 043   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_2_037
+        BYTE                   As2
+        BYTE   W96
 // 044   ----------------------------------------
-	BYTE		N96     Gs3   v100
-	BYTE		N96     Cs4   v108
-	BYTE		N96     Gs4   v104
-	BYTE	W96
+        BYTE                   Cs3
+        BYTE   W96
 // 045   ----------------------------------------
-	BYTE		TIE     Bn3   v100
-	BYTE		TIE     Ds4   v108
-	BYTE		TIE     Fs4   v104
-	BYTE	W96
+        BYTE           TIE     Bn2
+        BYTE   W96
 // 046   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT     Bn3 
-	BYTE		        Ds4 
-	BYTE		        Fs4 
+        BYTE   W96
 // 047   ----------------------------------------
-	BYTE		TIE     Cn4   v100
-	BYTE		TIE     Ds4   v108
-	BYTE		N96     Fs4   v104
-	BYTE	W96
+        BYTE           EOT
+        BYTE           TIE     Cn3
+        BYTE   W96
 // 048   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT     Cn4 
-	BYTE		        Ds4 
+        BYTE   W96
 // 049   ----------------------------------------
-	BYTE		N96     Bn3   v076
-	BYTE		TIE     Ds4   v108
-	BYTE		N96     Fs4   v104
-	BYTE	W96
+        BYTE           EOT
+        BYTE           TIE     Cs3
+        BYTE   W96
 // 050   ----------------------------------------
-	BYTE		        Cn4   v100
-	BYTE	W96
-	BYTE		EOT     Ds4 
+        BYTE   W96
 // 051   ----------------------------------------
-	BYTE		N96     Cs4   v076
-	BYTE		N96     Fs4 
-	BYTE		TIE     Gs4   v104
-	BYTE	W96
+        BYTE           EOT
+        BYTE           TIE     Dn3
+        BYTE   W96
 // 052   ----------------------------------------
-	BYTE		N96     Dn4   v100
-	BYTE		N96     Fn4   v108
-	BYTE	W96
-	BYTE		EOT     Gs4 
-	BYTE	GoTo
-	 POIN2	LordOfADeadEmpire_Insertable_2_B1
-LordOfADeadEmpire_Insertable_2_B2:
+        BYTE   W96
 // 053   ----------------------------------------
-	BYTE	FINE
+        BYTE           EOT
+        BYTE   GoTo
+         POIN2  LordOfADeadEmpire_Insertable_2_LOOP
+        BYTE   FINE
 
-//**************** Track 3 (Midi-Chn.3) ****************//
+//****************** Track 3 (Midi-Chn.3) ******************//
 
 LordOfADeadEmpire_Insertable_3:
-	BYTE	KEYSH   LordOfADeadEmpire_Insertable_key+0
-LordOfADeadEmpire_Insertable_3_B1:
+        BYTE   KEYSH   LordOfADeadEmpire_Insertable_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   109
-	BYTE		VOL     64*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		PAN     c_v+42
-	BYTE		N96     Dn3   v100
-	BYTE	W96
+LordOfADeadEmpire_Insertable_3_LOOP:
+        BYTE           VOICE   123
+        BYTE           VOL     48
+        BYTE           N06     An1   v102
+        BYTE           N96     Fn2   v104
+        BYTE   W24
+        BYTE           N06     Fn1   v102
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE           N14
+        BYTE   W16
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
 // 001   ----------------------------------------
-LordOfADeadEmpire_Insertable_3_001:
-	BYTE		N24     Cs3   v100
-	BYTE	W24
-	BYTE		        An2 
-	BYTE	W24
-	BYTE		        Cs3 
-	BYTE	W24
-	BYTE		        Fn3 
-	BYTE	W24
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_3_1:
+        BYTE           N06     An1   v102
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE   PEND
 // 002   ----------------------------------------
-	BYTE		TIE     Gn3 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_3_2:
+        BYTE           N06     An1   v102
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE           N14
+        BYTE   W16
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE   PEND
 // 003   ----------------------------------------
-	BYTE	W24
-	BYTE		EOT   
-	BYTE		N24     Fn3 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 004   ----------------------------------------
-	BYTE		TIE     An3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_2
 // 005   ----------------------------------------
-	BYTE	W24
-	BYTE		EOT   
-	BYTE		N24     Dn3 
-	BYTE	W24
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        Gn3 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 006   ----------------------------------------
-	BYTE		N48     En3 
-	BYTE	W48
-	BYTE		        Fn3 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_2
 // 007   ----------------------------------------
-	BYTE		        Cn4 
-	BYTE	W48
-	BYTE		        As3 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 008   ----------------------------------------
-	BYTE		N96     Dn3 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_3_8:
+        BYTE           N06     An1   v102
+        BYTE           N48     Cs2   v104
+        BYTE   W24
+        BYTE           N06     Fn1   v102
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE   PEND
 // 009   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_3_001
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 010   ----------------------------------------
-	BYTE		TIE     Gn3   v100
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_8
 // 011   ----------------------------------------
-	BYTE	W24
-	BYTE		EOT   
-	BYTE		N24     Fn3 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 012   ----------------------------------------
-	BYTE		TIE     An3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_8
 // 013   ----------------------------------------
-	BYTE	W24
-	BYTE		EOT   
-	BYTE		N24     Dn3 
-	BYTE	W24
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        Gn3 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 014   ----------------------------------------
-	BYTE		N96     En3 
-	BYTE	W96
+        BYTE           N06     An1   v102
+        BYTE           N96     Cs2   v104
+        BYTE   W24
+        BYTE           N06     Fn1   v102
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
 // 015   ----------------------------------------
-	BYTE		TIE     Fn3 
-	BYTE	W96
+        BYTE           N48     Fn2   v104
+        BYTE   W48
+        BYTE           N18     An2   v102
+        BYTE   W18
+        BYTE           N30     Fn2
+        BYTE   W06
+        BYTE           N06     Dn2   v108
+        BYTE   W08
+        BYTE                   Dn2   v102
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W06
+        BYTE           N14     Cs2
+        BYTE   W02
 // 016   ----------------------------------------
-	BYTE	W96
+LordOfADeadEmpire_Insertable_3_16:
+        BYTE   W24
+        BYTE           N18     An2   v127
+        BYTE   W18
+        BYTE           N30     Fn2   v102
+        BYTE   W06
+        BYTE           N06     Dn2   v108
+        BYTE   W08
+        BYTE                   Dn2   v102
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W06
+        BYTE           N24     Cs2   v102   gtp2
+        BYTE   W24
+        BYTE   W02
+        BYTE   PEND
 // 017   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT   
+        BYTE           N18     An2   v127
+        BYTE   W18
+        BYTE           N30     Fn2   v102
+        BYTE   W06
+        BYTE           N06     Dn2   v108
+        BYTE   W08
+        BYTE                   Dn2   v102
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W06
+        BYTE           N24     Cs2   v102   gtp2
+        BYTE   W24
+        BYTE   W02
+        BYTE           N18     An2   v127
+        BYTE   W18
+        BYTE           N30     Fn2   v102
+        BYTE   W06
 // 018   ----------------------------------------
-	BYTE		TIE     Dn3 
-	BYTE	W96
+        BYTE           N06     Dn2   v108
+        BYTE   W08
+        BYTE                   Dn2   v102
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W06
+        BYTE           N24     Cs2   v102   gtp2
+        BYTE   W24
+        BYTE   W02
+        BYTE           N18     An2   v127
+        BYTE   W18
+        BYTE           N30     Fn2   v102
+        BYTE   W06
+        BYTE           N06     Dn2   v108
+        BYTE   W08
+        BYTE                   Dn2   v102
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W06
+        BYTE           N24     Cs2   v102   gtp2
+        BYTE   W02
 // 019   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT   
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_16
 // 020   ----------------------------------------
-	BYTE		N48     Cn3 
-	BYTE	W48
-	BYTE		        Bn2 
-	BYTE	W48
+        BYTE           N18     An2   v127
+        BYTE   W18
+        BYTE           N30     Fn2   v102
+        BYTE   W06
+        BYTE           N06     Dn2   v108
+        BYTE   W08
+        BYTE                   Dn2   v102
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W06
+        BYTE           N24     Cs2   v102   gtp2
+        BYTE   W24
+        BYTE   W02
+        BYTE           N18     An2
+        BYTE   W24
 // 021   ----------------------------------------
-	BYTE		N96     Ds3 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_3_21:
+        BYTE           N96     Cs2   v104
+        BYTE           N06     An1   v102
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE           N14
+        BYTE   W16
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE   PEND
 // 022   ----------------------------------------
-LordOfADeadEmpire_Insertable_3_022:
-	BYTE		N24     Dn3   v100
-	BYTE	W24
-	BYTE		        As2 
-	BYTE	W24
-	BYTE		        Dn3 
-	BYTE	W24
-	BYTE		        Fn3 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 023   ----------------------------------------
-LordOfADeadEmpire_Insertable_3_023:
-	BYTE		N48     Gs3   v100
-	BYTE	W48
-	BYTE		        Fs3 
-	BYTE	W48
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_2
 // 024   ----------------------------------------
-LordOfADeadEmpire_Insertable_3_024:
-	BYTE		N48     Fn3   v100
-	BYTE	W48
-	BYTE		        Ds3 
-	BYTE	W48
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 025   ----------------------------------------
-	BYTE		N96     Bn2 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_21
 // 026   ----------------------------------------
-	BYTE		        Cn3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 027   ----------------------------------------
-	BYTE		        Dn3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_2
 // 028   ----------------------------------------
-	BYTE		        Ds3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 029   ----------------------------------------
-	BYTE		N06   
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_21
 // 030   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_3_022
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 031   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_3_023
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_2
 // 032   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_3_024
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 033   ----------------------------------------
-	BYTE		N96     Bn2   v100
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_21
 // 034   ----------------------------------------
-	BYTE		        Cn3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 035   ----------------------------------------
-	BYTE		        Dn3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_2
 // 036   ----------------------------------------
-	BYTE		        Ds3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 037   ----------------------------------------
-	BYTE		        As2 
-	BYTE	W96
+        BYTE           N96     Fn2   v104
+        BYTE   W96
 // 038   ----------------------------------------
-	BYTE		        An2 
-	BYTE	W96
+        BYTE   W96
 // 039   ----------------------------------------
-	BYTE		        As2 
-	BYTE	W96
+        BYTE   W96
 // 040   ----------------------------------------
-	BYTE		        Bn2 
-	BYTE	W96
+        BYTE   W96
 // 041   ----------------------------------------
-	BYTE		        As2 
-	BYTE	W96
+        BYTE                   Fn2
+        BYTE   W96
 // 042   ----------------------------------------
-	BYTE		        An2 
-	BYTE	W96
+        BYTE   W96
 // 043   ----------------------------------------
-	BYTE		        As2 
-	BYTE	W96
+        BYTE   W96
 // 044   ----------------------------------------
-	BYTE		        Cs3 
-	BYTE	W96
+        BYTE   W96
 // 045   ----------------------------------------
-	BYTE		TIE     Bn2 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_21
 // 046   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT   
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 047   ----------------------------------------
-	BYTE		TIE     Cn3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_21
 // 048   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT   
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 049   ----------------------------------------
-	BYTE		TIE     Cs3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_21
 // 050   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT   
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 051   ----------------------------------------
-	BYTE		TIE     Dn3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_21
 // 052   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT   
-	BYTE	GoTo
-	 POIN2	LordOfADeadEmpire_Insertable_3_B1
-LordOfADeadEmpire_Insertable_3_B2:
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_3_1
 // 053   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  LordOfADeadEmpire_Insertable_3_LOOP
+        BYTE   FINE
 
-//**************** Track 4 (Midi-Chn.4) ****************//
+//****************** Track 4 (Midi-Chn.4) ******************//
 
 LordOfADeadEmpire_Insertable_4:
-	BYTE	KEYSH   LordOfADeadEmpire_Insertable_key+0
-LordOfADeadEmpire_Insertable_4_B1:
+        BYTE   KEYSH   LordOfADeadEmpire_Insertable_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   123
-	BYTE		VOL     73*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		N06     An1   v104
-	BYTE		N96     Fn2 
-	BYTE	W24
-	BYTE		N06     Fn1 
-	BYTE	W24
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N14   
-	BYTE	W16
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
+LordOfADeadEmpire_Insertable_4_LOOP:
+        BYTE           VOICE   101
+        BYTE           VOL     69
+        BYTE           PAN     c_v-29
+        BYTE   W24
+        BYTE           N24     An3   v104
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W24
 // 001   ----------------------------------------
-LordOfADeadEmpire_Insertable_4_001:
-	BYTE		N06     An1   v104
-	BYTE	W24
-	BYTE		        Fn1 
-	BYTE	W24
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_4_1:
+        BYTE           N48     An3   v104
+        BYTE   W48
+        BYTE                   Gn3
+        BYTE   W48
+        BYTE   PEND
 // 002   ----------------------------------------
-LordOfADeadEmpire_Insertable_4_002:
-	BYTE		N06     An1   v104
-	BYTE	W24
-	BYTE		        Fn1 
-	BYTE	W24
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N14   
-	BYTE	W16
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_4_2:
+        BYTE   W24
+        BYTE           N24     Gn3   v104
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+        BYTE                   En3
+        BYTE   W24
+        BYTE   PEND
 // 003   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+LordOfADeadEmpire_Insertable_4_3:
+        BYTE           N48     En3   v104
+        BYTE   W48
+        BYTE                   Dn3
+        BYTE   W48
+        BYTE   PEND
 // 004   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_002
+LordOfADeadEmpire_Insertable_4_4:
+        BYTE           N24     Gn3   v104
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   Dn3
+        BYTE   W24
+        BYTE           N48     Gn3
+        BYTE   W24
+        BYTE   PEND
 // 005   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+LordOfADeadEmpire_Insertable_4_5:
+        BYTE   W24
+        BYTE           N24     An3   v104
+        BYTE   W24
+        BYTE           N36
+        BYTE   W48
+        BYTE   PEND
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_002
+        BYTE           N24     Fn3
+        BYTE   W24
+        BYTE                   Fn3
+        BYTE   W24
+        BYTE                   Bn3
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
 // 007   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE           N48     Bn3
+        BYTE   W48
+        BYTE                   Cs4
+        BYTE   W48
 // 008   ----------------------------------------
-LordOfADeadEmpire_Insertable_4_008:
-	BYTE		N06     An1   v104
-	BYTE		N48     Cs2 
-	BYTE	W24
-	BYTE		N06     Fn1 
-	BYTE	W24
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_4_8:
+        BYTE   W24
+        BYTE           N24     An3   v104
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W24
+        BYTE   PEND
 // 009   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_1
 // 010   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_008
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_2
 // 011   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_3
 // 012   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_008
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_4
 // 013   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_5
 // 014   ----------------------------------------
-	BYTE		N06     An1   v104
-	BYTE		N96     Cs2 
-	BYTE	W24
-	BYTE		N06     Fn1 
-	BYTE	W24
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
+LordOfADeadEmpire_Insertable_4_14:
+        BYTE           N24     Gn3   v104
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   En4
+        BYTE   W24
+        BYTE                   Fn4
+        BYTE   W24
+        BYTE   PEND
 // 015   ----------------------------------------
-	BYTE		N48     Fn2 
-	BYTE	W48
-	BYTE		N18     An2 
-	BYTE	W18
-	BYTE		N30     Fn2 
-	BYTE	W06
-	BYTE		N06     Dn2   v108
-	BYTE	W08
-	BYTE		        Dn2   v104
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W06
-	BYTE		N14     Cs2 
-	BYTE	W02
+        BYTE           N48     En4
+        BYTE   W48
+        BYTE           TIE     Dn4
+        BYTE   W48
 // 016   ----------------------------------------
-LordOfADeadEmpire_Insertable_4_016:
-	BYTE	W24
-	BYTE		N18     An2   v127
-	BYTE	W18
-	BYTE		N30     Fn2   v104
-	BYTE	W06
-	BYTE		N06     Dn2   v108
-	BYTE	W08
-	BYTE		        Dn2   v104
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W06
-	BYTE		N24     Cs2 
-	BYTE	W24
-	BYTE	W02
-	BYTE	PEND
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE		N18     An2   v127
-	BYTE	W18
-	BYTE		N30     Fn2   v104
-	BYTE	W06
-	BYTE		N06     Dn2   v108
-	BYTE	W08
-	BYTE		        Dn2   v104
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W06
-	BYTE		N24     Cs2 
-	BYTE	W24
-	BYTE	W02
-	BYTE		N18     An2   v127
-	BYTE	W18
-	BYTE		N30     Fn2   v104
-	BYTE	W06
+        BYTE   W96
 // 018   ----------------------------------------
-	BYTE		N06     Dn2   v108
-	BYTE	W08
-	BYTE		        Dn2   v104
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W06
-	BYTE		N24     Cs2 
-	BYTE	W24
-	BYTE	W02
-	BYTE		N18     An2   v127
-	BYTE	W18
-	BYTE		N30     Fn2   v104
-	BYTE	W06
-	BYTE		N06     Dn2   v108
-	BYTE	W08
-	BYTE		        Dn2   v104
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W06
-	BYTE		N24     Cs2 
-	BYTE	W02
+        BYTE           EOT
+        BYTE   W96
 // 019   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_016
+        BYTE   W96
 // 020   ----------------------------------------
-	BYTE		N18     An2   v127
-	BYTE	W18
-	BYTE		N30     Fn2   v104
-	BYTE	W06
-	BYTE		N06     Dn2   v108
-	BYTE	W08
-	BYTE		        Dn2   v104
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W06
-	BYTE		N24     Cs2 
-	BYTE	W24
-	BYTE	W02
-	BYTE		N18     An2 
-	BYTE	W24
+        BYTE   W96
 // 021   ----------------------------------------
-LordOfADeadEmpire_Insertable_4_021:
-	BYTE		N06     An1   v104
-	BYTE		N96     Cs2 
-	BYTE	W24
-	BYTE		N06     Fn1 
-	BYTE	W24
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N14   
-	BYTE	W16
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE	PEND
+        BYTE   W18
+        BYTE           N03     Ds3   v096
+        BYTE   W03
+        BYTE                   Fn3
+        BYTE   W03
+        BYTE           N24     Fs3
+        BYTE   W24
+        BYTE                   Fn3
+        BYTE   W24
+        BYTE                   Ds3
+        BYTE   W24
 // 022   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+LordOfADeadEmpire_Insertable_4_22:
+        BYTE           N48     Ds3   v096
+        BYTE   W48
+        BYTE           N24     Cs3
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
+        BYTE   PEND
 // 023   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_002
+LordOfADeadEmpire_Insertable_4_23:
+        BYTE           N48     Bn2   v096
+        BYTE   W48
+        BYTE                   As2
+        BYTE   W48
+        BYTE   PEND
 // 024   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+LordOfADeadEmpire_Insertable_4_24:
+        BYTE   W24
+        BYTE           N24     Gs2   v096
+        BYTE   W24
+        BYTE                   As2
+        BYTE   W24
+        BYTE                   Cs3
+        BYTE   W24
+        BYTE   PEND
 // 025   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_021
+LordOfADeadEmpire_Insertable_4_25:
+        BYTE           N48     Cs3   v096
+        BYTE   W48
+        BYTE           N72     Ds3
+        BYTE   W48
+        BYTE   PEND
 // 026   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+LordOfADeadEmpire_Insertable_4_26:
+        BYTE   W24
+        BYTE           N24     Bn2   v096
+        BYTE   W24
+        BYTE                   Cs3
+        BYTE   W24
+        BYTE                   Ds3
+        BYTE   W24
+        BYTE   PEND
 // 027   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_002
+        BYTE           TIE     Fs3
+        BYTE   W96
 // 028   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE   W96
 // 029   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_021
+        BYTE           EOT
+        BYTE   W18
+        BYTE           N03     Ds3
+        BYTE   W03
+        BYTE                   Fn3
+        BYTE   W03
+        BYTE           N24     Fs3
+        BYTE   W24
+        BYTE                   Fn3
+        BYTE   W24
+        BYTE                   Ds3
+        BYTE   W24
 // 030   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_22
 // 031   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_002
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_23
 // 032   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_24
 // 033   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_021
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_25
 // 034   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_26
 // 035   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_002
+        BYTE           TIE     Fs3   v096
+        BYTE   W96
 // 036   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE   W96
 // 037   ----------------------------------------
-	BYTE		N96     Fn2   v104
-	BYTE	W96
+        BYTE           EOT
+        BYTE   W96
 // 038   ----------------------------------------
-	BYTE	W96
+LordOfADeadEmpire_Insertable_4_38:
+        BYTE   W24
+        BYTE           N24     Cs3   v096
+        BYTE   W24
+        BYTE                   An2
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+        BYTE   PEND
 // 039   ----------------------------------------
-	BYTE	W96
+        BYTE           N96     As2
+        BYTE   W96
 // 040   ----------------------------------------
-	BYTE	W96
+        BYTE           N48     Dn3
+        BYTE   W48
+        BYTE                   Cs3
+        BYTE   W48
 // 041   ----------------------------------------
-	BYTE		N96   
-	BYTE	W96
+        BYTE   W96
 // 042   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_38
 // 043   ----------------------------------------
-	BYTE	W96
+        BYTE           N96     As2   v096
+        BYTE   W96
 // 044   ----------------------------------------
-	BYTE	W96
+        BYTE           N48     Cs3
+        BYTE   W48
+        BYTE                   Gs2
+        BYTE   W48
 // 045   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_021
+LordOfADeadEmpire_Insertable_4_45:
+        BYTE           N48     Gs2   v096
+        BYTE   W48
+        BYTE           N96     Fs2
+        BYTE   W48
+        BYTE   PEND
 // 046   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+LordOfADeadEmpire_Insertable_4_46:
+        BYTE   W48
+        BYTE           N18     Ds2   v096
+        BYTE   W18
+        BYTE                   Fn2
+        BYTE   W18
+        BYTE           N12     Fs2
+        BYTE   W12
+        BYTE   PEND
 // 047   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_021
+        BYTE           N48     Gs2
+        BYTE   W48
+        BYTE                   Fs2
+        BYTE   W48
 // 048   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE                   Fn2
+        BYTE   W48
+        BYTE                   Cs2
+        BYTE   W48
 // 049   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_021
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_45
 // 050   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_46
 // 051   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_021
+        BYTE           N48     Gs2   v096
+        BYTE   W48
+        BYTE                   Cs3
+        BYTE   W48
 // 052   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_4_001
-	BYTE	GoTo
-	 POIN2	LordOfADeadEmpire_Insertable_4_B1
-LordOfADeadEmpire_Insertable_4_B2:
+        BYTE           N08     Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
 // 053   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  LordOfADeadEmpire_Insertable_4_LOOP
+        BYTE   FINE
 
-//**************** Track 5 (Midi-Chn.5) ****************//
+//****************** Track 5 (Midi-Chn.5) ******************//
 
 LordOfADeadEmpire_Insertable_5:
-	BYTE	KEYSH   LordOfADeadEmpire_Insertable_key+0
-LordOfADeadEmpire_Insertable_5_B1:
+        BYTE   KEYSH   LordOfADeadEmpire_Insertable_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   101
-	BYTE		VOL     104*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		PAN     c_v-29
-	BYTE	W24
-	BYTE		N24     An3   v104
-	BYTE	W24
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
+LordOfADeadEmpire_Insertable_5_LOOP:
+        BYTE           VOICE   52
+        BYTE           VOL     56
+        BYTE           PAN     c_v+33
+        BYTE   W96
 // 001   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_001:
-	BYTE		N48     An3   v104
-	BYTE	W48
-	BYTE		        Gn3 
-	BYTE	W48
-	BYTE	PEND
+        BYTE   W96
 // 002   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_002:
-	BYTE	W24
-	BYTE		N24     Gn3   v104
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
-	BYTE		        En3 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W96
 // 003   ----------------------------------------
-	BYTE		N48   
-	BYTE	W48
-	BYTE		        Dn3 
-	BYTE	W48
+        BYTE   W96
 // 004   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_004:
-	BYTE		N24     Gn3   v104
-	BYTE	W24
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		        Dn3 
-	BYTE	W24
-	BYTE		N48     Gn3 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W96
 // 005   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_005:
-	BYTE	W24
-	BYTE		N24     An3   v104
-	BYTE	W24
-	BYTE		N36   
-	BYTE	W48
-	BYTE	PEND
+        BYTE   W96
 // 006   ----------------------------------------
-	BYTE		N24     Fn3 
-	BYTE	W24
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        Bn3 
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
+        BYTE   W96
 // 007   ----------------------------------------
-	BYTE		N48     Bn3 
-	BYTE	W48
-	BYTE		        Cs4 
-	BYTE	W48
+        BYTE   W96
 // 008   ----------------------------------------
-	BYTE	W24
-	BYTE		N24     An3 
-	BYTE	W24
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_8
 // 009   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_001
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_1
 // 010   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_002
+        BYTE   W24
+        BYTE           N24     Gn3   v104
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+        BYTE                   En4
+        BYTE   W24
 // 011   ----------------------------------------
-	BYTE		N48     En3   v104
-	BYTE	W48
-	BYTE		        Dn3 
-	BYTE	W48
+        BYTE           N48
+        BYTE   W48
+        BYTE                   Dn4
+        BYTE   W48
 // 012   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_004
+        BYTE           N24     Gn3
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   Dn3   v080
+        BYTE   W24
+        BYTE           N48     Cn4   v104
+        BYTE   W24
 // 013   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_005
+        BYTE   W24
+        BYTE           N24     As3
+        BYTE   W24
+        BYTE           N36     An3   v100
+        BYTE   W48
 // 014   ----------------------------------------
-	BYTE		N24     Gn3   v104
-	BYTE	W24
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		        En4 
-	BYTE	W24
-	BYTE		        Fn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_4_14
 // 015   ----------------------------------------
-	BYTE		N48     En4 
-	BYTE	W48
-	BYTE		TIE     Dn4 
-	BYTE	W48
+        BYTE           TIE     An4   v104
+        BYTE   W24
+        BYTE           N24     An3
+        BYTE   W24
+        BYTE           N36     As3
+        BYTE   W48
 // 016   ----------------------------------------
-	BYTE	W96
+LordOfADeadEmpire_Insertable_5_16:
+        BYTE           N24     An3   v104
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W24
+        BYTE           N36     Cn4
+        BYTE   W48
+        BYTE   PEND
 // 017   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT   
+        BYTE           N24     As3
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
+        BYTE                   Ds4
+        BYTE   W24
 // 018   ----------------------------------------
-	BYTE	W96
+        BYTE           EOT     An4
+        BYTE           N24
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
+        BYTE           N36     As3
+        BYTE   W48
 // 019   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_16
 // 020   ----------------------------------------
-	BYTE	W96
+        BYTE           N24     Gs3   v104
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
 // 021   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_021:
-	BYTE	W18
-	BYTE		N03     Ds3   v096
-	BYTE	W03
-	BYTE		        Fn3 
-	BYTE	W03
-	BYTE		N24     Fs3 
-	BYTE	W24
-	BYTE		        Fn3 
-	BYTE	W24
-	BYTE		        Ds3 
-	BYTE	W24
-	BYTE	PEND
+        BYTE           N96     As4
+        BYTE   W96
 // 022   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_022:
-	BYTE		N48     Ds3   v096
-	BYTE	W48
-	BYTE		N24     Cs3 
-	BYTE	W24
-	BYTE		        Gs2 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W96
 // 023   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_023:
-	BYTE		N48     Bn2   v096
-	BYTE	W48
-	BYTE		        As2 
-	BYTE	W48
-	BYTE	PEND
+        BYTE   W96
 // 024   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_024:
-	BYTE	W24
-	BYTE		N24     Gs2   v096
-	BYTE	W24
-	BYTE		        As2 
-	BYTE	W24
-	BYTE		        Cs3 
-	BYTE	W24
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_5_24:
+        BYTE   W24
+        BYTE           N24     Gs3   v104
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W24
+        BYTE                   Cs4
+        BYTE   W24
+        BYTE   PEND
 // 025   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_025:
-	BYTE		N48     Cs3   v096
-	BYTE	W48
-	BYTE		N72     Ds3 
-	BYTE	W48
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_5_25:
+        BYTE           N48     Cs4   v104
+        BYTE   W48
+        BYTE           N72     Ds4
+        BYTE   W48
+        BYTE   PEND
 // 026   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_026:
-	BYTE	W24
-	BYTE		N24     Bn2   v096
-	BYTE	W24
-	BYTE		        Cs3 
-	BYTE	W24
-	BYTE		        Ds3 
-	BYTE	W24
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_5_26:
+        BYTE   W24
+        BYTE           N24     Bn3   v104
+        BYTE   W24
+        BYTE                   Cs4
+        BYTE   W24
+        BYTE                   Ds4
+        BYTE   W24
+        BYTE   PEND
 // 027   ----------------------------------------
-	BYTE		TIE     Fs3 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_5_27:
+        BYTE           N48     Cs4   v104
+        BYTE   W48
+        BYTE                   Fn4
+        BYTE   W48
+        BYTE   PEND
 // 028   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT   
+LordOfADeadEmpire_Insertable_5_28:
+        BYTE           N48     Cn4   v104
+        BYTE   W48
+        BYTE                   Dn4
+        BYTE   W48
+        BYTE   PEND
 // 029   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_021
+        BYTE   W96
 // 030   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_022
+        BYTE   W96
 // 031   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_023
+        BYTE   W96
 // 032   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_024
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_24
 // 033   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_025
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_25
 // 034   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_026
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_26
 // 035   ----------------------------------------
-	BYTE		TIE     Fs3   v096
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_27
 // 036   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT   
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_28
 // 037   ----------------------------------------
-	BYTE	W96
+LordOfADeadEmpire_Insertable_5_37:
+        BYTE   W24
+        BYTE           N24     Cs4   v104
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+        BYTE                   Cs4
+        BYTE   W24
+        BYTE   PEND
 // 038   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_038:
-	BYTE	W24
-	BYTE		N24     Cs3   v096
-	BYTE	W24
-	BYTE		        An2 
-	BYTE	W24
-	BYTE		        En2 
-	BYTE	W24
-	BYTE	PEND
+        BYTE           N96     An3
+        BYTE   W96
 // 039   ----------------------------------------
-	BYTE		N96     As2 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_37
 // 040   ----------------------------------------
-	BYTE		N48     Dn3 
-	BYTE	W48
-	BYTE		        Cs3 
-	BYTE	W48
+        BYTE           N48     Fn4   v104
+        BYTE   W48
+        BYTE                   Ds4
+        BYTE   W48
 // 041   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_37
 // 042   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_038
+        BYTE           N96     An3   v104
+        BYTE   W96
 // 043   ----------------------------------------
-	BYTE		N96     As2   v096
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_37
 // 044   ----------------------------------------
-	BYTE		N48     Cs3 
-	BYTE	W48
-	BYTE		        Gs2 
-	BYTE	W48
+        BYTE           N48     Fs4   v104
+        BYTE   W48
+        BYTE                   Fn4
+        BYTE   W48
 // 045   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_045:
-	BYTE		N48     Gs2   v096
-	BYTE	W48
-	BYTE		N96     Fs2 
-	BYTE	W48
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_5_45:
+        BYTE           N48     Fn4   v104
+        BYTE   W48
+        BYTE           TIE     Ds4
+        BYTE   W48
+        BYTE   PEND
 // 046   ----------------------------------------
-LordOfADeadEmpire_Insertable_5_046:
-	BYTE	W48
-	BYTE		N18     Ds2   v096
-	BYTE	W18
-	BYTE		        Fn2 
-	BYTE	W18
-	BYTE		N12     Fs2 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W72
+        BYTE           EOT
+        BYTE   W24
 // 047   ----------------------------------------
-	BYTE		N48     Gs2 
-	BYTE	W48
-	BYTE		        Fs2 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_45
 // 048   ----------------------------------------
-	BYTE		        Fn2 
-	BYTE	W48
-	BYTE		        Cs2 
-	BYTE	W48
+LordOfADeadEmpire_Insertable_5_48:
+        BYTE   W72
+        BYTE           EOT     Ds4
+        BYTE           N24     Ds4   v104
+        BYTE   W24
+        BYTE   PEND
 // 049   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_045
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_45
 // 050   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_5_046
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_5_48
 // 051   ----------------------------------------
-	BYTE		N48     Gs2   v096
-	BYTE	W48
-	BYTE		        Cs3 
-	BYTE	W48
+        BYTE           N96     Fn4   v104
+        BYTE   W96
 // 052   ----------------------------------------
-	BYTE		N08     Fn3 
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE	GoTo
-	 POIN2	LordOfADeadEmpire_Insertable_5_B1
-LordOfADeadEmpire_Insertable_5_B2:
+        BYTE                   Dn4
+        BYTE   W96
 // 053   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  LordOfADeadEmpire_Insertable_5_LOOP
+        BYTE   FINE
 
-//**************** Track 6 (Midi-Chn.6) ****************//
+//****************** Track 6 (Midi-Chn.6) ******************//
 
 LordOfADeadEmpire_Insertable_6:
-	BYTE	KEYSH   LordOfADeadEmpire_Insertable_key+0
-LordOfADeadEmpire_Insertable_6_B1:
+        BYTE   KEYSH   LordOfADeadEmpire_Insertable_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   52
-	BYTE		VOL     84*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		PAN     c_v+33
-	BYTE	W96
+LordOfADeadEmpire_Insertable_6_LOOP:
+        BYTE           VOICE   14
+        BYTE           VOL     32
+        BYTE           PAN     c_v+11
+        BYTE           N96     Dn4   v124
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE	W96
+        BYTE                   Cs4
+        BYTE   W96
 // 002   ----------------------------------------
-	BYTE	W96
+        BYTE                   Cn4
+        BYTE   W96
 // 003   ----------------------------------------
-	BYTE	W96
+        BYTE                   Bn3
+        BYTE   W96
 // 004   ----------------------------------------
-	BYTE	W96
+        BYTE                   As3
+        BYTE   W96
 // 005   ----------------------------------------
-	BYTE	W96
+        BYTE                   An3
+        BYTE   W96
 // 006   ----------------------------------------
-	BYTE	W96
+        BYTE                   Gs3
+        BYTE   W96
 // 007   ----------------------------------------
-	BYTE	W96
+        BYTE                   An3
+        BYTE   W96
 // 008   ----------------------------------------
-	BYTE	W24
-	BYTE		N24     An3   v104
-	BYTE	W24
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
+        BYTE                   Dn4
+        BYTE   W96
 // 009   ----------------------------------------
-	BYTE		N48     An3 
-	BYTE	W48
-	BYTE		        Gn3 
-	BYTE	W48
+        BYTE                   Cs4
+        BYTE   W96
 // 010   ----------------------------------------
-	BYTE	W24
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
-	BYTE		        En4 
-	BYTE	W24
+        BYTE                   En4
+        BYTE   W96
 // 011   ----------------------------------------
-	BYTE		N48   
-	BYTE	W48
-	BYTE		        Dn4 
-	BYTE	W48
+        BYTE                   Dn4
+        BYTE   W96
 // 012   ----------------------------------------
-	BYTE		N24     Gn3 
-	BYTE	W24
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		        Dn3   v080
-	BYTE	W24
-	BYTE		N48     Cn4   v104
-	BYTE	W24
+        BYTE                   Dn4
+        BYTE   W96
 // 013   ----------------------------------------
-	BYTE	W24
-	BYTE		N24     As3 
-	BYTE	W24
-	BYTE		N36     An3   v100
-	BYTE	W48
+        BYTE                   Cs4
+        BYTE   W96
 // 014   ----------------------------------------
-	BYTE		N24     Gn3   v104
-	BYTE	W24
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		        En4 
-	BYTE	W24
-	BYTE		        Fn4 
-	BYTE	W24
+        BYTE                   En4
+        BYTE   W96
 // 015   ----------------------------------------
-	BYTE		TIE     An4 
-	BYTE	W24
-	BYTE		N24     An3 
-	BYTE	W24
-	BYTE		N36     As3 
-	BYTE	W48
+        BYTE           N24     Dn4
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W48
 // 016   ----------------------------------------
-LordOfADeadEmpire_Insertable_6_016:
-	BYTE		N24     An3   v104
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
-	BYTE		N36     Cn4 
-	BYTE	W48
-	BYTE	PEND
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W24
+        BYTE           N48     Cn4
+        BYTE   W48
 // 017   ----------------------------------------
-	BYTE		N24     As3 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
-	BYTE		        Ds4 
-	BYTE	W24
-	BYTE		EOT     An4 
+        BYTE           N24     As3
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
+        BYTE                   Ds4
+        BYTE   W24
 // 018   ----------------------------------------
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		N36     As3 
-	BYTE	W48
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W48
 // 019   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_016
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W48
 // 020   ----------------------------------------
-	BYTE		N24     Gs3   v104
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
+        BYTE                   Gs3
+        BYTE   W24
+        BYTE                   As3
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
 // 021   ----------------------------------------
-	BYTE		N96     As4 
-	BYTE	W96
+        BYTE           N96     Ds4
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE	W96
+        BYTE                   Dn4
+        BYTE   W96
 // 023   ----------------------------------------
-	BYTE	W96
+        BYTE                   Cs4
+        BYTE   W96
 // 024   ----------------------------------------
-LordOfADeadEmpire_Insertable_6_024:
-	BYTE	W24
-	BYTE		N24     Gs3   v104
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
-	BYTE		        Cs4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE                   Cn4
+        BYTE   W96
 // 025   ----------------------------------------
-LordOfADeadEmpire_Insertable_6_025:
-	BYTE		N48     Cs4   v104
-	BYTE	W48
-	BYTE		N72     Ds4 
-	BYTE	W48
-	BYTE	PEND
+        BYTE                   Bn3
+        BYTE   W96
 // 026   ----------------------------------------
-LordOfADeadEmpire_Insertable_6_026:
-	BYTE	W24
-	BYTE		N24     Bn3   v104
-	BYTE	W24
-	BYTE		        Cs4 
-	BYTE	W24
-	BYTE		        Ds4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE                   An3
+        BYTE   W96
 // 027   ----------------------------------------
-LordOfADeadEmpire_Insertable_6_027:
-	BYTE		N48     Cs4   v104
-	BYTE	W48
-	BYTE		        Fn4 
-	BYTE	W48
-	BYTE	PEND
+        BYTE                   Gs3
+        BYTE   W96
 // 028   ----------------------------------------
-LordOfADeadEmpire_Insertable_6_028:
-	BYTE		N48     Cn4   v104
-	BYTE	W48
-	BYTE		        Dn4 
-	BYTE	W48
-	BYTE	PEND
+        BYTE   W96
 // 029   ----------------------------------------
-	BYTE	W96
+        BYTE                   Ds4
+        BYTE   W96
 // 030   ----------------------------------------
-	BYTE	W96
+        BYTE                   Dn4
+        BYTE   W96
 // 031   ----------------------------------------
-	BYTE	W96
+        BYTE                   Cs4
+        BYTE   W96
 // 032   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_024
+        BYTE                   Cn4
+        BYTE   W96
 // 033   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_025
+        BYTE                   Bn3
+        BYTE   W96
 // 034   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_026
+        BYTE                   An3
+        BYTE   W96
 // 035   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_027
+        BYTE           N48     Gs3
+        BYTE   W48
+        BYTE                   Bn3
+        BYTE   W48
 // 036   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_028
+        BYTE                   Ds4
+        BYTE   W48
+        BYTE                   Dn4
+        BYTE   W48
 // 037   ----------------------------------------
-LordOfADeadEmpire_Insertable_6_037:
-	BYTE	W24
-	BYTE		N24     Cs4   v104
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
-	BYTE		        Cs4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE           N96     Fs3
+        BYTE   W96
 // 038   ----------------------------------------
-	BYTE		N96     An3 
-	BYTE	W96
+        BYTE                   Fn3
+        BYTE   W96
 // 039   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_037
+        BYTE                   Fs3
+        BYTE   W96
 // 040   ----------------------------------------
-	BYTE		N48     Fn4   v104
-	BYTE	W48
-	BYTE		        Ds4 
-	BYTE	W48
+        BYTE           N48     As3
+        BYTE   W48
+        BYTE                   An3
+        BYTE   W48
 // 041   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_037
+        BYTE           N96     Fs3
+        BYTE   W96
 // 042   ----------------------------------------
-	BYTE		N96     An3   v104
-	BYTE	W96
+        BYTE                   Fn3
+        BYTE   W96
 // 043   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_037
+        BYTE                   Fs3
+        BYTE   W96
 // 044   ----------------------------------------
-	BYTE		N48     Fs4   v104
-	BYTE	W48
-	BYTE		        Fn4 
-	BYTE	W48
+        BYTE           N48     As3
+        BYTE   W48
+        BYTE                   Gs3
+        BYTE   W48
 // 045   ----------------------------------------
-LordOfADeadEmpire_Insertable_6_045:
-	BYTE		N48     Fn4   v104
-	BYTE	W48
-	BYTE		TIE     Ds4 
-	BYTE	W48
-	BYTE	PEND
+        BYTE           N24
+        BYTE   W48
+        BYTE           N48     Fs3
+        BYTE   W48
 // 046   ----------------------------------------
-	BYTE	W72
-	BYTE		EOT   
-	BYTE	W24
+LordOfADeadEmpire_Insertable_6_46:
+        BYTE   W48
+        BYTE           N24     Fs3   v124
+        BYTE   W48
+        BYTE   PEND
 // 047   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_045
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_6_46
 // 048   ----------------------------------------
-	BYTE	W72
-	BYTE		EOT     Ds4 
-	BYTE		N24     Ds4   v104
-	BYTE	W24
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_6_46
 // 049   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_6_045
+        BYTE   W48
+        BYTE           N48     Fn3   v124
+        BYTE   W48
 // 050   ----------------------------------------
-	BYTE	W72
-	BYTE		EOT     Ds4 
-	BYTE		N24     Ds4   v104
-	BYTE	W24
+LordOfADeadEmpire_Insertable_6_50:
+        BYTE   W48
+        BYTE           N24     Fn3   v124
+        BYTE   W48
+        BYTE   PEND
 // 051   ----------------------------------------
-	BYTE		N96     Fn4 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_6_50
 // 052   ----------------------------------------
-	BYTE		        Dn4 
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	LordOfADeadEmpire_Insertable_6_B1
-LordOfADeadEmpire_Insertable_6_B2:
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_6_50
 // 053   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  LordOfADeadEmpire_Insertable_6_LOOP
+        BYTE   FINE
 
-//**************** Track 7 (Midi-Chn.7) ****************//
+//****************** Track 7 (Midi-Chn.7) ******************//
 
 LordOfADeadEmpire_Insertable_7:
-	BYTE	KEYSH   LordOfADeadEmpire_Insertable_key+0
-LordOfADeadEmpire_Insertable_7_B1:
+        BYTE   KEYSH   LordOfADeadEmpire_Insertable_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   14
-	BYTE		VOL     48*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		PAN     c_v+11
-	BYTE		N96     Dn4   v124
-	BYTE	W96
+LordOfADeadEmpire_Insertable_7_LOOP:
+        BYTE           VOICE   47
+        BYTE           VOL     23
+        BYTE           PAN     c_v-11
+        BYTE           N24     Dn2   v127
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
 // 001   ----------------------------------------
-	BYTE		        Cs4 
-	BYTE	W96
+        BYTE           N24     Cs2
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Cs2
+        BYTE   W08
+        BYTE                   Cs2   v102
+        BYTE   W17
+        BYTE           N15     Cs2   v127
+        BYTE   W15
 // 002   ----------------------------------------
-	BYTE		        Cn4 
-	BYTE	W96
+        BYTE           N24     Cn2
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Cn2   v102
+        BYTE   W08
+        BYTE                   Cn2
+        BYTE   W17
+        BYTE           N15     Cn2   v127
+        BYTE   W15
 // 003   ----------------------------------------
-	BYTE		        Bn3 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_7_3:
+        BYTE           N24     Bn1   v127
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Bn1
+        BYTE   W08
+        BYTE                   Bn1
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
+        BYTE   PEND
 // 004   ----------------------------------------
-	BYTE		        As3 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_7_4:
+        BYTE           N24     As1   v127
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
+        BYTE   PEND
 // 005   ----------------------------------------
-	BYTE		        An3 
-	BYTE	W96
+        BYTE           N24     An1
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   An1   v102
+        BYTE   W08
+        BYTE                   An1   v127
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
 // 006   ----------------------------------------
-	BYTE		        Gs3 
-	BYTE	W96
+        BYTE           N24     Gs1
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Gs1
+        BYTE   W08
+        BYTE                   Gs1
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
 // 007   ----------------------------------------
-	BYTE		        An3 
-	BYTE	W96
+        BYTE           N24     An1
+        BYTE   W48
+        BYTE           N06     Cs2
+        BYTE   W08
+        BYTE                   Cs2
+        BYTE   W08
+        BYTE                   Cs2
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
 // 008   ----------------------------------------
-	BYTE		        Dn4 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_7_8:
+        BYTE           N24     Dn2   v127
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
+        BYTE   PEND
 // 009   ----------------------------------------
-	BYTE		        Cs4 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_7_9:
+        BYTE           N24     Cs2   v127
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Cs2
+        BYTE   W08
+        BYTE                   Cs2
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
+        BYTE   PEND
 // 010   ----------------------------------------
-	BYTE		        En4 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_7_10:
+        BYTE           N24     Cn2   v127
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Cn2
+        BYTE   W08
+        BYTE                   Cn2
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
+        BYTE   PEND
 // 011   ----------------------------------------
-	BYTE		        Dn4 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_3
 // 012   ----------------------------------------
-	BYTE		N96   
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_4
 // 013   ----------------------------------------
-	BYTE		        Cs4 
-	BYTE	W96
+        BYTE           N24     An1   v127
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   An1
+        BYTE   W08
+        BYTE                   An1   v102
+        BYTE   W17
+        BYTE           N15     An1   v127
+        BYTE   W15
 // 014   ----------------------------------------
-	BYTE		        En4 
-	BYTE	W96
+        BYTE           N24     Gs1
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Gs1   v102
+        BYTE   W08
+        BYTE                   Gs1   v127
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
 // 015   ----------------------------------------
-	BYTE		N24     Dn4 
-	BYTE	W24
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W48
+        BYTE           N06     Dn2
+        BYTE   W08
+        BYTE                   Dn2   v102
+        BYTE   W08
+        BYTE           N08     Dn2   v127
+        BYTE   W08
+        BYTE           N24     Ds2
+        BYTE   W24
+        BYTE                   Fn2
+        BYTE   W24
+        BYTE           N06     Dn2
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W08
+        BYTE           N08
+        BYTE   W08
 // 016   ----------------------------------------
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
-	BYTE		N48     Cn4 
-	BYTE	W48
+LordOfADeadEmpire_Insertable_7_16:
+        BYTE           N24     Ds2   v127
+        BYTE   W24
+        BYTE                   Fn2
+        BYTE   W24
+        BYTE           N06     Dn2
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W08
+        BYTE           N08
+        BYTE   W08
+        BYTE           N24     Ds2
+        BYTE   W24
+        BYTE   PEND
 // 017   ----------------------------------------
-	BYTE		N24     As3 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
-	BYTE		        Ds4 
-	BYTE	W24
+        BYTE                   Fn2
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE                   An2
+        BYTE   W24
+        BYTE                   As2
+        BYTE   W24
 // 018   ----------------------------------------
-	BYTE	W24
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W48
+        BYTE           N06     Dn2
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W08
+        BYTE           N08
+        BYTE   W08
+        BYTE           N24     Ds2
+        BYTE   W24
+        BYTE                   Fn2
+        BYTE   W24
+        BYTE           N06     Dn2
+        BYTE   W08
+        BYTE                   Dn2
+        BYTE   W08
+        BYTE           N08
+        BYTE   W08
 // 019   ----------------------------------------
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_16
 // 020   ----------------------------------------
-	BYTE		        Gs3 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
+        BYTE           N24     Fn2   v127
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE   W24
 // 021   ----------------------------------------
-	BYTE		N96     Ds4 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_7_21:
+        BYTE           N24     Ds2   v127
+        BYTE   W48
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Ds2
+        BYTE   W08
+        BYTE                   Ds2
+        BYTE   W17
+        BYTE           N15
+        BYTE   W15
+        BYTE   PEND
 // 022   ----------------------------------------
-	BYTE		        Dn4 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_8
 // 023   ----------------------------------------
-	BYTE		        Cs4 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_9
 // 024   ----------------------------------------
-	BYTE		        Cn4 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_10
 // 025   ----------------------------------------
-	BYTE		        Bn3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_3
 // 026   ----------------------------------------
-	BYTE		        An3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_4
 // 027   ----------------------------------------
-	BYTE		        Gs3 
-	BYTE	W96
+LordOfADeadEmpire_Insertable_7_27:
+        BYTE           N06     An1   v127
+        BYTE   W08
+        BYTE                   An1
+        BYTE   W08
+        BYTE           N08
+        BYTE   W08
+        BYTE           N06
+        BYTE   W08
+        BYTE                   An1
+        BYTE   W08
+        BYTE           N08
+        BYTE   W08
+        BYTE           N06
+        BYTE   W08
+        BYTE                   An1
+        BYTE   W08
+        BYTE           N08
+        BYTE   W08
+        BYTE           N06
+        BYTE   W08
+        BYTE                   An1
+        BYTE   W08
+        BYTE           N08
+        BYTE   W08
+        BYTE   PEND
 // 028   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_27
 // 029   ----------------------------------------
-	BYTE		        Ds4 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_21
 // 030   ----------------------------------------
-	BYTE		        Dn4 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_8
 // 031   ----------------------------------------
-	BYTE		        Cs4 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_9
 // 032   ----------------------------------------
-	BYTE		        Cn4 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_10
 // 033   ----------------------------------------
-	BYTE		        Bn3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_3
 // 034   ----------------------------------------
-	BYTE		        An3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_4
 // 035   ----------------------------------------
-	BYTE		N48     Gs3 
-	BYTE	W48
-	BYTE		        Bn3 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_27
 // 036   ----------------------------------------
-	BYTE		        Ds4 
-	BYTE	W48
-	BYTE		        Dn4 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_27
 // 037   ----------------------------------------
-	BYTE		N96     Fs3 
-	BYTE	W96
+        BYTE   W96
 // 038   ----------------------------------------
-	BYTE		        Fn3 
-	BYTE	W96
+        BYTE   W96
 // 039   ----------------------------------------
-	BYTE		        Fs3 
-	BYTE	W96
+        BYTE   W96
 // 040   ----------------------------------------
-	BYTE		N48     As3 
-	BYTE	W48
-	BYTE		        An3 
-	BYTE	W48
+        BYTE   W96
 // 041   ----------------------------------------
-	BYTE		N96     Fs3 
-	BYTE	W96
+        BYTE   W96
 // 042   ----------------------------------------
-	BYTE		        Fn3 
-	BYTE	W96
+        BYTE   W96
 // 043   ----------------------------------------
-	BYTE		        Fs3 
-	BYTE	W96
+        BYTE   W96
 // 044   ----------------------------------------
-	BYTE		N48     As3 
-	BYTE	W48
-	BYTE		        Gs3 
-	BYTE	W48
+        BYTE   W96
 // 045   ----------------------------------------
-	BYTE		N24   
-	BYTE	W48
-	BYTE		N48     Fs3 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_3
 // 046   ----------------------------------------
-	BYTE	W48
-	BYTE		N24   
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_4
 // 047   ----------------------------------------
-	BYTE	W48
-	BYTE		N24   
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_27
 // 048   ----------------------------------------
-	BYTE	W48
-	BYTE		N24   
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_27
 // 049   ----------------------------------------
-	BYTE	W48
-	BYTE		N48     Fn3 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_3
 // 050   ----------------------------------------
-	BYTE	W48
-	BYTE		N24   
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_4
 // 051   ----------------------------------------
-	BYTE	W48
-	BYTE		N24   
-	BYTE	W48
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_27
 // 052   ----------------------------------------
-	BYTE	W48
-	BYTE		N24   
-	BYTE	W48
-	BYTE	GoTo
-	 POIN2	LordOfADeadEmpire_Insertable_7_B1
-LordOfADeadEmpire_Insertable_7_B2:
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_7_27
 // 053   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  LordOfADeadEmpire_Insertable_7_LOOP
+        BYTE   FINE
 
-//**************** Track 8 (Midi-Chn.8) ****************//
+//****************** Track 8 (Midi-Chn.8) ******************//
 
 LordOfADeadEmpire_Insertable_8:
-	BYTE	KEYSH   LordOfADeadEmpire_Insertable_key+0
-LordOfADeadEmpire_Insertable_8_B1:
+        BYTE   KEYSH   LordOfADeadEmpire_Insertable_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   47
-	BYTE		VOL     35*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		PAN     c_v-11
-	BYTE		N24     Dn2   v127
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
+LordOfADeadEmpire_Insertable_8_LOOP:
+        BYTE           VOICE   36
+        BYTE           VOL     48
+        BYTE           PAN     c_v-36
+        BYTE           N24     Dn2   v100
+        BYTE   W24
+        BYTE           N12     Dn2   v080
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
 // 001   ----------------------------------------
-	BYTE		N24     Cs2 
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		        Cs2   v104
-	BYTE	W17
-	BYTE		N15     Cs2   v127
-	BYTE	W15
+LordOfADeadEmpire_Insertable_8_1:
+        BYTE           N24     Cs2   v100
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE   W24
+        BYTE                   Fn2
+        BYTE   W24
+        BYTE   PEND
 // 002   ----------------------------------------
-	BYTE		N24     Cn2 
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		        Cn2   v104
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W17
-	BYTE		N15     Cn2   v127
-	BYTE	W15
+LordOfADeadEmpire_Insertable_8_2:
+        BYTE           N24     Gn2   v100
+        BYTE   W24
+        BYTE           N12     Gn2   v080
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE   PEND
 // 003   ----------------------------------------
-LordOfADeadEmpire_Insertable_8_003:
-	BYTE		N24     Bn1   v127
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_8_3:
+        BYTE           N24     Gn2   v100
+        BYTE   W24
+        BYTE                   Fn2
+        BYTE   W24
+        BYTE                   Cn3
+        BYTE   W24
+        BYTE                   As2
+        BYTE   W24
+        BYTE   PEND
 // 004   ----------------------------------------
-LordOfADeadEmpire_Insertable_8_004:
-	BYTE		N24     As1   v127
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_8_4:
+        BYTE           N24     An2   v100
+        BYTE   W24
+        BYTE           N12     An2   v080
+        BYTE   W24
+        BYTE                   An2
+        BYTE   W24
+        BYTE                   An2
+        BYTE   W24
+        BYTE   PEND
 // 005   ----------------------------------------
-	BYTE		N24     An1 
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		        An1   v104
-	BYTE	W08
-	BYTE		        An1   v127
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
+LordOfADeadEmpire_Insertable_8_5:
+        BYTE           N24     An2   v100
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE   PEND
 // 006   ----------------------------------------
-	BYTE		N24     Gs1 
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
+        BYTE                   En2
+        BYTE   W24
+        BYTE           N12     En2   v080
+        BYTE   W24
+        BYTE           N24     Fn2   v100
+        BYTE   W24
+        BYTE           N12     Fn2   v080
+        BYTE   W24
 // 007   ----------------------------------------
-	BYTE		N24     An1 
-	BYTE	W48
-	BYTE		N06     Cs2 
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
+        BYTE           N24     Cn3   v100
+        BYTE   W24
+        BYTE           N12     Cn3   v080
+        BYTE   W24
+        BYTE           N24     As2   v100
+        BYTE   W24
+        BYTE           N12     As2   v080
+        BYTE   W24
 // 008   ----------------------------------------
-LordOfADeadEmpire_Insertable_8_008:
-	BYTE		N24     Dn2   v127
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_8_8:
+        BYTE           N24     Dn2   v100
+        BYTE   W24
+        BYTE           N12     Dn2   v080
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE   PEND
 // 009   ----------------------------------------
-LordOfADeadEmpire_Insertable_8_009:
-	BYTE		N24     Cs2   v127
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_1
 // 010   ----------------------------------------
-LordOfADeadEmpire_Insertable_8_010:
-	BYTE		N24     Cn2   v127
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_2
 // 011   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_003
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_3
 // 012   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_004
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_4
 // 013   ----------------------------------------
-	BYTE		N24     An1   v127
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		        An1   v104
-	BYTE	W17
-	BYTE		N15     An1   v127
-	BYTE	W15
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_5
 // 014   ----------------------------------------
-	BYTE		N24     Gs1 
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		        Gs1   v104
-	BYTE	W08
-	BYTE		        Gs1   v127
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
+        BYTE           N24     En2   v100
+        BYTE   W24
+        BYTE           N12     En2   v080
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
 // 015   ----------------------------------------
-	BYTE		N06     Dn2 
-	BYTE	W08
-	BYTE		        Dn2   v104
-	BYTE	W08
-	BYTE		N08     Dn2   v127
-	BYTE	W08
-	BYTE		N24     Ds2 
-	BYTE	W24
-	BYTE		        Fn2 
-	BYTE	W24
-	BYTE		N06     Dn2 
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
+LordOfADeadEmpire_Insertable_8_15:
+        BYTE           N24     Fn2   v100
+        BYTE   W24
+        BYTE           N12     Fn2   v080
+        BYTE   W24
+        BYTE                   Fn2
+        BYTE   W24
+        BYTE                   Fn2
+        BYTE   W24
+        BYTE   PEND
 // 016   ----------------------------------------
-LordOfADeadEmpire_Insertable_8_016:
-	BYTE		N24     Ds2   v127
-	BYTE	W24
-	BYTE		        Fn2 
-	BYTE	W24
-	BYTE		N06     Dn2 
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N24     Ds2 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_15
 // 017   ----------------------------------------
-	BYTE		        Fn2 
-	BYTE	W24
-	BYTE		        Gn2 
-	BYTE	W24
-	BYTE		        An2 
-	BYTE	W24
-	BYTE		        As2 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_15
 // 018   ----------------------------------------
-	BYTE		N06     Dn2 
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N24     Ds2 
-	BYTE	W24
-	BYTE		        Fn2 
-	BYTE	W24
-	BYTE		N06     Dn2 
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_8
 // 019   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_016
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_8
 // 020   ----------------------------------------
-	BYTE		N24     Fn2   v127
-	BYTE	W24
-	BYTE		        Gn2 
-	BYTE	W24
-	BYTE		        Gs2 
-	BYTE	W24
-	BYTE		        Bn2 
-	BYTE	W24
+        BYTE           N24     Cn2   v100
+        BYTE   W24
+        BYTE           N12     Cn2   v080
+        BYTE   W24
+        BYTE           N24     Bn1   v100
+        BYTE   W24
+        BYTE           N12     Bn1   v080
+        BYTE   W24
 // 021   ----------------------------------------
-LordOfADeadEmpire_Insertable_8_021:
-	BYTE		N24     Ds2   v127
-	BYTE	W48
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W17
-	BYTE		N15   
-	BYTE	W15
-	BYTE	PEND
+LordOfADeadEmpire_Insertable_8_21:
+        BYTE           N24     Ds2   v100
+        BYTE   W24
+        BYTE           N12     Ds2   v080
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE   W24
+        BYTE   PEND
 // 022   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_008
+LordOfADeadEmpire_Insertable_8_22:
+        BYTE           N24     Dn2   v100
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Fn2
+        BYTE   W24
+        BYTE   PEND
 // 023   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_009
+LordOfADeadEmpire_Insertable_8_23:
+        BYTE           N24     Gs2   v100
+        BYTE   W24
+        BYTE           N12     Gs2   v080
+        BYTE   W24
+        BYTE           N24     Fs2   v100
+        BYTE   W24
+        BYTE           N12     Fs2   v080
+        BYTE   W24
+        BYTE   PEND
 // 024   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_010
+LordOfADeadEmpire_Insertable_8_24:
+        BYTE           N24     Fn2   v100
+        BYTE   W24
+        BYTE           N12     Fn2   v080
+        BYTE   W24
+        BYTE           N24     Ds2   v100
+        BYTE   W24
+        BYTE           N12     Ds2   v080
+        BYTE   W24
+        BYTE   PEND
 // 025   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_003
+LordOfADeadEmpire_Insertable_8_25:
+        BYTE           N24     Bn1   v100
+        BYTE   W24
+        BYTE           N12     Bn1   v080
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE   PEND
 // 026   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_004
+LordOfADeadEmpire_Insertable_8_26:
+        BYTE           N24     Cn2   v100
+        BYTE   W24
+        BYTE           N12     Cn2   v080
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+        BYTE   PEND
 // 027   ----------------------------------------
-LordOfADeadEmpire_Insertable_8_027:
-	BYTE		N06     An1   v127
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		N08   
-	BYTE	W08
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_8
 // 028   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_027
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_21
 // 029   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_021
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_21
 // 030   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_008
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_22
 // 031   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_009
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_23
 // 032   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_010
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_24
 // 033   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_003
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_25
 // 034   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_004
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_26
 // 035   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_027
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_8
 // 036   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_027
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_21
 // 037   ----------------------------------------
-	BYTE	W96
+LordOfADeadEmpire_Insertable_8_37:
+        BYTE           N24     As1   v100
+        BYTE   W24
+        BYTE           N12     As1   v080
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE   PEND
 // 038   ----------------------------------------
-	BYTE	W96
+LordOfADeadEmpire_Insertable_8_38:
+        BYTE           N24     An1   v100
+        BYTE   W24
+        BYTE           N12     An1   v080
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE   PEND
 // 039   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_37
 // 040   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_25
 // 041   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_37
 // 042   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_38
 // 043   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_37
 // 044   ----------------------------------------
-	BYTE	W96
+LordOfADeadEmpire_Insertable_8_44:
+        BYTE           N24     Cs2   v100
+        BYTE   W24
+        BYTE           N12     Cs2   v080
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE   W24
+        BYTE   PEND
 // 045   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_003
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_25
 // 046   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_004
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_25
 // 047   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_027
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_26
 // 048   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_027
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_26
 // 049   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_003
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_44
 // 050   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_004
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_44
 // 051   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_027
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_8
 // 052   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_8_027
-	BYTE	GoTo
-	 POIN2	LordOfADeadEmpire_Insertable_8_B1
-LordOfADeadEmpire_Insertable_8_B2:
+        BYTE   PATT
+         POIN2  LordOfADeadEmpire_Insertable_8_8
 // 053   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  LordOfADeadEmpire_Insertable_8_LOOP
+        BYTE   FINE
 
-//**************** Track 9 (Midi-Chn.9) ****************//
 
-LordOfADeadEmpire_Insertable_9:
-	BYTE	KEYSH   LordOfADeadEmpire_Insertable_key+0
-LordOfADeadEmpire_Insertable_9_B1:
-// 000   ----------------------------------------
-	BYTE		VOICE   36
-	BYTE		VOL     73*LordOfADeadEmpire_Insertable_mvl/mxv
-	BYTE		PAN     c_v-36
-	BYTE		N24     Dn2   v100
-	BYTE	W24
-	BYTE		N12     Dn2   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-// 001   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_001:
-	BYTE		N24     Cs2   v100
-	BYTE	W24
-	BYTE		        An1 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE	W24
-	BYTE		        Fn2 
-	BYTE	W24
-	BYTE	PEND
-// 002   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_002:
-	BYTE		N24     Gn2   v100
-	BYTE	W24
-	BYTE		N12     Gn2   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE	PEND
-// 003   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_003:
-	BYTE		N24     Gn2   v100
-	BYTE	W24
-	BYTE		        Fn2 
-	BYTE	W24
-	BYTE		        Cn3 
-	BYTE	W24
-	BYTE		        As2 
-	BYTE	W24
-	BYTE	PEND
-// 004   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_004:
-	BYTE		N24     An2   v100
-	BYTE	W24
-	BYTE		N12     An2   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE	PEND
-// 005   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_005:
-	BYTE		N24     An2   v100
-	BYTE	W24
-	BYTE		        Dn2 
-	BYTE	W24
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        Gn2 
-	BYTE	W24
-	BYTE	PEND
-// 006   ----------------------------------------
-	BYTE		        En2 
-	BYTE	W24
-	BYTE		N12     En2   v080
-	BYTE	W24
-	BYTE		N24     Fn2   v100
-	BYTE	W24
-	BYTE		N12     Fn2   v080
-	BYTE	W24
-// 007   ----------------------------------------
-	BYTE		N24     Cn3   v100
-	BYTE	W24
-	BYTE		N12     Cn3   v080
-	BYTE	W24
-	BYTE		N24     As2   v100
-	BYTE	W24
-	BYTE		N12     As2   v080
-	BYTE	W24
-// 008   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_008:
-	BYTE		N24     Dn2   v100
-	BYTE	W24
-	BYTE		N12     Dn2   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE	PEND
-// 009   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_001
-// 010   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_002
-// 011   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_003
-// 012   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_004
-// 013   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_005
-// 014   ----------------------------------------
-	BYTE		N24     En2   v100
-	BYTE	W24
-	BYTE		N12     En2   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-// 015   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_015:
-	BYTE		N24     Fn2   v100
-	BYTE	W24
-	BYTE		N12     Fn2   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE	PEND
-// 016   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_015
-// 017   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_015
-// 018   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_008
-// 019   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_008
-// 020   ----------------------------------------
-	BYTE		N24     Cn2   v100
-	BYTE	W24
-	BYTE		N12     Cn2   v080
-	BYTE	W24
-	BYTE		N24     Bn1   v100
-	BYTE	W24
-	BYTE		N12     Bn1   v080
-	BYTE	W24
-// 021   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_021:
-	BYTE		N24     Ds2   v100
-	BYTE	W24
-	BYTE		N12     Ds2   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE	PEND
-// 022   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_022:
-	BYTE		N24     Dn2   v100
-	BYTE	W24
-	BYTE		        As1 
-	BYTE	W24
-	BYTE		        Dn2 
-	BYTE	W24
-	BYTE		        Fn2 
-	BYTE	W24
-	BYTE	PEND
-// 023   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_023:
-	BYTE		N24     Gs2   v100
-	BYTE	W24
-	BYTE		N12     Gs2   v080
-	BYTE	W24
-	BYTE		N24     Fs2   v100
-	BYTE	W24
-	BYTE		N12     Fs2   v080
-	BYTE	W24
-	BYTE	PEND
-// 024   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_024:
-	BYTE		N24     Fn2   v100
-	BYTE	W24
-	BYTE		N12     Fn2   v080
-	BYTE	W24
-	BYTE		N24     Ds2   v100
-	BYTE	W24
-	BYTE		N12     Ds2   v080
-	BYTE	W24
-	BYTE	PEND
-// 025   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_025:
-	BYTE		N24     Bn1   v100
-	BYTE	W24
-	BYTE		N12     Bn1   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE	PEND
-// 026   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_026:
-	BYTE		N24     Cn2   v100
-	BYTE	W24
-	BYTE		N12     Cn2   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE	PEND
-// 027   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_008
-// 028   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_021
-// 029   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_021
-// 030   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_022
-// 031   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_023
-// 032   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_024
-// 033   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_025
-// 034   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_026
-// 035   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_008
-// 036   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_021
-// 037   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_037:
-	BYTE		N24     As1   v100
-	BYTE	W24
-	BYTE		N12     As1   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE	PEND
-// 038   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_038:
-	BYTE		N24     An1   v100
-	BYTE	W24
-	BYTE		N12     An1   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE	PEND
-// 039   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_037
-// 040   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_025
-// 041   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_037
-// 042   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_038
-// 043   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_037
-// 044   ----------------------------------------
-LordOfADeadEmpire_Insertable_9_044:
-	BYTE		N24     Cs2   v100
-	BYTE	W24
-	BYTE		N12     Cs2   v080
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE		N12   
-	BYTE	W24
-	BYTE	PEND
-// 045   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_025
-// 046   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_025
-// 047   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_026
-// 048   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_026
-// 049   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_044
-// 050   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_044
-// 051   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_008
-// 052   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LordOfADeadEmpire_Insertable_9_008
-	BYTE	GoTo
-	 POIN2	LordOfADeadEmpire_Insertable_9_B1
-LordOfADeadEmpire_Insertable_9_B2:
-// 053   ----------------------------------------
-	BYTE	FINE
+//********************** End of Song ***********************//
 
-//******************************************************//
-	ALIGN 4
-
+        ALIGN 4
 LordOfADeadEmpire_Insertable:
-	BYTE	9	// NumTrks
-	BYTE	0	// NumBlks
-	BYTE	LordOfADeadEmpire_Insertable_pri	// Priority
-	BYTE	LordOfADeadEmpire_Insertable_rev	// Reverb.
+        BYTE   9                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   LordOfADeadEmpire_Insertable_pri // Priority
+        BYTE   LordOfADeadEmpire_Insertable_rev // Reverb
 
-	POIN2	LordOfADeadEmpire_Insertable_grp
+        POIN2   LordOfADeadEmpire_Insertable_grp
 
-	POIN2	LordOfADeadEmpire_Insertable_1
-	POIN2	LordOfADeadEmpire_Insertable_2
-	POIN2	LordOfADeadEmpire_Insertable_3
-	POIN2	LordOfADeadEmpire_Insertable_4
-	POIN2	LordOfADeadEmpire_Insertable_5
-	POIN2	LordOfADeadEmpire_Insertable_6
-	POIN2	LordOfADeadEmpire_Insertable_7
-	POIN2	LordOfADeadEmpire_Insertable_8
-	POIN2	LordOfADeadEmpire_Insertable_9
+        POIN2   LordOfADeadEmpire_Insertable_0
+        POIN2   LordOfADeadEmpire_Insertable_1
+        POIN2   LordOfADeadEmpire_Insertable_2
+        POIN2   LordOfADeadEmpire_Insertable_3
+        POIN2   LordOfADeadEmpire_Insertable_4
+        POIN2   LordOfADeadEmpire_Insertable_5
+        POIN2   LordOfADeadEmpire_Insertable_6
+        POIN2   LordOfADeadEmpire_Insertable_7
+        POIN2   LordOfADeadEmpire_Insertable_8
 
-	
+        

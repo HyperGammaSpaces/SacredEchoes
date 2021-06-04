@@ -1,248 +1,210 @@
 //Event file generated from Sappy .s format.
-	#include "MPlayDef.event"
+        #include "MPlayDef.event"
 
-	#define	AllyJoinedSFX_grp  voicegroup000
-	#define	AllyJoinedSFX_pri  0
-	#define	AllyJoinedSFX_rev  0
-	#define	AllyJoinedSFX_mvl  85
-	#define	AllyJoinedSFX_key  0
-	#define	AllyJoinedSFX_tbs  1
-	#define	AllyJoinedSFX_exg  0
-	#define	AllyJoinedSFX_cmp  1
+        #define    AllyJoinedSFX_grp  voicegroup000
+        #define    AllyJoinedSFX_pri  0
+        #define    AllyJoinedSFX_rev  0
+        #define    AllyJoinedSFX_key  0
 
-	// .rodata
-	//	AllyJoinedSFX
-	ALIGN 4
+        // .rodata
+        // AllyJoinedSFX
+        ALIGN 4
 
-//**************** Track 1 (Midi-Chn.1) ****************//
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+AllyJoinedSFX_0:
+        BYTE   KEYSH   AllyJoinedSFX_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   180/2
+        BYTE           VOICE   86
+        BYTE           VOL     50
+        BYTE           N05     Bn2   v090
+        BYTE           N05     Fs2
+        BYTE   W08
+        BYTE                   Bn2
+        BYTE           N05     Fs2
+        BYTE   W08
+        BYTE                   Bn2
+        BYTE           N05     Fs2
+        BYTE   W08
+        BYTE           N60     Bn2   v090   gtp3
+        BYTE           N64     Gs2   v090   gtp1
+        BYTE   W21
+        BYTE           VOL     47
+        BYTE   W24
+        BYTE   W03
+        BYTE                   46
+        BYTE   W06
+        BYTE                   45
+        BYTE   W06
+        BYTE                   44
+        BYTE   W04
+        BYTE                   43
+        BYTE   W03
+        BYTE                   42
+        BYTE   W03
+        BYTE                   41
+        BYTE   W02
+// 001   ----------------------------------------
+AllyJoinedSFX_0_1:
+        BYTE   W01
+        BYTE           VOL     40
+        BYTE   W03
+        BYTE                   39
+        BYTE   W02
+        BYTE                   38
+        BYTE   W01
+        BYTE                   37
+        BYTE   W02
+        BYTE                   36
+        BYTE   W03
+        BYTE                   35
+        BYTE   W01
+        BYTE                   34
+        BYTE   W02
+        BYTE                   33
+        BYTE   W01
+        BYTE                   32
+        BYTE   W02
+        BYTE                   31
+        BYTE   W01
+        BYTE                   29
+        BYTE   W02
+        BYTE                   28
+        BYTE   W01
+        BYTE                   27
+        BYTE   W02
+        BYTE                   25
+        BYTE   W01
+        BYTE                   24
+        BYTE   W02
+        BYTE                   23
+        BYTE   W01
+        BYTE                   22
+        BYTE   W02
+        BYTE                   20
+        BYTE   W01
+        BYTE                   18
+        BYTE   W02
+        BYTE                   16
+        BYTE   W01
+        BYTE                   15
+        BYTE   W02
+        BYTE                   13
+        BYTE   W01
+        BYTE                   11
+        BYTE   W02
+        BYTE                   9
+        BYTE   W01
+        BYTE                   7
+        BYTE   W02
+        BYTE                   5
+        BYTE   W01
+        BYTE                   4
+        BYTE   W02
+        BYTE                   1
+        BYTE   W48
+        BYTE   W03
+        BYTE   PEND
+// 002   ----------------------------------------
+        BYTE   W06
+        BYTE                   47
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
 
 AllyJoinedSFX_1:
-	BYTE	KEYSH   AllyJoinedSFX_key+0
+        BYTE   KEYSH   AllyJoinedSFX_key+0
 // 000   ----------------------------------------
-	BYTE	TEMPO   180*AllyJoinedSFX_tbs/2
-	BYTE		VOICE   86
-	BYTE		VOL     75*AllyJoinedSFX_mvl/mxv
-	BYTE		N05     Fs2   v092
-	BYTE		N05     Bn2 
-	BYTE	W08
-	BYTE		        Fs2 
-	BYTE		N05     Bn2 
-	BYTE	W08
-	BYTE		        Fs2 
-	BYTE		N05     Bn2 
-	BYTE	W08
-	BYTE		N64     Gs2 
-	BYTE		N60     Bn2 
-	BYTE	W21
-	BYTE	W03
-	BYTE	W01
-	BYTE	W18
-	BYTE	W05
-	BYTE	W03
-	BYTE	W03
-	BYTE	W03
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
+        BYTE           VOICE   86
+        BYTE           VOL     50
+        BYTE           N05     Bn3   v090
+        BYTE           N05     Fs3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE           N05     Fs3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE           N05     Fs3
+        BYTE   W08
+        BYTE           N60     Bn3   v090   gtp3
+        BYTE           N64     Gs3   v090   gtp1
+        BYTE   W21
+        BYTE           VOL     47
+        BYTE   W24
+        BYTE   W03
+        BYTE                   46
+        BYTE   W06
+        BYTE                   45
+        BYTE   W06
+        BYTE                   44
+        BYTE   W04
+        BYTE                   43
+        BYTE   W03
+        BYTE                   42
+        BYTE   W03
+        BYTE                   41
+        BYTE   W02
 // 001   ----------------------------------------
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W48
-	BYTE	W03
+        BYTE   PATT
+         POIN2  AllyJoinedSFX_0_1
 // 002   ----------------------------------------
-	BYTE	W06
-	BYTE	FINE
+        BYTE   W06
+        BYTE           VOL     47
+        BYTE   FINE
 
-//**************** Track 2 (Midi-Chn.2) ****************//
+//****************** Track 2 (Midi-Chn.2) ******************//
 
 AllyJoinedSFX_2:
-	BYTE	KEYSH   AllyJoinedSFX_key+0
+        BYTE   KEYSH   AllyJoinedSFX_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   86
-	BYTE		VOL     75*AllyJoinedSFX_mvl/mxv
-	BYTE		N05     Fs3   v092
-	BYTE		N05     Bn3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE		N05     Bn3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE		N05     Bn3 
-	BYTE	W08
-	BYTE		N64     Gs3 
-	BYTE		N60     Bn3 
-	BYTE	W21
-	BYTE	W03
-	BYTE	W01
-	BYTE	W18
-	BYTE	W05
-	BYTE	W03
-	BYTE	W03
-	BYTE	W03
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
+        BYTE           VOICE   61
+        BYTE           VOL     50
+        BYTE           N05     En2   v090
+        BYTE   W08
+        BYTE                   En2
+        BYTE   W08
+        BYTE                   En2
+        BYTE   W08
+        BYTE           N64
+        BYTE   W21
+        BYTE           VOL     47
+        BYTE   W24
+        BYTE   W03
+        BYTE                   46
+        BYTE   W06
+        BYTE                   45
+        BYTE   W06
+        BYTE                   44
+        BYTE   W04
+        BYTE                   43
+        BYTE   W03
+        BYTE                   42
+        BYTE   W03
+        BYTE                   41
+        BYTE   W02
 // 001   ----------------------------------------
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W48
-	BYTE	W03
+        BYTE   PATT
+         POIN2  AllyJoinedSFX_0_1
 // 002   ----------------------------------------
-	BYTE	W06
-	BYTE	FINE
+        BYTE   W06
+        BYTE           VOL     47
+        BYTE   FINE
 
-//**************** Track 3 (Midi-Chn.3) ****************//
 
-AllyJoinedSFX_3:
-	BYTE	KEYSH   AllyJoinedSFX_key+0
-// 000   ----------------------------------------
-	BYTE		VOICE   61
-	BYTE		VOL     75*AllyJoinedSFX_mvl/mxv
-	BYTE		N05     En2   v092
-	BYTE	W08
-	BYTE		N05   
-	BYTE	W08
-	BYTE		N05   
-	BYTE	W08
-	BYTE		N64   
-	BYTE	W21
-	BYTE	W03
-	BYTE	W01
-	BYTE	W18
-	BYTE	W05
-	BYTE	W03
-	BYTE	W03
-	BYTE	W03
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-// 001   ----------------------------------------
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W48
-	BYTE	W03
-// 002   ----------------------------------------
-	BYTE	W06
-	BYTE	FINE
+//********************** End of Song ***********************//
 
-//******************************************************//
-	ALIGN 4
-
+        ALIGN 4
 AllyJoinedSFX:
-	BYTE	3	// NumTrks
-	BYTE	0	// NumBlks
-	BYTE	AllyJoinedSFX_pri	// Priority
-	BYTE	AllyJoinedSFX_rev	// Reverb.
+        BYTE   3                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   AllyJoinedSFX_pri       // Priority
+        BYTE   AllyJoinedSFX_rev       // Reverb
 
-	POIN2	AllyJoinedSFX_grp
+        POIN2   AllyJoinedSFX_grp      
 
-	POIN2	AllyJoinedSFX_1
-	POIN2	AllyJoinedSFX_2
-	POIN2	AllyJoinedSFX_3
+        POIN2   AllyJoinedSFX_0
+        POIN2   AllyJoinedSFX_1
+        POIN2   AllyJoinedSFX_2
 
-	
+        

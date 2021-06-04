@@ -1,1574 +1,1564 @@
 //Event file generated from Sappy .s format.
-	#include "MPlayDef.event"
+        #include "MPlayDef.event"
 
-	#define	PrinceOfDarkness_grp  voicegroup000
-	#define	PrinceOfDarkness_pri  0
-	#define	PrinceOfDarkness_rev  0
-	#define	PrinceOfDarkness_mvl  85
-	#define	PrinceOfDarkness_key  0
-	#define	PrinceOfDarkness_tbs  1
-	#define	PrinceOfDarkness_exg  0
-	#define	PrinceOfDarkness_cmp  1
+        #define    PrinceOfDarkness_grp  voicegroup000
+        #define    PrinceOfDarkness_pri  0
+        #define    PrinceOfDarkness_rev  0
+        #define    PrinceOfDarkness_key  0
 
-	// .rodata
-	//	PrinceOfDarkness
-	ALIGN 4
+        // .rodata
+        // PrinceOfDarkness
+        ALIGN 4
 
-//**************** Track 1 (Midi-Chn.1) ****************//
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+PrinceOfDarkness_0:
+        BYTE   KEYSH   PrinceOfDarkness_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   116/2
+PrinceOfDarkness_0_LOOP:
+        BYTE           VOICE   41
+        BYTE           VOL     26
+        BYTE           PAN     c_v-11
+        BYTE           N44     Cs3   v102   gtp1
+        BYTE           N44     An3   v102   gtp2
+        BYTE                   Fs3
+        BYTE   W48
+        BYTE                   Cs4
+        BYTE           N44     An3   v102   gtp2
+        BYTE                   Fs3
+        BYTE   W48
+// 001   ----------------------------------------
+        BYTE           N92     Fn4   v102   gtp2
+        BYTE                   Bn3
+        BYTE           N92     Gs3   v102   gtp2
+        BYTE                   Fn3
+        BYTE   W96
+// 002   ----------------------------------------
+        BYTE           N44     An3   v102   gtp2
+        BYTE                   Fs3
+        BYTE           N44     Cs3   v102   gtp2
+        BYTE   W48
+        BYTE                   Cs4
+        BYTE           N44     An3   v102   gtp2
+        BYTE                   Fs3
+        BYTE   W48
+// 003   ----------------------------------------
+        BYTE           N92     An3   v102   gtp2
+        BYTE                   Fn3
+        BYTE   W96
+// 004   ----------------------------------------
+PrinceOfDarkness_0_4:
+        BYTE           N44     Ds4   v102   gtp2
+        BYTE                   Bn3
+        BYTE           N44     Gs3   v102   gtp2
+        BYTE   W48
+        BYTE                   Ds4
+        BYTE           N44     Bn3   v102   gtp2
+        BYTE   W48
+        BYTE   PEND
+// 005   ----------------------------------------
+        BYTE           N92     Ds4   v102   gtp2
+        BYTE                   As3
+        BYTE           N92     Gn3   v102   gtp2
+        BYTE   W96
+// 006   ----------------------------------------
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_0_4
+// 007   ----------------------------------------
+        BYTE           N92     Ds4   v102   gtp2
+        BYTE                   Bn3
+        BYTE   W96
+// 008   ----------------------------------------
+PrinceOfDarkness_0_8:
+        BYTE           N44     Cs3   v102   gtp2
+        BYTE                   Fs3
+        BYTE           N44     An3   v102   gtp2
+        BYTE   W48
+        BYTE                   Cs4
+        BYTE           N44     An3   v102   gtp2
+        BYTE                   Fs3
+        BYTE   W48
+        BYTE   PEND
+// 009   ----------------------------------------
+        BYTE           N22     Bn3
+        BYTE           N22     Gs3
+        BYTE           N22     Fn3
+        BYTE   W24
+        BYTE                   Cs4
+        BYTE           N22     Gs3
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE           N22     An3
+        BYTE   W24
+        BYTE                   Cs4
+        BYTE           N22     Gs3
+        BYTE   W24
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_0_8
+// 011   ----------------------------------------
+        BYTE           N22     An3   v102
+        BYTE           N22     Fn3
+        BYTE   W24
+        BYTE                   En4
+        BYTE           N22     Cn4
+        BYTE   W24
+        BYTE                   Fn4
+        BYTE           N22     Cn4
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE           N22     En4
+        BYTE   W24
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_0_4
+// 013   ----------------------------------------
+        BYTE           N22     Gn3   v102
+        BYTE           N22     Dn3
+        BYTE   W24
+        BYTE                   As3
+        BYTE           N22     Dn4
+        BYTE   W24
+        BYTE                   As3
+        BYTE           N22     Ds4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE           N22     As3
+        BYTE   W24
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_0_4
+// 015   ----------------------------------------
+        BYTE           N22     Bn3   v102
+        BYTE           N22     Gn3
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE           N22     Bn3
+        BYTE   W24
+        BYTE                   Bn3
+        BYTE           N22     Gn3
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE           N22     Bn3
+        BYTE   W24
+// 016   ----------------------------------------
+        BYTE                   Cs4
+        BYTE           N22     An3
+        BYTE           N22     Fs3
+        BYTE   W24
+        BYTE                   Fs5
+        BYTE   W24
+        BYTE                   Fn5
+        BYTE   W24
+        BYTE                   En5
+        BYTE   W24
+// 017   ----------------------------------------
+        BYTE           TIE     Ds5
+        BYTE   W96
+// 018   ----------------------------------------
+        BYTE   W22
+        BYTE           EOT
+        BYTE   W02
+        BYTE           N06     An4
+        BYTE   W08
+        BYTE                   Gs4
+        BYTE   W08
+        BYTE                   An4
+        BYTE   W08
+        BYTE           N22     Bn4
+        BYTE   W24
+        BYTE                   An4
+        BYTE   W24
+// 019   ----------------------------------------
+PrinceOfDarkness_0_19:
+        BYTE           N12     Gs4   v102
+        BYTE   W12
+        BYTE                   Fs4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W12
+        BYTE                   Fs4
+        BYTE   W12
+        BYTE           N22     Gs4
+        BYTE   W24
+        BYTE                   Cs4
+        BYTE   W24
+        BYTE   PEND
+// 020   ----------------------------------------
+        BYTE           N68     Fs4   v102   gtp2
+        BYTE                   Dn4
+        BYTE           N68     Cs4   v102   gtp2
+        BYTE   W72
+        BYTE           N06     En4
+        BYTE   W24
+// 021   ----------------------------------------
+        BYTE           N92     An4   v102   gtp2
+        BYTE                   An3
+        BYTE   W96
+// 022   ----------------------------------------
+        BYTE           N24     Gs4
+        BYTE           N24     Cs4
+        BYTE   W24
+        BYTE                   En5
+        BYTE   W24
+        BYTE                   Ds5
+        BYTE   W24
+        BYTE                   Dn5
+        BYTE   W24
+// 023   ----------------------------------------
+        BYTE           TIE     Cs5
+        BYTE   W96
+// 024   ----------------------------------------
+        BYTE   W92
+        BYTE   W02
+        BYTE           EOT
+        BYTE   W02
+// 025   ----------------------------------------
+        BYTE           N96     En5
+        BYTE           N96     Cs5
+        BYTE   W96
+// 026   ----------------------------------------
+        BYTE           N24     Gs3
+        BYTE           N24     Cs4
+        BYTE           N24     En4
+        BYTE   W24
+        BYTE           N06     Cs5
+        BYTE   W06
+        BYTE                   Fs4
+        BYTE   W06
+        BYTE                   An4
+        BYTE   W06
+        BYTE                   Cs5
+        BYTE   W06
+        BYTE                   Cn5
+        BYTE   W06
+        BYTE                   Fn4
+        BYTE   W06
+        BYTE                   Gs4
+        BYTE   W06
+        BYTE                   Cn5
+        BYTE   W06
+        BYTE                   Fn5
+        BYTE   W06
+        BYTE                   Gs4
+        BYTE   W06
+        BYTE                   Cn5
+        BYTE   W06
+        BYTE                   Fn5
+        BYTE   W06
+// 027   ----------------------------------------
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   Fn4
+        BYTE   W06
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE                   Fn4
+        BYTE   W06
+        BYTE                   Gs4
+        BYTE   W06
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE                   Dn5
+        BYTE   W06
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE                   Dn5
+        BYTE   W06
+        BYTE                   Fn5
+        BYTE   W06
+        BYTE                   Gs5
+        BYTE   W06
+        BYTE                   Bn5
+        BYTE   W06
+        BYTE                   Dn6
+        BYTE   W06
+        BYTE                   Fn6
+        BYTE   W06
+// 028   ----------------------------------------
+        BYTE   GoTo
+         POIN2  PrinceOfDarkness_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
 
 PrinceOfDarkness_1:
-	BYTE	KEYSH   PrinceOfDarkness_key+0
-PrinceOfDarkness_1_B1:
+        BYTE   KEYSH   PrinceOfDarkness_key+0
 // 000   ----------------------------------------
-	BYTE	TEMPO   116*PrinceOfDarkness_tbs/2
-	BYTE		VOICE   41
-	BYTE		VOL     39*PrinceOfDarkness_mvl/mxv
-	BYTE		PAN     c_v-11
-	BYTE		N44     Cs3   v104
-	BYTE		N44     Fs3 
-	BYTE		N44     An3 
-	BYTE	W48
-	BYTE		        Fs3 
-	BYTE		N44     An3 
-	BYTE		N44     Cs4 
-	BYTE	W48
+PrinceOfDarkness_1_LOOP:
+        BYTE           VOICE   20
+        BYTE           VOL     37
+        BYTE           PAN     c_v+34
+        BYTE           N92     An1   v102   gtp2
+        BYTE                   Fs1
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE		N92     Fn3 
-	BYTE		N92     Gs3 
-	BYTE		N92     Bn3 
-	BYTE		N92     Fn4 
-	BYTE	W96
+PrinceOfDarkness_1_1:
+        BYTE           N92     Gs1   v102   gtp2
+        BYTE                   Fn1
+        BYTE   W96
+        BYTE   PEND
 // 002   ----------------------------------------
-PrinceOfDarkness_1_002:
-	BYTE		N44     Cs3   v104
-	BYTE		N44     Fs3 
-	BYTE		N44     An3 
-	BYTE	W48
-	BYTE		        Fs3 
-	BYTE		N44     An3 
-	BYTE		N44     Cs4 
-	BYTE	W48
-	BYTE	PEND
+PrinceOfDarkness_1_2:
+        BYTE           N92     An1   v102   gtp2
+        BYTE                   Fs1
+        BYTE   W96
+        BYTE   PEND
 // 003   ----------------------------------------
-	BYTE		N92     Fn3 
-	BYTE		N92     An3 
-	BYTE	W96
+PrinceOfDarkness_1_3:
+        BYTE           N92     An1   v102   gtp2
+        BYTE                   En1
+        BYTE   W96
+        BYTE   PEND
 // 004   ----------------------------------------
-PrinceOfDarkness_1_004:
-	BYTE		N44     Gs3   v104
-	BYTE		N44     Bn3 
-	BYTE		N44     Ds4 
-	BYTE	W48
-	BYTE		        Bn3 
-	BYTE		N44     Ds4 
-	BYTE	W48
-	BYTE	PEND
+PrinceOfDarkness_1_4:
+        BYTE           N92     Gs1   v102   gtp2
+        BYTE                   Ds1
+        BYTE   W96
+        BYTE   PEND
 // 005   ----------------------------------------
-	BYTE		N92     Gn3 
-	BYTE		N92     As3 
-	BYTE		N92     Ds4 
-	BYTE	W96
+        BYTE                   Dn1
+        BYTE           N92     Gn1   v102   gtp2
+        BYTE   W96
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_1_004
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_4
 // 007   ----------------------------------------
-	BYTE		N92     Bn3   v104
-	BYTE		N92     Ds4 
-	BYTE	W96
+PrinceOfDarkness_1_7:
+        BYTE           N92     Dn2   v102   gtp2
+        BYTE                   Bn1
+        BYTE   W96
+        BYTE   PEND
 // 008   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_1_002
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_2
 // 009   ----------------------------------------
-	BYTE		N22     Fn3   v104
-	BYTE		N22     Gs3 
-	BYTE		N22     Bn3 
-	BYTE	W24
-	BYTE		        Gs3 
-	BYTE		N22     Cs4 
-	BYTE	W24
-	BYTE		        An3 
-	BYTE		N22     Dn4 
-	BYTE	W24
-	BYTE		        Gs3 
-	BYTE		N22     Cs4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_1
 // 010   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_1_002
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_2
 // 011   ----------------------------------------
-	BYTE		N22     Fn3   v104
-	BYTE		N22     An3 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE		N22     En4 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE		N22     Fn4 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE		N22     En4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_3
 // 012   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_1_004
+        BYTE           N92     Ds1   v102   gtp2
+        BYTE                   Gs1
+        BYTE   W96
 // 013   ----------------------------------------
-	BYTE		N22     Dn3   v104
-	BYTE		N22     Gn3 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE		N22     Dn4 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE		N22     Ds4 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE		N22     Dn4 
-	BYTE	W24
+        BYTE                   Gn1
+        BYTE           N92     Dn1   v102   gtp2
+        BYTE   W96
 // 014   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_1_004
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_4
 // 015   ----------------------------------------
-	BYTE		N22     Gn3   v104
-	BYTE		N22     Bn3 
-	BYTE	W24
-	BYTE		N22   
-	BYTE		N22     Dn4 
-	BYTE	W24
-	BYTE		        Gn3 
-	BYTE		N22     Bn3 
-	BYTE	W24
-	BYTE		N22   
-	BYTE		N22     Dn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_7
 // 016   ----------------------------------------
-	BYTE		        Fs3 
-	BYTE		N22     An3 
-	BYTE		N22     Cs4 
-	BYTE	W24
-	BYTE		        Fs5 
-	BYTE	W24
-	BYTE		        Fn5 
-	BYTE	W24
-	BYTE		        En5 
-	BYTE	W24
+        BYTE           TIE     Cs2   v102
+        BYTE           TIE     Fs1
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE		TIE     Ds5 
-	BYTE	W96
+        BYTE   W92
+        BYTE   W02
+        BYTE           EOT
+        BYTE           EOT     Cs2
+        BYTE   W02
 // 018   ----------------------------------------
-	BYTE	W22
-	BYTE		EOT   
-	BYTE	W02
-	BYTE		N06     An4 
-	BYTE	W08
-	BYTE		        Gs4 
-	BYTE	W08
-	BYTE		        An4 
-	BYTE	W08
-	BYTE		N22     Bn4 
-	BYTE	W24
-	BYTE		        An4 
-	BYTE	W24
+        BYTE           N30     Fs1
+        BYTE   W24
+        BYTE           N06     An2
+        BYTE   W08
+        BYTE                   Gs2
+        BYTE   W08
+        BYTE                   An2
+        BYTE   W08
+        BYTE           N22     Bn2
+        BYTE   W24
+        BYTE                   An2
+        BYTE   W24
 // 019   ----------------------------------------
-	BYTE		N12     Gs4 
-	BYTE	W12
-	BYTE		        Fs4 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE	W12
-	BYTE		        Fs4 
-	BYTE	W12
-	BYTE		N22     Gs4 
-	BYTE	W24
-	BYTE		        Cs4 
-	BYTE	W24
+        BYTE           N12     Gs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE   W12
+        BYTE           N22     Gs2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE   W24
 // 020   ----------------------------------------
-	BYTE		N68   
-	BYTE		N68     Dn4 
-	BYTE		N68     Fs4 
-	BYTE	W72
-	BYTE		N06     En4 
-	BYTE	W24
+        BYTE           N92     Fs2   v102   gtp2
+        BYTE                   Dn2
+        BYTE   W96
 // 021   ----------------------------------------
-	BYTE		N92     An3 
-	BYTE		N92     An4 
-	BYTE	W96
+        BYTE           N48     Cs2
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE		N24     Cs4 
-	BYTE		N24     Gs4 
-	BYTE	W24
-	BYTE		        En5 
-	BYTE	W24
-	BYTE		        Ds5 
-	BYTE	W24
-	BYTE		        Dn5 
-	BYTE	W24
+        BYTE           N92     Cs2   v102   gtp2
+        BYTE                   Fs1
+        BYTE   W96
 // 023   ----------------------------------------
-	BYTE		TIE     Cs5 
-	BYTE	W96
+PrinceOfDarkness_1_23:
+        BYTE   W24
+        BYTE           N24     Cs2   v102
+        BYTE           N24     Fs2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
+        BYTE                   An2
+        BYTE   W24
+        BYTE   PEND
 // 024   ----------------------------------------
-	BYTE	W92
-	BYTE	W02
-	BYTE		EOT   
-	BYTE	W02
+PrinceOfDarkness_1_24:
+        BYTE           N24     As2   v102
+        BYTE           N24     Gn2
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE   W24
+        BYTE           N48     Dn2
+        BYTE           N48     Bn1
+        BYTE   W48
+        BYTE   PEND
 // 025   ----------------------------------------
-	BYTE		N96   
-	BYTE		N96     En5 
-	BYTE	W96
+PrinceOfDarkness_1_25:
+        BYTE           N96     En2   v102
+        BYTE           N96     En3
+        BYTE           N96     Cn3
+        BYTE   W96
+        BYTE   PEND
 // 026   ----------------------------------------
-	BYTE		N24     Gs3 
-	BYTE		N24     Cs4 
-	BYTE		N24     En4 
-	BYTE	W24
-	BYTE		N06     Cs5 
-	BYTE	W06
-	BYTE		        Fs4 
-	BYTE	W06
-	BYTE		        An4 
-	BYTE	W06
-	BYTE		        Cs5 
-	BYTE	W06
-	BYTE		        Cn5 
-	BYTE	W06
-	BYTE		        Fn4 
-	BYTE	W06
-	BYTE		        Gs4 
-	BYTE	W06
-	BYTE		        Cn5 
-	BYTE	W06
-	BYTE		        Fn5 
-	BYTE	W06
-	BYTE		        Gs4 
-	BYTE	W06
-	BYTE		        Cn5 
-	BYTE	W06
-	BYTE		        Fn5 
-	BYTE	W06
+PrinceOfDarkness_1_26:
+        BYTE           N24     Fs2   v102
+        BYTE   W24
+        BYTE                   Cs3
+        BYTE   W24
+        BYTE                   Cn3
+        BYTE   W24
+        BYTE                   Fn3
+        BYTE   W24
+        BYTE   PEND
 // 027   ----------------------------------------
-	BYTE		        Bn4 
-	BYTE	W06
-	BYTE		        Dn4 
-	BYTE	W06
-	BYTE		        Fn4 
-	BYTE	W06
-	BYTE		        Bn4 
-	BYTE	W06
-	BYTE		N06   
-	BYTE	W06
-	BYTE		        Fn4 
-	BYTE	W06
-	BYTE		        Gs4 
-	BYTE	W06
-	BYTE		        Bn4 
-	BYTE	W06
-	BYTE		        Dn5 
-	BYTE	W06
-	BYTE		        Bn4 
-	BYTE	W06
-	BYTE		        Dn5 
-	BYTE	W06
-	BYTE		        Fn5 
-	BYTE	W06
-	BYTE		        Gs5 
-	BYTE	W06
-	BYTE		        Bn5 
-	BYTE	W06
-	BYTE		        Dn6 
-	BYTE	W06
-	BYTE		        Fn6 
-	BYTE	W06
-	BYTE	GoTo
-	 POIN2	PrinceOfDarkness_1_B1
-PrinceOfDarkness_1_B2:
+        BYTE           N22     Bn2
+        BYTE   W24
+        BYTE           N24
+        BYTE   W24
+        BYTE                   Dn3
+        BYTE   W24
+        BYTE                   Gs3
+        BYTE   W24
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  PrinceOfDarkness_1_LOOP
+        BYTE   FINE
 
-//**************** Track 2 (Midi-Chn.2) ****************//
+//****************** Track 2 (Midi-Chn.2) ******************//
 
 PrinceOfDarkness_2:
-	BYTE	KEYSH   PrinceOfDarkness_key+0
-PrinceOfDarkness_2_B1:
+        BYTE   KEYSH   PrinceOfDarkness_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   20
-	BYTE		VOL     56*PrinceOfDarkness_mvl/mxv
-	BYTE		PAN     c_v+34
-	BYTE		N92     Fs1   v104
-	BYTE		N92     An1 
-	BYTE	W96
+PrinceOfDarkness_2_LOOP:
+        BYTE           VOICE   1
+        BYTE           VOL     46
+        BYTE           N06     Fs4   v102
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
 // 001   ----------------------------------------
-	BYTE		        Fn1 
-	BYTE		N92     Gs1 
-	BYTE	W96
+PrinceOfDarkness_2_1:
+        BYTE           N12     Cn3   v102
+        BYTE   W12
+        BYTE           N06     Fn3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Cn4
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   En4
+        BYTE   W06
+        BYTE                   Fn4
+        BYTE   W06
+        BYTE                   Fs4
+        BYTE   W06
+        BYTE                   Gs4
+        BYTE   W06
+        BYTE                   An4
+        BYTE   W06
+        BYTE                   Cn5
+        BYTE   W06
+        BYTE                   Cs5
+        BYTE   W06
+        BYTE                   Dn5
+        BYTE   W06
+        BYTE   PEND
 // 002   ----------------------------------------
-	BYTE		        Fs1 
-	BYTE		N92     An1 
-	BYTE	W96
+PrinceOfDarkness_2_2:
+        BYTE           N06     Cs5   v102
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE   PEND
 // 003   ----------------------------------------
-	BYTE		        En1 
-	BYTE		N92     An1 
-	BYTE	W96
+PrinceOfDarkness_2_3:
+        BYTE           N12     An2   v102
+        BYTE   W12
+        BYTE           N06     Bn2
+        BYTE   W06
+        BYTE                   Cn3
+        BYTE   W06
+        BYTE                   Dn3
+        BYTE   W06
+        BYTE                   En3
+        BYTE   W06
+        BYTE                   Fn3
+        BYTE   W06
+        BYTE                   Gn3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   Cn4
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   En4
+        BYTE   W06
+        BYTE                   Fn4
+        BYTE   W06
+        BYTE                   Gn4
+        BYTE   W06
+        BYTE                   An4
+        BYTE   W06
+        BYTE   PEND
 // 004   ----------------------------------------
-	BYTE		        Ds1 
-	BYTE		N92     Gs1 
-	BYTE	W96
+PrinceOfDarkness_2_4:
+        BYTE           N06     Gs3   v102
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Fs4
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE   PEND
 // 005   ----------------------------------------
-	BYTE		        Dn1 
-	BYTE		N92     Gn1 
-	BYTE	W96
+PrinceOfDarkness_2_5:
+        BYTE           N12     Dn3   v102
+        BYTE   W12
+        BYTE           N06     Gn3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   As3
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   Ds4
+        BYTE   W06
+        BYTE                   Fs4
+        BYTE   W06
+        BYTE                   Gn4
+        BYTE   W06
+        BYTE                   Gs4
+        BYTE   W06
+        BYTE                   As4
+        BYTE   W06
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE                   Cs5
+        BYTE   W06
+        BYTE                   Ds5
+        BYTE   W06
+        BYTE                   En5
+        BYTE   W06
+        BYTE   PEND
 // 006   ----------------------------------------
-	BYTE		        Ds1 
-	BYTE		N92     Gs1 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_2_4
 // 007   ----------------------------------------
-	BYTE		        Bn1 
-	BYTE		N92     Dn2 
-	BYTE	W96
+PrinceOfDarkness_2_7:
+        BYTE           N12     Bn3   v102
+        BYTE   W12
+        BYTE           N06     Dn3
+        BYTE   W06
+        BYTE                   En3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Gn3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   En4
+        BYTE   W06
+        BYTE                   Fs4
+        BYTE   W06
+        BYTE                   Gn4
+        BYTE   W06
+        BYTE                   An4
+        BYTE   W06
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE                   Cs5
+        BYTE   W06
+        BYTE   PEND
 // 008   ----------------------------------------
-	BYTE		        Fs1 
-	BYTE		N92     An1 
-	BYTE	W96
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
 // 009   ----------------------------------------
-	BYTE		        Fn1 
-	BYTE		N92     Gs1 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_2_1
 // 010   ----------------------------------------
-	BYTE		        Fs1 
-	BYTE		N92     An1 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_2_2
 // 011   ----------------------------------------
-	BYTE		        En1 
-	BYTE		N92     An1 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_2_3
 // 012   ----------------------------------------
-	BYTE		        Ds1 
-	BYTE		N92     Gs1 
-	BYTE	W96
+        BYTE           N06     Gs3   v102
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Fs4
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
 // 013   ----------------------------------------
-	BYTE		        Dn1 
-	BYTE		N92     Gn1 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_2_5
 // 014   ----------------------------------------
-	BYTE		        Ds1 
-	BYTE		N92     Gs1 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_2_4
 // 015   ----------------------------------------
-	BYTE		        Bn1 
-	BYTE		N92     Dn2 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_2_7
 // 016   ----------------------------------------
-	BYTE		TIE     Fs1 
-	BYTE		TIE     Cs2 
-	BYTE	W96
+        BYTE           N24     Fs2   v102
+        BYTE   W24
+        BYTE           N06     Cs4
+        BYTE           N06     Fs4
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Fn4
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Gn3
+        BYTE   W08
 // 017   ----------------------------------------
-	BYTE	W92
-	BYTE	W02
-	BYTE		EOT     Fs1 
-	BYTE		        Cs2 
-	BYTE	W02
+        BYTE                   Ds4
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Ds3
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Fn3
+        BYTE   W06
+        BYTE                   Dn3
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   Gn3
+        BYTE   W06
+        BYTE                   En3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Cn4
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Cn3
+        BYTE   W06
 // 018   ----------------------------------------
-	BYTE		N30     Fs1 
-	BYTE	W24
-	BYTE		N06     An2 
-	BYTE	W08
-	BYTE		        Gs2 
-	BYTE	W08
-	BYTE		        An2 
-	BYTE	W08
-	BYTE		N22     Bn2 
-	BYTE	W24
-	BYTE		        An2 
-	BYTE	W24
+        BYTE           N30
+        BYTE           N24     Fs3
+        BYTE   W24
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE           N22     Gs3
+        BYTE   W24
+        BYTE                   Fs3
+        BYTE   W24
 // 019   ----------------------------------------
-	BYTE		N12     Gs2 
-	BYTE	W12
-	BYTE		        Fs2 
-	BYTE	W12
-	BYTE		        Fn2 
-	BYTE	W12
-	BYTE		        Fs2 
-	BYTE	W12
-	BYTE		N22     Gs2 
-	BYTE	W24
-	BYTE		        Cs2 
-	BYTE	W24
+        BYTE           N12     Cn3
+        BYTE   W12
+        BYTE                   Bn2
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE   W12
+        BYTE                   Bn2
+        BYTE   W12
+        BYTE           N22     Fn3
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
 // 020   ----------------------------------------
-	BYTE		N92     Dn2 
-	BYTE		N92     Fs2 
-	BYTE	W96
+        BYTE           N24     Fs3
+        BYTE   W24
+        BYTE           N06     Bn2
+        BYTE   W08
+        BYTE                   Fs2
+        BYTE   W08
+        BYTE                   Bn2
+        BYTE   W08
+        BYTE                   En3
+        BYTE   W08
+        BYTE                   Bn2
+        BYTE   W08
+        BYTE                   En3
+        BYTE   W08
+        BYTE           N22     An3
+        BYTE   W24
 // 021   ----------------------------------------
-	BYTE		N48     Cs2 
-	BYTE	W96
+        BYTE                   Cs3
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE   W24
+        BYTE           N06     En3
+        BYTE   W08
+        BYTE                   Bn2
+        BYTE   W08
+        BYTE                   En3
+        BYTE   W08
+        BYTE           N22     An3
+        BYTE   W24
 // 022   ----------------------------------------
-	BYTE		N92     Fs1 
-	BYTE		N92     Cs2 
-	BYTE	W96
+        BYTE                   En3
+        BYTE   W24
+        BYTE           N06     En4
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
 // 023   ----------------------------------------
-	BYTE	W24
-	BYTE		N24   
-	BYTE		N24     Fs2 
-	BYTE	W24
-	BYTE		        Gs2 
-	BYTE	W24
-	BYTE		        An2 
-	BYTE	W24
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Cs3
+        BYTE   W08
+        BYTE                   An2
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Cs3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Cs3
+        BYTE   W08
 // 024   ----------------------------------------
-	BYTE		        Gn2 
-	BYTE		N24     As2 
-	BYTE	W24
-	BYTE		        Bn2 
-	BYTE	W24
-	BYTE		N48     Bn1 
-	BYTE		N48     Dn2 
-	BYTE	W48
+        BYTE                   As3
+        BYTE   W08
+        BYTE                   Dn3
+        BYTE   W10
+        BYTE                   Dn2
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Dn3
+        BYTE   W10
+        BYTE                   Dn2
+        BYTE   W06
+        BYTE                   En3
+        BYTE   W08
+        BYTE                   Dn3
+        BYTE   W10
+        BYTE                   En2
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   En3
+        BYTE   W08
+        BYTE                   Dn3
+        BYTE   W08
 // 025   ----------------------------------------
-	BYTE		N96     En2 
-	BYTE		N96     Cn3 
-	BYTE		N96     En3 
-	BYTE	W96
+        BYTE           N48     En4
+        BYTE           N48     Cs4
+        BYTE   W96
 // 026   ----------------------------------------
-	BYTE		N24     Fs2 
-	BYTE	W24
-	BYTE		        Cs3 
-	BYTE	W24
-	BYTE		        Cn3 
-	BYTE	W24
-	BYTE		        Fn3 
-	BYTE	W24
+        BYTE           N24     Gs3
+        BYTE   W96
 // 027   ----------------------------------------
-	BYTE		N22     Bn2 
-	BYTE	W24
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        Dn3 
-	BYTE	W24
-	BYTE		        Gs3 
-	BYTE	W24
-	BYTE	GoTo
-	 POIN2	PrinceOfDarkness_2_B1
-PrinceOfDarkness_2_B2:
+        BYTE   W96
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  PrinceOfDarkness_2_LOOP
+        BYTE   FINE
 
-//**************** Track 3 (Midi-Chn.3) ****************//
+//****************** Track 3 (Midi-Chn.3) ******************//
 
 PrinceOfDarkness_3:
-	BYTE	KEYSH   PrinceOfDarkness_key+0
-PrinceOfDarkness_3_B1:
+        BYTE   KEYSH   PrinceOfDarkness_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   1
-	BYTE		PAN     c_v+0
-	BYTE		VOL     70*PrinceOfDarkness_mvl/mxv
-	BYTE		N06     Fs4   v104
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cn4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
+PrinceOfDarkness_3_LOOP:
+        BYTE           VOICE   6
+        BYTE           PAN     c_v+11
+        BYTE           VOL     40
+        BYTE           N24     Fs3   v102
+        BYTE   W24
+        BYTE           N06     Cs4
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE           N24     Dn4
+        BYTE   W24
+        BYTE                   Cs4
+        BYTE   W24
 // 001   ----------------------------------------
-PrinceOfDarkness_3_001:
-	BYTE		N12     Cn3   v104
-	BYTE	W12
-	BYTE		N06     Fn3 
-	BYTE	W06
-	BYTE		        Fs3 
-	BYTE	W06
-	BYTE		        Gs3 
-	BYTE	W06
-	BYTE		        An3 
-	BYTE	W06
-	BYTE		        Cn4 
-	BYTE	W06
-	BYTE		        Cs4 
-	BYTE	W06
-	BYTE		        En4 
-	BYTE	W06
-	BYTE		        Fn4 
-	BYTE	W06
-	BYTE		        Fs4 
-	BYTE	W06
-	BYTE		        Gs4 
-	BYTE	W06
-	BYTE		        An4 
-	BYTE	W06
-	BYTE		        Cn5 
-	BYTE	W06
-	BYTE		        Cs5 
-	BYTE	W06
-	BYTE		        Dn5 
-	BYTE	W06
-	BYTE	PEND
+        BYTE                   Fn3
+        BYTE   W24
+        BYTE           N06     Cs4
+        BYTE   W08
+        BYTE                   En3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   En3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   En3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
 // 002   ----------------------------------------
-PrinceOfDarkness_3_002:
-	BYTE		N06     Cs5   v104
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cn4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE	PEND
+PrinceOfDarkness_3_2:
+        BYTE           N24     Fs3   v102
+        BYTE   W24
+        BYTE           N06     Cs4
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE           N24     Dn4
+        BYTE   W24
+        BYTE                   Cs4
+        BYTE   W24
+        BYTE   PEND
 // 003   ----------------------------------------
-PrinceOfDarkness_3_003:
-	BYTE		N12     An2   v104
-	BYTE	W12
-	BYTE		N06     Bn2 
-	BYTE	W06
-	BYTE		        Cn3 
-	BYTE	W06
-	BYTE		        Dn3 
-	BYTE	W06
-	BYTE		        En3 
-	BYTE	W06
-	BYTE		        Fn3 
-	BYTE	W06
-	BYTE		        Gn3 
-	BYTE	W06
-	BYTE		        An3 
-	BYTE	W06
-	BYTE		        Bn3 
-	BYTE	W06
-	BYTE		        Cn4 
-	BYTE	W06
-	BYTE		        Dn4 
-	BYTE	W06
-	BYTE		        En4 
-	BYTE	W06
-	BYTE		        Fn4 
-	BYTE	W06
-	BYTE		        Gn4 
-	BYTE	W06
-	BYTE		        An4 
-	BYTE	W06
-	BYTE	PEND
+PrinceOfDarkness_3_3:
+        BYTE           N24     An2   v102
+        BYTE   W24
+        BYTE           N06     En4
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   Fn4
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE   W08
+        BYTE   PEND
 // 004   ----------------------------------------
-PrinceOfDarkness_3_004:
-	BYTE		N06     Gs3   v104
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Ds4 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Fs4 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Ds4 
-	BYTE	W08
-	BYTE	PEND
+PrinceOfDarkness_3_4:
+        BYTE           N24     Gs2   v102
+        BYTE   W24
+        BYTE           N06     Ds3
+        BYTE   W08
+        BYTE                   Dn3
+        BYTE   W08
+        BYTE                   Ds3
+        BYTE   W08
+        BYTE           N24     En3
+        BYTE   W24
+        BYTE                   Ds3
+        BYTE   W24
+        BYTE   PEND
 // 005   ----------------------------------------
-PrinceOfDarkness_3_005:
-	BYTE		N12     Dn3   v104
-	BYTE	W12
-	BYTE		N06     Gn3 
-	BYTE	W06
-	BYTE		        Gs3 
-	BYTE	W06
-	BYTE		        As3 
-	BYTE	W06
-	BYTE		        Bn3 
-	BYTE	W06
-	BYTE		        Dn4 
-	BYTE	W06
-	BYTE		        Ds4 
-	BYTE	W06
-	BYTE		        Fs4 
-	BYTE	W06
-	BYTE		        Gn4 
-	BYTE	W06
-	BYTE		        Gs4 
-	BYTE	W06
-	BYTE		        As4 
-	BYTE	W06
-	BYTE		        Bn4 
-	BYTE	W06
-	BYTE		        Cs5 
-	BYTE	W06
-	BYTE		        Ds5 
-	BYTE	W06
-	BYTE		        En5 
-	BYTE	W06
-	BYTE	PEND
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE           N06     Dn4
+        BYTE   W08
+        BYTE                   Gn3
+        BYTE   W08
+        BYTE                   As3
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Gn3
+        BYTE   W08
+        BYTE                   As3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Gn3
+        BYTE   W08
+        BYTE                   As3
+        BYTE   W08
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_3_004
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_3_4
 // 007   ----------------------------------------
-PrinceOfDarkness_3_007:
-	BYTE		N12     Bn3   v104
-	BYTE	W12
-	BYTE		N06     Dn3 
-	BYTE	W06
-	BYTE		        En3 
-	BYTE	W06
-	BYTE		        Fs3 
-	BYTE	W06
-	BYTE		        Gn3 
-	BYTE	W06
-	BYTE		        An3 
-	BYTE	W06
-	BYTE		        Bn3 
-	BYTE	W06
-	BYTE		        Cs4 
-	BYTE	W06
-	BYTE		        Dn4 
-	BYTE	W06
-	BYTE		        En4 
-	BYTE	W06
-	BYTE		        Fs4 
-	BYTE	W06
-	BYTE		        Gn4 
-	BYTE	W06
-	BYTE		        An4 
-	BYTE	W06
-	BYTE		        Bn4 
-	BYTE	W06
-	BYTE		        Cs5 
-	BYTE	W06
-	BYTE	PEND
+PrinceOfDarkness_3_7:
+        BYTE           N24     Bn2   v102
+        BYTE   W24
+        BYTE           N06     En4
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Gn4
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Fs4
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE   PEND
 // 008   ----------------------------------------
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cn4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_3_2
 // 009   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_3_001
+        BYTE           N24     Fn3   v102
+        BYTE   W24
+        BYTE           N06     Cs4
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE   W08
 // 010   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_3_002
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_3_2
 // 011   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_3_003
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_3_3
 // 012   ----------------------------------------
-	BYTE		N06     Gs3   v104
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Ds4 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Fs4 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_3_4
 // 013   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_3_005
+        BYTE           N24     Gn2   v102
+        BYTE   W24
+        BYTE           N06     Dn4
+        BYTE   W08
+        BYTE                   Gn3
+        BYTE   W08
+        BYTE                   As3
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Gn3
+        BYTE   W08
+        BYTE                   As3
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   Gn3
+        BYTE   W08
+        BYTE                   As3
+        BYTE   W08
 // 014   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_3_004
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_3_4
 // 015   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_3_007
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_3_7
 // 016   ----------------------------------------
-	BYTE		N24     Fs2   v104
-	BYTE	W24
-	BYTE		N06     Cs4 
-	BYTE		N06     Fs4 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Fn4 
-	BYTE	W08
-	BYTE		        Cn4 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        En4 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Gn3 
-	BYTE	W08
+        BYTE           TIE     Fs3   v102
+        BYTE           TIE     Fs2
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE		        Ds4 
-	BYTE	W06
-	BYTE		        An3 
-	BYTE	W06
-	BYTE		        Fs3 
-	BYTE	W06
-	BYTE		        Ds3 
-	BYTE	W06
-	BYTE		        Dn4 
-	BYTE	W06
-	BYTE		        Gs3 
-	BYTE	W06
-	BYTE		        Fn3 
-	BYTE	W06
-	BYTE		        Dn3 
-	BYTE	W06
-	BYTE		        Cs4 
-	BYTE	W06
-	BYTE		        Gn3 
-	BYTE	W06
-	BYTE		        En3 
-	BYTE	W06
-	BYTE		        Cs3 
-	BYTE	W06
-	BYTE		        Cn4 
-	BYTE	W06
-	BYTE		        An3 
-	BYTE	W06
-	BYTE		        Fs3 
-	BYTE	W06
-	BYTE		        Cn3 
-	BYTE	W06
+        BYTE   W92
+        BYTE   W02
+        BYTE           EOT
+        BYTE           EOT     Fs3
+        BYTE   W02
 // 018   ----------------------------------------
-	BYTE		N30   
-	BYTE		N24     Fs3 
-	BYTE	W24
-	BYTE		N06   
-	BYTE	W08
-	BYTE		        Fn3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		N22     Gs3 
-	BYTE	W24
-	BYTE		        Fs3 
-	BYTE	W24
+        BYTE           N30     Fs2
+        BYTE           N22     Cs3
+        BYTE   W24
+        BYTE           N06
+        BYTE   W08
+        BYTE                   An2
+        BYTE   W08
+        BYTE                   Cs3
+        BYTE   W08
+        BYTE           N24     Gs3
+        BYTE   W24
+        BYTE                   Fs3
+        BYTE   W24
 // 019   ----------------------------------------
-	BYTE		N12     Cn3 
-	BYTE	W12
-	BYTE		        Bn2 
-	BYTE	W12
-	BYTE		        Gs2 
-	BYTE	W12
-	BYTE		        Bn2 
-	BYTE	W12
-	BYTE		N22     Fn3 
-	BYTE	W24
-	BYTE		        Gs2 
-	BYTE	W24
+        BYTE                   Cs3
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W48
+        BYTE           N36     Cs2
+        BYTE   W24
 // 020   ----------------------------------------
-	BYTE		N24     Fs3 
-	BYTE	W24
-	BYTE		N06     Bn2 
-	BYTE	W08
-	BYTE		        Fs2 
-	BYTE	W08
-	BYTE		        Bn2 
-	BYTE	W08
-	BYTE		        En3 
-	BYTE	W08
-	BYTE		        Bn2 
-	BYTE	W08
-	BYTE		        En3 
-	BYTE	W08
-	BYTE		N22     An3 
-	BYTE	W24
+        BYTE           N12     Fs2
+        BYTE   W12
+        BYTE           N48     Dn2
+        BYTE   W60
+        BYTE           N24     Dn3
+        BYTE   W24
 // 021   ----------------------------------------
-	BYTE		        Cs3 
-	BYTE	W24
-	BYTE		        Bn2 
-	BYTE	W24
-	BYTE		N06     En3 
-	BYTE	W08
-	BYTE		        Bn2 
-	BYTE	W08
-	BYTE		        En3 
-	BYTE	W08
-	BYTE		N22     An3 
-	BYTE	W24
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Bn2
+        BYTE   W12
+        BYTE                   Cs3
+        BYTE   W12
+        BYTE                   Dn3
+        BYTE   W12
+        BYTE           N24     En4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
 // 022   ----------------------------------------
-	BYTE		        En3 
-	BYTE	W24
-	BYTE		N06     En4 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Ds4 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
+        BYTE           TIE     Cs3
+        BYTE           TIE     Fs2
+        BYTE   W96
 // 023   ----------------------------------------
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		N06   
-	BYTE	W08
-	BYTE		        Cs3 
-	BYTE	W08
-	BYTE		        An2 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Cs3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Fs3 
-	BYTE	W08
-	BYTE		        Cs3 
-	BYTE	W08
+        BYTE   W96
 // 024   ----------------------------------------
-	BYTE		        As3 
-	BYTE	W08
-	BYTE		        Dn3 
-	BYTE	W10
-	BYTE		        Dn2 
-	BYTE	W06
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Dn3 
-	BYTE	W10
-	BYTE		        Dn2 
-	BYTE	W06
-	BYTE		        En3 
-	BYTE	W08
-	BYTE		        Dn3 
-	BYTE	W10
-	BYTE		        En2 
-	BYTE	W06
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        En3 
-	BYTE	W08
-	BYTE		        Dn3 
-	BYTE	W08
+        BYTE           EOT
+        BYTE           EOT     Cs3
+        BYTE           N48     Gn2
+        BYTE   W72
+        BYTE           N24     Gn3
+        BYTE   W24
 // 025   ----------------------------------------
-	BYTE		N48     Cs4 
-	BYTE		N48     En4 
-	BYTE	W96
+        BYTE           N08     En4
+        BYTE   W08
+        BYTE                   Gn3
+        BYTE   W08
+        BYTE                   An3
+        BYTE   W08
+        BYTE                   Bn3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Dn4
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
+        BYTE                   Fs4
+        BYTE   W08
+        BYTE                   Gn4
+        BYTE   W08
+        BYTE                   An4
+        BYTE   W08
+        BYTE                   Bn4
+        BYTE   W08
+        BYTE                   An4
+        BYTE   W08
 // 026   ----------------------------------------
-	BYTE		N24     Gs3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_26
 // 027   ----------------------------------------
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	PrinceOfDarkness_3_B1
-PrinceOfDarkness_3_B2:
+        BYTE   W96
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  PrinceOfDarkness_3_LOOP
+        BYTE   FINE
 
-//**************** Track 4 (Midi-Chn.4) ****************//
+//****************** Track 4 (Midi-Chn.4) ******************//
 
 PrinceOfDarkness_4:
-	BYTE	KEYSH   PrinceOfDarkness_key+0
-PrinceOfDarkness_4_B1:
+        BYTE   KEYSH   PrinceOfDarkness_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   6
-	BYTE		PAN     c_v+11
-	BYTE		VOL     60*PrinceOfDarkness_mvl/mxv
-	BYTE		N24     Fs3   v104
-	BYTE	W24
-	BYTE		N06     Cs4 
-	BYTE	W08
-	BYTE		        Cn4 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		N24     Dn4 
-	BYTE	W24
-	BYTE		        Cs4 
-	BYTE	W24
+PrinceOfDarkness_4_LOOP:
+        BYTE           VOICE   58
+        BYTE           PAN     c_v-1
+        BYTE           VOL     50
+        BYTE           N12     An2   v102
+        BYTE           N12     Fs2
+        BYTE   W48
+        BYTE           N24     An2
+        BYTE           N24     Fs2
+        BYTE   W48
 // 001   ----------------------------------------
-	BYTE		        Fn3 
-	BYTE	W24
-	BYTE		N06     Cs4 
-	BYTE	W08
-	BYTE		        En3 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        En3 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Cn4 
-	BYTE	W08
-	BYTE		        En3 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
+PrinceOfDarkness_4_1:
+        BYTE           N84     Gs2   v102
+        BYTE           N84     Fn2
+        BYTE   W96
+        BYTE   PEND
 // 002   ----------------------------------------
-PrinceOfDarkness_4_002:
-	BYTE		N24     Fs3   v104
-	BYTE	W24
-	BYTE		N06     Cs4 
-	BYTE	W08
-	BYTE		        Cn4 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		N24     Dn4 
-	BYTE	W24
-	BYTE		        Cs4 
-	BYTE	W24
-	BYTE	PEND
+PrinceOfDarkness_4_2:
+        BYTE           N12     Fs2   v102
+        BYTE           N12     An2
+        BYTE   W48
+        BYTE           N24
+        BYTE           N24     Fs2
+        BYTE   W48
+        BYTE   PEND
 // 003   ----------------------------------------
-PrinceOfDarkness_4_003:
-	BYTE		N24     An2   v104
-	BYTE	W24
-	BYTE		N06     En4 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cn4 
-	BYTE	W08
-	BYTE		        Fn4 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cn4 
-	BYTE	W08
-	BYTE		        En4 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Cn4 
-	BYTE	W08
-	BYTE	PEND
+PrinceOfDarkness_4_3:
+        BYTE           N84     An2   v102
+        BYTE           N84     En2
+        BYTE   W96
+        BYTE   PEND
 // 004   ----------------------------------------
-PrinceOfDarkness_4_004:
-	BYTE		N24     Gs2   v104
-	BYTE	W24
-	BYTE		N06     Ds3 
-	BYTE	W08
-	BYTE		        Dn3 
-	BYTE	W08
-	BYTE		        Ds3 
-	BYTE	W08
-	BYTE		N24     En3 
-	BYTE	W24
-	BYTE		        Ds3 
-	BYTE	W24
-	BYTE	PEND
+PrinceOfDarkness_4_4:
+        BYTE           N12     Gs2   v102
+        BYTE           N12     Ds2
+        BYTE   W48
+        BYTE           N24
+        BYTE           N24     Gs2
+        BYTE   W48
+        BYTE   PEND
 // 005   ----------------------------------------
-	BYTE		        Gn2 
-	BYTE	W24
-	BYTE		N06     Dn4 
-	BYTE	W08
-	BYTE		        Gn3 
-	BYTE	W08
-	BYTE		        As3 
-	BYTE	W08
-	BYTE		        Ds4 
-	BYTE	W08
-	BYTE		        Gn3 
-	BYTE	W08
-	BYTE		        As3 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		        Gn3 
-	BYTE	W08
-	BYTE		        As3 
-	BYTE	W08
+PrinceOfDarkness_4_5:
+        BYTE           N84     Gn2   v102
+        BYTE           N84     Dn2
+        BYTE   W96
+        BYTE   PEND
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_4_004
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_4_4
 // 007   ----------------------------------------
-PrinceOfDarkness_4_007:
-	BYTE		N24     Bn2   v104
-	BYTE	W24
-	BYTE		N06     En4 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        Gn4 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        Fs4 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE	PEND
+PrinceOfDarkness_4_7:
+        BYTE           N84     Dn3   v102
+        BYTE           N84     Bn2
+        BYTE   W96
+        BYTE   PEND
 // 008   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_4_002
+        BYTE           N12     An2
+        BYTE           N12     Fs2
+        BYTE   W48
+        BYTE           N24     An2
+        BYTE           N24     Fs2
+        BYTE   W48
 // 009   ----------------------------------------
-	BYTE		N24     Fn3   v104
-	BYTE	W24
-	BYTE		N06     Cs4 
-	BYTE	W08
-	BYTE		        Fn3 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        Fn3 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Fn3 
-	BYTE	W08
-	BYTE		        Gs3 
-	BYTE	W08
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_4_1
 // 010   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_4_002
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_4_2
 // 011   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_4_003
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_4_3
 // 012   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_4_004
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_4_4
 // 013   ----------------------------------------
-	BYTE		N24     Gn2   v104
-	BYTE	W24
-	BYTE		N06     Dn4 
-	BYTE	W08
-	BYTE		        Gn3 
-	BYTE	W08
-	BYTE		        As3 
-	BYTE	W08
-	BYTE		        Ds4 
-	BYTE	W08
-	BYTE		        Gn3 
-	BYTE	W08
-	BYTE		        As3 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        Gn3 
-	BYTE	W08
-	BYTE		        As3 
-	BYTE	W08
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_4_5
 // 014   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_4_004
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_4_4
 // 015   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_4_007
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_4_7
 // 016   ----------------------------------------
-	BYTE		TIE     Fs2   v104
-	BYTE		TIE     Fs3 
-	BYTE	W96
+        BYTE           N12     Cs3   v102
+        BYTE           N12     Fs2
+        BYTE   W48
+        BYTE           N24
+        BYTE           N24     Cs3
+        BYTE   W48
 // 017   ----------------------------------------
-	BYTE	W92
-	BYTE	W02
-	BYTE		EOT     Fs2 
-	BYTE		        Fs3 
-	BYTE	W02
+        BYTE           N84
+        BYTE           N84     Fs2
+        BYTE   W96
 // 018   ----------------------------------------
-	BYTE		N30     Fs2 
-	BYTE		N22     Cs3 
-	BYTE	W24
-	BYTE		N06   
-	BYTE	W08
-	BYTE		        An2 
-	BYTE	W08
-	BYTE		        Cs3 
-	BYTE	W08
-	BYTE		N24     Gs3 
-	BYTE	W24
-	BYTE		        Fs3 
-	BYTE	W24
+        BYTE   W96
 // 019   ----------------------------------------
-	BYTE		        Cs3 
-	BYTE	W24
-	BYTE		        Gs2 
-	BYTE	W48
-	BYTE		N36     Cs2 
-	BYTE	W24
+        BYTE   W96
 // 020   ----------------------------------------
-	BYTE		N12     Fs2 
-	BYTE	W12
-	BYTE		N48     Dn2 
-	BYTE	W60
-	BYTE		N24     Dn3 
-	BYTE	W24
+        BYTE           N90
+        BYTE           N90     Dn2
+        BYTE   W96
 // 021   ----------------------------------------
-	BYTE		N12     Cs3 
-	BYTE	W12
-	BYTE		        Bn2 
-	BYTE	W12
-	BYTE		        Cs3 
-	BYTE	W12
-	BYTE		        Dn3 
-	BYTE	W12
-	BYTE		N24     En4 
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
+        BYTE                   Cs2
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE		TIE     Fs2 
-	BYTE		TIE     Cs3 
-	BYTE	W96
+        BYTE                   Fs1
+        BYTE           N84     Cs2
+        BYTE   W96
 // 023   ----------------------------------------
-	BYTE	W96
-	BYTE		EOT     Fs2 
-	BYTE		        Cs3 
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_23
 // 024   ----------------------------------------
-	BYTE		N48     Gn2 
-	BYTE	W72
-	BYTE		N24     Gn3 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_24
 // 025   ----------------------------------------
-	BYTE		N08     En4 
-	BYTE	W08
-	BYTE		        Gn3 
-	BYTE	W08
-	BYTE		        An3 
-	BYTE	W08
-	BYTE		        Bn3 
-	BYTE	W08
-	BYTE		        Cs4 
-	BYTE	W08
-	BYTE		        Dn4 
-	BYTE	W08
-	BYTE		        En4 
-	BYTE	W08
-	BYTE		        Fs4 
-	BYTE	W08
-	BYTE		        Gn4 
-	BYTE	W08
-	BYTE		        An4 
-	BYTE	W08
-	BYTE		        Bn4 
-	BYTE	W08
-	BYTE		        An4 
-	BYTE	W08
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_1_25
 // 026   ----------------------------------------
-	BYTE		N24     Fs2 
-	BYTE	W24
-	BYTE		        Cs3 
-	BYTE	W24
-	BYTE		        Cn3 
-	BYTE	W24
-	BYTE		        Fn3 
-	BYTE	W24
+        BYTE           N90     Fs2   v102
+        BYTE           N90     An2
+        BYTE   W96
 // 027   ----------------------------------------
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	PrinceOfDarkness_4_B1
-PrinceOfDarkness_4_B2:
+        BYTE                   Fn2
+        BYTE           N90     Gs2
+        BYTE   W96
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  PrinceOfDarkness_4_LOOP
+        BYTE   FINE
 
-//**************** Track 5 (Midi-Chn.5) ****************//
+//****************** Track 5 (Midi-Chn.5) ******************//
 
 PrinceOfDarkness_5:
-	BYTE	KEYSH   PrinceOfDarkness_key+0
-PrinceOfDarkness_5_B1:
+        BYTE   KEYSH   PrinceOfDarkness_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   58
-	BYTE		PAN     c_v-1
-	BYTE		VOL     76*PrinceOfDarkness_mvl/mxv
-	BYTE		N12     Fs2   v104
-	BYTE		N12     An2 
-	BYTE	W48
-	BYTE		N24     Fs2 
-	BYTE		N24     An2 
-	BYTE	W48
+PrinceOfDarkness_5_LOOP:
+        BYTE           VOICE   52
+        BYTE           VOL     33
+        BYTE           PAN     c_v-32
+        BYTE           N92     An3   v102   gtp2
+        BYTE                   Fs3
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE		N84     Fn2 
-	BYTE		N84     Gs2 
-	BYTE	W96
+PrinceOfDarkness_5_1:
+        BYTE           N92     Gs3   v102   gtp2
+        BYTE                   Fn3
+        BYTE   W96
+        BYTE   PEND
 // 002   ----------------------------------------
-PrinceOfDarkness_5_002:
-	BYTE		N12     Fs2   v104
-	BYTE		N12     An2 
-	BYTE	W48
-	BYTE		N24     Fs2 
-	BYTE		N24     An2 
-	BYTE	W48
-	BYTE	PEND
+PrinceOfDarkness_5_2:
+        BYTE           N92     An3   v102   gtp2
+        BYTE                   Fs3
+        BYTE   W96
+        BYTE   PEND
 // 003   ----------------------------------------
-	BYTE		N84     En2 
-	BYTE		N84     An2 
-	BYTE	W96
+PrinceOfDarkness_5_3:
+        BYTE           N92     An3   v102   gtp2
+        BYTE                   En3
+        BYTE   W96
+        BYTE   PEND
 // 004   ----------------------------------------
-PrinceOfDarkness_5_004:
-	BYTE		N12     Ds2   v104
-	BYTE		N12     Gs2 
-	BYTE	W48
-	BYTE		N24     Ds2 
-	BYTE		N24     Gs2 
-	BYTE	W48
-	BYTE	PEND
+PrinceOfDarkness_5_4:
+        BYTE           N92     Gs3   v102   gtp2
+        BYTE                   Ds3
+        BYTE   W96
+        BYTE   PEND
 // 005   ----------------------------------------
-	BYTE		N84     Dn2 
-	BYTE		N84     Gn2 
-	BYTE	W96
+        BYTE                   Dn3
+        BYTE           N92     Gn3   v102   gtp2
+        BYTE   W96
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_5_004
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_5_4
 // 007   ----------------------------------------
-	BYTE		N84     Bn2   v104
-	BYTE		N84     Dn3 
-	BYTE	W96
+PrinceOfDarkness_5_7:
+        BYTE           N92     Dn4   v102   gtp2
+        BYTE                   Bn3
+        BYTE   W96
+        BYTE   PEND
 // 008   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_5_002
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_5_2
 // 009   ----------------------------------------
-	BYTE		N84     Fn2   v104
-	BYTE		N84     Gs2 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_5_1
 // 010   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_5_002
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_5_2
 // 011   ----------------------------------------
-	BYTE		N84     En2   v104
-	BYTE		N84     An2 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_5_3
 // 012   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_5_004
+        BYTE           N92     Ds3   v102   gtp2
+        BYTE                   Gs3
+        BYTE   W96
 // 013   ----------------------------------------
-	BYTE		N84     Dn2   v104
-	BYTE		N84     Gn2 
-	BYTE	W96
+        BYTE                   Gn3
+        BYTE           N92     Dn3   v102   gtp2
+        BYTE   W96
 // 014   ----------------------------------------
-	BYTE	PATT
-	 POIN2	PrinceOfDarkness_5_004
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_5_4
 // 015   ----------------------------------------
-	BYTE		N84     Bn2   v104
-	BYTE		N84     Dn3 
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_5_7
 // 016   ----------------------------------------
-	BYTE		N12     Fs2 
-	BYTE		N12     Cs3 
-	BYTE	W48
-	BYTE		N24     Fs2 
-	BYTE		N24     Cs3 
-	BYTE	W48
+        BYTE           TIE     Cs4   v102
+        BYTE           TIE     Fs3
+        BYTE   W96
 // 017   ----------------------------------------
-	BYTE		N84     Fs2 
-	BYTE		N84     Cs3 
-	BYTE	W96
+        BYTE   W92
+        BYTE   W02
+        BYTE           EOT     Cs4
+        BYTE                   Fs3
+        BYTE   W02
 // 018   ----------------------------------------
-	BYTE	W96
+        BYTE           N30
+        BYTE   W24
+        BYTE           N06     An4
+        BYTE   W08
+        BYTE                   Gs4
+        BYTE   W08
+        BYTE                   An4
+        BYTE   W08
+        BYTE           N22     Bn4
+        BYTE   W24
+        BYTE                   An4
+        BYTE   W24
 // 019   ----------------------------------------
-	BYTE	W96
+        BYTE   PATT
+         POIN2  PrinceOfDarkness_0_19
 // 020   ----------------------------------------
-	BYTE		N90     Dn2 
-	BYTE		N90     Fs2 
-	BYTE	W96
+        BYTE           N92     Fs4   v102   gtp2
+        BYTE                   Dn4
+        BYTE   W96
 // 021   ----------------------------------------
-	BYTE		        Cs2 
-	BYTE	W96
+        BYTE           N48     Cs4
+        BYTE   W96
 // 022   ----------------------------------------
-	BYTE		        Fs1 
-	BYTE		N84     Cs2 
-	BYTE	W96
+        BYTE           N92     Cs4   v102   gtp2
+        BYTE                   Fs3
+        BYTE   W96
 // 023   ----------------------------------------
-	BYTE	W24
-	BYTE		N24   
-	BYTE		N24     Fs2 
-	BYTE	W24
-	BYTE		        Gs2 
-	BYTE	W24
-	BYTE		        An2 
-	BYTE	W24
+        BYTE   W24
+        BYTE           N24     Cs3
+        BYTE           N24     Fs3
+        BYTE   W24
+        BYTE                   Gs3
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
 // 024   ----------------------------------------
-	BYTE		        Gn2 
-	BYTE		N24     As2 
-	BYTE	W24
-	BYTE		        Bn2 
-	BYTE	W24
-	BYTE		N48     Bn1 
-	BYTE		N48     Dn2 
-	BYTE	W48
+        BYTE                   As3
+        BYTE           N24     Gn3
+        BYTE   W24
+        BYTE                   Bn3
+        BYTE   W24
+        BYTE           N48     Dn3
+        BYTE           N48     Bn2
+        BYTE   W48
 // 025   ----------------------------------------
-	BYTE		N96     En2 
-	BYTE		N96     Cn3 
-	BYTE		N96     En3 
-	BYTE	W96
+        BYTE           N96     En3
+        BYTE           N96     En4
+        BYTE           N96     Cn4
+        BYTE   W96
 // 026   ----------------------------------------
-	BYTE		N90     Fs2 
-	BYTE		N90     An2 
-	BYTE	W96
+        BYTE           N24     Fs3
+        BYTE   W24
+        BYTE                   Cs4
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+        BYTE                   Fn4
+        BYTE   W24
 // 027   ----------------------------------------
-	BYTE		        Fn2 
-	BYTE		N90     Gs2 
-	BYTE	W96
-	BYTE	GoTo
-	 POIN2	PrinceOfDarkness_5_B1
-PrinceOfDarkness_5_B2:
+        BYTE           N22     Bn3
+        BYTE   W24
+        BYTE           N24
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
+        BYTE                   Gs4
+        BYTE   W24
 // 028   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  PrinceOfDarkness_5_LOOP
+        BYTE   FINE
 
-//**************** Track 6 (Midi-Chn.6) ****************//
 
-PrinceOfDarkness_6:
-	BYTE	KEYSH   PrinceOfDarkness_key+0
-PrinceOfDarkness_6_B1:
-// 000   ----------------------------------------
-	BYTE		VOICE   52
-	BYTE		VOL     50*PrinceOfDarkness_mvl/mxv
-	BYTE		PAN     c_v-32
-	BYTE		N92     Fs3   v104
-	BYTE		N92     An3 
-	BYTE	W96
-// 001   ----------------------------------------
-	BYTE		        Fn3 
-	BYTE		N92     Gs3 
-	BYTE	W96
-// 002   ----------------------------------------
-	BYTE		        Fs3 
-	BYTE		N92     An3 
-	BYTE	W96
-// 003   ----------------------------------------
-	BYTE		        En3 
-	BYTE		N92     An3 
-	BYTE	W96
-// 004   ----------------------------------------
-	BYTE		        Ds3 
-	BYTE		N92     Gs3 
-	BYTE	W96
-// 005   ----------------------------------------
-	BYTE		        Dn3 
-	BYTE		N92     Gn3 
-	BYTE	W96
-// 006   ----------------------------------------
-	BYTE		        Ds3 
-	BYTE		N92     Gs3 
-	BYTE	W96
-// 007   ----------------------------------------
-	BYTE		        Bn3 
-	BYTE		N92     Dn4 
-	BYTE	W96
-// 008   ----------------------------------------
-	BYTE		        Fs3 
-	BYTE		N92     An3 
-	BYTE	W96
-// 009   ----------------------------------------
-	BYTE		        Fn3 
-	BYTE		N92     Gs3 
-	BYTE	W96
-// 010   ----------------------------------------
-	BYTE		        Fs3 
-	BYTE		N92     An3 
-	BYTE	W96
-// 011   ----------------------------------------
-	BYTE		        En3 
-	BYTE		N92     An3 
-	BYTE	W96
-// 012   ----------------------------------------
-	BYTE		        Ds3 
-	BYTE		N92     Gs3 
-	BYTE	W96
-// 013   ----------------------------------------
-	BYTE		        Dn3 
-	BYTE		N92     Gn3 
-	BYTE	W96
-// 014   ----------------------------------------
-	BYTE		        Ds3 
-	BYTE		N92     Gs3 
-	BYTE	W96
-// 015   ----------------------------------------
-	BYTE		        Bn3 
-	BYTE		N92     Dn4 
-	BYTE	W96
-// 016   ----------------------------------------
-	BYTE		TIE     Fs3 
-	BYTE		TIE     Cs4 
-	BYTE	W96
-// 017   ----------------------------------------
-	BYTE	W92
-	BYTE	W02
-	BYTE		EOT     Fs3 
-	BYTE		        Cs4 
-	BYTE	W02
-// 018   ----------------------------------------
-	BYTE		N30     Fs3 
-	BYTE	W24
-	BYTE		N06     An4 
-	BYTE	W08
-	BYTE		        Gs4 
-	BYTE	W08
-	BYTE		        An4 
-	BYTE	W08
-	BYTE		N22     Bn4 
-	BYTE	W24
-	BYTE		        An4 
-	BYTE	W24
-// 019   ----------------------------------------
-	BYTE		N12     Gs4 
-	BYTE	W12
-	BYTE		        Fs4 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE	W12
-	BYTE		        Fs4 
-	BYTE	W12
-	BYTE		N22     Gs4 
-	BYTE	W24
-	BYTE		        Cs4 
-	BYTE	W24
-// 020   ----------------------------------------
-	BYTE		N92     Dn4 
-	BYTE		N92     Fs4 
-	BYTE	W96
-// 021   ----------------------------------------
-	BYTE		N48     Cs4 
-	BYTE	W96
-// 022   ----------------------------------------
-	BYTE		N92     Fs3 
-	BYTE		N92     Cs4 
-	BYTE	W96
-// 023   ----------------------------------------
-	BYTE	W24
-	BYTE		N24     Cs3 
-	BYTE		N24     Fs3 
-	BYTE	W24
-	BYTE		        Gs3 
-	BYTE	W24
-	BYTE		        An3 
-	BYTE	W24
-// 024   ----------------------------------------
-	BYTE		        Gn3 
-	BYTE		N24     As3 
-	BYTE	W24
-	BYTE		        Bn3 
-	BYTE	W24
-	BYTE		N48     Bn2 
-	BYTE		N48     Dn3 
-	BYTE	W48
-// 025   ----------------------------------------
-	BYTE		N96     En3 
-	BYTE		N96     Cn4 
-	BYTE		N96     En4 
-	BYTE	W96
-// 026   ----------------------------------------
-	BYTE		N24     Fs3 
-	BYTE	W24
-	BYTE		        Cs4 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
-	BYTE		        Fn4 
-	BYTE	W24
-// 027   ----------------------------------------
-	BYTE		N22     Bn3 
-	BYTE	W24
-	BYTE		N24   
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
-	BYTE		        Gs4 
-	BYTE	W24
-	BYTE	GoTo
-	 POIN2	PrinceOfDarkness_6_B1
-PrinceOfDarkness_6_B2:
-// 028   ----------------------------------------
-	BYTE	FINE
+//********************** End of Song ***********************//
 
-//******************************************************//
-	ALIGN 4
-
+        ALIGN 4
 PrinceOfDarkness:
-	BYTE	6	// NumTrks
-	BYTE	0	// NumBlks
-	BYTE	PrinceOfDarkness_pri	// Priority
-	BYTE	PrinceOfDarkness_rev	// Reverb.
+        BYTE   6                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   PrinceOfDarkness_pri    // Priority
+        BYTE   PrinceOfDarkness_rev    // Reverb
 
-	POIN2	PrinceOfDarkness_grp
+        POIN2   PrinceOfDarkness_grp   
 
-	POIN2	PrinceOfDarkness_1
-	POIN2	PrinceOfDarkness_2
-	POIN2	PrinceOfDarkness_3
-	POIN2	PrinceOfDarkness_4
-	POIN2	PrinceOfDarkness_5
-	POIN2	PrinceOfDarkness_6
+        POIN2   PrinceOfDarkness_0
+        POIN2   PrinceOfDarkness_1
+        POIN2   PrinceOfDarkness_2
+        POIN2   PrinceOfDarkness_3
+        POIN2   PrinceOfDarkness_4
+        POIN2   PrinceOfDarkness_5
 
-	
+        

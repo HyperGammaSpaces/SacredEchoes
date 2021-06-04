@@ -1,87 +1,78 @@
 //Event file generated from Sappy .s format.
-	#include "MPlayDef.event"
+        #include "MPlayDef.event"
 
-	#define	LimaDiesBellSFX_grp  voicegroup000
-	#define	LimaDiesBellSFX_pri  0
-	#define	LimaDiesBellSFX_rev  0
-	#define	LimaDiesBellSFX_mvl  85
-	#define	LimaDiesBellSFX_key  0
-	#define	LimaDiesBellSFX_tbs  1
-	#define	LimaDiesBellSFX_exg  0
-	#define	LimaDiesBellSFX_cmp  1
+        #define    LimaDiesBellSFX_grp  voicegroup000
+        #define    LimaDiesBellSFX_pri  0
+        #define    LimaDiesBellSFX_rev  0
+        #define    LimaDiesBellSFX_key  0
 
-	// .rodata
-	//	LimaDiesBellSFX
-	ALIGN 4
+        // .rodata
+        // LimaDiesBellSFX
+        ALIGN 4
 
-//**************** Track 1 (Midi-Chn.1) ****************//
+//****************** Track 0 (Midi-Chn.0) ******************//
 
-LimaDiesBellSFX_1:
-	BYTE		VOL     127*LimaDiesBellSFX_mvl/mxv
-	BYTE	KEYSH   LimaDiesBellSFX_key+0
+LimaDiesBellSFX_0:
+        BYTE   KEYSH   LimaDiesBellSFX_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   14
-	BYTE		TIE     Ds2   v104
-	BYTE		TIE     As2 
-	BYTE		TIE     Ds3 
-	BYTE	W96
+        BYTE           VOICE   14
+        BYTE           TIE     As2   v102
+        BYTE           TIE     Ds3
+        BYTE           TIE     Ds2
+        BYTE           VOL     84
+        BYTE   W96
 // 001   ----------------------------------------
-	BYTE	W36
-	BYTE		EOT   
-	BYTE	W12
-	BYTE		EOT     As2 
-	BYTE	W12
-	BYTE		        Ds2 
-	BYTE	W36
+LimaDiesBellSFX_0_1:
+        BYTE   W36
+        BYTE           EOT     Ds3
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE                   Ds2
+        BYTE   W36
+        BYTE   PEND
 // 002   ----------------------------------------
-LimaDiesBellSFX_1_002:
-	BYTE		TIE     Ds2   v104
-	BYTE		TIE     As2 
-	BYTE		TIE     Ds3 
-	BYTE	W96
-	BYTE	PEND
+LimaDiesBellSFX_0_2:
+        BYTE           TIE     Ds3   v102
+        BYTE           TIE     As2
+        BYTE           TIE     Ds2
+        BYTE   W96
+        BYTE   PEND
 // 003   ----------------------------------------
-	BYTE	W36
-	BYTE		EOT   
-	BYTE	W12
-	BYTE		EOT     As2 
-	BYTE	W12
-	BYTE		        Ds2 
-	BYTE	W36
+        BYTE   PATT
+         POIN2  LimaDiesBellSFX_0_1
 // 004   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LimaDiesBellSFX_1_002
+        BYTE           TIE     As2   v102
+        BYTE           TIE     Ds3
+        BYTE           TIE     Ds2
+        BYTE   W96
 // 005   ----------------------------------------
-	BYTE	W36
-	BYTE		EOT     Ds3 
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE		        Ds2 
-	BYTE	W36
+        BYTE   PATT
+         POIN2  LimaDiesBellSFX_0_1
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	LimaDiesBellSFX_1_002
+        BYTE   PATT
+         POIN2  LimaDiesBellSFX_0_2
 // 007   ----------------------------------------
-	BYTE	W36
-	BYTE		EOT     Ds3 
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE		        Ds2 
-	BYTE	FINE
+        BYTE   W36
+        BYTE           EOT     Ds3
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE                   Ds2
+        BYTE   FINE
 
-//******************************************************//
-	ALIGN 4
 
+//********************** End of Song ***********************//
+
+        ALIGN 4
 LimaDiesBellSFX:
-	BYTE	1	// NumTrks
-	BYTE	0	// NumBlks
-	BYTE	LimaDiesBellSFX_pri	// Priority
-	BYTE	LimaDiesBellSFX_rev	// Reverb.
+        BYTE   1                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   LimaDiesBellSFX_pri     // Priority
+        BYTE   LimaDiesBellSFX_rev     // Reverb
 
-	POIN2	LimaDiesBellSFX_grp
+        POIN2   LimaDiesBellSFX_grp    
 
-	POIN2	LimaDiesBellSFX_1
+        POIN2   LimaDiesBellSFX_0
 
-	
+        

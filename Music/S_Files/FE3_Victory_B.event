@@ -1,1118 +1,1251 @@
 //Event file generated from Sappy .s format.
-	#include "MPlayDef.event"
+        #include "MPlayDef.event"
 
-	#define	FE3_Victory_B_grp  voicegroup000
-	#define	FE3_Victory_B_pri  0
-	#define	FE3_Victory_B_rev  0
-	#define	FE3_Victory_B_mvl  85
-	#define	FE3_Victory_B_key  0
-	#define	FE3_Victory_B_tbs  1
-	#define	FE3_Victory_B_exg  0
-	#define	FE3_Victory_B_cmp  1
+        #define    FE3_Victory_B_grp  voicegroup000
+        #define    FE3_Victory_B_pri  0
+        #define    FE3_Victory_B_rev  0
+        #define    FE3_Victory_B_key  0
 
-	// .rodata
-	//	FE3_Victory_B
-	ALIGN 4
+        // .rodata
+        // FE3_Victory_B
+        ALIGN 4
 
-//**************** Track 1 (Midi-Chn.1) ****************//
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+FE3_Victory_B_0:
+        BYTE   KEYSH   FE3_Victory_B_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   64/2
+FE3_Victory_B_0_LOOP:
+        BYTE           VOICE   61
+        BYTE           PAN     c_v+14
+        BYTE           VOL     44
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     An3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Gn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     En3   v102
+        BYTE   W12
+// 001   ----------------------------------------
+FE3_Victory_B_0_1:
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     An3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Gn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     En3   v102
+        BYTE   W12
+        BYTE   PEND
+// 002   ----------------------------------------
+        BYTE   PATT
+         POIN2  FE3_Victory_B_0_1
+// 003   ----------------------------------------
+        BYTE   PATT
+         POIN2  FE3_Victory_B_0_1
+// 004   ----------------------------------------
+FE3_Victory_B_0_4:
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     An3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Gn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     En3   v102
+        BYTE   W12
+        BYTE   PEND
+// 005   ----------------------------------------
+        BYTE   PATT
+         POIN2  FE3_Victory_B_0_4
+// 006   ----------------------------------------
+        BYTE   PATT
+         POIN2  FE3_Victory_B_0_4
+// 007   ----------------------------------------
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     An3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Gn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     En3   v102
+        BYTE   W11
+        BYTE   GoTo
+         POIN2  FE3_Victory_B_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
 
 FE3_Victory_B_1:
-	BYTE	KEYSH   FE3_Victory_B_key+0
-FE3_Victory_B_1_B1:
+        BYTE   KEYSH   FE3_Victory_B_key+0
 // 000   ----------------------------------------
-	BYTE	TEMPO   63*FE3_Victory_B_tbs/2
-	BYTE		VOICE   61
-	BYTE		VOL     70*FE3_Victory_B_mvl/mxv
-	BYTE		PAN     c_v+14
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     An3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Gn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Fn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     En3   v104
-	BYTE	W12
+FE3_Victory_B_1_LOOP:
+        BYTE           VOICE   122
+        BYTE           PAN     c_v+25
+        BYTE           VOL     63
+        BYTE           N03     Dn1   v102
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v108
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v108
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v108
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1   v114
+        BYTE           N11     An3   v108
+        BYTE   W04
+        BYTE           N03     Dn1   v089
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE   W04
 // 001   ----------------------------------------
-FE3_Victory_B_1_001:
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     An3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Gn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Fn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     En3   v104
-	BYTE	W12
-	BYTE	PEND
+FE3_Victory_B_1_1:
+        BYTE           N03     Dn1   v102
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v108
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v108
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v108
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1   v114
+        BYTE           N11     An3   v108
+        BYTE   W04
+        BYTE           N03     Dn1   v089
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE   W04
+        BYTE   PEND
 // 002   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_1_001
+        BYTE   PATT
+         POIN2  FE3_Victory_B_1_1
 // 003   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_1_001
+        BYTE           N03     Dn1   v102
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1   v114
+        BYTE           N11     An3   v108
+        BYTE   W04
+        BYTE           N03     Dn1   v089
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE   W04
+        BYTE                   Dn1   v102
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1   v114
+        BYTE           N11     An3   v108
+        BYTE   W04
+        BYTE           N03     Dn1   v089
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE   W04
+        BYTE                   Dn1   v102
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1   v114
+        BYTE           N11     An3   v108
+        BYTE   W04
+        BYTE           N03     Dn1   v089
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v089
+        BYTE   W04
+        BYTE           N01     Dn1   v114
+        BYTE           N11     An3   v108
+        BYTE   W02
+        BYTE           N01     Dn1   v095
+        BYTE   W02
+        BYTE                   Dn1   v086
+        BYTE   W02
+        BYTE                   Dn1   v077
+        BYTE   W02
+        BYTE                   Dn1   v070
+        BYTE   W02
+        BYTE                   Dn1
+        BYTE   W02
 // 004   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_1_001
+        BYTE   PATT
+         POIN2  FE3_Victory_B_1_1
 // 005   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_1_001
+        BYTE   PATT
+         POIN2  FE3_Victory_B_1_1
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_1_001
+        BYTE   PATT
+         POIN2  FE3_Victory_B_1_1
 // 007   ----------------------------------------
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     An3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Gn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Fn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     En3   v104
-	BYTE	W11
-	BYTE	GoTo
-	 POIN2	FE3_Victory_B_1_B1
-FE3_Victory_B_1_B2:
-	BYTE	FINE
+        BYTE           N03     Dn1   v102
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1   v114
+        BYTE           N11     An3   v108
+        BYTE   W04
+        BYTE           N03     Dn1   v089
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE   W04
+        BYTE                   Dn1   v102
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1   v114
+        BYTE           N11     An3   v108
+        BYTE   W04
+        BYTE           N03     Dn1   v089
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE   W04
+        BYTE                   Dn1   v102
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v102
+        BYTE   W04
+        BYTE                   Dn1   v114
+        BYTE           N11     An3   v108
+        BYTE   W04
+        BYTE           N03     Dn1   v089
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE   W04
+        BYTE                   Dn1
+        BYTE           N11     An3   v095
+        BYTE   W08
+        BYTE           N03     Dn1   v089
+        BYTE   W04
+        BYTE           N01     Dn1   v114
+        BYTE           N11     An3   v108
+        BYTE   W02
+        BYTE           N01     Dn1   v095
+        BYTE   W02
+        BYTE                   Dn1   v086
+        BYTE   W02
+        BYTE                   Dn1   v077
+        BYTE   W02
+        BYTE                   Dn1   v070
+        BYTE   W02
+        BYTE                   Dn1
+        BYTE   W01
+        BYTE   GoTo
+         POIN2  FE3_Victory_B_1_LOOP
+        BYTE   FINE
 
-//**************** Track 2 (Midi-Chn.2) ****************//
+//****************** Track 2 (Midi-Chn.2) ******************//
 
 FE3_Victory_B_2:
-	BYTE	KEYSH   FE3_Victory_B_key+0
-FE3_Victory_B_2_B1:
+        BYTE   KEYSH   FE3_Victory_B_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   122
-	BYTE		VOL     101*FE3_Victory_B_mvl/mxv
-	BYTE		PAN     c_v+25
-	BYTE		N03     Dn1   v104
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v108
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v108
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v108
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		        Dn1   v116
-	BYTE		N11     An3   v108
-	BYTE	W04
-	BYTE		N03     Dn1   v092
-	BYTE	W04
-	BYTE		N03   
-	BYTE	W04
+FE3_Victory_B_2_LOOP:
+        BYTE           VOICE   34
+        BYTE           VOL     60
+        BYTE           N02     Dn2   v114
+        BYTE   W08
+        BYTE           N01     Dn2   v102
+        BYTE   W04
+        BYTE           N02     Dn2   v114
+        BYTE   W08
+        BYTE           N01     Dn2   v102
+        BYTE   W04
+        BYTE           N02     Dn2   v114
+        BYTE   W08
+        BYTE           N01     Dn2   v102
+        BYTE   W04
+        BYTE           N02     Dn2   v114
+        BYTE   W08
+        BYTE           N01     Dn2   v102
+        BYTE   W04
+        BYTE           N02     Dn2   v114
+        BYTE   W08
+        BYTE           N01     Dn2   v102
+        BYTE   W04
+        BYTE           N02     Dn2   v114
+        BYTE   W08
+        BYTE           N01     Dn2   v102
+        BYTE   W04
+        BYTE           N02     Dn2   v114
+        BYTE   W08
+        BYTE           N01     Dn2   v102
+        BYTE   W04
+        BYTE           N02     Dn2   v114
+        BYTE   W08
+        BYTE           N01     Dn2   v102
+        BYTE   W04
 // 001   ----------------------------------------
-FE3_Victory_B_2_001:
-	BYTE		N03     Dn1   v104
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v108
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v108
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v108
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		        Dn1   v116
-	BYTE		N11     An3   v108
-	BYTE	W04
-	BYTE		N03     Dn1   v092
-	BYTE	W04
-	BYTE		N03   
-	BYTE	W04
-	BYTE	PEND
+        BYTE           N02     Cn2   v114
+        BYTE   W08
+        BYTE           N01     Cn2   v102
+        BYTE   W04
+        BYTE           N02     Cn2   v114
+        BYTE   W08
+        BYTE           N01     Cn2   v102
+        BYTE   W04
+        BYTE           N02     Cn2   v114
+        BYTE   W08
+        BYTE           N01     Cn2   v102
+        BYTE   W04
+        BYTE           N02     Cn2   v114
+        BYTE   W08
+        BYTE           N01     Cn2   v102
+        BYTE   W04
+        BYTE           N02     Cn2   v114
+        BYTE   W08
+        BYTE           N01     Cn2   v102
+        BYTE   W04
+        BYTE           N02     Cn2   v114
+        BYTE   W08
+        BYTE           N01     Cn2   v102
+        BYTE   W04
+        BYTE           N02     Cn2   v114
+        BYTE   W08
+        BYTE           N01     Cn2   v102
+        BYTE   W04
+        BYTE           N02     Cn2   v114
+        BYTE   W08
+        BYTE           N01     Cn2   v102
+        BYTE   W04
 // 002   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_2_001
+        BYTE           N02     Bn1   v114
+        BYTE   W08
+        BYTE           N01     Bn1   v102
+        BYTE   W04
+        BYTE           N02     Bn1   v114
+        BYTE   W08
+        BYTE           N01     Bn1   v102
+        BYTE   W04
+        BYTE           N02     Bn1   v114
+        BYTE   W08
+        BYTE           N01     Bn1   v102
+        BYTE   W04
+        BYTE           N02     Bn1   v114
+        BYTE   W08
+        BYTE           N01     Bn1   v102
+        BYTE   W04
+        BYTE           N02     Bn1   v114
+        BYTE   W08
+        BYTE           N01     Bn1   v102
+        BYTE   W04
+        BYTE           N02     Bn1   v114
+        BYTE   W08
+        BYTE           N01     Bn1   v102
+        BYTE   W04
+        BYTE           N02     Bn1   v114
+        BYTE   W08
+        BYTE           N01     Bn1   v102
+        BYTE   W04
+        BYTE           N02     Bn1   v114
+        BYTE   W08
+        BYTE           N01     Bn1   v102
+        BYTE   W04
 // 003   ----------------------------------------
-	BYTE		N03     Dn1   v104
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		        Dn1   v116
-	BYTE		N11     An3   v108
-	BYTE	W04
-	BYTE		N03     Dn1   v092
-	BYTE	W04
-	BYTE		N03   
-	BYTE	W04
-	BYTE		        Dn1   v104
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		        Dn1   v116
-	BYTE		N11     An3   v108
-	BYTE	W04
-	BYTE		N03     Dn1   v092
-	BYTE	W04
-	BYTE		N03   
-	BYTE	W04
-	BYTE		        Dn1   v104
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		        Dn1   v116
-	BYTE		N11     An3   v108
-	BYTE	W04
-	BYTE		N03     Dn1   v092
-	BYTE	W04
-	BYTE		N03   
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v092
-	BYTE	W04
-	BYTE		N01     Dn1   v116
-	BYTE		N11     An3   v108
-	BYTE	W02
-	BYTE		N01     Dn1   v096
-	BYTE	W02
-	BYTE		        Dn1   v088
-	BYTE	W02
-	BYTE		        Dn1   v080
-	BYTE	W02
-	BYTE		        Dn1   v072
-	BYTE	W02
-	BYTE		N01   
-	BYTE	W02
+        BYTE           N02     As1   v114
+        BYTE   W08
+        BYTE           N01     As1   v102
+        BYTE   W04
+        BYTE           N02     As1   v114
+        BYTE   W08
+        BYTE           N01     As1   v102
+        BYTE   W04
+        BYTE           N02     As1   v114
+        BYTE   W08
+        BYTE           N01     As1   v102
+        BYTE   W04
+        BYTE           N02     As1   v114
+        BYTE   W08
+        BYTE           N01     As1   v102
+        BYTE   W04
+        BYTE           N02     An1   v114
+        BYTE   W08
+        BYTE           N01     An1   v102
+        BYTE   W04
+        BYTE           N02     An1   v114
+        BYTE   W08
+        BYTE           N01     An1   v102
+        BYTE   W04
+        BYTE           N02     An1   v114
+        BYTE   W08
+        BYTE           N01     An1   v102
+        BYTE   W04
+        BYTE           N02     An1   v114
+        BYTE   W08
+        BYTE           N01     An1   v102
+        BYTE   W04
 // 004   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_2_001
+        BYTE           N03     Dn2   v114
+        BYTE   W08
+        BYTE           N02     Dn2   v102
+        BYTE   W04
+        BYTE           N03     Dn2   v114
+        BYTE   W08
+        BYTE           N02     Dn2   v102
+        BYTE   W04
+        BYTE           N03     Dn2   v114
+        BYTE   W08
+        BYTE           N02     Dn2   v102
+        BYTE   W04
+        BYTE           N03     Dn2   v114
+        BYTE   W08
+        BYTE           N02     Dn2   v102
+        BYTE   W04
+        BYTE           N03     Dn2   v114
+        BYTE   W08
+        BYTE           N02     Dn2   v102
+        BYTE   W04
+        BYTE           N03     Dn2   v114
+        BYTE   W08
+        BYTE           N02     Dn2   v102
+        BYTE   W04
+        BYTE           N03     Dn2   v114
+        BYTE   W08
+        BYTE           N02     Dn2   v102
+        BYTE   W04
+        BYTE           N03     Dn2   v114
+        BYTE   W08
+        BYTE           N02     Dn2   v102
+        BYTE   W04
 // 005   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_2_001
+        BYTE           N03     Cn2   v114
+        BYTE   W08
+        BYTE           N02     Cn2   v102
+        BYTE   W04
+        BYTE           N03     Cn2   v114
+        BYTE   W08
+        BYTE           N02     Cn2   v102
+        BYTE   W04
+        BYTE           N03     Cn2   v114
+        BYTE   W08
+        BYTE           N02     Cn2   v102
+        BYTE   W04
+        BYTE           N03     Cn2   v114
+        BYTE   W08
+        BYTE           N02     Cn2   v102
+        BYTE   W04
+        BYTE           N03     Cn2   v114
+        BYTE   W08
+        BYTE           N02     Cn2   v102
+        BYTE   W04
+        BYTE           N03     Cn2   v114
+        BYTE   W08
+        BYTE           N02     Cn2   v102
+        BYTE   W04
+        BYTE           N03     Cn2   v114
+        BYTE   W08
+        BYTE           N02     Cn2   v102
+        BYTE   W04
+        BYTE           N03     Cn2   v114
+        BYTE   W08
+        BYTE           N02     Cn2   v102
+        BYTE   W04
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_2_001
+        BYTE           N03     Bn1   v114
+        BYTE   W08
+        BYTE           N02     Bn1   v102
+        BYTE   W04
+        BYTE           N03     Bn1   v114
+        BYTE   W08
+        BYTE           N02     Bn1   v102
+        BYTE   W04
+        BYTE           N03     Bn1   v114
+        BYTE   W08
+        BYTE           N02     Bn1   v102
+        BYTE   W04
+        BYTE           N03     Bn1   v114
+        BYTE   W08
+        BYTE           N02     Bn1   v102
+        BYTE   W04
+        BYTE           N03     Bn1   v114
+        BYTE   W08
+        BYTE           N02     Bn1   v102
+        BYTE   W04
+        BYTE           N03     Bn1   v114
+        BYTE   W08
+        BYTE           N02     Bn1   v102
+        BYTE   W04
+        BYTE           N03     Bn1   v114
+        BYTE   W08
+        BYTE           N02     Bn1   v102
+        BYTE   W04
+        BYTE           N03     Bn1   v114
+        BYTE   W08
+        BYTE           N02     Bn1   v102
+        BYTE   W04
 // 007   ----------------------------------------
-	BYTE		N03     Dn1   v104
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		        Dn1   v116
-	BYTE		N11     An3   v108
-	BYTE	W04
-	BYTE		N03     Dn1   v092
-	BYTE	W04
-	BYTE		N03   
-	BYTE	W04
-	BYTE		        Dn1   v104
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		        Dn1   v116
-	BYTE		N11     An3   v108
-	BYTE	W04
-	BYTE		N03     Dn1   v092
-	BYTE	W04
-	BYTE		N03   
-	BYTE	W04
-	BYTE		        Dn1   v104
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v104
-	BYTE	W04
-	BYTE		        Dn1   v116
-	BYTE		N11     An3   v108
-	BYTE	W04
-	BYTE		N03     Dn1   v092
-	BYTE	W04
-	BYTE		N03   
-	BYTE	W04
-	BYTE		N03   
-	BYTE		N11     An3   v096
-	BYTE	W08
-	BYTE		N03     Dn1   v092
-	BYTE	W04
-	BYTE		N01     Dn1   v116
-	BYTE		N11     An3   v108
-	BYTE	W02
-	BYTE		N01     Dn1   v096
-	BYTE	W02
-	BYTE		        Dn1   v088
-	BYTE	W02
-	BYTE		        Dn1   v080
-	BYTE	W02
-	BYTE		        Dn1   v072
-	BYTE	W02
-	BYTE		N01   
-	BYTE	W01
-	BYTE	GoTo
-	 POIN2	FE3_Victory_B_2_B1
-FE3_Victory_B_2_B2:
-	BYTE	FINE
+        BYTE           N03     As1   v114
+        BYTE   W08
+        BYTE           N02     As1   v102
+        BYTE   W04
+        BYTE           N03     As1   v114
+        BYTE   W08
+        BYTE           N02     As1   v102
+        BYTE   W04
+        BYTE           N03     As1   v114
+        BYTE   W08
+        BYTE           N02     As1   v102
+        BYTE   W04
+        BYTE           N03     As1   v114
+        BYTE   W08
+        BYTE           N02     As1   v102
+        BYTE   W04
+        BYTE           N03     An1   v114
+        BYTE   W08
+        BYTE           N02     An1   v102
+        BYTE   W04
+        BYTE           N03     An1   v114
+        BYTE   W08
+        BYTE           N02     An1   v102
+        BYTE   W04
+        BYTE           N03     An1   v114
+        BYTE   W08
+        BYTE           N02     An1   v102
+        BYTE   W04
+        BYTE           N03     An1   v114
+        BYTE   W08
+        BYTE           N02     An1   v102
+        BYTE   W03
+        BYTE   GoTo
+         POIN2  FE3_Victory_B_2_LOOP
+        BYTE   FINE
 
-//**************** Track 3 (Midi-Chn.3) ****************//
+//****************** Track 3 (Midi-Chn.3) ******************//
 
 FE3_Victory_B_3:
-	BYTE	KEYSH   FE3_Victory_B_key+0
-FE3_Victory_B_3_B1:
+        BYTE   KEYSH   FE3_Victory_B_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   34
-	BYTE		PAN     c_v+0
-	BYTE		VOL     95*FE3_Victory_B_mvl/mxv
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
+FE3_Victory_B_3_LOOP:
+        BYTE           VOICE   106
+        BYTE           VOL     60
+        BYTE           N02     Dn4   v114
+        BYTE   W08
+        BYTE           N01     Dn4   v102
+        BYTE   W04
+        BYTE           N02     Dn4   v114
+        BYTE   W08
+        BYTE           N01     Dn4   v102
+        BYTE   W04
+        BYTE           N02     Dn4   v114
+        BYTE   W08
+        BYTE           N01     Dn4   v102
+        BYTE   W04
+        BYTE           N02     Dn4   v114
+        BYTE   W08
+        BYTE           N01     Dn4   v102
+        BYTE   W04
+        BYTE           N02     Dn4   v114
+        BYTE   W08
+        BYTE           N01     Dn4   v102
+        BYTE   W04
+        BYTE           N02     Dn4   v114
+        BYTE   W08
+        BYTE           N01     Dn4   v102
+        BYTE   W04
+        BYTE           N02     Dn4   v114
+        BYTE   W08
+        BYTE           N01     Dn4   v102
+        BYTE   W04
+        BYTE           N02     Dn4   v114
+        BYTE   W08
+        BYTE           N01     Dn4   v102
+        BYTE   W04
 // 001   ----------------------------------------
-FE3_Victory_B_3_001:
-	BYTE		N02     Cn2   v116
-	BYTE	W08
-	BYTE		N01     Cn2   v104
-	BYTE	W04
-	BYTE		N02     Cn2   v116
-	BYTE	W08
-	BYTE		N01     Cn2   v104
-	BYTE	W04
-	BYTE		N02     Cn2   v116
-	BYTE	W08
-	BYTE		N01     Cn2   v104
-	BYTE	W04
-	BYTE		N02     Cn2   v116
-	BYTE	W08
-	BYTE		N01     Cn2   v104
-	BYTE	W04
-	BYTE		N02     Cn2   v116
-	BYTE	W08
-	BYTE		N01     Cn2   v104
-	BYTE	W04
-	BYTE		N02     Cn2   v116
-	BYTE	W08
-	BYTE		N01     Cn2   v104
-	BYTE	W04
-	BYTE		N02     Cn2   v116
-	BYTE	W08
-	BYTE		N01     Cn2   v104
-	BYTE	W04
-	BYTE		N02     Cn2   v116
-	BYTE	W08
-	BYTE		N01     Cn2   v104
-	BYTE	W04
-	BYTE	PEND
+        BYTE           N02     Cn4   v114
+        BYTE   W08
+        BYTE           N01     Cn4   v102
+        BYTE   W04
+        BYTE           N02     Cn4   v114
+        BYTE   W08
+        BYTE           N01     Cn4   v102
+        BYTE   W04
+        BYTE           N02     Cn4   v114
+        BYTE   W08
+        BYTE           N01     Cn4   v102
+        BYTE   W04
+        BYTE           N02     Cn4   v114
+        BYTE   W08
+        BYTE           N01     Cn4   v102
+        BYTE   W04
+        BYTE           N02     Cn4   v114
+        BYTE   W08
+        BYTE           N01     Cn4   v102
+        BYTE   W04
+        BYTE           N02     Cn4   v114
+        BYTE   W08
+        BYTE           N01     Cn4   v102
+        BYTE   W04
+        BYTE           N02     Cn4   v114
+        BYTE   W08
+        BYTE           N01     Cn4   v102
+        BYTE   W04
+        BYTE           N02     Cn4   v114
+        BYTE   W08
+        BYTE           N01     Cn4   v102
+        BYTE   W04
 // 002   ----------------------------------------
-FE3_Victory_B_3_002:
-	BYTE		N02     Bn1   v116
-	BYTE	W08
-	BYTE		N01     Bn1   v104
-	BYTE	W04
-	BYTE		N02     Bn1   v116
-	BYTE	W08
-	BYTE		N01     Bn1   v104
-	BYTE	W04
-	BYTE		N02     Bn1   v116
-	BYTE	W08
-	BYTE		N01     Bn1   v104
-	BYTE	W04
-	BYTE		N02     Bn1   v116
-	BYTE	W08
-	BYTE		N01     Bn1   v104
-	BYTE	W04
-	BYTE		N02     Bn1   v116
-	BYTE	W08
-	BYTE		N01     Bn1   v104
-	BYTE	W04
-	BYTE		N02     Bn1   v116
-	BYTE	W08
-	BYTE		N01     Bn1   v104
-	BYTE	W04
-	BYTE		N02     Bn1   v116
-	BYTE	W08
-	BYTE		N01     Bn1   v104
-	BYTE	W04
-	BYTE		N02     Bn1   v116
-	BYTE	W08
-	BYTE		N01     Bn1   v104
-	BYTE	W04
-	BYTE	PEND
+        BYTE           N02     Bn3   v114
+        BYTE   W08
+        BYTE           N01     Bn3   v102
+        BYTE   W04
+        BYTE           N02     Bn3   v114
+        BYTE   W08
+        BYTE           N01     Bn3   v102
+        BYTE   W04
+        BYTE           N02     Bn3   v114
+        BYTE   W08
+        BYTE           N01     Bn3   v102
+        BYTE   W04
+        BYTE           N02     Bn3   v114
+        BYTE   W08
+        BYTE           N01     Bn3   v102
+        BYTE   W04
+        BYTE           N02     Bn3   v114
+        BYTE   W08
+        BYTE           N01     Bn3   v102
+        BYTE   W04
+        BYTE           N02     Bn3   v114
+        BYTE   W08
+        BYTE           N01     Bn3   v102
+        BYTE   W04
+        BYTE           N02     Bn3   v114
+        BYTE   W08
+        BYTE           N01     Bn3   v102
+        BYTE   W04
+        BYTE           N02     Bn3   v114
+        BYTE   W08
+        BYTE           N01     Bn3   v102
+        BYTE   W04
 // 003   ----------------------------------------
-	BYTE		N02     As1   v116
-	BYTE	W08
-	BYTE		N01     As1   v104
-	BYTE	W04
-	BYTE		N02     As1   v116
-	BYTE	W08
-	BYTE		N01     As1   v104
-	BYTE	W04
-	BYTE		N02     As1   v116
-	BYTE	W08
-	BYTE		N01     As1   v104
-	BYTE	W04
-	BYTE		N02     As1   v116
-	BYTE	W08
-	BYTE		N01     As1   v104
-	BYTE	W04
-	BYTE		N02     An1   v116
-	BYTE	W08
-	BYTE		N01     An1   v104
-	BYTE	W04
-	BYTE		N02     An1   v116
-	BYTE	W08
-	BYTE		N01     An1   v104
-	BYTE	W04
-	BYTE		N02     An1   v116
-	BYTE	W08
-	BYTE		N01     An1   v104
-	BYTE	W04
-	BYTE		N02     An1   v116
-	BYTE	W08
-	BYTE		N01     An1   v104
-	BYTE	W04
+        BYTE           N02     As3   v114
+        BYTE   W08
+        BYTE           N01     As3   v102
+        BYTE   W04
+        BYTE           N02     As3   v114
+        BYTE   W08
+        BYTE           N01     As3   v102
+        BYTE   W04
+        BYTE           N02     As3   v114
+        BYTE   W08
+        BYTE           N01     As3   v102
+        BYTE   W04
+        BYTE           N02     As3   v114
+        BYTE   W08
+        BYTE           N01     As3   v102
+        BYTE   W04
+        BYTE           N02     An3   v114
+        BYTE   W08
+        BYTE           N01     An3   v102
+        BYTE   W04
+        BYTE           N02     An3   v114
+        BYTE   W08
+        BYTE           N01     An3   v102
+        BYTE   W04
+        BYTE           N02     An3   v114
+        BYTE   W08
+        BYTE           N01     An3   v102
+        BYTE   W04
+        BYTE           N02     An3   v114
+        BYTE   W08
+        BYTE           N01     An3   v102
+        BYTE   W04
 // 004   ----------------------------------------
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
-	BYTE		N02     Dn2   v116
-	BYTE	W08
-	BYTE		N01     Dn2   v104
-	BYTE	W04
+        BYTE           N03     Dn4   v114
+        BYTE   W08
+        BYTE           N02     Dn4   v102
+        BYTE   W04
+        BYTE           N03     Dn4   v114
+        BYTE   W08
+        BYTE           N02     Dn4   v102
+        BYTE   W04
+        BYTE           N03     Dn4   v114
+        BYTE   W08
+        BYTE           N02     Dn4   v102
+        BYTE   W04
+        BYTE           N03     Dn4   v114
+        BYTE   W08
+        BYTE           N02     Dn4   v102
+        BYTE   W04
+        BYTE           N03     Dn4   v114
+        BYTE   W08
+        BYTE           N02     Dn4   v102
+        BYTE   W04
+        BYTE           N03     Dn4   v114
+        BYTE   W08
+        BYTE           N02     Dn4   v102
+        BYTE   W04
+        BYTE           N03     Dn4   v114
+        BYTE   W08
+        BYTE           N02     Dn4   v102
+        BYTE   W04
+        BYTE           N03     Dn4   v114
+        BYTE   W08
+        BYTE           N02     Dn4   v102
+        BYTE   W04
 // 005   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_3_001
+        BYTE           N03     Cn4   v114
+        BYTE   W08
+        BYTE           N02     Cn4   v102
+        BYTE   W04
+        BYTE           N03     Cn4   v114
+        BYTE   W08
+        BYTE           N02     Cn4   v102
+        BYTE   W04
+        BYTE           N03     Cn4   v114
+        BYTE   W08
+        BYTE           N02     Cn4   v102
+        BYTE   W04
+        BYTE           N03     Cn4   v114
+        BYTE   W08
+        BYTE           N02     Cn4   v102
+        BYTE   W04
+        BYTE           N03     Cn4   v114
+        BYTE   W08
+        BYTE           N02     Cn4   v102
+        BYTE   W04
+        BYTE           N03     Cn4   v114
+        BYTE   W08
+        BYTE           N02     Cn4   v102
+        BYTE   W04
+        BYTE           N03     Cn4   v114
+        BYTE   W08
+        BYTE           N02     Cn4   v102
+        BYTE   W04
+        BYTE           N03     Cn4   v114
+        BYTE   W08
+        BYTE           N02     Cn4   v102
+        BYTE   W04
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_3_002
+        BYTE           N03     Bn3   v114
+        BYTE   W08
+        BYTE           N02     Bn3   v102
+        BYTE   W04
+        BYTE           N03     Bn3   v114
+        BYTE   W08
+        BYTE           N02     Bn3   v102
+        BYTE   W04
+        BYTE           N03     Bn3   v114
+        BYTE   W08
+        BYTE           N02     Bn3   v102
+        BYTE   W04
+        BYTE           N03     Bn3   v114
+        BYTE   W08
+        BYTE           N02     Bn3   v102
+        BYTE   W04
+        BYTE           N03     Bn3   v114
+        BYTE   W08
+        BYTE           N02     Bn3   v102
+        BYTE   W04
+        BYTE           N03     Bn3   v114
+        BYTE   W08
+        BYTE           N02     Bn3   v102
+        BYTE   W04
+        BYTE           N03     Bn3   v114
+        BYTE   W08
+        BYTE           N02     Bn3   v102
+        BYTE   W04
+        BYTE           N03     Bn3   v114
+        BYTE   W08
+        BYTE           N02     Bn3   v102
+        BYTE   W04
 // 007   ----------------------------------------
-	BYTE		N02     As1   v116
-	BYTE	W08
-	BYTE		N01     As1   v104
-	BYTE	W04
-	BYTE		N02     As1   v116
-	BYTE	W08
-	BYTE		N01     As1   v104
-	BYTE	W04
-	BYTE		N02     As1   v116
-	BYTE	W08
-	BYTE		N01     As1   v104
-	BYTE	W04
-	BYTE		N02     As1   v116
-	BYTE	W08
-	BYTE		N01     As1   v104
-	BYTE	W04
-	BYTE		N02     An1   v116
-	BYTE	W08
-	BYTE		N01     An1   v104
-	BYTE	W04
-	BYTE		N02     An1   v116
-	BYTE	W08
-	BYTE		N01     An1   v104
-	BYTE	W04
-	BYTE		N02     An1   v116
-	BYTE	W08
-	BYTE		N01     An1   v104
-	BYTE	W04
-	BYTE		N02     An1   v116
-	BYTE	W08
-	BYTE		N01     An1   v104
-	BYTE	W03
-	BYTE	GoTo
-	 POIN2	FE3_Victory_B_3_B1
-FE3_Victory_B_3_B2:
-	BYTE	FINE
+        BYTE           N03     As3   v114
+        BYTE   W08
+        BYTE           N02     As3   v102
+        BYTE   W04
+        BYTE           N03     As3   v114
+        BYTE   W08
+        BYTE           N02     As3   v102
+        BYTE   W04
+        BYTE           N03     As3   v114
+        BYTE   W08
+        BYTE           N02     As3   v102
+        BYTE   W04
+        BYTE           N03     As3   v114
+        BYTE   W08
+        BYTE           N02     As3   v102
+        BYTE   W04
+        BYTE           N03     An3   v114
+        BYTE   W08
+        BYTE           N02     An3   v102
+        BYTE   W04
+        BYTE           N03     An3   v114
+        BYTE   W08
+        BYTE           N02     An3   v102
+        BYTE   W04
+        BYTE           N03     An3   v114
+        BYTE   W08
+        BYTE           N02     An3   v102
+        BYTE   W04
+        BYTE           N03     An3   v114
+        BYTE   W08
+        BYTE           N02     An3   v102
+        BYTE   W03
+        BYTE   GoTo
+         POIN2  FE3_Victory_B_3_LOOP
+        BYTE   FINE
 
-//**************** Track 4 (Midi-Chn.4) ****************//
+//****************** Track 4 (Midi-Chn.4) ******************//
 
 FE3_Victory_B_4:
-	BYTE	KEYSH   FE3_Victory_B_key+0
-FE3_Victory_B_4_B1:
+        BYTE   KEYSH   FE3_Victory_B_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   106
-	BYTE		VOL     95*FE3_Victory_B_mvl/mxv
-	BYTE		PAN     c_v+0
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
+FE3_Victory_B_4_LOOP:
+        BYTE           VOICE   66
+        BYTE           PAN     c_v-14
+        BYTE           VOL     63
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     En3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Dn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Cn3   v102
+        BYTE   W12
 // 001   ----------------------------------------
-FE3_Victory_B_4_001:
-	BYTE		N02     Cn4   v116
-	BYTE	W08
-	BYTE		N01     Cn4   v104
-	BYTE	W04
-	BYTE		N02     Cn4   v116
-	BYTE	W08
-	BYTE		N01     Cn4   v104
-	BYTE	W04
-	BYTE		N02     Cn4   v116
-	BYTE	W08
-	BYTE		N01     Cn4   v104
-	BYTE	W04
-	BYTE		N02     Cn4   v116
-	BYTE	W08
-	BYTE		N01     Cn4   v104
-	BYTE	W04
-	BYTE		N02     Cn4   v116
-	BYTE	W08
-	BYTE		N01     Cn4   v104
-	BYTE	W04
-	BYTE		N02     Cn4   v116
-	BYTE	W08
-	BYTE		N01     Cn4   v104
-	BYTE	W04
-	BYTE		N02     Cn4   v116
-	BYTE	W08
-	BYTE		N01     Cn4   v104
-	BYTE	W04
-	BYTE		N02     Cn4   v116
-	BYTE	W08
-	BYTE		N01     Cn4   v104
-	BYTE	W04
-	BYTE	PEND
+FE3_Victory_B_4_1:
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     En3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Dn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Cn3   v102
+        BYTE   W12
+        BYTE   PEND
 // 002   ----------------------------------------
-FE3_Victory_B_4_002:
-	BYTE		N02     Bn3   v116
-	BYTE	W08
-	BYTE		N01     Bn3   v104
-	BYTE	W04
-	BYTE		N02     Bn3   v116
-	BYTE	W08
-	BYTE		N01     Bn3   v104
-	BYTE	W04
-	BYTE		N02     Bn3   v116
-	BYTE	W08
-	BYTE		N01     Bn3   v104
-	BYTE	W04
-	BYTE		N02     Bn3   v116
-	BYTE	W08
-	BYTE		N01     Bn3   v104
-	BYTE	W04
-	BYTE		N02     Bn3   v116
-	BYTE	W08
-	BYTE		N01     Bn3   v104
-	BYTE	W04
-	BYTE		N02     Bn3   v116
-	BYTE	W08
-	BYTE		N01     Bn3   v104
-	BYTE	W04
-	BYTE		N02     Bn3   v116
-	BYTE	W08
-	BYTE		N01     Bn3   v104
-	BYTE	W04
-	BYTE		N02     Bn3   v116
-	BYTE	W08
-	BYTE		N01     Bn3   v104
-	BYTE	W04
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  FE3_Victory_B_4_1
 // 003   ----------------------------------------
-	BYTE		N02     As3   v116
-	BYTE	W08
-	BYTE		N01     As3   v104
-	BYTE	W04
-	BYTE		N02     As3   v116
-	BYTE	W08
-	BYTE		N01     As3   v104
-	BYTE	W04
-	BYTE		N02     As3   v116
-	BYTE	W08
-	BYTE		N01     As3   v104
-	BYTE	W04
-	BYTE		N02     As3   v116
-	BYTE	W08
-	BYTE		N01     As3   v104
-	BYTE	W04
-	BYTE		N02     An3   v116
-	BYTE	W08
-	BYTE		N01     An3   v104
-	BYTE	W04
-	BYTE		N02     An3   v116
-	BYTE	W08
-	BYTE		N01     An3   v104
-	BYTE	W04
-	BYTE		N02     An3   v116
-	BYTE	W08
-	BYTE		N01     An3   v104
-	BYTE	W04
-	BYTE		N02     An3   v116
-	BYTE	W08
-	BYTE		N01     An3   v104
-	BYTE	W04
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     En3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Dn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Cs3   v102
+        BYTE   W12
 // 004   ----------------------------------------
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
-	BYTE		N02     Dn4   v116
-	BYTE	W08
-	BYTE		N01     Dn4   v104
-	BYTE	W04
+FE3_Victory_B_4_4:
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     En3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Dn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Cn3   v102
+        BYTE   W12
+        BYTE   PEND
 // 005   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_4_001
+        BYTE   PATT
+         POIN2  FE3_Victory_B_4_4
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_4_002
+        BYTE   PATT
+         POIN2  FE3_Victory_B_4_4
 // 007   ----------------------------------------
-	BYTE		N02     As3   v116
-	BYTE	W08
-	BYTE		N01     As3   v104
-	BYTE	W04
-	BYTE		N02     As3   v116
-	BYTE	W08
-	BYTE		N01     As3   v104
-	BYTE	W04
-	BYTE		N02     As3   v116
-	BYTE	W08
-	BYTE		N01     As3   v104
-	BYTE	W04
-	BYTE		N02     As3   v116
-	BYTE	W08
-	BYTE		N01     As3   v104
-	BYTE	W04
-	BYTE		N02     An3   v116
-	BYTE	W08
-	BYTE		N01     An3   v104
-	BYTE	W04
-	BYTE		N02     An3   v116
-	BYTE	W08
-	BYTE		N01     An3   v104
-	BYTE	W04
-	BYTE		N02     An3   v116
-	BYTE	W08
-	BYTE		N01     An3   v104
-	BYTE	W04
-	BYTE		N02     An3   v116
-	BYTE	W08
-	BYTE		N01     An3   v104
-	BYTE	W03
-	BYTE	GoTo
-	 POIN2	FE3_Victory_B_4_B1
-FE3_Victory_B_4_B2:
-	BYTE	FINE
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     En3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Dn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Cs3   v102
+        BYTE   W11
+        BYTE   GoTo
+         POIN2  FE3_Victory_B_4_LOOP
+        BYTE   FINE
 
-//**************** Track 5 (Midi-Chn.5) ****************//
+//****************** Track 5 (Midi-Chn.5) ******************//
 
 FE3_Victory_B_5:
-	BYTE	KEYSH   FE3_Victory_B_key+0
-FE3_Victory_B_5_B1:
+        BYTE   KEYSH   FE3_Victory_B_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   66
-	BYTE		VOL     100*FE3_Victory_B_mvl/mxv
-	BYTE		PAN     c_v-14
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Fn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     En3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Dn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Cn3   v104
-	BYTE	W12
+FE3_Victory_B_5_LOOP:
+        BYTE           VOICE   57
+        BYTE           PAN     c_v-14
+        BYTE           VOL     63
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     An3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Gn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N10     En3   v102
+        BYTE   W12
 // 001   ----------------------------------------
-FE3_Victory_B_5_001:
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Fn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     En3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Dn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Cn3   v104
-	BYTE	W12
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  FE3_Victory_B_0_1
 // 002   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_5_001
+        BYTE   PATT
+         POIN2  FE3_Victory_B_0_1
 // 003   ----------------------------------------
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Fn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     En3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Dn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Cs3   v104
-	BYTE	W12
+        BYTE   PATT
+         POIN2  FE3_Victory_B_0_1
 // 004   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_5_001
+        BYTE   PATT
+         POIN2  FE3_Victory_B_0_4
 // 005   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_5_001
+        BYTE   PATT
+         POIN2  FE3_Victory_B_0_4
 // 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_5_001
+        BYTE   PATT
+         POIN2  FE3_Victory_B_0_4
 // 007   ----------------------------------------
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Fn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     En3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Dn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Cs3   v104
-	BYTE	W11
-	BYTE	GoTo
-	 POIN2	FE3_Victory_B_5_B1
-FE3_Victory_B_5_B2:
-	BYTE	FINE
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     An3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Gn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     Fn3   v102
+        BYTE   W12
+        BYTE           N02     An2   v089
+        BYTE   W04
+        BYTE                   An2   v076
+        BYTE   W04
+        BYTE                   An2
+        BYTE   W04
+        BYTE           N11     En3   v102
+        BYTE   W11
+        BYTE   GoTo
+         POIN2  FE3_Victory_B_5_LOOP
+        BYTE   FINE
 
-//**************** Track 6 (Midi-Chn.6) ****************//
 
-FE3_Victory_B_6:
-	BYTE	KEYSH   FE3_Victory_B_key+0
-FE3_Victory_B_6_B1:
-// 000   ----------------------------------------
-	BYTE		VOICE   57
-	BYTE		VOL     100*FE3_Victory_B_mvl/mxv
-	BYTE		PAN     c_v-14
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     An3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Gn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Fn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     En3   v104
-	BYTE	W12
-// 001   ----------------------------------------
-FE3_Victory_B_6_001:
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     An3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Gn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Fn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     En3   v104
-	BYTE	W12
-	BYTE	PEND
-// 002   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_6_001
-// 003   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_6_001
-// 004   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_6_001
-// 005   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_6_001
-// 006   ----------------------------------------
-	BYTE	PATT
-	 POIN2	FE3_Victory_B_6_001
-// 007   ----------------------------------------
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     An3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Gn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     Fn3   v104
-	BYTE	W12
-	BYTE		N02     An2   v092
-	BYTE	W04
-	BYTE		        An2   v076
-	BYTE	W04
-	BYTE		N02   
-	BYTE	W04
-	BYTE		N10     En3   v104
-	BYTE	W11
-	BYTE	GoTo
-	 POIN2	FE3_Victory_B_6_B1
-FE3_Victory_B_6_B2:
-	BYTE	FINE
+//********************** End of Song ***********************//
 
-//******************************************************//
-	ALIGN 4
-
+        ALIGN 4
 FE3_Victory_B:
-	BYTE	6	// NumTrks
-	BYTE	0	// NumBlks
-	BYTE	FE3_Victory_B_pri	// Priority
-	BYTE	FE3_Victory_B_rev	// Reverb.
+        BYTE   6                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   FE3_Victory_B_pri       // Priority
+        BYTE   FE3_Victory_B_rev       // Reverb
 
-	POIN2	FE3_Victory_B_grp
+        POIN2   FE3_Victory_B_grp      
 
-	POIN2	FE3_Victory_B_1
-	POIN2	FE3_Victory_B_2
-	POIN2	FE3_Victory_B_3
-	POIN2	FE3_Victory_B_4
-	POIN2	FE3_Victory_B_5
-	POIN2	FE3_Victory_B_6
+        POIN2   FE3_Victory_B_0
+        POIN2   FE3_Victory_B_1
+        POIN2   FE3_Victory_B_2
+        POIN2   FE3_Victory_B_3
+        POIN2   FE3_Victory_B_4
+        POIN2   FE3_Victory_B_5
 
-	
+        

@@ -4,11 +4,11 @@
 
 @dir %~dp0\S_Files\*.mid /b/s > mid.txt
 
-@for /f "tokens=*" %%m in (mid.txt) do mid2agb %%m -V085
+@for /f "tokens=*" %%m in (mid.txt) do midi2agb -m 85 %%m 
 
 @dir %~dp0\DS_S_Files\*.mid /b/s > dsmid.txt
 
-@for /f "tokens=*" %%m in (dsmid.txt) do mid2agb %%m -V072
+@for /f "tokens=*" %%m in (dsmid.txt) do midi2agb -m 72 %%m 
 
 @echo Done!
 
@@ -18,7 +18,7 @@
 
 @dir %~dp0\DS_S_Files\*.s /b/s >> sappy.txt
 
-@for /f "tokens=*" %%s in (sappy.txt) do s2ea %%s
+@for /f "tokens=*" %%s in (sappy.txt) do python s2ea.py %%s
 
 @echo Done!
 

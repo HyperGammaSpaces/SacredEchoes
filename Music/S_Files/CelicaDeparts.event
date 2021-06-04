@@ -1,1927 +1,1933 @@
 //Event file generated from Sappy .s format.
-	#include "MPlayDef.event"
+        #include "MPlayDef.event"
 
-	#define	CelicaDeparts_grp  voicegroup000
-	#define	CelicaDeparts_pri  0
-	#define	CelicaDeparts_rev  0
-	#define	CelicaDeparts_mvl  85
-	#define	CelicaDeparts_key  0
-	#define	CelicaDeparts_tbs  1
-	#define	CelicaDeparts_exg  0
-	#define	CelicaDeparts_cmp  1
+        #define    CelicaDeparts_grp  voicegroup000
+        #define    CelicaDeparts_pri  0
+        #define    CelicaDeparts_rev  0
+        #define    CelicaDeparts_key  0
 
-	// .rodata
-	//	CelicaDeparts
-	ALIGN 4
+        // .rodata
+        // CelicaDeparts
+        ALIGN 4
 
-//**************** Track 1 (Midi-Chn.1) ****************//
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+CelicaDeparts_0:
+        BYTE   KEYSH   CelicaDeparts_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   140/2
+CelicaDeparts_0_LOOP:
+        BYTE           VOICE   41
+        BYTE           VOL     50
+        BYTE           PAN     c_v+12
+        BYTE   W72
+// 001   ----------------------------------------
+        BYTE   W24
+        BYTE   W01
+        BYTE           VOL     41
+        BYTE   W03
+        BYTE                   42
+        BYTE   W03
+        BYTE                   43
+        BYTE   W03
+        BYTE                   44
+        BYTE   W36
+        BYTE   W02
+// 002   ----------------------------------------
+        BYTE           N64     Fn3   v100
+        BYTE           N42     Dn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     An4
+        BYTE   W24
+// 003   ----------------------------------------
+        BYTE           N64     Fn3
+        BYTE           N42     En4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Cn4
+        BYTE   W24
+// 004   ----------------------------------------
+        BYTE                   Dn3
+        BYTE           N21     An3
+        BYTE   W24
+        BYTE                   En3
+        BYTE           N21     En4
+        BYTE   W24
+        BYTE                   Fn3
+        BYTE           N21     Fn4
+        BYTE   W24
+// 005   ----------------------------------------
+        BYTE                   En4
+        BYTE           N60     Fn3   v102   gtp3
+        BYTE   W24
+        BYTE           N21     Dn4   v100
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+// 006   ----------------------------------------
+        BYTE           N64     Dn3
+        BYTE           N42     As3   v100   gtp1
+        BYTE   W48
+        BYTE           N21     An4
+        BYTE   W24
+// 007   ----------------------------------------
+        BYTE           N64     Gn3
+        BYTE           N42     Gn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Fn4
+        BYTE   W24
+// 008   ----------------------------------------
+        BYTE                   Gn3
+        BYTE           N21     En4
+        BYTE   W24
+        BYTE                   An3
+        BYTE           N21     Fn4
+        BYTE   W24
+        BYTE                   As3
+        BYTE           N21     Gn4
+        BYTE   W24
+// 009   ----------------------------------------
+        BYTE                   As3
+        BYTE           N21     Fn4
+        BYTE   W24
+        BYTE                   En4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
+// 010   ----------------------------------------
+        BYTE           N64     En3
+        BYTE           N42     Cn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Dn4
+        BYTE   W24
+// 011   ----------------------------------------
+        BYTE           N64     Gn3
+        BYTE           N42     En4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Fn4
+        BYTE   W24
+// 012   ----------------------------------------
+        BYTE           N64     As3
+        BYTE           N42     Gn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     An4
+        BYTE   W24
+// 013   ----------------------------------------
+        BYTE           N64     Cn4
+        BYTE           N42     As4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Cn5
+        BYTE   W24
+// 014   ----------------------------------------
+        BYTE           TIE     An4
+        BYTE           TIE     Fn4
+        BYTE           TIE     Cn4
+        BYTE   W72
+// 015   ----------------------------------------
+        BYTE   W32
+        BYTE   W03
+        BYTE           VOL     43
+        BYTE   W02
+        BYTE                   42
+        BYTE   W01
+        BYTE                   41
+        BYTE   W02
+        BYTE                   40
+        BYTE   W01
+        BYTE                   39
+        BYTE   W03
+        BYTE                   37
+        BYTE   W03
+        BYTE                   36
+        BYTE   W02
+        BYTE                   35
+        BYTE   W01
+        BYTE                   34
+        BYTE   W02
+        BYTE                   33
+        BYTE   W01
+        BYTE                   32
+        BYTE   W02
+        BYTE                   31
+        BYTE   W01
+        BYTE                   30
+        BYTE   W02
+        BYTE                   29
+        BYTE   W01
+        BYTE                   28
+        BYTE   W02
+        BYTE                   27
+        BYTE   W01
+        BYTE                   26
+        BYTE   W02
+        BYTE                   25
+        BYTE   W03
+        BYTE                   23
+        BYTE   W03
+        BYTE                   22
+        BYTE   W01
+        BYTE                   21
+        BYTE   W01
+// 016   ----------------------------------------
+        BYTE   W01
+        BYTE                   20
+        BYTE   W01
+        BYTE                   19
+        BYTE   W02
+        BYTE                   18
+        BYTE   W01
+        BYTE                   17
+        BYTE   W02
+        BYTE                   16
+        BYTE   W01
+        BYTE                   15
+        BYTE   W02
+        BYTE                   14
+        BYTE   W03
+        BYTE                   12
+        BYTE   W01
+        BYTE           EOT     An4
+        BYTE                   Fn4
+        BYTE                   Cn4
+        BYTE   W02
+        BYTE           VOL     11
+        BYTE   W01
+        BYTE                   10
+        BYTE   W02
+        BYTE                   9
+        BYTE   W01
+        BYTE                   8
+        BYTE   W02
+        BYTE                   7
+        BYTE   W16
+        BYTE                   42
+        BYTE   W02
+        BYTE                   45
+        BYTE   W03
+        BYTE                   46
+        BYTE   W05
+        BYTE           N21     Gn4
+        BYTE   W24
+// 017   ----------------------------------------
+        BYTE           N42     Fn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     En4
+        BYTE   W24
+// 018   ----------------------------------------
+CelicaDeparts_0_18:
+        BYTE           N64     Ds3   v100
+        BYTE           N42     Dn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Cn4
+        BYTE   W24
+        BYTE   PEND
+// 019   ----------------------------------------
+CelicaDeparts_0_19:
+        BYTE           N64     Gn3   v100
+        BYTE           N42     Dn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Ds4
+        BYTE   W24
+        BYTE   PEND
+// 020   ----------------------------------------
+CelicaDeparts_0_20:
+        BYTE           N64     As3   v100
+        BYTE           N48     Fn4
+        BYTE   W48
+        BYTE           N42     Gn4   v100   gtp1
+        BYTE   W24
+        BYTE   PEND
+// 021   ----------------------------------------
+        BYTE           N21     Cn4
+        BYTE   W24
+        BYTE           N42     As3   v100   gtp1
+        BYTE           N21     Fn4
+        BYTE   W24
+        BYTE                   Ds4
+        BYTE   W24
+// 022   ----------------------------------------
+        BYTE           N64     Fn3
+        BYTE           N42     Dn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Cn4
+        BYTE   W24
+// 023   ----------------------------------------
+        BYTE           N64     An3
+        BYTE           N42     Dn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Ds4
+        BYTE   W24
+// 024   ----------------------------------------
+        BYTE           N64     Dn4
+        BYTE           N48     Fn4
+        BYTE   W48
+        BYTE           N42     Gn4   v100   gtp1
+        BYTE   W24
+// 025   ----------------------------------------
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE           N21     Fn4
+        BYTE   W24
+        BYTE                   Ds4
+        BYTE   W24
+// 026   ----------------------------------------
+        BYTE   PATT
+         POIN2  CelicaDeparts_0_18
+// 027   ----------------------------------------
+        BYTE   PATT
+         POIN2  CelicaDeparts_0_19
+// 028   ----------------------------------------
+        BYTE   PATT
+         POIN2  CelicaDeparts_0_20
+// 029   ----------------------------------------
+        BYTE   W24
+        BYTE           N21     Fn4   v100
+        BYTE           N48     As3
+        BYTE   W24
+        BYTE           N21     Ds4
+        BYTE   W24
+// 030   ----------------------------------------
+        BYTE           TIE     Bn3
+        BYTE           TIE     Dn4
+        BYTE   W72
+// 031   ----------------------------------------
+        BYTE   W64
+        BYTE           EOT     Bn3
+        BYTE                   Dn4
+        BYTE   W08
+// 032   ----------------------------------------
+        BYTE           N64     Dn3
+        BYTE           N42     Bn3   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Gn3
+        BYTE   W24
+// 033   ----------------------------------------
+        BYTE           N64     Bn3
+        BYTE           N42     Gn4   v100   gtp1
+        BYTE   W24
+        BYTE   TEMPO   130/2
+        BYTE   W12
+        BYTE   TEMPO   120/2
+        BYTE   W12
+        BYTE   TEMPO   110/2
+        BYTE           N21     Fn4
+        BYTE   W12
+        BYTE   TEMPO   100/2
+        BYTE   W12
+// 034   ----------------------------------------
+        BYTE   TEMPO   140/2
+        BYTE   W72
+// 035   ----------------------------------------
+        BYTE   W72
+// 036   ----------------------------------------
+        BYTE   W72
+// 037   ----------------------------------------
+        BYTE   W72
+// 038   ----------------------------------------
+        BYTE   W72
+// 039   ----------------------------------------
+        BYTE   W72
+// 040   ----------------------------------------
+        BYTE   W72
+// 041   ----------------------------------------
+        BYTE   W72
+// 042   ----------------------------------------
+        BYTE   W72
+// 043   ----------------------------------------
+        BYTE   W72
+// 044   ----------------------------------------
+        BYTE   W72
+// 045   ----------------------------------------
+        BYTE   W72
+// 046   ----------------------------------------
+        BYTE   W72
+// 047   ----------------------------------------
+        BYTE   W72
+// 048   ----------------------------------------
+        BYTE   W72
+// 049   ----------------------------------------
+        BYTE   W72
+// 050   ----------------------------------------
+        BYTE   W72
+// 051   ----------------------------------------
+        BYTE   W72
+// 052   ----------------------------------------
+        BYTE   W12
+        BYTE   TEMPO   130/2
+        BYTE   W12
+        BYTE   TEMPO   120/2
+        BYTE   W24
+        BYTE   TEMPO   180/2
+        BYTE           N48     Dn5   v102   gtp3
+        BYTE           N42     Gn4
+        BYTE   W24
+// 053   ----------------------------------------
+        BYTE   W24
+        BYTE           N21     Gn4   v111
+        BYTE           N21     Cn5
+        BYTE   W24
+        BYTE           N42     Fn4   v111   gtp1
+        BYTE           N48     As4   v111   gtp1
+        BYTE   W24
+// 054   ----------------------------------------
+        BYTE   W24
+        BYTE           N21     An4
+        BYTE           N21     Fn4
+        BYTE   W12
+        BYTE   TEMPO   170/2
+        BYTE   W12
+        BYTE           N42     Gn4   v111   gtp1
+        BYTE           N48     As4   v111   gtp1
+        BYTE   W24
+// 055   ----------------------------------------
+        BYTE   TEMPO   166/2
+        BYTE   W12
+        BYTE   TEMPO   158/2
+        BYTE   W12
+        BYTE   TEMPO   146/2
+        BYTE           N21     An4
+        BYTE           N21     Fn4
+        BYTE   W24
+        BYTE   TEMPO   140/2
+        BYTE           N48     Gn4   v102
+        BYTE           N48     Ds4
+        BYTE   W24
+// 056   ----------------------------------------
+        BYTE   W24
+        BYTE           N84     Dn4
+        BYTE           TIE     Fn4
+        BYTE   W48
+// 057   ----------------------------------------
+        BYTE   W66
+        BYTE           EOT
+        BYTE   W06
+// 058   ----------------------------------------
+        BYTE           VOL     50
+        BYTE   GoTo
+         POIN2  CelicaDeparts_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
 
 CelicaDeparts_1:
-	BYTE	KEYSH   CelicaDeparts_key+0
-CelicaDeparts_1_B1:
+        BYTE   KEYSH   CelicaDeparts_key+0
 // 000   ----------------------------------------
-	BYTE	TEMPO   140*CelicaDeparts_tbs/2
-	BYTE		VOICE   41
-	BYTE		VOL     76*CelicaDeparts_mvl/mxv
-	BYTE		PAN     c_v+12
-	BYTE	W72
+CelicaDeparts_1_LOOP:
+        BYTE           VOICE   0
+        BYTE           PAN     c_v-13
+        BYTE           VOL     39
+        BYTE           N21     Dn2   v100
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Cn3
+        BYTE   W12
+        BYTE                   En3
+        BYTE   W12
+        BYTE                   Fn3
+        BYTE   W12
 // 001   ----------------------------------------
-	BYTE	W24
-	BYTE	W01
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W19
-	BYTE	W19
+CelicaDeparts_1_1:
+        BYTE           N21     Dn2   v100
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Cn3
+        BYTE   W12
+        BYTE                   En3
+        BYTE   W12
+        BYTE                   Fn3
+        BYTE   W12
+        BYTE   PEND
 // 002   ----------------------------------------
-	BYTE		N64     Fn3   v100
-	BYTE		N42     Dn4 
-	BYTE	W48
-	BYTE		N21     An4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_1
 // 003   ----------------------------------------
-	BYTE		N64     Fn3 
-	BYTE		N42     En4 
-	BYTE	W48
-	BYTE		N21     Cn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_1
 // 004   ----------------------------------------
-	BYTE		        Dn3 
-	BYTE		N21     An3 
-	BYTE	W24
-	BYTE		        En3 
-	BYTE		N21     En4 
-	BYTE	W24
-	BYTE		        Fn3 
-	BYTE		N21     Fn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_1
 // 005   ----------------------------------------
-	BYTE		N60     Fn3   v104
-	BYTE		N21     En4   v100
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_1
 // 006   ----------------------------------------
-	BYTE		N64     Dn3 
-	BYTE		N42     As3 
-	BYTE	W48
-	BYTE		N21     An4 
-	BYTE	W24
+CelicaDeparts_1_6:
+        BYTE           N21     Gn2   v100
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE                   Dn3
+        BYTE   W12
+        BYTE                   Gn3
+        BYTE   W12
+        BYTE                   As3
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE   W12
+        BYTE   PEND
 // 007   ----------------------------------------
-	BYTE		N64     Gn3 
-	BYTE		N42     Gn4 
-	BYTE	W48
-	BYTE		N21     Fn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_6
 // 008   ----------------------------------------
-	BYTE		        Gn3 
-	BYTE		N21     En4 
-	BYTE	W24
-	BYTE		        An3 
-	BYTE		N21     Fn4 
-	BYTE	W24
-	BYTE		        As3 
-	BYTE		N21     Gn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_6
 // 009   ----------------------------------------
-	BYTE		        As3 
-	BYTE		N21     Fn4 
-	BYTE	W24
-	BYTE		        En4 
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_6
 // 010   ----------------------------------------
-	BYTE		N64     En3 
-	BYTE		N42     Cn4 
-	BYTE	W48
-	BYTE		N21     Dn4 
-	BYTE	W24
+CelicaDeparts_1_10:
+        BYTE           N21     Cn2   v100
+        BYTE   W12
+        BYTE                   En2
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE                   Cn3
+        BYTE   W12
+        BYTE                   En3
+        BYTE   W12
+        BYTE   PEND
 // 011   ----------------------------------------
-	BYTE		N64     Gn3 
-	BYTE		N42     En4 
-	BYTE	W48
-	BYTE		N21     Fn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_10
 // 012   ----------------------------------------
-	BYTE		N64     As3 
-	BYTE		N42     Gn4 
-	BYTE	W48
-	BYTE		N21     An4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_10
 // 013   ----------------------------------------
-	BYTE		N64     Cn4 
-	BYTE		N42     As4 
-	BYTE	W48
-	BYTE		N21     Cn5 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_10
 // 014   ----------------------------------------
-	BYTE		TIE     Cn4 
-	BYTE		TIE     Fn4 
-	BYTE		TIE     An4 
-	BYTE	W72
+CelicaDeparts_1_14:
+        BYTE           N21     Fn2   v100
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Cn3
+        BYTE   W12
+        BYTE                   En3
+        BYTE   W12
+        BYTE                   Fn3
+        BYTE   W12
+        BYTE                   An3
+        BYTE   W12
+        BYTE   PEND
 // 015   ----------------------------------------
-	BYTE	W32
-	BYTE	W03
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W01
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_14
 // 016   ----------------------------------------
-	BYTE	W01
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE		EOT     Cn4 
-	BYTE		        Fn4 
-	BYTE		        An4 
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W16
-	BYTE	W02
-	BYTE	W03
-	BYTE	W03
-	BYTE	W02
-	BYTE		N21     Gn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_14
 // 017   ----------------------------------------
-	BYTE		N42     Fn4 
-	BYTE	W48
-	BYTE		N21     En4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_14
 // 018   ----------------------------------------
-CelicaDeparts_1_018:
-	BYTE		N64     Ds3   v100
-	BYTE		N42     Dn4 
-	BYTE	W48
-	BYTE		N21     Cn4 
-	BYTE	W24
-	BYTE	PEND
+CelicaDeparts_1_18:
+        BYTE           N21     Ds2   v100
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE                   Ds3
+        BYTE   W12
+        BYTE                   Gn3
+        BYTE   W12
+        BYTE                   As3
+        BYTE   W12
+        BYTE   PEND
 // 019   ----------------------------------------
-CelicaDeparts_1_019:
-	BYTE		N64     Gn3   v100
-	BYTE		N42     Dn4 
-	BYTE	W48
-	BYTE		N21     Ds4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_18
 // 020   ----------------------------------------
-CelicaDeparts_1_020:
-	BYTE		N64     As3   v100
-	BYTE		N48     Fn4 
-	BYTE	W48
-	BYTE		N42     Gn4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_18
 // 021   ----------------------------------------
-	BYTE		N21     Cn4 
-	BYTE	W24
-	BYTE		N42     As3 
-	BYTE		N21     Fn4 
-	BYTE	W24
-	BYTE		        Ds4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_18
 // 022   ----------------------------------------
-	BYTE		N64     Fn3 
-	BYTE		N42     Dn4 
-	BYTE	W48
-	BYTE		N21     Cn4 
-	BYTE	W24
+CelicaDeparts_1_22:
+        BYTE           N21     Dn2   v100
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Cn3
+        BYTE   W12
+        BYTE                   Fn3
+        BYTE   W12
+        BYTE                   An3
+        BYTE   W12
+        BYTE   PEND
 // 023   ----------------------------------------
-	BYTE		N64     An3 
-	BYTE		N42     Dn4 
-	BYTE	W48
-	BYTE		N21     Ds4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_22
 // 024   ----------------------------------------
-	BYTE		N64     Dn4 
-	BYTE		N48     Fn4 
-	BYTE	W48
-	BYTE		N42     Gn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_22
 // 025   ----------------------------------------
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE		N21     Fn4 
-	BYTE	W24
-	BYTE		        Ds4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_22
 // 026   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_1_018
+CelicaDeparts_1_26:
+        BYTE           N21     Cn2   v100
+        BYTE   W12
+        BYTE                   Ds2
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE                   Cn3
+        BYTE   W12
+        BYTE                   Ds3
+        BYTE   W12
+        BYTE   PEND
 // 027   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_1_019
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_26
 // 028   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_1_020
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_26
 // 029   ----------------------------------------
-	BYTE	W24
-	BYTE		N48     As3   v100
-	BYTE		N21     Fn4 
-	BYTE	W24
-	BYTE		        Ds4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_26
 // 030   ----------------------------------------
-	BYTE		TIE     Bn3 
-	BYTE		TIE     Dn4 
-	BYTE	W72
+CelicaDeparts_1_30:
+        BYTE           N21     Bn1   v100
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE                   Bn2
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE   PEND
 // 031   ----------------------------------------
-	BYTE	W64
-	BYTE		EOT     Bn3 
-	BYTE		        Dn4 
-	BYTE	W08
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_30
 // 032   ----------------------------------------
-	BYTE		N64     Dn3 
-	BYTE		N42     Bn3 
-	BYTE	W48
-	BYTE		N21     Gn3 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_30
 // 033   ----------------------------------------
-	BYTE		N64     Bn3 
-	BYTE		N42     Gn4 
-	BYTE	W24
-	BYTE	TEMPO   130*CelicaDeparts_tbs/2
-	BYTE	W12
-	BYTE	TEMPO   120*CelicaDeparts_tbs/2
-	BYTE	W12
-	BYTE	TEMPO   110*CelicaDeparts_tbs/2
-	BYTE		N21     Fn4 
-	BYTE	W12
-	BYTE	TEMPO   100*CelicaDeparts_tbs/2
-	BYTE	W12
+        BYTE           N21     Bn1   v100
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE                   Bn2
+        BYTE   W12
+        BYTE                   Dn3
+        BYTE   W12
+        BYTE                   Gn3
+        BYTE   W12
 // 034   ----------------------------------------
-	BYTE	TEMPO   140*CelicaDeparts_tbs/2
-	BYTE	W72
+CelicaDeparts_1_34:
+        BYTE           N21     Cn2   v100
+        BYTE   W12
+        BYTE                   Ds2
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE   PEND
 // 035   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_1_35:
+        BYTE           N21     An2   v100
+        BYTE   W12
+        BYTE                   Fn3
+        BYTE   W12
+        BYTE                   Ds2
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE                   Dn3
+        BYTE   W12
+        BYTE   PEND
 // 036   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_1_36:
+        BYTE           N21     Fn2   v100
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Cn3
+        BYTE   W12
+        BYTE                   Ds3
+        BYTE   W12
+        BYTE                   Cn2
+        BYTE   W12
+        BYTE                   Ds2
+        BYTE   W12
+        BYTE   PEND
 // 037   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_1_37:
+        BYTE           N21     Gn2   v100
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Fn3
+        BYTE   W12
+        BYTE   PEND
 // 038   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_1_38:
+        BYTE           N21     Ds2   v100
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE                   Dn3
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE   PEND
 // 039   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_1_39:
+        BYTE           N21     Cn3   v100
+        BYTE   W12
+        BYTE                   Ds3
+        BYTE   W12
+        BYTE                   Cn2
+        BYTE   W12
+        BYTE                   Ds2
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE   PEND
 // 040   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_1_40:
+        BYTE           N21     Dn2   v100
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Fn3
+        BYTE   W12
+        BYTE                   Ds2
+        BYTE   W12
+        BYTE                   Gn2
+        BYTE   W12
+        BYTE   PEND
 // 041   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_1_41:
+        BYTE           N21     As2   v100
+        BYTE   W12
+        BYTE                   Dn3
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Cn3
+        BYTE   W12
+        BYTE                   Ds3
+        BYTE   W12
+        BYTE   PEND
 // 042   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_34
 // 043   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_35
 // 044   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_36
 // 045   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_37
 // 046   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_38
 // 047   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_39
 // 048   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_40
 // 049   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_41
 // 050   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_34
 // 051   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_35
 // 052   ----------------------------------------
-	BYTE	W12
-	BYTE	TEMPO   130*CelicaDeparts_tbs/2
-	BYTE	W12
-	BYTE	TEMPO   120*CelicaDeparts_tbs/2
-	BYTE	W24
-	BYTE	TEMPO   180*CelicaDeparts_tbs/2
-	BYTE		N42     Gn4   v104
-	BYTE		N48     Dn5 
-	BYTE	W24
+        BYTE           N21     Fn2   v100
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Cn3
+        BYTE   W12
+        BYTE                   Ds3
+        BYTE   W12
+        BYTE           N42     Gn2   v100   gtp1
+        BYTE   W24
 // 053   ----------------------------------------
-	BYTE	W24
-	BYTE		N21     Gn4   v112
-	BYTE		N21     Cn5 
-	BYTE	W24
-	BYTE		N42     Fn4 
-	BYTE		N48     As4 
-	BYTE	W24
+        BYTE                   As2
+        BYTE   W24
+        BYTE                   Dn3
+        BYTE   W24
+        BYTE                   Fn2
+        BYTE   W24
 // 054   ----------------------------------------
-	BYTE	W24
-	BYTE		N21     Fn4 
-	BYTE		N21     An4 
-	BYTE	W12
-	BYTE	TEMPO   170*CelicaDeparts_tbs/2
-	BYTE	W12
-	BYTE		N42     Gn4 
-	BYTE		N48     As4 
-	BYTE	W24
+        BYTE                   An2
+        BYTE   W24
+        BYTE                   Cn3
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE   W24
 // 055   ----------------------------------------
-	BYTE	TEMPO   165*CelicaDeparts_tbs/2
-	BYTE	W12
-	BYTE	TEMPO   157*CelicaDeparts_tbs/2
-	BYTE	W12
-	BYTE	TEMPO   145*CelicaDeparts_tbs/2
-	BYTE		N21     Fn4 
-	BYTE		N21     An4 
-	BYTE	W24
-	BYTE	TEMPO   140*CelicaDeparts_tbs/2
-	BYTE		N48     Ds4   v104
-	BYTE		N48     Gn4 
-	BYTE	W24
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE           N42     As2
+        BYTE   W24
+        BYTE           N48     Dn3   v102
+        BYTE   W24
 // 056   ----------------------------------------
-	BYTE	W24
-	BYTE		N84     Dn4 
-	BYTE		TIE     Fn4 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  CelicaDeparts_1_1
 // 057   ----------------------------------------
-	BYTE	W66
-	BYTE		EOT   
-	BYTE	W06
-	BYTE	GoTo
-	 POIN2	CelicaDeparts_1_B1
-CelicaDeparts_1_B2:
+        BYTE           N21     Dn2   v100
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Cn3
+        BYTE   W12
+        BYTE                   En3
+        BYTE   W12
+        BYTE           N12     Fn3
+        BYTE   W12
 // 058   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  CelicaDeparts_1_LOOP
+        BYTE   FINE
 
-//**************** Track 2 (Midi-Chn.2) ****************//
+//****************** Track 2 (Midi-Chn.2) ******************//
 
 CelicaDeparts_2:
-	BYTE	KEYSH   CelicaDeparts_key+0
-CelicaDeparts_2_B1:
+        BYTE   KEYSH   CelicaDeparts_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   0
-	BYTE		VOL     69*CelicaDeparts_mvl/mxv
-	BYTE		PAN     c_v-13
-	BYTE		N21     Dn2   v100
-	BYTE	W12
-	BYTE		        Fn2 
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE		        Cn3 
-	BYTE	W12
-	BYTE		        En3 
-	BYTE	W12
-	BYTE		        Fn3 
-	BYTE	W12
+CelicaDeparts_2_LOOP:
+        BYTE           VOICE   40
+        BYTE           VOL     36
+        BYTE   W72
 // 001   ----------------------------------------
-CelicaDeparts_2_001:
-	BYTE		N21     Dn2   v100
-	BYTE	W12
-	BYTE		        Fn2 
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE		        Cn3 
-	BYTE	W12
-	BYTE		        En3 
-	BYTE	W12
-	BYTE		        Fn3 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W24
+        BYTE   W01
+        BYTE                   29
+        BYTE   W03
+        BYTE                   30
+        BYTE   W02
+        BYTE                   34
+        BYTE   W11
+        BYTE                   31
+        BYTE   W30
+        BYTE   W01
 // 002   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_001
+        BYTE           N44     Dn4   v086   gtp3
+        BYTE   W48
+        BYTE           N23     An4
+        BYTE   W24
 // 003   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_001
+        BYTE           N44     En4   v086   gtp3
+        BYTE   W48
+        BYTE           N23     Cn4
+        BYTE   W24
 // 004   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_001
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   En4
+        BYTE   W24
+        BYTE                   Fn4
+        BYTE   W24
 // 005   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_001
+        BYTE                   En4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
 // 006   ----------------------------------------
-CelicaDeparts_2_006:
-	BYTE		N21     Gn2   v100
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE		        Dn3 
-	BYTE	W12
-	BYTE		        Gn3 
-	BYTE	W12
-	BYTE		        As3 
-	BYTE	W12
-	BYTE		        Dn4 
-	BYTE	W12
-	BYTE	PEND
+        BYTE           N44     As3   v086   gtp3
+        BYTE   W48
+        BYTE           N23     An4
+        BYTE   W24
 // 007   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_006
+CelicaDeparts_2_7:
+        BYTE           N44     Gn4   v086   gtp3
+        BYTE   W48
+        BYTE           N23     Fn4
+        BYTE   W24
+        BYTE   PEND
 // 008   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_006
+        BYTE                   En4
+        BYTE   W24
+        BYTE                   Fn4
+        BYTE   W24
+        BYTE                   Gn4
+        BYTE   W24
 // 009   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_006
+        BYTE                   Fn4
+        BYTE   W24
+        BYTE                   En4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
 // 010   ----------------------------------------
-CelicaDeparts_2_010:
-	BYTE		N21     Cn2   v100
-	BYTE	W12
-	BYTE		        En2 
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE		        Cn3 
-	BYTE	W12
-	BYTE		        En3 
-	BYTE	W12
-	BYTE	PEND
+        BYTE           N44     Cn4   v086   gtp3
+        BYTE   W48
+        BYTE           N23     Dn4
+        BYTE   W24
 // 011   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_010
+        BYTE           N44     En4   v086   gtp3
+        BYTE   W48
+        BYTE           N23     Fn4
+        BYTE   W24
 // 012   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_010
+        BYTE           N44     Gn4   v086   gtp3
+        BYTE   W48
+        BYTE           N23     An4
+        BYTE   W24
 // 013   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_010
+        BYTE           N44     As4   v086   gtp3
+        BYTE   W48
+        BYTE           N23     Cn5
+        BYTE   W24
 // 014   ----------------------------------------
-CelicaDeparts_2_014:
-	BYTE		N21     Fn2   v100
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE		        Cn3 
-	BYTE	W12
-	BYTE		        En3 
-	BYTE	W12
-	BYTE		        Fn3 
-	BYTE	W12
-	BYTE		        An3 
-	BYTE	W12
-	BYTE	PEND
+        BYTE           TIE     An4
+        BYTE   W72
 // 015   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_014
+        BYTE   W32
+        BYTE   W03
+        BYTE           VOL     30
+        BYTE   W03
+        BYTE                   29
+        BYTE   W03
+        BYTE                   28
+        BYTE   W02
+        BYTE                   27
+        BYTE   W03
+        BYTE                   26
+        BYTE   W01
+        BYTE                   25
+        BYTE   W03
+        BYTE                   24
+        BYTE   W02
+        BYTE                   23
+        BYTE   W03
+        BYTE                   22
+        BYTE   W01
+        BYTE                   21
+        BYTE   W03
+        BYTE                   20
+        BYTE   W02
+        BYTE                   19
+        BYTE   W03
+        BYTE                   18
+        BYTE   W03
+        BYTE                   17
+        BYTE   W01
+        BYTE                   16
+        BYTE   W03
+        BYTE                   15
+        BYTE   W01
 // 016   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_014
+        BYTE   W01
+        BYTE                   14
+        BYTE   W03
+        BYTE                   13
+        BYTE   W01
+        BYTE                   12
+        BYTE   W03
+        BYTE                   11
+        BYTE   W02
+        BYTE                   10
+        BYTE   W03
+        BYTE                   9
+        BYTE   W01
+        BYTE           EOT
+        BYTE           VOL     8
+        BYTE   W03
+        BYTE                   7
+        BYTE   W02
+        BYTE                   6
+        BYTE   W03
+        BYTE                   5
+        BYTE   W16
+        BYTE                   30
+        BYTE   W02
+        BYTE                   32
+        BYTE   W06
+        BYTE                   33
+        BYTE   W02
+        BYTE           N21     Gn4
+        BYTE   W24
 // 017   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_014
+        BYTE           N44     Fn4   v086   gtp3
+        BYTE   W48
+        BYTE           N23     En4
+        BYTE   W24
 // 018   ----------------------------------------
-CelicaDeparts_2_018:
-	BYTE		N21     Ds2   v100
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE		        Ds3 
-	BYTE	W12
-	BYTE		        Gn3 
-	BYTE	W12
-	BYTE		        As3 
-	BYTE	W12
-	BYTE	PEND
+CelicaDeparts_2_18:
+        BYTE           N44     Dn4   v086   gtp3
+        BYTE   W48
+        BYTE           N23     Cn4
+        BYTE   W24
+        BYTE   PEND
 // 019   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_018
+CelicaDeparts_2_19:
+        BYTE           N44     Dn4   v086   gtp3
+        BYTE   W48
+        BYTE           N23     Ds4
+        BYTE   W24
+        BYTE   PEND
 // 020   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_018
+        BYTE           N44     Fn4   v086   gtp1
+        BYTE   W48
+        BYTE           N42     Gn4   v086   gtp1
+        BYTE   W24
 // 021   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_018
+CelicaDeparts_2_21:
+        BYTE   W24
+        BYTE           N23     Fn4   v086
+        BYTE   W24
+        BYTE                   Ds4
+        BYTE   W24
+        BYTE   PEND
 // 022   ----------------------------------------
-CelicaDeparts_2_022:
-	BYTE		N21     Dn2   v100
-	BYTE	W12
-	BYTE		        Fn2 
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE		        Cn3 
-	BYTE	W12
-	BYTE		        Fn3 
-	BYTE	W12
-	BYTE		        An3 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  CelicaDeparts_2_18
 // 023   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_022
+        BYTE   PATT
+         POIN2  CelicaDeparts_2_19
 // 024   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_022
+CelicaDeparts_2_24:
+        BYTE           N44     Fn4   v086   gtp3
+        BYTE   W48
+        BYTE           N42     Gn4   v086   gtp1
+        BYTE   W24
+        BYTE   PEND
 // 025   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_022
+        BYTE   PATT
+         POIN2  CelicaDeparts_2_21
 // 026   ----------------------------------------
-CelicaDeparts_2_026:
-	BYTE		N21     Cn2   v100
-	BYTE	W12
-	BYTE		        Ds2 
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE		        Cn3 
-	BYTE	W12
-	BYTE		        Ds3 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  CelicaDeparts_2_18
 // 027   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_026
+        BYTE   PATT
+         POIN2  CelicaDeparts_2_19
 // 028   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_026
+        BYTE   PATT
+         POIN2  CelicaDeparts_2_24
 // 029   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_026
+        BYTE   PATT
+         POIN2  CelicaDeparts_2_21
 // 030   ----------------------------------------
-CelicaDeparts_2_030:
-	BYTE		N21     Bn1   v100
-	BYTE	W12
-	BYTE		        Dn2 
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        Bn2 
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        Dn2 
-	BYTE	W12
-	BYTE	PEND
+        BYTE           TIE     Dn4   v086
+        BYTE   W72
 // 031   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_030
+        BYTE   W68
+        BYTE   W03
+        BYTE           EOT
+        BYTE   W01
 // 032   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_030
+        BYTE           N44     Bn3   v086   gtp3
+        BYTE   W48
+        BYTE           N23     Gn3
+        BYTE   W24
 // 033   ----------------------------------------
-	BYTE		N21     Bn1   v100
-	BYTE	W12
-	BYTE		        Dn2 
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        Bn2 
-	BYTE	W12
-	BYTE		        Dn3 
-	BYTE	W12
-	BYTE		        Gn3 
-	BYTE	W12
+        BYTE   PATT
+         POIN2  CelicaDeparts_2_7
 // 034   ----------------------------------------
-CelicaDeparts_2_034:
-	BYTE		N21     Cn2   v100
-	BYTE	W12
-	BYTE		        Ds2 
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE		        Dn2 
-	BYTE	W12
-	BYTE		        Fn2 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W72
 // 035   ----------------------------------------
-CelicaDeparts_2_035:
-	BYTE		N21     An2   v100
-	BYTE	W12
-	BYTE		        Fn3 
-	BYTE	W12
-	BYTE		        Ds2 
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE		        Dn3 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W72
 // 036   ----------------------------------------
-CelicaDeparts_2_036:
-	BYTE		N21     Fn2   v100
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE		        Cn3 
-	BYTE	W12
-	BYTE		        Ds3 
-	BYTE	W12
-	BYTE		        Cn2 
-	BYTE	W12
-	BYTE		        Ds2 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W72
 // 037   ----------------------------------------
-CelicaDeparts_2_037:
-	BYTE		N21     Gn2   v100
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE		        Dn2 
-	BYTE	W12
-	BYTE		        Fn2 
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE		        Fn3 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W72
 // 038   ----------------------------------------
-CelicaDeparts_2_038:
-	BYTE		N21     Ds2   v100
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE		        Dn3 
-	BYTE	W12
-	BYTE		        Fn2 
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W72
 // 039   ----------------------------------------
-CelicaDeparts_2_039:
-	BYTE		N21     Cn3   v100
-	BYTE	W12
-	BYTE		        Ds3 
-	BYTE	W12
-	BYTE		        Cn2 
-	BYTE	W12
-	BYTE		        Ds2 
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE		        As2 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W72
 // 040   ----------------------------------------
-CelicaDeparts_2_040:
-	BYTE		N21     Dn2   v100
-	BYTE	W12
-	BYTE		        Fn2 
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE		        Fn3 
-	BYTE	W12
-	BYTE		        Ds2 
-	BYTE	W12
-	BYTE		        Gn2 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W72
 // 041   ----------------------------------------
-CelicaDeparts_2_041:
-	BYTE		N21     As2   v100
-	BYTE	W12
-	BYTE		        Dn3 
-	BYTE	W12
-	BYTE		        Fn2 
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE		        Cn3 
-	BYTE	W12
-	BYTE		        Ds3 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   W72
 // 042   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_034
+        BYTE   W72
 // 043   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_035
+        BYTE   W72
 // 044   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_036
+        BYTE   W72
 // 045   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_037
+        BYTE   W72
 // 046   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_038
+        BYTE   W72
 // 047   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_039
+        BYTE   W72
 // 048   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_040
+        BYTE   W72
 // 049   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_041
+        BYTE   W72
 // 050   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_034
+        BYTE   W72
 // 051   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_035
+        BYTE   W72
 // 052   ----------------------------------------
-	BYTE		N21     Fn2   v100
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE		        Cn3 
-	BYTE	W12
-	BYTE		        Ds3 
-	BYTE	W12
-	BYTE		N42     Gn2 
-	BYTE	W24
+        BYTE   W72
 // 053   ----------------------------------------
-	BYTE		        As2 
-	BYTE	W24
-	BYTE		        Dn3 
-	BYTE	W24
-	BYTE		        Fn2 
-	BYTE	W24
+        BYTE   W72
 // 054   ----------------------------------------
-	BYTE		        An2 
-	BYTE	W24
-	BYTE		        Cn3 
-	BYTE	W24
-	BYTE		        Ds2 
-	BYTE	W24
+        BYTE   W72
 // 055   ----------------------------------------
-	BYTE		        Gn2 
-	BYTE	W24
-	BYTE		        As2 
-	BYTE	W24
-	BYTE		N48     Dn3   v104
-	BYTE	W24
+        BYTE   W72
 // 056   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_2_001
+        BYTE   W72
 // 057   ----------------------------------------
-	BYTE		N21     Dn2   v100
-	BYTE	W12
-	BYTE		        Fn2 
-	BYTE	W12
-	BYTE		        An2 
-	BYTE	W12
-	BYTE		        Cn3 
-	BYTE	W12
-	BYTE		        En3 
-	BYTE	W12
-	BYTE		N12     Fn3 
-	BYTE	W12
-	BYTE	GoTo
-	 POIN2	CelicaDeparts_2_B1
-CelicaDeparts_2_B2:
+        BYTE   W72
 // 058   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOL     36
+        BYTE   GoTo
+         POIN2  CelicaDeparts_2_LOOP
+        BYTE   FINE
 
-//**************** Track 3 (Midi-Chn.3) ****************//
+//****************** Track 3 (Midi-Chn.3) ******************//
 
 CelicaDeparts_3:
-	BYTE	KEYSH   CelicaDeparts_key+0
-CelicaDeparts_3_B1:
+        BYTE   KEYSH   CelicaDeparts_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   40
-	BYTE		VOL     54*CelicaDeparts_mvl/mxv
-	BYTE	W72
+CelicaDeparts_3_LOOP:
+        BYTE           VOICE   73
+        BYTE           VOL     52
+        BYTE           PAN     c_v-47
+        BYTE   W72
 // 001   ----------------------------------------
-	BYTE	W24
-	BYTE	W01
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W01
-	BYTE	W07
-	BYTE	W04
-	BYTE	W06
-	BYTE	W14
-	BYTE	W06
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W01
+        BYTE   W72
 // 002   ----------------------------------------
-	BYTE		N44     Dn4   v088
-	BYTE	W48
-	BYTE		N23     An4 
-	BYTE	W24
+        BYTE   W72
 // 003   ----------------------------------------
-	BYTE		N44     En4 
-	BYTE	W48
-	BYTE		N23     Cn4 
-	BYTE	W24
+        BYTE   W72
 // 004   ----------------------------------------
-	BYTE		        An3 
-	BYTE	W24
-	BYTE		        En4 
-	BYTE	W24
-	BYTE		        Fn4 
-	BYTE	W24
+        BYTE   W72
 // 005   ----------------------------------------
-	BYTE		        En4 
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
-	BYTE		        Cn4 
-	BYTE	W24
+        BYTE   W72
 // 006   ----------------------------------------
-	BYTE		N44     As3 
-	BYTE	W48
-	BYTE		N23     An4 
-	BYTE	W24
+        BYTE   W72
 // 007   ----------------------------------------
-CelicaDeparts_3_007:
-	BYTE		N44     Gn4   v088
-	BYTE	W48
-	BYTE		N23     Fn4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W72
 // 008   ----------------------------------------
-	BYTE		        En4 
-	BYTE	W24
-	BYTE		        Fn4 
-	BYTE	W24
-	BYTE		        Gn4 
-	BYTE	W24
+        BYTE   W72
 // 009   ----------------------------------------
-	BYTE		        Fn4 
-	BYTE	W24
-	BYTE		        En4 
-	BYTE	W24
-	BYTE		        Dn4 
-	BYTE	W24
+        BYTE   W72
 // 010   ----------------------------------------
-	BYTE		N44     Cn4 
-	BYTE	W48
-	BYTE		N23     Dn4 
-	BYTE	W24
+        BYTE   W72
 // 011   ----------------------------------------
-	BYTE		N44     En4 
-	BYTE	W48
-	BYTE		N23     Fn4 
-	BYTE	W24
+        BYTE   W72
 // 012   ----------------------------------------
-	BYTE		N44     Gn4 
-	BYTE	W48
-	BYTE		N23     An4 
-	BYTE	W24
+        BYTE   W72
 // 013   ----------------------------------------
-	BYTE		N44     As4 
-	BYTE	W48
-	BYTE		N23     Cn5 
-	BYTE	W24
+        BYTE   W72
 // 014   ----------------------------------------
-	BYTE		TIE     An4 
-	BYTE	W72
+        BYTE   W72
 // 015   ----------------------------------------
-	BYTE	W32
-	BYTE	W03
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W01
+        BYTE   W72
 // 016   ----------------------------------------
-	BYTE	W01
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE		EOT   
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W01
-	BYTE	W02
-	BYTE	W16
-	BYTE	W02
-	BYTE	W03
-	BYTE	W03
-	BYTE	W02
-	BYTE		N21     Gn4 
-	BYTE	W24
+        BYTE   W72
 // 017   ----------------------------------------
-	BYTE		N44     Fn4 
-	BYTE	W48
-	BYTE		N23     En4 
-	BYTE	W24
+        BYTE   W72
 // 018   ----------------------------------------
-CelicaDeparts_3_018:
-	BYTE		N44     Dn4   v088
-	BYTE	W48
-	BYTE		N23     Cn4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W72
 // 019   ----------------------------------------
-CelicaDeparts_3_019:
-	BYTE		N44     Dn4   v088
-	BYTE	W48
-	BYTE		N23     Ds4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W72
 // 020   ----------------------------------------
-CelicaDeparts_3_020:
-	BYTE		N44     Fn4   v088
-	BYTE	W48
-	BYTE		N42     Gn4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W72
 // 021   ----------------------------------------
-CelicaDeparts_3_021:
-	BYTE	W24
-	BYTE		N23     Fn4   v088
-	BYTE	W24
-	BYTE		        Ds4 
-	BYTE	W24
-	BYTE	PEND
+        BYTE   W72
 // 022   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_3_018
+        BYTE   W72
 // 023   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_3_019
+        BYTE   W72
 // 024   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_3_020
+        BYTE   W72
 // 025   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_3_021
+        BYTE   W72
 // 026   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_3_018
+        BYTE   W72
 // 027   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_3_019
+        BYTE   W72
 // 028   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_3_020
+        BYTE   W72
 // 029   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_3_021
+        BYTE   W72
 // 030   ----------------------------------------
-	BYTE		TIE     Dn4   v088
-	BYTE	W72
+        BYTE   W72
 // 031   ----------------------------------------
-	BYTE	W68
-	BYTE	W03
-	BYTE		EOT   
-	BYTE	W01
+        BYTE   W72
 // 032   ----------------------------------------
-	BYTE		N44     Bn3 
-	BYTE	W48
-	BYTE		N23     Gn3 
-	BYTE	W24
+        BYTE   W72
 // 033   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_3_007
+        BYTE   W72
 // 034   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_3_34:
+        BYTE           N42     Ds4   v082   gtp1
+        BYTE   W48
+        BYTE                   Dn4
+        BYTE   W24
+        BYTE   PEND
 // 035   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_3_35:
+        BYTE   W24
+        BYTE           N42     Ds4   v082   gtp1
+        BYTE   W48
+        BYTE   PEND
 // 036   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_3_36:
+        BYTE           N10     Fn4   v082
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE   W12
+        BYTE                   An4
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE           N42     As4   v082   gtp1
+        BYTE   W24
+        BYTE   PEND
 // 037   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_3_37:
+        BYTE   W24
+        BYTE           N42     An4   v082   gtp1
+        BYTE   W48
+        BYTE   PEND
 // 038   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_3_38:
+        BYTE           N42     Gn4   v082   gtp1
+        BYTE   W48
+        BYTE           N21     Fn4
+        BYTE   W24
+        BYTE   PEND
 // 039   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_3_39:
+        BYTE           N10     Ds4   v082
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE   W12
+        BYTE           N42     Ds4   v082   gtp1
+        BYTE   W48
+        BYTE   PEND
 // 040   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_3_40:
+        BYTE           N42     Fn4   v082   gtp1
+        BYTE   W48
+        BYTE                   Gn4
+        BYTE   W24
+        BYTE   PEND
 // 041   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_3_41:
+        BYTE   W24
+        BYTE           N10     An4   v082
+        BYTE   W12
+        BYTE                   As4
+        BYTE   W12
+        BYTE                   An4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W12
+        BYTE   PEND
 // 042   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 043   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 044   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 045   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 046   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 047   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_3_47:
+        BYTE   W24
+        BYTE           N21     Dn5   v053
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE   W12
+        BYTE           N42     Dn5   v053   gtp1
+        BYTE   W12
+        BYTE   PEND
 // 048   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_3_48:
+        BYTE   W12
+        BYTE           N42     Cn5   v053   gtp1
+        BYTE   W24
+        BYTE           N21     Gn4
+        BYTE   W12
+        BYTE                   An4
+        BYTE   W12
+        BYTE                   As4
+        BYTE   W12
+        BYTE   PEND
 // 049   ----------------------------------------
-	BYTE	W72
+        BYTE           N64     Cn5
+        BYTE   W72
 // 050   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 051   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 052   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 053   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 054   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 055   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 056   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 057   ----------------------------------------
-	BYTE	W72
-	BYTE	GoTo
-	 POIN2	CelicaDeparts_3_B1
-CelicaDeparts_3_B2:
+        BYTE   W72
 // 058   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  CelicaDeparts_3_LOOP
+        BYTE   FINE
 
-//**************** Track 4 (Midi-Chn.4) ****************//
+//****************** Track 4 (Midi-Chn.4) ******************//
 
 CelicaDeparts_4:
-	BYTE	KEYSH   CelicaDeparts_key+0
-CelicaDeparts_4_B1:
+        BYTE   KEYSH   CelicaDeparts_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   73
-	BYTE		VOL     79*CelicaDeparts_mvl/mxv
-	BYTE		PAN     c_v-47
-	BYTE	W72
+CelicaDeparts_4_LOOP:
+        BYTE           VOICE   76
+        BYTE           VOL     48
+        BYTE           PAN     c_v+45
+        BYTE   W72
 // 001   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 002   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 003   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 004   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 005   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 006   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 007   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 008   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 009   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 010   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 011   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 012   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 013   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 014   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 015   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 016   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 017   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 018   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 019   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 020   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 021   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 022   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 023   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 024   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 025   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 026   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 027   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 028   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 029   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 030   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 031   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 032   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 033   ----------------------------------------
-	BYTE	W52
-	BYTE	W01
-	BYTE	W12
-	BYTE	W03
-	BYTE	W01
-	BYTE	W03
+        BYTE   W72
 // 034   ----------------------------------------
-	BYTE		N42     Ds4   v084
-	BYTE	W48
-	BYTE		        Dn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_3_34
 // 035   ----------------------------------------
-	BYTE	W24
-	BYTE		        Ds4 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  CelicaDeparts_3_35
 // 036   ----------------------------------------
-	BYTE		N10     Fn4 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		N42     As4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_3_36
 // 037   ----------------------------------------
-	BYTE	W24
-	BYTE		        An4 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  CelicaDeparts_3_37
 // 038   ----------------------------------------
-	BYTE		        Gn4 
-	BYTE	W48
-	BYTE		N21     Fn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_3_38
 // 039   ----------------------------------------
-	BYTE		N10     Ds4 
-	BYTE	W12
-	BYTE		        Dn4 
-	BYTE	W12
-	BYTE		N42     Ds4 
-	BYTE	W48
+        BYTE   PATT
+         POIN2  CelicaDeparts_3_39
 // 040   ----------------------------------------
-	BYTE		        Fn4 
-	BYTE	W48
-	BYTE		        Gn4 
-	BYTE	W24
+        BYTE   PATT
+         POIN2  CelicaDeparts_3_40
 // 041   ----------------------------------------
-	BYTE	W24
-	BYTE		N10     An4 
-	BYTE	W12
-	BYTE		        As4 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE	W12
+        BYTE   PATT
+         POIN2  CelicaDeparts_3_41
 // 042   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 043   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 044   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 045   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 046   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 047   ----------------------------------------
-	BYTE	W24
-	BYTE		N21     Dn5   v056
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		N42     Dn5 
-	BYTE	W12
+        BYTE   PATT
+         POIN2  CelicaDeparts_3_47
 // 048   ----------------------------------------
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W24
-	BYTE		N21     Gn4 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE	W12
-	BYTE		        As4 
-	BYTE	W12
+        BYTE   PATT
+         POIN2  CelicaDeparts_3_48
 // 049   ----------------------------------------
-	BYTE		N64     Cn5 
-	BYTE	W72
+        BYTE           N64     Cn5   v053
+        BYTE   W72
 // 050   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 051   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 052   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 053   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 054   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 055   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 056   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 057   ----------------------------------------
-	BYTE	W72
-	BYTE	GoTo
-	 POIN2	CelicaDeparts_4_B1
-CelicaDeparts_4_B2:
+        BYTE   W72
 // 058   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  CelicaDeparts_4_LOOP
+        BYTE   FINE
 
-//**************** Track 5 (Midi-Chn.5) ****************//
+//****************** Track 5 (Midi-Chn.5) ******************//
 
 CelicaDeparts_5:
-	BYTE	KEYSH   CelicaDeparts_key+0
-CelicaDeparts_5_B1:
+        BYTE   KEYSH   CelicaDeparts_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   76
-	BYTE		VOL     73*CelicaDeparts_mvl/mxv
-	BYTE		PAN     c_v+45
-	BYTE	W72
+CelicaDeparts_5_LOOP:
+        BYTE           VOICE   99
+        BYTE           VOL     41
+        BYTE           PAN     c_v-28
+        BYTE   W72
 // 001   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 002   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 003   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 004   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 005   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 006   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 007   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 008   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 009   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 010   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 011   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 012   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 013   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 014   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 015   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 016   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 017   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 018   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 019   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 020   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 021   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 022   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 023   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 024   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 025   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 026   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 027   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 028   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 029   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 030   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 031   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 032   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 033   ----------------------------------------
-	BYTE	W52
-	BYTE	W01
-	BYTE	W12
-	BYTE	W03
-	BYTE	W01
-	BYTE	W03
+        BYTE   W72
 // 034   ----------------------------------------
-	BYTE		N42     Ds4   v084
-	BYTE	W48
-	BYTE		        Dn4 
-	BYTE	W24
+        BYTE   W72
 // 035   ----------------------------------------
-	BYTE	W24
-	BYTE		        Ds4 
-	BYTE	W48
+        BYTE   W72
 // 036   ----------------------------------------
-	BYTE		N10     Fn4 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		N42     As4 
-	BYTE	W24
+        BYTE   W72
 // 037   ----------------------------------------
-	BYTE	W24
-	BYTE		        An4 
-	BYTE	W48
+        BYTE   W72
 // 038   ----------------------------------------
-	BYTE		        Gn4 
-	BYTE	W48
-	BYTE		N21     Fn4 
-	BYTE	W24
+        BYTE   W72
 // 039   ----------------------------------------
-	BYTE		N10     Ds4 
-	BYTE	W12
-	BYTE		        Dn4 
-	BYTE	W12
-	BYTE		N42     Ds4 
-	BYTE	W48
+        BYTE   W72
 // 040   ----------------------------------------
-	BYTE		        Fn4 
-	BYTE	W48
-	BYTE		        Gn4 
-	BYTE	W24
+        BYTE   W72
 // 041   ----------------------------------------
-	BYTE	W24
-	BYTE		N10     An4 
-	BYTE	W12
-	BYTE		        As4 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE	W12
+        BYTE   W72
 // 042   ----------------------------------------
-	BYTE	W72
+        BYTE           VOL     38
+        BYTE           N21     Gn4   v105
+        BYTE   W12
+        BYTE                   Dn5
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE   W12
+        BYTE                   Dn5
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W12
 // 043   ----------------------------------------
-	BYTE	W72
+CelicaDeparts_5_43:
+        BYTE           N21     Gn4   v105
+        BYTE   W12
+        BYTE                   Dn5
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE   W12
+        BYTE                   Dn5
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE   PEND
 // 044   ----------------------------------------
-	BYTE	W72
+        BYTE   PATT
+         POIN2  CelicaDeparts_5_43
 // 045   ----------------------------------------
-	BYTE	W72
+        BYTE           N21     Gn4   v105
+        BYTE   W12
+        BYTE           N42     Dn5   v105   gtp1
+        BYTE   W24
+        BYTE                   Cn5
+        BYTE   W24
+        BYTE           N21     Gn4
+        BYTE   W12
 // 046   ----------------------------------------
-	BYTE	W72
+        BYTE                   Ds4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W12
+        BYTE           N64     Gn4
+        BYTE   W48
 // 047   ----------------------------------------
-	BYTE	W24
-	BYTE		N21     Dn5   v056
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		N42     Dn5 
-	BYTE	W12
+        BYTE   W24
+        BYTE           N21     Dn5
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE   W12
+        BYTE           N42     Dn5   v105   gtp1
+        BYTE   W12
 // 048   ----------------------------------------
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W24
-	BYTE		N21     Gn4 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE	W12
-	BYTE		        As4 
-	BYTE	W12
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W24
+        BYTE           N21     Gn4
+        BYTE   W12
+        BYTE                   An4
+        BYTE   W12
+        BYTE                   As4
+        BYTE   W12
 // 049   ----------------------------------------
-	BYTE		N64     Cn5 
-	BYTE	W72
+        BYTE           N64     Cn5
+        BYTE   W72
 // 050   ----------------------------------------
-	BYTE	W72
+        BYTE           N21     Cn4   v100
+        BYTE   W12
+        BYTE                   Ds4
+        BYTE           N21     Gn4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N21     Fn4
+        BYTE   W12
+        BYTE                   An4
+        BYTE           N21     Cn5
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W12
 // 051   ----------------------------------------
-	BYTE	W72
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE                   Cn4
+        BYTE           N21     Gn4
+        BYTE   W12
+        BYTE                   As4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N21     Fn4
+        BYTE   W12
+        BYTE                   As4
+        BYTE           N21     Dn5
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE           N21     An4
+        BYTE   W12
 // 052   ----------------------------------------
-	BYTE	W72
+        BYTE                   Gn4
+        BYTE           N21     As4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE           N21     An4
+        BYTE   W12
+        BYTE                   Dn5
+        BYTE           N21     Fn5
+        BYTE   W12
+        BYTE           N18     Cn5
+        BYTE           N18     An4
+        BYTE   W12
+        BYTE           N36     Dn5   v102
+        BYTE           N36     Gn4
+        BYTE   W24
 // 053   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 054   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 055   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 056   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 057   ----------------------------------------
-	BYTE	W72
-	BYTE	GoTo
-	 POIN2	CelicaDeparts_5_B1
-CelicaDeparts_5_B2:
+        BYTE   W72
 // 058   ----------------------------------------
-	BYTE	FINE
+        BYTE           VOL     41
+        BYTE   GoTo
+         POIN2  CelicaDeparts_5_LOOP
+        BYTE   FINE
 
-//**************** Track 6 (Midi-Chn.6) ****************//
+//****************** Track 6 (Midi-Chn.6) ******************//
 
 CelicaDeparts_6:
-	BYTE	KEYSH   CelicaDeparts_key+0
-CelicaDeparts_6_B1:
+        BYTE   KEYSH   CelicaDeparts_key+0
 // 000   ----------------------------------------
-	BYTE		VOICE   99
-	BYTE		VOL     62*CelicaDeparts_mvl/mxv
-	BYTE		PAN     c_v-28
-	BYTE	W72
+CelicaDeparts_6_LOOP:
+        BYTE           VOICE   1
+        BYTE           VOL     44
+        BYTE           PAN     c_v+27
+        BYTE   W72
 // 001   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 002   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 003   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 004   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 005   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 006   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 007   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 008   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 009   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 010   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 011   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 012   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 013   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 014   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 015   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 016   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 017   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 018   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 019   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 020   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 021   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 022   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 023   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 024   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 025   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 026   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 027   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 028   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 029   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 030   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 031   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 032   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 033   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 034   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 035   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 036   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 037   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 038   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 039   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 040   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 041   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 042   ----------------------------------------
-	BYTE		N21     Gn4   v108
-	BYTE	W12
-	BYTE		        Dn5 
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		        Dn5 
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
+CelicaDeparts_6_42:
+        BYTE           N21     Gn4   v100
+        BYTE   W12
+        BYTE                   Dn5
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE   W12
+        BYTE                   Dn5
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE   PEND
 // 043   ----------------------------------------
-CelicaDeparts_6_043:
-	BYTE		N21     Gn4   v108
-	BYTE	W12
-	BYTE		        Dn5 
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		        Dn5 
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE	PEND
+        BYTE   PATT
+         POIN2  CelicaDeparts_6_42
 // 044   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_6_043
+        BYTE   PATT
+         POIN2  CelicaDeparts_6_42
 // 045   ----------------------------------------
-	BYTE		N21     Gn4   v108
-	BYTE	W12
-	BYTE		N42     Dn5 
-	BYTE	W24
-	BYTE		        Cn5 
-	BYTE	W24
-	BYTE		N21     Gn4 
-	BYTE	W12
+        BYTE           N21     Gn4   v100
+        BYTE   W12
+        BYTE           N42     Dn5   v100   gtp1
+        BYTE   W24
+        BYTE                   Cn5
+        BYTE   W24
+        BYTE           N21     Gn4
+        BYTE   W12
 // 046   ----------------------------------------
-	BYTE		        Ds4 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE	W12
-	BYTE		N64     Gn4 
-	BYTE	W48
+        BYTE                   Ds4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W12
+        BYTE           N64     Gn4
+        BYTE   W48
 // 047   ----------------------------------------
-	BYTE	W24
-	BYTE		N21     Dn5 
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		N42     Dn5 
-	BYTE	W12
+        BYTE   W24
+        BYTE           N21     Dn5
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE   W12
+        BYTE           N42     Dn5   v100   gtp1
+        BYTE   W12
 // 048   ----------------------------------------
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W24
-	BYTE		N21     Gn4 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE	W12
-	BYTE		        As4 
-	BYTE	W12
+        BYTE   W12
+        BYTE                   Cn5
+        BYTE   W24
+        BYTE           N21     Gn4
+        BYTE   W12
+        BYTE                   An4
+        BYTE   W12
+        BYTE                   As4
+        BYTE   W12
 // 049   ----------------------------------------
-	BYTE		N64     Cn5 
-	BYTE	W72
+        BYTE           N64     Cn5
+        BYTE   W72
 // 050   ----------------------------------------
-	BYTE		N21     Cn4   v100
-	BYTE	W12
-	BYTE		        Ds4 
-	BYTE		N21     Gn4 
-	BYTE	W12
-	BYTE		        Dn4 
-	BYTE		N21     Fn4 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE		N21     Cn5 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE	W12
+        BYTE           N21     Cn4   v097
+        BYTE   W12
+        BYTE                   Ds4
+        BYTE           N21     Gn4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N21     Fn4
+        BYTE   W12
+        BYTE                   An4
+        BYTE           N21     Cn5
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W12
 // 051   ----------------------------------------
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		        Cn4 
-	BYTE		N21     Gn4 
-	BYTE	W12
-	BYTE		        As4 
-	BYTE	W12
-	BYTE		        Dn4 
-	BYTE		N21     Fn4 
-	BYTE	W12
-	BYTE		        As4 
-	BYTE		N21     Dn5 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE		N21     An4 
-	BYTE	W12
+        BYTE                   Cn5
+        BYTE   W12
+        BYTE                   Cn4
+        BYTE           N21     Gn4
+        BYTE   W12
+        BYTE                   As4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N21     Fn4
+        BYTE   W12
+        BYTE                   As4
+        BYTE           N21     Dn5
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE           N21     An4
+        BYTE   W12
 // 052   ----------------------------------------
-	BYTE		        Gn4 
-	BYTE		N21     As4 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE		N21     An4 
-	BYTE	W12
-	BYTE		        Dn5 
-	BYTE		N21     Fn5 
-	BYTE	W12
-	BYTE		N18     An4 
-	BYTE		N18     Cn5 
-	BYTE	W12
-	BYTE		N36     Gn4   v104
-	BYTE		N36     Dn5 
-	BYTE	W24
+        BYTE                   Gn4
+        BYTE           N21     As4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE           N21     An4
+        BYTE   W12
+        BYTE                   Dn5
+        BYTE           N21     Fn5
+        BYTE   W12
+        BYTE                   An4
+        BYTE           N21     Cn5
+        BYTE   W12
+        BYTE           N36     Gn4   v102
+        BYTE           N36     Dn5
+        BYTE   W24
 // 053   ----------------------------------------
-	BYTE	W48
-	BYTE	W24
+        BYTE   W72
 // 054   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 055   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 056   ----------------------------------------
-	BYTE	W72
+        BYTE   W72
 // 057   ----------------------------------------
-	BYTE	W72
-	BYTE	GoTo
-	 POIN2	CelicaDeparts_6_B1
-CelicaDeparts_6_B2:
+        BYTE   W72
 // 058   ----------------------------------------
-	BYTE	FINE
+        BYTE   GoTo
+         POIN2  CelicaDeparts_6_LOOP
+        BYTE   FINE
 
-//**************** Track 7 (Midi-Chn.7) ****************//
 
-CelicaDeparts_7:
-	BYTE	KEYSH   CelicaDeparts_key+0
-CelicaDeparts_7_B1:
-// 000   ----------------------------------------
-	BYTE		VOICE   1
-	BYTE		VOL     67*CelicaDeparts_mvl/mxv
-	BYTE		PAN     c_v+27
-	BYTE	W72
-// 001   ----------------------------------------
-	BYTE	W72
-// 002   ----------------------------------------
-	BYTE	W72
-// 003   ----------------------------------------
-	BYTE	W72
-// 004   ----------------------------------------
-	BYTE	W72
-// 005   ----------------------------------------
-	BYTE	W72
-// 006   ----------------------------------------
-	BYTE	W72
-// 007   ----------------------------------------
-	BYTE	W72
-// 008   ----------------------------------------
-	BYTE	W72
-// 009   ----------------------------------------
-	BYTE	W72
-// 010   ----------------------------------------
-	BYTE	W72
-// 011   ----------------------------------------
-	BYTE	W72
-// 012   ----------------------------------------
-	BYTE	W72
-// 013   ----------------------------------------
-	BYTE	W72
-// 014   ----------------------------------------
-	BYTE	W72
-// 015   ----------------------------------------
-	BYTE	W72
-// 016   ----------------------------------------
-	BYTE	W72
-// 017   ----------------------------------------
-	BYTE	W72
-// 018   ----------------------------------------
-	BYTE	W72
-// 019   ----------------------------------------
-	BYTE	W72
-// 020   ----------------------------------------
-	BYTE	W72
-// 021   ----------------------------------------
-	BYTE	W72
-// 022   ----------------------------------------
-	BYTE	W72
-// 023   ----------------------------------------
-	BYTE	W72
-// 024   ----------------------------------------
-	BYTE	W72
-// 025   ----------------------------------------
-	BYTE	W72
-// 026   ----------------------------------------
-	BYTE	W72
-// 027   ----------------------------------------
-	BYTE	W72
-// 028   ----------------------------------------
-	BYTE	W72
-// 029   ----------------------------------------
-	BYTE	W72
-// 030   ----------------------------------------
-	BYTE	W72
-// 031   ----------------------------------------
-	BYTE	W72
-// 032   ----------------------------------------
-	BYTE	W72
-// 033   ----------------------------------------
-	BYTE	W72
-// 034   ----------------------------------------
-	BYTE	W72
-// 035   ----------------------------------------
-	BYTE	W72
-// 036   ----------------------------------------
-	BYTE	W72
-// 037   ----------------------------------------
-	BYTE	W72
-// 038   ----------------------------------------
-	BYTE	W72
-// 039   ----------------------------------------
-	BYTE	W72
-// 040   ----------------------------------------
-	BYTE	W72
-// 041   ----------------------------------------
-	BYTE	W72
-// 042   ----------------------------------------
-CelicaDeparts_7_042:
-	BYTE		N21     Gn4   v100
-	BYTE	W12
-	BYTE		        Dn5 
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		        Dn5 
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE	PEND
-// 043   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_7_042
-// 044   ----------------------------------------
-	BYTE	PATT
-	 POIN2	CelicaDeparts_7_042
-// 045   ----------------------------------------
-	BYTE		N21     Gn4   v100
-	BYTE	W12
-	BYTE		N42     Dn5 
-	BYTE	W24
-	BYTE		        Cn5 
-	BYTE	W24
-	BYTE		N21     Gn4 
-	BYTE	W12
-// 046   ----------------------------------------
-	BYTE		        Ds4 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE	W12
-	BYTE		N64     Gn4 
-	BYTE	W48
-// 047   ----------------------------------------
-	BYTE	W24
-	BYTE		N21     Dn5 
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		N42     Dn5 
-	BYTE	W12
-// 048   ----------------------------------------
-	BYTE	W12
-	BYTE		        Cn5 
-	BYTE	W24
-	BYTE		N21     Gn4 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE	W12
-	BYTE		        As4 
-	BYTE	W12
-// 049   ----------------------------------------
-	BYTE		N64     Cn5 
-	BYTE	W72
-// 050   ----------------------------------------
-	BYTE		N21     Cn4 
-	BYTE	W12
-	BYTE		        Ds4 
-	BYTE		N21     Gn4 
-	BYTE	W12
-	BYTE		        Dn4 
-	BYTE		N21     Fn4 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE		N21     Cn5 
-	BYTE	W12
-	BYTE		        Gn4 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE	W12
-// 051   ----------------------------------------
-	BYTE		        Cn5 
-	BYTE	W12
-	BYTE		        Cn4 
-	BYTE		N21     Gn4 
-	BYTE	W12
-	BYTE		        As4 
-	BYTE	W12
-	BYTE		        Dn4 
-	BYTE		N21     Fn4 
-	BYTE	W12
-	BYTE		        As4 
-	BYTE		N21     Dn5 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE		N21     An4 
-	BYTE	W12
-// 052   ----------------------------------------
-	BYTE		        Gn4 
-	BYTE		N21     As4 
-	BYTE	W12
-	BYTE		        Fn4 
-	BYTE		N21     An4 
-	BYTE	W12
-	BYTE		        Dn5 
-	BYTE		N21     Fn5 
-	BYTE	W12
-	BYTE		        An4 
-	BYTE		N21     Cn5 
-	BYTE	W12
-	BYTE		N36     Gn4   v104
-	BYTE		N36     Dn5 
-	BYTE	W24
-// 053   ----------------------------------------
-	BYTE	W72
-// 054   ----------------------------------------
-	BYTE	W72
-// 055   ----------------------------------------
-	BYTE	W72
-// 056   ----------------------------------------
-	BYTE	W72
-// 057   ----------------------------------------
-	BYTE	W72
-	BYTE	GoTo
-	 POIN2	CelicaDeparts_7_B1
-CelicaDeparts_7_B2:
-// 058   ----------------------------------------
-	BYTE	FINE
+//********************** End of Song ***********************//
 
-//******************************************************//
-	ALIGN 4
-
+        ALIGN 4
 CelicaDeparts:
-	BYTE	7	// NumTrks
-	BYTE	0	// NumBlks
-	BYTE	CelicaDeparts_pri	// Priority
-	BYTE	CelicaDeparts_rev	// Reverb.
+        BYTE   7                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   CelicaDeparts_pri       // Priority
+        BYTE   CelicaDeparts_rev       // Reverb
 
-	POIN2	CelicaDeparts_grp
+        POIN2   CelicaDeparts_grp      
 
-	POIN2	CelicaDeparts_1
-	POIN2	CelicaDeparts_2
-	POIN2	CelicaDeparts_3
-	POIN2	CelicaDeparts_4
-	POIN2	CelicaDeparts_5
-	POIN2	CelicaDeparts_6
-	POIN2	CelicaDeparts_7
+        POIN2   CelicaDeparts_0
+        POIN2   CelicaDeparts_1
+        POIN2   CelicaDeparts_2
+        POIN2   CelicaDeparts_3
+        POIN2   CelicaDeparts_4
+        POIN2   CelicaDeparts_5
+        POIN2   CelicaDeparts_6
 
-	
+        

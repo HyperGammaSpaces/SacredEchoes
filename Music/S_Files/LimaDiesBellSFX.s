@@ -1,86 +1,77 @@
-	.include "MPlayDef.s"
+        .include "MPlayDef.s"
 
-	.equ	LimaDiesBellSFX_grp, voicegroup000
-	.equ	LimaDiesBellSFX_pri, 0
-	.equ	LimaDiesBellSFX_rev, 0
-	.equ	LimaDiesBellSFX_mvl, 85
-	.equ	LimaDiesBellSFX_key, 0
-	.equ	LimaDiesBellSFX_tbs, 1
-	.equ	LimaDiesBellSFX_exg, 0
-	.equ	LimaDiesBellSFX_cmp, 1
+        .equ    LimaDiesBellSFX_grp, voicegroup000
+        .equ    LimaDiesBellSFX_pri, 0
+        .equ    LimaDiesBellSFX_rev, 0
+        .equ    LimaDiesBellSFX_key, 0
 
-	.section .rodata
-	.global	LimaDiesBellSFX
-	.align	2
+        .section .rodata
+        .global LimaDiesBellSFX
+        .align  2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@****************** Track 0 (Midi-Chn.0) ******************@
 
-LimaDiesBellSFX_1:
-	.byte		VOL   , 127*LimaDiesBellSFX_mvl/mxv
-	.byte	KEYSH , LimaDiesBellSFX_key+0
+LimaDiesBellSFX_0:
+        .byte   KEYSH , LimaDiesBellSFX_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 14
-	.byte		TIE   , Ds2 , v104
-	.byte		TIE   , As2 
-	.byte		TIE   , Ds3 
-	.byte	W96
+        .byte           VOICE , 14
+        .byte           TIE   , As2 , v102
+        .byte           TIE   , Ds3
+        .byte           TIE   , Ds2
+        .byte           VOL   , 84
+        .byte   W96
 @ 001   ----------------------------------------
-	.byte	W36
-	.byte		EOT   
-	.byte	W12
-	.byte		EOT   , As2 
-	.byte	W12
-	.byte		        Ds2 
-	.byte	W36
+LimaDiesBellSFX_0_1:
+        .byte   W36
+        .byte           EOT   , Ds3
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Ds2
+        .byte   W36
+        .byte   PEND
 @ 002   ----------------------------------------
-LimaDiesBellSFX_1_002:
-	.byte		TIE   , Ds2 , v104
-	.byte		TIE   , As2 
-	.byte		TIE   , Ds3 
-	.byte	W96
-	.byte	PEND
+LimaDiesBellSFX_0_2:
+        .byte           TIE   , Ds3 , v102
+        .byte           TIE   , As2
+        .byte           TIE   , Ds2
+        .byte   W96
+        .byte   PEND
 @ 003   ----------------------------------------
-	.byte	W36
-	.byte		EOT   
-	.byte	W12
-	.byte		EOT   , As2 
-	.byte	W12
-	.byte		        Ds2 
-	.byte	W36
+        .byte   PATT
+         .word  LimaDiesBellSFX_0_1
 @ 004   ----------------------------------------
-	.byte	PATT
-	 .word	LimaDiesBellSFX_1_002
+        .byte           TIE   , As2 , v102
+        .byte           TIE   , Ds3
+        .byte           TIE   , Ds2
+        .byte   W96
 @ 005   ----------------------------------------
-	.byte	W36
-	.byte		EOT   , Ds3 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Ds2 
-	.byte	W36
+        .byte   PATT
+         .word  LimaDiesBellSFX_0_1
 @ 006   ----------------------------------------
-	.byte	PATT
-	 .word	LimaDiesBellSFX_1_002
+        .byte   PATT
+         .word  LimaDiesBellSFX_0_2
 @ 007   ----------------------------------------
-	.byte	W36
-	.byte		EOT   , Ds3 
-	.byte	W12
-	.byte		        As2 
-	.byte	W12
-	.byte		        Ds2 
-	.byte	FINE
+        .byte   W36
+        .byte           EOT   , Ds3
+        .byte   W12
+        .byte                   As2
+        .byte   W12
+        .byte                   Ds2
+        .byte   FINE
 
-@******************************************************@
-	.align	2
 
+@********************** End of Song ***********************@
+
+        .align  2
 LimaDiesBellSFX:
-	.byte	1	@ NumTrks
-	.byte	0	@ NumBlks
-	.byte	LimaDiesBellSFX_pri	@ Priority
-	.byte	LimaDiesBellSFX_rev	@ Reverb.
+        .byte   1                       @ Num Tracks
+        .byte   0                       @ Unknown
+        .byte   LimaDiesBellSFX_pri     @ Priority
+        .byte   LimaDiesBellSFX_rev     @ Reverb
 
-	.word	LimaDiesBellSFX_grp
+        .word   LimaDiesBellSFX_grp    
 
-	.word	LimaDiesBellSFX_1
+        .word   LimaDiesBellSFX_0
 
-	.end
+        .end
