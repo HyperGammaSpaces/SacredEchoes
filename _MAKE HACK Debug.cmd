@@ -8,7 +8,7 @@ py MakeParseDefs.py "Portrait Definitions.event" ParseDefinitions.txt ../Text/Pa
 cd "%~dp0Tables"
 echo: | (c2ea "%~dp0FE8_clean.gba")
 cd "%~dp0Text"
-echo: | ("%textprocess%" text_buildfile.txt --parser-exe "%parsefile%" --depends "ParseDefinitions.txt" --installer "InstallTextData.event" --definitions "TextDefinitions.event")
+echo: | ("%textprocess%" _English/text_buildfile.txt --parser-exe "%parsefile%" --depends "ParseDefinitions.txt" --installer "_English/InstallTextData.event" --definitions "_English/TextDefinitions.event")
 cd "%~dp0Maps"
 echo: | (tmx2ea -s)
 cd "%~dp0Event Assembler"
