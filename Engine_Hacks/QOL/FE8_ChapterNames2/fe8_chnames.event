@@ -11,11 +11,14 @@ Chname:
 #include "fe8_chapter_names.lyn.event"
 ALIGN 4
 
+
+//original func is at 82308 in FE7U
 ALIGN 4
 Font_Graphic_Ptr:
 //#incext Png2Dmp "font.png" --lz77
 #incbin "font.png.dmp"	//HINT=BIN
 
+//Each chartable entry is 0x8 bytes
 ALIGN 4
 ChnameCharTablePtr:
 #incbin "chartable.dmp"	//HINT=BIN
