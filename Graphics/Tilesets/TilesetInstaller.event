@@ -1,12 +1,16 @@
+#define tilesetAnimation(speed, size, pointer)    "BYTE speed 0; SHORT size; POIN pointer"
+
 #include "Castle/Installer.event"
 #include "Cave/Installer.event"
 #include "Desert/Installer.event"
+#include "DragonsGate/Installer.event"
 #include "Fields/Installer.event"
 #include "Fort/Installer.event"
 #include "Frontier/Installer.event"
 #include "LavaCave/Installer.event"
 #include "SnowCastle/Installer.event"
 #include "StrongholdUpdate/Installer.event"
+#include "Swamp/Installer.event" //modifies Fields anims
 #include "Temple/Installer.event"
 #include "Tower/Installer.event"
 #include "UpdatedVillage/Installer.event"
