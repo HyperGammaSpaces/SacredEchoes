@@ -1,0 +1,18 @@
+#include "Anims/Installer.event"
+
+ALIGN 4
+DragonsGateTiles:
+#incbin "DragonsGateTiles_comp.dmp"
+
+ALIGN 4
+DragonsGateObjects:
+#incbin "DragonsGateObjects.img.bin"
+
+ALIGN 4
+DragonsGatePalette1:
+#incbin "DragonsGateObjects.pal.bin"
+
+EventPointerTable(plDragonsGateObj, DragonsGateObjects)
+EventPointerTable(plDragonsGatePal, DragonsGatePalette1)
+EventPointerTable(plDragonsGateConf, DragonsGateTiles)
+EventPointerTable(plDragonsGateAnim, DragonsGateAnimation)
