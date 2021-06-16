@@ -1,7 +1,11 @@
 //battle frames
 PUSH
-//New Battle Frame:
-    ORG $51f68
+//Hit/Dmg/Crit:
+	ORG $5111C
+	POIN HitDmgCritImg
+
+//New Battle Frame:	
+	ORG $51f68
     POIN BattleFrame
     ORG $51fc8
     POIN BF_EN
@@ -16,6 +20,14 @@ PUSH
 	ORG $802558
     #incbin "battletileset.pal.bin"
 POP
+
+ALIGN 4
+HitDmgCritImg:
+#ifdef LANGUAGE_ES
+	#incbin "8025D8_ES.dmp"
+#else
+	#incbin "8025D8.dmp"
+#endif
 
 ALIGN 4
 BattleFrame:

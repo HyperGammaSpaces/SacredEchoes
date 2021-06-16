@@ -34,8 +34,16 @@ POP
 
 ALIGN 4
 NewDifficultyButtons:
-#incbin "difficulty.dmp" 
+#ifdef LANGUAGE_ES
+	#incbin "difficulty_ES.dmp"
+#else
+	#incbin "difficulty.dmp"
+#endif
 
 ALIGN 4
 CasualModeButtons:
-#incbin "casualmode.dmp"
+#ifdef LANGUAGE_ES
+	#incbin "casualmode_ES.dmp"
+#else
+	#incbin "casualmode.dmp"
+#endif

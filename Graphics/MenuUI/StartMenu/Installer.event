@@ -3,6 +3,15 @@ PUSH
 	POIN NewMainMenuGfx
 	ORG $8e088
 	POIN NewMainMenuGfx
+	
+	ORG $A8F34
+	POIN NewExtraMenuGfx
+	ORG $A9A60
+	POIN NewExtraMenuGfx
+	ORG $AA010
+	POIN NewExtraMenuGfx
+	ORG $AA450
+	POIN NewExtraMenuGfx
 
 	//Main Menu bg
 	  ORG $a21658
@@ -16,4 +25,17 @@ POP
 
 ALIGN 4
 NewMainMenuGfx:
-#incbin "a2d32c.dmp"
+#ifdef LANGUAGE_ES
+	#incbin "a2d23c_ES.dmp"
+#else
+	#incbin "a2d23c.dmp"
+#endif
+
+NewExtraMenuGfx:
+#ifdef LANGUAGE_ES
+	#incbin "ExtraMenuString_08A2812C_ES.dmp"
+#else
+	#incbin "ExtraMenuString_08A2812C.dmp"
+#endif
+
+#include "SaveFile/Installer.event"

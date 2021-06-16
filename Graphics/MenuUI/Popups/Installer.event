@@ -1,5 +1,10 @@
 PUSH
 
+	ORG $7CB70
+	POIN MapAnimMissGfx
+	ORG $7CBCC
+	POIN MapAnimNoDamageGfx
+
 	ORG $75D14
 	POIN NewPopupGfx
 	ORG $803CB0
@@ -10,3 +15,21 @@ POP
 ALIGN 4
 NewPopupGfx:
 #incbin "803b30-popup.dmp"
+
+//BattleMoji is at 7DC95C in FE8E
+
+ALIGN 4
+MapAnimMissGfx:
+#ifdef LANGUAGE_ES
+	#incbin "MapAnimMiss_9AC0A4_ES.dmp"
+#else
+	#incbin "MapAnimMiss_9AC0A4.dmp"
+#endif
+
+ALIGN 4
+MapAnimNoDamageGfx:
+#ifdef LANGUAGE_ES
+	#incbin "MapAnimNoDamage_9AC2FC_ES.dmp"
+#else
+	#incbin "MapAnimNoDamage_9AC2FC.dmp"
+#endif

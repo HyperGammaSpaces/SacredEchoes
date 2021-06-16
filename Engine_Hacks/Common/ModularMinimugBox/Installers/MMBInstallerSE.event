@@ -448,7 +448,7 @@ After each set of module options are definitions that you can use to adjust the 
 		 * frames.
 		 */
 
-	#define MMBHP
+	//#define MMBHP
 		/*
 		 * Draws HP ## / ## to [MMBHPX, MMBHPY].
 		 */
@@ -690,7 +690,7 @@ After each set of module options are definitions that you can use to adjust the 
 	//#define MMBLevelLabel
 	//#define MMBRESLabel
 	//#define MMBRTGLabel
-	//#define MMBHPLabel
+	#define MMBHPLabel
 		/*
 		 * Draws the label for the specified stat
 		 * to [MMB(STAT)LabelX, MMB(STAT)LabelY] using
@@ -786,7 +786,7 @@ After each set of module options are definitions that you can use to adjust the 
 	//#define MMBRTGLabelTileCount 2
 
 	// HP label
-	#define MMBHPLabelX 11
+	#define MMBHPLabelX 5
 	#define MMBHPLabelY 1
 	#define MMBHPLabelVRAMTile 0x120
 	#define MMBHPLabelPaletteIndex 2

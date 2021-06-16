@@ -21,7 +21,7 @@
 	
 	//make an alternative option to just skip the problematic part?
 	
-	PUSH
+PUSH
 	//draw our thing instead of the regular background
 	ORG $C5724; jumpToHack(titlebackgrounddrawer)
 	//skip a bunch of stuff
@@ -35,15 +35,20 @@
 	ORG $c5830
 	POIN NewTitleScroll
 	
-	POP
+POP
 	
-	ALIGN 4
-	titlebackgrounddrawer:
-	#incbin "titlebackgroundasm.dmp"
-	POIN titlebackgroundimage
-	POIN titlebackgroundpalette
-	POIN titlebackgroundtsa
+ALIGN 4
+titlebackgrounddrawer:
+#incbin "titlebackgroundasm.dmp"
+POIN titlebackgroundimage
+POIN titlebackgroundpalette
+POIN titlebackgroundtsa
 	
-	ALIGN 4
-	NewTitleScroll:
+ALIGN 4
+NewTitleScroll:
+#ifdef LANGUAGE_ES
+	#incbin "TitleScroll_ES.dmp"
+#else
 	#incbin "TitleScroll.dmp"
+#endif
+	

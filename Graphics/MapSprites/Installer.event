@@ -1,3 +1,11 @@
+PUSH
+
+	//Fix anims off manakete
+	ORG $7AC9C
+	BYTE $3B
+	
+POP
+
 ALIGN 4
 Alm_Map_Stand:
 #incbin "Dmp/AlmFighterStand.dmp"

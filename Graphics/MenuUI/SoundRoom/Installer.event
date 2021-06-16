@@ -6,4 +6,8 @@ PUSH
 POP
 
 SoundRoomControlsGfx:
-#incbin "A2CABC.dmp"
+#ifdef LANGUAGE_ES
+	#incbin "SoundRoom_A2CABC_ES.dmp"
+#else
+	#incbin "SoundRoom_A2CABC.dmp"
+#endif

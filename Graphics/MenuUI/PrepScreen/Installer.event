@@ -10,6 +10,12 @@ PUSH
 	ORG $95E20
 	POIN PrepScreenGraphic
 	
+	//Button labels at bottom
+	ORG $9A8EC
+	POIN PrepScreenButtonLabels
+	ORG $95E28
+	POIN PrepScreenButtonLabels
+	
 	ORG $95EB4
 	WORD $02023546
 	ORG $95E6A
@@ -19,12 +25,32 @@ POP
 
 ALIGN 4
 MorePrepScreenTiles:
-#incbin "A1B1FC_pal1.dmp"
+#ifdef LANGUAGE_ES
+#incbin "prepitems_A1B1FC_ES.dmp"
+#else
+#incbin "prepitems_A1B1FC.dmp"
+#endif
 
 ALIGN 4
 PrepScreenChapterNumber:
+#ifdef LANGUAGE_ES
+#incbin "chapter_number_of_prep_08A1AC88_ES.dmp" 
+#else
 #incbin "chapter_number_of_prep_08A1AC88.dmp" 
+#endif
 
 ALIGN 4
 PrepScreenGraphic:
-#incbin "A1A4C8.dmp" 
+#ifdef LANGUAGE_ES
+#incbin "preptitle_A1A4C8_ES.dmp"
+#else
+#incbin "preptitle_A1A4C8.dmp" 
+#endif
+
+ALIGN 4
+PrepScreenButtonLabels:
+#ifdef LANGUAGE_ES
+#incbin "buttons_08A1D510_ES.dmp"
+#else
+#incbin "buttons_08A1D510.dmp"
+#endif

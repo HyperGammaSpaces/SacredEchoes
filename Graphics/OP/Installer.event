@@ -6,34 +6,32 @@
 //C488C loads the background image itself
 //c5104 is where it loads the background image palette.
 //c4d54 might be the issue?
+//it goes to C4CD0 after bg1 is loaded.
 
 PUSH
-	ORG $206fe4
-	POIN OP_1_Img
-	POIN OP_1_TSA
-	WORD $232 			//timing
-	POIN OP_2_Img
-	POIN OP_2_TSA
-	WORD $272 			//timing
-	POIN OP_3_Img
-	POIN OP_3_TSA
-	WORD $232 			//timing
-	POIN OP_4_Img
-	POIN OP_4_TSA
-	WORD $232 			//timing
-	POIN OP_5_Img
-	POIN OP_5_TSA
-	WORD $2F8 			//timing
-	POIN OP_6_Img
-	POIN OP_6_TSA
-	WORD $2F8 			//timing
-	POIN OP_7_Img
-	POIN OP_7_TSA
-	WORD $232 			//timing
+
+	ORG $AA2224
+	SHORT $0B $01 $00 $00
+	SHORT $05 $00; POIN $AA2184
+	SHORT $0E $01 $00 $00
+	
+	ORG $C52DC
+	SHORT $4640
+	BL($C4CD0)
+	
+	ORG $C51AA
+	SHORT $46C0 $46C0 $46C0
+	
+	ORG $C50E2
+	BYTE $16 
+	ORG $C5304
+	SHORT $46C0 $46C0 $46C0
+	ORG $C50FD
+	BYTE $06 //clearing more vram
+	
 	
 	ORG $C48DC
 	POIN OPBackgroundImage
-	
 	ORG $C5158
 	POIN OPBackgroundImagePal
 	ORG $C51A0
@@ -41,50 +39,15 @@ PUSH
 POP
 
 ALIGN 4
-OP_1_Img:
-#incbin "OpeningNarrationText_1.img.bin"
-ALIGN 4
-OP_1_TSA:
-#incbin "OpeningNarrationText_1.tsa.bin"
-ALIGN 4
-OP_2_Img:
-#incbin "OpeningNarrationText_2.img.bin"
-ALIGN 4
-OP_2_TSA:
-#incbin "OpeningNarrationText_2.tsa.bin"
-ALIGN 4
-OP_3_Img:
-#incbin "OpeningNarrationText_3.img.bin"
-ALIGN 4
-OP_3_TSA:
-#incbin "OpeningNarrationText_3.tsa.bin"
-ALIGN 4
-OP_4_Img:
-#incbin "OpeningNarrationText_4.img.bin"
-ALIGN 4
-OP_4_TSA:
-#incbin "OpeningNarrationText_4.tsa.bin"
-ALIGN 4
-OP_5_Img:
-#incbin "OpeningNarrationText_5.img.bin"
-ALIGN 4
-OP_5_TSA:
-#incbin "OpeningNarrationText_5.tsa.bin"
-ALIGN 4
-OP_6_Img:
-#incbin "OpeningNarrationText_6.img.bin"
-ALIGN 4
-OP_6_TSA:
-#incbin "OpeningNarrationText_6.tsa.bin"
-ALIGN 4
-OP_7_Img:
-#incbin "OpeningNarrationText_7.img.bin"
-ALIGN 4
-OP_7_TSA:
-#incbin "OpeningNarrationText_7.tsa.bin"
-ALIGN 4
 OPBackgroundImage:
 #incbin "Mila_Duma_Mural_OP.dmp"
 ALIGN 4
 OPBackgroundImagePal:
 #incbin "Mila_Duma_Mural_OP.pal.bin"
+
+#ifdef LANGUAGE_ES
+	#include "_Spanish/TextInstaller.event"
+#else
+	#include "_English/TextInstaller.event"
+#endif
+

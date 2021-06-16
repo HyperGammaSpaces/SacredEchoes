@@ -15,8 +15,16 @@ POP
 
 ALIGN 4
 SupportBoxThingy:
-#incbin "a1dd0c.dmp"
+#ifdef LANGUAGE_ES
+	#incbin "supportUI_a1dd0c_ES.dmp"
+#else
+	#incbin "supportUI_a1dd0c.dmp"
+#endif
 
 ALIGN 4
 SupportHeaderGraphic:
-#incbin "A1A8E4.dmp"
+#ifdef LANGUAGE_ES
+	#incbin "supportheader_A1A8E4_ES.dmp"
+#else
+	#incbin "supportheader_A1A8E4.dmp"
+#endif

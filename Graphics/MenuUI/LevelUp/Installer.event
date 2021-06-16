@@ -1,5 +1,10 @@
 PUSH
 
+	#ifdef LANGUAGE_ES
+	ORG $5BB0C8
+	#incbin "levelup_animsoff_085BB0C8_ES.dmp"
+	#endif
+
 	ORG $507D4
 	POIN NewExpBarGfx
 	ORG $508E0

@@ -126,7 +126,11 @@ Spells_Getter_Statscreen:
 
 ALIGN 4
 NewPageNameGraphic:
+#ifdef LANGUAGE_ES
+	#incbin "pagenamegraphic_ES.dmp"
+#else
 	#incbin "pagenamegraphic.dmp"
+#endif
 
 ALIGN 4
 NewPageNameLayout:

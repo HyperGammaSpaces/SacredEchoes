@@ -91,7 +91,11 @@ POP
 
 ALIGN 4
 NewSaveMenu:
-#incbin "savemenu-A26A74.dmp" 
+#ifdef LANGUAGE_ES
+	#incbin "savemenu-A26A74_ES.dmp"
+#else
+	#incbin "savemenu-A26A74.dmp" 
+#endif
 
 ALIGN 4
 ColumnGfx:

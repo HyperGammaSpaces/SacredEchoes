@@ -1,12 +1,47 @@
 PUSH
+	ORG $8D0AC
+	POIN TerrainWindowGraphics
 	
 	ORG $B3A48
 	POIN PromotionTextbox
 	ORG $CCC1C
 	POIN PromotionTextbox
 	
+	ORG $213CC
+	POIN GameOverTextGFX
+	
 	ORG $8c450
 	POIN StatusTextImage
+	
+	ORG $85dbc
+	POIN MapClearGFX
+	
+	ORG $C07A0
+	POIN SkirmishGFX
+	
+	/*
+	ORG $898b0
+	POIN RTextGFX_2
+	POIN RTextGFX_1
+	ORG $89970
+	POIN RTextGFX_1
+	POIN RTextGFX_2
+	ORG $8A708
+	POIN RTextGFX_1
+	POIN RTextGFX_2
+	*/
+	
+	ORG $90f88
+	POIN UnitMenuPageGFX
+	
+	ORG $90F84
+	POIN AnimationSettingTitleGFX
+	
+	ORG $CEEF4
+	POIN GuideTitleGFX
+	
+	ORG $8E80C
+	POIN BattleStatusScreenGFX
 	
 	ORG $C0DC4
 	POIN MapStatusScreenGFX
@@ -15,11 +50,101 @@ PUSH
 
 POP
 
+ALIGN 4
+RTextGFX_1:
+#ifdef LANGUAGE_ES
+	#incbin "RText_Help_A02914_ES.dmp"
+#else
+	#incbin "RText_Help_A02914.dmp"
+#endif
+ALIGN 4
+RTextGFX_2:
+#ifdef LANGUAGE_ES
+	#incbin "RText_Help_A02980_ES.dmp"
+#else
+	#incbin "RText_Help_A02980.dmp"
+#endif
+
+ALIGN 4
 PromotionTextbox:
 #incbin "a30800-promotiontextbox.dmp" 
 
-MapStatusScreenGFX:
-#incbin "a986c0.dmp" 
+ALIGN 4
+GameOverTextGFX:
+#ifdef LANGUAGE_ES
+	#incbin "GAMEOVER_08A0AB0C_ES.dmp"
+#else
+	#incbin "GAMEOVER_08A0AB0C.dmp"
+#endif 
 
+ALIGN 4
+MapClearGFX:
+#ifdef LANGUAGE_ES
+	#incbin "MapClear_089A1E70_ES.dmp"
+#else
+	#incbin "MapClear_089A1E70.dmp"
+#endif
+
+ALIGN 4
+SkirmishGFX:
+#ifdef LANGUAGE_ES
+	#incbin "skirmish_aa1970_ES.dmp"
+#else
+	#incbin "skirmish_aa1970.dmp"
+#endif
+
+ALIGN 4
+UnitMenuPageGFX:
+#ifdef LANGUAGE_ES
+	#incbin "UnitMenu_A1CDC4_ES.dmp"
+#else
+	#incbin "UnitMenu_A1CDC4.dmp"
+#endif
+
+ALIGN 4
+GuideTitleGFX:
+#ifdef LANGUAGE_ES
+	#incbin "guide_B177C0_ES.dmp"
+#else
+	#incbin "guide_B177C0.dmp"
+#endif 
+
+ALIGN 4
+AnimationSettingTitleGFX:
+#ifdef LANGUAGE_ES
+	#incbin "AnimPerUnit_A1D288_ES.dmp"
+#else
+	#incbin "AnimPerUnit_A1D288.dmp"
+#endif 
+
+ALIGN 4
+BattleStatusScreenGFX:
+#ifdef LANGUAGE_ES
+	#incbin "BattleStatus_08A2E214_ES.dmp"
+#else
+	#incbin "BattleStatus_08A2E214.dmp"
+#endif 
+
+ALIGN 4
+MapStatusScreenGFX:
+#ifdef LANGUAGE_ES
+	#incbin "WorldMapStatus_a986c0_ES.dmp"
+#else
+	#incbin "WorldMapStatus_a986c0.dmp"
+#endif 
+
+ALIGN 4
 StatusTextImage:
-#incbin "statusnames-A16DEC.dmp"
+#ifdef LANGUAGE_ES
+	#incbin "statusnames-A16DEC_ES.dmp"
+#else
+	#incbin "statusnames-A16DEC.dmp"
+#endif
+
+ALIGN 4
+TerrainWindowGraphics:
+#ifdef LANGUAGE_ES
+	#incbin "TerrainWindow_A167C8_ES.dmp"
+#else
+	#incbin "TerrainWindow_A167C8.dmp"
+#endif
