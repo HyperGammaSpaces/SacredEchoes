@@ -8,9 +8,11 @@
 	
 	//Text installer first for ID definitions
 	TextSpace:
-	#ifdef __LANGUAGE_ES__
+	#ifdef LANGUAGE_ES
+		MESSAGE "Installing Spanish text"
 		#include "Text/_Spanish/InstallTextData.event"
 	#else
+		MESSAGE "Installing English text"
 		#include "Text/_English/InstallTextData.event"
 	#endif
 	MESSAGE Text space used is__ (currentOffset - TextSpace)

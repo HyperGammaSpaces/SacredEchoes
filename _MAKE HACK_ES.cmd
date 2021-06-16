@@ -12,7 +12,7 @@ echo: | ("%textprocess%" _Spanish/text_buildfile.txt --parser-exe "%parsefile%" 
 cd "%~dp0Maps"
 echo: | (tmx2ea -s)
 cd "%~dp0Event Assembler"
-ColorzCore A FE8 "-output:%~dp0SacredEchoes_ES.gba" "-input:%~dp0DebugBuildfile.event" "--nocash-sym"
+ColorzCore A FE8 "-output:%~dp0SacredEchoes_ES.gba" "-input:%~dp0Buildfile_ES.event" "--nocash-sym"
 cd "%~dp0sym"
 java -jar %~dp0sym\SymCombo.jar "%~dp0SacredEchoes_ES.sym" "Stan.sym"
 

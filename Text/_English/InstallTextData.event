@@ -265,6 +265,10 @@ __TEXTPROCESS1CC:
 #incbin ".TextEntries\text_buildfileStatueTileName.fetxt.dmp"
 setText($1CC, __TEXTPROCESS1CC)
 
+__TEXTPROCESS1CD:
+#incbin ".TextEntries\text_buildfileTileName_Swamp.fetxt.dmp"
+setText($1CD, __TEXTPROCESS1CD)
+
 __TEXTPROCESS1E8:
 #incbin ".TextEntries\text_buildfileGraveTileName.fetxt.dmp"
 setText($1E8, __TEXTPROCESS1E8)
@@ -2596,6 +2600,10 @@ setText($7A4, __TEXTPROCESS7A4)
 __TEXTPROCESS7A5:
 #incbin ".TextEntries\text_buildfileSong1A_Name.fetxt.dmp"
 setText($7A5, __TEXTPROCESS7A5)
+
+__TEXTPROCESS7A9:
+#incbin ".TextEntries\text_buildfileSong1E_Name.fetxt.dmp"
+setText($7A9, __TEXTPROCESS7A9)
 
 __TEXTPROCESS7AA:
 #incbin ".TextEntries\text_buildfileSong1F_Name.fetxt.dmp"
@@ -5774,7 +5782,7 @@ __TEXTPROCESS36F:
 setText($36F, __TEXTPROCESS36F)
 
 __TEXTPROCESS370:
-#incbin ".TextEntries\text_buildfileDumaLance_Name.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileKillerLance_Name.fetxt.dmp"
 setText($370, __TEXTPROCESS370)
 
 __TEXTPROCESS371:
@@ -6470,7 +6478,7 @@ __TEXTPROCESS41D:
 setText($41D, __TEXTPROCESS41D)
 
 __TEXTPROCESS41E:
-#incbin ".TextEntries\text_buildfileDumaLance_Desc.fetxt.dmp"
+#incbin ".TextEntries\text_buildfileKillerLance_Desc.fetxt.dmp"
 setText($41E, __TEXTPROCESS41E)
 
 __TEXTPROCESS41F:
@@ -7180,6 +7188,14 @@ setText($4CE, __TEXTPROCESS4CE)
 __TEXTPROCESS4CF:
 #incbin ".TextEntries\text_buildfileDanceItem_UseScreen.fetxt.dmp"
 setText($4CF, __TEXTPROCESS4CF)
+
+__TEXTPROCESS4D0:
+#incbin ".TextEntries\text_buildfileDumaLance_Name.fetxt.dmp"
+setText($4D0, __TEXTPROCESS4D0)
+
+__TEXTPROCESS4D1:
+#incbin ".TextEntries\text_buildfileDumaLance_Desc.fetxt.dmp"
+setText($4D1, __TEXTPROCESS4D1)
 
 }
 
