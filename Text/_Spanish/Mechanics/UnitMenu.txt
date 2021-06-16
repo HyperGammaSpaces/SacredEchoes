@@ -1,19 +1,117 @@
-#0x67C Cmd_WMagic
- W.Magic[X]
+#0x67A Cmd_Seize
+ Tomar[X]
 
-#0x6C1 Desc_Cmd_WMagic
+## Cmd_Attack
+ Atacar[X]
+ 
+## Cmd_WMagic
+ Magia B.[X]
+
+## Cmd_BMagic
+ Magia N.[X]
+ 
+## Cmd_Dance
+ Bailar[X]
+
+## Cmd_Steal
+ Robar[X]
+
+## Cmd_Talk
+ Hablar[X]
+
+## Cmd_Support
+ Apoyo[X]
+
+## Cmd_Visit
+ Visitar[X]
+
+## Cmd_Chest
+ Cofre[X]
+
+## Cmd_Door
+ Puerta[X]
+
+## Cmd_Armory
+ Armer[0xED]a[X]
+
+## Cmd_Vendor
+ Tienda[X]
+
+## Cmd_Secret
+ Secret[X]
+
+## Cmd_Mila
+ Mila[X]
+
+## Cmd_Rescue
+ Rescat[X]
+
+## Cmd_Drop
+ Soltar[X]
+
+## Cmd_Take
+ Recibir[X]
+
+## Cmd_Give
+ Dar[X]
+
+## Cmd_Item
+ Objeto[X]
+
+## Cmd_Trade
+ Interc.[X]
+
+## Cmd_Supply
+ Carro[X]
+
+## Cmd_Status
+ Estado[X]
+
+## Cmd_Ride
+ Montar[X]
+
+## Cmd_Exit
+ Salir[X]
+
+## Cmd_Summon
+ Invocar[X]
+
+## Cmd_Open
+ Abrir[X]
+
+## Cmd_Wait
+ Espera[X]
+
+## Cmd_Use
+ Usar[X]
+
+## Cmd_Equip
+ Equip[X]
+
+## Cmd_Trade2
+ Interc.[X]
+
+## Cmd_Discard
+ Tirar[X]
+ 
+#0x6BF Desc_Cmd_Wait
+End the turn. Be sure you're[NL]
+done before you select this.[X]
+
+## Desc_Cmd_Attack
+Attack an enemy unit.[X]
+
+## Desc_Cmd_WMagic
 Spend HP to cast a spell[NL]
 that can help allies.[X]
 
-#0x67D Cmd_BMagic
- B.Magic[X]
+## Desc_Cmd_Dance
+Perform a dance that allows[NL]
+a unit to move again.[X]
 
-#0x6C3 Desc_Cmd_BMagic
+## Desc_Cmd_BMagic
 Spend HP to cast a spell[NL]
 that can attack a foe.[X]
-
-#0x694 Cmd_Open
- Open[X]
 
 #0x6DE Desc_Cmd_Open
 Open doors and chests.[X]
@@ -22,22 +120,22 @@ Open doors and chests.[X]
 ->[X]
 
 #0x750 Cmd_Shove
- Shove[X]
+ Empujar[X]
  
 ## Cmd_Smite
- Smite[X]
+ Choque[X]
 
 ## Cmd_Pivot
- Pivot[X]
+ Pasar[X]
  
 ## Cmd_Reposition
- Repo.[X]
+ Refugio[X]
 
 ## Cmd_Swap
- Swap[X]
+ Trocar[X]
  
 ## Cmd_Arrive
- Arrive[X]
+ Llegar[X]
  
 ## Desc_Cmd_Shove
 Push an adjacent unit one[NL]

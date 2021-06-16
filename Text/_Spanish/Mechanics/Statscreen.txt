@@ -1,9 +1,5 @@
-#0x549 SS_SpeedRText
-Speed. Affects evasion, and if[N]
-greater by 2, allows follow-up.[X]
-
 #0x3B SS_TalkText
-Talk[X]
+Hab[X]
 
 ## SS_RatingText
 Total[X]
@@ -43,3 +39,260 @@ stats and skills.[X]
 ## StatScreenSupports
 Strengthen the bond between[N]
 units by talking.[X]
+
+#0x4E5 SS_Name
+Nomb[X]
+
+## SS_ClassText
+Clase[X]
+
+## SS_LevelText
+Niv[X]
+
+## SS_ExpText
+Exp[X]
+
+## SS_HPText
+PV[X]
+
+## SS_MaxText
+Max[X]
+
+## SS_SMText
+F/M[X]
+
+## SS_SkillText
+Hab[X]
+
+## SS_SpdText
+Vel[X]
+
+## SS_LuckText
+Suer[X]
+
+## SS_DefText
+Def[X]
+
+## SS_ResText
+Res[X]
+
+## SS_AffinText
+Afin[X]
+
+## SS_EquipText
+Equipa[X]
+
+## SS_AtkText
+Atq[X]
+
+## SS_HitText
+Gol[X]
+
+## SS_AvoidText
+Evas[X]
+
+## SS_MoveText
+Mov[X]
+
+## SS_ConText
+Con[X]
+
+## SS_AidText
+Ayud.[X]
+
+## SS_TrvText
+Via[X]
+
+## SS_CondText
+Cond[X]
+
+## SS_AllyText
+Aliado[X]
+
+## SS_AnimText
+Anim[X]
+
+## SS_SortText
+Clas:.[X]
+
+## SS_StrText
+Fuer[X]
+
+## SS_MagText
+Mag[X]
+
+## SS_RngText
+Rang[X]
+
+## SS_CritText
+Crit[X]
+
+## SS_WtText
+Wt[X]
+
+## SS_MtText
+Mt[X]
+
+## SS_ASText
+AS[X]
+
+## SS_SwordText
+Esp[X]
+
+## SS_LanceText
+Lanza[X]
+
+## SS_AxeText
+Hacha[X]
+
+## SS_BowText
+Arco[X]
+
+## SS_WMagText
+Mag. B[X]
+
+## SS_BMagText
+Mag. N[X]
+
+## SS_WMag2Text
+Mag. N[X]
+
+## SS_DarkText
+Oscur.[X]
+
+## SS_ItemText
+Objeto[X]
+
+## SS_BallistaText
+Bllsta[X]
+
+## SS_TerrorText
+Terror[X]
+
+## SS_FireText
+Fuego[X]
+
+## SS_ThunderText
+Trueno[X]
+
+## SS_WindText
+Viento[X]
+
+## SS_IceText
+Hielo[X]
+
+## SS_PoisonText
+Veneno[X]
+
+## SS_FreezeText
+Freeze[X]
+
+## SS_SilenceText
+Silencio[X]
+
+## SS_BerserkText
+Locura[X]
+
+## SS_SickText
+Enfermar[X]
+
+## SS_RecoverText
+Recuper[X]
+
+## SS_PetrifyText
+Petrificar[X]
+
+## SS_AttackText
+Atacar[X]
+
+## SS_DefendText
+Defender[X]
+
+## SS_CriticalText
+Cr[0xED]tico[X]
+
+## SS_DodgeText
+Esquivar[X]
+
+#0x542 SS_LevelRText
+Nivel de la unidad. La unidad es mas[NL]
+fuerte conforme gana niveles.[X]
+
+##SS_ExpRText
+Puntos de experiencia ganados. Obten[NL]
+100 puntos para ganar un nuevo nivel.[X]
+
+##SS_HPRText
+Puntos de vida de la unidad. La unidad[NL]
+pierde la conciencia si llega a 0.[X]
+
+##SS_WeapRText
+Nombre y tipo de arma.[X]
+
+##SS_StrRText
+Fuerza. Cuanto mayor sea[NL]
+el n[0xFA]mero, m[0xE1]s da[0xF1]o infliges.[X]
+
+##SS_MagRText
+Poder M[0xE1]gico. El poder[NL]
+M[0xE1]gico es similar a la fuerza.[X]
+
+##SS_SklRText
+Habilidad para pelear. Mientras mayor[NL]
+sea el n[0xFA]mero, mayor ser[0xE1] el % de golpe.[X]
+
+##SS_SpdRText
+Velocidad. Afecta evasi[0xF3]n, y si es[NL]
+mayor de 2, permite contraatacar.[X]
+
+##SS_LuckRText
+Suerte. Esto afecta[NL]
+diversas cosas.[X]
+
+##SS_DefRText
+Defensa. Reduce el da[0xF1]o[NL]
+causado por armas.[X]
+
+##SS_ResRText
+Resistencia M[0xE1]gica. Reduce[NL]
+el da[0xF1]o de ataques m[0xE1]gicos.[X]
+
+##SS_MovRText
+Movimiento. La distancia normal[NL]
+que puedes cruzas en un turno.[X]
+
+##SS_ConRText
+Constituci[0xF3]n, o tama[0xF1]o f[0xED]sico.[NL]
+Afecta los rescates.[X]
+
+##SS_AidRText
+Max rescuing constitution. Units[NL]
+with lower Cons can be rescued.[X]
+
+##SS_TrvRText
+Traveler. The name of the unit[NL]
+with whom this unit is traveling.[X]
+
+##SS_AffinRText
+Afinidad elemental. Determina[NL]
+la compatibilidad con unidades.[X]
+
+##SS_StatusNormalRText
+Normal.[NL]
+En estado saludable.[X]
+
+##SS_PoisonedRText
+Uuuuuug...[NL]
+El veneno lentamente quita PV.[X]
+
+##SS_FreezeRText
+Frozen to the ground.[NL]
+Can't move.[X]
+
+##SS_BerserkRText
+Rarrrrr! Attack the nearest[NL]
+unit, be it friend or foe![X]
+
+##SS_SilenceRText
+......[NL]
+Magia y bastones quedaron in[0xFA]tiles.[X]
