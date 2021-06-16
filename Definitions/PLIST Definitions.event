@@ -47,21 +47,28 @@
 #define plSnowCastlePal 	0x29
 #define plSnowCastleConf 	0x2A
 #define plSnowCastleAnim 	0x2B
+#define plSwampObj			0x2C
+#define plSwampPal			0x2D
+#define plSwampConf			0x2E
+#define plSwampAnim 		plFieldsAnim
 #define plBoatAnim 			0x30
-//Reserved up to 0x30
+#define plDragonsGateObj    0x31
+#define plDragonsGatePal    0x32
+#define plDragonsGateConf   0x33
+#define plDragonsGateAnim   0x34
 
 //Alt palettes (reserved up to 0x40)
-#define plThiefshrinePalette 0x31
-#define plTempleNightPalette 0x32
-#define plVillageNightPalette 0x33
-#define plFieldsNightPalette 0x34
-#define plSluiceGatePalette 0x35
-#define plSylvanShrinePalette 0x36
-#define plDragonShrinePalette 0x37
-#define plMilaTemplePalette 0x38
-#define plFieldsSunsetPalette 0x39
-#define plNuibabaPalette 0x3A
-#define plCastleNightPalette 0x3B
+#define plThiefshrinePalette 0x35
+#define plTempleNightPalette 0x36
+#define plVillageNightPalette 0x37
+#define plFieldsNightPalette 0x38
+#define plSluiceGatePalette 0x39
+#define plSylvanShrinePalette 0x3A
+#define plDragonShrinePalette 0x3B
+#define plMilaTemplePalette 0x3C
+#define plFieldsSunsetPalette 0x3D
+#define plNuibabaPalette 0x3E
+#define plCastleNightPalette 0x3F
 
 //Map and event pointers
 #define plActChangeMap		0x41
@@ -171,20 +178,53 @@
 #define plMtnCutscene_Map   0x97
 
 //Act 4
-#define plCh4_1C_Map 		plDummy_Map
-#define plCh4_1C_Chg 		0x0
-#define plCh4_1C_Event 		plDummy_Event
-#define plCh4_1A_Map 		plDummy_Map
-#define plCh4_1A_Chg 		0x0
-#define plCh4_1A_Event 		plDummy_Event
-#define plCh4_3A_Event 		plDummy_Event
-#define plCh4_3A_Map     	0xA0
-#define plCh4_4A_Map		0xA1
-#define plCh4_4A_Chg		0xA2
-#define plCh4_5A_Map		0xA3
-#define plCh4_5A_Chg		0xA4
-#define plDragonsmawMap		0xC0 //dummy value
-#define plLastBastionMap	0xC1 //dummy value
+#define plCh4_1A_Map 		0x98
+#define plCh4_1A_Chg 		plDummy_Chg
+#define plCh4_1A_Event 		plDummy_Event //0x99
+#define plCh4_2A_Map     	0x9A
+#define plCh4_2A_Chg     	plDummy_Chg
+#define plCh4_2A_Event 		plDummy_Event //0x9B
+#define plCh4_3A_Map     	0x9C
+#define plCh4_3A_Chg     	plDummy_Chg
+#define plCh4_3A_Event 		plDummy_Event //0x9D
+#define plCh4_4A_Map		0x9E
+#define plCh4_4A_Chg		0x9F
+#define plCh4_4A_Event 		plDummy_Event //0xA0
+#define plCh4_5A_Map		0xA1
+#define plCh4_5A_Chg		0xA2
+#define plCh4_5A_Event 		plDummy_Event //0xA3
+#define plCh4_6A_Map		0xA4
+#define plCh4_6A_Chg		0xA5
+#define plCh4_6A_Event 		plDummy_Event //0xA6
+#define plCh4_7A_Map		0xA7
+#define plCh4_7A_Chg		0xA8
+#define plCh4_7A_Event 		plDummy_Event //0xA9
+#define plCh4_8A_Map		0xAA
+#define plCh4_8A_Chg		0xAB
+#define plCh4_8A_Event 		plDummy_Event //0xAC
+#define plCh4_9A_Map		0xAD
+#define plCh4_9A_Chg		0xAE
+#define plCh4_9A_Event 		plDummy_Event //0xAF
+
+#define plCh4_1C_Map 		0xB0
+#define plCh4_1C_Chg 		0xB1
+#define plCh4_1C_Event 		plDummy_Event //0xB2
+#define plCh4_2C_Map 		0xB3
+#define plCh4_2C_Chg 		0xB4
+#define plCh4_2C_Event 		plDummy_Event //0xB5
+#define plCh4_3C_Map 		0xB6
+#define plCh4_3C_Chg 		0xB7
+#define plCh4_3C_Event 		plDummy_Event //0xB8
+#define plCh4_4C_Map 		0xB9
+#define plCh4_4C_Chg 		0xBA
+#define plCh4_4C_Event 		plDummy_Event //0xBB
+#define plCh4_5C_Map 		0xBC
+#define plCh4_5C_Chg 		0xBD
+#define plCh4_5C_Event 		plDummy_Event //0xBE
+
+#define plCh5_1_Map			0xBF
+#define plCh5_1_Chg 		plDummy_Chg
+#define plCh5_1_Event 		plDummy_Event //0xC0
 
 //Special maps
 #define plCh1_7x_Map 		0xC2

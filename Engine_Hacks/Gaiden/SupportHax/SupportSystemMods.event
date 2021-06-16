@@ -16,10 +16,28 @@ PUSH
 	//Support menu
 	ORG $A36C4
 	BYTE 0x03 0x20 //Always say that there are three conversations.
-	/*
+	
+	//Music - Turnwheel theme
+	ORG $951F6
+	BYTE $2C
+	ORG $960C0
+	BYTE $2C
+	ORG $A9C92
+	BYTE $2C
+	ORG $A2BAC
+	BYTE $2C
+	ORG $A2BE2
+	BYTE $2C
+	
+	
+	#ifdef __DEBUG__
 	ORG $AB93A
 	BYTE 0x00 0x00 //Always display the support screen on the extra menu.
-	*/
+	#endif
+	
+	//Don't clear supports when unit dies
+	ORG $18422
+	SHORT $46C0 $46C0
 
 	ORG $18480
 	jumpToHack(FixCUSA)

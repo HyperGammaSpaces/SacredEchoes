@@ -1,0 +1,22 @@
+#ifdef LANGUAGE_ES
+	//Just remove articles for now.
+	PUSH
+		ORG 0x1619C
+		BYTE 0x04 0xE1
+	POP
+#else
+	//For setting which items use "A/An", "The", etc. Table runs from 0x3C to 0xB9
+	#define ItemNameArticleTable $161B0
+	
+	#define ItemName_NoArticle $163A8
+	#define ItemName_UseArticle $163B0
+
+	#define SetItemNameArticle(itemID, setting) "PUSH; ORG ItemNameArticleTable+((itemID-0x3C)*4); POIN setting; POP"
+
+	SetItemNameArticle(DelphiShield,ItemName_UseArticle)
+	SetItemNameArticle(GoldDagger, ItemName_UseArticle)
+	SetItemNameArticle(DumasLance, ItemName_NoArticle)
+	SetItemNameArticle(TheZofia, ItemName_NoArticle)
+	SetItemNameArticle(KeepsakeRing, ItemName_NoArticle)
+	SetItemNameArticle(AetherAxe, ItemName_UseArticle)
+#endif

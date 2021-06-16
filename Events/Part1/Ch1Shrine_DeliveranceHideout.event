@@ -26,7 +26,7 @@ Hideout_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(6,18)
 	#endif
-	CHESRANDOM 0x9 Act1RandomChest [4,9]
+	CHESRANDOM 0x9 Act1RandomChest|IsPointer [4,9]
 	Door(4, 7)
 	Door(4, 12)
 

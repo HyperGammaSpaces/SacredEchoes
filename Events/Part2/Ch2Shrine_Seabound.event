@@ -27,7 +27,7 @@ SeaboundShrine_LocationBasedEvents:
 #ifdef __DEBUG__
   Seize(4,5)
 #endif
-CHESRANDOM 0x9 Act2RandomChest [1,17]
+CHESRANDOM 0x9 Act2RandomChest|IsPointer [1,17]
 
 #ifdef LION_HEADS_ENABLED
 	//Lion heads

@@ -115,6 +115,12 @@ ALIGN 4
 ALIGN 4
 
 {
+	#include "S_Files/FE6FortheCommanders.event"
+	SongTable(0x1F,FE6FortheCommanders,MapMusicGroup)
+}
+ALIGN 4
+
+{
 	#include "S_Files/AlmEnemyPhase.event"
 	SongTable(0x13,AlmEnemyPhase,MapMusicGroup)
 }
