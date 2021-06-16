@@ -76,10 +76,10 @@ SHORT 0xB470 0x4C07 0x4D07 0x3408 0x42AC 0xD806 0x78A6 0x2E00 0xD1F9 0x7020 0x70
   // BYTE $34 //52 in dec
 
 //skip hand axe wait for return
-  ORG $514e
-  SHORT 0
-  ORG $58c90
-  POIN $596cc
+  //ORG $514e
+  //SHORT 0
+  //ORG $58c90
+  //POIN $596cc
   
 //Fix Uncounterable weapon anims
   ORG $57279

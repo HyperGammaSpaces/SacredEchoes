@@ -1,0 +1,12 @@
+//by 7743
+
+PUSH
+
+	ORG $71A68
+	jumpToHack(ContinueBattleBGM)
+
+POP
+
+ALIGN 4
+ContinueBattleBGM:
+#incbin "ContinueBattleBGM.dmp"

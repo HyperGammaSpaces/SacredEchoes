@@ -32,10 +32,6 @@ PUSH
   jumpToHack(MultiPick)
   ORG $40C6A
   BYTE $17 //new rogue id
-  
-  //continue map bgm into battle if same ID
-  ORG $71A68
-  jumpToHack(ContinueBattleBGM)
 
 POP
 
@@ -106,5 +102,4 @@ music10change:
 ALIGN 4
 #include "WalkingSoundsFix/Installer.event"
 
-ContinueBattleBGM:
-#incbin "ContinueBattleBGM/ContinueBattleBGM.dmp"
+#include "ContinueBattleBGM/ContinueBattleBGM.event"

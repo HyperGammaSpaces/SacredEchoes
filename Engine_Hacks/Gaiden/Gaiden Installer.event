@@ -14,6 +14,10 @@ PUSH
   POIN weapon_battle_flash_Table
 POP
 
+//Item name article table
+ALIGN 4
+#include "ItemsAndConvoy/ItemNameArticleTable.event"
+
 //Legendary weapon flash table
 ALIGN 4
 #include "ItemsAndConvoy/weapon_battle_flash_Table.event"

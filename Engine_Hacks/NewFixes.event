@@ -101,11 +101,22 @@ PUSH
     ORG $31646 //send to supply
     SHORT 0
 	
+	//Fix Formation maybe being disabled
+	ORG $33686
+	SHORT $2200
+	//Allow forced units to be swapped position
+	ORG $33750
+	BYTE $00 $20 $00 $00
+	ORG $9543E
+	BYTE $00 $20 $00 $00
+	
 	//allow all classes to S rank
 	ORG $2c1a2
 	BYTE $FB
 	ORG $2c1a6
 	BYTE $FB
+	ORG $2c150
+	SHORT $E011
 	
 	//Plot-important cutscene units
 	ORG $84864 
@@ -118,10 +129,6 @@ PUSH
 	//Fix ballista palette weirdness for archer/sniper
 	ORG 0x599B6
 	BYTE 0x14 0xE0
-	
-	//Fix forced range animation when an uncounterable weapon is used
-	ORG 0x057278
-	BYTE 0x16 0xD0
 	
 	// Remove arrow wiggling advancing RN
     ORG 0x1A774
@@ -153,9 +160,33 @@ PUSH
 	ORG $224CB0
 	SHORT $2A50 $0858 $0006 $0006 $2A6C $0858 $0006 $0006
 	
+	//fix fimbulvetr glitch
+	ORG $5E520
+	BYTE $10
+	
 	//tutorial killer
 	ORG $0E120
 	SHORT $0
+	
+	//additional font for class name text
+	ORG $B2C9C
+	BYTE $20 $5C
+	ORG $CCB8A
+	BYTE $20 $5C
+	
+	//fast stealing
+	ORG 0x9A32D8
+	BYTE 0x0E 0x00 0x01 0x00
+	ORG 0x9A32E8
+	BYTE 0x0E 0x00 0x01 0x00
+	ORG 0x9A32F0
+	BYTE 0x0E 0x00 0x01 0x00
+	ORG 0x9A3348
+	BYTE 0x0E 0x00 0x01 0x00
+	ORG 0x9A3388
+	BYTE 0x0E 0x00 0x01 0x00
+	ORG 0x9A33B0
+	BYTE 0x0E 0x00 0x01 0x00
 
 POP
 
