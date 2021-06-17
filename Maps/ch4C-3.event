@@ -2,6 +2,21 @@
 
 #include eastdlib.event
 
-SetChapterData(0x20,plSwampObj,0,plSwampPal,plSwampConf,plCh4_3C_Map,Map,plSwampAnim,0x0,0)
+SetChapterData(0x20,plSwampObj,0,plSwampPal,plSwampConf,plCh4_3C_Map,Map,plSwampAnim,0x0,plCh4_3C_Chg)
+EventPointerTable(plCh4_3C_Chg, MapChanges)
 Map:
 #incbin "ch4C-3_data.dmp"
+
+MapChanges:
+TileMap(0,3,13,2,1,Map_Change_0)
+TileMap(1,9,13,3,1,Map_Change_1)
+TileMapEnd
+
+Map_Change_0:
+SHORT 0xfbc 0x218 
+ALIGN 4
+
+Map_Change_1:
+SHORT 0xebc 0xce0 0xf34 
+ALIGN 4
+
