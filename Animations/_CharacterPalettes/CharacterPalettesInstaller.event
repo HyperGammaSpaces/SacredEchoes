@@ -9,18 +9,12 @@ ORG $C00EE4 //druid
 POIN DruidPalette
 ORG $C00F04 //druid
 POIN DruidPalette
-ORG $C00F64 //cantor
-POIN CantorPalette
-ORG $C00F84 //cantor
-POIN CantorPalette
 POP
 
 ShamanPalette:
 #incbin "Bin/_shaman.cprs.pal.bin"
 DruidPalette:
 #incbin "Bin/_druid.cprs.pal.bin"
-CantorPalette:
-#incbin "Bin/_cantor.cprs.pal.bin"
 
 WDragonPalette:
 #incbin "Bin/_dragon.cprs.pal.bin"
