@@ -31,7 +31,12 @@ PUSH
 	POIN NewLevelupScreenGfx
 	ORG $803b10
 	#incbin "8035b0-levelup.pal.bin"
-
+	
+	#ifdef LANGUAGE_ES
+	ORG $749A8
+	POIN LevelUpTextAnimsOn
+	#endif
+	
 POP
 
 ALIGN 4
@@ -41,3 +46,9 @@ NewLevelupScreenGfx:
 ALIGN 4
 NewExpBarGfx:
 #incbin "802D44_exp.dmp"
+
+#ifdef LANGUAGE_ES
+ALIGN 4
+LevelUpTextAnimsOn:
+#incbin "leveluptext_5C5994_ES.dmp"
+#endif
