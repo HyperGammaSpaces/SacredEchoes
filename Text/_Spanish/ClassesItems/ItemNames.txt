@@ -1,10 +1,28 @@
-#0x2 textWeaponRankIncreasedTo
- Rank increased to [X]
-
 #0x569 SpellsLearned_RText
 Spells this unit[NL]
 has learned.
 [X]
+
+#0x867 ScrollyText_InventoryFull_Send
+Inventario lleno. Env[0xED]a algo al carro.[X]
+
+## ScrollyText_RescueCommand
+Selecciona la unidad que quieras rescatar.[X]
+
+## ScrollyText_DropCommand
+Selecciona el espacio donde soltar[0xE1]s la unidad.[X]
+
+## ScrollyText_TakeCommand
+Selecciona la unidad que te pasar[0xE1] al viajero.[X]
+
+## ScrollyText_GiveCommand
+Selecciona la unidad la que le dar[0xE1]s el viajero.[X]
+
+## ScrollyText_TradeCommand
+Selecciona una unidad para hacer un intercambio.[X]
+
+#0x874 HealStaff_ScrollyText
+Selecciona al personaje que recuperar[0xE1] PV.[X]
 
 #0x876 Warp_ScrollyText
 Select a target for this spell.[X]
@@ -12,6 +30,8 @@ Select a target for this spell.[X]
 #0x878 Invoke_ScrollyText
 Select a space to summon into.[X]
 
+#0x883 Notif_ItemSent
+ va al carro.[X]
 
 #0x354 BaseSword_Name
 Espada[X]
@@ -537,11 +557,11 @@ A Angelical
 [X]
 
 ## ChestKey_Name
-Llave de cofre
+Ll de cofre
 [X]
 
 ## DoorKey_Name
-Llave de puerta
+Ll de puerta
 [X]
 
 ## ThiefKey_Name
@@ -581,7 +601,7 @@ Oro
 [X]
 
 ## MetisTome_Name
-Tomo de Metis
+Tomo Metis
 [X]
 
 ## HerosProof_Name
@@ -593,35 +613,35 @@ Corona de Zofia
 [X]
 
 ## Item5G_Name
-5 Oro
+5 m.
 [X]
 
 ## Item10G_Name
-10 Oro
+10 m.
 [X]
 
 ## Item50G_Name
-50 Oro
+50 m.
 [X]
 
 ## Item100G_Name
-100 Oro
+100 m.
 [X]
 
 ## Item150G_Name
-150 Oro
+150 m.
 [X]
 
 ## Item200G_Name
-200 Oro
+200 m.
 [X]
 
 ## Item3KG_Name
-3,000 Oro
+3,000 m.
 [X]
 
 ## Item5KG_Name
-5,000 Oro
+5,000 m.
 [X]
 
 ##JunaFruit_Name
@@ -669,15 +689,15 @@ Turbulencia
 [X]
 
 ## SharpClaw_Name
-Garra afilada
+Garr. afilada
 [X]
 
 ## RottenClaw_Name
-Garra podrida
+Garr. podri.
 [X]
 
 ## FetidClaw_Name
-Garra f[0xE9]tida
+Garr. f[0xE9]tida
 [X]
 
 ## PoisonClaw_Name
@@ -765,7 +785,7 @@ Invierte el Tri[0xE1]ngulo de Armas.
 [X]
 
 ## Zweihander_Desc
-Una gran hoja que se blande a dos manos.
+Gran hoja que se blande a dos manos.
 [X]
 
 ## Ilwoon_Desc
@@ -797,7 +817,7 @@ Solo de Celica, restaura PV por turno.
 [X]
 
 ## Falchion_Desc
-Solo de Alm., efectiva contra dragones.
+Solo de Alm, efectiva contra dragones.
 [X]
 
 ## BaseLance_Desc
@@ -1100,7 +1120,7 @@ Acerca a un enemigo.[NL]
 Costo: 12 PV.[X]
 
 ## Warp_Desc
-Transporta por el mapa.[NL] 
+Transporta por el mapa.[NL]
 Costo: 8 PV.[X]
 
 ## Rescue_Desc
@@ -1151,7 +1171,7 @@ Suerte +20.[NL]
 Restaura HP cada turno.[X]
 
 ## DumaIcon_Desc
-Protege contra la efectividad de[NL] 
+Protege contra la efectividad de[NL]
 las armas contra acorazados y jinetes.[X]
 
 ## SpeedRing_Desc
@@ -1195,7 +1215,7 @@ Fue/Def/Res +4, Vel -4.[X]
 
 ## HolyShield_Desc
 Reduce a la mitad el da[0xF1]o[NL]
-de los monstruos[X]
+de los monstruos.[X]
 
 ## IoteShield_Desc
 Escudo que ayuda a evitar[NL]
@@ -1320,7 +1340,7 @@ Un destello mal[0xE9]fico que[NL]
 destruye todo lo que toca.[X]
 
 ## Oculus_Desc
-Un golpe espantoso que invita[NL] 
+Un golpe espantoso que invita[NL]
 a la destrucci[0xF3]n de todos.[X]
 
 ## Upheaval_Desc

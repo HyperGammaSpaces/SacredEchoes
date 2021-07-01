@@ -1,17 +1,41 @@
+#0x05 GotText_1
+Tienes: [X]
+
+#0x08 GotText_2
+Tienes: [X]
+
+#0x23 ChangeMenu_Text
+Cambiar[X]
+
+## CancelMenu_Text
+Cancel.[X]
+
 #0x843 Menu_YesText
 S[0xED][X]
 
 #0x845 Menu_BuyText
-Comp.[X]
+Com.[X]
 
 #0x846 Menu_SellText
-Vend.[X]
+Ven.[X]
 
 #0xCC SaveFile_NoData
 NO HAY DATOS[X]
 
 #0x7CF SaveFile_Epilogue
 EP[0xCD]LOGO[X]
+
+#0x882 SaveFile_LoseResume
+Se perder[0xE1]n los datos de reanu-[NL]
+daci[0xF3]n de partida. [0xBF]Aceptar?[X]
+
+#0x8FE Anna_WantToQuit
+[OpenLeft][LoadAnna][OpenLeft][0xBF]Quieres salir?[NL]
+[Yes][X]
+
+## Anna_ConfirmSuspend
+[OpenLeft]Cuando quieras, selecciona[NL]
+<<reanudar cap[0xED]tulo>> para continuar.[AN][X]
 
 #0x140 SaveFile_Erase
 Borrar[X]
@@ -20,16 +44,16 @@ Borrar[X]
 Atr[0xE1]s[X]
 
 ## SaveFile_Cancel
-Cancel.[X]
+Canc.[X]
 
 ## SaveFile_Start
-Empezar[X]
+Empez.[X]
 
 ## SaveFile_Copy
 Copiar[X]
 
 ## SaveFile_Save
-Guardar[X]
+Gua.[X]
 
 #0x148 System_Level
 NV[X]
@@ -41,10 +65,13 @@ Cap.[X]
 Turnos[X]
 
 #0x1C1 RemainingTurns_Text
-Faltan[X]
+Falt.[X]
 
 ## TurnCount_GoalWindow
-Turno[X]
+Turn.[X]
+
+## LastTurn_GoalWindow
+[0xDA]ltimo Turno[X]
 
 #0x20B Records_TurnCount
 Turnos[X]
@@ -67,6 +94,19 @@ Tiempo[X]
 ## MapMenu_SaveText
  Guarda[X]
  
+#0x671 MapMenu_ManageItems_Space
+ Adm. objetos[X]
+ 
+#0x675 MapMenu_ManageItems
+Adm. objetos[X]
+
+## MapMenu_DestinationDesc
+El siguiente mapa.[X]
+
+#0x679 MapMenu_SaveMessage
+Guardando... para reanudar,[NL]
+selecciona [0x93]Recomenzar Cap[0xED]tulo.[0x94][X]
+ 
 #0x69A MainMenu_UnitsText
  Unidad[X]
  
@@ -87,3 +127,56 @@ Tiempo[X]
  
 ## MapMenu_EndText
  Fin[X]
+ 
+#0x6DF MainMenu_UnitsRText
+Ver mapa de unidades[NL]
+presentes.[X]
+
+## MainMenu_StatusRText
+Ver la situaci[0xF3]n actual de[NL]
+la batalla.[X]
+
+## MainMenu_OptionRText
+Velocidad y ventanas[NL]
+del juego.[X]
+
+## MainMenu_RetreatRText
+Retreat from the current battle.[X]
+
+## MainMenu_RecordsRText
+View tower and ruins battle records.[X]
+
+## MainMenu_SuspendRText
+Interrumpir la batalla. Se[NL]
+puede reanudar despu[0xE9]s.[X]
+
+## MainMenu_GuideRText
+Consultar las instrucciones y la[NL]
+terminolog[0xED]a del juego.[X]
+
+## MainMenu_EndRText
+Terminar turno del[NL]
+jugador.[X]
+
+#0x6ED StatusMenu_AllyCountRText
+N[0xFA]mero de unidades aliadas.[X]
+
+## StatusMenu_EnemyCountRText
+N[0xFA]mero de unidades enemigas.[X]
+
+## StatusMenu_CommanderRText
+Nombre del comandante[NL]
+del ej[0xE9]rcito.[X]
+
+## StatusMenu_PlayTimeRText
+Tiempo total jugado.[X]
+
+## StatusMenu_ObjectiveRText
+Objetivo del cap[0xED]tulo.[X]
+
+## StatusMenu_TurnCountRText
+N[0xFA]mero de turnos jugados[NL] 
+en el cap[0xED]tulo actual.[X]
+
+## StatusMenu_FundsRText
+Dinero disponible.[X]
