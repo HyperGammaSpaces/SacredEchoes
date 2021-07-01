@@ -39,7 +39,7 @@ ORG $17058
 BL(Untradeable_Steal_Fix)
 B($17078)
 
-ORG $e17e8				//unused space in BL range
+ORG $e58a4				//unused space in BL range
 #include "Untradeables.lyn.event"
 
 POP
