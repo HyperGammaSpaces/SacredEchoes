@@ -4,13 +4,20 @@
 
 ldr r0, =0x03004E50
 ldr r0, [r0]
-ldr r1, =0x08018a58 @UnitHasMagicRank
-mov lr, r1
-.short 0xf800
-lsl r0, r0, #0x18
+mov r1, r0
+add r1, #0x2D @anima rank
+ldrb r0, [r1]
 cmp r0, #0x0
-beq Return
+bne DoMagicChecks
+ldrb r0, [r1, #0x1] @light
+cmp r0, #0x0
+bne DoMagicChecks
+ldrb r0, [r1, #0x2] @dark
+cmp r0, #0x0
+bne DoMagicChecks
+b Return
 
+DoMagicChecks:
 	mov    r0, #0x1
 	neg    r0, r0
 	ldr    r1, =0x0801b950 @MapSetInMagicSealRange

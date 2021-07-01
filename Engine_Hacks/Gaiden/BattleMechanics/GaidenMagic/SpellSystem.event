@@ -11,8 +11,8 @@ PUSH //let 0x202b6d0 + charnum * 10 = available spells
 	ORG $3D544
 	jumpToHack(AIMagicCostCheck)
 
-	ORG $16B2C
-	jumpToHack(NewGetUnitEquippedWeapon)
+	ORG $16B28
+	replaceWithHack(NewGetUnitEquippedWeapon)
 	
 	ORG $16B5C
 	jumpToHack(NewGetUnitEquippedWeaponSlot)
@@ -72,6 +72,7 @@ POP
 NewGetUnitEquippedWeapon:
 #incbin "NewGetUnitEquippedWeapon.dmp"
 WORD SelectedSpellPointer
+POIN SpellCostGetter
 
 NewGetSelectedStaff:
 #incbin "NewGetSelectedStaff.dmp"
