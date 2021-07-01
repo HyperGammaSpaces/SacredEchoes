@@ -12,8 +12,8 @@ WeaponRankUpPopup:
 
 	Popup_SetSound(0x5A)
 
-	Popup_StringId(1) // a space
 	Popup_WTypeIcon   // wtype icon
+	//Popup_StringId(1) // a space
 	Popup_StringId(textWeaponRankIncreasedTo) // using definition to force error when missing
 	WORD 0x0D 0       // the new stuff!
 

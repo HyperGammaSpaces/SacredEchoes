@@ -15,6 +15,21 @@
  
 PUSH
 
+	//Language stuff
+	
+	//Level abbreviation
+	#ifdef LANGUAGE_ES
+		ORG $86EBE
+		BYTE $30 //N glyph
+		ORG $86EC0
+		BYTE $25 //V glyph
+	#else
+		ORG $86EBE
+		BYTE $24 //L glyph
+		ORG $86EC0
+		BYTE $25 //V glyph
+	#endif
+
 	ORG 0x205b24 //24 for stat screen
 	POIN MSS_page1|1 MSS_page2|1 MSS_page3|1 MSS_page4|1
 

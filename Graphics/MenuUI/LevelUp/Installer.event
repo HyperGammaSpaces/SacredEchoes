@@ -35,6 +35,14 @@ PUSH
 	#ifdef LANGUAGE_ES
 	ORG $749A8
 	POIN LevelUpTextAnimsOn
+	//gfx at 800858, compressed tsa at 801778, 801bc4, 8020d8, 80265c, 802bf8, 803188
+	ORG $75950C
+	POIN LevelUpTextTSA1
+	POIN LevelUpTextTSA2
+	POIN LevelUpTextTSA3
+	POIN LevelUpTextTSA4
+	POIN LevelUpTextTSA5
+	POIN LevelUpTextTSA6
 	#endif
 	
 POP
@@ -48,7 +56,19 @@ NewExpBarGfx:
 #incbin "802D44_exp.dmp"
 
 #ifdef LANGUAGE_ES
-ALIGN 4
-LevelUpTextAnimsOn:
-#incbin "leveluptext_5C5994_ES.dmp"
+	ALIGN 4
+	LevelUpTextAnimsOn:
+	#incbin "leveluptext_5C5994_ES.dmp"
+	LevelUpTextTSA1:
+	#incbin "leveluptext_tsa1_ES.dmp"
+	LevelUpTextTSA2:
+	#incbin "leveluptext_tsa2_ES.dmp"
+	LevelUpTextTSA3:
+	#incbin "leveluptext_tsa3_ES.dmp"
+	LevelUpTextTSA4:
+	#incbin "leveluptext_tsa4_ES.dmp"
+	LevelUpTextTSA5:
+	#incbin "leveluptext_tsa5_ES.dmp"
+	LevelUpTextTSA6:
+	#incbin "leveluptext_tsa6_ES.dmp"
 #endif

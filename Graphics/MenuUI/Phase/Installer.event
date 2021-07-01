@@ -1,0 +1,33 @@
+PUSH
+
+	ORG $1F338
+	POIN PlayerPhaseBanner
+	
+	ORG $1F368
+	POIN EnemyPhaseBanner
+	
+	ORG $1F39C
+	POIN OtherPhaseBanner
+	
+POP
+
+PlayerPhaseBanner:
+#ifdef LANGUAGE_ES
+	#incbin "Player_ES.dmp"
+#else
+	#incbin "Player_EN.dmp"
+#endif
+
+EnemyPhaseBanner:
+#ifdef LANGUAGE_ES
+	#incbin "Enemy_ES.dmp"
+#else
+	#incbin "Enemy_EN.dmp"
+#endif
+
+OtherPhaseBanner:
+#ifdef LANGUAGE_ES
+	#incbin "Other_ES.dmp"
+#else
+	#incbin "Other_EN.dmp"
+#endif

@@ -91,7 +91,11 @@
 	
 	ALIGN 4
 	Battle_Name_Graphics:
-	#incbin "New_Stat_Names.dmp"
+	#ifdef LANGUAGE_ES
+		#incbin "New_Stat_Names_ES.dmp"
+	#else
+		#incbin "New_Stat_Names.dmp"
+	#endif
 	
 	ALIGN 4
 	Battle_Name_Palette:

@@ -19,23 +19,24 @@ PUSH
 	ORG $C07A0
 	POIN SkirmishGFX
 	
-	/*
-	ORG $898b0
-	POIN RTextGFX_2
+	ORG $898b4
 	POIN RTextGFX_1
+	POIN RTextGFX_2
 	ORG $89970
 	POIN RTextGFX_1
 	POIN RTextGFX_2
 	ORG $8A708
 	POIN RTextGFX_1
 	POIN RTextGFX_2
-	*/
 	
 	ORG $90f88
 	POIN UnitMenuPageGFX
 	
 	ORG $90F84
 	POIN AnimationSettingTitleGFX
+	
+	ORG $CEEEC
+	POIN GuideButtons
 	
 	ORG $CEEF4
 	POIN GuideTitleGFX
@@ -108,6 +109,14 @@ GuideTitleGFX:
 #else
 	#incbin "guide_B177C0.dmp"
 #endif 
+
+ALIGN 4
+GuideButtons:
+#ifdef LANGUAGE_ES
+	#incbin "GuideButtons_B17864_ES.dmp"
+#else
+	#incbin "GuideButtons_B17864.dmp"
+#endif
 
 ALIGN 4
 AnimationSettingTitleGFX:

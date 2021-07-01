@@ -89,6 +89,21 @@ HP_Name_Color:
 	WORD Growth_Options
 	POIN Get_Hp_Growth
 	POIN Get_Palette_Index
+	
+//Language versions
+PUSH
+	#ifdef LANGUAGE_ES
+	ORG HP_Name_Color+0x42
+	BYTE $23 //P glyph
+	ORG HP_Name_Color+0x44
+	BYTE $25 //V glyph
+	#else
+	ORG HP_Name_Color+0x42
+	BYTE $22 //H glyph
+	ORG HP_Name_Color+0x44
+	BYTE $23 //P glyph
+	#endif
+POP
 
 ALIGN 4
 Growth_Color_Table:

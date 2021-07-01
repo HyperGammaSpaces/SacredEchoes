@@ -12,6 +12,10 @@ PUSH
   POIN NewMiniMap
   ORG $AA188C
   #incbin "valentia-minimap.pal.bin"
+  
+  ORG $BF11C
+  POIN WorldmapLevelLabels
+  
   /*
   ORG $B8E4C
   POIN NewWMIcons
@@ -26,6 +30,14 @@ POP
 ALIGN 4
 NewMiniMap:
 #incbin "valentia-minimap.dmp"
+
+ALIGN 4
+WorldmapLevelLabels:
+#ifdef LANGUAGE_ES
+	#incbin "worldmap_LV_08A9901C_ES.dmp"
+#else
+	#incbin "worldmap_LV_08A9901C.dmp"
+#endif
 
 //ALIGN 4
 //NewWMIcons:
