@@ -5,16 +5,10 @@ ORG $C01924 //just overwriting the default dragon palette
 POIN WDragonPalette
 ORG $C00EA4 //shaman
 POIN ShamanPalette
-ORG $C00EE4 //druid
-POIN DruidPalette
-ORG $C00F04 //druid
-POIN DruidPalette
 POP
 
 ShamanPalette:
 #incbin "Bin/_shaman.cprs.pal.bin"
-DruidPalette:
-#incbin "Bin/_druid.cprs.pal.bin"
 
 WDragonPalette:
 #incbin "Bin/_dragon.cprs.pal.bin"
