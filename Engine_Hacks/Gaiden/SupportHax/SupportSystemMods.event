@@ -1,16 +1,3 @@
-
-/*
-Two Who Belong, PASSION!!!!02/12/2020
-[get unit]
-[check all 12 tiles within 2 tiles of this unit]
-[if any of those tiles have a unit on them, check their character ID]
-[if unit has same allegiance]
-[if unit and unit have a support]
-is pretty much the only way to be remotely efficient
-¯\_(ツ)_/¯
-*/
-
-
 PUSH
 
 	//Support menu
@@ -31,8 +18,21 @@ PUSH
 	
 	
 	#ifdef __DEBUG__
-	ORG $AB93A
-	BYTE 0x00 0x00 //Always display the support screen on the extra menu.
+		ORG $AB93A
+		BYTE 0x00 0x00 //Always display the support screen on the extra menu.
+		//A3500 counts completed supports
+		ORG $A0DE0
+		SHORT $46C0
+		SHORT $46C0
+		SHORT $46C0
+		SHORT $46C0
+		SHORT $46C0
+		
+		ORG $A0E7E
+		SHORT $2001 $46C0
+		
+		ORG $A0DFC
+		SHORT $2001
 	#endif
 	
 	//Don't clear supports when unit dies
