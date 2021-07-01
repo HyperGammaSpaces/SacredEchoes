@@ -38,6 +38,8 @@ add r7, #0x20 @add 0x20 to level if promoted
 NotPromoted:
 ldr r1, [r0, #0x0] @character data
 ldrb r1, [r1, #0x4] @character id
+cmp r1, #0x3F
+bge NoSpells
 ldr r2, [r0, #0x4]  @class
 
 CheckMagicRanks:
@@ -52,6 +54,7 @@ bne CheckMultipleSpellLists
 ldrb r0, [r3, #2] @light
 cmp r0, #0x0
 bne CheckMultipleSpellLists
+NoSpells:
 mov r0, #0x0
 b ExitFunc
 

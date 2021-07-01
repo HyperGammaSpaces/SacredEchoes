@@ -17,7 +17,7 @@ mov lr, r2
 mov r6, r0 //save spell pointer
 ldrb r0, [r0] //just the byte is fine
 
-CMP r0, #0x0 //does this unit have spells at all?
+CMP r6, #0x0 //does this unit have spells at all?
 BNE label1
     MOV r0, r4  //if no item, get proc address back and go to one of the 3 funcs
     ldr r3, =LeftFunc+1
