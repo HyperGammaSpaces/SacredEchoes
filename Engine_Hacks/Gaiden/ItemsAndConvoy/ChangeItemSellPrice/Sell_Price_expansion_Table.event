@@ -1,0 +1,21 @@
+#define SetSalePrice(itemID,salePercent,flags) "BYTE itemID salePercent; SHORT flags; "
+
+SellPriceExpansion_Table:
+SetSalePrice(Lockpick,15,0x00)
+SetSalePrice(HideShield,25,0x00) 
+SetSalePrice(IronShield,25,0x00) 
+SetSalePrice(SteelShield,25,0x00) 
+SetSalePrice(SilverShield,25,0x00) 
+SetSalePrice(DelphiShield,25,0x00) 
+SetSalePrice(Dracoshield,25,0x00)
+SetSalePrice(HolyShield,25,0x00)
+SetSalePrice(RoyalShield,25,0x00)
+SetSalePrice(AngelicRobe,10,0x00)
+SetSalePrice(EnergyRing,10,0x00)
+SetSalePrice(SecretBook,10,0x00)
+SetSalePrice(Speedwings,10,0x00)
+SetSalePrice(GoddessIcon,10,0x00)
+SetSalePrice(Ambrosia,10,0x00)
+SetSalePrice(Talisman,10,0x00)
+SetSalePrice(Boots,10,0x00)
+SetSalePrice(0x0,0x0,0x0)

@@ -1,5 +1,14 @@
 PUSH
 
+	ORG $B5237
+	BYTE $E0 //eliminate price hike on prep shops
+	
+	//Make sell price start at 25%
+	ORG $B525E
+	SHORT $0C40
+	ORG $B5274
+	SHORT $0C40
+
 	ORG $99E64
 	POIN PrepsShop
 

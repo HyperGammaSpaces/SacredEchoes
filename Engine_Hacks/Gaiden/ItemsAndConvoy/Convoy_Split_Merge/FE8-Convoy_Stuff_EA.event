@@ -115,6 +115,16 @@ callHack_r3(Hook_1E058)
 SHORT $2800 $D00D $E004
 ORG $1E07A; BL(0x1FD80)
 
+#ifdef LANGUAGE_ES
+	//"Dropped " + _ + "."
+	ORG $1FD72
+	SHORT $220F $2311
+	
+	//"" + _ + " was sent to convoy."
+	ORG $1FD82
+	SHORT $2201 $2310
+#endif
+
 //HandleNewItemGet
 ORG $1E0E8
 jumpToHack(Hook_1E0E8)
