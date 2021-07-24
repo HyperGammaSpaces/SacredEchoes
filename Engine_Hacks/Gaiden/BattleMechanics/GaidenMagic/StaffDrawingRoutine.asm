@@ -61,7 +61,7 @@ ldr r7, =0x03004E50
 ldr r0, [r7, #0x0] 			@unit
 ldrb r1, [r0, #0x13]		@current hp
 cmp r1, r2
-blt CantUse
+ble CantUse
 
 mov r1 ,r5
 blh CanUnitUseItem 
