@@ -178,13 +178,13 @@ Spell lists are largely the same as SoV.
   - Lv5 (Sage) Silence
 - Sonya (Mage)
   - Lv1 Fire
-  - Lv1 Thunder
   - Lv1 Excalibur
-  - Lv1 (Priestess) Heal
+  - Lv10 Mire
+  - Lv1 (Priestess) Selene
   - Lv5 (Priestess) Rewarp
   - Lv10 (Priestess) Entrap
 - Sonya (Cleric)
-  - Lv1 Nosferatu
+  - Lv1 Sisyphus
   - Lv1 Physic
   - Lv1 Seraphim
   - Lv1 (Saint) Fortify
