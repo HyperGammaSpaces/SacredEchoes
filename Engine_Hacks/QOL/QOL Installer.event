@@ -49,6 +49,12 @@ PUSH
   ORG $8d2b2
   BYTE $09
   
+    //Objective display fix for skirmish
+	ORG $8D2E8
+	SHORT $202B $46C0
+	ORG $95AAC
+	SHORT $202B $46C0
+  
 POP
 
 /*
