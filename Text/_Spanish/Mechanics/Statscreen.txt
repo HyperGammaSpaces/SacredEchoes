@@ -5,7 +5,7 @@ Hab[X]
 Total[X]
 
 ## SS_SpellsText
-Spells[X]
+Hechizos[X]
 
 ## SS_TalkRText
 Personaje con el que la unidad[NL]
@@ -99,10 +99,10 @@ Mov[X]
 Con[X]
 
 ## SS_AidText
-Ayu.[X]
+Ayud.[X]
 
 ## SS_TrvText
-Via[X]
+Via.[X]
 
 ## SS_CondText
 Cond[X]
@@ -260,19 +260,19 @@ el da[0xF1]o de ataques m[0xE1]gicos.[X]
 
 ##SS_MovRText
 Movimiento. La distancia normal[NL]
-que puedes cruzas en un turno.[X]
+que puedes cruzar en un turno.[X]
 
 ##SS_ConRText
 Constituci[0xF3]n, o tama[0xF1]o f[0xED]sico.[NL]
 Afecta los rescates.[X]
 
 ##SS_AidRText
-Max rescuing constitution. Units[NL]
-with lower Cons can be rescued.[X]
+Const. m[0xE1]x. de rescate. Una[NL]
+const. menor posibilita el rescate.[X]
 
 ##SS_TrvRText
-Traveler. The name of the unit[NL]
-with whom this unit is traveling.[X]
+Viajero. Nombre de la unidad[NL]
+con la que viaja esta unidad.[X]
 
 ##SS_AffinRText
 Afinidad elemental. Determina[NL]
@@ -287,16 +287,102 @@ Uuuuuug...[NL]
 El veneno lentamente quita PV.[X]
 
 ##SS_FreezeRText
-Frozen to the ground.[NL]
-Can't move.[X]
+Congelado hasta el suelo.[NL]
+No puedes moverte.[X]
 
 ##SS_BerserkRText
-Rarrrrr! Attack the nearest[NL]
-unit, be it friend or foe![X]
+[0xA1]Rarrrrr! [0xA1]Ataca la unidad m[0xE1]s cercana,[NL]
+ya sea aliada o enemiga![X]
 
 ##SS_SilenceRText
 ......[NL]
-Magia y bastones quedaron in[0xFA]tiles.[X]
+Magia y palabras quedaron in[0xFA]tiles.[X]
+
+##SS_StoneRText
+[0xA1]Craaack! Convertido... en... piedra.[NL]
+[0xA1]No.. te.. puedes... mover![X]
+
+#0x55C SS_MightRText
+Cantidad de da[0xF1]o que causa esta[NL]
+arma. Afectado por las defensas.[X]
+
+## SS_HitRText
+Probabilidad de que el ataque golpee.[NL]
+Afectado por el terreno y la evasi[0xF3]n.[X]
+
+## SS_RangeRText
+Rango de arma. Un rango de 1 solo[NL]
+puede impactar en espacios adyacentes.[X]
+
+## SS_CritRText
+Probabilidad de que el arma d[0xE9] un[NL]
+golpe cr[0xED]tico y cause el triple de da[0xF1]o.[X]
+
+## SS_AvoidRText
+Capacidad para esquivar[NL]
+los ataques enemigos.[X]
 
 #0x568 WeaponRanks_RText
 Grado de dominio.[X]
+
+## SpellsLearned_RText
+Spells this unit[NL]
+has learned.[X]
+
+## Ally_RText
+El nombre de la unidad[NL]
+con la que puede hablar.[X]
+
+## WeaponName_RText
+Arma o magia en uso.[X]
+
+## WeaponName_Effective_RText
+Arma o magia en uso.[NL]
+Hace m[0xE1]s da[0xF1]o de lo normal.[X]
+
+## WeaponTriangle_Good1_RText
+El usuario y el arma son[NL]
+complementarios. Los valores[NL]
+Gol. y Po. aumentan.[X]
+
+## WeaponTriangle_Good2_RText
+El usuario y el arma son[NL]
+complementarios. Los valores[NL]
+Gol. y Po. aumentan.[X]
+
+## WeaponTriangle_Bad1_RText
+El usuario y el arma no son[NL]
+complementarios. Los valores[NL]
+Gol. y Po. bajan.[X]
+
+## WeaponTriangle_Bad2_RText
+El usuario y el arma no son[NL]
+complementarios. Los valores[NL]
+Gol. y Po. bajan.[X]
+
+## DamagePreview_RText
+Da[0xF1]o causado por el arma.[NL]
+x2 = dos golpes, x4 = cuatro.[X]
+
+
+#0x6E7 UnitList_Name_RText
+Nombre de la unidad.[X]
+
+## UnitList_Class_RText
+La clase de la unidad.[NL]
+Cada clase posee rasgos [0xFA]nicos.[X]
+
+## UnitList_MaxHP_RText
+PV m[0xE1]ximos de la unidad.[X]
+
+## UnitList_StrMag_RText
+Fuerza o poder m[0xE1]gico.[NL]
+Esto afecta la capacidad de ataque.[X]
+
+## UnitList_Equip_RText
+Arma o magia que[NL]
+usa esta unidad.[X]
+
+## UnitList_Condition_RText
+Condici[0xF3]n de la unidad.[NL]
+Por defecto normal.[X]

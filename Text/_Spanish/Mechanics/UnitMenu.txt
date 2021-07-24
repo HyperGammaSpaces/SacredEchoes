@@ -95,26 +95,107 @@
  Tirar[X]
  
 #0x6BF Desc_Cmd_Wait
-End the turn. Be sure you're[NL]
-done before you select this.[X]
+Fin del turno. Aseg[0xFA]rate de haber[NL]
+terminado antes de seleccionar esto.[X]
 
 ## Desc_Cmd_Attack
-Attack an enemy unit.[X]
+Ataca a una unidad enemiga.[X]
 
 ## Desc_Cmd_WMagic
-Spend HP to cast a spell[NL]
-that can help allies.[X]
+Gasta PV para lanzar hechizos[NL]
+que ayuden a los aliados.[X]
 
 ## Desc_Cmd_Dance
-Perform a dance that allows[NL]
-a unit to move again.[X]
+Permite a una unidad[NL]
+moverse otra vez.[X]
 
 ## Desc_Cmd_BMagic
-Spend HP to cast a spell[NL]
-that can attack a foe.[X]
+Gasta PV para lanzar hechizos[NL]
+y atacar a una unidad.[X]
 
-#0x6DE Desc_Cmd_Open
-Open doors and chests.[X]
+## Desc_Cmd_Steal
+Shhh...[NL]
+([0xA1]Roba objetos enemigos!)[X]
+
+## Desc_Cmd_Rescue
+Rescata a un aliado[NL]
+de un espacio adyacente.[X]
+
+## Desc_Cmd_Drop
+Deja a un aliado[NL]
+en un espacio adyacente.[X]
+
+## Desc_Cmd_Give
+Da un alido a otro aliado[NL]
+en un espacio adyacente.[X]
+
+## Desc_Cmd_Take
+Recibe un aliado rescatado[NL]
+de otro aliado.[X]
+
+## Desc_Cmd_Talk
+Habla con una unidad[NL]
+en un espacio adyacente.[X]
+
+## Desc_Cmd_Support
+Habla con una unidad aliada para[NL]
+fortalecer el v[0xED]nculo que comparten.[X]
+
+## Desc_Cmd_Visit
+Visita un pueblo o casa.[X]
+
+## Desc_Cmd_Seize
+Toma un cierto punto[NL]
+para terminar el cap[0xED]tulo.[X]
+
+## Desc_Cmd_Door
+Una puerta.[NL]
+Usa una llave para abrirla.[X]
+
+## Desc_Cmd_Chest
+Un cofre.[NL]
+Usa una llave para abrirlo.[X]
+
+## Desc_Cmd_Armory
+Una armer[0xED]a.[NL]
+Entra para comprar armas.[X]
+
+## Desc_Cmd_Shop
+Una tienda.[NL]
+Entra para comprar objetos.[X]
+
+## Desc_Cmd_Secret
+[0xA1]Felicidades! Solo alguien con[NL]
+gu[0xED]a o suerte se encuentra esto...[X]
+
+#0x6D3 Desc_Cmd_Item
+Usa y equipa objetos.[X]
+
+## Desc_Cmd_Trade
+Imtercambia objetos con aliados[NL]
+en espacios adyacentes.[X]
+
+## Desc_Cmd_Supply
+Dar o recibir objetos[NL]
+del carro.[X]
+
+## Desc_Cmd_Ride
+Motate en una ballesta[NL]
+y usala para atacar.[X]
+
+## Desc_Cmd_Exit
+Para bajarte[NL]
+de la ballesta.[X]
+
+#0x6DC Desc_Cmd_Toss
+Tirar un objeto. Las magias y cosas[NL]
+importantes no pueden tirarse.[X]
+
+## Desc_Cmd_Summon
+Invoca un fantasma.[X]
+
+## Desc_Cmd_Open
+Abrir puertas o cofres.[X]
 
 #0x74F HP_Restore_Arrow
 ->[X]
@@ -138,45 +219,216 @@ Open doors and chests.[X]
  Llegar[X]
  
 ## Desc_Cmd_Shove
-Push an adjacent unit one[NL]
-tile away.[X]
+Empuja a una unidad un[NL]
+cuadro de distancia.[X]
  
 ## Desc_Cmd_Smite
-Push an adjacent unit two[NL]
-tiles away.[X]
+Aleja a una unidad dos[NL]
+cuadros de distancia.[X]
 
 ## Desc_Cmd_Pivot
-Move to opposite side of[NL]
-an adjacent ally.[X]
+Mu[0xE9]vete al lado opuesto[NL]
+de un aliado adyacente.[X]
  
 ## Desc_Cmd_Reposition
-Move adjacent ally to this[NL]
-unit's opposite side.[X]
+Mueve un aliado adyacente al[NL]
+lado opuesto de esta unidad.[X]
 
 ## Desc_Cmd_Swap
-Swap positions with an[NL]
-adjacent ally.[X]
+Cambia de posici[0xF3]n[NL]
+con un aliado adyacente.[X]
 
 ## Desc_Cmd_Arrive
-Arrive at a designated point[NL]
-to progress in the chapter.[X]
+Llega a un punto designado[NL]
+para terminar el cap[0xED]tulo.[X]
 
 ## Scroll_Pivot
-Select a unit to pivot around.[X]
+Selecciona la unidad a la que pasar[0xE1]s a su alrededor.[X]
 
 ## Scroll_Swap
-Select a unit to swap with.[X]
+Selecciona la unidad para cambiar de posici[0xF3]n.[X]
 
 ## Scroll_Push
-Select a unit to push away.[X]
+Selecciona la unidad que empujar[0xE1]s.[X]
 
-#0x851 Popup_CantUseMagic
-You don't have enough[NL]
-HP to cast this spell.[X]
+#0x761 ScrollyText_TradeCommand_2
+Selecciona la unidad para hacer un intercambio.[X]
 
-#0x853 Popup_CantUseAnyMagic
-HP and the ability to speak[NL]
-are needed to cast magic.[X]
+#0x84B DropItemPrompt
+[0xBF]Tirar [Item]?[NL][No][X]
 
-#0x881 Unlock_ScrollyText
+## Error_CantVisit
+No puedes visitar pueblos[NL]
+ni casas. Estas silenciado.[X]
+
+## Error_CantEquip
+No puedes equiparte[NL]
+esta arma.[X]
+
+## Error_WeaponLevelTooLow
+Tu nivel de dominio de[NL]
+armas es muy bajo.[X]
+
+## Error_CantThrowAway
+Esto no lo puedes tirar.[X]
+
+## Error_CantSell
+Esto no lo puedes vender.[X]
+
+## Error_CantUseMagic
+No tienes suficiente PV como[NL]
+para hacer esta magia.[X]
+
+## Error_CantTalk
+No puedes hablar.[NL]
+Estas silenciado.[X]
+
+## Error_CantUseAnyMagic
+PV y poder hablar son[NL]
+necesarios para hacer magia.[X]
+
+## Error_CantUseArena
+No puedes pelear, entonces[NL]
+no puedes entrar a la arena.[X]
+
+## Error_CantStealItems
+No puedes robar armas[NL]
+ni magias.[X]
+
+## Error_CantRepairAnything
+No hay nada que reparar.[X]
+
+## Error_CantRepairNonWeapon
+Solo armas pueden ser[NL]
+reparadas.[X]
+
+## Error_BallistaEmpty
+No hay m[0xE1]s munici[0xF3]n[NL]
+para la ballesta.[X]
+
+## Error_DontNeed
+No hay necesidad de esto.[X]
+
+## Error_CantUseItem
+Esto no se puede usar.[X]
+
+## Error_CantUsePromo1
+Debes estar por encima del nivel 10.[X]
+
+## Error_CantUsePromo2
+Debes estar por encima del nivel 10.[X]
+
+## Error_CantUseDoor
+No hay puerta.[X]
+
+## Error_CantUseChest
+No hay cofres.[X]
+
+## Error_CantUseLockpick
+Solo para ladrones.[X]
+
+## Error_CantUsePrf
+Arma especializada.[X]
+
+## Error_CantUsePick
+No hay puertas ni cofres.[X]
+
+## Error_InventoryFull
+Tu inventario est[0xE1] lleno.[X]
+
+## Error_CantRepairItem
+El objeto no se puede reparar.[X]
+
+## Error_CantQuitTutorial
+[X]
+
+## Error_ConvoyFull
+El carro est[0xE1] lleno.[NL]
+Selecciona un objeto para tirar.[X]
+
+## ScrollyText_InventoryFull_Drop
+Inventario lleno. Tira un objeto.[X]
+
+## ScrollyText_InventoryFull_Send
+Inventario lleno. Env[0xED]a algo al carro.[X]
+
+## ScrollyText_RescueCommand
+Selecciona la unidad que quieras rescatar.[X]
+
+## ScrollyText_DropCommand
+Selecciona el espacio donde soltar[0xE1]s la unidad.[X]
+
+## ScrollyText_TakeCommand
+Selecciona a la unidad que te pasar[0xE1] al viajero.[X]
+
+## ScrollyText_GiveCommand
+Selecciona a la unidad la que le dar[0xE1]s el viajero.[X]
+
+## ScrollyText_TradeCommand
+Selecciona una unidad para hacer un intercambio.[X]
+
+## ScrollyText_StealCommand
+Selecciona a la unidad que quieras robar.[X]
+
+## ScrollyText_WhiteMagicCommand
+Selecciona a la unidad con que usar[0xE1]s la magia.[X]
+
+## ScrollyText_TalkCommand
+Selecciona a la unidad con la que hablar[0xE1]s.[X]
+
+## ScrollyText_DanceCommand
+Selecciona a la unidad que se mover[0xE1] otra vez.[X]
+
+## ScrollyText_WarpPoint
+Selecciona a donde vas a transportar a la unidad.[X]
+
+## ScrollyText_Formation
+Reordena tus unidades.[X]
+
+## ScrollyText_SelectWeapon
+Selecciona un arma para atacar.[X]
+
+## HealStaff_ScrollyText
+Selecciona al personaje que recuperar[0xE1] PV.[X]
+
+## ScrollyText_WarpTarget
+Selecciona a la unidad que vas a transportar.[X]
+
+## ScrollyText_SpellTarget
+Selecciona un objetivo para este hechizo.[X]
+
+## ScrollyText_RestoreTarget
+Selecciona un personaje para restaurar.[X]
+
+## Invoke_ScrollyText
+Selecciona un espacio para conjurar.[X]
+
+## Barrier_ScrollyText
+Selecciona a la unidad que aumentar[0xE1]s su resistencia.[X]
+
+## Unlock_ScrollyText
+Selecciona una puerta para abrir.[X]
+
+## StatusStaff_ScrollyText
+Selecciona a la unidad con que usar[0xE1]s la magia.[X]
+
+## TorchStaff_ScrollyText
+Selecciona el [0xE1]rea para iluminar.[X]
+
+## Mine_ScrollyText
+Selecciona un espacio para colocar la trampa.[X]
+
+## LightRune_ScrollyText
+Selecciona un espacio para colocar la trampa.[X]
+
+## Bless_ScrollyText
+Selecciona un personaje para bendecir.[X]
+
+## Invoke_ScrollyText2
+Selecciona un espacio para conjurar.[X]
+
+## Pick_ScrollyText
 Selecciona la cerradura que abrir[0xE1]s.[X]
+
+#0x883 Notif_ItemSent
+ va al carro.[X]

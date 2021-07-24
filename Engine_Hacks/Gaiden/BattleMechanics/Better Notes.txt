@@ -141,7 +141,7 @@ Byte	Type	Description
 	0x80		Solo Animation 2
 	
 	Byte 0xE
-	0x01		Something about not being drawn? Checked at 34298, amongst others (fe7 18916: if set, sets byte 4, 0x4, no idea what this does)
+	0x01		Unit is REMU'd and not drawn. Checked at 34298, amongst others (fe7 18916: if set, sets byte 4, 0x4, no idea what this does)
 	0x02		After battle, store turn word from battle struct to char data, then store these 3 bits at 3003060 (2C20A), but doesn't seem to be used there
 	0x04		^ (also written at 2CE60 and 317AA) (not used here either)
 	0x08		^ However, B5998 checks if 0x08 and either 0x04 or 0x02 are set; if true, it actives a super-arena mode (different conversation and higher-level enemies). They still don't seem to get set, however, and the alternate text is glitchy.
@@ -152,6 +152,7 @@ Byte	Type	Description
 	Byte 0xF
 	0x01		Makes the standing map sprite shake very quickly (checked at 27270)
 	0x02		Unit cannot take part in chapter (at least, in fe7). Checked at 34298 and 1239E
+	0x04		Unit is REMU'd
 	0x08		Link arena palette (checked at 27146)
 	0x40		Unused as far as I know; used by me for Capture
 	

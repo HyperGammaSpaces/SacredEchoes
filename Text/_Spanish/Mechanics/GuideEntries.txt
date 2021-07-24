@@ -1,192 +1,833 @@
-#0x5DC Guide_Magic_Name
-The Magic System[X]
+#0x5C9 Guide_Rules_Name
+Reglas[X]
 
-#0x5E0 Guide_MovementSkills_Name
-Movement Skills[X]
+## Guide_Movement_Name
+Movimiento[X]
 
-#0x5E2 Guide_Status_Name
-Status Conditions[X]
+## Guide_Combat_Name
+Combate[X]
 
-#0x606 Guide_Skirmishes_Name
-Enemies on the Map[X]
+## Guide_RescueDrop_Name
+Rescatar[X]
 
-#0x60B Guide_LordSwitch_Name
-Changing Parties[X]
+## Guide_Items_Name
+Objetos[X]
 
-#0x614 Guide_MagRes
-Classes which can use magic,[NL]
-such as mages and clerics,[NL]
-will learn new spells as they[NL]
-reach certain levels.[NL]
-Spells which cause damage[NL]
-are known as black magic,[NL]
-while spells that heal or[NL]
-cause other effects are called[NL]
-white magic.[NL]
-Spells are powerful tools both[NL]
-inside and outside of combat,[NL]
-but they usually cost HP to cast,[NL]
-so be aware of the tradeoff.[NL]
-A unit's RES stat reduces[NL]
-the damage it takes from[NL]
-the opponent's magic.[NL]
-Additionally, the Dread Fighter[NL]
-class takes halved damage[NL]
-from magical attacks, making[NL]
-them effective for fighting[NL]
-powerful magic users.
+## Guide_Terrain_Name
+Terreno[X]
+
+## Guide_Allies_Name
+Aliados[X]
+
+## Guide_Victory_Name
+Victoria[X]
+
+## Guide_SaveGame_Name
+Guardar[X]
+
+## Guide_WorldMap_Name
+Mapa[X]
+
+## Guide_Other_Name
+Otros[X]
+
+## Guide_About_ScrollText
+Tema: [X]
+
+## Guide_ViewUnits_Name
+Unidades[X]
+
+## Guide_GameFlow_Name
+Sistema de turnos[X]
+
+## Guide_GameOver_Name
+Fin de la partida[X]
+
+## Guide_MovementRange_Name
+[0xC1]rea de desplazamiento[X]
+
+## Guide_MoveAgain_Name
+Terminar desplazamiento[X]
+
+## Guide_AttackRange_Name
+Alcance del ataque[X]
+
+## Guide_WeaponTriangle_Name
+Tri[0xE1]ngulo de las armas[X]
+
+## Guide_Magic_Name
+Sistema de la magia[X]
+
+## Guide_Effectiveness_Name
+Eficacia de las armas[X]
+
+## Guide_Critical_Name
+Golpes cr[0xED]ticos[X]
+
+## Guide_Defense_Name
+Defensa f[0xED]sica[X]
+
+## Guide_MovementSkills_Name
+Habilidades de movimiento[X]
+
+## Guide_RestoreHP_Name
+Recuperar PV[X]
+
+## Guide_Status_Name
+Estados alterados[X]
+
+## Guide_Strat_Name
+Informaci[0xF3]n estrat[0xE9]gica[X]
+
+## Guide_Detail_Name
+Informaci[0xF3]n detallada[X]
+
+## Guide_Rescue_Name
+Rescatar[X]
+
+## Guide_Drop_Name
+Soltar[X]
+
+## Guide_GetItems_Name
+Obtener objetos[X]
+
+## Guide_UseItems_Name
+Usar objetos[X]
+
+## Guide_TradeItems_Name
+Intercambio de objetos[X]
+
+## Guide_Durability_Name
+Duraci[0xF3]n de los objetos[X]
+
+## Guide_Convoy_Name
+El carro[X]
+
+## Guide_Armory_Name
+Las armer[0xED]as[X]
+
+## Guide_Shop_Name
+Las tiendas[X]
+
+## Guide_AvoidTerrain_Name
+Bosques y monta[0xF1]as[X]
+
+## Guide_HealTerrain_Name
+Fuertes y puertas[X]
+
+## Guide_Houses_Name
+Casas[X]
+
+## Guide_Villages_Name
+Pueblos[X]
+
+## Guide_Chests_Name
+Cofres[X]
+
+## Guide_Snags_Name
+Troncos[X]
+
+## Guide_BreakWalls_Name
+Muros agrietados[X]
+
+## Guide_FOW_Name
+Visi[0xF3]n en condiciones adversas[X]
+
+## Guide_Ballistae_Name
+Ballestas[X]
+
+## Guide_Recruiting_Name
+Convencer a aliados[X]
+
+## Guide_Permadeath_Name
+Retirada y derrota[X]
+
+## Guide_SupportConvo_Name
+Conversaciones de apoyo[X]
+
+## Guide_SupportEffects_Name
+Efectos del apoyo[X]
+
+## Guide_GreenUnits_Name
+Conseguir unidades verdes[X]
+
+## Guide_RedUnits_Name
+Conseguir unidades rojas[X]
+
+## Guide_KillBoss_Name
+Derrotar a jefes enemigos[X]
+
+## Guide_Seize_Name
+Tomar un lugar[X]
+
+## Guide_Rout_Name
+Derrotar a todos los enemigos[X]
+
+## Guide_Defend_Name
+Defensa[X]
+
+## Guide_Suspend_Name
+Interrumpir[X]
+
+## Guide_Save_Name
+Guardar[X]
+
+## Guide_WM_Move_Name
+El movimiento[X]
+
+## Guide_WM_Shop_Name
+Armer[0xED]as y tiendas[X]
+
+## Guide_WM_Items_Name
+Administraci[0xF3]n de objetos[X]
+
+## Guide_Skirmishes_Name
+Enemigos en el mapa[X]
+
+## Guide_Preps_Name
+Preparaci[0xF3]n[X]
+
+## Guide_LevelUp_Name
+Aumentar un nivel[X]
+
+## Guide_ClassChange_Name
+Cambiar de clase[X]
+
+## Guide_RText_Name
+El Bot[0xF3]n R[X]
+
+## Guide_LordSwitch_Name
+Cambiar de grupo[X]
+
+## Guide_Retreat_Name
+La retirada[X]
+
+#0x60D Guide_ViewUnits
+Las unidades solo pueden[NL]
+ser de tres colores:[NL]
+    Azul (Jugador)[NL]
+    Rojo (Enemigas)[NL]
+    Verde (Neutrales)[NL]
+Las unidades azules son del
+jugador. Las unidades rojas son[NL]
+enemigos que debes derrotar.[NL]
+Las unidades rojas atacan a[NL]
+las azules y a las verdes.
 [X]
 
-#0x618 Guide_MovementSkills
-Some classes have additional[NL]
-abilities connected to movement[NL]
-that they can use when near[NL]
-other units. There are four[NL]
-such abilities:[NL]
-1. Shove[NL]
-(Allows a unit to push an ally[NL]
-one tile away)[NL]
-2. Smite[NL]
-(Allows a unit to push an ally[NL]
-two tiles away)[NL]
-3. Swap[NL]
-(Allows a unit to trade places[NL]
-with an adjacent ally)[NL]
-4. Pivot[NL]
-(Allows a unit to move to the[NL]
-opposite side of an ally)[NL]
-Shove and Smite can be used[NL]
-on red or green units as well,[NL]
-if the user's constitution[NL]
-is higher than the target's.[NL]
-Some units, such as bosses,[NL]
-cannot be shoved.
+## Guide_GameFlow
+Las unidades se mueven[NL]
+por turnos en este orden:[NL]
+    1. Jugador (azul)[NL]
+    2. Enemigo (rojo)[NL]
+    3. Neutral (verde)
 [X]
 
-#0x619 Guide_RestoringHP
-Restore HP to your units by using[NL]
-vulneraries and white magic.[NL]
-Vulneraries and elixirs heal[NL]
-only the user, while white magic[NL]
-costs the user's HP to heal[NL]
-a target unit. Choose your[NL]
-healing method carefully.
+## Guide_GameOver
+Si los PV de un personaje[NL]
+principal llegan a cero,[NL]
+la partida terminar[0xE1].
 [X]
 
-#0x61A Guide_Status
-There are four abnormal states[NL]
-a unit can enter:[NL]
-1. Freeze[NL]
-(Paralyzed and unable to move)[NL]
-2. Silence[NL]
-(Unable to use any magic)[NL]
-3. Poison[NL]
-(Take continual damage)[NL]
-4. Petrify[NL]
-(Turned to stone, cannot move)[NL]
-These conditions will continue for[NL]
-several turns. They can be[NL]
-reversed with a Restore spell.
+## Guide_MovementRange
+El [0xE1]rea azul que aparece cuando[NL]
+seleccionas a una unidad es su[NL]
+[0xE1]rea de desplazamiento. Puedes[NL]
+ver tambi[0xE9]n el de las unidades[NL]
+enemigas si las seleccionas o[NL]
+presionas SELECT.
 [X]
 
-#0x625 Guide_Vendor
-Move a unit onto a shop and[NL]
-then choose Shop to buy and[NL]
-sell items such as vulneraries,[NL]
-keys and torches.
+## Guide_MoveAgain
+Las unidades con montura[NL]
+pueden moverse despu[0xE9]s[NL]
+de visitar pueblos o casas[NL]
+si no han agotado sus[NL]
+casillas de movimiento.
 [X]
 
-#0x627 Guide_HealTiles
-Any unit that ends its turn[NL]
-on a fortress, supply tile,[NL]
-gate, or throne will regain[NL]
-some HP automatically at the[NL]
-beginning of the next turn.[NL]
-Additionally, special rings[NL]
-can be held to restore HP[NL]
-from anywhere, and can even be[NL]
-combined with the recovery[NL]
-from these terrain types.
+## Guide_AttackRange
+El [0xE1]rea roja que aparece[NL]
+cuando seleccionas una unidad[NL]
+es el alcance de su ataque.[NL]
+Tambi[0xE9]n puedes ver el alcance[NL]
+del ataque de tus enemigos.
 [X]
 
-#0x62D Guide_FOW
-Darkness and fog limit your[NL]
-field of vision, preventing[NL]
-you from seeing distant enemies.[NL]
-Use thieves, torches, and[NL]
-Torch spells to increase your[NL]
-field of vision.
+## Guide_WeaponTriangle
+Cada tipo de arma tiene sus[NL]
+ventajas y sus inconvenientes.[NL]
+Las espadas son eficaces[NL]
+contra las hachas. Las hachas[NL]
+son eficaces contra las lanzas[NL]
+y las lanzas son eficaces[NL]
+contra las espadas.[NL]
+Este es el tri[0xE1]ngulo[NL]
+de las armas.
 [X]
 
-#0x63E Guide_Skirmishes
-Sometimes, enemies will appear[NL]
-on the world map. Moving onto[NL]
-the same location as an enemy[NL]
-will cause a battle to begin.[NL]
-If you haven't cleared the[NL]
-chapter at that location yet,[NL]
-the enemy will bolster the[NL]
-numbers of the opposing army[NL]
-in the chapter battle, so[NL]
-take them out quickly!
+## Guide_MagRes
+Las clases que usan magia,[NL]
+como los magos y cl[0xE9]rigas,[NL]
+aprender[0xE1]n nuevas magias[NL]
+al llegar a ciertos niveles.[NL]
+Las magias que hacen da[0xF1]o[NL]
+se les llama magia negra,[NL]
+y las magias que curan o[NL]
+causan otros efectos se[NL]
+les llama magia blanca.[NL]
+La magia es una poderosa[NL]
+herramienta en las batallas,[NL]
+pero usualmente se necesita[NL]
+gastar PV para usarla.[NL]
+La resistencia de una unidad[NL]
+puede reducir el da[0xF1]o de[NL]
+las magias enemigas.[NL]
+Adem[0xE1]s, la clase[NL]
+Ajusticiador puede reducir[NL]
+a la mitad ataques m[0xE1]gicos,[NL]
+haci[0xE9]ndolos [0xFA]tiles para[NL]
+enfrentar a magos fuertes.
+[X]
+
+## Guide_Effectiveness
+Algunas armas son muy eficaces[NL]
+contra ciertas unidades y les[NL]
+causan graves da[0xF1]os. Los[NL]
+arcos, por ejemplo, son muy[NL]
+eficaces contra las unidades[NL]
+a[0xE9]reas. Si una unidad con un[NL]
+arma especialmente poderosa[NL]
+contra la unidad enemiga[NL]
+se enfrenta a ella, el icono[NL]
+del arma brillar[0xE1] en el recuadro[NL]
+de informaci[0xF3]n de combate.
+[X]
+
+## Guide_Critical
+Los golpes cr[0xED]ticos hacen[NL]
+el triple de da[0xF1]o.[NL]
+Las posibilidades de dar[NL]
+un golpe cr[0xED]tico dependen de[NL]
+las caracter[0xED]sticas de tu[NL]
+unidad y del arma que utilice.[NL]
+[X]
+
+## Guide_Defense
+Se considera da[0xF1]o f[0xED]sico el[NL]
+provocado por un arma. La[NL]
+Def. (defensa) de cada unidad[NL]
+indica las posibilidades que[NL]
+tiene de absorbar da[0xF1]o f[0xED]sico.[NL]
+Cuanto mayor sea el indicador de[NL]
+Def., menos da[0xF1]o f[0xED]sico recibir[0xE1][NL]
+la unidad. Los caballeros, los[NL]
+acorazados y los mecenarios[NL]
+tienen buena Def.
+[X]
+
+## Guide_MovementSkills
+Algunas clases tienen[NL]
+habilidades extras conectadas[NL]
+al movimiento que pueden[NL]
+usar cerca de otras unidades.[NL]
+Hay cuatro de estas[NL]
+habilidades:[NL]
+1. Empujar[NL]
+(Permite empujar a un aliado[NL]
+hacia otra casilla)[NL]
+2. Choque[NL]
+(Permite empujar a un aliado[NL]
+hacia dos casillas)[NL]
+3. Trocar[NL]
+(La unidad intercambia lugar[NL]
+con un aliado adyacente)[NL]
+4. Pasar[NL]
+(La unidad pasa al lado[NL]
+opuesto de un aliado adyacente)[NL]
+Empujar y Choque pueden usarse[NL]
+en unidades verdes y rojas,[NL]
+solo si la constituci[0xF3]n del[NL]
+usuario es mayor que la del[NL]
+objetivo. Algunas unidades,[NL]
+como los jefes, no pueden ser[NL]
+empujar.
+[X]
+
+## Guide_RestoringHP
+Restaura los PV de una unidad[NL]
+con pociones y magia blanca.[NL]
+Las pociones y los elixires[NL]
+curan solo a la unidad que los[NL]
+usa, mientras que la magia[NL]
+blanca usa PV del usuario[NL]
+para curar a un objetivo.[NL]
+Elige tus m[0xE9]todos de[NL]
+curaci[0xF3]n cuidadosamente.
+[X]
+
+## Guide_Status
+Hay cuatro alteraciones posibles[NL]
+del estado de una unidad:[NL]
+1. Congelada[NL]
+(Paralizada y no se mueve)[NL]
+2. Silenciada[NL]
+(No puede usar hablar o magia)[NL]
+3. Envenenada[NL]
+(Pierde PV con el tiempo)[NL]
+4. Petrificada[NL]
+(No se puede mover o esquivar)[NL]
+Estos estados duran varios[NL]
+turnos. Se curan con una[NL]
+magia de restauraci[0xF3]n.
+[X]
+
+## Guide_Strat
+Esta es la informaci[0xF3]n que[NL]
+aparece en el recuadro de[NL]
+informaci[0xF3]n estrat[0xE9]gica de[NL]
+combate:[NL]
+[NL]
+PV: Puntos de vida restantes.[NL]
+Po.: Cantidad de da[0xF1]o infligido[NL]
+por el arma.[NL]
+Gol.: Posibilidades de golpear.[NL]
+Cr[0xED]: Posibilidades de asestar[NL]
+un golpe cr[0xED]tico.
+[X]
+
+## Guide_Detail
+Esta es la informaci[0xF3]n que[NL]
+aparece en el recuadro de[NL]
+informaci[0xF3]n detallada de[NL]
+combate:[NL]
+[NL]
+PV: Puntos de vida restantes.[NL]
+Ata.: Cantidad de da[0xF1]o infligido[NL]
+en el ataque.[NL]
+Def.: Cantidad de da[0xF1]o que se[NL]
+resta al ataque enemigo.[NL]
+Gol.: Posibilidades de golpear.[NL]
+Cr[0xED]: Posibilidades de asestar[NL]
+un golpe cr[0xED]tico.[NL]
+VA: Velocidad del ataque de[NL]
+cada unidad. Determina el[NL]
+n[0xFA]mero de golpes por ataque.
+[X]
+
+## Guide_Rescue
+Cualquier unidad puede rescatar[NL]
+a otra unidad azul o verde en un[NL]
+espacio contiguo siempre que[NL]
+la constituci[0xF3]n (Cons.) de la[NL]
+unidad rescatada sea menor que[NL]
+el indicador de ayuda (Ayud.)[NL]
+de la unidad que se rescata.[NL]
+Una unidad que haya rescatado[NL]
+a otra sufre penalizaciones a la[NL]
+habilidad (Hab.) y a la velocidad[NL]
+(Vel.) mientras cargue con la[NL]
+unidad rescatada. La opci[0xF3]n de[NL]
+rescatar es [0xFA]til para salvar[NL]
+unidades a punto de morir.
+[X]
+
+## Guide_Drop
+Puedes soltar una unidad[NL]
+rescatada en cualquier espacio[NL]
+contiguo. La unidad que acabas[NL]
+de soltar no se mover[0xE1] hasta el[NL]
+siguiente turno.
+[X]
+
+## Guide_GetItems
+Puedes comprar objetos en[NL]
+las tiendas. Tambi[0xE9]n te los[NL]
+encontrar[0xE1]s en pueblos, casas[NL]
+y cofres. Algunos enemigos dejan[NL]
+objetos al ser derrotados.
+[X]
+
+## Guide_UseItems
+Escoge un objeto de la lista y[NL]
+pulsa el Bot[0xF3]n A para usarlo.[NL]
+Los objetos que no puedas[NL]
+usar aparecer[0xE1]n en color gris.
+[X]
+
+## Guide_TradeItems
+Puedes intercambiar objetos[NL]
+entre unidades adyacentes.[NL]
+Elige [0x93]Intercambiar[0x94] en el men[0xFA][NL]
+y despu[0xE9]s elige la unidad con[NL]
+la que quieras intercambiar[NL]
+objetos. Coloca el cursor sobre[NL]
+el objeto que quieras y pulsa el[NL]
+Bot[0xF3]n A para tomarlo o cambiarlo[NL]
+por otro.
+[X]
+
+## Guide_Durability
+Algunos objetos tienen un[NL]
+n[0xFA]mero limitado de usos.[NL]
+El n[0xFA]mero que aparece al lado[NL]
+del icono indica el n[0xFA]mero[NL]
+de usos que le quedan antes[NL]
+de desaparecer.[NL]
+Procura que no se te rompan[NL]
+objetos importantes en medio[NL]
+de una batalla.
+[X]
+
+## Guide_Convoy
+El personaje principal lleva[NL]
+el carro en el que se guardan[NL]
+los objetos que no est[0xE1]n[NL]
+equipados. Durante la[NL]
+preparaci[0xF3]n de la batalla puedes[NL]
+incluso comprar y vender[NL]
+objetos en el carro. En [0xE9]l,[NL]
+caben hasta 200 objetos.[NL]
+En la dificultad Normal o[NL]
+Dif[0xED]cil, los grupos de Alm[NL]
+y Celica tendr[0xE1]n cada uno[NL]
+mitades separadas.
+[X]
+
+## Guide_Armory
+Coloca una unidad en la[NL]
+armer[0xED]a para comprar armas.[NL]
+En las armer[0xED]as tambi[0xE9]n puedes[NL]
+vender objetos.
+[X]
+
+## Guide_Vendor
+Sit[0xFA]a una unidad sobre una[NL]
+tienda y selecciona [0x93]tienda[0x94][NL]
+para comprar y vender pociones,[NL]
+llaves, y otros objetos.
+[X]
+
+## Guide_AvoidTerrain
+Cuando una unidad ataca a[NL]
+otra que se encuentre sobre[NL]
+bosque o monta[0xF1]a, el[NL]
+porcentaje de acierto de golpe[NL]
+se reduce. Si vas a detenerte[NL]
+en el [0xE1]rea de alcance de ataque[NL]
+de una unidad enemiga, procura[NL]
+situarte sobre bosque o[NL]
+monta[0xF1]a. Sin embargo, la magia[NL]
+no es afectada por el terreno.
+[X]
+
+## Guide_HealTiles
+Cualquier unidad que se[NL]
+detenga sobre un fuerte,[NL]
+una puerta de castillo, una[NL]
+puerta o un trono recuperar[0xE1][NL]
+PV al principio de su turno[NL]
+autom[0xE1]ticamente.[NL]
+Adem[0xE1]s, anillos especiales[NL]
+pueden ser equipados para[NL]
+restaurar PV siempre, y pueden[NL]
+combinarse con la recuperaci[0xF3]n[NL]
+de ese tipo de terrenos.
+[X]
+
+## Guide_Houses
+Sit[0xFA]a una unidad sobre una[NL]
+casa para poder visitarla.[NL]
+Visitar casas es una[NL]
+buena forma de conseguir[NL]
+informaci[0xF3]n valiosa.[NL]
+Vis[0xED]talas siempre que puedas.
+[X]
+
+## Guide_Villages
+Sit[0xFA]a una unidad sobre un[NL]
+pueblo para poder visitarlo.[NL]
+Visitar pueblos es una[NL]
+buena forma de conseguir[NL]
+informaci[0xF3]n, objetos valiosos[NL]
+e incluso dinero.[NL]
+Vis[0xED]talos siempre que puedas.
+[X]
+
+## Guide_Chests
+Sit[0xFA]a unidades sobre cofres[NL]
+para abrirlos. En los cofres[NL]
+suele haber objetos valiosos,[NL]
+pero necesitar[0xE1]s ganz[0xFA]as[NL]
+o llaves de cofre para abrirlos.
+[X]
+
+## Guide_Snags
+Si ves un tronco viejo cerca[NL]
+de un r[0xED]o, derr[0xED]balo para crear[NL]
+un puente improvisado.
+[X]
+
+## Guide_BreakWalls
+Golpea los muros con grietas[NL]
+para derribarlos y poder pasar.
+[X]
+
+## Guide_FOW
+La oscuridad y la niebla reducen[NL]
+tu campo de visi[0xF3]n y te impiden[NL]
+ver enemigos alejados.[NL]
+Usa ladrones, antorchas o[NL]
+magia blanca para[NL]
+ver de lejos.
+[X]
+
+## Guide_Ballistae
+Las m[0xE1]quinas de asedio[NL]
+disparan proyectiles desde[NL]
+largas distancias. Sit[0xFA]a un[NL]
+arquero o un tirador sobre[NL]
+una de ellas para usarla.
+[X]
+
+## Guide_Recruiting
+En tu misi[0xF3]n te cruzar[0xE1]s con[NL]
+muchos personajes que se[NL]
+pueden unir a tu causa.[NL]
+F[0xED]jate bien en la historia y[NL]
+los di[0xE1]logos y adivina qui[0xE9]n[NL]
+los podr[0xED]a convencer para que[NL]
+se unan a tu grupo.
+[X]
+
+## Guide_Permadeath
+Excepto en raras ocasiones, si[NL]
+una unidad pierde todos sus[NL]
+PV, se retira de la batalla y[NL]
+no podr[0xE1] luchar de nuevo.[NL]
+[0xA1]Ten cuidado!
+En el modo Casual,[NL]
+las unidades ca[0xED]das volver[0xE1]n[NL]
+en el siguiente cap[0xED]tulo.
+[X]
+
+## Guide_SupportConvo
+Algunas unidades tienen[NL]
+un v[0xED]nculo especial que las[NL]
+une. Cuanto m[0xE1]s tiempo[NL]
+pasen cerca, m[0xE1]s fuerte se[NL]
+volver[0xE1] este v[0xED]nculo. En cuanto[NL]
+el v[0xED]nculo sea lo suficientemente[NL]
+fuerte, aparecer[0xE1] la opci[0xF3]n de[NL]
+[0x93]apoyo[0x94] en el men[0xFA] y las[NL]
+unidades podr[0xE1]n mantener una[NL]
+conversaci[0xF3]n de apoyo.
+[X]
+
+## Guide_SupportEffects
+Si las unidades compatibles[NL]
+entre s[0xED] se encuentran a un[NL]
+m[0xE1]ximo de 3 cuadrados de[NL]
+distancia, obtendr[0xE1]n[NL]
+bonificaciones en el combate.[NL]
+Hay tres niveles de apoyo y[NL]
+cuanto mayor sea el nivel,[NL]
+mayores ser[0xE1]n las[NL]
+bonificaciones recibidas.[NL]
+El nivel de apoyo aumenta[NL]
+cada vez que las unidades[NL]
+mantienen una conversaci[0xF3]n.
+[X]
+
+## Guide_GreenUnits
+Las unidades verdes son[NL]
+neutras. Se pueden aliar[NL]
+contigo si hablas con ellas.[NL]
+Si sit[0xFA]as una unidad en un[NL]
+espacio contiguo, aparecer[0xE1][NL]
+la opci[0xF3]n [0x93]hablar[0x94] en el men[0xFA].[NL]
+Selecciona [0x93]hablar[0x94] para[NL]
+convencer a la unidad.
+[X]
+
+## Guide_RedUnits
+Algunas unidades enemigas[NL]
+pueden aliarse contigo si[NL]
+hablas con ellas. Sit[0xFA]a una[NL]
+unidad tuya cerca de la unidad[NL]
+enemiga que quieras convencer[NL]
+para ver si pueden hablar.[NL]
+[0xA1]Ten cuidado! [0xA1]La unidad[NL]
+te atacar[0xE1] hasta que hables[NL]
+con ella! Procura hablar con[NL]
+ella antes de eliminarla o[NL]
+que te elimine.
+[X]
+
+## Guide_KillBoss
+Si derrotas al jefe enemigo,[NL]
+completar[0xE1]s el mapa. No es[NL]
+necesario eliminar al resto de[NL]
+unidades.
+[X]
+
+## Guide_Seize
+Sit[0xFA]a el personaje principal[NL]
+en el trono, la puerta del[NL]
+castillo o la puerta que debas[NL]
+tomar y selecciona la opci[0xF3]n[NL]
+[0x93]tomar[0x94] para completar[NL]
+el mapa.
+[X]
+
+## Guide_Rout
+Completa el mapa eliminando[NL]
+a todos los enemigos.
+[X]
+
+## Guide_Defend
+Aguanta los ataques enemigos[NL]
+un n[0xFA]mero de turnos[NL]
+establecido.
+[X]
+
+## Guide_Suspend
+Selecciona [0x93]interrumpir[0x94] en el[NL]
+men[0xFA] para guardar la partida[NL]
+durante el combate. La pr[0xF3]xima[NL]
+vez que juegues selecciona[NL]
+[0x93]reanundar cap[0xED]tulo[0x94] para[NL]
+seguir con el combate[NL]
+donde lo dejaste.
+[X]
+
+## Guide_Save
+Elige [0x93]guardar[0x94] en el mapa[NL]
+del continente para guardar[NL]
+la partida entre dos cap[0xED]tulos.
+[X]
+
+## Guide_WM_Move
+Sit[0xFA]a el cursor en un punto del[NL]
+mapa y pulsa el bot[0xF3]n A para[NL]
+desplazarte hasta ese lugar.
+[X]
+
+## Guide_WM_Shop
+En algunos lugares del mapa[NL]
+del continente hay tiendas.[NL]
+Puedes ver si una base tiene[NL]
+tienda situando el cursor sobre[NL]
+ella y observando los iconos[NL]
+que aparecen al lado del nombre[NL]
+de la base. Puedes acceder a[NL]
+la tienda si el personaje[NL]
+principal se encuentra[NL]
+sobre esa base.
+[X]
+
+## Guide_WM_Items
+Administra los objetos de tus[NL]
+unidades situando el cursor[NL]
+sobre el personaje principal[NL]
+y pulsando el bot[0xF3]n A.
+[X]
+
+## Guide_Skirmishes
+En el mapa del continente[NL]
+aparecer[0xE1]n enemigos en[NL]
+[0xE1]reas por las que ya has[NL]
+pasado. Para eliminarlos,[NL]
+despl[0xE1]zate hasta el lugar[NL]
+en el que se encuentren y[NL]
+lucha contra ellos.
+[X]
+
+## Guide_Preps
+Prepara tus unidades para[NL]
+la batalla antes de comenzar.[NL]
+Elige las unidades que van a[NL]
+luchar y selecciona sus armas[NL]
+y objetos. Cuando hayas[NL]
+terminado, pulsa START.
 [X]
 
 #0x640 Guide_EXP
-Units gain EXP (experience[NL]
-points) by fighting and by using[NL]
-magic. They go up a level when[NL]
-they earn 100 EXP. As they go[NL]
-up in level, characters become[NL]
-stronger, more skilled, etc.[NL]
-The highest level is level 20.[NL]
-The more advanced the unit's[NL]
-class is, the slower it levels.
+Las unidades adquieren EXP[NL]
+(puntos de experiencia)[NL]
+luchando y usando magia.[NL]
+Aumentan un nivel al llegar a[NL]
+los 100 EXP. Cuando el nivel[NL]
+de una unidad aumenta, sus[NL]
+caracter[0xED]sticas mejoran.[NL]
+El nivel m[0xE1]s alto que puede[NL]
+alcanzar una unidad es 20.[NL]
+Y dependiendo de qu[0xE9] clase[NL]
+sea, m[0xE1]s tardar[0xE1] en subir[NL]
+de nivel.
 [X]
 
 #0x641 Guide_ClassChange
-Most units can change classes[NL]
-once they reach a certain level.[NL]
-This level varies by class, but[NL]
-is indicated with an icon of[NL]
-a winged Mila statue on the[NL]
-unit's status screen.[NL]
-When standing next to a Mila[NL]
-Statue on a battle map,[NL]
-the Mila option will appear[NL]
-in the command menu.[NL]
-Changing classes will bring[NL]
-a unit's stats up to the bases[NL]
-of the new class.[NL]
-Villagers can choose from 5[NL]
-classes to promote into,[NL]
-but those and other classes[NL]
-have a set promotion order,[NL]
-so consider your team makeup[NL]
-when choosing a branch.
+La mayor[0xED]a de las unidades[NL]
+puede cambiar de clase al[NL]
+llegar a cierto nivel.[NL]
+Este nivel var[0xED]a dependiendo[NL]
+de la clase, pero se puede[NL]
+saber cuando se puede cambiar[NL]
+de clase si aparece un icono[NL]
+de una estatua de Mila en[NL]
+el men[0xFA] de las unidades.[NL]
+Al estar al lado de una[NL]
+Estatua de Mila en combate,[NL]
+la opci[0xF3]n [0x93]Mila[0x94][NL]
+aparecer[0xE1] en el men[0xFA],[NL]
+selecciona la opci[0xF3]n [0x93]Mila[0x94][NL]
+para cambiar de clase.[NL]
+Cambiar de clase har[0xE1][NL]
+que las estad[0xED]sticas de[NL]
+la unidad suban hasta las[NL]
+bases de su pr[0xF3]xima clase.[NL]
+Los aldeanos pueden elegir[NL]
+entre 5 clases para cambiar,[NL]
+pero esas y otras clases[NL]
+tienen un orden evolutivo.[NL]
+Deber[0xED]as de considerar[NL]
+como armar a tu equipo[NL]
+al elegir una rama de clase.
 [X]
 
-#0x643 Guide_LordSwitch
-After a certain point in the[NL]
-story, you will be able to[NL]
-control both Alm and Celica[NL]
-on the world map.[NL]
-To change which main character[NL]
-you are moving, move the cursor[NL]
-over an empty area and select[NL]
-Switch from the map menu.[NL]
-Alm and Celica have separate[NL]
-parties and convoys, but[NL]
-if you are playing on Easy,[NL]
-they will be able to share items.
+## Guide_RText
+Si no est[0xE1]s seguro de saber[NL]
+para qu[0xE9] sirve una opci[0xF3]n,[NL]
+sit[0xFA]a el cursor sobre ella y[NL]
+pulsa el Bot[0xF3]n R: podr[0xE1]s ver[NL]
+una explicaci[0xF3]n corta de la[NL]
+opci[0xF3]n.
 [X]
 
-#0x644 Guide_Retreat
-You can escape from battles[NL]
-in shrines, caves, and in[NL]
-story locations you have[NL]
-already cleared.[NL]
-On the command menu,[NL]
-select Retreat to withdraw[NL]
-from combat in any of these[NL]
-locations.
+## Guide_LordSwitch
+Despu[0xE9]s de cierto punto en la[NL]
+historia, podr[0xE1]s controlar[NL]
+a Alm y Celica juntos en el[NL]
+mapa del contiente.[NL]
+Para cambiar el personaje[NL]
+principal que est[0xE1] moviendo,[NL]
+mueve el cursor a una zona[NL]
+vac[0xED]a y selecciona [0x93]Cambiar[0x94][NL]
+en el men[0xFA] del mapa.[NL]
+Los grupos de Alm y Celica[NL]
+tendr[0xE1]n diferente carro,[NL]
+pero si est[0xE1]s jugando en F[0xE1]cil,[NL]
+ellos podr[0xE1]n compartir objetos.
+[X]
+
+## Guide_Retreat
+Puedes abandonar batallas[NL]
+en santuarios, cuevas y[NL]
+otros lugares que ya hayas[NL]
+completado. En el men[0xFA],[NL]
+selecciona [0x93]Retirada[0x94] para[NL]
+abandonar el combate en[NL]
+cualquiera de estos[NL]
+casos.
 [X]

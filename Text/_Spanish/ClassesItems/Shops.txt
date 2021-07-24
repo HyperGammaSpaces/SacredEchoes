@@ -1,21 +1,83 @@
-#0x89A Armory_EntryText
+#0x896 Armory_MapPreview_Enter
 Esto es una armer[0xED]a.[A][2NL]
 Vendo y compro toda clase[NL]
 de objetos.[A][2NL]
 [Buy/Sell][X]
 
-#0x89D Armory_AnythingElse
+## Shop_MapPreview_Enter
+Esto es una tienda.[A][2NL]
+[0xBF]En qu[0xE9] puedo servirte?[NL]
+[Buy/Sell][X]
+
+## Armory_MapPreview_Leave
+Vuelve otro d[0xED]a.[A][X]
+
+## Shop_MapPreview_Leave
+[0xA1]Vuelve otro d[0xED]a![A][X]
+
+## Armory_EntryText
+Esto es una armer[0xED]a.[A][2NL]
+Vendo y compro toda clase[NL]
+de objetos.[A][2NL]
+[Buy/Sell][X]
+
+## Shop_EntryText
+Esto es una tienda.[A][2NL]
+[0xBF]En qu[0xE9] puedo servirte?[NL]
+[Buy/Sell][X]
+
+## Secret_EntryText
+Shh... Hey hey...[A][2NL]
+Esta es una tienda secreta.[NL]
+[Buy/Sell][X]
+
+## Armory_AnythingElse
 [0xBF]Quieres algo m[0xE1]s?[NL]
 [Buy/Sell][X]
 
-#0x8A3 Armory_WhatWant
+## Shop_AnythingElse
+[0xBF]Puedo servirte en algo m[0xE1]s?[NL]
+[Buy/Sell][X]
+
+## Secret_AnythingElse
+[0xBF]Quieres algo m[0xE1]s?[NL]
+[Buy/Sell][X]
+
+## Armory_ShopContinue
+[0xBF]Puedo servirte en algo m[0xE1]s?[NL]
+[ShopContinue][X]
+
+## Shop_ShopContinue
+[0xBF]Puedo servirte en algo m[0xE1]s?[NL]
+[ShopContinue][X]
+
+## Secret_ShopContinue
+[0xBF]Puedo servirte en algo m[0xE1]s?[NL]
+[ShopContinue][X]
+
+## Armory_WhatWant
 [0xBF]Qu[0xE9] quieres?[X]
 
-#0x8A6 Armory_AnythingElse2
+## Shop_WhatWant
+[0xBF]Qu[0xE9] necesitas?[X]
+
+## Secret_WhatWant
+[0xBF]Qu[0xE9] necesitas?[X]
+
+## Armory_AnythingElse2
 [0xBF]Algo m[0xE1]s?[X]
 
-## Armory_AnythingElse3
+## Shop_AnythingElse2
 [0xBF]Algo m[0xE1]s?[X]
+
+## Secret_AnythingElse2
+[0xBF]Algo m[0xE1]s?[X]
+
+#0x8B2 Armory_NoMoney
+[0xA1]No te alcanza el dinero![A][X]
+
+## Shop_NoMoney
+No te queda dinero.[A][X]
 
 #0x8B5 Armory_Cost
 [.][G] monedas de oro.[2NL]
@@ -24,20 +86,35 @@ de objetos.[A][2NL]
 
 ## Armory_Cost2
 [.][G] monedas de oro.[A][2NL]
-[0xBF]Te parece bien?[NL]
+[0xBF]Conforme?[NL]
 [Yes][X]
 
 #0x8b8 Armory_ComeBackSoon
 Vuelve pronto.[A][X]
+
+## Shop_ComeBackSoon
+P[0xE1]sate otro d[0xED]a.[A][X]
 
 #0x8BE Armory_Full_SendToStorage
 No te queda espacio.[A][2NL]
 [0xBF]Lo llevo al carro?[NL]
 [Yes][X]
 
+## Shop_Full_SendToStorage
+No puedes con nada m[0xE1]s.[A][2NL]
+[0xBF]Lo llevo al carro?[NL]
+[Yes][X]
+
 #0x8C4 Armory_SentToConvoy
+Bien. Lo mando al carro.[A][X]
+
+## Shop_SentToConvoy
 Bien. Lo mando al carro.[A][X]
 
 #0x8C7 Armory_NotSentToConvoy
 [0xBF]No? Vaya. Te lo podr[0xED]as[NL]
+llevar si hicieras sitio.[A][X]
+
+## Shop_NotSentToConvoy
+Qu[0xE9] pena. Te lo podr[0xED]as[NL]
 llevar si hicieras sitio.[A][X]

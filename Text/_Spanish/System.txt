@@ -1,9 +1,3 @@
-#0x05 GotText_1
-Tienes: [X]
-
-#0x08 GotText_2
-Tienes: [X]
-
 #0x23 ChangeMenu_Text
 Cambiar[X]
 
@@ -34,8 +28,8 @@ daci[0xF3]n de partida. [0xBF]Aceptar?[X]
 [Yes][X]
 
 ## Anna_ConfirmSuspend
-[OpenLeft]Cuando quieras, selecciona[NL]
-<<reanudar cap[0xED]tulo>> para continuar.[AN][X]
+[OpenLeft]Cuando quieras seguir, selecciona[NL]
+[0x93]reanudar cap[0xED]tulo[0x94] para continuar.[AN][X]
 
 #0x140 SaveFile_Erase
 Borrar[X]
@@ -93,15 +87,30 @@ Tiempo[X]
 
 ## MapMenu_SaveText
  Guarda[X]
+
+#0x66E MapMenu_Armory_Space
+ Armer[0xED]a[X]
  
+#0x66F MapMenu_Shop_Space
+ Tienda[X]
+
 #0x671 MapMenu_ManageItems_Space
  Adm. objetos[X]
+ 
+#0x672 MapMenu_Armory
+Armer[0xED]a[X]
+
+#0x673 MapMenu_Shop
+Tienda[X]
  
 #0x675 MapMenu_ManageItems
 Adm. objetos[X]
 
 ## MapMenu_DestinationDesc
 El siguiente mapa.[X]
+
+## MapMenu_UnitCount
+El n[0xFA]mero de unidades.[X]
 
 #0x679 MapMenu_SaveMessage
 Guardando... para reanudar,[NL]
@@ -141,7 +150,8 @@ Velocidad y ventanas[NL]
 del juego.[X]
 
 ## MainMenu_RetreatRText
-Retreat from the current battle.[X]
+Retirarse de la batalla[NL]
+en progreso.[X]
 
 ## MainMenu_RecordsRText
 View tower and ruins battle records.[X]
@@ -175,7 +185,7 @@ Tiempo total jugado.[X]
 Objetivo del cap[0xED]tulo.[X]
 
 ## StatusMenu_TurnCountRText
-N[0xFA]mero de turnos jugados[NL] 
+N[0xFA]mero de turnos jugados[NL]
 en el cap[0xED]tulo actual.[X]
 
 ## StatusMenu_FundsRText
