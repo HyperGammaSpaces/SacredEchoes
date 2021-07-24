@@ -16,6 +16,7 @@
 .global IncrementLionheadASMC
 .global MSa_SaveLionheads
 .global MSa_LoadLionheads
+.global GetNumberStringFromMemSlot
 
 InitLionheadsForNewSavefile:
 	push {r14}
@@ -149,6 +150,23 @@ MSa_LoadLionheads:
 
 BXR3:
 	bx r3
+	
+.align
+
+GetNumberStringFromMemSlot:
+	push	{lr}
+
+	ldr  r1, [r0, #0x38]      @current instruction
+	ldrb r1, [r1, #0x2]       @[MemorySlot]
+	lsl  r1, r1 , #0x2        @ * 4
+
+	ldr	r2, =0x030004B8	@{U}
+	ldr	r0, [r2, r1]
+
+	blh		0x08008A18 ,r1	@{U}
+
+	pop	{r0}
+	bx r0
 
 .align
 .ltorg
