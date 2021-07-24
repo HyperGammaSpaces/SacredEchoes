@@ -53,9 +53,34 @@ Level Factors:
 #define AutopromoTableEntry(UnitID, LevelEligible, EligibleClass) "BYTE UnitID LevelEligible EligibleClass 0"
 
 PUSH
-	ORG $2C66A	//change staff exp to be based on crit value
-	BL($17624)
-	SHORT $2105
+
+	//change staff exp to echoes formula
+	//exp = Base value - ((Level/3)-1), round down
+	ORG $2C664
+	SHORT $7A20 //ldrb r0, [r4, #0x08] //level
+	SHORT $2103 //mov r1, #0x3
+	BL($D18FC) //Div
+	SHORT $1C02 //mov r2, r0
+	
+	SHORT $1C20 //mov r0, r4
+	SHORT $3048 //add r0, #0x48
+	SHORT $8800 //ldrh r0, [r0]
+	BL($17624) //GetItemCrit
+	SHORT $2800 //cmp r0, #0x0
+	SHORT $D101 //bne+2
+		SHORT $2001 //mov r0, #0x1
+		SHORT $E00C //B($2c69a)
+	
+	SHORT $2A01 //cmp r2, #0x1
+	SHORT $DD01 //ble+2
+		SHORT $2101 //mov r1, #0x1
+		SHORT $1A52 //sub r2, r2, r1
+	SHORT $4282 //cmp r2, r0
+	SHORT $DD01 //ble+2
+		SHORT $2001 //mov r0, #0x1
+		SHORT $E004 //B($2c69a)
+	SHORT $1A82 //sub r2, r0, r2
+	//2C692 and on is unchanged
 	
 	ORG $17E98
 	callHack_r3(CheckForEXPLevelCap)

@@ -53,7 +53,7 @@ CalculateBEXP:
 	
 	@Don't give if not deployed
 	ldr r0, [r4, #0xC]
-	mov r1, #0x8
+	ldr r1, =0x04010009 @literal for unit state bytes
 	and r0, r1
 	cmp r0, #0x0
 	bne NoBEXP
