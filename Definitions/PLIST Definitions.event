@@ -179,79 +179,79 @@
 
 //Act 4
 #define plCh4_1A_Map 		0x98
-#define plCh4_1A_Chg 		plDummy_Chg
-#define plCh4_1A_Event 		plDummy_Event //0x99
-#define plCh4_2A_Map     	0x9A
+#define plCh4_1A_Chg 		0x99
+#define plCh4_1A_Event 		0x9A
+#define plCh4_2A_Map     	0x9B
 #define plCh4_2A_Chg     	plDummy_Chg
-#define plCh4_2A_Event 		plDummy_Event //0x9B
-#define plCh4_3A_Map     	0x9C
-#define plCh4_3A_Chg     	plDummy_Chg
-#define plCh4_3A_Event 		plDummy_Event //0x9D
-#define plCh4_4A_Map		0x9E
-#define plCh4_4A_Chg		0x9F
-#define plCh4_4A_Event 		plDummy_Event //0xA0
-#define plCh4_5A_Map		0xA1
-#define plCh4_5A_Chg		0xA2
-#define plCh4_5A_Event 		plDummy_Event //0xA3
-#define plCh4_6A_Map		0xA4
-#define plCh4_6A_Chg		0xA5
-#define plCh4_6A_Event 		plDummy_Event //0xA6
-#define plCh4_7A_Map		0xA7
-#define plCh4_7A_Chg		0xA8
-#define plCh4_7A_Event 		plDummy_Event //0xA9
-#define plCh4_8A_Map		0xAA
-#define plCh4_8A_Chg		0xAB
-#define plCh4_8A_Event 		plDummy_Event //0xAC
-#define plCh4_9A_Map		0xAD
-#define plCh4_9A_Chg		0xAE
-#define plCh4_9A_Event 		plDummy_Event //0xAF
+#define plCh4_2A_Event 		0x9C
+#define plCh4_3A_Map     	0x9D
+#define plCh4_3A_Chg     	0x9E
+#define plCh4_3A_Event 		0x9F
+#define plCh4_4A_Map		0xA0
+#define plCh4_4A_Chg		0xA1
+#define plCh4_4A_Event 		0xA2
+#define plCh4_5A_Map		0xA3
+#define plCh4_5A_Chg		0xA4
+#define plCh4_5A_Event 		0xA5
+#define plCh4_6A_Map		0xA6
+#define plCh4_6A_Chg		0xA7
+#define plCh4_6A_Event 		0xA8
+#define plCh4_7A_Map		0xA9
+#define plCh4_7A_Chg		0xAA
+#define plCh4_7A_Event 		0xAB
+#define plCh4_8A_Map		0xAC
+#define plCh4_8A_Chg		0xAD
+#define plCh4_8A_Event 		0xAE
+#define plCh4_9A_Map		0xAF
+#define plCh4_9A_Chg		0xB0
+#define plCh4_9A_Event 		0xB1
 
-#define plCh4_1C_Map 		0xB0
-#define plCh4_1C_Chg 		0xB1
-#define plCh4_1C_Event 		plDummy_Event //0xB2
-#define plCh4_2C_Map 		0xB3
-#define plCh4_2C_Chg 		0xB4
-#define plCh4_2C_Event 		plDummy_Event //0xB5
-#define plCh4_3C_Map 		0xB6
-#define plCh4_3C_Chg 		0xB7
-#define plCh4_3C_Event 		plDummy_Event //0xB8
-#define plCh4_4C_Map 		0xB9
-#define plCh4_4C_Chg 		0xBA
-#define plCh4_4C_Event 		plDummy_Event //0xBB
-#define plCh4_5C_Map 		0xBC
-#define plCh4_5C_Chg 		0xBD
-#define plCh4_5C_Event 		plDummy_Event //0xBE
+#define plCh4_1C_Map 		0xB2
+#define plCh4_1C_Chg 		0xB3
+#define plCh4_1C_Event 		0xB4
+#define plCh4_2C_Map 		0xB5
+#define plCh4_2C_Chg 		0xB6
+#define plCh4_2C_Event 		0xB7
+#define plCh4_3C_Map 		0xB8
+#define plCh4_3C_Chg 		0xB9
+#define plCh4_3C_Event 		0xBA
+#define plCh4_4C_Map 		0xBB
+#define plCh4_4C_Chg 		0xBC
+#define plCh4_4C_Event 		0xBD
+#define plCh4_5C_Map 		0xBE
+#define plCh4_5C_Chg 		0xBF
+#define plCh4_5C_Event 		0xC0
 
-#define plCh5_1_Map			0xBF
-#define plCh5_1_Chg 		plDummy_Chg
-#define plCh5_1_Event 		plDummy_Event //0xC0
+#define plCh5_1_Map			0xC1
+#define plCh5_1_Chg 		plDummy_Chg //0xC2
+#define plCh5_1_Event 		plDummy_Event //0xC3
 
 //Special maps
-#define plCh1_7x_Map 		0xC2
+#define plCh1_7x_Map 		0xC4
 #define plCh1_7x_Chg 		0x0
-#define plCh1_7x_Event 		0xC3
-#define plThiefshrineMap 	0xC4
-#define plThiefshrineChg 	0x0
-#define plThiefshrineEvent	0xC5
-#define plHideoutMap 		0xC6
-#define plHideoutChg	 	0xC7
-#define plHideoutEvent 		0xC8
-#define plSeaboundMap 		0xC9
-#define plSeaboundChg	 	0xCA
-#define plSeaboundEvent 	0xCB
-#define plSylvanShrineMap 	0xCC
-#define plSylvanShrineChg	0xCD
-#define plSylvanShrineEvent 0xCE
-#define plDragonShrineMap 	0xCF
-#define plDragonShrineChg	0xD0
-#define plDragonShrineEvent 0xD1
-#define plLostwoodsMap 		plDummy_Map //0xD2
-#define plLostwoodsChg		plDummy_Chg //0xD3
-#define plLostwoodsEvent 	plDummy_Event //0xD4
-#define plFearMtnMap 		plDummy_Map //0xD5
-#define plFearMtnChg		plDummy_Chg //0xD6
-#define plFearMtnEvent 		plDummy_Event //0xD7
-#define plSecretShrineMap 	plDummy_Map //0xD8
-#define plSecretShrineChg	plDummy_Chg //0xD9
-#define plSecretShrineEvent plDummy_Event //0xDA
-
+#define plCh1_7x_Event 		0xC5
+#define plThiefshrineMap 	0xC6
+#define plThiefshrineChg 	0xC7
+#define plThiefshrineEvent	0xC8
+#define plHideoutMap 		0xC9
+#define plHideoutChg	 	0xCA
+#define plHideoutEvent 		0xCB
+#define plSeaboundMap 		0xCC
+#define plSeaboundChg	 	0xCD
+#define plSeaboundEvent 	0xCE
+#define plSylvanShrineMap 	0xCF
+#define plSylvanShrineChg	0xD0
+#define plSylvanShrineEvent 0xD1
+#define plDragonShrineMap 	0xD2
+#define plDragonShrineChg	0xD3
+#define plDragonShrineEvent 0xD4
+#define plLostwoodsMap 		plDummy_Map //0xD5
+#define plLostwoodsChg		plDummy_Chg //0xD6
+#define plLostwoodsEvent 	0xD7
+#define plFearMtnMap 		plDummy_Map //0xD8
+#define plFearMtnChg		plDummy_Chg //0xD9
+#define plFearMtnEvent 		0xDA
+#define plSecretShrineMap 	plDummy_Map //0xDB
+#define plSecretShrineChg	plDummy_Chg //0xDC
+#define plSecretShrineEvent 0xDD
+#define plFrontierNightPal 	0xDE

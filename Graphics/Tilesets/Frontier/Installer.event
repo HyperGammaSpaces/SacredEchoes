@@ -10,8 +10,13 @@ ALIGN 4
 FrontierPalette:
 #incbin "Frontier_barren.pal.bin"
 
+ALIGN 4
+FrontierNightPalette:
+#incbin "Frontier_night.pal.bin"
+
 //Frontier
 EventPointerTable(plFrontierObj, FrontierObjects) 
 EventPointerTable(plFrontierPal, FrontierPalette) 
-EventPointerTable(plFrontierConf, FrontierTiles) 
+EventPointerTable(plFrontierConf, FrontierTiles)
+EventPointerTable(plFrontierNightPal, FrontierNightPalette) 
 //EventPointerTable(plFrontierAnim, 0x59D740)

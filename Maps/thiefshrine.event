@@ -2,6 +2,21 @@
 
 #include eastdlib.event
 
-SetChapterData(0x3E,plTempleObj,0,plThiefshrinePalette,plTempleConf,plThiefshrineMap,Map,plTempleAnim,0x0,0)
+SetChapterData(0x3E,plTempleObj,0,plThiefshrinePalette,plTempleConf,plThiefshrineMap,Map,plTempleAnim,0x0,plThiefshrineChg)
+EventPointerTable(plThiefshrineChg, MapChanges)
 Map:
 #incbin "thiefshrine_data.dmp"
+
+MapChanges:
+TileMap(0,4,1,1,1,Map_Change_0)
+TileMap(1,12,1,1,1,Map_Change_1)
+TileMapEnd
+
+Map_Change_0:
+SHORT 0x664 
+ALIGN 4
+
+Map_Change_1:
+SHORT 0x664 
+ALIGN 4
+

@@ -12,6 +12,8 @@ TileMap(0,4,9,1,1,Map_Change_0)
 TileMap(1,18,7,1,2,Map_Change_1)
 TileMap(2,4,7,1,2,Map_Change_2)
 TileMap(3,4,12,1,1,Map_Change_3)
+TileMap(4,7,14,1,1,Map_Change_4)
+TileMap(5,15,14,1,1,Map_Change_5)
 TileMapEnd
 
 Map_Change_0:
@@ -28,5 +30,13 @@ ALIGN 4
 
 Map_Change_3:
 SHORT 0x340 
+ALIGN 4
+
+Map_Change_4:
+SHORT 0x4f4 
+ALIGN 4
+
+Map_Change_5:
+SHORT 0x4f4 
 ALIGN 4
 

@@ -2,6 +2,21 @@
 
 #include eastdlib.event
 
-SetChapterData(0x25,plFrontierObj,0,plFrontierPal,plFrontierConf,plCh4_3A_Map,Map,plFrontierAnim,0x0,0)
+SetChapterData(0x25,plFrontierObj,0,plFrontierPal,plFrontierConf,plCh4_3A_Map,Map,plFrontierAnim,0x0,plCh4_3A_Chg)
+EventPointerTable(plCh4_3A_Chg, MapChanges)
 Map:
 #incbin "ch4A-3_data.dmp"
+
+MapChanges:
+TileMap(0,25,7,2,3,Map_Change_0)
+TileMap(1,26,9,1,1,Map_Change_1)
+TileMapEnd
+
+Map_Change_0:
+SHORT 0xe1c 0xe20 0xe9c 0xea0 0xf1c 0xf20 
+ALIGN 4
+
+Map_Change_1:
+SHORT 0x80 
+ALIGN 4
+

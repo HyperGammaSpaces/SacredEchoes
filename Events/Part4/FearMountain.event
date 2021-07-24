@@ -1,0 +1,87 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(plFearMtnEvent, Dummy_ThisChapter)
+
+Dummy_ThisChapter:
+	POIN Dummy_TurnBasedEvents
+	POIN Dummy_CharacterBasedEvents
+	POIN Dummy_LocationBasedEvents
+	POIN Dummy_MiscBasedEvents
+	POIN Dummy_Dunno Dummy_Dunno Dummy_Dunno
+	POIN Dummy_Tutorial
+	POIN Dummy_Ballista1 Dummy_Ballista2
+	POIN Dummy_Units1 Dummy_Units1
+	POIN $0 $0 $0 
+	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
+	POIN Dummy_BeginningScene Dummy_EndingScene
+
+Dummy_TurnBasedEvents:
+	TURN
+
+Dummy_CharacterBasedEvents:
+	CHAR
+
+Dummy_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(4,5)
+	#endif
+	Seize(14,5)
+	LOCA
+
+Dummy_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	DefeatAll(Dummy_EndingScene)
+	MournQuoteAFEVS
+	AFEV
+
+Dummy_Dunno:
+	END_MAIN
+
+Dummy_Tutorial:
+	END_MAIN
+
+Dummy_Ballista1:
+	BLST
+	ALIGN 4
+
+Dummy_Ballista2:
+	BLST
+	ALIGN 4
+
+Dummy_Units1:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
+
+CutsceneUnits:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+EnemyUnits:
+	UNIT Mikhail Cantor	Mikhail Level(9, Enemy, True) [14,5]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
+	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
+	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
+	UNIT
+	
+SkirmishEnemies:
+	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT
+
+Dummy_BeginningScene:
+
+	//debug only
+	SetBackground(0x1D)
+	Text(Celica_EndDemo)
+	MNTS 0x0
+	ENDA
+	//end debug
+
+Dummy_EndingScene:
+	CALL UnifiedBEXPCaller
+	STARTFADE
+	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	MNCH 0x12
+	ENDA

@@ -32,8 +32,8 @@ Hideout_LocationBasedEvents:
 
 	#ifdef LION_HEADS_ENABLED
 		//Lion heads
-		LionHead(LionheadLocalTrigger1,LionHeadHideoutDef, 1, 17)
-		LionHead(LionheadLocalTrigger1,LionHeadHideoutAtk, 21, 17)
+		LionHead(LionheadLocalTrigger1,LionHeadHideoutDef, 7, 14)
+		LionHead(LionheadLocalTrigger1,LionHeadHideoutAtk, 15, 14)
 	#endif
 	LOCA
 
@@ -316,9 +316,11 @@ Hideout_EndingScene:
 		TEXTSTART 
 		TEXTSHOW DeliveranceHideout_AfterCGText
 		TEXTEND
+		REMA
+		
 		CharacterJoinedNotification(Notif_ForsythPythonJoin)
 		CharacterJoinedNotification(Notif_CliveJoin)
-		REMA
+		
 		
 		EVBIT_MODIFY 0x1
 		ENUT gDeliveranceHideoutCompleted //set a flag for clive joining

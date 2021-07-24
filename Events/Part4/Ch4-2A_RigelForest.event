@@ -1,0 +1,139 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(plCh4_2A_Event, Evt_ThisChapter)
+
+Evt_ThisChapter:
+	POIN Evt_TurnBasedEvents
+	POIN Evt_CharacterBasedEvents
+	POIN Evt_LocationBasedEvents
+	POIN Evt_MiscBasedEvents
+	POIN Evt_Dunno Evt_Dunno Evt_Dunno
+	POIN Evt_Tutorial
+	POIN Evt_Ballista1 Evt_Ballista2
+	POIN PlayerPlacement PlayerPlacement
+	POIN $0 $0 $0 
+	POIN EnemyUnits EnemyUnits EnemyUnits
+	POIN Evt_BeginningScene Evt_EndingScene
+
+Evt_TurnBasedEvents:
+	TURN 0x0 XaizorCh4_2Moves[3,0] 0x0
+	TURN 0x0 CavWave1[6,0] 0x0
+	TURN 0x0 CavWave1[9,0] 0x0
+	TURN
+	
+XaizorCh4_2Moves:
+	SVAL 0x1 0x0
+	CHAI XaizorCh4_2
+	//Text(Ch4-2A_XaizorCh4_2MovesText)
+	NoFade
+	ENDA
+	
+CavWave1:
+	ReinforcementEvent(CavReinforcements)
+
+Evt_CharacterBasedEvents:
+	CHAR
+
+Evt_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(4,5)
+	#endif
+	Seize(3,3)
+	LOCA
+
+Evt_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	DefeatAll(Evt_EndingScene)
+	MournQuoteAFEVS
+	AFEV
+
+Evt_Dunno:
+	END_MAIN
+
+Evt_Tutorial:
+	END_MAIN
+
+Evt_Ballista1:
+	BLST
+	ALIGN 4
+
+Evt_Ballista2:
+	BLST
+	ALIGN 4
+
+PlayerPlacement:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
+
+CutsceneUnits:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT
+
+EnemyUnits:
+	UNIT XaizorCh4_2 DreadFighter	XaizorCh4_2 Level(7, Enemy, True) [2,12]	0x00 0x00 0x0 0x00 [IronSword] GuardTileAI
+	UNIT 0x87 DreadFighter XaizorCh4_2 Level(1, Enemy, True) [3,3] 0x00 0x00 0x0 0x00 [BaseSword] NeverMoveAI
+	//knights
+	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [2,4] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [4,4] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [14,6] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	//archers
+	UNIT 0x89 Sniper XaizorCh4_2 Level(4, Enemy, True) [6,2] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper XaizorCh4_2 Level(4, Enemy, True) [11,6] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper XaizorCh4_2 Level(4, Enemy, True) [17,4] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper XaizorCh4_2 Level(4, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	//mages and witches
+	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [3,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [9,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [18,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [15,2] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT
+	
+CavReinforcements:
+	UNIT 0x86 Paladin	XaizorCh4_2 Level(5, Enemy, True) [18,0]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0x86 Paladin	XaizorCh4_2 Level(5, Enemy, True) [21,6]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT
+
+Evt_BeginningScene:
+
+	//debug only
+	#ifndef __DEBUG__
+	SetBackground(0x1D)
+	Text(Celica_EndDemo)
+	MNTS 0x0
+	//ENDA
+	#endif
+	
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD3 0x0 PlayerPlacement 
+	ENUN
+	GotoPrepScreen
+	ENDA
+
+Evt_EndingScene:
+	CALL UnifiedBEXPCaller
+	MUSCSLOW 0x7FFF
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter4A2Completed
+	EVBIT_MODIFY 0x0
+	
+	MNCH 0x25
+	ENDA
