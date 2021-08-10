@@ -78,12 +78,22 @@ WorldMapIntroPointerTable(0x1b,WMIntro_Ch26_GriethsBase)
 WorldMapIntroPointerTable(0x1c,WMIntro_Ch27_ValleyApproach)
 WorldMapIntroPointerTable(0x1d,WMIntro_Ch28_TempleOfMila)
 WorldMapIntroPointerTable(0x1e,WMIntro_Act4Start_Celica)
-WorldMapIntroPointerTable(0x1f,SkipIntro)
-WorldMapIntroPointerTable(0x20,SkipIntro)
-WorldMapIntroPointerTable(0x21,SkipIntro)
-WorldMapIntroPointerTable(0x22,SkipIntro)
+WorldMapIntroPointerTable(0x1f,WMIntro_Act4_1_Celica)
+WorldMapIntroPointerTable(0x20,WMIntro_Act4_2_Celica)
+WorldMapIntroPointerTable(0x21,WMIntro_Act4_4_Celica)
+WorldMapIntroPointerTable(0x22,WMIntro_Act4_5_Celica)
 WorldMapIntroPointerTable(0x23,WMIntro_Act4Start_Alm)
-WorldMapIntroPointerTable(0x24,SkipIntro)
+WorldMapIntroPointerTable(0x24,WMIntro_Act4_1_Alm)
+WorldMapIntroPointerTable(0x25,WMIntro_Act4_2_Alm)
+WorldMapIntroPointerTable(0x26,WMIntro_Act4_3_Alm)
+WorldMapIntroPointerTable(0x27,WMIntro_Act4_4_Alm)
+WorldMapIntroPointerTable(0x28,WMIntro_Act4_5_Alm)
+WorldMapIntroPointerTable(0x29,WMIntro_Act4_6_Alm)
+WorldMapIntroPointerTable(0x2A,WMIntro_Act4_7_Alm)
+WorldMapIntroPointerTable(0x2B,WMIntro_Act4_8_Alm)
+WorldMapIntroPointerTable(0x2C,WMIntro_Act4_Final)
+WorldMapIntroPointerTable(0x36,WMIntro_Act4_3_Celica) //sage hamlet
+//0x37 novis priory
 WorldMapIntroPointerTable(0x38,WMIntro_Ch6x)
 WorldMapIntroPointerTable(0x39,HideoutIntro) //hideout
 WorldMapIntroPointerTable(0x3a,SkipIntro) //shrines
@@ -435,5 +445,51 @@ ColdOpen2(GMLoc_ValleyApproach, GMLoc_MilaTemple)
 WMIntro_Act4Start_Celica:
 ColdOpen2(GMLoc_MilaTemple, GMLoc_DeadMansMire)
 
+WMIntro_Act4_1_Celica:
+ColdOpen2(GMLoc_DeadMansMire,GMLoc_MireBoneyard)
+
+WMIntro_Act4_2_Celica:
+ColdOpen2(GMLoc_MireBoneyard, GMLoc_DolthKeep)
+
+WMIntro_Act4_3_Celica:
+//ColdOpen2(GMLoc_DolthKeep, GMLoc_SagesHamlet)
+ENDA
+
+WMIntro_Act4_4_Celica:
+ColdOpen2(GMLoc_SagesHamlet, GMLoc_DumaGate)
+
+WMIntro_Act4_5_Celica:
+ColdOpen2(GMLoc_DumaGate, GMLoc_DumaSwamp)
+
 WMIntro_Act4Start_Alm:
 ColdOpen2(GMLoc_SluiceGate, GMLoc_RigelForest1)
+
+WMIntro_Act4_1_Alm:
+ColdOpen2(GMLoc_RigelForest1, GMLoc_RigelForest2)
+
+WMIntro_Act4_2_Alm:
+ColdOpen2(GMLoc_RigelForest2, GMLoc_FearMtnPass)
+
+WMIntro_Act4_3_Alm:
+ColdOpen2(GMLoc_FearMtnPass, GMLoc_NuibabaManor)
+
+WMIntro_Act4_4_Alm:
+ColdOpen2(GMLoc_RigelForest2, GMLoc_RigelVillage)
+
+WMIntro_Act4_5_Alm:
+ColdOpen2(GMLoc_RigelVillage, GMLoc_DragonsMaw)
+
+WMIntro_Act4_6_Alm:
+ColdOpen2(GMLoc_DragonsMaw,GMLoc_RigelFalls)
+
+WMIntro_Act4_7_Alm:
+ColdOpen2(GMLoc_RigelFalls, GMLoc_LastBastion)
+
+WMIntro_Act4_8_Alm:
+ColdOpen2(GMLoc_LastBastion, GMLoc_RigelCastle)
+
+WMIntro_Act4_Final:
+//check mode
+//if alm mode ColdOpen2(GMLoc_RigelCastle, GMLoc_DumaTower)
+//if celica mode ColdOpen2(GMLoc_DumaSwamp, GMLoc_DumaTower)
+ENDA
