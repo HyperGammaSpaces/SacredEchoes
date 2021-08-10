@@ -49,6 +49,14 @@ PUSH
   ORG $8d2b2
   BYTE $09
   
+  //Make location window wider
+  ORG $BE8FE
+  BYTE $48
+  ORG $BEFE4
+  BYTE $09
+  ORG $BEFF0
+  BYTE $09
+  
     //Objective display fix for skirmish
 	ORG $8D2E8
 	SHORT $202B $46C0

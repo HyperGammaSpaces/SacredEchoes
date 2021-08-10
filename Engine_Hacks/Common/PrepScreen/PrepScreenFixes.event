@@ -1,0 +1,39 @@
+//Patches the ROM to enable per-chapter preparation screen BGM via Chapter Editor byte 0x26.
+//by ngmansion/7743
+
+PUSH
+
+	ORG 0x965e2
+	B(0x96656)
+	Change0prep_hook:
+	WORD $46874800
+	POIN Change0prep
+	
+	ORG  0x341C4
+	BL(Change0prep_hook)
+	ORG  0x965DC
+	BL(Change0prep_hook)
+	ORG  0xAEB54
+	BL(Change0prep_hook)
+	ORG  0xA1960
+	BL(Change0prep_hook)
+
+	ORG  0xB1CF0
+	WORD $468F4900
+	POIN Change1prep
+	
+	ORG 0xB1D0A
+	B(0xB24A2)
+	Change2prep_hook:
+	WORD $46874800
+	POIN Change2prep
+
+	ORG  0x9CCD6
+	BL(Change2prep_hook)
+	ORG  0xCC6B6
+	BL(Change2prep_hook)
+
+POP
+
+ALIGN 4
+#include "PrepScreenMusicChange.lyn.event"

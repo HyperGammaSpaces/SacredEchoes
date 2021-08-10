@@ -200,7 +200,7 @@ SpecialChapterLoop:
 add     r3, #0x4
 ldr     r0, [r3]
 cmp     r0, #0x0
-beq     CheckTowerOrRuins @Break
+beq     NormalChapter @Break
 ldrb    r0, [r3]
 cmp     r0, r4
 bne     SpecialChapterLoop

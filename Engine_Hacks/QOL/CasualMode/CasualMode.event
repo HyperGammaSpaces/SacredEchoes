@@ -14,15 +14,42 @@
 	//Setup new save to recognize casual mode
 	ORG $30DAC
 	  jumpToHack(CasualMode_SetFlag)
-	
-	//Hijack the last null stub of NewGameDiffilcultySelect and move it to Casual Mode Select Procs.
-	ORG 0xA20A88
-	BYTE $06 $00 $01 $00; POIN CasualModeSelectProc	//Call new Child Procs [POINTER_PROCS:Child Procs] And Yield
+	  
+	//New difficulty select proc
+	ORG $AC3F0
+	POIN DifficultySelectProc
   POP
   
 //Include ASMC for Check CasualMode from events
 ALIGN 4
 #define CasualCheckASMC "SHORT $0D40 $0; POIN CasualCheck_ASMC+1"
+
+ALIGN 4
+DifficultySelectProc: //at A20A10
+WORD $00001; POIN NAME_NewGameDifficultySelect
+WORD $00004 $080AC078+1 //set destructor
+WORD $00002 $080AD5B4+1 //call routine (i/o register setup)
+WORD $0000E $0 //sleep 0frame
+WORD $00002 $080AC1A8+1 //call routine
+WORD $1000E $0 //sleep 1frame
+WORD $00002 $080AD5D8+1 //call routine EnableAllGfx
+WORD $80018 $080AE2D0+1 //call routine NewFadeIn
+WORD $00014 $080AE2A0+1 //call routine FadeInExists
+WORD $0000B $0 //label 0
+WORD $00003 $080AC288+1 //set loop routine
+BYTE $0B $00 $01 $00; WORD $0
+BYTE $0E $00 $0A $00; WORD $0
+BYTE $18 $00 $08 $00; WORD $080AE2F4+1
+BYTE $14 $00 $00 $00; WORD $080AE2B8+1
+BYTE $0C $00 $03 $00; WORD $0
+BYTE $0B $00 $02 $00; WORD $0
+BYTE $18 $00 $08 $00; WORD $080AE2F4+1
+BYTE $14 $00 $00 $00; WORD $080AE2B8+1
+BYTE $0C $00 $04 $00; WORD $0
+BYTE $0B $00 $03 $00; WORD $0
+BYTE $06 $00 $01 $00; POIN CasualModeSelectProc	//Call new Child Procs [POINTER_PROCS:Child Procs] And Yield
+BYTE $0B $00 $04 $00; WORD $0
+WORD $0 $0 //term
 
 ALIGN 4
 CasualModeSelectProc: //based on A20A10 
@@ -50,6 +77,9 @@ WORD $0 $0 //term
 #include "asm/CasualModeMenu.lyn.event"
 ALIGN 4
 
+NAME_NewGameDifficultySelect:
+String(NewGameDifficultySelect)
+ALIGN 4
 NAME_NewGameCasualModeSelect:
 String(NewGameCasualModeSelect)
 
