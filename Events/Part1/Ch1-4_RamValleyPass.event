@@ -22,7 +22,7 @@ Ch1_4_TurnBasedEvents:
 	TURN
 
 MercEvent:
-	MUSC 0x09
+	MUSC SongID_MarchToDeliverance
 	CAM1 Alm
 	STAL 30
 	MUSI
@@ -112,7 +112,7 @@ Reinforcements1:
 	UNIT
 
 Ch1_4_BeginningScene:
-	MUSC 0x25
+	MUSC SongID_Tension
 	#ifdef __DEBUG__
 		LOAD1 0x1 Ch1_4_Units1 
 		ENUN
@@ -146,7 +146,7 @@ Ch1_4_BeginningScene:
 Ch1_4_EndingScene:
 	CALL UnifiedBEXPCaller
 	FADI 10
-	MUSC 0x31
+	MUSC SongID_Victory
 	SetBackground(Woodland)
 		CHECK_EXISTS Gray
 		BEQ 0x1 0xC 0x0
@@ -159,10 +159,10 @@ Ch1_4_EndingScene:
 			TEXTSTART 
 			TEXTSHOW Ch1_4_PostBattle_1
 			TEXTEND
-			MUSC 0x28
+			MUSC SongID_Indignation
 			TEXTCONT
 			TEXTEND
-			MUSC 0x27
+			MUSC SongID_Reunion
 			TEXTCONT
 			TEXTEND
 			GOTO 0x2
@@ -170,10 +170,10 @@ Ch1_4_EndingScene:
 		TEXTSTART 
 		TEXTSHOW Ch1_4_PostBattle_1_NoGray
 		TEXTEND
-		MUSC 0x28
+		MUSC SongID_Indignation
 		TEXTCONT
 		TEXTEND
-		MUSC 0x27
+		MUSC SongID_Reunion
 		TEXTCONT
 		TEXTEND
 	LABEL 0x2

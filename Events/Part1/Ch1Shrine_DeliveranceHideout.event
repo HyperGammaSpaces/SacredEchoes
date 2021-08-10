@@ -151,7 +151,7 @@ Hideout_BeginningScene:
 		ENUN
 		LOAD1 0x1 EnemyUnits2
 		ENUN
-		MUSC 0x4A
+		MUSC SongID_Env_Night
 		SetBackground(0x11)
 		TEXTSTART
 		TEXTSHOW DeliveranceHideout_Opening_1
@@ -191,7 +191,7 @@ Hideout_EndingScene:
 		EVBIT_MODIFY 0x1
 		CLEA 0x0
 		CLEE 0x0
-		MUSC 0x31
+		MUSC SongID_Victory
 		LOAD1 0x1 DeliveranceUnits
 		ENUN
 		EVBIT_MODIFY 0x0
@@ -256,15 +256,15 @@ Hideout_EndingScene:
 		TEXTSTART 
 		TEXTSHOW DeliveranceHideout_PostBattle_2
 		TEXTEND
-		MUSC 0x26
+		MUSC SongID_Uprising
 		TEXTCONT
 		TEXTEND
-		MUSC 0x27
+		MUSC SongID_Reunion
 		TEXTCONT
 		TEXTEND
 		REMA
 		ClearBackgroundSmooth
-		MUSC 0x7FFF
+		MUSC SongID_Silence
 		
 		MOVE 0x10 0x2D [11,3]
 		MOVE 0x5 Clair [11,4]
@@ -277,7 +277,7 @@ Hideout_EndingScene:
 		STAL 30
 		FADI 0x5
 		
-		MUSC 0x28
+		MUSC SongID_Indignation
 		//DeliveranceHideout_CGText
 
 		SETVAL 0x2 (CliveFernandCG)
@@ -300,7 +300,7 @@ Hideout_EndingScene:
 		Text(DeliveranceHideout_FernandClive)
 		ClearBackgroundSmooth
 		
-		MUSC 0x32
+		MUSC SongID_ShadowOfVictory
 		//Make Fernand green and move him off the map
 		CUSN 0x2D
 		STAL 20

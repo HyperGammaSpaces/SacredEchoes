@@ -27,8 +27,10 @@ Ch3_7C_TurnBasedEvents:
 LoadNomah:
 	LoadReinforcements(NomahJoins)
 	FlashCursor(Nomah, 60)
+	MUSS SongID_Recruitment
 	Text(Ch3_7C_NomahArrives)
 	CharacterJoinedNotification(Notif_NomahJoin)
+	MURE 0x5
 	NoFade
 	ENDA
 
@@ -205,7 +207,7 @@ RearSummons:
 	
 
 Ch3_7C_BeginningScene:
-	MUSC 0x25
+	MUSC SongID_Tension
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	SetBackground(0x1D)
@@ -232,19 +234,19 @@ Ch3_7C_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C7Completed
 	EVBIT_MODIFY 0x0
-	MUSC 0x31
+	MUSC SongID_Victory
 	SetBackground(0x2F)
 	Text(Ch3_7C_EndingText)
 	FADI 16
-	MUSC 0x8
+	MUSC SongID_Truth
 	SetBackground(0x2F, 2)
 	TEXTSTART
 	TEXTSHOW Ch3_7C_EndingText_2
 	TEXTEND
-	MUSC 0x7FFF
+	MUSC SongID_Silence
 	TEXTCONT
 	TEXTEND
-	MUSC 0x2B
+	MUSC SongID_Legacy
 	TEXTCONT
 	TEXTEND
 	REMA
@@ -262,7 +264,7 @@ Ch3_7C_EndingScene:
 	REMOVEPORTRAITS
 	BACG 0x2F
 	
-	MUSC 0x3B
+	MUSC SongID_CastleTheme
 	
 	//CG
 	EVBIT_MODIFY 0x0

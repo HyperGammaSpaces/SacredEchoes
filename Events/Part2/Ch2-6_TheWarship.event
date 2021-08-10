@@ -154,19 +154,19 @@ Ch2_6_BeginningScene:
 	#endif
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	MUSC 0x4B // Water
+	MUSC SongID_Env_Water
 	SetBackground(0x41) //night boat bg
 	Text(Ch2_6_OpeningScene) // seems spooky huh
 	FADI 16
 	ClearBackground
-	MUSCFAST 0x7FFF
+	MUSCFAST SongID_Silence
 	STAL 10
 	CAM1 Celica
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
 	STAL 10
-	MUSC 0x25
+	MUSC SongID_Tension
 	FADU 16
 	STAL 20
 	CAM1 0x4F
@@ -187,7 +187,7 @@ Ch2_6_BeginningScene:
 
 Ch2_6_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSC 0x31 //victory (good ending)
+	MUSC SongID_Victory
 	FADI 16
 	SetBackground(0x41) //night boat bg
 	Text(Ch2_6_EndingText) // yay we won

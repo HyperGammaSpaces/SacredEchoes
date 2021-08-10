@@ -21,7 +21,7 @@ Ch1_2_TurnBasedEvents:
 	TURN
 
 ArcherEvent:
-	MUSC 0x09 // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
+	MUSC SongID_MarchToDeliverance // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
 	MUSI
 	STAL 30
 	//SHOW_ATTACK_RANGE 0x66
@@ -95,21 +95,21 @@ Ch1_2_BeginningScene:
 	ENUN
 
 	//flashback scene w celica
-	MUSC 0x2C
+	MUSC SongID_Revelations
 	SetBackground(0x06,5)
 	BROWNBOXTEXT Ch1_2_FlashbackTimeframe [8,8]
 	STAL 30
 	Text(Ch1_2_Flashback)
-	MUSCSLOW 0x7FFF
+	MUSCSLOW SongID_Silence
 	STAL 20
 	FADI 2
 
 	//map start
-	MUSCSLOW 0x24
+	MUSCSLOW SongID_Advance
 	SetBackground(Woodland,2)
 	Text(Ch1_2_OpeningScene_1)
 	EndConvo
-	MUSC 0x25
+	MUSC SongID_Tension
 	MOVE 0x0 Alm [5, 7]
 	ENUN
 	FADI 0x5
@@ -124,7 +124,7 @@ Ch1_2_BeginningScene:
 Ch1_2_EndingScene:
 	CALL UnifiedBEXPCaller
 	FADI 10
-	MUSC 0x31
+	MUSC SongID_Victory
 
 	SetBackground(Woodland)
 		CHECK_EXISTS Gray

@@ -98,11 +98,11 @@ Ch2_5_BeginningScene:
 	#endif
 	
 	FADU 5
-	MUSC 0x4B
+	MUSC SongID_Env_Water
 	STAL 20
 	Text(Ch2_5_OpeningText)
 	
-	MUSC 0x25
+	MUSC SongID_Tension
 	CAM1 [11,0]
 	EARTHQUAKE_START 0x100
 	STAL 30
@@ -150,7 +150,7 @@ LoadSummons: //every other turn, shamelessly stolen from VBA for now lol
 
 Ch2_5_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSC 0x31 //victory (good ending)
+	MUSC SongID_Victory
 	SetBackground(0x41) //nightboat
 	Text(Ch2_5_PostBattle)
 	MNCH 0x0D //go to world map

@@ -128,7 +128,7 @@ ReinforcementsSonya:
 	UNIT
 
 Ch3_4C_BeginningScene:
-	MUSC 0x0D //desert theme
+	MUSC SongID_LandOfShiftingSand
 	LOAD1 0x1 EnemyUnitsSonya
 	ENUN
 	FADU 5
@@ -169,7 +169,7 @@ Ch3_4C_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C4Completed
 	EVBIT_MODIFY 0x0
-	MUSC 0x31
+	MUSC SongID_Victory
 	SetBackground(0x30)
 	Text(Ch3_4C_EndingText)
 	FADI 5

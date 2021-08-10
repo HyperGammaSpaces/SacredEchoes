@@ -137,7 +137,7 @@ Reinforcements_Top:
 	UNIT
 
 Ch1_7x_BeginningScene:
-	MUSC 0x4C
+	MUSC SongID_Env_Birds
 	CLEA 0x0
 
 	REMU Alm
@@ -179,7 +179,7 @@ Ch1_7x_BeginningScene:
 	ClearBackground
 
 	//Enemy ambush
-	MUSC 0x25
+	MUSC SongID_Tension
 	CAM1 [12, 11]
 	CUSE Zopyrus
 	SVAL 0xB Coords(15,9)
@@ -226,10 +226,10 @@ Ch1_7x_EndingScene:
 
 //Uncomment when re-enabling
 
-	MUSC 0x26
+	MUSC SongID_Uprising
 	SetBackground(0x25)
 	Text(Ch1_7x_EndingText)
-	MUSCMID 0x7FFF
+	MUSCMID SongID_Silence
 	FADI 2
 	MNCH 0x07 //go to ch7
 ENDA

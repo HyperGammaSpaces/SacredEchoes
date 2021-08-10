@@ -265,7 +265,7 @@ DeltheaJoins:
 	UNIT
 
 Ch3_7A_BeginningScene:
-	MUSC 0x15
+	MUSC SongID_FromTheDarkness
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	FADU 5
@@ -373,7 +373,7 @@ Ch3_7A_EndingScene:
 	BEQ 0x4 0xC 0x0
 		CHECK_EVENTID DeltheaLocalFlag
 		BEQ 0x5 0xC 0x0
-			MUSC 0x2F
+			MUSC SongID_Unity
 			TEXTSTART
 			TEXTSHOW Ch3_7A_EndingText //both alive
 			TEXTEND
@@ -382,7 +382,7 @@ Ch3_7A_EndingScene:
 			FADU 2
 			TEXTCONT
 			TEXTEND
-			MUSC 0x3B
+			MUSC SongID_CastleTheme
 			TEXTCONT
 			TEXTEND
 			REMA
@@ -394,14 +394,14 @@ Ch3_7A_EndingScene:
 			EVBIT_MODIFY 0x0
 			GOTO 0x6
 		LABEL 0x5
-			MUSC 0x3A
+			MUSC SongID_SilentGround
 			Text(Ch3_7A_Ending_LuthierOnly) //luthier alive, delthea dead
 			FADI 2
 			GOTO 0x6
 	LABEL 0x4 //luthier dead
 	CHECK_EVENTID DeltheaLocalFlag
 		BEQ 0x6 0xC 0x0
-		MUSC 0x30
+		MUSC SongID_Recruitment
 		TEXTSTART
 		TEXTSHOW Ch3_7A_Ending_DeltheaOnly //only delthea
 		TEXTEND
@@ -410,7 +410,7 @@ Ch3_7A_EndingScene:
 		FADU 2
 		TEXTCONT
 		TEXTEND
-		MUSC 0x3B
+		MUSC SongID_CastleTheme
 		TEXTCONT
 		TEXTEND
 		REMA

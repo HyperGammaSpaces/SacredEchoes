@@ -92,7 +92,7 @@ Boat2Enemies:
 	UNIT
 
 Ch2_3_BeginningScene:
-	MUSC 0x4B
+	MUSC SongID_Env_Water
 	#ifdef __DEBUG__
 		LOAD1 0x1 Ch2_3_Units1
 		ENUN
@@ -119,7 +119,7 @@ Ch2_3_BeginningScene:
 	FADI 2
 	ClearBackground
 
-	MUSC 0x25
+	MUSC SongID_Tension
 	STAL 20
 	CAM1 Celica
 	FlashCursor(Celica, 60)
@@ -132,7 +132,7 @@ Ch2_3_BeginningScene:
 
 Ch2_3_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSC 0x31 //victory
+	MUSC SongID_Victory
 	SetBackground(0x08) //boat
 	Text(Ch2_3_PostBattle)
 	MNC2 0x0B //skip worldmap

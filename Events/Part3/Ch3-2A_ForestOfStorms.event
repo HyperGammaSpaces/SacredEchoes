@@ -121,7 +121,7 @@ LuthierJoins:
 	UNIT
 
 Ch3_2A_BeginningScene:
-	MUSC 0x4A
+	MUSC SongID_Env_Night
 	CAM1 [8, 11]
 	EVBIT_T 0x9
 	VCWF 0x0
@@ -176,7 +176,7 @@ Ch3_2A_BeginningScene:
 	ENDA
 
 LuthierAppearsEvent:
-	MUSC 0x26
+	MUSC SongID_Uprising
 	LOAD1 0x1 LuthierJoins
 	ENUN
 	MOVE 0x08 Luthier [12,14]
@@ -189,7 +189,7 @@ LuthierAppearsEvent:
 	ENDA
 
 TalkToLuthier:
-	MUSS 0x30
+	MUSS SongID_Recruitment 
 	STAL 33
 	Text(Ch3_2A_LuthierJoins)
 	CUSA Luthier
@@ -201,7 +201,7 @@ TalkToLuthier:
 
 Ch3_2A_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW 0x7FFF
+	MUSCSLOW SongID_Silence
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A2Completed
@@ -212,7 +212,7 @@ Ch3_2A_EndingScene:
 	TEXTSHOW Ch3_2A_EndingText
 	TEXTEND
 	STAL 20
-	MUSCSLOW 0x32
+	MUSCSLOW SongID_ShadowOfVictory
 	STAL 20
 	TEXTCONT
 	TEXTEND

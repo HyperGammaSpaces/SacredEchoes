@@ -186,7 +186,7 @@ DelayedREDA20R3:
 REDA [20,3] 0x10 0x0 0x10 0x0
 
 Ch3_3C_BeginningScene:
-	MUSC 0x2E
+	MUSC SongID_SolveTheRiddle
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	FADU 5
@@ -224,7 +224,7 @@ Ch3_3C_EndingScene:
 	FADI 2
 	STAL 20
 	
-	MUSC 0x2E
+	MUSC SongID_SolveTheRiddle
 	//Switch to Grieth's Fortress
 	
 	//LOMA chapterID will load the map associated with the given chapter and sets the camera given the position in sB
@@ -258,7 +258,7 @@ Ch3_3C_EndingScene:
 		SVAL 0xB Coords(11, 10)
 		LOMA 0x18
 		
-		MUSC 0x31
+		MUSC SongID_Victory
 		LOAD2 0x1 CutsceneAlliesJesse
 		ENUN
 		FADU 5
@@ -274,7 +274,7 @@ Ch3_3C_EndingScene:
 		SVAL 0xB Coords(7, 2)
 		LOMA 0x18
 	
-		MUSC 0x31
+		MUSC SongID_Victory
 		LOAD2 0x1 CutsceneAlliesNoJesse
 		ENUN
 		FADU 5

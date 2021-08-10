@@ -21,7 +21,7 @@ Ch2_7_TurnBasedEvents:
 	TURN
 
 PostPrep:
-	MUSC 0x4B
+	MUSC SongID_Env_Water
 		CHECK_EXISTS Leon
 		BEQ 0x3 0xC 0x0
 		CHECK_ALIVE Leon
@@ -243,7 +243,7 @@ Ch2_7_BeginningScene:
 
 Ch2_7_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSC 0x31 //victory (good ending)
+	MUSC SongID_Victory
 	FADI 16
 	CLEN 0x0
 	CLEA 0x0
@@ -253,7 +253,7 @@ Ch2_7_EndingScene:
 	TEXTSTART
 	TEXTSHOW Ch2_7_EndingScene_1 // blah blah
 	TEXTEND
-	MUSC 0x32
+	MUSC SongID_ShadowOfVictory
 	TEXTCONT
 	TEXTEND
 	REMA
@@ -262,7 +262,7 @@ Ch2_7_EndingScene:
 	
 	//Put the slayde/cantor scene here. Slayde is 0x42
 	CAM1 [11,12]
-	MUSCFAST 0x48
+	MUSCFAST SongID_Env_WindBirds
 	//warpin effect pls
 	LOAD1 0x0 CutsceneEnemies1
 	ENUN
@@ -280,7 +280,7 @@ Ch2_7_EndingScene:
 	TEXTSTART
 	TEXTSHOW Ch2_Epilogue2 // blah blah
 	TEXTEND
-		MUSC 0x15
+		MUSC SongID_FromTheDarkness
 	TEXTCONT
 	TEXTEND
 	REMA
@@ -288,7 +288,7 @@ Ch2_7_EndingScene:
 	ClearBackground
 
 	STAL 20
-	MUSCFAST 0x7FFF
+	MUSCFAST SongID_Silence
 	STAL 20
 	LOAD1 0x1 ConradAppears
 	ENUN

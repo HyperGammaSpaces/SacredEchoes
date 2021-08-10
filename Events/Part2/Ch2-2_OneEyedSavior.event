@@ -78,7 +78,7 @@ EnemyUnits:
 	UNIT
 
 Ch2_2_BeginningScene:
-	MUSC 0x55 //port town music
+	MUSC SongID_PortTown
 	SetBackground(0x07) //Port town
 	Text(Ch2_2_Intro1)
 	FADI 5
@@ -94,7 +94,7 @@ Ch2_2_BeginningScene:
 	REMOVEPORTRAITS
 	FADI 2
 
-	MUSC 0x54 //inn music
+	MUSC SongID_Inn
 		
 	SetBackground(0x09)
 
@@ -132,7 +132,7 @@ Ch2_2_BeginningScene:
 
 	STAL 30
 
-	MUSC 0x4B
+	MUSC SongID_Env_Water
 	SetBackground(0x08) //Boat
 	Text(Ch2_2_SetSail)
 	EndConvo
@@ -151,7 +151,7 @@ Ch2_2_BeginningScene:
 	STAL 30
 	FADU 16
 
-	MUSC 0x25
+	MUSC SongID_Tension
 	//Pirates say something
 	CAM1 0x4c
 	FlashCursor(0x4c, 60)
@@ -166,7 +166,7 @@ Ch2_2_BeginningScene:
 	ENDA
 
 ChestEvent:
-	MUSC 0x4B
+	MUSC SongID_Env_Water
 	MUSI
 	CAM1 [10,3]
 	STAL 20
@@ -179,7 +179,7 @@ ChestEvent:
 
 Ch2_2_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSC 0x31 //victory
+	MUSC SongID_Victory
 	SetBackground(0x08)
 		CHECK_EXISTS Genny
 		BEQ 0x1 0xC 0x0

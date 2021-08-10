@@ -21,7 +21,7 @@ Ch1_7_TurnBasedEvents:
 	TURN
 
 BallistaEvent:
-	MUSC 0x09
+	MUSC SongID_MarchToDeliverance
 	MUSI
 	CAM1 [5, 5]
 	STAL 30
@@ -104,6 +104,11 @@ EnemyUnits:
 	UNIT 0x84 Mercenary	0x4b Level(8, Enemy, 1) [13,11]	0x00 0x00 0x0 0x00 [BaseSword] NoAI 
 	UNIT 0x82 Soldier	0x4b Level(9, Enemy, 1) [12,11]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
 	UNIT 0x81 Archer_F	0x4b Level(9, Enemy, 1) [11,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
+	UNIT 0x85 Cavalier	0x4b Level(9, Enemy, 1) [18,10]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT 0x85 Cavalier	0x4b Level(9, Enemy, 1) [19,11]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT 0x81 Archer	0x4b Level(8, Enemy, 1) [9,9]	0x00 0x00 0x0 0x00 [BaseBow] NoAI 
+	UNIT 0x85 Cavalier	0x4b Level(7, Enemy, 1) [17,12]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT 0x82 Soldier	0x4b Level(10, Enemy, 1) [15,4]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI 
 	UNIT
 
 BrigandsCh7:
@@ -119,22 +124,12 @@ Brigand2Reda:
 Brigand3Reda:
 	REDA [1,4] 0x6 0x0 0x0 0x0 0x0
 
-EnemyUnits2:
-	UNIT 0x85 Cavalier	0x4b Level(9, Enemy, 1) [18,10]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
-	UNIT 0x85 Cavalier	0x4b Level(9, Enemy, 1) [19,11]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
-	UNIT 0x81 Archer	0x4b Level(8, Enemy, 1) [9,9]	0x00 0x00 0x0 0x00 [BaseBow] NoAI 
-	UNIT 0x85 Cavalier	0x4b Level(7, Enemy, 1) [17,12]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
-	UNIT 0x82 Soldier	0x4b Level(10, Enemy, 1) [15,4]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI 
-	UNIT
-
 Ch1_7_BeginningScene:
-	MUSC 0x25
+	MUSC SongID_Tension
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	CAM1 [8, 11]
 	LOAD1 0x1 EnemyUnits
-	ENUN
-	LOAD1 0x1 EnemyUnits2
 	ENUN
 	FADU 10
 
@@ -175,16 +170,16 @@ SetBGWhite:
 Ch1_7_EndingScene:
 	CALL UnifiedBEXPCaller
 	FADI 2
-	MUSC 0x4A
+	MUSC SongID_Env_Night
 	SetBackground(0x20)
 	Text(Ch1_7_PostBattle_1)
 	SETVAL 0x2 0x0D
 	CALL SetBGWhite
 	Text(CliveFernand_Flashback)
-	MUSCSLOW 0x7FFF
+	MUSCSLOW SongID_Silence
 	SETVAL 0x2 0x20
 	CALL SetBGWhite
-	MUSCSLOW 0x32
+	MUSCSLOW SongID_ShadowOfVictory
 	Text(ClairFernand_Ch7)
 	STARTFADE
 	FADECOLORS 0x2000 0x8 0x80 0x80 0x80

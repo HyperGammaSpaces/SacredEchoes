@@ -23,7 +23,7 @@ Ch1_5_TurnBasedEvents:
 	TURN
 
 ArcherEvent:
-	MUSC 0x09
+	MUSC SongID_MarchToDeliverance
 	MUSI
 	CAM1 [6,2]
 	STAL 30
@@ -212,7 +212,7 @@ EnemyUnits:
 	UNIT 0x81 Archer	0x49 Level(5, Enemy, 1) [15,3]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
 	UNIT 0x84 Mercenary	0x49 Level(3, Enemy, 1) [11,6]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
 	UNIT 0x84 Soldier	0x49 Level(6, Enemy, 1) [12,6]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT 0x82 Soldier	0x49 Level(7, Enemy, 1) [12,12]	DropItem 0x00 0x0 0x00 [IronLance, DoorKey] GuardTileAI 
+	UNIT 0x82 Soldier	0x49 Level(7, Enemy, 1) [12,12]	DropItem 0x00 0x0 0x00 [IronLance, DoorKey] NeverMoveAI 
 	UNIT 0x82 Soldier	0x49 Level(7, Enemy, 1) [0,7]	DropItem 0x00 0x0 0x00 [IronLance, DoorKey] AttackInRangeAI 
 	UNIT 0x80 Archer_F	0x49 Level(6, Enemy, 1) [9,2]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT
@@ -222,7 +222,7 @@ ThiefReinforcement:
 	UNIT
 
 Ch1_5_BeginningScene:
-	MUSC 0x25
+	MUSC SongID_Tension
 	LOAD3 0x0 Ch1_5_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	LOAD1 0x1 EnemyUnits
@@ -282,7 +282,7 @@ Ch1_5_EndingScene:
 		ENUN
 	LABEL 0x5
 	CAM1 Alm
-	MUSC 0x31
+	MUSC SongID_Victory
 	SetBackground(0x25)
 	TEXTSTART 
 	TEXTSHOW Ch1_5_PostBattle_1

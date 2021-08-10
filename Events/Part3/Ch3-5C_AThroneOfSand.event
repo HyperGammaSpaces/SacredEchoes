@@ -200,7 +200,7 @@ DeenJoins:
 	UNIT
 
 Ch3_5C_BeginningScene:
-	MUSC 0x25
+	MUSC SongID_Tension
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	SetBackground(0x0C) //fortress hall
@@ -232,12 +232,12 @@ Ch3_5C_EndingScene:
 	EVBIT_MODIFY 0x0
 	FADI 2
 	
-	MUSC 0x31 //victory
+	MUSC SongID_Victory
 	SetBackground(0x17) //dungeon cell
 	TEXTSTART
 	TEXTSHOW Ch3_5C_EndingText //irma
 	TEXTEND
-	MUSC 0x2B //legacy
+	MUSC SongID_Legacy
 	TEXTCONT
 	TEXTEND
 	REMA
@@ -258,7 +258,7 @@ Ch3_5C_EndingScene:
 	SetBackground(0x17, 2) //dungeon cell
 	Text(Ch3_5C_EndingText_2) //irma 2
 	
-	MUSC 0x31 //victory
+	MUSC SongID_Victory
 	//atlas finds his bros
 	CHECK_ALIVE Atlas
 	BEQ 0x3 0xC 0x0

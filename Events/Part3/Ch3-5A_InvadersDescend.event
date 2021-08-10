@@ -207,7 +207,7 @@ TurretArchers:
 	UNIT
 
 Ch3_5A_BeginningScene:
-	MUSC 0x4A
+	MUSC SongID_Env_Night
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	CAM1 Alm
@@ -243,7 +243,7 @@ Ch3_5A_BeginningScene:
 	STAL 20
 	CAM1 Lawson
 	FlashCursor(Lawson, 60)
-	MUSC 0x2E
+	MUSC SongID_SolveTheRiddle
 	Text(Ch3_5A_OpeningText_3)
 	FADI 5
 	REMA
@@ -266,7 +266,7 @@ Ch3_5A_EndingScene:
 	ENUT gChapter3A5Completed
 	EVBIT_MODIFY 0x0
 	
-	MUSC 0x3A //Silent Ground
+	MUSC SongID_SilentGround
 	SetBackground(0x44)
 	
 	//check Gray and Tobin

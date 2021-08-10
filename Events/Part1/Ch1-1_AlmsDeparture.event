@@ -21,7 +21,7 @@ Ch1_1_TurnBasedEvents:
 	TURN
 
 WTAEvent:
-	MUSC 0x09 // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
+	MUSC SongID_MarchToDeliverance // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
 	MUSI
 	STAL 30
 	FlashCursor(Lukas, 60)
@@ -116,7 +116,7 @@ Ch1_1_CutsceneUnits_Green:
 	UNIT
 
 Ch1_1_BeginningScene:
-	MUSC 0x24
+	MUSC SongID_Advance
 	LOAD1 0x1 Ch1_1_CutsceneUnits
 	ENUN
 	LOAD1 0x1 Ch1_1_CutsceneUnits_Green
@@ -137,7 +137,7 @@ Ch1_1_BeginningScene:
 	TEXTSTART
 	TEXTSHOW OpeningScene_2
 	TEXTEND
-	MUSC 0x32
+	MUSC SongID_ShadowOfVictory
 	TEXTCONT
 	TEXTEND
 	REMA
@@ -149,21 +149,21 @@ Ch1_1_BeginningScene:
 	ENUN
 	REMU Lukas
 	REMU Alm
-	MUSC 0x4C
+	MUSC SongID_Env_Birds
 
 	FlashCursor(Kliff, 60)
 	Text(Village,OpeningScene_3)
 	STAL 0x14
 
-	MUSC 0x24
+	MUSC SongID_Advance
 	FlashCursor(1, 2, 60)
 	SetBackground(HouseBG)
 	TEXTSHOW OpeningScene_4
 	TEXTEND
-	MUSC 0x7FFF
+	MUSC SongID_Silence
 	TEXTCONT
 	TEXTEND
-	MUSC 0x26
+	MUSC SongID_Uprising
 	TEXTCONT
 	TEXTEND
 	EndConvo
@@ -188,12 +188,12 @@ Ch1_1_BeginningScene:
 	SetBackground(Outside_Village_Day)
 	TEXTSHOW OpeningScene_5
 	TEXTEND
-	MUSC 0x27
+	MUSC SongID_Reunion
 	TEXTCONT
 	TEXTEND
 	EndConvo
 
-	MUSC 0x24
+	MUSC SongID_Advance
 	STAL 0x14
 	MOVE 0x10 Gray [4, 3]
 	MOVE 0x10 Tobin [2, 8]
@@ -237,7 +237,7 @@ Ch1_1_BeginningScene:
 	TEXTEND
 	EndConvo
 
-	MUSC 0x25
+	MUSC SongID_Tension
 	CAM1 [12, 4]
 	LOAD1 0x1 EnemyUnits
 	ENUN
@@ -260,7 +260,7 @@ Ch1_1_EndingScene:
 	ENUT gEnableWorldMap			//enable world map
 	EVBIT_MODIFY 0x0
 	CALL UnifiedBEXPCaller
-	MUSC 0x31 //victory
+	MUSC SongID_Victory //victory
 	FADI 16
 	CLEN 0x0
 	SetBackground(Plain)

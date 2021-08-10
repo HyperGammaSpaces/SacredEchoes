@@ -128,7 +128,7 @@ PegasusKnights:
 
 Ch3_1C_BeginningScene:
 	//earthquake stuff w/conrad
-	MUSC 0x3A
+	MUSC SongID_SilentGround
 	LOMA 0x39
 	LOAD2 0x0 MountainCutscene_Allies
 	ENUN
@@ -155,7 +155,7 @@ Ch3_1C_BeginningScene:
 	CLEA 0x0
 	CLEN 0x0
 	LOMA 0x16
-	MUSC 0x25
+	MUSC SongID_Tension
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	CAM1 [0,16]
@@ -210,7 +210,7 @@ Ch3_1C_BeginningScene:
 	ENDA
 	
 TalkToCatria:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 33
 	Text(Ch3_1C_RecruitCatria)
 	REVEAL Catria
@@ -222,7 +222,7 @@ TalkToCatria:
 	ENDA
 	
 TalkToPalla:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 33
 	Text(Ch3_1C_RecruitPalla)
 	CUSA Palla
@@ -241,7 +241,7 @@ Ch3_1C_EndingScene:
 	BEQ 0x1 0xC 0x0
 		CHECK_ALIVE Catria
 		BEQ 0x4 0xC 0x0
-			MUSC 0x31 //victory (good ending)
+			MUSC SongID_Victory
 			SetBackground(0x29)
 			Text(Ch3_1C_EndingText) //both alive
 			FADI 5
@@ -250,7 +250,7 @@ Ch3_1C_EndingScene:
 			CharacterJoinedNotification(Notif_PallaCatriaJoin)
 			GOTO 0x3
 		LABEL 0x4 //only palla
-		MUSC 0x32 //victory (bad ending)
+		MUSC SongID_ShadowOfVictory
 		SetBackground(0x29)
 		Text(Ch3_1C_EndingText_CatriaDied)
 		FADI 5
@@ -258,7 +258,7 @@ Ch3_1C_EndingScene:
 		CharacterJoinedNotification(Notif_PallaJoin)
 		GOTO 0x3
 	LABEL 0x1
-	MUSC 0x32 //victory (bad ending)
+	MUSC SongID_ShadowOfVictory
 	CHECK_ALIVE Catria
 	BEQ 0x2 0xC 0x0
 		//only catria

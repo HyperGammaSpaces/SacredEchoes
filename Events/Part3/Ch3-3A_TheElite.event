@@ -120,7 +120,7 @@ Reinforcements1:
 	UNIT
 
 Ch3_3A_BeginningScene:
-	MUSC 0x24
+	MUSC SongID_Advance
 	CAM1 [11,16]
 	LOAD2 0x1 CutsceneUnits
 	ENUN
@@ -128,7 +128,7 @@ Ch3_3A_BeginningScene:
 	TEXTSTART
 	TEXTSHOW Ch3_3A_OpeningText
 	TEXTEND
-	MUSC 0x25
+	MUSC SongID_Tension
 	TEXTCONT
 	TEXTEND
 	REMA
@@ -142,7 +142,7 @@ Ch3_3A_BeginningScene:
 	STAL 20
 	CAM1 BerkutPaladin
 	STAL 20
-	MUSC 0x16
+	MUSC SongID_PrinceOfDarkness
 	FlashCursor(BerkutPaladin, 60)
 	STAL 20
 	SetBackground(0x1D)
@@ -197,7 +197,7 @@ Ch3_3A_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A3Completed
 	EVBIT_MODIFY 0x0
-	MUSC 0x32
+	MUSC SongID_ShadowOfVictory
 	SetBackground(0x1D)
 	Text(Ch3_3A_EndingText)
 	STARTFADE

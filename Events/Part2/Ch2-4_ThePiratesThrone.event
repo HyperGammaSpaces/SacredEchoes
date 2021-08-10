@@ -26,7 +26,7 @@ BoatWave:
 	ENDA
 
 CelicaTalkEvent:
-	MUSC 0x0A // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
+	MUSC SongID_MilasDivineProtection
 	MUSI
 	STAL 20
 	CAM1 Valbar
@@ -133,7 +133,7 @@ ReinforcementsSouth:
 	UNIT
 
 Ch2_4_BeginningScene:
-	MUSC 0x25
+	MUSC SongID_Tension
 	#ifdef __DEBUG__
 		LOAD1 0x1 Ch2_4_Units1
 		ENUN
@@ -170,7 +170,7 @@ Ch2_4_EndingScene:
 	CHECK_ALIVE Valbar
 	IFEQ 0x6 0xC 0x1 //if not, goto NoFaye
 		EVBIT_MODIFY 0x0
-		MUSC 0x31 //victory (good ending)
+		MUSC SongID_Victory
 		SetBackground(0x07)
 		TEXTSTART
 		TEXTSHOW Ch2_4_PostBattle
@@ -205,7 +205,7 @@ Ch2_4_EndingScene:
 		GOTO 0x8
 	LABEL 0x6 //if Valbar is dead
 	EVBIT_MODIFY 0x0
-	MUSC 0x32
+	MUSC SongID_ShadowOfVictory
 	SetBackground(0x07)
 	Text(Ch2_4_PostBattle_NoValbar_1)
 	REMA
@@ -242,7 +242,7 @@ Ch2_4_EndingScene:
 	ENDA
 
 TalkToValbar:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 0x20
 	SVAL 0x1 0x1
 	CHECK_ALIVE Leon 
@@ -262,7 +262,7 @@ TalkToValbar:
 	ENDA
 
 TalkToKamui:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 0x20
 	Text(Ch2_4_GetKamui)
 	CUSA Kamui
@@ -273,7 +273,6 @@ TalkToKamui:
 	ENDA
 
 TalkToKamuiCelica:
-	MUSS 0x30
 	STAL 0x20
 	SVAL 0x1 0x1
 	CHECK_ALIVE Valbar 
@@ -282,6 +281,7 @@ TalkToKamuiCelica:
 		ENUF 0x9
 		GOTO 0x5
 	LABEL 0x4
+	MUSS SongID_Recruitment
 	Text(Ch2_4_GetKamui_ValbarDead)
 	CUSA Kamui
 	CharacterJoinedNotification(Notif_KamuiJoin)

@@ -110,7 +110,7 @@ SeaboundShrine_BeginningScene:
 	IFNE 0x3 0xC 0x1 
 		LOAD1 0x1 BossMonster_Round1
 		ENUN
-		MUSC 0x4A
+		MUSC SongID_Env_Night
 		SetBackground(0x34)
 		//If Kamui is alive, show SeaboundShrine_KamuiIntro
 		CHECK_EXISTS Kamui
@@ -172,7 +172,7 @@ SeraphimEvent:
 	SVAL 0x1 0x1
 	CHECK_EVENTID gSeaboundShrineCompleted 
 	IFNE 0x8 0xC 0x1 
-		MUSC 0x0A
+		MUSC SongID_MilasDivineProtection
 		MUSI
 		STAL 30
 		CAM1 [3,6]

@@ -71,32 +71,32 @@ DoCelicaStuff:
 	EVBIT_MODIFY 0x0
 
 	//flashback scene w celica
-	MUSC 0x2C
+	MUSC SongID_Revelations
 	SetBackground(0x06, 5)
 	BROWNBOXTEXT Ch1_2_FlashbackTimeframe [8,8]
 	STAL 30
 	Text(Ch2C_1_Flashback)
-	MUSCSLOW 0x7FFF
+	MUSCSLOW SongID_Silence
 	STAL 20
 	FADI 2
 
 	SetBackground(0x24, 2) //Town idk
 	SOUN LimaDiesBellSFX_ID
 	STAL 60
-	MUSCMID 0x7FFF
-	MUSC 0x4C
+	MUSCMID SongID_Silence
+	MUSC SongID_Env_Birds
 	Text(CelicaHandoffScene)
 	FADI 5
 
 	LOAD1 0x1 NewCelica	//Add Celica first.
 	ENUN
 
-	MUSCSLOW 0x20 //novis church
+	MUSCSLOW SongID_SongOfPeace
 	SetBackground(0x2E) //Shrine
 	Text(CelicaHandoffScene_2)
 	FADI 5
 
-	MUSC 0x30
+	MUSC SongID_Recruitment
 	SetBackground(0x0C) //Hall
 	Text(CelicaHandoffScene_3)
 	STAL 20

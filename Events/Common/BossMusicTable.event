@@ -1,4 +1,4 @@
-#define SetBossMusic(UnitID) "WORD UnitID 0x1B"
+#define SetBossMusic(UnitID) "WORD UnitID SongID_WarringPowers"
 #define SetCustomBossMusic(UnitID,MusicID) "WORD UnitID MusicID"
 
 //Boss music table (may need to repoint)
@@ -41,16 +41,16 @@ BossMusicTable:
 	SetBossMusic(MuellerCh4_8) 
 	SetBossMusic(Hades) 
 	SetBossMusic(Gharn) 
-	SetCustomBossMusic(RudolfEnemy, 0x1B) //rudolf
-	SetCustomBossMusic(Jedah_Ch4, 0x1B) //jedah 1
-	SetCustomBossMusic(JedahFinal, 0x1B) //jedah 2
-	SetCustomBossMusic(Duma, 0x1B)
+	SetCustomBossMusic(RudolfEnemy, SongID_LordOfADeadEmpire) //rudolf
+	SetCustomBossMusic(Jedah_Ch4, SongID_WarringPowers) //jedah 1
+	SetCustomBossMusic(JedahFinal, SongID_WarringPowers) //jedah 2
+	SetCustomBossMusic(Duma, SongID_WarringPowers)
 	SetBossMusic(FernandEnemy1) //fernand
 	SetBossMusic(FernandEnemy2) //fernand 2
 	SetBossMusic(FernandPaladin) //fernand 3
-	SetBossMusic(BerkutPaladin) //berkut 1
-	SetBossMusic(BerkutGK) //berkut 2
-	SetCustomBossMusic(BerkutPossessed, 0x1B) //berkut 3
+	SetCustomBossMusic(BerkutPaladin,SongID_PrideAndArrogance) //berkut 1
+	SetCustomBossMusic(BerkutGK,SongID_PrideAndArrogance) //berkut 2
+	SetCustomBossMusic(BerkutPossessed, SongID_ScionsDance) //berkut 3
 	SetBossMusic(Nuibaba) //nuibaba
 	SetBossMusic(MarlaCh4) //marla 1
 	SetBossMusic(HestiaCh4) //hestia 1

@@ -257,7 +257,7 @@ MathildaJoins:
 Ch3_4A_BeginningScene:
 	COUNTER_SET 0 0 // for summons
 	//Load Fernand and Mathilda, show CG, show textID FernandMathilda_Dungeon
-	MUSC 0x4E
+	MUSC SongID_Env_GustyWind
 	LOAD1 0x1 MathildaJoins
 	ENUN
 	LOAD1 0x1 CutsceneFernand
@@ -295,9 +295,9 @@ Ch3_4A_BeginningScene:
 	TEXTSTART 
 	TEXTSHOW FernandMathilda_Dungeon
 	TEXTEND
-	MUSC 0x4F
+	MUSC SongID_Env_GustyWindStop
 	STAL 20
-	MUSC 0x8
+	MUSC SongID_Truth
 	TEXTCONT
 	TEXTEND
 	REMA
@@ -306,7 +306,7 @@ Ch3_4A_BeginningScene:
 	ENUN
 	STAL 20
 	FADI 2
-	MUSC 0x7FFF
+	MUSC SongID_Silence
 	CLEE 0x0
 	STAL 40
 	LOAD2 0x1 CutsceneAllies
@@ -316,7 +316,7 @@ Ch3_4A_BeginningScene:
 	FADU 2
 
 	//Then load Desaix and set BG to 0xE
-	MUSC 0x2E
+	MUSC SongID_SolveTheRiddle
 	CAM1 Desaix
 	STAL 20
 	FlashCursor(Desaix, 60)
@@ -345,7 +345,7 @@ Ch3_4A_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A4Completed
 	EVBIT_MODIFY 0x0
-	MUSC 0x3B
+	MUSC SongID_CastleTheme
 	
 	CHECK_ALIVE Tobin 
 	BEQ 0x4 0xC 0x0
@@ -359,19 +359,19 @@ Ch3_4A_EndingScene:
 		TEXTCONT
 		TEXTEND
 		MUNO
-		MUSC 0x8
+		MUSC SongID_Truth
 		TEXTCONT
 		TEXTEND
 		REMA
 		
 		FADI 2
-		MUSC 0x7FFF
+		MUSC SongID_Silence
 		STAL 20
-		MUSC 0x27
+		MUSC SongID_Reunion
 		SetBackground(0x49)
 		Text(Ch3_4A_EndingText_2)
 		//CG goes here
-		MUSC 0x7FFF
+		MUSC SongID_Silence
 		STAL 20
 		MUSC 0x51
 		
@@ -391,7 +391,7 @@ Ch3_4A_EndingScene:
 		FADI 5
 		REMA
 		
-		MUSC 0x2B
+		MUSC SongID_Legacy
 		SetBackground(0x49)
 		Text(Ch3_4A_EndingText_3)
 		GOTO 0x3
@@ -401,11 +401,11 @@ Ch3_4A_EndingScene:
 		Text(Ch3_4A_EndingText_NoTobin)
 		FADI 2
 		STAL 20
-		MUSC 0x3B
+		MUSC SongID_CastleTheme
 		SetBackground(0x49)
 		Text(Ch3_4A_EndingText_2_NoTobin)
 		//CG goes here
-		MUSC 0x7FFF
+		MUSC SongID_Silence
 		STAL 20
 		MUSC 0x51
 		//FADI 5
@@ -420,7 +420,7 @@ Ch3_4A_EndingScene:
 		FADI 5
 		REMA
 		
-		MUSC 0x2B
+		MUSC SongID_Legacy
 		SetBackground(0x49)
 		Text(Ch3_4A_EndingText_3_NoTobin)
 	

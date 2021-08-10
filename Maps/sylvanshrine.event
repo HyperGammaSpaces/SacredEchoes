@@ -8,16 +8,15 @@ Map:
 #incbin "sylvanshrine_data.dmp"
 
 MapChanges:
-TileMap(0,15,5,1,1,Map_Change_0)
-TileMap(1,2,21,1,1,Map_Change_1)
-TileMap(2,16,28,4,4,Map_Change_2)
-TileMap(3,8,24,2,2,Map_Change_3)
+TileMap(0,15,4,1,1,Map_Change_0)
+TileMap(1,2,15,1,1,Map_Change_1)
+TileMap(2,16,22,4,4,Map_Change_2)
+TileMap(3,8,18,2,2,Map_Change_3)
 TileMap(4,7,10,2,2,Map_Change_4)
 TileMap(5,4,14,2,3,Map_Change_5)
-TileMap(6,4,19,2,4,Map_Change_6)
-TileMap(7,6,3,1,1,Map_Change_7)
-TileMap(8,9,3,1,1,Map_Change_8)
-TileMap(9,9,30,1,1,Map_Change_9)
+TileMap(6,6,3,1,1,Map_Change_6)
+TileMap(7,9,3,1,1,Map_Change_7)
+TileMap(8,9,24,1,1,Map_Change_8)
 TileMapEnd
 
 Map_Change_0:
@@ -29,7 +28,7 @@ SHORT 0x4
 ALIGN 4
 
 Map_Change_2:
-SHORT 0xebc 0xfb8 0xfbc 0xc9c 0xeb8 0xfb8 0xfb8 0x0 0xeb8 0xfbc 0xfbc 0x0 0xec4 0xfbc 0xfbc 0x0 
+SHORT 0xeb8 0xfbc 0xfb8 0xc9c 0xebc 0xfb8 0xfbc 0x0 0xeb8 0xfbc 0xfb8 0x0 0xec4 0xfbc 0xfbc 0x0 
 ALIGN 4
 
 Map_Change_3:
@@ -45,7 +44,7 @@ SHORT 0xd18 0x0 0x654 0x0 0xe3c 0xfbc
 ALIGN 4
 
 Map_Change_6:
-SHORT 0xd18 0x0 0x650 0x0 0xe3c 0xfbc 0xfbc 0xfb8 
+SHORT 0x664 
 ALIGN 4
 
 Map_Change_7:
@@ -53,10 +52,6 @@ SHORT 0x664
 ALIGN 4
 
 Map_Change_8:
-SHORT 0x664 
-ALIGN 4
-
-Map_Change_9:
 SHORT 0x664 
 ALIGN 4
 

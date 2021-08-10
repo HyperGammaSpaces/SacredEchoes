@@ -152,7 +152,7 @@ SkirmishEnemies:
 
 Ch3_6A_BeginningScene:
 
-	MUSC 0x25
+	MUSC SongID_Tension
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	CAM1 [1,10]
@@ -186,7 +186,7 @@ Ch3_6A_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A6Completed
 	EVBIT_MODIFY 0x0
-	MUSC 0x32
+	MUSC SongID_ShadowOfVictory
 	SetBackground(0x04)
 	Text(Ch3_6A_EndingText)
 	SVAL 0x3 HolyBow //make fear mountain give holy lance instead
@@ -195,17 +195,17 @@ Ch3_6A_EndingScene:
 	
 	STAL 20
 	//scene change (todo: add LOMA and BROWNBOXTEXT)
-	MUSC 0x7FFF
+	MUSC SongID_Silence
 	SetBackground(0x0E,2)
 	TEXTSTART
 	TEXTSHOW Ch3_6A_RigelCastle_1
 	TEXTEND
-	MUSC 0x0E
+	MUSC SongID_Indignation
 	TEXTCONT
 	TEXTEND
 	REMA
 	FADI 5
-	MUSC 0x16
+	MUSC SongID_PrinceOfDarkness
 	SetBackground(0x0B)
 	Text(Ch3_6A_RigelCastle_2)
 	STARTFADE

@@ -97,7 +97,7 @@ EnemyUnits2:
 	UNIT
 
 Ch1_6_BeginningScene:
-	MUSC 0x24
+	MUSC SongID_Advance
 	LOAD2 0x1 BeginningCutsceneUnits
 	ENUN
 	LOAD1 0x1 EnemyUnits
@@ -130,7 +130,7 @@ Ch1_6_EndingScene:
 	CLEA 0x0
 	CLEE 0x0
 	ENUN
-	MUSC 0x31
+	MUSC SongID_Victory
 	LOAD1 0x1 FernandJoins
 	ENUN
 	LOAD2 0x1 CutsceneUnits
@@ -149,10 +149,10 @@ Ch1_6_EndingScene:
 	TEXTSTART 
 	TEXTSHOW Ch1_6_PostBattle_1
 	TEXTEND
-	MUSC 0x7FFF
+	MUSC SongID_Silence
 	TEXTCONT
 	TEXTEND
-	MUSC 0x32
+	MUSC SongID_ShadowOfVictory
 	TEXTCONT
 	TEXTEND
 	ClearBackgroundSmooth

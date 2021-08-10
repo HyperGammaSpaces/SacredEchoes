@@ -27,7 +27,7 @@ Ch1_3_TurnBasedEvents:
 	TURN
 
 ChestEvent:
-	MUSC 0x09
+	MUSC SongID_MarchToDeliverance
 	MUSI
 	CAM1 Alm
 	STAL 30
@@ -193,7 +193,7 @@ Brigand2x2Reda:
 REDA [15,4] 0x20 0x0 0x0 0xFF 0xFF
 
 Ch1_3_BeginningScene:
-	MUSC 0x15
+	MUSC SongID_FromTheDarkness
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	FADU 0x5
@@ -277,16 +277,16 @@ Ch1_3_EndingScene:
 	EVBIT_MODIFY 0x0
 	CALL UnifiedBEXPCaller
 	FADI 10
-	MUSC 0x31
+	MUSC SongID_Victory
 	SetBackground(0x2E)
 	TEXTSTART 
 	TEXTSHOW Ch1_3_PostBattle
 	TEXTEND
-	MUSC 0x7FFF
+	MUSC SongID_Silence
 	FAWI 5
 	STAL 5
 	FAWU 5
-	MUSC 0x2B
+	MUSC SongID_Legacy
 	TEXTCONT
 	TEXTEND
 	REMA

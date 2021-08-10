@@ -27,7 +27,7 @@ CelicaTalkEvent:
 	CHECK_EVENTID gNovisCemeteryCompleted //has map been cleared?
 	IFNE 0x8 0xC 0x1 //if true, skip cutscene
 		EVBIT_MODIFY 0x0
-		MUSC 0x0A // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
+		MUSC SongID_MilasDivineProtection
 		MUSI
 		STAL 30
 		FlashCursor(Celica, 60)
@@ -145,7 +145,7 @@ Ch2_1_BeginningScene:
 	CHECK_EVENTID gNovisCemeteryCompleted //has map been cleared?
 	IFNE 0x6 0xC 0x1 //if true, skip cutscene
 		EVBIT_MODIFY 0x0
-		MUSC 0x4A
+		MUSC SongID_Env_Night
 		FADU 5
 
 		#ifdef __DEBUG__
@@ -168,7 +168,7 @@ Ch2_1_BeginningScene:
 		GOTO 0x07
 	LABEL 0x06
 		EVBIT_MODIFY 0x0
-		LOAD3 0x1 Ch2_1_PlayerSkirmishUnits
+		LOAD3 0x0 Ch2_1_PlayerSkirmishUnits
 		ENUN
 		SVAL 0x2 0x0 //Number of skirmish enemies to load
 		CALL EnemyRandomizerHelper
@@ -185,7 +185,7 @@ Ch2_1_EndingScene:
 	IFNE 0x4 0xC 0x1 //if true, skip cutscene
 		EVBIT_MODIFY 0x0
 		CALL UnifiedBEXPCaller
-		MUSC 0x31 //victory
+		MUSC SongID_Victory
 		SetBackground(0x20)
 		Text(Ch2_1_PostBattle)
 		MNCH 0x09 //go to ch9

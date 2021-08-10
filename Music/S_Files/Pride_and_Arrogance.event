@@ -1,0 +1,1926 @@
+//Event file generated from Sappy .s format.
+        #include "MPlayDef.event"
+
+        #define    Pride_and_Arrogance_grp  voicegroup000
+        #define    Pride_and_Arrogance_pri  0
+        #define    Pride_and_Arrogance_rev  0
+        #define    Pride_and_Arrogance_key  0
+
+        // .rodata
+        // Pride_and_Arrogance
+        ALIGN 4
+
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+Pride_and_Arrogance_0:
+        BYTE   KEYSH   Pride_and_Arrogance_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   128/2
+Pride_and_Arrogance_0_LOOP:
+        BYTE           VOICE   6
+        BYTE           VOL     44
+        BYTE           PAN     c_v-26
+        BYTE           N12     Fs1   v126
+        BYTE           N12     Fs2
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE           N12     Fs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Cs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Cs2
+        BYTE   W12
+        BYTE                   Cs1
+        BYTE           N12     Cs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Cs2
+        BYTE   W12
+// 001   ----------------------------------------
+        BYTE                   Bn0
+        BYTE           N12     Bn1
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Dn2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Dn2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Dn2
+        BYTE   W12
+        BYTE                   Gs1
+        BYTE           N12     An0
+        BYTE   W12
+        BYTE                   Cs2
+        BYTE           N12     Fn2
+        BYTE   W12
+// 002   ----------------------------------------
+        BYTE           N06     An0
+        BYTE           N06     An1
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N06     Cs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N06     Cs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N06     Cs2
+        BYTE   W12
+        BYTE                   An0
+        BYTE           N06     An1
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N06     Cs2
+        BYTE   W12
+// 003   ----------------------------------------
+        BYTE                   An2
+        BYTE           N06     Bn1
+        BYTE           N06     Bn0
+        BYTE   W06
+        BYTE                   Fs2
+        BYTE   W06
+        BYTE                   An2
+        BYTE           N06     Dn2
+        BYTE   W06
+        BYTE                   Fs2
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE           N06     Dn2
+        BYTE   W06
+        BYTE                   An2
+        BYTE   W06
+        BYTE                   Fs2
+        BYTE           N06     Dn2
+        BYTE           N06     Gs2
+        BYTE   W06
+        BYTE                   An2
+        BYTE   W06
+        BYTE                   Fs1
+        BYTE           N06     Fs2
+        BYTE   W12
+        BYTE                   An2
+        BYTE           N06     Fs2
+        BYTE   W12
+// 004   ----------------------------------------
+        BYTE           N12     Dn2
+        BYTE           N12     Dn1
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE   W12
+// 005   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Cs1
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE   W12
+// 006   ----------------------------------------
+        BYTE                   Bn0
+        BYTE   W12
+        BYTE                   Bn1
+        BYTE   W12
+        BYTE                   Dn1
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE   W12
+// 007   ----------------------------------------
+        BYTE                   En2
+        BYTE           N12     En1
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE           N12     Fn1
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+// 008   ----------------------------------------
+        BYTE                   Fs2
+        BYTE           N12     Fs1
+        BYTE   W24
+        BYTE                   En1
+        BYTE           N12     En2
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE           N12     Dn2
+        BYTE   W24
+// 009   ----------------------------------------
+        BYTE                   En1
+        BYTE           N12     En2
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE           N12     Dn2
+        BYTE   W24
+        BYTE                   Cs1
+        BYTE           N12     Cs2
+        BYTE   W24
+// 010   ----------------------------------------
+        BYTE                   Dn1
+        BYTE           N12     Dn2
+        BYTE   W24
+        BYTE                   Cs1
+        BYTE           N12     Cs2
+        BYTE   W24
+        BYTE           N06     Bn2
+        BYTE           N12     Bn0
+        BYTE           N12     Bn1
+        BYTE   W06
+        BYTE           N06     Gs2
+        BYTE   W06
+        BYTE                   An2
+        BYTE   W06
+        BYTE                   Bn2
+        BYTE   W06
+// 011   ----------------------------------------
+        BYTE           N12     Cs1
+        BYTE           N12     Cs2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE           N12     Bn0
+        BYTE   W24
+        BYTE                   An1
+        BYTE           N12     An0
+        BYTE   W24
+// 012   ----------------------------------------
+        BYTE                   Gs2
+        BYTE           N12     Gs1
+        BYTE   W24
+        BYTE           N48     Cs1
+        BYTE           N48     Cs2
+        BYTE   W48
+// 013   ----------------------------------------
+        BYTE           N12     Bn1
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE                   An1
+        BYTE           N12     An2
+        BYTE   W12
+        BYTE                   Gs1
+        BYTE           N12     Gs2
+        BYTE   W12
+        BYTE                   An1
+        BYTE           N12     An2
+        BYTE   W12
+        BYTE                   Bn1
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE                   Gs1
+        BYTE           N12     Gs2
+        BYTE   W12
+// 014   ----------------------------------------
+        BYTE                   En2
+        BYTE   W12
+        BYTE                   En2
+        BYTE   W12
+        BYTE                   En2
+        BYTE   W12
+        BYTE                   En2
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+// 015   ----------------------------------------
+        BYTE                   Cs2
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE           N12     Cs2
+        BYTE   W12
+// 016   ----------------------------------------
+        BYTE                   Cs2
+        BYTE   W12
+        BYTE                   Bn1
+        BYTE   W12
+        BYTE                   As1
+        BYTE   W12
+        BYTE                   Bn1
+        BYTE   W12
+        BYTE                   Cs2
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+// 017   ----------------------------------------
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE           N24     Bn2
+        BYTE   W24
+        BYTE                   As2
+        BYTE   W24
+// 018   ----------------------------------------
+        BYTE           N12     An2
+        BYTE   W24
+        BYTE           N24
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
+// 019   ----------------------------------------
+        BYTE           N12     Gn2
+        BYTE   W24
+        BYTE           N24
+        BYTE   W24
+        BYTE                   Fs2
+        BYTE   W24
+// 020   ----------------------------------------
+        BYTE           N12     Fn2
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+// 021   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Fs2
+        BYTE           N12     As2
+        BYTE   W24
+        BYTE           N24     Fs1
+        BYTE   W24
+        BYTE           N12     Dn2
+        BYTE           N12     Bn2
+        BYTE           N12     Gn2
+        BYTE   W12
+        BYTE                   Fn1
+        BYTE   W12
+// 022   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Fs2
+        BYTE           N12     As2
+        BYTE   W24
+        BYTE           N24     Fs1
+        BYTE   W24
+        BYTE           N12     Bn2
+        BYTE           N12     Gn2
+        BYTE           N12     Dn2
+        BYTE   W12
+        BYTE                   Fn1
+        BYTE   W12
+// 023   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Fs2
+        BYTE           N12     As2
+        BYTE   W48
+        BYTE                   Fs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+// 024   ----------------------------------------
+Pride_and_Arrogance_0_24:
+        BYTE           N12     Fs2   v126
+        BYTE           N12     Fs1
+        BYTE   W48
+        BYTE                   Fs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE   PEND
+// 025   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_0_24
+// 026   ----------------------------------------
+        BYTE           N12     Gn2   v126
+        BYTE           N12     Gn1
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE           N12     Gn1
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE           N12     Gn1
+        BYTE   W24
+// 027   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Fs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Cs2
+        BYTE           N12     Fs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+// 028   ----------------------------------------
+        BYTE                   Fs2
+        BYTE           N12     Cs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Cs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+// 029   ----------------------------------------
+        BYTE                   En2
+        BYTE           N12     Bn1
+        BYTE           N12     Gn1
+        BYTE   W12
+        BYTE                   Gn1
+        BYTE   W12
+        BYTE                   Gn1
+        BYTE   W12
+        BYTE                   Gn1
+        BYTE   W12
+        BYTE                   En2
+        BYTE           N12     Bn1
+        BYTE           N12     Gn1
+        BYTE   W12
+        BYTE                   Gn1
+        BYTE   W12
+// 030   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Gs1
+        BYTE           N12     Cs1
+        BYTE   W12
+        BYTE                   Cs1
+        BYTE   W12
+        BYTE                   As1
+        BYTE           N12     Ds2
+        BYTE           N12     Ds1
+        BYTE   W12
+        BYTE                   Ds1
+        BYTE   W12
+        BYTE                   Fn1
+        BYTE           N12     Fn2
+        BYTE           N12     Cs2
+        BYTE   W12
+        BYTE                   Fn1
+        BYTE   W12
+// 031   ----------------------------------------
+        BYTE   W12
+        BYTE           N06     An2
+        BYTE   W06
+        BYTE                   Gs2
+        BYTE   W06
+        BYTE                   Fs2
+        BYTE   W06
+        BYTE                   Cs2
+        BYTE   W06
+        BYTE                   An2
+        BYTE           N06     An1
+        BYTE   W06
+        BYTE                   Gs2
+        BYTE           N06     Gs1
+        BYTE   W06
+        BYTE                   Fs2
+        BYTE           N06     Fs1
+        BYTE   W06
+        BYTE                   Cs2
+        BYTE           N06     Cs1
+        BYTE   W06
+        BYTE                   An1
+        BYTE           N06     An0
+        BYTE   W06
+        BYTE                   Gs1
+        BYTE           N06     Gs0
+        BYTE   W06
+// 032   ----------------------------------------
+        BYTE   GoTo
+         POIN2  Pride_and_Arrogance_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
+
+Pride_and_Arrogance_1:
+        BYTE   KEYSH   Pride_and_Arrogance_key+0
+// 000   ----------------------------------------
+Pride_and_Arrogance_1_LOOP:
+        BYTE           VOICE   85
+        BYTE           VOL     60
+        BYTE           PAN     c_v-50
+        BYTE           N12     Fs4   v100
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Cs4
+        BYTE   W12
+        BYTE                   Cn4
+        BYTE   W12
+        BYTE                   Cs4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Cs4
+        BYTE   W12
+// 001   ----------------------------------------
+Pride_and_Arrogance_1_1:
+        BYTE           N12     Bn3   v100
+        BYTE   W12
+        BYTE                   An3
+        BYTE   W12
+        BYTE                   Gs3
+        BYTE   W12
+        BYTE                   An3
+        BYTE   W12
+        BYTE                   Bn3
+        BYTE   W12
+        BYTE                   Fn3
+        BYTE   W12
+        BYTE   PEND
+// 002   ----------------------------------------
+Pride_and_Arrogance_1_2:
+        BYTE           N06     Fs3   v100
+        BYTE   W06
+        BYTE                   Fs4
+        BYTE   W06
+        BYTE                   En4
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   En3
+        BYTE   W06
+        BYTE                   Dn3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE   PEND
+// 003   ----------------------------------------
+Pride_and_Arrogance_1_3:
+        BYTE   W24
+        BYTE           N06     Cs3   v100
+        BYTE   W12
+        BYTE                   Cs3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE   PEND
+// 004   ----------------------------------------
+Pride_and_Arrogance_1_4:
+        BYTE           N06     Fs3   v100
+        BYTE           N72     Dn4
+        BYTE   W06
+        BYTE           N06     Cs3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Fn3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE   PEND
+// 005   ----------------------------------------
+Pride_and_Arrogance_1_5:
+        BYTE           N06     Fs3   v100
+        BYTE           N72     Cs4
+        BYTE   W06
+        BYTE           N06     Cs3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Fn3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE   PEND
+// 006   ----------------------------------------
+Pride_and_Arrogance_1_6:
+        BYTE           N06     Fs3   v100
+        BYTE           N72     Cn4
+        BYTE   W06
+        BYTE           N06     Cs3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Fn3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W06
+        BYTE   PEND
+// 007   ----------------------------------------
+Pride_and_Arrogance_1_7:
+        BYTE           N12     En3   v100
+        BYTE           N12     En4
+        BYTE   W12
+        BYTE           N06
+        BYTE           N12     Cs3
+        BYTE   W06
+        BYTE           N06     Dn4
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE           N12     Fn3
+        BYTE           N24     Fn4
+        BYTE   W12
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE   PEND
+// 008   ----------------------------------------
+Pride_and_Arrogance_1_8:
+        BYTE           N12     Fs3   v100
+        BYTE           N12     An3
+        BYTE           N24     Fs4
+        BYTE   W12
+        BYTE           N12     Fs3
+        BYTE           N12     An3
+        BYTE   W12
+        BYTE                   En3
+        BYTE           N12     Gs3
+        BYTE   W12
+        BYTE                   En3
+        BYTE           N12     Gs3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE           N06     En3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE   PEND
+// 009   ----------------------------------------
+Pride_and_Arrogance_1_9:
+        BYTE           N12     En3   v100
+        BYTE           N12     Gs3
+        BYTE   W12
+        BYTE                   En3
+        BYTE           N12     Gs3
+        BYTE   W12
+        BYTE                   Gs3
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE                   Gs3
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE                   An3
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE           N06     Dn3
+        BYTE   W06
+        BYTE                   En3
+        BYTE   W06
+        BYTE   PEND
+// 010   ----------------------------------------
+Pride_and_Arrogance_1_10:
+        BYTE           N12     An3   v100
+        BYTE           N12     Fs3
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE                   An3
+        BYTE           N12     Fs3
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE                   An3
+        BYTE           N12     Fs3
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   An3
+        BYTE           N12     Fs3
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE           N06     An3
+        BYTE           N06     Fs3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE           N06     An3
+        BYTE   W12
+        BYTE   PEND
+// 011   ----------------------------------------
+Pride_and_Arrogance_1_11:
+        BYTE           N12     Cs4   v100
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Dn3
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Bn3
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Cs3
+        BYTE   W12
+        BYTE                   An3
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE                   Cs3
+        BYTE   W12
+        BYTE   PEND
+// 012   ----------------------------------------
+Pride_and_Arrogance_1_12:
+        BYTE           N12     Gs3   v100
+        BYTE           N12     Cs4
+        BYTE   W12
+        BYTE           N04     Bn3
+        BYTE   W04
+        BYTE                   Cs4
+        BYTE   W04
+        BYTE                   Dn4
+        BYTE   W04
+        BYTE           N12     Cs4
+        BYTE   W12
+        BYTE                   Bn3
+        BYTE   W12
+        BYTE           N06     An3
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   En4
+        BYTE   W06
+        BYTE   PEND
+// 013   ----------------------------------------
+Pride_and_Arrogance_1_13:
+        BYTE           N24     Gs4   v100
+        BYTE           N24     Gs3
+        BYTE   W24
+        BYTE           N48     Fs4
+        BYTE           N48     Fs3
+        BYTE   W48
+        BYTE   PEND
+// 014   ----------------------------------------
+Pride_and_Arrogance_1_14:
+        BYTE           N24     An3   v100
+        BYTE           N24     En4
+        BYTE           N12     En3
+        BYTE   W12
+        BYTE                   En3
+        BYTE   W12
+        BYTE           N24     En4
+        BYTE           N24     An3
+        BYTE           N12     En3
+        BYTE   W12
+        BYTE                   En3
+        BYTE   W12
+        BYTE           N24     Dn4
+        BYTE           N24     Bn3
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE                   Dn3
+        BYTE   W12
+        BYTE   PEND
+// 015   ----------------------------------------
+Pride_and_Arrogance_1_15:
+        BYTE           N12     Cs4   v100
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE           N12     Fs4
+        BYTE   W12
+        BYTE                   En4
+        BYTE   W12
+        BYTE                   Fs4
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE   W12
+        BYTE                   Gn4
+        BYTE           N12     Fs4
+        BYTE   W12
+        BYTE   PEND
+// 016   ----------------------------------------
+Pride_and_Arrogance_1_16:
+        BYTE           N12     En4   v100
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE   W12
+        BYTE                   Cs4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE   W12
+        BYTE                   En4
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE   W12
+        BYTE   PEND
+// 017   ----------------------------------------
+Pride_and_Arrogance_1_17:
+        BYTE           N12     Dn4   v100
+        BYTE   W12
+        BYTE           N24     Gn4
+        BYTE   W24
+        BYTE           N12     Fs4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W12
+        BYTE           N06     Ds4
+        BYTE   W06
+        BYTE                   Fn4
+        BYTE   W06
+        BYTE   PEND
+// 018   ----------------------------------------
+Pride_and_Arrogance_1_18:
+        BYTE           N12     Fs4   v100
+        BYTE   W12
+        BYTE           N24
+        BYTE   W24
+        BYTE           N12
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W12
+        BYTE           N06     Ds4
+        BYTE   W06
+        BYTE                   Fn4
+        BYTE   W06
+        BYTE   PEND
+// 019   ----------------------------------------
+Pride_and_Arrogance_1_19:
+        BYTE           N12     En4   v100
+        BYTE   W12
+        BYTE           N24
+        BYTE   W24
+        BYTE           N12     Dn4
+        BYTE   W12
+        BYTE                   Cs4
+        BYTE   W12
+        BYTE           N06     Bn3
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE   PEND
+// 020   ----------------------------------------
+Pride_and_Arrogance_1_20:
+        BYTE           N12     Dn4   v100
+        BYTE           N12     Bn3
+        BYTE           N12     Gs3
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Bn3
+        BYTE           N12     Gs3
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Bn3
+        BYTE           N12     Gs3
+        BYTE   W12
+        BYTE                   Bn3
+        BYTE           N12     Gs3
+        BYTE   W12
+        BYTE                   Bn3
+        BYTE           N12     Gs3
+        BYTE           N12     Cs4
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Bn3
+        BYTE           N12     Gs3
+        BYTE   W12
+        BYTE   PEND
+// 021   ----------------------------------------
+Pride_and_Arrogance_1_21:
+        BYTE           N12     Fs3   v100
+        BYTE           N12     As3
+        BYTE           N12     Cs4
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE           N12     As3
+        BYTE           N12     Cs4
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE           N12     As3
+        BYTE           N12     Cs4
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE           N12     As3
+        BYTE           N12     Cs4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Bn3
+        BYTE           N12     Gs3
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Bn3
+        BYTE           N12     Gs3
+        BYTE   W12
+        BYTE   PEND
+// 022   ----------------------------------------
+Pride_and_Arrogance_1_22:
+        BYTE           N12     Fs3   v100
+        BYTE           N12     As3
+        BYTE           N12     Cs4
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE           N12     As3
+        BYTE           N12     Cs4
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE           N12     As3
+        BYTE           N12     Cs4
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE           N12     As3
+        BYTE           N12     Cs4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Bn3
+        BYTE           N12     Gn3
+        BYTE           N12     Dn3
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Bn3
+        BYTE           N12     Gn3
+        BYTE   W12
+        BYTE   PEND
+// 023   ----------------------------------------
+Pride_and_Arrogance_1_23:
+        BYTE           N06     Fs3   v100
+        BYTE           N12     Cs3
+        BYTE   W06
+        BYTE           N06     Fs3
+        BYTE   W06
+        BYTE                   Gn3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Fn3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Gn3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   As3
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   En4
+        BYTE   W06
+        BYTE   PEND
+// 024   ----------------------------------------
+Pride_and_Arrogance_1_24:
+        BYTE           N06     Dn4   v100
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   En4
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   En4
+        BYTE   W06
+        BYTE                   Fs4
+        BYTE   W06
+        BYTE                   Gs4
+        BYTE   W06
+        BYTE                   As4
+        BYTE   W06
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE   PEND
+// 025   ----------------------------------------
+Pride_and_Arrogance_1_25:
+        BYTE           N06     As4   v100
+        BYTE   W06
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE                   Cs5
+        BYTE   W06
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE                   As4
+        BYTE   W06
+        BYTE                   Bn4
+        BYTE   W06
+        BYTE                   As4
+        BYTE   W06
+        BYTE                   Fs4
+        BYTE   W06
+        BYTE                   Gn4
+        BYTE   W06
+        BYTE                   Fs4
+        BYTE   W06
+        BYTE                   En4
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE   PEND
+// 026   ----------------------------------------
+Pride_and_Arrogance_1_26:
+        BYTE           N06     Cs4   v100
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   As3
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   As3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Gn3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   En3
+        BYTE   W06
+        BYTE                   Gn3
+        BYTE   W06
+        BYTE   PEND
+// 027   ----------------------------------------
+Pride_and_Arrogance_1_27:
+        BYTE           N06     Fs3   v100
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Gn3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Fn3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   As3
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   En4
+        BYTE   W06
+        BYTE   PEND
+// 028   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_24
+// 029   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_25
+// 030   ----------------------------------------
+Pride_and_Arrogance_1_30:
+        BYTE           N06     Cs4   v100
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Bn3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Fn3
+        BYTE   W06
+        BYTE   PEND
+// 031   ----------------------------------------
+Pride_and_Arrogance_1_31:
+        BYTE           N06     Fs4   v100
+        BYTE           N06     Fs3
+        BYTE   W06
+        BYTE                   Cs4
+        BYTE           N06     Cs3
+        BYTE   W06
+        BYTE                   An3
+        BYTE   W06
+        BYTE                   Gs3
+        BYTE   W06
+        BYTE                   Fs3
+        BYTE   W06
+        BYTE                   Cs3
+        BYTE   W42
+        BYTE   PEND
+// 032   ----------------------------------------
+        BYTE   GoTo
+         POIN2  Pride_and_Arrogance_1_LOOP
+        BYTE   FINE
+
+//****************** Track 2 (Midi-Chn.2) ******************//
+
+Pride_and_Arrogance_2:
+        BYTE   KEYSH   Pride_and_Arrogance_key+0
+// 000   ----------------------------------------
+Pride_and_Arrogance_2_LOOP:
+        BYTE           VOICE   20
+        BYTE           VOL     58
+        BYTE           PAN     c_v+23
+        BYTE           N12     Fs1   v100
+        BYTE           N12     Fs2
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE           N12     Fs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Cs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Cs2
+        BYTE   W12
+        BYTE                   Cs1
+        BYTE           N12     Cs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Cs2
+        BYTE   W12
+// 001   ----------------------------------------
+        BYTE                   Bn0
+        BYTE           N12     Bn1
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Dn2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Dn2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Dn2
+        BYTE   W12
+        BYTE                   Gs1
+        BYTE           N12     An0
+        BYTE   W12
+        BYTE                   Cs2
+        BYTE           N12     Fn2
+        BYTE   W12
+// 002   ----------------------------------------
+        BYTE           N06     An0
+        BYTE           N06     An1
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N06     Cs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N06     Cs2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N06     Cs2
+        BYTE   W12
+        BYTE                   An0
+        BYTE           N06     An1
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N06     Cs2
+        BYTE   W12
+// 003   ----------------------------------------
+        BYTE                   An2
+        BYTE           N06     Bn1
+        BYTE           N06     Bn0
+        BYTE   W06
+        BYTE                   Fs2
+        BYTE   W06
+        BYTE                   An2
+        BYTE           N06     Dn2
+        BYTE   W06
+        BYTE                   Fs2
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE           N06     Dn2
+        BYTE   W06
+        BYTE                   An2
+        BYTE   W06
+        BYTE                   Fs2
+        BYTE           N06     Dn2
+        BYTE           N06     Gs2
+        BYTE   W06
+        BYTE                   An2
+        BYTE   W06
+        BYTE                   Fs1
+        BYTE           N06     Fs2
+        BYTE   W12
+        BYTE                   An2
+        BYTE           N06     Fs2
+        BYTE   W12
+// 004   ----------------------------------------
+        BYTE           N12     Dn2
+        BYTE           N12     Dn1
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE   W12
+// 005   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Cs1
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE   W12
+// 006   ----------------------------------------
+        BYTE                   Bn0
+        BYTE   W12
+        BYTE                   Bn1
+        BYTE   W12
+        BYTE                   Dn1
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE   W12
+// 007   ----------------------------------------
+        BYTE                   En2
+        BYTE           N12     En1
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE   W12
+        BYTE                   An2
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE           N12     Fn1
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+// 008   ----------------------------------------
+        BYTE                   Fs2
+        BYTE           N12     Fs1
+        BYTE   W24
+        BYTE                   En1
+        BYTE           N12     En2
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE           N12     Dn2
+        BYTE   W24
+// 009   ----------------------------------------
+        BYTE                   En1
+        BYTE           N12     En2
+        BYTE   W24
+        BYTE                   Dn1
+        BYTE           N12     Dn2
+        BYTE   W24
+        BYTE                   Cs1
+        BYTE           N12     Cs2
+        BYTE   W24
+// 010   ----------------------------------------
+        BYTE                   Dn1
+        BYTE           N12     Dn2
+        BYTE   W24
+        BYTE                   Cs1
+        BYTE           N12     Cs2
+        BYTE   W24
+        BYTE           N06     Bn2
+        BYTE           N12     Bn0
+        BYTE           N12     Bn1
+        BYTE   W06
+        BYTE           N06     Gs2
+        BYTE   W06
+        BYTE                   An2
+        BYTE   W06
+        BYTE                   Bn2
+        BYTE   W06
+// 011   ----------------------------------------
+        BYTE           N12     Cs1
+        BYTE           N12     Cs2
+        BYTE   W24
+        BYTE                   Bn1
+        BYTE           N12     Bn0
+        BYTE   W24
+        BYTE                   An1
+        BYTE           N12     An0
+        BYTE   W24
+// 012   ----------------------------------------
+        BYTE                   Gs2
+        BYTE           N12     Gs1
+        BYTE   W24
+        BYTE           N48     Cs1
+        BYTE           N48     Cs2
+        BYTE   W48
+// 013   ----------------------------------------
+        BYTE           N12     Bn1
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE                   An1
+        BYTE           N12     An2
+        BYTE   W12
+        BYTE                   Gs1
+        BYTE           N12     Gs2
+        BYTE   W12
+        BYTE                   An1
+        BYTE           N12     An2
+        BYTE   W12
+        BYTE                   Bn1
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE                   Gs1
+        BYTE           N12     Gs2
+        BYTE   W12
+// 014   ----------------------------------------
+        BYTE                   En2
+        BYTE   W12
+        BYTE                   En2
+        BYTE   W12
+        BYTE                   En2
+        BYTE   W12
+        BYTE                   En2
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+// 015   ----------------------------------------
+        BYTE                   Cs2
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE   W12
+        BYTE                   Dn2
+        BYTE           N12     Cs2
+        BYTE   W12
+// 016   ----------------------------------------
+        BYTE                   Cs2
+        BYTE   W12
+        BYTE                   Bn1
+        BYTE   W12
+        BYTE                   As1
+        BYTE   W12
+        BYTE                   Bn1
+        BYTE   W12
+        BYTE                   Cs2
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+// 017   ----------------------------------------
+        BYTE                   Bn1
+        BYTE   W24
+        BYTE           N24     Bn2
+        BYTE   W24
+        BYTE                   As2
+        BYTE   W24
+// 018   ----------------------------------------
+        BYTE           N12     An2
+        BYTE   W24
+        BYTE           N24
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
+// 019   ----------------------------------------
+        BYTE           N12     Gn2
+        BYTE   W24
+        BYTE           N24
+        BYTE   W24
+        BYTE                   Fs2
+        BYTE   W24
+// 020   ----------------------------------------
+        BYTE           N12     Fn2
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE                   Fn2
+        BYTE   W12
+// 021   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Fs2
+        BYTE           N12     As2
+        BYTE   W24
+        BYTE           N24     Fs1
+        BYTE   W24
+        BYTE           N12     Dn2
+        BYTE           N12     Bn2
+        BYTE           N12     Gn2
+        BYTE   W12
+        BYTE                   Fn1
+        BYTE   W12
+// 022   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Fs2
+        BYTE           N12     As2
+        BYTE   W24
+        BYTE           N24     Fs1
+        BYTE   W24
+        BYTE           N12     Bn2
+        BYTE           N12     Gn2
+        BYTE           N12     Dn2
+        BYTE   W12
+        BYTE                   Fn1
+        BYTE   W12
+// 023   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Fs2
+        BYTE           N12     As2
+        BYTE   W48
+        BYTE                   Fs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+// 024   ----------------------------------------
+Pride_and_Arrogance_2_24:
+        BYTE           N12     Fs2   v100
+        BYTE           N12     Fs1
+        BYTE   W48
+        BYTE                   Fs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE   PEND
+// 025   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_2_24
+// 026   ----------------------------------------
+        BYTE           N12     Gn2   v100
+        BYTE           N12     Gn1
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE           N12     Gn1
+        BYTE   W24
+        BYTE                   Gn2
+        BYTE           N12     Gn1
+        BYTE   W24
+// 027   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Fs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Cs2
+        BYTE           N12     Fs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+// 028   ----------------------------------------
+        BYTE                   Fs2
+        BYTE           N12     Cs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE           N12     Cs2
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+// 029   ----------------------------------------
+        BYTE                   En2
+        BYTE           N12     Bn1
+        BYTE           N12     Gn1
+        BYTE   W12
+        BYTE                   Gn1
+        BYTE   W12
+        BYTE                   Gn1
+        BYTE   W12
+        BYTE                   Gn1
+        BYTE   W12
+        BYTE                   En2
+        BYTE           N12     Bn1
+        BYTE           N12     Gn1
+        BYTE   W12
+        BYTE                   Gn1
+        BYTE   W12
+// 030   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N12     Gs1
+        BYTE           N12     Cs1
+        BYTE   W12
+        BYTE                   Cs1
+        BYTE   W12
+        BYTE                   As1
+        BYTE           N12     Ds2
+        BYTE           N12     Ds1
+        BYTE   W12
+        BYTE                   Ds1
+        BYTE   W12
+        BYTE                   Fn1
+        BYTE           N12     Fn2
+        BYTE           N12     Cs2
+        BYTE   W12
+        BYTE                   Fn1
+        BYTE   W12
+// 031   ----------------------------------------
+        BYTE   W12
+        BYTE           N06     An2
+        BYTE   W06
+        BYTE                   Gs2
+        BYTE   W06
+        BYTE                   Fs2
+        BYTE   W06
+        BYTE                   Cs2
+        BYTE   W06
+        BYTE                   An2
+        BYTE           N06     An1
+        BYTE   W06
+        BYTE                   Gs2
+        BYTE           N06     Gs1
+        BYTE   W06
+        BYTE                   Fs2
+        BYTE           N06     Fs1
+        BYTE   W06
+        BYTE                   Cs2
+        BYTE           N06     Cs1
+        BYTE   W06
+        BYTE                   An1
+        BYTE           N06     An0
+        BYTE   W06
+        BYTE                   Gs1
+        BYTE           N06     Gs0
+        BYTE   W06
+// 032   ----------------------------------------
+        BYTE   GoTo
+         POIN2  Pride_and_Arrogance_2_LOOP
+        BYTE   FINE
+
+//****************** Track 3 (Midi-Chn.3) ******************//
+
+Pride_and_Arrogance_3:
+        BYTE   KEYSH   Pride_and_Arrogance_key+0
+// 000   ----------------------------------------
+Pride_and_Arrogance_3_LOOP:
+        BYTE           VOICE   19
+        BYTE           VOL     42
+        BYTE           PAN     c_v+55
+        BYTE           N12     Fs4   v100
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Cs4
+        BYTE   W12
+        BYTE                   Cn4
+        BYTE   W12
+        BYTE                   Cs4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE   W12
+        BYTE                   Dn4
+        BYTE           N12     Cs4
+        BYTE   W12
+// 001   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_1
+// 002   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_2
+// 003   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_3
+// 004   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_4
+// 005   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_5
+// 006   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_6
+// 007   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_7
+// 008   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_8
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_9
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_10
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_11
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_12
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_13
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_14
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_15
+// 016   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_16
+// 017   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_17
+// 018   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_18
+// 019   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_19
+// 020   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_20
+// 021   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_21
+// 022   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_22
+// 023   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_23
+// 024   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_24
+// 025   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_25
+// 026   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_26
+// 027   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_27
+// 028   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_24
+// 029   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_25
+// 030   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_30
+// 031   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_1_31
+// 032   ----------------------------------------
+        BYTE   GoTo
+         POIN2  Pride_and_Arrogance_3_LOOP
+        BYTE   FINE
+
+//****************** Track 4 (Midi-Chn.4) ******************//
+
+Pride_and_Arrogance_4:
+        BYTE   KEYSH   Pride_and_Arrogance_key+0
+// 000   ----------------------------------------
+Pride_and_Arrogance_4_LOOP:
+        BYTE           VOICE   47
+        BYTE           N24     Cs3   v105
+        BYTE           VOL     84
+        BYTE   W48
+        BYTE           N24     As2
+        BYTE   W24
+// 001   ----------------------------------------
+        BYTE                   Gn2
+        BYTE   W48
+        BYTE                   En2
+        BYTE   W24
+// 002   ----------------------------------------
+        BYTE                   En2
+        BYTE   W48
+        BYTE                   En2
+        BYTE   W24
+// 003   ----------------------------------------
+        BYTE                   Gn2
+        BYTE   W24
+        BYTE                   An2
+        BYTE   W24
+        BYTE                   Cn3
+        BYTE   W24
+// 004   ----------------------------------------
+        BYTE                   An2
+        BYTE   W72
+// 005   ----------------------------------------
+        BYTE                   Gn2
+        BYTE   W72
+// 006   ----------------------------------------
+        BYTE                   En2
+        BYTE   W72
+// 007   ----------------------------------------
+Pride_and_Arrogance_4_7:
+        BYTE           N24     Gn2   v105
+        BYTE   W48
+        BYTE                   As2
+        BYTE   W24
+        BYTE   PEND
+// 008   ----------------------------------------
+        BYTE                   Cs3
+        BYTE   W24
+        BYTE                   Bn2
+        BYTE   W24
+        BYTE                   An2
+        BYTE   W24
+// 009   ----------------------------------------
+        BYTE                   Bn2
+        BYTE   W24
+        BYTE                   An2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
+// 010   ----------------------------------------
+        BYTE                   An2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
+        BYTE                   Fs2
+        BYTE   W24
+// 011   ----------------------------------------
+        BYTE                   Gs2
+        BYTE   W24
+        BYTE                   Fs2
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+// 012   ----------------------------------------
+        BYTE                   Ds2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
+        BYTE                   Cn3
+        BYTE   W24
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_4_7
+// 014   ----------------------------------------
+        BYTE           N24     En2   v105
+        BYTE   W48
+        BYTE                   Fs2
+        BYTE   W24
+// 015   ----------------------------------------
+        BYTE                   An2
+        BYTE   W72
+// 016   ----------------------------------------
+        BYTE                   As2
+        BYTE   W72
+// 017   ----------------------------------------
+        BYTE                   As2
+        BYTE   W72
+// 018   ----------------------------------------
+        BYTE                   An2
+        BYTE   W72
+// 019   ----------------------------------------
+        BYTE                   Gs2
+        BYTE   W72
+// 020   ----------------------------------------
+        BYTE                   As2
+        BYTE   W48
+        BYTE                   Cs3
+        BYTE   W24
+// 021   ----------------------------------------
+Pride_and_Arrogance_4_21:
+        BYTE           N24     Cn3   v105
+        BYTE   W48
+        BYTE                   Cs3
+        BYTE   W24
+        BYTE   PEND
+// 022   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_4_21
+// 023   ----------------------------------------
+        BYTE           N24     Cn3   v105
+        BYTE   W48
+        BYTE           N12     Fs2
+        BYTE   W24
+// 024   ----------------------------------------
+Pride_and_Arrogance_4_24:
+        BYTE           N24     Fs2   v105
+        BYTE   W48
+        BYTE           N12
+        BYTE   W24
+        BYTE   PEND
+// 025   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_4_24
+// 026   ----------------------------------------
+        BYTE           N24     Gs2   v105
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
+        BYTE                   Gs2
+        BYTE   W24
+// 027   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_4_24
+// 028   ----------------------------------------
+        BYTE   PATT
+         POIN2  Pride_and_Arrogance_4_24
+// 029   ----------------------------------------
+        BYTE           N24     En2   v105
+        BYTE   W48
+        BYTE           N12
+        BYTE   W24
+// 030   ----------------------------------------
+        BYTE           N24     Fs2
+        BYTE   W24
+        BYTE                   As2
+        BYTE   W24
+        BYTE                   Cn3
+        BYTE   W24
+// 031   ----------------------------------------
+        BYTE                   Cs3
+        BYTE   W72
+// 032   ----------------------------------------
+        BYTE   GoTo
+         POIN2  Pride_and_Arrogance_4_LOOP
+        BYTE   FINE
+
+
+//********************** End of Song ***********************//
+
+        ALIGN 4
+Pride_and_Arrogance:
+        BYTE   5                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   Pride_and_Arrogance_pri // Priority
+        BYTE   Pride_and_Arrogance_rev // Reverb
+
+        POIN2   Pride_and_Arrogance_grp
+
+        POIN2   Pride_and_Arrogance_0
+        POIN2   Pride_and_Arrogance_1
+        POIN2   Pride_and_Arrogance_2
+        POIN2   Pride_and_Arrogance_3
+        POIN2   Pride_and_Arrogance_4
+
+        

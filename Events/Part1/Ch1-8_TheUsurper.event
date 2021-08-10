@@ -158,7 +158,7 @@ Ch1_8_BeginningScene:
 	BEQ 0x801C 0xC 0x0
 		CALL CelicaZofiaCastleEvent //celica castle stuff
 	LABEL 0x801C
-	MUSC 0x2E
+	MUSC SongID_SolveTheRiddle
 	LOAD3 0x0 Ch1_8_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	LOAD1 0x1 Bosses
@@ -178,7 +178,7 @@ Ch1_8_BeginningScene:
 	TEXTEND
 	REMA
 	ClearBackgroundSmooth
-	MUSC 0x45
+	MUSC SongID_ImportantBattle
 	CAM1 Alm
 	STAL 0x20
 	LOAD1 0x1 BerkutRinea
@@ -189,7 +189,7 @@ Ch1_8_BeginningScene:
 	CAM1 [12,5]
 	STAL 0x20
 	FlashCursor(Desaix, 60)
-	MUSC 0x16
+	MUSC SongID_PrinceOfDarkness
 	Text(Ch1_8_OpeningScene_Berkut)
 	MOVE 0x08 BerkutPaladin [5,11]
 	MOVE 0x08 FernandEnemy1 [5,11]
@@ -206,7 +206,7 @@ Ch1_8_BeginningScene:
 	ENDA
 
 DesaixTalk:
-	MUSC 0x09
+	MUSC SongID_MarchToDeliverance
 	MUSI
 	CAM1 Desaix
 	STAL 0x08
@@ -239,7 +239,7 @@ Ch1_8_EndingScene:
 	ENUN
 	CAM1 BerkutPaladin
 	FlashCursor(BerkutPaladin, 60)
-	MUSCSLOW 0x16
+	MUSCSLOW SongID_PrinceOfDarkness
 	Text(Ch1_8_BerkutFernandLeave)
 	MOVE 0x08 BerkutPaladin [15,0]
 	MOVE 0x08 FernandEnemy1 [16,0]
@@ -247,7 +247,7 @@ Ch1_8_EndingScene:
 	DISA FernandEnemy1
 	DISA BerkutPaladin
 	STAL 60
-	MUSCSLOW 0x31
+	MUSCSLOW SongID_Victory
 	STAL 60
 	SetBackground(0x15)
 	STAL 0x08
@@ -264,7 +264,7 @@ Ch1_8_EndingScene:
 		FADI 2
 	LABEL 0x4
 
-	MUSC 0x3B //ZofiaCastle
+	MUSC SongID_CastleTheme
 	STAL 60
 	SetBackground(Castle_Hall)
 	Text(Ch1_8_PostBattle_2)
@@ -283,7 +283,7 @@ Ch1_8_EndingScene:
 	TEXTSTART
 	TEXTSHOW Ch1_8_OldMan
 	TEXTEND
-	MUSC 0x7FFF
+	MUSC SongID_Silence
 	TEXTCONT
 	TEXTEND
 	REMA
@@ -297,17 +297,17 @@ Ch1_8_EndingScene:
 	STAL 60
 	TEXTCONT
 	TEXTEND
-	MUSC 0x2B //legacy
+	MUSC SongID_Legacy
 	TEXTCONT
 	TEXTEND
-	MUSC 0x95 //crowd cheering
+	MUSC SongID_Env_CrowdCheer
 	TEXTCONT
 	TEXTEND
 	REMA
 	REMOVEPORTRAITS
 
-	MUSCMID 0x7FFF //stop sound effect
-	MUSC 0x3B //ZofiaCastle
+	MUSCMID SongID_Silence
+	MUSC SongID_CastleTheme
 
 	STAL 60
 
@@ -389,7 +389,7 @@ CelicaZofiaCastleEvent:
 		//LOMA chapterID will load the map associated with the given chapter and sets the camera given the position in sB
 		SVAL 0xB Coords(12, 9)
 		LOMA 0x0
-		MUSC 0x24
+		MUSC SongID_Advance
 		SetBackground(0x15) //castle outside
 		Text(Ch2_CelicaVisitsRamVillage)
 		REMA
@@ -406,7 +406,7 @@ CelicaZofiaCastleEvent:
 		Text(Ch2_CelicaVisitsRamVillage_AfterLOMA)
 		STAL 20
 		FADI 5
-		MUSC 0x30 //recruit theme
+		MUSC SongID_Recruitment
 
 		SVAL 0x1 0x1
 		CHECK_EVENTID gKliffRecruited
@@ -438,14 +438,14 @@ CelicaZofiaCastleEvent:
 
 	//label for "both recruited" here
 	LABEL 0x7
-	MUSC 0x7FFF
+	MUSC SongID_Silence
 	CAM1 [16,18]
 	FADU 5
 	LOAD2 0x0 CutsceneUnits_CelicaCastle
 	ENUN
 	CAM1 Celica
 	BROWNBOXTEXT Loc_ZofiaCastle [8,8]
-	MUSC 0x3B //ZofiaCastle
+	MUSC SongID_CastleTheme
 	STAL 20
 
 	//Show mae/boey/celica walking on the map, with Saber slightly behind.
@@ -461,19 +461,19 @@ CelicaZofiaCastleEvent:
 	MUNO
 	FADI 2
 
-	MUSC 0x7FFF
+	MUSC SongID_Silence
 	STAL 20
 	SetBackground(Castle_Room)
 	TEXTSTART
 	TEXTSHOW Ch2_Epilogue3 //mycen
 	TEXTEND
-		MUSC 0x2B
+		MUSC SongID_Legacy
 	TEXTCONT
 	TEXTEND
 	REMA
 	FADI 5
 
-	MUSC 0x2F //happy reunion music
+	MUSC SongID_Unity
 	SetBackground(Castle_Hall)
 	TEXTSTART
 	TEXTSHOW Ch2_Epilogue4 //alm and celica reunite
@@ -481,13 +481,13 @@ CelicaZofiaCastleEvent:
 		FADI 3
 		STAL 60
 		FADU 5
-		MUSC 0x3B //zofia castle
+		MUSC SongID_CastleTheme
 	TEXTCONT
 	TEXTEND
-		MUSC 0x7FFF
+		MUSC SongID_Silence
 	TEXTCONT
 	TEXTEND
-		MUSC 0x8 //truth
+		MUSC SongID_Truth
 	TEXTCONT
 	TEXTEND
 	REMA
@@ -508,7 +508,7 @@ CelicaZofiaCastleEvent:
 	FADI 5
 
 	EVBIT_MODIFY 0x4
-	MUSC 0x8 //truth
+	MUSC SongID_Truth
 	STAL 30
 	FADU 16
 	CenterTutorialTextBox
