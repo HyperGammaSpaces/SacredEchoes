@@ -31,10 +31,10 @@ Specifically:
 - Units learn spells at particular levels rather than spells existing as inventory items
   - Invoke can be used to summon multiple units onto the field.
   - Warp/Rescue use their GBAFE ranges. (Mag/2)
-  - Expel has been buffed to 100% accuracy but only affects monster classes. It will destroy enemies in Mag/2 range which are of a Monster class type.
+  - Expel has been buffed to 100% accuracy but only affects monster classes. It will hit all enemies in Mag/2 range which are of a Monster class type, and reduce them to 1 HP.
   - Promoted magic units will learn their whole unpromoted spell list. (This is why Mage/Cleric promotion levels are so high)
 - A (mostly) working world map that you can explore, with two lords you can alternate between after a certain point in the story.
-- Lion Heads/Sacred Springs which can be visited in the repeatable maps to gain statboosts, experience, and (coming soon) even revive dead units...
+- Lion Heads/Sacred Springs which can be visited in the repeatable maps to gain statboosts, experience, and even revive dead units...
 
 Optional QOL fixes to GBAFE are included:
 
@@ -178,9 +178,9 @@ Spell lists are largely the same as SoV.
   - Lv5 (Sage) Silence
 - Sonya (Mage)
   - Lv1 Fire
-  - Lv1 Thunder
   - Lv1 Excalibur
-  - Lv1 (Priestess) Heal
+  - Lv10 Mire
+  - Lv1 (Priestess) Selene
   - Lv5 (Priestess) Rewarp
   - Lv10 (Priestess) Entrap
 - Sonya (Cleric)
@@ -203,7 +203,7 @@ Spell lists are largely the same as SoV.
 
 This hack does not make use of the skill system, but there are some skills which carry over from Echoes.
 
-- Fighter: Shove - Allows unit to push any moveable unit 1 space away.
+- Fighter/Hero: Shove - Allows unit to push any moveable unit 1 space away.
 - Axe infantry: Smite - Allows unit to push any moveable unit 2 spaces away.
 - Cavalier/Paladin/GoldKnight/Pegasus Knight/Falcoknight: Canto - Allows unit to spend their remaining movement points after taking non-combat actions.
 - Mage/Sage/Priestess/Celica: Swap - Allows unit to switch places with an ally.
@@ -219,11 +219,8 @@ This hack does not make use of the skill system, but there are some skills which
 
 Some things are still under development for later releases.
 
-- There is a placeholder fix for enemies attacking with magic when they've run out of HP to cast. Witches are not yet able to teleport. The next release will address various AI fixes and features.
 - The game has only been balanced for Normal mode (hard mode results may vary). It is recommended to only play on Easy or Normal for now.
-- Some support conversations have been implemented while others are still placeholders.
-- Some sprites and animations have not been finalized yet and are using placeholders. (Axeman, Seraphim)
-- Expel is visually kind of buggy but should not affect gameplay.
+- Some support conversations have been implemented while others are still placeholders. (Roughly 75% complete)
 - Some issues have been reported with Rewarp.
 
 #Credits
@@ -242,13 +239,14 @@ Some things are still under development for later releases.
   - "What Lies at the End" sheet music by TorbyBrand on Musescore
   - "Revelations" sheet music by hinaflower on Musescore
   - Title theme sheet music by Spencer Riffle on Musescore
+  - "Omen", "Preparations (Deliverance)", "Preparations (Pilgrimage)", "Pride and Arrogance", "The Scions' Dance in Purgatory", and "A Distant Promise" by Uzel and The_Burger_King_420
 - NGMansion for original save expansion patch; Stan for Expanded Modular Save and Tequila for Convoy Split
 - Portraits:
   - Jedah and Duma by L95
   - Zopyrus by RandomWizard and Levin64
   - all others by hypergammaspaces or IS
 - Battle Animations: 
-  - Alm, Villagers, Snipers, Pirate (F), Dread Fighter, Vestal, Nuibaba, Wyvern Lord, Gold Knight and Cape General by Nura
+  - Alm (T1+T2), Villagers, Snipers, Pirate (F), Dread Fighter, Vestal, Nuibaba, Arcanist, Cantor, Jedah, Wyvern Lord, Gold Knight and Cape General by Nura
   - Pirate (M) Repalette by Wan
   - Berserker (M) by BwdYeti
   - Berserker (F) by serif, eCut, Skitty, and Pikmin1211
@@ -290,10 +288,12 @@ Some things are still under development for later releases.
 - Snakey1's REDA helpers, Support rework, MSS fixes and event cleanup
 - RandomWizard for boss conversations and text formatting help, and "The Siege" map
 - Levin64 and Tea for story writing assistance and proofreading
+- The_Burger_King_420, Uzel, and ilmoro for Spanish translation
+- marc_ and luciel for Spanish proofreading
 - Pikmin1211 for eventing and enemy placement on "The Warship", "Zofia Harbor", "Invaders Descend" and "The Siege"
 - ZoramineFae for "The Warship" map
-- KrashBoomBang for "Unholy Blade" and Sylvan Shrine map
-- Frigid for "Maiden of Darkness" and "Breaking the Chains" maps
+- KrashBoomBang for "Unholy Blade", "Shattered Earth" and Sylvan Shrine map
+- Frigid for "Heir of Disgrace", "Maiden of Darkness" and "Breaking the Chains" maps
 - Dancer_A for Grieth's Citadel and Nuibaba's Abode maps, boss conversations
 - Sme for TrapRework and assistance with summoner AI
 - Vennobennu's Improved FE8 Boat/Village Tileset

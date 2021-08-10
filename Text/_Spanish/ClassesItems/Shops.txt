@@ -73,29 +73,76 @@ Esta es una tienda secreta.[NL]
 ## Secret_AnythingElse2
 [0xBF]Algo m[0xE1]s?[X]
 
-#0x8B2 Armory_NoMoney
+## Armory_WhatSell
+[0xBF]Qu[0xE9] vendes?[X]
+
+## Shop_WhatSell
+[0xBF]Qu[0xE9] quieres vender?[X]
+
+## Secret_WhatSell
+Jiji... [0xBF]Qu[0xE9] vendes?[X]
+
+## Armory_NothingToSell
+[0xA1]No tienes nada que vender![A][X]
+
+## Shop_NothingToSell
+[0xA1]No tienes nada que vender![A][X]
+
+## Secret_NothingToSell
+[0xA1]No tienes nada que vender![A][X]
+
+## Armory_WhatElseSell
+[0xBF]Vendes algo m[0xE1]s?[X]
+
+## Shop_WhatElseSell
+[0xBF]Vendes algo m[0xE1]s?[X]
+
+## Secret_WhatElseSell
+[0xBF]Vendes algo m[0xE1]s?[X]
+
+## Armory_NoMoney
 [0xA1]No te alcanza el dinero![A][X]
 
 ## Shop_NoMoney
 No te queda dinero.[A][X]
 
-#0x8B5 Armory_Cost
+## Secret_NoMoney
+[0xA1]No te alcanza el dinero![A][X]
+
+## Armory_Cost
 [.][G] monedas de oro.[2NL]
 [0xBF]Te parece bien?[NL]
 [Yes][X]
 
-## Armory_Cost2
+## Shop_Cost
 [.][G] monedas de oro.[A][2NL]
 [0xBF]Conforme?[NL]
 [Yes][X]
 
-#0x8b8 Armory_ComeBackSoon
+## Secret_Cost
+[.][G] monedas de oro.[2NL]
+[0xBF]Te parece bien?[NL]
+[Yes][X]
+
+## Armory_ComeBackSoon
 Vuelve pronto.[A][X]
 
 ## Shop_ComeBackSoon
 P[0xE1]sate otro d[0xED]a.[A][X]
 
-#0x8BE Armory_Full_SendToStorage
+## Secret_ComeBackSoon
+Ji ji... [0xA1]Hasta luego![A][X]
+
+## Armory_CantBuy
+No puedo comprar eso.[A][X]
+
+## Shop_CantBuy
+No puedo comprar eso.[A][X]
+
+## Secret_CantBuy
+No puedo comprar eso.[A][X]
+
+## Armory_Full_SendToStorage
 No te queda espacio.[A][2NL]
 [0xBF]Lo llevo al carro?[NL]
 [Yes][X]
@@ -105,16 +152,61 @@ No puedes con nada m[0xE1]s.[A][2NL]
 [0xBF]Lo llevo al carro?[NL]
 [Yes][X]
 
-#0x8C4 Armory_SentToConvoy
+## Secret_Full_SendToStorage
+No te queda espacio.[A][2NL]
+[0xBF]Lo llevo al carro?[NL]
+[Yes][X]
+
+## Armory_FullText
+Tu inventario est[0xE1] lleno.[A][X]
+
+## Shop_FullText
+Tu inventario est[0xE1] lleno.[A][X]
+
+## Secret_FullText
+Tu inventario est[0xE1] lleno.[A][X]
+
+## Armory_SentToConvoy
 Bien. Lo mando al carro.[A][X]
 
 ## Shop_SentToConvoy
 Bien. Lo mando al carro.[A][X]
 
-#0x8C7 Armory_NotSentToConvoy
+## Secret_SentToConvoy
+Jeje. Lo mando al carro.[A][X]
+
+## Armory_NotSentToConvoy
 [0xBF]No? Vaya. Te lo podr[0xED]as[NL]
 llevar si hicieras sitio.[A][X]
 
 ## Shop_NotSentToConvoy
 Qu[0xE9] pena. Te lo podr[0xED]as[NL]
 llevar si hicieras sitio.[A][X]
+
+## Secret_NotSentToConvoy
+Qu[0xE9] pena. Te lo podr[0xED]as[NL]
+llevar si hicieras sitio.[A][X]
+
+## Armory_NoConvoy
+L[0xE1]stima que no tengas un[NL]
+carro al que enviarlo.[A][X]
+
+## Shop_NoConvoy
+Si tuvieras un carro,[NL]
+podr[0xED]a enviarlo all[0xED]...[A][X]
+
+## Secret_NoConvoy
+Si tuvieras un carro,[NL]
+podr[0xED]a enviarlo all[0xED]...[A][X]
+
+## Armory_StorageFull
+[0xA1]Tu carro tambi[0xE9]n est[0xE1] lleno![NL]
+[0xA1]Reorganiza tus cosas![A][X]
+
+## Shop_StorageFull
+[0xA1]Tu carro tambi[0xE9]n est[0xE1] lleno![NL]
+[0xA1]Reorganiza tus cosas![A][X]
+
+## Secret_StorageFull
+[0xA1]Tu carro tambi[0xE9]n est[0xE1] lleno![NL]
+[0xA1]Reorganiza tus cosas![A][X]

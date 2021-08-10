@@ -51,445 +51,340 @@ Now, now, there's no slate to clean. I understood. We were looking for different
 [X]
 
 
-
-C
-Alm: Faye, how're you holding up so far?
-Faye: Alm! I'm doing great! How are you? Hurt? Tired? Hungry? Ooh, I could get something from the convoy for you!
-Alm: I-I'm good, Faye. Thanks for offering though. You were always really considerate, and I appreciate that a lot.
-Faye: Thanks... Um...
-Alm: Faye? Are you alright? You got really red all of a sudden. Do I need to call a healer over here?
-Faye: No! That won't be necessary. Not while you're around.
-Alm: Are... Are you sure? It'll only take a minute--
-Faye: J-just stay here! Just for a little longer...
-Alm: ... Okay. If that's all you need, I'll be here.
+## MaeEst_C
+[MidLeft][LoadMae]
+[MidRight][LoadEst]
+Hey, Mae! Are you alright?[NL]
+You looked a bit rough down there.[AN]
+[MidLeft][HalfCloseEyes]
+Honestly, I may be...[NL]
+a little worn out...[AN]
+[MidRight]
+What's wrong?[MoveMidRight] Eh?! Your hands!?[NL]
+They're so... So... mangled![AN]
+[MidLeft]
+That's the price of casting spells.[NL]
+I'm so exhausted, I can barely stand.[AN]
+[MidRight][ToggleSmile]
+Climb on to my pegasus.[AN]
+I'll take you back so that[NL]
+we can find you a healer.[AN]
+[MidLeft][OpenEyes]
+Oh, thank you so much![AN]
+[X]
  
-B
-Alm: Faye, can I speak to you?
-Faye: Alm! Of course you can!
-Alm: ... Did you get dragged into this war because of me?
-Faye: H-huh? Where did that come from?
-Alm: You've been acting strangely recently, I'll admit. Sometimes I get worried for you because you stare into the distance during battle. Some of the infantry asked me if they needed to be protecting you in particular because you seemed so... lost. Are you alright, Faye?
-Faye: ...
-Alm: Do you want to go back home?
-Faye: I... I miss Ram so much, Alm... I miss the streams, the sun, and the wind. But I think most of all... I miss how it used to be. Just me, you, Tobin, Gray, and Kliff. I miss it so much.
-Alm: Faye... I'm so sorry. If you need to, I can send you home with an esc-
-Faye: No! I can't go home now that I've seen this war. What if you die? I'd just be at home with nobody... I'd be alone. I would much rather be here to keep everyone safe, especially you!
-Alm: Faye...
  
-A
-Alm: Faye.
-Faye: Alm!
-Alm: This might sound out of the blue to you, but... What are your plans after the end of this war?
-Faye: My biggest dream is to return home with everyone safely, and to... *sigh* Do you remember the little creek near Mycen's house?
-Alm: ... I do.
-Faye: Well, just beyond that creek was a thicket, where the trees let the sun through ever so gently and... I want to settle down there after this awful war with someone I love. It seems silly, but won't you come back with me, Alm?
-Alm: ... I'm sorry, Faye, but...no. I can't go back to the village. Not anymore. There are too many things left for me to do for Zofia. But I'll always be thankful for you and everyone back home. You're very special to me, Faye. Just...not in the way you want.
-Faye: I... I see. I'm so sorry for pressing you, Alm. But if you don't mind, I'd like to hold onto that dream while I'm still fighting by your side. After all, everyone would be devastated if you got hurt, so I have to stick around. If... that's alright with you?
-Alm: Of course. Thank you, Faye.
-
-
-
-##SilqueFaye_C
-[MidLeft][LoadFaye]
-[MidRight][LoadSilque]
-[ToggleSmile]Hello, Faye.[AN]
+## MaeEst_B
+[MidLeft][LoadMae]
+[MidRight][LoadEst][ToggleSmile]
+Mae! [MoveMidRight]Hey Mae! Come here![AN]
 [MidLeft]
-Oh, Silque![NL]
-We seem to keep running[AN]
-into each other here[NL]
-on the battlefield.[AN]
+What is it, Est?[AN]
 [MidRight]
-Yes, well, I was hoping we could[NL]
-get to know each other better.[AN]
-There are so few of us women[NL]
-fighting alongside Sir Alm,[AN]
-after all.[NL]
-And there are many things I wish[AN]
-to talk about that aren't[NL]
-for the ears of men.[AN]
-[MidLeft][ToggleSmile]
-Oh, um... Like what?[AN]
-[MidRight]
-...Well, you know. Things you wouldn't[NL]
-talk about with your male friends.[AN]
+I think I've found the solution[NL]
+to your little hand problem...[MoveMidRight] Ta-da![AN]
 [MidLeft]
-...I don't know of anything like that.[NL]
-My only friends are the village boys.[AN]
-So, I don't know what I'd talk about[NL]
-with you that I wouldn't talk about[AN]
-with them. Especially because[NL]
-I kind of just met you.[AN]
+For me? You shouldn't have![AN][ToggleSmile]
+[Beat]No, I'm serious. You[NL]
+really shouldn't have.[AN]
+I already have gloves, see.[AN]
 [MidRight]
-We could always start[NL]
-with a bit of gossip...[AN]
-[ToggleSmile]That Gray's a bit of[NL]
-a scoundrel, isn't he?[AN]
-[MidLeft][ToggleSmile]
-...Um, no offense, but I don't think[NL]
-that kind of gossip is for me.[AN]
-Anyway...[NL]
-good luck, I guess![AN][ClearFace]
-[MidRight]
-[Beat]What in Mila's name[NL]
-just happened?[AN]
-Perhaps I'll need to[NL]
-rethink my approach...[AN]
-[X]
-
-##SilqueFaye_B
-[MidLeft][LoadFaye]
-[MidRight][LoadSilque][ToggleSmile]
-Faye! There you are![AN]
-[MidLeft][ToggleSmile]
-Hello again, Silque.[NL]
-You sure are persistent.[AN]
+Aw, come on Mae, just try them![AN]
+[MidLeft]
+Sorry to burst your bubble,[AN]
+but gloves don't do much to[NL]
+protect my hands from my magic.[AN]
 [MidRight][ToggleSmile]
-I would like to make a proposal.[NL]
-If you don't like gossip,[AN]
-why don't we talk about[NL]
-where you grew up?[AN]
-I love traveling, and I'd love to[NL]
-know more about Ram Village.[AN]
-[MidLeft][ToggleSmile]
-Oh, um, well...[NL]
-[Beat][AN]
-It's peaceful and quiet.[NL]
-It's very small.[AN]
-There were only a few kids my age,[NL]
-so we all became friends.[AN]
-Most everyone else were farmers.[NL]
-My parents raised sheep and flax plants.[AN]
-Um...[Beat][Beat][NL]
-I don't know what else to say, really.[AN]
-[MidRight][ToggleSmile]
-Oh, so they worked with textiles?[NL]
-Do you like to sew?[AN]
+Oh, but these gloves are special![NL]
+They're made with genuine Khadein silk![AN]
+They're supposed to protect your hands[NL]
+because...[.5] because they[Beat][AN][MoveMidRight]
+Well, never mind the how and why![AN]
+I promise, these should fix your[NL]
+problem, just give them a chance![AN]
 [MidLeft]
-I do, a little...[AN]
+Okay, alright. If it means that much[NL]
+to you, I'll give them a chance.[AN]
+But if they don't work, I reserve the[NL]
+right to tell you [0x93]I told you so.[0x94][AN]
 [MidRight]
-Like embroidery?[NL]
-Or like tailoring?[AN]
-[MidLeft][ToggleSmile]
-Um[Beat] Both, kind of.[AN]
-[MidRight][ToggleSmile]
-Those flowers on your apron are cute.[NL]
-Did you make those?[AN]
-[MidLeft][ToggleSmile]
---Look, Silque, I'm[Beat] not good at[NL]
-talking about stuff.[AN]
-It's okay.[NL]
-Not everyone has to be friends, right?[AN]
-Maybe we should just focus on[NL]
-the battle. Bye.[AN][ClearFace]
-[MidRight]
-Faye? [Beat]Faye?[NL]
-I've lost her again...[AN]
+Yes! Thank you! You[NL]
+won't regret this![AN]
 [X]
-
-##SilqueFaye_A
-[MidLeft][LoadSilque]
-[MidRight][LoadFaye]
-Hello, Silque.[AN]
-[MidLeft]
-Faye? I thought you'd never[NL]
-speak to me again.[AN]
-[MidRight]
-Weeell...[NL]
-After you stopped approaching me,[AN]
-I realized I kinda[Beat][NL]
-miss your company. Sorry I was so rude.[AN]
+ 
+ 
+## MaeEst_A
+[MidLeft][LoadMae]
+[MidRight][LoadEst]
 [MidLeft][ToggleSmile]
-Oh, it's all right.[AN]
-It's just nice to feel missed.[NL]
-And now we can finally talk![AN]
-[MidRight][ToggleSmile]
-Right[Beat] about that.[NL]
-I actually did have a girl[AN]
-who was my friend, once.[NL]
-But she left, and she never came back.[AN]
-Maybe it would be nice to have a[NL]
-friend like that again, but...[AN]
-You're not going to leave one day[NL]
-without saying goodbye, right?[AN]
-[MidLeft][ToggleSmile]
-Of course not! I promise, Faye,[NL]
-I'm not going to do anything like that.[AN]
+Wow, Est! I take everything I said[NL]
+to you about these gloves back![AN]
+They do wonders for my hands![AN]
 [MidRight]
-Hee hee. You're a good person, Silque.[NL]
-Even if your tongue does like to wag.[AN]
-Maybe... we can be friends.[NL]
-I would like to know more about you.[AN]
-And[Beat][NL]
-it's easier if you do the talking.[AN]
+Heehee! I'm glad you like them![AN]
 [MidLeft]
-Ah, how lovely.[AN]
-Maybe I can tell you about[NL]
-the places I've seen on my travels?[AN]
+How'd you manage to get[NL]
+your hands on these?[AN]
 [MidRight]
-I'd like that.[AN]
-[X]
-
-## SilqueLuthier_C
-[MidLeft][LoadLuthier]
-[MidRight][LoadSilque]
-[MidRight]
-Excuse me, sir--
-Luthier, was it?
+Ah... I'm actually trying to get[NL]
+into the merchant business![AN]
+War is tiring, you know?[AN]
+I mean, this is my second one[NL]
+and I'm not even seventeen yet![AN]
 [MidLeft]
-... ...
-[MidRight]
-I just wanted to check
-if you were well. Magic
-takes a toll on the body,
-and I'm worried you're
-pushing yourself too much.
-[MidLeft]
-Magic--Oh. You were talking
-to... me?
-[MidRight]
-Er--yes, I was.
-...Would you rather I didn't?
-[MidLeft]
-That wasn't what I meant.
-I intended to communicate that,
-er... that doesn't happen
-very often. I was merely
-caught off guard.
-[MidRight]
-I see...
-Luthier, I've noticed you don't
-ask for help even when you've
-exhausted your magic reserves.
-So I wanted to be proactive and
-see how you're doing.
-[MidLeft]
-That's not necessary.
-I know my limits.
-[MidRight]
-Well, I'm sure you do, but I would
-prefer that no one in our group
-neglects their health. So please
-let me know if you're feeling weary.
-[MidLeft]
-If you insist.
-[MidLeft][ClearFace]
-[MidRight]
-...Well, he's certainly... curt.
-[X]
-
-## SilqueLuthier_B
-[MidLeft][LoadSilque]
-[MidRight][LoadLuthier]
-[MidRight]
-I require your assistance.
-[MidLeft]
-Oh--hello, Luthier.
-How are you feeling?
-Should I heal you up?
-[MidRight]
-No, there's no need for that.
-Well--maybe as a demonstration.
-You see--you've mastered a type
-of magic I do not yet have command of.
-Teach me your ways. I must study it.
-[MidLeft]
-...Um, well, I'm not sure how much
-I can teach... White magic comes from
-faith and piety. I could help lead you
-in prayer sometime, but faith itself
-isn't something I can teach.
-[MidRight]
-Obviously. Magical ability comes from
-the blood. But magical applications
-come from intense study. There must be
-some holy text or ritual you perform
-to maintain your communion with the
-spirits. In this case, I should say,
-with Mila herself. I presume she is
-the source of healing magic, as
-described in the Zofian Grimoire,
-page 47, paragraph 2. "The Mother
-giveth to the land the power of life,
-and to the plants which grow in--"
-[MidLeft]
---Er, yes, I've read that. It's
-just as you said, prayer to Mila
-reinforces your bond of faith, and--
-[MidRight][ToggleSmile]
-Ah, so you've read it too! I've
-been searching for someone to discuss
-its merits with. So few seem to have
-truly studied the text. I'm currently
-on my one hundred and fifth re-read.
-[MidLeft]
-That's very dedicated of y--
-[MidRight]
---What did you think of the author's
-description of the transfer of
-life-force between caster and spirit?
-I visualize it each time I cast.
-[MidLeft][ToggleSmile]
-Er, well, truthfully, I've only
-skimmed it. I know little of magic
-beyond the church's teachings.
-I preferred to learn through
-practical applications - healing
-the sick, meeting others on
-pilgrimages...
-[MidRight]
-You really must finish reading it.
-I insist--it's life-changing.
-It's my gift to you in knowledge
-so that perhaps you will share
-your knowledge with me.
-I hope this can be the start of
-a regular discusson on magical
-study techniques.
-[MidLeft]
-...All right, Luthier.
-Let's make a deal.
-I'll read the whole book
-if you can promise me you'll
-put your health first.
-Come visit me at the first
-sign of weariness.
---And don't stay up
-all night reading.
-[MidRight]
-Mm... I'm afraid that will be
-tough to commit to.
-But if that's what is needed to
-advance my knowledge of white magic,
-then you have my word.
-[X]
-
-## SilqueLuthier_A
-[MidLeft][LoadLuthier]
-[MidRight][LoadSilque]
-[MidLeft]
-I thought seriously about what you
-said, and I've found it to be
-empirically true that studying with
-others leads to a greater rate of
-information absorption. You mentioned
-going out and meeting others on
-pilgrimages. ...Perhaps that's
-what I've been missing.
-[MidRight]
-...You seem to keep to yourself
-quite a lot. I think it would do
-your soul some good to travel
-and speak with others more often.
-[MidLeft]
-I find that prospect frankly...
-terrifying. People don't often like
-to talk with me, you see. In fact,
-I... really don't have any friends.
-[MidRight]
-...You don't?
-[MidLeft]
-Well--I do, but... I suppose cats
-don't count...
-[MidRight]
-Oh, you love cats too? We used to
-keep some in the priory's granary
-to help with the mice. I'd always
-visit them after evening prayers.
-It seems they only liked me when
-I brought them fish, though.
+Oh, wow, I don't blame you.[AN]
+Sales isn't easy, but it's gotta be[NL]
+less of a pain than this war stuff.[AN]
+[MidRight][ToggleSmile][CloseEyes]
+You're right about it not being easy...[NL][OpenEyes]
+I'm so glad those gloves worked for you.[AN]
+See, every time I find some cool new[NL]
+thing I want to sell, I show my sisters.[AN]
+But almost everything I've brought them[NL]
+turned out to have been a waste of time.[AN]
+They probably think I'm too[NL]
+stupid to run a business...[AN]
 [MidLeft][MoveMidLeft]
-Ah, that's a common misconception.
-You may think them aloof creatures,
-but when they turn and sit quietly,
-not facing you, it's actually a sign
-of affection, as the cat feels
-comfortable enough to not have to
-keep watch over y--
-[MidRight]
---You know, Luthier, when you talk
-about something you love,
-your whole face lights up.
+That's not true![NL]
+Your sisters wouldn't think that.[AN]
+You've got a real gift for[NL]
+talking stuff up, Est.[AN][ToggleSmile]
+I mean, heck, you convinced ME, right?[AN]
+[MidRight][ToggleSmile]
+Yeah, but... I don't want to just[NL]
+be selling a bunch of hot air![AN]
+I want people to trust my word.[AN]
+How can I do that if I keep selling[NL]
+stuff that ends up being useless?[AN]
 [MidLeft]
-...Oh.
-If I'm boring you,
-please say so.
+Um... Uh... [MoveMidLeft][ToggleSmile]Make it pretty![AN]
 [MidRight]
-Oh, no, that's not a bad thing.
-It's a sign of dedication and passion.
+Pretty?[AN]
 [MidLeft]
-... ...
-That's... the nicest thing anyone has
-ever said to me.
+Yeah! Sure, I don't NEED a useless[NL]
+hunk of ruby in my house.[AN]
+But, if you carved it into, like,[NL]
+a cool dragon or something... boom![AN]
+It doesn't need to be actually[NL]
+magical if it just looks cool![AN]
 [MidRight]
-All I ask is that you take better
-care of yourself so you can pursue
-those passions. Put the candle out
-before the rooster crows. Get out
-and talk more with others who love
-the same things you do.
-I'm sure you'll find more friendly
-ears than you thought you would.
-[MidLeft]
-...All right, I've decided.
-I will venture forth and find a
-commune of mages with whom I can
-discuss my studies.
-...Since you're the one who
-inspired this idea, I'd like to
-extend the invitation to you as well.
-[MidRight]
-...Well, after the war ends...
-It was my hope to give aid to the
-people of Zofia as they rebuild and
-recover. But someday... I would like
-to travel again. Don't delay your
-dreams because of me, but when you
-return to Valentia, perhaps I'll
-depart with you then.
+Oh... [MoveMidRight]Oh! Yeah, that's a[NL]
+great idea! Thanks, Mae![AN]
+You can be my designer-in-chief![AN]
 [X]
+
+
+
+
+## CliveJesse_C
+[MidLeft][LoadClive]
+[MidRight][LoadJesse]
+Clive: ...
+Jesse: Hey, pal, you want me to sit for a portrait or somethin'? You can stare at THAT as much as you like.
+Clive: My apologies, good sir. It was rude of me to stare. I just... get this strange feeling I've met you before.
+Jesse: Wuh-oh, that's not good. Listen, if you've got a sister, I PROMISE I haven't done anything untoward with her. Yeah?
+Clive: Heh... I fear if that were the case, she'd already have made a pincushion of you with her lance. ...What is your name, pray tell?
+Jesse: The name's Jesse. I'm just your bog-standard jack-of-all-trades. Honestly, I'd be surprised if you HAD heard of me.
+Clive: Mm, I'll admit, the name doesn't ring a bell. Perhaps you know of me, then? My name is Clive, knight of Zofia.
+Jesse: Hold up. Clive, like, the Deliverance Clive?
+Clive: Well, in truth, my fiancee founded it and I no longer lead it--but yes, that's correct.
+Jesse: Ulp. How could I NOT know of you? Anyone who can READ has heard of Sir Clive. ...What could a guy like me have done to make a guy like YOU remember my face?
+Clive: I'm afraid I have no more clues to that than you do, good sir.
+Jesse: Well, uh, I'll let you think on it, then.
+[X]
+
+## CliveJesse_B
+[MidLeft][LoadClive]
+[MidRight][LoadJesse]
+Clive: Jesse, might I ask you something?
+Jesse: Besides what you just asked me? Yeah, sure, fire away.
+Clive: I apologize if this stirs any sort of ill memories, but... would you happen to know of Lord Taranis of the western lands of Zofia?
+Jesse: Uhhh... what's this for?
+Clive: He often hosted my father and I. To be quite frank, you bear a striking resemblance to him. Perhaps that's why your face seemed so familiar; I was curious if you had any familial relation to him.
+Jesse: ...Well, you know how nobles are. What with the proper wives and the concubines and all that nonsense. Just because he sired me doesn't necessarily mean we had a "familial relation", you dig?
+Clive: I see...
+Jesse: Yeah, you get it. So you wouldn't have seen me hanging around the manor or anything. Like I said, I'm just a bog-standard talent-for-hire. I never was part of that life.
+Clive: ...
+[X]
+
+## CliveJesse_A
+[MidLeft][LoadClive]
+[MidRight][LoadJesse]
+Clive: Jesse. If I may?
+Jesse: What can I do you for, chief?
+Clive: I hate to press the matter further, but I think I've solved my mystery. Could you answer one last question for me?
+Jesse: You know, you guys should think about changing your name to the "Inquisition" if you're going to ask so many personal questions.
+Clive: Please, I only ask you to alleviate the curiosity that's been eating at me for weeks. You have my word I'll ask no more about this.
+Jesse: ...Alright, fine, let's rip the bandage off. Yes, I have seen you around before. You, your old man, and that white-haired boy that followed you everywhere.
+Clive: As I thought. I always had fond memories of when your father would host us. But his son was frail and sickly, and rarely stayed to socialize with Fernand and I.
+Jesse: Yeah, life was pretty rough for my brother. ...Relatively speaking.
+Clive: Aha. That answers my next question, then. Lord Taranis had an incredibly witty, outspoken daughter that was his spitting image. But for the last ten years...
+Jesse: Yyyyep, say no more. Man, that was so long ago. It's like hearing about my own ghost. Little creepy, to be honest.
+Clive: Right... Well, I apologize if I've pried too much. I just wanted to say... I quite enjoyed the chats we used to have, Jesse. And I'm glad to know you're doing well for yourself, after all.
+Jesse: Heh. Well, uh, good to know your heart's in the right place, old pal.
+[X]
+
+
+
 
 ## ClairMathilda_C
-Clair: Oh! Lady Mathilda.
-Mathilda: Ah, Clair. It's been a while since we've spoken like this.
-Clair: It really has. I was dreadfully worried about you after Desaix took you captive. Thanks be to the mother that you're safe and sound.
-Mathilda: No, thank YOU, Clair. It was your relentless fighting that put Desaix's machinations to an end.
-Clair: I know what it's like to be held prisoner. I remember how small my cell was in the Southern Outpost. I could hardly sleep at night for fear of what might happen to me. But when I imagine what you went through... And how long you endured...
-Mathilda: You have a good heart, Clair. It means everything to me to know you cared so deeply. But I was never afraid. I knew in my heart that Clive would come for me.
-Clair: You truly are strong, Mathilda. I hope that I might learn from your courage.
-Mathilda: And I from your kindness.
+[MidLeft][LoadClair]
+[MidRight][LoadMathilda]
+[MidLeft]
+Oh! Lady Mathilda.[AN]
+[MidRight][ToggleSmile]
+Ah, Clair. It's been a while[NL]
+since we've spoken like this.[AN]
+[MidLeft][ToggleSmile]
+It really has.[NL]
+I was dreadfully worried about you[AN]
+after Desaix took you captive.[AN]
+Thanks be to the Mother[NL]
+that you're safe and sound.[AN]
+[MidRight]
+No, thank YOU, Clair.[AN]
+It was your relentless fighting that[NL]
+put Desaix's machinations to an end.[AN]
+[MidLeft]
+I know what it's like to be a prisoner[NL]
+of war. I remember how small my cell[AN]
+was in the Southern Outpost.[AN]
+I could hardly sleep at night for[NL]
+fear of what might happen to me.[AN]
+But when I imagine what you went[NL]
+through... And how long you endured...[AN]
+[MidRight][ToggleSmile]
+You have a good heart, Clair.[AN]
+It means everything to me[NL]
+to know you cared so deeply.[AN]
+But I was never afraid. I knew[NL]
+in my heart that you and Clive[AN]
+would come to my aid.[AN]
+[MidLeft]
+You truly are strong, Mathilda. I hope[NL]
+that I might learn from your courage.[AN]
+[MidRight]
+And I from your kindness.[AN]
 [X]
 
 ## ClairMathilda_B
-Mathilda: ......
-Clair: Lady Mathilda, is something amiss? You've been looking at me so...intently. I would ask that you speak your mind.
-Mathilda: Ah. Forgive me. Id din't mean to stare. I just cannot help but notice how much you've changed.
-Clair: Me? In what way?
-Mathilda: Do you recall the last time we spoke like this? You were so compassionate. Recently, I've taken note of how you look out for everyone around you. You're there for them before they even think to ask for help. You've grown into a fine woman.
-Clair: Really? I hadn't noticed. Also, I think you may be imagining it.
-Mathilda: Aha, but you just proved it.
-Clair: I... did?
-Mathilda: The old Clair would have snapped at the suggestion she'd done any growing up. You always did hate being treated as a child, even when it was the case.
-Clair: What? That simply isn't true! ...Well, maybe it's a LITTLE true.
-Mathilda: Ha ha ha.
+[MidLeft][LoadClair]
+[MidRight][LoadMathilda]
+[Beat][AN]
+[MidLeft]
+Lady Mathilda, is something amiss?[NL]
+You've been looking at me so...[AN]
+intently. I would ask that you[NL]
+speak your mind.[AN]
+[MidRight]
+Ah. Forgive me.[NL]
+I didn't mean to stare.[AN]
+I just cannot help but notice[NL]
+how much you've changed.[AN]
+[MidLeft]
+Me? In what way?[AN]
+[MidRight][ToggleSmile]
+Do you recall the last time we spoke[NL]
+like this? You were so compassionate.[AN]
+Recently, I've taken note of how you[NL]
+look out for everyone around you.[AN]
+You're there for them before they[NL]
+even think to ask for help.[AN]
+You've grown into a fine woman.[AN]
+[MidLeft]
+Really? I hadn't noticed. Also,[NL]
+I think you may be imagining it.[AN]
+[MidRight][MoveMidRight]
+Aha, but you just proved it.[AN]
+[MidLeft]
+I... did?[AN]
+[MidRight]
+The old Clair would have snapped at the[NL]
+suggestion she'd done any growing up.[AN]
+You always did hate being treated as[NL]
+a child, even when it was the case.[AN]
+[MidLeft][ToggleSmile][MoveMidLeft]
+What? That simply isn't true![NL][ToggleSmile]
+...Well, maybe it's a LITTLE true.[AN]
+[MidRight]
+Ha ha ha.[AN]
 [X]
 
 ## ClairMathilda_A
-Clair: Lady Mathilda.
-Mathilda: Hello, Clair. Do you need something? It's not often you come to me looking for conversation.
-Clair: Something you told me before has been foremost in my mind of late.
-Mathilda: And what is that?
-Clair: You said I'd grown into a fine woman, but then I started thinking about it... It's not so much that I grew up as that I had to leave part of myself behind. I miss the old days when Clive and Fernand and I lived in the castle. Being a knight of Zofia was hard work, but I was basically carefree. If ever I became cheeky with you, it's because I was...happy. But then the war came and crushed all of our dreams. I grew up thinking that the world revolved around me. But now I feel it's just spinning madly about for absolutely no reason at all.
-Mathilda: Clair...
-Clair: I know, I know. You're going to tell me this is what it means to grow up. But I MISS the part of me that believed things would always turn out all right.
-Mathilda: You may mourn it all you like, Clair. But such loss IS part of growing up, and it's turned you into a fine woman.
-Clair: ...Thank you, Mathilda.
-Mathilda: And by the way--who ever said that our dreams have been crushed? It's true that things don't always turn out the way we want them to. But we can still find other ways to realize our desires. Just because you see the world for what it is doesn't mean you have to give up.
-Clair: I...supposed you're right. I have to be stronger. Clive needs me to keep my chin up, after all.
-Mathilda: You will be happy again one day, Clair. I promise you this. And Clive and I intend to be part of that happiness.
-Clair: I hope so.
-Mathilda: I KNOW so. And feel free to lean on me more, okay? After all, we'll be sisters someday.
-Clair: Heh, if you keep being this nice, I SUPPOSE I'll allow it.
-Mathilda: Ha ha ha! Thank Goodness for that!
+[MidLeft][LoadClair]
+[MidRight][LoadMathilda]
+[MidLeft]
+Lady Mathilda.[AN]
+[MidRight]
+Hello, Clair. Do you need something?[AN]
+It's not often you come to me[NL]
+looking for conversation.[AN]
+[MidLeft]
+Something you told me before has[NL]
+been foremost in my mind of late.[AN]
+[MidRight]
+And what is that?[AN]
+[MidLeft]
+You said I'd grown into a fine woman,[NL]
+but then I started thinking about it...[AN]
+It's not so much that I grew up as that[NL]
+I had to leave part of myself behind.[AN]
+I miss the old days when Clive and[NL]
+Fernand and I lived in the castle.[AN]
+Being a knight of Zofia was hard work,[NL]
+but I was basically carefree.[AN][CloseSpeechSlow][.5]
+[MidLeft]
+If ever I became cheeky with you,[NL]
+it's because I was... happy.[AN]
+But then the war came and[NL]
+crushed all of our dreams.[AN]
+I grew up thinking that the[NL]
+world revolved around me.[AN]
+But now I feel it's just[NL]
+spinning madly about for[AN]
+absolutely no reason at all.[AN]
+[MidRight]
+Clair...[AN]
+[MidLeft][CloseEyes]
+I know, I know. You're going to tell me[NL]
+this is what it means to grow up.[AN][OpenEyes]
+But I MISS the part of me that believed[NL]
+things would always turn out all right.[AN]
+[MidRight]
+You may mourn it all you like, Clair.[NL]
+But such loss IS part of growing up,[AN]
+and it's turned you into a fine woman.[AN]
+[MidLeft][ToggleSmile]
+...Thank you, Mathilda.[AN]
+[MidRight]
+And by the way--who ever said that[NL]
+our dreams have been crushed?[AN]
+It's true that things don't always[NL]
+turn out the way we want them to.[AN]
+But we can still find other ways[NL]
+to realize our desires. Just because[AN]
+you see the world for what it is[NL]
+doesn't mean you have to give up.[AN]
+[MidLeft]
+I... suppose you're right.[NL]
+I have to be stronger.[AN]
+Everyone needs me to keep[NL]
+my chin up, after all.[AN]
+[MidRight]
+You will be happy again one day, Clair.[NL]
+I promise you this. And Clive and I[AN]
+intend to be part of that happiness.[AN]
+[MidLeft]
+I hope so.[AN]
+[MidRight]
+I KNOW so.[AN][CloseSpeechSlow][MidRight]
+And feel free to lean on me more, okay?[NL]
+After all, we'll be sisters someday.[AN]
+[MidLeft]
+Heh, if you keep being this nice,[NL]
+I SUPPOSE I'll allow it.[AN]
+[MidRight]
+Ha ha ha! Thank goodness for that![AN]
 [X]
 
 ## PythonClive_C
@@ -2895,42 +2790,6 @@ Just... go. Before I change my mind. Now go!
 
 
 
-Clair: Greetings, Fernand! It's been far too long.
-
-Fernand: Ah, Clair. You know, it still confounds me that you decided to enlist with the knights. Your father is too lenient with you. Always has been.
-
-Clair: And why shouldn't I be a knight?! I weild a lance and ride a horse as well as the best of you. Perhaps even better. Why else would they allow me to join? Heavens, you and my brother were the ones who TAUGHT me to fight and ride.
-
-Fernand: Because you harangued us without end. You always were keen on following Clive. Honestly, we assumed it was a phase you would grow out of. You should be looking for a husband, not brandishing a weapon. Unless you expect to meet your soulmate on the battlefield?
-
-Clair: I have no fondness for barbaric men. But pursuing a warrior's path does not doom me to a life of spinsterhood. Now that I'm a Knight of Zofia, I can stay here at the castle, where I can go to royal balls and meet fine gentlemen. What say you to THAT?
-
-Fernand: I say that you should have listened to your vows more carefully. Knighthood affords little time to twirl about in circles and socialize. Day and night, we train and ride out on expeditions and other missions.
-
-Clair: What?! Goodness, I don't remember pledging to do all that... Perhaps I will have to seek my beloved on the field of battle after all. Still, it's not all bad-the Knights are full of handsome noble scions, after all. ...I know! Fernand, why don't YOU introduce me to someone? Surely you must know many suitable suitors in suits of armor?
-
-Fernand: Um... Well, I suppose it depends on what manner of man you fancy.
-
-Clair: Hmm... Let me think... He'd have to come from a house at least as respectable as my own... He should be as tall as Clive, and fair of face... Well-lettered, and gifted in the arts of war and defense... And of course he must be well-versed in poetry and music and... Hmmm... Oh! He should own four villas, one for each of the seasons! Does that narrow it down?
-
-Fernand: *sigh* It certainly does. You just described your brother.
-
-Clair: That is not true!
-
-Fernand: And you don't even realize it... Clearly you are still a child. You won't find a husband if you keep clinging to your brother in such a way.
-
-Clair: Oh, really? And what about you? You've been clinging to my brother since before I was born, Fernand. Is there anything YOU should be telling me, hmmmmm? After all, you aren't exactly scrambling to find a pretty maid of your own.
-
-Fernand: We are not talking about me!
-
-Clair: Ha! Look at you, so easily shaken! I was merely teasing. Besides, Clive already told me what your true weakness is. He claims you prefer your ladies like your oranges-full and ripe. Now which of the knights' eligible ladies is juicy enough for you? Hmm...
-
-Fernand: I am going to find your brother and bury him in a very deep hole... Touché, Clair. I'm glad you had your fun. Now farewell!
-
-*Fernand leaves*
-
-Clair: What? Wait, come back here! You can't run from your destiny! 
-
 ## FernandClair_C
 [MidLeft][LoadFernand]
 [MidRight][LoadClair]
@@ -2939,10 +2798,113 @@ This is a placeholder support.[AN]
 [X]
 
 ## FernandClair_B
-[MidLeft][LoadClair]
-[MidRight][LoadFernand]
+[MidLeft][LoadFernandPre]
+[MidRight][LoadClair][ToggleSmile]
+Greetings, Fernand![NL]
+It's been far too long.[AN]
+[MidLeft][ToggleSmile]
+Ah, Clair. You know, it still[NL]
+confounds me that you decided[AN]
+to enlist with the knights.[AN]
+Your father is too lenient[NL]
+with you. Always has been.[AN]
+[MidRight][MoveMidRight]
+And why shouldn't I be a knight?![AN]
+I wield a lance and ride a horse[NL]
+as well as the best of you.[AN]
+Perhaps even better. Why else[NL]
+would they allow me to join?[AN][MoveMidRight]
+Heavens, you and my brother[NL]
+were the ones who TAUGHT me[AN]
+to fight and ride.[AN]
 [MidLeft]
-This is a placeholder support.[AN]
+Because you harangued us without end.[AN]
+You always were keen on following[NL]
+Clive. Honestly, we assumed it was[AN]
+a phase you would grow out of.[AN]
+You should be looking for a husband,[NL]
+not brandishing a weapon.[AN]
+...Unless you expect to meet your[NL]
+soulmate on the battlefield?[AN]
+[MidRight]
+I have no fondness for barbaric men.[AN]
+But pursuing a warrior's path does not[NL]
+doom me to a life of spinsterhood.[AN][ToggleSmile]
+Now that I'm a Knight of Zofia,[NL]
+I can stay here at the castle,[AN]
+where I can go to royal balls[NL]
+and meet fine gentlemen.[AN]
+What say you to THAT?[AN]
+[MidLeft][ToggleSmile]
+I say that you should have listened[NL]
+to your vows more carefully.[AN]
+Knighthood affords little time to[NL]
+twirl about in circles and socialize.[AN]
+Day and night, we train and ride[NL]
+out on expeditions and other missions.[AN]
+[MidRight][MoveMidRight]
+What?! Goodness, I don't remember[NL]
+pledging to do all that...[AN][CloseEyes]
+Perhaps I will have to seek my beloved[NL]
+on the field of battle after all.[AN][OpenEyes][ToggleSmile]
+Still, it's not all bad--the Knights[NL]
+are full of handsome noble scions,[AN]
+after all. [.4][MoveMidRight]...I know! Fernand,[NL]
+why don't YOU introduce me to someone?[AN]
+Surely you must know many[NL]
+suitable suitors in suits of armor?[AN]
+[MidLeft]
+Um[Beat] Well, I suppose it depends[NL]
+on what manner of man you fancy.[AN]
+[MidRight][CloseEyes]
+Hmm... Let me think...[AN]
+He'd have to come from a house[NL]
+at least as respectable as my own...[AN]
+He should be as tall as Clive,[AN]
+and fair of face... Well-lettered,[NL]
+and gifted in the arts of war...[AN]
+And of course he must be well-versed[NL]
+in poetry and music and... Hmmm...[AN][MoveMidRight][OpenEyes]
+Oh! He should own four villas,[NL]
+one for each of the seasons![AN]
+[Beat]Does that narrow it down?[AN]
+[MidLeft][ToggleSmile]
+[Beat][HalfCloseEyes]It certainly does.[NL][OpenEyes]
+You just described your brother.[AN]
+[MidRight][MoveMidRight]
+That is not true![AN]
+[MidLeft]
+And you don't even realize it...[NL]
+Clearly you are still a child.[AN]
+You won't find a husband if you keep[NL]
+clinging to your brother in such a way.[AN]
+[MidRight]
+Oh, really? And what about you?[AN]
+You've been clinging to my brother[NL]
+since before I was born, Fernand.[AN][ToggleSmile]
+Is there anything YOU should be[NL]
+telling me, hmmmmm?[.4] After all,[AN]
+you aren't exactly scrambling to[NL]
+find a pretty maid of your own.[AN][ToggleSmile]
+[MidLeft][MoveMidLeft]
+W-[.4]We are not talking about me![AN]
+[MidRight][ToggleSmile]
+Ha![.4] Look at you, so easily shaken![NL]
+I was merely teasing.[AN]
+Besides, Clive already told me[NL]
+what your true weakness is.[AN]
+He claims you prefer your ladies[NL]
+like your oranges:[.4] full and ripe.[AN]
+Now which of the knights' eligible[NL]
+ladies is juicy enough for you?[.4] Hmm...[AN][ToggleSmile]
+[MidLeft][CloseEyes]
+I am going to find your brother[NL]
+and bury him in a very deep hole...[AN][OpenEyes]
+Touch[0xE9], Clair.[.4] I'm glad you[NL]
+had your fun. Now farewell![AN][ClearFace]
+[MidRight][MoveMidLeft][MidLeft]
+What? [MoveMidLeft]Wait, come back here![NL]
+You can't run from your destiny![AN]
 [X]
 
 ## FernandClair_A
@@ -3161,50 +3123,113 @@ Fernand![NL]
 Fernand, wait--[AN]
 [X]
 
- Mathilda: Ho, Clive.  Have the other knights been making you feel at home?
 
-Clive: Ah, Lady Mathilda!  Yes, everyone has been very kind to me thus far.  But the first three months have been naught but training, I long for a fight.
-
-Mathilda: Well, you'll get one.  The training is to make certain you're ready for it.
-
-Clive: I just want a chance to prove myself-to be one step closer to you.
-
-Mathilda: Why me?
-
-Clive: You do not know?  The bards sing of Lady Mathilda as the finest of all the knights of Zofia!  Boys the kingdom 'round whisper your name before they go to sleep.  I fear my friends and I were no exception.  Let us just say you are the object of much adulation, my lady.
-
-Mathilda: This comes as a surprise.  I thought boys dreamed of fighting alongside heroes such as Sir Mycen.
-
-Clive: Sir Mycen is indeed a man worthy of much respect.  I can only hope to one day be half the legend that he is.  But who do you think it is that lights the fires of a boy's heart?  A stoic old man...or a beautiful woman?
-
-Mathilda: Ha ha!  The fires would sputter out if the lads actually saw me in combat.
-
-Clive: Certainly not!  You are never more beautiful than when riding across a battlefield.  The dresses and dour looks you wear in court only obscure your radiance.
-
-Mathilda: ...Dour?!  Though it IS true I abhor walking the castle like some pretty bauble.  Speaaking of which, how is your sister?  The one who follows you like a puppy?  Whenever I would try to talk to you, she would cut in.
-
-Clive: Heh.  She's a handful, that one.  You should have seen her bawl when I said I was enlisting.
-
-Mathilda: That just shows her love.  You're lucky.  But I must confess, I'm glad we can finally have a conversation alone.  ...If you take my meaning.
-
-Clive: I believe I do.  It seems we'll have more chances to talk here amidst the dust of battle...  than we ever will surrounded by the fancy tapestries of the castle.
-
-Mathilda: Hee hee.  So it seems.  Who even knows when I'll next get to don a dress and a dour expression?
-
-Clive: ......
-
-Mathilda: What?
-
-Clive: I was just thinking...  The next time you DO wear a dress...might I ask for a dance?
-
-Mathilda: Eh?  But that might be weeks...or months!
-
-Clive: I am a patient man.  And the wait will be well worth it in the end.
-
-Mathilda: Very well.  A dance it is.
-
-Clive: Truly?  Thank you, milady!  I shall look forward to that day.
-
-*Clive leaves*
-
-Mathida: Aaand...there he goes.  By the gods...  Is he SKIPPING?  Ha ha ha!  ...Wait.  Why am I laughing?  I don't remember how to dance.  This is going to end with me crushing his toe into paste... 
+## CliveMathilda_C
+[MidLeft][LoadCliveYoung]
+[MidRight][LoadMathildaYoung][ToggleSmile]
+Ho, Clive. Have the other knights[NL]
+been making you feel at home?[AN]
+[MidLeft][MoveMidLeft]
+Ah, Lady Mathilda! Yes, everyone[NL]
+has been very kind to me thus far.[AN]
+But the first three months[NL]
+have been naught but training.[AN]
+I long for a fight.[AN]
+[MidRight]
+Well, you'll get one.[AN]
+The training is to make certain[NL]
+you're ready for it.[AN]
+[MidLeft]
+I just want a chance to prove myself--[NL]
+to be one step closer to you.[AN]
+[MidRight]
+Why me?[AN]
+[MidLeft][MoveMidLeft]
+You do not know? The bards sing of[NL]
+Lady Mathilda as the finest[AN]
+of all the knights of Zofia![AN]
+Boys the kingdom 'round whisper your[NL]
+name before they go to sleep. I fear[AN]
+my friends and I were no exception.[AN]
+Let us just say you are the object[NL]
+of much adulation, my lady.[AN]
+[MidRight]
+This comes as a surprise.[AN]
+I thought boys dreamed of fighting[NL]
+alongside heroes such as Sir Mycen.[AN]
+[MidLeft]
+Sir Mycen is indeed a man worthy of[NL]
+much respect. I can only hope to[AN]
+one day be half the legend that he is.[AN]
+But who do you think it is that[NL]
+lights the fires of a boy's heart?[AN]
+A stoic old man[Beat[NL]
+or a beautiful woman?[AN]
+[MidRight][ToggleSmile]
+Hm[Beat] I fear my battle skills are[NL]
+seen as little more than a novelty--[AN]
+or worse, a detriment.[AN]
+I've heard more than a few[NL]
+snide remarks about what an[AN]
+[0x93]unladylike[0x94] talent I have.[AN]
+[MidLeft][MoveMidLeft]
+That's blasphemy![AN][ToggleSmile]
+You are never more beautiful than[NL]
+when riding across a battlefield.[AN]
+The dresses and dour looks you wear[NL]
+in court only obscure your radiance.[AN]
+[MidRight][ToggleSmile][MoveMidRight]
+...Dour?![AN][CloseEyes]
+Though it IS true I abhor walking[NL]
+the castle like some pretty bauble.[AN][OpenEyes][ToggleSmile]
+Speaaking of which, how is your sister?[NL]
+The one who follows you like a puppy?[AN]
+Whenever I would try to talk to you,[NL]
+she would cut in.[AN]
+[MidLeft]
+Heh. She's a handful, that one.[AN]
+You should have seen her bawl[NL]
+when I said I was enlisting.[AN]
+[MidRight]
+That just shows her love. You're lucky.[AN]
+But I must confess, I'm glad we can[NL]
+finally have a conversation alone.[AN][HalfCloseEyes]
+...If you take my meaning.[AN][OpenEyes]
+[MidLeft][HalfCloseEyes]
+I believe I do.[AN][OpenEyes]
+It seems we'll have more chances to[NL]
+talk here amidst the dust of battle...[AN]
+than we ever will surrounded by the[NL]
+fancy tapestries of the castle.[AN]
+[MidRight]
+Hee hee. So it seems.[AN]
+Who even knows when I'll next get to[NL]
+don a dress and a dour expression?[AN]
+[MidLeft]
+[Beat][AN]
+[MidRight]
+What?[AN]
+[MidLeft]
+I was just thinking[Beat][AN]
+The next time you DO wear a dress...[NL]
+might I ask for a dance?[AN]
+[MidRight][ToggleSmile][MoveMidRight]
+Eh? But that might be[NL]
+weeks... or months![AN]
+[MidLeft][ToggleSmile]
+I am a patient man. And the wait[NL]
+will be well worth it in the end.[AN]
+[MidRight]
+Very well. A dance it is.[AN]
+[MidLeft][MoveMidLeft]
+Truly? [MoveMidLeft]Thank you, milady![NL]
+I shall look forward to that day.[AN][ClearFace][.6]
+[MidRight]
+Aaand... there he goes.[AN][.5]
+By the gods... Is he SKIPPING?[NL][MoveMidRight]
+Ha ha ha![AN][.5][ToggleSmile]
+...Wait. Why am I laughing?[NL]
+I don't remember how to dance.[AN][CloseEyes]
+This is going to end with me[NL]
+crushing his toe into paste...[AN]
+[X]
