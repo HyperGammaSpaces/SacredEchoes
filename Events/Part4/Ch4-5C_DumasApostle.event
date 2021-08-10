@@ -2,56 +2,67 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plCh4_5C_Event, Dummy_ThisChapter)
+EventPointerTable(plCh4_5C_Event, Evt_ThisChapter)
 
-Dummy_ThisChapter:
-	POIN Dummy_TurnBasedEvents
-	POIN Dummy_CharacterBasedEvents
-	POIN Dummy_LocationBasedEvents
-	POIN Dummy_MiscBasedEvents
-	POIN Dummy_Dunno Dummy_Dunno Dummy_Dunno
-	POIN Dummy_Tutorial
-	POIN Dummy_Ballista1 Dummy_Ballista2
-	POIN Dummy_Units1 Dummy_Units1
+Evt_ThisChapter:
+	POIN Evt_TurnBasedEvents
+	POIN Evt_CharacterBasedEvents
+	POIN Evt_LocationBasedEvents
+	POIN Evt_MiscBasedEvents
+	POIN Evt_Dunno Evt_Dunno Evt_Dunno
+	POIN Evt_Tutorial
+	POIN Evt_Ballista1 Evt_Ballista2
+	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
-	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
-	POIN Dummy_BeginningScene Dummy_EndingScene
+	POIN EnemyUnits EnemyUnits EnemyUnits
+	POIN Evt_BeginningScene Evt_EndingScene
 
-Dummy_TurnBasedEvents:
+Evt_TurnBasedEvents:
 	TURN
 
-Dummy_CharacterBasedEvents:
+Evt_CharacterBasedEvents:
 	CHAR
 
-Dummy_LocationBasedEvents:
+Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
 	Seize(14,5)
 	LOCA
 
-Dummy_MiscBasedEvents:
+Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Dummy_EndingScene)
+	DefeatAll(Evt_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
-Dummy_Dunno:
+Evt_Dunno:
 	END_MAIN
 
-Dummy_Tutorial:
+Evt_Tutorial:
 	END_MAIN
 
-Dummy_Ballista1:
+Evt_Ballista1:
 	BLST
 	ALIGN 4
 
-Dummy_Ballista2:
+Evt_Ballista2:
 	BLST
 	ALIGN 4
 
-Dummy_Units1:
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+PlayerPlacement:
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [16,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [15,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [16,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [17,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [5,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [3,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [2,9] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [1,9] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [18,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [17,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [19,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
@@ -61,27 +72,39 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Garcia Cantor	Garcia Level(9, Enemy, True) [14,5]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Wight_Bow Garcia Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Wight_Bow Garcia Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT
-	
-SkirmishEnemies:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Jedah_Ch4 Necromancer	Jedah_Ch4 Level(15, Enemy, True) [18,5]	0x00 0x00 0x0 0x00 [Thanatos, Dracoshield] AttackInRangeAI
+	UNIT 0xB7 Mogall Jedah_Ch4 Level(4, Enemy, True) [9,4] 0x00 0x00 0x0 0x00 [Tentacle] CantorAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(4, Enemy, True) [15,4] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(4, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(4, Enemy, True) [6,3] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(4, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(4, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
 	UNIT
 
-Dummy_BeginningScene:
+Evt_BeginningScene:
 
 	//debug only
+	#ifndef __DEBUG__
 	SetBackground(0x1D)
 	Text(Celica_EndDemo)
 	MNTS 0x0
 	ENDA
-	//end debug
+	#endif
+	
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD3 0x0 PlayerPlacement 
+	ENUN
+	GotoPrepScreen
+	ENDA
 
-Dummy_EndingScene:
+Evt_EndingScene:
 	CALL UnifiedBEXPCaller
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x12
+	MUSCSLOW 0x7FFF
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter4C3Completed
+	EVBIT_MODIFY 0x0
+	
+	MNCH 0x23
 	ENDA

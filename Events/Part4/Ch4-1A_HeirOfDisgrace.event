@@ -78,9 +78,9 @@ PlayerUnits:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,23] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [16,22] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,24] 0x00 0x00 0x1 REDA15R22 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,24] 0x00 0x00 0x1 REDA15R23 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [14,24] 0x00 0x00 0x1 REDA16R22 [BaseLance] NoAI
 	UNIT
 	
 CutsceneUnits_Ending:
@@ -143,45 +143,57 @@ Evt_BeginningScene:
 	SetBackground(0x1D)
 	Text(Celica_EndDemo)
 	MNTS 0x0
-	//ENDA
+	ENDA
 	#endif
 	
-	SetBackground(0x20)
+	MUSC SongID_Env_GustyWind
+	SetBackground(0x20, 5)
 	Text(AlmAct4_OpeningText) //Clive talks about invading Rigel
 	
 	//If Gray is alive
 	CHECK_ALIVE Gray
 	BEQ 0x1 0xC 0x0
+		FADI 5
+		STAL 5
+		FADU 5
 		Text(AlmAct4_OpeningText_Gray)
 	LABEL 0x1
-	FADI 0x2
+	MUSC SongID_Env_GustyWindStop
+	FADI 2
 	
+	MUSC SongID_ImportantBattle
 	SetBackground(0x47, 5)
 	Text(Ch4A_1_OpeningText) //Lukas
-	FADI 0x2
-	
-	
+
 	CAM1 [15,22]
-	FADU 5
+	ClearBackgroundSmooth
 	
+	EVBIT_T 0x9
 	LOAD2 0x0 CutsceneUnits
 	ENUN
-	STAL 20
+	EVBIT_F 0x9
+	STAL 40
 	
+	MUSC SongID_PrinceOfDarkness
 	EVBIT_T 0x9
 	LOAD1 0x1 BossUnits
 	ENUN
 	EVBIT_F 0x9
+	CAM1 BerkutGK
 	FlashCursor(BerkutGK, 60)
 	Text(Ch4A_1_OpeningText_2) //berkut/alm/fernand/clive yelling across the field
+	MUSCSLOW SongID_Silence
+	STAL 20
 	
-	CAM1 Alm
-	FlashCursor(Alm,60)
-	Text(Ch4A_1_OpeningText_3)
 	EVBIT_T 0x9
 	LOAD1 0x0 GenericSoldiers
 	ENUN
 	EVBIT_F 0x9
+	CAM1 Alm
+	FlashCursor(Alm,60)
+	MUSC SongID_Uprising
+	Text(Ch4A_1_OpeningText_3)
+	STAL 20
 	
 	CAM1 BerkutGK
 	FlashCursor(BerkutGK, 60)
@@ -192,10 +204,10 @@ Evt_BeginningScene:
 	ENUN
 	EVBIT_F 0x9
 	
+	FADI 16
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	
-	FADI 16
 	CLEA 0x0
 	LOAD3 0x0 PlayerUnits 
 	ENUN
@@ -209,33 +221,43 @@ Evt_EndingScene:
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A1Completed
-	EVBIT_MODIFY 0x0
+	EVBIT_MODIFY 0x0 
 
 	//Check how many green units lived and set a local flag before clearing them.
 	CHECK_OTHERS
 	SVAL 0x2 0x2
 	BLE 0x12 0xC 0x2
 		//3 generics survived
+		MUSC SongID_Victory
 		SetBackground(0x47)
 		Text(Ch4A_1_GreenUnitReward)
 		REMOVEPORTRAITS
 		SVAL 0x3 KillerLance
 		GIVEITEMTO Alm
 		EVBIT_T 0x7
+		FADI 2
+		CLEAN
 	LABEL 0x12
 	CLEA 0x0
 	CLEN 0x0
 	
-	MUSC 0x3A
+	MUSC SongID_ShadowOfVictory
 	LOAD1 0x1 BossUnits_Ending
 	ENUN
 	LOAD2 0x0 CutsceneUnits_Ending
 	ENUN
+	CAM1 Alm
 	FADU 2
 	Text(Ch4A_1_EndingText) //Berkut yells at Fernand
+	
+	
 	//Do some creepy effects here
+	MUSCSLOW SongID_Silence
 	Text(Ch4A_1_EndingText_2) //Berkut hears Duma's voice
 	//Turn off creepy effects
+	
+	
+	MUSCSLOW SongID_ShadowOfVictory
 	Text(Ch4A_1_EndingText_3) //Fernand convinces Berkut to retreat
 	MOVE 0x08 BerkutGK [4,0]
 	MOVE 0x08 FernandPaladin [5,0]
@@ -245,9 +267,18 @@ Evt_EndingScene:
 	FlashCursor(Alm, 60)
 	Text(Ch4A_1_EndingText_4) //tobin asks alm if they should give chase
 	FADI 2
+	MUSC SongID_PrinceOfDarkness
 	SetBackground(0x0E)
 	BROWNBOXTEXT Loc_RigelCastle [8,8]
-	Text(Ch4A_1_EndingText_5) //berkut yells at rinea
+	TEXTSTART
+	TEXTSHOW Ch4A_1_EndingText_5 //berkut yells at rinea
+	TEXTEND
+	MUSCSLOW SongID_Silence
+	TEXTCONT
+	TEXTEND
+	MUSCSLOW SongID_SilentGround
+	TEXTCONT
+	TEXTEND
 	
 	FADI 2
 	MNCH 0x24

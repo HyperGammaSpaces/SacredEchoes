@@ -12,23 +12,65 @@ Dummy_ThisChapter:
 	POIN Dummy_Dunno Dummy_Dunno Dummy_Dunno
 	POIN Dummy_Tutorial
 	POIN Dummy_Ballista1 Dummy_Ballista2
-	POIN Dummy_Units1 Dummy_Units1
+	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
-	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
+	POIN EnemyUnits EnemyUnits EnemyUnits
 	POIN Dummy_BeginningScene Dummy_EndingScene
 
 Dummy_TurnBasedEvents:
 	TURN
 
 Dummy_CharacterBasedEvents:
+	CharacterEvent(0x09,TalkToZeke,Tatiana,Zeke)
+	CharacterEvent(0x09,TalkToZekeAlm,Alm,Zeke)
 	CHAR
+	
+TalkToZeke:
+	MUSS 0x30
+	STAL 0x20
+	Text(Placeholder_Text)
+	SVAL 0x1 0x0
+	CHAI Zeke
+	STAL 5
+	CUSA Zeke
+	STAL 0x14
+	CharacterJoinedNotification(Notif_ZekeJoin)
+	MURE 0x05
+	EVBIT_MODIFY 0x1
+	ENUT gZekeRecruited
+	EVBIT_MODIFY 0x0
+	NoFade
+	ENDA
+	
+TalkToZekeAlm:
+	MUSS 0x30
+	STAL 0x20
+	Text(Placeholder_Text)
+	SVAL 0x1 0x0
+	CHAI Zeke
+	STAL 5
+	CUSA Zeke
+	STAL 0x14
+	CharacterJoinedNotification(Notif_ZekeJoin)
+	MURE 0x05
+	EVBIT_MODIFY 0x1
+	ENUT gZekeRecruited
+	EVBIT_MODIFY 0x0
+	NoFade
+	ENDA
 
 Dummy_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
-	Seize(14,5)
+	Seize(10,5)
+	LOCA 0xA VillageEvent [5,5] 0x10
 	LOCA
+	
+VillageEvent:
+	//Idea: if gTatianaRecruited unset, the villagers will refuse to give you anything and fight you, so you destroy the village.
+	//VillageEventItem(Ch4_5A_VillageText,0x05,SpeedRing)
+	ENDA
 
 Dummy_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -50,8 +92,23 @@ Dummy_Ballista2:
 	BLST
 	ALIGN 4
 
-Dummy_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+PlayerPlacement:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Tatiana Saint 0x00 Level(1, Ally, 1) [18,17] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [6,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [6,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [18,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [17,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
@@ -61,27 +118,78 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Mikhail Cantor	Mikhail Level(9, Enemy, True) [14,5]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
+	UNIT JeromeCh4_5 GoldKnight	JeromeCh4_5 Level(9, Enemy, True) [10,5]	0x00 0x00 0x0 0x00 [SilverLance,Javelin] NeverMoveAI
+	UNIT 0x86 Paladin JeromeCh4_5 Level(12, Enemy, True) [8,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin JeromeCh4_5 Level(12, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin JeromeCh4_5 Level(12, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin JeromeCh4_5 Level(12, Enemy, True) [11,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x8B Arcanist JeromeCh4_5 Level(12, Enemy, True) [12,7] 0x00 0x00 0x0 0x00 [Mire,Physic] MoveWithLeaderAI
+	UNIT 0x8B Arcanist JeromeCh4_5 Level(12, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [Mire,Physic] MoveWithLeaderAI
+	UNIT 0x86 GoldKnight JeromeCh4_5 Level(4, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 GoldKnight JeromeCh4_5 Level(4, Enemy, True) [10,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 BowKnight JeromeCh4_5 Level(4, Enemy, True) [9,7] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
+	UNIT 0x86 BowKnight JeromeCh4_5 Level(4, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
 	UNIT
 	
-SkirmishEnemies:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+ZekeUnits:
+	UNIT Zeke GoldKnight 0x00 Level(3,NPC,False) [18,7] 0x00 0x00 0x0 0x00 [BaseLance] DefensiveTerrainAI
+	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [17,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [19,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [17,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [19,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 BowKnight Zeke Level(4, NPC, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT 0x86 BowKnight Zeke Level(4, NPC, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT 0x86 BowKnight Zeke Level(4, NPC, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT
+	
+ZekeEnemyUnits:
+	UNIT Zeke GoldKnight 0x00 Level(3,Enemy,False) [18,7] 0x00 0x00 0x0 0x00 [BaseLance] DefensiveTerrainAI
+	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [17,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [19,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [19,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 BowKnight Zeke Level(4, Enemy, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT 0x86 BowKnight Zeke Level(4, Enemy, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT 0x86 BowKnight Zeke Level(4, Enemy, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
 	UNIT
 
 Dummy_BeginningScene:
 
 	//debug only
+	#ifndef __DEBUG__
 	SetBackground(0x1D)
 	Text(Celica_EndDemo)
 	MNTS 0x0
 	ENDA
-	//end debug
+	#endif
+	
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD3 0x0 PlayerPlacement 
+	ENUN
+	CHECK_EVENTID gTatianaRecruited
+	BEQ 0xF rC r0
+		LOAD1 0x1 ZekeUnits
+		ENUN
+		GOTO 0x10
+	LABEL 0xF
+		LOAD1 0x1 ZekeEnemyUnits
+		ENUN
+		ENUT 0x09 //disable the talk option for alm and zeke
+	LABEL 0x10
+	GotoPrepScreen
+	ENDA
 
 Dummy_EndingScene:
 	CALL UnifiedBEXPCaller
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x12
+	MUSCSLOW SongID_Silence
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter4A5Completed
+	EVBIT_MODIFY 0x0
+	MNCH 0x28
 	ENDA

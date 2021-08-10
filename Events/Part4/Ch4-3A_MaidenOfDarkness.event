@@ -12,13 +12,54 @@ Dummy_ThisChapter:
 	POIN Dummy_Dunno Dummy_Dunno Dummy_Dunno
 	POIN Dummy_Tutorial
 	POIN Dummy_Ballista1 Dummy_Ballista2
-	POIN Dummy_Units1 Dummy_Units1
+	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
-	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
+	POIN EnemyUnits EnemyUnits EnemyUnits
 	POIN Dummy_BeginningScene Dummy_EndingScene
 
 Dummy_TurnBasedEvents:
+	TurnEventEnemy(0x00, CastingSummon, 3)
+	TURN 0x0 LoadSummons [3,255] 0x0
+	TURN 0x0 LoadReinforcementBandits [5,8] 0x0
 	TURN
+	
+CastingSummon:
+	CAM1 MarlaCh4
+	STAL 20
+	FlashCursor(MarlaCh4, 60)
+	Text(Ch4_3A_MarlaSummons)
+	NoFade
+	ENDA
+	
+LoadSummons:
+	CHECK_EVENTID 0x2 // boss death quote
+	BNE 0 0xC 0x0 // branch label 0 if summoner dead
+	COUNTER_CHECK 0 // slot c = counter 0 value
+	SVAL 0x1 1 // number of turns between summons (1)
+	BNE 1 0xC 0x1 // branch label 1 if counter is not at value
+
+	// Counter at value
+	COUNTER_SET 0 0 // reset counter
+	CAM1 MarlaCh4 // cam on summoner
+	ENUN
+	SOUN 0x3BF // summoning SFX
+	STAL 20
+	ReinforcementEvent(WitchSummons)
+	GOTO 0
+
+	LABEL 1
+	// Counter not at value
+	COUNTER_ADD 0 0 // counter 0 ++
+
+	LABEL 0
+	// event end
+	NoFade
+	ENDA
+	
+LoadReinforcementBandits:
+	ReinforcementEvent(BrigandsReinforcements)
+	NoFade
+	ENDA
 
 Dummy_CharacterBasedEvents:
 	CHAR
@@ -27,8 +68,13 @@ Dummy_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
-	Seize(14,5)
+	Seize(14,2)
+	LOCA 0xA VillageEvent [26,9] 0x10
 	LOCA
+	
+VillageEvent:
+	VillageEventItem(Ch4_3A_VillageText,0x05,SpeedRing)
+	ENDA
 
 Dummy_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -50,8 +96,23 @@ Dummy_Ballista2:
 	BLST
 	ALIGN 4
 
-Dummy_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+PlayerPlacement:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [1,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [6,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
@@ -61,27 +122,59 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Mikhail Cantor	Mikhail Level(9, Enemy, True) [14,5]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
+	UNIT MarlaCh4 Witch	MarlaCh4 Level(9, Enemy, True) [14,2]	0x00 0x00 0x0 0x00 [Aura] NeverMoveAI
+	//4 barons
+	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [13,4] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [12,3] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	//4 snipers
+	UNIT 0x89 Sniper MarlaCh4 Level(4, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT 0x89 Sniper MarlaCh4 Level(4, Enemy, True) [15,13] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper MarlaCh4 Level(4, Enemy, True) [19,12] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper MarlaCh4 Level(4, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	//4 knights
+	UNIT 0x88 Knight MarlaCh4 Level(9, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT 0x88 Knight MarlaCh4 Level(9, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT 0x88 Knight MarlaCh4 Level(9, Enemy, True) [20,13] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT 0x88 Knight MarlaCh4 Level(9, Enemy, True) [21,12] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	//2 paladins
+	UNIT 0x86 Paladin MarlaCh4 Level(4, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x86 Paladin MarlaCh4 Level(4, Enemy, True) [18,13] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
 	UNIT
 	
-SkirmishEnemies:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+WitchSummons:
+	UNIT 0x94 Witch	MarlaCh4 Level(6, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
+	UNIT 0x94 Witch	MarlaCh4 Level(6, Enemy, True) [16,1]	0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
+	UNIT
+	
+BrigandsReinforcements:
+	UNIT GenericPirate Brigand MarlaCh4 Level(20,Enemy,True) [7,6] 0x00 0x00 0x1 REDA7R6 [SilverAxe,Torch] BrigandAI
 	UNIT
 
 Dummy_BeginningScene:
 
 	//debug only
+	#ifndef __DEBUG__
 	SetBackground(0x1D)
 	Text(Celica_EndDemo)
 	MNTS 0x0
 	ENDA
-	//end debug
+	#endif
+	
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD3 0x0 PlayerPlacement 
+	ENUN
+	GotoPrepScreen
+	ENDA
 
 Dummy_EndingScene:
 	CALL UnifiedBEXPCaller
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x12
+	MUSCSLOW SongID_Silence
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter4A3Completed
+	EVBIT_MODIFY 0x0
+	MNCH 0x26
 	ENDA

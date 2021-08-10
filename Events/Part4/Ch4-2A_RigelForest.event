@@ -26,7 +26,9 @@ Evt_TurnBasedEvents:
 XaizorCh4_2Moves:
 	SVAL 0x1 0x0
 	CHAI XaizorCh4_2
-	//Text(Ch4-2A_XaizorCh4_2MovesText)
+	MUSI
+	Text(Ch4_2A_XaizorMovesText)
+	MUNO
 	NoFade
 	ENDA
 	
@@ -41,7 +43,20 @@ Evt_LocationBasedEvents:
 	  Seize(4,5)
 	#endif
 	Seize(3,3)
+	LOCA 0xA VillageEvent [21,16] 0x10
 	LOCA
+	
+VillageEvent:
+	MUSI
+	SetBackground(0x42)
+	Text(Ch4_2A_VillageText)
+	EndConvo
+	MUNO
+	CALL $591F40
+	SMOV 0x3 DumaIcon
+	GIVEITEMTO 0xFFFF
+	EVBIT_T 0x7
+	ENDA
 
 Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -79,9 +94,13 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x1 REDA11R18 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x1 REDA10R18 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x1 REDA11R19 [BaseLance] NoAI
+	UNIT
+	
+CutsceneUnits_Nuibaba:
+	UNIT Nuibaba Cantor_F 0x00 Level(1, Enemy, 1) [4,1] 0x00 0x00 0x0 0x00 [Medusa, Vulnerary] NoAI
 	UNIT
 
 EnemyUnits:
@@ -117,11 +136,29 @@ Evt_BeginningScene:
 	SetBackground(0x1D)
 	Text(Celica_EndDemo)
 	MNTS 0x0
-	//ENDA
+	ENDA
 	#endif
 	
+	MUSC SongID_Env_Night
 	LOAD1 0x1 EnemyUnits
 	ENUN
+	
+	SetBackground(0x48)
+	Text(Ch4A_2_OpeningText)
+	FADI 2
+	CLEAN
+	FADU 2
+	
+	EVBIT_T 0x9
+	LOAD2 0x0 CutsceneUnits
+	ENUN
+	EVBIT_F 0x9
+	CAM1 Alm
+	FlashCursor(Alm, 60)
+	Text(Ch4A_2_OpeningText_2)
+	FADI 5
+	
+	CLEA 0x0
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	GotoPrepScreen
@@ -129,11 +166,35 @@ Evt_BeginningScene:
 
 Evt_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW 0x7FFF
+	MUSCSLOW SongID_Silence
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A2Completed
 	EVBIT_MODIFY 0x0
 	
+	MUSC SongID_Victory
+	SetBackground(0x48)
+	Text(Ch4A_2_EndingText)
+	
+	MUSCSLOW SongID_Silence
+	FADI 5
+	CLEA 0x0
+	CLEE 0x0
+	SVAL 0xB Coords(4, 1)
+	LOMA 0x1B
+	LOAD1 0x1 CutsceneUnits_Nuibaba
+	ENUN
+	FADU 5
+	MUSC SongID_FromTheDarkness //replace with nuibaba theme
+		
+	BROWNBOXTEXT Loc_NuibabasAbode [8,8]
+	STAL 20
+	FlashCursor(Nuibaba, 60)
+	Text(Ch4A_2_EndingText_Nuibaba)
+	
+	FADI 2
+	SVAL 0xB Coords(3, 3)
+	LOMA 0x24
+	STAL 4
 	MNCH 0x25
 	ENDA

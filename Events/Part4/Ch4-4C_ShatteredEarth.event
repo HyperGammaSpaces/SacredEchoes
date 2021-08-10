@@ -2,56 +2,77 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plCh4_4C_Event, Dummy_ThisChapter)
+EventPointerTable(plCh4_4C_Event, Evt_ThisChapter)
 
-Dummy_ThisChapter:
-	POIN Dummy_TurnBasedEvents
-	POIN Dummy_CharacterBasedEvents
-	POIN Dummy_LocationBasedEvents
-	POIN Dummy_MiscBasedEvents
-	POIN Dummy_Dunno Dummy_Dunno Dummy_Dunno
-	POIN Dummy_Tutorial
-	POIN Dummy_Ballista1 Dummy_Ballista2
-	POIN Dummy_Units1 Dummy_Units1
+Evt_ThisChapter:
+	POIN Evt_TurnBasedEvents
+	POIN Evt_CharacterBasedEvents
+	POIN Evt_LocationBasedEvents
+	POIN Evt_MiscBasedEvents
+	POIN Evt_Dunno Evt_Dunno Evt_Dunno
+	POIN Evt_Tutorial
+	POIN Evt_Ballista1 Evt_Ballista2
+	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
-	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
-	POIN Dummy_BeginningScene Dummy_EndingScene
+	POIN EnemyUnits EnemyUnits EnemyUnits
+	POIN Evt_BeginningScene Evt_EndingScene
 
-Dummy_TurnBasedEvents:
+Evt_TurnBasedEvents:
 	TURN
 
-Dummy_CharacterBasedEvents:
+Evt_CharacterBasedEvents:
 	CHAR
 
-Dummy_LocationBasedEvents:
+Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
 	Seize(14,5)
 	LOCA
 
-Dummy_MiscBasedEvents:
+Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Dummy_EndingScene)
+	DefeatAll(Evt_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
-Dummy_Dunno:
+Evt_Dunno:
 	END_MAIN
 
-Dummy_Tutorial:
+Evt_Tutorial:
 	END_MAIN
 
-Dummy_Ballista1:
+Evt_Ballista1:
+	GAST [10,9] Trap_PointUp [1,1]
+	GAST [12,9] Trap_PointUp [1,1]
+	GAST [11,13] Trap_PointUp [1,1]
+	GAST [11,7] Trap_PointDown [1,1]
+	GAST [10,11] Trap_PointDown [1,1]
+	GAST [12,11] Trap_PointDown [1,1]
+	ENDTRAP
+	ALIGN 4
+
+Evt_Ballista2:
 	BLST
 	ALIGN 4
 
-Dummy_Ballista2:
-	BLST
-	ALIGN 4
-
-Dummy_Units1:
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+PlayerPlacement:
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [22,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [20,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [21,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [21,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [22,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [23,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [25,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [26,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [27,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [28,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [26,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [27,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [28,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [25,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [26,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [27,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
@@ -61,27 +82,53 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Garcia Cantor	Garcia Level(9, Enemy, True) [14,5]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Wight_Bow Garcia Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Wight_Bow Garcia Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT
-	
-SkirmishEnemies:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Jamil Arcanist	Jamil Level(18, Enemy, True) [11,10]	0x00 0x00 0x0 0x00 [Thanatos, Upheaval] NeverMoveAI
+	UNIT 0xAF Cantor Jamil Level(4, Enemy, True) [8,10] 0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
+	UNIT 0xAF Arcanist Jamil Level(4, Enemy, True) [9,4] 0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
+	UNIT 0xAF Arcanist Jamil Level(4, Enemy, True) [13,14] 0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
+	UNIT 0xAF Fiend Jamil Level(4, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [SteelLance] NeverMoveAI
+	UNIT 0xAF Fiend Jamil Level(4, Enemy, True) [10,14] 0x00 0x00 0x0 0x00 [SteelLance] NeverMoveAI
+	UNIT 0xAF DreadFighter Jamil Level(4, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [IronSword] NeverMoveAI
+	UNIT 0xAF DreadFighter Jamil Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [IronSword] NeverMoveAI
+	UNIT 0xAF DreadFighter Jamil Level(4, Enemy, True) [11,6] 0x00 0x00 0x0 0x00 [IronSword] NeverMoveAI
+	UNIT 0xAF DreadFighter Jamil Level(4, Enemy, True) [13,12] 0x00 0x00 0x0 0x00 [IronSword] NeverMoveAI
+	UNIT 0xAF DreadFighter Jamil Level(4, Enemy, True) [14,12] 0x00 0x00 0x0 0x00 [IronSword] NeverMoveAI
+	UNIT 0xAF Witch Jamil Level(4, Enemy, True) [11,16] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
+	UNIT 0xAF Witch Jamil Level(4, Enemy, True) [12,16] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
+	UNIT 0xAF Witch Jamil Level(4, Enemy, True) [27,10] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
+	UNIT 0xAF Witch Jamil Level(4, Enemy, True) [27,9] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
+	UNIT 0xAF Witch Jamil Level(4, Enemy, True) [28,8] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
+	UNIT 0xAF Witch Jamil Level(4, Enemy, True) [21,9] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
+	UNIT 0xAF Witch Jamil Level(4, Enemy, True) [22,9] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
+	UNIT 0xAF Witch Jamil Level(4, Enemy, True) [22,10] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
+	UNIT 0xAF Witch Jamil Level(4, Enemy, True) [23,10] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
+	UNIT 0xAF Witch Jamil Level(4, Enemy, True) [13,8] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
 	UNIT
 
-Dummy_BeginningScene:
+Evt_BeginningScene:
 
 	//debug only
+	#ifndef __DEBUG__
 	SetBackground(0x1D)
 	Text(Celica_EndDemo)
 	MNTS 0x0
 	ENDA
-	//end debug
+	#endif
+	
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD3 0x0 PlayerPlacement 
+	ENUN
+	GotoPrepScreen
+	ENDA
 
-Dummy_EndingScene:
+Evt_EndingScene:
 	CALL UnifiedBEXPCaller
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x12
+	MUSCSLOW 0x7FFF
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter4C4Completed
+	EVBIT_MODIFY 0x0
+	
+	MNCH 0x22
 	ENDA

@@ -12,13 +12,42 @@ Dummy_ThisChapter:
 	POIN Dummy_Dunno Dummy_Dunno Dummy_Dunno
 	POIN Dummy_Tutorial
 	POIN Dummy_Ballista1 Dummy_Ballista2
-	POIN Dummy_Units1 Dummy_Units1
+	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
-	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
+	POIN EnemyUnits EnemyUnits EnemyUnits
 	POIN Dummy_BeginningScene Dummy_EndingScene
 
 Dummy_TurnBasedEvents:
+	TURN 0x0 LoadSummons [7,255] 0x0
+	//Add some sort of incentive to save Tatiana in time. Maybe place her on the summoning circle and she slowly loses HP?
 	TURN
+	
+LoadSummons:
+	CHECK_EVENTID 0x2 // boss death quote
+	BNE 0 0xC 0x0 // branch label 0 if summoner dead
+	COUNTER_CHECK 0 // slot c = counter 0 value
+	SVAL 0x1 1 // number of turns between summons (1)
+	BNE 1 0xC 0x1 // branch label 1 if counter is not at value
+
+	// Counter at value
+	COUNTER_SET 0 0 // reset counter
+	CAM1 Nuibaba // cam on summoner
+	ENUN
+	SOUN 0x3BF // summoning SFX
+	STAL 20
+	ReinforcementEvent(GorgonSummons)
+	SVAL 0xB Coords(23, 26)
+	RESUMM 0xFFFE
+	GOTO 0
+
+	LABEL 1
+	// Counter not at value
+	COUNTER_ADD 0 0 // counter 0 ++
+
+	LABEL 0
+	// event end
+	NoFade
+	ENDA
 
 Dummy_CharacterBasedEvents:
 	CHAR
@@ -27,7 +56,7 @@ Dummy_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
-	Seize(14,5)
+	Seize(4,1)
 	LOCA
 
 Dummy_MiscBasedEvents:
@@ -50,8 +79,23 @@ Dummy_Ballista2:
 	BLST
 	ALIGN 4
 
-Dummy_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+PlayerPlacement:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
@@ -61,27 +105,49 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Mikhail Cantor	Mikhail Level(9, Enemy, True) [14,5]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
+	UNIT Nuibaba Cantor_F	Nuibaba Level(9, Enemy, True) [4,1]	DropItem 0x00 0x0 0x00 [Medusa, Fortify, MageRing] NeverMoveAI
+	//1 witch buddy
+	UNIT 0xB9 Gorgon	Nuibaba Level(6, Enemy, True) [4,6]	0x00 0x00 0x0 0x00 [EvilEye, Shadowshot, Fortify] MoveAndHealAI
+	//1 BK
+	UNIT 0x89 BowKnight Nuibaba Level(2, Enemy, True) [11,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	//4 arcanists
+	UNIT 0x8B Arcanist Nuibaba Level(10, Enemy, True) [12,3] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT 0x8B Arcanist Nuibaba Level(10, Enemy, True) [14,4] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT 0x8B Arcanist Nuibaba Level(10, Enemy, True) [18,3] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT 0x8B Arcanist Nuibaba Level(9, Enemy, True) [20,4] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	//3 DFs
+	UNIT 0x87 DreadFighter Nuibaba Level(1, Enemy, True) [9,9] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT 0x87 DreadFighter Nuibaba Level(1, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT 0x87 DreadFighter Nuibaba Level(1, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
 	UNIT
 	
-SkirmishEnemies:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+GorgonSummons:
+	UNIT 0xB9 Gorgon	Nuibaba Level(6, Enemy, True) [23,26]	0x00 0x00 0x0 0x00 [EvilEye] NoAI
 	UNIT
 
 Dummy_BeginningScene:
 
 	//debug only
+	#ifndef __DEBUG__
 	SetBackground(0x1D)
 	Text(Celica_EndDemo)
 	MNTS 0x0
 	ENDA
-	//end debug
+	#endif
+	
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD3 0x0 PlayerPlacement 
+	ENUN
+	GotoPrepScreen
+	ENDA
 
 Dummy_EndingScene:
 	CALL UnifiedBEXPCaller
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x12
+	MUSCSLOW SongID_Silence
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter4A4Completed
+	EVBIT_MODIFY 0x0
+	MNCH 0x27
 	ENDA
