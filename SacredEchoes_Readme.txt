@@ -225,9 +225,9 @@ Some things are still under development for later releases.
 
 #Credits
 
-- Circleseverywhere’s Modular Stat Screens, Custom Spell Animation Engine and everything2ea modules
-- macplustrees’ base-stat promotion gains
-- Teraspark’s staff/item range rework
+- Circleseverywhere's Modular Stat Screens, Custom Spell Animation Engine and everything2ea modules
+- macplustrees' base-stat promotion gains
+- Teraspark's staff/item range rework
 - Stan's Movement Skills
 - laqieer's world map installation utilities
 - Huichelaar's world map flags upgrades
@@ -281,13 +281,15 @@ Some things are still under development for later releases.
 - Map sprites and class cards by flasuban, Tordo45, SkidMarc25, Leif, TAS20XX, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, Snewping, MeatOfJustice, DerTheVaporeon, FEier, and Team SALVAGED
 - Battle palettes by Hypergammaspaces and Dancer_A
 - LordGlenn's Cipher icons for weapon ranks, weapon icons for Regalia weapons
-- Cardcafe’s Echoes item icons and FEier's Weapon icons
-- New support writing contributed by Meadows, Flare and Ese
-  - Meadows: Alm/Tobin, Kliff/Gray, Kliff/Silque, Tobin/Clair
+- Cardcafe's Echoes item icons and FEier's Weapon icons, Dark magic icons by epicer and ilmoro
+- New support writing contributed by Meadows, Flare, Ese, and CaptinSpike
+  - Meadows: Alm/Tobin, Alm/Gray, Kliff/Gray, Kliff/Silque, Tobin/Clair, Tobin/Faye, Silque/Tatiana, Valbar/Deen, Valbar/Kamui, Mae/Est, Boey/Nomah,
+  - Ese: Alm/Celica, Alm/Kliff, Alm/Faye, Alm/Mycen, Celica/Boey, Celica/Genny, Celica/Saber, Gray/Acantha, Silque/Jesse, Python/Acantha, Kamui/Hyas, Atlas/Hyas
+  - CaptinSpike: Saber/Sonya C and B, assorted boss conversations
   - Flare: Clive/Mathilda B and A
 - Snakey1's REDA helpers, Support rework, MSS fixes and event cleanup
 - RandomWizard for boss conversations and text formatting help, and "The Siege" map
-- Levin64 and Tea for story writing assistance and proofreading
+- Levin64 and Tea for story writing assistance and English proofreading
 - The_Burger_King_420, Uzel, and ilmoro for Spanish translation
 - marc_ and luciel for Spanish proofreading
 - Pikmin1211 for eventing and enemy placement on "The Warship", "Zofia Harbor", "Invaders Descend" and "The Siege"
