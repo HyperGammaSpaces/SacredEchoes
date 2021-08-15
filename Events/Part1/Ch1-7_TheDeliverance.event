@@ -175,6 +175,7 @@ Ch1_7_EndingScene:
 	Text(Ch1_7_PostBattle_1)
 	SETVAL 0x2 0x0D
 	CALL SetBGWhite
+	MUSCSLOW SongID_Sorrow
 	Text(CliveFernand_Flashback)
 	MUSCSLOW SongID_Silence
 	SETVAL 0x2 0x20

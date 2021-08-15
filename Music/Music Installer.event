@@ -181,14 +181,20 @@ ALIGN 4
 ALIGN 4
 
 {
-	#include "DS_S_Files/DarkCloudsGather.event"
-	SongTable(SongID_Tension,DarkCloudsGather,MapMusicGroup)
+	#include "S_Files/Tension_New.event"
+	SongTable(SongID_Tension,Tension_New,MapMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/VillageTension.event"
 	SongTable(SongID_Uprising,VillageTension,MapMusicGroup)
+}
+ALIGN 4
+
+{
+	#include "S_Files/Sadness_Theme.event"
+	SongTable(SongID_Sorrow,Sadness_Theme,MapMusicGroup)
 }
 ALIGN 4
 
@@ -223,8 +229,8 @@ ALIGN 4
 ALIGN 4
 
 {
-	#include "S_Files/PrepScreenFE5.event"
-	SongTable(SongID_AlmPrep,PrepScreenFE5,MapMusicGroup)
+	#include "S_Files/Preparations_Deliverance.event"
+	SongTable(SongID_AlmPrep,Preparations_Deliverance,MapMusicGroup)
 }
 ALIGN 4
 

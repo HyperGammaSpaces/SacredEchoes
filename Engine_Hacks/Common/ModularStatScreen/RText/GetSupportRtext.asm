@@ -72,6 +72,7 @@ strb r3, [r1, #0x0]			//support points total in 0x2b
 //add r0, r6
 ldr r0, =0x0001
 
+NoDisplayedSupport:
 ADD r4, #0x4C
 STRH r0, [r4, #0x0]			//text ID for rtext
 POP {r4,r5,r6}
