@@ -1,0 +1,423 @@
+#0x67A Cmd_Seize
+ Prendre[X]
+
+## Cmd_Attack
+ Attaquer[X]
+ 
+## Cmd_WMagic
+ Magie B.[X]
+
+## Cmd_BMagic
+ Magie N.[X]
+ 
+## Cmd_Dance
+ Danser[X]
+
+## Cmd_Steal
+ Voler[X]
+
+## Cmd_Talk
+ Parler[X]
+
+## Cmd_Support
+ Soutien[X]
+
+## Cmd_Visit
+ Visiter[X]
+
+## Cmd_Chest
+ Coffre[X]
+
+## Cmd_Door
+ Porte[X]
+
+## Cmd_Armory
+ Armurerie[X]
+
+## Cmd_Vendor
+ Magasin[X]
+
+## Cmd_Secret
+ Secret[X]
+
+## Cmd_Mila
+ Mila[X]
+
+## Cmd_Rescue
+ Sauver[X]
+
+## Cmd_Drop
+ D[0xE9]poser[X]
+
+## Cmd_Take
+ Recevoir[X]
+
+## Cmd_Give
+ Donner[X]
+
+## Cmd_Item
+ Objets[X]
+
+## Cmd_Trade
+ [0xC9]change[X]
+
+## Cmd_Supply
+ Convoi[X]
+
+## Cmd_Status
+ [0xC9]tat[X]
+
+## Cmd_Ride
+ Monter[X]
+
+## Cmd_Exit
+ Sortir[X]
+
+## Cmd_Summon
+ Invoquer[X]
+
+## Cmd_Open
+ Ouvrir[X]
+
+## Cmd_Wait
+ Attendre[X]
+
+## Cmd_Use
+ Utiliser[X]
+
+## Cmd_Equip
+ [0xC9]quiper[X]
+
+## Cmd_Trade2
+ [0xC9]change[X]
+
+## Cmd_Discard
+ Jeter[X]
+ 
+#0x6BF Desc_Cmd_Wait
+End the turn. Be sure you're[NL]
+done before you select this.[X]
+
+## Desc_Cmd_Attack
+Attack an enemy unit.[X]
+
+## Desc_Cmd_WMagic
+Spend HP to cast a spell[NL]
+that can help allies.[X]
+
+## Desc_Cmd_Dance
+Perform a dance that allows[NL]
+your allies to move again.[X]
+
+## Desc_Cmd_BMagic
+Spend HP to cast a spell[NL]
+that can attack a foe.[X]
+
+## Desc_Cmd_Steal
+Shhh...[NL]
+(Steal enemy items!)[X]
+
+## Desc_Cmd_Rescue
+Rescue an ally from[NL]
+an adjacent space.[X]
+
+## Desc_Cmd_Drop
+Place a rescued ally in[NL]
+an adjacent space.[X]
+
+## Desc_Cmd_Give
+Pass a rescued ally to[NL]
+another ally next to you.[X]
+
+## Desc_Cmd_Take
+Receive a rescued ally[NL]
+from another ally.[X]
+
+## Desc_Cmd_Talk
+Talk to a unit in[NL]
+an adjacent space.[X]
+
+## Desc_Cmd_Support
+Speak to an allied unit and[NL]
+strengthen the bond you have.[X]
+
+## Desc_Cmd_Visit
+Visit a village or home.[X]
+
+## Desc_Cmd_Seize
+Seize a designated point[NL]
+to complete the chapter.[X]
+
+## Desc_Cmd_Door
+A door. Use a key to open it.[X]
+
+## Desc_Cmd_Chest
+A chest. Use a key to open it.[X]
+
+## Desc_Cmd_Armory
+An armory. Enter to buy weapons.[X]
+
+## Desc_Cmd_Shop
+A shop. Enter to buy items.[X]
+
+## Desc_Cmd_Secret
+Congratulations! Only for[NL]
+someone as lucky as you...[X]
+
+#0x6D3 Desc_Cmd_Item
+Use and equip items.[X]
+
+## Desc_Cmd_Trade
+Trade items with allies[NL]
+in adjacent spaces.[X]
+
+## Desc_Cmd_Supply
+Manage items in the supply convoy.[X]
+
+## Desc_Cmd_Ride
+Ride a ballista and use it to attack.[X]
+
+## Desc_Cmd_Exit
+Exit the ballista.[X]
+
+#0x6DC Desc_Cmd_Toss
+Discard an object. Magic and[NL]
+important items can't be discarded.[X]
+
+## Desc_Cmd_Summon
+Summon a phantom.[X]
+
+## Desc_Cmd_Open
+Open doors or chests.[X]
+
+#0x74F HP_Restore_Arrow
+->[X]
+
+#0x750 Cmd_Shove
+ Bousc.[X]
+ 
+## Cmd_Smite
+ Charge[X]
+
+## Cmd_Pivot
+ Trav.[X]
+ 
+## Cmd_Reposition
+ Repo.[X]
+
+## Cmd_Swap
+ Invers.[X]
+ 
+## Cmd_Arrive
+ Arriver[X]
+ 
+## Desc_Cmd_Shove
+Push an adjacent unit one[NL]
+tile away.[X]
+ 
+## Desc_Cmd_Smite
+Push an adjacent unit two[NL]
+tiles away.[X]
+
+## Desc_Cmd_Pivot
+Move to opposite side of[NL]
+an adjacent ally.[X]
+ 
+## Desc_Cmd_Reposition
+Move adjacent ally to this[NL]
+unit's opposite side.[X]
+
+## Desc_Cmd_Swap
+Swap positions with an[NL]
+adjacent ally.[X]
+
+## Desc_Cmd_Arrive
+Arrive at a designated point[NL]
+to progress in the chapter.[X]
+
+## Scroll_Pivot
+Select a unit to pivot around.[X]
+
+## Scroll_Swap
+Select a unit to swap with.[X]
+
+## Scroll_Push
+Select a unit to push away.[X]
+
+#0x761 ScrollyText_TradeCommand_2
+Select a unit to trade with.[X]
+
+#0x84B DropItemPrompt
+Jeter [Item] ?[NL][No][X]
+
+## Error_CantVisit
+You can't visit houses or[NL]
+villages while Silenced.[X]
+
+## Error_CantEquip
+You can't equip this weapon.[X]
+
+## Error_WeaponLevelTooLow
+Weapon rank is too[NL]
+low to use this.[X]
+
+## Error_CantThrowAway
+This can't be discarded.[X]
+
+## Error_CantSell
+This can't be sold.[X]
+
+## Error_CantUseMagic
+You don't have enough[NL]
+HP to cast this spell.[X]
+
+## Error_CantTalk
+You can't talk while Silenced.[X]
+
+## Error_CantUseAnyMagic
+HP and the ability to speak[NL]
+are needed to cast magic.[X]
+
+## Error_CantUseArena
+You can't fight, so you[NL]
+can't enter the arena.[X]
+
+## Error_CantStealItems
+Weapons and magic can't be stolen.[X]
+
+## Error_CantRepairAnything
+There's nothing to repair.[X]
+
+## Error_CantRepairNonWeapon
+Only weapons can be repaired.[X]
+
+## Error_BallistaEmpty
+There's no more ammunition[NL]
+for this ballista.[X]
+
+## Error_DontNeed
+There's no need for this.[X]
+
+## Error_CantUseItem
+This item can't be used.[X]
+
+## Error_CantUsePromo1
+Must be at least level 10.[X]
+
+## Error_CantUsePromo2
+Must be at least level 10.[X]
+
+## Error_CantUseDoor
+There's no door.[X]
+
+## Error_CantUseChest
+There's no chest.[X]
+
+## Error_CantUseLockpick
+Only for thieves.[X]
+
+## Error_CantUsePrf
+This weapon belongs to another unit.[X]
+
+## Error_CantUsePick
+There is no lock to open.[X]
+
+## Error_InventoryFull
+Your inventory is full.[X]
+
+## Error_CantRepairItem
+This item can't be repaired.[X]
+
+## Error_CantQuitTutorial
+[X]
+
+## Error_ConvoyFull
+Your supply convoy is full.[NL]
+Select an item to discard.[X]
+
+## ScrollyText_InventoryFull_Drop
+Your inventory is full. Select an item to discard.[X]
+
+## ScrollyText_InventoryFull_Send
+Your inventory is full. Send an item to Supply.[X]
+
+## ScrollyText_RescueCommand
+Select a unit to rescue.[X]
+
+## ScrollyText_DropCommand
+Select a space to drop this unit into.[X]
+
+## ScrollyText_TakeCommand
+Select a unit to take a traveler from.[X]
+
+## ScrollyText_GiveCommand
+Select a unit to give the traveler to.[X]
+
+## ScrollyText_TradeCommand
+Select a unit to trade with.[X]
+
+## ScrollyText_StealCommand
+Select a unit to steal from.[X]
+
+## ScrollyText_WhiteMagicCommand
+Select a unit to use this magic on.[X]
+
+## ScrollyText_TalkCommand
+Select a unit to talk to.[X]
+
+## ScrollyText_DanceCommand
+Select a unit to move again.[X]
+
+## ScrollyText_WarpPoint
+Select a space to warp the unit to.[X]
+
+## ScrollyText_Formation
+Rearrange your units.[X]
+
+## ScrollyText_SelectWeapon
+Select a weapon to attack with.[X]
+
+## HealStaff_ScrollyText
+Select a person to restore HP to.[X]
+
+## ScrollyText_WarpTarget
+Select a unit to warp.[X]
+
+## ScrollyText_SpellTarget
+Select a target for this spell.[X]
+
+## ScrollyText_RestoreTarget
+Select a person to restore.[X]
+
+## Invoke_ScrollyText
+Select a space to summon into.[X]
+
+## Barrier_ScrollyText
+Select a unit to increase resistance.[X]
+
+## Unlock_ScrollyText
+Select which lock to open.[X]
+
+## StatusStaff_ScrollyText
+Select a unit to use this magic on.[X]
+
+## TorchStaff_ScrollyText
+Select an area to light up.[X]
+
+## Mine_ScrollyText
+Select a space to set the trap in.[X]
+
+## LightRune_ScrollyText
+Select a space to set the trap in.[X]
+
+## Bless_ScrollyText
+Select a character to bless.[X]
+
+## Invoke_ScrollyText2
+Select a space to summon into.[X]
+
+## Pick_ScrollyText
+Select which lock to open.[X]
+
+#0x883 Notif_ItemSent
+ all[0xE9]e au convoi.[X]

@@ -12,6 +12,10 @@
 		MESSAGE "Installing Spanish text"
 		#include "Text/_Spanish/InstallTextData.event"
 	#else
+		#ifdef LANGUAGE_FR
+		MESSAGE "Installing French text"
+		#include "Text/_French/InstallTextData.event"
+		#else
 		MESSAGE "Installing English text"
 		#include "Text/_English/InstallTextData.event"
 	#endif
