@@ -57,12 +57,36 @@ Dummy_LocationBasedEvents:
 	  Seize(4,5)
 	#endif
 	Seize(4,1)
+	Chest(Ridersbane, 24, 9) //TODO: replace item
+	Chest(Ridersbane, 21, 13) //TODO: replace item
 	LOCA
+	
+SwitchPush:
+	SVAL 0x2 0x0
+	CHECK_ALLEGIANCE 0xFFFF
+	BEQ 0x0 0xC 0x2
+		//not a blue unit
+		CHECK_EVENTID
+		SADD 0xC2
+		ENUF_SLOT2
+		EVBIT_T 0x7
+		ENDB
+	LABEL 0x0 //continue
+	SOUN 0xB1 //unlocking
+	STAL 60
+	EARTHQUAKE_START 0x100
+	STAL 60
+	EARTHQUAKE_END
+	STAL 20
+	TILECHANGE 0x04 //open gate to nuibaba room
+	SOUN 0xAB //village destroyed thump
+	EVBIT_T 0x7
+	ENDA
 
 Dummy_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Dummy_EndingScene)
 	MournQuoteAFEVS
+	AREA 0x15 SwitchPush [21,4] [21,5] //switch that opens tilechange 0x04
 	AFEV
 
 Dummy_Dunno:
@@ -72,6 +96,7 @@ Dummy_Tutorial:
 	END_MAIN
 
 Dummy_Ballista1:
+	DrainFloorTrap(4,2)
 	BLST
 	ALIGN 4
 
@@ -80,22 +105,22 @@ Dummy_Ballista2:
 	ALIGN 4
 
 PlayerPlacement:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [16,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
@@ -103,13 +128,17 @@ CutsceneUnits:
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
+	
+TatianaLoads:
+	UNIT Tatiana Saint 0x00 Level(1, NPC, 1) [4,2] 0x00 0x00 0x0 0x00 NoItems NeverMoveAI
+	UNIT
 
 EnemyUnits:
-	UNIT Nuibaba Cantor_F	Nuibaba Level(9, Enemy, True) [4,1]	DropItem 0x00 0x0 0x00 [Medusa, Fortify, MageRing] NeverMoveAI
+	UNIT Nuibaba Cantor_F	Nuibaba Level(16, Enemy, True) [4,1]	DropItem 0x00 0x0 0x00 [Medusa, Fortify, MageRing] DontAttackTatianaBossAI
 	//1 witch buddy
-	UNIT 0xB9 Gorgon	Nuibaba Level(6, Enemy, True) [4,6]	0x00 0x00 0x0 0x00 [EvilEye, Shadowshot, Fortify] MoveAndHealAI
+	UNIT 0xB9 Gorgon	Nuibaba Level(6, Enemy, True) [4,6]	0x00 0x00 0x0 0x00 [EvilEye, Shadowshot, Fortify] DontAttackTatianaMageAI
 	//1 BK
-	UNIT 0x89 BowKnight Nuibaba Level(2, Enemy, True) [11,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT 0x89 BowKnight Nuibaba Level(2, Enemy, True) [11,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeExceptTatianaAI
 	//4 arcanists
 	UNIT 0x8B Arcanist Nuibaba Level(10, Enemy, True) [12,3] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT 0x8B Arcanist Nuibaba Level(10, Enemy, True) [14,4] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
@@ -136,6 +165,8 @@ Dummy_BeginningScene:
 	#endif
 	
 	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD1 0x1 TatianaLoads
 	ENUN
 	LOAD3 0x0 PlayerPlacement 
 	ENUN

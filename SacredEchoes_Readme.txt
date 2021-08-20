@@ -8,7 +8,7 @@ Specifically:
 
 - All basic weapons are unbreakable.
   - Equipped weapons have limited durability in most cases. Money can be earned from certain boss characters and from dungeons and skirmishes, and you can purchase replacement weapons from the armories in Act 3.
-- Magic costs HP to cast. Cost is based on WEXP value.
+- Magic costs HP to cast.
   - When out of HP to cast a spell, that spell is disarmed until HP is restored enough to cast it.
   - Unit HP is updated visually when casting spells with cost.
 - Hit and Avoid calcs are adjusted to mirror Echoes calcs.
@@ -270,7 +270,7 @@ Some things are still under development for later releases.
   - Shaman Staff by Temp and Shin19
   - Archers by DerTheVaporeon
   - Woodcutter and Axeman by Leo_Link
-  - Barbarian by Orihara_Saki (Bow edit by me)
+  - Highlander/Barbarian by Orihara_Saki (Bow edit by me)
   - Pegasus Knight by OreoStyx
   - Falcoknight by TBA
   - Wyvern Rider by flasuban and eCut

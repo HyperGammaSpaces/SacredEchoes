@@ -46,15 +46,35 @@ DefensiveTerrainList:
 BYTE $0B $1D $1F $39 //ID -1: gate, pillar, throne, supply
 WORD $0
 
-
-/*
 ALIGN 4
-AiAttackMathilda:
-    AiAttackCharacter(Mathilda)
+TatianaList:
+BYTE Tatiana 0 0 0
+WORD 0
+
+ALIGN 4
+AlmDontAttackList:
+BYTE Alm 0 0 0
+WORD 0
+
+ALIGN 4
+AiStaffButDontAttackTatiana:
+	AiFuncPercentChance($3F791, $D8670, 50) //50% chance to try to heal in range
+    AiAttackIgnoring(TatianaList)
+    AiRestart
+	
+ALIGN 4
+AiDontAttackTatiana:
+    AiAttackIgnoring(TatianaList)
+    AiRestart
+	
+ALIGN 4
+AiDontAttackAlm:
+    AiAttackIgnoring(AlmDontAttackList)
     AiRestart
 
-InjectAi1(0x07, AiAttackMathilda)
-*/
+InjectAi1(0x04, AiDontAttackTatiana)
+InjectAi1(0x05, AiStaffButDontAttackTatiana)
+InjectAi1(0x09, AiDontAttackAlm)
 
 
 

@@ -78,7 +78,6 @@ VillageEvent:
 
 Dummy_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Dummy_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
@@ -129,23 +128,23 @@ EnemyUnits:
 	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [12,3] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
 	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
 	//4 snipers
-	UNIT 0x89 Sniper MarlaCh4 Level(4, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
-	UNIT 0x89 Sniper MarlaCh4 Level(4, Enemy, True) [15,13] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
-	UNIT 0x89 Sniper MarlaCh4 Level(4, Enemy, True) [19,12] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
-	UNIT 0x89 Sniper MarlaCh4 Level(4, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [15,13] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [19,12] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
 	//4 knights
-	UNIT 0x88 Knight MarlaCh4 Level(9, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
-	UNIT 0x88 Knight MarlaCh4 Level(9, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
-	UNIT 0x88 Knight MarlaCh4 Level(9, Enemy, True) [20,13] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
-	UNIT 0x88 Knight MarlaCh4 Level(9, Enemy, True) [21,12] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [20,13] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [21,12] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
 	//2 paladins
-	UNIT 0x86 Paladin MarlaCh4 Level(4, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-	UNIT 0x86 Paladin MarlaCh4 Level(4, Enemy, True) [18,13] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x86 Paladin MarlaCh4 Level(8, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x86 Paladin MarlaCh4 Level(8, Enemy, True) [18,13] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
 	UNIT
 	
 WitchSummons:
-	UNIT 0x94 Witch	MarlaCh4 Level(6, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
-	UNIT 0x94 Witch	MarlaCh4 Level(6, Enemy, True) [16,1]	0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
+	UNIT 0x94 Witch	MarlaCh4 Level(8, Enemy, True) [12,1]	0x00 0x00 0x1 REDA12R1 [Thunder, Rewarp] WitchWarpAI
+	UNIT 0x94 Witch	MarlaCh4 Level(8, Enemy, True) [16,1]	0x00 0x00 0x1 REDA16R1 [Thunder, Rewarp] WitchWarpAI
 	UNIT
 	
 BrigandsReinforcements:

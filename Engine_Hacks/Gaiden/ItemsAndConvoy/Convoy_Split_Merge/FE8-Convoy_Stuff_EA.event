@@ -200,9 +200,9 @@ WORD gConvoyItemArray
 /*
 ALIGN 4
 gProc_DisplayCombine:
-_6C_YIELD
-_6C_LOOP_ROUTINE(CombineDisplayLoop|1)
-_6C_END
+PROC_YIELD
+PROC_LOOP_ROUTINE(CombineDisplayLoop|1)
+PROC_END
 
 ALIGN 4
 CombineGraphicTable:

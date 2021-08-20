@@ -472,20 +472,20 @@ _p6CSingleUnitMovementAnim:		//HINT=PROCS	STRING="UnitMoveAnim"
 {
 
 #ifndef NDEBUG
-	_6C_SET_NAME(__psName)
+	PROC_SET_NAME(__psName)
 #endif
 
-	_6C_SET_DESTRUCTOR(_p6CUnitMoveAnim_rDestruct+1)
-	_6C_CALL_ROUTINE(0x15361) // Block 6C Thread 2	//FE8U
+	PROC_SET_DESTRUCTOR(_p6CUnitMoveAnim_rDestruct+1)
+	PROC_CALL_ROUTINE(0x15361) // Block 6C Thread 2	//FE8U
 	
 	// Start Animation on Next frame only (ensuring the 6C is properly constructed)
-	_6C_YIELD
+	PROC_YIELD
 	
 	// Actual animation
-	_6C_LOOP_ROUTINE(_p6CUnitMoveAnim_rLoop+1)
+	PROC_LOOP_ROUTINE(_p6CUnitMoveAnim_rLoop+1)
 	
-	_6C_CALL_ROUTINE(0x15371) // Unblock 6C Thread 2	//FE8U
-	_6C_END
+	PROC_CALL_ROUTINE(0x15371) // Unblock 6C Thread 2	//FE8U
+	PROC_END
 	
 #ifndef NDEBUG
 __psName:
@@ -500,21 +500,21 @@ _p6CSingleUnitPushAnim:		//HINT=PROCS	STRING="UnitPushAnim"
 {
 
 #ifndef NDEBUG
-	_6C_SET_NAME(__psName)
+	PROC_SET_NAME(__psName)
 #endif
 
-	_6C_SET_DESTRUCTOR(_p6CUnitPushAnim_rDestruct+1)
-	_6C_CALL_ROUTINE(0x15361) // Block 6C Thread 2	//FE8U
+	PROC_SET_DESTRUCTOR(_p6CUnitPushAnim_rDestruct+1)
+	PROC_CALL_ROUTINE(0x15361) // Block 6C Thread 2	//FE8U
 	
 	// Start Animation on Next frame only (ensuring the 6C is properly constructed)
-	_6C_YIELD
+	PROC_YIELD
 	
 	// Actual animation
-	_6C_LOOP_ROUTINE(_p6CUnitPushAnim_rPushLoop+1)
-	_6C_LOOP_ROUTINE(_p6CUnitPushAnim_rReturnLoop+1)
+	PROC_LOOP_ROUTINE(_p6CUnitPushAnim_rPushLoop+1)
+	PROC_LOOP_ROUTINE(_p6CUnitPushAnim_rReturnLoop+1)
 	
-	_6C_CALL_ROUTINE(0x15371) // Unblock 6C Thread 2	//FE8U
-	_6C_END
+	PROC_CALL_ROUTINE(0x15371) // Unblock 6C Thread 2	//FE8U
+	PROC_END
 	
 #ifndef NDEBUG
 __psName:

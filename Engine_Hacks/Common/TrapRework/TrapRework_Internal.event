@@ -1,6 +1,7 @@
 
 
 	#include "asm/TrapRework.lyn.event"	
+	#include "asm/TrapReworkDamageTrap.lyn.event"	
 	
 	PUSH
 		ORG $27318
@@ -31,7 +32,30 @@
 	
 		ORG $02e470
 		jumpToHack(TrapRework_NewUpdateAllLightRunes)	
+		
+		ORG $376B8
+		SHORT $4804 $1C31
+		BL($2CE0) //ProcStartBlocking
+		SHORT $1C01 $3050 $8004 $654D $E036 $46C0
+		WORD DrainFloorTrapExec_Proc
 	POP
+	
+	ALIGN 4
+	DrainFloorTrapExec_Proc:
+		PROC_SLEEP(1)
+		PROC_WHILE_ROUTINE($78739)
+		
+		PROC_CALL_ROUTINE(TrapRework_CheckIfKill|1) //BWL stuff When Kill
+		PROC_CALL_ROUTINE($37529) //Graphics (just reuse Mine)
+		PROC_YIELD
+		
+		PROC_CALL_ROUTINE(TrapRework_DoDamage|1) //Damage
+		PROC_YIELD
+		PROC_CALL_ROUTINE(TrapRework_CleanUp|1) //Clean up
+		PROC_YIELD
+		
+		PROC_END
+	
 	
 	/*
 	ALIGN 4

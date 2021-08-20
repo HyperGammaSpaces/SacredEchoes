@@ -39,6 +39,7 @@
 #define AiDoNothing                            "BYTE 0x06 0 0xFF 0; WORD 0 0 0"
 #define AiMaybeAttackInPlace(aChance)          "BYTE 0x07 (aChance) 0xFF 0; WORD 0 0 0"
 #define AiAttackInPlace                        "BYTE 0x07 100 0xFF 0; WORD 0 0 0"
+#define AiAttackInPlaceIgnoring(aList)         "BYTE 0x07 100 0xFF 0; WORD 0; POIN (aList); WORD 0"
 #define AiMaybeAttackClass(aClassId, aChance)  "BYTE 0x08 (aChance) 0xFF 0; WORD (aClassId) 0 0"
 #define AiAttackClass(aClassId)                "BYTE 0x08 100 0xFF 0; WORD (aClassId) 0 0"
 #define AiMaybeStaffOnly(aChance)              "BYTE 0x09 0 0xFF 0; WORD 0 0 0"

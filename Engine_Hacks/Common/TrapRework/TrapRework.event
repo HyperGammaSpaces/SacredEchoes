@@ -32,6 +32,7 @@
 	#define RedSigilTrapID 0x12
 	#define GreenSigilTrapID 0x13
 	#define TorchTrapID 0x14
+	#define EvilSigilTrapID 0x15
 	#define TileMarkerMapSpriteID 0x65
 	#define TorchTrapMapSprite 0x64
 	
@@ -57,6 +58,7 @@
 	SetTrapEventInit(SigilTrapID,TrapRework_GenericInitializer)
 	SetTrapEventInit(RedSigilTrapID,TrapRework_GenericInitializer)
 	SetTrapEventInit(GreenSigilTrapID,TrapRework_GenericInitializer)
+	SetTrapEventInit(EvilSigilTrapID,TrapRework_GenericInitializer)
 	
 	#define SetTrapMapSprite(trapID,mapSpriteID) "PUSH; ORG TrapMapSpriteTable+(trapID-1); BYTE mapSpriteID; POP"
 
@@ -77,6 +79,7 @@
 	SetTrapMapSprite(SigilTrapID,TileMarkerMapSpriteID)
 	SetTrapMapSprite(RedSigilTrapID,TileMarkerMapSpriteID)
 	SetTrapMapSprite(GreenSigilTrapID,TileMarkerMapSpriteID)
+	SetTrapMapSprite(EvilSigilTrapID,0)
 	
 	//Macro for setting unique cases on trap map sprites
 	#define SetTrapMapSpriteFunc(trapID,ptr) "PUSH; ORG (TrapMapSpriteFuncTable+((trapID-1)*4)); POIN ptr; POP"
@@ -150,6 +153,10 @@
 	#define BlueSigil(x,y) "MapSpriteTrap(SigilTrapID,x,y)"
 	#define RedSigil(x,y) "MapSpriteTrap(RedSigilTrapID,x,y)"
 	#define GreenSigil(x,y) "MapSpriteTrap(GreenSigilTrapID,x,y)"
+	#define EvilSigil(x,y) "MapSpriteTrap(EvilSigilTrapID,x,y)"
+	
+	#define FireFloorTrap(x,y) "BYTE FireTrapID x y 0 1 1"
+	#define DrainFloorTrap(x,y) "BYTE 0xF x y 0 1 1"
 	
 	#define BallistaRework(x,y) "MapSpriteTrap(BallistaTrapID,x,y)"
 	

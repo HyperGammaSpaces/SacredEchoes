@@ -43,27 +43,27 @@ Dummy_Tutorial:
 
 Dummy_Ballista1:
 //Max of 40 fire traps; can spill over to Dummy_Ballista2
-	FIRE [10,16] 0x0 [1,1]
-	FIRE [11,16] 0x0 [1,1]
-	FIRE [11,17] 0x0 [1,1]
-	FIRE [12,17] 0x0 [1,1]
-	FIRE [13,17] 0x0 [1,1]
-	FIRE [10,18] 0x0 [1,1]
-	FIRE [12,18] 0x0 [1,1]
-	FIRE [13,18] 0x0 [1,1]
-	FIRE [14,18] 0x0 [1,1]
-	FIRE [9, 19] 0x0 [1,1]
-	FIRE [10,19] 0x0 [1,1]
-	FIRE [12,19] 0x0 [1,1]
-	FIRE [13,19] 0x0 [1,1]
-	FIRE [14,19] 0x0 [1,1]
-	FIRE [20,15] 0x0 [1,1]
-	FIRE [21,16] 0x0 [1,1]
-	FIRE [23,12] 0x0 [1,1]
-	FIRE [25,12] 0x0 [1,1]
-	FIRE [24,13] 0x0 [1,1]
-	FIRE [26,13] 0x0 [1,1]
-	FIRE [27, 9] 0x0 [1,1]
+	FireFloorTrap(10,16)
+	FireFloorTrap(11,16)
+	FireFloorTrap(11,17)
+	FireFloorTrap(12,17)
+	FireFloorTrap(13,17)
+	FireFloorTrap(10,18)
+	FireFloorTrap(12,18)
+	FireFloorTrap(13,18)
+	FireFloorTrap(14,18)
+	FireFloorTrap(9, 19)
+	FireFloorTrap(10,19)
+	FireFloorTrap(12,19)
+	FireFloorTrap(13,19)
+	FireFloorTrap(14,19)
+	FireFloorTrap(20,15)
+	FireFloorTrap(21,16)
+	FireFloorTrap(23,12)
+	FireFloorTrap(25,12)
+	FireFloorTrap(24,13)
+	FireFloorTrap(26,13)
+	FireFloorTrap(27, 9)
 	BLST
 	ALIGN 4
 

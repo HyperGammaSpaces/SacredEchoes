@@ -60,7 +60,6 @@ VillageEvent:
 
 Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Evt_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
@@ -112,10 +111,10 @@ EnemyUnits:
 	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
 	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [14,6] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
 	//archers
-	UNIT 0x89 Sniper XaizorCh4_2 Level(4, Enemy, True) [6,2] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
-	UNIT 0x89 Sniper XaizorCh4_2 Level(4, Enemy, True) [11,6] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
-	UNIT 0x89 Sniper XaizorCh4_2 Level(4, Enemy, True) [17,4] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
-	UNIT 0x89 Sniper XaizorCh4_2 Level(4, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper XaizorCh4_2 Level(9, Enemy, True) [6,2] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper XaizorCh4_2 Level(9, Enemy, True) [11,6] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper XaizorCh4_2 Level(9, Enemy, True) [17,4] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper XaizorCh4_2 Level(9, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
 	//mages and witches
 	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [3,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
@@ -181,7 +180,8 @@ Evt_EndingScene:
 	CLEA 0x0
 	CLEE 0x0
 	SVAL 0xB Coords(4, 1)
-	LOMA 0x1B
+	VCWF 0x0
+	LOMA 0x26
 	LOAD1 0x1 CutsceneUnits_Nuibaba
 	ENUN
 	FADU 5
