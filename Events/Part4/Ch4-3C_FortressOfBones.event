@@ -18,21 +18,63 @@ Evt_ThisChapter:
 	POIN Evt_BeginningScene Evt_EndingScene
 
 Evt_TurnBasedEvents:
+	TURN 0x0 LoadSummons [3,255] 0x0
 	TURN
+	
+LoadSummons:
+	CHECK_EVENTID 0xA
+	BNE 2 0xC 0x0
+		CAM1 Dolth
+		STAL 20
+		FlashCursor(Dolth, 60)
+		Text(Ch4C_3_SummonText)
+		ENUT 0xA
+		GOTO 3
+	LABEL 2
+	CHECK_EVENTID 0x2 // boss death quote
+	BNE 0 0xC 0x0 // branch label 0 if summoner dead
+	COUNTER_CHECK 0 // slot c = counter 0 value
+	SVAL 0x1 2 // number of turns between summons (2)
+	BNE 1 0xC 0x1 // branch label 1 if counter is not at value
+
+	// Counter at value
+	LABEL 3
+	COUNTER_SET 0 0 // reset counter
+	CAM1 Dolth // cam on summoner
+	ENUN
+	SOUN 0x3BF // summoning SFX
+	STAL 20
+	LoadReinforcements(DracoSummons)
+	EVBIT_T 0x7
+	GOTO 0
+
+	LABEL 1
+	// Counter not at value
+	COUNTER_ADD 0 0 // counter 0 ++
+
+	LABEL 0
+	// event end
+	NoFade
+	ENDA
 
 Evt_CharacterBasedEvents:
 	CHAR
 
 Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(8,1)
 	#endif
-	Seize(14,5)
+	Seize(9,17)
+	House(0, HouseEvent, 9,1)
+	SecretShop(Act4SecretShop,10,15)
 	LOCA
+	
+HouseEvent:
+	HouseEvent(Ch4C_3_HouseText,0x01)
+	ENDA
 
 Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Evt_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
@@ -65,22 +107,29 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [7,0] 0x00 0x00 0x1 REDA8R1 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage 0x00 Level(1, Ally, 1) [7,0] 0x00 0x00 0x1 REDA9R2 [Fire, Vulnerary] NoAI 
+	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [7,0] 0x00 0x00 0x1 REDA10R2 [Fire, Vulnerary] NoAI
 	UNIT
 
 EnemyUnits:
 	UNIT Dolth Cantor	Dolth Level(9, Enemy, True) [9,17]	0x00 0x00 0x0 0x00 [Thanatos] NeverMoveAI
-	UNIT 0xAF Sniper Dolth Level(4, Enemy, True) [6,12] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Sniper Dolth Level(4, Enemy, True) [5,14] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Sniper Dolth Level(4, Enemy, True) [4,14] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Arcanist Dolth Level(4, Enemy, True) [12,16] 0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Arcanist Dolth Level(4, Enemy, True) [12,19] 0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Arcanist Dolth Level(4, Enemy, True) [13,18] 0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Arcanist Dolth Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF DreadFighter Dolth Level(4, Enemy, True) [3,15] DropItem 0x00 0x0 0x00 [IronSword,Elixir] NeverMoveAI
-	UNIT 0xAF DreadFighter Dolth Level(4, Enemy, True) [13,15] 0x00 0x00 0x0 0x00 [IronSword] NeverMoveAI
+	UNIT 0x89 Sniper Dolth Level(10, Enemy, True) [6,12] 0x00 0x00 0x0 0x00 [SilverBow] ChaseOnceApproachedAI
+	UNIT 0x89 Sniper Dolth Level(10, Enemy, True) [5,14] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper Dolth Level(10, Enemy, True) [4,14] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x8B Arcanist 0x8A Level(8, Enemy, True) [12,16] 0x00 0x00 0x0 0x00 [Mire] MoveWithLeaderAI
+	UNIT 0x8B Arcanist Dolth Level(4, Enemy, True) [12,19] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT 0x8B Arcanist Dolth Level(4, Enemy, True) [13,18] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F, 0x03]
+	UNIT 0x8B Arcanist Dolth Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [Mire] NoAI
+	UNIT 0x87 DreadFighter Dolth Level(1, Enemy, True) [3,15] DropItem 0x00 0x0 0x00 [BraveSword,Elixir] NoAI
+	UNIT 0x8A DreadFighter Dolth Level(4, Enemy, True) [13,15] 0x00 0x00 0x0 0x00 [SteelSword] ChaseOnceApproachedAI
+	UNIT
+	
+DracoSummons:
+	UNIT 0xB4 Necrodragon 0xB4 Level(6, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R20 [FireFang] NoAI
+	UNIT 0xBD Necrodragon 0xB4 Level(4, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R19 [FireFang] MoveWithLeaderAI
+	UNIT 0xBD Necrodragon 0xB4 Level(4, Enemy, True) [6,20] 0x00 0x00 0x1 REDA5R20 [FireFang] MoveWithLeaderAI
+	UNIT 0xBD Necrodragon 0xB4 Level(4, Enemy, True) [6,20] 0x00 0x00 0x1 REDA7R20 [FireFang] MoveWithLeaderAI
 	UNIT
 
 Evt_BeginningScene:
@@ -93,8 +142,21 @@ Evt_BeginningScene:
 	ENDA
 	#endif
 	
+	MUSCSLOW SongID_Env_Lava
 	LOAD1 0x1 EnemyUnits
 	ENUN
+	CAM1 [7,0]
+	FADU 2
+	EVBIT_T 0x9
+	LOAD2 0x0 CutsceneUnits
+	ENUN
+	EVBIT_F 0x9
+	STAL 20
+	CameraCursor(Dolth)
+	Text(Ch4C_3_OpeningText)
+	FADI 5
+	
+	CLEA 0x0
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	GotoPrepScreen
@@ -102,11 +164,17 @@ Evt_BeginningScene:
 
 Evt_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW 0x7FFF
+	MUSCSLOW SongID_Silence
 	FADI 2
+	CLEE 0x0
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4C3Completed
 	EVBIT_MODIFY 0x0
 	
-	MNCH 0x21
+	MUSC SongID_Victory
+	SetBackground(0x12,5)
+	Text(Ch4C_3_EndingText)
+	FADI 2
+	
+	MNCH 0x43
 	ENDA

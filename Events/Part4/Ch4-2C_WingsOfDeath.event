@@ -27,7 +27,6 @@ Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
-	Seize(14,5)
 	LOCA
 
 Evt_MiscBasedEvents:
@@ -69,9 +68,9 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [9,23] 0x00 0x00 0x1 REDA10R23 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [9,23] 0x00 0x00 0x1 REDA8R23 [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [9,23] 0x00 0x00 0x1 REDA9R23 [Fire, Vulnerary] NoAI
 	UNIT
 
 EnemyUnits:
@@ -94,6 +93,32 @@ Evt_BeginningScene:
 	
 	LOAD1 0x1 EnemyUnits
 	ENUN
+	CHECK_EVENTID gChapter4C2Completed
+	BNE 0x101 0xC 0x0
+	
+		MUSCSLOW SongID_Env_Lava
+		SetBackground(0x31)
+		Text(Ch4C_2_OpeningText)
+		FADI 5
+		CLEAN
+	
+	CHECK_ALIVE Mae
+	BEQ 0x101 0xC 0x0
+	CHECK_ALIVE Boey
+	BEQ 0x101 0xC 0x0
+	
+		CAM1 [8,23]
+		FADU 2
+		STAL 20
+		LOAD2 0x0 CutsceneUnits
+		ENUN
+		CameraCursor(Boey)
+		Text(Ch4C_2_OpeningText_MaeBoey)
+		FADI 2
+		CLEA 0x0
+	
+	LABEL 0x101
+	
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	GotoPrepScreen
@@ -101,11 +126,20 @@ Evt_BeginningScene:
 
 Evt_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW 0x7FFF
+	MUSCSLOW SongID_Silence
 	FADI 2
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4C2Completed
-	EVBIT_MODIFY 0x0
+	CLEE 0x0
+	CHECK_EVENTID gChapter4C2Completed
+	BNE 0x102 0xC 0x0
 	
+		MUSC SongID_Victory
+		EVBIT_MODIFY 0x1
+		ENUT gChapter4C2Completed
+		EVBIT_MODIFY 0x0
+		SetBackground(0x31,5)
+		Text(Ch4C_2_EndingText)
+		FADI 2
+	
+	LABEL 0x102
 	MNCH 0x20
 	ENDA

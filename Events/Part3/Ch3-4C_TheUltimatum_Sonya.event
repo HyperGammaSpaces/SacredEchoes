@@ -109,7 +109,7 @@ Ch3_4C_UnitsNorth:
 
 EnemyUnitsSonya:
 	UNIT SonyaBoss Mage_F SonyaBoss Level(10, Enemy, False) [10,18] 0x00 0x00 0x0 0x00 [Excalibur,SteelShield] DefensiveTerrainAI
-	UNIT 0x87 Mercenary	SonyaBoss Level(15, Enemy, True) [9,5]	0x00 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
+	UNIT 0x87 Mercenary	SonyaBoss Level(15, Enemy, True) [9,5]	DropItem 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
 	UNIT 0x8C Witch	SonyaBoss Level(7, Enemy, True) [9,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
 	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [11,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
 	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [8,18]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI

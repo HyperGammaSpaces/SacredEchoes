@@ -17,31 +17,31 @@ POIN $0 $0 $0 $0 $0 $0
 POIN SeaboundShrine_BeginningScene SeaboundShrine_EndingScene
 
 SeaboundShrine_TurnBasedEvents:
-OpeningTurnEvent(SeraphimEvent)
-TURN
+	OpeningTurnEvent(SeraphimEvent)
+	TURN
 
 SeaboundShrine_CharacterBasedEvents:
-CHAR
+	CHAR
 
 SeaboundShrine_LocationBasedEvents:
-#ifdef __DEBUG__
-  Seize(4,5)
-#endif
-CHESRANDOM 0x9 Act2RandomChest|IsPointer [1,17]
+	#ifdef __DEBUG__
+	  Seize(4,5)
+	#endif
+	CHESRANDOM 0x9 Act2RandomChest|IsPointer [1,17]
 
-#ifdef LION_HEADS_ENABLED
-	//Lion heads
-	LionHead(LionheadLocalTrigger2,LionHeadSeaboundSkill, 12, 5)
-	LionHead(LionheadLocalTrigger2,LionHeadSeaboundHP, 14, 5)
-#endif
+	#ifdef LION_HEADS_ENABLED
+		//Lion heads
+		LionHead(LionheadLocalTrigger2,LionHeadSeaboundSkill, 12, 5)
+		LionHead(LionheadLocalTrigger2,LionHeadSeaboundHP, 14, 5)
+	#endif
 LOCA
 
 SeaboundShrine_MiscBasedEvents:
-CauseGameOverIfLordDies
-DefeatAll(SeaboundShrine_EndingScene)
-AFEV 0xA ChestEvent 0x9
-MournQuoteAFEVS
-AFEV
+	CauseGameOverIfLordDies
+	DefeatAll(SeaboundShrine_EndingScene)
+	AFEV 0xA ChestEvent 0x9
+	MournQuoteAFEVS
+	AFEV
 
 SeaboundShrine_Dunno:
 END_MAIN
@@ -111,7 +111,7 @@ SeaboundShrine_BeginningScene:
 		LOAD1 0x1 BossMonster_Round1
 		ENUN
 		MUSC SongID_Env_Night
-		SetBackground(0x34)
+		SetBackground(0x40)
 		//If Kamui is alive, show SeaboundShrine_KamuiIntro
 		CHECK_EXISTS Kamui
 		BEQ 0x1 0xC 0x0

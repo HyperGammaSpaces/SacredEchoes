@@ -18,7 +18,15 @@ Evt_ThisChapter:
 	POIN Evt_BeginningScene Evt_EndingScene
 
 Evt_TurnBasedEvents:
+	TURN 0x0 PaladinsMove [4,0] 0x0
 	TURN
+	
+PaladinsMove:
+	SetAIParameters(0x0,0x6,0x4,0x0)
+	CHAI BerkutGK
+	CHAI FernandPaladin
+	NoFade
+	ENDA
 
 Evt_CharacterBasedEvents:
 	CHAR
@@ -91,13 +99,13 @@ CutsceneUnits_Ending:
 	UNIT
 
 BossUnits:
-	UNIT BerkutGK GoldKnight	BerkutGK Level(7, Enemy, False) [11,11]	0x00 0x00 0x1 REDA13R20 [Rhomphaia,KeepsakeRing] AttackInHalfRangeAI
-	UNIT FernandPaladin Paladin BerkutGK Level(8, Enemy, False) [11,11] 0x00 0x00 0x1 REDA14R19 [Javelin, SteelLance] AttackInHalfRangeAI
+	UNIT BerkutGK GoldKnight	BerkutGK Level(7, Enemy, False) [11,11]	0x00 0x00 0x1 REDA13R20 [Rhomphaia,KeepsakeRing] ChaseOnceApproachedAI
+	UNIT FernandPaladin Paladin BerkutGK Level(8, Enemy, False) [11,11] 0x00 0x00 0x1 REDA14R19 [Javelin, SteelLance] ChaseOnceApproachedAI
 	UNIT
 	
 BossUnits_Ending:
-	UNIT BerkutGK GoldKnight	BerkutGK Level(7, Enemy, False) [10,12]	0x00 0x00 0x0 0x00 [Rhomphaia,KeepsakeRing] AttackInHalfRangeAI
-	UNIT FernandPaladin Paladin BerkutGK Level(8, Enemy, False) [11,12] 0x00 0x00 0x0 0x00 [Javelin, SteelLance] AttackInHalfRangeAI
+	UNIT BerkutGK GoldKnight	BerkutGK Level(7, Enemy, False) [10,12]	0x00 0x00 0x0 0x00 [Rhomphaia,KeepsakeRing] ChaseOnceApproachedAI
+	UNIT FernandPaladin Paladin BerkutGK Level(8, Enemy, False) [11,12] 0x00 0x00 0x0 0x00 [Javelin, SteelLance] ChaseOnceApproachedAI
 	UNIT
 	
 EnemyUnits:
@@ -109,11 +117,11 @@ EnemyUnits:
 	UNIT 0x86 Paladin BerkutGK Level(8, Enemy, True) [4,8] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
 	UNIT 0x86 Paladin BerkutGK Level(8, Enemy, True) [16,8] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
 	//5 Arcanists
-	UNIT 0x8B Arcanist BerkutGK Level(7, Enemy, True) [10,14] 0x00 0x00 0x0 0x00 [Mire, Fortify] NeverMoveAI
-	UNIT 0x8B Arcanist BerkutGK Level(8, Enemy, True) [9,12] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT 0x8B Arcanist BerkutGK Level(8, Enemy, True) [11,12] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT 0x8B Arcanist BerkutGK Level(8, Enemy, True) [10,11] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT 0x8B Arcanist BerkutGK Level(7, Enemy, True) [10,12] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT 0x8C Arcanist BerkutGK Level(7, Enemy, True) [10,14] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F,0x03]
+	UNIT 0x8B Arcanist 0x8C Level(8, Enemy, True) [9,12] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT 0x8B Arcanist 0x8C Level(8, Enemy, True) [11,12] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT 0x8B Arcanist 0x8C Level(8, Enemy, True) [10,11] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT 0x8B Arcanist 0x8C Level(7, Enemy, True) [10,12] 0x00 0x00 0x0 0x00 [Mire] DelayedRushAI
 	//left knight/sniper block
 	UNIT 0x88 Knight BerkutGK Level(8, Enemy, True) [2,11] 0x00 0x00 0x0 0x00 [Javelin] NoAI
 	UNIT 0x88 Knight BerkutGK Level(9, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI

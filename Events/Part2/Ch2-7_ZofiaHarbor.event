@@ -81,7 +81,14 @@ VillageEventEast:
 	ENDA
 
 House1:
-	HouseEvent(Ch2_7_House,HouseBG)
+	SVAL 0x2 Celica
+	CHECK_ACTIVE
+	BEQ 0x100 0xC 0x2
+		HouseEvent(Ch2_7_House,HouseBG)
+		GOTO 0x101
+	LABEL 0x100
+		HouseEvent(Ch2_7_House_Celica,HouseBG)
+	LABEL 0x101
 	ENDA
 
 Ch2_7_MiscBasedEvents:
@@ -250,9 +257,25 @@ Ch2_7_EndingScene:
 	CLEE 0x0
 	CAM1 [11,0]
 	SetBackground(0x24)
-	TEXTSTART
-	TEXTSHOW Ch2_7_EndingScene_1 // blah blah
-	TEXTEND
+	
+	CHECK_ALIVE Mae
+	BEQ 0x102 0xC 0x0
+	CHECK_ALIVE Boey
+	BEQ 0x102 0xC 0x0
+	
+		TEXTSTART
+		TEXTSHOW Ch2_7_EndingScene_1 //everyone alive
+		TEXTEND
+		GOTO 0x103
+		
+	LABEL 0x102
+	
+		TEXTSTART
+		TEXTSHOW Ch2_7_EndingScene_1_Bad //no mae or boey
+		TEXTEND
+		
+	LABEL 0x103
+	
 	MUSC SongID_ShadowOfVictory
 	TEXTCONT
 	TEXTEND

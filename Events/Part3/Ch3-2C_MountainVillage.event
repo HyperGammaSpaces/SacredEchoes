@@ -334,6 +334,11 @@ Ch3_2C_EndingScene:
 			ENUN
 		
 		LABEL 0x7
+		
+		SetBackground(0x43)
+		Text(Ch3_2C_SaberWarning)
+		FADI 2
+		
 		MNCH 0x18 
 		GOTO 0x05
 	LABEL 0x04

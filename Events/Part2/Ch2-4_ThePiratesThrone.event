@@ -171,6 +171,9 @@ Ch2_4_EndingScene:
 	IFEQ 0x6 0xC 0x1 //if not, goto NoFaye
 		EVBIT_MODIFY 0x0
 		MUSC SongID_Victory
+		CUSA Valbar
+		CUSA Leon
+		CUSA Kamui
 		SetBackground(0x07)
 		TEXTSTART
 		TEXTSHOW Ch2_4_PostBattle
@@ -190,14 +193,9 @@ Ch2_4_EndingScene:
 		REMOVEPORTRAITS
 		Text(Ch2_4_PostBattle_2)
 		EVBIT_MODIFY 0x1
-		REMA
-		FADI 16
-		CUSA Valbar
-		CUSA Leon
 		CHECK_EVENTID 0x8
 		BEQ 0x9 0xC 0x0
 			CharacterJoinedNotification(Notif_ValbarLeonJoin)
-		CUSA Kamui
 		LABEL 0x09
 		CHECK_EVENTID 0x9
 		BEQ 0x8 0xC 0x0
@@ -215,29 +213,26 @@ Ch2_4_EndingScene:
 	CHECK_ALIVE Leon
 	IFEQ 0x7 0xC 0x1 //if not, goto NoFaye
 		EVBIT_MODIFY 0x0
+		CUSA Leon
 		SetBackground(0x07)
 		Text(Ch2_4_PostBattle_NoValbar_Leon)
-		REMA
-		FADI 16
 		EVBIT_MODIFY 0x1
-		CUSA Leon
 		CharacterJoinedNotification(Notif_LeonJoin)
 	LABEL 0x7
 	SVAL 0x1 0x1
 	CHECK_ALIVE Kamui
 	IFEQ 0x8 0xC 0x1 //if not, goto NoFaye
 		EVBIT_MODIFY 0x0
+		CUSA Kamui
 		SetBackground(0x07)
 		Text(Ch2_4_PostBattle_NoValbar_Kamui)
-		REMA
-		FADI 16
 		EVBIT_MODIFY 0x1
-		CUSA Kamui
 		CHECK_EVENTID 0x9
 		BEQ 0x8 0xC 0x0
 			CharacterJoinedNotification(Notif_KamuiJoin)
 	LABEL 0x8
 	EVBIT_MODIFY 0x0
+	FADI 16
 	MNCH 0x0C
 	ENDA
 

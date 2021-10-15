@@ -18,20 +18,37 @@ Dummy_ThisChapter:
 	POIN Dummy_BeginningScene Dummy_EndingScene
 
 Dummy_TurnBasedEvents:
-	TurnEventEnemy(0x00, CastingSummon, 3)
+	OpeningTurnEvent(BaronsEvent)
 	TURN 0x0 LoadSummons [3,255] 0x0
-	TURN 0x0 LoadReinforcementBandits [5,8] 0x0
+	TURN 0x0 LoadReinforcementBandits [4,6] 0x0
 	TURN
 	
-CastingSummon:
-	CAM1 MarlaCh4
-	STAL 20
-	FlashCursor(MarlaCh4, 60)
-	Text(Ch4_3A_MarlaSummons)
+BaronsEvent:
+	CHECK_ALIVE Forsyth
+	BEQ 0x103 0xC 0x0
+	CHECK_DEPLOYED Forsyth
+	BEQ 0x103 0xC 0x0
+		MUSC SongID_WhatLiesAtTheEnd
+		MUSI
+		CAM1 MarlaCh4
+		STAL 30
+		CameraCursor(Forsyth)
+		Text(Ch4_3A_Barons)
+		MUNO
+	LABEL 0x103
 	NoFade
 	ENDA
 	
 LoadSummons:
+	CHECK_EVENTID 0x1D
+	BNE 2 0xC 0x0
+		CAM1 MarlaCh4
+		STAL 20
+		FlashCursor(MarlaCh4, 60)
+		Text(Ch4_3A_MarlaSummons)
+		ENUT 0x1D
+		GOTO 3
+	LABEL 2
 	CHECK_EVENTID 0x2 // boss death quote
 	BNE 0 0xC 0x0 // branch label 0 if summoner dead
 	COUNTER_CHECK 0 // slot c = counter 0 value
@@ -42,9 +59,11 @@ LoadSummons:
 	COUNTER_SET 0 0 // reset counter
 	CAM1 MarlaCh4 // cam on summoner
 	ENUN
+	LABEL 3
 	SOUN 0x3BF // summoning SFX
 	STAL 20
-	ReinforcementEvent(WitchSummons)
+	LoadReinforcements(WitchSummons)
+	EVBIT_T 0x7
 	GOTO 0
 
 	LABEL 1
@@ -66,14 +85,14 @@ Dummy_CharacterBasedEvents:
 
 Dummy_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(2,15)
 	#endif
 	Seize(14,2)
-	LOCA 0xA VillageEvent [26,9] 0x10
+	Village(0xA, VillageEvent, 26,9)
 	LOCA
 	
 VillageEvent:
-	VillageEventItem(Ch4_3A_VillageText,0x05,SpeedRing)
+	VillageEventItem(Ch4_3A_VillageText,0x05,Saunion)
 	ENDA
 
 Dummy_MiscBasedEvents:
@@ -115,30 +134,30 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,15] 0x00 0x00 0x1 REDA4R14 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [0,15] 0x00 0x00 0x1 REDA4R15 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [0,15] 0x00 0x00 0x1 REDA5R15 [BaseLance] NoAI
 	UNIT
 
 EnemyUnits:
 	UNIT MarlaCh4 Witch	MarlaCh4 Level(9, Enemy, True) [14,2]	0x00 0x00 0x0 0x00 [Aura] NeverMoveAI
 	//4 barons
-	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
-	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [13,4] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
-	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [12,3] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
-	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [21,6] 0x00 0x00 0x0 0x00 [IronLance] ChaseOnceApproachedAI
+	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [BaseLance] ChaseOnceApproachedAI
+	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [13,4] 0x00 0x00 0x0 0x00 [BaseAxe] ChaseOnceApproachedAI
+	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [IronAxe] ChaseOnceApproachedAI
 	//4 snipers
-	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
-	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [15,13] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
-	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [19,12] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
-	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT 0x89 Sniper MarlaCh4 Level(9, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [15,13] 0x00 0x00 0x0 0x00 [SteelBow] NoAI
+	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [19,12] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT 0x89 Sniper MarlaCh4 Level(8, Enemy, True) [22,9] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
 	//4 knights
 	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
-	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
-	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [20,13] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
-	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [21,12] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [20,13] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [21,8] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	//2 paladins
-	UNIT 0x86 Paladin MarlaCh4 Level(8, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x86 Paladin MarlaCh4 Level(8, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
 	UNIT 0x86 Paladin MarlaCh4 Level(8, Enemy, True) [18,13] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
 	UNIT
 	
@@ -148,7 +167,7 @@ WitchSummons:
 	UNIT
 	
 BrigandsReinforcements:
-	UNIT GenericPirate Brigand MarlaCh4 Level(20,Enemy,True) [7,6] 0x00 0x00 0x1 REDA7R6 [SilverAxe,Torch] BrigandAI
+	UNIT GenericPirate Brigand MarlaCh4 Level(20,Enemy,True) [17,9] 0x00 0x00 0x1 REDA17R9 [SilverAxe,Torch] BrigandAI
 	UNIT
 
 Dummy_BeginningScene:
@@ -161,8 +180,49 @@ Dummy_BeginningScene:
 	ENDA
 	#endif
 	
+	MUSC SongID_HerosPath
+	SetBackground(0x47)
+	Text(Ch4_3A_OpeningText)
+	
+	CHECK_ALIVE Forsyth
+	BEQ 0x100 0xC 0x0
+	CHECK_ALIVE Python
+	BEQ 0x100 0xC 0x0
+	
+		//Forsyth and Python explain the Baron ability through banter?
+		FADI 5
+		STAL 5
+		MUSC SongID_Reunion
+		FADU 5
+		Text(Ch4_3A_ForsythPython)
+		MUSCSLOW SongID_Silence
+	
+	LABEL 0x100
+	
+	FADI 2
+	CLEAN
+	STAL 20
+		
+	MUSC SongID_Uprising
 	LOAD1 0x1 EnemyUnits
 	ENUN
+	CAM1 [1,15]
+	FADU 5
+	STAL 20
+	
+	EVBIT_T 0x9
+	LOAD2 0x0 CutsceneUnits
+	ENUN
+	EVBIT_F 0x9
+	STAL 20
+	CameraCursor(MarlaCh4)
+	Text(Ch4_3A_OpeningText_2)
+	STAL 20
+	CameraCursor(Alm)
+	Text(Ch4_3A_OpeningText_3)
+	
+	FADI 5
+	CLEA 0x0
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	GotoPrepScreen
@@ -175,5 +235,19 @@ Dummy_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A3Completed
 	EVBIT_MODIFY 0x0
+	
+	MUSC SongID_ShadowOfVictory
+	SetBackground(0x28) //fort interior
+	Text(Ch4_3A_EndingText)
+	MUSCSLOW SongID_Silence
+	FADI 2
+	
+	MUSC SongID_SilentGround
+	SetBackground(0x0E)
+	BROWNBOXTEXT Loc_RigelCastle [8,8]
+	Text(FernandRinea_Ch4A_3)
+	MUSCSLOW SongID_Silence
+	FADI 2
+	
 	MNCH 0x26
 	ENDA

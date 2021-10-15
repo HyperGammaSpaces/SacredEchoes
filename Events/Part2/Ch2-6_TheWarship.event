@@ -154,11 +154,23 @@ Ch2_6_BeginningScene:
 	#endif
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	MUSC SongID_Env_Water
-	SetBackground(0x41) //night boat bg
-	Text(Ch2_6_OpeningScene) // seems spooky huh
-	FADI 16
-	ClearBackground
+	
+	CHECK_ALIVE Genny
+	BEQ 0x100 0xC 0x0
+	CHECK_ALIVE Mae
+	BEQ 0x100 0xC 0x0
+	
+		MUSC SongID_Env_Water
+		SetBackground(0x41) //night boat bg
+		Text(Ch2_6_OpeningScene) // seems spooky huh
+		FADI 16
+		ClearBackground
+		GOTO 0x101
+		
+	LABEL 0x100
+		FADU 4
+		
+	LABEL 0x101
 	MUSCFAST SongID_Silence
 	STAL 10
 	CAM1 Celica

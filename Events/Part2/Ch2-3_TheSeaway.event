@@ -102,14 +102,26 @@ Ch2_3_BeginningScene:
 	#endif
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	SetBackground(0x08) //Boat
-
-	TEXTSTART 
-	TEXTSHOW Ch2_3_OnBoat
-	TEXTEND
-	REMA
-	REMOVEPORTRAITS
-	_0x2141 CelicaBoatCG 0x1 0x4 //replace with CelicaCG
+	
+	CHECK_ALIVE Mae
+	BEQ 0x100 0xC 0x0
+	CHECK_ALIVE Boey
+	BEQ 0x100 0xC 0x0
+	
+		SetBackground(0x08) //Boat
+		TEXTSTART 
+		TEXTSHOW Ch2_3_OnBoat
+		TEXTEND
+		REMA
+		REMOVEPORTRAITS
+		_0x2141 CelicaBoatCG 0x1 0x4
+		GOTO 0x101
+	
+	LABEL 0x100
+	
+		SetBackground(CelicaBoatCG)
+	
+	LABEL 0x101
 	REMOVEPORTRAITS
 	STAL 60
 	_0x1A22
@@ -135,6 +147,7 @@ Ch2_3_EndingScene:
 	MUSC SongID_Victory
 	SetBackground(0x08) //boat
 	Text(Ch2_3_PostBattle)
+	FADI 5
 	MNC2 0x0B //skip worldmap
 	ENDA
 

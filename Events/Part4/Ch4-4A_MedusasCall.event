@@ -36,8 +36,7 @@ LoadSummons:
 	SOUN 0x3BF // summoning SFX
 	STAL 20
 	ReinforcementEvent(GorgonSummons)
-	SVAL 0xB Coords(23, 26)
-	RESUMM 0xFFFE
+	RESUMM 0xB9
 	GOTO 0
 
 	LABEL 1
@@ -57,8 +56,8 @@ Dummy_LocationBasedEvents:
 	  Seize(4,5)
 	#endif
 	Seize(4,1)
-	Chest(Ridersbane, 24, 9) //TODO: replace item
-	Chest(Ridersbane, 21, 13) //TODO: replace item
+	Chest(SpeedRing, 24, 9)
+	Chest(SilverLance, 21, 13) //TODO: replace item
 	LOCA
 	
 SwitchPush:
@@ -72,7 +71,23 @@ SwitchPush:
 		EVBIT_T 0x7
 		ENDB
 	LABEL 0x0 //continue
+	Text(Ch4_4A_SwitchFound)
+	STAL 20
+	//yes/no prompt
+	SVAL 0x1 0x1
+		//yes = 1 no = 2
+		BEQ 0x1 0xC 0x1
+		//said no
+		SVAL 0x2 0x0
+		CHECK_EVENTID
+		SADD 0xC2
+		ENUF_SLOT2
+		EVBIT_T 0x7
+		ENDB
+	
+	LABEL 0x1 //said yes
 	SOUN 0xB1 //unlocking
+	TILECHANGE 0x03 //open gate to nuibaba room
 	STAL 60
 	EARTHQUAKE_START 0x100
 	STAL 60
@@ -80,6 +95,9 @@ SwitchPush:
 	STAL 20
 	TILECHANGE 0x04 //open gate to nuibaba room
 	SOUN 0xAB //village destroyed thump
+	STAL 20
+	Text(Ch4_4A_SwitchPushed)
+	STAL 20
 	EVBIT_T 0x7
 	ENDA
 
@@ -87,7 +105,34 @@ Dummy_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	MournQuoteAFEVS
 	AREA 0x15 SwitchPush [21,4] [21,5] //switch that opens tilechange 0x04
+	AFEV 0x14 TatianaFreed 0x2
 	AFEV
+	
+TatianaFreed:
+	//Remove the trap tile at [4,2]
+	RemoveTrapAtCoords(4,2)
+	ApplyStatusToCoords(4,2,0x00)
+	CHECK_ALIVE Tatiana
+	BEQ 0x1 0xC 0x0
+		MUSS 0x30
+		STAL 33
+		CameraCursor(Tatiana)
+		Text(Ch4_4A_TatianaFreed)
+		CALL $591F40
+		SVAL 0x1 0x0
+		CHAI Tatiana
+		CUSA Tatiana
+		STAL 20
+		SVAL 0x3 Nosferatu
+		GIVEITEMTO Tatiana
+		STAL 20
+		SVAL 0x3 HolyRing
+		GIVEITEMTO Tatiana
+		STAL 20
+		MURE 0x05
+	LABEL 0x1
+	NoFade
+	ENDA
 
 Dummy_Dunno:
 	END_MAIN
@@ -124,13 +169,17 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA14R15 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA13R16 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA12R16 [BaseLance] NoAI
 	UNIT
 	
 TatianaLoads:
-	UNIT Tatiana Saint 0x00 Level(1, NPC, 1) [4,2] 0x00 0x00 0x0 0x00 NoItems NeverMoveAI
+	UNIT Tatiana Saint 0x00 Level(1, NPC, 1) [25,3] 0x00 0x00 0x0 0x00 NoItems TatianaAI
+	UNIT
+
+EnemyCutsceneUnits:
+	UNIT Nuibaba Cantor_F	Nuibaba Level(16, Enemy, True) [15,11]	0x00 0x00 0x0 0x00 [Silence] DontAttackTatianaBossAI
 	UNIT
 
 EnemyUnits:
@@ -145,13 +194,14 @@ EnemyUnits:
 	UNIT 0x8B Arcanist Nuibaba Level(10, Enemy, True) [18,3] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT 0x8B Arcanist Nuibaba Level(9, Enemy, True) [20,4] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	//3 DFs
-	UNIT 0x87 DreadFighter Nuibaba Level(1, Enemy, True) [9,9] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
-	UNIT 0x87 DreadFighter Nuibaba Level(1, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
-	UNIT 0x87 DreadFighter Nuibaba Level(1, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT 0x87 DreadFighter Nuibaba Level(2, Enemy, True) [9,9] 0x00 0x00 0x0 0x00 [SteelSword] NeverMoveAI
+	UNIT 0x87 Baron Nuibaba Level(2, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT 0x87 Myrmidon Nuibaba Level(9, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
+	UNIT 0x87 Myrmidon Nuibaba Level(9, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [Zanbato] AttackInRangeAI
 	UNIT
 	
 GorgonSummons:
-	UNIT 0xB9 Gorgon	Nuibaba Level(6, Enemy, True) [23,26]	0x00 0x00 0x0 0x00 [EvilEye] NoAI
+	UNIT 0xB9 Gorgon	Nuibaba Level(8, Enemy, True) [15,5]	0x00 0x00 0x1 REDA15R5 [EvilEye] NoAI
 	UNIT
 
 Dummy_BeginningScene:
@@ -164,9 +214,67 @@ Dummy_BeginningScene:
 	ENDA
 	#endif
 	
-	LOAD1 0x1 EnemyUnits
+	MUSC SongID_WitchsTheme
+	//Load Nuibaba at front entrance
+	LOAD1 0x1 EnemyCutsceneUnits
 	ENUN
 	LOAD1 0x1 TatianaLoads
+	ENUN
+	CAM1 [16,16]
+	FADU 5
+	STAL 20
+	
+	//Load cutscene units
+	EVBIT_T 0x9
+	LOAD2 0x1 CutsceneUnits
+	ENUN
+	EVBIT_F 0x9
+	
+	CameraCursor(Nuibaba)
+	Text(Ch4_4A_OpeningText)
+	//Warp Nuibaba to the throne
+	SVAL 0x2 Nuibaba
+	CALL Warp_Out_Effect
+	STAL 0x08
+	SVAL 0x2 Nuibaba
+	_WARP 0xFFFF 0xFFFD [4,1]
+	CALL Warp_In_Effect
+	STAL 20
+	CAM1 Nuibaba
+	STAL 20
+	
+	//Warp in Tatiana to [4,2]
+	SVAL 0x2 Tatiana
+	_WARP 0xFFFF 0xFFFD [4,2]
+	CALL Warp_In_Effect
+	STAL 20
+	
+	MUSC SongID_Tension
+	Text(Ch4_4A_OpeningText_2)
+	
+	//Silence Tatiana
+	StartBattle
+	Poison(0,0xFF)
+	EndAttack
+	FIG1 Nuibaba Tatiana Silence
+	STAL 20
+	ENUF 0x84
+	ApplyStatusToCoords(4,2,0x43) //9 turns of silence
+	
+	CameraCursor(Nuibaba)
+	Text(Ch4_4A_OpeningText_3)
+	
+	STAL 20
+	ENUT 0x84
+	CameraCursor(Alm)
+	Text(Ch4_4A_OpeningText_4)
+	FADI 16
+	
+	//Clean up and load actual deployments
+	CLEA 0x0
+	CLEE 0x0
+	
+	LOAD1 0x1 EnemyUnits
 	ENUN
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
@@ -180,5 +288,26 @@ Dummy_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A4Completed
 	EVBIT_MODIFY 0x0
+	
+	SetBackground(0x11)
+	CHECK_ALIVE Tatiana
+	BEQ 0x1 0xC 0x0
+		//good ending
+		MUSC SongID_Victory
+		Text(Ch4_4A_EndingText)
+		STAL 20
+		CharacterJoinedNotification(Notif_TatianaJoin)
+		EVBIT_MODIFY 0x1
+		ENUT gTatianaRecruited
+		EVBIT_MODIFY 0x0
+		FADI 5
+		GOTO 0x2
+	LABEL 0x1
+	//bad ending
+	MUSC SongID_Sorrow
+	Text(Ch4_4A_EndingText_Bad)
+	FADI 2
+	
+	LABEL 0x2
 	MNCH 0x27
 	ENDA

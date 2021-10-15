@@ -251,30 +251,38 @@ Ch1_8_EndingScene:
 	STAL 60
 	SetBackground(0x15)
 	STAL 0x08
-	SVAL 0x1 0x1
 	CHECK_ALIVE Gray 
-	IFEQ 0x3 0xC 0x1 //if not, goto NoFaye
+	BEQ 0x3 0xC 0x0
 	CHECK_ALIVE Tobin 
-	IFEQ 0x3 0xC 0x1 //if not, goto NoFaye
+	BEQ 0x3 0xC 0x0
 		Text(Ch1_8_PostBattle_1)
-		FADI 2
 		GOTO 0x4
 	LABEL 0x3
+		CHECK_ALIVE Clair
+		BEQ 0x405 0xC 0x0
 		Text(Ch1_8_PostBattle_1_NoGray)
-		FADI 2
+		GOTO 0x4
+	LABEL 0x405
+		Text(Ch1_8_PostBattle_1_Bad)
 	LABEL 0x4
+	FADI 2
 
 	MUSC SongID_CastleTheme
 	STAL 60
 	SetBackground(Castle_Hall)
-	Text(Ch1_8_PostBattle_2)
+	CHECK_ALIVE Clair
+	BEQ 0x406 0xC 0x0
+		Text(Ch1_8_PostBattle_2)
+		GOTO 0x407
+	LABEL 0x406
+		Text(Ch1_8_PostBattle_2_NoClair)
+	LABEL 0x407
 	FADI 5
 
-	SVAL 0x1 0x1
 	CHECK_ALIVE Gray 
-	IFEQ 0x5 0xC 0x1 //if not, goto NoFaye
+	BEQ 0x5 0xC 0x0
 	CHECK_ALIVE Tobin 
-	IFEQ 0x5 0xC 0x1 //if not, goto NoFaye
+	BEQ 0x5 0xC 0x0
 		SetBackground(Castle_Hall)
 		Text(Ch1_8_PostBattle_2_GrayTobin)
 		FADI 5
@@ -329,10 +337,7 @@ Ch1_8_EndingScene:
 	STAL 30
 	//FADU 16
 	SetBackground(Castle_Hall)
-	CenterTutorialTextBox
-	TUTORIALTEXTBOXSTART
-	TEXTSHOW Ch1_8_PostBattle_CGText
-	TEXTEND
+	CenterTextbox(Ch1_8_PostBattle_CGText)
 
 	STAL 30
 

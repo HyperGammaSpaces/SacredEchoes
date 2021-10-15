@@ -27,12 +27,16 @@ Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(4,5)
 	#endif
-	Seize(14,5)
+	Seize(16,5)
+	House(0, HouseEvent, 1,16)
 	LOCA
+	
+HouseEvent:
+	HouseEvent(Ch4C_1_HouseText,0x01)
+	ENDA
 
 Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Evt_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
@@ -51,16 +55,13 @@ Evt_Ballista2:
 	ALIGN 4
 
 PlayerPlacement:
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [5,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [3,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [4,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [5,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [4,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [5,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [6,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [5,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [6,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [7,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [9,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [4,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [5,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [4,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [1,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [2,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [3,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
@@ -69,22 +70,28 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [2,19] 0x00 0x00 0x1 REDA8R17 [BaseSword, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [2,19] 0x00 0x00 0x1 REDA7R18 [BaseSword, Vulnerary] NoAI 
+	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [2,19] 0x00 0x00 0x1 REDA8R18 [Fire, Vulnerary] NoAI
+	UNIT
+	
+CutsceneUnits_Ending:
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [16,5] 0x00 0x00 0x1 REDA12R0 [BaseSword, Vulnerary] NoAI
+	UNIT Conrad Paladin 0x00 Level(1, NPC, 1) [16,5] 0x00 0x00 0x1 REDA11R0 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 EnemyUnits:
-	UNIT Garcia Cantor	Garcia Level(9, Enemy, True) [16,5]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Cantor	Garcia Level(6, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Cantor	Garcia Level(6, Enemy, True) [12,7]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Sniper Garcia Level(4, Enemy, True) [15,3] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Sniper Garcia Level(4, Enemy, True) [18,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Arcanist	Garcia Level(6, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Arcanist	Garcia Level(6, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Arcanist	Garcia Level(6, Enemy, True) [13,6]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Arcanist	Garcia Level(6, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF DreadFighter	Garcia Level(2, Enemy, True) [14,7]	0x00 0x00 0x0 0x00 [IronSword] NeverMoveAI
+	UNIT Garcia Cantor	Garcia Level(10, Enemy, False) [16,5]	0x00 0x00 0x0 0x00 [Mire, Invoke] CantorAI
+	UNIT Cantor_Gargs Cantor	Garcia Level(8, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0E,0x03]
+	UNIT 0x89 Sniper Garcia Level(4, Enemy, True) [15,3] DropItem 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT 0x89 Sniper Garcia Level(4, Enemy, True) [18,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT 0x8B Arcanist	Garcia Level(8, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	
+	UNIT Cantor_Gargs Cantor	Garcia Level(6, Enemy, True) [12,7]	0x00 0x00 0x0 0x00 [Mire, Invoke] MoveAndHealAI
+	UNIT 0x94 Witch	Garcia Level(8, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Aura] NoAI
+	UNIT 0x8B Arcanist	Garcia Level(4, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Mire] NoAI
+	UNIT 0x8B Arcanist	Garcia Level(6, Enemy, True) [13,6]	0x00 0x00 0x0 0x00 [Miasma] NoAI
+	UNIT 0x87 DreadFighter	Garcia Level(2, Enemy, True) [14,7]	0x00 0x00 0x0 0x00 [IronSword] NoAI
 	UNIT
 
 Evt_BeginningScene:
@@ -97,6 +104,26 @@ Evt_BeginningScene:
 	ENDA
 	#endif
 	
+	MUSC SongID_ForTheCommander
+	SetBackground(0x31, 5)
+	Text(CelicaAct4_OpeningText) //Nomah talks w Celica
+	MUSCSLOW SongID_Silence
+	FADI 2
+	CLEAN
+	STAL 20
+	MUSCSLOW SongID_Env_Lava
+	CAM1 [0,19]
+	FADU 2
+	EVBIT_T 0x9
+	LOAD2 0x0 CutsceneUnits
+	ENUN
+	EVBIT_F 0x9
+	STAL 20
+	CameraCursor(Celica)
+	Text(Ch4C_1_OpeningText)
+	FADI 5
+	CLEA 0x0
+	
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	LOAD3 0x0 PlayerPlacement 
@@ -106,11 +133,50 @@ Evt_BeginningScene:
 
 Evt_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW 0x7FFF
+	MUSCSLOW SongID_Silence
 	FADI 2
+	CLEE 0x0
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4C1Completed
 	EVBIT_MODIFY 0x0
+	
+	MUSC SongID_Victory
+	SetBackground(0x28, 5)
+	Text(Ch4C_1_EndingText)
+	FADI 2
+	MUSCSLOW SongID_Silence
+	CLEAN
+	CLEA 0x0
+	CLEE 0x0
+	CAM1 [16,5]
+	FADU 5
+	STAL 20
+	FlashCursor(16,5,60)
+	LOAD2 0x0 CutsceneUnits_Ending
+	ENUN
+	FADI 2
+	MUSC SongID_SilentGround
+	SetBackground(0x31,5)
+	TEXTSTART
+	TEXTSHOW Ch4C_1_EndingText_2
+	TEXTEND
+	MUSCSLOW SongID_Silence
+	STAL 5
+	TEXTCONT
+	TEXTEND
+	MUSCSLOW SongID_Omen
+	TEXTCONT
+	TEXTEND
+	REMA
+	MUSCSLOW SongID_Silence
+	FADI 2
+	CLEA 0x0
+	CLEN 0x0
+	
+	MUSC SongID_Env_GustyWind
+	SetBackground(0x28, 5)
+	Text(Ch4C_1_EndingText_3)
+	FADI 2
 	
 	MNCH 0x1F
 	ENDA

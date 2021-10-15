@@ -18,23 +18,65 @@ Evt_ThisChapter:
 	POIN Evt_BeginningScene Evt_EndingScene
 
 Evt_TurnBasedEvents:
+	OpeningTurnEvent(SonyaEvent)
 	TURN
+
+SonyaEvent:
+	CHECK_EXISTS Sonya
+	BEQ 0x1 0xC 0x0
+	CHECK_ALIVE Sonya
+	BEQ 0x1 0xC 0x0
+	CHECK_DEPLOYED Sonya
+	BEQ 0x1 0xC 0x0
+		MUSC SongID_SacrificeAndSaint
+		MUSI
+		CameraCursor(Sonya)
+		TEXTSTART
+		TEXTSHOW Ch4C_5_MogallText
+		TEXTEND
+		CameraCursor(MogallBoss)
+		TEXTCONT
+		TEXTEND
+		MUNO
+	LABEL 0x1
+	NoFade
+	ENDA
 
 Evt_CharacterBasedEvents:
 	CHAR
 
 Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(16,12)
 	#endif
-	Seize(14,5)
 	LOCA
 
 Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Evt_EndingScene)
+	DefeatBoss(Evt_EndingScene)
 	MournQuoteAFEVS
+	//Flag 0x9 is for killing the Mogall
+	AFEV 0 MogallDies 0x9
 	AFEV
+	
+MogallDies:
+	CHECK_ALIVE Jedah_Ch4
+	BEQ 0x3 0xC 0x0
+		EndMMS
+		//FE8UNCR(0xFFFF,0x43)
+		MUSI
+		CameraCursor(Jedah_Ch4)
+		Text(Ch4C_5_JedahRetreat)
+		NoFade
+		SVAL 0x2 Jedah_Ch4
+		CALL Warp_Out_Effect
+		STAL 0x08
+		DISA Jedah_Ch4
+		MUNO
+		CALL Evt_EndingScene
+	LABEL 0x3
+	NoFade
+	ENDA
 
 Evt_Dunno:
 	END_MAIN
@@ -66,19 +108,38 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [19,14] 0x00 0x00 0x1 REDA18R10 [BaseSword, Vulnerary] NoAI
+	UNIT 0xC2 Paladin 0x00 Level(15, NPC, False) [19,14]	0x00 0x00 0x1 REDA18R8 [BaseLance] NoAI
+	UNIT
+	
+ConradJoins:
+	UNIT Conrad Paladin 0x00 Level(7, NPC, 1) [19,14] 0x00 0x00 0x1 REDA19R8 [HolyLance, BaseLance, PrayerRing] NoAI 
 	UNIT
 
+BossUnit:
+	UNIT Jedah_Ch4 Necromancer	Jedah_Ch4 Level(15, Enemy, False) [18,8]	DropItem 0x00 0x1 REDA18R5 [Thanatos, Dracoshield] AttackInRangeAI
+	UNIT
+	
+MogallUnit:
+	UNIT MogallBoss Mogall Jedah_Ch4 Level(20, Enemy, True) [17,5] 0x00 0x00 0x0 0x00 [Tentacle, DivideAbility] MogallAI
+	UNIT
+	
+CutsceneEnemies:
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [17,5] 0x00 0x00 0x1 REDA15R4 [Saunion] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [17,5] 0x00 0x00 0x1 REDA12R4 [HeavySpear] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [17,5] 0x00 0x00 0x1 REDA6R3 [Javelin] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [17,5] 0x00 0x00 0x1 REDA7R6 [SteelLance] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [17,5] 0x00 0x00 0x1 REDA10R7 [DumasLance] NoAI
+	UNIT
+	
 EnemyUnits:
-	UNIT Jedah_Ch4 Necromancer	Jedah_Ch4 Level(15, Enemy, True) [18,5]	0x00 0x00 0x0 0x00 [Thanatos, Dracoshield] AttackInRangeAI
-	UNIT 0xB7 Mogall Jedah_Ch4 Level(4, Enemy, True) [9,4] 0x00 0x00 0x0 0x00 [Tentacle] CantorAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(4, Enemy, True) [15,4] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(4, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(4, Enemy, True) [6,3] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(4, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(4, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Jedah_Ch4 Necromancer	Jedah_Ch4 Level(15, Enemy, False) [18,5]	DropItem 0x00 0x0 0x00 [Thanatos, Dracoshield] AttackInRangeAI
+	UNIT MogallBoss Mogall Jedah_Ch4 Level(20, Enemy, True) [9,4] 0x00 0x00 0x0 0x00 [Tentacle, DivideAbility] MogallAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [15,4] 0x00 0x00 0x0 0x00 [Saunion] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [6,3] 0x00 0x00 0x0 0x00 [Javelin] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [DumasLance] NoAI
 	UNIT
 
 Evt_BeginningScene:
@@ -91,6 +152,81 @@ Evt_BeginningScene:
 	ENDA
 	#endif
 	
+	MUSC SongID_Env_Night
+	SetBackground(0x31)
+	Text(Ch4C_5_OpeningText)
+	MUSCSLOW SongID_Silence
+	FADI 5
+	CLEAN
+	
+
+
+	MUSCSLOW SongID_Env_Lava
+	EVBIT_T 0x9
+	LOAD2 0x0 CutsceneUnits
+	FADU 5
+	ENUN
+	EVBIT_F 0x9
+	STAL 20
+	
+	CameraCursor(0xC2)
+	TEXTSTART
+	TEXTSHOW Ch4C_5_OpeningText_2
+	TEXTEND
+	
+	MUSCSLOW SongID_Silence
+	LOAD1 0x1 ConradJoins
+	ENUN
+	
+	TEXTCONT
+	TEXTEND
+	
+	MUSC SongID_Uprising
+	
+	TEXTCONT
+	TEXTEND
+	REMA
+	
+	CUSA Conrad
+	STAL 5
+	CLEN 0x0
+	LOAD1 0x1 BossUnit
+	ENUN
+	STAL 20
+	LOAD1 0x1 MogallUnit
+	ENUN
+	RESUMM MogallBoss
+	LOAD1 0x1 CutsceneEnemies
+	ENUN
+	
+	EVBIT_T 0x9
+	MOVE 0x10 MogallBoss [9,4]
+	ENUN
+	STAL 20
+	EVBIT_F 0x9
+	STAL 20
+	
+	/*
+	CAM1 Celica
+	MOVE 0x10 Celica [18,9]
+	MOVE 0x10 Conrad [18,8]
+	ENUN
+	FlashCursor(Jedah_Ch4, 60)
+	
+	ENUT 0x13 //disable conrad boss convo w jedah
+	StartBattle
+	MissedAttack(0,0)
+	EndAttack
+	FIG1 Jedah_Ch4 Conrad Thanatos
+	ENUF 0x13
+	*/
+	
+	CameraCursor(Celica)
+	Text(Ch4C_5_OpeningText_3)
+	FADI 5
+	
+	CLEA 0x0
+	CLEE 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	LOAD3 0x0 PlayerPlacement 
@@ -102,9 +238,18 @@ Evt_EndingScene:
 	CALL UnifiedBEXPCaller
 	MUSCSLOW 0x7FFF
 	FADI 2
+	CLEE 0x0
+	CLEA 0x0
 	EVBIT_MODIFY 0x1
-	ENUT gChapter4C3Completed
+	ENUT gChapter4C5Completed
 	EVBIT_MODIFY 0x0
+	
+	MUSC SongID_Omen
+	SetBackground(0x31,5)
+	Text(Ch4C_5_EndingText)
+	MUSCSLOW SongID_Legacy
+	Text(Ch4C_5_EndingText_2)
+	FADI 2
 	
 	MNCH 0x23
 	ENDA

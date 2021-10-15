@@ -196,18 +196,18 @@ EnemyUnits:
 	UNIT
 	
 MikhailSummons:
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,4] RandomMonsterTemplate 0x00 0x1 REDA11R4 NoItems NoAI
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,4] RandomMonsterTemplate 0x00 0x1 REDA13R4 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,4] MonsterTemplate 0x00 0x1 REDA11R4 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,4] MonsterTemplate 0x00 0x1 REDA13R4 NoItems NoAI
 	UNIT
 	
 RearSummons:
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,21] RandomMonsterTemplate 0x00 0x1 REDA11R21 NoItems NoAI
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,21] RandomMonsterTemplate 0x00 0x1 REDA13R21 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,21] MonsterTemplate 0x00 0x1 REDA11R21 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,21] MonsterTemplate 0x00 0x1 REDA13R21 NoItems NoAI
 	UNIT
 	
 
 Ch3_7C_BeginningScene:
-	MUSC SongID_Tension
+	MUSC SongID_FromTheDarkness
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	SetBackground(0x2F)

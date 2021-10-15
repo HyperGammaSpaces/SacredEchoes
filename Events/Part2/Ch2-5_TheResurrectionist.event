@@ -100,9 +100,20 @@ Ch2_5_BeginningScene:
 	FADU 5
 	MUSC SongID_Env_Water
 	STAL 20
-	Text(Ch2_5_OpeningText)
 	
-	MUSC SongID_Tension
+	SetBackground(0x41) //nightboat
+	CHECK_ALIVE Valbar
+	BEQ 0x100 0xC 0x0
+		CHECK_ALIVE Leon
+		BEQ 0x100 0xC 0x0
+			Text(Ch2_5_OpeningText)
+			GOTO 0x101
+	LABEL 0x100
+	Text(Ch2_5_OpeningText_NoValbar)
+	CLEAN
+	
+	LABEL 0x101
+	MUSC SongID_FromTheDarkness
 	CAM1 [11,0]
 	EARTHQUAKE_START 0x100
 	STAL 30
@@ -117,7 +128,8 @@ Ch2_5_BeginningScene:
 	CAM1 0x8F
 	STAL 20
 	FlashCursor(0x8F, 60)
-	Text(Ch2_5_OpeningText_2)
+	
+	CharacterConditionalDialog(Boey, Ch2_5_OpeningText_2, Ch2_5_OpeningText_2_NoBoey)
 	
 	NoFade
 	GotoPrepScreen
@@ -150,9 +162,13 @@ LoadSummons: //every other turn, shamelessly stolen from VBA for now lol
 
 Ch2_5_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSC SongID_Victory
-	SetBackground(0x41) //nightboat
-	Text(Ch2_5_PostBattle)
+	CHECK_ALIVE Boey
+	BEQ 2 0xC 0x0
+		MUSC SongID_ShadowOfVictory
+		SetBackground(0x41) //nightboat
+		Text(Ch2_5_PostBattle)
+	LABEL 2
+	FADI 2
 	MNCH 0x0D //go to world map
 	ENDA
 

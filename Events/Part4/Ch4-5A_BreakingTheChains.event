@@ -28,9 +28,10 @@ Dummy_CharacterBasedEvents:
 TalkToZeke:
 	MUSS 0x30
 	STAL 0x20
-	Text(Placeholder_Text)
+	Text(Ch4_5A_TatianaRecruitsZeke)
 	SVAL 0x1 0x0
 	CHAI Zeke
+	//CHAI 0x86
 	STAL 5
 	CUSA Zeke
 	STAL 0x14
@@ -45,9 +46,10 @@ TalkToZeke:
 TalkToZekeAlm:
 	MUSS 0x30
 	STAL 0x20
-	Text(Placeholder_Text)
+	Text(Ch4_5A_AlmRecruitsZeke)
 	SVAL 0x1 0x0
 	CHAI Zeke
+	//CHAI 0x86
 	STAL 5
 	CUSA Zeke
 	STAL 0x14
@@ -75,8 +77,17 @@ VillageEvent:
 Dummy_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	DefeatAll(Dummy_EndingScene)
+	AFEV 0x11 ZekeTurnsBlue gZekeRecruited
 	MournQuoteAFEVS
 	AFEV
+	
+ZekeTurnsBlue:
+	MUSI
+	CameraCursor(JeromeCh4_5)
+	Text(Ch4_5A_ZekeTurnsBlue)
+	MUNO
+	NoFade
+	ENDA
 
 Dummy_Dunno:
 	END_MAIN
@@ -112,49 +123,49 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,21] 0x00 0x00 0x1 REDA18R18 [BaseSword, Vulnerary] NoAI 
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [14,21] 0x00 0x00 0x1 REDA17R18 [BaseLance] NoAI
+	UNIT Tatiana Saint 0x00 Level(1, Ally, 1) [14,21] 0x00 0x00 0x1 REDA18R17 [Nosferatu] NoAI
 	UNIT
 
 EnemyUnits:
 	UNIT JeromeCh4_5 GoldKnight	JeromeCh4_5 Level(9, Enemy, True) [10,5]	0x00 0x00 0x0 0x00 [SilverLance,Javelin] NeverMoveAI
-	UNIT 0x86 Paladin JeromeCh4_5 Level(12, Enemy, True) [8,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin JeromeCh4_5 Level(12, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin JeromeCh4_5 Level(12, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin JeromeCh4_5 Level(12, Enemy, True) [11,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x8B Arcanist JeromeCh4_5 Level(12, Enemy, True) [12,7] 0x00 0x00 0x0 0x00 [Mire,Physic] MoveWithLeaderAI
-	UNIT 0x8B Arcanist JeromeCh4_5 Level(12, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [Mire,Physic] MoveWithLeaderAI
-	UNIT 0x86 GoldKnight JeromeCh4_5 Level(4, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 GoldKnight JeromeCh4_5 Level(4, Enemy, True) [10,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 BowKnight JeromeCh4_5 Level(4, Enemy, True) [9,7] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
-	UNIT 0x86 BowKnight JeromeCh4_5 Level(4, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
+	UNIT 0x87 Paladin JeromeCh4_5 Level(12, Enemy, True) [8,10] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
+	UNIT 0x86 Paladin 0x87 Level(11, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x86 Paladin 0x87 Level(10, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [Saunion] MoveWithLeaderAI
+	UNIT 0x86 Paladin 0x87 Level(12, Enemy, True) [11,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x8B Arcanist JeromeCh4_5 Level(8, Enemy, True) [12,7] 0x00 0x00 0x0 0x00 [Mire,Physic] MoveWithLeaderAI
+	UNIT 0x8B Arcanist JeromeCh4_5 Level(8, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [Mire,Physic] HealUnits
+	UNIT 0x86 GoldKnight 0x8A Level(2, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT 0x8A GoldKnight JeromeCh4_5 Level(2, Enemy, True) [10,8] 0x00 0x00 0x0 0x00 [SteelLance] AttackInHalfRangeAI
+	UNIT 0x89 BowKnight JeromeCh4_5 Level(4, Enemy, True) [9,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
+	UNIT 0x89 BowKnight JeromeCh4_5 Level(4, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
 	UNIT
 	
 ZekeUnits:
-	UNIT Zeke GoldKnight 0x00 Level(3,NPC,False) [18,7] 0x00 0x00 0x0 0x00 [BaseLance] DefensiveTerrainAI
+	UNIT Zeke GoldKnight 0x00 Level(3,NPC,False) [18,7] 0x00 0x00 0x0 0x00 [SilverLance, BaseLance] AttackInHalfRangeAI
 	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [17,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
 	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [19,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
 	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [17,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
 	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [19,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 BowKnight Zeke Level(4, NPC, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT 0x86 BowKnight Zeke Level(4, NPC, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT 0x86 BowKnight Zeke Level(4, NPC, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT 0x86 BowKnight Zeke Level(2, NPC, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
+	UNIT 0x86 BowKnight Zeke Level(2, NPC, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT 0x86 BowKnight Zeke Level(2, NPC, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
 	UNIT
 	
 ZekeEnemyUnits:
-	UNIT Zeke GoldKnight 0x00 Level(3,Enemy,False) [18,7] 0x00 0x00 0x0 0x00 [BaseLance] DefensiveTerrainAI
+	UNIT ZekeBoss GoldKnight 0x00 Level(3,Enemy,False) [18,7] 0x00 0x00 0x0 0x00 [BaseLance] DefensiveTerrainAI
 	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [17,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
 	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [19,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
 	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
 	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [19,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
 	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
 	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 BowKnight Zeke Level(4, Enemy, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT 0x86 BowKnight Zeke Level(4, Enemy, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT 0x86 BowKnight Zeke Level(4, Enemy, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT 0x86 BowKnight Zeke Level(2, Enemy, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT 0x86 BowKnight Zeke Level(2, Enemy, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT 0x86 BowKnight Zeke Level(2, Enemy, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
 	UNIT
 
 Dummy_BeginningScene:
@@ -167,6 +178,61 @@ Dummy_BeginningScene:
 	ENDA
 	#endif
 	
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD1 0x1 ZekeEnemyUnits
+	ENUN
+	
+	MUSC SongID_SolveTheRiddle
+	CAM1 [14,6]
+	//FADU 5
+	//CameraCursor(JeromeCh4_5)
+	SetBackground(0x25)
+	Text(Ch4_5A_OpeningText)
+	FADI 5
+	CLEAN
+	FADU 5
+	STAL 20
+	CameraCursor(ZekeBoss)
+	Text(Ch4_5A_OpeningText_Zeke)
+	STAL 20
+	
+	CHECK_EVENTID gTatianaRecruited
+	BEQ 0xD rC r0
+		//got tatiana
+		EVBIT_T 0x9
+		LOAD2 0x0 CutsceneUnits
+		ENUN
+		EVBIT_F 0x9
+		STAL 20
+		
+		CameraCursor(Tatiana)
+		MUSI
+		Text(Ch4_5A_OpeningText_2)
+		MUNO
+		
+		CameraCursor(ZekeBoss)
+		MUSCSLOW SongID_Silence
+		TEXTSTART
+		TEXTSHOW Ch4_5A_OpeningText_3
+		TEXTEND
+		MUSC SongID_ImportantBattle
+		TEXTCONT
+		TEXTEND
+		REMA
+
+		STAL 20
+		CUSN ZekeBoss
+		STAL 20
+		CameraCursor(Alm)
+		
+		Text(Ch4_5A_OpeningText_4)
+	LABEL 0xD
+	
+	FADI 16
+	CLEA 0x0
+	CLEE 0x0
+	CLEN 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	LOAD3 0x0 PlayerPlacement 
@@ -191,5 +257,60 @@ Dummy_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A5Completed
 	EVBIT_MODIFY 0x0
+	
+	CHECK_EVENTID gTatianaRecruited
+	BEQ 0xA rC r0
+		MUSC SongID_Victory
+		SetBackground(0x02)
+		TEXTSTART
+		TEXTSHOW Ch4_5A_EndingText_Good
+		TEXTEND
+		MUSC SongID_Silence
+		TEXTCONT
+		TEXTEND
+		REMA
+		FADI 5
+		MUSC SongID_Truth
+		
+		//CG stuff here
+		EVBIT_MODIFY 0x0
+		REMOVEPORTRAITS
+		BACG ZekeBrandCG
+		FADU 5
+		REMOVEPORTRAITS
+		STAL 60
+		_0x1A22
+		TEXTSHOW Ch4_5A_EndingText_Good_2
+		TEXTEND
+		_0x1A22
+		TEXTSHOW Ch4_5A_EndingText_Good_3
+		TEXTEND
+		FADI 5
+		REMA
+		
+		SetBackground(0x02, 5)
+		Text(Ch4_5A_EndingText_Good_4)
+		FADI 2
+		MUSCSLOW SongID_Silence
+		STAL 60
+		
+		//Alm questions the prophecy
+		MUSC SongID_Env_Night
+		SetBackground(0x43, 2)
+		TEXTSTART
+		TEXTSHOW Ch4_5A_EndingText_Good_5
+		TEXTEND
+		MUSCSLOW SongID_CastleTheme
+		TEXTCONT
+		TEXTEND
+		REMA
+		
+		GOTO 0xB
+	LABEL 0xA
+	SetBackground(0x4B) //demolished village
+		Text(Ch4_5A_EndingText_Bad)
+	LABEL 0xB
+	
+	FADI 2
 	MNCH 0x28
 	ENDA

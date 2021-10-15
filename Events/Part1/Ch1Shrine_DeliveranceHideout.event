@@ -228,7 +228,7 @@ Hideout_EndingScene:
 		
 		FADI 10
 		SetBackground(0x2E)
-		Text(DeliveranceHideout_PostBattle_1)
+		CharacterConditionalDialog(Clair, DeliveranceHideout_PostBattle_1,DeliveranceHideout_PostBattle_1_NoClair)
 		
 		SVAL 0x1 0x1
 		CHECK_ALIVE Gray 
@@ -253,9 +253,20 @@ Hideout_EndingScene:
 		//alm WHAT in hideout - village tension music, keep going until fernand cutscene
 		//start sad music once fernand says "lost my taste for this long ago"
 		
-		TEXTSTART 
-		TEXTSHOW DeliveranceHideout_PostBattle_2
-		TEXTEND
+		CHECK_ALIVE Clair
+		BEQ 0x100 0xC 0x0
+		
+			TEXTSTART 
+			TEXTSHOW DeliveranceHideout_PostBattle_2
+			TEXTEND
+			GOTO 0x101
+			
+		LABEL 0x100
+			TEXTSTART 
+			TEXTSHOW DeliveranceHideout_PostBattle_2_NoClair
+			TEXTEND
+			
+		LABEL 0x101
 		MUSC SongID_Uprising
 		TEXTCONT
 		TEXTEND
@@ -329,13 +340,9 @@ Hideout_EndingScene:
 		BNE 0x3 0xC 0x1 
 			STAL 20
 			SetBackground(0x2E)
-			SETVAL 0xB 0xFFFFFFFF
-			TUTORIALTEXTBOXSTART
-			TEXTSHOW2 DeliveranceHideout_AcceptSidequest
-			TEXTEND
+			CenterTextbox(DeliveranceHideout_AcceptSidequest)
 			REMA
-			STARTFADE
-			FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+			FADI 4
 			SVAL 0x1 0x1
 			//"Accept side quest?"
 			//yes = 1 no = 2
@@ -349,8 +356,7 @@ Hideout_EndingScene:
 		CALL UnifiedBEXPCaller
 		EVBIT_MODIFY 0x0
 	LABEL 0x3
-		STARTFADE
-		FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+		FADI 4
 	LABEL 0x2
 		SVAL 0x2 0x3F
 		MNCH 0xFFFF
