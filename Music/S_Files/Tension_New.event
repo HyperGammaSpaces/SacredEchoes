@@ -17,7 +17,7 @@ Tension_New_0:
 // 000   ----------------------------------------
         BYTE   TEMPO   78/2
         BYTE           VOICE   18
-        BYTE           VOL     60
+        BYTE           VOL     48
         BYTE           N01     Fn3   v101
         BYTE           PAN     c_v+42
         BYTE   W02
@@ -1113,8 +1113,8 @@ Tension_New_0_5:
 Tension_New_1:
         BYTE   KEYSH   Tension_New_key+0
 // 000   ----------------------------------------
-        BYTE           VOICE   100
-        BYTE           VOL     59
+        BYTE           VOICE   102
+        BYTE           VOL     45
         BYTE           PAN     c_v-14
         BYTE           N68     Gs3   v101   gtp3
         BYTE   W72
@@ -1125,6 +1125,7 @@ Tension_New_1:
         BYTE   W96
 // 002   ----------------------------------------
 Tension_New_1_LOOP:
+        BYTE           VOICE   56
         BYTE           PAN     c_v+14
         BYTE           N92     Gs3   v101   gtp3
         BYTE   W96
@@ -1138,6 +1139,7 @@ Tension_New_1_LOOP:
         BYTE                   Fn3
         BYTE   W96
 // 006   ----------------------------------------
+        BYTE           VOICE   102
         BYTE           PAN     c_v-14
         BYTE           N52     Gs3   v095   gtp1
         BYTE   W54
@@ -1156,7 +1158,6 @@ Tension_New_1_LOOP:
         BYTE                   As3
         BYTE   W06
 // 007   ----------------------------------------
-Tension_New_1_7:
         BYTE   W12
         BYTE           N23     Bn3   v101
         BYTE   W24
@@ -1166,6 +1167,7 @@ Tension_New_1_7:
         BYTE   W06
         BYTE           N32     Fn3   v101   gtp3
         BYTE   W36
+        BYTE           VOICE   56
         BYTE           N02     Fn4   v121
         BYTE           PAN     c_v-23
         BYTE   W01
@@ -1194,9 +1196,7 @@ Tension_New_1_7:
         BYTE   W01
         BYTE                   c_v+0
         BYTE   W01
-        BYTE   PEND
 // 008   ----------------------------------------
-Tension_New_1_8:
         BYTE           N02     Fn4   v089
         BYTE           PAN     c_v+2
         BYTE   W01
@@ -1225,7 +1225,8 @@ Tension_New_1_8:
         BYTE   W01
         BYTE                   c_v+25
         BYTE   W01
-        BYTE                   c_v-14
+        BYTE           VOICE   102
+        BYTE           PAN     c_v-14
         BYTE           N40     Gs3   v095   gtp1
         BYTE   W42
         BYTE           N05     As3   v076
@@ -1242,8 +1243,8 @@ Tension_New_1_8:
         BYTE   W06
         BYTE                   As3
         BYTE   W06
-        BYTE   PEND
 // 009   ----------------------------------------
+Tension_New_1_9:
         BYTE   W12
         BYTE           N23     Bn3   v101
         BYTE   W24
@@ -1256,6 +1257,7 @@ Tension_New_1_8:
         BYTE           PAN     c_v+14
         BYTE           N11     Gn3
         BYTE   W12
+        BYTE   PEND
 // 010   ----------------------------------------
 Tension_New_1_10:
         BYTE           N44     Dn3   v101   gtp3
@@ -1284,6 +1286,7 @@ Tension_New_1_12:
         BYTE   W48
         BYTE           N32     Dn3   v101   gtp3
         BYTE   W36
+        BYTE           VOICE   56
         BYTE           N02     Fn4   v121
         BYTE           PAN     c_v-23
         BYTE   W01
@@ -1366,6 +1369,7 @@ Tension_New_1_12:
         BYTE   W03
         BYTE           PAN     c_v+25
         BYTE   W12
+        BYTE           VOICE   6
         BYTE           N11     Gn3   v101
         BYTE   W12
         BYTE           N32     Fn3   v101   gtp3
@@ -1407,6 +1411,7 @@ Tension_New_1_16:
 Tension_New_1_17:
         BYTE           N44     Cn3   v101   gtp3
         BYTE   W48
+        BYTE           VOICE   56
         BYTE           N02     Fn4   v121
         BYTE           PAN     c_v-21
         BYTE   W01
@@ -1565,6 +1570,7 @@ Tension_New_1_18:
         BYTE   W03
         BYTE           PAN     c_v+25
         BYTE   W12
+        BYTE           VOICE   6
         BYTE           N11     Gn3   v101
         BYTE   W12
         BYTE           N32     Fn3   v101   gtp3
@@ -1649,12 +1655,11 @@ Tension_New_1_20:
         BYTE           N52     As3   v101   gtp1
         BYTE   W06
 // 030   ----------------------------------------
-Tension_New_1_30:
         BYTE   W48
+        BYTE           VOICE   102
         BYTE           PAN     c_v-14
         BYTE           N68     Gs3   v101   gtp3
         BYTE   W48
-        BYTE   PEND
 // 031   ----------------------------------------
         BYTE   W24
         BYTE           N23     As3
@@ -1663,6 +1668,7 @@ Tension_New_1_30:
         BYTE   W48
 // 032   ----------------------------------------
         BYTE   W48
+        BYTE           VOICE   56
         BYTE           PAN     c_v+14
         BYTE   GoTo
          POIN2  Tension_New_1_LOOP
@@ -1673,8 +1679,8 @@ Tension_New_1_30:
 Tension_New_2:
         BYTE   KEYSH   Tension_New_key+0
 // 000   ----------------------------------------
-        BYTE           VOICE   100
-        BYTE           VOL     60
+        BYTE           VOICE   101
+        BYTE           VOL     45
         BYTE           PAN     c_v+14
         BYTE           TIE     Fn3   v101
         BYTE   W96
@@ -1704,6 +1710,7 @@ Tension_New_2_3:
         BYTE   PATT
          POIN2  Tension_New_2_3
 // 006   ----------------------------------------
+        BYTE           VOICE   56
         BYTE           PAN     c_v+14
         BYTE           N52     Gs2   v095   gtp1
         BYTE   W54
@@ -1819,6 +1826,7 @@ Tension_New_2_8:
         BYTE   W06
         BYTE           N32     Fn2   v101   gtp3
         BYTE   W36
+        BYTE           VOICE   102
         BYTE           PAN     c_v-14
         BYTE           N11     Dn3
         BYTE   W12
@@ -1842,6 +1850,7 @@ Tension_New_2_11:
         BYTE   W48
         BYTE           N32     Bn3   v101   gtp3
         BYTE   W36
+        BYTE           VOICE   56
         BYTE           N02     Fn3   v121
         BYTE           PAN     c_v-23
         BYTE   W01
@@ -1922,6 +1931,7 @@ Tension_New_2_11:
         BYTE   W01
         BYTE           N02
         BYTE   W03
+        BYTE           VOICE   6
         BYTE           PAN     c_v-25
         BYTE   W06
         BYTE           N11     Gs3   v101
@@ -1965,6 +1975,7 @@ Tension_New_2_16:
 // 017   ----------------------------------------
 Tension_New_2_17:
         BYTE   W48
+        BYTE           VOICE   56
         BYTE           N02     Fn3   v121
         BYTE           PAN     c_v-21
         BYTE   W01
@@ -2121,6 +2132,7 @@ Tension_New_2_18:
         BYTE   W01
         BYTE           N02     Fn3   v050
         BYTE   W03
+        BYTE           VOICE   6
         BYTE           PAN     c_v-25
         BYTE   W06
         BYTE           N11     Gs3   v101
@@ -2200,6 +2212,7 @@ Tension_New_2_21:
 // 030   ----------------------------------------
         BYTE           N23     Cn4   v101
         BYTE   W48
+        BYTE           VOICE   101
         BYTE           PAN     c_v+14
         BYTE           TIE     Fn3
         BYTE   W48
@@ -2220,9 +2233,9 @@ Tension_New_2_21:
 Tension_New_3:
         BYTE   KEYSH   Tension_New_key+0
 // 000   ----------------------------------------
-        BYTE           VOICE   108
+        BYTE           VOICE   105
         BYTE           PAN     c_v+14
-        BYTE           VOL     47
+        BYTE           VOL     33
         BYTE           TIE     Fn3   v101
         BYTE   W96
 // 001   ----------------------------------------
@@ -2233,7 +2246,6 @@ Tension_New_3:
 // 002   ----------------------------------------
 Tension_New_3_LOOP:
         BYTE           PAN     c_v-14
-        BYTE           VOL     50
         BYTE           TIE     Ds3   v101
         BYTE   W96
 // 003   ----------------------------------------
@@ -2246,8 +2258,8 @@ Tension_New_3_LOOP:
         BYTE   PATT
          POIN2  Tension_New_2_3
 // 006   ----------------------------------------
+        BYTE           VOICE   109
         BYTE           PAN     c_v+14
-        BYTE           VOL     47
         BYTE           N52     Gs2   v095   gtp1
         BYTE   W54
         BYTE           N05     As2   v076
@@ -2281,7 +2293,6 @@ Tension_New_3_LOOP:
         BYTE           N32     Fn2   v101   gtp3
         BYTE   W36
         BYTE           PAN     c_v-14
-        BYTE           VOL     50
         BYTE           N11     Dn3
         BYTE   W12
 // 010   ----------------------------------------
@@ -2298,7 +2309,6 @@ Tension_New_3_LOOP:
         BYTE   W48
         BYTE           N32     Bn3   v101   gtp3
         BYTE   W36
-        BYTE           VOL     47
         BYTE           N02     Fn3   v121
         BYTE           PAN     c_v-23
         BYTE   W01
@@ -2413,10 +2423,9 @@ Tension_New_3_LOOP:
 // 030   ----------------------------------------
         BYTE   W24
         BYTE           PAN     c_v-25
-        BYTE           VOL     72
         BYTE   W24
+        BYTE           VOICE   105
         BYTE           PAN     c_v+14
-        BYTE           VOL     47
         BYTE           TIE     Fn3   v101
         BYTE   W48
 // 031   ----------------------------------------
@@ -2426,7 +2435,6 @@ Tension_New_3_LOOP:
         BYTE   W03
         BYTE           EOT
         BYTE   W01
-        BYTE           VOL     50
         BYTE           PAN     c_v-14
         BYTE   GoTo
          POIN2  Tension_New_3_LOOP
@@ -2439,7 +2447,7 @@ Tension_New_4:
 // 000   ----------------------------------------
         BYTE           VOICE   110
         BYTE           PAN     c_v-14
-        BYTE           VOL     47
+        BYTE           VOL     33
         BYTE           N68     Gs3   v101   gtp3
         BYTE   W72
         BYTE           N23     As3
@@ -2450,7 +2458,6 @@ Tension_New_4:
 // 002   ----------------------------------------
 Tension_New_4_LOOP:
         BYTE           PAN     c_v+14
-        BYTE           VOL     50
         BYTE           N92     Gs3   v101   gtp3
         BYTE   W96
 // 003   ----------------------------------------
@@ -2464,7 +2471,6 @@ Tension_New_4_LOOP:
         BYTE   W96
 // 006   ----------------------------------------
         BYTE           PAN     c_v-14
-        BYTE           VOL     47
         BYTE           N52     Gs3   v095   gtp1
         BYTE   W54
         BYTE           N05     As3   v076
@@ -2482,12 +2488,6 @@ Tension_New_4_LOOP:
         BYTE                   As3
         BYTE   W06
 // 007   ----------------------------------------
-        BYTE   PATT
-         POIN2  Tension_New_1_7
-// 008   ----------------------------------------
-        BYTE   PATT
-         POIN2  Tension_New_1_8
-// 009   ----------------------------------------
         BYTE   W12
         BYTE           N23     Bn3   v101
         BYTE   W24
@@ -2497,10 +2497,83 @@ Tension_New_4_LOOP:
         BYTE   W06
         BYTE           N32     Fn3   v101   gtp3
         BYTE   W36
-        BYTE           PAN     c_v+14
-        BYTE           VOL     50
-        BYTE           N11     Gn3
-        BYTE   W12
+        BYTE           N02     Fn4   v121
+        BYTE           PAN     c_v-23
+        BYTE   W01
+        BYTE                   c_v-21
+        BYTE   W01
+        BYTE                   c_v-19
+        BYTE   W01
+        BYTE           N02     Fn4   v089
+        BYTE           PAN     c_v-17
+        BYTE   W01
+        BYTE                   c_v-15
+        BYTE   W01
+        BYTE                   c_v-12
+        BYTE   W01
+        BYTE           N02     Fn4   v126
+        BYTE           PAN     c_v-10
+        BYTE   W01
+        BYTE                   c_v-8
+        BYTE   W01
+        BYTE                   c_v-6
+        BYTE   W01
+        BYTE           N02     Fn4   v101
+        BYTE           PAN     c_v-4
+        BYTE   W01
+        BYTE                   c_v-2
+        BYTE   W01
+        BYTE                   c_v+0
+        BYTE   W01
+// 008   ----------------------------------------
+        BYTE           N02     Fn4   v089
+        BYTE           PAN     c_v+2
+        BYTE   W01
+        BYTE                   c_v+4
+        BYTE   W01
+        BYTE                   c_v+6
+        BYTE   W01
+        BYTE           N02     Fn4   v076
+        BYTE           PAN     c_v+8
+        BYTE   W01
+        BYTE                   c_v+10
+        BYTE   W01
+        BYTE                   c_v+13
+        BYTE   W01
+        BYTE           N02     Fn4   v070
+        BYTE           PAN     c_v+15
+        BYTE   W01
+        BYTE                   c_v+17
+        BYTE   W01
+        BYTE                   c_v+19
+        BYTE   W01
+        BYTE           N02     Fn4   v063
+        BYTE           PAN     c_v+21
+        BYTE   W01
+        BYTE                   c_v+23
+        BYTE   W01
+        BYTE                   c_v+25
+        BYTE   W01
+        BYTE                   c_v-14
+        BYTE           N40     Gs3   v095   gtp1
+        BYTE   W42
+        BYTE           N05     As3   v076
+        BYTE   W06
+        BYTE                   Gs3   v089
+        BYTE   W06
+        BYTE                   As3
+        BYTE   W06
+        BYTE                   Gs3   v108
+        BYTE   W06
+        BYTE                   As3
+        BYTE   W06
+        BYTE                   Gs3   v126
+        BYTE   W06
+        BYTE                   As3
+        BYTE   W06
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  Tension_New_1_9
 // 010   ----------------------------------------
         BYTE   PATT
          POIN2  Tension_New_1_10
@@ -2515,7 +2588,6 @@ Tension_New_4_LOOP:
         BYTE   W48
         BYTE           N32     Dn3   v101   gtp3
         BYTE   W36
-        BYTE           VOL     47
         BYTE           N02     Fn4   v121
         BYTE           PAN     c_v-23
         BYTE   W01
@@ -2628,17 +2700,18 @@ Tension_New_4_LOOP:
 // 029   ----------------------------------------
         BYTE   W96
 // 030   ----------------------------------------
-        BYTE   PATT
-         POIN2  Tension_New_1_30
+        BYTE   W48
+        BYTE           PAN     c_v-14
+        BYTE           N68     Gs3   v101   gtp3
+        BYTE   W48
 // 031   ----------------------------------------
         BYTE   W24
-        BYTE           N23     As3   v101
+        BYTE           N23     As3
         BYTE   W24
         BYTE           N96     Bn3
         BYTE   W48
 // 032   ----------------------------------------
         BYTE   W48
-        BYTE           VOL     50
         BYTE           PAN     c_v+14
         BYTE   GoTo
          POIN2  Tension_New_4_LOOP
@@ -2649,7 +2722,8 @@ Tension_New_4_LOOP:
 Tension_New_5:
         BYTE   KEYSH   Tension_New_key+0
 // 000   ----------------------------------------
-        BYTE           VOICE   34
+        BYTE           VOICE   81
+        BYTE           PAN     c_v-14
         BYTE           VOL     55
         BYTE   W96
 // 001   ----------------------------------------
@@ -2876,7 +2950,7 @@ Tension_New_6:
         BYTE   KEYSH   Tension_New_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   124
-        BYTE           VOL     60
+        BYTE           VOL     68
         BYTE           N11     Cn1   v108
         BYTE   W12
         BYTE           N05

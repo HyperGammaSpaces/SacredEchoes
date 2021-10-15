@@ -16,7 +16,7 @@ The_Scions_Dance_in_Purgatory_0:
 @ 000   ----------------------------------------
         .byte   TEMPO , 120/2
         .byte           VOICE , 6
-        .byte           VOL   , 43
+        .byte           VOL   , 42
         .byte           PAN   , c_v-29
         .byte           N12   , Gs3 , v126
         .byte           N12   , Ds4
@@ -1445,7 +1445,7 @@ The_Scions_Dance_in_Purgatory_1:
         .byte   KEYSH , The_Scions_Dance_in_Purgatory_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 52
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte           PAN   , c_v+39
         .byte   W96
 @ 001   ----------------------------------------
@@ -2431,7 +2431,7 @@ The_Scions_Dance_in_Purgatory_3:
         .byte   KEYSH , The_Scions_Dance_in_Purgatory_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 19
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte           PAN   , c_v+20
         .byte           N12   , Gs3 , v126
         .byte           N12   , Ds4
@@ -3162,7 +3162,7 @@ The_Scions_Dance_in_Purgatory_5:
         .byte   KEYSH , The_Scions_Dance_in_Purgatory_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 14
-        .byte           VOL   , 44
+        .byte           VOL   , 43
         .byte           PAN   , c_v+21
         .byte   W96
 @ 001   ----------------------------------------

@@ -682,7 +682,7 @@ LandOfSorrow_1:
 @ 000   ----------------------------------------
         .byte           VOICE , 91
         .byte           PAN   , c_v-13
-        .byte           VOL   , 56
+        .byte           VOL   , 55
         .byte           N03   , An3 , v064
         .byte   W24
         .byte                   Dn4
@@ -1187,7 +1187,7 @@ LandOfSorrow_3:
         .byte   KEYSH , LandOfSorrow_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 1
-        .byte           VOL   , 40
+        .byte           VOL   , 39
         .byte           PAN   , c_v+20
         .byte           N24   , An2 , v026
         .byte   W24
@@ -1470,7 +1470,7 @@ LandOfSorrow_4:
         .byte   KEYSH , LandOfSorrow_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 107
-        .byte           VOL   , 63
+        .byte           VOL   , 62
         .byte           PAN   , c_v-5
         .byte           N24   , An3 , v064
         .byte   W24

@@ -16,7 +16,7 @@ something0_0:
 @ 000   ----------------------------------------
         .byte   TEMPO , 120/2
         .byte           VOICE , 121
-        .byte           VOL   , 65
+        .byte           VOL   , 64
         .byte           N06   , Cn1 , v114
         .byte   W12
         .byte                   AsM1 , v080
@@ -416,7 +416,7 @@ something0_1:
         .byte   KEYSH , something0_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 38
-        .byte           VOL   , 84
+        .byte           VOL   , 83
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96
@@ -551,7 +551,7 @@ something0_2:
         .byte   KEYSH , something0_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 18
-        .byte           VOL   , 56
+        .byte           VOL   , 55
         .byte           PAN   , c_v-32
         .byte           N36   , En2 , v080
         .byte   W36
@@ -782,7 +782,7 @@ something0_4:
         .byte   KEYSH , something0_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 55
-        .byte           VOL   , 73
+        .byte           VOL   , 72
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96

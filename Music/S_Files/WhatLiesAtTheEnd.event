@@ -18,8 +18,8 @@ WhatLiesAtTheEnd_0:
         BYTE   TEMPO   138/2
 WhatLiesAtTheEnd_0_LOOP:
         BYTE           VOICE   91
-        BYTE           PAN     c_v+23
-        BYTE           VOL     54
+        BYTE           PAN     c_v-39
+        BYTE           VOL     37
         BYTE   W96
 // 001   ----------------------------------------
         BYTE   W96
@@ -124,68 +124,95 @@ WhatLiesAtTheEnd_0_LOOP:
 // 051   ----------------------------------------
         BYTE   W96
 // 052   ----------------------------------------
-        BYTE   W96
+        BYTE   W92
+        BYTE   W03
+        BYTE           PAN     c_v-40
+        BYTE   W01
 // 053   ----------------------------------------
-        BYTE           N48     As2   v080
+        BYTE           N48     As2   v096
+        BYTE           N48     As1
         BYTE   W48
         BYTE                   Fn3
+        BYTE           N48     Fn2
         BYTE   W48
 // 054   ----------------------------------------
         BYTE                   Fn3
+        BYTE           N48     Fn2
         BYTE   W48
         BYTE           N24     Ds3
+        BYTE           N24     Ds2
         BYTE   W24
         BYTE                   Cs3
+        BYTE           N24     Cs2
         BYTE   W24
 // 055   ----------------------------------------
-        BYTE           N36
+        BYTE           N36     Cs3
+        BYTE           N36     Cs2
         BYTE   W36
         BYTE           N08     Bn2
+        BYTE           N08     Bn1
         BYTE   W12
-        BYTE           N36
+        BYTE           N36     Bn2
+        BYTE           N36     Bn1
         BYTE   W36
         BYTE           N08     Fs3
+        BYTE           N08     Fs2
         BYTE   W12
 // 056   ----------------------------------------
-        BYTE           N36
+        BYTE           N36     Fs3
+        BYTE           N36     Fs2
         BYTE   W36
         BYTE           N08     Fn3
+        BYTE           N08     Fn2
         BYTE   W12
-        BYTE           N48
+        BYTE           N48     Fn3
+        BYTE           N48     Fn2
         BYTE   W48
 // 057   ----------------------------------------
         BYTE                   As2
+        BYTE           N48     As1
         BYTE   W60
-        BYTE           N12
+        BYTE           N12     As2
+        BYTE           N12     As1
         BYTE   W12
         BYTE                   Cs3
+        BYTE           N12     Cs2
         BYTE   W12
         BYTE                   Fn3
+        BYTE           N12     Fn2
         BYTE   W12
 // 058   ----------------------------------------
-WhatLiesAtTheEnd_0_58:
-        BYTE           N48     Gs3   v080
+        BYTE           N48     Gs3
+        BYTE           N48     Gs2
         BYTE   W48
         BYTE           N24     Fs3
+        BYTE           N24     Fs2
         BYTE   W24
         BYTE                   Fn3
+        BYTE           N24     Fn2
         BYTE   W24
-        BYTE   PEND
 // 059   ----------------------------------------
-        BYTE           N36
+        BYTE           N36     Fn3
+        BYTE           N36     Fn2
         BYTE   W36
         BYTE           N08     Ds3
+        BYTE           N08     Ds2
         BYTE   W12
-        BYTE           N36
+        BYTE           N36     Ds3
+        BYTE           N36     Ds2
         BYTE   W36
         BYTE           N08     Cs3
+        BYTE           N08     Cs2
         BYTE   W12
 // 060   ----------------------------------------
-        BYTE           N36
+        BYTE           N36     Cs3
+        BYTE           N36     Cs2
         BYTE   W36
         BYTE           N08     Cn3
+        BYTE           N08     Cn2
         BYTE   W12
-        BYTE           N48
+        BYTE           N48     Cn3
+        BYTE           N48     Cn2
         BYTE   W48
 // 061   ----------------------------------------
         BYTE   W96
@@ -236,8 +263,11 @@ WhatLiesAtTheEnd_0_58:
 // 084   ----------------------------------------
         BYTE   W96
 // 085   ----------------------------------------
-        BYTE   W48
-        BYTE                   Cn4
+        BYTE   W44
+        BYTE   W03
+        BYTE           PAN     c_v-24
+        BYTE   W01
+        BYTE           N48     Cn4
         BYTE           N48     Fn3
         BYTE           N48     Ds3
         BYTE   W48
@@ -248,7 +278,7 @@ WhatLiesAtTheEnd_0_58:
         BYTE   W96
 // 087   ----------------------------------------
 WhatLiesAtTheEnd_0_87:
-        BYTE           N96     Cs4   v080
+        BYTE           N96     Cs4   v096
         BYTE           N96     As3
         BYTE           N96     Cs3
         BYTE   W96
@@ -262,7 +292,7 @@ WhatLiesAtTheEnd_0_87:
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_0_87
 // 090   ----------------------------------------
-        BYTE           N48     Cn4   v080
+        BYTE           N48     Cn4   v096
         BYTE           N48     Ds3
         BYTE           N48     Ds4
         BYTE   W48
@@ -291,6 +321,7 @@ WhatLiesAtTheEnd_0_87:
         BYTE           N96     Ds3
         BYTE   W96
 // 094   ----------------------------------------
+        BYTE           PAN     c_v-39
         BYTE   GoTo
          POIN2  WhatLiesAtTheEnd_0_LOOP
         BYTE   FINE
@@ -302,55 +333,55 @@ WhatLiesAtTheEnd_1:
 // 000   ----------------------------------------
 WhatLiesAtTheEnd_1_LOOP:
         BYTE           VOICE   41
-        BYTE           VOL     38
-        BYTE           PAN     c_v-16
+        BYTE           PAN     c_v-31
+        BYTE           VOL     37
         BYTE   W08
-        BYTE           N06     Fn3   v080
+        BYTE           N06     Fn3   v072
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs3   v076
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v084
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v088
         BYTE   W08
-        BYTE                   Gs4
+        BYTE                   Gs4   v092
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v088
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v084
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs3   v076
         BYTE   W08
-        BYTE                   Fn3
+        BYTE                   Fn3   v072
         BYTE   W08
 // 001   ----------------------------------------
 WhatLiesAtTheEnd_1_1:
         BYTE   W08
-        BYTE           N06     Fn3   v080
+        BYTE           N06     Fn3   v072
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs3   v076
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v084
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v088
         BYTE   W08
-        BYTE                   Gs4
+        BYTE                   Gs4   v092
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v088
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v084
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs3   v076
         BYTE   W08
-        BYTE                   Fn3
+        BYTE                   Fn3   v072
         BYTE   W08
         BYTE   PEND
 // 002   ----------------------------------------
@@ -359,27 +390,27 @@ WhatLiesAtTheEnd_1_1:
 // 003   ----------------------------------------
 WhatLiesAtTheEnd_1_3:
         BYTE   W08
-        BYTE           N06     Fs3   v080
+        BYTE           N06     Fs3   v072
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs3   v076
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v084
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v088
         BYTE   W08
-        BYTE                   Gs4
+        BYTE                   Gs4   v092
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v088
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v084
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v076
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v072
         BYTE   W08
         BYTE   PEND
 // 004   ----------------------------------------
@@ -492,69 +523,156 @@ WhatLiesAtTheEnd_1_3:
         BYTE           N72     Dn3
         BYTE           N72     Gn3
         BYTE   W24
-        BYTE           N06     As3
+        BYTE           N06     As3   v084
         BYTE   W08
-        BYTE                   Dn4
+        BYTE                   Dn4   v088
+        BYTE   W08
+        BYTE                   Fn4   v092
+        BYTE   W08
+        BYTE                   As4   v096
+        BYTE   W08
+        BYTE                   Fn4   v092
+        BYTE   W08
+        BYTE                   Dn4   v088
         BYTE   W08
         BYTE                   Fn4
         BYTE   W08
-        BYTE                   As4
+        BYTE                   Dn4   v080
         BYTE   W08
-        BYTE                   Fn4
-        BYTE   W08
-        BYTE                   Dn4
-        BYTE   W08
-        BYTE                   Fn4
-        BYTE   W08
-        BYTE                   Dn4
-        BYTE   W08
-        BYTE                   As3
+        BYTE                   As3   v088
         BYTE   W08
 // 027   ----------------------------------------
-        BYTE           N48     Fn4
+        BYTE           N48     Fn4   v096
         BYTE   W48
         BYTE           N24     Gn4
-        BYTE   W48
+        BYTE   W24
+        BYTE           VOICE   109
+        BYTE           N24     An2   v080
+        BYTE   W24
 // 028   ----------------------------------------
-        BYTE   W96
+WhatLiesAtTheEnd_1_28:
+        BYTE           N12     As2   v096
+        BYTE   W24
+        BYTE           N06     As2   v072
+        BYTE           N06     Fn3
+        BYTE   W08
+        BYTE                   As2
+        BYTE           N06     Fn3
+        BYTE   W08
+        BYTE                   As2
+        BYTE           N06     Fn3
+        BYTE   W08
+        BYTE           N12     Cn3   v096
+        BYTE           N12     En3
+        BYTE           N12     Gn3
+        BYTE   W24
+        BYTE           N18     Cn3   v072
+        BYTE           N18     En3
+        BYTE           N18     Gn3
+        BYTE   W24
+        BYTE   PEND
 // 029   ----------------------------------------
-        BYTE   W96
+        BYTE           N12     En3   v096
+        BYTE           N12     An2
+        BYTE   W24
+        BYTE           N18     An2   v072
+        BYTE           N18     En3
+        BYTE   W24
+        BYTE           N12     Fn3   v096
+        BYTE           N12     Dn3
+        BYTE   W24
+        BYTE           N18     Fn3   v072
+        BYTE           N18     Dn3
+        BYTE   W24
 // 030   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_1_28
 // 031   ----------------------------------------
-        BYTE   W96
+        BYTE           N12     Gn3   v096
+        BYTE           N12     Dn3
+        BYTE   W24
+        BYTE           N18     Gn3   v072
+        BYTE           N18     Dn3
+        BYTE   W24
+        BYTE           N36     Dn3   v084
+        BYTE           N36     Fn3
+        BYTE   W48
 // 032   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_1_28
 // 033   ----------------------------------------
-        BYTE   W96
+        BYTE           N12     En3   v096
+        BYTE           N12     An2
+        BYTE   W24
+        BYTE           N18     En3   v072
+        BYTE           N18     An2
+        BYTE   W24
+        BYTE           N12     Fn3   v096
+        BYTE           N12     Dn3
+        BYTE   W24
+        BYTE           N18     Fn3   v072
+        BYTE           N18     Dn3
+        BYTE   W24
 // 034   ----------------------------------------
-        BYTE   W96
+        BYTE           N12     As2   v096
+        BYTE   W24
+        BYTE           N06     As2   v072
+        BYTE           N06     Gn3
+        BYTE           N06     Dn3
+        BYTE   W08
+        BYTE                   As2
+        BYTE           N06     Gn3
+        BYTE           N06     Dn3
+        BYTE   W08
+        BYTE                   As2
+        BYTE           N06     Gn3
+        BYTE           N06     Dn3
+        BYTE   W08
+        BYTE           N12     En3   v096
+        BYTE           N12     Cn3
+        BYTE           N12     An3
+        BYTE   W24
+        BYTE           N18     An3   v072
+        BYTE           N18     En3
+        BYTE           N18     Cn3
+        BYTE   W24
 // 035   ----------------------------------------
-        BYTE   W96
+        BYTE           N12     Dn3   v096
+        BYTE           N12     Gn3
+        BYTE   W24
+        BYTE           N18     Gn3   v072
+        BYTE           N18     Dn3
+        BYTE   W24
+        BYTE           N36     Fn3   v084
+        BYTE           N36     Dn3
+        BYTE   W44
+        BYTE   W03
+        BYTE           VOICE   41
+        BYTE   W01
 // 036   ----------------------------------------
 WhatLiesAtTheEnd_1_36:
         BYTE   W08
-        BYTE           N06     Fn3   v080
+        BYTE           N06     Fn3   v072
         BYTE   W08
-        BYTE                   An3
+        BYTE                   An3   v076
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   Dn4
+        BYTE                   Dn4   v084
         BYTE   W08
-        BYTE                   En4
+        BYTE                   En4   v088
         BYTE   W08
-        BYTE                   An4
+        BYTE                   An4   v092
         BYTE   W08
-        BYTE                   En4
+        BYTE                   En4   v088
         BYTE   W08
-        BYTE                   Dn4
+        BYTE                   Dn4   v084
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   An3
+        BYTE                   An3   v076
         BYTE   W08
-        BYTE                   Fn3
+        BYTE                   Fn3   v072
         BYTE   W08
         BYTE   PEND
 // 037   ----------------------------------------
@@ -566,27 +684,27 @@ WhatLiesAtTheEnd_1_36:
 // 039   ----------------------------------------
 WhatLiesAtTheEnd_1_39:
         BYTE   W08
-        BYTE           N06     Gn3   v080
+        BYTE           N06     Gn3   v072
         BYTE   W08
-        BYTE                   An3
+        BYTE                   An3   v076
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   Dn4
+        BYTE                   Dn4   v084
         BYTE   W08
-        BYTE                   En4
+        BYTE                   En4   v088
         BYTE   W08
-        BYTE                   An4
+        BYTE                   An4   v092
         BYTE   W08
-        BYTE                   En4
+        BYTE                   En4   v088
         BYTE   W08
-        BYTE                   Dn4
+        BYTE                   Dn4   v084
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   Dn4
+        BYTE                   Dn4   v076
         BYTE   W08
-        BYTE                   En4
+        BYTE                   En4   v072
         BYTE   W08
         BYTE   PEND
 // 040   ----------------------------------------
@@ -684,20 +802,20 @@ WhatLiesAtTheEnd_1_39:
         BYTE   W96
 // 073   ----------------------------------------
         BYTE   W48
-        BYTE           N06     Fn3   v108
+        BYTE           N06     Fn3
         BYTE   W08
-        BYTE                   An3
+        BYTE                   An3   v084
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v088
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v096
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v100
         BYTE   W08
-        BYTE                   An3
+        BYTE                   An3   v104
         BYTE   W08
 // 074   ----------------------------------------
-        BYTE           N24     Cs4
+        BYTE           N24     Cs4   v108
         BYTE   W24
         BYTE           N06     Fn3
         BYTE   W08
@@ -720,16 +838,16 @@ WhatLiesAtTheEnd_1_39:
         BYTE   W96
 // 077   ----------------------------------------
         BYTE   W72
-        BYTE           N06     Gs3
+        BYTE           N06     Gs3   v084
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v088
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v092
         BYTE   W08
 // 078   ----------------------------------------
-        BYTE                   Ds4
+        BYTE                   Ds4   v100
         BYTE   W08
-        BYTE                   Fn4
+        BYTE                   Fn4   v108
         BYTE   W08
         BYTE                   Cs4
         BYTE   W08
@@ -809,27 +927,27 @@ WhatLiesAtTheEnd_1_87:
 // 093   ----------------------------------------
         BYTE           N06     Cn4   v080
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs3   v076
         BYTE   W08
-        BYTE                   Fn3
+        BYTE                   Fn3   v072
         BYTE   W08
-        BYTE                   Ds3
+        BYTE                   Ds3   v080
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs3   v076
         BYTE   W08
-        BYTE                   Cs3
+        BYTE                   Cs3   v072
         BYTE   W08
-        BYTE                   Cn3
+        BYTE                   Cn3   v080
         BYTE   W08
-        BYTE                   Ds3
+        BYTE                   Ds3   v076
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs3   v072
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v080
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v076
         BYTE   W08
-        BYTE                   Gs4
+        BYTE                   Gs4   v072
         BYTE   W08
 // 094   ----------------------------------------
         BYTE   GoTo
@@ -843,218 +961,295 @@ WhatLiesAtTheEnd_2:
 // 000   ----------------------------------------
 WhatLiesAtTheEnd_2_LOOP:
         BYTE           VOICE   0
-        BYTE           VOL     67
-        BYTE           N12     Cn2   v080
+        BYTE           PAN     c_v-8
+        BYTE           VOL     51
+        BYTE           N12     Cn2   v076
         BYTE           N12     Fn1
+        BYTE           N12     Fn2
+        BYTE           N12     As2
         BYTE   W24
+        BYTE           N06     Fn2   v067
         BYTE           N06     Cn2
         BYTE           N06     Fn1
+        BYTE           N06     As2
         BYTE   W08
-        BYTE                   Cn2
+        BYTE                   Fn2   v057
+        BYTE           N06     Cn2
         BYTE           N06     Fn1
+        BYTE           N06     As2
         BYTE   W08
-        BYTE                   Cn2
+        BYTE                   Fn2   v048
+        BYTE           N06     Cn2
         BYTE           N06     Fn1
+        BYTE           N06     As2
         BYTE   W08
-        BYTE           N12     As1
+        BYTE           N12     As1   v070
         BYTE           N12     Fn1
+        BYTE           N12     Fn2
+        BYTE           N12     As2
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     Fn1   v057
         BYTE           N24     As1
+        BYTE           N24     Fn2
+        BYTE           N24     As2   v056
         BYTE   W24
 // 001   ----------------------------------------
-WhatLiesAtTheEnd_2_1:
-        BYTE           N12     Cn2   v080
+        BYTE           N12     Fn2   v076
+        BYTE           N12     Cn2
         BYTE           N12     Fn1
+        BYTE           N12     As2
         BYTE   W24
+        BYTE           N18     Fn2   v064
         BYTE           N18     Cn2
         BYTE           N18     Fn1
+        BYTE           N18     As2
         BYTE   W24
+        BYTE           N12     Fn2   v070
         BYTE           N12     As1
         BYTE           N12     Fn1
+        BYTE           N12     As2
         BYTE   W24
+        BYTE           N18     Fn2   v064
         BYTE           N18     As1
         BYTE           N18     Fn1
+        BYTE           N18     As2
         BYTE   W24
-        BYTE   PEND
 // 002   ----------------------------------------
-WhatLiesAtTheEnd_2_2:
-        BYTE           N12     Fs1   v080
+        BYTE           N12     Fs2   v076
+        BYTE           N12     Fs1
         BYTE           N12     Cn2
+        BYTE           N12     Cn3
         BYTE   W24
-        BYTE           N06
+        BYTE           N06     Fs2   v067
+        BYTE           N06     Cn2
         BYTE           N06     Fs1
+        BYTE           N06     Cn3
         BYTE   W08
-        BYTE                   Cn2
+        BYTE                   Fs2   v057
+        BYTE           N06     Cn2
         BYTE           N06     Fs1
+        BYTE           N06     Cn3
         BYTE   W08
-        BYTE                   Cn2
+        BYTE                   Fs2   v048
+        BYTE           N06     Cn2
         BYTE           N06     Fs1
+        BYTE           N06     Cn3
         BYTE   W08
-        BYTE           N12
+        BYTE           N12     Fs2   v070
+        BYTE           N12     Fs1
         BYTE           N12     As1
+        BYTE           N12     As2
         BYTE   W24
-        BYTE           N24     Fs1
-        BYTE           N24     As1
+        BYTE           N18     Fs2   v057
+        BYTE           N18     As1
+        BYTE           N18     Fs1
+        BYTE           N18     As2
         BYTE   W24
-        BYTE   PEND
 // 003   ----------------------------------------
-WhatLiesAtTheEnd_2_3:
-        BYTE           N12     Gs1   v080
+        BYTE           N12     Gs1   v076
         BYTE           N12     Cs2
+        BYTE           N12     Gs2
+        BYTE           N12     Cs3
         BYTE   W24
-        BYTE           N18     Gs1
+        BYTE           N18     Gs1   v064
         BYTE           N18     Cs2
+        BYTE           N18     Gs2
+        BYTE           N18     Cs3
         BYTE   W24
-        BYTE           N12     Gs1
+        BYTE           N12     Gs1   v070
         BYTE           N12     Cn2
+        BYTE           N12     Gs2
+        BYTE           N12     Cn3
         BYTE   W24
-        BYTE           N18     Gs1
+        BYTE           N18     Gs1   v064
         BYTE           N18     Cn2
+        BYTE           N18     Gs2
+        BYTE           N18     Cn3
         BYTE   W24
-        BYTE   PEND
 // 004   ----------------------------------------
 WhatLiesAtTheEnd_2_4:
-        BYTE           N12     Cn2   v080
+        BYTE           N12     Cn2   v096
         BYTE           N12     Fn1
         BYTE   W24
-        BYTE           N06     Cn2
+        BYTE           N06     Cn2   v084
         BYTE           N06     Fn1
         BYTE   W08
-        BYTE                   Cn2
+        BYTE                   Cn2   v072
         BYTE           N06     Fn1
         BYTE   W08
-        BYTE                   Cn2
+        BYTE                   Cn2   v060
         BYTE           N06     Fn1
         BYTE   W08
-        BYTE           N12     As1
+        BYTE           N12     As1   v088
         BYTE           N12     Fn1
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     Fn1   v072
         BYTE           N24     As1
         BYTE   W24
         BYTE   PEND
 // 005   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_1
+WhatLiesAtTheEnd_2_5:
+        BYTE           N12     Cn2   v096
+        BYTE           N12     Fn1
+        BYTE   W24
+        BYTE           N18     Cn2   v080
+        BYTE           N18     Fn1
+        BYTE   W24
+        BYTE           N12     As1   v088
+        BYTE           N12     Fn1
+        BYTE   W24
+        BYTE           N18     As1   v080
+        BYTE           N18     Fn1
+        BYTE   W24
+        BYTE   PEND
 // 006   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_2
+WhatLiesAtTheEnd_2_6:
+        BYTE           N12     Fs1   v096
+        BYTE           N12     Cn2
+        BYTE   W24
+        BYTE           N06     Cn2   v084
+        BYTE           N06     Fs1
+        BYTE   W08
+        BYTE                   Cn2   v072
+        BYTE           N06     Fs1
+        BYTE   W08
+        BYTE                   Cn2   v060
+        BYTE           N06     Fs1
+        BYTE   W08
+        BYTE           N12     Fs1   v088
+        BYTE           N12     As1
+        BYTE   W24
+        BYTE           N24     Fs1   v072
+        BYTE           N24     As1
+        BYTE   W24
+        BYTE   PEND
 // 007   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_3
+WhatLiesAtTheEnd_2_7:
+        BYTE           N12     Gs1   v096
+        BYTE           N12     Cs2
+        BYTE   W24
+        BYTE           N18     Gs1   v080
+        BYTE           N18     Cs2
+        BYTE   W24
+        BYTE           N12     Gs1   v088
+        BYTE           N12     Cn2
+        BYTE   W24
+        BYTE           N18     Gs1   v080
+        BYTE           N18     Cn2
+        BYTE   W24
+        BYTE   PEND
 // 008   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_2_4
 // 009   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_1
+         POIN2  WhatLiesAtTheEnd_2_5
 // 010   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_2
+         POIN2  WhatLiesAtTheEnd_2_6
 // 011   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_3
+         POIN2  WhatLiesAtTheEnd_2_7
 // 012   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_2_4
 // 013   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_1
+         POIN2  WhatLiesAtTheEnd_2_5
 // 014   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_2
+         POIN2  WhatLiesAtTheEnd_2_6
 // 015   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_3
+         POIN2  WhatLiesAtTheEnd_2_7
 // 016   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_2_4
 // 017   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_1
+         POIN2  WhatLiesAtTheEnd_2_5
 // 018   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_2
+         POIN2  WhatLiesAtTheEnd_2_6
 // 019   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_3
+         POIN2  WhatLiesAtTheEnd_2_7
 // 020   ----------------------------------------
-        BYTE           N24     As2   v080
+        BYTE           N24     As2   v096
         BYTE           N24     Fs2
         BYTE   W24
-        BYTE                   Ds2
+        BYTE                   Ds2   v080
         BYTE   W24
-        BYTE                   As2
+        BYTE                   As2   v088
         BYTE           N24     Ds3
         BYTE   W24
-        BYTE                   Ds2
+        BYTE                   Ds2   v080
         BYTE   W24
 // 021   ----------------------------------------
-        BYTE                   Gs2
+        BYTE                   Gs2   v096
         BYTE           N24     Cn3
         BYTE   W24
-        BYTE                   Fn2
+        BYTE                   Fn2   v080
         BYTE   W24
-        BYTE                   Gs2
+        BYTE                   Gs2   v088
         BYTE           N24     Cs2
         BYTE   W24
-        BYTE                   Fn2
+        BYTE                   Fn2   v080
         BYTE   W24
 // 022   ----------------------------------------
-        BYTE                   As2
+        BYTE                   As2   v096
         BYTE           N24     Cs3
         BYTE   W24
-        BYTE                   Fs2
+        BYTE                   Fs2   v080
         BYTE   W24
-        BYTE                   As2
+        BYTE                   As2   v088
         BYTE           N24     Ds3
         BYTE   W24
-        BYTE                   Fs2
+        BYTE                   Fs2   v080
         BYTE   W24
 // 023   ----------------------------------------
-        BYTE                   Gs2
+        BYTE                   Gs2   v096
         BYTE   W24
-        BYTE                   Cs3
+        BYTE                   Cs3   v088
         BYTE   W24
         BYTE                   Gs2
         BYTE           N24     Fn2
         BYTE   W24
-        BYTE                   Fn2
+        BYTE                   Fn2   v080
         BYTE           N24     Cs2
         BYTE   W24
 // 024   ----------------------------------------
-        BYTE                   Ds2
+        BYTE                   Ds2   v096
         BYTE           N24     As2
         BYTE   W24
-        BYTE                   Ds2
+        BYTE                   Ds2   v080
         BYTE   W24
-        BYTE                   Fs2
+        BYTE                   Fs2   v088
         BYTE   W24
-        BYTE                   As2
+        BYTE                   As2   v080
         BYTE   W24
 // 025   ----------------------------------------
-        BYTE                   Cn3
+        BYTE                   Cn3   v096
         BYTE           N24     Gs2
         BYTE   W24
-        BYTE                   Gs2
+        BYTE                   Gs2   v080
         BYTE   W24
-        BYTE                   Gs2
+        BYTE                   Gs2   v088
         BYTE           N24     Fn2
         BYTE   W24
-        BYTE                   Gs2
+        BYTE                   Gs2   v080
         BYTE   W24
 // 026   ----------------------------------------
-        BYTE           N48     Dn2
+        BYTE           N48     Dn2   v088
         BYTE           N48     As2
         BYTE           N48     Gn2
         BYTE   W48
-        BYTE                   As2
+        BYTE                   As2   v092
         BYTE           N48     Dn3
         BYTE           N48     Gn2
         BYTE   W48
 // 027   ----------------------------------------
-        BYTE                   As2
+        BYTE                   As2   v096
         BYTE           N48     Dn3
         BYTE           N36     Fn3
         BYTE   W36
@@ -1067,265 +1262,251 @@ WhatLiesAtTheEnd_2_4:
         BYTE           N22     Gn3
         BYTE           N22     En3
         BYTE   W24
-        BYTE           N24     An2
+        BYTE           N24     An2   v088
         BYTE           N24     Dn3
         BYTE   W24
 // 028   ----------------------------------------
-        BYTE           N12     An2
+        BYTE           N12     An2   v096
         BYTE           N12     Fn2
         BYTE   W24
-        BYTE           N06     An2
+        BYTE           N06     An2   v084
         BYTE           N06     Fn2
         BYTE   W08
-        BYTE                   An2
+        BYTE                   An2   v072
         BYTE           N06     Fn2
         BYTE   W08
-        BYTE           N08     An2
+        BYTE           N08     An2   v060
         BYTE           N08     Fn2
         BYTE   W08
-        BYTE           N12     As2
+        BYTE           N12     As2   v088
         BYTE           N12     Gn2
         BYTE   W24
-        BYTE                   Gn2
+        BYTE                   Gn2   v072
         BYTE           N12     As2
         BYTE   W24
 // 029   ----------------------------------------
-        BYTE                   Gn2
+        BYTE                   Gn2   v096
         BYTE           N12     En2
         BYTE   W24
-        BYTE           N18     Gn2
+        BYTE           N18     Gn2   v080
         BYTE           N18     En2
         BYTE   W24
-        BYTE           N12     An2
+        BYTE           N12     An2   v088
         BYTE           N12     Fn2
         BYTE   W24
-        BYTE           N18
+        BYTE           N18     Fn2   v080
         BYTE           N18     An2
         BYTE   W24
 // 030   ----------------------------------------
-        BYTE           N12     Fn2
+        BYTE           N12     Fn2   v096
         BYTE           N12     Dn2
         BYTE   W24
-        BYTE           N06     Fn2
+        BYTE           N06     Fn2   v084
         BYTE           N06     Dn2
         BYTE   W08
-        BYTE                   Fn2
+        BYTE                   Fn2   v072
         BYTE           N06     Dn2
         BYTE   W08
-        BYTE           N08     Fn2
+        BYTE           N08     Fn2   v060
         BYTE           N08     Dn2
         BYTE   W08
-        BYTE           N12     En2
+        BYTE           N12     En2   v088
         BYTE           N12     Gn2
         BYTE   W24
-        BYTE           N18     En2
+        BYTE           N18     En2   v072
         BYTE           N18     Gn2
         BYTE   W24
 // 031   ----------------------------------------
-        BYTE           N12     Cn2
+        BYTE           N12     Cn2   v096
         BYTE           N12     En2
         BYTE   W24
-        BYTE           N18
+        BYTE           N18     En2   v080
         BYTE           N18     Cn2
         BYTE   W24
-        BYTE           N42     Dn2
+        BYTE           N42     Dn2   v088
         BYTE           N42     Fn2
         BYTE   W48
 // 032   ----------------------------------------
-WhatLiesAtTheEnd_2_32:
-        BYTE           N48     As1   v080
+        BYTE           N48     As1   v096
         BYTE   W48
         BYTE                   Cn2
         BYTE   W48
-        BYTE   PEND
 // 033   ----------------------------------------
-WhatLiesAtTheEnd_2_33:
-        BYTE           N48     An1   v080
+        BYTE                   An1
         BYTE   W48
         BYTE                   Dn2
         BYTE   W48
-        BYTE   PEND
 // 034   ----------------------------------------
-WhatLiesAtTheEnd_2_34:
-        BYTE           N48     Gn2   v080
+        BYTE                   Gn2
         BYTE   W48
         BYTE                   An2
         BYTE   W48
-        BYTE   PEND
 // 035   ----------------------------------------
         BYTE           N72     Dn3
         BYTE   W72
-        BYTE           N24     An3
-        BYTE           N24     Dn4
+        BYTE           N24     An1   v072
         BYTE   W24
 // 036   ----------------------------------------
-        BYTE           N48
-        BYTE   W02
-        BYTE           N44     Fn4   v080   gtp2
-        BYTE   W02
-        BYTE           N44     An4
-        BYTE   W44
-        BYTE           N16     Dn4
-        BYTE           N16     An4
-        BYTE   W16
-        BYTE                   Dn4
-        BYTE           N16     Gn4
-        BYTE   W16
-        BYTE                   Fn4
-        BYTE           N16     Dn4
-        BYTE   W16
+WhatLiesAtTheEnd_2_36:
+        BYTE           N12     As1   v096
+        BYTE   W24
+        BYTE           N06     As1   v072
+        BYTE           N06     Fn2
+        BYTE   W08
+        BYTE                   As1
+        BYTE           N06     Fn2
+        BYTE   W08
+        BYTE                   As1
+        BYTE           N06     Fn2
+        BYTE   W08
+        BYTE           N12     Cn2   v096
+        BYTE           N12     En2
+        BYTE           N12     Gn2
+        BYTE   W24
+        BYTE           N18     Cn2   v072
+        BYTE           N18     En2
+        BYTE           N18     Gn2
+        BYTE   W24
+        BYTE   PEND
 // 037   ----------------------------------------
-        BYTE           N24     Gn3
-        BYTE   W02
-        BYTE           N22     Cn4
-        BYTE   W02
-        BYTE           N20     En4
-        BYTE   W20
-        BYTE           N24     Fn4
-        BYTE           N24     Dn4
+        BYTE           N12     En2   v096
+        BYTE           N12     An1
         BYTE   W24
-        BYTE                   En4
-        BYTE           N24     Gn4
+        BYTE           N18     An1   v072
+        BYTE           N18     En2
         BYTE   W24
-        BYTE                   En4
-        BYTE           N24     Cn5
+        BYTE           N12     Fn2   v096
+        BYTE           N12     Dn2
+        BYTE   W24
+        BYTE           N18     Fn2   v072
+        BYTE           N18     Dn2
         BYTE   W24
 // 038   ----------------------------------------
-        BYTE           N48     Cn4
-        BYTE   W02
-        BYTE           N44     En4   v080   gtp2
-        BYTE   W02
-        BYTE           N44     Gn4
-        BYTE   W44
-        BYTE           N16     Cn4
-        BYTE           N16     An4
-        BYTE   W16
-        BYTE                   Cn4
-        BYTE           N16     Gn4
-        BYTE   W16
-        BYTE                   Cn4
-        BYTE           N16     Fn4
-        BYTE   W16
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_2_36
 // 039   ----------------------------------------
-        BYTE           N48     Gn3
-        BYTE   W02
-        BYTE           N44     Cn4   v080   gtp2
-        BYTE   W02
-        BYTE           N44     En4
-        BYTE   W44
-        BYTE           N24     Dn4
-        BYTE           N24     Fn4
+        BYTE           N12     Gn2   v096
+        BYTE           N12     Dn2
         BYTE   W24
-        BYTE                   Dn4
+        BYTE           N18     Gn2   v072
+        BYTE           N18     Dn2
         BYTE   W24
+        BYTE           N36     Dn2   v084
+        BYTE           N36     Fn2
+        BYTE   W48
 // 040   ----------------------------------------
-        BYTE           N48
-        BYTE   W02
-        BYTE           N44     Fn4   v080   gtp2
-        BYTE   W02
-        BYTE           N44     An4
-        BYTE   W44
-        BYTE           N16
-        BYTE           N16     Dn4
-        BYTE   W16
-        BYTE                   Gn4
-        BYTE           N16     Dn4
-        BYTE   W16
-        BYTE                   Fn4
-        BYTE           N16     Dn4
-        BYTE   W16
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_2_36
 // 041   ----------------------------------------
-        BYTE           N24     Gn3
-        BYTE   W02
-        BYTE           N22     Cn4
-        BYTE   W02
-        BYTE           N20     En4
-        BYTE   W20
-        BYTE           N24     Fn4
-        BYTE           N24     Dn4
+        BYTE           N12     En2   v096
+        BYTE           N12     An1
         BYTE   W24
-        BYTE                   En4
-        BYTE           N24     Gn4
+        BYTE           N18     En2   v072
+        BYTE           N18     An1
         BYTE   W24
-        BYTE                   Cn5
-        BYTE           N24     En4
+        BYTE           N12     Fn2   v096
+        BYTE           N12     Dn2
+        BYTE   W24
+        BYTE           N18     Fn2   v072
+        BYTE           N18     Dn2
         BYTE   W24
 // 042   ----------------------------------------
-        BYTE                   Dn4
-        BYTE   W02
-        BYTE           N22     Gn4
-        BYTE   W02
-        BYTE           N20     Dn5
-        BYTE   W14
-        BYTE           N06     En5
-        BYTE   W06
-        BYTE           N48     Cn5
-        BYTE   W48
-        BYTE           N24     An4
+        BYTE           N12     As1   v096
+        BYTE   W24
+        BYTE           N06     As1   v072
+        BYTE           N06     Gn2
+        BYTE           N06     Dn2
+        BYTE   W08
+        BYTE                   As1
+        BYTE           N06     Gn2
+        BYTE           N06     Dn2
+        BYTE   W08
+        BYTE                   As1
+        BYTE           N06     Gn2
+        BYTE           N06     Dn2
+        BYTE   W08
+        BYTE           N12     En2   v096
+        BYTE           N12     Cn2
+        BYTE           N12     An2   v064
+        BYTE   W24
+        BYTE           N18     An2   v048
+        BYTE           N18     En2   v072
+        BYTE           N18     Cn2
         BYTE   W24
 // 043   ----------------------------------------
-        BYTE           N72     Gn3
-        BYTE   W02
-        BYTE                   An3
-        BYTE   W02
-        BYTE                   Dn4
-        BYTE   W02
-        BYTE                   Dn5
-        BYTE   W90
+        BYTE           N12     Dn2   v096
+        BYTE           N12     Gn2
+        BYTE   W24
+        BYTE           N18     Gn2   v072
+        BYTE           N18     Dn2
+        BYTE   W24
+        BYTE           N36     Fn2   v084
+        BYTE           N36     Dn2
+        BYTE   W48
 // 044   ----------------------------------------
-        BYTE           N48     As3
+        BYTE           N48     As3   v072
+        BYTE           N48     An2
         BYTE   W02
-        BYTE           N44     Ds4   v080   gtp2
+        BYTE           N44     Ds4   v072   gtp2
         BYTE   W02
         BYTE           N44     An4
         BYTE   W44
-        BYTE           N48     Gn3
+        BYTE           N48     Gn3   v076
         BYTE           N48     Gn2
         BYTE   W02
-        BYTE           N44     Cn4   v080   gtp2
+        BYTE           N44     Cn4   v076   gtp2
         BYTE   W02
         BYTE           N44     Gn4
         BYTE   W44
 // 045   ----------------------------------------
-        BYTE           N24     An3
+        BYTE           N24     An3   v080
+        BYTE           N24     Gn2
         BYTE   W02
         BYTE                   Cn4
         BYTE   W02
         BYTE                   Gn4
         BYTE   W20
-        BYTE                   Fn4
+        BYTE                   Fn4   v088
         BYTE   W24
         BYTE           N48     Cn4
+        BYTE           N48     Fn2
         BYTE   W02
-        BYTE           N44     Fn4   v080   gtp2
+        BYTE           N44     Fn4   v088   gtp2
         BYTE   W02
         BYTE           N44     Cn5
         BYTE   W44
 // 046   ----------------------------------------
-        BYTE           N24     Cs4
+        BYTE           N24     Cs4   v096
+        BYTE           N24     Fn2   v088
         BYTE   W02
-        BYTE                   Fn4
+        BYTE                   Fn4   v096
         BYTE   W02
         BYTE                   Cn5
         BYTE   W20
         BYTE                   As4
+        BYTE           N24     Ds2   v080
         BYTE   W24
-        BYTE           N48     Gn4
+        BYTE           N48     Gn4   v096
+        BYTE           N24     Fn2   v084
         BYTE   W02
-        BYTE           N44     As4   v080   gtp2
+        BYTE           N44     As4   v096   gtp2
         BYTE   W02
         BYTE           N44     Fn5
-        BYTE   W44
+        BYTE   W20
+        BYTE           N24     Gs2   v088
+        BYTE   W24
 // 047   ----------------------------------------
-        BYTE           N48     Ds4
+        BYTE           N48     Ds4   v096
+        BYTE           N48     Ds2   v092
         BYTE   W02
-        BYTE                   Gs4
+        BYTE                   Gs4   v096
         BYTE   W02
         BYTE                   Ds5
         BYTE   W44
         BYTE                   Cs4
+        BYTE           N48     Cs2   v080
         BYTE   W02
-        BYTE           N44     Fn4   v080   gtp2
+        BYTE           N44     Fn4   v096   gtp2
         BYTE   W02
         BYTE           N44     Gs4
         BYTE   W44
@@ -1379,235 +1560,271 @@ WhatLiesAtTheEnd_2_34:
         BYTE           N06     Gs2
         BYTE           N06     Gs1
         BYTE   W08
-        BYTE                   Cs3
+        BYTE                   Cs3   v088
         BYTE           N06     Cs2
         BYTE   W08
-        BYTE                   Ds3
+        BYTE                   Ds3   v080
         BYTE           N06     Ds2
         BYTE   W08
 // 052   ----------------------------------------
-        BYTE           N48     Cn2
+        BYTE           N48     Cn2   v096
         BYTE           N48     Cn3
         BYTE   W48
         BYTE           EOT     Gs3
         BYTE   W48
 // 053   ----------------------------------------
-        BYTE           N24     As2
+        BYTE           N48     As2   v080
+        BYTE           N24     As1
         BYTE   W24
-        BYTE           N48     Fn3
-        BYTE   W48
+        BYTE           N48     Fn2   v072
+        BYTE   W24
+        BYTE                   Fn3   v080
+        BYTE   W24
         BYTE                   Fn2
-        BYTE           N48     Fn3
         BYTE   W24
 // 054   ----------------------------------------
+        BYTE                   Fn3   v096
         BYTE   W24
-        BYTE           N24     As2
+        BYTE           N24     As1   v064
         BYTE   W24
-        BYTE                   Fn3
+        BYTE                   Ds3   v080
         BYTE           N24     Fn2
         BYTE   W24
         BYTE                   Cs3
+        BYTE           N24     Cs2   v072
         BYTE   W24
 // 055   ----------------------------------------
-        BYTE                   Bn2
+        BYTE           N36     Cs3   v080
+        BYTE           N24     Bn1
         BYTE   W24
-        BYTE           N44     Fs3   v080   gtp2
-        BYTE   W48
-        BYTE           N48
+        BYTE           N44     Fs2   v072   gtp2
+        BYTE   W12
+        BYTE           N08     Bn2   v080
+        BYTE   W12
+        BYTE           N36
         BYTE   W24
+        BYTE           N48     Fs2   v064
+        BYTE   W12
+        BYTE           N08     Fs3   v080
+        BYTE   W12
 // 056   ----------------------------------------
+        BYTE           N36
         BYTE   W24
-        BYTE           N24     Bn2
+        BYTE           N24     Bn1   v072
+        BYTE   W12
+        BYTE           N08     Fn3   v080
+        BYTE   W12
+        BYTE           N48
+        BYTE           N24     Fs2
         BYTE   W24
-        BYTE                   Fs3
-        BYTE   W24
-        BYTE                   Cs3
+        BYTE                   Cs2   v064
         BYTE   W24
 // 057   ----------------------------------------
-        BYTE                   As2
+        BYTE           N48     As2   v080
+        BYTE           N24     As1
         BYTE   W24
-        BYTE           N48     Fn3
-        BYTE   W48
-        BYTE                   Fn3
-        BYTE   W24
-// 058   ----------------------------------------
-        BYTE   W24
-        BYTE           N24     As2
-        BYTE   W24
-        BYTE                   Fn3
-        BYTE   W24
+        BYTE           N48     Fn2   v072
+        BYTE   W36
+        BYTE           N12     As2   v080
+        BYTE   W12
         BYTE                   Cs3
+        BYTE           N48     Fn2   v064
+        BYTE   W12
+        BYTE           N12     Fn3   v080
+        BYTE   W12
+// 058   ----------------------------------------
+        BYTE           N48     Gs3
+        BYTE   W24
+        BYTE           N24     As1   v072
+        BYTE   W24
+        BYTE                   Fs3   v080
+        BYTE           N24     Fn2
+        BYTE   W24
+        BYTE                   Fn3
+        BYTE           N24     Cs2   v072
         BYTE   W24
 // 059   ----------------------------------------
-        BYTE                   Bn2
+        BYTE           N36     Fn3   v096
+        BYTE           N24     Bn1   v080
         BYTE   W24
-        BYTE           N44     Fs3   v080   gtp2
-        BYTE   W48
-        BYTE           N24
+        BYTE           N44     Fs2   v088   gtp2
+        BYTE   W12
+        BYTE           N08     Ds3   v080
+        BYTE   W12
+        BYTE           N36
         BYTE   W24
+        BYTE           N18     Cn2
+        BYTE           N24     Fs2
+        BYTE   W12
+        BYTE           N08     Cs3
+        BYTE   W12
 // 060   ----------------------------------------
-        BYTE           N48     Cn3
-        BYTE           N48     Fs2
+        BYTE           N48     Fs2   v096
         BYTE           N48     Cn2
-        BYTE   W48
-        BYTE           N44     Fn2   v080   gtp2
+        BYTE           N36     Cn3
+        BYTE           N48     Fs1   v064
+        BYTE   W36
+        BYTE           N12     Cn3   v080
+        BYTE   W12
+        BYTE           N44     Fn2   v096   gtp2
         BYTE                   Cn3
-        BYTE           N44     Cn2   v080   gtp2
+        BYTE           N44     Cn2   v096   gtp2
+        BYTE           N48     Fn1   v064
         BYTE   W48
 // 061   ----------------------------------------
-        BYTE           N18     As2
+        BYTE           N18     As2   v096
         BYTE           N18     Ds2
         BYTE   W24
-        BYTE           N06     As2
+        BYTE           N06     As2   v084
         BYTE           N06     Ds2
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v072
         BYTE           N06     Ds2
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v060
         BYTE           N06     Ds2
         BYTE   W08
-        BYTE           N12     As2
+        BYTE           N12     As2   v088
         BYTE           N12     Ds2
         BYTE   W24
-        BYTE           N18     As2
+        BYTE           N18     As2   v072
         BYTE           N18     Ds2
         BYTE   W24
 // 062   ----------------------------------------
-        BYTE           N12     Fn2
+        BYTE           N12     Fn2   v096
         BYTE           N12     Cn3
         BYTE   W24
-        BYTE           N06
+        BYTE           N06     Cn3   v084
         BYTE           N06     Fn2
         BYTE   W08
-        BYTE                   Cn3
+        BYTE                   Cn3   v072
         BYTE           N06     Fn2
         BYTE   W08
-        BYTE                   Cn3
+        BYTE                   Cn3   v060
         BYTE           N06     Fn2
         BYTE   W08
-        BYTE           N12     Cn3
+        BYTE           N12     Cn3   v088
         BYTE           N12     Fn2
         BYTE   W24
-        BYTE           N22     Cn3
+        BYTE           N22     Cn3   v072
         BYTE           N22     Fn2
         BYTE   W24
 // 063   ----------------------------------------
-        BYTE           N12     Cs3
+        BYTE           N12     Cs3   v096
         BYTE           N12     As2
         BYTE   W24
-        BYTE           N06     Cs3
+        BYTE           N06     Cs3   v084
         BYTE           N06     As2
         BYTE   W08
-        BYTE                   Cs3
+        BYTE                   Cs3   v072
         BYTE           N06     As2
         BYTE   W08
-        BYTE                   Cs3
+        BYTE                   Cs3   v060
         BYTE           N06     As2
         BYTE   W08
-        BYTE           N12     Cs3
+        BYTE           N12     Cs3   v088
         BYTE           N12     As2
         BYTE   W24
-        BYTE           N22     Cs3
+        BYTE           N22     Cs3   v072
         BYTE           N22     As2
         BYTE   W24
 // 064   ----------------------------------------
-        BYTE           N12     Cn3
+        BYTE           N12     Cn3   v096
         BYTE           N12     Gn2
         BYTE   W24
-        BYTE           N06     Cn3
+        BYTE           N06     Cn3   v084
         BYTE           N06     Gn2
         BYTE   W08
-        BYTE                   Cn3
+        BYTE                   Cn3   v072
         BYTE           N06     Gn2
         BYTE   W08
-        BYTE                   Cn3
+        BYTE                   Cn3   v060
         BYTE           N06     Gn2
         BYTE   W08
-        BYTE           N12     Cn3
+        BYTE           N12     Cn3   v088
         BYTE           N12     Fn2
         BYTE   W24
-        BYTE           N22     Cn3
+        BYTE           N22     Cn3   v072
         BYTE           N22     Fn2
         BYTE   W24
 // 065   ----------------------------------------
-        BYTE           N12     As2
+        BYTE           N12     As2   v096
         BYTE           N12     Fs2
         BYTE   W24
-        BYTE           N06     As2
+        BYTE           N06     As2   v084
         BYTE           N06     Fs2
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v072
         BYTE           N06     Fs2
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v060
         BYTE           N06     Fs2
         BYTE   W08
-        BYTE           N12     As2
+        BYTE           N12     As2   v088
         BYTE           N12     Fs2
         BYTE   W24
-        BYTE           N22     As2
+        BYTE           N22     As2   v072
         BYTE           N22     Fs2
         BYTE   W24
 // 066   ----------------------------------------
-        BYTE           N12     Bn2
-        BYTE           N12     Ds3
+        BYTE           N12     Ds3   v096
+        BYTE           N12     Gs2
         BYTE   W24
-        BYTE           N06
-        BYTE           N06     Bn2
+        BYTE           N06     Ds3   v084
+        BYTE           N06     Gs2
         BYTE   W08
-        BYTE                   Ds3
-        BYTE           N06     Bn2
+        BYTE                   Ds3   v072
+        BYTE           N06     Gs2
         BYTE   W08
-        BYTE                   Ds3
-        BYTE           N06     Bn2
+        BYTE                   Ds3   v060
+        BYTE           N06     Gs2
         BYTE   W08
-        BYTE           N12     Ds3
-        BYTE           N12     Bn2
+        BYTE           N12     Ds3   v088
+        BYTE           N12     As2
         BYTE   W24
-        BYTE           N22     Ds3
-        BYTE           N22     Bn2
+        BYTE           N22     Ds3   v072
+        BYTE           N18     As2
         BYTE   W24
 // 067   ----------------------------------------
-        BYTE           N12     Fn3
+        BYTE           N12     Fn3   v096
         BYTE           N12     Cn3
         BYTE   W24
-        BYTE           N06     Fn3
+        BYTE           N06     Fn3   v084
         BYTE           N06     Cn3
         BYTE   W08
-        BYTE                   Fn3
+        BYTE                   Fn3   v072
         BYTE           N06     Cn3
         BYTE   W08
-        BYTE                   Fn3
+        BYTE                   Fn3   v060
         BYTE           N06     Cn3
         BYTE   W08
-        BYTE           N12     Fn3
+        BYTE           N12     Fn3   v088
         BYTE           N12     Cn3
         BYTE   W24
-        BYTE           N18     Fn3
+        BYTE           N18     Fn3   v072
         BYTE           N18     Cn3
         BYTE   W24
 // 068   ----------------------------------------
-        BYTE           N12     As2
+        BYTE           N12     As2   v096
         BYTE           N12     Fs2
         BYTE   W24
-        BYTE           N06     As2
+        BYTE           N06     As2   v084
         BYTE           N06     Fs2
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v072
         BYTE           N06     Fs2
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v060
         BYTE           N06     Fs2
         BYTE   W08
-        BYTE           N12     An2
+        BYTE           N12     An2   v088
         BYTE           N12     Fn2
         BYTE   W24
-        BYTE           N18     An2
+        BYTE           N18     An2   v072
         BYTE           N18     Fn2
         BYTE   W24
 // 069   ----------------------------------------
-        BYTE           N24     Fn1
+        BYTE           N24     Fn1   v096
         BYTE   W24
         BYTE           N06     Fn4
         BYTE   W08
@@ -1637,125 +1854,125 @@ WhatLiesAtTheEnd_2_34:
         BYTE           N12     As1
         BYTE           N12     Fs1
         BYTE   W24
-        BYTE           N06     Fs2
+        BYTE           N06     Fs2   v084
         BYTE           N06     As1
         BYTE           N06     Fs1
         BYTE   W08
-        BYTE                   Fs2
+        BYTE                   Fs2   v072
         BYTE           N06     As1
         BYTE           N06     Fs1
         BYTE   W08
-        BYTE                   Fs2
+        BYTE                   Fs2   v060
         BYTE           N06     As1
         BYTE           N06     Fs1
         BYTE   W08
-        BYTE           N12     Fs2
+        BYTE           N12     Fs2   v088
         BYTE           N12     Fs1
         BYTE           N12     Cs2
         BYTE   W24
-        BYTE           N18     Fs2
+        BYTE           N18     Fs2   v072
         BYTE           N18     Cs2
         BYTE           N18     Fs1
         BYTE   W24
 // 072   ----------------------------------------
 WhatLiesAtTheEnd_2_72:
-        BYTE           N12     Gs2   v080
+        BYTE           N12     Gs2   v096
         BYTE           N12     Cn2
         BYTE           N12     Gs1
         BYTE   W24
-        BYTE           N06     Gs2
+        BYTE           N06     Gs2   v084
         BYTE           N06     Cn2
         BYTE           N06     Gs1
         BYTE   W08
-        BYTE                   Gs2
+        BYTE                   Gs2   v072
         BYTE           N06     Cn2
         BYTE           N06     Gs1
         BYTE   W08
-        BYTE                   Gs2
+        BYTE                   Gs2   v060
         BYTE           N06     Cn2
         BYTE           N06     Gs1
         BYTE   W08
-        BYTE           N12     Gs2
+        BYTE           N12     Gs2   v088
         BYTE           N12     Gs1
         BYTE           N12     Ds2
         BYTE   W24
-        BYTE           N18     Gs2
+        BYTE           N18     Gs2   v072
         BYTE           N18     Ds2
         BYTE           N18     Gs1
         BYTE   W24
         BYTE   PEND
 // 073   ----------------------------------------
-        BYTE           N12     As2
+        BYTE           N12     As2   v096
         BYTE           N12     Fn2
         BYTE           N12     As1
         BYTE   W24
-        BYTE           N06     As2
+        BYTE           N06     As2   v084
         BYTE           N06     Fn2
         BYTE           N06     As1
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v072
         BYTE           N06     Fn2
         BYTE           N06     As1
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v060
         BYTE           N06     Fn2
         BYTE           N06     As1
         BYTE   W08
-        BYTE           N12     As2
+        BYTE           N12     As2   v088
         BYTE           N12     Fn2
         BYTE           N12     As1
         BYTE   W24
-        BYTE           N18     As2
+        BYTE           N18     As2   v072
         BYTE           N18     Fn2
         BYTE           N18     As1
         BYTE   W24
 // 074   ----------------------------------------
-        BYTE           N12     As2
+        BYTE           N12     As2   v096
         BYTE           N12     Ds2
         BYTE           N12     As1
         BYTE   W24
-        BYTE           N06     As2
+        BYTE           N06     As2   v084
         BYTE           N06     Ds2
         BYTE           N06     As1
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v072
         BYTE           N06     Ds2
         BYTE           N06     As1
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v060
         BYTE           N06     Ds2
         BYTE           N06     As1
         BYTE   W08
-        BYTE           N12
+        BYTE           N12     As1   v088
         BYTE           N12     Cs2
         BYTE           N12     As2
         BYTE   W24
-        BYTE           N18
+        BYTE           N18     As2   v072
         BYTE           N18     Cs2
         BYTE           N18     As1
         BYTE   W24
 // 075   ----------------------------------------
-        BYTE           N12
+        BYTE           N12     As1   v096
         BYTE           N12     Fs1
         BYTE           N12     Fs2
         BYTE   W24
-        BYTE           N06
+        BYTE           N06     Fs2   v084
         BYTE           N06     As1
         BYTE           N06     Fs1
         BYTE   W08
-        BYTE                   Fs2
+        BYTE                   Fs2   v072
         BYTE           N06     As1
         BYTE           N06     Fs1
         BYTE   W08
-        BYTE                   Fs2
+        BYTE                   Fs2   v060
         BYTE           N06     As1
         BYTE           N06     Fs1
         BYTE   W08
-        BYTE           N12     Fs2
+        BYTE           N12     Fs2   v088
         BYTE           N12     Fs1
         BYTE           N12     Cs2
         BYTE   W24
-        BYTE           N18     Fs2
+        BYTE           N18     Fs2   v072
         BYTE           N18     Cs2
         BYTE           N18     Fs1
         BYTE   W24
@@ -1763,100 +1980,108 @@ WhatLiesAtTheEnd_2_72:
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_2_72
 // 077   ----------------------------------------
-        BYTE           N12     Fn2   v080
+        BYTE           N12     Fn2   v096
         BYTE           N12     Cn2
         BYTE           N12     Fn1
         BYTE   W24
-        BYTE           N06     Fn2
+        BYTE           N06     Fn2   v084
         BYTE           N06     Cn2
         BYTE           N06     Fn1
         BYTE   W08
-        BYTE                   Fn2
+        BYTE                   Fn2   v072
         BYTE           N06     Cn2
         BYTE           N06     Fn1
         BYTE   W08
-        BYTE                   Fn2
+        BYTE                   Fn2   v060
         BYTE           N06     Cn2
         BYTE           N06     Fn1
         BYTE   W08
-        BYTE           N12     Fn2
+        BYTE           N12     Fn2   v088
         BYTE           N12     Cs2
         BYTE           N12     Fn1
         BYTE   W24
-        BYTE           N18     Fn2
+        BYTE           N18     Fn2   v072
         BYTE           N18     Cn2
         BYTE           N18     Fn1
         BYTE   W24
 // 078   ----------------------------------------
-        BYTE           N12     As2
+        BYTE           N12     As2   v096
         BYTE           N12     Fn2
         BYTE           N12     As1
         BYTE   W24
-        BYTE           N18     Ds2
+        BYTE           N18     Ds2   v080
         BYTE           N18     As1
         BYTE           N18     As2
         BYTE   W24
-        BYTE           N36
+        BYTE           N36     As2   v088
         BYTE           N36     As1
         BYTE           N36     Cs2
         BYTE   W24
-        BYTE           N24     As4
+        BYTE           N24     As4   v064
         BYTE   W24
 // 079   ----------------------------------------
-WhatLiesAtTheEnd_2_79:
-        BYTE           N48     Fn5   v080
+        BYTE           N48     Fn5   v072
         BYTE   W48
         BYTE           N16
         BYTE   W16
-        BYTE                   Ds5
+        BYTE                   Ds5   v064
         BYTE   W16
-        BYTE                   Cs5
+        BYTE                   Cs5   v056
         BYTE   W16
-        BYTE   PEND
 // 080   ----------------------------------------
-WhatLiesAtTheEnd_2_80:
-        BYTE           N24     Cn5   v080
+        BYTE           N24     Cn5   v072
         BYTE   W24
-        BYTE                   Cs5
+        BYTE                   Cs5   v064
         BYTE   W24
-        BYTE                   Ds5
+        BYTE                   Ds5   v072
         BYTE   W24
-        BYTE                   Gs5
+        BYTE                   Gs5   v064
         BYTE   W24
-        BYTE   PEND
 // 081   ----------------------------------------
-        BYTE           N48     Ds5
+        BYTE           N48     Ds5   v072
         BYTE   W48
         BYTE           N16     Fn5
         BYTE   W16
-        BYTE                   Ds5
+        BYTE                   Ds5   v064
         BYTE   W16
-        BYTE                   Cs5
+        BYTE                   Cs5   v056
         BYTE   W16
 // 082   ----------------------------------------
-        BYTE           N48     Cn5
+        BYTE           N48     Cn5   v072
         BYTE   W48
         BYTE           N24     Cs5
         BYTE   W24
-        BYTE                   As4
+        BYTE                   As4   v064
         BYTE   W24
 // 083   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_79
+        BYTE           N48     Fn5   v076
+        BYTE   W48
+        BYTE           N16     Fn5   v080
+        BYTE   W16
+        BYTE                   Ds5   v076
+        BYTE   W16
+        BYTE                   Cs5   v072
+        BYTE   W16
 // 084   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_80
+        BYTE           N24     Cn5   v080
+        BYTE   W24
+        BYTE                   Cs5   v076
+        BYTE   W24
+        BYTE                   Ds5   v080
+        BYTE   W24
+        BYTE                   Gs5   v076
+        BYTE   W24
 // 085   ----------------------------------------
         BYTE           N16     As5   v080
         BYTE   W16
         BYTE           N08     Cn6
         BYTE   W08
-        BYTE           N48     Gs5
+        BYTE           N48     Gs5   v088
         BYTE   W48
-        BYTE           N24     Fn5
+        BYTE           N24     Fn5   v092
         BYTE   W24
 // 086   ----------------------------------------
-        BYTE           N48     As5
+        BYTE           N48     As5   v096
         BYTE   W96
 // 087   ----------------------------------------
         BYTE   W96
@@ -1871,29 +2096,37 @@ WhatLiesAtTheEnd_2_80:
 // 092   ----------------------------------------
         BYTE   W96
 // 093   ----------------------------------------
-        BYTE           N06     Cn5
+        BYTE           N06     Cn5   v072
         BYTE   W08
-        BYTE                   Gs4
+        BYTE                   Gs4   v069
         BYTE   W08
-        BYTE                   Fn4
+        BYTE                   Fn4   v066
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v060
         BYTE   W08
-        BYTE                   Gs4
+        BYTE                   Gs4   v063
+        BYTE           N06     Cn4   v080
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v060
+        BYTE           N06     Gs3   v080
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn4   v072
+        BYTE           N06     Fn3   v080
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds4   v069
+        BYTE           N06     Cs3   v080
         BYTE   W08
-        BYTE                   Gs4
+        BYTE                   Gs4   v066
+        BYTE           N06     Gs2   v080
         BYTE   W08
-        BYTE                   Cn5
+        BYTE                   Cn5   v060
+        BYTE           N06     Fn2   v080
         BYTE   W08
-        BYTE                   Ds5
+        BYTE                   Ds5   v066
+        BYTE           N06     Cs2   v080
         BYTE   W08
-        BYTE                   Gs5
+        BYTE                   Gs5   v072
+        BYTE           N06     Gs1   v080
         BYTE   W08
 // 094   ----------------------------------------
         BYTE   GoTo
@@ -1906,9 +2139,9 @@ WhatLiesAtTheEnd_3:
         BYTE   KEYSH   WhatLiesAtTheEnd_key+0
 // 000   ----------------------------------------
 WhatLiesAtTheEnd_3_LOOP:
-        BYTE           VOICE   86
-        BYTE           PAN     c_v-26
-        BYTE           VOL     60
+        BYTE           VOICE   101
+        BYTE           PAN     c_v+9
+        BYTE           VOL     58
         BYTE   W96
 // 001   ----------------------------------------
         BYTE   W96
@@ -1918,42 +2151,42 @@ WhatLiesAtTheEnd_3_LOOP:
         BYTE   W96
 // 004   ----------------------------------------
 WhatLiesAtTheEnd_3_4:
-        BYTE           N48     Cn4   v080
+        BYTE           N48     Cn3   v096
         BYTE   W48
-        BYTE           N06     Fn3
+        BYTE           N06     Fn2
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs2
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn3
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds3
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn3
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs2
         BYTE   W08
         BYTE   PEND
 // 005   ----------------------------------------
 WhatLiesAtTheEnd_3_5:
-        BYTE           N24     Cs4   v080
+        BYTE           N24     Cs3   v096
         BYTE   W24
-        BYTE           N06     Fn3
+        BYTE           N06     Fn2
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs2
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs3
         BYTE   W08
-        BYTE           N24     Cn4
+        BYTE           N24     Cn3
         BYTE   W24
-        BYTE           N06     Fn3
+        BYTE           N06     Fn2
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs2
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn3
         BYTE   W08
         BYTE   PEND
 // 006   ----------------------------------------
-        BYTE           TIE     As3
+        BYTE           TIE     As2
         BYTE   W96
 // 007   ----------------------------------------
         BYTE   W84
@@ -1966,7 +2199,7 @@ WhatLiesAtTheEnd_3_5:
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_3_5
 // 010   ----------------------------------------
-        BYTE           TIE     As3   v080
+        BYTE           TIE     As2   v096
         BYTE   W96
 // 011   ----------------------------------------
         BYTE   W84
@@ -1976,80 +2209,68 @@ WhatLiesAtTheEnd_3_5:
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_3_4
 // 013   ----------------------------------------
-WhatLiesAtTheEnd_3_13:
-        BYTE           N24     Cs4   v080
+        BYTE           N24     Cs3   v096
         BYTE   W24
-        BYTE           N06     Fn3
+        BYTE           N06     Fn2
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs2
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs3
         BYTE   W08
-        BYTE           N24     Ds4
+        BYTE           N24     Ds3
         BYTE   W24
-        BYTE           N06     Fn3
+        BYTE           N06     Fn2
         BYTE   W08
-        BYTE                   Gs3
+        BYTE                   Gs2
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds3
         BYTE   W08
-        BYTE   PEND
 // 014   ----------------------------------------
-WhatLiesAtTheEnd_3_14:
-        BYTE           N78     Fn4   v080
+        BYTE           N78     Fn3
         BYTE   W80
-        BYTE           N06     Fs4
+        BYTE           N06     Fs3
         BYTE   W08
-        BYTE                   Fn4
+        BYTE                   Fn3
         BYTE   W08
-        BYTE   PEND
 // 015   ----------------------------------------
-        BYTE           N96     Ds4
+        BYTE           N96     Ds3
         BYTE   W96
 // 016   ----------------------------------------
-WhatLiesAtTheEnd_3_16:
-        BYTE           N30     Ds4   v080
+        BYTE           N30
         BYTE   W32
-        BYTE           N06     Fn4
+        BYTE           N06     Fn3
         BYTE   W08
-        BYTE                   Ds4
+        BYTE                   Ds3
         BYTE   W08
-        BYTE           N48     Cs4
+        BYTE           N48     Cs3
         BYTE   W48
-        BYTE   PEND
 // 017   ----------------------------------------
-WhatLiesAtTheEnd_3_17:
-        BYTE           N30     Cn4   v080
+        BYTE           N30     Cn3
         BYTE   W32
-        BYTE           N06     Cs4
+        BYTE           N06     Cs3
         BYTE   W08
-        BYTE                   Cn4
+        BYTE                   Cn3
         BYTE   W08
-        BYTE           N48     As3
+        BYTE           N48     As2
         BYTE   W48
-        BYTE   PEND
 // 018   ----------------------------------------
-WhatLiesAtTheEnd_3_18:
-        BYTE           N30     Fn4   v080
+        BYTE           N30     Fn3
         BYTE   W32
-        BYTE           N06     Fs4
+        BYTE           N06     Fs3
         BYTE   W08
-        BYTE                   Fn4
+        BYTE                   Fn3
         BYTE   W08
-        BYTE           N44     Ds4   v080   gtp2
+        BYTE           N44     Ds3   v096   gtp2
         BYTE   W48
-        BYTE   PEND
 // 019   ----------------------------------------
-WhatLiesAtTheEnd_3_19:
-        BYTE           N30     Cs4   v080
+        BYTE           N30     Cs3
         BYTE   W32
-        BYTE           N06     Ds4
+        BYTE           N06     Ds3
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs3
         BYTE   W08
-        BYTE           N48     Cn4
+        BYTE           N48     Cn3
         BYTE   W48
-        BYTE   PEND
 // 020   ----------------------------------------
         BYTE   W96
 // 021   ----------------------------------------
@@ -2057,9 +2278,12 @@ WhatLiesAtTheEnd_3_19:
 // 022   ----------------------------------------
         BYTE   W96
 // 023   ----------------------------------------
-        BYTE   W96
+        BYTE   W92
+        BYTE   W03
+        BYTE           VOICE   86
+        BYTE   W01
 // 024   ----------------------------------------
-        BYTE                   Fn3   v064
+        BYTE           N48     Fn3   v064
         BYTE           N48     As3
         BYTE   W48
         BYTE           N12     Fs3
@@ -2098,38 +2322,47 @@ WhatLiesAtTheEnd_3_19:
 // 030   ----------------------------------------
         BYTE   W96
 // 031   ----------------------------------------
-        BYTE   W72
-        BYTE           N24     Dn3   v080
+        BYTE   W68
+        BYTE   W03
+        BYTE           VOICE   106
+        BYTE   W01
+        BYTE           N24     Dn4   v080
         BYTE   W24
 // 032   ----------------------------------------
-        BYTE           N48     An3
+WhatLiesAtTheEnd_3_32:
+        BYTE           N48     An4   v080
         BYTE   W48
         BYTE           N16
         BYTE   W16
-        BYTE                   Gn3
+        BYTE                   Gn4
         BYTE   W16
-        BYTE                   Fn3
+        BYTE                   Fn4
         BYTE   W16
+        BYTE   PEND
 // 033   ----------------------------------------
-        BYTE           N24     En3
+WhatLiesAtTheEnd_3_33:
+        BYTE           N24     En4   v080
         BYTE   W24
-        BYTE                   Fn3
+        BYTE                   Fn4
         BYTE   W24
-        BYTE                   Gn3
+        BYTE                   Gn4
         BYTE   W24
-        BYTE                   Cn4
+        BYTE                   Cn5
         BYTE   W24
+        BYTE   PEND
 // 034   ----------------------------------------
-        BYTE           N12     Dn4
+WhatLiesAtTheEnd_3_34:
+        BYTE           N12     Dn5   v080
         BYTE   W18
-        BYTE           N06     En4
+        BYTE           N06     En5
         BYTE   W06
-        BYTE           N48     Cn4
+        BYTE           N48     Cn5
         BYTE   W48
-        BYTE           N24     An3
+        BYTE           N24     An4
         BYTE   W24
+        BYTE   PEND
 // 035   ----------------------------------------
-        BYTE           N72     Dn4
+        BYTE           N72     Dn5
         BYTE   W96
 // 036   ----------------------------------------
         BYTE   W96
@@ -2139,39 +2372,42 @@ WhatLiesAtTheEnd_3_19:
         BYTE   W96
 // 039   ----------------------------------------
         BYTE   W72
-        BYTE           N24     Dn3   v048
-        BYTE   W24
+        BYTE           VOICE   101
+        BYTE           N24     Dn2   v064
+        BYTE   W23
+        BYTE           VOICE   86
+        BYTE   W01
 // 040   ----------------------------------------
-        BYTE           N48     An3   v064
+        BYTE           N48     An2   v080
         BYTE   W48
         BYTE           N18
         BYTE   W16
-        BYTE                   Gn3
+        BYTE                   Gn2
         BYTE   W16
-        BYTE                   Fn3
+        BYTE                   Fn2
         BYTE   W16
 // 041   ----------------------------------------
-        BYTE           N24     En3
+        BYTE           N24     En2
         BYTE   W24
-        BYTE                   Fn3
+        BYTE                   Fn2
         BYTE   W24
-        BYTE                   Gn3
+        BYTE                   Gn2
         BYTE   W24
-        BYTE                   Cn4
+        BYTE                   Cn3
         BYTE   W24
 // 042   ----------------------------------------
-        BYTE           N20     Dn4
+        BYTE           N20     Dn3
         BYTE   W18
-        BYTE           N06     En4
+        BYTE           N06     En3
         BYTE   W06
-        BYTE           N48     Cn4
+        BYTE           N48     Cn3
         BYTE   W48
-        BYTE           N24     An3
+        BYTE           N24     An2
         BYTE   W24
 // 043   ----------------------------------------
-        BYTE           N48     Gn3   v048
-        BYTE           N90     Dn4   v064
-        BYTE           N90     An3
+        BYTE           N48     Gn2   v060
+        BYTE           N90     Dn3   v080
+        BYTE           N90     An2
         BYTE   W96
 // 044   ----------------------------------------
         BYTE   W96
@@ -2208,7 +2444,7 @@ WhatLiesAtTheEnd_3_19:
 // 060   ----------------------------------------
         BYTE   W96
 // 061   ----------------------------------------
-        BYTE           N48     As3   v080
+        BYTE           N48     As3
         BYTE           N48     As2
         BYTE   W48
         BYTE                   Fn3
@@ -2265,7 +2501,8 @@ WhatLiesAtTheEnd_3_19:
         BYTE           N06     Fn4
         BYTE   W08
 // 066   ----------------------------------------
-        BYTE           N48     Gs4
+WhatLiesAtTheEnd_3_66:
+        BYTE           N48     Gs4   v080
         BYTE           N48     Gs3
         BYTE   W48
         BYTE           N24     Fs4
@@ -2274,6 +2511,7 @@ WhatLiesAtTheEnd_3_19:
         BYTE                   Fn4
         BYTE           N24     Fn3
         BYTE   W24
+        BYTE   PEND
 // 067   ----------------------------------------
         BYTE           N84     Fn4
         BYTE           N84     Fn3
@@ -2377,7 +2615,8 @@ WhatLiesAtTheEnd_3_72:
         BYTE   W96
 // 090   ----------------------------------------
         BYTE   W48
-        BYTE           N48     Cn3
+        BYTE           VOICE   101
+        BYTE           N48     Cn3   v064
         BYTE   W48
 // 091   ----------------------------------------
         BYTE                   Cs3
@@ -2405,8 +2644,8 @@ WhatLiesAtTheEnd_4:
         BYTE   KEYSH   WhatLiesAtTheEnd_key+0
 // 000   ----------------------------------------
 WhatLiesAtTheEnd_4_LOOP:
-        BYTE           VOICE   79
-        BYTE           PAN     c_v+23
+        BYTE           VOICE   77
+        BYTE           PAN     c_v+40
         BYTE           VOL     46
         BYTE   W96
 // 001   ----------------------------------------
@@ -2422,8 +2661,14 @@ WhatLiesAtTheEnd_4_LOOP:
 // 006   ----------------------------------------
         BYTE   W96
 // 007   ----------------------------------------
-        BYTE   W96
+        BYTE           N54     Gs3   v080
+        BYTE   W48
+        BYTE           N30     Ds3   v072
+        BYTE   W24
+        BYTE           N18     Cs3   v064
+        BYTE   W24
 // 008   ----------------------------------------
+        BYTE           N48     Cn3   v048
         BYTE   W96
 // 009   ----------------------------------------
         BYTE   W96
@@ -2432,24 +2677,89 @@ WhatLiesAtTheEnd_4_LOOP:
 // 011   ----------------------------------------
         BYTE   W96
 // 012   ----------------------------------------
-        BYTE   W96
+        BYTE                   Cn3   v080
+        BYTE   W48
+        BYTE           N06     Fn2
+        BYTE   W08
+        BYTE                   Gs2
+        BYTE   W08
+        BYTE                   Cn3
+        BYTE   W08
+        BYTE                   Ds3
+        BYTE   W08
+        BYTE                   Cn3
+        BYTE   W08
+        BYTE                   Gs2
+        BYTE   W08
 // 013   ----------------------------------------
-        BYTE   W96
+        BYTE           N24     Cs3
+        BYTE   W24
+        BYTE           N06     Fn2
+        BYTE   W08
+        BYTE                   Gs2
+        BYTE   W08
+        BYTE                   Cs3
+        BYTE   W08
+        BYTE           N24     Ds3
+        BYTE   W24
+        BYTE           N06     Fn2
+        BYTE   W08
+        BYTE                   Gs2
+        BYTE   W08
+        BYTE                   Ds3
+        BYTE   W08
 // 014   ----------------------------------------
-        BYTE   W96
+        BYTE           N78     Fn3
+        BYTE   W80
+        BYTE           N06     Fs3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
 // 015   ----------------------------------------
+        BYTE           N96     Ds3
         BYTE   W96
 // 016   ----------------------------------------
-        BYTE   W96
+        BYTE           N30
+        BYTE   W32
+        BYTE           N06     Fn3
+        BYTE   W08
+        BYTE                   Ds3
+        BYTE   W08
+        BYTE           N48     Cs3
+        BYTE   W48
 // 017   ----------------------------------------
-        BYTE   W96
+        BYTE           N30     Cn3
+        BYTE   W32
+        BYTE           N06     Cs3
+        BYTE   W08
+        BYTE                   Cn3
+        BYTE   W08
+        BYTE           N48     As2
+        BYTE   W48
 // 018   ----------------------------------------
-        BYTE   W96
+        BYTE           N30     Fn3
+        BYTE   W32
+        BYTE           N06     Fs3
+        BYTE   W08
+        BYTE                   Fn3
+        BYTE   W08
+        BYTE           N44     Ds3   v080   gtp2
+        BYTE   W48
 // 019   ----------------------------------------
-        BYTE   W96
+        BYTE           N30     Cs3
+        BYTE   W32
+        BYTE           N06     Ds3
+        BYTE   W08
+        BYTE                   Cs3
+        BYTE   W08
+        BYTE           N48     Cn3
+        BYTE   W44
+        BYTE   W03
+        BYTE           VOICE   79
+        BYTE   W01
 // 020   ----------------------------------------
-        BYTE           N48     As3   v080
-        BYTE           N48     Fn3
+        BYTE           N48     Ds3
+        BYTE           N48     As3
         BYTE   W48
         BYTE           N12     Fs3
         BYTE   W16
@@ -2521,23 +2831,54 @@ WhatLiesAtTheEnd_4_LOOP:
 // 034   ----------------------------------------
         BYTE   W96
 // 035   ----------------------------------------
-        BYTE   W96
+        BYTE   W68
+        BYTE   W03
+        BYTE           VOICE   20
+        BYTE   W01
+        BYTE           N24     An3
+        BYTE           N24     Dn4
+        BYTE   W24
 // 036   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_3_32
 // 037   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_3_33
 // 038   ----------------------------------------
-        BYTE   W96
+WhatLiesAtTheEnd_4_38:
+        BYTE           N48     Gn4   v080
+        BYTE   W48
+        BYTE           N16     An4
+        BYTE   W16
+        BYTE                   Gn4
+        BYTE   W16
+        BYTE                   Fn4
+        BYTE   W16
+        BYTE   PEND
 // 039   ----------------------------------------
-        BYTE   W96
+WhatLiesAtTheEnd_4_39:
+        BYTE           N48     En4   v080
+        BYTE   W48
+        BYTE           N24     Fn4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE   W24
+        BYTE   PEND
 // 040   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_3_32
 // 041   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_3_33
 // 042   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_3_34
 // 043   ----------------------------------------
-        BYTE   W96
+        BYTE           N72     Dn5   v080
+        BYTE   W92
+        BYTE   W03
+        BYTE           VOICE   79
+        BYTE   W01
 // 044   ----------------------------------------
         BYTE   W96
 // 045   ----------------------------------------
@@ -2558,63 +2899,82 @@ WhatLiesAtTheEnd_4_LOOP:
         BYTE   W96
 // 053   ----------------------------------------
         BYTE           N48     As3
+        BYTE           N48     As2
         BYTE   W48
         BYTE                   Fn4
+        BYTE           N48     Fn3
         BYTE   W48
 // 054   ----------------------------------------
         BYTE                   Fn4
+        BYTE           N48     Fn3
         BYTE   W48
         BYTE           N24     Ds4
+        BYTE           N24     Ds3
         BYTE   W24
         BYTE                   Cs4
+        BYTE           N24     Cs3
         BYTE   W24
 // 055   ----------------------------------------
-        BYTE           N36
+        BYTE           N36     Cs4
+        BYTE           N36     Cs3
         BYTE   W36
         BYTE           N08     Bn3
+        BYTE           N08     Bn2
         BYTE   W12
-        BYTE           N36
+        BYTE           N36     Bn3
+        BYTE           N36     Bn2
         BYTE   W36
         BYTE           N08     Fs4
+        BYTE           N08     Fs3
         BYTE   W12
 // 056   ----------------------------------------
-        BYTE           N36
+        BYTE           N36     Fs4
+        BYTE           N36     Fs3
         BYTE   W36
         BYTE           N08     Fn4
+        BYTE           N08     Fn3
         BYTE   W12
-        BYTE           N48
+        BYTE           N48     Fn4
+        BYTE           N48     Fn3
         BYTE   W48
 // 057   ----------------------------------------
         BYTE                   As3
+        BYTE           N48     As2
         BYTE   W60
-        BYTE           N12
+        BYTE           N12     As3
+        BYTE           N12     As2
         BYTE   W12
         BYTE                   Cs4
+        BYTE           N12     Cs3
         BYTE   W12
         BYTE                   Fn4
+        BYTE           N12     Fn3
         BYTE   W12
 // 058   ----------------------------------------
-        BYTE           N48     Gs4
-        BYTE   W48
-        BYTE           N24     Fs4
-        BYTE   W24
-        BYTE                   Fn4
-        BYTE   W24
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_3_66
 // 059   ----------------------------------------
-        BYTE           N36
+        BYTE           N36     Fn4   v080
+        BYTE           N36     Fn3
         BYTE   W36
         BYTE           N08     Ds4
+        BYTE           N08     Ds3
         BYTE   W12
-        BYTE           N36
+        BYTE           N36     Ds4
+        BYTE           N36     Ds3
         BYTE   W36
         BYTE           N08     Cs4
+        BYTE           N08     Cs3
         BYTE   W12
 // 060   ----------------------------------------
-        BYTE           N36
+        BYTE           N36     Cs4
+        BYTE           N36     Cs3
         BYTE   W36
         BYTE           N08     Cn4
+        BYTE           N08     Cn3
         BYTE   W12
-        BYTE           N48
+        BYTE           N48     Cn4
+        BYTE           N48     Cn3
         BYTE   W48
 // 061   ----------------------------------------
         BYTE   W96
@@ -2683,6 +3043,7 @@ WhatLiesAtTheEnd_4_LOOP:
 // 093   ----------------------------------------
         BYTE   W96
 // 094   ----------------------------------------
+        BYTE           VOICE   77
         BYTE   GoTo
          POIN2  WhatLiesAtTheEnd_4_LOOP
         BYTE   FINE
@@ -2693,148 +3054,289 @@ WhatLiesAtTheEnd_5:
         BYTE   KEYSH   WhatLiesAtTheEnd_key+0
 // 000   ----------------------------------------
 WhatLiesAtTheEnd_5_LOOP:
-        BYTE           VOICE   106
-        BYTE           VOL     63
-        BYTE           PAN     c_v-11
-        BYTE           N24     Cn4   v064
-        BYTE           N72     Fn3
+        BYTE           VOICE   109
+        BYTE           PAN     c_v+17
+        BYTE           VOL     45
+        BYTE           N24     Cn4   v080
+        BYTE           N72     Fn3   v072
         BYTE   W24
-        BYTE           N06     Cn4
+        BYTE           N06     Cn4   v070
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v060
         BYTE   W08
-        BYTE           N08     Cn4
+        BYTE           N08     Cn4   v050
         BYTE   W08
-        BYTE           N18     As3
+        BYTE           N18     As3   v080
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     As3   v060
         BYTE           N24     Fn3
         BYTE   W24
 // 001   ----------------------------------------
-        BYTE           N18     Cn4
-        BYTE           N72     Fn3
+        BYTE           N18     Cn4   v080
+        BYTE           N72     Fn3   v070
         BYTE   W24
-        BYTE           N24     Cn4
+        BYTE           N24     Cn4   v060
         BYTE   W24
-        BYTE           N18     As3
+        BYTE           N18     As3   v080
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     As3   v060
         BYTE           N24     Fn3
         BYTE   W24
 // 002   ----------------------------------------
-        BYTE           N18     Cn4
-        BYTE           N72     Fs3
+        BYTE           N18     Cn4   v080
+        BYTE           N72     Fs3   v070
         BYTE   W24
         BYTE           N06     Cn4
         BYTE   W08
-        BYTE                   Cs4
+        BYTE                   Cs4   v060
         BYTE   W08
-        BYTE                   Cn4
+        BYTE           N08     Cn4   v050
         BYTE   W08
-        BYTE           N18     As3
+        BYTE           N18     As3   v080
         BYTE   W24
-        BYTE           N24     Fs3
+        BYTE           N24     Fs3   v060
         BYTE           N24     As3
         BYTE   W24
 // 003   ----------------------------------------
-        BYTE           N72     Gs3
-        BYTE           N18     Cs4
+        BYTE           N72     Gs3   v070
+        BYTE           N18     Cs4   v080
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     Cs4   v060
         BYTE   W24
-        BYTE           N18     Cn4
+        BYTE           N18     Cn4   v080
         BYTE   W24
-        BYTE           N24     Gs3
+        BYTE           N24     Gs3   v060
         BYTE           N24     Cn4
         BYTE   W24
 // 004   ----------------------------------------
-WhatLiesAtTheEnd_5_4:
-        BYTE           N18     Fn3   v064
+        BYTE           N18     Fn3   v080
+        BYTE           N18     Cn4
         BYTE   W24
-        BYTE           N06
+        BYTE           N06     Fn3   v067
+        BYTE           N06     Cn4   v070
         BYTE   W08
-        BYTE                   Fn3
+        BYTE                   Fn3   v060
+        BYTE           N06     Cn4
         BYTE   W08
-        BYTE           N08
+        BYTE           N08     Fn3   v050
+        BYTE           N08     Cn4
         BYTE   W08
-        BYTE           N18
+        BYTE           N18     Fn3   v080
+        BYTE           N18     As3
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     Fn3   v060
+        BYTE           N24     As3
         BYTE   W24
-        BYTE   PEND
 // 005   ----------------------------------------
-WhatLiesAtTheEnd_5_5:
-        BYTE           N18     Fn3   v064
+        BYTE           N18     Fn3   v080
+        BYTE           N18     Cn4
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     Fn3   v060
+        BYTE           N24     Cn4
         BYTE   W24
-        BYTE           N18
+        BYTE           N18     Fn3   v080
+        BYTE           N18     As3
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     Fn3   v060
+        BYTE           N24     As3
         BYTE   W24
-        BYTE   PEND
 // 006   ----------------------------------------
-WhatLiesAtTheEnd_5_6:
-        BYTE           N18     Fs3   v064
+        BYTE           N18     Fs3   v080
+        BYTE           N18     Cn4
         BYTE   W24
-        BYTE           N06
+        BYTE           N06     Fs3   v070
+        BYTE           N06     Cn4
         BYTE   W08
-        BYTE                   Fs3
+        BYTE                   Fs3   v080
+        BYTE           N06     Cn4   v060
         BYTE   W08
-        BYTE                   Fs3
+        BYTE                   Fs3   v050
+        BYTE           N06     Cn4   v060
         BYTE   W08
-        BYTE           N18
+        BYTE           N18     Fs3   v080
+        BYTE           N18     As3
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     Fs3   v060
+        BYTE           N24     As3
         BYTE   W24
-        BYTE   PEND
 // 007   ----------------------------------------
 WhatLiesAtTheEnd_5_7:
-        BYTE           N18     Gs3   v064
+        BYTE           N18     Gs3   v080
+        BYTE           N18     Cs4
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     Gs3   v060
+        BYTE           N24     Cs4
         BYTE   W24
-        BYTE           N18
+        BYTE           N18     Gs3   v080
+        BYTE           N18     Cn4
         BYTE   W24
-        BYTE           N24
+        BYTE           N24     Gs3   v060
+        BYTE           N24     Cn4
         BYTE   W24
         BYTE   PEND
 // 008   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_5_4
+        BYTE           N18     Cn4   v080
+        BYTE           N18     Fn3
+        BYTE   W24
+        BYTE           N06     Cn4   v070
+        BYTE           N06     Fn3
+        BYTE   W08
+        BYTE                   Cn4   v060
+        BYTE           N06     Fn3
+        BYTE   W08
+        BYTE           N08     Cn4   v050
+        BYTE           N08     Fn3
+        BYTE   W08
+        BYTE           N18     Fn3   v080
+        BYTE           N18     As3
+        BYTE   W24
+        BYTE           N24     Fn3   v060
+        BYTE           N24     As3
+        BYTE   W24
 // 009   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_5_5
+        BYTE           N18     Cn4   v080
+        BYTE           N18     Fn3
+        BYTE   W24
+        BYTE           N24     Cn4   v060
+        BYTE           N24     Fn3
+        BYTE   W24
+        BYTE           N18     Fn3   v080
+        BYTE           N18     As3
+        BYTE   W24
+        BYTE           N24     Fn3   v060
+        BYTE           N24     As3
+        BYTE   W24
 // 010   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_5_6
+        BYTE           N18     Fs3   v080
+        BYTE           N18     Cn4
+        BYTE   W24
+        BYTE           N06     Fs3   v070
+        BYTE           N06     Cn4
+        BYTE   W08
+        BYTE                   Fs3   v060
+        BYTE           N06     Cn4
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE           N06     Cn4
+        BYTE   W08
+        BYTE           N18     Fs3   v080
+        BYTE           N18     As3
+        BYTE   W24
+        BYTE           N24     Fs3   v060
+        BYTE           N24     As3
+        BYTE   W24
 // 011   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_5_7
 // 012   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_3_4
+        BYTE           N48     Cn4   v064
+        BYTE   W48
+        BYTE           N06     As3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Fn4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE           N06     Gs4
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE           N06     Fn4
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE           N06     Cs4
+        BYTE   W08
 // 013   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_3_13
+        BYTE           N24
+        BYTE           N24     Fs4
+        BYTE   W24
+        BYTE           N06     Fn3
+        BYTE           N06     As3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE           N06     Cs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE           N06     Fs4
+        BYTE   W08
+        BYTE           N24     Ds4
+        BYTE           N24     Gs4
+        BYTE   W24
+        BYTE           N06     Fn3
+        BYTE           N06     As3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE           N06     Cs4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE           N06     Gs4
+        BYTE   W08
 // 014   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_3_14
+        BYTE           N78     Fn4
+        BYTE           N78     As4
+        BYTE   W80
+        BYTE           N06     Fs4
+        BYTE           N06     Bn4
+        BYTE   W08
+        BYTE                   Fn4
+        BYTE           N06     As4
+        BYTE   W08
 // 015   ----------------------------------------
-        BYTE           N96     Ds4   v080
+        BYTE           N96     Ds4
+        BYTE           N96     Gs4
         BYTE   W96
 // 016   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_3_16
+        BYTE           N30
+        BYTE           N30     Ds4
+        BYTE   W32
+        BYTE           N06     As4
+        BYTE           N06     Cs4
+        BYTE   W08
+        BYTE                   Gs4
+        BYTE           N06     Cn4
+        BYTE   W08
+        BYTE           N48     Fs4
+        BYTE           N48     As3
+        BYTE   W48
 // 017   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_3_17
+        BYTE           N30     Fn4
+        BYTE           N30     As3
+        BYTE   W32
+        BYTE           N06     Fs4
+        BYTE           N06     Cn4
+        BYTE   W08
+        BYTE                   Fn4
+        BYTE           N06     As3
+        BYTE   W08
+        BYTE           N48     Ds4
+        BYTE           N48     Gs3
+        BYTE   W48
 // 018   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_3_18
+        BYTE           N30     Fn4
+        BYTE           N30     As4
+        BYTE   W32
+        BYTE           N06     Fs4
+        BYTE           N06     Bn4
+        BYTE   W08
+        BYTE                   Fn4
+        BYTE           N06     As4
+        BYTE   W08
+        BYTE           N44     Ds4   v064   gtp2
+        BYTE                   Gs4
+        BYTE   W48
 // 019   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_3_19
+        BYTE           N30     Cs4
+        BYTE           N30     Fs4
+        BYTE   W32
+        BYTE           N06     Ds4
+        BYTE           N06     Gs4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE           N06     Fs4
+        BYTE   W08
+        BYTE           N48     Cn4
+        BYTE           N44     Fn4   v064   gtp2
+        BYTE   W48
 // 020   ----------------------------------------
         BYTE   W96
 // 021   ----------------------------------------
@@ -2851,183 +3353,156 @@ WhatLiesAtTheEnd_5_7:
         BYTE   W96
 // 027   ----------------------------------------
         BYTE   W72
+        BYTE           VOICE   20
         BYTE           N24     An3   v080
         BYTE           N24     Dn4
         BYTE   W24
 // 028   ----------------------------------------
-WhatLiesAtTheEnd_5_28:
-        BYTE           N48     An4   v080
-        BYTE   W48
-        BYTE           N16
-        BYTE   W16
-        BYTE                   Gn4
-        BYTE   W16
-        BYTE                   Fn4
-        BYTE   W16
-        BYTE   PEND
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_3_32
 // 029   ----------------------------------------
-WhatLiesAtTheEnd_5_29:
-        BYTE           N24     En4   v080
-        BYTE   W24
-        BYTE                   Fn4
-        BYTE   W24
-        BYTE                   Gn4
-        BYTE   W24
-        BYTE                   Cn5
-        BYTE   W24
-        BYTE   PEND
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_3_33
 // 030   ----------------------------------------
-        BYTE           N48     Gn4
-        BYTE   W48
-        BYTE           N16     An4
-        BYTE   W16
-        BYTE                   Gn4
-        BYTE   W16
-        BYTE                   Fn4
-        BYTE   W16
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_4_38
 // 031   ----------------------------------------
-        BYTE           N48     En4
-        BYTE   W48
-        BYTE           N24     Fn4
-        BYTE   W24
-        BYTE                   Dn4
-        BYTE   W24
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_4_39
 // 032   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_5_28
+         POIN2  WhatLiesAtTheEnd_3_32
 // 033   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_5_29
+         POIN2  WhatLiesAtTheEnd_3_33
 // 034   ----------------------------------------
-        BYTE           N12     Dn5   v080
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_3_34
+// 035   ----------------------------------------
+        BYTE           N72     Dn5   v080
+        BYTE   W68
+        BYTE   W03
+        BYTE           VOICE   109
+        BYTE   W01
+        BYTE           N24     Dn4   v064
+        BYTE           N24     An3   v080
+        BYTE   W24
+// 036   ----------------------------------------
+        BYTE           N48     An4
+        BYTE           N48     Dn4
+        BYTE           N48     Fn4
+        BYTE   W48
+        BYTE           N16     An4
+        BYTE           N16     Dn4
+        BYTE   W16
+        BYTE                   Gn4
+        BYTE           N16     Dn4
+        BYTE   W16
+        BYTE                   Fn4
+        BYTE           N16     Dn4
+        BYTE   W16
+// 037   ----------------------------------------
+WhatLiesAtTheEnd_5_37:
+        BYTE           N24     En4   v080
+        BYTE           N24     Gn3
+        BYTE   W02
+        BYTE           N22     Cn4
+        BYTE   W22
+        BYTE           N24     Fn4
+        BYTE           N24     Dn4
+        BYTE   W24
+        BYTE                   Gn4
+        BYTE           N24     En4
+        BYTE   W24
+        BYTE                   Cn5
+        BYTE           N24     En4
+        BYTE   W24
+        BYTE   PEND
+// 038   ----------------------------------------
+        BYTE           N48     Gn4
+        BYTE           N48     Cn4
+        BYTE   W02
+        BYTE           N44     En4   v080   gtp2
+        BYTE   W44
+        BYTE   W02
+        BYTE           N16     An4
+        BYTE           N16     Cn4
+        BYTE   W16
+        BYTE                   Gn4
+        BYTE           N16     Cn4
+        BYTE   W16
+        BYTE                   Fn4
+        BYTE           N16     Cn4
+        BYTE   W16
+// 039   ----------------------------------------
+        BYTE           N48     En4
+        BYTE           N48     Gn3
+        BYTE   W02
+        BYTE           N44     Cn4   v080   gtp2
+        BYTE   W44
+        BYTE   W02
+        BYTE           N24     Fn4
+        BYTE           N24     Dn4
+        BYTE   W24
+        BYTE                   Dn4   v064
+        BYTE   W24
+// 040   ----------------------------------------
+        BYTE           N48     An4   v080
+        BYTE           N48     Dn4
+        BYTE   W02
+        BYTE           N44     Fn4   v080   gtp2
+        BYTE   W44
+        BYTE   W02
+        BYTE           N18     An4
+        BYTE           N16     Dn4
+        BYTE   W16
+        BYTE           N18     Gn4
+        BYTE           N16     Dn4
+        BYTE   W16
+        BYTE           N18     Fn4
+        BYTE           N16     Dn4
+        BYTE   W16
+// 041   ----------------------------------------
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_5_37
+// 042   ----------------------------------------
+        BYTE           N20     Dn5   v080
+        BYTE           N24     Dn4
+        BYTE           N24     Gn4
         BYTE   W18
         BYTE           N06     En5
         BYTE   W06
         BYTE           N48     Cn5
+        BYTE           N48     En4   v064
         BYTE   W48
-        BYTE           N24     An4
-        BYTE   W24
-// 035   ----------------------------------------
-        BYTE           N72     Dn5
-        BYTE   W72
-        BYTE           N24     An2   v048
-        BYTE   W24
-// 036   ----------------------------------------
-WhatLiesAtTheEnd_5_36:
-        BYTE           N12     As2   v048
-        BYTE   W24
-        BYTE           N06
-        BYTE           N06     Fn3
-        BYTE   W08
-        BYTE                   As2
-        BYTE           N06     Fn3
-        BYTE   W08
-        BYTE                   As2
-        BYTE           N06     Fn3
-        BYTE   W08
-        BYTE           N12     Cn3
-        BYTE           N12     En3
-        BYTE           N12     Gn3
-        BYTE   W24
-        BYTE           N18     Cn3
-        BYTE           N18     En3
-        BYTE           N18     Gn3
-        BYTE   W24
-        BYTE   PEND
-// 037   ----------------------------------------
-        BYTE           N12     En3
-        BYTE           N12     An2
-        BYTE   W24
-        BYTE           N18
-        BYTE           N18     En3
-        BYTE   W24
-        BYTE           N12     Fn3
-        BYTE           N12     Dn3
-        BYTE   W24
-        BYTE           N18     Fn3
-        BYTE           N18     Dn3
-        BYTE   W24
-// 038   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_5_36
-// 039   ----------------------------------------
-        BYTE           N12     Gn3   v048
-        BYTE           N12     Dn3
-        BYTE   W24
-        BYTE           N18     Gn3
-        BYTE           N18     Dn3
-        BYTE   W24
-        BYTE           N36
-        BYTE           N36     Fn3
-        BYTE   W48
-// 040   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_5_36
-// 041   ----------------------------------------
-        BYTE           N12     En3   v048
-        BYTE           N12     An2
-        BYTE   W24
-        BYTE           N18     En3
-        BYTE           N18     An2
-        BYTE   W24
-        BYTE           N12     Fn3
-        BYTE           N12     Dn3
-        BYTE   W24
-        BYTE           N18     Fn3
-        BYTE           N18     Dn3
-        BYTE   W24
-// 042   ----------------------------------------
-        BYTE           N12     As2
-        BYTE   W24
-        BYTE           N06
-        BYTE           N06     Gn3
-        BYTE           N06     Dn3
-        BYTE   W08
-        BYTE                   As2
-        BYTE           N06     Gn3
-        BYTE           N06     Dn3
-        BYTE   W08
-        BYTE                   As2
-        BYTE           N06     Gn3
-        BYTE           N06     Dn3
-        BYTE   W08
-        BYTE           N12     En3
-        BYTE           N12     Cn3
-        BYTE           N12     An3
-        BYTE   W24
-        BYTE           N18
-        BYTE           N18     En3
-        BYTE           N18     Cn3
+        BYTE           N24     An4   v080
+        BYTE           N24     Dn4   v064
         BYTE   W24
 // 043   ----------------------------------------
-        BYTE           N12     Dn3
-        BYTE           N12     Gn3
-        BYTE   W24
-        BYTE           N18
-        BYTE           N18     Dn3
-        BYTE   W24
-        BYTE           N36     Fn3
-        BYTE           N36     Dn3
+        BYTE           N48     Gn4   v060
+        BYTE           N96     Dn5   v064
+        BYTE   W48
+        BYTE           N48     Fn4   v080
         BYTE   W48
 // 044   ----------------------------------------
-        BYTE           N48     An4
+        BYTE                   An4   v044
         BYTE           N48     Ds4
         BYTE   W48
-        BYTE                   Gn4   v064
+        BYTE                   Gn4   v048
         BYTE           N48     Cn4
         BYTE   W48
 // 045   ----------------------------------------
-        BYTE                   An3   v080
+        BYTE                   An3   v052
         BYTE           N48     Gn4
         BYTE   W48
-        BYTE                   Cn4
+        BYTE                   Cn4   v056
         BYTE           N48     Fn4
         BYTE   W48
 // 046   ----------------------------------------
-        BYTE           N24     Fn3
+        BYTE           N24     Fn3   v060
         BYTE           N24     Fn4
         BYTE   W24
-        BYTE                   Ds3
+        BYTE                   Ds3   v064
         BYTE           N24     Ds4
         BYTE   W24
         BYTE                   As3
@@ -3044,7 +3519,7 @@ WhatLiesAtTheEnd_5_36:
         BYTE           N48     Cs3
         BYTE   W48
 // 048   ----------------------------------------
-        BYTE                   Gs3
+        BYTE                   Gs3   v072
         BYTE           N24     Gs4
         BYTE   W24
         BYTE                   Fs4
@@ -3077,8 +3552,8 @@ WhatLiesAtTheEnd_5_36:
         BYTE           N96     Gs3
         BYTE   W96
 // 052   ----------------------------------------
-        BYTE                   Cn3
-        BYTE           N72     Cn4
+        BYTE           N84     Cn4
+        BYTE           N96     Cn3
         BYTE   W96
 // 053   ----------------------------------------
         BYTE   W96
@@ -3097,45 +3572,190 @@ WhatLiesAtTheEnd_5_36:
 // 060   ----------------------------------------
         BYTE   W96
 // 061   ----------------------------------------
-        BYTE   W96
+        BYTE           N48     As3   v080
+        BYTE           N48     As2
+        BYTE           N48     Ds3
+        BYTE   W48
+        BYTE                   Fn3
+        BYTE           N48     Fn4
+        BYTE           N48     Cn4
+        BYTE   W48
 // 062   ----------------------------------------
-        BYTE   W96
+        BYTE                   Fn4
+        BYTE           N48     Fn3
+        BYTE           N48     Cn4
+        BYTE           N48     Gs3
+        BYTE   W48
+        BYTE           N24     Ds4
+        BYTE           N24     Ds3
+        BYTE           N24     As3
+        BYTE   W24
+        BYTE                   Cs4
+        BYTE           N24     Cs3
+        BYTE           N24     Gs3
+        BYTE   W24
 // 063   ----------------------------------------
-        BYTE   W96
+        BYTE           N36     Cs4
+        BYTE           N36     As3
+        BYTE           N36     Cs3
+        BYTE   W48
+        BYTE                   Cn4   v080   gtp2
+        BYTE                   Cn3
+        BYTE           N36     Gs3
+        BYTE   W36
+        BYTE           N12     Fs4
+        BYTE   W12
 // 064   ----------------------------------------
-        BYTE   W96
+        BYTE           N36
+        BYTE           N36     Fs3
+        BYTE           N36     Cs4
+        BYTE   W48
+        BYTE           N42     Fn3
+        BYTE           N42     Fn4
+        BYTE           N42     Cn4
+        BYTE   W48
 // 065   ----------------------------------------
-        BYTE   W96
+        BYTE           N66     As3
+        BYTE           N48     Ds3
+        BYTE   W72
+        BYTE           N06     As3
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE   W08
+        BYTE                   Fn4
+        BYTE   W08
 // 066   ----------------------------------------
-        BYTE   W96
+        BYTE           N48     Gs4
+        BYTE           N48     Gs3
+        BYTE           N48     Bn3
+        BYTE           N48     Ds4
+        BYTE   W48
+        BYTE           N24     Fs4
+        BYTE           N24     Fs3
+        BYTE           N48     Cn4
+        BYTE   W24
+        BYTE           N24     Fn4
+        BYTE           N24     Fn3
+        BYTE   W24
 // 067   ----------------------------------------
+        BYTE           N84     Fn4
+        BYTE           N90     Cn4
+        BYTE           N96     As3
+        BYTE           N96     Fn3
         BYTE   W96
 // 068   ----------------------------------------
-        BYTE   W96
+        BYTE           N36     Cs4
+        BYTE           N36     Fs3
+        BYTE   W36
+        BYTE           N12     Cn4
+        BYTE           N12     Fn3
+        BYTE   W12
+        BYTE           N42     Cn4
+        BYTE           N42     Fn3
+        BYTE   W48
 // 069   ----------------------------------------
-        BYTE           N96     Fn3
+        BYTE           N96
         BYTE   W96
 // 070   ----------------------------------------
         BYTE   W24
         BYTE           N42     Ds4
-        BYTE           N72     Cn4
-        BYTE   W72
+        BYTE           N48     Cn4
+        BYTE           N54     An4
+        BYTE   W48
+        BYTE           N24     As3
+        BYTE           N24     Ds4   v064
+        BYTE   W24
 // 071   ----------------------------------------
-        BYTE   W96
+        BYTE           N48     As4   v080
+        BYTE           N48     Fs4
+        BYTE           N48     Cs4
+        BYTE   W48
+        BYTE           N16     As4
+        BYTE           N16     Cs4
+        BYTE   W16
+        BYTE                   Cs4
+        BYTE           N16     Gs4
+        BYTE   W16
+        BYTE                   Cs4
+        BYTE           N16     Fs4
+        BYTE   W16
 // 072   ----------------------------------------
-        BYTE   W96
+        BYTE           N24     Gs3
+        BYTE           N24     Fn4
+        BYTE           N22     Cn4
+        BYTE   W24
+        BYTE           N24     Fs4
+        BYTE           N24     Cs4
+        BYTE   W24
+        BYTE                   Gs4
+        BYTE           N24     Ds4
+        BYTE   W24
+        BYTE                   Ds4
+        BYTE           N24     Cs5
+        BYTE   W24
 // 073   ----------------------------------------
+        BYTE           N84     Gs4
+        BYTE           N90     As3
+        BYTE           N78     Ds4
         BYTE   W96
 // 074   ----------------------------------------
-        BYTE   W96
+        BYTE           N48     Cs4
+        BYTE           N48     Fn4
+        BYTE           N48     Fn3
+        BYTE   W48
+        BYTE           N24     Cn4
+        BYTE           N24     Fn4
+        BYTE           N24     Gs3
+        BYTE   W24
+        BYTE                   As3   v064
+        BYTE           N24     Ds4
+        BYTE   W24
 // 075   ----------------------------------------
-        BYTE   W96
+        BYTE           N48     As4   v080
+        BYTE           N44     Fs4   v080   gtp2
+        BYTE           N48     Cs4
+        BYTE   W48
+        BYTE           N18     As4
+        BYTE           N16     Cs4
+        BYTE   W16
+        BYTE           N18     Gs4
+        BYTE           N16     Cs4
+        BYTE   W16
+        BYTE           N18     Fs4
+        BYTE           N16     Cs4
+        BYTE   W16
 // 076   ----------------------------------------
-        BYTE   W96
+        BYTE           N24     Fn4
+        BYTE           N24     Gs3
+        BYTE           N22     Cn4
+        BYTE   W24
+        BYTE           N24     Fs4
+        BYTE           N24     Cs4
+        BYTE   W24
+        BYTE                   Gs4
+        BYTE           N24     Ds4
+        BYTE   W24
+        BYTE                   Ds4
+        BYTE           N48     Cs5
+        BYTE   W24
 // 077   ----------------------------------------
-        BYTE   W96
+        BYTE           N24     Gs4   v076
+        BYTE           N24     Ds4
+        BYTE   W24
+        BYTE           N48     Cn5   v072
+        BYTE           N48     Fn4
+        BYTE   W48
+        BYTE           N24     As4   v068
+        BYTE           N24     Ds4
+        BYTE   W24
 // 078   ----------------------------------------
-        BYTE   W96
+        BYTE           N48     Gs4   v064
+        BYTE           N90     As3   v060
+        BYTE           N48     Ds4   v064
+        BYTE   W48
+        BYTE                   Fs4   v060
+        BYTE           N44     Ds4
+        BYTE   W48
 // 079   ----------------------------------------
 WhatLiesAtTheEnd_5_79:
         BYTE           N48     As3   v064
@@ -3186,21 +3806,101 @@ WhatLiesAtTheEnd_5_79:
         BYTE           N48     Ds3
         BYTE   W48
 // 086   ----------------------------------------
-        BYTE   W96
+        BYTE           N18     Fn3
+        BYTE   W24
+        BYTE           N06     Fn3   v054
+        BYTE   W08
+        BYTE                   Fn3   v048
+        BYTE   W08
+        BYTE           N08     Fn3   v040
+        BYTE   W08
+        BYTE           N18     Fn3   v064
+        BYTE   W24
+        BYTE           N24     Fn3   v048
+        BYTE   W24
 // 087   ----------------------------------------
-        BYTE   W96
+        BYTE           N18     Fs3   v064
+        BYTE   W24
+        BYTE           N24     Fs3   v048
+        BYTE   W24
+        BYTE           N18     Fs3   v064
+        BYTE   W24
+        BYTE           N24     Fs3   v048
+        BYTE   W24
 // 088   ----------------------------------------
-        BYTE   W96
+        BYTE           N18     Gs3   v064
+        BYTE   W24
+        BYTE           N06     Gs3   v056
+        BYTE   W08
+        BYTE                   Gs3   v064
+        BYTE   W08
+        BYTE                   Gs3   v040
+        BYTE   W08
+        BYTE           N18     Gs3   v064
+        BYTE   W24
+        BYTE           N24     Gs3   v048
+        BYTE   W24
 // 089   ----------------------------------------
-        BYTE   W96
+        BYTE           N18     As3   v064
+        BYTE   W24
+        BYTE           N24     As3   v048
+        BYTE   W24
+        BYTE           N18     As3   v064
+        BYTE   W24
+        BYTE           N24     As3   v048
+        BYTE   W24
 // 090   ----------------------------------------
-        BYTE   W96
+        BYTE                   Fn3   v064
+        BYTE           N72     Cn4   v056
+        BYTE   W24
+        BYTE           N06     Fn3
+        BYTE   W08
+        BYTE                   Fs3   v048
+        BYTE   W08
+        BYTE           N08     Fn3   v040
+        BYTE   W08
+        BYTE           N18     Ds3   v064
+        BYTE   W24
+        BYTE           N24     Ds3   v048
+        BYTE           N24     Cn4
+        BYTE   W24
 // 091   ----------------------------------------
-        BYTE   W96
+        BYTE           N72     Cs4   v056
+        BYTE           N18     Fs3   v064
+        BYTE   W24
+        BYTE           N24     Fs3   v048
+        BYTE   W24
+        BYTE           N18     Fn3   v064
+        BYTE   W24
+        BYTE           N24     Cs4   v048
+        BYTE           N24     Fn3
+        BYTE   W24
 // 092   ----------------------------------------
-        BYTE   W96
+        BYTE           N18     Fn3   v064
+        BYTE           N72     Cn4   v056
+        BYTE   W24
+        BYTE           N06     Fn3
+        BYTE   W08
+        BYTE                   Fs3   v048
+        BYTE   W08
+        BYTE           N08     Fn3   v040
+        BYTE   W08
+        BYTE           N18     Ds3   v064
+        BYTE   W24
+        BYTE           N24     Ds3   v048
+        BYTE           N24     Cn4
+        BYTE   W24
 // 093   ----------------------------------------
-        BYTE   W96
+        BYTE           N18     Fs3   v064
+        BYTE           N72     As3   v056
+        BYTE   W24
+        BYTE           N24     Fs3   v048
+        BYTE   W24
+        BYTE           N18     Fn3   v064
+        BYTE   W24
+        BYTE           N24     Fn3   v048
+        BYTE           N24     As3
+        BYTE   W24
 // 094   ----------------------------------------
         BYTE   GoTo
          POIN2  WhatLiesAtTheEnd_5_LOOP
@@ -3212,143 +3912,189 @@ WhatLiesAtTheEnd_6:
         BYTE   KEYSH   WhatLiesAtTheEnd_key+0
 // 000   ----------------------------------------
 WhatLiesAtTheEnd_6_LOOP:
-        BYTE           VOICE   101
-        BYTE           PAN     c_v+27
-        BYTE           VOL     77
-        BYTE           N06     Cn3   v080
+        BYTE           VOICE   62
+        BYTE           PAN     c_v-16
+        BYTE           VOL     50
+        BYTE           N06     As2   v064
         BYTE   W24
-        BYTE                   Cn3
+        BYTE                   As2   v057
         BYTE   W08
-        BYTE                   Cn3
+        BYTE                   As2   v051
         BYTE   W08
-        BYTE                   Cn3
+        BYTE                   As2   v044
         BYTE   W08
-        BYTE                   As2
+        BYTE                   Gs2   v064
         BYTE   W24
-        BYTE                   As2
+        BYTE                   Gs2   v051
         BYTE   W24
 // 001   ----------------------------------------
-WhatLiesAtTheEnd_6_1:
-        BYTE           N06     Cn3   v080
+        BYTE                   As2   v064
         BYTE   W24
-        BYTE                   Cn3
+        BYTE                   As2   v051
         BYTE   W24
-        BYTE                   As2
+        BYTE                   Gs2   v064
         BYTE   W24
-        BYTE                   As2
+        BYTE                   Gs2   v051
         BYTE   W24
-        BYTE   PEND
 // 002   ----------------------------------------
-WhatLiesAtTheEnd_6_2:
-        BYTE           N06     Cn3   v080
+        BYTE                   Cn3   v064
         BYTE   W24
-        BYTE                   Cn3
+        BYTE                   Cn3   v057
         BYTE   W08
-        BYTE                   Cn3
+        BYTE                   Cn3   v051
         BYTE   W08
-        BYTE                   Cn3
+        BYTE                   Cn3   v044
         BYTE   W08
-        BYTE                   As2
+        BYTE                   As2   v064
         BYTE   W24
-        BYTE                   As2
+        BYTE                   As2   v051
+        BYTE   W24
+// 003   ----------------------------------------
+        BYTE                   Cs3   v064
+        BYTE   W24
+        BYTE                   Cs3   v051
+        BYTE   W24
+        BYTE                   Cn3   v064
+        BYTE   W24
+        BYTE                   Cn3   v051
+        BYTE   W24
+// 004   ----------------------------------------
+WhatLiesAtTheEnd_6_4:
+        BYTE           N06     As2   v080
+        BYTE   W24
+        BYTE                   As2   v072
+        BYTE   W08
+        BYTE                   As2   v064
+        BYTE   W08
+        BYTE                   As2   v056
+        BYTE   W08
+        BYTE                   Gs2   v080
+        BYTE   W24
+        BYTE                   Gs2   v064
         BYTE   W24
         BYTE   PEND
-// 003   ----------------------------------------
-WhatLiesAtTheEnd_6_3:
+// 005   ----------------------------------------
+WhatLiesAtTheEnd_6_5:
+        BYTE           N06     As2   v080
+        BYTE   W24
+        BYTE                   As2   v064
+        BYTE   W24
+        BYTE                   Gs2   v080
+        BYTE   W24
+        BYTE                   Gs2   v064
+        BYTE   W24
+        BYTE   PEND
+// 006   ----------------------------------------
+WhatLiesAtTheEnd_6_6:
+        BYTE           N06     Cn3   v080
+        BYTE   W24
+        BYTE                   Cn3   v072
+        BYTE   W08
+        BYTE                   Cn3   v064
+        BYTE   W08
+        BYTE                   Cn3   v056
+        BYTE   W08
+        BYTE                   As2   v080
+        BYTE   W24
+        BYTE                   As2   v064
+        BYTE   W24
+        BYTE   PEND
+// 007   ----------------------------------------
+WhatLiesAtTheEnd_6_7:
         BYTE           N06     Cs3   v080
         BYTE   W24
-        BYTE                   Cs3
+        BYTE                   Cs3   v064
         BYTE   W24
-        BYTE                   Cn3
+        BYTE                   Cn3   v080
         BYTE   W24
-        BYTE                   Cn3
+        BYTE                   Cn3   v064
         BYTE   W24
         BYTE   PEND
-// 004   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
-// 005   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_1
-// 006   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
-// 007   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_3
 // 008   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
+         POIN2  WhatLiesAtTheEnd_6_4
 // 009   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_1
+         POIN2  WhatLiesAtTheEnd_6_5
 // 010   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
+         POIN2  WhatLiesAtTheEnd_6_6
 // 011   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_3
+         POIN2  WhatLiesAtTheEnd_6_7
 // 012   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
+         POIN2  WhatLiesAtTheEnd_6_4
 // 013   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_1
+         POIN2  WhatLiesAtTheEnd_6_5
 // 014   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
+         POIN2  WhatLiesAtTheEnd_6_6
 // 015   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_3
+         POIN2  WhatLiesAtTheEnd_6_7
 // 016   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
+         POIN2  WhatLiesAtTheEnd_6_4
 // 017   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_1
+         POIN2  WhatLiesAtTheEnd_6_5
 // 018   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
+         POIN2  WhatLiesAtTheEnd_6_6
 // 019   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_3
+         POIN2  WhatLiesAtTheEnd_6_7
 // 020   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
+         POIN2  WhatLiesAtTheEnd_6_4
 // 021   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_1
+         POIN2  WhatLiesAtTheEnd_6_5
 // 022   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
+         POIN2  WhatLiesAtTheEnd_6_6
 // 023   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_3
+         POIN2  WhatLiesAtTheEnd_6_7
 // 024   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
+         POIN2  WhatLiesAtTheEnd_6_4
 // 025   ----------------------------------------
         BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_1
+         POIN2  WhatLiesAtTheEnd_6_5
 // 026   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_2
+        BYTE           N06     Cn3   v080
+        BYTE   W24
+        BYTE                   Cn3   v072
+        BYTE   W08
+        BYTE                   Cn3   v064
+        BYTE   W08
+        BYTE                   Cn3   v056
+        BYTE   W08
+        BYTE                   As2   v080
+        BYTE   W24
+        BYTE                   As2   v064
+        BYTE   W23
+        BYTE           VOICE   101
+        BYTE   W01
 // 027   ----------------------------------------
         BYTE   W72
         BYTE           N24     Dn2   v048
         BYTE   W24
 // 028   ----------------------------------------
-        BYTE           N48     As2
+        BYTE           N48     As2   v052
         BYTE           N48     Fn2
         BYTE   W48
-        BYTE                   Cn3
+        BYTE                   Cn3   v056
         BYTE           N48     Gn2
         BYTE   W48
 // 029   ----------------------------------------
-        BYTE                   An2
+        BYTE                   An2   v060
         BYTE           N48     En2
         BYTE   W48
-        BYTE                   As2
+        BYTE                   As2   v064
         BYTE           N48     Dn3
         BYTE   W48
 // 030   ----------------------------------------
@@ -3366,56 +4112,62 @@ WhatLiesAtTheEnd_6_3:
         BYTE           N48     Fn2
         BYTE   W48
 // 032   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_32
+        BYTE                   As1   v080
+        BYTE   W48
+        BYTE                   Cn2
+        BYTE   W48
 // 033   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_33
+        BYTE                   An1
+        BYTE   W48
+        BYTE                   Dn2
+        BYTE   W48
 // 034   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_2_34
+        BYTE                   Gn2
+        BYTE   W48
+        BYTE                   An2
+        BYTE   W48
 // 035   ----------------------------------------
-        BYTE           N72     Dn3   v080
+        BYTE           N72     Dn3
         BYTE   W72
-        BYTE           N06     An2
+        BYTE           N06     Dn2   v064
         BYTE   W24
 // 036   ----------------------------------------
 WhatLiesAtTheEnd_6_36:
-        BYTE           N06     As2   v080
+        BYTE           N06     Ds2   v080
         BYTE   W24
-        BYTE                   As2
+        BYTE                   Ds2   v072
         BYTE   W08
-        BYTE                   As2
+        BYTE                   Ds2   v064
         BYTE   W08
-        BYTE                   As2
+        BYTE                   Ds2   v056
         BYTE   W08
-        BYTE                   Cn3
+        BYTE                   Fn2   v080
         BYTE   W24
-        BYTE                   Cn3
+        BYTE                   Fn2   v064
         BYTE   W24
         BYTE   PEND
 // 037   ----------------------------------------
 WhatLiesAtTheEnd_6_37:
-        BYTE           N06     An2   v080
+        BYTE           N06     Dn2   v080
         BYTE   W24
-        BYTE                   An2
+        BYTE                   Dn2   v064
         BYTE   W24
-        BYTE                   Dn3
+        BYTE                   Gn2   v080
         BYTE   W24
-        BYTE                   Dn3
+        BYTE                   Gn2   v064
         BYTE   W24
         BYTE   PEND
 // 038   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_6_36
 // 039   ----------------------------------------
-        BYTE           N06     Gn3   v080
+        BYTE           N06     Cn3   v080
         BYTE   W24
-        BYTE                   Gn3
+        BYTE                   Cn3   v064
         BYTE   W24
-        BYTE                   Fn3
+        BYTE                   As2   v080
         BYTE   W24
-        BYTE                   Dn3
+        BYTE                   Gn2   v064
         BYTE   W24
 // 040   ----------------------------------------
         BYTE   PATT
@@ -3424,14 +4176,24 @@ WhatLiesAtTheEnd_6_37:
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_6_37
 // 042   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_6_36
+        BYTE           N06     An2   v080
+        BYTE   W24
+        BYTE                   An2   v072
+        BYTE   W08
+        BYTE                   An2   v064
+        BYTE   W08
+        BYTE                   An2   v056
+        BYTE   W08
+        BYTE                   Cn3   v080
+        BYTE   W24
+        BYTE                   Cn3   v064
+        BYTE   W24
 // 043   ----------------------------------------
-        BYTE           N06     Gn3   v080
+        BYTE                   Gn3   v080
         BYTE   W24
-        BYTE                   Gn3
+        BYTE                   Gn3   v064
         BYTE   W24
-        BYTE                   Fn3
+        BYTE           N24     Fn3   v048
         BYTE   W48
 // 044   ----------------------------------------
         BYTE   W96
@@ -3468,7 +4230,7 @@ WhatLiesAtTheEnd_6_37:
 // 060   ----------------------------------------
         BYTE   W96
 // 061   ----------------------------------------
-        BYTE           N48     As2
+        BYTE           N48     As2   v080
         BYTE   W48
         BYTE           N16     Cs3
         BYTE   W16
@@ -3507,10 +4269,14 @@ WhatLiesAtTheEnd_6_37:
         BYTE                   Fn3
         BYTE   W08
 // 066   ----------------------------------------
-        BYTE   PATT
-         POIN2  WhatLiesAtTheEnd_0_58
+        BYTE           N48     Gs3
+        BYTE   W48
+        BYTE           N24     Fs3
+        BYTE   W24
+        BYTE                   Fn3
+        BYTE   W24
 // 067   ----------------------------------------
-        BYTE           N84     Fn3   v080
+        BYTE           N84
         BYTE           N84     Cn3
         BYTE   W96
 // 068   ----------------------------------------
@@ -3635,6 +4401,7 @@ WhatLiesAtTheEnd_6_37:
         BYTE           N96     Ds2
         BYTE   W96
 // 094   ----------------------------------------
+        BYTE           VOICE   62
         BYTE   GoTo
          POIN2  WhatLiesAtTheEnd_6_LOOP
         BYTE   FINE
@@ -3646,76 +4413,76 @@ WhatLiesAtTheEnd_7:
 // 000   ----------------------------------------
 WhatLiesAtTheEnd_7_LOOP:
         BYTE           VOICE   47
-        BYTE           VOL     64
-        BYTE           N24     As2   v080
+        BYTE           VOL     44
+        BYTE           N24     As2   v120
         BYTE   W96
 // 001   ----------------------------------------
 WhatLiesAtTheEnd_7_1:
-        BYTE           N24     As2   v080
+        BYTE           N24     As2   v120
         BYTE   W72
-        BYTE                   As2
+        BYTE                   As2   v096
         BYTE   W24
         BYTE   PEND
 // 002   ----------------------------------------
-        BYTE                   Fs2
+        BYTE                   Fs2   v120
         BYTE   W96
 // 003   ----------------------------------------
 WhatLiesAtTheEnd_7_3:
-        BYTE           N24     Gs2   v080
+        BYTE           N24     Gs2   v120
         BYTE   W72
-        BYTE                   Gs2
+        BYTE                   Gs2   v096
         BYTE   W24
         BYTE   PEND
 // 004   ----------------------------------------
-        BYTE                   As2
+        BYTE                   As2   v120
         BYTE   W96
 // 005   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_1
 // 006   ----------------------------------------
-        BYTE           N24     Fs2   v080
+        BYTE           N24     Fs2   v120
         BYTE   W96
 // 007   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_3
 // 008   ----------------------------------------
-        BYTE           N24     As2   v080
+        BYTE           N24     As2   v120
         BYTE   W96
 // 009   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_1
 // 010   ----------------------------------------
-        BYTE           N24     Fs2   v080
+        BYTE           N24     Fs2   v120
         BYTE   W96
 // 011   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_3
 // 012   ----------------------------------------
-        BYTE           N24     As2   v080
+        BYTE           N24     As2   v120
         BYTE   W96
 // 013   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_1
 // 014   ----------------------------------------
-        BYTE           N24     Fs2   v080
+        BYTE           N24     Fs2   v120
         BYTE   W96
 // 015   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_3
 // 016   ----------------------------------------
-        BYTE           N24     As2   v080
+        BYTE           N24     As2   v120
         BYTE   W96
 // 017   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_1
 // 018   ----------------------------------------
-        BYTE           N24     Fs2   v080
+        BYTE           N24     Fs2   v120
         BYTE   W96
 // 019   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_3
 // 020   ----------------------------------------
-        BYTE           N96     As2   v080
+        BYTE           N96     As2   v120
         BYTE   W96
 // 021   ----------------------------------------
         BYTE   W96
@@ -3754,23 +4521,59 @@ WhatLiesAtTheEnd_7_3:
 // 034   ----------------------------------------
         BYTE   W96
 // 035   ----------------------------------------
-        BYTE   W96
+        BYTE   W72
+        BYTE                   Fs2   v096
+        BYTE   W24
 // 036   ----------------------------------------
-        BYTE   W96
+WhatLiesAtTheEnd_7_36:
+        BYTE           N24     As2   v121
+        BYTE   W24
+        BYTE                   As2   v072
+        BYTE   W24
+        BYTE                   Cn3   v121
+        BYTE   W24
+        BYTE                   En2   v096
+        BYTE   W24
+        BYTE   PEND
 // 037   ----------------------------------------
-        BYTE   W96
+WhatLiesAtTheEnd_7_37:
+        BYTE           N24     An2   v121
+        BYTE   W24
+        BYTE                   An2   v072
+        BYTE   W24
+        BYTE                   Dn3   v121
+        BYTE   W24
+        BYTE                   An2   v096
+        BYTE   W24
+        BYTE   PEND
 // 038   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_7_36
 // 039   ----------------------------------------
-        BYTE   W96
+        BYTE           N24     Gs2   v121
+        BYTE   W24
+        BYTE                   Gs2   v072
+        BYTE   W24
+        BYTE                   Fs2   v121
+        BYTE   W24
+        BYTE                   Fs2   v096
+        BYTE   W24
 // 040   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_7_36
 // 041   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_7_37
 // 042   ----------------------------------------
-        BYTE   W96
+        BYTE   PATT
+         POIN2  WhatLiesAtTheEnd_7_36
 // 043   ----------------------------------------
-        BYTE   W96
+        BYTE           N24     Gs2   v121
+        BYTE   W24
+        BYTE                   Gs2   v072
+        BYTE   W24
+        BYTE                   Fs2   v121
+        BYTE   W48
 // 044   ----------------------------------------
         BYTE   W96
 // 045   ----------------------------------------
@@ -3804,9 +4607,9 @@ WhatLiesAtTheEnd_7_3:
 // 059   ----------------------------------------
         BYTE   W96
 // 060   ----------------------------------------
-        BYTE           N48     Fs2
+        BYTE           N48     Fs2   v120
         BYTE   W48
-        BYTE           N44     Fn2   v080   gtp2
+        BYTE           N44     Fn2   v120   gtp2
         BYTE   W48
 // 061   ----------------------------------------
         BYTE           N24     As2
@@ -3815,25 +4618,25 @@ WhatLiesAtTheEnd_7_3:
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_1
 // 063   ----------------------------------------
-        BYTE           N24     Fs2   v080
+        BYTE           N24     Fs2   v120
         BYTE   W96
 // 064   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_3
 // 065   ----------------------------------------
-        BYTE           N24     As2   v080
+        BYTE           N24     As2   v120
         BYTE   W96
 // 066   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_1
 // 067   ----------------------------------------
-        BYTE           N24     Fs2   v080
+        BYTE           N24     Fs2   v120
         BYTE   W96
 // 068   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_3
 // 069   ----------------------------------------
-        BYTE           N24     Fn2   v080
+        BYTE           N24     Fn2   v120
         BYTE   W96
 // 070   ----------------------------------------
         BYTE   W24
@@ -3841,38 +4644,38 @@ WhatLiesAtTheEnd_7_3:
         BYTE   W72
 // 071   ----------------------------------------
 WhatLiesAtTheEnd_7_71:
-        BYTE           N24     As2   v080
+        BYTE           N24     As2   v112
         BYTE   W48
-        BYTE                   As2
+        BYTE                   As2   v104
         BYTE   W48
         BYTE   PEND
 // 072   ----------------------------------------
 WhatLiesAtTheEnd_7_72:
-        BYTE           N24     Gs2   v080
+        BYTE           N24     Gs2   v112
         BYTE   W48
-        BYTE                   Gs2
+        BYTE                   Gs2   v104
         BYTE   W48
         BYTE   PEND
 // 073   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_71
 // 074   ----------------------------------------
-        BYTE           N24     As2   v080
+        BYTE           N24     As2   v112
         BYTE   W48
-        BYTE                   Gs2
+        BYTE                   Gs2   v104
         BYTE   W48
 // 075   ----------------------------------------
-        BYTE                   Fs2
+        BYTE                   Fs2   v112
         BYTE   W48
-        BYTE                   Fs2
+        BYTE                   Fs2   v104
         BYTE   W48
 // 076   ----------------------------------------
         BYTE   PATT
          POIN2  WhatLiesAtTheEnd_7_72
 // 077   ----------------------------------------
-        BYTE           N24     Cn3   v080
+        BYTE           N24     Cn3   v112
         BYTE   W48
-        BYTE                   Cs3
+        BYTE                   Cs3   v120
         BYTE   W24
         BYTE                   Cn3
         BYTE   W24
@@ -3906,9 +4709,15 @@ WhatLiesAtTheEnd_7_72:
 // 091   ----------------------------------------
         BYTE   W96
 // 092   ----------------------------------------
+        BYTE                   Fs2   v088
         BYTE   W96
 // 093   ----------------------------------------
-        BYTE   W96
+        BYTE                   Gs2   v096
+        BYTE   W48
+        BYTE                   As2   v088
+        BYTE   W24
+        BYTE                   Cn3   v096
+        BYTE   W24
 // 094   ----------------------------------------
         BYTE   GoTo
          POIN2  WhatLiesAtTheEnd_7_LOOP

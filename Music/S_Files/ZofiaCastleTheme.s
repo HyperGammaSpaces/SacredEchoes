@@ -42,7 +42,7 @@ ZofiaCastleTheme_0_LOOP:
         .byte   W96
 @ 012   ----------------------------------------
         .byte           PAN   , c_v-36
-        .byte           VOL   , 48
+        .byte           VOL   , 47
         .byte   W96
 @ 013   ----------------------------------------
         .byte   W96
@@ -326,7 +326,7 @@ ZofiaCastleTheme_1:
         .byte   KEYSH , ZofiaCastleTheme_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 6
-        .byte           VOL   , 40
+        .byte           VOL   , 39
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96
@@ -918,16 +918,15 @@ ZofiaCastleTheme_3:
         .byte                   Bn2
         .byte   W96
 @ 003   ----------------------------------------
-        .byte           VOL   , 43
+        .byte           VOL   , 42
         .byte   W56
         .byte   W03
         .byte                   37
-        .byte   W03
+        .byte   W06
         .byte                   38
         .byte   W09
         .byte                   39
-        .byte   W24
-        .byte   W01
+        .byte   W22
 @ 004   ----------------------------------------
 ZofiaCastleTheme_3_LOOP:
         .byte           N84   , En5 , v123 , gtp2
@@ -1058,7 +1057,7 @@ ZofiaCastleTheme_4:
         .byte   KEYSH , ZofiaCastleTheme_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 48
-        .byte           VOL   , 38
+        .byte           VOL   , 37
         .byte           TIE   , Bn0 , v100
         .byte           TIE   , Fs1
         .byte   W96
@@ -1831,7 +1830,7 @@ ZofiaCastleTheme_7:
         .byte   KEYSH , ZofiaCastleTheme_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 105
-        .byte           VOL   , 38
+        .byte           VOL   , 37
         .byte           PAN   , c_v-22
         .byte   W96
 @ 001   ----------------------------------------
@@ -2090,7 +2089,7 @@ ZofiaCastleTheme_8:
         .byte   KEYSH , ZofiaCastleTheme_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 127
-        .byte           VOL   , 48
+        .byte           VOL   , 47
         .byte   W48
         .byte           N12   , Ds1 , v102
         .byte   W12

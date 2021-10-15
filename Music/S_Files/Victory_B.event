@@ -1,0 +1,1450 @@
+//Event file generated from Sappy .s format.
+        #include "MPlayDef.event"
+
+        #define    Victory_B_grp  voicegroup000
+        #define    Victory_B_pri  0
+        #define    Victory_B_rev  0
+        #define    Victory_B_key  0
+
+        // .rodata
+        // Victory_B
+        ALIGN 4
+
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+Victory_B_0:
+        BYTE   KEYSH   Victory_B_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   128/2
+Victory_B_0_LOOP:
+        BYTE           VOICE   57
+        BYTE           VOL     59
+        BYTE           PAN     c_v-10
+        BYTE   W24
+        BYTE           N23     An3   v100
+        BYTE   W24
+        BYTE           N07     An3   v032
+        BYTE   W24
+        BYTE           N23     Gn3   v100
+        BYTE   W24
+// 001   ----------------------------------------
+Victory_B_0_1:
+        BYTE           N07     Gn3   v032
+        BYTE   W24
+        BYTE           N23     Fn3   v100
+        BYTE   W24
+        BYTE           N07     Fn3   v032
+        BYTE   W24
+        BYTE           N23     En3   v100
+        BYTE   W24
+        BYTE   PEND
+// 002   ----------------------------------------
+Victory_B_0_2:
+        BYTE           N07     En3   v032
+        BYTE   W24
+        BYTE           N23     An3   v100
+        BYTE   W24
+        BYTE           N07     An3   v032
+        BYTE   W24
+        BYTE           N23     Gn3   v100
+        BYTE   W24
+        BYTE   PEND
+// 003   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_1
+// 004   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_2
+// 005   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_1
+// 006   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_2
+// 007   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_1
+// 008   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_2
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_1
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_2
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_1
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_2
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_1
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_2
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_0_1
+// 016   ----------------------------------------
+        BYTE   GoTo
+         POIN2  Victory_B_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
+
+Victory_B_1:
+        BYTE   KEYSH   Victory_B_key+0
+// 000   ----------------------------------------
+Victory_B_1_LOOP:
+        BYTE           VOICE   33
+        BYTE           VOL     50
+        BYTE           N07     Dn2   v096
+        BYTE   W16
+        BYTE           N08     Dn2   v084
+        BYTE   W08
+        BYTE           N16     Dn2   v096
+        BYTE   W16
+        BYTE           N08     Dn2   v084
+        BYTE   W08
+        BYTE           N16     Dn2   v096
+        BYTE   W16
+        BYTE           N08     Dn2   v084
+        BYTE   W08
+        BYTE           N16     Dn2   v096
+        BYTE   W16
+        BYTE           N08     Dn2   v084
+        BYTE   W08
+// 001   ----------------------------------------
+Victory_B_1_1:
+        BYTE           N07     Dn2   v096
+        BYTE   W16
+        BYTE           N08     Dn2   v084
+        BYTE   W08
+        BYTE           N16     Dn2   v096
+        BYTE   W16
+        BYTE           N08     Dn2   v084
+        BYTE   W08
+        BYTE           N16     Dn2   v096
+        BYTE   W16
+        BYTE           N08     Dn2   v084
+        BYTE   W08
+        BYTE           N16     Dn2   v096
+        BYTE   W16
+        BYTE           N08     Dn2   v084
+        BYTE   W08
+        BYTE   PEND
+// 002   ----------------------------------------
+Victory_B_1_2:
+        BYTE           N07     Cn2   v096
+        BYTE   W16
+        BYTE           N08     Cn2   v084
+        BYTE   W08
+        BYTE           N16     Cn2   v096
+        BYTE   W16
+        BYTE           N08     Cn2   v084
+        BYTE   W08
+        BYTE           N16     Cn2   v096
+        BYTE   W16
+        BYTE           N08     Cn2   v084
+        BYTE   W08
+        BYTE           N16     Cn2   v096
+        BYTE   W16
+        BYTE           N08     Cn2   v084
+        BYTE   W08
+        BYTE   PEND
+// 003   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_1_2
+// 004   ----------------------------------------
+Victory_B_1_4:
+        BYTE           N07     Bn1   v096
+        BYTE   W16
+        BYTE           N08     Bn1   v084
+        BYTE   W08
+        BYTE           N16     Bn1   v096
+        BYTE   W16
+        BYTE           N08     Bn1   v084
+        BYTE   W08
+        BYTE           N16     Bn1   v096
+        BYTE   W16
+        BYTE           N08     Bn1   v084
+        BYTE   W08
+        BYTE           N16     Bn1   v096
+        BYTE   W16
+        BYTE           N08     Bn1   v084
+        BYTE   W08
+        BYTE   PEND
+// 005   ----------------------------------------
+Victory_B_1_5:
+        BYTE           N07     Bn1   v096
+        BYTE   W16
+        BYTE                   Bn1
+        BYTE   W08
+        BYTE                   Bn1
+        BYTE   W16
+        BYTE                   Bn1
+        BYTE   W08
+        BYTE                   Bn1
+        BYTE   W16
+        BYTE                   Bn1
+        BYTE   W08
+        BYTE                   Bn1
+        BYTE   W16
+        BYTE                   Bn1
+        BYTE   W08
+        BYTE   PEND
+// 006   ----------------------------------------
+Victory_B_1_6:
+        BYTE           N07     As2   v096
+        BYTE   W16
+        BYTE           N08     As2   v084
+        BYTE   W08
+        BYTE           N16     As2   v096
+        BYTE   W16
+        BYTE           N08     As2   v084
+        BYTE   W08
+        BYTE           N16     As2   v096
+        BYTE   W16
+        BYTE           N08     As2   v084
+        BYTE   W08
+        BYTE           N16     As2   v096
+        BYTE   W16
+        BYTE           N08     As2   v084
+        BYTE   W08
+        BYTE   PEND
+// 007   ----------------------------------------
+Victory_B_1_7:
+        BYTE           N07     An2   v096
+        BYTE   W16
+        BYTE           N08     An2   v084
+        BYTE   W08
+        BYTE           N16     An2   v096
+        BYTE   W16
+        BYTE           N08     An2   v084
+        BYTE   W08
+        BYTE           N16     An2   v096
+        BYTE   W16
+        BYTE           N08     An2   v084
+        BYTE   W08
+        BYTE           N16     An2   v096
+        BYTE   W16
+        BYTE           N08     An2   v084
+        BYTE   W08
+        BYTE   PEND
+// 008   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_1_1
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_1_1
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_1_2
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_1_2
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_1_4
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_1_5
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_1_6
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_1_7
+// 016   ----------------------------------------
+        BYTE   GoTo
+         POIN2  Victory_B_1_LOOP
+        BYTE   FINE
+
+//****************** Track 2 (Midi-Chn.2) ******************//
+
+Victory_B_2:
+        BYTE   KEYSH   Victory_B_key+0
+// 000   ----------------------------------------
+Victory_B_2_LOOP:
+        BYTE           VOICE   49
+        BYTE           VOL     42
+        BYTE           PAN     c_v+20
+        BYTE           N07     Dn3   v080
+        BYTE   W08
+        BYTE           N08     An2   v084
+        BYTE   W08
+        BYTE                   Dn3   v076
+        BYTE   W08
+        BYTE           N07
+        BYTE   W16
+        BYTE           N08     Dn3   v084
+        BYTE   W08
+        BYTE           N07
+        BYTE   W08
+        BYTE           N08     An2   v076
+        BYTE   W08
+        BYTE                   Dn3   v080
+        BYTE   W08
+        BYTE           N16     Dn3   v076
+        BYTE   W16
+        BYTE           N08     Dn3   v084
+        BYTE   W08
+// 001   ----------------------------------------
+Victory_B_2_1:
+        BYTE           N07     Dn3   v080
+        BYTE   W08
+        BYTE           N08     An2   v076
+        BYTE   W08
+        BYTE                   Dn3   v080
+        BYTE   W08
+        BYTE           N07
+        BYTE   W16
+        BYTE           N08     Dn3   v088
+        BYTE   W08
+        BYTE                   Dn3   v080
+        BYTE   W08
+        BYTE                   An2   v084
+        BYTE   W08
+        BYTE                   Dn3   v088
+        BYTE   W08
+        BYTE           N07
+        BYTE   W16
+        BYTE           N08     Dn3   v080
+        BYTE   W08
+        BYTE   PEND
+// 002   ----------------------------------------
+Victory_B_2_2:
+        BYTE           N07     Cn3   v084
+        BYTE   W08
+        BYTE           N08     An2   v080
+        BYTE   W08
+        BYTE                   Cn3   v088
+        BYTE   W08
+        BYTE           N16     Cn3   v076
+        BYTE   W16
+        BYTE           N08     Cn3   v080
+        BYTE   W08
+        BYTE                   Cn3   v084
+        BYTE   W08
+        BYTE                   An2   v080
+        BYTE   W08
+        BYTE                   Cn3   v076
+        BYTE   W08
+        BYTE           N16     Cn3   v080
+        BYTE   W16
+        BYTE           N08     Cn3   v076
+        BYTE   W08
+        BYTE   PEND
+// 003   ----------------------------------------
+Victory_B_2_3:
+        BYTE           N07     Cn3   v076
+        BYTE   W08
+        BYTE           N08     An2
+        BYTE   W08
+        BYTE                   Cn3
+        BYTE   W08
+        BYTE           N16     Cn3   v088
+        BYTE   W16
+        BYTE           N08     Cn3   v076
+        BYTE   W08
+        BYTE                   Cn3   v080
+        BYTE   W08
+        BYTE                   An2
+        BYTE   W08
+        BYTE                   Cn3   v088
+        BYTE   W08
+        BYTE           N16     Cn3   v080
+        BYTE   W16
+        BYTE           N07
+        BYTE   W08
+        BYTE   PEND
+// 004   ----------------------------------------
+Victory_B_2_4:
+        BYTE           N07     Bn2   v084
+        BYTE   W08
+        BYTE           N08     An2
+        BYTE   W08
+        BYTE                   Bn2
+        BYTE   W08
+        BYTE           N16     Bn2   v076
+        BYTE   W16
+        BYTE           N07
+        BYTE   W08
+        BYTE           N08     Bn2   v080
+        BYTE   W08
+        BYTE                   An2
+        BYTE   W08
+        BYTE                   Bn2
+        BYTE   W08
+        BYTE           N16     Bn2   v084
+        BYTE   W16
+        BYTE           N07
+        BYTE   W08
+        BYTE   PEND
+// 005   ----------------------------------------
+Victory_B_2_5:
+        BYTE           N07     Bn2   v084
+        BYTE   W08
+        BYTE           N08     An2   v076
+        BYTE   W08
+        BYTE                   Bn2
+        BYTE   W08
+        BYTE           N16     Bn2   v080
+        BYTE   W16
+        BYTE           N08     Bn2   v084
+        BYTE   W08
+        BYTE           N07
+        BYTE   W08
+        BYTE           N08     An2
+        BYTE   W08
+        BYTE                   Bn2   v080
+        BYTE   W08
+        BYTE           N07
+        BYTE   W16
+        BYTE           N08     Bn2   v084
+        BYTE   W08
+        BYTE   PEND
+// 006   ----------------------------------------
+Victory_B_2_6:
+        BYTE           N07     As2   v088
+        BYTE   W08
+        BYTE           N08     An2   v080
+        BYTE   W08
+        BYTE                   As2   v076
+        BYTE   W08
+        BYTE           N16     As2   v080
+        BYTE   W16
+        BYTE           N07
+        BYTE   W08
+        BYTE                   As2
+        BYTE   W08
+        BYTE           N08     An2
+        BYTE   W08
+        BYTE                   As2   v084
+        BYTE   W08
+        BYTE           N16     As2   v088
+        BYTE   W16
+        BYTE           N08     As2   v076
+        BYTE   W08
+        BYTE   PEND
+// 007   ----------------------------------------
+Victory_B_2_7:
+        BYTE           N07     An2   v080
+        BYTE   W08
+        BYTE           N08     An2   v084
+        BYTE   W08
+        BYTE           N07
+        BYTE   W08
+        BYTE                   An2
+        BYTE   W16
+        BYTE           N08     An2   v080
+        BYTE   W08
+        BYTE                   An2   v088
+        BYTE   W08
+        BYTE                   An2   v076
+        BYTE   W08
+        BYTE                   An2   v080
+        BYTE   W08
+        BYTE           N16     An2   v088
+        BYTE   W16
+        BYTE           N08     An2   v080
+        BYTE   W08
+        BYTE   PEND
+// 008   ----------------------------------------
+        BYTE                   Dn3
+        BYTE   W08
+        BYTE                   An2   v084
+        BYTE   W08
+        BYTE                   Dn3   v076
+        BYTE   W08
+        BYTE           N07
+        BYTE   W16
+        BYTE           N08     Dn3   v084
+        BYTE   W08
+        BYTE           N07
+        BYTE   W08
+        BYTE           N08     An2   v076
+        BYTE   W08
+        BYTE                   Dn3   v080
+        BYTE   W08
+        BYTE           N16     Dn3   v076
+        BYTE   W16
+        BYTE           N08     Dn3   v084
+        BYTE   W08
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_2_1
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_2_2
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_2_3
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_2_4
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_2_5
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_2_6
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_2_7
+// 016   ----------------------------------------
+        BYTE   GoTo
+         POIN2  Victory_B_2_LOOP
+        BYTE   FINE
+
+//****************** Track 3 (Midi-Chn.3) ******************//
+
+Victory_B_3:
+        BYTE   KEYSH   Victory_B_key+0
+// 000   ----------------------------------------
+Victory_B_3_LOOP:
+        BYTE           VOICE   77
+        BYTE           VOL     47
+        BYTE           PAN     c_v-64
+        BYTE           N07     Dn2   v060
+        BYTE   W01
+        BYTE           PAN     c_v-63
+        BYTE   W07
+        BYTE           N07     Fn2
+        BYTE   W01
+        BYTE           PAN     c_v-52
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v-42
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v-31
+        BYTE   W07
+        BYTE           N07     Fn3
+        BYTE   W01
+        BYTE           PAN     c_v-20
+        BYTE   W07
+        BYTE           N07     An3
+        BYTE   W01
+        BYTE           PAN     c_v-10
+        BYTE   W07
+        BYTE           N07     Dn4
+        BYTE   W01
+        BYTE           PAN     c_v+1
+        BYTE   W07
+        BYTE           N07     An3
+        BYTE   W01
+        BYTE           PAN     c_v+12
+        BYTE   W07
+        BYTE           N07     Fn3
+        BYTE   W01
+        BYTE           PAN     c_v+22
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v+33
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v+44
+        BYTE   W07
+        BYTE           N07     Fn2
+        BYTE   W01
+        BYTE           PAN     c_v+54
+        BYTE   W07
+// 001   ----------------------------------------
+Victory_B_3_1:
+        BYTE           PAN     c_v+63
+        BYTE           N07     An1   v060
+        BYTE   W01
+        BYTE           PAN     c_v+62
+        BYTE   W07
+        BYTE           N07     Dn2
+        BYTE   W01
+        BYTE           PAN     c_v+51
+        BYTE   W07
+        BYTE           N07     Fn2
+        BYTE   W01
+        BYTE           PAN     c_v+41
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v+30
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v+19
+        BYTE   W07
+        BYTE           N07     Fn3
+        BYTE   W01
+        BYTE           PAN     c_v+9
+        BYTE   W07
+        BYTE           N07     An3
+        BYTE   W01
+        BYTE           PAN     c_v-2
+        BYTE   W07
+        BYTE           N07     Fn3
+        BYTE   W01
+        BYTE           PAN     c_v-13
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v-23
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v-34
+        BYTE   W07
+        BYTE           N07     Fn2
+        BYTE   W01
+        BYTE           PAN     c_v-45
+        BYTE   W07
+        BYTE           N07     Dn2
+        BYTE   W01
+        BYTE           PAN     c_v-55
+        BYTE   W07
+        BYTE   PEND
+// 002   ----------------------------------------
+Victory_B_3_2:
+        BYTE           PAN     c_v-64
+        BYTE           N07     Cn2   v060
+        BYTE   W01
+        BYTE           PAN     c_v-63
+        BYTE   W07
+        BYTE           N07     En2
+        BYTE   W01
+        BYTE           PAN     c_v-52
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v-42
+        BYTE   W07
+        BYTE           N07     Cn3
+        BYTE   W01
+        BYTE           PAN     c_v-31
+        BYTE   W07
+        BYTE           N07     En3
+        BYTE   W01
+        BYTE           PAN     c_v-20
+        BYTE   W07
+        BYTE           N07     An3
+        BYTE   W01
+        BYTE           PAN     c_v-10
+        BYTE   W07
+        BYTE           N06     Cn4
+        BYTE   W01
+        BYTE           PAN     c_v+1
+        BYTE   W07
+        BYTE           N07     An3
+        BYTE   W01
+        BYTE           PAN     c_v+12
+        BYTE   W07
+        BYTE           N07     En3
+        BYTE   W01
+        BYTE           PAN     c_v+22
+        BYTE   W07
+        BYTE           N07     Cn3
+        BYTE   W01
+        BYTE           PAN     c_v+33
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v+44
+        BYTE   W07
+        BYTE           N07     En2
+        BYTE   W01
+        BYTE           PAN     c_v+54
+        BYTE   W07
+        BYTE   PEND
+// 003   ----------------------------------------
+Victory_B_3_3:
+        BYTE           PAN     c_v+63
+        BYTE           N07     An1   v060
+        BYTE   W01
+        BYTE           PAN     c_v+62
+        BYTE   W07
+        BYTE           N07     Cn2
+        BYTE   W01
+        BYTE           PAN     c_v+51
+        BYTE   W07
+        BYTE           N07     En2
+        BYTE   W01
+        BYTE           PAN     c_v+41
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v+30
+        BYTE   W07
+        BYTE           N07     Cn3
+        BYTE   W01
+        BYTE           PAN     c_v+19
+        BYTE   W07
+        BYTE           N07     En3
+        BYTE   W01
+        BYTE           PAN     c_v+9
+        BYTE   W07
+        BYTE           N07     An3
+        BYTE   W01
+        BYTE           PAN     c_v-2
+        BYTE   W07
+        BYTE           N07     En3
+        BYTE   W01
+        BYTE           PAN     c_v-13
+        BYTE   W07
+        BYTE           N07     Cn3
+        BYTE   W01
+        BYTE           PAN     c_v-23
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v-34
+        BYTE   W07
+        BYTE           N07     En2
+        BYTE   W01
+        BYTE           PAN     c_v-45
+        BYTE   W07
+        BYTE           N07     Cn2
+        BYTE   W01
+        BYTE           PAN     c_v-55
+        BYTE   W07
+        BYTE   PEND
+// 004   ----------------------------------------
+Victory_B_3_4:
+        BYTE           PAN     c_v-64
+        BYTE           N07     Bn1   v060
+        BYTE   W01
+        BYTE           PAN     c_v-63
+        BYTE   W07
+        BYTE           N07     Dn2
+        BYTE   W01
+        BYTE           PAN     c_v-52
+        BYTE   W07
+        BYTE           N07     Gn2
+        BYTE   W01
+        BYTE           PAN     c_v-42
+        BYTE   W07
+        BYTE           N07     Bn2
+        BYTE   W01
+        BYTE           PAN     c_v-31
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v-20
+        BYTE   W07
+        BYTE           N07     Gn3
+        BYTE   W01
+        BYTE           PAN     c_v-10
+        BYTE   W07
+        BYTE           N07     Bn3
+        BYTE   W01
+        BYTE           PAN     c_v+1
+        BYTE   W07
+        BYTE           N07     Gn3
+        BYTE   W01
+        BYTE           PAN     c_v+12
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v+22
+        BYTE   W07
+        BYTE           N07     Bn2
+        BYTE   W01
+        BYTE           PAN     c_v+33
+        BYTE   W07
+        BYTE           N07     Gn2
+        BYTE   W01
+        BYTE           PAN     c_v+44
+        BYTE   W07
+        BYTE           N07     Dn2
+        BYTE   W01
+        BYTE           PAN     c_v+54
+        BYTE   W07
+        BYTE   PEND
+// 005   ----------------------------------------
+Victory_B_3_5:
+        BYTE           PAN     c_v+63
+        BYTE           N07     Gn1   v060
+        BYTE   W01
+        BYTE           PAN     c_v+62
+        BYTE   W07
+        BYTE           N07     Bn1
+        BYTE   W01
+        BYTE           PAN     c_v+51
+        BYTE   W07
+        BYTE           N07     Dn2
+        BYTE   W01
+        BYTE           PAN     c_v+41
+        BYTE   W07
+        BYTE           N07     Gn2
+        BYTE   W01
+        BYTE           PAN     c_v+30
+        BYTE   W07
+        BYTE           N07     Bn2
+        BYTE   W01
+        BYTE           PAN     c_v+19
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v+9
+        BYTE   W07
+        BYTE           N07     Gn3
+        BYTE   W01
+        BYTE           PAN     c_v-2
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v-13
+        BYTE   W07
+        BYTE           N07     Bn2
+        BYTE   W01
+        BYTE           PAN     c_v-23
+        BYTE   W07
+        BYTE           N07     Gn2
+        BYTE   W01
+        BYTE           PAN     c_v-34
+        BYTE   W07
+        BYTE           N07     Dn2
+        BYTE   W01
+        BYTE           PAN     c_v-45
+        BYTE   W07
+        BYTE           N07     Bn1
+        BYTE   W01
+        BYTE           PAN     c_v-55
+        BYTE   W07
+        BYTE   PEND
+// 006   ----------------------------------------
+Victory_B_3_6:
+        BYTE           PAN     c_v-64
+        BYTE           N07     As1   v060
+        BYTE   W01
+        BYTE           PAN     c_v-63
+        BYTE   W07
+        BYTE           N07     Dn2
+        BYTE   W01
+        BYTE           PAN     c_v-52
+        BYTE   W07
+        BYTE           N07     Fn2
+        BYTE   W01
+        BYTE           PAN     c_v-42
+        BYTE   W07
+        BYTE           N07     As2
+        BYTE   W01
+        BYTE           PAN     c_v-31
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v-20
+        BYTE   W07
+        BYTE           N07     Fn3
+        BYTE   W01
+        BYTE           PAN     c_v-10
+        BYTE   W07
+        BYTE           N06     As3
+        BYTE   W01
+        BYTE           PAN     c_v+1
+        BYTE   W07
+        BYTE           N07     Fn3
+        BYTE   W01
+        BYTE           PAN     c_v+12
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v+22
+        BYTE   W07
+        BYTE           N07     As2
+        BYTE   W01
+        BYTE           PAN     c_v+33
+        BYTE   W07
+        BYTE           N07     Fn2
+        BYTE   W01
+        BYTE           PAN     c_v+44
+        BYTE   W07
+        BYTE           N07     Dn2
+        BYTE   W01
+        BYTE           PAN     c_v+54
+        BYTE   W07
+        BYTE   PEND
+// 007   ----------------------------------------
+Victory_B_3_7:
+        BYTE           PAN     c_v+63
+        BYTE           N07     An1   v060
+        BYTE   W01
+        BYTE           PAN     c_v+62
+        BYTE   W07
+        BYTE           N07     Cs2
+        BYTE   W01
+        BYTE           PAN     c_v+51
+        BYTE   W07
+        BYTE           N07     En2
+        BYTE   W01
+        BYTE           PAN     c_v+41
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v+30
+        BYTE   W07
+        BYTE           N07     Cs3
+        BYTE   W01
+        BYTE           PAN     c_v+19
+        BYTE   W07
+        BYTE           N07     En3
+        BYTE   W01
+        BYTE           PAN     c_v+9
+        BYTE   W07
+        BYTE           N07     An3
+        BYTE   W01
+        BYTE           PAN     c_v-2
+        BYTE   W07
+        BYTE           N07     En3
+        BYTE   W01
+        BYTE           PAN     c_v-13
+        BYTE   W07
+        BYTE           N07     Cs3
+        BYTE   W01
+        BYTE           PAN     c_v-23
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v-34
+        BYTE   W07
+        BYTE           N07     En2
+        BYTE   W01
+        BYTE           PAN     c_v-45
+        BYTE   W07
+        BYTE           N07     Cs2
+        BYTE   W01
+        BYTE           PAN     c_v-55
+        BYTE   W07
+        BYTE   PEND
+// 008   ----------------------------------------
+        BYTE           N07     Dn2
+        BYTE   W01
+        BYTE           PAN     c_v-63
+        BYTE   W07
+        BYTE           N07     Fn2
+        BYTE   W01
+        BYTE           PAN     c_v-52
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v-42
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v-31
+        BYTE   W07
+        BYTE           N07     Fn3
+        BYTE   W01
+        BYTE           PAN     c_v-20
+        BYTE   W07
+        BYTE           N07     An3
+        BYTE   W01
+        BYTE           PAN     c_v-10
+        BYTE   W07
+        BYTE           N07     Dn4
+        BYTE   W01
+        BYTE           PAN     c_v+1
+        BYTE   W07
+        BYTE           N07     An3
+        BYTE   W01
+        BYTE           PAN     c_v+12
+        BYTE   W07
+        BYTE           N07     Fn3
+        BYTE   W01
+        BYTE           PAN     c_v+22
+        BYTE   W07
+        BYTE           N07     Dn3
+        BYTE   W01
+        BYTE           PAN     c_v+33
+        BYTE   W07
+        BYTE           N07     An2
+        BYTE   W01
+        BYTE           PAN     c_v+44
+        BYTE   W07
+        BYTE           N07     Fn2
+        BYTE   W01
+        BYTE           PAN     c_v+54
+        BYTE   W07
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_3_1
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_3_2
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_3_3
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_3_4
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_3_5
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_3_6
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_3_7
+// 016   ----------------------------------------
+        BYTE           PAN     c_v-64
+        BYTE   GoTo
+         POIN2  Victory_B_3_LOOP
+        BYTE   FINE
+
+//****************** Track 4 (Midi-Chn.4) ******************//
+
+Victory_B_4:
+        BYTE   KEYSH   Victory_B_key+0
+// 000   ----------------------------------------
+Victory_B_4_LOOP:
+        BYTE           VOICE   60
+        BYTE           VOL     58
+        BYTE           PAN     c_v-20
+        BYTE           N07     An2   v068
+        BYTE           N07     Fn3
+        BYTE   W08
+        BYTE                   An2   v012
+        BYTE           N07     Fn3
+        BYTE   W16
+        BYTE           N19     An2   v076
+        BYTE           N19     Fn3
+        BYTE   W24
+        BYTE           N07     An2   v068
+        BYTE           N07     Fn3
+        BYTE   W08
+        BYTE                   An2   v012
+        BYTE           N07     Fn3
+        BYTE   W16
+        BYTE           N19     An2   v076
+        BYTE           N19     Fn3
+        BYTE   W24
+// 001   ----------------------------------------
+        BYTE           N07     An2   v068
+        BYTE           N07     Fn3
+        BYTE   W08
+        BYTE                   An2   v012
+        BYTE           N07     Fn3
+        BYTE   W16
+        BYTE           N19     An2   v076
+        BYTE           N19     Fn3
+        BYTE   W24
+        BYTE           N07     An2   v068
+        BYTE           N07     Fn3
+        BYTE   W08
+        BYTE                   An2   v012
+        BYTE           N07     Fn3
+        BYTE   W16
+        BYTE           N19     An2   v076
+        BYTE           N19     Fn3
+        BYTE   W24
+// 002   ----------------------------------------
+Victory_B_4_2:
+        BYTE           N07     An2   v068
+        BYTE           N07     En3
+        BYTE   W08
+        BYTE                   An2   v012
+        BYTE           N07     En3
+        BYTE   W16
+        BYTE           N19     An2   v076
+        BYTE           N19     En3
+        BYTE   W24
+        BYTE           N07     An2   v068
+        BYTE           N07     En3
+        BYTE   W08
+        BYTE                   An2   v012
+        BYTE           N07     En3
+        BYTE   W16
+        BYTE           N19     An2   v076
+        BYTE           N19     En3
+        BYTE   W24
+        BYTE   PEND
+// 003   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_4_2
+// 004   ----------------------------------------
+Victory_B_4_4:
+        BYTE           N07     Gn2   v068
+        BYTE           N07     Dn3
+        BYTE   W08
+        BYTE                   Gn2   v012
+        BYTE           N07     Dn3
+        BYTE   W16
+        BYTE           N19     Gn2   v076
+        BYTE           N19     Dn3
+        BYTE   W24
+        BYTE           N07     Gn2   v068
+        BYTE           N07     Dn3
+        BYTE   W08
+        BYTE                   Gn2   v012
+        BYTE           N07     Dn3
+        BYTE   W16
+        BYTE           N19     Gn2   v076
+        BYTE           N19     Dn3
+        BYTE   W24
+        BYTE   PEND
+// 005   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_4_4
+// 006   ----------------------------------------
+        BYTE           N07     As2   v068
+        BYTE           N07     Dn3
+        BYTE   W08
+        BYTE                   As2   v012
+        BYTE           N07     Dn3
+        BYTE   W16
+        BYTE           N19     As2   v076
+        BYTE           N19     Dn3
+        BYTE   W24
+        BYTE           N07     As2   v068
+        BYTE           N07     Dn3
+        BYTE   W08
+        BYTE                   As2   v012
+        BYTE           N07     Dn3
+        BYTE   W16
+        BYTE           N19     As2   v076
+        BYTE           N19     Dn3
+        BYTE   W24
+// 007   ----------------------------------------
+        BYTE           N07     Cs3   v068
+        BYTE           N07     En3
+        BYTE   W08
+        BYTE                   Cs3   v012
+        BYTE           N07     En3
+        BYTE   W16
+        BYTE           N19     Cs3   v076
+        BYTE           N19     En3
+        BYTE   W24
+        BYTE           N07     Cs3   v068
+        BYTE           N07     En3
+        BYTE   W08
+        BYTE                   Cs3   v012
+        BYTE           N07     En3
+        BYTE   W08
+        BYTE                   Cs3   v068
+        BYTE           N07     En3
+        BYTE   W08
+        BYTE                   Cs3
+        BYTE           N07     En3
+        BYTE   W08
+        BYTE                   Cs3   v012
+        BYTE           N07     En3
+        BYTE   W08
+        BYTE                   Cs3   v068
+        BYTE           N07     En3
+        BYTE   W08
+// 008   ----------------------------------------
+Victory_B_4_8:
+        BYTE           N07     An2   v068
+        BYTE   W08
+        BYTE           N16     An2   v012
+        BYTE   W16
+        BYTE           N19     An2   v076
+        BYTE   W24
+        BYTE           N07     An2   v068
+        BYTE   W08
+        BYTE           N16     An2   v012
+        BYTE   W16
+        BYTE           N19     An2   v076
+        BYTE   W24
+        BYTE   PEND
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_4_8
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_4_8
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_4_8
+// 012   ----------------------------------------
+Victory_B_4_12:
+        BYTE           N07     Gn2   v068
+        BYTE   W08
+        BYTE           N16     Gn2   v012
+        BYTE   W16
+        BYTE           N19     Gn2   v076
+        BYTE   W24
+        BYTE           N07     Gn2   v068
+        BYTE   W08
+        BYTE           N16     Gn2   v012
+        BYTE   W16
+        BYTE           N19     Gn2   v076
+        BYTE   W24
+        BYTE   PEND
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_4_12
+// 014   ----------------------------------------
+        BYTE           N07     As2   v068
+        BYTE   W08
+        BYTE           N16     As2   v012
+        BYTE   W16
+        BYTE           N19     As2   v076
+        BYTE   W24
+        BYTE           N07     As2   v068
+        BYTE   W08
+        BYTE           N16     As2   v012
+        BYTE   W16
+        BYTE           N19     As2   v076
+        BYTE   W24
+// 015   ----------------------------------------
+        BYTE           N07     Cs3   v068
+        BYTE   W08
+        BYTE           N16     Cs3   v012
+        BYTE   W16
+        BYTE           N19     Cs3   v076
+        BYTE   W24
+        BYTE           N07     Cs3   v068
+        BYTE   W08
+        BYTE           N08     Cs3   v012
+        BYTE   W08
+        BYTE                   Cs3   v068
+        BYTE   W08
+        BYTE           N07
+        BYTE   W08
+        BYTE           N08     Cs3   v012
+        BYTE   W08
+        BYTE                   Cs3   v068
+        BYTE   W08
+// 016   ----------------------------------------
+        BYTE   GoTo
+         POIN2  Victory_B_4_LOOP
+        BYTE   FINE
+
+//****************** Track 5 (Midi-Chn.5) ******************//
+
+Victory_B_5:
+        BYTE   KEYSH   Victory_B_key+0
+// 000   ----------------------------------------
+Victory_B_5_LOOP:
+        BYTE           VOICE   127
+        BYTE           VOL     46
+        BYTE           N07     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE           N16     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE           N16     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE           N16     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+// 001   ----------------------------------------
+Victory_B_5_1:
+        BYTE           N07     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE           N16     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE           N16     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE           N16     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE   PEND
+// 002   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 003   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 004   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 005   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 006   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 007   ----------------------------------------
+Victory_B_5_7:
+        BYTE           N07     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE           N16     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE                   Dn1   v092
+        BYTE   W08
+        BYTE                   Dn1   v076
+        BYTE   W08
+        BYTE           N07
+        BYTE   W08
+        BYTE           N08     Dn1   v092
+        BYTE   W08
+        BYTE                   Dn1   v076
+        BYTE   W08
+        BYTE           N07
+        BYTE   W08
+        BYTE   PEND
+// 008   ----------------------------------------
+        BYTE                   Dn1   v092
+        BYTE   W06
+        BYTE           PAN     c_v-30
+        BYTE   W10
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE           N16     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE           N16     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+        BYTE           N16     Dn1   v092
+        BYTE   W16
+        BYTE           N08     Dn1   v076
+        BYTE   W08
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_1
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_5_7
+// 016   ----------------------------------------
+        BYTE           PAN     c_v+0
+        BYTE   GoTo
+         POIN2  Victory_B_5_LOOP
+        BYTE   FINE
+
+//****************** Track 6 (Midi-Chn.6) ******************//
+
+Victory_B_6:
+        BYTE   KEYSH   Victory_B_key+0
+// 000   ----------------------------------------
+Victory_B_6_LOOP:
+        BYTE           VOICE   68
+        BYTE           VOL     49
+        BYTE           PAN     c_v+17
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W96
+// 002   ----------------------------------------
+        BYTE   W96
+// 003   ----------------------------------------
+        BYTE   W96
+// 004   ----------------------------------------
+        BYTE   W96
+// 005   ----------------------------------------
+        BYTE   W96
+// 006   ----------------------------------------
+        BYTE   W96
+// 007   ----------------------------------------
+        BYTE   W96
+// 008   ----------------------------------------
+        BYTE   W06
+        BYTE                   c_v-30
+        BYTE   W18
+        BYTE           N23     Fn4   v076
+        BYTE   W24
+        BYTE           N07     Fn4   v032
+        BYTE   W24
+        BYTE           N23     En4   v076
+        BYTE   W24
+// 009   ----------------------------------------
+Victory_B_6_9:
+        BYTE           N07     En4   v032
+        BYTE   W24
+        BYTE           N23     Dn4   v076
+        BYTE   W24
+        BYTE           N07     Dn4   v032
+        BYTE   W24
+        BYTE           N23     Cn4   v076
+        BYTE   W24
+        BYTE   PEND
+// 010   ----------------------------------------
+Victory_B_6_10:
+        BYTE           N07     Cn4   v032
+        BYTE   W24
+        BYTE           N23     Fn4   v076
+        BYTE   W24
+        BYTE           N07     Fn4   v032
+        BYTE   W24
+        BYTE           N23     En4   v076
+        BYTE   W24
+        BYTE   PEND
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_6_9
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_6_10
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_6_9
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  Victory_B_6_10
+// 015   ----------------------------------------
+        BYTE           N07     En4   v032
+        BYTE   W24
+        BYTE           N23     Dn4   v076
+        BYTE   W24
+        BYTE           N07     Dn4   v032
+        BYTE   W24
+        BYTE           N23     Cs4   v076
+        BYTE   W24
+// 016   ----------------------------------------
+        BYTE           PAN     c_v+17
+        BYTE   GoTo
+         POIN2  Victory_B_6_LOOP
+        BYTE   FINE
+
+
+//********************** End of Song ***********************//
+
+        ALIGN 4
+Victory_B:
+        BYTE   7                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   Victory_B_pri           // Priority
+        BYTE   Victory_B_rev           // Reverb
+
+        POIN2   Victory_B_grp          
+
+        POIN2   Victory_B_0
+        POIN2   Victory_B_1
+        POIN2   Victory_B_2
+        POIN2   Victory_B_3
+        POIN2   Victory_B_4
+        POIN2   Victory_B_5
+        POIN2   Victory_B_6
+
+        

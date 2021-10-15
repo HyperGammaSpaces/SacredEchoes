@@ -273,7 +273,7 @@ RecruitmentTheme_2:
 RecruitmentTheme_2_LOOP:
         .byte           VOICE , 60
         .byte           PAN   , c_v+17
-        .byte           VOL   , 40
+        .byte           VOL   , 39
         .byte           N10   , An3 , v064
         .byte   W12
         .byte                   Cn4
@@ -846,7 +846,7 @@ RecruitmentTheme_5:
 @ 000   ----------------------------------------
 RecruitmentTheme_5_LOOP:
         .byte           VOICE , 124
-        .byte           VOL   , 44
+        .byte           VOL   , 43
         .byte           N03   , Cn1 , v107
         .byte           N03   , As1
         .byte   W72

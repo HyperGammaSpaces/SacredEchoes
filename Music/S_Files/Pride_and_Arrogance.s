@@ -17,7 +17,7 @@ Pride_and_Arrogance_0:
         .byte   TEMPO , 128/2
 Pride_and_Arrogance_0_LOOP:
         .byte           VOICE , 6
-        .byte           VOL   , 44
+        .byte           VOL   , 43
         .byte           PAN   , c_v-26
         .byte           N12   , Fs1 , v126
         .byte           N12   , Fs2
@@ -477,7 +477,7 @@ Pride_and_Arrogance_1:
 @ 000   ----------------------------------------
 Pride_and_Arrogance_1_LOOP:
         .byte           VOICE , 85
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte           PAN   , c_v-50
         .byte           N12   , Fs4 , v100
         .byte   W12
@@ -1624,7 +1624,7 @@ Pride_and_Arrogance_3:
 @ 000   ----------------------------------------
 Pride_and_Arrogance_3_LOOP:
         .byte           VOICE , 19
-        .byte           VOL   , 42
+        .byte           VOL   , 41
         .byte           PAN   , c_v+55
         .byte           N12   , Fs4 , v100
         .byte   W12
@@ -1746,7 +1746,7 @@ Pride_and_Arrogance_4:
 Pride_and_Arrogance_4_LOOP:
         .byte           VOICE , 47
         .byte           N24   , Cs3 , v105
-        .byte           VOL   , 84
+        .byte           VOL   , 83
         .byte   W48
         .byte           N24   , As2
         .byte   W24

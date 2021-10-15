@@ -24,7 +24,7 @@ Sadness_Theme_0:
 @ 003   ----------------------------------------
         .byte   W12
         .byte           PAN   , c_v+14
-        .byte           VOL   , 69
+        .byte           VOL   , 68
         .byte   W06
         .byte           N02   , Fn1 , v038
         .byte   W06
@@ -123,7 +123,7 @@ Sadness_Theme_0:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           VOL   , 71
+        .byte           VOL   , 70
         .byte           PAN   , c_v-42
         .byte   W01
         .byte                   c_v-40
@@ -200,7 +200,7 @@ Sadness_Theme_0_LOOP:
         .byte           PAN   , c_v+25
         .byte   W01
         .byte                   c_v-14
-        .byte           VOL   , 69
+        .byte           VOL   , 68
         .byte           N03   , Fn1 , v126
         .byte   W06
         .byte           N01   , Fn1 , v089
@@ -393,7 +393,7 @@ Sadness_Theme_0_LOOP:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           VOL   , 71
+        .byte           VOL   , 70
         .byte           N05   , Cn1 , v114
         .byte           PAN   , c_v-41
         .byte   W01
@@ -477,7 +477,7 @@ Sadness_Theme_1:
 @ 000   ----------------------------------------
         .byte           VOICE , 110
         .byte           PAN   , c_v-25
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte           N36   , Fs2 , v102 , gtp2
         .byte   W96
 @ 001   ----------------------------------------
@@ -586,7 +586,7 @@ Sadness_Theme_1:
         .byte                   Cn1
         .byte   W06
         .byte           N36   , Cn2 , v114
-        .byte           VOL   , 47
+        .byte           VOL   , 46
         .byte           PAN   , c_v-42
         .byte   W01
         .byte                   c_v-40
@@ -664,7 +664,7 @@ Sadness_Theme_1_LOOP:
         .byte           PAN   , c_v+25
         .byte   W01
         .byte                   c_v+0
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte           N68   , Cn3 , v102 , gtp1
         .byte   W44
         .byte   W03
@@ -700,7 +700,7 @@ Sadness_Theme_1_LOOP:
         .byte   W23
 @ 012   ----------------------------------------
         .byte   W48
-        .byte           VOL   , 47
+        .byte           VOL   , 46
         .byte           PAN   , c_v+25
         .byte   GOTO
          .word  Sadness_Theme_1_LOOP
@@ -896,7 +896,7 @@ Sadness_Theme_4:
 @ 000   ----------------------------------------
         .byte           VOICE , 105
         .byte           PAN   , c_v+25
-        .byte           VOL   , 48
+        .byte           VOL   , 47
         .byte           N36   , Ds4 , v114 , gtp2
         .byte   W48
         .byte           PAN   , c_v+14
@@ -1120,7 +1120,7 @@ Sadness_Theme_4_LOOP:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           VOL   , 49
+        .byte           VOL   , 48
         .byte           PAN   , c_v-41
         .byte   W01
         .byte                   c_v-39
@@ -1194,7 +1194,7 @@ Sadness_Theme_4_LOOP:
         .byte   W01
         .byte                   c_v+23
         .byte   W01
-        .byte           VOL   , 48
+        .byte           VOL   , 47
         .byte           PAN   , c_v+14
         .byte   GOTO
          .word  Sadness_Theme_4_LOOP
@@ -1207,10 +1207,10 @@ Sadness_Theme_5:
 @ 000   ----------------------------------------
         .byte           VOICE , 91
         .byte           PAN   , c_v+25
-        .byte           VOL   , 48
+        .byte           VOL   , 47
         .byte   W48
         .byte           PAN   , c_v+43
-        .byte           VOL   , 49
+        .byte           VOL   , 48
         .byte   W02
         .byte           N32   , Cn3 , v089 , gtp3
         .byte   W36
@@ -1314,10 +1314,10 @@ Sadness_Theme_6:
 @ 000   ----------------------------------------
         .byte           VOICE , 11
         .byte           PAN   , c_v-25
-        .byte           VOL   , 69
+        .byte           VOL   , 68
         .byte   W48
         .byte           PAN   , c_v+34
-        .byte           VOL   , 57
+        .byte           VOL   , 56
         .byte           N32   , Cn4 , v089 , gtp3
         .byte   W36
         .byte           N23   , As4

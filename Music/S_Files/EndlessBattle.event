@@ -17,7 +17,7 @@ EndlessBattle_0:
 // 000   ----------------------------------------
         BYTE   TEMPO   122/2
         BYTE           VOICE   2
-        BYTE           VOL     65
+        BYTE           VOL     58
         BYTE           N30     Gn0   v126   gtp1
         BYTE   W36
         BYTE                   Gn0
@@ -436,7 +436,7 @@ EndlessBattle_1:
         BYTE   KEYSH   EndlessBattle_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   51
-        BYTE           VOL     58
+        BYTE           VOL     51
         BYTE           PAN     c_v-26
         BYTE           N11     Gn2   v066
         BYTE           N11     Dn2
@@ -662,50 +662,49 @@ EndlessBattle_1_12:
         BYTE           N23     Gn1   v071
         BYTE           N23     As2
         BYTE   W05
-        BYTE           VOL     43
-        BYTE   W04
-        BYTE                   44
+        BYTE           VOL     38
         BYTE   W07
-        BYTE                   45
-        BYTE   W08
-        BYTE                   46
+        BYTE                   39
+        BYTE   W12
+        BYTE                   40
         BYTE           N23     Gs1
         BYTE           N23     Cn3
-        BYTE   W12
-        BYTE           VOL     47
-        BYTE   W07
-        BYTE                   48
-        BYTE   W05
+        BYTE   W08
+        BYTE           VOL     41
+        BYTE   W08
+        BYTE                   42
+        BYTE   W08
         BYTE           N23     Cn2
         BYTE           N23     Ds3
         BYTE   W03
-        BYTE           VOL     49
+        BYTE           VOL     43
         BYTE   W08
-        BYTE                   50
-        BYTE   W08
-        BYTE                   51
-        BYTE   W05
+        BYTE                   44
+        BYTE   W11
+        BYTE                   45
+        BYTE   W02
         BYTE           N23     Ds2
         BYTE           N23     Gn3
-        BYTE   W02
-        BYTE           VOL     52
+        BYTE   W06
+        BYTE           VOL     46
         BYTE   W12
-        BYTE                   53
-        BYTE   W08
-        BYTE                   54
+        BYTE                   47
+        BYTE   W04
+        BYTE                   48
         BYTE   W02
 // 019   ----------------------------------------
         BYTE           N23     Fn2
         BYTE           N44     As3   v071   gtp3
-        BYTE   W10
-        BYTE           VOL     53
+        BYTE   W04
+        BYTE           VOL     47
         BYTE   W13
-        BYTE                   52
-        BYTE   W01
+        BYTE                   46
+        BYTE   W07
         BYTE           N23     Gn2
-        BYTE   W18
-        BYTE           VOL     51
-        BYTE   W06
+        BYTE   W11
+        BYTE           VOL     45
+        BYTE   W13
+        BYTE                   44
         BYTE           N23     As1
         BYTE           N44     Fn3   v071   gtp3
         BYTE   W24
@@ -718,83 +717,79 @@ EndlessBattle_1_12:
         BYTE           N80     Gn1
         BYTE   W24
         BYTE           N56     As2
-        BYTE   W08
-        BYTE           VOL     50
-        BYTE   W03
-        BYTE                   49
-        BYTE   W03
-        BYTE                   48
-        BYTE   W03
-        BYTE                   47
-        BYTE   W03
-        BYTE                   46
-        BYTE   W06
-        BYTE                   45
-        BYTE   W03
-        BYTE                   44
-        BYTE   W03
-        BYTE                   43
+        BYTE   W11
+        BYTE           VOL     43
         BYTE   W03
         BYTE                   42
-        BYTE   W03
+        BYTE   W06
         BYTE                   41
-        BYTE   W01
+        BYTE   W03
         BYTE                   40
-        BYTE   W02
+        BYTE   W03
+        BYTE                   39
+        BYTE   W03
         BYTE                   38
-        BYTE   W01
+        BYTE   W03
+        BYTE                   37
+        BYTE   W06
         BYTE                   36
-        BYTE   W02
-        BYTE                   34
         BYTE   W01
-        BYTE                   32
+        BYTE                   35
+        BYTE   W02
+        BYTE                   33
+        BYTE   W01
+        BYTE                   31
         BYTE   W02
         BYTE                   30
         BYTE   W01
-// 021   ----------------------------------------
-        BYTE                   29
+        BYTE                   28
         BYTE   W02
         BYTE                   27
         BYTE   W01
+// 021   ----------------------------------------
         BYTE                   25
         BYTE   W02
         BYTE                   23
         BYTE   W01
-        BYTE                   21
+        BYTE                   22
         BYTE   W02
+        BYTE                   20
+        BYTE   W01
         BYTE                   19
+        BYTE   W02
+        BYTE                   17
+        BYTE   W01
+        BYTE                   15
         BYTE   W01
         BYTE                   17
         BYTE   W01
-        BYTE                   19
+        BYTE                   20
+        BYTE   W01
+        BYTE                   21
         BYTE   W01
         BYTE                   23
         BYTE   W01
-        BYTE                   24
-        BYTE   W01
         BYTE                   26
+        BYTE   W01
+        BYTE                   27
         BYTE   W01
         BYTE                   29
         BYTE   W01
-        BYTE                   31
+        BYTE                   32
         BYTE   W01
         BYTE                   33
         BYTE   W01
-        BYTE                   36
+        BYTE                   35
         BYTE   W01
         BYTE                   38
         BYTE   W01
-        BYTE                   40
+        BYTE                   39
         BYTE   W01
-        BYTE                   43
+        BYTE                   41
         BYTE   W01
-        BYTE                   45
+        BYTE                   44
         BYTE   W01
-        BYTE                   47
-        BYTE   W01
-        BYTE                   51
-        BYTE   W01
-        BYTE                   53
+        BYTE                   46
         BYTE           N23     Fn1
         BYTE           N23     An2
         BYTE   W24
@@ -871,111 +866,99 @@ EndlessBattle_1_12:
         BYTE   W96
 // 034   ----------------------------------------
         BYTE           N36     Ds3   v066
-        BYTE   W05
-        BYTE           VOL     52
+        BYTE   W08
+        BYTE           VOL     45
         BYTE   W06
-        BYTE                   51
+        BYTE                   44
         BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   49
+        BYTE                   43
         BYTE   W14
-        BYTE                   50
+        BYTE                   44
         BYTE   W05
         BYTE           N32     Gn3   v066   gtp3
-        BYTE   W02
-        BYTE           VOL     51
+        BYTE   W06
+        BYTE           VOL     45
         BYTE   W08
-        BYTE                   52
-        BYTE   W12
-        BYTE                   53
-        BYTE   W14
+        BYTE                   46
+        BYTE   W08
+        BYTE                   47
+        BYTE   W08
+        BYTE                   46
+        BYTE   W06
         BYTE           N44     Ds3   v066   gtp3
-        BYTE   W03
-        BYTE           VOL     52
-        BYTE   W21
+        BYTE   W20
+        BYTE           VOL     45
+        BYTE   W04
 // 035   ----------------------------------------
-        BYTE   W05
-        BYTE                   51
-        BYTE   W17
-        BYTE                   50
-        BYTE   W02
+        BYTE   W13
+        BYTE                   44
+        BYTE   W11
         BYTE           N23     Cn3
         BYTE   W15
-        BYTE           VOL     49
+        BYTE           VOL     43
         BYTE   W09
         BYTE           N23     As2
         BYTE   W08
-        BYTE           VOL     48
+        BYTE           VOL     42
         BYTE   W16
         BYTE           N23     Gs2
-        BYTE   W02
-        BYTE           VOL     47
-        BYTE   W17
-        BYTE                   46
-        BYTE   W05
+        BYTE   W10
+        BYTE           VOL     41
+        BYTE   W14
 // 036   ----------------------------------------
         BYTE           N32     As2   v066   gtp3
+        BYTE   W04
+        BYTE           VOL     40
+        BYTE   W03
+        BYTE                   41
+        BYTE   W07
+        BYTE                   42
         BYTE   W10
-        BYTE           VOL     47
+        BYTE                   43
         BYTE   W07
-        BYTE                   48
-        BYTE   W07
-        BYTE                   49
-        BYTE   W07
-        BYTE                   50
+        BYTE                   44
         BYTE   W05
         BYTE           N32     Ds3   v066   gtp3
-        BYTE   W01
-        BYTE           VOL     51
-        BYTE   W07
-        BYTE                   52
-        BYTE   W10
-        BYTE                   53
-        BYTE   W18
+        BYTE   W05
+        BYTE           VOL     45
+        BYTE   W06
+        BYTE                   46
+        BYTE   W11
+        BYTE                   47
+        BYTE   W14
         BYTE           N32     Fn3   v066   gtp3
         BYTE   W24
 // 037   ----------------------------------------
-        BYTE   W10
-        BYTE           VOL     52
-        BYTE   W02
+        BYTE   W07
+        BYTE           VOL     46
+        BYTE   W05
         BYTE           N80     Ds3   v066   gtp3
-        BYTE   W08
-        BYTE           VOL     51
+        BYTE   W05
+        BYTE           VOL     45
         BYTE   W06
-        BYTE                   50
-        BYTE   W06
-        BYTE                   49
-        BYTE   W06
-        BYTE                   48
-        BYTE   W06
-        BYTE                   47
-        BYTE   W06
-        BYTE                   46
-        BYTE   W06
-        BYTE                   45
-        BYTE   W02
         BYTE                   44
-        BYTE   W01
+        BYTE   W09
         BYTE                   43
-        BYTE   W02
+        BYTE   W06
         BYTE                   42
-        BYTE   W01
+        BYTE   W09
         BYTE                   41
-        BYTE   W02
+        BYTE   W06
         BYTE                   40
         BYTE   W03
+        BYTE                   39
+        BYTE   W03
         BYTE                   38
-        BYTE   W01
-        BYTE                   37
         BYTE   W02
-        BYTE                   36
+        BYTE                   37
         BYTE   W01
+        BYTE                   36
+        BYTE   W02
         BYTE                   35
         BYTE   W03
-        BYTE                   34
-        BYTE   W02
         BYTE                   33
+        BYTE   W03
+        BYTE                   32
         BYTE   W01
         BYTE                   31
         BYTE   W02
@@ -983,21 +966,25 @@ EndlessBattle_1_12:
         BYTE   W01
         BYTE                   29
         BYTE   W03
-        BYTE                   28
-        BYTE   W02
         BYTE                   27
-        BYTE   W01
+        BYTE   W03
         BYTE                   26
         BYTE   W02
-        BYTE                   24
+        BYTE                   25
         BYTE   W01
+        BYTE                   24
+        BYTE   W02
         BYTE                   23
         BYTE   W03
-        BYTE                   22
-        BYTE   W02
         BYTE                   21
-        BYTE   W01
+        BYTE   W03
         BYTE                   20
+        BYTE   W01
+        BYTE                   19
+        BYTE   W02
+        BYTE                   18
+        BYTE   W01
+        BYTE                   17
         BYTE   W01
 // 038   ----------------------------------------
         BYTE           N11     Gn2
@@ -1020,7 +1007,7 @@ EndlessBattle_1_12:
         BYTE           N11     Gn2
         BYTE   W24
 // 040   ----------------------------------------
-        BYTE           VOL     58
+        BYTE           VOL     51
         BYTE   GoTo
          POIN2  EndlessBattle_1_LOOP
         BYTE   FINE
@@ -1031,7 +1018,7 @@ EndlessBattle_2:
         BYTE   KEYSH   EndlessBattle_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   51
-        BYTE           VOL     56
+        BYTE           VOL     48
         BYTE           PAN     c_v+15
         BYTE           N11     Cn3   v066
         BYTE   W12
@@ -1425,119 +1412,117 @@ EndlessBattle_3:
 // 000   ----------------------------------------
         BYTE           VOICE   76
         BYTE           PAN     c_v+37
-        BYTE           VOL     36
+        BYTE           VOL     32
         BYTE   W96
 // 001   ----------------------------------------
         BYTE   W92
         BYTE   W01
-        BYTE                   53
+        BYTE                   47
         BYTE   W03
 // 002   ----------------------------------------
 EndlessBattle_3_LOOP:
         BYTE           N36     Ds4   v107
         BYTE   W02
-        BYTE           VOL     52
+        BYTE           VOL     46
         BYTE   W01
-        BYTE                   50
+        BYTE                   44
         BYTE   W01
-        BYTE                   47
-        BYTE   W01
-        BYTE                   43
-        BYTE   W01
-        BYTE                   41
+        BYTE                   42
         BYTE   W01
         BYTE                   38
-        BYTE   W11
-        BYTE                   40
+        BYTE   W01
+        BYTE                   36
+        BYTE   W01
+        BYTE                   33
+        BYTE   W10
+        BYTE                   34
+        BYTE   W01
+        BYTE                   35
         BYTE   W02
-        BYTE                   42
-        BYTE   W01
-        BYTE                   45
-        BYTE   W02
-        BYTE                   47
-        BYTE   W01
-        BYTE                   49
-        BYTE   W02
-        BYTE                   51
-        BYTE   W01
-        BYTE                   54
-        BYTE   W02
-        BYTE                   56
-        BYTE   W01
-        BYTE                   58
-        BYTE   W01
-        BYTE                   55
-        BYTE   W02
-        BYTE                   53
-        BYTE   W01
-        BYTE                   51
-        BYTE   W01
-        BYTE                   49
-        BYTE   W01
-        BYTE           N06     Fn4
-        BYTE   W01
-        BYTE           VOL     50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W01
-        BYTE                   52
-        BYTE   W01
-        BYTE           N06     Gn4
-        BYTE   W01
-        BYTE           VOL     53
-        BYTE   W01
-        BYTE                   54
-        BYTE   W02
-        BYTE                   55
-        BYTE   W01
-        BYTE                   56
-        BYTE   W01
-        BYTE           N56     Cn5   v107   gtp3
-        BYTE   W01
-        BYTE           VOL     57
-        BYTE   W02
-        BYTE                   55
-        BYTE   W01
-        BYTE                   52
-        BYTE   W02
-        BYTE                   50
-        BYTE   W01
-        BYTE                   47
-        BYTE   W02
-        BYTE                   44
-        BYTE   W01
-        BYTE                   41
+        BYTE                   37
         BYTE   W01
         BYTE                   39
-        BYTE   W08
-        BYTE                   40
-        BYTE   W13
-        BYTE                   41
-        BYTE   W01
-        BYTE                   42
         BYTE   W02
-        BYTE                   44
+        BYTE                   42
         BYTE   W01
-        BYTE                   45
+        BYTE                   44
         BYTE   W02
         BYTE                   46
         BYTE   W01
-        BYTE                   47
-        BYTE   W02
         BYTE                   48
+        BYTE   W02
+        BYTE                   50
+        BYTE   W01
+        BYTE                   51
+        BYTE   W01
+        BYTE                   49
+        BYTE   W02
+        BYTE                   47
+        BYTE   W01
+        BYTE                   45
+        BYTE   W01
+        BYTE                   44
+        BYTE   W01
+        BYTE           N06     Fn4
+        BYTE   W02
+        BYTE           VOL     45
+        BYTE   W02
+        BYTE                   46
+        BYTE   W02
+        BYTE           N06     Gn4
+        BYTE   W01
+        BYTE           VOL     47
+        BYTE   W01
+        BYTE                   48
+        BYTE   W02
+        BYTE                   49
         BYTE   W01
         BYTE                   50
-        BYTE   W03
-        BYTE                   52
+        BYTE   W01
+        BYTE           N56     Cn5   v107   gtp3
+        BYTE   W01
+        BYTE           VOL     51
         BYTE   W02
-        BYTE                   53
+        BYTE                   49
+        BYTE   W01
+        BYTE                   46
+        BYTE   W02
+        BYTE                   44
+        BYTE   W01
+        BYTE                   42
+        BYTE   W02
+        BYTE                   39
+        BYTE   W01
+        BYTE                   37
+        BYTE   W01
+        BYTE                   35
+        BYTE   W17
+        BYTE                   36
+        BYTE   W04
+        BYTE                   37
+        BYTE   W03
+        BYTE                   39
+        BYTE   W03
+        BYTE                   41
+        BYTE   W01
+        BYTE                   42
+        BYTE   W02
+        BYTE                   43
+        BYTE   W01
+        BYTE                   44
+        BYTE   W02
+        BYTE                   45
+        BYTE   W01
+        BYTE                   46
+        BYTE   W02
+        BYTE                   47
         BYTE   W01
 // 003   ----------------------------------------
-        BYTE                   54
+        BYTE                   48
         BYTE   W02
-        BYTE                   55
+        BYTE                   49
         BYTE   W01
-        BYTE                   57
+        BYTE                   50
         BYTE   W15
         BYTE           N03     Cn5   v082
         BYTE   W03
@@ -1545,160 +1530,139 @@ EndlessBattle_3_LOOP:
         BYTE   W03
         BYTE           N24     Dn5   v101
         BYTE   W02
-        BYTE           VOL     55
-        BYTE   W01
-        BYTE                   54
-        BYTE   W01
-        BYTE                   53
-        BYTE   W01
-        BYTE                   50
-        BYTE   W01
-        BYTE                   49
-        BYTE   W01
-        BYTE                   47
-        BYTE   W01
-        BYTE                   45
-        BYTE   W01
-        BYTE                   43
-        BYTE   W02
-        BYTE                   44
-        BYTE   W01
-        BYTE                   45
-        BYTE   W02
-        BYTE                   47
-        BYTE   W01
-        BYTE                   49
-        BYTE   W02
-        BYTE                   50
-        BYTE   W01
-        BYTE                   51
-        BYTE   W02
-        BYTE                   53
-        BYTE   W01
-        BYTE                   55
-        BYTE   W02
-        BYTE                   56
-        BYTE   W01
-        BYTE                   58
-        BYTE           N24     As4   v107
-        BYTE   W08
-        BYTE           VOL     57
-        BYTE   W09
-        BYTE                   56
-        BYTE   W07
-        BYTE           N24     Fn4
-        BYTE   W01
-        BYTE           VOL     55
-        BYTE   W07
-        BYTE                   54
-        BYTE   W03
-        BYTE                   52
-        BYTE   W03
-        BYTE                   51
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   49
-        BYTE   W03
-        BYTE                   47
-        BYTE   W01
-// 004   ----------------------------------------
-        BYTE           N18     Gn4
-        BYTE   W12
-        BYTE           VOL     48
-        BYTE   W06
-        BYTE           N06     Fn4
-        BYTE   W06
-        BYTE           N96     Gn4
-        BYTE   W01
         BYTE           VOL     49
         BYTE   W01
-        BYTE                   45
+        BYTE                   48
+        BYTE   W01
+        BYTE                   47
         BYTE   W01
         BYTE                   44
+        BYTE   W01
+        BYTE                   43
         BYTE   W01
         BYTE                   42
         BYTE   W01
-        BYTE                   38
+        BYTE                   39
         BYTE   W01
-        BYTE                   36
-        BYTE   W06
-        BYTE                   37
-        BYTE   W03
         BYTE                   38
-        BYTE   W03
+        BYTE   W02
         BYTE                   39
         BYTE   W01
         BYTE                   40
-        BYTE   W01
-        BYTE                   41
         BYTE   W02
-        BYTE                   43
+        BYTE                   42
         BYTE   W01
-        BYTE                   45
+        BYTE                   43
+        BYTE   W02
+        BYTE                   44
+        BYTE   W01
+        BYTE                   46
         BYTE   W02
         BYTE                   47
         BYTE   W01
-        BYTE                   49
-        BYTE   W02
-        BYTE                   50
-        BYTE   W01
-        BYTE                   52
-        BYTE   W02
-        BYTE                   55
-        BYTE   W01
-        BYTE                   57
-        BYTE   W03
-        BYTE                   56
-        BYTE   W03
-        BYTE                   55
-        BYTE   W03
-        BYTE                   54
-        BYTE   W03
-        BYTE                   52
-        BYTE   W03
-        BYTE                   51
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   49
-        BYTE   W03
         BYTE                   48
-        BYTE   W03
+        BYTE   W02
+        BYTE                   50
+        BYTE   W01
+        BYTE                   51
+        BYTE           N24     As4   v107
+        BYTE   W13
+        BYTE           VOL     50
+        BYTE   W11
+        BYTE           N24     Fn4
+        BYTE   W01
+        BYTE           VOL     49
+        BYTE   W04
+        BYTE                   48
+        BYTE   W06
         BYTE                   46
         BYTE   W03
         BYTE                   45
         BYTE   W03
         BYTE                   44
-        BYTE   W01
+        BYTE   W03
         BYTE                   43
+        BYTE   W03
+        BYTE                   42
+        BYTE   W01
+// 004   ----------------------------------------
+        BYTE           N18     Gn4
+        BYTE   W18
+        BYTE           N06     Fn4
+        BYTE   W01
+        BYTE           VOL     43
+        BYTE   W05
+        BYTE           N96     Gn4
+        BYTE   W02
+        BYTE           VOL     40
+        BYTE   W01
+        BYTE                   39
+        BYTE   W01
+        BYTE                   37
+        BYTE   W01
+        BYTE                   34
+        BYTE   W01
+        BYTE                   32
+        BYTE   W06
+        BYTE                   33
+        BYTE   W03
+        BYTE                   34
+        BYTE   W03
+        BYTE                   35
+        BYTE   W02
+        BYTE                   37
+        BYTE   W02
+        BYTE                   38
+        BYTE   W01
+        BYTE                   40
         BYTE   W02
         BYTE                   42
         BYTE   W01
-        BYTE                   41
+        BYTE                   43
         BYTE   W02
+        BYTE                   45
+        BYTE   W01
+        BYTE                   46
+        BYTE   W02
+        BYTE                   48
+        BYTE   W01
+        BYTE                   50
+        BYTE   W06
+        BYTE                   48
+        BYTE   W06
+        BYTE                   46
+        BYTE   W03
+        BYTE                   45
+        BYTE   W03
+        BYTE                   44
+        BYTE   W03
+        BYTE                   43
+        BYTE   W03
+        BYTE                   42
+        BYTE   W03
+        BYTE                   41
+        BYTE   W03
         BYTE                   40
         BYTE   W01
-// 005   ----------------------------------------
-        BYTE   W02
         BYTE                   39
-        BYTE   W01
+        BYTE   W03
         BYTE                   38
         BYTE   W02
         BYTE                   37
-        BYTE   W01
-        BYTE                   36
-        BYTE   W02
-        BYTE                   35
         BYTE   W03
+        BYTE                   36
+        BYTE   W01
+// 005   ----------------------------------------
+        BYTE                   35
+        BYTE   W02
         BYTE                   34
-        BYTE   W01
+        BYTE   W03
         BYTE                   33
-        BYTE   W02
-        BYTE                   32
         BYTE   W01
-        BYTE                   31
+        BYTE                   32
         BYTE   W02
+        BYTE                   31
+        BYTE   W03
         BYTE                   30
         BYTE   W01
         BYTE                   29
@@ -1706,20 +1670,30 @@ EndlessBattle_3_LOOP:
         BYTE                   28
         BYTE   W01
         BYTE                   27
-        BYTE   W02
-        BYTE                   26
-        BYTE   W01
-        BYTE                   25
         BYTE   W03
-        BYTE                   24
-        BYTE   W01
-        BYTE                   23
+        BYTE                   26
         BYTE   W02
         BYTE                   25
         BYTE   W01
-        BYTE                   28
+        BYTE                   24
         BYTE   W02
-        BYTE                   30
+        BYTE                   23
+        BYTE   W03
+        BYTE                   22
+        BYTE   W01
+        BYTE                   21
+        BYTE   W01
+        BYTE                   20
+        BYTE   W02
+        BYTE                   22
+        BYTE   W01
+        BYTE                   25
+        BYTE   W02
+        BYTE                   27
+        BYTE   W01
+        BYTE                   29
+        BYTE   W02
+        BYTE                   31
         BYTE   W01
         BYTE                   33
         BYTE   W02
@@ -1728,367 +1702,335 @@ EndlessBattle_3_LOOP:
         BYTE                   38
         BYTE   W02
         BYTE                   40
-        BYTE   W01
-        BYTE                   43
-        BYTE   W02
-        BYTE                   45
         BYTE           N03     As4   v082
         BYTE   W01
-        BYTE           VOL     48
+        BYTE           VOL     42
         BYTE   W02
-        BYTE                   50
+        BYTE                   44
         BYTE           N03     Bn4
         BYTE   W01
-        BYTE           VOL     53
+        BYTE           VOL     47
         BYTE   W02
-        BYTE                   51
+        BYTE                   46
         BYTE           N24     Cn5   v107
         BYTE   W01
-        BYTE           VOL     50
+        BYTE           VOL     44
         BYTE   W02
-        BYTE                   49
+        BYTE                   43
         BYTE   W01
-        BYTE                   47
+        BYTE                   42
         BYTE   W02
-        BYTE                   46
+        BYTE                   41
         BYTE   W01
-        BYTE                   45
+        BYTE                   39
+        BYTE   W17
+        BYTE           N24     As4
+        BYTE   W03
+        BYTE           VOL     40
+        BYTE   W04
+        BYTE                   41
+        BYTE   W03
+        BYTE                   42
+        BYTE   W02
+        BYTE                   43
         BYTE   W01
         BYTE                   44
-        BYTE   W14
+        BYTE   W03
         BYTE                   45
         BYTE   W02
-        BYTE           N24     As4
-        BYTE   W07
-        BYTE           VOL     46
+        BYTE                   46
         BYTE   W03
         BYTE                   47
-        BYTE   W02
+        BYTE   W01
         BYTE                   48
-        BYTE   W01
-        BYTE                   49
         BYTE   W02
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W01
-        BYTE                   52
-        BYTE   W02
-        BYTE                   53
-        BYTE   W01
-        BYTE                   54
-        BYTE   W01
-        BYTE                   55
-        BYTE   W01
 // 006   ----------------------------------------
-        BYTE                   53
+        BYTE                   47
         BYTE           N32     Gn4   v107   gtp3
         BYTE   W01
-        BYTE           VOL     50
+        BYTE           VOL     44
         BYTE   W01
-        BYTE                   49
+        BYTE                   43
         BYTE   W01
-        BYTE                   47
+        BYTE                   42
+        BYTE   W01
+        BYTE                   39
+        BYTE   W09
+        BYTE                   40
+        BYTE   W03
+        BYTE                   41
+        BYTE   W03
+        BYTE                   42
+        BYTE   W02
+        BYTE                   43
         BYTE   W01
         BYTE                   44
-        BYTE   W06
-        BYTE                   45
-        BYTE   W06
-        BYTE                   46
         BYTE   W03
+        BYTE                   45
+        BYTE   W02
+        BYTE                   46
+        BYTE   W01
         BYTE                   47
         BYTE   W02
         BYTE                   48
-        BYTE   W01
-        BYTE                   49
-        BYTE   W02
-        BYTE                   50
-        BYTE   W01
-        BYTE                   51
-        BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   53
-        BYTE   W02
-        BYTE                   54
-        BYTE   W01
-        BYTE                   55
         BYTE   W03
-        BYTE                   56
+        BYTE                   49
         BYTE   W01
-        BYTE                   57
-        BYTE   W01
+        BYTE                   50
+        BYTE   W02
         BYTE           N06
         BYTE   W06
         BYTE                   Gs4
         BYTE   W06
         BYTE           N48     Fn4
-        BYTE   W05
-        BYTE           VOL     56
-        BYTE   W06
-        BYTE                   55
-        BYTE   W06
-        BYTE                   54
+        BYTE   W11
+        BYTE           VOL     49
         BYTE   W03
-        BYTE                   53
-        BYTE   W04
-        BYTE                   52
-        BYTE   W01
-        BYTE                   51
-        BYTE   W02
-        BYTE                   50
-        BYTE   W01
-        BYTE                   49
-        BYTE   W02
+        BYTE                   48
+        BYTE   W06
         BYTE                   47
-        BYTE   W01
+        BYTE   W04
         BYTE                   46
-        BYTE   W02
-        BYTE                   45
+        BYTE   W03
+        BYTE                   44
         BYTE   W01
         BYTE                   43
         BYTE   W02
         BYTE                   42
         BYTE   W01
-        BYTE                   40
+        BYTE                   41
         BYTE   W02
         BYTE                   39
         BYTE   W01
         BYTE                   38
         BYTE   W02
+        BYTE                   37
+        BYTE   W01
         BYTE                   36
-        BYTE   W01
-        BYTE                   35
         BYTE   W02
-        BYTE                   34
+        BYTE                   35
         BYTE   W01
+        BYTE                   33
+        BYTE   W02
         BYTE                   32
+        BYTE   W01
+        BYTE                   31
+        BYTE   W02
+        BYTE                   30
+        BYTE   W01
+        BYTE                   29
         BYTE   W02
 // 007   ----------------------------------------
-        BYTE                   31
-        BYTE   W01
-        BYTE                   30
-        BYTE   W01
-        BYTE                   28
-        BYTE   W02
-        BYTE                   29
-        BYTE   W01
-        BYTE                   30
-        BYTE   W02
-        BYTE                   31
-        BYTE   W01
-        BYTE                   32
-        BYTE   W02
-        BYTE                   34
-        BYTE   W01
-        BYTE                   35
-        BYTE   W02
-        BYTE                   36
-        BYTE   W01
-        BYTE                   37
-        BYTE   W02
-        BYTE                   38
-        BYTE   W01
-        BYTE                   39
-        BYTE   W02
-        BYTE                   40
-        BYTE   W01
-        BYTE                   41
-        BYTE   W01
-        BYTE                   42
-        BYTE   W03
-        BYTE                   43
-        BYTE           N24     Gn4
-        BYTE   W03
-        BYTE           VOL     44
-        BYTE   W03
-        BYTE                   45
-        BYTE   W02
-        BYTE                   46
-        BYTE   W01
-        BYTE                   47
-        BYTE   W02
-        BYTE                   49
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   53
-        BYTE   W02
-        BYTE                   55
-        BYTE   W01
-        BYTE                   56
-        BYTE   W01
-        BYTE                   57
-        BYTE   W05
-        BYTE           N18     Cn4
-        BYTE   W03
-        BYTE           VOL     56
-        BYTE   W02
-        BYTE                   55
-        BYTE   W01
-        BYTE                   53
-        BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   50
-        BYTE   W06
-        BYTE                   51
-        BYTE   W03
-        BYTE           N18     Dn4
-        BYTE   W03
-        BYTE           VOL     52
-        BYTE   W06
-        BYTE                   53
-        BYTE   W06
-        BYTE                   54
-        BYTE   W03
-        BYTE           N12     Ds4
-        BYTE   W03
-        BYTE           VOL     55
-        BYTE   W09
-// 008   ----------------------------------------
-        BYTE                   56
-        BYTE           N18     Gn4
-        BYTE   W02
-        BYTE           VOL     55
-        BYTE   W01
-        BYTE                   54
-        BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   49
-        BYTE   W01
-        BYTE                   47
-        BYTE   W01
-        BYTE                   46
-        BYTE   W03
-        BYTE                   47
-        BYTE   W03
-        BYTE                   48
-        BYTE   W02
-        BYTE           N06     Fn4
-        BYTE   W01
-        BYTE           VOL     50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W02
-        BYTE                   52
-        BYTE           TIE     Gn4
-        BYTE   W01
-        BYTE           VOL     54
-        BYTE   W01
-        BYTE                   52
-        BYTE   W01
-        BYTE                   49
-        BYTE   W01
-        BYTE                   47
-        BYTE   W01
-        BYTE                   45
-        BYTE   W01
-        BYTE                   42
-        BYTE   W01
-        BYTE                   40
-        BYTE   W01
-        BYTE                   39
-        BYTE   W01
-        BYTE                   37
-        BYTE   W03
-        BYTE                   38
-        BYTE   W03
-        BYTE                   39
-        BYTE   W03
-        BYTE                   40
-        BYTE   W06
-        BYTE                   41
-        BYTE   W03
-        BYTE                   43
-        BYTE   W01
-        BYTE                   45
-        BYTE   W02
-        BYTE                   47
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   55
-        BYTE   W01
-        BYTE                   56
-        BYTE   W03
-        BYTE                   55
-        BYTE   W03
-        BYTE                   54
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-        BYTE                   52
-        BYTE   W03
-        BYTE                   51
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   49
-        BYTE   W02
-        BYTE                   48
-        BYTE   W06
-        BYTE                   47
-        BYTE   W03
-        BYTE                   46
-        BYTE   W05
-// 009   ----------------------------------------
-        BYTE   W01
-        BYTE                   45
-        BYTE   W06
-        BYTE                   44
-        BYTE   W03
-        BYTE                   43
-        BYTE   W06
-        BYTE                   42
-        BYTE   W03
-        BYTE                   41
-        BYTE   W03
-        BYTE                   40
-        BYTE   W01
-        BYTE                   39
-        BYTE   W02
-        BYTE                   38
-        BYTE   W01
-        BYTE                   37
-        BYTE   W02
-        BYTE                   36
-        BYTE   W01
-        BYTE                   35
-        BYTE   W02
-        BYTE                   34
-        BYTE   W01
-        BYTE                   32
-        BYTE   W02
-        BYTE                   31
-        BYTE   W01
-        BYTE                   30
-        BYTE   W02
-        BYTE                   29
-        BYTE   W01
-        BYTE                   28
-        BYTE   W02
         BYTE                   27
         BYTE   W01
         BYTE                   26
-        BYTE   W02
-        BYTE                   25
         BYTE   W01
-        BYTE                   24
+        BYTE                   25
         BYTE   W02
+        BYTE                   26
+        BYTE   W01
+        BYTE                   27
+        BYTE   W02
+        BYTE                   28
+        BYTE   W01
+        BYTE                   29
+        BYTE   W02
+        BYTE                   30
+        BYTE   W01
+        BYTE                   31
+        BYTE   W02
+        BYTE                   32
+        BYTE   W01
+        BYTE                   33
+        BYTE   W02
+        BYTE                   34
+        BYTE   W01
+        BYTE                   35
+        BYTE   W02
+        BYTE                   36
+        BYTE   W01
+        BYTE                   37
+        BYTE   W04
+        BYTE                   38
+        BYTE           N24     Gn4
+        BYTE   W03
+        BYTE           VOL     39
+        BYTE   W03
+        BYTE                   40
+        BYTE   W02
+        BYTE                   41
+        BYTE   W01
+        BYTE                   42
+        BYTE   W02
+        BYTE                   43
+        BYTE   W01
+        BYTE                   45
+        BYTE   W02
+        BYTE                   46
+        BYTE   W01
+        BYTE                   47
+        BYTE   W02
+        BYTE                   49
+        BYTE   W01
+        BYTE                   50
+        BYTE   W01
+        BYTE                   51
+        BYTE   W05
+        BYTE           N18     Cn4
+        BYTE   W02
+        BYTE           VOL     50
+        BYTE   W03
+        BYTE                   48
+        BYTE   W01
+        BYTE                   47
+        BYTE   W02
+        BYTE                   46
+        BYTE   W01
+        BYTE                   45
+        BYTE   W09
+        BYTE                   46
+        BYTE           N18     Dn4
+        BYTE   W09
+        BYTE           VOL     47
+        BYTE   W06
+        BYTE                   48
+        BYTE   W03
+        BYTE           N12     Ds4
+        BYTE   W06
+        BYTE           VOL     49
+        BYTE   W06
+// 008   ----------------------------------------
+        BYTE                   50
+        BYTE           N18     Gn4
+        BYTE   W02
+        BYTE           VOL     49
+        BYTE   W01
+        BYTE                   48
+        BYTE   W02
+        BYTE                   46
+        BYTE   W01
+        BYTE                   45
+        BYTE   W02
+        BYTE                   43
+        BYTE   W01
+        BYTE                   42
+        BYTE   W01
+        BYTE                   41
+        BYTE   W03
+        BYTE                   42
+        BYTE   W03
+        BYTE                   43
+        BYTE   W02
+        BYTE           N06     Fn4
+        BYTE   W01
+        BYTE           VOL     44
+        BYTE   W02
+        BYTE                   45
+        BYTE   W01
+        BYTE                   46
+        BYTE   W02
+        BYTE           TIE     Gn4
+        BYTE   W01
+        BYTE           VOL     48
+        BYTE   W01
+        BYTE                   46
+        BYTE   W01
+        BYTE                   44
+        BYTE   W01
+        BYTE                   42
+        BYTE   W01
+        BYTE                   40
+        BYTE   W01
+        BYTE                   37
+        BYTE   W01
+        BYTE                   36
+        BYTE   W01
+        BYTE                   35
+        BYTE   W01
+        BYTE                   33
+        BYTE   W06
+        BYTE                   34
+        BYTE   W03
+        BYTE                   35
+        BYTE   W03
+        BYTE                   36
+        BYTE   W03
+        BYTE                   37
+        BYTE   W03
+        BYTE                   38
+        BYTE   W01
+        BYTE                   40
+        BYTE   W02
+        BYTE                   42
+        BYTE   W01
+        BYTE                   44
+        BYTE   W02
+        BYTE                   46
+        BYTE   W01
+        BYTE                   49
+        BYTE   W01
+        BYTE                   50
+        BYTE   W03
+        BYTE                   49
+        BYTE   W03
+        BYTE                   48
+        BYTE   W03
+        BYTE                   47
+        BYTE   W03
+        BYTE                   46
+        BYTE   W06
+        BYTE                   44
+        BYTE   W05
+        BYTE                   43
+        BYTE   W03
+        BYTE                   42
+        BYTE   W06
+        BYTE                   41
+        BYTE   W05
+// 009   ----------------------------------------
+        BYTE   W01
+        BYTE                   40
+        BYTE   W03
+        BYTE                   39
+        BYTE   W06
+        BYTE                   38
+        BYTE   W06
+        BYTE                   37
+        BYTE   W04
+        BYTE                   36
+        BYTE   W02
+        BYTE                   35
+        BYTE   W03
+        BYTE                   33
+        BYTE   W03
+        BYTE                   32
+        BYTE   W01
+        BYTE                   31
+        BYTE   W02
+        BYTE                   30
+        BYTE   W01
+        BYTE                   29
+        BYTE   W02
+        BYTE                   28
+        BYTE   W01
+        BYTE                   27
+        BYTE   W02
+        BYTE                   26
+        BYTE   W01
+        BYTE                   25
+        BYTE   W02
+        BYTE                   24
+        BYTE   W01
         BYTE                   23
+        BYTE   W02
+        BYTE                   22
         BYTE   W01
         BYTE                   21
         BYTE   W02
         BYTE                   20
-        BYTE   W03
+        BYTE   W01
+        BYTE                   19
+        BYTE   W02
         BYTE                   18
         BYTE   W01
         BYTE                   17
@@ -2103,249 +2045,230 @@ EndlessBattle_3_LOOP:
         BYTE   W02
         BYTE                   12
         BYTE   W01
+        BYTE                   11
+        BYTE   W02
         BYTE                   10
         BYTE   W01
-        BYTE           EOT
-        BYTE   W02
-        BYTE           VOL     9
-        BYTE   W02
-        BYTE                   7
+        BYTE                   9
         BYTE   W01
+        BYTE           EOT
+        BYTE   W01
+        BYTE           VOL     8
+        BYTE   W03
         BYTE                   6
+        BYTE   W03
+        BYTE                   4
         BYTE   W02
-        BYTE                   5
+        BYTE                   3
         BYTE   W01
         BYTE                   4
         BYTE   W01
-        BYTE                   3
-        BYTE   W01
-        BYTE                   5
+        BYTE                   7
         BYTE   W01
         BYTE                   8
         BYTE   W01
         BYTE                   10
         BYTE   W01
-        BYTE                   11
+        BYTE                   12
         BYTE   W01
         BYTE                   14
         BYTE   W01
         BYTE                   16
         BYTE   W01
-        BYTE                   18
+        BYTE                   19
+        BYTE   W01
+        BYTE                   20
         BYTE   W01
         BYTE                   21
         BYTE   W01
-        BYTE                   22
-        BYTE   W01
         BYTE                   24
+        BYTE   W01
+        BYTE                   26
         BYTE   W01
         BYTE                   27
         BYTE   W01
-        BYTE                   29
-        BYTE   W01
         BYTE                   30
         BYTE   W01
-        BYTE                   34
+        BYTE                   31
+        BYTE   W01
+        BYTE                   33
         BYTE   W01
         BYTE                   35
         BYTE   W01
         BYTE                   37
         BYTE   W01
-        BYTE                   40
+        BYTE                   39
         BYTE   W01
         BYTE                   42
+        BYTE   W01
+        BYTE                   43
         BYTE   W01
         BYTE                   44
         BYTE   W01
         BYTE                   47
-        BYTE   W01
-        BYTE                   48
-        BYTE   W01
-        BYTE                   50
-        BYTE   W01
-        BYTE                   53
         BYTE   W01
 // 010   ----------------------------------------
-        BYTE                   55
+        BYTE                   49
         BYTE           N36     Ds4
         BYTE   W01
-        BYTE           VOL     53
-        BYTE   W01
-        BYTE                   47
-        BYTE   W01
-        BYTE                   45
+        BYTE           VOL     47
         BYTE   W01
         BYTE                   42
         BYTE   W01
+        BYTE                   39
+        BYTE   W01
         BYTE                   37
-        BYTE   W09
+        BYTE   W01
+        BYTE                   33
+        BYTE   W17
+        BYTE                   34
+        BYTE   W02
+        BYTE                   36
+        BYTE   W01
         BYTE                   38
-        BYTE   W10
+        BYTE   W02
         BYTE                   40
         BYTE   W01
-        BYTE                   43
+        BYTE                   42
         BYTE   W02
-        BYTE                   45
-        BYTE   W01
-        BYTE                   48
-        BYTE   W02
-        BYTE                   50
-        BYTE   W01
-        BYTE                   52
-        BYTE   W02
-        BYTE                   55
-        BYTE   W01
-        BYTE                   57
-        BYTE   W02
-        BYTE           N06     Fn4
-        BYTE   W04
-        BYTE           VOL     56
-        BYTE   W02
-        BYTE           N06     Gn4
-        BYTE   W01
-        BYTE           VOL     55
-        BYTE   W05
-        BYTE                   54
-        BYTE           N56     Cn5   v107   gtp3
-        BYTE   W01
-        BYTE           VOL     52
-        BYTE   W01
-        BYTE                   50
-        BYTE   W01
-        BYTE                   47
-        BYTE   W01
-        BYTE                   45
-        BYTE   W01
-        BYTE                   43
-        BYTE   W03
         BYTE                   44
-        BYTE   W06
-        BYTE                   45
-        BYTE   W02
-        BYTE                   46
         BYTE   W01
-        BYTE                   48
+        BYTE                   46
         BYTE   W02
-        BYTE                   50
+        BYTE                   48
         BYTE   W01
         BYTE                   51
         BYTE   W02
-        BYTE                   53
+        BYTE           N06     Fn4
         BYTE   W01
-        BYTE                   55
+        BYTE           VOL     50
+        BYTE   W05
+        BYTE           N06     Gn4
+        BYTE   W01
+        BYTE           VOL     49
+        BYTE   W05
+        BYTE                   48
+        BYTE           N56     Cn5   v107   gtp3
+        BYTE   W01
+        BYTE           VOL     46
+        BYTE   W01
+        BYTE                   45
+        BYTE   W01
+        BYTE                   42
+        BYTE   W01
+        BYTE                   40
+        BYTE   W01
+        BYTE                   38
+        BYTE   W03
+        BYTE                   39
+        BYTE   W08
+        BYTE                   41
+        BYTE   W01
+        BYTE                   42
         BYTE   W02
-        BYTE                   57
+        BYTE                   44
         BYTE   W01
-        BYTE                   55
+        BYTE                   46
         BYTE   W02
-        BYTE                   54
+        BYTE                   47
         BYTE   W01
-        BYTE                   52
+        BYTE                   49
         BYTE   W02
         BYTE                   50
         BYTE   W01
         BYTE                   49
         BYTE   W02
+        BYTE                   48
+        BYTE   W01
         BYTE                   46
         BYTE   W02
-        BYTE                   45
-        BYTE   W03
         BYTE                   44
         BYTE   W01
         BYTE                   43
         BYTE   W02
-        BYTE                   42
-        BYTE   W01
         BYTE                   41
         BYTE   W02
         BYTE                   40
         BYTE   W01
         BYTE                   39
-        BYTE   W01
+        BYTE   W03
         BYTE                   38
-        BYTE   W01
-// 011   ----------------------------------------
-        BYTE                   39
         BYTE   W02
+        BYTE                   37
+        BYTE   W01
+        BYTE                   36
+        BYTE   W02
+        BYTE                   35
+        BYTE   W01
+        BYTE                   34
+        BYTE   W02
+// 011   ----------------------------------------
+        BYTE                   35
+        BYTE   W03
+        BYTE                   37
+        BYTE   W03
+        BYTE                   38
+        BYTE   W02
+        BYTE                   39
+        BYTE   W01
         BYTE                   40
         BYTE   W01
-        BYTE                   41
-        BYTE   W02
         BYTE                   42
-        BYTE   W01
-        BYTE                   43
+        BYTE   W03
+        BYTE                   44
         BYTE   W02
         BYTE                   45
-        BYTE   W02
-        BYTE                   47
-        BYTE   W02
-        BYTE                   48
-        BYTE   W01
-        BYTE                   49
-        BYTE   W02
-        BYTE                   50
         BYTE   W09
         BYTE           N24
         BYTE   W02
-        BYTE           VOL     49
+        BYTE           VOL     43
         BYTE   W02
-        BYTE                   46
+        BYTE                   41
         BYTE   W01
-        BYTE                   45
+        BYTE                   39
         BYTE   W02
-        BYTE                   42
+        BYTE                   37
         BYTE   W01
-        BYTE                   40
+        BYTE                   35
+        BYTE   W04
+        BYTE                   36
+        BYTE   W02
+        BYTE                   37
+        BYTE   W03
+        BYTE                   38
         BYTE   W01
         BYTE                   39
         BYTE   W02
         BYTE                   40
-        BYTE   W03
+        BYTE   W01
         BYTE                   41
-        BYTE   W01
-        BYTE                   42
-        BYTE   W02
-        BYTE                   43
-        BYTE   W01
-        BYTE                   44
-        BYTE   W02
-        BYTE                   45
-        BYTE   W01
-        BYTE                   46
         BYTE   W03
-        BYTE                   47
+        BYTE                   42
         BYTE           N18     Dn5   v101
         BYTE   W02
-        BYTE           VOL     48
+        BYTE           VOL     43
         BYTE   W01
-        BYTE                   50
+        BYTE                   44
         BYTE   W15
         BYTE           N18     Ds5   v091
-        BYTE   W13
-        BYTE           VOL     51
-        BYTE   W03
-        BYTE                   52
+        BYTE   W10
+        BYTE           VOL     45
+        BYTE   W06
+        BYTE                   46
         BYTE   W02
         BYTE           N12     Fn5   v085
         BYTE   W04
-        BYTE           VOL     53
+        BYTE           VOL     47
         BYTE   W03
-        BYTE                   54
-        BYTE   W03
-        BYTE                   55
-        BYTE   W02
-// 012   ----------------------------------------
-        BYTE           N40     Gn5   v078   gtp1
-        BYTE   W03
-        BYTE           VOL     53
-        BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   49
-        BYTE   W01
         BYTE                   48
+        BYTE   W05
+// 012   ----------------------------------------
+        BYTE                   49
+        BYTE           N40     Gn5   v078   gtp1
+        BYTE   W02
+        BYTE           VOL     48
+        BYTE   W01
+        BYTE                   47
         BYTE   W02
         BYTE                   46
         BYTE   W01
@@ -2354,63 +2277,75 @@ EndlessBattle_3_LOOP:
         BYTE                   44
         BYTE   W01
         BYTE                   42
-        BYTE   W01
-        BYTE                   41
-        BYTE   W03
-        BYTE                   42
-        BYTE   W06
-        BYTE                   43
-        BYTE   W06
-        BYTE                   44
-        BYTE   W03
-        BYTE                   45
         BYTE   W02
-        BYTE                   47
+        BYTE                   41
+        BYTE   W01
+        BYTE                   40
+        BYTE   W02
+        BYTE                   39
+        BYTE   W01
+        BYTE                   37
+        BYTE   W10
+        BYTE                   38
+        BYTE   W06
+        BYTE                   39
+        BYTE   W05
+        BYTE                   42
+        BYTE   W01
+        BYTE                   44
+        BYTE   W02
+        BYTE                   46
+        BYTE   W01
+        BYTE                   48
         BYTE   W01
         BYTE                   49
-        BYTE   W02
-        BYTE                   51
-        BYTE   W01
-        BYTE                   54
-        BYTE   W01
-        BYTE                   55
         BYTE   W01
         BYTE           N06     Fn5   v085
         BYTE   W06
         BYTE           N48     Cn5   v107
-        BYTE   W09
-        BYTE           VOL     53
-        BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   49
-        BYTE   W01
-        BYTE                   48
+        BYTE   W08
+        BYTE           VOL     48
         BYTE   W01
         BYTE                   47
-        BYTE   W16
+        BYTE   W02
         BYTE                   46
+        BYTE   W01
+        BYTE                   45
+        BYTE   W02
+        BYTE                   44
+        BYTE   W01
+        BYTE                   43
+        BYTE   W01
+        BYTE                   42
+        BYTE   W16
+        BYTE                   41
         BYTE   W16
 // 013   ----------------------------------------
-        BYTE                   45
-        BYTE   W03
-        BYTE                   43
-        BYTE   W04
-        BYTE                   42
-        BYTE   W06
-        BYTE                   41
-        BYTE   W03
         BYTE                   40
-        BYTE   W06
-        BYTE                   39
         BYTE   W02
+        BYTE                   39
+        BYTE   W01
         BYTE                   38
+        BYTE   W04
+        BYTE                   37
+        BYTE   W06
+        BYTE                   36
+        BYTE   W06
+        BYTE                   35
+        BYTE   W05
+        BYTE                   34
         BYTE           N24     Gn4
         BYTE   W02
-        BYTE           VOL     39
+        BYTE           VOL     35
+        BYTE   W03
+        BYTE                   36
         BYTE   W01
+        BYTE                   37
+        BYTE   W02
+        BYTE                   38
+        BYTE   W01
+        BYTE                   39
+        BYTE   W03
         BYTE                   40
         BYTE   W02
         BYTE                   41
@@ -2422,166 +2357,153 @@ EndlessBattle_3_LOOP:
         BYTE                   44
         BYTE   W02
         BYTE                   45
-        BYTE   W03
+        BYTE   W01
         BYTE                   46
-        BYTE   W01
-        BYTE                   48
         BYTE   W02
-        BYTE                   49
+        BYTE                   47
         BYTE   W01
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W02
-        BYTE                   53
-        BYTE   W01
-        BYTE                   52
+        BYTE                   46
         BYTE           N24     Ds5   v091
         BYTE   W02
-        BYTE           VOL     51
+        BYTE           VOL     45
         BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   49
-        BYTE   W01
-        BYTE                   48
-        BYTE   W02
-        BYTE                   46
-        BYTE   W06
-        BYTE                   45
-        BYTE   W03
         BYTE                   44
         BYTE   W03
         BYTE                   43
+        BYTE   W02
+        BYTE                   41
+        BYTE   W06
+        BYTE                   40
         BYTE   W03
-        BYTE                   42
+        BYTE                   39
+        BYTE   W03
+        BYTE                   38
+        BYTE   W03
+        BYTE                   37
         BYTE   W01
         BYTE           N24     Dn5   v101
         BYTE   W07
-        BYTE           VOL     43
+        BYTE           VOL     38
         BYTE   W10
+        BYTE                   39
+        BYTE   W02
+        BYTE                   40
+        BYTE   W01
+        BYTE                   41
+        BYTE   W02
+        BYTE                   42
+        BYTE   W01
         BYTE                   44
-        BYTE   W02
-        BYTE                   45
-        BYTE   W01
-        BYTE                   46
-        BYTE   W02
-        BYTE                   48
-        BYTE   W01
-        BYTE                   49
         BYTE   W01
 // 014   ----------------------------------------
         BYTE           N40     Cn5   v107   gtp1
         BYTE   W01
-        BYTE           VOL     50
+        BYTE           VOL     45
         BYTE   W01
-        BYTE                   49
+        BYTE                   43
         BYTE   W02
-        BYTE                   46
+        BYTE                   41
         BYTE   W01
-        BYTE                   44
+        BYTE                   39
         BYTE   W02
-        BYTE                   42
+        BYTE                   37
+        BYTE   W01
+        BYTE                   35
+        BYTE   W06
+        BYTE                   36
+        BYTE   W06
+        BYTE                   37
+        BYTE   W08
+        BYTE                   39
         BYTE   W01
         BYTE                   40
-        BYTE   W09
+        BYTE   W02
         BYTE                   41
-        BYTE   W06
+        BYTE   W01
         BYTE                   42
-        BYTE   W05
+        BYTE   W02
         BYTE                   44
         BYTE   W01
         BYTE                   45
         BYTE   W02
         BYTE                   46
         BYTE   W01
-        BYTE                   48
+        BYTE                   47
         BYTE   W02
         BYTE                   49
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   53
-        BYTE   W02
-        BYTE                   55
         BYTE   W02
         BYTE           N06     As4
         BYTE   W06
         BYTE           N48     Fn4
-        BYTE   W14
-        BYTE           VOL     54
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-        BYTE                   52
-        BYTE   W03
-        BYTE                   51
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   49
-        BYTE   W01
-        BYTE                   48
-        BYTE   W02
-        BYTE                   47
-        BYTE   W01
-        BYTE                   46
-        BYTE   W03
-        BYTE                   45
-        BYTE   W02
-        BYTE                   44
-        BYTE   W03
-        BYTE                   43
-        BYTE   W01
-        BYTE                   42
-        BYTE   W02
-        BYTE                   41
-        BYTE   W01
-        BYTE                   40
-        BYTE   W03
-// 015   ----------------------------------------
-        BYTE                   39
-        BYTE   W02
-        BYTE                   38
-        BYTE   W01
-        BYTE                   37
-        BYTE   W02
-        BYTE                   36
-        BYTE   W03
-        BYTE                   37
-        BYTE   W03
-        BYTE                   38
+        BYTE   W11
+        BYTE           VOL     48
         BYTE   W06
-        BYTE                   39
+        BYTE                   47
+        BYTE   W03
+        BYTE                   46
+        BYTE   W04
+        BYTE                   45
+        BYTE   W03
+        BYTE                   44
+        BYTE   W02
+        BYTE                   43
+        BYTE   W03
+        BYTE                   42
+        BYTE   W01
+        BYTE                   41
         BYTE   W03
         BYTE                   40
+        BYTE   W02
+        BYTE                   39
         BYTE   W03
-        BYTE                   41
+        BYTE                   38
         BYTE   W01
-        BYTE                   42
+        BYTE                   37
+        BYTE   W03
+        BYTE                   36
+        BYTE   W02
+        BYTE                   35
+        BYTE   W01
+// 015   ----------------------------------------
+        BYTE                   34
+        BYTE   W03
+        BYTE                   33
+        BYTE   W02
+        BYTE                   32
+        BYTE   W03
+        BYTE                   33
+        BYTE   W06
+        BYTE                   34
+        BYTE   W03
+        BYTE                   35
+        BYTE   W04
+        BYTE                   36
+        BYTE   W02
+        BYTE                   37
+        BYTE   W01
         BYTE           N24
         BYTE   W02
-        BYTE           VOL     43
+        BYTE           VOL     38
+        BYTE   W01
+        BYTE                   39
+        BYTE   W02
+        BYTE                   40
+        BYTE   W01
+        BYTE                   41
+        BYTE   W02
+        BYTE                   42
+        BYTE   W01
+        BYTE                   43
+        BYTE   W02
+        BYTE                   44
         BYTE   W01
         BYTE                   45
-        BYTE   W03
+        BYTE   W01
         BYTE                   46
-        BYTE   W02
+        BYTE   W06
+        BYTE                   47
+        BYTE   W03
         BYTE                   48
-        BYTE   W01
-        BYTE                   49
-        BYTE   W02
-        BYTE                   50
-        BYTE   W01
-        BYTE                   51
-        BYTE   W04
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-        BYTE                   54
         BYTE   W02
         BYTE           N18     Gn4
         BYTE   W18
@@ -2592,93 +2514,85 @@ EndlessBattle_3_LOOP:
 // 016   ----------------------------------------
         BYTE           N18     Gn4
         BYTE   W02
-        BYTE           VOL     53
+        BYTE           VOL     47
         BYTE   W01
-        BYTE                   51
-        BYTE   W01
-        BYTE                   50
-        BYTE   W01
-        BYTE                   47
-        BYTE   W01
-        BYTE                   45
+        BYTE                   46
         BYTE   W01
         BYTE                   44
+        BYTE   W01
+        BYTE                   42
+        BYTE   W01
+        BYTE                   40
+        BYTE   W01
+        BYTE                   39
+        BYTE   W01
+        BYTE                   36
+        BYTE   W02
+        BYTE                   37
+        BYTE   W01
+        BYTE                   38
+        BYTE   W02
+        BYTE                   39
         BYTE   W01
         BYTE                   40
         BYTE   W02
         BYTE                   41
         BYTE   W01
-        BYTE                   43
-        BYTE   W02
-        BYTE                   44
-        BYTE   W01
-        BYTE                   45
-        BYTE   W02
-        BYTE                   46
-        BYTE   W01
-        BYTE                   48
+        BYTE                   42
         BYTE   W01
         BYTE           N06     Fn4
         BYTE   W01
-        BYTE           VOL     49
+        BYTE           VOL     44
         BYTE   W01
-        BYTE                   50
+        BYTE                   45
         BYTE   W02
-        BYTE                   51
+        BYTE                   46
         BYTE   W01
-        BYTE                   53
+        BYTE                   47
         BYTE   W01
         BYTE           TIE     Gn4
         BYTE   W02
-        BYTE           VOL     51
+        BYTE           VOL     46
         BYTE   W01
-        BYTE                   50
-        BYTE   W01
-        BYTE                   47
-        BYTE   W01
-        BYTE                   46
-        BYTE   W01
-        BYTE                   45
+        BYTE                   44
         BYTE   W01
         BYTE                   42
+        BYTE   W01
+        BYTE                   41
+        BYTE   W01
+        BYTE                   39
+        BYTE   W01
+        BYTE                   37
         BYTE   W20
-        BYTE                   44
+        BYTE                   39
         BYTE   W01
-        BYTE                   47
-        BYTE   W02
-        BYTE                   49
-        BYTE   W01
-        BYTE                   52
-        BYTE   W03
-        BYTE                   51
-        BYTE   W06
-        BYTE                   50
-        BYTE   W09
-        BYTE                   49
-        BYTE   W06
-        BYTE                   48
-        BYTE   W06
-        BYTE                   47
-        BYTE   W06
-        BYTE                   46
-        BYTE   W03
-        BYTE                   45
-        BYTE   W02
-// 017   ----------------------------------------
-        BYTE   W07
-        BYTE                   44
-        BYTE   W06
-        BYTE                   43
-        BYTE   W04
         BYTE                   42
+        BYTE   W02
+        BYTE                   44
+        BYTE   W01
+        BYTE                   46
+        BYTE   W06
+        BYTE                   45
+        BYTE   W06
+        BYTE                   44
+        BYTE   W09
+        BYTE                   43
+        BYTE   W06
+        BYTE                   42
+        BYTE   W09
+        BYTE                   41
         BYTE   W03
         BYTE                   40
-        BYTE   W03
+        BYTE   W02
+// 017   ----------------------------------------
+        BYTE   W04
         BYTE                   39
-        BYTE   W03
+        BYTE   W09
         BYTE                   38
-        BYTE   W03
+        BYTE   W04
         BYTE                   37
+        BYTE   W03
+        BYTE                   36
         BYTE   W03
         BYTE                   35
         BYTE   W03
@@ -2686,186 +2600,177 @@ EndlessBattle_3_LOOP:
         BYTE   W03
         BYTE                   33
         BYTE   W03
-        BYTE                   32
+        BYTE                   31
         BYTE   W03
         BYTE                   30
-        BYTE   W06
+        BYTE   W03
+        BYTE                   29
+        BYTE   W03
         BYTE                   28
         BYTE   W03
         BYTE                   27
         BYTE   W03
+        BYTE                   26
+        BYTE   W03
         BYTE                   25
-        BYTE   W06
+        BYTE   W03
+        BYTE                   24
+        BYTE   W03
         BYTE                   23
         BYTE   W03
         BYTE                   22
         BYTE   W03
         BYTE                   21
         BYTE   W03
-        BYTE                   20
-        BYTE   W03
-        BYTE                   18
-        BYTE   W03
+        BYTE                   19
+        BYTE   W06
         BYTE                   17
-        BYTE   W01
-        BYTE           EOT
-        BYTE   W02
-        BYTE           VOL     16
+        BYTE   W03
+        BYTE                   16
         BYTE   W03
         BYTE                   15
         BYTE   W01
-        BYTE                   14
+        BYTE           EOT
+        BYTE   W02
+        BYTE           VOL     14
+        BYTE   W03
+        BYTE                   13
+        BYTE   W01
+        BYTE                   12
         BYTE   W12
 // 018   ----------------------------------------
         BYTE   W96
 // 019   ----------------------------------------
-        BYTE   W44
-        BYTE   W01
-        BYTE                   13
-        BYTE   W48
-        BYTE   W03
-// 020   ----------------------------------------
         BYTE   W96
-// 021   ----------------------------------------
-        BYTE   W07
-        BYTE                   12
-        BYTE   W88
-        BYTE   W01
-// 022   ----------------------------------------
-        BYTE   W64
+// 020   ----------------------------------------
+        BYTE   W24
+        BYTE   W02
         BYTE                   11
-        BYTE   W32
+        BYTE   W68
+        BYTE   W02
+// 021   ----------------------------------------
+        BYTE   W84
+        BYTE                   10
+        BYTE   W12
+// 022   ----------------------------------------
+        BYTE   W96
 // 023   ----------------------------------------
         BYTE   W96
 // 024   ----------------------------------------
         BYTE   W24
-        BYTE   W02
+        BYTE   W03
         BYTE                   12
         BYTE   W01
         BYTE                   14
         BYTE   W01
-        BYTE                   15
+        BYTE                   17
         BYTE   W01
         BYTE                   19
         BYTE   W01
-        BYTE                   21
+        BYTE                   20
         BYTE   W01
         BYTE                   23
         BYTE   W01
-        BYTE                   26
+        BYTE                   25
         BYTE   W01
-        BYTE                   28
+        BYTE                   27
         BYTE   W01
         BYTE                   30
         BYTE   W01
-        BYTE                   34
+        BYTE                   31
         BYTE   W01
-        BYTE                   35
+        BYTE                   33
         BYTE   W01
-        BYTE                   37
+        BYTE                   36
         BYTE   W01
-        BYTE                   41
+        BYTE                   38
+        BYTE   W01
+        BYTE                   39
         BYTE   W01
         BYTE                   43
         BYTE   W01
-        BYTE                   45
-        BYTE   W01
-        BYTE                   48
-        BYTE   W01
-        BYTE                   50
+        BYTE                   44
         BYTE           N03     As4   v081
         BYTE   W01
-        BYTE           VOL     51
+        BYTE           VOL     46
         BYTE   W02
         BYTE           N03     Bn4
-        BYTE   W01
-        BYTE           VOL     52
-        BYTE   W02
+        BYTE   W03
         BYTE           N18     Cn5   v107
         BYTE   W02
-        BYTE           VOL     50
+        BYTE           VOL     44
         BYTE   W01
-        BYTE                   44
+        BYTE                   39
         BYTE   W01
-        BYTE                   40
+        BYTE                   35
         BYTE   W08
+        BYTE                   37
+        BYTE   W02
+        BYTE                   40
+        BYTE   W01
         BYTE                   42
         BYTE   W02
         BYTE                   45
         BYTE   W01
-        BYTE                   48
-        BYTE   W02
-        BYTE                   50
-        BYTE   W01
-        BYTE                   53
+        BYTE                   47
         BYTE           N06     Dn5   v105
         BYTE   W06
         BYTE           TIE     Cn5   v107
         BYTE   W03
-        BYTE           VOL     52
-        BYTE   W02
-        BYTE                   50
-        BYTE   W01
-        BYTE                   49
-        BYTE   W02
-        BYTE                   48
-        BYTE   W01
-        BYTE                   46
+        BYTE           VOL     46
         BYTE   W02
         BYTE                   45
         BYTE   W01
         BYTE                   44
         BYTE   W02
         BYTE                   42
-        BYTE   W06
+        BYTE   W01
         BYTE                   41
-        BYTE   W04
-// 025   ----------------------------------------
         BYTE   W02
         BYTE                   40
-        BYTE   W09
+        BYTE   W01
         BYTE                   39
-        BYTE   W06
-        BYTE                   38
-        BYTE   W06
+        BYTE   W02
         BYTE                   37
-        BYTE   W03
+        BYTE   W09
         BYTE                   36
-        BYTE   W06
+        BYTE   W01
+// 025   ----------------------------------------
+        BYTE   W05
         BYTE                   35
         BYTE   W09
         BYTE                   34
-        BYTE   W04
+        BYTE   W06
         BYTE                   33
-        BYTE   W03
+        BYTE   W06
         BYTE                   32
-        BYTE   W01
+        BYTE   W06
         BYTE                   31
-        BYTE   W02
+        BYTE   W09
         BYTE                   30
-        BYTE   W01
+        BYTE   W04
         BYTE                   29
-        BYTE   W02
+        BYTE   W03
         BYTE                   28
         BYTE   W01
         BYTE                   27
-        BYTE   W02
-        BYTE                   26
-        BYTE   W01
-        BYTE                   25
         BYTE   W03
+        BYTE                   26
+        BYTE   W02
+        BYTE                   25
+        BYTE   W01
         BYTE                   24
         BYTE   W02
         BYTE                   23
-        BYTE   W01
+        BYTE   W03
         BYTE                   22
-        BYTE   W02
+        BYTE   W01
         BYTE                   21
-        BYTE   W01
-        BYTE                   20
         BYTE   W02
-        BYTE                   19
+        BYTE                   20
         BYTE   W01
+        BYTE                   19
+        BYTE   W03
         BYTE                   18
         BYTE   W02
         BYTE                   17
@@ -2883,75 +2788,69 @@ EndlessBattle_3_LOOP:
         BYTE                   11
         BYTE   W02
         BYTE                   10
-        BYTE   W01
+        BYTE   W03
         BYTE                   9
-        BYTE   W02
+        BYTE   W01
         BYTE                   8
-        BYTE   W01
-        BYTE                   7
         BYTE   W02
-        BYTE                   6
+        BYTE                   7
         BYTE   W01
+        BYTE                   6
+        BYTE   W03
         BYTE                   5
         BYTE   W01
         BYTE           EOT
-        BYTE   W02
+        BYTE   W01
         BYTE           VOL     4
+        BYTE   W01
+        BYTE                   3
         BYTE   W02
 // 026   ----------------------------------------
-        BYTE                   3
-        BYTE   W01
         BYTE                   2
-        BYTE   W76
-        BYTE   W01
-        BYTE                   3
-        BYTE   W18
+        BYTE   W96
 // 027   ----------------------------------------
-        BYTE   W32
-        BYTE   W01
-        BYTE                   4
-        BYTE   W52
-        BYTE                   5
-        BYTE   W11
-// 028   ----------------------------------------
-        BYTE   W64
-        BYTE   W01
-        BYTE                   6
-        BYTE   W30
-        BYTE   W01
-// 029   ----------------------------------------
-        BYTE   W21
-        BYTE                   7
+        BYTE   W08
+        BYTE                   3
         BYTE   W48
         BYTE   W03
-        BYTE                   8
+        BYTE                   4
+        BYTE   W36
+        BYTE   W01
+// 028   ----------------------------------------
+        BYTE   W40
+        BYTE                   5
+        BYTE   W48
+        BYTE   W03
+        BYTE                   6
+        BYTE   W05
+// 029   ----------------------------------------
+        BYTE   W72
+        BYTE                   7
         BYTE   W24
 // 030   ----------------------------------------
         BYTE   W24
         BYTE   W03
+        BYTE                   8
+        BYTE   W68
+        BYTE   W01
+// 031   ----------------------------------------
+        BYTE   W08
         BYTE                   9
         BYTE   W48
         BYTE   W03
         BYTE                   10
-        BYTE   W18
-// 031   ----------------------------------------
-        BYTE   W56
-        BYTE   W03
-        BYTE                   11
         BYTE   W36
         BYTE   W01
 // 032   ----------------------------------------
-        BYTE   W14
-        BYTE                   12
-        BYTE   W52
-        BYTE                   13
-        BYTE   W30
-// 033   ----------------------------------------
-        BYTE   W21
-        BYTE                   14
+        BYTE   W40
+        BYTE                   11
         BYTE   W48
         BYTE   W03
-        BYTE                   53
+        BYTE                   12
+        BYTE   W05
+// 033   ----------------------------------------
+        BYTE   W72
+        BYTE                   47
         BYTE   W18
         BYTE           N02     Dn5   v034
         BYTE   W02
@@ -2962,169 +2861,163 @@ EndlessBattle_3_LOOP:
 // 034   ----------------------------------------
         BYTE           N18     Fn5   v090
         BYTE   W02
-        BYTE           VOL     50
+        BYTE           VOL     44
         BYTE   W01
-        BYTE                   43
+        BYTE                   38
         BYTE   W01
-        BYTE                   39
-        BYTE   W02
-        BYTE                   40
+        BYTE                   35
         BYTE   W03
-        BYTE                   41
+        BYTE                   36
         BYTE   W02
-        BYTE                   43
-        BYTE   W01
-        BYTE                   45
+        BYTE                   37
         BYTE   W02
-        BYTE                   47
+        BYTE                   38
         BYTE   W01
-        BYTE                   49
+        BYTE                   40
         BYTE   W02
-        BYTE                   51
+        BYTE                   42
         BYTE   W01
-        BYTE                   54
+        BYTE                   44
+        BYTE   W02
+        BYTE                   46
+        BYTE   W01
+        BYTE                   48
         BYTE           N06     Gn5
         BYTE   W06
         BYTE           N12     Fn5
         BYTE   W12
         BYTE           N24     Ds5   v099
         BYTE   W02
-        BYTE           VOL     50
+        BYTE           VOL     45
         BYTE   W01
-        BYTE                   47
+        BYTE                   42
         BYTE   W01
-        BYTE                   44
+        BYTE                   39
         BYTE   W01
+        BYTE                   34
+        BYTE   W03
+        BYTE                   35
+        BYTE   W02
+        BYTE                   36
+        BYTE   W01
+        BYTE                   37
+        BYTE   W03
         BYTE                   38
         BYTE   W02
         BYTE                   39
-        BYTE   W01
-        BYTE                   40
         BYTE   W03
+        BYTE                   40
+        BYTE   W01
         BYTE                   41
         BYTE   W02
         BYTE                   42
-        BYTE   W01
-        BYTE                   43
-        BYTE   W02
-        BYTE                   44
-        BYTE   W01
-        BYTE                   45
         BYTE   W03
-        BYTE                   46
+        BYTE                   43
+        BYTE   W01
+        BYTE                   44
+        BYTE   W03
+        BYTE                   45
         BYTE   W02
+        BYTE                   46
+        BYTE   W03
         BYTE                   47
         BYTE   W01
         BYTE                   48
-        BYTE   W02
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W01
-        BYTE                   51
-        BYTE   W02
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
-        BYTE   W01
-        BYTE                   54
         BYTE   W01
         BYTE           N18     Dn5
         BYTE   W01
-        BYTE           VOL     49
+        BYTE           VOL     44
         BYTE   W01
-        BYTE                   46
-        BYTE   W01
-        BYTE                   44
-        BYTE   W01
-        BYTE                   40
-        BYTE   W03
         BYTE                   41
-        BYTE   W02
-        BYTE                   42
+        BYTE   W01
+        BYTE                   39
+        BYTE   W01
+        BYTE                   35
         BYTE   W03
-        BYTE                   43
+        BYTE                   36
+        BYTE   W02
+        BYTE                   37
+        BYTE   W03
+        BYTE                   38
+        BYTE   W01
+        BYTE                   39
+        BYTE   W01
+        BYTE                   42
         BYTE   W01
         BYTE                   44
         BYTE   W01
-        BYTE                   47
+        BYTE                   45
+        BYTE   W01
+        BYTE                   48
         BYTE   W01
         BYTE                   49
-        BYTE   W01
-        BYTE                   51
-        BYTE   W01
-        BYTE                   54
-        BYTE   W01
-        BYTE                   55
         BYTE           N06     Ds5
         BYTE   W06
 // 035   ----------------------------------------
         BYTE           N12     Dn5
         BYTE   W01
-        BYTE           VOL     54
+        BYTE           VOL     48
         BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   48
-        BYTE   W02
-        BYTE                   49
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   53
-        BYTE           N54     Cn5
-        BYTE   W02
-        BYTE           VOL     55
-        BYTE   W02
-        BYTE                   53
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   48
+        BYTE                   46
         BYTE   W01
         BYTE                   45
-        BYTE   W06
+        BYTE   W02
         BYTE                   43
-        BYTE   W03
+        BYTE   W02
+        BYTE                   44
+        BYTE   W01
+        BYTE                   45
+        BYTE   W02
+        BYTE                   46
+        BYTE   W01
+        BYTE                   47
+        BYTE           N54     Cn5
+        BYTE   W02
+        BYTE           VOL     49
+        BYTE   W02
+        BYTE                   47
+        BYTE   W01
+        BYTE                   44
+        BYTE   W02
         BYTE                   42
-        BYTE   W03
-        BYTE                   41
-        BYTE   W03
+        BYTE   W01
         BYTE                   40
         BYTE   W03
         BYTE                   39
         BYTE   W03
+        BYTE                   38
+        BYTE   W03
         BYTE                   37
         BYTE   W03
         BYTE                   36
-        BYTE   W01
+        BYTE   W03
         BYTE                   35
-        BYTE   W02
+        BYTE   W03
         BYTE                   34
-        BYTE   W01
+        BYTE   W03
         BYTE                   33
-        BYTE   W02
+        BYTE   W03
+        BYTE                   32
+        BYTE   W01
         BYTE                   31
-        BYTE   W01
+        BYTE   W02
         BYTE                   30
-        BYTE   W02
+        BYTE   W01
         BYTE                   29
-        BYTE   W01
+        BYTE   W02
         BYTE                   28
-        BYTE   W02
+        BYTE   W01
         BYTE                   27
-        BYTE   W01
+        BYTE   W02
         BYTE                   26
-        BYTE   W02
-        BYTE                   25
         BYTE   W01
-        BYTE                   24
+        BYTE                   25
         BYTE   W02
+        BYTE                   24
+        BYTE   W01
         BYTE                   23
+        BYTE   W02
+        BYTE                   22
         BYTE   W01
         BYTE                   21
         BYTE   W02
@@ -3132,111 +3025,119 @@ EndlessBattle_3_LOOP:
         BYTE   W01
         BYTE                   19
         BYTE   W02
-        BYTE                   22
+        BYTE                   18
         BYTE   W01
-        BYTE                   26
+        BYTE                   17
+        BYTE   W02
+        BYTE                   19
         BYTE   W01
-        BYTE                   31
+        BYTE                   23
         BYTE   W01
-        BYTE                   40
+        BYTE                   27
         BYTE   W01
-        BYTE                   44
+        BYTE                   35
+        BYTE   W01
+        BYTE                   39
         BYTE           N12     Dn5
         BYTE   W03
-        BYTE           VOL     45
+        BYTE           VOL     40
         BYTE   W03
-        BYTE                   46
+        BYTE                   41
         BYTE   W03
-        BYTE                   47
+        BYTE                   42
         BYTE   W03
-        BYTE                   49
+        BYTE                   43
         BYTE           N12     Ds5
         BYTE   W03
-        BYTE           VOL     50
+        BYTE           VOL     44
         BYTE   W03
-        BYTE                   51
+        BYTE                   45
         BYTE   W03
-        BYTE                   52
+        BYTE                   46
         BYTE   W03
 // 036   ----------------------------------------
-        BYTE                   54
+        BYTE                   48
         BYTE           N18     Fn5   v090
         BYTE   W01
-        BYTE           VOL     50
+        BYTE           VOL     45
         BYTE   W01
-        BYTE                   47
+        BYTE                   42
         BYTE   W01
-        BYTE                   41
+        BYTE                   37
         BYTE   W14
-        BYTE                   46
+        BYTE                   41
         BYTE   W01
-        BYTE                   54
+        BYTE                   48
         BYTE           N06     Gn5
         BYTE   W06
         BYTE           N12     Fn5
         BYTE   W06
-        BYTE           VOL     53
+        BYTE           VOL     47
         BYTE   W06
-        BYTE                   52
+        BYTE                   46
         BYTE           N30     Ds5   v099
         BYTE   W01
-        BYTE           VOL     51
+        BYTE           VOL     45
         BYTE   W02
-        BYTE                   49
-        BYTE   W01
-        BYTE                   47
-        BYTE   W02
-        BYTE                   45
-        BYTE   W01
         BYTE                   44
         BYTE   W01
-        BYTE                   43
-        BYTE   W03
         BYTE                   42
-        BYTE   W06
-        BYTE                   41
-        BYTE   W01
+        BYTE   W02
         BYTE                   40
-        BYTE   W03
+        BYTE   W01
         BYTE                   39
-        BYTE   W02
-        BYTE                   38
         BYTE   W01
+        BYTE                   38
+        BYTE   W03
         BYTE                   37
-        BYTE   W02
+        BYTE   W06
         BYTE                   36
-        BYTE   W02
-        BYTE                   38
+        BYTE   W03
+        BYTE                   35
+        BYTE   W03
+        BYTE                   34
         BYTE   W01
-        BYTE                   41
+        BYTE                   33
+        BYTE   W02
+        BYTE                   32
+        BYTE   W02
+        BYTE                   34
+        BYTE   W01
+        BYTE                   36
         BYTE   W01
         BYTE           N02     Fn5   v045
         BYTE   W01
-        BYTE           VOL     44
+        BYTE           VOL     39
         BYTE   W01
-        BYTE                   46
+        BYTE                   41
         BYTE           N02     Gn5   v061
         BYTE   W02
-        BYTE           VOL     49
+        BYTE           VOL     43
         BYTE           N02     Gs5   v071
         BYTE   W01
-        BYTE           VOL     52
+        BYTE           VOL     46
         BYTE   W01
         BYTE           N24     As5   v083
         BYTE   W01
-        BYTE           VOL     50
-        BYTE   W01
-        BYTE                   47
-        BYTE   W02
-        BYTE                   45
+        BYTE           VOL     44
         BYTE   W01
         BYTE                   42
         BYTE   W02
         BYTE                   39
+        BYTE   W01
+        BYTE                   37
+        BYTE   W02
+        BYTE                   35
+        BYTE   W03
+        BYTE                   37
+        BYTE   W02
+        BYTE                   38
+        BYTE   W01
+        BYTE                   39
         BYTE   W02
         BYTE                   40
         BYTE   W01
-        BYTE                   41
+        BYTE                   42
         BYTE   W02
         BYTE                   43
         BYTE   W01
@@ -3244,207 +3145,201 @@ EndlessBattle_3_LOOP:
         BYTE   W02
         BYTE                   45
         BYTE   W01
-        BYTE                   47
-        BYTE   W02
-        BYTE                   48
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   51
-        BYTE   W01
-        BYTE                   52
+        BYTE                   46
         BYTE   W02
 // 037   ----------------------------------------
-        BYTE                   54
+        BYTE                   48
         BYTE           N06     Gs5   v092
         BYTE   W06
         BYTE                   Gn5
         BYTE   W06
         BYTE           N72     Ds5   v099   gtp2
         BYTE   W01
-        BYTE           VOL     53
-        BYTE   W01
-        BYTE                   51
-        BYTE   W01
-        BYTE                   48
+        BYTE           VOL     47
         BYTE   W01
         BYTE                   46
         BYTE   W01
-        BYTE                   44
-        BYTE   W01
-        BYTE                   40
-        BYTE   W07
-        BYTE                   41
-        BYTE   W03
         BYTE                   42
+        BYTE   W01
+        BYTE                   41
+        BYTE   W01
+        BYTE                   39
+        BYTE   W01
+        BYTE                   36
+        BYTE   W01
+        BYTE                   35
         BYTE   W03
-        BYTE                   43
+        BYTE                   36
         BYTE   W03
-        BYTE                   44
-        BYTE   W03
-        BYTE                   45
-        BYTE   W03
-        BYTE                   46
-        BYTE   W03
-        BYTE                   47
-        BYTE   W02
-        BYTE                   48
-        BYTE   W03
-        BYTE                   47
-        BYTE   W03
-        BYTE                   45
+        BYTE                   37
         BYTE   W06
-        BYTE                   43
+        BYTE                   38
         BYTE   W03
-        BYTE                   42
+        BYTE                   39
+        BYTE   W03
+        BYTE                   40
         BYTE   W03
         BYTE                   41
         BYTE   W03
+        BYTE                   42
+        BYTE   W08
         BYTE                   40
         BYTE   W03
         BYTE                   39
         BYTE   W03
         BYTE                   38
         BYTE   W03
+        BYTE                   37
+        BYTE   W03
         BYTE                   36
         BYTE   W03
         BYTE                   35
-        BYTE   W02
+        BYTE   W03
+        BYTE                   34
+        BYTE   W03
         BYTE                   33
-        BYTE   W01
-        BYTE                   30
+        BYTE   W03
+        BYTE                   32
+        BYTE   W03
+        BYTE                   31
         BYTE   W02
-        BYTE                   28
+        BYTE                   29
         BYTE   W01
-        BYTE                   26
+        BYTE                   27
         BYTE   W02
-        BYTE                   24
+        BYTE                   25
         BYTE   W01
+        BYTE                   23
+        BYTE   W02
         BYTE                   21
-        BYTE   W02
+        BYTE   W01
         BYTE                   19
-        BYTE   W01
+        BYTE   W02
         BYTE                   17
-        BYTE   W02
-        BYTE                   14
         BYTE   W01
-        BYTE                   12
+        BYTE                   15
         BYTE   W02
+        BYTE                   12
+        BYTE   W01
         BYTE                   10
+        BYTE   W02
+        BYTE                   8
         BYTE   W01
 // 038   ----------------------------------------
         BYTE           N44     Gn3   v107   gtp3
         BYTE   W01
-        BYTE           VOL     11
+        BYTE           VOL     10
         BYTE   W01
-        BYTE                   13
+        BYTE                   12
         BYTE   W01
-        BYTE                   17
-        BYTE   W01
-        BYTE                   19
-        BYTE   W01
-        BYTE                   20
-        BYTE   W01
-        BYTE                   24
-        BYTE   W01
-        BYTE                   26
-        BYTE   W01
-        BYTE                   28
-        BYTE   W01
-        BYTE                   31
-        BYTE   W01
-        BYTE                   33
-        BYTE   W01
-        BYTE                   35
-        BYTE   W01
-        BYTE                   39
-        BYTE   W01
-        BYTE                   40
-        BYTE   W01
-        BYTE                   42
-        BYTE   W01
-        BYTE                   46
-        BYTE   W01
-        BYTE                   48
-        BYTE   W03
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W06
-        BYTE                   51
-        BYTE   W04
-        BYTE                   49
-        BYTE   W01
-        BYTE                   47
-        BYTE   W01
-        BYTE                   44
-        BYTE   W01
-        BYTE                   42
-        BYTE   W01
-        BYTE                   41
-        BYTE   W01
-        BYTE                   37
-        BYTE   W01
-        BYTE                   35
-        BYTE   W01
-        BYTE                   34
-        BYTE   W01
-        BYTE                   30
-        BYTE   W01
-        BYTE                   29
-        BYTE   W01
-        BYTE                   27
-        BYTE   W01
-        BYTE                   24
-        BYTE   W01
-        BYTE                   22
-        BYTE   W01
-        BYTE                   20
+        BYTE                   15
         BYTE   W01
         BYTE                   17
         BYTE   W01
-        BYTE                   16
+        BYTE                   18
         BYTE   W01
-        BYTE                   19
-        BYTE           N40     Dn4
+        BYTE                   21
         BYTE   W01
-        BYTE           VOL     20
-        BYTE   W01
-        BYTE                   22
+        BYTE                   23
         BYTE   W01
         BYTE                   25
         BYTE   W01
-        BYTE                   26
-        BYTE   W01
         BYTE                   28
+        BYTE   W01
+        BYTE                   29
         BYTE   W01
         BYTE                   31
         BYTE   W01
-        BYTE                   32
-        BYTE   W01
         BYTE                   34
+        BYTE   W01
+        BYTE                   36
         BYTE   W01
         BYTE                   37
         BYTE   W01
-        BYTE                   39
+        BYTE                   41
         BYTE   W01
-        BYTE                   40
+        BYTE                   43
+        BYTE   W06
+        BYTE                   44
+        BYTE   W03
+        BYTE                   45
+        BYTE   W03
+        BYTE                   46
+        BYTE   W03
+        BYTE                   45
         BYTE   W01
-        BYTE                   42
-        BYTE   W09
         BYTE                   44
         BYTE   W01
-        BYTE                   46
-        BYTE   W02
-        BYTE                   49
+        BYTE                   42
         BYTE   W01
-        BYTE                   51
-        BYTE   W02
-        BYTE                   49
+        BYTE                   39
         BYTE   W01
-        BYTE                   46
-        BYTE   W02
+        BYTE                   37
+        BYTE   W01
+        BYTE                   36
+        BYTE   W01
+        BYTE                   33
+        BYTE   W01
+        BYTE                   31
+        BYTE   W01
+        BYTE                   30
+        BYTE   W01
+        BYTE                   27
+        BYTE   W01
+        BYTE                   26
+        BYTE   W01
+        BYTE                   24
+        BYTE   W01
+        BYTE                   21
+        BYTE   W01
+        BYTE                   20
+        BYTE   W01
+        BYTE                   18
+        BYTE   W01
+        BYTE                   15
+        BYTE   W01
+        BYTE                   14
+        BYTE   W01
+        BYTE                   17
+        BYTE           N40     Dn4
+        BYTE   W01
+        BYTE           VOL     18
+        BYTE   W01
+        BYTE                   19
+        BYTE   W01
+        BYTE                   22
+        BYTE   W01
+        BYTE                   23
+        BYTE   W01
+        BYTE                   25
+        BYTE   W01
+        BYTE                   27
+        BYTE   W01
+        BYTE                   29
+        BYTE   W01
+        BYTE                   30
+        BYTE   W01
+        BYTE                   33
+        BYTE   W01
+        BYTE                   34
+        BYTE   W01
+        BYTE                   35
+        BYTE   W01
+        BYTE                   37
+        BYTE   W09
+        BYTE                   39
+        BYTE   W01
         BYTE                   41
+        BYTE   W02
+        BYTE                   44
+        BYTE   W01
+        BYTE                   45
+        BYTE   W02
+        BYTE                   43
+        BYTE   W01
+        BYTE                   41
+        BYTE   W02
+        BYTE                   37
         BYTE   W10
         BYTE           N04     Cs4
         BYTE   W04
@@ -3452,64 +3347,60 @@ EndlessBattle_3_LOOP:
         BYTE   W04
 // 039   ----------------------------------------
         BYTE           N80     Bn3   v107   gtp1
-        BYTE   W07
-        BYTE           VOL     40
+        BYTE   W04
+        BYTE           VOL     36
         BYTE   W06
-        BYTE                   39
-        BYTE   W03
-        BYTE                   38
-        BYTE   W06
-        BYTE                   37
-        BYTE   W03
-        BYTE                   36
-        BYTE   W03
         BYTE                   35
         BYTE   W06
         BYTE                   34
-        BYTE   W06
-        BYTE                   33
         BYTE   W03
+        BYTE                   33
+        BYTE   W06
         BYTE                   32
         BYTE   W03
         BYTE                   31
-        BYTE   W01
+        BYTE   W06
         BYTE                   30
-        BYTE   W02
+        BYTE   W06
         BYTE                   29
-        BYTE   W01
+        BYTE   W06
         BYTE                   28
-        BYTE   W02
+        BYTE   W01
         BYTE                   27
+        BYTE   W02
+        BYTE                   26
         BYTE   W01
         BYTE                   25
-        BYTE   W03
+        BYTE   W02
+        BYTE                   24
+        BYTE   W01
         BYTE                   23
         BYTE   W02
         BYTE                   22
         BYTE   W01
         BYTE                   21
         BYTE   W02
-        BYTE                   20
-        BYTE   W01
         BYTE                   19
-        BYTE   W02
+        BYTE   W03
         BYTE                   17
-        BYTE   W01
-        BYTE                   16
-        BYTE   W02
+        BYTE   W03
         BYTE                   15
         BYTE   W01
         BYTE                   14
         BYTE   W02
+        BYTE                   13
+        BYTE   W01
         BYTE                   12
-        BYTE   W01
+        BYTE   W02
         BYTE                   11
-        BYTE   W02
-        BYTE                   10
         BYTE   W01
-        BYTE                   9
+        BYTE                   10
         BYTE   W02
+        BYTE                   9
+        BYTE   W01
         BYTE                   8
+        BYTE   W02
+        BYTE                   7
         BYTE   W01
         BYTE                   6
         BYTE   W02
@@ -3517,15 +3408,13 @@ EndlessBattle_3_LOOP:
         BYTE   W01
         BYTE                   4
         BYTE   W02
-        BYTE                   3
-        BYTE   W01
         BYTE                   2
-        BYTE   W02
+        BYTE   W03
         BYTE                   0
         BYTE   W07
-        BYTE                   36
+        BYTE                   32
         BYTE   W01
-        BYTE                   53
+        BYTE                   47
         BYTE   W03
 // 040   ----------------------------------------
         BYTE   GoTo
@@ -3539,7 +3428,7 @@ EndlessBattle_4:
 // 000   ----------------------------------------
         BYTE           VOICE   107
         BYTE           PAN     c_v-35
-        BYTE           VOL     64
+        BYTE           VOL     56
         BYTE           N11     Cn5   v069
         BYTE           N11     Gn5
         BYTE   W12
@@ -3609,104 +3498,101 @@ EndlessBattle_4_LOOP:
 // 009   ----------------------------------------
         BYTE   W96
 // 010   ----------------------------------------
-        BYTE           VOL     30
+        BYTE           VOL     27
         BYTE           N44     Cn2   v096   gtp3
         BYTE                   Gn2
-        BYTE   W03
-        BYTE           VOL     31
         BYTE   W06
-        BYTE                   32
+        BYTE           VOL     28
         BYTE   W03
+        BYTE                   29
+        BYTE   W06
+        BYTE                   30
+        BYTE   W06
+        BYTE                   31
+        BYTE   W03
+        BYTE                   32
+        BYTE   W06
         BYTE                   33
         BYTE   W03
         BYTE                   34
-        BYTE   W06
-        BYTE                   35
         BYTE   W03
+        BYTE                   35
+        BYTE   W06
         BYTE                   36
         BYTE   W06
         BYTE                   37
-        BYTE   W03
-        BYTE                   38
-        BYTE   W03
-        BYTE                   39
-        BYTE   W06
-        BYTE                   40
-        BYTE   W03
-        BYTE                   41
-        BYTE   W03
-        BYTE                   42
         BYTE           N44     Ds2   v096   gtp3
         BYTE                   Cn3
         BYTE   W03
-        BYTE           VOL     43
-        BYTE   W06
-        BYTE                   44
-        BYTE   W03
-        BYTE                   45
-        BYTE   W03
-        BYTE                   46
-        BYTE   W06
-        BYTE                   47
-        BYTE   W03
-        BYTE                   48
-        BYTE   W06
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W06
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-// 011   ----------------------------------------
-        BYTE                   54
-        BYTE           N44     Dn2   v096   gtp3
-        BYTE                   As2
-        BYTE   W06
-        BYTE           VOL     53
-        BYTE   W07
-        BYTE                   52
-        BYTE   W06
-        BYTE                   51
-        BYTE   W07
-        BYTE                   50
-        BYTE   W06
-        BYTE                   49
-        BYTE   W07
-        BYTE                   48
-        BYTE   W06
-        BYTE                   47
-        BYTE   W03
-        BYTE           N44     As1   v096   gtp3
-        BYTE                   Fn2
-        BYTE   W04
-        BYTE           VOL     46
-        BYTE   W06
-        BYTE                   45
-        BYTE   W06
-        BYTE                   44
-        BYTE   W07
-        BYTE                   43
-        BYTE   W06
-        BYTE                   42
-        BYTE   W07
-        BYTE                   41
-        BYTE   W03
-        BYTE                   40
+        BYTE           VOL     38
         BYTE   W06
         BYTE                   39
         BYTE   W03
+        BYTE                   40
+        BYTE   W06
+        BYTE                   41
+        BYTE   W03
+        BYTE                   42
+        BYTE   W06
+        BYTE                   43
+        BYTE   W03
+        BYTE                   44
+        BYTE   W06
+        BYTE                   45
+        BYTE   W06
+        BYTE                   46
+        BYTE   W03
+        BYTE                   47
+        BYTE   W03
+// 011   ----------------------------------------
+        BYTE                   48
+        BYTE           N44     Dn2   v096   gtp3
+        BYTE                   As2
+        BYTE   W06
+        BYTE           VOL     47
+        BYTE   W07
+        BYTE                   46
+        BYTE   W06
+        BYTE                   45
+        BYTE   W10
+        BYTE                   44
+        BYTE   W06
+        BYTE                   43
+        BYTE   W07
+        BYTE                   42
+        BYTE   W06
+        BYTE                   41
+        BYTE           N44     As1   v096   gtp3
+        BYTE                   Fn2
+        BYTE   W07
+        BYTE           VOL     40
+        BYTE   W09
+        BYTE                   39
+        BYTE   W07
+        BYTE                   38
+        BYTE   W06
+        BYTE                   37
+        BYTE   W07
+        BYTE                   36
+        BYTE   W06
+        BYTE                   35
+        BYTE   W06
 // 012   ----------------------------------------
         BYTE           N36     Cn2
         BYTE           N36     Fn2
         BYTE   W04
-        BYTE           VOL     38
+        BYTE           VOL     34
         BYTE   W06
-        BYTE                   37
+        BYTE                   33
         BYTE   W04
+        BYTE                   32
+        BYTE   W01
+        BYTE                   33
+        BYTE   W02
+        BYTE                   34
+        BYTE   W01
+        BYTE                   35
+        BYTE   W02
         BYTE                   36
         BYTE   W01
         BYTE                   37
@@ -3716,6 +3602,8 @@ EndlessBattle_4_LOOP:
         BYTE                   39
         BYTE   W02
         BYTE                   40
+        BYTE   W03
+        BYTE                   41
         BYTE   W01
         BYTE                   42
         BYTE   W02
@@ -3726,139 +3614,123 @@ EndlessBattle_4_LOOP:
         BYTE                   45
         BYTE   W01
         BYTE                   46
-        BYTE   W02
-        BYTE                   47
-        BYTE   W01
-        BYTE                   48
-        BYTE   W02
-        BYTE                   49
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   51
-        BYTE   W01
-        BYTE                   52
         BYTE           N03     Cs2
         BYTE           N03     Gn2
         BYTE   W02
-        BYTE           VOL     53
+        BYTE           VOL     47
         BYTE   W01
-        BYTE                   54
+        BYTE                   48
         BYTE           N03     Dn2
         BYTE           N03     An2
         BYTE   W02
-        BYTE           VOL     55
+        BYTE           VOL     49
         BYTE   W01
-        BYTE                   56
+        BYTE                   50
         BYTE           N03     Ds2
         BYTE           N03     As2
-        BYTE   W02
-        BYTE           VOL     57
-        BYTE   W01
-        BYTE                   58
+        BYTE   W03
+        BYTE           VOL     51
         BYTE           N03     En2
         BYTE           N03     Cn3
         BYTE   W02
-        BYTE           VOL     59
+        BYTE           VOL     52
         BYTE   W01
-        BYTE                   60
+        BYTE                   53
         BYTE           N18     Fn2
         BYTE           N18     Dn3
         BYTE   W18
         BYTE                   Gn2
         BYTE           N18     Ds3
-        BYTE   W18
+        BYTE   W12
+        BYTE           VOL     54
+        BYTE   W06
         BYTE           N12     An2
         BYTE           N12     Fn3
-        BYTE   W09
-        BYTE           VOL     61
-        BYTE   W03
+        BYTE   W12
 // 013   ----------------------------------------
         BYTE           N18     Cn3
         BYTE           N18     Gn3
-        BYTE   W18
+        BYTE   W12
+        BYTE           VOL     55
+        BYTE   W06
         BYTE           N06     Gs2
         BYTE           N06     Fn3
         BYTE   W06
         BYTE           N68     Ds2   v096   gtp3
         BYTE                   Cn3
-        BYTE   W03
-        BYTE           VOL     63
-        BYTE   W03
-        BYTE                   62
-        BYTE   W03
-        BYTE                   61
-        BYTE   W03
-        BYTE                   60
-        BYTE   W06
-        BYTE                   59
-        BYTE   W03
-        BYTE                   58
-        BYTE   W06
-        BYTE                   57
-        BYTE   W03
-        BYTE                   56
-        BYTE   W03
-        BYTE                   55
-        BYTE   W06
-        BYTE                   54
+        BYTE   W12
+        BYTE           VOL     54
         BYTE   W03
         BYTE                   53
         BYTE   W03
         BYTE                   52
-        BYTE   W01
+        BYTE   W06
+        BYTE                   51
+        BYTE   W03
         BYTE                   50
-        BYTE   W02
+        BYTE   W06
         BYTE                   49
-        BYTE   W01
+        BYTE   W06
         BYTE                   48
-        BYTE   W02
+        BYTE   W03
         BYTE                   47
+        BYTE   W03
+        BYTE                   46
         BYTE   W01
         BYTE                   45
         BYTE   W02
         BYTE                   44
         BYTE   W01
-        BYTE                   43
-        BYTE   W02
         BYTE                   42
+        BYTE   W02
+        BYTE                   41
         BYTE   W01
         BYTE                   40
         BYTE   W02
         BYTE                   39
         BYTE   W01
-        BYTE                   37
+        BYTE                   38
         BYTE   W02
-        BYTE                   36
+        BYTE                   37
         BYTE   W01
         BYTE                   35
+        BYTE   W03
+        BYTE                   33
         BYTE   W02
-        BYTE                   34
-        BYTE   W01
         BYTE                   32
-        BYTE   W02
-        BYTE                   31
         BYTE   W01
+        BYTE                   31
+        BYTE   W02
         BYTE                   30
+        BYTE   W01
+        BYTE                   29
+        BYTE   W02
+        BYTE                   28
+        BYTE   W01
+        BYTE                   26
         BYTE   W02
 // 014   ----------------------------------------
-        BYTE                   29
+        BYTE                   25
         BYTE           N44     Cs2   v096   gtp3
         BYTE                   Gs2
         BYTE   W01
-        BYTE           VOL     27
+        BYTE           VOL     24
         BYTE   W02
-        BYTE                   26
+        BYTE                   23
         BYTE   W01
-        BYTE                   25
+        BYTE                   22
+        BYTE   W02
+        BYTE                   21
+        BYTE   W01
+        BYTE                   22
         BYTE   W02
         BYTE                   24
         BYTE   W01
-        BYTE                   25
+        BYTE                   26
         BYTE   W02
-        BYTE                   27
+        BYTE                   28
         BYTE   W01
-        BYTE                   29
+        BYTE                   30
         BYTE   W02
         BYTE                   31
         BYTE   W01
@@ -3866,31 +3738,25 @@ EndlessBattle_4_LOOP:
         BYTE   W02
         BYTE                   35
         BYTE   W01
-        BYTE                   37
+        BYTE                   36
         BYTE   W02
-        BYTE                   39
+        BYTE                   38
         BYTE   W01
+        BYTE                   40
+        BYTE   W12
         BYTE                   41
-        BYTE   W02
-        BYTE                   43
-        BYTE   W01
-        BYTE                   45
         BYTE   W08
-        BYTE                   46
-        BYTE   W08
-        BYTE                   47
-        BYTE   W08
-        BYTE                   48
-        BYTE   W02
+        BYTE                   42
+        BYTE   W06
         BYTE           N42     Fn2
         BYTE           N36     Cn3   v096   gtp2
-        BYTE   W14
-        BYTE           VOL     49
+        BYTE   W08
+        BYTE           VOL     43
         BYTE   W11
-        BYTE                   50
+        BYTE                   44
         BYTE   W11
-        BYTE                   51
-        BYTE   W03
+        BYTE                   45
+        BYTE   W09
         BYTE           N03     Dn3   v104
         BYTE   W03
         BYTE                   Fs2
@@ -3899,231 +3765,219 @@ EndlessBattle_4_LOOP:
         BYTE                   Gn2
         BYTE           N03     En3
         BYTE   W01
-        BYTE           VOL     52
+        BYTE           VOL     46
         BYTE   W02
 // 015   ----------------------------------------
         BYTE           N44     Gs2   v096   gtp3
         BYTE                   Fn3
         BYTE   W30
-        BYTE           VOL     53
+        BYTE           VOL     47
         BYTE   W07
-        BYTE                   52
+        BYTE                   46
         BYTE   W06
-        BYTE                   51
+        BYTE                   45
         BYTE   W05
         BYTE           N44     Fn2   v096   gtp3
         BYTE                   Cn3
-        BYTE   W02
-        BYTE           VOL     50
-        BYTE   W06
-        BYTE                   49
+        BYTE   W05
+        BYTE           VOL     44
         BYTE   W07
-        BYTE                   48
-        BYTE   W07
-        BYTE                   47
+        BYTE                   43
         BYTE   W06
-        BYTE                   46
+        BYTE                   42
         BYTE   W07
-        BYTE                   45
+        BYTE                   41
         BYTE   W06
-        BYTE                   44
+        BYTE                   40
+        BYTE   W10
+        BYTE                   39
         BYTE   W07
 // 016   ----------------------------------------
-        BYTE                   43
+        BYTE                   38
         BYTE           N44     Fn2   v096   gtp3
         BYTE                   Cn3
         BYTE   W03
-        BYTE           VOL     42
+        BYTE           VOL     37
         BYTE   W09
+        BYTE                   38
+        BYTE   W08
+        BYTE                   39
+        BYTE   W08
+        BYTE                   40
+        BYTE   W12
+        BYTE                   41
+        BYTE   W08
+        BYTE           N18     Cn2
+        BYTE           N18     An2
+        BYTE   W01
+        BYTE           VOL     42
+        BYTE   W08
         BYTE                   43
         BYTE   W08
         BYTE                   44
-        BYTE   W08
-        BYTE                   45
-        BYTE   W08
-        BYTE                   46
-        BYTE   W09
-        BYTE                   47
-        BYTE   W03
-        BYTE           N18     Cn2
-        BYTE           N18     An2
-        BYTE   W05
-        BYTE           VOL     48
-        BYTE   W08
-        BYTE                   49
-        BYTE   W05
+        BYTE   W01
         BYTE           N03     Dn2
         BYTE           N03     As2
         BYTE   W03
-        BYTE           VOL     50
-        BYTE           N03     En2
+        BYTE                   En2
         BYTE           N03     Bn2
         BYTE   W03
         BYTE           N23     Fn2
         BYTE           N23     Cn3
-        BYTE   W06
-        BYTE           VOL     51
+        BYTE   W02
+        BYTE           VOL     45
+        BYTE   W12
+        BYTE                   46
         BYTE   W08
-        BYTE                   52
-        BYTE   W08
-        BYTE                   53
+        BYTE                   47
         BYTE   W02
 // 017   ----------------------------------------
         BYTE           N48     Gn2
         BYTE           N48     Cn3
         BYTE   W02
-        BYTE           VOL     54
+        BYTE           VOL     48
         BYTE   W06
-        BYTE                   53
+        BYTE                   47
         BYTE   W12
-        BYTE                   52
+        BYTE                   46
         BYTE   W11
-        BYTE                   51
-        BYTE   W12
-        BYTE                   50
-        BYTE   W05
+        BYTE                   45
+        BYTE   W17
+        BYTE                   44
         BYTE           N30     Dn2   v096   gtp1
         BYTE           N32     Bn2
-        BYTE   W02
-        BYTE           VOL     49
-        BYTE   W01
-        BYTE                   48
         BYTE   W03
-        BYTE                   47
+        BYTE           VOL     43
         BYTE   W02
-        BYTE                   46
-        BYTE   W01
-        BYTE                   45
-        BYTE   W02
-        BYTE                   44
-        BYTE   W01
-        BYTE                   43
-        BYTE   W03
         BYTE                   42
+        BYTE   W01
+        BYTE                   41
         BYTE   W02
         BYTE                   40
         BYTE   W03
         BYTE                   39
         BYTE   W01
         BYTE                   38
-        BYTE   W01
+        BYTE   W03
         BYTE                   37
         BYTE   W02
+        BYTE                   36
+        BYTE   W01
         BYTE                   35
+        BYTE   W03
+        BYTE                   34
         BYTE   W01
-        BYTE                   32
+        BYTE                   33
         BYTE   W02
-        BYTE                   29
+        BYTE                   31
         BYTE   W01
-        BYTE                   26
+        BYTE                   28
         BYTE   W02
+        BYTE                   25
+        BYTE   W01
         BYTE                   23
-        BYTE   W01
+        BYTE   W02
         BYTE                   20
-        BYTE   W02
-        BYTE                   17
         BYTE   W01
-        BYTE                   14
+        BYTE                   18
         BYTE   W02
-        BYTE                   11
+        BYTE                   15
         BYTE   W01
-        BYTE                   8
+        BYTE                   12
+        BYTE   W02
+        BYTE                   10
+        BYTE   W01
+        BYTE                   7
         BYTE   W02
         BYTE                   4
         BYTE   W01
-        BYTE                   20
+        BYTE                   18
         BYTE   W01
-        BYTE                   29
+        BYTE                   26
         BYTE   W01
+        BYTE                   40
+        BYTE   W06
+// 018   ----------------------------------------
+        BYTE                   42
+        BYTE           N48     Gn3   v127
+        BYTE   W03
+        BYTE           VOL     43
+        BYTE   W03
         BYTE                   45
         BYTE   W03
         BYTE                   46
         BYTE   W03
-// 018   ----------------------------------------
         BYTE                   47
-        BYTE           N48     Gn3   v127
         BYTE   W03
-        BYTE           VOL     49
+        BYTE                   48
         BYTE   W03
         BYTE                   50
         BYTE   W03
+        BYTE                   51
+        BYTE   W03
+        BYTE                   52
+        BYTE   W03
+        BYTE                   53
+        BYTE   W03
+        BYTE                   55
+        BYTE   W03
+        BYTE                   56
+        BYTE   W03
+        BYTE                   57
+        BYTE   W12
+        BYTE           N48     Cn4
+        BYTE   W07
+        BYTE           VOL     56
+        BYTE   W03
+        BYTE                   55
+        BYTE   W06
+        BYTE                   54
+        BYTE   W03
+        BYTE                   53
+        BYTE   W03
+        BYTE                   52
+        BYTE   W02
+        BYTE                   51
+        BYTE   W06
         BYTE                   52
         BYTE   W03
         BYTE                   53
         BYTE   W03
         BYTE                   54
         BYTE   W03
+        BYTE                   55
+        BYTE   W03
         BYTE                   56
         BYTE   W03
         BYTE                   57
         BYTE   W03
-        BYTE                   59
-        BYTE   W03
-        BYTE                   60
-        BYTE   W03
-        BYTE                   61
-        BYTE   W03
-        BYTE                   63
-        BYTE   W03
-        BYTE                   65
-        BYTE   W12
-        BYTE           N48     Cn4
-        BYTE   W07
-        BYTE           VOL     64
-        BYTE   W03
-        BYTE                   63
-        BYTE   W03
-        BYTE                   61
-        BYTE   W03
-        BYTE                   60
-        BYTE   W03
-        BYTE                   59
-        BYTE   W03
-        BYTE                   58
-        BYTE   W02
-        BYTE                   57
-        BYTE   W03
-        BYTE                   58
-        BYTE   W03
-        BYTE                   59
-        BYTE   W03
-        BYTE                   60
-        BYTE   W03
-        BYTE                   61
-        BYTE   W03
-        BYTE                   62
-        BYTE   W03
-        BYTE                   63
-        BYTE   W03
-        BYTE                   64
-        BYTE   W03
 // 019   ----------------------------------------
-        BYTE                   65
-        BYTE   W16
-        BYTE                   63
-        BYTE   W02
-        BYTE                   60
-        BYTE   W01
         BYTE                   58
+        BYTE   W16
+        BYTE                   56
         BYTE   W02
+        BYTE                   54
+        BYTE   W01
+        BYTE                   51
+        BYTE   W02
+        BYTE                   48
+        BYTE   W03
+        BYTE                   49
+        BYTE           N24
+        BYTE   W03
+        BYTE           VOL     50
+        BYTE   W03
+        BYTE                   51
+        BYTE   W03
+        BYTE                   53
+        BYTE   W03
         BYTE                   54
         BYTE   W03
         BYTE                   55
-        BYTE           N24
         BYTE   W03
-        BYTE           VOL     57
+        BYTE                   56
         BYTE   W03
         BYTE                   58
-        BYTE   W03
-        BYTE                   59
-        BYTE   W03
-        BYTE                   61
-        BYTE   W03
-        BYTE                   62
-        BYTE   W03
-        BYTE                   64
-        BYTE   W03
-        BYTE                   65
         BYTE   W03
         BYTE           N24     Dn4
         BYTE   W24
@@ -4131,26 +3985,28 @@ EndlessBattle_4_LOOP:
         BYTE   W24
 // 020   ----------------------------------------
         BYTE           N48     Gn3
-        BYTE   W11
-        BYTE           VOL     64
-        BYTE   W03
-        BYTE                   63
-        BYTE   W03
-        BYTE                   62
-        BYTE   W03
-        BYTE                   61
-        BYTE   W03
-        BYTE                   60
         BYTE   W08
-        BYTE                   61
+        BYTE           VOL     57
+        BYTE   W03
+        BYTE                   56
         BYTE   W06
-        BYTE                   63
+        BYTE                   55
         BYTE   W06
-        BYTE                   64
-        BYTE   W05
+        BYTE                   54
+        BYTE   W02
+        BYTE                   53
+        BYTE   W03
+        BYTE                   54
+        BYTE   W06
+        BYTE                   55
+        BYTE   W06
+        BYTE                   56
+        BYTE   W06
+        BYTE                   57
+        BYTE   W02
         BYTE           N32     Ds3   v127   gtp3
         BYTE   W01
-        BYTE           VOL     65
+        BYTE           VOL     58
         BYTE   W32
         BYTE   W03
         BYTE           N06     Fn3
@@ -4159,44 +4015,38 @@ EndlessBattle_4_LOOP:
         BYTE   W06
 // 021   ----------------------------------------
         BYTE           N48     Fn3
-        BYTE   W11
-        BYTE           VOL     64
-        BYTE   W09
-        BYTE                   63
-        BYTE   W10
-        BYTE                   62
-        BYTE   W04
-        BYTE                   61
-        BYTE   W08
-        BYTE                   60
-        BYTE   W03
-        BYTE                   59
-        BYTE   W03
-        BYTE                   58
         BYTE   W06
-        BYTE                   57
-        BYTE   W02
+        BYTE           VOL     57
+        BYTE   W09
         BYTE                   56
+        BYTE   W10
+        BYTE                   55
+        BYTE   W14
+        BYTE                   54
+        BYTE   W06
+        BYTE                   53
         BYTE   W03
-        BYTE                   57
+        BYTE                   52
+        BYTE   W03
+        BYTE                   51
+        BYTE   W03
+        BYTE                   50
+        BYTE   W05
+        BYTE                   51
         BYTE   W01
         BYTE           N24     Cn3
+        BYTE   W02
+        BYTE           VOL     52
+        BYTE   W02
+        BYTE                   53
         BYTE   W01
-        BYTE           VOL     58
-        BYTE   W01
-        BYTE                   59
+        BYTE                   54
         BYTE   W03
-        BYTE                   60
+        BYTE                   55
+        BYTE   W03
+        BYTE                   56
         BYTE   W02
-        BYTE                   61
-        BYTE   W01
-        BYTE                   62
-        BYTE   W02
-        BYTE                   63
-        BYTE   W01
-        BYTE                   64
-        BYTE   W02
-        BYTE                   65
+        BYTE                   57
         BYTE   W11
         BYTE           N12     Dn3
         BYTE   W12
@@ -4209,33 +4059,27 @@ EndlessBattle_4_LOOP:
         BYTE   W24
 // 023   ----------------------------------------
         BYTE           N48     As3
-        BYTE   W09
-        BYTE           VOL     64
+        BYTE   W12
+        BYTE           VOL     56
         BYTE   W03
-        BYTE                   63
+        BYTE                   55
         BYTE   W03
-        BYTE                   62
+        BYTE                   54
         BYTE   W03
-        BYTE                   61
-        BYTE   W03
-        BYTE                   60
-        BYTE   W01
-        BYTE                   59
-        BYTE   W03
-        BYTE                   60
+        BYTE                   53
+        BYTE   W07
+        BYTE                   54
         BYTE   W06
-        BYTE                   61
+        BYTE                   55
         BYTE   W06
-        BYTE                   62
-        BYTE   W03
-        BYTE                   63
-        BYTE   W03
-        BYTE                   64
-        BYTE   W05
+        BYTE                   56
+        BYTE   W06
+        BYTE                   57
+        BYTE   W02
         BYTE           N18     Fn3
-        BYTE   W01
-        BYTE           VOL     65
-        BYTE   W17
+        BYTE   W02
+        BYTE           VOL     58
+        BYTE   W16
         BYTE           N18     Gn3
         BYTE   W18
         BYTE           N12     As3
@@ -4247,49 +4091,39 @@ EndlessBattle_4_LOOP:
         BYTE   W06
         BYTE           TIE     Cn4
         BYTE   W05
-        BYTE           VOL     64
-        BYTE   W03
-        BYTE                   63
-        BYTE   W03
-        BYTE                   61
-        BYTE   W03
-        BYTE                   60
-        BYTE   W06
-        BYTE                   61
-        BYTE   W03
-        BYTE                   62
-        BYTE   W03
-        BYTE                   63
-        BYTE   W03
-        BYTE                   64
-        BYTE   W03
-        BYTE                   65
-        BYTE   W12
-        BYTE                   64
-        BYTE   W08
-        BYTE                   63
-        BYTE   W08
-        BYTE                   62
-        BYTE   W04
-        BYTE                   61
-        BYTE   W08
-// 025   ----------------------------------------
-        BYTE   W01
-        BYTE                   60
-        BYTE   W08
-        BYTE                   59
-        BYTE   W08
-        BYTE                   58
-        BYTE   W04
-        BYTE                   57
-        BYTE   W03
-        BYTE                   56
+        BYTE           VOL     57
         BYTE   W03
         BYTE                   55
         BYTE   W03
+        BYTE                   54
+        BYTE   W03
         BYTE                   53
         BYTE   W03
+        BYTE                   54
+        BYTE   W03
+        BYTE                   55
+        BYTE   W06
+        BYTE                   56
+        BYTE   W03
+        BYTE                   57
+        BYTE   W03
+        BYTE                   58
+        BYTE   W08
+        BYTE                   57
+        BYTE   W08
+        BYTE                   56
+        BYTE   W08
+        BYTE                   55
+        BYTE   W13
+        BYTE                   54
+        BYTE   W03
+// 025   ----------------------------------------
+        BYTE   W05
+        BYTE                   53
+        BYTE   W08
         BYTE                   52
+        BYTE   W08
+        BYTE                   51
         BYTE   W03
         BYTE                   50
         BYTE   W03
@@ -4299,13 +4133,15 @@ EndlessBattle_4_LOOP:
         BYTE   W03
         BYTE                   46
         BYTE   W03
-        BYTE                   44
+        BYTE                   45
         BYTE   W03
         BYTE                   43
         BYTE   W03
         BYTE                   42
         BYTE   W03
         BYTE                   40
+        BYTE   W03
+        BYTE                   39
         BYTE   W03
         BYTE                   38
         BYTE   W03
@@ -4315,154 +4151,139 @@ EndlessBattle_4_LOOP:
         BYTE   W03
         BYTE                   34
         BYTE   W03
-        BYTE           EOT
-        BYTE           VOL     32
+        BYTE                   33
         BYTE   W03
         BYTE                   31
         BYTE   W03
-        BYTE                   29
+        BYTE                   30
         BYTE   W03
-        BYTE                   28
+        BYTE           EOT
+        BYTE           VOL     29
         BYTE   W03
         BYTE                   27
+        BYTE   W03
+        BYTE                   26
         BYTE   W03
         BYTE                   25
         BYTE   W03
         BYTE                   24
-        BYTE   W01
-        BYTE                   23
         BYTE   W03
-        BYTE                   24
+        BYTE                   22
+        BYTE   W03
+        BYTE                   21
+        BYTE   W01
+        BYTE                   20
+        BYTE   W03
+        BYTE                   21
         BYTE   W02
 // 026   ----------------------------------------
         BYTE           N48     Gs1   v104
         BYTE           N24     Cn2
         BYTE   W01
-        BYTE           VOL     25
+        BYTE           VOL     22
+        BYTE   W03
+        BYTE                   23
+        BYTE   W03
+        BYTE                   24
+        BYTE   W03
+        BYTE                   25
         BYTE   W03
         BYTE                   26
         BYTE   W03
-        BYTE                   27
+        BYTE                   28
         BYTE   W03
         BYTE                   29
         BYTE   W03
         BYTE                   30
-        BYTE   W03
-        BYTE                   31
-        BYTE   W03
-        BYTE                   32
-        BYTE   W03
-        BYTE                   34
         BYTE   W02
         BYTE           N24     Ds2
         BYTE   W01
-        BYTE           VOL     35
+        BYTE           VOL     31
         BYTE   W03
-        BYTE                   36
+        BYTE                   32
         BYTE   W03
+        BYTE                   33
+        BYTE   W03
+        BYTE                   35
+        BYTE   W06
         BYTE                   37
         BYTE   W03
+        BYTE                   38
+        BYTE   W03
         BYTE                   39
-        BYTE   W03
+        BYTE   W01
         BYTE                   40
-        BYTE   W03
+        BYTE   W01
+        BYTE           N24     Cn2
+        BYTE           N24     Gs2
+        BYTE   W08
+        BYTE           VOL     41
+        BYTE   W06
         BYTE                   42
-        BYTE   W03
+        BYTE   W06
         BYTE                   43
         BYTE   W03
         BYTE                   44
         BYTE   W01
-        BYTE                   45
-        BYTE   W01
-        BYTE           N24     Cn2
-        BYTE           N24     Gs2
-        BYTE   W05
-        BYTE           VOL     46
-        BYTE   W06
-        BYTE                   47
-        BYTE   W06
-        BYTE                   48
-        BYTE   W06
-        BYTE                   49
-        BYTE   W01
         BYTE           N24     Ds2
         BYTE           N24     Cn3
-        BYTE   W02
-        BYTE           VOL     50
+        BYTE   W05
+        BYTE           VOL     45
+        BYTE   W09
+        BYTE                   46
         BYTE   W06
-        BYTE                   51
-        BYTE   W06
-        BYTE                   52
-        BYTE   W06
-        BYTE                   53
+        BYTE                   47
         BYTE   W04
 // 027   ----------------------------------------
         BYTE           N48     Fn2
         BYTE           N48     Dn3
         BYTE   W30
-        BYTE           VOL     54
+        BYTE           VOL     48
         BYTE   W18
         BYTE           N48     Dn2
         BYTE           N48     As2
         BYTE   W16
-        BYTE           VOL     55
+        BYTE           VOL     49
         BYTE   W32
 // 028   ----------------------------------------
         BYTE           N24     Fn3
         BYTE           N48     Gn3
         BYTE   W02
-        BYTE           VOL     56
-        BYTE   W02
-        BYTE                   55
-        BYTE   W01
-        BYTE                   54
-        BYTE   W02
-        BYTE                   53
-        BYTE   W01
-        BYTE                   52
-        BYTE   W02
-        BYTE                   51
-        BYTE   W01
-        BYTE                   50
+        BYTE           VOL     50
         BYTE   W02
         BYTE                   49
         BYTE   W01
         BYTE                   48
         BYTE   W02
-        BYTE                   46
-        BYTE   W07
         BYTE                   47
         BYTE   W01
+        BYTE                   46
+        BYTE   W02
+        BYTE                   45
+        BYTE   W01
+        BYTE                   44
+        BYTE   W02
+        BYTE                   43
+        BYTE   W01
+        BYTE                   42
+        BYTE   W02
+        BYTE                   41
+        BYTE   W08
         BYTE           N24     Ds3
-        BYTE   W06
-        BYTE           VOL     48
+        BYTE   W02
+        BYTE           VOL     42
         BYTE   W07
-        BYTE                   49
+        BYTE                   43
         BYTE   W07
-        BYTE                   50
-        BYTE   W04
+        BYTE                   44
+        BYTE   W07
+        BYTE                   45
+        BYTE   W01
         BYTE           N24     As2
         BYTE           N24     Fn3   v077
-        BYTE   W02
-        BYTE           VOL     51
-        BYTE   W07
-        BYTE                   52
+        BYTE   W09
+        BYTE           VOL     46
         BYTE   W04
-        BYTE                   53
-        BYTE   W03
-        BYTE                   52
-        BYTE   W03
-        BYTE                   51
-        BYTE   W03
-        BYTE                   50
-        BYTE   W02
-        BYTE           N24     Gn2   v104
-        BYTE           N24     Ds3   v077
-        BYTE   W01
-        BYTE           VOL     49
-        BYTE   W03
-        BYTE                   48
-        BYTE   W03
         BYTE                   47
         BYTE   W03
         BYTE                   46
@@ -4470,21 +4291,42 @@ EndlessBattle_4_LOOP:
         BYTE                   45
         BYTE   W03
         BYTE                   44
-        BYTE   W03
-        BYTE                   43
+        BYTE   W02
+        BYTE           N24     Gn2   v104
+        BYTE           N24     Ds3   v077
+        BYTE   W01
+        BYTE           VOL     43
         BYTE   W03
         BYTE                   42
+        BYTE   W03
+        BYTE                   41
+        BYTE   W03
+        BYTE                   40
+        BYTE   W06
+        BYTE                   39
+        BYTE   W03
+        BYTE                   38
+        BYTE   W03
+        BYTE                   37
         BYTE   W02
 // 029   ----------------------------------------
         BYTE           N48     An2   v104
         BYTE           N96     Cn3
         BYTE   W01
-        BYTE           VOL     40
+        BYTE           VOL     36
         BYTE   W03
-        BYTE                   39
+        BYTE                   35
         BYTE   W03
-        BYTE                   38
+        BYTE                   34
         BYTE   W02
+        BYTE                   33
+        BYTE   W01
+        BYTE                   34
+        BYTE   W02
+        BYTE                   35
+        BYTE   W03
+        BYTE                   36
+        BYTE   W03
         BYTE                   37
         BYTE   W01
         BYTE                   38
@@ -4492,17 +4334,17 @@ EndlessBattle_4_LOOP:
         BYTE                   39
         BYTE   W03
         BYTE                   40
-        BYTE   W01
+        BYTE   W03
         BYTE                   41
-        BYTE   W02
-        BYTE                   42
         BYTE   W01
-        BYTE                   43
+        BYTE                   42
         BYTE   W02
+        BYTE                   43
+        BYTE   W01
         BYTE                   44
         BYTE   W03
         BYTE                   45
-        BYTE   W01
+        BYTE   W03
         BYTE                   46
         BYTE   W02
         BYTE                   47
@@ -4512,39 +4354,15 @@ EndlessBattle_4_LOOP:
         BYTE                   49
         BYTE   W02
         BYTE                   50
-        BYTE   W01
+        BYTE   W03
         BYTE                   51
-        BYTE   W03
-        BYTE                   52
-        BYTE   W02
-        BYTE                   53
-        BYTE   W01
-        BYTE                   54
-        BYTE   W03
-        BYTE                   55
-        BYTE   W02
-        BYTE                   56
-        BYTE   W01
-        BYTE                   57
-        BYTE   W02
-        BYTE                   58
         BYTE           N48     Fn2
-        BYTE   W02
-        BYTE           VOL     59
-        BYTE   W03
-        BYTE                   58
-        BYTE   W03
-        BYTE                   57
-        BYTE   W03
-        BYTE                   55
-        BYTE   W03
-        BYTE                   54
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-        BYTE                   52
-        BYTE   W03
+        BYTE   W01
+        BYTE           VOL     52
+        BYTE   W04
         BYTE                   51
+        BYTE   W03
+        BYTE                   50
         BYTE   W03
         BYTE                   49
         BYTE   W03
@@ -4556,33 +4374,49 @@ EndlessBattle_4_LOOP:
         BYTE   W03
         BYTE                   45
         BYTE   W03
+        BYTE                   44
+        BYTE   W03
         BYTE                   43
         BYTE   W03
-        BYTE                   42
+        BYTE                   41
         BYTE   W03
         BYTE                   40
+        BYTE   W06
+        BYTE                   38
+        BYTE   W03
+        BYTE                   37
+        BYTE   W03
+        BYTE                   36
         BYTE   W01
 // 030   ----------------------------------------
         BYTE   W02
-        BYTE                   39
+        BYTE                   35
         BYTE   W03
-        BYTE                   38
+        BYTE                   34
         BYTE   W03
-        BYTE                   37
+        BYTE                   33
         BYTE   W02
-        BYTE                   36
+        BYTE                   32
         BYTE   W06
-        BYTE                   37
+        BYTE                   33
         BYTE   W03
-        BYTE                   38
+        BYTE                   34
         BYTE   W03
-        BYTE                   39
+        BYTE                   35
         BYTE   W02
         BYTE           N48     Cn2
         BYTE           N48     Ds2
         BYTE   W04
-        BYTE           VOL     40
+        BYTE           VOL     36
+        BYTE   W06
+        BYTE                   37
         BYTE   W03
+        BYTE                   38
+        BYTE   W03
+        BYTE                   39
+        BYTE   W06
+        BYTE                   40
+        BYTE   W06
         BYTE                   41
         BYTE   W03
         BYTE                   42
@@ -4594,18 +4428,6 @@ EndlessBattle_4_LOOP:
         BYTE                   45
         BYTE   W03
         BYTE                   46
-        BYTE   W03
-        BYTE                   47
-        BYTE   W03
-        BYTE                   48
-        BYTE   W06
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W03
-        BYTE                   52
         BYTE   W02
         BYTE           N48     Dn2
         BYTE           N48     Fn2
@@ -4615,12 +4437,12 @@ EndlessBattle_4_LOOP:
         BYTE           N24     Ds2
         BYTE           N24     Gn2
         BYTE   W04
-        BYTE           VOL     53
+        BYTE           VOL     47
         BYTE   W20
         BYTE           N24     Cn2
         BYTE           N24     Gs2
         BYTE   W17
-        BYTE           VOL     54
+        BYTE           VOL     48
         BYTE   W07
         BYTE           N24     Ds2
         BYTE           N24     Cn3
@@ -4629,119 +4451,117 @@ EndlessBattle_4_LOOP:
         BYTE           N72     Fn2
         BYTE           N72     Dn3
         BYTE   W05
-        BYTE           VOL     55
-        BYTE   W03
-        BYTE                   54
-        BYTE   W01
-        BYTE                   53
-        BYTE   W02
-        BYTE                   52
-        BYTE   W03
-        BYTE                   51
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   49
+        BYTE           VOL     49
         BYTE   W03
         BYTE                   48
         BYTE   W01
         BYTE                   47
-        BYTE   W01
+        BYTE   W02
         BYTE                   46
-        BYTE   W12
+        BYTE   W03
         BYTE                   45
-        BYTE   W08
+        BYTE   W03
         BYTE                   44
-        BYTE   W08
+        BYTE   W01
         BYTE                   43
-        BYTE   W08
+        BYTE   W02
         BYTE                   42
-        BYTE   W04
+        BYTE   W02
         BYTE                   41
+        BYTE   W08
+        BYTE                   40
+        BYTE   W12
+        BYTE                   39
+        BYTE   W08
+        BYTE                   38
+        BYTE   W08
+        BYTE                   37
+        BYTE   W04
+        BYTE                   36
         BYTE   W03
-        BYTE                   42
+        BYTE                   37
         BYTE   W03
-        BYTE                   44
+        BYTE                   39
         BYTE   W03
-        BYTE                   45
+        BYTE                   40
         BYTE   W01
         BYTE           N24     Gs2
         BYTE           N24     Fn3
         BYTE   W02
-        BYTE           VOL     47
+        BYTE           VOL     41
+        BYTE   W03
+        BYTE                   42
+        BYTE   W02
+        BYTE                   44
+        BYTE   W06
+        BYTE                   45
+        BYTE   W03
+        BYTE                   46
+        BYTE   W03
+        BYTE                   47
         BYTE   W03
         BYTE                   48
         BYTE   W02
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W03
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-        BYTE                   54
-        BYTE   W02
 // 033   ----------------------------------------
-        BYTE                   55
+        BYTE                   49
         BYTE           N96     Fn2
         BYTE           N96     Dn3
         BYTE   W03
-        BYTE           VOL     54
+        BYTE           VOL     48
         BYTE   W03
-        BYTE                   52
-        BYTE   W03
-        BYTE                   51
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   49
-        BYTE   W01
-        BYTE                   47
-        BYTE   W02
         BYTE                   46
+        BYTE   W03
+        BYTE                   45
+        BYTE   W03
+        BYTE                   43
         BYTE   W01
-        BYTE                   44
-        BYTE   W02
         BYTE                   42
-        BYTE   W01
+        BYTE   W02
         BYTE                   40
-        BYTE   W02
+        BYTE   W01
         BYTE                   39
-        BYTE   W01
-        BYTE                   37
         BYTE   W02
-        BYTE                   36
+        BYTE                   37
         BYTE   W01
-        BYTE                   34
+        BYTE                   36
+        BYTE   W02
+        BYTE                   35
+        BYTE   W01
+        BYTE                   33
         BYTE   W02
         BYTE                   32
         BYTE   W01
-        BYTE                   31
+        BYTE                   30
         BYTE   W02
         BYTE                   29
         BYTE   W01
-        BYTE                   28
+        BYTE                   27
         BYTE   W02
         BYTE                   26
         BYTE   W01
-        BYTE                   24
+        BYTE                   25
         BYTE   W02
         BYTE                   23
         BYTE   W01
         BYTE                   21
         BYTE   W02
-        BYTE                   19
+        BYTE                   20
         BYTE   W01
+        BYTE                   19
+        BYTE   W02
         BYTE                   17
+        BYTE   W01
+        BYTE                   15
+        BYTE   W02
+        BYTE                   14
+        BYTE   W01
+        BYTE                   15
         BYTE   W02
         BYTE                   16
         BYTE   W01
-        BYTE                   17
-        BYTE   W02
         BYTE                   18
+        BYTE   W02
+        BYTE                   19
         BYTE   W01
         BYTE                   20
         BYTE   W02
@@ -4750,131 +4570,50 @@ EndlessBattle_4_LOOP:
         BYTE                   23
         BYTE   W02
         BYTE                   25
+        BYTE   W03
+        BYTE                   27
         BYTE   W01
-        BYTE                   26
-        BYTE   W02
         BYTE                   28
-        BYTE   W01
-        BYTE                   29
         BYTE   W02
         BYTE                   30
         BYTE   W01
+        BYTE                   31
+        BYTE   W02
         BYTE                   32
-        BYTE   W02
-        BYTE                   33
         BYTE   W01
+        BYTE                   34
+        BYTE   W02
         BYTE                   35
-        BYTE   W02
+        BYTE   W01
         BYTE                   36
-        BYTE   W01
+        BYTE   W02
         BYTE                   38
-        BYTE   W02
+        BYTE   W03
         BYTE                   39
-        BYTE   W01
+        BYTE   W03
         BYTE                   40
-        BYTE   W02
-        BYTE                   43
         BYTE   W03
-        BYTE                   44
-        BYTE   W03
-        BYTE                   46
-        BYTE   W03
-        BYTE                   47
-        BYTE   W03
-        BYTE                   48
-        BYTE   W01
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W01
-        BYTE                   51
-        BYTE   W02
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
-        BYTE   W01
-        BYTE                   54
-        BYTE   W02
-        BYTE                   55
-        BYTE   W01
-        BYTE                   56
-        BYTE   W01
-// 034   ----------------------------------------
-        BYTE           N36     Gn2
-        BYTE           N36     Fn3
-        BYTE   W01
-        BYTE           VOL     57
-        BYTE   W32
-        BYTE   W03
-        BYTE           N12     Gn2
-        BYTE           N12     Ds3
-        BYTE   W12
-        BYTE                   Gn2   v054
-        BYTE           N12     Ds3
-        BYTE   W12
-        BYTE                   Gn2   v039
-        BYTE           N12     Ds3
-        BYTE   W12
-        BYTE           N36     Fn2   v104
-        BYTE           N36     Dn3
-        BYTE   W24
-// 035   ----------------------------------------
-        BYTE   W12
-        BYTE           N72     Ds2
-        BYTE           N72     Cn3
-        BYTE   W06
-        BYTE           VOL     55
-        BYTE   W01
-        BYTE                   54
-        BYTE   W02
-        BYTE                   52
-        BYTE   W01
-        BYTE                   51
-        BYTE   W02
-        BYTE                   49
-        BYTE   W01
-        BYTE                   47
-        BYTE   W02
-        BYTE                   46
-        BYTE   W01
-        BYTE                   44
-        BYTE   W02
-        BYTE                   42
+        BYTE                   41
         BYTE   W03
         BYTE                   43
-        BYTE   W06
+        BYTE   W02
         BYTE                   44
-        BYTE   W03
+        BYTE   W02
         BYTE                   45
         BYTE   W03
         BYTE                   46
-        BYTE   W06
+        BYTE   W03
         BYTE                   47
-        BYTE   W03
-        BYTE                   48
-        BYTE   W06
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W06
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-        BYTE                   54
-        BYTE   W06
-        BYTE                   55
-        BYTE   W03
-        BYTE                   56
-        BYTE   W06
-        BYTE                   57
         BYTE   W01
-        BYTE                   58
+        BYTE                   48
         BYTE   W02
-// 036   ----------------------------------------
-        BYTE           N36     Gn2
+        BYTE                   49
+        BYTE   W01
+        BYTE                   50
+        BYTE   W01
+// 034   ----------------------------------------
+EndlessBattle_4_34:
+        BYTE           N36     Gn2   v104
         BYTE           N36     Fn3
         BYTE   W36
         BYTE           N12     Gn2
@@ -4889,26 +4628,73 @@ EndlessBattle_4_LOOP:
         BYTE           N36     Fn2   v104
         BYTE           N36     Dn3
         BYTE   W24
+        BYTE   PEND
+// 035   ----------------------------------------
+        BYTE   W12
+        BYTE           N72     Ds2
+        BYTE           N72     Cn3
+        BYTE   W06
+        BYTE           VOL     49
+        BYTE   W01
+        BYTE                   48
+        BYTE   W02
+        BYTE                   46
+        BYTE   W01
+        BYTE                   45
+        BYTE   W02
+        BYTE                   44
+        BYTE   W01
+        BYTE                   42
+        BYTE   W02
+        BYTE                   40
+        BYTE   W01
+        BYTE                   39
+        BYTE   W02
+        BYTE                   37
+        BYTE   W03
+        BYTE                   38
+        BYTE   W06
+        BYTE                   39
+        BYTE   W03
+        BYTE                   40
+        BYTE   W06
+        BYTE                   41
+        BYTE   W03
+        BYTE                   42
+        BYTE   W06
+        BYTE                   43
+        BYTE   W03
+        BYTE                   44
+        BYTE   W06
+        BYTE                   45
+        BYTE   W06
+        BYTE                   46
+        BYTE   W03
+        BYTE                   47
+        BYTE   W03
+        BYTE                   48
+        BYTE   W06
+        BYTE                   49
+        BYTE   W03
+        BYTE                   50
+        BYTE   W06
+        BYTE                   51
+        BYTE   W03
+// 036   ----------------------------------------
+        BYTE   PATT
+         POIN2  EndlessBattle_4_34
 // 037   ----------------------------------------
         BYTE   W12
-        BYTE           N66     Ds2
+        BYTE           N66     Ds2   v104
         BYTE           N66     Cn3
-        BYTE   W04
-        BYTE           VOL     59
+        BYTE   W01
+        BYTE           VOL     52
+        BYTE   W03
+        BYTE                   53
         BYTE   W02
-        BYTE                   60
-        BYTE   W03
-        BYTE                   59
-        BYTE   W03
-        BYTE                   58
-        BYTE   W03
-        BYTE                   57
-        BYTE   W03
-        BYTE                   56
-        BYTE   W03
-        BYTE                   55
-        BYTE   W03
         BYTE                   54
+        BYTE   W03
+        BYTE                   53
         BYTE   W03
         BYTE                   52
         BYTE   W03
@@ -4920,35 +4706,39 @@ EndlessBattle_4_LOOP:
         BYTE   W03
         BYTE                   48
         BYTE   W03
-        BYTE                   47
+        BYTE                   46
         BYTE   W03
         BYTE                   45
-        BYTE   W03
-        BYTE                   44
-        BYTE   W03
+        BYTE   W06
         BYTE                   43
         BYTE   W03
         BYTE                   42
-        BYTE   W01
+        BYTE   W03
         BYTE                   41
-        BYTE   W02
+        BYTE   W03
         BYTE                   40
-        BYTE   W01
+        BYTE   W03
+        BYTE                   39
+        BYTE   W03
         BYTE                   38
-        BYTE   W02
+        BYTE   W03
         BYTE                   37
         BYTE   W01
+        BYTE                   36
+        BYTE   W02
         BYTE                   35
-        BYTE   W02
-        BYTE                   34
         BYTE   W01
-        BYTE                   32
+        BYTE                   34
         BYTE   W02
+        BYTE                   33
+        BYTE   W01
         BYTE                   31
+        BYTE   W02
+        BYTE                   30
         BYTE   W01
         BYTE                   29
         BYTE   W02
-        BYTE                   28
+        BYTE                   27
         BYTE   W01
         BYTE                   26
         BYTE   W02
@@ -4960,18 +4750,22 @@ EndlessBattle_4_LOOP:
         BYTE   W01
         BYTE                   20
         BYTE   W02
+        BYTE                   19
+        BYTE   W01
         BYTE                   18
-        BYTE   W01
-        BYTE                   17
         BYTE   W02
+        BYTE                   16
+        BYTE   W01
         BYTE                   15
+        BYTE   W02
+        BYTE                   14
         BYTE   W01
-        BYTE                   13
+        BYTE                   12
         BYTE   W01
-        BYTE                   37
+        BYTE                   33
         BYTE   W01
 // 038   ----------------------------------------
-        BYTE                   65
+        BYTE                   58
         BYTE           N11     Cn5   v069
         BYTE           N11     Gn5
         BYTE   W12
@@ -5000,7 +4794,7 @@ EndlessBattle_4_LOOP:
         BYTE   PATT
          POIN2  EndlessBattle_4_1
 // 040   ----------------------------------------
-        BYTE           VOL     64
+        BYTE           VOL     56
         BYTE   GoTo
          POIN2  EndlessBattle_4_LOOP
         BYTE   FINE
@@ -5011,7 +4805,7 @@ EndlessBattle_5:
         BYTE   KEYSH   EndlessBattle_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   127
-        BYTE           VOL     67
+        BYTE           VOL     60
         BYTE           N06     Dn1   v110
         BYTE           N14     An2   v038
         BYTE   W06
@@ -5698,20 +5492,79 @@ EndlessBattle_6_LOOP:
 // 014   ----------------------------------------
         BYTE   W96
 // 015   ----------------------------------------
-        BYTE           VOL     54
+        BYTE           VOL     47
         BYTE           PAN     c_v+34
         BYTE   W96
 // 016   ----------------------------------------
         BYTE   W96
 // 017   ----------------------------------------
         BYTE   W90
-        BYTE           VOL     37
+        BYTE           VOL     32
         BYTE   W03
-        BYTE                   38
+        BYTE                   33
         BYTE   W03
 // 018   ----------------------------------------
-        BYTE                   39
+        BYTE                   34
         BYTE           N44     Gn2   v121   gtp3
+        BYTE   W03
+        BYTE           VOL     35
+        BYTE   W03
+        BYTE                   36
+        BYTE   W03
+        BYTE                   38
+        BYTE   W06
+        BYTE                   39
+        BYTE   W03
+        BYTE                   41
+        BYTE   W03
+        BYTE                   42
+        BYTE   W03
+        BYTE                   43
+        BYTE   W03
+        BYTE                   44
+        BYTE   W03
+        BYTE                   45
+        BYTE   W03
+        BYTE                   46
+        BYTE   W03
+        BYTE                   47
+        BYTE   W12
+        BYTE           N44     Cn3   v121   gtp3
+        BYTE   W07
+        BYTE           VOL     46
+        BYTE   W03
+        BYTE                   45
+        BYTE   W06
+        BYTE                   44
+        BYTE   W03
+        BYTE                   43
+        BYTE   W03
+        BYTE                   42
+        BYTE   W08
+        BYTE                   43
+        BYTE   W03
+        BYTE                   44
+        BYTE   W06
+        BYTE                   45
+        BYTE   W03
+        BYTE                   46
+        BYTE   W03
+        BYTE                   47
+        BYTE   W03
+// 019   ----------------------------------------
+        BYTE   W16
+        BYTE                   46
+        BYTE   W01
+        BYTE                   44
+        BYTE   W02
+        BYTE                   42
+        BYTE   W01
+        BYTE                   40
+        BYTE   W01
+        BYTE                   39
+        BYTE   W03
+        BYTE                   40
+        BYTE           N23
         BYTE   W03
         BYTE           VOL     41
         BYTE   W03
@@ -5723,72 +5576,9 @@ EndlessBattle_6_LOOP:
         BYTE   W03
         BYTE                   45
         BYTE   W03
+        BYTE                   46
+        BYTE   W03
         BYTE                   47
-        BYTE   W03
-        BYTE                   48
-        BYTE   W03
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-        BYTE                   54
-        BYTE   W12
-        BYTE           N44     Cn3   v121   gtp3
-        BYTE   W07
-        BYTE           VOL     53
-        BYTE   W03
-        BYTE                   52
-        BYTE   W03
-        BYTE                   51
-        BYTE   W06
-        BYTE                   50
-        BYTE   W03
-        BYTE                   49
-        BYTE   W02
-        BYTE                   48
-        BYTE   W06
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W03
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-        BYTE                   54
-        BYTE   W03
-// 019   ----------------------------------------
-        BYTE   W16
-        BYTE                   53
-        BYTE   W01
-        BYTE                   51
-        BYTE   W02
-        BYTE                   48
-        BYTE   W01
-        BYTE                   46
-        BYTE   W01
-        BYTE                   45
-        BYTE   W03
-        BYTE                   46
-        BYTE           N23
-        BYTE   W03
-        BYTE           VOL     48
-        BYTE   W06
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W03
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-        BYTE                   54
         BYTE   W03
         BYTE           N23     Dn3
         BYTE   W24
@@ -5797,21 +5587,17 @@ EndlessBattle_6_LOOP:
 // 020   ----------------------------------------
         BYTE           N44     Gn2   v121   gtp3
         BYTE   W11
-        BYTE           VOL     53
+        BYTE           VOL     46
         BYTE   W06
-        BYTE                   52
-        BYTE   W03
-        BYTE                   51
-        BYTE   W05
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W09
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
+        BYTE                   45
         BYTE   W06
-        BYTE                   54
+        BYTE                   44
+        BYTE   W11
+        BYTE                   45
+        BYTE   W06
+        BYTE                   46
+        BYTE   W06
+        BYTE                   47
         BYTE   W02
         BYTE           N32     Ds2   v121   gtp2
         BYTE   W36
@@ -5822,35 +5608,31 @@ EndlessBattle_6_LOOP:
 // 021   ----------------------------------------
         BYTE           N44     Fn2   v121   gtp3
         BYTE   W15
-        BYTE           VOL     53
+        BYTE           VOL     46
         BYTE   W09
-        BYTE                   52
-        BYTE   W10
-        BYTE                   51
-        BYTE   W11
-        BYTE                   50
+        BYTE                   45
+        BYTE   W15
+        BYTE                   44
+        BYTE   W06
+        BYTE                   43
         BYTE   W03
-        BYTE                   49
-        BYTE   W03
-        BYTE                   48
+        BYTE                   42
+        BYTE   W06
+        BYTE                   41
         BYTE   W05
-        BYTE                   47
-        BYTE   W03
-        BYTE                   48
+        BYTE                   42
         BYTE   W01
         BYTE           N23     Cn2
         BYTE   W02
-        BYTE           VOL     49
-        BYTE   W01
-        BYTE                   50
-        BYTE   W02
-        BYTE                   51
+        BYTE           VOL     43
         BYTE   W03
-        BYTE                   52
+        BYTE                   44
         BYTE   W03
-        BYTE                   53
+        BYTE                   45
+        BYTE   W03
+        BYTE                   46
         BYTE   W01
-        BYTE                   54
+        BYTE                   47
         BYTE   W12
         BYTE           N11     Dn2
         BYTE   W12
@@ -5864,21 +5646,21 @@ EndlessBattle_6_LOOP:
 // 023   ----------------------------------------
         BYTE           N44     As2   v121   gtp3
         BYTE   W12
-        BYTE           VOL     53
+        BYTE           VOL     46
         BYTE   W03
-        BYTE                   52
+        BYTE                   45
         BYTE   W03
-        BYTE                   51
+        BYTE                   44
+        BYTE   W04
+        BYTE                   43
         BYTE   W03
-        BYTE                   50
-        BYTE   W07
-        BYTE                   51
+        BYTE                   44
         BYTE   W09
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
+        BYTE                   45
         BYTE   W06
-        BYTE                   54
+        BYTE                   46
+        BYTE   W06
+        BYTE                   47
         BYTE   W02
         BYTE           N17     Fn2
         BYTE   W18
@@ -5893,64 +5675,58 @@ EndlessBattle_6_LOOP:
         BYTE   W06
         BYTE           TIE     Cn3
         BYTE   W08
-        BYTE           VOL     52
+        BYTE           VOL     45
         BYTE   W03
-        BYTE                   51
-        BYTE   W02
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
-        BYTE   W06
-        BYTE                   52
-        BYTE   W03
-        BYTE                   53
-        BYTE   W03
-        BYTE                   54
-        BYTE   W21
-        BYTE                   53
-        BYTE   W09
-        BYTE                   52
-        BYTE   W09
-        BYTE                   51
-        BYTE   W05
-// 025   ----------------------------------------
-        BYTE                   49
-        BYTE   W01
-        BYTE                   47
-        BYTE   W01
+        BYTE                   44
+        BYTE   W08
         BYTE                   45
-        BYTE   W01
+        BYTE   W06
+        BYTE                   46
+        BYTE   W03
+        BYTE                   47
+        BYTE   W21
+        BYTE                   46
+        BYTE   W09
+        BYTE                   45
+        BYTE   W14
+// 025   ----------------------------------------
         BYTE                   42
         BYTE   W01
-        BYTE                   40
+        BYTE                   41
         BYTE   W01
-        BYTE                   38
+        BYTE                   39
         BYTE   W01
-        BYTE                   34
+        BYTE                   36
+        BYTE   W01
+        BYTE                   35
         BYTE   W01
         BYTE                   33
         BYTE   W01
-        BYTE                   31
+        BYTE                   30
+        BYTE   W01
+        BYTE                   28
         BYTE   W01
         BYTE                   27
         BYTE   W01
-        BYTE                   25
+        BYTE                   23
         BYTE   W01
-        BYTE                   24
+        BYTE                   22
         BYTE   W01
         BYTE                   20
         BYTE   W01
-        BYTE                   18
+        BYTE                   17
         BYTE   W01
         BYTE                   16
         BYTE   W01
-        BYTE                   12
+        BYTE                   14
         BYTE   W01
         BYTE                   11
         BYTE   W01
         BYTE                   9
         BYTE   W01
-        BYTE                   5
+        BYTE                   8
+        BYTE   W01
+        BYTE                   4
         BYTE   W01
         BYTE                   3
         BYTE   W01
@@ -5963,7 +5739,7 @@ EndlessBattle_6_LOOP:
         BYTE   W36
         BYTE           N03     Gn2   v107
         BYTE   W01
-        BYTE           VOL     51
+        BYTE           VOL     44
         BYTE   W02
         BYTE           N04     An2
         BYTE   W04
@@ -5980,43 +5756,35 @@ EndlessBattle_6_LOOP:
 // 026   ----------------------------------------
         BYTE           N44     Gn3   v107   gtp3
         BYTE   W10
-        BYTE           VOL     50
-        BYTE   W01
-        BYTE                   49
+        BYTE           VOL     43
         BYTE   W03
-        BYTE                   48
+        BYTE                   42
+        BYTE   W01
+        BYTE                   41
+        BYTE   W03
+        BYTE                   40
+        BYTE   W03
+        BYTE                   39
         BYTE   W02
-        BYTE                   47
-        BYTE   W01
-        BYTE                   46
+        BYTE                   38
         BYTE   W03
-        BYTE                   45
-        BYTE   W02
-        BYTE                   44
-        BYTE   W03
-        BYTE                   43
+        BYTE                   37
+        BYTE   W13
+        BYTE                   38
+        BYTE   W09
+        BYTE                   39
         BYTE   W01
+        BYTE           N44     Ds4   v107   gtp3
+        BYTE   W08
+        BYTE           VOL     40
+        BYTE   W09
+        BYTE                   41
+        BYTE   W09
         BYTE                   42
         BYTE   W06
         BYTE                   43
-        BYTE   W06
+        BYTE   W07
         BYTE                   44
-        BYTE   W09
-        BYTE                   45
-        BYTE   W01
-        BYTE           N44     Ds4   v107   gtp3
-        BYTE   W05
-        BYTE           VOL     46
-        BYTE   W09
-        BYTE                   47
-        BYTE   W06
-        BYTE                   48
-        BYTE   W06
-        BYTE                   49
-        BYTE   W09
-        BYTE                   50
-        BYTE   W04
-        BYTE                   51
         BYTE   W09
 // 027   ----------------------------------------
         BYTE   W24
@@ -6029,35 +5797,33 @@ EndlessBattle_6_LOOP:
 // 028   ----------------------------------------
         BYTE           N44     Gn3   v107   gtp3
         BYTE   W01
-        BYTE           VOL     50
+        BYTE           VOL     43
         BYTE   W03
-        BYTE                   49
+        BYTE                   42
         BYTE   W03
-        BYTE                   47
+        BYTE                   41
         BYTE   W03
-        BYTE                   46
+        BYTE                   40
         BYTE   W03
-        BYTE                   45
+        BYTE                   39
         BYTE   W03
-        BYTE                   44
+        BYTE                   38
         BYTE   W02
+        BYTE                   37
+        BYTE   W03
+        BYTE                   38
+        BYTE   W06
+        BYTE                   39
+        BYTE   W03
+        BYTE                   40
+        BYTE   W06
+        BYTE                   41
+        BYTE   W06
+        BYTE                   42
+        BYTE   W03
         BYTE                   43
         BYTE   W03
         BYTE                   44
-        BYTE   W06
-        BYTE                   45
-        BYTE   W03
-        BYTE                   46
-        BYTE   W03
-        BYTE                   47
-        BYTE   W03
-        BYTE                   48
-        BYTE   W06
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
         BYTE           N17     As3
         BYTE   W18
         BYTE                   Ds3
@@ -6067,31 +5833,29 @@ EndlessBattle_6_LOOP:
 // 029   ----------------------------------------
         BYTE           N44     Fn3   v107   gtp3
         BYTE   W03
-        BYTE           VOL     50
+        BYTE           VOL     43
         BYTE   W03
-        BYTE                   49
+        BYTE                   42
         BYTE   W03
-        BYTE                   48
+        BYTE                   41
         BYTE   W03
-        BYTE                   46
+        BYTE                   40
         BYTE   W03
-        BYTE                   45
+        BYTE                   39
+        BYTE   W03
+        BYTE                   38
+        BYTE   W07
+        BYTE                   39
+        BYTE   W06
+        BYTE                   40
+        BYTE   W03
+        BYTE                   41
+        BYTE   W06
+        BYTE                   42
+        BYTE   W03
+        BYTE                   43
         BYTE   W03
         BYTE                   44
-        BYTE   W07
-        BYTE                   45
-        BYTE   W03
-        BYTE                   46
-        BYTE   W06
-        BYTE                   47
-        BYTE   W03
-        BYTE                   48
-        BYTE   W03
-        BYTE                   49
-        BYTE   W03
-        BYTE                   50
-        BYTE   W03
-        BYTE                   51
         BYTE   W02
         BYTE           N23     Cn3
         BYTE   W24
@@ -6100,47 +5864,43 @@ EndlessBattle_6_LOOP:
 // 030   ----------------------------------------
         BYTE           TIE     Ds3
         BYTE   W09
-        BYTE           VOL     50
-        BYTE   W03
-        BYTE                   49
-        BYTE   W09
-        BYTE                   48
-        BYTE   W03
-        BYTE                   47
-        BYTE   W03
-        BYTE                   46
-        BYTE   W09
-        BYTE                   45
-        BYTE   W03
-        BYTE                   44
-        BYTE   W06
-        BYTE                   43
+        BYTE           VOL     43
         BYTE   W06
         BYTE                   42
-        BYTE   W04
+        BYTE   W06
         BYTE                   41
+        BYTE   W06
+        BYTE                   40
+        BYTE   W06
+        BYTE                   39
+        BYTE   W06
+        BYTE                   38
+        BYTE   W06
+        BYTE                   37
+        BYTE   W06
+        BYTE                   36
+        BYTE   W04
+        BYTE                   35
         BYTE   W03
-        BYTE                   42
-        BYTE   W12
-        BYTE                   43
-        BYTE   W07
-        BYTE                   44
-        BYTE   W11
-        BYTE                   45
-        BYTE   W07
-        BYTE                   46
-        BYTE   W01
-// 031   ----------------------------------------
-        BYTE   W11
-        BYTE                   47
-        BYTE   W07
-        BYTE                   48
-        BYTE   W07
-        BYTE                   49
-        BYTE   W11
-        BYTE                   50
+        BYTE                   36
         BYTE   W08
-        BYTE                   51
+        BYTE                   37
+        BYTE   W11
+        BYTE                   38
+        BYTE   W11
+        BYTE                   39
+        BYTE   W08
+// 031   ----------------------------------------
+        BYTE   W03
+        BYTE                   40
+        BYTE   W11
+        BYTE                   41
+        BYTE   W11
+        BYTE                   42
+        BYTE   W08
+        BYTE                   43
+        BYTE   W11
+        BYTE                   44
         BYTE   W03
         BYTE           EOT
         BYTE   W01
@@ -6153,64 +5913,56 @@ EndlessBattle_6_LOOP:
 // 032   ----------------------------------------
         BYTE           N60     Gn3
         BYTE   W03
-        BYTE           VOL     50
+        BYTE           VOL     43
         BYTE   W03
-        BYTE                   49
+        BYTE                   42
         BYTE   W03
-        BYTE                   48
+        BYTE                   41
         BYTE   W03
-        BYTE                   47
-        BYTE   W03
-        BYTE                   46
-        BYTE   W03
-        BYTE                   45
+        BYTE                   40
+        BYTE   W06
+        BYTE                   39
         BYTE   W01
-        BYTE                   44
+        BYTE                   38
         BYTE   W03
-        BYTE                   45
-        BYTE   W06
-        BYTE                   46
+        BYTE                   39
         BYTE   W09
-        BYTE                   47
-        BYTE   W06
-        BYTE                   48
-        BYTE   W06
-        BYTE                   49
+        BYTE                   40
         BYTE   W09
-        BYTE                   50
-        BYTE   W14
+        BYTE                   41
+        BYTE   W09
+        BYTE                   42
+        BYTE   W06
+        BYTE                   43
+        BYTE   W17
         BYTE           N17
         BYTE   W18
         BYTE           N05     Gs3
         BYTE   W06
 // 033   ----------------------------------------
         BYTE           N92     Gn3   v107   gtp3
-        BYTE   W19
-        BYTE           VOL     49
-        BYTE   W13
-        BYTE                   48
+        BYTE   W23
+        BYTE           VOL     42
         BYTE   W09
-        BYTE                   47
-        BYTE   W05
-        BYTE                   46
-        BYTE   W06
-        BYTE                   45
-        BYTE   W06
-        BYTE                   44
-        BYTE   W06
-        BYTE                   43
-        BYTE   W03
-        BYTE                   42
-        BYTE   W06
         BYTE                   41
-        BYTE   W03
+        BYTE   W14
         BYTE                   40
         BYTE   W06
         BYTE                   39
         BYTE   W06
         BYTE                   38
-        BYTE   W03
+        BYTE   W06
         BYTE                   37
+        BYTE   W06
+        BYTE                   36
+        BYTE   W03
+        BYTE                   35
+        BYTE   W06
+        BYTE                   34
+        BYTE   W06
+        BYTE                   33
+        BYTE   W06
+        BYTE                   32
         BYTE   W05
 // 034   ----------------------------------------
         BYTE   W96
@@ -6238,7 +5990,7 @@ EndlessBattle_7:
         BYTE   KEYSH   EndlessBattle_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   47
-        BYTE           VOL     71
+        BYTE           VOL     64
         BYTE           PAN     c_v+19
         BYTE           N32     Gn2   v113   gtp3
         BYTE   W36
@@ -6451,7 +6203,7 @@ EndlessBattle_8:
         BYTE   KEYSH   EndlessBattle_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   11
-        BYTE           VOL     44
+        BYTE           VOL     37
         BYTE           PAN     c_v-14
         BYTE           N11     Gn3   v116
         BYTE   W12

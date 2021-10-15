@@ -222,7 +222,7 @@ TitleTheme_1_LOOP:
         .byte   W06
 @ 001   ----------------------------------------
         .byte           PAN   , c_v-10
-        .byte           VOL   , 69
+        .byte           VOL   , 68
         .byte           N06   , Dn1 , v080
         .byte   W24
         .byte                   Dn1
@@ -489,7 +489,7 @@ TitleTheme_3:
 TitleTheme_3_LOOP:
         .byte   W06
 @ 001   ----------------------------------------
-        .byte           VOL   , 65
+        .byte           VOL   , 64
         .byte           PAN   , c_v-32
         .byte   W96
 @ 002   ----------------------------------------
@@ -616,7 +616,7 @@ TitleTheme_4_LOOP:
         .byte   W06
 @ 001   ----------------------------------------
         .byte           PAN   , c_v+11
-        .byte           VOL   , 71
+        .byte           VOL   , 70
         .byte   W96
 @ 002   ----------------------------------------
         .byte   W96
@@ -715,7 +715,7 @@ TitleTheme_5_LOOP:
         .byte   W06
 @ 001   ----------------------------------------
         .byte           PAN   , c_v-13
-        .byte           VOL   , 43
+        .byte           VOL   , 42
         .byte   W96
 @ 002   ----------------------------------------
         .byte   W96

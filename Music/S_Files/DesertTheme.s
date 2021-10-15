@@ -338,7 +338,7 @@ DesertTheme_1:
         .byte   KEYSH , DesertTheme_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 39
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N32   , En2 , v112
         .byte           N32   , Bn2 , v100
         .byte   W48
@@ -1050,7 +1050,7 @@ DesertTheme_4:
         .byte   KEYSH , DesertTheme_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 103
-        .byte           VOL   , 34
+        .byte           VOL   , 33
         .byte   W72
         .byte           PAN   , c_v-4
         .byte   W24
@@ -1161,7 +1161,7 @@ DesertTheme_5:
         .byte   KEYSH , DesertTheme_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 77
-        .byte           VOL   , 38
+        .byte           VOL   , 37
         .byte           PAN   , c_v-13
         .byte   W96
 @ 001   ----------------------------------------

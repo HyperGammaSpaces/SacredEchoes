@@ -16,7 +16,7 @@ EndlessBattle_0:
 @ 000   ----------------------------------------
         .byte   TEMPO , 122/2
         .byte           VOICE , 2
-        .byte           VOL   , 65
+        .byte           VOL   , 58
         .byte           N30   , Gn0 , v126 , gtp1
         .byte   W36
         .byte                   Gn0
@@ -435,7 +435,7 @@ EndlessBattle_1:
         .byte   KEYSH , EndlessBattle_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 51
-        .byte           VOL   , 58
+        .byte           VOL   , 51
         .byte           PAN   , c_v-26
         .byte           N11   , Gn2 , v066
         .byte           N11   , Dn2
@@ -661,50 +661,49 @@ EndlessBattle_1_12:
         .byte           N23   , Gn1 , v071
         .byte           N23   , As2
         .byte   W05
-        .byte           VOL   , 43
-        .byte   W04
-        .byte                   44
+        .byte           VOL   , 38
         .byte   W07
-        .byte                   45
-        .byte   W08
-        .byte                   46
+        .byte                   39
+        .byte   W12
+        .byte                   40
         .byte           N23   , Gs1
         .byte           N23   , Cn3
-        .byte   W12
-        .byte           VOL   , 47
-        .byte   W07
-        .byte                   48
-        .byte   W05
+        .byte   W08
+        .byte           VOL   , 41
+        .byte   W08
+        .byte                   42
+        .byte   W08
         .byte           N23   , Cn2
         .byte           N23   , Ds3
         .byte   W03
-        .byte           VOL   , 49
+        .byte           VOL   , 43
         .byte   W08
-        .byte                   50
-        .byte   W08
-        .byte                   51
-        .byte   W05
+        .byte                   44
+        .byte   W11
+        .byte                   45
+        .byte   W02
         .byte           N23   , Ds2
         .byte           N23   , Gn3
-        .byte   W02
-        .byte           VOL   , 52
+        .byte   W06
+        .byte           VOL   , 46
         .byte   W12
-        .byte                   53
-        .byte   W08
-        .byte                   54
+        .byte                   47
+        .byte   W04
+        .byte                   48
         .byte   W02
 @ 019   ----------------------------------------
         .byte           N23   , Fn2
         .byte           N44   , As3 , v071 , gtp3
-        .byte   W10
-        .byte           VOL   , 53
+        .byte   W04
+        .byte           VOL   , 47
         .byte   W13
-        .byte                   52
-        .byte   W01
+        .byte                   46
+        .byte   W07
         .byte           N23   , Gn2
-        .byte   W18
-        .byte           VOL   , 51
-        .byte   W06
+        .byte   W11
+        .byte           VOL   , 45
+        .byte   W13
+        .byte                   44
         .byte           N23   , As1
         .byte           N44   , Fn3 , v071 , gtp3
         .byte   W24
@@ -717,83 +716,79 @@ EndlessBattle_1_12:
         .byte           N80   , Gn1
         .byte   W24
         .byte           N56   , As2
-        .byte   W08
-        .byte           VOL   , 50
-        .byte   W03
-        .byte                   49
-        .byte   W03
-        .byte                   48
-        .byte   W03
-        .byte                   47
-        .byte   W03
-        .byte                   46
-        .byte   W06
-        .byte                   45
-        .byte   W03
-        .byte                   44
-        .byte   W03
-        .byte                   43
+        .byte   W11
+        .byte           VOL   , 43
         .byte   W03
         .byte                   42
-        .byte   W03
+        .byte   W06
         .byte                   41
-        .byte   W01
+        .byte   W03
         .byte                   40
-        .byte   W02
+        .byte   W03
+        .byte                   39
+        .byte   W03
         .byte                   38
-        .byte   W01
+        .byte   W03
+        .byte                   37
+        .byte   W06
         .byte                   36
-        .byte   W02
-        .byte                   34
         .byte   W01
-        .byte                   32
+        .byte                   35
+        .byte   W02
+        .byte                   33
+        .byte   W01
+        .byte                   31
         .byte   W02
         .byte                   30
         .byte   W01
-@ 021   ----------------------------------------
-        .byte                   29
+        .byte                   28
         .byte   W02
         .byte                   27
         .byte   W01
+@ 021   ----------------------------------------
         .byte                   25
         .byte   W02
         .byte                   23
         .byte   W01
-        .byte                   21
+        .byte                   22
         .byte   W02
+        .byte                   20
+        .byte   W01
         .byte                   19
+        .byte   W02
+        .byte                   17
+        .byte   W01
+        .byte                   15
         .byte   W01
         .byte                   17
         .byte   W01
-        .byte                   19
+        .byte                   20
+        .byte   W01
+        .byte                   21
         .byte   W01
         .byte                   23
         .byte   W01
-        .byte                   24
-        .byte   W01
         .byte                   26
+        .byte   W01
+        .byte                   27
         .byte   W01
         .byte                   29
         .byte   W01
-        .byte                   31
+        .byte                   32
         .byte   W01
         .byte                   33
         .byte   W01
-        .byte                   36
+        .byte                   35
         .byte   W01
         .byte                   38
         .byte   W01
-        .byte                   40
+        .byte                   39
         .byte   W01
-        .byte                   43
+        .byte                   41
         .byte   W01
-        .byte                   45
+        .byte                   44
         .byte   W01
-        .byte                   47
-        .byte   W01
-        .byte                   51
-        .byte   W01
-        .byte                   53
+        .byte                   46
         .byte           N23   , Fn1
         .byte           N23   , An2
         .byte   W24
@@ -870,111 +865,99 @@ EndlessBattle_1_12:
         .byte   W96
 @ 034   ----------------------------------------
         .byte           N36   , Ds3 , v066
-        .byte   W05
-        .byte           VOL   , 52
+        .byte   W08
+        .byte           VOL   , 45
         .byte   W06
-        .byte                   51
+        .byte                   44
         .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   49
+        .byte                   43
         .byte   W14
-        .byte                   50
+        .byte                   44
         .byte   W05
         .byte           N32   , Gn3 , v066 , gtp3
-        .byte   W02
-        .byte           VOL   , 51
+        .byte   W06
+        .byte           VOL   , 45
         .byte   W08
-        .byte                   52
-        .byte   W12
-        .byte                   53
-        .byte   W14
+        .byte                   46
+        .byte   W08
+        .byte                   47
+        .byte   W08
+        .byte                   46
+        .byte   W06
         .byte           N44   , Ds3 , v066 , gtp3
-        .byte   W03
-        .byte           VOL   , 52
-        .byte   W21
+        .byte   W20
+        .byte           VOL   , 45
+        .byte   W04
 @ 035   ----------------------------------------
-        .byte   W05
-        .byte                   51
-        .byte   W17
-        .byte                   50
-        .byte   W02
+        .byte   W13
+        .byte                   44
+        .byte   W11
         .byte           N23   , Cn3
         .byte   W15
-        .byte           VOL   , 49
+        .byte           VOL   , 43
         .byte   W09
         .byte           N23   , As2
         .byte   W08
-        .byte           VOL   , 48
+        .byte           VOL   , 42
         .byte   W16
         .byte           N23   , Gs2
-        .byte   W02
-        .byte           VOL   , 47
-        .byte   W17
-        .byte                   46
-        .byte   W05
+        .byte   W10
+        .byte           VOL   , 41
+        .byte   W14
 @ 036   ----------------------------------------
         .byte           N32   , As2 , v066 , gtp3
+        .byte   W04
+        .byte           VOL   , 40
+        .byte   W03
+        .byte                   41
+        .byte   W07
+        .byte                   42
         .byte   W10
-        .byte           VOL   , 47
+        .byte                   43
         .byte   W07
-        .byte                   48
-        .byte   W07
-        .byte                   49
-        .byte   W07
-        .byte                   50
+        .byte                   44
         .byte   W05
         .byte           N32   , Ds3 , v066 , gtp3
-        .byte   W01
-        .byte           VOL   , 51
-        .byte   W07
-        .byte                   52
-        .byte   W10
-        .byte                   53
-        .byte   W18
+        .byte   W05
+        .byte           VOL   , 45
+        .byte   W06
+        .byte                   46
+        .byte   W11
+        .byte                   47
+        .byte   W14
         .byte           N32   , Fn3 , v066 , gtp3
         .byte   W24
 @ 037   ----------------------------------------
-        .byte   W10
-        .byte           VOL   , 52
-        .byte   W02
+        .byte   W07
+        .byte           VOL   , 46
+        .byte   W05
         .byte           N80   , Ds3 , v066 , gtp3
-        .byte   W08
-        .byte           VOL   , 51
+        .byte   W05
+        .byte           VOL   , 45
         .byte   W06
-        .byte                   50
-        .byte   W06
-        .byte                   49
-        .byte   W06
-        .byte                   48
-        .byte   W06
-        .byte                   47
-        .byte   W06
-        .byte                   46
-        .byte   W06
-        .byte                   45
-        .byte   W02
         .byte                   44
-        .byte   W01
+        .byte   W09
         .byte                   43
-        .byte   W02
+        .byte   W06
         .byte                   42
-        .byte   W01
+        .byte   W09
         .byte                   41
-        .byte   W02
+        .byte   W06
         .byte                   40
         .byte   W03
+        .byte                   39
+        .byte   W03
         .byte                   38
-        .byte   W01
-        .byte                   37
         .byte   W02
-        .byte                   36
+        .byte                   37
         .byte   W01
+        .byte                   36
+        .byte   W02
         .byte                   35
         .byte   W03
-        .byte                   34
-        .byte   W02
         .byte                   33
+        .byte   W03
+        .byte                   32
         .byte   W01
         .byte                   31
         .byte   W02
@@ -982,21 +965,25 @@ EndlessBattle_1_12:
         .byte   W01
         .byte                   29
         .byte   W03
-        .byte                   28
-        .byte   W02
         .byte                   27
-        .byte   W01
+        .byte   W03
         .byte                   26
         .byte   W02
-        .byte                   24
+        .byte                   25
         .byte   W01
+        .byte                   24
+        .byte   W02
         .byte                   23
         .byte   W03
-        .byte                   22
-        .byte   W02
         .byte                   21
-        .byte   W01
+        .byte   W03
         .byte                   20
+        .byte   W01
+        .byte                   19
+        .byte   W02
+        .byte                   18
+        .byte   W01
+        .byte                   17
         .byte   W01
 @ 038   ----------------------------------------
         .byte           N11   , Gn2
@@ -1019,7 +1006,7 @@ EndlessBattle_1_12:
         .byte           N11   , Gn2
         .byte   W24
 @ 040   ----------------------------------------
-        .byte           VOL   , 58
+        .byte           VOL   , 51
         .byte   GOTO
          .word  EndlessBattle_1_LOOP
         .byte   FINE
@@ -1030,7 +1017,7 @@ EndlessBattle_2:
         .byte   KEYSH , EndlessBattle_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 51
-        .byte           VOL   , 56
+        .byte           VOL   , 48
         .byte           PAN   , c_v+15
         .byte           N11   , Cn3 , v066
         .byte   W12
@@ -1424,119 +1411,117 @@ EndlessBattle_3:
 @ 000   ----------------------------------------
         .byte           VOICE , 76
         .byte           PAN   , c_v+37
-        .byte           VOL   , 36
+        .byte           VOL   , 32
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W92
         .byte   W01
-        .byte                   53
+        .byte                   47
         .byte   W03
 @ 002   ----------------------------------------
 EndlessBattle_3_LOOP:
         .byte           N36   , Ds4 , v107
         .byte   W02
-        .byte           VOL   , 52
+        .byte           VOL   , 46
         .byte   W01
-        .byte                   50
+        .byte                   44
         .byte   W01
-        .byte                   47
-        .byte   W01
-        .byte                   43
-        .byte   W01
-        .byte                   41
+        .byte                   42
         .byte   W01
         .byte                   38
-        .byte   W11
-        .byte                   40
+        .byte   W01
+        .byte                   36
+        .byte   W01
+        .byte                   33
+        .byte   W10
+        .byte                   34
+        .byte   W01
+        .byte                   35
         .byte   W02
-        .byte                   42
-        .byte   W01
-        .byte                   45
-        .byte   W02
-        .byte                   47
-        .byte   W01
-        .byte                   49
-        .byte   W02
-        .byte                   51
-        .byte   W01
-        .byte                   54
-        .byte   W02
-        .byte                   56
-        .byte   W01
-        .byte                   58
-        .byte   W01
-        .byte                   55
-        .byte   W02
-        .byte                   53
-        .byte   W01
-        .byte                   51
-        .byte   W01
-        .byte                   49
-        .byte   W01
-        .byte           N06   , Fn4
-        .byte   W01
-        .byte           VOL   , 50
-        .byte   W03
-        .byte                   51
-        .byte   W01
-        .byte                   52
-        .byte   W01
-        .byte           N06   , Gn4
-        .byte   W01
-        .byte           VOL   , 53
-        .byte   W01
-        .byte                   54
-        .byte   W02
-        .byte                   55
-        .byte   W01
-        .byte                   56
-        .byte   W01
-        .byte           N56   , Cn5 , v107 , gtp3
-        .byte   W01
-        .byte           VOL   , 57
-        .byte   W02
-        .byte                   55
-        .byte   W01
-        .byte                   52
-        .byte   W02
-        .byte                   50
-        .byte   W01
-        .byte                   47
-        .byte   W02
-        .byte                   44
-        .byte   W01
-        .byte                   41
+        .byte                   37
         .byte   W01
         .byte                   39
-        .byte   W08
-        .byte                   40
-        .byte   W13
-        .byte                   41
-        .byte   W01
-        .byte                   42
         .byte   W02
-        .byte                   44
+        .byte                   42
         .byte   W01
-        .byte                   45
+        .byte                   44
         .byte   W02
         .byte                   46
         .byte   W01
-        .byte                   47
-        .byte   W02
         .byte                   48
+        .byte   W02
+        .byte                   50
+        .byte   W01
+        .byte                   51
+        .byte   W01
+        .byte                   49
+        .byte   W02
+        .byte                   47
+        .byte   W01
+        .byte                   45
+        .byte   W01
+        .byte                   44
+        .byte   W01
+        .byte           N06   , Fn4
+        .byte   W02
+        .byte           VOL   , 45
+        .byte   W02
+        .byte                   46
+        .byte   W02
+        .byte           N06   , Gn4
+        .byte   W01
+        .byte           VOL   , 47
+        .byte   W01
+        .byte                   48
+        .byte   W02
+        .byte                   49
         .byte   W01
         .byte                   50
-        .byte   W03
-        .byte                   52
+        .byte   W01
+        .byte           N56   , Cn5 , v107 , gtp3
+        .byte   W01
+        .byte           VOL   , 51
         .byte   W02
-        .byte                   53
+        .byte                   49
+        .byte   W01
+        .byte                   46
+        .byte   W02
+        .byte                   44
+        .byte   W01
+        .byte                   42
+        .byte   W02
+        .byte                   39
+        .byte   W01
+        .byte                   37
+        .byte   W01
+        .byte                   35
+        .byte   W17
+        .byte                   36
+        .byte   W04
+        .byte                   37
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   41
+        .byte   W01
+        .byte                   42
+        .byte   W02
+        .byte                   43
+        .byte   W01
+        .byte                   44
+        .byte   W02
+        .byte                   45
+        .byte   W01
+        .byte                   46
+        .byte   W02
+        .byte                   47
         .byte   W01
 @ 003   ----------------------------------------
-        .byte                   54
+        .byte                   48
         .byte   W02
-        .byte                   55
+        .byte                   49
         .byte   W01
-        .byte                   57
+        .byte                   50
         .byte   W15
         .byte           N03   , Cn5 , v082
         .byte   W03
@@ -1544,160 +1529,139 @@ EndlessBattle_3_LOOP:
         .byte   W03
         .byte           N24   , Dn5 , v101
         .byte   W02
-        .byte           VOL   , 55
-        .byte   W01
-        .byte                   54
-        .byte   W01
-        .byte                   53
-        .byte   W01
-        .byte                   50
-        .byte   W01
-        .byte                   49
-        .byte   W01
-        .byte                   47
-        .byte   W01
-        .byte                   45
-        .byte   W01
-        .byte                   43
-        .byte   W02
-        .byte                   44
-        .byte   W01
-        .byte                   45
-        .byte   W02
-        .byte                   47
-        .byte   W01
-        .byte                   49
-        .byte   W02
-        .byte                   50
-        .byte   W01
-        .byte                   51
-        .byte   W02
-        .byte                   53
-        .byte   W01
-        .byte                   55
-        .byte   W02
-        .byte                   56
-        .byte   W01
-        .byte                   58
-        .byte           N24   , As4 , v107
-        .byte   W08
-        .byte           VOL   , 57
-        .byte   W09
-        .byte                   56
-        .byte   W07
-        .byte           N24   , Fn4
-        .byte   W01
-        .byte           VOL   , 55
-        .byte   W07
-        .byte                   54
-        .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   51
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   49
-        .byte   W03
-        .byte                   47
-        .byte   W01
-@ 004   ----------------------------------------
-        .byte           N18   , Gn4
-        .byte   W12
-        .byte           VOL   , 48
-        .byte   W06
-        .byte           N06   , Fn4
-        .byte   W06
-        .byte           N96   , Gn4
-        .byte   W01
         .byte           VOL   , 49
         .byte   W01
-        .byte                   45
+        .byte                   48
+        .byte   W01
+        .byte                   47
         .byte   W01
         .byte                   44
+        .byte   W01
+        .byte                   43
         .byte   W01
         .byte                   42
         .byte   W01
-        .byte                   38
+        .byte                   39
         .byte   W01
-        .byte                   36
-        .byte   W06
-        .byte                   37
-        .byte   W03
         .byte                   38
-        .byte   W03
+        .byte   W02
         .byte                   39
         .byte   W01
         .byte                   40
-        .byte   W01
-        .byte                   41
         .byte   W02
-        .byte                   43
+        .byte                   42
         .byte   W01
-        .byte                   45
+        .byte                   43
+        .byte   W02
+        .byte                   44
+        .byte   W01
+        .byte                   46
         .byte   W02
         .byte                   47
         .byte   W01
-        .byte                   49
-        .byte   W02
-        .byte                   50
-        .byte   W01
-        .byte                   52
-        .byte   W02
-        .byte                   55
-        .byte   W01
-        .byte                   57
-        .byte   W03
-        .byte                   56
-        .byte   W03
-        .byte                   55
-        .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   51
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   49
-        .byte   W03
         .byte                   48
-        .byte   W03
+        .byte   W02
+        .byte                   50
+        .byte   W01
+        .byte                   51
+        .byte           N24   , As4 , v107
+        .byte   W13
+        .byte           VOL   , 50
+        .byte   W11
+        .byte           N24   , Fn4
+        .byte   W01
+        .byte           VOL   , 49
+        .byte   W04
+        .byte                   48
+        .byte   W06
         .byte                   46
         .byte   W03
         .byte                   45
         .byte   W03
         .byte                   44
-        .byte   W01
+        .byte   W03
         .byte                   43
+        .byte   W03
+        .byte                   42
+        .byte   W01
+@ 004   ----------------------------------------
+        .byte           N18   , Gn4
+        .byte   W18
+        .byte           N06   , Fn4
+        .byte   W01
+        .byte           VOL   , 43
+        .byte   W05
+        .byte           N96   , Gn4
+        .byte   W02
+        .byte           VOL   , 40
+        .byte   W01
+        .byte                   39
+        .byte   W01
+        .byte                   37
+        .byte   W01
+        .byte                   34
+        .byte   W01
+        .byte                   32
+        .byte   W06
+        .byte                   33
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W02
+        .byte                   37
+        .byte   W02
+        .byte                   38
+        .byte   W01
+        .byte                   40
         .byte   W02
         .byte                   42
         .byte   W01
-        .byte                   41
+        .byte                   43
         .byte   W02
+        .byte                   45
+        .byte   W01
+        .byte                   46
+        .byte   W02
+        .byte                   48
+        .byte   W01
+        .byte                   50
+        .byte   W06
+        .byte                   48
+        .byte   W06
+        .byte                   46
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   44
+        .byte   W03
+        .byte                   43
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   41
+        .byte   W03
         .byte                   40
         .byte   W01
-@ 005   ----------------------------------------
-        .byte   W02
         .byte                   39
-        .byte   W01
+        .byte   W03
         .byte                   38
         .byte   W02
         .byte                   37
-        .byte   W01
-        .byte                   36
-        .byte   W02
-        .byte                   35
         .byte   W03
+        .byte                   36
+        .byte   W01
+@ 005   ----------------------------------------
+        .byte                   35
+        .byte   W02
         .byte                   34
-        .byte   W01
+        .byte   W03
         .byte                   33
-        .byte   W02
-        .byte                   32
         .byte   W01
-        .byte                   31
+        .byte                   32
         .byte   W02
+        .byte                   31
+        .byte   W03
         .byte                   30
         .byte   W01
         .byte                   29
@@ -1705,20 +1669,30 @@ EndlessBattle_3_LOOP:
         .byte                   28
         .byte   W01
         .byte                   27
-        .byte   W02
-        .byte                   26
-        .byte   W01
-        .byte                   25
         .byte   W03
-        .byte                   24
-        .byte   W01
-        .byte                   23
+        .byte                   26
         .byte   W02
         .byte                   25
         .byte   W01
-        .byte                   28
+        .byte                   24
         .byte   W02
-        .byte                   30
+        .byte                   23
+        .byte   W03
+        .byte                   22
+        .byte   W01
+        .byte                   21
+        .byte   W01
+        .byte                   20
+        .byte   W02
+        .byte                   22
+        .byte   W01
+        .byte                   25
+        .byte   W02
+        .byte                   27
+        .byte   W01
+        .byte                   29
+        .byte   W02
+        .byte                   31
         .byte   W01
         .byte                   33
         .byte   W02
@@ -1727,367 +1701,335 @@ EndlessBattle_3_LOOP:
         .byte                   38
         .byte   W02
         .byte                   40
-        .byte   W01
-        .byte                   43
-        .byte   W02
-        .byte                   45
         .byte           N03   , As4 , v082
         .byte   W01
-        .byte           VOL   , 48
+        .byte           VOL   , 42
         .byte   W02
-        .byte                   50
+        .byte                   44
         .byte           N03   , Bn4
         .byte   W01
-        .byte           VOL   , 53
+        .byte           VOL   , 47
         .byte   W02
-        .byte                   51
+        .byte                   46
         .byte           N24   , Cn5 , v107
         .byte   W01
-        .byte           VOL   , 50
+        .byte           VOL   , 44
         .byte   W02
-        .byte                   49
+        .byte                   43
         .byte   W01
-        .byte                   47
+        .byte                   42
         .byte   W02
-        .byte                   46
+        .byte                   41
         .byte   W01
-        .byte                   45
+        .byte                   39
+        .byte   W17
+        .byte           N24   , As4
+        .byte   W03
+        .byte           VOL   , 40
+        .byte   W04
+        .byte                   41
+        .byte   W03
+        .byte                   42
+        .byte   W02
+        .byte                   43
         .byte   W01
         .byte                   44
-        .byte   W14
+        .byte   W03
         .byte                   45
         .byte   W02
-        .byte           N24   , As4
-        .byte   W07
-        .byte           VOL   , 46
+        .byte                   46
         .byte   W03
         .byte                   47
-        .byte   W02
+        .byte   W01
         .byte                   48
-        .byte   W01
-        .byte                   49
         .byte   W02
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W01
-        .byte                   52
-        .byte   W02
-        .byte                   53
-        .byte   W01
-        .byte                   54
-        .byte   W01
-        .byte                   55
-        .byte   W01
 @ 006   ----------------------------------------
-        .byte                   53
+        .byte                   47
         .byte           N32   , Gn4 , v107 , gtp3
         .byte   W01
-        .byte           VOL   , 50
+        .byte           VOL   , 44
         .byte   W01
-        .byte                   49
+        .byte                   43
         .byte   W01
-        .byte                   47
+        .byte                   42
+        .byte   W01
+        .byte                   39
+        .byte   W09
+        .byte                   40
+        .byte   W03
+        .byte                   41
+        .byte   W03
+        .byte                   42
+        .byte   W02
+        .byte                   43
         .byte   W01
         .byte                   44
-        .byte   W06
-        .byte                   45
-        .byte   W06
-        .byte                   46
         .byte   W03
+        .byte                   45
+        .byte   W02
+        .byte                   46
+        .byte   W01
         .byte                   47
         .byte   W02
         .byte                   48
-        .byte   W01
-        .byte                   49
-        .byte   W02
-        .byte                   50
-        .byte   W01
-        .byte                   51
-        .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   53
-        .byte   W02
-        .byte                   54
-        .byte   W01
-        .byte                   55
         .byte   W03
-        .byte                   56
+        .byte                   49
         .byte   W01
-        .byte                   57
-        .byte   W01
+        .byte                   50
+        .byte   W02
         .byte           N06
         .byte   W06
         .byte                   Gs4
         .byte   W06
         .byte           N48   , Fn4
-        .byte   W05
-        .byte           VOL   , 56
-        .byte   W06
-        .byte                   55
-        .byte   W06
-        .byte                   54
+        .byte   W11
+        .byte           VOL   , 49
         .byte   W03
-        .byte                   53
-        .byte   W04
-        .byte                   52
-        .byte   W01
-        .byte                   51
-        .byte   W02
-        .byte                   50
-        .byte   W01
-        .byte                   49
-        .byte   W02
+        .byte                   48
+        .byte   W06
         .byte                   47
-        .byte   W01
+        .byte   W04
         .byte                   46
-        .byte   W02
-        .byte                   45
+        .byte   W03
+        .byte                   44
         .byte   W01
         .byte                   43
         .byte   W02
         .byte                   42
         .byte   W01
-        .byte                   40
+        .byte                   41
         .byte   W02
         .byte                   39
         .byte   W01
         .byte                   38
         .byte   W02
+        .byte                   37
+        .byte   W01
         .byte                   36
-        .byte   W01
-        .byte                   35
         .byte   W02
-        .byte                   34
+        .byte                   35
         .byte   W01
+        .byte                   33
+        .byte   W02
         .byte                   32
+        .byte   W01
+        .byte                   31
+        .byte   W02
+        .byte                   30
+        .byte   W01
+        .byte                   29
         .byte   W02
 @ 007   ----------------------------------------
-        .byte                   31
-        .byte   W01
-        .byte                   30
-        .byte   W01
-        .byte                   28
-        .byte   W02
-        .byte                   29
-        .byte   W01
-        .byte                   30
-        .byte   W02
-        .byte                   31
-        .byte   W01
-        .byte                   32
-        .byte   W02
-        .byte                   34
-        .byte   W01
-        .byte                   35
-        .byte   W02
-        .byte                   36
-        .byte   W01
-        .byte                   37
-        .byte   W02
-        .byte                   38
-        .byte   W01
-        .byte                   39
-        .byte   W02
-        .byte                   40
-        .byte   W01
-        .byte                   41
-        .byte   W01
-        .byte                   42
-        .byte   W03
-        .byte                   43
-        .byte           N24   , Gn4
-        .byte   W03
-        .byte           VOL   , 44
-        .byte   W03
-        .byte                   45
-        .byte   W02
-        .byte                   46
-        .byte   W01
-        .byte                   47
-        .byte   W02
-        .byte                   49
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   53
-        .byte   W02
-        .byte                   55
-        .byte   W01
-        .byte                   56
-        .byte   W01
-        .byte                   57
-        .byte   W05
-        .byte           N18   , Cn4
-        .byte   W03
-        .byte           VOL   , 56
-        .byte   W02
-        .byte                   55
-        .byte   W01
-        .byte                   53
-        .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   50
-        .byte   W06
-        .byte                   51
-        .byte   W03
-        .byte           N18   , Dn4
-        .byte   W03
-        .byte           VOL   , 52
-        .byte   W06
-        .byte                   53
-        .byte   W06
-        .byte                   54
-        .byte   W03
-        .byte           N12   , Ds4
-        .byte   W03
-        .byte           VOL   , 55
-        .byte   W09
-@ 008   ----------------------------------------
-        .byte                   56
-        .byte           N18   , Gn4
-        .byte   W02
-        .byte           VOL   , 55
-        .byte   W01
-        .byte                   54
-        .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   49
-        .byte   W01
-        .byte                   47
-        .byte   W01
-        .byte                   46
-        .byte   W03
-        .byte                   47
-        .byte   W03
-        .byte                   48
-        .byte   W02
-        .byte           N06   , Fn4
-        .byte   W01
-        .byte           VOL   , 50
-        .byte   W03
-        .byte                   51
-        .byte   W02
-        .byte                   52
-        .byte           TIE   , Gn4
-        .byte   W01
-        .byte           VOL   , 54
-        .byte   W01
-        .byte                   52
-        .byte   W01
-        .byte                   49
-        .byte   W01
-        .byte                   47
-        .byte   W01
-        .byte                   45
-        .byte   W01
-        .byte                   42
-        .byte   W01
-        .byte                   40
-        .byte   W01
-        .byte                   39
-        .byte   W01
-        .byte                   37
-        .byte   W03
-        .byte                   38
-        .byte   W03
-        .byte                   39
-        .byte   W03
-        .byte                   40
-        .byte   W06
-        .byte                   41
-        .byte   W03
-        .byte                   43
-        .byte   W01
-        .byte                   45
-        .byte   W02
-        .byte                   47
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   55
-        .byte   W01
-        .byte                   56
-        .byte   W03
-        .byte                   55
-        .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   53
-        .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   51
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   49
-        .byte   W02
-        .byte                   48
-        .byte   W06
-        .byte                   47
-        .byte   W03
-        .byte                   46
-        .byte   W05
-@ 009   ----------------------------------------
-        .byte   W01
-        .byte                   45
-        .byte   W06
-        .byte                   44
-        .byte   W03
-        .byte                   43
-        .byte   W06
-        .byte                   42
-        .byte   W03
-        .byte                   41
-        .byte   W03
-        .byte                   40
-        .byte   W01
-        .byte                   39
-        .byte   W02
-        .byte                   38
-        .byte   W01
-        .byte                   37
-        .byte   W02
-        .byte                   36
-        .byte   W01
-        .byte                   35
-        .byte   W02
-        .byte                   34
-        .byte   W01
-        .byte                   32
-        .byte   W02
-        .byte                   31
-        .byte   W01
-        .byte                   30
-        .byte   W02
-        .byte                   29
-        .byte   W01
-        .byte                   28
-        .byte   W02
         .byte                   27
         .byte   W01
         .byte                   26
-        .byte   W02
-        .byte                   25
         .byte   W01
-        .byte                   24
+        .byte                   25
         .byte   W02
+        .byte                   26
+        .byte   W01
+        .byte                   27
+        .byte   W02
+        .byte                   28
+        .byte   W01
+        .byte                   29
+        .byte   W02
+        .byte                   30
+        .byte   W01
+        .byte                   31
+        .byte   W02
+        .byte                   32
+        .byte   W01
+        .byte                   33
+        .byte   W02
+        .byte                   34
+        .byte   W01
+        .byte                   35
+        .byte   W02
+        .byte                   36
+        .byte   W01
+        .byte                   37
+        .byte   W04
+        .byte                   38
+        .byte           N24   , Gn4
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   40
+        .byte   W02
+        .byte                   41
+        .byte   W01
+        .byte                   42
+        .byte   W02
+        .byte                   43
+        .byte   W01
+        .byte                   45
+        .byte   W02
+        .byte                   46
+        .byte   W01
+        .byte                   47
+        .byte   W02
+        .byte                   49
+        .byte   W01
+        .byte                   50
+        .byte   W01
+        .byte                   51
+        .byte   W05
+        .byte           N18   , Cn4
+        .byte   W02
+        .byte           VOL   , 50
+        .byte   W03
+        .byte                   48
+        .byte   W01
+        .byte                   47
+        .byte   W02
+        .byte                   46
+        .byte   W01
+        .byte                   45
+        .byte   W09
+        .byte                   46
+        .byte           N18   , Dn4
+        .byte   W09
+        .byte           VOL   , 47
+        .byte   W06
+        .byte                   48
+        .byte   W03
+        .byte           N12   , Ds4
+        .byte   W06
+        .byte           VOL   , 49
+        .byte   W06
+@ 008   ----------------------------------------
+        .byte                   50
+        .byte           N18   , Gn4
+        .byte   W02
+        .byte           VOL   , 49
+        .byte   W01
+        .byte                   48
+        .byte   W02
+        .byte                   46
+        .byte   W01
+        .byte                   45
+        .byte   W02
+        .byte                   43
+        .byte   W01
+        .byte                   42
+        .byte   W01
+        .byte                   41
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   43
+        .byte   W02
+        .byte           N06   , Fn4
+        .byte   W01
+        .byte           VOL   , 44
+        .byte   W02
+        .byte                   45
+        .byte   W01
+        .byte                   46
+        .byte   W02
+        .byte           TIE   , Gn4
+        .byte   W01
+        .byte           VOL   , 48
+        .byte   W01
+        .byte                   46
+        .byte   W01
+        .byte                   44
+        .byte   W01
+        .byte                   42
+        .byte   W01
+        .byte                   40
+        .byte   W01
+        .byte                   37
+        .byte   W01
+        .byte                   36
+        .byte   W01
+        .byte                   35
+        .byte   W01
+        .byte                   33
+        .byte   W06
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   36
+        .byte   W03
+        .byte                   37
+        .byte   W03
+        .byte                   38
+        .byte   W01
+        .byte                   40
+        .byte   W02
+        .byte                   42
+        .byte   W01
+        .byte                   44
+        .byte   W02
+        .byte                   46
+        .byte   W01
+        .byte                   49
+        .byte   W01
+        .byte                   50
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   48
+        .byte   W03
+        .byte                   47
+        .byte   W03
+        .byte                   46
+        .byte   W06
+        .byte                   44
+        .byte   W05
+        .byte                   43
+        .byte   W03
+        .byte                   42
+        .byte   W06
+        .byte                   41
+        .byte   W05
+@ 009   ----------------------------------------
+        .byte   W01
+        .byte                   40
+        .byte   W03
+        .byte                   39
+        .byte   W06
+        .byte                   38
+        .byte   W06
+        .byte                   37
+        .byte   W04
+        .byte                   36
+        .byte   W02
+        .byte                   35
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   32
+        .byte   W01
+        .byte                   31
+        .byte   W02
+        .byte                   30
+        .byte   W01
+        .byte                   29
+        .byte   W02
+        .byte                   28
+        .byte   W01
+        .byte                   27
+        .byte   W02
+        .byte                   26
+        .byte   W01
+        .byte                   25
+        .byte   W02
+        .byte                   24
+        .byte   W01
         .byte                   23
+        .byte   W02
+        .byte                   22
         .byte   W01
         .byte                   21
         .byte   W02
         .byte                   20
-        .byte   W03
+        .byte   W01
+        .byte                   19
+        .byte   W02
         .byte                   18
         .byte   W01
         .byte                   17
@@ -2102,249 +2044,230 @@ EndlessBattle_3_LOOP:
         .byte   W02
         .byte                   12
         .byte   W01
+        .byte                   11
+        .byte   W02
         .byte                   10
         .byte   W01
-        .byte           EOT
-        .byte   W02
-        .byte           VOL   , 9
-        .byte   W02
-        .byte                   7
+        .byte                   9
         .byte   W01
+        .byte           EOT
+        .byte   W01
+        .byte           VOL   , 8
+        .byte   W03
         .byte                   6
+        .byte   W03
+        .byte                   4
         .byte   W02
-        .byte                   5
+        .byte                   3
         .byte   W01
         .byte                   4
         .byte   W01
-        .byte                   3
-        .byte   W01
-        .byte                   5
+        .byte                   7
         .byte   W01
         .byte                   8
         .byte   W01
         .byte                   10
         .byte   W01
-        .byte                   11
+        .byte                   12
         .byte   W01
         .byte                   14
         .byte   W01
         .byte                   16
         .byte   W01
-        .byte                   18
+        .byte                   19
+        .byte   W01
+        .byte                   20
         .byte   W01
         .byte                   21
         .byte   W01
-        .byte                   22
-        .byte   W01
         .byte                   24
+        .byte   W01
+        .byte                   26
         .byte   W01
         .byte                   27
         .byte   W01
-        .byte                   29
-        .byte   W01
         .byte                   30
         .byte   W01
-        .byte                   34
+        .byte                   31
+        .byte   W01
+        .byte                   33
         .byte   W01
         .byte                   35
         .byte   W01
         .byte                   37
         .byte   W01
-        .byte                   40
+        .byte                   39
         .byte   W01
         .byte                   42
+        .byte   W01
+        .byte                   43
         .byte   W01
         .byte                   44
         .byte   W01
         .byte                   47
-        .byte   W01
-        .byte                   48
-        .byte   W01
-        .byte                   50
-        .byte   W01
-        .byte                   53
         .byte   W01
 @ 010   ----------------------------------------
-        .byte                   55
+        .byte                   49
         .byte           N36   , Ds4
         .byte   W01
-        .byte           VOL   , 53
-        .byte   W01
-        .byte                   47
-        .byte   W01
-        .byte                   45
+        .byte           VOL   , 47
         .byte   W01
         .byte                   42
         .byte   W01
+        .byte                   39
+        .byte   W01
         .byte                   37
-        .byte   W09
+        .byte   W01
+        .byte                   33
+        .byte   W17
+        .byte                   34
+        .byte   W02
+        .byte                   36
+        .byte   W01
         .byte                   38
-        .byte   W10
+        .byte   W02
         .byte                   40
         .byte   W01
-        .byte                   43
+        .byte                   42
         .byte   W02
-        .byte                   45
-        .byte   W01
-        .byte                   48
-        .byte   W02
-        .byte                   50
-        .byte   W01
-        .byte                   52
-        .byte   W02
-        .byte                   55
-        .byte   W01
-        .byte                   57
-        .byte   W02
-        .byte           N06   , Fn4
-        .byte   W04
-        .byte           VOL   , 56
-        .byte   W02
-        .byte           N06   , Gn4
-        .byte   W01
-        .byte           VOL   , 55
-        .byte   W05
-        .byte                   54
-        .byte           N56   , Cn5 , v107 , gtp3
-        .byte   W01
-        .byte           VOL   , 52
-        .byte   W01
-        .byte                   50
-        .byte   W01
-        .byte                   47
-        .byte   W01
-        .byte                   45
-        .byte   W01
-        .byte                   43
-        .byte   W03
         .byte                   44
-        .byte   W06
-        .byte                   45
-        .byte   W02
-        .byte                   46
         .byte   W01
-        .byte                   48
+        .byte                   46
         .byte   W02
-        .byte                   50
+        .byte                   48
         .byte   W01
         .byte                   51
         .byte   W02
-        .byte                   53
+        .byte           N06   , Fn4
         .byte   W01
-        .byte                   55
+        .byte           VOL   , 50
+        .byte   W05
+        .byte           N06   , Gn4
+        .byte   W01
+        .byte           VOL   , 49
+        .byte   W05
+        .byte                   48
+        .byte           N56   , Cn5 , v107 , gtp3
+        .byte   W01
+        .byte           VOL   , 46
+        .byte   W01
+        .byte                   45
+        .byte   W01
+        .byte                   42
+        .byte   W01
+        .byte                   40
+        .byte   W01
+        .byte                   38
+        .byte   W03
+        .byte                   39
+        .byte   W08
+        .byte                   41
+        .byte   W01
+        .byte                   42
         .byte   W02
-        .byte                   57
+        .byte                   44
         .byte   W01
-        .byte                   55
+        .byte                   46
         .byte   W02
-        .byte                   54
+        .byte                   47
         .byte   W01
-        .byte                   52
+        .byte                   49
         .byte   W02
         .byte                   50
         .byte   W01
         .byte                   49
         .byte   W02
+        .byte                   48
+        .byte   W01
         .byte                   46
         .byte   W02
-        .byte                   45
-        .byte   W03
         .byte                   44
         .byte   W01
         .byte                   43
         .byte   W02
-        .byte                   42
-        .byte   W01
         .byte                   41
         .byte   W02
         .byte                   40
         .byte   W01
         .byte                   39
-        .byte   W01
+        .byte   W03
         .byte                   38
-        .byte   W01
-@ 011   ----------------------------------------
-        .byte                   39
         .byte   W02
+        .byte                   37
+        .byte   W01
+        .byte                   36
+        .byte   W02
+        .byte                   35
+        .byte   W01
+        .byte                   34
+        .byte   W02
+@ 011   ----------------------------------------
+        .byte                   35
+        .byte   W03
+        .byte                   37
+        .byte   W03
+        .byte                   38
+        .byte   W02
+        .byte                   39
+        .byte   W01
         .byte                   40
         .byte   W01
-        .byte                   41
-        .byte   W02
         .byte                   42
-        .byte   W01
-        .byte                   43
+        .byte   W03
+        .byte                   44
         .byte   W02
         .byte                   45
-        .byte   W02
-        .byte                   47
-        .byte   W02
-        .byte                   48
-        .byte   W01
-        .byte                   49
-        .byte   W02
-        .byte                   50
         .byte   W09
         .byte           N24
         .byte   W02
-        .byte           VOL   , 49
+        .byte           VOL   , 43
         .byte   W02
-        .byte                   46
+        .byte                   41
         .byte   W01
-        .byte                   45
+        .byte                   39
         .byte   W02
-        .byte                   42
+        .byte                   37
         .byte   W01
-        .byte                   40
+        .byte                   35
+        .byte   W04
+        .byte                   36
+        .byte   W02
+        .byte                   37
+        .byte   W03
+        .byte                   38
         .byte   W01
         .byte                   39
         .byte   W02
         .byte                   40
-        .byte   W03
+        .byte   W01
         .byte                   41
-        .byte   W01
-        .byte                   42
-        .byte   W02
-        .byte                   43
-        .byte   W01
-        .byte                   44
-        .byte   W02
-        .byte                   45
-        .byte   W01
-        .byte                   46
         .byte   W03
-        .byte                   47
+        .byte                   42
         .byte           N18   , Dn5 , v101
         .byte   W02
-        .byte           VOL   , 48
+        .byte           VOL   , 43
         .byte   W01
-        .byte                   50
+        .byte                   44
         .byte   W15
         .byte           N18   , Ds5 , v091
-        .byte   W13
-        .byte           VOL   , 51
-        .byte   W03
-        .byte                   52
+        .byte   W10
+        .byte           VOL   , 45
+        .byte   W06
+        .byte                   46
         .byte   W02
         .byte           N12   , Fn5 , v085
         .byte   W04
-        .byte           VOL   , 53
+        .byte           VOL   , 47
         .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   55
-        .byte   W02
-@ 012   ----------------------------------------
-        .byte           N40   , Gn5 , v078 , gtp1
-        .byte   W03
-        .byte           VOL   , 53
-        .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   49
-        .byte   W01
         .byte                   48
+        .byte   W05
+@ 012   ----------------------------------------
+        .byte                   49
+        .byte           N40   , Gn5 , v078 , gtp1
+        .byte   W02
+        .byte           VOL   , 48
+        .byte   W01
+        .byte                   47
         .byte   W02
         .byte                   46
         .byte   W01
@@ -2353,63 +2276,75 @@ EndlessBattle_3_LOOP:
         .byte                   44
         .byte   W01
         .byte                   42
-        .byte   W01
-        .byte                   41
-        .byte   W03
-        .byte                   42
-        .byte   W06
-        .byte                   43
-        .byte   W06
-        .byte                   44
-        .byte   W03
-        .byte                   45
         .byte   W02
-        .byte                   47
+        .byte                   41
+        .byte   W01
+        .byte                   40
+        .byte   W02
+        .byte                   39
+        .byte   W01
+        .byte                   37
+        .byte   W10
+        .byte                   38
+        .byte   W06
+        .byte                   39
+        .byte   W05
+        .byte                   42
+        .byte   W01
+        .byte                   44
+        .byte   W02
+        .byte                   46
+        .byte   W01
+        .byte                   48
         .byte   W01
         .byte                   49
-        .byte   W02
-        .byte                   51
-        .byte   W01
-        .byte                   54
-        .byte   W01
-        .byte                   55
         .byte   W01
         .byte           N06   , Fn5 , v085
         .byte   W06
         .byte           N48   , Cn5 , v107
-        .byte   W09
-        .byte           VOL   , 53
-        .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   49
-        .byte   W01
-        .byte                   48
+        .byte   W08
+        .byte           VOL   , 48
         .byte   W01
         .byte                   47
-        .byte   W16
+        .byte   W02
         .byte                   46
+        .byte   W01
+        .byte                   45
+        .byte   W02
+        .byte                   44
+        .byte   W01
+        .byte                   43
+        .byte   W01
+        .byte                   42
+        .byte   W16
+        .byte                   41
         .byte   W16
 @ 013   ----------------------------------------
-        .byte                   45
-        .byte   W03
-        .byte                   43
-        .byte   W04
-        .byte                   42
-        .byte   W06
-        .byte                   41
-        .byte   W03
         .byte                   40
-        .byte   W06
-        .byte                   39
         .byte   W02
+        .byte                   39
+        .byte   W01
         .byte                   38
+        .byte   W04
+        .byte                   37
+        .byte   W06
+        .byte                   36
+        .byte   W06
+        .byte                   35
+        .byte   W05
+        .byte                   34
         .byte           N24   , Gn4
         .byte   W02
-        .byte           VOL   , 39
+        .byte           VOL   , 35
+        .byte   W03
+        .byte                   36
         .byte   W01
+        .byte                   37
+        .byte   W02
+        .byte                   38
+        .byte   W01
+        .byte                   39
+        .byte   W03
         .byte                   40
         .byte   W02
         .byte                   41
@@ -2421,166 +2356,153 @@ EndlessBattle_3_LOOP:
         .byte                   44
         .byte   W02
         .byte                   45
-        .byte   W03
+        .byte   W01
         .byte                   46
-        .byte   W01
-        .byte                   48
         .byte   W02
-        .byte                   49
+        .byte                   47
         .byte   W01
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W02
-        .byte                   53
-        .byte   W01
-        .byte                   52
+        .byte                   46
         .byte           N24   , Ds5 , v091
         .byte   W02
-        .byte           VOL   , 51
+        .byte           VOL   , 45
         .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   49
-        .byte   W01
-        .byte                   48
-        .byte   W02
-        .byte                   46
-        .byte   W06
-        .byte                   45
-        .byte   W03
         .byte                   44
         .byte   W03
         .byte                   43
+        .byte   W02
+        .byte                   41
+        .byte   W06
+        .byte                   40
         .byte   W03
-        .byte                   42
+        .byte                   39
+        .byte   W03
+        .byte                   38
+        .byte   W03
+        .byte                   37
         .byte   W01
         .byte           N24   , Dn5 , v101
         .byte   W07
-        .byte           VOL   , 43
+        .byte           VOL   , 38
         .byte   W10
+        .byte                   39
+        .byte   W02
+        .byte                   40
+        .byte   W01
+        .byte                   41
+        .byte   W02
+        .byte                   42
+        .byte   W01
         .byte                   44
-        .byte   W02
-        .byte                   45
-        .byte   W01
-        .byte                   46
-        .byte   W02
-        .byte                   48
-        .byte   W01
-        .byte                   49
         .byte   W01
 @ 014   ----------------------------------------
         .byte           N40   , Cn5 , v107 , gtp1
         .byte   W01
-        .byte           VOL   , 50
+        .byte           VOL   , 45
         .byte   W01
-        .byte                   49
+        .byte                   43
         .byte   W02
-        .byte                   46
+        .byte                   41
         .byte   W01
-        .byte                   44
+        .byte                   39
         .byte   W02
-        .byte                   42
+        .byte                   37
+        .byte   W01
+        .byte                   35
+        .byte   W06
+        .byte                   36
+        .byte   W06
+        .byte                   37
+        .byte   W08
+        .byte                   39
         .byte   W01
         .byte                   40
-        .byte   W09
+        .byte   W02
         .byte                   41
-        .byte   W06
+        .byte   W01
         .byte                   42
-        .byte   W05
+        .byte   W02
         .byte                   44
         .byte   W01
         .byte                   45
         .byte   W02
         .byte                   46
         .byte   W01
-        .byte                   48
+        .byte                   47
         .byte   W02
         .byte                   49
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   53
-        .byte   W02
-        .byte                   55
         .byte   W02
         .byte           N06   , As4
         .byte   W06
         .byte           N48   , Fn4
-        .byte   W14
-        .byte           VOL   , 54
-        .byte   W03
-        .byte                   53
-        .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   51
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   49
-        .byte   W01
-        .byte                   48
-        .byte   W02
-        .byte                   47
-        .byte   W01
-        .byte                   46
-        .byte   W03
-        .byte                   45
-        .byte   W02
-        .byte                   44
-        .byte   W03
-        .byte                   43
-        .byte   W01
-        .byte                   42
-        .byte   W02
-        .byte                   41
-        .byte   W01
-        .byte                   40
-        .byte   W03
-@ 015   ----------------------------------------
-        .byte                   39
-        .byte   W02
-        .byte                   38
-        .byte   W01
-        .byte                   37
-        .byte   W02
-        .byte                   36
-        .byte   W03
-        .byte                   37
-        .byte   W03
-        .byte                   38
+        .byte   W11
+        .byte           VOL   , 48
         .byte   W06
-        .byte                   39
+        .byte                   47
+        .byte   W03
+        .byte                   46
+        .byte   W04
+        .byte                   45
+        .byte   W03
+        .byte                   44
+        .byte   W02
+        .byte                   43
+        .byte   W03
+        .byte                   42
+        .byte   W01
+        .byte                   41
         .byte   W03
         .byte                   40
+        .byte   W02
+        .byte                   39
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte   W01
-        .byte                   42
+        .byte                   37
+        .byte   W03
+        .byte                   36
+        .byte   W02
+        .byte                   35
+        .byte   W01
+@ 015   ----------------------------------------
+        .byte                   34
+        .byte   W03
+        .byte                   33
+        .byte   W02
+        .byte                   32
+        .byte   W03
+        .byte                   33
+        .byte   W06
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W04
+        .byte                   36
+        .byte   W02
+        .byte                   37
+        .byte   W01
         .byte           N24
         .byte   W02
-        .byte           VOL   , 43
+        .byte           VOL   , 38
+        .byte   W01
+        .byte                   39
+        .byte   W02
+        .byte                   40
+        .byte   W01
+        .byte                   41
+        .byte   W02
+        .byte                   42
+        .byte   W01
+        .byte                   43
+        .byte   W02
+        .byte                   44
         .byte   W01
         .byte                   45
-        .byte   W03
+        .byte   W01
         .byte                   46
-        .byte   W02
+        .byte   W06
+        .byte                   47
+        .byte   W03
         .byte                   48
-        .byte   W01
-        .byte                   49
-        .byte   W02
-        .byte                   50
-        .byte   W01
-        .byte                   51
-        .byte   W04
-        .byte                   52
-        .byte   W03
-        .byte                   53
-        .byte   W03
-        .byte                   54
         .byte   W02
         .byte           N18   , Gn4
         .byte   W18
@@ -2591,93 +2513,85 @@ EndlessBattle_3_LOOP:
 @ 016   ----------------------------------------
         .byte           N18   , Gn4
         .byte   W02
-        .byte           VOL   , 53
+        .byte           VOL   , 47
         .byte   W01
-        .byte                   51
-        .byte   W01
-        .byte                   50
-        .byte   W01
-        .byte                   47
-        .byte   W01
-        .byte                   45
+        .byte                   46
         .byte   W01
         .byte                   44
+        .byte   W01
+        .byte                   42
+        .byte   W01
+        .byte                   40
+        .byte   W01
+        .byte                   39
+        .byte   W01
+        .byte                   36
+        .byte   W02
+        .byte                   37
+        .byte   W01
+        .byte                   38
+        .byte   W02
+        .byte                   39
         .byte   W01
         .byte                   40
         .byte   W02
         .byte                   41
         .byte   W01
-        .byte                   43
-        .byte   W02
-        .byte                   44
-        .byte   W01
-        .byte                   45
-        .byte   W02
-        .byte                   46
-        .byte   W01
-        .byte                   48
+        .byte                   42
         .byte   W01
         .byte           N06   , Fn4
         .byte   W01
-        .byte           VOL   , 49
+        .byte           VOL   , 44
         .byte   W01
-        .byte                   50
+        .byte                   45
         .byte   W02
-        .byte                   51
+        .byte                   46
         .byte   W01
-        .byte                   53
+        .byte                   47
         .byte   W01
         .byte           TIE   , Gn4
         .byte   W02
-        .byte           VOL   , 51
+        .byte           VOL   , 46
         .byte   W01
-        .byte                   50
-        .byte   W01
-        .byte                   47
-        .byte   W01
-        .byte                   46
-        .byte   W01
-        .byte                   45
+        .byte                   44
         .byte   W01
         .byte                   42
+        .byte   W01
+        .byte                   41
+        .byte   W01
+        .byte                   39
+        .byte   W01
+        .byte                   37
         .byte   W20
-        .byte                   44
+        .byte                   39
         .byte   W01
-        .byte                   47
-        .byte   W02
-        .byte                   49
-        .byte   W01
-        .byte                   52
-        .byte   W03
-        .byte                   51
-        .byte   W06
-        .byte                   50
-        .byte   W09
-        .byte                   49
-        .byte   W06
-        .byte                   48
-        .byte   W06
-        .byte                   47
-        .byte   W06
-        .byte                   46
-        .byte   W03
-        .byte                   45
-        .byte   W02
-@ 017   ----------------------------------------
-        .byte   W07
-        .byte                   44
-        .byte   W06
-        .byte                   43
-        .byte   W04
         .byte                   42
+        .byte   W02
+        .byte                   44
+        .byte   W01
+        .byte                   46
+        .byte   W06
+        .byte                   45
+        .byte   W06
+        .byte                   44
+        .byte   W09
+        .byte                   43
+        .byte   W06
+        .byte                   42
+        .byte   W09
+        .byte                   41
         .byte   W03
         .byte                   40
-        .byte   W03
+        .byte   W02
+@ 017   ----------------------------------------
+        .byte   W04
         .byte                   39
-        .byte   W03
+        .byte   W09
         .byte                   38
-        .byte   W03
+        .byte   W04
         .byte                   37
+        .byte   W03
+        .byte                   36
         .byte   W03
         .byte                   35
         .byte   W03
@@ -2685,186 +2599,177 @@ EndlessBattle_3_LOOP:
         .byte   W03
         .byte                   33
         .byte   W03
-        .byte                   32
+        .byte                   31
         .byte   W03
         .byte                   30
-        .byte   W06
+        .byte   W03
+        .byte                   29
+        .byte   W03
         .byte                   28
         .byte   W03
         .byte                   27
         .byte   W03
+        .byte                   26
+        .byte   W03
         .byte                   25
-        .byte   W06
+        .byte   W03
+        .byte                   24
+        .byte   W03
         .byte                   23
         .byte   W03
         .byte                   22
         .byte   W03
         .byte                   21
         .byte   W03
-        .byte                   20
-        .byte   W03
-        .byte                   18
-        .byte   W03
+        .byte                   19
+        .byte   W06
         .byte                   17
-        .byte   W01
-        .byte           EOT
-        .byte   W02
-        .byte           VOL   , 16
+        .byte   W03
+        .byte                   16
         .byte   W03
         .byte                   15
         .byte   W01
-        .byte                   14
+        .byte           EOT
+        .byte   W02
+        .byte           VOL   , 14
+        .byte   W03
+        .byte                   13
+        .byte   W01
+        .byte                   12
         .byte   W12
 @ 018   ----------------------------------------
         .byte   W96
 @ 019   ----------------------------------------
-        .byte   W44
-        .byte   W01
-        .byte                   13
-        .byte   W48
-        .byte   W03
-@ 020   ----------------------------------------
         .byte   W96
-@ 021   ----------------------------------------
-        .byte   W07
-        .byte                   12
-        .byte   W88
-        .byte   W01
-@ 022   ----------------------------------------
-        .byte   W64
+@ 020   ----------------------------------------
+        .byte   W24
+        .byte   W02
         .byte                   11
-        .byte   W32
+        .byte   W68
+        .byte   W02
+@ 021   ----------------------------------------
+        .byte   W84
+        .byte                   10
+        .byte   W12
+@ 022   ----------------------------------------
+        .byte   W96
 @ 023   ----------------------------------------
         .byte   W96
 @ 024   ----------------------------------------
         .byte   W24
-        .byte   W02
+        .byte   W03
         .byte                   12
         .byte   W01
         .byte                   14
         .byte   W01
-        .byte                   15
+        .byte                   17
         .byte   W01
         .byte                   19
         .byte   W01
-        .byte                   21
+        .byte                   20
         .byte   W01
         .byte                   23
         .byte   W01
-        .byte                   26
+        .byte                   25
         .byte   W01
-        .byte                   28
+        .byte                   27
         .byte   W01
         .byte                   30
         .byte   W01
-        .byte                   34
+        .byte                   31
         .byte   W01
-        .byte                   35
+        .byte                   33
         .byte   W01
-        .byte                   37
+        .byte                   36
         .byte   W01
-        .byte                   41
+        .byte                   38
+        .byte   W01
+        .byte                   39
         .byte   W01
         .byte                   43
         .byte   W01
-        .byte                   45
-        .byte   W01
-        .byte                   48
-        .byte   W01
-        .byte                   50
+        .byte                   44
         .byte           N03   , As4 , v081
         .byte   W01
-        .byte           VOL   , 51
+        .byte           VOL   , 46
         .byte   W02
         .byte           N03   , Bn4
-        .byte   W01
-        .byte           VOL   , 52
-        .byte   W02
+        .byte   W03
         .byte           N18   , Cn5 , v107
         .byte   W02
-        .byte           VOL   , 50
+        .byte           VOL   , 44
         .byte   W01
-        .byte                   44
+        .byte                   39
         .byte   W01
-        .byte                   40
+        .byte                   35
         .byte   W08
+        .byte                   37
+        .byte   W02
+        .byte                   40
+        .byte   W01
         .byte                   42
         .byte   W02
         .byte                   45
         .byte   W01
-        .byte                   48
-        .byte   W02
-        .byte                   50
-        .byte   W01
-        .byte                   53
+        .byte                   47
         .byte           N06   , Dn5 , v105
         .byte   W06
         .byte           TIE   , Cn5 , v107
         .byte   W03
-        .byte           VOL   , 52
-        .byte   W02
-        .byte                   50
-        .byte   W01
-        .byte                   49
-        .byte   W02
-        .byte                   48
-        .byte   W01
-        .byte                   46
+        .byte           VOL   , 46
         .byte   W02
         .byte                   45
         .byte   W01
         .byte                   44
         .byte   W02
         .byte                   42
-        .byte   W06
+        .byte   W01
         .byte                   41
-        .byte   W04
-@ 025   ----------------------------------------
         .byte   W02
         .byte                   40
-        .byte   W09
+        .byte   W01
         .byte                   39
-        .byte   W06
-        .byte                   38
-        .byte   W06
+        .byte   W02
         .byte                   37
-        .byte   W03
+        .byte   W09
         .byte                   36
-        .byte   W06
+        .byte   W01
+@ 025   ----------------------------------------
+        .byte   W05
         .byte                   35
         .byte   W09
         .byte                   34
-        .byte   W04
+        .byte   W06
         .byte                   33
-        .byte   W03
+        .byte   W06
         .byte                   32
-        .byte   W01
+        .byte   W06
         .byte                   31
-        .byte   W02
+        .byte   W09
         .byte                   30
-        .byte   W01
+        .byte   W04
         .byte                   29
-        .byte   W02
+        .byte   W03
         .byte                   28
         .byte   W01
         .byte                   27
-        .byte   W02
-        .byte                   26
-        .byte   W01
-        .byte                   25
         .byte   W03
+        .byte                   26
+        .byte   W02
+        .byte                   25
+        .byte   W01
         .byte                   24
         .byte   W02
         .byte                   23
-        .byte   W01
+        .byte   W03
         .byte                   22
-        .byte   W02
+        .byte   W01
         .byte                   21
-        .byte   W01
-        .byte                   20
         .byte   W02
-        .byte                   19
+        .byte                   20
         .byte   W01
+        .byte                   19
+        .byte   W03
         .byte                   18
         .byte   W02
         .byte                   17
@@ -2882,75 +2787,69 @@ EndlessBattle_3_LOOP:
         .byte                   11
         .byte   W02
         .byte                   10
-        .byte   W01
+        .byte   W03
         .byte                   9
-        .byte   W02
+        .byte   W01
         .byte                   8
-        .byte   W01
-        .byte                   7
         .byte   W02
-        .byte                   6
+        .byte                   7
         .byte   W01
+        .byte                   6
+        .byte   W03
         .byte                   5
         .byte   W01
         .byte           EOT
-        .byte   W02
+        .byte   W01
         .byte           VOL   , 4
+        .byte   W01
+        .byte                   3
         .byte   W02
 @ 026   ----------------------------------------
-        .byte                   3
-        .byte   W01
         .byte                   2
-        .byte   W76
-        .byte   W01
-        .byte                   3
-        .byte   W18
+        .byte   W96
 @ 027   ----------------------------------------
-        .byte   W32
-        .byte   W01
-        .byte                   4
-        .byte   W52
-        .byte                   5
-        .byte   W11
-@ 028   ----------------------------------------
-        .byte   W64
-        .byte   W01
-        .byte                   6
-        .byte   W30
-        .byte   W01
-@ 029   ----------------------------------------
-        .byte   W21
-        .byte                   7
+        .byte   W08
+        .byte                   3
         .byte   W48
         .byte   W03
-        .byte                   8
+        .byte                   4
+        .byte   W36
+        .byte   W01
+@ 028   ----------------------------------------
+        .byte   W40
+        .byte                   5
+        .byte   W48
+        .byte   W03
+        .byte                   6
+        .byte   W05
+@ 029   ----------------------------------------
+        .byte   W72
+        .byte                   7
         .byte   W24
 @ 030   ----------------------------------------
         .byte   W24
         .byte   W03
+        .byte                   8
+        .byte   W68
+        .byte   W01
+@ 031   ----------------------------------------
+        .byte   W08
         .byte                   9
         .byte   W48
         .byte   W03
         .byte                   10
-        .byte   W18
-@ 031   ----------------------------------------
-        .byte   W56
-        .byte   W03
-        .byte                   11
         .byte   W36
         .byte   W01
 @ 032   ----------------------------------------
-        .byte   W14
-        .byte                   12
-        .byte   W52
-        .byte                   13
-        .byte   W30
-@ 033   ----------------------------------------
-        .byte   W21
-        .byte                   14
+        .byte   W40
+        .byte                   11
         .byte   W48
         .byte   W03
-        .byte                   53
+        .byte                   12
+        .byte   W05
+@ 033   ----------------------------------------
+        .byte   W72
+        .byte                   47
         .byte   W18
         .byte           N02   , Dn5 , v034
         .byte   W02
@@ -2961,169 +2860,163 @@ EndlessBattle_3_LOOP:
 @ 034   ----------------------------------------
         .byte           N18   , Fn5 , v090
         .byte   W02
-        .byte           VOL   , 50
+        .byte           VOL   , 44
         .byte   W01
-        .byte                   43
+        .byte                   38
         .byte   W01
-        .byte                   39
-        .byte   W02
-        .byte                   40
+        .byte                   35
         .byte   W03
-        .byte                   41
+        .byte                   36
         .byte   W02
-        .byte                   43
-        .byte   W01
-        .byte                   45
+        .byte                   37
         .byte   W02
-        .byte                   47
+        .byte                   38
         .byte   W01
-        .byte                   49
+        .byte                   40
         .byte   W02
-        .byte                   51
+        .byte                   42
         .byte   W01
-        .byte                   54
+        .byte                   44
+        .byte   W02
+        .byte                   46
+        .byte   W01
+        .byte                   48
         .byte           N06   , Gn5
         .byte   W06
         .byte           N12   , Fn5
         .byte   W12
         .byte           N24   , Ds5 , v099
         .byte   W02
-        .byte           VOL   , 50
+        .byte           VOL   , 45
         .byte   W01
-        .byte                   47
+        .byte                   42
         .byte   W01
-        .byte                   44
+        .byte                   39
         .byte   W01
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W02
+        .byte                   36
+        .byte   W01
+        .byte                   37
+        .byte   W03
         .byte                   38
         .byte   W02
         .byte                   39
-        .byte   W01
-        .byte                   40
         .byte   W03
+        .byte                   40
+        .byte   W01
         .byte                   41
         .byte   W02
         .byte                   42
-        .byte   W01
-        .byte                   43
-        .byte   W02
-        .byte                   44
-        .byte   W01
-        .byte                   45
         .byte   W03
-        .byte                   46
+        .byte                   43
+        .byte   W01
+        .byte                   44
+        .byte   W03
+        .byte                   45
         .byte   W02
+        .byte                   46
+        .byte   W03
         .byte                   47
         .byte   W01
         .byte                   48
-        .byte   W02
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W01
-        .byte                   51
-        .byte   W02
-        .byte                   52
-        .byte   W03
-        .byte                   53
-        .byte   W01
-        .byte                   54
         .byte   W01
         .byte           N18   , Dn5
         .byte   W01
-        .byte           VOL   , 49
+        .byte           VOL   , 44
         .byte   W01
-        .byte                   46
-        .byte   W01
-        .byte                   44
-        .byte   W01
-        .byte                   40
-        .byte   W03
         .byte                   41
-        .byte   W02
-        .byte                   42
+        .byte   W01
+        .byte                   39
+        .byte   W01
+        .byte                   35
         .byte   W03
-        .byte                   43
+        .byte                   36
+        .byte   W02
+        .byte                   37
+        .byte   W03
+        .byte                   38
+        .byte   W01
+        .byte                   39
+        .byte   W01
+        .byte                   42
         .byte   W01
         .byte                   44
         .byte   W01
-        .byte                   47
+        .byte                   45
+        .byte   W01
+        .byte                   48
         .byte   W01
         .byte                   49
-        .byte   W01
-        .byte                   51
-        .byte   W01
-        .byte                   54
-        .byte   W01
-        .byte                   55
         .byte           N06   , Ds5
         .byte   W06
 @ 035   ----------------------------------------
         .byte           N12   , Dn5
         .byte   W01
-        .byte           VOL   , 54
+        .byte           VOL   , 48
         .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   48
-        .byte   W02
-        .byte                   49
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   53
-        .byte           N54   , Cn5
-        .byte   W02
-        .byte           VOL   , 55
-        .byte   W02
-        .byte                   53
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   48
+        .byte                   46
         .byte   W01
         .byte                   45
-        .byte   W06
+        .byte   W02
         .byte                   43
-        .byte   W03
+        .byte   W02
+        .byte                   44
+        .byte   W01
+        .byte                   45
+        .byte   W02
+        .byte                   46
+        .byte   W01
+        .byte                   47
+        .byte           N54   , Cn5
+        .byte   W02
+        .byte           VOL   , 49
+        .byte   W02
+        .byte                   47
+        .byte   W01
+        .byte                   44
+        .byte   W02
         .byte                   42
-        .byte   W03
-        .byte                   41
-        .byte   W03
+        .byte   W01
         .byte                   40
         .byte   W03
         .byte                   39
         .byte   W03
+        .byte                   38
+        .byte   W03
         .byte                   37
         .byte   W03
         .byte                   36
-        .byte   W01
+        .byte   W03
         .byte                   35
-        .byte   W02
+        .byte   W03
         .byte                   34
-        .byte   W01
+        .byte   W03
         .byte                   33
-        .byte   W02
+        .byte   W03
+        .byte                   32
+        .byte   W01
         .byte                   31
-        .byte   W01
+        .byte   W02
         .byte                   30
-        .byte   W02
+        .byte   W01
         .byte                   29
-        .byte   W01
+        .byte   W02
         .byte                   28
-        .byte   W02
+        .byte   W01
         .byte                   27
-        .byte   W01
+        .byte   W02
         .byte                   26
-        .byte   W02
-        .byte                   25
         .byte   W01
-        .byte                   24
+        .byte                   25
         .byte   W02
+        .byte                   24
+        .byte   W01
         .byte                   23
+        .byte   W02
+        .byte                   22
         .byte   W01
         .byte                   21
         .byte   W02
@@ -3131,111 +3024,119 @@ EndlessBattle_3_LOOP:
         .byte   W01
         .byte                   19
         .byte   W02
-        .byte                   22
+        .byte                   18
         .byte   W01
-        .byte                   26
+        .byte                   17
+        .byte   W02
+        .byte                   19
         .byte   W01
-        .byte                   31
+        .byte                   23
         .byte   W01
-        .byte                   40
+        .byte                   27
         .byte   W01
-        .byte                   44
+        .byte                   35
+        .byte   W01
+        .byte                   39
         .byte           N12   , Dn5
         .byte   W03
-        .byte           VOL   , 45
+        .byte           VOL   , 40
         .byte   W03
-        .byte                   46
+        .byte                   41
         .byte   W03
-        .byte                   47
+        .byte                   42
         .byte   W03
-        .byte                   49
+        .byte                   43
         .byte           N12   , Ds5
         .byte   W03
-        .byte           VOL   , 50
+        .byte           VOL   , 44
         .byte   W03
-        .byte                   51
+        .byte                   45
         .byte   W03
-        .byte                   52
+        .byte                   46
         .byte   W03
 @ 036   ----------------------------------------
-        .byte                   54
+        .byte                   48
         .byte           N18   , Fn5 , v090
         .byte   W01
-        .byte           VOL   , 50
+        .byte           VOL   , 45
         .byte   W01
-        .byte                   47
+        .byte                   42
         .byte   W01
-        .byte                   41
+        .byte                   37
         .byte   W14
-        .byte                   46
+        .byte                   41
         .byte   W01
-        .byte                   54
+        .byte                   48
         .byte           N06   , Gn5
         .byte   W06
         .byte           N12   , Fn5
         .byte   W06
-        .byte           VOL   , 53
+        .byte           VOL   , 47
         .byte   W06
-        .byte                   52
+        .byte                   46
         .byte           N30   , Ds5 , v099
         .byte   W01
-        .byte           VOL   , 51
+        .byte           VOL   , 45
         .byte   W02
-        .byte                   49
-        .byte   W01
-        .byte                   47
-        .byte   W02
-        .byte                   45
-        .byte   W01
         .byte                   44
         .byte   W01
-        .byte                   43
-        .byte   W03
         .byte                   42
-        .byte   W06
-        .byte                   41
-        .byte   W01
+        .byte   W02
         .byte                   40
-        .byte   W03
+        .byte   W01
         .byte                   39
-        .byte   W02
-        .byte                   38
         .byte   W01
+        .byte                   38
+        .byte   W03
         .byte                   37
-        .byte   W02
+        .byte   W06
         .byte                   36
-        .byte   W02
-        .byte                   38
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   34
         .byte   W01
-        .byte                   41
+        .byte                   33
+        .byte   W02
+        .byte                   32
+        .byte   W02
+        .byte                   34
+        .byte   W01
+        .byte                   36
         .byte   W01
         .byte           N02   , Fn5 , v045
         .byte   W01
-        .byte           VOL   , 44
+        .byte           VOL   , 39
         .byte   W01
-        .byte                   46
+        .byte                   41
         .byte           N02   , Gn5 , v061
         .byte   W02
-        .byte           VOL   , 49
+        .byte           VOL   , 43
         .byte           N02   , Gs5 , v071
         .byte   W01
-        .byte           VOL   , 52
+        .byte           VOL   , 46
         .byte   W01
         .byte           N24   , As5 , v083
         .byte   W01
-        .byte           VOL   , 50
-        .byte   W01
-        .byte                   47
-        .byte   W02
-        .byte                   45
+        .byte           VOL   , 44
         .byte   W01
         .byte                   42
         .byte   W02
         .byte                   39
+        .byte   W01
+        .byte                   37
+        .byte   W02
+        .byte                   35
+        .byte   W03
+        .byte                   37
+        .byte   W02
+        .byte                   38
+        .byte   W01
+        .byte                   39
         .byte   W02
         .byte                   40
         .byte   W01
-        .byte                   41
+        .byte                   42
         .byte   W02
         .byte                   43
         .byte   W01
@@ -3243,207 +3144,201 @@ EndlessBattle_3_LOOP:
         .byte   W02
         .byte                   45
         .byte   W01
-        .byte                   47
-        .byte   W02
-        .byte                   48
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   51
-        .byte   W01
-        .byte                   52
+        .byte                   46
         .byte   W02
 @ 037   ----------------------------------------
-        .byte                   54
+        .byte                   48
         .byte           N06   , Gs5 , v092
         .byte   W06
         .byte                   Gn5
         .byte   W06
         .byte           N72   , Ds5 , v099 , gtp2
         .byte   W01
-        .byte           VOL   , 53
-        .byte   W01
-        .byte                   51
-        .byte   W01
-        .byte                   48
+        .byte           VOL   , 47
         .byte   W01
         .byte                   46
         .byte   W01
-        .byte                   44
-        .byte   W01
-        .byte                   40
-        .byte   W07
-        .byte                   41
-        .byte   W03
         .byte                   42
+        .byte   W01
+        .byte                   41
+        .byte   W01
+        .byte                   39
+        .byte   W01
+        .byte                   36
+        .byte   W01
+        .byte                   35
         .byte   W03
-        .byte                   43
+        .byte                   36
         .byte   W03
-        .byte                   44
-        .byte   W03
-        .byte                   45
-        .byte   W03
-        .byte                   46
-        .byte   W03
-        .byte                   47
-        .byte   W02
-        .byte                   48
-        .byte   W03
-        .byte                   47
-        .byte   W03
-        .byte                   45
+        .byte                   37
         .byte   W06
-        .byte                   43
+        .byte                   38
         .byte   W03
-        .byte                   42
+        .byte                   39
+        .byte   W03
+        .byte                   40
         .byte   W03
         .byte                   41
         .byte   W03
+        .byte                   42
+        .byte   W08
         .byte                   40
         .byte   W03
         .byte                   39
         .byte   W03
         .byte                   38
         .byte   W03
+        .byte                   37
+        .byte   W03
         .byte                   36
         .byte   W03
         .byte                   35
-        .byte   W02
+        .byte   W03
+        .byte                   34
+        .byte   W03
         .byte                   33
-        .byte   W01
-        .byte                   30
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   31
         .byte   W02
-        .byte                   28
+        .byte                   29
         .byte   W01
-        .byte                   26
+        .byte                   27
         .byte   W02
-        .byte                   24
+        .byte                   25
         .byte   W01
+        .byte                   23
+        .byte   W02
         .byte                   21
-        .byte   W02
+        .byte   W01
         .byte                   19
-        .byte   W01
+        .byte   W02
         .byte                   17
-        .byte   W02
-        .byte                   14
         .byte   W01
-        .byte                   12
+        .byte                   15
         .byte   W02
+        .byte                   12
+        .byte   W01
         .byte                   10
+        .byte   W02
+        .byte                   8
         .byte   W01
 @ 038   ----------------------------------------
         .byte           N44   , Gn3 , v107 , gtp3
         .byte   W01
-        .byte           VOL   , 11
+        .byte           VOL   , 10
         .byte   W01
-        .byte                   13
+        .byte                   12
         .byte   W01
-        .byte                   17
-        .byte   W01
-        .byte                   19
-        .byte   W01
-        .byte                   20
-        .byte   W01
-        .byte                   24
-        .byte   W01
-        .byte                   26
-        .byte   W01
-        .byte                   28
-        .byte   W01
-        .byte                   31
-        .byte   W01
-        .byte                   33
-        .byte   W01
-        .byte                   35
-        .byte   W01
-        .byte                   39
-        .byte   W01
-        .byte                   40
-        .byte   W01
-        .byte                   42
-        .byte   W01
-        .byte                   46
-        .byte   W01
-        .byte                   48
-        .byte   W03
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W06
-        .byte                   51
-        .byte   W04
-        .byte                   49
-        .byte   W01
-        .byte                   47
-        .byte   W01
-        .byte                   44
-        .byte   W01
-        .byte                   42
-        .byte   W01
-        .byte                   41
-        .byte   W01
-        .byte                   37
-        .byte   W01
-        .byte                   35
-        .byte   W01
-        .byte                   34
-        .byte   W01
-        .byte                   30
-        .byte   W01
-        .byte                   29
-        .byte   W01
-        .byte                   27
-        .byte   W01
-        .byte                   24
-        .byte   W01
-        .byte                   22
-        .byte   W01
-        .byte                   20
+        .byte                   15
         .byte   W01
         .byte                   17
         .byte   W01
-        .byte                   16
+        .byte                   18
         .byte   W01
-        .byte                   19
-        .byte           N40   , Dn4
+        .byte                   21
         .byte   W01
-        .byte           VOL   , 20
-        .byte   W01
-        .byte                   22
+        .byte                   23
         .byte   W01
         .byte                   25
         .byte   W01
-        .byte                   26
-        .byte   W01
         .byte                   28
+        .byte   W01
+        .byte                   29
         .byte   W01
         .byte                   31
         .byte   W01
-        .byte                   32
-        .byte   W01
         .byte                   34
+        .byte   W01
+        .byte                   36
         .byte   W01
         .byte                   37
         .byte   W01
-        .byte                   39
+        .byte                   41
         .byte   W01
-        .byte                   40
+        .byte                   43
+        .byte   W06
+        .byte                   44
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   46
+        .byte   W03
+        .byte                   45
         .byte   W01
-        .byte                   42
-        .byte   W09
         .byte                   44
         .byte   W01
-        .byte                   46
-        .byte   W02
-        .byte                   49
+        .byte                   42
         .byte   W01
-        .byte                   51
-        .byte   W02
-        .byte                   49
+        .byte                   39
         .byte   W01
-        .byte                   46
-        .byte   W02
+        .byte                   37
+        .byte   W01
+        .byte                   36
+        .byte   W01
+        .byte                   33
+        .byte   W01
+        .byte                   31
+        .byte   W01
+        .byte                   30
+        .byte   W01
+        .byte                   27
+        .byte   W01
+        .byte                   26
+        .byte   W01
+        .byte                   24
+        .byte   W01
+        .byte                   21
+        .byte   W01
+        .byte                   20
+        .byte   W01
+        .byte                   18
+        .byte   W01
+        .byte                   15
+        .byte   W01
+        .byte                   14
+        .byte   W01
+        .byte                   17
+        .byte           N40   , Dn4
+        .byte   W01
+        .byte           VOL   , 18
+        .byte   W01
+        .byte                   19
+        .byte   W01
+        .byte                   22
+        .byte   W01
+        .byte                   23
+        .byte   W01
+        .byte                   25
+        .byte   W01
+        .byte                   27
+        .byte   W01
+        .byte                   29
+        .byte   W01
+        .byte                   30
+        .byte   W01
+        .byte                   33
+        .byte   W01
+        .byte                   34
+        .byte   W01
+        .byte                   35
+        .byte   W01
+        .byte                   37
+        .byte   W09
+        .byte                   39
+        .byte   W01
         .byte                   41
+        .byte   W02
+        .byte                   44
+        .byte   W01
+        .byte                   45
+        .byte   W02
+        .byte                   43
+        .byte   W01
+        .byte                   41
+        .byte   W02
+        .byte                   37
         .byte   W10
         .byte           N04   , Cs4
         .byte   W04
@@ -3451,64 +3346,60 @@ EndlessBattle_3_LOOP:
         .byte   W04
 @ 039   ----------------------------------------
         .byte           N80   , Bn3 , v107 , gtp1
-        .byte   W07
-        .byte           VOL   , 40
+        .byte   W04
+        .byte           VOL   , 36
         .byte   W06
-        .byte                   39
-        .byte   W03
-        .byte                   38
-        .byte   W06
-        .byte                   37
-        .byte   W03
-        .byte                   36
-        .byte   W03
         .byte                   35
         .byte   W06
         .byte                   34
-        .byte   W06
-        .byte                   33
         .byte   W03
+        .byte                   33
+        .byte   W06
         .byte                   32
         .byte   W03
         .byte                   31
-        .byte   W01
+        .byte   W06
         .byte                   30
-        .byte   W02
+        .byte   W06
         .byte                   29
-        .byte   W01
+        .byte   W06
         .byte                   28
-        .byte   W02
+        .byte   W01
         .byte                   27
+        .byte   W02
+        .byte                   26
         .byte   W01
         .byte                   25
-        .byte   W03
+        .byte   W02
+        .byte                   24
+        .byte   W01
         .byte                   23
         .byte   W02
         .byte                   22
         .byte   W01
         .byte                   21
         .byte   W02
-        .byte                   20
-        .byte   W01
         .byte                   19
-        .byte   W02
+        .byte   W03
         .byte                   17
-        .byte   W01
-        .byte                   16
-        .byte   W02
+        .byte   W03
         .byte                   15
         .byte   W01
         .byte                   14
         .byte   W02
+        .byte                   13
+        .byte   W01
         .byte                   12
-        .byte   W01
+        .byte   W02
         .byte                   11
-        .byte   W02
-        .byte                   10
         .byte   W01
-        .byte                   9
+        .byte                   10
         .byte   W02
+        .byte                   9
+        .byte   W01
         .byte                   8
+        .byte   W02
+        .byte                   7
         .byte   W01
         .byte                   6
         .byte   W02
@@ -3516,15 +3407,13 @@ EndlessBattle_3_LOOP:
         .byte   W01
         .byte                   4
         .byte   W02
-        .byte                   3
-        .byte   W01
         .byte                   2
-        .byte   W02
+        .byte   W03
         .byte                   0
         .byte   W07
-        .byte                   36
+        .byte                   32
         .byte   W01
-        .byte                   53
+        .byte                   47
         .byte   W03
 @ 040   ----------------------------------------
         .byte   GOTO
@@ -3538,7 +3427,7 @@ EndlessBattle_4:
 @ 000   ----------------------------------------
         .byte           VOICE , 107
         .byte           PAN   , c_v-35
-        .byte           VOL   , 64
+        .byte           VOL   , 56
         .byte           N11   , Cn5 , v069
         .byte           N11   , Gn5
         .byte   W12
@@ -3608,104 +3497,101 @@ EndlessBattle_4_LOOP:
 @ 009   ----------------------------------------
         .byte   W96
 @ 010   ----------------------------------------
-        .byte           VOL   , 30
+        .byte           VOL   , 27
         .byte           N44   , Cn2 , v096 , gtp3
         .byte                   Gn2
-        .byte   W03
-        .byte           VOL   , 31
         .byte   W06
-        .byte                   32
+        .byte           VOL   , 28
         .byte   W03
+        .byte                   29
+        .byte   W06
+        .byte                   30
+        .byte   W06
+        .byte                   31
+        .byte   W03
+        .byte                   32
+        .byte   W06
         .byte                   33
         .byte   W03
         .byte                   34
-        .byte   W06
-        .byte                   35
         .byte   W03
+        .byte                   35
+        .byte   W06
         .byte                   36
         .byte   W06
         .byte                   37
-        .byte   W03
-        .byte                   38
-        .byte   W03
-        .byte                   39
-        .byte   W06
-        .byte                   40
-        .byte   W03
-        .byte                   41
-        .byte   W03
-        .byte                   42
         .byte           N44   , Ds2 , v096 , gtp3
         .byte                   Cn3
         .byte   W03
-        .byte           VOL   , 43
-        .byte   W06
-        .byte                   44
-        .byte   W03
-        .byte                   45
-        .byte   W03
-        .byte                   46
-        .byte   W06
-        .byte                   47
-        .byte   W03
-        .byte                   48
-        .byte   W06
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W06
-        .byte                   52
-        .byte   W03
-        .byte                   53
-        .byte   W03
-@ 011   ----------------------------------------
-        .byte                   54
-        .byte           N44   , Dn2 , v096 , gtp3
-        .byte                   As2
-        .byte   W06
-        .byte           VOL   , 53
-        .byte   W07
-        .byte                   52
-        .byte   W06
-        .byte                   51
-        .byte   W07
-        .byte                   50
-        .byte   W06
-        .byte                   49
-        .byte   W07
-        .byte                   48
-        .byte   W06
-        .byte                   47
-        .byte   W03
-        .byte           N44   , As1 , v096 , gtp3
-        .byte                   Fn2
-        .byte   W04
-        .byte           VOL   , 46
-        .byte   W06
-        .byte                   45
-        .byte   W06
-        .byte                   44
-        .byte   W07
-        .byte                   43
-        .byte   W06
-        .byte                   42
-        .byte   W07
-        .byte                   41
-        .byte   W03
-        .byte                   40
+        .byte           VOL   , 38
         .byte   W06
         .byte                   39
         .byte   W03
+        .byte                   40
+        .byte   W06
+        .byte                   41
+        .byte   W03
+        .byte                   42
+        .byte   W06
+        .byte                   43
+        .byte   W03
+        .byte                   44
+        .byte   W06
+        .byte                   45
+        .byte   W06
+        .byte                   46
+        .byte   W03
+        .byte                   47
+        .byte   W03
+@ 011   ----------------------------------------
+        .byte                   48
+        .byte           N44   , Dn2 , v096 , gtp3
+        .byte                   As2
+        .byte   W06
+        .byte           VOL   , 47
+        .byte   W07
+        .byte                   46
+        .byte   W06
+        .byte                   45
+        .byte   W10
+        .byte                   44
+        .byte   W06
+        .byte                   43
+        .byte   W07
+        .byte                   42
+        .byte   W06
+        .byte                   41
+        .byte           N44   , As1 , v096 , gtp3
+        .byte                   Fn2
+        .byte   W07
+        .byte           VOL   , 40
+        .byte   W09
+        .byte                   39
+        .byte   W07
+        .byte                   38
+        .byte   W06
+        .byte                   37
+        .byte   W07
+        .byte                   36
+        .byte   W06
+        .byte                   35
+        .byte   W06
 @ 012   ----------------------------------------
         .byte           N36   , Cn2
         .byte           N36   , Fn2
         .byte   W04
-        .byte           VOL   , 38
+        .byte           VOL   , 34
         .byte   W06
-        .byte                   37
+        .byte                   33
         .byte   W04
+        .byte                   32
+        .byte   W01
+        .byte                   33
+        .byte   W02
+        .byte                   34
+        .byte   W01
+        .byte                   35
+        .byte   W02
         .byte                   36
         .byte   W01
         .byte                   37
@@ -3715,6 +3601,8 @@ EndlessBattle_4_LOOP:
         .byte                   39
         .byte   W02
         .byte                   40
+        .byte   W03
+        .byte                   41
         .byte   W01
         .byte                   42
         .byte   W02
@@ -3725,139 +3613,123 @@ EndlessBattle_4_LOOP:
         .byte                   45
         .byte   W01
         .byte                   46
-        .byte   W02
-        .byte                   47
-        .byte   W01
-        .byte                   48
-        .byte   W02
-        .byte                   49
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   51
-        .byte   W01
-        .byte                   52
         .byte           N03   , Cs2
         .byte           N03   , Gn2
         .byte   W02
-        .byte           VOL   , 53
+        .byte           VOL   , 47
         .byte   W01
-        .byte                   54
+        .byte                   48
         .byte           N03   , Dn2
         .byte           N03   , An2
         .byte   W02
-        .byte           VOL   , 55
+        .byte           VOL   , 49
         .byte   W01
-        .byte                   56
+        .byte                   50
         .byte           N03   , Ds2
         .byte           N03   , As2
-        .byte   W02
-        .byte           VOL   , 57
-        .byte   W01
-        .byte                   58
+        .byte   W03
+        .byte           VOL   , 51
         .byte           N03   , En2
         .byte           N03   , Cn3
         .byte   W02
-        .byte           VOL   , 59
+        .byte           VOL   , 52
         .byte   W01
-        .byte                   60
+        .byte                   53
         .byte           N18   , Fn2
         .byte           N18   , Dn3
         .byte   W18
         .byte                   Gn2
         .byte           N18   , Ds3
-        .byte   W18
+        .byte   W12
+        .byte           VOL   , 54
+        .byte   W06
         .byte           N12   , An2
         .byte           N12   , Fn3
-        .byte   W09
-        .byte           VOL   , 61
-        .byte   W03
+        .byte   W12
 @ 013   ----------------------------------------
         .byte           N18   , Cn3
         .byte           N18   , Gn3
-        .byte   W18
+        .byte   W12
+        .byte           VOL   , 55
+        .byte   W06
         .byte           N06   , Gs2
         .byte           N06   , Fn3
         .byte   W06
         .byte           N68   , Ds2 , v096 , gtp3
         .byte                   Cn3
-        .byte   W03
-        .byte           VOL   , 63
-        .byte   W03
-        .byte                   62
-        .byte   W03
-        .byte                   61
-        .byte   W03
-        .byte                   60
-        .byte   W06
-        .byte                   59
-        .byte   W03
-        .byte                   58
-        .byte   W06
-        .byte                   57
-        .byte   W03
-        .byte                   56
-        .byte   W03
-        .byte                   55
-        .byte   W06
-        .byte                   54
+        .byte   W12
+        .byte           VOL   , 54
         .byte   W03
         .byte                   53
         .byte   W03
         .byte                   52
-        .byte   W01
+        .byte   W06
+        .byte                   51
+        .byte   W03
         .byte                   50
-        .byte   W02
+        .byte   W06
         .byte                   49
-        .byte   W01
+        .byte   W06
         .byte                   48
-        .byte   W02
+        .byte   W03
         .byte                   47
+        .byte   W03
+        .byte                   46
         .byte   W01
         .byte                   45
         .byte   W02
         .byte                   44
         .byte   W01
-        .byte                   43
-        .byte   W02
         .byte                   42
+        .byte   W02
+        .byte                   41
         .byte   W01
         .byte                   40
         .byte   W02
         .byte                   39
         .byte   W01
-        .byte                   37
+        .byte                   38
         .byte   W02
-        .byte                   36
+        .byte                   37
         .byte   W01
         .byte                   35
+        .byte   W03
+        .byte                   33
         .byte   W02
-        .byte                   34
-        .byte   W01
         .byte                   32
-        .byte   W02
-        .byte                   31
         .byte   W01
+        .byte                   31
+        .byte   W02
         .byte                   30
+        .byte   W01
+        .byte                   29
+        .byte   W02
+        .byte                   28
+        .byte   W01
+        .byte                   26
         .byte   W02
 @ 014   ----------------------------------------
-        .byte                   29
+        .byte                   25
         .byte           N44   , Cs2 , v096 , gtp3
         .byte                   Gs2
         .byte   W01
-        .byte           VOL   , 27
+        .byte           VOL   , 24
         .byte   W02
-        .byte                   26
+        .byte                   23
         .byte   W01
-        .byte                   25
+        .byte                   22
+        .byte   W02
+        .byte                   21
+        .byte   W01
+        .byte                   22
         .byte   W02
         .byte                   24
         .byte   W01
-        .byte                   25
+        .byte                   26
         .byte   W02
-        .byte                   27
+        .byte                   28
         .byte   W01
-        .byte                   29
+        .byte                   30
         .byte   W02
         .byte                   31
         .byte   W01
@@ -3865,31 +3737,25 @@ EndlessBattle_4_LOOP:
         .byte   W02
         .byte                   35
         .byte   W01
-        .byte                   37
+        .byte                   36
         .byte   W02
-        .byte                   39
+        .byte                   38
         .byte   W01
+        .byte                   40
+        .byte   W12
         .byte                   41
-        .byte   W02
-        .byte                   43
-        .byte   W01
-        .byte                   45
         .byte   W08
-        .byte                   46
-        .byte   W08
-        .byte                   47
-        .byte   W08
-        .byte                   48
-        .byte   W02
+        .byte                   42
+        .byte   W06
         .byte           N42   , Fn2
         .byte           N36   , Cn3 , v096 , gtp2
-        .byte   W14
-        .byte           VOL   , 49
+        .byte   W08
+        .byte           VOL   , 43
         .byte   W11
-        .byte                   50
+        .byte                   44
         .byte   W11
-        .byte                   51
-        .byte   W03
+        .byte                   45
+        .byte   W09
         .byte           N03   , Dn3 , v104
         .byte   W03
         .byte                   Fs2
@@ -3898,231 +3764,219 @@ EndlessBattle_4_LOOP:
         .byte                   Gn2
         .byte           N03   , En3
         .byte   W01
-        .byte           VOL   , 52
+        .byte           VOL   , 46
         .byte   W02
 @ 015   ----------------------------------------
         .byte           N44   , Gs2 , v096 , gtp3
         .byte                   Fn3
         .byte   W30
-        .byte           VOL   , 53
+        .byte           VOL   , 47
         .byte   W07
-        .byte                   52
+        .byte                   46
         .byte   W06
-        .byte                   51
+        .byte                   45
         .byte   W05
         .byte           N44   , Fn2 , v096 , gtp3
         .byte                   Cn3
-        .byte   W02
-        .byte           VOL   , 50
-        .byte   W06
-        .byte                   49
+        .byte   W05
+        .byte           VOL   , 44
         .byte   W07
-        .byte                   48
-        .byte   W07
-        .byte                   47
+        .byte                   43
         .byte   W06
-        .byte                   46
+        .byte                   42
         .byte   W07
-        .byte                   45
+        .byte                   41
         .byte   W06
-        .byte                   44
+        .byte                   40
+        .byte   W10
+        .byte                   39
         .byte   W07
 @ 016   ----------------------------------------
-        .byte                   43
+        .byte                   38
         .byte           N44   , Fn2 , v096 , gtp3
         .byte                   Cn3
         .byte   W03
-        .byte           VOL   , 42
+        .byte           VOL   , 37
         .byte   W09
+        .byte                   38
+        .byte   W08
+        .byte                   39
+        .byte   W08
+        .byte                   40
+        .byte   W12
+        .byte                   41
+        .byte   W08
+        .byte           N18   , Cn2
+        .byte           N18   , An2
+        .byte   W01
+        .byte           VOL   , 42
+        .byte   W08
         .byte                   43
         .byte   W08
         .byte                   44
-        .byte   W08
-        .byte                   45
-        .byte   W08
-        .byte                   46
-        .byte   W09
-        .byte                   47
-        .byte   W03
-        .byte           N18   , Cn2
-        .byte           N18   , An2
-        .byte   W05
-        .byte           VOL   , 48
-        .byte   W08
-        .byte                   49
-        .byte   W05
+        .byte   W01
         .byte           N03   , Dn2
         .byte           N03   , As2
         .byte   W03
-        .byte           VOL   , 50
-        .byte           N03   , En2
+        .byte                   En2
         .byte           N03   , Bn2
         .byte   W03
         .byte           N23   , Fn2
         .byte           N23   , Cn3
-        .byte   W06
-        .byte           VOL   , 51
+        .byte   W02
+        .byte           VOL   , 45
+        .byte   W12
+        .byte                   46
         .byte   W08
-        .byte                   52
-        .byte   W08
-        .byte                   53
+        .byte                   47
         .byte   W02
 @ 017   ----------------------------------------
         .byte           N48   , Gn2
         .byte           N48   , Cn3
         .byte   W02
-        .byte           VOL   , 54
+        .byte           VOL   , 48
         .byte   W06
-        .byte                   53
+        .byte                   47
         .byte   W12
-        .byte                   52
+        .byte                   46
         .byte   W11
-        .byte                   51
-        .byte   W12
-        .byte                   50
-        .byte   W05
+        .byte                   45
+        .byte   W17
+        .byte                   44
         .byte           N30   , Dn2 , v096 , gtp1
         .byte           N32   , Bn2
-        .byte   W02
-        .byte           VOL   , 49
-        .byte   W01
-        .byte                   48
         .byte   W03
-        .byte                   47
+        .byte           VOL   , 43
         .byte   W02
-        .byte                   46
-        .byte   W01
-        .byte                   45
-        .byte   W02
-        .byte                   44
-        .byte   W01
-        .byte                   43
-        .byte   W03
         .byte                   42
+        .byte   W01
+        .byte                   41
         .byte   W02
         .byte                   40
         .byte   W03
         .byte                   39
         .byte   W01
         .byte                   38
-        .byte   W01
+        .byte   W03
         .byte                   37
         .byte   W02
+        .byte                   36
+        .byte   W01
         .byte                   35
+        .byte   W03
+        .byte                   34
         .byte   W01
-        .byte                   32
+        .byte                   33
         .byte   W02
-        .byte                   29
+        .byte                   31
         .byte   W01
-        .byte                   26
+        .byte                   28
         .byte   W02
+        .byte                   25
+        .byte   W01
         .byte                   23
-        .byte   W01
+        .byte   W02
         .byte                   20
-        .byte   W02
-        .byte                   17
         .byte   W01
-        .byte                   14
+        .byte                   18
         .byte   W02
-        .byte                   11
+        .byte                   15
         .byte   W01
-        .byte                   8
+        .byte                   12
+        .byte   W02
+        .byte                   10
+        .byte   W01
+        .byte                   7
         .byte   W02
         .byte                   4
         .byte   W01
-        .byte                   20
+        .byte                   18
         .byte   W01
-        .byte                   29
+        .byte                   26
         .byte   W01
+        .byte                   40
+        .byte   W06
+@ 018   ----------------------------------------
+        .byte                   42
+        .byte           N48   , Gn3 , v127
+        .byte   W03
+        .byte           VOL   , 43
+        .byte   W03
         .byte                   45
         .byte   W03
         .byte                   46
         .byte   W03
-@ 018   ----------------------------------------
         .byte                   47
-        .byte           N48   , Gn3 , v127
         .byte   W03
-        .byte           VOL   , 49
+        .byte                   48
         .byte   W03
         .byte                   50
         .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   57
+        .byte   W12
+        .byte           N48   , Cn4
+        .byte   W07
+        .byte           VOL   , 56
+        .byte   W03
+        .byte                   55
+        .byte   W06
+        .byte                   54
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   52
+        .byte   W02
+        .byte                   51
+        .byte   W06
         .byte                   52
         .byte   W03
         .byte                   53
         .byte   W03
         .byte                   54
         .byte   W03
+        .byte                   55
+        .byte   W03
         .byte                   56
         .byte   W03
         .byte                   57
         .byte   W03
-        .byte                   59
-        .byte   W03
-        .byte                   60
-        .byte   W03
-        .byte                   61
-        .byte   W03
-        .byte                   63
-        .byte   W03
-        .byte                   65
-        .byte   W12
-        .byte           N48   , Cn4
-        .byte   W07
-        .byte           VOL   , 64
-        .byte   W03
-        .byte                   63
-        .byte   W03
-        .byte                   61
-        .byte   W03
-        .byte                   60
-        .byte   W03
-        .byte                   59
-        .byte   W03
-        .byte                   58
-        .byte   W02
-        .byte                   57
-        .byte   W03
-        .byte                   58
-        .byte   W03
-        .byte                   59
-        .byte   W03
-        .byte                   60
-        .byte   W03
-        .byte                   61
-        .byte   W03
-        .byte                   62
-        .byte   W03
-        .byte                   63
-        .byte   W03
-        .byte                   64
-        .byte   W03
 @ 019   ----------------------------------------
-        .byte                   65
-        .byte   W16
-        .byte                   63
-        .byte   W02
-        .byte                   60
-        .byte   W01
         .byte                   58
+        .byte   W16
+        .byte                   56
         .byte   W02
+        .byte                   54
+        .byte   W01
+        .byte                   51
+        .byte   W02
+        .byte                   48
+        .byte   W03
+        .byte                   49
+        .byte           N24
+        .byte   W03
+        .byte           VOL   , 50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   53
+        .byte   W03
         .byte                   54
         .byte   W03
         .byte                   55
-        .byte           N24
         .byte   W03
-        .byte           VOL   , 57
+        .byte                   56
         .byte   W03
         .byte                   58
-        .byte   W03
-        .byte                   59
-        .byte   W03
-        .byte                   61
-        .byte   W03
-        .byte                   62
-        .byte   W03
-        .byte                   64
-        .byte   W03
-        .byte                   65
         .byte   W03
         .byte           N24   , Dn4
         .byte   W24
@@ -4130,26 +3984,28 @@ EndlessBattle_4_LOOP:
         .byte   W24
 @ 020   ----------------------------------------
         .byte           N48   , Gn3
-        .byte   W11
-        .byte           VOL   , 64
-        .byte   W03
-        .byte                   63
-        .byte   W03
-        .byte                   62
-        .byte   W03
-        .byte                   61
-        .byte   W03
-        .byte                   60
         .byte   W08
-        .byte                   61
+        .byte           VOL   , 57
+        .byte   W03
+        .byte                   56
         .byte   W06
-        .byte                   63
+        .byte                   55
         .byte   W06
-        .byte                   64
-        .byte   W05
+        .byte                   54
+        .byte   W02
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W06
+        .byte                   55
+        .byte   W06
+        .byte                   56
+        .byte   W06
+        .byte                   57
+        .byte   W02
         .byte           N32   , Ds3 , v127 , gtp3
         .byte   W01
-        .byte           VOL   , 65
+        .byte           VOL   , 58
         .byte   W32
         .byte   W03
         .byte           N06   , Fn3
@@ -4158,44 +4014,38 @@ EndlessBattle_4_LOOP:
         .byte   W06
 @ 021   ----------------------------------------
         .byte           N48   , Fn3
-        .byte   W11
-        .byte           VOL   , 64
-        .byte   W09
-        .byte                   63
-        .byte   W10
-        .byte                   62
-        .byte   W04
-        .byte                   61
-        .byte   W08
-        .byte                   60
-        .byte   W03
-        .byte                   59
-        .byte   W03
-        .byte                   58
         .byte   W06
-        .byte                   57
-        .byte   W02
+        .byte           VOL   , 57
+        .byte   W09
         .byte                   56
+        .byte   W10
+        .byte                   55
+        .byte   W14
+        .byte                   54
+        .byte   W06
+        .byte                   53
         .byte   W03
-        .byte                   57
+        .byte                   52
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W05
+        .byte                   51
         .byte   W01
         .byte           N24   , Cn3
+        .byte   W02
+        .byte           VOL   , 52
+        .byte   W02
+        .byte                   53
         .byte   W01
-        .byte           VOL   , 58
-        .byte   W01
-        .byte                   59
+        .byte                   54
         .byte   W03
-        .byte                   60
+        .byte                   55
+        .byte   W03
+        .byte                   56
         .byte   W02
-        .byte                   61
-        .byte   W01
-        .byte                   62
-        .byte   W02
-        .byte                   63
-        .byte   W01
-        .byte                   64
-        .byte   W02
-        .byte                   65
+        .byte                   57
         .byte   W11
         .byte           N12   , Dn3
         .byte   W12
@@ -4208,33 +4058,27 @@ EndlessBattle_4_LOOP:
         .byte   W24
 @ 023   ----------------------------------------
         .byte           N48   , As3
-        .byte   W09
-        .byte           VOL   , 64
+        .byte   W12
+        .byte           VOL   , 56
         .byte   W03
-        .byte                   63
+        .byte                   55
         .byte   W03
-        .byte                   62
+        .byte                   54
         .byte   W03
-        .byte                   61
-        .byte   W03
-        .byte                   60
-        .byte   W01
-        .byte                   59
-        .byte   W03
-        .byte                   60
+        .byte                   53
+        .byte   W07
+        .byte                   54
         .byte   W06
-        .byte                   61
+        .byte                   55
         .byte   W06
-        .byte                   62
-        .byte   W03
-        .byte                   63
-        .byte   W03
-        .byte                   64
-        .byte   W05
+        .byte                   56
+        .byte   W06
+        .byte                   57
+        .byte   W02
         .byte           N18   , Fn3
-        .byte   W01
-        .byte           VOL   , 65
-        .byte   W17
+        .byte   W02
+        .byte           VOL   , 58
+        .byte   W16
         .byte           N18   , Gn3
         .byte   W18
         .byte           N12   , As3
@@ -4246,49 +4090,39 @@ EndlessBattle_4_LOOP:
         .byte   W06
         .byte           TIE   , Cn4
         .byte   W05
-        .byte           VOL   , 64
-        .byte   W03
-        .byte                   63
-        .byte   W03
-        .byte                   61
-        .byte   W03
-        .byte                   60
-        .byte   W06
-        .byte                   61
-        .byte   W03
-        .byte                   62
-        .byte   W03
-        .byte                   63
-        .byte   W03
-        .byte                   64
-        .byte   W03
-        .byte                   65
-        .byte   W12
-        .byte                   64
-        .byte   W08
-        .byte                   63
-        .byte   W08
-        .byte                   62
-        .byte   W04
-        .byte                   61
-        .byte   W08
-@ 025   ----------------------------------------
-        .byte   W01
-        .byte                   60
-        .byte   W08
-        .byte                   59
-        .byte   W08
-        .byte                   58
-        .byte   W04
-        .byte                   57
-        .byte   W03
-        .byte                   56
+        .byte           VOL   , 57
         .byte   W03
         .byte                   55
         .byte   W03
+        .byte                   54
+        .byte   W03
         .byte                   53
         .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   55
+        .byte   W06
+        .byte                   56
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   58
+        .byte   W08
+        .byte                   57
+        .byte   W08
+        .byte                   56
+        .byte   W08
+        .byte                   55
+        .byte   W13
+        .byte                   54
+        .byte   W03
+@ 025   ----------------------------------------
+        .byte   W05
+        .byte                   53
+        .byte   W08
         .byte                   52
+        .byte   W08
+        .byte                   51
         .byte   W03
         .byte                   50
         .byte   W03
@@ -4298,13 +4132,15 @@ EndlessBattle_4_LOOP:
         .byte   W03
         .byte                   46
         .byte   W03
-        .byte                   44
+        .byte                   45
         .byte   W03
         .byte                   43
         .byte   W03
         .byte                   42
         .byte   W03
         .byte                   40
+        .byte   W03
+        .byte                   39
         .byte   W03
         .byte                   38
         .byte   W03
@@ -4314,154 +4150,139 @@ EndlessBattle_4_LOOP:
         .byte   W03
         .byte                   34
         .byte   W03
-        .byte           EOT
-        .byte           VOL   , 32
+        .byte                   33
         .byte   W03
         .byte                   31
         .byte   W03
-        .byte                   29
+        .byte                   30
         .byte   W03
-        .byte                   28
+        .byte           EOT
+        .byte           VOL   , 29
         .byte   W03
         .byte                   27
+        .byte   W03
+        .byte                   26
         .byte   W03
         .byte                   25
         .byte   W03
         .byte                   24
-        .byte   W01
-        .byte                   23
         .byte   W03
-        .byte                   24
+        .byte                   22
+        .byte   W03
+        .byte                   21
+        .byte   W01
+        .byte                   20
+        .byte   W03
+        .byte                   21
         .byte   W02
 @ 026   ----------------------------------------
         .byte           N48   , Gs1 , v104
         .byte           N24   , Cn2
         .byte   W01
-        .byte           VOL   , 25
+        .byte           VOL   , 22
+        .byte   W03
+        .byte                   23
+        .byte   W03
+        .byte                   24
+        .byte   W03
+        .byte                   25
         .byte   W03
         .byte                   26
         .byte   W03
-        .byte                   27
+        .byte                   28
         .byte   W03
         .byte                   29
         .byte   W03
         .byte                   30
-        .byte   W03
-        .byte                   31
-        .byte   W03
-        .byte                   32
-        .byte   W03
-        .byte                   34
         .byte   W02
         .byte           N24   , Ds2
         .byte   W01
-        .byte           VOL   , 35
+        .byte           VOL   , 31
         .byte   W03
-        .byte                   36
+        .byte                   32
         .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   35
+        .byte   W06
         .byte                   37
         .byte   W03
+        .byte                   38
+        .byte   W03
         .byte                   39
-        .byte   W03
+        .byte   W01
         .byte                   40
-        .byte   W03
+        .byte   W01
+        .byte           N24   , Cn2
+        .byte           N24   , Gs2
+        .byte   W08
+        .byte           VOL   , 41
+        .byte   W06
         .byte                   42
-        .byte   W03
+        .byte   W06
         .byte                   43
         .byte   W03
         .byte                   44
         .byte   W01
-        .byte                   45
-        .byte   W01
-        .byte           N24   , Cn2
-        .byte           N24   , Gs2
-        .byte   W05
-        .byte           VOL   , 46
-        .byte   W06
-        .byte                   47
-        .byte   W06
-        .byte                   48
-        .byte   W06
-        .byte                   49
-        .byte   W01
         .byte           N24   , Ds2
         .byte           N24   , Cn3
-        .byte   W02
-        .byte           VOL   , 50
+        .byte   W05
+        .byte           VOL   , 45
+        .byte   W09
+        .byte                   46
         .byte   W06
-        .byte                   51
-        .byte   W06
-        .byte                   52
-        .byte   W06
-        .byte                   53
+        .byte                   47
         .byte   W04
 @ 027   ----------------------------------------
         .byte           N48   , Fn2
         .byte           N48   , Dn3
         .byte   W30
-        .byte           VOL   , 54
+        .byte           VOL   , 48
         .byte   W18
         .byte           N48   , Dn2
         .byte           N48   , As2
         .byte   W16
-        .byte           VOL   , 55
+        .byte           VOL   , 49
         .byte   W32
 @ 028   ----------------------------------------
         .byte           N24   , Fn3
         .byte           N48   , Gn3
         .byte   W02
-        .byte           VOL   , 56
-        .byte   W02
-        .byte                   55
-        .byte   W01
-        .byte                   54
-        .byte   W02
-        .byte                   53
-        .byte   W01
-        .byte                   52
-        .byte   W02
-        .byte                   51
-        .byte   W01
-        .byte                   50
+        .byte           VOL   , 50
         .byte   W02
         .byte                   49
         .byte   W01
         .byte                   48
         .byte   W02
-        .byte                   46
-        .byte   W07
         .byte                   47
         .byte   W01
+        .byte                   46
+        .byte   W02
+        .byte                   45
+        .byte   W01
+        .byte                   44
+        .byte   W02
+        .byte                   43
+        .byte   W01
+        .byte                   42
+        .byte   W02
+        .byte                   41
+        .byte   W08
         .byte           N24   , Ds3
-        .byte   W06
-        .byte           VOL   , 48
+        .byte   W02
+        .byte           VOL   , 42
         .byte   W07
-        .byte                   49
+        .byte                   43
         .byte   W07
-        .byte                   50
-        .byte   W04
+        .byte                   44
+        .byte   W07
+        .byte                   45
+        .byte   W01
         .byte           N24   , As2
         .byte           N24   , Fn3 , v077
-        .byte   W02
-        .byte           VOL   , 51
-        .byte   W07
-        .byte                   52
+        .byte   W09
+        .byte           VOL   , 46
         .byte   W04
-        .byte                   53
-        .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   51
-        .byte   W03
-        .byte                   50
-        .byte   W02
-        .byte           N24   , Gn2 , v104
-        .byte           N24   , Ds3 , v077
-        .byte   W01
-        .byte           VOL   , 49
-        .byte   W03
-        .byte                   48
-        .byte   W03
         .byte                   47
         .byte   W03
         .byte                   46
@@ -4469,21 +4290,42 @@ EndlessBattle_4_LOOP:
         .byte                   45
         .byte   W03
         .byte                   44
-        .byte   W03
-        .byte                   43
+        .byte   W02
+        .byte           N24   , Gn2 , v104
+        .byte           N24   , Ds3 , v077
+        .byte   W01
+        .byte           VOL   , 43
         .byte   W03
         .byte                   42
+        .byte   W03
+        .byte                   41
+        .byte   W03
+        .byte                   40
+        .byte   W06
+        .byte                   39
+        .byte   W03
+        .byte                   38
+        .byte   W03
+        .byte                   37
         .byte   W02
 @ 029   ----------------------------------------
         .byte           N48   , An2 , v104
         .byte           N96   , Cn3
         .byte   W01
-        .byte           VOL   , 40
+        .byte           VOL   , 36
         .byte   W03
-        .byte                   39
+        .byte                   35
         .byte   W03
-        .byte                   38
+        .byte                   34
         .byte   W02
+        .byte                   33
+        .byte   W01
+        .byte                   34
+        .byte   W02
+        .byte                   35
+        .byte   W03
+        .byte                   36
+        .byte   W03
         .byte                   37
         .byte   W01
         .byte                   38
@@ -4491,17 +4333,17 @@ EndlessBattle_4_LOOP:
         .byte                   39
         .byte   W03
         .byte                   40
-        .byte   W01
+        .byte   W03
         .byte                   41
-        .byte   W02
-        .byte                   42
         .byte   W01
-        .byte                   43
+        .byte                   42
         .byte   W02
+        .byte                   43
+        .byte   W01
         .byte                   44
         .byte   W03
         .byte                   45
-        .byte   W01
+        .byte   W03
         .byte                   46
         .byte   W02
         .byte                   47
@@ -4511,39 +4353,15 @@ EndlessBattle_4_LOOP:
         .byte                   49
         .byte   W02
         .byte                   50
-        .byte   W01
+        .byte   W03
         .byte                   51
-        .byte   W03
-        .byte                   52
-        .byte   W02
-        .byte                   53
-        .byte   W01
-        .byte                   54
-        .byte   W03
-        .byte                   55
-        .byte   W02
-        .byte                   56
-        .byte   W01
-        .byte                   57
-        .byte   W02
-        .byte                   58
         .byte           N48   , Fn2
-        .byte   W02
-        .byte           VOL   , 59
-        .byte   W03
-        .byte                   58
-        .byte   W03
-        .byte                   57
-        .byte   W03
-        .byte                   55
-        .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   53
-        .byte   W03
-        .byte                   52
-        .byte   W03
+        .byte   W01
+        .byte           VOL   , 52
+        .byte   W04
         .byte                   51
+        .byte   W03
+        .byte                   50
         .byte   W03
         .byte                   49
         .byte   W03
@@ -4555,33 +4373,49 @@ EndlessBattle_4_LOOP:
         .byte   W03
         .byte                   45
         .byte   W03
+        .byte                   44
+        .byte   W03
         .byte                   43
         .byte   W03
-        .byte                   42
+        .byte                   41
         .byte   W03
         .byte                   40
+        .byte   W06
+        .byte                   38
+        .byte   W03
+        .byte                   37
+        .byte   W03
+        .byte                   36
         .byte   W01
 @ 030   ----------------------------------------
         .byte   W02
-        .byte                   39
+        .byte                   35
         .byte   W03
-        .byte                   38
+        .byte                   34
         .byte   W03
-        .byte                   37
+        .byte                   33
         .byte   W02
-        .byte                   36
+        .byte                   32
         .byte   W06
-        .byte                   37
+        .byte                   33
         .byte   W03
-        .byte                   38
+        .byte                   34
         .byte   W03
-        .byte                   39
+        .byte                   35
         .byte   W02
         .byte           N48   , Cn2
         .byte           N48   , Ds2
         .byte   W04
-        .byte           VOL   , 40
+        .byte           VOL   , 36
+        .byte   W06
+        .byte                   37
         .byte   W03
+        .byte                   38
+        .byte   W03
+        .byte                   39
+        .byte   W06
+        .byte                   40
+        .byte   W06
         .byte                   41
         .byte   W03
         .byte                   42
@@ -4593,18 +4427,6 @@ EndlessBattle_4_LOOP:
         .byte                   45
         .byte   W03
         .byte                   46
-        .byte   W03
-        .byte                   47
-        .byte   W03
-        .byte                   48
-        .byte   W06
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W03
-        .byte                   52
         .byte   W02
         .byte           N48   , Dn2
         .byte           N48   , Fn2
@@ -4614,12 +4436,12 @@ EndlessBattle_4_LOOP:
         .byte           N24   , Ds2
         .byte           N24   , Gn2
         .byte   W04
-        .byte           VOL   , 53
+        .byte           VOL   , 47
         .byte   W20
         .byte           N24   , Cn2
         .byte           N24   , Gs2
         .byte   W17
-        .byte           VOL   , 54
+        .byte           VOL   , 48
         .byte   W07
         .byte           N24   , Ds2
         .byte           N24   , Cn3
@@ -4628,119 +4450,117 @@ EndlessBattle_4_LOOP:
         .byte           N72   , Fn2
         .byte           N72   , Dn3
         .byte   W05
-        .byte           VOL   , 55
-        .byte   W03
-        .byte                   54
-        .byte   W01
-        .byte                   53
-        .byte   W02
-        .byte                   52
-        .byte   W03
-        .byte                   51
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   49
+        .byte           VOL   , 49
         .byte   W03
         .byte                   48
         .byte   W01
         .byte                   47
-        .byte   W01
+        .byte   W02
         .byte                   46
-        .byte   W12
+        .byte   W03
         .byte                   45
-        .byte   W08
+        .byte   W03
         .byte                   44
-        .byte   W08
+        .byte   W01
         .byte                   43
-        .byte   W08
+        .byte   W02
         .byte                   42
-        .byte   W04
+        .byte   W02
         .byte                   41
+        .byte   W08
+        .byte                   40
+        .byte   W12
+        .byte                   39
+        .byte   W08
+        .byte                   38
+        .byte   W08
+        .byte                   37
+        .byte   W04
+        .byte                   36
         .byte   W03
-        .byte                   42
+        .byte                   37
         .byte   W03
-        .byte                   44
+        .byte                   39
         .byte   W03
-        .byte                   45
+        .byte                   40
         .byte   W01
         .byte           N24   , Gs2
         .byte           N24   , Fn3
         .byte   W02
-        .byte           VOL   , 47
+        .byte           VOL   , 41
+        .byte   W03
+        .byte                   42
+        .byte   W02
+        .byte                   44
+        .byte   W06
+        .byte                   45
+        .byte   W03
+        .byte                   46
+        .byte   W03
+        .byte                   47
         .byte   W03
         .byte                   48
         .byte   W02
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   53
-        .byte   W03
-        .byte                   54
-        .byte   W02
 @ 033   ----------------------------------------
-        .byte                   55
+        .byte                   49
         .byte           N96   , Fn2
         .byte           N96   , Dn3
         .byte   W03
-        .byte           VOL   , 54
+        .byte           VOL   , 48
         .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   51
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   49
-        .byte   W01
-        .byte                   47
-        .byte   W02
         .byte                   46
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   43
         .byte   W01
-        .byte                   44
-        .byte   W02
         .byte                   42
-        .byte   W01
+        .byte   W02
         .byte                   40
-        .byte   W02
+        .byte   W01
         .byte                   39
-        .byte   W01
-        .byte                   37
         .byte   W02
-        .byte                   36
+        .byte                   37
         .byte   W01
-        .byte                   34
+        .byte                   36
+        .byte   W02
+        .byte                   35
+        .byte   W01
+        .byte                   33
         .byte   W02
         .byte                   32
         .byte   W01
-        .byte                   31
+        .byte                   30
         .byte   W02
         .byte                   29
         .byte   W01
-        .byte                   28
+        .byte                   27
         .byte   W02
         .byte                   26
         .byte   W01
-        .byte                   24
+        .byte                   25
         .byte   W02
         .byte                   23
         .byte   W01
         .byte                   21
         .byte   W02
-        .byte                   19
+        .byte                   20
         .byte   W01
+        .byte                   19
+        .byte   W02
         .byte                   17
+        .byte   W01
+        .byte                   15
+        .byte   W02
+        .byte                   14
+        .byte   W01
+        .byte                   15
         .byte   W02
         .byte                   16
         .byte   W01
-        .byte                   17
-        .byte   W02
         .byte                   18
+        .byte   W02
+        .byte                   19
         .byte   W01
         .byte                   20
         .byte   W02
@@ -4749,131 +4569,50 @@ EndlessBattle_4_LOOP:
         .byte                   23
         .byte   W02
         .byte                   25
+        .byte   W03
+        .byte                   27
         .byte   W01
-        .byte                   26
-        .byte   W02
         .byte                   28
-        .byte   W01
-        .byte                   29
         .byte   W02
         .byte                   30
         .byte   W01
+        .byte                   31
+        .byte   W02
         .byte                   32
-        .byte   W02
-        .byte                   33
         .byte   W01
+        .byte                   34
+        .byte   W02
         .byte                   35
-        .byte   W02
+        .byte   W01
         .byte                   36
-        .byte   W01
+        .byte   W02
         .byte                   38
-        .byte   W02
+        .byte   W03
         .byte                   39
-        .byte   W01
+        .byte   W03
         .byte                   40
-        .byte   W02
-        .byte                   43
         .byte   W03
-        .byte                   44
-        .byte   W03
-        .byte                   46
-        .byte   W03
-        .byte                   47
-        .byte   W03
-        .byte                   48
-        .byte   W01
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W01
-        .byte                   51
-        .byte   W02
-        .byte                   52
-        .byte   W03
-        .byte                   53
-        .byte   W01
-        .byte                   54
-        .byte   W02
-        .byte                   55
-        .byte   W01
-        .byte                   56
-        .byte   W01
-@ 034   ----------------------------------------
-        .byte           N36   , Gn2
-        .byte           N36   , Fn3
-        .byte   W01
-        .byte           VOL   , 57
-        .byte   W32
-        .byte   W03
-        .byte           N12   , Gn2
-        .byte           N12   , Ds3
-        .byte   W12
-        .byte                   Gn2 , v054
-        .byte           N12   , Ds3
-        .byte   W12
-        .byte                   Gn2 , v039
-        .byte           N12   , Ds3
-        .byte   W12
-        .byte           N36   , Fn2 , v104
-        .byte           N36   , Dn3
-        .byte   W24
-@ 035   ----------------------------------------
-        .byte   W12
-        .byte           N72   , Ds2
-        .byte           N72   , Cn3
-        .byte   W06
-        .byte           VOL   , 55
-        .byte   W01
-        .byte                   54
-        .byte   W02
-        .byte                   52
-        .byte   W01
-        .byte                   51
-        .byte   W02
-        .byte                   49
-        .byte   W01
-        .byte                   47
-        .byte   W02
-        .byte                   46
-        .byte   W01
-        .byte                   44
-        .byte   W02
-        .byte                   42
+        .byte                   41
         .byte   W03
         .byte                   43
-        .byte   W06
+        .byte   W02
         .byte                   44
-        .byte   W03
+        .byte   W02
         .byte                   45
         .byte   W03
         .byte                   46
-        .byte   W06
+        .byte   W03
         .byte                   47
-        .byte   W03
-        .byte                   48
-        .byte   W06
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W06
-        .byte                   52
-        .byte   W03
-        .byte                   53
-        .byte   W03
-        .byte                   54
-        .byte   W06
-        .byte                   55
-        .byte   W03
-        .byte                   56
-        .byte   W06
-        .byte                   57
         .byte   W01
-        .byte                   58
+        .byte                   48
         .byte   W02
-@ 036   ----------------------------------------
-        .byte           N36   , Gn2
+        .byte                   49
+        .byte   W01
+        .byte                   50
+        .byte   W01
+@ 034   ----------------------------------------
+EndlessBattle_4_34:
+        .byte           N36   , Gn2 , v104
         .byte           N36   , Fn3
         .byte   W36
         .byte           N12   , Gn2
@@ -4888,26 +4627,73 @@ EndlessBattle_4_LOOP:
         .byte           N36   , Fn2 , v104
         .byte           N36   , Dn3
         .byte   W24
+        .byte   PEND
+@ 035   ----------------------------------------
+        .byte   W12
+        .byte           N72   , Ds2
+        .byte           N72   , Cn3
+        .byte   W06
+        .byte           VOL   , 49
+        .byte   W01
+        .byte                   48
+        .byte   W02
+        .byte                   46
+        .byte   W01
+        .byte                   45
+        .byte   W02
+        .byte                   44
+        .byte   W01
+        .byte                   42
+        .byte   W02
+        .byte                   40
+        .byte   W01
+        .byte                   39
+        .byte   W02
+        .byte                   37
+        .byte   W03
+        .byte                   38
+        .byte   W06
+        .byte                   39
+        .byte   W03
+        .byte                   40
+        .byte   W06
+        .byte                   41
+        .byte   W03
+        .byte                   42
+        .byte   W06
+        .byte                   43
+        .byte   W03
+        .byte                   44
+        .byte   W06
+        .byte                   45
+        .byte   W06
+        .byte                   46
+        .byte   W03
+        .byte                   47
+        .byte   W03
+        .byte                   48
+        .byte   W06
+        .byte                   49
+        .byte   W03
+        .byte                   50
+        .byte   W06
+        .byte                   51
+        .byte   W03
+@ 036   ----------------------------------------
+        .byte   PATT
+         .word  EndlessBattle_4_34
 @ 037   ----------------------------------------
         .byte   W12
-        .byte           N66   , Ds2
+        .byte           N66   , Ds2 , v104
         .byte           N66   , Cn3
-        .byte   W04
-        .byte           VOL   , 59
+        .byte   W01
+        .byte           VOL   , 52
+        .byte   W03
+        .byte                   53
         .byte   W02
-        .byte                   60
-        .byte   W03
-        .byte                   59
-        .byte   W03
-        .byte                   58
-        .byte   W03
-        .byte                   57
-        .byte   W03
-        .byte                   56
-        .byte   W03
-        .byte                   55
-        .byte   W03
         .byte                   54
+        .byte   W03
+        .byte                   53
         .byte   W03
         .byte                   52
         .byte   W03
@@ -4919,35 +4705,39 @@ EndlessBattle_4_LOOP:
         .byte   W03
         .byte                   48
         .byte   W03
-        .byte                   47
+        .byte                   46
         .byte   W03
         .byte                   45
-        .byte   W03
-        .byte                   44
-        .byte   W03
+        .byte   W06
         .byte                   43
         .byte   W03
         .byte                   42
-        .byte   W01
+        .byte   W03
         .byte                   41
-        .byte   W02
+        .byte   W03
         .byte                   40
-        .byte   W01
+        .byte   W03
+        .byte                   39
+        .byte   W03
         .byte                   38
-        .byte   W02
+        .byte   W03
         .byte                   37
         .byte   W01
+        .byte                   36
+        .byte   W02
         .byte                   35
-        .byte   W02
-        .byte                   34
         .byte   W01
-        .byte                   32
+        .byte                   34
         .byte   W02
+        .byte                   33
+        .byte   W01
         .byte                   31
+        .byte   W02
+        .byte                   30
         .byte   W01
         .byte                   29
         .byte   W02
-        .byte                   28
+        .byte                   27
         .byte   W01
         .byte                   26
         .byte   W02
@@ -4959,18 +4749,22 @@ EndlessBattle_4_LOOP:
         .byte   W01
         .byte                   20
         .byte   W02
+        .byte                   19
+        .byte   W01
         .byte                   18
-        .byte   W01
-        .byte                   17
         .byte   W02
+        .byte                   16
+        .byte   W01
         .byte                   15
+        .byte   W02
+        .byte                   14
         .byte   W01
-        .byte                   13
+        .byte                   12
         .byte   W01
-        .byte                   37
+        .byte                   33
         .byte   W01
 @ 038   ----------------------------------------
-        .byte                   65
+        .byte                   58
         .byte           N11   , Cn5 , v069
         .byte           N11   , Gn5
         .byte   W12
@@ -4999,7 +4793,7 @@ EndlessBattle_4_LOOP:
         .byte   PATT
          .word  EndlessBattle_4_1
 @ 040   ----------------------------------------
-        .byte           VOL   , 64
+        .byte           VOL   , 56
         .byte   GOTO
          .word  EndlessBattle_4_LOOP
         .byte   FINE
@@ -5010,7 +4804,7 @@ EndlessBattle_5:
         .byte   KEYSH , EndlessBattle_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 127
-        .byte           VOL   , 67
+        .byte           VOL   , 60
         .byte           N06   , Dn1 , v110
         .byte           N14   , An2 , v038
         .byte   W06
@@ -5697,20 +5491,79 @@ EndlessBattle_6_LOOP:
 @ 014   ----------------------------------------
         .byte   W96
 @ 015   ----------------------------------------
-        .byte           VOL   , 54
+        .byte           VOL   , 47
         .byte           PAN   , c_v+34
         .byte   W96
 @ 016   ----------------------------------------
         .byte   W96
 @ 017   ----------------------------------------
         .byte   W90
-        .byte           VOL   , 37
+        .byte           VOL   , 32
         .byte   W03
-        .byte                   38
+        .byte                   33
         .byte   W03
 @ 018   ----------------------------------------
-        .byte                   39
+        .byte                   34
         .byte           N44   , Gn2 , v121 , gtp3
+        .byte   W03
+        .byte           VOL   , 35
+        .byte   W03
+        .byte                   36
+        .byte   W03
+        .byte                   38
+        .byte   W06
+        .byte                   39
+        .byte   W03
+        .byte                   41
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   43
+        .byte   W03
+        .byte                   44
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   46
+        .byte   W03
+        .byte                   47
+        .byte   W12
+        .byte           N44   , Cn3 , v121 , gtp3
+        .byte   W07
+        .byte           VOL   , 46
+        .byte   W03
+        .byte                   45
+        .byte   W06
+        .byte                   44
+        .byte   W03
+        .byte                   43
+        .byte   W03
+        .byte                   42
+        .byte   W08
+        .byte                   43
+        .byte   W03
+        .byte                   44
+        .byte   W06
+        .byte                   45
+        .byte   W03
+        .byte                   46
+        .byte   W03
+        .byte                   47
+        .byte   W03
+@ 019   ----------------------------------------
+        .byte   W16
+        .byte                   46
+        .byte   W01
+        .byte                   44
+        .byte   W02
+        .byte                   42
+        .byte   W01
+        .byte                   40
+        .byte   W01
+        .byte                   39
+        .byte   W03
+        .byte                   40
+        .byte           N23
         .byte   W03
         .byte           VOL   , 41
         .byte   W03
@@ -5722,72 +5575,9 @@ EndlessBattle_6_LOOP:
         .byte   W03
         .byte                   45
         .byte   W03
+        .byte                   46
+        .byte   W03
         .byte                   47
-        .byte   W03
-        .byte                   48
-        .byte   W03
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W03
-        .byte                   53
-        .byte   W03
-        .byte                   54
-        .byte   W12
-        .byte           N44   , Cn3 , v121 , gtp3
-        .byte   W07
-        .byte           VOL   , 53
-        .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   51
-        .byte   W06
-        .byte                   50
-        .byte   W03
-        .byte                   49
-        .byte   W02
-        .byte                   48
-        .byte   W06
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   53
-        .byte   W03
-        .byte                   54
-        .byte   W03
-@ 019   ----------------------------------------
-        .byte   W16
-        .byte                   53
-        .byte   W01
-        .byte                   51
-        .byte   W02
-        .byte                   48
-        .byte   W01
-        .byte                   46
-        .byte   W01
-        .byte                   45
-        .byte   W03
-        .byte                   46
-        .byte           N23
-        .byte   W03
-        .byte           VOL   , 48
-        .byte   W06
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   53
-        .byte   W03
-        .byte                   54
         .byte   W03
         .byte           N23   , Dn3
         .byte   W24
@@ -5796,21 +5586,17 @@ EndlessBattle_6_LOOP:
 @ 020   ----------------------------------------
         .byte           N44   , Gn2 , v121 , gtp3
         .byte   W11
-        .byte           VOL   , 53
+        .byte           VOL   , 46
         .byte   W06
-        .byte                   52
-        .byte   W03
-        .byte                   51
-        .byte   W05
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W09
-        .byte                   52
-        .byte   W03
-        .byte                   53
+        .byte                   45
         .byte   W06
-        .byte                   54
+        .byte                   44
+        .byte   W11
+        .byte                   45
+        .byte   W06
+        .byte                   46
+        .byte   W06
+        .byte                   47
         .byte   W02
         .byte           N32   , Ds2 , v121 , gtp2
         .byte   W36
@@ -5821,35 +5607,31 @@ EndlessBattle_6_LOOP:
 @ 021   ----------------------------------------
         .byte           N44   , Fn2 , v121 , gtp3
         .byte   W15
-        .byte           VOL   , 53
+        .byte           VOL   , 46
         .byte   W09
-        .byte                   52
-        .byte   W10
-        .byte                   51
-        .byte   W11
-        .byte                   50
+        .byte                   45
+        .byte   W15
+        .byte                   44
+        .byte   W06
+        .byte                   43
         .byte   W03
-        .byte                   49
-        .byte   W03
-        .byte                   48
+        .byte                   42
+        .byte   W06
+        .byte                   41
         .byte   W05
-        .byte                   47
-        .byte   W03
-        .byte                   48
+        .byte                   42
         .byte   W01
         .byte           N23   , Cn2
         .byte   W02
-        .byte           VOL   , 49
-        .byte   W01
-        .byte                   50
-        .byte   W02
-        .byte                   51
+        .byte           VOL   , 43
         .byte   W03
-        .byte                   52
+        .byte                   44
         .byte   W03
-        .byte                   53
+        .byte                   45
+        .byte   W03
+        .byte                   46
         .byte   W01
-        .byte                   54
+        .byte                   47
         .byte   W12
         .byte           N11   , Dn2
         .byte   W12
@@ -5863,21 +5645,21 @@ EndlessBattle_6_LOOP:
 @ 023   ----------------------------------------
         .byte           N44   , As2 , v121 , gtp3
         .byte   W12
-        .byte           VOL   , 53
+        .byte           VOL   , 46
         .byte   W03
-        .byte                   52
+        .byte                   45
         .byte   W03
-        .byte                   51
+        .byte                   44
+        .byte   W04
+        .byte                   43
         .byte   W03
-        .byte                   50
-        .byte   W07
-        .byte                   51
+        .byte                   44
         .byte   W09
-        .byte                   52
-        .byte   W03
-        .byte                   53
+        .byte                   45
         .byte   W06
-        .byte                   54
+        .byte                   46
+        .byte   W06
+        .byte                   47
         .byte   W02
         .byte           N17   , Fn2
         .byte   W18
@@ -5892,64 +5674,58 @@ EndlessBattle_6_LOOP:
         .byte   W06
         .byte           TIE   , Cn3
         .byte   W08
-        .byte           VOL   , 52
+        .byte           VOL   , 45
         .byte   W03
-        .byte                   51
-        .byte   W02
-        .byte                   50
-        .byte   W03
-        .byte                   51
-        .byte   W06
-        .byte                   52
-        .byte   W03
-        .byte                   53
-        .byte   W03
-        .byte                   54
-        .byte   W21
-        .byte                   53
-        .byte   W09
-        .byte                   52
-        .byte   W09
-        .byte                   51
-        .byte   W05
-@ 025   ----------------------------------------
-        .byte                   49
-        .byte   W01
-        .byte                   47
-        .byte   W01
+        .byte                   44
+        .byte   W08
         .byte                   45
-        .byte   W01
+        .byte   W06
+        .byte                   46
+        .byte   W03
+        .byte                   47
+        .byte   W21
+        .byte                   46
+        .byte   W09
+        .byte                   45
+        .byte   W14
+@ 025   ----------------------------------------
         .byte                   42
         .byte   W01
-        .byte                   40
+        .byte                   41
         .byte   W01
-        .byte                   38
+        .byte                   39
         .byte   W01
-        .byte                   34
+        .byte                   36
+        .byte   W01
+        .byte                   35
         .byte   W01
         .byte                   33
         .byte   W01
-        .byte                   31
+        .byte                   30
+        .byte   W01
+        .byte                   28
         .byte   W01
         .byte                   27
         .byte   W01
-        .byte                   25
+        .byte                   23
         .byte   W01
-        .byte                   24
+        .byte                   22
         .byte   W01
         .byte                   20
         .byte   W01
-        .byte                   18
+        .byte                   17
         .byte   W01
         .byte                   16
         .byte   W01
-        .byte                   12
+        .byte                   14
         .byte   W01
         .byte                   11
         .byte   W01
         .byte                   9
         .byte   W01
-        .byte                   5
+        .byte                   8
+        .byte   W01
+        .byte                   4
         .byte   W01
         .byte                   3
         .byte   W01
@@ -5962,7 +5738,7 @@ EndlessBattle_6_LOOP:
         .byte   W36
         .byte           N03   , Gn2 , v107
         .byte   W01
-        .byte           VOL   , 51
+        .byte           VOL   , 44
         .byte   W02
         .byte           N04   , An2
         .byte   W04
@@ -5979,43 +5755,35 @@ EndlessBattle_6_LOOP:
 @ 026   ----------------------------------------
         .byte           N44   , Gn3 , v107 , gtp3
         .byte   W10
-        .byte           VOL   , 50
-        .byte   W01
-        .byte                   49
+        .byte           VOL   , 43
         .byte   W03
-        .byte                   48
+        .byte                   42
+        .byte   W01
+        .byte                   41
+        .byte   W03
+        .byte                   40
+        .byte   W03
+        .byte                   39
         .byte   W02
-        .byte                   47
-        .byte   W01
-        .byte                   46
+        .byte                   38
         .byte   W03
-        .byte                   45
-        .byte   W02
-        .byte                   44
-        .byte   W03
-        .byte                   43
+        .byte                   37
+        .byte   W13
+        .byte                   38
+        .byte   W09
+        .byte                   39
         .byte   W01
+        .byte           N44   , Ds4 , v107 , gtp3
+        .byte   W08
+        .byte           VOL   , 40
+        .byte   W09
+        .byte                   41
+        .byte   W09
         .byte                   42
         .byte   W06
         .byte                   43
-        .byte   W06
+        .byte   W07
         .byte                   44
-        .byte   W09
-        .byte                   45
-        .byte   W01
-        .byte           N44   , Ds4 , v107 , gtp3
-        .byte   W05
-        .byte           VOL   , 46
-        .byte   W09
-        .byte                   47
-        .byte   W06
-        .byte                   48
-        .byte   W06
-        .byte                   49
-        .byte   W09
-        .byte                   50
-        .byte   W04
-        .byte                   51
         .byte   W09
 @ 027   ----------------------------------------
         .byte   W24
@@ -6028,35 +5796,33 @@ EndlessBattle_6_LOOP:
 @ 028   ----------------------------------------
         .byte           N44   , Gn3 , v107 , gtp3
         .byte   W01
-        .byte           VOL   , 50
+        .byte           VOL   , 43
         .byte   W03
-        .byte                   49
+        .byte                   42
         .byte   W03
-        .byte                   47
+        .byte                   41
         .byte   W03
-        .byte                   46
+        .byte                   40
         .byte   W03
-        .byte                   45
+        .byte                   39
         .byte   W03
-        .byte                   44
+        .byte                   38
         .byte   W02
+        .byte                   37
+        .byte   W03
+        .byte                   38
+        .byte   W06
+        .byte                   39
+        .byte   W03
+        .byte                   40
+        .byte   W06
+        .byte                   41
+        .byte   W06
+        .byte                   42
+        .byte   W03
         .byte                   43
         .byte   W03
         .byte                   44
-        .byte   W06
-        .byte                   45
-        .byte   W03
-        .byte                   46
-        .byte   W03
-        .byte                   47
-        .byte   W03
-        .byte                   48
-        .byte   W06
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   51
         .byte           N17   , As3
         .byte   W18
         .byte                   Ds3
@@ -6066,31 +5832,29 @@ EndlessBattle_6_LOOP:
 @ 029   ----------------------------------------
         .byte           N44   , Fn3 , v107 , gtp3
         .byte   W03
-        .byte           VOL   , 50
+        .byte           VOL   , 43
         .byte   W03
-        .byte                   49
+        .byte                   42
         .byte   W03
-        .byte                   48
+        .byte                   41
         .byte   W03
-        .byte                   46
+        .byte                   40
         .byte   W03
-        .byte                   45
+        .byte                   39
+        .byte   W03
+        .byte                   38
+        .byte   W07
+        .byte                   39
+        .byte   W06
+        .byte                   40
+        .byte   W03
+        .byte                   41
+        .byte   W06
+        .byte                   42
+        .byte   W03
+        .byte                   43
         .byte   W03
         .byte                   44
-        .byte   W07
-        .byte                   45
-        .byte   W03
-        .byte                   46
-        .byte   W06
-        .byte                   47
-        .byte   W03
-        .byte                   48
-        .byte   W03
-        .byte                   49
-        .byte   W03
-        .byte                   50
-        .byte   W03
-        .byte                   51
         .byte   W02
         .byte           N23   , Cn3
         .byte   W24
@@ -6099,47 +5863,43 @@ EndlessBattle_6_LOOP:
 @ 030   ----------------------------------------
         .byte           TIE   , Ds3
         .byte   W09
-        .byte           VOL   , 50
-        .byte   W03
-        .byte                   49
-        .byte   W09
-        .byte                   48
-        .byte   W03
-        .byte                   47
-        .byte   W03
-        .byte                   46
-        .byte   W09
-        .byte                   45
-        .byte   W03
-        .byte                   44
-        .byte   W06
-        .byte                   43
+        .byte           VOL   , 43
         .byte   W06
         .byte                   42
-        .byte   W04
+        .byte   W06
         .byte                   41
+        .byte   W06
+        .byte                   40
+        .byte   W06
+        .byte                   39
+        .byte   W06
+        .byte                   38
+        .byte   W06
+        .byte                   37
+        .byte   W06
+        .byte                   36
+        .byte   W04
+        .byte                   35
         .byte   W03
-        .byte                   42
-        .byte   W12
-        .byte                   43
-        .byte   W07
-        .byte                   44
-        .byte   W11
-        .byte                   45
-        .byte   W07
-        .byte                   46
-        .byte   W01
-@ 031   ----------------------------------------
-        .byte   W11
-        .byte                   47
-        .byte   W07
-        .byte                   48
-        .byte   W07
-        .byte                   49
-        .byte   W11
-        .byte                   50
+        .byte                   36
         .byte   W08
-        .byte                   51
+        .byte                   37
+        .byte   W11
+        .byte                   38
+        .byte   W11
+        .byte                   39
+        .byte   W08
+@ 031   ----------------------------------------
+        .byte   W03
+        .byte                   40
+        .byte   W11
+        .byte                   41
+        .byte   W11
+        .byte                   42
+        .byte   W08
+        .byte                   43
+        .byte   W11
+        .byte                   44
         .byte   W03
         .byte           EOT
         .byte   W01
@@ -6152,64 +5912,56 @@ EndlessBattle_6_LOOP:
 @ 032   ----------------------------------------
         .byte           N60   , Gn3
         .byte   W03
-        .byte           VOL   , 50
+        .byte           VOL   , 43
         .byte   W03
-        .byte                   49
+        .byte                   42
         .byte   W03
-        .byte                   48
+        .byte                   41
         .byte   W03
-        .byte                   47
-        .byte   W03
-        .byte                   46
-        .byte   W03
-        .byte                   45
+        .byte                   40
+        .byte   W06
+        .byte                   39
         .byte   W01
-        .byte                   44
+        .byte                   38
         .byte   W03
-        .byte                   45
-        .byte   W06
-        .byte                   46
+        .byte                   39
         .byte   W09
-        .byte                   47
-        .byte   W06
-        .byte                   48
-        .byte   W06
-        .byte                   49
+        .byte                   40
         .byte   W09
-        .byte                   50
-        .byte   W14
+        .byte                   41
+        .byte   W09
+        .byte                   42
+        .byte   W06
+        .byte                   43
+        .byte   W17
         .byte           N17
         .byte   W18
         .byte           N05   , Gs3
         .byte   W06
 @ 033   ----------------------------------------
         .byte           N92   , Gn3 , v107 , gtp3
-        .byte   W19
-        .byte           VOL   , 49
-        .byte   W13
-        .byte                   48
+        .byte   W23
+        .byte           VOL   , 42
         .byte   W09
-        .byte                   47
-        .byte   W05
-        .byte                   46
-        .byte   W06
-        .byte                   45
-        .byte   W06
-        .byte                   44
-        .byte   W06
-        .byte                   43
-        .byte   W03
-        .byte                   42
-        .byte   W06
         .byte                   41
-        .byte   W03
+        .byte   W14
         .byte                   40
         .byte   W06
         .byte                   39
         .byte   W06
         .byte                   38
-        .byte   W03
+        .byte   W06
         .byte                   37
+        .byte   W06
+        .byte                   36
+        .byte   W03
+        .byte                   35
+        .byte   W06
+        .byte                   34
+        .byte   W06
+        .byte                   33
+        .byte   W06
+        .byte                   32
         .byte   W05
 @ 034   ----------------------------------------
         .byte   W96
@@ -6237,7 +5989,7 @@ EndlessBattle_7:
         .byte   KEYSH , EndlessBattle_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 47
-        .byte           VOL   , 71
+        .byte           VOL   , 64
         .byte           PAN   , c_v+19
         .byte           N32   , Gn2 , v113 , gtp3
         .byte   W36
@@ -6450,7 +6202,7 @@ EndlessBattle_8:
         .byte   KEYSH , EndlessBattle_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 11
-        .byte           VOL   , 44
+        .byte           VOL   , 37
         .byte           PAN   , c_v-14
         .byte           N11   , Gn3 , v116
         .byte   W12

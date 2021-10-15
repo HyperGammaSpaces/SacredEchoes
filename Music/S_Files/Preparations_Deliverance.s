@@ -1320,7 +1320,7 @@ Preparations_Deliverance_4_4:
 Preparations_Deliverance_5:
         .byte   KEYSH , Preparations_Deliverance_key+0
 @ 000   ----------------------------------------
-        .byte           VOICE , 100
+        .byte           VOICE , 102
         .byte           PAN   , c_v+20
         .byte           VOL   , 48
         .byte   W96
@@ -1431,7 +1431,7 @@ Preparations_Deliverance_6:
 @ 000   ----------------------------------------
         .byte           VOICE , 13
         .byte           PAN   , c_v+27
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte   W96
 @ 001   ----------------------------------------
 Preparations_Deliverance_6_LOOP:
@@ -1813,7 +1813,7 @@ Preparations_Deliverance_8:
 @ 000   ----------------------------------------
         .byte           VOICE , 91
         .byte           PAN   , c_v-14
-        .byte           VOL   , 56
+        .byte           VOL   , 55
         .byte   W96
 @ 001   ----------------------------------------
 Preparations_Deliverance_8_LOOP:

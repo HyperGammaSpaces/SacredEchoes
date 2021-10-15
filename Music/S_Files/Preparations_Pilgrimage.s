@@ -17,7 +17,7 @@ Preparations_Pilgrimage_0:
         .byte   TEMPO , 110/2
 Preparations_Pilgrimage_0_LOOP:
         .byte           VOICE , 46
-        .byte           VOL   , 48
+        .byte           VOL   , 47
         .byte           N24   , Fs1 , v126
         .byte           N24   , Fs3
         .byte   W24
@@ -767,7 +767,7 @@ Preparations_Pilgrimage_1:
 Preparations_Pilgrimage_1_LOOP:
         .byte           VOICE , 106
         .byte           PAN   , c_v+36
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N24   , Fs3 , v104
         .byte   W24
         .byte           N12
@@ -1239,7 +1239,7 @@ Preparations_Pilgrimage_2:
 Preparations_Pilgrimage_2_LOOP:
         .byte           VOICE , 60
         .byte           PAN   , c_v-44
-        .byte           VOL   , 38
+        .byte           VOL   , 37
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96
@@ -1715,7 +1715,7 @@ Preparations_Pilgrimage_4:
 @ 000   ----------------------------------------
 Preparations_Pilgrimage_4_LOOP:
         .byte           VOICE , 58
-        .byte           VOL   , 63
+        .byte           VOL   , 62
         .byte           PAN   , c_v-10
         .byte           N24   , Fs1 , v085
         .byte   W24

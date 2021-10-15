@@ -276,7 +276,7 @@ Omen_1:
 Omen_1_LOOP:
         .byte           VOICE , 42
         .byte           PAN   , c_v-32
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte           N18   , Gn1 , v126
         .byte   W18
         .byte           N06
@@ -901,7 +901,7 @@ Omen_4:
 @ 000   ----------------------------------------
 Omen_4_LOOP:
         .byte           VOICE , 109
-        .byte           VOL   , 44
+        .byte           VOL   , 43
         .byte           PAN   , c_v+34
         .byte           TIE   , En1 , v126
         .byte   W96
@@ -1182,7 +1182,7 @@ Omen_6:
 @ 000   ----------------------------------------
 Omen_6_LOOP:
         .byte           VOICE , 117
-        .byte           VOL   , 50
+        .byte           VOL   , 49
         .byte           PAN   , c_v-8
         .byte           N06   , Bn0 , v126
         .byte   W06

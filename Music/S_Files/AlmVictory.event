@@ -901,7 +901,7 @@ AlmVictory_2:
         BYTE   KEYSH   AlmVictory_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   39
-        BYTE           VOL     54
+        BYTE           VOL     53
         BYTE           PAN     c_v+23
         BYTE           N10     Fs1   v100
         BYTE   W24
@@ -1141,7 +1141,7 @@ AlmVictory_3:
         BYTE   KEYSH   AlmVictory_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   40
-        BYTE           VOL     43
+        BYTE           VOL     42
         BYTE           PAN     c_v-14
         BYTE   W96
 // 001   ----------------------------------------
@@ -1176,9 +1176,9 @@ AlmVictory_3_LOOP:
 // 015   ----------------------------------------
         BYTE   W78
         BYTE           VOL     40
-        BYTE   W11
+        BYTE   W17
         BYTE                   41
-        BYTE   W07
+        BYTE   W01
 // 016   ----------------------------------------
         BYTE           N84     Bn3   v100   gtp2
         BYTE   W96
@@ -1247,7 +1247,7 @@ AlmVictory_3_17:
 // 032   ----------------------------------------
         BYTE   W96
 // 033   ----------------------------------------
-        BYTE           VOL     43
+        BYTE           VOL     42
         BYTE   GoTo
          POIN2  AlmVictory_3_LOOP
         BYTE   FINE
@@ -1491,7 +1491,7 @@ AlmVictory_5:
         BYTE   KEYSH   AlmVictory_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   47
-        BYTE           VOL     48
+        BYTE           VOL     47
         BYTE           PAN     c_v-14
         BYTE           N72     Fs1   v100
         BYTE   W96
@@ -1633,7 +1633,7 @@ AlmVictory_6:
         BYTE   KEYSH   AlmVictory_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   124
-        BYTE           VOL     42
+        BYTE           VOL     41
         BYTE           PAN     c_v+2
         BYTE           N03     Cs2   v100
         BYTE           N03     Cn1

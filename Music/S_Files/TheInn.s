@@ -89,7 +89,7 @@ TheInn_1:
 @ 000   ----------------------------------------
 TheInn_1_LOOP:
         .byte           VOICE , 60
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W08
         .byte           PAN   , c_v-10
         .byte   W16
@@ -243,7 +243,7 @@ TheInn_3:
 @ 000   ----------------------------------------
 TheInn_3_LOOP:
         .byte           VOICE , 127
-        .byte           VOL   , 38
+        .byte           VOL   , 37
         .byte           N07   , Dn3 , v100
         .byte   W24
         .byte                   Fs2

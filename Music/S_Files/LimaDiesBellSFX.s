@@ -18,7 +18,7 @@ LimaDiesBellSFX_0:
         .byte           TIE   , As2 , v102
         .byte           TIE   , Ds3
         .byte           TIE   , Ds2
-        .byte           VOL   , 84
+        .byte           VOL   , 83
         .byte   W96
 @ 001   ----------------------------------------
 LimaDiesBellSFX_0_1:

@@ -16,7 +16,7 @@ Tension_New_0:
 @ 000   ----------------------------------------
         .byte   TEMPO , 78/2
         .byte           VOICE , 18
-        .byte           VOL   , 60
+        .byte           VOL   , 48
         .byte           N01   , Fn3 , v101
         .byte           PAN   , c_v+42
         .byte   W02
@@ -1112,8 +1112,8 @@ Tension_New_0_5:
 Tension_New_1:
         .byte   KEYSH , Tension_New_key+0
 @ 000   ----------------------------------------
-        .byte           VOICE , 100
-        .byte           VOL   , 59
+        .byte           VOICE , 102
+        .byte           VOL   , 45
         .byte           PAN   , c_v-14
         .byte           N68   , Gs3 , v101 , gtp3
         .byte   W72
@@ -1124,6 +1124,7 @@ Tension_New_1:
         .byte   W96
 @ 002   ----------------------------------------
 Tension_New_1_LOOP:
+        .byte           VOICE , 56
         .byte           PAN   , c_v+14
         .byte           N92   , Gs3 , v101 , gtp3
         .byte   W96
@@ -1137,6 +1138,7 @@ Tension_New_1_LOOP:
         .byte                   Fn3
         .byte   W96
 @ 006   ----------------------------------------
+        .byte           VOICE , 102
         .byte           PAN   , c_v-14
         .byte           N52   , Gs3 , v095 , gtp1
         .byte   W54
@@ -1155,7 +1157,6 @@ Tension_New_1_LOOP:
         .byte                   As3
         .byte   W06
 @ 007   ----------------------------------------
-Tension_New_1_7:
         .byte   W12
         .byte           N23   , Bn3 , v101
         .byte   W24
@@ -1165,6 +1166,7 @@ Tension_New_1_7:
         .byte   W06
         .byte           N32   , Fn3 , v101 , gtp3
         .byte   W36
+        .byte           VOICE , 56
         .byte           N02   , Fn4 , v121
         .byte           PAN   , c_v-23
         .byte   W01
@@ -1193,9 +1195,7 @@ Tension_New_1_7:
         .byte   W01
         .byte                   c_v+0
         .byte   W01
-        .byte   PEND
 @ 008   ----------------------------------------
-Tension_New_1_8:
         .byte           N02   , Fn4 , v089
         .byte           PAN   , c_v+2
         .byte   W01
@@ -1224,7 +1224,8 @@ Tension_New_1_8:
         .byte   W01
         .byte                   c_v+25
         .byte   W01
-        .byte                   c_v-14
+        .byte           VOICE , 102
+        .byte           PAN   , c_v-14
         .byte           N40   , Gs3 , v095 , gtp1
         .byte   W42
         .byte           N05   , As3 , v076
@@ -1241,8 +1242,8 @@ Tension_New_1_8:
         .byte   W06
         .byte                   As3
         .byte   W06
-        .byte   PEND
 @ 009   ----------------------------------------
+Tension_New_1_9:
         .byte   W12
         .byte           N23   , Bn3 , v101
         .byte   W24
@@ -1255,6 +1256,7 @@ Tension_New_1_8:
         .byte           PAN   , c_v+14
         .byte           N11   , Gn3
         .byte   W12
+        .byte   PEND
 @ 010   ----------------------------------------
 Tension_New_1_10:
         .byte           N44   , Dn3 , v101 , gtp3
@@ -1283,6 +1285,7 @@ Tension_New_1_12:
         .byte   W48
         .byte           N32   , Dn3 , v101 , gtp3
         .byte   W36
+        .byte           VOICE , 56
         .byte           N02   , Fn4 , v121
         .byte           PAN   , c_v-23
         .byte   W01
@@ -1365,6 +1368,7 @@ Tension_New_1_12:
         .byte   W03
         .byte           PAN   , c_v+25
         .byte   W12
+        .byte           VOICE , 6
         .byte           N11   , Gn3 , v101
         .byte   W12
         .byte           N32   , Fn3 , v101 , gtp3
@@ -1406,6 +1410,7 @@ Tension_New_1_16:
 Tension_New_1_17:
         .byte           N44   , Cn3 , v101 , gtp3
         .byte   W48
+        .byte           VOICE , 56
         .byte           N02   , Fn4 , v121
         .byte           PAN   , c_v-21
         .byte   W01
@@ -1564,6 +1569,7 @@ Tension_New_1_18:
         .byte   W03
         .byte           PAN   , c_v+25
         .byte   W12
+        .byte           VOICE , 6
         .byte           N11   , Gn3 , v101
         .byte   W12
         .byte           N32   , Fn3 , v101 , gtp3
@@ -1648,12 +1654,11 @@ Tension_New_1_20:
         .byte           N52   , As3 , v101 , gtp1
         .byte   W06
 @ 030   ----------------------------------------
-Tension_New_1_30:
         .byte   W48
+        .byte           VOICE , 102
         .byte           PAN   , c_v-14
         .byte           N68   , Gs3 , v101 , gtp3
         .byte   W48
-        .byte   PEND
 @ 031   ----------------------------------------
         .byte   W24
         .byte           N23   , As3
@@ -1662,6 +1667,7 @@ Tension_New_1_30:
         .byte   W48
 @ 032   ----------------------------------------
         .byte   W48
+        .byte           VOICE , 56
         .byte           PAN   , c_v+14
         .byte   GOTO
          .word  Tension_New_1_LOOP
@@ -1672,8 +1678,8 @@ Tension_New_1_30:
 Tension_New_2:
         .byte   KEYSH , Tension_New_key+0
 @ 000   ----------------------------------------
-        .byte           VOICE , 100
-        .byte           VOL   , 60
+        .byte           VOICE , 101
+        .byte           VOL   , 45
         .byte           PAN   , c_v+14
         .byte           TIE   , Fn3 , v101
         .byte   W96
@@ -1703,6 +1709,7 @@ Tension_New_2_3:
         .byte   PATT
          .word  Tension_New_2_3
 @ 006   ----------------------------------------
+        .byte           VOICE , 56
         .byte           PAN   , c_v+14
         .byte           N52   , Gs2 , v095 , gtp1
         .byte   W54
@@ -1818,6 +1825,7 @@ Tension_New_2_8:
         .byte   W06
         .byte           N32   , Fn2 , v101 , gtp3
         .byte   W36
+        .byte           VOICE , 102
         .byte           PAN   , c_v-14
         .byte           N11   , Dn3
         .byte   W12
@@ -1841,6 +1849,7 @@ Tension_New_2_11:
         .byte   W48
         .byte           N32   , Bn3 , v101 , gtp3
         .byte   W36
+        .byte           VOICE , 56
         .byte           N02   , Fn3 , v121
         .byte           PAN   , c_v-23
         .byte   W01
@@ -1921,6 +1930,7 @@ Tension_New_2_11:
         .byte   W01
         .byte           N02
         .byte   W03
+        .byte           VOICE , 6
         .byte           PAN   , c_v-25
         .byte   W06
         .byte           N11   , Gs3 , v101
@@ -1964,6 +1974,7 @@ Tension_New_2_16:
 @ 017   ----------------------------------------
 Tension_New_2_17:
         .byte   W48
+        .byte           VOICE , 56
         .byte           N02   , Fn3 , v121
         .byte           PAN   , c_v-21
         .byte   W01
@@ -2120,6 +2131,7 @@ Tension_New_2_18:
         .byte   W01
         .byte           N02   , Fn3 , v050
         .byte   W03
+        .byte           VOICE , 6
         .byte           PAN   , c_v-25
         .byte   W06
         .byte           N11   , Gs3 , v101
@@ -2199,6 +2211,7 @@ Tension_New_2_21:
 @ 030   ----------------------------------------
         .byte           N23   , Cn4 , v101
         .byte   W48
+        .byte           VOICE , 101
         .byte           PAN   , c_v+14
         .byte           TIE   , Fn3
         .byte   W48
@@ -2219,9 +2232,9 @@ Tension_New_2_21:
 Tension_New_3:
         .byte   KEYSH , Tension_New_key+0
 @ 000   ----------------------------------------
-        .byte           VOICE , 108
+        .byte           VOICE , 105
         .byte           PAN   , c_v+14
-        .byte           VOL   , 47
+        .byte           VOL   , 33
         .byte           TIE   , Fn3 , v101
         .byte   W96
 @ 001   ----------------------------------------
@@ -2232,7 +2245,6 @@ Tension_New_3:
 @ 002   ----------------------------------------
 Tension_New_3_LOOP:
         .byte           PAN   , c_v-14
-        .byte           VOL   , 50
         .byte           TIE   , Ds3 , v101
         .byte   W96
 @ 003   ----------------------------------------
@@ -2245,8 +2257,8 @@ Tension_New_3_LOOP:
         .byte   PATT
          .word  Tension_New_2_3
 @ 006   ----------------------------------------
+        .byte           VOICE , 109
         .byte           PAN   , c_v+14
-        .byte           VOL   , 47
         .byte           N52   , Gs2 , v095 , gtp1
         .byte   W54
         .byte           N05   , As2 , v076
@@ -2280,7 +2292,6 @@ Tension_New_3_LOOP:
         .byte           N32   , Fn2 , v101 , gtp3
         .byte   W36
         .byte           PAN   , c_v-14
-        .byte           VOL   , 50
         .byte           N11   , Dn3
         .byte   W12
 @ 010   ----------------------------------------
@@ -2297,7 +2308,6 @@ Tension_New_3_LOOP:
         .byte   W48
         .byte           N32   , Bn3 , v101 , gtp3
         .byte   W36
-        .byte           VOL   , 47
         .byte           N02   , Fn3 , v121
         .byte           PAN   , c_v-23
         .byte   W01
@@ -2412,10 +2422,9 @@ Tension_New_3_LOOP:
 @ 030   ----------------------------------------
         .byte   W24
         .byte           PAN   , c_v-25
-        .byte           VOL   , 72
         .byte   W24
+        .byte           VOICE , 105
         .byte           PAN   , c_v+14
-        .byte           VOL   , 47
         .byte           TIE   , Fn3 , v101
         .byte   W48
 @ 031   ----------------------------------------
@@ -2425,7 +2434,6 @@ Tension_New_3_LOOP:
         .byte   W03
         .byte           EOT
         .byte   W01
-        .byte           VOL   , 50
         .byte           PAN   , c_v-14
         .byte   GOTO
          .word  Tension_New_3_LOOP
@@ -2438,7 +2446,7 @@ Tension_New_4:
 @ 000   ----------------------------------------
         .byte           VOICE , 110
         .byte           PAN   , c_v-14
-        .byte           VOL   , 47
+        .byte           VOL   , 33
         .byte           N68   , Gs3 , v101 , gtp3
         .byte   W72
         .byte           N23   , As3
@@ -2449,7 +2457,6 @@ Tension_New_4:
 @ 002   ----------------------------------------
 Tension_New_4_LOOP:
         .byte           PAN   , c_v+14
-        .byte           VOL   , 50
         .byte           N92   , Gs3 , v101 , gtp3
         .byte   W96
 @ 003   ----------------------------------------
@@ -2463,7 +2470,6 @@ Tension_New_4_LOOP:
         .byte   W96
 @ 006   ----------------------------------------
         .byte           PAN   , c_v-14
-        .byte           VOL   , 47
         .byte           N52   , Gs3 , v095 , gtp1
         .byte   W54
         .byte           N05   , As3 , v076
@@ -2481,12 +2487,6 @@ Tension_New_4_LOOP:
         .byte                   As3
         .byte   W06
 @ 007   ----------------------------------------
-        .byte   PATT
-         .word  Tension_New_1_7
-@ 008   ----------------------------------------
-        .byte   PATT
-         .word  Tension_New_1_8
-@ 009   ----------------------------------------
         .byte   W12
         .byte           N23   , Bn3 , v101
         .byte   W24
@@ -2496,10 +2496,83 @@ Tension_New_4_LOOP:
         .byte   W06
         .byte           N32   , Fn3 , v101 , gtp3
         .byte   W36
-        .byte           PAN   , c_v+14
-        .byte           VOL   , 50
-        .byte           N11   , Gn3
-        .byte   W12
+        .byte           N02   , Fn4 , v121
+        .byte           PAN   , c_v-23
+        .byte   W01
+        .byte                   c_v-21
+        .byte   W01
+        .byte                   c_v-19
+        .byte   W01
+        .byte           N02   , Fn4 , v089
+        .byte           PAN   , c_v-17
+        .byte   W01
+        .byte                   c_v-15
+        .byte   W01
+        .byte                   c_v-12
+        .byte   W01
+        .byte           N02   , Fn4 , v126
+        .byte           PAN   , c_v-10
+        .byte   W01
+        .byte                   c_v-8
+        .byte   W01
+        .byte                   c_v-6
+        .byte   W01
+        .byte           N02   , Fn4 , v101
+        .byte           PAN   , c_v-4
+        .byte   W01
+        .byte                   c_v-2
+        .byte   W01
+        .byte                   c_v+0
+        .byte   W01
+@ 008   ----------------------------------------
+        .byte           N02   , Fn4 , v089
+        .byte           PAN   , c_v+2
+        .byte   W01
+        .byte                   c_v+4
+        .byte   W01
+        .byte                   c_v+6
+        .byte   W01
+        .byte           N02   , Fn4 , v076
+        .byte           PAN   , c_v+8
+        .byte   W01
+        .byte                   c_v+10
+        .byte   W01
+        .byte                   c_v+13
+        .byte   W01
+        .byte           N02   , Fn4 , v070
+        .byte           PAN   , c_v+15
+        .byte   W01
+        .byte                   c_v+17
+        .byte   W01
+        .byte                   c_v+19
+        .byte   W01
+        .byte           N02   , Fn4 , v063
+        .byte           PAN   , c_v+21
+        .byte   W01
+        .byte                   c_v+23
+        .byte   W01
+        .byte                   c_v+25
+        .byte   W01
+        .byte                   c_v-14
+        .byte           N40   , Gs3 , v095 , gtp1
+        .byte   W42
+        .byte           N05   , As3 , v076
+        .byte   W06
+        .byte                   Gs3 , v089
+        .byte   W06
+        .byte                   As3
+        .byte   W06
+        .byte                   Gs3 , v108
+        .byte   W06
+        .byte                   As3
+        .byte   W06
+        .byte                   Gs3 , v126
+        .byte   W06
+        .byte                   As3
+        .byte   W06
+@ 009   ----------------------------------------
+        .byte   PATT
+         .word  Tension_New_1_9
 @ 010   ----------------------------------------
         .byte   PATT
          .word  Tension_New_1_10
@@ -2514,7 +2587,6 @@ Tension_New_4_LOOP:
         .byte   W48
         .byte           N32   , Dn3 , v101 , gtp3
         .byte   W36
-        .byte           VOL   , 47
         .byte           N02   , Fn4 , v121
         .byte           PAN   , c_v-23
         .byte   W01
@@ -2627,17 +2699,18 @@ Tension_New_4_LOOP:
 @ 029   ----------------------------------------
         .byte   W96
 @ 030   ----------------------------------------
-        .byte   PATT
-         .word  Tension_New_1_30
+        .byte   W48
+        .byte           PAN   , c_v-14
+        .byte           N68   , Gs3 , v101 , gtp3
+        .byte   W48
 @ 031   ----------------------------------------
         .byte   W24
-        .byte           N23   , As3 , v101
+        .byte           N23   , As3
         .byte   W24
         .byte           N96   , Bn3
         .byte   W48
 @ 032   ----------------------------------------
         .byte   W48
-        .byte           VOL   , 50
         .byte           PAN   , c_v+14
         .byte   GOTO
          .word  Tension_New_4_LOOP
@@ -2648,7 +2721,8 @@ Tension_New_4_LOOP:
 Tension_New_5:
         .byte   KEYSH , Tension_New_key+0
 @ 000   ----------------------------------------
-        .byte           VOICE , 34
+        .byte           VOICE , 81
+        .byte           PAN   , c_v-14
         .byte           VOL   , 55
         .byte   W96
 @ 001   ----------------------------------------
@@ -2875,7 +2949,7 @@ Tension_New_6:
         .byte   KEYSH , Tension_New_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 124
-        .byte           VOL   , 60
+        .byte           VOL   , 68
         .byte           N11   , Cn1 , v108
         .byte   W12
         .byte           N05

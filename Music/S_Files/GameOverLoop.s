@@ -17,7 +17,7 @@ GameOverLoop_0:
         .byte   TEMPO , 100/2
         .byte           VOICE , 4
         .byte           PAN   , c_v+11
-        .byte           VOL   , 84
+        .byte           VOL   , 83
         .byte           N23   , Gs3 , v043
         .byte   W24
         .byte           N20   , Ds4 , v040

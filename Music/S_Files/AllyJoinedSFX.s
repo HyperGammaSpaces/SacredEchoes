@@ -16,7 +16,7 @@ AllyJoinedSFX_0:
 @ 000   ----------------------------------------
         .byte   TEMPO , 180/2
         .byte           VOICE , 86
-        .byte           VOL   , 50
+        .byte           VOL   , 49
         .byte           N05   , Bn2 , v090
         .byte           N05   , Fs2
         .byte   W08
@@ -30,42 +30,42 @@ AllyJoinedSFX_0:
         .byte           N64   , Gs2 , v090 , gtp1
         .byte   W21
         .byte           VOL   , 47
-        .byte   W24
-        .byte   W03
+        .byte   W22
         .byte                   46
-        .byte   W06
+        .byte   W08
         .byte                   45
-        .byte   W06
+        .byte   W07
         .byte                   44
-        .byte   W04
-        .byte                   43
         .byte   W03
+        .byte                   43
+        .byte   W05
         .byte                   42
         .byte   W03
         .byte                   41
-        .byte   W02
+        .byte   W03
 @ 001   ----------------------------------------
 AllyJoinedSFX_0_1:
-        .byte   W01
         .byte           VOL   , 40
         .byte   W03
         .byte                   39
-        .byte   W02
-        .byte                   38
         .byte   W01
+        .byte                   38
+        .byte   W03
         .byte                   37
         .byte   W02
         .byte                   36
-        .byte   W03
+        .byte   W01
         .byte                   35
-        .byte   W01
+        .byte   W02
         .byte                   34
-        .byte   W02
-        .byte                   33
         .byte   W01
-        .byte                   32
+        .byte                   33
         .byte   W02
+        .byte                   32
+        .byte   W01
         .byte                   31
+        .byte   W02
+        .byte                   30
         .byte   W01
         .byte                   29
         .byte   W02
@@ -77,9 +77,9 @@ AllyJoinedSFX_0_1:
         .byte   W01
         .byte                   24
         .byte   W02
-        .byte                   23
-        .byte   W01
         .byte                   22
+        .byte   W01
+        .byte                   21
         .byte   W02
         .byte                   20
         .byte   W01
@@ -99,7 +99,7 @@ AllyJoinedSFX_0_1:
         .byte   W02
         .byte                   5
         .byte   W01
-        .byte                   4
+        .byte                   3
         .byte   W02
         .byte                   1
         .byte   W48
@@ -107,7 +107,7 @@ AllyJoinedSFX_0_1:
         .byte   PEND
 @ 002   ----------------------------------------
         .byte   W06
-        .byte                   47
+        .byte                   46
         .byte   FINE
 
 @****************** Track 1 (Midi-Chn.1) ******************@
@@ -116,7 +116,7 @@ AllyJoinedSFX_1:
         .byte   KEYSH , AllyJoinedSFX_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 86
-        .byte           VOL   , 50
+        .byte           VOL   , 49
         .byte           N05   , Bn3 , v090
         .byte           N05   , Fs3
         .byte   W08
@@ -130,26 +130,25 @@ AllyJoinedSFX_1:
         .byte           N64   , Gs3 , v090 , gtp1
         .byte   W21
         .byte           VOL   , 47
-        .byte   W24
-        .byte   W03
+        .byte   W22
         .byte                   46
-        .byte   W06
+        .byte   W08
         .byte                   45
-        .byte   W06
+        .byte   W07
         .byte                   44
-        .byte   W04
-        .byte                   43
         .byte   W03
+        .byte                   43
+        .byte   W05
         .byte                   42
         .byte   W03
         .byte                   41
-        .byte   W02
+        .byte   W03
 @ 001   ----------------------------------------
         .byte   PATT
          .word  AllyJoinedSFX_0_1
 @ 002   ----------------------------------------
         .byte   W06
-        .byte           VOL   , 47
+        .byte           VOL   , 46
         .byte   FINE
 
 @****************** Track 2 (Midi-Chn.2) ******************@
@@ -158,7 +157,7 @@ AllyJoinedSFX_2:
         .byte   KEYSH , AllyJoinedSFX_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 61
-        .byte           VOL   , 50
+        .byte           VOL   , 49
         .byte           N05   , En2 , v090
         .byte   W08
         .byte                   En2
@@ -168,26 +167,25 @@ AllyJoinedSFX_2:
         .byte           N64
         .byte   W21
         .byte           VOL   , 47
-        .byte   W24
-        .byte   W03
+        .byte   W22
         .byte                   46
-        .byte   W06
+        .byte   W08
         .byte                   45
-        .byte   W06
+        .byte   W07
         .byte                   44
-        .byte   W04
-        .byte                   43
         .byte   W03
+        .byte                   43
+        .byte   W05
         .byte                   42
         .byte   W03
         .byte                   41
-        .byte   W02
+        .byte   W03
 @ 001   ----------------------------------------
         .byte   PATT
          .word  AllyJoinedSFX_0_1
 @ 002   ----------------------------------------
         .byte   W06
-        .byte           VOL   , 47
+        .byte           VOL   , 46
         .byte   FINE
 
 

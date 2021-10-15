@@ -954,7 +954,7 @@ PrinceOfDarkness_3:
 PrinceOfDarkness_3_LOOP:
         .byte           VOICE , 6
         .byte           PAN   , c_v+11
-        .byte           VOL   , 40
+        .byte           VOL   , 39
         .byte           N24   , Fs3 , v102
         .byte   W24
         .byte           N06   , Cs4

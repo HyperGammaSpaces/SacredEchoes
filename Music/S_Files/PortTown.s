@@ -17,7 +17,7 @@ PortTown_0:
         .byte   TEMPO , 96/2
 PortTown_0_LOOP:
         .byte           VOICE , 21
-        .byte           VOL   , 43
+        .byte           VOL   , 42
         .byte           PAN   , c_v-30
         .byte           N06   , An3 , v092
         .byte   W06
@@ -484,7 +484,7 @@ PortTown_3:
 @ 000   ----------------------------------------
 PortTown_3_LOOP:
         .byte           VOICE , 41
-        .byte           VOL   , 42
+        .byte           VOL   , 41
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96
@@ -567,7 +567,7 @@ PortTown_4:
 @ 000   ----------------------------------------
 PortTown_4_LOOP:
         .byte           VOICE , 127
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte           PAN   , c_v-15
         .byte           N11   , Gs2 , v096
         .byte   W12

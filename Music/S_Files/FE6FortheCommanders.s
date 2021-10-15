@@ -192,7 +192,7 @@ FE6FortheCommanders_1:
 FE6FortheCommanders_1_LOOP:
         .byte           VOICE , 68
         .byte           PAN   , c_v-28
-        .byte           VOL   , 44
+        .byte           VOL   , 43
         .byte           BEND  , c_v-3
         .byte           TIE   , As2 , v072
         .byte   W96
@@ -425,7 +425,7 @@ FE6FortheCommanders_3:
 FE6FortheCommanders_3_LOOP:
         .byte           VOICE , 101
         .byte           PAN   , c_v-20
-        .byte           VOL   , 38
+        .byte           VOL   , 37
         .byte           TIE   , As1 , v108
         .byte   W96
 @ 001   ----------------------------------------
@@ -717,7 +717,7 @@ FE6FortheCommanders_5:
 FE6FortheCommanders_5_LOOP:
         .byte           VOICE , 127
         .byte           PAN   , c_v-4
-        .byte           VOL   , 57
+        .byte           VOL   , 56
         .byte           N11   , Dn1 , v120
         .byte   W12
         .byte                   Dn1 , v076
@@ -979,7 +979,7 @@ FE6FortheCommanders_6:
 @ 000   ----------------------------------------
 FE6FortheCommanders_6_LOOP:
         .byte           VOICE , 127
-        .byte           VOL   , 57
+        .byte           VOL   , 56
         .byte           PAN   , c_v+17
         .byte           N36   , Gn1 , v127
         .byte   W72
@@ -1185,7 +1185,7 @@ FE6FortheCommanders_7:
 @ 000   ----------------------------------------
 FE6FortheCommanders_7_LOOP:
         .byte           VOICE , 109
-        .byte           VOL   , 62
+        .byte           VOL   , 61
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96
@@ -1314,7 +1314,7 @@ FE6FortheCommanders_8:
 @ 000   ----------------------------------------
 FE6FortheCommanders_8_LOOP:
         .byte           VOICE , 52
-        .byte           VOL   , 56
+        .byte           VOL   , 55
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96

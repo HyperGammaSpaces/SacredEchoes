@@ -18,7 +18,7 @@ A_distant_promise_0:
 A_distant_promise_0_LOOP:
         .byte           VOICE , 0
         .byte           PAN   , c_v-26
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N12   , Fn4 , v126
         .byte           N96   , Cs3
         .byte   W12
@@ -646,7 +646,7 @@ A_distant_promise_2:
 A_distant_promise_2_LOOP:
         .byte           VOICE , 71
         .byte           PAN   , c_v+17
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96
@@ -977,7 +977,7 @@ A_distant_promise_4:
 A_distant_promise_4_LOOP:
         .byte           VOICE , 75
         .byte           PAN   , c_v+20
-        .byte           VOL   , 42
+        .byte           VOL   , 41
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96
@@ -1156,7 +1156,7 @@ A_distant_promise_5:
 A_distant_promise_5_LOOP:
         .byte           VOICE , 79
         .byte           PAN   , c_v-19
-        .byte           VOL   , 44
+        .byte           VOL   , 43
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96

@@ -17,7 +17,7 @@ AllyJoinedSFX_0:
 // 000   ----------------------------------------
         BYTE   TEMPO   180/2
         BYTE           VOICE   86
-        BYTE           VOL     50
+        BYTE           VOL     49
         BYTE           N05     Bn2   v090
         BYTE           N05     Fs2
         BYTE   W08
@@ -31,42 +31,42 @@ AllyJoinedSFX_0:
         BYTE           N64     Gs2   v090   gtp1
         BYTE   W21
         BYTE           VOL     47
-        BYTE   W24
-        BYTE   W03
+        BYTE   W22
         BYTE                   46
-        BYTE   W06
+        BYTE   W08
         BYTE                   45
-        BYTE   W06
+        BYTE   W07
         BYTE                   44
-        BYTE   W04
-        BYTE                   43
         BYTE   W03
+        BYTE                   43
+        BYTE   W05
         BYTE                   42
         BYTE   W03
         BYTE                   41
-        BYTE   W02
+        BYTE   W03
 // 001   ----------------------------------------
 AllyJoinedSFX_0_1:
-        BYTE   W01
         BYTE           VOL     40
         BYTE   W03
         BYTE                   39
-        BYTE   W02
-        BYTE                   38
         BYTE   W01
+        BYTE                   38
+        BYTE   W03
         BYTE                   37
         BYTE   W02
         BYTE                   36
-        BYTE   W03
+        BYTE   W01
         BYTE                   35
-        BYTE   W01
+        BYTE   W02
         BYTE                   34
-        BYTE   W02
-        BYTE                   33
         BYTE   W01
-        BYTE                   32
+        BYTE                   33
         BYTE   W02
+        BYTE                   32
+        BYTE   W01
         BYTE                   31
+        BYTE   W02
+        BYTE                   30
         BYTE   W01
         BYTE                   29
         BYTE   W02
@@ -78,9 +78,9 @@ AllyJoinedSFX_0_1:
         BYTE   W01
         BYTE                   24
         BYTE   W02
-        BYTE                   23
-        BYTE   W01
         BYTE                   22
+        BYTE   W01
+        BYTE                   21
         BYTE   W02
         BYTE                   20
         BYTE   W01
@@ -100,7 +100,7 @@ AllyJoinedSFX_0_1:
         BYTE   W02
         BYTE                   5
         BYTE   W01
-        BYTE                   4
+        BYTE                   3
         BYTE   W02
         BYTE                   1
         BYTE   W48
@@ -108,7 +108,7 @@ AllyJoinedSFX_0_1:
         BYTE   PEND
 // 002   ----------------------------------------
         BYTE   W06
-        BYTE                   47
+        BYTE                   46
         BYTE   FINE
 
 //****************** Track 1 (Midi-Chn.1) ******************//
@@ -117,7 +117,7 @@ AllyJoinedSFX_1:
         BYTE   KEYSH   AllyJoinedSFX_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   86
-        BYTE           VOL     50
+        BYTE           VOL     49
         BYTE           N05     Bn3   v090
         BYTE           N05     Fs3
         BYTE   W08
@@ -131,26 +131,25 @@ AllyJoinedSFX_1:
         BYTE           N64     Gs3   v090   gtp1
         BYTE   W21
         BYTE           VOL     47
-        BYTE   W24
-        BYTE   W03
+        BYTE   W22
         BYTE                   46
-        BYTE   W06
+        BYTE   W08
         BYTE                   45
-        BYTE   W06
+        BYTE   W07
         BYTE                   44
-        BYTE   W04
-        BYTE                   43
         BYTE   W03
+        BYTE                   43
+        BYTE   W05
         BYTE                   42
         BYTE   W03
         BYTE                   41
-        BYTE   W02
+        BYTE   W03
 // 001   ----------------------------------------
         BYTE   PATT
          POIN2  AllyJoinedSFX_0_1
 // 002   ----------------------------------------
         BYTE   W06
-        BYTE           VOL     47
+        BYTE           VOL     46
         BYTE   FINE
 
 //****************** Track 2 (Midi-Chn.2) ******************//
@@ -159,7 +158,7 @@ AllyJoinedSFX_2:
         BYTE   KEYSH   AllyJoinedSFX_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   61
-        BYTE           VOL     50
+        BYTE           VOL     49
         BYTE           N05     En2   v090
         BYTE   W08
         BYTE                   En2
@@ -169,26 +168,25 @@ AllyJoinedSFX_2:
         BYTE           N64
         BYTE   W21
         BYTE           VOL     47
-        BYTE   W24
-        BYTE   W03
+        BYTE   W22
         BYTE                   46
-        BYTE   W06
+        BYTE   W08
         BYTE                   45
-        BYTE   W06
+        BYTE   W07
         BYTE                   44
-        BYTE   W04
-        BYTE                   43
         BYTE   W03
+        BYTE                   43
+        BYTE   W05
         BYTE                   42
         BYTE   W03
         BYTE                   41
-        BYTE   W02
+        BYTE   W03
 // 001   ----------------------------------------
         BYTE   PATT
          POIN2  AllyJoinedSFX_0_1
 // 002   ----------------------------------------
         BYTE   W06
-        BYTE           VOL     47
+        BYTE           VOL     46
         BYTE   FINE
 
 

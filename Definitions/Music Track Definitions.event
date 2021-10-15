@@ -14,19 +14,19 @@
 #define SongID_SacrificeAndSaint 0xF
 #define SongID_AlmVictory 0x10
 #define SongID_CelicaVictory 0x11
-//0x12 unused
+//0x12 twilight of the gods
 #define SongID_AirOfBrutality 0x13 //alm enemy
 #define SongID_DisquietingSteps 0x14 //celica enemy
-#define SongID_FromTheDarkness 0x15 //FE8
+#define SongID_NobunagaField 0x15 //act 4 enemy
 #define SongID_PrideAndArrogance 0x16 //berkut battle
 #define SongID_ScionsDance 0x17 //berkut/rinea battle
 #define SongID_LordOfADeadEmpire 0x18 //rudolf battle
 #define SongID_DauntlessBlade 0x19 //attack
 #define SongID_FiendsRapture 0x1A //defend
 #define SongID_WarringPowers 0x1B //boss1
-//0x1C unused, new boss theme?
+#define SongID_EmeraldDragon 0x1C //boss2
 //0x1D unused, new boss theme?
-//0x1E Duma battle theme
+#define SongID_DarkGodsTempest 0x1E //Duma battle theme
 #define SongID_ForTheCommander 0x1F //neutral phase
 #define SongID_SongOfPeace 0x20 //priory
 #define SongID_Healing 0x21 //status staff
@@ -38,7 +38,7 @@
 #define SongID_Reunion 0x27 //FE8
 #define SongID_Indignation 0x28 //FE8
 #define SongID_Sorrow 0x29 //FE3 Love Theme/FE5 Sadness Theme
-#define SongID_Laughter 0x2A //FE8
+#define SongID_SilverGarden 0x2A //FE8
 #define SongID_Legacy 0x2B //FE8
 #define SongID_Revelations 0x2C //mila's turnwheel, support room, flashbacks
 #define SongID_PrinceOfDarkness 0x2D //berkut cutscenes
@@ -53,8 +53,8 @@
 #define SongID_Shop 0x35
 #define SongID_Armory 0x36
 #define SongID_MilaStatue 0x37
-//0x38 unused
-//0x39 unused
+#define SongID_LostTreescape 0x38
+#define SongID_WitchsTheme 0x39
 #define SongID_SilentGround 0x3A
 #define SongID_CastleTheme 0x3B
 //0x3C map clear
@@ -63,9 +63,11 @@
 #define SongID_Death 0x3F
 #define SongID_Omen 0x40
 #define SongID_DistantPromise 0x41
-#define SongID_Ending 0x42
+#define SongID_FromTheDarkness 0x42 //oracle of ages black tower
 #define SongID_TitleTheme 0x43
+#define SongID_HerosPath 0x44
 #define SongID_ImportantBattle 0x45
+#define SongID_Epilogue 0x46
 
 #define SongID_Env_Wind 0x47
 #define SongID_Env_WindBirds 0x48
@@ -75,6 +77,7 @@
 #define SongID_Env_Birds 0x4C
 #define SongID_Env_GustyWind 0x4E
 #define SongID_Env_GustyWindStop 0x4F
+#define SongID_Env_River 0x53
 #define SongID_Inn 0x54
 #define SongID_PortTown 0x55
 #define SongID_Env_CrowdCheer 0x95

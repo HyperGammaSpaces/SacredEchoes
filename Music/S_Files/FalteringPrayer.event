@@ -22,7 +22,7 @@ FalteringPrayer_0:
         BYTE           N23     Fn3   v096
         BYTE           N23     Fn4   v073
         BYTE   W01
-        BYTE           VOL     31
+        BYTE           VOL     30
         BYTE   W02
         BYTE                   32
         BYTE   W01
@@ -30,9 +30,9 @@ FalteringPrayer_0:
         BYTE   W02
         BYTE                   36
         BYTE   W01
-        BYTE                   38
+        BYTE                   37
         BYTE   W02
-        BYTE                   40
+        BYTE                   39
         BYTE   W01
         BYTE                   41
         BYTE   W01
@@ -40,12 +40,10 @@ FalteringPrayer_0:
         BYTE   W01
         BYTE                   41
         BYTE   W02
-        BYTE                   40
-        BYTE   W01
         BYTE                   39
         BYTE   W01
         BYTE                   38
-        BYTE   W01
+        BYTE   W02
         BYTE                   36
         BYTE   W01
         BYTE                   35
@@ -58,110 +56,30 @@ FalteringPrayer_0:
         BYTE   W01
         BYTE                   28
         BYTE   W01
-        BYTE                   24
-        BYTE   W01
-        BYTE           N90     Ds3   v093
-        BYTE           N90     Ds4   v070
-        BYTE   W04
-        BYTE           VOL     25
-        BYTE   W03
-        BYTE                   26
-        BYTE   W03
-        BYTE                   27
-        BYTE   W03
-        BYTE                   28
-        BYTE   W03
-        BYTE                   29
-        BYTE   W03
-        BYTE                   30
-        BYTE   W02
-        BYTE                   31
-        BYTE   W03
-        BYTE                   32
-        BYTE   W01
-        BYTE                   33
-        BYTE   W02
-        BYTE                   34
-        BYTE   W03
-        BYTE                   35
-        BYTE   W01
-        BYTE                   36
-        BYTE   W02
-        BYTE                   37
-        BYTE   W01
-        BYTE                   38
-        BYTE   W02
-        BYTE                   39
-        BYTE   W01
-        BYTE                   40
-        BYTE   W02
-        BYTE                   41
-        BYTE   W01
-        BYTE                   43
-        BYTE   W18
-        BYTE                   42
-        BYTE   W03
-        BYTE                   41
-        BYTE   W04
-        BYTE                   40
-        BYTE   W03
-        BYTE                   39
-        BYTE   W04
-// 001   ----------------------------------------
-        BYTE   W01
-        BYTE                   38
-        BYTE   W01
-        BYTE                   37
-        BYTE   W03
-        BYTE                   36
-        BYTE   W03
-        BYTE                   35
-        BYTE   W02
-        BYTE                   34
-        BYTE   W01
-        BYTE                   33
-        BYTE   W02
-        BYTE                   32
-        BYTE   W01
-        BYTE                   31
-        BYTE   W02
-        BYTE                   30
-        BYTE   W01
-        BYTE                   29
-        BYTE   W02
-        BYTE                   28
-        BYTE   W01
-        BYTE                   26
-        BYTE   W02
         BYTE                   24
         BYTE   W01
         BYTE                   23
+        BYTE           N90     Ds3   v093
+        BYTE           N90     Ds4   v070
         BYTE   W01
-        BYTE   TEMPO   86/2
-        BYTE                   22
-        BYTE           N44     Cn3   v062   gtp3
-        BYTE           N42     Ds3   v074   gtp1
-        BYTE   W04
-        BYTE           VOL     23
+        BYTE           VOL     24
         BYTE   W05
-        BYTE                   24
-        BYTE   W04
         BYTE                   25
         BYTE   W03
         BYTE                   26
-        BYTE   W05
+        BYTE   W03
         BYTE                   27
-        BYTE   W01
+        BYTE   W03
         BYTE                   28
         BYTE   W03
         BYTE                   29
-        BYTE   W03
-        BYTE                   30
-        BYTE   W02
-        BYTE                   31
         BYTE   W01
-        BYTE                   32
+        BYTE                   30
+        BYTE   W03
+        BYTE                   31
         BYTE   W02
+        BYTE                   32
+        BYTE   W03
         BYTE                   33
         BYTE   W01
         BYTE                   34
@@ -172,33 +90,109 @@ FalteringPrayer_0:
         BYTE   W02
         BYTE                   37
         BYTE   W01
+        BYTE                   38
+        BYTE   W02
         BYTE                   39
+        BYTE   W01
+        BYTE                   40
         BYTE   W02
         BYTE                   41
         BYTE   W01
-        BYTE                   43
-        BYTE   W05
-        BYTE           N44     Cn3   v062   gtp3
-        BYTE           N44     Ds3   v074   gtp1
-        BYTE   W13
-        BYTE           VOL     42
-        BYTE   W03
+        BYTE                   42
+        BYTE   W19
         BYTE                   41
-        BYTE   W04
+        BYTE   W05
         BYTE                   40
         BYTE   W04
-// 002   ----------------------------------------
-        BYTE   W01
         BYTE                   39
         BYTE   W03
         BYTE                   38
-        BYTE   W03
+        BYTE   W01
+// 001   ----------------------------------------
+        BYTE   W02
         BYTE                   37
         BYTE   W03
         BYTE                   36
+        BYTE   W02
+        BYTE                   35
         BYTE   W03
+        BYTE                   34
+        BYTE   W01
+        BYTE                   33
+        BYTE   W02
+        BYTE                   32
+        BYTE   W01
+        BYTE                   31
+        BYTE   W02
+        BYTE                   30
+        BYTE   W01
+        BYTE                   29
+        BYTE   W02
+        BYTE                   27
+        BYTE   W01
+        BYTE                   26
+        BYTE   W02
+        BYTE                   24
+        BYTE   W01
+        BYTE                   22
+        BYTE   W01
+        BYTE   TEMPO   86/2
+        BYTE           N44     Cn3   v062   gtp3
+        BYTE           N42     Ds3   v074   gtp1
+        BYTE   W06
+        BYTE           VOL     23
+        BYTE   W04
+        BYTE                   24
+        BYTE   W05
+        BYTE                   25
+        BYTE   W03
+        BYTE                   26
+        BYTE   W03
+        BYTE                   27
+        BYTE   W03
+        BYTE                   28
+        BYTE   W03
+        BYTE                   29
+        BYTE   W01
+        BYTE                   30
+        BYTE   W02
+        BYTE                   31
+        BYTE   W03
+        BYTE                   32
+        BYTE   W01
+        BYTE                   33
+        BYTE   W02
         BYTE                   35
         BYTE   W01
+        BYTE                   36
+        BYTE   W02
+        BYTE                   37
+        BYTE   W01
+        BYTE                   39
+        BYTE   W02
+        BYTE                   40
+        BYTE   W01
+        BYTE                   42
+        BYTE   W05
+        BYTE           N44     Cn3   v062   gtp3
+        BYTE           N44     Ds3   v074   gtp1
+        BYTE   W14
+        BYTE           VOL     41
+        BYTE   W05
+        BYTE                   40
+        BYTE   W04
+        BYTE                   39
+        BYTE   W01
+// 002   ----------------------------------------
+        BYTE   W04
+        BYTE                   38
+        BYTE   W03
+        BYTE                   37
+        BYTE   W01
+        BYTE                   36
+        BYTE   W03
+        BYTE                   35
+        BYTE   W03
         BYTE                   34
         BYTE   W02
         BYTE                   33
@@ -215,20 +209,20 @@ FalteringPrayer_0:
         BYTE   W01
         BYTE           N44     Cn3   v063   gtp3
         BYTE           N44     Ds3   v075
-        BYTE   W05
+        BYTE   W08
         BYTE           VOL     29
         BYTE   W06
         BYTE                   30
-        BYTE   W06
-        BYTE                   31
         BYTE   W03
-        BYTE                   32
+        BYTE                   31
         BYTE   W06
+        BYTE                   32
+        BYTE   W03
         BYTE                   33
         BYTE   W03
-        BYTE                   35
+        BYTE                   34
         BYTE   W03
-        BYTE                   36
+        BYTE                   35
         BYTE   W03
         BYTE                   37
         BYTE   W03
@@ -236,86 +230,80 @@ FalteringPrayer_0:
         BYTE   W03
         BYTE                   41
         BYTE   W01
-        BYTE                   43
+        BYTE                   42
         BYTE   W06
         BYTE           N44     Bn2   v062   gtp3
         BYTE           N44     Dn3   v078   gtp1
-        BYTE   W12
-        BYTE           VOL     42
-        BYTE   W03
-        BYTE                   41
-        BYTE   W05
-        BYTE                   40
+        BYTE   W14
+        BYTE           VOL     41
         BYTE   W04
-// 003   ----------------------------------------
+        BYTE                   40
+        BYTE   W05
         BYTE                   39
+        BYTE   W01
+// 003   ----------------------------------------
         BYTE   W03
         BYTE                   38
-        BYTE   W05
+        BYTE   W03
         BYTE                   37
-        BYTE   W01
+        BYTE   W03
         BYTE                   36
-        BYTE   W03
-        BYTE                   35
         BYTE   W02
-        BYTE                   34
+        BYTE                   35
         BYTE   W03
-        BYTE                   33
+        BYTE                   34
         BYTE   W01
+        BYTE                   33
+        BYTE   W03
         BYTE                   32
         BYTE   W02
         BYTE                   31
         BYTE   W01
         BYTE                   30
         BYTE   W02
-        BYTE                   29
+        BYTE                   28
         BYTE   W01
 FalteringPrayer_0_LOOP:
         BYTE           N44     Cn3   v075   gtp3
         BYTE           N44     Ds3   v090   gtp1
         BYTE           VOL     27
-        BYTE   W09
+        BYTE   W15
         BYTE                   28
-        BYTE   W12
+        BYTE   W09
         BYTE                   29
         BYTE   W09
         BYTE                   30
         BYTE   W09
         BYTE                   31
         BYTE   W06
-        BYTE                   32
-        BYTE   W03
         BYTE           N44     Cn3   v077   gtp3
         BYTE                   Ds3   v094
-        BYTE   W03
-        BYTE           VOL     33
+        BYTE           VOL     32
+        BYTE   W06
+        BYTE                   33
         BYTE   W06
         BYTE                   34
-        BYTE   W06
-        BYTE                   35
         BYTE   W03
+        BYTE                   35
+        BYTE   W06
         BYTE                   36
         BYTE   W03
+// 004   ----------------------------------------
         BYTE                   37
         BYTE   W03
-// 004   ----------------------------------------
         BYTE                   38
         BYTE   W03
         BYTE                   39
         BYTE   W03
         BYTE                   40
         BYTE   W03
-        BYTE                   41
-        BYTE   W03
-        BYTE                   43
+        BYTE                   42
         BYTE   W12
         BYTE           N44     Cn3   v077   gtp3
         BYTE           N48     Fn3   v092
-        BYTE   W14
-        BYTE           VOL     42
-        BYTE   W06
-        BYTE                   41
-        BYTE   W06
+        BYTE   W17
+        BYTE           VOL     41
+        BYTE   W09
         BYTE                   40
         BYTE   W06
         BYTE                   39
@@ -326,86 +314,86 @@ FalteringPrayer_0_LOOP:
         BYTE   W03
         BYTE                   36
         BYTE   W03
-        BYTE                   34
+        BYTE                   33
         BYTE   W04
         BYTE   TEMPO   82/2
         BYTE           N92     As2   v076   gtp1
         BYTE           N22     Ds3   v094
-        BYTE   W08
-        BYTE           VOL     35
-        BYTE   W04
-        BYTE   TEMPO   80/2
         BYTE   W02
+        BYTE           VOL     34
+        BYTE   W09
+        BYTE                   35
+        BYTE   W01
+        BYTE   TEMPO   80/2
+        BYTE   W05
         BYTE                   36
         BYTE   W06
         BYTE                   37
-        BYTE   W04
+        BYTE   W01
 // 005   ----------------------------------------
         BYTE   TEMPO   78/2
         BYTE           N23     Dn3   v093
         BYTE   W02
         BYTE           VOL     38
-        BYTE   W03
+        BYTE   W06
         BYTE                   39
         BYTE   W03
         BYTE                   40
-        BYTE   W03
-        BYTE                   41
         BYTE   W01
         BYTE   TEMPO   76/2
         BYTE   W02
-        BYTE                   42
+        BYTE                   41
         BYTE   W02
-        BYTE                   43
+        BYTE                   42
         BYTE   W08
         BYTE   TEMPO   72/2
         BYTE           N24     Cn3   v095   gtp2
-        BYTE   W10
-        BYTE           VOL     42
-        BYTE   W02
+        BYTE   W11
+        BYTE           VOL     41
+        BYTE   W01
         BYTE   TEMPO   70/2
-        BYTE   W02
-        BYTE                   41
         BYTE   W05
         BYTE                   40
-        BYTE   W04
+        BYTE   W05
         BYTE                   39
-        BYTE   W01
+        BYTE   W02
         BYTE   TEMPO   68/2
         BYTE           N22     Dn3
-        BYTE   W04
+        BYTE   W02
         BYTE           VOL     38
         BYTE   W03
         BYTE                   37
         BYTE   W03
         BYTE                   36
-        BYTE   W01
+        BYTE   W03
         BYTE                   35
         BYTE   W01
         BYTE   TEMPO   64/2
-        BYTE   W02
-        BYTE                   34
-        BYTE   W02
-        BYTE                   33
-        BYTE   W03
-        BYTE                   32
         BYTE   W01
-        BYTE                   31
+        BYTE                   34
+        BYTE   W03
+        BYTE                   33
+        BYTE   W01
+        BYTE                   32
         BYTE   W02
+        BYTE                   31
+        BYTE   W01
         BYTE                   30
+        BYTE   W02
+        BYTE                   29
         BYTE   W01
         BYTE                   28
         BYTE   W01
         BYTE   TEMPO   86/2
         BYTE           N44     Cn3   v062   gtp3
         BYTE           N42     Ds3   v074   gtp1
-        BYTE   W06
+        BYTE   W09
         BYTE           VOL     29
         BYTE   W06
         BYTE                   30
         BYTE   W06
         BYTE                   31
-        BYTE   W06
+        BYTE   W03
 // 006   ----------------------------------------
         BYTE                   32
         BYTE   W03
@@ -413,7 +401,7 @@ FalteringPrayer_0_LOOP:
         BYTE   W03
         BYTE                   34
         BYTE   W03
-        BYTE                   36
+        BYTE                   35
         BYTE   W03
         BYTE                   37
         BYTE   W03
@@ -421,27 +409,25 @@ FalteringPrayer_0_LOOP:
         BYTE   W03
         BYTE                   41
         BYTE   W01
-        BYTE                   43
+        BYTE                   42
         BYTE   W05
         BYTE           N44     Cn3   v062   gtp3
         BYTE           N44     Ds3   v074   gtp1
-        BYTE   W13
-        BYTE           VOL     42
-        BYTE   W03
-        BYTE                   41
-        BYTE   W04
-        BYTE                   40
+        BYTE   W14
+        BYTE           VOL     41
         BYTE   W05
+        BYTE                   40
+        BYTE   W04
         BYTE                   39
-        BYTE   W03
+        BYTE   W05
         BYTE                   38
         BYTE   W03
         BYTE                   37
-        BYTE   W03
+        BYTE   W01
         BYTE                   36
         BYTE   W03
         BYTE                   35
-        BYTE   W01
+        BYTE   W03
         BYTE                   34
         BYTE   W02
         BYTE                   33
@@ -458,22 +444,22 @@ FalteringPrayer_0_LOOP:
         BYTE   W01
         BYTE           N44     Cn3   v063   gtp3
         BYTE           N44     Ds3   v075
-        BYTE   W05
+        BYTE   W08
         BYTE           VOL     29
         BYTE   W06
         BYTE                   30
-        BYTE   W06
-        BYTE                   31
         BYTE   W03
+        BYTE                   31
+        BYTE   W06
         BYTE                   32
-        BYTE   W04
+        BYTE   W01
 // 007   ----------------------------------------
         BYTE   W02
         BYTE                   33
         BYTE   W03
-        BYTE                   35
+        BYTE                   34
         BYTE   W03
-        BYTE                   36
+        BYTE                   35
         BYTE   W03
         BYTE                   37
         BYTE   W03
@@ -481,28 +467,26 @@ FalteringPrayer_0_LOOP:
         BYTE   W03
         BYTE                   41
         BYTE   W01
-        BYTE                   43
+        BYTE                   42
         BYTE   W06
         BYTE           N44     Bn2   v062   gtp3
         BYTE           N44     Dn3   v078   gtp1
-        BYTE   W12
-        BYTE           VOL     42
+        BYTE   W15
+        BYTE           VOL     41
         BYTE   W06
-        BYTE                   41
-        BYTE   W03
         BYTE                   40
-        BYTE   W06
-        BYTE                   39
         BYTE   W03
+        BYTE                   39
+        BYTE   W06
         BYTE                   38
         BYTE   W03
         BYTE                   37
         BYTE   W03
-        BYTE                   36
+        BYTE                   35
         BYTE   W03
         BYTE                   34
         BYTE   W03
-        BYTE                   33
+        BYTE                   32
         BYTE   W03
         BYTE                   30
         BYTE   W03
@@ -519,7 +503,7 @@ FalteringPrayer_1:
 // 000   ----------------------------------------
         BYTE           VOICE   105
         BYTE           PAN     c_v+19
-        BYTE           VOL     27
+        BYTE           VOL     26
         BYTE           N23     As2   v109
         BYTE           N23     Gs3   v076
         BYTE   W01
@@ -527,55 +511,60 @@ FalteringPrayer_1:
         BYTE   W01
         BYTE                   33
         BYTE   W01
-        BYTE                   36
+        BYTE                   35
         BYTE   W01
         BYTE                   40
         BYTE   W01
-        BYTE                   43
+        BYTE                   42
         BYTE   W01
         BYTE                   45
         BYTE   W01
-        BYTE                   50
+        BYTE                   49
         BYTE   W01
         BYTE                   52
-        BYTE   W01
-        BYTE                   55
-        BYTE   W01
-        BYTE                   59
-        BYTE   W03
-        BYTE                   58
-        BYTE   W01
-        BYTE                   55
         BYTE   W01
         BYTE                   54
         BYTE   W01
+        BYTE                   59
+        BYTE   W02
+        BYTE                   58
+        BYTE   W01
+        BYTE                   57
+        BYTE   W01
+        BYTE                   55
+        BYTE   W01
+        BYTE                   53
+        BYTE   W01
         BYTE                   52
         BYTE   W01
-        BYTE                   49
+        BYTE                   48
         BYTE   W01
         BYTE                   47
         BYTE   W01
         BYTE                   45
         BYTE   W01
-        BYTE                   40
+        BYTE                   39
         BYTE   W01
         BYTE                   37
         BYTE   W01
-        BYTE                   34
+        BYTE                   33
         BYTE   W01
         BYTE                   26
         BYTE   W01
+        BYTE                   25
         BYTE           N90     Gn2   v104
         BYTE           N90     Ds3   v087
-        BYTE   W03
-        BYTE           VOL     27
         BYTE   W01
-        BYTE                   28
+        BYTE           VOL     26
         BYTE   W02
-        BYTE                   29
-        BYTE   W01
-        BYTE                   30
+        BYTE                   27
         BYTE   W03
+        BYTE                   28
+        BYTE   W01
+        BYTE                   29
+        BYTE   W02
+        BYTE                   30
+        BYTE   W01
         BYTE                   31
         BYTE   W02
         BYTE                   32
@@ -588,23 +577,23 @@ FalteringPrayer_1:
         BYTE   W02
         BYTE                   36
         BYTE   W01
-        BYTE                   38
+        BYTE                   37
         BYTE   W02
-        BYTE                   39
+        BYTE                   38
         BYTE   W01
-        BYTE                   40
+        BYTE                   39
         BYTE   W02
         BYTE                   41
         BYTE   W01
-        BYTE                   43
+        BYTE                   42
         BYTE   W02
         BYTE                   44
         BYTE   W01
-        BYTE                   46
+        BYTE                   45
         BYTE   W02
         BYTE                   47
         BYTE   W01
-        BYTE                   49
+        BYTE                   48
         BYTE   W02
         BYTE                   50
         BYTE   W01
@@ -612,53 +601,55 @@ FalteringPrayer_1:
         BYTE   W02
         BYTE                   54
         BYTE   W01
-        BYTE                   57
-        BYTE   W02
-        BYTE                   59
-        BYTE   W01
-        BYTE                   60
-        BYTE   W18
-        BYTE                   59
-        BYTE   W01
-        BYTE                   58
-        BYTE   W02
-        BYTE                   57
-        BYTE   W01
         BYTE                   56
         BYTE   W02
-        BYTE                   55
+        BYTE                   58
         BYTE   W01
+        BYTE                   60
+        BYTE   W16
+        BYTE                   59
+        BYTE   W02
+        BYTE                   58
+        BYTE   W01
+        BYTE                   57
+        BYTE   W02
+        BYTE                   56
+        BYTE   W01
+        BYTE                   55
+        BYTE   W02
         BYTE                   54
+        BYTE   W01
+        BYTE                   53
         BYTE   W02
         BYTE                   52
         BYTE   W01
-        BYTE                   51
+        BYTE                   50
         BYTE   W02
         BYTE                   49
         BYTE   W01
-        BYTE                   48
+        BYTE                   47
         BYTE   W01
 // 001   ----------------------------------------
         BYTE   W01
-        BYTE                   47
+        BYTE                   46
         BYTE   W01
-        BYTE                   45
+        BYTE                   44
         BYTE   W02
-        BYTE                   43
+        BYTE                   42
         BYTE   W01
-        BYTE                   41
+        BYTE                   40
         BYTE   W02
         BYTE                   39
         BYTE   W01
-        BYTE                   37
+        BYTE                   36
         BYTE   W02
-        BYTE                   34
+        BYTE                   33
         BYTE   W01
         BYTE                   31
         BYTE   W02
         BYTE                   28
         BYTE   W01
-        BYTE                   25
+        BYTE                   24
         BYTE   W02
         BYTE                   21
         BYTE   W01
@@ -672,11 +663,13 @@ FalteringPrayer_1:
         BYTE   W01
         BYTE                   34
         BYTE   W01
-        BYTE                   37
+        BYTE                   36
         BYTE           TIE     Ds2   v072
         BYTE           TIE     Gn2
-        BYTE   W09
-        BYTE           VOL     38
+        BYTE   W06
+        BYTE           VOL     37
+        BYTE   W06
+        BYTE                   38
         BYTE   W06
         BYTE                   39
         BYTE   W09
@@ -689,63 +682,63 @@ FalteringPrayer_1:
         BYTE                   43
         BYTE   W03
         BYTE                   44
-        BYTE   W06
+        BYTE   W03
         BYTE                   45
         BYTE   W03
         BYTE                   46
         BYTE   W03
         BYTE                   47
-        BYTE   W03
+        BYTE   W06
         BYTE                   48
         BYTE   W03
         BYTE                   49
         BYTE   W03
         BYTE                   50
-        BYTE   W03
-        BYTE                   51
         BYTE   W03
         BYTE                   52
         BYTE   W03
 // 002   ----------------------------------------
         BYTE                   53
         BYTE   W03
+        BYTE                   54
+        BYTE   W03
         BYTE                   55
         BYTE   W03
-        BYTE                   56
-        BYTE   W03
-        BYTE                   58
+        BYTE                   57
         BYTE   W03
         BYTE                   60
-        BYTE   W28
-        BYTE   W01
+        BYTE   W23
         BYTE                   59
-        BYTE   W12
+        BYTE   W09
         BYTE                   58
-        BYTE   W06
+        BYTE   W09
         BYTE                   57
         BYTE   W06
         BYTE                   56
         BYTE   W06
+        BYTE                   55
+        BYTE   W06
         BYTE           EOT     Ds2
-        BYTE           VOL     55
         BYTE   W01
         BYTE           N44     Dn2   v066   gtp3
         BYTE   W02
         BYTE           VOL     54
-        BYTE   W06
-        BYTE                   53
         BYTE   W03
+        BYTE                   53
+        BYTE   W06
         BYTE                   52
         BYTE   W03
         BYTE                   51
-        BYTE   W06
+        BYTE   W03
         BYTE                   50
         BYTE   W03
         BYTE                   49
+        BYTE   W03
+        BYTE                   48
         BYTE   W01
 // 003   ----------------------------------------
         BYTE   W02
-        BYTE                   48
+        BYTE                   47
         BYTE   W03
         BYTE                   46
         BYTE   W03
@@ -753,11 +746,11 @@ FalteringPrayer_1:
         BYTE   W03
         BYTE                   43
         BYTE   W03
-        BYTE                   42
+        BYTE                   41
         BYTE   W03
-        BYTE                   40
+        BYTE                   39
         BYTE   W03
-        BYTE                   38
+        BYTE                   37
         BYTE   W02
         BYTE                   36
         BYTE   W02
@@ -765,46 +758,44 @@ FalteringPrayer_1:
 FalteringPrayer_1_LOOP:
         BYTE           N92     Ds2   v066   gtp3
         BYTE                   Gn2   v072
-        BYTE   W04
+        BYTE   W10
         BYTE           VOL     37
-        BYTE   W12
+        BYTE   W09
         BYTE                   38
         BYTE   W09
         BYTE                   39
-        BYTE   W09
+        BYTE   W12
         BYTE                   40
-        BYTE   W09
+        BYTE   W06
         BYTE                   41
         BYTE   W03
         BYTE                   42
         BYTE   W06
         BYTE                   43
-        BYTE   W06
-        BYTE                   44
         BYTE   W03
+        BYTE                   44
+        BYTE   W06
         BYTE                   45
         BYTE   W03
         BYTE                   46
-        BYTE   W06
+        BYTE   W03
         BYTE                   47
         BYTE   W02
 // 004   ----------------------------------------
-        BYTE   W01
+        BYTE   W04
         BYTE                   48
         BYTE   W03
         BYTE                   49
         BYTE   W03
-        BYTE                   50
-        BYTE   W03
         BYTE                   51
         BYTE   W03
-        BYTE                   53
+        BYTE                   52
         BYTE   W03
         BYTE                   54
         BYTE   W03
-        BYTE                   56
+        BYTE                   55
         BYTE   W03
-        BYTE                   58
+        BYTE                   57
         BYTE   W02
         BYTE           N44     Fn2   v067   gtp3
         BYTE           N48     Gs2   v067   gtp1
@@ -816,61 +807,66 @@ FalteringPrayer_1_LOOP:
         BYTE   W02
         BYTE           N24     Ds2   v068
         BYTE           N90     Fn2
-        BYTE   W13
+        BYTE   W10
         BYTE           VOL     59
-        BYTE   W11
+        BYTE   W09
+        BYTE                   58
+        BYTE   W05
 // 005   ----------------------------------------
         BYTE           N24     Dn2
         BYTE   W01
-        BYTE           VOL     58
+        BYTE           VOL     57
         BYTE   W09
-        BYTE                   57
-        BYTE   W06
         BYTE                   56
-        BYTE   W03
-        BYTE                   55
-        BYTE   W05
-        BYTE           N24     Cn2
-        BYTE   W01
-        BYTE           VOL     54
         BYTE   W06
-        BYTE                   53
+        BYTE                   55
+        BYTE   W06
+        BYTE                   54
+        BYTE   W02
+        BYTE           N24     Cn2
+        BYTE   W04
+        BYTE           VOL     53
         BYTE   W03
         BYTE                   52
-        BYTE   W03
+        BYTE   W06
         BYTE                   51
         BYTE   W03
         BYTE                   50
         BYTE   W03
         BYTE                   49
-        BYTE   W05
+        BYTE   W03
+        BYTE                   48
+        BYTE   W02
         BYTE           N24     Dn2   v063
         BYTE   W01
-        BYTE           VOL     48
+        BYTE           VOL     47
         BYTE   W03
-        BYTE                   47
+        BYTE                   46
         BYTE   W03
         BYTE                   45
         BYTE   W03
         BYTE                   44
         BYTE   W03
-        BYTE                   43
+        BYTE                   42
         BYTE   W03
         BYTE                   41
         BYTE   W03
         BYTE                   39
         BYTE   W03
-        BYTE                   38
-        BYTE   W02
         BYTE                   37
+        BYTE   W02
+        BYTE                   36
         BYTE           TIE     Ds2   v072
         BYTE           TIE     Gn2
-        BYTE   W09
-        BYTE           VOL     38
+        BYTE   W06
+        BYTE           VOL     37
+        BYTE   W06
+        BYTE                   38
         BYTE   W06
         BYTE                   39
-        BYTE   W09
+        BYTE   W06
 // 006   ----------------------------------------
+        BYTE   W03
         BYTE                   40
         BYTE   W06
         BYTE                   41
@@ -880,62 +876,62 @@ FalteringPrayer_1_LOOP:
         BYTE                   43
         BYTE   W03
         BYTE                   44
-        BYTE   W06
+        BYTE   W03
         BYTE                   45
         BYTE   W03
         BYTE                   46
         BYTE   W03
         BYTE                   47
-        BYTE   W03
+        BYTE   W06
         BYTE                   48
         BYTE   W03
         BYTE                   49
         BYTE   W03
         BYTE                   50
         BYTE   W03
-        BYTE                   51
-        BYTE   W03
         BYTE                   52
         BYTE   W03
         BYTE                   53
         BYTE   W03
+        BYTE                   54
+        BYTE   W03
         BYTE                   55
         BYTE   W03
-        BYTE                   56
-        BYTE   W03
-        BYTE                   58
+        BYTE                   57
         BYTE   W03
         BYTE                   60
-        BYTE   W28
-        BYTE   W01
+        BYTE   W23
         BYTE                   59
-        BYTE   W07
+        BYTE   W09
+        BYTE                   58
+        BYTE   W04
 // 007   ----------------------------------------
         BYTE   W05
-        BYTE                   58
-        BYTE   W06
         BYTE                   57
         BYTE   W06
         BYTE                   56
         BYTE   W06
+        BYTE                   55
+        BYTE   W06
         BYTE           EOT     Ds2
-        BYTE           VOL     55
         BYTE   W01
         BYTE           N44     Dn2   v066   gtp3
         BYTE   W02
         BYTE           VOL     54
-        BYTE   W06
-        BYTE                   53
         BYTE   W03
+        BYTE                   53
+        BYTE   W06
         BYTE                   52
         BYTE   W03
         BYTE                   51
-        BYTE   W06
+        BYTE   W03
         BYTE                   50
         BYTE   W03
         BYTE                   49
         BYTE   W03
         BYTE                   48
+        BYTE   W03
+        BYTE                   47
         BYTE   W03
         BYTE                   46
         BYTE   W03
@@ -943,11 +939,11 @@ FalteringPrayer_1_LOOP:
         BYTE   W03
         BYTE                   43
         BYTE   W03
-        BYTE                   42
+        BYTE                   41
         BYTE   W03
-        BYTE                   40
+        BYTE                   39
         BYTE   W03
-        BYTE                   38
+        BYTE                   37
         BYTE   W02
         BYTE                   36
         BYTE   W02
@@ -965,86 +961,92 @@ FalteringPrayer_2:
         BYTE           VOICE   49
         BYTE           PAN     c_v+17
         BYTE           N23     Gs3   v096
-        BYTE           VOL     27
+        BYTE           VOL     26
+        BYTE   W01
+        BYTE                   27
         BYTE   W01
         BYTE                   28
         BYTE   W01
-        BYTE                   29
+        BYTE                   30
         BYTE   W01
         BYTE                   31
         BYTE   W01
         BYTE                   32
         BYTE   W01
-        BYTE                   33
-        BYTE   W01
-        BYTE                   35
+        BYTE                   34
         BYTE   W01
         BYTE                   36
         BYTE   W01
         BYTE                   37
         BYTE   W01
-        BYTE                   39
+        BYTE                   38
         BYTE   W01
         BYTE                   40
         BYTE   W01
         BYTE                   41
-        BYTE   W03
+        BYTE   W01
         BYTE                   40
-        BYTE   W01
-        BYTE                   39
         BYTE   W02
-        BYTE                   38
+        BYTE                   39
         BYTE   W01
+        BYTE                   38
+        BYTE   W02
         BYTE                   37
+        BYTE   W01
+        BYTE                   36
         BYTE   W02
         BYTE                   35
         BYTE   W01
         BYTE                   33
         BYTE   W02
-        BYTE                   31
+        BYTE                   30
         BYTE   W01
         BYTE                   29
         BYTE           N90     Ds3   v088
-        BYTE   W03
+        BYTE   W06
         BYTE           VOL     30
         BYTE   W06
         BYTE                   31
-        BYTE   W06
-        BYTE                   32
         BYTE   W03
+        BYTE                   32
+        BYTE   W06
         BYTE                   33
         BYTE   W03
         BYTE                   34
-        BYTE   W06
+        BYTE   W03
         BYTE                   35
+        BYTE   W03
+        BYTE                   36
         BYTE   W03
         BYTE                   37
         BYTE   W03
         BYTE                   38
         BYTE   W03
-        BYTE                   39
-        BYTE   W03
+        BYTE                   40
+        BYTE   W01
         BYTE                   41
-        BYTE   W19
+        BYTE   W16
         BYTE                   40
         BYTE   W03
         BYTE                   39
-        BYTE   W01
+        BYTE   W02
         BYTE                   38
-        BYTE   W02
-        BYTE                   37
         BYTE   W03
+        BYTE                   37
+        BYTE   W01
         BYTE                   36
-        BYTE   W01
-        BYTE                   35
         BYTE   W02
-        BYTE                   34
+        BYTE                   35
         BYTE   W01
+        BYTE                   34
+        BYTE   W02
         BYTE                   33
+        BYTE   W01
+        BYTE                   32
         BYTE   W01
 // 001   ----------------------------------------
         BYTE   W01
-        BYTE                   32
+        BYTE                   31
         BYTE   W01
         BYTE                   30
         BYTE   W02
@@ -1052,7 +1054,7 @@ FalteringPrayer_2:
         BYTE   W01
         BYTE                   28
         BYTE   W02
-        BYTE                   27
+        BYTE                   26
         BYTE   W01
         BYTE                   25
         BYTE   W02
@@ -1075,17 +1077,17 @@ FalteringPrayer_2:
         BYTE                   31
         BYTE   W02
         BYTE           N44     Cn3   v070   gtp3
-        BYTE   W04
+        BYTE   W10
         BYTE           VOL     32
         BYTE   W15
         BYTE                   33
-        BYTE   W12
+        BYTE   W09
         BYTE                   34
         BYTE   W09
         BYTE                   35
-        BYTE   W08
+        BYTE   W05
         BYTE           N44     As2   v070   gtp3
-        BYTE   W01
+        BYTE   W04
         BYTE           VOL     36
         BYTE   W06
         BYTE                   37
@@ -1093,108 +1095,109 @@ FalteringPrayer_2:
         BYTE                   38
         BYTE   W06
         BYTE                   39
-        BYTE   W03
-        BYTE                   40
         BYTE   W02
 // 002   ----------------------------------------
         BYTE   W01
+        BYTE                   40
+        BYTE   W02
         BYTE                   41
-        BYTE   W23
+        BYTE   W21
         BYTE           N44     Gs2   v070   gtp3
-        BYTE   W23
+        BYTE   W14
         BYTE           VOL     40
-        BYTE   W12
+        BYTE   W15
         BYTE                   39
         BYTE   W09
         BYTE                   38
-        BYTE   W04
-        BYTE           N44     Gn2   v071   gtp3
-        BYTE   W05
-        BYTE           VOL     37
-        BYTE   W06
-        BYTE                   36
-        BYTE   W06
-        BYTE                   35
-        BYTE   W06
-        BYTE                   34
+        BYTE   W09
+        BYTE                   37
         BYTE   W01
+        BYTE           N44     Gn2   v071   gtp3
+        BYTE   W08
+        BYTE           VOL     36
+        BYTE   W09
+        BYTE                   35
+        BYTE   W03
+        BYTE                   34
+        BYTE   W04
 // 003   ----------------------------------------
         BYTE   W02
         BYTE                   33
-        BYTE   W06
+        BYTE   W03
         BYTE                   32
         BYTE   W03
         BYTE                   31
-        BYTE   W03
+        BYTE   W06
+        BYTE                   29
+        BYTE   W09
         BYTE                   30
-        BYTE   W10
+        BYTE   W01
 FalteringPrayer_2_LOOP:
         BYTE           N44     Cn3   v074   gtp3
-        BYTE   W08
+        BYTE   W14
         BYTE           VOL     31
-        BYTE   W15
+        BYTE   W12
         BYTE                   32
         BYTE   W12
         BYTE                   33
         BYTE   W09
         BYTE                   34
-        BYTE   W04
+        BYTE   W01
         BYTE           N44     As2   v071   gtp3
-        BYTE   W05
+        BYTE   W08
         BYTE           VOL     35
         BYTE   W09
         BYTE                   36
         BYTE   W06
         BYTE                   37
-        BYTE   W04
+        BYTE   W01
 // 004   ----------------------------------------
-        BYTE   W02
+        BYTE   W05
         BYTE                   38
         BYTE   W06
         BYTE                   39
         BYTE   W03
         BYTE                   40
-        BYTE   W06
+        BYTE   W04
         BYTE                   41
-        BYTE   W07
+        BYTE   W06
         BYTE           N44     Gs2   v074   gtp3
         BYTE   W44
-        BYTE   W03
         BYTE           VOL     40
-        BYTE   W01
+        BYTE   W04
         BYTE           N88     As2   v073   gtp1
-        BYTE   W08
+        BYTE   W02
         BYTE           VOL     39
-        BYTE   W06
-        BYTE                   38
         BYTE   W09
+        BYTE                   38
+        BYTE   W06
         BYTE                   37
-        BYTE   W01
+        BYTE   W07
 // 005   ----------------------------------------
-        BYTE   W05
+        BYTE   W02
         BYTE                   36
         BYTE   W06
         BYTE                   35
-        BYTE   W03
+        BYTE   W06
         BYTE                   34
-        BYTE   W06
+        BYTE   W03
         BYTE                   33
-        BYTE   W03
+        BYTE   W06
         BYTE                   32
-        BYTE   W06
-        BYTE                   31
         BYTE   W03
-        BYTE                   30
+        BYTE                   31
         BYTE   W06
+        BYTE                   30
+        BYTE   W03
         BYTE                   29
         BYTE   W03
         BYTE                   28
         BYTE   W03
         BYTE                   27
-        BYTE   W03
-        BYTE                   26
-        BYTE   W03
+        BYTE   W06
         BYTE                   25
+        BYTE   W03
+        BYTE                   24
         BYTE   W03
         BYTE                   23
         BYTE   W03
@@ -1212,19 +1215,19 @@ FalteringPrayer_2_LOOP:
         BYTE   W01
         BYTE                   31
         BYTE           N44     Cn3   v070   gtp3
-        BYTE   W06
+        BYTE   W12
         BYTE           VOL     32
-        BYTE   W15
-        BYTE                   33
-        BYTE   W03
+        BYTE   W12
 // 006   ----------------------------------------
+        BYTE   W03
+        BYTE                   33
         BYTE   W09
         BYTE                   34
         BYTE   W09
         BYTE                   35
-        BYTE   W06
-        BYTE           N44     As2   v070   gtp3
         BYTE   W03
+        BYTE           N44     As2   v070   gtp3
+        BYTE   W06
         BYTE           VOL     36
         BYTE   W06
         BYTE                   37
@@ -1233,38 +1236,37 @@ FalteringPrayer_2_LOOP:
         BYTE   W03
         BYTE                   39
         BYTE   W06
-        BYTE                   40
-        BYTE   W03
         BYTE                   41
         BYTE   W21
         BYTE           N44     Gs2   v070   gtp3
-        BYTE   W23
+        BYTE   W14
         BYTE           VOL     40
-        BYTE   W01
+        BYTE   W10
 // 007   ----------------------------------------
-        BYTE   W11
+        BYTE   W05
         BYTE                   39
         BYTE   W09
         BYTE                   38
-        BYTE   W04
+        BYTE   W09
+        BYTE                   37
+        BYTE   W01
         BYTE           N44     Gn2   v071   gtp3
-        BYTE   W05
-        BYTE           VOL     37
-        BYTE   W06
-        BYTE                   36
-        BYTE   W06
+        BYTE   W08
+        BYTE           VOL     36
+        BYTE   W09
         BYTE                   35
-        BYTE   W06
-        BYTE                   34
         BYTE   W03
-        BYTE                   33
+        BYTE                   34
         BYTE   W06
+        BYTE                   33
+        BYTE   W03
         BYTE                   32
         BYTE   W03
         BYTE                   31
-        BYTE   W03
-        BYTE                   30
+        BYTE   W06
+        BYTE                   29
         BYTE   W10
+        BYTE                   30
         BYTE   GoTo
          POIN2  FalteringPrayer_2_LOOP
         BYTE   W02
@@ -1288,78 +1290,74 @@ FalteringPrayer_3:
         BYTE   W01
         BYTE                   29
         BYTE   W01
-        BYTE                   31
+        BYTE                   30
         BYTE   W01
-        BYTE                   34
+        BYTE                   33
         BYTE   W01
         BYTE                   35
         BYTE   W01
-        BYTE                   37
+        BYTE                   36
         BYTE   W01
-        BYTE                   40
+        BYTE                   39
         BYTE   W01
-        BYTE                   42
+        BYTE                   41
         BYTE   W01
         BYTE                   43
         BYTE   W01
         BYTE                   46
         BYTE   W01
-        BYTE                   48
+        BYTE                   47
         BYTE   W01
         BYTE                   49
         BYTE   W01
+        BYTE                   52
+        BYTE   W01
         BYTE                   53
         BYTE   W01
-        BYTE                   54
-        BYTE   W01
-        BYTE                   56
-        BYTE   W01
         BYTE                   55
-        BYTE   W02
+        BYTE   W01
         BYTE                   54
+        BYTE   W02
+        BYTE                   53
         BYTE   W01
         BYTE                   52
         BYTE   W02
-        BYTE                   50
+        BYTE                   49
         BYTE   W01
         BYTE                   47
         BYTE           N90     Ds1   v089
-        BYTE   W06
+        BYTE   W09
         BYTE           VOL     48
         BYTE   W06
         BYTE                   49
         BYTE   W06
         BYTE                   50
-        BYTE   W03
+        BYTE   W06
         BYTE                   51
-        BYTE   W06
+        BYTE   W03
         BYTE                   52
-        BYTE   W06
-        BYTE                   53
-        BYTE   W03
-        BYTE                   54
-        BYTE   W03
-        BYTE                   55
-        BYTE   W01
-        BYTE                   56
-        BYTE   W16
-        BYTE                   55
-        BYTE   W02
-        BYTE                   54
         BYTE   W03
         BYTE                   53
+        BYTE   W06
+        BYTE                   55
+        BYTE   W19
+        BYTE                   54
         BYTE   W01
-        BYTE                   52
+        BYTE                   53
         BYTE   W02
-        BYTE                   51
+        BYTE                   52
         BYTE   W01
+        BYTE                   51
+        BYTE   W02
         BYTE                   50
+        BYTE   W01
+        BYTE                   49
         BYTE   W02
         BYTE                   48
         BYTE   W01
-        BYTE                   47
-        BYTE   W02
         BYTE                   46
+        BYTE   W02
+        BYTE                   45
         BYTE   W01
         BYTE                   44
         BYTE   W01
@@ -1369,13 +1367,13 @@ FalteringPrayer_3:
         BYTE   W01
         BYTE                   41
         BYTE   W02
-        BYTE                   40
+        BYTE                   39
         BYTE   W01
-        BYTE                   38
+        BYTE                   37
         BYTE   W02
         BYTE                   36
         BYTE   W01
-        BYTE                   34
+        BYTE                   33
         BYTE   W02
         BYTE                   31
         BYTE   W01
@@ -1395,12 +1393,14 @@ FalteringPrayer_3:
         BYTE   W02
         BYTE                   0
         BYTE   W01
-        BYTE                   40
+        BYTE                   39
         BYTE   W01
-        BYTE                   43
+        BYTE                   42
         BYTE           N44     Cn1   v077   gtp3
+        BYTE   W03
+        BYTE           VOL     43
         BYTE   W06
-        BYTE           VOL     44
+        BYTE                   44
         BYTE   W03
         BYTE                   45
         BYTE   W03
@@ -1415,15 +1415,15 @@ FalteringPrayer_3:
         BYTE                   50
         BYTE   W03
         BYTE                   51
-        BYTE   W06
-        BYTE                   52
         BYTE   W03
+        BYTE                   52
+        BYTE   W06
         BYTE                   53
         BYTE   W03
         BYTE                   54
-        BYTE   W06
+        BYTE   W03
         BYTE           N44     As0   v076   gtp3
-        BYTE           VOL     56
+        BYTE           VOL     55
         BYTE   W24
 // 002   ----------------------------------------
         BYTE   W24
@@ -1445,42 +1445,40 @@ FalteringPrayer_3_LOOP:
         BYTE           N92     As0   v083   gtp3
         BYTE   W24
 // 005   ----------------------------------------
-        BYTE   W24
-        BYTE   W03
-        BYTE           VOL     55
+        BYTE   W30
+        BYTE           VOL     54
         BYTE   W06
-        BYTE                   54
-        BYTE   W09
         BYTE                   53
-        BYTE   W06
+        BYTE   W09
         BYTE                   52
         BYTE   W03
         BYTE                   51
-        BYTE   W09
+        BYTE   W06
         BYTE                   50
         BYTE   W06
         BYTE                   49
-        BYTE   W06
+        BYTE   W09
         BYTE                   48
+        BYTE   W03
+        BYTE                   47
         BYTE           N44     Cn1   v077   gtp3
+        BYTE   W03
+        BYTE           VOL     48
         BYTE   W06
-        BYTE           VOL     49
+        BYTE                   49
         BYTE   W06
         BYTE                   50
-        BYTE   W03
-        BYTE                   51
         BYTE   W06
-        BYTE                   52
+        BYTE                   51
         BYTE   W03
 // 006   ----------------------------------------
-        BYTE   W03
+        BYTE                   52
+        BYTE   W06
         BYTE                   53
         BYTE   W06
         BYTE                   54
         BYTE   W06
         BYTE                   55
-        BYTE   W03
-        BYTE                   56
         BYTE   W06
         BYTE           N44     As0   v076   gtp3
         BYTE   W48
@@ -1507,53 +1505,52 @@ FalteringPrayer_4:
         BYTE                   16
         BYTE   W01
         BYTE                   17
-        BYTE   W02
-        BYTE                   18
-        BYTE   W01
-        BYTE                   19
         BYTE   W03
+        BYTE                   18
+        BYTE   W02
+        BYTE                   19
+        BYTE   W01
         BYTE                   20
         BYTE   W02
         BYTE                   21
         BYTE   W01
-        BYTE                   22
         BYTE           N80     Ds2   v080
         BYTE   W02
-        BYTE           VOL     23
+        BYTE           VOL     22
         BYTE   W01
+        BYTE                   23
+        BYTE   W02
         BYTE                   24
-        BYTE   W03
-        BYTE                   25
-        BYTE   W02
-        BYTE                   26
         BYTE   W01
-        BYTE                   27
-        BYTE   W02
-        BYTE                   28
+        BYTE                   25
         BYTE   W03
+        BYTE                   26
+        BYTE   W02
+        BYTE                   27
+        BYTE   W01
+        BYTE                   28
+        BYTE   W02
         BYTE                   29
         BYTE   W01
         BYTE                   30
-        BYTE   W02
-        BYTE                   31
-        BYTE   W01
-        BYTE                   32
         BYTE   W03
+        BYTE                   31
+        BYTE   W02
+        BYTE                   32
+        BYTE   W01
         BYTE                   33
         BYTE   W02
         BYTE                   34
-        BYTE   W01
-        BYTE                   35
-        BYTE   W02
-        BYTE                   36
         BYTE   W03
+        BYTE                   35
+        BYTE   W01
+        BYTE                   36
+        BYTE   W02
         BYTE                   37
         BYTE   W01
         BYTE                   38
-        BYTE   W02
+        BYTE   W03
         BYTE                   39
-        BYTE   W01
-        BYTE                   40
         BYTE   W36
         BYTE   W02
 // 001   ----------------------------------------
@@ -1587,19 +1584,19 @@ FalteringPrayer_5:
         BYTE           VOL     52
         BYTE           N30     Fn3   v065
         BYTE   W09
-        BYTE           VOL     50
-        BYTE   W01
-        BYTE                   48
+        BYTE           VOL     49
         BYTE   W01
         BYTE                   47
         BYTE   W01
+        BYTE                   46
+        BYTE   W01
         BYTE                   43
         BYTE   W01
         BYTE                   42
         BYTE   W01
         BYTE                   40
         BYTE   W01
-        BYTE                   38
+        BYTE                   37
         BYTE   W01
         BYTE                   36
         BYTE   W01
@@ -1607,85 +1604,93 @@ FalteringPrayer_5:
         BYTE   W01
         BYTE                   31
         BYTE   W01
-        BYTE                   30
+        BYTE                   29
         BYTE   W01
         BYTE                   28
         BYTE   W01
         BYTE                   25
         BYTE   W01
-        BYTE                   24
+        BYTE                   23
         BYTE   W01
         BYTE                   22
-        BYTE   W03
-        BYTE                   23
-        BYTE   W04
-        BYTE           N88     Ds3   v120   gtp1
-        BYTE           VOL     24
-        BYTE   W08
-        BYTE                   25
-        BYTE   W03
-        BYTE                   26
         BYTE   W06
-        BYTE                   27
+        BYTE                   23
+        BYTE   W01
+        BYTE           N88     Ds3   v120   gtp1
         BYTE   W03
+        BYTE           VOL     24
+        BYTE   W06
+        BYTE                   25
+        BYTE   W05
+        BYTE                   26
+        BYTE   W03
+        BYTE                   27
+        BYTE   W04
         BYTE                   28
         BYTE   W03
         BYTE                   29
-        BYTE   W04
+        BYTE   W05
         BYTE                   30
-        BYTE   W02
+        BYTE   W01
         BYTE                   31
-        BYTE   W04
+        BYTE   W03
         BYTE                   32
-        BYTE   W02
+        BYTE   W03
         BYTE                   33
         BYTE   W03
         BYTE                   34
-        BYTE   W01
+        BYTE   W02
         BYTE                   35
-        BYTE   W03
+        BYTE   W01
         BYTE                   36
-        BYTE   W02
+        BYTE   W03
         BYTE                   37
-        BYTE   W01
+        BYTE   W02
         BYTE                   38
-        BYTE   W03
-        BYTE                   40
-        BYTE   W03
-        BYTE                   42
-        BYTE   W02
-        BYTE                   43
         BYTE   W01
-        BYTE                   44
+        BYTE                   39
         BYTE   W02
-        BYTE                   45
+        BYTE                   40
+        BYTE   W01
+        BYTE                   41
+        BYTE   W02
+        BYTE                   42
+        BYTE   W01
+        BYTE                   43
+        BYTE   W02
+        BYTE                   44
         BYTE   W01
         BYTE                   46
         BYTE   W02
-        BYTE                   48
+        BYTE                   47
         BYTE   W01
-        BYTE                   50
+        BYTE                   49
         BYTE   W02
         BYTE                   51
         BYTE   W01
         BYTE                   52
         BYTE   W03
 // 001   ----------------------------------------
-        BYTE   W11
+        BYTE   W08
         BYTE                   51
-        BYTE   W02
+        BYTE   W05
         BYTE                   50
-        BYTE   W03
+        BYTE   W01
+        BYTE                   49
+        BYTE   W02
         BYTE                   48
-        BYTE   W03
-        BYTE                   46
+        BYTE   W01
+        BYTE                   47
+        BYTE   W02
+        BYTE                   45
         BYTE   W01
         BYTE                   44
         BYTE   W02
-        BYTE                   42
+        BYTE                   41
         BYTE   W01
         BYTE                   38
         BYTE   W01
+        BYTE                   37
         BYTE           N44     Cn2   v048   gtp3
         BYTE   W72
 // 002   ----------------------------------------
@@ -1712,7 +1717,7 @@ FalteringPrayer_5_LOOP:
 FalteringPrayer_6:
         BYTE   KEYSH   FalteringPrayer_key+0
 // 000   ----------------------------------------
-        BYTE           VOL     34
+        BYTE           VOL     33
         BYTE           VOICE   11
         BYTE   W03
         BYTE           PAN     c_v+63
@@ -1720,28 +1725,24 @@ FalteringPrayer_6:
         BYTE           N23     Fn3   v096
         BYTE           N23     Fn4   v073
         BYTE   W01
-        BYTE           VOL     25
+        BYTE           VOL     24
         BYTE   W02
         BYTE                   26
         BYTE   W01
         BYTE                   27
         BYTE   W02
-        BYTE                   29
+        BYTE                   28
         BYTE   W01
         BYTE                   30
         BYTE   W02
-        BYTE                   32
+        BYTE                   31
         BYTE   W01
         BYTE                   33
-        BYTE   W01
-        BYTE                   34
-        BYTE   W01
-        BYTE                   33
-        BYTE   W02
+        BYTE   W03
         BYTE                   32
         BYTE   W01
         BYTE                   31
-        BYTE   W01
+        BYTE   W02
         BYTE                   30
         BYTE   W01
         BYTE                   29
@@ -1754,7 +1755,7 @@ FalteringPrayer_6:
         BYTE   W01
         BYTE                   24
         BYTE   W01
-        BYTE                   23
+        BYTE                   22
         BYTE   W01
         BYTE                   19
         BYTE   W01
@@ -1762,53 +1763,49 @@ FalteringPrayer_6:
         BYTE           N90     Ds4   v070
         BYTE   W04
         BYTE           VOL     20
-        BYTE   W03
-        BYTE                   21
         BYTE   W05
+        BYTE                   21
+        BYTE   W04
         BYTE                   22
         BYTE   W03
         BYTE                   23
-        BYTE   W04
+        BYTE   W03
         BYTE                   24
-        BYTE   W02
+        BYTE   W03
         BYTE                   25
         BYTE   W03
         BYTE                   26
-        BYTE   W03
+        BYTE   W02
         BYTE                   27
         BYTE   W03
         BYTE                   28
-        BYTE   W01
-        BYTE                   29
-        BYTE   W02
-        BYTE                   30
         BYTE   W03
+        BYTE                   29
+        BYTE   W01
+        BYTE                   30
+        BYTE   W02
         BYTE                   31
         BYTE   W01
         BYTE                   32
         BYTE   W02
         BYTE                   33
-        BYTE   W01
-        BYTE                   34
-        BYTE   W19
-        BYTE                   33
-        BYTE   W06
+        BYTE   W23
         BYTE                   32
-        BYTE   W03
+        BYTE   W06
         BYTE                   31
         BYTE   W01
 // 001   ----------------------------------------
         BYTE   W04
         BYTE                   30
-        BYTE   W04
+        BYTE   W03
         BYTE                   29
         BYTE   W03
         BYTE                   28
-        BYTE   W02
-        BYTE                   27
         BYTE   W03
-        BYTE                   26
+        BYTE                   27
         BYTE   W01
+        BYTE                   26
+        BYTE   W03
         BYTE                   25
         BYTE   W02
         BYTE                   24
@@ -1823,17 +1820,20 @@ FalteringPrayer_6:
         BYTE   W01
         BYTE                   18
         BYTE   W01
+        BYTE                   17
         BYTE           N44     Cn3   v062   gtp3
         BYTE           N42     Ds3   v074   gtp1
-        BYTE   W07
-        BYTE           VOL     19
-        BYTE   W06
-        BYTE                   20
         BYTE   W03
-        BYTE                   21
-        BYTE   W05
-        BYTE                   22
+        BYTE           VOL     18
+        BYTE   W06
+        BYTE                   19
         BYTE   W04
+        BYTE                   20
+        BYTE   W05
+        BYTE                   21
+        BYTE   W04
+        BYTE                   22
+        BYTE   W03
         BYTE                   23
         BYTE   W03
         BYTE                   24
@@ -1845,38 +1845,34 @@ FalteringPrayer_6:
         BYTE                   27
         BYTE   W02
         BYTE                   28
-        BYTE   W01
-        BYTE                   29
-        BYTE   W02
+        BYTE   W03
         BYTE                   30
         BYTE   W01
         BYTE                   31
         BYTE   W02
-        BYTE                   33
+        BYTE                   32
         BYTE   W01
-        BYTE                   34
+        BYTE                   33
         BYTE   W05
         BYTE           N44     Cn3   v062   gtp3
         BYTE           N44     Ds3   v074   gtp1
-        BYTE   W14
-        BYTE           VOL     33
-        BYTE   W06
-        BYTE                   32
-        BYTE   W01
+        BYTE   W17
+        BYTE           VOL     32
+        BYTE   W04
 // 002   ----------------------------------------
-        BYTE   W04
-        BYTE                   31
-        BYTE   W04
-        BYTE                   30
-        BYTE   W03
-        BYTE                   29
-        BYTE   W05
-        BYTE                   28
-        BYTE   W01
-        BYTE                   27
-        BYTE   W03
-        BYTE                   26
         BYTE   W02
+        BYTE                   31
+        BYTE   W05
+        BYTE                   30
+        BYTE   W04
+        BYTE                   29
+        BYTE   W03
+        BYTE                   28
+        BYTE   W03
+        BYTE                   27
+        BYTE   W02
+        BYTE                   26
+        BYTE   W03
         BYTE                   25
         BYTE   W01
         BYTE                   24
@@ -1887,52 +1883,46 @@ FalteringPrayer_6:
         BYTE   W01
         BYTE           N44     Cn3   v063   gtp3
         BYTE           N44     Ds3   v075
-        BYTE   W02
+        BYTE   W05
         BYTE           VOL     23
         BYTE   W09
         BYTE                   24
-        BYTE   W06
+        BYTE   W03
         BYTE                   25
         BYTE   W06
         BYTE                   26
-        BYTE   W03
+        BYTE   W06
         BYTE                   27
         BYTE   W03
         BYTE                   28
-        BYTE   W03
-        BYTE                   29
         BYTE   W03
         BYTE                   30
         BYTE   W03
         BYTE                   31
         BYTE   W03
         BYTE                   33
-        BYTE   W01
-        BYTE                   34
-        BYTE   W06
+        BYTE   W07
         BYTE           N44     Bn2   v062   gtp3
         BYTE           N44     Dn3   v078   gtp1
-        BYTE   W14
-        BYTE           VOL     33
-        BYTE   W06
-        BYTE                   32
-        BYTE   W01
-// 003   ----------------------------------------
-        BYTE   W03
-        BYTE                   31
-        BYTE   W05
-        BYTE                   30
+        BYTE   W17
+        BYTE           VOL     32
         BYTE   W04
+// 003   ----------------------------------------
+        BYTE   W02
+        BYTE                   31
+        BYTE   W04
+        BYTE                   30
+        BYTE   W05
         BYTE                   29
         BYTE   W03
         BYTE                   28
-        BYTE   W02
+        BYTE   W03
         BYTE                   27
         BYTE   W03
         BYTE                   26
-        BYTE   W03
-        BYTE                   25
         BYTE   W01
+        BYTE                   25
+        BYTE   W03
 FalteringPrayer_6_LOOP:
         BYTE           VOL     24
         BYTE   W02
@@ -1940,58 +1930,56 @@ FalteringPrayer_6_LOOP:
         BYTE   W01
         BYTE           N44     Cn3   v075   gtp3
         BYTE           N44     Ds3   v090   gtp1
-        BYTE           VOL     22
-        BYTE   W18
+        BYTE           VOL     21
+        BYTE   W06
+        BYTE                   22
+        BYTE   W15
         BYTE                   23
         BYTE   W12
         BYTE                   24
         BYTE   W09
         BYTE                   25
-        BYTE   W09
+        BYTE   W06
         BYTE           N44     Cn3   v077   gtp3
         BYTE                   Ds3   v094
+        BYTE   W03
         BYTE           VOL     26
-        BYTE   W09
+        BYTE   W06
         BYTE                   27
         BYTE   W06
         BYTE                   28
-        BYTE   W03
-        BYTE                   29
-        BYTE   W03
+        BYTE   W06
 // 004   ----------------------------------------
+        BYTE                   29
         BYTE   W03
         BYTE                   30
         BYTE   W03
         BYTE                   31
-        BYTE   W03
+        BYTE   W06
         BYTE                   32
         BYTE   W03
         BYTE                   33
-        BYTE   W03
-        BYTE                   34
         BYTE   W12
         BYTE           N44     Cn3   v077   gtp3
         BYTE           N48     Fn3   v092
-        BYTE   W17
-        BYTE           VOL     33
+        BYTE   W23
+        BYTE           VOL     32
         BYTE   W09
-        BYTE                   32
-        BYTE   W06
         BYTE                   31
-        BYTE   W06
-        BYTE                   30
         BYTE   W03
-        BYTE                   29
+        BYTE                   30
+        BYTE   W06
+        BYTE                   28
         BYTE   W03
         BYTE                   27
         BYTE   W04
         BYTE           N92     As2   v076   gtp1
         BYTE           N22     Ds3   v094
-        BYTE   W08
+        BYTE   W11
         BYTE           VOL     28
-        BYTE   W06
+        BYTE   W09
         BYTE                   29
-        BYTE   W07
+        BYTE   W01
 // 005   ----------------------------------------
         BYTE   W02
         BYTE                   30
@@ -1999,25 +1987,21 @@ FalteringPrayer_6_LOOP:
         BYTE           N23     Dn3   v093
         BYTE   W05
         BYTE           VOL     31
-        BYTE   W03
+        BYTE   W06
         BYTE                   32
         BYTE   W03
         BYTE                   33
-        BYTE   W05
-        BYTE                   34
-        BYTE   W08
+        BYTE   W10
         BYTE           N24     Cn3   v095   gtp2
-        BYTE   W11
-        BYTE           VOL     33
-        BYTE   W08
-        BYTE                   32
-        BYTE   W04
+        BYTE   W16
+        BYTE           VOL     32
+        BYTE   W06
         BYTE                   31
-        BYTE   W01
+        BYTE   W02
         BYTE           N22     Dn3
         BYTE   W04
         BYTE           VOL     30
-        BYTE   W04
+        BYTE   W03
         BYTE                   29
         BYTE   W03
         BYTE                   28
@@ -2025,58 +2009,56 @@ FalteringPrayer_6_LOOP:
         BYTE                   27
         BYTE   W03
         BYTE                   26
-        BYTE   W02
-        BYTE                   25
         BYTE   W03
-        BYTE                   24
+        BYTE                   25
         BYTE   W01
+        BYTE                   24
+        BYTE   W02
         BYTE                   23
         BYTE   W01
         BYTE                   22
+        BYTE   W01
         BYTE           N44     Cn3   v062   gtp3
         BYTE           N42     Ds3   v074   gtp1
-        BYTE   W03
+        BYTE   W06
         BYTE           VOL     23
         BYTE   W09
         BYTE                   24
         BYTE   W06
+// 006   ----------------------------------------
         BYTE                   25
         BYTE   W03
-// 006   ----------------------------------------
-        BYTE   W03
         BYTE                   26
-        BYTE   W03
-        BYTE                   27
         BYTE   W06
-        BYTE                   29
+        BYTE                   27
         BYTE   W03
-        BYTE                   30
+        BYTE                   28
+        BYTE   W03
+        BYTE                   29
         BYTE   W03
         BYTE                   31
         BYTE   W03
-        BYTE                   33
+        BYTE                   32
         BYTE   W01
-        BYTE                   34
+        BYTE                   33
         BYTE   W05
         BYTE           N44     Cn3   v062   gtp3
         BYTE           N44     Ds3   v074   gtp1
-        BYTE   W14
-        BYTE           VOL     33
+        BYTE   W17
+        BYTE           VOL     32
         BYTE   W06
-        BYTE                   32
-        BYTE   W05
         BYTE                   31
-        BYTE   W04
-        BYTE                   30
-        BYTE   W03
-        BYTE                   29
         BYTE   W05
-        BYTE                   28
-        BYTE   W01
-        BYTE                   27
+        BYTE                   30
+        BYTE   W04
+        BYTE                   29
         BYTE   W03
-        BYTE                   26
+        BYTE                   28
+        BYTE   W03
+        BYTE                   27
         BYTE   W02
+        BYTE                   26
+        BYTE   W03
         BYTE                   25
         BYTE   W01
         BYTE                   24
@@ -2087,43 +2069,39 @@ FalteringPrayer_6_LOOP:
         BYTE   W01
         BYTE           N44     Cn3   v063   gtp3
         BYTE           N44     Ds3   v075
-        BYTE   W02
+        BYTE   W05
         BYTE           VOL     23
         BYTE   W09
         BYTE                   24
-        BYTE   W06
+        BYTE   W03
         BYTE                   25
         BYTE   W04
 // 007   ----------------------------------------
         BYTE   W02
         BYTE                   26
-        BYTE   W03
+        BYTE   W06
         BYTE                   27
         BYTE   W03
         BYTE                   28
-        BYTE   W03
-        BYTE                   29
         BYTE   W03
         BYTE                   30
         BYTE   W03
         BYTE                   31
         BYTE   W03
         BYTE                   33
-        BYTE   W01
-        BYTE                   34
-        BYTE   W06
+        BYTE   W07
         BYTE           N44     Bn2   v062   gtp3
         BYTE           N44     Dn3   v078   gtp1
-        BYTE   W15
-        BYTE           VOL     33
-        BYTE   W06
-        BYTE                   32
+        BYTE   W18
+        BYTE           VOL     32
         BYTE   W06
         BYTE                   31
-        BYTE   W03
-        BYTE                   30
         BYTE   W06
+        BYTE                   30
+        BYTE   W03
         BYTE                   29
+        BYTE   W03
+        BYTE                   28
         BYTE   W03
         BYTE                   27
         BYTE   W03

@@ -1,0 +1,389 @@
+//Event file generated from Sappy .s format.
+        #include "MPlayDef.event"
+
+        #define    Curing_BGM_grp  voicegroup000
+        #define    Curing_BGM_pri  0
+        #define    Curing_BGM_rev  0
+        #define    Curing_BGM_key  0
+
+        // .rodata
+        // Curing_BGM
+        ALIGN 4
+
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+Curing_BGM_0:
+        BYTE   KEYSH   Curing_BGM_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   124/2
+Curing_BGM_0_LOOP:
+        BYTE           VOICE   91
+        BYTE           VOL     56
+        BYTE           PAN     c_v+18
+        BYTE           N11     Cn4   v088
+        BYTE   W12
+        BYTE                   Cs4   v072
+        BYTE   W12
+        BYTE                   Ds4   v092
+        BYTE   W12
+        BYTE                   Fn4   v088
+        BYTE   W12
+        BYTE                   Cn4   v092
+        BYTE   W12
+        BYTE                   Cs4
+        BYTE   W12
+        BYTE                   Ds4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W12
+// 001   ----------------------------------------
+Curing_BGM_0_1:
+        BYTE           N11     Cn4   v088
+        BYTE   W12
+        BYTE                   Cs4   v072
+        BYTE   W12
+        BYTE                   Ds4   v092
+        BYTE   W12
+        BYTE                   Fn4   v088
+        BYTE   W12
+        BYTE                   Cn4   v092
+        BYTE   W12
+        BYTE                   Cs4
+        BYTE   W12
+        BYTE                   Ds4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W12
+        BYTE   PEND
+// 002   ----------------------------------------
+        BYTE   PATT
+         POIN2  Curing_BGM_0_1
+// 003   ----------------------------------------
+        BYTE           N11     Cn4   v088
+        BYTE   W12
+        BYTE                   Cs4   v072
+        BYTE   W12
+        BYTE                   Ds4   v092
+        BYTE   W12
+        BYTE                   Fn4   v088
+        BYTE   W12
+        BYTE                   Cn4   v092
+        BYTE   W12
+        BYTE                   Cs4
+        BYTE   W12
+        BYTE                   Ds4
+        BYTE   W12
+        BYTE                   Fn4
+        BYTE   W11
+        BYTE   GoTo
+         POIN2  Curing_BGM_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
+
+Curing_BGM_1:
+        BYTE   KEYSH   Curing_BGM_key+0
+// 000   ----------------------------------------
+Curing_BGM_1_LOOP:
+        BYTE           VOICE   11
+        BYTE           VOL     43
+        BYTE           PAN     c_v-19
+        BYTE           N04     As4   v088
+        BYTE   W06
+        BYTE                   As4   v036
+        BYTE   W06
+        BYTE                   Gs4   v072
+        BYTE   W06
+        BYTE                   Gs4   v016
+        BYTE   W06
+        BYTE                   Dn5   v092
+        BYTE   W06
+        BYTE                   Dn5   v036
+        BYTE   W06
+        BYTE                   Gn4   v088
+        BYTE   W06
+        BYTE                   Gn4   v036
+        BYTE   W06
+        BYTE           N05     As4   v092
+        BYTE   W06
+        BYTE                   As4   v040
+        BYTE   W06
+        BYTE                   Gs4   v092
+        BYTE   W06
+        BYTE                   Gs4   v040
+        BYTE   W06
+        BYTE                   Dn5   v092
+        BYTE   W06
+        BYTE                   Dn5   v036
+        BYTE   W06
+        BYTE           N04     Gn4   v092
+        BYTE   W06
+        BYTE                   Gn4   v036
+        BYTE   W06
+// 001   ----------------------------------------
+Curing_BGM_1_1:
+        BYTE           N05     As4   v088
+        BYTE   W06
+        BYTE                   As4   v036
+        BYTE   W06
+        BYTE                   Gs4   v072
+        BYTE   W06
+        BYTE                   Gs4   v016
+        BYTE   W06
+        BYTE                   Dn5   v092
+        BYTE   W06
+        BYTE                   Dn5   v036
+        BYTE   W06
+        BYTE           N04     Gn4   v088
+        BYTE   W06
+        BYTE                   Gn4   v036
+        BYTE   W06
+        BYTE           N05     As4   v092
+        BYTE   W06
+        BYTE                   As4   v040
+        BYTE   W06
+        BYTE                   Gs4   v092
+        BYTE   W06
+        BYTE                   Gs4   v040
+        BYTE   W06
+        BYTE                   Dn5   v092
+        BYTE   W06
+        BYTE                   Dn5   v036
+        BYTE   W06
+        BYTE           N04     Gn4   v092
+        BYTE   W06
+        BYTE                   Gn4   v036
+        BYTE   W06
+        BYTE   PEND
+// 002   ----------------------------------------
+        BYTE   PATT
+         POIN2  Curing_BGM_1_1
+// 003   ----------------------------------------
+        BYTE           N05     As4   v088
+        BYTE   W06
+        BYTE                   As4   v036
+        BYTE   W06
+        BYTE                   Gs4   v072
+        BYTE   W06
+        BYTE                   Gs4   v016
+        BYTE   W06
+        BYTE                   Dn5   v092
+        BYTE   W06
+        BYTE                   Dn5   v036
+        BYTE   W06
+        BYTE           N04     Gn4   v088
+        BYTE   W06
+        BYTE                   Gn4   v036
+        BYTE   W06
+        BYTE           N05     As4   v092
+        BYTE   W06
+        BYTE                   As4   v040
+        BYTE   W06
+        BYTE                   Gs4   v092
+        BYTE   W06
+        BYTE                   Gs4   v040
+        BYTE   W06
+        BYTE                   Dn5   v092
+        BYTE   W06
+        BYTE                   Dn5   v036
+        BYTE   W06
+        BYTE           N04     Gn4   v092
+        BYTE   W06
+        BYTE                   Gn4   v036
+        BYTE   W05
+        BYTE   GoTo
+         POIN2  Curing_BGM_1_LOOP
+        BYTE   FINE
+
+//****************** Track 2 (Midi-Chn.2) ******************//
+
+Curing_BGM_2:
+        BYTE   KEYSH   Curing_BGM_key+0
+// 000   ----------------------------------------
+Curing_BGM_2_LOOP:
+        BYTE           VOICE   52
+        BYTE           VOL     47
+        BYTE           PAN     c_v+39
+        BYTE           TIE     Cs3   v072
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W78
+        BYTE   W01
+        BYTE           BEND    c_v+2
+        BYTE   W03
+        BYTE                   c_v+5
+        BYTE   W02
+        BYTE                   c_v+8
+        BYTE   W01
+        BYTE                   c_v+9
+        BYTE   W02
+        BYTE                   c_v+11
+        BYTE   W01
+        BYTE                   c_v+13
+        BYTE   W01
+        BYTE                   c_v+15
+        BYTE   W01
+        BYTE                   c_v+18
+        BYTE   W01
+        BYTE                   c_v+22
+        BYTE   W01
+        BYTE                   c_v+30
+        BYTE   W01
+        BYTE                   c_v+36
+        BYTE   W01
+        BYTE                   c_v+45
+        BYTE   W01
+        BYTE                   c_v+48
+        BYTE   W01
+// 002   ----------------------------------------
+        BYTE                   c_v+55
+        BYTE   W01
+        BYTE                   c_v+57
+        BYTE   W01
+        BYTE                   c_v+58
+        BYTE   W01
+        BYTE                   c_v+60
+        BYTE   W03
+        BYTE                   c_v+61
+        BYTE   W02
+        BYTE                   c_v+63
+        BYTE   W88
+// 003   ----------------------------------------
+        BYTE   W92
+        BYTE   W02
+        BYTE           EOT
+        BYTE   W01
+        BYTE           BEND    c_v+0
+        BYTE   GoTo
+         POIN2  Curing_BGM_2_LOOP
+        BYTE   FINE
+
+//****************** Track 3 (Midi-Chn.3) ******************//
+
+Curing_BGM_3:
+        BYTE   KEYSH   Curing_BGM_key+0
+// 000   ----------------------------------------
+Curing_BGM_3_LOOP:
+        BYTE           VOICE   52
+        BYTE           VOL     44
+        BYTE           PAN     c_v-35
+        BYTE           TIE     Fn3   v072
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W92
+        BYTE   W02
+        BYTE           EOT
+        BYTE   W02
+// 002   ----------------------------------------
+        BYTE           TIE     As3
+        BYTE   W96
+// 003   ----------------------------------------
+        BYTE   W92
+        BYTE   W03
+        BYTE           EOT
+        BYTE   GoTo
+         POIN2  Curing_BGM_3_LOOP
+        BYTE   FINE
+
+//****************** Track 4 (Midi-Chn.4) ******************//
+
+Curing_BGM_4:
+        BYTE   KEYSH   Curing_BGM_key+0
+// 000   ----------------------------------------
+Curing_BGM_4_LOOP:
+        BYTE           VOICE   121
+        BYTE           VOL     62
+        BYTE           N06     Gn1   v064
+        BYTE   W12
+        BYTE           N03
+        BYTE   W24
+        BYTE           N06
+        BYTE   W12
+        BYTE                   Ds0
+        BYTE   W36
+        BYTE                   Gn1
+        BYTE   W12
+// 001   ----------------------------------------
+        BYTE   W12
+        BYTE           N03
+        BYTE   W24
+        BYTE           N06
+        BYTE   W12
+        BYTE                   Ds0
+        BYTE   W36
+        BYTE                   Gn1
+        BYTE   W12
+// 002   ----------------------------------------
+        BYTE                   Gn1
+        BYTE   W12
+        BYTE           N03
+        BYTE   W24
+        BYTE           N06
+        BYTE   W12
+        BYTE                   Ds0
+        BYTE   W36
+        BYTE                   Gn1
+        BYTE   W12
+// 003   ----------------------------------------
+        BYTE   W12
+        BYTE           N03
+        BYTE   W24
+        BYTE           N06
+        BYTE   W12
+        BYTE                   Ds0
+        BYTE   W36
+        BYTE                   Gn1
+        BYTE   W11
+        BYTE   GoTo
+         POIN2  Curing_BGM_4_LOOP
+        BYTE   FINE
+
+//****************** Track 5 (Midi-Chn.5) ******************//
+
+Curing_BGM_5:
+        BYTE   KEYSH   Curing_BGM_key+0
+// 000   ----------------------------------------
+Curing_BGM_5_LOOP:
+        BYTE           VOICE   105
+        BYTE           VOL     56
+        BYTE           N44     As2   v081   gtp1
+        BYTE   W48
+        BYTE           N12
+        BYTE   W48
+// 001   ----------------------------------------
+        BYTE   W84
+        BYTE           N10     Gs2   v064
+        BYTE   W12
+// 002   ----------------------------------------
+        BYTE           N44     As2   v081   gtp1
+        BYTE   W48
+        BYTE           N12
+        BYTE   W48
+// 003   ----------------------------------------
+        BYTE   W84
+        BYTE           N10     Gs2   v064
+        BYTE   W11
+        BYTE   GoTo
+         POIN2  Curing_BGM_5_LOOP
+        BYTE   FINE
+
+
+//********************** End of Song ***********************//
+
+        ALIGN 4
+Curing_BGM:
+        BYTE   6                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   Curing_BGM_pri          // Priority
+        BYTE   Curing_BGM_rev          // Reverb
+
+        POIN2   Curing_BGM_grp         
+
+        POIN2   Curing_BGM_0
+        POIN2   Curing_BGM_1
+        POIN2   Curing_BGM_2
+        POIN2   Curing_BGM_3
+        POIN2   Curing_BGM_4
+        POIN2   Curing_BGM_5
+
+        

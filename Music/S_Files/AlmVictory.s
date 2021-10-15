@@ -900,7 +900,7 @@ AlmVictory_2:
         .byte   KEYSH , AlmVictory_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 39
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           PAN   , c_v+23
         .byte           N10   , Fs1 , v100
         .byte   W24
@@ -1140,7 +1140,7 @@ AlmVictory_3:
         .byte   KEYSH , AlmVictory_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 40
-        .byte           VOL   , 43
+        .byte           VOL   , 42
         .byte           PAN   , c_v-14
         .byte   W96
 @ 001   ----------------------------------------
@@ -1175,9 +1175,9 @@ AlmVictory_3_LOOP:
 @ 015   ----------------------------------------
         .byte   W78
         .byte           VOL   , 40
-        .byte   W11
+        .byte   W17
         .byte                   41
-        .byte   W07
+        .byte   W01
 @ 016   ----------------------------------------
         .byte           N84   , Bn3 , v100 , gtp2
         .byte   W96
@@ -1246,7 +1246,7 @@ AlmVictory_3_17:
 @ 032   ----------------------------------------
         .byte   W96
 @ 033   ----------------------------------------
-        .byte           VOL   , 43
+        .byte           VOL   , 42
         .byte   GOTO
          .word  AlmVictory_3_LOOP
         .byte   FINE
@@ -1490,7 +1490,7 @@ AlmVictory_5:
         .byte   KEYSH , AlmVictory_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 47
-        .byte           VOL   , 48
+        .byte           VOL   , 47
         .byte           PAN   , c_v-14
         .byte           N72   , Fs1 , v100
         .byte   W96
@@ -1632,7 +1632,7 @@ AlmVictory_6:
         .byte   KEYSH , AlmVictory_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 124
-        .byte           VOL   , 42
+        .byte           VOL   , 41
         .byte           PAN   , c_v+2
         .byte           N03   , Cs2 , v100
         .byte           N03   , Cn1

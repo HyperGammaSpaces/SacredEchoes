@@ -1,0 +1,1857 @@
+//Event file generated from Sappy .s format.
+        #include "MPlayDef.event"
+
+        #define    UndiscoveredHorizons_grp  voicegroup000
+        #define    UndiscoveredHorizons_pri  0
+        #define    UndiscoveredHorizons_rev  0
+        #define    UndiscoveredHorizons_key  0
+
+        // .rodata
+        // UndiscoveredHorizons
+        ALIGN 4
+
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+UndiscoveredHorizons_0:
+        BYTE   KEYSH   UndiscoveredHorizons_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   136/2
+        BYTE           VOICE   41
+        BYTE           VOL     33
+        BYTE           PAN     c_v-38
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W96
+// 002   ----------------------------------------
+UndiscoveredHorizons_0_LOOP:
+        BYTE   W96
+// 003   ----------------------------------------
+        BYTE   W96
+// 004   ----------------------------------------
+        BYTE   W96
+// 005   ----------------------------------------
+        BYTE   W96
+// 006   ----------------------------------------
+        BYTE   W96
+// 007   ----------------------------------------
+        BYTE   W96
+// 008   ----------------------------------------
+        BYTE   W96
+// 009   ----------------------------------------
+        BYTE   W96
+// 010   ----------------------------------------
+UndiscoveredHorizons_0_10:
+        BYTE           N42     Fn3   v100   gtp1
+        BYTE                   Dn3
+        BYTE   W48
+        BYTE                   Dn4
+        BYTE           N42     As3   v100   gtp1
+        BYTE   W48
+        BYTE   PEND
+// 011   ----------------------------------------
+UndiscoveredHorizons_0_11:
+        BYTE           N42     Dn4   v100   gtp1
+        BYTE                   Ds3
+        BYTE   W48
+        BYTE           N21     Gn3
+        BYTE           N21     Cn4
+        BYTE   W24
+        BYTE                   Ds3
+        BYTE           N21     As3
+        BYTE   W24
+        BYTE   PEND
+// 012   ----------------------------------------
+UndiscoveredHorizons_0_12:
+        BYTE           N32     Fn3   v100
+        BYTE           N32     As3
+        BYTE   W36
+        BYTE           N10     Cn3
+        BYTE           N10     An3
+        BYTE   W12
+        BYTE           N32     Cn3
+        BYTE           N32     An3
+        BYTE   W36
+        BYTE           N10     As3
+        BYTE           N10     Ds4
+        BYTE   W12
+        BYTE   PEND
+// 013   ----------------------------------------
+UndiscoveredHorizons_0_13:
+        BYTE           N32     As3   v100
+        BYTE           N32     Ds4
+        BYTE   W36
+        BYTE           N10     Fn3
+        BYTE           N10     Dn4
+        BYTE   W12
+        BYTE           N42     Fn3   v100   gtp1
+        BYTE                   Dn4
+        BYTE   W48
+        BYTE   PEND
+// 014   ----------------------------------------
+UndiscoveredHorizons_0_14:
+        BYTE           N56     As2   v100   gtp2
+        BYTE                   Fn3
+        BYTE   W60
+        BYTE           N10     As2
+        BYTE           N10     Fn3
+        BYTE   W12
+        BYTE                   Dn3
+        BYTE           N10     As3
+        BYTE   W12
+        BYTE                   Fn3
+        BYTE           N10     Dn4
+        BYTE   W12
+        BYTE   PEND
+// 015   ----------------------------------------
+UndiscoveredHorizons_0_15:
+        BYTE           N42     As3   v100   gtp1
+        BYTE                   Fn4
+        BYTE   W48
+        BYTE           N21     Gn3
+        BYTE           N21     Ds4
+        BYTE   W24
+        BYTE                   Gn3
+        BYTE           N21     Dn4
+        BYTE   W24
+        BYTE   PEND
+// 016   ----------------------------------------
+UndiscoveredHorizons_0_16:
+        BYTE           N32     Gn3   v100
+        BYTE           N32     Dn4
+        BYTE   W36
+        BYTE           N10     Gn3
+        BYTE           N10     Cn4
+        BYTE   W12
+        BYTE           N32     Gn3
+        BYTE           N32     Cn4
+        BYTE   W36
+        BYTE           N10     Fn3
+        BYTE           N10     As3
+        BYTE   W12
+        BYTE   PEND
+// 017   ----------------------------------------
+UndiscoveredHorizons_0_17:
+        BYTE           N32     Fn3   v100
+        BYTE           N32     As3
+        BYTE   W36
+        BYTE           N10     Fn3
+        BYTE           N10     An3
+        BYTE   W12
+        BYTE           N42     Fn3   v100   gtp1
+        BYTE                   An3
+        BYTE   W48
+        BYTE   PEND
+// 018   ----------------------------------------
+        BYTE                   An3
+        BYTE           N42     Cn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     As3
+        BYTE           N21     Dn4
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE           N21     Ds4
+        BYTE   W24
+// 019   ----------------------------------------
+        BYTE           N32     Cn4
+        BYTE           N32     Ds4
+        BYTE   W36
+        BYTE           N10     As3
+        BYTE           N10     Dn4
+        BYTE   W12
+        BYTE           N42     As3   v100   gtp1
+        BYTE                   Dn4
+        BYTE   W48
+// 020   ----------------------------------------
+        BYTE                   As3
+        BYTE           N42     Dn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Cn4
+        BYTE           N21     En4
+        BYTE   W24
+        BYTE                   Dn4
+        BYTE           N21     Fn4
+        BYTE   W24
+// 021   ----------------------------------------
+        BYTE           N32     Dn4
+        BYTE           N32     Fn4
+        BYTE   W36
+        BYTE           N10     En4
+        BYTE           N10     Cn4
+        BYTE   W12
+        BYTE           N42     En4   v100   gtp1
+        BYTE                   Cn4
+        BYTE   W48
+// 022   ----------------------------------------
+        BYTE                   Cn4
+        BYTE           N42     En4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Dn4
+        BYTE           N21     Fn4
+        BYTE   W24
+        BYTE                   En4
+        BYTE           N21     Gn4
+        BYTE   W24
+// 023   ----------------------------------------
+        BYTE           N32     En4
+        BYTE           N32     Gn4
+        BYTE   W36
+        BYTE           N10     Fn4
+        BYTE           N10     An4
+        BYTE   W12
+        BYTE           N42     An3   v100   gtp1
+        BYTE                   Dn4
+        BYTE           N42     Fn4   v100   gtp1
+        BYTE   W48
+// 024   ----------------------------------------
+        BYTE   W96
+// 025   ----------------------------------------
+        BYTE   W96
+// 026   ----------------------------------------
+UndiscoveredHorizons_0_26:
+        BYTE           N42     An3   v100   gtp1
+        BYTE   W48
+        BYTE                   Cn4
+        BYTE   W48
+        BYTE   PEND
+// 027   ----------------------------------------
+UndiscoveredHorizons_0_27:
+        BYTE           N42     Fn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     En4
+        BYTE   W24
+        BYTE                   Fn4
+        BYTE   W24
+        BYTE   PEND
+// 028   ----------------------------------------
+UndiscoveredHorizons_0_28:
+        BYTE           N42     Dn4   v100   gtp1
+        BYTE   W48
+        BYTE                   Cn4
+        BYTE   W48
+        BYTE   PEND
+// 029   ----------------------------------------
+UndiscoveredHorizons_0_29:
+        BYTE           N21     As3   v100
+        BYTE   W24
+        BYTE                   An3
+        BYTE   W24
+        BYTE                   Gn3
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE   W24
+        BYTE   PEND
+// 030   ----------------------------------------
+UndiscoveredHorizons_0_30:
+        BYTE           N42     An3   v127   gtp1
+        BYTE   W48
+        BYTE                   Cn4
+        BYTE   W48
+        BYTE   PEND
+// 031   ----------------------------------------
+UndiscoveredHorizons_0_31:
+        BYTE           N42     As3   v127   gtp1
+        BYTE   W48
+        BYTE           N21     An3
+        BYTE   W24
+        BYTE                   Gn3
+        BYTE   W24
+        BYTE   PEND
+// 032   ----------------------------------------
+UndiscoveredHorizons_0_32:
+        BYTE           N42     An3   v127   gtp1
+        BYTE   W48
+        BYTE           N16     Gn3
+        BYTE   W18
+        BYTE                   An3
+        BYTE   W18
+        BYTE           N10     Gn3
+        BYTE   W12
+        BYTE   PEND
+// 033   ----------------------------------------
+UndiscoveredHorizons_0_33:
+        BYTE           N42     Gn3   v127   gtp1
+        BYTE   W48
+        BYTE                   Fs3
+        BYTE   W48
+        BYTE   PEND
+// 034   ----------------------------------------
+        BYTE   GoTo
+         POIN2  UndiscoveredHorizons_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
+
+UndiscoveredHorizons_1:
+        BYTE   KEYSH   UndiscoveredHorizons_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   66
+        BYTE           VOL     39
+        BYTE           PAN     c_v+42
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE           N06     As3   v051
+        BYTE           N06     Fn3
+        BYTE   W24
+        BYTE                   As3   v070
+        BYTE           N06     Fn3
+        BYTE   W24
+        BYTE                   As3   v089
+        BYTE           N06     Fn3
+        BYTE   W24
+        BYTE                   As3   v102
+        BYTE           N06     Fn3
+        BYTE   W24
+// 002   ----------------------------------------
+UndiscoveredHorizons_1_LOOP:
+        BYTE           N42     Fn3   v100   gtp1
+        BYTE                   Dn3
+        BYTE   W48
+        BYTE                   Dn4
+        BYTE           N42     As3   v100   gtp1
+        BYTE   W48
+// 003   ----------------------------------------
+        BYTE                   Gn3
+        BYTE           N42     Dn4   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Gn3
+        BYTE           N21     Cn4
+        BYTE   W24
+        BYTE                   As3
+        BYTE           N21     Gn3
+        BYTE   W24
+// 004   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_12
+// 005   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_13
+// 006   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_14
+// 007   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_15
+// 008   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_16
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_17
+// 010   ----------------------------------------
+        BYTE   W96
+// 011   ----------------------------------------
+        BYTE   W96
+// 012   ----------------------------------------
+        BYTE   W96
+// 013   ----------------------------------------
+        BYTE   W96
+// 014   ----------------------------------------
+        BYTE   W96
+// 015   ----------------------------------------
+        BYTE   W96
+// 016   ----------------------------------------
+        BYTE   W96
+// 017   ----------------------------------------
+        BYTE   W96
+// 018   ----------------------------------------
+        BYTE   W96
+// 019   ----------------------------------------
+        BYTE   W96
+// 020   ----------------------------------------
+        BYTE   W96
+// 021   ----------------------------------------
+        BYTE   W96
+// 022   ----------------------------------------
+        BYTE   W96
+// 023   ----------------------------------------
+        BYTE   W96
+// 024   ----------------------------------------
+UndiscoveredHorizons_1_24:
+        BYTE   W12
+        BYTE           N05     Fn3   v116
+        BYTE           N05     Dn4
+        BYTE   W06
+        BYTE                   An3
+        BYTE           N05     En4
+        BYTE   W06
+        BYTE                   Dn4
+        BYTE           N08     Fn4
+        BYTE   W12
+        BYTE           N05     Fn3
+        BYTE           N05     Dn4
+        BYTE   W06
+        BYTE                   An3
+        BYTE           N05     En4
+        BYTE   W06
+        BYTE           N42     Dn4   v117   gtp1
+        BYTE                   Fn4
+        BYTE   W48
+        BYTE   PEND
+// 025   ----------------------------------------
+UndiscoveredHorizons_1_25:
+        BYTE   W12
+        BYTE           N05     En3   v118
+        BYTE           N05     Dn4
+        BYTE   W06
+        BYTE                   Gn3
+        BYTE           N05     En4
+        BYTE   W06
+        BYTE           N09     Cn4
+        BYTE           N08     Fn4
+        BYTE   W12
+        BYTE           N05     En3   v119
+        BYTE           N05     Dn4
+        BYTE   W06
+        BYTE                   Gn3
+        BYTE           N05     En4
+        BYTE   W06
+        BYTE           N21     Cn4
+        BYTE           N21     Fn4
+        BYTE   W24
+        BYTE                   En4
+        BYTE           N21     Gn4
+        BYTE   W24
+        BYTE   PEND
+// 026   ----------------------------------------
+        BYTE           N42     Cn3   v127   gtp1
+        BYTE                   An3
+        BYTE           VOL     38
+        BYTE   W48
+        BYTE           N42     En3   v127   gtp1
+        BYTE                   Cn4
+        BYTE   W48
+// 027   ----------------------------------------
+        BYTE                   An3
+        BYTE           N42     Fn4   v127   gtp1
+        BYTE   W48
+        BYTE           N21     An3
+        BYTE           N21     En4
+        BYTE   W24
+        BYTE                   An3
+        BYTE           N21     Fn4
+        BYTE   W24
+// 028   ----------------------------------------
+        BYTE           N42     As3   v127   gtp1
+        BYTE                   Dn4
+        BYTE   W48
+        BYTE                   Fn3
+        BYTE           N42     Cn4   v127   gtp1
+        BYTE   W48
+// 029   ----------------------------------------
+        BYTE           N21     Gn3
+        BYTE           N21     As3
+        BYTE   W24
+        BYTE                   Cn3
+        BYTE           N21     An3
+        BYTE   W24
+        BYTE                   Cn3
+        BYTE           N21     Gn3
+        BYTE   W24
+        BYTE                   En3
+        BYTE           N21     Cn4
+        BYTE   W24
+// 030   ----------------------------------------
+        BYTE           N42     Cn3   v127   gtp1
+        BYTE                   An3
+        BYTE   W48
+        BYTE                   Gn3
+        BYTE           N42     Cn4   v127   gtp1
+        BYTE   W48
+// 031   ----------------------------------------
+        BYTE                   Fn3
+        BYTE           N42     As3   v127   gtp1
+        BYTE   W48
+        BYTE           N21     Cs3
+        BYTE           N21     An3
+        BYTE   W24
+        BYTE                   Cs3
+        BYTE           N21     Gn3
+        BYTE   W24
+// 032   ----------------------------------------
+        BYTE           N42     An3   v127   gtp1
+        BYTE                   Ds3
+        BYTE           N42     Cn3   v127   gtp1
+        BYTE   W48
+        BYTE           N16     Ds3
+        BYTE           N16     Gn3
+        BYTE   W18
+        BYTE                   Ds3
+        BYTE           N16     An3
+        BYTE   W18
+        BYTE           N10     Ds3
+        BYTE           N10     Gn3
+        BYTE   W12
+// 033   ----------------------------------------
+        BYTE           N42     Dn3   v127   gtp1
+        BYTE                   Gn3
+        BYTE   W48
+        BYTE                   Dn3
+        BYTE           N42     Fs3   v127   gtp1
+        BYTE   W48
+// 034   ----------------------------------------
+        BYTE           VOL     39
+        BYTE   GoTo
+         POIN2  UndiscoveredHorizons_1_LOOP
+        BYTE   FINE
+
+//****************** Track 2 (Midi-Chn.2) ******************//
+
+UndiscoveredHorizons_2:
+        BYTE   KEYSH   UndiscoveredHorizons_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   68
+        BYTE           VOL     29
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W96
+// 002   ----------------------------------------
+UndiscoveredHorizons_2_LOOP:
+        BYTE           N42     Fn3   v100   gtp1
+        BYTE                   Dn3
+        BYTE   W48
+        BYTE                   Dn4
+        BYTE           N42     As3   v100   gtp1
+        BYTE   W48
+// 003   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_11
+// 004   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_12
+// 005   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_13
+// 006   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_14
+// 007   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_15
+// 008   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_16
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_17
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_10
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_11
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_12
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_13
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_14
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_15
+// 016   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_16
+// 017   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_17
+// 018   ----------------------------------------
+        BYTE   W96
+// 019   ----------------------------------------
+        BYTE   W96
+// 020   ----------------------------------------
+        BYTE   W96
+// 021   ----------------------------------------
+        BYTE   W96
+// 022   ----------------------------------------
+        BYTE   W96
+// 023   ----------------------------------------
+        BYTE   W96
+// 024   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_1_24
+// 025   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_1_25
+// 026   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_26
+// 027   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_27
+// 028   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_28
+// 029   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_29
+// 030   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_30
+// 031   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_31
+// 032   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_32
+// 033   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_0_33
+// 034   ----------------------------------------
+        BYTE   GoTo
+         POIN2  UndiscoveredHorizons_2_LOOP
+        BYTE   FINE
+
+//****************** Track 3 (Midi-Chn.3) ******************//
+
+UndiscoveredHorizons_3:
+        BYTE   KEYSH   UndiscoveredHorizons_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   2
+        BYTE           VOL     43
+        BYTE           PAN     c_v-23
+        BYTE           N06     As1   v041
+        BYTE   W24
+        BYTE                   As1   v048
+        BYTE   W24
+        BYTE                   As1   v056
+        BYTE   W24
+        BYTE                   As1   v064
+        BYTE   W24
+// 001   ----------------------------------------
+        BYTE                   As1   v071
+        BYTE   W24
+        BYTE                   As1   v079
+        BYTE   W24
+        BYTE                   As1   v086
+        BYTE   W24
+        BYTE                   As1   v094
+        BYTE   W24
+// 002   ----------------------------------------
+UndiscoveredHorizons_3_LOOP:
+        BYTE           N18     As1   v100
+        BYTE   W24
+        BYTE           N06
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE           N18
+        BYTE   W24
+        BYTE           N06
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+// 003   ----------------------------------------
+UndiscoveredHorizons_3_3:
+        BYTE           N17     Ds1   v100
+        BYTE   W24
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Ds1
+        BYTE   W08
+        BYTE                   Ds1
+        BYTE   W08
+        BYTE           N17
+        BYTE   W24
+        BYTE           N06
+        BYTE   W08
+        BYTE                   Ds1
+        BYTE   W08
+        BYTE                   Ds1
+        BYTE   W08
+        BYTE   PEND
+// 004   ----------------------------------------
+UndiscoveredHorizons_3_4:
+        BYTE           N17     Fn1   v100
+        BYTE   W24
+        BYTE           N05
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE           N17
+        BYTE   W24
+        BYTE           N05
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE                   Fn1
+        BYTE   W08
+        BYTE   PEND
+// 005   ----------------------------------------
+UndiscoveredHorizons_3_5:
+        BYTE           N17     As1   v100
+        BYTE   W24
+        BYTE           N05
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE           N17
+        BYTE   W24
+        BYTE           N05
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE   PEND
+// 006   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_5
+// 007   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_3
+// 008   ----------------------------------------
+UndiscoveredHorizons_3_8:
+        BYTE           N18     En1   v100
+        BYTE   W24
+        BYTE           N06
+        BYTE   W08
+        BYTE                   En1
+        BYTE   W08
+        BYTE                   En1
+        BYTE   W08
+        BYTE           N18
+        BYTE   W24
+        BYTE           N06
+        BYTE   W08
+        BYTE                   En1
+        BYTE   W08
+        BYTE                   En1
+        BYTE   W08
+        BYTE   PEND
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_4
+// 010   ----------------------------------------
+        BYTE           N18     As1   v100
+        BYTE   W24
+        BYTE           N06
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE           N18
+        BYTE   W24
+        BYTE           N06
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+        BYTE                   As1
+        BYTE   W08
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_3
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_4
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_5
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_5
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_3
+// 016   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_8
+// 017   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_4
+// 018   ----------------------------------------
+        BYTE           N21     Fn1   v100
+        BYTE           N21     Fn2
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+// 019   ----------------------------------------
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+// 020   ----------------------------------------
+        BYTE                   Gn1
+        BYTE   W24
+        BYTE                   Gn1
+        BYTE   W24
+        BYTE                   Gn1
+        BYTE   W24
+        BYTE                   Gn1
+        BYTE   W24
+// 021   ----------------------------------------
+        BYTE                   Cn2
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+// 022   ----------------------------------------
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+// 023   ----------------------------------------
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+// 024   ----------------------------------------
+        BYTE           N64     As1
+        BYTE   W72
+        BYTE           N21
+        BYTE   W24
+// 025   ----------------------------------------
+        BYTE           N64     Cn2
+        BYTE   W72
+        BYTE           N21
+        BYTE   W24
+// 026   ----------------------------------------
+UndiscoveredHorizons_3_26:
+        BYTE           N21     Fn2   v100
+        BYTE   W24
+        BYTE                   Fn2
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+        BYTE                   En2
+        BYTE   W24
+        BYTE   PEND
+// 027   ----------------------------------------
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+// 028   ----------------------------------------
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+        BYTE                   An1
+        BYTE   W24
+// 029   ----------------------------------------
+        BYTE                   Gn1
+        BYTE   W24
+        BYTE                   Gn1
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+// 030   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_3_26
+// 031   ----------------------------------------
+        BYTE           N21     Dn2   v100
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE   W24
+        BYTE                   Cs2
+        BYTE   W24
+// 032   ----------------------------------------
+        BYTE                   Cn2
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+        BYTE                   Cn2
+        BYTE   W24
+// 033   ----------------------------------------
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+// 034   ----------------------------------------
+        BYTE   GoTo
+         POIN2  UndiscoveredHorizons_3_LOOP
+        BYTE   FINE
+
+//****************** Track 4 (Midi-Chn.4) ******************//
+
+UndiscoveredHorizons_4:
+        BYTE   KEYSH   UndiscoveredHorizons_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   73
+        BYTE           VOL     35
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W96
+// 002   ----------------------------------------
+UndiscoveredHorizons_4_LOOP:
+        BYTE   W96
+// 003   ----------------------------------------
+        BYTE   W96
+// 004   ----------------------------------------
+        BYTE   W96
+// 005   ----------------------------------------
+        BYTE   W96
+// 006   ----------------------------------------
+        BYTE   W96
+// 007   ----------------------------------------
+        BYTE   W96
+// 008   ----------------------------------------
+        BYTE   W96
+// 009   ----------------------------------------
+        BYTE   W96
+// 010   ----------------------------------------
+        BYTE   W96
+// 011   ----------------------------------------
+        BYTE   W96
+// 012   ----------------------------------------
+        BYTE   W96
+// 013   ----------------------------------------
+        BYTE   W96
+// 014   ----------------------------------------
+        BYTE   W96
+// 015   ----------------------------------------
+        BYTE   W96
+// 016   ----------------------------------------
+        BYTE   W96
+// 017   ----------------------------------------
+        BYTE   W96
+// 018   ----------------------------------------
+        BYTE           N42     An4   v100   gtp1
+        BYTE                   Cn5
+        BYTE   W48
+        BYTE           N21     As4
+        BYTE           N21     Dn5
+        BYTE   W24
+        BYTE                   Cn5
+        BYTE           N21     Ds5
+        BYTE   W24
+// 019   ----------------------------------------
+        BYTE           N32     Cn5
+        BYTE           N32     Ds5
+        BYTE   W36
+        BYTE           N10     As4
+        BYTE           N10     Dn5
+        BYTE   W12
+        BYTE           N42     As4   v100   gtp1
+        BYTE                   Dn5
+        BYTE   W48
+// 020   ----------------------------------------
+        BYTE                   As4
+        BYTE           N42     Dn5   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Cn5
+        BYTE           N21     En5
+        BYTE   W24
+        BYTE                   Dn5
+        BYTE           N21     Fn5
+        BYTE   W24
+// 021   ----------------------------------------
+        BYTE           N32     Dn5
+        BYTE           N32     Fn5
+        BYTE   W36
+        BYTE           N10     En5
+        BYTE           N10     Cn5
+        BYTE   W12
+        BYTE           N42     En5   v100   gtp1
+        BYTE                   Cn5
+        BYTE   W48
+// 022   ----------------------------------------
+        BYTE                   Cn5
+        BYTE           N42     En5   v100   gtp1
+        BYTE   W48
+        BYTE           N21     Dn5
+        BYTE           N21     Fn5
+        BYTE   W24
+        BYTE                   En5
+        BYTE           N21     Gn5
+        BYTE   W24
+// 023   ----------------------------------------
+        BYTE           N32     En5
+        BYTE           N32     Gn5
+        BYTE   W36
+        BYTE           N10     Fn5
+        BYTE           N10     An5
+        BYTE   W12
+        BYTE           N42     An4   v100   gtp1
+        BYTE                   Dn5
+        BYTE           N42     Fn5   v100   gtp1
+        BYTE   W48
+// 024   ----------------------------------------
+        BYTE   W96
+// 025   ----------------------------------------
+        BYTE   W96
+// 026   ----------------------------------------
+        BYTE   W96
+// 027   ----------------------------------------
+        BYTE   W96
+// 028   ----------------------------------------
+        BYTE   W96
+// 029   ----------------------------------------
+        BYTE   W96
+// 030   ----------------------------------------
+        BYTE                   An4   v127
+        BYTE   W48
+        BYTE                   Cn5
+        BYTE   W48
+// 031   ----------------------------------------
+        BYTE                   As4
+        BYTE   W48
+        BYTE           N21     An4
+        BYTE   W24
+        BYTE                   Gn4
+        BYTE   W24
+// 032   ----------------------------------------
+        BYTE           N42     An4   v127   gtp1
+        BYTE   W48
+        BYTE           N16     Gn4
+        BYTE   W18
+        BYTE                   An4
+        BYTE   W18
+        BYTE           N10     Gn4
+        BYTE   W12
+// 033   ----------------------------------------
+        BYTE           N42     Gn4   v127   gtp1
+        BYTE   W48
+        BYTE                   Fs4
+        BYTE   W48
+// 034   ----------------------------------------
+        BYTE   GoTo
+         POIN2  UndiscoveredHorizons_4_LOOP
+        BYTE   FINE
+
+//****************** Track 5 (Midi-Chn.5) ******************//
+
+UndiscoveredHorizons_5:
+        BYTE   KEYSH   UndiscoveredHorizons_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   47
+        BYTE           PAN     c_v-16
+        BYTE           N03     As1   v041
+        BYTE           VOL     36
+        BYTE   W04
+        BYTE           N03     As1   v043
+        BYTE   W04
+        BYTE                   As1   v046
+        BYTE   W04
+        BYTE                   As1   v048
+        BYTE   W04
+        BYTE                   As1   v051
+        BYTE   W04
+        BYTE                   As1   v053
+        BYTE   W04
+        BYTE                   As1   v056
+        BYTE   W04
+        BYTE                   As1   v059
+        BYTE   W04
+        BYTE                   As1   v061
+        BYTE   W04
+        BYTE                   As1   v064
+        BYTE   W04
+        BYTE                   As1   v066
+        BYTE   W04
+        BYTE                   As1   v069
+        BYTE   W04
+        BYTE                   As1   v071
+        BYTE   W04
+        BYTE                   As1   v074
+        BYTE   W04
+        BYTE                   As1   v076
+        BYTE   W04
+        BYTE                   As1   v079
+        BYTE   W04
+        BYTE                   As1   v081
+        BYTE   W04
+        BYTE                   As1   v084
+        BYTE   W04
+        BYTE                   As1   v086
+        BYTE   W04
+        BYTE                   As1   v092
+        BYTE   W04
+        BYTE                   As1   v094
+        BYTE   W04
+        BYTE                   As1   v097
+        BYTE   W04
+        BYTE                   As1   v098
+        BYTE   W04
+        BYTE                   As1   v104
+        BYTE   W04
+// 001   ----------------------------------------
+        BYTE                   As1   v092
+        BYTE   W04
+        BYTE                   As1   v093
+        BYTE   W04
+        BYTE                   As1   v094
+        BYTE   W04
+        BYTE                   As1   v095
+        BYTE   W04
+        BYTE                   As1   v096
+        BYTE   W04
+        BYTE                   As1   v098
+        BYTE   W04
+        BYTE                   As1   v099
+        BYTE   W04
+        BYTE                   As1   v100
+        BYTE   W04
+        BYTE                   As1   v101
+        BYTE   W04
+        BYTE                   As1   v102
+        BYTE   W04
+        BYTE                   As1   v103
+        BYTE   W04
+        BYTE                   As1   v104
+        BYTE   W04
+        BYTE                   As1   v105
+        BYTE   W04
+        BYTE                   As1   v106
+        BYTE   W04
+        BYTE                   As1   v107
+        BYTE   W04
+        BYTE                   As1   v108
+        BYTE   W04
+        BYTE                   As1   v110
+        BYTE   W04
+        BYTE                   As1   v111
+        BYTE   W04
+        BYTE                   As1   v112
+        BYTE   W04
+        BYTE                   As1   v113
+        BYTE   W04
+        BYTE                   As1   v114
+        BYTE   W04
+        BYTE                   As1   v115
+        BYTE   W04
+        BYTE                   As1   v116
+        BYTE   W04
+        BYTE                   As1   v117
+        BYTE   W04
+// 002   ----------------------------------------
+UndiscoveredHorizons_5_LOOP:
+        BYTE           N10     As1   v114
+        BYTE   W02
+        BYTE           VOL     31
+        BYTE   W22
+        BYTE           N21
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+// 003   ----------------------------------------
+UndiscoveredHorizons_5_3:
+        BYTE           N21     Ds1   v114
+        BYTE   W24
+        BYTE                   Ds1
+        BYTE   W24
+        BYTE                   Ds1
+        BYTE   W24
+        BYTE                   Ds1
+        BYTE   W24
+        BYTE   PEND
+// 004   ----------------------------------------
+UndiscoveredHorizons_5_4:
+        BYTE           N21     Fn1   v114
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W24
+        BYTE                   Fn1
+        BYTE   W24
+        BYTE   PEND
+// 005   ----------------------------------------
+UndiscoveredHorizons_5_5:
+        BYTE           N21     As1   v114
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE   PEND
+// 006   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_5_5
+// 007   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_5_3
+// 008   ----------------------------------------
+        BYTE           N21     En1   v114
+        BYTE   W24
+        BYTE                   En1
+        BYTE   W24
+        BYTE                   En1
+        BYTE   W24
+        BYTE                   En1
+        BYTE   W24
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_5_4
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_5_5
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_5_3
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_5_4
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_5_5
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_5_5
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_5_3
+// 016   ----------------------------------------
+        BYTE           N21     En1   v114
+        BYTE   W24
+        BYTE                   En1
+        BYTE   W24
+        BYTE                   En1
+        BYTE   W24
+        BYTE                   En1
+        BYTE   W20
+        BYTE           VOL     41
+        BYTE   W04
+// 017   ----------------------------------------
+        BYTE           N03     As1   v086
+        BYTE   W04
+        BYTE                   As1   v087
+        BYTE   W04
+        BYTE                   As1   v089
+        BYTE   W04
+        BYTE                   As1   v090
+        BYTE   W04
+        BYTE                   As1   v091
+        BYTE   W04
+        BYTE                   As1   v093
+        BYTE   W04
+        BYTE                   As1   v094
+        BYTE   W04
+        BYTE                   As1   v096
+        BYTE   W04
+        BYTE                   As1   v097
+        BYTE   W04
+        BYTE                   As1   v098
+        BYTE   W04
+        BYTE                   As1   v100
+        BYTE   W04
+        BYTE                   As1   v101
+        BYTE   W04
+        BYTE                   As1   v103
+        BYTE   W04
+        BYTE                   As1   v104
+        BYTE   W04
+        BYTE                   As1   v105
+        BYTE   W04
+        BYTE                   As1   v107
+        BYTE   W04
+        BYTE                   As1   v108
+        BYTE   W04
+        BYTE                   As1   v110
+        BYTE   W04
+        BYTE                   As1   v111
+        BYTE   W04
+        BYTE                   As1   v112
+        BYTE   W04
+        BYTE                   As1   v114
+        BYTE   W04
+        BYTE                   As1   v115
+        BYTE   W04
+        BYTE                   As1   v117
+        BYTE   W04
+        BYTE                   As1   v118
+        BYTE   W04
+// 018   ----------------------------------------
+        BYTE           N15     As1   v119
+        BYTE   W24
+        BYTE   W03
+        BYTE           N03     As1   v111
+        BYTE   W06
+        BYTE           N06     As1   v112
+        BYTE   W09
+        BYTE           N03     As1   v114
+        BYTE   W06
+        BYTE           N24     As1   v102
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+// 019   ----------------------------------------
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   Fs1
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE   W24
+// 020   ----------------------------------------
+        BYTE           N15     Dn2
+        BYTE   W24
+        BYTE   W03
+        BYTE           N03     Dn2   v111
+        BYTE   W06
+        BYTE           N06     Dn2   v112
+        BYTE   W09
+        BYTE           N03     Dn2   v114
+        BYTE   W06
+        BYTE           N24     Dn2   v102
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+// 021   ----------------------------------------
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+        BYTE                   Ds2
+        BYTE   W24
+        BYTE                   Dn2
+        BYTE   W24
+// 022   ----------------------------------------
+        BYTE           N15     As1
+        BYTE   W24
+        BYTE   W03
+        BYTE           N03     As1   v111
+        BYTE   W06
+        BYTE           N06     As1   v112
+        BYTE   W09
+        BYTE           N03     As1   v114
+        BYTE   W06
+        BYTE           N24     As1   v102
+        BYTE   W24
+        BYTE                   As1
+        BYTE   W24
+// 023   ----------------------------------------
+        BYTE           N03     Cn2   v067
+        BYTE   W04
+        BYTE                   Cn2   v069
+        BYTE   W04
+        BYTE                   Cn2   v072
+        BYTE   W04
+        BYTE                   Cn2   v074
+        BYTE   W04
+        BYTE                   Cn2   v076
+        BYTE   W04
+        BYTE                   Cn2   v079
+        BYTE   W04
+        BYTE                   Cn2   v081
+        BYTE   W04
+        BYTE                   Cn2   v083
+        BYTE   W04
+        BYTE                   Cn2   v085
+        BYTE   W04
+        BYTE                   Cn2   v088
+        BYTE   W04
+        BYTE                   Cn2   v090
+        BYTE   W04
+        BYTE                   Cn2   v092
+        BYTE   W04
+        BYTE                   Cn2   v095
+        BYTE   W04
+        BYTE                   Cn2   v097
+        BYTE   W04
+        BYTE                   Cn2   v099
+        BYTE   W04
+        BYTE                   Cn2   v102
+        BYTE   W04
+        BYTE                   Cn2   v104
+        BYTE   W04
+        BYTE                   Cn2   v106
+        BYTE   W04
+        BYTE                   Cn2   v109
+        BYTE   W04
+        BYTE                   Cn2   v111
+        BYTE   W04
+        BYTE                   Cn2   v113
+        BYTE   W04
+        BYTE                   Cn2   v116
+        BYTE   W04
+        BYTE                   Cn2   v118
+        BYTE   W04
+        BYTE                   Cn2   v120
+        BYTE   W04
+// 024   ----------------------------------------
+        BYTE           N21     As1   v123
+        BYTE   W72
+        BYTE   W03
+        BYTE           N03     As1   v102
+        BYTE   W06
+        BYTE           N06
+        BYTE   W09
+        BYTE           N03
+        BYTE   W06
+// 025   ----------------------------------------
+        BYTE           N48     Cn2   v120
+        BYTE   W72
+        BYTE                   Cn2   v102
+        BYTE   W24
+// 026   ----------------------------------------
+        BYTE   W96
+// 027   ----------------------------------------
+        BYTE   W96
+// 028   ----------------------------------------
+        BYTE   W96
+// 029   ----------------------------------------
+        BYTE   W96
+// 030   ----------------------------------------
+        BYTE   W96
+// 031   ----------------------------------------
+        BYTE   W96
+// 032   ----------------------------------------
+        BYTE   W96
+// 033   ----------------------------------------
+        BYTE           N03     Dn2   v072
+        BYTE   W04
+        BYTE                   Dn2   v074
+        BYTE   W04
+        BYTE                   Dn2   v076
+        BYTE   W04
+        BYTE                   Dn2   v078
+        BYTE   W04
+        BYTE                   Dn2   v080
+        BYTE   W04
+        BYTE                   Dn2   v083
+        BYTE   W04
+        BYTE                   Dn2   v085
+        BYTE   W04
+        BYTE                   Dn2   v087
+        BYTE   W04
+        BYTE                   Dn2   v089
+        BYTE   W04
+        BYTE                   Dn2   v091
+        BYTE   W04
+        BYTE                   Dn2   v093
+        BYTE   W04
+        BYTE                   Dn2   v095
+        BYTE   W04
+        BYTE                   Dn2   v097
+        BYTE   W04
+        BYTE                   Dn2   v099
+        BYTE   W04
+        BYTE                   Dn2   v102
+        BYTE   W04
+        BYTE                   Dn2   v104
+        BYTE   W04
+        BYTE                   Dn2   v106
+        BYTE   W04
+        BYTE                   Dn2   v108
+        BYTE   W04
+        BYTE                   Dn2   v110
+        BYTE   W04
+        BYTE                   Dn2   v112
+        BYTE   W04
+        BYTE                   Dn2   v114
+        BYTE   W04
+        BYTE                   Dn2   v116
+        BYTE   W04
+        BYTE                   Dn2   v119
+        BYTE   W04
+        BYTE                   Dn2   v121
+        BYTE   W04
+// 034   ----------------------------------------
+        BYTE           VOL     36
+        BYTE   GoTo
+         POIN2  UndiscoveredHorizons_5_LOOP
+        BYTE   FINE
+
+//****************** Track 6 (Midi-Chn.6) ******************//
+
+UndiscoveredHorizons_6:
+        BYTE   KEYSH   UndiscoveredHorizons_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   60
+        BYTE           VOL     28
+        BYTE           PAN     c_v+20
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W88
+        BYTE   W01
+        BYTE           VOL     22
+        BYTE   W07
+// 002   ----------------------------------------
+UndiscoveredHorizons_6_LOOP:
+        BYTE           N90     Fn3   v100   gtp1
+        BYTE                   Dn3
+        BYTE           N84     As1   v100   gtp2
+        BYTE           N92     As2   v100   gtp3
+        BYTE   W96
+// 003   ----------------------------------------
+UndiscoveredHorizons_6_3:
+        BYTE           N92     Gn3   v100   gtp1
+        BYTE                   As2
+        BYTE           N84     Ds1   v100   gtp2
+        BYTE           N92     Ds3   v100   gtp1
+        BYTE   W96
+        BYTE   PEND
+// 004   ----------------------------------------
+UndiscoveredHorizons_6_4:
+        BYTE           N92     Fn3   v100   gtp1
+        BYTE           N92     An3
+        BYTE           N84     Fn1   v100   gtp2
+        BYTE           N92     Cn3   v100   gtp1
+        BYTE   W96
+        BYTE   PEND
+// 005   ----------------------------------------
+UndiscoveredHorizons_6_5:
+        BYTE           N92     Dn3   v100   gtp3
+        BYTE                   As3
+        BYTE           N84     As1   v100   gtp2
+        BYTE           N92     Fn3   v100   gtp3
+        BYTE   W96
+        BYTE   PEND
+// 006   ----------------------------------------
+UndiscoveredHorizons_6_6:
+        BYTE           N90     Fn3   v100   gtp1
+        BYTE                   Dn3
+        BYTE           N84     As1   v100   gtp2
+        BYTE           N92     As2   v100   gtp3
+        BYTE   W96
+        BYTE   PEND
+// 007   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_3
+// 008   ----------------------------------------
+UndiscoveredHorizons_6_8:
+        BYTE           N92     Gn3   v100   gtp3
+        BYTE                   As2
+        BYTE           N92     En3   v100   gtp3
+        BYTE           N84     En1   v100   gtp2
+        BYTE           N92     As3   v100   gtp3
+        BYTE   W96
+        BYTE   PEND
+// 009   ----------------------------------------
+UndiscoveredHorizons_6_9:
+        BYTE           N92     An3   v100   gtp3
+        BYTE                   Cn3
+        BYTE           N92     Cn4   v100   gtp3
+        BYTE           N84     Fn1   v100   gtp2
+        BYTE           N92     Fn3   v100   gtp3
+        BYTE   W96
+        BYTE   PEND
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_6
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_3
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_4
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_5
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_6
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_3
+// 016   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_8
+// 017   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_9
+// 018   ----------------------------------------
+        BYTE           N84     Fn3   v100   gtp2
+        BYTE                   Cn3
+        BYTE   W96
+// 019   ----------------------------------------
+UndiscoveredHorizons_6_19:
+        BYTE           N84     As2   v100   gtp2
+        BYTE                   Fn3
+        BYTE           N84     Dn3   v100   gtp2
+        BYTE   W96
+        BYTE   PEND
+// 020   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_19
+// 021   ----------------------------------------
+        BYTE           N84     Gn3   v100   gtp2
+        BYTE                   Cn3
+        BYTE           N84     En3   v100   gtp2
+        BYTE                   Gn2
+        BYTE   W96
+// 022   ----------------------------------------
+        BYTE                   En3
+        BYTE           N84     An3   v100   gtp2
+        BYTE                   Cn3
+        BYTE   W96
+// 023   ----------------------------------------
+        BYTE                   An2
+        BYTE           N84     Dn3   v100   gtp2
+        BYTE                   Fn3
+        BYTE           N84     An3   v100   gtp2
+        BYTE   W96
+// 024   ----------------------------------------
+        BYTE                   Fn3
+        BYTE           N84     As3   v100   gtp2
+        BYTE                   As2
+        BYTE           N84     Dn3   v100   gtp2
+        BYTE   W96
+// 025   ----------------------------------------
+        BYTE                   En3
+        BYTE           N84     Cn4   v100   gtp2
+        BYTE                   Cn3
+        BYTE           N84     Gn3   v100   gtp2
+        BYTE   W90
+        BYTE           VOL     23
+        BYTE   W06
+// 026   ----------------------------------------
+        BYTE           N42     Fn3   v100   gtp1
+        BYTE                   Cn3
+        BYTE           N42     Cn4   v100   gtp1
+        BYTE   W02
+        BYTE           VOL     22
+        BYTE   W44
+        BYTE   W02
+        BYTE           N42     En3   v100   gtp1
+        BYTE                   Cn3
+        BYTE           N42     Cn4   v100   gtp1
+        BYTE   W48
+// 027   ----------------------------------------
+UndiscoveredHorizons_6_27:
+        BYTE           N42     Dn3   v100   gtp1
+        BYTE                   Fn3
+        BYTE           N42     As3   v100   gtp1
+        BYTE   W48
+        BYTE                   En3
+        BYTE           N42     An3   v100   gtp1
+        BYTE                   Cn3
+        BYTE   W48
+        BYTE   PEND
+// 028   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_6_27
+// 029   ----------------------------------------
+        BYTE           N42     Gn3   v100   gtp1
+        BYTE                   As2
+        BYTE           N42     Dn3   v100   gtp1
+        BYTE   W48
+        BYTE                   Cn3
+        BYTE           N42     En3   v100   gtp1
+        BYTE                   Cn4
+        BYTE   W48
+// 030   ----------------------------------------
+        BYTE                   Fn3
+        BYTE           N42     Cn3   v100   gtp1
+        BYTE                   Cn4
+        BYTE   W48
+        BYTE                   En3
+        BYTE           N42     Cn3   v100   gtp1
+        BYTE                   Cn4
+        BYTE   W48
+// 031   ----------------------------------------
+        BYTE                   Dn3
+        BYTE           N42     Fn3   v100   gtp1
+        BYTE                   As3
+        BYTE   W48
+        BYTE                   An3
+        BYTE           N42     Cs3   v100   gtp1
+        BYTE                   En3
+        BYTE   W48
+// 032   ----------------------------------------
+        BYTE           N84     An3   v100   gtp2
+        BYTE                   Ds3
+        BYTE           N84     Cn3   v100   gtp2
+        BYTE   W96
+// 033   ----------------------------------------
+        BYTE           N42     Dn3   v100   gtp1
+        BYTE                   As2
+        BYTE           N42     Gn3   v100   gtp1
+        BYTE   W48
+        BYTE                   Dn3
+        BYTE           N42     An2   v100   gtp1
+        BYTE                   Fs3
+        BYTE   W48
+// 034   ----------------------------------------
+        BYTE   GoTo
+         POIN2  UndiscoveredHorizons_6_LOOP
+        BYTE   FINE
+
+//****************** Track 7 (Midi-Chn.7) ******************//
+
+UndiscoveredHorizons_7:
+        BYTE   KEYSH   UndiscoveredHorizons_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   123
+        BYTE           VOL     60
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W96
+// 002   ----------------------------------------
+UndiscoveredHorizons_7_LOOP:
+        BYTE           N48     Cs2   v102
+        BYTE           N48     An2
+        BYTE   W96
+// 003   ----------------------------------------
+        BYTE   W96
+// 004   ----------------------------------------
+        BYTE   W96
+// 005   ----------------------------------------
+        BYTE   W96
+// 006   ----------------------------------------
+        BYTE   W96
+// 007   ----------------------------------------
+        BYTE   W96
+// 008   ----------------------------------------
+        BYTE   W96
+// 009   ----------------------------------------
+        BYTE   W96
+// 010   ----------------------------------------
+        BYTE                   Cs2
+        BYTE   W96
+// 011   ----------------------------------------
+        BYTE   W96
+// 012   ----------------------------------------
+        BYTE   W96
+// 013   ----------------------------------------
+        BYTE   W96
+// 014   ----------------------------------------
+        BYTE   W96
+// 015   ----------------------------------------
+        BYTE   W96
+// 016   ----------------------------------------
+        BYTE   W96
+// 017   ----------------------------------------
+        BYTE   W96
+// 018   ----------------------------------------
+        BYTE                   Cs2
+        BYTE           N48     An2
+        BYTE   W96
+// 019   ----------------------------------------
+        BYTE   W96
+// 020   ----------------------------------------
+        BYTE   W96
+// 021   ----------------------------------------
+        BYTE   W96
+// 022   ----------------------------------------
+        BYTE   W96
+// 023   ----------------------------------------
+        BYTE   W96
+// 024   ----------------------------------------
+        BYTE                   An2
+        BYTE   W96
+// 025   ----------------------------------------
+        BYTE           N06     Dn1   v064
+        BYTE           N48     An2   v102
+        BYTE   W24
+        BYTE           N24     Ds1   v064
+        BYTE   W24
+        BYTE           N06     Dn1
+        BYTE   W24
+        BYTE                   Dn1   v080
+        BYTE   W24
+// 026   ----------------------------------------
+UndiscoveredHorizons_7_26:
+        BYTE           N06     Dn1   v064
+        BYTE   W24
+        BYTE           N24     Ds1
+        BYTE   W24
+        BYTE           N06     Dn1
+        BYTE   W24
+        BYTE                   Dn1   v080
+        BYTE   W24
+        BYTE   PEND
+// 027   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_7_26
+// 028   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_7_26
+// 029   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_7_26
+// 030   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_7_26
+// 031   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_7_26
+// 032   ----------------------------------------
+        BYTE   PATT
+         POIN2  UndiscoveredHorizons_7_26
+// 033   ----------------------------------------
+        BYTE           N06     Dn1   v096
+        BYTE           N24     An2   v088
+        BYTE   W24
+        BYTE           N08     Cn2
+        BYTE   W08
+        BYTE                   Bn1
+        BYTE   W08
+        BYTE                   Cn2
+        BYTE   W08
+        BYTE           N06     Dn1   v096
+        BYTE           N24     An2   v088
+        BYTE   W24
+        BYTE           N08     Cn2
+        BYTE   W08
+        BYTE                   An1
+        BYTE   W08
+        BYTE                   Gn1
+        BYTE   W08
+// 034   ----------------------------------------
+        BYTE   GoTo
+         POIN2  UndiscoveredHorizons_7_LOOP
+        BYTE   FINE
+
+
+//********************** End of Song ***********************//
+
+        ALIGN 4
+UndiscoveredHorizons:
+        BYTE   8                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   UndiscoveredHorizons_pri // Priority
+        BYTE   UndiscoveredHorizons_rev // Reverb
+
+        POIN2   UndiscoveredHorizons_grp
+
+        POIN2   UndiscoveredHorizons_0
+        POIN2   UndiscoveredHorizons_1
+        POIN2   UndiscoveredHorizons_2
+        POIN2   UndiscoveredHorizons_3
+        POIN2   UndiscoveredHorizons_4
+        POIN2   UndiscoveredHorizons_5
+        POIN2   UndiscoveredHorizons_6
+        POIN2   UndiscoveredHorizons_7
+
+        

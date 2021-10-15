@@ -18,7 +18,7 @@ TurnwheelTheme_0:
 TurnwheelTheme_0_LOOP:
         .byte           VOICE , 77
         .byte           PAN   , c_v-17
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte   W24
         .byte           N12   , Dn3 , v102
         .byte   W12
