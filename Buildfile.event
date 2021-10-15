@@ -1,8 +1,11 @@
+#ifndef __LANGUAGE__
+	#define __LANGUAGE__ 0x1
+#endif
+
 #ifdef _FE8_
 
     #include "EAstdlib.event"
     #include "Definitions/_Master Definition Installer.event"
-	#include "Animations/AnimationAssociationTable.event"
 
     ORG FreeSpace
 	
@@ -13,16 +16,19 @@
 		#include "Text/_Spanish/InstallTextData.event"
 	#else
 		#ifdef LANGUAGE_FR
-		MESSAGE "Installing French text"
-		#include "Text/_French/InstallTextData.event"
+			MESSAGE "Installing French text"
+			#include "Text/_French/InstallTextData.event"
 		#else
-		MESSAGE "Installing English text"
-		#include "Text/_English/InstallTextData.event"
+			MESSAGE "Installing English text"
+			#include "Text/_English/InstallTextData.event"
+		#endif
 	#endif
+	
 	MESSAGE Text space used is__ (currentOffset - TextSpace)
 	
 	//CSV tables
 	TableSpace:
+	#include "Animations/AnimationAssociationTable.event"
 	#include "Engine_Hacks/Gaiden/ItemsAndConvoy/Shops.event"
     #include "Tables/Table Installer.event"
     MESSAGE Table space used is__ (currentOffset - TableSpace)
