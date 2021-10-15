@@ -1,6 +1,10 @@
 
 PUSH
 
+  ORG 0x5968
+  callHack_r0(MMPFix)
+  SHORT 0x46C0
+
   ORG 0x18a58
   #incbin "MeleeMagicFix/Melee and Magic Fix_fe8.dmp"
 
@@ -156,4 +160,14 @@ music10change:
 ALIGN 4
 #include "WalkingSoundsFix/Installer.event"
 
+ALIGN 4
 #include "ContinueBattleBGM/ContinueBattleBGM.event"
+
+//Fix minimug palette flash (by Huichelaar)
+#define MMP_Buffer 0x202B4AC
+// Set this to some free ram space, size 0x200 bytes.
+// I'm using the last 0x200 bytes of the textstring buffer.
+
+ALIGN 4
+MMPFix:
+#include "MMPFix/MMPFix.lyn.event"
