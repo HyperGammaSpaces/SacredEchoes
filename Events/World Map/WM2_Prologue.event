@@ -450,6 +450,17 @@ ColdOpen2(GMLoc_DeadMansMire,GMLoc_MireBoneyard)
 
 WMIntro_Act4_2_Celica:
 ColdOpen2(GMLoc_MireBoneyard, GMLoc_DolthKeep)
+/*
+	EVBIT_MODIFY 0x1
+	STAL 6
+	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_DolthKeep 0xA 0x1
+	WM_WAITFORCAM
+	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_MireBoneyard GMLoc_DolthKeep 0xFFF9 0x0
+	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
+	STAL 5
+	FADI 16
+	ENDA
+	*/
 
 WMIntro_Act4_3_Celica:
 //ColdOpen2(GMLoc_DolthKeep, GMLoc_SagesHamlet)
