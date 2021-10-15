@@ -2,11 +2,11 @@
 .org 0
 
 @params
-@slot 1 = coords information (0xYYYYXXXX)
+@slot B = coords information (0xYYYYXXXX)
 @slot 2 = status to inflict
 
 push {r4, r5, lr}
-ldr r2, =0x30004bc 		@ slot1
+ldr r2, =0x30004E4 		@ slotB
 ldrh r0, [r2]			@ x
 ldrh r1, [r2, #2]		@ y
 bl GetUnitFromCoords

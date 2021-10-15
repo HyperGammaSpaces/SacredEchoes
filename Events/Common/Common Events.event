@@ -14,6 +14,7 @@
 #define IfAliveDialog(character,alivetext,label) "CHECK_ALIVE character; BEQ label 0x0 0xC; Text(alivetext); LABEL label"
 #define CameraCursor(character) "CAM1 character; STAL 20; FlashCursor(character,60)"
 #define FadeOutMusic "MUSCMID 0x7FFF"
+#define EndMMS "SHORT $0D40 $0; WORD 0x80790a5"
 
 
 ALIGN 4

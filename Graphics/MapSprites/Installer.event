@@ -4,6 +4,10 @@ PUSH
 	ORG $7AC9C
 	BYTE $3B
 	
+	//New mapsprite palette
+	ORG $59EE20
+	#incbin "map_sprite_palette.pal.bin"
+	
 POP
 
 ALIGN 4
@@ -297,6 +301,9 @@ ALIGN 4
 
 TileMarkerMapSprite:
 #incbin "Dmp/_TileMarker.dmp"
+ALIGN 4
+WarpTileMapSprite:
+#incbin "Dmp/_WarpPanel.dmp"
 ALIGN 4
 BonewalkerBow_Map_Stand:
 #incbin "Dmp/bownewalker.dmp"

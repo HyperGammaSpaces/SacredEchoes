@@ -25,6 +25,9 @@
 .global TrapRework_NewUpdateAllLightRunes
 .type NewUpdateAllLightRunes, %function
 
+.global TrapRework_ExecTrapBranch
+.type TrapRework_ExecTrapBranch, %function
+
 
 .macro blh to, reg=r3
     ldr \reg, =\to
@@ -308,4 +311,47 @@ bx r0
 .ltorg
 .align
 
+TrapRework_ExecTrapBranch:
+	@jumped to from 3766E
+	cmp  r0, #0x8
+	beq  TrapBranch_Fire
+	cmp  r0, #0xB
+	beq  TrapBranch_Mine
+	cmp  r0, #0xF
+	beq  TrapBranch_MagicDrain
+	cmp  r0, #0x10
+	beq  TrapBranch_MineRecovered
+	
+	@new stuff here
+	cmp  r0, #0x17
+	ble  TrapBranch_WarpCheck
+	
+	
+	b    TrapBranch_DoNothing
+	
+	TrapBranch_WarpCheck:
+		cmp  r0, #0x15
+		blt  TrapBranch_DoNothing
+		ldr  r3, =0x080376D1
+		b    TrapBranch_Exit
+	
+	TrapBranch_Fire:
+		ldr  r3, =0x08037687
+		b    TrapBranch_Exit
+	TrapBranch_Mine:
+		ldr  r3, =0x08037691
+		b    TrapBranch_Exit
+	TrapBranch_MineRecovered:
+		ldr  r3, =0x080376F5
+		b    TrapBranch_Exit
+	TrapBranch_MagicDrain:
+		ldr  r3, =0x080376B9
+		b    TrapBranch_Exit
+		
+	TrapBranch_DoNothing:
+		ldr  r3, =0x08037739
+	TrapBranch_Exit:
+	bx   r3
 
+.align
+.ltorg

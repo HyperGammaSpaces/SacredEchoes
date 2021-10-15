@@ -60,6 +60,7 @@ The flags are as follows:
 	#include "Extensions/Hack Installation.txt"
 	#include EAstdlib.event
 
+	#define FE8UNCR(unit,condition) "SVAL 0x1 condition; _0x3429 unit"
 
 	PUSH
 	

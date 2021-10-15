@@ -1,5 +1,38 @@
 #define tilesetAnimation(speed, size, pointer)    "BYTE speed 0; SHORT size; POIN pointer"
 
+#define MinimapTileTable $A7A38
+#define TileHandler_Plain $A7B3C
+#define TileHandler_Road $A7B40
+#define TileHandler_VillageHouse $A7B4C
+#define TileHandler_ArmoryVendor $A7B50
+#define TileHandler_Arena $A7B54
+#define TileHandler_Fort $A7B58
+#define TileHandler_Gate $A7B5C
+#define TileHandler_Forest $A7B60
+#define TileHandler_Thicket $A7B64
+#define TileHandler_SandDesert $A7B68
+#define TileHandler_River $A7B6C
+#define TileHandler_Mntn $A7B78
+#define TileHandler_Peak $A7B7C
+#define TileHandler_Bridge $A7B80
+#define TileHandler_Water $A7B8A
+#define TileHandler_SeaLake $A7B96
+#define TileHandler_Floor $A7BA2
+#define TileHandler_Pillar $A7BA6
+#define TileHandler_Door $A7BAA
+#define TileHandler_Throne $A7BB4
+#define TileHandler_Chest $A7BB8
+#define TileHandler_StoneRuins $A7BBC
+#define TileHandler_Cliff $A7BC4
+#define TileHandler_Ballista $A7BD0
+#define TileHandler_Flat $A7BD4
+#define TileHandler_Stairs $A7BD8
+#define TileHandler_Walls $A7BE2
+#define TileHandler_Valley $A7BEE
+#define TileHandler_Blank $A7BF2
+
+#define SetMinimapTileHandler(tileType, pointer) "PUSH; ORG MinimapTileTable+(tileType*4); POIN pointer; POP"
+
 #include "Castle/Installer.event"
 #include "Cave/Installer.event"
 #include "Desert/Installer.event"
@@ -14,3 +47,18 @@
 #include "Temple/Installer.event"
 #include "Tower/Installer.event"
 #include "UpdatedVillage/Installer.event"
+
+//minimap stuff
+//A83D0 loads gfx @A8400, logic is elsewhere
+//A7C5C
+//A7BF8 CalcMinimapTileFromXY
+//A7A0C GetMinimapTileIDFromXY
+//switch case block at A7A34
+
+SetMinimapTileHandler(0x08, TileHandler_Pillar) //statue
+SetMinimapTileHandler(0x09, TileHandler_Water) //swamp
+SetMinimapTileHandler(0x14, TileHandler_Bridge) //drawbridge
+SetMinimapTileHandler(0x24, TileHandler_VillageHouse) //graves
+SetMinimapTileHandler(0x2E, TileHandler_Walls) //wall2
+SetMinimapTileHandler(0x30, TileHandler_Pillar) //statue2
+SetMinimapTileHandler(0x39, TileHandler_Pillar) //supply

@@ -1,0 +1,77 @@
+#ifdef TRAP_REWORK_INSTALLED
+
+	#define BlueWarpTrapID 0x15
+	#define RedWarpTrapID 0x16
+	#define GreenWarpTrapID 0x17
+
+	//0x66 = light rune map sprite
+	SetTrapMapSprite(BlueWarpTrapID,$63)
+	SetTrapMapSprite(RedWarpTrapID,$63)
+	SetTrapMapSprite(GreenWarpTrapID,$63)
+
+	SetTrapMapSpritePalette(BlueWarpTrapID,PlayerTrapPaletteWord)
+	SetTrapMapSpritePalette(RedWarpTrapID,EnemyTrapPaletteWord)
+	SetTrapMapSpritePalette(GreenWarpTrapID,NPCTrapPaletteWord)
+
+	#define WarpTrap(trapID,x,y,x2,y2) "BYTE trapID x y x2 y2 0"
+	
+	#define BlueWarp(x,y,x2,y2) "WarpTrap(BlueWarpTrapID,x,y,x2,y2); WarpTrap(BlueWarpTrapID,x2,y2,x,y)"
+	#define RedWarp(x,y,x2,y2) "WarpTrap(RedWarpTrapID,x,y,x2,y2); WarpTrap(RedWarpTrapID,x2,y2,x,y)"
+	#define GreenWarp(x,y,x2,y2) "WarpTrap(GreenWarpTrapID,x,y,x2,y2); WarpTrap(GreenWarpTrapID,x2,y2,x,y)"
+
+	#include "WarpTiles.lyn.event"
+	
+	SetTrapEventInit(BlueWarpTrapID,TrapRework_WarpTileInit)
+	SetTrapEventInit(RedWarpTrapID,TrapRework_WarpTileInit)
+	SetTrapEventInit(GreenWarpTrapID,TrapRework_WarpTileInit)
+
+	PUSH
+		//Make sure you have TrapRework_ExecTrapBranch installed at $3766E
+		ORG $376D0
+		callHack_r3(TrapRework_WarpTileExec)
+		SHORT $E02C //376dc
+	POP
+
+	ALIGN 4
+	WarpTileExec_Proc:
+		PROC_SLEEP(1)
+		PROC_WHILE_ROUTINE($78739)
+		
+		PROC_CALL_ROUTINE(StartWarpTileAnim|1) //Warpout gfx
+		PROC_SLEEP(10)
+		
+		//Flash mapsprite out
+		PROC_CALL_ROUTINE(WarpTile_FlashOut|1)
+		PROC_SLEEP(20)
+		
+		//Hide mapsprite
+		PROC_CALL_ROUTINE(WarpTile_HideSprite|1)
+		PROC_SLEEP(8)
+		
+		//Move unit
+		PROC_CALL_ROUTINE(WarpTile_MoveUnit|1)
+		PROC_SLEEP(30)
+		
+		//Move camera
+		PROC_CALL_ROUTINE(WarpTile_MoveCamera|1)
+		PROC_SLEEP(2)
+		
+		//Warp in gfx
+		PROC_CALL_ROUTINE(EndWarpTileAnim|1)
+		PROC_SLEEP(10)
+		
+		//Show mapsprite
+		//Flash mapsprite in
+		PROC_CALL_ROUTINE(WarpTile_ShowSprite|1)
+		PROC_CALL_ROUTINE(WarpTile_FlashIn|1)
+		PROC_SLEEP(40)
+		
+		//Clean up
+		PROC_CALL_ROUTINE(WarpTile_CleanUp|1)
+		PROC_YIELD
+		
+		PROC_END
+		
+#else
+	ERROR "WarpTiles requires TrapRework!"
+#endif // TRAP_REWORK_INSTALLED

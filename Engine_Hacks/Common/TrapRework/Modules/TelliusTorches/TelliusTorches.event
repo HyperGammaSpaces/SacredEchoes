@@ -7,7 +7,7 @@
 	//The vision range when turn on is defined in ext2 (+0x4)
 	//Unlike torch staff traps, these do not lose their vision over time
 	
-	#define TelliusTorchTrapID 0xF //just sequentially after what i'm aware of being used by other hacks already
+	#define TelliusTorchTrapID TorchTrapID //just sequentially after what i'm aware of being used by other hacks already
 	#define TelliusTorchOffMapSpriteID 0x69
 	#define TelliusTorchOnMapSpriteID 0x6A
 	

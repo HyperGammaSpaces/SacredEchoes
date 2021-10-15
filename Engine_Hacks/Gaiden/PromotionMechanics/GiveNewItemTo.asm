@@ -40,8 +40,6 @@ cmp r1, #0x4	@alm t2
 beq AddBow
 cmp r1, #0x9	@knight
 beq AddAxe
-cmp r1, #0xB	@baron
-beq AddSword
 cmp r1, #0x40	@warrior
 beq AddBow
 b End

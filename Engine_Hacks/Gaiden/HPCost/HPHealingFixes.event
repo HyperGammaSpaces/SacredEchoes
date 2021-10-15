@@ -1,9 +1,9 @@
 PUSH
 ORG $52354
-POIN NewEfxHPBar
+POIN EfxHpBarProc_New
 
 ORG $52a40
-POIN NewEfxHPBarLive
+POIN EfxHpBarHealProc_New
 
 ORG $552D2
 SHORT $46C0 //nop
@@ -97,29 +97,25 @@ BYTE 00 $48 00 $47 //jumptohack with r0
 POIN NosferaFix|1
 POP
 
-NewEfxHPBar:
-WORD 1
-POIN $da3e4
-WORD 3
-POIN efxHPBarRoutine|1
+EfxHpBarProc_New:
 
-WORD 3
-POIN $52505
-WORD 3
-POIN $525a5
-WORD 0 0
+	PROC_SET_NAME($da3e4)
+	PROC_LOOP_ROUTINE(efxHPBarRoutine|1)
 
-NewEfxHPBarLive: //for healing
-WORD 1
-POIN $da3e4
-WORD 3
-POIN efxHPBarLiveRoutine|1
+	PROC_LOOP_ROUTINE($52504+1)
+	PROC_LOOP_ROUTINE($525a4+1)
+	
+	PROC_END
 
-WORD 3
-POIN $52505
-WORD 3
-POIN $525a5
-WORD 0 0
+EfxHpBarHealProc_New: //for healing
+
+	PROC_SET_NAME($da3e4)
+	PROC_LOOP_ROUTINE(efxHPBarLiveRoutine|1)
+
+	PROC_LOOP_ROUTINE($52504+1)
+	PROC_LOOP_ROUTINE($525a4+1)
+	
+	PROC_END
 
 /*
 setAttackerHP:
@@ -140,7 +136,7 @@ efxHPBarLiveRoutine:
 
 MakeHPEffectsWorkOnMiss:
 #incbin "PlayHpEffectsEvenIfMiss.dmp"
-POIN NewEfxHPBar
+POIN EfxHpBarProc_New
 POIN efxHPBarParent+1
 
 MakeHPEffectsWorkOnMiss_Nos:

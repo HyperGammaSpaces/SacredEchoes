@@ -1,7 +1,7 @@
 
 
 	#include "asm/TrapRework.lyn.event"	
-	#include "asm/TrapReworkDamageTrap.lyn.event"	
+	#include "asm/TrapReworkDamageTrap.lyn.event"		
 	
 	PUSH
 		ORG $27318
@@ -33,11 +33,79 @@
 		ORG $02e470
 		jumpToHack(TrapRework_NewUpdateAllLightRunes)	
 		
+		//fix bad gas trap gfx decomp
+		ORG $1F560
+		SHORT $E01A
+		ORG $1F568
+		SHORT $D116
+		
+		ORG $2E85E
+		SHORT $2807 $D00C
+		ORG $2E866
+		BYTE DrainFloorTrapID $28
+		SHORT $D001 $E015
+		
+		ORG $2E8CA
+		SHORT $2B04 $D007 $2B06 $D055 $2B07 $D046
+		BYTE DrainFloorTrapID $2B
+		SHORT $D001 $E05C
+		ORG $2E8FA
+		SHORT $46C0
+		
+		//36364
+		ORG $36382
+		SHORT $2864 $DA08 //bge to gas trap ladder
+		SHORT $2804 $D017 //0x4 to new space 363ba
+		SHORT $2806 $D040 //0x6 to 36410
+		SHORT $2807 $D038 //0x7 to 36404
+		SHORT $280F $D019 //0xF to new space 363ca
+		SHORT $E042 //b 3641e
+		
+		//gas trap ladder now at 36398
+		//64=0x3
+		//65=0x2
+		//66=0x0
+		//67=0x1
+		//cmp r0, #0x64
+		SHORT $2864 $DC01 $2303 $E029
+		SHORT $2865 $DC01 $2302 $E025
+		SHORT $2866 $DC01 $2300 $E021
+		SHORT $2867 $D101 $2301 $E01D
+		SHORT $E031 //b 3641e
+		
+		//363ba new firetrap space:
+		SHORT $2100 $5661 $2201 $56A2 $1C28
+		BL($1F68C)
+		SHORT $E029
+		
+		//363ca new custom trap space:
+		SHORT $2100 $5661 $2201 $56A2 $1C28
+		callHack_r3(TrapRework_CustomDamageTrapAnimStart)
+		SHORT $E01D
+		
+		ORG $363F2 
+		SHORT $2301 //mov r3, 0x1
+		ORG $363F4 //all gas traps point here now
+		SHORT $2100 $5661 $2201 $56A2 $1C28
+		
+		ORG $36492
+		BYTE 1
+		ORG $36446
+		BYTE 1
+		
+		ORG $3766E
+		SHORT $46C0
+		jumpToHack(TrapRework_ExecTrapBranch)
+		
 		ORG $376B8
 		SHORT $4804 $1C31
 		BL($2CE0) //ProcStartBlocking
 		SHORT $1C01 $3050 $8004 $654D $E036 $46C0
-		WORD DrainFloorTrapExec_Proc
+		POIN DrainFloorTrapExec_Proc
+		
+		//375e8 GetPickTrapType
+		//37660 ExecTrap
+		//37744 HandlePostActionTraps
 	POP
 	
 	ALIGN 4
@@ -56,6 +124,14 @@
 		
 		PROC_END
 	
+	ALIGN 4
+	DamageTrapAnimProc:
+		PROC_YIELD
+		
+		PROC_CALL_ROUTINE(TrapRework_CustomDamageTrapAnimPlay|1) //MineFireEffectGFX_Setup
+		PROC_WHILE_ROUTINE($97D1)
+		
+		PROC_END
 	
 	/*
 	ALIGN 4
