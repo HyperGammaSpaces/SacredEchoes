@@ -108,9 +108,6 @@ PUSH
 	POIN RescueStaffP4Jump		//rewarp
 	POIN AnewP4Jump			 	//new (5A) anew
 	
-	ORG $28F90					//old (8C) anew
-	POIN FortifyStaffP4Jump
-	
 	//Force battle anims off for certain staff
 	ORG $581D0
 	SHORT $2A4C $D003 //beq 0x4C
@@ -337,29 +334,35 @@ ALIGN 4
 //need to make new map anim proc
 
 RewarpMapAnimProc: //formerly at $089A5214
-SHORT $2; SHORT $0; 	POIN MapAnim_SubjectUnitWarpRing+1	//Call Routine [ASM:0x8081B71 MapAnim_TargetUnitWarpRing]
-SHORT $E; SHORT $A; 	WORD $0	//Sleep for 10 frames
-SHORT $2; SHORT $0; 	POIN MapAnim_SubjectUnitFlashOut+1	//Call Routine [ASM:0x8081CD5 MapAnim_TargetUnitFlashOut]
-SHORT $E; SHORT $14; 	WORD $0	//Sleep for 20 frames
-SHORT $2; SHORT $0; 	POIN MapAnim_SubjectStarExplosion+1	//Call Routine [ASM:0x8081D41 MapAnim_TargetStarExplosion]
-SHORT $E; SHORT $2; 	WORD $0 //Sleep for 2 frames
-SHORT $2; SHORT $0; 	POIN MapAnim_SubjectHide+1	//Call Routine [ASM:0x8081D1D MapAnim_TargetHide]
-SHORT $E; SHORT $8; 	WORD $0	//Sleep for 8 frames
-SHORT $2; SHORT $0; 	POIN MapAnim_MoveSubjectForWarp+1	//Call Routine [ASM:0x8081E05 MapAnim_MoveTargetForWarp]
-SHORT $E; SHORT $1E; 	WORD $0 //Sleep for 30 frames
-SHORT $2; SHORT $0; 	POIN MapAnim_MoveCameraOnWarpSubject+1	//Call Routine [ASM:0x80815ED MapAnim_MoveCameraOnWarpTarget]
-SHORT $E; SHORT $2; 	WORD $0	//Sleep for 2 frames
-SHORT $2; SHORT $0; 	POIN MapAnim_SubjectStarImplosion+1	//Call Routine [ASM:0x8081D85 MapAnim_TargetStarImplosion]
-SHORT $E; SHORT $28; 	WORD $0	//Sleep for 40 frames
-SHORT $2; SHORT $0; 	POIN MapAnim_WarpSubjectWarpRing+1	//Call Routine [ASM:0x8081BCD MapAnim_WarpTargetWarpRing]
-SHORT $E; SHORT $A; 	WORD $0	//Sleep for 10 frames
-SHORT $2; SHORT $0; 	POIN MapAnim_SubjectShow+1	//Call Routine [ASM:0x8081DE1 MapAnim_TargetShow]
-SHORT $2; SHORT $0; 	POIN MapAnim_SubjectUnitFlashIn+1	//Call Routine [ASM:0x8081CF9 MapAnim_TargetUnitFlashIn]
-SHORT $E; SHORT $10; 	WORD $0	//Sleep for 16 frames
-SHORT $E; SHORT $A; 	WORD $0	//Sleep for 10 frames
-SHORT $2; SHORT $0; 	POIN ClearBattleChangeData+1	//Call Routine [ClearBattleChangeData]
-SHORT $E; SHORT $1E; 	WORD $0	//Sleep for 30 frames
-WORD $0; WORD $0	//End (Deletes Self)
+
+	PROC_CALL_ROUTINE(MapAnim_SubjectUnitWarpRing+1)
+	PROC_SLEEP(10)
+	PROC_CALL_ROUTINE(MapAnim_SubjectUnitFlashOut+1)
+	PROC_SLEEP(20)
+	
+	PROC_CALL_ROUTINE(MapAnim_SubjectStarExplosion+1)
+	PROC_SLEEP(2)
+	PROC_CALL_ROUTINE(MapAnim_SubjectHide+1)
+	PROC_SLEEP(8)
+	
+	PROC_CALL_ROUTINE(MapAnim_MoveSubjectForWarp+1)
+	PROC_SLEEP(30)
+	PROC_CALL_ROUTINE(MapAnim_MoveCameraOnWarpSubject+1)
+	PROC_SLEEP(2)
+	PROC_CALL_ROUTINE(MapAnim_SubjectStarImplosion+1)
+	PROC_SLEEP(40)
+	
+	PROC_CALL_ROUTINE(MapAnim_WarpSubjectWarpRing+1)
+	PROC_SLEEP(10)
+	PROC_CALL_ROUTINE(MapAnim_SubjectShow+1)
+	
+	PROC_CALL_ROUTINE(MapAnim_SubjectUnitFlashIn+1)
+	PROC_SLEEP(16)
+	PROC_SLEEP(10)
+	PROC_CALL_ROUTINE(ClearBattleChangeData+1)
+	PROC_SLEEP(30)
+	
+	PROC_END
 
 MapAnim_SubjectUnitWarpRing:
 #incbin "RewarpProc/MapAnim_SubjectUnitWarpRing.dmp"

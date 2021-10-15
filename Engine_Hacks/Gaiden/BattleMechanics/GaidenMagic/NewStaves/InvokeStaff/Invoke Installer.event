@@ -9,6 +9,16 @@ PUSH
 		B(P4Ladder_End)
 	*/
 	
+	//Mogall ability stuff
+	ORG $289B4
+	POIN $28B2C
+	ORG $2FD94
+	POIN $2FEB4
+	ORG $28F90
+	POIN $2900C
+	ORG $72698
+	POIN $726A4
+	
 	//Change usability routine for Invoke
 	ORG $28B2C	//Invoke
 		New_Use(InvokeStaff_RangeSetup)
@@ -114,11 +124,18 @@ ALIGN 4
 
 
 SummonTable:
-BYTE Silque 	0x3F 	DreadFighter 	0
-BYTE Tatiana 	0x3F 	PegasusKnight 	0
-BYTE Genny 		0x3F 	Soldier 		0
-BYTE Mikhail	Terror_Gargoyle	Gargoyle		0
-BYTE CantorBoss Terror_Revenant 	Revenant 		0
+BYTE Silque 			PlayerUnitSummon 	DreadFighter 	0
+BYTE Tatiana 			PlayerUnitSummon 	PegasusKnight 	0
+BYTE Genny 				PlayerUnitSummon 	Soldier 		0
+BYTE Mikhail			Terror_Gargoyle		Gargoyle		0
+BYTE Garcia				Terror_Gargoyle		Gargoyle		0
+BYTE Cantor_Gargs		Terror_Gargoyle		Gargoyle		0
+BYTE Dolth				Terror_Necrodragon	Necrodragon		0
+BYTE Jedah_Ch4			Terror_Mogall		Mogall			0
+BYTE Terror_Mogall		Terror_Mogall		Mogall			0
+BYTE Terror_ArchMogall		Terror_ArchMogall		ArchMogall			0
+BYTE MogallBoss			Terror_Mogall		Mogall			0
+BYTE CantorBoss 		Terror_Revenant 	Revenant 		0
 BYTE CantorBoss_Bonewalkers Terror_Bonewalker Bonewalker 0
 BYTE 0 			0 		0 				0
 
@@ -244,16 +261,18 @@ PUSH
 POP
 
 PhantomPhase_Proc: //based on 5A7F30
-WORD $1 $080D80A0 //set name
-WORD $2; POIN PhantomPhase_Init+1 
-WORD $E $0 //sleep 0frame
-WORD $2; POIN $39778+1 //CpPhase_Cleanup
-WORD $0 $0 //end
+
+	PROC_SET_NAME($080D80A0)
+	PROC_CALL_ROUTINE(PhantomPhase_Init+1) 
+	PROC_YIELD
+	PROC_CALL_ROUTINE($39778+1) //CpPhase_Cleanup
+	PROC_END
 
 PhantomOrder_Proc: //based on 5A7F74
-WORD $1 $080D80B8 //set name
-WORD $2; POIN PhantomOrder_Init+1 
-WORD $3; POIN $39ABC+1 //CPORDER_End
-WORD $0 $0 //end
+
+	PROC_SET_NAME($080D80B8)
+	PROC_CALL_ROUTINE(PhantomOrder_Init+1)
+	PROC_LOOP_ROUTINE($39ABC+1)
+	PROC_END
 
 #include "Phantom/PhantomPhase.lyn.event"

@@ -4,6 +4,9 @@
 PUSH
 ORG $2AF94
 jumpToHack(CanUnitDoubleCalcLoopFunc)
+
+ORG IsAttackerEclipsing+$11
+BYTE W_Effect_Eclipse
 POP
 
 ALIGN 4

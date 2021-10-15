@@ -340,75 +340,106 @@ DoInvoke_Multi:
 		b DoInvokeMulti_LoopStart
 
 	FoundSummonTableEntry:
-		mov r4, r3
-		mov r7, r3
-		add r4, #0x2			@r4 is now at SummonedUnitClass
-
-		mov r3, #0x1			@autolevel bit
-		ldr r6, =0x03001C50 	@Summoned Unit Buffer
+		mov  r4, r3
+		mov  r7, r3
+		add  r4, #0x2			@r4 is now at SummonedUnitClass
 
 		ldrb r0, [r4]			@get summoned class
+		cmp  r0, #0x65			@necrodragon
+		bne  NotNecrodragon
+			mov r3, #0x25		@force to level 5 enemy
+			b StoreClass
+		
+		NotNecrodragon:
+		blh  GetROMClassStruct
+		mov  r6, r0				@store class data
+		mov  r2, #0x29
+		ldrb r2, [r6, r2]
+		mov  r1, #0x1			@promoted bit
+		and  r2, r1
+		
+		ldr  r1, =0x03004E50		@get summoning unit
+		ldr  r0, [r1]
+		ldrb r3, [r0, #0x8]		@unit level
+		
+		cmp r2, #0x0
+		beq NotPromoted
+		
+		Promoted:
+			lsl  r3, r3, #0x2		@summon will be half summoner's level
+			b StoreClass
+		
+		NotPromoted:
+			lsl  r3, r3, #0x3		@summon will be at summoner's level
+		
+		StoreClass:
+		mov  r2, #0x7
+		neg  r2, r2
+		and  r3, r2
+		mov  r2, #0x1			@autolevel bit
+		orr  r3, r2
+		
+		ldrb r0, [r4]			@get summoned class
+		ldr  r6, =0x03001C50 	@Summoned Unit Buffer
 		strb r0, [r6, #0x1]		@store it to buffer
 
-		ldr r1, =0x03004E50		@get summoning unit
-		ldr r0, [r1]
-		mov r2, #0xB
+		ldr  r1, =0x03004E50		@get summoning unit
+		ldr  r0, [r1]
+		mov  r2, #0xB
 		ldsb r2, [r0, r2]		@Unit party data index
-		mov r0, #0xC0			@used to check allegiance
-		and r2, r0
-		cmp r2, #0x0
-		bne DoInvokeMulti_EnemyCase
+		mov  r0, #0xC0			@used to check allegiance
+		and  r2, r0
+		cmp  r2, #0x0
+		bne  DoInvokeMulti_EnemyCase
 
 	DoInvokeMulti_PlayerCase:
 		mov r4,	#0x3F			@start of player summons
-		sub r0, #0xC7
-		and r3, r0
+		mov r3, #0x9			@player summons at level 1
 		b StoreAllegiance
 
 	DoInvokeMulti_EnemyCase:
 		cmp r2, #0x80
 		bne DoInvokeMulti_GreenCase
-			mov r4, #0xAA		@start of enemy summons
-			mov r0, #0x7
-			neg r0, r0
-			and r3, r0
+			ldrb r4, [r7, #0x1] @summoned unit ID
 			mov r0, #0x4
 			orr r3, r0
 			b StoreAllegiance
 
 	DoInvokeMulti_GreenCase:
 		mov r4,	#0x3F		@start of player summons
-		mov r0, #0x7
-		neg r0, r0
-		and r3, r0
-		mov r0, #0x2
-		orr r3, r0
+		mov r3, #0xB		@npcs also summon at level 1
 
 	StoreAllegiance:
 		strb r4, [r6, #0x0]		@unit id
 		strb r3, [r6, #0x3]		@allegiance and level
 
-	FinishedStoring:
-		ldr r2, =0x03004E50		@get summoning unit
-		ldr r0, [r2]
-		ldr r0, [r0]
-		ldrb r2, [r0, #0x8]		@summoner's level
-		lsl r2, r2, #0x3
-		ldrb r3, [r6, #0x3]
-		mov r0, #0x7
-		and r0, r3
-		orr r0, r2
-		strb r0, [r6, #0x3]
-
 	DetermineInventoryItem:
 		ldrb r0, [r6, #0x1]		@class
+		cmp  r0, #0x5F
+		blt  NotMogall
+		cmp  r0, #0x60
+		bgt  NotMogall
+		
+			@Set AI to MogallAI
+			mov r2, r6
+			add r2, #0x10
+			mov r1, #0x12
+			strb r1, [r2]
+			mov r1, #0x3
+			strb r1, [r2, #0x1]
+			mov r0, #0x8C 		@DivideAbility
+			strb r0, [r6, #0xD]
+			mov r0, #0xAB		@tentacle
+			b StoreWeapon
+		
+		NotMogall:
 		blh GetROMClassStruct
 		mov r4, r0				@store class data
 		add r0, #0x2c			@sword lvl
 		ldrb r1, [r0, #0x0]
 		cmp r1, #0x0
 		beq CheckLanceLevel
-		mov r0, #0x1
+		mov r0, #0x2
 		b StoreWeapon
 
 	CheckLanceLevel:
@@ -417,7 +448,7 @@ DoInvoke_Multi:
 		ldrb r1, [r0, #0x0]
 		cmp r1, #0x0
 		beq CheckAxeLevel
-		mov r0, #0x14			@basic lance
+		mov r0, #0x15			@basic lance
 		b StoreWeapon
 
 	CheckAxeLevel:
@@ -426,7 +457,7 @@ DoInvoke_Multi:
 		ldrb r1, [r0, #0x0]
 		cmp r1, #0x0
 		beq CheckBowLevel
-		mov r0, #0x1f			@basic axe
+		mov r0, #0x20			@basic axe
 		b StoreWeapon
 
 	CheckBowLevel:
@@ -435,7 +466,7 @@ DoInvoke_Multi:
 		ldrb r1, [r0, #0x0]
 		cmp r1, #0x0
 		beq CheckMagic
-		mov r0, #0x2d			@basic bow
+		mov r0, #0x2e			@basic bow
 		b StoreWeapon
 
 	CheckMagic:
@@ -557,7 +588,7 @@ StartMultiSummon:
 		mov  r0, #0xC0			@used to check allegiance
 		and  r2, r0
 		cmp  r2, #0x0
-		bne  StillSummonSpace	@no limitation for enemy summoners
+		bne  MogallCheck	@no limitation for enemy summoners
 
 			StartMultiSummon_PlayerCase:
 			mov  r6, #0x0			@start of player units
@@ -585,6 +616,18 @@ StartMultiSummon:
 			bgt  StillSummonSpace
 			b    SearchForSummonSpace_Loop
 
+	MogallCheck:
+	ldr  r0, =0x02033F3C    @ gUnitSubject
+	ldr  r0, [r0, #0x0] 	@ram addr
+	ldr  r0, [r0, #0x4]		@class
+	ldrb r0, [r0, #0x4]		@class id
+	cmp  r0, #0x5F
+	blt  StillSummonSpace
+	cmp  r0, #0x60
+	bgt  StillSummonSpace
+	mov  r2, #0x7			@mogall gets only one summon
+	b StoreSummonCount
+
 	StillSummonSpace:
 	blh  GetOtherRN
 	mov  r1, #0x3
@@ -603,6 +646,7 @@ StartMultiSummon:
 	mov  r1, #8
 	sub  r2, r1, r2
 
+	StoreSummonCount:
 	mov  r0, r4
 	mov  r1, r4
 	add  r1, #0x64 @number to summon

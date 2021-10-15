@@ -12,7 +12,7 @@ PUSH
 //modify CHAI to be able to change 3 and 4, not just 1 and 2
 
 	ORG $10644
-	jumpToHack(New_CHAI)
+	replaceWithHack(New_CHAI)
 
 // healer ai fix; stop them from healing max hp units
 // changes bhi to bhs

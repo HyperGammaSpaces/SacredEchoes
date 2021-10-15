@@ -62,26 +62,29 @@ POIN SpellCostGetter
 ALIGN 4
 
 ExpelMapAnimProc:
-SHORT $2; SHORT $0;  POIN $30C24+1 //init. We need to set a proc field to 0
-SHORT $2; SHORT $0;  POIN $81E48+1 //Darkens map? Wraps 7f568
-SHORT $E; SHORT $1;  WORD $0 //sleep 1 frame
-SHORT $2; SHORT $0;  POIN $81278+1 //MapAnim_AnimateSubjectIdle. Moves staff user.
-SHORT $E; SHORT $1E; WORD $0 //sleep 30 frames
 
-SHORT $2; SHORT $0;  POIN $819E8+1 //jumps to 7d0b4 - displays the circles
+	PROC_CALL_ROUTINE($30C24+1) //init. We need to set a proc field to 0
+	PROC_CALL_ROUTINE($81E48+1) //Darkens map? Wraps 7f568
+	PROC_SLEEP(1)
+	PROC_CALL_ROUTINE($81278+1) //MapAnim_AnimateSubjectIdle. Moves staff user.
+	PROC_SLEEP(30)
 
-SHORT $E; SHORT $2;  WORD $0 //sleep 2 frames
-SHORT $E; SHORT $C8; WORD $0 //sleep 200 frames
-SHORT $E; SHORT $A;  WORD $0 //sleep 10 frames
-SHORT $2; SHORT $0;  POIN $8129C+1 //MapAnim_SubjectResetAnim. Returns staff user to idle anim.
-SHORT $E; SHORT $1E; WORD $0 //sleep 30 frames
-SHORT $2; SHORT $0;  POIN $81E54+1 //Un-darkens map? Wraps 7f5c8
-SHORT $E; SHORT $1;  WORD $0 //sleep 1 frame
-SHORT $2; SHORT $0;  POIN $30C40+1 //LoadTitleAnimations2Only
-WORD $0; WORD $0 //end proc
+	PROC_CALL_ROUTINE($819E8+1) //jumps to 7d0b4 - displays the circles
+
+	PROC_SLEEP(2)
+	PROC_SLEEP(200)
+	PROC_SLEEP(10)
+	PROC_CALL_ROUTINE($8129C+1) //MapAnim_SubjectResetAnim. Returns staff user to idle anim.
+	PROC_SLEEP(30)
+	
+	PROC_CALL_ROUTINE($81E54+1) //Un-darkens map? Wraps 7f5c8
+	PROC_SLEEP(1)
+	PROC_CALL_ROUTINE($30C40+1) //LoadTitleAnimations2Only
+	PROC_END
 
 ExpelEffectProc:
-SHORT $E; SHORT $1;  WORD $0 //sleep 1 frame
-SHORT $2; SHORT $0;  POIN $2CC1C+1 //SaveInstigatorFromBattle
-SHORT $E; SHORT $1E;  WORD $0 //sleep 30 frame
-WORD $0; WORD $0 //end proc
+
+	PROC_SLEEP(1)
+	PROC_CALL_ROUTINE($2CC1C+1) //SaveInstigatorFromBattle
+	PROC_SLEEP(30)
+	PROC_END

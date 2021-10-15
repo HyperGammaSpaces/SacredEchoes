@@ -27,12 +27,6 @@ PUSH
 	ORG $16BEC
 	jumpToHack(Redone_Effectiveness)
 	
-	//add bonus damage for effectiveness
-	ORG $2AB0C
-	BYTE $02
-	ORG $2AB12
-	BYTE EffectiveDamageBonus $30 $05 $1C
-	
 POP
 	
 	ALIGN 4
@@ -81,6 +75,7 @@ POP
 	ItemEffectivenessPtr(Parthia, FlierAndMonster1)
 	ItemEffectivenessPtr(HolySword, MonsterEffectiveness)
 	ItemEffectivenessPtr(HolyLance, MonsterEffectiveness)
+	ItemEffectivenessPtr(HolyAxe, MonsterEffectiveness)
 	ItemEffectivenessPtr(Dragonstone, MonsterEffectiveness)
 	
 	//Protector item (macro still works, even if it's wrongly named)

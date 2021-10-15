@@ -21,28 +21,8 @@ PUSH
   BYTE 00 $48 00 $47 //jumptohack with r0
   POIN CanUseThisMagic|1
 
-  //ORG $2C81C //related to NegateWeaponTriangle
-  //BYTE $C0 $26 $B6 $00
-
-/*  
-  //Now handled by calc loop
-
-  ORG $2AFBC //changing doubling threshold
-  BYTE $01
-  
-  ORG $2AFCE
-  BYTE $01
-  
-  ORG $2AFFA //set eclipse to effect 05
-  BYTE $05
-*/
-  
-  ORG $2A95C  //minor hack to pass opponent's info to BattleLoadAvoid
-  //#incbin "FillPreBattleStats.dmp"
+  ORG $2A95C
   jumpToHack(CalcLoopParent)
-  
-//  ORG $2AB20
-//  BYTE $3C		//ragnarok is legendary
 
   ORG $2AABC
   BC_Power:
@@ -98,8 +78,20 @@ PUSH
   //runesword halving str thing
   BYTE RadiantBow
   
-  ORG $2B63A 							//temp fix for eclipse - remove when status weapons fully impl'd
+  //fix eclipse effect
+  ORG $2B63A 
   BYTE W_Effect_Eclipse
+  ORG $2A4F8
+  BYTE W_Effect_Eclipse
+  ORG $2AE2C //in specialweapons.dmp - move if changed
+  BYTE W_Effect_Eclipse 
+  
+  //add bonus damage for effectiveness
+  ORG $2AB0C
+  BYTE $02
+  ORG $2AB12
+  BYTE EffectiveDamageBonus $30 $05 $1C
+  PROTECT $2AB14 $2AB15
   
   ORG $2B69C 							
   BYTE W_Effect_Devil

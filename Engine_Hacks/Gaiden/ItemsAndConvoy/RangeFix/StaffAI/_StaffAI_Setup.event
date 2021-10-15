@@ -121,7 +121,7 @@
 	POIN FillRange|1
 	
 	SetStaffAI(0x0, Heal, $3FBB8)
-	SetStaffAI(0x1, Recover, $3FBB8)
+	SetStaffAI(0x1, DivideAbility, Invoke_AIC_Targeting)
 	SetStaffAI(0x2, Physic, $3FBB8)
 	SetStaffAI(0x3, Fortify, $3FF00)
 	SetStaffAI(0x4, Restore, $40164)

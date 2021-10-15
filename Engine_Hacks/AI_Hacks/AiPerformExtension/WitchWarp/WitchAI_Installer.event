@@ -35,29 +35,46 @@ ALIGN 4
 //DoTheWarping will do the actual animation and place the unit in its new location
 //9a3bdc calls the warp gfx
 
+PUSH
+
+	ORG $3B41C //fix OOB tile check
+	replaceWithHack(AiAreEnemiesWithin3Tiles_New)
+
+POP
+
 
 MapAnimProcWitchWarp:
-//SHORT $000E $00; WORD $0
-SHORT $0002 $00; WORD $08015361 //AddSkipThread
-SHORT $0002 $00; POIN StartWitchWarpAnim+1
-SHORT $000E $0A; WORD $0 //Sleep for 10 frames
-SHORT $0002 $00; POIN MapAnim_SubjectUnitFlashOut+1	
-SHORT $000E $14; WORD $0 //Sleep for 20 frames
-//SHORT $0002 $00; POIN MapAnim_SubjectStarExplosion+1	
-//SHORT $000E $02; WORD $0 //Sleep for 2 frames
-SHORT $0002 $00; POIN MapAnim_SubjectHide+1
-SHORT $000E $08; WORD $0 //Sleep for 8 frames
-SHORT $0002 $00; POIN Witchwarp_Move+1
-SHORT $000E $1E; WORD $0 //Sleep for 30 frames
-SHORT $0002 $00; POIN Witchwarp_Camera+1	
-SHORT $000E $02; WORD $0 //Sleep for 2 frames
-//SHORT $0002 $00; POIN MapAnim_SubjectStarImplosion+1	
-//SHORT $000E $28; WORD $0 //Sleep for 40 frames
-SHORT $0002 $00; POIN MapAnim_WarpSubjectWarpRing+1	
-SHORT $000E $0A; WORD $0 //Sleep for 10 frames
-SHORT $0002 $00; POIN MapAnim_SubjectShow+1
-SHORT $0002 $00; POIN MapAnim_SubjectUnitFlashIn+1	
-SHORT $000E $10; WORD $0 //Sleep for 16 frames
-SHORT $000E $0A; WORD $0 //Sleep for 10 frames
-SHORT $000D $00; WORD $089A35B0 //Jump to MapAnimEnd
-WORD $0; WORD $0	//End (Deletes Self)
+	//PROC_YIELD
+	PROC_CALL_ROUTINE($15361) //AddSkipThread
+	PROC_CALL_ROUTINE(StartWitchWarpAnim+1)
+	PROC_SLEEP($0A)
+	
+	PROC_CALL_ROUTINE(MapAnim_SubjectUnitFlashOut+1)
+	PROC_SLEEP($14)
+	
+	//PROC_CALL_ROUTINE(MapAnim_SubjectStarExplosion+1)
+	//PROC_SLEEP($02)
+	
+	PROC_CALL_ROUTINE(MapAnim_SubjectHide+1)
+	PROC_SLEEP($08)
+	
+	PROC_CALL_ROUTINE(Witchwarp_Move+1)
+	PROC_SLEEP($1E)
+	
+	PROC_CALL_ROUTINE(Witchwarp_Camera+1)	
+	PROC_SLEEP($02)
+	
+	//PROC_CALL_ROUTINE(MapAnim_SubjectStarImplosion+1)	
+	//PROC_SLEEP($28)
+	
+	PROC_CALL_ROUTINE(MapAnim_WarpSubjectWarpRing+1)	
+	PROC_SLEEP($0A)
+	
+	PROC_CALL_ROUTINE(MapAnim_SubjectShow+1)
+	PROC_CALL_ROUTINE(MapAnim_SubjectUnitFlashIn+1)	
+	PROC_SLEEP($10)
+	
+	PROC_SLEEP($0A)
+	PROC_JUMP($9A35B0) //Jump to MapAnimEnd
+	
+	PROC_END

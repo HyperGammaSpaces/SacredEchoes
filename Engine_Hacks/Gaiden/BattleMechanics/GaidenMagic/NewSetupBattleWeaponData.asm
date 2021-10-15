@@ -220,60 +220,21 @@ bne JumpToExit
 
     LDR r0, [r5, #0x4C]   //Item checks for Magic Swords
     MOV r1, #0x40
-    AND r0 ,r1
+    AND r0, r1
     CMP r0, #0x0
     BEQ NotMagicSword
         LDRH r0, [r4, #0x0]
         blh 0x080174EC   //GetItemIndex
-        CMP r0, #0x11
-        BEQ label7
-            CMP r0, #0x11
-            BGT CheckWindSword
-                CMP r0, #0x10
-                BEQ SomeMagicSwordIDK
-                    B NotMagicSword
-				CheckWindSword:
-                CMP r0, #0xA1
-                BNE NotMagicSword
-                    LDRB r0, [r7, #0x2]
-                    CMP r0, #0x2
-                    BNE label6
-                        MOV r0, #0x5
-                        B label7
-					SomeMagicSwordIDK:
-                    LDRB r0, [r7, #0x2]
-                    CMP r0, #0x2
-                    BNE label6
-                        MOV r0, #0x6
-                        B label7
-				label6:
-                LDR r0, [r5, #0x4C]
-                MOV r1, #0x41
-                NEG r1 ,r1
-                AND r0 ,r1
-                STR r0, [r5, #0x4C]
-                B NotMagicSword
-			label7:
-            MOV r0, #0x7
-            STRB r0, [r6, #0x0]
-			
-		//Stuff to make sure the right attrs are stored for the selected weap.	
-		//ldrh r0, [r4]
-		//blh GetItemAttributes
-		//str r0, [r5, #0x4c]
-		//ldrh r0, [r4]
-		//bl GetItemWType
-		//mov r6, r5
-		//add r6, #0x50
-		//strb r0, [r6]
-			
-	//Patch here	@2A8BC	
+        CMP r0, #0x07 //levinsword
+        BNE NotMagicSword
+            MOV r0, #0x5
+            STRB r0, [r6, #0x0]	
 	
 	NotMagicSword:			@Start loop for weapon checking.
     LDRH r0, [r4, #0x0]		@item ID 
     LDR r1, =0x0203A4D4 	@some battle buffer
     LDRB r1, [r1, #0x2] 	@(Appears to be range)
-    MOV r2 ,r5				@battle struct
+    MOV r2, r5				@battle struct
 	mov r4, #0x0			@initialize counter
     blh 0x0801ACFC		  	@check if can counter, r0=item r1= range r2=struct
     CMP r0, #0x0
@@ -308,7 +269,7 @@ bne JumpToExit
 	ldrh r0, [r0, #0x0]		@get item from inventory position
 	LDR r1, =0x0203A4D4 	@some battle buffer
     LDRB r1, [r1, #0x2] 	@(Appears to be range)
-    MOV r2 ,r5				@battle struct
+    MOV r2, r5				@battle struct
     blh 0x0801ACFC		  	@check if can counter, r0=item r1= range r2=struct
     CMP r0, #0x0
 	BEQ CheckNextWeapon
@@ -383,7 +344,7 @@ bne JumpToExit
 		
 		LDR r1, =0x0203A4D4 @some battle buffer
 		LDRB r1, [r1, #0x2] @(Appears to be range)
-		MOV r2 ,r5			@battle struct
+		MOV r2, r5			@battle struct
 		blh 0x0801ACFC		@check if can counter, r0=item r1= range r2=struct
 		CMP r0, #0x0
 		beq StartSpellLoop
@@ -433,11 +394,11 @@ bne JumpToExit
 	add r4, #0x48
 	//jump back to vanilla @2A8DF
 	
-    MOV r0 ,r5
+    MOV r0, r5
     ADD r0, #0x30				@status?
     LDRB r0, [r0, #0x0]
-    LSL r0 ,r0 ,#0x1C
-    LSR r0 ,r0 ,#0x1C
+    LSL r0, r0, #0x1C
+    LSR r0, r0, #0x1C
     CMP r0, #0xB
     BEQ CantCounterBecauseStatus
         CMP r0, #0xB

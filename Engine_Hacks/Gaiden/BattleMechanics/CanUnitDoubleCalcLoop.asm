@@ -205,8 +205,9 @@ pop {r4-r5}
 pop {r1}
 bx r1
 
-.ltorg
 .align
+.ltorg
+
 
 
 

@@ -1,17 +1,34 @@
 #include "../AiScrDefinitions.event"
 
 InjectAi1(0x14, EnemySummonAI)
+InjectAi1(0x12, MogallAIScript)
 
+ALIGN 4
 EnemySummonAI:
-AiFuncPercentChance(CheckIfCanSummon|1, 33) //checks if unit is 1. on the summon table and 2. if rand < chance. result in 203aa8a
-AiNop
-AiGotoIfEQ(1, 0) //if can't summon, attack
-AiFuncPercentChance(DoTheSummoning|1, 100)
-//AiNop
-AiRestart
-AiLabel(1)
-AiFuncPercentChance(AttackOnlyNoStaff|1, 100)
-AiRestart
+	AiFuncPercentChance(CheckIfCanSummon|1, 33) //checks if unit is 1. on the summon table and 2. if rand < chance. result in 203aa8a
+	AiNop
+	AiGotoIfEQ(1, 0) //if can't summon, attack
+	AiFuncPercentChance(DoTheSummoning|1, 100)
+	//AiNop
+	AiRestart
+	AiLabel(1)
+	AiFuncPercentChance(AttackOnlyNoStaff|1, 100)
+	AiRestart
+
+ALIGN 4
+MogallAIScript:
+	AiFunc(CheckIfAttackPossible|1)
+	AiNop
+	AiGotoIfEQ(1, 0) //if can't attack, summon
+	AiAttack
+	AiRestart
+	AiLabel(1)
+	AiFuncPercentChance(CheckIfCanSummon|1, 100)
+	AiNop
+	AiGotoIfEQ(2, 0)
+	AiFuncPercentChance(DoTheSummoning|1, 100)
+	AiLabel(2)
+	AiRestart
 
 ALIGN 4
 #include "SummonAI.lyn.event"

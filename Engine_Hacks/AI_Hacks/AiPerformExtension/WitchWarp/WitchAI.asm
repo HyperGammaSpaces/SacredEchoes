@@ -99,6 +99,17 @@ SearchForTargetTiles:
 	sub 	r6, r0, #0x1
 	cmp 	r6, #0x0
 	blt 	y_reloop
+	
+	@dont move before warping
+	add 	r3, sp, #spNewDestination
+	ldr 	r2, [r7]
+	mov 	r0, #0x10		@get coordinates of active unit
+	ldsb 	r0, [r2, r0]
+	mov 	r1, #0x11
+	ldsb	r1, [r2, r1]
+	strh    r0, [r3]
+	strh    r1, [r3, #0x2]
+	
 	y_loop:
 	ldr 	r1, =#gMapSize
 	mov 	r0, #0x0
@@ -126,16 +137,6 @@ SearchForTargetTiles:
 	mov 	r1, r6	@get y or current tile
 	add 	r2, sp, #spItemRange	@get pointer to staff range
 	blh     ItemAI_RangeBuilder
-	
-	@dont move before warping
-	add 	r3, sp, #spNewDestination
-	ldr 	r2, [r7]
-	mov 	r0, #0x10		@get coordinates of active unit
-	ldsb 	r0, [r2, r0]
-	mov 	r1, #0x11
-	ldsb	r1, [r2, r1]
-	strh    r0, [r3]
-	strh    r1, [r3, #0x2]
 
 	@call targeting condition routine
 	mov 	r0, sp @stack pointer
@@ -150,6 +151,13 @@ SearchForTargetTiles:
 	and 	r1, r0
 	cmp 	r1, #0x0
 	beq     x_reloop
+	
+	ldr     r0, [sp, #spNewPriority]
+	ldr 	r1, [sp, #spPriority]
+	cmp		r0, #0x0
+	blt		x_reloop
+	cmp		r0, r1
+	ble		x_reloop
 	mov 	r0, sp
 	mov 	r1, #0x0
 	mov 	r2, r5
@@ -188,6 +196,7 @@ SearchForTargetTiles:
 	cmp     r0, #0x0
 	bgt     ConfirmWarp
 	mov     r0, #0x0
+	mov 	r1, #0x1
 	b       End
 	
 	ConfirmWarp:
@@ -195,6 +204,7 @@ SearchForTargetTiles:
 	mov 	r1, #0xE
 	blh ItemAI_ConfirmAction
 	mov     r0, #0x1
+	mov		r1, #0x0
 
 	End:
 	add 	sp, #spSize
@@ -256,7 +266,7 @@ IsTileWarpableTo:
 			
 				mov  r0, r4
 				mov  r1, r5
-				blh  0x0803b41c, r6 @AiAreEnemiesWithin3Tiles
+				bl   AiAreEnemiesWithin3Tiles_New
 				cmp  r0, #0x0
 				beq  NotWarpable
 				sub  r0, #0x1
@@ -518,9 +528,9 @@ push {r4,r5,lr}
 	CheckForWitchWarp_NoWarp:
 	mov  r0, #0x0
 	CheckForWitchWarp_End:
-	ldr  r1, =AIResult
-	strb r0, [r1]
-	mov  r0, #0x0
+	ldr  r2, =AIResult
+	strb r0, [r2]
+	mov  r0, r1
 	pop  {r4,r5}
 	pop  {r1}
 	bx   r1
@@ -819,3 +829,90 @@ WitchRewarp_End:
 .align
 .ltorg
 
+.global AiAreEnemiesWithin3Tiles_New
+AiAreEnemiesWithin3Tiles_New:
+	PUSH {r4-r7,lr}
+	MOV  r7, r9
+	MOV  r6, r8
+	PUSH {r6,r7}
+	LSL  r0, r0, #0x10
+	LSR  r3, r0, #0x10
+	LSL  r1, r1, #0x10
+	LSR  r1, r1, #0x10
+	MOV  r6, #0x0
+	LDR  r4, =0x085A80BC @gSomeRangeTileOffsetLookup
+	SUB  r4, #0x4
+	MOV  r2, #0x0
+	LDSH r0, [r4, r2]
+	LDR  r2, =0x270F
+	CMP  r0, r2
+	BEQ  CountEnemyTotal
+
+		LSL  r0, r3, #0x10
+		ASR  r0, r0, #0x10
+		MOV  r8, r0
+		LDR  r5, =0x0202E4D4 @gMapSize
+		LSL  r0, r1, #0x10
+		ASR  r7, r0, #0x10
+		MOV  r9, r2
+	
+OOBCheck_Loop:
+	ADD  r4, #0x4
+    MOV  r1, #0x0
+    LDSH r0, [r4, r1]
+    MOV  r2, r8
+    ADD  r3, r2, R0
+    MOV  r1, #0x0
+    LDSH r0, [r5, r1]
+    CMP  r3, r0
+    BGE  OutOfBoundsTile
+	CMP  r3, #0x0
+	BLT  OutOfBoundsTile
+	
+        MOV  r2, #0x2
+        LDSH r0, [r4, r2]
+        ADD  r2, r7, R0
+        MOV  r1, #0x2
+        LDSH r0, [r5, r1] @MapSize.Height
+        CMP  r2, r0
+        BGE  OutOfBoundsTile
+		CMP  r2, #0x0
+		BLT  OutOfBoundsTile
+		
+            LDR  r0, =0x0202E4D8 @gMapUnit
+            LDR  r1, [r0, #0x0]
+            LSL  r0, r2, #0x2
+            ADD  r0, r0, R1
+            LDR  r0, [r0, #0x0]
+            ADD  r1, r0, R3
+            LDRB r0, [r1, #0x0]
+            CMP  r0, #0x0
+            BEQ  OutOfBoundsTile
+			
+                LDR  r0, =0x0202BE44 @gActiveUnitIndex
+                LDRB r0, [r0, #0x0]
+                LDRB r1, [r1, #0x0]
+                blh  0x08024D8C @AreUnitsAllied
+                LSL  r0, r0, #0x18
+                CMP  r0, #0x0
+                BNE  OutOfBoundsTile
+				
+                    ADD  r6, #0x1
+					
+    OutOfBoundsTile:
+		MOV  r2, #0x0
+		LDSH r0, [r4, r2]
+		CMP  r0, r9
+		BNE  OOBCheck_Loop
+	
+CountEnemyTotal:
+	MOV  r0, r6
+	POP  {r3,r4}
+	MOV  r8, r3
+	MOV  r9, r4
+	POP  {r4-r7}
+	POP  {r1}
+	BX   r1
+
+.align
+.ltorg
