@@ -22,6 +22,10 @@ $RECYCLE.BIN/
 *.xcf
 *.psd
 
+# Audio/video files not needed for build
+*.mp3
+*.mp4
+
 # Notes docs
 *.notes.txt
 
@@ -57,7 +61,10 @@ Engine_Hacks/TODO/
 /Graphics/*.png
 
 # Text IDs
-/Text/_textentries/*.txt
+/Text/_English/.TextEntries/*
+/Text/_Spanish/.TextEntries/*
+/Text/_French/.TextEntries/*
+/Text/_Portuguese/.TextEntries/*
 
 # gameboy stuff
 *.gba
