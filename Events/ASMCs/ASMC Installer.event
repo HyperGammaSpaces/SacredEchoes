@@ -38,6 +38,3 @@ WORD $0202BCF0
 
 #define Event_SetAlmMode "SHORT $0D40 $2; POIN ChangeEditionASMC+1"
 #define Event_SetCelicaMode "SHORT $0D40 $3; POIN ChangeEditionASMC+1"
-
-ALIGN 4
-#include "FE7Quintessence/QuintessenceEffect.event"

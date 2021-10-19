@@ -298,7 +298,9 @@ BYTE $46 $46 //Rogues
 BYTE $28 $28 //Archer
 BYTE $50 $50 //Sniper
 BYTE $B4 $B4 //Bow Knight
-BYTE $1 $1 $1 $1 $1 $1 //Wyverns (dummy)
+BYTE $28 $28 //Wyvern Rider 
+BYTE $50 $50 //Wyvern Lord
+BYTE $B4 $B4 //Dracoknight
 BYTE $50 $64 //Mages
 BYTE $B4 //Sage
 BYTE $B4 //Priestess
@@ -312,9 +314,10 @@ BYTE $C8 $C8 //GKs
 BYTE $1 $1 $1 $1 //dummy trainees
 BYTE $C8 $C8 //manaketes
 BYTE $1E $1E //villagers
-BYTE $50 $C8
-BYTE $1E $1E $50 //brigand/pirate/zerker
-BYTE $1 $1 $1 //dummy
+BYTE $50 $C8 //axeman/highlander
+BYTE $1E $1E $1E //brigand/pirate/pirateF
+BYTE $78 $78 //berserkers
+BYTE $1 //dummy
 BYTE $1E //woodcutter
 BYTE $28 $50 //peg/falco
 BYTE $3C //cleric
