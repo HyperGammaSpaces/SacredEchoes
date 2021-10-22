@@ -1,13 +1,19 @@
 #ifndef INSTALL_STAT_GETTERS_EVENT
 #define INSTALL_STAT_GETTERS_EVENT
 
+//System
 #include "../InstallCore.event"
 ALIGN 4
 #include "../InstallHelpers.event"
 ALIGN 4
+
+//Extensions
+#include "../Extensions/BallistaUtilities.event"
+ALIGN 4
 #include "../Extensions/PassiveItemStatBonuses.event"
 ALIGN 4
 
+//Getters
 #include "_Common.event"
 ALIGN 4
 #include "MaxHP.event"

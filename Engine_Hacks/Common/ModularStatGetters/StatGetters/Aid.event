@@ -18,7 +18,7 @@ prSubstractOne:
 
 prAdjustAidIfMounted:
 {
-	rIfUnitHasAttribute(CA_MOUNTEDAID)
+	rIfUnitHasAttribute(C_Flag_MountedAid)
 		rCallSequence(_prNegate _prAddBaseMountedAidBonus _prAddMoreIfPromoted)
 
 _prNegate:
@@ -27,8 +27,8 @@ _prNegate:
 _prAddBaseMountedAidBonus:
 	rAddConst(19)
 
-_prAddMoreIfPromoted: // Stupid mechanic imo, but we're going vanilla so :shrug:
-	rIfUnitHasAttribute(CA_PROMOTED, rAddConst(5))
+_prAddMoreIfPromoted:
+	rIfUnitHasAttribute(C_Flag_PromotedUnit, rAddConst(5))
 }
 
 #endif // MODULAR_GETTER_AID_EVENT

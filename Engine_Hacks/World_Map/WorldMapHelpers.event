@@ -10,6 +10,7 @@
 //  Do not check mode byte, instead check mapID and any required flags
 
 PUSH
+
 	//Cuts out an unnecessary call to ShouldChapterBeSkirmish to not draw the "protect character" marker
 	ORG $275FE
 	SHORT $46C0 $46C0 $46C0 $46C0

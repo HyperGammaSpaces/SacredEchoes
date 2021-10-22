@@ -3,10 +3,6 @@
 
 #define __DebuffMinZero__ 0x1
 
-#define rPassiveStatBoosts(aStatOffset) "rForEachUnitItemUntil; rIfItemHasPassiveStatBoosts; rAddItemPassiveStatBoosts(aStatOffset)"
-
-#define rPassiveStatBoostsStacking(aStatOffset) "rForEachUnitItem; rIfItemHasPassiveStatBoosts; rAddItemPassiveStatBoosts(aStatOffset)"
-
 prHalveIfRescuing:
 	rIfUnitHasState(US_RESCUING)
 		rHalved

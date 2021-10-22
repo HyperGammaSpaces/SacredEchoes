@@ -3,7 +3,7 @@
 
 #include "_Common.event"
 
-pConModifiers: // Consitition
+pConModifiers: // Constitution
 	POIN prAddUnitBaseCon prAddUnitConBonus
 	#ifdef DEBUFFS_MIN_ZERO
 	POIN prMinZero
@@ -14,10 +14,10 @@ prAddUnitBaseCon:
 {
 	rCallSequence(_prAddClassCon _prAddCharConBonus)
 	
-_prAddClassCon: // byte 0x11 in ROM char data is class consition
+_prAddClassCon: // byte 0x11 in ROM char data is class constitution
 	rAdd(rForWordAt(UNIT_ROMCLASS, rSByteAt(0x11))) 
 
-_prAddCharConBonus: // byte 0x13 in ROM char data is personal consition bonus
+_prAddCharConBonus: // byte 0x13 in ROM char data is personal constitution bonus
 	rAdd(rForWordAt(UNIT_ROMCHAR, rSByteAt(0x13)))
 }
 

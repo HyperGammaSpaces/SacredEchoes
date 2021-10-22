@@ -49,4 +49,8 @@ _prAndArgument:
 
 #define rAddItemPassiveStatBoosts(aStatId) "rForItemROMStruct(rForWordAt(0x0C, rIfSubjectIsNotNull(rAdd(rSByteAt(PASSIVE_ITEM_BOOSTS_OFFSET + aStatId)))))"
 
+#define rPassiveStatBoosts(aStatOffset) "rForEachUnitItemUntil; rIfItemHasPassiveStatBoosts; rAddItemPassiveStatBoosts(aStatOffset)"
+
+#define rPassiveStatBoostsStacking(aStatOffset) "rForEachUnitItem; rIfItemHasPassiveStatBoosts; rAddItemPassiveStatBoosts(aStatOffset)"
+
 #endif // MSG_EXT_PASSIVEITEMSTATBONUSES_EVENT

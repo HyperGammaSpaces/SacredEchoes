@@ -4,7 +4,7 @@
 #include "_Common.event"
 
 pResistanceModifiers: // Resistance
-	POIN prAddUnitResistance prAddEquipResistance prItemPassiveResistance prAddDreadFighter_Boost prAddDreadFighterF_Boost prAddPureWaterBarrierMod 
+	POIN prAddUnitResistance prAddEquipResistance prItemPassiveResistance prAddDreadFighter_Boost prAddPureWaterBarrierMod 
 	#ifdef __DebuffMinZero__
 	POIN prMinZero
 	#endif
@@ -20,10 +20,7 @@ prAddPureWaterBarrierMod: // Upper part of byte 0x31 in unit struct is current p
 	rAdd(rUpperHalfByteOf(rUByteAt(0x31)))
 	
 prAddDreadFighter_Boost:
-	rIfUnitIsClass(DreadFighter, rAddConst(5))
-		
-prAddDreadFighterF_Boost:
-	rIfUnitIsClass(DreadFighter_F, rAddConst(5))
+	rIfUnitHasAttribute(C_Flag_HasApotrope, rAddConst(5))
 
 prItemPassiveResistance:
 	rPassiveStatBoosts(STAT_RESISTANCE)

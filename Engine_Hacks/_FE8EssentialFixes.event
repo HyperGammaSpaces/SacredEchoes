@@ -1,46 +1,52 @@
 //Essential Fixes for FE8
 //Install with Event Assembler
-#define EssentialFixes true
+#define EssentialFixes True
+
 PUSH
 
 //Fix Stone's map animation crashing no$ due to a bad decompression
-ORG $7E2B4
-BYTE 0x8
+  ORG $7E2B4
+  BYTE $8
 
 //Add a check for r0=0 in the decompression routine so that no$gba doesn't crash when trying to decompress something it shouldn't (thanks Teq)
-//ORG 0x12F52
-//BYTE 0x00 0x28 0x14 0xD0 0xFA 0x22 0x12 0x06 0x52 0x18 0x0A 0x4B 0x01 0x25 0x9A 0x42 0x00 0xD8 0x00 0x25 0x09 0x4A 0x03 0x78 0xF0 0x24 0x23 0x40 0xDB 0x08 0x5B 0x19 0x9B 0x00 0xD2 0x18 0x12 0x68 0xC0 0x46 0xC0 0x46
+  //ORG $12F52
+  //BYTE $00 $28 $14 $D0 $FA $22 $12 $06 $52 $18 $0A $4B $01 $25 $9A $42 $00 $D8 $00 $25 $09 $4A $03 $78 $F0 $24 $23 $40 $DB $08 $5B $19 $9B $00 $D2 $18 $12 $68 $C0 $46 $C0 $46
 
-//Make the Add trap data routine have a check to prevent writing past the limit
-ORG $2E2B8
-SHORT 0xB470 0x4C07 0x4D07 0x3408 0x42AC 0xD806 0x78A6 0x2E00 0xD1F9 0x7020 0x7061 0x70A2 0x70E3 0x1C20 0xBC70 0x4770 0xA60C 0x0203 0xA814 0x0203
+//Make the AddTrap routine have a check to prevent writing past the limit
+  ORG $2E2B8
+  SHORT $B470 $4C07 $4D07 $3408 $42AC $D806 $78A6 $2E00 $D1F9 $7020 $7061 $70A2 $70E3 $1C20 $BC70 $4770 $A60C $0203 $A814 $0203
   
-//Allows MNC2 To jump to any chapter ID.
-//  ORG 0xBD070
-//  SHORT 0xE0B8
+//SetDestination fix (thanks circles)
+  ORG $C2FC
+  SHORT 0 //don't skip if the next location already exists
   
-  //Fixes the world map chapter ID being loaded instead of the actual chapter ID.
-  ORG 0x897B2
+//Fixes the world map chapter ID being loaded instead of the actual chapter ID.
+  ORG $897B2
   SHORT 0 0
-  //Fixes the game considering some chapters postgame.
-  ORG 0x897C4
-  SHORT 0x200E 0x5620 //mov r0, #0x0E; ldsb r0, [r4, r0]
-  ORG 0x206948
+  
+//Fixes the game considering some chapters postgame.
+  ORG $897C4
+  SHORT $200E $5620 //mov r0, #0x0E; ldsb r0, [r4, r0]
+  ORG $206948
   BYTE 0
 
 //Set Default Options
-  ORG $30d8a  //animations type 2
+  ORG $30D8A  //animations type 2
   SHORT $3306
-  ORG $30da6  //Game/text speed Fast, Autocursor off
-  SHORT $22d0
+  ORG $30DA6  //Game/text speed Fast, Autocursor off
+  SHORT $22D0
+//Set Support Room text speed to Fast too
+  ORG $A22F0
+  BYTE $40
   
 //Allow Visit from any tile except Ruins
   ORG $23070
-  SHORT $2826 $D021 $e00c
+  SHORT $2826 $D021 $E00C
   
-//Make overworld healing faster (first byte 0x08 for 2x, 0x10 for 4x, 0x20 for 8x)
+//Make overworld healing faster (first byte $08 for 2x, $10 for 4x, $20 for 8x)
   ORG $7BCE2
-  BYTE 0x10 0x34 0x24 0x04 0x24 0x0c 0x00 0x00 0x00 0x00 0x8c 0x42 0x09 0xda
+  BYTE $10 $34 
+  SHORT $0424 $0C24 $46C0 $46C0 $428C $DA09
   
 //Put weather behind UI
 	ORG $30366 //change 80 to 80/A0/C0/E0 light snow
@@ -61,10 +67,10 @@ SHORT 0xB470 0x4C07 0x4D07 0x3408 0x42AC 0xD806 0x78A6 0x2E00 0xD1F9 0x7020 0x70
 	BYTE $A8
 
 //Break HP Cap for Players/NPCs (credit Solum)
-  // ORG $181ee
-  // SHORT $1c11
-  // ORG $2bf4c
-  // BYTE $7f
+  // ORG $181EE
+  // SHORT $1C11
+  // ORG $2BF4C
+  // BYTE $7F
   
 //Set HP Cap for Players/NPCs
   //ORG $181E2
@@ -76,35 +82,35 @@ SHORT 0xB470 0x4C07 0x4D07 0x3408 0x42AC 0xD806 0x78A6 0x2E00 0xD1F9 0x7020 0x70
   // BYTE $34 //52 in dec
 
 //skip hand axe wait for return
-  //ORG $514e
+  //ORG $514E
   //SHORT 0
-  //ORG $58c90
-  //POIN $596cc
+  //ORG $58C90
+  //POIN $596CC
   
 //Fix Uncounterable weapon anims
   ORG $57279
   BYTE $E0
 
 //allow Wyvern Knights to triangle attack
-  ORG $2b168
+  ORG $2B168
   SHORT 0
 
 //12 Tracks/16 Sounds Fix (credit Agro/Brendor)
   ORG $2900
-  SHORT $e00c
+  SHORT $E00C
   ORG $2924
-  SHORT $280c $d00e $200c
-  ORG $22440c
+  SHORT $280C $D00E $200C
+  ORG $22440C
   BYTE $10
   ORG $224414
-  SHORT $67b0 $0300 $0010
+  SHORT $67B0 $0300 $0010
 
 //Fix Weak Promoted Enemies (credit Gryz)
-  ORG $180b4
-  SHORT $2a00 $dc00 $2201
+  ORG $180B4
+  SHORT $2A00 $DC00 $2201
 
 //Hold A to speed up movement (credit Gryz)
-  ORG $794ee
+  ORG $794EE
   SHORT 0
 
 //Skip H&S screen
@@ -115,23 +121,18 @@ SHORT 0xB470 0x4C07 0x4D07 0x3408 0x42AC 0xD806 0x78A6 0x2E00 0xD1F9 0x7020 0x70
   ORG $C6714
   SHORT 0
 
-//Skip New Game text
-//  ORG $C4928
-//  SHORT 0
-
-//Silence New Game music
-//  ORG $C4A0C
-//  BYTE 0
-
 //Autocursor Fix (credit Vennobennu)
-  ORG $3325a
-  SHORT $e021
+  ORG $3325A
+  SHORT $E021
 
 //Pierce Glitch Fix (credit Brendor)
-  ORG $2b290
-  BYTE $a0
-  // ORG $2b482
-  // BYTE $a0
+  ORG $2B290
+  BYTE $A0
+  /*
+    //Obsoleted
+    ORG $2B482
+    BYTE $A0
+  */
 
 //Unlock Sound Room songs
   ORG $aede0
@@ -144,62 +145,126 @@ SHORT 0xB470 0x4C07 0x4D07 0x3408 0x42AC 0xD806 0x78A6 0x2E00 0xD1F9 0x7020 0x70
   SHORT $1c0a
 
 //Enemy Control Glitch Fix (Credits to Brendor)
-  ORG 0x377A0
-  SHORT 0xE007
+  ORG $377A0
+  SHORT $E007
 
 //Mode Coefficient EXP fix (credit Vennobennu)
-  ORG 0x2C474
+  ORG $2C474
   WORD 0
 
 //Skip Intro and Class Roll (otherwise pre-battle anims will crash this)
-  ORG $c63ad
-  BYTE $e0
+  ORG $C63AD
+  BYTE $E0
   
 // Fix proc names not being cleared (Stan)
-ORG $002C9E
+  ORG $002C9E
   SHORT $6129 $2026 $5429 $3002 $5429
 
 // Fix CAM1/CAMERA2 going out of bounds (Stan)
-ORG $015D52
+  ORG $015D52
   BYTE 14
-ORG $015D66
+  ORG $015D66
   BYTE 9
   
 //Prevent Freeze for Camera
-ORG $F25C
-BYTE 0x00 0x20
+  ORG $F25C
+  BYTE $00 $20
 
 //Prevent Freeze for Cursor
-ORG $10804
-BYTE 0x00 0x20
+  ORG $10804
+  BYTE $00 $20
 
 //Prevent Freeze For Unit State Event 0x34.
 //(REMU,REVEAL,CUSA,CUSN,CUSE,SET_HP,SET_ENDTURN,SET_STATE,SET_SOMETHING,DISA_IF,REMU,DISA)
-ORG 0x102D4
-BYTE 0x00 0x20
+  ORG $102D4
+  BYTE $00 $20
 
 //Prevent Freeze For Unit State Event 0x33.
 //(CHECK_STATUS,CHECK_COORDS,CHECK_CLASS,CHECK_LUCK,CHECK_COORDS,CHECK_CLASS,CHECK_DEPLOYED,CHECK_ACTIVEID,CHECK_ALLEGIANCE,CHECK_EXISTS)
-ORG 0x1027C
-BYTE 0x00 0x20 0x02 0xE0
+  ORG $1027C
+  BYTE $00 $20 $02 $E0
 
 #include "Extensions/Hack Installation.txt"
 
 //Animation Hacks by Hextator
 {
+
 //C01 hack
-ORG $46446c
-WORD 0x80522cd
-ORG $5138
-WORD $47004800 $8464421
-ORG $464420
-WORD 0x401820FF 0xD00A2801 0xD8062818 0x6A10D103 0x62103804 0x4B0BE013 0x4B0B4718 0x041B4718 0x009B0E1B 0x3101A102 0x4908468E 0x46C04708 0xD1002801 0x33042300 0x1AC06A10 0x1C206210 0x46C0BD30 0x08005145 0x08005159 0x080522CD
+	ORG $5138 //part of AIS_Display @ $5034
+	SHORT $4800 //ldr r0, =C01Hack
+	SHORT $4700 //bx r0
+	POIN (C01Hack+1)
+	
+	ORG $464420
+	C01Hack:
+	SHORT $20FF //mov r0, #0xFF
+	SHORT $4018 //and r0, r3
+	SHORT $2801 //cmp r0, #0x1
+	SHORT $D00A //beq Handle_C01_Command
+	SHORT $2818 //cmp r0, #0x18
+	SHORT $D806 //bhi C01Hack_Return_B
+	SHORT $D103 //bne C01Hack_Return_A
+	
+	SHORT $6A10 //ldr r0, [r2, #0x20]
+	SHORT $3804 //sub r0, #4
+	SHORT $6210 //str r0, [r2, #0x20]
+	SHORT $E013 //b C01Hack_Finish
+	
+	C01Hack_Return_A:
+	SHORT $4B0B //ldr r3, =HandleNextAISFrame_Return_A
+	SHORT $4718 //bx r3
+	C01Hack_Return_B:
+	SHORT $4B0B //ldr r3, =HandleNextAISFrame_Return_B
+	SHORT $4718 //bx r3
+	
+	Handle_C01_Command:
+	SHORT $041B //lsl r3, r3, #0x10
+	SHORT $0E1B //lsr r3, r3, #0x18
+	SHORT $009B //lsl r3, r3, #0x2
+	SHORT $A102 //add r1, pc, #2
+	SHORT $3101 //add r1, #0x1
+	SHORT $468E //mov lr, r1
+	SHORT $4908 //ldr r1, =Loop_handler_func
+	SHORT $4708 //bx r1
+	SHORT $46C0 //nop for alignment
+	SHORT $2801 //cmp r0, #0x1
+	SHORT $D100 //IFNE, skip next instruction
+		SHORT $2300 //mov r3, #0x0
+	SHORT $3304 //add r3, #0x4
+	SHORT $6A10 //ldr r0, [r2, #0x20]
+	SHORT $1AC0 //sub r0, r3
+	SHORT $6210 //str r0, [r2, #0x20]
+	
+	C01Hack_Finish:
+	SHORT $1C20 //mov r0, r4
+	SHORT $BD30 //pop {r4, r5, pc}
+	SHORT $46C0 //nop
+	POIN $5144+1 //HandleNextAISFrame_Return_A
+	POIN $5158+1 //HandleNextAISFrame_Return_B
+	POIN $522CC+1 //Loop_handler_func
+	
 
 //C48 hack
-ORG $58d64
-WORD $8464400
-ORG $464400
-WORD 0x3D046A3D 0x022D682D 0xA5020C28 0x46AE3501 0x47284D01 0x47004801 0x08071991 0x080596CD
+	ORG $58d64
+	POIN C48Hack
+	
+	ORG $464400
+	C48Hack:
+	SHORT $6A3D //ldr r5, [r7, #0x20]
+	SHORT $3D04 //sub r5, #0x4
+	SHORT $682D //ldr r5, [r5]
+	SHORT $022D //lsl r5, r5, #0x8
+	SHORT $0C28 //lsr r0, r5, #0x10
+	SHORT $A502 //add r5, pc, #0x2
+	SHORT $3501 //add r5, #1
+	SHORT $46AE //mov lr, r5
+	SHORT $4D01 //ldr r5, =BattlePlaySound
+	SHORT $4728 //bx r5
+	SHORT $4801 //ldr r5, =AIS_ExecCommands_Return
+	SHORT $4700 //bx r0
+	POIN $71990+1 //BattlePlaySound
+	POIN $596CC+1 //AIS_ExecCommands_Return
+	
 }
 
 POP

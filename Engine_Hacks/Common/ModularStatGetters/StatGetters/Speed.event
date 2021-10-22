@@ -4,7 +4,7 @@
 #include "_Common.event"
 
 pSpeedModifiers: // Speed
-	POIN prAddUnitSpeed prHalveIfRescuing prAddEquipSpeed prItemPassiveSpeed prShowItemWeight
+	POIN prAddUnitSpeed prHalveIfRescuing prAddEquipSpeed prItemPassiveSpeed prShowEquippedWeaponWeight
 	#ifdef __DebuffMinZero__
 	POIN prMinZero
 	#endif
@@ -18,8 +18,14 @@ prAddEquipSpeed:
 
 prItemPassiveSpeed:
 	rPassiveStatBoosts(STAT_SPEED)
-	
-prShowItemWeight:
-	rSub(rForUnitEquipped(rCallExternal(prGetItemWeight)))
+		
+prShowEquippedWeaponWeight:
+{
+	#ifdef MSG_BALLISTAE_GETTERS
+		#include "../Extensions/SubtractWeaponWeight.lyn.event"
+	#else
+		rSub(rForUnitEquipped(rCallExternal(prGetItemWeight)))
+	#endif // MSG_BALLISTAE_GETTERS
+}
 
 #endif // MODULAR_GETTER_SPEED_EVENT
