@@ -1,6 +1,14 @@
 //Spell list by character ID
 //level learned, spell ID
-//promoted-only spells indicated by an $80 + level
+//promoted-only spells indicated by a $20 + level
+
+#define SetSpellListPointer(unitID, ptr) "PUSH; ORG SpellAssociationTable+(4*unitID); POIN ptr; POP"
+
+#define Const_MultiListSeparator 0x20
+
+ALIGN 4
+SpellAssociationTable:
+FILL (256*4)
 
 GraySpellList:
 BYTE $01 Fire
@@ -10,6 +18,7 @@ BYTE $21 Heal
 BYTE $26 Unlock
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Gray, GraySpellList)
 
 TobinSpellList:
 BYTE $01 Fire
@@ -19,6 +28,7 @@ BYTE $25 Physic
 BYTE $28 TorchStaff
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Tobin, TobinSpellList)
 
 KliffSpellList:
 BYTE $01 Fire
@@ -29,6 +39,7 @@ BYTE $25 Aura
 BYTE $21 Heal
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Kliff, KliffSpellList)
 
 FayeWSpellList:
 BYTE $01 Nosferatu
@@ -39,6 +50,7 @@ BYTE $0A Rescue
 BYTE $2E Anew
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Faye+Const_MultiListSeparator,  FayeWSpellList)
 
 FayeBSpellList:
 BYTE $01 Fire
@@ -48,6 +60,7 @@ BYTE $21 Heal
 BYTE $26 Freeze
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Faye, FayeBSpellList)
 
 SilqueSpellList:
 BYTE $01 Nosferatu
@@ -58,6 +71,7 @@ BYTE $0E Expel
 BYTE $12 Invoke
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Silque, SilqueSpellList)
 
 CelicaSpellList:
 BYTE $01 Fire
@@ -68,6 +82,7 @@ BYTE $0F Excalibur
 BYTE $14 Ragnarok
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Celica, CelicaSpellList)
 
 MaeSpellList:
 BYTE $01 Fire
@@ -78,6 +93,7 @@ BYTE $21 Heal
 BYTE $26 Silence
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Mae, MaeSpellList)
 
 MaeWSpellList:
 BYTE $01 Nosferatu
@@ -88,6 +104,7 @@ BYTE $21 Physic
 BYTE $26 Silence
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Mae+Const_MultiListSeparator,  MaeWSpellList)
 
 BoeySpellList:
 BYTE $01 Fire
@@ -98,6 +115,7 @@ BYTE $21 Heal
 BYTE $26 Unlock
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Boey, BoeySpellList)
 
 /*
 //Use this for testing
@@ -122,7 +140,7 @@ BYTE $08 Physic
 BYTE $0C Expel
 BYTE $00 $00
 ALIGN 4
-
+SetSpellListPointer(Genny, GennySpellList)
 
 SaberSpellList:
 BYTE $01 Fire
@@ -132,6 +150,7 @@ BYTE $25 Physic
 BYTE $29 Unlock
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Saber, SaberSpellList)
 
 KamuiSpellList:
 BYTE $01 Fire
@@ -141,6 +160,7 @@ BYTE $25 Freeze
 BYTE $29 TorchStaff
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Kamui, KamuiSpellList)
 
 LuthierSpellList:
 BYTE $01 Fire
@@ -150,6 +170,7 @@ BYTE $0F Sagittae
 BYTE $21 Heal
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Luthier, LuthierSpellList)
 
 DeltheaSpellList:
 BYTE $01 Fire
@@ -160,6 +181,7 @@ BYTE $21 Heal
 BYTE $2A Rewarp
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Delthea, DeltheaSpellList)
 
 DeltheaWSpellList:
 BYTE $01 Nosferatu
@@ -170,6 +192,7 @@ BYTE $21 Fortify
 BYTE $2A Rewarp
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Delthea+Const_MultiListSeparator,  DeltheaWSpellList)
 
 AtlasSpellList:
 BYTE $01 Fire
@@ -179,6 +202,7 @@ BYTE $24 Rescue
 BYTE $29 TorchStaff
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Hyas, AtlasSpellList)
 
 JesseSpellList:
 BYTE $01 Fire
@@ -188,6 +212,7 @@ BYTE $21 Heal
 BYTE $25 Unlock
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Jesse, JesseSpellList)
 
 DeenSpellList:
 BYTE $01 Fire
@@ -196,6 +221,7 @@ BYTE $21 Heal
 BYTE $25 Silence
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Deen, DeenSpellList)
 
 SonyaSpellList:
 BYTE $01 Fire
@@ -206,6 +232,7 @@ BYTE $25 Rewarp
 BYTE $2A Entrap
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Sonya, SonyaSpellList)
 
 SonyaWSpellList:
 BYTE $01 Nosferatu
@@ -216,6 +243,7 @@ BYTE $25 Rewarp
 BYTE $2A Entrap
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Sonya+Const_MultiListSeparator,  SonyaWSpellList)
 
 TatianaSpellList:
 BYTE $01 Nosferatu
@@ -226,6 +254,7 @@ BYTE $27 Invoke
 BYTE $28 Warp
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Tatiana, TatianaSpellList)
 
 NomahSpellList:
 BYTE $01 Fire
@@ -236,6 +265,7 @@ BYTE $21 Restore
 BYTE $25 Warp
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Nomah, NomahSpellList)
 
 JedahSpellList:
 BYTE $01 Mire

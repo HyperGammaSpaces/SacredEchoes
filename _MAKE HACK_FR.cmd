@@ -3,7 +3,8 @@ set "parsefile=%~dp0Event Assembler\Tools\ParseFile.exe"
 
 cd %~dp0
 copy "FE8_clean.gba" "SacredEchoes_FR.gba"
-cd "%~dp0/Definitions"
+copy "%~dp0Definitions\Table Definitions.event" "%~dp0Tables\Table Definitions.txt"
+cd "%~dp0Definitions"
 py MakeParseDefs.py "Portrait Definitions.event" ParseDefinitions.txt ../Text/ParseDefinitions.txt Portrait_
 cd "%~dp0Tables"
 echo: | (c2ea "%~dp0FE8_clean.gba")
