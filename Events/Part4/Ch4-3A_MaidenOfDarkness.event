@@ -180,14 +180,22 @@ Dummy_BeginningScene:
 	ENDA
 	#endif
 	
-	MUSC SongID_HerosPath
+	
 	SetBackground(0x47)
-	Text(Ch4_3A_OpeningText)
+	CHECK_ALIVE Silque
+	BEQ 0x100 0xC 0x0
+		MUSC SongID_HerosPath
+		Text(Ch4_3A_OpeningText)
+		GOTO 0x101
+	LABEL 0x100
+		MUSC SongID_HerosPath
+		Text(Ch4_3A_OpeningText_NoSilque)
+	LABEL 0x101
 	
 	CHECK_ALIVE Forsyth
-	BEQ 0x100 0xC 0x0
+	BEQ 0x102 0xC 0x0
 	CHECK_ALIVE Python
-	BEQ 0x100 0xC 0x0
+	BEQ 0x102 0xC 0x0
 	
 		//Forsyth and Python explain the Baron ability through banter?
 		FADI 5
@@ -197,7 +205,7 @@ Dummy_BeginningScene:
 		Text(Ch4_3A_ForsythPython)
 		MUSCSLOW SongID_Silence
 	
-	LABEL 0x100
+	LABEL 0x102
 	
 	FADI 2
 	CLEAN
