@@ -7,6 +7,9 @@
 //comment this define out if you don't want to use Select to display growths
 #define Display_Growths_Toggle
 
+//comment this define out if you don't want to show ballista data on statscreen
+#define ShowBallistaOnStatscreen True
+
 //Display growths hack
 #ifdef Display_Growths_Toggle
     #include "GrowthsDisplay/Installer.event"
@@ -120,7 +123,11 @@ MSS_page1:
 
 ALIGN 4
 MSS_page2:
+#ifdef ShowBallistaOnStatscreen
+	#incbin "mss_page2_ballista.dmp"
+#else
 	#incbin "mss_page2_original.dmp"
+#endif
 	POIN IsUnitEligibleToPromote
 
 ALIGN 4
