@@ -253,8 +253,8 @@ PUSH
 	ORG $784A2
 	BL(StatscreenHoverLadder) //forces hover anims to check "use light rune palette"
 	
-	ORG $87194 //statscreen freespace
-	StatscreenHoverLadder:
+	ORG $871B4
+    StatscreenHoverLadder:
 	replaceWithHack(HandleStatscreenHover)
 	//UnitMenuLadder:
 	//replaceWithHack(HandlePhantomUnitMenu)

@@ -15,40 +15,26 @@
     #include "GrowthsDisplay/Installer.event"
 #endif
 #include "RText/Installer.event"
+//#include "WeaponRankStatScreen/WeaponRankStatScreen.event"
  
 PUSH
 
-	//Language stuff
-	
-	//Level abbreviation
-	#ifdef LANGUAGE_ES
-		ORG $86EBE
-		BYTE $30 //N glyph
-		ORG $86EC0
-		BYTE $25 //V glyph
-	#else
-		ORG $86EBE
-		BYTE $24 //L glyph
-		ORG $86EC0
-		BYTE $25 //V glyph
-	#endif
-
-	ORG 0x205b24 //24 for stat screen
+	ORG 0x205B24 //24 for stat screen
 	POIN MSS_page1|1 MSS_page2|1 MSS_page3|1 MSS_page4|1
 
 	ORG $88690
-	jumpToHack(Page4Supports)
+	jumpToHack(PageNumberCheck)
 
 	ORG $88650
 	POIN NewPageNameGraphic
 
-	ORG $87f38
+	ORG $87F38
 	POIN NewPageNameLayout
 
-	ORG $87f3c
+	ORG $87F3C
 	POIN NewPageNameTiles
 
-	ORG $87f40
+	ORG $87F40
 	POIN NewPageNamePalette
 
 	//Move BWL to page 3 and always display it
@@ -77,27 +63,30 @@ PUSH
   
 	ORG $884CE //box on item screen
 	BL(LoadDefaultUIPal)
-  
-	//we have a few bytes at CC21C-CC2BA available
-	ORG $CC21C
-	HS_Skip:
-	SHORT $B001 $BC38 $4698 $46A1 $46AA $BCF0 $BC01 $4700
-	
-	ALIGN 4
-	LoadDefaultUIPal:
-	SHORT $B500 $1C03 $2B00 $DA00 $2301
-	SHORT $4804 $46C0 $6800 $0159 $2220 //replace 46c0 with 3004 if 2nd, 3008 if 3rd etc
-	BL($DB8)
-	SHORT $BC01 $4700
-	ALIGN 4
-	POIN MenuStylePaletteTable
-	
-	ORG $CC216
-	B(HS_Skip)
-  
-	//Add an icon if the unit can promote
-	ORG $86E70
-	jumpToHack(Draw_Promo_Statscreen_Icon) 
+    
+    ORG $889D0
+	SHORT $E010 //Temporary r-text fix to prevent freezing
+	ORG $889F2  
+	SHORT $BD30
+	BL(RText_Page4_ladder) //this has to be in bl range somewhere
+    
+    ORG $87184
+	RText_Page4_ladder:
+    SHORT $4802 $6148 $4800 $4700
+    POIN $889E8+1
+	POIN RText_Page4
+    ALIGN 4
+    LoadDefaultUIPal:
+    SHORT $B500 $1C03 $2B00 $DA00 $2301
+    SHORT $4804 $46C0 $6800 $0159 $2220 //replace 46c0 with 3004 if 2nd, 3008 if 3rd etc
+    BL($DB8)
+    SHORT $BC01 $4700
+    ALIGN 4
+    POIN MenuStylePaletteTable
+
+    //Custom left side
+    ORG $86E44
+    jumpToHack(MSS_leftpage)
   
 	//Moving support text around
 	ORG $876A4
@@ -111,35 +100,36 @@ PUSH
   
 POP
 
-ALIGN 4
-MSS_page1:
-	#incbin "mss_page1_growthsonly.dmp"
-	WORD SS_TalkText
-	WORD SS_RatingText
-	WORD Growth_Options
-	POIN Growth_Getter_Table
-	POIN Get_Palette_Index 
-	POIN IsUnitEligibleToPromote //in GaidenPromotionMechanics.event
+  ALIGN 4
+  TalkTextIDLink:
+  SHORT SS_TalkText
+  ALIGN 4
+  RatingTextIDLink:
+  SHORT SS_RatingText
+  ALIGN 4
+  Display_Growth_Options_Link:
+  WORD Growth_Options
 
-ALIGN 4
-MSS_page2:
-#ifdef ShowBallistaOnStatscreen
-	#incbin "mss_page2_ballista.dmp"
-#else
-	#incbin "mss_page2_original.dmp"
-#endif
-	POIN IsUnitEligibleToPromote
+  ALIGN 4
+  #ifdef LANGUAGE_ES
+    #include "Pages/mss_leftpanel_ES.lyn.event"
+  #else
+    #include "Pages/mss_leftpanel.lyn.event"
+  #endif
 
-ALIGN 4
-MSS_page3:
-	#incbin "mss_page3_spells.dmp"
-	POIN Spells_Getter_Statscreen
-	POIN IsUnitEligibleToPromote
+  ALIGN 4
+  #include "Pages/mss_page1.lyn.event"
 
-ALIGN 4
-MSS_page4:
-#incbin "mss_page4.dmp"
-	POIN IsUnitEligibleToPromote
+  ALIGN 4
+  #include "Pages/mss_page2.lyn.event"
+
+  ALIGN 4
+  #include "Pages/mss_page3.lyn.event"
+
+  ALIGN 4
+  #include "Pages/mss_page4.lyn.event"
+
+
 	
 ALIGN 4
 Spells_Getter_Statscreen:
@@ -173,12 +163,11 @@ Move_Bar_Number:
 ALIGN 4
 Move_Bonus_Number:
 	#incbin "move_bonus_number.dmp"
-	
-ALIGN 4
-Draw_Promo_Statscreen_Icon:
-	#incbin "drawstatscreenleft.dmp"
-	POIN IsUnitEligibleToPromote
 
 ALIGN 4	
-Page4Supports:
+PageNumberCheck:
 	#incbin "SupportsPage4.dmp"
+    
+ALIGN 4
+DontBlinkLeft:
+    #incbin "DontBlinkLeft.dmp"

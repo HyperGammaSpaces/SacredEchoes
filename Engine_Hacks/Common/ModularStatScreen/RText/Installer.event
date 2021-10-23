@@ -22,6 +22,7 @@ WORD 0
 */
 
 #ifdef _FE8_
+    ALIGN 4
 
 	#define RMenu(up,down,left,right,xcoord,ycoord,TID) "POIN up down left right;BYTE xcoord ycoord; SHORT TID; WORD 0 0;"
 	#define RMenu(up,down,left,right,xcoord,ycoord,TID,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT TID; POIN 0 Getter|1"
@@ -31,40 +32,29 @@ WORD 0
 	#define ClassDescGetter 0x88C00
 	#define ConditionGetter 0x88A2C
 	#define StrMagGetter 0x88B08
-	
-	PUSH
-	
-		ORG $889D0
-		SHORT $E010 //Temporary r-text fix to prevent freezing
-		ORG $889F2  
-		SHORT $BD30
-		BL(RText_Page4_ladder) //this has to be in bl range somewhere
-		
-		ORG $87184
-		RText_Page4_ladder:
-		#incbin "GetPage4Rtext.dmp"
-		POIN RText_Page4
-		
-	POP
 
 	RText_Page1:
 	{
 		#include "RText_Page1.event"
 	}
+    ALIGN 4
 
 	RText_Page2:
 	{
 		#include "RText_Page2.event"
 	}
+    ALIGN 4
 
 	RText_Page3:
 	{
 		#include "RText_Page3.event"
 	}
+    ALIGN 4
 
 	RText_Page4:
 	{
 		#include "RText_Page4.event"
 	}
+    ALIGN 4
 
 #endif

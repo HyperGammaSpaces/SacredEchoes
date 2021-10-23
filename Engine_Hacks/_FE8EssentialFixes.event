@@ -116,11 +116,20 @@ PUSH
 //Skip H&S screen
   ORG $CC20C
   SHORT 0
+  ORG $CC216
+  B(HS_Skip)
+  ORG $CC21C
+  HS_Skip:
+  SHORT $B001 $BC38 $4698 $46A1 $46AA $BCF0 $BC01 $4700
 
+//Skip Intro and Class Roll (otherwise pre-battle anims will crash this)
+  ORG $C63AD
+  BYTE $E0
+  
 //Skip Intro cutscene
   ORG $C6714
   SHORT 0
-
+  
 //Autocursor Fix (credit Vennobennu)
   ORG $3325A
   SHORT $E021
@@ -151,10 +160,6 @@ PUSH
 //Mode Coefficient EXP fix (credit Vennobennu)
   ORG $2C474
   WORD 0
-
-//Skip Intro and Class Roll (otherwise pre-battle anims will crash this)
-  ORG $C63AD
-  BYTE $E0
   
 // Fix proc names not being cleared (Stan)
   ORG $002C9E

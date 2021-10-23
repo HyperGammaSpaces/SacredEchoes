@@ -1,5 +1,7 @@
 .thumb
 
+.equ ItemStruct, 0x08809B10
+
 @copied from 16a2c
 @params: r0=tile_origin, r1=itemID, r2=textcolor, r3=vram_coords
 
@@ -54,4 +56,5 @@ POP {r4,r5,r6,r7}
 POP {r0}
 BX r0
 
+.align
 .ltorg
