@@ -1,0 +1,9 @@
+#ifdef CANNOT_CRIT
+
+//Weapon Crit 0xFF = Cannot Crit by Sme
+
+
+ALIGN 4
+#include "CannotCrit.lyn.event"
+
+#endif // CANNOT_CRIT

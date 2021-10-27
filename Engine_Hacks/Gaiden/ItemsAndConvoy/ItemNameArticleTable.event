@@ -1,22 +1,244 @@
-#ifdef LANGUAGE_ES
-	//Just remove articles for now.
+//For setting which items use "A/An", "The", etc. Table runs from 0x3C to 0xB9
+#define ItemNameArticleTable $161B0
+	
+#define ItemName_NoArticle $163A8
+#define ItemName_UseArticle $163B0
+
+#define SetItemUsesArticle(itemID, setting) "PUSH; ORG ItemNameArticleTable+((itemID-0x3C)*4); POIN setting; POP"
+    
+/*
+    $1618C GetItemNameWithArticle - r0 is itemID, r1 = bool IsCapitalized
+    $A160 String_PrependArticle - r0 is start of string in text buffer, r1 = pointer to article (or 0 if need to call String_GetGenericArticle), r2 = bool IsCapitalized
+    $A048 String_GetGenericArticle - r0 is start of string in text buffer, r1 = bool IsCapitalized
+        For English: checks first letter of ASCII string, has a jump table for characters between `A` and `u`
+        $591AA4 gStringArticleLookup 0-terminated list of pointers to 0-terminated raw ASCII entries
+*/
+
+/*
+	//To remove articles entirely
 	PUSH
 		ORG 0x1619C
 		BYTE 0x04 0xE1
 	POP
+*/
+
+#ifdef LANGUAGE_ES
+    #define SetArticleForItem(itemID, textPointer) "PUSH; ORG ExpandedItemArticleTable+(itemID*4); POIN textPointer; POP"
+
+    PUSH
+        //Use per-item article table
+        ORG $163B6
+        SHORT $062D $000A $4902 $1840 $6806 $E00A $46C0
+        POIN ExpandedItemArticleTable
+        /*
+            lsl r5, r5, #0x18
+            lsl r0, r4, #0x2
+            ldr r1, ExpandedItemArticleTable
+            add r0, r0, r1
+            ldr r6, [r0]
+            b   $163D8
+        */
+        
+        //Make String_PrependArticle capitalize the article
+        ORG $A160
+        #include "String_PrependArticle_Capitalize.lyn.event"
+        
+    POP
+    
+    ALIGN 4
+    ExpandedItemArticleTable:
+    FILL (256*4)
+    
+    Article_Un_ES:
+    String("un "); BYTE 0
+    Article_Una_ES:
+    String("una "); BYTE 0
+    Article_Unos_ES:
+    String("unos "); BYTE 0
+    Article_Unas_ES:
+    String("unas "); BYTE 0
+    Article_El_ES:
+    String("el "); BYTE 0
+    Article_La_ES:
+    String("la "); BYTE 0
+    Article_Los_ES:
+    String("los "); BYTE 0
+    Article_Las_ES:
+    String("las "); BYTE 0
+    
+    //Non-unique weapons
+    SetArticleForItem(BaseSword, Article_Una_ES)
+    SetArticleForItem(IronSword, Article_Una_ES)
+    SetArticleForItem(SteelSword, Article_Una_ES)
+    SetArticleForItem(SilverSword, Article_Una_ES)
+    SetArticleForItem(BraveSword, Article_Una_ES)
+    SetArticleForItem(Shadowblade, Article_Una_ES)
+    SetArticleForItem(Thunderblade, Article_Una_ES)
+    SetArticleForItem(PoisonSword, Article_Una_ES)
+    SetArticleForItem(Rapier, Article_Un_ES)
+    SetArticleForItem(DeensSword, Article_Una_ES)
+    SetArticleForItem(HolySword, Article_Una_ES)
+    SetArticleForItem(Armorslayer, Article_Una_ES)
+    SetArticleForItem(Zweihander, Article_Una_ES)
+    SetArticleForItem(Ladyblade, Article_Una_ES)
+    SetArticleForItem(Ilwoon, Article_Una_ES)
+    SetArticleForItem(Lancereaver, Article_Una_ES)
+    SetArticleForItem(Zanbato, Article_Una_ES)
+    SetArticleForItem(GoldDagger, Article_Una_ES)
+    
+    SetArticleForItem(BaseLance, Article_Una_ES)
+    SetArticleForItem(IronLance, Article_Una_ES)
+    SetArticleForItem(SteelLance, Article_Una_ES)
+    SetArticleForItem(SilverLance, Article_Una_ES)
+    SetArticleForItem(PoisonLance, Article_Una_ES)
+    SetArticleForItem(KillerLance, Article_Una_ES)
+    SetArticleForItem(HolyLance, Article_Una_ES)
+    SetArticleForItem(Ridersbane, Article_Una_ES)
+    SetArticleForItem(Javelin, Article_Una_ES)
+    SetArticleForItem(Kriemhild, Article_Una_ES)
+    SetArticleForItem(Axereaver, Article_Una_ES)
+    SetArticleForItem(HeavySpear, Article_Una_ES)
+    SetArticleForItem(Rhomphaia, Article_Una_ES)
+    SetArticleForItem(Saunion, Article_Una_ES)
+    
+    SetArticleForItem(BaseAxe, Article_Un_ES) //hacha is feminine but uses masculine adjectives
+    SetArticleForItem(IronAxe, Article_Un_ES)
+    SetArticleForItem(SteelAxe, Article_Un_ES)
+    SetArticleForItem(SilverAxe, Article_Un_ES)
+    SetArticleForItem(PoisonAxe, Article_Un_ES)
+    SetArticleForItem(KillerAxe, Article_Un_ES)
+    SetArticleForItem(Halberd, Article_Un_ES)
+    SetArticleForItem(Halberd, Article_Un_ES)
+    SetArticleForItem(Hammer, Article_Un_ES)
+    SetArticleForItem(DevilAxe, Article_Un_ES)
+    SetArticleForItem(HandAxe, Article_Un_ES)
+    SetArticleForItem(Pugi, Article_Un_ES)
+    SetArticleForItem(Swordreaver, Article_Un_ES)
+    SetArticleForItem(Hatchet, Article_Un_ES)
+    SetArticleForItem(HolyAxe, Article_Un_ES)
+    
+    SetArticleForItem(BaseBow, Article_Un_ES)
+    SetArticleForItem(IronBow, Article_Un_ES)
+    SetArticleForItem(SteelBow, Article_Un_ES)
+    SetArticleForItem(SilverBow, Article_Un_ES)
+    SetArticleForItem(KillerBow, Article_Un_ES)
+    SetArticleForItem(PoisonBow, Article_Un_ES)
+    SetArticleForItem(HolyBow, Article_Un_ES)
+    SetArticleForItem(Longbow, Article_Un_ES)
+    SetArticleForItem(BallistaWeapon, Article_Una_ES)
+    SetArticleForItem(RadiantBow, Article_Un_ES)
+    
+    //these won't be used anyway
+    SetArticleForItem(Fire, Article_Un_ES)
+    SetArticleForItem(Thunder, Article_Un_ES)
+    SetArticleForItem(Sagittae, Article_Unas_ES)
+    SetArticleForItem(Bolting, Article_Unos_ES)
+    
+    SetItemUsesArticle(Ragnarok,ItemName_NoArticle)
+    SetItemUsesArticle(0x3D,ItemName_NoArticle)
+    SetItemUsesArticle(Excalibur,ItemName_NoArticle)
+    SetItemUsesArticle(Nosferatu,ItemName_NoArticle)
+    SetItemUsesArticle(Shine,ItemName_NoArticle)
+    SetItemUsesArticle(Seraphim,ItemName_NoArticle)
+    SetItemUsesArticle(Purge,ItemName_NoArticle)
+    SetItemUsesArticle(Aura,ItemName_NoArticle)
+    SetItemUsesArticle(0x44,ItemName_NoArticle)
+    SetItemUsesArticle(Miasma,ItemName_NoArticle)
+    SetItemUsesArticle(Selene,ItemName_NoArticle)
+    SetItemUsesArticle(Sisyphus,ItemName_NoArticle)
+    SetItemUsesArticle(Mire,ItemName_NoArticle)
+    SetItemUsesArticle(Medusa,ItemName_NoArticle)
+    SetItemUsesArticle(Thanatos,ItemName_NoArticle)
+    SetItemUsesArticle(Heal,ItemName_NoArticle)
+    SetItemUsesArticle(Expel,ItemName_NoArticle)
+    SetItemUsesArticle(Recover,ItemName_NoArticle)
+    SetItemUsesArticle(Physic,ItemName_NoArticle)
+    SetItemUsesArticle(Fortify,ItemName_NoArticle)
+    SetItemUsesArticle(Restore,ItemName_NoArticle)
+    SetItemUsesArticle(Silence,ItemName_NoArticle)
+    SetItemUsesArticle(Freeze,ItemName_NoArticle)
+    SetItemUsesArticle(Warp,ItemName_NoArticle)
+    SetItemUsesArticle(Rescue,ItemName_NoArticle)
+    SetItemUsesArticle(TorchStaff,ItemName_NoArticle)
+    SetItemUsesArticle(Invoke,ItemName_NoArticle)
+    SetItemUsesArticle(Unlock,ItemName_NoArticle)
+    SetItemUsesArticle(Rewarp,ItemName_NoArticle)
+    SetItemUsesArticle(Anew,ItemName_NoArticle)
+    
+    SetArticleForItem(Lifefruit, Article_Una_ES)
+    SetArticleForItem(Soma, Article_Una_ES)
+    SetArticleForItem(Persephone, Article_Una_ES)
+    SetArticleForItem(Pegacheese, Article_Un_ES)
+    SetArticleForItem(Nectar, Article_Un_ES)
+    SetArticleForItem(Ambrosia, Article_Una_ES)
+    SetArticleForItem(Talisman, Article_Un_ES)
+    SetArticleForItem(Boots, Article_Unas_ES)
+    
+    SetArticleForItem(HolyRing, Article_Un_ES)
+    SetArticleForItem(MageRing, Article_Un_ES)
+    SetArticleForItem(GrimoireRing, Article_Un_ES)
+    SetArticleForItem(AnimusRing, Article_Un_ES)
+    SetArticleForItem(CoralRing, Article_Un_ES)
+    SetArticleForItem(SpeedRing, Article_Un_ES)
+    SetArticleForItem(PrayerRing, Article_Un_ES)
+    SetArticleForItem(KeepsakeRing, Article_Un_ES)
+    SetArticleForItem(AngelRing, Article_Un_ES)
+    
+    SetArticleForItem(HideShield, Article_Un_ES)
+    SetArticleForItem(IronShield, Article_Un_ES)
+    SetArticleForItem(SteelShield, Article_Un_ES)
+    SetArticleForItem(SilverShield, Article_Un_ES)
+    SetArticleForItem(DelphiShield, Article_Un_ES)
+    SetArticleForItem(MagicShield, Article_Un_ES)
+    SetArticleForItem(RoyalShield, Article_Un_ES)
+    SetArticleForItem(EmperorShield, Article_Un_ES)
+    SetArticleForItem(Dracoshield, Article_Un_ES)
+    SetArticleForItem(HolyShield, Article_Un_ES)
+
+    SetArticleForItem(ChestKey, Article_Una_ES)
+    SetArticleForItem(DoorKey, Article_Una_ES)
+    SetArticleForItem(Lockpick, Article_Unas_ES)
+    SetArticleForItem(ChestKey_5, Article_Una_ES)
+    SetArticleForItem(Vulnerary, Article_Una_ES)
+    SetArticleForItem(Elixir, Article_Un_ES)
+    SetArticleForItem(PureWater, Article_Una_ES)
+    SetArticleForItem(Antitoxin, Article_Un_ES)
+    SetArticleForItem(TorchItem, Article_Una_ES)
+    SetArticleForItem(MemberCard, Article_Una_ES)
+    SetArticleForItem(SilverCard, Article_Una_ES)
+    SetArticleForItem(DumaIcon, Article_Un_ES)
+    SetArticleForItem(MetissTome, Article_El_ES)
+    SetArticleForItem(HerosProof, Article_La_ES)
+    SetArticleForItem(ZofianCrown, Article_La_ES)
+    
+    //Unique weapons
+    SetItemUsesArticle(Falchion, ItemName_UseArticle)
+    SetItemUsesArticle(TheZofia, ItemName_UseArticle)
+    SetItemUsesArticle(Imperius, ItemName_UseArticle)
+    SetItemUsesArticle(DumasLance, ItemName_UseArticle)
+    SetItemUsesArticle(DelphiShield,ItemName_UseArticle)
+	SetItemUsesArticle(GoldDagger, ItemName_UseArticle)
+    SetItemUsesArticle(AetherAxe, ItemName_UseArticle)
+    SetItemUsesArticle(MetissTome, ItemName_UseArticle)
+    SetArticleForItem(RoyalSword, Article_La_ES)
+    SetArticleForItem(Falchion, Article_El_ES)
+    SetArticleForItem(TheZofia, Article_El_ES)
+    SetArticleForItem(Imperius, Article_La_ES)
+    SetArticleForItem(Forscythe, Article_La_ES)
+    SetArticleForItem(DumasLance, Article_La_ES)
+    SetArticleForItem(MilasBow, Article_El_ES)
+    SetArticleForItem(AstraSword, Article_La_ES)
+    SetArticleForItem(SolLance, Article_La_ES)
+    SetArticleForItem(AetherAxe, Article_El_ES)
+    SetArticleForItem(LunaBow, Article_El_ES)
+    
 #else
-	//For setting which items use "A/An", "The", etc. Table runs from 0x3C to 0xB9
-	#define ItemNameArticleTable $161B0
-	
-	#define ItemName_NoArticle $163A8
-	#define ItemName_UseArticle $163B0
+    //default: english
+	SetItemUsesArticle(DelphiShield,ItemName_UseArticle)
+	SetItemUsesArticle(GoldDagger, ItemName_UseArticle)
+	SetItemUsesArticle(DumasLance, ItemName_NoArticle)
+	SetItemUsesArticle(TheZofia, ItemName_NoArticle)
+	SetItemUsesArticle(KeepsakeRing, ItemName_NoArticle)
+	SetItemUsesArticle(AetherAxe, ItemName_UseArticle)
 
-	#define SetItemNameArticle(itemID, setting) "PUSH; ORG ItemNameArticleTable+((itemID-0x3C)*4); POIN setting; POP"
-
-	SetItemNameArticle(DelphiShield,ItemName_UseArticle)
-	SetItemNameArticle(GoldDagger, ItemName_UseArticle)
-	SetItemNameArticle(DumasLance, ItemName_NoArticle)
-	SetItemNameArticle(TheZofia, ItemName_NoArticle)
-	SetItemNameArticle(KeepsakeRing, ItemName_NoArticle)
-	SetItemNameArticle(AetherAxe, ItemName_UseArticle)
 #endif
