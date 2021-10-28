@@ -6,7 +6,7 @@
 	.set GetUnit,                      0x08019430
 	.set SetUnitStatus,                0x80178F4
 
-@replaces routine at x803001C
+@replaces routine at 0x803001C
 
 push {r4-r5,lr}
 ldr r0, =gTargetBattleUnit

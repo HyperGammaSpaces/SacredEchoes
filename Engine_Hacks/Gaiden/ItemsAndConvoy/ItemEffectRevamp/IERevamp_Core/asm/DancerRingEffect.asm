@@ -1,5 +1,5 @@
 .thumb
-.include "_ItemEffectDefinitions.s"
+.include "_ItemEffectDefinitions.asm"
 
 @.global IE_InflictStatusEffect
 @.type IE_InflictStatusEffect, %function

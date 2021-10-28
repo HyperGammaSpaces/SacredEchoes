@@ -42,9 +42,6 @@
 	#incbin "PromotionLevelCheck.dmp"
 	POIN Item_GetStat_EPV
 	
-	PromoEffectList:
-	#include "_PromotionEffectList.txt"
-	
 	PUSH
 		ORG $291A8
 		#incbin "PromoItemUsability.dmp"

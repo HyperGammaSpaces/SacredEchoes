@@ -4,7 +4,7 @@
 	#ifndef IDListCheck
 		#define IDListCheck
 		IDListLoop:
-		#incbin "ItemEffect_ListCheck.dmp"
+		#incbin "asm/ItemEffect_ListCheck.dmp"
 		POIN Item_GetStat_EffectID | 1
 	#endif
 
@@ -79,13 +79,6 @@
 	POP
 	
 	ALIGN 4
-	
-	//Default Lists
-	
-	// ChestKeyEffectList:
-	#include "_ChestKeyEffectList.txt"
-	// SelfHealItemEffectList:
-	#include "_HealItemEffectList.txt"
 	
 #else
 	ERROR "This is for FE8 only"

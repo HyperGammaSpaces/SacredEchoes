@@ -1,0 +1,26 @@
+ALIGN 4
+AI_ItemArray:
+    BYTE IER_FX_DoorKey 0 0 0; POIN $408DC+1
+    BYTE IER_FX_Lockpick 0 0 0; POIN $40974+1
+    BYTE IER_FX_Antidote 0 0 0; POIN $40A78+1
+    BYTE IER_FX_MasterKey 0 0 0; POIN $408DC+1
+    WORD 0 0 //term
+    
+ALIGN 4
+AI_StaffArray:
+    BYTE IER_FX_Heal 0 0 0; POIN $3FBB8+1
+    BYTE IER_FX_Recover 0 0 0; POIN $3FBB8+1
+    BYTE IER_FX_Physic 0 0 0; POIN $3FBB8+1
+    BYTE IER_FX_Fortify 0 0 0; POIN $3FF00+1
+    BYTE IER_FX_Warp 0 0 0; POIN $4000C+1
+    BYTE IER_FX_Rescue 0 0 0; POIN $3FD30+1
+    //BYTE IER_FX_Rewarp 0 0 0; POIN $408DC+1 //change
+    BYTE IER_FX_Entrap 0 0 0; POIN $404E0+1
+    BYTE IER_FX_Restore 0 0 0; POIN $40164+1
+    BYTE IER_FX_Unlock 0 0 0; POIN $40974+1 //lockpick fx
+    BYTE IER_FX_Silence 0 0 0; POIN $40354+1
+    BYTE IER_FX_Freeze 0 0 0; POIN $404E0+1
+    BYTE IER_FX_Invoke 0 0 0; POIN Invoke_AIC_Targeting|1
+    //BYTE IER_FX_Anew 0 0 0; POIN $408DC+1 //make wrapper for stan's DanceAI
+    WORD 0 0 //term
+    

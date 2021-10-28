@@ -1,0 +1,33 @@
+//list of effect ids used by promotion items
+//this is the list for promo items that are usable on the prep screen
+
+#define Promotion_IEList
+	PromoEffectList:
+	BYTE	IER_FX_HerosProof
+	BYTE	IER_FX_ZofianCrown
+
+	BYTE 0x0	//end of list
+
+#define ChestKey_IEList
+	ChestKeyEffectList:
+	//list of effect ids the ai will check for as chest keys
+	BYTE IER_FX_MasterKey
+	BYTE IER_FX_ChestKey
+	BYTE IER_FX_Lockpick
+
+	BYTE 0x0	//end of list
+
+#define SelfHealingIEList
+	/*
+	The order of this list doesn't matter, priority is determinded by the order of the healing items in the unit's inventory
+	For example, if the unit's inventory is [IronSword, Vulnerary, Elixir] the unit will use the vulnerary first when 
+	trying to heal even though the elixir restores more. might try to mess with this at a later date but this is how the ai behaves in vanilla
+	*/
+
+	SelfHealItemEffectList:
+	//List of healing items effects usable by the AI
+	BYTE IER_FX_Vulnerary	//Heal 10 hp effect
+	BYTE IER_FX_Elixir	//Heal all hp effect
+	BYTE IER_FX_MightVuln	//Heal based on value in item data
+
+	BYTE 0x0	//end of list

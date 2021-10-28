@@ -1,13 +1,6 @@
 //Currently FE8 Only
 //v1.7
 
-#ifndef FreeSpace
-	#ifdef _FE8_
-		#define FreeSpace $B30000
-	#endif
-	ORG FreeSpace
-#endif
-
 #ifndef ItemEffectRevamp
 	#define ItemEffectRevamp
 #endif
@@ -63,7 +56,7 @@
 		SHORT 0x468F	//mov 	r15, r1
 		B($2F90E)
 		
-		#include "GetStatBoosterText.lyn.event"
+		#include "asm/GetStatBoosterText.lyn.event"
 		
 		//BL(Item_GetStat_EffectID)
 		//B($2F8AA)	//IB Jump 
@@ -85,16 +78,17 @@
 		ORG $2F8B4
 		POIN IBArray
 	*/
+    
 	//change checks for status staves to check for the effect ids instead
 	ORG $2F010	//$2F082
-		#include "StatusStaffEffect.lyn.event"
+		#include "asm/StatusStaffEffect.lyn.event"
 		
 	//change checks for dancer rings to check for the effect id instead
 	ORG $2FBBC	//$2FBEA
 	#ifndef DancerRingRefresh
-		#include "DancerRingEffect.lyn.event"
+		#include "asm/DancerRingEffect.lyn.event"
 	#else
-		#include "DancerRingEffect_Refresh.lyn.event"
+		#include "asm/DancerRingEffect_Refresh.lyn.event"
 	#endif //DancerRingRefresh
 		
 	ORG $2FF78
@@ -118,7 +112,7 @@
 		B($5802E)	//skip loop since the getter is called insead
 		//might overwrite the loop with something else later
 	ORG $78214
-		#include "ItemAnimAssociation_p1.lyn.event"
+		#include "asm/ItemAnimAssociation_p1.lyn.event"
 		POIN UseEffectAnimTable SpellAssociationTable
 	
 	//for use space where tables used to be to put stuff in bl range
@@ -147,15 +141,14 @@
 		jumpToHack(Item_GetStat_EPV)
 
 		ALIGN 4
-		#include "ItemAnimAssociation_p2.lyn.event"
-		#include "ItemAnimAssociation_p3.lyn.event"
-		#include "LockpickCheck.lyn.event"
+		#include "asm/ItemAnimAssociation_p2.lyn.event"
+		#include "asm/ItemAnimAssociation_p3.lyn.event"
+		#include "asm/LockpickCheck.lyn.event"
 	POP
 	
 	IEAfterBattle:
-	#include "ItemEffectAfterBattle.lyn.event"
+	#include "asm/ItemEffectAfterBattle.lyn.event"
 	POIN EffectJumpTable
-	#include "Extensions/ProcDefinitions.txt"
 	
 	ItemEffectAfterAnimProc:
 	PROC_SLEEP(0x1)
@@ -163,6 +156,7 @@
 	PROC_END
 	
 	#include "_KeyCommandsFix.event"
+    
 #else
 	ERROR "This is for FE8 only"
 #endif

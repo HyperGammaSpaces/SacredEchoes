@@ -30,7 +30,7 @@
 	BL(IDListLoop)
 	SHORT 0xBC02 0x4708 //pop r1; bx r1
 	ALIGN 4
-	POIN ChestKeyList
+	POIN ChestKeyEffectList
 	
 	//Healing Item Check
 	PUSH
@@ -48,7 +48,7 @@
 	BL(IDListLoop)
 	SHORT 0xBC02 0x4708 //pop r1; bx r1
 	ALIGN 4
-	POIN HealingItemList
+	POIN SelfHealItemEffectList
 	
 	//Staff AI stuff
 	PUSH
@@ -66,8 +66,7 @@
 	
 	//Other Items AI
 	PUSH
-	
-	ORG $407F8
+        ORG $407F8
 		BL(Item_GetStat_EffectID)
 		ORG $40820
 		POIN AI_ItemArray
@@ -75,15 +74,7 @@
 		POIN AI_ItemArray
 		ORG $408C8
 		POIN AI_ItemArray + 0x4
-	
 	POP
-	
-	ALIGN 4
-	ChestKeyList:
-	#include "_ChestKeyEffectList.txt"
-	
-	HealingItemList:
-	#include "_HealItemEffectList.txt"
 	
 #else
 	ERROR "This is for FE8 only"

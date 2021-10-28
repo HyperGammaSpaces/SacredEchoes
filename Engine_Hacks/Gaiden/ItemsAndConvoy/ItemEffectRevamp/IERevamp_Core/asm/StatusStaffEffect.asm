@@ -1,5 +1,5 @@
 .thumb
-.include "_ItemEffectDefinitions.s"
+.include "_ItemEffectDefinitions.asm"
 
 @.global IE_StatusStaffEffect
 @.type IE_StatusStaffEffect, %function

@@ -1,0 +1,72 @@
+ALIGN 4
+IBArray:
+//these are all null except for stat boosters and metis tome.
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    POIN IBNull
+    //term
+    
+//and set pointers for the ones that aren't null
+    SetIBPointer(IER_FX_Lifefruit, $2F83A)
+    SetIBPointer(IER_FX_Soma, $2F83A)
+    SetIBPointer(IER_FX_Persephone, $2F83A)
+    SetIBPointer(IER_FX_Pegacheese, $2F83A)
+    SetIBPointer(IER_FX_Nectar, $2F83A)
+    SetIBPointer(IER_FX_Ambrosia, $2F83A)
+    SetIBPointer(IER_FX_Talisman, $2F83A)
+    SetIBPointer(IER_FX_Boots, $2F83A)
+    SetIBPointer(IER_FX_BodyRing, $2F83A)
+    SetIBPointer(IER_FX_MetisTome, $2F824)
