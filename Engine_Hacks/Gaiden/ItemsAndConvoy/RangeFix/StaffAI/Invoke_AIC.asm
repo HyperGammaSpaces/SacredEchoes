@@ -1,6 +1,6 @@
 .thumb
-.include "_ItemAIDefinitions.h.s"
-@AI_TA condition for fortify
+.include "_ItemAIDefinitions.h.asm"
+@AI_TA condition for invoke
 
 @arguments:
 	@r0 = stack pocket pointer

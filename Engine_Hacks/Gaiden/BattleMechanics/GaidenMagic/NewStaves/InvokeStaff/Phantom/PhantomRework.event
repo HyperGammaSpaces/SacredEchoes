@@ -1,0 +1,65 @@
+//General phantom fixes
+PUSH	
+	//Change class check for unitID check on KillUnitIfNoHP
+	ORG $1840C
+	SHORT $6810 $7900 $283F
+
+	//Don't draw portrait on item select menu if unit is generic
+	ORG $22BE8
+	SHORT $6808 $88C0 $2800
+	
+	//Remove hardcoded checks for phantom class - use 0x3F as summon unit ID
+	ORG $18EDA
+	SHORT $6810 $7900 $283F
+	ORG $23046
+	SHORT $6811 $7909 $1C04 $293F
+	ORG $232C8
+	SHORT $6810 $7900 $283F
+	ORG $23F74
+	SHORT $6800 $7900 $283F
+	ORG $23FDE
+	SHORT $6810 $7900 $283F
+	ORG $2403A
+	SHORT $6810 $7900 $283F
+	ORG $24096
+	SHORT $6810 $7900 $283F
+	ORG $2523A
+	SHORT $6810 $7900 $283F
+	ORG $25242
+	SHORT $6823 $7918 $283F
+	ORG $2C524
+	SHORT $6818 $7900 $283F
+	ORG $3122A
+	SHORT $6808 $7900 $283F
+	
+	//Update Trade command to block summoned units
+	ORG $22F38
+	jumpToHack(NewTradeUsability)
+	ORG $25518
+	jumpToHack(NewGiveToEligibility)
+	
+	//don't let summons rescue/take
+	ORG UM_Rescue_Definition+0xC
+	//ORG $59CD34
+	POIN NewRescueMenuUsability|1
+	//ORG $59CD7C
+	ORG UM_Take_Definition+0xC
+	POIN NewTakeUsability|1
+POP
+
+NewRescueMenuUsability:
+#incbin "NewRescueUsability.dmp"
+ALIGN 4
+
+NewTakeUsability:
+#incbin "NewTakeUsability.dmp"
+ALIGN 4
+
+NewGiveToEligibility:
+#incbin "GivenToUsability.dmp"
+ALIGN 4
+
+NewTradeUsability:
+#incbin "TradeUsability.dmp"
+ALIGN 4
+

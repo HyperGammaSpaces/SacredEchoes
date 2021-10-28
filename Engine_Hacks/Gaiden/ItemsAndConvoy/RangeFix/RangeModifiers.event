@@ -5,14 +5,13 @@
 #include "Extensions/Hack Installation.txt"
 	
 #ifdef _FE8_
-	#define Teraspark_Range_Fixes 0x1
-	#define Usability_Table 0x288B0
-	#define Item_Table 0x809B10
+	#define Teraspark_Range_Fixes $1
+
+	#include "RangeFixDefs.event"
 	#include "ItemTargeting/_ItemEffectTargeting.event"
 	#include "StaffAI/_StaffAI_Setup.event"
 	PUSH
 	//USABILITY
-	#define New_Use(offset) "SHORT 0x4902 0x1C20 0x1C2A; BL($29068); B($28BFE); POIN offset|1"
 	ORG $28A8C	//Heal/Mend/Recover
 		New_Use(HealStaff_RangeSetup)
 	ORG $28A9C	//Physic
@@ -21,36 +20,36 @@
 		New_Use(HealStaff_RangeSetup)
 	ORG $28ABC	//Restore
 		New_Use(RestoreStaff_RangeSetup)
-	ORG $28AEC	//Silence
+	ORG $28ACC	//Rescue
+		New_Use(RescueStaff_RangeSetup)
+    //Rewarp
+    ORG $28AEC	//Silence
 		New_Use(SilenceStaff_RangeSetup)
 	ORG $28AFC	//Sleep
 		New_Use(SleepStaff_RangeSetup)
-	//ORG $28B0C	//Berserk
-	//	New_Use(BerserkStaff_RangeSetup)
+    //Entrap
 	ORG $28B1C	//Warp
 		New_Use(WarpStaff_RangeSetup)
-	ORG $28ACC	//Rescue
-		New_Use(RescueStaff_RangeSetup)
+	ORG $28B3C	//Unlock usability check
+		New_Use(UnlockStaff_RangeSetup)
 	ORG $28BC8	//Torch
-		SHORT 0x1C20 0x1C29 0x4A01
+		SHORT $1C20 $1C29 $4A01
 		BL($D18C8)	//bl to bx r2
 		B($28C06)
 		POIN Torch_Fix|1
 	ORG $28B2C	//Hammerne
 		New_Use(HammerneStaff_RangeSetup)
-	ORG $28ADC	//Barrier
-		New_Use(BarrierStaff_RangeSetup)
 	
 	//TARGET
 	ORG $28F98	//Heal/Mend/Recover Staff
 		POIN HealStaff_RangeSetup|1
 	ORG $28F9E	//Physic Staff
-		SHORT 0x1C28 0x1C22
+		SHORT $1C28 $1C22
 		BL($29B8C)
 		B($29062)
 		POIN HealStaff_RangeSetup|1
 	ORG $28FBC	//Restore Staff
-		SHORT 0x4902 0x1C28 0x1C22
+		SHORT $4902 $1C28 $1C22
 		BL($29BC8)
 		B($29062)
 		POIN RestoreStaff_RangeSetup|1
@@ -59,44 +58,57 @@
 	ORG $28FD8	//Sleep Staff
 		POIN SleepStaff_RangeSetup|1
 	ORG $28FDC	//Berserk Staff
-		SHORT 0x4902 0x1C28 0x1C22
+		SHORT $4902 $1C28 $1C22
 		BL($29CA0)
 		B($29062)
 		POIN SleepStaff_RangeSetup|1
 	//ORG $29004	//Warp Staff //
 	ORG $28FAC	//Rescue Staff
-		SHORT 0x4902 0x1C28 0x1C22
+		SHORT $4902 $1C28 $1C22
 		BL($29568)
 		B($29062)
 		POIN RescueStaff_RangeSetup|1
-	//check Torch targeting proc for range building
-	//ORG $2900C	//Hammerne Staff
-		ORG $299BA; BL(Hammerne_Jump)
-	
-	//ORG $28FEC	//Barrier Staff
 	
 	//killing off some of the now useless routines and using the space for jumps
 	ORG $2606C
 	Barrier_Jump:
-		SHORT 0xB500 0x1C22 0x4902	//push {lr}; mov r2, r4, ldr r1,=POIN;
+		SHORT $B500 $1C22 $4902	//push {lr}; mov r2, r4, ldr r1,=POIN;
 		BL($D18C4)
-		SHORT 0xBC01 0x4700 0x0	//pop{r0}; bx r0
+		SHORT $BC01 $4700 $0	//pop{r0}; bx r0
 		POIN BarrierStaff_RangeSetup|1
+    ORG $26080
+	Unlock_Jump:
+		SHORT $B500 $1C1A $4902	//push {lr}; mov r2, r3; ldr r1,=POIN;
+		BL($D18C4)	//bl to bx r1
+		SHORT $BC01 $4700 $0
+		POIN UnlockStaff_RangeSetup|1
 	ORG $26294
 	Warp_Jump:
-		SHORT 0xB500 0x1C22 0x4902
+		SHORT $B500 $1C22 $4902
 		BL($D18C4)
-		SHORT 0xBC01 0x4700 0x0
+		SHORT $BC01 $4700 $0
 		POIN WarpStaff_RangeSetup|1
 	Hammerne_Jump:
-		SHORT 0xB500 0x1C22 0x4902
+		SHORT $B500 $1C22 $4902
 		BL($D18C4)
-		SHORT 0xBC01 0x4700 0x0
+		SHORT $BC01 $4700 $0
 		POIN HammerneStaff_RangeSetup|1
+    DancerRingTargetSelect:
+		SHORT $B500 $1C0B
+		SHORT $4902 $4A03
+		BL($295A8)
+		SHORT $BC01 $4700
+		POIN DancerRingJump|1
+		WORD $87F //target select help text
+	DancerRingJump:
+		SHORT $B500 $1C22 $4902
+		BL($D18C4)
+		SHORT $BC01 $4700 $0
+		POIN DancerRing_RangeSetup|1
 	
 	/*
 	//Shouldn't have to touch these
-	#define New_Use(item) "ORG Usability_Table+4*(item-0x4B); POIN 0x28A8C"
+	#define New_Use(item) "ORG Usability_Table+4*(item-$4B); POIN $28A8C"
 	#define New_Target(offset) "ORG offset; POIN Target_Routine_For_Non_Unlock|1"
 	#define LL_Entry(staff, pointer) "WORD staff; POIN pointer"
 	//###### USABILITY TABLE ######
@@ -111,18 +123,6 @@
 	New_Use(Rescue)
 	New_Use(Hammerne)
 	New_Use(Barrier)
-	
-	//Update Torch pointer
-	ORG Usability_Table+4*(TorchStaff-0x4B)
-	POIN Torch_Fix
-	
-	//Update the pointer at the heal routine to take us to the right place
-	ORG $28A98
-	POIN Usability_Routine_For_Non_Unlock|1
-	
-	//Update the pointer at the unlock routine to take us to the right place
-	ORG $28B48
-	POIN Usability_Routine_For_Unlock|1
 	
 	//####### TARGET TABLE #######
 	//Can't do the same thing here that we did with the usability table because they don't all branch to the same place
@@ -143,24 +143,26 @@
 	BL(Non_Unlock_Jump)
 	ORG $2987E //Warp
 	BL(Non_Unlock_Jump)
+    */
+    
 	ORG $2F178 //UBER-SPECIAL-SNOWFLAKE Fortify
 	BL(Fortify_Jump)
-	*/
+    
 	//####### HIGHLIGHTED SQUARES #######
 	
 	//Fix my ballista issues the lazy way (instead of not passing in bool via r12, just make range function not use r12)
 	ORG $1AAC6
-	SHORT 0xB082
+	SHORT $B082
 	ORG $1AB12
-	SHORT 0x9001
+	SHORT $9001
 	ORG $1AB16
-	SHORT 0x9901
+	SHORT $9901
 	ORG $1AB56
-	SHORT 0x9201
+	SHORT $9201
 	ORG $1AB6E
-	SHORT 0x9A01
+	SHORT $9A01
 	ORG $1ABA6
-	SHORT 0xB002
+	SHORT $B002
 	
 	//NEW Bowrange AI fixes
 	ORG $3AC6A
@@ -168,34 +170,19 @@
 	
 	ORG $3D8A4
 	BL(GetItemRangeM_AIJump)
-	SHORT 0x1C03 0x1C0C
+	SHORT $1C03 $1C0C
 	B($3D8BA)
 	
-	//End NEW BowrangeAI fixes
-	
-	ORG $16CC0 //Shows the correct range numbers when displaying an item's R-menu 
-	jumpToHack(StatScreenRangeDisplay)
-	jumpToHack(ItemDescRangeDisplay)
-	MakeRangeText:
-	#incbin "MakeRangeText.dmp"
-	//#incbin "R Button Range Display.dmp"
-	//POIN Item_Table
-	
-	ORG $89CEC	//range text for weapons
-	BL($16CC8)
-	ORG $89D90	//range text for staves
-	BL($16CC8)
-	
 	ORG $34554 //Dunno when this is called, or even why it exists, but I'm putting it here just in case. 
-	SHORT 0x4B01
-	BL(0xD18CC)	//bl to bx r3
-	SHORT 0xE01A
+	SHORT $4B01
+	BL($D18CC)	//bl to bx r3
+	SHORT $E01A
 	POIN Unknown_Function|1
 	
 	ORG $1B9AE //Gets called a bunch of times; mag/2 weapons don't work here, so I need a fix
-	SHORT 0x46C0
+	SHORT $46C0
 	gotoHackWithR3(Weapon_Attack)
-	SHORT 0x46C0
+	SHORT $46C0
 	
 	ORG $1CBFA //When first selecting a unit, for staffs
 	BL(All_Staffs_All_Squares)
@@ -211,39 +198,26 @@
 	
 	ORG $23A08 //When selecting target (ballista) - FillBallistaRange
 	//r1 is slot num
-	SHORT $2100 //mov r1, #0x0
+	SHORT $2100 //mov r1, #$0
 	SHORT $46C0 //nop
 	gotoHackWithR3(All_Weapons_One_Square)
-	B(0x23A36)
+	B($23A36)
+    
+    ORG $23A14 //Ballista range display
+	SHORT $6820 $1C29 	//get unit pointer and item id
+	callHack_r3(GetItemRangeM)
+	SHORT $1C03 $1C0C
+	B($23A2C)
 	
-	ORG $23B40 //After moving to a specific square, for staffs - StaffUMCommandHover
-	SHORT 0x480E 0x6800 0x2401 0x4264 0x1C21 //ldr r0,AttackMap; ldr r0,[r0]; mov r4,1; neg r4,r4; mov r1,r4
-	BL(0x197E4)
-	SHORT 0x480C 0x6800 0x2100 //ldr r0,RangeMap; ldr r0,[0]; mov r1,0
-	BL(0x197E4)
-	SHORT 0x6828 0x1C21 //ldr r0,[r5]; mov r1,r4
-	gotoHackWithR3(All_Staffs_One_Square)
-	SHORT 0x46C0 //nop
-	
-	ORG $23C1A //When selecting target (staffs) - StaffOnHover
-	SHORT 0x343C 0x2000 0x5620 //add r4,3C; mov r0,0; ldsb r0,[r4,r0]
-	BL(0x1E748)
-	SHORT 0x480E 0x6800 0x2101 0x4249 //ldr r0,AttackMap; ldr r0,[r0]; mov r1,1; neg r1,r1
-	BL(0x197E4)
-	SHORT 0x480C 0x6800 0x2100 //ldr r0,RangeMap; ldr r0,[r0]; mov r1,0
-	BL(0x197E4)
-	SHORT 0x6828 0x2100 0x5661
-	gotoHackWithR3(All_Staffs_One_Square)
-	SHORT 0x46C0 //nop
-	
-	ORG $251B4 //3B558 
-	//080251b4 MakeTargetListForWeapon
-	SHORT 0xB500 0x1C0A 0x4904 0x4B03
-	BL($D18CC)
-	BL($250BC)
-	SHORT 0xBC08 0x4718
-	POIN Item_TURange|1 0x2517D
-	
+	ORG $25756 //Ballista target selection
+	SHORT $480C $6800 	//get unit pointer
+	SHORT $1C39 	//mov r1, r7 @get item
+	callHack_r3(GetItemRangeM)
+	SHORT $1C03 $1C0C
+	B($2576E)
+    
+    /*
+    //Don't need because of above maybe?
 	ORG $25736
 	SHORT $1C07 //mov r7, r0
 	SHORT $1C28 //mov r0, r5
@@ -251,205 +225,211 @@
 	BL($379D4) //GetSomeBallistaItemAt
 	SHORT $1C01 //mov r1, r0
 	SHORT $1C38 //mov r0, r7
-	SHORT $2900 //cmp r1, #0x0
+	SHORT $2900 //cmp r1, #$0
 	SHORT $D01D //beq $25782
 	BL($251B4)
 	B($25782)
+    */
+    
+	ORG $23B40 //After moving to a specific square, for staffs - StaffUMCommandHover
+	SHORT $480E $6800 $2401 $4264 $1C21 //ldr r0,AttackMap; ldr r0,[r0]; mov r4,1; neg r4,r4; mov r1,r4
+	BL($197E4)
+	SHORT $480C $6800 $2100 //ldr r0,RangeMap; ldr r0,[0]; mov r1,0
+	BL($197E4)
+	SHORT $6828 $1C21 //ldr r0,[r5]; mov r1,r4
+	gotoHackWithR3(All_Staffs_One_Square)
+	SHORT $46C0 //nop
+	
+	ORG $23C1A //When selecting target (staffs) - StaffOnHover
+	SHORT $343C $2000 $5620 //add r4,3C; mov r0,0; ldsb r0,[r4,r0]
+	BL($1E748)
+	SHORT $480E $6800 $2101 $4249 //ldr r0,AttackMap; ldr r0,[r0]; mov r1,1; neg r1,r1
+	BL($197E4)
+	SHORT $480C $6800 $2100 //ldr r0,RangeMap; ldr r0,[r0]; mov r1,0
+	BL($197E4)
+	SHORT $6828 $2100 $5661
+	gotoHackWithR3(All_Staffs_One_Square)
+	SHORT $46C0 //nop
+	
+	ORG $251B4 //3B558 
+	//080251b4 MakeTargetListForWeapon
+	SHORT $B500 $1C0A $4904 $4B03
+	BL($D18CC)
+	BL($250BC)
+	SHORT $BC08 $4718
+	POIN Item_TURange|1 $2517D
 	
 	/*ORG $16BA6 //when selecting a target
-	SHORT 0x46C0 0x46C0 //skips a check that ensures min<max, which doesn't play nice with mag/2 NOTE: Originally bl'd to by the routine below, but shouldn't be necessary now?*/
+	SHORT $46C0 $46C0 //skips a check that ensures min<max, which doesn't play nice with mag/2 NOTE: Originally bl'd to by the routine below, but shouldn't be necessary now?*/
 	
 	ORG $2A8C2 //determines whether you can actually attack the target
-	SHORT 0x1C2A //mov r2,r5 (r5 has battle struct, but that should be fine)
+	SHORT $1C2A //mov r2,r5 (r5 has battle struct, but that should be fine)
 	BL(Can_Attack_Target)
+    
+    ORG $16CC0 //Shows the correct range numbers when displaying an item's R-menu 
+	jumpToHack(StatScreenRangeDisplay)
+	jumpToHack(ItemDescRangeDisplay)
+	MakeRangeText:
+	#include "RangeTextDisplay/Make_Range_Text.lyn.event"
+	
+	ORG $89CEC	//range text for weapons
+	BL($16CC8)
+	ORG $89D90	//range text for staves
+	BL($16CC8)
 	
 	//************** FREE SPACE IN BL RANGE, SO DON'T MOVE THIS IF YOU DON'T KNOW WHAT YOU'RE DOING *********************
 	
 	ORG $1ACBC // Writes the attackable squares for each square that can be moved to.
 	All_Weapons_All_Squares:
-	#incbin "All Weapons All Squares.dmp"
+	#include "RangeDisplay/All_Weapons_All_Squares.lyn.event"
 	POIN All_Moveable_Squares|1
 	
 	ALIGN 4
 	All_Staffs_All_Squares:
-	#incbin "All Staffs All Squares.dmp"
+	#include "RangeDisplay/All_Staffs_All_Squares.lyn.event"
 	POIN All_Moveable_Squares|1
 	ALIGN 4
 	/*
 	Non_Unlock_Jump: //ldr r3, bx r3
-	SHORT 0x4B00 0x4718
+	SHORT $4B00 $4718
 	POIN Target_Routine_For_Non_Unlock|1
-	Fortify_Jump:
-	SHORT 0x4B00 0x4718
-	POIN Target_Routine_For_Fortify|1
 	*/
-	//Space where Fortify_Jump once was
-	WORD 0
-	WORD 0
+	Fortify_Jump:
+	SHORT $4B00 $4718
+	POIN Target_Routine_For_Fortify|1
 	
 	ALIGN 4
 	Can_Attack_Target:
-	#incbin "Can Attack Target.dmp"
+	#include "RangeDisplay/Can_Attack_Target.lyn.event"
 	POIN GetItemRangeM|1
 	
-	//NEW BowrangeAI Fixes
 	GetItemRangeM_AIJump:
-	SHORT 0x1C01 0x4803 0x6800 0x0
-	SHORT 0x4B00 0x4718
+	SHORT $1C01 $4803 $6800 $0
+	SHORT $4B00 $4718
 	POIN GetItemRangeM|1
-	WORD 0x3004E50
-	//End NEW BowrangeAI Fixes
+	WORD $3004E50
+    
+    
 	
 	//MESSAGE BLRange for IER ends at CURRENTOFFSET
 	//************** CAN BE WRITTEN TO WHEREVER IF YOU WANT THIS SPACE FOR OTHER ASSEMBLY STUFF *********************
 POP
 	ALIGN 4
 	BowrangeMods:
-	#incbin "CheckForBowrange.dmp"
+	#include "RangeDisplay/Check_For_Bowrange.lyn.event"
 	
 	ALIGN 4
 	All_Weapons_One_Square:
-	#incbin "All Weapons One Square.dmp"
+	#include "RangeDisplay/All_Weapons_One_Square.lyn.event"
 	POIN Return_Range_Bitfield|1
 	POIN Write_Range|1
 	
 	ALIGN 4
 	All_Staffs_One_Square:
-	#incbin "All Staffs One Square.dmp"
+	#include "RangeDisplay/All_Staffs_One_Square.lyn.event"
 	POIN Return_Range_Bitfield|1
 	POIN Write_Range|1	
 	
 	ALIGN 4
 	All_Moveable_Squares:
-	#incbin "All Moveable Squares.dmp" 
+	#include "RangeDisplay/All_Moveable_Squares.lyn.event"
 	POIN Return_Range_Bitfield|1
 	POIN Write_Range|1
 	
 	ALIGN 4
 	Return_Range_Bitfield:
-	#incbin "Return Range Bitfield SpellSystem.dmp"
+	#include "RangeDisplay/Return_Range_Bitfield_SpellSystem.lyn.event"
 	POIN Get_Item_Range|1
 	POIN Spells_Getter
 	WORD SelectedSpellPointer
 	ALIGN 4
 	Get_Item_Range:
-	#incbin "Get Item Range.dmp"
+	#include "RangeDisplay/Get_Item_Range.lyn.event"
 	POIN GetItemRangeM|1
 	
 	ALIGN 4
 	Write_Range:
-	#incbin "Write Range.dmp"
+	#include "RangeDisplay/Write_Range.lyn.event"
 	
 	ALIGN 4
 	Unknown_Function:
-	#incbin "Unknown Function.dmp"
+	#include "RangeDisplay/Unknown_Function.lyn.event"
 	POIN Return_Range_Bitfield|1
 	POIN Write_Range|1
 	
 	ALIGN 4
 	Weapon_Attack:
-	#incbin "Weapon Attack.dmp"
+	#include "RangeDisplay/Weapon_Attack.lyn.event"
 	
 	ALIGN 4
 	
 	StatScreenRangeDisplay:
-	#incbin "StatScreenRange.dmp"
+	#include "RangeTextDisplay/Stat_Screen_Range.lyn.event"
 	POIN GetItemRangeM|1 MakeRangeText|1
 	
 	ItemDescRangeDisplay:
-	#incbin "Item R Button Range.dmp"
+	#include "RangeTextDisplay/Item_R_Button_Range.lyn.event"
 	POIN RangeTextGetter|1 MakeRangeText|1
 	
 	/*
 	//####### RANGE WRITING STUFF ######
-	Usability_Routine_For_Non_Unlock: //push r14; mov r1,r5; bl somewhere; pop r0; bx r0 (r5 has item id/uses halfword)
-	SHORT 0xB500 0x1C29
-	BL(Non_Unlock_Range)
-	SHORT 0xBC01 0x4700
-	
-	Usability_Routine_For_Unlock:
-	SHORT 0xB500 0x1C29
-	BL(Unlock_Range)
-	SHORT 0xBC01 0x4700
-	
-	Target_Routine_For_Non_Unlock: //push r14; mov r1,r4; bl somewhere; pop r0; bx r0 (need a new function because of compiler shenanigans)
-	SHORT 0xB500 0x1C21
-	BL(Non_Unlock_Range)
-	SHORT 0xBC01 0x4700
-	
-	Target_Routine_For_Unlock:
-	SHORT 0xB500 0x1C21
-	BL(Unlock_Range)
-	SHORT 0xBC01 0x4700	
-	
-	Target_Routine_For_Fortify: //push r14; ldrb r1,[r4,#0x12]; lsl r1,r1,#0x1; add r1,#0x1E; add r1,r1,r0; ldrh r2,[r1]; bl somewhere; pop r0; bx r0 (r4+0x12 has inventory slot, r0 has char data)
-	SHORT 0xB500 0x7CA1 0x0049 0x311E 0x1809 0x880A
-	BL(HealStaff_RangeSetup)
-	SHORT 0xBC01 0x4700
-	
-	ALIGN 4
-	Non_Unlock_Range:
-	SHORT 0xB500
-	BL(Range_Write)
-	#incbin "Non Unlock Range.dmp"
-	POIN Function_List
-	
-	ALIGN 4
-	Unlock_Range:
-	SHORT 0xB500
-	BL(Range_Write)
-	#incbin "Unlock Range.dmp"
 	*/
+    
+    ALIGN 4
+    Target_Routine_For_Fortify: //push r14; mov r2, #Fortify; bl somewhere; pop r0; bx r0 (r4+$12 has inventory slot, r0 has char data)
+	SHORT $B500 
+	BYTE Fortify $22
+	BL(HealStaff_RangeSetup)
+	SHORT $BC01 $4700
+    
 	ALIGN 4
 	Torch_Fix:
-		#incbin "Torch Fix.dmp"
-		POIN Item_TTRange|1
-		WORD 0x0	//Torch targeting condition
+	#include "RangeDisplay/Torch_Fix.lyn.event"
+	POIN Item_TTRange|1
+	WORD $0	//Torch targeting condition
 	
 	ALIGN 4
 	
 	HealStaff_RangeSetup:
-		rfItemRangeSetup(0x25E29, Item_TURange)
+		rfItemRangeSetup($25E28+1, Item_TURange)
 	RestoreStaff_RangeSetup:
-		rfItemRangeSetup(0x25F99,Item_TURange)
+		rfItemRangeSetup($25F98+1,Item_TURange)
 	SilenceStaff_RangeSetup:
-		rfItemRangeSetup(0x26101,Item_TURange)
+		rfItemRangeSetup($26100+1,Item_TURange)
 	SleepStaff_RangeSetup:
-		rfItemRangeSetup(0x2614D,Item_TURange)
-//	BerserkStaff_RangeSetup:
-//		rfItemRangeSetup(0x26199,Item_TURange)
+		rfItemRangeSetup($2614C+1,Item_TURange)
 	WarpStaff_RangeSetup:
-		rfItemRangeSetup(0x2625D,Item_TURange)
+		rfItemRangeSetup($2625C+1,Item_TURange)
 	RescueStaff_RangeSetup:
-		rfItemRangeSetup(0x260A1,Item_TURange)
+		rfItemRangeSetup($260A0+1,Item_TURange)
 	HammerneStaff_RangeSetup:
-		rfItemRangeSetup(0x262FD,Item_TURange)
+		rfItemRangeSetup($262FC+1,Item_TURange)
 	BarrierStaff_RangeSetup:
-		rfItemRangeSetup(0x2601D,Item_TURange)
-	/*
-	Range_Write:
-	#incbin "Range Write.dmp"
-	POIN Item_Table
-	
+		rfItemRangeSetup($2601C+1,Item_TURange)
+    UnlockStaff_RangeSetup:
+		rfItemRangeSetup($25794+1,Item_TTRange)
+	DancerRing_RangeSetup:
+		rfItemRangeSetup($265B4+1,Item_TURange)
+	/*	
 	ALIGN 4
 	Function_List: //These functions do extra checks (check if person in range has less than max hp, has a non-zero status byte, etc), along with some other stuff
-	LL_Entry(Heal, 0x25E29)
-	LL_Entry(Mend, 0x25E29)
-	LL_Entry(Recover, 0x25E29)
-	LL_Entry(Physic, 0x25E29)
-	LL_Entry(Fortify, 0x25E29)
-	LL_Entry(Restore, 0x25F99)
-	LL_Entry(Silence, 0x26101)
-	LL_Entry(Sleep, 0x2614D)
-	LL_Entry(Berserk, 0x26199)
-	LL_Entry(Warp, 0x2625D)
-	LL_Entry(Rescue, 0x260A1)
-	LL_Entry(Torch, 0x25E29) //shouldn't ever be go here, but just in case...
-	LL_Entry(Hammerne, 0x262FD)
-	LL_Entry(Unlock, 0x25795) //shouldn't go here either, since it's a special snowflake
-	LL_Entry(Barrier, 0x2601D)
-	LL_Entry(0, 0x25E29) //The catch-all, in case you add a custom staff and forget to update this table
+	LL_Entry(Heal, $25E29)
+	LL_Entry(Mend, $25E29)
+	LL_Entry(Recover, $25E29)
+	LL_Entry(Physic, $25E29)
+	LL_Entry(Fortify, $25E29)
+	LL_Entry(Restore, $25F99)
+	LL_Entry(Silence, $26101)
+	LL_Entry(Sleep, $2614D)
+	LL_Entry(Berserk, $26199)
+	LL_Entry(Warp, $2625D)
+	LL_Entry(Rescue, $260A1)
+	LL_Entry(Torch, $25E29) //shouldn't ever be go here, but just in case...
+	LL_Entry(Hammerne, $262FD)
+	LL_Entry(Unlock, $25795) //shouldn't go here either, since it's a special snowflake
+	LL_Entry(Barrier, $2601D)
+	LL_Entry(0, $25E29) //The catch-all, in case you add a custom staff and forget to update this table
 	*/
 #else
-	ERROR "You're not assembling FE7 events!"
+	ERROR "You're not assembling FE8 events!"
 #endif

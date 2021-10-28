@@ -1,120 +1,15 @@
+#include "GaidenWhiteMagic_ItemRework.event"
 #include "InvokeStaff/Invoke Installer.event"
 #include "ExpelStaff/Expel Installer.event"
 
 PUSH
-	//Target selection changes
-	ORG $28FAC 		//Entrap Staff
-	EntrapStaffP4Jump:
-		SHORT $4900
-		B(RescueStaff_CallTargetingFunc)
-		POIN EntrapStaff_RangeSetup|1
-	RewarpStaffP4Jump:
-		SHORT $4900
-		B(RescueStaff_CallTargetingFunc)
-		POIN RewarpStaff_RangeSetup|1
-	RescueStaffP4Jump:
-		SHORT $4902 
-	RescueStaff_CallTargetingFunc:
-		SHORT $1C28	//mov r0, r5
-		SHORT $1C22	//mov r2, r4
-		BL($29568)
-		B(P4Ladder_End)
-		POIN RescueStaff_RangeSetup|1
-	RestoreStaffP4Jump:
-		SHORT $4902 $1C28 $1C22
-		BL($29BC8)
-		B(P4Ladder_End)
-		POIN RestoreStaff_RangeSetup|1
-	SilenceStaffP4Jump:
-		SHORT $4900
-		B(StatusStaff_CallTargetingFunc)
-		POIN SilenceStaff_RangeSetup|1
-	FreezeStaffP4Jump:
-		SHORT $4902
-	StatusStaff_CallTargetingFunc:
-		SHORT $1C28	//mov r0, r5
-		SHORT $1C22	//mov r2, r4
-		BL($29CA0)  //TargetSelectionForOffensiveStaff
-		B(P4Ladder_End)
-		POIN SleepStaff_RangeSetup|1
-	UnlockStaffP4Jump:
-		SHORT $4901 $4A02 $1C23 
-		B(TileTargetingFuncJump)
-		POIN Unlock_Jump|1
-		WORD 0x87A	//target select help text
-	WarpStaffP4Jump:
-		SHORT $1C28	//mov r0, r5
-		BL($2987C)	//SetupWarpTargetSelection
-		B(P4Ladder_End)
-	InvokeStaffP4Jump:
-		SHORT $1C28
-		BL(InvokeOnSelect)
-		B(P4Ladder_End)
-	FortifyStaffP4Jump:
-		SHORT $1C28 //mov r0, r5
-		BL($2951C)	//EndItemEffectSelectionThing
-		B(P4Ladder_End)
-	MineP4Jump:
-		SHORT $4901
-		SHORT $4A02
-		B(TileTargetingFuncJump)
-		ALIGN 4
-		POIN $264F0+1
-		WORD 0x87D
-	LightRuneP4Jump:
-		SHORT $4902
-		SHORT $4A03
-		TileTargetingFuncJump:
-		SHORT $1C28
-		BL($298F0)	//PrepareTargetSelectionForMineAndLightRune
-		B(P4Ladder_End)
-		POIN $26580+1
-		WORD 0x87E
-	TorchStaffP4Jump:
-		SHORT $1C28	//mov r0, r5
-		BL($29ED8)	//NewTorchStaffSelection
-		B(P4Ladder_End)
-	AnewP4Jump:
-		SHORT $4902
-		SHORT $1C28
-		SHORT $1C22
-		BL($295A8)	//SetupTargetSelectionForGenericStaff
-		B(P4Ladder_End)
-		POIN AnewStaff_RangeSetup|1
-		WORD 0x870
-	NoTargetRoutineP4Jump:
-		SHORT $1C28
-		BL($29544)
-	P4Ladder_End:
-		SHORT $BC30 $BC01 $4700 //pop r4-r5 and bx r0
-		
-	//Moving around some use pointers
-	ORG $28E8C					//first entry (heal)
-	ItemTargetSelectionCases:
-	POIN $28F94					//heal
-	POIN FortifyStaffP4Jump		//expel
-	POIN $28F94					//recover
-	POIN $28F9C					//physic
-	POIN FortifyStaffP4Jump
-	POIN RestoreStaffP4Jump
-	POIN SilenceStaffP4Jump
-	POIN FreezeStaffP4Jump
-	POIN EntrapStaffP4Jump
-	POIN WarpStaffP4Jump 
-	POIN RescueStaffP4Jump
-	POIN TorchStaffP4Jump 
-	POIN InvokeStaffP4Jump 
-	POIN UnlockStaffP4Jump
-	POIN RescueStaffP4Jump		//rewarp
-	POIN AnewP4Jump			 	//new (5A) anew
 	
 	//Force battle anims off for certain staff
 	ORG $581D0
 	SHORT $2A4C $D003 //beq 0x4C
 	SHORT $2A53 $DB03 //blt 0x53
 	SHORT $2A59 $DC01 //bgt 0x59
-	
-	
+
 	//Actual function changes below
 	
 	//Show heal amount
@@ -143,55 +38,28 @@ PUSH
 	ORG $2FB88
 	SHORT $B570 //push {r4-r6, r14}
 	ORG $2FB94
-	jumpToHack(TorchFix)
+	jumpToHack(TorchHPCheck)
 	ORG $2FBB0
 	SHORT $BC70 //pop {r4-r6}
-	
-	//Unlock - make it work on chests too
-	ORG $28B3C	//Unlock usability check
-		New_Use(UnlockStaff_RangeSetup)
-	ORG $26080
-	Unlock_Jump:
-		SHORT 0xB500 0x1C1A 0x4902	//push {lr}; mov r2, r3; ldr r1,=POIN;
-		BL($D18C4)	//bl to bx r1
-		SHORT 0xBC01 0x4700 0x0
-		POIN UnlockStaff_RangeSetup|1
-	
+
 	//Unlock Effect - 2f274 - edit this to deplete HP
 	ORG $2F274
 	SHORT $B570 //push {r4-r6, r14}
 	ORG $2F280
-	jumpToHack(UnlockFix)
+	jumpToHack(UnlockHPCheck)
 	ORG $2F2A4
 	SHORT $BC70 //pop {r4-r6}
-	
-	ORG $2F178 //UBER-SPECIAL-SNOWFLAKE Fortify
-	BL(Fortify_Jump)
-	
-	ORG $2F184
-	jumpToHack(FortifyHP)
-	
-	ORG $1ACF4
-	Fortify_Jump:
-	SHORT 0x4B00 0x4718
-	POIN Target_Routine_For_Fortify|1
-	
-POP
-	
-ALIGN 4
-Target_Routine_For_Fortify: //push r14; mov r2, #Fortify; bl somewhere; pop r0; bx r0 (r4+0x12 has inventory slot, r0 has char data)
-	SHORT 0xB500 
-	BYTE Fortify 0x22
-	BL(HealStaff_RangeSetup)
-	SHORT 0xBC01 0x4700
-ALIGN 4
-FortifyHP:
-#incbin "FortifyHP.dmp"
-WORD SelectedSpellPointer
-POIN SpellCostGetter
-ALIGN 4
 
-PUSH
+	ORG $2F184
+	jumpToHack(FortifyHPCheck)
+    
+    //Specify non-healing staves
+	//Entrap
+	ORG $725B4
+		POIN $726A4
+    //Rewarp
+	ORG $725CC
+		POIN $726A4
 	
 	//Fix warp target selection
 	ORG $59BA14
@@ -205,20 +73,13 @@ PUSH
 	POIN NewRescueSelectFunc+1
 	
 	//Entrap - replace Berserk
-	ORG $28B0C	//Entrap
-		New_Use(EntrapStaff_RangeSetup)
 	ORG $26198
 	EntrapTargetRoutine:
 	#incbin "entraptarget.dmp"
-
-	ORG $2FCB0 //entrap effect pointer
-	POIN $2FE94 //rescue effect
 	
 	//Rewarp
 	//This has to be in BL range
-	ORG $28ADC
-	RewarpUsabilityCheck:
-		New_Use(RewarpStaff_RangeSetup)
+	
 	ORG $2FE9C
 	RewarpEffectCheck:
 		SHORT $1C30	//mov r0, r6
@@ -227,12 +88,6 @@ PUSH
 	ORG $2EC8C
 	RewarpEffect:
 		replaceWithHack(Rewarp_Setup)
-	//Repoint usability table entry
-	ORG $288E8
-	POIN RewarpUsabilityCheck
-	//Effect table entry
-	ORG $2FCC8
-	POIN RewarpEffectCheck
 	
 	//Anew
 	ORG $295A8
@@ -248,9 +103,7 @@ PUSH
 		SHORT $BC30 $BC01 $4700
 		ALIGN 4
 		WORD $202e4e0 $859d2f8 $8029551 $870
-	ORG $28B98
-	AnewUsabilityCheck:
-		New_Use(AnewStaff_RangeSetup)
+	
 	ORG $2FF68
 	AnewEffectCheck:
 		SHORT $1C30
@@ -260,12 +113,6 @@ PUSH
 	AnewEffect:
 		#incbin "AnewSetup.dmp"
 		WORD SelectedSpellPointer
-	//New usability table entry (5A)
-	ORG $288EC
-	POIN AnewUsabilityCheck
-	//New effect table entry	(5A)
-	ORG $2FCCC
-	POIN AnewEffectCheck
 	
 POP	
 
@@ -275,6 +122,13 @@ ShowHealAmount:
 #incbin "ShowHealAmount.dmp"
 WORD HP_Restore_Arrow
 WORD SelectedSpellPointer
+
+ALIGN 4
+FortifyHPCheck:
+    #incbin "FortifyHP.dmp"
+    WORD SelectedSpellPointer
+    POIN SpellCostGetter
+    ALIGN 4
 
 //Status staves
 ALIGN 4
@@ -291,22 +145,18 @@ SleepFix:
 ALIGN 4
 
 //Torch
-TorchFix:
+TorchHPCheck:
 #incbin "torchfix.dmp"
 WORD SelectedSpellPointer
 POIN SpellCostGetter
 ALIGN 4
 
 //Unlock
-UnlockStaff_RangeSetup:
-	rfItemRangeSetup(TryAddToUnlockTargetList+1,Item_TTRange)
-ALIGN 4
-
 TryAddToUnlockTargetList:
 #incbin "TryAddToUnlockTargetList.dmp"
 ALIGN 4
 
-UnlockFix:
+UnlockHPCheck:
 #incbin "unlockfix.dmp"
 WORD SelectedSpellPointer
 POIN SpellCostGetter
@@ -316,13 +166,6 @@ UnlockEffectFix: //formerly at 7e79c
 #incbin "unlockeffect.dmp"
 ALIGN 4
 
-//Entrap
-EntrapStaff_RangeSetup:
-	rfItemRangeSetup(0x26199,Item_TURange)
-
-//Rewarp
-RewarpStaff_RangeSetup:
-	rfItemRangeSetup(TryAddUnitToRewarpTargetList+1,Item_TURange)
 ALIGN 4
 TryAddUnitToRewarpTargetList:
 #incbin "RewarpUsabilityCheck.dmp"
@@ -396,11 +239,6 @@ MapAnim_SubjectUnitFlashIn:
 ALIGN 4
 ClearBattleChangeData:
 #incbin "RewarpProc/MapAnim_ClearCoords.dmp"
-ALIGN 4
-
-//Anew
-AnewStaff_RangeSetup:
-	rfItemRangeSetup($25B18+1,Item_TURange)
 ALIGN 4
 
 NewWarpTargetSelectCancel:

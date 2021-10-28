@@ -1,0 +1,67 @@
+//Phantom stuff for Echoes phantoms
+PUSH
+
+	//Replace BerserkPhase with PhantomPhase
+    ORG $155C0
+	POIN PhantomPhase_Proc
+	ORG $59a2ec
+	POIN PhantomPhase_Proc
+	ORG $59a394
+	POIN PhantomPhase_Proc
+	ORG $59a3bc
+	POIN PhantomPhase_Proc
+	ORG $59a424
+	POIN PhantomPhase_Proc
+	
+	//phantom map palette (replaces link arena 4)
+	ORG $59EEC0
+	#incbin "59EEA0_phantom_map_pal.pal.bin"
+	
+	//Allow NPCs to drop
+	ORG $32942
+	BYTE $80
+	
+	//1e098 - r0 is unit ptr, r1 is item short, r2 is proc
+	//hook at 1e09c
+	ORG $1E09C
+	jumpToHack(SendPhantomItemsToConvoy)
+
+	//Use with unit/class flag 0x00100000 Disable Unit Select to make phantoms unselectable. (breaks tents but lol)
+	ORG $1D570
+	jumpToHack(HandleSpriteHover)
+	
+	ORG $27a88
+	jumpToHack(HandlePhantomSpriteHover)
+	
+	ORG $27EA8
+	BL(StatscreenHoverLadder)
+
+	ORG $90DC4
+	//fix phantom palette on unit menu
+	SHORT $E005
+	
+	ORG $784A2
+	BL(StatscreenHoverLadder) //forces hover anims to check "use light rune palette"
+	
+	ORG $871B4
+    StatscreenHoverLadder:
+	replaceWithHack(HandleStatscreenHover)
+
+POP
+
+PhantomPhase_Proc: //based on 5A7F30
+
+	PROC_SET_NAME($080D80A0)
+	PROC_CALL_ROUTINE(PhantomPhase_Init+1) 
+	PROC_YIELD
+	PROC_CALL_ROUTINE($39778+1) //CpPhase_Cleanup
+	PROC_END
+
+PhantomOrder_Proc: //based on 5A7F74
+
+	PROC_SET_NAME($080D80B8)
+	PROC_CALL_ROUTINE(PhantomOrder_Init+1)
+	PROC_LOOP_ROUTINE($39ABC+1)
+	PROC_END
+
+#include "PhantomPhase.lyn.event"

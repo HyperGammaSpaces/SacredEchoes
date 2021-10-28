@@ -1,0 +1,6 @@
+//#define Usability_Table $288B0
+//#define Item_Table $809B10
+
+#define New_Use(offset) "SHORT $4902 $1C20 $1C2A; BL($29068); B($28BFE); POIN offset|1"
+#define rfItemRangeSetup(TConditon, RangeBuilder) "SHORT 0xB500 0x4902; BL(RangeBuilder); SHORT 0xBC08 0x4718; POIN (TConditon | 1)"
+

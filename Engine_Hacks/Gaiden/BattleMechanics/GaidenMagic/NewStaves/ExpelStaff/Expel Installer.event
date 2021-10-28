@@ -1,29 +1,25 @@
 PUSH
 
+#ifndef ItemEffectRevamp
 	//Repoint old Mend to new Expel function, which replaces the Mine
 	ORG $288B4
 	POIN ExpelUsabilityCheck
-	
-	//Repoint old Mine usability check with Expel usability check
-	//This has to be in BL range
-	ORG $28BA8
+    
+    ORG $28BA8
 	ExpelUsabilityCheck:
 		New_Use(ExpelStaff_RangeSetup)
-	
-	//Moved these up to the big target select rework
-	//Expel P4 (Target Selection)
-	//ORG $28E90
-	//POIN $0802901C 
-	
-	//ORG $2901C //Mine Range Setup - mimic Fortify here. It just goes to 2951c
-	//SHORT $1C28 //mov r0, r5
-	//BL($2951C)
-	//B(P4Ladder_End)
-	
-	//Expel P1 (Use Effect)
+        
+    //Expel P1 (Use Effect)
 	ORG $2FC94
 	POIN $2FE7C //mine jump
-	
+#else
+    ORG $28BA8 //move so it doesnt conflict with Mine
+    ExpelUsabilityCheck:
+		New_Use(ExpelStaff_RangeSetup)
+        
+    IER_setItemEffect(IER_FX_Expel, ExpelUsabilityCheck, PUNull, FortifyStaff_GetTargetList, $2FE7C)
+#endif
+		
 	//Expel Exec (WIP)
 	ORG $2F1D8
 	//Just push lr and bx to hack in R3
@@ -32,6 +28,10 @@ PUSH
 	callHack_r3(ExecuteExpelStaff)
 	SHORT $BC01
 	SHORT $4700
+    
+    //Specify non-healing staff
+	ORG $72598
+		POIN $726A4
 	
 POP
 
