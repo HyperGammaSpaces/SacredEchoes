@@ -5,7 +5,7 @@
 #ifdef _FE8_
 
     #include "EAstdlib.event"
-    #include "Definitions/_Master Definition Installer.event"
+    #include "Definitions/_Master_Definition_Installer.event"
 
     ORG FreeSpace
 	
@@ -44,17 +44,17 @@
 
 	//Music
 	MusicSpace:
-    #include "Music/Music Installer.event"
+    #include "Music/Music_Installer.event"
 	MESSAGE Music space used is__ (currentOffset - MusicSpace)
 
 	//GFX
 	GfxSpace:
-	#include "Graphics/Master Graphics Installer.event"
+	#include "Graphics/Master_Graphics_Installer.event"
 	MESSAGE Gfx space used is__ (currentOffset - GfxSpace)
 
 	//Animations
 	AnimSpace:
-    #include "Animations/Master Animation Installer.event"
+    #include "Animations/Master_Animation_Installer.event"
 	MESSAGE Anim space used is__ (currentOffset - AnimSpace)
 
 	ALIGN 16 // ups correction
@@ -65,7 +65,7 @@
 	POP
 	
 	//Events
-    #include "Events/Master Events Installer.event"
+    #include "Events/Master_Events_Installer.event"
 	
 	//Maps
     #include "Maps/Master Map Installer.event"
