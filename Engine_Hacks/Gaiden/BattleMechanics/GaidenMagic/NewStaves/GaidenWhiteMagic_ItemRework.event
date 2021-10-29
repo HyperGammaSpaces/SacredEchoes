@@ -1,6 +1,5 @@
 ALIGN 4
 //Make Unlock usable on chests
-#undef UnlockStaff_RangeSetup
 UnlockStaff_RangeSetup:
 	rfItemRangeSetup(TryAddToUnlockTargetList+1,Item_TTRange)
 
@@ -11,7 +10,7 @@ PUSH
 		New_Use(RewarpStaff_RangeSetup)
     ORG $28B0C	//Entrap
 		New_Use(EntrapStaff_RangeSetup)
-    ORG $28B3C	//Unlock usability check
+    ORG $28B3C	//Unlock
 		New_Use(UnlockStaff_RangeSetup)
     ORG $28B98
 	AnewUsabilityCheck:
