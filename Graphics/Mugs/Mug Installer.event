@@ -261,6 +261,12 @@ ALIGN 4
 BaronCardPalette:
 #incbin "ClassCards/baron.pal.bin"
 ALIGN 4
+MyrmidonCard: //by Nura
+#incbin "ClassCards/myrmidon-card.dmp"
+ALIGN 4
+MyrmidonCardPalette:
+#incbin "ClassCards/myrmidon-card.pal.bin"
+ALIGN 4
 DFCard: //by Nura
 #incbin "ClassCards/df-card.dmp"
 ALIGN 4
@@ -414,7 +420,7 @@ setCardEntry(CC_Baron, BaronCard, BaronCardPalette) //MAKE TIER 3
 //Mercenary
 setCardEntry(CC_Mercenary, $81B03C, $81B01C)
 //Myrmidon
-setCardEntry(CC_Myrmidon, $81AA0C, $81A9EC)
+setCardEntry(CC_Myrmidon, MyrmidonCard, MyrmidonCardPalette)
 //DF
 setCardEntry(CC_DF, DFCard, DFCardPalette) //MAKE TIER 3
 
