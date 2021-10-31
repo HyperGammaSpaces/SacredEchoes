@@ -137,20 +137,18 @@
 	//TrapBreakableTerrain(0x1F,0xFC,40) 		//Door
 	TrapBreakableTerrainListEnd
 	
-
-	//This is here to satiate a hardcoded requirement if heal tiles are not installed.
-	#ifndef HEAL_TILES
-	HealTileTrapIDLink:
-	WORD 0
-	#endif // HEAL_TILES
-
-	
 	//Example usages
 	//#include "Modules/DragonVeins/DragonVeins.event"
 	#include "Modules/HealTiles/HealTiles.event"
 	#include "Modules/WarpTiles/WarpTiles.event"
 	#include "Modules/TelliusTorches/TelliusTorches.event"
-	
+    
+	//This is here to satiate a hardcoded requirement if heal tiles are not installed.
+	#ifndef HEAL_TILES
+	HealTileTrapIDLink:
+	WORD 0
+	#endif // HEAL_TILES
+    
 	#define BlueSigil(x,y) "MapSpriteTrap(SigilTrapID,x,y)"
 	#define RedSigil(x,y) "MapSpriteTrap(RedSigilTrapID,x,y)"
 	#define GreenSigil(x,y) "MapSpriteTrap(GreenSigilTrapID,x,y)"

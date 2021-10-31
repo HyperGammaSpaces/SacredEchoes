@@ -1,9 +1,8 @@
+#define Stat_Page_Ram_Loc 0x203FFFF //if things don't work properly, this might be getting overwritten (shouldn't, though)
 #include "DisplayGrowthsOptions.event"
 
 PUSH
-	
-	#define Stat_Page_Ram_Loc 0x203FFFF //if things don't work properly, this might be getting overwritten (shouldn't, though)
-	
+
 	//Load growths for display
 	ORG $2BA28
 	jumpToHack(Write_Growths_To_Battle_Struct)

@@ -29,14 +29,13 @@ PUSH
 	ORG $405b8
 	BYTE $1C
 	
-//Efficiency fix for FillAIDangerMap
-	ORG $3E320
-	#incbin "FillAIDangerMap/FillAIDangerMap.dmp"
-	
 //Terrain-seek AI
 	ORG $5A8818
 	POIN DefensiveTerrainList
 POP
+
+//Efficiency fix for FillAIDangerMap
+#include "FillAIDangerMap/FillAIDangerMap.event"
 
 ALIGN 4
 New_CHAI:
