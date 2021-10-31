@@ -1,9 +1,70 @@
 //Event flags
+
+        /////////////////
+//////////    Local    //////////
+        /////////////////
+#define Local_False 0x0
+#define Local_BossQuote 0x1
+#define Local_BossDeath 0x2
+#define Local_ChapterCleared 0x3
+#define Local_ChapterChangeBGM 0x4
+#define Local_Unk5 0x5
+#define Local_EnemyRouted 0x6
+#define Local_Unk7 0x7 //reserved for mourn quotes
+
+//0x08 - 0x28 free for chapter events
+//0x29 - 0x3F cleared by suspend/resume but not each chapter
+//0x40 - 0x64 DO NOT USE (volatile)
+
+        //////////////////
+//////////    Global    //////////
+        //////////////////
+
+//System Reserved
+#define gGameOverFlag 0x65
+#define gHideObjectiveWindow 0x66
+#define gCreatureCampaignUnit0 0x67
+#define gCreatureCampaignUnit1 0x68
+#define gCreatureCampaignUnit2 0x69
+#define gCreatureCampaignUnit3 0x6A
+#define gCreatureCampaignUnit4 0x6B
+#define gCreatureCampaignUnit5 0x6C
+#define gCreatureCampaignUnit6 0x6D
+#define gCreatureCampaignUnit7 0x6E
+#define gCreatureCampaignUnit8 0x6F
+#define gCreatureCampaignUnit9 0x70
+#define gTriangleAttackQuote_Palla 0x7F
+#define gTriangleAttackQuote_Catria 0x80
+#define gTriangleAttackQuote_Est 0x81
+#define gFinalBossMusicChange 0x82
+#define gGlobalFlag_Unk83 0x83
+#define gHideMapspriteIcons 0x84
+#define gGlobalFlag_Unk85 0x85 //FE8J?
 #define gDesaixAct1Death 0x86
 #define gPlayerUnitDied 0x87
 #define gRouteSplit1Flag 0x88
 #define gEnableWorldMap 0x89
 #define gThiefShrineCompleted 0x8a
+#define gCasualModeFlag 0xAF //maybe obsolete?
+#define gGuideSorted 0xB3 //TODO: need to find/change
+
+//Fountain flags
+#define gFountainDry_ThiefShrine 0x71
+#define gFountainDry_DeliveranceHideout 0x72
+#define gFountainDry_NovisPriory 0x73
+#define gFountainDry_SeaboundShrine_ExpRes 0x74
+#define gFountainDry_SeaboundShrine_SklHp 0x75
+#define gFountainDry_DragonShrine 0x76
+#define gFountainDry_SylvanRes 0x77
+#define gFountainDry_SylvanHpExp 0x78
+#define gFountainDry_FearMountainDead 0x79
+#define gFountainDry_FearMountainSpdLuck 0x7A
+#define gFountainDry_SecretShrineDef 0x7B
+#define gFountainDry_SecretShrineDead 0x7C
+#define gFountainDry_LostWoods 0x7D
+#define gFountainDry_DumaTower 0x7E
+
+//New flags 2
 #define gKliffRecruited 0x8b
 #define gFayeRecruited 0x8c
 #define gClairJoined 0x8d     //used for supports
@@ -26,7 +87,7 @@
 #define gDumaTowerReachedAlm 0x9E
 #define gTatianaRecruited 0x9F
 #define gZekeRecruited 0xA0
-#define gCasualModeFlag 0xAF
+
 //Character death flags - 0xB0 + charID
 #define gLukasDied 0xB2
 #define gGrayDied 0xB3
@@ -118,3 +179,4 @@
 #define gTatianaMourned 0x11E
 #define gZekeMourned 0x11F
 #define gHyasMourned 0x124
+#define gFernandMourned 0x125

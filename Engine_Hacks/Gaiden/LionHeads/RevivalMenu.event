@@ -2,9 +2,6 @@
 
 #define LionHeadRevival(LionID,Trigger) "EVBIT_MODIFY 0x4; CheckLionheadUses(LionID); BEQ 0x98 0xC 0x0; ASMC AreAnyUnitsRevivable+1; BEQ 0x97 0xC 0x0; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Revival; TEXTEND; REMA; SVAL 0x1 0x1; BNE 0x96 0xC 0x1; ASMC prCallRevivalMenu+1; SOUN 0x13B; FAWI 0x4; STAL 20; FAWU 2; IncrementLionheadUses(LionID); ENUF Trigger; GOTO 0x99; LABEL 0x96; ENUF Trigger; GOTO 0x99; LABEL 0x97; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_Revival_NoDead; TEXTEND; REMA; ENUF Trigger; GOTO 0x99; LABEL 0x98; SETVAL 0xB 0xFFFFFFFF; TUTORIALTEXTBOXSTART; TEXTSHOW2 LionHead_RunDry; TEXTEND; REMA; LABEL 0x99; EVBIT_MODIFY 0x0; NoFade; ENDA"
 
-LionHeadDragonshrine:
-	LionHeadRevival(gLionHeadDragonshrine,LionheadLocalTrigger1)
-
 #define RevivalMenuCommand(unitID) "WORD 0 0; BYTE $0 unitID $0 $0; POIN (Revival_IsUnitEligible+1); POIN (Revival_DrawName+1); POIN (Revival_Effect+1); WORD 0 0 0"
 
 //5b64d0 is default menu proc

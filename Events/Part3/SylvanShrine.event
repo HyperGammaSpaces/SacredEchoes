@@ -57,9 +57,9 @@ SShrine_LocationBasedEvents:
 	CHESRANDOM 0x0 Act3RandomChest|IsPointer [2, 15]
 	#ifdef LION_HEADS_ENABLED
 		//Lion heads
-		LionHead(LionheadLocalTrigger1,LionHeadSylvanRes, 9, 24)
-		LionHead(LionheadLocalTrigger2,LionHeadSylvanHP, 6, 3)
-		LionHead(LionheadLocalTrigger2,LionHeadSylvanExp, 9, 3)
+		LionHead(gFountainDry_SylvanRes,LionHeadSylvanRes, 9, 24)
+		LionHead(gFountainDry_SylvanHpExp,LionHeadSylvanHP, 6, 3)
+		LionHead(gFountainDry_SylvanHpExp,LionHeadSylvanExp, 9, 3)
 	#endif
 	LOCA
 

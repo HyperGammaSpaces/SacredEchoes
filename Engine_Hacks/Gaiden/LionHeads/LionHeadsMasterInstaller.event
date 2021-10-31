@@ -1,33 +1,33 @@
 //Lion Heads
 
 #define LION_HEADS_ENABLED
-#define gLionHeadRAMData 0x02028BD8 
+#define gLionHeadRAMData            0x02028BD8 
 #define LionheadLocalTrigger1 		0x26 //eid
 #define LionheadLocalTrigger2 		0x27 //eid
 
 #define gLionHeadThiefshrine 		0x0
 #define gLionHeadHideout 			0x1
 #define gLionHeadPriory 			0x2
-#define gLionHeadSeaboundShrine1 	0x3
-#define gLionHeadSeaboundShrine2 	0x4
-#define gLionHeadSylvanShrine1 		0x5
-#define gLionHeadSylvanShrine2 		0x6
+#define gLionHeadSeaboundShrine1 	0x3 // exp/res
+#define gLionHeadSeaboundShrine2 	0x4 // skl/hp
+#define gLionHeadSylvanShrine1 		0x5 // res
+#define gLionHeadSylvanShrine2 		0x6 // hp/exp
 #define gLionHeadDragonshrine 		0x7
-#define gLionHeadMilaTemple 		0x8
+#define gLionHeadDumaTower		    0x8
 #define gLionHeadFearMountain1 		0x9
 #define gLionHeadFearMountain2 		0xA
 #define gLionHeadSecretShrine1 		0xB
 #define gLionHeadSecretShrine2 		0xC
 #define gLionHeadLostwoods 			0xD
 
-#define Text_MaxHPUp 0x1C
-#define Text_StrUp 0x13
-#define Text_SklUp 0x15
-#define Text_SpdUp 0x16
-#define Text_LuckUp 0x17
-#define Text_DefUp 0x18
-#define Text_ResUp 0x19
-#define ItemGetSFX 0x5A
+#define Text_MaxHPUp                0x1C
+#define Text_StrUp                  0x13
+#define Text_SklUp                  0x15
+#define Text_SpdUp                  0x16
+#define Text_LuckUp                 0x17
+#define Text_DefUp                  0x18
+#define Text_ResUp                  0x19
+#define ItemGetSFX                  0x5A
 
 #include "../../../Events/ASMCs/ASMCCheckSuite/ASMCGetterSetterInstaller.event"
 #include "LionHeads.lyn.event"
@@ -37,12 +37,12 @@ LionheadUsesTable:
 BYTE gLionHeadThiefshrine 		0x3
 BYTE gLionHeadHideout 			0x3
 BYTE gLionHeadPriory 			0x3
-BYTE gLionHeadSeaboundShrine1 	0x4
-BYTE gLionHeadSeaboundShrine2 	0x3
-BYTE gLionHeadSylvanShrine1 	0x2
-BYTE gLionHeadSylvanShrine2 	0x3
+BYTE gLionHeadSeaboundShrine1 	0x4 // exp/res
+BYTE gLionHeadSeaboundShrine2 	0x3 // skl/hp
+BYTE gLionHeadSylvanShrine1 	0x2 // res
+BYTE gLionHeadSylvanShrine2 	0x3 // hp/exp
 BYTE gLionHeadDragonshrine 		0x3
-BYTE gLionHeadMilaTemple 		0x2
+BYTE gLionHeadDumaTower		    0x2 //change?
 BYTE gLionHeadFearMountain1 	0x3
 BYTE gLionHeadFearMountain2 	0x3
 BYTE gLionHeadSecretShrine1 	0x3
@@ -71,54 +71,80 @@ ALIGN 4
 
 //When revival is ready, uncomment this
 #include "RevivalMenu.event"
+//Make tile show what stat the fountain gives
+#include "ChangeTileName/Installer.event"
 
 ALIGN 4
 
 LionHeadThiefshrineSpeed:
-	LionHeadSpdUp(gLionHeadThiefshrine,LionheadLocalTrigger1)
+	LionHeadSpdUp(gLionHeadThiefshrine,gFountainDry_ThiefShrine)
 	ALIGN 4
 LionHeadThiefshrineHP:
-	LionHeadHpUp(gLionHeadThiefshrine,LionheadLocalTrigger1)
+	LionHeadHpUp(gLionHeadThiefshrine,gFountainDry_ThiefShrine)
 	ALIGN 4
 LionHeadHideoutDef:
-	LionHeadDefUp(gLionHeadHideout,LionheadLocalTrigger1)
+	LionHeadDefUp(gLionHeadHideout,gFountainDry_DeliveranceHideout)
 	ALIGN 4
 LionHeadHideoutAtk:
-	LionHeadStrUp(gLionHeadHideout,LionheadLocalTrigger1)
+	LionHeadStrUp(gLionHeadHideout,gFountainDry_DeliveranceHideout)
 	ALIGN 4
 LionHeadPriorySpd:
-	LionHeadSpdUp(gLionHeadPriory,LionheadLocalTrigger1)
+	LionHeadSpdUp(gLionHeadPriory,gFountainDry_NovisPriory)
 	ALIGN 4
 LionHeadPrioryAtk:
-	LionHeadStrUp(gLionHeadPriory,LionheadLocalTrigger1)
+	LionHeadStrUp(gLionHeadPriory,gFountainDry_NovisPriory)
 	ALIGN 4
 LionHeadSeaboundRes:
-	LionHeadResUp(gLionHeadSeaboundShrine1,LionheadLocalTrigger1)
+	LionHeadResUp(gLionHeadSeaboundShrine1,gFountainDry_SeaboundShrine_ExpRes)
 	ALIGN 4
 LionHeadSeaboundExp:
-	LionHeadExpUp(gLionHeadSeaboundShrine1,LionheadLocalTrigger1)
+	LionHeadExpUp(gLionHeadSeaboundShrine1,gFountainDry_SeaboundShrine_ExpRes)
 	ALIGN 4
 LionHeadSeaboundSkill:
-	LionHeadSklUp(gLionHeadSeaboundShrine2,LionheadLocalTrigger2)
+	LionHeadSklUp(gLionHeadSeaboundShrine2,gFountainDry_SeaboundShrine_SklHp)
 	ALIGN 4
 LionHeadSeaboundHP:
-	LionHeadHpUp(gLionHeadSeaboundShrine2,LionheadLocalTrigger2)
+	LionHeadHpUp(gLionHeadSeaboundShrine2,gFountainDry_SeaboundShrine_SklHp)
 	ALIGN 4
 LionHeadSylvanRes:
-	LionHeadResUp(gLionHeadSylvanShrine1,LionheadLocalTrigger1)
+	LionHeadResUp(gLionHeadSylvanShrine1,gFountainDry_SylvanRes)
 	ALIGN 4
 LionHeadSylvanHP:
-	LionHeadHpUp(gLionHeadSylvanShrine2,LionheadLocalTrigger2)
+	LionHeadHpUp(gLionHeadSylvanShrine2,gFountainDry_SylvanHpExp)
 	ALIGN 4
 LionHeadSylvanExp:
-	LionHeadExpUp(gLionHeadSylvanShrine2,LionheadLocalTrigger2)
+	LionHeadExpUp(gLionHeadSylvanShrine2,gFountainDry_SylvanHpExp)
 	ALIGN 4
-LionHeadMilaTempleAtk:
-	LionHeadStrUp(gLionHeadMilaTemple,LionheadLocalTrigger1)
+LionHeadDragonshrine:
+	LionHeadRevival(gLionHeadDragonshrine,gFountainDry_DragonShrine)
+    ALIGN 4
+LionHeadLostTreescape:
+	LionHeadDefUp(gLionHeadLostwoods,gFountainDry_LostWoods)
+    ALIGN 4
+LionHeadFearMtnRevival:
+	LionHeadRevival(gLionHeadFearMountain1,gFountainDry_FearMountainDead)
+    ALIGN 4
+LionHeadFearMtnSpd:
+	LionHeadSpdUp(gLionHeadFearMountain2,gFountainDry_FearMountainSpdLuck)
 	ALIGN 4
-LionHeadMilaTempleExp:
-	LionHeadExpUp(gLionHeadMilaTemple,LionheadLocalTrigger1)
+LionHeadFearMtnLuck:
+	LionHeadLuckUp(gLionHeadFearMountain2,gFountainDry_FearMountainSpdLuck)
 	ALIGN 4
+LionHeadSecretDef:
+	LionHeadDefUp(gLionHeadSecretShrine1,gFountainDry_SecretShrineDef)
+    ALIGN 4
+LionHeadSecretRevival:
+	LionHeadRevival(gLionHeadSecretShrine2,gFountainDry_SecretShrineDead)
+    ALIGN 4
+/*
+//dunno what reward(s) this will give
+LionHeadDumaTower1:
+	LionHeadRevival(gLionHeadDumaTower,gFountainDry_DumaTower)
+    ALIGN 4
+LionHeadDumaTower2:
+	LionHeadRevival(gLionHeadDumaTower,gFountainDry_DumaTower)
+    ALIGN 4
+*/
 
 LionHeadExampleEvent:
 	//Check uses, if 0 goto 0x99
