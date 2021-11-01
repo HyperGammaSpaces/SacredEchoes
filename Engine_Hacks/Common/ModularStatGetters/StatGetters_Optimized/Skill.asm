@@ -1,0 +1,72 @@
+.thumb
+
+.include "_Definitions.asm"
+
+.equ GetStatBonus, GetItemSklBonus
+.equ stat_offset, 0x15
+
+@r0 = unit RAM (or stack pocket holding unit struct data)
+prPowGetter:
+    push    {r4-r7, lr}
+    mov     r4, r0          @ unit data
+    mov     r5, #0x0        @ stat accumulator
+    
+    AddUnitRawStat:
+    mov     r3, #stat_offset
+    ldsb    r2, [r4, r3]
+    add     r5, r5, r2
+    
+    HalveIfRescuing:
+    ldr     r0, [r4, #0xC]
+    mov     r1, #0x10       @ unit state: rescuing
+    and     r0, r1
+    cmp     r0, #0x0
+    beq     AddEquippedItemStatBonus
+        lsr     r5, r5, #0x1
+    
+    AddEquippedItemStatBonus:
+    mov     r0, r4
+    blh     GetUnitEquippedWeapon
+    blh     GetStatBonus
+    add     r5, r5, r0
+    
+    AddPassiveStatBonus:
+    mov     r0, r4
+    blh     GetUnitItemCount
+    mov     r2, #0x0
+    mov     r7, r0
+    
+    PassiveStatBonusLoop:
+    lsl     r0, r2, #0x1
+    add     r0, #0x1E
+    ldrh    r0, [r4, r0]    @ item id
+    mov     r6, r0
+    blh     GetItemIdROMStruct
+    mov     r1, #0x8
+    ldr     r0, [r0, r1]    @ item attr bitfield
+    lsl     r1, r1, #0x14   @ passive boost bit
+    and     r1, r0
+    cmp     r1, #0x0
+    bne     PassiveStatBonus_Found
+    add     r2, #0x1
+    cmp     r2, r7
+    blt     PassiveStatBonusLoop
+    b       EnforceMinZero
+    
+    PassiveStatBonus_Found:
+    mov     r0, r6
+    blh     GetStatBonus
+    add     r5, r5, r0
+    
+    EnforceMinZero:
+    cmp     r5, #0x0
+    bge     ReturnStat
+        mov     r5, #0x0   
+    ReturnStat:
+    mov     r0, r5
+    pop     {r4-r7}
+    pop     {r1}
+    bx      r1
+
+    .align
+    .ltorg

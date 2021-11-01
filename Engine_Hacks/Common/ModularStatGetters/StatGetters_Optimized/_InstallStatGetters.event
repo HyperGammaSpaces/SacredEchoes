@@ -1,0 +1,89 @@
+#ifndef INSTALL_STAT_GETTERS_EVENT
+#define INSTALL_STAT_GETTERS_EVENT
+
+PUSH
+	ORG 0x19190
+	prGotoMaxHPGetter:
+		jumpToHack(prMaxHPGetter)
+
+	ORG 0x19150
+	prGotoCurHPGetter:
+		jumpToHack(prCurHPGetter)
+
+	ORG 0x191B0
+	prGotoPowGetter:
+		jumpToHack(prPowGetter)
+
+	ORG 0x191D0
+	prGotoSklGetter:
+		jumpToHack(prSklGetter)
+
+	ORG 0x19210
+	prGotoSpdGetter:
+		jumpToHack(prSpdGetter)
+
+	ORG 0x19250
+	prGotoDefGetter:
+		jumpToHack(prDefGetter)
+
+	ORG 0x19270
+	prGotoResGetter:
+		jumpToHack(prResGetter)
+
+	ORG 0x19298
+	prGotoLckGetter:
+		jumpToHack(prLckGetter)
+
+	ORG 0x189B8
+	prGotoAidGetter:
+		jumpToHack(prAidGetter)
+	
+	// Replaces part of old spd getter
+	ORG 0x19224
+	prGotoMovGetter:
+		jumpToHack(prMovGetter)
+	
+	// Replaces part of old res getter
+	ORG 0x19284
+	prGotoConGetter:
+		jumpToHack(prConGetter)
+POP
+
+ALIGN 4
+
+//Getters
+prMaxHPGetter:
+#include "MaxHP.lyn.event"
+ALIGN 4
+prCurHPGetter:
+#include "CurHP.lyn.event"
+ALIGN 4
+prPowGetter:
+#include "Power.lyn.event"
+ALIGN 4
+prSklGetter:
+#include "Skill.lyn.event"
+ALIGN 4
+prSpdGetter:
+#include "Speed.lyn.event"
+ALIGN 4
+prDefGetter:
+#include "Defense.lyn.event"
+ALIGN 4
+prResGetter:
+#include "Resistance.lyn.event"
+ALIGN 4
+prLckGetter:
+#include "Luck.lyn.event"
+ALIGN 4
+prConGetter:
+#include "Constitution.lyn.event"
+ALIGN 4
+prMovGetter:
+#include "Movement.lyn.event"
+ALIGN 4
+prAidGetter:
+#include "Aid.lyn.event"
+ALIGN 4
+
+#endif // INSTALL_STAT_GETTERS_EVENT
