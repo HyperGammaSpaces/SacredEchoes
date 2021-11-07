@@ -12,6 +12,7 @@
 .endm
 
 .equ WMagicWeaponType, 0x6
+.equ SpellsBuffer, 0x202B6D0
 
 .equ Goto6CLabel, 0x08002F24
 .equ BG_Fill, 0x08001220
@@ -82,7 +83,6 @@
 .equ gBattleActor, 0x0203A4EC
 .equ gBattleTarget, 0x0203A56C
 .equ gBattleStatsBitfield, 0x0203A4D4
-.equ SpellsBuffer, 0x202B6D0
 .equ BWLTable, 0x203E884
 
 .include "Battle/GaidenMagic_Core.asm"
