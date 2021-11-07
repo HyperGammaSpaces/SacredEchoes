@@ -1,0 +1,44 @@
+PUSH
+
+    ORG $2B3EC
+    jumpToHack(MidBattleCalcLoop)
+
+POP
+
+ALIGN 4
+MidBattleLoopStart:
+#incbin "MidBattleLoopStart.dmp"
+
+ALIGN 4
+MidBattleLoopEnd:
+#incbin "MidBattleLoopEnd.dmp"
+
+ALIGN 4
+#include "DamageHalvingSkillsDuringBattle.lyn.event"
+
+ALIGN 4
+MidBattle_Sureshot:
+#incbin "SureShot.dmp"
+
+ALIGN 4
+MidBattle_PrayerRing:
+#incbin "PrayerRing.dmp"
+
+ALIGN 4
+MidBattle_StatusWeapons:
+#incbin "StatusWeapons2.dmp"
+
+
+ALIGN 4
+MidBattleCalcLoop:
+    #incbin "MidBattleCalcLoop.dmp"
+MidBattleCalcLoopTable:
+    POIN MidBattleLoopStart
+    POIN MidBattle_Sureshot
+    POIN MidBattle_PrayerRing
+    //POIN DamageHalvingSkillsDuringBattle //commented out because skill activation anims are bugged
+    //POIN MidBattle_StatusWeapons //commented out while weapon effects are being finalized 
+    #ifdef GAIDEN_MAGIC_INSTALLED
+        POIN MidBattle_UpdateHPFromCost
+    #endif
+    POIN MidBattleLoopEnd 0

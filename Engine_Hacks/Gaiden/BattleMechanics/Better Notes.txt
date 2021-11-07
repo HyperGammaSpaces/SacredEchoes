@@ -252,8 +252,18 @@ Byte	Type	Description
 
 Just before the attacker's battle struct is data used to display the pre-battle numbers and calculate the rounds data
 203A4D4 (FE8) 203A4D0 (FE8J)
-0x00	Short	Seems to be a bitfield (0x2 seems to be 'battle hasn't started yet') (0x20 is arena) (0x80 is staff?)
-0x02	Short	Type of animation? No idea, really. -Appears to be range
+0x00	Short	
+        & 0x01  = Scripted battle
+        & 0x02  = Simulation (no RNs will be rolled)
+        & 0x04  = ?
+        & 0x08  = Ballista
+        & 0x10  = ?
+        & 0x20  = Arena
+        & 0x40  = Dance
+        & 0x80  = Map Animations
+        & 0x100 = Promotion?
+        & 0x200 = Dance (Ring)
+0x02	Short	Range
 0x04	Short	Damage (Attack - defense)
 0x06	Short	Attack
 0x08	Short	Defense
@@ -407,7 +417,7 @@ BATTLE MAP GAME STATE (202bcb0)
         & 0x08 : danger zone? viewing attack range?
         & 0x10 : prep screen
         & 0x20 : something related to sound not playing during battle?
-        & 0x40 : When set, prevents things like gaining wexp, leveling up or recieving support bonuses (Link Arena Flag Maybe?)
+        & 0x40 : Link Arena Flag, When set, prevents things like gaining wexp, leveling up or recieving support bonuses 
         & 0x80 : 
     +06 | short | VerticalCounter (IOReg:04000006) state at the end of the last main loop iteration
     +0C | word  | (2 shorts) camera position from top-left of the map (in pixels)

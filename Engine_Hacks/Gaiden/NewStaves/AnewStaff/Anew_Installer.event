@@ -1,0 +1,56 @@
+PUSH
+    ORG $28B98
+	AnewUsabilityCheck:
+		New_Use(AnewStaff_RangeSetup)
+        
+    ORG $29048
+    Anew_GetTargetList:
+		SHORT $4902
+		SHORT $1C28
+		SHORT $1C22
+		BL(Anew_SetupTargetSelection)	
+		B(EndGetTargetList)
+		POIN AnewStaff_RangeSetup|1
+		WORD 0x870
+
+    ORG $295A8
+    Anew_SetupTargetSelection:
+		BL($D18C4)
+		SHORT $480A $6800 $2101 $4249
+		BL($197E4)
+		SHORT $4808 $4909
+		BL($4FAA4)
+		SHORT $1C04 $4808
+		BL($A240)
+		SHORT $1C01 $1C20
+		BL($35708)
+		SHORT $BC30 $BC01 $4700
+		ALIGN 4
+		WORD $202E4E0 $859D2F8 $8029551 $870
+        
+    ORG $2FF68
+	AnewEffectCheck:
+		SHORT $1C30
+		BL(Anew_Use_Effect)
+		B($2FF76)
+        
+	ORG $2FBBC
+	Anew_Use_Effect:
+		#incbin "Anew_Use_Effect.dmp"
+
+    #ifdef ItemEffectRevamp
+        IER_setItemEffect(IER_FX_Anew, AnewUsabilityCheck, PUNull, Anew_GetTargetList, AnewEffectCheck)
+    #else
+        ORG $288EC
+        POIN AnewUsabilityCheck //5A
+        ORG $28EC8
+        POIN Anew_GetTargetList
+        ORG $2FCCC
+        POIN AnewEffectCheck
+    #endif
+POP
+
+ALIGN 4
+AnewStaff_RangeSetup:
+	rfItemRangeSetup($25B18+1,Item_TURange)
+    

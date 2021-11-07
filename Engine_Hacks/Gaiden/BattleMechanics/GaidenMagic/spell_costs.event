@@ -1,11 +1,5 @@
 //Spell cost list
 
-PUSH
-	ORG $CC24C //freespace in the H&S screen because we have the skip installed
-	SpellCostGetter:
-	#include "CostGetter.lyn.event"
-POP
-
 //for simplicity's sake, covers all of 0x38 to 0x5A with no gaps
 SpellCostList:
 BYTE Fire			$01	//38

@@ -3,52 +3,70 @@
 
 PUSH
 
+  //call to IsGuideLocked - make always false
   ORG $22662
   SHORT $2000 $46C0
 
+  //call to Guide_CheckUnreadEntries
   ORG $2267E
   SHORT $2000 $46C0
   
+  //call to Guide_CheckUnreadEntries
   ORG $BC508
   SHORT $2001 $46C0
   
+  //within IsGuideLocked - make display flag true.
   ORG $CDF62
   SHORT $2001 $46C0
   
+  //always assume Read flag is true
   ORG $CE334
   SHORT $2001 $46C0
   
+  //always assume Read flag is true
   ORG $CE3C0
   SHORT $2001 $46C0
   
+  //always assume Display flag is true
   ORG $CE440
   SHORT $2001 $46C0
   
+  //always assume Read flag is true
   ORG $CE508
   SHORT $2001 $46C0
   
+  //always assume Display flag is true
   ORG $CEB12
   SHORT $2001 $46C0
   
+  //always assume Display flag is true
   ORG $CEBD4
   SHORT $2001 $46C0
   
-  ORG $CECD2
-  SHORT $2000 $46C0
+  //Specify guide sort flag
+  ORG $CECD0
+  BYTE gGuideSorted
+  ORG $CF168
+  BYTE gGuideSorted
+  ORG $CF178
+  BYTE gGuideSorted
   
-  ORG $CF000
-  POIN $CF43A
-  
+  //Don't set Read flag when pressing A on an entry
   ORG $CF06E
   SHORT $46C0 $46C0
   
   ORG $59CEBC
   BYTE $0
   
+  //Entry 0B category change
   ORG $B19E90
   BYTE $2
+  //Entry 36 - change from Arena to World_Map category
   ORG $B1A094
   BYTE $A
 
 POP
+
+//Fixes a text display issue when the guide is sorted (thanks 7743)
+#include "FixGuideDictionarySortGlitch/installer.event"
 

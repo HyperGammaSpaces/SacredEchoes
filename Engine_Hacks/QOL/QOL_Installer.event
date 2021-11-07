@@ -1,0 +1,115 @@
+
+PUSH
+
+    //Fast promo dings
+    #define Time_Between_Stats 5 //default is 20
+
+    ORG $7F464
+    BYTE Time_Between_Stats
+    ORG $741E0
+    BYTE Time_Between_Stats+1
+
+    #ifdef LANGUAGE_ES
+        //Fix unit list Aid text for Spanish
+        ORG $A17EB0
+        BYTE $5E
+        ORG $A17EC0
+        BYTE $72
+    #endif
+
+    //Make objective window wider
+    ORG $8D2F6
+    BYTE $48
+    ORG $8d2a6
+    BYTE $09
+    ORG $8d2b2
+    BYTE $09
+
+    //Make location window wider
+    ORG $BE8FE
+    BYTE $48
+    ORG $BEFE4
+    BYTE $09
+    ORG $BEFF0
+    BYTE $09
+  
+    //Objective display fix for skirmish
+	ORG $8D2E8
+	SHORT $202B $46C0
+	ORG $95AAC
+	SHORT $202B $46C0
+  
+POP
+
+/*
+  ORG $8D280
+  POIN ObjectiveBoxTSA1
+  POIN ObjectiveBoxTSA2
+
+ALIGN 4
+ObjectiveBoxTSA1:
+SHORT $0C $05
+SHORT $1A $1B $1C $1C $1C $1C $1C $1C $1C $1C $1C $20 $21
+SHORT $06 $09 $09 $09 $09 $09 $09 $09 $3E $40 $42 $44 $45
+SHORT $06 $09 $09 $09 $09 $09 $09 $09 $09 $3E $40 $42 $43
+SHORT $06 $09 $09 $09 $09 $09 $09 $09 $09 $09 $3E $40 $41
+SHORT $06 $09 $09 $09 $09 $09 $09 $09 $09 $09 $09 $3E $3F
+SHORT $61 $62 $03 $03 $03 $31 $32 $33 $03 $03 $03 $04 $05
+
+ALIGN 4
+ObjectiveBoxTSA2:
+SHORT $0C $03
+SHORT $1A $1B $1C $1C $1C $1C $1C $1C $1C $1C $1C $20 $21
+SHORT $06 $09 $09 $09 $09 $09 $09 $09 $09 $09 $34 $36 $37
+SHORT $06 $09 $09 $09 $09 $09 $09 $09 $09 $09 $09 $34 $35
+SHORT $61 $62 $03 $03 $03 $31 $32 $33 $03 $03 $03 $04 $05
+*/
+
+
+//Talk and Support don't end your turn
+ALIGN 4
+#include "ContemporaryTalkSupport/ContemporaryTalkSupport.event"
+
+//HP Bars (and effective weapon warning)
+ALIGN 4
+#include "HpBars/HpBars.event"
+
+//Danger Zone (select button)
+ALIGN 4
+#include "DangerZone/DangerZone.event"
+  
+//Negative stat boosts
+ALIGN 4
+#include "NegativeStatBoosts/NegativeStatBoosts.event"
+
+//Weapon Crit 0xFF = Cannot Crit by Sme
+ALIGN 4
+#include "CannotCrit.lyn.event"
+  
+//Chapter names as text
+ALIGN 4
+#include "ChapterNamesAsText/fe8_chnames.event"
+  
+//Battle stats with anims off
+ALIGN 4
+#include "BattleStatswithAnimsOff/BattleStatsMasterEAFile.event"
+  
+//Guide stuff
+ALIGN 4
+#include "Guide/GuideStuff.event"
+
+//Pressing A on an enemy lets you move next to them and attack  
+ALIGN 4
+#include "MoveNextTo/MoveNextTo.event"
+  
+//Casual mode
+ALIGN 4
+#include "CasualMode/CasualMode.event"
+
+//Fix minimug palette flash (by Huichelaar)
+ALIGN 4
+#include "MinimugPaletteFix/Installer.event"
+
+//Show heal amount and use item might for heal amount
+ALIGN 4
+#include "HealStaffStuff/HealStaffStuff.event"

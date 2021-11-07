@@ -22,11 +22,15 @@ ALIGN 4
 
 //BL range hacks
 ALIGN 4
-#include "BL_Range/BL_Range Installer.event"
+#include "BL_Range/BL_Range_Installer.event"
 
 //Quality of life hacks
 ALIGN 4
-#include "QOL/QOL Installer.event"
+#include "QOL/QOL_Installer.event"
+
+//Romhack common hacks
+ALIGN 4
+#include "Common/Common_Installer.event"
 
 //AI related hacks
 ALIGN 4
@@ -34,12 +38,8 @@ ALIGN 4
 
 //Gaiden gameplay mechanics hacks
 ALIGN 4
-#include "Gaiden/Gaiden Installer.event"
+#include "Gaiden/Gaiden_Installer.event"
 
 //World map related hacks
 ALIGN 4
 #include "World_Map/WorldMapHelpers.event"
-
-//Romhack common hacks
-ALIGN 4
-#include "Common/Common Installer.event"

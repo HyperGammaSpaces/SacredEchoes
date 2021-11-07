@@ -1,0 +1,41 @@
+//Mila statue stuff
+
+PUSH
+
+	ORG UM_Mila_Definition
+	POIN $D7E8C 
+	SHORT Cmd_Mila
+	SHORT Desc_Cmd_Mila
+	BYTE  NormalText
+	BYTE  $62
+	SHORT 0
+	POIN MilaUsability|1
+	WORD 0
+	POIN MilaEffect|1
+	WORD 0
+	WORD 0
+	WORD 0
+	
+POP
+
+SetUnitAction(0xD, ActionRoutine(PromoteFromUnitMenu+1))
+
+MilaTileCheck:
+#incbin "MilaTileCheck.dmp"
+ALIGN 4
+
+MilaUsability:
+#incbin "MilaUsability.dmp"
+POIN IsUnitEligibleToPromote
+POIN MilaTileCheck|1
+ALIGN 4
+
+MilaEffect:
+#incbin "MilaEffect.dmp"
+POIN MilaStatueEvent
+#include "MilaStatueEvent.event"
+ALIGN 4
+
+PromoteFromUnitMenu:
+#incbin "PromoteFromUnitMenu.dmp"
+ALIGN 4

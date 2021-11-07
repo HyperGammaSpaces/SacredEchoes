@@ -1,0 +1,16 @@
+#define MMP_Buffer 0x202B4AC
+// Set this to some free ram space, size 0x200 bytes.
+// I'm using the last 0x200 bytes of the textstring buffer.
+
+PUSH
+
+    //fix palette flash on minimug
+    ORG $5968
+    callHack_r0(MMPFix)
+    SHORT $46C0
+    
+POP
+
+ALIGN 4
+MMPFix:
+#include "MMPFix.lyn.event"

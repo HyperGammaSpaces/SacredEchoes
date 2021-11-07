@@ -1,0 +1,42 @@
+//Add more space to the battle buffer and repoint it
+#include "BattleMechanics/BattleBufferExpansion.event"
+
+//General Fixes to the item engine
+ALIGN 4
+#include "Items/Items_Installer.event"
+
+//Staff functionality changes/additions
+ALIGN 4
+#include "NewStaves/NewStaves.event"
+
+//Item effectiveness rework
+ALIGN 4
+#include "EffectivenessRework/EffectivenessEA.event"
+
+//Battle mechanics
+ALIGN 4
+#include "BattleMechanics/GaidenBattleMechanics.event"
+
+//Promotion mechanics	
+ALIGN 4
+#include "ClassBehavior/Class_Behavior_Installer.event"
+
+//Support mechanics
+ALIGN 4
+#include "SupportHax/SupportSystemMods.event"
+
+//Post action loop, required for some staves/promotions
+ALIGN 4
+#include "PostActionEvents/PostActionEvents.event"
+
+//Convoy split
+ALIGN 4
+#include "Convoy/Convoy_Split_Merge.event"
+
+//Passive healing and damage from terrain, items, etc.
+ALIGN 4
+#include "PassiveHealing/HPRestorationCalcLoop.event"
+
+//Lion head statues
+ALIGN 4
+#include "LionHeads/LionHeadsMasterInstaller.event"

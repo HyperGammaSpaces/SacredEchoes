@@ -11,6 +11,8 @@ PUSH
 	BYTE $0C
 	ORG $23F94
 	BYTE $0C
+    ORG $CC704
+	BYTE $0C
 
 	//Do not autolevel promoted enemies.
 	ORG $18134
@@ -88,21 +90,9 @@ PUSH
 	ORG $9543E
 	BYTE $00 $20 $00 $00
 	
-	//allow all classes to S rank
-	ORG $2C1A2
-	BYTE $FB
-	ORG $2C1A6
-	BYTE $FB
-	ORG $2C150
-	SHORT $E011
-	
 	//Plot-important cutscene units
 	ORG $84864 
 	POIN CutsceneImportantUnitsTable
-	
-	//Don't boost HP even if applying hard mode bonuses
-	ORG $17FE0
-	BYTE $0 $0
 	
 	//Fix ballista palette weirdness for archer/sniper
 	ORG $599B6

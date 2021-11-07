@@ -1,0 +1,34 @@
+PUSH
+
+    //Allow custom Chapter Victory BGM
+    ORG $16004
+    SHORT $4900
+    SHORT $468F
+    POIN CustomVictoryMusic
+    
+    //Kill chapter prologue BGM
+    ORG $20fac
+    SHORT $4911
+    ORG $20CF0
+    SHORT $1049
+    ORG $20D84
+    SHORT $1049
+    ORG $20D94
+    SHORT $2000
+    ORG $20D00
+    SHORT $2000
+    
+POP
+
+//Improved Sound Mixer
+ALIGN 4
+//#include "SoundEngine/SoundMixer.event"
+#include "SoundEngine/SoundMixer_HQ.event" //2021 rewrite by ipatix and 7743
+
+ALIGN 4
+CustomVictoryMusic:
+#incbin "CustomVictoryMusic/CustomVictoryMusic.dmp"
+
+//Allow BGM to continue between battle and map
+ALIGN 4
+#include "ContinueBattleBGM/ContinueBattleBGM.event"

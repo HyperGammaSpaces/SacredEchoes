@@ -1,0 +1,65 @@
+PUSH
+
+    //lords and thieves can pick
+    ORG $23E8C
+    jumpToHack(MultiPick)
+    ORG $40C6A
+    BYTE $17 //new rogue id
+    
+    //Make units be able to use both magic and melee animations
+    ORG $18A58
+    SHORT $B500 //push {lr}
+    BL($16B28) //GetUnitEquippedItem
+    SHORT $0600 $0E00 //bitshift away the upper bits
+    SHORT $4905 $6809 //ldr r1, =ItemTable
+    SHORT $2224 //mov r2, #0x24
+    SHORT $4350 //mul r0, r2
+    SHORT $1840 //add r0, r0, r1
+    SHORT $7A00 //ldrb r0, [r0, #0x08] (item attr byte 1)
+    SHORT $2102 $4008 //AND with "IsMagic" bit
+    SHORT $0840 //shift 1 bit right to get (0||1)
+    SHORT $BD00 $46C0 //pop {pc}, .align 4
+    POIN  $177C0 //a known pointer to the ItemTable
+    
+    ORG $2BF4C //Change HP cap
+	BYTE $34
+	ORG $2BF64 //Change HP cap
+	BYTE $34
+    
+    //Don't boost HP even if applying hard mode bonuses
+	ORG $17FE0
+	BYTE $0 $0
+    
+    //allow all classes to S rank
+	ORG $2C1A2
+	BYTE $FB
+	ORG $2C1A6
+	BYTE $FB
+	ORG $2C150
+	SHORT $E011
+    
+POP
+ALIGN 4
+
+//Walking Sounds Fix
+#include "WalkingSoundsFix/Installer.event"
+ALIGN 4
+
+//Give several classes pick
+MultiPick:
+#incbin "Multipick/doubleRogueSkillFE8.dmp"
+POIN LockpickClassTable
+ALIGN 4
+
+LockpickClassTable:
+BYTE 0x01 0x02 0x03 0x04 0x17 0x18 0x00 
+ALIGN 4
+
+#include "Echoes_EXP/Echoes_EXP_Installer.event"
+
+#include "BattlePalettes/BP_Rework_Installer.event"
+
+//Lets Alm and Celica T2 have different mugs
+//#include "ChangePortraitByFlag/Installer.event"
+
+#include "ClassChange/Gaiden_ClassChange_Installer.event"

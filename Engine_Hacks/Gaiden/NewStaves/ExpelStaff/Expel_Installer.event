@@ -1,0 +1,91 @@
+#define EXPEL_STAFF_USE_POSTACTION 0x1
+
+PUSH
+
+#ifdef ItemEffectRevamp
+
+    IER_setItemEffect(IER_FX_Expel, ExpelUsabilityCheck, PUNull, FortifyStaff_GetTargetList, ExpelEffectCheck)
+    
+#else
+
+	ORG $288B4
+	POIN ExpelUsabilityCheck
+    
+    ORG $28E90
+    POIN FortifyStaff_GetTargetList
+
+	ORG $2FC94
+	POIN ExpelEffectCheck
+
+#endif
+
+    //TODO: MOVE THESE
+    ORG $28BA8
+    ExpelUsabilityCheck:
+		New_Use(ExpelStaff_RangeSetup)
+
+    ORG $2FE7C
+	ExpelEffectCheck:
+		SHORT $1C30
+		BL(Expel_Use_Effect)
+		B($2FF76)
+		
+	ORG $2F1D8
+    Expel_Use_Effect:
+	#incbin "Expel_Use_Effect.dmp"
+    POIN ExpelEffectProc
+    
+    //Specify non-healing staff
+	ORG $72598
+	POIN $726A4
+	
+POP
+
+#include "expel_after.lyn.event"
+
+//Expel stuff
+ExpelEvent:
+	CAM1 0xFFFF
+	EARTHQUAKE_START 0x100
+	STAL 30
+	SOUN 0x101 //purge hit
+	STAL 30
+	EARTHQUAKE_END
+	NoFade
+	ENDA
+
+ExpelStaff_RangeSetup:
+	rfItemRangeSetup(TryAddUnitToExpelTargetList+1,Item_TURange)
+ALIGN 4
+
+TryAddUnitToExpelTargetList:
+#incbin "ExpelUsabilityCheck.dmp"
+ALIGN 4
+
+ExpelMapAnimProc:
+
+	PROC_CALL_ROUTINE($30C24+1) //init. We need to set a proc field to 0
+	PROC_CALL_ROUTINE($81E48+1) //Darkens map? Wraps 7f568
+	PROC_SLEEP(1)
+	PROC_CALL_ROUTINE($81278+1) //MapAnim_AnimateSubjectIdle. Moves staff user.
+	PROC_SLEEP(30)
+
+	PROC_CALL_ROUTINE($819E8+1) //jumps to 7d0b4 - displays the circles
+
+	PROC_SLEEP(2)
+	PROC_SLEEP(200)
+	PROC_SLEEP(10)
+	PROC_CALL_ROUTINE($8129C+1) //MapAnim_SubjectResetAnim. Returns staff user to idle anim.
+	PROC_SLEEP(30)
+	
+	PROC_CALL_ROUTINE($81E54+1) //Un-darkens map? Wraps 7f5c8
+	PROC_SLEEP(1)
+	PROC_CALL_ROUTINE($30C40+1) //LoadTitleAnimations2Only
+	PROC_END
+
+ExpelEffectProc:
+
+	PROC_SLEEP(1)
+	PROC_CALL_ROUTINE($2CC1C+1) //SaveInstigatorFromBattle
+	PROC_SLEEP(30)
+	PROC_END

@@ -1,0 +1,121 @@
+PUSH
+
+    //change staff exp to echoes formula
+	//exp = Base value - ((Level/3)-1), round down
+	ORG $2C664
+	SHORT $7A20 //ldrb r0, [r4, #0x08] //level
+	SHORT $2103 //mov r1, #0x3
+	BL($D18FC) //Div
+	SHORT $1C02 //mov r2, r0
+	
+	SHORT $1C20 //mov r0, r4
+	SHORT $3048 //add r0, #0x48
+	SHORT $8800 //ldrh r0, [r0]
+	BL($17624) //GetItemCrit
+	SHORT $2800 //cmp r0, #0x0
+	SHORT $D101 //bne+2
+		SHORT $2001 //mov r0, #0x1
+		SHORT $E00C //B($2c69a)
+	
+	SHORT $2A01 //cmp r2, #0x1
+	SHORT $DD01 //ble+2
+		SHORT $2101 //mov r1, #0x1
+		SHORT $1A52 //sub r2, r2, r1
+	SHORT $4282 //cmp r2, r0
+	SHORT $DD01 //ble+2
+		SHORT $2001 //mov r0, #0x1
+		SHORT $E004 //B($2c69a)
+	SHORT $1A82 //sub r2, r0, r2
+	//2C692 and on is unchanged
+	
+	ORG $17E98
+	callHack_r3(CheckForEXPLevelCap)
+	SHORT 0xE005 
+	
+	ORG $2C534
+	replaceWithHack(GaidenEXPCalcRework)
+
+POP
+
+ALIGN 4
+Class_Level_Cap_Table:
+#incbin "Class_Level_Cap_Table.dmp"
+
+ALIGN 4
+CheckForEXPLevelCap:
+#incbin "CheckForEXPLevelCap.dmp"
+POIN Class_Level_Cap_Table
+
+ALIGN 4
+GaidenEXPCalcRework:
+#incbin "NewCalcExpFromBattle.dmp"
+POIN LevelFactorTable
+POIN ClassEXPTable
+
+ALIGN 4
+ApplyBonusEXPToParty:
+#incbin "BonusEXP.dmp"
+POIN LevelFactorTable
+
+ALIGN 4
+LevelFactorTable:
+BYTE $0A $0A $0A $09 $08 $07 $06 $05 $04 $03 $02 $02 
+
+ALIGN 4
+ClassEXPTable:
+BYTE $1 $28 $28 $50 $50 //Lords
+BYTE $28 $28 //Cavs
+BYTE $50 $50 //Paladins
+BYTE $46 $46 //Armors
+BYTE $C8 $C8 //Barons
+BYTE $1E $1E //Thiefs
+BYTE $28 $28 //Mercs
+BYTE $50 $50 //Myrms
+BYTE $28 $28 //dummy
+BYTE $B4 $B4 //DFs
+BYTE $46 $46 //Rogues
+BYTE $28 $28 //Archer
+BYTE $50 $50 //Sniper
+BYTE $B4 $B4 //Bow Knight
+BYTE $28 $28 //Wyvern Rider 
+BYTE $50 $50 //Wyvern Lord
+BYTE $B4 $B4 //Dracoknight
+BYTE $50 $64 //Mages
+BYTE $B4 //Sage
+BYTE $B4 //Priestess
+BYTE $64 $64 //Witches
+BYTE $64 $64 //Saints
+BYTE $50 $50 //Shamans
+BYTE $78 $78 //Arcanists
+BYTE $B4 $B4 //Cantors
+BYTE $1 $1 //dummy
+BYTE $C8 $C8 //GKs
+BYTE $1 $1 $1 $1 //dummy trainees
+BYTE $C8 $C8 //manaketes
+BYTE $1E $1E //villagers
+BYTE $50 $C8 //axeman/highlander
+BYTE $1E $1E $1E //brigand/pirate/pirateF
+BYTE $78 $78 //berserkers
+BYTE $1 //dummy
+BYTE $1E //woodcutter
+BYTE $28 $50 //peg/falco
+BYTE $3C //cleric
+BYTE $1 $1
+BYTE $3C //dancer
+BYTE $23 //soldier
+BYTE $B4 //jedah
+BYTE $50 //fleet
+BYTE $1 //phantom
+BYTE $1E //revenant
+BYTE $FF //entombed
+BYTE $46 $46 //bonewalkers
+BYTE $78 $78 //wights
+BYTE $28 $50 //bael/elder
+BYTE $78 $78 //cyclops and fiend
+BYTE $B4 //white dragon
+BYTE $28 $50 //tarvos/maelduin
+BYTE $3C $78 //mogall/archmogall
+BYTE $78 $1 //gorgon/eggs
+BYTE $28 $50 //gargoyle/deathgoyle
+BYTE $78 //necrodragon
+BYTE $1 //duma 0x66

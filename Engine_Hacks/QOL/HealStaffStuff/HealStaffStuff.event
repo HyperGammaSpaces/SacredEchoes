@@ -1,0 +1,20 @@
+PUSH
+
+	//Show heal amount
+	ORG $24670
+	SHORT $4B00 $469F
+	POIN ShowHealAmount
+	
+	//Heal by item might
+	ORG $16FB8
+	HealByMight:
+	#incbin "HealByMight.dmp"
+
+POP	
+
+ALIGN 4
+ShowHealAmount:
+#incbin "ShowHealAmount.dmp"
+WORD HP_Restore_Arrow
+WORD SelectedSpellPointer
+

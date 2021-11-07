@@ -18,32 +18,39 @@ POP
 	/* Post-battle calculation loop*/
 
 PUSH
-ORG $1D308 //hook just before the check for misc event
-jumpToHack(PostCombatLoop)
+
+    ORG $1D308 //hook just before the check for misc event
+    jumpToHack(PostCombatLoop)
+    
 POP
 
 PostCombatLoop:
-#incbin "post_loop.dmp"
-POIN PostCombatActions
+    #incbin "PostBattleCalcLoop.dmp"
+    POIN PostCombatActions
 
 PostCombatActions: 
-POIN PostCombat_Upheaval PostCombat_Expel PostCombat_Unlock
-POIN Lifetaker
-POIN GiveNewItemTo AddSupportPointsAfterBattle 
-POIN Canto WitchRewarp //this works i guess
-POIN PostCombat_SpellClear
-WORD 0 //Terminator
+    //POIN PostCombat_Upheaval 
+    #ifdef EXPEL_STAFF_USE_POSTACTION
+        POIN PostCombat_Expel
+    #endif
+    #ifdef UNLOCK_STAFF_ON_CHESTS
+        POIN PostCombat_Unlock
+    #endif
+    POIN Lifetaker
+    POIN GiveNewItemTo AddSupportPointsAfterBattle 
+    POIN Canto WitchRewarp //this works i guess
+    #ifdef GAIDEN_MAGIC_INSTALLED
+        POIN PostCombat_SpellClear
+    #endif
+    WORD 0 //Terminator
 
-PROTECT $1D308 $1D314
+    PROTECT $1D308 $1D314
 
-#include "../PromotionMechanics/GiveNewWeapon.event"
-ALIGN 4
-
-#include "../BattleMechanics/GaidenMagic/NewStaves/staves_after.lyn.event"
+#include "../ClassBehavior/ClassChange/GiveNewWeapon.event"
 ALIGN 4
 
 GiveNewItemTo:
-#incbin "../PromotionMechanics/GiveNewItemTo.dmp"
+#incbin "../ClassBehavior/ClassChange/GiveNewItemTo.dmp"
 POIN GiveSwordEvent GiveAxeEvent GiveBowEvent
 ALIGN 4
 
@@ -53,7 +60,7 @@ POIN prMovGetter
 ALIGN 4
 
 Lifetaker:
-#incbin "../BattleMechanics/ItemSkills/Lifetaker.dmp"
+#incbin "Lifetaker.dmp"
 POIN LifetakerEvent
 ALIGN 4
 

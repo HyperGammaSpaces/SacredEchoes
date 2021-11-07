@@ -1,0 +1,39 @@
+//swap B.Magic and W.Magic so B.Magic comes first (like vanilla Attack)
+#define SWITCH_MAG_COMMAND_POS 0x1
+
+PUSH
+
+    //Update attack command to hide if unit doesn't have a physical weapon
+    ORG UM_Attack_Definition+0xC
+        POIN    AttackUMCommand_Fix+1
+
+    //Updating menu defs
+    ORG UM_BMagic_Definition
+        POIN    $D7E8C 
+        SHORT   Cmd_BMagic
+        SHORT   Desc_Cmd_BMagic
+        BYTE    NormalText
+        BYTE    $54
+        SHORT   0
+        POIN    BlackMagicMenuCommand_Usability+1
+        WORD    0
+        POIN    BlackMagicMenuCommand_OnSelect+1
+        WORD    0
+        POIN    BlackMagicMenuCommand_OnHover+1
+        POIN    MagicMenuCommand_OnUnhover+1
+
+    ORG UM_WMagic_Definition
+        POIN    $D7E8C 
+        SHORT   Cmd_WMagic
+        SHORT   Desc_Cmd_WMagic
+        BYTE    NormalText
+        BYTE    $51
+        SHORT   0
+        POIN    WhiteMagicMenuCommand_Usability+1
+        WORD    0
+        POIN    WhiteMagicMenuCommand_OnSelect+1
+        WORD    0
+        POIN    WhiteMagicMenuCommand_OnHover+1
+        POIN    MagicMenuCommand_OnUnhover+1
+
+POP

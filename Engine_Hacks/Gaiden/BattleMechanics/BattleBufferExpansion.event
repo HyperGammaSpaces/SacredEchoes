@@ -1,0 +1,126 @@
+//Repoint the buffer 
+#define NewBattleBufferLocation $203aac0 //was 203a5ec
+#define BattleBufferWidth 8
+#define maxAtks 31
+#define BattleBufferAnimsOn1 (NewBattleBufferLocation+(maxAtks*8)) //was 203e12a
+#define BattleBufferAnimsOn2 (BattleBufferAnimsOn1+(maxAtks*4)) //was 203e156
+
+PUSH
+
+    ORG $2AEA0
+    BYTE maxAtks*4 //max number of attacks
+
+    ORG $2AEAE //clear out more buffer
+    SHORT $8050 //strh r0, [r2,2]
+    SHORT $6054 //str r0, [r2,4]
+
+    ORG $58212
+    BYTE maxAtks*4 //max number of attacks
+    ORG $5822A
+    BYTE maxAtks*4  //max number of attacks - NEED TO REPOINT 203e156
+
+    ORG $58258
+    WORD BattleBufferAnimsOn2
+    ORG $58350
+    WORD BattleBufferAnimsOn2
+    ORG $5856C
+    WORD BattleBufferAnimsOn2
+    ORG $585AC
+    WORD BattleBufferAnimsOn1
+    ORG $5862C
+    WORD BattleBufferAnimsOn2
+    ORG $58698
+    WORD BattleBufferAnimsOn2
+    ORG $58768
+    WORD BattleBufferAnimsOn2
+    ORG $58844
+    WORD BattleBufferAnimsOn2
+    ORG $58A6C
+    WORD BattleBufferAnimsOn2
+    ORG $58A84
+    WORD BattleBufferAnimsOn2
+
+    ORG $58248
+    WORD BattleBufferAnimsOn1
+    ORG $58564
+    WORD BattleBufferAnimsOn1
+    ORG $58A28
+    WORD BattleBufferAnimsOn1
+    ORG $58A54
+    WORD BattleBufferAnimsOn1
+    ORG $58B50
+    WORD BattleBufferAnimsOn1
+
+    ORG $2B90A
+    BYTE BattleBufferWidth
+    ORG $2B91C
+    BYTE BattleBufferWidth
+    ORG $2AEB2
+    BYTE BattleBufferWidth
+    ORG $5881C
+    BYTE BattleBufferWidth
+    ORG $7A886
+    BYTE BattleBufferWidth
+    ORG $2D2B8
+    BYTE BattleBufferWidth
+    ORG $2D2C8
+    BYTE BattleBufferWidth
+    ORG $2CC5C
+    BYTE BattleBufferWidth
+    ORG $2CF6C
+    SHORT ($3400+(BattleBufferWidth-4)) $0CD0
+    ORG $2D098
+    SHORT ($6808 + BattleBufferWidth*16) $0200 $0EC0 ($3100 + BattleBufferWidth) $6031
+
+    ORG $2AEC4
+    WORD NewBattleBufferLocation
+    ORG $2C44C
+    WORD NewBattleBufferLocation
+    ORG $2C660
+    WORD NewBattleBufferLocation
+    ORG $2CB0C
+    WORD NewBattleBufferLocation
+    ORG $2CE98
+    WORD NewBattleBufferLocation
+    ORG $2CFA8
+    WORD NewBattleBufferLocation
+    ORG $2F658
+    WORD NewBattleBufferLocation
+    ORG $2F730
+    WORD NewBattleBufferLocation
+    ORG $2F7FC
+    WORD NewBattleBufferLocation
+    ORG $58244
+    WORD NewBattleBufferLocation
+    ORG $58930
+    WORD NewBattleBufferLocation
+    ORG $72564
+    WORD NewBattleBufferLocation
+    ORG $7B4CC
+    WORD NewBattleBufferLocation
+    ORG $7B574
+    WORD NewBattleBufferLocation
+    ORG $7B628
+    WORD NewBattleBufferLocation
+    ORG $7B680
+    WORD NewBattleBufferLocation
+    ORG $7B6D8
+    WORD NewBattleBufferLocation
+    ORG $7B738
+    WORD NewBattleBufferLocation
+    ORG $7B790
+    WORD NewBattleBufferLocation
+    ORG $7B7E8
+    WORD NewBattleBufferLocation
+    ORG $7B84C
+    WORD NewBattleBufferLocation
+    ORG $7B8B8
+    WORD NewBattleBufferLocation
+    ORG $7B9B0
+    WORD NewBattleBufferLocation
+    ORG $7C920
+    WORD NewBattleBufferLocation
+    ORG $A6D18
+    WORD NewBattleBufferLocation
+
+POP

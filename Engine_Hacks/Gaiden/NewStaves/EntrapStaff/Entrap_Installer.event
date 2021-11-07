@@ -1,0 +1,38 @@
+PUSH
+
+    //USABILITY  
+    ORG $28B0C	//Entrap
+		New_Use(EntrapStaff_RangeSetup)
+
+    //Make it target enemies
+	ORG $26198
+	EntrapTargetRoutine:
+	#incbin "entraptarget.dmp"
+
+    //TARGET
+	ORG $28FAC 		//Entrap Staff
+	EntrapStaff_GetTargetList:
+		SHORT $4900
+		B(RescueStaff_CallTargetingFunc)
+		POIN EntrapStaff_RangeSetup|1
+        
+    #ifdef ItemEffectRevamp
+    
+        IER_setItemEffect(IER_FX_Entrap, $28B0C, PUNull, EntrapStaff_GetTargetList, $2FE94)
+    #else
+        ORG $28EAC
+        POIN EntrapStaff_GetTargetList
+        
+        ORG $2FCB0
+        POIN $2FE94 //rescue effect
+    #endif
+    
+    //Specify as non-healing staff
+	ORG $725B4
+		POIN $726A4
+POP
+
+ALIGN 4    
+EntrapStaff_RangeSetup:
+	rfItemRangeSetup(0x26198+1,Item_TURange)
+    

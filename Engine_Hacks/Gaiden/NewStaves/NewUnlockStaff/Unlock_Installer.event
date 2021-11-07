@@ -1,0 +1,41 @@
+#define UNLOCK_STAFF_ON_CHESTS 0x1
+
+PUSH
+    ORG $28B3C	//Usability
+		New_Use(UnlockStaff_RangeSetup)
+        
+    ORG $28FF4
+    	UnlockStaff_GetTargetList:
+		SHORT $4901 $4A02 $1C23 
+		B(TileTargetingFuncJump)
+		POIN Unlock_Jump|1
+		WORD 0x87A	//target select help text
+    ORG $26080
+	Unlock_Jump:
+		SHORT $B500 $1C1A $4902	//push {lr}; mov r2, r3; ldr r1,=POIN;
+		BL($D18C4)	//bl to bx r1
+		SHORT $BC01 $4700 $0
+		POIN UnlockStaff_RangeSetup|1
+        
+    #ifdef ItemEffectRevamp
+        IER_setItemEffect(IER_FX_Unlock, $28B3C, PUNull, UnlockStaff_GetTargetList, $2FEAC)
+    #else
+        ORG $28EC0
+        POIN UnlockStaff_GetTargetList
+    #endif
+POP
+
+ALIGN 4
+//Make Unlock usable on chests
+UnlockStaff_RangeSetup:
+	rfItemRangeSetup(TryAddToUnlockTargetList+1,Item_TTRange)
+    
+TryAddToUnlockTargetList:
+#incbin "TryAddToUnlockTargetList.dmp"
+ALIGN 4
+
+UnlockEffectFix: //formerly at 7e79c
+#incbin "unlockeffect.dmp"
+ALIGN 4
+
+#include "unlockafter.lyn.event"

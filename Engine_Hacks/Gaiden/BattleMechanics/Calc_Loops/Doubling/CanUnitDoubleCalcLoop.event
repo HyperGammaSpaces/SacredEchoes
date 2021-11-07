@@ -1,0 +1,19 @@
+
+#include "CanUnitDoubleCalcLoop.lyn.event"
+
+PUSH
+    ORG $2AF94
+    jumpToHack(CanUnitDoubleCalcLoopFunc)
+
+    ORG IsAttackerEclipsing+$11
+    BYTE W_Effect_Eclipse
+POP
+
+ALIGN 4
+CanUnitDoubleCalcLoop: //r0 = attacker unit ptr, r1 = defender unit ptr, r2 = AS check result; return 0 for forcing unable to double, 1 for forcing able to double, 2 for keeping AS result/no change
+POIN IsDefenderSnag IsAttackerEclipsing IsAttackerUsingStone //vanilla checks externalized to here
+//POIN IsAttackerWeaponUnableToDouble //makes weapon effect 0xC make it unable to double
+//POIN IsCloseCounter //makes bows unable to double at 1-range
+//Put magic check here
+
+WORD 0 //terminator

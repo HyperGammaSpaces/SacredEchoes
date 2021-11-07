@@ -1,0 +1,17 @@
+
+#include "AnewStaff/Anew_Installer.event"
+#include "EntrapStaff/Entrap_Installer.event"
+#include "InvokeStaff/Invoke_Installer.event"
+#include "ExpelStaff/Expel_Installer.event"
+#include "RewarpStaff/Rewarp_Installer.event"
+#include "NewUnlockStaff/Unlock_Installer.event"
+
+PUSH
+	
+	//Force battle anims off for certain staff
+	ORG $581D0
+	SHORT $2A4C $D003 //beq 0x4C
+	SHORT $2A53 $DB03 //blt 0x53
+	SHORT $2A59 $DC01 //bgt 0x59
+    
+POP	

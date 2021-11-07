@@ -45,8 +45,7 @@
 #define gRouteSplit1Flag 0x88
 #define gEnableWorldMap 0x89
 #define gThiefShrineCompleted 0x8a
-#define gCasualModeFlag 0xAF //maybe obsolete?
-#define gGuideSorted 0xB3 //TODO: need to find/change
+#define gGuideSorted 0xAF //MOVED from 0xB3
 
 //Fountain flags
 #define gFountainDry_ThiefShrine 0x71
@@ -87,6 +86,7 @@
 #define gDumaTowerReachedAlm 0x9E
 #define gTatianaRecruited 0x9F
 #define gZekeRecruited 0xA0
+//0xA1 - 0xAE free
 
 //Character death flags - 0xB0 + charID
 #define gLukasDied 0xB2

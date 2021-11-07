@@ -1,0 +1,45 @@
+PUSH
+
+    //Monster Weapon display fix
+    ORG $16E20
+    #incbin "Monsterweapon.dmp"
+    ORG $892F2
+    BYTE $06
+    ORG $1E7FC
+    BYTE $0C
+
+    //Legendary weapon flash
+    ORG $58AD2
+    #incbin "Legendary_Weapon_Flash.dmp"
+    POIN Legendary_Flash_Table
+    
+POP
+
+//Legendary weapon flash table
+Legendary_Flash_Table:
+BYTE Ragnarok Falchion 0x00
+
+//Item range mods
+ALIGN 4
+#include "ItemRangeFix/ItemRangeFix.event"
+
+//Item effect rework
+ALIGN 4
+#include "ItemEffectRevamp/IERevamp_Installer.event"
+
+//Item name article table (a/an/the)
+ALIGN 4
+#include "ItemNameArticleTable.event"
+
+//Stat boosts table
+ALIGN 4
+#include "PassiveBoostsTable.event"
+
+//Bow and handaxe anim fix
+ALIGN 4
+#include "ForceRangedAnims/RangedAnimation.event"
+
+//Can't remove key items
+ALIGN 4
+#include "Untradeables/Installer.event"
+

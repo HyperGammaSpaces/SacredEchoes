@@ -1,0 +1,116 @@
+PUSH
+
+    //Specify as non-healing staff
+	ORG $725CC
+		POIN $726A4
+        
+    ORG $28ADC
+	RewarpUsabilityCheck:
+		New_Use(RewarpStaff_RangeSetup)
+        
+    ORG $28FB4
+    RewarpStaff_GetTargetList:
+		SHORT $4900
+		B(RescueStaff_CallTargetingFunc)
+		POIN RewarpStaff_RangeSetup|1
+
+    ORG $2FE9C
+	RewarpEffectCheck:
+		SHORT $1C30	//mov r0, r6
+		BL(Rewarp_Use_Effect)
+		B($2FF76)
+        
+    ORG $2EC8C
+	Rewarp_Use_Effect:
+		#incbin "Rewarp_Use_Effect.dmp"
+        
+    #ifdef ItemEffectRevamp
+        IER_setItemEffect(IER_FX_Rewarp, RewarpUsabilityCheck, PUNull, RewarpStaff_GetTargetList, RewarpEffectCheck) 
+    #else
+        //USABILITY
+        ORG $288E8
+        POIN RewarpUsabilityCheck
+        
+        //TARGET
+        ORG $28EC4
+        POIN RewarpStaff_GetTargetList
+        
+        //EFFECT
+        ORG $2FCC8
+        POIN RewarpEffectCheck
+    #endif
+
+POP
+
+RewarpStaff_RangeSetup:
+	rfItemRangeSetup(TryAddUnitToRewarpTargetList+1,Item_TURange)
+ALIGN 4 
+
+TryAddUnitToRewarpTargetList:
+#incbin "RewarpUsabilityCheck.dmp"
+ALIGN 4
+
+RewarpMapAnimProc: //formerly at $089A5214
+
+	PROC_CALL_ROUTINE(MapAnim_SubjectUnitWarpRing+1)
+	PROC_SLEEP(10)
+	PROC_CALL_ROUTINE(MapAnim_SubjectUnitFlashOut+1)
+	PROC_SLEEP(20)
+	
+	PROC_CALL_ROUTINE(MapAnim_SubjectStarExplosion+1)
+	PROC_SLEEP(2)
+	PROC_CALL_ROUTINE(MapAnim_SubjectHide+1)
+	PROC_SLEEP(8)
+	
+	PROC_CALL_ROUTINE(MapAnim_MoveSubjectForWarp+1)
+	PROC_SLEEP(30)
+	PROC_CALL_ROUTINE(MapAnim_MoveCameraOnWarpSubject+1)
+	PROC_SLEEP(2)
+	PROC_CALL_ROUTINE(MapAnim_SubjectStarImplosion+1)
+	PROC_SLEEP(40)
+	
+	PROC_CALL_ROUTINE(MapAnim_WarpSubjectWarpRing+1)
+	PROC_SLEEP(10)
+	PROC_CALL_ROUTINE(MapAnim_SubjectShow+1)
+	
+	PROC_CALL_ROUTINE(MapAnim_SubjectUnitFlashIn+1)
+	PROC_SLEEP(16)
+	PROC_SLEEP(10)
+	PROC_CALL_ROUTINE(ClearBattleChangeData+1)
+	PROC_SLEEP(30)
+	
+	PROC_END
+
+MapAnim_SubjectUnitWarpRing:
+#incbin "MapAnim_SubjectUnitWarpRing.dmp"
+ALIGN 4
+MapAnim_SubjectUnitFlashOut:
+#incbin "MapAnim_SubjectUnitFlashOut.dmp"
+ALIGN 4
+MapAnim_SubjectStarExplosion:
+#incbin "MapAnim_SubjectStarExplosion.dmp"
+ALIGN 4
+MapAnim_SubjectHide:
+#incbin "MapAnim_SubjectHide.dmp"
+ALIGN 4
+MapAnim_MoveSubjectForWarp:
+#incbin "MapAnim_MoveSubjectForWarp.dmp"
+ALIGN 4
+MapAnim_MoveCameraOnWarpSubject:
+#incbin "MapAnim_MoveCameraOnWarpSubject.dmp"
+ALIGN 4
+MapAnim_SubjectStarImplosion:
+#incbin "MapAnim_SubjectStarImplosion.dmp"
+ALIGN 4
+MapAnim_WarpSubjectWarpRing:
+#incbin "MapAnim_WarpSubjectWarpRing.dmp"
+ALIGN 4
+MapAnim_SubjectShow:
+#incbin "MapAnim_SubjectShow.dmp"
+ALIGN 4
+MapAnim_SubjectUnitFlashIn:
+#incbin "MapAnim_SubjectUnitFlashIn.dmp"
+ALIGN 4
+ClearBattleChangeData:
+#incbin "MapAnim_ClearCoords.dmp"
+ALIGN 4

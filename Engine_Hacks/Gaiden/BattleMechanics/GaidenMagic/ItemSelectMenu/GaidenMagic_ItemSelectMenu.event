@@ -1,0 +1,70 @@
+#define BlackMagicItem_Entry(optionNumber) "WORD $080D7CB8; SHORT 0; SHORT 0; BYTE 0 optionNumber 0 0; POIN (BlackMagicItem_Usability+1); POIN (BlackMagicItem_OnDraw+1); POIN (BlackMagicItem_OnSelect+1); WORD 0; POIN (BlackMagicItem_OnHover+1); POIN ($22DD8+1)"
+
+#define WhiteMagicItem_Entry(optionNumber) "WORD $080D7CB8; SHORT 0; SHORT 0; BYTE 0 optionNumber 0 0; POIN (WhiteMagicItem_Usability+1); POIN (WhiteMagicItem_OnDraw+1); POIN (WhiteMagicItem_OnSelect+1); WORD 0; POIN (WhiteMagicItem_OnHover+1); POIN ($22DD8+1)"
+
+#define MenuEntryList_Term "WORD 0 0 0 0 0 0 0 0 0"
+
+PUSH
+
+    ORG $168A4
+	jumpToHack(DrawHPCostForSpell)
+    
+    ORG $171EC
+	jumpToHack(GetUnitRangeMask_Fix)
+    
+	ORG $1E7B4
+	jumpToHack(UpdateMenuItemPanel_Hook1)
+    ORG $1E7F2
+    BYTE $9     //weapon type to send to non-weapon panel
+    ORG $1E906
+    SHORT $46C0
+    jumpToHack(UpdateMenuItemPanel_TopRow)
+    
+    //Moving weapon type icon
+    ORG $1EA04
+    BYTE $42
+    
+    ORG $1EA3C
+    WORD SS_SpellCost
+    
+    //replaces 22E54 - handles sending back to the correct item menu
+    ORG $59B650
+    PROC_CALL_ROUTINE(ReturnFromBattlePreview|1)
+    
+POP
+
+Defs_BlackMagicItemList:
+    BYTE $01 $01 $0E $00
+    WORD $0
+    POIN BlackMagicItem_EntryList
+    WORD $0 $0 $0
+    POIN MagicItemList_OnCancel|1
+    WORD $0804F521          //MenuCallHelp			
+    POIN MagicItemList_CallRText|1
+
+BlackMagicItem_EntryList:
+	BlackMagicItem_Entry($49)
+	BlackMagicItem_Entry($4A)
+	BlackMagicItem_Entry($4B)
+	BlackMagicItem_Entry($4C)
+	BlackMagicItem_Entry($4D)
+	BlackMagicItem_Entry($4E)
+    MenuEntryList_Term
+
+Defs_WhiteMagicItemList:
+    BYTE $01 $01 $0E $00
+    WORD $0
+    POIN WhiteMagicItem_EntryList
+    WORD $0 $0 $0
+    POIN MagicItemList_OnCancel|1
+    WORD $0804F521          //MenuCallHelp
+    POIN MagicItemList_CallRText|1
+
+WhiteMagicItem_EntryList:
+	WhiteMagicItem_Entry($3E)
+	WhiteMagicItem_Entry($3F)
+	WhiteMagicItem_Entry($40)
+	WhiteMagicItem_Entry($41)
+	WhiteMagicItem_Entry($42)
+	WhiteMagicItem_Entry($43)
+    MenuEntryList_Term

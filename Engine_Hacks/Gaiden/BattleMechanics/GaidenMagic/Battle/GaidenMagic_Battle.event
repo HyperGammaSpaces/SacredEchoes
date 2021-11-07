@@ -1,0 +1,91 @@
+PUSH   
+    
+//AI Hacks
+    
+    //Prevent AI from trying to attack if too low on HP
+	ORG $3D544
+	jumpToHack(AIMagicCostCheck)
+    
+//Core systems
+    
+    ORG $16750
+    replaceWithHack(NewCanUnitUseWeapon)
+    
+	ORG $16B28
+	replaceWithHack(NewGetUnitEquippedWeapon)
+	
+	ORG $16B58
+	replaceWithHack(NewGetUnitEquippedWeaponSlot)
+	
+	ORG $2A730
+	replaceWithHack(NewSetupBattleWeaponData) 
+    //22EC6 checks for ballista slot
+    
+    ORG $2CB24
+	replaceWithHack(NewSetupBattleStructForStaffUser)
+    
+    ORG $4FB64
+	replaceWithHack(NewHandleTargetSelectInput)
+    
+    //$18B38 GetUnitUseFlags
+
+    ORG $2C028
+    replaceWithHack(SaveBothUnitsFromBattle_New)
+		
+    //in SaveUnitFromBattle 2C1EC
+    ORG $2C294
+    SHORT 0x4900 0x4708 //jumpToHack with r1
+    POIN (SaveUnit_CleanOutSpellBuffer|1)
+	
+    //in FinishUpItemBattle 2CC54
+	ORG $2CCA4
+	jumpToHack(ItemBattle_WriteToInventory)
+    
+    ORG $1CFF0
+    replaceWithHack(PlayerPhase_CancelAction_New)
+    
+//Staff stuff
+
+    ORG $2FC58
+	jumpToHack(StaffUseEffect_GetSlot)
+    
+    //Letting these get itemID from the GaidenMagic buffer
+    ORG $2EB98
+    Heal_Use_Effect:
+        #incbin "StaffCompatibility/Heal_Use_Effect.lyn.event"
+    ORG $2F010
+    Status_Staff_Use_Effect:
+        #incbin "StaffCompatibility/Status_Staff_Use_Effect.lyn.event"
+	ORG $2F154
+	Fortify_Use_Effect:
+        #incbin "StaffCompatibility/Fortify_Use_Effect.lyn.event"
+    
+    //Clear buffer when backing out of warp target selection
+	ORG $59BA10
+	PROC_CALL_ROUTINE(NewWarpTargetSelectCancel+1)
+
+//BWL stuff
+	ORG $A474C
+	BYTE $70 $47
+	ORG $A478C
+	BYTE $70 $47
+	ORG $A4A34
+	BYTE $70 $47
+
+	ORG $A464C //only save 1 byte when dying (as opposed to 3)
+	BYTE 1
+
+	ORG $A4140
+	SHORT 0 //nop the 0x200000
+
+POP
+
+//Clear buffer when backing out of warp target selection
+NewWarpTargetSelectCancel:
+#incbin "StaffCompatibility/NewWarpTargetSelectCancel.dmp"
+WORD SelectedSpellPointer
+ALIGN 4
+
+//Magic HP costs
+ALIGN 4
+#include "Battle_HP_Bars/HP_Bar_Animation.event"
