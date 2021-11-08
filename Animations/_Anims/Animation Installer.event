@@ -309,6 +309,16 @@
 	#include "Barbarian/Bow/warm_ar1 Installer.event"
   }
   ALIGN 4
+  Soldier_Lance:
+  {
+	#include "NuraFlasuSoldier/Lance/Lance Installer.event"
+  }
+  ALIGN 4
+  Soldier_Unarmed:
+  {
+	#include "NuraFlasuSoldier/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
   Armor_Lance:
   {
 	#include "SalvKnight/Lance/armm_sp1 Installer.event"
@@ -560,16 +570,6 @@
 	#include "SpudBowKnight/Unarmed/Unarmed Installer.event"
   }
   ALIGN 4
-  Soldier_Lance:
-  {
-	#include "FlasuSoldier/Lance/Lance Installer.event"
-  }
-  ALIGN 4
-  Soldier_Unarmed:
-  {
-	#include "FlasuSoldier/Unarmed/Unarmed Installer.event"
-  }
-  ALIGN 4
   Brigand_Axe:
   {
 	#include "ImprovedBrigand/Axe/Axe Installer.event"
@@ -643,6 +643,11 @@
   ZerkerF_Unarmed:
   {
 	#include "BerserkerF/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
+  Mogall_Tackle:
+  {
+	#include "EpicerMogall/Monster/Monster Installer.event"
   }
   ALIGN 4
   Deathgoyle_Lance:

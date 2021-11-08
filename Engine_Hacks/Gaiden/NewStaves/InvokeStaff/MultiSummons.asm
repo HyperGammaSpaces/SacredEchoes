@@ -429,7 +429,7 @@ DoInvoke_Multi:
 			strb r1, [r2, #0x1]
 			mov r0, #0x8C 		@DivideAbility
 			strb r0, [r6, #0xD]
-			mov r0, #0xAB		@tentacle
+			mov r0, #0xA2		@tackle move
 			b StoreWeapon
 		
 		NotMogall:

@@ -121,7 +121,7 @@ BossUnit:
 	UNIT
 	
 MogallUnit:
-	UNIT MogallBoss Mogall Jedah_Ch4 Level(20, Enemy, True) [17,5] 0x00 0x00 0x0 0x00 [Tentacle, DivideAbility] MogallAI
+	UNIT MogallBoss Mogall Jedah_Ch4 Level(20, Enemy, True) [17,5] 0x00 0x00 0x0 0x00 [Tackle_Mogall, DivideAbility] MogallAI
 	UNIT
 	
 CutsceneEnemies:
@@ -134,7 +134,7 @@ CutsceneEnemies:
 	
 EnemyUnits:
 	UNIT Jedah_Ch4 Necromancer	Jedah_Ch4 Level(15, Enemy, False) [18,5]	DropItem 0x00 0x0 0x00 [Thanatos, Dracoshield] AttackInRangeAI
-	UNIT MogallBoss Mogall Jedah_Ch4 Level(20, Enemy, True) [9,4] 0x00 0x00 0x0 0x00 [Tentacle, DivideAbility] MogallAI
+	UNIT MogallBoss Mogall Jedah_Ch4 Level(20, Enemy, True) [9,4] 0x00 0x00 0x0 0x00 [Tackle_Mogall, DivideAbility] MogallAI
 	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [15,4] 0x00 0x00 0x0 0x00 [Saunion] NoAI
 	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
 	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [6,3] 0x00 0x00 0x0 0x00 [Javelin] NoAI
