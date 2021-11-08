@@ -10,6 +10,7 @@ PUSH
     
     ORG $16750
     replaceWithHack(NewCanUnitUseWeapon)
+    PROTECT $16750 $167A0
     
 	ORG $16B28
 	replaceWithHack(NewGetUnitEquippedWeapon)
@@ -38,7 +39,8 @@ PUSH
     POIN (SaveUnit_CleanOutSpellBuffer|1)
 	
     //in FinishUpItemBattle 2CC54
-	ORG $2CCA4
+	ORG $2CC8A
+    SHORT $46C0
 	jumpToHack(ItemBattle_WriteToInventory)
     
     ORG $1CFF0
@@ -52,13 +54,13 @@ PUSH
     //Letting these get itemID from the GaidenMagic buffer
     ORG $2EB98
     Heal_Use_Effect:
-        #incbin "StaffCompatibility/Heal_Use_Effect.lyn.event"
+        #include "StaffCompatibility/Heal_Use_Effect.lyn.event"
     ORG $2F010
     Status_Staff_Use_Effect:
-        #incbin "StaffCompatibility/Status_Staff_Use_Effect.lyn.event"
+        #include "StaffCompatibility/Status_Staff_Use_Effect.lyn.event"
 	ORG $2F154
 	Fortify_Use_Effect:
-        #incbin "StaffCompatibility/Fortify_Use_Effect.lyn.event"
+        #include "StaffCompatibility/Fortify_Use_Effect.lyn.event"
     
     //Clear buffer when backing out of warp target selection
 	ORG $59BA10

@@ -17,14 +17,15 @@ Spells_Getter:
         ble     ClearSpellsBuffer
 
     mov     r0, r4
-    ldrb    r7, [r0, #0x8]  @ unit level
-    ldr     r1, [r0, #0x4]  @ class
+    ldrb    r7, [r4, #0x8]  @ unit level
+    ldr     r1, [r4, #0x4]  @ class
+    ldrb    r1, [r1, #0x4]
     cmp     r1, #0x16
     bne     Spells_Getter_NotDF
         add     r7, #0x20
     Spells_Getter_NotDF:
     mov     r2, #0x29
-    ldrb    r1, [r1, r2]    @ class ability 2
+    ldrb    r1, [r4, r2]    @ class ability 2
     mov     r2, #0x1        @ check "promoted"
     and     r1, r2
     cmp     r1, #0x1
@@ -32,9 +33,9 @@ Spells_Getter:
     add     r7, #0x20       @ add 0x20 to level if promoted
 
     Spells_Getter_NotPromoted:
-    ldr     r1, [r0, #0x0]  @ character data
+    ldr     r1, [r4, #0x0]  @ character data
     ldrb    r1, [r1, #0x4]  @ character id
-    ldr     r2, [r0, #0x4]  @ class
+    ldr     r2, [r4, #0x4]  @ class
 
     CheckMultipleSpellLists:
     cmp     r1, #0x6                @ is Faye?
@@ -158,6 +159,7 @@ SpellCostGetter:
 .global NewCanUnitUseWeapon
 .type   NewCanUnitUseWeapon, function
 
+@ 16750
 NewCanUnitUseWeapon:
     push    {r4-r5, lr}
 	mov     r5, r0
@@ -209,6 +211,9 @@ NewCanUnitUseWeapon:
     pop     {r4-r5}
 	pop     {r1}
 	bx      r1
+    
+    .align
+    .ltorg
     
 .global NewGetUnitEquippedWeaponSlot
 .type   NewGetUnitEquippedWeaponSlot, function
@@ -271,7 +276,7 @@ Slot_Exit:
 @replaces $16B28
     
 NewGetUnitEquippedWeapon:
-    push    {r4-r7, lr}
+    push    {r4-r6, lr}
     mov     r6, r0
     ldr     r0, [r0]
     cmp     r0, #0x0
@@ -808,7 +813,11 @@ NewSetupBattleStructForStaffUser:
     strh    r6, [r0]
     add     r0, #0x2            @ item 2
     strh    r6, [r0]
-    add     r0, #0x7            @ item slot index
+    mov     r0, r6
+    blh     GetItemAttributes
+    str     r0, [r5, #0x4C]
+    mov     r0, r5
+    add     r0, #0x51           @ item slot index
     strb    r7, [r0]
     add     r0, #0x1            @ gain wexp bool
     mov     r1, #0x1
@@ -826,16 +835,7 @@ NewSetupBattleStructForStaffUser:
     blh     ClearRounds
     
         @apply the hp cost here
-        mov     r0, r6
-        mov     r2, #0xFF
-        and     r0, r2
-        lsl     r2, r0, #0x3
-        add     r2, r2, r0
-        lsl     r2, r2, #0x2
-        ldr     r1, =#0x0801678C         @ itemtable pointer
-        ldr     r1, [r1]
-        add     r2, r2, r1
-        ldr     r1, [r2, #0x8]
+        ldr     r1, [r5, #0x4C]
         mov     r2, #0x4                @ staff ability bit
         and     r1, r2
         cmp     r1, #0x0
@@ -1047,12 +1047,32 @@ SaveUnit_CleanOutSpellBuffer:
 .global ItemBattle_WriteToInventory
 .type   ItemBattle_WriteToInventory, function
     
-@hook at 2CCA4, return at 2CCB2
+@hook at 2CC8A, return at 2CCB2
 @inside FinishUpItemBattle 2CC54
 
 ItemBattle_WriteToInventory:
+    MOV     r1, #0x4
+    AND     r1, r0
+    CMP     r1, #0x0
+    BEQ     _9A
+        MOV     r1, r4
+        ADD     r1, #0x7D
+        MOV     r0, #0x1
+        STRB    r0, [r1]
+        MOV     r0, r4
+        LDRH    r1, [r5]
+        BL      SpellCostGetter
+        mov 	r1, #0x13
+        ldsb	r1, [r4, r1]
+        sub		r1, r0
+        strb	r1, [r4, #0x13]
+        
+    _9A:
+    LDRH    r0, [r5]
+    blh     0x08016AEC      @ ValidateItem
+    STRH    r0, [r5]
     MOV     r3, #0x51
-    LDSB    r1, [r1, r3]
+    LDSB    r1, [r4, r3]
     CMP     r1, #0x0
     BLT     WriteToInventory_EndFunc
 
@@ -1221,7 +1241,7 @@ GaidenMagicAI_CheckConditions:
     
 .global PostCombat_SpellClear
 PostCombat_SpellClear:
-	push {lr}
+	push    {lr}
 	ldrb 	r0, [r6,#0x11]	@action taken this turn
 	cmp 	r0, #0x1 @waited
 	beq		ClearStart
@@ -1241,6 +1261,7 @@ PostCombat_SpellClear:
 		mov 	r0, #0x0
 		str 	r0, [r2]
 		strb	r0, [r6, #0x6] @item id
+		strb	r0, [r6, #0xD] @target
 		
 	EndClear:
 	pop	{r0}

@@ -65,7 +65,7 @@ PUSH
 		SHORT $1C28	//mov r0, r5
 		BL($29ED8)	//NewTorchStaffSelection
 		B(EndGetTargetList)
-	ORG $28EC8 //Anew goes here
+	ORG $29048 //Anew goes here
 		SHORT $4902
 		SHORT $1C28
 		SHORT $1C22

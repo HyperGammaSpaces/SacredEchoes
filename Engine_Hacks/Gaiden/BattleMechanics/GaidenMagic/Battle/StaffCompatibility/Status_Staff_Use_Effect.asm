@@ -58,8 +58,8 @@ StatusStaffUseEffect:
     add     r0, #0x4A
     ldrh    r0, [r0]
     ldr     r3, =Item_GetStat_EPV
-    mov     r0, #0x1
-    orr     r3, r0
+    mov     r1, #0x1
+    orr     r3, r1
     bl      bx_r3
     ldr     r1, =#0x0203A56C    @ gBattleTarget
     add     r1, #0x6F

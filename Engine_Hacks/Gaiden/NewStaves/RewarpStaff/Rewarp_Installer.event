@@ -20,9 +20,9 @@ PUSH
 		BL(Rewarp_Use_Effect)
 		B($2FF76)
         
-    ORG $2EC8C
+    ORG $288A4
 	Rewarp_Use_Effect:
-		#incbin "Rewarp_Use_Effect.dmp"
+		#incbin "Rewarp_Use_Effect.dmp" //88 bytes
         
     #ifdef ItemEffectRevamp
         IER_setItemEffect(IER_FX_Rewarp, RewarpUsabilityCheck, PUNull, RewarpStaff_GetTargetList, RewarpEffectCheck) 

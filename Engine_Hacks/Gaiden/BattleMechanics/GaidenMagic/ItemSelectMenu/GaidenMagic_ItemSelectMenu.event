@@ -1,6 +1,6 @@
-#define BlackMagicItem_Entry(optionNumber) "WORD $080D7CB8; SHORT 0; SHORT 0; BYTE 0 optionNumber 0 0; POIN (BlackMagicItem_Usability+1); POIN (BlackMagicItem_OnDraw+1); POIN (BlackMagicItem_OnSelect+1); WORD 0; POIN (BlackMagicItem_OnHover+1); POIN ($22DD8+1)"
+#define BlackMagicItem_Entry(optionNumber) "WORD $080D7CB8; SHORT 0; SHORT 0; BYTE 0 optionNumber 0 0; POIN (BlackMagicItem_Usability|1); POIN (BlackMagicItem_OnDraw|1); POIN (BlackMagicItem_OnSelect|1); WORD 0; POIN (BlackMagicItem_OnHover|1); POIN ($22DD8|1)"
 
-#define WhiteMagicItem_Entry(optionNumber) "WORD $080D7CB8; SHORT 0; SHORT 0; BYTE 0 optionNumber 0 0; POIN (WhiteMagicItem_Usability+1); POIN (WhiteMagicItem_OnDraw+1); POIN (WhiteMagicItem_OnSelect+1); WORD 0; POIN (WhiteMagicItem_OnHover+1); POIN ($22DD8+1)"
+#define WhiteMagicItem_Entry(optionNumber) "WORD $080D7CB8; SHORT 0; SHORT 0; BYTE 0 optionNumber 0 0; POIN (WhiteMagicItem_Usability|1); POIN (WhiteMagicItem_OnDraw|1); POIN (WhiteMagicItem_OnSelect|1); WORD 0; POIN (WhiteMagicItem_OnHover|1); POIN ($22DD8|1)"
 
 #define MenuEntryList_Term "WORD 0 0 0 0 0 0 0 0 0"
 

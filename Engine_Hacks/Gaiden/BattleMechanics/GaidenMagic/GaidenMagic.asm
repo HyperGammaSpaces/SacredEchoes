@@ -12,7 +12,8 @@
 .endm
 
 .equ WMagicWeaponType, 0x6
-.equ SpellsBuffer, 0x202B6D0
+.equ SpellsBuffer, 0x0202B6D0
+.equ SelectedSpellPointer, 0x0203A8F0
 
 .equ Goto6CLabel, 0x08002F24
 .equ BG_Fill, 0x08001220

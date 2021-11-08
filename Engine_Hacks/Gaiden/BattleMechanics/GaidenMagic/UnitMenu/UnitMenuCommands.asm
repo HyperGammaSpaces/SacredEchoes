@@ -148,7 +148,7 @@ MagicItemList_Constructor:
         mov     r0, #0x0
         mov     r2, #0xB0
         mov     r3, #0xC
-        blh     NewFace
+        blh     NewFace, r6
         mov     r0, #0x0
         mov     r1, #0x5
         blh     SetFaceBlinkControlByID
@@ -158,7 +158,7 @@ MagicItemList_Constructor:
     mov     r0, r4
     mov     r2, #0xF
     mov     r3, #0xB
-    blh     ForceMenuItemPanel
+    blh     ForceMenuItemPanel, r6
     mov     r0, #0x17
     b       ItemList_Constructor_End
 

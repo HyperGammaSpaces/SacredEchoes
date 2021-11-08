@@ -295,7 +295,7 @@ MagicItemList_OnCancel:
     sub     r1, r1, r2
     mov     r2, #0x1
     mov     r3, #0x16
-    blh     NewMenu_AndDoSomethingCommands
+    blh     NewMenu_AndDoSomethingCommands, r4
     blh     HideMoveRangeGraphics
     ldr     r4, =SelectedSpellPointer
     mov     r1, #0x0

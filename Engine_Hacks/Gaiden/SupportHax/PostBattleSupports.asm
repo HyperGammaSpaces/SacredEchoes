@@ -8,6 +8,7 @@
 
 .equ NewBlocking6C, 0x08002ce0
 .equ GetUnitStruct, 0x08019430
+.equ IsHealStaff, 0x08072570
 .equ GetROMUnitSupportCount, 0x080281c8
 .equ GetROMUnitSupportingID, 0x080281dc
 .equ GetUnitSupportingUnit, 0x080281F4
@@ -63,6 +64,10 @@ cmp r0, #0x0
 bne CombatCase
 
 @now we know we are a blue unit who used a staff on a blue unit
+    ldrb    r0, [r6, #0x6] @itemID
+    blh     IsHealStaff
+    cmp     r0, #0x2
+    bne     FinishUpSupports
 
 	ApplyBonusFromHeal:
 	@If a staff, get this unit's support data and check for the target's unitID in it.

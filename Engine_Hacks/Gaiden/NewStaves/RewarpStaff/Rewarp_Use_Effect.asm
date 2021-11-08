@@ -1,6 +1,6 @@
 .thumb
 
-.equ origin, 0x0802EC8C
+.equ origin, 0x080288A4
 .equ GetUnitStruct, . + 0x08019430 - origin
 .equ GetUnitCurrentHP, . + 0x08019150 - origin
 .equ SetupBattleStructForStaffUser, . + 0x0802CB24 - origin

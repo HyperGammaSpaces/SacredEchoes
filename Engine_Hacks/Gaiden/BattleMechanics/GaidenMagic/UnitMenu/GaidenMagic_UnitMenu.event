@@ -5,7 +5,7 @@ PUSH
 
     //Update attack command to hide if unit doesn't have a physical weapon
     ORG UM_Attack_Definition+0xC
-        POIN    AttackUMCommand_Fix+1
+        POIN    AttackUMCommand_Fix|1
 
     //Updating menu defs
     ORG UM_BMagic_Definition
@@ -15,12 +15,12 @@ PUSH
         BYTE    NormalText
         BYTE    $54
         SHORT   0
-        POIN    BlackMagicMenuCommand_Usability+1
+        POIN    BlackMagicMenuCommand_Usability|1
         WORD    0
-        POIN    BlackMagicMenuCommand_OnSelect+1
+        POIN    BlackMagicMenuCommand_OnSelect|1
         WORD    0
-        POIN    BlackMagicMenuCommand_OnHover+1
-        POIN    MagicMenuCommand_OnUnhover+1
+        POIN    BlackMagicMenuCommand_OnHover|1
+        POIN    MagicMenuCommand_OnUnhover|1
 
     ORG UM_WMagic_Definition
         POIN    $D7E8C 
@@ -29,11 +29,11 @@ PUSH
         BYTE    NormalText
         BYTE    $51
         SHORT   0
-        POIN    WhiteMagicMenuCommand_Usability+1
+        POIN    WhiteMagicMenuCommand_Usability|1
         WORD    0
-        POIN    WhiteMagicMenuCommand_OnSelect+1
+        POIN    WhiteMagicMenuCommand_OnSelect|1
         WORD    0
-        POIN    WhiteMagicMenuCommand_OnHover+1
-        POIN    MagicMenuCommand_OnUnhover+1
+        POIN    WhiteMagicMenuCommand_OnHover|1
+        POIN    MagicMenuCommand_OnUnhover|1
 
 POP

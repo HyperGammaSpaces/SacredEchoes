@@ -106,7 +106,7 @@ BlackMagicItem_OnDraw:
     add     r3, r3, r1
     mov     r1, r4
 
-    blh     DrawItemMenuCommand
+    blh     DrawItemMenuCommand, r6
     mov     r0, #0x0
     pop     {r4-r7}
     pop     {r1}

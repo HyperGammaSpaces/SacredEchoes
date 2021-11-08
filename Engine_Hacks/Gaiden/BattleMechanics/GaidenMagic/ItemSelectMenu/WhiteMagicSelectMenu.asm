@@ -117,7 +117,7 @@ WhiteMagicItem_OnDraw_Gfx:
     ldr     r1, =0x02022CA8 @(BG0 Map Buffer )
     add     r3, r3, r1
     mov     r1, r5
-    blh     DrawItemMenuCommand 
+    blh     DrawItemMenuCommand, r6
     mov     r0, #0x1
     blh     BG_EnableSyncByMask 
 
