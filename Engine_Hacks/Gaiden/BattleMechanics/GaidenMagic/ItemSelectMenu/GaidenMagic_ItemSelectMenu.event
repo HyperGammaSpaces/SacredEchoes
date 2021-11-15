@@ -39,7 +39,7 @@ Defs_BlackMagicItemList:
     POIN BlackMagicItem_EntryList
     WORD $0 $0 $0
     POIN MagicItemList_OnCancel|1
-    WORD $0804F521          //MenuCallHelp			
+    POIN $4F520|1          //MenuCallHelp			
     POIN MagicItemList_CallRText|1
 
 BlackMagicItem_EntryList:
@@ -57,7 +57,7 @@ Defs_WhiteMagicItemList:
     POIN WhiteMagicItem_EntryList
     WORD $0 $0 $0
     POIN MagicItemList_OnCancel|1
-    WORD $0804F521          //MenuCallHelp
+    POIN $4F520|1          //MenuCallHelp
     POIN MagicItemList_CallRText|1
 
 WhiteMagicItem_EntryList:
