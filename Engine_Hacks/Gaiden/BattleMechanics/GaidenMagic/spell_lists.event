@@ -50,7 +50,7 @@ BYTE $0A Rescue
 BYTE $2E Anew
 BYTE $00 $00
 ALIGN 4
-SetSpellListPointer(Faye+Const_MultiListSeparator,  FayeWSpellList)
+SetSpellListPointer((Faye+Const_MultiListSeparator),  FayeWSpellList)
 
 FayeBSpellList:
 BYTE $01 Fire
@@ -104,7 +104,7 @@ BYTE $21 Physic
 BYTE $26 Silence
 BYTE $00 $00
 ALIGN 4
-SetSpellListPointer(Mae+Const_MultiListSeparator,  MaeWSpellList)
+SetSpellListPointer((Mae+Const_MultiListSeparator),  MaeWSpellList)
 
 BoeySpellList:
 BYTE $01 Fire
@@ -192,7 +192,7 @@ BYTE $21 Fortify
 BYTE $2A Rewarp
 BYTE $00 $00
 ALIGN 4
-SetSpellListPointer(Delthea+Const_MultiListSeparator,  DeltheaWSpellList)
+SetSpellListPointer((Delthea+Const_MultiListSeparator),  DeltheaWSpellList)
 
 AtlasSpellList:
 BYTE $01 Fire
@@ -243,7 +243,7 @@ BYTE $25 Rewarp
 BYTE $2A Entrap
 BYTE $00 $00
 ALIGN 4
-SetSpellListPointer(Sonya+Const_MultiListSeparator,  SonyaWSpellList)
+SetSpellListPointer((Sonya+Const_MultiListSeparator),  SonyaWSpellList)
 
 TatianaSpellList:
 BYTE $01 Nosferatu

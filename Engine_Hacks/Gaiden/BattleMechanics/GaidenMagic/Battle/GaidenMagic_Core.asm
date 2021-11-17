@@ -19,10 +19,11 @@ Spells_Getter:
     mov     r0, r4
     ldrb    r7, [r4, #0x8]  @ unit level
     ldr     r1, [r4, #0x4]  @ class
-    ldrb    r1, [r1, #0x4]
-    cmp     r1, #0x16
+    ldrb    r2, [r1, #0x4]  @ class id
+    cmp     r2, #0x16
     bne     Spells_Getter_NotDF
         add     r7, #0x20
+        
     Spells_Getter_NotDF:
     mov     r2, #0x29
     ldrb    r1, [r4, r2]    @ class ability 2
@@ -30,7 +31,7 @@ Spells_Getter:
     and     r1, r2
     cmp     r1, #0x1
     bne     Spells_Getter_NotPromoted
-    add     r7, #0x20       @ add 0x20 to level if promoted
+        add     r7, #0x20
 
     Spells_Getter_NotPromoted:
     ldr     r1, [r4, #0x0]  @ character data
@@ -887,6 +888,7 @@ StaffUseEffect_GetSlot:
     StaffUseEffect_LoadFromInventory:
     ldrb    r1, [r4, #0x12]
     lsl     r1, r1, #0x1
+    mov     r0, r5
     add     r0, #0x1E
     add     r0, r0, r1
     ldrh    r0, [r0, #0x0]
