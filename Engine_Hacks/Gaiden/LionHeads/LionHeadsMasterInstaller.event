@@ -1,6 +1,5 @@
-//Lion Heads
+#ifdef LION_HEADS_ENABLED
 
-#define LION_HEADS_ENABLED
 #define gLionHeadRAMData            0x02028BD8 
 #define LionheadLocalTrigger1 		0x26 //eid
 #define LionheadLocalTrigger2 		0x27 //eid
@@ -180,3 +179,5 @@ LionHeadExampleEvent:
 	NoFade
 	ENDA
 	
+#endif
+
