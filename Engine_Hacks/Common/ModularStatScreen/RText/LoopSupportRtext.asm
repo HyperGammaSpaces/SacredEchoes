@@ -26,49 +26,38 @@ bx r1
 Might need to assemble a list of supports which are >50 and navigate based on that.
 */
 
-PUSH {r4,r5,r6,lr}   //StatusRMenu_Item0Loop
-MOV r4, r0 //proc address
-LDR r5, =0x02003BFC //(Stat Screens StatScreenStruct )
-LDR r0, [r5, #0xC] //(gpStatScreenUnit )
+PUSH {r4,r5,r6,lr}   @StatusRMenu_Item0Loop
+MOV r4, r0 @proc address
+LDR r5, =0x02003BFC @(Stat Screens StatScreenStruct )
+LDR r0, [r5, #0xC] @(gpStatScreenUnit )
 ldr r1, [r0]
-ldr r0, [r1, #0x2C]	//support data
+ldr r0, [r1, #0x2C]	@support data
 
-CMP r0, #0x0 //does this unit have supports?
+CMP r0, #0x0 @does this unit have supports?
 BNE label1
 	NoSupportFound:
-    MOV r0, r4  //if no support, get proc address back and go to one of the 3 funcs
+    MOV r0, r4  @if no support, get proc address back and go to one of the 3 funcs
     ldr r3, =LeftFunc+1
 	bl JumpWithR3
 	b ExitFunc
 label1:
-LDR r1, [r5, #0xC] //(gpStatScreenUnit )
-LDR r0, [r4, #0x2C] //rtext data?
-LDRH r0, [r0, #0x12] //slot no.
+LDR r1, [r5, #0xC] @(gpStatScreenUnit )
+LDR r0, [r4, #0x2C] @rtext data?
+LDRH r0, [r0, #0x12] @slot no.
 mov r2, r1
-add r2, #0x32				//start of support data
-mov r5, r0					//save the slot no. in r5
+add r2, #0x32				@start of support data
+mov r5, r0					@save the slot no. in r5
 
-mov r6, #0x0
-sub r6, #0x1
-LoopStart:
-	add r6, #0x1
-	cmp r6, #0x7
-	bge NoDisplayedSupport
-		ldrb r3, [r2, r6]	//support level
-		cmp r3, #0x50
-		ble LoopStart
-	add r6, r5				//r5 is offset from first displayed support
+ldrb r0, [r2, r5] @just the byte is fine
 
-ldrb r0, [r2, r6] //just the byte is fine
+@once support level is in r0..
+CMP r0, #0x50 @is the support high enough to display?
+BGT ExitFunc @if so, just act according to Rtext map and exit
 
-//once support level is in r0..
-CMP r0, #0x50 //is the support high enough to display?
-BGT ExitFunc //if so, just act according to Rtext map and exit
-
-//If moving to an item that doesn't exist
+@If moving to an item that doesn't exist
 NoDisplayedSupport:
-    MOV r0 ,r4 //proc storage
-    ADD r0, #0x50 //direction moved
+    MOV r0 ,r4 @proc storage
+    ADD r0, #0x50 @direction moved
     LDRH r0, [r0, #0x0]
     CMP r0, #0x0
     BEQ NotDown
@@ -85,7 +74,7 @@ NoDisplayedSupport:
 	CheckIfDown:
     CMP r0, #0x80
     BNE ExitFunc
-        MOV r0 ,r4 //get proc storage
+        MOV r0 ,r4 @get proc storage
 		ldr r3, =DownFunc+1
 		bl JumpWithR3
 ExitFunc:

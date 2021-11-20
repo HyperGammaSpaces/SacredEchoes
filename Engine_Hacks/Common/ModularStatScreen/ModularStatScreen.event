@@ -88,12 +88,35 @@ PUSH
     ORG $86E44
     jumpToHack(MSS_leftpage)
   
+  
+  
 	//Moving support text around
 	ORG $876A4
 	BYTE $01 //how many lines down to move from top
 
 	ORG $876CE
 	BYTE $40 //allocating more space for support names
+    
+    ORG $876D8 //Draw blank support entries
+    SHORT $4929 $68C8 $4649 
+    BL($2823C)
+    SHORT $1C07 $4926 $68C8 $4649  
+    BL($281DC) 
+    SHORT $1C04 $9802 $0186 $4923 $4688 $1875 $1C20  
+    BL($286D4) 
+    SHORT $1C01 $1C28 $22A0 $01D2  
+    BL($36BC) 
+    SHORT $2F00 $D101 $20CD $E003 $1C20 
+    BL($19464)
+    SHORT $8800  
+    BL($A240)
+    SHORT $4641 $3106 $1871 $2200 $9200 $9001 $9804 $9A03 $2300  
+    BL($443C)
+    SHORT $2502 $2F03 $D100 $2504 $9803 $2804 $D100 $2504 $4644 $3412 $1934 $1C38  
+    BL($286EC) 
+    SHORT $1C02 $1C20 $1C29  
+    BL($4B0C) 
+    SHORT $9902 $3102 $9102 $9804 $3008 $9004 $2101 $4489 $45D1 $DBB3 
 
 	ORG $87784
 	WORD $02003D2E //scoot stuff to the left - was 02003D34
