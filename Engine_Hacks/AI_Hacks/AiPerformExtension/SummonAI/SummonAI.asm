@@ -215,3 +215,58 @@ DoTheSummoning:
 
 .align
 .ltorg
+
+.global DoMogallSummoning
+DoMogallSummoning:
+	push {r4,r5,lr}
+	ldr  r0, =ActiveUnitDataPointer
+	ldr  r0, [r0]
+	add  r0, #0x43
+	mov  r5, r0
+	mov  r0, #0x64
+	blh  0x08000C80 @NextRN
+	lsl  r0, r0, #0x18
+	lsr  r0, r0, #0x18
+	ldr  r1, =0x030017D0 @gpAiScriptCurrent
+	ldr  r1, [r1, #0x0]
+	ldrb r1, [r1, #0x1]
+	cmp  r0, r1
+	bhi  MogallScript_label1
+
+		ldr  r1, =0x0203AA04 @gAiData.aiUnits
+		add  r1, #0x7b
+		ldrb r2, [r1] @gAiData.aiConfig
+		mov  r0, #0x2
+		orr  r0, r2
+		strb r0, [r1, #0x0]
+        
+        ldr  r0, =ActiveUnitDataPointer
+        ldr  r0, [r0]
+        ldrb r1, [r0, #0x11]
+        ldrb r0, [r0, #0x10]
+        mov  r2, #0xC
+        mov  r3, #0x0
+		blh  0x08039c20, r4 @AiSetDecision
+		b    MogallScript_End
+			
+	MogallScript_label1:
+		ldr  r0, =0x0203aa04 
+		add  r0, #0x79
+		mov  r1, #0x4
+		strb r1, [r0, #0x0]
+		
+	MogallScript_End:
+	ldr  r0, =ActiveUnitDataPointer
+	ldr  r0, [r0]
+	ldr  r1, =gUnitSubject
+	str  r0, [r1]
+@	ldrb r0, [r5, #0x0]
+@	add  r0, #0x1
+@	strb r0, [r5, #0x0]
+	mov  r0, #0x1
+	pop  {r4,r5}
+	pop  {r1}
+	bx   r1
+
+.align
+.ltorg

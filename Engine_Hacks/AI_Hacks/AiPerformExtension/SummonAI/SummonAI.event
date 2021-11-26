@@ -21,12 +21,13 @@ MogallAIScript:
 	AiNop
 	AiGotoIfEQ(1, 0) //if can't attack, summon
 	AiAttack
+    AiChangeAi(0x12, 0x00)
 	AiRestart
 	AiLabel(1)
 	AiFuncPercentChance(CheckIfCanSummon|1, 100)
-	AiNop
 	AiGotoIfEQ(2, 0)
-	AiFuncPercentChance(DoTheSummoning|1, 100)
+	AiFuncPercentChance(DoMogallSummoning|1, 100)
+    AiRestart
 	AiLabel(2)
 	AiRestart
 
