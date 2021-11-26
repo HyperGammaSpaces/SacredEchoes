@@ -26,7 +26,7 @@ Spells_Getter:
         
     Spells_Getter_NotDF:
     mov     r2, #0x29
-    ldrb    r1, [r4, r2]    @ class ability 2
+    ldrb    r1, [r1, r2]    @ class ability 2
     mov     r2, #0x1        @ check "promoted"
     and     r1, r2
     cmp     r1, #0x1

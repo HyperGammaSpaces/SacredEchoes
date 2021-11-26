@@ -179,13 +179,17 @@ MenuItemPanel_NotGaidenMagic:
     
 MenuItemPanel_GotItem:
     mov     r0, r4
-    blh     GetItemWType
-    cmp     r0, #WMagicWeaponType
-    beq     GoToStaffItemPanel
-    
-    ldr     r3, =0x0801E7EA+1
-    bx      r3
-    .align
+    blh     GetItemAttributes
+    mov     r2, r0
+    mov     r1, #0x4			@ staff
+    and     r2, r1
+    cmp     r2, #0x0
+    bne     GoToStaffItemPanel
+        mov     r0, r4
+        blh     GetItemWType
+        ldr     r3, =0x0801E7EA+1
+        bx      r3
+        .align
     
     GoToStaffItemPanel:
     ldr     r3, =0x0801E800+1
