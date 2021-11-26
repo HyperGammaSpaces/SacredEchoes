@@ -2,7 +2,8 @@
     
 PUSH
 AnimTableEntry(CelicaPrincessMagic) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
-WORD 0 0 0 //empty name field, who cares
+BYTE $63 $65 $6C $32 $5F $6D $67 $31
+WORD 0
 POIN Anim_lorf_mg1_sectiondata
 POIN Anim_lorf_mg1_framedata
 POIN Anim_lorf_mg1_rtl Anim_lorf_mg1_ltr Anim_lorf_mg1_pal
