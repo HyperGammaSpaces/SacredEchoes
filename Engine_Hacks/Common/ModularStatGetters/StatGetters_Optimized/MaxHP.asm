@@ -6,7 +6,7 @@
 .equ stat_offset, 0x12
 
 @r0 = unit RAM (or stack pocket holding unit struct data)
-prPowGetter:
+prMHPGetter:
     push    {r4-r7, lr}
     mov     r4, r0          @ unit data
     mov     r5, #0x0        @ stat accumulator
@@ -33,6 +33,8 @@ prPowGetter:
     add     r0, #0x1E
     ldrh    r0, [r4, r0]    @ item id
     mov     r6, r0
+    mov     r1, #0xFF
+    and     r0, r1
     blh     GetItemIdROMStruct
     mov     r1, #0x8
     ldr     r0, [r0, r1]    @ item attr bitfield
