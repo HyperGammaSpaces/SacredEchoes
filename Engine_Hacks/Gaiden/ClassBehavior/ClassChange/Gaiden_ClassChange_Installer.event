@@ -14,12 +14,6 @@ PUSH
 	ORG $CC6FC
 	POIN NewAutopromoTable
 	
-	ORG $291B8
-	BYTE $0C $28
-	
-	ORG $291F6				//set promotion level to 7
-	BYTE $06 $28
-	
 	ORG $8ADF76
 	BYTE Cavalier Cavalier_F Paladin Paladin_F Soldier Knight Knight_F Thief Thief_F Mercenary Myrmidon DreadFighter 0x16 Archer Archer_F Sniper Sniper_F WyvernRider WyvernRider_F Mage Mage_F Villager Villager_F Fighter Brigand Pirate Priest PegasusKnight Cleric $0
 	

@@ -32,7 +32,7 @@
 	PUSH
 		ORG $291A8
 		#include "asm/PromoItemUsability.lyn.event"
-		POIN PromotionItemTable
+		PROTECT $291A8 $2922C
 		
 		//Prep Screen Promotion Item Usage
 		ORG $9CB38

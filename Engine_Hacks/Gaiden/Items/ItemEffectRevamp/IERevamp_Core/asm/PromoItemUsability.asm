@@ -15,8 +15,6 @@
 	@r0 = unit pointer
 	@r1 = item id
 
-.equ PromoItemTable, OffsetList + 0x0
-
 push 	{r4-r7,lr}
 mov 	r7, r0
 mov 	r6, r1
@@ -24,7 +22,7 @@ mov 	r4, #0x0
 mov 	r0, r6
 bl 	Item_GetID
 ldr 	r2, =#0xFFFF	@marks end of table
-ldr 	r5, PromoItemTable
+ldr 	r5, =PromotionItemTable
 reloop:
 ldrh	r1,[r5]
 cmp 	r1, r2
@@ -95,7 +93,6 @@ End:
 pop 	{r4-r7}
 pop 	{r1}
 bx 	r1
-.ltorg
-.align
 
-OffsetList:
+.align
+.ltorg
