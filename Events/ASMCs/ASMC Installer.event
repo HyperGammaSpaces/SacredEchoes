@@ -13,9 +13,18 @@ ALIGN 4
 
 ALIGN 4
 RemoveItemFromAnyASMC:
-#incbin "item_collect.bin"
+#incbin "item_collect.dmp"
+ALIGN 4
+RemoveItemFromUnitASMC:
+#incbin "item_collect_by_unit.dmp"
 
 #define RemoveItemFromAny(itemID) "SHORT $0D40 itemID; POIN RemoveItemFromAnyASMC+1"
+#define RemoveItemFromUnit(unitID,itemID) "SHORT $0D40; BYTE unitID itemID; POIN RemoveItemFromUnitASMC+1"
+
+ALIGN 4
+GiveAllItemsASMC:
+#incbin "SendAllTransporter.dmp"
+#define DumpToConvoy(unitID) "SHORT $0D40 unitID; POIN GiveAllItemsASMC+1"
 
 ALIGN 4
 Change_AI_All:

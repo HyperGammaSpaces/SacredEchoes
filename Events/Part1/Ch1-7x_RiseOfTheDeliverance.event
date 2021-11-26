@@ -196,6 +196,11 @@ Ch1_7x_BeginningScene:
 Ch1_7x_EndingScene:
 	CALL UnifiedBEXPCaller
 	FADI 5
+    
+    RemoveItemFromUnit(FernandPlayable,BaseLance)
+    RemoveItemFromUnit(Mathilda,BaseLance)
+    DumpToConvoy(FernandPlayable)
+    DumpToConvoy(Mathilda)
 
 	REVEAL Alm
 	REVEAL Lukas
