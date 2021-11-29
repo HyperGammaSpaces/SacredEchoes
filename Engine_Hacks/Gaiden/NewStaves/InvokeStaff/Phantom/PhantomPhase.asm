@@ -38,6 +38,7 @@
 .global HandlePhantomSpriteHover
 .global HandleStatscreenHover
 .global SendPhantomItemsToConvoy
+.global StoreMovCostTable_New
 
 PhantomPhase_Init:
 	push {r4-r6,lr}   
@@ -253,6 +254,43 @@ NotPhantomConvoy:
 	blh 0x08017948 //UnitAddItem
 	ldr r3, =0x0801e0a7
 	bx r3
+
+.align
+.ltorg
+
+StoreMovCostTable_New:
+    push {r4-r5, lr}
+    mov r3, r0
+    mov r2, #0x0
+    ldr r4, =0x03004BB0 @gCurrentMovCostTable
+    ldr r5, =0x03004E50 @gActiveUnit
+    ldr r5, [r5] @unit RAM
+    ldr r5, [r5] @unit ROM
+    ldrb r5, [r5, #0x4] @unit ID
+    MovCostTable_Loop:
+        add r0, r2, r4
+        add r1, r3, r2
+        ldrb r1, [r1, #0x0]
+        cmp r5, #0x3F
+        bne StoreMovCost
+            cmp r2, #0xB @gate 1
+            beq BlockMovement
+            cmp r2, #0x1F @throne
+            beq BlockMovement
+            cmp r2, #0x23 @gate 2
+            beq BlockMovement
+            b StoreMovCost
+        BlockMovement:
+            mov r1, #0xFF
+        StoreMovCost:
+        strb r1, [r0, #0x0]
+        add r2, #0x1
+        cmp r2, #0x40
+        ble MovCostTable_Loop
+    pop {r4-r5}
+    pop {r0}
+    bx r0
+
 
 .align
 .ltorg

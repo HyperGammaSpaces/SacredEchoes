@@ -80,6 +80,26 @@ ldrb r3, [r4, r1] 	@Current wlvl
 ldrb r2, [r6, r2] 	@New base
 cmp r2, #0x0		@if new base is 0
 bne NormalAdd
+
+@dark rank check
+cmp r1, #0x2F
+bne ZeroOutRank
+ldr r2, [r4]
+ldrb r2, [r2, #0x4]
+cmp r2, #0x1C
+bne ZeroOutRank
+
+    cmp r5, #0x16
+    beq SonyaCase
+    cmp r5, #0x28
+    beq SonyaCase
+    b ZeroOutRank
+    
+        SonyaCase:
+        mov r2, #0x1
+        b NormalAdd
+
+ZeroOutRank:
 mov r2, #0x0		@store 0 to unit's weapon rank
 b StoreRank
 NormalAdd:
@@ -103,16 +123,8 @@ CheckWeaponMutation:
 	mov r2, #0x1	@by default, replace the sword
 	
 	AddWeapon:
-@	cmp r1, #0x4	@alm t2
-@	beq AddBow
-@	cmp r1, #0x9	@knight
-@	beq AddAxe
-@	cmp r1, #0xB	@baron
-@	beq AddSword
 	cmp r1, #0x28	@priestess
 	beq SetSword
-@	cmp r1, #0x40	@warrior
-@	beq AddBow
 	
 	cmp r1, #0x5
 	beq SetLance
@@ -139,23 +151,6 @@ CheckWeaponMutation:
 	cmp r1, #0x4A
 	beq SetWMagic
 	b resetLevel
-	
-	//TURBO BRAIN: have the bow replace the Hero's Proof in Alm's inventory
-	
-	AddSword:
-	mov r0, #0x01		@sword
-	mov r2, #0x0		@add to empty slot
-	b UpdateInventory
-	
-	AddAxe:
-	mov r0, #0x1F		@axe
-	mov r2, #0x0		@add to empty slot
-	b UpdateInventory
-	
-	AddBow:
-	mov r0, #0x2d		@bow
-	mov r2, #0x0		@add to empty slot
-	b UpdateInventory
 	
 	SetSword:
 	mov r0, #0x1		@sword

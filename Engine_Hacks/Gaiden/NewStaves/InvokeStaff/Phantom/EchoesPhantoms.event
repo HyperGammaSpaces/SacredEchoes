@@ -21,6 +21,10 @@ PUSH
 	ORG $32942
 	BYTE $80
 	
+    //Block phantoms from moving onto seize points
+    ORG $1A4CC
+    replaceWithHack(StoreMovCostTable_New)
+    
 	//1e098 - r0 is unit ptr, r1 is item short, r2 is proc
 	//hook at 1e09c
 	ORG $1E09C
