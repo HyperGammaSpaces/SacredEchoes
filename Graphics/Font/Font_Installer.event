@@ -1,0 +1,240 @@
+#define UIFontTable $58C7EC
+#define DialogueFontTable $58F6F4
+
+#define MapUIFontChar(index, dataPtr) "PUSH; ORG ((index*4)+UIFontTable); POIN dataPtr; POP"
+#define MapDialogueFontChar(index, dataPtr) "PUSH; ORG ((index*4)+DialogueFontTable); POIN dataPtr; POP"
+
+//Windows-1252: for coverage of English, French, Spanish, Portuguese, Italian, German, Dutch, Finnish, Swedish, Norwegian, Icelandic, Irish. 
+
+ALIGN 4
+UIFont_84:
+WORD 0; BYTE 0 4 0 0
+#incbin "WIN-1252/FontItem84.2bpp"
+MapUIFontChar(0x84, UIFont_84)
+ALIGN 4
+UIFont_8A:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItem8A.2bpp"
+MapUIFontChar(0x8A, UIFont_8A)
+ALIGN 4
+UIFont_8E:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItem8E.2bpp"
+MapUIFontChar(0x8E, UIFont_8E)
+ALIGN 4
+UIFont_9A:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItem9A.2bpp"
+MapUIFontChar(0x9A, UIFont_9A)
+ALIGN 4
+UIFont_9E:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItem9E.2bpp"
+MapUIFontChar(0x9E, UIFont_9E)
+ALIGN 4
+UIFont_9F:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontItem9F.2bpp"
+MapUIFontChar(0x9F, UIFont_9F)
+ALIGN 4
+UIFont_C3:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemC3.2bpp"
+MapUIFontChar(0xC3, UIFont_C3)
+ALIGN 4
+UIFont_C5:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemC5.2bpp"
+MapUIFontChar(0xC5, UIFont_C5)
+ALIGN 4
+UIFont_C6:
+WORD 0; BYTE 0 8 0 0
+#incbin "WIN-1252/FontItemC6.2bpp"
+MapUIFontChar(0xC6, UIFont_C6)
+ALIGN 4
+UIFont_D0:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemD0.2bpp"
+MapUIFontChar(0xD0, UIFont_D0)
+ALIGN 4
+UIFont_D5:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemD5.2bpp"
+MapUIFontChar(0xD5, UIFont_D5)
+ALIGN 4
+UIFont_D8:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemD8.2bpp"
+MapUIFontChar(0xD8, UIFont_D8)
+ALIGN 4
+UIFont_DD:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontItemDD.2bpp"
+MapUIFontChar(0xDD, UIFont_DD)
+ALIGN 4
+UIFont_DE:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemDE.2bpp"
+MapUIFontChar(0xDE, UIFont_DE)
+ALIGN 4
+UIFont_E3:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontItemE3.2bpp"
+MapUIFontChar(0xE3, UIFont_E3)
+ALIGN 4
+UIFont_E5:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontItemE5.2bpp"
+MapUIFontChar(0xE5, UIFont_E5)
+ALIGN 4
+UIFont_E6:
+WORD 0; BYTE 0 7 0 0
+#incbin "WIN-1252/FontItemE6.2bpp"
+MapUIFontChar(0xE6, UIFont_E6)
+ALIGN 4
+UIFont_F0:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontItemF0.2bpp"
+MapUIFontChar(0xF0, UIFont_F0)
+ALIGN 4
+UIFont_F5:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemF5.2bpp"
+MapUIFontChar(0xF5, UIFont_F5)
+ALIGN 4
+UIFont_F8:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemF8.2bpp"
+MapUIFontChar(0xF8, UIFont_F8)
+ALIGN 4
+UIFont_FD:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemFD.2bpp"
+MapUIFontChar(0xFD, UIFont_FD)
+ALIGN 4
+UIFont_FE:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemFE.2bpp"
+MapUIFontChar(0xFE, UIFont_FE)
+ALIGN 4
+UIFont_FF:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontItemFF.2bpp"
+MapUIFontChar(0xFF, UIFont_FF)
+
+
+ALIGN 4
+DialogueFont_84:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontText84.2bpp"
+MapDialogueFontChar(0x84, DialogueFont_84)
+ALIGN 4
+DialogueFont_8A:
+WORD 0; BYTE 0 7 0 0
+#incbin "WIN-1252/FontText8A.2bpp"
+MapDialogueFontChar(0x8A, DialogueFont_8A)
+ALIGN 4
+DialogueFont_8E:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontText8E.2bpp"
+MapDialogueFontChar(0x8E, DialogueFont_8E)
+ALIGN 4
+DialogueFont_9A:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontText9A.2bpp"
+MapDialogueFontChar(0x9A, DialogueFont_9A)
+ALIGN 4
+DialogueFont_9E:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontText9E.2bpp"
+MapDialogueFontChar(0x9E, DialogueFont_9E)
+ALIGN 4
+DialogueFont_9F:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontText9F.2bpp"
+MapDialogueFontChar(0x9F, DialogueFont_9F)
+ALIGN 4
+DialogueFont_C3:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontTextC3.2bpp"
+MapDialogueFontChar(0xC3, DialogueFont_C3)
+ALIGN 4
+DialogueFont_C5:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontTextC5.2bpp"
+MapDialogueFontChar(0xC5, DialogueFont_C5)
+ALIGN 4
+DialogueFont_C6:
+WORD 0; BYTE 0 8 0 0
+#incbin "WIN-1252/FontTextC6.2bpp"
+MapDialogueFontChar(0xC6, DialogueFont_C6)
+ALIGN 4
+DialogueFont_D0:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontTextD0.2bpp"
+MapDialogueFontChar(0xD0, DialogueFont_D0)
+ALIGN 4
+DialogueFont_D5:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontTextD5.2bpp"
+MapDialogueFontChar(0xD5, DialogueFont_D5)
+ALIGN 4
+DialogueFont_D8:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontTextD8.2bpp"
+MapDialogueFontChar(0xD8, DialogueFont_D8)
+ALIGN 4
+DialogueFont_DD:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontTextDD.2bpp"
+MapDialogueFontChar(0xDD, DialogueFont_DD)
+ALIGN 4
+DialogueFont_DE:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontTextDE.2bpp"
+MapDialogueFontChar(0xDE, DialogueFont_DE)
+ALIGN 4
+DialogueFont_E3:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontTextE3.2bpp"
+MapDialogueFontChar(0xE3, DialogueFont_E3)
+ALIGN 4
+DialogueFont_E5:
+WORD 0; BYTE 0 6 0 0
+#incbin "WIN-1252/FontTextE5.2bpp"
+MapDialogueFontChar(0xE5, DialogueFont_E5)
+ALIGN 4
+DialogueFont_E6:
+WORD 0; BYTE 0 8 0 0
+#incbin "WIN-1252/FontTextE6.2bpp"
+MapDialogueFontChar(0xE6, DialogueFont_E6)
+ALIGN 4
+DialogueFont_F0:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontTextF0.2bpp"
+MapDialogueFontChar(0xF0, DialogueFont_F0)
+ALIGN 4
+DialogueFont_F5:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontTextF5.2bpp"
+MapDialogueFontChar(0xF5, DialogueFont_F5)
+ALIGN 4
+DialogueFont_F8:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontTextF8.2bpp"
+MapDialogueFontChar(0xF8, DialogueFont_F8)
+ALIGN 4
+DialogueFont_FD:
+WORD 0; BYTE 0 4 0 0
+#incbin "WIN-1252/FontTextFD.2bpp"
+MapDialogueFontChar(0xFD, DialogueFont_FD)
+ALIGN 4
+DialogueFont_FE:
+WORD 0; BYTE 0 5 0 0
+#incbin "WIN-1252/FontTextFE.2bpp"
+MapDialogueFontChar(0xFE, DialogueFont_FE)
+ALIGN 4
+DialogueFont_FF:
+WORD 0; BYTE 0 4 0 0
+#incbin "WIN-1252/FontTextFF.2bpp"
+MapDialogueFontChar(0xFF, DialogueFont_FF)
