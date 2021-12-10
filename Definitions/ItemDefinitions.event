@@ -123,7 +123,6 @@
 #define Ambrosia 0x60
 #define Talisman 0x61
 #define Boots 0x62
-
 #define Lifefruit AngelicRobe
 #define Soma EnergyRing
 #define Persephone SecretBook
@@ -131,15 +130,34 @@
 #define Nectar GoddessIcon
 #define Swiftsole Boots
 
-#define HolyRing 0x63
 #define HideShield 0x64
 #define IronShield 0x65
 #define SteelShield 0x66
 #define SilverShield 0x67
+#define RoyalShield 0x88
+#define MagicShield 0x7C
+#define EmperorShield 0x8A
+#define Dracoshield 0xBA
+#define HolyShield 0xBB
+#define DelphiShield 0x71
+#define IotesShield DelphiShield
+#define DumaIcon 0x7D
+
+#define HolyRing 0x63
 #define MageRing 0x68
+#define GrimoireRing 0x74
+#define AnimusRing 0x75
+#define CoralRing 0x76
+#define SpeedRing 0x7E
+#define PrayerRing 0x7F
+#define KeepsakeRing 0x80
+#define AngelRing 0x97
+
 #define ChestKey 0x69
 #define DoorKey 0x6A
 #define Lockpick 0x6B
+#define ChestKey_5 0x79
+
 #define Vulnerary 0x6C
 #define Elixir 0x6D
 #define PureWater 0x6E
@@ -147,39 +165,32 @@
 #define Antitoxin 0x6F
 #define Torch 0x70
 #define TorchItem 0x70
-#define DelphiShield 0x71
 #define MemberCard 0x72
 #define SilverCard 0x73
-#define GrimoireRing 0x74
-#define AnimusRing 0x75
-#define CoralRing 0x76
-#define Gold 0x77
-#define ChestKey_5 0x79
 #define Mine 0x7A
 #define LightRune 0x7B
-#define MagicShield 0x7C
-#define DumaIcon 0x7D
-#define SpeedRing 0x7E
-#define PrayerRing 0x7F
-#define KeepsakeRing 0x80
-#define RoyalShield 0x88
 #define MetissTome 0x89
-#define EmperorShield 0x8A
-#define DivideAbility 0x8C
+#define JunaFruit 0xB7
+#define WindSword 0xA1
+#define Greennote 0xA3
+#define Rednote 0xA4
+#define Dance 0xA5
 
-#define WretchedAir 0x90
 #define Mercurius 0x91
 #define Gradivus 0x92
 #define Hauteclere 0x93
 #define Parthia 0x94
-#define AngelRing 0x97
 #define HerosProof 0x98
 #define ZofianCrown 0x99
+
+#define Gold 0x77
 #define Item1G 0x9A
 #define Item5G 0x9B
 #define Item10G 0x9C
 #define Item50G 0x9D
 #define Item100G 0x9E
+#define Item150G 0xB8
+#define Item200G 0xB9
 #define Item3000G 0x9F
 #define Item5000G 0xA0
 #define _1G 0x9A
@@ -187,13 +198,14 @@
 #define _10G 0x9C
 #define _50G 0x9D
 #define _100G 0x9E
+#define _150G 0xB8
+#define _200G 0xB9
 #define _3000G 0x9F
 #define _5000G 0xA0
-#define WindSword 0xA1
+
+#define DivideAbility 0x8C
+#define WretchedAir 0x90
 #define Tackle_Mogall 0xA2
-#define Greennote 0xA3
-#define Rednote 0xA4
-#define Dance 0xA5
 #define Upheaval 0xA6
 #define OcularBeam 0xA8
 #define Oculus 0xA9
@@ -211,10 +223,5 @@
 #define CrimsonEye 0xB4
 #define Stone 0xB5
 #define SharpClaw 0xB6
-#define JunaFruit 0xB7
-#define _150G 0xB8
-#define _200G 0xB9
-#define Item150G 0xB8
-#define Item200G 0xB9
-#define Dracoshield 0xBA
-#define HolyShield 0xBB
+
+
