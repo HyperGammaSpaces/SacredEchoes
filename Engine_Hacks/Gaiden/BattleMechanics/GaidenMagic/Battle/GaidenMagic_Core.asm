@@ -843,7 +843,7 @@ NewSetupBattleStructForStaffUser:
         beq     SetupHealScreen_EndFunc
         
         SetupHealScreen_GotStaff:
-            mov     r1, r0
+            mov     r1, r6
             mov     r0, r5
             bl      SpellCostGetter
             ldr     r3, =#0x0203A608
