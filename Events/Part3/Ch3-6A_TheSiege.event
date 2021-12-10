@@ -97,57 +97,57 @@ CutsceneUnits:
 	UNIT
 
 BrigandUnit:
-	UNIT 0x65 Brigand 0x0 Level(15,Enemy,True) [24,1] 0x00 0x00 1 REDA24R1 [SteelAxe] BrigandAI
+	UNIT Bandit_Axe Brigand 0x0 Level(15,Enemy,True) [24,1] 0x00 0x00 1 REDA24R1 [SteelAxe] BrigandAI
 	UNIT
 
 WitchUnits:
-	UNIT 0x86 Witch 0x0 Level(3,Enemy,True) [6,1] 0x00 0x00 1 REDA6R1 [Fire, Rewarp] WitchWarpAI
-	UNIT 0x86 Witch 0x0 Level(3,Enemy,True) [10,2] 0x00 0x00 1 REDA10R2 [Nosferatu, Rewarp] WitchWarpAI
+	UNIT Rigel_Witch Witch 0x0 Level(3,Enemy,True) [6,1] 0x00 0x00 1 REDA6R1 [Fire, Rewarp] WitchWarpAI
+	UNIT Rigel_Witch Witch 0x0 Level(3,Enemy,True) [10,2] 0x00 0x00 1 REDA10R2 [Nosferatu, Rewarp] WitchWarpAI
 	UNIT
 
 EnemyUnits:
 	//witches and bow guys
 	//Boss chases you from left to right
 	UNIT Gazelle BowKnight 0x00 Level(5,Enemy,False) [8,1] DropItem 0x00 0x0 0x00 [SilverBow, IronShield, CoralRing] AttackInRangeAI
-	UNIT 0x86 Sniper Gazelle Level(3,Enemy,True) [7,0] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
-	UNIT 0x86 Sniper Gazelle Level(3,Enemy,True) [9,0] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
-	UNIT 0x86 Cleric Gazelle Level(11,Enemy,True) [8,3] 0x00 0x00 0x0 0x00 [Physic] HealUnits
+	UNIT Rigel_Archer Sniper Gazelle Level(3,Enemy,True) [7,0] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
+	UNIT Rigel_Archer Sniper Gazelle Level(3,Enemy,True) [9,0] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
+	UNIT Rigel_Witch Cleric Gazelle Level(11,Enemy,True) [8,3] 0x00 0x00 0x0 0x00 [Physic] HealUnits
 
-	UNIT 0x86 PegasusKnight Gazelle Level(13,Enemy,True) [6,1] 0x00 0x00 0x0 0x00 [IronLance] DefaultAI
-	UNIT 0x86 PegasusKnight Gazelle Level(13,Enemy,True) [10,2] 0x00 0x00 0x0 0x00 [SteelLance] DefaultAI
+	UNIT Rigel_Wyvern WyvernRider Gazelle Level(13,Enemy,True) [6,1] 0x00 0x00 0x0 0x00 [IronAxe] DefaultAI
+	UNIT Rigel_Wyvern WyvernRider Gazelle Level(13,Enemy,True) [10,2] 0x00 0x00 0x0 0x00 [SteelAxe] DefaultAI
 
-	UNIT 0x86 Knight Gazelle Level(8,Enemy,True) [7,7] 0x00 0x00 0x0 0x00 [HandAxe] DefaultAI
-	UNIT 0x86 Knight Gazelle Level(8,Enemy,True) [7,8] 0x00 0x00 0x0 0x00 [SteelLance] DefaultAI
-	UNIT 0x86 Mercenary Gazelle Level(12,Enemy,True) [9,6] 0x00 0x00 0x0 0x00 [IronSword] DefaultAI
-	UNIT 0x86 Mercenary Gazelle Level(12,Enemy,True) [9,9] 0x00 0x00 0x0 0x00 [IronSword] DefaultAI
-	UNIT 0x86 Archer Gazelle Level(12,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [IronBow] DefaultAI
+	UNIT Rigel_Soldier Knight Gazelle Level(8,Enemy,True) [7,7] 0x00 0x00 0x0 0x00 [HandAxe] DefaultAI
+	UNIT Rigel_Soldier Knight Gazelle Level(8,Enemy,True) [7,8] 0x00 0x00 0x0 0x00 [SteelLance] DefaultAI
+	UNIT Rigel_Merc Mercenary Gazelle Level(12,Enemy,True) [9,6] 0x00 0x00 0x0 0x00 [IronSword] DefaultAI
+	UNIT Rigel_Merc Mercenary Gazelle Level(12,Enemy,True) [9,9] 0x00 0x00 0x0 0x00 [IronSword] DefaultAI
+	UNIT Rigel_Archer Archer Gazelle Level(12,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [IronBow] DefaultAI
 
-	UNIT 0x86 Mage Gazelle Level(14,Enemy,True) [12,9] 0x00 0x00 0x0 0x00 [Thunder] NeverMoveAI
-	UNIT 0x86 Soldier Gazelle Level(16,Enemy,True) [12,7] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x86 Soldier Gazelle Level(16,Enemy,True) [15,12] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Rigel_Mage Mage Gazelle Level(14,Enemy,True) [12,9] 0x00 0x00 0x0 0x00 [Thunder] NeverMoveAI
+	UNIT Rigel_Soldier Soldier Gazelle Level(16,Enemy,True) [12,7] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Rigel_Soldier Soldier Gazelle Level(16,Enemy,True) [15,12] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
 
-	UNIT 0x86 Sniper Gazelle Level(1,Enemy,True) [16,9] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x86 Cavalier_F Gazelle Level(12,Enemy,True) [17,7] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x86 Cavalier Gazelle Level(13,Enemy,True) [18,10] 0x00 0x00 0x0 0x00 [SteelLance,HideShield] AttackInRangeAI
-	UNIT 0x86 Mercenary Gazelle Level(13,Enemy,True) [17,6] 0x00 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
-	UNIT 0x86 Mercenary Gazelle Level(13,Enemy,True) [19,10] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
-	UNIT 0x86 Paladin Gazelle Level(2,Enemy,True) [21,8] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Archer Sniper Gazelle Level(1,Enemy,True) [16,9] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier_F Gazelle Level(12,Enemy,True) [17,7] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier Gazelle Level(13,Enemy,True) [18,10] 0x00 0x00 0x0 0x00 [SteelLance,HideShield] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary Gazelle Level(13,Enemy,True) [17,6] 0x00 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary Gazelle Level(13,Enemy,True) [19,10] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	UNIT Rigel_Cav Paladin Gazelle Level(2,Enemy,True) [21,8] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
 
-	UNIT 0x86 Knight Gazelle Level(15,Enemy,True) [14,2] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-	UNIT 0x86 Archer_F Gazelle Level(13,Enemy,True) [13,4] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Rigel_Soldier Knight Gazelle Level(15,Enemy,True) [14,2] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT Rigel_Archer Archer_F Gazelle Level(13,Enemy,True) [13,4] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 
-	UNIT 0x86 Myrmidon Gazelle Level(2,Enemy,True) [19,2] 0x00 0x00 0x0 0x00 [SilverSword] NeverMoveAI
-	UNIT 0x86 Mage_F Gazelle Level(13,Enemy,True) [16,2] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT Rigel_Merc Myrmidon Gazelle Level(2,Enemy,True) [19,2] 0x00 0x00 0x0 0x00 [SilverSword] NeverMoveAI
+	UNIT Rigel_Witch Mage_F Gazelle Level(13,Enemy,True) [16,2] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 
-	UNIT 0x86 Mage Gazelle Level(14,Enemy,True) [24,4] 0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
+	UNIT Rigel_Mage Mage Gazelle Level(14,Enemy,True) [24,4] 0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
 
-	UNIT 0x86 Cavalier_F Gazelle Level(14,Enemy,True) [22,0] 0x00 0x00 0x0 0x00 [IronLance] DefaultAI
-	UNIT 0x86 Cavalier Gazelle Level(14,Enemy,True) [23,0] 0x00 0x00 0x0 0x00 [Javelin] DefaultAI
+	UNIT Rigel_Cav Cavalier_F Gazelle Level(14,Enemy,True) [22,0] 0x00 0x00 0x0 0x00 [IronLance] DefaultAI
+	UNIT Rigel_Cav Cavalier Gazelle Level(14,Enemy,True) [23,0] 0x00 0x00 0x0 0x00 [Javelin] DefaultAI
 	
 	UNIT
 	
 SkirmishEnemies:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
 
 Ch3_6A_BeginningScene:

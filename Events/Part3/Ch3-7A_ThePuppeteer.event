@@ -218,46 +218,46 @@ EnemyUnits:
 	//Boss room
 	UNIT Tatarrah Arcanist 0x00 Level(5,Enemy,False) [12,5] 0x00 0x00 0x0 0x00 [Thanatos, Fortify] NeverMoveAI
 	UNIT DeltheaBoss Mage_F 0x00 Level(3,Enemy,False) [12,6] 0x00 0x00 0x0 0x00 [Aura, PrayerRing] NoAI
-	UNIT 0x89 Sniper Tatarrah Level(1,Enemy,True) [13,7] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
-	UNIT 0x88 Knight Tatarrah Level(7,Enemy,True) [13,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
-	UNIT 0x92 Shaman Tatarrah Level(14,Enemy,True) [11,5] 0x00 0x00 0x0 0x00 [Mire] [0x0,0x12,0x0,0x0]
-	UNIT 0x94 Witch Tatarrah Level(7,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
+	UNIT Rigel_Archer Sniper Tatarrah Level(1,Enemy,True) [13,7] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT Rigel_Soldier Knight Tatarrah Level(7,Enemy,True) [13,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Shaman Tatarrah Level(14,Enemy,True) [11,5] 0x00 0x00 0x0 0x00 [Mire] [0x0,0x12,0x0,0x0]
+	UNIT DumaFaith_Witch Witch Tatarrah Level(7,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
 	
 	//Left hall
-	UNIT 0x89 Archer_F Tatarrah Level(12,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x92 Mage Tatarrah Level(12,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT Rigel_Archer Archer_F Tatarrah Level(12,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Mage Tatarrah Level(12,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	
 	//Main hall
-	UNIT 0x86 PegasusKnight Tatarrah Level(11,Enemy,True) [5,3] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-    UNIT 0x86 PegasusKnight Tatarrah Level(12,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-	UNIT 0x87 Myrmidon Tatarrah Level(5,Enemy,True) [15,3] DropItem 0x00 0x0 0x00 [Zweihander,SteelShield] NeverMoveAI
+	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(11,Enemy,True) [5,3] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+    UNIT Rigel_Wyvern WyvernRider Tatarrah Level(12,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Merc Myrmidon Tatarrah Level(5,Enemy,True) [15,3] DropItem 0x00 0x0 0x00 [Zweihander,SteelShield] NeverMoveAI
 
-    UNIT 0x92 Arcanist Tatarrah Level(7,Enemy,True) [8,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-    UNIT 0x92 Arcanist Tatarrah Level(7,Enemy,True) [9,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-    UNIT 0x94 Witch Tatarrah Level(8,Enemy,True) [9,7] 0x00 0x00 0x0 0x00 [Nosferatu,IronShield] AttackInRangeAI
-	UNIT 0x92 Arcanist Tatarrah Level(7,Enemy,True) [8,8] 0x00 0x00 0x0 0x00 [Selene,IronShield] AttackInRangeAI
+    UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [8,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+    UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [9,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+    UNIT DumaFaith_Witch Witch Tatarrah Level(8,Enemy,True) [9,7] 0x00 0x00 0x0 0x00 [Nosferatu,IronShield] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [8,8] 0x00 0x00 0x0 0x00 [Selene,IronShield] AttackInRangeAI
 	
 	//Bridge
-	UNIT 0x93 Arcanist Tatarrah Level(6,Enemy,True) [17,14] 0x00 0x00 0x0 0x00 [Selene,Mire,Physic] NeverMoveAI
-	UNIT 0x92 Shaman Tatarrah Level(16,Enemy,True) [16,14] DropItem 0x00 0x0 0x00 [Miasma,Elixir] NeverMoveAI
-	UNIT 0x87 Myrmidon Tatarrah Level(7,Enemy,True) [16,16] 0x00 0x00 0x0 0x00 [Rapier,IronShield] AttackInRangeAI
-    UNIT 0x94 Witch Tatarrah Level(8,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(6,Enemy,True) [17,14] 0x00 0x00 0x0 0x00 [Selene,Mire,Physic] NeverMoveAI
+	UNIT DumaFaith_Sorcerer Shaman Tatarrah Level(16,Enemy,True) [16,14] DropItem 0x00 0x0 0x00 [Miasma,Elixir] NeverMoveAI
+	UNIT Rigel_Merc Myrmidon Tatarrah Level(7,Enemy,True) [16,16] 0x00 0x00 0x0 0x00 [Rapier,IronShield] AttackInRangeAI
+    UNIT DumaFaith_Witch Witch Tatarrah Level(8,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	
 	//Frontline
-	UNIT 0x8A WyvernRider Tatarrah Level(14,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
-	UNIT 0x8A WyvernRider Tatarrah Level(14,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
-	UNIT 0x8A WyvernRider Tatarrah Level(15,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] AttackInRangeAI
+	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(14,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(14,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(15,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] AttackInRangeAI
 
-	UNIT 0x88 Knight Tatarrah Level(7,Enemy,True) [16,11] DropItem 0x00 0x0 0x00 [IronLance,PureWater] AttackInRangeAI
-	UNIT 0x89 Sniper Tatarrah Level(7,Enemy,True) [17,11] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT Rigel_Soldier Knight Tatarrah Level(7,Enemy,True) [16,11] DropItem 0x00 0x0 0x00 [IronLance,PureWater] AttackInRangeAI
+	UNIT Rigel_Archer Sniper Tatarrah Level(7,Enemy,True) [17,11] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
 
-	UNIT 0x87 Myrmidon Tatarrah Level(6,Enemy,True) [8,10] 0x00 0x00 0x0 0x00 [Lancereaver] NoAI
-	UNIT 0x87 Myrmidon Tatarrah Level(6,Enemy,True) [9,10] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT Rigel_Merc Myrmidon Tatarrah Level(6,Enemy,True) [8,10] 0x00 0x00 0x0 0x00 [Lancereaver] NoAI
+	UNIT Rigel_Merc Myrmidon Tatarrah Level(6,Enemy,True) [9,10] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
 	
 	UNIT
 
 Reinforcements1:
-	UNIT 0x8A WyvernRider	Tatarrah Level(16, Enemy, True) [19,10]	0x00 0x00 0x1 REDA19R10 [SteelAxe] NoAI
+	UNIT Rigel_Wyvern WyvernRider	Tatarrah Level(16, Enemy, True) [19,10]	0x00 0x00 0x1 REDA19R10 [SteelAxe] NoAI
 	UNIT
 	
 DeltheaJoins:

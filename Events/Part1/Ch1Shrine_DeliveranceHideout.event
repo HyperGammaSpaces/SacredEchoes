@@ -92,7 +92,7 @@ CutsceneFernand:
 	UNIT
 	
 EnemyUnits:
-	UNIT 0x5F Entombed 0x00 Level(1, Enemy, False) [11,3] DropItem 0x00 0x0 0x00 [RottenClaw, _200G] AttackInRangeAI 
+	UNIT Boss_Monster Entombed 0x00 Level(1, Enemy, False) [11,3] DropItem 0x00 0x0 0x00 [RottenClaw, _200G] AttackInRangeAI 
 	UNIT 0xAA Revenant 0x00 Level(9, Enemy, 1) [10,2] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
 	UNIT 0xAA Revenant 0x00 Level(11, Enemy, 1) [12,2] 0x04 0x00 0x0 0x00 [RottenClaw] NoAI
 	UNIT 0xAD Bonewalker_Bow 0x00 Level(10, Enemy, 1) [10,4] 0x04 0x00 0x0 0x00 [BaseBow] NoAI
@@ -115,7 +115,7 @@ EnemyUnits2:
 	UNIT
 	
 EnemyUnitsReplay:
-	UNIT 0x5F Entombed 0x00 Level(1, Enemy, True) [11,3] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw, _200G] AttackInRangeAI 
+	UNIT Boss_Monster Entombed 0x00 Level(1, Enemy, True) [11,3] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw, _200G] AttackInRangeAI 
 	UNIT 0xAA Random_RevBonewalker 0x00 Level(9, Enemy, 1) [10,2] MonsterTemplate 0x00 0x0 0x00 NoItems NoAI
 	UNIT 0xAA Random_AnyMonster 0x00 Level(10, Enemy, 1) [12,2] MonsterTemplate 0x00 0x0 0x00 NoItems NoAI
 	UNIT 0xAD Bonewalker_Bow 0x00 Level(9, Enemy, 1) [10,4] 0x00 0x00 0x0 0x00 [BaseBow] NoAI

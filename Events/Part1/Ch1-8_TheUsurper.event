@@ -115,42 +115,42 @@ BossesCutscene:
 	UNIT
 
 EnemyUnits:
-	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [12,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT 0x81 Archer_F	Desaix Level(10, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT 0x82 Knight	Desaix Level(2, Enemy, 0) [11,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
-	UNIT 0x83 Shaman	Desaix Level(7, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] [0xE, 0x0, 0x0, 0x0]
-	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [11,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
-	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [9,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
-	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [3,20]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [6,20]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT 0x85 Cavalier_F	Desaix Level(10, Enemy, 1) [7,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI  
-	UNIT 0x85 Cavalier_F	SlaydePaladin Level(10, Enemy, 1) [8,7]	0x00 0x00 0x0 0x00 [Javelin] MoveWithLeaderAI 
-	UNIT 0x85 Cavalier	SlaydePaladin Level(11, Enemy, 1) [9,7]	0x00 0x00 0x0 0x00 [BaseLance] MoveWithLeaderAI 
-	UNIT 0x85 Cavalier	SlaydePaladin Level(11, Enemy, 1) [11,7]	0x00 0x00 0x0 0x00 [IronLance] MoveWithLeaderAI 
-	UNIT 0x85 Cavalier_F	SlaydePaladin Level(11, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] MoveWithLeaderAI  
-	UNIT 0x85 Cavalier	Desaix Level(11, Enemy, 1) [13,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI  
-	UNIT 0x81 Archer	Desaix Level(10, Enemy, 1) [13,15]	0x00 0x00 0x0 0x00 [IronBow] NoAI 
-	UNIT 0x81 Archer_F	Desaix Level(11, Enemy, 1) [15,15]	0x00 0x00 0x0 0x00 [IronBow] NoAI 
-	UNIT 0x82 Soldier	Desaix Level(12, Enemy, 1) [16,14]	DropItem 0x00 0x0 0x00 [IronLance,DoorKey] AttackInRangeAI  
+	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [12,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT Zofia_Archer Archer_F	Desaix Level(10, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT Zofia_Soldier Knight	Desaix Level(2, Enemy, 0) [11,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
+	UNIT Zofia_Mage Shaman	Desaix Level(7, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] [0xE, 0x0, 0x0, 0x0]
+	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [11,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
+	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [9,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
+	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [3,20]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [6,20]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT Zofia_Cav Cavalier_F	Desaix Level(10, Enemy, 1) [7,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI  
+	UNIT Zofia_Cav Cavalier_F	SlaydePaladin Level(10, Enemy, 1) [8,7]	0x00 0x00 0x0 0x00 [Javelin] MoveWithLeaderAI 
+	UNIT Zofia_Cav Cavalier	SlaydePaladin Level(11, Enemy, 1) [9,7]	0x00 0x00 0x0 0x00 [BaseLance] MoveWithLeaderAI 
+	UNIT Zofia_Cav Cavalier	SlaydePaladin Level(11, Enemy, 1) [11,7]	0x00 0x00 0x0 0x00 [IronLance] MoveWithLeaderAI 
+	UNIT Zofia_Cav Cavalier_F	SlaydePaladin Level(11, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] MoveWithLeaderAI  
+	UNIT Zofia_Cav Cavalier	Desaix Level(11, Enemy, 1) [13,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI  
+	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [13,15]	0x00 0x00 0x0 0x00 [IronBow] NoAI 
+	UNIT Zofia_Archer Archer_F	Desaix Level(11, Enemy, 1) [15,15]	0x00 0x00 0x0 0x00 [IronBow] NoAI 
+	UNIT Zofia_Soldier Soldier	Desaix Level(12, Enemy, 1) [16,14]	DropItem 0x00 0x0 0x00 [IronLance,DoorKey] AttackInRangeAI  
 	UNIT
 
 Reinforcements1:
-	UNIT 0x65 Thief 	0x67 Level(7, Enemy, 1) [19,15]	0x00 0x00 0x1 REDA19R15  [BaseSword, Lockpick] LootingThiefAI
+	UNIT TreasureHunter Thief 	TreasureHunter Level(7, Enemy, 1) [19,15]	0x00 0x00 0x1 REDA19R15  [BaseSword, Lockpick] LootingThiefAI
 	UNIT
 
 Reinforcements2:
-	UNIT 0x65 Thief 	0x67 Level(7, Enemy, 1) [4,1]	0x00 0x00 0x1 REDA4R1  [BaseSword, Lockpick] LootingThiefAI
-	UNIT 0x82 Soldier	Desaix Level(12, Enemy, 1) [2,1]	0x00 0x00 0x1 REDA2R1 [IronLance] NoAI 
+	UNIT TreasureHunter Thief 	TreasureHunter Level(7, Enemy, 1) [4,1]	0x00 0x00 0x1 REDA4R1  [BaseSword, Lockpick] LootingThiefAI
+	UNIT Zofia_Soldier Soldier	Desaix Level(12, Enemy, 1) [2,1]	0x00 0x00 0x1 REDA2R1 [IronLance] NoAI 
 	UNIT
 	
 Reinforcements3:
-	UNIT 0x85 Cavalier	Desaix Level(11, Enemy, 1) [0,13]	0x00 0x00 0x1 REDA0R13 [BaseLance] NoAI 
-	UNIT 0x85 Cavalier_F	Desaix Level(11, Enemy, 1) [0,15]	0x00 0x00 0x1 REDA0R15 [IronLance] NoAI 
+	UNIT Zofia_Cav Cavalier	Desaix Level(11, Enemy, 1) [0,13]	0x00 0x00 0x1 REDA0R13 [BaseLance] NoAI 
+	UNIT Zofia_Cav Cavalier_F	Desaix Level(11, Enemy, 1) [0,15]	0x00 0x00 0x1 REDA0R15 [IronLance] NoAI 
 	UNIT
 	
 Reinforcements4:
-	UNIT 0x82 Soldier	Desaix Level(13, Enemy, 1) [22,6]	0x00 0x00 0x1 REDA22R6 [BaseLance] NoAI 
-	UNIT 0x82 Soldier	Desaix Level(12, Enemy, 1) [22,7]	0x00 0x00 0x1 REDA22R7 [IronLance] NoAI 
+	UNIT Zofia_Soldier Soldier	Desaix Level(13, Enemy, 1) [22,6]	0x00 0x00 0x1 REDA22R6 [BaseLance] NoAI 
+	UNIT Zofia_Soldier Soldier	Desaix Level(12, Enemy, 1) [22,7]	0x00 0x00 0x1 REDA22R7 [IronLance] NoAI 
 	UNIT
 
 Ch1_8_BeginningScene:

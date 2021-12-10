@@ -87,11 +87,11 @@ Ch1_1_Units1:
 
 EnemyUnits:
 	UNIT BanditAlm1 Brigand BanditAlm1 Level(3,Enemy,True) [19,7] DropItem 0x00 0x1 REDA18R4 [BaseAxe,_200G] AttackInRangeAI // A matter of personal preference, but I would not put spaces after commas.
-	UNIT 0x65 Brigand BanditAlm1 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA15R6 [BaseAxe] NoAI // Keeps things more compact, so "Level(1,Enemy,True)" instead of "Level(1, Enemy, 1)".
-	UNIT 0x65 Brigand BanditAlm1 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA16R4 [BaseAxe] NoAI // Also note my use of "True" instead of "1".
-	UNIT 0x65 Brigand BanditAlm1 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA14R3 [BaseAxe] NoAI // It doesn't affect much, but I like to make the boss' leader him/herself. Really more of a consistency thing.
-	UNIT 0x65 Brigand BanditAlm1 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA15R10 [BaseAxe] AttackInRangeAI // I suggest using my REDA Helpers. They make single-command REDAs easier.
-	UNIT 0x65 Brigand BanditAlm1 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA17R8 [BaseAxe] NoAI
+	UNIT Bandit_Axe Brigand BanditAlm1 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA15R6 [BaseAxe] NoAI // Keeps things more compact, so "Level(1,Enemy,True)" instead of "Level(1, Enemy, 1)".
+	UNIT Bandit_Axe Brigand BanditAlm1 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA16R4 [BaseAxe] NoAI // Also note my use of "True" instead of "1".
+	UNIT Bandit_Axe Brigand BanditAlm1 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA14R3 [BaseAxe] NoAI // It doesn't affect much, but I like to make the boss' leader him/herself. Really more of a consistency thing.
+	UNIT Bandit_Axe Brigand BanditAlm1 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA15R10 [BaseAxe] AttackInRangeAI // I suggest using my REDA Helpers. They make single-command REDAs easier.
+	UNIT Bandit_Axe Brigand BanditAlm1 Level(1,Enemy,True) [19,7] 0x00 0x00 0x1 REDA17R8 [BaseAxe] NoAI
 	UNIT
 
 NeutralUnits:

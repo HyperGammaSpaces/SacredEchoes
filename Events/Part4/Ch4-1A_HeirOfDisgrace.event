@@ -110,28 +110,28 @@ BossUnits_Ending:
 	
 EnemyUnits:
 	//boss buddies
-	UNIT 0x86 Paladin BerkutGK Level(6, Enemy, True) [9,5] DropItem 0x00 0x0 0x00 [Ridersbane] MoveWithLeaderAI
-	UNIT 0x86 Paladin BerkutGK Level(6, Enemy, True) [11,5] 0x00 0x00 0x0 0x00 [HeavySpear] MoveWithLeaderAI
-	UNIT 0x86 Paladin BerkutGK Level(6, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin BerkutGK Level(6, Enemy, True) [9,5] DropItem 0x00 0x0 0x00 [Ridersbane] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin BerkutGK Level(6, Enemy, True) [11,5] 0x00 0x00 0x0 0x00 [HeavySpear] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin BerkutGK Level(6, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
 	//stray paladins
-	UNIT 0x86 Paladin BerkutGK Level(8, Enemy, True) [4,8] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT 0x86 Paladin BerkutGK Level(8, Enemy, True) [16,8] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Rigel_Cav Paladin BerkutGK Level(8, Enemy, True) [4,8] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Rigel_Cav Paladin BerkutGK Level(8, Enemy, True) [16,8] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
 	//5 Arcanists
-	UNIT 0x8C Arcanist BerkutGK Level(7, Enemy, True) [10,14] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F,0x03]
-	UNIT 0x8B Arcanist 0x8C Level(8, Enemy, True) [9,12] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-	UNIT 0x8B Arcanist 0x8C Level(8, Enemy, True) [11,12] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-	UNIT 0x8B Arcanist 0x8C Level(8, Enemy, True) [10,11] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-	UNIT 0x8B Arcanist 0x8C Level(7, Enemy, True) [10,12] 0x00 0x00 0x0 0x00 [Mire] DelayedRushAI
+	UNIT Rigel_Witch Arcanist BerkutGK Level(7, Enemy, True) [10,14] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F,0x03]
+	UNIT Rigel_Mage Arcanist Rigel_Witch Level(8, Enemy, True) [9,12] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT Rigel_Mage Arcanist Rigel_Witch Level(8, Enemy, True) [11,12] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT Rigel_Mage Arcanist Rigel_Witch Level(8, Enemy, True) [10,11] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT Rigel_Mage Arcanist Rigel_Witch Level(7, Enemy, True) [10,12] 0x00 0x00 0x0 0x00 [Mire] DelayedRushAI
 	//left knight/sniper block
-	UNIT 0x88 Knight BerkutGK Level(8, Enemy, True) [2,11] 0x00 0x00 0x0 0x00 [Javelin] NoAI
-	UNIT 0x88 Knight BerkutGK Level(9, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
-	UNIT 0x88 Knight BerkutGK Level(8, Enemy, True) [2,12] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT 0x89 Sniper BerkutGK Level(6, Enemy, True) [3,12] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
+	UNIT Rigel_Soldier Knight BerkutGK Level(8, Enemy, True) [2,11] 0x00 0x00 0x0 0x00 [Javelin] NoAI
+	UNIT Rigel_Soldier Knight BerkutGK Level(9, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+	UNIT Rigel_Soldier Knight BerkutGK Level(8, Enemy, True) [2,12] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Rigel_Archer Sniper BerkutGK Level(6, Enemy, True) [3,12] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
 	//right knight/sniper block
-	UNIT 0x88 Knight BerkutGK Level(8, Enemy, True) [17,11] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT 0x88 Knight BerkutGK Level(9, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
-	UNIT 0x88 Knight BerkutGK Level(8, Enemy, True) [17,12] DropItem 0x00 0x0 0x00 [Swordreaver] NoAI
-	UNIT 0x89 Sniper BerkutGK Level(6, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
+	UNIT Rigel_Soldier Knight BerkutGK Level(8, Enemy, True) [17,11] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Rigel_Soldier Knight BerkutGK Level(9, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT Rigel_Soldier Knight BerkutGK Level(8, Enemy, True) [17,12] DropItem 0x00 0x0 0x00 [Swordreaver] NoAI
+	UNIT Rigel_Archer Sniper BerkutGK Level(6, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
 	UNIT
 	
 GenericSoldiers:
@@ -141,7 +141,7 @@ GenericSoldiers:
 	UNIT
 	
 SkirmishEnemies:
-	UNIT 0x86 Cavalier	BerkutGK Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Rigel_Cav Cavalier	BerkutGK Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
 
 Evt_BeginningScene:

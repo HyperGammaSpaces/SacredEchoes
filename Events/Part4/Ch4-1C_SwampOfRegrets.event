@@ -83,15 +83,15 @@ CutsceneUnits_Ending:
 EnemyUnits:
 	UNIT Garcia Cantor	Garcia Level(10, Enemy, False) [16,5]	0x00 0x00 0x0 0x00 [Mire, Invoke] CantorAI
 	UNIT Cantor_Gargs Cantor	Garcia Level(8, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0E,0x03]
-	UNIT 0x89 Sniper Garcia Level(4, Enemy, True) [15,3] DropItem 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
-	UNIT 0x89 Sniper Garcia Level(4, Enemy, True) [18,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-	UNIT 0x8B Arcanist	Garcia Level(8, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Rigel_Archer Sniper Garcia Level(4, Enemy, True) [15,3] DropItem 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper Garcia Level(4, Enemy, True) [18,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist	Garcia Level(8, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	
 	UNIT Cantor_Gargs Cantor	Garcia Level(6, Enemy, True) [12,7]	0x00 0x00 0x0 0x00 [Mire, Invoke] MoveAndHealAI
-	UNIT 0x94 Witch	Garcia Level(8, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Aura] NoAI
-	UNIT 0x8B Arcanist	Garcia Level(4, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Mire] NoAI
-	UNIT 0x8B Arcanist	Garcia Level(6, Enemy, True) [13,6]	0x00 0x00 0x0 0x00 [Miasma] NoAI
-	UNIT 0x87 DreadFighter	Garcia Level(2, Enemy, True) [14,7]	0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT DumaFaith_Witch Witch	Garcia Level(8, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Aura] NoAI
+	UNIT Rigel_Mage Arcanist	Garcia Level(4, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Mire] NoAI
+	UNIT Rigel_Mage Arcanist	Garcia Level(6, Enemy, True) [13,6]	0x00 0x00 0x0 0x00 [Miasma] NoAI
+	UNIT Rigel_Merc DreadFighter	Garcia Level(2, Enemy, True) [14,7]	0x00 0x00 0x0 0x00 [IronSword] NoAI
 	UNIT
 
 Evt_BeginningScene:

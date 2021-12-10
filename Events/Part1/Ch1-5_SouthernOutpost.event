@@ -42,7 +42,7 @@ ArcherEvent:
 
 ChangeGuardAI:
 	SVAL 0x1 0x0
-	CHAI 0x84
+	CHAI Zofia_Merc
 	ReinforcementEvent(ThiefReinforcement)
 	NoFade
 	ENDA
@@ -199,26 +199,26 @@ AllyClair:
 	UNIT
 
 EnemyUnits:
-	UNIT 0x49 Soldier	0x00 Level(9, Enemy, 1) [6,1]	0x00 0x00 0x0 0x00 [BaseLance] NeverMoveAI
-	UNIT 0x81 Archer	0x49 Level(6, Enemy, 1) [6,2]	0x00 0x00 0x0 0x00 [SteelBow] NoAI
-	UNIT 0x82 Soldier	0x49 Level(6, Enemy, 1) [7,2]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
-	UNIT 0x84 Mercenary	0x49 Level(3, Enemy, 1) [5,2]	0x00 0x00 0x0 0x00 [BaseSword] NoAI 
-	UNIT 0x82 Soldier	0x49 Level(5, Enemy, 1) [6,3]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
-	UNIT 0x82 Soldier	0x49 Level(6, Enemy, 1) [3,5]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI 
-	UNIT 0x81 Archer	0x49 Level(5, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT 0x82 Soldier	0x49 Level(6, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT 0x82 Soldier	0x49 Level(6, Enemy, 1) [16,8]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
-	UNIT 0x81 Archer	0x49 Level(6, Enemy, 1) [15,6]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT 0x81 Archer	0x49 Level(5, Enemy, 1) [15,3]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT 0x84 Mercenary	0x49 Level(3, Enemy, 1) [11,6]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
-	UNIT 0x84 Soldier	0x49 Level(6, Enemy, 1) [12,6]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT 0x82 Soldier	0x49 Level(7, Enemy, 1) [12,12]	DropItem 0x00 0x0 0x00 [IronLance, DoorKey] NeverMoveAI 
-	UNIT 0x82 Soldier	0x49 Level(7, Enemy, 1) [0,7]	DropItem 0x00 0x0 0x00 [IronLance, DoorKey] AttackInRangeAI 
-	UNIT 0x80 Archer_F	0x49 Level(6, Enemy, 1) [9,2]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT SoldierAlm5 Soldier	0x00 Level(9, Enemy, 1) [6,1]	0x00 0x00 0x0 0x00 [BaseLance] NeverMoveAI
+	UNIT Zofia_Archer Archer	SoldierAlm5 Level(6, Enemy, 1) [6,2]	0x00 0x00 0x0 0x00 [SteelBow] NoAI
+	UNIT Zofia_Soldier Soldier	SoldierAlm5 Level(6, Enemy, 1) [7,2]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Zofia_Merc Mercenary	SoldierAlm5 Level(3, Enemy, 1) [5,2]	0x00 0x00 0x0 0x00 [BaseSword] NoAI 
+	UNIT Zofia_Soldier Soldier	SoldierAlm5 Level(5, Enemy, 1) [6,3]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Zofia_Soldier Soldier	SoldierAlm5 Level(6, Enemy, 1) [3,5]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI 
+	UNIT Zofia_Archer Archer	SoldierAlm5 Level(5, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT Zofia_Soldier Soldier	SoldierAlm5 Level(6, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Zofia_Soldier Soldier	SoldierAlm5 Level(6, Enemy, 1) [16,8]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Zofia_Archer Archer	SoldierAlm5 Level(6, Enemy, 1) [15,6]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT Zofia_Archer Archer	SoldierAlm5 Level(5, Enemy, 1) [15,3]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT Zofia_Merc Mercenary	SoldierAlm5 Level(3, Enemy, 1) [11,6]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
+	UNIT Zofia_Merc Soldier	SoldierAlm5 Level(6, Enemy, 1) [12,6]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Zofia_Soldier Soldier	SoldierAlm5 Level(7, Enemy, 1) [12,12]	DropItem 0x00 0x0 0x00 [IronLance, DoorKey] NeverMoveAI 
+	UNIT Zofia_Soldier Soldier	SoldierAlm5 Level(7, Enemy, 1) [0,7]	DropItem 0x00 0x0 0x00 [IronLance, DoorKey] AttackInRangeAI 
+	UNIT 0x80 Archer_F	SoldierAlm5 Level(6, Enemy, 1) [9,2]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT
 
 ThiefReinforcement:
-	UNIT 0x65 Thief 	0x49 Level(4, Enemy, 1) [16,1]	DropItem 0x00 0x1 REDA16R1  [BaseSword, Lockpick] LootingThiefAI
+	UNIT TreasureHunter Thief 	SoldierAlm5 Level(4, Enemy, 1) [16,1]	DropItem 0x00 0x1 REDA16R1  [BaseSword, Lockpick] LootingThiefAI
 	UNIT
 
 Ch1_5_BeginningScene:
@@ -228,9 +228,9 @@ Ch1_5_BeginningScene:
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	FADU 10
-	CAM1 0x49
+	CAM1 SoldierAlm5
 	STAL 6
-	FlashCursor(0x49, 60)
+	FlashCursor(SoldierAlm5, 60)
 	TEXTSTART
 	TEXTSHOW Ch1_5_OpeningScene
 	TEXTEND

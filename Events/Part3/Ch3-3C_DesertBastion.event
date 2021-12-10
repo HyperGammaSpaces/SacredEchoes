@@ -102,7 +102,7 @@ Ch3_3C_Units1:
 	UNIT Mae Mage_F 0x00 Level(11, Ally,True) [3,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(11, Ally,True) [2,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Genny Cleric 0x00 Level(11, Ally,True) [3,15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Saber Myrmidon 0x00 Level(5, Ally, True) [10,15] 0x00 0x00 0x0 0x00 [BaseSword, 0x78, Vulnerary] NoAI
+	UNIT Saber Myrmidon 0x00 Level(5, Ally, True) [10,15] 0x00 0x00 0x0 0x00 [BaseSword, GoldDagger, Vulnerary] NoAI
 	UNIT Valbar Knight 0x00 Level(8, Ally, True) [11,15] 0x00 0x00 0x0 0x00 [BaseAxe,BaseLance, Vulnerary] NoAI
 	UNIT Leon Sniper 0x00 Level(3, Ally, True) [12,15] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
 	UNIT Kamui Mercenary 0x00 Level(11, Ally,True) [18,12] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
@@ -128,34 +128,34 @@ Ch3_3C_Units1:
 
 EnemyUnits:
 	UNIT Wolff Sniper Wolff Level(6, Enemy, False) [11,3] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
-	UNIT 0x89 Sniper	Wolff Level(5, Enemy, True) [21,13]	0x00 0x00 0x0 0x00 [IronBow] NoAI
-	UNIT 0x89 Sniper	Wolff Level(5, Enemy, True) [3,7]	0x00 0x00 0x0 0x00 [IronBow] NoAI
-	UNIT 0xA8 Mercenary	Wolff Level(12, Enemy, True) [10,8]	0x00 0x00 0x0 0x00 [Rapier, IronShield] NeverMoveAI
-	UNIT 0xA8 Mercenary	Wolff Level(12, Enemy, True) [11,8]	0x00 0x00 0x0 0x00 [BraveSword, IronShield] NeverMoveAI
-	UNIT 0xA8 Mercenary	Wolff Level(12, Enemy, True) [12,8]	0x00 0x00 0x0 0x00 [Zweihander, IronShield] NeverMoveAI
-	UNIT 0x89 Archer	Wolff Level(15, Enemy, True) [10,6]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x89 Archer	Wolff Level(13, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-	UNIT 0xA8 Mercenary	Wolff Level(13, Enemy, True) [19,6]	DropItem 0x00 0x0 0x00 [Lancereaver,SteelShield, DoorKey] GuardTileAI
-	UNIT 0x65 Pirate	Wolff Level(15, Enemy, True) [18,2]	0x00 0x00 0x0 0x00 [SteelAxe] GuardTileAI	
-	UNIT 0xA8 Mercenary	Wolff Level(13, Enemy, True) [17,3]	0x00 0x00 0x0 0x00 [Zweihander] GuardTileAI	
-	UNIT 0x65 Pirate	Wolff Level(11, Enemy, True) [2,3]	0x00 0x00 0x0 0x00 [SteelAxe] [0xC, 0x3, 0x0, 0x0]
-	UNIT 0x89 Archer	Wolff Level(15, Enemy, True) [8,4]	0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT 0x89 Archer	Wolff Level(15, Enemy, True) [14,4]	0x00 0x00 0x0 0x00 [IronBow] DefensiveTerrainAI
-	UNIT 0x92 Shaman	Wolff Level(9, Enemy, True) [10,7]	0x00 0x00 0x0 0x00 [Miasma] NoAI
-	UNIT 0x92 Shaman	Wolff Level(9, Enemy, True) [11,7]	0x00 0x00 0x0 0x00 [Miasma, Heal] MoveAndHealAI
-	UNIT 0x92 Shaman	Wolff Level(9, Enemy, True) [12,7]	0x00 0x00 0x0 0x00 [Miasma] NoAI
-	UNIT 0x89 Archer	Wolff Level(13, Enemy, True) [7,6]	0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
-	UNIT 0x89 Archer	Wolff Level(15, Enemy, True) [15,6]	0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
+	UNIT Bandit_Bow Sniper	Wolff Level(5, Enemy, True) [21,13]	0x00 0x00 0x0 0x00 [IronBow] NoAI
+	UNIT Bandit_Bow Sniper	Wolff Level(5, Enemy, True) [3,7]	0x00 0x00 0x0 0x00 [IronBow] NoAI
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(12, Enemy, True) [10,8]	0x00 0x00 0x0 0x00 [Rapier, IronShield] NeverMoveAI
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(12, Enemy, True) [11,8]	0x00 0x00 0x0 0x00 [BraveSword, IronShield] NeverMoveAI
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(12, Enemy, True) [12,8]	0x00 0x00 0x0 0x00 [Zweihander, IronShield] NeverMoveAI
+	UNIT Bandit_Bow Archer	Wolff Level(15, Enemy, True) [10,6]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Bandit_Bow Archer	Wolff Level(13, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(13, Enemy, True) [19,6]	DropItem 0x00 0x0 0x00 [Lancereaver,SteelShield, DoorKey] GuardTileAI
+	UNIT Bandit_Axe Pirate	Wolff Level(15, Enemy, True) [18,2]	0x00 0x00 0x0 0x00 [SteelAxe] GuardTileAI	
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(13, Enemy, True) [17,3]	0x00 0x00 0x0 0x00 [Zweihander] GuardTileAI	
+	UNIT Bandit_Axe Pirate	Wolff Level(11, Enemy, True) [2,3]	0x00 0x00 0x0 0x00 [SteelAxe] [0xC, 0x3, 0x0, 0x0]
+	UNIT Bandit_Bow Archer	Wolff Level(15, Enemy, True) [8,4]	0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT Bandit_Bow Archer	Wolff Level(15, Enemy, True) [14,4]	0x00 0x00 0x0 0x00 [IronBow] DefensiveTerrainAI
+	UNIT DumaFaith_Sorcerer Shaman	Wolff Level(9, Enemy, True) [10,7]	0x00 0x00 0x0 0x00 [Miasma] NoAI
+	UNIT DumaFaith_Sorcerer Shaman	Wolff Level(9, Enemy, True) [11,7]	0x00 0x00 0x0 0x00 [Miasma, Heal] MoveAndHealAI
+	UNIT DumaFaith_Sorcerer Shaman	Wolff Level(9, Enemy, True) [12,7]	0x00 0x00 0x0 0x00 [Miasma] NoAI
+	UNIT Bandit_Bow Archer	Wolff Level(13, Enemy, True) [7,6]	0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
+	UNIT Bandit_Bow Archer	Wolff Level(15, Enemy, True) [15,6]	0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
 	UNIT
 
 Reinforcements1:
-	UNIT 0x67 Mercenary	Wolff Level(13, Enemy, True) [11,16]	0x00 0x00 0x1 REDA11R16 [BaseSword] NoAI
-	UNIT 0x67 Mercenary	Wolff Level(12, Enemy, True) [12,16]	0x00 0x00 0x1 REDA12R16 [IronSword] NoAI
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(13, Enemy, True) [11,16]	0x00 0x00 0x1 REDA11R16 [BaseSword] NoAI
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(12, Enemy, True) [12,16]	0x00 0x00 0x1 REDA12R16 [IronSword] NoAI
 	UNIT
 	
 Reinforcements2:
-	UNIT 0x92 Shaman	Wolff Level(11, Enemy, True) [23,9]	0x00 0x00 0x1 REDA23R9 [Miasma,Heal] MoveAndHealAI
-	UNIT 0x92 Shaman	Wolff Level(10, Enemy, True) [23,10]	0x00 0x00 0x1 REDA23R9 [Miasma] NoAI
+	UNIT DumaFaith_Sorcerer Shaman	Wolff Level(11, Enemy, True) [23,9]	0x00 0x00 0x1 REDA23R9 [Miasma,Heal] MoveAndHealAI
+	UNIT DumaFaith_Sorcerer Shaman	Wolff Level(10, Enemy, True) [23,10]	0x00 0x00 0x1 REDA23R9 [Miasma] NoAI
 	UNIT
 	
 JesseJoins:
@@ -167,7 +167,7 @@ CutsceneUnits_Grieth:
 	UNIT
 	
 CutsceneUnits_GriethLackey:
-	UNIT 0x65 Pirate	Grieth Level(17, Enemy, True) [17,5]	0x00 0x00 0x1 DelayedREDA20R3 [IronAxe] NoAI
+	UNIT Bandit_Axe Pirate	Grieth Level(17, Enemy, True) [17,5]	0x00 0x00 0x1 DelayedREDA20R3 [IronAxe] NoAI
 	UNIT
 	
 CutsceneAlliesNoJesse:

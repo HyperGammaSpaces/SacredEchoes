@@ -47,8 +47,8 @@ PostPrep:
 
 WaveFirst:
 	SVAL 0x1 0x0
-	CHAI 0x93
-	CHAI 0xA8
+	CHAI DumaFaith_Sorcerer_2
+	CHAI Enemy_Mercenary
 	ReinforcementEvent(PirateSouthREDAs)
 	NoFade
 	ENDA
@@ -73,7 +73,7 @@ Ch2_7_LocationBasedEvents:
 	LOCA
 
 VillageEventWest:
-	VillageEventItem(Ch2_7_Village_1, Village, 0x60) //ambrosia
+	VillageEventItem(Ch2_7_Village_1, Village, Ambrosia)
 	ENDA
 
 VillageEventEast:
@@ -101,13 +101,13 @@ Ch2_7_MiscBasedEvents:
 
 ChangeAIEvent1:
 	SVAL 0x1 0x0
-	CHAI 0x64
+	CHAI TreasureHunter
 	NoFade
 	ENDA
 
 ChangeAIEvent2:
 	SVAL 0x1 0x0
-	CHAI 0x6A
+	CHAI Bandit_Strong
 	NoFade
 	ENDA
 
@@ -148,40 +148,40 @@ PlayerUnits:
 #endif
 	
 EnemyUnits:
-	UNIT 0x91 Arcanist 0x91 Level(3,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [Miasma,AngelRing,Item100G] NeverMoveAI 
-	UNIT 0xA8 Mercenary 0x91 Level(9,Enemy,True) [3,3] 0x00 0x00 0x0 0x00 [Armorslayer] NeverMoveAI 
-	UNIT 0x65 Mage 0x91 Level(11,Enemy,True) [5,9] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI 
-	UNIT 0x66 Archer_F 0x91 Level(12,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
-	UNIT 0x65 Pirate 0x91 Level(13,Enemy,True) [2,14] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT 0x65 Pirate 0x91 Level(13,Enemy,True) [5,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI 
-	UNIT 0x67 Mercenary 0x91 Level(8,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
-	UNIT 0x65 Pirate 0x91 Level(13,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
-	UNIT 0x65 Mercenary 0x91 Level(9,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT 0x66 Archer 0x91 Level(13,Enemy,True) [2,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
-	UNIT 0x8D Knight 0x91 Level(3,Enemy,False) [11,5] 0x00 0x00 0x0 0x00 [BaseAxe,Javelin] NeverMoveAI 
-	UNIT 0x67 Mercenary 0x91 Level(10,Enemy,True) [16,8] 0x00 0x00 0x0 0x00 [IronSword,HideShield] AttackInRangeAI 
-	UNIT 0x65 Pirate_F 0x91 Level(13,Enemy,True) [16,11] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT 0x92 Shaman 0x91 Level(9,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Miasma,Heal] HealUnits 
-	UNIT 0x93 Shaman 0x91 Level(8,Enemy,True) [2,2] 0x00 0x00 0x0 0x00 [Miasma,Heal] AttackInRangeAI 
-	UNIT 0x92 Shaman 0x91 Level(8,Enemy,True) [9,2] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI //Give this guy Silence once it's implemented.
-	UNIT 0x92 Shaman 0x91 Level(8,Enemy,True) [17,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT 0x8D Soldier 0x91 Level(12,Enemy,True) [9,8] 0x00 0x00 0x0 0x00 [BaseLance,HideShield] AttackInRangeAI 
-	UNIT 0x92 Shaman 0x91 Level(6,Enemy,True) [14,1] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT 0x67 Mercenary 0x91 Level(9,Enemy,True) [14,15] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT ArcanistBoss Arcanist ArcanistBoss Level(3,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [Miasma,AngelRing,Item100G] NeverMoveAI 
+	UNIT Enemy_Mercenary Mercenary ArcanistBoss Level(9,Enemy,True) [3,3] 0x00 0x00 0x0 0x00 [Armorslayer] NeverMoveAI 
+	UNIT Bandit_Bow Mage ArcanistBoss Level(11,Enemy,True) [5,9] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI 
+	UNIT Bandit_Bow Archer_F ArcanistBoss Level(12,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
+	UNIT Bandit_Axe Pirate ArcanistBoss Level(13,Enemy,True) [2,14] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT Bandit_Axe Pirate ArcanistBoss Level(13,Enemy,True) [5,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI 
+	UNIT Bandit_Sword Mercenary ArcanistBoss Level(8,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	UNIT Bandit_Axe Pirate ArcanistBoss Level(13,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary ArcanistBoss Level(9,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT Bandit_Bow Archer ArcanistBoss Level(13,Enemy,True) [2,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
+	UNIT Remnant_Soldier Knight ArcanistBoss Level(3,Enemy,False) [11,5] 0x00 0x00 0x0 0x00 [BaseAxe,Javelin] NeverMoveAI 
+	UNIT Bandit_Sword Mercenary ArcanistBoss Level(10,Enemy,True) [16,8] 0x00 0x00 0x0 0x00 [IronSword,HideShield] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate_F ArcanistBoss Level(13,Enemy,True) [16,11] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(9,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Miasma,Heal] HealUnits 
+	UNIT DumaFaith_Sorcerer_2 Shaman ArcanistBoss Level(8,Enemy,True) [2,2] 0x00 0x00 0x0 0x00 [Miasma,Heal] AttackInRangeAI 
+	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(8,Enemy,True) [9,2] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI //Give this guy Silence once it's implemented.
+	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(8,Enemy,True) [17,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Remnant_Soldier Soldier ArcanistBoss Level(12,Enemy,True) [9,8] 0x00 0x00 0x0 0x00 [BaseLance,HideShield] AttackInRangeAI 
+	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(6,Enemy,True) [14,1] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary ArcanistBoss Level(9,Enemy,True) [14,15] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
 	UNIT
 
 CavWestREDAs:
-	UNIT 0x8E Cavalier 0x91 Level(13,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [IronLance,IronShield] DefaultAI 
-	UNIT 0x8E Cavalier_F 0x91 Level(13,Enemy,True) [0,7] 0x00 0x00 0x1 REDA0R7 [Javelin] DefaultAI 
+	UNIT Remnant_Cav Cavalier ArcanistBoss Level(13,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [IronLance,IronShield] DefaultAI 
+	UNIT Remnant_Cav Cavalier_F ArcanistBoss Level(13,Enemy,True) [0,7] 0x00 0x00 0x1 REDA0R7 [Javelin] DefaultAI 
 	UNIT
 
 PirateSouthREDAs:
-	UNIT 0x64 Pirate_F 0x91 Level(13,Enemy,True) [3,16] 0x00 0x00 0x1 REDA3R16 [BaseAxe,Torch] BrigandAI 
-	UNIT 0x64 Pirate 0x91 Level(14,Enemy,True) [4,16] 0x00 0x00 0x1 REDA4R16 [BaseAxe,Torch] BrigandAI 
+	UNIT TreasureHunter Pirate_F ArcanistBoss Level(13,Enemy,True) [3,16] 0x00 0x00 0x1 REDA3R16 [BaseAxe,Torch] BrigandAI 
+	UNIT TreasureHunter Pirate ArcanistBoss Level(14,Enemy,True) [4,16] 0x00 0x00 0x1 REDA4R16 [BaseAxe,Torch] BrigandAI 
 	UNIT
 	
 PirateNorthREDAs:	
-	UNIT 0x6A Pirate 0x91 Level(15,Enemy,True) [10,0] 0x00 0x00 0x1 REDA10R0 [HandAxe,Torch] BrigandAI 
+	UNIT Bandit_Strong Pirate ArcanistBoss Level(15,Enemy,True) [10,0] 0x00 0x00 0x1 REDA10R0 [HandAxe,Torch] BrigandAI 
 	UNIT
 	
 ConradAppears:
@@ -196,10 +196,10 @@ CutsceneUnits:
 	UNIT
 	
 CutsceneEnemies1:
-	UNIT 0x91 Arcanist 0x00 Level(1, Enemy, 1) [4,1] 0x00 0x00 0x0 0x00 [Miasma, Vulnerary] NoAI 
+	UNIT ArcanistBoss Arcanist 0x00 Level(1, Enemy, 1) [4,1] 0x00 0x00 0x0 0x00 [Miasma, Vulnerary] NoAI 
 	UNIT
 CutsceneEnemies2:
-	UNIT 0x42 Paladin 0x00 Level(1, Enemy, 1) [0,7] 0x00 0x00 0x1 REDA0R7 [BaseLance] NoAI 
+	UNIT SlaydePaladin Paladin 0x00 Level(1, Enemy, 1) [0,7] 0x00 0x00 0x1 REDA0R7 [BaseLance] NoAI 
 	UNIT
 
 Ch2_7_BeginningScene:
@@ -283,7 +283,7 @@ Ch2_7_EndingScene:
 	ClearBackgroundSmooth
 	STAL 20
 	
-	//Put the slayde/cantor scene here. Slayde is 0x42
+	//Put the slayde/cantor scene here. 
 	CAM1 [11,12]
 	MUSCFAST SongID_Env_WindBirds
 	//warpin effect pls
@@ -291,10 +291,10 @@ Ch2_7_EndingScene:
 	ENUN
 	LOAD1 0x0 CutsceneEnemies2
 	ENUN
-	MOVE 0x08 0x91 [11,9]
+	MOVE 0x08 ArcanistBoss [11,9]
 	ENUN
 	STAL 20
-	MOVE 0x08 0x42 [12,9]
+	MOVE 0x08 SlaydePaladin [12,9]
 	ENUN
 	FADI 16
 	CLEE 0x0

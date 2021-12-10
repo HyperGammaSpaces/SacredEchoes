@@ -91,7 +91,7 @@ Ch3_4C_UnitsSouth:
 	UNIT Mae Mage_F 0x00 Level(12,Ally,True) [9,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(12,Ally,True) [6,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Genny Cleric 0x00 Level(12,Ally,True) [8,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI
-	UNIT Saber Myrmidon 0x00 Level(5,Ally,True) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, 0x78, Vulnerary] NoAI
+	UNIT Saber Myrmidon 0x00 Level(5,Ally,True) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, GoldDagger, Vulnerary] NoAI
 	UNIT Leon Sniper 0x00 Level(5,Ally,True) [15,14] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
 	UNIT Palla PegasusKnight 0x00 Level(10,Ally,True) [14,13] 0x00 0x00 0x0 0x00 [BaseLance, Javelin, Vulnerary] NoAI
 	UNIT Catria PegasusKnight 0x00 Level(10,Ally,True) [15,12] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing, Vulnerary] NoAI
@@ -110,22 +110,22 @@ Ch3_4C_UnitsSouth:
 	
 EnemyUnitsDeen:
 	UNIT DeenBoss Myrmidon DeenBoss Level(12, Enemy, False) [2,1] 0x00 0x00 0x0 0x00 [BraveSword,DeensSword] DefensiveTerrainAI
-	UNIT 0x87 Mercenary	DeenBoss Level(14, Enemy, True) [3,3]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
-	UNIT 0x87 Mercenary	DeenBoss Level(13, Enemy, True) [2,4]	0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
-	UNIT 0x87 Myrmidon	DeenBoss Level(6, Enemy, True) [6,2]	0x00 0x00 0x0 0x00 [IronSword] DelayedRushAI
-	UNIT 0x87 Myrmidon	DeenBoss Level(7, Enemy, True) [4,4]	0x00 0x00 0x0 0x00 [BaseSword] DelayedRushAI
-	UNIT 0x87 Myrmidon	DeenBoss Level(6, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
-	UNIT 0x87 Myrmidon	DeenBoss Level(6, Enemy, True) [5,12]	0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT 0x87 Myrmidon	DeenBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
-	UNIT 0x87 Mercenary	DeenBoss Level(15, Enemy, True) [6,7]	DropItem 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
-	UNIT 0x8C Mage_F	DeenBoss Level(12, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Thunder] NoAI
-	UNIT 0x87 Mercenary	DeenBoss Level(14, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
-	UNIT 0x87 Mercenary	DeenBoss Level(15, Enemy, True) [8,4]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
-	UNIT 0x87 Mercenary	DeenBoss Level(13, Enemy, True) [8,7]	0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(14, Enemy, True) [3,3]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(13, Enemy, True) [2,4]	0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
+	UNIT Rigel_Merc Myrmidon	DeenBoss Level(6, Enemy, True) [6,2]	0x00 0x00 0x0 0x00 [IronSword] DelayedRushAI
+	UNIT Rigel_Merc Myrmidon	DeenBoss Level(7, Enemy, True) [4,4]	0x00 0x00 0x0 0x00 [BaseSword] DelayedRushAI
+	UNIT Rigel_Merc Myrmidon	DeenBoss Level(6, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT Rigel_Merc Myrmidon	DeenBoss Level(6, Enemy, True) [5,12]	0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Rigel_Merc Myrmidon	DeenBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(15, Enemy, True) [6,7]	DropItem 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
+	UNIT Rigel_Witch Mage_F	DeenBoss Level(12, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Thunder] NoAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(14, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(15, Enemy, True) [8,4]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(13, Enemy, True) [8,7]	0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
 	UNIT
 
 ReinforcementsDeen:
-	UNIT 0x8C Mage_F	DeenBoss Level(13, Enemy, True) [15,8]	0x00 0x00 0x1 REDA15R8 [Thunder] NoAI
+	UNIT Rigel_Witch Mage_F	DeenBoss Level(13, Enemy, True) [15,8]	0x00 0x00 0x1 REDA15R8 [Thunder] NoAI
 	UNIT
 
 Ch3_4C_BeginningScene:

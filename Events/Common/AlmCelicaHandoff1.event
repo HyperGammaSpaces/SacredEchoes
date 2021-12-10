@@ -101,7 +101,7 @@ DoCelicaStuff:
 	Text(CelicaHandoffScene_3)
 	STAL 20
 	CALL $591F40
-	SVAL 0x3 0x5D //secret book
+	SVAL 0x3 Persephone //secret book
 	GIVEITEMTO Celica
 	STAL 20
 	CharacterJoinedNotification(Notif_MaeBoeyGennyJoin)

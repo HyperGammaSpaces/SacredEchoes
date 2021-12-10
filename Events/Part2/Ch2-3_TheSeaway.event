@@ -71,24 +71,24 @@ Ch2_3_Units1:
 	UNIT
 
 EnemyUnits:
-	UNIT 0x4D Pirate_F 0x4D Level(10,Enemy,True) [16,13] DropItem 0x00 0x0 0x00 [BaseAxe,Item100G] AttackInRangeAI 
-	UNIT 0x67 Mercenary 0x4D Level(4,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
-	UNIT 0x65 Pirate 0x4D Level(6,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT 0x65 Brigand 0x4D Level(7,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT 0x65 Pirate_F 0x4D Level(6,Enemy,True) [15,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT 0x65 Brigand 0x4D Level(7,Enemy,True) [15,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT 0x65 Pirate 0x4D Level(6,Enemy,True) [14,5] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT 0x65 Brigand 0x4D Level(5,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT 0x66 Archer_F 0x4D Level(5,Enemy,True) [17,8] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT 0x66 Archer 0x4D Level(5,Enemy,True) [17,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT PirateCelica2 Pirate_F PirateCelica2 Level(10,Enemy,True) [16,13] DropItem 0x00 0x0 0x00 [BaseAxe,Item100G] AttackInRangeAI 
+	UNIT Bandit_Sword Mercenary PirateCelica2 Level(4,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate PirateCelica2 Level(6,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(7,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(6,Enemy,True) [15,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(7,Enemy,True) [15,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate PirateCelica2 Level(6,Enemy,True) [14,5] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(5,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Bow Archer_F PirateCelica2 Level(5,Enemy,True) [17,8] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT Bandit_Bow Archer PirateCelica2 Level(5,Enemy,True) [17,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
 	UNIT
 
 Boat2Enemies:
-	UNIT 0x65 Pirate_F 0x4D Level(9,Enemy,True) [1,14] DropItem 0x00 0x1 REDA2R14 [BaseAxe,Item100G] NoAI 
-	UNIT 0x66 Archer_F 0x4D Level(5,Enemy,True) [1,14] DropItem 0x00 0x1 REDA1R13 [IronBow,Talisman] NoAI 
-	UNIT 0x65 Pirate_F 0x4D Level(5,Enemy,True) [1,14] 0x00 0x00 0x1 REDA2R11 [BaseAxe] NoAI 
-	UNIT 0x65 Pirate 0x4D Level(7,Enemy,True) [1,14] 0x00 0x00 0x1 REDA3R13 [BaseAxe] NoAI
-	UNIT 0x67 Thief 0x4D Level(7,Enemy,True) [1,14] DropItem 0x00 0x1 REDA0R10 [IronSword] NoAI
+	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(9,Enemy,True) [1,14] DropItem 0x00 0x1 REDA2R14 [BaseAxe,Item100G] NoAI 
+	UNIT Bandit_Bow Archer_F PirateCelica2 Level(5,Enemy,True) [1,14] DropItem 0x00 0x1 REDA1R13 [IronBow,Talisman] NoAI 
+	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(5,Enemy,True) [1,14] 0x00 0x00 0x1 REDA2R11 [BaseAxe] NoAI 
+	UNIT Bandit_Axe Pirate PirateCelica2 Level(7,Enemy,True) [1,14] 0x00 0x00 0x1 REDA3R13 [BaseAxe] NoAI
+	UNIT Bandit_Sword Thief PirateCelica2 Level(7,Enemy,True) [1,14] DropItem 0x00 0x1 REDA0R10 [IronSword] NoAI
 	UNIT
 
 Ch2_3_BeginningScene:

@@ -2,86 +2,135 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plCh4_8A_Event, Dummy_ThisChapter)
+EventPointerTable(plCh4_8A_Event, Ch4A8_ThisChapter)
 
-Dummy_ThisChapter:
-	POIN Dummy_TurnBasedEvents
-	POIN Dummy_CharacterBasedEvents
-	POIN Dummy_LocationBasedEvents
-	POIN Dummy_MiscBasedEvents
-	POIN Dummy_Dunno Dummy_Dunno Dummy_Dunno
-	POIN Dummy_Tutorial
-	POIN Dummy_Ballista1 Dummy_Ballista2
-	POIN Dummy_Units1 Dummy_Units1
+Ch4A8_ThisChapter:
+	POIN Ch4A8_TurnBasedEvents
+	POIN Ch4A8_CharacterBasedEvents
+	POIN Ch4A8_LocationBasedEvents
+	POIN Ch4A8_MiscBasedEvents
+	POIN Ch4A8_Dunno Ch4A8_Dunno Ch4A8_Dunno
+	POIN Ch4A8_Tutorial
+	POIN Ch4A8_Ballista1 Ch4A8_Ballista2
+	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
-	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
-	POIN Dummy_BeginningScene Dummy_EndingScene
+	POIN EnemyUnits EnemyUnits EnemyUnits
+	POIN Ch4A8_BeginningScene Ch4A8_EndingScene
 
-Dummy_TurnBasedEvents:
+Ch4A8_TurnBasedEvents:
 	TURN
 
-Dummy_CharacterBasedEvents:
+Ch4A8_CharacterBasedEvents:
 	CHAR
 
-Dummy_LocationBasedEvents:
+Ch4A8_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(12,26)
 	#endif
-	Seize(14,5)
 	LOCA
 
-Dummy_MiscBasedEvents:
+Ch4A8_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Dummy_EndingScene)
+	DefeatAll(Ch4A8_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
-Dummy_Dunno:
+Ch4A8_Dunno:
 	END_MAIN
 
-Dummy_Tutorial:
+Ch4A8_Tutorial:
 	END_MAIN
 
-Dummy_Ballista1:
+Ch4A8_Ballista1:
 	BLST
 	ALIGN 4
 
-Dummy_Ballista2:
+Ch4A8_Ballista2:
 	BLST
 	ALIGN 4
 
-Dummy_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+PlayerPlacement:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [10,26] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,25] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,26] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [17,26] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,26] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [8,27] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,27] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,27] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+    //block 2
+    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [16,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [7,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [18,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [6,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [19,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [9,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 CutsceneUnits:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 EnemyUnits:
-	UNIT Mikhail Cantor	Mikhail Level(9, Enemy, True) [14,5]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT
-	
-SkirmishEnemies:
-	UNIT 0x86 Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT MuellerCh4_8 BowKnight	MuellerCh4_8 Level(15, Enemy, True) [12,15]	DropItem 0x00 0x0 0x00 [SilverBow] NeverMoveAI
+	UNIT SlaydeGK GoldKnight MuellerCh4_8 Level(8, Enemy, True) [13,4] DropItem 0x00 0x0 0x00 [SilverLance] NeverMoveAI
+    UNIT Rigel_Cav GoldKnight SlaydeGK Level(4, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+    UNIT Rigel_Cav GoldKnight SlaydeGK Level(4, Enemy, True) [12,11] 0x00 0x00 0x0 0x00 [Saunion] AttackInRangeAI
+    UNIT Rigel_Cav GoldKnight SlaydeGK Level(4, Enemy, True) [13,11] 0x00 0x00 0x0 0x00 [Saunion] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [13,15] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [12,17] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    //door blockers
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [5,6] 0x00 0x00 0x0 0x00 [SteelAxe] NeverMoveAI
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Pugi] NeverMoveAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [Sisyphus] NeverMoveAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [Sisyphus] NeverMoveAI
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [16,6] 0x00 0x00 0x0 0x00 [Pugi] NeverMoveAI
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [20,6] 0x00 0x00 0x0 0x00 [SteelAxe] NeverMoveAI
+    //hallways
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [7,11] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [22,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [3,16] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [7,16] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [18,16] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [22,16] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [3,17] 0x00 0x00 0x0 0x00 [Selene] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [7,17] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [18,17] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [22,17] 0x00 0x00 0x0 0x00 [Selene] AttackInRangeAI
 	UNIT
 
-Dummy_BeginningScene:
+Ch4A8_BeginningScene:
 
-	//debug only
+	/*
+    //debug only
+	#ifndef __DEBUG__
 	SetBackground(0x1D)
 	Text(Celica_EndDemo)
 	MNTS 0x0
 	ENDA
-	//end debug
+	#endif
+    */
+	
+	LOAD1 0x1 EnemyUnits
+	ENUN
+    LOAD3 0x0 PlayerPlacement 
+	ENUN
+    GotoPrepScreen
+	ENDA
 
-Dummy_EndingScene:
+Ch4A8_EndingScene:
 	CALL UnifiedBEXPCaller
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x12
+	MUSCSLOW SongID_Silence
+	FADI 2
+	EVBIT_MODIFY 0x1
+	ENUT gChapter4A8Completed
+	EVBIT_MODIFY 0x0
+    
+	FADI 2
+	MNCH 0x2B
 	ENDA

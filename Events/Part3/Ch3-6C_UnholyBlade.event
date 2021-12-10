@@ -94,7 +94,7 @@ Ch3_6C_Units1:
 	UNIT Mae Mage_F 0x00 Level(14,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(14,Ally,True) [3,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Genny Cleric 0x00 Level(14,Ally,True) [4,13] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI
-	UNIT Saber Myrmidon 0x00 Level(6,Ally,True) [2,11] 0x00 0x00 0x0 0x00 [BaseSword, 0x78, Vulnerary] NoAI
+	UNIT Saber Myrmidon 0x00 Level(6,Ally,True) [2,11] 0x00 0x00 0x0 0x00 [BaseSword, GoldDagger, Vulnerary] NoAI
 	UNIT Valbar Knight 0x00 Level(9,Ally,True) [2,13] 0x00 0x00 0x0 0x00 [BaseAxe, BaseLance, Vulnerary] NoAI
 	UNIT Leon Sniper 0x00 Level(6,Ally,True) [1,12] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
 	UNIT Kamui Mercenary 0x00 Level(14,Ally,True) [1,10] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
@@ -129,42 +129,42 @@ EnemyUnits:
 	//total: ~22
 	UNIT Blake Myrmidon	Blake Level(5, Enemy, False) [23,1]	DropItem 0x00 0x0 0x00 [Shadowblade] NeverMoveAI
 	//witches, mercs, myrms, sorcerers, archers, snipers
-	UNIT 0x92 Arcanist	Blake Level(7, Enemy, True) [24,2]	0x00 0x00 0x0 0x00 [Miasma,Physic] [0x0F,0x03]
-	UNIT 0x92 Arcanist	Blake Level(7, Enemy, True) [22,2]	0x00 0x00 0x0 0x00 [Selene] NeverMoveAI
-	UNIT 0x87 Myrmidon	Blake Level(7, Enemy, True) [25,5]	0x00 0x00 0x0 0x00 [Rapier] DelayedRushAI
-	UNIT 0x87 Myrmidon	Blake Level(5, Enemy, True) [24,8]	0x00 0x00 0x0 0x00 [Lancereaver] DelayedRushAI
-	UNIT 0x94 Witch	Blake Level(6, Enemy, True) [20,6]	0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
+	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(7, Enemy, True) [24,2]	0x00 0x00 0x0 0x00 [Miasma,Physic] [0x0F,0x03]
+	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(7, Enemy, True) [22,2]	0x00 0x00 0x0 0x00 [Selene] NeverMoveAI
+	UNIT Rigel_Merc Myrmidon	Blake Level(7, Enemy, True) [25,5]	0x00 0x00 0x0 0x00 [Rapier] DelayedRushAI
+	UNIT Rigel_Merc Myrmidon	Blake Level(5, Enemy, True) [24,8]	0x00 0x00 0x0 0x00 [Lancereaver] DelayedRushAI
+	UNIT DumaFaith_Witch Witch	Blake Level(6, Enemy, True) [20,6]	0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
 	//Snipers
-	UNIT 0x89 Sniper	Blake Level(4, Enemy, True) [12,11]	DropItem 0x00 0x0 0x00 [SilverBow] ChaseOnceApproachedAI
-	UNIT 0x89 Sniper	Blake Level(7, Enemy, True) [6,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
-	UNIT 0x89 Sniper	Blake Level(6, Enemy, True) [3,9]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper	Blake Level(4, Enemy, True) [12,11]	DropItem 0x00 0x0 0x00 [SilverBow] ChaseOnceApproachedAI
+	UNIT Rigel_Archer Sniper	Blake Level(7, Enemy, True) [6,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper	Blake Level(6, Enemy, True) [3,9]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	//Forts North
-	UNIT 0x87 Mercenary	Blake Level(15, Enemy, True) [14,3]	0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT 0x87 Mercenary	Blake Level(15, Enemy, True) [14,4]	DropItem 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT Rigel_Merc Mercenary	Blake Level(15, Enemy, True) [14,3]	0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Rigel_Merc Mercenary	Blake Level(15, Enemy, True) [14,4]	DropItem 0x00 0x0 0x00 [SteelSword] NoAI
 	//Middle area
-	UNIT 0x87 Mercenary	Blake Level(15, Enemy, True) [17,7]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT 0x87 Mercenary	Blake Level(13, Enemy, True) [18,8]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
-	UNIT 0x87 Mercenary	Blake Level(14, Enemy, True) [19,9]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
-	UNIT 0x93 Shaman	Blake Level(14, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Miasma, Heal] AttackInRangeAI
-	UNIT 0x92 Shaman	Blake Level(14, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT 0x89 Archer	Blake Level(13, Enemy, True) [10,7]	0x00 0x00 0x0 0x00 [KillerBow] NeverMoveAI
-	UNIT 0x92 Shaman	Blake Level(9, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [Mire] NoAI
+	UNIT Rigel_Merc Mercenary	Blake Level(15, Enemy, True) [17,7]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	Blake Level(13, Enemy, True) [18,8]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	Blake Level(14, Enemy, True) [19,9]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Shaman	Blake Level(14, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Miasma, Heal] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Shaman	Blake Level(14, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Rigel_Archer Archer	Blake Level(13, Enemy, True) [10,7]	0x00 0x00 0x0 0x00 [KillerBow] NeverMoveAI
+	UNIT DumaFaith_Sorcerer Shaman	Blake Level(9, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [Mire] NoAI
 	//South fort
-	UNIT 0x93 Shaman	Blake Level(14, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-	UNIT 0x92 Shaman	Blake Level(10, Enemy, True) [21,12]	0x00 0x00 0x0 0x00 [Mire] DelayedRushAI
+	UNIT DumaFaith_Sorcerer Shaman	Blake Level(14, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT DumaFaith_Sorcerer Shaman	Blake Level(10, Enemy, True) [21,12]	0x00 0x00 0x0 0x00 [Mire] DelayedRushAI
 	UNIT
 	
 SkirmishEnemies:
-	UNIT 0x86 Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Rigel_Cav Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
 
 //Top left and rightmost caves spawn brigands
 ReinforcementsTopLeft:
-	UNIT 0x64 Brigand	Blake Level(17, Enemy, True) [0,0]	0x00 0x00 0x1 REDA0R0 [IronAxe,TorchItem] BrigandAI
+	UNIT TreasureHunter Brigand	Blake Level(17, Enemy, True) [0,0]	0x00 0x00 0x1 REDA0R0 [IronAxe,TorchItem] BrigandAI
 	UNIT
 	
 ReinforcementsTopRight:
-	UNIT 0x64 Brigand	Blake Level(17, Enemy, True) [27,3]	0x00 0x00 0x1 REDA27R3 [IronAxe,TorchItem] BrigandAI
+	UNIT TreasureHunter Brigand	Blake Level(17, Enemy, True) [27,3]	0x00 0x00 0x1 REDA27R3 [IronAxe,TorchItem] BrigandAI
 	UNIT
 	
 GargoylesLeft:
@@ -177,13 +177,13 @@ GargoylesRight:
 	
 //Two forts could spawn some guys too? [13,2] and [15,2]
 FortTop:
-	UNIT 0x87 Myrmidon	Blake Level(3, Enemy, True) [13,2]	0x00 0x00 0x1 REDA13R2 [SteelSword] NoAI
-	UNIT 0x87 Myrmidon	Blake Level(5, Enemy, True) [15,2]	0x00 0x00 0x1 REDA15R2 [IronSword] NoAI
+	UNIT Rigel_Merc Myrmidon	Blake Level(3, Enemy, True) [13,2]	0x00 0x00 0x1 REDA13R2 [SteelSword] NoAI
+	UNIT Rigel_Merc Myrmidon	Blake Level(5, Enemy, True) [15,2]	0x00 0x00 0x1 REDA15R2 [IronSword] NoAI
 	UNIT
 //Two forts could spawn some guys too? [22,14] and [24,14]
 FortBottom:
-	UNIT 0x92 Arcanist	Blake Level(5, Enemy, True) [22,14]	0x00 0x00 0x1 REDA22R14 [Sisyphus] NoAI
-	UNIT 0x92 Arcanist	Blake Level(5, Enemy, True) [24,14]	0x00 0x00 0x1 REDA24R14 [Miasma,Heal] NoAI
+	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(5, Enemy, True) [22,14]	0x00 0x00 0x1 REDA22R14 [Sisyphus] NoAI
+	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(5, Enemy, True) [24,14]	0x00 0x00 0x1 REDA24R14 [Miasma,Heal] NoAI
 	UNIT
 
 Ch3_6C_BeginningScene:

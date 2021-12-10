@@ -33,8 +33,8 @@ SecondBoat:
 	//
 	FADU 16
 	STAL 20
-	CAM1 0x90
-	FlashCursor(0x90,60)
+	CAM1 SorcererBoss
+	FlashCursor(SorcererBoss,60)
 	MUSI
 	STAL 20
 	Text(Ch2_6_Reinforcements1) // duma leader says something spooky
@@ -108,40 +108,40 @@ PlayerUnits:
 	
 EnemyUnits:
 	// Upper Deck
-	UNIT 0x4F Mercenary 0x4F Level(13,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [SteelSword,IronShield,Item100G] NeverMoveAI 
-	UNIT 0x66 Archer 0x4F Level(10,Enemy,True) [4,0] 0x00 0x00 0x0 0x0 [IronBow] NeverMoveAI
-	UNIT 0x65 Pirate 0x4F Level(12,Enemy,True) [3,1] 0x00 0x00 0x0 0x0 [IronAxe,HandAxe] NeverMoveAI
-	UNIT 0x65 Pirate 0x4F Level(12,Enemy,True) [5,1] 0x00 0x00 0x0 0x0 [SteelAxe,HideShield] NeverMoveAI
-	UNIT 0x66 Archer_F 0x4F Level(10,Enemy,True) [1,2] 0x00 0x00 0x0 0x0 [IronBow] AttackInRangeAI
-	UNIT 0x67 Mercenary 0x4F Level(10,Enemy,True) [2,4] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
-	UNIT 0x65 Brigand 0x4F Level(11,Enemy,True) [5,5] 0x00 0x00 0x0 0x0 [BaseAxe] AttackInRangeAI
-	UNIT 0x65 Pirate_F 0x4F Level(12,Enemy,True) [3,8] 0x00 0x00 0x0 0x0 [HandAxe,SteelAxe] NeverMoveAI
-	UNIT 0x65 Pirate 0x4F Level(12,Enemy,True) [4,8] 0x00 0x00 0x0 0x0 [HandAxe,HideShield] NeverMoveAI
-	UNIT 0x65 Mage 0x4F Level(10,Enemy,True) [4,4] 0x00 0x00 0x0 0x0 [Thunder] AttackInRangeAI
+	UNIT Jarth Mercenary Jarth Level(13,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [SteelSword,IronShield,Item100G] NeverMoveAI 
+	UNIT Bandit_Bow Archer Jarth Level(10,Enemy,True) [4,0] 0x00 0x00 0x0 0x0 [IronBow] NeverMoveAI
+	UNIT Bandit_Axe Pirate Jarth Level(12,Enemy,True) [3,1] 0x00 0x00 0x0 0x0 [IronAxe,HandAxe] NeverMoveAI
+	UNIT Bandit_Axe Pirate Jarth Level(12,Enemy,True) [5,1] 0x00 0x00 0x0 0x0 [SteelAxe,HideShield] NeverMoveAI
+	UNIT Bandit_Bow Archer_F Jarth Level(10,Enemy,True) [1,2] 0x00 0x00 0x0 0x0 [IronBow] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary Jarth Level(10,Enemy,True) [2,4] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
+	UNIT Bandit_Axe Brigand Jarth Level(11,Enemy,True) [5,5] 0x00 0x00 0x0 0x0 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F Jarth Level(12,Enemy,True) [3,8] 0x00 0x00 0x0 0x0 [HandAxe,SteelAxe] NeverMoveAI
+	UNIT Bandit_Axe Pirate Jarth Level(12,Enemy,True) [4,8] 0x00 0x00 0x0 0x0 [HandAxe,HideShield] NeverMoveAI
+	UNIT Bandit_Bow Mage Jarth Level(10,Enemy,True) [4,4] 0x00 0x00 0x0 0x0 [Thunder] AttackInRangeAI
 
 	// Lower Deck
-	UNIT 0x66 Archer 0x4F Level(11,Enemy,True) [6,9] 0x00 0x00 0x0 0x0 [SteelBow] AttackInRangeAI
-	UNIT 0x65 Soldier 0x4F Level(10,Enemy,True) [5,14] 0x00 0x00 0x0 0x0 [Javelin] NeverMoveAI
-	UNIT 0x65 Soldier 0x4F Level(10,Enemy,True) [4,15] 0x00 0x00 0x0 0x0 [Javelin,HideShield] NeverMoveAI
-	UNIT 0x65 Pirate 0x4F Level(11,Enemy,True) [3,14] 0x00 0x00 0x0 0x0 [BaseAxe] DefaultAI
-	UNIT 0x65 Pirate_F 0x4F Level(10,Enemy,True) [2,14] DropItem 0x00 0x0 0x0 [HandAxe] DefaultAI
-	UNIT 0x65 Pirate 0x4F Level(10,Enemy,True) [3,13] 0x00 0x00 0x0 0x0 [BaseAxe] DefaultAI
-	UNIT 0x65 Mage 0x4F Level(10,Enemy,True) [5,12] 0x00 0x00 0x0 0x0 [Fire] DefaultAI
-	UNIT 0x67 Mercenary 0x4F Level(10,Enemy,True) [1,9] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
-	UNIT 0x67 Mercenary 0x4F Level(11,Enemy,True) [5,9] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
+	UNIT Bandit_Bow Archer Jarth Level(11,Enemy,True) [6,9] 0x00 0x00 0x0 0x0 [SteelBow] AttackInRangeAI
+	UNIT Bandit_Axe Soldier Jarth Level(10,Enemy,True) [5,14] 0x00 0x00 0x0 0x0 [Javelin] NeverMoveAI
+	UNIT Bandit_Axe Soldier Jarth Level(10,Enemy,True) [4,15] 0x00 0x00 0x0 0x0 [Javelin,HideShield] NeverMoveAI
+	UNIT Bandit_Axe Pirate Jarth Level(11,Enemy,True) [3,14] 0x00 0x00 0x0 0x0 [BaseAxe] DefaultAI
+	UNIT Bandit_Axe Pirate_F Jarth Level(10,Enemy,True) [2,14] DropItem 0x00 0x0 0x0 [HandAxe] DefaultAI
+	UNIT Bandit_Axe Pirate Jarth Level(10,Enemy,True) [3,13] 0x00 0x00 0x0 0x0 [BaseAxe] DefaultAI
+	UNIT Bandit_Bow Mage Jarth Level(10,Enemy,True) [5,12] 0x00 0x00 0x0 0x0 [Fire] DefaultAI
+	UNIT Bandit_Sword Mercenary Jarth Level(10,Enemy,True) [1,9] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary Jarth Level(11,Enemy,True) [5,9] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
 	UNIT
 
 EnemyUnitsBoat2: 
-	UNIT 0x90 Shaman 0x90 Level(9,Enemy,False) [14,3] DropItem 0x00 0x0 0x00 [Miasma,Item100G] NeverMoveAI 
-	UNIT 0x92 Shaman 0x90 Level(6,Enemy,True) [10,2] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI 
-	UNIT 0x92 Mage 0x90 Level(7,Enemy,True) [12,4] DropItem 0x00 0x0 0x00 [Fire, HideShield, ChestKey] AttackInRangeAI 
-	UNIT 0x92 Shaman 0x90 Level(6,Enemy,True) [11,1] 0x00 0x00 0x0 0x00 [Miasma] DefaultAI
-	UNIT 0x92 Shaman 0x90 Level(8,Enemy,True) [10,4] 0x00 0x00 0x0 0x00 [Miasma] DefaultAI 
+	UNIT SorcererBoss Shaman SorcererBoss Level(9,Enemy,False) [14,3] DropItem 0x00 0x0 0x00 [Miasma,Item100G] NeverMoveAI 
+	UNIT DumaFaith_Sorcerer Shaman SorcererBoss Level(6,Enemy,True) [10,2] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI 
+	UNIT DumaFaith_Sorcerer Mage SorcererBoss Level(7,Enemy,True) [12,4] DropItem 0x00 0x0 0x00 [Fire, HideShield, ChestKey] AttackInRangeAI 
+	UNIT DumaFaith_Sorcerer Shaman SorcererBoss Level(6,Enemy,True) [11,1] 0x00 0x00 0x0 0x00 [Miasma] DefaultAI
+	UNIT DumaFaith_Sorcerer Shaman SorcererBoss Level(8,Enemy,True) [10,4] 0x00 0x00 0x0 0x00 [Miasma] DefaultAI 
 	UNIT
 
 EnemyUnitsWitches:
-	UNIT 0x92 Mage_F 0x90 Level(3,Enemy,True) [11,0] 0x00 0x00 0x1 REDA11R2 [Thunder] DefaultAI
-	UNIT 0x95 Witch 0x90 Level(2,Enemy,True) [14,0] 0x00 0x00 0x1 REDA14R2 [Nosferatu] WitchWarpAI
+	UNIT DumaFaith_Witch Mage_F SorcererBoss Level(3,Enemy,True) [11,0] 0x00 0x00 0x1 REDA11R2 [Thunder] DefaultAI
+	UNIT DumaFaith_Witch_Slow Witch SorcererBoss Level(2,Enemy,True) [14,0] 0x00 0x00 0x1 REDA14R2 [Nosferatu] WitchWarpAI
 	UNIT
 
 Ch2_6_BeginningScene:
@@ -181,8 +181,8 @@ Ch2_6_BeginningScene:
 	MUSC SongID_Tension
 	FADU 16
 	STAL 20
-	CAM1 0x4F
-	FlashCursor(0x4F, 60)
+	CAM1 Jarth
+	FlashCursor(Jarth, 60)
 	STAL 20
 		CHECK_EXISTS Valbar
 		BEQ 0x1 0xC 0x0

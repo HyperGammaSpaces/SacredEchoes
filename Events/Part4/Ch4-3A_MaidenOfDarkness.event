@@ -119,15 +119,15 @@ PlayerPlacement:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [1,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [6,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
@@ -142,32 +142,32 @@ CutsceneUnits:
 EnemyUnits:
 	UNIT MarlaCh4 Witch	MarlaCh4 Level(9, Enemy, True) [14,2]	0x00 0x00 0x0 0x00 [Aura] NeverMoveAI
 	//4 barons
-	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [21,6] 0x00 0x00 0x0 0x00 [IronLance] ChaseOnceApproachedAI
-	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [BaseLance] ChaseOnceApproachedAI
-	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [13,4] 0x00 0x00 0x0 0x00 [BaseAxe] ChaseOnceApproachedAI
-	UNIT 0x88 Baron MarlaCh4 Level(1, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [IronAxe] ChaseOnceApproachedAI
+	UNIT Rigel_Soldier Baron MarlaCh4 Level(1, Enemy, True) [21,6] 0x00 0x00 0x0 0x00 [IronLance] ChaseOnceApproachedAI
+	UNIT Rigel_Soldier Baron MarlaCh4 Level(1, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [BaseLance] ChaseOnceApproachedAI
+	UNIT Rigel_Soldier Baron MarlaCh4 Level(1, Enemy, True) [13,4] 0x00 0x00 0x0 0x00 [BaseAxe] ChaseOnceApproachedAI
+	UNIT Rigel_Soldier Baron MarlaCh4 Level(1, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [IronAxe] ChaseOnceApproachedAI
 	//4 snipers
-	UNIT 0x89 Sniper MarlaCh4 Level(9, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
-	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [15,13] 0x00 0x00 0x0 0x00 [SteelBow] NoAI
-	UNIT 0x89 Sniper MarlaCh4 Level(10, Enemy, True) [19,12] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x89 Sniper MarlaCh4 Level(8, Enemy, True) [22,9] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper MarlaCh4 Level(9, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper MarlaCh4 Level(10, Enemy, True) [15,13] 0x00 0x00 0x0 0x00 [SteelBow] NoAI
+	UNIT Rigel_Archer Sniper MarlaCh4 Level(10, Enemy, True) [19,12] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper MarlaCh4 Level(8, Enemy, True) [22,9] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
 	//4 knights
-	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
-	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
-	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [20,13] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-	UNIT 0x88 Knight MarlaCh4 Level(13, Enemy, True) [21,8] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Knight MarlaCh4 Level(13, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT Rigel_Soldier Knight MarlaCh4 Level(13, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Rigel_Soldier Knight MarlaCh4 Level(13, Enemy, True) [20,13] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Soldier Knight MarlaCh4 Level(13, Enemy, True) [21,8] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	//2 paladins
-	UNIT 0x86 Paladin MarlaCh4 Level(8, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT 0x86 Paladin MarlaCh4 Level(8, Enemy, True) [18,13] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Cav Paladin MarlaCh4 Level(8, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Rigel_Cav Paladin MarlaCh4 Level(8, Enemy, True) [18,13] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
 	UNIT
 	
 WitchSummons:
-	UNIT 0x94 Witch	MarlaCh4 Level(8, Enemy, True) [12,1]	0x00 0x00 0x1 REDA12R1 [Thunder, Rewarp] WitchWarpAI
-	UNIT 0x94 Witch	MarlaCh4 Level(8, Enemy, True) [16,1]	0x00 0x00 0x1 REDA16R1 [Thunder, Rewarp] WitchWarpAI
+	UNIT DumaFaith_Witch Witch	MarlaCh4 Level(8, Enemy, True) [12,1]	0x00 0x00 0x1 REDA12R1 [Thunder, Rewarp] WitchWarpAI
+	UNIT DumaFaith_Witch Witch	MarlaCh4 Level(8, Enemy, True) [16,1]	0x00 0x00 0x1 REDA16R1 [Thunder, Rewarp] WitchWarpAI
 	UNIT
 	
 BrigandsReinforcements:
-	UNIT GenericPirate Brigand MarlaCh4 Level(20,Enemy,True) [17,9] 0x00 0x00 0x1 REDA17R9 [SilverAxe,Torch] BrigandAI
+	UNIT Bandit_Axe Brigand MarlaCh4 Level(20,Enemy,True) [17,9] 0x00 0x00 0x1 REDA17R9 [SilverAxe,Torch] BrigandAI
 	UNIT
 
 Dummy_BeginningScene:

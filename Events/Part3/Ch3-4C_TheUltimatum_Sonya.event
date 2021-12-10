@@ -91,7 +91,7 @@ Ch3_4C_UnitsNorth:
 	UNIT Mae Mage_F 0x00 Level(12,Ally,True) [3,1] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(12,Ally,True) [1,1] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Genny Cleric 0x00 Level(12,Ally,True) [2,0] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI
-	UNIT Saber Myrmidon 0x00 Level(5,Ally,True) [1,3] 0x00 0x00 0x0 0x00 [BaseSword, 0x78, Vulnerary] NoAI
+	UNIT Saber Myrmidon 0x00 Level(5,Ally,True) [1,3] 0x00 0x00 0x0 0x00 [BaseSword, GoldDagger, Vulnerary] NoAI
 	UNIT Leon Sniper 0x00 Level(5,Ally,True) [11,2] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
 	UNIT Palla PegasusKnight 0x00 Level(10,Ally,True) [13,2] 0x00 0x00 0x0 0x00 [BaseLance, Javelin, Vulnerary] NoAI
 	UNIT Catria PegasusKnight 0x00 Level(10,Ally,True) [12,3] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing, Vulnerary] NoAI
@@ -109,22 +109,22 @@ Ch3_4C_UnitsNorth:
 
 EnemyUnitsSonya:
 	UNIT SonyaBoss Mage_F SonyaBoss Level(10, Enemy, False) [10,18] 0x00 0x00 0x0 0x00 [Excalibur,SteelShield] DefensiveTerrainAI
-	UNIT 0x87 Mercenary	SonyaBoss Level(15, Enemy, True) [9,5]	DropItem 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
-	UNIT 0x8C Witch	SonyaBoss Level(7, Enemy, True) [9,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
-	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [11,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
-	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [8,18]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	UNIT 0x8C Witch	SonyaBoss Level(5, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [Nosferatu] NoAI
-	UNIT 0x8C Witch	SonyaBoss Level(6, Enemy, True) [7,12]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
-	UNIT 0x8C Witch	SonyaBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
-	UNIT 0x8C Mage_F	SonyaBoss Level(10, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [Thunder] NoAI
-	UNIT 0x8C Mage_F	SonyaBoss Level(12, Enemy, True) [7,17]	0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT 0x8C Mage_F	SonyaBoss Level(9, Enemy, True) [5,6]	0x00 0x00 0x0 0x00 [Aura] AttackInRangeAI
-	UNIT 0x8C Mage_F	SonyaBoss Level(12, Enemy, True) [8,8]	0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT 0x87 Mercenary	SonyaBoss Level(15, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	SonyaBoss Level(15, Enemy, True) [9,5]	DropItem 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(7, Enemy, True) [9,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [11,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [8,18]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(5, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [Nosferatu] NoAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [7,12]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
+	UNIT Rigel_Witch Mage_F	SonyaBoss Level(10, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [Thunder] NoAI
+	UNIT Rigel_Witch Mage_F	SonyaBoss Level(12, Enemy, True) [7,17]	0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT Rigel_Witch Mage_F	SonyaBoss Level(9, Enemy, True) [5,6]	0x00 0x00 0x0 0x00 [Aura] AttackInRangeAI
+	UNIT Rigel_Witch Mage_F	SonyaBoss Level(12, Enemy, True) [8,8]	0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT Rigel_Merc Mercenary	SonyaBoss Level(15, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
 	UNIT
 	
 ReinforcementsSonya:
-	UNIT 0x87 Mercenary	SonyaBoss Level(14, Enemy, True) [15,8]	0x00 0x00 0x1 REDA15R8 [Rapier] NoAI
+	UNIT Rigel_Merc Mercenary	SonyaBoss Level(14, Enemy, True) [15,8]	0x00 0x00 0x1 REDA15R8 [Rapier] NoAI
 	UNIT
 
 Ch3_4C_BeginningScene:

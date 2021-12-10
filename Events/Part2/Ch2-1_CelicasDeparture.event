@@ -113,29 +113,29 @@ Ch2_1_PlayerSkirmishUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT 0x5F Revenant 0x5F Level(3,Enemy,True) [9,9] DropItem 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI // A matter of personal preference, but I would not put spaces after commas.
-	UNIT 0xAA Revenant 0x5F Level(1,Enemy,True) [12,11] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI // Keeps things more compact, so "Level(1,Enemy,True)" instead of "Level(1, Enemy, 1)".
-	UNIT 0xAA Bonewalker 0x5F Level(1,Enemy,True) [10,7] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI // Also note my use of "True" instead of "1".
-	UNIT 0xAA Revenant 0x5F Level(2,Enemy,True) [15,1] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
-	UNIT 0xAA Revenant 0x5F Level(3,Enemy,True) [13,4] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
-	UNIT 0xAA Revenant 0x5F Level(1,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
-	UNIT 0xAD Bonewalker_Bow 0x5F Level(1,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT 0xAA Revenant 0x5F Level(1,Enemy,True) [5,5] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
-	UNIT 0xAA Revenant 0x5F Level(3,Enemy,True) [2,4] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
-	UNIT 0xAA Revenant 0x5F Level(2,Enemy,True) [7,10] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT Boss_Monster Revenant Boss_Monster Level(3,Enemy,True) [9,9] DropItem 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI // A matter of personal preference, but I would not put spaces after commas.
+	UNIT 0xAA Revenant Boss_Monster Level(1,Enemy,True) [12,11] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI // Keeps things more compact, so "Level(1,Enemy,True)" instead of "Level(1, Enemy, 1)".
+	UNIT 0xAA Bonewalker Boss_Monster Level(1,Enemy,True) [10,7] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI // Also note my use of "True" instead of "1".
+	UNIT 0xAA Revenant Boss_Monster Level(2,Enemy,True) [15,1] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT 0xAA Revenant Boss_Monster Level(3,Enemy,True) [13,4] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT 0xAA Revenant Boss_Monster Level(1,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT 0xAD Bonewalker_Bow Boss_Monster Level(1,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT 0xAA Revenant Boss_Monster Level(1,Enemy,True) [5,5] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT 0xAA Revenant Boss_Monster Level(3,Enemy,True) [2,4] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT 0xAA Revenant Boss_Monster Level(2,Enemy,True) [7,10] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
 	UNIT
 
 EnemySkirmishUnits:
-	UNIT 0x5F Revenant 0x5F Level(3,Enemy,True) [9,9] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI 
-	UNIT 0xAA Random_RevBonewalker 0x5F Level(1,Enemy,True) [12,11] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
-	UNIT 0xAC Bonewalker 0x5F Level(1,Enemy,True) [10,7] RandomizePosition 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
-	UNIT 0xAA Random_RevBonewalker 0x5F Level(2,Enemy,True) [15,1] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
-	UNIT 0xAA Random_RevBonewalker 0x5F Level(3,Enemy,True) [13,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT 0xAA Random_RevBonewalker 0x5F Level(1,Enemy,True) [7,2] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT 0xAD Bonewalker_Bow 0x5F Level(1,Enemy,True) [14,7] RandomizePosition 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT 0xAA Random_RevBonewalker 0x5F Level(1,Enemy,True) [5,5] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
-	UNIT 0xAA Random_RevBonewalker 0x5F Level(3,Enemy,True) [2,4] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT 0xAA Random_RevBonewalker 0x5F Level(2,Enemy,True) [7,10] MonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Boss_Monster Revenant Boss_Monster Level(3,Enemy,True) [9,9] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(1,Enemy,True) [12,11] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT 0xAC Bonewalker Boss_Monster Level(1,Enemy,True) [10,7] RandomizePosition 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(2,Enemy,True) [15,1] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(3,Enemy,True) [13,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(1,Enemy,True) [7,2] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT 0xAD Bonewalker_Bow Boss_Monster Level(1,Enemy,True) [14,7] RandomizePosition 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(1,Enemy,True) [5,5] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(3,Enemy,True) [2,4] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(2,Enemy,True) [7,10] MonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
 	UNIT
 
 Ch2_1_BeginningScene:

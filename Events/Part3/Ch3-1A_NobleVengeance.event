@@ -102,19 +102,19 @@ CutsceneUnits:
 
 EnemyUnits:
 	UNIT Zaxon Knight	0x00 Level(8, Enemy, False) [4,2]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-	UNIT 0x8B Shaman	Zaxon Level(9, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI 
-	UNIT 0x8C Witch	Zaxon Level(2, Enemy, True) [7,1]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
-	UNIT 0x8C Witch	Zaxon Level(2, Enemy, True) [9,2]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	UNIT 0x88 Soldier	Zaxon Level(11, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-	UNIT 0x88 Soldier	Zaxon Level(11, Enemy, True) [12,3]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x88 Soldier	Zaxon Level(9, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
-	UNIT 0x88 Knight	Zaxon Level(3, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
-	UNIT 0x88 Knight	Zaxon Level(4, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
-	UNIT 0x89 Archer	Zaxon Level(10, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x89 Archer	Zaxon Level(11, Enemy, True) [15,8]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
-	UNIT 0x86 Cavalier_F	Zaxon Level(11, Enemy, True) [6,5]	0x00 0x00 0x0 0x00 [Axereaver] AttackInRangeAI
-	UNIT 0x86 Cavalier	Zaxon Level(11, Enemy, True) [8,5]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	UNIT 0x89 Archer_F	Zaxon Level(13, Enemy, True) [7,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT Rigel_Mage Shaman	Zaxon Level(9, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI 
+	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [7,1]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
+	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [9,2]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT Rigel_Soldier Soldier	Zaxon Level(11, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Rigel_Soldier Soldier	Zaxon Level(11, Enemy, True) [12,3]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Rigel_Soldier Soldier	Zaxon Level(9, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Zaxon Level(3, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Zaxon Level(4, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Rigel_Archer Archer	Zaxon Level(10, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Rigel_Archer Archer	Zaxon Level(11, Enemy, True) [15,8]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier_F	Zaxon Level(11, Enemy, True) [6,5]	0x00 0x00 0x0 0x00 [Axereaver] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier	Zaxon Level(11, Enemy, True) [8,5]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Rigel_Archer Archer_F	Zaxon Level(13, Enemy, True) [7,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
 	UNIT
 
 FernandUnpromoted:
@@ -126,20 +126,20 @@ FernandPromoted:
 	UNIT
 
 CavalierGroup:
-	UNIT 0x86 Cavalier	FernandEnemy1 Level(9, Enemy, True) [6,14]	0x00 0x00 0x0 0x00 [Javelin] MoveWithLeaderAI
-	UNIT 0x86 Cavalier_F	FernandEnemy1 Level(11, Enemy, True) [6,15]	0x00 0x00 0x0 0x00 [HeavySpear] MoveWithLeaderAI
-	UNIT 0x86 Cavalier	FernandEnemy1 Level(10, Enemy, True) [5,16]	0x00 0x00 0x0 0x00 [IronLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Cavalier	FernandEnemy1 Level(9, Enemy, True) [6,14]	0x00 0x00 0x0 0x00 [Javelin] MoveWithLeaderAI
+	UNIT Rigel_Cav Cavalier_F	FernandEnemy1 Level(11, Enemy, True) [6,15]	0x00 0x00 0x0 0x00 [HeavySpear] MoveWithLeaderAI
+	UNIT Rigel_Cav Cavalier	FernandEnemy1 Level(10, Enemy, True) [5,16]	0x00 0x00 0x0 0x00 [IronLance] MoveWithLeaderAI
 	UNIT
 	
 Reinforcements1:
-	UNIT 0x86 Cavalier	Zaxon Level(10, Enemy, True) [16,1]	0x00 0x00 0x1 REDA16R1 [IronLance] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier	Zaxon Level(10, Enemy, True) [16,1]	0x00 0x00 0x1 REDA16R1 [IronLance] AttackInRangeAI
 	UNIT
 Reinforcements2:
-	UNIT 0x86 Cavalier	Zaxon Level(8, Enemy, True) [18,14]	0x00 0x00 0x1 REDA18R14 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier	Zaxon Level(8, Enemy, True) [18,14]	0x00 0x00 0x1 REDA18R14 [SteelLance] AttackInRangeAI
 	UNIT
 	
 BrigandsReinforcements:
-	UNIT GenericPirate Brigand Zaxon Level(13,Enemy,True) [17,16] 0x00 0x00 0x1 REDA17R16 [SteelAxe,Torch] BrigandAI
+	UNIT Bandit_Axe Brigand Zaxon Level(13,Enemy,True) [17,16] 0x00 0x00 0x1 REDA17R16 [SteelAxe,Torch] BrigandAI
 	UNIT
 
 

@@ -26,7 +26,7 @@ MercEvent:
 	CAM1 Alm
 	STAL 30
 	MUSI
-	CAM1 0x48
+	CAM1 LeatherShieldMerc
 	STAL 30
 	FlashCursor(1, 6, 60)
 	Text(Ch1_4_MercText)
@@ -79,7 +79,7 @@ Ch1_4_Units1:
 	UNIT Kliff Mage 0x00 Level(1,Ally,True) [7,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Faye Cleric 0x00 Level(1,Ally,True) [5,15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(3,Ally,True) [3, 15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Acantha 0xE 0x00 Level(3,Ally,True) [1,15] 0x00 0x00 0x0 0x00 [BaseSword, Lockpick] NoAI
+	UNIT Acantha Thief_F 0x00 Level(3,Ally,True) [1,15] 0x00 0x00 0x0 0x00 [BaseSword, Lockpick] NoAI
 	UNIT
 #else
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -89,26 +89,26 @@ Ch1_4_Units1:
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [5,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [3, 15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Acantha 0xE 0x00 Level(3, Ally, 1) [1,15] 0x00 0x00 0x0 0x00 [BaseSword, Lockpick] NoAI
+	UNIT Acantha Thief_F 0x00 Level(3, Ally, 1) [1,15] 0x00 0x00 0x0 0x00 [BaseSword, Lockpick] NoAI
 	UNIT
 #endif
 
 EnemyUnits:
-	UNIT 0x48 Mercenary 0x00 Level(8, Enemy, 0) [1,6] DropItem 0x00 0x0 0x00 [BaseSword, HideShield] NoAI
-	UNIT 0x65 Brigand 0x48 Level(8, Enemy, 1) [11,2] DropItem 0x00 0x0 0x00 [BaseAxe, _200G] AttackInRangeAI
-	UNIT 0x65 Archer 0x48 Level(5, Enemy, 1) [9,3] 0x00 0x00 0x0 0x00  [BaseBow] NoAI
-	UNIT 0x65 Archer 0x48 Level(4, Enemy, 1) [14,9] 0x00 0x00 0x0 0x00  [BaseBow] AttackInRangeAI 
-	UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [14,3] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI //turn 1 
-	UNIT 0x65 Brigand 0x48 Level(5, Enemy, 1) [13,4] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI 
-	UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [14,4] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI //turn 2
-	UNIT 0x65 Brigand 0x48 Level(5, Enemy, 1) [11,5] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI 
-	UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [12,9] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
-	UNIT 0x65 Brigand 0x48 Level(5, Enemy, 1) [13,10] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
-	UNIT 0x65 Brigand 0x48 Level(6, Enemy, 1) [14,11] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT LeatherShieldMerc Mercenary 0x00 Level(8, Enemy, 0) [1,6] DropItem 0x00 0x0 0x00 [BaseSword, HideShield] NoAI
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(8, Enemy, 1) [11,2] DropItem 0x00 0x0 0x00 [BaseAxe, _200G] AttackInRangeAI
+	UNIT Bandit_Bow Archer LeatherShieldMerc Level(5, Enemy, 1) [9,3] 0x00 0x00 0x0 0x00  [BaseBow] NoAI
+	UNIT Bandit_Bow Archer LeatherShieldMerc Level(4, Enemy, 1) [14,9] 0x00 0x00 0x0 0x00  [BaseBow] AttackInRangeAI 
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [14,3] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI //turn 1 
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(5, Enemy, 1) [13,4] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI 
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [14,4] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI //turn 2
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(5, Enemy, 1) [11,5] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [12,9] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(5, Enemy, 1) [13,10] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [14,11] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
 	UNIT
 
 Reinforcements1:
-	UNIT 0x65 Brigand 0x48 Level(7, Enemy, 1) [15,2] 0x00 0x00 0x1 REDA15R3  [BaseAxe,Torch] BrigandAI
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(7, Enemy, 1) [15,2] 0x00 0x00 0x1 REDA15R3  [BaseAxe,Torch] BrigandAI
 	UNIT
 
 Ch1_4_BeginningScene:
@@ -129,9 +129,9 @@ Ch1_4_BeginningScene:
 	TEXTSTART
 	TEXTSHOW Ch1_4_OpeningScene
 	TEXTEND
-	CAM1 0x48
+	CAM1 LeatherShieldMerc
 	STAL 6
-	FlashCursor(0x48, 60)
+	FlashCursor(LeatherShieldMerc, 60)
 	TEXTCONT
 	TEXTEND
 	CAM1 Alm

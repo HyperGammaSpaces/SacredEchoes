@@ -64,17 +64,17 @@ SaberJoins:
 	UNIT
 
 EnemyUnits:
-	UNIT 0x4c Pirate 0x4c Level(7,Enemy,True) [11,11] DropItem 0x00 0x0 0x00 [BaseAxe,Item100G] AttackInRangeAI 
-	UNIT 0x65 Pirate_F 0x4c Level(3,Enemy,True) [10,4] DropItem 0x00 0x0 0x00 [BaseAxe, ChestKey] NeverMoveAI 
-	UNIT 0x65 Pirate 0x4c Level(4,Enemy,True) [11,4] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT 0x65 Brigand 0x4c Level(2,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT 0x65 Pirate 0x4c Level(3,Enemy,True) [10,9] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT 0x65 Brigand 0x4c Level(2,Enemy,True) [10,8] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT 0x66 Archer 0x4c Level(2,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT 0x66 Archer 0x4c Level(2,Enemy,True) [12,11] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT 0x65 Pirate 0x4c Level(4,Enemy,True) [10,7] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT 0x65 Pirate 0x4c Level(3,Enemy,True) [9,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT 0x65 Pirate 0x4c Level(3,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT PirateCelica1 Pirate PirateCelica1 Level(7,Enemy,True) [11,11] DropItem 0x00 0x0 0x00 [BaseAxe,Item100G] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate_F PirateCelica1 Level(3,Enemy,True) [10,4] DropItem 0x00 0x0 0x00 [BaseAxe, ChestKey] NeverMoveAI 
+	UNIT Bandit_Axe Pirate PirateCelica1 Level(4,Enemy,True) [11,4] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Axe Brigand PirateCelica1 Level(2,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT Bandit_Axe Pirate PirateCelica1 Level(3,Enemy,True) [10,9] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Axe Brigand PirateCelica1 Level(2,Enemy,True) [10,8] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Bow Archer PirateCelica1 Level(2,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT Bandit_Bow Archer PirateCelica1 Level(2,Enemy,True) [12,11] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate PirateCelica1 Level(4,Enemy,True) [10,7] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT Bandit_Axe Pirate PirateCelica1 Level(3,Enemy,True) [9,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate PirateCelica1 Level(3,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
 	UNIT
 
 Ch2_2_BeginningScene:
@@ -108,10 +108,10 @@ Ch2_2_BeginningScene:
 	REMOVEPORTRAITS
 	STAL 90
 		
-	//give item 0x78 for G.Dagger
+	//give item GoldDagger for G.Dagger
 	//TODO: add 7743's EVENTSCRIPT_COND_ITEM ASMC to remove the item before re-giving
-	RemoveItemFromAny(0x78)
-	SVAL 0x3 0x78
+	RemoveItemFromAny(GoldDagger)
+	SVAL 0x3 GoldDagger
 	GIVEITEMTO Saber
 	STAL 20
 
@@ -153,8 +153,8 @@ Ch2_2_BeginningScene:
 
 	MUSC SongID_Tension
 	//Pirates say something
-	CAM1 0x4c
-	FlashCursor(0x4c, 60)
+	CAM1 PirateCelica1
+	FlashCursor(PirateCelica1, 60)
 	Text(Ch2_2_Pirates)
 	//Trigger map change 1 here
 	SOUN 0xF2

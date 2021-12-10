@@ -26,7 +26,7 @@ Ch2_5_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(5,12)
 	#endif
-	Chest(0x5D, 15, 12) //skill statbooster
+	Chest(Persephone, 15, 12) //skill statbooster
 	LOCA
 
 Ch2_5_MiscBasedEvents:
@@ -72,20 +72,20 @@ PlayerUnits:
 #endif
 	
 EnemyUnits:
-	UNIT 0x8F Cantor 0x8F Level(1,Enemy,True) [13,5] 0x06 0x00 0x0 0x00 [Miasma, Lifefruit] NeverMoveAI 
-	UNIT 0xAA Revenant 0x8F Level(11,Enemy,True) [13,14] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
-	UNIT 0xAA Revenant 0x8F Level(9,Enemy,True) [11,6] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
-	UNIT 0xAA Revenant 0x8F Level(9,Enemy,True) [11,8] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
-	UNIT 0xAC Bonewalker 0x8F Level(9,Enemy,True) [12,7] 0x04 0x00 0x0 0x00 [Zanbato] AttackInRangeAI
-	UNIT 0xAA Revenant 0x8F Level(10,Enemy,True) [13,9] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
-	UNIT 0xAC Bonewalker 0x8F Level(7,Enemy,True) [11,13] 0x04 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0xAD Bonewalker_Bow 0x8F Level(7,Enemy,True) [15,14] 0x04 0x00 0x0 0x00 [IronBow] NoAI
+	UNIT CantorBoss_Celica5 Cantor CantorBoss_Celica5 Level(1,Enemy,True) [13,5] 0x06 0x00 0x0 0x00 [Miasma, Lifefruit] NeverMoveAI 
+	UNIT 0xAA Revenant CantorBoss_Celica5 Level(11,Enemy,True) [13,14] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAA Revenant CantorBoss_Celica5 Level(9,Enemy,True) [11,6] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAA Revenant CantorBoss_Celica5 Level(9,Enemy,True) [11,8] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(9,Enemy,True) [12,7] 0x04 0x00 0x0 0x00 [Zanbato] AttackInRangeAI
+	UNIT 0xAA Revenant CantorBoss_Celica5 Level(10,Enemy,True) [13,9] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(7,Enemy,True) [11,13] 0x04 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT 0xAD Bonewalker_Bow CantorBoss_Celica5 Level(7,Enemy,True) [15,14] 0x04 0x00 0x0 0x00 [IronBow] NoAI
 	UNIT
 	
 ZombieGroup:
-	UNIT 0xB0 Bael 0x8F Level(8,Enemy,True) [13,6] 0x04 0x00 0x1 REDA13R6 [RottenClaw] NoAI
-	UNIT 0xAA Revenant 0x8F Level(8,Enemy,True) [12,5] 0x04 0x00 0x1 REDA12R5 [RottenClaw] NoAI
-	UNIT 0xAA Revenant 0x8F Level(8,Enemy,True) [14,5] 0x04 0x00 0x1 REDA14R5 [RottenClaw] NoAI
+	UNIT 0xB0 Bael CantorBoss_Celica5 Level(8,Enemy,True) [13,6] 0x04 0x00 0x1 REDA13R6 [RottenClaw] NoAI
+	UNIT 0xAA Revenant CantorBoss_Celica5 Level(8,Enemy,True) [12,5] 0x04 0x00 0x1 REDA12R5 [RottenClaw] NoAI
+	UNIT 0xAA Revenant CantorBoss_Celica5 Level(8,Enemy,True) [14,5] 0x04 0x00 0x1 REDA14R5 [RottenClaw] NoAI
 	UNIT
 
 Ch2_5_BeginningScene:
@@ -125,9 +125,9 @@ Ch2_5_BeginningScene:
 	ENUN
 	FADU 16
 	STAL 20
-	CAM1 0x8F
+	CAM1 CantorBoss_Celica5
 	STAL 20
-	FlashCursor(0x8F, 60)
+	FlashCursor(CantorBoss_Celica5, 60)
 	
 	CharacterConditionalDialog(Boey, Ch2_5_OpeningText_2, Ch2_5_OpeningText_2_NoBoey)
 	
@@ -150,9 +150,9 @@ LoadSummons: //every other turn, shamelessly stolen from VBA for now lol
 	SMUL slotsParam(r1, r2)     //r1 = r2*2
 	SSUB slotsParam(r1, rC, r1) //r1 -= rC, r1 = remainder
 	BNE 0x0 r1 0
-	CAM1 0x8F
+	CAM1 CantorBoss_Celica5
 	ENUN
-	FlashCursor(0x8F, 60)
+	FlashCursor(CantorBoss_Celica5, 60)
 	SOUN 0x3BF //summoning SFX
 	STAL 20
 	ReinforcementEvent(ZombieGroup) //Remainder was 0 (right)

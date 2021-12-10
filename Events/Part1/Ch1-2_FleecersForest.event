@@ -24,9 +24,9 @@ ArcherEvent:
 	MUSC SongID_MarchToDeliverance // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
 	MUSI
 	STAL 30
-	//SHOW_ATTACK_RANGE 0x66
+	//SHOW_ATTACK_RANGE Bandit_Bow
 	//STAL 5
-	FlashCursor(0x66, 60)
+	FlashCursor(Bandit_Bow, 60)
 	//HIDE_ATTACK_RANGE
 	//STAL 5
 	Text(Ch1_2_ArcherText)
@@ -76,15 +76,15 @@ Ch1_2_Units1:
 	UNIT
 
 EnemyUnits:
-	UNIT 0x46 Brigand 0x00 Level(5, Enemy, 1) [15,1] DropItem 0x00 0x0 0x00 [IronAxe, _200G] NeverMoveAI
-	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [13,2] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
-	UNIT 0x66 Archer 0x46 Level(3, Enemy, 1) [10,2] 0x00 0x00 0x0 0x00  [BaseBow]  AttackSnagsAI
-	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [16,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
-	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [6,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing 
-	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [7,7] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 
-	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [8,8] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 
-	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [14,6] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI 
-	UNIT 0x65 Brigand 0x46 Level(3, Enemy, 1) [15,7] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT BanditAlm2 Brigand 0x00 Level(5, Enemy, 1) [15,1] DropItem 0x00 0x0 0x00 [IronAxe, _200G] NeverMoveAI
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [13,2] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
+	UNIT Bandit_Bow Archer BanditAlm2 Level(3, Enemy, 1) [10,2] 0x00 0x00 0x0 0x00  [BaseBow]  AttackSnagsAI
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [16,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [6,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing 
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [7,7] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [8,8] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [14,6] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [15,7] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
 	UNIT
 
 Ch1_2_BeginningScene:

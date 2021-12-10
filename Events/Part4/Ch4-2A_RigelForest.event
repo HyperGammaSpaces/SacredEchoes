@@ -110,31 +110,31 @@ CutsceneUnits_Nuibaba:
 
 EnemyUnits:
 	UNIT XaizorCh4_2 DreadFighter	XaizorCh4_2 Level(7, Enemy, True) [2,12]	0x00 0x00 0x0 0x00 [IronSword] GuardTileAI
-	UNIT 0x87 DreadFighter XaizorCh4_2 Level(1, Enemy, True) [3,3] 0x00 0x00 0x0 0x00 [BaseSword] NeverMoveAI
+	UNIT Rigel_Merc DreadFighter XaizorCh4_2 Level(1, Enemy, True) [3,3] 0x00 0x00 0x0 0x00 [BaseSword] NeverMoveAI
 	//knights
-	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [2,4] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
-	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
-	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [4,4] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
-	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [8,12] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
-	UNIT 0x88 Knight XaizorCh4_2 Level(7, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
-	UNIT 0x88 Knight XaizorCh4_2 Level(9, Enemy, True) [14,6] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(9, Enemy, True) [2,4] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(9, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(9, Enemy, True) [4,4] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(9, Enemy, True) [8,12] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(7, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(9, Enemy, True) [14,6] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	//archers
-	UNIT 0x89 Sniper XaizorCh4_2 Level(9, Enemy, True) [6,2] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
-	UNIT 0x89 Sniper XaizorCh4_2 Level(7, Enemy, True) [9,9] 0x00 0x00 0x0 0x00 [SilverBow] NeverMoveAI
-	UNIT 0x89 Sniper XaizorCh4_2 Level(9, Enemy, True) [11,6] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT 0x89 Sniper XaizorCh4_2 Level(9, Enemy, True) [17,4] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-	UNIT 0x89 Sniper XaizorCh4_2 Level(9, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper XaizorCh4_2 Level(9, Enemy, True) [6,2] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper XaizorCh4_2 Level(7, Enemy, True) [9,9] 0x00 0x00 0x0 0x00 [SilverBow] NeverMoveAI
+	UNIT Rigel_Archer Sniper XaizorCh4_2 Level(9, Enemy, True) [11,6] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper XaizorCh4_2 Level(9, Enemy, True) [17,4] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper XaizorCh4_2 Level(9, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	//mages and witches
-	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [3,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [9,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [18,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT 0x8B Arcanist XaizorCh4_2 Level(5, Enemy, True) [15,2] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [3,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [9,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [18,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT
 	
 CavReinforcements:
-	UNIT 0x86 Paladin	XaizorCh4_2 Level(5, Enemy, True) [18,0]	0x00 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0x86 Paladin	XaizorCh4_2 Level(5, Enemy, True) [21,6]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Rigel_Cav Paladin	XaizorCh4_2 Level(5, Enemy, True) [18,0]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Rigel_Cav Paladin	XaizorCh4_2 Level(5, Enemy, True) [21,6]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
 	
 AlmEndReda1:

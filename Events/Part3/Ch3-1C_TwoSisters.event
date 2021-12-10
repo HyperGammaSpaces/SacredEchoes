@@ -73,7 +73,7 @@ PlayerUnits:
 	UNIT Mae Mage_F 0x00 Level(9,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(9,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Genny Cleric 0x00 Level(9,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI 
-	UNIT Saber Myrmidon 0x00 Level(3,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, 0x78, Vulnerary] NoAI 
+	UNIT Saber Myrmidon 0x00 Level(3,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, GoldDagger, Vulnerary] NoAI 
 	UNIT Valbar Knight 0x00 Level(6,Ally,True) [11,8] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe,Vulnerary] NoAI
 	UNIT Leon Sniper 0x00 Level(3,Ally,True) [12,8] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
 	UNIT Kamui Mercenary 0x00 Level(9,Ally,True) [13,8] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
@@ -93,32 +93,32 @@ PlayerUnits:
 EnemyUnits:
 	//Pier
 	UNIT Garth Pirate Garth Level(15,Enemy,False) [19,14] DropItem 0x00 0x0 0x00 [KillerAxe, HandAxe, _200G] NeverMoveAI 
-	UNIT 0x66 Archer Garth Level(9, Enemy,True) [20,15] 0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
-	UNIT GenericPirate Mercenary Garth Level(10,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT GenericPirate Pirate Garth Level(12,Enemy,True) [13,13] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
-	UNIT GenericPirate Pirate Garth Level(14,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [HandAxe] StallOneTurnAI
-	UNIT 0x67 Mercenary Garth Level(10,Enemy,True) [18,11] 0x00 0x00 0x0 0x00 [Lancereaver] StallOneTurnAI
-	UNIT GenericPirate Mercenary Garth Level(10,Enemy,True) [19,10] 0x00 0x00 0x0 0x00 [SteelSword] StallOneTurnAI
-	UNIT StrongGenericPirate Pirate_F Garth Level(11,Enemy,True) [11,9] 0x00 0x00 0x0 0x00 [Hammer,IronShield] NeverMoveAI
+	UNIT Bandit_Bow Archer Garth Level(9, Enemy,True) [20,15] 0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
+	UNIT Bandit_Sword Mercenary Garth Level(10,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(12,Enemy,True) [13,13] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(14,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [HandAxe] StallOneTurnAI
+	UNIT Enemy_Mercenary Mercenary Garth Level(10,Enemy,True) [18,11] 0x00 0x00 0x0 0x00 [Lancereaver] StallOneTurnAI
+	UNIT Bandit_Sword Mercenary Garth Level(10,Enemy,True) [19,10] 0x00 0x00 0x0 0x00 [SteelSword] StallOneTurnAI
+	UNIT Bandit_Strong Pirate_F Garth Level(11,Enemy,True) [11,9] 0x00 0x00 0x0 0x00 [Hammer,IronShield] NeverMoveAI
 	//West block
-	UNIT 0x67 Mercenary Garth Level(10,Enemy,True) [8,7] 0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT 0x66 Archer_F Garth Level(12, Enemy,True) [8,6] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT GenericPirate Pirate_F Garth Level(13,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
-	UNIT StrongGenericPirate Pirate_F Garth Level(12,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [Swordreaver] NoAI
-	UNIT GenericPirate Pirate Garth Level(10,Enemy,True) [9,6] 0x00 0x00 0x0 0x00 [Hammer] NoAI
-	UNIT GenericPirate Pirate Garth Level(11,Enemy,True) [7,7] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
-	UNIT GenericPirate Pirate Garth Level(11,Enemy,True) [8,5] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
-	UNIT GenericPirate Pirate_F Garth Level(10,Enemy,True) [7,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
-	UNIT GenericPirate Brigand Garth Level(12,Enemy,True) [6,5] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Enemy_Mercenary Mercenary Garth Level(10,Enemy,True) [8,7] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Bandit_Bow Archer_F Garth Level(12, Enemy,True) [8,6] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F Garth Level(13,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+	UNIT Bandit_Strong Pirate_F Garth Level(12,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [Swordreaver] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(10,Enemy,True) [9,6] 0x00 0x00 0x0 0x00 [Hammer] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [7,7] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [8,5] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F Garth Level(10,Enemy,True) [7,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Bandit_Axe Brigand Garth Level(12,Enemy,True) [6,5] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	//North block
-	UNIT 0x67 Mercenary Garth Level(10,Enemy,True) [16,3] 0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT GenericPirate Pirate_F Garth Level(10,Enemy,True) [15,3] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-	UNIT GenericPirate Pirate_F Garth Level(9,Enemy,True) [14,3] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-	UNIT GenericPirate Pirate Garth Level(10,Enemy,True) [18,2] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
-	UNIT GenericPirate Pirate Garth Level(11,Enemy,True) [19,2] 0x00 0x00 0x0 0x00 [Swordreaver] NoAI
-	UNIT GenericPirate Pirate Garth Level(11,Enemy,True) [18,3] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
-	UNIT GenericPirate Pirate_F Garth Level(10,Enemy,True) [21,3] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
-	UNIT GenericPirate Pirate Garth Level(11,Enemy,True) [20,4] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Enemy_Mercenary Mercenary Garth Level(10,Enemy,True) [16,3] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Bandit_Axe Pirate_F Garth Level(10,Enemy,True) [15,3] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT Bandit_Axe Pirate_F Garth Level(9,Enemy,True) [14,3] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(10,Enemy,True) [18,2] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [19,2] 0x00 0x00 0x0 0x00 [Swordreaver] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [18,3] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F Garth Level(10,Enemy,True) [21,3] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [20,4] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	UNIT
 	
 PegasusKnights:

@@ -31,7 +31,7 @@ TalkToZeke:
 	Text(Ch4_5A_TatianaRecruitsZeke)
 	SVAL 0x1 0x0
 	CHAI Zeke
-	//CHAI 0x86
+	//CHAI Rigel_Cav
 	STAL 5
 	CUSA Zeke
 	STAL 0x14
@@ -49,7 +49,7 @@ TalkToZekeAlm:
 	Text(Ch4_5A_AlmRecruitsZeke)
 	SVAL 0x1 0x0
 	CHAI Zeke
-	//CHAI 0x86
+	//CHAI Rigel_Cav
 	STAL 5
 	CUSA Zeke
 	STAL 0x14
@@ -131,41 +131,41 @@ CutsceneUnits:
 EnemyUnits:
 	UNIT JeromeCh4_5 GoldKnight	JeromeCh4_5 Level(9, Enemy, True) [10,5]	0x00 0x00 0x0 0x00 [SilverLance,Javelin] NeverMoveAI
 	UNIT 0x87 Paladin JeromeCh4_5 Level(12, Enemy, True) [8,10] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
-	UNIT 0x86 Paladin 0x87 Level(11, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin 0x87 Level(10, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [Saunion] MoveWithLeaderAI
-	UNIT 0x86 Paladin 0x87 Level(12, Enemy, True) [11,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x8B Arcanist JeromeCh4_5 Level(8, Enemy, True) [12,7] 0x00 0x00 0x0 0x00 [Mire,Physic] MoveWithLeaderAI
-	UNIT 0x8B Arcanist JeromeCh4_5 Level(8, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [Mire,Physic] HealUnits
-	UNIT 0x86 GoldKnight 0x8A Level(2, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x8A GoldKnight JeromeCh4_5 Level(2, Enemy, True) [10,8] 0x00 0x00 0x0 0x00 [SteelLance] AttackInHalfRangeAI
-	UNIT 0x89 BowKnight JeromeCh4_5 Level(4, Enemy, True) [9,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
-	UNIT 0x89 BowKnight JeromeCh4_5 Level(4, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
+	UNIT Rigel_Cav Paladin 0x87 Level(11, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin 0x87 Level(10, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [Saunion] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin 0x87 Level(12, Enemy, True) [11,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(8, Enemy, True) [12,7] 0x00 0x00 0x0 0x00 [Mire,Physic] MoveWithLeaderAI
+	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(8, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [Mire,Physic] HealUnits
+	UNIT Rigel_Cav GoldKnight Rigel_Wyvern Level(2, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Wyvern GoldKnight JeromeCh4_5 Level(2, Enemy, True) [10,8] 0x00 0x00 0x0 0x00 [SteelLance] AttackInHalfRangeAI
+	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(4, Enemy, True) [9,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
+	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(4, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
 	UNIT
 	
 ZekeUnits:
 	UNIT Zeke GoldKnight 0x00 Level(3,NPC,False) [18,7] 0x00 0x00 0x0 0x00 [SilverLance, BaseLance] AttackInHalfRangeAI
-	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [17,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [19,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [17,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [19,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-	UNIT 0x86 Paladin Zeke Level(12, NPC, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-	UNIT 0x86 BowKnight Zeke Level(2, NPC, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
-	UNIT 0x86 BowKnight Zeke Level(2, NPC, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT 0x86 BowKnight Zeke Level(2, NPC, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [17,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [19,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [17,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [19,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Cav BowKnight Zeke Level(2, NPC, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
+	UNIT Rigel_Cav BowKnight Zeke Level(2, NPC, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT Rigel_Cav BowKnight Zeke Level(2, NPC, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
 	UNIT
 	
 ZekeEnemyUnits:
 	UNIT ZekeBoss GoldKnight 0x00 Level(3,Enemy,False) [18,7] 0x00 0x00 0x0 0x00 [BaseLance] DefensiveTerrainAI
-	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [17,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [19,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [19,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 Paladin Zeke Level(12, Enemy, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT 0x86 BowKnight Zeke Level(2, Enemy, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT 0x86 BowKnight Zeke Level(2, Enemy, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT 0x86 BowKnight Zeke Level(2, Enemy, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [17,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [19,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [19,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
+	UNIT Rigel_Cav BowKnight Zeke Level(2, Enemy, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT Rigel_Cav BowKnight Zeke Level(2, Enemy, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT Rigel_Cav BowKnight Zeke Level(2, Enemy, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
 	UNIT
 
 Dummy_BeginningScene:

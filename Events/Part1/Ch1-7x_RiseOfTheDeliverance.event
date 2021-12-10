@@ -94,46 +94,46 @@ LoadFernandMathilda:
 
 EnemyUnits:
 //Left
-	UNIT 0x83 Mage Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA7R4 [Fire] NoAI
-	UNIT 0x81 Archer Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA9R14 [IronBow] NoAI
-	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [4,14] DropItem 0x00 0x1 REDA2R8 [HeavySpear] NoAI
-	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA3R5 [BaseLance] NoAI
-	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [4,14] DropItem 0x00 0x1 REDA3R11 [IronLance,Vulnerary] ChargeAI
-	UNIT 0x84 Mercenary Zopyrus Level(3, Enemy, True) [4,14] DropItem 0x00 0x1 REDA6R14 [IronSword,Ambrosia] NoAI
+	UNIT Zofia_Mage Mage Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA7R4 [Fire] NoAI
+	UNIT Zofia_Archer Archer Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA9R14 [IronBow] NoAI
+	UNIT Zofia_Soldier Soldier Zopyrus Level(3, Enemy, True) [4,14] DropItem 0x00 0x1 REDA2R8 [HeavySpear] NoAI
+	UNIT Zofia_Soldier Soldier Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA3R5 [BaseLance] NoAI
+	UNIT Zofia_Soldier Soldier Zopyrus Level(3, Enemy, True) [4,14] DropItem 0x00 0x1 REDA3R11 [IronLance,Vulnerary] ChargeAI
+	UNIT Zofia_Merc Mercenary Zopyrus Level(3, Enemy, True) [4,14] DropItem 0x00 0x1 REDA6R14 [IronSword,Ambrosia] NoAI
 //Right
-	UNIT 0x84 Mercenary Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA15R4 [BaseSword] NoAI
-	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [20,14] DropItem 0x00 0x1 REDA19R4 [IronLance,Soma] NoAI
-	UNIT 0x81 Archer Zopyrus Level(3, Enemy, True) [20,14] DropItem 0x00 0x1 REDA15R14 [IronBow,SteelBow] NoAI
-	UNIT 0x83 Mage Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA21R10 [Fire] NoAI
-	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA18R14 [BaseLance] NoAI
-	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [20,14] DropItem 0x00 0x1 REDA22R8 [IronLance,Vulnerary] ChargeAI
+	UNIT Zofia_Merc Mercenary Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA15R4 [BaseSword] NoAI
+	UNIT Zofia_Soldier Soldier Zopyrus Level(3, Enemy, True) [20,14] DropItem 0x00 0x1 REDA19R4 [IronLance,Soma] NoAI
+	UNIT Zofia_Archer Archer Zopyrus Level(3, Enemy, True) [20,14] DropItem 0x00 0x1 REDA15R14 [IronBow,SteelBow] NoAI
+	UNIT Zofia_Mage Mage Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA21R10 [Fire] NoAI
+	UNIT Zofia_Soldier Soldier Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA18R14 [BaseLance] NoAI
+	UNIT Zofia_Soldier Soldier Zopyrus Level(3, Enemy, True) [20,14] DropItem 0x00 0x1 REDA22R8 [IronLance,Vulnerary] ChargeAI
 //Armors
-	UNIT 0x82 Knight Zopyrus Level(6, Enemy, True) [12,0] DropItem 0x00 0x1 REDA12R5 [KillerAxe,Rhomphaia] NeverMoveAI
-	UNIT 0x82 Knight Zopyrus Level(6, Enemy, True) [20,14] DropItem 0x00 0x1 REDA12R16 [KillerAxe, SilverShield] NeverMoveAI
+	UNIT Zofia_Soldier Knight Zopyrus Level(6, Enemy, True) [12,0] DropItem 0x00 0x1 REDA12R5 [KillerAxe,Rhomphaia] NeverMoveAI
+	UNIT Zofia_Soldier Knight Zopyrus Level(6, Enemy, True) [20,14] DropItem 0x00 0x1 REDA12R16 [KillerAxe, SilverShield] NeverMoveAI
 	UNIT
 
 Enemy_Envoy:
 	UNIT Zopyrus Cavalier	0x00 Level(8, NPC, False) [0,20]	DropItem 0x00 0x1 REDA14R10 [SteelLance, IronShield] DelayedRushAI
-	UNIT 0x85 Cavalier	Zopyrus Level(3, NPC, False) [0,20]	0x00 0x00 0x1 REDA15R9 [IronLance] DelayedRushAI
-	UNIT 0x85 Cavalier	Zopyrus Level(3, NPC, False) [0,20]	0x00 0x00 0x1 REDA15R11 [IronLance] DelayedRushAI
+	UNIT Zofia_Cav Cavalier	Zopyrus Level(3, NPC, False) [0,20]	0x00 0x00 0x1 REDA15R9 [IronLance] DelayedRushAI
+	UNIT Zofia_Cav Cavalier	Zopyrus Level(3, NPC, False) [0,20]	0x00 0x00 0x1 REDA15R11 [IronLance] DelayedRushAI
 	UNIT
 
 Reinforcements_Left:
-	UNIT 0x81 Archer Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA5R13 [BaseBow] NoAI
-	UNIT 0x84 Mercenary Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA3R13 [BaseSword] NoAI
-	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA6R15 [Javelin] NoAI
+	UNIT Zofia_Archer Archer Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA5R13 [BaseBow] NoAI
+	UNIT Zofia_Merc Mercenary Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA3R13 [BaseSword] NoAI
+	UNIT Zofia_Soldier Soldier Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA6R15 [Javelin] NoAI
 	UNIT
 	
 Reinforcements_Right:
-	UNIT 0x81 Archer Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA19R13 [BaseBow] NoAI
-	UNIT 0x83 Mage Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA21R13 [Fire] NoAI
-	UNIT 0x82 Soldier Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA18R15 [Javelin] NoAI
+	UNIT Zofia_Archer Archer Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA19R13 [BaseBow] NoAI
+	UNIT Zofia_Mage Mage Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA21R13 [Fire] NoAI
+	UNIT Zofia_Soldier Soldier Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA18R15 [Javelin] NoAI
 	UNIT
 	
 Reinforcements_Top:
-	UNIT 0x85 Cavalier Zopyrus Level(9, Enemy, True) [12,0] 0x00 0x00 0x1 REDA11R8 [BaseLance] NoAI
-	UNIT 0x85 Cavalier Zopyrus Level(9, Enemy, True) [12,0] DropItem 0x00 0x1 REDA12R8 [IronLance,Vulnerary] NoAI
-	UNIT 0x85 Cavalier Zopyrus Level(9, Enemy, True) [12,0] 0x00 0x00 0x1 REDA13R8 [BaseLance] NoAI
+	UNIT Zofia_Cav Cavalier Zopyrus Level(9, Enemy, True) [12,0] 0x00 0x00 0x1 REDA11R8 [BaseLance] NoAI
+	UNIT Zofia_Cav Cavalier Zopyrus Level(9, Enemy, True) [12,0] DropItem 0x00 0x1 REDA12R8 [IronLance,Vulnerary] NoAI
+	UNIT Zofia_Cav Cavalier Zopyrus Level(9, Enemy, True) [12,0] 0x00 0x00 0x1 REDA13R8 [BaseLance] NoAI
 	UNIT
 
 Ch1_7x_BeginningScene:
