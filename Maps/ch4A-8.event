@@ -8,10 +8,25 @@ Map:
 #incbin "ch4A-8_data.dmp"
 
 MapChanges:
-TileMap(0,11,8,1,1,Map_Change_0)
+TileMap(0,9,7,2,1,Map_Change_0)
+TileMap(1,15,7,2,1,Map_Change_1)
+TileMap(2,23,17,2,4,Map_Change_2)
+TileMap(3,2,12,2,4,Map_Change_3)
 TileMapEnd
 
 Map_Change_0:
-SHORT 0x4 
+SHORT 0x6e4 0x4ec 
+ALIGN 4
+
+Map_Change_1:
+SHORT 0x6e4 0x4ec 
+ALIGN 4
+
+Map_Change_2:
+SHORT 0xe3c 0x0 0x664 0xd54 0x560 0xef8 0x0 0xd58 
+ALIGN 4
+
+Map_Change_3:
+SHORT 0xe3c 0x0 0xc54 0x4e0 0x660 0x8f0 0xb60 0x0 
 ALIGN 4
 

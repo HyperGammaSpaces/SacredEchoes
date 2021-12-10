@@ -1,22 +1,29 @@
+#include "Anims/Installer.event"
+
 ALIGN 4
 FrontierTiles:
 #incbin "Frontier_comp.dmp"
 
 ALIGN 4
 FrontierObjects:
-#incbin "Frontier.dmp"
+#incbin "Frontier.img.bin"
 
 ALIGN 4
 FrontierPalette:
-#incbin "Frontier_barren.pal.bin"
+#incbin "Frontier.pal.bin"
 
 ALIGN 4
 FrontierNightPalette:
 #incbin "Frontier_night.pal.bin"
+
+ALIGN 4
+FrontierSnowPalette:
+#incbin "Frontier_snow.pal.bin"
 
 //Frontier
 EventPointerTable(plFrontierObj, FrontierObjects) 
 EventPointerTable(plFrontierPal, FrontierPalette) 
 EventPointerTable(plFrontierConf, FrontierTiles)
 EventPointerTable(plFrontierNightPal, FrontierNightPalette) 
-//EventPointerTable(plFrontierAnim, 0x59D740)
+EventPointerTable(plFrontierSnowPal, FrontierSnowPalette) 
+EventPointerTable(plFrontierAnim, FrontierAnimation)
