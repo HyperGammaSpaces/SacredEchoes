@@ -76,7 +76,7 @@ CutsceneAlliesFernand:
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
 	UNIT Gray Villager 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
 	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT 0x2D Cavalier 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT FernandPlayable Cavalier 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 	
 CutsceneAlliesNoFernand:
@@ -88,7 +88,7 @@ CutsceneAlliesNoFernand:
 	UNIT
 	
 CutsceneFernand:
-	UNIT 0x2D Cavalier 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT FernandPlayable Cavalier 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 	
 EnemyUnits:
@@ -144,9 +144,8 @@ Hideout_BeginningScene:
 	LOAD3 0x0 PlayerUnits //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	
-	SVAL 0x1 0x1
 	CHECK_EVENTID gDeliveranceHideoutCompleted //has Clive joined?
-	IFNE 0x5 0xC 0x1 //if true, don't show cutscene
+	BNE 0x205 0xC 0x0 //if true, don't show cutscene
 		LOAD1 0x1 EnemyUnits
 		ENUN
 		LOAD1 0x1 EnemyUnits2
@@ -158,33 +157,31 @@ Hideout_BeginningScene:
 		TEXTEND
 		FADI 60
 		REMA
-		GOTO 0x4
-	LABEL 0x5
+		GOTO 0x204
+	LABEL 0x205
 		SVAL 0x2 0x0 //Number of skirmish enemies to load
 		CALL EnemyRandomizerHelper
 		LOAD1 0x1 EnemyUnitsReplay
 		ENUN
-	LABEL 0x4
+	LABEL 0x204
 	GotoPrepScreen
 	NoFade
 	ENDA
 	
 ChestEvent:
-	SVAL 0x1 0x1
 	CHECK_EVENTID gDeliveranceHideoutCompleted //has Clive joined?
-	IFNE 0x2 0xC 0x1 //if true, don't give speedwing
+	BNE 0x302 0xC 0x0 //if true, don't give speedwing
 		SVAL 0x3 Speedwings
 		GIVEITEMTO 0xFFFF
-		GOTO 0x2
-	LABEL 0x2
+		GOTO 0x302
+	LABEL 0x302
 	NoFade
 	ENDA
 
 Hideout_EndingScene:
 	EVBIT_MODIFY 0x1
-	SVAL 0x1 0x1
 	CHECK_EVENTID gDeliveranceHideoutCompleted //has Clive joined?
-	IFNE 0x1 0xC 0x1 //if true, skip cutscene
+	BNE 0x103 0xC 0x0 //if true, skip cutscene
 		EVBIT_MODIFY 0x0
 		CALL UnifiedBEXPCaller
 		FADI 10
@@ -199,42 +196,50 @@ Hideout_EndingScene:
 		FADU 10
 		
 		EVBIT_MODIFY 0x1
-		CHECK_ALIVE 0x2D
-		BEQ 0x5 0xC 0x0
+		CHECK_ALIVE FernandPlayable
+		BEQ 0x105 0xC 0x0
 			LOAD2 0x1 CutsceneAlliesFernand
 			ENUN
-			CHECK_CLASS 0x2D
-			SVAL 0x2 0x07 //Paladin
-			BEQ 0x8 0xC 0x2
-			SVAL 0x2 0x35 //GoldKnight
-			BEQ 0x8 0xC 0x2
-			GOTO 0x6
-				LABEL 0x8
+			CHECK_CLASS FernandPlayable
+			SVAL 0x2 Paladin
+			BEQ 0x108 0xC 0x2
+			SVAL 0x2 GoldKnight
+			BEQ 0x108 0xC 0x2
+			GOTO 0x106
+				LABEL 0x108
 				ENUT gPlayerPromotedFernand
-				GOTO 0x6
-		LABEL 0x5 //if dead, reload him
+				GOTO 0x106
+		LABEL 0x105 //if dead, reload him
 			LOAD2 0x1 CutsceneAlliesNoFernand
 			ENUN
 			LOAD1 0x1 CutsceneFernand 
 			ENUN
-		LABEL 0x6
+		LABEL 0x106
 		EVBIT_MODIFY 0x0
 		
-		MOVE 0x10 Clair [11,3]
+        CHECK_ALIVE Clair
+        BEQ 0x104 0xC 0x0
+            MOVE 0x10 Clair [11,3]
+        LABEL 0x104
 		MOVE 0x10 Alm [10,3]
 		MOVE 0x10 Lukas [12, 3]
-		MOVE 0x10 0x2D [11,4]
+		MOVE 0x10 FernandPlayable [11,4]
 		ENUN
 		
 		FADI 10
 		SetBackground(0x2E)
-		CharacterConditionalDialog(Clair, DeliveranceHideout_PostBattle_1,DeliveranceHideout_PostBattle_1_NoClair)
+        CHECK_ALIVE Clair
+        BEQ 0x109 0xC 0x0
+            Text( DeliveranceHideout_PostBattle_1)
+            GOTO 0x10A
+        LABEL 0x109
+            Text(DeliveranceHideout_PostBattle_1_NoClair)
+        LABEL 0x10A
 		
-		SVAL 0x1 0x1
 		CHECK_ALIVE Gray 
-		BEQ 0x7 0xC 0x0 //if not, goto NoFaye
+		BEQ 0x107 0xC 0x0 
 		CHECK_ALIVE Tobin 
-		BEQ 0x7 0xC 0x0 //if not, goto NoFaye
+		BEQ 0x107 0xC 0x0
 			ClearBackgroundSmooth
 			MOVE 0x8 Tobin [6, 4]
 			MOVE 0x8 Gray [6, 5]
@@ -248,7 +253,7 @@ Hideout_EndingScene:
 			STAL 30
 			FlashCursor(Clive, 60)
 			SetBackground(0x2E)
-		LABEL 0x7
+		LABEL 0x107
 		
 		//alm WHAT in hideout - village tension music, keep going until fernand cutscene
 		//start sad music once fernand says "lost my taste for this long ago"
@@ -277,11 +282,11 @@ Hideout_EndingScene:
 		ClearBackgroundSmooth
 		MUSC SongID_Silence
 		
-		MOVE 0x10 0x2D [11,3]
+		MOVE 0x10 FernandPlayable [11,3]
 		MOVE 0x5 Clair [11,4]
 		ENUN
 		STAL 10
-		MOVE 0x10 0x2D [11,2]
+		MOVE 0x10 FernandPlayable [11,2]
 		STAL 5
 		MOVE 0x10 Clive [11,1]
 		ENUN
@@ -313,11 +318,11 @@ Hideout_EndingScene:
 		
 		MUSC SongID_ShadowOfVictory
 		//Make Fernand green and move him off the map
-		CUSN 0x2D
+		CUSN FernandPlayable
 		STAL 20
-		MOVE 0x10 0x2D [20,6]
+		MOVE 0x10 FernandPlayable [20,6]
 		ENUN
-		DISA 0x2D
+		DISA FernandPlayable
 		MOVE 0x10 Clive [11,2]
 		ENUN
 		
@@ -335,9 +340,8 @@ Hideout_EndingScene:
 		
 		EVBIT_MODIFY 0x1
 		ENUT gDeliveranceHideoutCompleted //set a flag for clive joining
-		SVAL 0x1 0x1
 		CHECK_EVENTID gPlayerPromotedFernand //has the gaiden condition been met? joined?
-		BNE 0x3 0xC 0x1 
+		BEQ 0x10B 0xC 0x0 
 			STAL 20
 			SetBackground(0x2E)
 			CenterTextbox(DeliveranceHideout_AcceptSidequest)
@@ -346,18 +350,18 @@ Hideout_EndingScene:
 			SVAL 0x1 0x1
 			//"Accept side quest?"
 			//yes = 1 no = 2
-			BNE 0x2 0xC 0x1
+			BNE 0x102 0xC 0x1
 				MNC2 0x3D
 			//if yes, MNC2 0x3D
-			ENDA
-	LABEL 0x1
+			ENDB
+	LABEL 0x103
 		SVAL 0x3 0x3
 		ASMC 0x85C65
 		CALL UnifiedBEXPCaller
 		EVBIT_MODIFY 0x0
-	LABEL 0x3
+	LABEL 0x10B
 		FADI 4
-	LABEL 0x2
+	LABEL 0x102
 		SVAL 0x2 0x3F
 		MNCH 0xFFFF
 	ENDA

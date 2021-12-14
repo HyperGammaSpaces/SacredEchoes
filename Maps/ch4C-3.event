@@ -8,15 +8,15 @@ Map:
 #incbin "ch4C-3_data.dmp"
 
 MapChanges:
-TileMap(0,3,13,2,1,Map_Change_0)
+TileMap(0,3,13,3,1,Map_Change_0)
 TileMap(1,9,13,3,1,Map_Change_1)
 TileMapEnd
 
 Map_Change_0:
-SHORT 0xfbc 0x218 
+SHORT 0xf38 0x108 0xfb4 
 ALIGN 4
 
 Map_Change_1:
-SHORT 0xebc 0xce0 0xf34 
+SHORT 0xebc 0xce0 0xeb4 
 ALIGN 4
 
