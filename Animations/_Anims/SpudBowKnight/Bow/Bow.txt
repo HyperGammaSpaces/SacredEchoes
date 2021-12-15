@@ -1,24 +1,29 @@
-/// - Mode 1
-C03
-C07
+#######################################################
+#2E bknm_ar1 Bow Knight Bow
+#
+#When importing to FEditorAdv delete # and after each line.
+#######################################################
+/// - Mode 1               #Melee Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 3 p- Bow_000.png
 5 p- Bow_001.png
-C1C
+C1C                               #Play light horse stepping SFE; pitch decreases
 6 p- Bow_002.png
 6 p- Bow_003.png
 4 p- Bow_004.png
 4 p- Bow_005.png
-C23
+C23                               #Play shorter sword swinging SFE
 2 p- Bow_006.png
 2 p- Bow_007.png
 5 p- Bow_008.png
-C37
+C37                               #Play sword clicking SFE
 3 p- Bow_007.png
 4 p- Bow_009.png
 35 p- Bow_010.png
 6 p- Bow_011.png
 15 p- Bow_012.png
-C19
+C19                               #Play bow pulling SFE
 4 p- Bow_013.png
 6 p- Bow_014.png
 10 p- Bow_015.png
@@ -29,26 +34,26 @@ C19
 30 p- Bow_020.png
 8 p- Bow_021.png
 3 p- Bow_022.png
-C05
+C05                               #Call spell associated with equipped weapon
 2 p- Bow_023.png
 1 p- Bow_024.png
 2 p- Bow_025.png
 1 p- Bow_026.png
 2 p- Bow_027.png
 2 p- Bow_010.png
-C01
+C01                               #NOP
 2 p- Bow_006.png
 4 p- Bow_005.png
 4 p- Bow_004.png
 6 p- Bow_003.png
 6 p- Bow_002.png
 2 p- Bow_000.png
-C06
-C0D
+C06                               #Begin opponent's turn after hit.next code 0D.
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 3
-C03
-C07
+/// - Mode 3               #Melee Critical Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 6 p- Bow_000.png
 5 p- Bow_028.png
 4 p- Bow_029.png
@@ -59,22 +64,22 @@ C07
 4 p- Bow_030.png
 4 p- Bow_031.png
 20 p- Bow_032.png
-C1C
+C1C                               #Play light horse stepping SFE; pitch decreases
 6 p- Bow_002.png
 6 p- Bow_003.png
 4 p- Bow_004.png
 4 p- Bow_005.png
-C23
+C23                               #Play shorter sword swinging SFE
 2 p- Bow_006.png
 2 p- Bow_007.png
 5 p- Bow_008.png
-C37
+C37                               #Play sword clicking SFE
 3 p- Bow_007.png
 4 p- Bow_009.png
 35 p- Bow_010.png
 6 p- Bow_011.png
 15 p- Bow_012.png
-C19
+C19                               #Play bow pulling SFE
 4 p- Bow_013.png
 6 p- Bow_014.png
 10 p- Bow_015.png
@@ -85,44 +90,44 @@ C19
 30 p- Bow_036.png
 8 p- Bow_037.png
 3 p- Bow_038.png
-C05
+C05                               #Call spell associated with equipped weapon
 2 p- Bow_023.png
 1 p- Bow_024.png
 2 p- Bow_025.png
 1 p- Bow_026.png
 2 p- Bow_027.png
 2 p- Bow_010.png
-C01
+C01                               #NOP
 2 p- Bow_006.png
 4 p- Bow_005.png
 4 p- Bow_004.png
 6 p- Bow_003.png
 6 p- Bow_002.png
 2 p- Bow_000.png
-C06
-C0D
+C06                               #Begin opponent's turn after hit.next code 0D.
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 5
-C03
-C07
+/// - Mode 5               #Ranged Animation 
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 3 p- Bow_000.png
 5 p- Bow_001.png
-C1C
+C1C                               #Play light horse stepping SFE; pitch decreases
 6 p- Bow_002.png
 6 p- Bow_003.png
 4 p- Bow_004.png
 4 p- Bow_005.png
-C23
+C23                               #Play shorter sword swinging SFE
 2 p- Bow_006.png
 2 p- Bow_007.png
 5 p- Bow_008.png
-C37
+C37                               #Play sword clicking SFE
 3 p- Bow_007.png
 4 p- Bow_009.png
 35 p- Bow_010.png
 6 p- Bow_011.png
 15 p- Bow_012.png
-C19
+C19                               #Play bow pulling SFE
 4 p- Bow_013.png
 6 p- Bow_014.png
 10 p- Bow_015.png
@@ -133,26 +138,26 @@ C19
 30 p- Bow_020.png
 8 p- Bow_021.png
 3 p- Bow_022.png
-C05
+C05                               #Call spell associated with equipped weapon
 2 p- Bow_023.png
 1 p- Bow_024.png
 2 p- Bow_025.png
 1 p- Bow_026.png
 2 p- Bow_027.png
 2 p- Bow_010.png
-C01
+C01                               #NOP
 2 p- Bow_006.png
 4 p- Bow_005.png
 4 p- Bow_004.png
 6 p- Bow_003.png
 6 p- Bow_002.png
 2 p- Bow_000.png
-C06
-C0D
+C06                               #Begin opponent's turn after hit.next code 0D.
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 6
-C03
-C07
+/// - Mode 6               #Ranged Critical Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 6 p- Bow_000.png
 5 p- Bow_028.png
 4 p- Bow_029.png
@@ -163,22 +168,22 @@ C07
 4 p- Bow_030.png
 4 p- Bow_031.png
 20 p- Bow_032.png
-C1C
+C1C                               #Play light horse stepping SFE; pitch decreases
 6 p- Bow_002.png
 6 p- Bow_003.png
 4 p- Bow_004.png
 4 p- Bow_005.png
-C23
+C23                               #Play shorter sword swinging SFE
 2 p- Bow_006.png
 2 p- Bow_007.png
 5 p- Bow_008.png
-C37
+C37                               #Play sword clicking SFE
 3 p- Bow_007.png
 4 p- Bow_009.png
 35 p- Bow_010.png
 6 p- Bow_011.png
 15 p- Bow_012.png
-C19
+C19                               #Play bow pulling SFE
 4 p- Bow_013.png
 6 p- Bow_014.png
 10 p- Bow_015.png
@@ -189,78 +194,82 @@ C19
 30 p- Bow_036.png
 8 p- Bow_037.png
 3 p- Bow_038.png
-C05
+C05                               #Call spell associated with equipped weapon
 2 p- Bow_023.png
 1 p- Bow_024.png
 2 p- Bow_025.png
 1 p- Bow_026.png
 2 p- Bow_027.png
 2 p- Bow_010.png
-C01
+C01                               #NOP
 2 p- Bow_006.png
 4 p- Bow_005.png
 4 p- Bow_004.png
 6 p- Bow_003.png
 6 p- Bow_002.png
 2 p- Bow_000.png
-C06
-C0D
+C06                               #Begin opponent's turn after hit.next code 0D.
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 7
-C02
+/// - Mode 7               #Dodge Melee Attack
 1 p- Bow_000.png
+C02                               #Start of dodge
+1 p- Bow_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 2 p- Bow_039.png
 2 p- Bow_040.png
-C01
-2 p- Bow_040.png
-2 p- Bow_039.png
-1 p- Bow_000.png
-C0D
-~~~
-/// - Mode 8
-C02
-1 p- Bow_000.png
-2 p- Bow_039.png
-2 p- Bow_040.png
-C01
+C01                               #NOP
 2 p- Bow_040.png
 2 p- Bow_039.png
 1 p- Bow_000.png
-C0D
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 9
+/// - Mode 8               #Dodge Ranged Attack
 1 p- Bow_000.png
-C01
-~~~
-/// - Mode 10
+C02                               #Start of dodge
 1 p- Bow_000.png
-C01
-~~~
-/// - Mode 11
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+2 p- Bow_039.png
+2 p- Bow_040.png
+C01                               #NOP
+2 p- Bow_040.png
+2 p- Bow_039.png
 1 p- Bow_000.png
-C01
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 12
-C03
-C07
+/// - Mode 9               #Equiped with Melee Weapon
+1 p- Bow_000.png
+C01                               #NOP
+~~~
+/// - Mode 10               #Standing motions
+1 p- Bow_000.png
+C01                               #NOP
+~~~
+/// - Mode 11               #Equiped with Ranged weapon
+1 p- Bow_000.png
+C01                               #NOP
+~~~
+/// - Mode 12               #Attack Missed Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 3 p- Bow_000.png
 5 p- Bow_001.png
-C1C
+C1C                               #Play light horse stepping SFE; pitch decreases
 6 p- Bow_002.png
 6 p- Bow_003.png
 4 p- Bow_004.png
 4 p- Bow_005.png
-C23
+C23                               #Play shorter sword swinging SFE
 2 p- Bow_006.png
 2 p- Bow_007.png
 5 p- Bow_008.png
-C37
+C37                               #Play sword clicking SFE
 3 p- Bow_007.png
 4 p- Bow_009.png
 35 p- Bow_010.png
 6 p- Bow_011.png
 15 p- Bow_012.png
-C19
+C19                               #Play bow pulling SFE
 4 p- Bow_013.png
 6 p- Bow_014.png
 10 p- Bow_015.png
@@ -271,21 +280,21 @@ C19
 30 p- Bow_020.png
 8 p- Bow_021.png
 3 p- Bow_022.png
-C05
+C05                               #Call spell associated with equipped weapon
 2 p- Bow_023.png
 1 p- Bow_024.png
 2 p- Bow_025.png
 1 p- Bow_026.png
 2 p- Bow_027.png
 2 p- Bow_010.png
-C01
+C01                               #NOP
 2 p- Bow_006.png
 4 p- Bow_005.png
 4 p- Bow_004.png
 6 p- Bow_003.png
 6 p- Bow_002.png
 2 p- Bow_000.png
-C06
-C0D
+C06                               #Begin opponent's turn after hit.next code 0D.
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - End of animation

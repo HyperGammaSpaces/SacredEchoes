@@ -194,6 +194,8 @@ C0D                               #End of dodge animation. preceeded by 0x06
 /// - Mode 7               #Dodge Melee Attack
 1 p- Sword_000.png
 C02                               #Start of dodge
+1 p- Sword_000.png
+C0E                               #Start of dodge frames
 3 p- Sword_080.png
 4 p- Sword_081.png
 6 p- Sword_082.png
@@ -202,12 +204,13 @@ C01                               #NOP
 6 p- Sword_084.png
 6 p- Sword_029.png
 3 p- Sword_000.png
-C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 8               #Dodge Ranged Attack
 1 p- Sword_000.png
 C02                               #Start of dodge
+1 p- Sword_000.png
+C0E                               #Start of dodge frames
 3 p- Sword_080.png
 4 p- Sword_081.png
 6 p- Sword_082.png
@@ -216,7 +219,6 @@ C01                               #NOP
 6 p- Sword_084.png
 6 p- Sword_029.png
 3 p- Sword_000.png
-C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 9               #Equiped with Melee Weapon

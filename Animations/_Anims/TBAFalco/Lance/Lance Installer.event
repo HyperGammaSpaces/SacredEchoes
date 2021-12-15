@@ -2,7 +2,8 @@
     
 PUSH
 AnimTableEntry(FalcoKnightLance) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
-WORD 0 0 0 //empty name field, who cares
+BYTE 0x66 0x61 0x6C 0x6B 0x5F 0x73 0x70 0x31
+WORD 0
 POIN Anim_Lance_sectiondata
 POIN Anim_Lance_framedata
 POIN Anim_Lance_rtl Anim_Lance_ltr Anim_Lance_pal

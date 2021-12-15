@@ -2,7 +2,8 @@
     
 PUSH
 AnimTableEntry(SniperMBow) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
-WORD 0 0 0 //empty name field, who cares
+BYTE 0x73 0x6E 0x69 0x6D 0x5F 0x61 0x72 0x31
+WORD 0
 POIN Anim_Bow_sectiondata
 POIN Anim_Bow_framedata
 POIN Anim_Bow_rtl Anim_Bow_ltr Anim_Bow_pal

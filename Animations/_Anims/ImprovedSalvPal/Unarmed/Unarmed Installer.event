@@ -2,7 +2,8 @@
     
 PUSH
 AnimTableEntry(PaladinUnarmed) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
-WORD 0 0 0 //empty name field, who cares
+BYTE $70 $61 $6C $6D $5F $75 $61 $31
+WORD 0
 POIN Anim_Unarmed_sectiondata
 POIN Anim_Unarmed_framedata
 POIN Anim_Unarmed_rtl Anim_Unarmed_ltr Anim_Unarmed_pal

@@ -1,260 +1,253 @@
 #######################################################
+#09 alm2_sw2 Hero Royal Sword
 #
-#
-#When importing to FEEditorAdv delete # and after each line.
+#When importing to FEditorAdv delete # and after each line.
 #######################################################
 /// - Mode 1               #Melee Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
-/// - Attack Frames
-6  p- standing.png
-4  p- melee_ata_001.png
-4  p- melee_ata_002.png
-3  p- melee_ata_003.png
-C1B				  #Play quick "heavy step" SFE
-3  p- melee_ata_004.png
-2  p- melee_ata_005.png
-2  p- melee_ata_006.png
-3  p- melee_ata_007.png
-C24				  #Play sword slashing air SFE
-2  p- melee_ata_prc_008.png
-C1B				  #Play quick "heavy step" SFE
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
+6 p- alm2_sw2_000.png
+4 p- alm2_sw2_001.png
+4 p- alm2_sw2_002.png
+3 p- alm2_sw2_003.png
+C1B                               #Play quick "heavy step" SFE
+3 p- alm2_sw2_004.png
+2 p- alm2_sw2_005.png
+2 p- alm2_sw2_006.png
+3 p- alm2_sw2_007.png
+C24                               #Play sword slashing air SFE
+2 p- alm2_sw2_008.png
+C1B                               #Play quick "heavy step" SFE
 C14                               #Heavy vibration of screen
-C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit
+C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
 C1A                               #Normal hit
-C21                               #Play hit SFE (sounds like Knight Lord with sword's hit) (see previous note)
-3  p- melee_ata_009.png
-/// - Frames after hitting but before stopping to wait for HP depletion
-3  p- melee_ata_010.png
-3  p- melee_ata_011.png
-4  p- melee_ata_012.png
-3  p- melee_ata_013.png
-3  p- melee_ata_014.png
-3  p- melee_ata_015.png
-6  p- melee_ata_016.png
-4  p- melee_ata_017.png
-4  p- melee_ata_018.png
+C21                               #Play hit SFE (sounds like Knight Lord with sword's hit)
+3 p- alm2_sw2_009.png
+3 p- alm2_sw2_010.png
+3 p- alm2_sw2_011.png
+4 p- alm2_sw2_012.png
+3 p- alm2_sw2_013.png
+3 p- alm2_sw2_014.png
+3 p- alm2_sw2_015.png
+6 p- alm2_sw2_016.png
+4 p- alm2_sw2_017.png
+4 p- alm2_sw2_018.png
 C01                               #NOP
-/// - RETURN TO BASE
-7  p- melee_rtrn_001.png
-C22				  #Play short sword swinging SFE
-4  p- melee_rtrn_002.png
-4  p- melee_rtrn_003.png
-3  p- melee_rtrn_004.png
-C1B				  #Play quick "heavy step" SFE
-3  p- melee_rtrn_005.png
-6  p- melee_rtrn_006.png
-3  p- melee_rtrn_007.png
-4  p- melee_rtrn_008.png
-5  p- standing.png
+7 p- alm2_sw2_019.png
+C22                               #Play short sword swinging SFE
+4 p- alm2_sw2_020.png
+4 p- alm2_sw2_021.png
+3 p- alm2_sw2_022.png
+C1B                               #Play quick "heavy step" SFE
+3 p- alm2_sw2_023.png
+6 p- alm2_sw2_024.png
+3 p- alm2_sw2_025.png
+4 p- alm2_sw2_026.png
+5 p- alm2_sw2_000.png
 C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
-
-~~~ - Mode 3               #Melee Critical Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
-/// - Attack Frames
-6  p- standing.png
-6  p- melee_crit_001.png
-4  p- melee_crit_002.png
-C22				  #Play short sword swinging SFE
-3  p- melee_crit_003.png
-3  p- melee_crit_004.png
-6  p- melee_crit_005.png
-4  p- melee_crit_006.png
-3  p- melee_crit_007.png
-3  p- melee_crit_008.png
-3  p- melee_crit_009.png
-3  p- melee_crit_010.png
-3  p- melee_crit_011.png
-C44				  #Play short "light emission" SFE
-3  p- melee_crit_012.png
-3  p- melee_crit_013.png
-6  p- melee_crit_014.png
-4  p- melee_crit_015.png
-6  p- melee_crit_016.png
-4  p- melee_crit_017.png
-4  p- melee_crit_018.png
-C42				  #Play long axe swinging SFE
+~~~
+/// - Mode 3               #Melee Critical Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
+6 p- alm2_sw2_000.png
+6 p- alm2_sw2_027.png
+4 p- alm2_sw2_028.png
+C22                               #Play short sword swinging SFE
+3 p- alm2_sw2_029.png
+3 p- alm2_sw2_030.png
+6 p- alm2_sw2_031.png
+4 p- alm2_sw2_032.png
+3 p- alm2_sw2_033.png
+3 p- alm2_sw2_034.png
+3 p- alm2_sw2_035.png
+3 p- alm2_sw2_036.png
+3 p- alm2_sw2_037.png
+C44                               #Play short "light emission" SFE
+3 p- alm2_sw2_038.png
+3 p- alm2_sw2_039.png
+6 p- alm2_sw2_040.png
+4 p- alm2_sw2_041.png
+6 p- alm2_sw2_042.png
+4 p- alm2_sw2_043.png
+4 p- alm2_sw2_044.png
+C42                               #Play long axe swinging SFE
 C15                               #Slight vibration of screen
-2  p- melee_crit_019.png
-3  p- melee_crit_020.png
-3  p- melee_crit_021.png
-4  p- melee_crit_022.png
-4  p- melee_crit_023.png
-3  p- melee_crit_024.png
-3  p- melee_crit_025.png
-C24				  #Play sword slashing air SFE
-2  p- melee_crit_prc_026.png
-C1B				  #Play quick "heavy step" SFE
+2 p- alm2_sw2_045.png
+3 p- alm2_sw2_046.png
+3 p- alm2_sw2_047.png
+4 p- alm2_sw2_048.png
+4 p- alm2_sw2_049.png
+3 p- alm2_sw2_050.png
+3 p- alm2_sw2_051.png
+C24                               #Play sword slashing air SFE
+2 p- alm2_sw2_052.png
+C1B                               #Play quick "heavy step" SFE
 C14                               #Heavy vibration of screen
-C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit
+C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
 C0C                               #Critical hit
-C21                               #Play hit SFE (sounds like Knight Lord with sword's hit) (see previous note)
-4  p- melee_crit_027.png
-/// - Frames after hitting but before stopping to wait for HP depletion
-3  p- melee_crit_028.png
-3  p- melee_crit_029.png
-3  p- melee_crit_030.png
-3  p- melee_crit_031.png
+C21                               #Play hit SFE (sounds like Knight Lord with sword's hit)
+4 p- alm2_sw2_053.png
+3 p- alm2_sw2_054.png
+3 p- alm2_sw2_055.png
+3 p- alm2_sw2_056.png
+3 p- alm2_sw2_057.png
 C01                               #NOP
-/// - RETURN TO BASE
-7  p- melee_crit_032.png
-4  p- melee_rtrn_002.png
-4  p- melee_rtrn_003.png
-3  p- melee_rtrn_004.png
-C1B				  #Play quick "heavy step" SFE
-3  p- melee_rtrn_005.png
-6  p- melee_rtrn_006.png
-3  p- melee_rtrn_007.png
-4  p- melee_rtrn_008.png
-5  p- standing.png
+7 p- alm2_sw2_058.png
+4 p- alm2_sw2_020.png
+4 p- alm2_sw2_021.png
+3 p- alm2_sw2_022.png
+C1B                               #Play quick "heavy step" SFE
+3 p- alm2_sw2_023.png
+6 p- alm2_sw2_024.png
+3 p- alm2_sw2_025.png
+4 p- alm2_sw2_026.png
+5 p- alm2_sw2_000.png
 C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
-                         
-~~~ - Mode 5               #Ranged Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
-6  p- standing.png
-6  p- melee_crit_001.png
-4  p- melee_crit_002.png
-C22				  #Play short sword swinging SFE
-3  p- melee_crit_003.png
-3  p- melee_crit_004.png
-6  p- melee_crit_005.png
-4  p- melee_crit_006.png
+~~~
+/// - Mode 5               #Ranged Animation 
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
+6 p- alm2_sw2_000.png
+6 p- alm2_sw2_027.png
+4 p- alm2_sw2_028.png
+C22                               #Play short sword swinging SFE
+3 p- alm2_sw2_029.png
+3 p- alm2_sw2_030.png
+6 p- alm2_sw2_031.png
+4 p- alm2_sw2_032.png
 C05                               #Call spell associated with equipped weapon
-6  p- range_ata_001.png
+6 p- alm2_sw2_059.png
 C01                               #NOP
-4  p- range_ata_002.png
-4  p- range_ata_003.png
-4  p- range_ata_004.png
-6  p- range_ata_005.png
-6  p- standing.png
+4 p- alm2_sw2_060.png
+4 p- alm2_sw2_061.png
+4 p- alm2_sw2_062.png
+6 p- alm2_sw2_063.png
+6 p- alm2_sw2_000.png
 C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
-
-~~~ - Mode 6               #Ranged Critical Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
-6  p- standing.png
-6  p- melee_crit_001.png
-4  p- melee_crit_002.png
-C22				  #Play short sword swinging SFE
-3  p- melee_crit_003.png
-3  p- melee_crit_004.png
-6  p- melee_crit_005.png
-4  p- melee_crit_006.png
-C28                               #Play electrical charging SFE (Used by Shamans)
-3  p- range_ata_001.png
-3  p- range_crit_001.png
-3  p- range_ata_001.png
-3  p- range_crit_001.png
-3  p- range_ata_001.png
-3  p- range_crit_001.png
-3  p- range_ata_001.png
-3  p- range_crit_001.png
-3  p- range_ata_001.png
-3  p- range_crit_001.png
+~~~
+/// - Mode 6               #Ranged Critical Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
+6 p- alm2_sw2_000.png
+6 p- alm2_sw2_027.png
+4 p- alm2_sw2_028.png
+C22                               #Play short sword swinging SFE
+3 p- alm2_sw2_029.png
+3 p- alm2_sw2_030.png
+6 p- alm2_sw2_031.png
+4 p- alm2_sw2_032.png
+C28                               #Play electrical charging SFE
+3 p- alm2_sw2_059.png
+3 p- alm2_sw2_064.png
+3 p- alm2_sw2_059.png
+3 p- alm2_sw2_064.png
+3 p- alm2_sw2_059.png
+3 p- alm2_sw2_064.png
+3 p- alm2_sw2_059.png
+3 p- alm2_sw2_064.png
+3 p- alm2_sw2_059.png
+3 p- alm2_sw2_064.png
 C05                               #Call spell associated with equipped weapon
-6  p- range_ata_001.png
+6 p- alm2_sw2_059.png
 C01                               #NOP
-4  p- range_ata_002.png
-4  p- range_ata_003.png
-4  p- range_ata_004.png
-6  p- range_ata_005.png
-6  p- standing.png
+4 p- alm2_sw2_060.png
+4 p- alm2_sw2_061.png
+4 p- alm2_sw2_062.png
+6 p- alm2_sw2_063.png
+6 p- alm2_sw2_000.png
 C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
-
-~~~ - Mode 7               #Dodge Melee Attack
-1  p- standing.png
+~~~
+/// - Mode 7               #Dodge Melee Attack
+1 p- alm2_sw2_000.png
 C02                               #Start of dodge
-3  p- dodge_001.png
-C1B				  #Play quick "heavy step" SFE
-4  p- dodge_002.png
-6  p- dodge_003.png
-2  p- dodge_004.png
+1 p- alm2_sw2_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- alm2_sw2_065.png
+C1B                               #Play quick "heavy step" SFE
+4 p- alm2_sw2_066.png
+6 p- alm2_sw2_067.png
+2 p- alm2_sw2_068.png
 C01                               #NOP
-6  p- dodge_005.png
-C1B				  #Play quick "heavy step" SFE
-6  p- dodge_006.png
-6  p- dodge_007.png
-3  p- standing.png
-C06                               #Begin opponent's turn after hit.next code 0D.
+6 p- alm2_sw2_069.png
+C1B                               #Play quick "heavy step" SFE
+6 p- alm2_sw2_070.png
+6 p- alm2_sw2_071.png
+3 p- alm2_sw2_000.png
 C0D                               #End of dodge animation. preceeded by 0x06
-
-~~~ - Mode 8               #Dodge Ranged Attack
-1  p- standing.png
+~~~
+/// - Mode 8               #Dodge Ranged Attack
+1 p- alm2_sw2_000.png
 C02                               #Start of dodge
-3  p- dodge_001.png
-C1B				  #Play quick "heavy step" SFE
-4  p- dodge_002.png
-6  p- dodge_003.png
-2  p- dodge_004.png
+1 p- alm2_sw2_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- alm2_sw2_065.png
+C1B                               #Play quick "heavy step" SFE
+4 p- alm2_sw2_066.png
+6 p- alm2_sw2_067.png
+2 p- alm2_sw2_068.png
 C01                               #NOP
-6  p- dodge_005.png
-C1B				  #Play quick "heavy step" SFE
-6  p- dodge_006.png
-6  p- dodge_007.png
-3  p- standing.png
+6 p- alm2_sw2_069.png
+C1B                               #Play quick "heavy step" SFE
+6 p- alm2_sw2_070.png
+6 p- alm2_sw2_071.png
+3 p- alm2_sw2_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 9               #Equiped with Melee Weapon
+2 p- alm2_sw2_000.png
+C01                               #NOP
+~~~
+/// - Mode 10               #Standing motions
+2 p- alm2_sw2_000.png
+C01                               #NOP
+~~~
+/// - Mode 11               #Equiped with Ranged weapon
+2 p- alm2_sw2_000.png
+C01                               #NOP
+~~~
+/// - Mode 12               #Attack Missed Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
+6 p- alm2_sw2_000.png
+4 p- alm2_sw2_001.png
+4 p- alm2_sw2_002.png
+3 p- alm2_sw2_003.png
+C1B                               #Play quick "heavy step" SFE
+3 p- alm2_sw2_004.png
+2 p- alm2_sw2_005.png
+2 p- alm2_sw2_006.png
+3 p- alm2_sw2_007.png
+C24                               #Play sword slashing air SFE
+2 p- alm2_sw2_072.png
+C1B                               #Play quick "heavy step" SFE
+C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
+3 p- alm2_sw2_009.png
+3 p- alm2_sw2_010.png
+3 p- alm2_sw2_011.png
+4 p- alm2_sw2_012.png
+3 p- alm2_sw2_013.png
+3 p- alm2_sw2_014.png
+3 p- alm2_sw2_015.png
+6 p- alm2_sw2_016.png
+4 p- alm2_sw2_017.png
+4 p- alm2_sw2_018.png
+C01                               #NOP
+7 p- alm2_sw2_019.png
+C22                               #Play short sword swinging SFE
+4 p- alm2_sw2_020.png
+4 p- alm2_sw2_021.png
+3 p- alm2_sw2_022.png
+C1B                               #Play quick "heavy step" SFE
+3 p- alm2_sw2_023.png
+6 p- alm2_sw2_024.png
+3 p- alm2_sw2_025.png
+4 p- alm2_sw2_026.png
+5 p- alm2_sw2_000.png
 C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
-
-~~~ - Mode 9               #Equiped with Melee Weapon
-2  p- standing.png
-C01                               #NOP
-
-~~~ - Mode 10               #standing motions?
-2  p- standing.png
-C01                               #NOP
-
-~~~ - Mode 11               #Equiped with Ranged weapon
-2  p- standing.png
-C01                               #NOP
-
-~~~ - Mode 12               #Attack Missed Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
-/// - Attack-That-Will-Miss Frames
-6  p- standing.png
-4  p- melee_ata_001.png
-4  p- melee_ata_002.png
-3  p- melee_ata_003.png
-C1B				  #Play quick "heavy step" SFE
-3  p- melee_ata_004.png
-2  p- melee_ata_005.png
-2  p- melee_ata_006.png
-3  p- melee_ata_007.png
-C24				  #Play sword slashing air SFE
-2  p- melee_ata_008.png
-C1B				  #Play quick "heavy step" SFE
-C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit
-3  p- melee_ata_009.png
-/// - Frames after hitting but before stopping to wait for HP depletion
-3  p- melee_ata_010.png
-3  p- melee_ata_011.png
-4  p- melee_ata_012.png
-3  p- melee_ata_013.png
-3  p- melee_ata_014.png
-3  p- melee_ata_015.png
-6  p- melee_ata_016.png
-4  p- melee_ata_017.png
-4  p- melee_ata_018.png
-C01                               #NOP
-/// - RETURN TO BASE
-7  p- melee_rtrn_001.png
-C22				  #Play short sword swinging SFE
-4  p- melee_rtrn_002.png
-4  p- melee_rtrn_003.png
-3  p- melee_rtrn_004.png
-C1B				  #Play quick "heavy step" SFE
-3  p- melee_rtrn_005.png
-6  p- melee_rtrn_006.png
-3  p- melee_rtrn_007.png
-4  p- melee_rtrn_008.png
-5  p- standing.png
-C06                               #Begin opponent's turn after hit.next code 0D.
-C0D                               #End of dodge animation. preceeded by 0x06
-
-~~~ - End Animation Data
+~~~
+/// - End of animation

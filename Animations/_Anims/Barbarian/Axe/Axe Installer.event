@@ -2,7 +2,8 @@
     
 PUSH
 AnimTableEntry(HighlanderAxe) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
-WORD 0 0 0 //empty name field, who cares
+BYTE 0x6D 0x6E 0x74 0x6D 0x5F 0x61 0x78 0x31
+WORD 0
 POIN Anim_Axe_sectiondata
 POIN Anim_Axe_framedata
 POIN Anim_Axe_rtl Anim_Axe_ltr Anim_Axe_pal

@@ -1,11 +1,11 @@
 #######################################################
-#40 armm_sp1 Knight Lance
+#3E armm_sp1 Knight Lance
 #
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
 /// - Mode 1               #Melee Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 6 p- armm_sp1_000.png
 6 p- armm_sp1_001.png
 6 p- armm_sp1_002.png
@@ -56,8 +56,8 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 3               #Melee Critical Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 6 p- armm_sp1_000.png
 6 p- armm_sp1_028.png
 3 p- armm_sp1_029.png
@@ -128,8 +128,8 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 5               #Ranged Animation 
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 6 p- armm_sp1_000.png
 4 p- armm_sp1_050.png
 3 p- armm_sp1_051.png
@@ -184,8 +184,8 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 6               #Ranged Critical Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 6 p- armm_sp1_000.png
 4 p- armm_sp1_050.png
 3 p- armm_sp1_051.png
@@ -250,8 +250,10 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 7               #Dodge Melee Attack
-5 p- armm_sp1_000.png
+1 p- armm_sp1_000.png
 C02                               #Start of dodge
+4 p- armm_sp1_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 2 p- armm_sp1_090.png
 2 p- armm_sp1_091.png
 4 p- armm_sp1_092.png
@@ -265,12 +267,13 @@ C1B                               #Play quick "heavy step" SFE
 6 p- armm_sp1_097.png
 C2B                               #Play armored unit "leaping" SFE
 5 p- armm_sp1_000.png
-C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 8               #Dodge Ranged Attack
-5 p- armm_sp1_000.png
+1 p- armm_sp1_000.png
 C02                               #Start of dodge
+4 p- armm_sp1_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 2 p- armm_sp1_090.png
 2 p- armm_sp1_091.png
 4 p- armm_sp1_092.png
@@ -284,7 +287,6 @@ C1B                               #Play quick "heavy step" SFE
 6 p- armm_sp1_097.png
 C2B                               #Play armored unit "leaping" SFE
 5 p- armm_sp1_000.png
-C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 9               #Equiped with Melee Weapon
@@ -300,8 +302,8 @@ C01                               #NOP
 C01                               #NOP
 ~~~
 /// - Mode 12               #Attack Missed Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 6 p- armm_sp1_000.png
 6 p- armm_sp1_001.png
 6 p- armm_sp1_002.png

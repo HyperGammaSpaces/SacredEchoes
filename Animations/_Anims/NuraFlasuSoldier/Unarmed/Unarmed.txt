@@ -1,5 +1,5 @@
 #######################################################
-#D1 lorm_sp1 
+#3D solm_ua1 Soldier Item
 #
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
@@ -22,6 +22,8 @@ C01                               #NOP
 /// - Mode 7               #Dodge Melee Attack
 1 p- Unarmed_000.png
 C02                               #Start of dodge
+1 p- Unarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 3 p- Unarmed_001.png
 3 p- Unarmed_002.png
 C1B                               #Play quick "heavy step" SFE
@@ -32,12 +34,13 @@ C01                               #NOP
 C1B                               #Play quick "heavy step" SFE
 4 p- Unarmed_006.png
 3 p- Unarmed_000.png
-C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 8               #Dodge Ranged Attack
 1 p- Unarmed_000.png
 C02                               #Start of dodge
+1 p- Unarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 3 p- Unarmed_001.png
 3 p- Unarmed_002.png
 C1B                               #Play quick "heavy step" SFE
@@ -48,7 +51,6 @@ C01                               #NOP
 C1B                               #Play quick "heavy step" SFE
 4 p- Unarmed_006.png
 3 p- Unarmed_000.png
-C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 9               #Equiped with Melee Weapon

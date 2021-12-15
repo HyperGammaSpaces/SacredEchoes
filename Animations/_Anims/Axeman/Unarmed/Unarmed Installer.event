@@ -1,8 +1,9 @@
 ///////Animation Install.event///////
     
 PUSH
-AnimTableEntry(WoodcutterUnarmed) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
-WORD 0 0 0 //empty name field, who cares
+AnimTableEntry(AxemanUnarmed) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
+BYTE 0x61 0x78 0x65 0x6D 0x5F 0x75 0x61 0x31
+WORD 0
 POIN Anim_Unarmed_sectiondata
 POIN Anim_Unarmed_framedata
 POIN Anim_Unarmed_rtl Anim_Unarmed_ltr Anim_Unarmed_pal

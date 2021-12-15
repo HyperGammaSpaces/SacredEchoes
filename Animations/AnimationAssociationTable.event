@@ -106,16 +106,21 @@ UnarmedAnim(MyrmUnarmed)
 WORD 0x0
 
 DFAnim:
+FDFAnim:
 SwordAnim(DFSword)
+WMagicAnim(DFUnarmed)
+BMagicAnim(DFUnarmed)
 UnarmedAnim(DFUnarmed)
 WORD 0x0
 
+/*
 FDFAnim:
 SwordAnim(FDFSword)
 WMagicAnim(FDFMagic)
 BMagicAnim(FDFMagic)
 UnarmedAnim(FDFMagic)
 WORD 0x0
+*/
 
 ThiefAnim:
 SwordAnim(ThiefSword)

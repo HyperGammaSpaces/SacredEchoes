@@ -1,8 +1,9 @@
 ///////Animation Install.event///////
     
 PUSH
-AnimTableEntry(WoodcutterAxe) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
-WORD 0 0 0 //empty name field, who cares
+AnimTableEntry(AxemanAxe) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
+BYTE 0x61 0x78 0x65 0x6D 0x5F 0x61 0x78 0x31
+WORD 0
 POIN Anim_Axe_sectiondata
 POIN Anim_Axe_framedata
 POIN Anim_Axe_rtl Anim_Axe_ltr Anim_Axe_pal

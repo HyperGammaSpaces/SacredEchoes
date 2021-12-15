@@ -2,7 +2,8 @@
     
 PUSH
 AnimTableEntry(BaronHandaxe) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
-WORD 0 0 0 //empty name field, who cares
+BYTE 0x62 0x61 0x72 0x6D 0x5F 0x61 0x78 0x32
+WORD 0
 POIN Anim_Handaxe_sectiondata
 POIN Anim_Handaxe_framedata
 POIN Anim_Handaxe_rtl Anim_Handaxe_ltr Anim_Handaxe_pal

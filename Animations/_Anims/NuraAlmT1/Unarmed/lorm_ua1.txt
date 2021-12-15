@@ -1,65 +1,72 @@
-/// - Mode 1
+#######################################################
+#05 alm1_ua1 Fighter Item
+#
+#When importing to FEditorAdv delete # and after each line.
+#######################################################
+/// - Mode 1               #Melee Animation
 2 p- lorm_ua1_000.png
-C01
+C01                               #NOP
 ~~~
-/// - Mode 3
+/// - Mode 3               #Melee Critical Animation
 2 p- lorm_ua1_000.png
-C01
+C01                               #NOP
 ~~~
-/// - Mode 5
+/// - Mode 5               #Ranged Animation 
 2 p- lorm_ua1_000.png
-C01
+C01                               #NOP
 ~~~
-/// - Mode 6
+/// - Mode 6               #Ranged Critical Animation
 2 p- lorm_ua1_000.png
-C01
+C01                               #NOP
 ~~~
-/// - Mode 7
-5 p- lorm_ua1_000.png
-C02
+/// - Mode 7               #Dodge Melee Attack
+1 p- lorm_ua1_000.png
+C02                               #Start of dodge
+4 p- lorm_ua1_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 2 p- lorm_ua1_001.png
 2 p- lorm_ua1_002.png
 2 p- lorm_ua1_003.png
-C1B
+C1B                               #Play quick "heavy step" SFE
 2 p- lorm_ua1_004.png
-C01
+C01                               #NOP
 4 p- lorm_ua1_005.png
 4 p- lorm_ua1_001.png
-C1B
+C1B                               #Play quick "heavy step" SFE
 5 p- lorm_ua1_000.png
-C06
-C0D
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 8
-5 p- lorm_ua1_000.png
-C02
+/// - Mode 8               #Dodge Ranged Attack
+1 p- lorm_ua1_000.png
+C02                               #Start of dodge
+4 p- lorm_ua1_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 2 p- lorm_ua1_001.png
 2 p- lorm_ua1_002.png
 2 p- lorm_ua1_003.png
-C1B
+C1B                               #Play quick "heavy step" SFE
 2 p- lorm_ua1_004.png
-C01
+C01                               #NOP
 4 p- lorm_ua1_005.png
 4 p- lorm_ua1_001.png
-C1B
+C1B                               #Play quick "heavy step" SFE
 5 p- lorm_ua1_000.png
-C06
-C0D
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 9
+/// - Mode 9               #Equiped with Melee Weapon
 2 p- lorm_ua1_000.png
-C01
+C01                               #NOP
 ~~~
-/// - Mode 10
+/// - Mode 10               #Standing motions
 2 p- lorm_ua1_000.png
-C01
+C01                               #NOP
 ~~~
-/// - Mode 11
+/// - Mode 11               #Equiped with Ranged weapon
 2 p- lorm_ua1_000.png
-C01
+C01                               #NOP
 ~~~
-/// - Mode 12
+/// - Mode 12               #Attack Missed Animation
 2 p- lorm_ua1_000.png
-C01
+C01                               #NOP
 ~~~
 /// - End of animation
