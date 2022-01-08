@@ -9,7 +9,7 @@
 #define MapSprite32x32 2
 
 StandingMapSprite($00,$02,MapSprite16x16,Celica_Map_Stand)
-StandingMapSprite($01,$00,MapSprite16x32,Alm_Map_Stand)
+StandingMapSprite($01,$02,MapSprite16x16,Alm_Map_Stand)
 StandingMapSprite($02,$02,MapSprite16x16,Celica2_Map_Stand)
 StandingMapSprite($03,$02,MapSprite16x32,Alm2_Map_Stand)
 
@@ -43,9 +43,9 @@ StandingMapSprite($1a,$02,MapSprite16x32,BowKnight_Map_Stand)
 
 StandingMapSprite($1b,$02,MapSprite16x32,WyvRider_Map_Stand)
 StandingMapSprite($1c,$02,MapSprite16x32,WyvLord_Map_Stand)
-StandingMapSprite($1d,$02,MapSprite16x32,$1bc774) //peg
-StandingMapSprite($1e,$02,MapSprite16x32,$1bc918) //falco
-StandingMapSprite($1f,$03,MapSprite16x32,$1ba068) //dracoknight
+StandingMapSprite($1d,$02,MapSprite16x32,PegKnight_Map_Stand)
+StandingMapSprite($1e,$02,MapSprite16x32,Falcoknight_Map_Stand)
+StandingMapSprite($1f,$03,MapSprite16x32,Dracoknight_Map_Stand)
 
 StandingMapSprite($20,$02,MapSprite16x16,MageM_Map_Stand)
 StandingMapSprite($21,$02,MapSprite16x16,MageF_Map_Stand)
@@ -78,7 +78,7 @@ StandingMapSprite($36,$02,MapSprite16x16,Dancer_Map_Stand)
 
 StandingMapSprite($37,$03,MapSprite16x32,Jedah_Map_Stand)
 StandingMapSprite($38,$03,MapSprite16x32,Fleet_Map_Stand)
-StandingMapSprite($39,$02,MapSprite16x32,Fiend_Map_Stand)
+StandingMapSprite($39,$03,MapSprite32x32,Fiend_Map_Stand)
 StandingMapSprite($3a,$03,MapSprite16x16,Revenant_Map_Stand)
 StandingMapSprite($3b,$03,MapSprite16x16,Entombed_Map_Stand)
 StandingMapSprite($3c,$03,MapSprite16x16,$1bd864) //bone
@@ -116,10 +116,10 @@ StandingMapSprite($5b,$02,MapSprite16x32,$1bfb4c)
 StandingMapSprite($5c,$02,MapSprite16x32,$1bfcc0)
 StandingMapSprite($5d,$02,MapSprite16x32,$1bfe34)//blst end
 
-StandingMapSprite($5e,$02,MapSprite16x16,$1c05d8)
-StandingMapSprite($5f,$02,MapSprite16x16,$1c07bc)
-StandingMapSprite($60,$02,MapSprite16x32,$1c0840)
-StandingMapSprite($61,$02,MapSprite16x32,$1c0934)
+StandingMapSprite($5e,$02,MapSprite16x16,$1c05d8) //princess
+StandingMapSprite($5f,$02,MapSprite16x32,Berkut_Map_Stand)
+StandingMapSprite($60,$02,MapSprite16x32,Berkut2_Map_Stand)
+StandingMapSprite($61,$02,MapSprite16x32,$1c0840)
 StandingMapSprite($62,$00,MapSprite16x16,$1c0a70)
 StandingMapSprite($63,$02,MapSprite16x16,WarpTileMapSprite)
 StandingMapSprite(TileMarkerMapSpriteID,$02,MapSprite16x16,TileMarkerMapSprite)

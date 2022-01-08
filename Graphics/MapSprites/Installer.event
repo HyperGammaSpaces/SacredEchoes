@@ -11,291 +11,322 @@ PUSH
 POP
 
 ALIGN 4
-Alm_Map_Stand:
-#incbin "Dmp/AlmFighterStand.dmp"
+Alm_Map_Stand: //by Feier
+#incbin "Dmp/SMS_AlmFighter.dmp"
 ALIGN 4
 Alm_Map_Move:
-#incbin "Dmp/AlmFighterMove.dmp"
+#incbin "Dmp/MMS_AlmFighter.dmp"
 ALIGN 4
-Alm2_Map_Stand:
-#incbin "Dmp/almt2-stand.dmp"
+Alm2_Map_Stand: //by Snewping
+#incbin "Dmp/SMS_AlmHero.dmp"
 ALIGN 4
 Alm2_Map_Move:
-#incbin "Dmp/almt2-move.dmp"
+#incbin "Dmp/MMS_AlmHero.dmp"
 ALIGN 4
 
 Celica_Map_Stand:
-#incbin "Dmp/CelicaT1Standing.dmp"
+#incbin "Dmp/SMS_CelicaPriestess.dmp"
 ALIGN 4
 Celica_Map_Move:
-#incbin "Dmp/CelicaT1Moving.dmp"
+#incbin "Dmp/MMS_CelicaPriestess.dmp"
 ALIGN 4
-Celica2_Map_Stand:
-#incbin "Dmp/celica2-stand.dmp"
+Celica2_Map_Stand: //by blood
+#incbin "Dmp/SMS_CelicaPrincess.dmp"
 ALIGN 4
 Celica2_Map_Move:
-#incbin "Dmp/celica2-move.dmp"
+#incbin "Dmp/MMS_CelicaPrincess.dmp"
+ALIGN 4
+
+Berkut_Map_Stand:
+#incbin "Dmp/SMS_Berkut.dmp"
+ALIGN 4
+Berkut_Map_Move:
+#incbin "Dmp/MMS_Berkut.dmp"
+ALIGN 4
+Berkut2_Map_Stand:
+#incbin "Dmp/SMS_FallenKnight.dmp"
+ALIGN 4
+Berkut2_Map_Move:
+#incbin "Dmp/MMS_FallenKnight.dmp"
 ALIGN 4
 
 Cav_Map_Stand:
-#incbin "Dmp/Cav-stand.dmp"
+#incbin "Dmp/SMS_Cavalier.dmp"
 ALIGN 4
 Cav_Map_Move:
-#incbin "Dmp/Cav-move.dmp"
+#incbin "Dmp/MMS_Cavalier.dmp"
 ALIGN 4
 Fcav_Map_Stand:
-#incbin "Dmp/FCav-stand.dmp"
+#incbin "Dmp/SMS_CavalierF.dmp"
 ALIGN 4
 Fcav_Map_Move:
-#incbin "Dmp/FCav-move.dmp"
+#incbin "Dmp/MMS_CavalierF.dmp"
 ALIGN 4
 Pal_Map_Stand:
-#incbin "Dmp/paladin-stand.dmp"
+#incbin "Dmp/SMS_Paladin.dmp"
 ALIGN 4
 Pal_Map_Move:
-#incbin "Dmp/paladin-move.dmp"
+#incbin "Dmp/MMS_Paladin.dmp"
 ALIGN 4
 Fpal_Map_Stand:
-#incbin "Dmp/paladinf-stand.dmp"
+#incbin "Dmp/SMS_PaladinF.dmp"
 ALIGN 4
 Fpal_Map_Move:
-#incbin "Dmp/paladinf-move.dmp"
+#incbin "Dmp/MMS_PaladinF.dmp"
 ALIGN 4
 GoldKnight_Map_Stand:
-#incbin "Dmp/GKnightStanding.dmp"
+#incbin "Dmp/SMS_GoldKnight.dmp"
 ALIGN 4
 GoldKnight_Map_Move:
-#incbin "Dmp/GKnightMoving.dmp"
+#incbin "Dmp/MMS_GoldKnight.dmp"
 ALIGN 4
 
 Soldier_Map_Stand:
-#incbin "Dmp/soldier2-stand.dmp"
+#incbin "Dmp/SMS_Soldier.dmp"
 ALIGN 4
 Soldier_Map_Move:
-#incbin "Dmp/soldier2-move.dmp"
+#incbin "Dmp/MMS_Soldier.dmp"
 ALIGN 4
 Knight_Map_Stand:
-#incbin "Dmp/knight-stand.dmp"
+#incbin "Dmp/SMS_Knight.dmp"
 ALIGN 4
 Knight_Map_Move:
-#incbin "Dmp/knight-move.dmp"
+#incbin "Dmp/MMS_Knight.dmp"
 ALIGN 4
 Baron_Map_Stand:
-#incbin "Dmp/baron-stand.dmp"
+#incbin "Dmp/SMS_Baron.dmp"
 ALIGN 4
 Baron_Map_Move:
-#incbin "Dmp/baron-move.dmp"
+#incbin "Dmp/MMS_Baron.dmp"
 ALIGN 4
 Fiend_Map_Stand:
-#incbin "Dmp/fiend-stand.dmp"
+#incbin "Dmp/SMS_Fiend.dmp"
 ALIGN 4
 Fiend_Map_Move:
-#incbin "Dmp/fiend-move.dmp"
+#incbin "Dmp/MMS_Fiend.dmp"
 ALIGN 4
 
 MercF_Map_Stand:
-#incbin "Dmp/mercf-stand.dmp"
+#incbin "Dmp/SMS_MercF.dmp"
 ALIGN 4
 MercF_Map_Move:
-#incbin "Dmp/mercf-move.dmp"
+#incbin "Dmp/MMS_MercF.dmp"
 ALIGN 4
 Myrm_Map_Stand:
-#incbin "Dmp/myrm-stand.dmp"
+#incbin "Dmp/SMS_Myrmidon.dmp"
 ALIGN 4
 Myrm_Map_Move:
-#incbin "Dmp/myrm-move.dmp"
+#incbin "Dmp/MMS_Myrmidon.dmp"
 ALIGN 4
 DF_Map_Stand:
-#incbin "Dmp/df-stand.dmp"
+#incbin "Dmp/SMS_DF.dmp"
 ALIGN 4
 DF_Map_Move:
-#incbin "Dmp/df-move.dmp"
+#incbin "Dmp/MMS_DF.dmp"
 ALIGN 4
 FDF_Map_Stand:
-#incbin "Dmp/fdf-stand.dmp"
+#incbin "Dmp/SMS_DF_F.dmp"
 ALIGN 4
 FDF_Map_Move:
-#incbin "Dmp/fdf-move.dmp"
+#incbin "Dmp/MMS_DF_F.dmp"
 ALIGN 4
 
 Archer_Map_Stand: //by Der
-#incbin "Dmp/archer-stand.dmp"
+#incbin "Dmp/SMS_Archer.dmp"
 ALIGN 4
 Archer_Map_Move: //by Der
-#incbin "Dmp/archer-move.dmp"
+#incbin "Dmp/MMS_Archer.dmp"
 ALIGN 4
 ArcherF_Map_Stand: //by Der
-#incbin "Dmp/archerf-stand.dmp"
+#incbin "Dmp/SMS_ArcherF.dmp"
 ALIGN 4
 ArcherF_Map_Move: //by Der
-#incbin "Dmp/archerf-move.dmp"
+#incbin "Dmp/MMS_ArcherF.dmp"
 ALIGN 4
 BowKnight_Map_Stand:
-#incbin "Dmp/ranger-stand.dmp"
+#incbin "Dmp/SMS_BowKnight.dmp"
 ALIGN 4
 BowKnight_Map_Move:
-#incbin "Dmp/ranger-move.dmp"
+#incbin "Dmp/MMS_BowKnight.dmp"
 ALIGN 4
 
-Cleric_Map_Stand:
-#incbin "Dmp/cleric-stand.dmp"
+PegKnight_Map_Stand: //by flasuban
+#incbin "Dmp/SMS_PegKnight.dmp"
+ALIGN 4
+PegKnight_Map_Move:
+#incbin "Dmp/MMS_PegKnight.dmp"
+ALIGN 4
+Falcoknight_Map_Stand: //by flasuban
+#incbin "Dmp/SMS_Falcoknight.dmp"
+ALIGN 4
+Falcoknight_Map_Move:
+#incbin "Dmp/MMS_Falcoknight.dmp"
+ALIGN 4
+Dracoknight_Map_Stand: //by blood
+#incbin "Dmp/SMS_Dracoknight.dmp"
+ALIGN 4
+Dracoknight_Map_Move:
+#incbin "Dmp/MMS_Dracoknight.dmp"
+ALIGN 4
+
+Cleric_Map_Stand: //by flasuban
+#incbin "Dmp/SMS_Cleric.dmp"
 ALIGN 4
 Cleric_Map_Move:
-#incbin "Dmp/cleric-move.dmp"
+#incbin "Dmp/MMS_Cleric.dmp"
 ALIGN 4
 Saint_Map_Stand: //by Melia
-#incbin "Dmp/saint_stand.dmp"
+#incbin "Dmp/SMS_Saint.dmp"
 ALIGN 4
-Saint_Map_Move: //by Melia
-#incbin "Dmp/saint_move.dmp"
+Saint_Map_Move:
+#incbin "Dmp/MMS_Saint.dmp"
 ALIGN 4
 Nomah_Map_Stand:
-#incbin "Dmp/nomah-stand.dmp"
+#incbin "Dmp/SMS_Nomah.dmp"
 ALIGN 4
 Nomah_Map_Move:
-#incbin "Dmp/nomah-move.dmp"
+#incbin "Dmp/MMS_Nomah.dmp"
 ALIGN 4
 
-MageM_Map_Stand: //by Leif
-#incbin "Dmp/leif-mage-stand.dmp"
+MageM_Map_Stand: //by L95/Leo_link
+#incbin "Dmp/SMS_Mage.dmp"
 ALIGN 4
-MageM_Map_Move: //by Leif
-#incbin "Dmp/leif-mage-move.dmp"
+MageM_Map_Move: 
+#incbin "Dmp/MMS_Mage.dmp"
 ALIGN 4
 SageM_Map_Stand: //by Leif
-#incbin "Dmp/sageM-stand.dmp"
+#incbin "Dmp/SMS_Sage.dmp"
 ALIGN 4
-SageM_Map_Move: //by Leif
-#incbin "Dmp/sageM-move.dmp"
+SageM_Map_Move:
+#incbin "Dmp/MMS_Sage.dmp"
 ALIGN 4
 
-MageF_Map_Stand: //by TAS20XX
-#incbin "Dmp/mage_f_stand.dmp"
+MageF_Map_Stand: //by Leif
+#incbin "Dmp/SMS_MageF.dmp"
 ALIGN 4
-MageF_Map_Move: //by TAS20XX
-#incbin "Dmp/mage_f_move.dmp"
+MageF_Map_Move:
+#incbin "Dmp/MMS_MageF.dmp"
 ALIGN 4
-SageF_Map_Stand:
-#incbin "Dmp/priestess-stand.dmp"
+SageF_Map_Stand: //by L95
+#incbin "Dmp/SMS_Priestess.dmp"
 ALIGN 4
 SageF_Map_Move:
-#incbin "Dmp/priestess-move.dmp"
+#incbin "Dmp/MMS_Priestess.dmp"
 ALIGN 4
 Vestal_Map_Stand:
-#incbin "Dmp/vestal-stand.dmp"
+#incbin "Dmp/SMS_Vestal.dmp"
 ALIGN 4
 Vestal_Map_Move:
-#incbin "Dmp/vestal-move.dmp"
+#incbin "Dmp/MMS_Vestal.dmp"
 ALIGN 4
 Witch_Map_Stand:
-#incbin "Dmp/witch-stand.dmp"
+#incbin "Dmp/SMS_Witch.dmp"
 ALIGN 4
 Witch_Map_Move:
-#incbin "Dmp/witch-move.dmp"
+#incbin "Dmp/MMS_Witch.dmp"
 ALIGN 4
 
 ThiefF_Map_Stand:
-#incbin "Dmp/ThiefFStand.dmp"
+#incbin "Dmp/SMS_ThiefF.dmp"
 ALIGN 4
 ThiefF_Map_Move:
-#incbin "Dmp/ThiefFMove.dmp"
+#incbin "Dmp/MMS_ThiefF.dmp"
 ALIGN 4
 RogueF_Map_Stand:
-#incbin "Dmp/FRogue-stand.dmp"
+#incbin "Dmp/SMS_RogueF.dmp"
 ALIGN 4
 RogueF_Map_Move:
-#incbin "Dmp/FRogue-move.dmp"
+#incbin "Dmp/MMS_RogueF.dmp"
 ALIGN 4
 
 Dancer_Map_Stand:
-#incbin "Dmp/dancer-stand.dmp"
+#incbin "Dmp/SMS_Dancer.dmp"
 ALIGN 4
 Dancer_Map_Move:
-#incbin "Dmp/dancer-move.dmp"
+#incbin "Dmp/MMS_Dancer.dmp"
 ALIGN 4
 Villager_Map_Stand:
-#incbin "Dmp/VillagerMStand.dmp"
+#incbin "Dmp/SMS_Villager.dmp"
 ALIGN 4
 Villager_Map_Move:
-#incbin "Dmp/VillagerMMove.dmp"
+#incbin "Dmp/MMS_Villager.dmp"
 ALIGN 4
 Villager_F_Map_Stand:
-#incbin "Dmp/VillagerFStand.dmp"
+#incbin "Dmp/SMS_VillagerF.dmp"
 ALIGN 4
 Villager_F_Map_Move:
-#incbin "Dmp/VillagerFMove.dmp"
+#incbin "Dmp/MMS_VillagerF.dmp"
 ALIGN 4
 
 MagSeal_Map_Stand:
-#incbin "Dmp/mseal-stand.dmp"
+#incbin "Dmp/SMS_MagicSeal.dmp"
 ALIGN 4
 MagSeal_Map_Move:
-#incbin "Dmp/mseal-move.dmp"
+#incbin "Dmp/MMS_MagicSeal.dmp"
 ALIGN 4
 Jedah_Map_Stand:
-#incbin "Dmp/jedah-stand.dmp"
+#incbin "Dmp/SMS_Jedah.dmp"
 ALIGN 4
 Jedah_Map_Move:
-#incbin "Dmp/jedah-move.dmp"
+#incbin "Dmp/MMS_Jedah.dmp"
 ALIGN 4
 Duma_Map_Stand: //by SHYUTERz, HIROTO & SHIRMER
-#incbin "Dmp/duma-stand.dmp"
+#incbin "Dmp/SMS_Duma.dmp"
 ALIGN 4
 Duma_Map_Move: //by SHYUTERz, HIROTO & SHIRMER
-#incbin "Dmp/duma-move.dmp"
+#incbin "Dmp/MMS_Duma.dmp"
 ALIGN 4
 
 WyvRider_Map_Stand:
-#incbin "Dmp/wrider-stand.dmp"
+#incbin "Dmp/SMS_WyvernRider.dmp"
 ALIGN 4
 WyvRider_Map_Move:
-#incbin "Dmp/wrider-move.dmp"
+#incbin "Dmp/MMS_WyvernRider.dmp"
 ALIGN 4
-
 WyvLord_Map_Stand:
-#incbin "Dmp/wlord-stand.dmp"
+#incbin "Dmp/SMS_WyvernLord.dmp"
 ALIGN 4
 WyvLord_Map_Move:
-#incbin "Dmp/wlord-move.dmp"
+#incbin "Dmp/MMS_WyvernLord.dmp"
 ALIGN 4
 
 Brigand_Map_Stand:
-#incbin "Dmp/brigand_standing.dmp"
+#incbin "Dmp/SMS_Brigand.dmp"
 ALIGN 4
 Brigand_Map_Move:
-#incbin "Dmp/brigand_moving.dmp"
+#incbin "Dmp/MMS_Brigand.dmp"
 ALIGN 4
 
 Woodcutter_Map_Stand:
-#incbin "Dmp/woodcutter-stand.dmp"
+#incbin "Dmp/SMS_Woodcutter.dmp"
 ALIGN 4
 Woodcutter_Map_Move:
-#incbin "Dmp/woodcutter-move.dmp"
+#incbin "Dmp/MMS_Woodcutter.dmp"
 ALIGN 4
 Axeman_Map_Stand:
-#incbin "Dmp/axeman-stand.dmp"
+#incbin "Dmp/SMS_Axeman.dmp"
 ALIGN 4
 Axeman_Map_Move:
-#incbin "Dmp/axeman-move.dmp"
+#incbin "Dmp/MMS_Axeman.dmp"
 ALIGN 4
 Highlander_Map_Stand:
-#incbin "Dmp/highlander-stand.dmp"
+#incbin "Dmp/SMS_Highlander.dmp"
 ALIGN 4
 Highlander_Map_Move:
-#incbin "Dmp/highlander-move.dmp"
+#incbin "Dmp/MMS_Highlander.dmp"
 ALIGN 4
 
 PirateF_Map_Stand:
-#incbin "Dmp/fpirate-stand.dmp"
+#incbin "Dmp/SMS_PirateF.dmp"
 ALIGN 4
 PirateF_Map_Move:
-#incbin "Dmp/fpirate-move.dmp"
+#incbin "Dmp/MMS_PirateF.dmp"
 ALIGN 4
 BerserkerF_Map_Stand:
-#incbin "Dmp/fzerk-stand.dmp"
+#incbin "Dmp/SMS_BerserkerF.dmp"
 ALIGN 4
 BerserkerF_Map_Move:
-#incbin "Dmp/fzerk-move.dmp"
+#incbin "Dmp/MMS_BerserkerF.dmp"
 ALIGN 4
 
 
@@ -305,41 +336,43 @@ ALIGN 4
 WarpTileMapSprite:
 #incbin "Dmp/_WarpPanel.dmp"
 ALIGN 4
+
+//size fixes by Pikmin1211 and WarPath
 BonewalkerBow_Map_Stand:
-#incbin "Dmp/bownewalker.dmp"
+#incbin "Dmp/SMS_Bownewalker.dmp"
 ALIGN 4
 Chiron_Map_Stand:
-#incbin "Dmp/tarvos.dmp"
+#incbin "Dmp/SMS_Tarvos.dmp"
 ALIGN 4
 Revenant_Map_Stand:
-#incbin "Dmp/zombie1.dmp"
+#incbin "Dmp/SMS_Revenant.dmp"
 ALIGN 4
 Entombed_Map_Stand:
-#incbin "Dmp/zombie2.dmp"
+#incbin "Dmp/SMS_Entombed.dmp"
 ALIGN 4
 Hellhound_Map_Stand:
-#incbin "Dmp/hellhound-stand.dmp"
+#incbin "Dmp/SMS_Hellhound.dmp"
 ALIGN 4
 Kerberos_Map_Stand:
-#incbin "Dmp/kerberos-stand.dmp"
+#incbin "Dmp/SMS_Kerberos.dmp"
 ALIGN 4
 Gargoyle_Map_Stand:
-#incbin "Dmp/garg1.dmp"
+#incbin "Dmp/SMS_Gargoyle.dmp"
 ALIGN 4
-Deathgoyle_Map_Stand:
-#incbin "Dmp/garg2.dmp"
+Deathgoyle_Map_Stand: //also by L95
+#incbin "Dmp/SMS_Deathgoyle.dmp"
 ALIGN 4
 Deathgoyle_Map_Move:
-#incbin "Dmp/garg2-move.dmp"
+#incbin "Dmp/MMS_Deathgoyle.dmp"
 ALIGN 4
 Bael_Map_Stand:
-#incbin "Dmp/spider1.dmp"
+#incbin "Dmp/SMS_Bael.dmp"
 ALIGN 4
 ElderBael_Map_Stand:
-#incbin "Dmp/spider2.dmp"
+#incbin "Dmp/SMS_ElderBael.dmp"
 ALIGN 4
-Fleet_Map_Stand:
-#incbin "Dmp/pushwall-fleetfix.dmp"
+Fleet_Map_Stand: //by Pushwall
+#incbin "Dmp/SMS_Fleet.dmp"
 ALIGN 4
 
 //Animation pointers
