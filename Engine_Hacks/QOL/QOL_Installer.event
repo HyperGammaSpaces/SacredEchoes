@@ -8,6 +8,29 @@ PUSH
     BYTE Time_Between_Stats
     ORG $741E0
     BYTE Time_Between_Stats+1
+    
+    //Halve map battle delay
+    ORG $9A3528
+    PROC_SLEEP(1)
+    ORG $9A3540
+    PROC_SLEEP(3)
+    ORG $9A3568
+    PROC_SLEEP(7)
+    /* 
+    //moved to PopupRework/PopRAnimsOff
+    ORG $9A3608
+    PROC_SLEEP(4)
+    */
+    ORG $9A3628
+    PROC_SLEEP(4)
+    
+    //Halve Rounds delay on map battles
+    ORG $9A47B4
+    PROC_SLEEP(1)
+    ORG $9A47C4
+    PROC_SLEEP(4)
+    ORG $9A480C
+    PROC_SLEEP(10)
 
     #ifdef LANGUAGE_ES
         //Fix unit list Aid text for Spanish

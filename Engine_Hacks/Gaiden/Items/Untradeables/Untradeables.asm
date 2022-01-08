@@ -217,7 +217,7 @@ Untradeable_Steal_Fix:
 		lsl r0, r0, #0x18	@unstealable bit
 		and r0, r1
 		cmp r0, #0x0
-		beq StealFix_End
+		bne StealFix_End
 			mov r0, #0x1
 	StealFix_End:
 	pop {r1}

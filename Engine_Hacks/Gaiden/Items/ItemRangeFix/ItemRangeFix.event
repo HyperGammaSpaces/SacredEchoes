@@ -177,6 +177,7 @@
     
 	//####### HIGHLIGHTED SQUARES #######
 	
+    /*
 	//Fix my ballista issues the lazy way (instead of not passing in bool via r12, just make range function not use r12)
 	ORG $1AAC6
 	SHORT $B082
@@ -190,6 +191,10 @@
 	SHORT $9A01
 	ORG $1ABA6
 	SHORT $B002
+    */
+    //Above obsoleted by 7743's MapAddInRange fix:
+    ORG $1AABC
+    #incbin "MapAddInRange-7743.dmp"
 	
 	//NEW Bowrange AI fixes
 	ORG $3AC6A

@@ -32,6 +32,14 @@ PUSH
 //Terrain-seek AI
 	ORG $5A8818
 	POIN DefensiveTerrainList
+    
+//Lootable terrain
+    ORG $5A8120
+    BYTE $03 $37 $00 $00
+//With chests
+    ORG $5A8124
+    BYTE $03 $37 $21 $00
+    
 POP
 
 //Efficiency fix for FillAIDangerMap
