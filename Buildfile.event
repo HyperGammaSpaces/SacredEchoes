@@ -58,6 +58,7 @@
 	MESSAGE Gfx space used is__ (currentOffset - GfxSpace)
 
 	//Animations
+    //ORG $C02000
 	AnimSpace:
     #include "Animations/Master_Animation_Installer.event"
 	MESSAGE Anim space used is__ (currentOffset - AnimSpace)
