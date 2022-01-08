@@ -74,6 +74,16 @@
     #include "PrincessCelicaRedbean/Magic/lorf_mg1 Installer.event"
   }
   ALIGN 4
+  Berkut1Lance:
+  {
+    #include "Berkut/Lance/Lance Installer.event"
+  }
+  ALIGN 4
+  Berkut1Unarmed:
+  {
+    #include "Berkut/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
   CavLance:
   {
     #include "SalvCavM/Lance/Lance Installer.event"
@@ -206,9 +216,19 @@
     #include "RogueRepalette/Male/Unarmed Installer.event"
   }
   ALIGN 4
+  Mage_Unarmed:
+  {
+	#include "Mage_M/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
   Mage_Magic:
   {
 	#include "Mage_M/Magic/Magic Installer.event"
+  }
+  ALIGN 4
+  FMage_Unarmed:
+  {
+	#include "GaidenFMage/Unarmed/Unarmed Installer.event"
   }
   ALIGN 4
   FMage_Magic:
@@ -442,6 +462,11 @@
 	#include "MagicCleric/Staff/Staff Installer.event"
   }
   ALIGN 4
+  Cleric_Unarmed:
+  {
+	#include "MagicCleric/Unarmed/Unarmed Installer.event"
+  }
+  ALIGN 4
   Saint_Staff:
   {
 	#include "MeliaSaint/Magic/Magic Installer.event"
@@ -650,6 +675,26 @@
   Mogall_Tackle:
   {
 	#include "EpicerMogall/Monster/Monster Installer.event"
+  }
+  ALIGN 4
+  Wight_BowAnim:
+  {
+	#include "Wight/Bow/Bow Installer.event"
+  }
+  ALIGN 4
+  Wight_LanceAnim:
+  {
+	#include "Wight/Lance/Lance Installer.event"
+  }
+  ALIGN 4
+  Wight_SwordAnim:
+  {
+	#include "Wight/Sword/Sword Installer.event"
+  }
+  ALIGN 4
+  Wight_UnarmedAnim:
+  {
+	#include "Wight/Unarmed/Unarmed Installer.event"
   }
   ALIGN 4
   Deathgoyle_Lance:

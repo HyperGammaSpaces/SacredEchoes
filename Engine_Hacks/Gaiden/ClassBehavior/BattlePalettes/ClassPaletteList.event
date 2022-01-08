@@ -63,7 +63,6 @@ SetPaletteForUnit(Xyzas,$B1)
 SetPaletteForUnit(Deen,$BB)
 SetPaletteForUnit(Sonya,$CA)
 SetPaletteForUnit(Conrad,$DA)
-SetPaletteForUnit(BerkutPaladin,$DD)
 WORD 0 0
 ALIGN 4
 
@@ -91,7 +90,6 @@ SetPaletteForUnit(Sonya,$CB)
 SetPaletteForUnit(Zeke,$D9)
 SetPaletteForUnit(Conrad,$DB)
 SetPaletteForUnit(Mycen,$DC)
-SetPaletteForUnit(BerkutGK,$DE)
 //SetPaletteForUnit(RudolfEnemy,$E3)
 WORD 0 0
 ALIGN 4
@@ -442,8 +440,8 @@ PaletteAssociationTable:
 	SetClassPaletteTable(0x34,NO_PALETTE)
 	SetClassPaletteTable(GoldKnight,GKPaletteList)
 	SetClassPaletteTable(GoldKnight_F,GKPaletteList)
-	SetClassPaletteTable(0x37,NO_PALETTE)
-	SetClassPaletteTable(0x38,NO_PALETTE)
+	SetClassPaletteTable(RigelPrince,NO_PALETTE)
+	SetClassPaletteTable(FallenPrince,NO_PALETTE)
 	SetClassPaletteTable(0x39,NO_PALETTE)
 	SetClassPaletteTable(0x3A,NO_PALETTE)
 	SetClassPaletteTable(0x3B,NO_PALETTE)

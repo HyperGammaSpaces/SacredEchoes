@@ -45,6 +45,17 @@ BowAnim(AlmHeroBow)
 UnarmedAnim(AlmHeroUnarmed)
 WORD 0x0
 
+BerkutT1Anim:
+SpearAnim(BerkutT1Lance)
+//TODO: kriemhild animation with aura
+UnarmedAnim(BerkutT1Unarmed)
+WORD 0x0
+
+BerkutT2Anim:
+SpearAnim(BerkutT2Lance)
+UnarmedAnim(BerkutT2Unarmed)
+WORD 0x0
+
 CavalierAnim:
 SpearAnim(CavalierLance)
 UnarmedAnim(CavalierUnarmed)
@@ -177,13 +188,13 @@ WORD 0x0
 MageAnim:
 WMagicAnim(MageMagic)
 BMagicAnim(MageMagic)
-UnarmedAnim(MageMagic)
+UnarmedAnim(MageUnarmed)
 WORD 0x0
 
 MageFAnim:
 WMagicAnim(MageFMagic)
 BMagicAnim(MageFMagic)
-UnarmedAnim(MageFMagic)
+UnarmedAnim(MageFUnarmed)
 WORD 0x0
 
 SageAnim:
@@ -214,7 +225,7 @@ WORD 0x0
 ClericAnim:
 WMagicAnim(ClericStaff)
 BMagicAnim(ClericStaff)
-UnarmedAnim(ClericStaff)
+UnarmedAnim(ClericUnarmed)
 WORD 0x0
 
 SaintAnim:

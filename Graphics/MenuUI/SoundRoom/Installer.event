@@ -2,6 +2,10 @@ PUSH
 
 	ORG $AF7E0
 	POIN SoundRoomControlsGfx
+    
+    //center sound room titles, thanks scraiza
+    ORG $B0052 
+    BYTE $A8
 
 POP
 
