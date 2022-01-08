@@ -226,176 +226,164 @@ setMugEntry(Portrait_Girl,$83391C,$833884,$833264,$833284,2,7,3,5)
 //class cards start at 0xC7
 ALIGN 4
 CavalierCard:
-#incbin "ClassCards/salvcav.dmp"
+#incbin "ClassCards/cavalier.img.bin"
 ALIGN 4
 CavalierCardPalette:
-#incbin "ClassCards/salvcav.pal.bin"
+#incbin "ClassCards/cavalier.pal.bin"
 ALIGN 4
 PaladinCard:
-#incbin "ClassCards/flasuban-salvpal.dmp"
+#incbin "ClassCards/paladin.img.bin"
 ALIGN 4
 PaladinCardPalette:
-#incbin "ClassCards/flasuban-salvpal.pal.bin"
+#incbin "ClassCards/paladin.pal.bin"
 ALIGN 4
 GoldKnightCard:
-#incbin "ClassCards/GKCard.dmp" 
+#incbin "ClassCards/goldknight.img.bin" 
 ALIGN 4
 GoldKnightCardPalette:
-#incbin "ClassCards/GKCard.pal.bin"
+#incbin "ClassCards/goldknight.pal.bin"
 ALIGN 4
 SoldierCard:
-#incbin "ClassCards/flasuban-soldier.dmp"
+#incbin "ClassCards/soldier.img.bin"
 ALIGN 4
 SoldierCardPalette:
-#incbin "ClassCards/flasuban-soldier.pal.bin"
+#incbin "ClassCards/soldier.pal.bin"
 ALIGN 4 
 KnightCard:
-#incbin "ClassCards/KnightCard.dmp"
+#incbin "ClassCards/knight.img.bin"
 ALIGN 4
 KnightCardPalette:
-#incbin "ClassCards/KnightCard.pal.bin"
+#incbin "ClassCards/knight.pal.bin"
 ALIGN 4
 BaronCard:
-#incbin "ClassCards/baron.dmp"
+#incbin "ClassCards/baron.img.bin"
 ALIGN 4
 BaronCardPalette:
 #incbin "ClassCards/baron.pal.bin"
 ALIGN 4
+FiendCard:
+#incbin "ClassCards/fiend.img.bin"
+ALIGN 4
 MyrmidonCard: //by Nura
-#incbin "ClassCards/myrmidon-card.dmp"
+#incbin "ClassCards/myrmidon.img.bin"
 ALIGN 4
 MyrmidonCardPalette:
-#incbin "ClassCards/myrmidon-card.pal.bin"
+#incbin "ClassCards/myrmidon.pal.bin"
 ALIGN 4
 DFCard: //by Nura
-#incbin "ClassCards/df-card.dmp"
+#incbin "ClassCards/dreadfighter.img.bin"
 ALIGN 4
 DFCardPalette:
-#incbin "ClassCards/df-card.pal.bin"
+#incbin "ClassCards/dreadfighter.pal.bin"
 ALIGN 4
 ArcherCard: //by Der
-#incbin "ClassCards/archer_card.dmp"
+#incbin "ClassCards/archer.img.bin"
 ALIGN 4
-ArcherCardPalette:
-#incbin "ClassCards/archer_card.pal.bin"
+ArcherPalette:
+#incbin "ClassCards/archer.pal.bin"
 ALIGN 4
 FArcherCard: //by Der
-#incbin "ClassCards/archer_card_f.dmp"
-ALIGN 4
-FArcherCardPalette:
-#incbin "ClassCards/archer_card_f.pal.bin"
+#incbin "ClassCards/archer_f.img.bin"
 ALIGN 4
 FSniperCard: //by L95
-#incbin "ClassCards/l95-fsniper.dmp"
-ALIGN 4
-FSniperCardPalette:
-#incbin "ClassCards/l95-fsniper.pal.bin"
+#incbin "ClassCards/sniper_f.img.bin"
 ALIGN 4
 BKCard:
-#incbin "ClassCards/bk_card.dmp"
+#incbin "ClassCards/bowknight.img.bin"
 ALIGN 4
 BKCardPalette:
-#incbin "ClassCards/bk_card.pal.bin" 
+#incbin "ClassCards/bowknight.pal.bin" 
 ALIGN 4
 
 WRiderCard:
-#incbin "ClassCards/flasuban-wrider.dmp"
+#incbin "ClassCards/wyvernrider.img.bin"
 ALIGN 4
 WRiderCardPalette:
-#incbin "ClassCards/flasuban-wrider.pal.bin" 
+#incbin "ClassCards/wyvernrider.pal.bin" 
 ALIGN 4
 WLordCard:
-#incbin "ClassCards/flasuban-wlord.dmp"
+#incbin "ClassCards/wyvernlord.img.bin"
 ALIGN 4
 WLordCardPalette:
-#incbin "ClassCards/flasuban-wlord.pal.bin"
+#incbin "ClassCards/wyvernlord.pal.bin"
 ALIGN 4
-FMageCard:
-#incbin "ClassCards/l95-fmage.dmp"
+FMageCard: //by L95
+#incbin "ClassCards/mage_f.img.bin"
 ALIGN 4
-FMageCardPalette:
-#incbin "ClassCards/L95-fmage.pal.bin"
-ALIGN 4
-MageCard:
-#incbin "ClassCards/L95-mage.dmp"
+MageCard: //by L95
+#incbin "ClassCards/mage.img.bin"
 ALIGN 4
 MageCardPalette:
-#incbin "ClassCards/L95-mage.pal.bin"
+#incbin "ClassCards/mage.pal.bin"
 ALIGN 4
-PriestessCard:
-#incbin "ClassCards/priestess.dmp"
+PriestessCard: //base by L95
+#incbin "ClassCards/priestess.img.bin"
 ALIGN 4
 PriestessCardPalette:
 #incbin "ClassCards/priestess.pal.bin"
 ALIGN 4
-WitchCard:
-#incbin "ClassCards/witch.dmp"
+WitchCard: //base by MeatOfJustice
+#incbin "ClassCards/witch.img.bin"
 ALIGN 4
 WitchCardPalette:
 #incbin "ClassCards/witch.pal.bin"
 ALIGN 4
 CantorCard:
-#incbin "ClassCards/cantor.dmp"
+#incbin "ClassCards/cantor.img.bin"
 ALIGN 4
 CantorCardPalette:
 #incbin "ClassCards/cantor.pal.bin"
 ALIGN 4
-ClericCard:
-#incbin "ClassCards/flasuban-cleric.dmp"
+ClericCard: //by flasuban
+#incbin "ClassCards/cleric.img.bin"
 ALIGN 4
 ClericCardPalette:
-#incbin "ClassCards/flasuban-cleric.pal.bin"
+#incbin "ClassCards/cleric.pal.bin"
 ALIGN 4
-SaintCard:
-#incbin "ClassCards/saint.dmp"
+SaintCard: //by flasuban
+#incbin "ClassCards/saint.img.bin"
 ALIGN 4
 SaintCardPalette:
 #incbin "ClassCards/saint.pal.bin"
 ALIGN 4
-PegKnightCard:
-#incbin "ClassCards/pegknight.dmp"
+PegKnightCard: //by flasuban
+#incbin "ClassCards/pegknight.img.bin"
 ALIGN 4
 PegKnightCardPalette:
 #incbin "ClassCards/pegknight.pal.bin"
 ALIGN 4 
-FalcoknightCard:
-#incbin "ClassCards/falcoknight.dmp"
+FalcoknightCard: //by flasuban
+#incbin "ClassCards/falcoknight.img.bin"
 ALIGN 4
 FalcoknightCardPalette:
 #incbin "ClassCards/falcoknight.pal.bin"
 ALIGN 4
-VillagerCard:
-#incbin "ClassCards/ghast-villager.dmp"
+VillagerCard: //by ghast
+#incbin "ClassCards/villager.img.bin"
 ALIGN 4
 VillagerCardPalette:
-#incbin "ClassCards/ghast-villager.pal.bin"
+#incbin "ClassCards/villager.pal.bin"
 ALIGN 4
 BrigandCard:
-#incbin "ClassCards/brigand_classcard.dmp"
+#incbin "ClassCards/brigand.img.bin"
 ALIGN 4
 BrigandCardPalette:
-#incbin "ClassCards/brigand_classcard.pal.bin"
+#incbin "ClassCards/brigand.pal.bin"
 ALIGN 4
 FPirateCard:
-#incbin "ClassCards/pirate_f.dmp"
+#incbin "ClassCards/pirate_f.img.bin" 
 ALIGN 4
-FPirateCardPalette:
-#incbin "ClassCards/pirate_f.pal.bin" 
-ALIGN 4
-FZerkerCard:
-#incbin "ClassCards/der-fzerker.dmp"
-ALIGN 4
-FZerkerCardPalette:
-#incbin "ClassCards/der-fzerker.pal.bin"
+FZerkerCard: //by Der
+#incbin "ClassCards/berserker_f.img.bin"
 ALIGN 4
 EntombedCard: //by SkidMarc25
-#incbin "ClassCards/entombed.dmp"
+#incbin "ClassCards/entombed.img.bin"
 ALIGN 4
 EntombedCardPalette:
 #incbin "ClassCards/entombed.pal.bin"
 ALIGN 4
-DumaCard:
-#incbin "ClassCards/L95_duma.dmp"
+DumaCard: //by L95
+#incbin "ClassCards/L95_duma.img.bin"
 ALIGN 4
 DumaCardPalette:
 #incbin "ClassCards/L95_duma.pal.bin"
@@ -430,11 +418,11 @@ setCardEntry(CC_Thief, $81BF90, $81BF70)
 setCardEntry(CC_Rogue, $819444, $819424)
 
 //Archer
-setCardEntry(CC_Archer, ArcherCard, ArcherCardPalette)
-setCardEntry(CC_Archer_F, FArcherCard, FArcherCardPalette)
+setCardEntry(CC_Archer, ArcherCard, ArcherPalette)
+setCardEntry(CC_Archer_F, FArcherCard, ArcherPalette)
 //Sniper
 setCardEntry(CC_Sniper, $825E44, $825E24)
-setCardEntry(CC_Sniper_F, FSniperCard, FSniperCardPalette)
+setCardEntry(CC_Sniper_F, FSniperCard, $825E24)
 //BK
 setCardEntry(CC_BowKnight, BKCard, BKCardPalette) //MAKE TIER 3
 
@@ -445,7 +433,7 @@ setCardEntry(CC_WyvernLord, WLordCard, WLordCardPalette)
 
 //Mage
 setCardEntry(CC_Mage, MageCard, MageCardPalette)
-setCardEntry(CC_Mage_F, FMageCard, FMageCardPalette)
+setCardEntry(CC_Mage_F, FMageCard, MageCardPalette)
 //Sage
 setCardEntry(CC_Sage, $8243F8, $8243D8)
 //Priestess
@@ -470,10 +458,10 @@ setCardEntry(CC_Brigand, BrigandCard, BrigandCardPalette)
 
 //Pirate
 setCardEntry(CC_Pirate, $81CD28, $81CD08)
-setCardEntry(CC_Pirate_F, FPirateCard, FPirateCardPalette)
+setCardEntry(CC_Pirate_F, FPirateCard, $81CD08)
 //Berserker
 setCardEntry(CC_Berserker, $81C51C, $81C4FC)
-setCardEntry(CC_Berserker_F, FZerkerCard, FZerkerCardPalette)
+setCardEntry(CC_Berserker_F, FZerkerCard, $81C4FC)
 
 //Peg Knight
 setCardEntry(CC_PegKnight, PegKnightCard, PegKnightCardPalette)
@@ -500,7 +488,7 @@ setCardEntry(CC_ElderBael, $814898, $814878)
 //Cyclops
 setCardEntry(CC_Cyclops, $814090, $814070)
 //Fiend
-setCardEntry(CC_Fiend, $817458, $817438)
+setCardEntry(CC_Fiend, FiendCard, BaronCardPalette)
 //Hellhound
 setCardEntry(CC_Hellhound, $81399C, $81397C)
 //Kerberos
