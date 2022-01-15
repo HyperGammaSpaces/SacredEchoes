@@ -17,6 +17,90 @@
   AlmT1Sword: //Nuramon
   {
     #include "AlmT1/Sword/lorm_sw1 Installer.event"
+    
+    //0x8f-0x9e free
+    PUSH
+        AnimTableEntry(0x8F)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x90)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x91)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x92)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x93)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x94)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x95)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x96)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x97)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x98)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x99)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x9A)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x9B)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x9C)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x9D)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x9E)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+    POP
   }
   ALIGN 4
   AlmT1RoyalSword: //Nuramon
