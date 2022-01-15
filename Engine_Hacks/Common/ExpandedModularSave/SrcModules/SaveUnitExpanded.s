@@ -56,6 +56,7 @@
 	@   +38 | (end, no padding)
 
 	OtherSuspendSaveUnit.size = 0x38
+    gChapterData     = 0x0202BCF0
 
 	GetUnit          = 0x08019430+1
 	ClearUnit        = 0x080177F4+1
@@ -63,6 +64,8 @@
 	GetClassData     = 0x08019444+1
 	SetUnitHp        = 0x08019368+1
 	GetUnitMaxHp     = 0x08019190+1
+    
+    SGM_SetCharacterKnown = 0x080A37A8+1
 
 	WriteAndVerifySramFast = 0x080D184C+1
 	ReadSramFastAddr       = 0x030067A0   @ pointer to the actual ReadSramFast function
@@ -668,7 +671,7 @@ UnpackOtherSuspendSaveUnit:
 		@ - r0 = target address (SRAM)
 		@ - r1 = target size
 
-		push {r4-r6, lr}
+		push {r4-r7, lr}
 
 		sub sp, #(\StructSize)
 
@@ -681,6 +684,20 @@ UnpackOtherSuspendSaveUnit:
 
 		mov r6, r0 @ r6 = max number of written units
 
+        mov  r5, r8
+        push {r5}
+        
+        .ifeq \Allegiance
+            ldr r7, =gChapterData
+            add r7, #0x40
+            ldrb r7, [r7]
+            mov r5, #1
+            and r7, r5
+        .else
+            mov r7, #0
+        .endif
+        mov r8, r7
+
 		mov r5, #(\Allegiance + 1) @ r5 = unit id
 
 	\Name\().lop :
@@ -692,8 +709,28 @@ UnpackOtherSuspendSaveUnit:
 
 		cmp r0, #0
 		beq \Name\().end
+        
+        mov r7, r0
+        
+        mov r1, r8
+        cmp r1, #0
+        bne \Name\().pack
+        
+        mov r1, #1
+        ldr r3, =RemoveExcessBaseWeapons
+        orr r3, r1
+        bl  BXR3
+        
+    \Name\().pack:
+    
+        .ifeq \Allegiance
+            ldr r0, [r7]
+            ldrb r0, [r0, #0x4]
+            ldr r3, =SGM_SetCharacterKnown
+            bl BXR3
+        .endif
 
-		mov r1, r0
+		mov r1, r7
 		mov r0, sp
 
 		bl \PackFunc
@@ -713,9 +750,20 @@ UnpackOtherSuspendSaveUnit:
 		bgt \Name\().lop
 
 	\Name\().end :
+        .ifeq \Allegiance
+            ldr r7, =gChapterData
+            add r7, #0x40
+            ldrb r0, [r7]
+            mov r1, #1
+            orr r0, r1
+            strb r0, [r7]
+        .endif
+        pop {r5}
+        mov r8, r5
+    
 		add sp, #(\StructSize)
 
-		pop {r4-r6}
+		pop {r4-r7}
 
 		pop {r0}
 		bx r0

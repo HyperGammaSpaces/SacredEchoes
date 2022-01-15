@@ -1,5 +1,7 @@
 #include "ModularSave.h"
 
+extern void RemoveExcessBaseWeapons(Unit* unit);
+
 // This contains Save functions suitables for MS save chunks
 // In case there's no vanilla function that fit the bill
 // If a Suspend chunk function is also used in a Save chunk, it will be here
@@ -16,10 +18,13 @@ void MSa_LoadChapterState(void* source, unsigned size) {
 
 void MSa_SaveUnits(void* target, unsigned size) {
 	struct SaveGlobalMetadata sgm;
+    u32 gameOptions = gChapterData.unk40_1;
 	LoadGeneralGameMetadata(&sgm);
 
 	for (unsigned i = 0; i < 51; ++i) {
 		struct Unit* unit = GetUnit(i+1);
+        
+        if ( !(gameOptions & 1) ) { RemoveExcessBaseWeapons(unit); }
 
 		// Save unit
 		SaveUnit(unit, target + (0x24*i));
@@ -28,6 +33,9 @@ void MSa_SaveUnits(void* target, unsigned size) {
 		if (unit->pCharacterData)
 			SGM_SetCharacterKnown(unit->pCharacterData->number, &sgm);
 	}
+    
+    //we'll use this unused options byte as a flag for patched save.
+    gChapterData.unk40_1 = gameOptions|1;
 
 	SaveGeneralGameMetadata(&sgm);
 }

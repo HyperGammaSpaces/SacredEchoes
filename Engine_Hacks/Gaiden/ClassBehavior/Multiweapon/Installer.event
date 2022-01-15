@@ -1,0 +1,54 @@
+//Weapon Type Switch Menu
+
+#include "Multiweapon.lyn.event"
+
+//So T2 Alm doesn't lose an inventory slot for his new bow
+
+#define AttackingWeapon_Entry(optionNumber) "WORD $080D7CB8; SHORT 0; SHORT 0; BYTE 0 optionNumber 0 0; POIN ($22CA4|1); POIN (AttackingWeapon_OnDraw|1); POIN (AttackingWeapon_OnSelect|1); WORD 0; POIN ($22D84|1); POIN ($22DD8|1)"
+
+PUSH
+
+    //we're just going to overwrite vanilla since it's the same size
+    ORG $59D1CC
+    Defs_AttackingWeaponList:
+    BYTE $01 $01 $0E $00
+    WORD $0
+    POIN AttackingWeapon_EntryList
+    WORD $0 $0 $0
+    POIN $22860|1
+    POIN $4F520|1          //MenuCallHelp
+    POIN $24588|1
+    
+POP
+
+AttackingWeapon_EntryList:
+	AttackingWeapon_Entry($49)
+	AttackingWeapon_Entry($4A)
+	AttackingWeapon_Entry($4B)
+	AttackingWeapon_Entry($4C)
+	AttackingWeapon_Entry($4D)
+    MenuEntryList_Term
+    
+//AttackingWeapon_OnDraw:
+    //If (weapon==baseWeapon) && (unit->class==multiweaponClass) && (availableWeaponTypesWithTargetInRange > 1): Put an icon indicating that you can switch weapons.
+
+//AttackingWeapon_OnSelect:
+    //If (weapon==baseWeapon) && (unit->class==multiweaponClass) && (availableWeaponTypesWithTargetInRange > 1): call a new menu to switch weapon type and save the selected item slot in the menu proc. Otherwise goto $22CF0 as in vanilla.
+    
+//WeaponType_OnCancel:
+    //Return to AttackingWeaponList without mutating.
+    
+//WeaponType_UsabilityCheck:
+    //does unit have rank? is target in range?
+//WeaponType_OnDraw:
+    //only draw weapon types you have
+//WeaponType_OnSelect:
+    //mutate unit's item at slot in proc storage to the new base weapon, then proceed with $22CF0.
+    
+ALIGN 4
+Multiweapon_BaseWeaponsList:
+BYTE BaseSword BaseLance BaseAxe BaseBow $0 $0 $0 $0
+WORD $0
+
+gNoTargetsErrorText:
+SHORT $084D //"You can't equip this weapon."
