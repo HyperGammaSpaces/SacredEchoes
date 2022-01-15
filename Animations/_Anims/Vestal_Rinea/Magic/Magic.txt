@@ -1,274 +1,306 @@
-/// - Mode 1
-C07
-C03
-1 p- Magic_000.png
-3 p- Magic_001.png
-3 p- Magic_002.png
-C24
-3 p- Magic_003.png
-4 p- Magic_004.png
-4 p- Magic_005.png
-3 p- Magic_006.png
-3 p- Magic_007.png
-3 p- Magic_008.png
-3 p- Magic_009.png
-3 p- Magic_010.png
-3 p- Magic_007.png
-3 p- Magic_011.png
-C24
-7 p- Magic_012.png
-C05
-L
-3 p- Magic_013.png
-3 p- Magic_014.png
-3 p- Magic_015.png
-3 p- Magic_016.png
-C01
-4 p- Magic_017.png
-C24
-2 p- Magic_018.png
-2 p- Magic_019.png
-C06
-2 p- Magic_020.png
-1 p- Magic_000.png
-C0D
+/// - Mode 1               #Melee Animation
+1 p- Standing.png
+C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; should be followed by 0x07
+1 p- Standing.png
+3 p- range_ata_001.png
+3 p- range_ata_002.png
+C24				  #Play sword slashing air SFE
+3 p- range_ata_003.png
+4 p- range_ata_004.png
+4 p- range_ata_005.png
+3 p- range_ata_006.png
+3 p- range_ata_007.png
+3 p- range_ata_008.png
+3 p- range_ata_009.png
+3 p- range_ata_010.png
+3 p- range_ata_011.png
+3 p- range_ata_012.png
+C24				  #Play sword slashing air SFE
+7 p- range_ata_013.png
+C05                               #Call spell associated with equipped weapon
+L                                 #Loop L bis C01
+3 p- range_ata_014.png
+3 p- range_ata_015.png
+3 p- range_ata_016.png
+3 p- range_ata_017.png
+C01                               #NOP
+4 p- range_ata_018.png
+C24				  #Play sword slashing air SFE
+2 p- range_ata_019.png
+2 p- range_ata_020.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+2 p- range_ata_021.png
+1 p- Standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 3
-C07
-C03
-1 p- Magic_000.png
-2 p- Magic_021.png
-C78
-2 p- Magic_022.png
-2 p- Magic_023.png
-2 p- Magic_024.png
-3 p- Magic_025.png
-2 p- Magic_026.png
-3 p- Magic_027.png
-3 p- Magic_028.png
-3 p- Magic_028.png
-3 p- Magic_029.png
-3 p- Magic_030.png
-3 p- Magic_031.png
-3 p- Magic_032.png
-3 p- Magic_033.png
-3 p- Magic_034.png
-3 p- Magic_035.png
-3 p- Magic_036.png
-3 p- Magic_037.png
-3 p- Magic_038.png
-3 p- Magic_039.png
-3 p- Magic_040.png
-3 p- Magic_041.png
-4 p- Magic_042.png
-C3E
-3 p- Magic_043.png
-3 p- Magic_044.png
-3 p- Magic_045.png
-3 p- Magic_046.png
-3 p- Magic_047.png
-3 p- Magic_048.png
-3 p- Magic_049.png
-3 p- Magic_050.png
-3 p- Magic_051.png
-3 p- Magic_052.png
-3 p- Magic_053.png
-C24
-6 p- Magic_054.png
-C05
-L
-3 p- Magic_055.png
-3 p- Magic_056.png
-3 p- Magic_057.png
-3 p- Magic_058.png
-C01
-3 p- Magic_059.png
-3 p- Magic_060.png
-3 p- Magic_061.png
-3 p- Magic_062.png
-C24
-4 p- Magic_017.png
-2 p- Magic_018.png
-2 p- Magic_019.png
-C06
-2 p- Magic_020.png
-1 p- Magic_000.png
-C0D
+/// - Mode 3               #Melee Critical Animation
+1 p- Standing.png
+C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; should be followed by 0x07
+1 p- Standing.png
+2 p- range_crit_001.png
+C78				  #jeejeejee SFE
+2 p- range_crit_002.png
+2 p- range_crit_003.png
+2 p- range_crit_004.png
+3 p- range_crit_005.png
+2 p- range_crit_006.png
+3 p- range_crit_007.png
+3 p- range_crit_008.png
+3 p- range_crit_008.png
+3 p- range_crit_010.png
+3 p- range_crit_011.png
+3 p- range_crit_012.png
+3 p- range_crit_013.png
+3 p- range_crit_014.png
+3 p- range_crit_015.png
+3 p- range_crit_016.png
+3 p- range_crit_017.png
+3 p- range_crit_018.png
+3 p- range_crit_019.png
+3 p- range_crit_020.png
+3 p- range_crit_021.png
+3 p- range_crit_022.png
+4 p- range_crit_023.png
+C3E				  #Play burning SFE
+3 p- range_crit_024.png
+3 p- range_crit_025.png
+3 p- range_crit_026.png
+3 p- range_crit_027.png
+3 p- range_crit_028.png
+3 p- range_crit_029.png
+3 p- range_crit_030.png
+3 p- range_crit_031.png
+3 p- range_crit_032.png
+3 p- range_crit_033.png
+3 p- range_crit_034.png
+C24				  #Play sword slashing air SFE
+6 p- range_crit_035.png
+C05                               #Call spell associated with equipped weapon
+L                                 #Loop L bis C01
+3 p- range_crit_036.png
+3 p- range_crit_037.png
+3 p- range_crit_038.png
+3 p- range_crit_039.png
+C01                               #NOP
+3 p- range_crit_040.png
+3 p- range_crit_041.png
+3 p- range_crit_042.png
+3 p- range_crit_043.png
+C24				  #Play sword slashing air SFE
+4 p- range_ata_018.png
+2 p- range_ata_019.png
+2 p- range_ata_020.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+2 p- range_ata_021.png
+1 p- Standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 5
-C07
-C03
-1 p- Magic_000.png
-3 p- Magic_001.png
-3 p- Magic_002.png
-C24
-3 p- Magic_003.png
-4 p- Magic_004.png
-4 p- Magic_005.png
-3 p- Magic_006.png
-3 p- Magic_007.png
-3 p- Magic_008.png
-3 p- Magic_009.png
-3 p- Magic_010.png
-3 p- Magic_007.png
-3 p- Magic_011.png
-C24
-7 p- Magic_012.png
-C05
-L
-3 p- Magic_013.png
-3 p- Magic_014.png
-3 p- Magic_015.png
-3 p- Magic_016.png
-C01
-4 p- Magic_017.png
-C24
-2 p- Magic_018.png
-2 p- Magic_019.png
-C06
-2 p- Magic_020.png
-1 p- Magic_000.png
-C0D
+/// - Mode 5               #Ranged Animation 
+1 p- Standing.png
+C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; should be followed by 0x07
+1 p- Standing.png
+3 p- range_ata_001.png
+3 p- range_ata_002.png
+C24				  #Play sword slashing air SFE
+3 p- range_ata_003.png
+4 p- range_ata_004.png
+4 p- range_ata_005.png
+3 p- range_ata_006.png
+3 p- range_ata_007.png
+3 p- range_ata_008.png
+3 p- range_ata_009.png
+3 p- range_ata_010.png
+3 p- range_ata_011.png
+3 p- range_ata_012.png
+C24				  #Play sword slashing air SFE
+7 p- range_ata_013.png
+C05                               #Call spell associated with equipped weapon
+L                                 #Loop L bis C01
+3 p- range_ata_014.png
+3 p- range_ata_015.png
+3 p- range_ata_016.png
+3 p- range_ata_017.png
+C01                               #NOP
+4 p- range_ata_018.png
+C24				  #Play sword slashing air SFE
+2 p- range_ata_019.png
+2 p- range_ata_020.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+2 p- range_ata_021.png
+1 p- Standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 6
-C07
-C03
-1 p- Magic_000.png
-2 p- Magic_021.png
-C78
-2 p- Magic_022.png
-2 p- Magic_023.png
-2 p- Magic_024.png
-3 p- Magic_025.png
-2 p- Magic_026.png
-3 p- Magic_027.png
-3 p- Magic_028.png
-3 p- Magic_028.png
-3 p- Magic_029.png
-3 p- Magic_030.png
-3 p- Magic_031.png
-3 p- Magic_032.png
-3 p- Magic_033.png
-3 p- Magic_034.png
-3 p- Magic_035.png
-3 p- Magic_036.png
-3 p- Magic_037.png
-3 p- Magic_038.png
-3 p- Magic_039.png
-3 p- Magic_040.png
-3 p- Magic_041.png
-4 p- Magic_042.png
-C3E
-3 p- Magic_043.png
-3 p- Magic_044.png
-3 p- Magic_045.png
-3 p- Magic_046.png
-3 p- Magic_047.png
-3 p- Magic_048.png
-3 p- Magic_049.png
-3 p- Magic_050.png
-3 p- Magic_051.png
-3 p- Magic_052.png
-3 p- Magic_053.png
-C24
-6 p- Magic_054.png
-C05
-L
-3 p- Magic_055.png
-3 p- Magic_056.png
-3 p- Magic_057.png
-3 p- Magic_058.png
-C01
-3 p- Magic_059.png
-3 p- Magic_060.png
-3 p- Magic_061.png
-3 p- Magic_062.png
-C24
-4 p- Magic_017.png
-2 p- Magic_018.png
-2 p- Magic_019.png
-C06
-2 p- Magic_020.png
-1 p- Magic_000.png
-C0D
+/// - Mode 6               #Ranged Critical Animation
+1 p- Standing.png
+C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; should be followed by 0x07
+1 p- Standing.png
+2 p- range_crit_001.png
+C78				  #jeejeejee SFE
+2 p- range_crit_002.png
+2 p- range_crit_003.png
+2 p- range_crit_004.png
+3 p- range_crit_005.png
+2 p- range_crit_006.png
+3 p- range_crit_007.png
+3 p- range_crit_008.png
+3 p- range_crit_008.png
+3 p- range_crit_010.png
+3 p- range_crit_011.png
+3 p- range_crit_012.png
+3 p- range_crit_013.png
+3 p- range_crit_014.png
+3 p- range_crit_015.png
+3 p- range_crit_016.png
+3 p- range_crit_017.png
+3 p- range_crit_018.png
+3 p- range_crit_019.png
+3 p- range_crit_020.png
+3 p- range_crit_021.png
+3 p- range_crit_022.png
+4 p- range_crit_023.png
+C3E				  #Play burning SFE
+3 p- range_crit_024.png
+3 p- range_crit_025.png
+3 p- range_crit_026.png
+3 p- range_crit_027.png
+3 p- range_crit_028.png
+3 p- range_crit_029.png
+3 p- range_crit_030.png
+3 p- range_crit_031.png
+3 p- range_crit_032.png
+3 p- range_crit_033.png
+3 p- range_crit_034.png
+C24				  #Play sword slashing air SFE
+6 p- range_crit_035.png
+C05                               #Call spell associated with equipped weapon
+L                                 #Loop L bis C01
+3 p- range_crit_036.png
+3 p- range_crit_037.png
+3 p- range_crit_038.png
+3 p- range_crit_039.png
+C01                               #NOP
+3 p- range_crit_040.png
+3 p- range_crit_041.png
+3 p- range_crit_042.png
+3 p- range_crit_043.png
+C24				  #Play sword slashing air SFE
+4 p- range_ata_018.png
+2 p- range_ata_019.png
+2 p- range_ata_020.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+2 p- range_ata_021.png
+1 p- Standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 7
-C02
-1 p- Magic_000.png
-C0E
-3 p- Magic_063.png
-2 p- Magic_064.png
-1 p- Magic_065.png
-C01
-2 p- Magic_064.png
-3 p- Magic_066.png
-1 p- Magic_000.png
-C0D
+/// - Mode 7               #Dodge Melee Attack
+1 p- Standing.png
+C02                               #Start of dodge
+1 p- Standing.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- dodge_001.png
+2 p- dodge_002.png
+1 p- dodge_003.png
+C01                               #NOP
+2 p- dodge_002.png
+3 p- dodge_004.png
+1 p- Standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 8
-C02
-1 p- Magic_000.png
-C0E
-3 p- Magic_063.png
-2 p- Magic_064.png
-1 p- Magic_065.png
-C01
-2 p- Magic_064.png
-3 p- Magic_066.png
-1 p- Magic_000.png
-C0D
+/// - Mode 8               #Dodge Ranged Attack
+1 p- Standing.png
+C02                               #Start of dodge
+1 p- Standing.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- dodge_001.png
+2 p- dodge_002.png
+1 p- dodge_003.png
+C01                               #NOP
+2 p- dodge_002.png
+3 p- dodge_004.png
+1 p- Standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 9
-4 p- Magic_018.png
-4 p- Magic_019.png
-4 p- Magic_020.png
-4 p- Magic_000.png
+/// - Mode 9               #Equiped with Melee Weapon
+1 p- Intro_001.png
+2 p- Intro_002.png
+2 p- Intro_003.png
+2 p- Intro_004.png
+2 p- Intro_005.png
+2 p- Intro_006.png
+2 p- Intro_007.png
+2 p- Intro_008.png
+2 p- Intro_009.png
+2 p- Intro_010.png
+2 p- Intro_011.png
+2 p- Intro_012.png
+2 p- Intro_013.png
+2 p- Intro_014.png
+2 p- Intro_015.png
+2 p- Intro_016.png
+1 p- Standing.png
 ~~~
-/// - Mode 10
-4 p- Magic_018.png
-4 p- Magic_019.png
-4 p- Magic_020.png
-4 p- Magic_000.png
+/// - Mode 10               #standing motions?
+4 p- idle_001.png
+4 p- idle_002.png
+4 p- idle_003.png
+4 p- Standing.png
 ~~~
-/// - Mode 11
-4 p- Magic_018.png
-4 p- Magic_019.png
-4 p- Magic_020.png
-4 p- Magic_000.png
+/// - Mode 11               #Equiped with Ranged weapon
+1 p- Intro_001.png
+2 p- Intro_002.png
+2 p- Intro_003.png
+2 p- Intro_004.png
+2 p- Intro_005.png
+2 p- Intro_006.png
+2 p- Intro_007.png
+2 p- Intro_008.png
+2 p- Intro_009.png
+2 p- Intro_010.png
+2 p- Intro_011.png
+2 p- Intro_012.png
+2 p- Intro_013.png
+2 p- Intro_014.png
+2 p- Intro_015.png
+2 p- Intro_016.png
+1 p- Standing.png
 ~~~
-/// - Mode 12
-C07
-C03
-1 p- Magic_000.png
-3 p- Magic_001.png
-3 p- Magic_002.png
-C24
-3 p- Magic_003.png
-4 p- Magic_004.png
-4 p- Magic_005.png
-3 p- Magic_006.png
-3 p- Magic_007.png
-3 p- Magic_008.png
-3 p- Magic_009.png
-3 p- Magic_010.png
-3 p- Magic_007.png
-3 p- Magic_011.png
-C24
-7 p- Magic_012.png
-C05
-L
-3 p- Magic_013.png
-3 p- Magic_014.png
-3 p- Magic_015.png
-3 p- Magic_016.png
-C01
-4 p- Magic_017.png
-C24
-2 p- Magic_018.png
-2 p- Magic_019.png
-C06
-2 p- Magic_020.png
-1 p- Magic_000.png
-C0D
+/// - Mode 12               #Attack Missed Animation
+C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; should be followed by 0x07
+1 p- Standing.png
+3 p- range_ata_001.png
+3 p- range_ata_002.png
+C24				  #Play sword slashing air SFE
+3 p- range_ata_003.png
+4 p- range_ata_004.png
+4 p- range_ata_005.png
+3 p- range_ata_006.png
+3 p- range_ata_007.png
+3 p- range_ata_008.png
+3 p- range_ata_009.png
+3 p- range_ata_010.png
+3 p- range_ata_011.png
+3 p- range_ata_012.png
+C24				  #Play sword slashing air SFE
+7 p- range_ata_013.png
+C05                               #Call spell associated with equipped weapon
+L                                 #Loop L bis C01
+3 p- range_ata_014.png
+3 p- range_ata_015.png
+3 p- range_ata_016.png
+3 p- range_ata_017.png
+C01                               #NOP
+4 p- range_ata_018.png
+C24				  #Play sword slashing air SFE
+2 p- range_ata_019.png
+2 p- range_ata_020.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+2 p- range_ata_021.png
+1 p- Standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - End of animation

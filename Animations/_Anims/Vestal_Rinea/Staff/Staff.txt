@@ -1,10 +1,11 @@
-/// - Mode 1
-C07
-C03
-1 p- Staff_000.png
+/// - Mode 1               #Melee Animation
+1 p- standing.png
+C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; should be followed by 0x07
+1 p- standing.png
 3 p- Staff_001.png
 3 p- Staff_002.png
-C24
+C24				  #Play sword slashing air SFE
 3 p- Staff_003.png
 4 p- Staff_004.png
 4 p- Staff_005.png
@@ -13,182 +14,34 @@ C24
 3 p- Staff_008.png
 3 p- Staff_009.png
 3 p- Staff_010.png
-3 p- Staff_007.png
 3 p- Staff_011.png
-C24
-6 p- Staff_012.png
-C05
-L
-3 p- Staff_013.png
+3 p- Staff_012.png
+C24				  #Play sword slashing air SFE
+6 p- Staff_013.png
+C05                               #Call spell associated with equipped weapon
+L                                 #Loop L bis C01
 3 p- Staff_014.png
 3 p- Staff_015.png
 3 p- Staff_016.png
-C01
-4 p- Staff_017.png
-C24
-3 p- Staff_018.png
+3 p- Staff_017.png
+C01                               #NOP
+4 p- Staff_018.png
+C24				  #Play sword slashing air SFE
 3 p- Staff_019.png
 3 p- Staff_020.png
-C06
-1 p- Staff_000.png
-C0D
-~~~
-/// - Mode 3
-C07
-C03
-1 p- Staff_000.png
-3 p- Staff_001.png
-3 p- Staff_002.png
-C24
-3 p- Staff_003.png
-4 p- Staff_004.png
-4 p- Staff_005.png
-3 p- Staff_006.png
-3 p- Staff_007.png
-3 p- Staff_008.png
-3 p- Staff_009.png
-3 p- Staff_010.png
-3 p- Staff_007.png
-3 p- Staff_011.png
-C24
-6 p- Staff_012.png
-C05
-L
-3 p- Staff_013.png
-3 p- Staff_014.png
-3 p- Staff_015.png
-3 p- Staff_016.png
-C01
-4 p- Staff_017.png
-C24
-3 p- Staff_018.png
-3 p- Staff_019.png
-3 p- Staff_020.png
-C06
-1 p- Staff_000.png
-C0D
-~~~
-/// - Mode 5
-C07
-C03
-1 p- Staff_000.png
-3 p- Staff_001.png
-3 p- Staff_002.png
-C24
-3 p- Staff_003.png
-4 p- Staff_004.png
-4 p- Staff_005.png
-3 p- Staff_006.png
-3 p- Staff_007.png
-3 p- Staff_008.png
-3 p- Staff_009.png
-3 p- Staff_010.png
-3 p- Staff_007.png
-3 p- Staff_011.png
-C24
-6 p- Staff_012.png
-C05
-L
-3 p- Staff_013.png
-3 p- Staff_014.png
-3 p- Staff_015.png
-3 p- Staff_016.png
-C01
-4 p- Staff_017.png
-C24
-3 p- Staff_018.png
-3 p- Staff_019.png
-3 p- Staff_020.png
-C06
-1 p- Staff_000.png
-C0D
-~~~
-/// - Mode 6
-C07
-C03
-1 p- Staff_000.png
-3 p- Staff_001.png
-3 p- Staff_002.png
-C24
-3 p- Staff_003.png
-4 p- Staff_004.png
-4 p- Staff_005.png
-3 p- Staff_006.png
-3 p- Staff_007.png
-3 p- Staff_008.png
-3 p- Staff_009.png
-3 p- Staff_010.png
-3 p- Staff_007.png
-3 p- Staff_011.png
-C24
-6 p- Staff_012.png
-C05
-L
-3 p- Staff_013.png
-3 p- Staff_014.png
-3 p- Staff_015.png
-3 p- Staff_016.png
-C01
-4 p- Staff_017.png
-C24
-3 p- Staff_018.png
-3 p- Staff_019.png
-3 p- Staff_020.png
-C06
-1 p- Staff_000.png
-C0D
-~~~
-/// - Mode 7
-C02
-1 p- Staff_000.png
-C0E
 3 p- Staff_021.png
-2 p- Staff_022.png
-1 p- Staff_023.png
-C01
-2 p- Staff_022.png
-3 p- Staff_024.png
-1 p- Staff_000.png
-C0D
+C06                               #Begin opponent's turn after hit.next code 0D.
+1 p- standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 8
-C02
-1 p- Staff_000.png
-C0E
-3 p- Staff_021.png
-2 p- Staff_022.png
-1 p- Staff_023.png
-C01
-2 p- Staff_022.png
-3 p- Staff_024.png
-1 p- Staff_000.png
-C0D
-~~~
-/// - Mode 9
-4 p- Staff_025.png
-4 p- Staff_026.png
-4 p- Staff_027.png
-4 p- Staff_000.png
-~~~
-/// - Mode 10
-4 p- Staff_025.png
-4 p- Staff_026.png
-4 p- Staff_027.png
-4 p- Staff_000.png
-~~~
-/// - Mode 11
-4 p- Staff_025.png
-4 p- Staff_026.png
-4 p- Staff_027.png
-4 p- Staff_000.png
-~~~
-/// - Mode 12
-C07
-C03
-1 p- Staff_000.png
+/// - Mode 3               #Melee Critical Animation
+1 p- standing.png
+C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; should be followed by 0x07
+1 p- standing.png
 3 p- Staff_001.png
 3 p- Staff_002.png
-C24
+C24				  #Play sword slashing air SFE
 3 p- Staff_003.png
 4 p- Staff_004.png
 4 p- Staff_005.png
@@ -197,24 +50,204 @@ C24
 3 p- Staff_008.png
 3 p- Staff_009.png
 3 p- Staff_010.png
-3 p- Staff_007.png
 3 p- Staff_011.png
-C24
-6 p- Staff_012.png
-C05
-L
-3 p- Staff_013.png
+3 p- Staff_012.png
+C24				  #Play sword slashing air SFE
+6 p- Staff_013.png
+C05                               #Call spell associated with equipped weapon
+L                                 #Loop L bis C01
 3 p- Staff_014.png
 3 p- Staff_015.png
 3 p- Staff_016.png
-C01
-4 p- Staff_017.png
-C24
-3 p- Staff_018.png
+3 p- Staff_017.png
+C01                               #NOP
+4 p- Staff_018.png
+C24				  #Play sword slashing air SFE
 3 p- Staff_019.png
 3 p- Staff_020.png
-C06
-1 p- Staff_000.png
-C0D
+3 p- Staff_021.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+1 p- standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 5               #Ranged Animation 
+1 p- standing.png
+C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; should be followed by 0x07
+1 p- standing.png
+3 p- Staff_001.png
+3 p- Staff_002.png
+C24				  #Play sword slashing air SFE
+3 p- Staff_003.png
+4 p- Staff_004.png
+4 p- Staff_005.png
+3 p- Staff_006.png
+3 p- Staff_007.png
+3 p- Staff_008.png
+3 p- Staff_009.png
+3 p- Staff_010.png
+3 p- Staff_011.png
+3 p- Staff_012.png
+C24				  #Play sword slashing air SFE
+6 p- Staff_013.png
+C05                               #Call spell associated with equipped weapon
+L                                 #Loop L bis C01
+3 p- Staff_014.png
+3 p- Staff_015.png
+3 p- Staff_016.png
+3 p- Staff_017.png
+C01                               #NOP
+4 p- Staff_018.png
+C24				  #Play sword slashing air SFE
+3 p- Staff_019.png
+3 p- Staff_020.png
+3 p- Staff_021.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+1 p- standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 6               #Ranged Critical Animation
+1 p- standing.png
+C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; should be followed by 0x07
+1 p- standing.png
+3 p- Staff_001.png
+3 p- Staff_002.png
+C24				  #Play sword slashing air SFE
+3 p- Staff_003.png
+4 p- Staff_004.png
+4 p- Staff_005.png
+3 p- Staff_006.png
+3 p- Staff_007.png
+3 p- Staff_008.png
+3 p- Staff_009.png
+3 p- Staff_010.png
+3 p- Staff_011.png
+3 p- Staff_012.png
+C24				  #Play sword slashing air SFE
+6 p- Staff_013.png
+C05                               #Call spell associated with equipped weapon
+L                                 #Loop L bis C01
+3 p- Staff_014.png
+3 p- Staff_015.png
+3 p- Staff_016.png
+3 p- Staff_017.png
+C01                               #NOP
+4 p- Staff_018.png
+C24				  #Play sword slashing air SFE
+3 p- Staff_019.png
+3 p- Staff_020.png
+3 p- Staff_021.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+1 p- standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 7               #Dodge Melee Attack
+1 p- standing.png
+C02                               #Start of dodge
+1 p- Standing.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- dodge_001.png
+2 p- dodge_002.png
+1 p- dodge_003.png
+C01                               #NOP
+2 p- dodge_002.png
+3 p- dodge_004.png
+1 p- Standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 8               #Dodge Ranged Attack
+1 p- standing.png
+C02                               #Start of dodge
+1 p- Standing.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- dodge_001.png
+2 p- dodge_002.png
+1 p- dodge_003.png
+C01                               #NOP
+2 p- dodge_002.png
+3 p- dodge_004.png
+1 p- Standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 9               #Equiped with Melee Weapon
+1 p- Intro_001.png
+2 p- Intro_002.png
+2 p- Intro_003.png
+2 p- Intro_004.png
+2 p- Intro_005.png
+2 p- Intro_006.png
+2 p- Intro_007.png
+2 p- Intro_008.png
+2 p- Intro_009.png
+2 p- Intro_010.png
+2 p- Intro_011.png
+2 p- Intro_012.png
+2 p- Intro_013.png
+2 p- Intro_014.png
+2 p- Intro_015.png
+2 p- Intro_016.png
+1 p- Standing.png
+~~~
+/// - Mode 10               #standing motions?
+4 p- idle_001.png
+4 p- idle_002.png
+4 p- idle_003.png
+4 p- Standing.png
+~~~
+/// - Mode 11               #Equiped with Ranged weapon
+1 p- Intro_001.png
+2 p- Intro_002.png
+2 p- Intro_003.png
+2 p- Intro_004.png
+2 p- Intro_005.png
+2 p- Intro_006.png
+2 p- Intro_007.png
+2 p- Intro_008.png
+2 p- Intro_009.png
+2 p- Intro_010.png
+2 p- Intro_011.png
+2 p- Intro_012.png
+2 p- Intro_013.png
+2 p- Intro_014.png
+2 p- Intro_015.png
+2 p- Intro_016.png
+1 p- Standing.png
+~~~
+/// - Mode 12               #Attack Missed Animation
+1 p- standing.png
+C07                               #Start attack animation; should be preceeded by 0x03
+C03                               #Start attack animation; should be followed by 0x07
+1 p- standing.png
+3 p- Staff_001.png
+3 p- Staff_002.png
+C24				  #Play sword slashing air SFE
+3 p- Staff_003.png
+4 p- Staff_004.png
+4 p- Staff_005.png
+3 p- Staff_006.png
+3 p- Staff_007.png
+3 p- Staff_008.png
+3 p- Staff_009.png
+3 p- Staff_010.png
+3 p- Staff_011.png
+3 p- Staff_012.png
+C24				  #Play sword slashing air SFE
+6 p- Staff_013.png
+C05                               #Call spell associated with equipped weapon
+L                                 #Loop L bis C01
+3 p- Staff_014.png
+3 p- Staff_015.png
+3 p- Staff_016.png
+3 p- Staff_017.png
+C01                               #NOP
+4 p- Staff_018.png
+C24				  #Play sword slashing air SFE
+3 p- Staff_019.png
+3 p- Staff_020.png
+3 p- Staff_021.png
+C06                               #Begin opponent's turn after hit.next code 0D.
+1 p- standing.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - End of animation

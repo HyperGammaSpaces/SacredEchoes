@@ -9,6 +9,7 @@
 #define AnimaAnim(Animation) "BYTE 0x05 0x01 ; SHORT Animation"
 #define LightAnim(Animation) "BYTE 0x06 0x01 ; SHORT Animation"
 #define DarkAnim(Animation) "BYTE 0x07 0x01 ; SHORT Animation"
+#define PromoScreenAnim(Animation) "BYTE 0x08 0x01 ; SHORT Animation"
 #define UnarmedAnim(Animation) "BYTE 0x09 0x01 ; SHORT Animation"
 #define MonsterAnim(Animation) "BYTE 0x0B 0x01 ; SHORT Animation"
 #define WMagicAnim(Animation) "BYTE 0x06 0x01 ; SHORT Animation"
@@ -58,11 +59,13 @@ WORD 0x0
 
 CavalierAnim:
 SpearAnim(CavalierLance)
+PromoScreenAnim(CavalierLance)
 UnarmedAnim(CavalierUnarmed)
 WORD 0x0
 
 CavalierFAnim:
 SpearAnim(CavalierFLance)
+PromoScreenAnim(CavalierFLance)
 UnarmedAnim(CavalierFUnarmed)
 WORD 0x0
 
@@ -88,6 +91,7 @@ WORD 0x0
 
 SoldierAnim:
 SpearAnim(SoldierLance)
+PromoScreenAnim(SoldierLance)
 UnarmedAnim(SoldierUnarmed)
 WORD 0x0
 
@@ -108,6 +112,7 @@ WORD 0x0
 
 MercAnim:
 SwordAnim(MercSword)
+PromoScreenAnim(MercSword)
 UnarmedAnim(MercUnarmed)
 WORD 0x0
 
@@ -155,11 +160,13 @@ WORD 0x0
 
 ArcherAnim:
 BowAnim(ArcherMBow)
+PromoScreenAnim(ArcherMBow)
 UnarmedAnim(ArcherMUnarmed)
 WORD 0x0
 
 ArcherFAnim:
 BowAnim(ArcherFBow)
+PromoScreenAnim(ArcherFBow)
 UnarmedAnim(ArcherFUnarmed)
 WORD 0x0
 
@@ -188,13 +195,15 @@ WORD 0x0
 MageAnim:
 WMagicAnim(MageMagic)
 BMagicAnim(MageMagic)
-UnarmedAnim(MageUnarmed)
+PromoScreenAnim(MageUnarmed)
+UnarmedAnim(MageMagic)
 WORD 0x0
 
 MageFAnim:
 WMagicAnim(MageFMagic)
 BMagicAnim(MageFMagic)
-UnarmedAnim(MageFUnarmed)
+PromoScreenAnim(MageFUnarmed)
+UnarmedAnim(MageFMagic)
 WORD 0x0
 
 SageAnim:
@@ -225,6 +234,7 @@ WORD 0x0
 ClericAnim:
 WMagicAnim(ClericStaff)
 BMagicAnim(ClericStaff)
+PromoScreenAnim(ClericStaff)
 UnarmedAnim(ClericUnarmed)
 WORD 0x0
 
@@ -325,6 +335,7 @@ WORD 0x0
 
 PegKnightAnim:
 SpearAnim(PegKnightLance)
+PromoScreenAnim(PegKnightLance)
 UnarmedAnim(PegKnightUnarmed)
 WORD 0x0
 

@@ -1,11 +1,12 @@
 #######################################################
-#01 lorm_sp1 
+#53 thim_sw1 Thief Sword
 #
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
 /// - Mode 1               #Melee Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
+1 p- Sword_000.png
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 1 p- Sword_000.png
 4 p- Sword_001.png
 4 p- Sword_002.png
@@ -41,8 +42,9 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 3               #Melee Critical Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
+1 p- Sword_000.png
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 1 p- Sword_000.png
 3 p- Sword_022.png
 5 p- Sword_023.png
@@ -88,8 +90,9 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 5               #Ranged Animation 
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
+1 p- Sword_000.png
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 1 p- Sword_000.png
 1 p- Sword_001.png
 1 p- Sword_002.png
@@ -105,8 +108,9 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 6               #Ranged Critical Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
+1 p- Sword_000.png
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 1 p- Sword_000.png
 1 p- Sword_001.png
 1 p- Sword_002.png
@@ -132,6 +136,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 7               #Dodge Melee Attack
+1 p- Sword_000.png
 C02                               #Start of dodge
 1 p- Sword_000.png
 C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
@@ -142,6 +147,7 @@ C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 8               #Dodge Ranged Attack
+1 p- Sword_000.png
 C02                               #Start of dodge
 1 p- Sword_000.png
 C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
@@ -152,20 +158,43 @@ C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 9               #Equiped with Melee Weapon
-1 p- Sword_000.png
-C01                               #NOP
+1 p- Sword_039.png
+2 p- Sword_040.png
+1 p- Sword_041.png
+2 p- Sword_042.png
+2 p- Sword_043.png
+5 p- Sword_044.png
+5 p- Sword_045.png
+3 p- Sword_046.png
+3 p- Sword_047.png
+3 p- Sword_048.png
+3 p- Sword_049.png
+2 p- Sword_000.png
+
 ~~~
-/// - Mode 10               #standing motions?
+/// - Mode 10               #Standing motions
 1 p- Sword_000.png
 C01                               #NOP
 ~~~
 /// - Mode 11               #Equiped with Ranged weapon
-1 p- Sword_000.png
-C01                               #NOP
+1 p- Sword_039.png
+2 p- Sword_040.png
+1 p- Sword_041.png
+2 p- Sword_042.png
+2 p- Sword_043.png
+5 p- Sword_044.png
+5 p- Sword_045.png
+3 p- Sword_046.png
+3 p- Sword_047.png
+3 p- Sword_048.png
+3 p- Sword_049.png
+2 p- Sword_000.png
+
 ~~~
 /// - Mode 12               #Attack Missed Animation
-C03                               #Start attack animation; should be followed by 0x07
-C07                               #Start attack animation; should be preceeded by 0x03
+1 p- Sword_000.png
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 1 p- Sword_000.png
 4 p- Sword_001.png
 4 p- Sword_002.png

@@ -18,10 +18,10 @@ PUSH
 	BYTE Cavalier Cavalier_F Paladin Paladin_F Soldier Knight Knight_F Thief Thief_F Mercenary Myrmidon DreadFighter 0x16 Archer Archer_F Sniper Sniper_F WyvernRider WyvernRider_F Mage Mage_F Villager Villager_F Fighter Brigand Pirate Priest PegasusKnight Cleric $0
 	
 	ORG $2F6A0
-	BYTE $00 $20 $00 $20    //no weapon display at promotion: promotion screen
+	SHORT $2000 $2000    //no weapon display at promotion: promotion screen
 	
 	ORG $CD0EC				//no weapon display at promotion: branch screen
-	BYTE $00 $20 $00 $20
+	SHORT $2000 ($2000|MilasPromotionBlessing)
 	
 	ORG $CCE14				//pushing out the class descriptions a bit
 	BYTE $5A $33

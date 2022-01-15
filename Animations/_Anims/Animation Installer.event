@@ -126,7 +126,7 @@
   ALIGN 4
   GK_Lance: //Nuramon
   {
-    #include "GoldKnight/Lance/grkm_sp1 Installer.event"
+    #include "GoldKnight/Lance/Lance Installer.event"
   }
   ALIGN 4
   GK_Unarmed: //Nuramon
@@ -136,12 +136,12 @@
   ALIGN 4
   Merc_Sword: //Team SALVAGED
   {
-	#include "Mercenary/Sword/merm_sw1 Installer.event"
+	#include "Mercenary/Sword/Sword Installer.event"
   }
   ALIGN 4
   Merc_Unarmed: //Team SALVAGED
   {
-    #include "Mercenary/Unarmed/merm_ua1 Installer.event"
+    #include "Mercenary/Unarmed/Unarmed Installer.event"
   }
   ALIGN 4
   Hero_Sword: //Nuramon
@@ -188,12 +188,12 @@
   ALIGN 4
   ThiefF_Sword: //Eldritch Abomination
   {
-	#include "Thief_F/Sword/ThiefF_Sword Installer.event"
+	#include "Thief_F/Sword/Sword Installer.event"
   }
   ALIGN 4
   ThiefF_Unarmed: //Eldritch Abomination
   {
-    #include "Thief_F/Disarmed/ThiefF_Disarmed Installer.event"
+    #include "Thief_F/Unarmed/Unarmed Installer.event"
   }
   ALIGN 4
   RogueF_Sword:
@@ -216,19 +216,9 @@
     #include "Rogue/Unarmed Installer.event"
   }
   ALIGN 4
-  Mage_Unarmed: //L95, Leo_link
-  {
-	#include "Mage/Unarmed/Unarmed Installer.event"
-  }
-  ALIGN 4
   Mage_Magic: //L95, Leo_link
   {
 	#include "Mage/Magic/Magic Installer.event"
-  }
-  ALIGN 4
-  FMage_Unarmed: //HGS, Obsidian_Daddy
-  {
-	#include "Mage_F/Unarmed/Unarmed Installer.event"
   }
   ALIGN 4
   FMage_Magic: //HGS, Obsidian_Daddy
@@ -258,7 +248,7 @@
   ALIGN 4
   FSage_Staff:
   {
-    #include "Priestes/WMagic/WMagic Installer.event"
+    #include "Priestess/WMagic/WMagic Installer.event"
   }
   ALIGN 4
   VillagerM_Sword: //Nuramon
@@ -343,22 +333,22 @@
   ALIGN 4
   Armor_Lance: //Team SALVAGED
   {
-	#include "Knight/Lance/armm_sp1 Installer.event"
+	#include "Knight/Lance/Lance Installer.event"
   }
   ALIGN 4
   Armor_Unarmed: //Team SALVAGED
   {
-	#include "Knight/Unarmed/armm_ua1 Installer.event"
+	#include "Knight/Unarmed/Unarmed Installer.event"
   }
   ALIGN 4
   Armor_Axe: //Team SALVAGED
   {
-	#include "Knight/Axe/armm_ax1 Installer.event"
+	#include "Knight/Axe/Axe Installer.event"
   }
   ALIGN 4
   Armor_Handaxe: //Team SALVAGED
   {
-	#include "Knight/Handaxe/armm_ax2 Installer.event"
+	#include "Knight/Handaxe/Handaxe Installer.event"
   }
   ALIGN 4
   Baron_Lance:
@@ -459,12 +449,12 @@
   ALIGN 4
   Cleric_Staff:
   {
-	#include "MagicCleric/Staff/Staff Installer.event"
+	#include "Cleric/Staff/Staff Installer.event"
   }
   ALIGN 4
   Cleric_Unarmed:
   {
-	#include "MagicCleric/Unarmed/Unarmed Installer.event"
+	#include "Cleric/Unarmed/Unarmed Installer.event"
   }
   ALIGN 4
   Saint_Staff: //Melia, Epicer, Feier
