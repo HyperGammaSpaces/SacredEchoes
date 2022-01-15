@@ -136,8 +136,8 @@ AddSupportPoints:
 #incbin "AddSupportPoints.dmp"
 ALIGN 4
 
-//Show little bubbles like hearts etc. when support increasing actions are taken
-#include "EVENTSCRIPT_Show_map_emotion/Show_map_emotion_Install.event"
+//Glow pink when support increase
+#include "MapAuraFx/Installer.event"
 ALIGN 4
 
 //DenySupport_Table:
@@ -148,5 +148,3 @@ ALIGN 4
 ALIGN 4
 //Change some other ending stuff to account for new party size
 #include "CharacterEndingByFlag/CharacterEndingTables.event"
-
-//28290: should trigger a heart mapanim. This isn't called when the convo is so wherever the "support lv increased" popup is, have it be after that too

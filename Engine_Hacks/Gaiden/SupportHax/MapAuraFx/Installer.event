@@ -4,6 +4,12 @@
 // Utility providing an interface for displaying cool aura on units
 // hack by Stan.
 
-#include "Src/MapAuraFx.lyn.event"
+#include "Src/MapAuraFxUpdate.lyn.event"
+#include "PostBattleSupports.lyn.event"
+
+ALIGN 4
+
+gSupportEffectPalette:
+#incbin "support_fx.pal.bin"
 
 #endif // HAX_MAP_AURA_FX

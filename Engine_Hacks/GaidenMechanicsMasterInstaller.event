@@ -14,6 +14,8 @@
 //Where SpellSystem data will be stored (4 bytes needed)
 #define SelectedSpellPointer $0203A8F0 //formerly used for arena
 
+#define MenuEntryList_Term "WORD 0 0 0 0 0 0 0 0 0"
+
 //Fix hacks
 ALIGN 4
 #include "_FE8EssentialFixes.event" 

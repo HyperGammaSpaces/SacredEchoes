@@ -65,17 +65,17 @@ static void UnpackGraphics(void)
 	Decompress(gfx, (void*) (VRAM + FX_TILE_ROOT * 0x20));
 	CopyToPaletteBuffer(pal, FX_PALETTE_ROOT * 0x20, 0x20);
 
-	BgMap_ApplyTsa(gBg2MapBuffer, tsa, TILEMAP_BASE);
+	BgMap_ApplyTsa(gBg0MapBuffer, tsa, TILEMAP_BASE);
 
 	// This is probably not the most efficient way of doing this but whatever
 
 	for (unsigned ix = 1; ix < 16; ++ix)
-		BgMapCopyRect(gBg2MapBuffer, BG_LOCATED_TILE(gBg2MapBuffer, ix*2, 0), 2, 4);
+		BgMapCopyRect(gBg0MapBuffer, BG_LOCATED_TILE(gBg0MapBuffer, ix*2, 0), 2, 4);
 
 	for (unsigned iy = 1; iy < 8; ++iy)
-		BgMapCopyRect(gBg2MapBuffer, BG_LOCATED_TILE(gBg2MapBuffer, 0, iy*4), 32, 4);
+		BgMapCopyRect(gBg0MapBuffer, BG_LOCATED_TILE(gBg0MapBuffer, 0, iy*4), 32, 4);
 
-	EnableBgSyncByIndex(2);
+	EnableBgSyncByIndex(0);
 }
 
 static void InitSpecialEffects(void)
@@ -84,9 +84,9 @@ static void InitSpecialEffects(void)
 	gLCDIOBuffer.dispControl.enableWin1 = FALSE;
 	gLCDIOBuffer.dispControl.enableObjWin = TRUE;
 
-	gLCDIOBuffer.winControl.wout_enableBg0 = TRUE;
+	gLCDIOBuffer.winControl.wout_enableBg0 = FALSE;
 	gLCDIOBuffer.winControl.wout_enableBg1 = TRUE;
-	gLCDIOBuffer.winControl.wout_enableBg2 = FALSE;
+	gLCDIOBuffer.winControl.wout_enableBg2 = TRUE;
 	gLCDIOBuffer.winControl.wout_enableBg3 = TRUE;
 	gLCDIOBuffer.winControl.wout_enableObj = TRUE;
 	gLCDIOBuffer.winControl.wout_enableBlend = FALSE;
@@ -98,9 +98,10 @@ static void InitSpecialEffects(void)
 	gLCDIOBuffer.winControl.wobj_enableObj = TRUE;
 	gLCDIOBuffer.winControl.wobj_enableBlend = TRUE;
 
-	gLCDIOBuffer.bgControl[2].priority = 1;
+	gLCDIOBuffer.bgControl[0].priority = 1;
+    gLCDIOBuffer.bgControl[0].tileBaseBlock = 0;
 
-	SetColorEffectsFirstTarget (FALSE, FALSE, TRUE,  FALSE, FALSE);
+	SetColorEffectsFirstTarget (TRUE, FALSE, FALSE,  FALSE, FALSE);
 	SetColorEffectsSecondTarget(FALSE, FALSE, FALSE, FALSE, TRUE);
 }
 
@@ -119,7 +120,7 @@ static void MapAuraFx_OnInit(struct MapAuraFxProc* proc)
 
 static void MapAuraFx_OnLoop(struct MapAuraFxProc* proc)
 {
-	SetBgPosition(2, 0, (proc->vSpeed * GetGameClock() / 32) % 32);
+	SetBgPosition(0, 0, (proc->vSpeed * GetGameClock() / 32) % 32);
 	SetColorEffectsParameters(1, proc->blend, 16, 0);
 }
 
@@ -129,8 +130,8 @@ static void MapAuraFx_OnEnd(struct MapAuraFxProc* proc)
 	gLCDIOBuffer.dispControl.enableWin1 = FALSE;
 	gLCDIOBuffer.dispControl.enableObjWin = FALSE;
 
-	FillBgMap(gBg2MapBuffer, 0);
-	EnableBgSyncByIndex(2);
+	FillBgMap(gBg0MapBuffer, 0);
+	EnableBgSyncByIndex(0);
 }
 
 static void MapAuraFx_Unit_OnInit(struct MapAuraFxUnitProc* proc)

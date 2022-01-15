@@ -37,7 +37,10 @@ PostCombatActions:
         POIN PostCombat_Unlock
     #endif
     POIN Lifetaker
-    POIN GiveNewItemTo AddSupportPointsAfterBattle 
+    POIN GiveNewItemTo
+    #ifdef HAX_MAP_AURA_FX
+        POIN PostBattleSupports 
+    #endif
     POIN Canto WitchRewarp //this works i guess
     #ifdef GAIDEN_MAGIC_INSTALLED
         POIN PostCombat_SpellClear
@@ -72,10 +75,6 @@ NoFade
 ENDA
 ALIGN 4
 
-SupportUpEvent:
-#include "../SupportHax/SupportUpEvent.event"
-ALIGN 4
-
 UpheavalEvent:
 	CAM1 0xFFFF
 	EARTHQUAKE_START 0x100
@@ -89,11 +88,6 @@ UpheavalEvent:
 	EARTHQUAKE_END
 	NoFade
 	ENDA
-ALIGN 4
-
-AddSupportPointsAfterBattle:
-#incbin "../SupportHax/PostBattleSupports.dmp"
-POIN SupportUpEvent
 ALIGN 4
 
 	/* Post-action calculation loop*/
