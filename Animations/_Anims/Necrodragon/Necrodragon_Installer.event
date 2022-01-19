@@ -1,0 +1,34 @@
+PUSH
+    AnimTableEntry(NecroDragonBreath)
+    BYTE $64 $72 $7A $31 $5F $61 $74 $31
+    WORD 0
+    POIN Necrodragon_sectiondata //$E27B60 //SectionData
+    POIN Necrodragon_framedata //$E279F8 //FrameData
+    POIN Necrodragon_rtl //$E27844 //RTL OAM
+    POIN Necrodragon_ltr //$E2769C //LTR OAM
+    POIN Necrodragon_pal //$E27664
+POP
+
+Necrodragon_pal:
+    #incbin "drz1_at1_palette.dmp"
+
+Necrodragon_ltr:
+    #incbin "drz1_at1_ltr.dmp"
+
+Necrodragon_rtl:
+    #incbin "drz1_at1_rtl.dmp"
+
+Necrodragon_sectiondata:
+    #incbin "drz1_at1_section.dmp"
+    
+//this has a load of POIN2s to the sheet data
+Necrodragon_framedata:
+    #incbin "drz1_at1_frame.dmp"
+    
+PUSH
+    //len(framedata) - 17
+    ORG CURRENTOFFSET-343; POIN2 Necrodragon_sheet1
+POP
+
+Necrodragon_sheet1:
+    #incbin "Necrodragon_Sheet_1.img.bin"

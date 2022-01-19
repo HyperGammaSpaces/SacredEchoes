@@ -4,6 +4,7 @@
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
 /// - Mode 1               #Melee Animation
+1 p- Staff_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Staff_000.png
@@ -16,6 +17,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 3               #Melee Critical Animation
+1 p- Staff_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Staff_000.png
@@ -28,6 +30,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 5               #Ranged Animation 
+1 p- Staff_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Staff_000.png
@@ -40,6 +43,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 6               #Ranged Critical Animation
+1 p- Staff_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Staff_000.png
@@ -52,6 +56,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 7               #Dodge Melee Attack
+1 p- Staff_000.png
 C02                               #Start of dodge
 1 p- Staff_000.png
 C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
@@ -62,6 +67,7 @@ C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 8               #Dodge Ranged Attack
+1 p- Staff_000.png
 C02                               #Start of dodge
 1 p- Staff_000.png
 C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
@@ -72,18 +78,33 @@ C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 9               #Equiped with Melee Weapon
+3 p- Staff_005.png
+3 p- Staff_006.png
+3 p- Staff_007.png
+3 p- Staff_008.png
+3 p- Staff_009.png
+3 p- Staff_010.png
+9 p- Staff_011.png
+4 p- Staff_012.png
 1 p- Staff_000.png
-C01                               #NOP
 ~~~
 /// - Mode 10               #Standing motions
 1 p- Staff_000.png
 C01                               #NOP
 ~~~
 /// - Mode 11               #Equiped with Ranged weapon
+3 p- Staff_005.png
+3 p- Staff_006.png
+3 p- Staff_007.png
+3 p- Staff_008.png
+3 p- Staff_009.png
+3 p- Staff_010.png
+9 p- Staff_011.png
+4 p- Staff_012.png
 1 p- Staff_000.png
-C01                               #NOP
 ~~~
 /// - Mode 12               #Attack Missed Animation
+1 p- Staff_000.png
 C03                               #Start attack animation; need 07 right after this.
 C08                               #Critical hit
 1 p- Staff_000.png

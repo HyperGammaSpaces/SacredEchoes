@@ -1,23 +1,67 @@
 #######################################################
-#0F myrm_sw1 Myrmidon Item
+#2B myrm_ua1 Myrmidon Item
 #
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
 /// - Mode 1               #Melee Animation
-2 p- Unarmed_000.png
+1 p- Unarmed_000.png
+C02                               #Start of dodge
+1 p- Unarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- Unarmed_001.png
+4 p- Unarmed_002.png
+6 p- Unarmed_003.png
 C01                               #NOP
+4 p- Unarmed_004.png
+6 p- Unarmed_005.png
+6 p- Unarmed_006.png
+3 p- Unarmed_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 3               #Melee Critical Animation
-2 p- Unarmed_000.png
+1 p- Unarmed_000.png
+C02                               #Start of dodge
+1 p- Unarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- Unarmed_001.png
+4 p- Unarmed_002.png
+6 p- Unarmed_003.png
 C01                               #NOP
+4 p- Unarmed_004.png
+6 p- Unarmed_005.png
+6 p- Unarmed_006.png
+3 p- Unarmed_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 5               #Ranged Animation 
-2 p- Unarmed_000.png
+1 p- Unarmed_000.png
+C02                               #Start of dodge
+1 p- Unarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- Unarmed_001.png
+4 p- Unarmed_002.png
+6 p- Unarmed_003.png
 C01                               #NOP
+4 p- Unarmed_004.png
+6 p- Unarmed_005.png
+6 p- Unarmed_006.png
+3 p- Unarmed_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 6               #Ranged Critical Animation
-2 p- Unarmed_000.png
+1 p- Unarmed_000.png
+C02                               #Start of dodge
+1 p- Unarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- Unarmed_001.png
+4 p- Unarmed_002.png
+6 p- Unarmed_003.png
 C01                               #NOP
+4 p- Unarmed_004.png
+6 p- Unarmed_005.png
+6 p- Unarmed_006.png
+3 p- Unarmed_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 7               #Dodge Melee Attack
 1 p- Unarmed_000.png
@@ -62,7 +106,18 @@ C01                               #NOP
 C01                               #NOP
 ~~~
 /// - Mode 12               #Attack Missed Animation
-2 p- Unarmed_000.png
+1 p- Unarmed_000.png
+C02                               #Start of dodge
+1 p- Unarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+3 p- Unarmed_001.png
+4 p- Unarmed_002.png
+6 p- Unarmed_003.png
 C01                               #NOP
+4 p- Unarmed_004.png
+6 p- Unarmed_005.png
+6 p- Unarmed_006.png
+3 p- Unarmed_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - End of animation

@@ -1,16 +1,18 @@
 //Animations
-#define CelicaSword 0x01
-#define CelicaMagic 0x02
-#define AlmFighterSword 0x03
-#define AlmFighterRegalSword 0x04
-#define AlmFighterUnarmed 0x05
-#define CelicaPrincessSword 0x06 
-#define CelicaPrincessMagic 0x07 
-#define AlmHeroSword 0x08
-#define AlmHeroRegalSword 0x09
-#define AlmHeroFalchion 0x0A
-#define AlmHeroBow 0x0B
-#define AlmHeroUnarmed 0x0C
+
+#define AlmFighterSword 0x01
+#define AlmFighterRegalSword 0x02
+#define AlmFighterUnarmed 0x03
+#define AlmHeroSword 0x04
+#define AlmHeroRegalSword 0x05
+#define AlmHeroFalchion 0x06
+#define AlmHeroBow 0x07
+#define AlmHeroUnarmed 0x08
+
+#define CelicaSword 0x09
+#define CelicaMagic 0x0A
+#define CelicaPrincessSword 0x0B 
+#define CelicaPrincessMagic 0x0C
 
 #define VillagerSword 0x0D
 #define VillagerUnarmed 0x0E
@@ -129,34 +131,32 @@
 #define BishopStaff 0x76
 #define BishopUnarmed 0x77
 
-#define WitchStaff 0x78
-#define WitchMagic 0x79
+#define WitchMagic 0x78
+#define WitchStaff 0x79
 #define NuibabaMagic 0x7A
 #define NuibabaStaff 0x7B
-#define RineaWitchStaff 0x7C
-#define RineaWitchMagic 0x7D
+#define RineaWitchMagic 0x7C
+#define RineaWitchStaff 0x7D
 
-#define ShamanStaff 0x7E
-#define ShamanMagic 0x7F
+#define ShamanMagic 0x7E
+#define ShamanStaff 0x7F
 #define ArcanistMagic 0x80
 #define ArcanistStaff 0x81
-#define ArcanistFMagic 0x82
-#define ArcanistFStaff 0x83
-#define CantorMagic 0x84
-#define CantorStaff 0x85
-#define JedahStaff 0x86
-#define JedahMagic 0x87
+#define CantorMagic 0x82
+#define CantorStaff 0x83
+#define JedahMagic 0x84
+#define JedahStaff 0x85
 
-#define BerkutT1Lance 0x88
-#define BerkutT1Unarmed 0x89
-#define BerkutT2Lance 0x8A
-#define BerkutT2Unarmed 0x8B
-#define FiendLance 0x8C
-#define FiendUnarmed 0x8D
-#define WhiteDragonBreath 0x8E
+#define BerkutT1Lance 0x86
+#define BerkutT1Unarmed 0x87
+#define BerkutT2Lance 0x88
+#define BerkutT2Unarmed 0x89
+#define FiendLance 0x8A
+#define FiendUnarmed 0x8B
+#define WhiteDragonBreath 0x8C
 
-//0x8f-0x9e free
-//0x9f ballista, do not edit
+//0x8d-0x9e free
+#define ArcherMBallista 0x9F //0x9f ballista, do not edit
 #define RevenantClaw 0xA0
 #define EntombedClaw 0xA1
 #define BonewalkerSword 0xA2
@@ -169,16 +169,16 @@
 #define WightUnarmed 0xA9
 #define BaelClaw 0xAA
 #define ElderBaelClaw 0xAB
-#define CyclopsAxe 0xAC
-#define CyclopsHandaxe 0xAD
-#define CyclopsUnarmed 0xAE
-#define HellhoundFang 0xAF
-#define KerberosFang 0xB0
+#define HellhoundFang 0xAC
+#define KerberosFang 0xAD
+#define CyclopsAxe 0xAE
+#define CyclopsHandaxe 0xAF
+#define CyclopsUnarmed 0xB0
 #define TarvosAxe 0xB1
 #define TarvosHandAxe 0xB2
 #define TarvosUnarmed 0xB3
 #define MaelduinAxe 0xB4
-#define MaelduinHandAxe 0xB5
+#define MaelduinHandaxe 0xB5
 #define MaelduinBow 0xB6
 #define MaelduinUnarmed 0xB7
 #define MogallTackle 0xB8

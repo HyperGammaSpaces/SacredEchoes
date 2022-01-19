@@ -1,0 +1,34 @@
+PUSH
+    AnimTableEntry(ArcherMBallista)
+    BYTE $62 $61 $6C $6D $5F $61 $72 $31
+    WORD 0
+    POIN ArcherM_sectiondata //$DC8890 //SectionData
+    POIN ArcherM_framedata //$DC87E0 //FrameData
+    POIN ArcherM_rtl //$DC864C //RTL OAM
+    POIN ArcherM_ltr //$DC84B8 //LTR OAM
+    POIN ArcherM_pal //$DC845C //palette
+POP
+
+ArcherM_pal:
+    #incbin "balm_ar1_palette.dmp"
+
+ArcherM_ltr:
+    #incbin "balm_ar1_ltr.dmp"
+
+ArcherM_rtl:
+    #incbin "balm_ar1_rtl.dmp"
+
+ArcherM_sectiondata:
+    #incbin "balm_ar1_section.dmp"
+    
+//this has a load of POIN2s to the sheet data
+ArcherM_framedata:
+    #incbin "balm_ar1_frame.dmp"
+    
+PUSH
+    //len(framedata) - 17
+    ORG CURRENTOFFSET-159; POIN2 ArcherM_sheet1
+POP
+
+ArcherM_sheet1:
+    #incbin "Ballista_Sheet_1.img.bin"
