@@ -8,6 +8,8 @@
 .equ StoreFunc_GiveAll, 0x08031594
 .equ RemoveUnitBlankItems, 0x08017984
 
+.equ gpTradeMenuProc, 0x0203A610
+
 .equ ReturnSkipSupply, 0x0809e94f
 .equ ReturnSkipFullInventory, 0x0804f287
 .equ ReturnSkipGiveAll, 0x0809a56f
@@ -23,9 +25,18 @@
 .global Untradeable_Supply_Fix
 
 Trade_Fix:
-	push {r4-r5,lr}
+	push {r4-r6,lr}
 	mov r4,r1    @save inventory ptrs
 	mov r5,r2
+    ldr r6, =gpTradeMenuProc
+    ldr r6, [r6]
+    mov r0, r6
+    add r0, #0x41 @DonorUnitIndex
+    add r6, #0x43 @RecipientUnitIndex
+    ldrb r1, [r0]
+    ldrb r2, [r6]
+    cmp r1, r2
+    beq Trade_Success
 	ldrh r0,[r4] @get item data
 	ldr r1, =AbilityGetter
 	mov lr,r1
@@ -43,6 +54,7 @@ Trade_Fix:
 	and r0,r1
 	cmp r0,#0
 	bne NoTrade
+    Trade_Success:
 	ldrh r1,[r5]
 	ldrh r0,[r4]
 	strh r1,[r4]
@@ -59,14 +71,14 @@ Trade_Fix:
 	mov lr,r1
 	.short 0xF800
 	Trade_Mute:
-	pop {r4-r5}
+	pop {r4-r6}
 	pop {r0}
 	pop {r4}
 	pop {r0}
 	ldr r0, =ReturnSkipTrade
 	bx r0
 	Trade_End:
-	pop {r4-r5}
+	pop {r4-r6}
 	pop {r1}
 	bx r1
 

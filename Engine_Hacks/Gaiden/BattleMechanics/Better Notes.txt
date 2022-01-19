@@ -432,6 +432,7 @@ BATTLE MAP GAME STATE (202bcb0)
         & 0x02: trade action taken
         & 0x04: supply action taken
         & 0x08: ride/exit ballista action taken
+    +3F | byte  | was 0xFF when i checked it. Loaded at 2DB08 in the trade menu funcs
 
 ############
 CHARACTER BATTLE STATISTIC STRUCT (203E884) (FE6: 203D524)

@@ -118,19 +118,23 @@ Spells_Getter:
 
 SpellCostGetter:
     push    {r4-r5, lr}
-    mov     r4, r0
-    mov     r5, #0x1C       @0x2 before start of item data
+    mov     r4, r0          @unit
+    mov     r5, r1          @item
+    ldr     r0, [r4]        @character ROM data
+    ldr     r1, [r4, #0x4]  @class ROM data
+    ldr     r0, [r0, #0x28] @ability bitfield
+    ldr     r1, [r1, #0x28] @ability bitfield
+    orr     r0, r1
+    ldr     r1, =Pact_Flag_Link
+    ldr     r1, [r1]
+    and     r0, r1
+    cmp     r0, #0x0
+    bne     SpellCostGetter_NoCost
+    
     mov     r0, #0xFF
+    mov     r1, r5          @get item
     and     r1, r0          @isolate lower byte
 
-    SpellCostGetter_Loop:
-        add     r5, #0x2
-        ldrb    r0, [r4, r5]
-        cmp     r0, #0x75           @animus ring
-        beq     SpellCostGetter_NoCost      @if found, do not cost
-            cmp     r5, #0x26
-            blt     SpellCostGetter_Loop
-            
     SpellCostGetter_CheckItem:
         cmp     r1, #0x38
         blt     SpellCostGetter_NoCost

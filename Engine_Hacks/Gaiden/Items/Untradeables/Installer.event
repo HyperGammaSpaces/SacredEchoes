@@ -9,7 +9,7 @@
 
 PUSH
 
-//Trade Fix (2d72c)
+//Trade Fix (2d72c) - args: r0=TradeMenuProc
 ORG $2d760
 BL(Trade_Fix)
 WORD $0

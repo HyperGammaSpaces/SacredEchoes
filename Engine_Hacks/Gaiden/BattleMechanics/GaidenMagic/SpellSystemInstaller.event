@@ -5,6 +5,10 @@
 #include "spell_costs.event"
 #include "spell_lists.event"
 
+ALIGN 4
+Pact_Flag_Link:
+WORD C_Flag_Pact
+
 #include "GaidenMagic.lyn.event"
 
 #include "Battle/GaidenMagic_Battle.event"
