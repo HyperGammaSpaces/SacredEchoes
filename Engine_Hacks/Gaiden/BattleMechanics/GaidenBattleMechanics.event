@@ -1,10 +1,19 @@
+ALIGN 4
+AlwaysRangedAnimList:
+BYTE Thunderblade HandAxe Pugi Hatchet BaseBow IronBow SteelBow SilverBow KillerBow PoisonBow HolyBow Longbow RadiantBow MilasBow LunaBow Parthia 0x00
+ALIGN 4
+
 #include "GaidenMagic/SpellSystemInstaller.event"
+ALIGN 4
+#include "Battle_HP_Bars/HP_Bar_Animation.event"
+
+#define gJedahCounter 0x0202BD34 //in gChapterData+0x44 so it gets saved. there are 4 bytes here that dont seem to be used
 
 PUSH
 
     //Determine whether next battle round should be generated
-    ORG $02B044
-        WORD $47184B00; POIN VswHook_0802B044
+    ORG $2c844
+    replaceWithHack(MakeBattleRound_New)
 
 /*
     // makes venin weapons put opponent to sleep instead of poisoning them
@@ -15,30 +24,46 @@ PUSH
 */
   
     //Damage Flooring to 1
+    /*
+    //obsoleted by MidBattleCalcLoop
     ORG $2B53E
     BYTE $01
     ORG $2B542
     BYTE $01
+    */
+    
+    //Battle forecast 1
     ORG $368CE
     BYTE $01
     ORG $368D2
     BYTE $01
+    //Battle forecast 2
+    //stone check and zero-out at 36950
     ORG $36964
     BYTE $01
     ORG $36968
     BYTE $01
+    
+    //In-battle - replace with a jump at 577CC
     ORG $577DE
     BYTE $01
     ORG $577E2
     BYTE $26
+    
+    //In-battle - replace with a jump at 57800
     ORG $5781A
     BYTE $01
     ORG $5781E
     BYTE $01
+    
     //thanks 7743
     //Fix damage floor for misses on map anims
     ORG $7A864
-    callHack_r4(FixDamageFloorMapMiss)
+    callHack_r4(FixDamageFloorMapMiss)    
+    //Fix actor HP changes on map anims
+    ORG $816da
+    SHORT 0
+    jumpToHack(FixActorHpChange_MapAnims)
 
     ORG $2A4B8
     //runesword halving str thing
@@ -55,13 +80,14 @@ PUSH
     ORG $2AE2C //in specialweapons.dmp - move if changed
     BYTE W_Effect_Eclipse 
 
-    ORG $2B69C 							
+    ORG $2B69C
     BYTE W_Effect_Devil
-
-    ORG $2B718 							
+    ORG $2B718
     BYTE W_Effect_Drain
-
-    ORG $2B766 							
+    ORG $2b758
+    BYTE 00 $48 00 $47 //jumptohack with r0
+    POIN DrainEffectFix|1
+    ORG $2B766
     BYTE W_Effect_Stone        //dummying out stone for now
 
     //Devil weapon underflow fix
@@ -72,6 +98,17 @@ PUSH
 
     ORG $2C7C0
     replaceWithHack(NewWeaponTriangle)
+    
+    ORG $57AE0
+    #incbin "AllowNoDamageOnDuma.dmp"
+    //Include any other weird special cases here (classes that shouldn't use battle anms for being statused, etc)
+    B($57B48)
+    
+    //Efficiency fix, plus rounds expansion, for InitBattleAnimRoundArrays
+    ORG $581EC
+    #include "InitBattleAnimRoundArrays_New.lyn.event"
+    PROTECT $581EC $587E2
+
   
 POP
 
@@ -87,7 +124,13 @@ FixDamageFloorMapMiss:
 #incbin "FixDamageFloorForMapMiss.dmp"
 ALIGN 4
 
+FixActorHpChange_MapAnims:
+#incbin "FixActorHpChange_MapAnims.dmp"
+ALIGN 4
 
+DrainEffectFix:
+#incbin "DrainEffectFix.dmp"
+ALIGN 4
 
 //Pre-battle calcs (for things that need to show in the battle preview)
 #include "Calc_Loops/PreBattle/PreBattleCalcLoop.event"
