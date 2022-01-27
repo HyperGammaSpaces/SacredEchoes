@@ -22,9 +22,11 @@ Proc_StatusWeapons2:
     ldr     r0, [r2]        @ r0 = battle buffer    
     lsl     r0, r0, #0xD       
     lsr     r0, r0, #0xD    @ Without damage data 
-    mov     r1, #2          @ miss
+    mov     r1, #0xC0       @skill flag
+    lsl     r1, #0x8        @0xC000
+    add     r1, #0x2        @miss
     tst     r0, r1
-    bne     GoBack          @ skip if miss
+    bne     GoBack          @ skip if miss or if defensive skill
 
 
     @ check weapon effect

@@ -478,6 +478,9 @@ BYTE Platform_WoodDeck+1 //supply barrel+1
 BYTE Platform_WoodDeck+1 //supply barrel+1
 BYTE Platform_WoodDeck+1 //supply barrel+1
 
+ORG $80CB13 //$0D
+BattlePlatforms_DumaTower:
+
 ORG $80CB54 //$0E
 BattlePlatforms_Night:
 BYTE Platform_Field_Night+1
@@ -489,7 +492,7 @@ BYTE Platform_Village_Night+1
 BYTE Platform_Village_Night+1
 BYTE Platform_Village_Night+1
 BYTE Platform_Rubble_Night+1 //statue+1
-BYTE Platform_Village_Night+1 //c.room??+1
+BYTE Platform_River_Purple+1
 BYTE Platform_Fort+1
 BYTE Platform_Gate+1
 BYTE Platform_Forest_Night+1
@@ -751,6 +754,74 @@ BYTE Platform_WoodDeck+1 //supply barrel+1
 BYTE Platform_WoodDeck+1 //supply barrel+1
 BYTE Platform_WoodDeck+1 //supply barrel+1
 
+ORG $80CB13
+BattlePlatforms_DumaTower:
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Sea_Night+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_MagicFloor+1
+BYTE Platform_Pillar_Tan+1
+BYTE Platform_Pillar_Tan+1
+BYTE Platform_Pillar_Tan+1
+BYTE Platform_Rubble_Tan+1
+BYTE Platform_Pillar_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Throne_Tan+1
+BYTE Platform_Chest_Tan+1
+BYTE Platform_Chest_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Rubble_Tan+1
+BYTE Platform_Rubble_Tan+1
+BYTE Platform_Rubble_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Sea_Night+1
+BYTE Platform_Rubble_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_MagicFloor+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Sea_Night+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Floor_Tan+1
+BYTE Platform_Pillar_Tan+1
+BYTE Platform_Floor_Tan+1
+
 ORG $80CC99
 BattlePlatforms_MilaTemple:
 BYTE Platform_Floor_Purple+1
@@ -821,67 +892,67 @@ BYTE Platform_Floor_Purple+1
 
 ORG $80CCDA //$14
 BattlePlatforms_Swamp:
-BYTE Platform_Field_Plains+1
-BYTE Platform_Field_Plains+1
-BYTE Platform_Road+1
-BYTE Platform_Village+1
-BYTE Platform_Village+1
-BYTE Platform_House+1
-BYTE Platform_Armory+1
-BYTE Platform_Vendor_Outdoor+1
-BYTE Platform_Arena+1 //statue+1
-BYTE Platform_Vendor_Outdoor+1 //c.room??+1
+BYTE Platform_Field_Night+1
+BYTE Platform_Field_Night+1
+BYTE Platform_Village_Night+1
+BYTE Platform_Village_Night+1
+BYTE Platform_Village_Night+1
+BYTE Platform_Village_Night+1
+BYTE Platform_Village_Night+1
+BYTE Platform_Village_Night+1
+BYTE Platform_Rubble_Night+1 //statue+1
+BYTE Platform_River_Purple+1
 BYTE Platform_Fort+1
 BYTE Platform_Gate+1
-BYTE Platform_Forest+1
+BYTE Platform_Forest_Night+1
 BYTE Platform_Thicket+1
 BYTE Platform_Sand+1
 BYTE Platform_Desert+1
-BYTE Platform_River+1
-BYTE Platform_Mountain+1
-BYTE Platform_Peak+1
-BYTE Platform_Bridge+1
-BYTE Platform_Bridge_Drawn+1
-BYTE Platform_Sea+1
+BYTE Platform_River_Night+1
+BYTE Platform_Mountain_Night+1
+BYTE Platform_Peak_Night+1
+BYTE Platform_Bridge_Night+1
+BYTE Platform_Bridge_Night+1
+BYTE Platform_Sea_Night+1
 BYTE Platform_Lake+1
-BYTE Platform_Floor_Gray+1
+BYTE Platform_Floor_Night+1
 BYTE Platform_MagicFloor+1
 BYTE Platform_Fence+1
 BYTE Platform_Fence+1 //wall+1
 BYTE Platform_Fence+1 //breakable wall+1
-BYTE Platform_Rubble_Road+1
-BYTE Platform_Pillar_Gray+1
-BYTE Platform_Floor_Gray+1 //door+1
-BYTE Platform_Throne_Gray+1
-BYTE Platform_Chest_Gray+1
-BYTE Platform_Chest_Gray+1
-BYTE Platform_Floor_Gray+1 //roof+1
-BYTE Platform_RoadGate+1
-BYTE Platform_Rubble_Road+1 //graves+1
-BYTE Platform_Ruins+1
-BYTE Platform_Cliff+1
+BYTE Platform_Village_Night+1
+BYTE Platform_Pillar_Night+1
+BYTE Platform_Floor_Night+1 //door+1
+BYTE Platform_Throne_Night+1
+BYTE Platform_Chest_Night+1
+BYTE Platform_Chest_Night+1
+BYTE Platform_Floor_Night+1 //roof+1
+BYTE Platform_Gate+1
+BYTE Platform_Village_Night+1 //graves+1
+BYTE Platform_Village_Night+1
+BYTE Platform_Cliff_Night+1
 BYTE Platform_Ballista+1
 BYTE Platform_Ballista+1
 BYTE Platform_Ballista+1
 BYTE Platform_Flat+1
-BYTE Platform_Ruins+1 //Wreck+1
+BYTE Platform_Village_Night+1 //Wreck+1
 BYTE Platform_Gate+1 //2C+1
 BYTE Platform_Stairs+1
-BYTE Platform_Village+1 //wall 2E+1
+BYTE Platform_Floor_Night+1 //wall 2E+1
 BYTE Platform_Glacier+1
-BYTE Platform_Arena+1 //statue 30+1
-BYTE Platform_Cliff+1 //valley+1
+BYTE Platform_Pillar_Night+1 //statue 30+1
+BYTE Platform_Cliff_Night+1 //valley+1
 BYTE Platform_Fence+1
-BYTE Platform_Snag+1
-BYTE Platform_Snag+1
-BYTE Platform_Cliff+1 //sky+1
-BYTE Platform_Cliff+1 //deeps+1
-BYTE Platform_Village+1 //ruins+1
-BYTE Platform_House+1 //inn+1
+BYTE Platform_Snag_Night+1
+BYTE Platform_Snag_Night+1
+BYTE Platform_Cliff_Night+1 //sky+1
+BYTE Platform_Cliff_Night+1 //deeps+1
+BYTE Platform_Village_Night+1 //ruins+1
+BYTE Platform_Village_Night+1 //inn+1
 BYTE Platform_WoodDeck+1 //supply barrel+1
-BYTE Platform_Cliff+1 //bone+1
-BYTE Platform_Cliff+1 //dark+1
-BYTE Platform_Sea+1 //water+1
+BYTE Platform_Cliff_Night+1 //bone+1
+BYTE Platform_Cliff_Night+1 //dark+1
+BYTE Platform_Sea_Night+1 //water+1
 BYTE Platform_WoodDeck+1 //supply barrel+1
 BYTE Platform_WoodDeck+1 //supply barrel+1
 BYTE Platform_WoodDeck+1 //supply barrel+1

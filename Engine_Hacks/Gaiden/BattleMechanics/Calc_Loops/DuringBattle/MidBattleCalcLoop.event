@@ -25,6 +25,10 @@ MidBattle_PrayerRing:
 #incbin "PrayerRing.dmp"
 
 ALIGN 4
+MidBattle_DumasGift:
+#include "DumasGift_4_8_12.lyn.event"
+
+ALIGN 4
 MidBattle_StatusWeapons:
 #incbin "StatusWeapons2.dmp"
 
@@ -36,7 +40,8 @@ MidBattleCalcLoopTable:
     POIN MidBattleLoopStart
     POIN MidBattle_Sureshot
     POIN MidBattle_PrayerRing
-    //POIN DamageHalvingSkillsDuringBattle //commented out because skill activation anims are bugged
+    //POIN DamageHalvingSkillsDuringBattle //commented out because now in prebattle loop
+    POIN MidBattle_DumasGift
     //POIN MidBattle_StatusWeapons //commented out while weapon effects are being finalized 
     #ifdef GAIDEN_MAGIC_INSTALLED
         POIN MidBattle_UpdateHPFromCost

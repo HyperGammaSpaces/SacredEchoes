@@ -88,8 +88,8 @@ PUSH
   //POIN $596CC
   
 //Fix Uncounterable weapon anims
-  ORG $57279
-  BYTE $E0
+  ORG $57278
+  SHORT $E016 //change beq to b
 
 //allow Wyvern Knights to triangle attack
   ORG $2B168
@@ -144,14 +144,14 @@ PUSH
   */
 
 //Unlock Sound Room songs
-  ORG $aede0
+  ORG $AEDE0
   BYTE $FF
   
 //CG Fade glitch
   ORG $EBCA
   BYTE 8
   ORG $EDE0
-  SHORT $1c0a
+  SHORT $1C0A
 
 //Enemy Control Glitch Fix (Credits to Brendor)
   ORG $377A0

@@ -115,23 +115,28 @@ IsMonsterType:
 	blh     0x08024D8C      @AreUnitsAllied
 	lsl     r0, r0, #0x18
 	cmp     r0, #0x0
-	bne     ExitMonsterCheck
+	bne     NotEligible
 	
 	ldr     r1, [r4, #0x4]  @get class pointer
 	mov     r0, #0x50
 	ldrb    r1, [r1, r0]    @get class data
 	mov     r0, #0x10       @MonsterType
 	and     r1, r0
-	cmp     r1, #0x10
-	beq     IsMonster
-	b       NotMonster
+	cmp     r1, #0x0
+	beq     NotEligible
 		
 	IsMonster:
-	@if true, we need to add it to the list.
+	ldr     r1, [r4, #0x4]  @get class pointer
+    ldr     r1, [r1, #0x28]
+    mov     r0, #1
+    lsl     r0, r0, #0x8 @CC_IsPromoted
+    and     r1, r0
+    cmp     r1, #0
+    bne     NotEligible
 	mov     r0, r5 @otherwise return the deployment number
 	b       ExitMonsterCheck
 
-	NotMonster:
+	NotEligible:
 	mov     r0, #0
 
 	ExitMonsterCheck:

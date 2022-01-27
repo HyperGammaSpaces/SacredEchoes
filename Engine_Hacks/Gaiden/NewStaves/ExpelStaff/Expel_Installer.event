@@ -62,6 +62,7 @@ TryAddUnitToExpelTargetList:
 #incbin "ExpelUsabilityCheck.dmp"
 ALIGN 4
 
+//TODO: look at torch staff's anim at 9EE088
 ExpelMapAnimProc:
 
 	PROC_CALL_ROUTINE($30C24+1) //init. We need to set a proc field to 0

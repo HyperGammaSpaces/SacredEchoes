@@ -1,5 +1,7 @@
 .thumb
 
+.set HasDistantCounter, 0x0
+
 .global Spells_Getter
 .type   Spells_Getter, function
 
@@ -437,6 +439,7 @@ _UpdateBattleItemProperties:
     
 NewSetupBattleWeaponData:
     push    {r4-r7,lr}
+    sub     sp, #0x4
     mov     r5, r0
     mov     r3, r1
     mov     r0, #0x1
@@ -550,6 +553,32 @@ NewSetupBattleWeaponData:
         .ltorg
         
     BWD_CheckIfInRange:
+        mov     r1, r5
+        add     r1, #0x1E
+        ldrh    r1, [r1, #0x0]
+        cmp     r1, #0x0
+        beq     BWD_DoneDC
+        mov     r6, #0x0        @ initialize counter
+    
+    BWD_CheckDistantCounterLoop:
+        mov     r2, #0xFF
+        and     r1, r2
+        cmp     r1, #AnimusRing_ID
+        bne     BWD_DCNext
+            mov     r0, #0x1
+            str     r0, [sp, #HasDistantCounter]
+            b       BWD_DoneDC
+        BWD_DCNext:
+        add     r6, #0x2
+        cmp     r6, #0x8
+        bgt     BWD_DoneDC
+        mov     r1, r5
+        add     r1, #0x1E
+        ldrh    r1, [r1, r6]
+        cmp     r1, #0x0
+        bne     BWD_CheckDistantCounterLoop
+        
+    BWD_DoneDC:
         mov     r4, r5
         add     r4, #0x48
         ldrh    r1, [r4]        @ item ID
@@ -561,6 +590,9 @@ NewSetupBattleWeaponData:
         bl      NewCanUnitUseWeapon
         cmp     r0, #0x1
         bne     BWD_InventoryNext
+        ldr     r0, [sp, #HasDistantCounter]
+        cmp     r0, #1
+        beq     BWD_UpdateWeaponData
         
         mov     r0, r7          @ item ID
         ldr     r1, =gBattleStatsBitfield
@@ -668,6 +700,7 @@ NewSetupBattleWeaponData:
         strb    r1, [r0, #0x0]  @ no countering or wexp
         
 BWD_Exit:
+    add     sp, #0x4
     pop     {r4-r7}
     pop     {r0}
     bx      r0
@@ -913,73 +946,73 @@ StaffUseEffect_GetSlot:
 
 @hooks at 2C028
 SaveBothUnitsFromBattle_New:
-    PUSH    {r4-r7,lr}
-    LDR     r5, =gBattleActor
-    MOV     r0, #0xB
-    LDSB    r0, [r5, r0]
+    push    {r4-r7, lr}
+    ldr     r5, =gBattleActor
+    mov     r0, #0xB
+    ldsb    r0, [r5, r0]
     blh     GetUnitStruct
-    MOV     r7, r0
-    LDR     r4, =gBattleTarget
-    MOV     r0, #0xB
-    LDSB    r0, [r4, r0]
+    mov     r7, r0
+    ldr     r4, =gBattleTarget
+    mov     r0, #0xB
+    ldsb    r0, [r4, r0]
     blh     GetUnitStruct
-    MOV     r6, r0
-    MOV     r0, r5
-    ADD     r0, #0x52           @ bool CanCounter
-    LDRB    r0, [r0, #0x0]
-    CMP     r0, #0x0
-    BEQ     _DoneAttackerItem
-        MOV     r0, r5
-        MOV     r1, #0x51
-        LDSB    r0, [r0, r1]
-        CMP     r0, #0x0
-        BLT     _DoneAttackerItem
-            LSL     r0, r0, #0x1
-            MOV     r1, r5
-            ADD     r1, #0x1E
-            ADD     r0, r0, r1
-            ADD     r1, #0x2A
-            LDRH    r1, [r1, #0x0]
-            STRH    r1, [r0, #0x0]
+    mov     r6, r0
+    mov     r0, r5
+    add     r0, #0x52           @ bool CanCounter
+    ldrb    r0, [r0, #0x0]
+    cmp     r0, #0x0
+    beq     _DoneAttackerItem
+        mov     r0, r5
+        mov     r1, #0x51
+        ldsb    r0, [r0, r1]
+        cmp     r0, #0x0
+        blt     _DoneAttackerItem
+            lsl     r0, r0, #0x1
+            mov     r1, r5
+            add     r1, #0x1E
+            add     r0, r0, r1
+            add     r1, #0x2A
+            ldrh    r1, [r1, #0x0]
+            strh    r1, [r0, #0x0]
             
 _DoneAttackerItem:
-    MOV     r0, r4
-    ADD     r0, #0x52           @ bool CanCounter
-    LDRB    r0, [r0, #0x0]
-    CMP     r0, #0x0
-    BEQ     _DoneDefenderItem
-        MOV     r0, r4
-        MOV     r1, #0x51
-        LDSB    r0, [r0, r1]
-        CMP     r0, #0x0
-        BLT     _DoneDefenderItem
-            LSL     r0, r0, #0x1
-            MOV     r1, r4
-            ADD     r1, #0x1E
-            ADD     r0, r0, r1
-            ADD     r1, #0x2A
-            LDRH    r1, [r1, #0x0]
-            STRH    r1, [r0, #0x0]
+    mov     r0, r4
+    add     r0, #0x52           @ bool CanCounter
+    ldrb    r0, [r0, #0x0]
+    cmp     r0, #0x0
+    beq     _DoneDefenderItem
+        mov     r0, r4
+        mov     r1, #0x51
+        ldsb    r0, [r0, r1]
+        cmp     r0, #0x0
+        blt     _DoneDefenderItem
+            lsl     r0, r0, #0x1
+            mov     r1, r4
+            add     r1, #0x1E
+            add     r0, r0, r1
+            add     r1, #0x2A
+            ldrh    r1, [r1, #0x0]
+            strh    r1, [r0, #0x0]
             
 _DoneDefenderItem:
-    MOV     r0, r7
-    MOV     r1, r5
+    mov     r0, r7
+    mov     r1, r5
     blh     SaveUnitFromBattle
-    CMP     r6, #0x0
-    BEQ     _SaveBreakableTerrain
-        MOV     r0, r6
-        MOV     r1, r4
+    cmp     r6, #0x0
+    beq     _SaveBreakableTerrain
+        mov     r0, r6
+        mov     r1, r4
         blh     SaveUnitFromBattle
-        B       _End_SaveBothUnits
+        b       _End_SaveBothUnits
         
     _SaveBreakableTerrain:
-        MOV     r0, r4
+        mov     r0, r4
         blh     SaveSnagWallFromBattle
         
 _End_SaveBothUnits:
-    POP     {r4-r7}
-    POP     {r0}
-    BX      r0
+    pop     {r4-r7}
+    pop     {r0}
+    bx      r0
 
     .align
     .ltorg
@@ -1057,30 +1090,30 @@ SaveUnit_CleanOutSpellBuffer:
 @inside FinishUpItemBattle 2CC54
 
 ItemBattle_WriteToInventory:
-    MOV     r1, #0x4
-    AND     r1, r0
-    CMP     r1, #0x0
-    BEQ     _9A
-        MOV     r1, r4
-        ADD     r1, #0x7D
-        MOV     r0, #0x1
-        STRB    r0, [r1]
-        MOV     r0, r4
-        LDRH    r1, [r5]
-        BL      SpellCostGetter
+    mov     r1, #0x4
+    and     r1, r0
+    cmp     r1, #0x0
+    beq     _9A
+        mov     r1, r4
+        add     r1, #0x7D
+        mov     r0, #0x1
+        strb    r0, [r1]
+        mov     r0, r4
+        ldrh    r1, [r5]
+        bl      SpellCostGetter
         mov 	r1, #0x13
         ldsb	r1, [r4, r1]
         sub		r1, r0
         strb	r1, [r4, #0x13]
         
     _9A:
-    LDRH    r0, [r5]
+    ldrh    r0, [r5]
     blh     0x08016AEC      @ ValidateItem
-    STRH    r0, [r5]
-    MOV     r3, #0x51
-    LDSB    r1, [r4, r3]
-    CMP     r1, #0x0
-    BLT     WriteToInventory_EndFunc
+    strh    r0, [r5]
+    mov     r3, #0x51
+    ldsb    r1, [r4, r3]
+    cmp     r1, #0x0
+    blt     WriteToInventory_EndFunc
 
         WriteToInventory:
         lsl     r1, r1, #0x1
@@ -1101,16 +1134,16 @@ ItemBattle_WriteToInventory:
 .type   PlayerPhase_CancelAction_New, function
     
 PlayerPhase_CancelAction_New:
-    PUSH    {lr}
-    LDR     r2, =gActionStruct
-    MOV     r1, #0x0
-    STRB    r1, [r2, #0x11]
-    LDR     r2, =SelectedSpellPointer
-    STRH    r1, [r2]
-    MOV     r1, #0x2
+    push    {lr}
+    ldr     r2, =gActionStruct
+    mov     r1, #0x0
+    strb    r1, [r2, #0x11]
+    ldr     r2, =SelectedSpellPointer
+    strh    r1, [r2]
+    mov     r1, #0x2
     blh     Goto6CLabel
-    POP     {r0}
-    BX      r0
+    pop     {r0}
+    bx      r0
     
     .align
     .ltorg
@@ -1120,63 +1153,63 @@ PlayerPhase_CancelAction_New:
 .type   NewHandleTargetSelectInput, function
     
 NewHandleTargetSelectInput:
-    PUSH    {r4-r5,lr}
-    MOV     r5, r0
-    MOV     r4, #0x0
-    LDR     r0, =pKeyStatusBuffer
-    LDR     r0, [r0, #0x0]
-    LDRH    r1, [r0, #0x8]
-    MOV     r0, #0x1
-    AND     r0, r1              @ A button
-    CMP     r0, #0x0
-    BEQ     Button_A_Not_Pressed
-        LDR     r3, [r5, #0x38]
-        CMP     r3, #0x0
-        BNE     Call_Button_Handler
-            LDR     r0, [r5, #0x2C]
-            LDR     r3, [r0, #0x14] @ TargetSelection_OnSelect
-            B       Does_Button_Have_Handler
+    push    {r4-r5,lr}
+    mov     r5, r0
+    mov     r4, #0x0
+    ldr     r0, =pKeyStatusBuffer
+    ldr     r0, [r0, #0x0]
+    ldrh    r1, [r0, #0x8]
+    mov     r0, #0x1
+    and     r0, r1              @ a button
+    cmp     r0, #0x0
+    beq     Button_A_Not_Pressed
+        ldr     r3, [r5, #0x38]
+        cmp     r3, #0x0
+        bne     Call_Button_Handler
+            ldr     r0, [r5, #0x2C]
+            ldr     r3, [r0, #0x14] @ TargetSelection_OnSelect
+            b       Does_Button_Have_Handler
 
     Button_A_Not_Pressed:
-        MOV     r0, #0x2
-        AND     r0, r1          @ B button
-        CMP     r0, #0x0
-        BEQ     Button_B_Not_Pressed
-            LDR     r2, =SelectedSpellPointer
-            MOV     r0, #0x0
-            STRH    r0, [r2]
-            LDR     r0, [r5, #0x2C]
-            LDR     r3, [r0, #0x18] @TargetSelection_OnCancel
-            B       Does_Button_Have_Handler
+        mov     r0, #0x2
+        and     r0, r1          @ b button
+        cmp     r0, #0x0
+        beq     Button_B_Not_Pressed
+            ldr     r2, =SelectedSpellPointer
+            mov     r0, #0x0
+            strh    r0, [r2]
+            ldr     r0, [r5, #0x2C]
+            ldr     r3, [r0, #0x18] @TargetSelection_OnCancel
+            b       Does_Button_Have_Handler
         
     Button_B_Not_Pressed:
-        MOV     r0, #0x80
-        LSL     r0, r0, #0x1
-        AND     r0, r1          @ R button
-        CMP     r0, #0x0
-        BEQ     Button_Handler_Exit
-            LDR     r0, [r5, #0x2C]
-            LDR     r3, [r0, #0x1C] @TargetSelection_OnRtext
+        mov     r0, #0x80
+        lsl     r0, r0, #0x1
+        and     r0, r1          @ r button
+        cmp     r0, #0x0
+        beq     Button_Handler_Exit
+            ldr     r0, [r5, #0x2C]
+            ldr     r3, [r0, #0x1C] @TargetSelection_OnRtext
         
         Does_Button_Have_Handler:
-            CMP     r3, #0x0
-            BEQ     Button_Handler_Exit
+            cmp     r3, #0x0
+            beq     Button_Handler_Exit
         
     Call_Button_Handler:
-        LDR     r1, [r5, #0x30]
-        MOV     r0, r5
-        BL      _call_via_r3
-        LSL     r0, r0, #0x18
-        LSR     r4, r0, #0x18
+        ldr     r1, [r5, #0x30]
+        mov     r0, r5
+        bl      _call_via_r3
+        lsl     r0, r0, #0x18
+        lsr     r4, r0, #0x18
         
 Button_Handler_Exit:
-    MOV     r0, r4
-    POP     {r4-r5}
-    POP     {r1}
-    BX      r1
+    mov     r0, r4
+    pop     {r4-r5}
+    pop     {r1}
+    bx      r1
     
 _call_via_r3:
-    BX      r3
+    bx      r3
 	
 	.align
     .ltorg
@@ -1248,14 +1281,14 @@ GaidenMagicAI_CheckConditions:
 .global PostCombat_SpellClear
 PostCombat_SpellClear:
 	push    {lr}
-	ldrb 	r0, [r6,#0x11]	@action taken this turn
+	ldrb 	r0, [r6, #0x11]	@action taken this turn
 	cmp 	r0, #0x1 @waited
 	beq		ClearStart
 	cmp		r0, #0x2 @attacked
 	beq 	ClearStart
 	cmp	    r0, #0x3 @used a staff
 	beq 	ClearStart
-	b EndClear
+	b       EndClear
 	
 	ClearStart:
 	ldrb 	r0, [r6, #0x0C]	@allegiance byte of the current character taking action
@@ -1270,8 +1303,8 @@ PostCombat_SpellClear:
 		strb	r0, [r6, #0xD] @target
 		
 	EndClear:
-	pop	{r0}
-	bx	r0
+	pop 	{r0}
+	bx  	r0
 
 	.align
 	.ltorg

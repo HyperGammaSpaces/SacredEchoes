@@ -12,6 +12,7 @@
 .endm
 
 .equ WMagicWeaponType, 0x6
+.equ AnimusRing_ID, 0x75
 .equ SpellsBuffer, 0x0202B6D0
 .equ SelectedSpellPointer, 0x0203A8F0
 

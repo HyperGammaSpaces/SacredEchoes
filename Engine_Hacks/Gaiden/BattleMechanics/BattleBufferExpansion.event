@@ -2,8 +2,8 @@
 #define NewBattleBufferLocation $203aac0 //was 203a5ec
 #define BattleBufferWidth 8
 #define maxAtks 31
-#define BattleBufferAnimsOn1 (NewBattleBufferLocation+(maxAtks*8)) //was 203e12a
-#define BattleBufferAnimsOn2 (BattleBufferAnimsOn1+(maxAtks*4)) //was 203e156
+#define BattleAnimRoundTypesBuffer (NewBattleBufferLocation+(maxAtks*8)) //was 203e12a
+#define BattleHpUpdateList (BattleAnimRoundTypesBuffer+(maxAtks*4)) //was 203e156
 
 PUSH
 
@@ -15,41 +15,41 @@ PUSH
     SHORT $6054 //str r0, [r2,4]
 
     ORG $58212
-    BYTE maxAtks*4 //max number of attacks
+    BYTE maxAtks*2 //max number of attacks
     ORG $5822A
     BYTE maxAtks*4  //max number of attacks - NEED TO REPOINT 203e156
 
     ORG $58258
-    WORD BattleBufferAnimsOn2
+    WORD BattleHpUpdateList
     ORG $58350
-    WORD BattleBufferAnimsOn2
+    WORD BattleHpUpdateList
     ORG $5856C
-    WORD BattleBufferAnimsOn2
+    WORD BattleHpUpdateList
     ORG $585AC
-    WORD BattleBufferAnimsOn1
+    WORD BattleAnimRoundTypesBuffer
     ORG $5862C
-    WORD BattleBufferAnimsOn2
+    WORD BattleHpUpdateList
     ORG $58698
-    WORD BattleBufferAnimsOn2
+    WORD BattleHpUpdateList
     ORG $58768
-    WORD BattleBufferAnimsOn2
+    WORD BattleHpUpdateList
     ORG $58844
-    WORD BattleBufferAnimsOn2
+    WORD BattleHpUpdateList
     ORG $58A6C
-    WORD BattleBufferAnimsOn2
+    WORD BattleHpUpdateList
     ORG $58A84
-    WORD BattleBufferAnimsOn2
+    WORD BattleHpUpdateList
 
     ORG $58248
-    WORD BattleBufferAnimsOn1
+    WORD BattleAnimRoundTypesBuffer
     ORG $58564
-    WORD BattleBufferAnimsOn1
+    WORD BattleAnimRoundTypesBuffer
     ORG $58A28
-    WORD BattleBufferAnimsOn1
+    WORD BattleAnimRoundTypesBuffer
     ORG $58A54
-    WORD BattleBufferAnimsOn1
+    WORD BattleAnimRoundTypesBuffer
     ORG $58B50
-    WORD BattleBufferAnimsOn1
+    WORD BattleAnimRoundTypesBuffer
 
     ORG $2B90A
     BYTE BattleBufferWidth

@@ -10,31 +10,31 @@
 
 @hooks at .org 0x2AB74
 BattleLoadAS:
-	PUSH	{r4,lr}			@
-	MOV		r4, r0			@ attacker to r4
-	ADD		r0, #0x4A		@ attacker.EquippedItemPreBattle
-	LDRH	r0, [r0, #0x0]	@ load data
-	BL		GetItemWeight	@
-	MOV		r1, r0			@ item weight to r1
-	CMP		r1, #0x0		@ if gte 0
-	BGE		label1			@ continue
-	MOV		r1, #0x0		@ otherwise set to 0
-	
-label1:
-	MOV		r0, #0x16		@ attacker.Spd
-	LDSB	r0, [r4, r0]	@ load as signed byte
-	SUB		r0, r0, R1		@ subtract penalty from spd
-	MOV		r1, r4			@ load attacker
-	ADD		r1, #0x5E		@ attacker.AS
-	STRH	r0, [r1, #0x0]	@ store new spd
-	LSL		r0, r0 ,#0x10	@ shift byte
-	CMP		r0, #0x0		@ if spd is gte 0
-	BGE		END_AS_FUNC		@ we're good
-	MOV		r0, #0x0		@ otherwise set to 0
-	STRH	r0, [r1, #0x0]	@ and store it
-	
-END_AS_FUNC:
-	POP		{r4}			@
-	POP		{r0}			@
-	BX		r0				@
-	
+    push    {r4, lr}
+    mov     r4, r0
+    add     r0, #0x4A
+    ldrh    r0, [r0, #0x0]
+    bl      GetItemWeight
+    mov     r1, r0
+    cmp     r1, #0x0
+    bge     GotItemWeight
+    mov     r1, #0x0
+    
+GotItemWeight:
+    mov     r0, #0x16
+    ldsb    r0, [r4, r0]
+    sub     r0, r0, r1
+    mov     r1, r4
+    add     r1, #0x5E    @ attacker.AS
+    strh    r0, [r1, #0x0]
+    lsl     r0, r0, #0x10
+    cmp     r0, #0x0
+    bge     end_as_func
+    mov     r0, #0x0
+    strh    r0, [r1, #0x0]
+    
+end_as_func:
+    pop     {r4}
+    pop     {r0}
+    bx      r0
+    
