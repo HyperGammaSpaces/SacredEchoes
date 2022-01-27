@@ -1,0 +1,49 @@
+#include "MPlayDef.event"
+
+    #define    loop_sfx_grp_FE6_No_Damage_Bonk  FE6_No_Damage_Bonk_map
+    #define    loop_sfx_pri_FE6_No_Damage_Bonk  0
+    #define    loop_sfx_rev_FE6_No_Damage_Bonk  0
+    #define    loop_sfx_mvl_FE6_No_Damage_Bonk  127
+    #define    loop_sfx_key_FE6_No_Damage_Bonk  0
+    #define    loop_sfx_tbs_FE6_No_Damage_Bonk  1
+    #define    loop_sfx_exg_FE6_No_Damage_Bonk  0
+    #define    loop_sfx_cmp_FE6_No_Damage_Bonk  1
+
+    ALIGN 4
+
+loop_sfx_1:
+    BYTE        VOL     127*loop_sfx_mvl_FE6_No_Damage_Bonk/mxv
+    BYTE    KEYSH   loop_sfx_key_FE6_No_Damage_Bonk+0
+    BYTE        VOICE   0
+    BYTE        TIE     Cn3   v064
+    BYTE    W96
+loop_sfx_1_B1:
+    BYTE    W96
+    BYTE    W96
+    BYTE    GoTo
+     POIN2    loop_sfx_1_B1
+loop_sfx_1_B2:
+    BYTE    W06
+    BYTE        EOT     Cn3 
+    BYTE    FINE
+
+    ALIGN 4
+
+FE6_No_Damage_Bonk:
+    BYTE    1    // NumTrks
+    BYTE    0    // NumBlks
+    BYTE    loop_sfx_pri_FE6_No_Damage_Bonk    // Priority
+    BYTE    loop_sfx_rev_FE6_No_Damage_Bonk    // Reverb.
+
+    POIN2    loop_sfx_grp_FE6_No_Damage_Bonk
+
+    POIN2    loop_sfx_1
+
+    
+FE6_No_Damage_Bonk_map:
+WORD $3c00
+POIN FE6_No_Damage_Bonk_wav
+WORD $FF00FF
+
+FE6_No_Damage_Bonk_wav:
+#incbin "bin/FE6_No_Damage_Bonk.bin"

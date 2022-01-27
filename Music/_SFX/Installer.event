@@ -1,0 +1,55 @@
+#define LimaDiesBellSFX_ID  0xE4
+#define SfxVoiceTable 0x21200C
+
+//simplified VoiceDirect
+#define SfxInstTableEntry(index,samplePtr) "PUSH; ORG SfxVoiceTable+(index*0x0c); BYTE $0 $3C $0 $0; POIN samplePtr; BYTE $FF $0 $FF $0; POP"
+
+
+RagnarokSample_4:
+    #incbin "bin/inst_18h.wav.bin"
+    SfxInstTableEntry(0x76, RagnarokSample_4)
+    {
+        #include "s/song02CA.event"
+        SongTable(0x2CA,song02CA,SFXGroup)
+    }
+    ALIGN 4    
+
+RagnarokSample_5:
+    #incbin "bin/inst_38h.wav.bin"
+    SfxInstTableEntry(0x77, RagnarokSample_5)
+    {
+        #include "s/song02CB.event"
+        SongTable(0x2CB,song02CB,SFXGroup)
+    }
+    ALIGN 4
+
+{
+	#include "FE6_No_Damage_Bonk_Installer.event"
+	SongTable(0x92,FE6_No_Damage_Bonk,SFXGroup)
+}
+ALIGN 4
+
+{
+    //Ian Sinclair, FEH
+    #include "BerkutLaugh_Installer.event"
+    SongTable(0xDF,BerkutLaugh,SFXGroup)
+}
+ALIGN 4
+{
+    //Richard Epcar, SoV
+    #include "JedahLaugh_Installer.event"
+    SongTable(0xE0,JedahLaugh,SFXGroup)
+}
+ALIGN 4
+
+{
+	#include "s/LimaDiesBellSFX.event"
+	SongTable(0xE4,LimaDiesBellSFX,SFXGroup)
+}
+ALIGN 4
+
+{
+	#include "s/AllyJoinedSFX.event"
+	SongTable(0xE8,AllyJoinedSFX,SFXGroup)
+}
+ALIGN 4

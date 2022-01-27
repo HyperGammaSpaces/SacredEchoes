@@ -1,0 +1,49 @@
+#include "MPlayDef.event"
+
+    #define    loop_sfx_grp_JedahLaugh  JedahLaugh_map
+    #define    loop_sfx_pri_JedahLaugh  0
+    #define    loop_sfx_rev_JedahLaugh  0
+    #define    loop_sfx_mvl_JedahLaugh  127
+    #define    loop_sfx_key_JedahLaugh  0
+    #define    loop_sfx_tbs_JedahLaugh  1
+    #define    loop_sfx_exg_JedahLaugh  0
+    #define    loop_sfx_cmp_JedahLaugh  1
+
+    ALIGN 4
+
+loop_sfx_1:
+    BYTE        VOL     127*loop_sfx_mvl_JedahLaugh/mxv
+    BYTE    KEYSH   loop_sfx_key_JedahLaugh+0
+    BYTE        VOICE   0
+    BYTE        TIE     Cn3   v064
+    BYTE    W96
+loop_sfx_1_B1:
+    BYTE    W96
+    BYTE    W96
+    BYTE    GoTo
+     POIN2    loop_sfx_1_B1
+loop_sfx_1_B2:
+    BYTE    W06
+    BYTE        EOT     Cn3 
+    BYTE    FINE
+
+    ALIGN 4
+
+JedahLaugh:
+    BYTE    1    // NumTrks
+    BYTE    0    // NumBlks
+    BYTE    loop_sfx_pri_JedahLaugh    // Priority
+    BYTE    loop_sfx_rev_JedahLaugh    // Reverb.
+
+    POIN2    loop_sfx_grp_JedahLaugh
+
+    POIN2    loop_sfx_1
+
+    
+JedahLaugh_map:
+WORD $3c00
+POIN JedahLaugh_wav
+WORD $FF00FF
+
+JedahLaugh_wav:
+#incbin "bin/JedahLaugh.bin"

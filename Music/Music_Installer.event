@@ -4,8 +4,6 @@
 
 #include "advanced music installer suite/music installer.event"
 
-#define LimaDiesBellSFX_ID  0xE4
-
 PUSH
 //Set Victory BGM by Chapter
 
@@ -29,6 +27,7 @@ PUSH
   
 POP
 
+#include "_SFX/Installer.event"
 
 {
 	#include "S_Files/TitleTheme.event"
@@ -359,14 +358,4 @@ ALIGN 4
 }
 ALIGN 4
 
-{
-	#include "S_Files/LimaDiesBellSFX.event"
-	SongTable(0xE4,LimaDiesBellSFX,SFXGroup)
-}
-ALIGN 4
 
-{
-	#include "S_Files/AllyJoinedSFX.event"
-	SongTable(0xE8,AllyJoinedSFX,SFXGroup)
-}
-ALIGN 4

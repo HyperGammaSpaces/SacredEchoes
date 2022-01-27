@@ -130,7 +130,7 @@ ALIGN 4
 	SHORT $03 $00; POIN Ragnarok_FlashLoop+1
 	WORD 0 0
 	
-//Sound data
+/*
 PUSH
 	ORG $212594
 	BYTE $0 $3C $0 $0
@@ -151,6 +151,7 @@ SongTable(0x2CA,song02CA,SFXGroup)
 
 #include "sfx/song02CB.event"
 SongTable(0x2CB,song02CB,SFXGroup)
+*/
 
 //Animation data	
 ALIGN 4

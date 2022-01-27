@@ -1,6 +1,11 @@
-/// - Mode 1
-C03
-C07
+#######################################################
+#76 bism_mg1 Bishop Light
+#
+#When importing to FEditorAdv delete # and after each line.
+#######################################################
+/// - Mode 1               #Melee Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 1 p- Magic_000.png
 7 p- Magic_001.png
 1 p- Magic_002.png
@@ -17,17 +22,18 @@ C07
 1 p- Magic_008.png
 4 p- Magic_009.png
 6 p- Magic_010.png
-C05
+C05                               #Call spell associated with equipped weapon
 1 p- Magic_011.png
-C01
-C06
+C01                               #NOP
+C06                               #Begin opponent's turn after hit.next code 0D.
 2 p- Magic_012.png
 3 p- Magic_013.png
-C0D
+1 p- Magic_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 3
-C03
-C07
+/// - Mode 3               #Melee Critical Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 1 p- Magic_000.png
 4 p- Magic_014.png
 13 p- Magic_015.png
@@ -69,17 +75,18 @@ C07
 1 p- Magic_021.png
 3 p- Magic_009.png
 5 p- Magic_010.png
-C05
+C05                               #Call spell associated with equipped weapon
 1 p- Magic_011.png
-C01
-C06
+C01                               #NOP
+C06                               #Begin opponent's turn after hit.next code 0D.
 2 p- Magic_012.png
 3 p- Magic_013.png
-C0D
+1 p- Magic_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 5
-C03
-C07
+/// - Mode 5               #Ranged Animation 
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 1 p- Magic_000.png
 7 p- Magic_001.png
 1 p- Magic_002.png
@@ -96,17 +103,18 @@ C07
 1 p- Magic_008.png
 4 p- Magic_009.png
 6 p- Magic_010.png
-C05
+C05                               #Call spell associated with equipped weapon
 1 p- Magic_011.png
-C01
-C06
+C01                               #NOP
+C06                               #Begin opponent's turn after hit.next code 0D.
 2 p- Magic_012.png
 3 p- Magic_013.png
-C0D
+1 p- Magic_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 6
-C03
-C07
+/// - Mode 6               #Ranged Critical Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 1 p- Magic_000.png
 4 p- Magic_014.png
 13 p- Magic_015.png
@@ -148,49 +156,70 @@ C07
 1 p- Magic_021.png
 3 p- Magic_009.png
 5 p- Magic_010.png
-C05
+C05                               #Call spell associated with equipped weapon
 1 p- Magic_011.png
-C01
-C06
+C01                               #NOP
+C06                               #Begin opponent's turn after hit.next code 0D.
 2 p- Magic_012.png
 3 p- Magic_013.png
-C0D
-~~~
-/// - Mode 7
-C02
 1 p- Magic_000.png
-C0E
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 7               #Dodge Melee Attack
+1 p- Magic_000.png
+C02                               #Start of dodge
+1 p- Magic_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 3 p- Magic_022.png
 1 p- Magic_023.png
-C01
+C01                               #NOP
 3 p- Magic_022.png
-C0D
-~~~
-/// - Mode 8
-C02
 1 p- Magic_000.png
-C0E
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 8               #Dodge Ranged Attack
+1 p- Magic_000.png
+C02                               #Start of dodge
+1 p- Magic_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 3 p- Magic_022.png
 1 p- Magic_023.png
-C01
+C01                               #NOP
 3 p- Magic_022.png
-C0D
-~~~
-/// - Mode 9
 1 p- Magic_000.png
-C01
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
-/// - Mode 10
+/// - Mode 9               #Equiped with Melee Weapon
+3 p- Magic_024.png
+3 p- Magic_025.png
+3 p- Magic_026.png
+3 p- Magic_027.png
+3 p- Magic_028.png
+2 p- Magic_029.png
+7 p- Magic_003.png
+4 p- Magic_012.png
+3 p- Magic_013.png
 1 p- Magic_000.png
-C01
 ~~~
-/// - Mode 11
+/// - Mode 10               #Standing motions
 1 p- Magic_000.png
-C01
+C01                               #NOP
 ~~~
-/// - Mode 12
-C03
-C07
+/// - Mode 11               #Equiped with Ranged weapon
+3 p- Magic_024.png
+3 p- Magic_025.png
+3 p- Magic_026.png
+3 p- Magic_027.png
+3 p- Magic_028.png
+2 p- Magic_029.png
+7 p- Magic_003.png
+4 p- Magic_012.png
+3 p- Magic_013.png
+1 p- Magic_000.png
+~~~
+/// - Mode 12               #Attack Missed Animation
+C03                               #Start attack animation; need 07 right after this.
+C07                               #Start attack animation; need 03 right before this.
 1 p- Magic_000.png
 7 p- Magic_001.png
 1 p- Magic_002.png
@@ -207,12 +236,13 @@ C07
 1 p- Magic_008.png
 4 p- Magic_009.png
 6 p- Magic_010.png
-C05
+C05                               #Call spell associated with equipped weapon
 1 p- Magic_011.png
-C01
-C06
+C01                               #NOP
+C06                               #Begin opponent's turn after hit.next code 0D.
 2 p- Magic_012.png
 3 p- Magic_013.png
-C0D
+1 p- Magic_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - End of animation

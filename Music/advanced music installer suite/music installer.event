@@ -39,21 +39,6 @@ SongTable(0x1,multisampledemo,0)
 }
 */
 
-//installation of ipatix's sound mixer. Essential if you want to use GS synths; also makes most music sound better by reducing background noise.
-
-PUSH
-ORG $d01d0
-BYTE 0xb0 0x6c 0x00 0x03 0x18 0x02
-ORG $CF53C
-BYTE 0xb1 0x6c 0x00 0x03
-ORG $D01CC
-POIN Sound_Mixer_Dump
-POP
-ALIGN 4
-
-Sound_Mixer_Dump:
-#incbin SoundMixer.bin
-
 //voice table entry definitions
   #define VoiceDirect(VoiceTable,VoiceIndex,BaseNote,Address,FixedFreq,IsForcedPan,Pan,EnvAtk,EnvDec,EnvSus,EnvRel) "ORG VoiceTable+VoiceIndex*0x0c; BYTE $00+FixedFreq*0x8 BaseNote $00 IsForcedPan*Pan; POIN Address; BYTE EnvAtk EnvDec EnvSus EnvRel"
   #define VoiceSquare1(VoiceTable,VoiceIndex,DutyCycle,NoteOffWithNoise,SweepTime,SweepShift,EnvAtk,EnvDec,EnvSus,EnvRel) "ORG VoiceTable+VoiceIndex*0x0c; BYTE $01+NoteOffWithNoise*8 $3c $00 SweepTime+SweepShift DutyCycle $00 $00 $00 EnvAtk EnvDec EnvSus EnvRel" 
