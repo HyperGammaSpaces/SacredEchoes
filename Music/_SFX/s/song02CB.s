@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 
-	.equ	song02CB_grp, voicegroup000
+	.equ	song02CB_grp, 0x21200C
 	.equ	song02CB_pri, 20
 	.equ	song02CB_rev, 0
 	.equ	song02CB_mvl, 127
@@ -20,7 +20,7 @@ song02CB_001:
 @ 000   ----------------------------------------
  .byte   KEYSH , song02CB_key+0
  .byte   TEMPO , 150*song02CB_tbs/2
- .byte   VOICE , 56
+ .byte   VOICE , 25
  .byte   BENDR, 8
  .byte   VOL , 60*song02CB_mvl/mxv
  .byte   PAN , c_v+0

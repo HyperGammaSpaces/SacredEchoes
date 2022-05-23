@@ -1489,78 +1489,158 @@ SacrificeAndTheSaint_1_36:
 @ 048   ----------------------------------------
         .byte                   Ds1 , v088
         .byte           N12   , Cn1 , v120
+        .byte           N24   , Fs3 , v097
         .byte   W12
-        .byte                   Ds1 , v064
+        .byte           N12   , Ds1 , v064
         .byte   W12
         .byte                   Ds1 , v040
         .byte           N12   , Gs2 , v064
         .byte   W12
         .byte                   Ds1 , v080
         .byte           N06   , Cn1 , v098
+        .byte           N24   , Fs3 , v097
         .byte   W24
         .byte           N12   , Ds1 , v064
         .byte           N12   , Gs2 , v056
         .byte   W12
         .byte           N24   , Ds2 , v072
         .byte           N06   , Cn1 , v098
+        .byte           N24   , Fn3 , v097
         .byte   W24
 @ 049   ----------------------------------------
         .byte           N12   , Ds1 , v092
         .byte           N12   , Cn1 , v120
+        .byte           N24   , Fs3 , v097
         .byte   W12
-        .byte                   Ds1 , v068
+        .byte           N12   , Ds1 , v068
         .byte   W12
         .byte                   Ds1 , v044
         .byte           N12   , Gs2 , v068
         .byte   W12
         .byte                   Ds1 , v084
         .byte           N06   , Cn1 , v098
+        .byte           N24   , Fs3 , v097
         .byte   W24
         .byte           N12   , Ds1 , v068
         .byte           N12   , Gs2
         .byte   W12
         .byte           N06   , Cn1 , v098
+        .byte           N24   , Fn3 , v097
         .byte   W24
 @ 050   ----------------------------------------
         .byte           N12   , Ds1 , v096
         .byte           N12   , Cn1 , v120
+        .byte           N24   , Fs3 , v097
         .byte   W12
-        .byte                   Ds1 , v072
+        .byte           N12   , Ds1 , v072
         .byte   W12
         .byte                   Ds1 , v048
         .byte           N12   , Gs2 , v072
         .byte   W12
         .byte                   Ds1 , v088
         .byte           N06   , Cn1 , v098
+        .byte           N24   , Fs3 , v097
         .byte   W24
         .byte           N12   , Ds1 , v072
         .byte           N12   , Gs2 , v064
         .byte   W12
         .byte           N24   , Ds2 , v080
         .byte           N06   , Cn1 , v098
+        .byte           N24   , Fn3 , v097
         .byte   W24
 @ 051   ----------------------------------------
         .byte           N12   , Ds1 , v100
         .byte           N12   , Cn1 , v120
+        .byte           N24   , Fs3 , v097
         .byte   W12
-        .byte                   Ds1 , v076
+        .byte           N12   , Ds1 , v076
         .byte   W12
         .byte                   Ds1 , v052
         .byte           N12   , Gs2 , v076
         .byte   W12
         .byte                   Ds1 , v092
         .byte           N06   , Cn1 , v098
+        .byte           N24   , Fs3 , v097
         .byte   W24
         .byte           N12   , Ds1 , v076
         .byte           N12   , Gs2
         .byte   W12
         .byte                   Ds1 , v092
         .byte           N06   , Cn1 , v098
+        .byte           N24   , Fn3 , v097
         .byte   W12
         .byte           N12   , Ds1 , v076
         .byte   W12
 @ 052   ----------------------------------------
 SacrificeAndTheSaint_1_52:
+        .byte           N12   , Ds1 , v104
+        .byte           N12   , Cn1 , v120
+        .byte           N24   , Fs3 , v097
+        .byte   W12
+        .byte           N12   , Ds1 , v080
+        .byte   W12
+        .byte                   Gs2
+        .byte           N12   , Ds1 , v056
+        .byte   W12
+        .byte                   Ds1 , v096
+        .byte           N06   , Cn1 , v098
+        .byte           N24   , Fs3 , v097
+        .byte   W24
+        .byte           N12   , Ds1 , v080
+        .byte           N12   , Gs2 , v072
+        .byte   W12
+        .byte           N24   , Ds2 , v088
+        .byte           N06   , Cn1 , v098
+        .byte           N24   , Fn3 , v097
+        .byte   W24
+        .byte   PEND
+@ 053   ----------------------------------------
+        .byte           N12   , Ds1 , v104
+        .byte           N12   , Cn1 , v120
+        .byte           N24   , Fs3 , v097
+        .byte   W12
+        .byte           N12   , Ds1 , v080
+        .byte   W12
+        .byte                   Gs2
+        .byte           N12   , Ds1 , v056
+        .byte   W12
+        .byte                   Ds1 , v096
+        .byte           N06   , Cn1 , v098
+        .byte           N24   , Fs3 , v097
+        .byte   W24
+        .byte           N12   , Ds1 , v080
+        .byte           N12   , Gs2
+        .byte   W12
+        .byte           N06   , Cn1 , v098
+        .byte           N24   , Fn3 , v097
+        .byte   W24
+@ 054   ----------------------------------------
+        .byte   PATT
+         .word  SacrificeAndTheSaint_1_52
+@ 055   ----------------------------------------
+        .byte           N12   , Ds1 , v104
+        .byte           N12   , Cn1 , v120
+        .byte           N24   , Fs3 , v097
+        .byte   W12
+        .byte           N12   , Ds1 , v080
+        .byte   W12
+        .byte                   Gs2
+        .byte           N12   , Ds1 , v056
+        .byte   W12
+        .byte                   Ds1 , v096
+        .byte           N06   , Cn1 , v098
+        .byte           N24   , Fs3 , v097
+        .byte   W24
+        .byte           N12   , Ds1 , v080
+        .byte           N12   , Gs2
+        .byte   W12
+        .byte                   Ds1 , v096
+        .byte           N06   , Cn1 , v098
+        .byte   W12
+        .byte           N12   , Ds1 , v080
+        .byte   W12
+@ 056   ----------------------------------------
+SacrificeAndTheSaint_1_56:
         .byte           N12   , Ds1 , v104
         .byte           N12   , Cn1 , v120
         .byte   W12
@@ -1579,59 +1659,28 @@ SacrificeAndTheSaint_1_52:
         .byte           N06   , Cn1 , v098
         .byte   W24
         .byte   PEND
-@ 053   ----------------------------------------
-SacrificeAndTheSaint_1_53:
-        .byte           N12   , Ds1 , v104
-        .byte           N12   , Cn1 , v120
-        .byte   W12
-        .byte                   Ds1 , v080
-        .byte   W12
-        .byte                   Gs2
-        .byte           N12   , Ds1 , v056
-        .byte   W12
-        .byte                   Ds1 , v096
-        .byte           N06   , Cn1 , v098
-        .byte   W24
-        .byte           N12   , Ds1 , v080
-        .byte           N12   , Gs2
-        .byte   W12
-        .byte           N06   , Cn1 , v098
-        .byte   W24
-        .byte   PEND
-@ 054   ----------------------------------------
-        .byte   PATT
-         .word  SacrificeAndTheSaint_1_52
-@ 055   ----------------------------------------
-SacrificeAndTheSaint_1_55:
-        .byte           N12   , Ds1 , v104
-        .byte           N12   , Cn1 , v120
-        .byte   W12
-        .byte                   Ds1 , v080
-        .byte   W12
-        .byte                   Gs2
-        .byte           N12   , Ds1 , v056
-        .byte   W12
-        .byte                   Ds1 , v096
-        .byte           N06   , Cn1 , v098
-        .byte   W24
-        .byte           N12   , Ds1 , v080
-        .byte           N12   , Gs2
-        .byte   W12
-        .byte                   Ds1 , v096
-        .byte           N06   , Cn1 , v098
-        .byte   W12
-        .byte           N12   , Ds1 , v080
-        .byte   W12
-        .byte   PEND
-@ 056   ----------------------------------------
-        .byte   PATT
-         .word  SacrificeAndTheSaint_1_52
 @ 057   ----------------------------------------
-        .byte   PATT
-         .word  SacrificeAndTheSaint_1_53
+SacrificeAndTheSaint_1_57:
+        .byte           N12   , Ds1 , v104
+        .byte           N12   , Cn1 , v120
+        .byte   W12
+        .byte                   Ds1 , v080
+        .byte   W12
+        .byte                   Gs2
+        .byte           N12   , Ds1 , v056
+        .byte   W12
+        .byte                   Ds1 , v096
+        .byte           N06   , Cn1 , v098
+        .byte   W24
+        .byte           N12   , Ds1 , v080
+        .byte           N12   , Gs2
+        .byte   W12
+        .byte           N06   , Cn1 , v098
+        .byte   W24
+        .byte   PEND
 @ 058   ----------------------------------------
         .byte   PATT
-         .word  SacrificeAndTheSaint_1_52
+         .word  SacrificeAndTheSaint_1_56
 @ 059   ----------------------------------------
         .byte           N12   , Ds1 , v104
         .byte           N12   , Cn1 , v120
@@ -1654,16 +1703,33 @@ SacrificeAndTheSaint_1_55:
         .byte   W12
 @ 060   ----------------------------------------
         .byte   PATT
-         .word  SacrificeAndTheSaint_1_52
+         .word  SacrificeAndTheSaint_1_56
 @ 061   ----------------------------------------
         .byte   PATT
-         .word  SacrificeAndTheSaint_1_53
+         .word  SacrificeAndTheSaint_1_57
 @ 062   ----------------------------------------
         .byte   PATT
-         .word  SacrificeAndTheSaint_1_52
+         .word  SacrificeAndTheSaint_1_56
 @ 063   ----------------------------------------
-        .byte   PATT
-         .word  SacrificeAndTheSaint_1_55
+        .byte           N12   , Ds1 , v104
+        .byte           N12   , Cn1 , v120
+        .byte   W12
+        .byte                   Ds1 , v080
+        .byte   W12
+        .byte                   Gs2
+        .byte           N12   , Ds1 , v056
+        .byte   W12
+        .byte                   Ds1 , v096
+        .byte           N06   , Cn1 , v098
+        .byte   W24
+        .byte           N12   , Ds1 , v080
+        .byte           N12   , Gs2
+        .byte   W12
+        .byte                   Ds1 , v096
+        .byte           N06   , Cn1 , v098
+        .byte   W12
+        .byte           N12   , Ds1 , v080
+        .byte   W12
 @ 064   ----------------------------------------
         .byte           N24   , Ds1 , v096
         .byte           N12   , Cn1 , v120
@@ -2267,26 +2333,26 @@ SacrificeAndTheSaint_1_111:
         .byte                   Dn1
         .byte   W12
 @ 119   ----------------------------------------
-        .byte           N24   , Cs2
         .byte           N12   , Cn1 , v120
         .byte           N06   , Ds1 , v088
+        .byte           N24   , Fn3 , v112
         .byte   W12
-        .byte           N12   , Ds4
+        .byte           N12   , Ds4 , v088
         .byte   W24
-        .byte           N36   , Cs2
-        .byte           N12   , Cn1 , v096
+        .byte                   Cn1 , v096
         .byte           N06   , Ds1 , v088
+        .byte           N24   , Fn3 , v116
         .byte   W12
-        .byte           N12   , Ds4
+        .byte           N12   , Ds4 , v088
         .byte   W12
         .byte           N06   , Ds1
         .byte   W12
-        .byte           N24   , An2 , v080
+        .byte                   Dn1
+        .byte           N06   , Ds1
+        .byte           N12   , Ds4
+        .byte           N24   , Fs3 , v108
+        .byte   W12
         .byte           N06   , Dn1 , v088
-        .byte           N06   , Ds1
-        .byte           N12   , Ds4
-        .byte   W12
-        .byte           N06   , Dn1
         .byte           N06   , Ds1
         .byte           N12   , Ds4 , v072
         .byte   W12

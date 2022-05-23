@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 
-	.equ	song02CA_grp, voicegroup000
+	.equ	song02CA_grp, 0x21200C
 	.equ	song02CA_pri, 20
 	.equ	song02CA_rev, 0
 	.equ	song02CA_mvl, 127

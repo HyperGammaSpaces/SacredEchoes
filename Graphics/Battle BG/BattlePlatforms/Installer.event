@@ -3,7 +3,22 @@
 
 #define BattlePlatformTableLength 0x62
 
+/*
+Sound Effects:
+        - 72258 maps terrain id to a value from 0-6.
+            - 2266 = 0 (plain, road, etc)
+            - 2384 = 1 (forest, thicket, etc)
+            - 2388 = 2 rivers, sea, lake
+            - 238c = 3 peak
+            - 2390 = 4 (sand, desert)
+            - 2394 = 5 bridge
+            - 2398 = 6 (floor, armory, vendor, gate)
+*/
+
 PUSH
+    //make swamp terrain sound wet
+    ORG $722A4
+    POIN $72388
 
 	ORG 0x51E48
 	POIN BattlePlatformTable

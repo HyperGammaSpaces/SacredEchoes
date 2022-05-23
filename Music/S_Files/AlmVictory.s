@@ -14,8 +14,8 @@
 AlmVictory_0:
         .byte   KEYSH , AlmVictory_key+0
 @ 000   ----------------------------------------
-        .byte   TEMPO , 146/2
-        .byte           VOICE , 86
+        .byte   TEMPO , 144/2
+        .byte           VOICE , 77
         .byte           VOL   , 41
         .byte           PAN   , c_v+15
         .byte           N42   , Cs4 , v100 , gtp1
@@ -256,11 +256,8 @@ AlmVictory_0_4:
         .byte   W08
         .byte           N42   , An3 , v100 , gtp1
         .byte                   Cs4
-        .byte   W24
-        .byte   TEMPO , 130/2
-        .byte   W24
+        .byte   W48
 @ 016   ----------------------------------------
-        .byte   TEMPO , 144/2
         .byte   W96
 @ 017   ----------------------------------------
         .byte   W96
@@ -291,9 +288,7 @@ AlmVictory_0_4:
 @ 030   ----------------------------------------
         .byte   W96
 @ 031   ----------------------------------------
-        .byte   W48
-        .byte   TEMPO , 146/2
-        .byte   W48
+        .byte   W96
 @ 032   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_0_4
@@ -307,7 +302,7 @@ AlmVictory_0_4:
 AlmVictory_1:
         .byte   KEYSH , AlmVictory_key+0
 @ 000   ----------------------------------------
-        .byte           VOICE , 2
+        .byte           VOICE , 102
         .byte           VOL   , 35
         .byte           PAN   , c_v-22
         .byte           N13   , Fs3 , v100
@@ -315,32 +310,32 @@ AlmVictory_1:
         .byte           N13   , Cs3
         .byte   W16
         .byte           N06   , Fs3
-        .byte           N06   , An2
         .byte           N06   , Cs3
+        .byte           N06   , An2
         .byte   W08
         .byte           N13   , Fs3
         .byte           N13   , An2
         .byte           N13   , Cs3
         .byte   W16
         .byte           N06   , Fs3
-        .byte           N06   , An2
         .byte           N06   , Cs3
+        .byte           N06   , An2
         .byte   W08
         .byte           N13   , Fs3
         .byte           N13   , An2
         .byte           N13   , Cs3
         .byte   W16
         .byte           N06   , Fs3
-        .byte           N06   , An2
         .byte           N06   , Cs3
+        .byte           N06   , An2
         .byte   W08
         .byte           N13   , Fs3
         .byte           N13   , An2
         .byte           N13   , Cs3
         .byte   W16
+        .byte           N06
         .byte           N06   , Fs3
         .byte           N06   , An2
-        .byte           N06   , Cs3
         .byte   W08
 @ 001   ----------------------------------------
 AlmVictory_1_LOOP:
@@ -349,32 +344,32 @@ AlmVictory_1_LOOP:
         .byte           N13   , Cs3
         .byte   W16
         .byte           N06   , Fs3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , Fs3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
         .byte           N06   , An2
         .byte           N06   , Cs3
+        .byte           N06   , Fs3
+        .byte   W08
+        .byte           N13
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06
+        .byte           N06   , Fs3
+        .byte           N06   , An2
         .byte   W08
         .byte           N13   , Fs3
         .byte           N13   , An2
         .byte           N13   , Cs3
         .byte   W16
         .byte           N06   , Fs3
-        .byte           N06   , An2
         .byte           N06   , Cs3
-        .byte   W08
-        .byte           N13   , Fs3
-        .byte           N13   , An2
-        .byte           N13   , Cs3
-        .byte   W16
-        .byte           N06   , Fs3
         .byte           N06   , An2
-        .byte           N06   , Cs3
-        .byte   W08
-        .byte           N13   , Fs3
-        .byte           N13   , An2
-        .byte           N13   , Cs3
-        .byte   W16
-        .byte           N06   , Fs3
-        .byte           N06   , An2
-        .byte           N06   , Cs3
         .byte   W08
 @ 002   ----------------------------------------
 AlmVictory_1_2:
@@ -382,151 +377,239 @@ AlmVictory_1_2:
         .byte           N13   , As2
         .byte           N13   , Cs3
         .byte   W16
-        .byte           N06   , Fs3
         .byte           N06   , As2
         .byte           N06   , Cs3
+        .byte           N06   , Fs3
+        .byte   W08
+        .byte           N13
+        .byte           N13   , As2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , Fs3
+        .byte           N06   , Cs3
+        .byte           N06   , As2
         .byte   W08
         .byte           N13   , Fs3
         .byte           N13   , As2
         .byte           N13   , Cs3
         .byte   W16
+        .byte           N06
         .byte           N06   , Fs3
         .byte           N06   , As2
-        .byte           N06   , Cs3
         .byte   W08
         .byte           N13   , Fs3
         .byte           N13   , As2
         .byte           N13   , Cs3
         .byte   W16
-        .byte           N06   , Fs3
+        .byte           N06
         .byte           N06   , As2
-        .byte           N06   , Cs3
-        .byte   W08
-        .byte           N13   , Fs3
-        .byte           N13   , As2
-        .byte           N13   , Cs3
-        .byte   W16
         .byte           N06   , Fs3
-        .byte           N06   , As2
-        .byte           N06   , Cs3
         .byte   W08
         .byte   PEND
 @ 003   ----------------------------------------
-        .byte   PATT
-         .word  AlmVictory_1_2
-@ 004   ----------------------------------------
-AlmVictory_1_4:
+AlmVictory_1_3:
         .byte           N13   , Fs3 , v100
-        .byte           N13   , An2
+        .byte           N13   , As2
         .byte           N13   , Cs3
         .byte   W16
         .byte           N06   , Fs3
-        .byte           N06   , An2
         .byte           N06   , Cs3
+        .byte           N06   , As2
         .byte   W08
         .byte           N13   , Fs3
-        .byte           N13   , An2
+        .byte           N13   , As2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06
+        .byte           N06   , As2
+        .byte           N06   , Fs3
+        .byte   W08
+        .byte           N13
+        .byte           N13   , As2
         .byte           N13   , Cs3
         .byte   W16
         .byte           N06   , Fs3
-        .byte           N06   , An2
         .byte           N06   , Cs3
+        .byte           N06   , As2
         .byte   W08
         .byte           N13   , Fs3
-        .byte           N13   , An2
+        .byte           N13   , As2
         .byte           N13   , Cs3
         .byte   W16
-        .byte           N06   , Fs3
-        .byte           N06   , An2
+        .byte           N06   , As2
         .byte           N06   , Cs3
-        .byte   W08
-        .byte           N13   , Fs3
-        .byte           N13   , An2
-        .byte           N13   , Cs3
-        .byte   W16
         .byte           N06   , Fs3
-        .byte           N06   , An2
-        .byte           N06   , Cs3
         .byte   W08
         .byte   PEND
+@ 004   ----------------------------------------
+        .byte           N13
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , Fs3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , Fs3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , Fs3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , Fs3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , Fs3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , Fs3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06
+        .byte           N06   , Fs3
+        .byte           N06   , An2
+        .byte   W08
 @ 005   ----------------------------------------
-        .byte   PATT
-         .word  AlmVictory_1_4
+        .byte           N13   , Fs3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , Fs3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , Fs3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , An2
+        .byte           N06   , Cs3
+        .byte           N06   , Fs3
+        .byte   W08
+        .byte           N13
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06
+        .byte           N06   , Fs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , Fs3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , Fs3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
 @ 006   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_1_2
 @ 007   ----------------------------------------
         .byte   PATT
-         .word  AlmVictory_1_2
+         .word  AlmVictory_1_3
 @ 008   ----------------------------------------
-AlmVictory_1_8:
-        .byte           N13   , En3 , v100
+        .byte           N14   , En3 , v100
+        .byte           N14   , Cs3
+        .byte           N14   , An2
+        .byte   W16
+        .byte           N06
+        .byte           N06   , Cs3
+        .byte           N06   , En3
+        .byte   W08
+        .byte           N13
         .byte           N13   , An2
         .byte           N13   , Cs3
         .byte   W16
         .byte           N06   , En3
-        .byte           N06   , An2
         .byte           N06   , Cs3
+        .byte           N06   , An2
         .byte   W08
         .byte           N13   , En3
         .byte           N13   , An2
         .byte           N13   , Cs3
         .byte   W16
         .byte           N06   , En3
-        .byte           N06   , An2
         .byte           N06   , Cs3
+        .byte           N06   , An2
         .byte   W08
         .byte           N13   , En3
         .byte           N13   , An2
         .byte           N13   , Cs3
         .byte   W16
         .byte           N06   , En3
-        .byte           N06   , An2
         .byte           N06   , Cs3
-        .byte   W08
-        .byte           N13   , En3
-        .byte           N13   , An2
-        .byte           N13   , Cs3
-        .byte   W16
-        .byte           N06   , En3
         .byte           N06   , An2
-        .byte           N06   , Cs3
         .byte   W08
-        .byte   PEND
 @ 009   ----------------------------------------
-        .byte   PATT
-         .word  AlmVictory_1_8
+        .byte           N13   , En3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , En3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , En3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , En3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , En3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , En3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , En3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , En3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
 @ 010   ----------------------------------------
-        .byte           N13   , Cs3 , v100
+        .byte           N13   , Cs3
         .byte           N13   , Fs3
         .byte           N13   , Fs2
         .byte   W16
-        .byte           N06   , Cs3
         .byte           N06   , Fs3
+        .byte           N06   , Cs3
         .byte           N06   , Fs2
         .byte   W08
         .byte           N13   , Cs3
         .byte           N13   , Fs3
         .byte           N13   , Fs2
         .byte   W16
-        .byte           N06   , Cs3
         .byte           N06   , Fs3
+        .byte           N06   , Cs3
         .byte           N06   , Fs2
         .byte   W08
         .byte           N13   , Cs3
         .byte           N13   , Fs3
         .byte           N13   , Fs2
         .byte   W16
-        .byte           N06   , Cs3
         .byte           N06   , Fs3
+        .byte           N06   , Cs3
         .byte           N06   , Fs2
         .byte   W08
         .byte           N13   , Cs3
         .byte           N13   , Fs3
         .byte           N13   , Fs2
         .byte   W16
-        .byte           N06   , Cs3
         .byte           N06   , Fs3
+        .byte           N06   , Cs3
         .byte           N06   , Fs2
         .byte   W08
 @ 011   ----------------------------------------
@@ -534,86 +617,82 @@ AlmVictory_1_8:
         .byte           N13   , Cs3
         .byte           N13   , Fn2
         .byte   W16
-        .byte           N06
-        .byte           N06   , Cs3
         .byte           N06   , Fn3
+        .byte           N06   , Cs3
+        .byte           N06   , Fn2
         .byte   W08
-        .byte           N13
+        .byte           N13   , Fn3
         .byte           N13   , Cs3
         .byte           N13   , Fn2
         .byte   W16
-        .byte           N06
-        .byte           N06   , Cs3
         .byte           N06   , Fn3
+        .byte           N06   , Cs3
+        .byte           N06   , Fn2
         .byte   W08
-        .byte           N13
+        .byte           N13   , Fn3
         .byte           N13   , Cs3
         .byte           N13   , Fn2
         .byte   W16
-        .byte           N06
-        .byte           N06   , Cs3
         .byte           N06   , Fn3
+        .byte           N06   , Cs3
+        .byte           N06   , Fn2
         .byte   W08
-        .byte           N13
+        .byte           N13   , Fn3
         .byte           N13   , Cs3
         .byte           N13   , Fn2
         .byte   W16
-        .byte           N06
-        .byte           N06   , Cs3
         .byte           N06   , Fn3
+        .byte           N06   , Cs3
+        .byte           N06   , Fn2
         .byte   W08
 @ 012   ----------------------------------------
-        .byte           N13
+        .byte           N13   , Fn3
         .byte           N13   , Cn3
-        .byte           N12   , Fn2
-        .byte   W15
-        .byte           N06
-        .byte   W01
-        .byte                   Fn3
+        .byte           N14   , Fn2
+        .byte   W16
+        .byte           N06   , Fn3
         .byte           N06   , Cn3
+        .byte           N06   , Fn2
         .byte   W08
         .byte           N13   , Fn3
         .byte           N13   , Cn3
-        .byte           N12   , Fn2
-        .byte   W15
+        .byte           N14   , Fn2
+        .byte   W16
         .byte           N06
-        .byte   W01
-        .byte                   Fn3
         .byte           N06   , Cn3
+        .byte           N06   , Fn3
         .byte   W08
         .byte           N13   , En3
         .byte           N13   , En2
         .byte           N13   , Cn3
         .byte   W16
         .byte           N06   , En3
-        .byte           N06   , En2
         .byte           N06   , Cn3
+        .byte           N06   , En2
         .byte   W08
         .byte           N13   , En3
         .byte           N13   , En2
         .byte           N13   , Cn3
         .byte   W16
-        .byte           N06   , En3
+        .byte           N06
         .byte           N06   , En2
-        .byte           N06   , Cn3
+        .byte           N06   , En3
         .byte   W08
 @ 013   ----------------------------------------
         .byte           N13   , Bn2
         .byte           N13   , En3
-        .byte           N12   , En2
-        .byte   W15
-        .byte           N06
-        .byte   W01
-        .byte                   Bn2
+        .byte           N14   , En2
+        .byte   W16
         .byte           N06   , En3
+        .byte           N06   , Bn2
+        .byte           N06   , En2
         .byte   W08
         .byte           N13   , Bn2
         .byte           N13   , En3
-        .byte           N12   , En2
-        .byte   W15
+        .byte           N14   , En2
+        .byte   W16
         .byte           N06
-        .byte   W01
-        .byte                   Bn2
+        .byte           N06   , Bn2
         .byte           N06   , En3
         .byte   W08
         .byte           N13   , Ds3
@@ -621,35 +700,33 @@ AlmVictory_1_8:
         .byte           N13   , Bn2
         .byte   W16
         .byte           N06   , Ds3
-        .byte           N06   , Ds2
         .byte           N06   , Bn2
+        .byte           N06   , Ds2
         .byte   W08
         .byte           N13   , Ds3
         .byte           N13   , Ds2
         .byte           N13   , Bn2
         .byte   W16
+        .byte           N06
         .byte           N06   , Ds3
         .byte           N06   , Ds2
-        .byte           N06   , Bn2
         .byte   W08
 @ 014   ----------------------------------------
         .byte           N13   , Ds3
-        .byte           N12   , As2
-        .byte           N12   , Ds2
-        .byte   W15
-        .byte           N06
-        .byte   W01
-        .byte                   Ds3
+        .byte           N14   , Ds2
+        .byte           N14   , As2
+        .byte   W16
+        .byte           N06   , Ds3
         .byte           N06   , As2
+        .byte           N06   , Ds2
         .byte   W08
         .byte           N13   , Ds3
-        .byte           N12   , As2
-        .byte           N12   , Ds2
-        .byte   W15
+        .byte           N14   , As2
+        .byte           N14   , Ds2
+        .byte   W16
         .byte           N06
-        .byte   W01
-        .byte                   Ds3
         .byte           N06   , As2
+        .byte           N06   , Ds3
         .byte   W08
         .byte           N13   , Dn3
         .byte           N13   , Dn2
@@ -663,44 +740,42 @@ AlmVictory_1_8:
         .byte           N13   , Dn2
         .byte           N13   , As2
         .byte   W16
-        .byte           N06   , Dn3
-        .byte           N06   , As2
         .byte           N06   , Dn2
+        .byte           N06   , As2
+        .byte           N06   , Dn3
         .byte   W08
 @ 015   ----------------------------------------
         .byte           N13   , An2
         .byte           N13   , Dn3
-        .byte           N12   , Dn2
-        .byte   W15
-        .byte           N06
-        .byte   W01
-        .byte                   Dn3
+        .byte           N14   , Dn2
+        .byte   W16
+        .byte           N06   , Dn3
         .byte           N06   , An2
+        .byte           N06   , Dn2
         .byte   W08
-        .byte           N13
+        .byte           N13   , An2
         .byte           N13   , Dn3
         .byte           N12   , Dn2
-        .byte   W15
+        .byte   W16
         .byte           N06
-        .byte   W01
-        .byte                   Dn3
         .byte           N06   , An2
+        .byte           N06   , Dn3
         .byte   W08
         .byte           N13   , Cs2
         .byte           N13   , Cs3
         .byte           N13   , An2
         .byte   W16
-        .byte           N06   , Cs2
         .byte           N06   , Cs3
         .byte           N06   , An2
+        .byte           N06   , Cs2
         .byte   W08
-        .byte           N13   , Cs2
+        .byte           N13
         .byte           N13   , Cs3
         .byte           N13   , An2
         .byte   W16
-        .byte           N06   , Cs2
         .byte           N06   , Cs3
         .byte           N06   , An2
+        .byte           N06   , Cs2
         .byte   W08
 @ 016   ----------------------------------------
 AlmVictory_1_16:
@@ -887,8 +962,38 @@ AlmVictory_1_28:
         .byte   PATT
          .word  AlmVictory_1_22
 @ 032   ----------------------------------------
-        .byte   PATT
-         .word  AlmVictory_1_4
+        .byte           N13   , Fs3 , v100
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , Fs3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , Fs3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06
+        .byte           N06   , Fs3
+        .byte           N06   , An2
+        .byte   W08
+        .byte           N13   , Fs3
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06
+        .byte           N06   , An2
+        .byte           N06   , Fs3
+        .byte   W08
+        .byte           N13
+        .byte           N13   , An2
+        .byte           N13   , Cs3
+        .byte   W16
+        .byte           N06   , Fs3
+        .byte           N06   , Cs3
+        .byte           N06   , An2
+        .byte   W08
 @ 033   ----------------------------------------
         .byte   GOTO
          .word  AlmVictory_1_LOOP
@@ -902,34 +1007,70 @@ AlmVictory_2:
         .byte           VOICE , 39
         .byte           VOL   , 53
         .byte           PAN   , c_v+23
-        .byte           N10   , Fs1 , v100
-        .byte   W24
+        .byte           N06   , Fs1 , v104
+        .byte   W08
         .byte                   Fs1
-        .byte   W24
+        .byte   W16
+        .byte           N12
+        .byte   W16
+        .byte           N06
+        .byte   W08
+        .byte                   Cn1
+        .byte   W08
+        .byte                   Dn1
+        .byte   W08
         .byte                   Fs1
-        .byte   W24
+        .byte   W08
         .byte                   Fs1
-        .byte   W24
+        .byte   W08
+        .byte                   Cn1
+        .byte   W08
+        .byte                   Dn1
+        .byte   W08
 @ 001   ----------------------------------------
 AlmVictory_2_LOOP:
-        .byte           N10   , Fs1 , v100
-        .byte   W24
+        .byte           N06   , Fs1 , v104
+        .byte   W08
         .byte                   Fs1
-        .byte   W24
+        .byte   W16
+        .byte           N12
+        .byte   W16
+        .byte           N06
+        .byte   W08
+        .byte                   Cn1
+        .byte   W08
+        .byte                   Dn1
+        .byte   W08
         .byte                   Fs1
-        .byte   W24
+        .byte   W08
         .byte                   Fs1
-        .byte   W24
+        .byte   W08
+        .byte                   Cn1
+        .byte   W08
+        .byte                   Fs1
+        .byte   W08
 @ 002   ----------------------------------------
 AlmVictory_2_2:
-        .byte           N10   , Fs1 , v100
-        .byte   W24
+        .byte           N06   , Fs1 , v104
+        .byte   W08
         .byte                   Fs1
-        .byte   W24
+        .byte   W16
+        .byte           N12
+        .byte   W16
+        .byte           N06
+        .byte   W08
+        .byte                   Cn1
+        .byte   W08
+        .byte                   Dn1
+        .byte   W08
         .byte                   Fs1
-        .byte   W24
+        .byte   W08
         .byte                   Fs1
-        .byte   W24
+        .byte   W08
+        .byte                   Cn1
+        .byte   W08
+        .byte                   Dn1
+        .byte   W08
         .byte   PEND
 @ 003   ----------------------------------------
         .byte   PATT
@@ -938,8 +1079,26 @@ AlmVictory_2_2:
         .byte   PATT
          .word  AlmVictory_2_2
 @ 005   ----------------------------------------
-        .byte   PATT
-         .word  AlmVictory_2_2
+        .byte           N06   , Fs1 , v104
+        .byte   W08
+        .byte                   Fs1
+        .byte   W16
+        .byte           N12
+        .byte   W16
+        .byte           N06
+        .byte   W08
+        .byte                   Cn1
+        .byte   W08
+        .byte                   Dn1
+        .byte   W08
+        .byte                   Fs1
+        .byte   W08
+        .byte                   Fs1
+        .byte   W08
+        .byte                   Cn1
+        .byte   W08
+        .byte                   Fs1
+        .byte   W08
 @ 006   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_2_2
@@ -948,72 +1107,154 @@ AlmVictory_2_2:
          .word  AlmVictory_2_2
 @ 008   ----------------------------------------
 AlmVictory_2_8:
-        .byte           N10   , En1 , v100
-        .byte   W24
+        .byte           N06   , En1 , v104
+        .byte   W08
         .byte                   En1
-        .byte   W24
+        .byte   W16
+        .byte           N12
+        .byte   W16
+        .byte           N06
+        .byte   W08
+        .byte                   Cn1
+        .byte   W08
+        .byte                   Dn1
+        .byte   W08
         .byte                   En1
-        .byte   W24
+        .byte   W08
         .byte                   En1
-        .byte   W24
+        .byte   W08
+        .byte                   Cn1
+        .byte   W08
+        .byte                   Dn1
+        .byte   W08
         .byte   PEND
 @ 009   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_2_8
 @ 010   ----------------------------------------
-        .byte           N09   , Dn1 , v100
-        .byte   W24
+        .byte           N06   , Dn1 , v100
+        .byte   W08
+        .byte                   Dn1 , v104
+        .byte   W16
+        .byte           N12   , Dn1 , v100
+        .byte   W16
+        .byte           N06   , Dn1 , v104
+        .byte   W08
+        .byte                   Fs0
+        .byte   W08
+        .byte                   An0
+        .byte   W08
         .byte                   Dn1
-        .byte   W24
-        .byte                   Dn1
-        .byte   W24
-        .byte                   Dn1
-        .byte   W24
+        .byte   W08
+        .byte                   Dn1 , v100
+        .byte   W08
+        .byte                   Fs0 , v104
+        .byte   W08
+        .byte                   An0
+        .byte   W08
 @ 011   ----------------------------------------
-        .byte           N10   , Cs1
-        .byte   W24
+        .byte                   Cs1 , v100
+        .byte   W08
+        .byte                   Cs1 , v104
+        .byte   W16
+        .byte           N12   , Cs1 , v100
+        .byte   W16
+        .byte           N06   , Cs1 , v104
+        .byte   W08
+        .byte                   Fs0
+        .byte   W08
+        .byte                   An0
+        .byte   W08
         .byte                   Cs1
-        .byte   W24
-        .byte                   Cs1
-        .byte   W24
-        .byte                   Cs1
-        .byte   W24
+        .byte   W08
+        .byte                   Cs1 , v100
+        .byte   W08
+        .byte           N08   , Cs1 , v104
+        .byte   W16
 @ 012   ----------------------------------------
-        .byte                   Cn2
-        .byte   W24
-        .byte                   Cn2
-        .byte   W24
-        .byte                   Cn2
-        .byte   W24
-        .byte                   Cn2
-        .byte   W24
+        .byte           N06   , Cn2 , v100
+        .byte   W08
+        .byte                   Cn2 , v104
+        .byte   W16
+        .byte           N12   , Cn2 , v100
+        .byte   W16
+        .byte           N06   , Cn2 , v104
+        .byte   W08
+        .byte           N08   , En1
+        .byte   W08
+        .byte                   Gn1
+        .byte   W08
+        .byte           N06   , Cn2
+        .byte   W08
+        .byte                   Cn2 , v100
+        .byte   W08
+        .byte           N08   , En1 , v104
+        .byte   W08
+        .byte                   Gn1
+        .byte   W08
 @ 013   ----------------------------------------
+        .byte           N06   , Bn1 , v100
+        .byte   W08
+        .byte                   Bn1 , v104
+        .byte   W16
+        .byte           N12   , Bn1 , v100
+        .byte   W16
+        .byte           N06   , Bn1 , v104
+        .byte   W08
+        .byte                   Ds1
+        .byte   W08
+        .byte                   Fs1
+        .byte   W08
         .byte                   Bn1
-        .byte   W24
-        .byte                   Bn1
-        .byte   W24
-        .byte                   Bn1
-        .byte   W24
-        .byte                   Bn1
-        .byte   W24
+        .byte   W08
+        .byte                   Bn1 , v100
+        .byte   W08
+        .byte                   Ds1 , v104
+        .byte   W08
+        .byte                   Fs1
+        .byte   W08
 @ 014   ----------------------------------------
+        .byte                   As1 , v100
+        .byte   W08
+        .byte                   As1 , v104
+        .byte   W16
+        .byte           N12   , As1 , v100
+        .byte   W16
+        .byte           N06   , As1 , v104
+        .byte   W08
+        .byte                   Cs1
+        .byte   W08
+        .byte                   Fs1
+        .byte   W08
         .byte                   As1
-        .byte   W24
-        .byte                   As1
-        .byte   W24
-        .byte                   As1
-        .byte   W24
-        .byte                   As1
-        .byte   W24
+        .byte   W08
+        .byte                   As1 , v100
+        .byte   W08
+        .byte                   Cs1 , v104
+        .byte   W08
+        .byte                   Fs1
+        .byte   W08
 @ 015   ----------------------------------------
+        .byte                   An1 , v100
+        .byte   W08
+        .byte                   An1 , v104
+        .byte   W16
+        .byte           N12   , An1 , v100
+        .byte   W16
+        .byte           N06   , An1 , v104
+        .byte   W08
+        .byte                   Cs1
+        .byte   W08
+        .byte                   En1
+        .byte   W08
         .byte                   An1
-        .byte   W24
-        .byte                   An1
-        .byte   W24
-        .byte                   An1
-        .byte   W24
-        .byte                   An1
-        .byte   W24
+        .byte   W08
+        .byte                   An1 , v100
+        .byte   W08
+        .byte                   Cs1 , v104
+        .byte   W08
+        .byte                   En1
+        .byte   W08
 @ 016   ----------------------------------------
 AlmVictory_2_16:
         .byte           N10   , Gn1 , v100
@@ -1118,14 +1359,22 @@ AlmVictory_2_28:
         .byte                   Fs1
         .byte   W12
 @ 031   ----------------------------------------
-        .byte                   Cs2
-        .byte   W24
-        .byte                   Cs2
-        .byte   W24
-        .byte                   Cs2
-        .byte   W24
-        .byte                   Cs2
-        .byte   W24
+        .byte           N12   , Cs2
+        .byte   W12
+        .byte           N04   , Cs1 , v104
+        .byte   W12
+        .byte           N12   , Cs2 , v100
+        .byte   W12
+        .byte           N04   , Cs1 , v104
+        .byte   W12
+        .byte           N12   , Cs2 , v100
+        .byte   W12
+        .byte           N04   , Cs1 , v104
+        .byte   W12
+        .byte           N12   , Cs2 , v100
+        .byte   W12
+        .byte           N04   , Cs1 , v104
+        .byte   W12
 @ 032   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_2_2
@@ -1632,100 +1881,156 @@ AlmVictory_6:
         .byte   KEYSH , AlmVictory_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 124
-        .byte           VOL   , 41
         .byte           PAN   , c_v+2
-        .byte           N03   , Cs2 , v100
-        .byte           N03   , Cn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Dn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Cn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Dn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
+        .byte           VOL   , 41
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , En3
+        .byte           N24   , Cs2
+        .byte   W16
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte           N12
+        .byte           N12   , Fn3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N06   , Fn3 , v104
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N06   , Fn3
+        .byte           N08   , Dn3
+        .byte   W08
+        .byte           N06   , Cn1
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
 @ 001   ----------------------------------------
 AlmVictory_6_LOOP:
-        .byte           N03   , Cn1 , v100
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Dn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Cn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Dn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , En3
+        .byte   W16
+        .byte                   Cn1 , v100
+        .byte   W08
+        .byte           N12
+        .byte           N12   , Fn3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N06   , Fn3 , v104
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N06   , Fn3
+        .byte           N08   , Dn3
+        .byte   W08
+        .byte           N06   , Cn1
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
 @ 002   ----------------------------------------
 AlmVictory_6_2:
-        .byte           N03   , Cn1 , v100
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Dn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Cn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Dn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , En3
+        .byte   W16
+        .byte                   Cn1 , v100
+        .byte   W08
+        .byte           N12
+        .byte           N12   , Fn3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N06   , Fn3 , v104
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N06   , Fn3
+        .byte           N08   , Dn3
+        .byte   W08
+        .byte           N06   , Cn1
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
         .byte   PEND
 @ 003   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_6_2
 @ 004   ----------------------------------------
 AlmVictory_6_4:
-        .byte           N03   , Cs2 , v100
-        .byte           N03   , Cn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Dn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Cn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
-        .byte                   Dn1
-        .byte           N03   , Fs1
-        .byte   W15
-        .byte                   Fs1
-        .byte   W09
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , En3
+        .byte           N24   , Cs2
+        .byte   W16
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte           N12
+        .byte           N12   , Fn3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N06   , Fn3 , v104
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N06   , Fn3
+        .byte           N08   , Dn3
+        .byte   W08
+        .byte           N06   , Cn1
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
         .byte   PEND
 @ 005   ----------------------------------------
         .byte   PATT
@@ -1758,119 +2063,241 @@ AlmVictory_6_4:
         .byte   PATT
          .word  AlmVictory_6_4
 @ 015   ----------------------------------------
-        .byte   PATT
-         .word  AlmVictory_6_4
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , En3
+        .byte           N22   , Cs2
+        .byte   W16
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte           N12
+        .byte           N12   , Fn3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte           N22   , Cs2
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N06   , Fn3 , v104
+        .byte           N08   , En3
+        .byte           N22   , Cs2
+        .byte   W08
+        .byte           N06   , Fn3
+        .byte           N08   , Dn3
+        .byte   W08
+        .byte           N06   , Cn1
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte           N22   , Cs2 , v100
+        .byte   W16
+        .byte           N06   , Cn1 , v104
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
 @ 016   ----------------------------------------
-AlmVictory_6_16:
-        .byte           N03   , Fs1 , v100
-        .byte           N03   , Cs2
-        .byte           N03   , Cn1
+        .byte           N06   , Fs1 , v100
+        .byte           N24   , Cs2
+        .byte           N12   , Cn1
+        .byte           N48   , An2
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte           N12   , Dn1
+        .byte   W12
+        .byte           N06   , Fs1
         .byte   W12
         .byte                   Fs1
+        .byte           N12   , Cn1
         .byte   W12
-        .byte                   Dn1
+        .byte           N06   , Fs1
         .byte   W12
-        .byte                   Fs1
+        .byte           N12   , Dn1
         .byte   W12
-        .byte                   Cn1
-        .byte           N03   , Fs1
+        .byte           N06   , Fs1
         .byte   W12
-        .byte                   Fs1
-        .byte   W12
-        .byte                   Dn1
-        .byte   W12
-        .byte                   Fs1
-        .byte   W12
-        .byte   PEND
 @ 017   ----------------------------------------
 AlmVictory_6_17:
-        .byte           N03   , Fs1 , v100
-        .byte           N03   , Cn1
+        .byte           N06   , Fs1 , v100
+        .byte           N12   , Cn1
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte           N12   , Dn1
+        .byte   W12
+        .byte           N06   , Fs1
         .byte   W12
         .byte                   Fs1
+        .byte           N12   , Cn1
         .byte   W12
-        .byte                   Dn1
+        .byte           N06   , Fs1
         .byte   W12
-        .byte                   Fs1
+        .byte           N12   , Dn1
         .byte   W12
-        .byte                   Cn1
-        .byte           N03   , Fs1
-        .byte   W12
-        .byte                   Fs1
-        .byte   W12
-        .byte                   Dn1
-        .byte   W12
-        .byte                   Fs1
+        .byte           N06   , Fs1
         .byte   W12
         .byte   PEND
 @ 018   ----------------------------------------
-        .byte   PATT
-         .word  AlmVictory_6_17
+AlmVictory_6_18:
+        .byte           N06   , Fs1 , v100
+        .byte           N12   , Cn1
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte           N12   , Dn1
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte           N12   , Cn1
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W12
+        .byte           N12   , Dn1
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte   PEND
 @ 019   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_6_17
 @ 020   ----------------------------------------
-        .byte   PATT
-         .word  AlmVictory_6_17
+AlmVictory_6_20:
+        .byte           N06   , Fs1 , v100
+        .byte           N12   , Cn1
+        .byte           N24   , Cs2
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte           N12   , Dn1
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte           N12   , Cn1
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W12
+        .byte           N12   , Dn1
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte   PEND
 @ 021   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_6_17
 @ 022   ----------------------------------------
         .byte   PATT
-         .word  AlmVictory_6_17
+         .word  AlmVictory_6_18
 @ 023   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_6_17
 @ 024   ----------------------------------------
-        .byte   PATT
-         .word  AlmVictory_6_16
+        .byte           N24   , Cs2 , v100
+        .byte           N06   , Fs1
+        .byte           N12   , Cn1
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte           N12   , Dn1
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte           N12   , Cn1
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte                   Fs1
+        .byte   W12
+        .byte           N12   , Dn1
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
 @ 025   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_6_17
 @ 026   ----------------------------------------
         .byte   PATT
-         .word  AlmVictory_6_17
+         .word  AlmVictory_6_18
 @ 027   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_6_17
 @ 028   ----------------------------------------
         .byte   PATT
-         .word  AlmVictory_6_17
+         .word  AlmVictory_6_20
 @ 029   ----------------------------------------
         .byte   PATT
          .word  AlmVictory_6_17
 @ 030   ----------------------------------------
         .byte   PATT
-         .word  AlmVictory_6_17
+         .word  AlmVictory_6_18
 @ 031   ----------------------------------------
-        .byte           N03   , Fs1 , v100
-        .byte           N03   , Cs2
-        .byte           N03   , Cn1
-        .byte           N03   , Ds2
-        .byte           N03   , Dn1
+        .byte           N06   , Fs1 , v100
+        .byte           N21   , Ds2
+        .byte           N24   , Cs2
+        .byte           N12   , Cn1
+        .byte           N12   , Dn1
+        .byte   W12
+        .byte           N06   , Fs1
+        .byte   W12
+        .byte           N21   , Ds2
+        .byte           N12   , Dn1
+        .byte   W12
+        .byte           N06   , Fs1
         .byte   W12
         .byte                   Fs1
+        .byte           N21   , Ds2
+        .byte           N12   , Cn1
+        .byte           N12   , Dn1
         .byte   W12
-        .byte                   Dn1
-        .byte           N03   , Ds2
+        .byte           N06   , Fs1
         .byte   W12
-        .byte                   Fs1
+        .byte           N21   , Ds2
+        .byte           N12   , Dn1
         .byte   W12
-        .byte                   Ds2
-        .byte           N03   , Cn1
-        .byte           N03   , Dn1
-        .byte           N03   , Fs1
-        .byte   W12
-        .byte                   Fs1
-        .byte   W12
-        .byte                   Ds2
-        .byte           N03   , Dn1
-        .byte   W12
-        .byte                   Fs1
+        .byte           N06   , Fs1
         .byte   W12
 @ 032   ----------------------------------------
-        .byte   PATT
-         .word  AlmVictory_6_4
+        .byte           N12   , Cn1
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , En3
+        .byte           N24   , An2 , v100
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte   W08
+        .byte           N12
+        .byte           N12   , Fn3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N06   , Fn3 , v104
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N06   , Fn3
+        .byte           N08   , Dn3
+        .byte   W08
+        .byte           N06   , Cn1
+        .byte           N08   , En3
+        .byte   W08
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Fs3 , v104
+        .byte           N06   , Ds3
+        .byte           N08   , Ds1
+        .byte   W16
+        .byte           N06   , Cn1
+        .byte           N06   , Fs3
+        .byte           N04   , Ds1
+        .byte   W08
 @ 033   ----------------------------------------
         .byte   GOTO
          .word  AlmVictory_6_LOOP

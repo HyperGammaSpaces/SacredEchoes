@@ -1748,11 +1748,11 @@ WhereTheWindRustles_7:
         BYTE   KEYSH   WhereTheWindRustles_key+0
 // 000   ----------------------------------------
 WhereTheWindRustles_7_LOOP:
-        BYTE           VOICE   127
+        BYTE           VOICE   123
         BYTE           PAN     c_v+15
         BYTE           VOL     39
         BYTE           N08     Dn1   v080
-        BYTE           N24     Ds1
+        BYTE           N24     En1
         BYTE   W08
         BYTE           N08     Dn1
         BYTE   W08
@@ -1834,16 +1834,16 @@ WhereTheWindRustles_7_3:
         BYTE           N24     Dn1
         BYTE   W24
         BYTE                   Dn1
-        BYTE           N12     En1   v087
+        BYTE           N12     Ds1   v087
         BYTE   W12
         BYTE           N36     An2   v096
         BYTE   W06
-        BYTE           N12     En1   v087
+        BYTE           N12     Ds1   v087
         BYTE   W06
         BYTE           N18     Dn1   v080
         BYTE           N18     Cn1   v087
         BYTE   W06
-        BYTE           N06     En1
+        BYTE           N06     Ds1
         BYTE   W06
         BYTE           N12
         BYTE   W06
@@ -1964,17 +1964,17 @@ WhereTheWindRustles_7_4:
         BYTE           N18     As1
         BYTE   W24
         BYTE           N24     Dn1
-        BYTE           N12     En1   v087
+        BYTE           N12     Ds1   v087
         BYTE   W12
         BYTE                   Gs1
         BYTE   W06
-        BYTE                   En1
+        BYTE                   Ds1
         BYTE   W06
         BYTE           N18     Dn1   v080
-        BYTE           N24     Ds1
+        BYTE           N24     En1
         BYTE           N18     Cn1   v087
         BYTE   W06
-        BYTE           N06     En1
+        BYTE           N06     Ds1
         BYTE   W06
         BYTE           N12
         BYTE   W06
@@ -2095,7 +2095,7 @@ WhereTheWindRustles_7_21:
         BYTE           N06     Fs2   v087
         BYTE   W12
         BYTE           N18     Dn1   v080
-        BYTE           N24     Ds1
+        BYTE           N24     En1
         BYTE   W12
         BYTE           N12     Ds2   v087
         BYTE   W06

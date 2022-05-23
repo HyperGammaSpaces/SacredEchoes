@@ -1,4 +1,3 @@
-#define LimaDiesBellSFX_ID  0xE4
 #define SfxVoiceTable 0x21200C
 
 //simplified VoiceDirect
@@ -6,8 +5,8 @@
 
 
 RagnarokSample_4:
-    #incbin "bin/inst_18h.wav.bin"
-    SfxInstTableEntry(0x76, RagnarokSample_4)
+    #incbin "bin/ForblazeCharge.bin"
+    SfxInstTableEntry(0x18, RagnarokSample_4)
     {
         #include "s/song02CA.event"
         SongTable(0x2CA,song02CA,SFXGroup)
@@ -15,8 +14,8 @@ RagnarokSample_4:
     ALIGN 4    
 
 RagnarokSample_5:
-    #incbin "bin/inst_38h.wav.bin"
-    SfxInstTableEntry(0x77, RagnarokSample_5)
+    #incbin "bin/ForblazeRise.bin"
+    SfxInstTableEntry(0x19, RagnarokSample_5)
     {
         #include "s/song02CB.event"
         SongTable(0x2CB,song02CB,SFXGroup)
@@ -25,20 +24,20 @@ RagnarokSample_5:
 
 {
 	#include "FE6_No_Damage_Bonk_Installer.event"
-	SongTable(0x92,FE6_No_Damage_Bonk,SFXGroup)
+	SongTable(0x104,FE6_No_Damage_Bonk,SFXGroup)
 }
 ALIGN 4
 
 {
     //Ian Sinclair, FEH
     #include "BerkutLaugh_Installer.event"
-    SongTable(0xDF,BerkutLaugh,SFXGroup)
+    SongTable(0x105,BerkutLaugh,SFXGroup)
 }
 ALIGN 4
 {
     //Richard Epcar, SoV
     #include "JedahLaugh_Installer.event"
-    SongTable(0xE0,JedahLaugh,SFXGroup)
+    SongTable(0x106,JedahLaugh,SFXGroup)
 }
 ALIGN 4
 

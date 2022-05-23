@@ -1954,45 +1954,45 @@ EmeraldDragon_5:
         .byte           VOL   , 45
         .byte           PAN   , c_v-8
         .byte           BENDR , 12
-        .byte           N06   , Dn1 , v074
+        .byte           N06   , En1 , v074
         .byte   W06
-        .byte                   Dn1 , v086
+        .byte                   En1 , v086
         .byte   W06
-        .byte                   Dn1 , v050
+        .byte                   En1 , v050
         .byte   W06
-        .byte                   Dn1 , v084
+        .byte                   En1 , v084
         .byte   W06
-        .byte                   Dn1
+        .byte                   En1
         .byte   W06
-        .byte                   Dn1 , v086
+        .byte                   En1 , v086
         .byte   W06
-        .byte                   Dn1 , v074
+        .byte                   En1 , v074
         .byte   W06
-        .byte                   Dn1 , v086
+        .byte                   En1 , v086
         .byte   W06
-        .byte                   Dn1 , v084
+        .byte                   En1 , v084
         .byte   W06
-        .byte                   Dn1 , v086
+        .byte                   En1 , v086
         .byte   W06
-        .byte                   Dn1
+        .byte                   En1
         .byte   W06
-        .byte                   Dn1 , v050
+        .byte                   En1 , v050
         .byte   W06
-        .byte                   Dn1 , v084
+        .byte                   En1 , v084
         .byte   W06
-        .byte                   Dn1
+        .byte                   En1
         .byte   W06
-        .byte                   Dn1 , v086
+        .byte                   En1 , v086
         .byte   W06
-        .byte                   Dn1 , v040
+        .byte                   En1 , v040
         .byte   W06
 @ 001   ----------------------------------------
         .byte           N24   , Cn1 , v100
         .byte           N96   , An2 , v080
         .byte           N12   , Fs1 , v087
-        .byte           N12   , Dn1 , v080
+        .byte           N12   , En1 , v080
         .byte   W12
-        .byte           N24   , Dn1 , v096
+        .byte           N24   , En1 , v096
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v068
@@ -2000,7 +2000,7 @@ EmeraldDragon_5:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v094
+        .byte           N24   , En1 , v094
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v100
@@ -2008,7 +2008,7 @@ EmeraldDragon_5:
         .byte           N24   , Cn1
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2016,7 +2016,7 @@ EmeraldDragon_5:
         .byte           N24   , Cn1 , v064
         .byte           N12   , Fs1 , v100
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2026,7 +2026,7 @@ EmeraldDragon_5_LOOP:
         .byte           N24   , Cn1 , v102
         .byte           N12   , Fs1 , v063
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2034,7 +2034,7 @@ EmeraldDragon_5_LOOP:
         .byte           N24   , Cn1 , v096
         .byte           N12   , Fs1 , v090
         .byte   W12
-        .byte           N24   , Dn1 , v092
+        .byte           N24   , En1 , v092
         .byte           N06   , Fs1 , v100
         .byte   W06
         .byte                   Fs1 , v052
@@ -2042,7 +2042,7 @@ EmeraldDragon_5_LOOP:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v084
+        .byte           N24   , En1 , v084
         .byte           N06   , Fs1 , v061
         .byte   W06
         .byte                   Fs1 , v068
@@ -2050,7 +2050,7 @@ EmeraldDragon_5_LOOP:
         .byte           N24   , Cn1 , v064
         .byte           N12   , Fs1 , v052
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v057
@@ -2060,7 +2060,7 @@ EmeraldDragon_5_3:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v071
         .byte   W12
-        .byte           N24   , Dn1 , v088
+        .byte           N24   , En1 , v088
         .byte           N06   , Fs1 , v060
         .byte   W06
         .byte                   Fs1 , v068
@@ -2068,7 +2068,7 @@ EmeraldDragon_5_3:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2076,7 +2076,7 @@ EmeraldDragon_5_3:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2084,7 +2084,7 @@ EmeraldDragon_5_3:
         .byte           N24   , Cn1 , v064
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2094,7 +2094,7 @@ EmeraldDragon_5_3:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v061
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2102,7 +2102,7 @@ EmeraldDragon_5_3:
         .byte           N24   , Cn1 , v102
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2110,7 +2110,7 @@ EmeraldDragon_5_3:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v088
+        .byte           N24   , En1 , v088
         .byte           N06   , Fs1 , v063
         .byte   W06
         .byte                   Fs1 , v068
@@ -2121,7 +2121,7 @@ EmeraldDragon_5_3:
         .byte           N06   , Cn1 , v102
         .byte   W06
         .byte                   Cn1 , v100
-        .byte           N24   , Dn1 , v080
+        .byte           N24   , En1 , v080
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Cn1 , v100
@@ -2133,7 +2133,7 @@ EmeraldDragon_5_5:
         .byte           N96   , An2 , v080
         .byte           N12   , Fs1 , v087
         .byte   W12
-        .byte           N24   , Dn1 , v096
+        .byte           N24   , En1 , v096
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v068
@@ -2141,7 +2141,7 @@ EmeraldDragon_5_5:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v094
+        .byte           N24   , En1 , v094
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v100
@@ -2149,7 +2149,7 @@ EmeraldDragon_5_5:
         .byte           N24   , Cn1
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2157,7 +2157,7 @@ EmeraldDragon_5_5:
         .byte           N24   , Cn1 , v064
         .byte           N12   , Fs1 , v100
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2168,7 +2168,7 @@ EmeraldDragon_5_6:
         .byte           N24   , Cn1 , v102
         .byte           N12   , Fs1 , v063
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2176,7 +2176,7 @@ EmeraldDragon_5_6:
         .byte           N24   , Cn1 , v096
         .byte           N12   , Fs1 , v090
         .byte   W12
-        .byte           N24   , Dn1 , v092
+        .byte           N24   , En1 , v092
         .byte           N06   , Fs1 , v100
         .byte   W06
         .byte                   Fs1 , v052
@@ -2184,7 +2184,7 @@ EmeraldDragon_5_6:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v084
+        .byte           N24   , En1 , v084
         .byte           N06   , Fs1 , v061
         .byte   W06
         .byte                   Fs1 , v068
@@ -2192,7 +2192,7 @@ EmeraldDragon_5_6:
         .byte           N24   , Cn1 , v064
         .byte           N12   , Fs1 , v052
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v057
@@ -2206,7 +2206,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v061
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2214,7 +2214,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v102
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2222,7 +2222,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v088
+        .byte           N24   , En1 , v088
         .byte           N06   , Fs1 , v063
         .byte   W06
         .byte                   Fs1 , v068
@@ -2234,7 +2234,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1 , v100
         .byte           N06   , Fs1 , v068
-        .byte           N24   , Dn1 , v080
+        .byte           N24   , En1 , v080
         .byte   W06
         .byte           N06   , Cn1 , v100
         .byte           N06   , Fs1 , v068
@@ -2245,7 +2245,7 @@ EmeraldDragon_5_8:
         .byte           N12   , Fs1 , v087
         .byte           N96   , An2 , v080
         .byte   W12
-        .byte           N24   , Dn1 , v096
+        .byte           N24   , En1 , v096
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v068
@@ -2253,7 +2253,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v094
+        .byte           N24   , En1 , v094
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v100
@@ -2261,7 +2261,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2269,7 +2269,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v064
         .byte           N12   , Fs1 , v100
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2296,7 +2296,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v061
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2304,7 +2304,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v102
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2315,7 +2315,7 @@ EmeraldDragon_5_8:
         .byte           N06   , Cn1 , v100
         .byte   W06
         .byte                   Cn1 , v034
-        .byte           N24   , Dn1 , v088
+        .byte           N24   , En1 , v088
         .byte           N06   , Fs1 , v063
         .byte   W06
         .byte                   Cn1 , v034
@@ -2327,7 +2327,7 @@ EmeraldDragon_5_8:
         .byte           N18   , Cn1 , v100
         .byte   W06
         .byte           N06   , Fs1 , v068
-        .byte           N24   , Dn1 , v080
+        .byte           N24   , En1 , v080
         .byte   W06
         .byte           N06   , Fs1 , v068
         .byte   W06
@@ -2336,7 +2336,7 @@ EmeraldDragon_5_8:
         .byte           N96   , An2 , v080
         .byte           N12   , Fs1 , v087
         .byte   W12
-        .byte           N24   , Dn1 , v096
+        .byte           N24   , En1 , v096
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v068
@@ -2344,7 +2344,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v094
+        .byte           N24   , En1 , v094
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v100
@@ -2352,7 +2352,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2362,7 +2362,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2375,7 +2375,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2387,7 +2387,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte           N18   , Cn1 , v100
         .byte   W06
-        .byte           N24   , Dn1 , v092
+        .byte           N24   , En1 , v092
         .byte           N06   , Fs1 , v100
         .byte   W06
         .byte                   Fs1 , v052
@@ -2395,7 +2395,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v084
+        .byte           N24   , En1 , v084
         .byte           N06   , Fs1 , v061
         .byte   W06
         .byte                   Fs1 , v068
@@ -2403,7 +2403,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v064
         .byte           N12   , Fs1 , v052
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v057
@@ -2412,7 +2412,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v071
         .byte   W12
-        .byte           N24   , Dn1 , v088
+        .byte           N24   , En1 , v088
         .byte           N06   , Fs1 , v060
         .byte   W06
         .byte                   Fs1 , v068
@@ -2422,7 +2422,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2434,7 +2434,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2446,7 +2446,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte           N18
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2456,7 +2456,7 @@ EmeraldDragon_5_8:
         .byte           N12   , Fs1 , v061
         .byte           N96   , An2 , v080
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2464,7 +2464,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v102
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2472,7 +2472,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v088
+        .byte           N24   , En1 , v088
         .byte           N06   , Fs1 , v063
         .byte   W06
         .byte                   Fs1 , v068
@@ -2483,7 +2483,7 @@ EmeraldDragon_5_8:
         .byte                   Cn1
         .byte   W06
         .byte                   Fs1 , v068
-        .byte           N24   , Dn1 , v080
+        .byte           N24   , En1 , v080
         .byte           N06   , Cn1 , v100
         .byte   W06
         .byte                   Fs1 , v068
@@ -2495,7 +2495,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v096
+        .byte           N24   , En1 , v096
         .byte           N06   , Fs1 , v065
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2507,7 +2507,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte           N18
         .byte   W06
-        .byte           N24   , Dn1 , v094
+        .byte           N24   , En1 , v094
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v100
@@ -2515,7 +2515,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2523,7 +2523,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v064
         .byte           N12   , Fs1 , v100
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2532,7 +2532,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v102
         .byte           N12   , Fs1 , v063
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2542,7 +2542,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v092
+        .byte           N24   , En1 , v092
         .byte           N06   , Fs1 , v100
         .byte           N06   , Cn1
         .byte   W06
@@ -2554,7 +2554,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v084
+        .byte           N24   , En1 , v084
         .byte           N06   , Fs1 , v061
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2566,7 +2566,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte           N18
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v057
@@ -2576,7 +2576,7 @@ EmeraldDragon_5_8:
         .byte           N12   , Fs1 , v071
         .byte           N96   , An2 , v080
         .byte   W12
-        .byte           N24   , Dn1 , v088
+        .byte           N24   , En1 , v088
         .byte           N06   , Fs1 , v060
         .byte   W06
         .byte                   Fs1 , v068
@@ -2584,7 +2584,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2592,7 +2592,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2602,7 +2602,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2615,7 +2615,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2627,7 +2627,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte           N18
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2635,7 +2635,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v088
+        .byte           N24   , En1 , v088
         .byte           N06   , Fs1 , v063
         .byte   W06
         .byte                   Fs1 , v068
@@ -2644,7 +2644,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte   W12
         .byte           N06   , Fs1 , v068
-        .byte           N24   , Dn1 , v080
+        .byte           N24   , En1 , v080
         .byte   W06
         .byte           N06   , Fs1 , v068
         .byte   W06
@@ -2652,7 +2652,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v087
         .byte   W12
-        .byte           N24   , Dn1 , v096
+        .byte           N24   , En1 , v096
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v068
@@ -2662,7 +2662,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v094
+        .byte           N24   , En1 , v094
         .byte           N06   , Fs1 , v065
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2674,7 +2674,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2686,7 +2686,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte           N18
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2696,7 +2696,7 @@ EmeraldDragon_5_8:
         .byte           N12   , Fs1 , v063
         .byte           N96   , An2 , v080
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2704,7 +2704,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v096
         .byte           N12   , Fs1 , v090
         .byte   W12
-        .byte           N24   , Dn1 , v092
+        .byte           N24   , En1 , v092
         .byte           N06   , Fs1 , v100
         .byte   W06
         .byte                   Fs1 , v052
@@ -2712,7 +2712,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v084
+        .byte           N24   , En1 , v084
         .byte           N06   , Fs1 , v061
         .byte   W06
         .byte                   Fs1 , v068
@@ -2722,7 +2722,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2735,7 +2735,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v088
+        .byte           N24   , En1 , v088
         .byte           N06   , Fs1 , v060
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2747,7 +2747,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte           N18
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2755,7 +2755,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2763,7 +2763,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v064
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1 , v052
@@ -2772,7 +2772,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v061
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2782,7 +2782,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2794,7 +2794,7 @@ EmeraldDragon_5_8:
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N24   , Dn1 , v088
+        .byte           N24   , En1 , v088
         .byte           N06   , Fs1 , v063
         .byte           N06   , Cn1 , v100
         .byte   W06
@@ -2807,7 +2807,7 @@ EmeraldDragon_5_8:
         .byte           N18   , Cn1 , v102
         .byte   W06
         .byte           N06   , Fs1 , v068
-        .byte           N24   , Dn1 , v080
+        .byte           N24   , En1 , v080
         .byte   W06
         .byte           N06   , Fs1 , v068
         .byte   W06
@@ -2816,7 +2816,7 @@ EmeraldDragon_5_8:
         .byte           N36   , An2 , v040
         .byte           N24   , Fs1 , v063
         .byte   W12
-        .byte           N36   , Dn1 , v102
+        .byte           N36   , En1 , v102
         .byte   W12
         .byte           N12   , Cn1 , v096
         .byte           N06   , Fs1 , v068
@@ -2827,7 +2827,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N24   , Fs1 , v092
         .byte   W12
-        .byte           N36   , Dn1 , v084
+        .byte           N36   , En1 , v084
         .byte   W12
         .byte           N06   , Fs1 , v061
         .byte           N12   , Cn1 , v100
@@ -2838,7 +2838,7 @@ EmeraldDragon_5_8:
         .byte           N36   , An2
         .byte           N24   , Fs1 , v052
         .byte   W12
-        .byte           N36   , Dn1 , v102
+        .byte           N36   , En1 , v102
         .byte   W12
 @ 030   ----------------------------------------
         .byte           N12   , Cn1 , v100
@@ -2850,7 +2850,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Fs1 , v092
         .byte           N36   , An2 , v072
         .byte   W12
-        .byte                   Dn1 , v080
+        .byte                   En1 , v080
         .byte   W12
         .byte           N06   , Fs1 , v068
         .byte           N12   , Cn1 , v100
@@ -2862,7 +2862,7 @@ EmeraldDragon_5_8:
         .byte           N12   , Fs1 , v087
         .byte           N96   , An2 , v100
         .byte   W12
-        .byte           N24   , Dn1 , v096
+        .byte           N24   , En1 , v096
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v068
@@ -2870,7 +2870,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1 , v100
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v094
+        .byte           N24   , En1 , v094
         .byte           N06   , Fs1 , v065
         .byte   W06
         .byte                   Fs1 , v100
@@ -2879,7 +2879,7 @@ EmeraldDragon_5_8:
         .byte           N24   , Cn1
         .byte           N12   , Fs1 , v092
         .byte   W12
-        .byte           N24   , Dn1 , v102
+        .byte           N24   , En1 , v102
         .byte           N06   , Fs1 , v068
         .byte   W06
         .byte                   Fs1
@@ -2888,7 +2888,7 @@ EmeraldDragon_5_8:
         .byte           N12   , Fs1 , v100
         .byte   W12
         .byte           N06   , Fs1 , v068
-        .byte           N24   , Dn1 , v100
+        .byte           N24   , En1 , v100
         .byte   W06
         .byte           N06   , Fs1 , v052
         .byte   W06

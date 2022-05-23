@@ -5,29 +5,52 @@
 #include "advanced music installer suite/music installer.event"
 
 PUSH
-//Set Victory BGM by Chapter
 
-//Unlock Sound Room songs
-  ORG $aede0
-  BYTE $FF
+    //Unlock Sound Room songs
+    ORG $aede0
+    BYTE $FF
   
-//replace regular attack music with coliseum theme
-  ORG $224538
-  WORD $0856F20C
-  
-//fuck binding vow
-  ORG $2244E8
-  WORD $085532A0
-  
-//Messin with sound room
-  ORG $A20F74
-  BYTE $11
-  ORG $A20F84
-  BYTE $12
+    //Hardcoded song IDs
+    
+    /*
+    ORG $726DA //enemy phase battle
+    BYTE SongID_FiendsRapture
+    ORG $726E0 //player phase battle
+    BYTE SongID_DauntlessBlade
+    */
+    ORG $72714 //arena battle
+    BYTE SongID_DauntlessBlade 
+    ORG $7272A //class change
+    BYTE SongID_ClassChange 
+    ORG $72786 //sacred weapon
+    BYTE SongID_ThoseWhoChallengeGods
+    ORG $727A8 //final boss without intro
+    BYTE SongID_DarkGodsTempest
+    ORG $7282A //dance
+    BYTE SongID_Healing 
+    ORG $72876 //status staff
+    BYTE SongID_Healing 
+    ORG $72872 //recovery staff
+    BYTE SongID_Curing 
+    ORG $85E60 //extra map clear
+    BYTE SongID_ExtraMapClear
+    ORG $85E56 //extra dungeon clear
+    BYTE SongID_ExtraDungeonClear
+    ORG $B4C02 //armory
+    BYTE SongID_Armory
+    ORG $B4C0C //shop
+    BYTE SongID_Shop
   
 POP
 
 #include "_SFX/Installer.event"
+
+//replace regular attack music with fe8 coliseum theme
+SongTable(SongID_DauntlessBlade,$56F20C,BattleMusicGroup)
+
+//relocate extra map victory jingles
+SongTable(SongID_ExtraMapClear,$56FA58,BattleMusicGroup)
+SongTable(SongID_ExtraDungeonClear,$56FC10,BattleMusicGroup)
 
 {
 	#include "S_Files/TitleTheme.event"
@@ -112,6 +135,12 @@ ALIGN 4
 ALIGN 4
 
 {
+	#include "S_Files/TwilightOfTheGods_GammaMix.event"
+	SongTable(SongID_TwilightOfTheGods,TwilightOfTheGods_GammaMix,MapMusicGroup)
+}
+ALIGN 4
+
+{
 	#include "S_Files/AlmVictory.event"
 	SongTable(SongID_AlmVictory,AlmVictory,MapMusicGroup)
 }
@@ -136,6 +165,12 @@ ALIGN 4
 ALIGN 4
 
 {
+	#include "S_Files/PinnacleOfFalseBelief_2.event"
+	SongTable(SongID_PinnacleOfFalseBelief,PinnacleOfFalseBelief_2,MapMusicGroup)
+}
+ALIGN 4
+
+{
 	#include "S_Files/AirOfBrutality.event"
 	SongTable(SongID_AirOfBrutality,AirOfBrutality,MapMusicGroup)
 }
@@ -148,6 +183,12 @@ ALIGN 4
 ALIGN 4
 
 {
+	#include "S_Files/TheMadGodsBlessing.event"
+	SongTable(SongID_MadGodsBlessing,TheMadGodsBlessing,MapMusicGroup)
+}
+ALIGN 4
+
+{
 	#include "S_Files/NobunagaField.event"
 	SongTable(SongID_NobunagaField,NobunagaField,MapMusicGroup)
 }
@@ -155,25 +196,25 @@ ALIGN 4
 
 {
 	#include "S_Files/Yamamba.event"
-	SongTable(SongID_WitchsTheme,Yamamba,MapMusicGroup)
+	SongTable(SongID_WitchsTheme,Yamamba,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/PrinceOfDarkness.event"
-	SongTable(SongID_PrinceOfDarkness,PrinceOfDarkness,MapMusicGroup)
+	SongTable(SongID_PrinceOfDarkness,PrinceOfDarkness,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/The_Scions_Dance_in_Purgatory.event"
-	SongTable(SongID_ScionsDance,The_Scions_Dance_in_Purgatory,BattleMusicGroup)
+	SongTable(SongID_ScionsDance,The_Scions_Dance_in_Purgatory,MapMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/LordOfADeadEmpire.event"
-	SongTable(SongID_LordOfADeadEmpire,LordOfADeadEmpire,BattleMusicGroup)
+	SongTable(SongID_LordOfADeadEmpire,LordOfADeadEmpire,MapMusicGroup)
 }
 ALIGN 4
 
@@ -209,7 +250,7 @@ ALIGN 4
 
 {
 	#include "S_Files/SongOfPeace.event"
-	SongTable(SongID_SongOfPeace,SongOfPeace,MapMusicGroup)
+	SongTable(SongID_SongOfPeace,SongOfPeace,CutsceneMusicGroup)
 }
 ALIGN 4
 
@@ -221,67 +262,67 @@ ALIGN 4
 
 {
 	#include "S_Files/Tension_New.event"
-	SongTable(SongID_Tension,Tension_New,MapMusicGroup)
+	SongTable(SongID_Tension,Tension_New,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/Echoes_Uprising.event"
-	SongTable(SongID_Uprising,Echoes_Uprising,MapMusicGroup)
+	SongTable(SongID_Uprising,Echoes_Uprising,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/TheRoadWalkedByHeroes.event"
-	SongTable(SongID_HerosPath,TheRoadWalkedByHeroes,MapMusicGroup)
+	SongTable(SongID_HerosPath,TheRoadWalkedByHeroes,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/BlackTower.event"
-	SongTable(SongID_FromTheDarkness,BlackTower,MapMusicGroup)
+	SongTable(SongID_FromTheDarkness,BlackTower,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/SecondArmageddon.event"
-	SongTable(SongID_ImportantBattle,SecondArmageddon,MapMusicGroup)
+	SongTable(SongID_ImportantBattle,SecondArmageddon,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/Sadness_Theme.event"
-	SongTable(SongID_Sorrow,Sadness_Theme,MapMusicGroup)
+	SongTable(SongID_Sorrow,Sadness_Theme,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/SilverGarden.event"
-	SongTable(SongID_SilverGarden,SilverGarden,MapMusicGroup)
+	SongTable(SongID_SilverGarden,SilverGarden,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/Echoes_Unity.event"
-	SongTable(SongID_Unity,Echoes_Unity,MapMusicGroup)
+	SongTable(SongID_Unity,Echoes_Unity,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/RecruitmentTheme.event"
-	SongTable(SongID_Recruitment,RecruitmentTheme,MapMusicGroup)
+	SongTable(SongID_Recruitment,RecruitmentTheme,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/Victory_A.event"
-	SongTable(SongID_Victory,Victory_A,MapMusicGroup)
+	SongTable(SongID_Victory,Victory_A,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/Victory_B.event"
-	SongTable(SongID_ShadowOfVictory,Victory_B,MapMusicGroup)
+	SongTable(SongID_ShadowOfVictory,Victory_B,CutsceneMusicGroup)
 }
 ALIGN 4
 
@@ -306,19 +347,19 @@ ALIGN 4
 
 {
 	#include "S_Files/ThemeOfWater.event"
-	SongTable(SongID_MilaStatue,ThemeOfWater,MapMusicGroup)
+	SongTable(SongID_MilaStatue,ThemeOfWater,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/SilentGround.event"
-	SongTable(SongID_SilentGround,SilentGround,MapMusicGroup)
+	SongTable(SongID_SilentGround,SilentGround,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/ZofiaCastleTheme.event"
-	SongTable(SongID_CastleTheme,ZofiaCastleTheme,MapMusicGroup)
+	SongTable(SongID_CastleTheme,ZofiaCastleTheme,CutsceneMusicGroup)
 }
 ALIGN 4
 
@@ -330,25 +371,25 @@ ALIGN 4
 
 {
 	#include "S_Files/Omen.event"
-	SongTable(SongID_Omen,Omen,MapMusicGroup)
+	SongTable(SongID_Omen,Omen,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/A_distant_promise.event"
-	SongTable(SongID_DistantPromise,A_distant_promise,MapMusicGroup)
+	SongTable(SongID_DistantPromise,A_distant_promise,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/TheInn.event"
-	SongTable(SongID_Inn,TheInn,MapMusicGroup)
+	SongTable(SongID_Inn,TheInn,CutsceneMusicGroup)
 }
 ALIGN 4
 
 {
 	#include "S_Files/PortTown.event"
-	SongTable(SongID_PortTown,PortTown,MapMusicGroup)
+	SongTable(SongID_PortTown,PortTown,CutsceneMusicGroup)
 }
 ALIGN 4
 
@@ -358,4 +399,4 @@ ALIGN 4
 }
 ALIGN 4
 
-
+#include "SoundRoomInstaller.event"

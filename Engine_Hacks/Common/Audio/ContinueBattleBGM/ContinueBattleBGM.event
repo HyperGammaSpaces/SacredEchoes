@@ -2,6 +2,12 @@
 
 PUSH
 
+    ORG $726CA
+    #incbin "battle_changer.bin"
+    ORG $72700
+    WORD $0202BCF0
+    SHORT $8886 $46C0
+    
 	ORG $71A68
 	jumpToHack(ContinueBattleBGM)
 
