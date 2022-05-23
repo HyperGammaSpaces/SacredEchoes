@@ -1,53 +1,43 @@
-#ifdef _FE8_
+#define SetPortraitReplacement(EventID,FalsePortraitID,TruePortraitID) "SHORT FalsePortraitID EventID TruePortraitID FalsePortraitID"
+//in case a separate portraitID is needed so the falsePortraitID can be loaded outside of it
+#define SetPortraitReplacement(ReplaceID,EventID,FalsePortraitID,TruePortraitID) "SHORT ReplaceID EventID TruePortraitID FalsePortraitID"
 
-#include "EAstdlib.event"
-#include "Extensions/Hack Installation.txt"
-#endif
-
-PUSH
-ORG $192B8		//FE8U
-jumpToHack(ChangePortraitStatus)
-POP
+ALIGN 4
+#include "PortraitLoadASM.lyn.event"
 
 PUSH
-ORG $19308		//FE8U
-jumpToHack(ChangePortraitMiniMug)
-POP
 
-PUSH
-ORG $73DBC		//FE8U
-jumpToHack(ChangePortraitPormotion)
+    ORG 0x7898
+    jumpToHack(DialoguePortraitLoader)
+    PROTECT 0x7898 0x78A8
+    
+    ORG $192C4
+    SHORT $1C10 //mov r0, r2
+    SHORT $46C0 //nop
+    callHack_r3(PortraitSelectionASM)
+    B($192F0)
+    
+    ORG $1930E
+    SHORT $46C0 //nop
+    SHORT $6810 //ldr r0, [r2, #0]
+    SHORT $88C0 //ldrh r0, [r0, #6]
+    callHack_r3(PortraitSelectionASM)
+    B($1933C)
+    
+    //Redirects the levelup/promotion screen to call GetUnitPortraitID instead of loading portraitID directly
+    ORG $73DBC
+    jumpToHack(BattlePortraitLoader)
+
 POP
 
 ALIGN 4
-ChangePortraitStatus:
-#incbin "ChangePortraitStatus.dmp"
-POIN ChangePortrait_Table
-
-ALIGN 4
-ChangePortraitMiniMug:
-#incbin "ChangePortraitMiniMug.dmp"
-POIN ChangePortrait_Table
-
-ALIGN 4
-ChangePortraitPormotion:
-#incbin "ChangePortraitPormotion.dmp"
-//POINは不要です
-
-ChangePortrait_Table:
-#include "ChangePortrait_Table.event"
-//@struct ChangePortrait_Table
-//@{
-//@	short	portrait_id				require
-//@	byte	unit_id;				require
-//@	byte	class_id;				00=ANY or FF=any
-//@	byte	map_id;		章			FF=ANY
-//@	byte	editon		編			FF=ANY
-//@	ushort	flag_id;	Flag		00=ANY
-//@}//sizeof(16bytes)
-
-
-
-#else
-    ERROR This version of Selection Quotes is for FE8!
-#endif
+PortraitSelectionTable:
+SetPortraitReplacement(gAlmPromoted, Portrait_Alm, Portrait_Alm_Promoted)
+SetPortraitReplacement(gAlmPromoted, Portrait_AlmEyesClosed, Portrait_Alm_PromotedEyesClosed)
+SetPortraitReplacement(gAlmPromoted, Portrait_Alm_Angry, Portrait_Alm_Promoted_Angry)
+SetPortraitReplacement(gAlmPromoted, Portrait_Alm_Sad, Portrait_Alm_Promoted_Sad)
+SetPortraitReplacement(gChapter3C7Completed, Portrait_Celica, Portrait_Celica_Promoted)
+SetPortraitReplacement(gChapter3C7Completed, Portrait_CelicaEyesClosed, Portrait_Celica_PromotedEyesClosed)
+SetPortraitReplacement(gChapter3C7Completed, Portrait_Celica_Angry, Portrait_Celica_Promoted_Angry)
+SetPortraitReplacement(gChapter3C7Completed, Portrait_Celica_Sad, Portrait_Celica_Promoted_Sad)
+SHORT 0x0 0x0 0x0 0x0 //terminator

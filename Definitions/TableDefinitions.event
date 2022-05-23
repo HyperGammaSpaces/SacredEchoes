@@ -127,7 +127,7 @@
 #define IER_FX_NinisGrace 0x2A
 #define IER_FX_ThorsIre 0x2B
 #define IER_FX_SetsLitany 0x2C
-//2d unused
+#define IER_FX_Upheaval 0x2D
 #define IER_FX_MetisTome 0x2E
 //2f unused
 //30 unused
@@ -177,7 +177,12 @@
 #define Trap_PointDown 0x2
 #define Trap_PointUp 0x3
 
-
+#define MU_FlashWhite 0x0
+#define MU_FlashBlack 0x1
+#define MU_FlashRed 0x2
+#define MU_FlashGreen 0x3
+#define MU_FlashBlue 0x4
+#define MU_FlashYellow 0x5
 
 // ######################################################################
 //Relating to Tequila's slayer/effectiveness rework
