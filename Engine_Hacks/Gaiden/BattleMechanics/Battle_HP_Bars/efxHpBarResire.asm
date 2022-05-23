@@ -148,7 +148,7 @@ EfxHpBarResire_BatonPass: @ 0x08052788
         str  r1, [r6, #0x54]
         str  r1, [r6, #0x58]
         
-        mov  r1, #0x4C
+        mov  r1, #0x4C @ HpBarProc.targetStartHp
         ldsh r1, [r6, r1]
         strh r1, [r6, #0x2E]
         
@@ -162,19 +162,19 @@ EfxHpBarResire_BatonPass: @ 0x08052788
             efxResire2_NoChange:
             mov  r0, #1
             str  r0, [r6, #0x58]
-            mov  r0, #0
+            mov  r2, #0
             b    efxResire2_StoreActorIncrement
             
     efxResire2_GetNextBarIncrement:
-        mov  r0, #1
+        mov  r2, #1
         cmp  r1, r0
         ble  efxResire2_StoreActorIncrement
-            neg  r0, r0
+            neg  r2, r2
             
     efxResire2_StoreActorIncrement:
         mov  r1, #0x4A
-        strh  r0, [r6, r1]
-        cmp  r0, #0
+        strh  r2, [r6, r1]
+        cmp  r2, #0
         bge  efxResire2_InitHeal
         efxResire2_InitHurt:
         mov  r5, #1
@@ -239,9 +239,15 @@ EfxHpBarResire3_Loop: @ 0x0805282C
         bne  efxResire3_DoneIncrement
     
             strh r1, [r5, #0x2C]
+            mov  r4, #1
             mov  r1, #0x4A
             ldsh r1, [r5, r1]
             ldrh r0, [r5, #0x30]
+            cmp  r1, #0
+            bne  IncrementBar2
+                mov  r4, #0x1
+                neg  r4, r4
+            IncrementBar2:
             add  r0, r0, r1
             strh r0, [r5, #0x30]
             ldr  r0, [r5, #0x5c]
@@ -262,8 +268,10 @@ EfxHpBarResire3_Loop: @ 0x0805282C
             lsl  r0, r0, #1
             add  r0, r1
             ldrh r0, [r0]
-            cmp  r0, #1
-            beq  efxResire3_PlayHurtSound
+            cmp  r4, #0
+            ble  efxResire3_DoneSoundFx
+            @cmp  r0, #1
+            @beq  efxResire3_PlayHurtSound
             cmp  r0, #2
             beq  efxResire3_PlayHealSound
             b    efxResire3_DoneSoundFx

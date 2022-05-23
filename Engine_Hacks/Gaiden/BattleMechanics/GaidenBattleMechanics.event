@@ -12,7 +12,7 @@ ALIGN 4
 PUSH
 
     //Determine whether next battle round should be generated
-    ORG $2c844
+    ORG $2B018
     replaceWithHack(MakeBattleRound_New)
 
 /*
@@ -77,7 +77,7 @@ PUSH
     BYTE W_Effect_Eclipse
     ORG $2A4F8
     BYTE W_Effect_Eclipse
-    ORG $2AE2C //in specialweapons.dmp - move if changed
+    ORG $2AE0A //in specialweapons.dmp - move if changed
     BYTE W_Effect_Eclipse 
 
     ORG $2B69C
@@ -108,9 +108,14 @@ PUSH
     ORG $581EC
     #include "InitBattleAnimRoundArrays_New.lyn.event"
     PROTECT $581EC $587E2
+    
+    //Dont change battle theme based on legendary weapons
+    ORG $7273A
+    SHORT $E015
 
-  
 POP
+
+#include "ScriptedBattles/Installer.event"
 
 ShouldGenerateNextBattleRound:
 #include "ShouldGenerateNextBattleRound.lyn.event"

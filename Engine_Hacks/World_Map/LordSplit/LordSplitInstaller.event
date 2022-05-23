@@ -16,6 +16,7 @@ BYTE gChapter4A6Completed 	GMLoc_RigelFalls
 BYTE gChapter4A7Completed 	GMLoc_LastBastion
 BYTE gChapter4A8Completed 	GMLoc_RigelCastle
 BYTE gChapter4A9Completed 	GMLoc_DumaTower
+BYTE gPostgameEnabled       $FF
 BYTE $0 $0 //term
 CelicaDestinationTable:
 BYTE gEnableLordSwitch		GMLoc_ZofiaBay
@@ -31,6 +32,7 @@ BYTE gChapter4C2Completed 	GMLoc_DolthKeep
 BYTE gChapter4C3Completed 	GMLoc_DumaGate
 BYTE gChapter4C4Completed 	GMLoc_DumaSwamp
 BYTE gChapter4C5Completed 	GMLoc_DumaTower
+BYTE gPostgameEnabled       $FF
 BYTE $0 $0 //term
 
 //Create a menu option to switch between Alm and Celica. Should only be available with event flag. menudefs are at A3E04C

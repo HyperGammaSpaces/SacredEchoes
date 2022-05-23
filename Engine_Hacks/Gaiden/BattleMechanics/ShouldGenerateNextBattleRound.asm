@@ -47,7 +47,7 @@ MakeBattleRound_New:
         cmp     r0, #0x0
         beq     MakeBattleRound_End
         mov     r0, r4
-        mov     r5, r1
+        mov     r1, r5
         bl      CanRetaliate_SpecialEnemies
         cmp     r0, #0x0
         beq     MakeBattleRound_End

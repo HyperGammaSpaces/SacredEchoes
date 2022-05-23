@@ -132,18 +132,13 @@ CheckDevilFlags:
 	and  r0, r1
 	cmp  r0, #0
 	bne  DevilHit_SwitchDamagedUnit
-        lsl  r0, r7, #0x10
-        asr  r0, r0, #0x10 
-        and  r0, r1
-        cmp  r0, #0
-        beq  ProcessHpUpdates
+        @devil only cares if attacker
+        b  ProcessHpUpdates
     
 DevilHit_SwitchDamagedUnit:
-	mov  r0, r5
-	mov  r5, r4
-	mov  r4, r0
 	ldr  r0, [sp, #SP_AttackerBackAis] @ mov r8, r9
 	str  r0, [sp, #SP_DefenderBackAis] @ mov r8, r9
+    b PassDefenderToHpBarAnimator
     
 ProcessHpUpdates:
 	mov  r0, r5                  @ r5 = defender

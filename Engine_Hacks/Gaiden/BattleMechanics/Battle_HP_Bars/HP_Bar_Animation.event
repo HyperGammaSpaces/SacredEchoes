@@ -60,12 +60,17 @@ PUSH
     SHORT $2180 //mov r1, #0x80
     SHORT $00C9 //lsl r1, r1, #3
     SHORT $4001 //tst r1, r0
+    
+    //fix necrodragon stuff to use AIS round number
+    ORG $5300C
+    SHORT $89C1 //ldrh r1, [r0, #0xE]
+    SHORT $0049 //lsl r1, r1, #0x1
+    SHORT $1860 //add r0, r4, r1
+    SHORT $E005 //jump down to 53020
 
-    //624D4 - Silence - start EFXHpBar - not working yet
 	ORG $624D4
 	jumpToHack(SilenceFix)
 	
-	//62768 - Sleep - start EFXHpBar - not working yet
 	ORG $62768
 	jumpToHack(SleepFix)
 

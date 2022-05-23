@@ -54,6 +54,7 @@ cmp     r5, #0
 beq     Label3
 mul     r0, r5
 lsr     r0, #1
+add     r0, #5          @ eff dmg bonus
 Label3:
 mov     r5, r0
 
@@ -73,9 +74,24 @@ add     r0, #0x48
 ldrh    r0, [r0, #0x0]
 bl      GetItemIndex
 cmp     r0, #0x07       @ Thunderblade
-bne     CheckStone
+bne     CheckLadyblade
     mov     r0, #0xF    @ force 15 damage
     strh    r0, [r4, #0x0]
+    b       ExitFunc
+    
+CheckLadyblade:
+cmp     r0, #0x10       @ Ladyblade
+bne     CheckStone
+    ldr     r1, [r6]
+    ldr     r1, [r1, #0x28]
+    mov     r2, #0x40
+    lsl     r2, r2, #0x8
+    tst     r2, r1
+    beq     ExitFunc
+    bl      GetItemMight
+    ldrh    r1, [r4, #0x0]
+    add     r1, r0
+    strh    r1, [r4, #0x0]
     b       ExitFunc
     
 CheckStone:

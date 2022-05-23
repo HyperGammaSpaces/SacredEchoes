@@ -689,9 +689,9 @@ UnpackOtherSuspendSaveUnit:
         
         .ifeq \Allegiance
             ldr r7, =gChapterData
-            add r7, #0x40
+            add r7, #0x41
             ldrb r7, [r7]
-            mov r5, #1
+            mov r5, #0x10
             and r7, r5
         .else
             mov r7, #0
@@ -754,9 +754,13 @@ UnpackOtherSuspendSaveUnit:
             ldr r7, =gChapterData
             add r7, #0x40
             ldrb r0, [r7]
-            mov r1, #1
-            orr r0, r1
+            mov r1, #0xFE
+            and r0, r1
             strb r0, [r7]
+            ldrb r0, [r7, #0x1]
+            mov r1, #0x10
+            orr r0, r1
+            strb r0, [r7, #0x1]
         .endif
         pop {r5}
         mov r8, r5

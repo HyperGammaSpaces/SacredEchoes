@@ -9,12 +9,13 @@
 .equ gChapterData, 0x0202BCF0
 .equ gWorldmapData, 0x03005280
 .equ gWorldmapMUData, 0x03005290
-.equ GetUnitByCharId, 0x0801829c
-.equ CheckEventId, 0x08083da8
-.equ ProcFind, 0x08002e9c
-.equ ProcGoto, 0x08002f24
-.equ WMLoc_GetNextLocID, 0x080bb5e4
-.equ GetWMCenteredCameraPosition, 0x080c0858
+.equ GetUnitByCharId, 0x0801829C
+.equ CheckEventId, 0x08083DA8
+.equ ProcFind, 0x08002E9C
+.equ ProcGoto, 0x08002F24
+.equ WMLoc_GetNextLocID, 0x080BB5E4
+.equ GmMU_SetNode, 0x080BE3C8
+.equ GetWMCenteredCameraPosition, 0x080C0858
 .equ WorldMapProc, 0x08A3D748
 
 .global Act3SetupASMC
@@ -51,8 +52,64 @@ Act3SetupASMC:
 .align
 .ltorg
 
+ParalogueChecker:
+    push {lr}
+    cmp r0, #0x3 @thief shrine
+    beq _GotoRamForest
+    cmp r0, #0x8 @hideout
+    beq _Goto0x7
+    cmp r0, #0xB @cemetery
+    beq _GotoNovisPort
+    cmp r0, #0xF @seabound shrine
+    beq _GotoNovisStrait
+    cmp r0, #0x17 @sylvan shrine
+    beq _GotoNorthernForest
+    cmp r0, #0x20 @dragon shrine
+    beq _GotoValley
+    cmp r0, #0x2C @fear mtn
+    beq _GotoFearMountain
+    cmp r0, #0x31 @secret shrine
+    beq _GotoRigelFalls
+    cmp r0, #0x34 @lost treescape
+    beq _GotoSageHamlet
+    b ParalogueChecker_Exit
+    
+    _GotoRamForest:
+    mov r0, #0x1
+    b ParalogueChecker_Exit
+    _Goto0x7:
+    mov r0, #0x7
+    b ParalogueChecker_Exit
+    _GotoNovisPort:
+    mov r0, #0xC
+    b ParalogueChecker_Exit
+    _GotoNovisStrait:
+    mov r0, #0xE
+    b ParalogueChecker_Exit
+    _GotoNorthernForest:
+    mov r0, #0x16
+    b ParalogueChecker_Exit
+    _GotoValley:
+    mov r0, #0x1F
+    b ParalogueChecker_Exit
+    _GotoFearMountain:
+    mov r0, #0x2B
+    b ParalogueChecker_Exit
+    _GotoRigelFalls:
+    mov r0, #0x30
+    b ParalogueChecker_Exit
+    _GotoSageHamlet:
+    mov r0, #0x25
+    
+    ParalogueChecker_Exit:
+    pop {r1}
+    bx r1
+
+.align
+.ltorg
+
 LordSwitchFunction:
-	push {r4, r5, lr}
+	push {r4-r6, lr}
 	ldr r0, =gChapterData
 	ldrb r1, [r0, #0x1B] @mode byte
 	cmp r1, #0x1
@@ -61,19 +118,36 @@ LordSwitchFunction:
 	eor r1, r2
 	strb r1, [r0, #0x1B] @mode byte
 
-	ldr r0, =gWorldmapMUData
-	ldr r4, [r0]
+	ldr r3, =gWorldmapMUData
+	ldr r4, [r3]
 		@ldr r1, =0xFFFFFFFE
 		@and r4, r1 @unset the "visible" flag
-	mov r1, r0
-	add r1, #0x18 @MU7 offset
-	ldr r5, [r1]
+    lsl r6, r4, #0x10
+    lsr r6, r6, #0x18 @get just the location byte
+	mov r2, r3
+	add r2, #0x18 @MU7 offset
+	ldr r5, [r2]
 		@mov r2, #0x1
 		@orr r5, r2 @set the "visible" flag
-	str r4, [r1]
-	str r5, [r0]
+	str r4, [r2]
+	str r5, [r3]
+    @now check if first lord unit is on a paralogue node
+    mov r0, r6
+    @bl ParalogueChecker
+    cmp r0, r6
+    beq EndFunc
+    
+        @handle doing _A640 stuff if location has changed
+        strb r0, [r3, #0x1]
+        mov r2, r0
+        ldr r0, =WorldMapProc
+        blh ProcFind
+        ldr r0, [r0, #0x54]
+        mov r1, #0x0 @lord unit index
+        blh GmMU_SetNode
+    
 	EndFunc:
-	pop {r4, r5}
+	pop {r4-r6}
 	pop {r0}
 	bx r0
 
@@ -138,14 +212,15 @@ SetNextDestination:
 
 @param r0=current location
 GetDestinationBasedOnStoryFlags:
-	push {r4, r5, lr}
+	push {r4-r6, lr}
+    mov r6, #0x1
 	ldr r0, =gChapterData
 	ldrb r1, [r0, #0x1B] @mode byte
 	cmp r1, #0x3
 	beq CheckCelicaFlags
 		CheckAlmFlags:
 		ldr r4, =AlmDestinationTable
-		ldrb r5, [r4, #0x1]
+		ldsb r5, [r4, r6]
 		AlmFlagLoop:
 		ldrb r0, [r4]
 		cmp r0, #0x0
@@ -153,13 +228,13 @@ GetDestinationBasedOnStoryFlags:
 		blh CheckEventId
 		cmp r0, #0x0
 		beq NextAlmFlag
-			ldrb r5, [r4, #0x1]
+			ldsb r5, [r4, r6]
 			NextAlmFlag:
 			add r4, #0x2
 			b AlmFlagLoop
 	CheckCelicaFlags:
 	ldr r4, =CelicaDestinationTable
-	ldrb r5, [r4, #0x1]
+	ldsb r5, [r4, r6]
 	CelicaFlagLoop:
 	ldrb r0, [r4]
 	cmp r0, #0x0
@@ -167,13 +242,13 @@ GetDestinationBasedOnStoryFlags:
 	blh CheckEventId
 	cmp r0, #0x0
 	beq NextCelicaFlag
-		ldrb r5, [r4, #0x1]
+		ldsb r5, [r4, r6]
 		NextCelicaFlag:
 		add r4, #0x2
 		b CelicaFlagLoop
 	ReturnDestination:
 	mov r0, r5
-	pop {r4, r5}
+	pop {r4-r6}
 	pop {r1}
 	bx r1
 
@@ -358,10 +433,16 @@ SwitchCommandEffect:
 	ldrh r0, [r5]
 	strh r0, [r4, #0x4] @camera y
 	
-	ldr r0, =gChapterData
-	ldrb r0, [r0, #0x1B] @mode byte
-	bl HandlePartySwitch
-	
+    @Switch the party unless it's postgame
+	ldr r1, =gChapterData
+    ldrb r0, [r1, #0x14]
+    mov r2, #0x20 @postgame flag
+    and r2, r0
+    cmp r2, #0x0
+    bne DonePartyStuff
+        ldrb r0, [r1, #0x1B] @mode byte
+        bl HandlePartySwitch
+	DonePartyStuff:
 	add sp, #0x4
 	pop {r4, r5}
 	ldr r0, =WorldMapProc
@@ -376,19 +457,45 @@ SwitchCommandEffect:
 .ltorg
 
 Act3EndSwitch:
-	push {r4, r5, lr}
-	bl LordSwitchFunction
+	push    {r4-r6, lr}
+	bl      LordSwitchFunction
 	@Get next destination ID
-	ldr r0, =gWorldmapMUData
-	ldrb r0, [r0, #0x1] @current base ID
-	bl GetDestinationBasedOnStoryFlags
-	bl SetNextDestination
-	ldr r0, =gChapterData
-	ldrb r0, [r0, #0x1B] @mode byte
-	bl HandlePartySwitch
-	pop {r4, r5}
-	pop {r1}
-	bx r1
+	ldr     r3, =gWorldmapMUData
+	ldrb    r0, [r3, #0x1] @current base ID
+    mov     r6, r0
+    ldr     r4, =WorldMapNodeList
+    lsl     r5, r0, #0x5
+    add     r4, r5
+    mov     r5, #0x1F @paralogue byte
+    add     r4, r5
+    ldrb    r5, [r4] @store paralogue check
+    @now check where to put the lord if on a paralogue
+    bl      ParalogueChecker
+    cmp     r0, r6
+    beq     GetDest
+    
+        @handle doing _A640 stuff if location has changed
+        strb    r0, [r3, #0x1]
+        mov     r2, r0
+        ldr     r0, =WorldMapProc
+        blh     ProcFind
+        ldr     r0, [r0, #0x54]
+        mov     r1, #0x0 @lord unit index
+        blh     GmMU_SetNode
+        mov     r0, r6
+    GetDest:
+	bl      GetDestinationBasedOnStoryFlags
+	bl      SetNextDestination
+    cmp     r5, #0x0 @paralogue check
+    beq     DoneParalogueFix
+        blh     0x080B9D04 @fix control not being returned to player if other lord is on paralogue node
+    DoneParalogueFix:
+	ldr     r0, =gChapterData
+	ldrb    r0, [r0, #0x1B] @mode byte
+	bl      HandlePartySwitch
+	pop     {r4-r6}
+	pop     {r1}
+	bx      r1
 	
 .align
 .ltorg

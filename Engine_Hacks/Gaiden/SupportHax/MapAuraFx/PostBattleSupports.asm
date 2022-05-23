@@ -15,16 +15,24 @@
 .equ GetUnitSupportingUnit, 0x080281F4
 .equ AddSupportPoints, 0x08028290
 .equ gGenericBuffer, 0x02020188
-.equ gSupportAuraDisplayArray, gGenericBuffer
-.equ gSupportIndexArray, 0x02020190
+.equ gSupportAuraDisplayArray, 0x203A5EC
+.equ gSupportIndexArray, gSupportAuraDisplayArray+8
 
 	@ build using lyn
 	@ requires MapAuraFx functions to be visible
+    @ 04000000 = DISPCNT = 0x9F00
+    @ 0400000C = BG2CNT = 0x0E02
+    @ 04000048 = WININ = 0x201F
+    @ 0400004A = WINOUT = 0x203F
+    @ 04000050 = BLDCNT = 0x3044
+    @ 04000052 = BLDALPHA = 0x1004
+    @ 04000054 = BLDY = 0x0
 
 	LockGame   = 0x08015360|1
 	UnlockGame = 0x08015370|1
 
 	StartProc = 0x08002C7C|1
+	StartProcBlocking = 0x08002CE0|1
 	BreakProcLoop = 0x08002E94|1
 
 	m4aSongNumStart = 0x080D01FC|1
@@ -42,16 +50,14 @@
 SupportAuraFXProc:
 	.word 1, SupportAuraFXProc.name
 
-	.word 2, LockGame
-
 	.word 14, 0
 
 	.word 2, SupportAuraFX_OnInit
 	.word 4, SupportAuraFX_OnEnd
 
 	.word 3, SupportAuraFX_OnLoop
-
-	.word 2, UnlockGame
+    
+    .word 14, 0
 
 	.word 0, 0 @ end
 
@@ -199,7 +205,7 @@ PostBattleSupports:
     push    {r14}
 
     @First clear out old buffer data
-    ldr     r2, =gGenericBuffer
+    ldr     r2, =gSupportAuraDisplayArray
 
     @Clear out any old data
     mov     r0, #0x0
@@ -251,7 +257,10 @@ PostBattleSupports.ActorIsBlue:
         mov     r0, r4
         mov     r1, r5
         bl      ApplyBonusFromHeal
-        b       PostBattleSupports.end
+        cmp     r0, #0
+        beq     PostBattleSupports.end
+        mov     r3, r4
+        b       PostBattleSupports.addPlayer
 
 PostBattleSupports.defender:
     mov     r1, #0xB				@allegiance
@@ -305,6 +314,12 @@ PostBattleSupports.addPlayer:
     
         ldr     r3, =StartSupportAuraFX
         bl      BXR3
+        ldr	    r0, =#0x800D07C		@event engine thingy
+        ldr     r1, =Event_WaitForSupportFx
+        mov	    lr, r0
+        mov	    r0, r1				@move stored event ID
+        mov	    r1, #0x01		@0x01 = wait for events
+        .short	0xF800
 
 PostBattleSupports.end:
     pop     {r0}
@@ -463,12 +478,12 @@ MarkForSupportIncrease:
         
         mov     r0, r3					@partner unit (r1 will still have index)
         blh     AddSupportPoints
-        cmp     r0, #0x0				@is support capped?
-        beq     InvalidSupportIndex
         
         mov     r0, r4					@unit
         mov     r1, r5
         blh     AddSupportPoints
+        cmp     r0, #0x0				@is support capped?
+        beq     InvalidSupportIndex
 
             @if supports arent capped, enqueue deploy slot
             mov     r0, r4
@@ -498,46 +513,56 @@ MarkForSupportIncrease:
     
 @args: r0=actor, r1=target
 ApplyBonusFromHeal:
-    push {r4, r5, lr}
+    push {r4-r6, lr}
     mov r4, r0
     mov r5, r1
         mov r0, #0xB
         ldsb r0, [r4, r0]
         blh GetUnitStruct
         mov r4, r0					@r4 = this unit
-        mov r1, #0x0
-        sub r1, #0x1
+        mov r6, #0x0
+        sub r6, #0x1
         ldr r2, [r5, #0x0]
         ldrb r2, [r2, #0x4]			@target's ID
         
         StaffBonus.loop:
-            add r1, #0x1
+            add r6, #0x1
             ldr r0, [r4, #0x0]			@unit's support data
             ldr r0, [r0, #0x2C]
             cmp r0, #0x0
             beq StaffBonus.end
-                add r0, r0, r1
+                add r0, r0, r6
                 ldrb r0, [r0, #0x0]
                 cmp r0, #0x0
                 beq StaffBonus.end
                     cmp r0, r2
                     bne StaffBonus.next
-                        
+                    
                         @ now call support processor
                         mov r0, r4
-                        @r1 has support_index
-                        mov r2, #2
+                        mov r1, r6
+                        mov r2, #0
                         bl MarkForSupportIncrease
+                        mov r5, r0
+                        
+                        @ now double the bonus
+                        mov r0, r4
+                        mov r1, r6
+                        mov r2, #0
+                        bl MarkForSupportIncrease
+                        
+                        mov r0, r5
                         b StaffBonus.end
                         
         StaffBonus.next:
-        cmp r1, #0x7
+        cmp r6, #0x7
         blt StaffBonus.loop
+        mov r0, #0x0
     
     StaffBonus.end:
-    pop {r4, r5}
-    pop {r0}
-    bx r0
+    pop {r4-r6}
+    pop {r1}
+    bx r1
 
     .align
     .ltorg

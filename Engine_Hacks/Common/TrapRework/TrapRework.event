@@ -153,11 +153,12 @@
 	#define RedSigil(x,y) "MapSpriteTrap(RedSigilTrapID,x,y)"
 	#define GreenSigil(x,y) "MapSpriteTrap(GreenSigilTrapID,x,y)"
 	
-	#define FireFloorTrap(x,y) "BYTE FireTrapID x y 0 0 0"
+	#define FireFloorTrap(x,y) "BYTE InstantFireTrapID x y 0 0 0"
 
 	#define DrainFloorTrap(x,y,damage) "BYTE DrainFloorTrapID x y damage 1 1"
 	#define DrainFloorTrap(x,y) "DrainFloorTrap(x,y,2)"
 	
+    #define ArrowTrap(XX,startTurn,repeatTimer) "ARROW XX startTurn repeatTimer"
 	#define BallistaRework(x,y) "MapSpriteTrap(BallistaTrapID,x,y)"
 	
 	//Traps1:

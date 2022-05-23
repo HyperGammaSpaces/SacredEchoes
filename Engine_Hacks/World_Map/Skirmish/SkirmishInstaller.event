@@ -15,7 +15,11 @@
 PUSH
 	ORG $C1710
 	SHORT $1C30 $46C0 $46C0 $46C0 $46C0 //only one skirmish may be active at a time.
-	ORG $C17D6
+	ORG $C1788 //chapter below which monsters cannot spawn
+	BYTE $09
+    ORG $C17AE
+	BYTE $09 //avoid a buffer overflow (prev. 0xA)
+    ORG $C17D6
 	BYTE $09 //avoid a buffer overflow (prev. 0xA)
 	ORG $C17E0
 	SHORT $DBF8 //bne -> blt
@@ -30,6 +34,10 @@ PUSH
 	//Fix fuckiness with skirmish prep screen save names
 	ORG $3412E
 	SHORT $E00A
+    
+    //Make fountains etc. be usable in skirmish mode
+    ORG $840A6
+    SHORT $46C0 $46C0 $46C0 $46C0
 
 	ORG $206948 //Locations
 	SkirmishLocationTable:
@@ -55,8 +63,8 @@ PUSH
 	BYTE $20 //after lost woods
 	BYTE $25 //after nuibaba
 	BYTE $27 //after dragon's maw
-	BYTE $2A //after rigel castle
-	BYTE $2B //after duma tower
+	BYTE $2B //after rigel castle
+	BYTE $2C //after duma tower
 	
 	ORG $2069e3 //Chapters that unlock - Celica
 	CelicaModeSkirmishUnlockPoints:
@@ -69,8 +77,8 @@ PUSH
 	BYTE $20 //after lost woods
 	BYTE $25 //after nuibaba
 	BYTE $27 //after dragon's maw
-	BYTE $2A //after rigel castle
-	BYTE $2B //after duma tower
+	BYTE $2B //after rigel castle
+	BYTE $2C //after duma tower
 	
 	ORG $2069EE //Appearance rates per location
 	AlmModeSkirmishUnlockRates:

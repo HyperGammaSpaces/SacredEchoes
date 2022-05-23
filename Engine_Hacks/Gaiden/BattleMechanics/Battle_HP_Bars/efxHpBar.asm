@@ -67,23 +67,13 @@ EfxHpBar_Proc_Loop: @ 0x080523EC
             lsl  r0, r0, #1
             add  r0, r1
             ldrh r0, [r0]
-            cmp  r0, #1
-            beq  efxHpBar_PlayHurtSound
             cmp  r0, #2
-            beq  efxHpBar_PlayHealSound
-            b    efxHpBar_DoneSoundFx
+            bne  efxHpBar_DoneSoundFx
             
-            efxHpBar_PlayHurtSound:
-            mov  r4, #0x6B @ placeholder
-            b    efxHpBar_PlaySoundFx
-            
-            efxHpBar_PlayHealSound:
-            mov  r4, #0x75
-
-        efxHpBar_PlaySoundFx:
+        efxHpBar_PlayHealSound:
+        mov  r0, #0x75 @ hp restoration sfx
         mov  r1, #0x80
         lsl  r1, r1, #1
-        mov  r0, r4
         blh  SomePlaySound_8071990
         mov  r0, #2
         ldr  r1, [r5, #0x60]
@@ -152,6 +142,8 @@ efxHpBar_DoneIncrement:
         bne  efxHpBar_IncrementFrame
     
 efxHpBar_OnBothDoneUpdating:
+    mov  r0, #0
+    str  r0, [r5, #0x58] @clean this out
 	ldr  r0, [r5, #0x60]
 	blh  GetAisSubjectId
 	ldr  r4, =gBattleHpBarAnimeState

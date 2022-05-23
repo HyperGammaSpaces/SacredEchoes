@@ -4,6 +4,11 @@
 // Utility providing an interface for displaying cool aura on units
 // hack by Stan.
 
+Event_WaitForSupportFx:
+    STAL 0x24
+    NoFade
+    ENDA
+
 #include "Src/MapAuraFxUpdate.lyn.event"
 #include "PostBattleSupports.lyn.event"
 

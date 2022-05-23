@@ -140,18 +140,24 @@ StoreActorParams:
     mov r1, #0x4E
     ldsh r1, [r6, r1] @ HpBarProc.actorStartHp
     cmp r1, r0
-    beq StoreActorIncrement
+    beq DontUpdateActor
         
         Actor_Heal:
         mov  r2, #1
         cmp  r1, r0
         bge  Actor_Hurt
+        b    StoreActorIncrement
+        
             DontUpdateActor:
+            mov  r2, #0
+            ldr  r1, [r6]
+            ldr  r0, =gProc_NewEfxHpBar
+            cmp  r1, r0
+            bne  StoreActorIncrement
             mov  r1, #1
             mov  r0, #0x5A
             add  r0, r6
             strh r1, [r0] @ HpBarProc.stopTargetUpdateFlag
-            mov  r2, #0
             b    StoreActorIncrement
         
         Actor_Hurt:

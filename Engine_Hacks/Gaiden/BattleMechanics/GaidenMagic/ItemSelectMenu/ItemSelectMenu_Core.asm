@@ -229,7 +229,8 @@ UpdateMenuItemPanel_TopRow:
     ldrb    r0, [r2, #0x2]
     cmp     r0, #0x0
     beq     MIPStats_NotMagic
-        ldrh    r0, [r2]
+        mov     r0, r8
+        ldrh    r1, [r2]
         bl      SpellCostGetter
         mov     r3, r0
         b       MIPCost_Draw

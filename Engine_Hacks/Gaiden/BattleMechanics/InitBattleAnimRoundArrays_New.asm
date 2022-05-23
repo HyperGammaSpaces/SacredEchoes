@@ -441,6 +441,24 @@ CheckDevilEffect:
         bne  DevilEffect_RTL
         
     DevilEffect_LTR:
+        @copy defender's current hp to round
+            mov  r1, r10 @
+            lsl  r0, r1, #1
+            add  r0, #1
+            bl   GetSomeBattleAnimHpValue
+            mov  r2, r0
+            mov  r0, r10 @
+            add  r0, #1
+            lsl  r0, r0, #0x10
+            lsr  r0, r0, #0x10
+            mov  r10, r0
+            ldr  r3, =gBattleHpUpdateArray
+            lsl  r0, r0, #1
+            add  r0, #1
+            lsl  r0, r0, #1
+            add  r0, r0, r3
+            strh r2, [r0] @ store right unit's HP to start of current round
+        @now update attacker
         mov  r3, r9
         lsl  r0, r3, #1
         bl   GetSomeBattleAnimHpValue
@@ -462,7 +480,6 @@ CheckDevilEffect:
         ldr  r1, =gBattleHpUpdateArray
         add  r0, r0, r1
         strh r2, [r0]
-        @TODO: copy defender's current hp to next round
         ldrh r0, [r5]
         ldr  r1, =0xFFFF8000
         orr  r0, r1
@@ -470,15 +487,30 @@ CheckDevilEffect:
         b    IncrementRoundIndex
 
     DevilEffect_RTL:
+        @copy defender's current hp to round
+            mov  r1, r9
+            lsl  r0, r1, #1
+            bl   GetSomeBattleAnimHpValue
+            mov  r2, r0
+            mov  r0, r9
+            add  r0, #1
+            lsl  r0, r0, #0x10
+            lsr  r0, r0, #0x10
+            mov  r9, r0
+            ldr  r3, =gBattleHpUpdateArray
+            lsl  r0, r0, #2
+            add  r0, r0, r3
+            strh r2, [r0] @store left unit's current hp to start of current round
+        @now update attacker
         mov  r3, r10
         lsl  r0, r3, #1
         add  r0, #1
-        bl   GetSomeBattleAnimHpValue
+        bl   GetSomeBattleAnimHpValue @attacker's hp
         mov  r1, #4
-        ldsh r1, [r7, r1]
+        ldsh r1, [r7, r1] @damage to self
         sub  r0, r0, r1
         lsl  r0, r0, #0x10
-        lsr  r2, r0, #0x10
+        lsr  r2, r0, #0x10 @new attacker hp
         cmp  r0, #0
         bge  DevilEffect_RTL_UpdateHP
             mov  r2, #0
@@ -494,11 +526,10 @@ CheckDevilEffect:
         ldr  r1, =gBattleHpUpdateArray
         add  r0, r0, r1
         strh r2, [r0]
-        @TODO: copy defender's current hp to next round
-        ldrh r0, [r5]
+        ldrh r0, [r4]
         ldr  r1, =0xFFFF8000
         orr  r0, r1
-        strh r0, [r5]
+        strh r0, [r4]
         b    IncrementRoundIndex
     
 .align

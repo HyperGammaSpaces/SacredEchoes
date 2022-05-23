@@ -18,11 +18,17 @@ EfxHpBarSpellCost1_Loop: @ 0x080526C8
         bne  efxSpellCost1_DoneIncrement
             mov  r1, #0
             strh r1, [r5, #0x2C]
+            mov  r4, #1
             
             @ increment current hp bar value
             mov  r1, #0x4A
             ldsh r1, [r5, r1]
             ldrh r0, [r5, #0x30]
+            cmp  r1, #0
+            bne  IncrementBar1
+                mov  r4, #0x1
+                neg  r4, r4
+            IncrementBar1:
             add  r0, r0, r1
             strh r0, [r5, #0x30]
             
@@ -45,8 +51,10 @@ EfxHpBarSpellCost1_Loop: @ 0x080526C8
             lsl  r0, r0, #1
             add  r0, r1
             ldrh r0, [r0]
-            cmp  r0, #1
-            beq  SpellCost1_PlayHurtSound
+            cmp  r4, #0
+            ble  SpellCost1_DoneSoundFx
+            @cmp  r0, #1
+            @beq  SpellCost1_PlayHurtSound
             cmp  r0, #2
             beq  SpellCost1_PlayHealSound
             b    SpellCost1_DoneSoundFx

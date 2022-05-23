@@ -28,6 +28,11 @@
 .global TrapRework_ExecTrapBranch
 .type TrapRework_ExecTrapBranch, %function
 
+.global TrapRework_AddDamageTargetsForDirectionalTrap
+.global TrapRework_AddDisplayTargetsForDirectionalTrap
+.type TrapRework_AddDamageTargetsForDirectionalTrap, %function
+.type TrapRework_AddDisplayTargetsForDirectionalTrap, %function
+
 
 .macro blh to, reg=r3
     ldr \reg, =\to
@@ -47,8 +52,10 @@
 .equ Init_ReturnPoint,0x8037901
 .equ GetTrap,0x802EB8C
 .equ MapAddInRange,0x801AABC
+.equ AddTarget,0x804f8bc 		@r0 = x coord, r1 = y coord, r2 = unit ID, r3 = trap type
 .equ gTrapArray,0x203A614
 .equ gMapTerrain,0x202E4DC
+.equ gMapUnit,0x202E4D8
 
 
 
@@ -355,3 +362,92 @@ TrapRework_ExecTrapBranch:
 
 .align
 .ltorg
+
+@params r0 = x origin
+@params r1 = y origin
+@params r2 = 
+@params r3 = direction
+TrapRework_AddDamageTargetsForDirectionalTrap:
+@func at 2E754
+    mov r0, r7
+    mov r7, r10
+    push {r7}
+    mov r10, r0
+    DirectionalTrap_Loop:
+    add r5, r9
+    add r4, r10
+    @get terrain id at position
+    ldr r0, =gMapTerrain
+    ldr r1, [r0]
+    lsl r0, r4, #2
+    add r0, r1
+    ldr r0, [r0]
+    add r1, r0, r5
+    ldrb r0, [r1]
+    cmp r0, #0x1A @wall terrain
+    beq DirectionalTrap_Exit
+    @get unit at position
+    ldr r0, =gMapUnit
+    ldr r1, [r0]
+    lsl r0, r4, #2
+    add r0, r1
+    ldr r0, [r0]
+    add r1, r0, r5
+    ldrb r0, [r1]
+    cmp r0, #0
+    beq DirectionalTrap_Increment
+        mov r2, r0
+        mov r0, r5
+        mov r1, r4
+        mov r3, r8
+        blh AddTarget, r7
+    DirectionalTrap_Increment:
+    sub r6, #1
+    cmp r6, #0
+    bge DirectionalTrap_Loop
+DirectionalTrap_Exit:
+    pop {r3}
+    mov r10, r3
+    ldr r3, =0x0802E7C5
+    bx r3
+
+@params r0 = x origin
+@params r1 = y origin
+@params r2 = direction
+TrapRework_AddDisplayTargetsForDirectionalTrap:
+@func at 2E7D4
+    mov r2, #2
+    mov r5, #1
+    DirectionalDisplay_Loop:
+    add r3, r7
+    add r6, r4
+    ldr r0, =gMapTerrain
+    ldr r1, [r0]
+    lsl r0, r6, #2
+    add r1, r0, r1
+    ldr r0, [r1]
+    add r0, r3
+    ldrb r0, [r0]
+    cmp r0, #0x1A @wall terrain
+    beq DirectionalDisplay_Exit
+    @get unit at position
+    ldr r0, =gMapUnit
+    ldr r1, [r0]
+    lsl r0, r6, #2
+    add r1, r0, r1
+    ldr r0, [r1]
+    add r0, r3
+    ldrb r0, [r0]
+    cmp r0, #0
+    bne DirectionalDisplay_ReturnFalse
+    sub r2, #1
+    cmp r2, #0
+    bge DirectionalDisplay_Loop
+DirectionalDisplay_ReturnTrue:
+    mov r5, #0
+    b DirectionalDisplay_Exit
+DirectionalDisplay_ReturnFalse:
+    mov r5, #1
+DirectionalDisplay_Exit:
+    ldr r3, =0x0802E82F
+    bx r3

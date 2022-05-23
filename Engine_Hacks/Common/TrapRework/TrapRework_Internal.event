@@ -51,6 +51,14 @@
 		SHORT $D001 $E05C
 		ORG $2E8FA
 		SHORT $46C0
+        
+        //make directional traps not go thru walls
+        ORG $2E79C
+        jumpToHack(TrapRework_AddDamageTargetsForDirectionalTrap)
+        ORG $2E80C
+        //jump with r0
+        SHORT $4800 $4700
+        POIN (TrapRework_AddDisplayTargetsForDirectionalTrap|0x1)
 		
 		//36364
 		ORG $36382
@@ -92,6 +100,9 @@
 		BYTE 1
 		ORG $36446
 		BYTE 1
+        
+        ORG $37624
+        BYTE $0 //stop rogues disabling fire floors
 		
 		ORG $3766E
 		SHORT $46C0
