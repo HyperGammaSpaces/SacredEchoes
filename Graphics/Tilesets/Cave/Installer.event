@@ -3,27 +3,32 @@
 
 ALIGN 4
 CaveTiles:
-#incbin "Cave_comp.dmp"
+#incbin "CaveConfig.dmp"
+
+ALIGN 4
+SwampyCaveTiles:
+#incbin "SwampyCaveConfig.dmp"
 
 ALIGN 4
 CaveObjects:
-#incbin "Cave.dmp"
+#incbin "Cave_Purple.img.bin"
 
 ALIGN 4
-CavePalette1:
-#incbin "CavePalette.pal.bin"
-
-ALIGN 4
-CavePalette2:
-#incbin "CavePalette2.pal.bin"
+SeaboundShrinePalette:
+#incbin "Cave_Seabound.pal.bin"
 
 ALIGN 4
 DragonShrinePalette:
-#incbin "DragonShrine.pal.bin"
+#incbin "Cave_Purple.pal.bin"
+
+ALIGN 4
+FinalCavePalette:
+#incbin "Cave_Final.pal.bin"
 
 EventPointerTable(plCaveObj, CaveObjects)
-EventPointerTable(plCavePal, CavePalette1)
+EventPointerTable(plCavePal, SeaboundShrinePalette)
 EventPointerTable(plCaveConf, CaveTiles)
+EventPointerTable(plSwampyCaveConf, SwampyCaveTiles)
 EventPointerTable(plCaveAnim, CaveAnimation)
 EventPointerTable(plDragonShrinePalette, DragonShrinePalette)
-//EventPointerTable(0x92, CavePalette3)
+EventPointerTable(plFinalMapPalette, FinalCavePalette)

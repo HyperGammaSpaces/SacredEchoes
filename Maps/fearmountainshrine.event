@@ -8,10 +8,50 @@ Map:
 #incbin "fearmountainshrine_data.dmp"
 
 MapChanges:
-TileMap(0,11,8,1,1,Map_Change_0)
+TileMap(0,1,14,1,1,Map_Change_0)
+TileMap(1,15,3,1,1,Map_Change_1)
+TileMap(2,19,3,1,1,Map_Change_2)
+TileMap(3,5,2,1,1,Map_Change_3)
+TileMap(4,5,17,1,1,Map_Change_4)
+TileMap(5,7,17,1,1,Map_Change_5)
+TileMap(6,9,14,1,1,Map_Change_6)
+TileMap(7,12,14,1,1,Map_Change_7)
+TileMap(8,8,20,2,1,Map_Change_8)
 TileMapEnd
 
 Map_Change_0:
 SHORT 0x4 
+ALIGN 4
+
+Map_Change_1:
+SHORT 0x4 
+ALIGN 4
+
+Map_Change_2:
+SHORT 0x4 
+ALIGN 4
+
+Map_Change_3:
+SHORT 0x4ac 
+ALIGN 4
+
+Map_Change_4:
+SHORT 0x4ac 
+ALIGN 4
+
+Map_Change_5:
+SHORT 0x4ac 
+ALIGN 4
+
+Map_Change_6:
+SHORT 0x288 
+ALIGN 4
+
+Map_Change_7:
+SHORT 0x28c 
+ALIGN 4
+
+Map_Change_8:
+SHORT 0x190 0x214 
 ALIGN 4
 
