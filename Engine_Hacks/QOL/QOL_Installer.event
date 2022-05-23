@@ -88,6 +88,97 @@ SHORT $06 $09 $09 $09 $09 $09 $09 $09 $09 $09 $09 $34 $35
 SHORT $61 $62 $03 $03 $03 $31 $32 $33 $03 $03 $03 $04 $05
 */
 
+//Update options menu to allow more displayed options
+PUSH
+    ORG $B1A32 
+    BYTE 0xE //NumberOfOptionsToDisplay; was 0xD
+    
+    ORG $B1704
+    SHORT $1852
+    ORG $B19DA
+    SHORT $6830 $8DC1 $39E0
+    ORG $B1A2E
+    SHORT $4652 $864A $200E $8688 $20E0 $854A $858A $85C8
+    ORG $B1BE2
+    BYTE 0x1
+    ORG $B1BE6
+    BYTE 0x1
+    ORG $B1DAE
+    BYTE 0x1
+    ORG $B2190
+    SHORT $1C45
+    ORG $B21C6
+    BYTE 0x1
+    ORG $B21E6
+    BYTE 0xA2 //move bottom text down to compensate
+    ORG $B2380
+    BYTE 0x20
+    
+    //move game speed
+    ORG $B1E18
+    POIN $B1F04
+    ORG $B1F06
+    BYTE $40
+    ORG $B1F98
+    POIN $B20FC
+    ORG $B20FE
+    BYTE $40
+
+    ORG $B16F8
+    POIN GameOptionsOrderList
+    ORG $B1770
+    POIN GameOptionsOrderList
+    ORG $B17DC
+    POIN GameOptionsOrderList
+    ORG $B1848
+    POIN GameOptionsOrderList
+    ORG $B1910
+    POIN GameOptionsOrderList
+    ORG $B19F0
+    POIN GameOptionsOrderList
+    ORG $B1CD8
+    POIN GameOptionsOrderList
+    ORG $B1D68
+    POIN GameOptionsOrderList
+    ORG $B22E0
+    POIN GameOptionsOrderList
+    ORG $B2408
+    POIN GameOptionsOrderList
+
+POP
+
+#define OptID_Animation 0x0
+#define OptID_Terrain 0x1
+#define OptID_MMB 0x2
+#define OptID_Autocursor 0x3
+#define OptID_TextSpeed 0x4
+#define OptID_GameSpeed 0x5
+#define OptID_Music 0x6
+#define OptID_SoundFX 0x7
+#define OptID_WindowColor 0x8
+#define OptID_Unused1 0x9 //cpu level?
+#define OptID_BattlePreview 0xA
+#define OptID_SubtitleHelp 0xB
+#define OptID_HPBars OptID_SubtitleHelp
+#define OptID_Autoend 0xC
+#define OptID_Unused2 0xD //unit colors
+#define OptID_Objective 0xE
+//controller 0xF and rank display 0x10
+
+#ifndef Text_Options_On
+    #define Text_Options_On 0xBD
+    #define Text_Options_Off 0xBE
+#endif
+
+#define GameOptionsTable 0xA2E99C
+#define GameOptionsEntry(EntryID, MainText, Selection1HelpText, Selection1Text, Pos_Sel1, Selection2HelpText, Selection2Text, Pos_Sel2, IconID)"PUSH; ORG GameOptionsTable+(44*EntryID); WORD MainText; SHORT Selection1HelpText Selection1Text; BYTE Pos_Sel1 0 0 0; SHORT Selection2HelpText Selection2Text; BYTE Pos_Sel2 0 0 0; SHORT 0 0 190 0 0 0 189 0; WORD IconID; POIN 0x80B1D14|1; POP"
+
+ALIGN 4
+GameOptionsOrderList:
+BYTE OptID_Animation OptID_Unused2 OptID_GameSpeed OptID_TextSpeed OptID_Terrain OptID_Objective OptID_HPBars OptID_MMB OptID_BattlePreview OptID_Autocursor OptID_Autoend OptID_Music OptID_SoundFX OptID_WindowColor
+BYTE $0 $0 //term
+ALIGN 4
+
 
 //Talk and Support don't end your turn
 ALIGN 4

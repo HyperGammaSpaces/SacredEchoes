@@ -2,6 +2,8 @@
 .thumb
 
 .include "../CommonDefinitions.inc"
+.equ DrawTilemap, 0x080D74A1
+.equ GetPaletteByAllegiance, 0x0808C2CD
 
 MMBDrawTilemap:
 
@@ -23,8 +25,8 @@ MMBDrawTilemap:
 
 	ldr		r0, =WindowBufferBG1
 	ldr		r1, MMBTilemap
-	mov		r2, #0xC0 @ 0x3000
-	lsl		r2, r2, #0x06
+	ldr		r2, MMBTilemapPaletteIndex
+	lsl		r2, r2, #0x0C
 	ldr		r3, =DrawTilemap
 	mov		lr, r3
 	bllr

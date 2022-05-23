@@ -3,13 +3,13 @@
 
 PUSH
 
-	ORG 0x00A0190C
+	ORG $A0190C
 	UI1ProcCode:
 		PROC_SET_NAME(MMB2018String)
 		PROC_YIELD
 		PROC_CALL_ROUTINE(MMBInit)
 		PROC_LABEL(0)
-		PROC_WHILE_EXISTS(0x0859A48) // Halt if GENS
+		PROC_WHILE_EXISTS(0x0859A548) // Halt if GENS
 		PROC_LOOP_ROUTINE(MMBSetup)
 		PROC_LOOP_ROUTINE(MMBExtendWindow)
 		PROC_LABEL(2)
@@ -27,6 +27,21 @@ PUSH
 	MMB2018String:
 		String(MMB2018) ; BYTE 0
 
-	PROTECT 0x00A0190C CURRENTOFFSET
+	PROTECT $A0190C CURRENTOFFSET
+    
+    ORG $8D718
+    POIN PlayerPhaseUIPositionTable
+    
+    /*
+    ORG $A019C4
+    SideWindowMaker:
+        PROC_WHILE_ROUTINE($1DE18|1) //DoesBgCrossfadeExist
+        PROC_WHILE_ROUTINE($15380|1) //GetGameLock
+        PROC_CALL_ROUTINE($8CFC4|1)
+        PROC_END
+    */
 
 POP
+
+PlayerPhaseUIPositionTable:
+BYTE $01 $03 $04 $05 $06 $03 $01 $00

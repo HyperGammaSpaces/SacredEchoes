@@ -2,6 +2,10 @@
 // hack by circleseverywhere and 7743, menu by hypergammaspaces
 // optimizations and improvements by 7743
 
+#define OptID_CasualMode OptID_Unused2
+//A2EBD8
+GameOptionsEntry(OptID_CasualMode, Text_Options_CasualMode, Text_Options_CasualMode_Off_Desc, Text_Options_CasualMode_Off, 112, Text_Options_CasualMode_On_Desc, Text_Options_CasualMode_On, 165, 0x12)
+
   PUSH
 	//Actually unkill the unit
     ORG $18418
@@ -18,6 +22,17 @@
 	//New difficulty select proc
 	ORG $AC3F0
 	POIN DifficultySelectProc
+    
+    //Setup options menu
+        
+    //Option 0xD getter
+    ORG $B1E38
+    POIN $B1F50
+    
+    //Option 0xD setter
+    ORG $B1FB8
+    POIN $B2168
+
   POP
   
 //Include ASMC for Check CasualMode from events

@@ -52,8 +52,13 @@ PUSH
 	POIN MapStatusScreenGFX
 	ORG $a98dec
 	#incbin "MapStatusScreenPalette.pal.bin"
+    ORG $B1C7C
+    POIN OptionIcons
 
 POP
+
+OptionIcons:
+#incbin "OptionsIcons_08A0754C.img.bin"
 
 ALIGN 4
 GameOverTSA:

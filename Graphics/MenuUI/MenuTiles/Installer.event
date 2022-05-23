@@ -16,12 +16,67 @@ PUSH
 	POIN MenuTilesGraphics
 	POIN MenuTilesGraphics
 	POIN MenuTilesGraphics
-	
-	ORG $9a8d8
+    
+    ORG $95E38
+    POIN MenuTilesPalette+0x20
+    ORG $95E3C
+    POIN PrepScreenMainTSA
+    ORG $95EB8
+    POIN PrepScreenMainTSA
+    ORG $9617C
+    POIN PrepScreenMainTSA
+    
+	ORG $9A8D8
 	POIN MenuTilesExtraForPrepScreen
 
 	ORG $9C7FC
 	POIN MenuTilesExtraForItemUse
+    
+    //Gold display in shops
+    ORG $B4E70
+    POIN GoldDisplayBoxGfx
+    ORG $B4E80
+    POIN MenuTilesPalette
+
+    //Give/Take menu popup thingy
+	ORG $98CB4
+	POIN SupplyMenuBox
+    ORG $98CBC
+    POIN MenuTilesPalette+0x60
+    
+    ORG $A173EC
+    #incbin "AllySelectBox1.tsa.bin"
+    
+    ORG $D7F92
+    #incbin "AllySelectBox2.tsa.bin"
+    
+    ORG $9AD934 //196 bytes compressed
+    #incbin "shopmini.tsa.bin"
+    
+    ORG $A079B4 //228 bytes compressed
+    #incbin "configmenu.tsa.bin"
+    
+    ORG $A1B7C8 //238 bytes compressed
+    #incbin "prepscreenunit.tsa.bin"
+    
+    ORG $A1BCC0 //64 bytes compressed
+    #incbin "supplyminibox.tsa.bin"
+    
+    ORG $A1C8B4 //0x4b4 bytes raw
+    #incbin "unitlist.tsa.bin"
+    
+    ORG $A2C4C8 //224 bytes uncomp
+    #incbin "soundroom_controls.tsa.bin"
+    ORG $A2E4C4 //293 bytes compressed
+    #incbin "chapterstatus.tsa.bin"
+    ORG $A98BF8 //258 bytes compressed
+    #incbin "wmstatus.tsa.bin"
+    ORG $A98EAC //132 bytes uncomp
+    #incbin "wm_location_label.tsa.bin"
+    ORG $A98F30 //236 bytes uncomp
+    #incbin "wm_location_current.tsa.bin"
+    ORG $B176CC //242 bytes compressed
+    #incbin "guidemenu.tsa.bin"
 POP
 
 //replaces 85B6BB4
@@ -31,19 +86,47 @@ POIN MenuTilesPalette      //replaces 8a1738c
 POIN MenuTilesPalette+0x20
 POIN MenuTilesPalette+0x40
 POIN MenuTilesPalette+0x60
+POIN MenuTilesPalette+0x80
+POIN MenuTilesPalette+0xA0
+POIN MenuTilesPalette+0xC0
+POIN MenuTilesPalette+0xE0
 
 ALIGN 4
-MenuTilesExtraForItemUse:
-#incbin "A1BAB8.dmp"
+MenuTilesExtraForItemUse: //A1BAB8
+#incbin "MenuTilesPrepScreenItems.img.bin"
 
 ALIGN 4
-MenuTilesExtraForPrepScreen:
-#incbin "A1B730-edited.dmp"
+MenuTilesExtraForPrepScreen: //A1B730
+#incbin "MenuTilesPrepScreen.img.bin"
 
 ALIGN 4
-MenuTilesGraphics:
-#incbin "menutiles-5b65c0-edited.dmp"
+GoldDisplayBoxGfx: //9ad9f8
+#incbin "GoldDisplayBox.img.bin"
+
+ALIGN 4
+SupplyMenuBox: //A1D7DC
+#incbin "A1D7DC.img.bin"
+
+ALIGN 4
+MenuTilesGraphics: //5B65C0
+#incbin "MenuTilesMaster.img.bin"
 
 ALIGN 4
 MenuTilesPalette:
-#incbin "menutiles-palette-master.pal.bin"
+#incbin "MenuTilesMaster.pal.bin"
+
+//edited TSA:
+//9AD934 shop mini (compressed header)
+//A1B9EC supply menu main (compressed header)
+//A1BCC0 supply menu mini (compressed header)
+//A1C8B4 unit list menu
+//A2C4C8 sound room controls
+//A2C5A8 sound room song list
+//A2E4C4 chapter status TSA (compressed header)
+//A98EAC world map MMB 1
+//A98F30 world map MMB 2
+//A98BF8 wm status menu
+
+//A1B698, 152 bytes compressed
+PrepScreenMainTSA:
+#incbin "prepscreenmain.tsa.bin"

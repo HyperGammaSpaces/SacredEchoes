@@ -15,16 +15,8 @@ PUSH
 	POIN SupplyIconsForegroundPal
 	ORG $9D2F0
 	POIN SupplyIconsBackgroundPal
-
-	//Give/Take menu popup thingy
-	ORG $98CB4
-	POIN SupplyMenuBox
 	
 POP
-
-ALIGN 4
-SupplyMenuBox:
-#incbin "A1D7DC.dmp"
 
 ALIGN 4
 SupplyIcons1:
