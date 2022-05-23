@@ -14,8 +14,6 @@
 	
 	ALIGN 4
     
-    /*TODO: there's some hardcoding for promo items at 1D1E8*/
-	
 	PromoLordCheck:
 	#include "asm/PromoCheck_FlagSkip.lyn.event"
 	BYTE 0x0 0x20 0x0 0x0	//character/class ability bits to compare against
@@ -30,6 +28,16 @@
 	POIN PromoEffectList
 	
 	PUSH
+    
+        ORG $1D1E8
+        //check if promo item effect
+        SHORT $46C0     //nop
+		SHORT 0x1C10	//mov r0, r2
+		callHack_r3(PrepPromoEffectCheck)
+		SHORT 0x2800	//cmp r0, 0x0
+		SHORT (BLRange($1D214) & 0xFF) | 0xD000 	//beq
+		B($1D230)
+    
 		ORG $291A8
 		#include "asm/PromoItemUsability.lyn.event"
 		PROTECT $291A8 $2922C

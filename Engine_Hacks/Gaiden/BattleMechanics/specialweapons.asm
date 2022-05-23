@@ -62,27 +62,7 @@ NOT_MAGIC_WEAP:
 	mov		r0, r4				@ load attacker
 	add		r0, #0x4A			@ equipped item pre-battle
 	ldrb	r0, [r0, #0x0]		@ load byte
-	cmp		r0, #0x10			@ ladyblade
-	bne 	CHECK_WEAP_EFF
-	
-DO_LADYBLADE:
-	@check if female
-	ldr		r1, [r4]
-	ldr		r1, [r1, #0x28]
-	mov 	r2, #0x40
-	lsl		r2, r2, #0x8
-	and		r2, r1
-	cmp		r2, #0x0
-	beq		FINISH_SPECIALWEAPS
-	@get item might
-	mov 	r2, r4
-	add		r2, #0x5A			@ Attacker.Attack
-	ldrh	r1, [r2]
-	bl		GetItemMight
-	add		r1, r0
-	strh	r0, [r2]
-	b		FINISH_SPECIALWEAPS
-	
+    
 CHECK_WEAP_EFF:
 	bl		GetItemWeaponEffect	@
 	cmp		r0, #0x3			@ is eclipse?

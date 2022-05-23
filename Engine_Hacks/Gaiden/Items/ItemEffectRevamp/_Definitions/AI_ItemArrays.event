@@ -22,5 +22,6 @@ AI_StaffArray:
     BYTE IER_FX_Freeze 0 0 0; POIN $404E0+1
     BYTE IER_FX_Invoke 0 0 0; POIN Invoke_AIC_Targeting|1
     //BYTE IER_FX_Anew 0 0 0; POIN $408DC+1 //make wrapper for stan's DanceAI
+    BYTE IER_FX_Upheaval 0 0 0; POIN $404E0+1 //TODO: see if need custom routine
     WORD 0 0 //term
     

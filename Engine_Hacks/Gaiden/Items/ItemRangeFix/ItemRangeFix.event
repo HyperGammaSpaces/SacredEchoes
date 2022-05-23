@@ -235,11 +235,13 @@
 	gotoHackWithR3(All_Weapons_One_Square)
 	B($23A36)
     
-    ORG $23A14 //Ballista range display
+    /*
+    ORG $23A18 //Ballista range display
 	SHORT $6820 $1C29 	//get unit pointer and item id
 	callHack_r3(GetItemRangeM)
 	SHORT $1C03 $1C0C
 	B($23A2C)
+    */
 	
 	ORG $25756 //Ballista target selection
 	SHORT $480C $6800 	//get unit pointer

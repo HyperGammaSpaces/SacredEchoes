@@ -9,11 +9,30 @@
 #include "eastdlib.event"
 #include "_UnitMenuDefs.event"
 
+#define pPlayerActionRoutineTable 0x1D0CC
+#define adPlayerPhaseStandardAction "POIN $1D1C8" //anything over 0x22 uses this.
+#define adPlayerPhaseBackout "POIN $1D158" //uses partialActionTaken to see if you can go back to the unit menu freely
+//the rest of these store to partialActionTaken to let you canto.
+#define adPlayerPhaseGiveTake "POIN $1D19C"
+#define adPlayerPhase1B "POIN $1D17E"
+#define adPlayerPhase1C "POIN $1D18C"
+#define adPlayerPhasePostTrade "POIN $1D1B8"
+#define adPlayerPhaseBallista "POIN $1D1AC"
+
+#define NoActionRoutine "WORD 0"
+#define ActionRoutine(apRoutine) "POIN apRoutine"
+#define ActionRoutine(apRoutine, abForcedYeild) "WORD (0x08000000 | apRoutine | (abForcedYeild << 28))"
+
+#define SetUnitAction(aActionId, adActionRoutine) "PUSH; ORG (pActionRoutineTable + 4*aActionId); adActionRoutine; POP"
+#define SetUnitActionPlayerPhaseHandler(aActionId, adActionRoutine) "PUSH; ORG (pPlayerActionRoutineTable + 4*aActionId); adActionRoutine; POP"
+
 PUSH
 	ORG 0x3200C	
 	replaceWithHack(prNewActionApplication)
-	ORG 0x59d1f8
+	ORG 0x59D1F8
 	POIN pUnitMenuCommandDefs
+    
+    //at 1D0CC there's a similar table for player phase PrepareAction. 
 POP
 
 ALIGN 4
@@ -28,12 +47,6 @@ prWaitAction:
 #ifndef ACTION_TABLE_SIZE
 	#define ACTION_TABLE_SIZE 0x30
 #endif
-
-#define NoActionRoutine "WORD 0"
-#define ActionRoutine(apRoutine) "POIN apRoutine"
-#define ActionRoutine(apRoutine, abForcedYeild) "WORD (0x08000000 | apRoutine | (abForcedYeild << 28))"
-
-#define SetUnitAction(aActionId, adActionRoutine) "PUSH; ORG (pActionRoutineTable + 4*aActionId); adActionRoutine; POP"
 
 pActionRoutineTable:
 	NoActionRoutine               // 0x00 ?

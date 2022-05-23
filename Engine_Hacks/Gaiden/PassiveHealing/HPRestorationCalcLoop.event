@@ -3,61 +3,62 @@
 #define HP_RESTORATION_CALC_LOOP_INSTALLED
 
 PUSH
-	ORG $1A258
-	jumpToHack(HPRestorationLoopFunc)
-	
-	ORG $25954
-	SHORT $2800 $DB08 $1C28
-	BL($19150) //GetCurrentHP
-	SHORT $1C04 $1C28
-	BL($19190) //GetMaxHP
-	SHORT $4284 $D011
-	SHORT $1C30
-	BL($1A258)
-	SHORT $46C0 $46C0 $46C0 $46C0 $46C0 $46C0
-	
-	ORG $259C6
-	SHORT $2300 $46C0 //make "heal status" have 0
-	ORG $35F1C
-	SHORT $D104
-	ORG $35F8C
-	SHORT $D105
-	
-	//fix for popups re-triggering on map anims
-	ORG $35E6C
-	jumpToHack(ClearTargetUnitBeforeMapHeal)
-	
-	ORG $35F34
-	BL(NewMapHealAnim)
-	
-	ORG $E5B30
-	NewMapHealAnim:
-	SHORT $B510 $2900 $DA03 $4249
-	BL($3584C) //poison damage anim
-	SHORT $E001
-	BL($35804)
-	SHORT $BC10 $BC01 $4700
-	
-	/*
-	NewMapHealAnim:
-		@r1 = heal amount. if positive, do vanilla behavior. if negative, do poison anim
-		push {r4, lr}
-		
-		cmp r1, #0x0
-		bge DoHealAnim
-		
-			neg  r1, r1
-			blh  0x0803584C @DoPoisonDamageAnim
-			b    DoneHealAnim
-			
-		DoHealAnim:
-			blh  0x08035804 @DoMapHealAnim
-		
-		DoneHealAnim:
-		pop  {r4}
-		pop  {r0}
-		bx   r0
-	*/
+    ORG $1A258
+    jumpToHack(HPRestorationLoopFunc)
+    
+    ORG $25954
+    SHORT $2800 $DB08 $1C28
+    BL($19150) //GetCurrentHP
+    SHORT $1C04 $1C28
+    BL($19190) //GetMaxHP
+    SHORT $4284 $D011
+    SHORT $1C30
+    BL($1A258)
+    SHORT $46C0 $46C0 $46C0 $46C0 $46C0 $46C0
+    
+    ORG $259C6
+    SHORT $2300 $46C0 //make "heal status" have 0
+    ORG $35F1C
+    SHORT $D104
+    ORG $35F8C
+    SHORT $D105
+    
+    //fix for popups re-triggering on map anims
+    ORG $35E6C
+    jumpToHack(ClearTargetUnitBeforeMapHeal)
+    
+    ORG $35F34
+    BL(NewMapHealAnim)
+    
+    ORG $E5B3C
+    NewMapHealAnim:
+    SHORT $B510 $2900 $DA03 $4249
+    BL($3584C) //poison damage anim
+    SHORT $E001
+    BL($35804)
+    SHORT $BC10 $BC01 $4700
+    PROTECT $E5B3C CURRENTOFFSET
+    
+    /*
+    NewMapHealAnim:
+        @r1 = heal amount. if positive, do vanilla behavior. if negative, do poison anim
+        push {r4, lr}
+        
+        cmp r1, #0x0
+        bge DoHealAnim
+        
+            neg  r1, r1
+            blh  0x0803584C @DoPoisonDamageAnim
+            b    DoneHealAnim
+            
+        DoHealAnim:
+            blh  0x08035804 @DoMapHealAnim
+        
+        DoneHealAnim:
+        pop  {r4}
+        pop  {r0}
+        bx   r0
+    */
 POP
 
 #include "HPRestorationCalcLoop.lyn.event"

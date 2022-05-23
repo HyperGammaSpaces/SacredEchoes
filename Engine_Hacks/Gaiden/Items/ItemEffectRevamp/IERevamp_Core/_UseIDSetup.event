@@ -93,7 +93,9 @@
 		#include "asm/DancerRingEffect_Refresh.lyn.event"
 	#endif //DancerRingRefresh
 		
-	ORG $2FF78
+	//replace nightmare snowflakery with a generalized effect proc
+    //TODO: make a proper checker jump
+    ORG $2FF78
 	SHORT 0x2800
 	SHORT 0xD012
 	ORG $2FF88; POIN ItemEffectAfterAnimProc
@@ -149,7 +151,7 @@
 	POP
 	
 	IEAfterBattle:
-	#include "asm/ItemEffectAfterBattle.lyn.event"
+	#include "asm/ItemEffectAfterBattle_Gaiden.lyn.event"
 	POIN EffectJumpTable
 	
 	ItemEffectAfterAnimProc:

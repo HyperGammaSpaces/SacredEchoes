@@ -380,20 +380,10 @@
 
 .macro draw_move_bar_with_getter_at, bar_x, bar_y
 @base in r3, final in sp, cap in sp+4, call getter
-  mov     r1, r8
-  ldr     r0, [r1, #0x4] @class
-  mov     r3, #0x12     @move
-  ldsb    r3, [r0, r3]  
-  @ mov     r0, #0x1D     @bonus
-  @ ldsb    r0, [r1, r0]   
-  @ add     r0, r0, r3    
-
-  push    {r1-r3}
   mov     r0, r8
-  blh     MovGetter
-  pop     {r1-r3}
+  blh     prStatScreenMovGetter, r4
   cmp     r0, #0
-  bne MoveNotNegated
+  bne     MoveNotNegated
     mvn     r0, r0
     mov     r3, r0
   MoveNotNegated:

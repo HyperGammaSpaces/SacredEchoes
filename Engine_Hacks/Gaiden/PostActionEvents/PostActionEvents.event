@@ -29,15 +29,10 @@ PostCombatLoop:
     POIN PostCombatActions
 
 PostCombatActions: 
-    //POIN PostCombat_Upheaval 
-    #ifdef EXPEL_STAFF_USE_POSTACTION
-        POIN PostCombat_Expel
-    #endif
     #ifdef UNLOCK_STAFF_ON_CHESTS
         POIN PostCombat_Unlock
     #endif
     POIN Lifetaker
-    POIN GiveNewItemTo
     #ifdef HAX_MAP_AURA_FX
         POIN PostBattleSupports 
     #endif
@@ -48,13 +43,6 @@ PostCombatActions:
     WORD 0 //Terminator
 
     PROTECT $1D308 $1D314
-
-#include "../ClassBehavior/ClassChange/GiveNewWeapon.event"
-ALIGN 4
-
-GiveNewItemTo:
-#incbin "../ClassBehavior/ClassChange/GiveNewItemTo.dmp"
-POIN GiveSwordEvent GiveAxeEvent GiveBowEvent
 ALIGN 4
 
 Canto:
@@ -69,8 +57,8 @@ ALIGN 4
 
 LifetakerEvent:
 CAM1 0xFFFF
-WARP_IN
-STAL 0x32
+RESUMM 0xFFFF
+STAL 90
 NoFade
 ENDA
 ALIGN 4

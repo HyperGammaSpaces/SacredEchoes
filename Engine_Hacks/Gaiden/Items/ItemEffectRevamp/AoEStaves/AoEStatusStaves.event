@@ -1,13 +1,13 @@
 //uses itemrangefix and itemeffectrevamp
 
 ALIGN 4
-
 AoEStatusStaffTargeting:
 SHORT 0x1C28 0x1C22 0x4904 0x4B03 0x469E 0xF800
 jumpToHack($29062)
 POIN $29CA0
 POIN AoEStatusStaff_RangeSetup|1
 
+ALIGN 4
 AoEStatusStaffUsability:
 SHORT 0x1C20 0x1C2A 0x4906 0x4B05
 SHORT 0x469E 0xF800 0x2800 0xD000 0x2001 0x46C0
@@ -15,9 +15,63 @@ jumpToHack($28BFE)
 POIN $29068
 POIN AoEStatusStaff_RangeSetup|1
 
+ALIGN 4
 AoEStatusStaff_RangeSetup:
 	rfItemRangeSetup(0x25EFC|1,Item_TURange)
-	
-ApplyStaffStatusAfterBattle:
-#include "ApplyItemStatusToAllTargets.lyn.event"
-POIN AoEStatusStaff_RangeSetup|1 Item_GetStat_EPV
+
+//upheaval goes here too now
+ALIGN 4
+AoEDamageStaffTargeting:
+SHORT 0x1C28 0x1C22 0x4904 0x4B03 0x469E 0xF800
+jumpToHack($29062)
+POIN $29CA0 //PrepareTargetSelection_OffensiveStaff
+POIN AoEDamageStaff_RangeSetup|1
+
+ALIGN 4
+AoEDamageStaffUsability:
+SHORT 0x1C20 0x1C2A 0x4906 0x4B05
+SHORT 0x469E 0xF800 0x2800 0xD000 0x2001 0x46C0
+jumpToHack($28BFE)
+POIN $29068 //IsTargetListEmpty
+POIN AoEDamageStaff_RangeSetup|1
+
+ALIGN 4
+AoEStaffEffectJump:
+SHORT 0x46C0 0x1C30
+BL(AoE_Staff_Effect) //based on 2F1D8, just sets up a battle anim
+jumpToHack($2FF76)
+
+ALIGN 4
+AoEDamageStaff_RangeSetup:
+	rfItemRangeSetup(0x2517C|1,Item_TURange)
+
+ALIGN 4
+#include "AoE_Staves.lyn.event"
+
+ALIGN 4
+UpheavalMapAnimProc:
+    PROC_CALL_ROUTINE($30C24|1) //turn off tileset palette anims
+    PROC_CALL_ROUTINE($81E48|1) //darken screen
+    PROC_SLEEP(1)
+    PROC_CALL_ROUTINE($81278|1) //animate subject map anim
+    PROC_SLEEP(30)
+    PROC_CALL_ROUTINE(Upheaval_Start_Effect_Animation|1) //starts a child proc 9A3A80, which plays the actual waves anim
+    PROC_SLEEP(2)
+    PROC_SLEEP(160)
+    PROC_SLEEP(10)
+    PROC_CALL_ROUTINE($8129C|1) //reset subject map anim
+    PROC_SLEEP(30)
+    PROC_CALL_ROUTINE($81E54|1) //undarken screen
+    PROC_SLEEP(1)
+    PROC_CALL_ROUTINE($30C40|1) //restore tileset palette anims
+    PROC_END
+    
+UpheavalAnimProc: //was 9A3A80, now 5925F0
+    PROC_SLEEP(0)
+    PROC_SET_DESTRUCTOR(Upheaval_Anim_Destructor|1)
+    PROC_CALL_ROUTINE(Upheaval_Anim_Constructor|1)
+    PROC_SLEEP(1)
+    PROC_LOOP_ROUTINE(Upheaval_Anim_Loop|1)
+    PROC_LOOP_ROUTINE(Upheaval_Anim_DelayLoop|1)
+    PROC_END
+

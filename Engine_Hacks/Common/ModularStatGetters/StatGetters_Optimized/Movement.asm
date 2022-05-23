@@ -5,7 +5,7 @@
 .equ stat_offset, 0x1D
 
 prMovGetter:
-    push    {r4-r5, lr}
+    push    {r4-r7, lr}
     mov     r4, r0          @ unit data
     mov     r5, #0x0        @ stat accumulator
     
@@ -19,6 +19,42 @@ prMovGetter:
     mov     r3, #stat_offset
     ldsb    r2, [r4, r3]
     add     r5, r5, r2
+    
+    AddEquippedItemStatBonus:
+    mov     r0, r4
+    blh     GetUnitEquippedWeapon
+    blh     GetStatBonus
+    add     r5, r5, r0
+    
+    AddPassiveStatBonus:
+    mov     r0, r4
+    blh     GetUnitItemCount
+    mov     r2, #0x0
+    mov     r7, r0
+    
+    PassiveStatBonusLoop:
+    lsl     r0, r2, #0x1
+    add     r0, #0x1E
+    ldrh    r0, [r4, r0]    @ item id
+    mov     r6, r0
+    mov     r1, #0xFF
+    and     r0, r1
+    blh     GetItemIdROMStruct
+    mov     r1, #0x8
+    ldr     r0, [r0, r1]    @ item attr bitfield
+    lsl     r1, r1, #0x14   @ passive boost bit
+    and     r1, r0
+    cmp     r1, #0x0
+    bne     PassiveStatBonus_Found
+    add     r2, #0x1
+    cmp     r2, r7
+    blt     PassiveStatBonusLoop
+    b       NullifyIfGuardAI
+    
+    PassiveStatBonus_Found:
+    mov     r0, r6
+    blh     GetStatBonus
+    add     r5, r5, r0
     
     NullifyIfGuardAI:
     mov     r1, #0xB
@@ -58,9 +94,36 @@ prMovGetter:
     
     ReturnStat:
     mov     r0, r5
-    pop     {r4-r5}
+    pop     {r4-r7}
     pop     {r1}
     bx      r1
+
+    .align
+    .ltorg
+    
+
+GetStatBonus:
+    push {lr}
+    mov  r1, r0
+    cmp  r1, #0x0
+    beq  GetBonus_Return
+        mov  r0, #0xFF
+        and  r0, r1
+        lsl  r1, r0, #0x3
+        add  r1, r1, r0
+        lsl  r1, r1, #0x2
+        ldr  r0, =ItemTable
+        add  r1, r1, r0
+        ldr  r0, [r1, #0xC]
+        cmp  r0, #0x0
+        beq  GetBonus_Return
+    ldrb r0, [r0, #0x7]
+    lsl  r0, r0, #0x18
+    asr  r0, r0, #0x18
+GetBonus_Return:
+    pop  {r1}
+    bx   r1
+
 
     .align
     .ltorg

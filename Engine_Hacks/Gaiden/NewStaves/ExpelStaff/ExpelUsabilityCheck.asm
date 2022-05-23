@@ -11,6 +11,7 @@
 .equ AreUnitsAllied, 0x08024D8C
 .equ AddTarget, 0x0804F8BC
 
+Expel_Targeting_Func:
 push {r4, r5, lr}
 mov r4, r0
 ldr r0, =0x02033F3C @gUnitSubject

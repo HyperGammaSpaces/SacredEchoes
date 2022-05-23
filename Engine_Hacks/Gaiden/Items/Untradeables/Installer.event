@@ -39,8 +39,9 @@ ORG $17058
 BL(Untradeable_Steal_Fix)
 B($17078)
 
-ORG $e58a4				//unused space in BL range
+ORG $E58A4				//unused space in BL range
 #include "Untradeables.lyn.event"
+PROTECT $E58A4 CURRENTOFFSET
 
 POP
 

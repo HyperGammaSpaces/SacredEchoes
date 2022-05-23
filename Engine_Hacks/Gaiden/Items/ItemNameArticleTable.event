@@ -28,7 +28,7 @@
     PUSH
         //Use per-item article table
         ORG $163B6
-        SHORT $062D $000A $4902 $1840 $6806 $E00A $46C0
+        SHORT $062D $00A0 $4902 $1840 $6806 $E00A $46C0
         POIN ExpandedItemArticleTable
         /*
             lsl r5, r5, #0x18

@@ -48,7 +48,7 @@ UseEffectAnimTable:
     IER_setEffectAnim(IER_FX_NinisGrace,2,$3b,$0,$0,$0,$0,$4)
     IER_setEffectAnim(IER_FX_ThorsIre,2,$3c,$0,$0,$0,$0,$4)
     IER_setEffectAnim(IER_FX_SetsLitany,2,$3d,$0,$0,$0,$0,$3)
-    IER_setEffectAnim($2D,0,$0,$0,$0,$0,$0,$0)
+    IER_setEffectMapAnim(IER_FX_Upheaval,2,$0,UpheavalMapAnimProc,$0,$0,$1) //2D
     IER_setEffectAnim(IER_FX_MetisTome,0,$0,$0,$0,$0,$0,$0)
     IER_setEffectAnim($2F,0,$0,$0,$0,$0,$0,$0)
     IER_setEffectAnim($30,0,$0,$0,$0,$0,$0,$0)

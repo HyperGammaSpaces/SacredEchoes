@@ -18,6 +18,7 @@ ALIGN 4
 	#define ItemEffectRevamp
 
 	#define IER_setItemEffect(effectid,usability,prepscreen_usability,targeting,effect) "PUSH; ORG IERevampTable + (effectid * 0x14); POIN usability prepscreen_usability targeting effect; POP"
+    #define IER_setItemEffect(effectid,usability,prepscreen_usability,targeting,effect,after) "PUSH; ORG IERevampTable + (effectid * 0x14); POIN usability prepscreen_usability targeting effect after; POP"
 
 	#ifdef _FE8_
         
@@ -77,7 +78,8 @@ ALIGN 4
     //IER_setItemEffect(IER_FX_Mine, $28BA8, PUNull, Mine_GetTargetList, $2FF50)
     //IER_setItemEffect(IER_FX_LightRune, $28BB8, PUNull, LightRune_GetTargetList, $2FF58)
     //IER_setItemEffect(IER_FX_Stone, IUNull, PUNull, FreezeStaff_GetTargetList, IENull)
-    IER_setItemEffect(IER_FX_Nightmare, AoEStatusStaffUsability, PUNull, AoEStatusStaffTargeting, $2FE7C)
+    IER_setItemEffect(IER_FX_Nightmare, AoEStatusStaffUsability, PUNull, AoEStatusStaffTargeting, AoEStaffEffectJump,ApplyStaffStatusAfterBattle)
+    IER_setItemEffect(IER_FX_Upheaval, AoEDamageStaffUsability, PUNull, AoEDamageStaffTargeting, AoEStaffEffectJump, ApplyStaffDamageAfterBattle)
     
     //Dancer rings
     IER_setItemEffect(IER_FX_FillasMight, $28BD8, PUNull, DancerRingTargetSelect, $2FF68)

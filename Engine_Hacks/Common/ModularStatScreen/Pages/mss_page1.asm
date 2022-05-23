@@ -132,8 +132,8 @@ RescueCheckEnd:
     .ltorg
 
 NextColumn:
-    draw_textID_at 22, 3, 0x4f6 @move
-    draw_move_bar_at 25, 3
+    draw_textID_at 22, 3, textID=0x4F6 @move
+    draw_move_bar_with_getter_at 25, 3
 
     draw_textID_at 22, 5, textID=0x4F7 @con
     draw_con_bar_at 25, 5
