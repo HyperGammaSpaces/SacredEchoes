@@ -1,5 +1,5 @@
 #######################################################
-#34 palm_sp1 Paladin Lance
+#15 palm_sp1 Paladin Lance
 #
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
@@ -25,12 +25,11 @@ C1D                               #Play light horse stepping SFE; pitch increase
 C23                               #Play shorter sword swinging SFE
 2 p- Lance_013.png
 C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
-6 p- Lance_014.png
+2 p- Lance_014.png
 C15                               #Slight vibration of screen
-C21                               #Play hit SFE (sounds like Knight Lord with sword's hit)
 C1A                               #Normal hit
+C21                               #Play hit SFE (sounds like Knight Lord with sword's hit)
 16 p- Lance_015.png
-6 p- Lance_015.png
 C01                               #NOP
 2 p- Lance_016.png
 C1E                               #Similar to 0x1D; a bit louder
@@ -159,9 +158,9 @@ C42                               #Play long axe swinging SFE
 2 p- Lance_057.png
 2 p- Lance_058.png
 1 p- Lance_059.png
-C21                               #Play hit SFE (sounds like Knight Lord with sword's hit)
-C0C                               #Critical hit
 C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
+C0C                               #Critical hit
+C21                               #Play hit SFE (sounds like Knight Lord with sword's hit)
 16 p- Lance_015.png
 C01                               #NOP
 2 p- Lance_016.png
@@ -312,8 +311,6 @@ C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 10               #Standing motions
 1 p- Lance_000.png
-C03                               #Start attack animation; need 07 right after this.
-C07                               #Start attack animation; need 03 right before this.
 C01                               #NOP
 ~~~
 /// - Mode 11               #Equiped with Ranged weapon
@@ -354,7 +351,7 @@ C1D                               #Play light horse stepping SFE; pitch increase
 C23                               #Play shorter sword swinging SFE
 2 p- Lance_013.png
 C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
-6 p- Lance_083.png
+2 p- Lance_083.png
 16 p- Lance_084.png
 C01                               #NOP
 2 p- Lance_016.png

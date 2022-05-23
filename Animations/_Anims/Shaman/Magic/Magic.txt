@@ -1,9 +1,10 @@
 #######################################################
-#7F sham_mg1 Shaman Anima
+#7E sham_mg1 Shaman Anima
 #
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
 /// - Mode 1               #Melee Animation
+1 p- Magic_000.png
 C07                               #Start attack animation; need 03 right before this.
 C03                               #Start attack animation; need 07 right after this.
 1 p- Magic_000.png
@@ -77,6 +78,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 3               #Melee Critical Animation
+1 p- Magic_000.png
 C07                               #Start attack animation; need 03 right before this.
 C03                               #Start attack animation; need 07 right after this.
 1 p- Magic_000.png
@@ -168,6 +170,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 5               #Ranged Animation 
+1 p- Magic_000.png
 C07                               #Start attack animation; need 03 right before this.
 C03                               #Start attack animation; need 07 right after this.
 1 p- Magic_000.png
@@ -241,6 +244,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 6               #Ranged Critical Animation
+1 p- Magic_000.png
 C07                               #Start attack animation; need 03 right before this.
 C03                               #Start attack animation; need 07 right after this.
 1 p- Magic_000.png
@@ -354,18 +358,25 @@ C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 9               #Equiped with Melee Weapon
-1 p- Magic_000.png
-C01                               #NOP
+3 p- Magic_078.png
+3 p- Magic_079.png
+3 p- Magic_080.png
+3 p- Magic_081.png
+20 p- Magic_000.png
 ~~~
 /// - Mode 10               #Standing motions
 1 p- Magic_000.png
 C01                               #NOP
 ~~~
 /// - Mode 11               #Equiped with Ranged weapon
-1 p- Magic_000.png
-C01                               #NOP
+3 p- Magic_078.png
+3 p- Magic_079.png
+3 p- Magic_080.png
+3 p- Magic_081.png
+20 p- Magic_000.png
 ~~~
 /// - Mode 12               #Attack Missed Animation
+1 p- Magic_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Magic_000.png

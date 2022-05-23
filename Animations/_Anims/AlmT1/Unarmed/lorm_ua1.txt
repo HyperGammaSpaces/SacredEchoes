@@ -1,5 +1,5 @@
 #######################################################
-#05 alm1_ua1 Fighter Item
+#03 alm1_ua1 Fighter Item
 #
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
@@ -22,7 +22,7 @@ C01                               #NOP
 /// - Mode 7               #Dodge Melee Attack
 1 p- lorm_ua1_000.png
 C02                               #Start of dodge
-4 p- lorm_ua1_000.png
+1 p- lorm_ua1_000.png
 C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 2 p- lorm_ua1_001.png
 2 p- lorm_ua1_002.png
@@ -39,7 +39,7 @@ C0D                               #End of dodge animation. preceeded by 0x06
 /// - Mode 8               #Dodge Ranged Attack
 1 p- lorm_ua1_000.png
 C02                               #Start of dodge
-4 p- lorm_ua1_000.png
+1 p- lorm_ua1_000.png
 C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
 2 p- lorm_ua1_001.png
 2 p- lorm_ua1_002.png

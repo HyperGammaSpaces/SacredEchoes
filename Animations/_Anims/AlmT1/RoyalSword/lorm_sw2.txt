@@ -1,12 +1,13 @@
 #######################################################
-#04 alm1_sw2 Fighter Royal Sword
+#02 alm1_sw2 Fighter Royal Sword
 #
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
 /// - Mode 1               #Melee Animation
+1 p- lorm_sw2_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
-6 p- lorm_sw2_000.png
+2 p- lorm_sw2_000.png
 2 p- lorm_sw2_001.png
 3 p- lorm_sw2_002.png
 2 p- lorm_sw2_003.png
@@ -18,7 +19,6 @@ C1B                               #Play quick "heavy step" SFE
 4 p- lorm_sw2_008.png
 7 p- lorm_sw2_009.png
 C1B                               #Play quick "heavy step" SFE
-C15                               #Slight vibration of screen
 C25                               #Play wing flap SFE
 2 p- lorm_sw2_010.png
 2 p- lorm_sw2_011.png
@@ -41,216 +41,233 @@ C21                               #Play hit SFE (sounds like Knight Lord with sw
 3 p- lorm_sw2_022.png
 3 p- lorm_sw2_023.png
 C01                               #NOP
-4 p- lorm_sw2_024.png
-6 p- lorm_sw2_025.png
-3 p- lorm_sw2_026.png
+6 p- lorm_sw2_024.png
+3 p- lorm_sw2_025.png
 C22                               #Play short sword swinging SFE
+2 p- lorm_sw2_026.png
 2 p- lorm_sw2_027.png
 2 p- lorm_sw2_028.png
 2 p- lorm_sw2_029.png
-2 p- lorm_sw2_030.png
 C1B                               #Play quick "heavy step" SFE
+2 p- lorm_sw2_030.png
 2 p- lorm_sw2_031.png
 2 p- lorm_sw2_032.png
-2 p- lorm_sw2_033.png
-3 p- lorm_sw2_034.png
-5 p- lorm_sw2_000.png
+3 p- lorm_sw2_033.png
+3 p- lorm_sw2_000.png
 C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 3               #Melee Critical Animation
+1 p- lorm_sw2_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
-6 p- lorm_sw2_000.png
-2 p- lorm_sw2_001.png
+2 p- lorm_sw2_000.png
+60 p- lorm_sw2_034.png
+3 p- lorm_sw2_001.png
 3 p- lorm_sw2_002.png
 2 p- lorm_sw2_003.png
 C1B                               #Play quick "heavy step" SFE
 2 p- lorm_sw2_004.png
 2 p- lorm_sw2_035.png
 2 p- lorm_sw2_036.png
-2 p- lorm_sw2_037.png
-2 p- lorm_sw2_038.png
-3 p- lorm_sw2_039.png
-4 p- lorm_sw2_040.png
-6 p- lorm_sw2_041.png
-4 p- lorm_sw2_042.png
-C1B                               #Play quick "heavy step" SFE
-C15                               #Slight vibration of screen
-C25                               #Play wing flap SFE
+3 p- lorm_sw2_037.png
+3 p- lorm_sw2_038.png
+4 p- lorm_sw2_039.png
+6 p- lorm_sw2_040.png
+C44                               #Play short "light emission" SFE
+2 p- lorm_sw2_041.png
+2 p- lorm_sw2_042.png
 2 p- lorm_sw2_043.png
-2 p- lorm_sw2_044.png
+9 p- lorm_sw2_040.png
+9 p- lorm_sw2_044.png
+C22                               #Play short sword swinging SFE
 2 p- lorm_sw2_045.png
-2 p- lorm_sw2_046.png
-2 p- lorm_sw2_047.png
-C42                               #Play long axe swinging SFE
-2 p- lorm_sw2_048.png
+3 p- lorm_sw2_046.png
+3 p- lorm_sw2_047.png
+4 p- lorm_sw2_048.png
+7 p- lorm_sw2_009.png
+C22                               #Play short sword swinging SFE
+2 p- lorm_sw2_010.png
 2 p- lorm_sw2_049.png
 2 p- lorm_sw2_050.png
 2 p- lorm_sw2_051.png
-2 p- lorm_sw2_052.png
-2 p- lorm_sw2_053.png
-2 p- lorm_sw2_054.png
+4 p- lorm_sw2_052.png
+6 p- lorm_sw2_053.png
+4 p- lorm_sw2_054.png
 2 p- lorm_sw2_055.png
 C24                               #Play sword slashing air SFE
 2 p- lorm_sw2_056.png
-2 p- lorm_sw2_018.png
 C1B                               #Play quick "heavy step" SFE
 C14                               #Heavy vibration of screen
 C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
 C0C                               #Critical hit
 C21                               #Play hit SFE (sounds like Knight Lord with sword's hit)
-3 p- lorm_sw2_019.png
-4 p- lorm_sw2_020.png
-3 p- lorm_sw2_021.png
-3 p- lorm_sw2_022.png
-3 p- lorm_sw2_023.png
+2 p- lorm_sw2_057.png
+3 p- lorm_sw2_058.png
+3 p- lorm_sw2_059.png
+3 p- lorm_sw2_060.png
+3 p- lorm_sw2_061.png
 C01                               #NOP
-4 p- lorm_sw2_024.png
-6 p- lorm_sw2_025.png
-3 p- lorm_sw2_026.png
+6 p- lorm_sw2_062.png
 C22                               #Play short sword swinging SFE
+2 p- lorm_sw2_026.png
 2 p- lorm_sw2_027.png
 2 p- lorm_sw2_028.png
 2 p- lorm_sw2_029.png
-2 p- lorm_sw2_030.png
 C1B                               #Play quick "heavy step" SFE
+2 p- lorm_sw2_030.png
 2 p- lorm_sw2_031.png
 2 p- lorm_sw2_032.png
-2 p- lorm_sw2_033.png
-3 p- lorm_sw2_034.png
-5 p- lorm_sw2_000.png
+3 p- lorm_sw2_033.png
+3 p- lorm_sw2_000.png
 C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 5               #Ranged Animation 
+1 p- lorm_sw2_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
-6 p- lorm_sw2_000.png
-2 p- lorm_sw2_001.png
-3 p- lorm_sw2_002.png
-2 p- lorm_sw2_003.png
+2 p- lorm_sw2_000.png
+2 p- lorm_sw2_063.png
+3 p- lorm_sw2_064.png
+2 p- lorm_sw2_065.png
 C1B                               #Play quick "heavy step" SFE
-2 p- lorm_sw2_057.png
+2 p- lorm_sw2_066.png
 C22                               #Play short sword swinging SFE
-2 p- lorm_sw2_058.png
-2 p- lorm_sw2_059.png
-2 p- lorm_sw2_060.png
-3 p- lorm_sw2_061.png
-3 p- lorm_sw2_062.png
-4 p- lorm_sw2_063.png
+2 p- lorm_sw2_067.png
+2 p- lorm_sw2_068.png
+2 p- lorm_sw2_069.png
+3 p- lorm_sw2_070.png
+3 p- lorm_sw2_071.png
+4 p- lorm_sw2_072.png
 C05                               #Call spell associated with equipped weapon
-6 p- lorm_sw2_064.png
-6 p- lorm_sw2_065.png
+6 p- lorm_sw2_073.png
+6 p- lorm_sw2_074.png
 C01                               #NOP
-4 p- lorm_sw2_064.png
-4 p- lorm_sw2_066.png
-4 p- lorm_sw2_067.png
+4 p- lorm_sw2_073.png
+4 p- lorm_sw2_075.png
+4 p- lorm_sw2_076.png
 C1B                               #Play quick "heavy step" SFE
-4 p- lorm_sw2_068.png
-3 p- lorm_sw2_069.png
+4 p- lorm_sw2_077.png
+3 p- lorm_sw2_078.png
 4 p- lorm_sw2_000.png
 6 p- lorm_sw2_000.png
 C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 6               #Ranged Critical Animation
+1 p- lorm_sw2_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
+2 p- lorm_sw2_000.png
+60 p- lorm_sw2_034.png
 6 p- lorm_sw2_000.png
-60 p- lorm_sw2_070.png
-6 p- lorm_sw2_000.png
-2 p- lorm_sw2_001.png
-3 p- lorm_sw2_002.png
-2 p- lorm_sw2_003.png
+2 p- lorm_sw2_063.png
+3 p- lorm_sw2_064.png
+2 p- lorm_sw2_065.png
 C1B                               #Play quick "heavy step" SFE
-2 p- lorm_sw2_057.png
+2 p- lorm_sw2_066.png
 C22                               #Play short sword swinging SFE
-2 p- lorm_sw2_058.png
-2 p- lorm_sw2_059.png
-2 p- lorm_sw2_060.png
-3 p- lorm_sw2_061.png
-3 p- lorm_sw2_062.png
-4 p- lorm_sw2_063.png
-6 p- lorm_sw2_064.png
+2 p- lorm_sw2_067.png
+2 p- lorm_sw2_068.png
+2 p- lorm_sw2_069.png
+3 p- lorm_sw2_070.png
+3 p- lorm_sw2_071.png
+4 p- lorm_sw2_072.png
+6 p- lorm_sw2_073.png
 C28                               #Play electrical charging SFE
-4 p- lorm_sw2_071.png
-4 p- lorm_sw2_065.png
-4 p- lorm_sw2_071.png
-4 p- lorm_sw2_065.png
-4 p- lorm_sw2_071.png
-4 p- lorm_sw2_065.png
-4 p- lorm_sw2_071.png
-4 p- lorm_sw2_065.png
-4 p- lorm_sw2_071.png
+4 p- lorm_sw2_079.png
+4 p- lorm_sw2_074.png
+4 p- lorm_sw2_079.png
+4 p- lorm_sw2_074.png
+4 p- lorm_sw2_079.png
+4 p- lorm_sw2_074.png
+4 p- lorm_sw2_079.png
+4 p- lorm_sw2_074.png
+4 p- lorm_sw2_079.png
 C05                               #Call spell associated with equipped weapon
-4 p- lorm_sw2_065.png
+4 p- lorm_sw2_074.png
 C01                               #NOP
-4 p- lorm_sw2_064.png
-4 p- lorm_sw2_066.png
-4 p- lorm_sw2_067.png
+4 p- lorm_sw2_073.png
+4 p- lorm_sw2_075.png
+4 p- lorm_sw2_076.png
 C1B                               #Play quick "heavy step" SFE
-4 p- lorm_sw2_068.png
-3 p- lorm_sw2_069.png
+4 p- lorm_sw2_077.png
+3 p- lorm_sw2_078.png
 4 p- lorm_sw2_000.png
 6 p- lorm_sw2_000.png
 C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 7               #Dodge Melee Attack
-2 p- lorm_sw2_000.png
+1 p- lorm_sw2_000.png
 C02                               #Start of dodge
 1 p- lorm_sw2_000.png
 C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
-2 p- lorm_sw2_001.png
-2 p- lorm_sw2_002.png
-2 p- lorm_sw2_072.png
+2 p- lorm_sw2_063.png
+2 p- lorm_sw2_064.png
+2 p- lorm_sw2_080.png
 C1B                               #Play quick "heavy step" SFE
-2 p- lorm_sw2_073.png
-2 p- lorm_sw2_074.png
-2 p- lorm_sw2_075.png
+2 p- lorm_sw2_081.png
+2 p- lorm_sw2_082.png
+2 p- lorm_sw2_083.png
 C01                               #NOP
-4 p- lorm_sw2_076.png
-4 p- lorm_sw2_001.png
+4 p- lorm_sw2_084.png
+4 p- lorm_sw2_063.png
 C1B                               #Play quick "heavy step" SFE
 3 p- lorm_sw2_000.png
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 8               #Dodge Ranged Attack
-2 p- lorm_sw2_000.png
+1 p- lorm_sw2_000.png
 C02                               #Start of dodge
 1 p- lorm_sw2_000.png
 C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
-2 p- lorm_sw2_001.png
-2 p- lorm_sw2_002.png
-2 p- lorm_sw2_072.png
+2 p- lorm_sw2_063.png
+2 p- lorm_sw2_064.png
+2 p- lorm_sw2_080.png
 C1B                               #Play quick "heavy step" SFE
-2 p- lorm_sw2_073.png
-2 p- lorm_sw2_074.png
-2 p- lorm_sw2_075.png
+2 p- lorm_sw2_081.png
+2 p- lorm_sw2_082.png
+2 p- lorm_sw2_083.png
 C01                               #NOP
-4 p- lorm_sw2_076.png
-4 p- lorm_sw2_001.png
+4 p- lorm_sw2_084.png
+4 p- lorm_sw2_063.png
 C1B                               #Play quick "heavy step" SFE
 3 p- lorm_sw2_000.png
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 9               #Equiped with Melee Weapon
-2 p- lorm_sw2_000.png
-C01                               #NOP
+4 p- lorm_sw2_085.png
+4 p- lorm_sw2_086.png
+4 p- lorm_sw2_087.png
+4 p- lorm_sw2_088.png
+2 p- lorm_sw2_089.png
+3 p- lorm_sw2_090.png
+4 p- lorm_sw2_091.png
+3 p- lorm_sw2_078.png
+4 p- lorm_sw2_000.png
 ~~~
 /// - Mode 10               #Standing motions
 2 p- lorm_sw2_000.png
 C01                               #NOP
 ~~~
 /// - Mode 11               #Equiped with Ranged weapon
-2 p- lorm_sw2_000.png
-C01                               #NOP
+4 p- lorm_sw2_085.png
+4 p- lorm_sw2_086.png
+4 p- lorm_sw2_087.png
+4 p- lorm_sw2_088.png
+2 p- lorm_sw2_089.png
+3 p- lorm_sw2_090.png
+4 p- lorm_sw2_091.png
+3 p- lorm_sw2_078.png
+4 p- lorm_sw2_000.png
 ~~~
 /// - Mode 12               #Attack Missed Animation
+1 p- lorm_sw2_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
-6 p- lorm_sw2_000.png
+2 p- lorm_sw2_000.png
 2 p- lorm_sw2_001.png
 3 p- lorm_sw2_002.png
 2 p- lorm_sw2_003.png
@@ -262,7 +279,6 @@ C1B                               #Play quick "heavy step" SFE
 4 p- lorm_sw2_008.png
 7 p- lorm_sw2_009.png
 C1B                               #Play quick "heavy step" SFE
-C15                               #Slight vibration of screen
 C25                               #Play wing flap SFE
 2 p- lorm_sw2_010.png
 2 p- lorm_sw2_011.png
@@ -273,29 +289,28 @@ C25                               #Play wing flap SFE
 4 p- lorm_sw2_016.png
 2 p- lorm_sw2_017.png
 C24                               #Play sword slashing air SFE
-2 p- lorm_sw2_018.png
+2 p- lorm_sw2_092.png
 C1B                               #Play quick "heavy step" SFE
 C14                               #Heavy vibration of screen
 C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
-3 p- lorm_sw2_019.png
-4 p- lorm_sw2_020.png
-3 p- lorm_sw2_021.png
-3 p- lorm_sw2_022.png
-3 p- lorm_sw2_023.png
+3 p- lorm_sw2_093.png
+4 p- lorm_sw2_094.png
+3 p- lorm_sw2_095.png
+3 p- lorm_sw2_096.png
+3 p- lorm_sw2_097.png
 C01                               #NOP
-4 p- lorm_sw2_024.png
-6 p- lorm_sw2_025.png
-3 p- lorm_sw2_026.png
+6 p- lorm_sw2_098.png
+3 p- lorm_sw2_099.png
 C22                               #Play short sword swinging SFE
+2 p- lorm_sw2_026.png
 2 p- lorm_sw2_027.png
 2 p- lorm_sw2_028.png
 2 p- lorm_sw2_029.png
-2 p- lorm_sw2_030.png
 C1B                               #Play quick "heavy step" SFE
+2 p- lorm_sw2_030.png
 2 p- lorm_sw2_031.png
 2 p- lorm_sw2_032.png
-2 p- lorm_sw2_033.png
-3 p- lorm_sw2_034.png
+3 p- lorm_sw2_033.png
 5 p- lorm_sw2_000.png
 C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06

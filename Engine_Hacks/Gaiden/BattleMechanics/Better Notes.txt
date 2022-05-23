@@ -373,6 +373,7 @@ CHAPTER DATA STRUCT (202BCF0) (FE7: 202BBF8) (FE6: 202AA48) (FE7J: 202BBF4) (FE8
 +0x15	Byte	Weather (0=clear, 1=snow, 2=snowstorm, 4=rain) (funnily enough, if non-zero, arena battles take support bonuses into account)
 +0x16	Short	Number of support points gained this chapter?
 +0x18	Byte	Unique playthrough ID, used to prevent cheesing clearing both Eirika/Ephraim mode from the same root save
++0x19   Byte    Some bitfield on the Unit List menu?
 +0x1B	Byte	Mode (1 for prologue-8, 2 for Eirika route, 3 for Ephraim route)
 +0x20	Byte	?
 +0x28	Word	? Something
@@ -464,6 +465,19 @@ Unit action menu (Attack)	59CA34
 
 ############
 Other useful offsets
+
+030017A0    @DUNGEON    gDungeonState    {U}
+030017ac    @DUNGEON    gBeforeDungeonState    {U}
+
+@DUNGEON@00    short    Exps
+@DUNGEON@02    byte    DeployUnits
+@DUNGEON@03    byte    ClearTurns
+@DUNGEON@04    short    Unk4
+@DUNGEON@06    short    DefeatsCount
+@DUNGEON@08    byte    Unk8
+@DUNGEON@09    byte    Unk9
+@DUNGEON@0A    byte    UnkA
+@DUNGEON@0B    byte    UnkB
 
 Current unit data pointer: 3004E50 (FE7: 3004690) (FE6: 30044B0) (FE7J: 30045B0) (FE8J: 3004DF0)
 
