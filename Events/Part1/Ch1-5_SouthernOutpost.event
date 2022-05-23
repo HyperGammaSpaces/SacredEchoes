@@ -25,7 +25,7 @@ Ch1_5_TurnBasedEvents:
 ArcherEvent:
 	MUSC SongID_MarchToDeliverance
 	MUSI
-	CAM1 [6,2]
+	CAMERA_CENTERED [6,2]
 	STAL 30
 	FlashCursor(6, 2, 60)
 	STAL 5
@@ -60,12 +60,12 @@ Ch1_5_CharacterBasedEvents:
 	CHAR
 
 TalkToClair:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 33
 	TEXTSTART 
 	TEXTSHOW Ch1_5_ClairTalkEvent
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	CALL $591F40
 	REVEAL Clair
 	CUSA Clair
@@ -79,12 +79,12 @@ TalkToClair:
 	ENDA
 
 TalkToClairWithAlm:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 33
 	TEXTSTART 
 	TEXTSHOW Ch1_5_ClairTalkEvent_Alm
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	CALL $591F40
 	CUSA Clair
 	STAL 20
@@ -97,12 +97,12 @@ TalkToClairWithAlm:
 	ENDA
 
 TalkToClairWithGray:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 33
 	TEXTSTART 
 	TEXTSHOW Ch1_5_ClairTalkEvent_Gray
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	CALL $591F40
 	CUSA Clair
 	STAL 20
@@ -139,7 +139,7 @@ DoorEvent:
 	ENUN
 	MOVE 0x08 Clair [15,11]
 	ENUN
-	CAM1 Clair
+	CAMERA_CENTERED Clair
 	STAL 30
 	FlashCursor(Clair, 60)
 	Text(Ch1_5_ClairIntro)
@@ -228,18 +228,18 @@ Ch1_5_BeginningScene:
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	FADU 10
-	CAM1 SoldierAlm5
+	CAMERA_CENTERED SoldierAlm5
 	STAL 6
 	FlashCursor(SoldierAlm5, 60)
 	TEXTSTART
 	TEXTSHOW Ch1_5_OpeningScene
 	TEXTEND
-	CAM1 Alm
+	CAMERA_CENTERED Alm
 	STAL 6
 	FlashCursor(Alm, 60)
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	GotoPrepScreen
 	ENDA
 
@@ -281,7 +281,7 @@ Ch1_5_EndingScene:
 		LOAD2 0x1 CutsceneUnitsFaye
 		ENUN
 	LABEL 0x5
-	CAM1 Alm
+	CAMERA_CENTERED Alm
 	MUSC SongID_Victory
 	SetBackground(0x25)
 	TEXTSTART 
@@ -303,27 +303,27 @@ Ch1_5_EndingScene:
 	BEQ 0x3 0xC 0x0
 	CHECK_ALIVE Faye //is Faye alive?
 	BEQ 0x3 0xC 0x0 //if not, goto NoFaye
-		CAM1 [7, 10]
+		CAMERA_CENTERED [7, 10]
 		TEXTSTART 
 		TEXTSHOW Ch1_5_PostBattle_Faye
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		MOVE 0x10 Faye [1,2]
 		ENUN
 		TEXTSTART 
 		TEXTSHOW Ch1_5_PostBattle_Faye_2
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		MOVE 0x12 Gray [1,2]
 		MOVE 0x10 Tobin [1,2]
 		ENUN
 		GOTO 0x4
 	LABEL 0x3
-		CAM1 [7, 10]
+		CAMERA_CENTERED [7, 10]
 		TEXTSTART 
 		TEXTSHOW Ch1_5_PostBattle_NoFaye
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		MOVE 0x12 Gray [1,2]
 		MOVE 0x10 Tobin [1,2]
 		ENUN

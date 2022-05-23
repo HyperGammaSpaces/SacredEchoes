@@ -28,6 +28,10 @@ FADECOLORS, 0x1862, 12, -game:FE8 -indexMode:8
 EARTHQUAKE_START, 0x4220, 4, -game:FE8 -indexMode:8
 	Value1, 2, 2
 
+EARTHQUAKE, 0x4220, 4, -game:FE8 -indexMode:8
+	ShakeDirection, 2, 1, -preferredBase:10
+	PlaySoundBool,  3, 1, -preferredBase:10
+
 EARTHQUAKE_END, 0x422F, 4, -game:FE8 -indexMode:8
 	0, 2, 2, -fixed
 	

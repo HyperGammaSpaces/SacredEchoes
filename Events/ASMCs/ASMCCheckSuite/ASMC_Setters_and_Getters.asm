@@ -10,6 +10,7 @@
 .equ MemorySlot4, 0x030004C8
 
 .global GiveExperienceASMC
+.global GiveExperienceASMC_Usability
 .global GiveMaxHPASMC
 .global GiveStrengthASMC
 .global GiveSkillASMC
@@ -90,7 +91,7 @@ GiveExpToActiveUnitWrapper:
 
 BeginMapAnimExp:
 	push {r4, lr}
-	ldr  r1, =0x0203e1f0		@ gMapAnimStruct
+	ldr  r1, =0x0203E1F0		@ gMapAnimStruct
 	mov  r12, r1
 	add  r1, #0x5F				@ unknown 1
 	mov  r3, #0x0
@@ -114,7 +115,7 @@ BeginMapAnimExp:
 	blh  0x0807b900 			@ SetupMapBattleAnim
 	ldr  r0, =MapAnimGetExp
 	mov  r1, #0x3
-	blh  0x08002c7c 			@ Proc_New
+	blh  0x08002CE0 			@ Proc_Start_Blocking
 	pop  {r4}
 	pop  {r0}
 	bx   r0
@@ -136,9 +137,10 @@ GiveExperienceASMC:
 	ldrh r1, [r1]
 	mov  r0, r1
 	bl   GiveExpToActiveUnit
-	blh  0x080790a4 @ClearMOVEUNITs
-	bl   BeginMapAnimExp
-	
+    cmp  r0, #0
+    beq  GiveExp_ReturnFalse
+        blh  0x080790a4 @ClearMOVEUNITs
+        bl   BeginMapAnimExp
 		ldr  r1, =MemorySlotC
 		str  r0, [r1]
 		b    GiveExp_End

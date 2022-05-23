@@ -117,7 +117,7 @@ BossesCutscene:
 EnemyUnits:
 	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [12,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
 	UNIT Zofia_Archer Archer_F	Desaix Level(10, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT Zofia_Soldier Knight	Desaix Level(2, Enemy, 0) [11,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
+	UNIT Zofia_Soldier Knight	Desaix Level(2, Enemy, 0) [11,5]	DropItem 0x00 0x0 0x00 [BaseLance, Hammer] NeverMoveAI
 	UNIT Zofia_Mage Shaman	Desaix Level(7, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] [0xE, 0x0, 0x0, 0x0]
 	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [11,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
 	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [9,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
@@ -163,7 +163,7 @@ Ch1_8_BeginningScene:
 	ENUN
 	LOAD1 0x1 Bosses
 	ENUN
-	CAM1 Desaix
+	CAMERA_CENTERED Desaix
 	FADU 5
 	BROWNBOXTEXT Loc_ZofiaCastle [8,8]
 	FlashCursor(Desaix, 60)
@@ -176,17 +176,17 @@ Ch1_8_BeginningScene:
 		FADU 5
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	ClearBackgroundSmooth
 	MUSC SongID_ImportantBattle
-	CAM1 Alm
+	CAMERA_CENTERED Alm
 	STAL 0x20
 	LOAD1 0x1 BerkutRinea
 	ENUN
 	FlashCursor(Alm, 60)
 	Text(Ch1_8_OpeningScene_AlmClive)
 	STAL 0x20
-	CAM1 [12,5]
+	CAMERA_CENTERED [12,5]
 	STAL 0x20
 	FlashCursor(Desaix, 60)
 	MUSC SongID_PrinceOfDarkness
@@ -208,20 +208,20 @@ Ch1_8_BeginningScene:
 DesaixTalk:
 	MUSC SongID_MarchToDeliverance
 	MUSI
-	CAM1 Desaix
+	CAMERA_CENTERED Desaix
 	STAL 0x08
 	FlashCursor(Desaix, 60)
 	TEXTSTART
 	TEXTSHOW Ch1_8_Desaix_OpeningLine
 	TEXTEND
-	REMA
-	CAM1 SlaydePaladin
+	TEXTCLEAR
+	CAMERA_CENTERED SlaydePaladin
 	STAL 0x08
 	FlashCursor(SlaydePaladin, 60)
 	TEXTSTART
 	TEXTSHOW Ch1_8_Slayde_OpeningLine
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	MUNO
 	NoFade
 	ENDA
@@ -237,7 +237,7 @@ Ch1_8_EndingScene:
 	FADU 5
 	LOAD1 0x1 BossesCutscene
 	ENUN
-	CAM1 BerkutPaladin
+	CAMERA_CENTERED BerkutPaladin
 	FlashCursor(BerkutPaladin, 60)
 	MUSCSLOW SongID_PrinceOfDarkness
 	Text(Ch1_8_BerkutFernandLeave)
@@ -294,7 +294,7 @@ Ch1_8_EndingScene:
 	MUSC SongID_Silence
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	FADI 2
 
 	MUSCSLOW 0x48
@@ -311,8 +311,8 @@ Ch1_8_EndingScene:
 	MUSC SongID_Env_CrowdCheer
 	TEXTCONT
 	TEXTEND
-	REMA
-	REMOVEPORTRAITS
+	TEXTCLEAR
+	TEXTMODE 1
 
 	MUSCMID SongID_Silence
 	MUSC SongID_CastleTheme
@@ -320,7 +320,7 @@ Ch1_8_EndingScene:
 	STAL 60
 
 	_0x2141 Part1EndCG 0x1 0x4
-	REMOVEPORTRAITS
+	TEXTMODE 1
 
 	STAL 60
 		_0x1A22
@@ -330,7 +330,7 @@ Ch1_8_EndingScene:
 		TEXTSHOW Ch1_8_PostBattle_CastleCG_2
 		TEXTEND
 	FADI 5
-	REMOVEPORTRAITS
+	TEXTMODE 1
 
 
 	EVBIT_MODIFY 0x4
@@ -350,13 +350,13 @@ Ch1_8_EndingScene:
 
 SlaydeDies:
 	MUSI
-	CAM1 Desaix
+	CAMERA_CENTERED Desaix
 	STAL 30
 	FlashCursor(Desaix, 60)
 	TEXTSTART
 	TEXTSHOW SlaydeDies_DesaixRetreats
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	NoFade
 	SVAL 0x2 Desaix
 	CALL Warp_Out_Effect
@@ -367,13 +367,13 @@ SlaydeDies:
 
 DesaixDies:
 	MUSI
-	CAM1 SlaydePaladin
+	CAMERA_CENTERED SlaydePaladin
 	STAL 30
 	FlashCursor(SlaydePaladin, 60)
 	TEXTSTART
 	TEXTSHOW DesaixAct1Dies
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	NoFade
 	MOVE 0x10 SlaydePaladin [0,14]
 	ENUN
@@ -397,14 +397,14 @@ CelicaZofiaCastleEvent:
 		MUSC SongID_Advance
 		SetBackground(0x15) //castle outside
 		Text(Ch2_CelicaVisitsRamVillage)
-		REMA
+		TEXTCLEAR
 		ClearBackgroundSmooth
 
 		BROWNBOXTEXT Loc_RamVillage [8,8]
 		STAL 20
 		LOAD2 0x0 CutsceneUnits_CelicaVillage
 		ENUN
-		CAM1 Celica
+		CAMERA_CENTERED Celica
 		STAL 20
 		FlashCursor(Celica, 60)
 		STAL 20
@@ -421,7 +421,7 @@ CelicaZofiaCastleEvent:
 			FADI 5
 			LOAD1 0x0 KliffJoins
 			ENUN
-			REMA
+			TEXTCLEAR
 			CharacterJoinedNotification(Notif_KliffJoin)
 
 		LABEL 0x8
@@ -432,7 +432,7 @@ CelicaZofiaCastleEvent:
 			FADI 5
 			LOAD1 0x0 FayeJoins
 			ENUN
-			REMA
+			TEXTCLEAR
 			CharacterJoinedNotification(Notif_FayeJoin)
 			
 
@@ -444,11 +444,11 @@ CelicaZofiaCastleEvent:
 	//label for "both recruited" here
 	LABEL 0x7
 	MUSC SongID_Silence
-	CAM1 [16,18]
+	CAMERA_CENTERED [16,18]
 	FADU 5
 	LOAD2 0x0 CutsceneUnits_CelicaCastle
 	ENUN
-	CAM1 Celica
+	CAMERA_CENTERED Celica
 	BROWNBOXTEXT Loc_ZofiaCastle [8,8]
 	MUSC SongID_CastleTheme
 	STAL 20
@@ -462,7 +462,7 @@ CelicaZofiaCastleEvent:
 		MUSI
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	MUNO
 	FADI 2
 
@@ -475,7 +475,7 @@ CelicaZofiaCastleEvent:
 		MUSC SongID_Legacy
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	FADI 5
 
 	MUSC SongID_Unity
@@ -495,18 +495,18 @@ CelicaZofiaCastleEvent:
 		MUSC SongID_Truth
 	TEXTCONT
 	TEXTEND
-	REMA
-	REMOVEPORTRAITS
+	TEXTCLEAR
+	TEXTMODE 1
 
 	_0x2141 AlmsCripplingOrangeAddictionCG 0x1 0x4
-	REMOVEPORTRAITS
+	TEXTMODE 1
 	STAL 60
 	_0x1A22
 	TEXTSHOW Ch2_OrangeCGText 
 	TEXTEND
 	MUSI 
 	_0x2141 Castle_Hall 0x1 0x4
-	REMOVEPORTRAITS
+	TEXTMODE 1
 
 	Text(Ch2_Epilogue5) //alm regrets everything
 	MUNO
@@ -520,7 +520,7 @@ CelicaZofiaCastleEvent:
 	TUTORIALTEXTBOXSTART
 	TEXTSHOW Ch2_Epilogue_EndNarration
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	STAL 30
 	FADI 2
 

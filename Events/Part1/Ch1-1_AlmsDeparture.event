@@ -23,9 +23,8 @@ Ch1_1_TurnBasedEvents:
 WTAEvent:
 	MUSC SongID_MarchToDeliverance // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
 	MUSI
-	STAL 30
-	FlashCursor(Lukas, 60)
-	Text(Ch1_1_LukasAdvice)
+	CameraCursor(Lukas)
+	MapText(Ch1_1_LukasAdvice)
 	MUNO
 	NoFade
 	ENDA
@@ -42,13 +41,13 @@ Ch1_1_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(8,7)
 	#endif
-	Village(0xA, VillageEvent, 1,2)
+	Village(0xA, VillageEvent, 3,11)
 	House(0x0,House1,4,3)
 	House(0x0,House2,2,8)
 	LOCA
 
 VillageEvent:
-	VillageEventItem(Ch1_House3, Village, MetissTome)
+	VillageEventItem(Ch1_House3, HouseBG, MetissTome)
 	ENDA
 
 House1:
@@ -123,84 +122,99 @@ Ch1_1_BeginningScene:
 	ENUN
 
 	SetBackground(HouseBG)
-	Text(OpeningScene_1)
+	BackgroundText(OpeningScene_1)
 	EndConvo
 	STAL 0x08
 	MOVE 0x5 Lukas [7, 7]
 	ENUN
 
-	CAM1 [5, 7]
+	CAMERA_CENTERED [5, 7]
 	MOVE 0x8 Alm [5, 7]
 	STAL 0x40
 	FlashCursor(Lukas, 60)
 	SetBackground(Village)
-	TEXTSTART
+	TEXTMODE 1
 	TEXTSHOW OpeningScene_2
 	TEXTEND
 	MUSC SongID_ShadowOfVictory
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
+    FadeOutMusic
 	ClearBackground
-	CAM1 [7, 5]
+	CAMERA_CENTERED [7, 5]
 	STAL 0x08
 	MOVE 0x10 Lukas [1, 2]
 	MOVE 0x10 Alm [1, 2]
 	ENUN
 	REMU Lukas
 	REMU Alm
-	MUSC SongID_Env_Birds
+	MUSCSLOW SongID_Env_Birds
 
 	FlashCursor(Kliff, 60)
 	Text(Village,OpeningScene_3)
+    FadeOutMusic
 	STAL 0x14
 
 	MUSC SongID_Advance
 	FlashCursor(1, 2, 60)
 	SetBackground(HouseBG)
+    TEXTMODE 1
 	TEXTSHOW OpeningScene_4
 	TEXTEND
-	MUSC SongID_Silence
+	FadeOutMusic
 	TEXTCONT
 	TEXTEND
 	MUSC SongID_Uprising
 	TEXTCONT
 	TEXTEND
 	EndConvo
-
-	LOAD1 0x1 Ch1_1_Mycen_Green
-	ENUN
-	STAL 0x30
-	MOVE 0x10 Mycen [17, 7]
-	ENUN
+    FadeOutMusic
 
 	REVEAL Lukas
 	STAL 0x30
+    TILECHANGE 0x00
+    EVBIT_T 0x9
 	MOVE 0x08 Lukas [9, 7]
 	ENUN
-	CAM1 [7, 7]
-
-	STAL 0x30
+    EVBIT_F 0x9
+    CAMERA_CENTERED Lukas
+    
 	REVEAL Alm
 	STAL 0x14
 	MOVE 0x10 Alm [8, 7]
 	ENUN
+
 	SetBackground(Outside_Village_Day)
+    TEXTMODE 1
 	TEXTSHOW OpeningScene_5
+	TEXTEND
+	MUSC SongID_Uprising
+	TEXTCONT
 	TEXTEND
 	MUSC SongID_Reunion
 	TEXTCONT
 	TEXTEND
+    FadeOutMusic
 	EndConvo
 
 	MUSC SongID_Advance
 	STAL 0x14
 	MOVE 0x10 Gray [4, 3]
 	MOVE 0x10 Tobin [2, 8]
+    MOVE 0x10 Alm [1, 2]
 	ENUN
 	REMU Gray
 	REMU Tobin
 	STAL 60
+    //TODO: add "where grandpa???"
+    MUSI
+    CameraCursor(Alm)
+    MapText(OpeningScene_WheresGrandpa)
+    MUNO
+    STAL 30
+    MOVE 0x10 Alm [8, 7]
+    ENUN
 	REVEAL Gray
 	REVEAL Tobin
 	STAL 0x14
@@ -224,27 +238,27 @@ Ch1_1_BeginningScene:
 	LOAD1 0x1 NeutralUnits
 	ENUN
 	SetBackground(Outside_Village_Day)
-	TEXTSTART 
+    TEXTMODE 1
 	TEXTSHOW OpeningScene_GetGrayAndTobin
 	TEXTEND
-	REMA
-	REMOVEPORTRAITS
-	_0x2141 AlmPrologueCG 0x1 0x4
-	REMOVEPORTRAITS
+	TEXTCLEAR
+	TEXTMODE 1
+	BACKGROUND_CHANGE AlmPrologueCG 0x1 0x4
 	STAL 60
-	_0x1A22
-	TEXTSHOW OpeningScene_CelicaCG
-	TEXTEND
+	CgText(OpeningScene_CelicaCG)
 	EndConvo
 
 	MUSC SongID_Tension
-	CAM1 [12, 4]
+	EVBIT_T 0x9
 	LOAD1 0x1 EnemyUnits
 	ENUN
+    EVBIT_F 0x9
+    STAL 5
 
-	FlashCursor(BanditAlm1, 60)
-	Text(Ch1_1_PreBattle)
+	CameraCursor(BanditAlm1)
+	MapText(Ch1_1_PreBattle)
 
+    CAMERA_CENTERED Alm
 	MOVE 0x10 Alm [10,6]
 	MOVE 0x10 Lukas [10,8]
 	MOVE 0x10 Tobin [9,7]
@@ -260,18 +274,18 @@ Ch1_1_EndingScene:
 	ENUT gEnableWorldMap			//enable world map
 	EVBIT_MODIFY 0x0
 	CALL UnifiedBEXPCaller
-	MUSC SongID_Victory //victory
-	FADI 16
+    FadeOutMusic
+    FADI 5
 	CLEN 0x0
-	SetBackground(Plain)
-	Text(Ch1_1_PostBattle)
+	MUSC SongID_Victory //victory
+	Text(Plain,Ch1_1_PostBattle)
 	MNCH 0x01 //go to ch1
 	ENDA
 
 TalkToKliff:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 0x20
-	Text(Ch1_1_GetKliff)
+	MapText(Ch1_1_GetKliff)
 	SVAL 0x1 0x0
 	CHAI Kliff
 	STAL 5
@@ -283,9 +297,9 @@ TalkToKliff:
 	ENDA
 
 TalkToFaye:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 0x20
-	Text(Ch1_1_GetFaye)
+	MapText(Ch1_1_GetFaye)
 	SVAL 0x1 0x0
 	CHAI Faye
 	STAL 5

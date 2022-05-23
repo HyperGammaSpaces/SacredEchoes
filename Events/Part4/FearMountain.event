@@ -2,56 +2,77 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plFearMtnEvent, Dummy_ThisChapter)
+EventPointerTable(plFearMtnEvent, FearMtn_ThisChapter)
 
-Dummy_ThisChapter:
-	POIN Dummy_TurnBasedEvents
-	POIN Dummy_CharacterBasedEvents
-	POIN Dummy_LocationBasedEvents
-	POIN Dummy_MiscBasedEvents
-	POIN Dummy_Dunno Dummy_Dunno Dummy_Dunno
-	POIN Dummy_Tutorial
-	POIN Dummy_Ballista1 Dummy_Ballista2
-	POIN Dummy_Units1 Dummy_Units1
+FearMtn_ThisChapter:
+	POIN FearMtn_TurnBasedEvents
+	POIN FearMtn_CharacterBasedEvents
+	POIN FearMtn_LocationBasedEvents
+	POIN FearMtn_MiscBasedEvents
+	POIN FearMtn_Dunno FearMtn_Dunno FearMtn_Dunno
+	POIN FearMtn_Tutorial
+	POIN FearMtn_Ballista1 FearMtn_Ballista2
+	POIN FearMtn_PlayerSkirmishUnits FearMtn_PlayerSkirmishUnits
 	POIN $0 $0 $0 
 	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
-	POIN Dummy_BeginningScene Dummy_EndingScene
+	POIN FearMtn_BeginningScene FearMtn_EndingScene
 
-Dummy_TurnBasedEvents:
+FearMtn_TurnBasedEvents:
 	TURN
 
-Dummy_CharacterBasedEvents:
+FearMtn_CharacterBasedEvents:
 	CHAR
 
-Dummy_LocationBasedEvents:
+FearMtn_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(9,24)
 	#endif
-	Seize(0,0)
+    Seize(5,3)
+    Seize(17,3)
+	#ifdef LION_HEADS_ENABLED
+		//Lion heads
+		LionHead(gFountainDry_FearMountainDead,LionHeadFearMtnRevival, 5, 2)
+		LionHead(gFountainDry_FearMountainSpdLuck,LionHeadFearMtnSpd, 5, 17)
+		LionHead(gFountainDry_FearMountainSpdLuck,LionHeadFearMtnLuck, 7, 17)
+	#endif
+    Door(8,20)
+    Door(9,20)
+    Door(9,14)
+    Door(12,14)
+    CHESRANDOM 0x9 Act4RandomChest|IsPointer [1, 14]
+    CHESRANDOM 0xA Act4RandomChest|IsPointer [15, 3]
+    CHESRANDOM 0xB Act3RandomChest|IsPointer [19, 3]
 	LOCA
 
-Dummy_MiscBasedEvents:
+FearMtn_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Dummy_EndingScene)
+	DefeatAll(FearMtn_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
-Dummy_Dunno:
+FearMtn_Dunno:
 	END_MAIN
 
-Dummy_Tutorial:
+FearMtn_Tutorial:
 	END_MAIN
 
-Dummy_Ballista1:
+FearMtn_Ballista1:
 	BLST
 	ALIGN 4
 
-Dummy_Ballista2:
+FearMtn_Ballista2:
 	BLST
 	ALIGN 4
 
-Dummy_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+FearMtn_PlayerSkirmishUnits:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,24] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [6,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,26] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,26] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,27] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,27] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
@@ -59,29 +80,61 @@ CutsceneUnits:
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
-
-EnemyUnits:
-	UNIT Mikhail Cantor	Mikhail Level(9, Enemy, True) [14,5]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT 0xAF Wight_Bow Mikhail Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT
 	
 SkirmishEnemies:
-	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
+    //gate of the living
+	UNIT Boss_Monster Fiend Boss_Monster Level(4,Enemy,True) [17,3] DropItem 0x00 0x0 0x00 [DumasLance,Item100G] NeverMoveAI
+	UNIT Terror_Mogall Mogall Boss_Monster Level(15,Enemy,True) [18,3] 0x00 0x00 0x0 0x00 [Tackle_Mogall, EvilEye] NeverMoveAI 
+	UNIT Terror_Mogall Mogall Boss_Monster Level(15,Enemy,True) [16,3] 0x00 0x00 0x0 0x00 [Tackle_Mogall, EvilEye] NeverMoveAI
+	UNIT DumaFaith_Sorcerer Cantor Boss_Monster Level(12,Enemy,True) [17,7] 0x00 0x00 0x0 0x00 [Mire] NeverMoveAI 
+	UNIT DumaFaith_Witch Witch DumaFaith_Sorcerer Level(9,Enemy,True) [18,8] 0x00 0x00 0x0 0x00 [Excalibur] NeverMoveAI 
+	UNIT DumaFaith_Witch Witch DumaFaith_Sorcerer Level(9,Enemy,True) [16,8] 0x00 0x00 0x0 0x00 [Aura] NeverMoveAI 
+    UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [20,10] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+    UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [14,8] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+    UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [13,7] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	//gate of the dead
+	UNIT Terror_Cyclops Random_Cyclops Boss_Monster Level(2,Enemy,True) [5,3] MonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
+    UNIT Terror_Mogall Mogall Boss_Monster Level(15,Enemy,True) [4,3] 0x00 0x00 0x0 0x00 [Tackle_Mogall, EvilEye] NeverMoveAI 
+	UNIT Terror_Mogall Mogall Boss_Monster Level(15,Enemy,True) [6,3] 0x00 0x00 0x0 0x00 [Tackle_Mogall, EvilEye] NeverMoveAI 
+	UNIT Terror_Fiend Random_BigBulky Boss_Monster Level(2,Enemy,True) [2,13] MonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
+	UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [3,7] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [1,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [2,8] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_ElderBael Kerberos Boss_Monster Level(10,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [HellFang] NoAI 
+	UNIT Terror_Wight Random_Wight Boss_Monster Level(7,Enemy,True) [7,5] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI  
+	UNIT Terror_Wight Random_Wight Boss_Monster Level(7,Enemy,True) [4,11] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT Terror_Wight Random_Wight Boss_Monster Level(7,Enemy,True) [5,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+    
+	//right of map
+	UNIT Terror_Wight_Bow Random_Wight_Bow Boss_Monster Level(6,Enemy,True) [17,24] MonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT Terror_ElderBael Random_ElderBael Boss_Monster Level(7,Enemy,True) [20,18] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT Terror_ElderBael Random_ElderBael Boss_Monster Level(7,Enemy,True) [19,16] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+    //starting area
+	UNIT DumaFaith_Sorcerer Arcanist Boss_Monster Level(9,Enemy,True) [8,21] 0x00 0x00 0x0 0x00 [Mire,Heal] [0xF, 0x03, 0x04, 0x20]
+	UNIT DumaFaith_Sorcerer Arcanist Boss_Monster Level(9,Enemy,True) [9,21] 0x00 0x00 0x0 0x00 [Mire,Heal] [0xF, 0x03, 0x04, 0x20]
 	UNIT
+    
+ReinforcementGargs:
+    UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(2,Enemy,True) [20,20] 0x00 0x00 0x1 REDA20R20 [IronLance] NoAI
+    UNIT
 
-Dummy_BeginningScene:
-
-	//debug only
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
+FearMtn_BeginningScene:
+    SVAL 0x2 0x0 //number of enemies to load
+	CALL EnemyRandomizerHelper 
+	LOAD1 0x1 SkirmishEnemies
+	ENUN
+	LOAD3 0x0 FearMtn_PlayerSkirmishUnits //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	ENUN
+	GotoPrepScreen
 	ENDA
-	//end debug
 
-Dummy_EndingScene:
+FearMtn_EndingScene:
+	SVAL 0x3 0x3
+	ASMC 0x85C65
+	//SADD 0x32
 	CALL UnifiedBEXPCaller
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x12
+    FadeOutMusic
+    FADI 2
+	SVAL 0x2 0x44
+	MNCH 0xFFFF //go to world map
 	ENDA

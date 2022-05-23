@@ -31,12 +31,13 @@ SonyaEvent:
 		MUSC SongID_SacrificeAndSaint
 		MUSI
 		CameraCursor(Sonya)
-		TEXTSTART
+		TEXTMODE 0
 		TEXTSHOW Ch4C_5_MogallText
 		TEXTEND
 		CameraCursor(MogallBoss)
 		TEXTCONT
 		TEXTEND
+        TEXTCLEAR
 		MUNO
 	LABEL 0x1
 	NoFade
@@ -62,18 +63,27 @@ Evt_MiscBasedEvents:
 MogallDies:
 	CHECK_ALIVE Jedah_Ch4
 	BEQ 0x3 0xC 0x0
-		EndMMS
-		//FE8UNCR(0xFFFF,0x43)
+        CHECK_ALLEGIANCE 0xFFFF
+        BNE 0x4 rC r0
+            CHECK_ACTIVE
+            SADD 0xC2
+            ASMC 0x790A4|1		//praise Teq
+            SET_ENDTURN 0xFFFD
+            SET_ACTIVE 0
+            SVAL 0x1 0x00000043
+            SET_CONDITION 0xFFFD
+        LABEL 0x4
 		MUSI
 		CameraCursor(Jedah_Ch4)
-		Text(Ch4C_5_JedahRetreat)
+		MapText(Ch4C_5_JedahRetreat)
 		NoFade
 		SVAL 0x2 Jedah_Ch4
 		CALL Warp_Out_Effect
 		STAL 0x08
 		DISA Jedah_Ch4
 		MUNO
-		CALL Evt_EndingScene
+		ENUT Local_BossDeath
+        CALL Evt_EndingScene
 	LABEL 0x3
 	NoFade
 	ENDA
@@ -113,7 +123,7 @@ CutsceneUnits:
 	UNIT
 	
 ConradJoins:
-	UNIT Conrad Paladin 0x00 Level(7, NPC, 1) [19,14] 0x00 0x00 0x1 REDA19R8 [HolyLance, BaseLance, PrayerRing] NoAI 
+	UNIT Conrad Paladin 0x00 Level(7, NPC, False) [19,14] 0x00 0x00 0x1 REDA19R10 [HolyLance, BaseLance, PrayerRing] NoAI 
 	UNIT
 
 BossUnit:
@@ -121,7 +131,7 @@ BossUnit:
 	UNIT
 	
 MogallUnit:
-	UNIT MogallBoss Mogall Jedah_Ch4 Level(20, Enemy, True) [17,5] 0x00 0x00 0x0 0x00 [Tackle_Mogall, DivideAbility] MogallAI
+	UNIT MogallBoss Mogall Jedah_Ch4 Level(20, Enemy, True) [0,0] 0x00 0x00 0x0 0x00 [Tackle_Mogall, DivideAbility] MogallAI
 	UNIT
 	
 CutsceneEnemies:
@@ -142,64 +152,64 @@ EnemyUnits:
 	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [DumasLance] NoAI
 	UNIT
     
-//TODO: scrolling to jedah's inventory from the DumasLance guy crashes the game
-
-
 
 Evt_BeginningScene:
-
-	//debug only
-	#ifndef __DEBUG__
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	#endif
 	
 	MUSC SongID_Env_Night
 	SetBackground(0x31)
-	Text(Ch4C_5_OpeningText)
-	MUSCSLOW SongID_Silence
+	BackgroundText(Ch4C_5_OpeningText)
+	MUSCMID SongID_Silence
 	FADI 5
 	CLEAN
-	
-
 
 	MUSCSLOW SongID_Env_Lava
+	FADU 5
+    STAL 20
 	EVBIT_T 0x9
 	LOAD2 0x0 CutsceneUnits
-	FADU 5
 	ENUN
 	EVBIT_F 0x9
 	STAL 20
 	
 	CameraCursor(0xC2)
-	TEXTSTART
-	TEXTSHOW Ch4C_5_OpeningText_2
-	TEXTEND
-	
-	MUSCSLOW SongID_Silence
+    MapText(Ch4C_5_OpeningText_2)
+    
+	STAL 5
+	MUSCMID SongID_Silence
 	LOAD1 0x1 ConradJoins
 	ENUN
-	
-	TEXTCONT
+    CameraCursor(Conrad)
+	TEXTMODE 0
+	TEXTSHOW Ch4C_5_OpeningText_3
 	TEXTEND
-	
 	MUSC SongID_Uprising
-	
 	TEXTCONT
 	TEXTEND
-	REMA
+    STAL 5
+    SOUN 0x104 //clang
+    STAL 20
+    TEXTCONT
+	TEXTEND
+	TEXTCLEAR
 	
 	CUSA Conrad
 	STAL 5
 	CLEN 0x0
+    EVBIT_T 0x9
 	LOAD1 0x1 BossUnit
 	ENUN
+    EVBIT_F 0x9
 	STAL 20
+    
+    CameraCursor(Jedah_Ch4)
+	MapText(Ch4C_5_OpeningText_4)
+    
 	LOAD1 0x1 MogallUnit
 	ENUN
-	RESUMM MogallBoss
+	SVAL 0x2 MogallBoss
+	_WARP 0xFFFF 0xFFFD [17,5]
+	CALL Warp_In_Effect
+	STAL 20
 	LOAD1 0x1 CutsceneEnemies
 	ENUN
 	
@@ -211,7 +221,7 @@ Evt_BeginningScene:
 	STAL 20
 	
 	/*
-	CAM1 Celica
+	CAMERA_CENTERED Celica
 	MOVE 0x10 Celica [18,9]
 	MOVE 0x10 Conrad [18,8]
 	ENUN
@@ -219,14 +229,15 @@ Evt_BeginningScene:
 	
 	ENUT 0x13 //disable conrad boss convo w jedah
 	StartBattle
+    SetBattleNumbers(72,23,0,0xFF,0xFF,0xFF)
 	MissedAttack(0,0)
 	EndAttack
 	FIG1 Jedah_Ch4 Conrad Thanatos
 	ENUF 0x13
 	*/
 	
-	CameraCursor(Celica)
-	Text(Ch4C_5_OpeningText_3)
+	CameraCursor(Conrad)
+	MapText(Ch4C_5_OpeningText_5)
 	FADI 5
 	
 	CLEA 0x0
@@ -240,7 +251,7 @@ Evt_BeginningScene:
 
 Evt_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW 0x7FFF
+	MUSCMID SongID_Silence
 	FADI 2
 	CLEE 0x0
 	CLEA 0x0
@@ -250,10 +261,11 @@ Evt_EndingScene:
 	
 	MUSC SongID_Omen
 	SetBackground(0x31,5)
-	Text(Ch4C_5_EndingText)
+	BackgroundText(Ch4C_5_EndingText)
 	MUSCSLOW SongID_Legacy
-	Text(Ch4C_5_EndingText_2)
+	BackgroundText(Ch4C_5_EndingText_2)
+    MUSCMID SongID_Silence
 	FADI 2
 	
-	MNCH 0x23
+	MNCH 0x28
 	ENDA

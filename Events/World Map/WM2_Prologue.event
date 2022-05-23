@@ -91,7 +91,9 @@ WorldMapIntroPointerTable(0x28,WMIntro_Act4_5_Alm)
 WorldMapIntroPointerTable(0x29,WMIntro_Act4_6_Alm)
 WorldMapIntroPointerTable(0x2A,WMIntro_Act4_7_Alm)
 WorldMapIntroPointerTable(0x2B,WMIntro_Act4_8_Alm)
-WorldMapIntroPointerTable(0x2C,WMIntro_Act4_Final)
+WorldMapIntroPointerTable(0x2C,WMIntro_Act4_6_Celica)
+WorldMapIntroPointerTable(0x2D,WMIntro_Act4_Final)
+WorldMapIntroPointerTable(0x2E,WMIntro_Act5_Final)
 WorldMapIntroPointerTable(0x36,WMIntro_Act4_3_Celica) //sage hamlet
 //0x37 novis priory
 WorldMapIntroPointerTable(0x38,WMIntro_Ch6x)
@@ -472,6 +474,19 @@ ColdOpen2(GMLoc_SagesHamlet, GMLoc_DumaGate)
 WMIntro_Act4_5_Celica:
 ColdOpen2(GMLoc_DumaGate, GMLoc_DumaSwamp)
 
+WMIntro_Act4_6_Celica:
+//ColdOpen2(GMLoc_DumaSwamp, GMLoc_DumaTower)
+    EVBIT_MODIFY 0x1
+    STAL 6
+    WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_DumaTower 0xA 0x1
+    WM_WAITFORCAM
+    WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_DumaSwamp GMLoc_DumaTower 0xFFF9 0x0
+    WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
+    STAL 5
+    FADI 16
+    WM_DRAWPATH2 0x0 0x2F 0x0 //dragons maw path
+    ENDA
+
 WMIntro_Act4Start_Alm:
 ColdOpen2(GMLoc_SluiceGate, GMLoc_RigelForest1)
 
@@ -500,7 +515,7 @@ WMIntro_Act4_8_Alm:
 ColdOpen2(GMLoc_LastBastion, GMLoc_RigelCastle)
 
 WMIntro_Act4_Final:
-//check mode
-//if alm mode ColdOpen2(GMLoc_RigelCastle, GMLoc_DumaTower)
-//if celica mode ColdOpen2(GMLoc_DumaSwamp, GMLoc_DumaTower)
+ColdOpen2(GMLoc_RigelCastle, GMLoc_DumaTower)
+
+WMIntro_Act5_Final:
 ENDA

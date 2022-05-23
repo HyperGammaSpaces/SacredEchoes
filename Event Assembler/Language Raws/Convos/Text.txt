@@ -161,6 +161,11 @@ BROWNBOXTEXT, 0x3A41, 8, -game:FE8 -indexMode:8
 	Text ID, 2, 2
 	Text position, 4, 4, -coordinates:2 -preferredBase:10
 
+## Sets active text mode
+TEXTMODE, 0, 32, -game:FE8
+	TextMode, 0, 4, -preferredBase:10
+	0x1A2, 4, 12, -fixed
+
 ##Starts the text showing.
 TEXTSTART, 0x1A20, 4, -game:FE8 -indexMode:8
 
@@ -187,3 +192,6 @@ TEXTCONT, 0x1C20, 4, -game:FE8 -indexMode:8
 
 ##Ends text showing started by TEXTSTART.
 TEXTEND, 0x1D20, 4, -game:FE8 -indexMode:8
+
+## Clears text-related things.
+TEXTCLEAR, 0x1B22, 4, -game:FE8 -indexMode:8

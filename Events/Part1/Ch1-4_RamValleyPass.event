@@ -23,10 +23,10 @@ Ch1_4_TurnBasedEvents:
 
 MercEvent:
 	MUSC SongID_MarchToDeliverance
-	CAM1 Alm
+	CAMERA_CENTERED Alm
 	STAL 30
 	MUSI
-	CAM1 LeatherShieldMerc
+	CAMERA_CENTERED LeatherShieldMerc
 	STAL 30
 	FlashCursor(1, 6, 60)
 	Text(Ch1_4_MercText)
@@ -123,23 +123,23 @@ Ch1_4_BeginningScene:
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	FADU 10
-	CAM1 Alm
+	CAMERA_CENTERED Alm
 	STAL 6
 	FlashCursor(Alm, 60)
 	TEXTSTART
 	TEXTSHOW Ch1_4_OpeningScene
 	TEXTEND
-	CAM1 LeatherShieldMerc
+	CAMERA_CENTERED LeatherShieldMerc
 	STAL 6
 	FlashCursor(LeatherShieldMerc, 60)
 	TEXTCONT
 	TEXTEND
-	CAM1 Alm
+	CAMERA_CENTERED Alm
 	STAL 6
 	FlashCursor(Alm, 60)
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	GotoPrepScreen
 	ENDA
 
@@ -177,7 +177,7 @@ Ch1_4_EndingScene:
 		TEXTCONT
 		TEXTEND
 	LABEL 0x2
-	REMA
+	TEXTCLEAR
 	STARTFADE
 	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
 	MNCH 0x04 //go to ch4

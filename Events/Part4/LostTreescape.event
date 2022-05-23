@@ -91,7 +91,7 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Terror_Fiend Fiend	0x0 Level(5, Enemy, True) [26,2]	0x00 0x00 0x0 0x00 [DumasLance] AttackInRangeAI
+	UNIT Terror_Fiend Fiend	0x0 Level(5, Enemy, True) [26,2]	DropItem 0x00 0x0 0x00 [DumasLance,Ambrosia] AttackInRangeAI
 	UNIT 0xB1 Chiron 0x0 Level(7, Enemy, True) [26,3] 0x00 0x00 0x0 0x00 [Halberd] AttackInRangeAI
 	UNIT 0xB1 Deathgoyle 0x0 Level(7, Enemy, True) [25,2] 0x00 0x00 0x0 0x00 [Axereaver] AttackInRangeAI
 	
@@ -99,7 +99,8 @@ EnemyUnits:
 	
 	UNIT 0xB0 ElderBael 0xB0 Level(9, Enemy, True) [13,25] 0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
 	UNIT 0xB1 ElderBael 0xB0 Level(7, Enemy, True) [12,26] 0x00 0x00 0x0 0x00 [SharpClaw] MoveWithLeaderAI
-	UNIT 0xB1 ElderBael 0xB0 Level(7, Enemy, True) [14,26] 0x00 0x00 0x0 0x00 [SharpClaw] MoveWithLeaderAI
+    
+	UNIT 0xB1 ElderBael 0xB0 Level(7, Enemy, True) [9,4] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
 	
 	UNIT 0xB1 ElderBael 0x0 Level(6, Enemy, True) [26,26] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
 	
@@ -107,7 +108,9 @@ EnemyUnits:
 	UNIT 0xB1 Entombed 0x0 Level(4, Enemy, True) [1,18] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
 	
 	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [22,15] 0x00 0x00 0x0 0x00 [HellFang] NoAI
-	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [24,20] 0x00 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xB1 Gorgon 0x0 Level(4, Enemy, True) [10,16] 0x00 0x00 0x0 0x00 [EvilEye] NoAI
+    UNIT 0xB1 Kerberos 0x0 Level(4, Enemy, True) [24,20] 0x00 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xB1 Wight_Bow 0x0 Level(5, Enemy, True) [20,18] 0x0 0x00 0x0 0x00 [SilverBow] NeverMoveAI
 	
 	UNIT 0xB1 ElderBael 0x0 Level(4, Enemy, True) [14,15] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
 	UNIT 0xB1 ElderBael 0x0 Level(8, Enemy, True) [15,16] 0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
@@ -125,14 +128,18 @@ EnemyUnitsReplay:
 	UNIT 0xB0 ElderBael 0xB0 Level(9, Enemy, True) [13,25] 0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
 	UNIT 0xB1 ElderBael 0xB0 Level(7, Enemy, True) [12,26] 0x00 0x00 0x0 0x00 [SharpClaw] MoveWithLeaderAI
 	UNIT 0xB1 ElderBael 0xB0 Level(7, Enemy, True) [14,26] 0x00 0x00 0x0 0x00 [SharpClaw] MoveWithLeaderAI
+    
+    UNIT 0xB1 Random_ElderBael 0x0 Level(7, Enemy, True) [9,4] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
 	
 	UNIT 0xB1 Random_ElderBael 0x0 Level(6, Enemy, True) [26,26] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
 	
 	UNIT 0xB1 Random_ElderBael 0x0 Level(6, Enemy, True) [2,17] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
 	UNIT 0xB1 Entombed 0x0 Level(4, Enemy, True) [1,18] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
 	
-	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [22,15] RandomizePosition 0x00 0x0 0x00 [HellFang] NoAI
-	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [24,20] RandomizePosition 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [17,15] RandomizePosition 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [18,20] RandomizePosition 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xB1 Kerberos 0x0 Level(4, Enemy, True) [10,16] RandomizePosition 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xB1 Wight_Bow 0x0 Level(5, Enemy, True) [20,18] 0x0 0x00 0x0 0x00 [SilverBow] NeverMoveAI
 	
 	UNIT 0xB1 Random_ElderBael 0x0 Level(4, Enemy, True) [14,15] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
 	UNIT 0xB1 ElderBael 0x0 Level(8, Enemy, True) [15,16] 0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
@@ -150,18 +157,18 @@ Lostwoods_BeginningScene:
 		ENUN
 		STAL 20
 		CameraCursor(Celica)
-		TEXTSTART
+		TEXTMODE 0
 		TEXTSHOW LostTreescape_Entrance_Text
 		TEXTEND
-		CAM1 [26, 0]
+		CAMERA_CENTERED [26, 0]
 		STAL 30
 		FlashCursor(26, 0, 60)
 		STAL 30
-		CAM1 Celica
+		CAMERA_CENTERED Celica
 		STAL 30
 		TEXTCONT
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		STAL 20
 		FADI 5
 		CLEA 0x0
@@ -184,19 +191,20 @@ Lostwoods_BeginningScene:
 	ENDA
 
 Lostwoods_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCSLOW SongID_Silence
-	FADI 2
-	CLEE 0x0
 	CHECK_EVENTID gLostWoodsCompleted
 	BNE 0x102 0xC 0x0
-	
+    
+        CALL UnifiedBEXPCaller
+        MUSCMID SongID_Silence
+        FADI 2
+        CLEE 0x0
+        
 		MUSC SongID_Revelations
 		EVBIT_MODIFY 0x1
 		ENUT gLostWoodsCompleted
 		EVBIT_MODIFY 0x0
 		SetBackground(0x4A,5)
-		Text(LostTreescape_Halcyon)
+		BackgroundText(LostTreescape_Halcyon)
 		FADI 2
 		CLEAN
 		
@@ -204,6 +212,7 @@ Lostwoods_EndingScene:
 		REVEAL Alm
 		Event_SetAlmMode
 		SetBackground(0x48,5)
+        CALL $591F40
 		SVAL 0x3 HerosProof 
 		GIVEITEMTO Alm
 		EVBIT_T 0x7
@@ -214,12 +223,12 @@ Lostwoods_EndingScene:
 		REMU Alm
 		
 		SetBackground(0x4A,5)
-		Text(LostTreescape_Halcyon_2)
-		MUSCSLOW SongID_Silence
+		BackgroundText(LostTreescape_Halcyon_2)
+		MUSCMID SongID_Silence
 		FADI 2
 		
 		SetBackground(0x48,5)
-		TEXTSTART
+		TEXTMODE 1
 		TEXTSHOW LostTreescape_CelicaProjection
 		TEXTEND
 		FAWI 5
@@ -228,14 +237,20 @@ Lostwoods_EndingScene:
 		MUSCSLOW SongID_DistantPromise
 		TEXTCONT
 		TEXTEND
-		REMA
-		MUSCSLOW SongID_Silence
+		TEXTCLEAR
+		MUSCMID SongID_Silence
 		
 		FADI 2
 		MNCH 0x21
 		GOTO 0x103
 	
 	LABEL 0x102
+    SVAL 0x3 0x3
+	ASMC 0x85C65
+    CALL UnifiedBEXPCaller
+    MUSCMID SongID_Silence
+    FADI 2
+    SVAL 0x2 0x43
 	MNCH 0xFFFF
 	
 	LABEL 0x103

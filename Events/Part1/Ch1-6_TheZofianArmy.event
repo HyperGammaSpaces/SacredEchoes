@@ -102,7 +102,7 @@ Ch1_6_BeginningScene:
 	ENUN
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	CAM1 [9,8]
+	CAMERA_CENTERED [9,8]
 
 	SetBackground(0x1B)
 	Text(Ch1_6_OpeningScene)
@@ -135,7 +135,7 @@ Ch1_6_EndingScene:
 	ENUN
 	LOAD2 0x1 CutsceneUnits
 	ENUN
-	CAM1 [10, 5]
+	CAMERA_CENTERED [10, 5]
 	FADU 4
 
 	STAL 20

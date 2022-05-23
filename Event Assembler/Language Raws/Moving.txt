@@ -97,6 +97,26 @@ MOVE_1STEP, 0x2F42, 8, -game:FE8 -indexMode:8
 	Character, 4, 2
 	Direction, 6, 2
 
+MOVE_DEFINED, 0x2F43, 8, -game:FE8 -indexMode:8
+	CharId, 4, 2
+
+MOVE_CLOSEST, 0x2F48, 8, -game:FE8 -indexMode:8
+	Speed, 2, 2, -preferredBase:10
+	CharId, 4, 2
+	Position, 6, 2, -coordinate:2 -preferredBase:10
+
+MOVE_NEXTTO, 0x2F49, 8, -game:FE8 -indexMode:8
+	Speed, 2, 2, -preferredBase:10
+	CharId, 4, 2
+	TargetCharId, 6, 2
+
+MOVE_1STEP_CLOSEST, 0x2F4A, 8, -game:FE8 -indexMode:8
+	Speed, 2, 2, -preferredBase:10
+	CharId, 4, 2
+	Direction, 6, 2, -preferredBase:10
+
+MOVE_DEFINED_CLOSEST, 0x2F4B, 8, -game:FE8 -indexMode:8
+	CharId, 4, 2
 
 
 ##Move manual which controls movement of a unit.

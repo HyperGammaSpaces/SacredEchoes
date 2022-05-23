@@ -1,24 +1,32 @@
 ALIGN 4
 Ch3_EndingScene:
+    CHECK_EVBIT 0x8
+    BNE 0x6969 rC r0
 	FADI 16
-	SetBackground(0x0B)
-	Text(Ch3_EndingText_SluiceGate_Alm)
+    LABEL 0x6969
+	SetBackground(0x0B,16)
+	BackgroundText(Ch3_EndingText_SluiceGate_Alm)
+    FadeOutMusic
 	FADI 5
+    SetBackground(BlackBackground,5)
 	EVBIT_MODIFY 0x4
 	MUSC SongID_UndiscoveredHorizons
 	STAL 30
-	FADU 16
-	CenterTutorialTextBox
-	TUTORIALTEXTBOXSTART
-	TEXTSHOW Ch3_EndingText_BrownBoxText
-	TEXTEND
-	REMA
-	STAL 30
+	CenterTextbox(Ch3_EndingText_BrownBoxText)
+    FadeOutMusic
 	FADI 2
-	MUSCSLOW SongID_WhatLiesAtTheEnd
+    STAL 20
+	MUSCSLOW SongID_PinnacleOfFalseBelief
 	SetBackground(0x33)
-	Text(Ch3_EndingText_Jedah)
+	BackgroundText(Ch3_EndingText_Jedah)
+    FadeOutMusic
 	FADI 2
+    SVAL 2 2
+    CHECK_MODE
+    BEQ 0x420 rC r2
+        SHORT $0D40 $0
+        POIN Act3EndSwitch|1
+    LABEL 0x420
 	MNCH 0x1E
 	ENDB
 

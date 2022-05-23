@@ -1,4 +1,5 @@
 #define SetDeathQuoteEntry(UnitID,ChapterID,EventID,TextID) "BYTE UnitID $00 $FF; BYTE ChapterID EventID 0x0; SHORT TextID; WORD 0"
+#define SetDeathEvent(UnitID,ChapterID,EventPointer) "BYTE UnitID $00 $FF; BYTE ChapterID 0x0 0x0; SHORT 0; POIN EventPointer"
 #define SetKillBossQuoteEntry(UnitID,ChapterID,TextID) "BYTE UnitID $00 $FF; BYTE ChapterID Local_BossDeath 0x0; SHORT TextID; WORD 0"
 #define SetGameOverQuoteEntry(UnitID,ChapterID,TextID) "BYTE UnitID $00 $FF; BYTE ChapterID gGameOverFlag 0x0; SHORT TextID; WORD 0"
 
@@ -55,10 +56,11 @@ SetKillBossQuoteEntry(MarlaCh4, 0x25, Ch4_3A_MarlaDeathQuote)
 SetKillBossQuoteEntry(Nuibaba, 0x26, Ch4A_4_Nuibaba_DeathQuote)
 SetKillBossQuoteEntry(JeromeCh4_5, 0x27, Ch4_5A_JeromeDeathQuote)
 SetDeathQuoteEntry(ZekeBoss, 0x27, gZekeDied, Ch4_5A_ZekeDeathQuote)
-SetKillBossQuoteEntry(MagnusCh4_7, 0x29, Placeholder_Text)
-SetDeathQuoteEntry(HestiaCh4, 0x29, 0x0, Placeholder_Text)
-SetKillBossQuoteEntry(MuellerCh4_8, 0x2A, Placeholder_Text)
-SetKillBossQuoteEntry(RudolfEnemy, 0x2B, Placeholder_Text)
+SetKillBossQuoteEntry(MagnusCh4_7, 0x2A, Ch4A_7_MagnusDeathQuote)
+SetDeathQuoteEntry(HestiaCh4, 0x2A, 0xD, Ch4A_7_HestiaDeathQuote)
+SetKillBossQuoteEntry(MuellerCh4_8, 0x2B, Ch4A_8_DeathQuote_Mueller)
+SetDeathQuoteEntry(SlaydeGK, 0x2B, 0x0,Ch4A_8_DeathQuote_Slayde)
+SetDeathEvent(RudolfEnemy, 0x2C, RudolfDeathEvent)
 
 //Special enemies
 SetDeathQuoteEntry(SlaydePaladin,0x7,0x8,SlaydeDeath_ZofiaCastle)
@@ -72,6 +74,8 @@ SetDeathQuoteEntry(CantorBoss_Bonewalkers,0x12,0x9,0x0)
 SetDeathQuoteEntry(CantorBoss_Bonewalkers,0x1b,0x9,0x0)
 SetDeathQuoteEntry(DeltheaBoss,0x15,gDeltheaDied,Ch3_7A_DeltheaDeath)
 SetDeathQuoteEntry(MogallBoss,0x22,0x9,0x0)
+SetDeathQuoteEntry(0xB8,0x28,0x18,0x0)
+SetDeathQuoteEntry(0xB9,0x28,0x19,0x0)
 
 //Playables
 //Game over triggers

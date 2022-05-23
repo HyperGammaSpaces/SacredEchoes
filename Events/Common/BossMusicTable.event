@@ -1,4 +1,5 @@
 #define SetBossMusic(UnitID) "WORD UnitID SongID_WarringPowers"
+#define SetBossMusic2(UnitID) "WORD UnitID SongID_EmeraldDragon"
 #define SetCustomBossMusic(UnitID,MusicID) "WORD UnitID MusicID"
 
 //Boss music table (may need to repoint)
@@ -21,47 +22,49 @@ BossMusicTable:
 	SetBossMusic(PirateCelica1)
 	SetBossMusic(PirateCelica2)
 	SetBossMusic(Barth)
+	SetBossMusic(CantorBoss_Celica5) 
+	SetBossMusic(SorcererBoss)
 	SetBossMusic(Jarth) 
+	SetBossMusic(ArcanistBoss)
 	SetBossMusic(Zaxon)
 	SetBossMusic(Xyzas) 
 	SetBossMusic(Lawson) 
 	SetBossMusic(Gazelle) 
-	SetBossMusic(Tatarrah) 
+	SetBossMusic2(Tatarrah) 
 	SetBossMusic(Garth) 
 	SetBossMusic(Wolff) 
 	SetBossMusic(Grieth) 
 	SetBossMusic(Blake) 
-	SetBossMusic(Mikhail) 
-	SetBossMusic(Garcia) 
-	SetBossMusic(Dolth) 
-	SetBossMusic(Jamil) 
-	SetBossMusic(XaizorCh4_2) 
-	SetBossMusic(JeromeCh4_5) 
-	SetBossMusic(MagnusCh4_7) 
-	SetBossMusic(MuellerCh4_8) 
-	SetBossMusic(Hades) 
-	SetBossMusic(Gharn) 
-	SetCustomBossMusic(RudolfEnemy, SongID_LordOfADeadEmpire) //rudolf
-	SetCustomBossMusic(Jedah_Ch4, SongID_WarringPowers) //jedah 1
-	SetCustomBossMusic(JedahFinal, SongID_WarringPowers) //jedah 2
-	SetCustomBossMusic(Duma, SongID_WarringPowers)
+	SetBossMusic2(Mikhail) 
+	SetBossMusic2(Garcia) 
+	SetBossMusic2(Dolth) 
+	SetBossMusic2(Jamil) 
+	SetBossMusic2(XaizorCh4_2) 
+	SetBossMusic2(JeromeCh4_5) 
+	SetBossMusic2(MagnusCh4_7) 
+	SetBossMusic2(MuellerCh4_8) 
+	SetBossMusic2(SlaydeGK) 
+	SetBossMusic2(Hades) 
+	SetBossMusic2(Gharn)
+	SetBossMusic2(Nuibaba) //nuibaba
+	SetBossMusic2(MarlaCh4) //marla 1
+	SetBossMusic2(HestiaCh4) //hestia 1
+	SetBossMusic2(MarlaFinal) //marla 2
+	SetBossMusic2(HestiaFinal) //hestia 2
+	SetBossMusic(SonyaBoss) //sonya boss
+	SetBossMusic(DeenBoss) //deen boss
+	SetBossMusic2(DeltheaBoss) //delthea boss 
 	SetBossMusic(FernandEnemy1) //fernand
 	SetBossMusic(FernandEnemy2) //fernand 2
-	SetBossMusic(FernandPaladin) //fernand 3
+	SetBossMusic2(FernandPaladin) //fernand 3
+	SetCustomBossMusic(RudolfEnemy, SongID_LordOfADeadEmpire) //rudolf
+	SetCustomBossMusic(Jedah_Ch4, SongID_EmeraldDragon) //jedah 1
+	SetCustomBossMusic(JedahFinal, SongID_EmeraldDragon) //jedah 2
+	SetCustomBossMusic(Duma, SongID_DarkGodsTempest)
 	SetCustomBossMusic(BerkutPaladin,SongID_PrideAndArrogance) //berkut 1
 	SetCustomBossMusic(BerkutGK,SongID_PrideAndArrogance) //berkut 2
 	SetCustomBossMusic(BerkutPossessed, SongID_ScionsDance) //berkut 3
-	SetBossMusic(Nuibaba) //nuibaba
-	SetBossMusic(MarlaCh4) //marla 1
-	SetBossMusic(HestiaCh4) //hestia 1
-	SetBossMusic(MarlaFinal) //marla 2
-	SetBossMusic(HestiaFinal) //hestia 2
-	SetBossMusic(SonyaBoss) //sonya boss
-	SetBossMusic(DeenBoss) //deen boss
-	SetBossMusic(DeltheaBoss) //delthea boss
-	SetBossMusic(CantorBoss_Celica5) //Generic shaman 1
-	SetBossMusic(SorcererBoss) //Generic shaman 2
-	SetBossMusic(ArcanistBoss) //Generic shaman 3
+	SetCustomBossMusic(RineaEnemy, SongID_ScionsDance) //berkut 3
 	//terminator
 	WORD 0xFFFFFFFF 0xFFFFFFFF
 	

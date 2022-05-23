@@ -2,24 +2,24 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plCh4_9A_Event, Ch4A9_ThisChapter)
+EventPointerTable(plCh5_3_Event, Ch5F3_ThisChapter)
 
 //quote flags: 0xC-0xE
 
-Ch4A9_ThisChapter:
-	POIN Ch4A9_TurnBasedEvents
-	POIN Ch4A9_CharacterBasedEvents
-	POIN Ch4A9_LocationBasedEvents
-	POIN Ch4A9_MiscBasedEvents
-	POIN Ch4A9_Dunno Ch4A9_Dunno Ch4A9_Dunno
-	POIN Ch4A9_Tutorial
-	POIN Ch4A9_Ballista1 Ch4A9_Ballista2
+Ch5F3_ThisChapter:
+	POIN Ch5F3_TurnBasedEvents
+	POIN Ch5F3_CharacterBasedEvents
+	POIN Ch5F3_LocationBasedEvents
+	POIN Ch5F3_MiscBasedEvents
+	POIN Ch5F3_Dunno Ch5F3_Dunno Ch5F3_Dunno
+	POIN Ch5F3_Tutorial
+	POIN Ch5F3_Ballista1 Ch5F3_Ballista2
 	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
 	POIN EnemyUnits EnemyUnits EnemyUnits
-	POIN Ch4A9_BeginningScene Ch4A9_EndingScene
+	POIN Ch5F3_BeginningScene Ch5F3_EndingScene
 
-Ch4A9_TurnBasedEvents:
+Ch5F3_TurnBasedEvents:
     TurnEventPlayer(0x0,LoadBowGuys,5)
     TurnEventPlayer(0x0,LoadBigGuys,8)
     TurnEventPlayer(0x0,LoadBowGuys,9)
@@ -33,10 +33,10 @@ LoadBigGuys:
 LoadMovGuys:
     ReinforcementEvent(MovGuys)
 
-Ch4A9_CharacterBasedEvents:
+Ch5F3_CharacterBasedEvents:
 	CHAR
 
-Ch4A9_LocationBasedEvents:
+Ch5F3_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(15,25)
 	#endif
@@ -46,25 +46,25 @@ Ch4A9_LocationBasedEvents:
     Door(20,8)
 	LOCA
 
-Ch4A9_MiscBasedEvents:
+Ch5F3_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatBoss(Ch4A9_EndingScene)
+	DefeatBoss(Ch5F3_EndingScene)
     //Add AFEV for Berkut vs Alm battle quote (id 0xa)
 	AFEV 0x10 RudolfAlmAfter 0xC
 	MournQuoteAFEVS
 	AFEV
 
-Ch4A9_Dunno:
+Ch5F3_Dunno:
 	END_MAIN
 
-Ch4A9_Tutorial:
+Ch5F3_Tutorial:
 	END_MAIN
 
-Ch4A9_Ballista1:
+Ch5F3_Ballista1:
 	BLST
 	ALIGN 4
 
-Ch4A9_Ballista2:
+Ch5F3_Ballista2:
 	BLST
 	ALIGN 4
 
@@ -159,7 +159,15 @@ RudolfAlmAfter:
 	NoFade
 	ENDA
 
-Ch4A9_BeginningScene:
+Ch5F3_BeginningScene:
+    #ifndef __DEBUG__
+	SetBackground(0x1D)
+	Text(Celica_EndDemo)
+	MNTS 0x0
+	ENDA
+	//end debug
+    #endif
+
 	SetBackground(0x0E, 2)
     MUSC SongID_Env_Wind
     TEXTMODE 1
@@ -200,7 +208,7 @@ Ch4A9_BeginningScene:
     GotoPrepScreen
 	ENDA
 
-Ch4A9_EndingScene:
+Ch5F3_EndingScene:
     CHECK_COORDS Alm
     SCOPY 0xB 0xC
 	CALL UnifiedBEXPCaller

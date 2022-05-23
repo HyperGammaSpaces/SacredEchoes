@@ -89,6 +89,7 @@
 #define Chest(item,chestX,chestY)               "CHES 0 item [chestX,chestY] 0x14"
 #define ChestMoney(amountOfMoney,chestX,chestY)     "CHES 0 0x77+amountOfMoney*0x10000 [chestX,chestY] 0x14"
 #define Door(doorX,doorY)                       "DOOR 0 [doorX,doorY] 0x12"
+#define Drawbridge(bridgeX,bridgeY)             "DOOR 0 [bridgeX,bridgeY] 0x13"
 #define Seize(seizeX,seizeY)                        "LOCA 3 [seizeX,seizeY] 0x11"
 #define Seize(eventID,offset,seizeX,seizeY)         "LOCA eventID offset [seizeX,seizeY] 0x11"
 #endif

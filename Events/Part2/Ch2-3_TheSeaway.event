@@ -21,7 +21,7 @@ Ch2_3_TurnBasedEvents:
 	TURN
 
 WaveFirst:
-	CAM1 [2,11]
+	CAMERA_CENTERED [2,11]
 	//Trigger the map change 0 here
 	EARTHQUAKE_START 0x100
 	STAL 30
@@ -112,8 +112,8 @@ Ch2_3_BeginningScene:
 		TEXTSTART 
 		TEXTSHOW Ch2_3_OnBoat
 		TEXTEND
-		REMA
-		REMOVEPORTRAITS
+		TEXTCLEAR
+		TEXTMODE 1
 		_0x2141 CelicaBoatCG 0x1 0x4
 		GOTO 0x101
 	
@@ -122,18 +122,18 @@ Ch2_3_BeginningScene:
 		SetBackground(CelicaBoatCG)
 	
 	LABEL 0x101
-	REMOVEPORTRAITS
+	TEXTMODE 1
 	STAL 60
 	_0x1A22
 	TEXTSHOW Ch2_3_CelicaCG
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	FADI 2
 	ClearBackground
 
 	MUSC SongID_Tension
 	STAL 20
-	CAM1 Celica
+	CAMERA_CENTERED Celica
 	FlashCursor(Celica, 60)
 
 	Text(Ch2_3_PreBattle)

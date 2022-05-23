@@ -64,18 +64,6 @@ Ch3_2A_Ballista2:
 	ALIGN 4
 
 Ch3_2A_Units1:
-#ifdef __DEBUG__
-	UNIT Alm AlmFighter 0x00 Level(10,Ally,True) [2,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Knight 0x00 Level(6,Ally,True) [4,13] 0x00 0x00 0x0 0x00 [BaseLance, BaseAxe, Vulnerary] NoAI  
-	UNIT Tobin Sniper 0x00 Level(6,Ally,True) [3,12] 0x00 0x00 0x0 0x00 [BaseBow, SteelBow, Vulnerary] NoAI 
-	UNIT Gray Myrmidon 0x00 Level(6,Ally,True) [3,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Kliff Mage 0x00 Level(10,Ally,True) [1,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Acantha Thief_F 0x00 Level(10,Ally,True) [1,12] 0x00 0x00 0x0 0x00 [BaseSword,Lockpick,Thunderblade] NoAI
-	UNIT Silque Cleric 0x00 Level(10,Ally,True) [4,15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Clair PegasusKnight 0x00 Level(10,Ally,True) [2,15] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
-	UNIT Clive Paladin 0x00 Level(4,Ally,True) [0,13] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
-	UNIT
-#else
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,13] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
 	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -86,7 +74,6 @@ Ch3_2A_Units1:
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [0,13] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
-#endif
 
 CutsceneUnits:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x1 REDA2R13 [BaseSword, Vulnerary] NoAI 
@@ -122,7 +109,7 @@ LuthierJoins:
 
 Ch3_2A_BeginningScene:
 	MUSC SongID_Env_Night
-	CAM1 [8, 11]
+	CAMERA_CENTERED [8, 11]
 	EVBIT_T 0x9
 	VCWF 0x0
 	LOAD1 0x1 SlaydeCutscene
@@ -131,12 +118,12 @@ Ch3_2A_BeginningScene:
 	FADU 5
 	MOVE 0x08 SlaydePaladin [8,2]
 	ENUN
-	CAM1 SlaydePaladin
+	CAMERA_CENTERED SlaydePaladin
 	STAL 20
 	FlashCursor(SlaydePaladin, 60)
 
 	SetBackground(0x20)
-	Text(Ch3_2A_OpeningText)
+	BackgroundText(Ch3_2A_OpeningText)
 	ClearBackground
 	STAL 20
 	EVBIT_T 0x9
@@ -147,7 +134,7 @@ Ch3_2A_BeginningScene:
 	STAL 40
 	
 	FADI 5
-	CAM1 [0,11]
+	CAMERA_CENTERED [0,11]
 
 	EVBIT_MODIFY 0x1
 	VCWF 0x5
@@ -158,21 +145,16 @@ Ch3_2A_BeginningScene:
 	FADU 5
 	
 	FlashCursor(Alm, 60)
-	Text(Ch3_2A_OpeningText_2)
+	MapText(Ch3_2A_OpeningText_2)
 
 	FADI 5
 	CLEA 0x0
 	CLEE 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	#ifdef __DEBUG__
-		LOAD1 0x1 Ch3_2A_Units1
-		ENUN
-	#else
-		LOAD3 0x0 Ch3_2A_Units1
-		ENUN
-		GotoPrepScreen
-	#endif
+    LOAD3 0x0 Ch3_2A_Units1
+	ENUN
+	GotoPrepScreen
 	ENDA
 
 LuthierAppearsEvent:
@@ -181,17 +163,17 @@ LuthierAppearsEvent:
 	ENUN
 	MOVE 0x08 Luthier [12,14]
 	ENUN
-	CAM1 Luthier
+	CAMERA_CENTERED Luthier
 	STAL 30
 	FlashCursor(Luthier, 60)
-	Text(Ch3_2A_LuthierAppears)
+	MapText(Ch3_2A_LuthierAppears)
 	NoFade
 	ENDA
 
 TalkToLuthier:
 	MUSS SongID_Recruitment 
 	STAL 33
-	Text(Ch3_2A_LuthierJoins)
+	MapText(Ch3_2A_LuthierJoins)
 	CUSA Luthier
 	STAL 20
 	CharacterJoinedNotification(Notif_LuthierJoin)
@@ -201,14 +183,14 @@ TalkToLuthier:
 
 Ch3_2A_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW SongID_Silence
+	MUSCMID SongID_Silence
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A2Completed
 	EVBIT_MODIFY 0x0
-	MUSC 0x3A
+	MUSC SongID_SilentGround
 	SetBackground(0x20)
-	TEXTSTART
+	TEXTMODE 1
 	TEXTSHOW Ch3_2A_EndingText
 	TEXTEND
 	STAL 20
@@ -216,7 +198,7 @@ Ch3_2A_EndingScene:
 	STAL 20
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	FADI 2
 	MNCH 0x11
 	ENDA

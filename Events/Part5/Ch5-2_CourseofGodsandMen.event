@@ -2,120 +2,51 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plCh4_3A_Event, Dummy_ThisChapter)
+EventPointerTable(plCh5_2_Event, Ch5F2_ThisChapter)
 
-Dummy_ThisChapter:
-	POIN Dummy_TurnBasedEvents
-	POIN Dummy_CharacterBasedEvents
-	POIN Dummy_LocationBasedEvents
-	POIN Dummy_MiscBasedEvents
-	POIN Dummy_Dunno Dummy_Dunno Dummy_Dunno
-	POIN Dummy_Tutorial
-	POIN Dummy_Ballista1 Dummy_Ballista2
+Ch5F2_ThisChapter:
+	POIN Ch5F2_TurnBasedEvents
+	POIN Ch5F2_CharacterBasedEvents
+	POIN Ch5F2_LocationBasedEvents
+	POIN Ch5F2_MiscBasedEvents
+	POIN Ch5F2_Dunno Ch5F2_Dunno Ch5F2_Dunno
+	POIN Ch5F2_Tutorial
+	POIN Ch5F2_Ballista1 Ch5F2_Ballista2
 	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
 	POIN EnemyUnits EnemyUnits EnemyUnits
-	POIN Dummy_BeginningScene Dummy_EndingScene
+	POIN Ch5F2_BeginningScene Ch5F2_EndingScene
 
-Dummy_TurnBasedEvents:
-	OpeningTurnEvent(BaronsEvent)
-	TURN 0x0 LoadSummons [3,255] 0x0
-	TURN 0x0 LoadReinforcementBandits [4,6] 0x0
+Ch5F2_TurnBasedEvents:
 	TURN
-	
-BaronsEvent:
-	CHECK_ALIVE Forsyth
-	BEQ 0x103 0xC 0x0
-	CHECK_DEPLOYED Forsyth
-	BEQ 0x103 0xC 0x0
-		MUSC SongID_WhatLiesAtTheEnd
-		MUSI
-		CAMERA_CENTERED MarlaCh4
-		STAL 30
-		CameraCursor(Forsyth)
-		Text(Ch4_3A_Barons)
-		MUNO
-	LABEL 0x103
-	NoFade
-	ENDA
-	
-LoadSummons:
-	CHECK_EVENTID 0x1D
-	BNE 2 0xC 0x0
-		CameraCursor(MarlaCh4)
-		MapText(Ch4_3A_MarlaSummons)
-		ENUT 0x1D
-		GOTO 3
-	LABEL 2
-	CHECK_EVENTID 0x2 // boss death quote
-	BNE 0 0xC 0x0 // branch label 0 if summoner dead
-	COUNTER_CHECK 0 // slot c = counter 0 value
-	SVAL 0x1 1 // number of turns between summons (1)
-	BNE 1 0xC 0x1 // branch label 1 if counter is not at value
 
-	// Counter at value
-	COUNTER_SET 0 0 // reset counter
-	CAMERA_CENTERED MarlaCh4 // cam on summoner
-	ENUN
-	LABEL 3
-	STAL 20
-	WARPIN [12, 1]
-    LOAD1 0 WitchSummon1
-    ENDWARP
-    ENUN
-    STAL 20
-    WARPIN [16, 1]
-    LOAD1 0 WitchSummon2
-    ENDWARP
-    ENUN
-	EVBIT_T 0x7
-	GOTO 0
-
-	LABEL 1
-	// Counter not at value
-	COUNTER_ADD 0 0 // counter 0 ++
-
-	LABEL 0
-	// event end
-	NoFade
-	ENDA
-	
-LoadReinforcementBandits:
-	ReinforcementEvent(BrigandsReinforcements)
-	NoFade
-	ENDA
-
-Dummy_CharacterBasedEvents:
+Ch5F2_CharacterBasedEvents:
 	CHAR
 
-Dummy_LocationBasedEvents:
+Ch5F2_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(2,15)
 	#endif
 	Seize(14,2)
-	Village(0xA, VillageEvent, 26,9)
 	LOCA
 	
-VillageEvent:
-	VillageEventItem(Ch4_3A_VillageText,0x05,Saunion)
-	ENDA
 
-Dummy_MiscBasedEvents:
+Ch5F2_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	MournQuoteAFEVS
 	AFEV
 
-Dummy_Dunno:
+Ch5F2_Dunno:
 	END_MAIN
 
-Dummy_Tutorial:
+Ch5F2_Tutorial:
 	END_MAIN
 
-Dummy_Ballista1:
+Ch5F2_Ballista1:
 	BLST
 	ALIGN 4
 
-Dummy_Ballista2:
+Ch5F2_Ballista2:
 	BLST
 	ALIGN 4
 
@@ -176,7 +107,15 @@ BrigandsReinforcements:
 	UNIT Bandit_Axe Berserker MarlaCh4 Level(5,Enemy,True) [17,9] 0x00 0x00 0x1 REDA17R9 [IronAxe,Torch] BrigandAI
 	UNIT
 
-Dummy_BeginningScene:
+Ch5F2_BeginningScene:
+    #ifndef __DEBUG__
+	SetBackground(0x1D)
+	Text(Celica_EndDemo)
+	MNTS 0x0
+	ENDA
+	//end debug
+    #endif
+    
 	MUSC SongID_HerosPath
 	SetBackground(0x47)
 	CHECK_ALIVE Silque
@@ -232,7 +171,7 @@ Dummy_BeginningScene:
 	GotoPrepScreen
 	ENDA
 
-Dummy_EndingScene:
+Ch5F2_EndingScene:
 	CALL UnifiedBEXPCaller
 	MUSCMID SongID_Silence
 	FADI 2
@@ -253,5 +192,5 @@ Dummy_EndingScene:
 	MUSCMID SongID_Silence
 	FADI 2
 	
-	MNCH 0x26
+	MNCH 0x2F
 	ENDA

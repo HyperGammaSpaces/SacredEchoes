@@ -14,8 +14,16 @@ WARP, 0xCD, 12, -game:FE7 -indexMode:8
 	In or out, 8, 1
 
 #Uses the coord data in rB
-WARP_OUT, 0x4120, 4, -game:FE8 -indexMode:8
+WARPOUT_SB, 0x4120, 4, -game:FE8 -indexMode:8
 	0xFFFF, 2, 2, -fixed
 
-WARP_IN, 0x4121, 4, -game:FE8 -indexMode:8
+WARPIN_SB, 0x4121, 4, -game:FE8 -indexMode:8
 	0xFFFF, 2, 2, -fixed
+    
+WARPOUT, 0x4120, 4, -game:FE8 -indexMode:8
+	Position, 2, 2, -coordinate:2 -preferredBase:10
+
+WARPIN, 0x4121, 4, -game:FE8 -indexMode:8
+	Position, 2, 2, -coordinate:2 -preferredBase:10
+
+ENDWARP, 0x412F, 4, -game:FE8 -indexMode:8

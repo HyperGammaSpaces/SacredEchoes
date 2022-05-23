@@ -32,11 +32,11 @@ CelicaTalkEvent:
 	MUSC SongID_MilasDivineProtection
 	MUSI
 	STAL 20
-	CAM1 Valbar
+	CAMERA_CENTERED Valbar
 	STAL 30
 	FlashCursor(Valbar, 60)
 	STAL 30
-	CAM1 Celica
+	CAMERA_CENTERED Celica
 	STAL 30
 	FlashCursor(Celica, 60)
 	Text(Ch2_4_PreBattle_CelicaTalk)
@@ -153,7 +153,7 @@ Ch2_4_BeginningScene:
 	Text(Ch2_4_PreBattle)
 	EndConvo
 
-	CAM1 Valbar
+	CAMERA_CENTERED Valbar
 	STAL 20
 	LOAD1 0x1 EnemyUnitsREDAs
 	ENUN
@@ -180,19 +180,19 @@ Ch2_4_EndingScene:
 		TEXTSTART
 		TEXTSHOW Ch2_4_PostBattle
 		TEXTEND
-		REMA
-		REMOVEPORTRAITS
+		TEXTCLEAR
+		TEXTMODE 1
 		
 		_0x2141 LeonValbarKamuiCG 0x1 0x4
-		REMOVEPORTRAITS
+		TEXTMODE 1
 		STAL 20
 		_0x1A22
 		TEXTSHOW Ch2_4_CGText
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		STAL 20
 		_0x2141 0x07 0x1 0x4
-		REMOVEPORTRAITS
+		TEXTMODE 1
 		Text(Ch2_4_PostBattle_2)
 		EVBIT_MODIFY 0x1
 		CHECK_EVENTID lFlag_ValbarTalked
@@ -211,7 +211,7 @@ Ch2_4_EndingScene:
 	MUSC SongID_ShadowOfVictory
 	SetBackground(0x07)
 	Text(Ch2_4_PostBattle_NoValbar_1)
-	REMA
+	TEXTCLEAR
 	FADI 16
     
 	EVBIT_MODIFY 0x1

@@ -35,9 +35,8 @@ WyvernsSpawn:
 	ENDA
 	
 SluiceGateStart:
-	CAM1 Tatarrah
-	FlashCursor(Tatarrah, 60)
-	Text(Ch3_7A_SluiceGateStart)
+	CameraCursor(Tatarrah)
+	MapText(Ch3_7A_SluiceGateStart)
 	EARTHQUAKE_START 0x100
 	STAL 30
 	FADI 16
@@ -47,6 +46,9 @@ SluiceGateStart:
 	STAL 30
 	FADU 16
 	STAL 30
+    CAMERA_CENTERED [1,6]
+    STAL 30
+    CAMERA_CENTERED Alm
 	NoFade
 	ENDA
 	
@@ -81,7 +83,8 @@ SluiceGateDrain2:
 	ENDA
 	
 SluiceGateWallCrack1:
-	CAM1 Tatarrah
+	CAMERA_CENTERED [22,6]
+    STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
@@ -89,14 +92,14 @@ SluiceGateWallCrack1:
 	STAL 30
 	SOUN 0xB0 //cracking wall
 	STAL 30
-	CAM1 Alm
-	FlashCursor(Alm, 60)
-	Text(Ch3_7A_SluiceGateCracking)
+	CameraCursor(Alm)
+	MapText(Ch3_7A_SluiceGateCracking)
 	NoFade
 	ENDA
 	
 SluiceGateWallCrack2:
-	CAM1 Tatarrah
+	CAMERA_CENTERED [1,6]
+    STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
@@ -104,11 +107,13 @@ SluiceGateWallCrack2:
 	STAL 30
 	SOUN 0xB0 //cracking wall
 	STAL 30
+    CAMERA_CENTERED Alm
 	NoFade
 	ENDA
 	
 SluiceGateWallCrack3:
-	CAM1 Tatarrah
+	CAMERA_CENTERED [21,6]
+    STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
@@ -116,11 +121,13 @@ SluiceGateWallCrack3:
 	STAL 30
 	SOUN 0xB0 //cracking wall
 	STAL 30
+    CAMERA_CENTERED Alm
 	NoFade
 	ENDA
 	
 SluiceGateWallCrack4:
-	CAM1 Tatarrah
+	CAMERA_CENTERED [2,6]
+    STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
@@ -128,17 +135,17 @@ SluiceGateWallCrack4:
 	STAL 30
 	SOUN 0xB0 //cracking wall
 	STAL 30
+    CAMERA_CENTERED Alm
 	NoFade
 	ENDA
 	
 SluiceGateFlood:
-	CAM1 Tatarrah
-	FlashCursor(Tatarrah, 60)
+	CameraCursor(12,5)
 	EARTHQUAKE_START 0x100
 	STAL 60
-	Text(Ch3_7A_Flood)
+	MapText(Ch3_7A_Flood)
 	FADI 2
-	ASMC 0x0800D391 //game over
+	ENUT 0x65 //game over
 	ENDB
 
 Ch3_7A_CharacterBasedEvents:
@@ -172,21 +179,6 @@ Ch3_7A_Ballista2:
 	ALIGN 4
 
 Ch3_7A_Units1:
-#ifdef __DEBUG__
-	UNIT Alm AlmFighter 0x00 Level(15,Ally,True) [10,20] 0x00 0x00 0x0 0x00 [BaseSword, RoyalSword, Vulnerary] NoAI 
-	UNIT Luthier Mage 0x00 Level(12,Ally,True) [11,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Tobin Sniper 0x00 Level(8,Ally,True) [8,20] 0x00 0x00 0x0 0x00 [BaseBow, HolyBow, Vulnerary] NoAI 
-	UNIT Gray Myrmidon 0x00 Level(8,Ally,True) [9,21] 0x00 0x00 0x0 0x00 [BaseSword, Zweihander, Vulnerary] NoAI 
-	UNIT Kliff Sage 0x00 Level(2,Ally,True) [7,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mathilda Paladin_F 0x00 Level(5,Ally,True) [6,22] 0x00 0x00 0x0 0x00 [BaseLance,Ridersbane] NoAI
-	UNIT Silque Cleric 0x00 Level(15,Ally,True) [8,22] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Clair PegasusKnight 0x00 Level(15,Ally,True) [10,22] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
-	UNIT Clive Paladin 0x00 Level(7,Ally,True) [12,22] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance,HeavySpear] NoAI
-	UNIT Forsyth Knight 0x00 Level(8,Ally,True) [13,21] 0x00 0x00 0x0 0x00 [BaseAxe,BaseLance,Forscythe] NoAI
-	UNIT Python Archer 0x00 Level(15,Ally,True) [14,22] 0x00 0x00 0x0 0x00 [BaseBow, SteelBow] NoAI
-	UNIT Acantha Thief_F 0x00 Level(15,Ally,True) [15,21] 0x00 0x00 0x0 0x00 [BaseSword,Lockpick,Thunderblade] NoAI
-	UNIT
-#else
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [11,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -200,7 +192,6 @@ Ch3_7A_Units1:
 	UNIT Python Archer 0x00 Level(1, Ally, 1) [14,22] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
 	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [15,21] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
 	UNIT
-#endif
 
 CutsceneUnits:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x1 REDA10R20 [BaseSword, Vulnerary] NoAI 
@@ -274,11 +265,10 @@ Ch3_7A_BeginningScene:
 	SADD 0xCA
 	LOAD2 0x1 CutsceneUnits
 	ENUN
-	CAM1 [12, 5]
+	CAMERA_CENTERED [12, 5]
 	STAL 30
-	CAM1 Alm
-	FlashCursor(Alm, 60)
-	Text(Ch3_7A_OpeningText)
+	CameraCursor(Alm)
+	MapText(Ch3_7A_OpeningText)
 	
 	SVAL 0x2 Tatarrah
 	_WARP 0xFFFF 0xFFFD [9,17]
@@ -289,19 +279,22 @@ Ch3_7A_BeginningScene:
 	CALL Warp_In_Effect
 	STAL 20
 	
-	FlashCursor(Tatarrah, 60)
-	Text(Ch3_7A_OpeningText_2)
+	CameraCursor(Tatarrah)
+	MapText(Ch3_7A_OpeningText_2)
 
 	SVAL 0x2 Tatarrah
 	CALL Warp_Out_Effect
 	STAL 0x08
 	DISA Tatarrah
 	
-	CAM1 DeltheaBoss
+	CAMERA_CENTERED DeltheaBoss
+    EVBIT_T 0x9
 	MOVE 0x08 DeltheaBoss [10, 18]
 	ENUN
+    EVBIT_F 0x9
 		
 	StartBattle
+    SetBattleNumbers(78,19,4,0xFF,0xFF,0xFF)
 	MissedAttack(0,0)
 	EndAttack
 	FIG1 DeltheaBoss Alm Aura
@@ -309,15 +302,14 @@ Ch3_7A_BeginningScene:
 	CHECK_EXISTS Luthier
 	BNE 0x3 0xC 0xA
 		
-		Text(Ch3_7A_OpeningText_LuthierExists)
+		MapText(Ch3_7A_OpeningText_LuthierExists)
 		CHECK_ALIVE Luthier
 		BEQ 0x4 0xC 0x0
-			CAM1 Luthier
-			FlashCursor(Luthier, 60)
-			Text(Ch3_7A_OpeningText_LuthierAlive)
+			CameraCursor(Luthier)
+			MapText(Ch3_7A_OpeningText_LuthierAlive)
 			GOTO 0x4
 	LABEL 0x3
-		Text(Ch3_7A_OpeningText_NoLuthier)
+		MapText(Ch3_7A_OpeningText_NoLuthier)
 	LABEL 0x4
 	STAL 20
 	SVAL 0x2 DeltheaBoss
@@ -330,14 +322,9 @@ Ch3_7A_BeginningScene:
 	CLEE 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	#ifdef __DEBUG__
-		LOAD1 0x1 Ch3_7A_Units1
-		ENUN
-	#else
-		LOAD3 0x0 Ch3_7A_Units1 
-		ENUN
-		GotoPrepScreen
-	#endif
+	LOAD3 0x0 Ch3_7A_Units1 
+	ENUN
+	GotoPrepScreen
 	ENDA
 	
 DeltheaWakesUp:
@@ -345,10 +332,8 @@ DeltheaWakesUp:
 	BEQ 0x2 0xC 0x0
 		ENUT DeltheaLocalFlag
 		MUSI
-		CAM1 DeltheaBoss
-		STAL 30
-		FlashCursor(DeltheaBoss, 60)
-		Text(Ch3_7A_DeltheaWakesUp)
+		CameraCursor(DeltheaBoss)
+		MapText(Ch3_7A_DeltheaWakesUp)
 		NoFade
 		STAL 20
 		CUSN DeltheaBoss
@@ -364,6 +349,7 @@ DeltheaWakesUp:
 
 Ch3_7A_EndingScene:
 	CALL UnifiedBEXPCaller
+    MUSCMID SongID_Silence
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A7Completed
@@ -374,7 +360,7 @@ Ch3_7A_EndingScene:
 		CHECK_EVENTID DeltheaLocalFlag
 		BEQ 0x5 0xC 0x0
 			MUSC SongID_Unity
-			TEXTSTART
+			TEXTMODE 1
 			TEXTSHOW Ch3_7A_EndingText //both alive
 			TEXTEND
 			FADI 2
@@ -385,24 +371,27 @@ Ch3_7A_EndingScene:
 			MUSC SongID_CastleTheme
 			TEXTCONT
 			TEXTEND
-			REMA
+			TEXTCLEAR
 			FADI 2
+            CLEAN
 			EVBIT_MODIFY 0x1
 			LOAD1 0x1 DeltheaJoins
 			ENUN
+            SetBackground(BlackBackground,5)
 			CharacterJoinedNotification(Notif_DeltheaJoin)
+            FADI 5
 			EVBIT_MODIFY 0x0
 			GOTO 0x6
 		LABEL 0x5
 			MUSC SongID_SilentGround
-			Text(Ch3_7A_Ending_LuthierOnly) //luthier alive, delthea dead
+			BackgroundText(Ch3_7A_Ending_LuthierOnly)
 			FADI 2
 			GOTO 0x6
 	LABEL 0x4 //luthier dead
 	CHECK_EVENTID DeltheaLocalFlag
 		BEQ 0x6 0xC 0x0
 		MUSC SongID_Recruitment
-		TEXTSTART
+		TEXTMODE 1
 		TEXTSHOW Ch3_7A_Ending_DeltheaOnly //only delthea
 		TEXTEND
 		FADI 2
@@ -413,12 +402,15 @@ Ch3_7A_EndingScene:
 		MUSC SongID_CastleTheme
 		TEXTCONT
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		FADI 2
+        CLEAN
 		EVBIT_MODIFY 0x1
 		LOAD1 0x1 DeltheaJoins
 		ENUN
+        SetBackground(BlackBackground,5)
 		CharacterJoinedNotification(Notif_DeltheaJoin)
+        FADI 5
 		EVBIT_MODIFY 0x0
 	LABEL 0x6
 	EVBIT_MODIFY 0x1
@@ -429,8 +421,8 @@ Ch3_7A_EndingScene:
 	//else
 	LABEL 0x13
 	EVBIT_MODIFY 0x0
-	SetBackground(0x0B)
-	Text(Ch3_EndingText_SluiceGate_NotOpen)
+	SetBackground(0x0B,5)
+	BackgroundText(Ch3_EndingText_SluiceGate_NotOpen)
 	FADI 2
 	
 	MNCH 0x1E

@@ -83,6 +83,7 @@ PlayerUnits:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
@@ -135,28 +136,28 @@ EnemyUnits:
 	UNIT
 	
 GenericSoldiers:
-	UNIT 0xC2 Paladin	Alm Level(9, NPC, True) [10,24]	0x00 0x00 0x1 REDA9R23 [IronLance,Vulnerary] NoAI
-	UNIT 0xC2 Paladin	Alm Level(9, NPC, True) [10,24]	0x00 0x00 0x1 REDA10R22 [IronLance,Vulnerary] NoAI
-	UNIT 0xC2 Paladin	Alm Level(9, NPC, True) [10,24]	0x00 0x00 0x1 REDA11R23 [IronLance,Vulnerary] NoAI
+	UNIT 0xC2 Paladin	Alm Level(9, NPC, True) [10,24]	0x00 0x00 0x1 REDA9R23 [IronLance,Vulnerary] DelayedRushAI
+	UNIT 0xC2 Paladin	Alm Level(9, NPC, True) [10,24]	0x00 0x00 0x1 REDA10R22 [IronLance,Vulnerary] DelayedRushAI
+	UNIT 0xC2 Paladin	Alm Level(9, NPC, True) [10,24]	0x00 0x00 0x1 REDA11R23 [IronLance,Vulnerary] DelayedRushAI
 	UNIT
 	
 SkirmishEnemies:
 	UNIT Rigel_Cav Cavalier	BerkutGK Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
+    
+ZekeUnits:
+    UNIT ZekeBoss GoldKnight 0x00 Level(3,Enemy,False) [2,0] 0x00 0x00 0x1 REDA9R10 [SilverLance, BaseLance] NoAI
+	UNIT DumaFaith_Sorcerer Paladin ZekeBoss Level(12, Enemy, True) [1,0] 0x00 0x00 0x1 REDA8R8 [BaseLance] NoAI
+	UNIT DumaFaith_Sorcerer_2 Paladin ZekeBoss Level(12, Enemy, True) [3,0] 0x00 0x00 0x1 REDA8R9 [BaseLance] NoAI
+	UNIT DumaFaith_Witch BowKnight ZekeBoss Level(2, Enemy, True) [1,0] 0x00 0x00 0x1 REDA9R8 [BaseBow] NoAI
+	UNIT DumaFaith_Witch_Slow BowKnight ZekeBoss Level(2, Enemy, True) [3,0] 0x00 0x00 0x1 REDA9R9 [BaseBow] NoAI
+    UNIT
 
 Evt_BeginningScene:
 
-	//debug only
-	#ifndef __DEBUG__
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	#endif
-	
-	MUSC SongID_Env_GustyWind
+	MUSCMID SongID_Env_GustyWind
 	SetBackground(0x20, 5)
-	Text(AlmAct4_OpeningText) //Clive talks about invading Rigel
+	BackgroundText(AlmAct4_OpeningText) //Clive talks about invading Rigel
 	
 	//If Gray is alive
 	CHECK_ALIVE Gray
@@ -164,16 +165,16 @@ Evt_BeginningScene:
 		FADI 5
 		STAL 5
 		FADU 5
-		Text(AlmAct4_OpeningText_Gray)
+		BackgroundText(AlmAct4_OpeningText_Gray)
 	LABEL 0x1
-	MUSC SongID_Env_GustyWindStop
+	MUSCMID SongID_Silence
 	FADI 2
 	
 	MUSC SongID_ImportantBattle
 	SetBackground(0x47, 5)
-	Text(Ch4A_1_OpeningText) //Lukas
+	BackgroundText(Ch4A_1_OpeningText) //Lukas
 
-	CAM1 [15,22]
+	CAMERA_CENTERED [15,22]
 	ClearBackgroundSmooth
 	
 	EVBIT_T 0x9
@@ -187,25 +188,22 @@ Evt_BeginningScene:
 	LOAD1 0x1 BossUnits
 	ENUN
 	EVBIT_F 0x9
-	CAM1 BerkutGK
-	FlashCursor(BerkutGK, 60)
-	Text(Ch4A_1_OpeningText_2) //berkut/alm/fernand/clive yelling across the field
-	MUSCSLOW SongID_Silence
+	CameraCursor(BerkutGK)
+	MapText(Ch4A_1_OpeningText_2) //berkut/alm/fernand/clive yelling across the field
+	MUSCMID SongID_Silence
 	STAL 20
 	
 	EVBIT_T 0x9
 	LOAD1 0x0 GenericSoldiers
 	ENUN
 	EVBIT_F 0x9
-	CAM1 Alm
-	FlashCursor(Alm,60)
+	CameraCursor(Alm)
 	MUSC SongID_Uprising
-	Text(Ch4A_1_OpeningText_3)
+	MapText(Ch4A_1_OpeningText_3)
 	STAL 20
 	
-	CAM1 BerkutGK
-	FlashCursor(BerkutGK, 60)
-	Text(Ch4A_1_OpeningText_4) //berkut yells at fernand
+	CameraCursor(BerkutGK)
+	MapText(Ch4A_1_OpeningText_4) //berkut yells at fernand
 	EVBIT_T 0x9
 	MOVE 0x08 BerkutGK [10,4]
 	MOVE 0x08 FernandPaladin [10,5]
@@ -225,7 +223,7 @@ Evt_BeginningScene:
 
 Evt_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW 0x7FFF
+	MUSCMID SongID_Silence
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A1Completed
@@ -237,9 +235,9 @@ Evt_EndingScene:
 	BLE 0x12 0xC 0x2
 		//3 generics survived
 		MUSC SongID_Victory
-		SetBackground(0x47)
-		Text(Ch4A_1_GreenUnitReward)
-		REMOVEPORTRAITS
+		SetBackground(0x47,5)
+		BackgroundText(Ch4A_1_GreenUnitReward)
+		CALL $591F40
 		SVAL 0x3 KillerLance
 		GIVEITEMTO Alm
 		EVBIT_T 0x7
@@ -247,6 +245,7 @@ Evt_EndingScene:
 		CLEAN
 	LABEL 0x12
 	CLEA 0x0
+    CLEE 0x0
 	CLEN 0x0
 	
 	MUSC SongID_ShadowOfVictory
@@ -254,40 +253,55 @@ Evt_EndingScene:
 	ENUN
 	LOAD2 0x0 CutsceneUnits_Ending
 	ENUN
-	CAM1 Alm
+	CAMERA_CENTERED Alm
 	FADU 2
-	Text(Ch4A_1_EndingText) //Berkut yells at Fernand
+	MapText(Ch4A_1_EndingText) //Berkut yells at Fernand
 	
+	LOAD1 0x1 ZekeUnits
+    ENUN
+    CameraCursor(ZekeBoss)
 	
-	//Do some creepy effects here
-	MUSCSLOW SongID_Silence
-	Text(Ch4A_1_EndingText_2) //Berkut hears Duma's voice
-	//Turn off creepy effects
-	
-	
-	MUSCSLOW SongID_ShadowOfVictory
-	Text(Ch4A_1_EndingText_3) //Fernand convinces Berkut to retreat
+	MUSCSLOW SongID_PrinceOfDarkness
+    TEXTMODE 0
+	TEXTSHOW Ch4A_1_EndingText_2 
+    TEXTEND
+	TEXTCLEAR
+    MOVE 0x08 DumaFaith_Sorcerer [3,0]
+    MOVE 0x08 DumaFaith_Sorcerer_2 [4,0]
+	MOVE 0x08 DumaFaith_Witch [3,1]
+	MOVE 0x08 DumaFaith_Witch_Slow [2,0]
+    MOVE 0x08 ZekeBoss [2,1]
+	ENUN
+    DISA ZekeBoss
+    
+	CameraCursor(FernandPaladin)
+	MapText(Ch4A_1_EndingText_3) //Fernand convinces Berkut to retreat
 	MOVE 0x08 BerkutGK [4,0]
 	MOVE 0x08 FernandPaladin [5,0]
 	ENUN
 	CLEE 0x0
-	CAM1 Alm
+    MUSCMID SongID_Silence
+    STAL 20
+	CAMERA_CENTERED Alm
+    STAL 20
+	MUSCSLOW SongID_ShadowOfVictory
 	FlashCursor(Alm, 60)
-	Text(Ch4A_1_EndingText_4) //tobin asks alm if they should give chase
+	MapText(Ch4A_1_EndingText_4) //tobin asks alm if they should give chase
 	FADI 2
 	MUSC SongID_PrinceOfDarkness
 	SetBackground(0x0E)
 	BROWNBOXTEXT Loc_RigelCastle [8,8]
-	TEXTSTART
+	TEXTMODE 1
 	TEXTSHOW Ch4A_1_EndingText_5 //berkut yells at rinea
 	TEXTEND
-	MUSCSLOW SongID_Silence
+	MUSCMID SongID_Silence
 	TEXTCONT
 	TEXTEND
 	MUSCSLOW SongID_Sorrow
 	TEXTCONT
 	TEXTEND
-	
+    TEXTCLEAR
+	MUSCMID SongID_Silence
 	FADI 2
 	MNCH 0x24
 	ENDA

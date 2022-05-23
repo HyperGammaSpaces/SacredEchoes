@@ -75,8 +75,8 @@ DoCelicaStuff:
 	SetBackground(0x06, 5)
 	BROWNBOXTEXT Ch1_2_FlashbackTimeframe [8,8]
 	STAL 30
-	Text(Ch2C_1_Flashback)
-	MUSCSLOW SongID_Silence
+	BackgroundText(Ch2C_1_Flashback)
+	MUSCMID SongID_Silence
 	STAL 20
 	FADI 2
 
@@ -85,7 +85,8 @@ DoCelicaStuff:
 	STAL 60
 	MUSCMID SongID_Silence
 	MUSC SongID_Env_Birds
-	Text(CelicaHandoffScene)
+	BackgroundText(CelicaHandoffScene)
+	MUSCMID SongID_Silence
 	FADI 5
 
 	LOAD1 0x1 NewCelica	//Add Celica first.
@@ -93,12 +94,13 @@ DoCelicaStuff:
 
 	MUSCSLOW SongID_SongOfPeace
 	SetBackground(0x2E) //Shrine
-	Text(CelicaHandoffScene_2)
+	BackgroundText(CelicaHandoffScene_2)
+	MUSCMID SongID_Silence
 	FADI 5
 
 	MUSC SongID_Recruitment
 	SetBackground(0x0C) //Hall
-	Text(CelicaHandoffScene_3)
+	BackgroundText(CelicaHandoffScene_3)
 	STAL 20
 	CALL $591F40
 	SVAL 0x3 Persephone //secret book

@@ -156,7 +156,7 @@ Hideout_BeginningScene:
 		TEXTSHOW DeliveranceHideout_Opening_1
 		TEXTEND
 		FADI 60
-		REMA
+		TEXTCLEAR
 		GOTO 0x204
 	LABEL 0x205
 		SVAL 0x2 0x0 //Number of skirmish enemies to load
@@ -192,7 +192,7 @@ Hideout_EndingScene:
 		LOAD1 0x1 DeliveranceUnits
 		ENUN
 		EVBIT_MODIFY 0x0
-		CAM1 [12, 6]
+		CAMERA_CENTERED [12, 6]
 		FADU 10
 		
 		EVBIT_MODIFY 0x1
@@ -249,7 +249,7 @@ Hideout_EndingScene:
 			TEXTSTART
 			TEXTSHOW DeliveranceHideout_GrayTobin
 			TEXTEND
-			REMA
+			TEXTCLEAR
 			STAL 30
 			FlashCursor(Clive, 60)
 			SetBackground(0x2E)
@@ -278,7 +278,7 @@ Hideout_EndingScene:
 		MUSC SongID_Reunion
 		TEXTCONT
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		ClearBackgroundSmooth
 		MUSC SongID_Silence
 		
@@ -297,7 +297,7 @@ Hideout_EndingScene:
 		//DeliveranceHideout_CGText
 
 		SETVAL 0x2 (CliveFernandCG)
-		REMOVEPORTRAITS
+		TEXTMODE 1
 		BACG 0xFFFF
 		STAL 60
 		_0x1A22
@@ -310,7 +310,7 @@ Hideout_EndingScene:
 		TEXTSHOW DeliveranceHideout_CGText_3
 		TEXTEND
 		FADI 5
-		REMA
+		TEXTCLEAR
 		
 		SetBackground(0x2E)
 		Text(DeliveranceHideout_FernandClive)
@@ -332,7 +332,7 @@ Hideout_EndingScene:
 		TEXTSTART 
 		TEXTSHOW DeliveranceHideout_AfterCGText
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		
 		CharacterJoinedNotification(Notif_ForsythPythonJoin)
 		CharacterJoinedNotification(Notif_CliveJoin)
@@ -345,7 +345,7 @@ Hideout_EndingScene:
 			STAL 20
 			SetBackground(0x2E)
 			CenterTextbox(DeliveranceHideout_AcceptSidequest)
-			REMA
+			TEXTCLEAR
 			FADI 4
 			SVAL 0x1 0x1
 			//"Accept side quest?"

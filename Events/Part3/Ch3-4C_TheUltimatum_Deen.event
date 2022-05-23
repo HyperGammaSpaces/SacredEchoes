@@ -86,17 +86,6 @@ Ch3_4C_CutsceneUnits:
 //start from [7,19].
 	
 Ch3_4C_UnitsSouth:
-#ifdef __DEBUG__
-	UNIT Celica CelicaPriestess 0x00 Level(12,Ally,True) [7,17] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(12,Ally,True) [9,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(12,Ally,True) [6,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Genny Cleric 0x00 Level(12,Ally,True) [8,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI
-	UNIT Saber Myrmidon 0x00 Level(5,Ally,True) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, GoldDagger, Vulnerary] NoAI
-	UNIT Leon Sniper 0x00 Level(5,Ally,True) [15,14] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
-	UNIT Palla PegasusKnight 0x00 Level(10,Ally,True) [14,13] 0x00 0x00 0x0 0x00 [BaseLance, Javelin, Vulnerary] NoAI
-	UNIT Catria PegasusKnight 0x00 Level(10,Ally,True) [15,12] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing, Vulnerary] NoAI
-	UNIT
-#else
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [9,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -106,7 +95,6 @@ Ch3_4C_UnitsSouth:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [14,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
-#endif
 	
 EnemyUnitsDeen:
 	UNIT DeenBoss Myrmidon DeenBoss Level(12, Enemy, False) [2,1] 0x00 0x00 0x0 0x00 [BraveSword,DeensSword] DefensiveTerrainAI
@@ -145,37 +133,34 @@ Ch3_4C_BeginningScene:
 	SetBackground(0x30)
 	CHECK_ALIVE Atlas
 	BEQ 0x2 0xC 0x0
-		Text(Ch3_4C_OpeningText_DeenChosen_Atlas)
+		BackgroundText(Ch3_4C_OpeningText_DeenChosen_Atlas)
 		GOTO 0x3
 	LABEL 0x2
-		Text(Ch3_4C_OpeningText_DeenChosen)
+		BackgroundText(Ch3_4C_OpeningText_DeenChosen)
 	LABEL 0x3
 	FADI 5
 	CLEA 0x0
 	
-	#ifdef __DEBUG__
-		LOAD1 0x1 Ch3_4C_UnitsSouth
-		ENUN
-	#else
-		LOAD3 0x0 Ch3_4C_UnitsSouth 
+	LOAD3 0x0 Ch3_4C_UnitsSouth 
 	ENUN
-		GotoPrepScreen
-	#endif
+	GotoPrepScreen
+
 	ENDA
 
 
 Ch3_4C_EndingScene:
 	CALL UnifiedBEXPCaller
+    FadeOutMusic
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C4Completed
 	EVBIT_MODIFY 0x0
 	MUSC SongID_Victory
 	SetBackground(0x30)
-	Text(Ch3_4C_EndingText)
+	BackgroundText(Ch3_4C_EndingText)
 	FADI 5
 	SetBackground(0x4C)
-	Text(Ch3_4C_EndingText_SonyaRetreats)
+	BackgroundText(Ch3_4C_EndingText_SonyaRetreats)
 	FADI 5
 	MNCH 0x1B
 	ENDA

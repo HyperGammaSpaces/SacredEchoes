@@ -117,17 +117,9 @@ EnemyUnits:
 
 Evt_BeginningScene:
 
-	//debug only
-	#ifndef __DEBUG__
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	#endif
-	
 	MUSC SongID_Tension
-	SetBackground(0x31)
-	Text(Ch4C_4_OpeningText)
+	SetBackground(0x31,5)
+	BackgroundText(Ch4C_4_OpeningText)
 	FADI 5
 	
 	LOAD1 0x1 EnemyUnits
@@ -139,7 +131,7 @@ Evt_BeginningScene:
 
 Evt_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW SongID_Silence
+	MUSCMID SongID_Silence
 	FADI 2
 	CLEE 0x0
 	CLEA 0x0
@@ -149,23 +141,25 @@ Evt_EndingScene:
 	
 	MUSC SongID_Victory
 	SetBackground(0x11,5)
-	Text(Ch4C_4_EndingText)
+	BackgroundText(Ch4C_4_EndingText)
+    MUSCMID SongID_Silence
 	FADI 2
 	CLEAN
 	LOAD2 0x0 CutsceneUnits_Ending
 	ENUN
-	CAM1 [3,10]
+	CAMERA_CENTERED [3,10]
 	MUSC SongID_Env_Night
 	FADU 5
 	MOVE 0x08 Saber [3,11]
 	ENUN
 	CameraCursor(Saber)
-	Text(Ch4C_4_EndingText_2)
+	MapText(Ch4C_4_EndingText_2)
 	MOVE 0x08 Saber [0,11]
 	ENUN
 	CLEA 0x0
 	STAL 20
-	Text(Ch4C_4_EndingText_3)
+	MapText(Ch4C_4_EndingText_3)
+    MUSCMID SongID_Silence
 	FADI 2
 	
 	CLEN 0x0

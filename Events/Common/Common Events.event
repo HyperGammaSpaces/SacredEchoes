@@ -1,4 +1,4 @@
-//CAM1 is to ensure the given tile is within the camera region
+//CAMERA_CENTERED is to ensure the given tile is within the camera region
 //CAM2 is to center the camera into the given tile
 //(excect when it's for units, then it's reversed, because EA raws weirdness)
 
@@ -9,12 +9,17 @@
 #define SetAI(unitid,ai1,ai2)"SVAL 0x1 ai1|(ai2<<8); CHAI unitid"
 #define SetAI(x,y,ai1,ai2) "SVAL 0x1 ai1|(ai2<<8); CHAI [x,y]"
 #define DoorFlag(flag,doorx,doory) "DOOR flag [doorx,doory] 0x12"
-#define CenterTextbox(textid) "CenterTutorialTextBox; TUTORIALTEXTBOXSTART; TEXTSHOW textid; TEXTEND"
+#define MapText(text) "TEXTMODE 0; TEXTSHOW text; TEXTEND; TEXTCLEAR"
+#define BackgroundText(text) "TEXTMODE 1; TEXTSHOW text; TEXTEND; TEXTCLEAR"
+#define CgText(text) "TEXTMODE 2; TEXTSHOW text; TEXTEND; TEXTCLEAR"
+#define CenterTextbox(textid) "CenterTutorialTextBox; TEXTMODE 3; TEXTSHOW textid; TEXTEND; TEXTCLEAR"
 #define CharacterConditionalDialog(character,alivetext,deadtext) "CHECK_ALIVE character; BEQ 1 0x0 0xC; Text(alivetext); GOTO 2; LABEL 1; Text(deadtext); LABEL 2"
 #define IfAliveDialog(character,alivetext,label) "CHECK_ALIVE character; BEQ label 0x0 0xC; Text(alivetext); LABEL label"
-#define CameraCursor(character) "CAM1 character; STAL 20; FlashCursor(character,60)"
-#define FadeOutMusic "MUSCMID 0x7FFF"
-#define EndMMS "SHORT $0D40 $0; WORD 0x80790a5"
+#define CameraCursor(character) "CAMERA_CENTERED character; STAL 20; FlashCursor(character,60)"
+#define CameraCursor(x,y) "CAMERA_CENTERED [x,y]; STAL 20; FlashCursor(x,y,60)"
+#define FadeOutMusic "MUSCMID SongID_Silence"
+#define EndMMS "SHORT $0D40 $0; WORD 0x80790a5" //TODO: also wrap 28130
+#define EraseMMS "SHORT $0D40 $0; WORD 0x80790a5" 
 
 
 ALIGN 4
@@ -37,19 +42,13 @@ ENDA
 //BEXP call (in one place for easy updating)
 UnifiedBEXPCaller:
 	ENUT 0x84 //turn off HPbars
-	ASMC ApplyBonusEXPToParty|1 
-	SOUN 0x5A
-	//SETVAL 0xB 0xFFFFFFFF
-	//TUTORIALTEXTBOXSTART
-	//TEXTSHOW2 BEXP_Notif_Text
-	//TEXTEND
-	//REMA
-	NOTIFY BEXP_Notif_Text 0x0 0x0
+	ASMC ApplyBonusEXPToParty|1
+	NOTIFY BEXP_Notif_Text 0x5A 0x0
 	ENDA
 	
 #define CharacterJoinedNotification(textID) "EVBIT_T 0x5; EVBIT_T 0x7; SOUN 0xE8; NOTIFY textID 0x0 0x0;EVBIT_F 0x5; STAL 30; EVBIT_F 0x7"
 
-#define SetBackground(background,speed) "REMOVEPORTRAITS; BACG background; FADU speed"
+#define SetBackground(background,speed) "TEXTMODE 1; BACG background; FADU speed"
 	
 ALIGN 4
 //usage example: 
@@ -58,6 +57,8 @@ ALIGN 4
 #define HiddenItem(itemID) "SVAL 0x2 0x0; CALL Area_Allegiance_Check; CHECK_LUCK 0xFFFF; SADD 0xC2; SVAL 0x3 itemID; CALL HiddenItem_Check; BNE (0x8100+itemID) 0xC 0x0; CALL Area_Unset_Flag; LABEL (0x8100+itemID); EVBIT_T 0x7; ENDA"
 
 #define SummonReinforcementEvent(unitPtr) "SVAL 0x2 0x0; CALL EnemyRandomizerHelper; SMOV 0x2 (unitPtr|0x8000000); CALL $9EE274; EVBIT_T 0x7"
+
+#define WarpInReinforcementsAt(unitPtr, x, y) "EVBIT_MODIFY 0x4; SVAL 0xB Coords(x,y); CAMERA_CENTERED; WARPIN_SB; SMOV 0x2 (unitPtr|0x8000000); STAL2 0xA; LOAD1 0x1 0xFFFFFFFF; ENUN; ENDWARP; EVBIT_MODIFY 0x0"
 
 Area_Allegiance_Check:
 	CHECK_ALLEGIANCE 0xFFFF
@@ -98,24 +99,24 @@ HiddenItem_Check:
 ALIGN 4
 Warp_In_Effect:
 	REMU 0xFFFD
-	CAM1 0xFFFD
+	CAMERA_CENTERED 0xFFFD
 	CHECK_COORDS 0xFFFD
 	SADD 0xCB
-	WARP_IN
+	WARPIN_SB
 	STAL2 0xA
 	REVEAL 0xFFFD
-	_0x412F 0x0
+	ENDWARP
 	ENDA
 
 ALIGN 4
 Warp_Out_Effect:
-	CAM1 0xFFFD
+	CAMERA_CENTERED 0xFFFD
 	CHECK_COORDS 0xFFFD
 	SADD 0xCB
-	WARP_OUT
+	WARPOUT_SB
 	STAL2 0x14
 	REMU 0xFFFD
-	_0x412F 0x0
+	ENDWARP
 	ENDA
 
 ALIGN 4

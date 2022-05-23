@@ -1,0 +1,880 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+#define Tilechange_Altar 0x0
+#define Tilechange_TopLeft 0x1
+#define Tilechange_TopLeftDoor 0x2
+#define Tilechange_MidLeft 0x3
+#define Tilechange_MidLeftDoor 0x4
+#define Tilechange_BottomLeft 0x5
+#define Tilechange_BottomLeftDoor 0x6
+#define Tilechange_TopRight 0x7
+#define Tilechange_TopRightDoor 0x8
+#define Tilechange_MidRight 0x9
+#define Tilechange_MidRightDoor 0xA
+#define Tilechange_BottomRight 0xB
+#define Tilechange_BottomRightDoor 0xC
+#define Tilechange_AltarDoor 0xD
+#define MoveForcedCoords(xcoord,ycoord) "(ycoord<<6)|xcoord"
+#define CheckIfRoomsCleared(eID) "SVAL r1 5; COUNTER_CHECK 0; BLE 0x0 rC r1; CALL RoomClearCheck; LABEL 0x0"
+
+EventPointerTable(plCh4_6C_Event, Evt_ThisChapter)
+
+Evt_ThisChapter:
+	POIN Evt_TurnBasedEvents
+	POIN Evt_CharacterBasedEvents
+	POIN Evt_LocationBasedEvents
+	POIN Evt_MiscBasedEvents
+	POIN Evt_Dunno Evt_Dunno Evt_Dunno
+	POIN Evt_Tutorial
+	POIN TrapList1 TrapList2
+	POIN PlayerPlacement PlayerPlacement
+	POIN $0 $0 $0 
+	POIN EnemyUnits EnemyUnits EnemyUnits
+	POIN Evt_BeginningScene Evt_EndingScene
+
+//keep spawns coming until a throne is seized
+Evt_TurnBasedEvents:
+    TurnEventPlayer(0x0, OpenBottomRightDoor, 1)
+    TurnEventPlayer(0x0, OpenBottomLeftDoor, 2)
+    TurnEventPlayer(0x0, OpenMidRightDoor, 3)
+    TurnEventPlayer(0x0, OpenMidLeftDoor, 4)
+    TurnEventPlayer(0x0, OpenTopRightDoor, 5)
+    TurnEventPlayer(0x0, OpenTopLeftDoor, 6)
+    InfiniteTurnEventPlayer(0x17, BottomRightRoomReinforcementEvent, 5)
+    InfiniteTurnEventPlayer(0x14, BottomLeftRoomReinforcementEvent, 6)
+    InfiniteTurnEventPlayer(0x16, MidRightRoomReinforcementEvent, 7)
+    InfiniteTurnEventPlayer(0x13, MidLeftRoomReinforcementEvent, 8)
+    InfiniteTurnEventPlayer(0x15, TopRightRoomReinforcementEvent, 9)
+    InfiniteTurnEventPlayer(0x12, TopLeftRoomReinforcementEvent, 10)
+    InfiniteTurnEventPlayer(0x9, MainRoomReinforcementsCheck, 1)
+    TURN
+    
+Evt_CharacterBasedEvents:
+	CHAR
+
+Evt_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(9,21)
+	#endif
+    Arrive(0xC,TopLeftDoorEvent,3,14)
+    Arrive(0xD,MidLeftDoorEvent,2,19)
+    Arrive(0xE,BottomLeftDoorEvent,4,24)
+    Arrive(0xF,TopRightDoorEvent,15,14)
+    Arrive(0x10,MidRightDoorEvent,16,19)
+    Arrive(0x11,BottomRightDoorEvent,14,24)
+	LOCA
+    
+ALIGN 4
+Evt_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	AFEV 0x1A AfterTopLeft 0xC
+	AFEV 0x1B AfterMidLeft 0xD
+	AFEV 0x1C AfterBottomLeft 0xE
+	AFEV 0x1D AfterTopRight 0xF
+	AFEV 0x1E AfterMidRight 0x10
+	AFEV 0x1F AfterBottomRight 0x11
+	AFEV 0xA BossClearCheck 0x18
+	AFEV 0xA BossClearCheck 0x19
+	MournQuoteAFEVS
+	AFEV
+    
+Evt_Dunno:
+	END_MAIN
+
+Evt_Tutorial:
+	END_MAIN
+
+TrapList1:
+	BLST
+	ALIGN 4
+
+TrapList2:
+	BLST
+	ALIGN 4
+    
+WarpOutFromThrone:
+    CHECK_ACTIVE
+    SADD 0xC2
+	WARPOUT_SB
+	STAL2 0x14
+    ASMC 0x790A4|1		//praise Teq
+    SET_ENDTURN 0xFFFD
+    SET_ACTIVE 0
+    SVAL 0x1 0x00000049
+    SET_CONDITION 0xFFFD
+	ENDWARP
+    NoFade
+    ENDA
+    
+    
+ALIGN 4
+ProtagDoorEvent:
+    CHECK_ACTIVE
+    SVAL 0x2 Celica
+    BEQ 0x203 0x2 0xC
+    SVAL 0x2 Conrad
+    BEQ 0x204 0x2 0xC
+    SVAL 0xC 0x0
+    GOTO 0x206
+    LABEL 0x203
+        EVBIT_MODIFY 0x4
+        MUSI
+        MapText(DumaTower_Pinnacle_Celica)
+        SADD 0xC2
+        EndUnitMMS(Celica)
+        SET_ACTIVE 0
+        MOVE_1STEP 0 Celica 2 //2=down
+        ENUN
+        SET_ENDTURN Celica
+        MUNO
+        SVAL 0xC 0x1
+        EVBIT_MODIFY 0x0
+        GOTO 0x206
+    LABEL 0x204
+        EVBIT_MODIFY 0x4
+        MUSI
+        MapText(DumaTower_Pinnacle_Conrad)
+        SADD 0xC2
+        EndUnitMMS(Conrad)
+        SET_ACTIVE 0
+        MOVE_1STEP 0 Conrad 2 //2=down
+        ENUN
+        SET_ENDTURN Conrad
+        MUNO
+        SVAL 0xC 0x1
+        EVBIT_MODIFY 0x0
+    LABEL 0x206
+        NoFade
+        ENDA
+
+ALIGN 4
+DoorEvent:
+    MUSI
+    CHECK_ACTIVE
+    SVAL 0x2 Kliff;     BEQ 0x105 0x2 0xC
+    SVAL 0x2 Faye;      BEQ 0x106 0x2 0xC
+    SVAL 0x2 Mae;       BEQ 0x10D 0x2 0xC
+    SVAL 0x2 Boey;      BEQ 0x10E 0x2 0xC
+    SVAL 0x2 Genny;     BEQ 0x10F 0x2 0xC
+    SVAL 0x2 Saber;     BEQ 0x110 0x2 0xC
+    SVAL 0x2 Valbar;    BEQ 0x111 0x2 0xC
+    SVAL 0x2 Leon;      BEQ 0x112 0x2 0xC
+    SVAL 0x2 Kamui;     BEQ 0x113 0x2 0xC
+    SVAL 0x2 Palla;     BEQ 0x117 0x2 0xC
+    SVAL 0x2 Catria;    BEQ 0x118 0x2 0xC
+    SVAL 0x2 Atlas;     BEQ 0x119 0x2 0xC
+    SVAL 0x2 Jesse;     BEQ 0x11A 0x2 0xC
+    SVAL 0x2 Deen;      BEQ 0x11B 0x2 0xC
+    SVAL 0x2 Sonya;     BEQ 0x11C 0x2 0xC
+    SVAL 0x2 Est;       BEQ 0x11D 0x2 0xC
+    SVAL 0x2 Nomah;     BEQ 0x121 0x2 0xC
+    SVAL 0x2 Hyas;      BEQ 0x124 0x2 0xC
+    GOTO 0x1FF
+        LABEL 0x105
+            MapText(DumaTower_Pinnacle_Kliff)
+            GOTO 0x1FF
+        LABEL 0x106
+            MapText(DumaTower_Pinnacle_Faye)
+            GOTO 0x1FF
+        LABEL 0x10D
+            MapText(DumaTower_Pinnacle_Mae)
+            GOTO 0x1FF
+        LABEL 0x10E
+            MapText(DumaTower_Pinnacle_Boey)
+            GOTO 0x1FF
+        LABEL 0x10F
+            MapText(DumaTower_Pinnacle_Genny)
+            GOTO 0x1FF
+        LABEL 0x110
+            MapText(DumaTower_Pinnacle_Saber)
+            GOTO 0x1FF
+        LABEL 0x111
+            MapText(DumaTower_Pinnacle_Valbar)
+            GOTO 0x1FF
+        LABEL 0x112
+            MapText(DumaTower_Pinnacle_Leon)
+            GOTO 0x1FF
+        LABEL 0x113
+            MapText(DumaTower_Pinnacle_Kamui)
+            GOTO 0x1FF
+        LABEL 0x117
+            MapText(DumaTower_Pinnacle_Palla)
+            GOTO 0x1FF
+        LABEL 0x118
+            MapText(DumaTower_Pinnacle_Catria)
+            GOTO 0x1FF
+        LABEL 0x119
+            MapText(DumaTower_Pinnacle_Atlas)
+            GOTO 0x1FF
+        LABEL 0x11A
+            MapText(DumaTower_Pinnacle_Jesse)
+            GOTO 0x1FF
+        LABEL 0x11B
+            MapText(DumaTower_Pinnacle_Deen)
+            GOTO 0x1FF
+        LABEL 0x11C
+            MapText(DumaTower_Pinnacle_Sonya)
+            GOTO 0x1FF
+        LABEL 0x11D
+            MapText(DumaTower_Pinnacle_Est)
+            GOTO 0x1FF
+        LABEL 0x121
+            MapText(DumaTower_Pinnacle_Nomah)
+            GOTO 0x1FF
+        LABEL 0x124
+            MapText(DumaTower_Pinnacle_Hyas)
+    LABEL 0x1FF
+    MUNO
+    COUNTER_ADD 0 0
+    NoFade
+    ENDA
+    
+RoomClearCheck:
+    ENUT 0xB
+    SOUN 0xB1
+    TILEREVERSE Tilechange_BottomRightDoor
+    TILEREVERSE Tilechange_BottomLeftDoor
+    TILEREVERSE Tilechange_MidRightDoor
+    TILEREVERSE Tilechange_MidLeftDoor
+    TILEREVERSE Tilechange_TopRightDoor
+    TILEREVERSE Tilechange_TopLeftDoor
+    CAMERA_CENTERED [9,15]
+    EARTHQUAKE_START 0x100
+    STAL 60
+    EARTHQUAKE_END
+    FlashCursor(9,13,60)
+    MapText(DumaTower_Pinnacle_Phase2)
+	NoFade
+	ENDA
+    
+MainRoomReinforcementsCheck:
+    CHECK_EVENTID 0xB
+    BEQ 0x0 0x0 0xC
+        EVBIT_T 0x9
+        WarpInReinforcementsAt(Reinforcements_Stairs,9,13)
+        EVBIT_F 0x9
+        GOTO 0x1
+    LABEL 0x0
+        ENUF 0x9
+    LABEL 0x1
+    NoFade
+    ENDA
+    
+BossClearCheck:
+	CHECK_EVENTID 0x18
+	BEQ 0x0 0x0 0xC
+		CHECK_EVENTID 0x19
+		BEQ 0x0 0x0 0xC
+            CALL Evt_EndingScene
+            GOTO 0x1
+	LABEL 0x0
+        ENUF 0xA
+	LABEL 0x1
+	NoFade
+	ENDA
+
+
+
+    
+AfterTopLeft:
+    SVAL 0xB Coords(3,14)
+    CALL WarpOutFromThrone
+    CheckIfRoomsCleared(0xB)
+    NoFade
+    ENDA
+AfterMidLeft:
+    SVAL 0xB Coords(2,19)
+    CALL WarpOutFromThrone
+    CheckIfRoomsCleared(0xB)
+    NoFade
+    ENDA
+AfterBottomLeft:
+    SVAL 0xB Coords(4,24)
+    CALL WarpOutFromThrone
+    CheckIfRoomsCleared(0xB)
+    NoFade
+    ENDA
+AfterTopRight:
+    SVAL 0xB Coords(15,14)
+    CALL WarpOutFromThrone
+    CheckIfRoomsCleared(0xB)
+    NoFade
+    ENDA
+AfterMidRight:
+    SVAL 0xB Coords(16,19)
+    CALL WarpOutFromThrone
+    CheckIfRoomsCleared(0xB)
+    NoFade
+    ENDA
+AfterBottomRight:
+    SVAL 0xB Coords(14,24)
+    CALL WarpOutFromThrone
+    CheckIfRoomsCleared(0xB)
+    NoFade
+    ENDA
+
+
+
+
+
+BottomRightRoomReinforcementEvent:
+    CHECK_EVENTID 0x11
+    BNE 0x800 rC r0
+        WarpInReinforcementsAt(BottomRightSpawns,14,24)
+        ENUF 0x17
+        GOTO 0x60B
+    LABEL 0x800
+    CHECK_INAREA Celica [13,24] [2,3]
+    BNE 0x60A r0 rC
+    CHECK_INAREA Conrad [13,24] [2,3]
+    BNE 0x60A r0 rC
+    GOTO 0x60B
+        LABEL 0x60A
+        SOUN 0xB1
+        TILEREVERSE Tilechange_BottomRightDoor
+        STAL 20
+    LABEL 0x60B
+    NoFade
+    ENDA    
+    
+BottomLeftRoomReinforcementEvent:
+    CHECK_EVENTID 0xE
+    BNE 0x801 rC r0
+        WarpInReinforcementsAt(BottomLeftSpawns,4,24)
+        ENUF 0x14
+        GOTO 0x605
+    LABEL 0x801
+    CHECK_INAREA Celica [3,24] [2,3]
+    BNE 0x604 r0 rC
+    CHECK_INAREA Conrad [3,24] [2,3]
+    BNE 0x604 r0 rC
+    GOTO 0x605
+        LABEL 0x604
+        SOUN 0xB1
+        TILEREVERSE Tilechange_BottomLeftDoor
+        STAL 20
+    LABEL 0x605
+    NoFade
+    ENDA
+     
+MidRightRoomReinforcementEvent:
+    CHECK_EVENTID 0x10
+    BNE 0x802 rC r0
+        WarpInReinforcementsAt(MidRightSpawns,16,19)
+        ENUF 0x16
+        GOTO 0x609
+    LABEL 0x802
+    CHECK_INAREA Celica [15,19] [2,3]
+    BNE 0x608 r0 rC
+    CHECK_INAREA Conrad [15,19] [2,3]
+    BNE 0x608 r0 rC
+    GOTO 0x609
+        LABEL 0x608
+        SOUN 0xB1
+        TILEREVERSE Tilechange_MidRightDoor
+        STAL 20
+    LABEL 0x609
+    NoFade
+    ENDA    
+    
+MidLeftRoomReinforcementEvent:
+    CHECK_EVENTID 0xD
+    BNE 0x803 rC r0
+        WarpInReinforcementsAt(MidLeftSpawns,2,19)
+        ENUF 0x13
+        GOTO 0x603
+    LABEL 0x803
+    CHECK_INAREA Celica [1,19] [2,3]
+    BNE 0x602 r0 rC
+    CHECK_INAREA Conrad [1,19] [2,3]
+    BNE 0x602 r0 rC
+    GOTO 0x603
+        LABEL 0x602
+        SOUN 0xB1
+        TILEREVERSE Tilechange_MidLeftDoor
+        STAL 20
+    LABEL 0x603
+    NoFade
+    ENDA
+      
+TopRightRoomReinforcementEvent:
+    CHECK_EVENTID 0xF
+    BNE 0x804 rC r0
+        WarpInReinforcementsAt(TopRightSpawns,15,14)
+        ENUF 0x15
+        GOTO 0x607
+    LABEL 0x804
+    CHECK_INAREA Celica [14,14] [2,3]
+    BNE 0x606 r0 rC
+    CHECK_INAREA Conrad [14,14] [2,3]
+    BNE 0x606 r0 rC
+    GOTO 0x607
+        LABEL 0x606
+        SOUN 0xB1
+        TILEREVERSE Tilechange_TopRightDoor
+        STAL 20
+    LABEL 0x607
+    NoFade
+    ENDA    
+    
+TopLeftRoomReinforcementEvent:
+    CHECK_EVENTID 0xC
+    BNE 0x805 rC r0
+        WarpInReinforcementsAt(TopLeftSpawns,3,14)
+        ENUF 0x12
+        GOTO 0x601
+    LABEL 0x805
+    CHECK_INAREA Celica [2,14] [2,3]
+    BNE 0x600 r0 rC
+    CHECK_INAREA Conrad [2,14] [2,3]
+    BNE 0x600 r0 rC
+    GOTO 0x601
+        LABEL 0x600
+        SOUN 0xB1
+        TILEREVERSE Tilechange_TopLeftDoor
+        STAL 20
+    LABEL 0x601
+    NoFade
+    ENDA
+    
+    
+    
+    
+OpenBottomRightDoor:
+    COUNTER_SET 0 0
+    CAMERA_CENTERED [13,26]
+    SOUN 0xB1
+    TILECHANGE Tilechange_BottomRight
+    STAL 20
+    AddTrap(SigilTrapID,14,24)
+    NoFade
+    ENDA
+    
+OpenBottomLeftDoor:
+    CAMERA_CENTERED [5,26]
+    SOUN 0xB1
+    TILECHANGE Tilechange_BottomLeft
+    STAL 20
+    AddTrap(SigilTrapID,4,24)
+    NoFade
+    ENDA
+       
+OpenMidRightDoor:
+    CAMERA_CENTERED [15,21]
+    SOUN 0xB1
+    TILECHANGE Tilechange_MidRight
+    STAL 20
+    AddTrap(SigilTrapID,16,19)
+    NoFade
+    ENDA
+       
+OpenMidLeftDoor:
+    CAMERA_CENTERED [3,21]
+    SOUN 0xB1
+    TILECHANGE Tilechange_MidLeft
+    STAL 20
+    AddTrap(SigilTrapID,2,19)
+    NoFade
+    ENDA
+       
+OpenTopRightDoor:
+    CAMERA_CENTERED [14,16]
+    SOUN 0xB1
+    TILECHANGE Tilechange_TopRight
+    STAL 20
+    AddTrap(SigilTrapID,15,14)
+    NoFade
+    ENDA
+       
+OpenTopLeftDoor:
+    CAMERA_CENTERED [4,16]
+    SOUN 0xB1
+    TILECHANGE Tilechange_TopLeft
+    STAL 20
+    AddTrap(SigilTrapID,3,14)
+    NoFade
+    ENDA
+    
+    
+    
+    
+TopLeftDoorEvent:
+    EVBIT_MODIFY 0x4
+    CAMERA_CENTERED [3,14]
+    CALL ProtagDoorEvent
+    BEQ 0x30C 0x0 0xC
+        ENUF 0xC
+        GOTO 0x40C
+    LABEL 0x30C
+    RemoveTrapAtCoords(3,14)
+    CALL DoorEvent
+    SOUN 0xAB
+    TILECHANGE Tilechange_TopLeftDoor
+    LABEL 0x40C
+    EVBIT_MODIFY 0x0
+    NoFade
+    ENDA
+    
+MidLeftDoorEvent:
+    EVBIT_MODIFY 0x4
+    CAMERA_CENTERED [2,19]
+    CALL ProtagDoorEvent
+    BEQ 0x30D 0x0 0xC
+        ENUF 0xD
+        GOTO 0x40D
+    LABEL 0x30D
+    RemoveTrapAtCoords(2,19)
+    CALL DoorEvent
+    SOUN 0xAB
+    TILECHANGE Tilechange_MidLeftDoor
+    LABEL 0x40D
+    EVBIT_MODIFY 0x0
+    NoFade
+    ENDA
+    
+BottomLeftDoorEvent:
+    EVBIT_MODIFY 0x4
+    CAMERA_CENTERED [4,24]
+    CALL ProtagDoorEvent
+    BEQ 0x30E 0x0 0xC
+        ENUF 0xE
+        GOTO 0x40E
+    LABEL 0x30E
+    RemoveTrapAtCoords(4,24)
+    CALL DoorEvent
+    SOUN 0xAB
+    TILECHANGE Tilechange_BottomLeftDoor
+    LABEL 0x40E
+    EVBIT_MODIFY 0x0
+    NoFade
+    ENDA
+    
+TopRightDoorEvent:
+    EVBIT_MODIFY 0x4
+    CAMERA_CENTERED [15,14]
+    CALL ProtagDoorEvent
+    BEQ 0x30F 0x0 0xC
+        ENUF 0xF
+        GOTO 0x40F
+    LABEL 0x30F
+    RemoveTrapAtCoords(15,14)
+    CALL DoorEvent
+    SOUN 0xAB
+    TILECHANGE Tilechange_TopRightDoor
+    LABEL 0x40F
+    EVBIT_MODIFY 0x0
+    NoFade
+    ENDA
+    
+MidRightDoorEvent:
+    EVBIT_MODIFY 0x4
+    CAMERA_CENTERED [16,19]
+    CALL ProtagDoorEvent
+    BEQ 0x310 0x0 0xC
+        ENUF 0x10
+        GOTO 0x410
+    LABEL 0x310
+    RemoveTrapAtCoords(16,19)
+    CALL DoorEvent
+    SOUN 0xAB
+    TILECHANGE Tilechange_MidRightDoor
+    LABEL 0x410
+    EVBIT_MODIFY 0x0
+    NoFade
+    ENDA
+    
+BottomRightDoorEvent:
+    EVBIT_MODIFY 0x4
+    CAMERA_CENTERED [14,24]
+    CALL ProtagDoorEvent
+    BEQ 0x311 0x0 0xC
+        ENUF 0x11
+        GOTO 0x411
+    LABEL 0x311
+    RemoveTrapAtCoords(14,24)
+    CALL DoorEvent
+    SOUN 0xAB
+    TILECHANGE Tilechange_BottomRightDoor
+    LABEL 0x411
+    EVBIT_MODIFY 0x0
+    NoFade
+    ENDA
+
+PlayerPlacement:
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [9,24] 0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [10,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [10,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [10,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
+
+CutsceneUnits_Start:
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [9,29] 0x00 0x00 0x1 CelicaIntroReda [BaseSword, Vulnerary] NoAI
+	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [10,29] 0x00 0x00 0x1 ConradIntroReda [HolyLance, BaseLance, PrayerRing] NoAI 
+	UNIT
+    
+CutsceneUnits_End:
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,15] 0x00 0x00 0x1 REDA8R15 [BaseSword, Vulnerary] NoAI
+	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [10,15] 0x00 0x00 0x1 REDA10R15 [HolyLance, BaseLance, PrayerRing] NoAI 
+	UNIT
+    
+CutsceneUnits_End_Outside:
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT
+    
+CutsceneUnits_End_Outside_2:
+    UNIT Sonya Mage_F 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x1 REDA7R2 [Fire, Vulnerary] NoAI
+    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x1 REDA4R2 [Fire, Vulnerary] NoAI
+    UNIT Boey Mage 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x1 REDA5R2 [Fire, Vulnerary] NoAI
+	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [4,0] 0x00 0x00 0x1 REDA5R1 [HolyLance, BaseLance, PrayerRing] NoAI 
+	UNIT
+
+BossUnit:
+	UNIT Jedah_Ch4 Necromancer	Jedah_Ch4 Level(15, Enemy, False) [9,5]	0x00 0x00 0x0 0x0 [Thanatos] AttackInRangeAI
+	UNIT
+    
+BottomLeftSpawns:
+    UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(4, Enemy, False) [4,24] 0x00 0x00 0x1 REDA5R24 [FireFang] NoAI
+    UNIT 
+    
+BottomRightSpawns:
+    UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [14,24] 0x00 0x00 0x1 REDA13R24 [HellFang] NoAI
+    UNIT    
+    
+MidLeftSpawns:
+    UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [2,19] 0x00 0x00 0x1 REDA3R19 [SteelSword] NoAI
+    UNIT 
+    
+MidRightSpawns:
+    UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [16,19] 0x00 0x00 0x1 REDA15R19 [PoisonLance] NoAI
+    UNIT
+	    
+TopLeftSpawns:
+    UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [3,14] 0x00 0x00 0x1 REDA4R14 [SteelLance] NoAI
+    UNIT 
+    
+TopRightSpawns:
+    UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [15,14] 0x00 0x00 0x1 REDA14R14 [SteelAxe] NoAI
+    UNIT
+	
+EnemyUnits:
+	UNIT Jedah_Ch4 Necromancer	Jedah_Ch4 Level(15, Enemy, False) [9,5]	0x00 0x00 0x0 0x0 [Thanatos] AttackInRangeAI
+    //three guys per room. strongest on throne tile with nevermoveAI.
+    //top left
+	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(7, Enemy, True) [3,14] 0x00 0x00 0x0 0x00 [DumasLance] NeverMoveAI
+	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [2,15] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [4,15] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+    //top right
+	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(7, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [KillerAxe] NeverMoveAI
+	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [14,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [16,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+    //mid left
+	UNIT Terror_Wight Wight Jedah_Ch4 Level(11, Enemy, True) [2,19] DropItem 0x00 0x0 0x00 [Ladyblade] NeverMoveAI
+	UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [1,20] 0x00 0x00 0x0 0x00 [BraveSword] NoAI
+	UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [3,20] 0x00 0x00 0x0 0x00 [Thunderblade] NoAI
+    //mid right
+	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(8, Enemy, True) [16,19] DropItem 0x00 0x0 0x00 [Gradivus] NeverMoveAI
+	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [15,20] 0x00 0x00 0x0 0x00 [Saunion] NoAI
+	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [17,20] 0x00 0x00 0x0 0x00 [Rhomphaia] NoAI
+    //bottom left
+	UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(7, Enemy, False) [4,24] 0x00 0x00 0x0 0x00 [HellFang] NeverMoveAI
+	UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(4, Enemy, False) [3,25] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(4, Enemy, False) [5,25] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+    //bottom right
+	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(9, Enemy, False) [14,24] 0x00 0x00 0x0 0x00 [HellFang] NeverMoveAI
+	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [13,25] 0x00 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [15,25] 0x00 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT
+    
+Reinforcements_Stairs:
+    UNIT 0xB8 ArchMogall Jedah_Ch4 Level(8, Enemy, True) [9,13] 0x00 0x00 0x1 REDA8R15 [Tackle_Mogall, EvilEye] NoAI
+    UNIT 0xB9 ArchMogall Jedah_Ch4 Level(8, Enemy, True) [9,13] 0x00 0x00 0x1 REDA10R15 [Tackle_Mogall, EvilEye] NoAI
+    UNIT
+    
+CutsceneUnits_Alm:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [11,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT
+    
+CelicaIntroReda:
+REDA [9,22] 0x0C 0x0 0x0 0x0
+ConradIntroReda:
+REDA [9,23] 0x0C 0x0 0x0 0x0
+
+Evt_BeginningScene:
+    MUSCSLOW SongID_PinnacleOfFalseBelief
+    FADU 2
+    STAL 10
+    EVBIT_T 0x9
+    LOAD2 0x1 CutsceneUnits_Start
+    ENUN
+    EVBIT_F 0x9
+    CameraCursor(Celica)
+
+    MapText(DumaTower_Entrance_Celica)
+    
+    STAL 20
+	FlashCursor(3, 21, 60)
+	FlashCursor(15, 21, 60)
+    SetBackground(0x2D)
+    BackgroundText(DumaTower_Entrance_Celica2)
+    FADI 2
+    CLEAN
+    CLEA 0x0
+    
+        //show alm at dragons maw if he's stuck there
+        CHECK_EVENTID gChapter4A6Completed
+        BNE 0x500 rC r0
+            
+            SetBackground(BlackBackground, 5)
+            EVBIT_MODIFY 0x4
+            CALL $591F40
+            STAL 20
+            CenterTextbox(DumaTower_AlmRouteOpen)
+            EVBIT_MODIFY 0x0
+            GOTO 0x501
+            
+            LABEL 0x500
+            REVEAL Alm
+            REVEAL Clair
+            Event_SetAlmMode
+            SVAL 0xB Coords(8, 19)
+            LOMA 0x29
+            WEA1 Weather_None
+            CAMERA_CENTERED [11,18]
+            TILECHANGE 0x0
+            LOAD2 0x2 CutsceneUnits_Alm
+            ENUN
+            MUSCSLOW SongID_Env_Lava
+            FADU 5
+            WEA1 Weather_Lava
+            BROWNBOXTEXT Loc_DragonsMaw [8,8]
+            STAL 20
+            CALL DragonsMaw_Earthquake
+            Event_SetCelicaMode
+            REMU Alm
+            REMU Clair
+            MUSCMID SongID_Silence
+            WEA1 Weather_None
+            FADI 2
+            CLEA 0x0
+            LOMA 0x28
+            
+        LABEL 0x501
+        //end dragons maw stuff
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	LOAD3 0x0 PlayerPlacement 
+	ENUN
+    COUNTER_SET 0 0
+    EVBIT_MODIFY 0x1
+    CAMERA_CENTERED Celica
+    EVBIT_MODIFY 0x0
+	GotoPrepScreen
+	ENDA
+
+Evt_EndingScene:
+	CALL UnifiedBEXPCaller
+	MUSCMID SongID_Silence
+	FADI 2
+	CLEE 0x0
+	CLEA 0x0
+    MUSCSLOW SongID_PinnacleOfFalseBelief
+    LOAD1 0x1 BossUnit
+    ENUN
+    LOAD2 0x1 CutsceneUnits_End
+    ENUN
+    FADU 5
+    STAL 20
+    CAMERA_CENTERED [9,9]
+    EARTHQUAKE_START 0x100
+    STAL 30
+    SOUN 0xAB
+    STAL 30
+    EARTHQUAKE_END
+    TILECHANGE Tilechange_Altar
+    STAL 20
+    MOVE 0x10 Celica [8,9]
+	MOVE 0x10 Conrad [10,9]
+	ENUN
+    
+    CameraCursor(Jedah_Ch4)
+    MapText(DumaTower_Celica_Ending)
+    MOVE 0x08 Jedah_Ch4 [8,5]
+    ENUN
+    STAL 5
+    EVBIT_T 0x9
+    MOVE 0x18 Celica [9,9]
+    ENUN
+	MOVE 0x08 Celica [9,4]
+	MOVE 0x08 Conrad [9,5]
+	ENUN
+	EVBIT_F 0x9
+    MUSCMID SongID_Silence
+    FADI 2
+    
+    EVBIT_MODIFY 0x1
+    SetBackground(SealedMilaCG,2)
+    STAL 90
+    CgText( DumaTower_Celica_Ending_2)
+    CgText( DumaTower_Celica_Ending_3)
+    FADI 5
+    EVBIT_MODIFY 0x0
+    
+    SetBackground(0x2D,5)
+    BackgroundText(DumaTower_Celica_Ending_4)
+    ClearBackgroundSmooth
+    MapText(DumaTower_Celica_Ending_5)
+    //Warp Conrad outside
+	SVAL 0x2 Conrad
+	CALL Warp_Out_Effect
+	STAL 8
+    TILECHANGE Tilechange_AltarDoor
+    SOUN 0xAB
+    
+    EVBIT_T 0x9
+	MOVE 0x18 Celica [9,7]
+	ENUN
+	EVBIT_F 0x9
+    MapText(DumaTower_Celica_Ending_6)
+    MUSCMID SongID_Silence
+	FADI 2
+    
+    CLEA 0x0
+    CLEE 0x0
+    SVAL 0xB Coords(4, 1)
+    LOMA 0x22
+    MUSCSLOW SongID_Env_Lava
+    FADU 2
+    WARPIN [4, 0]
+    LOAD2 0x2 CutsceneUnits_End_Outside
+    ENDWARP
+    LOAD2 0x2 CutsceneUnits_End_Outside_2
+    ENUN
+    CameraCursor(Saber)
+    CHECK_EXISTS Sonya
+	BEQ 0x901 rC r0
+	CHECK_ALIVE Sonya
+	BEQ 0x901 rC r0
+        MapText(DumaTower_Celica_Ending_7_Sonya)
+        GOTO 0x902
+    LABEL 0x901
+    MapText(DumaTower_Celica_Ending_7)
+    LABEL 0x902
+    FADI 2
+    SVAL 0xB Coords(4, 1)
+    LOMA 0x28
+    
+	EVBIT_MODIFY 0x1
+	ENUT gChapter4C6Completed
+    ENUF gEnableLordSwitch //no more switching
+	EVBIT_MODIFY 0x0
+	MNCH 0x23
+    SHORT $0D40 $0
+	POIN Act3EndSwitch|1 //this works for act 4 too i guess
+	ENDA

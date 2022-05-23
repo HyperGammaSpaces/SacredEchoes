@@ -26,9 +26,9 @@ Ch3_7C_TurnBasedEvents:
 	
 LoadNomah:
 	LoadReinforcements(NomahJoins)
-	FlashCursor(Nomah, 60)
+	CameraCursor(Nomah)
 	MUSS SongID_Recruitment
-	Text(Ch3_7C_NomahArrives)
+	MapText(Ch3_7C_NomahArrives)
 	CharacterJoinedNotification(Notif_NomahJoin)
 	MURE 0x5
 	NoFade
@@ -47,7 +47,7 @@ LoadSummons:
 	// Counter at value 1
 	LABEL 1
 	//COUNTER_SET 0 0 // reset counter
-	CAM1 Mikhail // cam on summoner
+	CAMERA_CENTERED Mikhail // cam on summoner
 	ENUN
 	SOUN 0x3BF // summoning SFX
 	STAL 20
@@ -57,7 +57,7 @@ LoadSummons:
 	// Counter at value 2
 	LABEL 2
 	COUNTER_SET 0 0 // reset counter
-	CAM1 [12,21] // cam on summoner
+	CAMERA_CENTERED [12,21] // cam on summoner
 	ENUN
 	SOUN 0x3BF // summoning SFX
 	STAL 20
@@ -103,25 +103,6 @@ Ch3_7C_Ballista2:
 	ALIGN 4
 
 Ch3_7C_Units1:
-#ifdef __DEBUG__
-	UNIT Celica CelicaPriestess 0x00 Level(15,Ally,True) [12,19] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(15,Ally,True) [11,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(15,Ally,True) [13,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Genny Cleric 0x00 Level(15,Ally,True) [12,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI
-	//Left
-	UNIT Saber Myrmidon 0x00 Level(7,Ally,True) [2,18] 0x00 0x00 0x0 0x00 [BaseSword, GoldDagger, Vulnerary] NoAI
-	UNIT Valbar Knight 0x00 Level(10,Ally,True) [2,16] 0x00 0x00 0x0 0x00 [BaseAxe, BaseLance, Vulnerary] NoAI
-	UNIT Leon Sniper 0x00 Level(7,Ally,True) [3,17] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
-	UNIT Kamui Mercenary 0x00 Level(15,Ally,True) [4,16] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
-	UNIT Jesse Thief 0x00 Level(9,Ally,True) [4,18] 0x00 0x00 0x0 0x00 [BaseSword, Rapier, Lockpick] NoAI
-	//Right
-	UNIT Palla PegasusKnight 0x00 Level(12,Ally,True) [20,16] 0x00 0x00 0x0 0x00 [BaseLance, Javelin, Vulnerary] NoAI
-	UNIT Catria PegasusKnight 0x00 Level(12,Ally,True) [22,16] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing, Vulnerary] NoAI
-	UNIT Est PegasusKnight 0x00 Level(9,Ally,True) [21,17] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
-	UNIT Atlas Axeman 0x00 Level(5,Ally,True) [20,18] 0x00 0x00 0x0 0x00 [BaseAxe, Hatchet, Vulnerary] NoAI
-	UNIT Hyas Cavalier 0x00 Level(6,Ally,True) [22,18] 0x00 0x00 0x0 0x00 [BaseLance, SteelLance, Vulnerary] NoAI
-	UNIT
-#else
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -139,7 +120,6 @@ Ch3_7C_Units1:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
-#endif
 
 CutsceneUnits:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -211,36 +191,30 @@ Ch3_7C_BeginningScene:
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	SetBackground(0x2F)
-	Text(Ch3_7C_OpeningText)
-
-	FADI 60
-	REMA
+	BackgroundText(Ch3_7C_OpeningText)
+	FADI 16
 	CLEA 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	#ifdef __DEBUG__
-		LOAD1 0x1 Ch3_7C_Units1
-		ENUN
-	#else
-		LOAD3 0x0 Ch3_7C_Units1 
-		ENUN
-		GotoPrepScreen
-	#endif
+	LOAD3 0x0 Ch3_7C_Units1 
+	ENUN
+	GotoPrepScreen
 	ENDA
 
 Ch3_7C_EndingScene:
 	CALL UnifiedBEXPCaller
+    FadeOutMusic
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C7Completed
 	EVBIT_MODIFY 0x0
-	MUSC SongID_Victory
+	MUSCFAST SongID_Victory
 	SetBackground(0x2F)
-	Text(Ch3_7C_EndingText)
+	BackgroundText(Ch3_7C_EndingText)
 	FADI 16
 	MUSC SongID_Truth
 	SetBackground(0x2F, 2)
-	TEXTSTART
+	TEXTMODE 1
 	TEXTSHOW Ch3_7C_EndingText_2
 	TEXTEND
 	MUSC SongID_Silence
@@ -249,51 +223,44 @@ Ch3_7C_EndingScene:
 	MUSC SongID_Legacy
 	TEXTCONT
 	TEXTEND
-	REMA
-	REMOVEPORTRAITS 
+	TEXTCLEAR
+    EVBIT_MODIFY 0x1
+    CALL $591F40
 	SVAL 0x3 TheZofia 
 	GIVEITEMTO Celica
 	EVBIT_T 0x7
 	
 	FADI 16
+	EVBIT_MODIFY 0x4
 	
 	//Celica promotes
 	PROM Celica CelicaPrincess ZofianCrown
-	EVBIT_MODIFY 0x4
 	FADI 2
-	REMOVEPORTRAITS
+	TEXTMODE 1
 	BACG 0x2F
 	
 	MUSC SongID_CastleTheme
 	
 	//CG
+	SetBackground(FealtyCG,2)
+    STAL 30
 	EVBIT_MODIFY 0x0
-	SETVAL 0x2 (FealtyCG)
-	REMOVEPORTRAITS
-	BACG 0xFFFF
-	FADU 2
 	STAL 60
-	_0x1A22
-	TEXTSHOW Ch3_7C_CGText_1
-	TEXTEND
-	_0x1A22
-	TEXTSHOW Ch3_7C_CGText_2
-	TEXTEND
+	CgText(Ch3_7C_CGText_1)
+	CgText(Ch3_7C_CGText_2)
 	FADI 5
-	REMA
 
 	//Ending continues
 	SetBackground(0x2F, 2)
-	Text(Ch3_7C_EndingText_3)
-	
+	BackgroundText(Ch3_7C_EndingText_3)
 	
 	//Nomah and priestesses here
 	CHECK_OTHERS
 	SVAL 0x2 0x1
 	BLE 0x12 0xC 0x2
 		//2 alive
-		Text(Ch3_7C_TwoPriestesses)
-		REMOVEPORTRAITS
+		BackgroundText(Ch3_7C_TwoPriestesses)
+		TEXTMODE 1
 		SVAL 0x3 MilasBow 
 		GIVEITEMTO Celica
 		EVBIT_T 0x7
@@ -301,7 +268,7 @@ Ch3_7C_EndingScene:
 	FADI 5
 	STAL 10
 	SetBackground(0x2F,5)
-	Text(Ch3_7C_EndingText_SluiceGate)
+	BackgroundText(Ch3_7C_EndingText_SluiceGate)
 	EVBIT_MODIFY 0x1
 	CHECK_EVENTID gChapter3A7Completed
 	BEQ 0x13 0xC 0x0
@@ -310,10 +277,10 @@ Ch3_7C_EndingScene:
 	//else
 	LABEL 0x13
 	EVBIT_MODIFY 0x0
-	Text(Ch3_7C_EndingText_SluiceGate_NotOpen)
+	BackgroundText(Ch3_7C_EndingText_SluiceGate_NotOpen)
 	FADI 2
 	
-	MNCH 0x1E
 	SHORT $0D40 $0
 	POIN Act3EndSwitch|1
+	MNCH 0x1E
 	ENDA

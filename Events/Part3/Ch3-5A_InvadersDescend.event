@@ -50,9 +50,9 @@ BossChargeSetup:
 	CHECK_EVENTID 0x8
 	BEQ 1 0xC 0x0 // branch label 1 if check not set
 		//Lawson says something
-		CAM1 Lawson
+		CAMERA_CENTERED Lawson
 		FlashCursor(Lawson, 60)
-		Text(Ch3_5A_BossWarningText)
+		MapText(Ch3_5A_BossWarningText)
 		//CHAI his group
 		SetAIParameters(0x0,0x0,0x04,0x0)
 		CHAI Lawson
@@ -102,23 +102,6 @@ Ch3_5A_Ballista2:
 	ALIGN 4
 
 Ch3_5A_Units1:
-#ifdef __DEBUG__
-	UNIT Alm AlmFighter 0x00 Level(13,Ally,True) [12,5] 0x00 0x00 0x0 0x00 [BaseSword, RoyalSword, Vulnerary] NoAI 
-	UNIT Lukas Knight 0x00 Level(8,Ally,True) [13,5] 0x00 0x00 0x0 0x00 [BaseLance, BaseAxe, Vulnerary] NoAI 
-	UNIT Tobin Sniper 0x00 Level(7,Ally,True) [14,4] 0x00 0x00 0x0 0x00 [BaseBow, SteelBow, Vulnerary] NoAI 
-	UNIT Gray Myrmidon 0x00 Level(7,Ally,True) [11,4] 0x00 0x00 0x0 0x00 [BaseSword, Armorslayer, Vulnerary] NoAI 
-	UNIT Kliff Mage 0x00 Level(13,Ally,True) [14,6] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Faye Cleric 0x00 Level(10,Ally,True) [11,6] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Silque Cleric 0x00 Level(13,Ally,True) [10,5] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Clair PegasusKnight 0x00 Level(13,Ally,True) [15,5] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
-	UNIT Clive Paladin 0x00 Level(6,Ally,True) [12,3] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance,HeavySpear] NoAI
-	UNIT Forsyth Knight 0x00 Level(6,Ally,True) [13,3] 0x00 0x00 0x0 0x00 [BaseAxe,BaseLance,Forscythe] NoAI
-	UNIT Python Archer 0x00 Level(13,Ally,True) [10,3] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
-	UNIT Acantha Thief_F 0x00 Level(13,Ally,True) [15,3] 0x00 0x00 0x0 0x00 [BaseSword,Lockpick,Thunderblade] NoAI
-	UNIT Luthier Mage 0x00 Level(11,Ally,True) [12,7] 0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT Mathilda Paladin_F 0x00 Level(3,Ally,True) [13,7] 0x00 0x00 0x0 0x00 [BaseLance,Ridersbane] NoAI
-	UNIT
-#else
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,5] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,5] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
 	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [14,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -134,7 +117,6 @@ Ch3_5A_Units1:
 	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [12,7] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [13,7] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
-#endif
 
 CutsceneUnits:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -210,11 +192,11 @@ Ch3_5A_BeginningScene:
 	MUSC SongID_Env_Night
 	LOAD2 0x1 CutsceneUnits
 	ENUN
-	CAM1 Alm
+	CAMERA_CENTERED Alm
 	VCWF 0x0
 	
 	SetBackground(0x44)
-	Text(Ch3_5A_OpeningText)
+	BackgroundText(Ch3_5A_OpeningText)
 	ClearBackground
 	
 	//move alm and lukas around
@@ -231,7 +213,8 @@ Ch3_5A_BeginningScene:
 	VCWF 0x4
 	
 	SetBackground(0x4A)
-	Text(Ch3_5A_OpeningText_2)
+	BackgroundText(Ch3_5A_OpeningText_2)
+    FadeOutMusic
 	ClearBackgroundSmooth
 	
 	LOAD1 0x1 EnemyUnits
@@ -241,26 +224,21 @@ Ch3_5A_BeginningScene:
 	STAL 5
 	SOUN 0x9C
 	STAL 20
-	CAM1 Lawson
+	CAMERA_CENTERED Lawson
 	FlashCursor(Lawson, 60)
 	MUSC SongID_SolveTheRiddle
-	Text(Ch3_5A_OpeningText_3)
+	MapText(Ch3_5A_OpeningText_3)
 	FADI 5
-	REMA
 	
 	CLEA 0x0
-	#ifdef __DEBUG__
-		LOAD1 0x1 Ch3_5A_Units1
-		ENUN
-	#else
-		LOAD3 0x0 Ch3_5A_Units1 
-		ENUN
-		GotoPrepScreen
-	#endif
+	LOAD3 0x0 Ch3_5A_Units1 
+	ENUN
+	GotoPrepScreen
 	ENDA
 
 Ch3_5A_EndingScene:
 	CALL UnifiedBEXPCaller
+    FadeOutMusic
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A5Completed
@@ -280,11 +258,11 @@ Ch3_5A_EndingScene:
 			CHECK_ALIVE Mathilda
 			BEQ 7 0x0 0xC
 			//alive: 
-			Text(Ch3_5A_EndingText)
+			BackgroundText(Ch3_5A_EndingText)
 			GOTO 9
 			//dead: 
 			LABEL 7
-			Text(Ch3_5A_EndingText_NoMathilda)
+			BackgroundText(Ch3_5A_EndingText_NoMathilda)
 			GOTO 9
 	LABEL 6
 	//else
@@ -294,13 +272,14 @@ Ch3_5A_EndingScene:
 		CHECK_ALIVE Mathilda
 		BEQ 8 0x0 0xC
 			//alive: 
-			Text(Ch3_5A_EndingText_NoGray)
+			BackgroundText(Ch3_5A_EndingText_NoGray)
 			GOTO 9
 			LABEL 8
 			//dead:
-			Text(Ch3_5A_EndingText_EveryoneDied)
+			BackgroundText(Ch3_5A_EndingText_EveryoneDied)
 	
 	LABEL 9
+    FadeOutMusic
 	FADI 2
 	MNCH 0x14
 	ENDA

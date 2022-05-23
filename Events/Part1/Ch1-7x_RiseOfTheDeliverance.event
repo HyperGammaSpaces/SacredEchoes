@@ -154,7 +154,7 @@ Ch1_7x_BeginningScene:
 	ENUN
 	LOAD1 0x0 LoadFernandMathilda
 	ENUN
-	CAM1 Clive
+	CAMERA_CENTERED Clive
 	
 	FADU 2
 	BROWNBOXTEXT Ch1_7x_BrownboxText [8,8]
@@ -165,13 +165,13 @@ Ch1_7x_BeginningScene:
 	ClearBackground
 	
 	STAL 20
-	CAM1 [12, 18]
+	CAMERA_CENTERED [12, 18]
 	EVBIT_T 0x9
 	//Boss walks in
 	LOAD1 0x1 Enemy_Envoy
 	ENUN
 	EVBIT_F 0x9
-	CAM1 Zopyrus
+	CAMERA_CENTERED Zopyrus
 	STAL 20
 	
 	SetBackground(0x26)
@@ -180,7 +180,7 @@ Ch1_7x_BeginningScene:
 
 	//Enemy ambush
 	MUSC SongID_Tension
-	CAM1 [12, 11]
+	CAMERA_CENTERED [12, 11]
 	CUSE Zopyrus
 	SVAL 0xB Coords(15,9)
 	CUSE 0xFFFE

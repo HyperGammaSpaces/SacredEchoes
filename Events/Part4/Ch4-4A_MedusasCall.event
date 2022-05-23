@@ -31,11 +31,11 @@ LoadSummons:
 
 	// Counter at value
 	COUNTER_SET 0 0 // reset counter
-	CAM1 Nuibaba // cam on summoner
+	CAMERA_CENTERED Nuibaba // cam on summoner
 	ENUN
 	SOUN 0x3BF // summoning SFX
 	STAL 20
-	ReinforcementEvent(GorgonSummons)
+	LoadReinforcements(GorgonSummons)
 	RESUMM 0xB9
 	GOTO 0
 
@@ -71,7 +71,7 @@ SwitchPush:
 		EVBIT_T 0x7
 		ENDB
 	LABEL 0x0 //continue
-	Text(Ch4_4A_SwitchFound)
+	MapText(Ch4_4A_SwitchFound)
 	STAL 20
 	//yes/no prompt
 	SVAL 0x1 0x1
@@ -96,7 +96,7 @@ SwitchPush:
 	TILECHANGE 0x04 //open gate to nuibaba room
 	SOUN 0xAB //village destroyed thump
 	STAL 20
-	Text(Ch4_4A_SwitchPushed)
+	MapText(Ch4_4A_SwitchPushed)
 	STAL 20
 	EVBIT_T 0x7
 	ENDA
@@ -114,10 +114,10 @@ TatianaFreed:
 	ApplyStatusToCoords(4,2,0x00)
 	CHECK_ALIVE Tatiana
 	BEQ 0x1 0xC 0x0
-		MUSS 0x30
+		MUSS SongID_Recruitment
 		STAL 33
 		CameraCursor(Tatiana)
-		Text(Ch4_4A_TatianaFreed)
+		MapText(Ch4_4A_TatianaFreed)
 		CALL $591F40
 		SVAL 0x1 0x0
 		CHAI Tatiana
@@ -163,7 +163,6 @@ PlayerPlacement:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [16,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
@@ -205,14 +204,6 @@ GorgonSummons:
 	UNIT
 
 Dummy_BeginningScene:
-
-	//debug only
-	#ifndef __DEBUG__
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	#endif
 	
 	MUSC SongID_WitchsTheme
 	//Load Nuibaba at front entrance
@@ -220,7 +211,7 @@ Dummy_BeginningScene:
 	ENUN
 	LOAD1 0x1 TatianaLoads
 	ENUN
-	CAM1 [16,16]
+	CAMERA_CENTERED [16,16]
 	FADU 5
 	STAL 20
 	
@@ -231,7 +222,7 @@ Dummy_BeginningScene:
 	EVBIT_F 0x9
 	
 	CameraCursor(Nuibaba)
-	Text(Ch4_4A_OpeningText)
+	MapText(Ch4_4A_OpeningText)
 	//Warp Nuibaba to the throne
 	SVAL 0x2 Nuibaba
 	CALL Warp_Out_Effect
@@ -240,7 +231,7 @@ Dummy_BeginningScene:
 	_WARP 0xFFFF 0xFFFD [4,1]
 	CALL Warp_In_Effect
 	STAL 20
-	CAM1 Nuibaba
+	CAMERA_CENTERED Nuibaba
 	STAL 20
 	
 	//Warp in Tatiana to [4,2]
@@ -250,24 +241,26 @@ Dummy_BeginningScene:
 	STAL 20
 	
 	MUSC SongID_Tension
-	Text(Ch4_4A_OpeningText_2)
+	MapText(Ch4_4A_OpeningText_2)
 	
 	//Silence Tatiana
 	StartBattle
+    SetBattleNumbers(100,0xFF,0xFF,0xFF,0xFF,0xFF)
 	Poison(0,0xFF)
 	EndAttack
+
 	FIG1 Nuibaba Tatiana Silence
 	STAL 20
 	ENUF 0x84
 	ApplyStatusToCoords(4,2,0x43) //9 turns of silence
 	
 	CameraCursor(Nuibaba)
-	Text(Ch4_4A_OpeningText_3)
+	MapText(Ch4_4A_OpeningText_3)
 	
 	STAL 20
 	ENUT 0x84
 	CameraCursor(Alm)
-	Text(Ch4_4A_OpeningText_4)
+	MapText(Ch4_4A_OpeningText_4)
 	FADI 16
 	
 	//Clean up and load actual deployments
@@ -283,7 +276,7 @@ Dummy_BeginningScene:
 
 Dummy_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW SongID_Silence
+	MUSCMID SongID_Silence
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A4Completed
@@ -294,20 +287,21 @@ Dummy_EndingScene:
 	BEQ 0x1 0xC 0x0
 		//good ending
 		MUSC SongID_Victory
-		Text(Ch4_4A_EndingText)
+		BackgroundText(Ch4_4A_EndingText)
 		STAL 20
 		CharacterJoinedNotification(Notif_TatianaJoin)
 		EVBIT_MODIFY 0x1
 		ENUT gTatianaRecruited
 		EVBIT_MODIFY 0x0
+        FadeOutMusic
 		FADI 5
 		GOTO 0x2
 	LABEL 0x1
 	//bad ending
 	MUSC SongID_Sorrow
-	Text(Ch4_4A_EndingText_Bad)
-	FADI 2
-	
+	BackgroundText(Ch4_4A_EndingText_Bad)
+	FadeOutMusic
+    FADI 2
 	LABEL 0x2
 	MNCH 0x27
 	ENDA

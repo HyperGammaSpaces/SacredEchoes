@@ -14,21 +14,22 @@
 #define SongID_SacrificeAndSaint 0xF
 #define SongID_AlmVictory 0x10
 #define SongID_CelicaVictory 0x11
-//0x12 twilight of the gods
+#define SongID_TwilightOfTheGods 0x12 //final map
 #define SongID_AirOfBrutality 0x13 //alm enemy
 #define SongID_DisquietingSteps 0x14 //celica enemy
-#define SongID_NobunagaField 0x15 //act 4 enemy
+#define SongID_NobunagaField 0x15 //act 4 alm enemy
+#define SongID_MadGodsBlessing 0x1D //act 4 celica enemy
 #define SongID_PrideAndArrogance 0x16 //berkut battle
 #define SongID_ScionsDance 0x17 //berkut/rinea battle
 #define SongID_LordOfADeadEmpire 0x18 //rudolf battle
 #define SongID_DauntlessBlade 0x19 //attack
+#define SongID_ThoseWhoChallengeGods SongID_DauntlessBlade //TODO: insert at 0x3D
 #define SongID_FiendsRapture 0x1A //defend
 #define SongID_WarringPowers 0x1B //boss1
 #define SongID_EmeraldDragon 0x1C //boss2
-//0x1D unused, new boss theme?
 #define SongID_DarkGodsTempest 0x1E //Duma battle theme
 #define SongID_ForTheCommander 0x1F //neutral phase
-#define SongID_SongOfPeace 0x20 //priory
+#define SongID_PinnacleOfFalseBelief 0x20
 #define SongID_Healing 0x21 //status staff
 #define SongID_Curing 0x22 //heal staff
 #define SongID_ClassChange 0x23 //promotion
@@ -38,7 +39,7 @@
 #define SongID_Reunion 0x27 //FE8
 #define SongID_Indignation 0x28 //FE8
 #define SongID_Sorrow 0x29 //FE3 Love Theme/FE5 Sadness Theme
-#define SongID_SilverGarden 0x2A //FE8
+#define SongID_SilverGarden 0x2A //Death of Fernand
 #define SongID_Legacy 0x2B //FE8
 #define SongID_Revelations 0x2C //mila's turnwheel, support room, flashbacks
 #define SongID_PrinceOfDarkness 0x2D //berkut cutscenes
@@ -53,12 +54,12 @@
 #define SongID_Shop 0x35
 #define SongID_Armory 0x36
 #define SongID_MilaStatue 0x37
-#define SongID_LostTreescape 0x38
-#define SongID_WitchsTheme 0x39
-#define SongID_SilentGround 0x3A
-#define SongID_CastleTheme 0x3B
-//0x3C map clear
-//0x3D tower/ruins clear
+#define SongID_SongOfPeace 0x38 //priory
+#define SongID_LostTreescape 0x39
+#define SongID_WitchsTheme 0x3A
+#define SongID_SilentGround 0x3B
+#define SongID_CastleTheme 0x3C
+//#define SongID_ThoseWhoChallengeGods 0x3D 
 #define SongID_GameOver 0x3E
 #define SongID_Death 0x3F
 #define SongID_Omen 0x40
@@ -75,12 +76,23 @@
 #define SongID_Env_Night 0x4A
 #define SongID_Env_Water 0x4B
 #define SongID_Env_Birds 0x4C
+#define SongID_Env_SoftSwoosh 0x4D
 #define SongID_Env_GustyWind 0x4E
 #define SongID_Env_GustyWindStop 0x4F
+#define SongID_Env_Blizzard 0x50
+#define SongID_Env_LegendaryWeapon 0x51
 #define SongID_Env_River 0x53
 #define SongID_Inn 0x54
 #define SongID_PortTown 0x55
+#define SongID_ExtraMapClear 0x57 
+#define SongID_ExtraDungeonClear 0x58
 #define SongID_Env_CrowdCheer 0x95
+
+#define LimaDiesBellSFX_ID 0xE4
 
 #define SongID_Silence 0x7FFF
 
+//set up like Light. 1 door per turn.
+//1 GK, 1 BK, 1 DF, 1 Fiend, 1 Necrodragon, 1 Cyclops
+//make phantom palettes for GK and BK
+//OR: replace humans with wight/deathgoyle/hellhound 

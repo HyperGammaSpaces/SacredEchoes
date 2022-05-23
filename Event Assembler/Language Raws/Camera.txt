@@ -25,6 +25,30 @@ CAM1, 0x2628, 4, -game:FE8 -indexMode:8
 
 CAM1, 0x2621, 4, -game:FE8 -indexMode:8
 	Character, 2, 2
+    
+## Moves camera such that given position is visible
+CAMERA, 0x2620, 4, -game:FE8 -indexMode:8
+	Position, 2, 2, -coordinates:2 -preferredBase:10
+
+## Moves camera such that given position is visible
+CAMERA_SB, 0x2620, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
+
+## Moves camera such that given CharId is visible
+CAMERA, 0x2621, 4, -game:FE8 -indexMode:8
+	CharId, 2, 2
+
+## Centers camera on given position
+CAMERA_CENTERED, 0x2628, 4, -game:FE8 -indexMode:8
+	Position, 2, 2, -coordinates:2 -preferredBase:10
+
+## Centers camera on given position
+CAMERA_CENTERED, 0x2628, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
+
+## Centers camera on given CharId
+CAMERA_CENTERED, 0x2629, 4, -game:FE8 -indexMode:8
+	CharId, 2, 2
 
 ##Allows camera to move automatically with units
 ##during events.

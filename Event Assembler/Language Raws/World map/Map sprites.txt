@@ -31,7 +31,17 @@ WM_FADEOUTSPRITE, 0xA440, 8, -game:FE8 -indexMode:8
 
 WM_WAITFORSPRITELOAD, 0xA520, 4, -game:FE8 -indexMode:8
 
+## Instantly reposition an existing sprite onto a given location.
+WM_SETSPRITELOCATION, 0xA640, 8, -game:FE8 -indexMode:8
+	ID, 4, 2
+	World map location, 6, 2
+    
+## Same as above, but locked to the lord. Safe to use in chapter events to move to a new node.
+WM_SETLORDLOCATION, 0xA640, 8, -game:FE8 -indexMode:8
+	0, 4, 2, -fixed
+	World map location, 6, 2
 
+## Set a sprite at an arbitrary coordinate
 WM_PUTSPRITE, 0xA760, 12, -game:FE8 -indexMode:8
 	ID, 2, 2
 	ClassID, 4, 2

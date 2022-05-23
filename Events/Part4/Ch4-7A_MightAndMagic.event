@@ -18,15 +18,33 @@ Ch4A7_ThisChapter:
 	POIN Ch4A7_BeginningScene Ch4A7_EndingScene
 
 Ch4A7_TurnBasedEvents:
-    TurnEventPlayer(0x0,SWSpawn,6)
-	TurnEventPlayer(0x0,BridgeOpenEvent,8)
-    TurnEventPlayer(0x0,SESpawn,10)
-	TurnEventPlayer(0x0,NESpawn,14)
-	TurnEventPlayer(0x0,NWSpawn,18)
+    TurnEventPlayer(0x0,NorthSpawn,3)
+    TurnEventPlayer(0x0,SWSpawn,5)
+	TurnEventPlayer(0x0,NESpawn,8)
+    TurnEventPlayer(0x0,SESpawn,11)
+	TurnEventPlayer(0x0,NWSpawn,13)
 	TURN
     
+NorthSpawn:
+	LoadReinforcements(ReinforcementsNorth)
+    STAL 20
+	LoadReinforcements(ReinforcementsNorth2)
+    EVBIT_T 0x7
+    ENDA
 NWSpawn:
-	ReinforcementEvent(ReinforcementsNW)
+	LoadReinforcements(ReinforcementsNW)
+    STAL 20
+	WARPIN [4, 0]
+    LOAD1 0 Witch1
+    ENDWARP
+    ENUN
+    STAL 20
+    WARPIN [8, 0]
+    LOAD1 0 Witch2
+    ENDWARP
+    ENUN
+    EVBIT_T 0x7
+    ENDA
 NESpawn:
 	ReinforcementEvent(ReinforcementsNE)
 SWSpawn:
@@ -42,7 +60,7 @@ Ch4A7_LocationBasedEvents:
 	  Seize(8,26)
 	#endif
 	Seize(6,1)
-	LOCA 0xA VillageEventLeft [15,3] 0x10
+	Village(0xA, VillageEventLeft, 15,3)
 	LOCA 0xB VillageEventRight [28,8] 0x10
 	House(0, HouseEvent1, 10,25)
 	House(0, HouseEvent2, 13,24)
@@ -50,20 +68,21 @@ Ch4A7_LocationBasedEvents:
 	LOCA
 	
 HouseEvent1:
-	HouseEvent(Placeholder_Text,0x01)
+	HouseEvent(Ch4A_7_House1,0x01)
 	ENDA
 	
 HouseEvent2:
-	HouseEvent(Placeholder_Text,0x01)
+	HouseEvent(Ch4A_7_House2,0x01)
 	ENDA
     
 HouseEvent3:
-	HouseEvent(Placeholder_Text,0x01)
+	HouseEvent(Ch4A_7_House3,0x01)
 	ENDA
 
 Ch4A7_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	DefeatAll(Ch4A7_EndingScene)
+    AFEV 0xE BridgeOpenEvent 0xD
 	MournQuoteAFEVS
 	AFEV
 
@@ -82,27 +101,66 @@ Ch4A7_Ballista2:
 	ALIGN 4
     
 BridgeOpenEvent:
-    CAM1 [5,10]
+    CAMERA_CENTERED [5,10]
 	STAL 20
 	TILECHANGE 0x0 //bridge
 	STAL 30
 	SOUN 0xAF //bridge forming
 	STAL 30
+    NoFade
     ENDA
     
 VillageEventLeft:
-    VillageEventItem(Placeholder_Text,0x05,Vulnerary)
+    VillageEventItem(Ch4A_7_VillageLeft,0x05,SilverShield)
     ENDA
     
 VillageEventRight:
-    VillageEventItem(Placeholder_Text,0x05,Vulnerary)
-    ENDA
+    SVAL 0x2 Alm
+    CHECK_ACTIVE
+    BEQ 0x201 rC r2
+        MUSI
+        SMOV r2 0x49
+        SMOV r3 Ch4A_7_VillageRight
+        CALL $9EE310
+        CALL $591F40
+        SMOV 0x3 Elixir
+        GIVEITEMTO 0xFFFF
+        MUNO
+        ENUF 0xB
+        GOTO 0x202
+        
+    LABEL 0x201
+        MUSS SongID_Env_WindBirds
+        SetBackground(0x49, 16)
+        TEXTMODE 1
+        TEXTSHOW Ch4A_7_VillageRight_Alm
+        TEXTEND
+        MUSCMID SongID_Silence
+        TEXTCONT
+        TEXTEND
+        MUSCSLOW SongID_DistantPromise
+        TEXTCONT
+        TEXTEND
+        TEXTCLEAR
+        FADI 2
+        CLEAN
+        CALL $591F40
+        MUSCMID SongID_Silence
+        SMOV 0x3 SpeedRing
+        GIVEITEMTO 0xFFFF
+        MURE 0x05
+        TILECHANGE 0x05
+        STAL 20
+    LABEL 0x202
+    EVBIT_T 0x7
+	ENDA
 
 PlayerPlacement:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,26] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [8,25] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [7,26] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [9,26] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [8,27] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,27] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [7,28] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
@@ -118,77 +176,156 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,28] 0x00 0x00 0x1 REDA8R26 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [7,28] 0x00 0x00 0x1 REDA8R27 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [7,28] 0x00 0x00 0x1 REDA9R27 [BaseLance] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [7,28] 0x00 0x00 0x1 REDA7R26 [BaseLance] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [7,28] 0x00 0x00 0x1 REDA6R27 [BaseLance] NoAI
 	UNIT
+
+LoadHestia:
+	UNIT HestiaCh4 Witch MagnusCh4_7 Level(15, Enemy, True) [6,2] DropItem 0x00 0x0 0x00 [Aura, Ambrosia] [0x0,0x3,0x4,0x20]
+    UNIT
 
 EnemyUnits:
 	UNIT MagnusCh4_7 Baron	MagnusCh4_7 Level(15, Enemy, True) [6,1]	0x00 0x00 0x0 0x00 [SilverLance] NeverMoveAI
-	UNIT HestiaCh4 Witch MagnusCh4_7 Level(15, Enemy, True) [2,1] DropItem 0x00 0x0 0x00 [Aura, Ambrosia] NeverMoveAI
-    //fort area
-    UNIT Rigel_Cav GoldKnight MagnusCh4_7 Level(4, Enemy, True) [7,2] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-    UNIT Rigel_Soldier Baron MagnusCh4_7 Level(4, Enemy, True) [4,3] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [5,5] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
-    UNIT Rigel_Archer BowKnight MagnusCh4_7 Level(4, Enemy, True) [3,8] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight MagnusCh4_7 Level(4, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [4,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [5,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    //hestia pals
+	UNIT Rigel_Soldier Baron MagnusCh4_7 Level(4, Enemy, True) [4,11] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Rigel_Soldier Baron MagnusCh4_7 Level(4, Enemy, True) [6,11] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+    UNIT Rigel_Merc Myrmidon MagnusCh4_7 Level(4, Enemy, True) [5,12] 0x00 0x00 0x0 0x00 [SteelSword,SteelShield] AttackInRangeAI
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(4, Enemy, True) [2,10] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(4, Enemy, True) [8,10] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
     //cliffs
-	UNIT Rigel_Soldier Baron MagnusCh4_7 Level(4, Enemy, True) [4,13] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight MagnusCh4_7 Level(4, Enemy, True) [2,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT Rigel_Archer Fleet MagnusCh4_7 Level(14, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [BallistaWeapon] [0x3,0x3,0x0,0x20]
+    UNIT Rigel_Archer Fleet MagnusCh4_7 Level(14, Enemy, True) [18,15] 0x00 0x00 0x0 0x00 [BallistaWeapon] [0x3,0x3,0x0,0x20]
     UNIT Rigel_Archer Sniper MagnusCh4_7 Level(4, Enemy, True) [10,16] 0x00 0x00 0x0 0x00 [SilverBow] NoAI
-    UNIT Rigel_Cav GoldKnight MagnusCh4_7 Level(4, Enemy, True) [7,14] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
     UNIT Rigel_Cav GoldKnight MagnusCh4_7 Level(4, Enemy, True) [11,17] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(4, Enemy, True) [9,17] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(4, Enemy, True) [1,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(4, Enemy, True) [3,18] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(14, Enemy, True) [9,17] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(10, Enemy, True) [14,21] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(10, Enemy, True) [12,19] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+    UNIT Rigel_Archer BowKnight MagnusCh4_7 Level(4, Enemy, True) [2,18] 0x00 0x00 0x0 0x00 [SteelBow] [0x3,0x3,0x0,0x20]
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(12, Enemy, True) [1,19] 0x00 0x00 0x0 0x00 [Swordreaver] [0x3,0x3,0x8,0x20]
+    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(14, Enemy, True) [3,19] 0x00 0x00 0x0 0x00 [Ridersbane,Javelin] [0x3,0x3,0x8,0x20]
     //bridge
-    UNIT Rigel_Soldier Baron MagnusCh4_7 Level(4, Enemy, True) [15,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Rigel_Soldier Knight MagnusCh4_7 Level(4, Enemy, True) [19,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [17,26] 0x00 0x00 0x0 0x00 [Mire, Fortify] StaffMageAI
+    UNIT Rigel_Archer Sniper MagnusCh4_7 Level(9, Enemy, True) [18,26] 0x00 0x00 0x0 0x00 [SilverBow] [0x3,0x3,0x8,0x20]
+    UNIT Rigel_Soldier Knight MagnusCh4_7 Level(12, Enemy, True) [16,26] 0x00 0x00 0x0 0x00 [BaseAxe] [0x3,0x3,0x8,0x20]
+    UNIT Rigel_Soldier Knight MagnusCh4_7 Level(12, Enemy, True) [19,26] 0x00 0x00 0x0 0x00 [BaseLance] [0x3,0x3,0x0,0x20]
+    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [17,26] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0xF,0x3,0x0,0x20]
     //right side
-    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [15,7] 0x00 0x00 0x0 0x00 [Mire] NoAI
-    UNIT Rigel_Archer BowKnight MagnusCh4_7 Level(4, Enemy, True) [19,5] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer Sniper MagnusCh4_7 Level(4, Enemy, True) [22,6] 0x00 0x00 0x0 0x00 [SilverBow] NoAI
-    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(4, Enemy, True) [21,8] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(4, Enemy, True) [30,10] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
-    UNIT Rigel_Merc Myrmidon MagnusCh4_7 Level(4, Enemy, True) [27,12] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
-    UNIT Rigel_Merc DreadFighter MagnusCh4_7 Level(4, Enemy, True) [17,3] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+    UNIT Rigel_Cav GoldKnight MagnusCh4_7 Level(4, Enemy, True) [15,4] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MagnusCh4_7 Level(4, Enemy, True) [13,4] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Miasma] [0x3,0x3,0x8,0x20]
+    UNIT Rigel_Soldier Knight MagnusCh4_7 Level(12, Enemy, True) [16,26] 0x00 0x00 0x0 0x00 [BaseAxe,HandAxe] [0x3,0x3,0x8,0x20]
+    UNIT Rigel_Archer Sniper MagnusCh4_7 Level(9, Enemy, True) [26,6] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(16, Enemy, True) [22,10] 0x00 0x00 0x0 0x00 [IronLance] NoAI
+    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(16, Enemy, True) [28,11] 0x00 0x00 0x0 0x00 [IronLance] NoAI
+    UNIT Rigel_Soldier Berserker MagnusCh4_7 Level(6, Enemy, True) [27,11] 0x00 0x00 0x0 0x00 [HandAxe] [0x0,0x3,0x8,0x0]
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(14, Enemy, True) [22,18] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+    UNIT Rigel_Merc Myrmidon MagnusCh4_7 Level(8, Enemy, True) [26,19] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
+    UNIT Rigel_Merc DreadFighter MagnusCh4_7 Level(5, Enemy, True) [22,2] 0x00 0x00 0x0 0x00 [BaseSword] ChaseOnceApproachedAI
+	UNIT
+    
+ReinforcementsNorth:
+	UNIT Rigel_Cav Paladin	MagnusCh4_7 Level(14, Enemy, True) [10,0]	0x00 0x00 0x1 REDA10R0 [BaseLance] NoAI
+	UNIT Rigel_Cav GoldKnight	MagnusCh4_7 Level(4, Enemy, True) [11,0]	0x00 0x00 0x1 REDA11R0 [IronLance] NoAI
+	UNIT Rigel_Archer BowKnight MagnusCh4_7 Level(4, Enemy, True) [12,0]	0x00 0x00 0x1 REDA12R0 [IronBow] NoAI
+	UNIT Rigel_Cav Paladin	MagnusCh4_7 Level(14, Enemy, True) [13,0]	0x00 0x00 0x1 REDA13R0 [BaseLance] NoAI
+	UNIT
+    
+ReinforcementsNorth2:
+    UNIT Rigel_Soldier Berserker MagnusCh4_7 Level(4, Enemy, True) [25,0]	0x00 0x00 0x1 REDA25R0 [IronAxe,TorchItem] [0x0,0x4,0xC,0x0]
+    UNIT Rigel_Soldier Berserker MagnusCh4_7 Level(4, Enemy, True) [26,0]	0x00 0x00 0x1 REDA26R0 [IronAxe,TorchItem] [0x0,0x4,0xC,0x0]
 	UNIT
     
 ReinforcementsNW:
+	UNIT Rigel_Merc DreadFighter	MagnusCh4_7 Level(4, Enemy, True) [4,0]	0x00 0x00 0x1 REDA4R1 [SteelSword] ChaseOnceApproachedAI
+	UNIT Rigel_Merc DreadFighter	MagnusCh4_7 Level(4, Enemy, True) [8,0]	0x00 0x00 0x1 REDA8R1 [SteelSword] ChaseOnceApproachedAI
+	UNIT
+Witch1:
 	UNIT Rigel_Witch Witch	MagnusCh4_7 Level(9, Enemy, True) [4,0]	0x00 0x00 0x1 REDA4R0 [Aura] NoAI
+    UNIT
+Witch2:
 	UNIT Rigel_Witch Witch	MagnusCh4_7 Level(9, Enemy, True) [8,0]	0x00 0x00 0x1 REDA8R0 [Aura] NoAI
 	UNIT
     
 ReinforcementsNE:
-	UNIT Rigel_Wyvern WyvernLord	MagnusCh4_7 Level(9, Enemy, True) [23,0]	0x00 0x00 0x1 REDA23R0 [IronAxe] NoAI
-	UNIT Rigel_Wyvern WyvernLord	MagnusCh4_7 Level(9, Enemy, True) [24,0]	0x00 0x00 0x1 REDA24R0 [IronAxe] NoAI
+	UNIT Rigel_Wyvern WyvernLord	MagnusCh4_7 Level(9, Enemy, True) [31,0]	0x00 0x00 0x1 REDA28R1 [IronAxe] NoAI
+	UNIT Rigel_Wyvern WyvernLord	MagnusCh4_7 Level(9, Enemy, True) [31,0]	0x00 0x00 0x1 REDA28R2 [IronAxe] NoAI
+	UNIT Rigel_Wyvern WyvernLord	MagnusCh4_7 Level(9, Enemy, True) [31,0]	0x00 0x00 0x1 REDA29R3 [IronAxe] NoAI
+	UNIT Rigel_Wyvern WyvernLord	MagnusCh4_7 Level(9, Enemy, True) [31,0]	0x00 0x00 0x1 REDA30R3 [IronAxe] NoAI
+	UNIT Rigel_Wyvern WyvernLord	MagnusCh4_7 Level(11, Enemy, True) [31,0]	0x00 0x00 0x1 REDA29R1 [SteelAxe] NoAI
+	UNIT Rigel_Wyvern WyvernLord	MagnusCh4_7 Level(11, Enemy, True) [31,0]	0x00 0x00 0x1 REDA30R2 [SteelAxe] NoAI
 	UNIT
     
 ReinforcementsSW:
-	UNIT Rigel_Cav Paladin	MagnusCh4_7 Level(9, Enemy, True) [0,24]	0x00 0x00 0x1 REDA0R24 [IronLance] NoAI
-	UNIT Rigel_Cav Paladin	MagnusCh4_7 Level(9, Enemy, True) [0,25]	0x00 0x00 0x1 REDA0R25 [IronLance] NoAI
+	UNIT Rigel_Cav Paladin	MagnusCh4_7 Level(11, Enemy, True) [4,28]	0x00 0x00 0x1 REDA4R28 [IronLance] NoAI
+	UNIT Rigel_Cav GoldKnight	MagnusCh4_7 Level(3, Enemy, True) [5,28]	0x00 0x00 0x1 REDA5R27 [Ridersbane] NoAI
+	UNIT Rigel_Cav Paladin	MagnusCh4_7 Level(11, Enemy, True) [6,28]	0x00 0x00 0x1 REDA6R26 [IronLance] NoAI
 	UNIT
     
 ReinforcementsSE:
-	UNIT Rigel_Cav Paladin	MagnusCh4_7 Level(9, Enemy, True) [31,24]	0x00 0x00 0x1 REDA31R24 [IronLance] NoAI
-	UNIT Rigel_Cav Paladin	MagnusCh4_7 Level(9, Enemy, True) [31,25]	0x00 0x00 0x1 REDA31R25 [IronLance] NoAI
+	UNIT Rigel_Cav GoldKnight	MagnusCh4_7 Level(6, Enemy, True) [31,24]	0x00 0x00 0x1 REDA30R23 [IronLance] NoAI
+	UNIT Rigel_Cav GoldKnight	MagnusCh4_7 Level(6, Enemy, True) [31,24]	0x00 0x00 0x1 REDA30R24 [IronLance] NoAI
+	UNIT Rigel_Cav GoldKnight	MagnusCh4_7 Level(6, Enemy, True) [31,24]	0x00 0x00 0x1 REDA30R25 [IronLance] NoAI
+    UNIT Rigel_Wyvern WyvernLord	MagnusCh4_7 Level(10, Enemy, True) [31,23]	0x00 0x00 0x1 REDA31R22 [SilverAxe] NoAI
+	UNIT Rigel_Wyvern WyvernLord	MagnusCh4_7 Level(10, Enemy, True) [31,25]	0x00 0x00 0x1 REDA31R26 [SilverAxe] NoAI
 	UNIT
 
 Ch4A7_BeginningScene:
-
-	/*
-    //debug only
-	#ifndef __DEBUG__
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	#endif
-    */
-	
+    MUSC SongID_Env_WindBirds
 	LOAD1 0x1 EnemyUnits
 	ENUN
+    CAMERA_CENTERED MagnusCh4_7
+    FADU 2
+    //hestia warps in
+    WARPIN [6, 2]
+    LOAD1 0 LoadHestia
+    ENDWARP
+    ENUN
+    FlashCursor(HestiaCh4, 60)
+    SetBackground(0x46)
+    BackgroundText(Ch4A_7_OpeningText)
+    ClearBackgroundSmooth
+    
+    SVAL 0x2 HestiaCh4
+    CALL Warp_Out_Effect
+	STAL 0x08
+    CAMERA_CENTERED [5,11]
+    SVAL 0x2 HestiaCh4
+	_WARP 0xFFFF 0xFFFD [5,11]
+	CALL Warp_In_Effect
+	STAL 20
+    
+    //alm and co. show up
+    EVBIT_T 0x9
+    LOAD2 0x2 CutsceneUnits
+    ENUN
+    EVBIT_F 0x9
+    CAMERA_CENTERED [18,23]
+    WEA1 0x1 //snow
+    STAL 20
+    CameraCursor(Alm)
+    MapText(Ch4A_7_OpeningText_2)
+    STAL 5
+    
+    CAMERA_CENTERED [28,8]
+    STAL 20
+    FlashCursor(28, 8, 60)
+    //kid pops out of village, runs back in
+    MUSI
+    SetBackground(0x49)
+    BackgroundText(Ch4A_7_OpeningText_3)
+    ClearBackgroundSmooth
+    MUNO
+    STAL 5
+    CAMERA_CENTERED Alm
+    STAL 20
+    
+    FADI 2
+    CLEA 0x0
     LOAD3 0x0 PlayerPlacement 
 	ENUN
     GotoPrepScreen
@@ -196,12 +333,37 @@ Ch4A7_BeginningScene:
 
 Ch4A7_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW SongID_Silence
+	MUSCMID SongID_Silence
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A7Completed
 	EVBIT_MODIFY 0x0
     
+    MUSC SongID_Env_WindBirds
+	SetBackground(0x46) //snow fort
+    SVAL 0x2 Ch4A_7_EndingText
+    CHECK_ALIVE Forsyth
+	BEQ 0x102 0xC 0x0
+	CHECK_ALIVE Python
+	BEQ 0x102 0xC 0x0
+        SVAL 0x2 Ch4A_7_EndingText_ForsythPython
+    LABEL 0x102
+	TEXTMODE 1
+    TEXTSHOW 0xFFFF
+    TEXTEND
+    MUSCSLOW SongID_HerosPath
+    TEXTCONT
+    TEXTEND
+    TEXTCLEAR
+	MUSCMID SongID_Silence
 	FADI 2
-	MNCH 0x2A
+	
+	MUSC SongID_FootstepsOfFate
+	SetBackground(0x0B) //castle hallway
+	BROWNBOXTEXT Loc_RigelCastle [8,8]
+	BackgroundText(Ch4A_7_EndingText_2)
+	MUSCMID SongID_Silence
+    
+	FADI 2
+	MNCH 0x2B
 	ENDA

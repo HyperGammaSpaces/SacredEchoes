@@ -30,18 +30,18 @@ PostPrep:
 		BEQ 0x3 0xC 0x0
 		CHECK_ALIVE Kamui
 		BEQ 0x3 0xC 0x0
-			CAM1 Celica
+			CAMERA_CENTERED Celica
 			Text(Ch2_7_PostPrep_1) //hmm...
-			CAM1 [4,16]
+			CAMERA_CENTERED [4,16]
 			Text(Ch2_7_PostPrep_2) //we may have company later
 			GOTO 0x4
 	LABEL 0x3
-		CAM1 Celica
+		CAMERA_CENTERED Celica
 		Text(Ch2_7_PostPrep_1_NoLeon) //hmm...
-		CAM1 [4,16]
+		CAMERA_CENTERED [4,16]
 		Text(Ch2_7_PostPrep_2_NoLeon) //we may have company later
 	LABEL 0x4
-	REMA
+	TEXTCLEAR
 	NoFade
 	ENDA
 
@@ -205,7 +205,7 @@ CutsceneEnemies2:
 Ch2_7_BeginningScene:
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	CAM1 [11,16]
+	CAMERA_CENTERED [11,16]
 	FADU 16
 	MUSC Tension
 	#ifdef __DEBUG__
@@ -228,20 +228,20 @@ Ch2_7_BeginningScene:
 		CHECK_ALIVE Kamui
 		BEQ 0x1 0xC 0x0
 			Text(Ch2_7_OpeningScene) // bandits?
-			CAM1 [4,8]
+			CAMERA_CENTERED [4,8]
 			STAL 20
-			CAM1 [11,3]
+			CAMERA_CENTERED [11,3]
 			STAL 20
-			CAM1 Celica
+			CAMERA_CENTERED Celica
 			Text(Ch2_7_OpeningScene_2) // lets get em
 			GOTO 0x2
 	LABEL 0x1
 		Text(Ch2_7_OpeningScene_NoValbar) // bandits?
-		CAM1 [4,8]
+		CAMERA_CENTERED [4,8]
 		STAL 20
-		CAM1 [11,3]
+		CAMERA_CENTERED [11,3]
 		STAL 20
-		CAM1 Celica
+		CAMERA_CENTERED Celica
 		Text(Ch2_7_OpeningScene_2_NoValbar) // lets get em
 	LABEL 0x2
 	GotoPrepScreen
@@ -255,7 +255,7 @@ Ch2_7_EndingScene:
 	CLEN 0x0
 	CLEA 0x0
 	CLEE 0x0
-	CAM1 [11,0]
+	CAMERA_CENTERED [11,0]
 	SetBackground(0x24)
 	
 	CHECK_ALIVE Mae
@@ -279,12 +279,12 @@ Ch2_7_EndingScene:
 	MUSC SongID_ShadowOfVictory
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	ClearBackgroundSmooth
 	STAL 20
 	
 	//Put the slayde/cantor scene here. 
-	CAM1 [11,12]
+	CAMERA_CENTERED [11,12]
 	MUSCFAST SongID_Env_WindBirds
 	//warpin effect pls
 	LOAD1 0x0 CutsceneEnemies1
@@ -298,7 +298,7 @@ Ch2_7_EndingScene:
 	ENUN
 	FADI 16
 	CLEE 0x0
-	CAM1 [9,5]
+	CAMERA_CENTERED [9,5]
 	SetBackground(0x24)
 	TEXTSTART
 	TEXTSHOW Ch2_Epilogue2 // blah blah
@@ -306,7 +306,7 @@ Ch2_7_EndingScene:
 		MUSC SongID_FromTheDarkness
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	FADI 3
 	ClearBackground
 

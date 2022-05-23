@@ -23,7 +23,7 @@ Ch1_7_TurnBasedEvents:
 BallistaEvent:
 	MUSC SongID_MarchToDeliverance
 	MUSI
-	CAM1 [5, 5]
+	CAMERA_CENTERED [5, 5]
 	STAL 30
 	LOAD1 0x1 BrigandsCh7
 	ENUN
@@ -32,13 +32,13 @@ BallistaEvent:
 	TEXTSTART 
 	TEXTSHOW Ch1_7_LukasAdvice //its not lukas anymore but whatever
 	TEXTEND
-	CAM1 [9, 9]
+	CAMERA_CENTERED [9, 9]
 	STAL 30
 	FlashCursor(9, 9, 60)
 	STAL 30
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	MUNO
 	NoFade
 	ENDA
@@ -128,7 +128,7 @@ Ch1_7_BeginningScene:
 	MUSC SongID_Tension
 	LOAD2 0x1 CutsceneUnits
 	ENUN
-	CAM1 [8, 11]
+	CAMERA_CENTERED [8, 11]
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	FADU 10
@@ -139,9 +139,9 @@ Ch1_7_BeginningScene:
 	ENUN
 	STAL 20
 
-	CAM1 [11,9]
+	CAMERA_CENTERED [11,9]
 	STAL 60
-	CAM1 [8, 11]
+	CAMERA_CENTERED [8, 11]
 	STAL 20
 	FlashCursor(FernandPlayable, 60)
 
@@ -150,7 +150,7 @@ Ch1_7_BeginningScene:
 	TEXTSHOW Ch1_7_OpeningScene
 	TEXTEND
 	FADI 60
-	REMA
+	TEXTCLEAR
 	CLEA 0x0
 	LOAD3 0x0 Ch1_7_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
@@ -162,7 +162,7 @@ SetBGWhite:
 	BNE 0x80D2 0xC 0x0
 	FAWI 16
 	LABEL 0x80D2
-	REMOVEPORTRAITS
+	TEXTMODE 1
 	BACG 0xFFFF
 	FAWU 4
 	ENDA
@@ -177,7 +177,7 @@ Ch1_7_EndingScene:
 	CALL SetBGWhite
 	MUSCSLOW SongID_Sorrow
 	Text(CliveFernand_Flashback)
-	MUSCSLOW SongID_Silence
+	MUSCMID SongID_Silence
 	SETVAL 0x2 0x20
 	CALL SetBGWhite
 	MUSCSLOW SongID_ShadowOfVictory

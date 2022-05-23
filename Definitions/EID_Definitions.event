@@ -86,7 +86,9 @@
 #define gDumaTowerReachedAlm 0x9E
 #define gTatianaRecruited 0x9F
 #define gZekeRecruited 0xA0
-//0xA1 - 0xAE free
+#define gAlmPromoted 0xA1
+//0xA2 - 0xAD free
+#define gPostgameEnabled 0xAE
 
 //Character death flags - 0xB0 + charID
 #define gLukasDied 0xB2
@@ -145,6 +147,7 @@
 #define gChapter4C3Completed 0xF0
 #define gChapter4C4Completed 0xF1
 #define gChapter4C5Completed 0xF2
+#define gChapter4C6Completed 0xFD
 #define gChapter4A1Completed 0xF3
 #define gChapter4A2Completed 0xF4
 #define gChapter4A3Completed 0xF5

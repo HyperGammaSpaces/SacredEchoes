@@ -13,7 +13,7 @@ ALIGN 4
 
 ALIGN 4
 RemoveItemFromAnyASMC:
-#incbin "item_collect.dmp"
+#include "item_collect.lyn.event"
 ALIGN 4
 RemoveItemFromUnitASMC:
 #incbin "item_collect_by_unit.dmp"
@@ -51,3 +51,23 @@ WORD $0202BCF0
 //Set cond ASMC
 ALIGN 4
 #include "SetConditionASMC/Set_Condition.event"
+
+ALIGN 4
+HijackActionStruct:
+SHORT $B510 $6B83 $7899 $4C07 $7461 //store action type
+SHORT $7B20 $4B06 $469E $F800 //get unit from action struct
+SHORT $7C02 $73A2 $7C43 $73E3 //store coords to action struct
+SHORT $2017 $BC10 $BC02 $4708 //end
+ALIGN 4
+WORD $0203A958
+POIN $19430 //GetUnitByDeploySlot
+
+ALIGN 4
+ShowUnitSMSFromASMC:
+SHORT $B500 $6B81 $2202 $5E88 $4B05 $469E $F800 $2800 $D002 $4B03 $469E $F800 $2017 $BC02 $4708
+ALIGN 4
+POIN $BC50 //GetUnitStructFromEventParameter
+POIN $28130 //ShowUnitSMS
+
+#define EndUnitMMS(unitID) "SHORT $0D40 $0; POIN $790A4|1; SHORT $0D40 unitID; POIN ShowUnitSMSFromASMC+1"
+#define UpdateActionStructFromQueuedMovement "SHORT $0D40 $1; POIN HijackActionStruct+1"

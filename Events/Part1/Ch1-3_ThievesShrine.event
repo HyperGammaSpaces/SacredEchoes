@@ -29,7 +29,7 @@ Ch1_3_TurnBasedEvents:
 ChestEvent:
 	MUSC SongID_MarchToDeliverance
 	MUSI
-	CAM1 Alm
+	CAMERA_CENTERED Alm
 	STAL 30
 	FlashCursor(12, 8, 60)
 	Text(ChestText_1_3)
@@ -48,7 +48,7 @@ ChestEvent:
 		TEXTSHOW StatueText_1_3
 		TEXTEND
 	#endif
-	REMA
+	TEXTCLEAR
 	MUNO
 	NoFade
 	ENDA
@@ -58,7 +58,7 @@ WaveFirst:
 	STAL 30
 	LoadReinforcements(AcanthaJoins)
 	ENUN
-	CAM1 Acantha
+	CAMERA_CENTERED Acantha
 	FlashCursor(Acantha, 60)
 	ConvoEvent(AcanthaAppears_Text)
 	ENDA
@@ -198,7 +198,7 @@ Ch1_3_BeginningScene:
 	ENUN
 	FADU 0x5
 	
-	//CAM1 [7,5]
+	//CAMERA_CENTERED [7,5]
 
 	LOAD1 0x1 SilqueFirst
 	ENUN
@@ -212,12 +212,12 @@ Ch1_3_BeginningScene:
 	LOAD2 0x0 Ch1_3_CutsceneUnits //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	STAL 30
-	CAM1 BrigandBoss
+	CAMERA_CENTERED BrigandBoss
 	FlashCursor(BrigandBoss, 60)
 	STAL 30
 	Text(Ch1_3_OpeningScene_1)
 	STAL 20
-	CAM1 Silque
+	CAMERA_CENTERED Silque
 	FlashCursor(Silque, 60)
 	Text(Ch1_3_OpeningScene_3)
 	STAL 30
@@ -230,7 +230,7 @@ Ch1_3_BeginningScene:
 
 
 TalkToSilque:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 33
 	Text(RecruitSilque_Text)
 	CUSA Silque
@@ -240,7 +240,7 @@ TalkToSilque:
 	ENDA
 
 TalkToSilqueWithAcantha:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 33
 	Text(RecruitSilque_Acantha_Text)
 	CUSA Silque
@@ -250,7 +250,7 @@ TalkToSilqueWithAcantha:
 	ENDA
 
 TalkToAcantha:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 33
 	Text(RecruitAcantha_Text)
 	CUSA Acantha
@@ -261,7 +261,7 @@ TalkToAcantha:
 	ENDA
 
 TalkToAcanthaWithSilque:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 33
 	Text(RecruitAcantha_Silque_Text)
 	CUSA Acantha
@@ -289,19 +289,19 @@ Ch1_3_EndingScene:
 	MUSC SongID_Legacy
 	TEXTCONT
 	TEXTEND
-	REMA
-	REMOVEPORTRAITS
+	TEXTCLEAR
+	TEXTMODE 1
 	
 	_0x2141 TurnwheelCG 0x1 0x4
-	REMOVEPORTRAITS
+	TEXTMODE 1
 	STAL 180
 	_0x2141 0x2E 0x1 0x4
-	REMOVEPORTRAITS
+	TEXTMODE 1
 
 	TEXTSTART 
 	TEXTSHOW Ch1_3_PostBattle_AfterCG
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	CharacterJoinedNotification(Notif_SilqueJoin)
 	STARTFADE
 	FADECOLORS 0x2000 0x8 0x80 0x80 0x80

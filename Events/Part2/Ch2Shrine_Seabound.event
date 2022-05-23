@@ -137,7 +137,7 @@ SeaboundShrine_BeginningScene:
 			TEXTEND
 		LABEL 0x2
 		FADI 60
-		REMA
+		TEXTCLEAR
 		GOTO 0x4
 	LABEL 0x3
 		//If this is a replay, load the weaker boss
@@ -175,7 +175,7 @@ SeraphimEvent:
 		MUSC SongID_MilasDivineProtection
 		MUSI
 		STAL 30
-		CAM1 [3,6]
+		CAMERA_CENTERED [3,6]
 		FlashCursor(3,6, 60)
 		Text(SeaboundShrine_Seraphim)
 		MUNO

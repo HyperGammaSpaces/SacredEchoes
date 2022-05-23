@@ -64,19 +64,6 @@ Ch3_6A_Ballista2:
 	ALIGN 4
 
 Ch3_6A_Units1:
-#ifdef __DEBUG__
-	UNIT Alm AlmFighter 0x00 Level(14,Ally,True) [1,7] 0x00 0x00 0x0 0x00 [BaseSword, RoyalSword, Vulnerary] NoAI  
-	UNIT Lukas Knight 0x00 Level(8,Ally,True) [2,8] 0x00 0x00 0x0 0x00 [BaseLance, BaseAxe, Vulnerary] NoAI  
-	UNIT Tobin Sniper 0x00 Level(7,Ally,True) [2,6] 0x00 0x00 0x0 0x00 [BaseBow, SteelBow, Vulnerary] NoAI 
-	UNIT Gray Myrmidon 0x00 Level(7,Ally,True) [0,8] 0x00 0x00 0x0 0x00 [BaseSword, Zweihander, Vulnerary] NoAI 
-	UNIT Kliff Mage 0x00 Level(14,Ally,True) [0,6] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Silque Cleric 0x00 Level(14,Ally,True) [1,5] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Clair PegasusKnight 0x00 Level(14,Ally,True) [3,7] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
-	UNIT Mathilda Paladin_F 0x00 Level(4,Ally,True) [1,9] 0x00 0x00 0x0 0x00 [BaseLance,Ridersbane] NoAI
-	UNIT Clive Paladin 0x00 Level(6,Ally,True) [3,5] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance,HeavySpear] NoAI
-	UNIT Forsyth Knight 0x00 Level(7,Ally,True) [3,9] 0x00 0x00 0x0 0x00 [BaseAxe,BaseLance,Forscythe] NoAI
-	UNIT
-#else
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [1,7] 0x00 0x00 0x0 0x00 [BaseSword, RoyalSword, Vulnerary] NoAI  
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [2,8] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
 	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [2,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -88,7 +75,6 @@ Ch3_6A_Units1:
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [3,5] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT Forsyth Soldier 0x00 Level(1, Ally, 1) [3,9] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
-#endif
 
 CutsceneUnits:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,10] 0x00 0x00 0x1 REDA1R7 [BaseSword, Vulnerary] NoAI 
@@ -155,61 +141,55 @@ Ch3_6A_BeginningScene:
 	MUSC SongID_Tension
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	CAM1 [1,10]
+	CAMERA_CENTERED [1,10]
 	SetBackground(0x1D)
-	Text(Ch3_6A_OpeningText)
+	BackgroundText(Ch3_6A_OpeningText)
 	ClearBackgroundSmooth
 	
 	STAL 20
 	LOAD2 0x1 CutsceneUnits
 	ENUN
-	CAM1 Gazelle
-	FlashCursor(Gazelle,60)
-	Text(Ch3_6A_OpeningText_2)
+	CameraCursor(Gazelle)
+	MapText(Ch3_6A_OpeningText_2)
 
-	FADI 60
+	FADI 16
 	CLEA 0x0
-	
-	#ifdef __DEBUG__
-		LOAD1 0x1 Ch3_6A_Units1
-		ENUN
-	#else
-		LOAD3 0x0 Ch3_6A_Units1 
-		ENUN
-		GotoPrepScreen
-	#endif
+	LOAD3 0x0 Ch3_6A_Units1 
+	ENUN
+	GotoPrepScreen
 	ENDA
 
 Ch3_6A_EndingScene:
 	CALL UnifiedBEXPCaller
+    FadeOutMusic
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A6Completed
 	EVBIT_MODIFY 0x0
 	MUSC SongID_ShadowOfVictory
 	SetBackground(0x04)
-	Text(Ch3_6A_EndingText)
+	BackgroundText(Ch3_6A_EndingText)
 	SVAL 0x3 HolyBow //make fear mountain give holy lance instead
 	GIVEITEMTO Alm
+    FadeOutMusic
 	FADI 2
 	
 	STAL 20
 	//scene change (todo: add LOMA and BROWNBOXTEXT)
-	MUSC SongID_Silence
 	SetBackground(0x0E,2)
-	TEXTSTART
+	BROWNBOXTEXT Loc_RigelCastle [8,8]
+	TEXTMODE 1
 	TEXTSHOW Ch3_6A_RigelCastle_1
 	TEXTEND
 	MUSC SongID_Indignation
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	FADI 5
 	MUSC SongID_PrinceOfDarkness
-	SetBackground(0x0B)
-	Text(Ch3_6A_RigelCastle_2)
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	SetBackground(0x0B,5)
+	BackgroundText(Ch3_6A_RigelCastle_2)
+	FADI 2
 	//TODO: LOMA back to this map 0x14 before MNCH to avoid breaking save screen
 	MNCH 0x15
 	ENDA

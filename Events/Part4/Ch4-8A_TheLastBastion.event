@@ -4,6 +4,8 @@
 
 EventPointerTable(plCh4_8A_Event, Ch4A8_ThisChapter)
 
+//flags used for quotes: 0xA-0xE
+
 Ch4A8_ThisChapter:
 	POIN Ch4A8_TurnBasedEvents
 	POIN Ch4A8_CharacterBasedEvents
@@ -18,7 +20,15 @@ Ch4A8_ThisChapter:
 	POIN Ch4A8_BeginningScene Ch4A8_EndingScene
 
 Ch4A8_TurnBasedEvents:
+    TurnEventPlayer(0x0,LoadWaveFirst,5)
+	TurnEventPlayer(0x0,LoadWaveSecond,8)
 	TURN
+    
+LoadWaveFirst:
+    ReinforcementEvent(WaveFirst)
+    
+LoadWaveSecond:
+    ReinforcementEvent(WaveSecond)
 
 Ch4A8_CharacterBasedEvents:
 	CHAR
@@ -27,6 +37,10 @@ Ch4A8_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(12,26)
 	#endif
+    Door(9,7)
+    Door(10,7)
+    Door(15,7)
+    Door(16,7)
 	LOCA
 
 Ch4A8_MiscBasedEvents:
@@ -61,6 +75,7 @@ PlayerPlacement:
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,27] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
     //block 2
     UNIT Clive Paladin 0x00 Level(1, Ally, 1) [16,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [18,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
     UNIT Clive Paladin 0x00 Level(1, Ally, 1) [7,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
     UNIT Clive Paladin 0x00 Level(1, Ally, 1) [18,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
     UNIT Clive Paladin 0x00 Level(1, Ally, 1) [6,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
@@ -69,10 +84,18 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,27] 0x00 0x00 0x1 REDA12R26 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,27] 0x00 0x00 0x1 REDA10R26 [BaseLance, Vulnerary] NoAI 
+	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [13,27] 0x00 0x00 0x1 REDA13R25 [BaseLance] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [13,27] 0x00 0x00 0x1 REDA14R26 [BaseLance] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [13,27] 0x00 0x00 0x1 REDA15R26 [BaseLance] NoAI
 	UNIT
+
+LoadSlayde:
+	UNIT SlaydeGK GoldKnight MuellerCh4_8 Level(8, Enemy, True) [13,4] DropItem 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
+	UNIT FernandPaladin Paladin MuellerCh4_8 Level(8, Enemy, True) [14,4] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
+    UNIT RineaEnemy Dancer 0x00 Level(1, Enemy, 1) [25, 5] 0x00 0x00 0x0 0x00 [Fire] NoAI
+    UNIT
 
 EnemyUnits:
 	UNIT MuellerCh4_8 BowKnight	MuellerCh4_8 Level(15, Enemy, True) [12,15]	DropItem 0x00 0x0 0x00 [SilverBow] NeverMoveAI
@@ -83,11 +106,11 @@ EnemyUnits:
     UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [13,15] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
     UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [12,17] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
     //door blockers
-    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [5,6] 0x00 0x00 0x0 0x00 [SteelAxe] NeverMoveAI
-    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Pugi] NeverMoveAI
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [5,6] 0x00 0x00 0x0 0x00 [SteelLance] NeverMoveAI
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
     UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [Sisyphus] NeverMoveAI
     UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [Sisyphus] NeverMoveAI
-    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [16,6] 0x00 0x00 0x0 0x00 [Pugi] NeverMoveAI
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [16,6] 0x00 0x00 0x0 0x00 [HandAxe] NeverMoveAI
     UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [20,6] 0x00 0x00 0x0 0x00 [SteelAxe] NeverMoveAI
     //hallways
     UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
@@ -103,21 +126,71 @@ EnemyUnits:
     UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [18,17] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
     UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [22,17] 0x00 0x00 0x0 0x00 [Selene] AttackInRangeAI
 	UNIT
+    
+WaveFirst:
+    UNIT Rigel_Merc DreadFighter MuellerCh4_8 Level(4,Enemy,True) [0,4] 0x00 0x00 0x1 REDA0R4 [IronSword] NoAI
+    UNIT Rigel_Soldier Berserker MuellerCh4_8 Level(4,Enemy,True) [0,5] 0x00 0x00 0x1 REDA0R5 [Swordreaver] NoAI
+    UNIT Rigel_Cav GoldKnight MuellerCh4_8 Level(4, Enemy, True) [0,6] 0x00 0x00 0x1 REDA0R6 [Javelin] NoAI
+    UNIT
+    
+WaveSecond:
+    UNIT Rigel_Merc DreadFighter MuellerCh4_8 Level(4,Enemy,True) [25,4] 0x00 0x00 0x1 REDA25R4 [IronSword] NoAI
+    UNIT Rigel_Soldier Berserker MuellerCh4_8 Level(4,Enemy,True) [25,5] 0x00 0x00 0x1 REDA25R5 [HandAxe] NoAI
+    UNIT Rigel_Cav GoldKnight MuellerCh4_8 Level(4, Enemy, True) [25,6] 0x00 0x00 0x1 REDA25R6 [Axereaver] NoAI
+    UNIT
 
 Ch4A8_BeginningScene:
-
-	/*
-    //debug only
-	#ifndef __DEBUG__
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	#endif
-    */
-	
 	LOAD1 0x1 EnemyUnits
 	ENUN
+    DISA SlaydeGK
+    CAMERA_CENTERED MuellerCh4_8
+    MUSCSLOW SongID_Env_GustyWind
+    FADU 2
+    STAL 20
+    
+    EVBIT_T 0x9
+    LOAD2 0x2 CutsceneUnits
+    ENUN
+    EVBIT_F 0x9
+    
+    CameraCursor(Alm)
+    MapText(Ch4A_8_OpeningText)
+    
+    LOAD1 0x1 LoadSlayde
+    ENUN
+    MOVE 0x10 SlaydeGK [13,20]
+    ENUN
+    CameraCursor(SlaydeGK)
+    MUSC SongID_SolveTheRiddle
+    MapText(Ch4A_8_OpeningText_2)
+    
+    EVBIT_T 0x9
+    MOVE 0x10 SlaydeGK [13,4]
+    ENUN
+    EVBIT_F 0x9
+    STAL 20
+    FlashCursor(SlaydeGK,60)
+    TEXTMODE 0
+    TEXTSHOW Ch4A_8_OpeningText_3
+    TEXTEND
+    MOVE 0x10 RineaEnemy [15,4]
+    ENUN
+    TEXTCONT
+    TEXTEND
+    MOVE 0x10 RineaEnemy [25,5]
+    MOVE 0x10 FernandPaladin [24,5]
+    ENUN
+    DISA FernandPaladin
+    DISA RineaEnemy
+    TEXTCONT
+    TEXTEND
+    TEXTCLEAR
+    FADI 2
+    
+    CLEA 0x0
+    CLEE 0x0
+    LOAD1 0x1 EnemyUnits
+    ENUN
     LOAD3 0x0 PlayerPlacement 
 	ENUN
     GotoPrepScreen
@@ -125,12 +198,24 @@ Ch4A8_BeginningScene:
 
 Ch4A8_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW SongID_Silence
+	MUSCMID SongID_Silence
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A8Completed
 	EVBIT_MODIFY 0x0
     
+    MUSC SongID_CastleTheme
+    SetBackground(0x0C, 5)
+    CHECK_EXISTS Mathilda
+	BEQ 0x901 rC r0
+	CHECK_ALIVE Mathilda
+	BEQ 0x901 rC r0
+        BackgroundText(Ch4A_8_EndingText)
+        GOTO 0x902
+    LABEL 0x901
+    BackgroundText(Ch4A_8_EndingText_NoMathilda)
+    LABEL 0x902
+    MUSCMID SongID_Silence
 	FADI 2
-	MNCH 0x2B
+	MNCH 0x2C
 	ENDA

@@ -52,8 +52,8 @@ SShrine_LocationBasedEvents:
 	Door(8, 19)
 	Door(9, 19)
 	Door(7, 10)
-	Door(7, 10)
-	Door(8, 11)
+	Door(8, 10)
+	Door(7, 11)
 	Door(8, 11)
 	CHESRANDOM 0x0 Act3RandomChest|IsPointer [15, 4]
 	CHESRANDOM 0x0 Act3RandomChest|IsPointer [2, 15]
@@ -146,7 +146,7 @@ SShrine_BeginningScene:
 	Text(SShrine_OpeningText)
 
 	FADI 60
-	REMA
+	TEXTCLEAR
 	CLEA 0x0
 	*/
 	LOAD1 0x1 EnemyUnits
@@ -164,6 +164,8 @@ SShrine_EndingScene:
 	ASMC 0x85C65
 	//SADD 0x32
 	CALL UnifiedBEXPCaller
+    FadeOutMusic
+    FADI 2
 	SVAL 0x2 0x41
 	MNCH 0xFFFF //go to world map
 	ENDA

@@ -29,9 +29,9 @@ Ch3_4A_CharacterBasedEvents:
 	CHAR
 	
 TalkToMathilda:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 0x20
-	Text(Ch3_4A_MathildaJoins)
+	MapText(Ch3_4A_MathildaJoins)
 	SVAL 0x1 0x0
 	CHAI Mathilda
 	STAL 5
@@ -67,11 +67,11 @@ LoadSummons:
 
 	// Counter at value
 	COUNTER_SET 0 0 // reset counter
-	CAM1 CantorBoss_Bonewalkers // cam on summoner
+	CAMERA_CENTERED CantorBoss_Bonewalkers // cam on summoner
 	ENUN
 	SOUN 0x3BF // summoning SFX
 	STAL 20
-	ReinforcementEvent(ZombieGroup)
+	LoadReinforcements(ZombieGroup)
 	GOTO 0
 
 	LABEL 1
@@ -98,11 +98,11 @@ LoadLeftCavalry:
 DesaixCommand:
 	MUSI
 	STAL 20
-	CAM1 Desaix
+	CAMERA_CENTERED Desaix
 	STAL 20
 	FlashCursor(Desaix,60)
 	STAL 20
-	Text(Ch3_4A_DesaixText2)
+	MapText(Ch3_4A_DesaixText2)
 	STAL 20
 	MUNO
 	//ReinforcementEvent(DesaixCommandUnits)
@@ -136,22 +136,6 @@ CutsceneAllies:
 	UNIT
 
 Ch3_4A_Units1:
-#ifdef __DEBUG__
-	UNIT Alm AlmFighter 0x00 Level(12,Ally,True) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Knight 0x00 Level(7,Ally,True) [5,19] 0x00 0x00 0x0 0x00 [BaseLance, BaseAxe, Vulnerary] NoAI  
-	UNIT Tobin Sniper 0x00 Level(6,Ally,True) [7,19] 0x00 0x00 0x0 0x00 [BaseBow, SteelBow, Vulnerary] NoAI 
-	UNIT Gray Myrmidon 0x00 Level(6,Ally,True) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Kliff Mage 0x00 Level(12,Ally,True) [6,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Faye Cleric 0x00 Level(9,Ally,True) [8,20] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Silque Cleric 0x00 Level(12,Ally,True) [8,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Clair PegasusKnight 0x00 Level(12,Ally,True) [6,18] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
-	UNIT Clive Paladin 0x00 Level(5,Ally,True) [10,18] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance,HeavySpear] NoAI
-	UNIT Forsyth Knight 0x00 Level(5,Ally,True) [11,19] 0x00 0x00 0x0 0x00 [BaseAxe,BaseLance,Forscythe] NoAI
-	UNIT Python Archer 0x00 Level(12,Ally,True) [12,18] 0x00 0x00 0x0 0x00 [BaseBow,IronBow] NoAI
-	UNIT Acantha Thief_F 0x00 Level(12,Ally,True) [13,19] 0x00 0x00 0x0 0x00 [BaseSword,Lockpick,Thunderblade] NoAI
-	UNIT Luthier Mage 0x00 Level(10,Ally,True) [10,20] 0x00 0x00 0x0 0x00 [Fire] NoAI
-	UNIT
-#else
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
 	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [7,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -166,11 +150,8 @@ Ch3_4A_Units1:
 	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [13,19] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
 	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT
-#endif
 
 EnemyUnits:
-
-	// Bosses
 	UNIT Desaix Baron 0x0 Level(5, Enemy, False) [9,2] 0x00 0x00 0x0 0x00 [Javelin, SteelSword] NeverMoveAI
 	UNIT CantorBoss_Bonewalkers Cantor Desaix Level(7, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma, Invoke] CantorAI
 	
@@ -262,7 +243,7 @@ Ch3_4A_BeginningScene:
 	ENUN
 	LOAD1 0x1 CutsceneFernand
 	ENUN
-	CAM1 Mathilda
+	CAMERA_CENTERED Mathilda
 	STAL 4
 	FADU 5
 	MOVE 0x08 FernandPaladin [9,10]
@@ -271,28 +252,15 @@ Ch3_4A_BeginningScene:
 	FlashCursor(FernandPaladin, 60)
 	FADI 5
 	
-	//SETVAL 0x2 (FernandMathildaCG)
-	//	REMOVEPORTRAITS
-	//	BACG 0xFFFF
-	
-	REMOVEPORTRAITS
-	SetBackground(FernandMathildaCG)
+	SetBackground(FernandMathildaCG,5)
 	STAL 90
-		
-		_0x1A22
-		TEXTSHOW FernandMathilda_Dungeon_CGText_1
-		TEXTEND
-		_0x1A22
-		TEXTSHOW FernandMathilda_Dungeon_CGText_2
-		TEXTEND
-		_0x1A22
-		TEXTSHOW FernandMathilda_Dungeon_CGText_3
-		TEXTEND
+		CgText(FernandMathilda_Dungeon_CGText_1)
+		CgText( FernandMathilda_Dungeon_CGText_2)
+		CgText(FernandMathilda_Dungeon_CGText_3)
 		FADI 5
-		REMA
 	
 	SetBackground(0x17)
-	TEXTSTART 
+	TEXTMODE 1 
 	TEXTSHOW FernandMathilda_Dungeon
 	TEXTEND
 	MUSC SongID_Env_GustyWindStop
@@ -300,13 +268,13 @@ Ch3_4A_BeginningScene:
 	MUSC SongID_Truth
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	ClearBackgroundSmooth
 	MOVE 0x08 FernandPaladin [18,6]
 	ENUN
 	STAL 20
 	FADI 2
-	MUSC SongID_Silence
+	MUSCMID SongID_Silence
 	CLEE 0x0
 	STAL 40
 	LOAD2 0x1 CutsceneAllies
@@ -317,30 +285,23 @@ Ch3_4A_BeginningScene:
 
 	//Then load Desaix and set BG to 0xE
 	MUSC SongID_SolveTheRiddle
-	CAM1 Desaix
+	CAMERA_CENTERED Desaix
 	STAL 20
 	FlashCursor(Desaix, 60)
 	STAL 20
 
 	//SetBackground(0xE)
-	TEXTSTART
-	TEXTSHOW Ch3_4A_OpeningText
-	TEXTEND
+	MapText(Ch3_4A_OpeningText)
 	FADI 16
-	REMA
 	CLEA 0x0
-	#ifdef __DEBUG__
-		LOAD1 0x1 Ch3_4A_Units1
-		ENUN
-	#else
-		LOAD3 0x0 Ch3_4A_Units1 
-		ENUN
-		GotoPrepScreen
-	#endif
+	LOAD3 0x0 Ch3_4A_Units1 
+	ENUN
+	GotoPrepScreen
 	ENDA
 
 Ch3_4A_EndingScene:
 	CALL UnifiedBEXPCaller
+    FadeOutMusic
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A4Completed
@@ -352,7 +313,7 @@ Ch3_4A_EndingScene:
 	
 		//If Tobin is alive
 		SetBackground(0xE)
-		TEXTSTART
+		TEXTMODE 1
 		TEXTSHOW Ch3_4A_EndingText
 		TEXTEND
 		MUSI
@@ -362,68 +323,52 @@ Ch3_4A_EndingScene:
 		MUSC SongID_Truth
 		TEXTCONT
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		
 		FADI 2
-		MUSC SongID_Silence
+		FadeOutMusic
 		STAL 20
 		MUSC SongID_Reunion
 		SetBackground(0x49)
-		Text(Ch3_4A_EndingText_2)
+		BackgroundText(Ch3_4A_EndingText_2)
 		//CG goes here
-		MUSC SongID_Silence
+		FadeOutMusic
 		STAL 20
-		MUSC 0x51
-		
-		//REMOVEPORTRAITS
-		//_0x2141 RoyalSwordCG 0x1 0x4
-		//REMOVEPORTRAITS
-		
-		//FADI 5
-		REMOVEPORTRAITS
+		MUSC SongID_Env_LegendaryWeapon
 		FADI 8
+		TEXTMODE 1
 		SetBackground(RoyalSwordCG)
-		REMOVEPORTRAITS
 		STAL 90
-		_0x1A22
-		TEXTSHOW Ch3_4A_CGText
-		TEXTEND
+		CgText(Ch3_4A_CGText)
 		FADI 5
-		REMA
 		
 		MUSC SongID_Legacy
 		SetBackground(0x49)
-		Text(Ch3_4A_EndingText_3)
+		BackgroundText(Ch3_4A_EndingText_3)
 		GOTO 0x3
 	
 	LABEL 0x4
 		SetBackground(0xE)
-		Text(Ch3_4A_EndingText_NoTobin)
+		BackgroundText(Ch3_4A_EndingText_NoTobin)
 		FADI 2
 		STAL 20
 		MUSC SongID_CastleTheme
 		SetBackground(0x49)
-		Text(Ch3_4A_EndingText_2_NoTobin)
+		BackgroundText(Ch3_4A_EndingText_2_NoTobin)
 		//CG goes here
-		MUSC SongID_Silence
+		FadeOutMusic
 		STAL 20
-		MUSC 0x51
-		//FADI 5
-		REMOVEPORTRAITS
+		MUSC SongID_Env_LegendaryWeapon
 		FADI 8
+		TEXTMODE 1
 		SetBackground(RoyalSwordCG)
-		REMOVEPORTRAITS
 		STAL 90
-		_0x1A22
-		TEXTSHOW Ch3_4A_CGText
-		TEXTEND
+		CgText(Ch3_4A_CGText)
 		FADI 5
-		REMA
 		
 		MUSC SongID_Legacy
 		SetBackground(0x49)
-		Text(Ch3_4A_EndingText_3_NoTobin)
-	
+		BackgroundText(Ch3_4A_EndingText_3_NoTobin)
 	LABEL 0x3
 	
 	EVBIT_MODIFY 0x1

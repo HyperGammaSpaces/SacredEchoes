@@ -64,6 +64,7 @@ PlayerPlacement:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [9,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [10,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [11,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [13,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
@@ -74,23 +75,16 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Boss_Monster Necrodragon	Boss_Monster Level(9, Enemy, True) [10,2]	0x00 0x00 0x0 0x00 [HellFang] NoAI
-	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [FireFang] NoAI
-	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [10,13] 0x00 0x00 0x0 0x00 [FireFang] NoAI
-	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [1,14] 0x00 0x00 0x0 0x00 [FireFang] NoAI
-	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [7,17] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT Boss_Monster Necrodragon	Boss_Monster Level(10, Enemy, True) [10,2]	DropItem 0x00 0x0 0x00 [HellFang,HolyRing] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(7, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(7, Enemy, True) [10,13] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(7, Enemy, True) [1,14] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(7, Enemy, True) [7,17] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(5, Enemy, True) [14,23] 0x00 0x00 0x0 0x00 [HellFang] NoAI
 	UNIT
 
 Evt_BeginningScene:
 
-	//debug only
-	#ifndef __DEBUG__
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	#endif
-	
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	CHECK_EVENTID gChapter4C2Completed
@@ -98,7 +92,7 @@ Evt_BeginningScene:
 	
 		MUSCSLOW SongID_Env_Lava
 		SetBackground(0x31)
-		Text(Ch4C_2_OpeningText)
+		BackgroundText(Ch4C_2_OpeningText)
 		FADI 5
 		CLEAN
 	
@@ -107,13 +101,13 @@ Evt_BeginningScene:
 	CHECK_ALIVE Boey
 	BEQ 0x101 0xC 0x0
 	
-		CAM1 [8,23]
+		CAMERA_CENTERED [8,23]
 		FADU 2
 		STAL 20
 		LOAD2 0x0 CutsceneUnits
 		ENUN
 		CameraCursor(Boey)
-		Text(Ch4C_2_OpeningText_MaeBoey)
+		MapText(Ch4C_2_OpeningText_MaeBoey)
 		FADI 2
 		CLEA 0x0
 	
@@ -126,20 +120,20 @@ Evt_BeginningScene:
 
 Evt_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW SongID_Silence
-	FADI 2
+	MUSCMID SongID_Silence
 	CLEE 0x0
 	CHECK_EVENTID gChapter4C2Completed
 	BNE 0x102 0xC 0x0
-	
-		MUSC SongID_Victory
+        FADI 2
+		MUSC SongID_Env_Night
 		EVBIT_MODIFY 0x1
 		ENUT gChapter4C2Completed
 		EVBIT_MODIFY 0x0
-		SetBackground(0x31,5)
-		Text(Ch4C_2_EndingText)
-		FADI 2
-	
+        STAL 5
+		SetBackground(0x34,5)
+		BackgroundText(Ch4C_2_EndingText)
+        MUSCMID SongID_Silence
 	LABEL 0x102
+    FADI 2
 	MNCH 0x20
 	ENDA

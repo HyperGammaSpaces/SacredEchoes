@@ -85,6 +85,7 @@ InjectAi1(0x09, AiDontAttackAlm)
 
 
 
+
 /*
 - When you tell a unit to have an AI of [0x0, 0x3], that means it should use the primary AI that’s 0x0 in the first table, and if that fails, use the AI in the second table pointed to by the 0x3-rd pointer. In this case, that means if there’s something to attack in range, it’ll attack that. Otherwise it’ll fail and fall through to AI2 0x3, which always fails. When both AIs fail, the unit does nothing. Thus, the observed behavior is AttackInRange.
 

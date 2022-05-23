@@ -90,8 +90,8 @@ Ch2_2_BeginningScene:
 	TEXTSTART
 	TEXTSHOW Ch2_2_Intro2
 	TEXTEND
-	REMA
-	REMOVEPORTRAITS
+	TEXTCLEAR
+	TEXTMODE 1
 	FADI 2
 
 	MUSC SongID_Inn
@@ -101,11 +101,11 @@ Ch2_2_BeginningScene:
 	TEXTSTART 
 	TEXTSHOW Ch2_2_RecruitSaber
 	TEXTEND
-	REMA
-	REMOVEPORTRAITS
+	TEXTCLEAR
+	TEXTMODE 1
 
 	_0x2141 HiringSaberCG 0x1 0x4
-	REMOVEPORTRAITS
+	TEXTMODE 1
 	STAL 90
 		
 	//give item GoldDagger for G.Dagger
@@ -116,7 +116,7 @@ Ch2_2_BeginningScene:
 	STAL 20
 
 	_0x2141 0x09 0x1 0x4
-	REMOVEPORTRAITS
+	TEXTMODE 1
 
 	Text(Ch2_2_RecruitSaber_2)
 	CharacterJoinedNotification(Notif_SaberJoin)
@@ -138,7 +138,7 @@ Ch2_2_BeginningScene:
 	EndConvo
 	STAL 30
 
-	CAM1 [10,7]
+	CAMERA_CENTERED [10,7]
 	EARTHQUAKE_START 0x100
 	STAL 30
 	FADI 16
@@ -153,7 +153,7 @@ Ch2_2_BeginningScene:
 
 	MUSC SongID_Tension
 	//Pirates say something
-	CAM1 PirateCelica1
+	CAMERA_CENTERED PirateCelica1
 	FlashCursor(PirateCelica1, 60)
 	Text(Ch2_2_Pirates)
 	//Trigger map change 1 here
@@ -168,7 +168,7 @@ Ch2_2_BeginningScene:
 ChestEvent:
 	MUSC SongID_Env_Water
 	MUSI
-	CAM1 [10,3]
+	CAMERA_CENTERED [10,3]
 	STAL 20
 	FlashCursor(10,3,60)
 	STAL 20

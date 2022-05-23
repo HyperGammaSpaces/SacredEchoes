@@ -18,7 +18,26 @@ Dummy_ThisChapter:
 	POIN Dummy_BeginningScene Dummy_EndingScene
 
 Dummy_TurnBasedEvents:
+    TurnEventPlayer(0x0,IfTatianaThenBandits,3)
+    TurnEventPlayer(0x0,LoadSouthwest,5)
+    TurnEventPlayer(0x0,LoadNortheast,7)
 	TURN
+    
+IfTatianaThenBandits:
+    CHECK_EVENTID gTatianaRecruited
+    BEQ 0x1 rC r0
+        LoadReinforcements(BanditReinforcements)
+    LABEL 0x1
+    NoFade
+    ENDA
+    
+LoadSouthwest:
+    ReinforcementEvent(ReinforcementsSW)
+    ENDA
+    
+LoadNortheast:
+    ReinforcementEvent(ReinforcementsNE)
+    ENDA
 
 Dummy_CharacterBasedEvents:
 	CharacterEvent(0x09,TalkToZeke,Tatiana,Zeke)
@@ -26,9 +45,9 @@ Dummy_CharacterBasedEvents:
 	CHAR
 	
 TalkToZeke:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 0x20
-	Text(Ch4_5A_TatianaRecruitsZeke)
+	MapText(Ch4_5A_TatianaRecruitsZeke)
 	SVAL 0x1 0x0
 	CHAI Zeke
 	//CHAI Rigel_Cav
@@ -44,9 +63,9 @@ TalkToZeke:
 	ENDA
 	
 TalkToZekeAlm:
-	MUSS 0x30
+	MUSS SongID_Recruitment
 	STAL 0x20
-	Text(Ch4_5A_AlmRecruitsZeke)
+	MapText(Ch4_5A_AlmRecruitsZeke)
 	SVAL 0x1 0x0
 	CHAI Zeke
 	//CHAI Rigel_Cav
@@ -63,15 +82,70 @@ TalkToZekeAlm:
 
 Dummy_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+	  Seize(12,17)
 	#endif
-	Seize(10,5)
-	LOCA 0xA VillageEvent [5,5] 0x10
+    House(0, HouseEvent1, 2,7)
+	House(0, HouseEvent2, 13,9)
+	House(0, HouseEvent3, 16,15)
+	Village(0xA, VillageEvent, 5,5)
 	LOCA
 	
 VillageEvent:
-	//Idea: if gTatianaRecruited unset, the villagers will refuse to give you anything and fight you, so you destroy the village.
-	//VillageEventItem(Ch4_5A_VillageText,0x05,SpeedRing)
+    MUSI
+    SMOV r2 0x05
+    SMOV r3 Ch4_5A_VillageText_Bad
+    CHECK_EVENTID gTatianaRecruited
+    BEQ 0x201 rC r0
+        SMOV r3 Ch4_5A_VillageText_Good
+    LABEL 0x201
+    CALL $9EE310
+    MUNO
+    CHECK_EVENTID gTatianaRecruited
+    BEQ 0x202 rC r0
+        CALL $591F40
+        SMOV 0x3 BraveSword
+        GIVEITEMTO 0xFFFF
+    LABEL 0x202
+    EVBIT_T 0x7
+	ENDA
+    
+HouseEvent1:
+	MUSI
+    SMOV r2 0x01
+    SMOV r3 Ch4A_5_House1_Bad
+    CHECK_EVENTID gTatianaRecruited
+    BEQ 0x101 rC r0
+        SMOV r3 Ch4A_5_House1
+    LABEL 0x101
+    CALL $9EE310
+    MUNO
+    EVBIT_T 0x7
+	ENDA
+	
+HouseEvent2:
+	MUSI
+    SMOV r2 0x01
+    SMOV r3 Ch4A_5_House2_Bad
+    CHECK_EVENTID gTatianaRecruited
+    BEQ 0x102 rC r0
+        SMOV r3 Ch4A_5_House2
+    LABEL 0x102
+    CALL $9EE310
+    MUNO
+    EVBIT_T 0x7
+	ENDA
+    
+HouseEvent3:
+	MUSI
+    SMOV r2 0x01
+    SMOV r3 Ch4A_5_House3_Bad
+    CHECK_EVENTID gTatianaRecruited
+    BEQ 0x103 rC r0
+        SMOV r3 Ch4A_5_House3
+    LABEL 0x103
+    CALL $9EE310
+    MUNO
+    EVBIT_T 0x7
 	ENDA
 
 Dummy_MiscBasedEvents:
@@ -84,7 +158,7 @@ Dummy_MiscBasedEvents:
 ZekeTurnsBlue:
 	MUSI
 	CameraCursor(JeromeCh4_5)
-	Text(Ch4_5A_ZekeTurnsBlue)
+	MapText(Ch4_5A_ZekeTurnsBlue)
 	MUNO
 	NoFade
 	ENDA
@@ -130,71 +204,99 @@ CutsceneUnits:
 
 EnemyUnits:
 	UNIT JeromeCh4_5 GoldKnight	JeromeCh4_5 Level(9, Enemy, True) [10,5]	0x00 0x00 0x0 0x00 [SilverLance,Javelin] NeverMoveAI
-	UNIT 0x87 Paladin JeromeCh4_5 Level(12, Enemy, True) [8,10] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
-	UNIT Rigel_Cav Paladin 0x87 Level(11, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin 0x87 Level(10, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [Saunion] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin 0x87 Level(12, Enemy, True) [11,10] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(8, Enemy, True) [12,7] 0x00 0x00 0x0 0x00 [Mire,Physic] MoveWithLeaderAI
-	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(8, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [Mire,Physic] HealUnits
-	UNIT Rigel_Cav GoldKnight Rigel_Wyvern Level(2, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Wyvern GoldKnight JeromeCh4_5 Level(2, Enemy, True) [10,8] 0x00 0x00 0x0 0x00 [SteelLance] AttackInHalfRangeAI
-	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(4, Enemy, True) [9,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
-	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(4, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
+	UNIT Rigel_Soldier Baron JeromeCh4_5 Level(2, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelLance] [0x3,0x3,0xC,0x20]
+	UNIT Rigel_Soldier Baron JeromeCh4_5 Level(2, Enemy, True) [10,8] 0x00 0x00 0x0 0x00 [SteelAxe] [0x3,0x3,0xC,0x20]
+	UNIT Rigel_Mage Sage JeromeCh4_5 Level(8, Enemy, True) [9,7] 0x00 0x00 0x0 0x00 [Thunder] [0x3,0x3,0xC,0x20]
+	UNIT Rigel_Archer Archer JeromeCh4_5 Level(18, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [RadiantBow] [0x3,0x3,0xC,0x20]
+	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(4, Enemy, True) [12,7] 0x00 0x00 0x0 0x00 [Mire,Physic] [0xE,0x3,0x4,0x20]
+	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(4, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [Selene,Physic] [0xE,0x3,0x4,0x20]
+    //bridge
+	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(2, Enemy, True) [4,13] 0x00 0x00 0x0 0x00 [SteelBow] [0x3,0x3,0x4,0x20]
+	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(2, Enemy, True) [9,13] 0x00 0x00 0x0 0x00 [SteelBow] [0x3,0x3,0x4,0x20]
+    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [6,14] DropItem 0x00 0x0 0x00 [HeavySpear] [0x0,0x0,0xC,0x0]
+    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [7,14] 0x00 0x00 0x0 0x00 [HandAxe] [0x0,0x0,0xC,0x0]
+    
+    //further out
+    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x0,0xC,0x0]
+    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [20,15] 0x00 0x00 0x0 0x00 [SteelAxe] [0x0,0x0,0xC,0x0]
+    UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [12,11] 0x00 0x00 0x0 0x00 [BaseSword] [0x0,0x3,0xC,0x0]
+    
+    UNIT Rigel_Cav GoldKnight JeromeCh4_5 Level(2, Enemy, True) [2,9] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0,0x12,0xC,0x0]
+	UNIT Rigel_Cav Paladin JeromeCh4_5 Level(12, Enemy, True) [3,7] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
+	UNIT Rigel_Cav Paladin JeromeCh4_5 Level(12, Enemy, True) [1,11] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
+	
 	UNIT
+    
+MoreEnemies:
+	UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [11,2] 0x00 0x00 0x0 0x00 [IronAxe] [0x0,0x12,0xC,0x0]
+    UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [15,2] 0x00 0x00 0x0 0x00 [SteelSword] [0x0,0x0,0xC,0x0]
+    UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [SteelSword] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Cav Paladin JeromeCh4_5 Level(12, Enemy, True) [23,10] 0x00 0x00 0x0 0x00 [Javelin] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Cav Paladin JeromeCh4_5 Level(12, Enemy, True) [23,11] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Soldier Berserker JeromeCh4_5 Level(4, Enemy, True) [2,3] 0x00 0x00 0x0 0x00 [SteelAxe] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Soldier Berserker JeromeCh4_5 Level(4, Enemy, True) [1,4] 0x00 0x00 0x0 0x00 [PoisonAxe] [0x0,0x0,0xC,0x0]
+    UNIT
 	
 ZekeUnits:
-	UNIT Zeke GoldKnight 0x00 Level(3,NPC,False) [18,7] 0x00 0x00 0x0 0x00 [SilverLance, BaseLance] AttackInHalfRangeAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [17,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [19,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [17,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [19,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-	UNIT Rigel_Cav BowKnight Zeke Level(2, NPC, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
-	UNIT Rigel_Cav BowKnight Zeke Level(2, NPC, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT Rigel_Cav BowKnight Zeke Level(2, NPC, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] AttackInHalfRangeAI
+	UNIT Zeke GoldKnight 0x00 Level(3,NPC,False) [18,8] 0x00 0x00 0x0 0x00 [SilverLance, BaseLance] [0x3,0x3,0xC,0x20]
+	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [16,6] 0x00 0x00 0x0 0x00 [Javelin, Axereaver] [0x3,0x3,0x8,0x20]
+	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [16,7] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] [0x3,0x3,0x8,0x20]
+	UNIT Rigel_Cav Paladin Zeke Level(8, NPC, True) [17,10] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x3,0xC,0x0]
+	UNIT Rigel_Cav Paladin Zeke Level(8, NPC, True) [16,9] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x3,0xC,0x0]
+	UNIT Rigel_Cav Paladin Zeke Level(8, NPC, True) [18,11] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x3,0xC,0x0]
+	UNIT Rigel_Cav Sage Zeke Level(4, NPC, True) [18,4] 0x00 0x00 0x0 0x00 [Thunder, Physic] [0xF,0x3,0x4,0x20]
+	UNIT Rigel_Cav BowKnight Zeke Level(2, NPC, True) [20,10] 0x00 0x00 0x0 0x00 [BaseBow] [0x0,0x3,0x8,0x0]
+	UNIT Rigel_Cav BowKnight Zeke Level(2, NPC, True) [21,7] 0x00 0x00 0x0 0x00 [BaseBow] [0x0,0x3,0x8,0x0]
 	UNIT
 	
 ZekeEnemyUnits:
-	UNIT ZekeBoss GoldKnight 0x00 Level(3,Enemy,False) [18,7] 0x00 0x00 0x0 0x00 [BaseLance] DefensiveTerrainAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [17,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [19,7] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [19,8] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [19,9] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
-	UNIT Rigel_Cav BowKnight Zeke Level(2, Enemy, True) [17,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT Rigel_Cav BowKnight Zeke Level(2, Enemy, True) [18,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
-	UNIT Rigel_Cav BowKnight Zeke Level(2, Enemy, True) [19,10] 0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT ZekeBoss GoldKnight 0x00 Level(3,Enemy,False) [18,8] 0x00 0x00 0x0 0x00 [SilverLance, BaseLance] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Cav Paladin ZekeBoss Level(12, Enemy, True) [16,6] 0x00 0x00 0x0 0x00 [Javelin, Axereaver] [0x0,0x0,0x8,0x0]
+	UNIT Rigel_Cav Paladin ZekeBoss Level(12, Enemy, True) [16,7] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] [0x0,0x0,0x8,0x0]
+	UNIT Rigel_Cav Paladin ZekeBoss Level(8, Enemy, True) [17,10] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x6,0xC,0x0]
+	UNIT Rigel_Cav Paladin ZekeBoss Level(8, Enemy, True) [16,9] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x6,0xC,0x0]
+	UNIT Rigel_Cav Paladin ZekeBoss Level(8, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x6,0xC,0x0]
+	UNIT Rigel_Cav Sage ZekeBoss Level(4, Enemy, True) [18,4] 0x00 0x00 0x0 0x00 [Thunder, Physic] [0xF, 0x3, 0x4, 0x20]
+	UNIT Rigel_Cav BowKnight ZekeBoss Level(2, Enemy, True) [20,10] 0x00 0x00 0x0 0x00 [BaseBow] [0x0,0x6,0x8,0x0]
+	UNIT Rigel_Cav BowKnight ZekeBoss Level(2, Enemy, True) [21,7] 0x00 0x00 0x0 0x00 [BaseBow] [0x0,0x6,0x8,0x0]
 	UNIT
+    
+BanditReinforcements:
+    UNIT Bandit_Strong Berserker 0x0 Level(4, Enemy, True) [2,0] 0x00 0x00 0x1 REDA2R0 [IronAxe,Torch] [0x0,0x4,0xC,0x0]
+    UNIT Bandit_Axe Brigand Bandit_Strong Level(16, Enemy, True) [2,0] 0x00 0x00 0x1 REDA2R1 [SteelAxe,Torch] [0x0,0x4,0xC,0x0]
+    UNIT Bandit_Axe Brigand Bandit_Strong Level(16, Enemy, True) [2,0] 0x00 0x00 0x1 REDA1R0 [SteelAxe,Torch] [0x0,0x4,0xC,0x0]
+    UNIT Bandit_Axe Brigand Bandit_Strong Level(16, Enemy, True) [2,0] 0x00 0x00 0x1 REDA3R0 [SteelAxe,Torch] [0x0,0x4,0xC,0x0]
+    UNIT
+    
+ReinforcementsSW:
+    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [0,21] 0x00 0x00 0x1 REDA0R20 [IronAxe] [0x0,0x0,0xC,0x0]
+    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [0,21] 0x00 0x00 0x1 REDA1R21 [IronAxe] [0x0,0x0,0xC,0x0]
+    UNIT    
+    
+ReinforcementsNE:
+    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(12, Enemy, True) [23,0] 0x00 0x00 0x1 REDA22R0 [IronAxe] [0x0,0x0,0xC,0x0]
+    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(12, Enemy, True) [23,0] 0x00 0x00 0x1 REDA23R1 [IronAxe] [0x0,0x0,0xC,0x0]
+    UNIT
 
 Dummy_BeginningScene:
 
-	//debug only
-	#ifndef __DEBUG__
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	#endif
-	
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	LOAD1 0x1 ZekeEnemyUnits
 	ENUN
 	
 	MUSC SongID_SolveTheRiddle
-	CAM1 [14,6]
+	CAMERA_CENTERED [14,6]
 	//FADU 5
 	//CameraCursor(JeromeCh4_5)
 	SetBackground(0x25)
-	Text(Ch4_5A_OpeningText)
+	BackgroundText(Ch4_5A_OpeningText)
 	FADI 5
 	CLEAN
 	FADU 5
 	STAL 20
 	CameraCursor(ZekeBoss)
-	Text(Ch4_5A_OpeningText_Zeke)
+	MapText(Ch4_5A_OpeningText_Zeke)
 	STAL 20
 	
 	CHECK_EVENTID gTatianaRecruited
@@ -208,25 +310,25 @@ Dummy_BeginningScene:
 		
 		CameraCursor(Tatiana)
 		MUSI
-		Text(Ch4_5A_OpeningText_2)
+		MapText(Ch4_5A_OpeningText_2)
 		MUNO
 		
 		CameraCursor(ZekeBoss)
-		MUSCSLOW SongID_Silence
-		TEXTSTART
+		MUSCMID SongID_Silence
+		TEXTMODE 0
 		TEXTSHOW Ch4_5A_OpeningText_3
 		TEXTEND
 		MUSC SongID_ImportantBattle
 		TEXTCONT
 		TEXTEND
-		REMA
+		TEXTCLEAR
 
 		STAL 20
 		CUSN ZekeBoss
 		STAL 20
 		CameraCursor(Alm)
 		
-		Text(Ch4_5A_OpeningText_4)
+		MapText(Ch4_5A_OpeningText_4)
 	LABEL 0xD
 	
 	FADI 16
@@ -241,6 +343,8 @@ Dummy_BeginningScene:
 	BEQ 0xF rC r0
 		LOAD1 0x1 ZekeUnits
 		ENUN
+        LOAD1 0x1 MoreEnemies
+        ENUN
 		GOTO 0x10
 	LABEL 0xF
 		LOAD1 0x1 ZekeEnemyUnits
@@ -252,7 +356,7 @@ Dummy_BeginningScene:
 
 Dummy_EndingScene:
 	CALL UnifiedBEXPCaller
-	MUSCSLOW SongID_Silence
+	MUSCMID SongID_Silence
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A5Completed
@@ -262,55 +366,59 @@ Dummy_EndingScene:
 	BEQ 0xA rC r0
 		MUSC SongID_Victory
 		SetBackground(0x02)
-		TEXTSTART
+		TEXTMODE 1
 		TEXTSHOW Ch4_5A_EndingText_Good
 		TEXTEND
 		MUSC SongID_Silence
 		TEXTCONT
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		FADI 5
 		MUSC SongID_Truth
 		
 		//CG stuff here
 		EVBIT_MODIFY 0x0
-		REMOVEPORTRAITS
+		TEXTMODE 1
 		BACG ZekeBrandCG
 		FADU 5
-		REMOVEPORTRAITS
 		STAL 60
-		_0x1A22
-		TEXTSHOW Ch4_5A_EndingText_Good_2
-		TEXTEND
-		_0x1A22
-		TEXTSHOW Ch4_5A_EndingText_Good_3
-		TEXTEND
+		CgText(Ch4_5A_EndingText_Good_2)
+		CgText( Ch4_5A_EndingText_Good_3)
 		FADI 5
-		REMA
-		
+		TEXTMODE 1
 		SetBackground(0x02, 5)
-		Text(Ch4_5A_EndingText_Good_4)
+        TEXTMODE 1
+		TEXTSHOW Ch4_5A_EndingText_Good_4
+        TEXTEND
+        TEXTCLEAR
 		FADI 2
-		MUSCSLOW SongID_Silence
+		MUSCMID SongID_Silence
 		STAL 60
 		
 		//Alm questions the prophecy
 		MUSC SongID_Env_Night
 		SetBackground(0x43, 2)
-		TEXTSTART
+		TEXTMODE 1
 		TEXTSHOW Ch4_5A_EndingText_Good_5
 		TEXTEND
 		MUSCSLOW SongID_CastleTheme
 		TEXTCONT
 		TEXTEND
-		REMA
+		TEXTCLEAR
 		
 		GOTO 0xB
 	LABEL 0xA
-	SetBackground(0x4B) //demolished village
-		Text(Ch4_5A_EndingText_Bad)
+        MUSC SongID_SilentGround
+        SetBackground(0x4B) //demolished village
+        BackgroundText(Ch4_5A_EndingText_Bad)
+        MUSCMID SongID_Silence
+        STAL 20
+        FADI 2
+        MUSC SongID_Env_Night
+        SetBackground(0x43, 2)
+        BackgroundText(Ch4_5A_EndingText_Bad_5)
 	LABEL 0xB
-	
+	MUSCMID SongID_Silence
 	FADI 2
-	MNCH 0x28
+	MNCH 0x29
 	ENDA

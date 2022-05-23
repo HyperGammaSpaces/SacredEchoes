@@ -20,7 +20,7 @@ Ch2_6_TurnBasedEvents:
 	TURN
 
 SecondBoat:
-	CAM1 [12,0]
+	CAMERA_CENTERED [12,0]
 	EARTHQUAKE_START 0x100
 	STAL 30
 	FADI 16
@@ -33,7 +33,7 @@ SecondBoat:
 	//
 	FADU 16
 	STAL 20
-	CAM1 SorcererBoss
+	CAMERA_CENTERED SorcererBoss
 	FlashCursor(SorcererBoss,60)
 	MUSI
 	STAL 20
@@ -48,7 +48,7 @@ WitchesAppear:
 	CALL $9EE274
 	//
 	STAL 20
-	CAM1 Celica
+	CAMERA_CENTERED Celica
 	FlashCursor(Celica,60)
 	Text(Ch2_6_Reinforcements2) // oh no, witches
 	NoFade
@@ -173,7 +173,7 @@ Ch2_6_BeginningScene:
 	LABEL 0x101
 	MUSCFAST SongID_Silence
 	STAL 10
-	CAM1 Celica
+	CAMERA_CENTERED Celica
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
@@ -181,7 +181,7 @@ Ch2_6_BeginningScene:
 	MUSC SongID_Tension
 	FADU 16
 	STAL 20
-	CAM1 Jarth
+	CAMERA_CENTERED Jarth
 	FlashCursor(Jarth, 60)
 	STAL 20
 		CHECK_EXISTS Valbar

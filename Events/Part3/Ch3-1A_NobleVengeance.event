@@ -132,10 +132,10 @@ CavalierGroup:
 	UNIT
 	
 Reinforcements1:
-	UNIT Rigel_Cav Cavalier	Zaxon Level(10, Enemy, True) [16,1]	0x00 0x00 0x1 REDA16R1 [IronLance] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier	Zaxon Level(10, Enemy, True) [16,1]	0x00 0x00 0x1 REDA16R1 [IronLance] NoAI
 	UNIT
 Reinforcements2:
-	UNIT Rigel_Cav Cavalier	Zaxon Level(8, Enemy, True) [18,14]	0x00 0x00 0x1 REDA18R14 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier	Zaxon Level(8, Enemy, True) [18,14]	0x00 0x00 0x1 REDA18R14 [SteelLance] NoAI
 	UNIT
 	
 BrigandsReinforcements:
@@ -144,7 +144,7 @@ BrigandsReinforcements:
 
 
 Ch3_1A_BeginningScene:
-	CAM1 [16, 15]
+	CAMERA_CENTERED [16, 15]
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	LOAD2 0x1 CutsceneUnits
@@ -156,13 +156,13 @@ Ch3_1A_BeginningScene:
 		BEQ 0x6 0xC 0x0
 			MUSC SongID_SilentGround
 			SetBackground(0x1F)
-			Text(Ch3_Alm_Start)
+			BackgroundText(Ch3_Alm_Start)
 			FADI 2
 	LABEL 0x6
 	MUSC SongID_Env_WindBirds
 	LABEL 0x7
 	SetBackground(0x4C)
-	Text(Ch3_1A_OpeningText)
+	BackgroundText(Ch3_1A_OpeningText)
 	ClearBackground
 
 	SVAL 0x1 0x1
@@ -176,16 +176,16 @@ Ch3_1A_BeginningScene:
 	ENUN
 
 	LABEL 0x3
-	CAM1 FernandEnemy1
+	CAMERA_CENTERED FernandEnemy1
 	STAL 20
 	FlashCursor(FernandEnemy1, 60)
 	STAL 20
-	Text(Ch3_1A_OpeningText_2)
+	MapText(Ch3_1A_OpeningText_2)
 	MOVE 0x10 Clive [4,16]
 	ENUN
 	MUSC SongID_Indignation
 	STAL 20
-	Text(Ch3_1A_OpeningText_3)
+	MapText(Ch3_1A_OpeningText_3)
 	MOVE 0x10 Clive [5,16]
 	ENUN
 	STAL 20
@@ -207,14 +207,14 @@ Ch3_1A_BeginningScene:
 
 Ch3_1A_EndingScene:
 	CALL UnifiedBEXPCaller
+    FadeOutMusic
 	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A1Completed
 	EVBIT_MODIFY 0x0
 	MUSC SongID_ShadowOfVictory
 	SetBackground(0x1B)
-	Text(Ch3_1A_EndingText)
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	BackgroundText(Ch3_1A_EndingText)
+	FADI 2
 	MNCH 0x10 //go to ch16
 	ENDA

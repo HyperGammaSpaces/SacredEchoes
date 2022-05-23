@@ -93,24 +93,6 @@ Ch3_5C_Ballista2:
 	ALIGN 4
 
 Ch3_5C_Units1:
-#ifdef __DEBUG__
-	UNIT Celica CelicaPriestess 0x00 Level(13,Ally,True) [4,17] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(13,Ally,True) [5,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(13,Ally,True) [4,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Genny Cleric 0x00 Level(13,Ally,True) [3,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI
-	//group 2
-	UNIT Saber Myrmidon 0x00 Level(6,Ally,True) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, GoldDagger, Vulnerary] NoAI
-	UNIT Valbar Knight 0x00 Level(9,Ally,True) [11,21] 0x00 0x00 0x0 0x00 [BaseAxe, BaseLance, Vulnerary] NoAI
-	UNIT Leon Sniper 0x00 Level(13,Ally,True) [10,20] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
-	UNIT Kamui Mercenary 0x00 Level(13,Ally,True) [13,21] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
-	//group 3
-	UNIT Jesse Thief 0x00 Level(7,Ally,True) [18,20] 0x00 0x00 0x0 0x00 [BaseSword, Rapier, Lockpick] NoAI
-	UNIT Palla PegasusKnight 0x00 Level(10,Ally,True) [19,21] 0x00 0x00 0x0 0x00 [BaseLance, Javelin, Vulnerary] NoAI
-	UNIT Catria PegasusKnight 0x00 Level(10,Ally,True) [20,20] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing, Vulnerary] NoAI
-	UNIT Atlas Axeman 0x00 Level(3,Ally,True) [19,19] 0x00 0x00 0x0 0x00 [BaseAxe, Hatchet, Vulnerary] NoAI
-	UNIT Hyas Cavalier 0x00 Level(6,Ally,True) [21,19] 0x00 0x00 0x0 0x00 [BaseLance, SteelLance, Vulnerary] NoAI
-	UNIT
-#else
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -127,7 +109,6 @@ Ch3_5C_Units1:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
-#endif
 
 Ch3_5C_CutsceneUnits:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -195,7 +176,7 @@ PirateReinforcements:
 	UNIT
 	
 ShamanReinforcements:
-	UNIT DumaFaith_Sorcerer Shaman	Grieth Level(11, Enemy, True) [19,7]	0x00 0x00 0x1 REDA19R7 [Mire] NoAI
+	UNIT DumaFaith_Sorcerer Shaman	Grieth Level(11, Enemy, True) [19,7]	0x00 0x00 0x0 0x00 [Mire] NoAI
 	UNIT
 	
 EstJoins:
@@ -215,79 +196,71 @@ Ch3_5C_BeginningScene:
 	LOAD1 0x1 EnemyUnits
 	ENUN
 	SetBackground(0x0C) //fortress hall
-	Text(Ch3_5C_OpeningText) //grieth and bandit
-	FADI 60
+	BackgroundText(Ch3_5C_OpeningText) //grieth and bandit
+	FADI 16
 	CLEAN
 	LOAD2 0x0 Ch3_5C_CutsceneUnits
 	ENUN
-	FADU 60
+	FADU 16
 	STAL 20
-	CAM1 Celica
+	CAMERA_CENTERED Celica
 	STAL 20
 	CHECK_ALIVE Valbar
 	BEQ 0x100 0xC 0x0
 	CHECK_ALIVE Leon
 	BEQ 0x100 0xC 0x0
-		Text(Ch3_5C_OpeningText_2)
+		MapText(Ch3_5C_OpeningText_2)
 		GOTO 0x101
 	LABEL 0x100
-		Text(Ch3_5C_OpeningText_2_NoValbar)
+		MapText(Ch3_5C_OpeningText_2_NoValbar)
 	LABEL 0x101
-	FADI 60
-	#ifdef __DEBUG__
-		LOAD1 0x1 Ch3_5C_Units1
-		ENUN
-	#else
-		LOAD3 0x0 Ch3_5C_Units1 
-		ENUN
-	#endif
+	FADI 16
+	LOAD3 0x0 Ch3_5C_Units1 
+	ENUN
 	GotoPrepScreen
 	ENDA
 
 Ch3_5C_EndingScene:
 	CALL UnifiedBEXPCaller
+    FadeOutMusic
+	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C5Completed
 	EVBIT_MODIFY 0x0
-	FADI 2
 	
 	MUSC SongID_Victory
 	SetBackground(0x17) //dungeon cell
-	TEXTSTART
+	TEXTMODE 1
 	TEXTSHOW Ch3_5C_EndingText //irma
 	TEXTEND
 	MUSC SongID_Legacy
 	TEXTCONT
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	
 	//cutscene Ch3_5C_EndingText_CG
 	FADI 2
-	REMOVEPORTRAITS
+	TEXTMODE 1
 	BACG LipricaCG //actual cg
 	FADU 2
-	REMOVEPORTRAITS
 	STAL 90
-	_0x1A22
-	TEXTSHOW Ch3_5C_EndingText_CG
-	TEXTEND
+	CgText(Ch3_5C_EndingText_CG)
 	FADI 5
-	REMA
 	
 	SetBackground(0x17, 2) //dungeon cell
-	Text(Ch3_5C_EndingText_2) //irma 2
+	BackgroundText(Ch3_5C_EndingText_2) //irma 2
 	
-	MUSC SongID_Victory
+	MUSCSLOW SongID_Victory
 	//atlas finds his bros
 	CHECK_ALIVE Atlas
 	BEQ 0x3 0xC 0x0
 		SetBackground(0x0C)
 		CHECK_ALIVE Hyas
 		BEQ 0x4 0xC 0x0
-			Text(Ch3_5C_EndingText_AtlasHyas)
+			BackgroundText(Ch3_5C_EndingText_AtlasHyas)
 			GOTO 0x3
 		LABEL 0x4 //atlas only
-		Text(Ch3_5C_EndingText_AtlasOnly)
+		BackgroundText(Ch3_5C_EndingText_AtlasOnly)
 	LABEL 0x3 //atlas dead
 	
 	//get est
@@ -296,10 +269,10 @@ Ch3_5C_EndingScene:
 	BEQ 0x5 0xC 0x0
 		CHECK_ALIVE Catria
 		BEQ 0x5 0xC 0x0
-			Text(Ch3_5C_EndingText_GetEst)
+			BackgroundText(Ch3_5C_EndingText_GetEst)
 			NoFade
 	LABEL 0x5
-	Text(Ch3_5C_EndingText_EstOnly)
+	BackgroundText(Ch3_5C_EndingText_EstOnly)
 	CharacterJoinedNotification(Notif_EstJoin)
 	FADI 5
 	CLEAN
@@ -307,19 +280,21 @@ Ch3_5C_EndingScene:
 	ENUN
 	
 	//get deen or sonya
-	SetBackground(0x0C)
+	SetBackground(0x0C,5)
 	CHECK_EVENTID gFightSonyaChosen
 	BEQ 0x6 0xC 0x0
-		Text(Ch3_5C_EndingText_GetDeen)
+		BackgroundText(Ch3_5C_EndingText_GetDeen)
 		CharacterJoinedNotification(Notif_DeenJoin)
+        FadeOutMusic
 		FADI 2
 		CLEAN
 		LOAD1 0x1 DeenJoins
 		ENUN
 		GOTO 0x7
 	LABEL 0x6
-		Text(Ch3_5C_EndingText_GetSonya)
+		BackgroundText(Ch3_5C_EndingText_GetSonya)
 		CharacterJoinedNotification(Notif_SonyaJoin)
+        FadeOutMusic
 		FADI 2
 		CLEAN
 		LOAD1 0x1 SonyaJoins
@@ -330,8 +305,9 @@ Ch3_5C_EndingScene:
 	CLEE 0x0
 	LOAD1 0x1 Ch3_5C_EndCutscene_Irma
 	ENUN
-	CAM1 0xC1
+	CAMERA_CENTERED 0xC1
 	FADU 5
+    MUSCSLOW SongID_Env_Wind
 	STAL 20
 	
 	EVBIT_T 0x9
@@ -343,11 +319,11 @@ Ch3_5C_EndingScene:
 	ENUN
 	CameraCursor(Conrad)
 	
-	Text(Ch3_5C_EndingText_Conrad)
-	REMA
+	MapText(Ch3_5C_EndingText_Conrad)
 	STAL 20
 	MOVE 0x08 0xC1 [5,23]
 	MOVE 0x08 Conrad [6,23]
+    FadeOutMusic
 	FADI 2
 	ENUN
 	

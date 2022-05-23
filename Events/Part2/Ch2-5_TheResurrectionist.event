@@ -49,17 +49,6 @@ Ch2_5_Ballista3:
 	ALIGN 4
 
 PlayerUnits:
-#ifdef __DEBUG__
-	UNIT Celica CelicaPriestess 0x00 Level(6,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(5,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(5,Ally,True) [5,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(5,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(5,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Valbar Knight 0x00 Level(2,Ally,True) [3,10] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe,Vulnerary] NoAI
-	UNIT Leon Archer 0x00 Level(5,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
-	UNIT Kamui Mercenary 0x00 Level(4,Ally,True) [4,8] 0x00 0x00 0x0 0x00 [BaseSword] NoAI 
-	UNIT
-#else
 	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(1,Ally,True) [5,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
@@ -69,7 +58,6 @@ PlayerUnits:
 	UNIT Leon Archer 0x00 Level(4,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
 	UNIT Kamui Mercenary 0x00 Level(3,Ally,True) [4,8] 0x00 0x00 0x0 0x00 [BaseSword] NoAI 
 	UNIT
-#endif
 	
 EnemyUnits:
 	UNIT CantorBoss_Celica5 Cantor CantorBoss_Celica5 Level(1,Enemy,True) [13,5] 0x06 0x00 0x0 0x00 [Miasma, Lifefruit] NeverMoveAI 
@@ -89,14 +77,8 @@ ZombieGroup:
 	UNIT
 
 Ch2_5_BeginningScene:
-	#ifdef __DEBUG__
-		LOAD1 0x1 PlayerUnits
-		ENUN
-	#else
-		LOAD3 0x0 PlayerUnits 
-		ENUN
-	#endif
-	
+	LOAD3 0x0 PlayerUnits 
+	ENUN
 	FADU 5
 	MUSC SongID_Env_Water
 	STAL 20
@@ -106,15 +88,21 @@ Ch2_5_BeginningScene:
 	BEQ 0x100 0xC 0x0
 		CHECK_ALIVE Leon
 		BEQ 0x100 0xC 0x0
-			Text(Ch2_5_OpeningText)
+			TEXTMODE 1
+            TEXTSHOW Ch2_5_OpeningText
+            TEXTEND
+            TEXTCLEAR
 			GOTO 0x101
 	LABEL 0x100
-	Text(Ch2_5_OpeningText_NoValbar)
-	CLEAN
+	TEXTMODE 1
+    TEXTSHOW Ch2_5_OpeningText_NoValbar
+    TEXTEND
+    TEXTCLEAR
 	
 	LABEL 0x101
+    ClearBackgroundSmooth
 	MUSC SongID_FromTheDarkness
-	CAM1 [11,0]
+	CAMERA_CENTERED [12,0]
 	EARTHQUAKE_START 0x100
 	STAL 30
 	FADI 16
@@ -125,7 +113,7 @@ Ch2_5_BeginningScene:
 	ENUN
 	FADU 16
 	STAL 20
-	CAM1 CantorBoss_Celica5
+	CAMERA_CENTERED CantorBoss_Celica5
 	STAL 20
 	FlashCursor(CantorBoss_Celica5, 60)
 	
@@ -144,23 +132,24 @@ LoadSummons: //every other turn, shamelessly stolen from VBA for now lol
 	CHECK_EVENTID 0x2
 	BNE 0x0 0xc 0x0 //stop if boss killed
 	CHECK_TURNS //store current turn to slot c
-	//Now get remainder mod 2
+	//Now get TEXTCLEARinder mod 2
 	SMOV r1 0x2
 	SDIV slotsParam(r2, rC, r1) //r2 = rC/2
 	SMUL slotsParam(r1, r2)     //r1 = r2*2
-	SSUB slotsParam(r1, rC, r1) //r1 -= rC, r1 = remainder
+	SSUB slotsParam(r1, rC, r1) //r1 -= rC, r1 = TEXTCLEARinder
 	BNE 0x0 r1 0
-	CAM1 CantorBoss_Celica5
+	CAMERA_CENTERED CantorBoss_Celica5
 	ENUN
 	FlashCursor(CantorBoss_Celica5, 60)
 	SOUN 0x3BF //summoning SFX
 	STAL 20
-	ReinforcementEvent(ZombieGroup) //Remainder was 0 (right)
+	LoadReinforcements(ZombieGroup) //TEXTCLEARinder was 0 (right)
 	LABEL 0x0
 	NoFade
 	ENDA
 
 Ch2_5_EndingScene:
+    MUSCMID SongID_Silence
 	CALL UnifiedBEXPCaller
 	CHECK_ALIVE Boey
 	BEQ 2 0xC 0x0

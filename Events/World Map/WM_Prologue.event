@@ -53,7 +53,9 @@ WorldMapPointerTable(0x28,WM_Act4_5_Alm)
 WorldMapPointerTable(0x29,WM_Act4_6_Alm)
 WorldMapPointerTable(0x2A,WM_Act4_7_Alm)
 WorldMapPointerTable(0x2B,WM_Act4_8_Alm)
-WorldMapPointerTable(0x2C,WM_Act4_Final)
+WorldMapPointerTable(0x2C,WM_Act4_6_Celica)
+WorldMapPointerTable(0x2D,WM_Act4_Final)
+WorldMapPointerTable(0x2E,WM_Act5_Final)
 WorldMapPointerTable(0x36,WM_Act4_3_Celica) //sage hamlet
 WorldMapPointerTable(0x37,WM_NovisPriory)//do some celica stuff
 WorldMapPointerTable(0x38,WM_Ch6x)
@@ -372,7 +374,7 @@ WM_Act3Start: //setup act 3 routes and remove path between harbor and castle
 	SVAL 0xB 0xC000C
 	TEXTSHOW LordSplitExplanationText
 	TEXTEND
-	REMA
+	TEXTCLEAR
 	WM_REMOVEPATH 0x34 //castle <-> harbor
 	//end tutorial
 	WM_MAKELORDVISIBLE 0x0
@@ -578,6 +580,9 @@ WM_Act4_4_Celica:
 
 WM_Act4_5_Celica:
 	WorldMapMoveNext(Celica, GMLoc_DumaGate, GMLoc_DumaSwamp, 0x25)
+    
+WM_Act4_6_Celica:
+	WorldMapMoveNext(Celica, GMLoc_DumaSwamp, GMLoc_DumaTower, 0x26)
 
 WM_Act4_1_Alm:
 	WorldMapMoveNext(Alm, GMLoc_RigelForest1, GMLoc_RigelForest2, 0x28)
@@ -616,8 +621,22 @@ WM_Act4_5_Alm:
 	WorldMapMoveNext(Alm, GMLoc_RigelVillage, GMLoc_DragonsMaw, 0x2E)
 
 WM_Act4_6_Alm:
-	//TODO: Don't unlock road 0x2F
-	WorldMapMoveNext(Alm, GMLoc_DragonsMaw,GMLoc_RigelFalls, 0x2F)
+	//WorldMapMoveNext(Alm, GMLoc_DragonsMaw,GMLoc_RigelFalls, 0x2F)
+    EVBIT_MODIFY 0x1
+    WM_SPAWNLORD 0x0 0x0 Alm GMLoc_DragonsMaw 0x0
+    WM_CENTERCAMONLORD
+    WM_FADEOUT 0x0 0x0 0x0
+    WM_TEXTDECORATE
+    EVBIT_MODIFY 0x0
+    STAL 20
+    WM_LOADLOCATION2 0x0 GMLoc_RigelFalls 0x0
+    WM_SETDESTINATION 0x0 GMLoc_RigelFalls 0x0
+    WM_WAITFORFX
+    STAL 40
+    WM_MAKELORDVISIBLE 0x0
+    EVBIT_MODIFY 0x1
+    CALL 0x591F40
+    ENDA
 
 WM_Act4_7_Alm:
 	//WorldMapMoveNext(Alm,GMLoc_RigelFalls, GMLoc_LastBastion, 0x30)
@@ -647,80 +666,26 @@ WM_Act4_8_Alm:
 	WorldMapMoveNext(Alm, GMLoc_LastBastion, GMLoc_RigelCastle, 0x32)
 
 WM_Act4_Final:
-//Draw routes 0x26 and 0x33
 	EVBIT_MODIFY 0x1
-	CHECK_EVENTID gDumaTowerReachedCelica
-	BEQ 0x2 0xC 0x0 
-		
-		//If already drawn
-		SVAL 0x3 0x3
-		CHECK_MODE
-		BEQ 0xCA 0xC 0x3
-		
-			//Alm case
-			ENUT gDumaTowerReachedAlm
-			WM_SPAWNLORD 0x0 0x0 Alm GMLoc_RigelCastle 0x0 //set Alm at Rigel Castle
-			WM_CENTERCAMONLORD
-			WM_FADEOUT 0x0 0x0 0x0
-			WM_TEXTDECORATE
-			EVBIT_MODIFY 0x0
-			STAL 20
-			WM_CENTERCAMONLORD
-			STAL 40
-			WM_DRAWPATH 0x0 0x33 0x0 //alm path
-			GOTO 0xF
-			
-		LABEL 0xCA //celica case
-		WM_SPAWNLORD 0x0 0x0 Celica GMLoc_DumaSwamp 0x0
-		WM_CENTERCAMONLORD
-		_0xA640 0x0 0x0 GMLoc_DumaSwamp
-		LABEL 0xE
-		SKIPWN
-		ENDA
-	
-	//check mode
-	LABEL 0x02
-	SVAL 0x3 0x3
-	CHECK_MODE
-	BEQ 0xCE 0xC 0x3
-		
-		//Alm case
-		ENUT gDumaTowerReachedAlm
-		WM_SPAWNLORD 0x0 0x0 Alm GMLoc_RigelCastle 0x0
-		WM_CENTERCAMONLORD
-		WM_LOADLOCATION2 0x0 GMLoc_DumaTower 0x0
-		WM_SETDESTINATION 0x0 GMLoc_DumaTower 0x0 
-		WM_WAITFORFX
-		STAL 40
-		WM_DRAWPATH 0x0 0x33 0x0 //alm path
-		GOTO 0xF
-		
-	LABEL 0xCE
-	ENUT gDumaTowerReachedCelica
-	WM_SPAWNLORD 0x0 0x0 Celica GMLoc_DumaSwamp 0x0 //set Celica at Duma Swamp
-	WM_CENTERCAMONLORD
-	WM_FADEOUT 0x0 0x0 0x0
-	WM_TEXTDECORATE
-	EVBIT_MODIFY 0x0
-	STAL 20
-	CHECK_EVENTID gDumaTowerReachedAlm
-	BNE 0x10 0xC 0x0
-		WM_DRAWPATH 0x0 0x2F 0x0 //alm path
-		STAL 40
-	LABEL 0x10
-	WM_CENTERCAMONLORD
-	WM_LOADLOCATION2 0x0 GMLoc_DumaTower 0x0
-	WM_SETDESTINATION 0x0 GMLoc_DumaTower 0x0 
-	WM_WAITFORFX
-	STAL 40
-	WM_DRAWPATH 0x0 0x26 0x0 //celica path
-	
-	LABEL 0xF
+    ENUT gDumaTowerReachedAlm
+    WM_SPAWNLORD 0x0 0x0 Alm GMLoc_RigelCastle 0x0 //set Alm at Rigel Castle
+    WM_CENTERCAMONLORD
+    WM_FADEOUT 0x0 0x0 0x0
+    WM_TEXTDECORATE
+    EVBIT_MODIFY 0x0
+    STAL 20
+    WM_SETDESTINATION 0x0 GMLoc_DumaTower 0x0 
+    WM_WAITFORFX
+    STAL 40
+    WM_DRAWPATH 0x0 0x33 0x0 //alm path
 	STAL 70
 	WM_MAKELORDVISIBLE 0x0
 	EVBIT_MODIFY 0x1
 	CALL 0x591F40
 	ENDA
+    
+WM_Act5_Final:
+    WorldMapSkip(GMLoc_DumaTower)
 
 PUSH
 	ORG $2060ba

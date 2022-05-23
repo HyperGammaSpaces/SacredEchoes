@@ -2,6 +2,44 @@ ALIGN 4
 {
   #include "Dummy.event"
 }
+
+DragonsMaw_Earthquake:
+    CAMERA_CENTERED [8, 19]
+    EARTHQUAKE_START 0x100
+    STAL 15
+    EARTHQUAKE_END
+    CameraCursor(Clair)
+    MapText(Ch4A_6_EndingText)
+    EARTHQUAKE_START 0x100
+    MOVE 0x64 Alm [15,18]
+    MOVE 0x64 Clair [14,17]
+    ENUN
+    STAL 40
+    FADI 5
+    TILEREVERSE 0x0
+    STAL 10
+    FADU 5
+    STAL 40
+    EARTHQUAKE_END
+    STAL 20
+    MOVE 0x64 Alm [11,18]
+    MOVE 0x64 Clair [11,19]
+    ENUN
+    CameraCursor(Alm)
+    TEXTMODE 0
+    TEXTSHOW Ch4A_6_EndingText_2
+    TEXTEND
+    MOVE 0x64 Clair [0,18]
+    ENUN
+    TEXTCONT
+    TEXTEND
+    TEXTCLEAR
+    MOVE 0x64 Alm [0,19]
+    ENUN
+    NoFade
+    ENDA
+    
+
 ALIGN 4
 {
   #include "Ch4-1C_SwampOfRegrets.event"
@@ -26,6 +64,10 @@ ALIGN 4
 ALIGN 4
 {
   #include "Ch4-5C_DumasApostle.event"
+}
+ALIGN 4
+{
+  #include "Ch4-6C_AltarOfTheFallen.event"
 }
 ALIGN 4
 {
@@ -63,6 +105,14 @@ ALIGN 4
 {
   #include "Ch4-9A_WarFather.event"
 }
+
+RudolfDeathEvent:
+    MUSCMID SongID_Silence
+    MapText(Ch4A_9_DeathQuote)
+    ENUT Local_BossDeath
+    NoFade
+    ENDA
+
 ALIGN 4
 {
   #include "FearMountain.event"
