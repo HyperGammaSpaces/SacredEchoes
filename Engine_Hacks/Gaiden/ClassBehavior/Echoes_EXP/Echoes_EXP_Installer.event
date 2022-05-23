@@ -88,19 +88,20 @@ BYTE $64 $64 //Saints
 BYTE $50 $50 //Shamans
 BYTE $78 $78 //Arcanists
 BYTE $B4 $B4 //Cantors
-BYTE $1 $1 //dummy
+BYTE $1 $1 //dummy 0x33, gorgon egg 0x34
 BYTE $C8 $C8 //GKs
-BYTE $1 $1 $1 $1 //dummy trainees
+BYTE $50 $C8 //berkut 
+BYTE $1 $1 //dummy trainees
 BYTE $C8 $C8 //manaketes
 BYTE $1E $1E //villagers
 BYTE $50 $C8 //axeman/highlander
 BYTE $1E $1E $1E //brigand/pirate/pirateF
 BYTE $78 $78 //berserkers
-BYTE $1 //dummy
+BYTE $1 //dummy 0x46
 BYTE $1E //woodcutter
 BYTE $28 $50 //peg/falco
 BYTE $3C //cleric
-BYTE $1 $1
+BYTE $28 $50 //hellhound/kerberos
 BYTE $3C //dancer
 BYTE $23 //soldier
 BYTE $B4 //jedah

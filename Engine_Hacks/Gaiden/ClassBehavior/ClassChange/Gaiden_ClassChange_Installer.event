@@ -7,6 +7,8 @@ PUSH
 
 	ORG $2BD50
 	#incbin "BaseStatPromotions.dmp"
+    AlmPromotionFlagLink:
+    WORD gAlmPromoted
 	
 	ORG $CCCD6 		//check whether game has been beaten and third promo option can be shown
 	BYTE $01		//force true

@@ -42,12 +42,12 @@ ALIGN 4
 
 //Give several classes pick
 MultiPick:
-#incbin "Multipick/doubleRogueSkillFE8.dmp"
+#incbin "Multipick/Multipick.dmp"
 POIN LockpickClassTable
 ALIGN 4
 
 LockpickClassTable:
-BYTE 0x01 0x02 0x03 0x04 0x17 0x18 0x00 
+BYTE CelicaPriestess AlmFighter CelicaPrincess AlmHero Rogue Rogue_F 0x00 
 ALIGN 4
 
 #include "Echoes_EXP/Echoes_EXP_Installer.event"
@@ -55,7 +55,7 @@ ALIGN 4
 #include "BattlePalettes/BP_Rework_Installer.event"
 
 //Lets Alm and Celica T2 have different mugs
-//#include "ChangePortraitByFlag/Installer.event"
+#include "ChangePortraitByFlag/Installer.event"
 
 //swappable base weapons
 #include "Multiweapon/Installer.event"
