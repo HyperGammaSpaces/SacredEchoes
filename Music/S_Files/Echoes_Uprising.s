@@ -920,7 +920,7 @@ Echoes_Uprising_5:
         .byte   KEYSH , Echoes_Uprising_key+0
 @ 000   ----------------------------------------
 Echoes_Uprising_5_LOOP:
-        .byte           VOICE , 123
+        .byte           VOICE , 127
         .byte           VOL   , 42
         .byte           N06   , Cn1 , v100
         .byte           N06   , Dn1 , v102

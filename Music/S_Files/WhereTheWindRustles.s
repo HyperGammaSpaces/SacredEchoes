@@ -1747,11 +1747,11 @@ WhereTheWindRustles_7:
         .byte   KEYSH , WhereTheWindRustles_key+0
 @ 000   ----------------------------------------
 WhereTheWindRustles_7_LOOP:
-        .byte           VOICE , 123
+        .byte           VOICE , 127
         .byte           PAN   , c_v+15
         .byte           VOL   , 39
         .byte           N08   , Dn1 , v080
-        .byte           N24   , En1
+        .byte           N24   , Ds1
         .byte   W08
         .byte           N08   , Dn1
         .byte   W08
@@ -1768,13 +1768,13 @@ WhereTheWindRustles_7_LOOP:
         .byte           N18   , Dn1 , v080
         .byte           N12   , Gs1 , v087
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W06
         .byte           N06   , Dn1 , v080
         .byte   W06
 @ 001   ----------------------------------------
 WhereTheWindRustles_7_1:
-        .byte           N18   , Cn1 , v080
+        .byte           N18   , Bn0 , v080
         .byte           N08   , Dn1
         .byte   W08
         .byte                   Dn1
@@ -1790,14 +1790,14 @@ WhereTheWindRustles_7_1:
         .byte   W12
         .byte           N18   , Dn1
         .byte           N12   , Gs1 , v087
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W18
         .byte           N06   , Dn1 , v080
         .byte   W06
         .byte   PEND
 @ 002   ----------------------------------------
 WhereTheWindRustles_7_2:
-        .byte           N18   , Cn1 , v080
+        .byte           N18   , Bn0 , v080
         .byte           N08   , Dn1
         .byte   W08
         .byte                   Dn1
@@ -1815,7 +1815,7 @@ WhereTheWindRustles_7_2:
         .byte           N18   , Dn1
         .byte           N12   , Gs1 , v087
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W06
         .byte           N06   , Dn1 , v080
         .byte   W06
@@ -1823,7 +1823,7 @@ WhereTheWindRustles_7_2:
 @ 003   ----------------------------------------
 WhereTheWindRustles_7_3:
         .byte           N08   , Dn1 , v080
-        .byte           N18   , Cn1
+        .byte           N18   , Bn0
         .byte   W08
         .byte           N08   , Dn1
         .byte   W08
@@ -1833,16 +1833,16 @@ WhereTheWindRustles_7_3:
         .byte           N24   , Dn1
         .byte   W24
         .byte                   Dn1
-        .byte           N12   , Ds1 , v087
+        .byte           N12   , En1 , v087
         .byte   W12
-        .byte           N36   , An2 , v096
+        .byte           N36   , Bn3 , v096
         .byte   W06
-        .byte           N12   , Ds1 , v087
+        .byte           N12   , En1 , v087
         .byte   W06
         .byte           N18   , Dn1 , v080
-        .byte           N18   , Cn1 , v087
+        .byte           N18   , Bn0 , v087
         .byte   W06
-        .byte           N06   , Ds1
+        .byte           N06   , En1
         .byte   W06
         .byte           N12
         .byte   W06
@@ -1852,7 +1852,7 @@ WhereTheWindRustles_7_3:
 @ 004   ----------------------------------------
 WhereTheWindRustles_7_4:
         .byte           N08   , Dn1 , v080
-        .byte           N18   , Cn1
+        .byte           N18   , Bn0
         .byte   W08
         .byte           N08   , Dn1
         .byte   W08
@@ -1869,7 +1869,7 @@ WhereTheWindRustles_7_4:
         .byte           N18   , Dn1 , v080
         .byte           N12   , Gs1 , v087
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W06
         .byte           N06   , Dn1 , v080
         .byte   W06
@@ -1886,7 +1886,7 @@ WhereTheWindRustles_7_4:
 @ 008   ----------------------------------------
         .byte           N48   , Cs2 , v080
         .byte           N08   , Dn1
-        .byte           N18   , Cn1
+        .byte           N18   , Bn0
         .byte   W08
         .byte           N08   , Dn1
         .byte   W08
@@ -1903,13 +1903,13 @@ WhereTheWindRustles_7_4:
         .byte           N18   , Dn1 , v080
         .byte           N12   , Gs1 , v087
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W06
         .byte           N06   , Dn1 , v080
         .byte   W06
 @ 009   ----------------------------------------
         .byte           N08
-        .byte           N18   , Cn1
+        .byte           N18   , Bn0
         .byte   W08
         .byte           N08   , Dn1
         .byte   W08
@@ -1924,13 +1924,13 @@ WhereTheWindRustles_7_4:
         .byte   W12
         .byte           N18   , Dn1
         .byte           N12   , Gs1 , v087
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W18
         .byte           N06   , Dn1 , v080
         .byte   W06
 @ 010   ----------------------------------------
         .byte           N08
-        .byte           N18   , Cn1
+        .byte           N18   , Bn0
         .byte   W08
         .byte           N08   , Dn1
         .byte   W08
@@ -1947,13 +1947,13 @@ WhereTheWindRustles_7_4:
         .byte           N18   , Dn1
         .byte           N12   , Gs1 , v087
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W06
         .byte           N06   , Dn1 , v080
         .byte   W06
 @ 011   ----------------------------------------
         .byte           N08
-        .byte           N18   , Cn1
+        .byte           N18   , Bn0
         .byte   W08
         .byte           N08   , Dn1
         .byte   W08
@@ -1963,17 +1963,17 @@ WhereTheWindRustles_7_4:
         .byte           N18   , As1
         .byte   W24
         .byte           N24   , Dn1
-        .byte           N12   , Ds1 , v087
+        .byte           N12   , En1 , v087
         .byte   W12
         .byte                   Gs1
         .byte   W06
-        .byte                   Ds1
+        .byte                   En1
         .byte   W06
         .byte           N18   , Dn1 , v080
-        .byte           N24   , En1
-        .byte           N18   , Cn1 , v087
+        .byte           N24   , Ds1
+        .byte           N18   , Bn0 , v087
         .byte   W06
-        .byte           N06   , Ds1
+        .byte           N06   , En1
         .byte   W06
         .byte           N12
         .byte   W06
@@ -1982,7 +1982,7 @@ WhereTheWindRustles_7_4:
 @ 012   ----------------------------------------
         .byte           N48   , Cs2
         .byte           N08   , Dn1
-        .byte           N18   , Cn1
+        .byte           N18   , Bn0
         .byte   W08
         .byte           N08   , Dn1
         .byte   W08
@@ -1999,7 +1999,7 @@ WhereTheWindRustles_7_4:
         .byte           N18   , Dn1 , v080
         .byte           N12   , Gs1 , v087
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W06
         .byte           N06   , Dn1 , v080
         .byte   W06
@@ -2027,13 +2027,13 @@ WhereTheWindRustles_7_4:
 @ 020   ----------------------------------------
         .byte           N48   , Cs2 , v080
         .byte           N24   , Dn1
-        .byte           N06   , Gn1 , v087
+        .byte           N06   , Bn0 , v087
         .byte   W12
         .byte                   Fs2
         .byte   W12
         .byte           N24   , Dn1 , v080
         .byte   W12
-        .byte           N12   , Ds2 , v087
+        .byte           N12   , As1 , v087
         .byte   W12
         .byte           N24   , Dn1 , v080
         .byte   W12
@@ -2041,20 +2041,20 @@ WhereTheWindRustles_7_4:
         .byte   W12
         .byte           N18   , Dn1 , v080
         .byte   W12
-        .byte           N12   , Ds2 , v087
+        .byte           N12   , As1 , v087
         .byte   W06
         .byte           N06   , Dn1 , v080
         .byte   W06
 @ 021   ----------------------------------------
 WhereTheWindRustles_7_21:
         .byte           N24   , Dn1 , v080
-        .byte           N06   , Gn1 , v087
+        .byte           N06   , Bn0 , v087
         .byte   W12
         .byte                   Fs2
         .byte   W12
         .byte           N24   , Dn1 , v080
         .byte   W12
-        .byte           N12   , Ds2 , v087
+        .byte           N12   , As1 , v087
         .byte   W12
         .byte           N24   , Dn1 , v080
         .byte   W12
@@ -2062,7 +2062,7 @@ WhereTheWindRustles_7_21:
         .byte   W12
         .byte           N18   , Dn1 , v080
         .byte   W12
-        .byte           N12   , Ds2 , v087
+        .byte           N12   , As1 , v087
         .byte   W06
         .byte           N06   , Dn1 , v080
         .byte   W06
@@ -2081,22 +2081,22 @@ WhereTheWindRustles_7_21:
          .word  WhereTheWindRustles_7_21
 @ 026   ----------------------------------------
         .byte           N24   , Dn1 , v080
-        .byte           N06   , Gn1 , v087
+        .byte           N06   , Bn0 , v087
         .byte   W12
         .byte                   Fs2
         .byte   W12
         .byte           N24   , Dn1 , v080
         .byte   W12
-        .byte           N12   , Ds2 , v087
+        .byte           N12   , As1 , v087
         .byte   W12
         .byte           N24   , Dn1 , v080
         .byte   W12
         .byte           N06   , Fs2 , v087
         .byte   W12
         .byte           N18   , Dn1 , v080
-        .byte           N24   , En1
+        .byte           N24   , Ds1
         .byte   W12
-        .byte           N12   , Ds2 , v087
+        .byte           N12   , As1 , v087
         .byte   W06
         .byte           N06   , Dn1 , v080
         .byte   W06
@@ -2105,16 +2105,16 @@ WhereTheWindRustles_7_21:
         .byte           N24   , Cs2 , v096
         .byte   W24
         .byte                   Dn1 , v080
-        .byte           N18   , Ds2 , v087
+        .byte           N18   , As1 , v087
         .byte   W24
         .byte           N24   , Dn1 , v080
-        .byte           N18   , Ds2 , v087
+        .byte           N18   , As1 , v087
         .byte   W24
         .byte           N24   , Dn1 , v080
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte           N06   , Fs2 , v087
         .byte   W12
-        .byte           N12   , Cn1 , v080
+        .byte           N12   , Bn0 , v080
         .byte           N06   , Fs2 , v087
         .byte   W12
 @ 028   ----------------------------------------

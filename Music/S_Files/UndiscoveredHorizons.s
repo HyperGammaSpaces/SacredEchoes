@@ -1711,7 +1711,7 @@ UndiscoveredHorizons_6_27:
 UndiscoveredHorizons_7:
         .byte   KEYSH , UndiscoveredHorizons_key+0
 @ 000   ----------------------------------------
-        .byte           VOICE , 123
+        .byte           VOICE , 127
         .byte           VOL   , 60
         .byte   W96
 @ 001   ----------------------------------------

@@ -1715,7 +1715,7 @@ LandOfSorrow_4_35:
 LandOfSorrow_5:
         .byte   KEYSH , LandOfSorrow_key+0
 @ 000   ----------------------------------------
-        .byte           VOICE , 127
+        .byte           VOICE , 122
         .byte           VOL   , 37
         .byte   W96
 @ 001   ----------------------------------------
@@ -1732,12 +1732,12 @@ LandOfSorrow_5_LOOP:
         .byte   W24
         .byte           N06   , Cn2 , v102
         .byte   W24
-        .byte                   Bn1
+        .byte                   An1
         .byte   W24
         .byte                   Gn1
         .byte   W24
 @ 006   ----------------------------------------
-        .byte                   Cn1
+        .byte                   Bn0
         .byte           N96   , Fn2 , v064
         .byte   W96
 @ 007   ----------------------------------------
@@ -1746,11 +1746,11 @@ LandOfSorrow_5_LOOP:
         .byte   W96
 @ 009   ----------------------------------------
         .byte   W24
-        .byte           N06   , Bn1 , v102
+        .byte           N06   , An1 , v102
         .byte   W24
         .byte                   Cn2
         .byte   W24
-        .byte                   Bn1
+        .byte                   An1
         .byte   W24
 @ 010   ----------------------------------------
         .byte           N96   , Fn2 , v064
@@ -1799,13 +1799,13 @@ LandOfSorrow_5_LOOP:
         .byte   W24
 @ 026   ----------------------------------------
 LandOfSorrow_5_26:
-        .byte           N06   , Cn1 , v102
+        .byte           N06   , Bn0 , v102
         .byte   W24
-        .byte           N03   , Dn1
+        .byte                   Dn1
         .byte   W24
-        .byte           N06   , Cn1
+        .byte                   Bn0
         .byte   W24
-        .byte           N03   , Dn1
+        .byte                   Dn1
         .byte   W24
         .byte   PEND
 @ 027   ----------------------------------------
@@ -1852,13 +1852,13 @@ LandOfSorrow_5_26:
          .word  LandOfSorrow_5_26
 @ 041   ----------------------------------------
 LandOfSorrow_5_41:
-        .byte           N06   , Cn1 , v081
+        .byte           N06   , Bn0 , v081
         .byte   W24
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W24
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W24
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W24
         .byte   PEND
 @ 042   ----------------------------------------

@@ -2144,7 +2144,7 @@ Preparations_Pilgrimage_6:
         .byte   KEYSH , Preparations_Pilgrimage_key+0
 @ 000   ----------------------------------------
 Preparations_Pilgrimage_6_LOOP:
-        .byte           VOICE , 127
+        .byte           VOICE , 122
         .byte           VOL   , 58
         .byte           N06   , Gs0 , v080
         .byte   W24

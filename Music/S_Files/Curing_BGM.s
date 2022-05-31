@@ -290,15 +290,17 @@ Curing_BGM_4:
         .byte   KEYSH , Curing_BGM_key+0
 @ 000   ----------------------------------------
 Curing_BGM_4_LOOP:
-        .byte           VOICE , 121
+        .byte           VOICE , 123
         .byte           VOL   , 62
         .byte           N06   , Gn1 , v064
+        .byte           N24   , Cn1 , v080
         .byte   W12
-        .byte           N03
+        .byte           N03   , Gn1 , v064
         .byte   W24
         .byte           N06
+        .byte           N06   , Cn1 , v080
         .byte   W12
-        .byte                   Ds0
+        .byte                   Dn1 , v064
         .byte   W36
         .byte                   Gn1
         .byte   W12
@@ -307,19 +309,22 @@ Curing_BGM_4_LOOP:
         .byte           N03
         .byte   W24
         .byte           N06
+        .byte           N06   , Cn1 , v080
         .byte   W12
-        .byte                   Ds0
+        .byte                   Dn1 , v064
         .byte   W36
         .byte                   Gn1
         .byte   W12
 @ 002   ----------------------------------------
         .byte                   Gn1
+        .byte           N24   , Cn1 , v080
         .byte   W12
-        .byte           N03
+        .byte           N03   , Gn1 , v064
         .byte   W24
         .byte           N06
+        .byte           N06   , Cn1 , v080
         .byte   W12
-        .byte                   Ds0
+        .byte                   Dn1 , v064
         .byte   W36
         .byte                   Gn1
         .byte   W12
@@ -328,10 +333,17 @@ Curing_BGM_4_LOOP:
         .byte           N03
         .byte   W24
         .byte           N06
+        .byte           N06   , Cn1 , v080
         .byte   W12
-        .byte                   Ds0
-        .byte   W36
-        .byte                   Gn1
+        .byte                   Dn1 , v064
+        .byte   W12
+        .byte           N02   , Gs2 , v080
+        .byte   W06
+        .byte           N04
+        .byte   W12
+        .byte           N02
+        .byte   W06
+        .byte           N06   , Fn1 , v064
         .byte   W11
         .byte   GOTO
          .word  Curing_BGM_4_LOOP

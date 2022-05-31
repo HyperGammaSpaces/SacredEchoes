@@ -15,7 +15,7 @@ TheRoadWalkedByHeroes_0:
         .byte   KEYSH , TheRoadWalkedByHeroes_key+0
 @ 000   ----------------------------------------
         .byte   TEMPO , 116/2
-        .byte           VOICE , 123
+        .byte           VOICE , 127
         .byte           PAN   , c_v-19
         .byte           VOL   , 44
         .byte           N90   , Cs2 , v080

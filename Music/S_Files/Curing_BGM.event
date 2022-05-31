@@ -291,15 +291,17 @@ Curing_BGM_4:
         BYTE   KEYSH   Curing_BGM_key+0
 // 000   ----------------------------------------
 Curing_BGM_4_LOOP:
-        BYTE           VOICE   121
+        BYTE           VOICE   123
         BYTE           VOL     62
         BYTE           N06     Gn1   v064
+        BYTE           N24     Cn1   v080
         BYTE   W12
-        BYTE           N03
+        BYTE           N03     Gn1   v064
         BYTE   W24
         BYTE           N06
+        BYTE           N06     Cn1   v080
         BYTE   W12
-        BYTE                   Ds0
+        BYTE                   Dn1   v064
         BYTE   W36
         BYTE                   Gn1
         BYTE   W12
@@ -308,19 +310,22 @@ Curing_BGM_4_LOOP:
         BYTE           N03
         BYTE   W24
         BYTE           N06
+        BYTE           N06     Cn1   v080
         BYTE   W12
-        BYTE                   Ds0
+        BYTE                   Dn1   v064
         BYTE   W36
         BYTE                   Gn1
         BYTE   W12
 // 002   ----------------------------------------
         BYTE                   Gn1
+        BYTE           N24     Cn1   v080
         BYTE   W12
-        BYTE           N03
+        BYTE           N03     Gn1   v064
         BYTE   W24
         BYTE           N06
+        BYTE           N06     Cn1   v080
         BYTE   W12
-        BYTE                   Ds0
+        BYTE                   Dn1   v064
         BYTE   W36
         BYTE                   Gn1
         BYTE   W12
@@ -329,10 +334,17 @@ Curing_BGM_4_LOOP:
         BYTE           N03
         BYTE   W24
         BYTE           N06
+        BYTE           N06     Cn1   v080
         BYTE   W12
-        BYTE                   Ds0
-        BYTE   W36
-        BYTE                   Gn1
+        BYTE                   Dn1   v064
+        BYTE   W12
+        BYTE           N02     Gs2   v080
+        BYTE   W06
+        BYTE           N04
+        BYTE   W12
+        BYTE           N02
+        BYTE   W06
+        BYTE           N06     Fn1   v064
         BYTE   W11
         BYTE   GoTo
          POIN2  Curing_BGM_4_LOOP

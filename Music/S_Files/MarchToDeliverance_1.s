@@ -1482,239 +1482,239 @@ MarchToDeliverance_1_5:
         .byte   KEYSH , MarchToDeliverance_1_key+0
 @ 000   ----------------------------------------
 MarchToDeliverance_1_5_LOOP:
-        .byte           VOICE , 123
+        .byte           VOICE , 122
         .byte           VOL   , 47
         .byte           PAN   , c_v-4
         .byte           N21   , Cs2 , v102
         .byte           N12   , An1 , v100
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte   W24
-        .byte                   Cn5 , v104
+        .byte                   Cn1 , v104
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte   W24
         .byte                   Cn2 , v100
-        .byte           N12   , Cn5 , v104
+        .byte           N12   , Cn1 , v104
         .byte   W24
 @ 001   ----------------------------------------
         .byte                   An1 , v100
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte   W24
-        .byte                   Cn5 , v104
+        .byte                   Cn1 , v104
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte           N12   , An1 , v100
         .byte   W24
 @ 002   ----------------------------------------
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N12   , Gn1 , v100
         .byte   W24
         .byte                   Gn1
-        .byte           N12   , Cn5 , v104
+        .byte           N12   , Cn1 , v104
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte           N12   , Gn1 , v100
         .byte   W24
 @ 003   ----------------------------------------
         .byte                   An1
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte   W24
         .byte                   Gn1 , v100
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte   W12
         .byte                   Gn1 , v100
         .byte   W12
         .byte                   Gn1
-        .byte           N12   , Cn5 , v104
+        .byte           N12   , Cn1 , v104
         .byte   W24
         .byte           N21   , Fn1 , v112
-        .byte           N12   , Cn5 , v104
+        .byte           N12   , Cn1 , v104
         .byte   W24
 @ 004   ----------------------------------------
         .byte           N21   , Cs2 , v081
         .byte           N12   , An1 , v100
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte   W24
-        .byte                   Cn5 , v104
+        .byte                   Cn1 , v104
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte           N12   , Cn2 , v100
         .byte   W24
 @ 005   ----------------------------------------
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Cn5 , v104
+        .byte                   Cn1 , v104
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte           N12   , An1 , v100
         .byte   W24
 @ 006   ----------------------------------------
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N12   , Gn1 , v100
         .byte   W24
-        .byte                   Cn5 , v104
+        .byte                   Cn1 , v104
         .byte           N12   , Gn1 , v100
         .byte   W24
-        .byte                   Cn5 , v104
+        .byte                   Cn1 , v104
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte           N12   , Gn1 , v100
         .byte   W24
 @ 007   ----------------------------------------
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N12   , Gn1 , v100
         .byte   W12
         .byte                   Gn1
         .byte   W12
-        .byte                   Cn5 , v104
+        .byte                   Cn1 , v104
         .byte           N12   , Gn1 , v100
         .byte   W24
         .byte           N22   , Fn1 , v112
-        .byte           N12   , Cn5 , v104
+        .byte           N12   , Cn1 , v104
         .byte   W24
 @ 008   ----------------------------------------
         .byte           N21   , Cs2 , v081
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N06   , Dn1 , v104
         .byte   W24
-        .byte           N12   , Cn5
+        .byte           N12   , Cn1
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte           N12   , Cn2 , v100
         .byte           N06   , Dn1 , v104
         .byte   W24
 @ 009   ----------------------------------------
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N06   , Dn1 , v104
         .byte   W24
-        .byte           N12   , Cn5
+        .byte           N12   , Cn1
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte           N12   , An1 , v100
         .byte           N06   , Dn1 , v104
         .byte   W24
 @ 010   ----------------------------------------
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , Gn1 , v100
         .byte   W24
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N12   , Gn1 , v100
         .byte           N06   , Dn1 , v104
         .byte   W24
-        .byte           N12   , Cn5
+        .byte           N12   , Cn1
         .byte   W24
-        .byte                   Cn5
+        .byte                   Cn1
         .byte           N12   , Gn1 , v100
         .byte           N06   , Dn1 , v104
         .byte   W24
 @ 011   ----------------------------------------
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N12   , Gn1 , v100
         .byte           N06   , Dn1 , v104
         .byte   W12
         .byte           N12   , Gn1 , v100
         .byte   W12
-        .byte                   Cn5 , v104
+        .byte                   Cn1 , v104
         .byte           N12   , Gn1 , v100
         .byte   W12
         .byte           N06   , Dn1 , v104
         .byte   W12
         .byte           N22   , Fn1 , v112
-        .byte           N12   , Cn5 , v104
+        .byte           N12   , Cn1 , v104
         .byte           N06   , Dn1
         .byte   W24
 @ 012   ----------------------------------------
         .byte           N21   , Cs2 , v081
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N06   , Dn1 , v104
         .byte   W18
         .byte                   Dn1
         .byte   W06
-        .byte           N12   , Cn5
+        .byte           N12   , Cn1
         .byte   W12
         .byte           N06   , Dn1
         .byte   W12
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , Cn2 , v100
         .byte           N06   , Dn1 , v104
         .byte   W24
 @ 013   ----------------------------------------
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N06   , Dn1 , v104
         .byte   W18
         .byte                   Dn1
         .byte   W06
-        .byte           N12   , Cn5
+        .byte           N12   , Cn1
         .byte   W12
         .byte           N06   , Dn1
         .byte   W12
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , An1 , v100
         .byte           N06   , Dn1 , v104
         .byte   W24
 @ 014   ----------------------------------------
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , Gn1 , v100
         .byte   W24
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N12   , Gn1 , v100
         .byte           N06   , Dn1 , v104
         .byte   W18
         .byte                   Dn1
         .byte   W06
-        .byte           N12   , Cn5
+        .byte           N12   , Cn1
         .byte   W12
         .byte           N06   , Dn1
         .byte   W12
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , Gn1 , v100
         .byte           N06   , Dn1 , v104
         .byte   W24
 @ 015   ----------------------------------------
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Cn5 , v121
+        .byte                   Cn1 , v121
         .byte           N12   , Cn2 , v104
         .byte           N06   , Dn1
         .byte   W18
         .byte           N12   , Cn2
         .byte           N06   , Dn1
         .byte   W06
-        .byte           N12   , Cn5
+        .byte           N12   , Cn1
         .byte           N12   , As1
         .byte   W12
         .byte           N06   , An1
         .byte           N06   , Dn1
         .byte   W12
-        .byte           N12   , Cn5 , v121
+        .byte           N12   , Cn1 , v121
         .byte           N12   , As1 , v104
         .byte           N06   , Gn1
         .byte           N06   , Dn1 , v112
@@ -1727,16 +1727,16 @@ MarchToDeliverance_1_5_LOOP:
         .byte                   Dn1 , v104
         .byte   W06
 @ 016   ----------------------------------------
-        .byte           N30   , Cn5 , v108
+        .byte           N30   , Cn1 , v108
         .byte           N12   , Cn2 , v096
         .byte           N36   , Cs2 , v104
         .byte   W12
         .byte           N12   , Cn2 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N06   , Gs1 , v064
         .byte           N12   , Gn1 , v096
         .byte   W24
@@ -1744,16 +1744,16 @@ MarchToDeliverance_1_5_LOOP:
         .byte           N12   , An1 , v080
         .byte   W24
 @ 017   ----------------------------------------
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W12
-        .byte           N22   , Cn5 , v108
+        .byte           N22   , Cn1 , v108
         .byte           N12   , Gn1 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Cn2 , v096
         .byte   W24
         .byte           N22   , Dn1
@@ -1763,13 +1763,13 @@ MarchToDeliverance_1_5_LOOP:
         .byte           N12   , An1
         .byte   W12
 @ 018   ----------------------------------------
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N21   , As1 , v064
         .byte           N12   , Cn2 , v096
         .byte   W12
         .byte                   Cn2 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte   W12
         .byte           N24   , Dn1 , v096
@@ -1780,13 +1780,13 @@ MarchToDeliverance_1_5_LOOP:
         .byte           N12   , An1
         .byte   W24
 @ 019   ----------------------------------------
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Gn1 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte   W12
         .byte           N24   , Dn1 , v096
@@ -1798,32 +1798,32 @@ MarchToDeliverance_1_5_LOOP:
         .byte           N12   , An1
         .byte   W12
 @ 020   ----------------------------------------
-        .byte           N24   , Cn5 , v108
+        .byte           N24   , Cn1 , v108
         .byte           N12   , Cn2 , v096
         .byte           N36   , Cs2 , v104
         .byte   W12
         .byte           N12   , Cn2 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte   W12
-        .byte           N36   , Cn5 , v108
+        .byte           N36   , Cn1 , v108
         .byte           N06   , Gs1 , v064
         .byte           N12   , Gn1 , v096
         .byte   W24
         .byte                   An1 , v080
         .byte   W24
 @ 021   ----------------------------------------
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Gn1 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Cn2 , v096
         .byte   W24
         .byte           N23   , Dn1
@@ -1831,31 +1831,31 @@ MarchToDeliverance_1_5_LOOP:
         .byte           N24   , Ds2
         .byte   W24
 @ 022   ----------------------------------------
-        .byte                   Cn5 , v108
+        .byte                   Cn1 , v108
         .byte           N21   , As1 , v064
         .byte           N12   , Cn2 , v096
         .byte   W12
         .byte                   Cn2 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W24
         .byte           N23   , Dn1
         .byte           N12   , An1 , v080
         .byte   W24
 @ 023   ----------------------------------------
-        .byte           N24   , Cn5 , v108
+        .byte           N24   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W12
         .byte                   Gn1 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Cn2 , v096
         .byte   W24
         .byte           N23   , Dn1
@@ -1863,28 +1863,28 @@ MarchToDeliverance_1_5_LOOP:
         .byte           N24   , Ds2
         .byte   W24
 @ 024   ----------------------------------------
-        .byte           N28   , Cn5 , v108
+        .byte           N28   , Cn1 , v108
         .byte           N12   , Cn2 , v096
         .byte           N36   , Cs2 , v104
         .byte   W12
         .byte           N12   , Cn2 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W24
         .byte           N23   , Dn1
         .byte           N12   , An1 , v080
         .byte   W24
 @ 025   ----------------------------------------
-        .byte           N24   , Cn5 , v108
+        .byte           N24   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W12
         .byte                   Gn1 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte   W12
         .byte           N23   , Dn1 , v096
@@ -1895,34 +1895,34 @@ MarchToDeliverance_1_5_LOOP:
         .byte           N24   , Ds2
         .byte   W24
 @ 026   ----------------------------------------
-        .byte           N28   , Cn5 , v108
+        .byte           N28   , Cn1 , v108
         .byte           N21   , As1 , v064
         .byte           N12   , Cn2 , v096
         .byte   W12
         .byte                   Cn2 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte           N12   , Dn1
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W24
         .byte           N22   , Dn1
         .byte           N12   , An1 , v080
         .byte   W24
 @ 027   ----------------------------------------
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Gn1 , v080
         .byte   W24
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte           N12   , Dn1
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Cn2 , v096
         .byte   W24
         .byte           N23   , Dn1
@@ -1932,7 +1932,7 @@ MarchToDeliverance_1_5_LOOP:
         .byte                   Ds2
         .byte   W12
 @ 028   ----------------------------------------
-        .byte           N24   , Cn5 , v108
+        .byte           N24   , Cn1 , v108
         .byte           N12   , Cn2 , v096
         .byte           N36   , Cs2 , v104
         .byte   W12
@@ -1940,11 +1940,11 @@ MarchToDeliverance_1_5_LOOP:
         .byte   W12
         .byte                   Ds2
         .byte   W12
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte           N12   , Dn1
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W12
         .byte           N24   , Ds2 , v088
@@ -1953,18 +1953,18 @@ MarchToDeliverance_1_5_LOOP:
         .byte           N12   , An1 , v080
         .byte   W24
 @ 029   ----------------------------------------
-        .byte           N22   , Cn5 , v108
+        .byte           N22   , Cn1 , v108
         .byte           N12   , Gn1 , v096
         .byte   W12
         .byte                   Gn1 , v080
         .byte   W12
         .byte                   Ds2
         .byte   W12
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , An1 , v080
         .byte           N12   , Dn1
         .byte   W12
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N12   , Cn2 , v096
         .byte   W12
         .byte           N24   , Ds2 , v088
@@ -1973,45 +1973,45 @@ MarchToDeliverance_1_5_LOOP:
         .byte           N12   , An1 , v080
         .byte   W24
 @ 030   ----------------------------------------
-        .byte           N23   , Cn5 , v108
+        .byte           N23   , Cn1 , v108
         .byte           N21   , As1 , v064
         .byte           N12   , Cn2 , v096
         .byte   W24
         .byte                   Ds2 , v080
         .byte   W12
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , Cn2 , v080
         .byte           N12   , Dn1
         .byte   W12
-        .byte           N24   , Cn5 , v108
+        .byte           N24   , Cn1 , v108
         .byte   W12
         .byte                   Ds2 , v088
         .byte   W12
         .byte           N12   , An1 , v080
         .byte           N24   , Dn1
         .byte   W12
-        .byte           N11   , Cn5 , v108
+        .byte           N11   , Cn1 , v108
         .byte           N12   , Gn1 , v080
         .byte   W12
 @ 031   ----------------------------------------
-        .byte                   Cn5 , v120
+        .byte                   Cn1 , v120
         .byte           N24   , Ds2 , v072
         .byte           N06   , Fn1 , v080
         .byte   W24
-        .byte           N12   , Cn5 , v108
+        .byte           N12   , Cn1 , v108
         .byte           N06   , Dn1 , v104
         .byte           N24   , Ds2 , v080
         .byte           N06   , Fn1
         .byte   W18
         .byte                   Dn1 , v104
         .byte   W06
-        .byte           N12   , Cn5 , v108
+        .byte           N12   , Cn1 , v108
         .byte           N24   , Ds2 , v088
         .byte           N06   , Fn1 , v080
         .byte   W12
         .byte                   Dn1 , v104
         .byte   W12
-        .byte           N12   , Cn5
+        .byte           N12   , Cn1
         .byte           N06   , Dn1
         .byte           N12   , Ds2
         .byte           N06   , Fn1 , v080

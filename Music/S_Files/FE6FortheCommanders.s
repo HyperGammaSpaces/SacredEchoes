@@ -836,7 +836,9 @@ FE6FortheCommanders_5_2:
         .byte           N23
         .byte   W24
         .byte           N24   , Dn1 , v056
-        .byte   W36
+        .byte   W24
+        .byte           N12   , Dn1 , v040
+        .byte   W12
         .byte           N11   , Dn1 , v044
         .byte   W12
         .byte                   Dn1 , v068
@@ -978,7 +980,7 @@ FE6FortheCommanders_6:
         .byte   KEYSH , FE6FortheCommanders_key+0
 @ 000   ----------------------------------------
 FE6FortheCommanders_6_LOOP:
-        .byte           VOICE , 127
+        .byte           VOICE , 122
         .byte           VOL   , 56
         .byte           PAN   , c_v+17
         .byte           N36   , Gn1 , v127
@@ -1116,35 +1118,35 @@ FE6FortheCommanders_6_LOOP:
         .byte                   Fn1
         .byte   W12
 @ 016   ----------------------------------------
-        .byte           N32   , An2 , v116
+        .byte           N32   , Cs2 , v116
         .byte   W36
-        .byte           N36   , An2 , v108
+        .byte           N36   , Cs2 , v108
         .byte   W60
 @ 017   ----------------------------------------
-        .byte           N32   , An2 , v112
+        .byte           N32   , Cs2 , v112
         .byte   W36
-        .byte           N40   , An2 , v100
+        .byte           N40   , Cs2 , v100
         .byte   W60
 @ 018   ----------------------------------------
         .byte           N32
         .byte   W36
-        .byte           N40   , An2 , v116
+        .byte           N40   , Cs2 , v116
         .byte   W60
 @ 019   ----------------------------------------
-        .byte           N32   , An2 , v104
+        .byte           N32   , Cs2 , v104
         .byte   W36
-        .byte           N28   , An2 , v108
+        .byte           N28   , Cs2 , v108
         .byte   W30
-        .byte           N05   , An2 , v056
+        .byte           N05   , Cs2 , v056
         .byte   W06
-        .byte                   An2 , v072
+        .byte                   Cs2 , v072
         .byte   W06
-        .byte                   An2 , v064
+        .byte                   Cs2 , v064
         .byte   W06
-        .byte           N11   , An2 , v080
+        .byte           N11   , Cs2 , v080
         .byte   W12
 @ 020   ----------------------------------------
-        .byte           N40   , An2 , v100
+        .byte           N40   , Cs2 , v100
         .byte   W84
         .byte           N11   , Fn1 , v116
         .byte   W12

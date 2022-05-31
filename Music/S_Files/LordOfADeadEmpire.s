@@ -1253,7 +1253,7 @@ LordOfADeadEmpire_3:
         .byte   KEYSH , LordOfADeadEmpire_key+0
 @ 000   ----------------------------------------
 LordOfADeadEmpire_3_LOOP:
-        .byte           VOICE , 123
+        .byte           VOICE , 124
         .byte           VOL   , 48
         .byte           N06   , An1 , v102
         .byte           N96   , Fn2 , v104

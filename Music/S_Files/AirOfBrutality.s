@@ -317,7 +317,8 @@ AirOfBrutality_2:
         .byte   KEYSH , AirOfBrutality_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 61
-        .byte           VOL   , 32
+        .byte           PAN   , c_v+8
+        .byte           VOL   , 35
         .byte           N21   , An1 , v100
         .byte           N21   , En2
         .byte   W24
@@ -889,43 +890,37 @@ AirOfBrutality_5:
         .byte   KEYSH , AirOfBrutality_key+0
 @ 000   ----------------------------------------
         .byte           VOICE , 124
-        .byte           PAN   , c_v+8
         .byte           VOL   , 52
-        .byte           N01   , Fs1 , v100
-        .byte           N01   , Dn1
-        .byte           N01   , Cn1
-        .byte           N01   , Cs0
-        .byte           N01   , Bn0
+        .byte           N06   , Cs1 , v100
+        .byte           N01   , Fs1
+        .byte           N12   , Cn1
         .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Dn1
         .byte           N01   , Fs1
-        .byte           N01   , Cs0
-        .byte           N01   , Cn1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte           N06   , Cn1
         .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Bn0
         .byte           N01   , Fs1
-        .byte           N01   , Dn1
-        .byte           N01   , Cs0
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N01   , Fs1
+        .byte           N12   , Cn1
         .byte   W12
+        .byte           N01   , Fs1
+        .byte   W06
         .byte                   Fs1
         .byte   W06
+        .byte           N24   , Dn1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte   W06
         .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Dn1
-        .byte           N01   , Fs1
-        .byte           N21   , Cs0
-        .byte   W06
-        .byte           N01   , Fs1
         .byte   W06
         .byte                   Fs1
         .byte   W06
@@ -933,41 +928,36 @@ AirOfBrutality_5:
         .byte   W06
 @ 001   ----------------------------------------
 AirOfBrutality_5_LOOP:
-        .byte           N01   , Fs1 , v100
-        .byte           N01   , Dn1
-        .byte           N01   , Cn1
-        .byte           N01   , Cs0
-        .byte           N01   , Bn0
+        .byte           N06   , Cs1 , v100
+        .byte           N01   , Fs1
+        .byte           N12   , Cn1
         .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Dn1
         .byte           N01   , Fs1
-        .byte           N01   , Cs0
-        .byte           N01   , Cn1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte           N06   , Cn1
         .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Bn0
         .byte           N01   , Fs1
-        .byte           N01   , Dn1
-        .byte           N01   , Cs0
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N01   , Fs1
+        .byte           N12   , Cn1
         .byte   W12
+        .byte           N01   , Fs1
+        .byte   W06
         .byte                   Fs1
         .byte   W06
+        .byte           N24   , Dn1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte   W06
         .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Dn1
-        .byte           N01   , Fs1
-        .byte           N21   , Cs0
-        .byte   W06
-        .byte           N01   , Fs1
         .byte   W06
         .byte                   Fs1
         .byte   W06
@@ -975,42 +965,37 @@ AirOfBrutality_5_LOOP:
         .byte   W06
 @ 002   ----------------------------------------
 AirOfBrutality_5_2:
-        .byte           N01   , Dn1 , v100
-        .byte           N01   , Cn1
-        .byte           N01   , Cs0
-        .byte           N01   , Bn0
-        .byte           N01   , Cs2
+        .byte           N24   , Cs2 , v100
+        .byte           N06   , Cs1
         .byte           N01   , Fs1
+        .byte           N12   , Cn1
         .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Dn1
         .byte           N01   , Fs1
-        .byte           N01   , Cs0
-        .byte           N01   , Cn1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte           N06   , Cn1
         .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Bn0
         .byte           N01   , Fs1
-        .byte           N01   , Dn1
-        .byte           N01   , Cs0
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N01   , Fs1
+        .byte           N12   , Cn1
         .byte   W12
+        .byte           N01   , Fs1
+        .byte   W06
         .byte                   Fs1
         .byte   W06
+        .byte           N24   , Dn1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte   W06
         .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Dn1
-        .byte           N01   , Fs1
-        .byte           N21   , Cs0
-        .byte   W06
-        .byte           N01   , Fs1
         .byte   W06
         .byte                   Fs1
         .byte   W06
@@ -1019,41 +1004,36 @@ AirOfBrutality_5_2:
         .byte   PEND
 @ 003   ----------------------------------------
 AirOfBrutality_5_3:
-        .byte           N01   , Fs1 , v100
-        .byte           N01   , Dn1
-        .byte           N01   , Cn1
-        .byte           N01   , Cs0
-        .byte           N01   , Bn0
+        .byte           N06   , Cs1 , v100
+        .byte           N01   , Fs1
+        .byte           N12   , Cn1
         .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Dn1
         .byte           N01   , Fs1
-        .byte           N01   , Cs0
-        .byte           N01   , Cn1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte           N06   , Cn1
         .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Bn0
         .byte           N01   , Fs1
-        .byte           N01   , Dn1
-        .byte           N01   , Cs0
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N01   , Fs1
+        .byte           N12   , Cn1
         .byte   W12
+        .byte           N01   , Fs1
+        .byte   W06
         .byte                   Fs1
         .byte   W06
+        .byte           N24   , Dn1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte   W06
         .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Dn1
-        .byte           N01   , Fs1
-        .byte           N21   , Cs0
-        .byte   W06
-        .byte           N01   , Fs1
         .byte   W06
         .byte                   Fs1
         .byte   W06
@@ -1064,87 +1044,11 @@ AirOfBrutality_5_3:
         .byte   PATT
          .word  AirOfBrutality_5_3
 @ 005   ----------------------------------------
-        .byte           N01   , Fs1 , v100
-        .byte           N01   , Dn1
-        .byte           N01   , Cn1
-        .byte           N01   , Cs0
-        .byte           N01   , Bn0
-        .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Dn1
-        .byte           N01   , Fs1
-        .byte           N01   , Cs0
-        .byte           N01   , Cn1
-        .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Bn0
-        .byte           N01   , Fs1
-        .byte           N01   , Dn1
-        .byte           N01   , Cs0
-        .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Dn1
-        .byte           N01   , Fs1
-        .byte           N22   , Cs0
-        .byte   W06
-        .byte           N01   , Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
+        .byte   PATT
+         .word  AirOfBrutality_5_3
 @ 006   ----------------------------------------
-        .byte                   Fs1
-        .byte           N01   , Dn1
-        .byte           N01   , Cn1
-        .byte           N01   , Bn0
-        .byte           N01   , Cs0 , v064
-        .byte   W12
-        .byte                   Fs1 , v100
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Dn1
-        .byte           N01   , Fs1
-        .byte           N01   , Cs0
-        .byte           N01   , Cn1
-        .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Bn0
-        .byte           N01   , Fs1
-        .byte           N01   , Dn1
-        .byte           N01   , Cs0
-        .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Dn1
-        .byte           N01   , Fs1
-        .byte           N21   , Cs0
-        .byte   W06
-        .byte           N01   , Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
+        .byte   PATT
+         .word  AirOfBrutality_5_3
 @ 007   ----------------------------------------
         .byte   PATT
          .word  AirOfBrutality_5_3
@@ -1191,47 +1095,8 @@ AirOfBrutality_5_3:
         .byte   PATT
          .word  AirOfBrutality_5_3
 @ 022   ----------------------------------------
-        .byte           N01   , Cs2 , v100
-        .byte           N01   , Fs1
-        .byte           N01   , Dn1
-        .byte           N01   , Cn1
-        .byte           N01   , Cs0
-        .byte           N01   , Bn0
-        .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Dn1
-        .byte           N01   , Fs1
-        .byte           N01   , Cs0
-        .byte           N01   , Cn1
-        .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Bn0
-        .byte           N01   , Fs1
-        .byte           N01   , Dn1
-        .byte           N01   , Cs0
-        .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Dn1
-        .byte           N01   , Fs1
-        .byte           N21   , Cs0
-        .byte   W06
-        .byte           N01   , Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
+        .byte   PATT
+         .word  AirOfBrutality_5_2
 @ 023   ----------------------------------------
         .byte   PATT
          .word  AirOfBrutality_5_3
@@ -1257,58 +1122,88 @@ AirOfBrutality_5_3:
         .byte   PATT
          .word  AirOfBrutality_5_3
 @ 031   ----------------------------------------
-        .byte           N01   , Fs1 , v100
-        .byte           N01   , Dn1
-        .byte           N01   , Cn1
-        .byte           N01   , Cs0
-        .byte           N01   , Bn0
-        .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Dn1
+        .byte           N06   , Cs1 , v100
         .byte           N01   , Fs1
-        .byte           N01   , Cs0
-        .byte           N01   , Cn1
+        .byte           N12   , Cn1
         .byte   W12
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Bn0
         .byte           N01   , Fs1
-        .byte           N01   , Dn1
-        .byte           N01   , Cn1
-        .byte           N24   , Cs0
-        .byte           N01   , Ds2
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte           N06   , Cn1
+        .byte   W12
+        .byte           N01   , Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte           N24   , Ds2
+        .byte           N06   , Cs1
+        .byte           N06   , Cn1
         .byte   W08
         .byte                   Cn1
         .byte   W04
-        .byte                   Fs1
-        .byte   W04
-        .byte                   Cn1
-        .byte   W02
-        .byte                   Fs1
-        .byte   W06
-        .byte                   Cn1
-        .byte           N01   , Dn1
         .byte           N01   , Fs1
-        .byte           N21   , Cs0
+        .byte   W04
+        .byte           N06   , Cn1
+        .byte   W02
+        .byte           N01   , Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte           N24   , Dn1
+        .byte           N06   , Fs2
+        .byte           N06   , Cn1
         .byte   W06
         .byte           N01   , Fs1
         .byte   W02
-        .byte                   Cn1
+        .byte           N06   , Cn1
         .byte   W04
-        .byte                   Fs1
+        .byte           N01   , Fs1
         .byte   W04
-        .byte                   Cn1
+        .byte           N06   , Cn1
         .byte   W02
-        .byte                   Fs1
+        .byte           N01   , Fs1
         .byte   W06
 @ 032   ----------------------------------------
-        .byte   PATT
-         .word  AirOfBrutality_5_2
+        .byte           N06   , Cs1
+        .byte           N01   , Fs1
+        .byte           N12   , Cn1
+        .byte           N24   , Cs2
+        .byte   W12
+        .byte           N01   , Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte           N06   , Cn1
+        .byte   W12
+        .byte           N01   , Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N06   , Cs1
+        .byte           N01   , Fs1
+        .byte           N12   , Cn1
+        .byte   W12
+        .byte           N01   , Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte           N24   , Dn1
+        .byte           N06   , Fs2
+        .byte           N01   , Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
+        .byte                   Fs1
+        .byte   W06
 @ 033   ----------------------------------------
         .byte   PATT
          .word  AirOfBrutality_5_3
@@ -1322,24 +1217,24 @@ AirOfBrutality_5_3:
 AirOfBrutality_6:
         .byte   KEYSH , AirOfBrutality_key+0
 @ 000   ----------------------------------------
-        .byte           VOICE , 47
-        .byte           PAN   , c_v-8
-        .byte           VOL   , 59
-        .byte           N21   , Fs2 , v102
+        .byte           VOICE , 118
+        .byte           PAN   , c_v-7
+        .byte           VOL   , 54
+        .byte           N21   , En2 , v102
         .byte   W72
-        .byte                   Cn3 , v081
+        .byte                   An2 , v081
         .byte   W24
 @ 001   ----------------------------------------
 AirOfBrutality_6_LOOP:
-        .byte           N21   , Fs2 , v102
+        .byte           N21   , En2 , v102
         .byte   W72
-        .byte                   Cn3 , v081
+        .byte                   An2 , v081
         .byte   W24
 @ 002   ----------------------------------------
 AirOfBrutality_6_2:
-        .byte           N21   , Fs2 , v102
+        .byte           N21   , En2 , v102
         .byte   W72
-        .byte                   Cn3 , v081
+        .byte                   An2 , v081
         .byte   W24
         .byte   PEND
 @ 003   ----------------------------------------
@@ -1365,9 +1260,9 @@ AirOfBrutality_6_2:
          .word  AirOfBrutality_6_2
 @ 010   ----------------------------------------
 AirOfBrutality_6_10:
-        .byte           N21   , En2 , v102
+        .byte           N21   , Fs2 , v102
         .byte   W72
-        .byte                   An2 , v081
+        .byte                   Fs2 , v081
         .byte   W24
         .byte   PEND
 @ 011   ----------------------------------------
@@ -1399,13 +1294,13 @@ AirOfBrutality_6_10:
          .word  AirOfBrutality_6_10
 @ 020   ----------------------------------------
 AirOfBrutality_6_20:
-        .byte           N12   , En2 , v102
+        .byte           N12   , Fs2 , v102
         .byte   W24
-        .byte           N06   , En2 , v081
+        .byte           N06   , Fs2 , v081
         .byte   W24
-        .byte           N12   , En2 , v102
+        .byte           N12   , Fs2 , v102
         .byte   W24
-        .byte           N06   , En2 , v081
+        .byte           N06   , Fs2 , v081
         .byte   W24
         .byte   PEND
 @ 021   ----------------------------------------
@@ -1424,25 +1319,17 @@ AirOfBrutality_6_20:
         .byte   PATT
          .word  AirOfBrutality_6_20
 @ 026   ----------------------------------------
-AirOfBrutality_6_26:
-        .byte           N12   , Fn2 , v102
-        .byte   W24
-        .byte           N06   , Fn2 , v081
-        .byte   W24
-        .byte           N12   , Fn2 , v102
-        .byte   W24
-        .byte           N06   , Fn2 , v081
-        .byte   W24
-        .byte   PEND
+        .byte   PATT
+         .word  AirOfBrutality_6_20
 @ 027   ----------------------------------------
         .byte   PATT
-         .word  AirOfBrutality_6_26
+         .word  AirOfBrutality_6_20
 @ 028   ----------------------------------------
         .byte   PATT
-         .word  AirOfBrutality_6_26
+         .word  AirOfBrutality_6_20
 @ 029   ----------------------------------------
         .byte   PATT
-         .word  AirOfBrutality_6_26
+         .word  AirOfBrutality_6_20
 @ 030   ----------------------------------------
 AirOfBrutality_6_30:
         .byte           N12   , Gn2 , v102
@@ -1451,7 +1338,7 @@ AirOfBrutality_6_30:
         .byte   W24
         .byte           N12   , Gn2 , v102
         .byte   W24
-        .byte           N21   , Cn3 , v081
+        .byte           N21   , An2 , v081
         .byte   W24
         .byte   PEND
 @ 031   ----------------------------------------

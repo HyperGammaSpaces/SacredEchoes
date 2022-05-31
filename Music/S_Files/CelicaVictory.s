@@ -349,59 +349,59 @@ CelicaVictory_1:
 @ 000   ----------------------------------------
         .byte           VOICE , 124
         .byte           VOL   , 50
-        .byte           N03   , Fs1 , v100
-        .byte           N06   , Cn1
+        .byte           N06   , Cn1 , v100
+        .byte           N06   , Fs1
         .byte   W24
-        .byte           N03   , Fs1
-        .byte           N06   , Cn1
+        .byte                   Cn1
+        .byte           N06   , Fs1
         .byte   W24
-        .byte           N03   , Fs1
-        .byte           N06   , Cn1
+        .byte                   Cn1
+        .byte           N06   , Fs1
         .byte   W24
-        .byte           N03   , Fs1
-        .byte           N03   , Cn2
-        .byte           N06   , Cn1
-        .byte           N04   , Ds2
+        .byte                   Cn1
+        .byte           N04   , As1
+        .byte           N04   , Cn2
+        .byte           N06   , Fs1
         .byte   W06
-        .byte           N03   , Cn2 , v088
-        .byte           N12   , Ds2 , v100
+        .byte           N12   , As1
+        .byte           N04   , Cn2 , v088
         .byte   W06
-        .byte           N03   , Bn1
+        .byte                   Bn1 , v100
         .byte   W06
         .byte                   Gn1
         .byte   W06
 @ 001   ----------------------------------------
 CelicaVictory_1_LOOP:
-        .byte           N03   , Fs1 , v100
-        .byte           N12   , Cn1
+        .byte           N12   , Cn1 , v100
+        .byte           N06   , Fs1
         .byte   W24
-        .byte           N06   , As1
+        .byte                   Ds2
         .byte           N24   , Dn1
         .byte   W24
+        .byte           N06   , Fs1
+        .byte           N06   , Cn1
+        .byte   W15
         .byte           N03   , Fs1
         .byte           N03   , Cn1
-        .byte   W15
-        .byte                   Fs1
-        .byte           N03   , Cn1
         .byte   W09
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte           N12   , Dn1
         .byte   W24
 @ 002   ----------------------------------------
 CelicaVictory_1_2:
-        .byte           N03   , Fs1 , v100
-        .byte           N12   , Cn1
+        .byte           N12   , Cn1 , v100
+        .byte           N06   , Fs1
         .byte   W24
-        .byte           N06   , As1
+        .byte                   Ds2
         .byte           N24   , Dn1
         .byte   W24
+        .byte           N06   , Fs1
+        .byte           N06   , Cn1
+        .byte   W15
         .byte           N03   , Fs1
         .byte           N03   , Cn1
-        .byte   W15
-        .byte                   Fs1
-        .byte           N03   , Cn1
         .byte   W09
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte           N12   , Dn1
         .byte   W24
         .byte   PEND
@@ -409,24 +409,24 @@ CelicaVictory_1_2:
         .byte   PATT
          .word  CelicaVictory_1_2
 @ 004   ----------------------------------------
-        .byte           N03   , Fs1 , v100
-        .byte           N12   , Cn1
+        .byte           N12   , Cn1 , v100
+        .byte           N06   , Fs1
         .byte   W24
-        .byte           N06   , As1
+        .byte                   Ds2
         .byte           N24   , Dn1
         .byte   W24
+        .byte           N06   , Fs1
+        .byte           N06   , Cn1
+        .byte   W15
         .byte           N03   , Fs1
         .byte           N03   , Cn1
-        .byte   W15
-        .byte                   Fs1
-        .byte           N03   , Cn1
         .byte   W09
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte           N12   , Dn1
         .byte   W24
-        .byte           N03   , Cn1
-        .byte           N12   , As1
+        .byte                   Ds2
         .byte           N12   , Dn1
+        .byte           N06   , Cn1
         .byte   W24
 @ 005   ----------------------------------------
         .byte   PATT
@@ -438,230 +438,230 @@ CelicaVictory_1_2:
         .byte   PATT
          .word  CelicaVictory_1_2
 @ 008   ----------------------------------------
-        .byte           N03   , Fs1 , v100
-        .byte           N12   , Cn1
+        .byte           N12   , Cn1 , v100
+        .byte           N06   , Fs1
         .byte   W24
-        .byte           N06   , As1
+        .byte                   Ds2
         .byte           N24   , Dn1
         .byte   W24
-        .byte           N03   , Fs1
-        .byte           N03   , Cn1
+        .byte           N06   , Fs1
+        .byte           N06   , Cn1
         .byte   W15
-        .byte                   Fs1
+        .byte           N03   , Fs1
         .byte           N03   , Cn1
         .byte   W09
         .byte           N36   , Cs2
-        .byte           N06   , As1
+        .byte           N06   , Ds2
         .byte           N12   , Dn1
         .byte   W24
-        .byte           N03   , Cn1
-        .byte           N06   , As1
+        .byte           N06   , Ds2
         .byte           N12   , Dn1
+        .byte           N06   , Cn1
         .byte   W24
 @ 009   ----------------------------------------
-        .byte           N03   , Fs1
         .byte           N36   , Cs2
         .byte           N12   , Dn1
         .byte           N10   , Cn1
+        .byte           N06   , Fs1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte                   Bn1
+        .byte           N06   , Cn1
         .byte   W24
         .byte           N12   , Dn1
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte           N06   , Bn1
+        .byte           N06   , Cn1
         .byte   W24
         .byte           N12   , Dn1
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte           N06   , Bn1
+        .byte           N06   , Cn1
         .byte   W12
 @ 010   ----------------------------------------
-        .byte                   Bn1
-        .byte           N10   , Cn1
-        .byte           N22   , Ds2
+        .byte           N10
+        .byte           N22   , As1
+        .byte           N06   , Bn1
         .byte   W12
-        .byte           N03   , Cn1
+        .byte                   Cn1
         .byte   W12
-        .byte           N22   , Ds2
+        .byte           N22   , As1
         .byte           N12   , Dn1
         .byte   W12
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03   , Bn1
-        .byte           N03   , Cn1
-        .byte           N22   , Ds2
+        .byte           N22   , As1
+        .byte           N06   , Cn1
+        .byte           N06   , Bn1
         .byte   W24
         .byte           N10   , Cn1
-        .byte           N22   , Ds2
+        .byte           N22   , As1
         .byte           N12   , Dn1
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte   W12
-        .byte           N03   , Cn1
+        .byte           N06   , Cn1
         .byte   W12
 @ 011   ----------------------------------------
-        .byte                   Fs1
-        .byte           N10   , Cn1
+        .byte           N10
         .byte           N12   , Dn1
+        .byte           N06   , Fs1
         .byte   W12
-        .byte           N03   , Cn1
-        .byte           N03   , Bn1
+        .byte                   Cn1
+        .byte           N06   , Bn1
         .byte   W24
         .byte           N12   , Dn1
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte           N06   , Bn1
+        .byte           N06   , Cn1
         .byte   W24
         .byte           N12   , Dn1
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte           N06   , Bn1
+        .byte           N06   , Cn1
         .byte   W12
 @ 012   ----------------------------------------
-        .byte                   Bn1
-        .byte           N10   , Cn1
-        .byte           N22   , Ds2
+        .byte           N10
+        .byte           N22   , As1
+        .byte           N06   , Bn1
         .byte   W12
-        .byte           N03   , Cn1
+        .byte                   Cn1
         .byte   W12
         .byte           N12   , Dn1
-        .byte           N22   , Ds2
+        .byte           N22   , As1
         .byte   W12
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03   , Bn1
-        .byte           N03   , Cn1
-        .byte           N22   , Ds2
+        .byte           N22   , As1
+        .byte           N06   , Cn1
+        .byte           N06   , Bn1
         .byte   W24
         .byte           N10   , Cn1
         .byte           N12   , Dn1
-        .byte           N12   , As1
-        .byte           N22   , Ds2
+        .byte           N12   , Ds2
+        .byte           N22   , As1
         .byte   W12
-        .byte           N03   , Cn1
+        .byte           N06   , Cn1
         .byte   W12
 @ 013   ----------------------------------------
-        .byte                   Fs1
         .byte           N48   , Cs2
         .byte           N12   , Dn1
         .byte           N10   , Cn1
+        .byte           N06   , Fs1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte                   Bn1
+        .byte           N06   , Cn1
         .byte   W24
         .byte           N12   , Dn1
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte           N06   , Bn1
+        .byte           N06   , Cn1
         .byte   W24
         .byte           N12   , Dn1
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte           N06   , Bn1
+        .byte           N06   , Cn1
         .byte   W12
 @ 014   ----------------------------------------
-        .byte                   Bn1
-        .byte           N10   , Cn1
-        .byte           N22   , Ds2
+        .byte           N10
+        .byte           N22   , As1
+        .byte           N06   , Bn1
         .byte   W12
-        .byte           N03   , Cn1
+        .byte                   Cn1
         .byte   W12
         .byte           N12   , Dn1
-        .byte           N22   , Ds2
+        .byte           N22   , As1
         .byte   W12
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03   , Bn1
-        .byte           N03   , Cn1
-        .byte           N22   , Ds2
+        .byte           N22   , As1
+        .byte           N06   , Bn1
+        .byte           N06   , Cn1
         .byte   W24
         .byte           N12   , Dn1
         .byte           N10   , Cn1
-        .byte           N12   , As1
-        .byte           N22   , Ds2
+        .byte           N12   , Ds2
+        .byte           N22   , As1
         .byte   W12
-        .byte           N03   , Cn1
+        .byte           N06   , Cn1
         .byte   W12
 @ 015   ----------------------------------------
-        .byte                   Fs1
         .byte           N12   , Dn1
         .byte           N10   , Cn1
+        .byte           N06   , Fs1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte                   Bn1
+        .byte           N06   , Cn1
         .byte   W24
         .byte           N12   , Dn1
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte           N06   , Bn1
+        .byte           N06   , Cn1
         .byte   W24
         .byte           N12   , Dn1
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03
-        .byte           N03   , Bn1
+        .byte           N06   , Bn1
+        .byte           N06   , Cn1
         .byte   W12
 @ 016   ----------------------------------------
-        .byte                   Bn1
-        .byte           N10   , Cn1
-        .byte           N22   , Ds2
+        .byte           N10
+        .byte           N22   , As1
+        .byte           N06   , Bn1
         .byte   W12
-        .byte           N03   , Cn1
+        .byte                   Cn1
         .byte   W12
         .byte           N12   , Dn1
-        .byte           N22   , Ds2
+        .byte           N22   , As1
         .byte   W12
         .byte           N10   , Cn1
         .byte   W12
-        .byte           N03   , Bn1
-        .byte           N03   , Cn1
-        .byte           N22   , Ds2
+        .byte           N22   , As1
+        .byte           N06   , Bn1
+        .byte           N06   , Cn1
         .byte   W24
         .byte           N12   , Dn1
         .byte           N10   , Cn1
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte           N06   , Gn1 , v117
-        .byte           N22   , Ds2 , v100
+        .byte           N22   , As1 , v100
         .byte   W12
-        .byte           N03   , Cn1
+        .byte           N06   , Cn1
         .byte   W12
 @ 017   ----------------------------------------
         .byte           N12   , Cn1 , v120
         .byte           N12   , Dn1 , v088
-        .byte           N03   , Fs1 , v080
         .byte           N18   , Cs2 , v100
+        .byte           N06   , Fs1 , v080
         .byte   W12
-        .byte           N03   , Fs1 , v080
+        .byte           N02
         .byte   W06
         .byte           N06   , Cn1 , v088
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W18
         .byte           N12   , Dn1 , v100
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte                   Fs1
         .byte   W06
         .byte           N06   , Cn1 , v100
-        .byte           N03   , Fs1 , v080
+        .byte           N06   , Fs1 , v080
         .byte   W12
         .byte           N12   , Dn1 , v100
         .byte           N03   , Fs1 , v080
         .byte   W03
         .byte                   Fs1
         .byte   W09
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte           N24   , Ds1 , v100
         .byte           N06   , Cn1 , v088
         .byte   W12
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte                   Fs1
         .byte   W06
@@ -669,20 +669,20 @@ CelicaVictory_1_2:
 CelicaVictory_1_18:
         .byte           N12   , Dn1 , v088
         .byte           N12   , Cn1
-        .byte           N03   , Fs1 , v080
+        .byte           N06   , Fs1 , v080
         .byte   W12
-        .byte                   Fs1
+        .byte           N02
         .byte   W06
         .byte           N06   , Cn1 , v088
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W18
         .byte           N12   , Dn1 , v088
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte                   Fs1
         .byte   W06
         .byte           N06   , Cn1 , v088
-        .byte           N03   , Fs1 , v080
+        .byte           N06   , Fs1 , v080
         .byte   W12
         .byte           N12   , Dn1 , v088
         .byte           N03   , Fs1 , v080
@@ -690,10 +690,10 @@ CelicaVictory_1_18:
         .byte                   Fs1
         .byte   W09
         .byte           N06   , Cn1 , v088
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte           N24   , Ds1
         .byte   W12
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte                   Fs1
         .byte   W06
@@ -701,31 +701,31 @@ CelicaVictory_1_18:
 @ 019   ----------------------------------------
         .byte           N12   , Cn1 , v120
         .byte           N12   , Dn1 , v088
-        .byte           N03   , Fs1 , v080
+        .byte           N06   , Fs1 , v080
         .byte   W12
-        .byte                   Fs1
+        .byte           N02
         .byte   W06
         .byte           N06   , Cn1 , v088
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W18
         .byte           N12   , Dn1 , v100
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte                   Fs1
         .byte   W06
         .byte           N06   , Cn1 , v100
-        .byte           N03   , Fs1 , v080
+        .byte           N06   , Fs1 , v080
         .byte   W12
         .byte           N12   , Dn1 , v100
         .byte           N03   , Fs1 , v080
         .byte   W03
         .byte                   Fs1
         .byte   W09
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte           N24   , Ds1 , v100
         .byte           N06   , Cn1 , v088
         .byte   W12
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte                   Fs1
         .byte   W06
@@ -737,38 +737,38 @@ CelicaVictory_1_21:
         .byte           N12   , Cn1 , v120
         .byte           N06   , Dn3 , v088
         .byte           N12   , Dn1
-        .byte           N03   , Fs1 , v080
+        .byte           N06   , Fs1 , v080
         .byte   W12
-        .byte                   Fs1
+        .byte           N02
         .byte   W06
         .byte           N06   , Dn3 , v088
         .byte           N06   , Cn1
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte           N06   , Ds3 , v088
         .byte   W12
         .byte           N12   , Dn1 , v100
         .byte           N06   , Dn3 , v088
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte                   Fs1
         .byte   W06
         .byte           N06   , Cn1 , v100
-        .byte           N03   , Fs1 , v080
+        .byte           N06   , Fs1 , v080
         .byte   W12
-        .byte           N06   , Dn3 , v088
+        .byte                   Dn3 , v088
         .byte           N12   , Dn1 , v100
         .byte           N03   , Fs1 , v080
         .byte   W03
         .byte                   Fs1
         .byte   W09
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte           N06   , Ds3 , v088
         .byte           N24   , Ds1 , v100
         .byte           N06   , Cn1 , v088
         .byte   W12
         .byte                   Dn3
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte                   Fs1
         .byte   W06
@@ -778,24 +778,24 @@ CelicaVictory_1_22:
         .byte           N12   , Dn1 , v088
         .byte           N12   , Cn1
         .byte           N06   , Dn3
-        .byte           N03   , Fs1 , v080
+        .byte           N06   , Fs1 , v080
         .byte   W12
-        .byte                   Fs1
+        .byte           N02
         .byte   W06
         .byte           N06   , Cn1 , v088
         .byte           N06   , Dn3
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte           N06   , Ds3 , v088
         .byte   W12
         .byte           N12   , Dn1
         .byte           N06   , Dn3
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte                   Fs1
         .byte   W06
         .byte           N06   , Cn1 , v088
-        .byte           N03   , Fs1 , v080
+        .byte           N06   , Fs1 , v080
         .byte   W12
         .byte           N12   , Dn1 , v088
         .byte           N06   , Dn3
@@ -804,12 +804,12 @@ CelicaVictory_1_22:
         .byte                   Fs1
         .byte   W09
         .byte           N06   , Cn1 , v088
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte           N06   , Ds3
         .byte           N24   , Ds1
         .byte   W12
         .byte           N06   , Dn3
-        .byte           N03   , Fs1 , v080
+        .byte           N02   , Fs1 , v080
         .byte   W06
         .byte                   Fs1
         .byte   W06
@@ -838,9 +838,9 @@ CelicaVictory_1_29:
         .byte           N12   , Dn1
         .byte           N12   , Cn1
         .byte   W72
-        .byte           N03   , Bn1
+        .byte           N06   , Bn1
         .byte   W09
-        .byte                   Bn1
+        .byte           N03
         .byte   W06
         .byte                   Bn1
         .byte   W09
@@ -853,11 +853,11 @@ CelicaVictory_1_29:
         .byte           N12   , Cn1
         .byte           N24   , Cs2
         .byte   W48
-        .byte                   Ds2
+        .byte                   As1
         .byte   W24
-        .byte           N03   , Bn1
+        .byte           N06   , Bn1
         .byte   W09
-        .byte                   Bn1
+        .byte           N03
         .byte   W06
         .byte                   Bn1
         .byte   W09
@@ -867,35 +867,35 @@ CelicaVictory_1_29:
         .byte           N24   , Cs2
         .byte   W24
         .byte           N12   , Dn1
-        .byte           N12   , As1
+        .byte           N12   , Ds2
         .byte   W12
-        .byte           N03   , Fs1
+        .byte           N06   , Fs1
         .byte   W12
-        .byte           N06   , Cn1
-        .byte           N03   , Fs1
-        .byte           N03   , Cn2
+        .byte                   Cn1
+        .byte           N06   , Fs1
+        .byte           N04   , Cn2
         .byte   W06
         .byte                   Cn2
         .byte   W06
-        .byte                   Fs1
+        .byte           N03   , Fs1
         .byte           N03   , Cn2
         .byte   W03
         .byte                   Fs1
         .byte           N06   , Cn1
         .byte   W03
-        .byte           N03   , Cn2
+        .byte           N04   , Cn2
         .byte   W06
         .byte           N12   , Dn1
         .byte           N06   , Gn2
-        .byte           N03   , An1
+        .byte           N04   , An1
         .byte   W06
         .byte                   An1
         .byte   W06
-        .byte                   Fs1
         .byte           N10   , Gn2
-        .byte           N03   , Gn1
+        .byte           N02   , Fs1
+        .byte           N02   , Gn1
         .byte   W06
-        .byte                   DnM2
+        .byte           N03   , DnM2
         .byte           N03   , Gn1
         .byte           N03   , Fs1
         .byte   W06

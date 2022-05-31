@@ -837,7 +837,9 @@ FE6FortheCommanders_5_2:
         BYTE           N23
         BYTE   W24
         BYTE           N24     Dn1   v056
-        BYTE   W36
+        BYTE   W24
+        BYTE           N12     Dn1   v040
+        BYTE   W12
         BYTE           N11     Dn1   v044
         BYTE   W12
         BYTE                   Dn1   v068
@@ -979,7 +981,7 @@ FE6FortheCommanders_6:
         BYTE   KEYSH   FE6FortheCommanders_key+0
 // 000   ----------------------------------------
 FE6FortheCommanders_6_LOOP:
-        BYTE           VOICE   127
+        BYTE           VOICE   122
         BYTE           VOL     56
         BYTE           PAN     c_v+17
         BYTE           N36     Gn1   v127
@@ -1117,35 +1119,35 @@ FE6FortheCommanders_6_LOOP:
         BYTE                   Fn1
         BYTE   W12
 // 016   ----------------------------------------
-        BYTE           N32     An2   v116
+        BYTE           N32     Cs2   v116
         BYTE   W36
-        BYTE           N36     An2   v108
+        BYTE           N36     Cs2   v108
         BYTE   W60
 // 017   ----------------------------------------
-        BYTE           N32     An2   v112
+        BYTE           N32     Cs2   v112
         BYTE   W36
-        BYTE           N40     An2   v100
+        BYTE           N40     Cs2   v100
         BYTE   W60
 // 018   ----------------------------------------
         BYTE           N32
         BYTE   W36
-        BYTE           N40     An2   v116
+        BYTE           N40     Cs2   v116
         BYTE   W60
 // 019   ----------------------------------------
-        BYTE           N32     An2   v104
+        BYTE           N32     Cs2   v104
         BYTE   W36
-        BYTE           N28     An2   v108
+        BYTE           N28     Cs2   v108
         BYTE   W30
-        BYTE           N05     An2   v056
+        BYTE           N05     Cs2   v056
         BYTE   W06
-        BYTE                   An2   v072
+        BYTE                   Cs2   v072
         BYTE   W06
-        BYTE                   An2   v064
+        BYTE                   Cs2   v064
         BYTE   W06
-        BYTE           N11     An2   v080
+        BYTE           N11     Cs2   v080
         BYTE   W12
 // 020   ----------------------------------------
-        BYTE           N40     An2   v100
+        BYTE           N40     Cs2   v100
         BYTE   W84
         BYTE           N11     Fn1   v116
         BYTE   W12

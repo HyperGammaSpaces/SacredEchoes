@@ -2954,7 +2954,7 @@ TheMadGodsBlessing_7_9:
 TheMadGodsBlessing_8:
         .byte   KEYSH , TheMadGodsBlessing_key+0
 @ 000   ----------------------------------------
-        .byte           VOICE , 124
+        .byte           VOICE , 123
         .byte           VOL   , 56
         .byte   W96
 @ 001   ----------------------------------------

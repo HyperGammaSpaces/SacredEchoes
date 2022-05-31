@@ -1849,322 +1849,12 @@ DisquietingSteps_4_8:
          .word  DisquietingSteps_4_LOOP
         .byte   FINE
 
-@****************** Track 5 (Midi-Chn.5) ******************@
+@****************** Track 5 (Midi-Chn.6) ******************@
 
 DisquietingSteps_5:
         .byte   KEYSH , DisquietingSteps_key+0
 @ 000   ----------------------------------------
 DisquietingSteps_5_LOOP:
-        .byte           VOICE , 127
-        .byte           VOL   , 44
-        .byte           PAN   , c_v+8
-        .byte           N11   , Gn1 , v100
-        .byte   W12
-        .byte           N23   , Gn1 , v104
-        .byte   W24
-        .byte                   Gn1 , v100
-        .byte   W24
-        .byte           N11
-        .byte   W12
-        .byte                   Gn1 , v104
-        .byte   W12
-        .byte           N23
-        .byte   W12
-@ 001   ----------------------------------------
-        .byte   W12
-        .byte                   Gn1
-        .byte   W24
-        .byte           N11   , Gn1 , v100
-        .byte   W12
-        .byte                   Gn1 , v104
-        .byte   W12
-        .byte           N23   , Gn1 , v108
-        .byte   W24
-        .byte                   Gn1 , v100
-        .byte   W12
-@ 002   ----------------------------------------
-        .byte   W12
-        .byte           N11
-        .byte   W12
-        .byte                   Gn1 , v104
-        .byte   W12
-        .byte           N23
-        .byte   W24
-        .byte           N11   , Fn1 , v108
-        .byte   W12
-        .byte                   Gn1 , v104
-        .byte   W12
-        .byte                   Fn1 , v112
-        .byte   W12
-@ 003   ----------------------------------------
-        .byte                   Gn1 , v108
-        .byte   W12
-        .byte           N23   , Gn1 , v100
-        .byte   W24
-        .byte                   Gn1
-        .byte   W24
-        .byte           N11   , Gn1 , v104
-        .byte   W12
-        .byte                   Gn1
-        .byte   W12
-        .byte           N23
-        .byte   W12
-@ 004   ----------------------------------------
-        .byte   W12
-        .byte                   Gn1 , v112
-        .byte   W24
-        .byte           N11   , Gn1 , v108
-        .byte   W12
-        .byte                   Gn1 , v096
-        .byte   W12
-        .byte           N23   , Gn1 , v104
-        .byte   W24
-        .byte           N11
-        .byte   W12
-@ 005   ----------------------------------------
-        .byte                   Gn1 , v080
-        .byte   W12
-        .byte                   Gn1 , v104
-        .byte   W12
-        .byte                   Gn1 , v100
-        .byte   W12
-        .byte           N23   , Gn1 , v108
-        .byte   W24
-        .byte           N11   , Fn1 , v092
-        .byte   W12
-        .byte                   Gn1 , v108
-        .byte   W12
-        .byte                   Fn1 , v092
-        .byte   W12
-@ 006   ----------------------------------------
-        .byte                   Gn1 , v100
-        .byte   W12
-        .byte           N23
-        .byte   W24
-        .byte                   Gn1 , v104
-        .byte   W24
-        .byte           N11   , Gn1 , v080
-        .byte   W12
-        .byte                   Gn1 , v092
-        .byte   W12
-        .byte           N23   , Gn1 , v104
-        .byte   W12
-@ 007   ----------------------------------------
-        .byte   W12
-        .byte           N32
-        .byte   W36
-        .byte           N11   , Gn1 , v100
-        .byte   W12
-        .byte           N23   , Gn1 , v092
-        .byte   W24
-        .byte                   Gn1 , v100
-        .byte   W12
-@ 008   ----------------------------------------
-        .byte   W12
-        .byte           N11   , Gn1 , v108
-        .byte   W12
-        .byte           N23
-        .byte   W24
-        .byte           N32   , Gn1 , v104
-        .byte   W48
-@ 009   ----------------------------------------
-        .byte           N11   , Gn1 , v092
-        .byte   W12
-        .byte           N23   , Gn1 , v096
-        .byte   W24
-        .byte                   Gn1 , v100
-        .byte   W24
-        .byte           N11   , Gn1 , v096
-        .byte   W12
-        .byte                   Gn1
-        .byte   W12
-        .byte                   Gn1 , v080
-        .byte   W12
-@ 010   ----------------------------------------
-        .byte           N32   , Gn1 , v100
-        .byte   W48
-        .byte           N11   , Gn1 , v096
-        .byte   W12
-        .byte           N23   , Gn1 , v092
-        .byte   W24
-        .byte                   Gn1
-        .byte   W12
-@ 011   ----------------------------------------
-        .byte   W12
-        .byte           N11   , Gn1 , v068
-        .byte   W12
-        .byte                   Fn1 , v084
-        .byte   W12
-        .byte           N23   , Fn1 , v092
-        .byte   W24
-        .byte                   Fn1
-        .byte   W24
-        .byte           N32   , Fn1 , v088
-        .byte   W12
-@ 012   ----------------------------------------
-        .byte   W24
-        .byte           N11   , Gn1 , v103
-        .byte   W12
-        .byte           N23   , Gn1 , v085
-        .byte   W24
-        .byte           N11   , Gn1 , v098
-        .byte   W12
-        .byte                   Gn1 , v103
-        .byte   W12
-        .byte           N23   , Gn1 , v112
-        .byte   W12
-@ 013   ----------------------------------------
-        .byte   W12
-        .byte           N11   , Fn1 , v089
-        .byte   W12
-        .byte                   Gn1 , v098
-        .byte   W12
-        .byte                   Fn1 , v089
-        .byte   W12
-        .byte                   Gn1 , v103
-        .byte   W12
-        .byte           N23   , Gn1 , v110
-        .byte   W24
-        .byte           N11   , Gn1 , v109
-        .byte   W12
-@ 014   ----------------------------------------
-        .byte                   Gn1 , v076
-        .byte   W12
-        .byte                   Gn1 , v109
-        .byte   W12
-        .byte                   Gn1 , v099
-        .byte   W12
-        .byte           N23   , Gn1 , v095
-        .byte   W24
-        .byte           N11   , Fn1 , v105
-        .byte   W12
-        .byte                   Gn1 , v095
-        .byte   W12
-        .byte                   Fn1 , v099
-        .byte   W12
-@ 015   ----------------------------------------
-        .byte                   Gn1 , v089
-        .byte   W12
-        .byte           N23   , Gn1 , v105
-        .byte   W24
-        .byte                   Gn1 , v085
-        .byte   W24
-        .byte           N11   , Gn1 , v069
-        .byte   W12
-        .byte                   Gn1 , v099
-        .byte   W12
-        .byte                   Gn1 , v079
-        .byte   W12
-@ 016   ----------------------------------------
-        .byte                   Fn1
-        .byte   W12
-        .byte                   Gn1 , v089
-        .byte   W12
-        .byte                   Gn1 , v085
-        .byte   W12
-        .byte                   Fn1 , v076
-        .byte   W12
-        .byte                   Gn1 , v089
-        .byte   W12
-        .byte           N23   , Gn1 , v110
-        .byte   W24
-        .byte                   Gn1 , v095
-        .byte   W12
-@ 017   ----------------------------------------
-        .byte   W12
-        .byte           N11   , Fn1 , v093
-        .byte   W12
-        .byte                   Gn1 , v113
-        .byte   W12
-        .byte           N23   , Gn1 , v109
-        .byte   W24
-        .byte           N11   , Fn1 , v113
-        .byte   W12
-        .byte                   Gn1 , v099
-        .byte   W12
-        .byte                   Fn1 , v088
-        .byte   W12
-@ 018   ----------------------------------------
-        .byte                   Gn1 , v103
-        .byte   W12
-        .byte           N32
-        .byte   W60
-        .byte           N11   , Gn1 , v088
-        .byte   W12
-        .byte           N23   , Gn1 , v103
-        .byte   W12
-@ 019   ----------------------------------------
-        .byte   W12
-        .byte                   Gn1
-        .byte   W24
-        .byte           N40   , Fn1 , v093
-        .byte   W48
-        .byte           N23   , Gn1 , v103
-        .byte   W12
-@ 020   ----------------------------------------
-        .byte   W12
-        .byte           N11   , Fn1 , v099
-        .byte   W12
-        .byte                   Gn1 , v088
-        .byte   W12
-        .byte           N23
-        .byte   W24
-        .byte           N11   , Fn1
-        .byte   W12
-        .byte                   Gn1
-        .byte   W12
-        .byte           N23   , Fn1
-        .byte   W12
-@ 021   ----------------------------------------
-        .byte   W12
-        .byte                   Gn1 , v113
-        .byte   W24
-        .byte                   Gn1 , v109
-        .byte   W24
-        .byte           N11   , Fn1 , v088
-        .byte   W12
-        .byte                   Gn1
-        .byte   W12
-        .byte           N23   , Gn1 , v099
-        .byte   W12
-@ 022   ----------------------------------------
-        .byte   W12
-        .byte                   Gn1 , v113
-        .byte   W24
-        .byte           N32   , Fn1 , v088
-        .byte   W48
-        .byte                   Gn1
-        .byte   W12
-@ 023   ----------------------------------------
-        .byte   W84
-        .byte           N11   , Fn1
-        .byte   W12
-@ 024   ----------------------------------------
-        .byte           N32   , Gn1
-        .byte   W36
-        .byte           N44   , Fn1
-        .byte   W48
-        .byte           N32   , Gn1 , v109
-        .byte   W12
-@ 025   ----------------------------------------
-        .byte   W24
-        .byte           N23   , Fn1 , v088
-        .byte   W24
-        .byte           N56   , Gn1
-        .byte   W48
-@ 026   ----------------------------------------
-        .byte   W96
-@ 027   ----------------------------------------
-        .byte   GOTO
-         .word  DisquietingSteps_5_LOOP
-        .byte   FINE
-
-@****************** Track 6 (Midi-Chn.6) ******************@
-
-DisquietingSteps_6:
-        .byte   KEYSH , DisquietingSteps_key+0
-@ 000   ----------------------------------------
-DisquietingSteps_6_LOOP:
         .byte           VOICE , 65
         .byte           VOL   , 39
         .byte           PAN   , c_v+17
@@ -2177,14 +1867,14 @@ DisquietingSteps_6_LOOP:
 @ 001   ----------------------------------------
         .byte   W96
 @ 002   ----------------------------------------
-DisquietingSteps_6_2:
+DisquietingSteps_5_2:
         .byte   W84
         .byte           N03   , Dn2 , v102
         .byte           N03   , Gn1
         .byte   W12
         .byte   PEND
 @ 003   ----------------------------------------
-DisquietingSteps_6_3:
+DisquietingSteps_5_3:
         .byte           N66   , Dn2 , v102
         .byte           N66   , Gn1
         .byte   W72
@@ -2196,9 +1886,9 @@ DisquietingSteps_6_3:
         .byte   W96
 @ 005   ----------------------------------------
         .byte   PATT
-         .word  DisquietingSteps_6_2
+         .word  DisquietingSteps_5_2
 @ 006   ----------------------------------------
-DisquietingSteps_6_6:
+DisquietingSteps_5_6:
         .byte           N66   , En2 , v102
         .byte           N66   , An1
         .byte   W72
@@ -2209,7 +1899,7 @@ DisquietingSteps_6_6:
 @ 007   ----------------------------------------
         .byte   W96
 @ 008   ----------------------------------------
-DisquietingSteps_6_8:
+DisquietingSteps_5_8:
         .byte   W84
         .byte           N03   , En2 , v102
         .byte           N03   , An1
@@ -2217,39 +1907,39 @@ DisquietingSteps_6_8:
         .byte   PEND
 @ 009   ----------------------------------------
         .byte   PATT
-         .word  DisquietingSteps_6_6
+         .word  DisquietingSteps_5_6
 @ 010   ----------------------------------------
         .byte   W96
 @ 011   ----------------------------------------
         .byte   PATT
-         .word  DisquietingSteps_6_2
+         .word  DisquietingSteps_5_2
 @ 012   ----------------------------------------
         .byte   PATT
-         .word  DisquietingSteps_6_3
+         .word  DisquietingSteps_5_3
 @ 013   ----------------------------------------
         .byte   W96
 @ 014   ----------------------------------------
         .byte   PATT
-         .word  DisquietingSteps_6_2
+         .word  DisquietingSteps_5_2
 @ 015   ----------------------------------------
         .byte   PATT
-         .word  DisquietingSteps_6_3
+         .word  DisquietingSteps_5_3
 @ 016   ----------------------------------------
         .byte   W96
 @ 017   ----------------------------------------
         .byte   PATT
-         .word  DisquietingSteps_6_2
+         .word  DisquietingSteps_5_2
 @ 018   ----------------------------------------
         .byte   PATT
-         .word  DisquietingSteps_6_6
+         .word  DisquietingSteps_5_6
 @ 019   ----------------------------------------
         .byte   W96
 @ 020   ----------------------------------------
         .byte   PATT
-         .word  DisquietingSteps_6_8
+         .word  DisquietingSteps_5_8
 @ 021   ----------------------------------------
         .byte   PATT
-         .word  DisquietingSteps_6_6
+         .word  DisquietingSteps_5_6
 @ 022   ----------------------------------------
         .byte   W96
 @ 023   ----------------------------------------
@@ -2300,15 +1990,15 @@ DisquietingSteps_6_8:
         .byte   W04
 @ 027   ----------------------------------------
         .byte   GOTO
-         .word  DisquietingSteps_6_LOOP
+         .word  DisquietingSteps_5_LOOP
         .byte   FINE
 
-@****************** Track 7 (Midi-Chn.7) ******************@
+@****************** Track 6 (Midi-Chn.7) ******************@
 
-DisquietingSteps_7:
+DisquietingSteps_6:
         .byte   KEYSH , DisquietingSteps_key+0
 @ 000   ----------------------------------------
-DisquietingSteps_7_LOOP:
+DisquietingSteps_6_LOOP:
         .byte           VOICE , 55
         .byte           PAN   , c_v-16
         .byte           BEND  , c_v-6
@@ -2412,6 +2102,191 @@ DisquietingSteps_7_LOOP:
         .byte   W08
         .byte           N02   , Fs3 , v020
         .byte   W04
+@ 027   ----------------------------------------
+        .byte   GOTO
+         .word  DisquietingSteps_6_LOOP
+        .byte   FINE
+
+@****************** Track 7 (Midi-Chn.8) ******************@
+
+DisquietingSteps_7:
+        .byte   KEYSH , DisquietingSteps_key+0
+@ 000   ----------------------------------------
+DisquietingSteps_7_LOOP:
+        .byte           VOICE , 120
+        .byte           VOL   , 45
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Gn1
+        .byte           N12   , Fs2
+        .byte   W12
+        .byte                   Cn1
+        .byte           N12   , Gn1
+        .byte   W24
+        .byte                   Cn1
+        .byte           N12   , As1
+        .byte           N12   , Fs2
+        .byte   W24
+        .byte                   Cn1
+        .byte           N12   , Cn2
+        .byte   W12
+        .byte                   Dn1
+        .byte           N12   , Fs2
+        .byte   W12
+        .byte                   Dn1
+        .byte   W12
+@ 001   ----------------------------------------
+DisquietingSteps_7_1:
+        .byte   W12
+        .byte           N12   , Dn1 , v100
+        .byte           N36   , Ds2
+        .byte           N12   , Fs2
+        .byte   W24
+        .byte                   Dn1
+        .byte           N12   , Cs2
+        .byte   W12
+        .byte                   Cn1
+        .byte           N12   , Gn1
+        .byte           N12   , Fs2
+        .byte   W12
+        .byte                   Cn1
+        .byte           N12   , Gn1
+        .byte   W24
+        .byte                   Cn1
+        .byte           N12   , As1
+        .byte           N12   , Fs2
+        .byte   W12
+        .byte   PEND
+@ 002   ----------------------------------------
+DisquietingSteps_7_2:
+        .byte   W12
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Cn2
+        .byte   W12
+        .byte                   Dn1
+        .byte           N12   , Fs2
+        .byte   W12
+        .byte                   Dn1
+        .byte   W24
+        .byte                   Dn1
+        .byte           N36   , Ds2
+        .byte           N12   , Fs2
+        .byte   W24
+        .byte                   Dn1
+        .byte           N12   , Cs2
+        .byte   W12
+        .byte   PEND
+@ 003   ----------------------------------------
+DisquietingSteps_7_3:
+        .byte           N12   , Cn1 , v100
+        .byte           N12   , Gn1
+        .byte           N12   , Fs2
+        .byte   W12
+        .byte                   Cn1
+        .byte           N12   , Gn1
+        .byte   W24
+        .byte                   Cn1
+        .byte           N12   , As1
+        .byte           N12   , Fs2
+        .byte   W24
+        .byte                   Cn1
+        .byte           N12   , Cn2
+        .byte   W12
+        .byte                   Dn1
+        .byte           N12   , Fs2
+        .byte   W12
+        .byte                   Dn1
+        .byte   W12
+        .byte   PEND
+@ 004   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_1
+@ 005   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_2
+@ 006   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_3
+@ 007   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_1
+@ 008   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_2
+@ 009   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_3
+@ 010   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_1
+@ 011   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_2
+@ 012   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_3
+@ 013   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_1
+@ 014   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_2
+@ 015   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_3
+@ 016   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_1
+@ 017   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_2
+@ 018   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_3
+@ 019   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_1
+@ 020   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_2
+@ 021   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_3
+@ 022   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_1
+@ 023   ----------------------------------------
+        .byte   PATT
+         .word  DisquietingSteps_7_2
+@ 024   ----------------------------------------
+        .byte           N12   , Bn0 , v100
+        .byte           N24   , En1
+        .byte   W36
+        .byte           N12   , Bn0
+        .byte           N24   , Ds1
+        .byte   W36
+        .byte           N12   , Bn0
+        .byte           N24   , Bn1
+        .byte   W24
+@ 025   ----------------------------------------
+        .byte   W12
+        .byte           N12   , Bn0
+        .byte           N24   , As1
+        .byte   W36
+        .byte           N48   , An2
+        .byte           N12   , Bn0
+        .byte   W48
+@ 026   ----------------------------------------
+        .byte   W36
+        .byte                   Dn2
+        .byte   W12
+        .byte                   Dn2
+        .byte   W12
+        .byte                   Cn2
+        .byte   W12
+        .byte                   Cn2
+        .byte   W12
+        .byte                   An1
+        .byte   W12
 @ 027   ----------------------------------------
         .byte   GOTO
          .word  DisquietingSteps_7_LOOP

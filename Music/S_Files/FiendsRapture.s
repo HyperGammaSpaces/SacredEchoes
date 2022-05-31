@@ -1093,74 +1093,74 @@ FiendsRapture_5:
         .byte   KEYSH , FiendsRapture_key+0
 @ 000   ----------------------------------------
 FiendsRapture_5_LOOP:
-        .byte           VOICE , 124
-        .byte           VOL   , 52
-        .byte           N12   , Cn1 , v102
+        .byte           VOICE , 127
+        .byte           VOL   , 50
+        .byte           N12   , Bn0 , v102
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v081
         .byte   W18
-        .byte           N12   , Cn1 , v102
+        .byte           N12   , Bn0 , v102
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W06
 @ 001   ----------------------------------------
         .byte   W06
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W12
 @ 002   ----------------------------------------
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
 @ 003   ----------------------------------------
         .byte           N06   , Dn1
@@ -1168,91 +1168,91 @@ FiendsRapture_5_LOOP:
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
 @ 004   ----------------------------------------
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
 @ 005   ----------------------------------------
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W06
 @ 006   ----------------------------------------
         .byte   W12
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte                   Cn2
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N12   , An1 , v102
         .byte   W12
         .byte                   Gn1
@@ -1264,15 +1264,15 @@ FiendsRapture_5_LOOP:
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte                   Cn2
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N12   , An1 , v102
         .byte   W12
         .byte                   Gn1
@@ -1283,54 +1283,54 @@ FiendsRapture_5_LOOP:
         .byte   W06
 @ 008   ----------------------------------------
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W06
 @ 009   ----------------------------------------
         .byte   W06
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte                   Cn2
         .byte   W12
 @ 010   ----------------------------------------
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N12   , An1 , v102
         .byte   W12
         .byte                   Gn1
@@ -1340,15 +1340,15 @@ FiendsRapture_5_LOOP:
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte                   Cn2
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N12   , An1 , v102
         .byte   W12
         .byte                   Gn1
@@ -1360,18 +1360,18 @@ FiendsRapture_5_LOOP:
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
@@ -1379,64 +1379,64 @@ FiendsRapture_5_LOOP:
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
 @ 013   ----------------------------------------
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W12
-        .byte           N18   , Bn2 , v064
+        .byte           N18   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
-        .byte                   Cn1
+        .byte                   Bn0
         .byte   W06
 @ 014   ----------------------------------------
         .byte   W06
-        .byte           N16   , Bn2 , v064
+        .byte           N16   , As1 , v064
         .byte           N18   , Ds1 , v102
         .byte   W18
-        .byte           N12   , Cn1
+        .byte           N12   , Bn0
         .byte   W12
         .byte           N06   , Dn1
         .byte   W06
         .byte                   Dn1
         .byte   W06
         .byte                   Dn1
-        .byte           N12   , Ds5 , v064
+        .byte           N12   , Gs1 , v064
         .byte   W06
         .byte           N06   , Dn1 , v102
         .byte   W06

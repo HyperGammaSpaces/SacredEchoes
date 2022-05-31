@@ -712,7 +712,7 @@ Yamamba_4:
         .byte   KEYSH , Yamamba_key+0
 @ 000   ----------------------------------------
 Yamamba_4_LOOP:
-        .byte           VOICE , 123
+        .byte           VOICE , 122
         .byte           N12   , Fs3 , v126
         .byte           VOL   , 40
         .byte   W12
