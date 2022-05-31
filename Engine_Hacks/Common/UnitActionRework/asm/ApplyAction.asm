@@ -15,7 +15,7 @@ ApplyAction:
 	ldr r5, =pActionStruct
 	
 	ldrb r0, [r5, #0x0C] @ Action Unit Index
-	_blh prUnit_GetStruct
+	_blh prGetUnitStruct
 	
 	@ Storing Active Unit
 	ldr r1, =ppActiveUnit
@@ -87,6 +87,9 @@ Continue:
 	mov r0, #1 @ Continue (6C)
 	
 End:
+    ldr r5, =pActionStruct
+    mov r1, #0x00
+    strb r1, [r5, #0x6]
 	pop {r4-r5}
 	
 	pop {r1}

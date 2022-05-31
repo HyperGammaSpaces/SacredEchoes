@@ -14,4 +14,19 @@ PUSH
 	SHORT $2A53 $DB03 //blt 0x53
 	SHORT $2A59 $DC01 //bgt 0x59
     
+    //Fix spell use after resume
+    ORG $1D1D0
+    SHORT $79A2 //ldrb r2, [r4, #0x6]
+    SHORT $2112 //mov r1, #0x12
+    SHORT $5661 //ldsb r1, [r4, r1]
+    SHORT $2900 //cmp r1, #0x0
+    SHORT $DB03 //blt #1D1E2
+        SHORT $0049 //lsl r1, r1, #0x1
+        SHORT $301E //add r0, #0x1E
+        SHORT $1840 //add r0, r0, r1
+        SHORT $7802 //ldrb r2, [r0]
+    SHORT $4808 //ldr r0, =gActiveBattleUnit
+    SHORT $307E //add r0, #0x7E
+    SHORT $2100 //mov r1, #0x0
+    SHORT $7001 //strb r1, [r0]
 POP	

@@ -914,6 +914,9 @@ NewSetupBattleStructForStaffUser:
 
 StaffUseEffect_GetSlot:
     mov     r5, r0
+    ldrb    r0, [r4, #0x6]
+    cmp     r0, #0x0
+    bne     StaffUseEffect_GotItem
     ldr     r0, =SelectedSpellPointer
     ldrh    r0, [r0, #0x0]
     cmp     r0, #0x0

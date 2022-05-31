@@ -32,7 +32,8 @@ ItemEffectAfterAnim:
     _blh    GetUnit
     mov     r2, r0
     @get current item
-    ldrb    r0, [r4, #0x6]
+    ldr     r0, [r5, #0x30]
+    strb    r0, [r4, #0x6]
     mov     r1, #0x12
     ldsb    r1, [r4, r1]
     cmp     r1, #0
@@ -60,6 +61,8 @@ ItemEffectAfterAnim:
     b       skip
 
     targetunitstatus:
+    mov     r0, #0
+    strb    r0, [r4, #0x6]
     ldr     r0, =gTargetBattleUnit
     add     r0, #0x6F
     ldrb    r0, [r0]

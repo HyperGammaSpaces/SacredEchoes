@@ -89,6 +89,8 @@ ApplyStaffStatusAfterBattle:
     
     ItemFound:
     str     r2, [sp]
+    mov     r1, #0x0
+    strb    r1, [r4, #0x6]
 
     @call range builder
     ldr     r1, =TargetEnemiesWithoutStatus
@@ -168,6 +170,8 @@ ApplyStaffDamageAfterBattle:
     
     DamageStaff_ItemFound:
     str     r2, [sp]
+    mov     r1, #0x0
+    strb    r1, [r4, #0x6]
 
     @call range builder
     ldr     r1, =TargetAllEnemies
