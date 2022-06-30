@@ -1,0 +1,41 @@
+PUSH
+
+/*
+This part changes unused temporary event IDs (wouldn't get saved by suspend and were only reset on load) into event IDs that:
+	- Get reset when starting a new chapter, either after loading or after beating the previous one
+	- Get reset when the "continue" option is selected
+	- Obviously get reset when the game is turned off because they are still not saved
+So these only work once every time you open a map, be it the first time, restarting a chapter or continuing from suspend, exactly like in echoes
+This hack uses 11 bytes, starting at 3005275, which is exactly after the working temporary IDs
+11 bytes are enough to store 0x58 (88) units
+The bit that gets set is based on the character ID, there's room for up to character ID 0x58, IDs bigger than that will be ignored
+*/
+    
+    //Hooks into loading suspended local eventIDs
+    ORG $A3170
+    replaceWithHack(ClearIDs1)
+    
+    //Hooks into chapter end cleanup
+    ORG $83C4A
+    SHORT 0x46C0
+    callHack_r0(ClearIDs2)
+POP
+
+#include "UnitSelect.lyn.event"
+
+ALIGN 4
+SelectEvent_List:
+POIN Gray_SelectEvent
+WORD 0 0
+
+Gray_SelectEvent:
+    WORD Gray; POIN Gray_SelectEventScript
+Gray_SelectEventScript:
+    MUSI
+    TEXTMODE 0
+    TEXTSHOW Final_SelectQuote_Gray
+    TEXTEND
+    TEXTCLEAR
+    MUNO
+    EVBIT_T 0x7
+    ENDA

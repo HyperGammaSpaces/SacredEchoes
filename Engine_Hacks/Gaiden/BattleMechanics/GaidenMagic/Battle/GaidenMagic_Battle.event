@@ -5,6 +5,9 @@ PUSH
     //Prevent AI from trying to attack if too low on HP
 	ORG $3D544
 	jumpToHack(AIMagicCostCheck)
+    //same for staff AI
+    ORG $3FA68
+    jumpToHack(AIStaffCostCheck)
     
 //Core systems
     

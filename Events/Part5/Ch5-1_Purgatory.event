@@ -409,9 +409,6 @@ Evt_EndingScene:
     MUSC SongID_SilverGarden
     TEXTCONT
     TEXTEND
-    SOUN 0xD3 //stab
-    TEXTCONT
-    TEXTEND
     TEXTCLEAR
     EVBIT_MODIFY 0x1
     CALL $591F40
@@ -419,9 +416,11 @@ Evt_EndingScene:
     GIVEITEMTO Alm
     EVBIT_T 0x7
     EVBIT_MODIFY 0x0
-    SetBackground(0x2A)
     TEXTMODE 1
     TEXTSHOW BerkutFinal_Scene_2
+    TEXTEND
+    SOUN 0xD3 //stab
+    TEXTCONT
     TEXTEND
     TEXTCLEAR
     FADI 2

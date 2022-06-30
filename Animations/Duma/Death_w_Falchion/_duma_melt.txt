@@ -1,0 +1,97 @@
+#######################################################
+#
+#
+#When importing to FEEditorAdv delete # and after each line.
+#######################################################
+/// - Mode 1               #Melee Animation
+C0E                              	#Start of dodging frames (should go after Idle frame and before dodging animation)
+6 p- Idle.png
+6 p- Death_001.png
+6 p- Death_002.png
+4 p- Death_003.png
+4 p- Death_004.png
+C77					#draco zombie scream SFE
+C14					#Heavy vibration of screen
+10 p- Death_005.png
+12 p- Death_006.png
+C15					#Slight vibration of screen
+30 p- Death_007.png
+12 p- Death_008.png
+C15					#Slight vibration of screen
+9 p- Death_009.png
+C25					#Play wing flap SFE
+2 p- Death_010.png
+2 p- Death_011.png
+C46					#Play dropped axe crashing onto ground SFE
+C14					#Heavy vibration of screen
+4 p- Death_012.png
+4 p- Death_013.png
+6 p- Death_014.png
+6 p- Death_015.png
+60 p- Death_016.png	#wait for disintegrate effect
+10 p- Death_017.png
+10 p- Death_018.png
+10 p- Death_019.png
+10 p- Death_020.png
+10 p- Death_021.png
+10 p- Death_022.png
+10 p- Death_023.png
+10 p- Death_024.png
+10 p- Death_025.png
+10 p- Death_026.png
+10 p- Death_027.png
+12 p- Death_028.png
+10 p- Death_029.png
+C66					#revenant move SFE
+10 p- Death_030.png
+10 p- Death_031.png
+10 p- Death_032.png
+C66					#revenant move SFE
+10 p- Death_033.png
+10 p- Death_034.png
+10 p- Death_035.png
+C66					#revenant move SFE
+10 p- Death_036.png
+10 p- Death_037.png
+10 p- Death_038.png
+12 p- Death_039.png
+C06                                     #Begin opponent's turn after hit.next code 0D.
+C0D                                     #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 3               #Melee Critical Animation
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 5               #Ranged Animation 
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 6               #Ranged Critical Animation
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 7               #Dodge Melee Attack
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 8               #Dodge Ranged Attack
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 9               #Equiped with Melee Weapon
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 10               #Idle motions?
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 11               #Equiped with Ranged weapon
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 12               #Attack Missed Animation
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - End of animation

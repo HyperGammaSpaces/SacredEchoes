@@ -7,6 +7,22 @@ CALL, 0xA40, 8, -game:FE8 -indexMode:8
 CALL, 0xA40, 8, -game:FE8 -indexMode:8
 ##Event to execute.
 	Event pointer, 4, 4
+    
+QUEUECALL, 0x0B40, 8, -game:FE8 -indexMode:8
+	Mode,  2, 2, -preferredBase:10
+	Scene, 4, 4, -pointer
+
+QUEUECALL_S2, 0x0B40, 8, -game:FE8 -indexMode:8
+	Mode,       2, 2, -preferredBase:10
+	0xFFFFFFFF, 4, 4, -fixed
+
+QUEUETUTORIAL, 0x0B41, 8, -game:FE8 -indexMode:8
+	Mode,  2, 2, -preferredBase:10
+	Scene, 4, 4, -pointer
+
+QUEUETUTORIAL_S2, 0x0B41, 8, -game:FE8 -indexMode:8
+	Mode,       2, 2, -preferredBase:10
+	0xFFFFFFFF, 4, 4, -fixed
 
 CALL, 0xCB, 8, -game:FE7 -indexMode:8
 	Event pointer, 4, 4, -pointer:none

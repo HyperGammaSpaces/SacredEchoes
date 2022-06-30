@@ -468,13 +468,17 @@ MonsterAnim(NecroDragonBreath)
 WORD 0x0
 
 WhiteDragonAnim:
+SpecialAnim(WhiteDragonBreath,DragonBreath)
+SpecialAnim(WhiteDragonBreath,WretchedAir)
+SpecialAnim(WhiteDragonBreath,Dragonstone)
 UnarmedAnim(WhiteDragonBreath)
-MonsterAnim(WhiteDragonBreath)
+MonsterAnim(WhiteDragonClaw)
 WORD 0x0
 
 DumaAnim:
+SpecialAnim(DumaBeam,OcularBeam)
 MonsterAnim(DumaPhysical)
-DarkAnim(DumaRanged)
+DarkAnim(DumaOculus)
 UnarmedAnim(DumaPhysical)
 WORD 0x0
 

@@ -1012,18 +1012,26 @@ POP
 	#include "Necrodragon/Necrodragon_Installer.event"
   }
   ALIGN 4
+  //Nura, L95
+  Duma_BeamAnim:
+  {
+    #include "Duma/OcularBeam/duma_ob1 Installer.event"
+  }
+  Duma_MagicAnim:
+  {
+    #include "Duma/Magic/duma_mg1 Installer.event"
+  }
+  Duma_PhysicalAnim:
+  {
+    #include "Duma/Monster/duma_at1 Installer.event"
+  }
+  //7F4798 for BG image insertion point.
+  //TSA: 7F798C for whole, 7F7DC8 for headless, 7F81D0 for armless.
   
 PUSH
     ORG $C00000
-    BYTE $C1 //banim_number (CHANGE FOR FINAL REORG)
-
-    AnimTableEntry(0xC2) //will be duma
-    WORD 0 0 0 0 0 0 0 0
-    AnimTableEntry(0xC3) //will be duma
-    WORD 0 0 0 0 0 0 0 0
+    BYTE $C4 //banim_number (CHANGE FOR FINAL REORG)
     
-    AnimTableEntry(0xC4) //end
-    WORD 0 0 0 0 0 0 0 0
     AnimTableEntry(0xC5) //end
     WORD 0 0 0 0 0 0 0 0
     AnimTableEntry(0xC6) //end

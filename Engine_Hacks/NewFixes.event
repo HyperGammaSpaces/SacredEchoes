@@ -84,11 +84,12 @@ PUSH
 	//Fix Formation maybe being disabled
 	ORG $33686
 	SHORT $2200
-	//Allow forced units to be swapped position
+	/*//Allow forced units to be swapped position
 	ORG $33750
 	BYTE $00 $20 $00 $00
 	ORG $9543E
 	BYTE $00 $20 $00 $00
+    */
 	
 	//Plot-important cutscene units
 	ORG $84864 

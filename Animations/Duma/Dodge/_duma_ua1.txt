@@ -1,0 +1,80 @@
+#######################################################
+#
+#
+#When importing to FEEditorAdv delete # and after each line.
+#######################################################
+/// - Mode 1               #Melee Animation
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 3               #Melee Critical Animation
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 5               #Ranged Animation 
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 6               #Ranged Critical Animation
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 7               #Dodge Melee Attack
+1 p- Idle.png
+C02                              	#Start of dodge
+1 p- Idle.png
+C0E                              	#Start of dodging frames (should go after Idle frame and before dodging animation)
+4 p- dodge_001.png
+3 p- dodge_002.png
+3 p- dodge_003.png
+4 p- dodge_004.png
+6 p- dodge_005.png
+4 p- dodge_006.png
+3 p- dodge_007.png
+C01                              	#NOP
+6 p- dodge_008.png
+6 p- dodge_009.png
+4 p- dodge_010.png
+4 p- dodge_011.png
+4 p- dodge_012.png
+3 p- Idle.png
+C0D                              	#End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 8               #Dodge Ranged Attack
+1 p- Idle.png
+C02                              	#Start of dodge
+1 p- Idle.png
+C0E                              	#Start of dodging frames (should go after Idle frame and before dodging animation)
+4 p- dodge_001.png
+3 p- dodge_002.png
+3 p- dodge_003.png
+4 p- dodge_004.png
+6 p- dodge_005.png
+4 p- dodge_006.png
+3 p- dodge_007.png
+C01                              	#NOP
+6 p- dodge_008.png
+6 p- dodge_009.png
+4 p- dodge_010.png
+4 p- dodge_011.png
+4 p- dodge_012.png
+3 p- Idle.png
+C0D                              	#End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 9               #Equiped with Melee Weapon
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 10               #Idle motions?
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 11               #Equiped with Ranged weapon
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - Mode 12               #Attack Missed Animation
+1 p- Idle.png
+C01                                     #NOP
+~~~
+/// - End of animation

@@ -121,18 +121,25 @@
 		SHORT $BC01 $4700 $0
 		POIN HammerneStaff_RangeSetup|1
     DancerRingTargetSelect:
-		SHORT $B500 $1C0B
-		SHORT $4902 $4A03
-		BL($295A8)
-		SHORT $BC01 $4700
-		POIN DancerRingJump|1
-		WORD $87F //target select help text
-	DancerRingJump:
 		SHORT $B500 $1C22 $4902
-		BL($D18C4)
+		BL(SetupDancerRingTargetSelection)
 		SHORT $BC01 $4700 $0
 		POIN DancerRing_RangeSetup|1
-	
+    SetupDancerRingTargetSelection:
+        SHORT $B530 $1C15
+        BL($D18C4)
+		SHORT $480A $6800 $2101 $4249
+		BL($197E4)
+		SHORT $4808 $4909
+		BL($4FAA4)
+		SHORT $1C04 $1C28
+		BL($A240)
+		SHORT $1C01 $1C20
+		BL($35708)
+		SHORT $BC30 $BC01 $4700
+		ALIGN 4
+		WORD $202E4E0 $859D2F8 $8029551 $87F
+	PROTECT $262BC $262E0
 	/*
 	//Shouldn't have to touch these
 	#define New_Use(item) "ORG Usability_Table+4*(item-$4B); POIN $28A8C"

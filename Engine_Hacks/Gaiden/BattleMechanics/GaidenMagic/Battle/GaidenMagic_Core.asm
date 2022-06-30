@@ -1280,6 +1280,50 @@ GaidenMagicAI_CheckConditions:
 	.align
     .ltorg
     
+@hooks at 3FA68
+.global AIStaffCostCheck
+AIStaffCostCheck:
+    mov     r0, r4
+    ldr     r1, =GetItemAttributes
+    mov     lr, r1
+    .short  0xf800
+    mov     r1, #0x4 @staff bit
+    and     r0, r1
+    cmp     r0, #0x0
+    beq     GaidenStaffAI_Continue
+    mov     r0, r4
+    ldr     r1, =0x080176B8 @GetItemWRank
+    mov     lr, r1
+    .short  0xf800
+    cmp     r0, r6
+    blt     GaidenStaffAI_Continue
+        @now check for cost, and exit to 3FA80 if enough HP
+    
+    @check for spell cost
+        ldr     r0, =gActiveUnit
+        ldr     r0, [r0]
+        mov     r1, r4
+        bl      SpellCostGetter
+        cmp     r0, #0x0
+        beq     GaidenStaffAI_Continue
+        
+        ldr     r1, =gActiveUnit
+        ldr     r1, [r1]
+        ldrb    r1, [r1, #0x13] @current hp
+        cmp     r1, r0
+        bgt     GaidenStaffAI_Continue
+        
+            mov     r0, #0x0
+            ldr     r1, =0x0803FA80+1
+            bx      r1
+
+    GaidenStaffAI_Continue:
+        ldr     r0, =0x0803FAB4+1
+        bx      r0
+
+	.align
+    .ltorg
+    
     
 .global PostCombat_SpellClear
 PostCombat_SpellClear:

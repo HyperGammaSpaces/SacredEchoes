@@ -71,3 +71,10 @@ POIN $28130 //ShowUnitSMS
 
 #define EndUnitMMS(unitID) "SHORT $0D40 $0; POIN $790A4|1; SHORT $0D40 unitID; POIN ShowUnitSMSFromASMC+1"
 #define UpdateActionStructFromQueuedMovement "SHORT $0D40 $1; POIN HijackActionStruct+1"
+
+CountInRangeASMC:
+#incbin "CountInRange.dmp"
+
+#define CountClassInRange(classID, topleftX, topleftY, bottomrightX, bottomrightY) "SVAL 0x2 classID; SVAL 0x3 0xFF; SVAL 0x4 Coords(topleftX, topleftY); SVAL 0x5 Coords(bottomrightX, bottomrightY); SHORT $0D40 $0; POIN CountInRangeASMC|1"
+
+#define CountEnemiesInRange(topleftX, topleftY, bottomrightX, bottomrightY) "SVAL 0x2 0x0; SVAL 0x3 0x01; SVAL 0x4 Coords(topleftX, topleftY); SVAL 0x5 Coords(bottomrightX, bottomrightY); SHORT $0D40 $0; POIN CountInRangeASMC|1"
