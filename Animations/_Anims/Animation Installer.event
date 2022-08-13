@@ -1025,7 +1025,89 @@ POP
   {
     #include "Duma/Monster/duma_at1 Installer.event"
   }
+  ALIGN 4
+  Duma_Body_Img:
+  #incbin "Duma/Duma_BG_all.img.bin"
+  ALIGN 4
+  Duma_Body_TSA:
+  #incbin "Duma/Duma_BG_head.tsa.bin.compressed"
+  ALIGN 4
+  Duma_Body_Headless_TSA:
+  #incbin "Duma/Duma_BG_headless.tsa.bin.compressed"
+  ALIGN 4
+  Duma_Body_Intro_TSA:
+  #incbin "Duma/Duma_BG_head_intro.tsa.bin.compressed"
+  ALIGN 4
+  Duma_Body_Pal:
+  #incbin "Duma/Duma_BG.pal.bin"
+  
+  PUSH    
+    
+    //fix transparency tile
+    ORG $76774
+    WORD $60006000
+    
+    ORG $7F432C //stop battle platforms from fading out
+    PROC_SLEEP(0)
+    
+    //allow platform movement
+    ORG $5361E
+    SHORT $46C0 $46C0 $46C0 $46C0
+    //fix vertical fade in so platform gfx dont get overwritten
+    ORG $76648
+    SHORT $46C0
+    ORG $7665C
+    SHORT $2120
+    ORG $7671C
+    SHORT $2120
+    
+    //7669C some hardcoded ocular beam check
+    ORG $766AC
+    BYTE (DumaBeam-1)
+    ORG $766B6
+    BYTE (DumaPhysical-1)
+    
+    //TODO: stop camera offsets
+    //7F44B0 dodge anim proc
+    ORG $77190
+    SHORT $46C0 $46C0 $46C0 $46C0 $46C0
+    //are the attacks part of the spell anims?
+
+    //TODO: death anim
+    //proc 7F4578 -> 777E0
+        //starts 7F45A0 to flash white
+    //change this to use the custom anim
+    
+    //7773C loads the first dying DK bg
+    //proc 801810 -> 77DC8
+    
+    ORG $7677C
+    POIN Duma_Body_Img
+    ORG $76784 //full
+    POIN Duma_Body_TSA
+    ORG $77A94 //headless
+    POIN Duma_Body_Headless_TSA
+    ORG $702F8
+    POIN Duma_Body_Pal
+    ORG $76794
+    POIN Duma_Body_Pal
+    ORG $77388
+    POIN Duma_Body_Pal
+    
+    ORG $7F43EC
+    POIN Duma_Body_Headless_TSA //headless
+    POIN Duma_Body_Headless_TSA 
+    POIN Duma_Body_Headless_TSA //headless
+    
+
+  POP
+  
+  //02020048 ???? - at +0xC there's a pointer to AIStruct
+  //0x1 being here means necrodragon, 0x2 being here means DK. 0x3 crashes the game
+  
+  //5B97AC death anim??
   //7F4798 for BG image insertion point.
+  
   //TSA: 7F798C for whole, 7F7DC8 for headless, 7F81D0 for armless.
   
 PUSH

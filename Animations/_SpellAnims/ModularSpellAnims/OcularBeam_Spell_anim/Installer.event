@@ -1,0 +1,611 @@
+OcularBeam_Main:
+{
+	#include "Modular_OcularBeam.lyn.event"
+
+	PUSH
+
+		//Add to spell effect pointer table at 5D4E60
+		setCustomSpell(0x40, StartSpellAnimForOcularBeam)
+		
+		
+		//using lyn to get around compiler issues :)
+		ORG BGProcPointer_34
+			POIN OcularBeam_BG1Proc
+			
+		ORG BGFrameData_34
+			POIN OcularBeamBG1FrameData
+			
+		ORG BGTSAData_34 //two pointers
+			POIN OcularBeam_BG1_TSAPointer_Melee //melee
+			POIN OcularBeam_BG1_TSAPointer_Melee //ranged
+			
+		ORG BGPalette_34
+			POIN OcularBeam_Palette_Pointer
+            POIN OcularBeam_Palette
+			
+		ORG BGImage_34
+			POIN OcularBeam_BG1_Img
+			
+			
+			
+		ORG BGProcPointer_51
+			POIN OcularBeam_BG2Proc
+			
+		ORG BGFrameData_51
+			POIN OcularBeamBG2FrameData
+			
+		ORG BGTSAData_51 //two pointers
+			POIN OcularBeam_BG2_TSAPointer_Melee //melee
+			POIN OcularBeam_BG2_TSAPointer_Melee //ranged
+			
+		ORG BGPalette_51
+			POIN OcularBeam_Palette_Pointer
+            POIN OcularBeam_Palette
+			
+		ORG BGImage_51
+			POIN OcularBeam_BG2_Img
+			
+			
+			
+		ORG BGProcPointer_68
+			POIN OcularBeam_BG3Proc
+			
+		ORG BGFrameData_68
+			POIN OcularBeamBG3FrameData
+			
+		ORG BGTSAData_68 //two pointers
+			POIN OcularBeam_BG3_TSAPointer_Melee //melee
+			POIN OcularBeam_BG3_TSAPointer_Melee //ranged
+			
+		ORG BGPalette_68
+			POIN OcularBeam_Palette_Pointer
+            POIN OcularBeam_Palette
+			
+		ORG BGImage_68
+			POIN OcularBeam_BG3_Img
+			
+			
+			
+		ORG BGProcPointer_85
+			POIN OcularBeam_BG4Proc
+			
+		ORG BGFrameData_85
+			POIN OcularBeamBG4FrameData
+			
+		ORG BGTSAData_85 //two pointers
+			POIN OcularBeam_BG4_TSAPointer_Melee //melee
+			POIN OcularBeam_BG4_TSAPointer_Melee //ranged
+			
+		ORG BGPalette_85
+			POIN OcularBeam_Palette_Pointer
+            POIN OcularBeam_Palette
+			
+		ORG BGImage_85
+			POIN OcularBeam_BG4_Img
+			
+			
+			
+		ORG BGProcPointer_102
+			POIN OcularBeam_BG5Proc
+			
+		ORG BGFrameData_102
+			POIN OcularBeamBG5FrameData
+			
+		ORG BGTSAData_102 //two pointers
+			POIN OcularBeam_BG5_TSAPointer_Melee //melee
+			POIN OcularBeam_BG5_TSAPointer_Melee //ranged
+			
+		ORG BGPalette_102
+			POIN OcularBeam_Palette_Pointer
+            POIN OcularBeam_Palette
+			
+		ORG BGImage_102
+			POIN OcularBeam_BG5_Img
+			
+	POP
+
+
+	ALIGN 4
+		OcularBeam_MainProcLoop:
+		SHORT $01 $00; WORD $080DE9D0 //set name pointer
+		SHORT $03 $00; POIN OcularBeamAnim_Main+1
+		WORD 0 0
+		
+		OcularBeam_BG1Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN OcularBeamAnim_BG1_Loop+1
+		WORD 0 0
+		
+		OcularBeam_BG2Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN OcularBeamAnim_BG2_Loop+1
+		WORD 0 0
+		
+		OcularBeam_BG3Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN OcularBeamAnim_BG3_Loop+1
+		WORD 0 0
+		
+		OcularBeam_BG4Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN OcularBeamAnim_BG4_Loop+1
+		WORD 0 0
+		
+		OcularBeam_BG5Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN OcularBeamAnim_BG5_Loop+1
+		WORD 0 0
+		
+}
+
+ALIGN 4
+OcularBeamBG1FrameData:
+SpellFrameData($00, 4)
+SpellFrameData($01, 4)
+SpellFrameData($02, 4)
+SpellFrameData($03, 4)
+SpellFrameData($04, 4)
+SpellFrameData($05, 4)
+SpellFrameData($06, 4)
+SpellFrameData($07, 4)
+SpellFrameData($08, 4)
+SpellFrameData($09, 4)
+SpellFrameData($0A, 4)
+SpellFrameData($0B, 4)
+SpellFrameData($0C, 4)
+SpellFrameData($0D, 4)
+SpellFrameData($0E, 4)
+SpellFrameData($0F, 4)
+SpellFrameData($10, 4)
+SpellFrameData($11, 4)
+SpellFrameData($12, 4)
+SpellFrameData($13, 4)
+SpellFrameDataTerm
+
+ALIGN 4
+OcularBeam_BG1_TSAPointer_Melee:
+POIN OcularBeam_BG1_TSA1
+POIN OcularBeam_BG1_TSA2
+POIN OcularBeam_BG1_TSA3
+POIN OcularBeam_BG1_TSA4
+POIN OcularBeam_BG1_TSA5
+POIN OcularBeam_BG1_TSA6
+POIN OcularBeam_BG1_TSA7
+POIN OcularBeam_BG1_TSA8
+POIN OcularBeam_BG1_TSA9
+POIN OcularBeam_BG1_TSA10
+POIN OcularBeam_BG1_TSA11
+POIN OcularBeam_BG1_TSA12
+POIN OcularBeam_BG1_TSA13
+POIN OcularBeam_BG1_TSA14
+POIN OcularBeam_BG1_TSA15
+POIN OcularBeam_BG1_TSA16
+POIN OcularBeam_BG1_TSA17
+POIN OcularBeam_BG1_TSA18
+POIN OcularBeam_BG1_TSA19
+POIN OcularBeam_BG1_TSA20
+
+/*
+ALIGN 4
+OcularBeam_BG1_TSAPointer_Range:
+POIN OcularBeam_BG1_TSA1_Range
+POIN OcularBeam_BG1_TSA2_Range
+POIN OcularBeam_BG1_TSA3_Range
+POIN OcularBeam_BG1_TSA4_Range
+POIN OcularBeam_BG1_TSA5_Range
+POIN OcularBeam_BG1_TSA6_Range
+POIN OcularBeam_BG1_TSA7_Range
+POIN OcularBeam_BG1_TSA8_Range
+POIN OcularBeam_BG1_TSA9_Range
+POIN OcularBeam_BG1_TSA10_Range
+POIN OcularBeam_BG1_TSA11_Range
+POIN OcularBeam_BG1_TSA12_Range
+POIN OcularBeam_BG1_TSA13_Range
+POIN OcularBeam_BG1_TSA14_Range
+POIN OcularBeam_BG1_TSA15_Range
+POIN OcularBeam_BG1_TSA16_Range
+POIN OcularBeam_BG1_TSA17_Range
+POIN OcularBeam_BG1_TSA18_Range
+POIN OcularBeam_BG1_TSA19_Range
+POIN OcularBeam_BG1_TSA20_Range
+*/
+
+ALIGN 4
+OcularBeamBG2FrameData:
+SpellFrameData($00, 4) //starts at frame 21
+SpellFrameData($01, 4)
+SpellFrameData($02, 2)
+SpellFrameData($03, 2)
+SpellFrameData($04, 6)
+SpellFrameData($05, 3)
+SpellFrameData($06, 3)
+SpellFrameData($07, 3)
+SpellFrameData($08, 3)
+SpellFrameData($09, 3)
+SpellFrameData($0A, 3)
+SpellFrameData($0B, 4)
+SpellFrameData($0C, 4)
+SpellFrameData($0D, 4)
+SpellFrameData($0E, 4)
+SpellFrameData($0F, 4)
+SpellFrameData($10, 4) //37 white flash
+SpellFrameData($11, 2) //frame 38
+SpellFrameDataTerm
+
+ALIGN 4
+OcularBeam_BG2_TSAPointer_Melee:
+POIN OcularBeam_BG2_TSA1
+POIN OcularBeam_BG2_TSA2
+POIN OcularBeam_BG2_TSA3
+POIN OcularBeam_BG2_TSA4
+POIN OcularBeam_BG2_TSA5
+POIN OcularBeam_BG2_TSA6
+POIN OcularBeam_BG2_TSA7
+POIN OcularBeam_BG2_TSA8
+POIN OcularBeam_BG2_TSA9
+POIN OcularBeam_BG2_TSA10
+POIN OcularBeam_BG2_TSA11
+POIN OcularBeam_BG2_TSA12
+POIN OcularBeam_BG2_TSA13
+POIN OcularBeam_BG2_TSA14
+POIN OcularBeam_BG2_TSA15
+POIN OcularBeam_BG2_TSA16
+POIN OcularBeam_BG2_TSA17
+POIN OcularBeam_BG2_TSA18
+
+/*
+ALIGN 4
+OcularBeam_BG2_TSAPointer_Range:
+POIN OcularBeam_BG2_TSA1_Range
+POIN OcularBeam_BG2_TSA2_Range
+POIN OcularBeam_BG2_TSA3_Range
+POIN OcularBeam_BG2_TSA4_Range
+POIN OcularBeam_BG2_TSA5_Range
+POIN OcularBeam_BG2_TSA6_Range
+POIN OcularBeam_BG2_TSA7_Range
+POIN OcularBeam_BG2_TSA8_Range
+POIN OcularBeam_BG2_TSA9_Range
+POIN OcularBeam_BG2_TSA10_Range
+POIN OcularBeam_BG2_TSA11_Range
+POIN OcularBeam_BG2_TSA12_Range
+POIN OcularBeam_BG2_TSA13_Range
+POIN OcularBeam_BG2_TSA14_Range
+POIN OcularBeam_BG2_TSA15_Range
+POIN OcularBeam_BG2_TSA16_Range
+POIN OcularBeam_BG2_TSA17_Range
+POIN OcularBeam_BG2_TSA18_Range
+*/
+
+ALIGN 4
+OcularBeamBG3FrameData:
+SpellFrameData($00, 3) //starts at frame 39
+SpellFrameData($01, 3)
+SpellFrameData($02, 3)
+SpellFrameDataTerm
+
+ALIGN 4
+OcularBeam_BG3_TSAPointer_Melee:
+POIN OcularBeam_BG3_TSA1
+POIN OcularBeam_BG3_TSA2
+POIN OcularBeam_BG3_TSA3
+
+/*
+ALIGN 4
+OcularBeam_BG23_TSAPointer_Range:
+POIN OcularBeam_BG3_TSA1_Range
+POIN OcularBeam_BG3_TSA2_Range
+POIN OcularBeam_BG3_TSA3_Range
+*/
+
+ALIGN 4
+OcularBeamBG4FrameData:
+SpellFrameData($00, 3) //starts at frame 43
+SpellFrameData($01, 3)
+SpellFrameData($02, 3)
+SpellFrameData($03, 3)
+SpellFrameData($04, 3)
+SpellFrameData($05, 3)
+SpellFrameData($06, 3)
+SpellFrameData($07, 3)
+SpellFrameData($08, 3)
+SpellFrameData($09, 3)
+SpellFrameDataTerm
+
+ALIGN 4
+OcularBeam_BG4_TSAPointer_Melee:
+POIN OcularBeam_BG4_TSA1
+POIN OcularBeam_BG4_TSA2
+POIN OcularBeam_BG4_TSA3
+POIN OcularBeam_BG4_TSA4
+POIN OcularBeam_BG4_TSA5
+POIN OcularBeam_BG4_TSA6
+POIN OcularBeam_BG4_TSA7
+POIN OcularBeam_BG4_TSA8
+POIN OcularBeam_BG4_TSA9
+POIN OcularBeam_BG4_TSA10
+
+/*
+ALIGN 4
+OcularBeam_BG4_TSAPointer_Range:
+POIN OcularBeam_BG4_TSA1_Range
+POIN OcularBeam_BG4_TSA2_Range
+POIN OcularBeam_BG4_TSA3_Range
+POIN OcularBeam_BG4_TSA4_Range
+POIN OcularBeam_BG4_TSA5_Range
+POIN OcularBeam_BG4_TSA6_Range
+POIN OcularBeam_BG4_TSA7_Range
+POIN OcularBeam_BG4_TSA8_Range
+POIN OcularBeam_BG4_TSA9_Range
+POIN OcularBeam_BG4_TSA10_Range
+*/
+
+ALIGN 4
+OcularBeamBG5FrameData:
+SpellFrameData($00, 3) //starts at frame 52
+SpellFrameData($01, 3)
+SpellFrameData($02, 3)
+SpellFrameData($03, 4)
+SpellFrameData($04, 4)
+SpellFrameData($05, 3)
+SpellFrameData($06, 3)
+SpellFrameData($07, 3)
+SpellFrameData($08, 3)
+SpellFrameData($09, 3)
+SpellFrameDataTerm
+
+ALIGN 4
+OcularBeam_BG5_TSAPointer_Melee:
+POIN OcularBeam_BG5_TSA1
+POIN OcularBeam_BG5_TSA2
+POIN OcularBeam_BG5_TSA3
+POIN OcularBeam_BG5_TSA4
+POIN OcularBeam_BG5_TSA5
+POIN OcularBeam_BG5_TSA6
+POIN OcularBeam_BG5_TSA7
+POIN OcularBeam_BG5_TSA8
+POIN OcularBeam_BG5_TSA9
+POIN OcularBeam_BG5_TSA10
+
+/*
+ALIGN 4
+OcularBeam_BG5_TSAPointer_Range:
+POIN OcularBeam_BG5_TSA1_Range
+POIN OcularBeam_BG5_TSA2_Range
+POIN OcularBeam_BG5_TSA3_Range
+POIN OcularBeam_BG5_TSA4_Range
+POIN OcularBeam_BG5_TSA5_Range
+POIN OcularBeam_BG5_TSA6_Range
+POIN OcularBeam_BG5_TSA7_Range
+POIN OcularBeam_BG5_TSA8_Range
+POIN OcularBeam_BG5_TSA9_Range
+POIN OcularBeam_BG5_TSA10_Range
+*/
+
+ALIGN 4
+OcularBeam_Palette_Pointer:
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+POIN OcularBeam_Palette
+
+ALIGN 4
+OcularBeam_Palette:
+#incbin "img/Ocular_Beam.pal.bin"
+
+ALIGN 4
+OcularBeam_BG1_Img:
+#incbin "img/Ocular_Beam_1.img.bin"
+ALIGN 4
+OcularBeam_BG2_Img:
+#incbin "img/Ocular_Beam_2.img.bin"
+ALIGN 4
+OcularBeam_BG3_Img:
+#incbin "img/Ocular_Beam_3.img.bin"
+ALIGN 4
+OcularBeam_BG4_Img:
+#incbin "img/Ocular_Beam_4.img.bin"
+ALIGN 4
+OcularBeam_BG5_Img:
+#incbin "img/Ocular_Beam_5.img.bin"
+ALIGN 4
+
+ALIGN 4
+OcularBeam_BG1_TSA1:
+#incbin "tsa/OB_melee_1_1.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA2:
+#incbin "tsa/OB_melee_1_2.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA3:
+#incbin "tsa/OB_melee_1_3.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA4:
+#incbin "tsa/OB_melee_1_4.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA5:
+#incbin "tsa/OB_melee_1_5.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA6:
+#incbin "tsa/OB_melee_1_6.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA7:
+#incbin "tsa/OB_melee_1_7.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA8:
+#incbin "tsa/OB_melee_1_8.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA9:
+#incbin "tsa/OB_melee_1_9.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA10:
+#incbin "tsa/OB_melee_1_10.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA11:
+#incbin "tsa/OB_melee_1_11.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA12:
+#incbin "tsa/OB_melee_1_12.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA13:
+#incbin "tsa/OB_melee_1_13.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA14:
+#incbin "tsa/OB_melee_1_14.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA15:
+#incbin "tsa/OB_melee_1_15.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA16:
+#incbin "tsa/OB_melee_1_16.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA17:
+#incbin "tsa/OB_melee_1_17.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA18:
+#incbin "tsa/OB_melee_1_18.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA19:
+#incbin "tsa/OB_melee_1_19.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG1_TSA20:
+#incbin "tsa/OB_melee_1_20.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA1:
+#incbin "tsa/OB_melee_2_1.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA2:
+#incbin "tsa/OB_melee_2_2.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA3:
+#incbin "tsa/OB_melee_2_3.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA4:
+#incbin "tsa/OB_melee_2_4.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA5:
+#incbin "tsa/OB_melee_2_5.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA6:
+#incbin "tsa/OB_melee_2_6.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA7:
+#incbin "tsa/OB_melee_2_7.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA8:
+#incbin "tsa/OB_melee_2_8.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA9:
+#incbin "tsa/OB_melee_2_9.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA10:
+#incbin "tsa/OB_melee_2_10.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA11:
+#incbin "tsa/OB_melee_2_11.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA12:
+#incbin "tsa/OB_melee_2_12.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA13:
+#incbin "tsa/OB_melee_2_13.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA14:
+#incbin "tsa/OB_melee_2_14.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA15:
+#incbin "tsa/OB_melee_2_15.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA16:
+#incbin "tsa/OB_melee_2_16.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA17:
+#incbin "tsa/OB_melee_2_17.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG2_TSA18:
+#incbin "tsa/OB_melee_2_18.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG3_TSA1:
+#incbin "tsa/OB_melee_3_1.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG3_TSA2:
+#incbin "tsa/OB_melee_3_2.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG3_TSA3:
+#incbin "tsa/OB_melee_3_3.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG4_TSA1:
+#incbin "tsa/OB_melee_4_1.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG4_TSA2:
+#incbin "tsa/OB_melee_4_2.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG4_TSA3:
+#incbin "tsa/OB_melee_4_3.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG4_TSA4:
+#incbin "tsa/OB_melee_4_4.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG4_TSA5:
+#incbin "tsa/OB_melee_4_5.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG4_TSA6:
+#incbin "tsa/OB_melee_4_6.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG4_TSA7:
+#incbin "tsa/OB_melee_4_7.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG4_TSA8:
+#incbin "tsa/OB_melee_4_8.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG4_TSA9:
+#incbin "tsa/OB_melee_4_9.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG4_TSA10:
+#incbin "tsa/OB_melee_4_10.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG5_TSA1:
+#incbin "tsa/OB_melee_5_1.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG5_TSA2:
+#incbin "tsa/OB_melee_5_2.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG5_TSA3:
+#incbin "tsa/OB_melee_5_3.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG5_TSA4:
+#incbin "tsa/OB_melee_5_4.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG5_TSA5:
+#incbin "tsa/OB_melee_5_5.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG5_TSA6:
+#incbin "tsa/OB_melee_5_6.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG5_TSA7:
+#incbin "tsa/OB_melee_5_7.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG5_TSA8:
+#incbin "tsa/OB_melee_5_8.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG5_TSA9:
+#incbin "tsa/OB_melee_5_9.tsa.bin.compressed"
+ALIGN 4
+OcularBeam_BG5_TSA10:
+#incbin "tsa/OB_melee_5_10.tsa.bin.compressed"
