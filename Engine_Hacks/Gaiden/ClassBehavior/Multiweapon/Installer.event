@@ -7,6 +7,30 @@
 #define AttackingWeapon_Entry(optionNumber) "WORD $080D7CB8; SHORT 0; SHORT 0; BYTE 0 optionNumber 0 0; POIN ($22CA4|1); POIN (AttackingWeapon_OnDraw|1); POIN (AttackingWeapon_OnSelect|1); WORD 0; POIN ($22D84|1); POIN ($22DD8|1)"
 
 PUSH
+    ORG $237F8
+    replaceWithHack(EquipCommand_OnSelect)
+    
+    ORG $59C69C
+    POIN EquipItem_OnDraw|1
+    ORG $59C6C0
+    POIN EquipItem_OnDraw|1
+    ORG $59C6E4
+    POIN EquipItem_OnDraw|1
+    ORG $59C708
+    POIN EquipItem_OnDraw|1
+    ORG $59C72C
+    POIN EquipItem_OnDraw|1
+    
+    ORG $59C84C
+    POIN EquipItem_OnDraw|1
+    ORG $59C860
+    POIN EquipItem_OnDraw|1
+    ORG $59C884
+    POIN EquipItem_OnDraw|1
+    ORG $59C8A8
+    POIN EquipItem_OnDraw|1
+    ORG $59C8CC
+    POIN EquipItem_OnDraw|1
 
     //we're just going to overwrite vanilla since it's the same size
     ORG $59D1CC

@@ -28,15 +28,11 @@ OpeningTurn_MogallEvent:
     CameraCursor(JedahFinal)
     Text(Ch5_3_OpeningText_2)
     STAL 20
-    SVAL 0x2 JedahFinal
-	CAMERA_CENTERED 0xFFFD
-	CHECK_COORDS 0xFFFD
-	SADD 0xCB
-	WARPIN_SB
-	STAL2 0xA
+	CAMERA_CENTERED JedahFinal
+	WARPIN [22, 13]
     LOAD1 0x1 MogallSpamWave
-    ENUN
     ENDWARP
+    ENUN
 	STAL 20
     CALL EnableUnitSelectEvents
     NoFade
@@ -182,11 +178,21 @@ Ch5F3_LocationBasedEvents:
 
 Ch5F3_MiscBasedEvents:
 	CauseGameOverIfLordDies
+    AFEV 0x9 DumaRefillEvent 0x85
 	DefeatBoss(Ch5F3_EndingScene)
 	MournQuoteAFEVS
 	AFEV
     
 CleanUpJedahMogalls:
+    ENDA
+    
+DumaRefillEvent:
+    CameraCursor(Duma)
+    RESUMM Duma
+    STAL 20
+    CameraCursor(Alm)
+    MapText(Duma_Refill)
+    NoFade
     ENDA
 
 Ch5F3_Dunno:
@@ -280,19 +286,20 @@ EnemyUnits:
     UNIT
 
 MogallSpamWave:
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [24,15] 0x00 0x00 0x1 REDA24R15 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [18,15] 0x00 0x00 0x1 REDA18R15 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [20,17] 0x00 0x00 0x1 REDA20R17 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [17,18] 0x00 0x00 0x1 REDA17R18 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [15,18] 0x00 0x00 0x1 REDA15R18 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,19] 0x00 0x00 0x1 REDA22R19 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,21] 0x00 0x00 0x1 REDA22R21 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [20,21] 0x00 0x00 0x1 REDA20R21 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [21,22] 0x00 0x00 0x1 REDA21R22 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [19,26] 0x00 0x00 0x1 REDA19R26 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA24R15 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA18R15 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA20R17 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA17R18 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA15R18 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA22R19 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA22R21 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA20R21 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA21R22 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA19R26 [Tackle_Mogall] AttackInRangeAI
 	UNIT
 
 Ch5F3_BeginningScene:
+    MUSC SongID_Env_Lava
     #ifndef __DEBUG__
 	SetBackground(0x1D)
 	Text(Celica_EndDemo)
@@ -353,6 +360,8 @@ Ch5F3_BeginningScene:
     FADI 2
     //TODO: make celica party take up the last 10 slots
     CLEA 0x0
+    SVAL 0x1 0x04
+    SET_HP JedahFinal
     LOAD3 0x0 PlayerPlacement 
 	ENUN
     GotoPrepScreen
@@ -386,6 +395,8 @@ Ch5F3_EndingScene:
     
 EpilogueEvents:
     EVBIT_MODIFY 0x4
+    ENUT gEnableLordSwitch
+    ENUT gPostgameEnabled
     SVAL 0xB Coords(15,1)
     LOMA 0x7 //zofia castle
     LOAD2 0x0 CutsceneUnits_Epilogue_Alm
@@ -409,7 +420,7 @@ EpilogueEvents:
     FADI 3
     EVBIT_MODIFY 0x0
     ASMC 0x30185 //clears map tilesets?
-    MUSC SongID_TitleTheme
+    MUSC SongID_Epilogue
     ASMC 0xC4879 //roll credits
     STAL 90
     CALL 0xA0036C //character endings
@@ -425,7 +436,11 @@ EpilogueEvents:
     TEXTCLEAR
     EVBIT_F 0x2
     */
-    ASMC 0xB8175 //turn counts display
+    
+    /*
+    //turn counts display
+    ASMC 0xB8175
     STAL 90
+    */
     MNTS 0x0 //return to title screen
     ENDA

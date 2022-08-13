@@ -10,7 +10,7 @@
 .equ MemorySlot4, 0x030004C8
 
 .global GiveExperienceASMC
-.global GiveExperienceASMC_Usability
+.global CheckCanGiveExperienceASMC
 .global GiveMaxHPASMC
 .global GiveStrengthASMC
 .global GiveSkillASMC
@@ -69,28 +69,8 @@ ExitGiveExp:
 	pop  {r1}
 	bx   r1
 
-@r0=parent proc r1=amount
-@return: bool success
-
-GiveExpToActiveUnitWrapper:
-	push {r4,r5,lr}
-	mov  r4, r0
-	mov  r0, r1
-	bl   GiveExpToActiveUnit
-	mov  r5, r0
-	ldr  r0, =0x0859BAC4 		@Procs BattleAnimSimpleLock
-	mov  r1, r4
-	blh  0x08002CE0   			@NewBlocking6C
-	mov  r0, r5
-	pop  {r4,r5}
-	pop  {r1}
-	bx   r1
-
-.align
-.ltorg
-
 BeginMapAnimExp:
-	push {r4, lr}
+	push {r4-r5, lr}
 	ldr  r1, =0x0203E1F0		@ gMapAnimStruct
 	mov  r12, r1
 	add  r1, #0x5F				@ unknown 1
@@ -114,11 +94,54 @@ BeginMapAnimExp:
 	ldr  r2, [r2]				@ battle buffer
 	blh  0x0807b900 			@ SetupMapBattleAnim
 	ldr  r0, =MapAnimGetExp
-	mov  r1, #0x3
+	mov  r1, r5
 	blh  0x08002CE0 			@ Proc_Start_Blocking
-	pop  {r4}
+	pop  {r4-r5}
 	pop  {r0}
 	bx   r0
+
+CheckCanGiveExperienceASMC:
+    push {r4-r5,r14}
+	mov  r5, r0
+	bl   GetCharacter
+	cmp  r0, #0
+	beq  CanGiveExp_False
+	
+	mov  r4, r0
+	mov  r0, #0xB
+	ldsb r0, [r4, r0]
+	mov  r1, #0xC0					@ allegiance check
+	and  r0, r1
+	cmp  r0, #0x0
+	bne  CanGiveExp_False
+		mov  r0, r4
+		blh  0x0802B9F4				@ CanUnitNotLevelUp
+		lsl  r0, r0, #0x18
+		cmp  r0, #0x0
+		beq  CanGiveExp_False
+			ldr  r0, =0x0202BCF0 	@ gChapterData
+			ldrb r1, [r0, #0x14] 
+			mov  r0, #0x80 			@ link arena check
+			and  r0, r1
+			cmp  r0, #0x0
+			bne  CanGiveExp_False
+                ldrb r0, [r4, #0x9]
+                cmp  r0, #0x64
+                bgt  CanGiveExp_False
+                mov  r0, #1
+                b    CanGiveExp_Result
+            
+    CanGiveExp_False:
+        mov  r0, #0
+    CanGiveExp_Result:
+		ldr  r1, =MemorySlotC
+		str  r0, [r1]
+		
+CheckCanGiveExp_End:	
+	pop  {r4-r5}
+	pop  {r0}
+	bx   r0
+
 
 GiveExperienceASMC:
 	push {r4,r5,r14}
@@ -140,6 +163,7 @@ GiveExperienceASMC:
     cmp  r0, #0
     beq  GiveExp_ReturnFalse
         blh  0x080790a4 @ClearMOVEUNITs
+        mov  r0, r5
         bl   BeginMapAnimExp
 		ldr  r1, =MemorySlotC
 		str  r0, [r1]

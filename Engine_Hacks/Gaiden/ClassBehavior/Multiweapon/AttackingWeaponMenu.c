@@ -27,6 +27,23 @@ int MultiweaponCheck(Unit* unit, int currentItem) {
     return (eligibleWeapons > 1) ? TRUE : FALSE;
 }
 
+int MultiweaponCheck_Equip(Unit* unit, int currentItem) {
+    int eligibleWeapons = 0;
+    if ( IsWeaponEligible(currentItem) && ( GetItemAttributes(currentItem) & IA_WEAPON ) )
+    {
+        u8 weaponBits = GetClassMultiweaponBitfield(unit->pClassData->number);
+        if ( weaponBits != MULTIWEAP_NONE )
+        {
+            for (unsigned i = 0; i < 8; ++i)
+                if ( weaponBits & (1 << i) ) 
+                {
+                    if ( CanUnitUseWeapon(unit,Multiweapon_BaseWeaponsList[i]) ) { eligibleWeapons++; }
+                }
+        }
+    }
+    return (eligibleWeapons > 1) ? TRUE : FALSE;
+}
+
 void DrawMultiweaponMenuLine(struct TextHandle* text, int item, u16* mapOut) {
     Text_SetParameters(text, 0, TEXT_COLOR_BLUE);
     Text_DrawString(text, GetItemName(item));
@@ -42,7 +59,7 @@ void DrawMultiweaponMenuLine(struct TextHandle* text, int item, u16* mapOut) {
     DrawIcon(mapOut + 10, 0xAF, 0x4000);
 }
 
-int AttackingWeapon_OnDraw(MenuProc* menu, MenuCommandProc* menuCommand) {
+int AttackingWeapon_OnDraw(MenuProc* menu, MenuItemProc* menuCommand) {
     int item = gActiveUnit->items[menuCommand->commandDefinitionIndex];
     if ( MultiweaponCheck(gActiveUnit,item) ) 
     {
@@ -59,32 +76,80 @@ int AttackingWeapon_OnDraw(MenuProc* menu, MenuCommandProc* menuCommand) {
     return 0;
 }
 
-int AttackingWeapon_OnSelect(MenuProc* menu, MenuCommandProc* menuCommand) {
-    EquipUnitItemSlot(gActiveUnit,menuCommand->commandDefinitionIndex);
-    gActionData.itemSlotIndex = 0;
+u8 AttackingWeapon_OnSelect(MenuProc* menu, MenuItemProc* menuCommand) {
+    int index = menuCommand->commandDefinitionIndex;
     
-    int item = gActiveUnit->items[0];
+    gActionData.itemSlotIndex = index;
+    
+    int item = gActiveUnit->items[index];
+    EquipUnitItemSlot(gActiveUnit,index);
     
     if ( MultiweaponCheck(gActiveUnit,item) )
     {
         //Open the Multiweapon menu
         //reference 0x08023428
-        MenuGeometry geometry = { menuCommand->xDrawTile+9, menuCommand->yDrawTile-1, 7, 0};
+        MenuRect rect = { menuCommand->xDrawTile+9, menuCommand->yDrawTile-1, 7, 0};
         
         //idk what this does, copies tilemap?
-        PrepareSubmenuGraphics(geometry.x, geometry.y);
+        PrepareSubmenuGraphics(rect.x, rect.y);
         
         //spawn the menu at an offset relative to the currently selected option
-        StartMenuAt(&Menu_SelectWeaponType, geometry, (Proc*) menu);
+        StartMenuAt(&Menu_SelectWeaponType, rect, (Proc*) menu);
         //newMenu->parent = menu;
-        return ME_PLAY_BEEP;
+        return MENU_ACT_SND6A;
     }
     else 
     {
         //Vanilla $22CF0
+        gActionData.itemSlotIndex = 0;
         ClearBG0BG1();
         MakeTargetListForWeapon(gActiveUnit, item);
         StartTargetSelection(&gSelect_Attack);
-        return ME_DISABLE | ME_END | ME_PLAY_BEEP | ME_END_FACE0;
+        return MENU_ACT_SKIPCURSOR | MENU_ACT_END | MENU_ACT_SND6A | MENU_ACT_ENDFACE;
+    }
+}
+
+int EquipItem_OnDraw(MenuProc* menu, MenuItemProc* menuCommand) {
+    int item = gActiveUnit->items[menuCommand->commandDefinitionIndex];
+    if ( MultiweaponCheck_Equip(gActiveUnit,item) ) 
+    {
+        //custom draw, put an icon indicating that you can switch weapons.
+        DrawMultiweaponMenuLine(&menuCommand->text,item,&gBg0MapBuffer[menuCommand->yDrawTile * 32 + menuCommand->xDrawTile]);
+    }
+    else 
+    {
+        //vanilla draw
+        int canUse = CanUnitUseWeapon(gActiveUnit, item);
+        DrawItemMenuLine(&menuCommand->text,item,canUse,&gBg0MapBuffer[menuCommand->yDrawTile * 32 + menuCommand->xDrawTile]);
+    }
+    EnableBgSyncByMask(1);
+    return 0;
+}
+
+u8 EquipCommand_OnSelect(MenuProc* menu, MenuItemProc* menuCommand) {
+    int index = gActionData.itemSlotIndex;
+    
+    int item = gActiveUnit->items[index];
+    EquipUnitItemSlot(gActiveUnit,index);
+    
+    if ( MultiweaponCheck_Equip(gActiveUnit,item) )
+    {
+        //Open the Multiweapon menu
+        //reference 0x08023428
+        MenuRect rect = { menuCommand->xDrawTile-1, menuCommand->yDrawTile-1, 7, 0};
+        
+        //idk what this does, copies tilemap?
+        PrepareSubmenuGraphics(rect.x, rect.y);
+        
+        //spawn the menu at an offset relative to the currently selected option
+        StartMenuAt(&Menu_SelectWeaponType_Equip, rect, (Proc*) menu);
+        //newMenu->parent = menu;
+        return MENU_ACT_SND6A;
+    }
+    else 
+    {
+        //Vanilla $23F78
+        RedrawItemMenu_Equip(menu);
+        return MENU_ACT_SKIPCURSOR;
     }
 }

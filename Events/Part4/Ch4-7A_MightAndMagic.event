@@ -123,14 +123,13 @@ VillageEventRight:
         SMOV r3 Ch4A_7_VillageRight
         CALL $9EE310
         CALL $591F40
-        SMOV 0x3 Elixir
-        GIVEITEMTO 0xFFFF
         MUNO
         ENUF 0xB
         GOTO 0x202
         
     LABEL 0x201
-        MUSS SongID_Env_WindBirds
+        MUSC SongID_Env_WindBirds
+        FADI 16
         SetBackground(0x49, 16)
         TEXTMODE 1
         TEXTSHOW Ch4A_7_VillageRight_Alm
@@ -145,11 +144,13 @@ VillageEventRight:
         FADI 2
         CLEAN
         CALL $591F40
+        EVBIT_MODIFY 0x1
         MUSCMID SongID_Silence
         SMOV 0x3 SpeedRing
         GIVEITEMTO 0xFFFF
-        MURE 0x05
+        MUSC SongID_WhatLiesAtTheEnd
         TILECHANGE 0x05
+        EVBIT_MODIFY 0x0
         STAL 20
     LABEL 0x202
     EVBIT_T 0x7

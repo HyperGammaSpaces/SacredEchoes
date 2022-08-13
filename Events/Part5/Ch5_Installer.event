@@ -10,3 +10,10 @@ ALIGN 4
 {
   #include "Ch5-3_TogetherToTheEnd.event"
 }
+
+DumaDeathEvent:
+    MUSCMID SongID_Silence
+    ENUT Local_BossDeath
+    NoFade
+    ENDA
+    

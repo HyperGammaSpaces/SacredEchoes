@@ -90,7 +90,7 @@
 
 @	THUMB_FUNC_END sub_8055288
 
-
+.include "DumaHpHack.asm"
 .include "StartEfxHpBar_New.asm" @WIP
 .include "StartEfxNoDamage_New.asm"
 .include "StartEfxAvoid_New.asm"

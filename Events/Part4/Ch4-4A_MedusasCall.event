@@ -56,7 +56,7 @@ Dummy_LocationBasedEvents:
 	  Seize(4,5)
 	#endif
 	Seize(4,1)
-	Chest(SpeedRing, 24, 9)
+	Chest(Rapier, 24, 9)
 	Chest(SilverLance, 21, 13) //TODO: replace item
 	LOCA
 	
@@ -185,6 +185,9 @@ EnemyUnits:
 	UNIT Nuibaba Cantor_F	Nuibaba Level(16, Enemy, True) [4,1]	DropItem 0x00 0x0 0x00 [Medusa, Fortify, MageRing] DontAttackTatianaBossAI
 	//1 witch buddy
 	UNIT 0xB9 Gorgon	Nuibaba Level(6, Enemy, True) [4,6]	0x00 0x00 0x0 0x00 [EvilEye, Shadowshot, Fortify] DontAttackTatianaMageAI
+	UNIT 0xB9 Gorgon	Nuibaba Level(4, Enemy, True) [3,7]	0x00 0x00 0x0 0x00 [EvilEye] AttackInRangeExceptTatianaAI
+	UNIT 0xB9 Gorgon	Nuibaba Level(4, Enemy, True) [5,7]	0x00 0x00 0x0 0x00 [EvilEye] AttackInRangeExceptTatianaAI
+	UNIT 0xB9 Deathgoyle	Nuibaba Level(5, Enemy, True) [4,8]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeExceptTatianaAI
 	//1 BK
 	UNIT Rigel_Archer BowKnight Nuibaba Level(2, Enemy, True) [11,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeExceptTatianaAI
 	//4 arcanists

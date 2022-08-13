@@ -6,6 +6,11 @@
 .endm
 
 .equ JedahClassID, 0x4F
+.equ DumaClassID, 0x66
+.equ DumaFlagID, 0x85
+.equ NosferatuID, 0x3F
+.equ FalchionID, 0x85
+.equ CheckEventId, 0x08083da8
 
 DumasGift:
     push    {r4-r7, lr}
@@ -25,7 +30,31 @@ DumasGift:
         ldrb    r1, [r1, #0x4]
         cmp     r1, #JedahClassID
         beq     UpdateCounter
-        b       End
+        cmp     r1, #DumaClassID
+        bne     End
+        
+        DumaCase:
+        mov     r1, r5
+        add     r1, #0x13
+        ldrb    r1, [r1]
+        cmp     r1, #0x3C
+        bgt     End
+        @flag for second hp bar
+        mov     r0, #DumaFlagID
+        blh     CheckEventId
+        cmp     r0, #0x0
+        beq     End
+        @now check weapon
+        mov     r1, r4
+        add     r1, #0x4A
+        ldrh    r1, [r1]
+        lsl     r1, r1, #0x18
+        lsr     r1, r1, #0x18
+        cmp     r1, #NosferatuID
+        beq     End
+        cmp     r1, #FalchionID
+        beq     End
+        b       DoDumasGift
         
     UpdateCounter:
     ldr     r3, =gJedahCounter

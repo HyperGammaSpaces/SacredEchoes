@@ -332,6 +332,11 @@ efxSpellCost3_DoneIncrement:
 	cmp  r0, #1
 	bne  efxSpellCost3_BreakProcLoop
     
+    ldr  r3, =DumaHpHack
+    mov  r14, r3
+    .short 0xf800
+    cmp  r0, #0x0
+    bne  efxSpellCost3_BreakProcLoop
 	blh  IsLinkArenaBattle
 	cmp  r0, #1
 	bne  efxSpellCost3_CheckDeathQuote

@@ -959,182 +959,102 @@ WhatLiesAtTheEnd_2:
         .byte   KEYSH , WhatLiesAtTheEnd_key+0
 @ 000   ----------------------------------------
 WhatLiesAtTheEnd_2_LOOP:
-        .byte           VOICE , 0
+        .byte           VOICE , 39
         .byte           PAN   , c_v-8
         .byte           VOL   , 51
-        .byte           N12   , Cn2 , v076
-        .byte           N12   , Fn1
-        .byte           N12   , Fn2
-        .byte           N12   , As2
+        .byte           N12   , Fn1 , v076
         .byte   W24
-        .byte           N06   , Fn2 , v067
-        .byte           N06   , Cn2
-        .byte           N06   , Fn1
-        .byte           N06   , As2
+        .byte           N06   , Fn1 , v067
         .byte   W08
-        .byte                   Fn2 , v057
-        .byte           N06   , Cn2
-        .byte           N06   , Fn1
-        .byte           N06   , As2
+        .byte                   Fn1 , v057
         .byte   W08
-        .byte                   Fn2 , v048
-        .byte           N06   , Cn2
-        .byte           N06   , Fn1
-        .byte           N06   , As2
+        .byte                   Fn1 , v048
         .byte   W08
-        .byte           N12   , As1 , v070
-        .byte           N12   , Fn1
-        .byte           N12   , Fn2
-        .byte           N12   , As2
+        .byte           N12   , Fn1 , v070
         .byte   W24
         .byte           N24   , Fn1 , v057
-        .byte           N24   , As1
-        .byte           N24   , Fn2
-        .byte           N24   , As2 , v056
         .byte   W24
 @ 001   ----------------------------------------
-        .byte           N12   , Fn2 , v076
-        .byte           N12   , Cn2
-        .byte           N12   , Fn1
-        .byte           N12   , As2
+        .byte           N12   , Fn1 , v076
         .byte   W24
-        .byte           N18   , Fn2 , v064
-        .byte           N18   , Cn2
-        .byte           N18   , Fn1
-        .byte           N18   , As2
+        .byte           N18   , Fn1 , v064
         .byte   W24
-        .byte           N12   , Fn2 , v070
-        .byte           N12   , As1
-        .byte           N12   , Fn1
-        .byte           N12   , As2
+        .byte           N12   , Fn1 , v070
         .byte   W24
-        .byte           N18   , Fn2 , v064
-        .byte           N18   , As1
-        .byte           N18   , Fn1
-        .byte           N18   , As2
+        .byte           N18   , Fn1 , v064
         .byte   W24
 @ 002   ----------------------------------------
-        .byte           N12   , Fs2 , v076
-        .byte           N12   , Fs1
-        .byte           N12   , Cn2
-        .byte           N12   , Cn3
+        .byte           N12   , Fs1 , v076
         .byte   W24
-        .byte           N06   , Fs2 , v067
-        .byte           N06   , Cn2
-        .byte           N06   , Fs1
-        .byte           N06   , Cn3
+        .byte           N06   , Fs1 , v067
         .byte   W08
-        .byte                   Fs2 , v057
-        .byte           N06   , Cn2
-        .byte           N06   , Fs1
-        .byte           N06   , Cn3
+        .byte                   Fs1 , v057
         .byte   W08
-        .byte                   Fs2 , v048
-        .byte           N06   , Cn2
-        .byte           N06   , Fs1
-        .byte           N06   , Cn3
+        .byte                   Fs1 , v048
         .byte   W08
-        .byte           N12   , Fs2 , v070
-        .byte           N12   , Fs1
-        .byte           N12   , As1
-        .byte           N12   , As2
+        .byte           N12   , Fs1 , v070
         .byte   W24
-        .byte           N18   , Fs2 , v057
-        .byte           N18   , As1
-        .byte           N18   , Fs1
-        .byte           N18   , As2
+        .byte           N18   , Fs1 , v057
         .byte   W24
 @ 003   ----------------------------------------
         .byte           N12   , Gs1 , v076
-        .byte           N12   , Cs2
-        .byte           N12   , Gs2
-        .byte           N12   , Cs3
         .byte   W24
         .byte           N18   , Gs1 , v064
-        .byte           N18   , Cs2
-        .byte           N18   , Gs2
-        .byte           N18   , Cs3
         .byte   W24
         .byte           N12   , Gs1 , v070
-        .byte           N12   , Cn2
-        .byte           N12   , Gs2
-        .byte           N12   , Cn3
         .byte   W24
         .byte           N18   , Gs1 , v064
-        .byte           N18   , Cn2
-        .byte           N18   , Gs2
-        .byte           N18   , Cn3
         .byte   W24
 @ 004   ----------------------------------------
 WhatLiesAtTheEnd_2_4:
-        .byte           N12   , Cn2 , v096
-        .byte           N12   , Fn1
+        .byte           N12   , Fn1 , v096
         .byte   W24
-        .byte           N06   , Cn2 , v084
-        .byte           N06   , Fn1
+        .byte           N06   , Fn1 , v084
         .byte   W08
-        .byte                   Cn2 , v072
-        .byte           N06   , Fn1
+        .byte                   Fn1 , v072
         .byte   W08
-        .byte                   Cn2 , v060
-        .byte           N06   , Fn1
+        .byte                   Fn1 , v060
         .byte   W08
-        .byte           N12   , As1 , v088
-        .byte           N12   , Fn1
+        .byte           N12   , Fn1 , v088
         .byte   W24
         .byte           N24   , Fn1 , v072
-        .byte           N24   , As1
         .byte   W24
         .byte   PEND
 @ 005   ----------------------------------------
 WhatLiesAtTheEnd_2_5:
-        .byte           N12   , Cn2 , v096
-        .byte           N12   , Fn1
+        .byte           N12   , Fn1 , v096
         .byte   W24
-        .byte           N18   , Cn2 , v080
-        .byte           N18   , Fn1
+        .byte           N18   , Fn1 , v080
         .byte   W24
-        .byte           N12   , As1 , v088
-        .byte           N12   , Fn1
+        .byte           N12   , Fn1 , v088
         .byte   W24
-        .byte           N18   , As1 , v080
-        .byte           N18   , Fn1
+        .byte           N18   , Fn1 , v080
         .byte   W24
         .byte   PEND
 @ 006   ----------------------------------------
 WhatLiesAtTheEnd_2_6:
         .byte           N12   , Fs1 , v096
-        .byte           N12   , Cn2
         .byte   W24
-        .byte           N06   , Cn2 , v084
-        .byte           N06   , Fs1
+        .byte           N06   , Fs1 , v084
         .byte   W08
-        .byte                   Cn2 , v072
-        .byte           N06   , Fs1
+        .byte                   Fs1 , v072
         .byte   W08
-        .byte                   Cn2 , v060
-        .byte           N06   , Fs1
+        .byte                   Fs1 , v060
         .byte   W08
         .byte           N12   , Fs1 , v088
-        .byte           N12   , As1
         .byte   W24
         .byte           N24   , Fs1 , v072
-        .byte           N24   , As1
         .byte   W24
         .byte   PEND
 @ 007   ----------------------------------------
 WhatLiesAtTheEnd_2_7:
         .byte           N12   , Gs1 , v096
-        .byte           N12   , Cs2
         .byte   W24
         .byte           N18   , Gs1 , v080
-        .byte           N18   , Cs2
         .byte   W24
         .byte           N12   , Gs1 , v088
-        .byte           N12   , Cn2
         .byte   W24
         .byte           N18   , Gs1 , v080
-        .byte           N18   , Cn2
         .byte   W24
         .byte   PEND
 @ 008   ----------------------------------------
@@ -1173,6 +1093,676 @@ WhatLiesAtTheEnd_2_7:
 @ 019   ----------------------------------------
         .byte   PATT
          .word  WhatLiesAtTheEnd_2_7
+@ 020   ----------------------------------------
+WhatLiesAtTheEnd_2_20:
+        .byte           N12   , Ds1 , v096
+        .byte   W24
+        .byte           N06   , Ds1 , v084
+        .byte   W08
+        .byte                   Ds1 , v072
+        .byte   W08
+        .byte                   Ds1 , v060
+        .byte   W08
+        .byte           N12   , Ds1 , v088
+        .byte   W24
+        .byte           N24   , Ds1 , v072
+        .byte   W24
+        .byte   PEND
+@ 021   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_5
+@ 022   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_6
+@ 023   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_7
+@ 024   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_20
+@ 025   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_7
+@ 026   ----------------------------------------
+        .byte           N12   , As1 , v096
+        .byte   W24
+        .byte           N06   , As1 , v084
+        .byte   W08
+        .byte                   As1 , v072
+        .byte   W08
+        .byte                   As1 , v060
+        .byte   W08
+        .byte           N12   , As1 , v088
+        .byte   W24
+        .byte           N24   , As1 , v072
+        .byte   W24
+@ 027   ----------------------------------------
+        .byte           N12   , As1 , v096
+        .byte   W24
+        .byte           N18   , As1 , v080
+        .byte   W24
+        .byte           N12   , As1 , v088
+        .byte   W24
+        .byte           N18   , An1 , v080
+        .byte   W24
+@ 028   ----------------------------------------
+        .byte           N12   , Fn1 , v096
+        .byte   W24
+        .byte           N06   , Fn2 , v084
+        .byte   W08
+        .byte                   Fn2 , v072
+        .byte   W08
+        .byte           N08   , Fn2 , v060
+        .byte   W08
+        .byte           N12   , Gn2 , v088
+        .byte   W24
+        .byte                   Gn2 , v072
+        .byte   W24
+@ 029   ----------------------------------------
+        .byte                   En2 , v096
+        .byte   W24
+        .byte           N18   , En2 , v080
+        .byte   W24
+        .byte           N12   , Fn2 , v088
+        .byte   W24
+        .byte           N18   , Fn2 , v080
+        .byte   W24
+@ 030   ----------------------------------------
+        .byte           N12   , Dn2 , v096
+        .byte   W24
+        .byte           N06   , Dn2 , v084
+        .byte   W08
+        .byte                   Dn2 , v072
+        .byte   W08
+        .byte           N08   , Dn2 , v060
+        .byte   W08
+        .byte           N12   , En2 , v088
+        .byte   W24
+        .byte           N18   , En2 , v072
+        .byte   W24
+@ 031   ----------------------------------------
+        .byte           N12   , Cn2 , v096
+        .byte   W24
+        .byte           N18   , Cn2 , v080
+        .byte   W24
+        .byte           N42   , Dn2 , v088
+        .byte   W48
+@ 032   ----------------------------------------
+WhatLiesAtTheEnd_2_32:
+        .byte           N48   , As1 , v096
+        .byte   W48
+        .byte                   Cn2
+        .byte   W48
+        .byte   PEND
+@ 033   ----------------------------------------
+WhatLiesAtTheEnd_2_33:
+        .byte           N48   , An1 , v096
+        .byte   W48
+        .byte                   Dn2
+        .byte   W48
+        .byte   PEND
+@ 034   ----------------------------------------
+WhatLiesAtTheEnd_2_34:
+        .byte           N48   , Gn2 , v096
+        .byte   W48
+        .byte                   An2
+        .byte   W48
+        .byte   PEND
+@ 035   ----------------------------------------
+        .byte           N72   , Dn2
+        .byte   W72
+        .byte           N24   , An1 , v072
+        .byte   W24
+@ 036   ----------------------------------------
+WhatLiesAtTheEnd_2_36:
+        .byte           N12   , As1 , v096
+        .byte   W24
+        .byte           N06   , As1 , v072
+        .byte   W08
+        .byte                   As1
+        .byte   W08
+        .byte                   As1
+        .byte   W08
+        .byte           N12   , Cn2 , v096
+        .byte   W24
+        .byte           N18   , Cn2 , v072
+        .byte   W24
+        .byte   PEND
+@ 037   ----------------------------------------
+WhatLiesAtTheEnd_2_37:
+        .byte           N12   , An1 , v096
+        .byte   W24
+        .byte           N18   , An1 , v072
+        .byte   W24
+        .byte           N12   , Dn2 , v096
+        .byte   W24
+        .byte           N18   , Dn2 , v072
+        .byte   W24
+        .byte   PEND
+@ 038   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_36
+@ 039   ----------------------------------------
+WhatLiesAtTheEnd_2_39:
+        .byte           N12   , Dn2 , v096
+        .byte   W24
+        .byte           N18   , Dn2 , v072
+        .byte   W24
+        .byte           N36   , Dn2 , v084
+        .byte   W48
+        .byte   PEND
+@ 040   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_36
+@ 041   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_37
+@ 042   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_36
+@ 043   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_39
+@ 044   ----------------------------------------
+        .byte   W96
+@ 045   ----------------------------------------
+        .byte   W96
+@ 046   ----------------------------------------
+        .byte   W96
+@ 047   ----------------------------------------
+        .byte   W96
+@ 048   ----------------------------------------
+        .byte   W96
+@ 049   ----------------------------------------
+        .byte   W96
+@ 050   ----------------------------------------
+        .byte   W96
+@ 051   ----------------------------------------
+        .byte           N72   , Cs2 , v100
+        .byte   W72
+        .byte           N06   , Gs1 , v096
+        .byte   W08
+        .byte                   Cs2 , v088
+        .byte   W08
+        .byte                   Ds2 , v080
+        .byte   W08
+@ 052   ----------------------------------------
+        .byte           N96   , Cn2 , v096
+        .byte   W96
+@ 053   ----------------------------------------
+        .byte           N24   , As1 , v080
+        .byte   W24
+        .byte           N48   , Fn2 , v072
+        .byte   W48
+        .byte                   Fn2 , v080
+        .byte   W24
+@ 054   ----------------------------------------
+        .byte   W24
+        .byte           N24   , As1 , v064
+        .byte   W24
+        .byte                   Fn2 , v080
+        .byte   W24
+        .byte                   Cs2 , v072
+        .byte   W24
+@ 055   ----------------------------------------
+        .byte                   Bn1 , v080
+        .byte   W24
+        .byte           N44   , Fs2 , v072 , gtp2
+        .byte   W48
+        .byte           N48   , Fs2 , v064
+        .byte   W24
+@ 056   ----------------------------------------
+        .byte   W24
+        .byte           N24   , Bn1 , v072
+        .byte   W24
+        .byte                   Fs2 , v080
+        .byte   W24
+        .byte                   Cs2 , v064
+        .byte   W24
+@ 057   ----------------------------------------
+        .byte                   As1 , v080
+        .byte   W24
+        .byte           N48   , Fn2 , v072
+        .byte   W48
+        .byte                   Fn2 , v064
+        .byte   W24
+@ 058   ----------------------------------------
+        .byte   W24
+        .byte           N24   , As1 , v072
+        .byte   W24
+        .byte                   Fn2 , v080
+        .byte   W24
+        .byte                   Cs2 , v072
+        .byte   W24
+@ 059   ----------------------------------------
+        .byte                   Bn1 , v080
+        .byte   W24
+        .byte           N44   , Fs2 , v088 , gtp2
+        .byte   W48
+        .byte           N18   , Cn2 , v080
+        .byte   W24
+@ 060   ----------------------------------------
+        .byte           N48   , Fs1 , v064
+        .byte   W48
+        .byte                   Fn1
+        .byte   W48
+@ 061   ----------------------------------------
+        .byte           N18   , Ds1 , v096
+        .byte   W24
+        .byte           N06   , Ds1 , v084
+        .byte   W08
+        .byte                   Ds1 , v072
+        .byte   W08
+        .byte                   Ds1 , v060
+        .byte   W08
+        .byte           N12   , Ds1 , v088
+        .byte   W24
+        .byte           N18   , Ds1 , v072
+        .byte   W24
+@ 062   ----------------------------------------
+        .byte           N12   , Fn1 , v096
+        .byte   W24
+        .byte           N06   , Fn1 , v084
+        .byte   W08
+        .byte                   Fn1 , v072
+        .byte   W08
+        .byte                   Fn1 , v060
+        .byte   W08
+        .byte           N12   , Fn1 , v088
+        .byte   W24
+        .byte           N22   , Fn1 , v072
+        .byte   W24
+@ 063   ----------------------------------------
+WhatLiesAtTheEnd_2_63:
+        .byte           N12   , As1 , v096
+        .byte   W24
+        .byte           N06   , As1 , v084
+        .byte   W08
+        .byte                   As1 , v072
+        .byte   W08
+        .byte                   As1 , v060
+        .byte   W08
+        .byte           N12   , As1 , v088
+        .byte   W24
+        .byte           N22   , As1 , v072
+        .byte   W24
+        .byte   PEND
+@ 064   ----------------------------------------
+        .byte           N12   , Cn2 , v096
+        .byte   W24
+        .byte           N06   , Cn2 , v084
+        .byte   W08
+        .byte                   Cn2 , v072
+        .byte   W08
+        .byte                   Cn2 , v060
+        .byte   W08
+        .byte           N12   , Cn2 , v088
+        .byte   W24
+        .byte           N22   , Cn2 , v072
+        .byte   W24
+@ 065   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_63
+@ 066   ----------------------------------------
+        .byte           N12   , Ds2 , v096
+        .byte   W24
+        .byte           N06   , Ds2 , v084
+        .byte   W08
+        .byte                   Ds2 , v072
+        .byte   W08
+        .byte                   Ds2 , v060
+        .byte   W08
+        .byte           N12   , Ds2 , v088
+        .byte   W24
+        .byte           N22   , Ds2 , v072
+        .byte   W24
+@ 067   ----------------------------------------
+        .byte           N12   , Fn2 , v096
+        .byte   W24
+        .byte           N06   , Fn2 , v084
+        .byte   W08
+        .byte                   Fn2 , v072
+        .byte   W08
+        .byte                   Fn2 , v060
+        .byte   W08
+        .byte           N12   , Fn2 , v088
+        .byte   W24
+        .byte           N18   , Fn2 , v072
+        .byte   W24
+@ 068   ----------------------------------------
+        .byte           N12   , As1 , v096
+        .byte   W24
+        .byte           N06   , As1 , v084
+        .byte   W08
+        .byte                   As1 , v072
+        .byte   W08
+        .byte                   As1 , v060
+        .byte   W08
+        .byte           N12   , An1 , v088
+        .byte   W24
+        .byte           N18   , An1 , v072
+        .byte   W24
+@ 069   ----------------------------------------
+        .byte           N72   , Fn1 , v096
+        .byte   W96
+@ 070   ----------------------------------------
+        .byte           N12   , Fn1 , v100
+        .byte   W24
+        .byte           N48   , Ds2 , v096
+        .byte   W72
+@ 071   ----------------------------------------
+WhatLiesAtTheEnd_2_71:
+        .byte           N12   , Fs1 , v096
+        .byte   W24
+        .byte           N06   , Fs1 , v084
+        .byte   W08
+        .byte                   Fs1 , v072
+        .byte   W08
+        .byte                   Fs1 , v060
+        .byte   W08
+        .byte           N12   , Fs1 , v088
+        .byte   W24
+        .byte           N18   , Fs1 , v072
+        .byte   W24
+        .byte   PEND
+@ 072   ----------------------------------------
+WhatLiesAtTheEnd_2_72:
+        .byte           N12   , Gs1 , v096
+        .byte   W24
+        .byte           N06   , Gs1 , v084
+        .byte   W08
+        .byte                   Gs1 , v072
+        .byte   W08
+        .byte                   Gs1 , v060
+        .byte   W08
+        .byte           N12   , Gs1 , v088
+        .byte   W24
+        .byte           N18   , Gs1 , v072
+        .byte   W24
+        .byte   PEND
+@ 073   ----------------------------------------
+WhatLiesAtTheEnd_2_73:
+        .byte           N12   , As1 , v096
+        .byte   W24
+        .byte           N06   , As1 , v084
+        .byte   W08
+        .byte                   As1 , v072
+        .byte   W08
+        .byte                   As1 , v060
+        .byte   W08
+        .byte           N12   , As1 , v088
+        .byte   W24
+        .byte           N18   , As1 , v072
+        .byte   W24
+        .byte   PEND
+@ 074   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_73
+@ 075   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_71
+@ 076   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_72
+@ 077   ----------------------------------------
+        .byte           N12   , Fn1 , v096
+        .byte   W24
+        .byte           N06   , Fn1 , v084
+        .byte   W08
+        .byte                   Fn1 , v072
+        .byte   W08
+        .byte                   Fn1 , v060
+        .byte   W08
+        .byte           N12   , Fn1 , v088
+        .byte   W24
+        .byte           N18   , Fn1 , v072
+        .byte   W24
+@ 078   ----------------------------------------
+        .byte           N12   , As1 , v096
+        .byte   W24
+        .byte           N18   , As1 , v080
+        .byte   W24
+        .byte           N36   , As1 , v088
+        .byte   W48
+@ 079   ----------------------------------------
+        .byte   W96
+@ 080   ----------------------------------------
+        .byte   W96
+@ 081   ----------------------------------------
+        .byte   W96
+@ 082   ----------------------------------------
+        .byte   W96
+@ 083   ----------------------------------------
+        .byte   W96
+@ 084   ----------------------------------------
+        .byte   W96
+@ 085   ----------------------------------------
+        .byte   W96
+@ 086   ----------------------------------------
+        .byte   W96
+@ 087   ----------------------------------------
+        .byte   W96
+@ 088   ----------------------------------------
+        .byte   W96
+@ 089   ----------------------------------------
+        .byte   W96
+@ 090   ----------------------------------------
+        .byte           N12   , Fn1 , v064
+        .byte   W24
+        .byte           N06   , Fn1 , v052
+        .byte   W08
+        .byte                   Fn1 , v040
+        .byte   W08
+        .byte                   Fn1 , v028
+        .byte   W08
+        .byte           N12   , Fn1 , v056
+        .byte   W24
+        .byte           N24   , Fn1 , v040
+        .byte   W24
+@ 091   ----------------------------------------
+        .byte           N12   , Fs1 , v072
+        .byte   W24
+        .byte           N18   , Fs1 , v056
+        .byte   W24
+        .byte           N12   , Fs1 , v064
+        .byte   W24
+        .byte           N18   , Fs1 , v056
+        .byte   W24
+@ 092   ----------------------------------------
+        .byte           N12   , Gs1 , v080
+        .byte   W24
+        .byte           N06   , Gs1 , v068
+        .byte   W08
+        .byte                   Gs1 , v056
+        .byte   W08
+        .byte                   Gs1 , v044
+        .byte   W08
+        .byte           N12   , Gs1 , v072
+        .byte   W24
+        .byte           N24   , Gs1 , v056
+        .byte   W24
+@ 093   ----------------------------------------
+        .byte           N12   , As1 , v088
+        .byte   W24
+        .byte           N18   , As1 , v072
+        .byte   W24
+        .byte           N12   , As1 , v080
+        .byte   W24
+        .byte           N18   , As1 , v072
+        .byte   W24
+@ 094   ----------------------------------------
+        .byte   GOTO
+         .word  WhatLiesAtTheEnd_2_LOOP
+        .byte   FINE
+
+@****************** Track 3 (Midi-Chn.3) ******************@
+
+WhatLiesAtTheEnd_3:
+        .byte   KEYSH , WhatLiesAtTheEnd_key+0
+@ 000   ----------------------------------------
+WhatLiesAtTheEnd_3_LOOP:
+        .byte           VOICE , 0
+        .byte           VOL   , 51
+        .byte           PAN   , c_v-8
+        .byte           N12   , Cn3 , v076
+        .byte           N12   , Fn2
+        .byte           N12   , Cn2
+        .byte   W24
+        .byte           N06   , Cn3 , v067
+        .byte           N06   , Fn2
+        .byte           N06   , Cn2
+        .byte   W08
+        .byte                   Cn3 , v057
+        .byte           N06   , Fn2
+        .byte           N06   , Cn2
+        .byte   W08
+        .byte                   Cn3 , v048
+        .byte           N06   , Fn2
+        .byte           N06   , Cn2
+        .byte   W08
+        .byte           N12   , As2 , v070
+        .byte           N12   , Fn2
+        .byte           N12   , As1
+        .byte   W24
+        .byte           N24   , Fn2 , v057
+        .byte           N24   , As2
+        .byte           N24   , As1
+        .byte   W24
+@ 001   ----------------------------------------
+        .byte           N12   , Cn3 , v076
+        .byte           N12   , Fn2
+        .byte           N12   , Cn2
+        .byte   W24
+        .byte           N18   , Cn3 , v064
+        .byte           N18   , Fn2
+        .byte           N18   , Cn2
+        .byte   W24
+        .byte           N12   , As2 , v070
+        .byte           N12   , Fn2
+        .byte           N12   , As1
+        .byte   W24
+        .byte           N18   , As2 , v064
+        .byte           N18   , Fn2
+        .byte           N18   , As1
+        .byte   W24
+@ 002   ----------------------------------------
+        .byte           N12   , Fs2 , v076
+        .byte           N12   , Cn3
+        .byte           N12   , Cn2
+        .byte   W24
+        .byte           N06   , Cn3 , v067
+        .byte           N06   , Fs2
+        .byte           N06   , Cn2
+        .byte   W08
+        .byte                   Cn3 , v057
+        .byte           N06   , Fs2
+        .byte           N06   , Cn2
+        .byte   W08
+        .byte                   Cn3 , v048
+        .byte           N06   , Fs2
+        .byte           N06   , Cn2
+        .byte   W08
+        .byte           N12   , Fs2 , v070
+        .byte           N12   , As2
+        .byte           N12   , As1
+        .byte   W24
+        .byte           N18   , As2 , v057
+        .byte           N18   , Fs2
+        .byte           N18   , As1
+        .byte   W24
+@ 003   ----------------------------------------
+        .byte           N12   , Gs2 , v076
+        .byte           N12   , Cs3
+        .byte           N12   , Cs2
+        .byte   W24
+        .byte           N18   , Gs2 , v064
+        .byte           N18   , Cs3
+        .byte           N18   , Cs2
+        .byte   W24
+        .byte           N12   , Gs2 , v070
+        .byte           N12   , Cn3
+        .byte           N12   , Cn2
+        .byte   W24
+        .byte           N18   , Gs2 , v064
+        .byte           N18   , Cn3
+        .byte           N18   , Cn2
+        .byte   W24
+@ 004   ----------------------------------------
+WhatLiesAtTheEnd_3_4:
+        .byte           N12   , Cn3 , v096
+        .byte   W24
+        .byte           N06   , Cn3 , v084
+        .byte   W08
+        .byte                   Cn3 , v072
+        .byte   W08
+        .byte                   Cn3 , v060
+        .byte   W08
+        .byte           N12   , As2 , v088
+        .byte   W24
+        .byte           N24   , As2 , v072
+        .byte   W24
+        .byte   PEND
+@ 005   ----------------------------------------
+WhatLiesAtTheEnd_3_5:
+        .byte           N12   , Cn3 , v096
+        .byte   W24
+        .byte           N18   , Cn3 , v080
+        .byte   W24
+        .byte           N12   , As2 , v088
+        .byte   W24
+        .byte           N18   , As2 , v080
+        .byte   W24
+        .byte   PEND
+@ 006   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_4
+@ 007   ----------------------------------------
+WhatLiesAtTheEnd_3_7:
+        .byte           N12   , Cs3 , v096
+        .byte   W24
+        .byte           N18   , Cs3 , v080
+        .byte   W24
+        .byte           N12   , Cn3 , v088
+        .byte   W24
+        .byte           N18   , Cn3 , v080
+        .byte   W24
+        .byte   PEND
+@ 008   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_4
+@ 009   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_5
+@ 010   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_4
+@ 011   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_7
+@ 012   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_4
+@ 013   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_5
+@ 014   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_4
+@ 015   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_7
+@ 016   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_4
+@ 017   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_5
+@ 018   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_4
+@ 019   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_7
 @ 020   ----------------------------------------
         .byte           N24   , As2 , v096
         .byte           N24   , Fs2
@@ -1326,132 +1916,109 @@ WhatLiesAtTheEnd_2_7:
         .byte           N42   , Fn2
         .byte   W48
 @ 032   ----------------------------------------
-        .byte           N48   , As1 , v096
-        .byte   W48
-        .byte                   Cn2
-        .byte   W48
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_32
 @ 033   ----------------------------------------
-        .byte                   An1
-        .byte   W48
-        .byte                   Dn2
-        .byte   W48
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_33
 @ 034   ----------------------------------------
-        .byte                   Gn2
-        .byte   W48
-        .byte                   An2
-        .byte   W48
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_2_34
 @ 035   ----------------------------------------
-        .byte           N72   , Dn3
+        .byte           N72   , Dn3 , v096
         .byte   W72
-        .byte           N24   , An1 , v072
+        .byte           N24   , An2 , v072
         .byte   W24
 @ 036   ----------------------------------------
-WhatLiesAtTheEnd_2_36:
-        .byte           N12   , As1 , v096
+WhatLiesAtTheEnd_3_36:
+        .byte           N12   , As2 , v096
         .byte   W24
-        .byte           N06   , As1 , v072
-        .byte           N06   , Fn2
+        .byte           N06   , As2 , v072
         .byte   W08
-        .byte                   As1
-        .byte           N06   , Fn2
+        .byte                   As2
         .byte   W08
-        .byte                   As1
-        .byte           N06   , Fn2
+        .byte                   As2
         .byte   W08
-        .byte           N12   , Cn2 , v096
-        .byte           N12   , En2
-        .byte           N12   , Gn2
+        .byte           N12   , Gn2 , v096
+        .byte           N12   , Cn3
         .byte   W24
-        .byte           N18   , Cn2 , v072
-        .byte           N18   , En2
-        .byte           N18   , Gn2
+        .byte           N18   , Gn2 , v072
+        .byte           N18   , Cn3
         .byte   W24
         .byte   PEND
 @ 037   ----------------------------------------
-        .byte           N12   , En2 , v096
-        .byte           N12   , An1
+WhatLiesAtTheEnd_3_37:
+        .byte           N12   , An2 , v096
         .byte   W24
-        .byte           N18   , An1 , v072
-        .byte           N18   , En2
+        .byte           N18   , An2 , v072
         .byte   W24
         .byte           N12   , Fn2 , v096
-        .byte           N12   , Dn2
+        .byte           N12   , Dn3
         .byte   W24
         .byte           N18   , Fn2 , v072
-        .byte           N18   , Dn2
+        .byte           N18   , Dn3
         .byte   W24
+        .byte   PEND
 @ 038   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_2_36
-@ 039   ----------------------------------------
+        .byte           N12   , As2 , v100
+        .byte   W24
+        .byte           N06   , As2 , v072
+        .byte   W08
+        .byte                   As2
+        .byte   W08
+        .byte                   As2
+        .byte   W08
         .byte           N12   , Gn2 , v096
-        .byte           N12   , Dn2
+        .byte           N12   , Cn3
         .byte   W24
         .byte           N18   , Gn2 , v072
-        .byte           N18   , Dn2
+        .byte           N18   , Cn3
         .byte   W24
-        .byte           N36   , Dn2 , v084
-        .byte           N36   , Fn2
+@ 039   ----------------------------------------
+        .byte           N12   , En2 , v096
+        .byte   W24
+        .byte           N18   , En2 , v072
+        .byte   W24
+        .byte           N36   , Fn2 , v084
+        .byte           N36   , An2
         .byte   W48
 @ 040   ----------------------------------------
         .byte   PATT
-         .word  WhatLiesAtTheEnd_2_36
+         .word  WhatLiesAtTheEnd_3_36
 @ 041   ----------------------------------------
-        .byte           N12   , En2 , v096
-        .byte           N12   , An1
-        .byte   W24
-        .byte           N18   , En2 , v072
-        .byte           N18   , An1
-        .byte   W24
-        .byte           N12   , Fn2 , v096
-        .byte           N12   , Dn2
-        .byte   W24
-        .byte           N18   , Fn2 , v072
-        .byte           N18   , Dn2
-        .byte   W24
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_3_37
 @ 042   ----------------------------------------
-        .byte           N12   , As1 , v096
+        .byte           N12   , Cn3 , v100
         .byte   W24
-        .byte           N06   , As1 , v072
-        .byte           N06   , Gn2
-        .byte           N06   , Dn2
+        .byte           N06   , Cn3 , v072
         .byte   W08
-        .byte                   As1
-        .byte           N06   , Gn2
-        .byte           N06   , Dn2
+        .byte                   Cn3
         .byte   W08
-        .byte                   As1
-        .byte           N06   , Gn2
-        .byte           N06   , Dn2
+        .byte                   Cn3
         .byte   W08
-        .byte           N12   , En2 , v096
-        .byte           N12   , Cn2
-        .byte           N12   , An2 , v064
+        .byte           N12   , An2 , v096
+        .byte           N12   , En3
         .byte   W24
-        .byte           N18   , An2 , v048
-        .byte           N18   , En2 , v072
-        .byte           N18   , Cn2
+        .byte           N18   , An2 , v072
+        .byte           N18   , En3
         .byte   W24
 @ 043   ----------------------------------------
-        .byte           N12   , Dn2 , v096
-        .byte           N12   , Gn2
+        .byte           N12   , Gn3 , v096
         .byte   W24
-        .byte           N18   , Gn2 , v072
-        .byte           N18   , Dn2
+        .byte           N18   , Gn3 , v072
         .byte   W24
-        .byte           N36   , Fn2 , v084
-        .byte           N36   , Dn2
+        .byte           N36   , Fn3 , v084
+        .byte           N36   , Dn3
         .byte   W48
 @ 044   ----------------------------------------
         .byte           N48   , As3 , v072
-        .byte           N48   , An2
         .byte   W02
         .byte           N44   , Ds4 , v072 , gtp2
         .byte   W02
         .byte           N44   , An4
         .byte   W44
         .byte           N48   , Gn3 , v076
-        .byte           N48   , Gn2
         .byte   W02
         .byte           N44   , Cn4 , v076 , gtp2
         .byte   W02
@@ -1459,7 +2026,6 @@ WhatLiesAtTheEnd_2_36:
         .byte   W44
 @ 045   ----------------------------------------
         .byte           N24   , An3 , v080
-        .byte           N24   , Gn2
         .byte   W02
         .byte                   Cn4
         .byte   W02
@@ -1468,7 +2034,6 @@ WhatLiesAtTheEnd_2_36:
         .byte                   Fn4 , v088
         .byte   W24
         .byte           N48   , Cn4
-        .byte           N48   , Fn2
         .byte   W02
         .byte           N44   , Fn4 , v088 , gtp2
         .byte   W02
@@ -1476,34 +2041,27 @@ WhatLiesAtTheEnd_2_36:
         .byte   W44
 @ 046   ----------------------------------------
         .byte           N24   , Cs4 , v096
-        .byte           N24   , Fn2 , v088
         .byte   W02
-        .byte                   Fn4 , v096
+        .byte                   Fn4
         .byte   W02
         .byte                   Cn5
         .byte   W20
         .byte                   As4
-        .byte           N24   , Ds2 , v080
         .byte   W24
-        .byte           N48   , Gn4 , v096
-        .byte           N24   , Fn2 , v084
+        .byte           N48   , Gn4
         .byte   W02
         .byte           N44   , As4 , v096 , gtp2
         .byte   W02
         .byte           N44   , Fn5
-        .byte   W20
-        .byte           N24   , Gs2 , v088
-        .byte   W24
+        .byte   W44
 @ 047   ----------------------------------------
-        .byte           N48   , Ds4 , v096
-        .byte           N48   , Ds2 , v092
+        .byte           N48   , Ds4
         .byte   W02
-        .byte                   Gs4 , v096
+        .byte                   Gs4
         .byte   W02
         .byte                   Ds5
         .byte   W44
         .byte                   Cs4
-        .byte           N48   , Cs2 , v080
         .byte   W02
         .byte           N44   , Fn4 , v096 , gtp2
         .byte   W02
@@ -1851,169 +2409,130 @@ WhatLiesAtTheEnd_2_36:
 @ 071   ----------------------------------------
         .byte           N12   , Fs2
         .byte           N12   , As1
-        .byte           N12   , Fs1
         .byte   W24
         .byte           N06   , Fs2 , v084
         .byte           N06   , As1
-        .byte           N06   , Fs1
         .byte   W08
         .byte                   Fs2 , v072
         .byte           N06   , As1
-        .byte           N06   , Fs1
         .byte   W08
         .byte                   Fs2 , v060
         .byte           N06   , As1
-        .byte           N06   , Fs1
         .byte   W08
         .byte           N12   , Fs2 , v088
-        .byte           N12   , Fs1
         .byte           N12   , Cs2
         .byte   W24
         .byte           N18   , Fs2 , v072
         .byte           N18   , Cs2
-        .byte           N18   , Fs1
         .byte   W24
 @ 072   ----------------------------------------
-WhatLiesAtTheEnd_2_72:
+WhatLiesAtTheEnd_3_72:
         .byte           N12   , Gs2 , v096
         .byte           N12   , Cn2
-        .byte           N12   , Gs1
         .byte   W24
         .byte           N06   , Gs2 , v084
         .byte           N06   , Cn2
-        .byte           N06   , Gs1
         .byte   W08
         .byte                   Gs2 , v072
         .byte           N06   , Cn2
-        .byte           N06   , Gs1
         .byte   W08
         .byte                   Gs2 , v060
         .byte           N06   , Cn2
-        .byte           N06   , Gs1
         .byte   W08
         .byte           N12   , Gs2 , v088
-        .byte           N12   , Gs1
         .byte           N12   , Ds2
         .byte   W24
         .byte           N18   , Gs2 , v072
         .byte           N18   , Ds2
-        .byte           N18   , Gs1
         .byte   W24
         .byte   PEND
 @ 073   ----------------------------------------
         .byte           N12   , As2 , v096
         .byte           N12   , Fn2
-        .byte           N12   , As1
         .byte   W24
         .byte           N06   , As2 , v084
         .byte           N06   , Fn2
-        .byte           N06   , As1
         .byte   W08
         .byte                   As2 , v072
         .byte           N06   , Fn2
-        .byte           N06   , As1
         .byte   W08
         .byte                   As2 , v060
         .byte           N06   , Fn2
-        .byte           N06   , As1
         .byte   W08
         .byte           N12   , As2 , v088
         .byte           N12   , Fn2
-        .byte           N12   , As1
         .byte   W24
         .byte           N18   , As2 , v072
         .byte           N18   , Fn2
-        .byte           N18   , As1
         .byte   W24
 @ 074   ----------------------------------------
         .byte           N12   , As2 , v096
         .byte           N12   , Ds2
-        .byte           N12   , As1
         .byte   W24
         .byte           N06   , As2 , v084
         .byte           N06   , Ds2
-        .byte           N06   , As1
         .byte   W08
         .byte                   As2 , v072
         .byte           N06   , Ds2
-        .byte           N06   , As1
         .byte   W08
         .byte                   As2 , v060
         .byte           N06   , Ds2
-        .byte           N06   , As1
         .byte   W08
-        .byte           N12   , As1 , v088
-        .byte           N12   , Cs2
+        .byte           N12   , Cs2 , v088
         .byte           N12   , As2
         .byte   W24
         .byte           N18   , As2 , v072
         .byte           N18   , Cs2
-        .byte           N18   , As1
         .byte   W24
 @ 075   ----------------------------------------
         .byte           N12   , As1 , v096
-        .byte           N12   , Fs1
         .byte           N12   , Fs2
         .byte   W24
         .byte           N06   , Fs2 , v084
         .byte           N06   , As1
-        .byte           N06   , Fs1
         .byte   W08
         .byte                   Fs2 , v072
         .byte           N06   , As1
-        .byte           N06   , Fs1
         .byte   W08
         .byte                   Fs2 , v060
         .byte           N06   , As1
-        .byte           N06   , Fs1
         .byte   W08
         .byte           N12   , Fs2 , v088
-        .byte           N12   , Fs1
         .byte           N12   , Cs2
         .byte   W24
         .byte           N18   , Fs2 , v072
         .byte           N18   , Cs2
-        .byte           N18   , Fs1
         .byte   W24
 @ 076   ----------------------------------------
         .byte   PATT
-         .word  WhatLiesAtTheEnd_2_72
+         .word  WhatLiesAtTheEnd_3_72
 @ 077   ----------------------------------------
         .byte           N12   , Fn2 , v096
         .byte           N12   , Cn2
-        .byte           N12   , Fn1
         .byte   W24
         .byte           N06   , Fn2 , v084
         .byte           N06   , Cn2
-        .byte           N06   , Fn1
         .byte   W08
         .byte                   Fn2 , v072
         .byte           N06   , Cn2
-        .byte           N06   , Fn1
         .byte   W08
         .byte                   Fn2 , v060
         .byte           N06   , Cn2
-        .byte           N06   , Fn1
         .byte   W08
         .byte           N12   , Fn2 , v088
         .byte           N12   , Cs2
-        .byte           N12   , Fn1
         .byte   W24
         .byte           N18   , Fn2 , v072
         .byte           N18   , Cn2
-        .byte           N18   , Fn1
         .byte   W24
 @ 078   ----------------------------------------
         .byte           N12   , As2 , v096
         .byte           N12   , Fn2
-        .byte           N12   , As1
         .byte   W24
         .byte           N18   , Ds2 , v080
-        .byte           N18   , As1
         .byte           N18   , As2
         .byte   W24
         .byte           N36   , As2 , v088
-        .byte           N36   , As1
         .byte           N36   , Cs2
         .byte   W24
         .byte           N24   , As4 , v064
@@ -2089,21 +2608,52 @@ WhatLiesAtTheEnd_2_72:
 @ 089   ----------------------------------------
         .byte   W96
 @ 090   ----------------------------------------
-        .byte   W96
+        .byte           N12   , Fn2 , v076
+        .byte   W24
+        .byte           N06   , Fn2 , v067
+        .byte   W08
+        .byte                   Fn2 , v057
+        .byte   W08
+        .byte                   Fn2 , v048
+        .byte   W08
+        .byte           N12   , Fn2 , v070
+        .byte   W24
+        .byte           N24   , Fn2 , v057
+        .byte   W24
 @ 091   ----------------------------------------
-        .byte   W96
+        .byte           N12   , Fs2 , v076
+        .byte   W24
+        .byte           N18   , Fs2 , v064
+        .byte   W24
+        .byte           N12   , Fs2 , v070
+        .byte   W24
+        .byte           N18   , Fs2 , v064
+        .byte   W24
 @ 092   ----------------------------------------
-        .byte   W96
+        .byte           N12   , Gs2 , v076
+        .byte   W24
+        .byte           N06   , Gs2 , v067
+        .byte   W08
+        .byte                   Gs2 , v057
+        .byte   W08
+        .byte                   Gs2 , v048
+        .byte   W08
+        .byte           N12   , Gs2 , v070
+        .byte   W24
+        .byte           N18   , Gs2 , v057
+        .byte   W24
 @ 093   ----------------------------------------
         .byte           N06   , Cn5 , v072
+        .byte           N12   , As2 , v076
         .byte   W08
-        .byte                   Gs4 , v069
+        .byte           N06   , Gs4 , v069
         .byte   W08
         .byte                   Fn4 , v066
         .byte   W08
         .byte                   Ds4 , v060
+        .byte           N18   , As2 , v064
         .byte   W08
-        .byte                   Gs4 , v063
+        .byte           N06   , Gs4 , v063
         .byte           N06   , Cn4 , v080
         .byte   W08
         .byte                   Cs4 , v060
@@ -2111,8 +2661,9 @@ WhatLiesAtTheEnd_2_72:
         .byte   W08
         .byte                   Cn4 , v072
         .byte           N06   , Fn3 , v080
+        .byte           N12   , As2 , v070
         .byte   W08
-        .byte                   Ds4 , v069
+        .byte           N06   , Ds4 , v069
         .byte           N06   , Cs3 , v080
         .byte   W08
         .byte                   Gs4 , v066
@@ -2120,518 +2671,14 @@ WhatLiesAtTheEnd_2_72:
         .byte   W08
         .byte                   Cn5 , v060
         .byte           N06   , Fn2 , v080
+        .byte           N18   , As2 , v064
         .byte   W08
-        .byte                   Ds5 , v066
+        .byte           N06   , Ds5 , v066
         .byte           N06   , Cs2 , v080
         .byte   W08
         .byte                   Gs5 , v072
         .byte           N06   , Gs1 , v080
         .byte   W08
-@ 094   ----------------------------------------
-        .byte   GOTO
-         .word  WhatLiesAtTheEnd_2_LOOP
-        .byte   FINE
-
-@****************** Track 3 (Midi-Chn.3) ******************@
-
-WhatLiesAtTheEnd_3:
-        .byte   KEYSH , WhatLiesAtTheEnd_key+0
-@ 000   ----------------------------------------
-WhatLiesAtTheEnd_3_LOOP:
-        .byte           VOICE , 101
-        .byte           PAN   , c_v+9
-        .byte           VOL   , 58
-        .byte   W96
-@ 001   ----------------------------------------
-        .byte   W96
-@ 002   ----------------------------------------
-        .byte   W96
-@ 003   ----------------------------------------
-        .byte   W96
-@ 004   ----------------------------------------
-WhatLiesAtTheEnd_3_4:
-        .byte           N48   , Cn3 , v096
-        .byte   W48
-        .byte           N06   , Fn2
-        .byte   W08
-        .byte                   Gs2
-        .byte   W08
-        .byte                   Cn3
-        .byte   W08
-        .byte                   Ds3
-        .byte   W08
-        .byte                   Cn3
-        .byte   W08
-        .byte                   Gs2
-        .byte   W08
-        .byte   PEND
-@ 005   ----------------------------------------
-WhatLiesAtTheEnd_3_5:
-        .byte           N24   , Cs3 , v096
-        .byte   W24
-        .byte           N06   , Fn2
-        .byte   W08
-        .byte                   Gs2
-        .byte   W08
-        .byte                   Cs3
-        .byte   W08
-        .byte           N24   , Cn3
-        .byte   W24
-        .byte           N06   , Fn2
-        .byte   W08
-        .byte                   Gs2
-        .byte   W08
-        .byte                   Cn3
-        .byte   W08
-        .byte   PEND
-@ 006   ----------------------------------------
-        .byte           TIE   , As2
-        .byte   W96
-@ 007   ----------------------------------------
-        .byte   W84
-        .byte           EOT
-        .byte   W12
-@ 008   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_3_4
-@ 009   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_3_5
-@ 010   ----------------------------------------
-        .byte           TIE   , As2 , v096
-        .byte   W96
-@ 011   ----------------------------------------
-        .byte   W84
-        .byte           EOT
-        .byte   W12
-@ 012   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_3_4
-@ 013   ----------------------------------------
-        .byte           N24   , Cs3 , v096
-        .byte   W24
-        .byte           N06   , Fn2
-        .byte   W08
-        .byte                   Gs2
-        .byte   W08
-        .byte                   Cs3
-        .byte   W08
-        .byte           N24   , Ds3
-        .byte   W24
-        .byte           N06   , Fn2
-        .byte   W08
-        .byte                   Gs2
-        .byte   W08
-        .byte                   Ds3
-        .byte   W08
-@ 014   ----------------------------------------
-        .byte           N78   , Fn3
-        .byte   W80
-        .byte           N06   , Fs3
-        .byte   W08
-        .byte                   Fn3
-        .byte   W08
-@ 015   ----------------------------------------
-        .byte           N96   , Ds3
-        .byte   W96
-@ 016   ----------------------------------------
-        .byte           N30
-        .byte   W32
-        .byte           N06   , Fn3
-        .byte   W08
-        .byte                   Ds3
-        .byte   W08
-        .byte           N48   , Cs3
-        .byte   W48
-@ 017   ----------------------------------------
-        .byte           N30   , Cn3
-        .byte   W32
-        .byte           N06   , Cs3
-        .byte   W08
-        .byte                   Cn3
-        .byte   W08
-        .byte           N48   , As2
-        .byte   W48
-@ 018   ----------------------------------------
-        .byte           N30   , Fn3
-        .byte   W32
-        .byte           N06   , Fs3
-        .byte   W08
-        .byte                   Fn3
-        .byte   W08
-        .byte           N44   , Ds3 , v096 , gtp2
-        .byte   W48
-@ 019   ----------------------------------------
-        .byte           N30   , Cs3
-        .byte   W32
-        .byte           N06   , Ds3
-        .byte   W08
-        .byte                   Cs3
-        .byte   W08
-        .byte           N48   , Cn3
-        .byte   W48
-@ 020   ----------------------------------------
-        .byte   W96
-@ 021   ----------------------------------------
-        .byte   W96
-@ 022   ----------------------------------------
-        .byte   W96
-@ 023   ----------------------------------------
-        .byte   W92
-        .byte   W03
-        .byte           VOICE , 86
-        .byte   W01
-@ 024   ----------------------------------------
-        .byte           N48   , Fn3 , v064
-        .byte           N48   , As3
-        .byte   W48
-        .byte           N12   , Fs3
-        .byte   W16
-        .byte                   As3
-        .byte   W16
-        .byte           N16   , Fn4
-        .byte   W16
-@ 025   ----------------------------------------
-        .byte           N48   , Cn4
-        .byte           N48   , Ds3
-        .byte   W48
-        .byte                   Cs3 , v048
-        .byte           N48   , Ds3
-        .byte           N48   , Gs3
-        .byte   W48
-@ 026   ----------------------------------------
-        .byte           N96   , As3
-        .byte           N96   , Fn3
-        .byte           N96   , Dn3
-        .byte   W96
-@ 027   ----------------------------------------
-        .byte           N48   , Dn3 , v064
-        .byte           N48   , Fn3
-        .byte           N48   , As3
-        .byte   W48
-        .byte           N36
-        .byte           N36   , Gn3
-        .byte           N36   , En3
-        .byte           N36   , Dn3
-        .byte   W48
-@ 028   ----------------------------------------
-        .byte   W96
-@ 029   ----------------------------------------
-        .byte   W96
-@ 030   ----------------------------------------
-        .byte   W96
-@ 031   ----------------------------------------
-        .byte   W68
-        .byte   W03
-        .byte           VOICE , 106
-        .byte   W01
-        .byte           N24   , Dn4 , v080
-        .byte   W24
-@ 032   ----------------------------------------
-WhatLiesAtTheEnd_3_32:
-        .byte           N48   , An4 , v080
-        .byte   W48
-        .byte           N16
-        .byte   W16
-        .byte                   Gn4
-        .byte   W16
-        .byte                   Fn4
-        .byte   W16
-        .byte   PEND
-@ 033   ----------------------------------------
-WhatLiesAtTheEnd_3_33:
-        .byte           N24   , En4 , v080
-        .byte   W24
-        .byte                   Fn4
-        .byte   W24
-        .byte                   Gn4
-        .byte   W24
-        .byte                   Cn5
-        .byte   W24
-        .byte   PEND
-@ 034   ----------------------------------------
-WhatLiesAtTheEnd_3_34:
-        .byte           N12   , Dn5 , v080
-        .byte   W18
-        .byte           N06   , En5
-        .byte   W06
-        .byte           N48   , Cn5
-        .byte   W48
-        .byte           N24   , An4
-        .byte   W24
-        .byte   PEND
-@ 035   ----------------------------------------
-        .byte           N72   , Dn5
-        .byte   W96
-@ 036   ----------------------------------------
-        .byte   W96
-@ 037   ----------------------------------------
-        .byte   W96
-@ 038   ----------------------------------------
-        .byte   W96
-@ 039   ----------------------------------------
-        .byte   W72
-        .byte           VOICE , 101
-        .byte           N24   , Dn2 , v064
-        .byte   W23
-        .byte           VOICE , 86
-        .byte   W01
-@ 040   ----------------------------------------
-        .byte           N48   , An2 , v080
-        .byte   W48
-        .byte           N18
-        .byte   W16
-        .byte                   Gn2
-        .byte   W16
-        .byte                   Fn2
-        .byte   W16
-@ 041   ----------------------------------------
-        .byte           N24   , En2
-        .byte   W24
-        .byte                   Fn2
-        .byte   W24
-        .byte                   Gn2
-        .byte   W24
-        .byte                   Cn3
-        .byte   W24
-@ 042   ----------------------------------------
-        .byte           N20   , Dn3
-        .byte   W18
-        .byte           N06   , En3
-        .byte   W06
-        .byte           N48   , Cn3
-        .byte   W48
-        .byte           N24   , An2
-        .byte   W24
-@ 043   ----------------------------------------
-        .byte           N48   , Gn2 , v060
-        .byte           N90   , Dn3 , v080
-        .byte           N90   , An2
-        .byte   W96
-@ 044   ----------------------------------------
-        .byte   W96
-@ 045   ----------------------------------------
-        .byte   W96
-@ 046   ----------------------------------------
-        .byte   W96
-@ 047   ----------------------------------------
-        .byte   W96
-@ 048   ----------------------------------------
-        .byte   W96
-@ 049   ----------------------------------------
-        .byte   W96
-@ 050   ----------------------------------------
-        .byte   W96
-@ 051   ----------------------------------------
-        .byte   W96
-@ 052   ----------------------------------------
-        .byte   W96
-@ 053   ----------------------------------------
-        .byte   W96
-@ 054   ----------------------------------------
-        .byte   W96
-@ 055   ----------------------------------------
-        .byte   W96
-@ 056   ----------------------------------------
-        .byte   W96
-@ 057   ----------------------------------------
-        .byte   W96
-@ 058   ----------------------------------------
-        .byte   W96
-@ 059   ----------------------------------------
-        .byte   W96
-@ 060   ----------------------------------------
-        .byte   W96
-@ 061   ----------------------------------------
-        .byte           N48   , As3
-        .byte           N48   , As2
-        .byte   W48
-        .byte                   Fn3
-        .byte           N48   , Fn4
-        .byte   W48
-@ 062   ----------------------------------------
-        .byte                   Fn4
-        .byte           N48   , Fn3
-        .byte           N48   , Cn3
-        .byte   W48
-        .byte           N24   , Ds4
-        .byte           N24   , Ds3
-        .byte   W24
-        .byte                   Cs4
-        .byte           N24   , Cs3
-        .byte   W24
-@ 063   ----------------------------------------
-        .byte           N36   , Cs4
-        .byte           N36   , Cs3
-        .byte           N48   , As2
-        .byte   W36
-        .byte           N12   , Cn4
-        .byte           N12   , Cn3
-        .byte   W12
-        .byte           N36   , Cn4 , v080 , gtp2
-        .byte                   Cn3
-        .byte   W36
-        .byte           N12   , Fs3
-        .byte           N12   , Fs4
-        .byte   W12
-@ 064   ----------------------------------------
-        .byte           N36
-        .byte           N36   , Fs3
-        .byte           N36   , Cs4
-        .byte   W36
-        .byte           N12   , Fn4
-        .byte           N12   , Fn3
-        .byte   W12
-        .byte           N42
-        .byte           N42   , Fn4
-        .byte           N42   , Cn4
-        .byte   W48
-@ 065   ----------------------------------------
-        .byte           N48   , As3
-        .byte           N48   , As2
-        .byte   W72
-        .byte           N06
-        .byte           N06   , As3
-        .byte   W08
-        .byte                   Cs3
-        .byte           N06   , Cs4
-        .byte   W08
-        .byte                   Fn3
-        .byte           N06   , Fn4
-        .byte   W08
-@ 066   ----------------------------------------
-WhatLiesAtTheEnd_3_66:
-        .byte           N48   , Gs4 , v080
-        .byte           N48   , Gs3
-        .byte   W48
-        .byte           N24   , Fs4
-        .byte           N24   , Fs3
-        .byte   W24
-        .byte                   Fn4
-        .byte           N24   , Fn3
-        .byte   W24
-        .byte   PEND
-@ 067   ----------------------------------------
-        .byte           N84   , Fn4
-        .byte           N84   , Fn3
-        .byte           N90   , Cn4
-        .byte   W96
-@ 068   ----------------------------------------
-        .byte           N36   , Cs4
-        .byte           N36   , Cs3
-        .byte   W36
-        .byte           N12   , Cn4
-        .byte           N12   , Cn3
-        .byte   W12
-        .byte           N42
-        .byte           N42   , Cn4
-        .byte           N42   , Fn3
-        .byte   W48
-@ 069   ----------------------------------------
-        .byte   W96
-@ 070   ----------------------------------------
-        .byte   W72
-        .byte           N24   , As3
-        .byte   W24
-@ 071   ----------------------------------------
-        .byte           N48   , Fn4
-        .byte   W48
-        .byte           N16
-        .byte   W16
-        .byte                   Ds4
-        .byte   W16
-        .byte                   Cs4
-        .byte   W16
-@ 072   ----------------------------------------
-WhatLiesAtTheEnd_3_72:
-        .byte           N24   , Cn4 , v080
-        .byte           N72   , Gs3
-        .byte   W24
-        .byte           N24   , Cs4
-        .byte   W24
-        .byte                   Ds4
-        .byte   W24
-        .byte                   Gs4
-        .byte   W24
-        .byte   PEND
-@ 073   ----------------------------------------
-        .byte           N60   , Ds4
-        .byte           N48   , Cn4
-        .byte   W96
-@ 074   ----------------------------------------
-        .byte                   Cs4
-        .byte   W48
-        .byte           N24   , Cn4
-        .byte   W24
-        .byte                   As3
-        .byte   W24
-@ 075   ----------------------------------------
-        .byte           N48
-        .byte           N48   , Fn4
-        .byte   W48
-        .byte           N16
-        .byte   W16
-        .byte                   Ds4
-        .byte   W16
-        .byte                   Cs4
-        .byte   W16
-@ 076   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_3_72
-@ 077   ----------------------------------------
-        .byte           N16   , As4 , v080
-        .byte   W16
-        .byte           N08   , Cn5
-        .byte   W08
-        .byte           N48   , Gs4
-        .byte   W48
-        .byte           N24   , Fn4
-        .byte   W24
-@ 078   ----------------------------------------
-        .byte           N96   , As4
-        .byte   W96
-@ 079   ----------------------------------------
-        .byte   W96
-@ 080   ----------------------------------------
-        .byte   W96
-@ 081   ----------------------------------------
-        .byte   W96
-@ 082   ----------------------------------------
-        .byte   W96
-@ 083   ----------------------------------------
-        .byte   W96
-@ 084   ----------------------------------------
-        .byte   W96
-@ 085   ----------------------------------------
-        .byte   W96
-@ 086   ----------------------------------------
-        .byte   W96
-@ 087   ----------------------------------------
-        .byte   W96
-@ 088   ----------------------------------------
-        .byte   W96
-@ 089   ----------------------------------------
-        .byte   W96
-@ 090   ----------------------------------------
-        .byte   W48
-        .byte           VOICE , 101
-        .byte           N48   , Cn3 , v064
-        .byte   W48
-@ 091   ----------------------------------------
-        .byte                   Cs3
-        .byte   W48
-        .byte                   Fn3
-        .byte   W48
-@ 092   ----------------------------------------
-        .byte           N72
-        .byte   W80
-        .byte           N06   , Fs3
-        .byte   W08
-        .byte                   Fn3
-        .byte   W08
-@ 093   ----------------------------------------
-        .byte           N96   , Ds3
-        .byte   W96
 @ 094   ----------------------------------------
         .byte   GOTO
          .word  WhatLiesAtTheEnd_3_LOOP
@@ -2754,7 +2801,7 @@ WhatLiesAtTheEnd_4_LOOP:
         .byte           N48   , Cn3
         .byte   W44
         .byte   W03
-        .byte           VOICE , 79
+        .byte           VOICE , 68
         .byte   W01
 @ 020   ----------------------------------------
         .byte           N48   , Ds3
@@ -2838,11 +2885,27 @@ WhatLiesAtTheEnd_4_LOOP:
         .byte           N24   , Dn4
         .byte   W24
 @ 036   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_3_32
+WhatLiesAtTheEnd_4_36:
+        .byte           N48   , An4 , v080
+        .byte   W48
+        .byte           N16
+        .byte   W16
+        .byte                   Gn4
+        .byte   W16
+        .byte                   Fn4
+        .byte   W16
+        .byte   PEND
 @ 037   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_3_33
+WhatLiesAtTheEnd_4_37:
+        .byte           N24   , En4 , v080
+        .byte   W24
+        .byte                   Fn4
+        .byte   W24
+        .byte                   Gn4
+        .byte   W24
+        .byte                   Cn5
+        .byte   W24
+        .byte   PEND
 @ 038   ----------------------------------------
 WhatLiesAtTheEnd_4_38:
         .byte           N48   , Gn4 , v080
@@ -2865,19 +2928,24 @@ WhatLiesAtTheEnd_4_39:
         .byte   PEND
 @ 040   ----------------------------------------
         .byte   PATT
-         .word  WhatLiesAtTheEnd_3_32
+         .word  WhatLiesAtTheEnd_4_36
 @ 041   ----------------------------------------
         .byte   PATT
-         .word  WhatLiesAtTheEnd_3_33
+         .word  WhatLiesAtTheEnd_4_37
 @ 042   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_3_34
+WhatLiesAtTheEnd_4_42:
+        .byte           N12   , Dn5 , v080
+        .byte   W18
+        .byte           N06   , En5
+        .byte   W06
+        .byte           N48   , Cn5
+        .byte   W48
+        .byte           N24   , An4
+        .byte   W24
+        .byte   PEND
 @ 043   ----------------------------------------
-        .byte           N72   , Dn5 , v080
-        .byte   W92
-        .byte   W03
-        .byte           VOICE , 79
-        .byte   W01
+        .byte           N72   , Dn5
+        .byte   W96
 @ 044   ----------------------------------------
         .byte   W96
 @ 045   ----------------------------------------
@@ -2895,7 +2963,11 @@ WhatLiesAtTheEnd_4_39:
 @ 051   ----------------------------------------
         .byte   W96
 @ 052   ----------------------------------------
-        .byte   W96
+        .byte   W44
+        .byte   W03
+        .byte           VOICE , 68
+        .byte   W48
+        .byte   W01
 @ 053   ----------------------------------------
         .byte           N48   , As3
         .byte           N48   , As2
@@ -2950,10 +3022,19 @@ WhatLiesAtTheEnd_4_39:
         .byte           N12   , Fn3
         .byte   W12
 @ 058   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_3_66
+WhatLiesAtTheEnd_4_58:
+        .byte           N48   , Gs4 , v080
+        .byte           N48   , Gs3
+        .byte   W48
+        .byte           N24   , Fs4
+        .byte           N24   , Fs3
+        .byte   W24
+        .byte                   Fn4
+        .byte           N24   , Fn3
+        .byte   W24
+        .byte   PEND
 @ 059   ----------------------------------------
-        .byte           N36   , Fn4 , v080
+        .byte           N36   , Fn4
         .byte           N36   , Fn3
         .byte   W36
         .byte           N08   , Ds4
@@ -3053,7 +3134,7 @@ WhatLiesAtTheEnd_5:
         .byte   KEYSH , WhatLiesAtTheEnd_key+0
 @ 000   ----------------------------------------
 WhatLiesAtTheEnd_5_LOOP:
-        .byte           VOICE , 109
+        .byte           VOICE , 110
         .byte           PAN   , c_v+17
         .byte           VOL   , 45
         .byte           N24   , Cn4 , v080
@@ -3358,10 +3439,10 @@ WhatLiesAtTheEnd_5_7:
         .byte   W24
 @ 028   ----------------------------------------
         .byte   PATT
-         .word  WhatLiesAtTheEnd_3_32
+         .word  WhatLiesAtTheEnd_4_36
 @ 029   ----------------------------------------
         .byte   PATT
-         .word  WhatLiesAtTheEnd_3_33
+         .word  WhatLiesAtTheEnd_4_37
 @ 030   ----------------------------------------
         .byte   PATT
          .word  WhatLiesAtTheEnd_4_38
@@ -3370,18 +3451,18 @@ WhatLiesAtTheEnd_5_7:
          .word  WhatLiesAtTheEnd_4_39
 @ 032   ----------------------------------------
         .byte   PATT
-         .word  WhatLiesAtTheEnd_3_32
+         .word  WhatLiesAtTheEnd_4_36
 @ 033   ----------------------------------------
         .byte   PATT
-         .word  WhatLiesAtTheEnd_3_33
+         .word  WhatLiesAtTheEnd_4_37
 @ 034   ----------------------------------------
         .byte   PATT
-         .word  WhatLiesAtTheEnd_3_34
+         .word  WhatLiesAtTheEnd_4_42
 @ 035   ----------------------------------------
         .byte           N72   , Dn5 , v080
         .byte   W68
         .byte   W03
-        .byte           VOICE , 109
+        .byte           VOICE , 110
         .byte   W01
         .byte           N24   , Dn4 , v064
         .byte           N24   , An3 , v080
@@ -4128,80 +4209,57 @@ WhatLiesAtTheEnd_6_7:
 @ 035   ----------------------------------------
         .byte           N72   , Dn3
         .byte   W72
-        .byte           N06   , Dn2 , v064
+        .byte           N24   , An1 , v096
         .byte   W24
 @ 036   ----------------------------------------
-WhatLiesAtTheEnd_6_36:
-        .byte           N06   , Ds2 , v080
-        .byte   W24
-        .byte                   Ds2 , v072
-        .byte   W08
-        .byte                   Ds2 , v064
-        .byte   W08
-        .byte                   Ds2 , v056
-        .byte   W08
-        .byte                   Fn2 , v080
-        .byte   W24
-        .byte                   Fn2 , v064
-        .byte   W24
-        .byte   PEND
+        .byte           N12   , As1 , v100
+        .byte   W96
 @ 037   ----------------------------------------
-WhatLiesAtTheEnd_6_37:
-        .byte           N06   , Dn2 , v080
-        .byte   W24
-        .byte                   Dn2 , v064
-        .byte   W24
-        .byte                   Gn2 , v080
-        .byte   W24
-        .byte                   Gn2 , v064
-        .byte   W24
-        .byte   PEND
+        .byte   W96
 @ 038   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_6_36
+        .byte   W96
 @ 039   ----------------------------------------
-        .byte           N06   , Cn3 , v080
-        .byte   W24
-        .byte                   Cn3 , v064
-        .byte   W24
-        .byte                   As2 , v080
-        .byte   W24
-        .byte                   Gn2 , v064
+        .byte   W72
+        .byte           N24   , An1
         .byte   W24
 @ 040   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_6_36
+        .byte           N12   , As1
+        .byte   W96
 @ 041   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_6_37
+        .byte   W96
 @ 042   ----------------------------------------
-        .byte           N06   , An2 , v080
-        .byte   W24
-        .byte                   An2 , v072
-        .byte   W08
-        .byte                   An2 , v064
-        .byte   W08
-        .byte                   An2 , v056
-        .byte   W08
-        .byte                   Cn3 , v080
-        .byte   W24
-        .byte                   Cn3 , v064
-        .byte   W24
+        .byte   W96
 @ 043   ----------------------------------------
-        .byte                   Gn3 , v080
+        .byte           N06   , Gn3 , v112
         .byte   W24
-        .byte                   Gn3 , v064
+        .byte                   Gn3 , v096
         .byte   W24
-        .byte           N24   , Fn3 , v048
+        .byte           N24   , Fn3 , v080
         .byte   W48
 @ 044   ----------------------------------------
-        .byte   W96
+        .byte           N48   , An2 , v072
+        .byte   W48
+        .byte                   Gn2 , v076
+        .byte   W48
 @ 045   ----------------------------------------
-        .byte   W96
+        .byte                   Gn2 , v080
+        .byte   W48
+        .byte                   Fn2 , v088
+        .byte   W48
 @ 046   ----------------------------------------
-        .byte   W96
+        .byte           N24
+        .byte   W24
+        .byte                   Ds2 , v080
+        .byte   W24
+        .byte                   Fn2 , v084
+        .byte   W24
+        .byte                   Gs2 , v088
+        .byte   W24
 @ 047   ----------------------------------------
-        .byte   W96
+        .byte           N48   , Ds2 , v092
+        .byte   W48
+        .byte                   Cs2 , v080
+        .byte   W48
 @ 048   ----------------------------------------
         .byte   W96
 @ 049   ----------------------------------------
@@ -4229,7 +4287,7 @@ WhatLiesAtTheEnd_6_37:
 @ 060   ----------------------------------------
         .byte   W96
 @ 061   ----------------------------------------
-        .byte           N48   , As2 , v080
+        .byte                   As2
         .byte   W48
         .byte           N16   , Cs3
         .byte   W16
@@ -4382,7 +4440,7 @@ WhatLiesAtTheEnd_6_37:
         .byte   W96
 @ 090   ----------------------------------------
         .byte   W48
-        .byte           N48   , Cn2
+        .byte           N48   , Cn2 , v088
         .byte   W48
 @ 091   ----------------------------------------
         .byte                   Cs2
@@ -4521,57 +4579,57 @@ WhatLiesAtTheEnd_7_3:
         .byte   W96
 @ 035   ----------------------------------------
         .byte   W72
-        .byte                   Fs2 , v096
+        .byte                   An2 , v096
         .byte   W24
 @ 036   ----------------------------------------
-WhatLiesAtTheEnd_7_36:
-        .byte           N24   , As2 , v121
+        .byte           N42   , As2 , v121
+        .byte   W48
+        .byte           N24   , Cn3
         .byte   W24
-        .byte                   As2 , v072
+        .byte                   Gn2 , v096
         .byte   W24
-        .byte                   Cn3 , v121
-        .byte   W24
-        .byte                   En2 , v096
-        .byte   W24
-        .byte   PEND
 @ 037   ----------------------------------------
 WhatLiesAtTheEnd_7_37:
-        .byte           N24   , An2 , v121
+        .byte           N36   , An2 , v121
+        .byte   W48
+        .byte           N24   , Dn3
         .byte   W24
-        .byte                   An2 , v072
-        .byte   W24
-        .byte                   Dn3 , v121
-        .byte   W24
-        .byte                   An2 , v096
+        .byte                   Fn2 , v096
         .byte   W24
         .byte   PEND
 @ 038   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_7_36
+WhatLiesAtTheEnd_7_38:
+        .byte           N36   , As2 , v121
+        .byte   W48
+        .byte           N24   , Cn3
+        .byte   W24
+        .byte                   Gn2 , v096
+        .byte   W24
+        .byte   PEND
 @ 039   ----------------------------------------
-        .byte           N24   , Gs2 , v121
+        .byte           N36   , En2 , v121
+        .byte   W48
+        .byte           N24   , An2
         .byte   W24
-        .byte                   Gs2 , v072
-        .byte   W24
-        .byte                   Fs2 , v121
-        .byte   W24
-        .byte                   Fs2 , v096
+        .byte                   Fn2 , v096
         .byte   W24
 @ 040   ----------------------------------------
         .byte   PATT
-         .word  WhatLiesAtTheEnd_7_36
+         .word  WhatLiesAtTheEnd_7_38
 @ 041   ----------------------------------------
         .byte   PATT
          .word  WhatLiesAtTheEnd_7_37
 @ 042   ----------------------------------------
-        .byte   PATT
-         .word  WhatLiesAtTheEnd_7_36
+        .byte           N36   , Cn3 , v121
+        .byte   W48
+        .byte           N24   , En3
+        .byte   W24
+        .byte                   An2 , v096
+        .byte   W24
 @ 043   ----------------------------------------
-        .byte           N24   , Gs2 , v121
-        .byte   W24
-        .byte                   Gs2 , v072
-        .byte   W24
-        .byte                   Fs2 , v121
+        .byte           N36   , Gn2 , v121
+        .byte   W48
+        .byte           N24   , Fn2
         .byte   W48
 @ 044   ----------------------------------------
         .byte   W96
@@ -4722,12 +4780,484 @@ WhatLiesAtTheEnd_7_72:
          .word  WhatLiesAtTheEnd_7_LOOP
         .byte   FINE
 
+@****************** Track 8 (Midi-Chn.8) ******************@
+
+WhatLiesAtTheEnd_8:
+        .byte   KEYSH , WhatLiesAtTheEnd_key+0
+@ 000   ----------------------------------------
+WhatLiesAtTheEnd_8_LOOP:
+        .byte           VOICE , 101
+        .byte           PAN   , c_v+9
+        .byte           VOL   , 58
+        .byte   W96
+@ 001   ----------------------------------------
+        .byte   W96
+@ 002   ----------------------------------------
+        .byte   W96
+@ 003   ----------------------------------------
+        .byte   W96
+@ 004   ----------------------------------------
+WhatLiesAtTheEnd_8_4:
+        .byte           N48   , Cn3 , v096
+        .byte   W48
+        .byte           N06   , Fn2
+        .byte   W08
+        .byte                   Gs2
+        .byte   W08
+        .byte                   Cn3
+        .byte   W08
+        .byte                   Ds3
+        .byte   W08
+        .byte                   Cn3
+        .byte   W08
+        .byte                   Gs2
+        .byte   W08
+        .byte   PEND
+@ 005   ----------------------------------------
+WhatLiesAtTheEnd_8_5:
+        .byte           N24   , Cs3 , v096
+        .byte   W24
+        .byte           N06   , Fn2
+        .byte   W08
+        .byte                   Gs2
+        .byte   W08
+        .byte                   Cs3
+        .byte   W08
+        .byte           N24   , Cn3
+        .byte   W24
+        .byte           N06   , Fn2
+        .byte   W08
+        .byte                   Gs2
+        .byte   W08
+        .byte                   Cn3
+        .byte   W08
+        .byte   PEND
+@ 006   ----------------------------------------
+        .byte           TIE   , As2
+        .byte   W96
+@ 007   ----------------------------------------
+        .byte   W84
+        .byte           EOT
+        .byte   W12
+@ 008   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_8_4
+@ 009   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_8_5
+@ 010   ----------------------------------------
+        .byte           TIE   , As2 , v096
+        .byte   W96
+@ 011   ----------------------------------------
+        .byte   W84
+        .byte           EOT
+        .byte   W12
+@ 012   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_8_4
+@ 013   ----------------------------------------
+        .byte           N24   , Cs3 , v096
+        .byte   W24
+        .byte           N06   , Fn2
+        .byte   W08
+        .byte                   Gs2
+        .byte   W08
+        .byte                   Cs3
+        .byte   W08
+        .byte           N24   , Ds3
+        .byte   W24
+        .byte           N06   , Fn2
+        .byte   W08
+        .byte                   Gs2
+        .byte   W08
+        .byte                   Ds3
+        .byte   W08
+@ 014   ----------------------------------------
+        .byte           N78   , Fn3
+        .byte   W80
+        .byte           N06   , Fs3
+        .byte   W08
+        .byte                   Fn3
+        .byte   W08
+@ 015   ----------------------------------------
+        .byte           N96   , Ds3
+        .byte   W96
+@ 016   ----------------------------------------
+        .byte           N30
+        .byte   W32
+        .byte           N06   , Fn3
+        .byte   W08
+        .byte                   Ds3
+        .byte   W08
+        .byte           N48   , Cs3
+        .byte   W48
+@ 017   ----------------------------------------
+        .byte           N30   , Cn3
+        .byte   W32
+        .byte           N06   , Cs3
+        .byte   W08
+        .byte                   Cn3
+        .byte   W08
+        .byte           N48   , As2
+        .byte   W48
+@ 018   ----------------------------------------
+        .byte           N30   , Fn3
+        .byte   W32
+        .byte           N06   , Fs3
+        .byte   W08
+        .byte                   Fn3
+        .byte   W08
+        .byte           N44   , Ds3 , v096 , gtp2
+        .byte   W48
+@ 019   ----------------------------------------
+        .byte           N30   , Cs3
+        .byte   W32
+        .byte           N06   , Ds3
+        .byte   W08
+        .byte                   Cs3
+        .byte   W08
+        .byte           N48   , Cn3
+        .byte   W48
+@ 020   ----------------------------------------
+        .byte   W96
+@ 021   ----------------------------------------
+        .byte   W96
+@ 022   ----------------------------------------
+        .byte   W96
+@ 023   ----------------------------------------
+        .byte   W92
+        .byte   W03
+        .byte           VOICE , 86
+        .byte   W01
+@ 024   ----------------------------------------
+        .byte           N48   , Fn3 , v064
+        .byte           N48   , As3
+        .byte   W48
+        .byte           N12   , Fs3
+        .byte   W16
+        .byte                   As3
+        .byte   W16
+        .byte           N16   , Fn4
+        .byte   W16
+@ 025   ----------------------------------------
+        .byte           N48   , Cn4
+        .byte           N48   , Ds3
+        .byte   W48
+        .byte                   Cs3 , v048
+        .byte           N48   , Ds3
+        .byte           N48   , Gs3
+        .byte   W48
+@ 026   ----------------------------------------
+        .byte           N96   , As3
+        .byte           N96   , Fn3
+        .byte           N96   , Dn3
+        .byte   W96
+@ 027   ----------------------------------------
+        .byte           N48   , Dn3 , v064
+        .byte           N48   , Fn3
+        .byte           N48   , As3
+        .byte   W48
+        .byte           N36
+        .byte           N36   , Gn3
+        .byte           N36   , En3
+        .byte           N36   , Dn3
+        .byte   W48
+@ 028   ----------------------------------------
+        .byte   W96
+@ 029   ----------------------------------------
+        .byte   W96
+@ 030   ----------------------------------------
+        .byte   W96
+@ 031   ----------------------------------------
+        .byte   W68
+        .byte   W03
+        .byte           VOICE , 106
+        .byte   W01
+        .byte           N24   , Dn4 , v080
+        .byte   W24
+@ 032   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_4_36
+@ 033   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_4_37
+@ 034   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_4_42
+@ 035   ----------------------------------------
+        .byte           N72   , Dn5 , v080
+        .byte   W96
+@ 036   ----------------------------------------
+        .byte   W96
+@ 037   ----------------------------------------
+        .byte   W96
+@ 038   ----------------------------------------
+        .byte   W96
+@ 039   ----------------------------------------
+        .byte   W72
+        .byte           VOICE , 101
+        .byte           N24   , Dn2 , v064
+        .byte   W23
+        .byte           VOICE , 86
+        .byte   W01
+@ 040   ----------------------------------------
+        .byte           N48   , An2 , v080
+        .byte   W48
+        .byte           N18
+        .byte   W16
+        .byte                   Gn2
+        .byte   W16
+        .byte                   Fn2
+        .byte   W16
+@ 041   ----------------------------------------
+        .byte           N24   , En2
+        .byte   W24
+        .byte                   Fn2
+        .byte   W24
+        .byte                   Gn2
+        .byte   W24
+        .byte                   Cn3
+        .byte   W24
+@ 042   ----------------------------------------
+        .byte           N20   , Dn3
+        .byte   W18
+        .byte           N06   , En3
+        .byte   W06
+        .byte           N48   , Cn3
+        .byte   W48
+        .byte           N24   , An2
+        .byte   W24
+@ 043   ----------------------------------------
+        .byte           N48   , Gn2 , v060
+        .byte           N90   , Dn3 , v080
+        .byte           N90   , An2
+        .byte   W96
+@ 044   ----------------------------------------
+        .byte   W96
+@ 045   ----------------------------------------
+        .byte   W96
+@ 046   ----------------------------------------
+        .byte   W96
+@ 047   ----------------------------------------
+        .byte   W96
+@ 048   ----------------------------------------
+        .byte   W96
+@ 049   ----------------------------------------
+        .byte   W96
+@ 050   ----------------------------------------
+        .byte   W96
+@ 051   ----------------------------------------
+        .byte   W96
+@ 052   ----------------------------------------
+        .byte   W96
+@ 053   ----------------------------------------
+        .byte   W96
+@ 054   ----------------------------------------
+        .byte   W96
+@ 055   ----------------------------------------
+        .byte   W96
+@ 056   ----------------------------------------
+        .byte   W96
+@ 057   ----------------------------------------
+        .byte   W96
+@ 058   ----------------------------------------
+        .byte   W96
+@ 059   ----------------------------------------
+        .byte   W96
+@ 060   ----------------------------------------
+        .byte   W96
+@ 061   ----------------------------------------
+        .byte           N48   , As3
+        .byte           N48   , As2
+        .byte   W48
+        .byte                   Fn3
+        .byte           N48   , Fn4
+        .byte   W48
+@ 062   ----------------------------------------
+        .byte                   Fn4
+        .byte           N48   , Fn3
+        .byte           N48   , Cn3
+        .byte   W48
+        .byte           N24   , Ds4
+        .byte           N24   , Ds3
+        .byte   W24
+        .byte                   Cs4
+        .byte           N24   , Cs3
+        .byte   W24
+@ 063   ----------------------------------------
+        .byte           N36   , Cs4
+        .byte           N36   , Cs3
+        .byte           N48   , As2
+        .byte   W36
+        .byte           N12   , Cn4
+        .byte           N12   , Cn3
+        .byte   W12
+        .byte           N36   , Cn4 , v080 , gtp2
+        .byte                   Cn3
+        .byte   W36
+        .byte           N12   , Fs3
+        .byte           N12   , Fs4
+        .byte   W12
+@ 064   ----------------------------------------
+        .byte           N36
+        .byte           N36   , Fs3
+        .byte           N36   , Cs4
+        .byte   W36
+        .byte           N12   , Fn4
+        .byte           N12   , Fn3
+        .byte   W12
+        .byte           N42
+        .byte           N42   , Fn4
+        .byte           N42   , Cn4
+        .byte   W48
+@ 065   ----------------------------------------
+        .byte           N48   , As3
+        .byte           N48   , As2
+        .byte   W72
+        .byte           N06
+        .byte           N06   , As3
+        .byte   W08
+        .byte                   Cs3
+        .byte           N06   , Cs4
+        .byte   W08
+        .byte                   Fn3
+        .byte           N06   , Fn4
+        .byte   W08
+@ 066   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_4_58
+@ 067   ----------------------------------------
+        .byte           N84   , Fn4 , v080
+        .byte           N84   , Fn3
+        .byte           N90   , Cn4
+        .byte   W96
+@ 068   ----------------------------------------
+        .byte           N36   , Cs4
+        .byte           N36   , Cs3
+        .byte   W36
+        .byte           N12   , Cn4
+        .byte           N12   , Cn3
+        .byte   W12
+        .byte           N42
+        .byte           N42   , Cn4
+        .byte           N42   , Fn3
+        .byte   W48
+@ 069   ----------------------------------------
+        .byte   W96
+@ 070   ----------------------------------------
+        .byte   W72
+        .byte           N24   , As3
+        .byte   W24
+@ 071   ----------------------------------------
+        .byte           N48   , Fn4
+        .byte   W48
+        .byte           N16
+        .byte   W16
+        .byte                   Ds4
+        .byte   W16
+        .byte                   Cs4
+        .byte   W16
+@ 072   ----------------------------------------
+WhatLiesAtTheEnd_8_72:
+        .byte           N24   , Cn4 , v080
+        .byte           N72   , Gs3
+        .byte   W24
+        .byte           N24   , Cs4
+        .byte   W24
+        .byte                   Ds4
+        .byte   W24
+        .byte                   Gs4
+        .byte   W24
+        .byte   PEND
+@ 073   ----------------------------------------
+        .byte           N60   , Ds4
+        .byte           N48   , Cn4
+        .byte   W96
+@ 074   ----------------------------------------
+        .byte                   Cs4
+        .byte   W48
+        .byte           N24   , Cn4
+        .byte   W24
+        .byte                   As3
+        .byte   W24
+@ 075   ----------------------------------------
+        .byte           N48
+        .byte           N48   , Fn4
+        .byte   W48
+        .byte           N16
+        .byte   W16
+        .byte                   Ds4
+        .byte   W16
+        .byte                   Cs4
+        .byte   W16
+@ 076   ----------------------------------------
+        .byte   PATT
+         .word  WhatLiesAtTheEnd_8_72
+@ 077   ----------------------------------------
+        .byte           N16   , As4 , v080
+        .byte   W16
+        .byte           N08   , Cn5
+        .byte   W08
+        .byte           N48   , Gs4
+        .byte   W48
+        .byte           N24   , Fn4
+        .byte   W24
+@ 078   ----------------------------------------
+        .byte           N96   , As4
+        .byte   W96
+@ 079   ----------------------------------------
+        .byte   W96
+@ 080   ----------------------------------------
+        .byte   W96
+@ 081   ----------------------------------------
+        .byte   W96
+@ 082   ----------------------------------------
+        .byte   W96
+@ 083   ----------------------------------------
+        .byte   W96
+@ 084   ----------------------------------------
+        .byte   W96
+@ 085   ----------------------------------------
+        .byte   W96
+@ 086   ----------------------------------------
+        .byte   W96
+@ 087   ----------------------------------------
+        .byte   W96
+@ 088   ----------------------------------------
+        .byte   W96
+@ 089   ----------------------------------------
+        .byte   W96
+@ 090   ----------------------------------------
+        .byte   W48
+        .byte           VOICE , 101
+        .byte           N48   , Cn3 , v072
+        .byte   W48
+@ 091   ----------------------------------------
+        .byte                   Cs3
+        .byte   W48
+        .byte                   Fn3
+        .byte   W48
+@ 092   ----------------------------------------
+        .byte           N72
+        .byte   W80
+        .byte           N06   , Fs3
+        .byte   W08
+        .byte                   Fn3
+        .byte   W08
+@ 093   ----------------------------------------
+        .byte           N96   , Ds3
+        .byte   W96
+@ 094   ----------------------------------------
+        .byte   GOTO
+         .word  WhatLiesAtTheEnd_8_LOOP
+        .byte   FINE
+
 
 @********************** End of Song ***********************@
 
         .align  2
 WhatLiesAtTheEnd:
-        .byte   8                       @ Num Tracks
+        .byte   9                       @ Num Tracks
         .byte   0                       @ Unknown
         .byte   WhatLiesAtTheEnd_pri    @ Priority
         .byte   WhatLiesAtTheEnd_rev    @ Reverb
@@ -4742,5 +5272,6 @@ WhatLiesAtTheEnd:
         .word   WhatLiesAtTheEnd_5
         .word   WhatLiesAtTheEnd_6
         .word   WhatLiesAtTheEnd_7
+        .word   WhatLiesAtTheEnd_8
 
         .end

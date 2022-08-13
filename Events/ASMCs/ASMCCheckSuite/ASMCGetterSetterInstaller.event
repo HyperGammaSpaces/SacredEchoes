@@ -8,17 +8,17 @@ ALIGN 4
 ALIGN 4
 
 MapAnimGetExp:
-WORD $000002 $08015360+1 //AddSkipThread2
-WORD $000002 $0807a940+1 //MoveCameraOntoSubject
-WORD $02000E $0 //Wait 2frame
-WORD $14000E $0 //Wait 20frame
-WORD $000002 $0807aa4c+1 //DisplayMapAnimExpBar
-WORD $00000E $0 //Wait 0frame
-WORD $000002 $0802CC1C+1 //SaveInstigatorFromBattle
-WORD $010006; POIN gProc_PopR_AnimsOnWrapper //popup rework, replace this with the standard weapon broke/rank increased if not using. it's what's at $9A3600
-WORD $000D $089A3620 //goto MapBattleEndCleanup
-WORD $0 $0 //term
-ALIGN 4
+    PROC_CALL_ROUTINE($15360+1) //AddSkipThread2
+    PROC_CALL_ROUTINE($7a940+1) //MoveCameraOntoSubject
+    PROC_SLEEP(2) //Wait 2frame
+    PROC_SLEEP(20) //Wait 20frame
+    PROC_CALL_ROUTINE($7aa4c+1) //DisplayMapAnimExpBar
+    PROC_YIELD
+    PROC_CALL_ROUTINE($2CC1C+1) //SaveInstigatorFromBattle
+    WORD $010006; POIN gProc_PopR_AnimsOnWrapper //popup rework, replace this with the standard weapon broke/rank increased if not using. it's what's at $9A3600
+    PROC_JUMP($9A3620) //goto MapBattleEndCleanup
+    PROC_END
+    ALIGN 4
 
 //Getters
 #define CheckLevel(Character) "SVAL 0x2 Character; ASMC CheckLevelASMC|1"
@@ -45,6 +45,7 @@ ALIGN 4
 #define CheckStatusDuration(Character) "SVAL 0x2 Character; ASMC CheckStatusDurationASMC|1"
 
 //Setters
+#define CheckCanGiveExperience(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; ASMC CheckCanGiveExperienceASMC|1"
 #define GiveExperience(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; ASMC GiveExperienceASMC|1"
 #define GiveMaxHP(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; ASMC GiveMaxHPASMC|1"
 #define GiveStrength(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; ASMC GiveStrengthASMC|1"

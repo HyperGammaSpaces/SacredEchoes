@@ -594,6 +594,17 @@ NewSetupBattleWeaponData:
         cmp     r0, #1
         beq     BWD_UpdateWeaponData
         
+            @special case for weapons with no 1-range
+            cmp     r6, #0x0
+            beq     BWD_RangeCheckLoop
+            lsl     r2, r7, #0x18
+            lsr     r2, r2, #0x18
+            cmp     r2, #Longbow_ID
+            beq     BWD_InventoryNext
+            cmp     r2, #Saunion_ID
+            beq     BWD_InventoryNext
+        
+    BWD_RangeCheckLoop:
         mov     r0, r7          @ item ID
         ldr     r1, =gBattleStatsBitfield
         ldrb    r1, [r1, #0x2]  @ range
@@ -601,6 +612,16 @@ NewSetupBattleWeaponData:
         blh     0x0801ACFC      @ IsItemCoveringRange
         cmp     r0, #0x0
         bne     BWD_UpdateWeaponData
+        
+            @special case for weapons with no 1-range
+            cmp     r6, #0x0
+            bgt     BWD_InventoryNext
+            lsl     r2, r7, #0x18
+            lsr     r2, r2, #0x18
+            cmp     r2, #Longbow_ID
+            beq     BWD_CantCounter
+            cmp     r2, #Saunion_ID
+            beq     BWD_CantCounter
 
     BWD_InventoryNext:
         lsr     r6, r6, #0x1

@@ -22,21 +22,24 @@ SShrine_TurnBasedEvents:
 	TURN
 
 LoadReinforcements:
+    CHECK_EVENTID 0x2 // boss death quote
+	BNE 0 rC r0 // branch label 0 if summoner dead
 	COUNTER_CHECK 0 // slot c = counter 0 value
-	SVAL 0x1 1 // number of turns between summons (1)
-	BEQ 1 0xC 0x1 // branch label 1 if counter at first value
-	GOTO 4 //if counter not at value, increment
+	SVAL r1 2 // number of turns between summons (2)
+	BNE 4 rC r1 // branch label 4 if counter is not at value
 
-	// Counter at value 1
-	LABEL 1
+	// Counter at value
 	COUNTER_SET 0 0 // reset counter
-	SMOV 0x2 (BackupsReinforcements|0x8000000)
-	CALL $9EE274
-	EVBIT_T 0x7
-	
-	LABEL 4
+    CAMERA_CENTERED [9,10]
+	LoadReinforcements(BackupsReinforcements)
+    GOTO 0
+
 	// Counter not at value
+	LABEL 4
 	COUNTER_ADD 0 0 // counter 0 ++
+	
+	LABEL 0
+	// event end
 	NoFade
 	ENDA
 

@@ -4,6 +4,7 @@
 .equ origin, 0x0802BD50
 .equ getMaxHP, . + 0x08019190 - origin
 .equ getClass, . + 0x08019444 - origin
+.equ EquipItemSlotByIndex, . + 0x08016bc0 - origin
 .equ SetEventId, . + 0x08083d80 - origin
 
 @r0 = RAM data
@@ -127,7 +128,7 @@ ble     weaponLevelLoop
 
 CheckWeaponMutation:
 	mov     r1, r5
-	mov     r2, #0x1	@by default, replace the sword
+	mov     r7, #0x1	@by default, replace the sword
 	
 	AddWeapon:
 	cmp     r1, #0x28	@priestess
@@ -157,11 +158,12 @@ CheckWeaponMutation:
 	CheckStaff:
 	cmp     r1, #0x4A
 	beq     SetWMagic
-	b       resetLevel
+	mov     r1, #0
+	b       EquipFirstItem
 	
 	SetSword:
 	mov     r0, #0x1		@sword
-	mov     r2, #0x38		@replace fire
+	mov     r7, #0x38		@replace fire
 	b       UpdateInventory
 	
 	SetLance:
@@ -180,23 +182,31 @@ CheckWeaponMutation:
 	mov     r0, #0x3F		@nosferatu
 	
 UpdateInventory:
-	mov     r1, #0x1E		@inventory start
+	mov     r2, r4
+	add     r2, #0x1E		@inventory start
+    mov     r1, #0          @inventory slot
 ItemReplaceLoop:
-	ldrh    r3, [r4, r1]
+	ldrh    r3, [r2, r1]
 	lsl     r3, #0x18
 	lsr     r3, #0x18
-	cmp     r3, r2			@id to replace
+	cmp     r3, r7			@id to replace
 	beq     MutateItem
 	add     r1, #0x2
-	cmp     r1, #0x26
+	cmp     r1, #0x8
 	ble     ItemReplaceLoop
-	b       resetLevel
+    mov     r1, #0
+	b       EquipFirstItem
 	
 MutateItem:
-	add     r1, r1, r4
-	strb    r0, [r1, #0x0]
+	strb    r0, [r2, r1]
+    lsr     r1, #0x1
 
-resetLevel:         @store the new class pointer to unit
+EquipFirstItem:
+mov     r0, r4
+bl      EquipItemSlotByIndex
+
+resetLevel:
+@store the new class pointer to unit
 str     r6, [r4, #0x4]
 
 mov     r1, #0x0 		@New EXP

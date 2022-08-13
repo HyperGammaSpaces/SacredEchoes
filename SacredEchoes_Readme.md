@@ -2,12 +2,12 @@
 
 This is a demake of Fire Emblem Echoes: Shadows of Valentia on the GBA. It includes reworked maps and a few new characters, as well as a few changes to the writing and game mechanics. Otherwise, it is largely faithful to the original games. The base game is FE8U.
 
-Currently playable through Act 3, with 28 story maps, 1 gaiden chapter, and 5 repeatable maps.
+Currently playable through Act 4, with 43 story maps, 1 gaiden chapter, and 8 repeatable maps.
 
 Specifically:
 
 - All basic weapons are unbreakable.
-  - Equipped weapons have limited durability in most cases. Money can be earned from certain boss characters and from dungeons and skirmishes, and you can purchase replacement weapons from the armories in Act 3.
+  - Equipped weapons have limited durability in most cases. Money can be earned from certain boss characters and from dungeons and skirmishes, and you can purchase replacement weapons from the armories in Acts 3 & 4.
 - Magic costs HP to cast.
   - When out of HP to cast a spell, that spell is disarmed until HP is restored enough to cast it.
   - Unit HP is updated visually when casting spells with cost.
@@ -42,7 +42,7 @@ Optional QOL fixes to GBAFE are included:
 - Includes HP bars and effective weapon notices on the map
 - Includes danger zone highlighting with Select button
 - Includes battle stats with animations off (with a UI inspired by the original Gaiden battle frame)
-- Includes the option to play on Casual mode, selected at the beginning of a new file.
+- Includes the option to play on Casual mode, which can be selected at game start or toggled during gameplay.
 - The Guide has been updated to include details on the game's mechanics. The doubling threshold is viewable in-game by checking the help text of the Speed stat on the statscreen.
 
 #Promotion levels
@@ -220,7 +220,7 @@ This hack does not make use of the skill system, but there are some skills which
 Some things are still under development for later releases.
 
 - The game has only been balanced for Normal mode (hard mode results may vary). It is recommended to only play on Easy or Normal for now.
-- Some support conversations have been implemented while others are still placeholders. (Roughly 75% complete)
+- Some support conversations have been implemented while others are still placeholders. (Roughly 80% complete)
 - Some issues have been reported with Rewarp.
 
 #Credits
@@ -246,40 +246,42 @@ Some things are still under development for later releases.
   - Zopyrus by RandomWizard and Levin64
   - all others by hypergammaspaces or IS
 - Battle Animations: 
-  - Alm (T1+T2), Villagers, Snipers, Pirate (F), Dread Fighter, Vestal, Nuibaba, Arcanist, Cantor, Jedah, Wyvern Lord, Gold Knight and Cape General by Nura
+  - Duma battle animation by Nuramon and L95
+  - Celica (Promoted and Unpromoted) by RedBean
+  - Alm (T1+T2), Villagers, Snipers, Pirate (F), Dread Fighter, Vestal, Nuibaba, Arcanist, Cantor, Jedah, Wyvern Lord, Gold Knight and Fiend by Nuramon
   - Pirate (M) Repalette by Wan
   - Berserker (M) by BwdYeti
   - Berserker (F) by serif, eCut, Skitty, and Pikmin1211
   - Soldier by flasuban, Leo_Link, Nuramon
   - Mercenary and Armor Knight by Team SALVAGED
-  - Caped Baron by Iscaneus, Nuramon and Leo_Link
+  - Caped Baron by Iscaneus, Nuramon, Leo_Link, Sax Marine, and The_Big_Dededester
   - Cleric by Eldritch Abomination and Flasuban
-  - Saint by Melia
-  - Bishop and Thief repalettes by Eldritch Abomination
+  - Saint by Melia, Feier and Epicer
+  - Bishop (Beard) by Eldritch Abomination and Epicer
+  - Thief repalettes by Eldritch Abomination
   - Myrmidon/Hero by Wan and Zane with sword by Nuramon
   - Cavaliers by Team SALVAGED and Flasuban
   - Paladins by Team SALVAGED (female edit by me)
-  - Improved Brigand by flasuban
   - Rogue Repalette by Pikmin1211, Maiser6, Ukelele, SD9k, Temp, Black Mage and Wan
   - Mage (M) by Leo_Link, L95 and Flasuban
   - Mage (F) by hypergammaspaces and Obsidian_Daddy
-  - Sage (M) by Greentea and Ruby
+  - Sage (M) by Levin64 and Nuramon
   - Priestess by hypergammaspaces and Jono the Red
   - Bow Knight by Spud
-  - Celica (Promoted and Unpromoted) by RedBean
   - Shaman Staff by Temp and Shin19
-  - Archers by DerTheVaporeon
-  - Woodcutter and Axeman by Leo_Link
+  - Archers and Woodcutter by DerTheVaporeon
+  - Axeman and SoV Brigand by Leo_Link
   - Highlander/Barbarian by Orihara_Saki (Bow edit by me)
   - Pegasus Knight by OreoStyx
   - Falcoknight by TBA
   - Wyvern Rider by flasuban and eCut
   - Dracoknight repalette by Feaw and St jack
-  - Fiend (Generic King by Huichelaar, DerTheVaporeon, L95 and Pikmin1211)
-  - Deathgoyle by Teraspark and L95
+  - Knight Lord and Wight by Teraspark
+  - Deathgoyle by L95 and Teraspark
+  - Mogall (Tackle) by Epicer
   - Duma mapsprite by SHYUTERz, HIROTO, and SHIRMER
-- Map sprites and class cards by flasuban, Tordo45, SkidMarc25, Leif, TAS20XX, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, Snewping, MeatOfJustice, DerTheVaporeon, FEier, and Team SALVAGED
-- Battle palettes by Hypergammaspaces and Dancer_A
+- Map sprites and class cards by flasuban, Tordo45, SkidMarc25, Leif, TAS20XX, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, Snewping, MeatOfJustice, DerTheVaporeon, FEier, Epicer, and Team SALVAGED
+- Battle palettes by Hypergammaspaces, Nuramon, and Dancer_A
 - LordGlenn's Cipher icons for weapon ranks, weapon icons for Regalia weapons
 - Cardcafe's Echoes item icons and FEier's Weapon icons, Dark magic icons by epicer and ilmoro
 - New support writing contributed by Meadows, Flare, Ese, and CaptinSpike
@@ -302,5 +304,7 @@ Some things are still under development for later releases.
 - DerTheVaporeon's improved cave tileset
 - Improved Stronghold tileset by ZoramineFae, flasuban, and N426
 - Western Isles Extended tileset and additional bridge tiles for Fields by WAve
+- Elements of N426's water animations for Swamp tileset and fire animations for Duma Tower tileset
+- Peerless's Improved FE6/7 Snow Castle tileset
 
 Please let me know if I missed anyone.

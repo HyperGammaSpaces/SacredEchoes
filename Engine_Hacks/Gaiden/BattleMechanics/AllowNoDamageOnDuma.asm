@@ -29,16 +29,19 @@ AllowZeroDamage_R2:
     ldr r0, [sp, #This_Unit_Ptr]
     mov r3, #0
 AllowZeroDamage_Duma:
+    mov r1, r0
+    add r1, #0x5A
     add r0, #0x4A
     ldrh r0, [r0]
-    mov  r1, #0xFF
-    and  r0, r1
+    mov  r2, #0xFF
+    and  r0, r2
     cmp  r0, #NosferatuID
     beq  exit_57B14
     cmp  r0, #FalchionID
     beq  exit_57B14
         
         mov r0, #0x0
+        strh r0, [r1]
         ldr r1, =gBattleDisplayedDamage
         strh r0, [r1, r3]
         b exit_57B14

@@ -54,7 +54,7 @@ ChangeGuardAI_2:
 	ENDA
 
 Ch1_5_CharacterBasedEvents:
-	CharacterEventBothWays(8, TalkToClair, Lukas, Clair)
+	CharacterEvent(8, TalkToClair, Lukas, Clair)
 	CharacterEvent(8, TalkToClairWithAlm, Alm, Clair)
 	CharacterEvent(8, TalkToClairWithGray, Gray, Clair)
 	CHAR
@@ -70,9 +70,13 @@ TalkToClair:
 	REVEAL Clair
 	CUSA Clair
 	STAL 20
+    EVBIT_MODIFY 0x1
+    EVBIT_F 2
+    RemoveItemFromUnit(Clair,BaseLance)
 	CharacterJoinedNotification(Notif_ClairJoin)
 	SVAL 0x3 BaseLance
 	GIVEITEMTO Clair
+    EVBIT_MODIFY 0x0
 	STAL 20
 	NoFade
 	MURE 0x05
@@ -88,9 +92,13 @@ TalkToClairWithAlm:
 	CALL $591F40
 	CUSA Clair
 	STAL 20
+	EVBIT_MODIFY 0x1
+    EVBIT_F 2
+    RemoveItemFromUnit(Clair,BaseLance)
 	CharacterJoinedNotification(Notif_ClairJoin)
 	SVAL 0x3 BaseLance
 	GIVEITEMTO Clair
+    EVBIT_MODIFY 0x0
 	STAL 20
 	NoFade
 	MURE 0x05
@@ -106,9 +114,13 @@ TalkToClairWithGray:
 	CALL $591F40
 	CUSA Clair
 	STAL 20
+	EVBIT_MODIFY 0x1
+    EVBIT_F 2
+    RemoveItemFromUnit(Clair,BaseLance)
 	CharacterJoinedNotification(Notif_ClairJoin)
 	SVAL 0x3 BaseLance
 	GIVEITEMTO Clair
+    EVBIT_MODIFY 0x0
 	STAL 20
 	NoFade
 	MURE 0x05

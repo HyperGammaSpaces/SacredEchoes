@@ -187,6 +187,11 @@ efxHpBar_OnBothDoneUpdating:
         ldr  r7, [r0] @ r7 = back AIS of target
     
 efxHpBar_UnitDied:
+    ldr  r3, =DumaHpHack
+    mov  r14, r3
+    .short 0xf800
+    cmp  r0, #0x0
+    bne  efxHpBar_BreakProcLoop
 	blh  IsLinkArenaBattle @ 804FD54
 	cmp  r0, #1
 	bne  efxHpBar_CheckDeathQuote
