@@ -235,6 +235,12 @@ NewGetUnitEquippedWeaponSlot:
     mov     r4, #0x0
     cmp     r1, #0x0        @is length 0?
     beq     Slot_LoopStart  @no spells exist
+    
+    ldrb    r1, [r5, #0xB]
+    mov     r0, #0x80
+    and     r0, r1
+    cmp     r0, #0
+    bne     Slot_LoopStart
 
     ldr     r1, =SelectedSpellPointer
     ldrh    r1, [r1, #0x0]
@@ -288,6 +294,12 @@ NewGetUnitEquippedWeapon:
     ldr     r0, [r0]
     cmp     r0, #0x0
     beq     GetWeap_Exit
+    
+    ldrb    r1, [r6, #0xB]
+    mov     r0, #0x80
+    and     r0, r1
+    cmp     r0, #0
+    bne     GetWeap_LoopStart
 
     ldr     r1, =SelectedSpellPointer
     ldrh    r1, [r1, #0x0]
@@ -822,6 +834,12 @@ NewSetupBattleStructForStaffUser:
     mov     r2, r0
     mov     r7, r1
 
+    ldrb    r1, [r2, #0xB]
+    mov     r0, #0x80
+    and     r0, r1
+    cmp     r0, #0
+    bne     SetupHealScreen_LoadFromInventory
+
     SetupHealScreen_CheckSelectedSpell:
     ldr     r3, =SelectedSpellPointer
     ldrh    r3, [r3, #0x0]
@@ -1281,14 +1299,12 @@ GaidenMagicAI_CheckConditions:
 		ldr     r0, [r0]
 		mov     r1, r2
 		bl      SpellCostGetter
-		cmp     r0, #0x0
-		beq     GaidenMagicAI_Continue
 		
 		ldr     r1, =gActiveUnit
 		ldr     r1, [r1]
 		ldrb    r1, [r1, #0x13] @current hp
 		cmp     r1, r0
-		bgt     GaidenMagicAI_Continue
+		ble     GaidenMagicAI_Continue
 		
 			mov     r0, #0x0
 			ldr     r1, =0x0803D69C+1
@@ -1325,20 +1341,31 @@ AIStaffCostCheck:
         ldr     r0, [r0]
         mov     r1, r4
         bl      SpellCostGetter
-        cmp     r0, #0x0
-        beq     GaidenStaffAI_Continue
         
         ldr     r1, =gActiveUnit
         ldr     r1, [r1]
         ldrb    r1, [r1, #0x13] @current hp
         cmp     r1, r0
-        bgt     GaidenStaffAI_Continue
+        ble     GaidenStaffAI_Continue
         
             mov     r0, #0x0
             ldr     r1, =0x0803FA80+1
             bx      r1
 
     GaidenStaffAI_Continue:
+        add     r5, #1
+        cmp     r5, #4
+        bgt     GaidenStaffAI_NoStaff
+        ldr     r0, =gActiveUnit
+        ldr     r0, [r0]
+        lsl     r1, r5, #1
+        add     r0, #0x1E
+        add     r0, r0, r1
+        ldrh    r4, [r0]
+        cmp     r4, #0
+        bne     AIStaffCostCheck
+        
+    GaidenStaffAI_NoStaff:
         ldr     r0, =0x0803FAB4+1
         bx      r0
 

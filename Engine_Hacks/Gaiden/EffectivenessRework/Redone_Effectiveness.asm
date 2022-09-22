@@ -1,5 +1,8 @@
 .thumb
 
+.set LadybladeID, 0x10
+.set gBattleActor, 0x203A4EC
+.set gBattleTarget, 0x203A56C
 @r0=attacker's item id, r1=defender battle struct
 
 push	{r4-r7,r14}
@@ -9,6 +12,8 @@ ldr		r0,[r5,#0x4]
 cmp		r0,#0
 beq		RetFalse
 mov		r0,r4
+cmp     r0, #LadybladeID
+beq     LadybladeCase
 ldr		r3,=#0x80176D0		@get effectiveness pointer
 mov		r14,r3
 .short	0xF800
@@ -64,6 +69,29 @@ StoreMultiplier:
 
 ldrb	r0,[r4,#0x1]		@coefficient
 b		GoBack
+
+LadybladeCase:
+ldr     r2, =gBattleActor
+cmp     r1, r2
+beq     EquippedByDefender
+EquippedByAttacker:
+b       LoadWielderInfo
+EquippedByDefender:
+ldr     r2, =gBattleTarget
+LoadWielderInfo:
+ldr     r1, [r2]
+ldr     r2, [r2, #0x4]
+ldr     r1, [r1, #0x28]
+ldr     r2, [r2, #0x28]
+orr     r1, r2
+mov     r2, #0x40
+lsl     r2, r2, #0x8
+and     r1, r2
+cmp     r1, #0
+beq     RetFalse
+mov     r0, #2
+b       GoBack
+
 RetFalse:
 mov		r0,#0
 GoBack:

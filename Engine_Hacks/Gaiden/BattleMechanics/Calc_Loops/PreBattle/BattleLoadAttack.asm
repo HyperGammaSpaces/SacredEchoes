@@ -52,6 +52,8 @@ mov     r0, #0
 ldsh    r0, [r4, r0]    @current attack
 cmp     r5, #0
 beq     Label3
+cmp     r5, #2
+beq     Label3
 mul     r0, r5
 lsr     r0, #1
 add     r0, #5          @ eff dmg bonus
