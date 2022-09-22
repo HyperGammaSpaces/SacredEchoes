@@ -1,0 +1,371 @@
+Tentacle_Main:
+{
+	#include "Modular_Tentacle.lyn.event"
+
+	PUSH
+
+		//Add to spell effect pointer table at 5D4E60
+		setCustomSpell(0x46, StartSpellAnimForTentacle)
+		
+		
+		//using lyn to get around compiler issues :)
+		ORG BGProcPointer_43
+			POIN Tentacle_BG1Proc
+			
+		ORG BGFrameData_43
+			POIN TentacleBG1FrameData
+			
+		ORG BGTSAData_43 //two pointers
+			POIN Tentacle_BG1_TSAPointer_Melee //melee
+			POIN Tentacle_BG1_TSAPointer_Melee //ranged
+			
+		ORG BGPalette_43
+			POIN Tentacle_Palette_Pointer
+            POIN Tentacle_Palette
+			
+		ORG BGImage_43
+			POIN Tentacle_BG1_Img
+			
+			
+			
+		ORG BGProcPointer_59
+			POIN Tentacle_BG2Proc
+			
+		ORG BGFrameData_59
+			POIN TentacleBG2FrameData
+			
+		ORG BGTSAData_59 //two pointers
+			POIN Tentacle_BG2_TSAPointer_Melee //melee
+			POIN Tentacle_BG2_TSAPointer_Melee //ranged
+			
+		ORG BGPalette_59
+			POIN Tentacle_Palette_Pointer
+            POIN Tentacle_Palette
+			
+		ORG BGImage_59
+			POIN Tentacle_BG2_Img
+			
+			
+			
+		ORG BGProcPointer_75
+			POIN Tentacle_BG3Proc
+			
+		ORG BGFrameData_75
+			POIN TentacleBG3FrameData
+			
+		ORG BGTSAData_75 //two pointers
+			POIN Tentacle_BG3_TSAPointer_Melee //melee
+			POIN Tentacle_BG3_TSAPointer_Melee //ranged
+			
+		ORG BGPalette_75
+			POIN Tentacle_Palette_Pointer
+            POIN Tentacle_Palette
+			
+		ORG BGImage_75
+			POIN Tentacle_BG3_Img
+			
+			
+	POP
+
+
+	ALIGN 4
+		Tentacle_MainProcLoop:
+		SHORT $01 $00; WORD $080DE9D0 //set name pointer
+		SHORT $03 $00; POIN TentacleAnim_Main+1
+		WORD 0 0
+		
+		Tentacle_BG1Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN TentacleAnim_BG1_Loop+1
+		WORD 0 0
+		
+		Tentacle_BG2Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN TentacleAnim_BG2_Loop+1
+		WORD 0 0
+		
+		Tentacle_BG3Proc:
+		SHORT $01 $00; WORD $080DE9DC //set name pointer
+		SHORT $03 $00; POIN TentacleAnim_BG3_Loop+1
+		WORD 0 0
+		
+}
+
+ALIGN 4
+TentacleBG1FrameData:
+SpellFrameData($00, 3)
+SpellFrameData($01, 3)
+SpellFrameData($02, 3)
+SpellFrameData($03, 3)
+SpellFrameData($04, 2)
+SpellFrameData($05, 3)
+SpellFrameData($06, 2)
+SpellFrameData($07, 3)
+SpellFrameData($08, 2)
+SpellFrameData($09, 3)
+SpellFrameData($0A, 2)
+SpellFrameData($0B, 3)
+SpellFrameData($0C, 3)
+SpellFrameData($0D, 3)
+SpellFrameDataTerm
+
+ALIGN 4
+Tentacle_BG1_TSAPointer_Melee:
+POIN Tentacle_BG1_TSA1
+POIN Tentacle_BG1_TSA2
+POIN Tentacle_BG1_TSA3
+POIN Tentacle_BG1_TSA4
+POIN Tentacle_BG1_TSA5
+POIN Tentacle_BG1_TSA6
+POIN Tentacle_BG1_TSA7
+POIN Tentacle_BG1_TSA8
+POIN Tentacle_BG1_TSA9
+POIN Tentacle_BG1_TSA10
+POIN Tentacle_BG1_TSA11
+POIN Tentacle_BG1_TSA12
+POIN Tentacle_BG1_TSA13
+POIN Tentacle_BG1_TSA14
+/*
+ALIGN 4
+Tentacle_BG1_TSAPointer_Range:
+POIN Tentacle_BG1_TSA1_Range
+POIN Tentacle_BG1_TSA2_Range
+POIN Tentacle_BG1_TSA3_Range
+POIN Tentacle_BG1_TSA4_Range
+POIN Tentacle_BG1_TSA5_Range
+POIN Tentacle_BG1_TSA6_Range
+POIN Tentacle_BG1_TSA7_Range
+POIN Tentacle_BG1_TSA8_Range
+POIN Tentacle_BG1_TSA9_Range
+POIN Tentacle_BG1_TSA10_Range
+POIN Tentacle_BG1_TSA11_Range
+POIN Tentacle_BG1_TSA12_Range
+POIN Tentacle_BG1_TSA13_Range
+POIN Tentacle_BG1_TSA14_Range
+*/
+
+ALIGN 4
+TentacleBG2FrameData:
+SpellFrameData($00, 3) //starts at frame 15
+SpellFrameData($01, 3)
+SpellFrameData($02, 3)
+SpellFrameData($03, 3)
+SpellFrameData($04, 3)
+SpellFrameData($05, 3)
+SpellFrameData($06, 3)
+SpellFrameData($07, 3)
+SpellFrameData($08, 3)
+SpellFrameData($09, 3)
+SpellFrameData($0A, 12)
+SpellFrameData($0B, 4)
+SpellFrameDataTerm
+
+ALIGN 4
+Tentacle_BG2_TSAPointer_Melee:
+POIN Tentacle_BG2_TSA1
+POIN Tentacle_BG2_TSA2
+POIN Tentacle_BG2_TSA3
+POIN Tentacle_BG2_TSA4
+POIN Tentacle_BG2_TSA5
+POIN Tentacle_BG2_TSA6
+POIN Tentacle_BG2_TSA7
+POIN Tentacle_BG2_TSA8
+POIN Tentacle_BG2_TSA9
+POIN Tentacle_BG2_TSA10
+POIN Tentacle_BG2_TSA11
+POIN Tentacle_BG2_TSA12
+/*
+ALIGN 4
+Tentacle_BG2_TSAPointer_Range:
+POIN Tentacle_BG2_TSA1_Range
+POIN Tentacle_BG2_TSA2_Range
+POIN Tentacle_BG2_TSA3_Range
+POIN Tentacle_BG2_TSA4_Range
+POIN Tentacle_BG2_TSA5_Range
+POIN Tentacle_BG2_TSA6_Range
+POIN Tentacle_BG2_TSA7_Range
+POIN Tentacle_BG2_TSA8_Range
+POIN Tentacle_BG2_TSA9_Range
+POIN Tentacle_BG2_TSA10_Range
+POIN Tentacle_BG2_TSA11_Range
+POIN Tentacle_BG2_TSA12_Range
+POIN Tentacle_BG2_TSA13_Range
+POIN Tentacle_BG2_TSA14_Range
+POIN Tentacle_BG2_TSA15_Range
+POIN Tentacle_BG2_TSA16_Range
+POIN Tentacle_BG2_TSA17_Range
+POIN Tentacle_BG2_TSA18_Range
+*/
+
+ALIGN 4
+TentacleBG3FrameData:
+SpellFrameData($00, 4) //starts at frame 27
+SpellFrameData($01, 4)
+SpellFrameData($02, 4)
+SpellFrameData($03, 6)
+SpellFrameData($04, 6)
+SpellFrameData($05, 4)
+SpellFrameData($06, 4)
+SpellFrameDataTerm
+
+ALIGN 4
+Tentacle_BG3_TSAPointer_Melee:
+POIN Tentacle_BG3_TSA1
+POIN Tentacle_BG3_TSA2
+POIN Tentacle_BG3_TSA3
+POIN Tentacle_BG3_TSA4
+POIN Tentacle_BG3_TSA5
+POIN Tentacle_BG3_TSA6
+POIN Tentacle_BG3_TSA7
+/*
+ALIGN 4
+Tentacle_BG3_TSAPointer_Range:
+POIN Tentacle_BG3_TSA1_Range
+POIN Tentacle_BG3_TSA2_Range
+POIN Tentacle_BG3_TSA3_Range
+POIN Tentacle_BG3_TSA4_Range
+POIN Tentacle_BG3_TSA5_Range
+POIN Tentacle_BG3_TSA6_Range
+POIN Tentacle_BG3_TSA7_Range
+*/
+
+ALIGN 4
+Tentacle_Palette_Pointer:
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+POIN Tentacle_Palette
+
+ALIGN 4
+Tentacle_Palette:
+#incbin "img/Tentacle_1.pal.bin"
+
+ALIGN 4
+Tentacle_BG1_Img:
+#incbin "img/Tentacle_1.img.bin"
+ALIGN 4
+Tentacle_BG2_Img:
+#incbin "img/Tentacle_2a.img.bin"
+ALIGN 4
+Tentacle_BG3_Img:
+#incbin "img/Tentacle_2b.img.bin"
+ALIGN 4
+
+ALIGN 4
+Tentacle_BG1_TSA1:
+#incbin "tsa/tentacle_melee_1_1.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA2:
+#incbin "tsa/tentacle_melee_1_2.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA3:
+#incbin "tsa/tentacle_melee_1_3.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA4:
+#incbin "tsa/tentacle_melee_1_4.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA5:
+#incbin "tsa/tentacle_melee_1_5.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA6:
+#incbin "tsa/tentacle_melee_1_6.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA7:
+#incbin "tsa/tentacle_melee_1_7.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA8:
+#incbin "tsa/tentacle_melee_1_8.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA9:
+#incbin "tsa/tentacle_melee_1_9.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA10:
+#incbin "tsa/tentacle_melee_1_10.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA11:
+#incbin "tsa/tentacle_melee_1_11.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA12:
+#incbin "tsa/tentacle_melee_1_12.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA13:
+#incbin "tsa/tentacle_melee_1_13.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG1_TSA14:
+#incbin "tsa/tentacle_melee_1_14.tsa.bin.compressed"
+
+ALIGN 4
+Tentacle_BG2_TSA1:
+#incbin "tsa/tentacle_melee_2_1.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA2:
+#incbin "tsa/tentacle_melee_2_2.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA3:
+#incbin "tsa/tentacle_melee_2_3.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA4:
+#incbin "tsa/tentacle_melee_2_4.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA5:
+#incbin "tsa/tentacle_melee_2_5.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA6:
+#incbin "tsa/tentacle_melee_2_6.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA7:
+#incbin "tsa/tentacle_melee_2_7.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA8:
+#incbin "tsa/tentacle_melee_2_8.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA9:
+#incbin "tsa/tentacle_melee_2_9.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA10:
+#incbin "tsa/tentacle_melee_2_10.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA11:
+#incbin "tsa/tentacle_melee_2_11.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG2_TSA12:
+#incbin "tsa/tentacle_melee_2_12.tsa.bin.compressed"
+
+ALIGN 4
+Tentacle_BG3_TSA1:
+#incbin "tsa/tentacle_melee_3_1.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG3_TSA2:
+#incbin "tsa/tentacle_melee_3_2.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG3_TSA3:
+#incbin "tsa/tentacle_melee_3_3.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG3_TSA4:
+#incbin "tsa/tentacle_melee_3_4.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG3_TSA5:
+#incbin "tsa/tentacle_melee_3_5.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG3_TSA6:
+#incbin "tsa/tentacle_melee_3_6.tsa.bin.compressed"
+ALIGN 4
+Tentacle_BG3_TSA7:
+#incbin "tsa/tentacle_melee_3_7.tsa.bin.compressed"
