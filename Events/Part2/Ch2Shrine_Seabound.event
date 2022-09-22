@@ -169,9 +169,11 @@ ChestEvent:
 	ENDA
 	
 SeraphimEvent:
-	SVAL 0x1 0x1
 	CHECK_EVENTID gSeaboundShrineCompleted 
-	IFNE 0x8 0xC 0x1 
+	BEQ 0x8 0xC 0x0 
+    SVAL 0x1 0x5
+    CheckLevel(Celica)
+    BLT 0x8 0xC 0x1
 		MUSC SongID_MilasDivineProtection
 		MUSI
 		STAL 30

@@ -75,6 +75,7 @@ Evt_LocationBasedEvents:
 Evt_MiscBasedEvents:
     CauseGameOverIfLordDies
     //DefeatAll(Evt_EndingScene)
+    AFEV 0xE RineaDeathAfter 0xC
     AFEV 0xF DoubleBossCheck 0xB
     AFEV 0xF DoubleBossCheck 0xC
     MournQuoteAFEVS
@@ -94,11 +95,20 @@ Evt_Ballista2:
     BLST
     ALIGN 4
 
+RineaDeathAfter:
+    CHECK_EVENTID 0x0B
+    BNE 0x0 r0 rC
+        SVAL 0x1 0x0
+        CHAI BerkutPossessed
+    LABEL 0x0
+    NoFade
+    ENDA
+
 DoubleBossCheck:
     CHECK_EVENTID 0x0B
-    BEQ 0x0 0x0 0xC
+    BEQ 0x0 r0 rC
       CHECK_EVENTID 0x0C
-      BEQ 0x0 0x0 0xC
+      BEQ 0x0 r0 rC
           CALL Evt_EndingScene
           GOTO 0x1
     LABEL 0x0

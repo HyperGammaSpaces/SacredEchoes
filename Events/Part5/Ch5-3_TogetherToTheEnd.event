@@ -187,8 +187,13 @@ CleanUpJedahMogalls:
     ENDA
     
 DumaRefillEvent:
+    SVAL 0x1 1
+    SET_HP Duma
     CameraCursor(Duma)
     RESUMM Duma
+    STAL 20
+    SVAL 0x1 60
+    SET_HP Duma
     STAL 20
     CameraCursor(Alm)
     MapText(Duma_Refill)
@@ -360,7 +365,7 @@ Ch5F3_BeginningScene:
     FADI 2
     //TODO: make celica party take up the last 10 slots
     CLEA 0x0
-    SVAL 0x1 0x04
+    SVAL 0x1 0x0C
     SET_HP JedahFinal
     LOAD3 0x0 PlayerPlacement 
 	ENUN
@@ -404,6 +409,7 @@ EpilogueEvents:
     MUSC SongID_CastleTheme
     FADU 5
     BROWNBOXTEXT Loc_ZofiaCastle [8,8]
+    STAL 20
     LOAD2 0x0 CutsceneUnits_Epilogue_Celica
     ENUN
     FlashCursor(Alm, 60)
@@ -420,7 +426,8 @@ EpilogueEvents:
     FADI 3
     EVBIT_MODIFY 0x0
     ASMC 0x30185 //clears map tilesets?
-    MUSC SongID_Epilogue
+    
+    MUSC SongID_Epilogue //4:10
     ASMC 0xC4879 //roll credits
     STAL 90
     CALL 0xA0036C //character endings

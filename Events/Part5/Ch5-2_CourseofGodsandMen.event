@@ -417,6 +417,9 @@ Ch5F2_EndingScene:
     TEXTSHOW Ch5_2_EndingText_3
     TEXTEND
     TEXTCLEAR
+    CALL $591F40
+	SMOV 0x3 Falchion
+	GIVEITEMTO Alm
     FADI 16
     CLEAN
     FADU 16
@@ -468,6 +471,7 @@ Ch5F2_EndingScene:
 	FADI 2
     
     //Now unite the two parties
+    ENUT gConvoyMergeEnabled
     REVEAL Celica
     REVEAL Mae
     REVEAL Boey

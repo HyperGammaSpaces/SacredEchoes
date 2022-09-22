@@ -242,7 +242,11 @@ BEQ 13 0x0 0xC
 LABEL 13 // No Forsyth
 
 // So only Lukas
-StandardMournQuote(Lukas,LukasMournsClive)
+CHECK_EXISTS Lukas
+BEQ 99 0x0 0xC
+CHECK_DEPLOYED Lukas
+BEQ 99 0x0 0xC
+MournQuote(LukasMournsClive)
 
 LABEL 99 // Event End
 NoFade

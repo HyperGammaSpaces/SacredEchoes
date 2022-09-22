@@ -107,9 +107,10 @@ ALIGN 4
 }
 
 RudolfDeathEvent:
-    MUSCMID SongID_Silence
+    MUSS SongID_Silence
     MapText(Ch4A_9_DeathQuote)
     ENUT Local_BossDeath
+    MURE 16
     NoFade
     ENDA
 

@@ -129,6 +129,12 @@ FearMtn_BeginningScene:
 	ENDA
 
 FearMtn_EndingScene:
+    CHECK_EVENTID gFearMountainShrineCompleted
+	BNE 0x102 0xC 0x0
+    EVBIT_MODIFY 0x1
+		ENUT gFearMountainShrineCompleted
+		EVBIT_MODIFY 0x0
+    LABEL 0x102
 	SVAL 0x3 0x3
 	ASMC 0x85C65
 	//SADD 0x32

@@ -11,6 +11,17 @@ ALIGN 4
   #include "Ch5-3_TogetherToTheEnd.event"
 }
 
+Event_SonyaVsJedah:
+    CHECK_EVENTID gSonyaJedahBattleQuote1
+    BNE 0x666 rC r0
+        MapText(Ch4C_5_JedahVsSonya)
+        ENUF 0xF
+    LABEL 0x666
+        MapText(Ch5_JedahVsSonya)
+    LABEL 0x667
+    NoFade
+    ENDA
+
 DumaDeathEvent:
     MUSCMID SongID_Silence
     ENUT Local_BossDeath

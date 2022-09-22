@@ -685,7 +685,15 @@ WM_Act4_Final:
 	ENDA
     
 WM_Act5_Final:
-    WorldMapSkip(GMLoc_DumaTower)
+//    WorldMapSkip(GMLoc_DumaTower)
+    EVBIT_MODIFY 0x1
+    WM_SPAWNLORD 0x0 0x0 Alm 0x0 0x0
+    WM_LOADLOCATION2 0x0 GMLoc_DumaTower 0x0
+    WM_SETDESTINATION 0x0 GMLoc_DumaTower 0x0
+    _0xA640 0x0 0x0 GMLoc_DumaTower
+    WM_DRAWPATH2 0x0 0x34 0x0
+    SKIPWN
+    ENDA
 
 PUSH
 	ORG $2060ba

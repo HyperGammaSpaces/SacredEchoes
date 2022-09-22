@@ -1,4 +1,5 @@
 #define SetBattleQuoteEntry(InitiatorID,ReceiverID,ChapterID,EventID,TextID) "BYTE InitiatorID 0 ReceiverID 0 ChapterID 0 EventID 0; SHORT TextID 0; WORD 0; BYTE ReceiverID 0 InitiatorID 0 ChapterID 0 EventID 0; SHORT TextID 0; WORD 0"
+#define SetBattleEvent(InitiatorID,ReceiverID,ChapterID,EventID,EventPointer) "BYTE InitiatorID 0 ReceiverID 0 ChapterID 0 EventID 0; SHORT 0 0; POIN EventPointer; BYTE ReceiverID 0 InitiatorID 0 ChapterID 0 EventID 0; SHORT 0 0; POIN EventPointer"
 #define SetSingleBattleQuoteEntry(InitiatorID,ReceiverID,ChapterID,EventID,TextID) "BYTE InitiatorID 0 ReceiverID 0 ChapterID 0 EventID 0; SHORT TextID 0; WORD 0"
 
 PUSH
@@ -95,8 +96,8 @@ SetBattleQuoteEntry(0x0,Dolth,0x20,Local_BossQuote,Ch4C_3_BossQuote)
 SetBattleQuoteEntry(0x0,Jamil,0x21,Local_BossQuote,Ch4C_4_BossQuote)
 SetBattleQuoteEntry(Celica,Jedah_Ch4,0x22,0x12,Ch4C_5_JedahVsCelica)
 SetBattleQuoteEntry(Conrad,Jedah_Ch4,0x22,0x13,Ch4C_5_JedahVsConrad)
-SetBattleQuoteEntry(Sonya,Jedah_Ch4,0x22,0x14,Ch4C_5_JedahVsSonya)
-SetBattleQuoteEntry(Sonya,Jedah_Ch4,0x22,0x15,Ch4C_5_JedahVsNomah)
+SetBattleQuoteEntry(Sonya,Jedah_Ch4,0x22,gSonyaJedahBattleQuote1,Ch4C_5_JedahVsSonya)
+SetBattleQuoteEntry(Nomah,Jedah_Ch4,0x22,0x15,Ch4C_5_JedahVsNomah)
 SetBattleQuoteEntry(0x0,Jedah_Ch4,0x22,Local_BossQuote,Ch4C_5_JedahBattle)
 //Act 4 Alm
 SetBattleQuoteEntry(Alm,FernandPaladin,0x23,0x12,Ch4A_1_Fernand_BattleQuote_Alm)
@@ -123,8 +124,11 @@ SetBattleQuoteEntry(Alm,RudolfEnemy,0x2C,0xC,Ch4A_9_BossQuote_Alm)
 SetBattleQuoteEntry(Zeke,RudolfEnemy,0x2C,0xD,Ch4A_9_ZekeVsRudolf)
 SetBattleQuoteEntry(0x0,RudolfEnemy,0x2C,Local_BossQuote,Ch4A_9_BossQuote)
 SetBattleQuoteEntry(Zeke,BerkutPossessed,0x2D,0xD,Ch5A_1_ZekeVsBerkut)
+SetBattleEvent(Sonya,JedahFinal,0x2F,0xF,Event_SonyaVsJedah)
 SetBattleQuoteEntry(0x0,JedahFinal,0x2F,0xC,Final_Jedah_BattleQuote)
+SetBattleQuoteEntry(Sonya,MarlaFinal,0x2F,0x10,Final_Marla_BattleQuote_Sonya)
 SetBattleQuoteEntry(0x0,MarlaFinal,0x2F,0xD,Final_Marla_BattleQuote)
+SetBattleQuoteEntry(Sonya,HestiaFinal,0x2F,0x11,Final_Hestia_BattleQuote_Sonya)
 SetBattleQuoteEntry(0x0,HestiaFinal,0x2F,0xE,Final_Hestia_BattleQuote)
 //Triangle Attack
 SetBattleQuoteEntry(Palla,0x0,0xfe,gTriangleAttackQuote_Palla,Palla_TriAtk)
