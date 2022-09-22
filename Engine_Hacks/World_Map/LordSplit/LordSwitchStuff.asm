@@ -109,26 +109,45 @@ ParalogueChecker:
 .ltorg
 
 LordSwitchFunction:
-	push {r4-r6, lr}
+	push {r4-r7, lr}
+    mov r7, #0
 	ldr r0, =gChapterData
+    @Switch the party unless it's postgame
+        ldrb r1, [r0, #0x14]
+        mov r2, #0x20 @postgame flag
+        and r2, r1
+        cmp r2, #0x0
+        bne PostgameCase
 	ldrb r1, [r0, #0x1B] @mode byte
 	cmp r1, #0x1
 	ble EndFunc
+    
 	mov r2, #0x1
 	eor r1, r2
 	strb r1, [r0, #0x1B] @mode byte
+    b NotPostgame
 
+    PostgameCase:
+    mov r7, #0x1
+    
+    NotPostgame:
 	ldr r3, =gWorldmapMUData
 	ldr r4, [r3]
-		@ldr r1, =0xFFFFFFFE
-		@and r4, r1 @unset the "visible" flag
+    cmp r7, #0
+    beq SkipVisibility_1
+		ldr r1, =0xFFFFFFFE
+		and r4, r1 @unset the "visible" flag
+    SkipVisibility_1:
     lsl r6, r4, #0x10
     lsr r6, r6, #0x18 @get just the location byte
 	mov r2, r3
 	add r2, #0x18 @MU7 offset
 	ldr r5, [r2]
-		@mov r2, #0x1
-		@orr r5, r2 @set the "visible" flag
+    cmp r7, #0
+    beq SkipVisibility_2
+		mov r1, #0x1
+		orr r5, r1 @set the "visible" flag
+    SkipVisibility_2:
 	str r4, [r2]
 	str r5, [r3]
     @now check if first lord unit is on a paralogue node

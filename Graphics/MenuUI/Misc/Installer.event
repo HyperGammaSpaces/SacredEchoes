@@ -54,8 +54,23 @@ PUSH
 	#incbin "MapStatusScreenPalette.pal.bin"
     ORG $B1C7C
     POIN OptionIcons
+    
+    ORG $B6800
+    POIN NewEndingsGfx
+    ORG $B687C
+    POIN NewEndingsPalette
 
 POP
+
+//Endings gfx at A3F750
+//2 palettes at A3F710
+NewEndingsGfx:
+#incbin "Endings_A3F750.img.bin"
+ALIGN 4
+
+NewEndingsPalette:
+#incbin "Endings_A3F750.pal.bin"
+ALIGN 4
 
 OptionIcons:
 #incbin "OptionsIcons_08A0754C.img.bin"

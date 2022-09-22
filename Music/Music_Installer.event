@@ -207,14 +207,14 @@ ALIGN 4
 ALIGN 4
 
 {
-	#include "S_Files/The_Scions_Dance_in_Purgatory.event"
-	SongTable(SongID_ScionsDance,The_Scions_Dance_in_Purgatory,MapMusicGroup)
+	#include "S_Files/TheScionsDancePurgatory.event"
+	SongTable(SongID_ScionsDance,TheScionsDancePurgatory,MapMusicGroup)
 }
 ALIGN 4
 
 {
-	#include "S_Files/LordOfADeadEmpire.event"
-	SongTable(SongID_LordOfADeadEmpire,LordOfADeadEmpire,MapMusicGroup)
+	#include "S_Files/LordOfADeadEmpire_1.event"
+	SongTable(SongID_LordOfADeadEmpire,LordOfADeadEmpire_1,MapMusicGroup)
 }
 ALIGN 4
 
@@ -378,6 +378,13 @@ ALIGN 4
 {
 	#include "S_Files/A_distant_promise.event"
 	SongTable(SongID_DistantPromise,A_distant_promise,CutsceneMusicGroup)
+}
+ALIGN 4
+
+//by bigyihsuan
+{
+	#include "S_Files/HeritorsOfArcadia.event"
+	SongTable(SongID_Epilogue,HeritorsOfArcadia, CutsceneMusicGroup)
 }
 ALIGN 4
 

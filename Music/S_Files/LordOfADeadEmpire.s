@@ -756,6 +756,7 @@ LordOfADeadEmpire_1:
         .byte   KEYSH , LordOfADeadEmpire_key+0
 @ 000   ----------------------------------------
 LordOfADeadEmpire_1_LOOP:
+        .byte           PAN   , c_v-29
         .byte           VOICE , 42
         .byte           VOL   , 27
         .byte           N96   , An3 , v104
@@ -1255,53 +1256,64 @@ LordOfADeadEmpire_3:
 LordOfADeadEmpire_3_LOOP:
         .byte           VOICE , 124
         .byte           VOL   , 48
-        .byte           N06   , An1 , v102
         .byte           N96   , Fn2 , v104
+        .byte           N06   , Cn1 , v102
         .byte   W24
-        .byte           N06   , Fn1 , v102
+        .byte                   Cn1
+        .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Fn1
+        .byte           N06   , Cn2 , v102
+        .byte           N06   , Cn1 , v100
         .byte   W08
-        .byte                   Fn1
+        .byte                   Cn2 , v102
         .byte   W08
         .byte           N14
-        .byte   W16
-        .byte           N06
+        .byte   W08
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   An1 , v102
         .byte   W08
         .byte                   Fn1
         .byte   W08
 @ 001   ----------------------------------------
 LordOfADeadEmpire_3_1:
-        .byte           N06   , An1 , v102
+        .byte           N06   , Cn1 , v102
         .byte   W24
-        .byte                   Fn1
+        .byte                   Cn1
+        .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Fn1
+        .byte           N06   , Cn2 , v102
+        .byte           N06   , Cn1 , v100
         .byte   W08
-        .byte                   Fn1
+        .byte                   Cn2 , v102
         .byte   W08
-        .byte                   Fn1
+        .byte                   Cn2
         .byte   W08
-        .byte                   Fn1
+        .byte                   Cn2
+        .byte           N06   , Cn1 , v100
         .byte   W08
-        .byte                   Fn1
+        .byte                   An1 , v102
         .byte   W08
         .byte                   Fn1
         .byte   W08
         .byte   PEND
 @ 002   ----------------------------------------
 LordOfADeadEmpire_3_2:
-        .byte           N06   , An1 , v102
+        .byte           N06   , Cn1 , v102
         .byte   W24
-        .byte                   Fn1
+        .byte                   Cn1
+        .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Fn1
+        .byte           N06   , Cn2 , v102
+        .byte           N06   , Cn1 , v100
         .byte   W08
-        .byte                   Fn1
+        .byte                   Cn2 , v102
         .byte   W08
         .byte           N14
-        .byte   W16
-        .byte           N06
+        .byte   W08
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   An1 , v102
         .byte   W08
         .byte                   Fn1
         .byte   W08
@@ -1323,20 +1335,22 @@ LordOfADeadEmpire_3_2:
          .word  LordOfADeadEmpire_3_1
 @ 008   ----------------------------------------
 LordOfADeadEmpire_3_8:
-        .byte           N06   , An1 , v102
+        .byte           N06   , Cn1 , v102
         .byte           N48   , Cs2 , v104
         .byte   W24
-        .byte           N06   , Fn1 , v102
+        .byte           N06   , Cn1 , v102
+        .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Fn1
+        .byte           N06   , Cn2 , v102
+        .byte           N06   , Cn1 , v100
         .byte   W08
-        .byte                   Fn1
+        .byte                   Cn2 , v102
         .byte   W08
-        .byte                   Fn1
+        .byte           N14
         .byte   W08
-        .byte                   Fn1
+        .byte           N06   , Cn1 , v100
         .byte   W08
-        .byte                   Fn1
+        .byte                   An1 , v102
         .byte   W08
         .byte                   Fn1
         .byte   W08
@@ -1351,26 +1365,47 @@ LordOfADeadEmpire_3_8:
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
 @ 012   ----------------------------------------
-        .byte   PATT
-         .word  LordOfADeadEmpire_3_8
+        .byte           N06   , Cn1 , v102
+        .byte           N48   , Cs2 , v104
+        .byte   W24
+        .byte           N06   , Cn1 , v102
+        .byte           N12   , An1 , v100
+        .byte   W24
+        .byte           N06   , Cn2 , v102
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   Cn2 , v102
+        .byte   W08
+        .byte                   Cn2
+        .byte   W08
+        .byte                   Cn2
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   An1 , v102
+        .byte   W08
+        .byte                   Fn1
+        .byte   W08
 @ 013   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
 @ 014   ----------------------------------------
-        .byte           N06   , An1 , v102
+        .byte           N06   , Cn1 , v102
         .byte           N96   , Cs2 , v104
         .byte   W24
-        .byte           N06   , Fn1 , v102
+        .byte           N06   , Cn1 , v102
+        .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Fn1
+        .byte           N06   , Cn2 , v102
+        .byte           N06   , Cn1 , v100
         .byte   W08
-        .byte                   Fn1
+        .byte                   Cn2 , v102
         .byte   W08
-        .byte                   Fn1
+        .byte                   Cn2
         .byte   W08
-        .byte                   Fn1
+        .byte                   Cn2
+        .byte           N06   , Cn1 , v100
         .byte   W08
-        .byte                   Fn1
+        .byte                   An1 , v102
         .byte   W08
         .byte                   Fn1
         .byte   W08
@@ -1466,35 +1501,56 @@ LordOfADeadEmpire_3_16:
         .byte           N18   , An2
         .byte   W24
 @ 021   ----------------------------------------
-LordOfADeadEmpire_3_21:
         .byte           N96   , Cs2 , v104
-        .byte           N06   , An1 , v102
+        .byte           N06   , Cn1 , v102
         .byte   W24
-        .byte                   Fn1
+        .byte                   Cn1
+        .byte           N12   , An1 , v100
         .byte   W24
-        .byte                   Fn1
+        .byte           N06   , Cn2 , v102
+        .byte           N06   , Cn1 , v100
         .byte   W08
-        .byte                   Fn1
+        .byte                   Cn2 , v102
         .byte   W08
         .byte           N14
-        .byte   W16
-        .byte           N06
+        .byte   W08
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   An1 , v102
         .byte   W08
         .byte                   Fn1
         .byte   W08
-        .byte   PEND
 @ 022   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
 @ 023   ----------------------------------------
         .byte   PATT
-         .word  LordOfADeadEmpire_3_2
+         .word  LordOfADeadEmpire_3_8
 @ 024   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
 @ 025   ----------------------------------------
-        .byte   PATT
-         .word  LordOfADeadEmpire_3_21
+LordOfADeadEmpire_3_25:
+        .byte           N06   , Cn1 , v102
+        .byte           N96   , Cs2 , v104
+        .byte   W24
+        .byte           N06   , Cn1 , v102
+        .byte           N12   , An1 , v100
+        .byte   W24
+        .byte           N06   , Cn2 , v102
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   Cn2 , v102
+        .byte   W08
+        .byte           N14
+        .byte   W08
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   An1 , v102
+        .byte   W08
+        .byte                   Fn1
+        .byte   W08
+        .byte   PEND
 @ 026   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
@@ -1506,7 +1562,7 @@ LordOfADeadEmpire_3_21:
          .word  LordOfADeadEmpire_3_1
 @ 029   ----------------------------------------
         .byte   PATT
-         .word  LordOfADeadEmpire_3_21
+         .word  LordOfADeadEmpire_3_25
 @ 030   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
@@ -1517,8 +1573,25 @@ LordOfADeadEmpire_3_21:
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
 @ 033   ----------------------------------------
-        .byte   PATT
-         .word  LordOfADeadEmpire_3_21
+        .byte           N96   , Fn2 , v104
+        .byte           N06   , Cn1 , v102
+        .byte   W24
+        .byte                   Cn1
+        .byte           N12   , An1 , v100
+        .byte   W24
+        .byte           N06   , Cn2 , v102
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   Cn2 , v102
+        .byte   W08
+        .byte           N14
+        .byte   W08
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   An1 , v102
+        .byte   W08
+        .byte                   Fn1
+        .byte   W08
 @ 034   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
@@ -1548,25 +1621,44 @@ LordOfADeadEmpire_3_21:
         .byte   W96
 @ 045   ----------------------------------------
         .byte   PATT
-         .word  LordOfADeadEmpire_3_21
+         .word  LordOfADeadEmpire_3_25
 @ 046   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
 @ 047   ----------------------------------------
-        .byte   PATT
-         .word  LordOfADeadEmpire_3_21
+LordOfADeadEmpire_3_47:
+        .byte           N06   , Cn1 , v102
+        .byte           N96   , Cs2 , v100
+        .byte   W24
+        .byte           N06   , Cn1 , v102
+        .byte           N12   , An1 , v100
+        .byte   W24
+        .byte           N06   , Cn2 , v102
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   Cn2 , v102
+        .byte   W08
+        .byte           N14
+        .byte   W08
+        .byte           N06   , Cn1 , v100
+        .byte   W08
+        .byte                   An1 , v102
+        .byte   W08
+        .byte                   Fn1
+        .byte   W08
+        .byte   PEND
 @ 048   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
 @ 049   ----------------------------------------
         .byte   PATT
-         .word  LordOfADeadEmpire_3_21
+         .word  LordOfADeadEmpire_3_25
 @ 050   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
 @ 051   ----------------------------------------
         .byte   PATT
-         .word  LordOfADeadEmpire_3_21
+         .word  LordOfADeadEmpire_3_47
 @ 052   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_3_1
@@ -1581,7 +1673,7 @@ LordOfADeadEmpire_4:
         .byte   KEYSH , LordOfADeadEmpire_key+0
 @ 000   ----------------------------------------
 LordOfADeadEmpire_4_LOOP:
-        .byte           VOICE , 101
+        .byte           VOICE , 20
         .byte           VOL   , 68
         .byte           PAN   , c_v-29
         .byte   W24
@@ -1797,15 +1889,14 @@ LordOfADeadEmpire_4_26:
         .byte           EOT
         .byte   W96
 @ 038   ----------------------------------------
-LordOfADeadEmpire_4_38:
         .byte   W24
-        .byte           N24   , Cs3 , v096
+        .byte           VOICE , 101
+        .byte           N24   , Cs3
         .byte   W24
         .byte                   An2
         .byte   W24
         .byte                   En2
         .byte   W24
-        .byte   PEND
 @ 039   ----------------------------------------
         .byte           N96   , As2
         .byte   W96
@@ -1817,10 +1908,15 @@ LordOfADeadEmpire_4_38:
 @ 041   ----------------------------------------
         .byte   W96
 @ 042   ----------------------------------------
-        .byte   PATT
-         .word  LordOfADeadEmpire_4_38
+        .byte   W24
+        .byte           N24
+        .byte   W24
+        .byte                   An2
+        .byte   W24
+        .byte                   En2
+        .byte   W24
 @ 043   ----------------------------------------
-        .byte           N96   , As2 , v096
+        .byte           N96   , As2
         .byte   W96
 @ 044   ----------------------------------------
         .byte           N48   , Cs3
@@ -1828,12 +1924,10 @@ LordOfADeadEmpire_4_38:
         .byte                   Gs2
         .byte   W48
 @ 045   ----------------------------------------
-LordOfADeadEmpire_4_45:
-        .byte           N48   , Gs2 , v096
+        .byte                   Gs2
         .byte   W48
         .byte           N96   , Fs2
         .byte   W48
-        .byte   PEND
 @ 046   ----------------------------------------
 LordOfADeadEmpire_4_46:
         .byte   W48
@@ -1855,8 +1949,11 @@ LordOfADeadEmpire_4_46:
         .byte                   Cs2
         .byte   W48
 @ 049   ----------------------------------------
-        .byte   PATT
-         .word  LordOfADeadEmpire_4_45
+        .byte           VOICE , 20
+        .byte           N48   , Gs2
+        .byte   W48
+        .byte           N96   , Fs2
+        .byte   W48
 @ 050   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_4_46
@@ -2365,9 +2462,9 @@ LordOfADeadEmpire_7:
         .byte   KEYSH , LordOfADeadEmpire_key+0
 @ 000   ----------------------------------------
 LordOfADeadEmpire_7_LOOP:
-        .byte           VOICE , 47
-        .byte           VOL   , 23
-        .byte           PAN   , c_v-11
+        .byte           VOL   , 37
+        .byte           PAN   , c_v-1
+        .byte           VOICE , 36
         .byte           N24   , Dn2 , v127
         .byte   W48
         .byte           N06
@@ -2527,6 +2624,7 @@ LordOfADeadEmpire_7_10:
         .byte           N15
         .byte   W15
 @ 015   ----------------------------------------
+        .byte           VOICE , 47
         .byte           N06   , Dn2
         .byte   W08
         .byte                   Dn2 , v102
@@ -2598,6 +2696,7 @@ LordOfADeadEmpire_7_16:
         .byte   W24
 @ 021   ----------------------------------------
 LordOfADeadEmpire_7_21:
+        .byte           VOICE , 36
         .byte           N24   , Ds2 , v127
         .byte   W48
         .byte           N06
@@ -2626,6 +2725,7 @@ LordOfADeadEmpire_7_21:
          .word  LordOfADeadEmpire_7_4
 @ 027   ----------------------------------------
 LordOfADeadEmpire_7_27:
+        .byte           VOICE , 47
         .byte           N06   , An1 , v127
         .byte   W08
         .byte                   An1
@@ -2652,8 +2752,32 @@ LordOfADeadEmpire_7_27:
         .byte   W08
         .byte   PEND
 @ 028   ----------------------------------------
-        .byte   PATT
-         .word  LordOfADeadEmpire_7_27
+LordOfADeadEmpire_7_28:
+        .byte           N06   , An1 , v127
+        .byte   W08
+        .byte                   An1
+        .byte   W08
+        .byte           N08
+        .byte   W08
+        .byte           N06
+        .byte   W08
+        .byte                   An1
+        .byte   W08
+        .byte           N08
+        .byte   W08
+        .byte           N06
+        .byte   W08
+        .byte                   An1
+        .byte   W08
+        .byte           N08
+        .byte   W08
+        .byte           N06
+        .byte   W08
+        .byte                   An1
+        .byte   W08
+        .byte           N08
+        .byte   W08
+        .byte   PEND
 @ 029   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_7_21
@@ -2677,7 +2801,7 @@ LordOfADeadEmpire_7_27:
          .word  LordOfADeadEmpire_7_27
 @ 036   ----------------------------------------
         .byte   PATT
-         .word  LordOfADeadEmpire_7_27
+         .word  LordOfADeadEmpire_7_28
 @ 037   ----------------------------------------
         .byte   W96
 @ 038   ----------------------------------------
@@ -2702,10 +2826,10 @@ LordOfADeadEmpire_7_27:
          .word  LordOfADeadEmpire_7_4
 @ 047   ----------------------------------------
         .byte   PATT
-         .word  LordOfADeadEmpire_7_27
+         .word  LordOfADeadEmpire_7_28
 @ 048   ----------------------------------------
         .byte   PATT
-         .word  LordOfADeadEmpire_7_27
+         .word  LordOfADeadEmpire_7_28
 @ 049   ----------------------------------------
         .byte   PATT
          .word  LordOfADeadEmpire_7_3
@@ -2714,11 +2838,12 @@ LordOfADeadEmpire_7_27:
          .word  LordOfADeadEmpire_7_4
 @ 051   ----------------------------------------
         .byte   PATT
-         .word  LordOfADeadEmpire_7_27
+         .word  LordOfADeadEmpire_7_28
 @ 052   ----------------------------------------
         .byte   PATT
-         .word  LordOfADeadEmpire_7_27
+         .word  LordOfADeadEmpire_7_28
 @ 053   ----------------------------------------
+        .byte           VOICE , 36
         .byte   GOTO
          .word  LordOfADeadEmpire_7_LOOP
         .byte   FINE
@@ -2730,8 +2855,8 @@ LordOfADeadEmpire_8:
 @ 000   ----------------------------------------
 LordOfADeadEmpire_8_LOOP:
         .byte           VOICE , 18
-        .byte           VOL   , 48
-        .byte           PAN   , c_v-36
+        .byte           VOL   , 47
+        .byte           PAN   , c_v-11
         .byte           N24   , Dn2 , v100
         .byte   W24
         .byte           N12   , Dn2 , v080

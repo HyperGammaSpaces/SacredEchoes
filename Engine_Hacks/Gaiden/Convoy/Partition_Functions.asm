@@ -34,9 +34,19 @@ push {r2,r3,r14}
 	ldrb 	r2, [r2]
 	lsl 	r2, r2, #0x1A
 	cmp 	r2, #0x0
-	blt CheckIfAlmMode		@if not easy, do full eligiblity check
+	blt CheckIfPostgame_1		@if not easy, do full eligiblity check
 		mov 	r0, #1
 		b Label2
+        CheckIfPostgame_1:
+            mov 	r0, #0xAD
+			ldr 	r3, =#0x8083DA8		@ CheckFlag
+			mov 	lr,r3
+			.short 	0xF800
+			lsl		r0, r0, #0x18
+			cmp 	r0, #0x0
+            beq     CheckIfAlmMode
+            mov 	r0, #1
+            b Label2
 	CheckIfAlmMode:
 		ldr 	r2, =gChapterData
 		ldrb	r2, [r2, #0x1B]
@@ -109,9 +119,19 @@ push {r2,r3,r14}
 	ldrb 	r2, [r2]
 	lsl 	r2, r2, #0x1A
 	cmp 	r2, #0x0
-	blt CheckIfCelicaMode		@if not easy, do full eligiblity check
+	blt CheckIfPostgame_2		@if not easy, do full eligiblity check
 		mov 	r0, #1
 		b Label3
+        CheckIfPostgame_2:
+            mov 	r0, #0xAD
+			ldr 	r3, =#0x8083DA8		@ CheckFlag
+			mov 	lr,r3
+			.short 	0xF800
+			lsl		r0, r0, #0x18
+			cmp 	r0, #0x0
+            beq     CheckIfCelicaMode
+            mov 	r0, #1
+            b Label3
 	CheckIfCelicaMode:
 		ldr 	r2, =gChapterData
 		ldrb	r2, [r2, #0x1B]

@@ -1,19 +1,19 @@
 //Event file generated from Sappy .s format.
         #include "MPlayDef.event"
 
-        #define    The_Scions_Dance_in_Purgatory_grp  voicegroup000
-        #define    The_Scions_Dance_in_Purgatory_pri  0
-        #define    The_Scions_Dance_in_Purgatory_rev  0
-        #define    The_Scions_Dance_in_Purgatory_key  0
+        #define    TheScionsDancePurgatory_grp  voicegroup000
+        #define    TheScionsDancePurgatory_pri  0
+        #define    TheScionsDancePurgatory_rev  0
+        #define    TheScionsDancePurgatory_key  0
 
         // .rodata
-        // The_Scions_Dance_in_Purgatory
+        // TheScionsDancePurgatory
         ALIGN 4
 
 //****************** Track 0 (Midi-Chn.0) ******************//
 
-The_Scions_Dance_in_Purgatory_0:
-        BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
+TheScionsDancePurgatory_0:
+        BYTE   KEYSH   TheScionsDancePurgatory_key+0
 // 000   ----------------------------------------
         BYTE   TEMPO   120/2
         BYTE           VOICE   0
@@ -188,7 +188,7 @@ The_Scions_Dance_in_Purgatory_0:
         BYTE           N96     Ds1
         BYTE   W96
 // 006   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_LOOP:
+TheScionsDancePurgatory_0_LOOP:
         BYTE           N12     Fs2   v126
         BYTE           N12     Ds2
         BYTE           N24     Ds1
@@ -772,7 +772,7 @@ The_Scions_Dance_in_Purgatory_0_LOOP:
         BYTE           N12     En0
         BYTE   W12
 // 028   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_28:
+TheScionsDancePurgatory_0_28:
         BYTE           N12     En1   v126
         BYTE           N12     En0
         BYTE   W24
@@ -789,7 +789,7 @@ The_Scions_Dance_in_Purgatory_0_28:
         BYTE   W12
         BYTE   PEND
 // 029   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_29:
+TheScionsDancePurgatory_0_29:
         BYTE           N36     Cs4   v126
         BYTE           N36     Cs3
         BYTE           N72     Cs2
@@ -806,7 +806,7 @@ The_Scions_Dance_in_Purgatory_0_29:
         BYTE   W24
         BYTE   PEND
 // 030   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_30:
+TheScionsDancePurgatory_0_30:
         BYTE           N24     En4   v126
         BYTE           N24     En3
         BYTE   W24
@@ -823,7 +823,7 @@ The_Scions_Dance_in_Purgatory_0_30:
         BYTE   W24
         BYTE   PEND
 // 031   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_31:
+TheScionsDancePurgatory_0_31:
         BYTE           N72     As2   v126
         BYTE           N72     As3
         BYTE           N72     As1
@@ -836,7 +836,7 @@ The_Scions_Dance_in_Purgatory_0_31:
         BYTE   W24
         BYTE   PEND
 // 032   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_32:
+TheScionsDancePurgatory_0_32:
         BYTE   W48
         BYTE           N72     Cs4   v126
         BYTE           N72     Cs3
@@ -845,7 +845,7 @@ The_Scions_Dance_in_Purgatory_0_32:
         BYTE   W48
         BYTE   PEND
 // 033   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_33:
+TheScionsDancePurgatory_0_33:
         BYTE   W24
         BYTE           N72     Ds4   v126
         BYTE           N72     Ds3
@@ -854,7 +854,7 @@ The_Scions_Dance_in_Purgatory_0_33:
         BYTE   W72
         BYTE   PEND
 // 034   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_34:
+TheScionsDancePurgatory_0_34:
         BYTE           N24     Gs2   v126
         BYTE           N24     Gs3
         BYTE           TIE     Gs1
@@ -868,7 +868,7 @@ The_Scions_Dance_in_Purgatory_0_34:
         BYTE   W24
         BYTE   PEND
 // 035   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_35:
+TheScionsDancePurgatory_0_35:
         BYTE           N24     As2   v126
         BYTE           N24     As3
         BYTE   W24
@@ -880,7 +880,7 @@ The_Scions_Dance_in_Purgatory_0_35:
         BYTE   W24
         BYTE   PEND
 // 036   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_36:
+TheScionsDancePurgatory_0_36:
         BYTE           N24     Fn2   v126
         BYTE           N24     Fn3
         BYTE   W24
@@ -892,7 +892,7 @@ The_Scions_Dance_in_Purgatory_0_36:
         BYTE   W24
         BYTE   PEND
 // 037   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_37:
+TheScionsDancePurgatory_0_37:
         BYTE           N24     Fn3   v126
         BYTE           N24     Fn4
         BYTE   W24
@@ -904,7 +904,7 @@ The_Scions_Dance_in_Purgatory_0_37:
         BYTE   W24
         BYTE   PEND
 // 038   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_38:
+TheScionsDancePurgatory_0_38:
         BYTE           EOT     Gs0
         BYTE                   Gs1
         BYTE           TIE     Ds3   v126
@@ -917,7 +917,7 @@ The_Scions_Dance_in_Purgatory_0_38:
         BYTE   W24
         BYTE   PEND
 // 039   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_39:
+TheScionsDancePurgatory_0_39:
         BYTE           N24     As2   v126
         BYTE   W24
         BYTE                   Gs2
@@ -926,7 +926,7 @@ The_Scions_Dance_in_Purgatory_0_39:
         BYTE   W24
         BYTE   PEND
 // 040   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_40:
+TheScionsDancePurgatory_0_40:
         BYTE           N24     Fn2   v126
         BYTE   W24
         BYTE                   Fs2
@@ -935,7 +935,7 @@ The_Scions_Dance_in_Purgatory_0_40:
         BYTE   W24
         BYTE   PEND
 // 041   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_41:
+TheScionsDancePurgatory_0_41:
         BYTE           N24     Fn3   v126
         BYTE   W24
         BYTE                   Cs3
@@ -944,7 +944,7 @@ The_Scions_Dance_in_Purgatory_0_41:
         BYTE   W24
         BYTE   PEND
 // 042   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_42:
+TheScionsDancePurgatory_0_42:
         BYTE           EOT     Ds4
         BYTE                   Ds3
         BYTE           N24     Gs3   v126
@@ -960,7 +960,7 @@ The_Scions_Dance_in_Purgatory_0_42:
         BYTE   W24
         BYTE   PEND
 // 043   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_43:
+TheScionsDancePurgatory_0_43:
         BYTE           N24     As2   v126
         BYTE           N24     As3
         BYTE   W24
@@ -973,9 +973,9 @@ The_Scions_Dance_in_Purgatory_0_43:
         BYTE   PEND
 // 044   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_36
+         POIN2  TheScionsDancePurgatory_0_36
 // 045   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_45:
+TheScionsDancePurgatory_0_45:
         BYTE           N24     Fn4   v126
         BYTE           N24     Fn3
         BYTE   W24
@@ -987,7 +987,7 @@ The_Scions_Dance_in_Purgatory_0_45:
         BYTE   W24
         BYTE   PEND
 // 046   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_46:
+TheScionsDancePurgatory_0_46:
         BYTE           EOT     Ds1
         BYTE                   Ds2
         BYTE           N72     Ds4   v126
@@ -1001,7 +1001,7 @@ The_Scions_Dance_in_Purgatory_0_46:
         BYTE   W24
         BYTE   PEND
 // 047   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_47:
+TheScionsDancePurgatory_0_47:
         BYTE           N72     Cs3   v126
         BYTE           N72     Cs4
         BYTE           N24     Ds2
@@ -1013,7 +1013,7 @@ The_Scions_Dance_in_Purgatory_0_47:
         BYTE   W24
         BYTE   PEND
 // 048   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_48:
+TheScionsDancePurgatory_0_48:
         BYTE           N72     Bn2   v126
         BYTE           N72     Bn3
         BYTE           N24     Cs1
@@ -1025,7 +1025,7 @@ The_Scions_Dance_in_Purgatory_0_48:
         BYTE   W24
         BYTE   PEND
 // 049   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_49:
+TheScionsDancePurgatory_0_49:
         BYTE           N24     Cn3   v126
         BYTE           N24     Fs3
         BYTE           N24     Cn4
@@ -1042,7 +1042,7 @@ The_Scions_Dance_in_Purgatory_0_49:
         BYTE   W24
         BYTE   PEND
 // 050   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_50:
+TheScionsDancePurgatory_0_50:
         BYTE           N24     Gs2   v126
         BYTE           N24     Fn2
         BYTE   W24
@@ -1054,7 +1054,7 @@ The_Scions_Dance_in_Purgatory_0_50:
         BYTE   W24
         BYTE   PEND
 // 051   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_51:
+TheScionsDancePurgatory_0_51:
         BYTE           N24     Cn4   v126
         BYTE           N24     Gs3
         BYTE   W24
@@ -1066,7 +1066,7 @@ The_Scions_Dance_in_Purgatory_0_51:
         BYTE   W24
         BYTE   PEND
 // 052   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_52:
+TheScionsDancePurgatory_0_52:
         BYTE           N24     Fn4   v126
         BYTE           N24     Fn3
         BYTE   W24
@@ -1078,7 +1078,7 @@ The_Scions_Dance_in_Purgatory_0_52:
         BYTE   W24
         BYTE   PEND
 // 053   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_53:
+TheScionsDancePurgatory_0_53:
         BYTE           N24     Gs4   v126
         BYTE           N24     Gs3
         BYTE           N24     Ds2
@@ -1107,7 +1107,7 @@ The_Scions_Dance_in_Purgatory_0_53:
         BYTE           N24     Ds3
         BYTE   W24
 // 055   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_55:
+TheScionsDancePurgatory_0_55:
         BYTE           N24     Fs1   v126
         BYTE   W24
         BYTE           N12     Fs2
@@ -1118,7 +1118,7 @@ The_Scions_Dance_in_Purgatory_0_55:
         BYTE   W24
         BYTE   PEND
 // 056   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_56:
+TheScionsDancePurgatory_0_56:
         BYTE           N24     Fn1   v126
         BYTE   W24
         BYTE           N12     Fn2
@@ -1129,7 +1129,7 @@ The_Scions_Dance_in_Purgatory_0_56:
         BYTE   W24
         BYTE   PEND
 // 057   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_57:
+TheScionsDancePurgatory_0_57:
         BYTE           N24     Ds1   v126
         BYTE   W24
         BYTE           N12     Ds2
@@ -1168,7 +1168,7 @@ The_Scions_Dance_in_Purgatory_0_57:
         BYTE                   Fs4
         BYTE   W08
 // 059   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_59:
+TheScionsDancePurgatory_0_59:
         BYTE           N08     Gs4   v126
         BYTE           N24     Cs1
         BYTE   W08
@@ -1194,7 +1194,7 @@ The_Scions_Dance_in_Purgatory_0_59:
         BYTE   W08
         BYTE   PEND
 // 060   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_60:
+TheScionsDancePurgatory_0_60:
         BYTE           N08     An2   v126
         BYTE           N24     Cn2
         BYTE   W08
@@ -1220,7 +1220,7 @@ The_Scions_Dance_in_Purgatory_0_60:
         BYTE   W08
         BYTE   PEND
 // 061   ----------------------------------------
-The_Scions_Dance_in_Purgatory_0_61:
+TheScionsDancePurgatory_0_61:
         BYTE           N08     Fs4   v126
         BYTE           N24     Ds1
         BYTE   W08
@@ -1251,191 +1251,13 @@ The_Scions_Dance_in_Purgatory_0_61:
 // 062   ----------------------------------------
         BYTE   TEMPO   120/2
         BYTE   GoTo
-         POIN2  The_Scions_Dance_in_Purgatory_0_LOOP
-        BYTE   W72
-// 063   ----------------------------------------
-        BYTE   W72
-// 064   ----------------------------------------
-        BYTE   W72
-// 065   ----------------------------------------
-        BYTE   W72
-// 066   ----------------------------------------
-        BYTE   W72
-// 067   ----------------------------------------
-        BYTE   W72
-// 068   ----------------------------------------
-        BYTE   W72
-// 069   ----------------------------------------
-        BYTE   W72
-// 070   ----------------------------------------
-        BYTE   W72
-// 071   ----------------------------------------
-        BYTE   W72
-// 072   ----------------------------------------
-        BYTE   W72
-// 073   ----------------------------------------
-        BYTE   W72
-// 074   ----------------------------------------
-        BYTE   W72
-// 075   ----------------------------------------
-        BYTE   W72
-// 076   ----------------------------------------
-        BYTE   W72
-// 077   ----------------------------------------
-        BYTE   W72
-// 078   ----------------------------------------
-        BYTE   W72
-// 079   ----------------------------------------
-        BYTE   W72
-// 080   ----------------------------------------
-        BYTE   W72
-// 081   ----------------------------------------
-        BYTE   W72
-// 082   ----------------------------------------
-        BYTE   TEMPO   136/2
-        BYTE   W72
-// 083   ----------------------------------------
-        BYTE   W72
-// 084   ----------------------------------------
-        BYTE   W48
-        BYTE   TEMPO   196/2
-        BYTE   W24
-// 085   ----------------------------------------
-        BYTE   W72
-// 086   ----------------------------------------
-        BYTE   TEMPO   190/2
-        BYTE   W72
-// 087   ----------------------------------------
-        BYTE   W72
-// 088   ----------------------------------------
-        BYTE   W72
-// 089   ----------------------------------------
-        BYTE   W72
-// 090   ----------------------------------------
-        BYTE   W72
-// 091   ----------------------------------------
-        BYTE   W72
-// 092   ----------------------------------------
-        BYTE   W72
-// 093   ----------------------------------------
-        BYTE   W72
-// 094   ----------------------------------------
-        BYTE   W72
-// 095   ----------------------------------------
-        BYTE   W72
-// 096   ----------------------------------------
-        BYTE   W72
-// 097   ----------------------------------------
-        BYTE   W72
-// 098   ----------------------------------------
-        BYTE   W72
-// 099   ----------------------------------------
-        BYTE   W72
-// 100   ----------------------------------------
-        BYTE   W72
-// 101   ----------------------------------------
-        BYTE   W72
-// 102   ----------------------------------------
-        BYTE   W72
-// 103   ----------------------------------------
-        BYTE   W72
-// 104   ----------------------------------------
-        BYTE   W72
-// 105   ----------------------------------------
-        BYTE   W72
-// 106   ----------------------------------------
-        BYTE   W72
-// 107   ----------------------------------------
-        BYTE   W72
-// 108   ----------------------------------------
-        BYTE   W72
-// 109   ----------------------------------------
-        BYTE   W72
-// 110   ----------------------------------------
-        BYTE   W72
-// 111   ----------------------------------------
-        BYTE   W72
-// 112   ----------------------------------------
-        BYTE   W72
-// 113   ----------------------------------------
-        BYTE   W72
-// 114   ----------------------------------------
-        BYTE   W72
-// 115   ----------------------------------------
-        BYTE   W72
-// 116   ----------------------------------------
-        BYTE   W72
-// 117   ----------------------------------------
-        BYTE   W72
-// 118   ----------------------------------------
-        BYTE   W72
-// 119   ----------------------------------------
-        BYTE   W48
-        BYTE   TEMPO   200/2
-        BYTE   W24
-// 120   ----------------------------------------
-        BYTE   W72
-// 121   ----------------------------------------
-        BYTE   W72
-// 122   ----------------------------------------
-        BYTE   W72
-// 123   ----------------------------------------
-        BYTE   W72
-// 124   ----------------------------------------
-        BYTE   W72
-// 125   ----------------------------------------
-        BYTE   W72
-// 126   ----------------------------------------
-        BYTE   W72
-// 127   ----------------------------------------
-        BYTE   W72
-// 128   ----------------------------------------
-        BYTE   W72
-// 129   ----------------------------------------
-        BYTE   W72
-// 130   ----------------------------------------
-        BYTE   W72
-// 131   ----------------------------------------
-        BYTE   W72
-// 132   ----------------------------------------
-        BYTE   W72
-// 133   ----------------------------------------
-        BYTE   W72
-// 134   ----------------------------------------
-        BYTE   W72
-// 135   ----------------------------------------
-        BYTE   W72
-// 136   ----------------------------------------
-        BYTE   W72
-// 137   ----------------------------------------
-        BYTE   W72
-// 138   ----------------------------------------
-        BYTE   W72
-// 139   ----------------------------------------
-        BYTE   W72
-// 140   ----------------------------------------
-        BYTE   W72
-// 141   ----------------------------------------
-        BYTE   W72
-// 142   ----------------------------------------
-        BYTE   W72
-// 143   ----------------------------------------
-        BYTE   W72
-// 144   ----------------------------------------
-        BYTE   W72
-// 145   ----------------------------------------
-        BYTE   W72
-// 146   ----------------------------------------
-        BYTE   W72
-// 147   ----------------------------------------
-        BYTE   W48
-        BYTE   TEMPO   120/2
+         POIN2  TheScionsDancePurgatory_0_LOOP
         BYTE   FINE
 
 //****************** Track 1 (Midi-Chn.1) ******************//
 
-The_Scions_Dance_in_Purgatory_1:
-        BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
+TheScionsDancePurgatory_1:
+        BYTE   KEYSH   TheScionsDancePurgatory_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   52
         BYTE           VOL     57
@@ -1452,7 +1274,7 @@ The_Scions_Dance_in_Purgatory_1:
 // 005   ----------------------------------------
         BYTE   W96
 // 006   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_LOOP:
+TheScionsDancePurgatory_1_LOOP:
         BYTE   W96
 // 007   ----------------------------------------
         BYTE   W96
@@ -1462,12 +1284,12 @@ The_Scions_Dance_in_Purgatory_1_LOOP:
         BYTE   W96
 // 010   ----------------------------------------
         BYTE   W72
-        BYTE           N24     Ds4   v126
+        BYTE           N24     Ds4   v100
         BYTE           N24     Ds3
         BYTE   W24
 // 011   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_11:
-        BYTE           N24     Gs3   v126
+TheScionsDancePurgatory_1_11:
+        BYTE           N24     Gs3   v100
         BYTE           N24     Gs4
         BYTE   W24
         BYTE           N12     As3
@@ -1519,8 +1341,8 @@ The_Scions_Dance_in_Purgatory_1_11:
         BYTE                   Bn2
         BYTE   W08
 // 015   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_15:
-        BYTE           N24     An4   v126
+TheScionsDancePurgatory_1_15:
+        BYTE           N24     An4   v100
         BYTE           N24     Gs3
         BYTE           N24     Bn2
         BYTE   W24
@@ -1547,9 +1369,9 @@ The_Scions_Dance_in_Purgatory_1_15:
         BYTE   W24
 // 017   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_1_11
+         POIN2  TheScionsDancePurgatory_1_11
 // 018   ----------------------------------------
-        BYTE           N24     Ds5   v126
+        BYTE           N24     Ds5   v100
         BYTE           N24     Ds4
         BYTE   W24
         BYTE                   Cs4
@@ -1588,10 +1410,10 @@ The_Scions_Dance_in_Purgatory_1_15:
         BYTE   W08
 // 021   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_1_15
+         POIN2  TheScionsDancePurgatory_1_15
 // 022   ----------------------------------------
         BYTE   W48
-        BYTE           N72     Fn3   v126
+        BYTE           N72     Fn3   v100
         BYTE           N72     Bn3
         BYTE           N72     Fn4
         BYTE   W48
@@ -1710,8 +1532,8 @@ The_Scions_Dance_in_Purgatory_1_15:
         BYTE           N24     Bn2
         BYTE   W24
 // 035   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_35:
-        BYTE           N24     As3   v126
+TheScionsDancePurgatory_1_35:
+        BYTE           N24     As3   v100
         BYTE   W24
         BYTE                   Gs3
         BYTE   W24
@@ -1719,8 +1541,8 @@ The_Scions_Dance_in_Purgatory_1_35:
         BYTE   W24
         BYTE   PEND
 // 036   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_36:
-        BYTE           N24     Fn3   v126
+TheScionsDancePurgatory_1_36:
+        BYTE           N24     Fn3   v100
         BYTE   W24
         BYTE                   Fs3
         BYTE   W24
@@ -1763,12 +1585,12 @@ The_Scions_Dance_in_Purgatory_1_36:
         BYTE   W24
 // 043   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_1_35
+         POIN2  TheScionsDancePurgatory_1_35
 // 044   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_1_36
+         POIN2  TheScionsDancePurgatory_1_36
 // 045   ----------------------------------------
-        BYTE           N24     Fn4   v126
+        BYTE           N24     Fn4   v100
         BYTE           N24     Fn3
         BYTE   W24
         BYTE                   Cs4
@@ -1785,17 +1607,13 @@ The_Scions_Dance_in_Purgatory_1_36:
         BYTE                   Bn2
         BYTE   W24
 // 047   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_47:
-        BYTE           N72     Cs3   v126
+        BYTE           N72     Cs3
         BYTE           N72     Cs4
         BYTE   W72
-        BYTE   PEND
 // 048   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_48:
-        BYTE           N72     Bn2   v126
+        BYTE                   Bn2
         BYTE           N72     Bn3
         BYTE   W72
-        BYTE   PEND
 // 049   ----------------------------------------
         BYTE           N24     Cn3
         BYTE           N24     Fs3
@@ -1812,14 +1630,27 @@ The_Scions_Dance_in_Purgatory_1_48:
 // 050   ----------------------------------------
         BYTE   W72
 // 051   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_51
+        BYTE           N24     Cn4
+        BYTE           N24     Gs3
+        BYTE   W24
+        BYTE                   Gs3
+        BYTE           N24     Fn3
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE           N24     Gs3
+        BYTE   W24
 // 052   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_52
+        BYTE                   Fn4
+        BYTE           N24     Fn3
+        BYTE   W24
+        BYTE                   Bn3
+        BYTE           N24     Bn2
+        BYTE   W24
+        BYTE                   Fn4
+        BYTE           N24     Fn3
+        BYTE   W24
 // 053   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_53:
-        BYTE           N24     Gs4   v126
+        BYTE                   Gs4
         BYTE           N24     Gs3
         BYTE   W24
         BYTE                   Gn4
@@ -1828,7 +1659,6 @@ The_Scions_Dance_in_Purgatory_1_53:
         BYTE                   As4
         BYTE           N24     As3
         BYTE   W24
-        BYTE   PEND
 // 054   ----------------------------------------
         BYTE           TIE     Bn3
         BYTE           TIE     Ds4
@@ -1861,184 +1691,13 @@ The_Scions_Dance_in_Purgatory_1_53:
         BYTE   W72
 // 062   ----------------------------------------
         BYTE   GoTo
-         POIN2  The_Scions_Dance_in_Purgatory_1_LOOP
-        BYTE   W72
-// 063   ----------------------------------------
-        BYTE   W72
-// 064   ----------------------------------------
-        BYTE   W72
-// 065   ----------------------------------------
-        BYTE   W72
-// 066   ----------------------------------------
-        BYTE   W72
-// 067   ----------------------------------------
-        BYTE   W72
-// 068   ----------------------------------------
-        BYTE   W72
-// 069   ----------------------------------------
-        BYTE   W72
-// 070   ----------------------------------------
-        BYTE   W72
-// 071   ----------------------------------------
-        BYTE   W72
-// 072   ----------------------------------------
-        BYTE   W72
-// 073   ----------------------------------------
-        BYTE   W72
-// 074   ----------------------------------------
-        BYTE   W72
-// 075   ----------------------------------------
-        BYTE   W72
-// 076   ----------------------------------------
-        BYTE   W72
-// 077   ----------------------------------------
-        BYTE   W72
-// 078   ----------------------------------------
-        BYTE   W72
-// 079   ----------------------------------------
-        BYTE   W72
-// 080   ----------------------------------------
-        BYTE   W72
-// 081   ----------------------------------------
-        BYTE   W72
-// 082   ----------------------------------------
-        BYTE   W72
-// 083   ----------------------------------------
-        BYTE   W72
-// 084   ----------------------------------------
-        BYTE   W72
-// 085   ----------------------------------------
-        BYTE   W72
-// 086   ----------------------------------------
-        BYTE   W72
-// 087   ----------------------------------------
-        BYTE   W72
-// 088   ----------------------------------------
-        BYTE   W72
-// 089   ----------------------------------------
-        BYTE   W72
-// 090   ----------------------------------------
-        BYTE   W72
-// 091   ----------------------------------------
-        BYTE   W72
-// 092   ----------------------------------------
-        BYTE   W72
-// 093   ----------------------------------------
-        BYTE   W72
-// 094   ----------------------------------------
-        BYTE   W72
-// 095   ----------------------------------------
-        BYTE   W72
-// 096   ----------------------------------------
-        BYTE   W72
-// 097   ----------------------------------------
-        BYTE   W72
-// 098   ----------------------------------------
-        BYTE   W72
-// 099   ----------------------------------------
-        BYTE   W72
-// 100   ----------------------------------------
-        BYTE   W72
-// 101   ----------------------------------------
-        BYTE   W72
-// 102   ----------------------------------------
-        BYTE   W72
-// 103   ----------------------------------------
-        BYTE   W72
-// 104   ----------------------------------------
-        BYTE   W72
-// 105   ----------------------------------------
-        BYTE   W72
-// 106   ----------------------------------------
-        BYTE   W72
-// 107   ----------------------------------------
-        BYTE   W72
-// 108   ----------------------------------------
-        BYTE   W72
-// 109   ----------------------------------------
-        BYTE   W72
-// 110   ----------------------------------------
-        BYTE   W72
-// 111   ----------------------------------------
-        BYTE   W72
-// 112   ----------------------------------------
-        BYTE   W72
-// 113   ----------------------------------------
-        BYTE   W72
-// 114   ----------------------------------------
-        BYTE   W72
-// 115   ----------------------------------------
-        BYTE   W72
-// 116   ----------------------------------------
-        BYTE   W72
-// 117   ----------------------------------------
-        BYTE   W72
-// 118   ----------------------------------------
-        BYTE   W72
-// 119   ----------------------------------------
-        BYTE   W72
-// 120   ----------------------------------------
-        BYTE   W72
-// 121   ----------------------------------------
-        BYTE   W72
-// 122   ----------------------------------------
-        BYTE   W72
-// 123   ----------------------------------------
-        BYTE   W72
-// 124   ----------------------------------------
-        BYTE   W72
-// 125   ----------------------------------------
-        BYTE   W72
-// 126   ----------------------------------------
-        BYTE   W72
-// 127   ----------------------------------------
-        BYTE   W72
-// 128   ----------------------------------------
-        BYTE   W72
-// 129   ----------------------------------------
-        BYTE   W72
-// 130   ----------------------------------------
-        BYTE   W72
-// 131   ----------------------------------------
-        BYTE   W72
-// 132   ----------------------------------------
-        BYTE   W72
-// 133   ----------------------------------------
-        BYTE   W72
-// 134   ----------------------------------------
-        BYTE   W72
-// 135   ----------------------------------------
-        BYTE   W72
-// 136   ----------------------------------------
-        BYTE   W72
-// 137   ----------------------------------------
-        BYTE   W72
-// 138   ----------------------------------------
-        BYTE   W72
-// 139   ----------------------------------------
-        BYTE   W72
-// 140   ----------------------------------------
-        BYTE   W72
-// 141   ----------------------------------------
-        BYTE   W72
-// 142   ----------------------------------------
-        BYTE   W72
-// 143   ----------------------------------------
-        BYTE   W72
-// 144   ----------------------------------------
-        BYTE   W72
-// 145   ----------------------------------------
-        BYTE   W72
-// 146   ----------------------------------------
-        BYTE   W72
-// 147   ----------------------------------------
-        BYTE   W48
+         POIN2  TheScionsDancePurgatory_1_LOOP
         BYTE   FINE
 
 //****************** Track 2 (Midi-Chn.2) ******************//
 
-The_Scions_Dance_in_Purgatory_2:
-        BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
+TheScionsDancePurgatory_2:
+        BYTE   KEYSH   TheScionsDancePurgatory_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   0
         BYTE           VOL     26
@@ -2067,7 +1726,7 @@ The_Scions_Dance_in_Purgatory_2:
         BYTE                   Bn3
         BYTE   W12
 // 001   ----------------------------------------
-The_Scions_Dance_in_Purgatory_2_1:
+TheScionsDancePurgatory_2_1:
         BYTE           N12     As3   v105
         BYTE   W12
         BYTE                   Bn3
@@ -2095,7 +1754,7 @@ The_Scions_Dance_in_Purgatory_2_1:
         BYTE   W06
         BYTE   PEND
 // 002   ----------------------------------------
-The_Scions_Dance_in_Purgatory_2_2:
+TheScionsDancePurgatory_2_2:
         BYTE           N06     As3   v105
         BYTE   W06
         BYTE                   Gs3
@@ -2133,7 +1792,7 @@ The_Scions_Dance_in_Purgatory_2_2:
         BYTE   W06
         BYTE   PEND
 // 003   ----------------------------------------
-The_Scions_Dance_in_Purgatory_2_3:
+TheScionsDancePurgatory_2_3:
         BYTE           N06     Fs3   v105
         BYTE   W06
         BYTE                   Cs3
@@ -2212,7 +1871,7 @@ The_Scions_Dance_in_Purgatory_2_3:
         BYTE           N96     As1
         BYTE   W96
 // 006   ----------------------------------------
-The_Scions_Dance_in_Purgatory_2_LOOP:
+TheScionsDancePurgatory_2_LOOP:
         BYTE           N24     Ds2   v126
         BYTE           N24     Ds1
         BYTE   W24
@@ -2405,191 +2064,18 @@ The_Scions_Dance_in_Purgatory_2_LOOP:
         BYTE   W72
 // 062   ----------------------------------------
         BYTE   GoTo
-         POIN2  The_Scions_Dance_in_Purgatory_2_LOOP
-        BYTE   W72
-// 063   ----------------------------------------
-        BYTE   W72
-// 064   ----------------------------------------
-        BYTE   W72
-// 065   ----------------------------------------
-        BYTE   W72
-// 066   ----------------------------------------
-        BYTE   W72
-// 067   ----------------------------------------
-        BYTE   W72
-// 068   ----------------------------------------
-        BYTE   W72
-// 069   ----------------------------------------
-        BYTE   W72
-// 070   ----------------------------------------
-        BYTE   W72
-// 071   ----------------------------------------
-        BYTE   W72
-// 072   ----------------------------------------
-        BYTE   W72
-// 073   ----------------------------------------
-        BYTE   W72
-// 074   ----------------------------------------
-        BYTE   W72
-// 075   ----------------------------------------
-        BYTE   W72
-// 076   ----------------------------------------
-        BYTE   W72
-// 077   ----------------------------------------
-        BYTE   W72
-// 078   ----------------------------------------
-        BYTE   W72
-// 079   ----------------------------------------
-        BYTE   W72
-// 080   ----------------------------------------
-        BYTE   W72
-// 081   ----------------------------------------
-        BYTE   W72
-// 082   ----------------------------------------
-        BYTE   W72
-// 083   ----------------------------------------
-        BYTE   W72
-// 084   ----------------------------------------
-        BYTE   W72
-// 085   ----------------------------------------
-        BYTE   W72
-// 086   ----------------------------------------
-        BYTE   W72
-// 087   ----------------------------------------
-        BYTE   W72
-// 088   ----------------------------------------
-        BYTE   W72
-// 089   ----------------------------------------
-        BYTE   W72
-// 090   ----------------------------------------
-        BYTE   W72
-// 091   ----------------------------------------
-        BYTE   W72
-// 092   ----------------------------------------
-        BYTE   W72
-// 093   ----------------------------------------
-        BYTE   W72
-// 094   ----------------------------------------
-        BYTE   W72
-// 095   ----------------------------------------
-        BYTE   W72
-// 096   ----------------------------------------
-        BYTE   W72
-// 097   ----------------------------------------
-        BYTE   W72
-// 098   ----------------------------------------
-        BYTE   W72
-// 099   ----------------------------------------
-        BYTE   W72
-// 100   ----------------------------------------
-        BYTE   W72
-// 101   ----------------------------------------
-        BYTE   W72
-// 102   ----------------------------------------
-        BYTE   W72
-// 103   ----------------------------------------
-        BYTE   W72
-// 104   ----------------------------------------
-        BYTE   W72
-// 105   ----------------------------------------
-        BYTE   W72
-// 106   ----------------------------------------
-        BYTE   W72
-// 107   ----------------------------------------
-        BYTE   W72
-// 108   ----------------------------------------
-        BYTE   W72
-// 109   ----------------------------------------
-        BYTE   W72
-// 110   ----------------------------------------
-        BYTE   W72
-// 111   ----------------------------------------
-        BYTE   W72
-// 112   ----------------------------------------
-        BYTE   W72
-// 113   ----------------------------------------
-        BYTE   W72
-// 114   ----------------------------------------
-        BYTE   W72
-// 115   ----------------------------------------
-        BYTE   W72
-// 116   ----------------------------------------
-        BYTE   W72
-// 117   ----------------------------------------
-        BYTE   W72
-// 118   ----------------------------------------
-        BYTE   W72
-// 119   ----------------------------------------
-        BYTE   W72
-// 120   ----------------------------------------
-        BYTE   W72
-// 121   ----------------------------------------
-        BYTE   W72
-// 122   ----------------------------------------
-        BYTE   W72
-// 123   ----------------------------------------
-        BYTE   W72
-// 124   ----------------------------------------
-        BYTE   W72
-// 125   ----------------------------------------
-        BYTE   W72
-// 126   ----------------------------------------
-        BYTE   W72
-// 127   ----------------------------------------
-        BYTE   W72
-// 128   ----------------------------------------
-        BYTE   W72
-// 129   ----------------------------------------
-        BYTE   W72
-// 130   ----------------------------------------
-        BYTE   W72
-// 131   ----------------------------------------
-        BYTE   W72
-// 132   ----------------------------------------
-        BYTE   W72
-// 133   ----------------------------------------
-        BYTE   W72
-// 134   ----------------------------------------
-        BYTE   W72
-// 135   ----------------------------------------
-        BYTE   W72
-// 136   ----------------------------------------
-        BYTE   W72
-// 137   ----------------------------------------
-        BYTE   W72
-// 138   ----------------------------------------
-        BYTE   W72
-// 139   ----------------------------------------
-        BYTE   W72
-// 140   ----------------------------------------
-        BYTE   W72
-// 141   ----------------------------------------
-        BYTE   W72
-// 142   ----------------------------------------
-        BYTE   W72
-// 143   ----------------------------------------
-        BYTE   W72
-// 144   ----------------------------------------
-        BYTE   W72
-// 145   ----------------------------------------
-        BYTE   W72
-// 146   ----------------------------------------
-        BYTE   W72
-// 147   ----------------------------------------
-        BYTE   W48
+         POIN2  TheScionsDancePurgatory_2_LOOP
         BYTE   FINE
 
 //****************** Track 3 (Midi-Chn.3) ******************//
 
-The_Scions_Dance_in_Purgatory_3:
-        BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
+TheScionsDancePurgatory_3:
+        BYTE   KEYSH   TheScionsDancePurgatory_key+0
 // 000   ----------------------------------------
-        BYTE           PAN     c_v-1
         BYTE           VOICE   19
+        BYTE           PAN     c_v-13
         BYTE           VOL     57
-        BYTE           N12     Gs3   v126
-        BYTE           N12     Ds4
-        BYTE           N12     Gs4
+        BYTE           N12     Gs4   v126
         BYTE   W12
         BYTE           N03     Ds4
         BYTE   W03
@@ -2606,7 +2092,6 @@ The_Scions_Dance_in_Purgatory_3:
         BYTE                   Ds4
         BYTE   W12
         BYTE                   Cs4
-        BYTE           N12     Cs3
         BYTE   W12
         BYTE                   Bn3
         BYTE   W12
@@ -2617,12 +2102,9 @@ The_Scions_Dance_in_Purgatory_3:
         BYTE   W12
         BYTE                   Cs4
         BYTE   W12
-        BYTE                   Gn3
-        BYTE           N12     Gn4
+        BYTE                   Gn4
         BYTE   W12
-        BYTE                   Gs3
-        BYTE           N12     Ds4
-        BYTE           N12     Gs4
+        BYTE                   Gs4
         BYTE   W12
         BYTE           N06
         BYTE   W06
@@ -2649,14 +2131,9 @@ The_Scions_Dance_in_Purgatory_3:
         BYTE   W06
         BYTE                   Cs3
         BYTE   W06
-        BYTE                   Bn3
-        BYTE           N06     Fs4
-        BYTE           N06     Bn4
         BYTE           N12     Bn2
-        BYTE   W06
-        BYTE           N06     As4
-        BYTE   W06
-        BYTE                   Gs4
+        BYTE   W12
+        BYTE           N06     Gs4
         BYTE   W06
         BYTE                   Fs4
         BYTE   W06
@@ -2677,19 +2154,11 @@ The_Scions_Dance_in_Purgatory_3:
         BYTE   W06
         BYTE                   Cs3
         BYTE   W06
-        BYTE                   Ds4
-        BYTE           N06     As4
-        BYTE           N06     Ds5
         BYTE           N12     Ds3
-        BYTE   W06
-        BYTE           N06     Cs5
-        BYTE   W06
-        BYTE                   Bn4
-        BYTE           N12     Bn2
-        BYTE   W06
-        BYTE           N06     As4
-        BYTE   W06
-        BYTE                   Gs4
+        BYTE   W12
+        BYTE                   Bn3
+        BYTE   W12
+        BYTE           N06     Gs4
         BYTE   W06
         BYTE                   Fs4
         BYTE   W06
@@ -2726,37 +2195,32 @@ The_Scions_Dance_in_Purgatory_3:
         BYTE   W06
         BYTE                   Ds4
         BYTE   W06
-        BYTE                   En4
+        BYTE                   En3
         BYTE   W06
-        BYTE                   Fs4
+        BYTE                   Fs3
         BYTE   W06
-        BYTE                   Gs4
+        BYTE                   Gs3
         BYTE   W06
-        BYTE                   As4
+        BYTE                   As3
         BYTE   W06
-        BYTE                   Bn4
+        BYTE                   Bn2
         BYTE           N06     Bn3
-        BYTE           N12     Bn2
         BYTE   W06
-        BYTE           N06     Cn5
+        BYTE                   Cn3
         BYTE           N06     Cn4
         BYTE   W06
-        BYTE                   Cs5
+        BYTE                   Cs3
         BYTE           N06     Cs4
-        BYTE           N12     Cs3
         BYTE   W06
-        BYTE           N06     Dn5
+        BYTE                   Dn3
         BYTE           N06     Dn4
         BYTE   W06
 // 005   ----------------------------------------
+        BYTE           N96     Ds3
         BYTE           N96     Ds4
-        BYTE           N96     Bn4
-        BYTE           N96     Ds5
-        BYTE           N96     Ds2
-        BYTE           N96     Ds1
         BYTE   W96
 // 006   ----------------------------------------
-The_Scions_Dance_in_Purgatory_3_LOOP:
+TheScionsDancePurgatory_3_LOOP:
         BYTE   W96
 // 007   ----------------------------------------
         BYTE   W96
@@ -2861,7 +2325,7 @@ The_Scions_Dance_in_Purgatory_3_LOOP:
 // 057   ----------------------------------------
         BYTE   W72
 // 058   ----------------------------------------
-The_Scions_Dance_in_Purgatory_3_58:
+TheScionsDancePurgatory_3_58:
         BYTE   W08
         BYTE           N08     En3   v126
         BYTE   W08
@@ -2886,193 +2350,22 @@ The_Scions_Dance_in_Purgatory_3_58:
         BYTE   PEND
 // 059   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_59
+         POIN2  TheScionsDancePurgatory_0_59
 // 060   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_60
+         POIN2  TheScionsDancePurgatory_0_60
 // 061   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_61
+         POIN2  TheScionsDancePurgatory_0_61
 // 062   ----------------------------------------
         BYTE   GoTo
-         POIN2  The_Scions_Dance_in_Purgatory_3_LOOP
-        BYTE   W72
-// 063   ----------------------------------------
-        BYTE   W72
-// 064   ----------------------------------------
-        BYTE   W72
-// 065   ----------------------------------------
-        BYTE   W72
-// 066   ----------------------------------------
-        BYTE   W72
-// 067   ----------------------------------------
-        BYTE   W72
-// 068   ----------------------------------------
-        BYTE   W72
-// 069   ----------------------------------------
-        BYTE   W72
-// 070   ----------------------------------------
-        BYTE   W72
-// 071   ----------------------------------------
-        BYTE   W72
-// 072   ----------------------------------------
-        BYTE   W72
-// 073   ----------------------------------------
-        BYTE   W72
-// 074   ----------------------------------------
-        BYTE   W72
-// 075   ----------------------------------------
-        BYTE   W72
-// 076   ----------------------------------------
-        BYTE   W72
-// 077   ----------------------------------------
-        BYTE   W72
-// 078   ----------------------------------------
-        BYTE   W72
-// 079   ----------------------------------------
-        BYTE   W72
-// 080   ----------------------------------------
-        BYTE   W72
-// 081   ----------------------------------------
-        BYTE   W72
-// 082   ----------------------------------------
-        BYTE   W72
-// 083   ----------------------------------------
-        BYTE   W72
-// 084   ----------------------------------------
-        BYTE   W72
-// 085   ----------------------------------------
-        BYTE   W72
-// 086   ----------------------------------------
-        BYTE   W72
-// 087   ----------------------------------------
-        BYTE   W72
-// 088   ----------------------------------------
-        BYTE   W72
-// 089   ----------------------------------------
-        BYTE   W72
-// 090   ----------------------------------------
-        BYTE   W72
-// 091   ----------------------------------------
-        BYTE   W72
-// 092   ----------------------------------------
-        BYTE   W72
-// 093   ----------------------------------------
-        BYTE   W72
-// 094   ----------------------------------------
-        BYTE   W72
-// 095   ----------------------------------------
-        BYTE   W72
-// 096   ----------------------------------------
-        BYTE   W72
-// 097   ----------------------------------------
-        BYTE   W72
-// 098   ----------------------------------------
-        BYTE   W72
-// 099   ----------------------------------------
-        BYTE   W72
-// 100   ----------------------------------------
-        BYTE   W72
-// 101   ----------------------------------------
-        BYTE   W72
-// 102   ----------------------------------------
-        BYTE   W72
-// 103   ----------------------------------------
-        BYTE   W72
-// 104   ----------------------------------------
-        BYTE   W72
-// 105   ----------------------------------------
-        BYTE   W72
-// 106   ----------------------------------------
-        BYTE   W72
-// 107   ----------------------------------------
-        BYTE   W72
-// 108   ----------------------------------------
-        BYTE   W72
-// 109   ----------------------------------------
-        BYTE   W72
-// 110   ----------------------------------------
-        BYTE   W72
-// 111   ----------------------------------------
-        BYTE   W72
-// 112   ----------------------------------------
-        BYTE   W72
-// 113   ----------------------------------------
-        BYTE   W72
-// 114   ----------------------------------------
-        BYTE   W72
-// 115   ----------------------------------------
-        BYTE   W72
-// 116   ----------------------------------------
-        BYTE   W72
-// 117   ----------------------------------------
-        BYTE   W72
-// 118   ----------------------------------------
-        BYTE   W72
-// 119   ----------------------------------------
-        BYTE   W72
-// 120   ----------------------------------------
-        BYTE   W72
-// 121   ----------------------------------------
-        BYTE   W72
-// 122   ----------------------------------------
-        BYTE   W72
-// 123   ----------------------------------------
-        BYTE   W72
-// 124   ----------------------------------------
-        BYTE   W72
-// 125   ----------------------------------------
-        BYTE   W72
-// 126   ----------------------------------------
-        BYTE   W72
-// 127   ----------------------------------------
-        BYTE   W72
-// 128   ----------------------------------------
-        BYTE   W72
-// 129   ----------------------------------------
-        BYTE   W72
-// 130   ----------------------------------------
-        BYTE   W72
-// 131   ----------------------------------------
-        BYTE   W72
-// 132   ----------------------------------------
-        BYTE   W72
-// 133   ----------------------------------------
-        BYTE   W72
-// 134   ----------------------------------------
-        BYTE   W72
-// 135   ----------------------------------------
-        BYTE   W72
-// 136   ----------------------------------------
-        BYTE   W72
-// 137   ----------------------------------------
-        BYTE   W72
-// 138   ----------------------------------------
-        BYTE   W72
-// 139   ----------------------------------------
-        BYTE   W72
-// 140   ----------------------------------------
-        BYTE   W72
-// 141   ----------------------------------------
-        BYTE   W72
-// 142   ----------------------------------------
-        BYTE   W72
-// 143   ----------------------------------------
-        BYTE   W72
-// 144   ----------------------------------------
-        BYTE   W72
-// 145   ----------------------------------------
-        BYTE   W72
-// 146   ----------------------------------------
-        BYTE   W72
-// 147   ----------------------------------------
-        BYTE   W48
+         POIN2  TheScionsDancePurgatory_3_LOOP
         BYTE   FINE
 
 //****************** Track 4 (Midi-Chn.4) ******************//
 
-The_Scions_Dance_in_Purgatory_4:
-        BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
+TheScionsDancePurgatory_4:
+        BYTE   KEYSH   TheScionsDancePurgatory_key+0
 // 000   ----------------------------------------
         BYTE           VOICE   14
         BYTE           VOL     43
@@ -3171,7 +2464,7 @@ The_Scions_Dance_in_Purgatory_4:
         BYTE           N48     Ds3
         BYTE   W96
 // 006   ----------------------------------------
-The_Scions_Dance_in_Purgatory_4_LOOP:
+TheScionsDancePurgatory_4_LOOP:
         BYTE           N12     Fs2   v126
         BYTE   W24
         BYTE                   Fs2
@@ -3282,15 +2575,15 @@ The_Scions_Dance_in_Purgatory_4_LOOP:
         BYTE   W24
 // 035   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_35
+         POIN2  TheScionsDancePurgatory_0_35
 // 036   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_36
+         POIN2  TheScionsDancePurgatory_0_36
 // 037   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_37
+         POIN2  TheScionsDancePurgatory_0_37
 // 038   ----------------------------------------
-The_Scions_Dance_in_Purgatory_4_38:
+TheScionsDancePurgatory_4_38:
         BYTE           N72     Ds4   v126
         BYTE           N72     Ds3
         BYTE   W72
@@ -3313,24 +2606,26 @@ The_Scions_Dance_in_Purgatory_4_38:
         BYTE   W24
 // 043   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_43
+         POIN2  TheScionsDancePurgatory_0_43
 // 044   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_36
+         POIN2  TheScionsDancePurgatory_0_36
 // 045   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_45
+         POIN2  TheScionsDancePurgatory_0_45
 // 046   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_4_38
+         POIN2  TheScionsDancePurgatory_4_38
 // 047   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_1_47
+        BYTE           N72     Cs3   v126
+        BYTE           N72     Cs4
+        BYTE   W72
 // 048   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_1_48
+        BYTE                   Bn2
+        BYTE           N72     Bn3
+        BYTE   W72
 // 049   ----------------------------------------
-        BYTE           N72     Fn2   v126
+        BYTE                   Fn2
         BYTE           N72     Fn3
         BYTE           N72     As3
         BYTE   W72
@@ -3341,10 +2636,17 @@ The_Scions_Dance_in_Purgatory_4_38:
 // 052   ----------------------------------------
         BYTE   W72
 // 053   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_1_53
+        BYTE           N24     Gs4
+        BYTE           N24     Gs3
+        BYTE   W24
+        BYTE                   Gn4
+        BYTE           N24     Gn3
+        BYTE   W24
+        BYTE                   As4
+        BYTE           N24     As3
+        BYTE   W24
 // 054   ----------------------------------------
-        BYTE           N72     Bn4   v126
+        BYTE           N72     Bn4
         BYTE           N72     Gs4
         BYTE           N72     Ds4
         BYTE           N72     Bn3
@@ -3436,187 +2738,16 @@ The_Scions_Dance_in_Purgatory_4_38:
         BYTE   W08
 // 062   ----------------------------------------
         BYTE   GoTo
-         POIN2  The_Scions_Dance_in_Purgatory_4_LOOP
-        BYTE   W72
-// 063   ----------------------------------------
-        BYTE   W72
-// 064   ----------------------------------------
-        BYTE   W72
-// 065   ----------------------------------------
-        BYTE   W72
-// 066   ----------------------------------------
-        BYTE   W72
-// 067   ----------------------------------------
-        BYTE   W72
-// 068   ----------------------------------------
-        BYTE   W72
-// 069   ----------------------------------------
-        BYTE   W72
-// 070   ----------------------------------------
-        BYTE   W72
-// 071   ----------------------------------------
-        BYTE   W72
-// 072   ----------------------------------------
-        BYTE   W72
-// 073   ----------------------------------------
-        BYTE   W72
-// 074   ----------------------------------------
-        BYTE   W72
-// 075   ----------------------------------------
-        BYTE   W72
-// 076   ----------------------------------------
-        BYTE   W72
-// 077   ----------------------------------------
-        BYTE   W72
-// 078   ----------------------------------------
-        BYTE   W72
-// 079   ----------------------------------------
-        BYTE   W72
-// 080   ----------------------------------------
-        BYTE   W72
-// 081   ----------------------------------------
-        BYTE   W72
-// 082   ----------------------------------------
-        BYTE   W72
-// 083   ----------------------------------------
-        BYTE   W72
-// 084   ----------------------------------------
-        BYTE   W72
-// 085   ----------------------------------------
-        BYTE   W72
-// 086   ----------------------------------------
-        BYTE   W72
-// 087   ----------------------------------------
-        BYTE   W72
-// 088   ----------------------------------------
-        BYTE   W72
-// 089   ----------------------------------------
-        BYTE   W72
-// 090   ----------------------------------------
-        BYTE   W72
-// 091   ----------------------------------------
-        BYTE   W72
-// 092   ----------------------------------------
-        BYTE   W72
-// 093   ----------------------------------------
-        BYTE   W72
-// 094   ----------------------------------------
-        BYTE   W72
-// 095   ----------------------------------------
-        BYTE   W72
-// 096   ----------------------------------------
-        BYTE   W72
-// 097   ----------------------------------------
-        BYTE   W72
-// 098   ----------------------------------------
-        BYTE   W72
-// 099   ----------------------------------------
-        BYTE   W72
-// 100   ----------------------------------------
-        BYTE   W72
-// 101   ----------------------------------------
-        BYTE   W72
-// 102   ----------------------------------------
-        BYTE   W72
-// 103   ----------------------------------------
-        BYTE   W72
-// 104   ----------------------------------------
-        BYTE   W72
-// 105   ----------------------------------------
-        BYTE   W72
-// 106   ----------------------------------------
-        BYTE   W72
-// 107   ----------------------------------------
-        BYTE   W72
-// 108   ----------------------------------------
-        BYTE   W72
-// 109   ----------------------------------------
-        BYTE   W72
-// 110   ----------------------------------------
-        BYTE   W72
-// 111   ----------------------------------------
-        BYTE   W72
-// 112   ----------------------------------------
-        BYTE   W72
-// 113   ----------------------------------------
-        BYTE   W72
-// 114   ----------------------------------------
-        BYTE   W72
-// 115   ----------------------------------------
-        BYTE   W72
-// 116   ----------------------------------------
-        BYTE   W72
-// 117   ----------------------------------------
-        BYTE   W72
-// 118   ----------------------------------------
-        BYTE   W72
-// 119   ----------------------------------------
-        BYTE   W72
-// 120   ----------------------------------------
-        BYTE   W72
-// 121   ----------------------------------------
-        BYTE   W72
-// 122   ----------------------------------------
-        BYTE   W72
-// 123   ----------------------------------------
-        BYTE   W72
-// 124   ----------------------------------------
-        BYTE   W72
-// 125   ----------------------------------------
-        BYTE   W72
-// 126   ----------------------------------------
-        BYTE   W72
-// 127   ----------------------------------------
-        BYTE   W72
-// 128   ----------------------------------------
-        BYTE   W72
-// 129   ----------------------------------------
-        BYTE   W72
-// 130   ----------------------------------------
-        BYTE   W72
-// 131   ----------------------------------------
-        BYTE   W72
-// 132   ----------------------------------------
-        BYTE   W72
-// 133   ----------------------------------------
-        BYTE   W72
-// 134   ----------------------------------------
-        BYTE   W72
-// 135   ----------------------------------------
-        BYTE   W72
-// 136   ----------------------------------------
-        BYTE   W72
-// 137   ----------------------------------------
-        BYTE   W72
-// 138   ----------------------------------------
-        BYTE   W72
-// 139   ----------------------------------------
-        BYTE   W72
-// 140   ----------------------------------------
-        BYTE   W72
-// 141   ----------------------------------------
-        BYTE   W72
-// 142   ----------------------------------------
-        BYTE   W72
-// 143   ----------------------------------------
-        BYTE   W72
-// 144   ----------------------------------------
-        BYTE   W72
-// 145   ----------------------------------------
-        BYTE   W72
-// 146   ----------------------------------------
-        BYTE   W72
-// 147   ----------------------------------------
-        BYTE   W48
+         POIN2  TheScionsDancePurgatory_4_LOOP
         BYTE   FINE
 
 //****************** Track 5 (Midi-Chn.5) ******************//
 
-The_Scions_Dance_in_Purgatory_5:
-        BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
+TheScionsDancePurgatory_5:
+        BYTE   KEYSH   TheScionsDancePurgatory_key+0
 // 000   ----------------------------------------
-        BYTE           PAN     c_v+23
         BYTE           VOICE   6
+        BYTE           PAN     c_v+23
         BYTE           VOL     50
         BYTE           N12     Gs3   v105
         BYTE           N12     Ds4
@@ -3643,13 +2774,13 @@ The_Scions_Dance_in_Purgatory_5:
         BYTE   W12
 // 001   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_2_1
+         POIN2  TheScionsDancePurgatory_2_1
 // 002   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_2_2
+         POIN2  TheScionsDancePurgatory_2_2
 // 003   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_2_3
+         POIN2  TheScionsDancePurgatory_2_3
 // 004   ----------------------------------------
         BYTE           N06     Ds3   v105
         BYTE   W06
@@ -3697,7 +2828,7 @@ The_Scions_Dance_in_Purgatory_5:
         BYTE           N96     Ds1
         BYTE   W96
 // 006   ----------------------------------------
-The_Scions_Dance_in_Purgatory_5_LOOP:
+TheScionsDancePurgatory_5_LOOP:
         BYTE   W96
 // 007   ----------------------------------------
         BYTE   W96
@@ -3787,7 +2918,7 @@ The_Scions_Dance_in_Purgatory_5_LOOP:
         BYTE           N24     Ds1
         BYTE   W24
 // 013   ----------------------------------------
-The_Scions_Dance_in_Purgatory_5_13:
+TheScionsDancePurgatory_5_13:
         BYTE           N08     Ds1   v126
         BYTE   W08
         BYTE                   As1
@@ -3811,7 +2942,7 @@ The_Scions_Dance_in_Purgatory_5_13:
         BYTE   W08
         BYTE   PEND
 // 014   ----------------------------------------
-The_Scions_Dance_in_Purgatory_5_14:
+TheScionsDancePurgatory_5_14:
         BYTE           N08     Cs2   v126
         BYTE   W08
         BYTE                   Gs2
@@ -3918,10 +3049,10 @@ The_Scions_Dance_in_Purgatory_5_14:
         BYTE   W24
 // 019   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_5_13
+         POIN2  TheScionsDancePurgatory_5_13
 // 020   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_5_14
+         POIN2  TheScionsDancePurgatory_5_14
 // 021   ----------------------------------------
         BYTE           N24     Bn1   v126
         BYTE           N24     Bn2
@@ -4039,82 +3170,82 @@ The_Scions_Dance_in_Purgatory_5_14:
         BYTE   W12
 // 028   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_28
+         POIN2  TheScionsDancePurgatory_0_28
 // 029   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_29
+         POIN2  TheScionsDancePurgatory_0_29
 // 030   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_30
+         POIN2  TheScionsDancePurgatory_0_30
 // 031   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_31
+         POIN2  TheScionsDancePurgatory_0_31
 // 032   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_32
+         POIN2  TheScionsDancePurgatory_0_32
 // 033   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_33
+         POIN2  TheScionsDancePurgatory_0_33
 // 034   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_34
+         POIN2  TheScionsDancePurgatory_0_34
 // 035   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_35
+         POIN2  TheScionsDancePurgatory_0_35
 // 036   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_36
+         POIN2  TheScionsDancePurgatory_0_36
 // 037   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_37
+         POIN2  TheScionsDancePurgatory_0_37
 // 038   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_38
+         POIN2  TheScionsDancePurgatory_0_38
 // 039   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_39
+         POIN2  TheScionsDancePurgatory_0_39
 // 040   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_40
+         POIN2  TheScionsDancePurgatory_0_40
 // 041   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_41
+         POIN2  TheScionsDancePurgatory_0_41
 // 042   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_42
+         POIN2  TheScionsDancePurgatory_0_42
 // 043   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_43
+         POIN2  TheScionsDancePurgatory_0_43
 // 044   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_36
+         POIN2  TheScionsDancePurgatory_0_36
 // 045   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_45
+         POIN2  TheScionsDancePurgatory_0_45
 // 046   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_46
+         POIN2  TheScionsDancePurgatory_0_46
 // 047   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_47
+         POIN2  TheScionsDancePurgatory_0_47
 // 048   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_48
+         POIN2  TheScionsDancePurgatory_0_48
 // 049   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_49
+         POIN2  TheScionsDancePurgatory_0_49
 // 050   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_50
+         POIN2  TheScionsDancePurgatory_0_50
 // 051   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_51
+         POIN2  TheScionsDancePurgatory_0_51
 // 052   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_52
+         POIN2  TheScionsDancePurgatory_0_52
 // 053   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_53
+         POIN2  TheScionsDancePurgatory_0_53
 // 054   ----------------------------------------
         BYTE           N24     Gs1   v126
         BYTE   W24
@@ -4126,208 +3257,37 @@ The_Scions_Dance_in_Purgatory_5_14:
         BYTE   W24
 // 055   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_55
+         POIN2  TheScionsDancePurgatory_0_55
 // 056   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_56
+         POIN2  TheScionsDancePurgatory_0_56
 // 057   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_57
+         POIN2  TheScionsDancePurgatory_0_57
 // 058   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_3_58
+         POIN2  TheScionsDancePurgatory_3_58
 // 059   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_59
+         POIN2  TheScionsDancePurgatory_0_59
 // 060   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_60
+         POIN2  TheScionsDancePurgatory_0_60
 // 061   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_61
+         POIN2  TheScionsDancePurgatory_0_61
 // 062   ----------------------------------------
         BYTE   GoTo
-         POIN2  The_Scions_Dance_in_Purgatory_5_LOOP
-        BYTE   W72
-// 063   ----------------------------------------
-        BYTE   W72
-// 064   ----------------------------------------
-        BYTE   W72
-// 065   ----------------------------------------
-        BYTE   W72
-// 066   ----------------------------------------
-        BYTE   W72
-// 067   ----------------------------------------
-        BYTE   W72
-// 068   ----------------------------------------
-        BYTE   W72
-// 069   ----------------------------------------
-        BYTE   W72
-// 070   ----------------------------------------
-        BYTE   W72
-// 071   ----------------------------------------
-        BYTE   W72
-// 072   ----------------------------------------
-        BYTE   W72
-// 073   ----------------------------------------
-        BYTE   W72
-// 074   ----------------------------------------
-        BYTE   W72
-// 075   ----------------------------------------
-        BYTE   W72
-// 076   ----------------------------------------
-        BYTE   W72
-// 077   ----------------------------------------
-        BYTE   W72
-// 078   ----------------------------------------
-        BYTE   W72
-// 079   ----------------------------------------
-        BYTE   W72
-// 080   ----------------------------------------
-        BYTE   W72
-// 081   ----------------------------------------
-        BYTE   W72
-// 082   ----------------------------------------
-        BYTE   W72
-// 083   ----------------------------------------
-        BYTE   W72
-// 084   ----------------------------------------
-        BYTE   W72
-// 085   ----------------------------------------
-        BYTE   W72
-// 086   ----------------------------------------
-        BYTE   W72
-// 087   ----------------------------------------
-        BYTE   W72
-// 088   ----------------------------------------
-        BYTE   W72
-// 089   ----------------------------------------
-        BYTE   W72
-// 090   ----------------------------------------
-        BYTE   W72
-// 091   ----------------------------------------
-        BYTE   W72
-// 092   ----------------------------------------
-        BYTE   W72
-// 093   ----------------------------------------
-        BYTE   W72
-// 094   ----------------------------------------
-        BYTE   W72
-// 095   ----------------------------------------
-        BYTE   W72
-// 096   ----------------------------------------
-        BYTE   W72
-// 097   ----------------------------------------
-        BYTE   W72
-// 098   ----------------------------------------
-        BYTE   W72
-// 099   ----------------------------------------
-        BYTE   W72
-// 100   ----------------------------------------
-        BYTE   W72
-// 101   ----------------------------------------
-        BYTE   W72
-// 102   ----------------------------------------
-        BYTE   W72
-// 103   ----------------------------------------
-        BYTE   W72
-// 104   ----------------------------------------
-        BYTE   W72
-// 105   ----------------------------------------
-        BYTE   W72
-// 106   ----------------------------------------
-        BYTE   W72
-// 107   ----------------------------------------
-        BYTE   W72
-// 108   ----------------------------------------
-        BYTE   W72
-// 109   ----------------------------------------
-        BYTE   W72
-// 110   ----------------------------------------
-        BYTE   W72
-// 111   ----------------------------------------
-        BYTE   W72
-// 112   ----------------------------------------
-        BYTE   W72
-// 113   ----------------------------------------
-        BYTE   W72
-// 114   ----------------------------------------
-        BYTE   W72
-// 115   ----------------------------------------
-        BYTE   W72
-// 116   ----------------------------------------
-        BYTE   W72
-// 117   ----------------------------------------
-        BYTE   W72
-// 118   ----------------------------------------
-        BYTE   W72
-// 119   ----------------------------------------
-        BYTE   W72
-// 120   ----------------------------------------
-        BYTE   W72
-// 121   ----------------------------------------
-        BYTE   W72
-// 122   ----------------------------------------
-        BYTE   W72
-// 123   ----------------------------------------
-        BYTE   W72
-// 124   ----------------------------------------
-        BYTE   W72
-// 125   ----------------------------------------
-        BYTE   W72
-// 126   ----------------------------------------
-        BYTE   W72
-// 127   ----------------------------------------
-        BYTE   W72
-// 128   ----------------------------------------
-        BYTE   W72
-// 129   ----------------------------------------
-        BYTE   W72
-// 130   ----------------------------------------
-        BYTE   W72
-// 131   ----------------------------------------
-        BYTE   W72
-// 132   ----------------------------------------
-        BYTE   W72
-// 133   ----------------------------------------
-        BYTE   W72
-// 134   ----------------------------------------
-        BYTE   W72
-// 135   ----------------------------------------
-        BYTE   W72
-// 136   ----------------------------------------
-        BYTE   W72
-// 137   ----------------------------------------
-        BYTE   W72
-// 138   ----------------------------------------
-        BYTE   W72
-// 139   ----------------------------------------
-        BYTE   W72
-// 140   ----------------------------------------
-        BYTE   W72
-// 141   ----------------------------------------
-        BYTE   W72
-// 142   ----------------------------------------
-        BYTE   W72
-// 143   ----------------------------------------
-        BYTE   W72
-// 144   ----------------------------------------
-        BYTE   W72
-// 145   ----------------------------------------
-        BYTE   W72
-// 146   ----------------------------------------
-        BYTE   W72
-// 147   ----------------------------------------
-        BYTE   W48
+         POIN2  TheScionsDancePurgatory_5_LOOP
         BYTE   FINE
 
 //****************** Track 6 (Midi-Chn.6) ******************//
 
-The_Scions_Dance_in_Purgatory_6:
-        BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
+TheScionsDancePurgatory_6:
+        BYTE   KEYSH   TheScionsDancePurgatory_key+0
 // 000   ----------------------------------------
-        BYTE           VOL     64
         BYTE           VOICE   127
+        BYTE           VOL     64
         BYTE           N48     Cs2   v100
         BYTE   W48
         BYTE           N12     Dn1
@@ -4383,7 +3343,7 @@ The_Scions_Dance_in_Purgatory_6:
         BYTE           N96     An2
         BYTE   W96
 // 006   ----------------------------------------
-The_Scions_Dance_in_Purgatory_6_LOOP:
+TheScionsDancePurgatory_6_LOOP:
         BYTE           N12     Bn0   v100
         BYTE           N12     Dn1
         BYTE   W24
@@ -4448,7 +3408,7 @@ The_Scions_Dance_in_Purgatory_6_LOOP:
         BYTE                   Dn1
         BYTE   W24
 // 011   ----------------------------------------
-The_Scions_Dance_in_Purgatory_6_11:
+TheScionsDancePurgatory_6_11:
         BYTE           N12     Dn1   v100
         BYTE   W24
         BYTE                   As1
@@ -4459,7 +3419,7 @@ The_Scions_Dance_in_Purgatory_6_11:
         BYTE   W24
         BYTE   PEND
 // 012   ----------------------------------------
-The_Scions_Dance_in_Purgatory_6_12:
+TheScionsDancePurgatory_6_12:
         BYTE           N12     As1   v100
         BYTE   W24
         BYTE                   Dn1
@@ -4470,7 +3430,7 @@ The_Scions_Dance_in_Purgatory_6_12:
         BYTE   W24
         BYTE   PEND
 // 013   ----------------------------------------
-The_Scions_Dance_in_Purgatory_6_13:
+TheScionsDancePurgatory_6_13:
         BYTE           N12     Dn1   v100
         BYTE   W24
         BYTE                   Dn1
@@ -4482,7 +3442,7 @@ The_Scions_Dance_in_Purgatory_6_13:
         BYTE   PEND
 // 014   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_6_11
+         POIN2  TheScionsDancePurgatory_6_11
 // 015   ----------------------------------------
         BYTE           N12     As1   v100
         BYTE   W24
@@ -4495,19 +3455,19 @@ The_Scions_Dance_in_Purgatory_6_13:
         BYTE   W24
 // 016   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_6_13
+         POIN2  TheScionsDancePurgatory_6_13
 // 017   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_6_11
+         POIN2  TheScionsDancePurgatory_6_11
 // 018   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_6_12
+         POIN2  TheScionsDancePurgatory_6_12
 // 019   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_6_13
+         POIN2  TheScionsDancePurgatory_6_13
 // 020   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_6_11
+         POIN2  TheScionsDancePurgatory_6_11
 // 021   ----------------------------------------
         BYTE           N12     As1   v100
         BYTE   W24
@@ -4525,7 +3485,7 @@ The_Scions_Dance_in_Purgatory_6_13:
         BYTE                   Bn0
         BYTE   W24
 // 023   ----------------------------------------
-The_Scions_Dance_in_Purgatory_6_23:
+TheScionsDancePurgatory_6_23:
         BYTE           N12     Dn1   v100
         BYTE   W12
         BYTE                   En1
@@ -4540,10 +3500,10 @@ The_Scions_Dance_in_Purgatory_6_23:
         BYTE   PEND
 // 024   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_6_23
+         POIN2  TheScionsDancePurgatory_6_23
 // 025   ----------------------------------------
         BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_6_23
+         POIN2  TheScionsDancePurgatory_6_23
 // 026   ----------------------------------------
         BYTE           N12     Dn1   v100
         BYTE   W12
@@ -4727,198 +3687,27 @@ The_Scions_Dance_in_Purgatory_6_23:
         BYTE   W12
 // 062   ----------------------------------------
         BYTE   GoTo
-         POIN2  The_Scions_Dance_in_Purgatory_6_LOOP
-        BYTE   W72
-// 063   ----------------------------------------
-        BYTE   W72
-// 064   ----------------------------------------
-        BYTE   W72
-// 065   ----------------------------------------
-        BYTE   W72
-// 066   ----------------------------------------
-        BYTE   W72
-// 067   ----------------------------------------
-        BYTE   W72
-// 068   ----------------------------------------
-        BYTE   W72
-// 069   ----------------------------------------
-        BYTE   W72
-// 070   ----------------------------------------
-        BYTE   W72
-// 071   ----------------------------------------
-        BYTE   W72
-// 072   ----------------------------------------
-        BYTE   W72
-// 073   ----------------------------------------
-        BYTE   W72
-// 074   ----------------------------------------
-        BYTE   W72
-// 075   ----------------------------------------
-        BYTE   W72
-// 076   ----------------------------------------
-        BYTE   W72
-// 077   ----------------------------------------
-        BYTE   W72
-// 078   ----------------------------------------
-        BYTE   W72
-// 079   ----------------------------------------
-        BYTE   W72
-// 080   ----------------------------------------
-        BYTE   W72
-// 081   ----------------------------------------
-        BYTE   W72
-// 082   ----------------------------------------
-        BYTE   W72
-// 083   ----------------------------------------
-        BYTE   W72
-// 084   ----------------------------------------
-        BYTE   W72
-// 085   ----------------------------------------
-        BYTE   W72
-// 086   ----------------------------------------
-        BYTE   W72
-// 087   ----------------------------------------
-        BYTE   W72
-// 088   ----------------------------------------
-        BYTE   W72
-// 089   ----------------------------------------
-        BYTE   W72
-// 090   ----------------------------------------
-        BYTE   W72
-// 091   ----------------------------------------
-        BYTE   W72
-// 092   ----------------------------------------
-        BYTE   W72
-// 093   ----------------------------------------
-        BYTE   W72
-// 094   ----------------------------------------
-        BYTE   W72
-// 095   ----------------------------------------
-        BYTE   W72
-// 096   ----------------------------------------
-        BYTE   W72
-// 097   ----------------------------------------
-        BYTE   W72
-// 098   ----------------------------------------
-        BYTE   W72
-// 099   ----------------------------------------
-        BYTE   W72
-// 100   ----------------------------------------
-        BYTE   W72
-// 101   ----------------------------------------
-        BYTE   W72
-// 102   ----------------------------------------
-        BYTE   W72
-// 103   ----------------------------------------
-        BYTE   W72
-// 104   ----------------------------------------
-        BYTE   W72
-// 105   ----------------------------------------
-        BYTE   W72
-// 106   ----------------------------------------
-        BYTE   W72
-// 107   ----------------------------------------
-        BYTE   W72
-// 108   ----------------------------------------
-        BYTE   W72
-// 109   ----------------------------------------
-        BYTE   W72
-// 110   ----------------------------------------
-        BYTE   W72
-// 111   ----------------------------------------
-        BYTE   W72
-// 112   ----------------------------------------
-        BYTE   W72
-// 113   ----------------------------------------
-        BYTE   W72
-// 114   ----------------------------------------
-        BYTE   W72
-// 115   ----------------------------------------
-        BYTE   W72
-// 116   ----------------------------------------
-        BYTE   W72
-// 117   ----------------------------------------
-        BYTE   W72
-// 118   ----------------------------------------
-        BYTE   W72
-// 119   ----------------------------------------
-        BYTE   W72
-// 120   ----------------------------------------
-        BYTE   W72
-// 121   ----------------------------------------
-        BYTE   W72
-// 122   ----------------------------------------
-        BYTE   W72
-// 123   ----------------------------------------
-        BYTE   W72
-// 124   ----------------------------------------
-        BYTE   W72
-// 125   ----------------------------------------
-        BYTE   W72
-// 126   ----------------------------------------
-        BYTE   W72
-// 127   ----------------------------------------
-        BYTE   W72
-// 128   ----------------------------------------
-        BYTE   W72
-// 129   ----------------------------------------
-        BYTE   W72
-// 130   ----------------------------------------
-        BYTE   W72
-// 131   ----------------------------------------
-        BYTE   W72
-// 132   ----------------------------------------
-        BYTE   W72
-// 133   ----------------------------------------
-        BYTE   W72
-// 134   ----------------------------------------
-        BYTE   W72
-// 135   ----------------------------------------
-        BYTE   W72
-// 136   ----------------------------------------
-        BYTE   W72
-// 137   ----------------------------------------
-        BYTE   W72
-// 138   ----------------------------------------
-        BYTE   W72
-// 139   ----------------------------------------
-        BYTE   W72
-// 140   ----------------------------------------
-        BYTE   W72
-// 141   ----------------------------------------
-        BYTE   W72
-// 142   ----------------------------------------
-        BYTE   W72
-// 143   ----------------------------------------
-        BYTE   W72
-// 144   ----------------------------------------
-        BYTE   W72
-// 145   ----------------------------------------
-        BYTE   W72
-// 146   ----------------------------------------
-        BYTE   W72
-// 147   ----------------------------------------
-        BYTE   W48
+         POIN2  TheScionsDancePurgatory_6_LOOP
         BYTE   FINE
 
 
 //********************** End of Song ***********************//
 
         ALIGN 4
-The_Scions_Dance_in_Purgatory:
+TheScionsDancePurgatory:
         BYTE   7                       // Num Tracks
         BYTE   0                       // Unknown
-        BYTE   The_Scions_Dance_in_Purgatory_pri // Priority
-        BYTE   The_Scions_Dance_in_Purgatory_rev // Reverb
+        BYTE   TheScionsDancePurgatory_pri // Priority
+        BYTE   TheScionsDancePurgatory_rev // Reverb
 
-        POIN2   The_Scions_Dance_in_Purgatory_grp
+        POIN2   TheScionsDancePurgatory_grp
 
-        POIN2   The_Scions_Dance_in_Purgatory_0
-        POIN2   The_Scions_Dance_in_Purgatory_1
-        POIN2   The_Scions_Dance_in_Purgatory_2
-        POIN2   The_Scions_Dance_in_Purgatory_3
-        POIN2   The_Scions_Dance_in_Purgatory_4
-        POIN2   The_Scions_Dance_in_Purgatory_5
-        POIN2   The_Scions_Dance_in_Purgatory_6
+        POIN2   TheScionsDancePurgatory_0
+        POIN2   TheScionsDancePurgatory_1
+        POIN2   TheScionsDancePurgatory_2
+        POIN2   TheScionsDancePurgatory_3
+        POIN2   TheScionsDancePurgatory_4
+        POIN2   TheScionsDancePurgatory_5
+        POIN2   TheScionsDancePurgatory_6
 
         
