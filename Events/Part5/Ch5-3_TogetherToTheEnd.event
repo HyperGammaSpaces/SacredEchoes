@@ -383,11 +383,24 @@ POP
 DumaDefeated:
     FadeOutMusic
     STAL 20
-    MUSC SongID_NobunagaField
+    /*
+        CHECK_ALLEGIANCE 0xFFFF
+        BNE 0x1337 rC r0
+            CHECK_ACTIVE
+            SADD 0xC2
+            ASMC 0x790A4|1		//praise Teq
+            SET_ENDTURN 0xFFFD
+            SET_ACTIVE 0
+            SVAL 0x1 0x00000043
+            SET_CONDITION 0xFFFD
+        LABEL 0x1337
+    */
+    STAL 90
     EARTHQUAKE_START 0x100
-    STAL 60
+    STAL 90
     EARTHQUAKE_END
     STAL 5
+    MUSC SongID_Env_LegendaryWeapon
     Text(Ch5_3_EndingText)
     FadeOutMusic
     FADI 2

@@ -1284,21 +1284,27 @@ TheDarkGodsTempest_5:
         BYTE                   56
         BYTE   W02
 TheDarkGodsTempest_5_LOOP:
+        BYTE           N32     En1   v100
         BYTE   W01
         BYTE           VOL     57
         BYTE   W44
         BYTE   W03
 // 001   ----------------------------------------
-        BYTE   W96
+        BYTE   W72
+        BYTE           N32
+        BYTE   W24
 // 002   ----------------------------------------
         BYTE   W96
 // 003   ----------------------------------------
+        BYTE                   En1
         BYTE   W96
 // 004   ----------------------------------------
         BYTE   W22
-        BYTE                   38
-        BYTE   W03
-        BYTE                   39
+        BYTE           VOL     38
+        BYTE   W02
+        BYTE           N32
+        BYTE   W01
+        BYTE           VOL     39
         BYTE   W06
         BYTE                   40
         BYTE   W09
@@ -1340,7 +1346,7 @@ TheDarkGodsTempest_5_LOOP:
         BYTE   W06
         BYTE                   57
         BYTE   W04
-        BYTE           TIE     En1   v100
+        BYTE           TIE     En1   v112
         BYTE   W02
         BYTE           VOL     58
         BYTE   W44
@@ -1391,7 +1397,7 @@ TheDarkGodsTempest_5_LOOP:
         BYTE                   56
         BYTE   W01
         BYTE           EOT
-        BYTE           N32
+        BYTE           N32     En1   v100
         BYTE   W04
         BYTE           VOL     57
         BYTE   W32
@@ -1756,6 +1762,7 @@ TheDarkGodsTempest_7_LOOP:
         BYTE   W12
         BYTE           N09     An3
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W12
 // 001   ----------------------------------------
 TheDarkGodsTempest_7_1:
@@ -1767,11 +1774,14 @@ TheDarkGodsTempest_7_1:
         BYTE   W12
         BYTE           N03
         BYTE           N06     Gn4
+        BYTE           N10     Dn1
         BYTE   W12
         BYTE           N03     An3
+        BYTE           N08     Dn1
         BYTE   W12
-        BYTE                   An3
+        BYTE           N03     An3
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W12
@@ -1787,6 +1797,7 @@ TheDarkGodsTempest_7_2:
         BYTE   W12
         BYTE           N09     An3   v100
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W06
@@ -1796,11 +1807,14 @@ TheDarkGodsTempest_7_2:
         BYTE   W12
         BYTE           N03
         BYTE           N06     Gn4
+        BYTE           N10     Dn1
         BYTE   W12
         BYTE           N03     An3
+        BYTE           N08     Dn1
         BYTE   W12
-        BYTE                   An3
+        BYTE           N03     An3
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W12
@@ -1815,6 +1829,7 @@ TheDarkGodsTempest_7_3:
         BYTE   W24
         BYTE           N09
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W06
@@ -1824,13 +1839,16 @@ TheDarkGodsTempest_7_3:
         BYTE   W12
         BYTE           N03
         BYTE           N06     Gn4
+        BYTE           N10     Dn1
         BYTE   W12
         BYTE           N03     An3
+        BYTE           N08     Dn1
         BYTE   W12
         BYTE   PEND
 // 004   ----------------------------------------
-        BYTE                   An3
+        BYTE           N03     An3
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W10
@@ -1867,6 +1885,7 @@ TheDarkGodsTempest_7_3:
         BYTE           N09     An3
         BYTE           N05     Cs4
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W05
         BYTE           VOL     45
         BYTE   W01
@@ -1896,6 +1915,7 @@ TheDarkGodsTempest_7_3:
         BYTE           N96     An2
         BYTE           N05     Cs4
         BYTE           N06     Gn4
+        BYTE           N10     Dn1
         BYTE   W04
         BYTE           VOL     46
         BYTE   W02
@@ -1908,16 +1928,18 @@ TheDarkGodsTempest_7_3:
         BYTE   W02
         BYTE           N03     An3
         BYTE           N05     Cs4
+        BYTE           N08     Dn1
         BYTE   W04
         BYTE           VOL     52
         BYTE   W02
-        BYTE           N05
+        BYTE           N05     Cs4
         BYTE   W04
         BYTE           VOL     53
         BYTE   W02
         BYTE           N03     An3
         BYTE           N05     Cs4
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W06
         BYTE           N05     Cs4
         BYTE   W01
@@ -1935,14 +1957,12 @@ TheDarkGodsTempest_7_3:
         BYTE           VOL     57
         BYTE   W01
         BYTE           N09     An3
-        BYTE           N06     Gn4
         BYTE           N12     Dn1
         BYTE           N24     Dn4
         BYTE   W12
         BYTE           N03     An3
         BYTE   W12
         BYTE           N09
-        BYTE           N06     Fs4
         BYTE           N06     Dn1
         BYTE           N12     Cn1
         BYTE           N48     As2
@@ -1950,47 +1970,63 @@ TheDarkGodsTempest_7_3:
         BYTE           N03     An3
         BYTE   W12
 // 006   ----------------------------------------
-TheDarkGodsTempest_7_6:
-        BYTE           N09     An3   v100
-        BYTE           N06     Gn4
+        BYTE           N09
         BYTE           N12     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W12
         BYTE           N09
-        BYTE           N06     Fs4
         BYTE           N12     Cn1
         BYTE           N06     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W12
         BYTE           N09
-        BYTE           N06     Gn4
         BYTE           N12     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W12
         BYTE           N09
-        BYTE           N06     Fs4
         BYTE           N12     Cn1
         BYTE           N06     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W12
-        BYTE   PEND
 // 007   ----------------------------------------
-        BYTE   PATT
-         POIN2  TheDarkGodsTempest_7_6
-// 008   ----------------------------------------
-        BYTE           N09     An3   v100
-        BYTE           N06     Gn4
+        BYTE           N09
         BYTE           N12     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W12
         BYTE           N09
-        BYTE           N06     Fs4
         BYTE           N12     Cn1
+        BYTE           N06     Dn1
+        BYTE   W12
+        BYTE           N03     An3
+        BYTE   W12
+        BYTE           N09
+        BYTE           N12     En1
+        BYTE           N06     Dn1
+        BYTE   W12
+        BYTE           N03     An3
+        BYTE   W12
+        BYTE           N09
+        BYTE           N12     Bn0
+        BYTE           N06     En1
+        BYTE           N06     Dn1
+        BYTE   W12
+        BYTE           N03     An3
+        BYTE   W12
+// 008   ----------------------------------------
+        BYTE           N09
+        BYTE           N12     En1
+        BYTE           N06     Dn1
+        BYTE   W12
+        BYTE           N03     An3
+        BYTE   W12
+        BYTE           N09
+        BYTE           N06     En1
+        BYTE           N12     Bn0
         BYTE           N06     Dn1
         BYTE   W12
         BYTE           N03     An3
@@ -2001,8 +2037,8 @@ TheDarkGodsTempest_7_6:
         BYTE   W02
         BYTE           N03
         BYTE           N05     Cs4
-        BYTE           N06     Gn4
-        BYTE           N12     Dn1
+        BYTE           N12     En1
+        BYTE           N06     Dn1
         BYTE   W04
         BYTE           VOL     40
         BYTE   W02
@@ -2023,8 +2059,8 @@ TheDarkGodsTempest_7_6:
         BYTE   W02
         BYTE           N03     An3
         BYTE           N05     Cs4
-        BYTE           N06     Fs4
-        BYTE           N12     Cn1
+        BYTE           N06     En1
+        BYTE           N12     Bn0
         BYTE           N06     Dn1
         BYTE   W02
         BYTE           VOL     44
@@ -2047,8 +2083,8 @@ TheDarkGodsTempest_7_6:
 // 009   ----------------------------------------
         BYTE           N03     An3
         BYTE           N05     Cs4
-        BYTE           N06     Gn4
-        BYTE           N12     Dn1
+        BYTE           N12     En1
+        BYTE           N06     Dn1
         BYTE   W02
         BYTE           VOL     48
         BYTE   W01
@@ -2077,8 +2113,8 @@ TheDarkGodsTempest_7_6:
         BYTE   W03
         BYTE                   An3
         BYTE           N05     Cs4
-        BYTE           N06     Fs4
-        BYTE           N12     Cn1
+        BYTE           N06     En1
+        BYTE           N12     Bn0
         BYTE           N06     Dn1
         BYTE   W02
         BYTE           VOL     52
@@ -2122,6 +2158,7 @@ TheDarkGodsTempest_7_6:
         BYTE   W12
         BYTE           N09     An3
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W12
 // 010   ----------------------------------------
         BYTE   PATT
@@ -2135,6 +2172,7 @@ TheDarkGodsTempest_7_6:
 // 013   ----------------------------------------
         BYTE           N03     An3   v100
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W12
         BYTE           N03     An3
         BYTE   W12
@@ -2171,6 +2209,7 @@ TheDarkGodsTempest_7_6:
         BYTE           N09     An3
         BYTE           N05     Cs4
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W05
         BYTE           VOL     45
         BYTE   W01
@@ -2200,6 +2239,7 @@ TheDarkGodsTempest_7_6:
         BYTE           N96     An2
         BYTE           N05     Cs4
         BYTE           N06     Gn4
+        BYTE           N10     Dn1
         BYTE   W04
         BYTE           VOL     50
         BYTE   W02
@@ -2209,16 +2249,18 @@ TheDarkGodsTempest_7_6:
         BYTE   W02
         BYTE           N03     An3
         BYTE           N05     Cs4
+        BYTE           N10     Dn1
         BYTE   W04
         BYTE           VOL     52
         BYTE   W02
-        BYTE           N05
+        BYTE           N05     Cs4
         BYTE   W04
         BYTE           VOL     53
         BYTE   W02
         BYTE           N03     An3
         BYTE           N05     Cs4
         BYTE           N06     Fs4
+        BYTE           N12     Dn1
         BYTE   W06
         BYTE           N05     Cs4
         BYTE   W01
@@ -2304,8 +2346,8 @@ TheDarkGodsTempest_7_6:
         BYTE           VOL     39
         BYTE   W01
 // 028   ----------------------------------------
-        BYTE           N24     Bn0   v104
-        BYTE           N05     Cs4   v100
+        BYTE           TIE     As4   v100
+        BYTE           N05     Cs4
         BYTE   W04
         BYTE           VOL     40
         BYTE   W02
@@ -2353,6 +2395,7 @@ TheDarkGodsTempest_7_6:
         BYTE           VOL     48
         BYTE   W04
         BYTE           N09     An3
+        BYTE           N24     Cn2
         BYTE           N05     Cs4
         BYTE   W04
         BYTE           VOL     49
@@ -2370,8 +2413,8 @@ TheDarkGodsTempest_7_6:
         BYTE   W02
 // 029   ----------------------------------------
         BYTE           N03     An3
-        BYTE           N12     Bn0   v112
-        BYTE           N05     Cs4   v100
+        BYTE           N16     An1
+        BYTE           N05     Cs4
         BYTE   W04
         BYTE           VOL     52
         BYTE   W02
@@ -2384,7 +2427,9 @@ TheDarkGodsTempest_7_6:
         BYTE           N05     Cs4
         BYTE   W03
         BYTE           N03     An3
-        BYTE   W03
+        BYTE   W01
+        BYTE           N16     Gn1
+        BYTE   W02
         BYTE           N05     Cs4
         BYTE   W03
         BYTE           N03     An3
@@ -2392,8 +2437,7 @@ TheDarkGodsTempest_7_6:
         BYTE           VOL     54
         BYTE   W02
         BYTE           N03
-        BYTE           N12     Bn0   v096
-        BYTE           N05     Cs4   v100
+        BYTE           N05     Cs4
         BYTE   W03
         BYTE           N03     An3
         BYTE   W02
@@ -2401,7 +2445,9 @@ TheDarkGodsTempest_7_6:
         BYTE   W01
         BYTE           N03
         BYTE           N05     Cs4
-        BYTE   W03
+        BYTE   W02
+        BYTE           N16     Fn1
+        BYTE   W01
         BYTE           N03     An3
         BYTE   W03
         BYTE                   An3
@@ -2418,6 +2464,7 @@ TheDarkGodsTempest_7_6:
         BYTE   W01
         BYTE           N03     An3
         BYTE   W03
+        BYTE           EOT     As4
         BYTE           VOL     56
         BYTE   GoTo
          POIN2  TheDarkGodsTempest_7_LOOP

@@ -218,7 +218,7 @@
 
 
 
-.macro spell_bg_load procPointer, framePointer, imagePointer, meleeTsaPointer, rangeTsaPointer, palettePointer, storePalette=0, storeBgTiles=0, relativeToOpponent=0, tileCount=0x86, leftShift=0x18, rightShift=0xE8, doubleTilecount=0
+.macro spell_bg_load procPointer, framePointer, imagePointer, meleeTsaPointer, rangeTsaPointer, palettePointer, storePalette=0, storeBgTiles=0, relativeToOpponent=0, tileCount=0x86, leftShift=0x18, rightShift=0xE8, doubleTilecount=0, useAlpha=1
 	
 	PUSH {r4-r6,lr}
 	MOV  r4, r0
@@ -314,7 +314,9 @@
 		DoneBGImage\@:
 	.endif
 	
+    .if \useAlpha
 	BLH  0x080551B0 @SpellAnim_AnimateBG
+    .endif
 	LDR  r0, =gSomethingRelatedToAnimAndDistance
 	MOV  r1, #0x0
 	LDSH r0, [r0, r1]

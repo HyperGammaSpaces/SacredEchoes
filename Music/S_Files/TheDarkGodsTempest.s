@@ -1283,21 +1283,27 @@ TheDarkGodsTempest_5:
         .byte                   56
         .byte   W02
 TheDarkGodsTempest_5_LOOP:
+        .byte           N32   , En1 , v100
         .byte   W01
         .byte           VOL   , 57
         .byte   W44
         .byte   W03
 @ 001   ----------------------------------------
-        .byte   W96
+        .byte   W72
+        .byte           N32
+        .byte   W24
 @ 002   ----------------------------------------
         .byte   W96
 @ 003   ----------------------------------------
+        .byte                   En1
         .byte   W96
 @ 004   ----------------------------------------
         .byte   W22
-        .byte                   38
-        .byte   W03
-        .byte                   39
+        .byte           VOL   , 38
+        .byte   W02
+        .byte           N32
+        .byte   W01
+        .byte           VOL   , 39
         .byte   W06
         .byte                   40
         .byte   W09
@@ -1339,7 +1345,7 @@ TheDarkGodsTempest_5_LOOP:
         .byte   W06
         .byte                   57
         .byte   W04
-        .byte           TIE   , En1 , v100
+        .byte           TIE   , En1 , v112
         .byte   W02
         .byte           VOL   , 58
         .byte   W44
@@ -1390,7 +1396,7 @@ TheDarkGodsTempest_5_LOOP:
         .byte                   56
         .byte   W01
         .byte           EOT
-        .byte           N32
+        .byte           N32   , En1 , v100
         .byte   W04
         .byte           VOL   , 57
         .byte   W32
@@ -1755,6 +1761,7 @@ TheDarkGodsTempest_7_LOOP:
         .byte   W12
         .byte           N09   , An3
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W12
 @ 001   ----------------------------------------
 TheDarkGodsTempest_7_1:
@@ -1766,11 +1773,14 @@ TheDarkGodsTempest_7_1:
         .byte   W12
         .byte           N03
         .byte           N06   , Gn4
+        .byte           N10   , Dn1
         .byte   W12
         .byte           N03   , An3
+        .byte           N08   , Dn1
         .byte   W12
-        .byte                   An3
+        .byte           N03   , An3
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W12
@@ -1786,6 +1796,7 @@ TheDarkGodsTempest_7_2:
         .byte   W12
         .byte           N09   , An3 , v100
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W06
@@ -1795,11 +1806,14 @@ TheDarkGodsTempest_7_2:
         .byte   W12
         .byte           N03
         .byte           N06   , Gn4
+        .byte           N10   , Dn1
         .byte   W12
         .byte           N03   , An3
+        .byte           N08   , Dn1
         .byte   W12
-        .byte                   An3
+        .byte           N03   , An3
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W12
@@ -1814,6 +1828,7 @@ TheDarkGodsTempest_7_3:
         .byte   W24
         .byte           N09
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W06
@@ -1823,13 +1838,16 @@ TheDarkGodsTempest_7_3:
         .byte   W12
         .byte           N03
         .byte           N06   , Gn4
+        .byte           N10   , Dn1
         .byte   W12
         .byte           N03   , An3
+        .byte           N08   , Dn1
         .byte   W12
         .byte   PEND
 @ 004   ----------------------------------------
-        .byte                   An3
+        .byte           N03   , An3
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W10
@@ -1866,6 +1884,7 @@ TheDarkGodsTempest_7_3:
         .byte           N09   , An3
         .byte           N05   , Cs4
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W05
         .byte           VOL   , 45
         .byte   W01
@@ -1895,6 +1914,7 @@ TheDarkGodsTempest_7_3:
         .byte           N96   , An2
         .byte           N05   , Cs4
         .byte           N06   , Gn4
+        .byte           N10   , Dn1
         .byte   W04
         .byte           VOL   , 46
         .byte   W02
@@ -1907,16 +1927,18 @@ TheDarkGodsTempest_7_3:
         .byte   W02
         .byte           N03   , An3
         .byte           N05   , Cs4
+        .byte           N08   , Dn1
         .byte   W04
         .byte           VOL   , 52
         .byte   W02
-        .byte           N05
+        .byte           N05   , Cs4
         .byte   W04
         .byte           VOL   , 53
         .byte   W02
         .byte           N03   , An3
         .byte           N05   , Cs4
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W06
         .byte           N05   , Cs4
         .byte   W01
@@ -1934,14 +1956,12 @@ TheDarkGodsTempest_7_3:
         .byte           VOL   , 57
         .byte   W01
         .byte           N09   , An3
-        .byte           N06   , Gn4
         .byte           N12   , Dn1
         .byte           N24   , Dn4
         .byte   W12
         .byte           N03   , An3
         .byte   W12
         .byte           N09
-        .byte           N06   , Fs4
         .byte           N06   , Dn1
         .byte           N12   , Cn1
         .byte           N48   , As2
@@ -1949,47 +1969,63 @@ TheDarkGodsTempest_7_3:
         .byte           N03   , An3
         .byte   W12
 @ 006   ----------------------------------------
-TheDarkGodsTempest_7_6:
-        .byte           N09   , An3 , v100
-        .byte           N06   , Gn4
+        .byte           N09
         .byte           N12   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W12
         .byte           N09
-        .byte           N06   , Fs4
         .byte           N12   , Cn1
         .byte           N06   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W12
         .byte           N09
-        .byte           N06   , Gn4
         .byte           N12   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W12
         .byte           N09
-        .byte           N06   , Fs4
         .byte           N12   , Cn1
         .byte           N06   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W12
-        .byte   PEND
 @ 007   ----------------------------------------
-        .byte   PATT
-         .word  TheDarkGodsTempest_7_6
-@ 008   ----------------------------------------
-        .byte           N09   , An3 , v100
-        .byte           N06   , Gn4
+        .byte           N09
         .byte           N12   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W12
         .byte           N09
-        .byte           N06   , Fs4
         .byte           N12   , Cn1
+        .byte           N06   , Dn1
+        .byte   W12
+        .byte           N03   , An3
+        .byte   W12
+        .byte           N09
+        .byte           N12   , En1
+        .byte           N06   , Dn1
+        .byte   W12
+        .byte           N03   , An3
+        .byte   W12
+        .byte           N09
+        .byte           N12   , Bn0
+        .byte           N06   , En1
+        .byte           N06   , Dn1
+        .byte   W12
+        .byte           N03   , An3
+        .byte   W12
+@ 008   ----------------------------------------
+        .byte           N09
+        .byte           N12   , En1
+        .byte           N06   , Dn1
+        .byte   W12
+        .byte           N03   , An3
+        .byte   W12
+        .byte           N09
+        .byte           N06   , En1
+        .byte           N12   , Bn0
         .byte           N06   , Dn1
         .byte   W12
         .byte           N03   , An3
@@ -2000,8 +2036,8 @@ TheDarkGodsTempest_7_6:
         .byte   W02
         .byte           N03
         .byte           N05   , Cs4
-        .byte           N06   , Gn4
-        .byte           N12   , Dn1
+        .byte           N12   , En1
+        .byte           N06   , Dn1
         .byte   W04
         .byte           VOL   , 40
         .byte   W02
@@ -2022,8 +2058,8 @@ TheDarkGodsTempest_7_6:
         .byte   W02
         .byte           N03   , An3
         .byte           N05   , Cs4
-        .byte           N06   , Fs4
-        .byte           N12   , Cn1
+        .byte           N06   , En1
+        .byte           N12   , Bn0
         .byte           N06   , Dn1
         .byte   W02
         .byte           VOL   , 44
@@ -2046,8 +2082,8 @@ TheDarkGodsTempest_7_6:
 @ 009   ----------------------------------------
         .byte           N03   , An3
         .byte           N05   , Cs4
-        .byte           N06   , Gn4
-        .byte           N12   , Dn1
+        .byte           N12   , En1
+        .byte           N06   , Dn1
         .byte   W02
         .byte           VOL   , 48
         .byte   W01
@@ -2076,8 +2112,8 @@ TheDarkGodsTempest_7_6:
         .byte   W03
         .byte                   An3
         .byte           N05   , Cs4
-        .byte           N06   , Fs4
-        .byte           N12   , Cn1
+        .byte           N06   , En1
+        .byte           N12   , Bn0
         .byte           N06   , Dn1
         .byte   W02
         .byte           VOL   , 52
@@ -2121,6 +2157,7 @@ TheDarkGodsTempest_7_6:
         .byte   W12
         .byte           N09   , An3
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W12
 @ 010   ----------------------------------------
         .byte   PATT
@@ -2134,6 +2171,7 @@ TheDarkGodsTempest_7_6:
 @ 013   ----------------------------------------
         .byte           N03   , An3 , v100
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W12
         .byte           N03   , An3
         .byte   W12
@@ -2170,6 +2208,7 @@ TheDarkGodsTempest_7_6:
         .byte           N09   , An3
         .byte           N05   , Cs4
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W05
         .byte           VOL   , 45
         .byte   W01
@@ -2199,6 +2238,7 @@ TheDarkGodsTempest_7_6:
         .byte           N96   , An2
         .byte           N05   , Cs4
         .byte           N06   , Gn4
+        .byte           N10   , Dn1
         .byte   W04
         .byte           VOL   , 50
         .byte   W02
@@ -2208,16 +2248,18 @@ TheDarkGodsTempest_7_6:
         .byte   W02
         .byte           N03   , An3
         .byte           N05   , Cs4
+        .byte           N10   , Dn1
         .byte   W04
         .byte           VOL   , 52
         .byte   W02
-        .byte           N05
+        .byte           N05   , Cs4
         .byte   W04
         .byte           VOL   , 53
         .byte   W02
         .byte           N03   , An3
         .byte           N05   , Cs4
         .byte           N06   , Fs4
+        .byte           N12   , Dn1
         .byte   W06
         .byte           N05   , Cs4
         .byte   W01
@@ -2303,8 +2345,8 @@ TheDarkGodsTempest_7_6:
         .byte           VOL   , 39
         .byte   W01
 @ 028   ----------------------------------------
-        .byte           N24   , Bn0 , v104
-        .byte           N05   , Cs4 , v100
+        .byte           TIE   , As4 , v100
+        .byte           N05   , Cs4
         .byte   W04
         .byte           VOL   , 40
         .byte   W02
@@ -2352,6 +2394,7 @@ TheDarkGodsTempest_7_6:
         .byte           VOL   , 48
         .byte   W04
         .byte           N09   , An3
+        .byte           N24   , Cn2
         .byte           N05   , Cs4
         .byte   W04
         .byte           VOL   , 49
@@ -2369,8 +2412,8 @@ TheDarkGodsTempest_7_6:
         .byte   W02
 @ 029   ----------------------------------------
         .byte           N03   , An3
-        .byte           N12   , Bn0 , v112
-        .byte           N05   , Cs4 , v100
+        .byte           N16   , An1
+        .byte           N05   , Cs4
         .byte   W04
         .byte           VOL   , 52
         .byte   W02
@@ -2383,7 +2426,9 @@ TheDarkGodsTempest_7_6:
         .byte           N05   , Cs4
         .byte   W03
         .byte           N03   , An3
-        .byte   W03
+        .byte   W01
+        .byte           N16   , Gn1
+        .byte   W02
         .byte           N05   , Cs4
         .byte   W03
         .byte           N03   , An3
@@ -2391,8 +2436,7 @@ TheDarkGodsTempest_7_6:
         .byte           VOL   , 54
         .byte   W02
         .byte           N03
-        .byte           N12   , Bn0 , v096
-        .byte           N05   , Cs4 , v100
+        .byte           N05   , Cs4
         .byte   W03
         .byte           N03   , An3
         .byte   W02
@@ -2400,7 +2444,9 @@ TheDarkGodsTempest_7_6:
         .byte   W01
         .byte           N03
         .byte           N05   , Cs4
-        .byte   W03
+        .byte   W02
+        .byte           N16   , Fn1
+        .byte   W01
         .byte           N03   , An3
         .byte   W03
         .byte                   An3
@@ -2417,6 +2463,7 @@ TheDarkGodsTempest_7_6:
         .byte   W01
         .byte           N03   , An3
         .byte   W03
+        .byte           EOT   , As4
         .byte           VOL   , 56
         .byte   GOTO
          .word  TheDarkGodsTempest_7_LOOP

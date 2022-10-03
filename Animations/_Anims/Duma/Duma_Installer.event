@@ -1,0 +1,194 @@
+//Nura, L95
+Duma_BeamAnim:
+{
+    #include "OcularBeam/duma_ob1 Installer.event"
+}
+Duma_MagicAnim:
+{
+    #include "Magic/duma_mg1 Installer.event"
+}
+Duma_PhysicalAnim:
+{
+    #include "Monster/duma_at1 Installer.event"
+}
+
+#define OAMWait(delay) "WORD ($84000000 + delay)"
+#define OAMHalt "WORD $80000000"
+
+ALIGN 4
+#include "../AlmT2/Sword/_Alm_Finisher_Hack.lyn.event"
+ALIGN 4
+#include "_Duma_Death_Anim.lyn.event"
+
+Duma_DeathAnim:
+#include "Death_wo_Falchion/Duma_Death_Installer.event"
+Duma_DeathAnim_Falchion:
+#include "Death_w_Falchion/Duma_Falchion_Death_Installer.event"
+
+
+PUSH
+    
+    //fix transparency tile
+    ORG $76774
+    WORD $60006000
+    ORG $766E8
+    BYTE $00
+    ORG $766F6
+    BYTE $00
+    
+    //allow platform movement
+    ORG $5361E
+    SHORT $46C0 $46C0 $46C0 $46C0
+    //fix vertical fade in so platform gfx dont get overwritten
+    ORG $76648
+    SHORT $46C0
+    ORG $7665C
+    SHORT $2120
+    ORG $7671C
+    SHORT $2120
+    
+    //ORG $7F434C
+    //PROC_LOOP_ROUTINE(CheckForAlmFinisher|1)
+    
+    //7669C some hardcoded ocular beam check. repurpose for alm falchion kill
+    ORG $766AC
+    BYTE (DumaBeam-1)
+    ORG $766B6
+    BYTE (DumaPhysical-1)
+    ORG $766CA
+    SHORT $46C0
+    
+    ORG $770C0
+    POIN DumaRound_JumpTable
+    
+    //TODO: stop camera offsets
+    //7F44B0 dodge anim proc
+    ORG $77190
+    SHORT $46C0 $46C0 $46C0 $46C0 $46C0
+    //are the attacks part of the spell anims?
+    //stop moving for stomp
+    ORG $7726c
+    SHORT $46C0 $46C0 $46C0 $46C0 $46C0
+    
+    ORG $7677C
+    POIN Duma_Body_Img
+    ORG $702F8
+    POIN Duma_Body_Pal
+    ORG $76794
+    POIN Duma_Body_Pal
+    ORG $77388
+    POIN Duma_Body_Pal
+    ORG $76784 //full
+    POIN Duma_Body_TSA
+    ORG $77A94 //headless
+    POIN Duma_Body_Headless_TSA
+    ORG $77898 //death
+    POIN Duma_Body_Headless_TSA
+    
+    ORG $7F43EC
+    POIN Duma_Body_Headless_TSA //headless
+    POIN Duma_Body_Headless_TSA 
+    POIN Duma_Body_Headless_TSA //headless
+    
+    //death stuff
+    ORG $777BC
+    POIN DumaDeathProc_Root
+    
+    ORG $77598
+    POIN DumaDeathFaceProc
+    
+    ORG $77E4C
+    POIN DumaDissolveMap
+    
+    //offset fix
+    ORG $77ED2
+    BYTE $0
+    ORG $77ED6
+    BYTE $18
+    
+    ORG $58D84
+    POIN AlmFinisher_CritCode
+    
+    ORG $7F4324 //stop battle platforms from fading out
+    PROC_YIELD
+    PROC_LOOP_ROUTINE($765E4|1)
+    PROC_CALL_ROUTINE($766E4|1)
+    PROC_LOOP_ROUTINE($76640|1)
+    PROC_LOOP_ROUTINE($7669C|1)
+    PROC_LOOP_ROUTINE($76A84|1)
+    PROC_LOOP_ROUTINE(Duma_AlmCritListener|1)
+    PROC_LOOP_ROUTINE($76798|1)
+    PROC_LOOP_ROUTINE($767F4|1)
+    PROC_LOOP_ROUTINE($76818|1)
+    PROC_LOOP_ROUTINE($768A0|1)
+    PROC_LOOP_ROUTINE($768F8|1)
+    PROC_END
+POP
+
+ALIGN 4
+DumaDeathProc_Root:
+    PROC_SET_NAME($E83D0)
+    PROC_LOOP_ROUTINE(DumaMelt_Effects_Init|1)
+    PROC_LOOP_ROUTINE(DumaMelt_Quake_Init|1)
+    PROC_LOOP_ROUTINE($77AA8|1) //nullsub
+    PROC_END
+
+DumaDeathWipeProc_1: //7F4518
+    PROC_YIELD
+    PROC_CALL_ROUTINE($773BC|1) //initializes timer and saves scroll offset to +0x32
+    PROC_NEW_CHILD(DumaDeathWipeProc_2) //$801810
+    PROC_LOOP_ROUTINE($773E4|1) //actually does the crumbling via TSA mask. Continues looping until 801810 has stopped.
+    PROC_CALL_ROUTINE($77460|1) //stores 0x1 to field 0x29
+    PROC_END
+
+DumaDeathWipeProc_2: //801810
+    PROC_SET_DESTRUCTOR($77E9C|1) //clear bg1
+    PROC_CALL_ROUTINE($77DC8|1) //decompress some TSA from $7F45D0 - looks like it follows the outline of the DK's body. 32x20 tiles.
+    PROC_CALL_ROUTINE($77E64|1) //resets proc fields +0x58 and +0x5C
+    PROC_LOOP_ROUTINE($77E6C|1) //after 18 frames, calls $77EEC which spawns child proc $801840
+    PROC_WHILE_EXISTS(DumaDeathWipeProc_3)
+    PROC_END
+
+DumaDeathWipeProc_3: //801840
+    PROC_CALL_ROUTINE($77F04|1) //clears fields +0x58 and +0x64
+    PROC_LOOP_ROUTINE($77F10|1) //calls 77F9C. uses some frame data(?) at 801ab4, 801858 and 801860. i think this writes to vram to actually draw the dissolving tiles
+    PROC_END
+
+
+ALIGN 4
+DumaDeathFaceProc:
+    PROC_SET_NAME($E83B4)
+    PROC_SET_DESTRUCTOR($77678|1) //frees the AIS struct at field +0x60
+    PROC_CALL_ROUTINE(DumaMelt_Init|1)
+    PROC_SLEEP(1)
+    PROC_LOOP_ROUTINE(DumaMelt_Loop|1)
+    PROC_LOOP_ROUTINE($7766C|1) //updates x and y position of AIStruct based on fields 0x32 and 0x3A
+    PROC_END
+
+ALIGN 4
+DumaDissolveMap:
+#incbin "meltmap.comp.tsa.bin"
+
+//02020048 ???? - at +0xC there's a pointer to AIStruct
+//0x1 being here means necrodragon, 0x2 being here means DK. 0x3 crashes the game
+
+//5B97AC death anim??
+//7F4798 for BG image insertion point.
+
+//TSA: 7F798C for whole, 7F7DC8 for headless, 7F81D0 for armless.
+
+ALIGN 4
+Duma_Body_Img:
+#incbin "Duma_BG_all.img.bin"
+ALIGN 4
+Duma_Body_TSA:
+#incbin "Duma_BG_head.tsa.bin.compressed"
+ALIGN 4
+Duma_Body_Headless_TSA:
+#incbin "Duma_BG_headless.tsa.bin.compressed"
+ALIGN 4
+Duma_Body_Intro_TSA:
+#incbin "Duma_BG_head_intro.tsa.bin.compressed"
+ALIGN 4
+Duma_Body_Pal:
+#incbin "Duma_BG.pal.bin"

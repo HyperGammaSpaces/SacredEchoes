@@ -14,9 +14,9 @@ C41                               #EMPTY
 1 p- Handaxe_002.png
 C13                               #ranged attack - hand axe for Hector
 3 p- Handaxe_003.png
+C01                               #NOP
 C06                               #Begin opponent's turn after hit.next code 0D.
 1 p- Handaxe_000.png
-C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 3               #Melee Critical Animation
@@ -36,9 +36,9 @@ C41                               #EMPTY
 1 p- Handaxe_002.png
 C13                               #ranged attack - hand axe for Hector
 3 p- Handaxe_003.png
+C01                               #NOP
 C06                               #Begin opponent's turn after hit.next code 0D.
 1 p- Handaxe_000.png
-C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 5               #Ranged Animation 
@@ -52,9 +52,9 @@ C41                               #EMPTY
 1 p- Handaxe_002.png
 C13                               #ranged attack - hand axe for Hector
 3 p- Handaxe_003.png
+C01                               #NOP
 C06                               #Begin opponent's turn after hit.next code 0D.
 1 p- Handaxe_000.png
-C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 6               #Ranged Critical Animation
@@ -74,9 +74,9 @@ C41                               #EMPTY
 1 p- Handaxe_002.png
 C13                               #ranged attack - hand axe for Hector
 3 p- Handaxe_003.png
+C01                               #NOP
 C06                               #Begin opponent's turn after hit.next code 0D.
 1 p- Handaxe_000.png
-C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 7               #Dodge Melee Attack
@@ -103,9 +103,9 @@ C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 9               #Equiped with Melee Weapon
 4 p- Handaxe_010.png
-4 p- Handaxe_011.png
-3 p- Handaxe_012.png
-4 p- Handaxe_013.png
+4 p- Handaxe_009.png
+3 p- Handaxe_011.png
+4 p- Handaxe_012.png
 17 p- Handaxe_000.png
 ~~~
 /// - Mode 10               #Standing motions
@@ -114,9 +114,9 @@ C01                               #NOP
 ~~~
 /// - Mode 11               #Equiped with Ranged weapon
 4 p- Handaxe_010.png
-4 p- Handaxe_011.png
-3 p- Handaxe_012.png
-4 p- Handaxe_013.png
+4 p- Handaxe_009.png
+3 p- Handaxe_011.png
+4 p- Handaxe_012.png
 17 p- Handaxe_000.png
 ~~~
 /// - Mode 12               #Attack Missed Animation
@@ -130,9 +130,9 @@ C41                               #EMPTY
 1 p- Handaxe_002.png
 C13                               #ranged attack - hand axe for Hector
 3 p- Handaxe_003.png
+C01                               #NOP
 C06                               #Begin opponent's turn after hit.next code 0D.
 1 p- Handaxe_000.png
-C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - End of animation

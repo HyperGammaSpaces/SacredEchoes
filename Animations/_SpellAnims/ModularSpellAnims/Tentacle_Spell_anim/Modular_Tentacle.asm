@@ -15,8 +15,8 @@
 .equ shoot_sound_id, 0x00003C0
 
 @Custom frame timers here (if needed)
-.equ bg2_start_frame_id, 0x26
-.equ bg3_start_frame_id, 0x54
+.equ bg2_start_frame_id, 0x27
+.equ bg3_start_frame_id, 0x56
 .equ retract_sound_frame, 0x70
 
 @Dummy values to overwrite with EA-generated ones
@@ -183,40 +183,40 @@ TentacleAnim_Main:
 	.ltorg
     
 TentacleAnim_BG1_Load:
-	spell_bg_load DUMMY_BG1Proc, DUMMY_BG1Frame, DUMMY_BG1Image, DUMMY_BG1Melee, DUMMY_BG1Range, DUMMY_PalettePointer, storePalette=DUMMY_Palette, storeBgTiles=1, relativeToOpponent=0, tileCount=0xFF, leftShift=0x0, rightShift=0x0
+	spell_bg_load DUMMY_BG1Proc, DUMMY_BG1Frame, DUMMY_BG1Image, DUMMY_BG1Melee, DUMMY_BG1Range, DUMMY_PalettePointer, storePalette=DUMMY_Palette, storeBgTiles=1, relativeToOpponent=0, tileCount=0xDB, leftShift=0x18, rightShift=0xE8, useAlpha=0x0
 	
 	.align
 	.ltorg
 	
 .global TentacleAnim_BG1_Loop
 TentacleAnim_BG1_Loop:
-	spell_bg_loop storeBgTiles=0, storePalette=1, fill_extra_space=1, fillTileLeft=0x101, fillTileRight=0x101, infiniteLoop=1, deleteSelf=0, clearColorFx=0
+	spell_bg_loop storeBgTiles=0, storePalette=1, fill_extra_space=1, fillTileLeft=0x100, fillTileRight=0x100, infiniteLoop=1, deleteSelf=0, clearColorFx=0
 	
 	.align
 	.ltorg
 	    
 TentacleAnim_BG2_Load:
-	spell_bg_load DUMMY_BG2Proc, DUMMY_BG2Frame, DUMMY_BG2Image, DUMMY_BG2Melee, DUMMY_BG2Range, DUMMY_PalettePointer, storePalette=DUMMY_Palette, storeBgTiles=1, relativeToOpponent=0, tileCount=0xDC, leftShift=0x0, rightShift=0x0
+	spell_bg_load DUMMY_BG2Proc, DUMMY_BG2Frame, DUMMY_BG2Image, DUMMY_BG2Melee, DUMMY_BG2Range, DUMMY_PalettePointer, storePalette=DUMMY_Palette, storeBgTiles=1, relativeToOpponent=0, tileCount=0xFA, leftShift=0x18, rightShift=0xE8, useAlpha=0x0
 	
 	.align
 	.ltorg
 	
 .global TentacleAnim_BG2_Loop
 TentacleAnim_BG2_Loop:
-	spell_bg_loop storeBgTiles=0, storePalette=1, fill_extra_space=1, fillTileLeft=0x101, fillTileRight=0x101, infiniteLoop=1, deleteSelf=0, clearColorFx=0
+	spell_bg_loop storeBgTiles=0, storePalette=1, fill_extra_space=1, fillTileLeft=0x100, fillTileRight=0x100, infiniteLoop=1, deleteSelf=0, clearColorFx=0
 	
 	.align
 	.ltorg
 	    
 TentacleAnim_BG3_Load:
-	spell_bg_load DUMMY_BG3Proc, DUMMY_BG3Frame, DUMMY_BG3Image, DUMMY_BG3Melee, DUMMY_BG3Range, DUMMY_PalettePointer, storePalette=DUMMY_Palette, storeBgTiles=1, relativeToOpponent=0, tileCount=0xB2, leftShift=0x0, rightShift=0x0
+	spell_bg_load DUMMY_BG3Proc, DUMMY_BG3Frame, DUMMY_BG3Image, DUMMY_BG3Melee, DUMMY_BG3Range, DUMMY_PalettePointer, storePalette=DUMMY_Palette, storeBgTiles=1, relativeToOpponent=0, tileCount=0xBA, leftShift=0x18, rightShift=0xE8, useAlpha=0x0
 	
 	.align
 	.ltorg
 	
 .global TentacleAnim_BG3_Loop
 TentacleAnim_BG3_Loop:
-	spell_bg_loop storeBgTiles=0, storePalette=1, fill_extra_space=1, fillTileLeft=0x101, fillTileRight=0x101, infiniteLoop=1, deleteSelf=0, clearColorFx=0
+	spell_bg_loop storeBgTiles=0, storePalette=1, fill_extra_space=1, fillTileLeft=0x100, fillTileRight=0x100, infiniteLoop=1, deleteSelf=0, clearColorFx=0
 	
 	.align
 	.ltorg

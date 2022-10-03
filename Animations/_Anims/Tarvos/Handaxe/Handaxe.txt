@@ -1,5 +1,5 @@
 #######################################################
-#B4 cen1_ax2 Tarvos Hand Axe
+#B2 cen1_ax2 Tarvos Hand Axe
 #
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
@@ -17,10 +17,10 @@ C05                               #Call spell associated with equipped weapon
 1 p- Handaxe_005.png
 C13                               #ranged attack - hand axe for Hector
 2 p- Handaxe_006.png
+C01                               #NOP
 C06                               #Begin opponent's turn after hit.next code 0D.
 5 p- Handaxe_000.png
 1 p- Handaxe_000.png
-C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 3               #Melee Critical Animation
@@ -46,10 +46,10 @@ C05                               #Call spell associated with equipped weapon
 1 p- Handaxe_005.png
 C13                               #ranged attack - hand axe for Hector
 2 p- Handaxe_006.png
+C01                               #NOP
 C06                               #Begin opponent's turn after hit.next code 0D.
 5 p- Handaxe_000.png
 1 p- Handaxe_000.png
-C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 5               #Ranged Animation 
@@ -66,10 +66,10 @@ C05                               #Call spell associated with equipped weapon
 1 p- Handaxe_005.png
 C13                               #ranged attack - hand axe for Hector
 2 p- Handaxe_006.png
+C01                               #NOP
 C06                               #Begin opponent's turn after hit.next code 0D.
 5 p- Handaxe_000.png
 1 p- Handaxe_000.png
-C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 6               #Ranged Critical Animation
@@ -95,10 +95,10 @@ C05                               #Call spell associated with equipped weapon
 1 p- Handaxe_005.png
 C13                               #ranged attack - hand axe for Hector
 2 p- Handaxe_006.png
+C01                               #NOP
 C06                               #Begin opponent's turn after hit.next code 0D.
 5 p- Handaxe_000.png
 1 p- Handaxe_000.png
-C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 7               #Dodge Melee Attack
@@ -161,10 +161,10 @@ C05                               #Call spell associated with equipped weapon
 1 p- Handaxe_005.png
 C13                               #ranged attack - hand axe for Hector
 2 p- Handaxe_006.png
+C01                               #NOP
 C06                               #Begin opponent's turn after hit.next code 0D.
 5 p- Handaxe_000.png
 1 p- Handaxe_000.png
-C01                               #NOP
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - End of animation
