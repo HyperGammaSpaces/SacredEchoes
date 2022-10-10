@@ -849,6 +849,7 @@ NewSetupBattleStructForStaffUser:
     b       SetupHealScreen_StoreSlot
 
     SetupHealScreen_LoadFromInventory:
+    mov     r0, r2
     lsl     r1, r7, #0x1
     add     r0, #0x1E
     add     r0, r0, r1

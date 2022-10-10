@@ -98,7 +98,7 @@ ALIGN 4
     IER_setItemEffect(IER_FX_Silence, $28AEC, PUNull, SilenceStaff_GetTargetList, $2FE74) 
     IER_setItemEffect(IER_FX_Freeze, $28AFC, PUNull, FreezeStaff_GetTargetList, $2FE74) 
     //IER_setItemEffect(IER_FX_Entrap, $28B0C, PUNull, EntrapStaff_GetTargetList, $2FE94) 
-    IER_setItemEffect(IER_FX_Warp, $28B1C, PUNull, WarpStaff_GetTargetList, $2FEA4) 
+    IER_setItemEffect(IER_FX_Warp, WarpStaff_Usability, PUNull, WarpStaff_GetTargetList, $2FEA4) 
     IER_setItemEffect(IER_FX_Rescue, $28ACC, PUNull, RescueStaff_GetTargetList, $2FE94) 
     IER_setItemEffect(IER_FX_TorchStaff, $28BC8, PUNull, TorchStaff_GetTargetList, $2FF60) 
     //IER_setItemEffect(IER_FX_Unlock, $28B3C, PUNull, UnlockStaff_GetTargetList, $2FEAC) 
@@ -131,3 +131,21 @@ ALIGN 4
     POP
     
 #endif
+
+PUSH
+
+    ORG $28F08
+    WarpStaff_Usability: //28b1c
+    SHORT $2000 $4905 $7B89 //ldr r1, =gChapterData
+    SHORT $292E $D004 //if chapterID = 0x2E mov r0, #0; b return
+    SHORT $4904 //ldr r1, =WarpStaff_RangeSetup|1
+    SHORT $1C20 //mov r0, r4
+    SHORT $1C2A //mov r2, r5
+    BL($29068)
+    //return:
+    SHORT $4902 //ldr r1, =0x08028bfe
+    SHORT $468F //mov r15, r1
+    WORD $0202BCF0
+    POIN WarpStaff_RangeSetup|1 $28BFE
+
+POP

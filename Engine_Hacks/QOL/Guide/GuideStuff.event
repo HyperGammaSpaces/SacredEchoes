@@ -46,8 +46,8 @@ PUSH
   //Specify guide sort flag
   ORG $CECD0
   BYTE gGuideSorted
-  ORG $CF168
-  BYTE gGuideSorted
+  ORG $CF166
+  SHORT $E007
   ORG $CF178
   BYTE gGuideSorted
   

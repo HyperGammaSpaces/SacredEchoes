@@ -209,14 +209,6 @@ MycenJoins:
     UNIT
 
 Evt_BeginningScene:
-    //debug only
-    #ifndef __DEBUG__
-    SetBackground(0x1D)
-    Text(Celica_EndDemo)
-    MNTS 0x0
-    ENDA
-    //end debug
-    #endif
     
     MUSCSLOW SongID_PinnacleOfFalseBelief
     LOAD1 0x1 BerkutSolo

@@ -107,6 +107,8 @@ MagicMenuCommand_OnUnhover:
     add     r4, #0x2
     mov     r0, #0x0
     strb    r0, [r4]
+    ldr     r4, =gActionStruct
+    strb    r0, [r4, #0x6]      @gActionData itemID
     blh     HideMoveRangeGraphics
     mov     r0, #0x0
     pop     {r4}

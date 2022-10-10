@@ -38,7 +38,7 @@ DamageHalvingSkillsDuringBattle:
     beq     CheckForBow 
 
     @check for Kriemhild
-    mov     r1, #0x48
+    mov     r1, #0x4A
     ldrb    r0, [r5, r1]
     cmp     r0, #0x1D
     beq     SetDefensiveSkill
@@ -62,7 +62,7 @@ DamageHalvingSkillsDuringBattle:
     bne     End             @do nothing if bow bit not set
 
     @check for Kriemhild
-    mov     r1, #0x48
+    mov     r1, #0x4A
     ldrb    r0, [r5, r1]
     cmp     r0, #0x1D
     beq     SetDefensiveSkill

@@ -1,9 +1,7 @@
 
-
-
 #include "Draw.lyn.event"
 #include "EAstdlib.event"
-#include "ProcDefinitions.event"
+#include "Extensions/ProcDefinitions.event"
 
 // Vanilla's default is 28 frames here. 
 ALIGN 4
@@ -106,32 +104,6 @@ gProc_MapAnimRound_AnimationName:
 String("gProc_MapAnimRound_Animation_Repointed") ; BYTE 0
 ALIGN 4
 
-
-
-
-/*
-BYTE Confusion FreezeAnimID
-BYTE SandAttack Splash1AnimID
-BYTE Magnitude Splash2AnimID
-//BYTE Tackle Empty_AnimID
-BYTE TakeDown Break1AnimID
-BYTE Tackle Break2AnimID
-BYTE SeismicToss CircleAnimID
-BYTE Swift Hit1AnimID
-BYTE QuickAttack Hit2AnimID
-BYTE Gust Shards1AnimID
-BYTE PoisonPowder Shards2AnimID
-BYTE Growl FlashAnimID
-BYTE Leer FlashAnimID 
-BYTE VineWhip ThinSlashAnimID
-*/
-
-
-#ifdef FEBUILDER_DATA_ORG
-PUSH
-ORG FEBUILDER_DATA_ORG
-#endif
-
 //This line should occur before this #include: #define INSTALL_BONUS_ANIMATIONS (if installing them)
 #include "MapAnimations/Installer.event" 
 
@@ -142,7 +114,3 @@ SaveScreenNumbers:
 ALIGN 4
 SaveScreenNumbersPal:
 #incbin "MapAnimations/Dmp/NumbersFromSaveScreen_pal.dmp" // same thing but only 32 bytes instead of 512 from png2dmp		//HINT=BIN
-
-#ifdef FEBUILDER_DATA_ORG
-POP
-#endif

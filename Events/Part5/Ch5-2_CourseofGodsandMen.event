@@ -192,13 +192,6 @@ HallReinforcements:
 	UNIT
 
 Ch5F2_BeginningScene:
-    #ifndef __DEBUG__
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	//end debug
-    #endif
     
 	MUSC SongID_Env_LegendaryWeapon
 	SetBackground(0x2A,5)

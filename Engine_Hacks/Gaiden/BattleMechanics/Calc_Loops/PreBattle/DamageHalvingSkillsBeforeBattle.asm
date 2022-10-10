@@ -23,7 +23,7 @@ DamageHalvingSkillsBeforeBattle:
     beq     CheckForBow 
 
     @check for Kriemhild
-    mov     r1, #0x48
+    mov     r1, #0x4a
     ldrb    r0, [r5, r1]
     cmp     r0, #0x1D
     beq     SetDefensiveSkill
@@ -46,7 +46,7 @@ CheckForBow:
     bne     End
 
     @check for Kriemhild
-    mov     r1, #0x48
+    mov     r1, #0x4a
     ldrb    r0, [r5, r1]
     cmp     r0, #0x1D
     beq     SetDefensiveSkill

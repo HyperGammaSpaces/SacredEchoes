@@ -305,13 +305,6 @@ MogallSpamWave:
 
 Ch5F3_BeginningScene:
     MUSC SongID_Env_Lava
-    #ifndef __DEBUG__
-	SetBackground(0x1D)
-	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	//end debug
-    #endif
     
     //initial coord [9,22]
 	LOAD1 0x1 EnemyUnits
@@ -383,18 +376,16 @@ POP
 DumaDefeated:
     FadeOutMusic
     STAL 20
-    /*
-        CHECK_ALLEGIANCE 0xFFFF
-        BNE 0x1337 rC r0
-            CHECK_ACTIVE
-            SADD 0xC2
-            ASMC 0x790A4|1		//praise Teq
-            SET_ENDTURN 0xFFFD
-            SET_ACTIVE 0
-            SVAL 0x1 0x00000043
-            SET_CONDITION 0xFFFD
-        LABEL 0x1337
-    */
+    
+    CHECK_ALLEGIANCE 0x7FFF
+    BNE 0x1337 rC r0
+        ASMC 0x790A4|1		//praise Teq
+        SVAL 0x1 0x00000043
+        SET_CONDITION 0x7FFF
+        SET_ENDTURN 0x7FFF
+        SET_ACTIVE 0
+    LABEL 0x1337
+
     STAL 90
     EARTHQUAKE_START 0x100
     STAL 90
