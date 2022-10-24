@@ -22,13 +22,14 @@ Ch3_3A_TurnBasedEvents:
 
 LoadReinforcements:
 	CHECK_EVENTID 0xB
-	BNE 0x0 0xc 0x0 //stop if boss killed
+	BNE 0x0 0xC 0x0 //stop if boss killed
 		ReinforcementEvent(Reinforcements1)
 	LABEL 0x0
 	NoFade
 	ENDA
 
 Ch3_3A_CharacterBasedEvents:
+    CharacterEventBothWays(gSirPurr, AlmLuthierSirPurrTalk, Alm, Luthier)
 	CHAR
 
 Ch3_3A_LocationBasedEvents:
@@ -91,7 +92,7 @@ BossUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(14, Enemy, True) [2,3]	0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(10, Enemy, True) [2,3]	DropItem 0x00 0x0 0x00 [Ridersbane] NoAI
 	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(13, Enemy, True) [3,2]	DropItem 0x00 0x0 0x00 [IronLance, Vulnerary] NoAI
 	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(14, Enemy, True) [4,1]	0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(12, Enemy, True) [6,9]	DropItem 0x00 0x0 0x00 [Axereaver] NoAI
@@ -169,12 +170,13 @@ CheckIfAllBossesDefeated:
 	ENDA
 
 Ch3_3A_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-    FadeOutMusic
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A3Completed
 	EVBIT_MODIFY 0x0
+	FADI 2
+    STAL 5
 	MUSC SongID_ShadowOfVictory
 	SetBackground(0x1D)
 	BackgroundText(Ch3_3A_EndingText)

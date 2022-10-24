@@ -36,7 +36,7 @@ TopSpawn:
 	
 ArriveAtExitCheck:
 	CHECK_ALLEGIANCE 0xFFFF
-	BNE 1 0xC 0x0 // branch label 1 if not ally
+	BNE 1 rC r0 // branch label 1 if not ally
 		ENUT 0x3
 		GOTO 2
 	LABEL 1
@@ -152,7 +152,7 @@ Ch1_7x_BeginningScene:
 	
 	LOAD2 0x0 Ch1_7x_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
-	LOAD1 0x0 LoadFernandMathilda
+	LOAD1 0x1 LoadFernandMathilda
 	ENUN
 	CAMERA_CENTERED Clive
 	
@@ -194,9 +194,10 @@ Ch1_7x_BeginningScene:
 	ENDA
 
 Ch1_7x_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
 	FADI 5
-    
+    STAL 5
     RemoveItemFromUnit(FernandPlayable,BaseLance)
     RemoveItemFromUnit(Mathilda,BaseLance)
     DumpToConvoy(FernandPlayable)

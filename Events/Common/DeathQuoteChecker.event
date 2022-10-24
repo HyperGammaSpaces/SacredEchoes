@@ -27,7 +27,7 @@ AFEV 7 HyasMournQuotes gHyasDied
 
 #define DoubleMournQuote(TextId1,TextId2) "MUSI; Text(TextId1); Text(TextId2); MUNO"
 
-#define StandardMournQuote(Mourner,TextId) "CasualCheckASMC ; BNE 1 0x0 0xC ; CHECK_EXISTS Mourner ; BEQ 1 0x0 0xC ; CHECK_DEPLOYED Mourner ; BEQ 1 0x0 0xC ; MournQuote(TextId) ; LABEL 1 ; NoFade ; ENDA"
+#define StandardMournQuote(Mourner,TextId) "CasualCheckASMC ; BNE 1 0x0 0xC ; CHECK_EXISTS Mourner ; BEQ 1 0x0 0xC ; CHECK_DEPLOYED Mourner ; BEQ 1 0x0 0xC ; CHECK_ALIVE Mourner ; BEQ 1 0x0 0xC ; MournQuote(TextId) ; LABEL 1 ; NoFade ; ENDA"
 
 /*
 CasualCheckASMC
@@ -42,7 +42,7 @@ NoFade
 ENDA
 */
 
-#define DoubleStandardMournQuote(Mourner1,Mourner2,TextId1,TextId2) "CasualCheckASMC ; BNE 3 0x0 0xC ; CHECK_EXISTS Mourner1 ; BEQ 1 0x0 0xC ; CHECK_DEPLOYED Mourner1 ; BEQ 1 0x0 0xC ; CHECK_EXISTS Mourner2 ; BEQ 2 0x0 0xC ; CHECK_DEPLOYED Mourner2 ; BEQ 2 0x0 0xC ; DoubleMournQuote(TextId1,TextId2) ; GOTO 3 ; LABEL 2 ;MournQuote(TextId1) ; GOTO 3 ; LABEL 1 ; StandardMournQuote(Mourner2,TextId2) ; LABEL 3 ; NoFade ; ENDA"
+#define DoubleStandardMournQuote(Mourner1,Mourner2,TextId1,TextId2) "CasualCheckASMC ; BNE 3 0x0 0xC ; CHECK_EXISTS Mourner1 ; BEQ 1 0x0 0xC ; CHECK_DEPLOYED Mourner1 ; BEQ 1 0x0 0xC ; CHECK_ALIVE Mourner1 ; BEQ 1 0x0 0xC ; CHECK_EXISTS Mourner2 ; BEQ 2 0x0 0xC ; CHECK_DEPLOYED Mourner2 ; BEQ 2 0x0 0xC ; CHECK_ALIVE Mourner2 ; BEQ 2 0x0 0xC ; DoubleMournQuote(TextId1,TextId2) ; GOTO 3 ; LABEL 2 ;MournQuote(TextId1) ; GOTO 3 ; LABEL 1 ; StandardMournQuote(Mourner2,TextId2) ; LABEL 3 ; NoFade ; ENDA"
 
 /*
 CHECK_DEPLOYED Mourner1 ; 
@@ -126,11 +126,15 @@ CHECK_EXISTS Mathilda
 BEQ 1 0x0 0xC
 CHECK_DEPLOYED Mathilda
 BEQ 1 0x0 0xC
+CHECK_ALIVE Mathilda
+BEQ 1 0x0 0xC
 
 	// Mathilda Block
 	CHECK_EXISTS Clair
 	BEQ 2 0x0 0xC
 	CHECK_DEPLOYED Clair
+	BEQ 2 0x0 0xC
+	CHECK_ALIVE Clair
 	BEQ 2 0x0 0xC
 		DoubleMournQuote(MathildaMournsClive,ClairMournsClive)
 		GOTO 99 // Event End
@@ -139,6 +143,8 @@ BEQ 1 0x0 0xC
 	BEQ 3 0x0 0xC
 	CHECK_DEPLOYED FernandPlayable
 	BEQ 3 0x0 0xC
+	CHECK_ALIVE FernandPlayable
+	BEQ 3 0x0 0xC
 		DoubleMournQuote(MathildaMournsClive,FernandMournsClive)
 		GOTO 99 // Event End
 	LABEL 3
@@ -146,12 +152,16 @@ BEQ 1 0x0 0xC
 	BEQ 4 0x0 0xC
 	CHECK_DEPLOYED Forsyth
 	BEQ 4 0x0 0xC
+	CHECK_ALIVE Forsyth
+	BEQ 4 0x0 0xC
 		DoubleMournQuote(MathildaMournsClive,ForsythMournsClive)
 		GOTO 99 // Event End
 	LABEL 4
 	CHECK_EXISTS Lukas
 	BEQ 5 0x0 0xC
 	CHECK_DEPLOYED Lukas
+	BEQ 5 0x0 0xC
+	CHECK_ALIVE Lukas
 	BEQ 5 0x0 0xC
 		DoubleMournQuote(MathildaMournsClive,LukasMournsClive)
 		GOTO 99 // Event End
@@ -167,11 +177,15 @@ CHECK_EXISTS Clair
 BEQ 6 0x0 0xC
 CHECK_DEPLOYED Clair
 BEQ 6 0x0 0xC
+CHECK_ALIVE Clair
+BEQ 6 0x0 0xC
 
 	// Clair Block
 	CHECK_EXISTS FernandPlayable
 	BEQ 7 0x0 0xC
 	CHECK_DEPLOYED FernandPlayable
+	BEQ 7 0x0 0xC
+	CHECK_ALIVE FernandPlayable
 	BEQ 7 0x0 0xC
 		DoubleMournQuote(ClairMournsClive,FernandMournsClive)
 		GOTO 99 // Event End
@@ -180,12 +194,16 @@ BEQ 6 0x0 0xC
 	BEQ 8 0x0 0xC
 	CHECK_DEPLOYED Forsyth
 	BEQ 8 0x0 0xC
+	CHECK_ALIVE Forsyth
+	BEQ 8 0x0 0xC
 		DoubleMournQuote(ClairMournsClive,ForsythMournsClive)
 		GOTO 99 // Event End
 	LABEL 8
 	CHECK_EXISTS Lukas
 	BEQ 9 0x0 0xC
 	CHECK_DEPLOYED Lukas
+	BEQ 9 0x0 0xC
+	CHECK_ALIVE Lukas
 	BEQ 9 0x0 0xC
 		DoubleMournQuote(ClairMournsClive,LukasMournsClive)
 		GOTO 99 // Event End
@@ -200,11 +218,15 @@ CHECK_EXISTS FernandPlayable
 BEQ 10 0x0 0xC
 CHECK_DEPLOYED FernandPlayable
 BEQ 10 0x0 0xC
+CHECK_ALIVE FernandPlayable
+BEQ 10 0x0 0xC
 
 	// FernandPlayable Block
 	CHECK_EXISTS Forsyth
 	BEQ 11 0x0 0xC
 	CHECK_DEPLOYED Forsyth
+	BEQ 11 0x0 0xC
+	CHECK_ALIVE Forsyth
 	BEQ 11 0x0 0xC
 		DoubleMournQuote(FernandMournsClive,ForsythMournsClive)
 		GOTO 99 // Event End
@@ -212,6 +234,8 @@ BEQ 10 0x0 0xC
 	CHECK_EXISTS Lukas
 	BEQ 12 0x0 0xC
 	CHECK_DEPLOYED Lukas
+	BEQ 12 0x0 0xC
+	CHECK_ALIVE Lukas
 	BEQ 12 0x0 0xC
 		DoubleMournQuote(FernandMournsClive,LukasMournsClive)
 		GOTO 99 // Event End
@@ -226,11 +250,15 @@ CHECK_EXISTS Forsyth
 BEQ 13 0x0 0xC
 CHECK_DEPLOYED Forsyth
 BEQ 13 0x0 0xC
+CHECK_ALIVE Forsyth
+BEQ 13 0x0 0xC
 
 	// Forsyth Block
 	CHECK_EXISTS Lukas
 	BEQ 14 0x0 0xC
 	CHECK_DEPLOYED Lukas
+	BEQ 14 0x0 0xC
+	CHECK_ALIVE Lukas
 	BEQ 14 0x0 0xC
 		DoubleMournQuote(ForsythMournsClive,LukasMournsClive)
 		GOTO 99 // Event End
@@ -245,6 +273,8 @@ LABEL 13 // No Forsyth
 CHECK_EXISTS Lukas
 BEQ 99 0x0 0xC
 CHECK_DEPLOYED Lukas
+BEQ 99 0x0 0xC
+CHECK_ALIVE Lukas
 BEQ 99 0x0 0xC
 MournQuote(LukasMournsClive)
 

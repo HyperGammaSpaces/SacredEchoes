@@ -103,6 +103,7 @@ Ch1_2_BeginningScene:
 	MUSCMID SongID_Silence
 	STAL 20
 	FADI 2
+    STAL 5
 
 	//map start
 	MUSCSLOW SongID_Advance
@@ -112,7 +113,8 @@ Ch1_2_BeginningScene:
 	MUSC SongID_Tension
 	MOVE 0x0 Alm [5, 7]
 	ENUN
-	FADI 0x5
+	FADI 5
+    STAL 5
 	CLEA 0x0
 	LOAD3 0x0 Ch1_2_Units1
 	SetBackground(Woodland)
@@ -122,8 +124,10 @@ Ch1_2_BeginningScene:
 	ENDA 
 
 Ch1_2_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
 	FADI 10
+    STAL 5
 	MUSC SongID_Victory
 
 	SetBackground(Woodland)

@@ -68,10 +68,10 @@ MogallDies:
             CHECK_ACTIVE
             SADD 0xC2
             ASMC 0x790A4|1		//praise Teq
-            SET_ENDTURN 0xFFFD
-            SET_ACTIVE 0
             SVAL 0x1 0x00000043
             SET_CONDITION 0xFFFD
+            SET_ENDTURN 0xFFFD
+            SET_ACTIVE 0
         LABEL 0x4
 		MUSI
 		CameraCursor(Jedah_Ch4)
@@ -115,7 +115,8 @@ PlayerPlacement:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [18,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [17,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [19,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT
+    UNIT Kliff Villager 0x00 Level(1, Ally, 1) [3,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT
 
 CutsceneUnits:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [19,14] 0x00 0x00 0x1 REDA18R10 [BaseSword, Vulnerary] NoAI
@@ -135,21 +136,21 @@ MogallUnit:
 	UNIT
 	
 CutsceneEnemies:
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [17,5] 0x00 0x00 0x1 REDA15R4 [Saunion] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [17,5] 0x00 0x00 0x1 REDA12R4 [HeavySpear] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [17,5] 0x00 0x00 0x1 REDA6R3 [Javelin] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [17,5] 0x00 0x00 0x1 REDA7R6 [SteelLance] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [17,5] 0x00 0x00 0x1 REDA10R7 [DumasLance] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [17,5] 0x00 0x00 0x1 REDA15R4 [Saunion] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [17,5] 0x00 0x00 0x1 REDA12R4 [HeavySpear] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [17,5] 0x00 0x00 0x1 REDA6R3 [Javelin] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [17,5] 0x00 0x00 0x1 REDA7R6 [SteelLance] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [17,5] 0x00 0x00 0x1 REDA10R7 [DumasLance] MonsterAI
 	UNIT
 	
 EnemyUnits:
 	UNIT Jedah_Ch4 Necromancer	Jedah_Ch4 Level(15, Enemy, False) [18,5]	DropItem 0x00 0x0 0x00 [Thanatos, Dracoshield] AttackInRangeAI
 	UNIT MogallBoss Mogall Jedah_Ch4 Level(20, Enemy, True) [9,4] 0x00 0x00 0x0 0x00 [Tackle_Mogall, DivideAbility] MogallAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [15,4] 0x00 0x00 0x0 0x00 [Saunion] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [6,3] 0x00 0x00 0x0 0x00 [Javelin] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [DumasLance] NoAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [15,4] 0x00 0x00 0x0 0x00 [Saunion] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [HeavySpear] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [6,3] 0x00 0x00 0x0 0x00 [Javelin] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [DumasLance] MonsterAI
 	UNIT
     
 
@@ -161,6 +162,7 @@ Evt_BeginningScene:
 	MUSCMID SongID_Silence
 	FADI 5
 	CLEAN
+    STAL 5
 
 	MUSCSLOW SongID_Env_Lava
 	FADU 5
@@ -250,15 +252,15 @@ Evt_BeginningScene:
 	ENDA
 
 Evt_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
-	CLEE 0x0
-	CLEA 0x0
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4C5Completed
 	EVBIT_MODIFY 0x0
-	
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+	CLEE 0x0
+	CLEA 0x0
+	STAL 5
 	MUSC SongID_Omen
 	SetBackground(0x31,5)
 	BackgroundText(Ch4C_5_EndingText)

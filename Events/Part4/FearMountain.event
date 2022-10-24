@@ -97,25 +97,25 @@ SkirmishEnemies:
     UNIT Terror_Mogall Mogall Boss_Monster Level(15,Enemy,True) [4,3] 0x00 0x00 0x0 0x00 [Tackle_Mogall, EvilEye] NeverMoveAI 
 	UNIT Terror_Mogall Mogall Boss_Monster Level(15,Enemy,True) [6,3] 0x00 0x00 0x0 0x00 [Tackle_Mogall, EvilEye] NeverMoveAI 
 	UNIT Terror_Fiend Random_BigBulky Boss_Monster Level(2,Enemy,True) [2,13] MonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
-	UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [3,7] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
-	UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [1,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
-	UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [2,8] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
-	UNIT Terror_ElderBael Kerberos Boss_Monster Level(10,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [HellFang] NoAI 
+	UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [3,7] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
+	UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [1,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
+	UNIT Terror_Deathgoyle Random_Deathgoyle_FliersOnly Boss_Monster Level(2,Enemy,True) [2,8] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
+	UNIT Terror_ElderBael Kerberos Boss_Monster Level(10,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI 
 	UNIT Terror_Wight Random_Wight Boss_Monster Level(7,Enemy,True) [7,5] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI  
 	UNIT Terror_Wight Random_Wight Boss_Monster Level(7,Enemy,True) [4,11] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
 	UNIT Terror_Wight Random_Wight Boss_Monster Level(7,Enemy,True) [5,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
     
 	//right of map
-	UNIT Terror_Wight_Bow Random_Wight_Bow Boss_Monster Level(6,Enemy,True) [17,24] MonsterTemplate 0x00 0x0 0x00 NoItems NoAI
-	UNIT Terror_ElderBael Random_ElderBael Boss_Monster Level(7,Enemy,True) [20,18] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
-	UNIT Terror_ElderBael Random_ElderBael Boss_Monster Level(7,Enemy,True) [19,16] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT Terror_Wight_Bow Random_Wight_Bow Boss_Monster Level(6,Enemy,True) [17,24] MonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_ElderBael Random_ElderBael Boss_Monster Level(7,Enemy,True) [20,18] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_ElderBael Random_ElderBael Boss_Monster Level(7,Enemy,True) [19,16] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
     //starting area
 	UNIT DumaFaith_Sorcerer Arcanist Boss_Monster Level(9,Enemy,True) [8,21] 0x00 0x00 0x0 0x00 [Mire,Heal] [0xF, 0x03, 0x04, 0x20]
 	UNIT DumaFaith_Sorcerer Arcanist Boss_Monster Level(9,Enemy,True) [9,21] 0x00 0x00 0x0 0x00 [Mire,Heal] [0xF, 0x03, 0x04, 0x20]
 	UNIT
     
 ReinforcementGargs:
-    UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(2,Enemy,True) [20,20] 0x00 0x00 0x1 REDA20R20 [IronLance] NoAI
+    UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(2,Enemy,True) [20,20] 0x00 0x00 0x1 REDA20R20 [IronLance] MonsterAI
     UNIT
 
 FearMtn_BeginningScene:
@@ -129,9 +129,10 @@ FearMtn_BeginningScene:
 	ENDA
 
 FearMtn_EndingScene:
+    CALL EndMusicAndMMS
     CHECK_EVENTID gFearMountainShrineCompleted
 	BNE 0x102 0xC 0x0
-    EVBIT_MODIFY 0x1
+        EVBIT_MODIFY 0x1
 		ENUT gFearMountainShrineCompleted
 		EVBIT_MODIFY 0x0
     LABEL 0x102
@@ -139,8 +140,8 @@ FearMtn_EndingScene:
 	ASMC 0x85C65
 	//SADD 0x32
 	CALL UnifiedBEXPCaller
-    FadeOutMusic
     FADI 2
 	SVAL 0x2 0x44
 	MNCH 0xFFFF //go to world map
+    CALL PostgameUnlockChecker
 	ENDA

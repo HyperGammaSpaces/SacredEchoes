@@ -15,9 +15,9 @@ Ch2_7_ThisChapter:
 	POIN Ch2_7_BeginningScene Ch2_7_EndingScene
 
 Ch2_7_TurnBasedEvents:
-	TURN 0x0 PostPrep[1,0] 0x0
-	TURN 0x0 WaveFirst[4,0] 0x0
-	TURN 0x0 WaveSecond[5,0] 0x0
+	TURN 0x0 PostPrep [1,0] 0x0
+	TURN 0x0 WaveFirst [4,0] 0x0
+	TURN 0x0 WaveSecond [5,0] 0x0
 	TURN
 
 PostPrep:
@@ -31,15 +31,15 @@ PostPrep:
 		CHECK_ALIVE Kamui
 		BEQ 0x3 0xC 0x0
 			CAMERA_CENTERED Celica
-			Text(Ch2_7_PostPrep_1) //hmm...
+			MapText(Ch2_7_PostPrep_1) //hmm...
 			CAMERA_CENTERED [4,16]
-			Text(Ch2_7_PostPrep_2) //we may have company later
+			MapText(Ch2_7_PostPrep_2) //we may have company later
 			GOTO 0x4
 	LABEL 0x3
 		CAMERA_CENTERED Celica
-		Text(Ch2_7_PostPrep_1_NoLeon) //hmm...
+		MapText(Ch2_7_PostPrep_1_NoLeon) //hmm...
 		CAMERA_CENTERED [4,16]
-		Text(Ch2_7_PostPrep_2_NoLeon) //we may have company later
+		MapText(Ch2_7_PostPrep_2_NoLeon) //we may have company later
 	LABEL 0x4
 	TEXTCLEAR
 	NoFade
@@ -49,13 +49,17 @@ WaveFirst:
 	SVAL 0x1 0x0
 	CHAI DumaFaith_Sorcerer_2
 	CHAI Enemy_Mercenary
-	ReinforcementEvent(PirateSouthREDAs)
+	LoadReinforcements(PirateSouthREDAs)
 	NoFade
 	ENDA
 
 WaveSecond:
-	ReinforcementEvent(PirateNorthREDAs)
-	ReinforcementEvent(CavWestREDAs)
+    EVBIT_T 0x9
+	LoadReinforcements(PirateNorthREDAs)
+    ENUN
+    STAL 5
+	LoadReinforcements(CavWestREDAs)
+    EVBIT_F 0x9
 	NoFade
 	ENDA
 
@@ -196,7 +200,7 @@ CutsceneUnits:
 	UNIT
 	
 CutsceneEnemies1:
-	UNIT ArcanistBoss Arcanist 0x00 Level(1, Enemy, 1) [4,1] 0x00 0x00 0x0 0x00 [Miasma, Vulnerary] NoAI 
+	UNIT ArcanistBoss Arcanist 0x00 Level(1, Enemy, 1) [11,9] 0x00 0x00 0x0 0x00 [Miasma, Vulnerary] NoAI 
 	UNIT
 CutsceneEnemies2:
 	UNIT SlaydePaladin Paladin 0x00 Level(1, Enemy, 1) [0,7] 0x00 0x00 0x1 REDA0R7 [BaseLance] NoAI 
@@ -227,31 +231,33 @@ Ch2_7_BeginningScene:
 		BEQ 0x1 0xC 0x0
 		CHECK_ALIVE Kamui
 		BEQ 0x1 0xC 0x0
-			Text(Ch2_7_OpeningScene) // bandits?
+			MapText(Ch2_7_OpeningScene) // bandits?
 			CAMERA_CENTERED [4,8]
 			STAL 20
 			CAMERA_CENTERED [11,3]
 			STAL 20
 			CAMERA_CENTERED Celica
-			Text(Ch2_7_OpeningScene_2) // lets get em
+			MapText(Ch2_7_OpeningScene_2) // lets get em
 			GOTO 0x2
 	LABEL 0x1
-		Text(Ch2_7_OpeningScene_NoValbar) // bandits?
+		MapText(Ch2_7_OpeningScene_NoValbar) // bandits?
 		CAMERA_CENTERED [4,8]
 		STAL 20
 		CAMERA_CENTERED [11,3]
 		STAL 20
 		CAMERA_CENTERED Celica
-		Text(Ch2_7_OpeningScene_2_NoValbar) // lets get em
+		MapText(Ch2_7_OpeningScene_2_NoValbar) // lets get em
 	LABEL 0x2
 	GotoPrepScreen
 	NoFade
 	ENDA
 
 Ch2_7_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
+    FADI 5
+    STAL 5
 	MUSC SongID_Victory
-	FADI 16
 	CLEN 0x0
 	CLEA 0x0
 	CLEE 0x0
@@ -263,14 +269,14 @@ Ch2_7_EndingScene:
 	CHECK_ALIVE Boey
 	BEQ 0x102 0xC 0x0
 	
-		TEXTSTART
+		TEXTMODE 1
 		TEXTSHOW Ch2_7_EndingScene_1 //everyone alive
 		TEXTEND
 		GOTO 0x103
 		
 	LABEL 0x102
 	
-		TEXTSTART
+		TEXTMODE 1
 		TEXTSHOW Ch2_7_EndingScene_1_Bad //no mae or boey
 		TEXTEND
 		
@@ -280,27 +286,32 @@ Ch2_7_EndingScene:
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
-	ClearBackgroundSmooth
+	FADI 5
+    CLEAN
 	STAL 20
 	
 	//Put the slayde/cantor scene here. 
 	CAMERA_CENTERED [11,12]
+    FADU 5
 	MUSCFAST SongID_Env_WindBirds
 	//warpin effect pls
+    EVBIT_T 0x9
+    WARPIN [11, 9]
 	LOAD1 0x0 CutsceneEnemies1
+    ENDWARP
 	ENUN
+    STAL 20
 	LOAD1 0x0 CutsceneEnemies2
 	ENUN
-	MOVE 0x08 ArcanistBoss [11,9]
-	ENUN
-	STAL 20
+	STAL 5
 	MOVE 0x08 SlaydePaladin [12,9]
 	ENUN
+    EVBIT_F 0x09
 	FADI 16
 	CLEE 0x0
 	CAMERA_CENTERED [9,5]
 	SetBackground(0x24)
-	TEXTSTART
+	TEXTMODE 1
 	TEXTSHOW Ch2_Epilogue2 // blah blah
 	TEXTEND
 		MUSC SongID_FromTheDarkness
@@ -308,15 +319,15 @@ Ch2_7_EndingScene:
 	TEXTEND
 	TEXTCLEAR
 	FADI 3
-	ClearBackground
+	CLEAN
 
-	STAL 20
 	MUSCFAST SongID_Silence
+	FADU 2
 	STAL 20
 	LOAD1 0x1 ConradAppears
 	ENUN
 	FlashCursor(Conrad,60)
-	Text(Ch2_7_ConradAppears) // conrad goes ...
+	MapText(Ch2_7_ConradAppears) // conrad goes ...
 	//MoveCoords(10,4,17,4)
 	MOVE 0x08 Conrad [17,4]
 

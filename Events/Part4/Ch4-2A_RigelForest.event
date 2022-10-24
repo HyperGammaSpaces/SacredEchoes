@@ -138,11 +138,11 @@ CavReinforcements:
 	UNIT
 	
 AlmEndReda1:
-	REDA [0,0] 0xC 0x00 0x00 0x0
+	REDA [0,0] NoFlags Walk_Slow 0x00 0x00
 AlmEndReda2:
-	REDA [0,0] 0xC 0x00 0x10 0x0
+	REDA [0,0] NoFlags Walk_Slow 0x00 0x10
 AlmEndReda3:
-	REDA [0,0] 0xC 0x00 0x20 0x0
+	REDA [0,0] NoFlags Walk_Slow 0x00 0x20
 
 
 Evt_BeginningScene:
@@ -155,6 +155,7 @@ Evt_BeginningScene:
 	BackgroundText(Ch4A_2_OpeningText) //alm gets introspective
 	FADI 2
 	CLEAN
+    STAL 5
 	FADU 2
 	
 	EVBIT_T 0x9
@@ -173,13 +174,13 @@ Evt_BeginningScene:
 	ENDA
 
 Evt_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A2Completed
 	EVBIT_MODIFY 0x0
-	
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+	STAL 5
 	CHECK_EVENTID 0x2
 	BEQ 0x100 0xC 0x0
 		//Xaizor died
@@ -216,6 +217,7 @@ Evt_EndingScene:
 	
 	MUSCMID SongID_Silence
 	FADI 5
+	STAL 5
 
 	SVAL 0xB Coords(4, 1)
 	VCWF 0x0

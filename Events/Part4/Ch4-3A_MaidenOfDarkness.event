@@ -233,19 +233,19 @@ Dummy_BeginningScene:
 	ENDA
 
 Dummy_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A3Completed
 	EVBIT_MODIFY 0x0
-	
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+	STAL 5
 	MUSC SongID_ShadowOfVictory
 	SetBackground(0x28) //fort interior
 	BackgroundText(Ch4_3A_EndingText)
 	MUSCMID SongID_Silence
 	FADI 2
-	
+	STAL 5
 	MUSC SongID_SilentGround
 	SetBackground(0x0E)
 	BROWNBOXTEXT Loc_RigelCastle [8,8]

@@ -39,12 +39,33 @@ TurnOnMapFlags:
 ENUF 0x84
 ENDA
 
+EndMusicAndMMS:
+    FadeOutMusic
+EndPlayerMMS:
+    CHECK_ALLEGIANCE 0x7FFF
+    BNE 0x1337 rC r0
+        ASMC 0x790A4|1		//praise Teq
+        SVAL 0x1 0x00000043
+        SET_CONDITION 0x7FFF
+        SET_ENDTURN 0x7FFF
+        SET_ACTIVE 0
+    LABEL 0x1337
+    ENDA
+
 //BEXP call (in one place for easy updating)
 UnifiedBEXPCaller:
 	ENUT 0x84 //turn off HPbars
 	ASMC ApplyBonusEXPToParty|1
 	NOTIFY BEXP_Notif_Text 0x5A 0x0
 	ENDA
+    
+PostgameUnlockChecker:
+    CHECK_EVENTID gPostgameEnabled
+    BEQ 0x9663 rC r0
+        //This ASMC updates "dungeon enemy defeat count" and unlocks bonus units based on that value
+        //ASMC 0x08037D58|1
+    LABEL 0x9663
+    ENDA
 	
 #define CharacterJoinedNotification(textID) "EVBIT_T 0x5; EVBIT_T 0x7; SOUN 0xE8; NOTIFY textID 0x0 0x0;EVBIT_F 0x5; STAL 30; EVBIT_F 0x7"
 

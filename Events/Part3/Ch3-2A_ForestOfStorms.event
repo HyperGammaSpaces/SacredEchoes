@@ -41,7 +41,7 @@ Ch3_2A_LocationBasedEvents:
 	LOCA
 
 VillageEvent:
-	VillageEventItem(Ch3_2A_Village, Village, PureWater)
+	VillageEventItem(Ch3_2A_Village, 0x42, PureWater)
 	ENDA
 
 Ch3_2A_MiscBasedEvents:
@@ -108,16 +108,16 @@ LuthierJoins:
 	UNIT
 
 Ch3_2A_BeginningScene:
+	VCWF 0x0
 	MUSC SongID_Env_Night
 	CAMERA_CENTERED [8, 11]
 	EVBIT_T 0x9
-	VCWF 0x0
 	LOAD1 0x1 SlaydeCutscene
 	ENUN
-	EVBIT_F 0x9
 	FADU 5
 	MOVE 0x08 SlaydePaladin [8,2]
 	ENUN
+	EVBIT_F 0x9
 	CAMERA_CENTERED SlaydePaladin
 	STAL 20
 	FlashCursor(SlaydePaladin, 60)
@@ -134,12 +134,12 @@ Ch3_2A_BeginningScene:
 	STAL 40
 	
 	FADI 5
+	STAL 30
 	CAMERA_CENTERED [0,11]
 
 	EVBIT_MODIFY 0x1
 	VCWF 0x5
 	EVBIT_MODIFY 0x0
-	
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	FADU 5
@@ -182,12 +182,13 @@ TalkToLuthier:
 	ENDA
 
 Ch3_2A_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A2Completed
 	EVBIT_MODIFY 0x0
+	FADI 2
+    STAL 5
 	MUSC SongID_SilentGround
 	SetBackground(0x20)
 	TEXTMODE 1

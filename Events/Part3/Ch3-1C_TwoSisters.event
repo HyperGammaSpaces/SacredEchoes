@@ -10,7 +10,7 @@ Ch3_1C_ThisChapter:
     POIN Ch3_1C_Dunno Ch3_1C_Dunno Ch3_1C_Dunno
     POIN Ch3_1C_Tutorial
     POIN Ch3_1C_Ballista1 Ch3_1C_Ballista3
-    POIN PlayerUnits PlayerUnits
+    POIN PlayerPlacement PlayerPlacement
     POIN $0 $0 $0 $0 $0 $0
     POIN Ch3_1C_BeginningScene Ch3_1C_EndingScene
 
@@ -67,7 +67,7 @@ Cutscene_ChapterIntro:
 	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA2R13 [BaseSword, Vulnerary] NoAI 
 	UNIT
 
-PlayerUnits:
+PlayerPlacement:
 #ifdef __DEBUG__
 	UNIT Celica CelicaPriestess 0x00 Level(9,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI  
 	UNIT Mae Mage_F 0x00 Level(9,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
@@ -87,7 +87,8 @@ PlayerUnits:
 	UNIT Valbar Knight 0x00 Level(1,Ally,True) [11,8] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe,Vulnerary] NoAI
 	UNIT Leon Archer 0x00 Level(4,Ally,True) [12,8] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
 	UNIT Kamui Mercenary 0x00 Level(3,Ally,True) [13,8] 0x00 0x00 0x0 0x00 [BaseSword] NoAI 
-	UNIT
+	UNIT Kliff Villager 0x00 Level(1,Ally,True) [12,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+    UNIT
 #endif
 	
 EnemyUnits:
@@ -146,10 +147,12 @@ Ch3_1C_BeginningScene:
 	EARTHQUAKE_END
 	MURE 0x0
 	CAMERA_CENTERED Conrad
+    STAL 20
 	FlashCursor(Conrad, 60)
 	SetBackground(0x1F)
 	BackgroundText(Ch3_Celica_Start_3)
 	FADI 2
+    STAL 5
 	
 	//actual map stuff
 	CLEA 0x0
@@ -198,10 +201,10 @@ Ch3_1C_BeginningScene:
 	
 	FADI 16
 	#ifdef __DEBUG__
-		LOAD1 0x1 PlayerUnits
+		LOAD1 0x1 PlayerPlacement
 		ENUN
 	#else
-		LOAD3 0x0 PlayerUnits 
+		LOAD3 0x0 PlayerPlacement 
 		ENUN
 		GotoPrepScreen
 	#endif
@@ -231,13 +234,14 @@ TalkToPalla:
 	ENDA
 
 Ch3_1C_EndingScene:
-	CALL UnifiedBEXPCaller
-    FadeOutMusic
-    FADI 5
-    CLEE 0x0
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C1Completed
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+    FADI 5
+    STAL 5
+    CLEE 0x0
 	CHECK_ALIVE Palla
 	BEQ 0x1 0xC 0x0
 		CHECK_ALIVE Catria
@@ -246,9 +250,10 @@ Ch3_1C_EndingScene:
 			SetBackground(0x29)
 			BackgroundText(Ch3_1C_EndingText) //both alive
 			FADI 5
-            ClearBackgroundSmooth
+            CLEAN
 			CUSA Palla
 			CUSA Catria
+            SetBackground(0x29)
 			CharacterJoinedNotification(Notif_PallaCatriaJoin)
 			GOTO 0x3
 		LABEL 0x4 //only palla
@@ -256,8 +261,9 @@ Ch3_1C_EndingScene:
 		SetBackground(0x29)
 		BackgroundText(Ch3_1C_EndingText_CatriaDied)
 		FADI 5
-        ClearBackgroundSmooth
+        CLEAN
 		CUSA Palla
+        SetBackground(0x29)
 		CharacterJoinedNotification(Notif_PallaJoin)
 		GOTO 0x3
 	LABEL 0x1
@@ -268,15 +274,16 @@ Ch3_1C_EndingScene:
 		SetBackground(0x29)
 		BackgroundText(Ch3_1C_EndingText_PallaDied)
 		FADI 5
-        ClearBackgroundSmooth
+        CLEAN
 		CUSA Catria
+        SetBackground(0x29)
 		CharacterJoinedNotification(Notif_CatriaJoin)
 		GOTO 0x3 
 	LABEL 0x2 //both died
 		SetBackground(0x29)
 		BackgroundText(Ch3_1C_EndingText_BothDied)
-        FADI 5
 	LABEL 0x3
+    FADI 5
 	MNCH 0x17 //go to world map
 	ENDA
 

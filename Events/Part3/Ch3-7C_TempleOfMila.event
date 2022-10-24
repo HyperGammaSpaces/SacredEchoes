@@ -14,7 +14,7 @@ Ch3_7C_ThisChapter:
 	POIN Ch3_7C_Dunno Ch3_7C_Dunno Ch3_7C_Dunno
 	POIN Ch3_7C_Tutorial
 	POIN Ch3_7C_Ballista1 Ch3_7C_Ballista2
-	POIN Ch3_7C_Units1 Ch3_7C_Units1
+	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
 	POIN MikhailSummons MikhailSummons MikhailSummons
 	POIN Ch3_7C_BeginningScene Ch3_7C_EndingScene
@@ -102,8 +102,8 @@ Ch3_7C_Ballista2:
 	BLST
 	ALIGN 4
 
-Ch3_7C_Units1:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+PlayerPlacement: 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -119,7 +119,9 @@ Ch3_7C_Units1:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT
+    UNIT Kliff Villager 0x00 Level(1,Ally,True) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT Faye Villager_F 0x00 Level(1,Ally,True) [14,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+    UNIT
 
 CutsceneUnits:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -176,13 +178,13 @@ EnemyUnits:
 	UNIT
 	
 MikhailSummons:
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,4] MonsterTemplate 0x00 0x1 REDA11R4 NoItems NoAI
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,4] MonsterTemplate 0x00 0x1 REDA13R4 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,4] MonsterTemplate 0x00 0x1 REDA11R4 NoItems MonsterAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,4] MonsterTemplate 0x00 0x1 REDA13R4 NoItems MonsterAI
 	UNIT
 	
 RearSummons:
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,21] MonsterTemplate 0x00 0x1 REDA11R21 NoItems NoAI
-	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,21] MonsterTemplate 0x00 0x1 REDA13R21 NoItems NoAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,21] MonsterTemplate 0x00 0x1 REDA11R21 NoItems MonsterAI
+	UNIT 0xBB Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,21] MonsterTemplate 0x00 0x1 REDA13R21 NoItems MonsterAI
 	UNIT
 	
 
@@ -196,22 +198,24 @@ Ch3_7C_BeginningScene:
 	CLEA 0x0
 	LOAD1 0x1 EnemyUnits
 	ENUN
-	LOAD3 0x0 Ch3_7C_Units1 
+	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	GotoPrepScreen
 	ENDA
 
 Ch3_7C_EndingScene:
-	CALL UnifiedBEXPCaller
-    FadeOutMusic
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C7Completed
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+    STAL 5
 	MUSCFAST SongID_Victory
 	SetBackground(0x2F)
 	BackgroundText(Ch3_7C_EndingText)
 	FADI 16
+    STAL 5
 	MUSC SongID_Truth
 	SetBackground(0x2F, 2)
 	TEXTMODE 1
@@ -259,11 +263,13 @@ Ch3_7C_EndingScene:
 	SVAL 0x2 0x1
 	BLE 0x12 0xC 0x2
 		//2 alive
+        EVBIT_MODIFY 0x1
 		BackgroundText(Ch3_7C_TwoPriestesses)
 		TEXTMODE 1
 		SVAL 0x3 MilasBow 
 		GIVEITEMTO Celica
 		EVBIT_T 0x7
+        EVBIT_MODIFY 0x0
 	LABEL 0x12
 	FADI 5
 	STAL 10
@@ -273,6 +279,7 @@ Ch3_7C_EndingScene:
 	CHECK_EVENTID gChapter3A7Completed
 	BEQ 0x13 0xC 0x0
 		//If gChapter3A7Completed
+        SetBackground(BlackBackground)
 		CALL Ch3_EndingScene
 	//else
 	LABEL 0x13
@@ -280,7 +287,7 @@ Ch3_7C_EndingScene:
 	BackgroundText(Ch3_7C_EndingText_SluiceGate_NotOpen)
 	FADI 2
 	
+	MNCH 0x1E
 	SHORT $0D40 $0
 	POIN Act3EndSwitch|1
-	MNCH 0x1E
 	ENDA

@@ -269,7 +269,7 @@ CutsceneUnits_Epilogue_Celica:
     UNIT
     
 CelicaEpilogueREDA:
-    REDA [15,1] 0x08 0x00 0xA 0x0
+    REDA [15,1] NoFlags Walk_Slow 0x0 0xA
 
 EnemyUnits:
     //When Duma falls below 52 HP, replace OcularBeam with Oculus.
@@ -376,15 +376,7 @@ POP
 DumaDefeated:
     FadeOutMusic
     STAL 20
-    
-    CHECK_ALLEGIANCE 0x7FFF
-    BNE 0x1337 rC r0
-        ASMC 0x790A4|1		//praise Teq
-        SVAL 0x1 0x00000043
-        SET_CONDITION 0x7FFF
-        SET_ENDTURN 0x7FFF
-        SET_ACTIVE 0
-    LABEL 0x1337
+    CALL EndPlayerMMS
 
     STAL 90
     EARTHQUAKE_START 0x100
@@ -392,7 +384,7 @@ DumaDefeated:
     EARTHQUAKE_END
     STAL 5
     MUSC SongID_Env_LegendaryWeapon
-    Text(Ch5_3_EndingText)
+    MapText(Ch5_3_EndingText)
     FadeOutMusic
     FADI 2
     ENDA
@@ -403,7 +395,9 @@ Ch5F3_EndingScene:
 	ENDA
     
 EpilogueEvents:
+#ifndef __DEBUG__
     EVBIT_MODIFY 0x4
+#endif
     ENUT gEnableLordSwitch
     ENUT gPostgameEnabled
     SVAL 0xB Coords(15,1)
@@ -422,8 +416,8 @@ EpilogueEvents:
     SetBackground(0x0A, 5)
     BackgroundText(Ch5_3_Epilogue)
     FADI 3
-    SetBackground(EpilogueCG)
-    STAL 90
+    SetBackground(EpilogueCG, 3)
+    STAL 75
     CenterTextbox(Ch5_3_Epilogue_Narration)
     STAL 30
     FadeOutMusic

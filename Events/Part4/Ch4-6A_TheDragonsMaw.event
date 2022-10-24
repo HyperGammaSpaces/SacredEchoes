@@ -34,6 +34,7 @@ LoadThirdWave:
     LoadReinforcements(WaveThird)
     STAL 20
     CAMERA_CENTERED Boss_Monster
+    STAL 20
     SOUN 0x37B //necrodragon roar
     FlashCursor(Boss_Monster, 60)
     SVAL 0x1 0x0
@@ -196,13 +197,14 @@ Dummy_BeginningScene:
 	ENDA
 
 Dummy_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-    WEA1 Weather_None
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A6Completed
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+    WEA1 Weather_None
+	FADI 2
+    STAL 5
     CLEE 0x0
     CLEA 0x0
     LOAD2 0x0 CutsceneUnits_End

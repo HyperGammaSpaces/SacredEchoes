@@ -158,16 +158,18 @@ Ch3_1A_BeginningScene:
 			SetBackground(0x1F)
 			BackgroundText(Ch3_Alm_Start)
 			FADI 2
+            STAL 5
 	LABEL 0x6
 	MUSC SongID_Env_WindBirds
 	LABEL 0x7
 	SetBackground(0x4C)
 	BackgroundText(Ch3_1A_OpeningText)
-	ClearBackground
+	FADI 2
+    CLEAN
+    STAL 5
 
-	SVAL 0x1 0x1
 	CHECK_EVENTID gPlayerPromotedFernand 
-	IFNE 0x2 0xC 0x1 //if true, skip cutscene
+	BEQ 0x2 rC r0 
 		LOAD1 0x1 FernandPromoted
 		ENUN
 		GOTO 0x3
@@ -176,6 +178,7 @@ Ch3_1A_BeginningScene:
 	ENUN
 
 	LABEL 0x3
+    FADU 5
 	CAMERA_CENTERED FernandEnemy1
 	STAL 20
 	FlashCursor(FernandEnemy1, 60)
@@ -191,6 +194,7 @@ Ch3_1A_BeginningScene:
 	STAL 20
 	MOVE 0x10 Clive [14,16]
 	FADI 2
+    ENUN
 
 	CLEA 0x0
 	LOAD1 0x1 CavalierGroup
@@ -206,12 +210,13 @@ Ch3_1A_BeginningScene:
 	ENDA
 
 Ch3_1A_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-    FadeOutMusic
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A1Completed
 	EVBIT_MODIFY 0x0
+	FADI 2
+    STAL 5
 	MUSC SongID_ShadowOfVictory
 	SetBackground(0x1B)
 	BackgroundText(Ch3_1A_EndingText)

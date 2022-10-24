@@ -175,22 +175,22 @@ Reinforcements4:
 	UNIT
 	
 AlmReda:
-REDA [8,5] 0x20 0x0 0x0 0x0 0x0
+REDA [8,5] NoFlags Walk_Fast 0x0 0x0
 SilqueReda:
-REDA [8,4] 0x10 0x0 0x0 0x0 0x0
+REDA [8,4] NoFlags Walk_Slow 0x0 0x0
 AcanthaReda:
-REDA [8,1] 0x20 0x0 0x0 0x0 0x0
+REDA [8,1] NoFlags Walk_Fast 0x0 0x0
 
 ThiefReda:
-REDA [13,17] 0x20 0x0 0x0 0xFF 0xFF
+REDA [13,17] NoFlags Walk_Fast 0x0 0x0
 Brigand1x1Reda:
-REDA [6,21] 0x20 0x0 0x0 0xFF 0xFF
+REDA [6,21] NoFlags Walk_Fast 0x0 0x0
 Brigand1x2Reda:
-REDA [7,20] 0x20 0x0 0x0 0xFF 0xFF
+REDA [7,20] NoFlags Walk_Fast 0x0 0x0
 Brigand2x1Reda:
-REDA [16,3] 0x20 0x0 0x0 0xFF 0xFF
+REDA [16,3] NoFlags Walk_Fast 0x0 0x0
 Brigand2x2Reda:
-REDA [15,4] 0x20 0x0 0x0 0xFF 0xFF
+REDA [15,4] NoFlags Walk_Fast 0x0 0x0
 
 Ch1_3_BeginningScene:
 	MUSC SongID_FromTheDarkness
@@ -222,7 +222,8 @@ Ch1_3_BeginningScene:
 	Text(Ch1_3_OpeningScene_3)
 	STAL 30
 	CUSA Silque
-	FADI 0x8
+	FADI 5
+    STAL 5
 	CLEA 0x0
 	LOAD3 0x0 Ch1_3_Units1
 	GotoPrepScreen
@@ -275,8 +276,10 @@ Ch1_3_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gThiefShrineCompleted
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
 	FADI 10
+    STAL 5
 	MUSC SongID_Victory
 	SetBackground(0x2E)
 	TEXTSTART 
@@ -303,8 +306,7 @@ Ch1_3_EndingScene:
 	TEXTEND
 	TEXTCLEAR
 	CharacterJoinedNotification(Notif_SilqueJoin)
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	FADI 2
 	MNCH 0x03 //go to ch3
 	_0xA640 0x0 0x0 0x1
 	ENDA

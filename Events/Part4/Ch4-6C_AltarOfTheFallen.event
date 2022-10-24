@@ -639,27 +639,27 @@ BossUnit:
 	UNIT
     
 BottomLeftSpawns:
-    UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(4, Enemy, False) [4,24] 0x00 0x00 0x1 REDA5R24 [FireFang] NoAI
+    UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(4, Enemy, False) [4,24] 0x00 0x00 0x1 REDA5R24 [FireFang] MonsterAI
     UNIT 
     
 BottomRightSpawns:
-    UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [14,24] 0x00 0x00 0x1 REDA13R24 [HellFang] NoAI
+    UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [14,24] 0x00 0x00 0x1 REDA13R24 [HellFang] MonsterAI
     UNIT    
     
 MidLeftSpawns:
-    UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [2,19] 0x00 0x00 0x1 REDA3R19 [SteelSword] NoAI
+    UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [2,19] 0x00 0x00 0x1 REDA3R19 [SteelSword] MonsterAI
     UNIT 
     
 MidRightSpawns:
-    UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [16,19] 0x00 0x00 0x1 REDA15R19 [PoisonLance] NoAI
+    UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [16,19] 0x00 0x00 0x1 REDA15R19 [PoisonLance] MonsterAI
     UNIT
 	    
 TopLeftSpawns:
-    UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [3,14] 0x00 0x00 0x1 REDA4R14 [SteelLance] NoAI
+    UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [3,14] 0x00 0x00 0x1 REDA4R14 [SteelLance] MonsterAI
     UNIT 
     
 TopRightSpawns:
-    UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [15,14] 0x00 0x00 0x1 REDA14R14 [SteelAxe] NoAI
+    UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [15,14] 0x00 0x00 0x1 REDA14R14 [SteelAxe] MonsterAI
     UNIT
 	
 EnemyUnits:
@@ -667,33 +667,33 @@ EnemyUnits:
     //three guys per room. strongest on throne tile with nevermoveAI.
     //top left
 	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(7, Enemy, True) [3,14] 0x00 0x00 0x0 0x00 [DumasLance] NeverMoveAI
-	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [2,15] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [4,15] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [2,15] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
+	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [4,15] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
     //top right
 	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(7, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [KillerAxe] NeverMoveAI
-	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [14,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
-	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [16,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [14,15] 0x00 0x00 0x0 0x00 [SteelAxe] MonsterAI
+	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [16,15] 0x00 0x00 0x0 0x00 [SteelAxe] MonsterAI
     //mid left
 	UNIT Terror_Wight Wight Jedah_Ch4 Level(11, Enemy, True) [2,19] DropItem 0x00 0x0 0x00 [Ladyblade] NeverMoveAI
-	UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [1,20] 0x00 0x00 0x0 0x00 [BraveSword] NoAI
-	UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [3,20] 0x00 0x00 0x0 0x00 [Thunderblade] NoAI
+	UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [1,20] 0x00 0x00 0x0 0x00 [BraveSword] MonsterAI
+	UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [3,20] 0x00 0x00 0x0 0x00 [Thunderblade] MonsterAI
     //mid right
-	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(8, Enemy, True) [16,19] DropItem 0x00 0x0 0x00 [Gradivus] NeverMoveAI
-	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [15,20] 0x00 0x00 0x0 0x00 [Saunion] NoAI
-	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [17,20] 0x00 0x00 0x0 0x00 [Rhomphaia] NoAI
+	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(8, Enemy, True) [16,19] DropItem 0x00 0x0 0x00 [SilverLance,Gradivus] NeverMoveAI
+	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [15,20] 0x00 0x00 0x0 0x00 [Saunion] MonsterAI
+	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [17,20] 0x00 0x00 0x0 0x00 [Rhomphaia] MonsterAI
     //bottom left
 	UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(7, Enemy, False) [4,24] 0x00 0x00 0x0 0x00 [HellFang] NeverMoveAI
-	UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(4, Enemy, False) [3,25] 0x00 0x00 0x0 0x00 [FireFang] NoAI
-	UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(4, Enemy, False) [5,25] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(4, Enemy, False) [3,25] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(4, Enemy, False) [5,25] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
     //bottom right
 	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(9, Enemy, False) [14,24] 0x00 0x00 0x0 0x00 [HellFang] NeverMoveAI
-	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [13,25] 0x00 0x00 0x0 0x00 [HellFang] NoAI
-	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [15,25] 0x00 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [13,25] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [15,25] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT
     
 Reinforcements_Stairs:
-    UNIT 0xB8 ArchMogall Jedah_Ch4 Level(8, Enemy, True) [9,13] 0x00 0x00 0x1 REDA8R15 [Tackle_Mogall, EvilEye] NoAI
-    UNIT 0xB9 ArchMogall Jedah_Ch4 Level(8, Enemy, True) [9,13] 0x00 0x00 0x1 REDA10R15 [Tackle_Mogall, EvilEye] NoAI
+    UNIT 0xB8 ArchMogall Jedah_Ch4 Level(8, Enemy, True) [9,13] 0x00 0x00 0x1 REDA8R15 [Tackle_Mogall, EvilEye] MonsterAI
+    UNIT 0xB9 ArchMogall Jedah_Ch4 Level(8, Enemy, True) [9,13] 0x00 0x00 0x1 REDA10R15 [Tackle_Mogall, EvilEye] MonsterAI
     UNIT
     
 CutsceneUnits_Alm:
@@ -702,9 +702,9 @@ CutsceneUnits_Alm:
 	UNIT
     
 CelicaIntroReda:
-REDA [9,22] 0x0C 0x0 0x0 0x0
+REDA [9,22] NoFlags Walk_Slow 0x0 0x0
 ConradIntroReda:
-REDA [9,23] 0x0C 0x0 0x0 0x0
+REDA [9,23] NoFlags Walk_Slow 0x0 0x0
 
 Evt_BeginningScene:
     MUSCSLOW SongID_PinnacleOfFalseBelief
@@ -739,7 +739,7 @@ Evt_BeginningScene:
             EVBIT_MODIFY 0x0
             GOTO 0x501
             
-            LABEL 0x500
+        LABEL 0x500
             REVEAL Alm
             REVEAL Clair
             Event_SetAlmMode
@@ -771,17 +771,18 @@ Evt_BeginningScene:
 	ENUN
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
-    COUNTER_SET 0 0
     EVBIT_MODIFY 0x1
+    COUNTER_SET 0 0
     CAMERA_CENTERED Celica
     EVBIT_MODIFY 0x0
 	GotoPrepScreen
 	ENDA
 
 Evt_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
 	FADI 2
+    STAL 5
 	CLEE 0x0
 	CLEA 0x0
     MUSCSLOW SongID_PinnacleOfFalseBelief
@@ -817,7 +818,7 @@ Evt_EndingScene:
 	EVBIT_F 0x9
     MUSCMID SongID_Silence
     FADI 2
-    
+    STAL 5
     EVBIT_MODIFY 0x1
     SetBackground(SealedMilaCG,2)
     STAL 90
@@ -825,7 +826,7 @@ Evt_EndingScene:
     CgText(DumaTower_Celica_Ending_3)
     FADI 5
     EVBIT_MODIFY 0x0
-    
+    STAL 5
     SetBackground(0x2D,5)
     BackgroundText(DumaTower_Celica_Ending_4)
     ClearBackgroundSmooth
@@ -845,6 +846,7 @@ Evt_EndingScene:
     MUSCMID SongID_Silence
 	FADI 2
     
+    STAL 20
     CLEA 0x0
     CLEE 0x0
     SVAL 0xB Coords(4, 1)
@@ -854,9 +856,17 @@ Evt_EndingScene:
     WARPIN [4, 0]
     LOAD2 0x2 CutsceneUnits_End_Outside
     ENDWARP
-    LOAD2 0x2 CutsceneUnits_End_Outside_2
+    LOAD1 0x0 CutsceneUnits_End_Outside_2
     ENUN
+    CHECK_EVENTID gFightSonyaChosen
+    BNE 0x903 rC r0
+        LOAD1 0x0 CutsceneUnits_End_Sonya
+        ENUN
+    LABEL 0x903
     CameraCursor(Saber)
+    STAL 20
+    CHECK_EVENTID gFightSonyaChosen
+    BNE 0x901 rC r0
     CHECK_EXISTS Sonya
 	BEQ 0x901 rC r0
 	CHECK_ALIVE Sonya
@@ -864,16 +874,15 @@ Evt_EndingScene:
         MapText(DumaTower_Celica_Ending_7_Sonya)
         GOTO 0x902
     LABEL 0x901
-    MapText(DumaTower_Celica_Ending_7)
+        MapText(DumaTower_Celica_Ending_7)
     LABEL 0x902
-    FADI 2
-    SVAL 0xB Coords(4, 1)
-    LOMA 0x28
-    
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4C6Completed
     ENUF gEnableLordSwitch //no more switching
 	EVBIT_MODIFY 0x0
+    FADI 2
+    SVAL 0xB Coords(4, 1)
+    LOMA 0x28
 	MNCH 0x23
     SHORT $0D40 $0
 	POIN Act3EndSwitch|1 //this works for act 4 too i guess

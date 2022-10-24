@@ -293,6 +293,7 @@ Dummy_BeginningScene:
 	BackgroundText(Ch4_5A_OpeningText)
 	FADI 5
 	CLEAN
+	STAL 5
 	FADU 5
 	STAL 20
 	CameraCursor(ZekeBoss)
@@ -309,11 +310,13 @@ Dummy_BeginningScene:
 		STAL 20
 		
 		CameraCursor(Tatiana)
+        STAL 5
 		MUSI
 		MapText(Ch4_5A_OpeningText_2)
 		MUNO
 		
 		CameraCursor(ZekeBoss)
+        STAL 5
 		MUSCMID SongID_Silence
 		TEXTMODE 0
 		TEXTSHOW Ch4_5A_OpeningText_3
@@ -327,7 +330,7 @@ Dummy_BeginningScene:
 		CUSN ZekeBoss
 		STAL 20
 		CameraCursor(Alm)
-		
+		STAL 5
 		MapText(Ch4_5A_OpeningText_4)
 	LABEL 0xD
 	
@@ -355,13 +358,13 @@ Dummy_BeginningScene:
 	ENDA
 
 Dummy_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A5Completed
 	EVBIT_MODIFY 0x0
-	
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+	STAL 5
 	CHECK_EVENTID gTatianaRecruited
 	BEQ 0xA rC r0
 		MUSC SongID_Victory
@@ -414,6 +417,7 @@ Dummy_EndingScene:
         MUSCMID SongID_Silence
         STAL 20
         FADI 2
+        STAL 5
         MUSC SongID_Env_Night
         SetBackground(0x43, 2)
         BackgroundText(Ch4_5A_EndingText_Bad_5)

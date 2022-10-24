@@ -66,14 +66,14 @@ EnemyUnits:
 	UNIT 0xAA Revenant CantorBoss_Celica5 Level(9,Enemy,True) [11,8] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
 	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(9,Enemy,True) [12,7] 0x04 0x00 0x0 0x00 [Zanbato] AttackInRangeAI
 	UNIT 0xAA Revenant CantorBoss_Celica5 Level(10,Enemy,True) [13,9] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
-	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(7,Enemy,True) [11,13] 0x04 0x00 0x0 0x00 [IronLance] NoAI
-	UNIT 0xAD Bonewalker_Bow CantorBoss_Celica5 Level(7,Enemy,True) [15,14] 0x04 0x00 0x0 0x00 [IronBow] NoAI
+	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(7,Enemy,True) [11,13] 0x04 0x00 0x0 0x00 [IronLance] MonsterAI
+	UNIT 0xAD Bonewalker_Bow CantorBoss_Celica5 Level(7,Enemy,True) [15,14] 0x04 0x00 0x0 0x00 [IronBow] MonsterAI
 	UNIT
 	
 ZombieGroup:
-	UNIT 0xB0 Bael CantorBoss_Celica5 Level(8,Enemy,True) [13,6] 0x04 0x00 0x1 REDA13R6 [RottenClaw] NoAI
-	UNIT 0xAA Revenant CantorBoss_Celica5 Level(8,Enemy,True) [12,5] 0x04 0x00 0x1 REDA12R5 [RottenClaw] NoAI
-	UNIT 0xAA Revenant CantorBoss_Celica5 Level(8,Enemy,True) [14,5] 0x04 0x00 0x1 REDA14R5 [RottenClaw] NoAI
+	UNIT 0xB0 Bael CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x04 0x00 0x1 REDA13R6 [RottenClaw] MonsterAI
+	UNIT 0xAA Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x04 0x00 0x1 REDA12R5 [RottenClaw] MonsterAI
+	UNIT 0xAA Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x04 0x00 0x1 REDA14R5 [RottenClaw] MonsterAI
 	UNIT
 
 Ch2_5_BeginningScene:
@@ -100,7 +100,10 @@ Ch2_5_BeginningScene:
     TEXTCLEAR
 	
 	LABEL 0x101
-    ClearBackgroundSmooth
+    FADI 5
+    CLEAN
+    STAL 5
+    FADU 5
 	MUSC SongID_FromTheDarkness
 	CAMERA_CENTERED [12,0]
 	EARTHQUAKE_START 0x100
@@ -124,40 +127,44 @@ Ch2_5_BeginningScene:
 	ENDA
 	
 CastingSummon:
-	Text(Ch2_5_SummonText)
+	MapText(Ch2_5_SummonText)
 	NoFade
 	ENDA
 	
 LoadSummons: //every other turn, shamelessly stolen from VBA for now lol
 	CHECK_EVENTID 0x2
-	BNE 0x0 0xc 0x0 //stop if boss killed
+	BNE 0x0 0xC 0x0 //stop if boss killed
 	CHECK_TURNS //store current turn to slot c
-	//Now get TEXTCLEARinder mod 2
+	//Now get remainder mod 2
 	SMOV r1 0x2
 	SDIV slotsParam(r2, rC, r1) //r2 = rC/2
 	SMUL slotsParam(r1, r2)     //r1 = r2*2
-	SSUB slotsParam(r1, rC, r1) //r1 -= rC, r1 = TEXTCLEARinder
+	SSUB slotsParam(r1, rC, r1) //r1 -= rC, r1 = remainder
 	BNE 0x0 r1 0
-	CAMERA_CENTERED CantorBoss_Celica5
-	ENUN
-	FlashCursor(CantorBoss_Celica5, 60)
-	SOUN 0x3BF //summoning SFX
-	STAL 20
-	LoadReinforcements(ZombieGroup) //TEXTCLEARinder was 0 (right)
+        CAMERA_CENTERED CantorBoss_Celica5
+        STAL 20
+        FlashCursor(CantorBoss_Celica5, 60)
+        RESUMM CantorBoss_Celica5
+        STAL 5
+        LOAD1 0 ZombieGroup
+        ENUN
+        STAL 20
 	LABEL 0x0
 	NoFade
 	ENDA
 
 Ch2_5_EndingScene:
-    MUSCMID SongID_Silence
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
+    FADI 5
+    STAL 5
 	CHECK_ALIVE Boey
 	BEQ 2 0xC 0x0
 		MUSC SongID_ShadowOfVictory
 		SetBackground(0x41) //nightboat
-		Text(Ch2_5_PostBattle)
+		BackgroundText(Ch2_5_PostBattle)
+        FADI 2
 	LABEL 2
-	FADI 2
 	MNCH 0x0D //go to world map
 	ENDA
 

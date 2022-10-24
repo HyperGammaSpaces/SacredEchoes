@@ -17,7 +17,6 @@ Ch3_4A_ThisChapter:
 	POIN Ch3_4A_BeginningScene Ch3_4A_EndingScene
 
 Ch3_4A_TurnBasedEvents:
-	//TURN 0x0 LoadSummons [1,255] 0x0
 	TURN 0x0 LoadThief [8,0] 0x0
 	TurnEventPlayer(0x0,LoadRightCavalry,6)
 	TurnEventPlayer(0x0,LoadLeftCavalry,6)
@@ -26,6 +25,7 @@ Ch3_4A_TurnBasedEvents:
 
 Ch3_4A_CharacterBasedEvents:
 	CharacterEvent(8,TalkToMathilda,Clive,Mathilda)
+	CharacterEventBothWays(gSirPurr, AlmLuthierSirPurrTalk, Alm, Luthier)
 	CHAR
 	
 TalkToMathilda:
@@ -57,31 +57,6 @@ Ch3_4A_LocationBasedEvents:
 	Door(18, 2)
 	Chest(Lancereaver, 1, 0)
 	LOCA
-
-LoadSummons:
-	CHECK_EVENTID 0x9 // summoner death quote
-	BNE 0 0xC 0x0 // branch label 0 if summoner dead
-	COUNTER_CHECK 0 // slot c = counter 0 value
-	SVAL 0x1 1 // number of turns between summons (1)
-	BNE 1 0xC 0x1 // branch label 1 if counter is not at value
-
-	// Counter at value
-	COUNTER_SET 0 0 // reset counter
-	CAMERA_CENTERED CantorBoss_Bonewalkers // cam on summoner
-	ENUN
-	SOUN 0x3BF // summoning SFX
-	STAL 20
-	LoadReinforcements(ZombieGroup)
-	GOTO 0
-
-	LABEL 1
-	// Counter not at value
-	COUNTER_ADD 0 0 // counter 0 ++
-
-	LABEL 0
-	// event end
-	NoFade
-	ENDA
 	
 LoadThief:
 	ReinforcementEvent(ThiefReinforcement)
@@ -201,11 +176,6 @@ EnemyUnits:
 	UNIT Remnant_Soldier Soldier	Desaix Level(14, Enemy, True) [16,6]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
 	UNIT
 
-ZombieGroup:
-	UNIT 0xAC Bonewalker CantorBoss_Bonewalkers Level(7,Enemy,True) [14,5] 0x04 0x00 0x1 REDA14R5 [BaseSword] NoAI
-	UNIT 0xAC Bonewalker CantorBoss_Bonewalkers Level(7,Enemy,True) [11,6] 0x04 0x00 0x1 REDA11R6 [BaseSword] NoAI
-	UNIT 0xAC Bonewalker CantorBoss_Bonewalkers Level(7,Enemy,True) [14,6] 0x04 0x00 0x1 REDA14R6 [BaseLance] NoAI
-	UNIT
 	
 ThiefReinforcement:
 	UNIT TreasureHunter Thief Desaix Level(10,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [BaseSword, Lockpick] LootingThiefAI
@@ -236,7 +206,6 @@ MathildaJoins:
 	UNIT
 
 Ch3_4A_BeginningScene:
-	COUNTER_SET 0 0 // for summons
 	//Load Fernand and Mathilda, show CG, show textID FernandMathilda_Dungeon
 	MUSC SongID_Env_GustyWind
 	LOAD1 0x1 MathildaJoins
@@ -300,12 +269,13 @@ Ch3_4A_BeginningScene:
 	ENDA
 
 Ch3_4A_EndingScene:
-	CALL UnifiedBEXPCaller
-    FadeOutMusic
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A4Completed
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+    STAL 5
 	MUSC SongID_CastleTheme
 	
 	CHECK_ALIVE Tobin 

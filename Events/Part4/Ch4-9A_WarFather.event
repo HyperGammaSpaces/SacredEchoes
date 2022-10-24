@@ -172,6 +172,7 @@ Ch4A9_BeginningScene:
     MUSCMID SongID_Silence
     FADI 2
     CLEAN
+    STAL 5
 	LOAD1 0x1 EnemyUnits
 	ENUN
     CAMERA_CENTERED RudolfEnemy
@@ -186,7 +187,7 @@ Ch4A9_BeginningScene:
     CameraCursor(RudolfEnemy)
     MUSC SongID_LordOfADeadEmpire
     MapText(Ch4A_9_OpeningText_2)
-    
+    STAL 5
     MUSI
     CameraCursor(Alm)
     CharacterConditionalDialog(Gray,Ch4A_9_OpeningText_3,Ch4A_9_OpeningText_3_NoGray)
@@ -203,12 +204,14 @@ Ch4A9_BeginningScene:
 Ch4A9_EndingScene:
     CHECK_COORDS Alm
     SCOPY 0xB 0xC
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A9Completed
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+    MUSC SongID_Env_Wind
+    STAL 5
     //put Rudolf's death coords in sB
     CLEE 0x0
     CLEA 0x0
@@ -244,11 +247,13 @@ Ch4A9_EndingScene:
     MUSCMID SongID_Silence
     FADI 2
     CLEAN
+    STAL 40
     TEXTMODE 1
     MUSC SongID_Env_Wind
     SetBackground(0x10, 2)
     BackgroundText(Ch4A_9_EndingText_3)
     FADI 5
+    STAL 5
 	MUSC SongID_Truth
     SetBackground(0x0E, 5)
     BackgroundText(Ch4A_9_EndingText_4)

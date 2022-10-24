@@ -12,7 +12,7 @@ Ch3_3C_ThisChapter:
 	POIN Ch3_3C_Dunno Ch3_3C_Dunno Ch3_3C_Dunno
 	POIN Ch3_3C_Tutorial
 	POIN Ch3_3C_Ballista1 Ch3_3C_Ballista2
-	POIN Ch3_3C_Units1 Ch3_3C_Units1
+	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 $0 $0 $0
 	POIN Ch3_3C_BeginningScene Ch3_3C_EndingScene
 
@@ -98,7 +98,7 @@ Ch3_3C_Ballista2:
 	BLST
 	ALIGN 4
 
-Ch3_3C_Units1:
+PlayerPlacement:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [2,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -110,7 +110,8 @@ Ch3_3C_Units1:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [18,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT
+	UNIT Kliff Villager 0x00 Level(1,Ally,True) [11,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+    UNIT
 
 EnemyUnits:
 	UNIT Wolff Sniper Wolff Level(6, Enemy, False) [11,3] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
@@ -167,9 +168,9 @@ CutsceneAlliesJesse:
 	UNIT
 	
 DelayedREDA6R2:
-REDA [6,2] 0x10 0x0 0x10 0x0
+REDA [6,2] NoFlags Walk_Slow 0x0 0x10
 DelayedREDA20R3:
-REDA [20,3] 0x10 0x0 0x10 0x0
+REDA [20,3] NoFlags Walk_Slow 0x0 0x10
 
 Ch3_3C_BeginningScene:
 	MUSC SongID_SolveTheRiddle
@@ -185,15 +186,12 @@ Ch3_3C_BeginningScene:
 	BackgroundText(Ch3_3C_OpeningText)
 	FADI 5
 	CLEAN
-	LOAD3 0x0 Ch3_3C_Units1 
+	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	GotoPrepScreen
 	ENDA
 
 Ch3_3C_EndingScene:
-	CALL UnifiedBEXPCaller
-    FadeOutMusic
-    FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C3Completed
 //debug
@@ -203,7 +201,10 @@ Ch3_3C_EndingScene:
 	LABEL 0x9
 //end debug
 	EVBIT_MODIFY 0x0
-	
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+    FADI 2
+	STAL 5
 	MUSC SongID_SolveTheRiddle
 	//Switch to Grieth's Fortress
 	
@@ -227,12 +228,13 @@ Ch3_3C_EndingScene:
 	
 	SetBackground(0x0C)
 	BackgroundText(Ch3_3C_EndingText_Grieth)
+    FadeOutMusic
 	FADI 2
     CLEAN
 	
 	//Put us back to the desert fortress
 	CLEE 0x0
-	
+	STAL 5
 	CHECK_EVENTID gJesseRecruited
 	BEQ 0x2 rC r0
 		CHECK_ALIVE Jesse
@@ -281,7 +283,7 @@ Ch3_3C_EndingScene:
 	SetBackground(0x28)
 	ASMC prCallDeenSonyaEventMenu+1 // Call the Split Menu
 	
-	SVAL  r1 True 
+	SVAL r1 True 
 	BNE 0x0 rC r1 
 		//Sonya
 		ENUT gFightSonyaChosen

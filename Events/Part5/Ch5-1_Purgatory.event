@@ -157,7 +157,7 @@ RineaSolo:
     UNIT
     
 RineaReda:
-    REDA [12,7] 0xC 0x00 0x0 0x0
+    REDA [12,7] NoFlags Walk_Slow 0x00 0x0
     
 FernandTriesToBeAHero:
     UNIT FernandPaladin Paladin BerkutPossessed Level(10, Enemy, False) [12,26] 0x00 0x00 0x1 REDA12R19 [SteelLance] NoAI
@@ -263,7 +263,7 @@ Evt_BeginningScene:
     FadeOutMusic
     FADI 2
     CLEE 0x0
-    
+    STAL 40
     //Return to Rigel Castle. 
     MUSCSLOW SongID_Truth
     SetBackground(0x0E)
@@ -275,6 +275,7 @@ Evt_BeginningScene:
     FadeOutMusic
     FADI 2
     CLEAN
+    STAL 20
 
     //Load Alm, Clive, Clair, Mathilda on the bottom half of the map.
     MUSCSLOW SongID_Env_SoftSwoosh
@@ -331,6 +332,7 @@ Evt_BeginningScene:
     TEXTCLEAR
     LABEL 0x102
     FADI 5
+    STAL 5
     SetBackground(0x2A,5)
 
     CHECK_ALIVE Clair
@@ -352,14 +354,14 @@ Evt_BeginningScene:
     LABEL 0x108
     FadeOutMusic
     FADI 2
-    
+    STAL 20
     SetBackground(0x17, 5)
     MUSCSLOW SongID_PinnacleOfFalseBelief
     BackgroundText(Ch5_1_Celica_Aside) //Celica, elsewhere in the tower, begins devising a plan.
     FadeOutMusic
     FADI 2
     CLEAN
-    
+    STAL 20
     MUSCSLOW SongID_Env_SoftSwoosh
     CAMERA_CENTERED [11,10]
     LOAD1 0x1 BerkutPossessedSolo
@@ -401,9 +403,10 @@ Evt_BeginningScene:
 
 
 Evt_EndingScene:
+    CALL EndMusicAndMMS
     CALL UnifiedBEXPCaller
-    FadeOutMusic
     FADI 2
+    STAL 5
     SetBackground(0x2A)
     TEXTMODE 1
     TEXTSHOW BerkutFinal_Scene

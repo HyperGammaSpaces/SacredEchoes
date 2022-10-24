@@ -1,13 +1,13 @@
 //all route setting stuff is here
 
-#define WorldMapSkip(Dest) "EVBIT_MODIFY 0x1; WM_SPAWNLORD 0x0 0x0 Alm 0x0 0x0; WM_LOADLOCATION2 0x0 Dest 0x0; WM_SETDESTINATION 0x0 Dest 0x0; _0xA640 0x0 0x0 Dest; SKIPWN; ENDA"
+#define WorldMapSkip(Dest) "EVBIT_MODIFY 0x1; WM_DRAWLORDAT Alm 0x0; WM_LOADLOCATION2 0x0 Dest 0x0; WM_SETDESTINATION 0x0 Dest 0x0; _0xA640 0x0 0x0 Dest; SKIPWN; ENDA"
 
-#define WorldMapSkipCelica(Dest) "EVBIT_MODIFY 0x1; WM_SPAWNLORD 0x0 0x0 Celica 0x0 0x0; WM_LOADLOCATION2 0x0 Dest 0x0; WM_SETDESTINATION 0x0 Dest 0x0; _0xA640 0x0 0x0 Dest; SKIPWN; ENDA"
+#define WorldMapSkipCelica(Dest) "EVBIT_MODIFY 0x1; WM_DRAWLORDAT Celica 0x0; WM_LOADLOCATION2 0x0 Dest 0x0; WM_SETDESTINATION 0x0 Dest 0x0; _0xA640 0x0 0x0 Dest; SKIPWN; ENDA"
 
 //backup
-//#define WorldMapMoveNext(LordID, Source, Dest, PathID, MusicID) "EVBIT_MODIFY 0x1; WM_SPAWNLORD 0x0 0x0 LordID Source 0x0; WM_CENTERCAMONLORD; WM_FADEOUT 0x0 0x0 0x0; WM_TEXTDECORATE; EVBIT_MODIFY 0x0; STAL 20; WM_LOADLOCATION2 0x0 Dest 0x0; WM_SETDESTINATION 0x0 Dest 0x0; WM_WAITFORFX; STAL 40; WM_DRAWPATH 0x0 PathID 0x0; STAL 70; MUSC MusicID; WM_MAKELORDVISIBLE 0x0; EVBIT_MODIFY 0x1; CALL 0x591F40; ENDA"
+//#define WorldMapMoveNext(LordID, Source, Dest, PathID, MusicID) "EVBIT_MODIFY 0x1; WM_DRAWLORDAT LordID Source; WM_CENTERCAMONLORD; WM_FADEOUT 0x0 0x0 0x0; WM_TEXTDECORATE; EVBIT_MODIFY 0x0; STAL 20; WM_LOADLOCATION2 0x0 Dest 0x0; WM_SETDESTINATION 0x0 Dest 0x0; WM_WAITFORFX; STAL 40; WM_DRAWPATH 0x0 PathID 0x0; STAL 70; MUSC MusicID; WM_MAKELORDVISIBLE 0x0; EVBIT_MODIFY 0x1; CALL 0x591F40; ENDA"
 
-#define WorldMapMoveNext(LordID, Source, Dest, PathID) "EVBIT_MODIFY 0x1; WM_SPAWNLORD 0x0 0x0 LordID Source 0x0; WM_CENTERCAMONLORD; WM_FADEOUT 0x0 0x0 0x0; WM_TEXTDECORATE; EVBIT_MODIFY 0x0; STAL 20; WM_LOADLOCATION2 0x0 Dest 0x0; WM_SETDESTINATION 0x0 Dest 0x0; WM_WAITFORFX; STAL 40; WM_DRAWPATH 0x0 PathID 0x0; STAL 70; WM_MAKELORDVISIBLE 0x0; EVBIT_MODIFY 0x1; CALL 0x591F40; ENDA"
+#define WorldMapMoveNext(LordID, Source, Dest, PathID) "EVBIT_MODIFY 0x1; WM_DRAWLORDAT LordID Source; WM_CENTERCAMONLORD; WM_FADEOUT 0x0 0x0 0x0; WM_TEXTDECORATE; EVBIT_MODIFY 0x0; STAL 20; WM_LOADLOCATION2 0x0 Dest 0x0; WM_SETDESTINATION 0x0 Dest 0x0; WM_WAITFORFX; STAL 40; WM_DRAWPATH 0x0 PathID 0x0; STAL 70; WM_MAKELORDVISIBLE 0x0; EVBIT_MODIFY 0x1; CALL 0x591F40; ENDA"
 
 //WorldMapPointerTable(0x00, 0)
 WorldMapPointerTable(0x01,WM_PrologueCutscene)
@@ -70,7 +70,7 @@ WM_Shrine:
 WM_PrologueCutscene:
 	EVBIT_MODIFY 0x1
 	_0xC220 //sets flag &80 in WMDataStruct???
-	WM_SPAWNLORD 0x0 0x0 Alm GMLoc_RamVillage 0x0
+	WM_DRAWLORDAT Alm GMLoc_RamVillage
 	SKIPWN
 	ENDA
 	
@@ -78,7 +78,7 @@ WM_Ch0_Ch1:
 	CHECK_EVENTID gEnableWorldMap
 	BEQ 0x1 0xC 0x0
 		EVBIT_MODIFY 0x1
-		WM_SPAWNLORD 0x0 0x0 Alm GMLoc_RamVillage 0x0
+		WM_DRAWLORDAT Alm GMLoc_RamVillage
 		WM_CENTERCAMONLORD
 		WM_LOADLOCATION2 0x0 GMLoc_RamVillage 0x0
 		_0x9D40 0x0 0x0 0x0
@@ -96,7 +96,7 @@ WM_Ch0_Ch1:
 		GOTO 0x2
 	LABEL 0x1
 		EVBIT_MODIFY 0x1
-		WM_SPAWNLORD 0x0 0x0 Alm GMLoc_RamVillage 0x0
+		WM_DRAWLORDAT Alm GMLoc_RamVillage
 		WM_LOADLOCATION2 0x0 GMLoc_RamVillage 0x0
 		WM_DRAWPATH2 0x0 0x1 0x0
 		WM_SETDESTINATION 0x0 0x0 0x0
@@ -106,7 +106,7 @@ WM_Ch0_Ch1:
 	
 WM_Ch2:
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Alm GMLoc_RamForest 0x0
+	WM_DRAWLORDAT Alm GMLoc_RamForest
 	WM_LOADLOCATION2 0x0 GMLoc_ThiefShrineStory 0x0
 	WM_DRAWPATH2 0x0 0x35 0x0
 	WM_SETDESTINATION 0x0 GMLoc_ThiefShrineStory 0x0
@@ -119,7 +119,7 @@ WM_Ch2:
 WM_Ch3:
 	//WorldMapMoveNext(0x1, 0x2, 0x3, 0x2)
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Alm GMLoc_ThiefShrine 0x0
+	WM_DRAWLORDAT Alm GMLoc_ThiefShrine
 	WM_CENTERCAMONLORD
 	WM_REMOVELOCATION 0x0 GMLoc_ThiefShrineStory 0x0 //remove old ThiefShrine
 	WM_REMOVEPATH 0x35
@@ -141,7 +141,7 @@ WM_Ch3:
 	
 WM_ThiefShrine:
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Alm GMLoc_ThiefShrine 0x0
+	WM_DRAWLORDAT Alm GMLoc_ThiefShrine
 	WM_CENTERCAMONLORD
 	_0xA640 0x0 0x0 GMLoc_ThiefShrine
 	SKIPWN
@@ -164,7 +164,7 @@ WM_ZofiaCastle:
 	BNE 0x3 0xC 0x0
 		//WorldMapMoveNext(0x1, 0x7, 0x9, 0x8)
 		EVBIT_MODIFY 0x1
-		WM_SPAWNLORD 0x0 0x0 Alm GMLoc_SouthZofia2 0x0
+		WM_DRAWLORDAT Alm GMLoc_SouthZofia2
 		WM_CENTERCAMONLORD
 		WM_FADEOUT 0x0 0x0 0x0
 		WM_TEXTDECORATE
@@ -218,7 +218,7 @@ WM_ZofiaCastle:
 	LABEL 0x3
 		//Celica stuff
 		EVBIT_MODIFY 0x1
-		WM_SPAWNLORD 0x0 0x0 Celica GMLoc_ZofiaHarbor 0x0
+		WM_DRAWLORDAT Celica GMLoc_ZofiaHarbor
 		WM_CENTERCAMONLORD
 		WM_FADEOUT 0x0 0x0 0x0
 		WM_TEXTDECORATE
@@ -238,7 +238,7 @@ WM_NovisPriory:
 	WorldMapSkipCelica(GMLoc_NovisPriory)
 	/*
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 0xC 0xA 0x0
+	WM_DRAWLORDAT 0xC 0xA
 	WM_CENTERCAMONLORD
 	WM_LOADLOCATION2 0x0 0xA 0x0
 	WM_FADEOUT 0x0 0x0 0x0
@@ -252,7 +252,7 @@ WM_NovisPriory:
 WM_Act2Start: //celica time
 	//WorldMapSkip(0x8)
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Celica GMLoc_NovisPriory 0x0
+	WM_DRAWLORDAT Celica GMLoc_NovisPriory
 	WM_CENTERCAMONLORD
 	WM_LOADLOCATION2 0x0 GMLoc_NovisPriory 0x0
 	WM_REMOVEPATH 0x8
@@ -289,7 +289,7 @@ WM_Ch12:
 	
 WM_Ch13_EnableSeaboundShrine:
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Celica GMLoc_ZofiaStrait 0x0 //set Celica at Zofia Strait
+	WM_DRAWLORDAT Celica GMLoc_ZofiaStrait //set Celica at Zofia Strait
 	WM_CENTERCAMONLORD
 	WM_FADEOUT 0x0 0x0 0x0
 	WM_TEXTDECORATE
@@ -312,7 +312,7 @@ WM_Ch13_EnableSeaboundShrine:
 
 WM_SeaboundShrine:
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Celica GMLoc_SeaboundShrine 0x0
+	WM_DRAWLORDAT Celica GMLoc_SeaboundShrine
 	WM_CENTERCAMONLORD
 	_0xA640 0x0 0x0 GMLoc_SeaboundShrine
 	SKIPWN
@@ -328,13 +328,14 @@ WM_Act3Start: //setup act 3 routes and remove path between harbor and castle
 	EVBIT_MODIFY 0x1
 	
 	WM_DRAWPATH2 0x0 0x8 0x0 //castle <-> s. zofia2
-	WM_SPAWNLORD 0x0 0x0 Alm GMLoc_ZofiaCastle 0x0 //set Alm at Zofia Castle
+	WM_DRAWLORDAT Alm GMLoc_ZofiaCastle //set Alm at Zofia Castle
 	WM_CENTERCAMONLORD
 	WM_FADEOUT 0x0 0x0 0x0
 	WM_TEXTDECORATE
 	EVBIT_MODIFY 0x0
 	STAL 20
 	//move camera to celica part of map
+    EVBIT_MODIFY 0x1
 	WM_LOADLOCATION2 0x0 GMLoc_ZofiaBay 0x0 //Zofia Bay
 	WM_WAITFORFX
 	STAL 40
@@ -346,6 +347,7 @@ WM_Act3Start: //setup act 3 routes and remove path between harbor and castle
 	WM_WAITFORFX
 	STAL 40
 	WM_DRAWPATH 0x0 0x10 0x0 //alm path
+	EVBIT_MODIFY 0x0
 	STAL 70
 	//tutorial
 
@@ -398,7 +400,7 @@ WM_Ch20:
 	//also enable 16 -> 17 via road 15
 	//WorldMapMoveNext(Alm, GMLoc_ZofiaForest2, GMLoc_ForestNorthSide, 0x16)
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Alm GMLoc_ZofiaForest2 0x0 
+	WM_DRAWLORDAT Alm GMLoc_ZofiaForest2 
 	WM_CENTERCAMONLORD
 	WM_FADEOUT 0x0 0x0 0x0
 	WM_TEXTDECORATE
@@ -424,10 +426,21 @@ WM_SluiceGate: //sluice gate
 	
 WM_Ch22_Act3Celica1: //zofia bay
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Celica GMLoc_ZofiaBay 0x0
+	WM_DRAWLORDAT Celica GMLoc_ZofiaHarbor
 	WM_CENTERCAMONLORD
-	_0xA640 0x0 0x0 GMLoc_ZofiaBay
-	SKIPWN
+	WM_FADEOUT 0x0 0x0 0x0
+    WM_TEXTDECORATE
+    EVBIT_MODIFY 0x0
+    STAL 20
+    CHECK_EVENTID gChapter3C1Completed
+    BNE 0x22 rC r0
+        WM_SETDESTINATION 0x0 GMLoc_ZofiaBay 0x0
+        WM_WAITFORFX
+        STAL 70
+    LABEL 0x22
+    WM_MAKELORDVISIBLE 0x0
+    EVBIT_MODIFY 0x1
+    CALL 0x591F40
 	ENDA
 	
 WM_Ch23:
@@ -449,7 +462,7 @@ WM_Ch28_TempleOfMila: //temple of mila
 	//also enable 1F->20 via road 1e
 	//WorldMapMoveNext(Celica, GMLoc_ValleyApproach, GMLoc_MilaTemple, 0x1f)
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Celica GMLoc_ValleyApproach 0x0 
+	WM_DRAWLORDAT Celica GMLoc_ValleyApproach
 	WM_CENTERCAMONLORD
 	WM_FADEOUT 0x0 0x0 0x0
 	WM_TEXTDECORATE
@@ -473,6 +486,8 @@ WM_Ch28_TempleOfMila: //temple of mila
 WM_Act4Start:
 	//Draw routes 0x20 and 0x27
 	EVBIT_MODIFY 0x1
+	WM_DRAWPATH2 0x0 0x20 0x0 //celica path
+	WM_DRAWPATH2 0x0 0x27 0x0 //alm path
 	CHECK_EVENTID gPart3Completed
 	BEQ 0x2 0xC 0x0 
 		
@@ -482,16 +497,17 @@ WM_Act4Start:
 		BEQ 0xCA 0xC 0x3
 		
 			//Alm case
-			WM_SPAWNLORD 0x0 0x0 Alm GMLoc_SluiceGate 0x0
+			WM_DRAWLORDAT Alm GMLoc_SluiceGate
 			WM_CENTERCAMONLORD
 			_0xA640 0x0 0x0 GMLoc_SluiceGate
 			GOTO 0xE
 			
 		LABEL 0xCA //celica case
-		WM_SPAWNLORD 0x0 0x0 Celica GMLoc_MilaTemple 0x0
+		WM_DRAWLORDAT Celica GMLoc_MilaTemple
 		WM_CENTERCAMONLORD
 		_0xA640 0x0 0x0 GMLoc_MilaTemple
 		LABEL 0xE
+        ENUT gPart3Completed
 		SKIPWN
 		ENDA
 	
@@ -503,7 +519,7 @@ WM_Act4Start:
 		
 		//Alm case
 		ENUT gPart3Completed
-		WM_SPAWNLORD 0x0 0x0 Alm GMLoc_SluiceGate 0x0 //set Alm at Sluice Gate
+		WM_DRAWLORDAT Alm GMLoc_SluiceGate //set Alm at Sluice Gate
 		WM_CENTERCAMONLORD
 		WM_FADEOUT 0x0 0x0 0x0
 		WM_TEXTDECORATE
@@ -513,19 +529,15 @@ WM_Act4Start:
 		WM_LOADLOCATION2 0x0 GMLoc_DeadMansMire 0x0 
 		WM_WAITFORFX
 		STAL 40
-		WM_DRAWPATH 0x0 0x20 0x0 //celica path
-		STAL 40
 		WM_CENTERCAMONLORD
 		WM_LOADLOCATION2 0x0 GMLoc_RigelForest1 0x0
 		WM_SETDESTINATION 0x0 GMLoc_RigelForest1 0x0 
 		WM_WAITFORFX
-		STAL 40
-		WM_DRAWPATH 0x0 0x27 0x0 //alm path
 		GOTO 0xF
 		
 	LABEL 0xCE
 	ENUT gPart3Completed
-	WM_SPAWNLORD 0x0 0x0 Celica GMLoc_MilaTemple 0x0 //set Celica at Mila Temple
+	WM_DRAWLORDAT Celica GMLoc_MilaTemple //set Celica at Mila Temple
 	WM_CENTERCAMONLORD
 	WM_FADEOUT 0x0 0x0 0x0
 	WM_TEXTDECORATE
@@ -535,19 +547,16 @@ WM_Act4Start:
 	WM_LOADLOCATION2 0x0 GMLoc_RigelForest1 0x0 //rigel forest
 	WM_WAITFORFX
 	STAL 40
-	WM_DRAWPATH 0x0 0x27 0x0 //alm path
-	STAL 40
 	WM_CENTERCAMONLORD
 	WM_LOADLOCATION2 0x0 GMLoc_DeadMansMire 0x0
 	WM_SETDESTINATION 0x0 GMLoc_DeadMansMire 0x0 //dead man's mire
 	WM_WAITFORFX
-	STAL 40
-	WM_DRAWPATH 0x0 0x20 0x0 //celica path
 	
 	LABEL 0xF
-	STAL 70
+	STAL 40
 	WM_MAKELORDVISIBLE 0x0
 	EVBIT_MODIFY 0x1
+    ENUT gPart3Completed
 	CALL 0x591F40
 	ENDA
 	
@@ -564,7 +573,7 @@ WM_Act4_3_Celica:
 		GOTO 0x102
 	LABEL 0x101
 		EVBIT_MODIFY 0x1
-		WM_SPAWNLORD 0x0 0x0 Celica 0x0 0x0
+		WM_DRAWLORDAT Celica 0x0
 		WM_LOADLOCATION2 0x0 GMLoc_SagesHamlet 0x0
 		WM_DRAWPATH 0x0 0x23 0x0
 		WM_LOADLOCATION2 0x0 GMLoc_LostTreescape 0x0
@@ -593,7 +602,7 @@ WM_Act4_2_Alm:
 WM_Act4_3_Alm:
 	//WorldMapMoveNext(Alm,GMLoc_FearMtnPass, GMLoc_NuibabaManor, 0x2A)
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Alm GMLoc_FearMtnPass 0x0 
+	WM_DRAWLORDAT Alm GMLoc_FearMtnPass
 	WM_CENTERCAMONLORD
 	WM_FADEOUT 0x0 0x0 0x0
 	WM_TEXTDECORATE
@@ -623,7 +632,7 @@ WM_Act4_5_Alm:
 WM_Act4_6_Alm:
 	//WorldMapMoveNext(Alm, GMLoc_DragonsMaw,GMLoc_RigelFalls, 0x2F)
     EVBIT_MODIFY 0x1
-    WM_SPAWNLORD 0x0 0x0 Alm GMLoc_DragonsMaw 0x0
+    WM_DRAWLORDAT Alm GMLoc_DragonsMaw
     WM_CENTERCAMONLORD
     WM_FADEOUT 0x0 0x0 0x0
     WM_TEXTDECORATE
@@ -641,7 +650,7 @@ WM_Act4_6_Alm:
 WM_Act4_7_Alm:
 	//WorldMapMoveNext(Alm,GMLoc_RigelFalls, GMLoc_LastBastion, 0x30)
 	EVBIT_MODIFY 0x1
-	WM_SPAWNLORD 0x0 0x0 Alm GMLoc_RigelFalls 0x0 
+	WM_DRAWLORDAT Alm GMLoc_RigelFalls
 	WM_CENTERCAMONLORD
 	WM_FADEOUT 0x0 0x0 0x0
 	WM_TEXTDECORATE
@@ -668,7 +677,7 @@ WM_Act4_8_Alm:
 WM_Act4_Final:
 	EVBIT_MODIFY 0x1
     ENUT gDumaTowerReachedAlm
-    WM_SPAWNLORD 0x0 0x0 Alm GMLoc_RigelCastle 0x0 //set Alm at Rigel Castle
+    WM_DRAWLORDAT Alm GMLoc_RigelCastle //set Alm at Rigel Castle
     WM_CENTERCAMONLORD
     WM_FADEOUT 0x0 0x0 0x0
     WM_TEXTDECORATE
@@ -687,7 +696,7 @@ WM_Act4_Final:
 WM_Act5_Final:
 //    WorldMapSkip(GMLoc_DumaTower)
     EVBIT_MODIFY 0x1
-    WM_SPAWNLORD 0x0 0x0 Alm 0x0 0x0
+    WM_DRAWLORDAT Alm 0x0
     WM_LOADLOCATION2 0x0 GMLoc_DumaTower 0x0
     WM_SETDESTINATION 0x0 GMLoc_DumaTower 0x0
     _0xA640 0x0 0x0 GMLoc_DumaTower

@@ -51,6 +51,7 @@ BossChargeSetup:
 	BEQ 1 0xC 0x0 // branch label 1 if check not set
 		//Lawson says something
 		CAMERA_CENTERED Lawson
+        STAL 20
 		FlashCursor(Lawson, 60)
 		MapText(Ch3_5A_BossWarningText)
 		//CHAI his group
@@ -66,6 +67,7 @@ BossChargeSetup:
 	ENDA
 
 Ch3_5A_CharacterBasedEvents:
+	CharacterEventBothWays(gSirPurr, AlmLuthierSirPurrTalk, Alm, Luthier)
 	CHAR
 
 Ch3_5A_LocationBasedEvents:
@@ -189,11 +191,11 @@ TurretArchers:
 	UNIT
 
 Ch3_5A_BeginningScene:
+	VCWF 0x0
 	MUSC SongID_Env_Night
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	CAMERA_CENTERED Alm
-	VCWF 0x0
 	
 	SetBackground(0x44)
 	BackgroundText(Ch3_5A_OpeningText)
@@ -225,6 +227,7 @@ Ch3_5A_BeginningScene:
 	SOUN 0x9C
 	STAL 20
 	CAMERA_CENTERED Lawson
+    STAL 20
 	FlashCursor(Lawson, 60)
 	MUSC SongID_SolveTheRiddle
 	MapText(Ch3_5A_OpeningText_3)
@@ -237,13 +240,13 @@ Ch3_5A_BeginningScene:
 	ENDA
 
 Ch3_5A_EndingScene:
-	CALL UnifiedBEXPCaller
-    FadeOutMusic
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A5Completed
 	EVBIT_MODIFY 0x0
-	
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+	STAL 5
 	MUSC SongID_SilentGround
 	SetBackground(0x44)
 	

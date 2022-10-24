@@ -141,7 +141,7 @@ EnemyUnitsBoat2:
 
 EnemyUnitsWitches:
 	UNIT DumaFaith_Witch Mage_F SorcererBoss Level(3,Enemy,True) [11,0] 0x00 0x00 0x1 REDA11R2 [Thunder] DefaultAI
-	UNIT DumaFaith_Witch_Slow Witch SorcererBoss Level(2,Enemy,True) [14,0] 0x00 0x00 0x1 REDA14R2 [Nosferatu] WitchWarpAI
+	UNIT DumaFaith_Witch_Slow Witch SorcererBoss Level(2,Enemy,True) [14,0] 0x00 0x00 0x1 REDA14R2 [Nosferatu, Rewarp] WitchWarpAI
 	UNIT
 
 Ch2_6_BeginningScene:
@@ -162,15 +162,13 @@ Ch2_6_BeginningScene:
 	
 		MUSC SongID_Env_Water
 		SetBackground(0x41) //night boat bg
-		Text(Ch2_6_OpeningScene) // seems spooky huh
+		BackgroundText(Ch2_6_OpeningScene) // seems spooky huh
 		FADI 16
-		ClearBackground
-		GOTO 0x101
+		CLEAN
+        STAL 5
 		
 	LABEL 0x100
-		FADU 4
-		
-	LABEL 0x101
+	FADU 4
 	MUSCFAST SongID_Silence
 	STAL 10
 	CAMERA_CENTERED Celica
@@ -188,21 +186,24 @@ Ch2_6_BeginningScene:
 		BEQ 0x1 0xC 0x0
 		CHECK_ALIVE Valbar
 		BEQ 0x1 0xC 0x0
-		Text(Ch2_6_OpeningScene_2) // ahh pirates
+		MapText(Ch2_6_OpeningScene_2) // ahh pirates
 		GOTO 0x2
 	LABEL 0x1
-	Text(Ch2_6_OpeningScene_2_NoValbar) // ahh pirates
+	MapText(Ch2_6_OpeningScene_2_NoValbar) // ahh pirates
 	LABEL 0x2
 	GotoPrepScreen
 	NoFade
 	ENDA
 
 Ch2_6_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
+	FADI 5
+    STAL 5
 	MUSC SongID_Victory
-	FADI 16
 	SetBackground(0x41) //night boat bg
-	Text(Ch2_6_EndingText) // yay we won
+	BackgroundText(Ch2_6_EndingText) // yay we won
+    FADI 2
 	MNCH 0x0E //go to world map
 	ENDA
 

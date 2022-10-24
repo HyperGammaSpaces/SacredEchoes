@@ -64,7 +64,7 @@ SaberJoins:
 	UNIT
 
 EnemyUnits:
-	UNIT PirateCelica1 Pirate PirateCelica1 Level(7,Enemy,True) [11,11] DropItem 0x00 0x0 0x00 [BaseAxe,Item100G] AttackInRangeAI 
+	UNIT PirateCelica1 Pirate PirateCelica1 Level(4,Enemy,False) [11,11] DropItem 0x00 0x0 0x00 [BaseAxe,Item100G] AttackInRangeAI 
 	UNIT Bandit_Axe Pirate_F PirateCelica1 Level(3,Enemy,True) [10,4] DropItem 0x00 0x0 0x00 [BaseAxe, ChestKey] NeverMoveAI 
 	UNIT Bandit_Axe Pirate PirateCelica1 Level(4,Enemy,True) [11,4] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
 	UNIT Bandit_Axe Brigand PirateCelica1 Level(2,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
@@ -80,25 +80,27 @@ EnemyUnits:
 Ch2_2_BeginningScene:
 	MUSC SongID_PortTown
 	SetBackground(0x07) //Port town
-	Text(Ch2_2_Intro1)
+	BackgroundText(Ch2_2_Intro1)
 	FADI 5
+	STAL 5
 
 	LOAD1 0x1 SaberJoins
 	ENUN
 
 	SetBackground(0x07) //Port town
-	TEXTSTART
+	TEXTMODE 1
 	TEXTSHOW Ch2_2_Intro2
 	TEXTEND
 	TEXTCLEAR
 	TEXTMODE 1
 	FADI 2
+	STAL 20
 
 	MUSC SongID_Inn
 		
 	SetBackground(0x09)
 
-	TEXTSTART 
+	TEXTMODE 1
 	TEXTSHOW Ch2_2_RecruitSaber
 	TEXTEND
 	TEXTCLEAR
@@ -107,9 +109,7 @@ Ch2_2_BeginningScene:
 	_0x2141 HiringSaberCG 0x1 0x4
 	TEXTMODE 1
 	STAL 90
-		
-	//give item GoldDagger for G.Dagger
-	//TODO: add 7743's EVENTSCRIPT_COND_ITEM ASMC to remove the item before re-giving
+	
 	RemoveItemFromAny(GoldDagger)
 	SVAL 0x3 GoldDagger
 	GIVEITEMTO Saber
@@ -134,7 +134,7 @@ Ch2_2_BeginningScene:
 
 	MUSC SongID_Env_Water
 	SetBackground(0x08) //Boat
-	Text(Ch2_2_SetSail)
+	BackgroundText(Ch2_2_SetSail)
 	EndConvo
 	STAL 30
 
@@ -155,7 +155,7 @@ Ch2_2_BeginningScene:
 	//Pirates say something
 	CAMERA_CENTERED PirateCelica1
 	FlashCursor(PirateCelica1, 60)
-	Text(Ch2_2_Pirates)
+	MapText(Ch2_2_Pirates)
 	//Trigger map change 1 here
 	SOUN 0xF2
 	TILECHANGE 0x1
@@ -178,18 +178,22 @@ ChestEvent:
 	ENDA
 
 Ch2_2_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
+    FADI 5
+    STAL 5
 	MUSC SongID_Victory
 	SetBackground(0x08)
 		CHECK_EXISTS Genny
 		BEQ 0x1 0xC 0x0
 		CHECK_ALIVE Genny
 		BEQ 0x1 0xC 0x0
-		Text(Ch2_2_PostBattle)
+		BackgroundText(Ch2_2_PostBattle)
 		GOTO 0x2
 	LABEL 0x1
-	Text(Ch2_2_PostBattle_NoGenny)
+	BackgroundText(Ch2_2_PostBattle_NoGenny)
 	LABEL 0x2
+    FADI 2
 	MNCH 0x0B //go to ch11 but get intercepted
 	ENDA
 

@@ -65,22 +65,41 @@ WM_PUTMOVINGSPRITE, 0xA8C0, 24, -game:FE8 -indexMode:8
 	Value11, 22, 2
 		
 WM_MOVESPRITETO, 0xA980, 16, -game:FE8 -indexMode:8
-	Value1, 2, 2
-	Value2, 4, 2
-	Value3, 6, 2
-	Value4, 8, 2
-	Location ID, 10, 2
+#Flags are: 0x0 = animate the movement, 0x1 = move instant
+	Flags1, 2, 2
+	Actor ID, 4, 2
+#Flags are: 0x2 = disappear at ending position
+	Flags2, 6, 2
+	Start Location ID, 8, 2
+	End Location ID, 10, 2
 	Time, 12, 2
 	Delay, 14, 2
 
+## Set a stationary sprite at a map location
 WM_SPAWNLORD, 0xC360, 12, -game:FE8 -indexMode:8
 #Always 0
 	Value1, 2, 2
-	Value2, 4, 2
+	Actor ID, 4, 2
 	Character ID, 6, 2
 	World map location, 8, 2
 #Always 0
 	Value5, 10, 2
+    
+## Set a stationary sprite at a map location
+WM_DRAWSPRITEAT, 0xC360, 12, -game:FE8 -indexMode:8
+	0x00, 2, 2, -fixed
+	Actor ID, 4, 2
+	Character ID, 6, 2
+	World map location, 8, 2
+	0x00, 10, 2, -fixed
+    
+## Set lord (actor 0) at a map location
+WM_DRAWLORDAT, 0xC360, 12, -game:FE8 -indexMode:8
+	0x00, 2, 2, -fixed
+	0x00, 4, 2, -fixed
+	Character ID, 6, 2
+	World map location, 8, 2
+	0x00, 10, 2, -fixed
 
 ##Removes a map sprite.
 REMSPRITE, 0xA040, 8, -game:FE8 -indexMode:8

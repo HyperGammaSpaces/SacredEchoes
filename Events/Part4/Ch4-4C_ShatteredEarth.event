@@ -73,7 +73,8 @@ PlayerPlacement:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [25,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [26,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [27,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT
+    UNIT Kliff Villager 0x00 Level(1, Ally, 1) [23,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT
 
 CutsceneUnits:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
@@ -92,7 +93,7 @@ EnemyUnits:
 	UNIT Rigel_Mage Arcanist Jamil Level(9, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT Rigel_Mage Arcanist Jamil Level(9, Enemy, True) [13,14] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT 0xB3 Fiend Jamil Level(4, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-	UNIT 0xB3 Fiend Jamil Level(4, Enemy, True) [10,14] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT 0xB3 Fiend Jamil Level(4, Enemy, True) [10,14] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
 	
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
@@ -130,21 +131,22 @@ Evt_BeginningScene:
 	ENDA
 
 Evt_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
-	CLEE 0x0
-	CLEA 0x0
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4C4Completed
 	EVBIT_MODIFY 0x0
-	
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+	CLEE 0x0
+	CLEA 0x0
+	STAL 5
 	MUSC SongID_Victory
 	SetBackground(0x11,5)
 	BackgroundText(Ch4C_4_EndingText)
     MUSCMID SongID_Silence
 	FADI 2
 	CLEAN
+    STAL 5
 	LOAD2 0x0 CutsceneUnits_Ending
 	ENUN
 	CAMERA_CENTERED [3,10]

@@ -207,7 +207,6 @@ Ch1_1_BeginningScene:
 	REMU Gray
 	REMU Tobin
 	STAL 60
-    //TODO: add "where grandpa???"
     MUSI
     CameraCursor(Alm)
     MapText(OpeningScene_WheresGrandpa)
@@ -230,7 +229,8 @@ Ch1_1_BeginningScene:
 
 	STAL 0x20
 	FlashCursor(Alm, 60)
-	FADI 0x5
+	FADI 5
+    STAL 5
 	CLEA 0x0
 	CLEE 0x0
 	CLEN 0x0
@@ -247,6 +247,7 @@ Ch1_1_BeginningScene:
 	STAL 60
 	CgText(OpeningScene_CelicaCG)
 	EndConvo
+    STAL 5
 
 	MUSC SongID_Tension
 	EVBIT_T 0x9
@@ -273,9 +274,10 @@ Ch1_1_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gEnableWorldMap			//enable world map
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-    FadeOutMusic
     FADI 5
+    STAL 5
 	CLEN 0x0
 	MUSC SongID_Victory //victory
 	Text(Plain,Ch1_1_PostBattle)

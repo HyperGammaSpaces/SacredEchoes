@@ -51,10 +51,15 @@ Ch1_7_LocationBasedEvents:
 	  Seize(5,12)
 	#endif
 	Village(0x8, VillageEvent, 5,5)
+    House(0, HouseEvent, 18, 10)
 	LOCA
 
 VillageEvent:
 	VillageEventItem(Ch1_7_Village, Village, SteelLance)
+	ENDA
+    
+HouseEvent:
+	HouseEvent(Ch1_7_House,0x01)
 	ENDA
 
 Ch1_7_MiscBasedEvents:
@@ -118,11 +123,11 @@ BrigandsCh7:
 	UNIT
 
 Brigand1Reda:
-	REDA [0,3] 0x5 0x0 0x0 0x0 0x0
+	REDA [0,3] NoFlags Walk_Fast 0x0 0x0
 Brigand2Reda:
-	REDA [0,5] 0x4 0x0 0x0 0x0 0x0
+	REDA [0,5] NoFlags Walk_Fast 0x0 0x2
 Brigand3Reda:
-	REDA [1,4] 0x6 0x0 0x0 0x0 0x0
+	REDA [1,4] NoFlags Walk_Fast 0x0 0x4
 
 Ch1_7_BeginningScene:
 	MUSC SongID_Tension
@@ -168,22 +173,24 @@ SetBGWhite:
 	ENDA
 
 Ch1_7_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
 	FADI 2
+    STAL 5
 	MUSC SongID_Env_Night
 	SetBackground(0x20)
 	Text(Ch1_7_PostBattle_1)
 	SETVAL 0x2 0x0D
 	CALL SetBGWhite
 	MUSCSLOW SongID_Sorrow
+    STAL 5
 	Text(CliveFernand_Flashback)
 	MUSCMID SongID_Silence
 	SETVAL 0x2 0x20
 	CALL SetBGWhite
 	MUSCSLOW SongID_ShadowOfVictory
 	Text(ClairFernand_Ch7)
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	FADI 2
 	MNCH 0x07 //go to ch7
 	ENDA
 

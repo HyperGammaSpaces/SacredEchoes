@@ -125,8 +125,10 @@ Ch1_6_BeginningScene:
 	ENDA
 
 Ch1_6_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
 	FADI 5
+    STAL 5
 	CLEA 0x0
 	CLEE 0x0
 	ENUN
@@ -144,6 +146,7 @@ Ch1_6_EndingScene:
 	ENUN
 	MOVE 0x10 Clair [9,2]
 	ENUN
+    FlashCursor(0x2D, 60)
 
 	SetBackground(0x26)
 	TEXTSTART 
@@ -155,6 +158,7 @@ Ch1_6_EndingScene:
 	MUSC SongID_ShadowOfVictory
 	TEXTCONT
 	TEXTEND
+    TEXTCLEAR
 	ClearBackgroundSmooth
 	
 	CharacterJoinedNotification(Notif_FernandJoin)
@@ -165,22 +169,22 @@ Ch1_6_EndingScene:
 
 	SVAL 0x1 0x1
 	CHECK_ALIVE Gray 
-	BEQ 0x4 0xC 0x0 //if not, goto NoFaye
+	BEQ 0x4 rC r0 
 	CHECK_ALIVE Tobin 
-	BEQ 0x4 0xC 0x0 //if not, goto NoFaye
+	BEQ 0x4 rC r0
 		MOVE 0x10 Gray [9, 3]
 		MOVE 0x10 Tobin [8, 2]
 		ENUN
 		STAL 20
-		FlashCursor(Clair, 60)
+		CameraCursor(Clair)
 
 		SetBackground(0x26)
 		TEXTSTART 
 		TEXTSHOW Ch1_6_PostBattle_2
 		TEXTEND
+        TEXTCLEAR
 	LABEL 0x4
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	FADI 2
 	MNCH 0x06 //go to ch6
 	ENDA
 

@@ -124,6 +124,7 @@ DShrine_BeginningScene:
 	ENDA
 
 DShrine_EndingScene:
+    CALL EndMusicAndMMS
 	EVBIT_MODIFY 0x1
 	ENUT gDragonShrineCompleted
 	EVBIT_MODIFY 0x0
@@ -131,8 +132,8 @@ DShrine_EndingScene:
 	ASMC 0x85C65
 	//SADD 0x32
 	CALL UnifiedBEXPCaller
-    FadeOutMusic
     FADI 2
 	SVAL 0x2 0x42
 	MNCH 0xFFFF //go to world map
+    CALL PostgameUnlockChecker
 	ENDA

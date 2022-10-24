@@ -169,7 +169,7 @@ Evt_BeginningScene:
 	LABEL 0x1
 	MUSCMID SongID_Silence
 	FADI 2
-	
+	STAL 5
 	MUSC SongID_ImportantBattle
 	SetBackground(0x47, 5)
 	BackgroundText(Ch4A_1_OpeningText) //Lukas
@@ -222,12 +222,13 @@ Evt_BeginningScene:
 
 
 Evt_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A1Completed
 	EVBIT_MODIFY 0x0 
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+	STAL 5
 
 	//Check how many green units lived and set a local flag before clearing them.
 	CHECK_OTHERS
@@ -243,6 +244,7 @@ Evt_EndingScene:
 		EVBIT_T 0x7
 		FADI 2
 		CLEAN
+        STAL 5
 	LABEL 0x12
 	CLEA 0x0
     CLEE 0x0
@@ -273,7 +275,7 @@ Evt_EndingScene:
     MOVE 0x08 ZekeBoss [2,1]
 	ENUN
     DISA ZekeBoss
-    
+    STAL 5
 	CameraCursor(FernandPaladin)
 	MapText(Ch4A_1_EndingText_3) //Fernand convinces Berkut to retreat
 	MOVE 0x08 BerkutGK [4,0]
@@ -288,6 +290,7 @@ Evt_EndingScene:
 	FlashCursor(Alm, 60)
 	MapText(Ch4A_1_EndingText_4) //tobin asks alm if they should give chase
 	FADI 2
+    STAL 5
 	MUSC SongID_PrinceOfDarkness
 	SetBackground(0x0E)
 	BROWNBOXTEXT Loc_RigelCastle [8,8]

@@ -152,7 +152,7 @@ Ch4A8_BeginningScene:
     LOAD2 0x2 CutsceneUnits
     ENUN
     EVBIT_F 0x9
-    
+    STAL 5
     CameraCursor(Alm)
     MapText(Ch4A_8_OpeningText)
     
@@ -197,12 +197,12 @@ Ch4A8_BeginningScene:
 	ENDA
 
 Ch4A8_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A8Completed
 	EVBIT_MODIFY 0x0
+	CALL UnifiedBEXPCaller
+	FADI 2
+	STAL 5
     
     MUSC SongID_CastleTheme
     SetBackground(0x0C, 5)

@@ -23,9 +23,8 @@ Ch2_1_TurnBasedEvents:
 
 CelicaTalkEvent:
 	EVBIT_MODIFY 0x1
-	SVAL 0x1 0x1
 	CHECK_EVENTID gNovisCemeteryCompleted //has map been cleared?
-	IFNE 0x8 0xC 0x1 //if true, skip cutscene
+	BNE 0x8 rC r0 //if true, skip cutscene
 		EVBIT_MODIFY 0x0
 		MUSC SongID_MilasDivineProtection
 		MUSI
@@ -40,12 +39,10 @@ CelicaTalkEvent:
 
 CelicaTalkEvent2:
 	//CHECK_INAREA Celica, if not then just reset eventID
-	SVAL 0x1 0x1
 	CHECK_INAREA Celica [8,0] [16,7]
-	IFEQ 0x2 0xC 0x1
-		SVAL 0x1 0x1
+	BEQ 0x2 rC r0
 		CHECK_EVENTID gGraveyardTextShown //has map been cleared?
-		IFNE 0x3 0xC 0x1 //if true, skip cutscene
+		BNE 0x3 rC r0 //if true, skip cutscene
 			MUSI
 			STAL 30
 			FlashCursor(0xAD, 60)
@@ -114,36 +111,34 @@ Ch2_1_PlayerSkirmishUnits:
 
 EnemyUnits:
 	UNIT Boss_Monster Revenant Boss_Monster Level(3,Enemy,True) [9,9] DropItem 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI // A matter of personal preference, but I would not put spaces after commas.
-	UNIT 0xAA Revenant Boss_Monster Level(1,Enemy,True) [12,11] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI // Keeps things more compact, so "Level(1,Enemy,True)" instead of "Level(1, Enemy, 1)".
+	UNIT 0xAA Revenant Boss_Monster Level(1,Enemy,True) [12,11] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI // Keeps things more compact, so "Level(1,Enemy,True)" instead of "Level(1, Enemy, 1)".
 	UNIT 0xAA Bonewalker Boss_Monster Level(1,Enemy,True) [10,7] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI // Also note my use of "True" instead of "1".
-	UNIT 0xAA Revenant Boss_Monster Level(2,Enemy,True) [15,1] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT 0xAA Revenant Boss_Monster Level(2,Enemy,True) [15,1] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
 	UNIT 0xAA Revenant Boss_Monster Level(3,Enemy,True) [13,4] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
 	UNIT 0xAA Revenant Boss_Monster Level(1,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
 	UNIT 0xAD Bonewalker_Bow Boss_Monster Level(1,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT 0xAA Revenant Boss_Monster Level(1,Enemy,True) [5,5] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT 0xAA Revenant Boss_Monster Level(1,Enemy,True) [5,5] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
 	UNIT 0xAA Revenant Boss_Monster Level(3,Enemy,True) [2,4] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
-	UNIT 0xAA Revenant Boss_Monster Level(2,Enemy,True) [7,10] 0x00 0x00 0x0 0x00 [RottenClaw] NoAI 
+	UNIT 0xAA Revenant Boss_Monster Level(2,Enemy,True) [7,10] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
 	UNIT
 
 EnemySkirmishUnits:
 	UNIT Boss_Monster Revenant Boss_Monster Level(3,Enemy,True) [9,9] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI 
-	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(1,Enemy,True) [12,11] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(1,Enemy,True) [12,11] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
 	UNIT 0xAC Bonewalker Boss_Monster Level(1,Enemy,True) [10,7] RandomizePosition 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
-	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(2,Enemy,True) [15,1] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(2,Enemy,True) [15,1] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
 	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(3,Enemy,True) [13,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
 	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(1,Enemy,True) [7,2] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
 	UNIT 0xAD Bonewalker_Bow Boss_Monster Level(1,Enemy,True) [14,7] RandomizePosition 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(1,Enemy,True) [5,5] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(1,Enemy,True) [5,5] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
 	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(3,Enemy,True) [2,4] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(2,Enemy,True) [7,10] MonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT 0xAA Random_RevBonewalker Boss_Monster Level(2,Enemy,True) [7,10] MonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
 	UNIT
 
 Ch2_1_BeginningScene:
-	//only do this the first time.
 	EVBIT_MODIFY 0x1
-	SVAL 0x1 0x1
 	CHECK_EVENTID gNovisCemeteryCompleted //has map been cleared?
-	IFNE 0x6 0xC 0x1 //if true, skip cutscene
+	BNE 0x6 rC r0 //if true, skip cutscene
 		EVBIT_MODIFY 0x0
 		MUSC SongID_Env_Night
 		FADU 5
@@ -156,7 +151,7 @@ Ch2_1_BeginningScene:
 			ENUN
 		#endif
 
-		Text(Ch2_1_PreBattle)
+		MapText(Ch2_1_PreBattle)
 
 		FADI 16
 		LOAD1 0x1 EnemyUnits
@@ -179,15 +174,17 @@ Ch2_1_BeginningScene:
 	ENDA
 
 Ch2_1_EndingScene:
+    CALL EndMusicAndMMS
 	EVBIT_MODIFY 0x1
-	SVAL 0x1 0x1
 	CHECK_EVENTID gNovisCemeteryCompleted //has map been cleared?
-	IFNE 0x4 0xC 0x1 //if true, skip cutscene
+	BNE 0x4 rC r0 //if true, skip cutscene
 		EVBIT_MODIFY 0x0
 		CALL UnifiedBEXPCaller
+        FADI 5
+        STAL 5
 		MUSC SongID_Victory
 		SetBackground(0x20)
-		Text(Ch2_1_PostBattle)
+		BackgroundText(Ch2_1_PostBattle)
 		MNCH 0x09 //go to ch9
 		GOTO 0x05
 	LABEL 0x04
@@ -196,9 +193,10 @@ Ch2_1_EndingScene:
 		ASMC 0x85C65
 		//SADD 0x32
 		CALL UnifiedBEXPCaller
+        FADI 4
 		SVAL 0x2 0x9
 		MNCH 0xFFFF //go to world map
-		//ASMC 0x37D59
+		CALL PostgameUnlockChecker
 	LABEL 0x05
 	ENDA
 

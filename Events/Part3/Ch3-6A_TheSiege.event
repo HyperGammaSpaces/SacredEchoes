@@ -29,6 +29,7 @@ WitchesSpawn:
 	ReinforcementEvent(WitchUnits)
 
 Ch3_6A_CharacterBasedEvents:
+	CharacterEventBothWays(gSirPurr, AlmLuthierSirPurrTalk, Alm, Luthier)
 	CHAR
 
 Ch3_6A_LocationBasedEvents:
@@ -160,18 +161,21 @@ Ch3_6A_BeginningScene:
 	ENDA
 
 Ch3_6A_EndingScene:
-	CALL UnifiedBEXPCaller
-    FadeOutMusic
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A6Completed
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+    STAL 5
 	MUSC SongID_ShadowOfVictory
 	SetBackground(0x04)
 	BackgroundText(Ch3_6A_EndingText)
+    EVBIT_MODIFY 0x1
 	SVAL 0x3 HolyBow //make fear mountain give holy lance instead
 	GIVEITEMTO Alm
     FadeOutMusic
+    EVBIT_MODIFY 0x0
 	FADI 2
 	
 	STAL 20

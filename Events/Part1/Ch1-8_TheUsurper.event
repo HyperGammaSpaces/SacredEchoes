@@ -98,18 +98,19 @@ CutsceneUnits_AlmVictory:
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,6] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
-Bosses:
+DesaixThrone:
 	UNIT Desaix General	0x00 Level(1, Enemy, 1) [10,4]	DropItem 0x00 0x0 0x00 [BaseLance, Dracoshield] NeverMoveAI 
 	UNIT
 
-BerkutRinea:
-	UNIT BerkutPaladin RigelPrince 0x00 Level(1, Enemy, 1) [9, 4] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-	UNIT RineaEnemy Dancer 0x00 Level(1, Enemy, 1) [8, 4] 0x00 0x00 0x0 0x00 [Fire] NoAI
+Bosses_OpeningCutscene:
+    UNIT Desaix General	0x00 Level(1, Enemy, 1) [15,0]	DropItem 0x00 0x0 0x00 [BaseLance, Dracoshield] NeverMoveAI 
+	UNIT BerkutPaladin RigelPrince 0x00 Level(1, Enemy, 1) [15,1] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT RineaEnemy Dancer 0x00 Level(1, Enemy, 1) [16,1] 0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT FernandEnemy1 Cavalier 0x00 Level(1, Enemy, 1) [16,0] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT SlaydePaladin Paladin	Desaix Level(3, Enemy, 1) [10,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-	UNIT FernandEnemy1 Cavalier 0x00 Level(1, Enemy, 1) [7, 4] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
-BossesCutscene:
+Bosses_EndingCutscene:
 	UNIT BerkutPaladin RigelPrince 0x00 Level(1, Enemy, 1) [15, 0] 0x00 0x00 0x1 REDA15R1 [BaseLance] NoAI
 	UNIT FernandEnemy1 Cavalier 0x00 Level(1, Enemy, 1) [16, 0] 0x00 0x00 0x1 REDA16R1 [BaseLance] NoAI
 	UNIT
@@ -161,7 +162,7 @@ Ch1_8_BeginningScene:
 	MUSC SongID_SolveTheRiddle
 	LOAD3 0x0 Ch1_8_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
-	LOAD1 0x1 Bosses
+	LOAD1 0x1 DesaixThrone
 	ENUN
 	CAMERA_CENTERED Desaix
 	FADU 5
@@ -177,30 +178,47 @@ Ch1_8_BeginningScene:
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
-	ClearBackgroundSmooth
-	MUSC SongID_ImportantBattle
-	CAMERA_CENTERED Alm
-	STAL 0x20
-	LOAD1 0x1 BerkutRinea
+	FADI 5
+    CLEAN
+    STAL 5
+    CLEE 0x0
+	LOAD1 0x1 Bosses_OpeningCutscene
 	ENUN
+	LOAD1 0x1 EnemyUnits
+	ENUN
+	MUSC SongID_Env_Birds
+	CAMERA_CENTERED Alm
+    FADU 5
+	STAL 0x20
 	FlashCursor(Alm, 60)
 	Text(Ch1_8_OpeningScene_AlmClive)
 	STAL 0x20
-	CAMERA_CENTERED [12,5]
+	CAMERA_CENTERED [12,4]
 	STAL 0x20
 	FlashCursor(Desaix, 60)
 	MUSC SongID_PrinceOfDarkness
-	Text(Ch1_8_OpeningScene_Berkut)
-	MOVE 0x08 BerkutPaladin [5,11]
-	MOVE 0x08 FernandEnemy1 [5,11]
-	MOVE 0x08 RineaEnemy [5,11]
+	MapText(Ch1_8_OpeningScene_Berkut)
+        SVAL 0x2 Desaix
+        CALL Warp_Out_Effect
+        STAL 8
+        DISA Desaix
+        STAL 20
+        CAMERA_CENTERED [10,4]
+        WARPIN [10, 4]
+        LOAD1 0 DesaixThrone
+        ENDWARP
+        ENUN
+    MapText(Ch1_8_OpeningScene_Berkut_2)
+	MOVE 0x04 BerkutPaladin [13,0]
+    ENUN
+	DISA BerkutPaladin
+	MOVE 0x04 FernandEnemy1 [13,0]
+    ENUN
+	DISA FernandEnemy1
+	MOVE 0x04 RineaEnemy [13,0]
 	ENUN
 	DISA RineaEnemy
-	DISA FernandEnemy1
-	DISA BerkutPaladin
 	FADI 5
-	LOAD1 0x1 EnemyUnits
-	ENUN
 	GotoPrepScreen
 	NoFade
 	ENDA
@@ -227,6 +245,7 @@ DesaixTalk:
 	ENDA
 
 Ch1_8_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
 	FADI 5
 	STAL 20
@@ -235,7 +254,7 @@ Ch1_8_EndingScene:
 	LOAD2 0x0 CutsceneUnits_AlmVictory
 	ENUN
 	FADU 5
-	LOAD1 0x1 BossesCutscene
+	LOAD1 0x1 Bosses_EndingCutscene
 	ENUN
 	CAMERA_CENTERED BerkutPaladin
 	FlashCursor(BerkutPaladin, 60)
@@ -283,10 +302,12 @@ Ch1_8_EndingScene:
 	BEQ 0x5 0xC 0x0
 	CHECK_ALIVE Tobin 
 	BEQ 0x5 0xC 0x0
+        STAL 5
 		SetBackground(Castle_Hall)
 		Text(Ch1_8_PostBattle_2_GrayTobin)
 		FADI 5
 	LABEL 0x5
+    STAL 5
 	SetBackground(Castle_Room)
 	TEXTSTART
 	TEXTSHOW Ch1_8_OldMan
@@ -296,6 +317,7 @@ Ch1_8_EndingScene:
 	TEXTEND
 	TEXTCLEAR
 	FADI 2
+	STAL 20
 
 	MUSCSLOW 0x48
 	SetBackground(Castle_Hall)
@@ -336,7 +358,7 @@ Ch1_8_EndingScene:
 	EVBIT_MODIFY 0x4
 	STAL 30
 	//FADU 16
-	SetBackground(Castle_Hall)
+	SetBackground(BlackBackground)
 	CenterTextbox(Ch1_8_PostBattle_CGText)
 
 	STAL 30
@@ -384,10 +406,10 @@ DesaixDies:
 CelicaZofiaCastleEvent:
 	SVAL 0x1 0x1
 	CHECK_EVENTID gKliffRecruited
-	BEQ 0x6 0x0 0xC //goto 6 if kliff is not recruited
+	BEQ 0x6 r0 rC //goto 6 if kliff is not recruited
 		//if kliff has been recruited, check faye here
 		CHECK_EVENTID gFayeRecruited
-		BEQ 0x6 0x0 0xC //goto 6 if faye is not recruited
+		BEQ 0x6 r0 rC //goto 6 if faye is not recruited
 		GOTO 0x7
 	LABEL 0x6
 
@@ -415,7 +437,7 @@ CelicaZofiaCastleEvent:
 
 		SVAL 0x1 0x1
 		CHECK_EVENTID gKliffRecruited
-		IFNE 0x8 0xC 0x1
+		BNE 0x8 rC r0
 			SetBackground(0x04) //sunset village
 			Text(Ch2_KliffJoins)
 			FADI 5
@@ -426,7 +448,7 @@ CelicaZofiaCastleEvent:
 
 		LABEL 0x8
 		CHECK_EVENTID gFayeRecruited
-		IFNE 0x9 0xC 0x1
+		BNE 0x9 rC r0
 			SetBackground(0x04) //sunset village
 			Text(Ch2_FayeJoins)
 			FADI 5
@@ -446,12 +468,13 @@ CelicaZofiaCastleEvent:
 	MUSC SongID_Silence
 	CAMERA_CENTERED [16,18]
 	FADU 5
-	LOAD2 0x0 CutsceneUnits_CelicaCastle
-	ENUN
-	CAMERA_CENTERED Celica
 	BROWNBOXTEXT Loc_ZofiaCastle [8,8]
 	MUSC SongID_CastleTheme
+    STAL 20
+	LOAD2 0x0 CutsceneUnits_CelicaCastle
+	ENUN
 	STAL 20
+	CameraCursor(Celica)
 
 	//Show mae/boey/celica walking on the map, with Saber slightly behind.
 
@@ -460,6 +483,7 @@ CelicaZofiaCastleEvent:
 	TEXTSHOW Ch2_Epilogue1 //mae and co.
 	TEXTEND
 		MUSI
+        STAL 20
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
@@ -467,8 +491,9 @@ CelicaZofiaCastleEvent:
 	FADI 2
 
 	MUSC SongID_Silence
-	STAL 20
+	STAL 5
 	SetBackground(Castle_Room)
+    STAL 20
 	TEXTSTART
 	TEXTSHOW Ch2_Epilogue3 //mycen
 	TEXTEND
@@ -477,6 +502,7 @@ CelicaZofiaCastleEvent:
 	TEXTEND
 	TEXTCLEAR
 	FADI 5
+    STAL 20
 
 	MUSC SongID_Unity
 	SetBackground(Castle_Hall)
@@ -504,6 +530,7 @@ CelicaZofiaCastleEvent:
 	_0x1A22
 	TEXTSHOW Ch2_OrangeCGText 
 	TEXTEND
+    STAL 8
 	MUSI 
 	_0x2141 Castle_Hall 0x1 0x4
 	TEXTMODE 1
@@ -515,7 +542,7 @@ CelicaZofiaCastleEvent:
 	EVBIT_MODIFY 0x4
 	MUSC SongID_Truth
 	STAL 30
-	FADU 16
+	SetBackground(BlackBackground, 16)
 	CenterTutorialTextBox
 	TUTORIALTEXTBOXSTART
 	TEXTSHOW Ch2_Epilogue_EndNarration
@@ -597,19 +624,25 @@ CelicaZofiaCastleEvent:
 	ENDB
 
 CelicaVillageREDA:
-	REDA [6,7] 0x10 0x00 0x00 0x0
+	REDA [6,7] NoFlags Walk_Slow 0x0 0x0
 
 SaberCastleREDA:
-	REDA [10,17] 0xC 0x00 0x20 0x0
+	REDA [10,17] NoFlags Walk_Slow 0x0 0xC
+CelicaCastleREDA:
+	REDA [10,15] NoFlags Walk_Fast 0x0 0x0
+MaeCastleREDA:
+	REDA [9,16] NoFlags Walk_Fast 0x0 0x4
+BoeyCastleREDA:
+	REDA [11,16] NoFlags Walk_Fast 0x0 0x8
 
 CutsceneUnits_CelicaVillage:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [19,7] 0x00 0x00 0x1 CelicaVillageREDA [BaseSword, Vulnerary] NoAI 
 	UNIT
 	
 CutsceneUnits_CelicaCastle:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [22,25] 0x00 0x00 0x1 REDA10R15 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,25] 0x00 0x00 0x1 REDA9R16 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1, Ally, 1) [22,25] 0x00 0x00 0x1 REDA11R16 [Fire, Vulnerary] NoAI
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [22,25] 0x00 0x00 0x1 CelicaCastleREDA [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,25] 0x00 0x00 0x1 MaeCastleREDA [Fire, Vulnerary] NoAI 
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [22,25] 0x00 0x00 0x1 BoeyCastleREDA [Fire, Vulnerary] NoAI
 	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [22,26] 0x00 0x00 0x1 SaberCastleREDA [BaseSword, Vulnerary] NoAI 
 	UNIT
 

@@ -12,7 +12,7 @@ Ch3_5C_ThisChapter:
 	POIN Ch3_5C_Dunno Ch3_5C_Dunno Ch3_5C_Dunno
 	POIN Ch3_5C_Tutorial
 	POIN Ch3_5C_Ballista1 Ch3_5C_Ballista2
-	POIN Ch3_5C_Units1 Ch3_5C_Units1
+	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 $0 $0 $0
 	POIN Ch3_5C_BeginningScene Ch3_5C_EndingScene
 
@@ -92,7 +92,7 @@ Ch3_5C_Ballista2:
 	BLST
 	ALIGN 4
 
-Ch3_5C_Units1:
+PlayerPlacement:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -108,7 +108,8 @@ Ch3_5C_Units1:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT
+    UNIT Kliff Villager 0x00 Level(1,Ally,True) [2,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+    UNIT
 
 Ch3_5C_CutsceneUnits:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -215,19 +216,19 @@ Ch3_5C_BeginningScene:
 		MapText(Ch3_5C_OpeningText_2_NoValbar)
 	LABEL 0x101
 	FADI 16
-	LOAD3 0x0 Ch3_5C_Units1 
+	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	GotoPrepScreen
 	ENDA
 
 Ch3_5C_EndingScene:
-	CALL UnifiedBEXPCaller
-    FadeOutMusic
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C5Completed
 	EVBIT_MODIFY 0x0
-	
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+	STAL 5
 	MUSC SongID_Victory
 	SetBackground(0x17) //dungeon cell
 	TEXTMODE 1
@@ -249,7 +250,8 @@ Ch3_5C_EndingScene:
 	
 	SetBackground(0x17, 2) //dungeon cell
 	BackgroundText(Ch3_5C_EndingText_2) //irma 2
-	
+	FADI 5
+    STAL 5
 	MUSCSLOW SongID_Victory
 	//atlas finds his bros
 	CHECK_ALIVE Atlas
@@ -258,9 +260,13 @@ Ch3_5C_EndingScene:
 		CHECK_ALIVE Hyas
 		BEQ 0x4 0xC 0x0
 			BackgroundText(Ch3_5C_EndingText_AtlasHyas)
+            FADI 5
+            STAL 5
 			GOTO 0x3
 		LABEL 0x4 //atlas only
 		BackgroundText(Ch3_5C_EndingText_AtlasOnly)
+        FADI 5
+        STAL 5
 	LABEL 0x3 //atlas dead
 	
 	//get est
@@ -278,6 +284,7 @@ Ch3_5C_EndingScene:
 	CLEAN
 	LOAD1 0x1 EstJoins
 	ENUN
+    STAL 5
 	
 	//get deen or sonya
 	SetBackground(0x0C,5)

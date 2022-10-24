@@ -1,3 +1,9 @@
+#define ItemAI_DoorKey 0x1
+#define ItemAI_Lockpick 0x2
+#define ItemAI_Antitoxin 0x4
+
+#define SetItemAIForChapter(chapterID, aiSetting) "PUSH; ORG ($D8538 + (chapterID*4)); BYTE aiSetting; POP"
+
 #include "DanceAI/DanceAi.event"
 ALIGN 4
 //commenting out cuz it doesn't play nice with damage flooring
@@ -7,6 +13,18 @@ ALIGN 4
 ALIGN 4
 
 #include "AiPerformExtension/AiPerformExt.event"
+
+SetItemAIForChapter($04, ItemAI_Lockpick)
+SetItemAIForChapter($18, ItemAI_Lockpick)
+SetItemAIForChapter($20, ItemAI_Lockpick)
+SetItemAIForChapter($21, ItemAI_Lockpick)
+SetItemAIForChapter($26, ItemAI_Lockpick)
+SetItemAIForChapter($28, ItemAI_Lockpick)
+SetItemAIForChapter($2B, ItemAI_Lockpick)
+SetItemAIForChapter($2C, ItemAI_Lockpick)
+SetItemAIForChapter($2D, ItemAI_Lockpick)
+SetItemAIForChapter($2E, ItemAI_Lockpick)
+SetItemAIForChapter($3D, ItemAI_Lockpick)
 
 PUSH
 //modify CHAI to be able to change 3 and 4, not just 1 and 2

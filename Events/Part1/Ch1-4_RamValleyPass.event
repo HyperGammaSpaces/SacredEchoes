@@ -144,8 +144,10 @@ Ch1_4_BeginningScene:
 	ENDA
 
 Ch1_4_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
 	FADI 10
+    STAL 5
 	MUSC SongID_Victory
 	SetBackground(Woodland)
 		CHECK_EXISTS Gray
@@ -178,8 +180,7 @@ Ch1_4_EndingScene:
 		TEXTEND
 	LABEL 0x2
 	TEXTCLEAR
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	FADI 2
 	MNCH 0x04 //go to ch4
 	ENDA
 

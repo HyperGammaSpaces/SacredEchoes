@@ -94,8 +94,9 @@ Ch3_4C_UnitsNorth:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,2] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,2] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,3] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT
-
+    UNIT Kliff Villager 0x00 Level(1,Ally,True) [12,1] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+    UNIT
+    
 EnemyUnitsSonya:
 	UNIT SonyaBoss Mage_F SonyaBoss Level(10, Enemy, False) [10,18] 0x00 0x00 0x0 0x00 [Excalibur,SteelShield] DefensiveTerrainAI
 	UNIT Rigel_Merc Mercenary	SonyaBoss Level(15, Enemy, True) [9,5]	DropItem 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
@@ -140,25 +141,25 @@ Ch3_4C_BeginningScene:
 	LABEL 0x3
 	FADI 5
 	CLEA 0x0
-	
 	LOAD3 0x0 Ch3_4C_UnitsNorth 
 	ENUN
 	GotoPrepScreen
-
 	ENDA
 
 
 Ch3_4C_EndingScene:
-	CALL UnifiedBEXPCaller
-    FadeOutMusic
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C4Completed
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+    STAL 5
 	MUSC SongID_Victory
 	SetBackground(0x30)
 	BackgroundText(Ch3_4C_EndingText)
 	FADI 5
+    STAL 5
 	SetBackground(0x4C)
 	BackgroundText(Ch3_4C_EndingText_DeenRetreats)
 	FADI 5

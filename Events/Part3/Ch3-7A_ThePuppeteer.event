@@ -2,6 +2,7 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 #define DeltheaLocalFlag 0x20
+#define GateLocalFlag 0x21
 
 EventPointerTable(plCh3A_7_Event, Ch3_7A_ThisChapter)
 
@@ -27,7 +28,7 @@ Ch3_7A_TurnBasedEvents:
 	TurnEventPlayer(0x0,SluiceGateWallCrack2,10)
 	TurnEventPlayer(0x0,SluiceGateWallCrack3,11)
 	TurnEventPlayer(0x0,SluiceGateWallCrack4,12)
-	TurnEventPlayer(0x0,SluiceGateFlood,13)
+	TurnEventEnemy(0x0,SluiceGateFlood,13)
 	TURN
 	
 WyvernsSpawn:
@@ -37,31 +38,26 @@ WyvernsSpawn:
 SluiceGateStart:
 	CameraCursor(Tatarrah)
 	MapText(Ch3_7A_SluiceGateStart)
+    STAL 30
 	EARTHQUAKE_START 0x100
 	STAL 30
-	FADI 16
-	STAL 30
-	EARTHQUAKE_END
-	TILECHANGE 0x1 //tilechange 0x01 (wall)
-	STAL 30
-	FADU 16
-	STAL 30
-    CAMERA_CENTERED [1,6]
+    CAMERA_CENTERED [1,7]
     STAL 30
+	EARTHQUAKE_END
+    FlashCursor(1, 6, 60)
+	TILECHANGE 0x1 //tilechange 0x01 (wall)
+	STAL 60
     CAMERA_CENTERED Alm
 	NoFade
 	ENDA
 	
 SluiceGateDrain1:
 	EARTHQUAKE_START 0x100
-	STAL 30
-	FADI 16
-	STAL 30
+	STAL 60
 	EARTHQUAKE_END
 	TILECHANGE 0x2 //wlevel half left
 	TILECHANGE 0x3 //wlevel half right
 	STAL 30
-	FADU 16
 	SOUN 0xBD //water going down
 	STAL 30
 	NoFade
@@ -69,25 +65,23 @@ SluiceGateDrain1:
 	
 SluiceGateDrain2:
 	EARTHQUAKE_START 0x100
-	STAL 30
-	FADI 16
-	STAL 30
+	STAL 60
 	EARTHQUAKE_END
 	TILECHANGE 0x4 //wlevel none left
 	TILECHANGE 0x5 //wlevel none right
 	STAL 30
-	FADU 16
 	SOUN 0xBD //water going down
 	STAL 30
 	NoFade
 	ENDA
 	
 SluiceGateWallCrack1:
-	CAMERA_CENTERED [22,6]
+	CAMERA_CENTERED [22,7]
     STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
+    FlashCursor(22, 7, 60)
 	TILECHANGE 0x6 //wall right 1
 	STAL 30
 	SOUN 0xB0 //cracking wall
@@ -98,11 +92,12 @@ SluiceGateWallCrack1:
 	ENDA
 	
 SluiceGateWallCrack2:
-	CAMERA_CENTERED [1,6]
+	CAMERA_CENTERED [1,7]
     STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
+    FlashCursor(0, 7, 60)
 	TILECHANGE 0x7 //wall left 1
 	STAL 30
 	SOUN 0xB0 //cracking wall
@@ -112,11 +107,12 @@ SluiceGateWallCrack2:
 	ENDA
 	
 SluiceGateWallCrack3:
-	CAMERA_CENTERED [21,6]
+	CAMERA_CENTERED [21,7]
     STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
+    FlashCursor(21, 7, 60)
 	TILECHANGE 0x8 //wall right 2
 	STAL 30
 	SOUN 0xB0 //cracking wall
@@ -126,11 +122,12 @@ SluiceGateWallCrack3:
 	ENDA
 	
 SluiceGateWallCrack4:
-	CAMERA_CENTERED [2,6]
+	CAMERA_CENTERED [2,7]
     STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
+    FlashCursor(1, 7, 60)
 	TILECHANGE 0x9 //wall left 2
 	STAL 30
 	SOUN 0xB0 //cracking wall
@@ -143,9 +140,15 @@ SluiceGateFlood:
 	CameraCursor(12,5)
 	EARTHQUAKE_START 0x100
 	STAL 60
-	MapText(Ch3_7A_Flood)
+    CHECK_ALIVE Tatarrah
+    BEQ 0x666 rC r0
+        MapText(Ch3_7A_Flood)
+    LABEL 0x666
 	FADI 2
-	ENUT 0x65 //game over
+    STAL 1
+	EARTHQUAKE_END
+    SetBackground(BlackBackground)
+	GameOver
 	ENDB
 
 Ch3_7A_CharacterBasedEvents:
@@ -348,12 +351,13 @@ DeltheaWakesUp:
 	ENDA
 
 Ch3_7A_EndingScene:
-	CALL UnifiedBEXPCaller
-    MUSCMID SongID_Silence
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3A7Completed
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+    STAL 5
 	SetBackground(0x0B)
 	CHECK_ALIVE Luthier
 	BEQ 0x4 0xC 0x0
@@ -374,10 +378,10 @@ Ch3_7A_EndingScene:
 			TEXTCLEAR
 			FADI 2
             CLEAN
+            SetBackground(BlackBackground,5)
 			EVBIT_MODIFY 0x1
 			LOAD1 0x1 DeltheaJoins
 			ENUN
-            SetBackground(BlackBackground,5)
 			CharacterJoinedNotification(Notif_DeltheaJoin)
             FADI 5
 			EVBIT_MODIFY 0x0
@@ -405,14 +409,15 @@ Ch3_7A_EndingScene:
 		TEXTCLEAR
 		FADI 2
         CLEAN
+        SetBackground(BlackBackground,5)
 		EVBIT_MODIFY 0x1
 		LOAD1 0x1 DeltheaJoins
 		ENUN
-        SetBackground(BlackBackground,5)
 		CharacterJoinedNotification(Notif_DeltheaJoin)
         FADI 5
 		EVBIT_MODIFY 0x0
 	LABEL 0x6
+    SetBackground(BlackBackground)
 	EVBIT_MODIFY 0x1
 	CHECK_EVENTID gChapter3C7Completed
 	BEQ 0x13 0xC 0x0

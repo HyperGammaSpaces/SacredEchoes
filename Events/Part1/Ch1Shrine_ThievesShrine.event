@@ -94,13 +94,15 @@ ThiefShrine_BeginningScene:
 	ENDA
 
 ThiefShrine_EndingScene:
+    CALL EndMusicAndMMS
 	SVAL 0x3 0x3
 	ASMC 0x85C65
 	//SADD 0x32
 	CALL UnifiedBEXPCaller
+    FADI 2
 	SVAL 0x2 0x3E
 	MNCH 0xFFFF //go to world map
-	//ASMC 0x37D59
+	CALL PostgameUnlockChecker
 	ENDA
 
 #ifndef InlineEvents

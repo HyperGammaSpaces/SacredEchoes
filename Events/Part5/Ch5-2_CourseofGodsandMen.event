@@ -145,7 +145,7 @@ CutsceneUnits_Celica:
     UNIT
 
 CutsceneUnits_Jedah:
-    UNIT Jedah_Ch4 Necromancer Jedah_Ch4 Level(15, Enemy, False) [10,13] 0x00 0x00 0x0 0x0 [Thanatos] AttackInRangeAI
+    UNIT JedahCutsceneUnit Necromancer JedahCutsceneUnit Level(15, Enemy, False) [10,13] 0x00 0x00 0x0 0x0 [Thanatos] AttackInRangeAI
     UNIT
     
 CutsceneUnits_End_Alm:
@@ -154,11 +154,11 @@ CutsceneUnits_End_Alm:
     UNIT
     
 CutsceneUnits_End_Jedah:
-    UNIT Jedah_Ch4 Necromancer Jedah_Ch4 Level(15, Enemy, False) [23,15] 0x00 0x00 0x1 JedahREDA [Thanatos] AttackInRangeAI
+    UNIT JedahCutsceneUnit Necromancer JedahCutsceneUnit Level(15, Enemy, False) [23,15] 0x00 0x00 0x1 JedahREDA [Thanatos] AttackInRangeAI
     UNIT
 
 JedahREDA:
-    REDA [21,15] 0x08 0x00 0x14 0x0
+    REDA [21,15] NoFlags Walk_Slow 0x00 0x14
 
 EnemyUnits:
 	UNIT Boss_Monster Gorgon	Boss_Monster Level(9, Enemy, True) [20,15]	0x00 0x00 0x0 0x00 [EvilEye] NeverMoveAI
@@ -166,20 +166,20 @@ EnemyUnits:
 	UNIT Terror_Fiend Fiend Boss_Monster Level(3, Enemy, True) [9,12] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
 	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [7,13] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
 	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [11,13] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
-	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [6,14] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
-	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [12,14] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
-	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [6,16] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
-	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [12,16] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
-	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [7,18] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
-	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [11,18] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [6,14] 0x00 0x00 0x0 0x00 [BaseSword] MonsterAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [12,14] 0x00 0x00 0x0 0x00 [BaseSword] MonsterAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [6,16] 0x00 0x00 0x0 0x00 [BaseSword] MonsterAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [12,16] 0x00 0x00 0x0 0x00 [BaseSword] MonsterAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [7,18] 0x00 0x00 0x0 0x00 [BaseSword] MonsterAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [11,18] 0x00 0x00 0x0 0x00 [BaseSword] MonsterAI
 	//2 lv15 deathgoyles
-	UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(15, Enemy, True) [6,3] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-	UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(15, Enemy, True) [10,3] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(15, Enemy, True) [6,3] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
+	UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(15, Enemy, True) [10,3] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
 	//2 lv 7 white dragons and 2 lv 13 necrodragons
-	UNIT Terror_WhiteDragon WhiteDragon Boss_Monster Level(7, Enemy, True) [19,10] 0x00 0x00 0x0 0x00 [FireFang] NoAI
-	UNIT Terror_WhiteDragon WhiteDragon Boss_Monster Level(7, Enemy, True) [21,10] 0x00 0x00 0x0 0x00 [FireFang] NoAI
-	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(13, Enemy, True) [18,14] 0x00 0x00 0x0 0x00 [FireFang] NoAI
-	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(13, Enemy, True) [22,14] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT Terror_WhiteDragon WhiteDragon Boss_Monster Level(7, Enemy, True) [19,10] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT Terror_WhiteDragon WhiteDragon Boss_Monster Level(7, Enemy, True) [21,10] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(13, Enemy, True) [18,14] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(13, Enemy, True) [22,14] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
 	UNIT
 	
 StairsReinforcements:
@@ -254,13 +254,13 @@ Ch5F2_BeginningScene:
     TEXTCLEAR
 	MUSCMID SongID_Silence
     FADI 2
-    
+    STAL 5
     MUSC SongID_Env_LegendaryWeapon
     SetBackground(0x17, 2)
     BackgroundText(Ch5_2_MilaAltar_4)
     MUSCMID SongID_Silence
     FADI 2
-    
+    STAL 5
     //LOMA to 0x28 at [9,5] and do tilechange 0x0 before fade-in
     SVAL 0xB Coords(9,5)
     LOMA 0x28
@@ -274,10 +274,10 @@ Ch5F2_BeginningScene:
 	
     //Walk Celica and Jedah in together
     MOVE 0x08 Celica [8,5]
-	MOVE 0x08 Jedah_Ch4 [10,5]
+	MOVE 0x08 JedahCutsceneUnit [10,5]
 	ENUN
     STAL 20
-    CameraCursor(Jedah_Ch4)
+    CameraCursor(JedahCutsceneUnit)
     SetBackground(0x2D)
     TEXTMODE 1
     TEXTSHOW Ch5_2_MilaAltar_5
@@ -299,6 +299,7 @@ Ch5F2_BeginningScene:
     REMU Celica
     CLEA 0x0
     CLEE 0x0
+    STAL 20
     
     //LOMA back to 0x2E at [9,24]. Fade in. Load cutscene allies
     SVAL 0xB Coords(9,24)
@@ -358,9 +359,10 @@ Ch5F2_BeginningScene:
 	ENDA
 
 Ch5F2_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
 	FADI 2
+    STAL 5
     CLEA 0x0
     CLEE 0x0
 	RemoveTrapAtCoords(20,15)
@@ -386,7 +388,7 @@ Ch5F2_EndingScene:
     STAL 20
     LOAD1 0x1 CutsceneUnits_End_Jedah
     ENUN
-    FlashCursor(Jedah_Ch4, 60)
+    FlashCursor(JedahCutsceneUnit, 60)
     TEXTMODE 0
     TEXTSHOW Ch5_2_EndingText_2
     TEXTEND
@@ -399,7 +401,7 @@ Ch5F2_EndingScene:
     //Stop suddenly
     MOVE 0x18 Alm [20,14]
     ENUN
-    //show the "!" bubble?
+    //TODO: show the "!" bubble?
     EARTHQUAKE_START 0x100
     STAL 60
     FADI 5
@@ -424,13 +426,13 @@ Ch5F2_EndingScene:
     SetBattleNumbers(83,16,61,53,35,0)
     CriticalHit(0,48)
     EndAttack
-    FIG1 Alm Jedah_Ch4 Falchion
+    FIG1 Alm JedahCutsceneUnit Falchion
     
-    CHECK_ALIVE Jedah_Ch4
+    CHECK_ALIVE JedahCutsceneUnit
     BEQ 0x300 0xC 0x0
-        FlashCursor(Jedah_Ch4, 60)
+        FlashCursor(JedahCutsceneUnit, 60)
         Text(Ch5_2_EndingText_4)
-        SVAL 0x2 Jedah_Ch4
+        SVAL 0x2 JedahCutsceneUnit
         CALL Warp_Out_Effect
     LABEL 0x300
     STAL 20

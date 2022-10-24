@@ -71,7 +71,8 @@ PlayerPlacement:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [3,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [2,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [3,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT
+    UNIT Kliff Villager 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT
 
 CutsceneUnits:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [2,19] 0x00 0x00 0x1 REDA8R17 [BaseSword, Vulnerary] NoAI
@@ -132,14 +133,14 @@ Evt_BeginningScene:
 	ENDA
 
 Evt_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
-	CLEE 0x0
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4C1Completed
 	EVBIT_MODIFY 0x0
-	
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+	CLEE 0x0
+	STAL 5
 	MUSC SongID_Victory
 	SetBackground(0x28, 5)
 	BackgroundText(Ch4C_1_EndingText)
@@ -172,7 +173,7 @@ Evt_EndingScene:
 	FADI 2
 	CLEA 0x0
 	CLEN 0x0
-	
+	STAL 5
 	MUSC SongID_Env_GustyWind
 	SetBackground(0x28, 5)
 	BackgroundText(Ch4C_1_EndingText_3)

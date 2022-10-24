@@ -286,6 +286,7 @@ Ch4A7_BeginningScene:
     LOAD1 0 LoadHestia
     ENDWARP
     ENUN
+    STAL 5
     FlashCursor(HestiaCh4, 60)
     SetBackground(0x46)
     BackgroundText(Ch4A_7_OpeningText)
@@ -298,7 +299,7 @@ Ch4A7_BeginningScene:
     SVAL 0x2 HestiaCh4
 	_WARP 0xFFFF 0xFFFD [5,11]
 	CALL Warp_In_Effect
-	STAL 20
+	STAL 40
     
     //alm and co. show up
     EVBIT_T 0x9
@@ -333,13 +334,12 @@ Ch4A7_BeginningScene:
 	ENDA
 
 Ch4A7_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A7Completed
 	EVBIT_MODIFY 0x0
-    
+	CALL UnifiedBEXPCaller
+	FADI 2
+    STAL 5
     MUSC SongID_Env_WindBirds
 	SetBackground(0x46) //snow fort
     SVAL 0x2 Ch4A_7_EndingText
@@ -358,7 +358,7 @@ Ch4A7_EndingScene:
     TEXTCLEAR
 	MUSCMID SongID_Silence
 	FADI 2
-	
+	STAL 20
 	MUSC SongID_FootstepsOfFate
 	SetBackground(0x0B) //castle hallway
 	BROWNBOXTEXT Loc_RigelCastle [8,8]

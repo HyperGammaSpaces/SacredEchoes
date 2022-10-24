@@ -12,7 +12,7 @@ Ch3_6C_ThisChapter:
 	POIN Ch3_6C_Dunno Ch3_6C_Dunno Ch3_6C_Dunno
 	POIN Ch3_6C_Tutorial
 	POIN Ch3_6C_Ballista1 Ch3_6C_Ballista2
-	POIN Ch3_6C_Units1 Ch3_6C_Units1
+	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
 	POIN SkirmishEnemies SkirmishEnemies SkirmishEnemies
 	POIN Ch3_6C_BeginningScene Ch3_6C_EndingScene
@@ -39,7 +39,7 @@ LoadBrigandsRight:
 	ENDA
 	
 GargsSpawn:
-	ReinforcementEvent(GargoylesLeft)
+	LoadReinforcements(GargoylesLeft)
 	ReinforcementEvent(GargoylesRight)
 	NoFade
 	ENDA
@@ -88,7 +88,7 @@ Village2Event:
 	VillageEventItem(Ch3_6C_VillageText2,0x05,CoralRing) 
 	ENDA
 
-Ch3_6C_Units1:
+PlayerPlacement:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -101,7 +101,8 @@ Ch3_6C_Units1:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [0,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [1,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT
+    UNIT Kliff Villager 0x00 Level(1,Ally,True) [0,9] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+    UNIT
 
 CutsceneUnits:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -188,18 +189,19 @@ Ch3_6C_BeginningScene:
 	MapText(Ch3_6C_OpeningText_2)
 	FADI 16
 	CLEA 0x0
-	LOAD3 0x0 Ch3_6C_Units1 
+	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	GotoPrepScreen
 	ENDA
 
 Ch3_6C_EndingScene:
-	CALL UnifiedBEXPCaller
-    FadeOutMusic
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C6Completed
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+    STAL 5
 	MUSC SongID_Victory
 	SetBackground(0x1D)
 	BackgroundText(Ch3_6C_EndingText)

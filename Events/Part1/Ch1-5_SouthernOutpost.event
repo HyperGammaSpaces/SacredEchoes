@@ -256,18 +256,19 @@ Ch1_5_BeginningScene:
 	ENDA
 
 Ch1_5_EndingScene:
+    CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
 	FADI 10
-	SVAL 0x1 0x1
+    STAL 5
 	CHECK_EVENTID 0x8
-	BEQ 0x1 0xC 0x0
+	BEQ 0x1 rC r0
 	SVAL 0x2 Clair
 	CHECK_EXISTS 0xFFFD
-	IFEQ 0x1 0xC 0x0
+	BEQ 0x1 rC r0
 	CHECK_ALIVE 0xFFFD
-	IFEQ 0x1 0xC 0x0
+	BEQ 0x1 rC r0
 	CHECK_ALLEGIANCE 0xFFFD //is Clair blue?
-	IFNE 0x1 0xC 0x0 //if not, goto NoClair
+	BNE 0x1 rC r0 //if not, goto NoClair
 		CLEA 0x0
 		CLEE 0x0
 		LOAD2 0x1 CutsceneUnits
@@ -306,15 +307,14 @@ Ch1_5_EndingScene:
 	MOVE 0x10 Lukas [1, 2]
 	ENUN
 
-	SVAL 0x1 0x1
 	CHECK_ALIVE Gray 
-	BEQ 0x4 0xC 0x0 //if not, goto NoFaye
+	BEQ 0x4 rC r0 //if not, goto NoFaye
 	CHECK_ALIVE Tobin 
-	BEQ 0x4 0xC 0x0 //if not, goto NoFaye
+	BEQ 0x4 rC r0 //if not, goto NoFaye
 	CHECK_EVENTID gFayeRecruited
-	BEQ 0x3 0xC 0x0
+	BEQ 0x3 rC r0
 	CHECK_ALIVE Faye //is Faye alive?
-	BEQ 0x3 0xC 0x0 //if not, goto NoFaye
+	BEQ 0x3 rC r0 //if not, goto NoFaye
 		CAMERA_CENTERED [7, 10]
 		TEXTSTART 
 		TEXTSHOW Ch1_5_PostBattle_Faye
@@ -328,8 +328,9 @@ Ch1_5_EndingScene:
 		TEXTCLEAR
 		MOVE 0x12 Gray [1,2]
 		MOVE 0x10 Tobin [1,2]
+        FADI 2
 		ENUN
-		GOTO 0x4
+		GOTO 0x6
 	LABEL 0x3
 		CAMERA_CENTERED [7, 10]
 		TEXTSTART 
@@ -338,10 +339,12 @@ Ch1_5_EndingScene:
 		TEXTCLEAR
 		MOVE 0x12 Gray [1,2]
 		MOVE 0x10 Tobin [1,2]
+        FADI 2
 		ENUN
+        GOTO 0x6
 	LABEL 0x4
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
+	FADI 2
+    LABEL 0x6
 	MNCH 0x05 //go to ch5
 	ENDA
 

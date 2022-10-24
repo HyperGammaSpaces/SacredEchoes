@@ -35,8 +35,11 @@ LoadSummons:
 	ENUN
 	SOUN 0x3BF // summoning SFX
 	STAL 20
-	LoadReinforcements(GorgonSummons)
-	RESUMM 0xB9
+    WARPIN [16, 1]
+    LOAD1 0 GorgonSummons
+    ENDWARP
+    ENUN
+	EVBIT_T 0x7
 	GOTO 0
 
 	LABEL 1
@@ -278,13 +281,13 @@ Dummy_BeginningScene:
 	ENDA
 
 Dummy_EndingScene:
-	CALL UnifiedBEXPCaller
-	MUSCMID SongID_Silence
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A4Completed
 	EVBIT_MODIFY 0x0
-	
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+	STAL 5
 	SetBackground(0x11)
 	CHECK_ALIVE Tatiana
 	BEQ 0x1 0xC 0x0
@@ -292,8 +295,8 @@ Dummy_EndingScene:
 		MUSC SongID_Victory
 		BackgroundText(Ch4_4A_EndingText)
 		STAL 20
-		CharacterJoinedNotification(Notif_TatianaJoin)
 		EVBIT_MODIFY 0x1
+		CharacterJoinedNotification(Notif_TatianaJoin)
 		ENUT gTatianaRecruited
 		EVBIT_MODIFY 0x0
         FadeOutMusic

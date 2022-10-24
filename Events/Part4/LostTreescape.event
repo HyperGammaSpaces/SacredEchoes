@@ -107,9 +107,9 @@ EnemyUnits:
 	UNIT 0xB1 ElderBael 0x0 Level(6, Enemy, True) [2,17] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
 	UNIT 0xB1 Entombed 0x0 Level(4, Enemy, True) [1,18] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
 	
-	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [22,15] 0x00 0x00 0x0 0x00 [HellFang] NoAI
-	UNIT 0xB1 Gorgon 0x0 Level(4, Enemy, True) [10,16] 0x00 0x00 0x0 0x00 [EvilEye] NoAI
-    UNIT 0xB1 Kerberos 0x0 Level(4, Enemy, True) [24,20] 0x00 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [22,15] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB1 Gorgon 0x0 Level(4, Enemy, True) [10,16] 0x00 0x00 0x0 0x00 [EvilEye] MonsterAI
+    UNIT 0xB1 Kerberos 0x0 Level(4, Enemy, True) [24,20] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT 0xB1 Wight_Bow 0x0 Level(5, Enemy, True) [20,18] 0x0 0x00 0x0 0x00 [SilverBow] NeverMoveAI
 	
 	UNIT 0xB1 ElderBael 0x0 Level(4, Enemy, True) [14,15] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
@@ -136,9 +136,9 @@ EnemyUnitsReplay:
 	UNIT 0xB1 Random_ElderBael 0x0 Level(6, Enemy, True) [2,17] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
 	UNIT 0xB1 Entombed 0x0 Level(4, Enemy, True) [1,18] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
 	
-	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [17,15] RandomizePosition 0x00 0x0 0x00 [HellFang] NoAI
-	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [18,20] RandomizePosition 0x00 0x0 0x00 [HellFang] NoAI
-	UNIT 0xB1 Kerberos 0x0 Level(4, Enemy, True) [10,16] RandomizePosition 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [17,15] RandomizePosition 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [18,20] RandomizePosition 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB1 Kerberos 0x0 Level(4, Enemy, True) [10,16] RandomizePosition 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT 0xB1 Wight_Bow 0x0 Level(5, Enemy, True) [20,18] 0x0 0x00 0x0 0x00 [SilverBow] NeverMoveAI
 	
 	UNIT 0xB1 Random_ElderBael 0x0 Level(4, Enemy, True) [14,15] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
@@ -191,27 +191,30 @@ Lostwoods_BeginningScene:
 	ENDA
 
 Lostwoods_EndingScene:
+    CALL EndMusicAndMMS
 	CHECK_EVENTID gLostWoodsCompleted
 	BNE 0x102 0xC 0x0
     
         CALL UnifiedBEXPCaller
-        MUSCMID SongID_Silence
         FADI 2
+        STAL 5
         CLEE 0x0
         
 		MUSC SongID_Revelations
+		SetBackground(0x4A,5)
 		EVBIT_MODIFY 0x1
 		ENUT gLostWoodsCompleted
 		EVBIT_MODIFY 0x0
-		SetBackground(0x4A,5)
 		BackgroundText(LostTreescape_Halcyon)
 		FADI 2
 		CLEAN
+        STAL 5
 		
 		//Give Hero's Proof to Alm
+        EVBIT_MODIFY 0x4
+		SetBackground(0x48,5)
 		REVEAL Alm
 		Event_SetAlmMode
-		SetBackground(0x48,5)
         CALL $591F40
 		SVAL 0x3 HerosProof 
 		GIVEITEMTO Alm
@@ -221,12 +224,15 @@ Lostwoods_EndingScene:
 		CLEAN
 		Event_SetCelicaMode
 		REMU Alm
-		
+        EVBIT_MODIFY 0x0
+        
+		STAL 5
 		SetBackground(0x4A,5)
 		BackgroundText(LostTreescape_Halcyon_2)
 		MUSCMID SongID_Silence
 		FADI 2
-		
+        
+		STAL 5
 		SetBackground(0x48,5)
 		TEXTMODE 1
 		TEXTSHOW LostTreescape_CelicaProjection
@@ -248,10 +254,10 @@ Lostwoods_EndingScene:
     SVAL 0x3 0x3
 	ASMC 0x85C65
     CALL UnifiedBEXPCaller
-    MUSCMID SongID_Silence
     FADI 2
     SVAL 0x2 0x43
 	MNCH 0xFFFF
+    CALL PostgameUnlockChecker
 	
 	LABEL 0x103
 	ENDA

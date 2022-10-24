@@ -166,7 +166,7 @@ LordSwitchFunction:
         blh GmMU_SetNode
     
 	EndFunc:
-	pop {r4-r6}
+	pop {r4-r7}
 	pop {r0}
 	bx r0
 
@@ -191,6 +191,13 @@ SwitchCommandUsability:
 SetNextDestination:
 	push {r4, r5, lr}
 	mov r4, r0 @store destination
+    
+        @exit early if trying to send us to the map we just completed
+        ldr r0, =gWorldmapMUData
+        ldrb r0, [r0, #0x1] @current base ID
+        cmp r0, r4
+        beq FoundDestination
+        
 	mov r2, #0x0
 	mov r5, #0x2
 	ldr r3, =gWorldmapData
@@ -233,34 +240,34 @@ SetNextDestination:
 GetDestinationBasedOnStoryFlags:
 	push {r4-r6, lr}
     mov r6, #0x1
+    mov r5, #0x1
+    neg r5, r5 @return -1 as error value
 	ldr r0, =gChapterData
 	ldrb r1, [r0, #0x1B] @mode byte
 	cmp r1, #0x3
 	beq CheckCelicaFlags
 		CheckAlmFlags:
 		ldr r4, =AlmDestinationTable
-		ldsb r5, [r4, r6]
 		AlmFlagLoop:
 		ldrb r0, [r4]
 		cmp r0, #0x0
 		beq ReturnDestination
 		blh CheckEventId
 		cmp r0, #0x0
-		beq NextAlmFlag
+		beq ReturnDestination
 			ldsb r5, [r4, r6]
 			NextAlmFlag:
 			add r4, #0x2
 			b AlmFlagLoop
 	CheckCelicaFlags:
 	ldr r4, =CelicaDestinationTable
-	ldsb r5, [r4, r6]
 	CelicaFlagLoop:
 	ldrb r0, [r4]
 	cmp r0, #0x0
 	beq ReturnDestination
 	blh CheckEventId
 	cmp r0, #0x0
-	beq NextCelicaFlag
+	beq ReturnDestination
 		ldsb r5, [r4, r6]
 		NextCelicaFlag:
 		add r4, #0x2
@@ -594,21 +601,26 @@ HandleActClosureSaves:
 		bne SecondCheck
 		
 	SwitchLordBeforeSave:
-		ldr r0, =gChapterData
-		ldrb r0, [r0, #0x1B] 
-		cmp r0, #0x2		//alm mode
-		bne CelicaMode
-			mov  r0, #0x15
-			ldr  r4, =0x0202bcf0
-			strb r0, [r4, #0xE]
-			b    EndSaveMenu
-		CelicaMode:
-		cmp r0, #0x3
-		bne SecondCheck
-			mov  r0, #0x1C
-			ldr  r4, =0x0202bcf0
-			strb r0, [r4, #0xE]
-			b    EndSaveMenu
+        ldr     r3, =gWorldmapMUData
+        ldrb    r1, [r3, #0x1] @current base ID
+        bl GetDestinationBasedOnStoryFlags
+        @this should set the save chapter title to the correct next location
+        cmp r0, #0
+        bge CheckWorldmapChapterID
+        @last resort, hardcoding.
+            ldr r0, =gChapterData
+            ldrb r0, [r0, #0x1B] 
+            cmp r0, #0x2		//alm mode
+            bne CelicaMode
+                mov r0, #0x15
+                strb r0, [r5, #0xE]
+                b    EndSaveMenu
+            CelicaMode:
+            cmp r0, #0x3
+            bne SecondCheck
+                mov  r0, #0x1D
+                strb r0, [r5, #0xE]
+                b    EndSaveMenu
 	
 	SecondCheck:
         cmp  r4, #0x3 		//thief shrine

@@ -94,8 +94,9 @@ Ch3_4C_UnitsSouth:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [14,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT
-	
+    UNIT Kliff Villager 0x00 Level(1,Ally,True) [13,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+    UNIT
+    
 EnemyUnitsDeen:
 	UNIT DeenBoss Myrmidon DeenBoss Level(12, Enemy, False) [2,1] 0x00 0x00 0x0 0x00 [BraveSword,DeensSword] DefensiveTerrainAI
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(14, Enemy, True) [3,3]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
@@ -144,21 +145,22 @@ Ch3_4C_BeginningScene:
 	LOAD3 0x0 Ch3_4C_UnitsSouth 
 	ENUN
 	GotoPrepScreen
-
 	ENDA
 
 
 Ch3_4C_EndingScene:
-	CALL UnifiedBEXPCaller
-    FadeOutMusic
-	FADI 2
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C4Completed
 	EVBIT_MODIFY 0x0
+    CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADI 2
+    STAL 5
 	MUSC SongID_Victory
 	SetBackground(0x30)
 	BackgroundText(Ch3_4C_EndingText)
 	FADI 5
+    STAL 5
 	SetBackground(0x4C)
 	BackgroundText(Ch3_4C_EndingText_SonyaRetreats)
 	FADI 5
