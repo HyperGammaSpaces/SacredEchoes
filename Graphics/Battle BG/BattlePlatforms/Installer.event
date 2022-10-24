@@ -140,5 +140,8 @@ PUSH
 	ORG BattlePlatformTable+(BattlePlatformTableLength*0x18)
 	WORD $0 $0 $0 $0 $0 $0
 POP
+//BattlePlatformGraphicsOffset:
+
+//BattlePlatformPalettesOffset:
 
 #include "PlatformFixes.event"

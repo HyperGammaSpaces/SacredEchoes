@@ -1,0 +1,229 @@
+/*
+Credits CGs are loaded onto BG3 with an arcane process to allow for the 8 palettes used. This makes arbitrary replacement convoluted. We can greatly simplify this process and improve loading times if we are loading less complex images e.g. text credits slides of our own.
+
+CG image data for the credits in FE8 is stored as a "CreditsCGStruct": (note this is different from the CG gallery table at A3CCEC, which is only used by event codes)
++0x00 - 10 gfx pointers, can cut this down to 1
++0x28 - tsa
++0x2C - palette
++0x30 - byte 0x78, timer maybe?
+
+//These structs are 0x34 bytes long in vanilla but if we aren't using CGs we can cut these down to 0x10.
+
+$08206BA0 ScrollingCreditsSlides:
+each entry 0x8 bytes, just a pointer to graphics data and TSA data. There are 13 entries if you count the Nintendo - All Rights Reserved screen at the very end. All use the same simple grayscale palette.
+
+At $08206E24 is the CreditsDisplayScript:
+
++0x00 pointer to scrolling credits image from the table at $08206BA0
++0x04 word 0
++0x08 word 0
++0x0C word 0
++0x10 word 0
++0x14 if non-zero, holds a pointer to the next ScrollingCreditsSlide and counts as word +0x00. This will display it seamlessly beneath its preceding slide.
++0x18 if +0x14 is 0, pointer to eirika mode CreditCGStruct
++0x1C if +0x14 is 0, pointer to eph mode CreditCGStruct
++0x20 time cue to fade to cg, counted from start of credits
++0x24 time cue to fade back to scroll, counted from start of credits
+
+vanilla script extends from 206E24 to 206FD0.
+Script interpreter function is FE8U:C4238
+Proc field +0x44 holds a pointer to the current CreditCGStruct. FE8U:C45E0 does the actual loading based on this.
+*/
+
+PUSH
+
+    //removing the unneeded 10-part cg stuff
+    ORG $C45FA
+    BYTE $00 //was 9 for the 10-parter
+    ORG $C4620
+    SHORT $6849 //TSA is now at +0x04 in the struct
+    ORG $C4630
+    SHORT $6880 //palette is now at +0x08 in the struct
+    ORG $C4648
+    BYTE $01 //was 0xA
+    ORG $C410E
+    SHORT $8980 //timer is now at +0x0C
+
+    //replacing CreditCGStruct pointers in the credits script. One each for Eirika/Ephraim mode
+    ORG $206E3C
+    POIN CreditSlide1_Struct
+    POIN CreditSlide1_Struct
+    ORG $206E64
+    POIN CreditSlide2_Struct
+    POIN CreditSlide2_Struct
+    ORG $206E8C
+    POIN CreditSlide3_Struct
+    POIN CreditSlide3_Struct
+    ORG $206EB4
+    POIN CreditSlide4_Struct
+    POIN CreditSlide4_Struct
+    ORG $206EF0
+    POIN CreditSlide5_Struct
+    POIN CreditSlide5_Struct
+    ORG $206F18
+    POIN CreditSlide6_Struct
+    POIN CreditSlide6_Struct
+    ORG $206F40
+    POIN CreditSlide7_Struct
+    POIN CreditSlide7_Struct
+    ORG $206F68
+    POIN CreditSlide8_Struct
+    POIN CreditSlide8_Struct
+
+    //redoing the events cg list too because why not
+    //this list is unused in sacred echoes, but i don't want it pointing to broken data now that the original CGs are freespace
+    ORG $A3CCEC
+    //entry 0 (lyon in the garden)
+    POIN CreditSlide1_Img
+    POIN CreditsPal
+    POIN CreditSlide1_TSA
+    //entry 1 (dead ismaire)
+    POIN CreditSlide1_Img
+    POIN CreditsPal
+    POIN CreditSlide1_TSA
+    //entry 2 (knoll and the stone)
+    POIN CreditSlide1_Img
+    POIN CreditsPal
+    POIN CreditSlide1_TSA
+
+    POIN CreditSlide3_Img
+    POIN CreditsPal
+    POIN CreditSlide3_TSA
+
+    POIN CreditSlide4_Img
+    POIN CreditsPal
+    POIN CreditSlide4_TSA
+
+    POIN CreditSlide5_Img
+    POIN CreditsPal
+    POIN CreditSlide5_TSA
+
+    POIN CreditSlide6_Img
+    POIN CreditsPal
+    POIN CreditSlide6_TSA
+
+    POIN CreditSlide7_Img
+    POIN CreditsPal
+    POIN CreditSlide7_TSA
+
+    POIN CreditSlide8_Img
+    POIN CreditsPal
+    POIN CreditSlide8_TSA
+
+    POIN CreditSlide9_Img
+    POIN CreditsPal
+    POIN CreditSlide9_TSA
+
+POP
+
+//these structs are labeled in the order they show in the credits, while the data they point to is labeled by order in the CG table
+CreditSlide1_Struct:
+POIN CreditSlide1_Img
+POIN CreditSlide1_TSA
+POIN CreditsPal
+WORD $78
+
+CreditSlide2_Struct:
+POIN CreditSlide8_Img
+POIN CreditSlide8_TSA
+POIN CreditsPal
+WORD $78
+
+CreditSlide3_Struct:
+POIN CreditSlide3_Img
+POIN CreditSlide3_TSA
+POIN CreditsPal
+WORD $78
+
+CreditSlide4_Struct:
+POIN CreditSlide6_Img
+POIN CreditSlide6_TSA
+POIN CreditsPal
+WORD $78
+
+CreditSlide5_Struct:
+POIN CreditSlide7_Img
+POIN CreditSlide7_TSA
+POIN CreditsPal
+WORD $78
+
+CreditSlide6_Struct:
+POIN CreditSlide9_Img
+POIN CreditSlide9_TSA
+POIN CreditsPal
+WORD $78
+
+CreditSlide7_Struct:
+POIN CreditSlide4_Img
+POIN CreditSlide4_TSA
+POIN CreditsPal
+WORD $78
+
+CreditSlide8_Struct:
+POIN CreditSlide5_Img
+POIN CreditSlide5_TSA
+POIN CreditsPal
+WORD $78
+
+
+//I'm just using the same palette for all of them because these are just text slides.
+ALIGN 4
+CreditsPal:
+#incbin "CreditsPal.pal.bin"
+
+//NOTE: these TSAs are in reverse vertical order, 60 bytes (30 4BPP tiles) per row. The two bytes in front of the map are [width-1, height-1]
+CreditSlide1_Img:
+#incbin "01.img.bin"
+CreditSlide1_TSA:
+BYTE $1D $13
+#incbin "01.map.bin"
+ALIGN 4
+
+CreditSlide3_Img:
+#incbin "03.img.bin"
+CreditSlide3_TSA:
+BYTE $1D $13
+#incbin "03.map.bin"
+ALIGN 4
+
+CreditSlide4_Img:
+#incbin "04.img.bin"
+CreditSlide4_TSA:
+BYTE $1D $13
+#incbin "04.map.bin"
+ALIGN 4
+
+CreditSlide5_Img:
+#incbin "05.img.bin"
+CreditSlide5_TSA:
+BYTE $1D $13
+#incbin "05.map.bin"
+ALIGN 4
+
+CreditSlide6_Img:
+#incbin "06.img.bin"
+CreditSlide6_TSA:
+BYTE $1D $13
+#incbin "06.map.bin"
+ALIGN 4
+
+CreditSlide7_Img:
+#incbin "07.img.bin"
+CreditSlide7_TSA:
+BYTE $1D $13
+#incbin "07.map.bin"
+ALIGN 4
+
+CreditSlide8_Img:
+#incbin "08.img.bin"
+CreditSlide8_TSA:
+BYTE $1D $13
+#incbin "08.map.bin"
+ALIGN 4
+
+CreditSlide9_Img:
+#incbin "09.img.bin"
+CreditSlide9_TSA:
+BYTE $1D $13
+#incbin "09.map.bin"
+ALIGN 4

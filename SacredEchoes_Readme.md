@@ -2,7 +2,7 @@
 
 This is a demake of Fire Emblem Echoes: Shadows of Valentia on the GBA. It includes reworked maps and a few new characters, as well as a few changes to the writing and game mechanics. Otherwise, it is largely faithful to the original games. The base game is FE8U.
 
-Currently playable through Act 4, with 43 story maps, 1 gaiden chapter, and 8 repeatable maps.
+Currently playable through all 5 acts, with 46 story maps, 1 gaiden chapter, and 8 repeatable maps.
 
 Specifically:
 
@@ -34,14 +34,14 @@ Specifically:
   - Expel has been buffed to 100% accuracy but only affects monster classes. It will hit all enemies in Mag/2 range which are of a Monster class type, and reduce them to 1 HP.
   - Promoted magic units will learn their whole unpromoted spell list. (This is why Mage/Cleric promotion levels are so high)
 - A (mostly) working world map that you can explore, with two lords you can alternate between after a certain point in the story.
-- Lion Heads/Sacred Springs which can be visited in the repeatable maps to gain statboosts, experience, and even revive dead units...
+- Lion Heads/Sacred Springs which can be visited in the repeatable maps to gain stat boosts, experience, and even revive dead units...
 
 Optional QOL fixes to GBAFE are included:
 
 - Includes Talk and Support Fixes that don't end the unit's turn
 - Includes HP bars and effective weapon notices on the map
 - Includes danger zone highlighting with Select button
-- Includes battle stats with animations off (with a UI inspired by the original Gaiden battle frame)
+- Includes battle stats and hit effects with animations off (with a UI inspired by the original Gaiden battle frame)
 - Includes the option to play on Casual mode, which can be selected at game start or toggled during gameplay.
 - The Guide has been updated to include details on the game's mechanics. The doubling threshold is viewable in-game by checking the help text of the Speed stat on the statscreen.
 
@@ -222,6 +222,7 @@ Some things are still under development for later releases.
 - The game has only been balanced for Normal mode (hard mode results may vary). It is recommended to only play on Easy or Normal for now.
 - Some support conversations have been implemented while others are still placeholders. (Roughly 80% complete)
 - Some issues have been reported with Rewarp.
+- The world map is rotated 90 degrees from the original. The final release will address this.
 
 #Credits
 
@@ -231,22 +232,23 @@ Some things are still under development for later releases.
 - Stan's Movement Skills
 - laqieer's world map installation utilities
 - Huichelaar's world map flags upgrades
-- Assorted small tweaks and patches by Stan, Tequila, Crazycolorz5, Vennobennu, Leonarth, 7743 and aera
-  - Extra shout out to Stan and Snakey1 for finally squashing the remaining bugs in the magic system!
-- Music hacking utilities by Sme and Alusq
+- Assorted small tweaks and patches by StanH, Tequila, Crazycolorz5, Vennobennu, Leonarth, 7743 and aera
+  - Extra shout out to StanH and Snakey1 for finally squashing the remaining bugs in the magic system!
+- Music hacking utilities by Sme and Alusq, including Alusq's expanded percussion kit
 - Music arrangements based on Echoes OST and on Gaiden MIDI remixes by 雨原
   - "Lord of a Dead Empire" arrangement by Mycahel
   - "What Lies at the End" sheet music by TorbyBrand on Musescore
   - "Revelations" sheet music by hinaflower on Musescore
+  - "Heritors of Arcadia" arrangement by bigyihsuan on Musescore
   - Title theme sheet music by Spencer Riffle on Musescore
   - "Omen", "Preparations (Deliverance)", "Preparations (Pilgrimage)", "Pride and Arrogance", "The Scions' Dance in Purgatory", and "A Distant Promise" by Uzel and The_Burger_King_420
-- NGMansion for original save expansion patch; Stan for Expanded Modular Save and Tequila for Convoy Split
+- NGMansion for original save expansion patch; StanH for Expanded Modular Save and Tequila for Convoy Split
 - Portraits:
-  - Jedah and Duma by L95
+  - Jedah, Dragon Duma, and Rodney by L95
   - Zopyrus by RandomWizard and Levin64
   - all others by hypergammaspaces or IS
 - Battle Animations: 
-  - Duma battle animation by Nuramon and L95
+  - Duma battle animation by Nuramon and L95; mapsprite by L95
   - Celica (Promoted and Unpromoted) by RedBean
   - Alm (T1+T2), Villagers, Snipers, Pirate (F), Dread Fighter, Vestal, Nuibaba, Arcanist, Cantor, Jedah, Wyvern Lord, Gold Knight and Fiend by Nuramon
   - Pirate (M) Repalette by Wan
@@ -279,21 +281,21 @@ Some things are still under development for later releases.
   - Knight Lord and Wight by Teraspark
   - Deathgoyle by L95 and Teraspark
   - Mogall (Tackle) by Epicer
-  - Duma mapsprite by SHYUTERz, HIROTO, and SHIRMER
 - Map sprites and class cards by flasuban, Tordo45, SkidMarc25, Leif, TAS20XX, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, Snewping, MeatOfJustice, DerTheVaporeon, FEier, Epicer, and Team SALVAGED
 - Battle palettes by Hypergammaspaces, Nuramon, and Dancer_A
 - LordGlenn's Cipher icons for weapon ranks, weapon icons for Regalia weapons
 - Cardcafe's Echoes item icons and FEier's Weapon icons, Dark magic icons by epicer and ilmoro
 - New support writing contributed by Meadows, Flare, Ese, and CaptinSpike
-  - Meadows: Alm/Tobin, Alm/Gray, Kliff/Gray, Kliff/Silque, Tobin/Clair, Tobin/Faye, Silque/Tatiana, Valbar/Deen, Valbar/Kamui, Mae/Est, Boey/Nomah,
-  - Ese: Alm/Celica, Alm/Kliff, Alm/Faye, Alm/Mycen, Celica/Boey, Celica/Genny, Celica/Saber, Gray/Acantha, Silque/Jesse, Python/Acantha, Kamui/Hyas, Atlas/Hyas
+  - Meadows: Alm/Tobin, Alm/Gray, Kliff/Gray, Kliff/Silque, Tobin/Clair, Tobin/Faye, Silque/Tatiana, Valbar/Deen, Valbar/Kamui, Mae/Est, Boey/Nomah
+  - Ese: Alm/Celica, Alm/Kliff, Alm/Faye, Alm/Mycen, Celica/Boey, Celica/Genny, Celica/Saber, Gray/Acantha, Tobin/Gray, Tobin/Clair, Tobin/Kliff, Silque/Jesse, Python/Acantha, Kamui/Hyas, Atlas/Hyas, Palla/Hyas, Boey/Conrad
   - CaptinSpike: Saber/Sonya C and B, assorted boss conversations
   - Flare: Clive/Mathilda B and A
-- Snakey1's REDA helpers, Support rework, MSS fixes and event cleanup
+- Pearl for boss conversations in Chapter 16A
 - RandomWizard for boss conversations and text formatting help, and "The Siege" map
 - Levin64 and Tea for story writing assistance and English proofreading
 - The_Burger_King_420, Uzel, and ilmoro for Spanish translation
 - marc_ and luciel for Spanish proofreading
+- Snakey1's REDA helpers, Support rework, MSS fixes and event cleanup
 - Pikmin1211 for eventing and enemy placement on "The Warship", "Zofia Harbor", "Invaders Descend" and "The Siege"
 - ZoramineFae for "The Warship" map
 - KrashBoomBang for "Unholy Blade", "Shattered Earth" and Sylvan Shrine map
