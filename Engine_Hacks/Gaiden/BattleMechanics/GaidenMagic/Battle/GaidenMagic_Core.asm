@@ -49,13 +49,15 @@ Spells_Getter:
     beq     CheckForAltSpellList
     cmp     r1, #0x1C               @ is Sonya?
     beq     CheckForAltSpellList
+    cmp     r1, #0x2A               @ is Yuzu?
+    beq     CheckForAltSpellList
     b       _Get_Spell_List
 
         CheckForAltSpellList:
         ldrb    r2, [r2, #0x4]  @ class id
         cmp     r2, #0x2b       @ saint
         blt     _Get_Spell_List
-        add     r1, #0x20       @ call alt spell list
+        add     r1, #0x30       @ call alt spell list
 
     _Get_Spell_List:
     ldr     r2, =SpellAssociationTable
@@ -1304,9 +1306,10 @@ GaidenMagicAI_CheckConditions:
 		ldr     r1, =gActiveUnit
 		ldr     r1, [r1]
 		ldrb    r1, [r1, #0x13] @current hp
-		cmp     r1, r0
-		ble     GaidenMagicAI_Continue
-		
+		cmp     r0, r1
+		blt     GaidenMagicAI_Continue
+        
+            @cost is NOT less than hp; exit.
 			mov     r0, #0x0
 			ldr     r1, =0x0803D69C+1
 			bx      r1
@@ -1328,13 +1331,13 @@ AIStaffCostCheck:
     mov     r1, #0x4 @staff bit
     and     r0, r1
     cmp     r0, #0x0
-    beq     GaidenStaffAI_Continue
+    beq     GaidenStaffAI_ContinueSearch
     mov     r0, r4
     ldr     r1, =0x080176B8 @GetItemWRank
     mov     lr, r1
     .short  0xf800
     cmp     r0, r6
-    blt     GaidenStaffAI_Continue
+    blt     GaidenStaffAI_ContinueSearch
         @now check for cost, and exit to 3FA80 if enough HP
     
     @check for spell cost
@@ -1346,14 +1349,16 @@ AIStaffCostCheck:
         ldr     r1, =gActiveUnit
         ldr     r1, [r1]
         ldrb    r1, [r1, #0x13] @current hp
-        cmp     r1, r0
-        ble     GaidenStaffAI_Continue
-        
+        cmp     r0, r1
+        bge     GaidenStaffAI_ContinueSearch
+            
+            @found a staff with cost less than current hp.
             mov     r0, #0x0
             ldr     r1, =0x0803FA80+1
             bx      r1
 
-    GaidenStaffAI_Continue:
+    @no match, keep searching.
+    GaidenStaffAI_ContinueSearch:
         add     r5, #1
         cmp     r5, #4
         bgt     GaidenStaffAI_NoStaff

@@ -14,7 +14,7 @@ PUSH
     #incbin "BattleLoadAttack.dmp"
     
     //add bonus damage for effectiveness
-    ORG $2AB12
+    ORG $2AB16
     BYTE EffectiveDamageBonus 
     PROTECT $2AB0C $2AB18
 

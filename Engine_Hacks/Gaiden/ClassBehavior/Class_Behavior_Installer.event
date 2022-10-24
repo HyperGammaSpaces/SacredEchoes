@@ -33,6 +33,10 @@ PUSH
 	ORG $2C150
 	SHORT $E011
     
+    //except monsters
+    ORG $17F90
+    jumpToHack(MonsterWrankCap)
+    
 POP
 ALIGN 4
 
@@ -48,6 +52,11 @@ ALIGN 4
 
 LockpickClassTable:
 BYTE CelicaPriestess AlmFighter CelicaPrincess AlmHero Rogue Rogue_F 0x00 
+ALIGN 4
+
+//cap monster wrank
+MonsterWrankCap:
+#include "MonsterWrankHack.lyn.event"
 ALIGN 4
 
 #include "Echoes_EXP/Echoes_EXP_Installer.event"

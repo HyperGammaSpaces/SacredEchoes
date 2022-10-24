@@ -73,7 +73,7 @@ b CheckSpellList
   ldrb r2, [r2, #0x4] 	@class id
   cmp r2, #0x2b			@saint
   blt CheckSpellList
-  add r1, #0x20			@call alt spell list
+  add r1, #0x30			@call alt spell list
 
 CheckSpellList:
 ldr r2, SpellAssociationTable

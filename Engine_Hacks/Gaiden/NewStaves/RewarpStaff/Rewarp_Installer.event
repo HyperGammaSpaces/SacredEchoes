@@ -23,6 +23,7 @@ PUSH
     ORG $288A4
 	Rewarp_Use_Effect:
 		#incbin "Rewarp_Use_Effect.dmp" //88 bytes
+        PROTECT $288B2 $288B5
         
     #ifdef ItemEffectRevamp
         IER_setItemEffect(IER_FX_Rewarp, RewarpUsabilityCheck, PUNull, RewarpStaff_GetTargetList, RewarpEffectCheck) 

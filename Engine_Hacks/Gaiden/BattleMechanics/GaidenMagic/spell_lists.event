@@ -4,7 +4,7 @@
 
 #define SetSpellListPointer(unitID, ptr) "PUSH; ORG SpellAssociationTable+(4*unitID); POIN ptr; POP"
 
-#define Const_MultiListSeparator 0x20
+#define Const_MultiListSeparator 0x30
 
 ALIGN 4
 SpellAssociationTable:
@@ -267,6 +267,34 @@ BYTE $00 $00
 ALIGN 4
 SetSpellListPointer(Nomah, NomahSpellList)
 
+YuzuSpellList:
+BYTE $01 Fire
+BYTE $21 Heal
+BYTE $25 Sagittae
+BYTE $00 $00
+ALIGN 4
+SetSpellListPointer(YuzuCC, YuzuSpellList)
+
+YuzuWSpellList:
+BYTE $01 Nosferatu
+BYTE $01 Heal
+BYTE $21 Seraphim
+BYTE $25 Aura
+BYTE $00 $00
+ALIGN 4
+SetSpellListPointer((YuzuCC+Const_MultiListSeparator),  YuzuWSpellList)
+
+ShadeSpellList:
+BYTE $01 Nosferatu
+BYTE $01 Physic
+BYTE $21 Silence
+BYTE $25 Freeze
+BYTE $27 Seraphim
+BYTE $2A Rescue
+BYTE $00 $00
+ALIGN 4
+SetSpellListPointer(ShadeCC, ShadeSpellList)
+
 JedahSpellList:
 BYTE $01 Mire
 BYTE $01 Sisyphus
@@ -286,8 +314,10 @@ NuibabaSpellList:
 BYTE $01 Mire
 BYTE $01 Thanatos
 BYTE $01 Medusa
+BYTE $01 Silence
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(NuibabaCC, NuibabaSpellList)
 
 MarlaSpellList:
 BYTE $01 Seraphim
