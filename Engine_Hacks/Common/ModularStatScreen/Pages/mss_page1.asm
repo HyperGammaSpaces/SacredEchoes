@@ -27,12 +27,12 @@ GrowthLoadCheck:
         
 IsPlayerUnit:
     str     r0, [sp, #0x14]
-    mov     r0, r8
-    blh     UnitHasMagicRank    @r0 = 1 if mag should show
-    cmp     r0, #0x0                
-    beq     NotMag                
-        draw_textID_at 13, 3, textID=0x4FF, growth_func=2
-        b       MagStrDone  
+    @mov     r0, r8
+    @blh     UnitHasMagicRank    @r0 = 1 if mag should show
+    @cmp     r0, #0x0                
+    @beq     NotMag                
+        @draw_textID_at 13, 3, textID=0x4FF, growth_func=2
+        @b       MagStrDone  
         
     NotMag:
         draw_textID_at 13, 3, textID=0x4FE, growth_func=2

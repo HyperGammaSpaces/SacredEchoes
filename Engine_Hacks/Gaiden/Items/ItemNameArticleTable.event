@@ -28,11 +28,13 @@
     PUSH
         //Use per-item article table
         ORG $163B6
-        SHORT $062D $00A0 $4902 $1840 $6806 $E00A $46C0
+        SHORT $062D $20FF $4020 $0080 $4902 $1840 $6806 $E008
         POIN ExpandedItemArticleTable
         /*
             lsl r5, r5, #0x18
-            lsl r0, r4, #0x2
+            mov r0, #0xFF
+            and r0, r4
+            lsl r0, r0, #0x2
             ldr r1, ExpandedItemArticleTable
             add r0, r0, r1
             ldr r6, [r0]
@@ -207,7 +209,7 @@
     SetArticleForItem(MemberCard, Article_Una_ES)
     SetArticleForItem(SilverCard, Article_Una_ES)
     SetArticleForItem(DumaIcon, Article_Un_ES)
-    SetArticleForItem(MetissTome, Article_El_ES)
+    SetArticleForItem(MetissTome, Article_Una_ES)
     SetArticleForItem(HerosProof, Article_La_ES)
     SetArticleForItem(ZofianCrown, Article_La_ES)
     
@@ -240,5 +242,6 @@
 	SetItemUsesArticle(TheZofia, ItemName_NoArticle)
 	SetItemUsesArticle(KeepsakeRing, ItemName_NoArticle)
 	SetItemUsesArticle(AetherAxe, ItemName_UseArticle)
+	SetItemUsesArticle(MetissTome, ItemName_UseArticle)
 
 #endif

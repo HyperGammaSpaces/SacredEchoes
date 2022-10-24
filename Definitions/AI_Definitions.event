@@ -20,6 +20,7 @@
 #define SetAIParameters(ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24)"
 #define SetAIParameters(ai1,ai2) "SVAL 0x1 ai1|(ai2<<8)"
 
+#define MonsterAI [0x00,0x00,0x04,0x00]
 #define TatianaAI [0x06,0x03,0x04,0x20]
 #define DontAttackTatianaAI [0x04,0x00]
 #define AttackInRangeExceptTatianaAI [0x04,0x03]
