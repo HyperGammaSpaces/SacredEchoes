@@ -127,27 +127,11 @@ blh RegisterObjectTileGraphics, r4
 @ we should set the palette to something, at least 
 @ 24th palette used by transformed myrrh 
 @ldr r0, =0x80A8EE4 @ poin to save menu palette (for the numbers to draw)	{U}
-ldr r0, =SaveScreenNumbersPal
-mov r1, #27 @ usual palette # 
-lsl r1, #5 @ multiply by #0x20
-mov	r2,#0x20
-blh CopyToPaletteBuffer @Arguments: r0 = source pointer, r1 = destination offset, r2 = size (0x20 per full palette)
-
-
-
-@ AoE test 
-@ldr r0, =0x202E4E0 @ Movement map	{U}
-@ldr r0, [r0] 
-@mov r1, #0xFF
-@blh FillMap
-@
-@ldr r3, =MemorySlot 
-@add r3, #4*0x0B 
-@ldrh r0, [r3] @ XX 
-@ldrh r1, [r3, #2] @ YY 
-@ldr r2, =RangeTemplateTable_Smile1
-@bl CreateMoveMapFromTemplate
-
+@ldr r0, =SaveScreenNumbersPal
+@mov r1, #27 @ usual palette # 
+@lsl r1, #5 @ multiply by #0x20
+@mov	r2,#0x20
+@blh CopyToPaletteBuffer @Arguments: r0 = source pointer, r1 = destination offset, r2 = size (0x20 per full palette)
 
 
 pop {r4-r7}
@@ -972,9 +956,11 @@ ldr		r3, =0x81E0 @ Number base tile
 sub r2, #6  
 GotOffset:
 add		r3, r2, r3
+mov     r2, #2 @ priority 2 
+lsl     r2, #10 
+orr     r3, r2
 
-
-mov r2, #27 @ palette # 26 - or 27 is the light rune palette i think 
+mov r2, #26 @ palette # 26 - or 27 is the light rune palette i think 
 lsl r2, #12 @ bits 12-15 
 orr r3, r2 
 
