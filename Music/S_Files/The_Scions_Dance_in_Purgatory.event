@@ -16,9 +16,9 @@ The_Scions_Dance_in_Purgatory_0:
         BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
 // 000   ----------------------------------------
         BYTE   TEMPO   120/2
+        BYTE           PAN     c_v-24
         BYTE           VOICE   0
         BYTE           VOL     42
-        BYTE           PAN     c_v-29
         BYTE           N12     Gs3   v100
         BYTE           N12     Ds4
         BYTE           N12     Gs4
@@ -1437,9 +1437,9 @@ The_Scions_Dance_in_Purgatory_0_61:
 The_Scions_Dance_in_Purgatory_1:
         BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
 // 000   ----------------------------------------
+        BYTE           PAN     c_v+10
+        BYTE           VOL     53
         BYTE           VOICE   52
-        BYTE           VOL     57
-        BYTE           PAN     c_v+39
         BYTE   W96
 // 001   ----------------------------------------
         BYTE   W96
@@ -1462,12 +1462,12 @@ The_Scions_Dance_in_Purgatory_1_LOOP:
         BYTE   W96
 // 010   ----------------------------------------
         BYTE   W72
-        BYTE           N24     Ds4   v126
+        BYTE           N24     Ds4   v112
         BYTE           N24     Ds3
         BYTE   W24
 // 011   ----------------------------------------
 The_Scions_Dance_in_Purgatory_1_11:
-        BYTE           N24     Gs3   v126
+        BYTE           N24     Gs3   v112
         BYTE           N24     Gs4
         BYTE   W24
         BYTE           N12     As3
@@ -1520,7 +1520,7 @@ The_Scions_Dance_in_Purgatory_1_11:
         BYTE   W08
 // 015   ----------------------------------------
 The_Scions_Dance_in_Purgatory_1_15:
-        BYTE           N24     An4   v126
+        BYTE           N24     An4   v112
         BYTE           N24     Gs3
         BYTE           N24     Bn2
         BYTE   W24
@@ -1549,7 +1549,7 @@ The_Scions_Dance_in_Purgatory_1_15:
         BYTE   PATT
          POIN2  The_Scions_Dance_in_Purgatory_1_11
 // 018   ----------------------------------------
-        BYTE           N24     Ds5   v126
+        BYTE           N24     Ds5   v112
         BYTE           N24     Ds4
         BYTE   W24
         BYTE                   Cs4
@@ -1591,7 +1591,7 @@ The_Scions_Dance_in_Purgatory_1_15:
          POIN2  The_Scions_Dance_in_Purgatory_1_15
 // 022   ----------------------------------------
         BYTE   W48
-        BYTE           N72     Fn3   v126
+        BYTE           N72     Fn3   v112
         BYTE           N72     Bn3
         BYTE           N72     Fn4
         BYTE   W48
@@ -1711,7 +1711,7 @@ The_Scions_Dance_in_Purgatory_1_15:
         BYTE   W24
 // 035   ----------------------------------------
 The_Scions_Dance_in_Purgatory_1_35:
-        BYTE           N24     As3   v126
+        BYTE           N24     As3   v112
         BYTE   W24
         BYTE                   Gs3
         BYTE   W24
@@ -1720,7 +1720,7 @@ The_Scions_Dance_in_Purgatory_1_35:
         BYTE   PEND
 // 036   ----------------------------------------
 The_Scions_Dance_in_Purgatory_1_36:
-        BYTE           N24     Fn3   v126
+        BYTE           N24     Fn3   v112
         BYTE   W24
         BYTE                   Fs3
         BYTE   W24
@@ -1768,7 +1768,7 @@ The_Scions_Dance_in_Purgatory_1_36:
         BYTE   PATT
          POIN2  The_Scions_Dance_in_Purgatory_1_36
 // 045   ----------------------------------------
-        BYTE           N24     Fn4   v126
+        BYTE           N24     Fn4   v112
         BYTE           N24     Fn3
         BYTE   W24
         BYTE                   Cs4
@@ -1785,17 +1785,13 @@ The_Scions_Dance_in_Purgatory_1_36:
         BYTE                   Bn2
         BYTE   W24
 // 047   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_47:
-        BYTE           N72     Cs3   v126
+        BYTE           N72     Cs3
         BYTE           N72     Cs4
         BYTE   W72
-        BYTE   PEND
 // 048   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_48:
-        BYTE           N72     Bn2   v126
+        BYTE                   Bn2
         BYTE           N72     Bn3
         BYTE   W72
-        BYTE   PEND
 // 049   ----------------------------------------
         BYTE           N24     Cn3
         BYTE           N24     Fs3
@@ -1812,14 +1808,27 @@ The_Scions_Dance_in_Purgatory_1_48:
 // 050   ----------------------------------------
         BYTE   W72
 // 051   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_51
+        BYTE           N24     Cn4
+        BYTE           N24     Gs3
+        BYTE   W24
+        BYTE                   Gs3
+        BYTE           N24     Fn3
+        BYTE   W24
+        BYTE                   Cn4
+        BYTE           N24     Gs3
+        BYTE   W24
 // 052   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_52
+        BYTE                   Fn4
+        BYTE           N24     Fn3
+        BYTE   W24
+        BYTE                   Bn3
+        BYTE           N24     Bn2
+        BYTE   W24
+        BYTE                   Fn4
+        BYTE           N24     Fn3
+        BYTE   W24
 // 053   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_53:
-        BYTE           N24     Gs4   v126
+        BYTE                   Gs4
         BYTE           N24     Gs3
         BYTE   W24
         BYTE                   Gn4
@@ -1828,7 +1837,6 @@ The_Scions_Dance_in_Purgatory_1_53:
         BYTE                   As4
         BYTE           N24     As3
         BYTE   W24
-        BYTE   PEND
 // 054   ----------------------------------------
         BYTE           TIE     Bn3
         BYTE           TIE     Ds4
@@ -2040,9 +2048,9 @@ The_Scions_Dance_in_Purgatory_1_53:
 The_Scions_Dance_in_Purgatory_2:
         BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
 // 000   ----------------------------------------
+        BYTE           PAN     c_v+24
         BYTE           VOICE   0
         BYTE           VOL     26
-        BYTE           PAN     c_v+21
         BYTE           N12     Gs3   v105
         BYTE           N12     Ds4
         BYTE           N12     Gs4
@@ -2584,10 +2592,10 @@ The_Scions_Dance_in_Purgatory_2_LOOP:
 The_Scions_Dance_in_Purgatory_3:
         BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
 // 000   ----------------------------------------
-        BYTE           PAN     c_v-1
+        BYTE           PAN     c_v-6
+        BYTE           VOL     50
         BYTE           VOICE   19
-        BYTE           VOL     57
-        BYTE           N12     Gs3   v126
+        BYTE           N12     Gs3   v112
         BYTE           N12     Ds4
         BYTE           N12     Gs4
         BYTE   W12
@@ -2861,9 +2869,8 @@ The_Scions_Dance_in_Purgatory_3_LOOP:
 // 057   ----------------------------------------
         BYTE   W72
 // 058   ----------------------------------------
-The_Scions_Dance_in_Purgatory_3_58:
         BYTE   W08
-        BYTE           N08     En3   v126
+        BYTE           N08     En3   v112
         BYTE   W08
         BYTE                   Fs3
         BYTE   W08
@@ -2883,16 +2890,81 @@ The_Scions_Dance_in_Purgatory_3_58:
         BYTE   W08
         BYTE                   Fs4
         BYTE   W08
-        BYTE   PEND
 // 059   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_59
+        BYTE                   Gs4
+        BYTE           N24     Cs1
+        BYTE   W08
+        BYTE           N08     En4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE   W08
+        BYTE                   Cs4
+        BYTE           N12     Cs2
+        BYTE   W08
+        BYTE           N08     As3
+        BYTE   W04
+        BYTE           N12     Cs2
+        BYTE   W04
+        BYTE           N08     Gs3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE           N24     Gs2
+        BYTE   W08
+        BYTE           N08     En3
+        BYTE   W08
+        BYTE                   Ds3
+        BYTE   W08
 // 060   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_60
+        BYTE                   An2
+        BYTE           N24     Cn2
+        BYTE   W08
+        BYTE           N08     Cn3
+        BYTE   W08
+        BYTE                   Cs3
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE           N12     Cn2
+        BYTE   W08
+        BYTE           N08     Gs3
+        BYTE   W04
+        BYTE           N12     Cn2
+        BYTE   W04
+        BYTE           N08     An3
+        BYTE   W08
+        BYTE                   Cn4
+        BYTE           N24     Cn3
+        BYTE   W08
+        BYTE           N08     Ds4
+        BYTE   W08
+        BYTE                   En4
+        BYTE   W08
 // 061   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_0_61
+        BYTE                   Fs4
+        BYTE           N24     Ds1
+        BYTE   W08
+        BYTE           N08     Gn4
+        BYTE   W08
+        BYTE                   Gs4
+        BYTE   W08
+        BYTE                   An4
+        BYTE           N12     En2
+        BYTE   W08
+        BYTE           N08     As4
+        BYTE   W04
+        BYTE           N12     En2
+        BYTE   W04
+        BYTE           N08     Bn4
+        BYTE   W08
+        BYTE                   Gn4
+        BYTE           N08     Bn4
+        BYTE           N24     Bn2
+        BYTE   W08
+        BYTE           N08     Gn4
+        BYTE           N08     Cs5
+        BYTE   W08
+        BYTE                   Gn4
+        BYTE           N08     Dn5
+        BYTE   W08
 // 062   ----------------------------------------
         BYTE   GoTo
          POIN2  The_Scions_Dance_in_Purgatory_3_LOOP
@@ -3324,13 +3396,15 @@ The_Scions_Dance_in_Purgatory_4_38:
         BYTE   PATT
          POIN2  The_Scions_Dance_in_Purgatory_4_38
 // 047   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_1_47
+        BYTE           N72     Cs3   v126
+        BYTE           N72     Cs4
+        BYTE   W72
 // 048   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_1_48
+        BYTE                   Bn2
+        BYTE           N72     Bn3
+        BYTE   W72
 // 049   ----------------------------------------
-        BYTE           N72     Fn2   v126
+        BYTE                   Fn2
         BYTE           N72     Fn3
         BYTE           N72     As3
         BYTE   W72
@@ -3341,10 +3415,17 @@ The_Scions_Dance_in_Purgatory_4_38:
 // 052   ----------------------------------------
         BYTE   W72
 // 053   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_1_53
+        BYTE           N24     Gs4
+        BYTE           N24     Gs3
+        BYTE   W24
+        BYTE                   Gn4
+        BYTE           N24     Gn3
+        BYTE   W24
+        BYTE                   As4
+        BYTE           N24     As3
+        BYTE   W24
 // 054   ----------------------------------------
-        BYTE           N72     Bn4   v126
+        BYTE           N72     Bn4
         BYTE           N72     Gs4
         BYTE           N72     Ds4
         BYTE           N72     Bn3
@@ -3615,9 +3696,9 @@ The_Scions_Dance_in_Purgatory_4_38:
 The_Scions_Dance_in_Purgatory_5:
         BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
 // 000   ----------------------------------------
+        BYTE           VOL     47
         BYTE           PAN     c_v+23
         BYTE           VOICE   6
-        BYTE           VOL     50
         BYTE           N12     Gs3   v105
         BYTE           N12     Ds4
         BYTE           N12     Gs4
@@ -4134,8 +4215,27 @@ The_Scions_Dance_in_Purgatory_5_14:
         BYTE   PATT
          POIN2  The_Scions_Dance_in_Purgatory_0_57
 // 058   ----------------------------------------
-        BYTE   PATT
-         POIN2  The_Scions_Dance_in_Purgatory_3_58
+        BYTE   W08
+        BYTE           N08     En3   v126
+        BYTE   W08
+        BYTE                   Fs3
+        BYTE   W08
+        BYTE                   Gs3
+        BYTE           N12     Dn2
+        BYTE   W08
+        BYTE           N08     Bn3
+        BYTE   W04
+        BYTE           N12     Dn2
+        BYTE   W04
+        BYTE           N08     Cs4
+        BYTE   W08
+        BYTE                   Ds4
+        BYTE           N24     Gs2
+        BYTE   W08
+        BYTE           N08     En4
+        BYTE   W08
+        BYTE                   Fs4
+        BYTE   W08
 // 059   ----------------------------------------
         BYTE   PATT
          POIN2  The_Scions_Dance_in_Purgatory_0_59
@@ -4326,7 +4426,7 @@ The_Scions_Dance_in_Purgatory_5_14:
 The_Scions_Dance_in_Purgatory_6:
         BYTE   KEYSH   The_Scions_Dance_in_Purgatory_key+0
 // 000   ----------------------------------------
-        BYTE           VOL     64
+        BYTE           VOL     60
         BYTE           VOICE   127
         BYTE           N48     Cs2   v100
         BYTE   W48

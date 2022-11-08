@@ -55,8 +55,8 @@ PUSH
     BYTE (DumaBeam-1)
     ORG $766B6
     BYTE (DumaPhysical-1)
-    ORG $766CA
-    SHORT $46C0
+    ORG $766C6
+    SHORT $2000 $6620 $46C0
     
     ORG $770C0
     POIN DumaRound_JumpTable

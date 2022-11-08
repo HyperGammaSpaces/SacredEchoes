@@ -15,9 +15,9 @@ The_Scions_Dance_in_Purgatory_0:
         .byte   KEYSH , The_Scions_Dance_in_Purgatory_key+0
 @ 000   ----------------------------------------
         .byte   TEMPO , 120/2
+        .byte           PAN   , c_v-24
         .byte           VOICE , 0
         .byte           VOL   , 42
-        .byte           PAN   , c_v-29
         .byte           N12   , Gs3 , v100
         .byte           N12   , Ds4
         .byte           N12   , Gs4
@@ -1436,9 +1436,9 @@ The_Scions_Dance_in_Purgatory_0_61:
 The_Scions_Dance_in_Purgatory_1:
         .byte   KEYSH , The_Scions_Dance_in_Purgatory_key+0
 @ 000   ----------------------------------------
+        .byte           PAN   , c_v+10
+        .byte           VOL   , 53
         .byte           VOICE , 52
-        .byte           VOL   , 57
-        .byte           PAN   , c_v+39
         .byte   W96
 @ 001   ----------------------------------------
         .byte   W96
@@ -1461,12 +1461,12 @@ The_Scions_Dance_in_Purgatory_1_LOOP:
         .byte   W96
 @ 010   ----------------------------------------
         .byte   W72
-        .byte           N24   , Ds4 , v126
+        .byte           N24   , Ds4 , v112
         .byte           N24   , Ds3
         .byte   W24
 @ 011   ----------------------------------------
 The_Scions_Dance_in_Purgatory_1_11:
-        .byte           N24   , Gs3 , v126
+        .byte           N24   , Gs3 , v112
         .byte           N24   , Gs4
         .byte   W24
         .byte           N12   , As3
@@ -1519,7 +1519,7 @@ The_Scions_Dance_in_Purgatory_1_11:
         .byte   W08
 @ 015   ----------------------------------------
 The_Scions_Dance_in_Purgatory_1_15:
-        .byte           N24   , An4 , v126
+        .byte           N24   , An4 , v112
         .byte           N24   , Gs3
         .byte           N24   , Bn2
         .byte   W24
@@ -1548,7 +1548,7 @@ The_Scions_Dance_in_Purgatory_1_15:
         .byte   PATT
          .word  The_Scions_Dance_in_Purgatory_1_11
 @ 018   ----------------------------------------
-        .byte           N24   , Ds5 , v126
+        .byte           N24   , Ds5 , v112
         .byte           N24   , Ds4
         .byte   W24
         .byte                   Cs4
@@ -1590,7 +1590,7 @@ The_Scions_Dance_in_Purgatory_1_15:
          .word  The_Scions_Dance_in_Purgatory_1_15
 @ 022   ----------------------------------------
         .byte   W48
-        .byte           N72   , Fn3 , v126
+        .byte           N72   , Fn3 , v112
         .byte           N72   , Bn3
         .byte           N72   , Fn4
         .byte   W48
@@ -1710,7 +1710,7 @@ The_Scions_Dance_in_Purgatory_1_15:
         .byte   W24
 @ 035   ----------------------------------------
 The_Scions_Dance_in_Purgatory_1_35:
-        .byte           N24   , As3 , v126
+        .byte           N24   , As3 , v112
         .byte   W24
         .byte                   Gs3
         .byte   W24
@@ -1719,7 +1719,7 @@ The_Scions_Dance_in_Purgatory_1_35:
         .byte   PEND
 @ 036   ----------------------------------------
 The_Scions_Dance_in_Purgatory_1_36:
-        .byte           N24   , Fn3 , v126
+        .byte           N24   , Fn3 , v112
         .byte   W24
         .byte                   Fs3
         .byte   W24
@@ -1767,7 +1767,7 @@ The_Scions_Dance_in_Purgatory_1_36:
         .byte   PATT
          .word  The_Scions_Dance_in_Purgatory_1_36
 @ 045   ----------------------------------------
-        .byte           N24   , Fn4 , v126
+        .byte           N24   , Fn4 , v112
         .byte           N24   , Fn3
         .byte   W24
         .byte                   Cs4
@@ -1784,17 +1784,13 @@ The_Scions_Dance_in_Purgatory_1_36:
         .byte                   Bn2
         .byte   W24
 @ 047   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_47:
-        .byte           N72   , Cs3 , v126
+        .byte           N72   , Cs3
         .byte           N72   , Cs4
         .byte   W72
-        .byte   PEND
 @ 048   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_48:
-        .byte           N72   , Bn2 , v126
+        .byte                   Bn2
         .byte           N72   , Bn3
         .byte   W72
-        .byte   PEND
 @ 049   ----------------------------------------
         .byte           N24   , Cn3
         .byte           N24   , Fs3
@@ -1811,14 +1807,27 @@ The_Scions_Dance_in_Purgatory_1_48:
 @ 050   ----------------------------------------
         .byte   W72
 @ 051   ----------------------------------------
-        .byte   PATT
-         .word  The_Scions_Dance_in_Purgatory_0_51
+        .byte           N24   , Cn4
+        .byte           N24   , Gs3
+        .byte   W24
+        .byte                   Gs3
+        .byte           N24   , Fn3
+        .byte   W24
+        .byte                   Cn4
+        .byte           N24   , Gs3
+        .byte   W24
 @ 052   ----------------------------------------
-        .byte   PATT
-         .word  The_Scions_Dance_in_Purgatory_0_52
+        .byte                   Fn4
+        .byte           N24   , Fn3
+        .byte   W24
+        .byte                   Bn3
+        .byte           N24   , Bn2
+        .byte   W24
+        .byte                   Fn4
+        .byte           N24   , Fn3
+        .byte   W24
 @ 053   ----------------------------------------
-The_Scions_Dance_in_Purgatory_1_53:
-        .byte           N24   , Gs4 , v126
+        .byte                   Gs4
         .byte           N24   , Gs3
         .byte   W24
         .byte                   Gn4
@@ -1827,7 +1836,6 @@ The_Scions_Dance_in_Purgatory_1_53:
         .byte                   As4
         .byte           N24   , As3
         .byte   W24
-        .byte   PEND
 @ 054   ----------------------------------------
         .byte           TIE   , Bn3
         .byte           TIE   , Ds4
@@ -2039,9 +2047,9 @@ The_Scions_Dance_in_Purgatory_1_53:
 The_Scions_Dance_in_Purgatory_2:
         .byte   KEYSH , The_Scions_Dance_in_Purgatory_key+0
 @ 000   ----------------------------------------
+        .byte           PAN   , c_v+24
         .byte           VOICE , 0
         .byte           VOL   , 26
-        .byte           PAN   , c_v+21
         .byte           N12   , Gs3 , v105
         .byte           N12   , Ds4
         .byte           N12   , Gs4
@@ -2583,10 +2591,10 @@ The_Scions_Dance_in_Purgatory_2_LOOP:
 The_Scions_Dance_in_Purgatory_3:
         .byte   KEYSH , The_Scions_Dance_in_Purgatory_key+0
 @ 000   ----------------------------------------
-        .byte           PAN   , c_v-1
+        .byte           PAN   , c_v-6
+        .byte           VOL   , 50
         .byte           VOICE , 19
-        .byte           VOL   , 57
-        .byte           N12   , Gs3 , v126
+        .byte           N12   , Gs3 , v112
         .byte           N12   , Ds4
         .byte           N12   , Gs4
         .byte   W12
@@ -2860,9 +2868,8 @@ The_Scions_Dance_in_Purgatory_3_LOOP:
 @ 057   ----------------------------------------
         .byte   W72
 @ 058   ----------------------------------------
-The_Scions_Dance_in_Purgatory_3_58:
         .byte   W08
-        .byte           N08   , En3 , v126
+        .byte           N08   , En3 , v112
         .byte   W08
         .byte                   Fs3
         .byte   W08
@@ -2882,16 +2889,81 @@ The_Scions_Dance_in_Purgatory_3_58:
         .byte   W08
         .byte                   Fs4
         .byte   W08
-        .byte   PEND
 @ 059   ----------------------------------------
-        .byte   PATT
-         .word  The_Scions_Dance_in_Purgatory_0_59
+        .byte                   Gs4
+        .byte           N24   , Cs1
+        .byte   W08
+        .byte           N08   , En4
+        .byte   W08
+        .byte                   Ds4
+        .byte   W08
+        .byte                   Cs4
+        .byte           N12   , Cs2
+        .byte   W08
+        .byte           N08   , As3
+        .byte   W04
+        .byte           N12   , Cs2
+        .byte   W04
+        .byte           N08   , Gs3
+        .byte   W08
+        .byte                   Fs3
+        .byte           N24   , Gs2
+        .byte   W08
+        .byte           N08   , En3
+        .byte   W08
+        .byte                   Ds3
+        .byte   W08
 @ 060   ----------------------------------------
-        .byte   PATT
-         .word  The_Scions_Dance_in_Purgatory_0_60
+        .byte                   An2
+        .byte           N24   , Cn2
+        .byte   W08
+        .byte           N08   , Cn3
+        .byte   W08
+        .byte                   Cs3
+        .byte   W08
+        .byte                   Fs3
+        .byte           N12   , Cn2
+        .byte   W08
+        .byte           N08   , Gs3
+        .byte   W04
+        .byte           N12   , Cn2
+        .byte   W04
+        .byte           N08   , An3
+        .byte   W08
+        .byte                   Cn4
+        .byte           N24   , Cn3
+        .byte   W08
+        .byte           N08   , Ds4
+        .byte   W08
+        .byte                   En4
+        .byte   W08
 @ 061   ----------------------------------------
-        .byte   PATT
-         .word  The_Scions_Dance_in_Purgatory_0_61
+        .byte                   Fs4
+        .byte           N24   , Ds1
+        .byte   W08
+        .byte           N08   , Gn4
+        .byte   W08
+        .byte                   Gs4
+        .byte   W08
+        .byte                   An4
+        .byte           N12   , En2
+        .byte   W08
+        .byte           N08   , As4
+        .byte   W04
+        .byte           N12   , En2
+        .byte   W04
+        .byte           N08   , Bn4
+        .byte   W08
+        .byte                   Gn4
+        .byte           N08   , Bn4
+        .byte           N24   , Bn2
+        .byte   W08
+        .byte           N08   , Gn4
+        .byte           N08   , Cs5
+        .byte   W08
+        .byte                   Gn4
+        .byte           N08   , Dn5
+        .byte   W08
 @ 062   ----------------------------------------
         .byte   GOTO
          .word  The_Scions_Dance_in_Purgatory_3_LOOP
@@ -3323,13 +3395,15 @@ The_Scions_Dance_in_Purgatory_4_38:
         .byte   PATT
          .word  The_Scions_Dance_in_Purgatory_4_38
 @ 047   ----------------------------------------
-        .byte   PATT
-         .word  The_Scions_Dance_in_Purgatory_1_47
+        .byte           N72   , Cs3 , v126
+        .byte           N72   , Cs4
+        .byte   W72
 @ 048   ----------------------------------------
-        .byte   PATT
-         .word  The_Scions_Dance_in_Purgatory_1_48
+        .byte                   Bn2
+        .byte           N72   , Bn3
+        .byte   W72
 @ 049   ----------------------------------------
-        .byte           N72   , Fn2 , v126
+        .byte                   Fn2
         .byte           N72   , Fn3
         .byte           N72   , As3
         .byte   W72
@@ -3340,10 +3414,17 @@ The_Scions_Dance_in_Purgatory_4_38:
 @ 052   ----------------------------------------
         .byte   W72
 @ 053   ----------------------------------------
-        .byte   PATT
-         .word  The_Scions_Dance_in_Purgatory_1_53
+        .byte           N24   , Gs4
+        .byte           N24   , Gs3
+        .byte   W24
+        .byte                   Gn4
+        .byte           N24   , Gn3
+        .byte   W24
+        .byte                   As4
+        .byte           N24   , As3
+        .byte   W24
 @ 054   ----------------------------------------
-        .byte           N72   , Bn4 , v126
+        .byte           N72   , Bn4
         .byte           N72   , Gs4
         .byte           N72   , Ds4
         .byte           N72   , Bn3
@@ -3614,9 +3695,9 @@ The_Scions_Dance_in_Purgatory_4_38:
 The_Scions_Dance_in_Purgatory_5:
         .byte   KEYSH , The_Scions_Dance_in_Purgatory_key+0
 @ 000   ----------------------------------------
+        .byte           VOL   , 47
         .byte           PAN   , c_v+23
         .byte           VOICE , 6
-        .byte           VOL   , 50
         .byte           N12   , Gs3 , v105
         .byte           N12   , Ds4
         .byte           N12   , Gs4
@@ -4133,8 +4214,27 @@ The_Scions_Dance_in_Purgatory_5_14:
         .byte   PATT
          .word  The_Scions_Dance_in_Purgatory_0_57
 @ 058   ----------------------------------------
-        .byte   PATT
-         .word  The_Scions_Dance_in_Purgatory_3_58
+        .byte   W08
+        .byte           N08   , En3 , v126
+        .byte   W08
+        .byte                   Fs3
+        .byte   W08
+        .byte                   Gs3
+        .byte           N12   , Dn2
+        .byte   W08
+        .byte           N08   , Bn3
+        .byte   W04
+        .byte           N12   , Dn2
+        .byte   W04
+        .byte           N08   , Cs4
+        .byte   W08
+        .byte                   Ds4
+        .byte           N24   , Gs2
+        .byte   W08
+        .byte           N08   , En4
+        .byte   W08
+        .byte                   Fs4
+        .byte   W08
 @ 059   ----------------------------------------
         .byte   PATT
          .word  The_Scions_Dance_in_Purgatory_0_59
@@ -4325,7 +4425,7 @@ The_Scions_Dance_in_Purgatory_5_14:
 The_Scions_Dance_in_Purgatory_6:
         .byte   KEYSH , The_Scions_Dance_in_Purgatory_key+0
 @ 000   ----------------------------------------
-        .byte           VOL   , 64
+        .byte           VOL   , 60
         .byte           VOICE , 127
         .byte           N48   , Cs2 , v100
         .byte   W48
