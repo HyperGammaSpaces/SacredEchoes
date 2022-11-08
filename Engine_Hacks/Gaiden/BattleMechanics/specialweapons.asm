@@ -54,7 +54,7 @@ DO_THUNDERBLADE:
 	mov		r0, r4				@ load attacker
 	add		r0, #0x66			@ Attacker.Crit
 	strh	r2, [r0, #0x0]		@ zero it out
-	add		r0, #0x40			@ advance 4 bytes to Attacker.BattleCrit
+	add		r0, #0x4			@ advance 4 bytes to Attacker.BattleCrit
 	strh	r2, [r0, #0x0]		@ zero it out
 	b		FINISH_SPECIALWEAPS	@ wrap up
 	
@@ -89,7 +89,7 @@ DONT_HARDCODE_1:
 	mov		r0, r4				@ load attacker
 	add		r0, #0x66			@ Attacker.Crit
 	strh	r5, [r0, #0x0]		@ zero it out
-	add		r0, #0x40			@ advance 4 bytes to Attacker.BattleCrit
+	add		r0, #0x4			@ advance 4 bytes to Attacker.BattleCrit
 	strh	r5, [r0, #0x0]		@ zero it out
 	
 CHECK_MAG:

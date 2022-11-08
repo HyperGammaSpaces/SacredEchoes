@@ -567,6 +567,8 @@ NewSetupBattleWeaponData:
         .ltorg
         
     BWD_CheckIfInRange:
+        mov     r0, #0x0
+        str     r0, [sp, #HasDistantCounter]
         mov     r1, r5
         add     r1, #0x1E
         ldrh    r1, [r1, #0x0]
@@ -596,6 +598,30 @@ NewSetupBattleWeaponData:
         mov     r4, r5
         add     r4, #0x48
         ldrh    r1, [r4]        @ item ID
+        mov     r7, r1
+        ldrb    r2, [r4, #0x9]  @slot num
+        lsl     r6, r2, #0x1
+        mov     r0, r5
+        bl      NewCanUnitUseWeapon
+        cmp     r0, #0x1
+        bne     BWD_CheckInventory
+        mov     r1, r7
+        ldr     r0, [sp, #HasDistantCounter]
+        cmp     r0, #1
+        beq     BWD_UpdateWeaponData
+        mov     r0, #0xFF
+        and     r0, r1
+        ldr     r1, =gBattleStatsBitfield
+        ldrb    r1, [r1, #0x2]  @ range
+        mov     r2, r5          @ battle struct
+        blh     0x0801ACFC      @ IsItemCoveringRange
+        cmp     r0, #0x0
+        bne     BWD_UpdateWeaponData
+        
+    BWD_CheckInventory:
+        mov     r1, r5
+        add     r1, #0x1E
+        ldrh    r1, [r1, #0x0]
         mov     r7, r1
         mov     r6, #0x0        @ initialize counter
         
@@ -922,6 +948,10 @@ NewSetupBattleStructForStaffUser:
         beq     SetupHealScreen_EndFunc
         
         SetupHealScreen_GotStaff:
+            mov     r0, #WMagicWeaponType
+            mov     r3, r5
+            add     r3, #0x50
+            strb    r0, [r3, #0x0]
             mov     r1, r6
             mov     r0, r5
             bl      SpellCostGetter
@@ -1079,6 +1109,8 @@ SaveUnit_CleanOutSpellBuffer:
     
     SaveItem_LoadWeapon:
     ldrh    r0, [r1]
+    lsl     r0, r0, #0x18
+    lsr     r0, r0, #0x18
     ldr     r6, =SelectedSpellPointer
     ldrh    r6, [r6, #0x0]
     cmp     r6, #0x0
@@ -1103,6 +1135,7 @@ SaveUnit_CleanOutSpellBuffer:
     SaveItem_Update:
     mov     r6, r5
     add     r6, #0x6E
+    ldrh    r0, [r1]
     strh    r0, [r3]
 
     SaveItem_After:
