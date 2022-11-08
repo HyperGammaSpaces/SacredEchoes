@@ -371,7 +371,7 @@ PopulateSupportIncreaseList:
                 mov     r0, r4
                 mov     r1, r5
                 bl      GetUnitDistance
-                cmp     r0, #0x2
+                cmp     r0, #0x3
                 ble     SupportedUnits.add
                     b       SupportedUnits.next
 

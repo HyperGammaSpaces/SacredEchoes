@@ -29,10 +29,28 @@ mov lr, r3
 .short 0xf800
 
 add r0, r0, r4
-ldr r3, =0x0802b9a0 @GetStatIncrease
-mov lr, r3
-.short 0xf800
+bl FlatStatIncrease
 
 pop {r4}
 pop {r1}
 bx r1
+
+FlatStatIncrease:
+0802B9A0 B510   PUSH {r4,lr}   //GetStatIncrease
+0802B9A2 2400   MOV r4, #0x0
+0802B9A4 2864   CMP r0, #0x64
+0802B9A6 DD03   BLE #0x802B9B0
+    0802B9A8 3401   ADD r4, #0x1
+    0802B9AA 3864   SUB r0, #0x64
+    0802B9AC 2864   CMP r0, #0x64
+    0802B9AE DCFB   BGT #0x802B9A8
+0802B9B0 2832   CMP r0, #0x32
+0802B9B4 DB01   BLT #0x802B9BC
+    0802B9BA 3401   ADD r4, #0x1
+0802B9BC 1C20   MOV r0 ,r4
+0802B9BE BC10   POP {r4}
+0802B9C0 BC02   POP {r1}
+0802B9C2 4708   BX r1
+
+.align
+.ltorg
