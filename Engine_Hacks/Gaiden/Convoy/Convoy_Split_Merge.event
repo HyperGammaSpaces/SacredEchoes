@@ -20,7 +20,7 @@
 #define ConvoyPartition(start_slot, length, function) "BYTE start_slot length 0 0; POIN function"
 
 ConvoyPartitionTable:
-//ConvoyPartition(10, 90, IsEirika|1)
+ConvoyPartition(0, 200, CanUseMergedConvoy|1)
 ConvoyPartition(0, 100, CanUseAlmConvoy|1) //alm side
 ConvoyPartition(100, 100, CanUseCelicaConvoy|1) //celica side
 WORD 0 //terminator
@@ -129,10 +129,30 @@ ORG $1E07A; BL(0x1FD80)
 ORG $1E0E8
 jumpToHack(Hook_1E0E8)
 
-//SomethingPrepListRelated
-ORG $9827C
-callHack_r0(Hook_9827C)
-SHORT 0xE006
+//List All hack
+ORG $9825E
+SHORT $2001 //mov r0, #0x1
+SHORT $4649 //mov r1, r9
+SHORT $4208 //tst r0, r1
+SHORT $D018 //beq 98298
+SHORT $4908 //ldr r1, =gActiveUnit
+SHORT $4640 //mov r0, r8
+SHORT $6008 //str r0, [r1]
+BL($31500)
+SHORT $1C01 //mov r1, r0
+SHORT $8808 //ldrh r0, [r1]
+SHORT $2200 //mov r2, #0
+SHORT $2400 //mov r4, #0
+SHORT $2800 //cmp r0, #0
+SHORT $D00D //beq 98298
+SHORT $4801 //ldr
+BL($D18C0) //bl bx_r0
+B($98298)
+ALIGN 4
+POIN (Hook_9827C|1)
+WORD $03004E50 //gActiveUnit
+ORG $98296
+SHORT $D1F1
 
 //Give all items
 ORG $9A550

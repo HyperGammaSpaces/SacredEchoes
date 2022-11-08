@@ -31,6 +31,10 @@ PUSH
 	#incbin "ShouldChapterBeSkirmish.dmp"
 	POIN WorldMapNodeList
 
+	//Fix fuckiness with skirmish fog
+	ORG $30E48
+	SHORT $E012
+    
 	//Fix fuckiness with skirmish prep screen save names
 	ORG $3412E
 	SHORT $E00A

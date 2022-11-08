@@ -499,16 +499,39 @@ WM_Act4Start:
 			//Alm case
 			WM_DRAWLORDAT Alm GMLoc_SluiceGate
 			WM_CENTERCAMONLORD
-			_0xA640 0x0 0x0 GMLoc_SluiceGate
+            WM_FADEOUT 0x0 0x0 0x0
+            WM_TEXTDECORATE
+            EVBIT_MODIFY 0x0
+            STAL 20
+            CHECK_EVENTID gChapter4A1Completed
+            BNE 0x33 rC r0
+                WM_SETDESTINATION 0x0 GMLoc_RigelForest1 0x0
+                WM_WAITFORFX
+                STAL 70
+            LABEL 0x33
+            WM_MAKELORDVISIBLE 0x0
+            EVBIT_MODIFY 0x1
+            CALL 0x591F40
 			GOTO 0xE
 			
 		LABEL 0xCA //celica case
 		WM_DRAWLORDAT Celica GMLoc_MilaTemple
-		WM_CENTERCAMONLORD
-		_0xA640 0x0 0x0 GMLoc_MilaTemple
+        WM_CENTERCAMONLORD
+        WM_FADEOUT 0x0 0x0 0x0
+        WM_TEXTDECORATE
+        EVBIT_MODIFY 0x0
+        STAL 20
+        CHECK_EVENTID gChapter4C1Completed
+        BNE 0x34 rC r0
+            WM_SETDESTINATION 0x0 GMLoc_DeadMansMire 0x0
+            WM_WAITFORFX
+            STAL 70
+        LABEL 0x34
+        WM_MAKELORDVISIBLE 0x0
+        EVBIT_MODIFY 0x1
+        CALL 0x591F40
 		LABEL 0xE
         ENUT gPart3Completed
-		SKIPWN
 		ENDA
 	
 	//check mode

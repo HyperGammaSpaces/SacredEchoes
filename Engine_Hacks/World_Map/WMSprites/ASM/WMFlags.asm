@@ -21,9 +21,9 @@ DrawWMSprites:
 	mov   r1, #0x1
 	tst   r0, r1
 	beq   Sprites_Return
-	  mov   r1, #0x2
-	  tst   r0, r1
-	  beq   Sprites_L1
+	@  mov   r1, #0x2
+	@  tst   r0, r1
+	@  beq   Sprites_L1
 
 	mov   r0, r5
 	bl    DrawWMFlags

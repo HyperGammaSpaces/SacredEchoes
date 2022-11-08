@@ -2,7 +2,7 @@
 .equ gChapterData, 0x0202BCF0
 
 .global ReturnOne
-.global IsEirika
+.global CanUseMergedConvoy
 .global CanUseAlmConvoy
 .global CanUseCelicaConvoy
 
@@ -11,47 +11,42 @@ mov		r0,#1
 bx		r14
 
 
-IsEirika:
-mov		r0,#0
-ldr		r1,=#0x3004E50
-ldr		r1,[r1]
-ldr		r1,[r1]
-ldrb	r1,[r1,#4]
-cmp		r1,#1
-bne		Label1
-mov		r0,#1
-Label1:
-bx		r14
-.ltorg
-
-
-
-.align
-CanUseAlmConvoy:
-push {r2,r3,r14}
+CanUseMergedConvoy:
+    push    {r2, r3, r14}
+    mov		r0,#0
 	ldr 	r2, =gChapterData
 	add 	r2, #0x42
 	ldrb 	r2, [r2]
 	lsl 	r2, r2, #0x1A
 	cmp 	r2, #0x0
-	blt CheckIfPostgame_1		@if not easy, do full eligiblity check
+	blt     CheckIfPostgame		@if not easy, do full eligiblity check
 		mov 	r0, #1
-		b Label2
-        CheckIfPostgame_1:
+		b       Merged_End
+        CheckIfPostgame:
             mov 	r0, #0xAD
 			ldr 	r3, =#0x8083DA8		@ CheckFlag
 			mov 	lr,r3
 			.short 	0xF800
 			lsl		r0, r0, #0x18
 			cmp 	r0, #0x0
-            beq     CheckIfAlmMode
+            beq     Merged_End
             mov 	r0, #1
-            b Label2
-	CheckIfAlmMode:
-		ldr 	r2, =gChapterData
-		ldrb	r2, [r2, #0x1B]
-		cmp		r2, #0x3
-		beq 	NotUsable1
+    Merged_End:
+    pop     {r2,r3}
+    pop     {r1}
+    bx      r1
+    .align
+    .ltorg
+
+
+
+.align
+CanUseAlmConvoy:
+    push    {r2,r3,r14}
+    ldr 	r2, =gChapterData
+    ldrb	r2, [r2, #0x1B]
+    cmp		r2, #0x3
+    beq 	NotUsable1
 	CheckIfKliffFaye1:
 		ldr		r1,=#0x3004E50	@active unit
 		ldr		r1,[r1]
@@ -113,30 +108,11 @@ bx r1
 
 .align
 CanUseCelicaConvoy:
-push {r2,r3,r14}
-	ldr 	r2, =gChapterData
-	add 	r2, #0x42
-	ldrb 	r2, [r2]
-	lsl 	r2, r2, #0x1A
-	cmp 	r2, #0x0
-	blt CheckIfPostgame_2		@if not easy, do full eligiblity check
-		mov 	r0, #1
-		b Label3
-        CheckIfPostgame_2:
-            mov 	r0, #0xAD
-			ldr 	r3, =#0x8083DA8		@ CheckFlag
-			mov 	lr,r3
-			.short 	0xF800
-			lsl		r0, r0, #0x18
-			cmp 	r0, #0x0
-            beq     CheckIfCelicaMode
-            mov 	r0, #1
-            b Label3
-	CheckIfCelicaMode:
-		ldr 	r2, =gChapterData
-		ldrb	r2, [r2, #0x1B]
-		cmp		r2, #0x3
-		bne 	NotUsable2
+    push    {r2,r3,r14}
+    ldr 	r2, =gChapterData
+    ldrb	r2, [r2, #0x1B]
+    cmp		r2, #0x3
+    bne 	NotUsable2
 	CheckIfKliffFaye2:
 		ldr		r1,=#0x3004E50	@active unit
 		ldr		r1,[r1]

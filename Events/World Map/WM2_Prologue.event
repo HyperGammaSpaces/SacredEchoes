@@ -504,7 +504,9 @@ WMIntro_Act4_8_Alm:
 ColdOpen2(GMLoc_LastBastion, GMLoc_RigelCastle)
 
 WMIntro_Act4_Final:
-ColdOpen2(GMLoc_RigelCastle, GMLoc_DumaTower)
+ColdOpen(GMLoc_RigelCastle, GMLoc_DumaTower)
+WM_DRAWPATH2 0x0 0x34 0x0 //zofia harbor path
+ENDA
 
 WMIntro_Act5_Final:
 ENDA

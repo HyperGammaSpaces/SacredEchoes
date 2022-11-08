@@ -94,6 +94,12 @@ WORD $0 $0 $0
 WORD $0 $0 $0 $0 $0 $0 $0 $0 $0
 
 PUSH
+	ORG $B8B98
+	BYTE $05
+	ORG $BCA44
+	BYTE $05
+	ORG $BCA64
+	BYTE $01
 	ORG $B90FE
 	BYTE $05 //dont clear lord2
 	//ORG $B90BA
@@ -106,6 +112,9 @@ PUSH
 	BYTE $05 //dont draw lord2 as enemy
 	ORG $20686E
 	BYTE $2 //default allegiance palette for MU7
+    
+    ORG $BA368
+    jumpToHack(GM_EntryNodeFix)
 
 	ORG $A3E12C
 	POIN GmapMenuDefsNew

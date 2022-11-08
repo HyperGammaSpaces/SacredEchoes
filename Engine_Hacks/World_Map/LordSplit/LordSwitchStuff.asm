@@ -29,6 +29,7 @@
 .global HandleActClosureSaves
 .type HandleActClosureSaves, %function
 .global Act3EndSwitch
+.global GM_EntryNodeFix
 
 Act3SetupASMC:
 	push {lr}
@@ -534,7 +535,7 @@ HandleActClosureSaves:
 	mov  r0, #0x20
 	and  r0, r1
 	cmp  r0, #0x0
-	bne  EndSaveMenu
+	bne  EndSaveMenu @postgame check
 		mov  r4, #0xE
 		ldsb r4, [r5, r4] //current chapter ID in r4
 		ldr  r2, =0x03005280 
@@ -654,3 +655,28 @@ HandleActClosureSaves:
 
 .align
 .ltorg
+
+GM_EntryNodeFix:
+    ldrb r0, [r2, #0x11]
+    mov  r1, r2
+    add  r1, #0xC8
+    strb r0, [r1, #0x0]
+    ldrb r1, [r6, #0xE] @chapter ID
+    cmp  r1, #0xE
+    ble  EntryNode_Vanilla
+    cmp  r1, #0x30
+    bge  EntryNode_Vanilla
+
+    EntryNode_Fix:
+    bl   GetDestinationBasedOnStoryFlags
+    ldr  r1, =0x080BA374+1
+    b    EntryNode_Return
+    
+    EntryNode_Vanilla:
+    ldr  r1, =0x080BA370+1
+    EntryNode_Return:
+    bx   r1
+
+.align
+.ltorg
+

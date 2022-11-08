@@ -398,7 +398,7 @@ Hook_9827C:				@ SomethingPrepListRelated
 @ entry in the prep screen item list is 0, count, item id/uses
 push	{r5,r7,r14}
 mov		r5,r1
-mov		r7,r3
+ldr     r7, =0x02012f54 @gPrepScreenItemListSize
 bl		GetConvoyPartitionSize
 mov		r1,#0			@ counter
 Loop_9827C:
@@ -429,6 +429,8 @@ Hook_9A550:				@ Give all items
 push	{r5,r14}
 add		sp,#-0xC
 str		r5,[sp,#4]		@save unit data
+ldr     r2, =0x3004E50
+str     r5, [r2]
 mov		r2,#0
 str		r2,[sp,#8]
 bl		GetConvoyPartitionSize
@@ -519,14 +521,82 @@ bx		r0
 
 
 .align
+MergeConvoyPartitionsASMC:
+push	{r4-r7,r14}
+add		sp,#-4
+mov		r0, #0x1			@ first partition
+ldr		r1,=ConvoyPartitionTable
+lsl		r0,#3
+add		r0,r1
+ldrb	r1,[r0]
+ldrb	r6,[r0,#1]			@ size of partition
+lsl		r1,#1
+ldr		r0,=gpConvoyItemArray
+ldr		r0,[r0]
+add		r7,r0,r1			@ start offset
+mov		r3,#0				@ counter
+FindFirstOpenSlot:
+ldrh	r0,[r7]
+cmp		r0,#0
+beq		DoneFirstPartition
+add		r3,#1
+add		r7,#2
+sub		r6,#1
+cmp		r6,#0
+bgt		FindFirstOpenSlot
+DoneFirstPartition:
+@r7 has address to write to
+mov		r0, #0x2			@ second partition
+ldr		r1,=ConvoyPartitionTable
+lsl		r0,#3
+add		r0,r1
+ldrb	r1,[r0]
+ldrb	r6,[r0,#1]			@ size of partition
+lsl		r1,#1
+ldr		r0,=gpConvoyItemArray
+ldr		r0,[r0]
+add		r4,r0,r1			@ start offset
+CopyPartition2Loop:
+ldrh	r0,[r4]
+cmp		r0,#0
+beq		MergeDone
+strh	r0,[r7]
+add		r3,#1
+add		r4,#2
+add		r7,#2
+sub		r6,#1
+cmp		r6,#0
+bgt		CopyPartition2Loop
+MergeDone:
+add		sp,#4
+pop		{r4-r7}
+pop		{r0}
+bx		r0
+.align
+.ltorg
+
+.align
 CombineConvoyPartitionsASMC:
 @ use SETVAL 1 0x00CCBBAA; AA and BB are the convoy partitions you're combining, and CC is the new partition. AA, BB, and CC are all indices in the ConvoyPartitionTable
 @ Example: 0x00040201 would copy the contents of partitions 1 and 2 to partition 4. Make sure there's room for both sets!
 push	{r4-r7,r14}
 add		sp,#-4
+ldr		r5,=#0x2020188		@ gGenericBuffer
+@ clear the target partition
+mov		r6,#0xC8
+lsl		r6,r6,#1
+mov		r0,r13
+mov		r1,#0
+strh	r1,[r0]
+mov		r1,r5
+mov		r2,#1
+lsl		r2,#0x18
+add		r2,r6
+ldr		r3,=#0x80D1678		@ CpuSet
+mov		r14,r3
+.short	0xF800
 ldr		r4,=#0x30004B8		@ gEventSlot
 ldr		r4,[r4,#4]			@ slot 1
-ldr		r5,=#0x2020188		@ gGenericBuffer
 lsl		r0,r4,#0x18
 lsr		r0,#0x18			@ first partition
 ldr		r1,=ConvoyPartitionTable

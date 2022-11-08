@@ -2,10 +2,12 @@
 
 InjectAi2(0x1, SeekSafetyAI_Script)
 InjectAi2(0x8, ClairTalkAI_Script)
-InjectAi2(0xA, WhitewingTalkAI_Script)
+InjectAi2(0xA, CatriaTalkAI_Script)
+InjectAi2(0xB, PallaTalkAI_Script)
 
 #define ClairTalkAI [0x6, 0x8, 0x0, 0x0]
-#define WhitewingTalkAI [0x0, 0xA, 0x0, 0x0]
+#define CatriaTalkAI [0xC, 0xA, 0x0, 0x0]
+#define PallaTalkAI [0xC, 0xB, 0x0, 0x0]
 
 ALIGN 4
 
@@ -32,7 +34,7 @@ ClairTalkAI_Script:
 	BYTE Clair Lukas 0x00 0x00
 }
 
-WhitewingTalkAI_Script:
+CatriaTalkAI_Script:
 {
 //	AiMoveTowardsEnemy
 //  AiChangeAi($06, $FF)
@@ -46,10 +48,32 @@ WhitewingTalkAI_Script:
 	AiRestart
 	AiLabel($02)
 	AiDoNothing
-	AiChangeAi($00, $00)
+	AiChangeAi($0C, $01)
 	AiRestart
 	ALIGN 4
 
 	TalkData:
 	BYTE Catria Celica 0x00 0x00
+}
+
+PallaTalkAI_Script:
+{
+//	AiMoveTowardsEnemy
+//  AiChangeAi($06, $FF)
+//	AiGoto($02)
+//	AiLabel($01)
+	AiMoveTowardsCharacter(Celica)
+	AiGotoIfEQ($02, $04)
+	AiGotoIfEQ($00, $03)
+	AiGotoIfNE($00, $02)
+	AiFunc($3F4EC+1, TalkData)
+	AiRestart
+	AiLabel($02)
+	AiDoNothing
+	AiChangeAi($0C, $01)
+	AiRestart
+	ALIGN 4
+
+	TalkData:
+	BYTE Palla Celica 0x00 0x00
 }
