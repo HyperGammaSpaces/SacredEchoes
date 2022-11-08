@@ -42,11 +42,11 @@ NoFade
 ENDA
 */
 
-#define DoubleStandardMournQuote(Mourner1,Mourner2,TextId1,TextId2) "CasualCheckASMC ; BNE 3 0x0 0xC ; CHECK_EXISTS Mourner1 ; BEQ 1 0x0 0xC ; CHECK_DEPLOYED Mourner1 ; BEQ 1 0x0 0xC ; CHECK_ALIVE Mourner1 ; BEQ 1 0x0 0xC ; CHECK_EXISTS Mourner2 ; BEQ 2 0x0 0xC ; CHECK_DEPLOYED Mourner2 ; BEQ 2 0x0 0xC ; CHECK_ALIVE Mourner2 ; BEQ 2 0x0 0xC ; DoubleMournQuote(TextId1,TextId2) ; GOTO 3 ; LABEL 2 ;MournQuote(TextId1) ; GOTO 3 ; LABEL 1 ; StandardMournQuote(Mourner2,TextId2) ; LABEL 3 ; NoFade ; ENDA"
+#define DoubleStandardMournQuote(Mourner1,Mourner2,TextId1,TextId2) "CasualCheckASMC ; BNE 3 0x0 0xC ; CHECK_EXISTS Mourner1 ; BEQ 4 0x0 0xC ; CHECK_DEPLOYED Mourner1 ; BEQ 4 0x0 0xC ; CHECK_ALIVE Mourner1 ; BEQ 4 0x0 0xC ; CHECK_EXISTS Mourner2 ; BEQ 2 0x0 0xC ; CHECK_DEPLOYED Mourner2 ; BEQ 2 0x0 0xC ; CHECK_ALIVE Mourner2 ; BEQ 2 0x0 0xC ; DoubleMournQuote(TextId1,TextId2) ; GOTO 3 ; LABEL 2 ;MournQuote(TextId1) ; GOTO 3 ; LABEL 4 ; StandardMournQuote(Mourner2,TextId2) ; LABEL 3 ; NoFade ; ENDA"
 
 /*
 CHECK_DEPLOYED Mourner1 ; 
-BEQ 1 0x0 0xC ; 
+BEQ 4 0x0 0xC ; 
 	CHECK_DEPLOYED Mourner2 ; 
 	BEQ 2 0x0 0xC ; 
 		DoubleMournQuote(TextId1,TextId2) ; 
@@ -54,7 +54,7 @@ BEQ 1 0x0 0xC ;
 	LABEL 2 ;
 	MournQuote(TextId1) ; 
 	GOTO 3 ; 
-LABEL 1 ; 
+LABEL 4 ; 
 StandardMournQuote(Mourner2,TextId2) ; 
 LABEL 3 ; 
 NoFade ; 

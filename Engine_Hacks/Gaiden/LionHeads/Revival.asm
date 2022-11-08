@@ -156,12 +156,13 @@ bx   r0
 .global Revival_Effect
 Revival_Effect:
 @unset dead bit
-push   {r4, r5, lr}
+push   {r4-r6, lr}
 mov    r4, r0 @menu proc
 mov    r5, r1 @this command
 add    r1, #0x3C
 ldrb   r0, [r1]
 add    r0, #0x1
+mov    r6, r0
 ldr    r3, =0x0801829c @GetUnitByCharacterID
 mov    lr, r3
 .short 0xf800
@@ -175,9 +176,18 @@ beq    Revival_Effect_end
 	mov    r2, #0x8
 	orr    r1, r2
 	str    r1, [r0, #0xC]
+    
+    lsl    r0, r6, #0x18
+    lsr    r0, r0, #0x18
+    cmp    r0, #0x24
+    bgt    Revival_Effect_end
+    add    r0, #0xB0
+    ldr    r3, =0x08083d94 @UnsetFlag
+    mov    lr, r3
+    .short 0xf800
 
 Revival_Effect_end:
-pop    {r4, r5}
+pop    {r4-r6}
 pop    {r0}
 bx     r0
 .align
