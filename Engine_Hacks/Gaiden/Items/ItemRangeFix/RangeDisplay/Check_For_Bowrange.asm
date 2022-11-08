@@ -7,6 +7,7 @@
 .endm
 
 .set GetWeaponType, 0x8017548
+.set GetItemAttributes, 0x801756c
 .set BonusWeaponType, 0x3
 .set ArcM, 0x19
 .set ArcF, 0x1A
@@ -26,10 +27,11 @@
 @returns:
 	@r0: updated min max range word
 
-push {r4, r5, r6, lr}
+push {r4-r7, lr}
 
 mov r5, r2				@store rangeword
 mov r6, r0				@store unit data
+mov r7, r1				@store item data
 
 ldr r4, [r0, #0x4]		@load unit data
 ldrb r4, [r4, #0x4]  	@unit's class
@@ -57,6 +59,13 @@ blt End
 cmp r0, #0x7
 bgt End
 
+mov r0, r7
+blh GetItemAttributes
+mov r2, #4      @staff
+and r0, r2
+cmp r0, #0
+bne End
+
 mov r4, #0x0
 CheckForMageRingInInventory:
 lsl r1, r4, #0x1
@@ -80,7 +89,7 @@ CasePromoted:
 End:
 
 mov r0, r5
-pop {r4, r5, r6}
+pop {r4-r7}
 pop {r3}
 bx r3
 

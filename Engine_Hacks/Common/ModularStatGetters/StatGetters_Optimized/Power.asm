@@ -5,6 +5,8 @@
 .equ GetStatBonus, GetItemPowBonus
 .equ stat_offset, 0x14
 
+.equ GrimoireRingID, 0x74
+
 @r0 = unit RAM (or stack pocket holding unit struct data)
 prPowGetter:
     push    {r4-r7, lr}
@@ -48,6 +50,16 @@ prPowGetter:
     b       EnforceMinZero
     
     PassiveStatBonus_Found:
+    cmp     r6, #GrimoireRingID
+    bne     GetPowBoost
+        mov     r0, r4
+        blh     GetUnitEquippedWeapon
+        blh     GetItemAttributes
+        mov     r1, #0x42 @ bits for "use mag stat"
+        and     r0, r1
+        cmp     r0, #0x0
+        beq     EnforceMinZero
+    GetPowBoost:
     mov     r0, r6
     blh     GetStatBonus
     add     r5, r5, r0

@@ -14,6 +14,7 @@
 .equ GetUnitItemCount, 0x80179D8
 .equ GetItemIdROMStruct, 0x80177B0
 .equ GetItemWeight, 0x801760C
+.equ GetItemAttributes, 0x0801756c
 
 .equ GetItemHPBonus, 0x80163F0
 .equ GetItemPowBonus, 0x8016420
