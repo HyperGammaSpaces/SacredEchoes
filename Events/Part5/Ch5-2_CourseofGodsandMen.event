@@ -467,6 +467,8 @@ Ch5F2_EndingScene:
     
     //Now unite the two parties
     ENUT gConvoyMergeEnabled
+    SETVAL 1 0x00000201
+    SHORT $0D40 $0; POIN CombineConvoyPartitionsASMC|1
     REVEAL Celica
     REVEAL Mae
     REVEAL Boey

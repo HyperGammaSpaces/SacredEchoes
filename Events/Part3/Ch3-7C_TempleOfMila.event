@@ -204,9 +204,6 @@ Ch3_7C_BeginningScene:
 	ENDA
 
 Ch3_7C_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3C7Completed
-	EVBIT_MODIFY 0x0
     CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
 	FADI 2
@@ -228,7 +225,8 @@ Ch3_7C_EndingScene:
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
-    EVBIT_MODIFY 0x1
+	EVBIT_MODIFY 0x1
+	ENUT gChapter3C7Completed
     CALL $591F40
 	SVAL 0x3 TheZofia 
 	GIVEITEMTO Celica

@@ -391,6 +391,8 @@ DumaDefeated:
 
 Ch5F3_EndingScene:
     CALL DumaDefeated
+    ENUT gEnableLordSwitch
+    ENUT gPostgameEnabled
 	MNC4 0x0
 	ENDA
     

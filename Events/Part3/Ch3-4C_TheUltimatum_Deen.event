@@ -98,7 +98,7 @@ Ch3_4C_UnitsSouth:
     UNIT
     
 EnemyUnitsDeen:
-	UNIT DeenBoss Myrmidon DeenBoss Level(12, Enemy, False) [2,1] 0x00 0x00 0x0 0x00 [BraveSword,DeensSword] DefensiveTerrainAI
+	UNIT DeenBoss Myrmidon DeenBoss Level(12, Enemy, False) [2,1] 0x00 0x00 0x0 0x00 [BraveSword,DeensSword] AttackInRangeAI
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(14, Enemy, True) [3,3]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(13, Enemy, True) [2,4]	0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
 	UNIT Rigel_Merc Myrmidon	DeenBoss Level(6, Enemy, True) [6,2]	0x00 0x00 0x0 0x00 [IronSword] DelayedRushAI

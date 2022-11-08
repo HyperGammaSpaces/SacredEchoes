@@ -140,8 +140,8 @@ SluiceGateFlood:
 	CameraCursor(12,5)
 	EARTHQUAKE_START 0x100
 	STAL 60
-    CHECK_ALIVE Tatarrah
-    BEQ 0x666 rC r0
+    CHECK_EVENTID Local_BossDeath
+    BNE 0x666 rC r0
         MapText(Ch3_7A_Flood)
     LABEL 0x666
 	FADI 2

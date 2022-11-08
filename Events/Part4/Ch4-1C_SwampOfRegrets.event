@@ -18,6 +18,7 @@ Evt_ThisChapter:
 	POIN Evt_BeginningScene Evt_EndingScene
 
 Evt_TurnBasedEvents:
+    TURN 0x0 WyvernCharge [4,0] 0x0
 	TURN
 
 Evt_CharacterBasedEvents:
@@ -102,6 +103,12 @@ EnemyUnits:
 	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [3,0]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [2,1]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT
+
+WyvernCharge:
+    SVAL 0x1 0x0
+    CHAI Rigel_Wyvern
+    NoFade
+    ENDA
 
 Evt_BeginningScene:
 

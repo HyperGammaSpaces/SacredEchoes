@@ -37,6 +37,23 @@ ArcherEvent:
 Ch1_2_CharacterBasedEvents:
 	CHAR
 
+BossMove:
+	CHECK_ALLEGIANCE 0xFFFF
+	BNE 0x222 rC r0
+        MUSI
+        STAL 30
+        FlashCursor(BanditAlm2, 60)
+        Text(Boss1_2_MoveQuote)
+		MUNO
+        SVAL 0x1 0x0
+        CHAI BanditAlm2
+        GOTO 0x333
+	LABEL 0x222
+	ENUF 0x8
+	LABEL 0x333
+	NoFade
+	ENDA
+
 Ch1_2_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(5,7)
@@ -46,6 +63,7 @@ Ch1_2_LocationBasedEvents:
 Ch1_2_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	DefeatAll(Ch1_2_EndingScene)
+	AREA 0x8 BossMove [11,0] [15,4]
 	MournQuoteAFEVS
 	AFEV
 

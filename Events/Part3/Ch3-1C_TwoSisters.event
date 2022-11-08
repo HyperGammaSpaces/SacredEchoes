@@ -103,7 +103,7 @@ EnemyUnits:
 	UNIT Bandit_Strong Pirate_F Garth Level(11,Enemy,True) [11,9] 0x00 0x00 0x0 0x00 [Hammer,IronShield] NeverMoveAI
 	//West block
 	UNIT Enemy_Mercenary Mercenary Garth Level(10,Enemy,True) [8,7] 0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT Bandit_Bow Archer_F Garth Level(12, Enemy,True) [8,6] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Bandit_Bow Archer_F Garth Level(10, Enemy,True) [8,6] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT Bandit_Axe Pirate_F Garth Level(13,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
 	UNIT Bandit_Strong Pirate_F Garth Level(12,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [Swordreaver] NoAI
 	UNIT Bandit_Axe Pirate Garth Level(10,Enemy,True) [9,6] 0x00 0x00 0x0 0x00 [Hammer] NoAI
@@ -123,8 +123,8 @@ EnemyUnits:
 	UNIT
 	
 PegasusKnights:
-	UNIT Palla PegasusKnight 0x00 Level(8,NPC,False) [10,0] 0x00 0x00 0x1 REDA11R1 [Javelin, BaseLance] NoAI 
-	UNIT Catria PegasusKnight 0x00 Level(5,NPC,False) [9,0] 0x00 0x00 0x1 REDA10R1 [BaseLance, AngelRing] WhitewingTalkAI 
+	UNIT Palla PegasusKnight 0x00 Level(8,NPC,False) [10,0] 0x00 0x00 0x1 REDA10R2 [Javelin, BaseLance, Vulnerary] PallaTalkAI 
+	UNIT Catria PegasusKnight 0x00 Level(5,NPC,False) [9,0] 0x00 0x00 0x1 REDA10R1 [BaseLance, AngelRing] CatriaTalkAI 
 	UNIT
 
 Ch3_1C_BeginningScene:

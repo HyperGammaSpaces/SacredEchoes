@@ -125,8 +125,8 @@ ProtagDoorEvent:
         SADD 0xC2
         EndUnitMMS(Celica)
         SET_ACTIVE 0
-        MOVE_1STEP 0 Celica 2 //2=down
-        ENUN
+        //MOVE_1STEP 0 Celica 2 //2=down
+        //ENUN
         SET_ENDTURN Celica
         MUNO
         SVAL 0xC 0x1
@@ -139,8 +139,8 @@ ProtagDoorEvent:
         SADD 0xC2
         EndUnitMMS(Conrad)
         SET_ACTIVE 0
-        MOVE_1STEP 0 Conrad 2 //2=down
-        ENUN
+        //MOVE_1STEP 0 Conrad 2 //2=down
+        //ENUN
         SET_ENDTURN Conrad
         MUNO
         SVAL 0xC 0x1
@@ -628,10 +628,13 @@ CutsceneUnits_End_Outside:
     UNIT
     
 CutsceneUnits_End_Outside_2:
-    UNIT Sonya Mage_F 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x1 REDA7R2 [Fire, Vulnerary] NoAI
     UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x1 REDA4R2 [Fire, Vulnerary] NoAI
     UNIT Boey Mage 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x1 REDA5R2 [Fire, Vulnerary] NoAI
 	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [4,0] 0x00 0x00 0x1 REDA5R1 [HolyLance, BaseLance, PrayerRing] NoAI 
+	UNIT
+    
+CutsceneUnits_End_Sonya:
+    UNIT Sonya Mage_F 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x1 REDA7R2 [Fire, Vulnerary] NoAI
 	UNIT
 
 BossUnit:
