@@ -46,6 +46,9 @@ DumaHpHack:
     
     DumaHpFix:
         add     r0, #0x12
+        ldrb    r1, [r0]
+        cmp     r1, #0
+        bgt     ReturnFalse
         mov     r1, #0x3C
         strb    r1, [r0]
         strb    r1, [r0, #0x1]

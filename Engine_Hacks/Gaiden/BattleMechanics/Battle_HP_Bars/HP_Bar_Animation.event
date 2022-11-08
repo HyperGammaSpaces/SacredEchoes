@@ -67,6 +67,17 @@ PUSH
     SHORT $0049 //lsl r1, r1, #0x1
     SHORT $1860 //add r0, r4, r1
     SHORT $E005 //jump down to 53020
+    
+    //fix sfx/crit stuff to use AIS round number
+    ORG $72404
+    BL($5A16C) //GetAisSubjectId
+    SHORT $1C04 //mov r4, r0
+    SHORT $89E9 //ldrh r1, [r5, #0xE]
+    SHORT $3901 //sub r1, #1
+    SHORT $0049 //lsl r1, r1, #0x1
+    SHORT $1866 //add r6, r4, r1
+    SHORT $E003 //jump down to 7241C
+    SHORT $46C0 $46C0 $46C0 $46C0
 
 	ORG $624D4
 	jumpToHack(SilenceFix)
