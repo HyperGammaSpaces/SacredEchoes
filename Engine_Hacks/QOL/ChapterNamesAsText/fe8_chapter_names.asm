@@ -153,7 +153,8 @@ blh     0x080BBA28      @GetWorldMapNodeName	{U}
 b       end_80822a4
 
 postgame_text:
-ldr     r0,=0x7D0     @text ID --TRIAL--: 0x5d4
+ldr     r0,=gp_PostgameName
+ldrh    r0, [r0]
 blh     0x800a240     @GetStringFromIndex {U}
 b       end_80822a4
 .ltorg

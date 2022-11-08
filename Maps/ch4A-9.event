@@ -10,6 +10,7 @@ Map:
 MapChanges:
 TileMap(0,9,8,2,1,Map_Change_0)
 TileMap(1,19,8,2,1,Map_Change_1)
+TileMap(2,4,18,1,1,Map_Change_2)
 TileMapEnd
 
 Map_Change_0:
@@ -18,5 +19,9 @@ ALIGN 4
 
 Map_Change_1:
 SHORT 0x4d4 0x4d8 
+ALIGN 4
+
+Map_Change_2:
+SHORT 0x4 
 ALIGN 4
 
