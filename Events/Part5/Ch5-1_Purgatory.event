@@ -95,6 +95,9 @@ Evt_Ballista2:
     BLST
     ALIGN 4
 
+/*
+I do like the idea of "Berkut doesn't move until Rinea dies", but I'd make him actually show as stationary until then. I know that, at least with the version of the movement-range-nullifying thing that comes with Builder Skillsys, nullifying movement range is done by setting AI4 to "boss AI" (value 20 I think?). Changing AI4 to 0 in the event that changes his AI then allows them to move normally again, but it has to be done with Set Unit Status instead of the vanilla AI change commands for whatever reason
+*/
 RineaDeathAfter:
     CHECK_EVENTID 0x0B
     BNE 0x0 r0 rC
@@ -393,8 +396,11 @@ Evt_BeginningScene:
     TEXTCLEAR
     
     FADI 16
-    LOAD1 0x1 MycenJoins
-    ENUN
+    CHECK_EXISTS Mycen
+    BNE 0x300 rC r0
+        LOAD1 0x1 MycenJoins
+        ENUN
+    LABEL 0x300
     CLEA 0x0
     LOAD3 0x0 PlayerUnits 
     ENUN

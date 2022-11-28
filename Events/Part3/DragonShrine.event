@@ -124,7 +124,7 @@ DShrine_BeginningScene:
 	ENDA
 
 DShrine_EndingScene:
-    CALL EndMusicAndMMS
+    FadeOutMusic
 	EVBIT_MODIFY 0x1
 	ENUT gDragonShrineCompleted
 	EVBIT_MODIFY 0x0

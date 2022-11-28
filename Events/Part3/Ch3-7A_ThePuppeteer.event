@@ -55,10 +55,10 @@ SluiceGateDrain1:
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
-	TILECHANGE 0x2 //wlevel half left
-	TILECHANGE 0x3 //wlevel half right
 	STAL 30
 	SOUN 0xBD //water going down
+	TILECHANGE 0x2 //wlevel half left
+	TILECHANGE 0x3 //wlevel half right
 	STAL 30
 	NoFade
 	ENDA
@@ -67,10 +67,10 @@ SluiceGateDrain2:
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
-	TILECHANGE 0x4 //wlevel none left
-	TILECHANGE 0x5 //wlevel none right
 	STAL 30
 	SOUN 0xBD //water going down
+	TILECHANGE 0x4 //wlevel none left
+	TILECHANGE 0x5 //wlevel none right
 	STAL 30
 	NoFade
 	ENDA
@@ -82,10 +82,9 @@ SluiceGateWallCrack1:
 	STAL 60
 	EARTHQUAKE_END
     FlashCursor(22, 7, 60)
-	TILECHANGE 0x6 //wall right 1
-	STAL 30
 	SOUN 0xB0 //cracking wall
-	STAL 30
+	TILECHANGE 0x6 //wall right 1
+	STAL 60
 	CameraCursor(Alm)
 	MapText(Ch3_7A_SluiceGateCracking)
 	NoFade
@@ -98,10 +97,9 @@ SluiceGateWallCrack2:
 	STAL 60
 	EARTHQUAKE_END
     FlashCursor(0, 7, 60)
-	TILECHANGE 0x7 //wall left 1
-	STAL 30
 	SOUN 0xB0 //cracking wall
-	STAL 30
+	TILECHANGE 0x7 //wall left 1
+	STAL 60
     CAMERA_CENTERED Alm
 	NoFade
 	ENDA
@@ -113,10 +111,9 @@ SluiceGateWallCrack3:
 	STAL 60
 	EARTHQUAKE_END
     FlashCursor(21, 7, 60)
-	TILECHANGE 0x8 //wall right 2
-	STAL 30
 	SOUN 0xB0 //cracking wall
-	STAL 30
+	TILECHANGE 0x8 //wall right 2
+	STAL 60
     CAMERA_CENTERED Alm
 	NoFade
 	ENDA
@@ -128,10 +125,9 @@ SluiceGateWallCrack4:
 	STAL 60
 	EARTHQUAKE_END
     FlashCursor(1, 7, 60)
-	TILECHANGE 0x9 //wall left 2
-	STAL 30
 	SOUN 0xB0 //cracking wall
-	STAL 30
+	TILECHANGE 0x9 //wall left 2
+	STAL 60
     CAMERA_CENTERED Alm
 	NoFade
 	ENDA
@@ -215,7 +211,7 @@ EnemyUnits:
 	UNIT Rigel_Archer Sniper Tatarrah Level(1,Enemy,True) [13,7] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
 	UNIT Rigel_Soldier Knight Tatarrah Level(7,Enemy,True) [13,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman Tatarrah Level(14,Enemy,True) [11,5] 0x00 0x00 0x0 0x00 [Mire] [0x0,0x12,0x0,0x0]
-	UNIT DumaFaith_Witch Witch Tatarrah Level(7,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
+	UNIT DumaFaith_Witch Witch Tatarrah Level(7,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [Thunder, WitchWarpItem] WitchWarpAI
 	
 	//Left hall
 	UNIT Rigel_Archer Archer_F Tatarrah Level(12,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
@@ -378,13 +374,13 @@ Ch3_7A_EndingScene:
 			TEXTCLEAR
 			FADI 2
             CLEAN
-            SetBackground(BlackBackground,5)
 			EVBIT_MODIFY 0x1
 			LOAD1 0x1 DeltheaJoins
 			ENUN
+            SetBackground(BlackBackground,5)
 			CharacterJoinedNotification(Notif_DeltheaJoin)
-            FADI 5
 			EVBIT_MODIFY 0x0
+            FADI 5
 			GOTO 0x6
 		LABEL 0x5
 			MUSC SongID_SilentGround
@@ -409,13 +405,13 @@ Ch3_7A_EndingScene:
 		TEXTCLEAR
 		FADI 2
         CLEAN
-        SetBackground(BlackBackground,5)
 		EVBIT_MODIFY 0x1
 		LOAD1 0x1 DeltheaJoins
 		ENUN
+        SetBackground(BlackBackground,5)
 		CharacterJoinedNotification(Notif_DeltheaJoin)
-        FADI 5
 		EVBIT_MODIFY 0x0
+        FADI 5
 	LABEL 0x6
     SetBackground(BlackBackground)
 	EVBIT_MODIFY 0x1

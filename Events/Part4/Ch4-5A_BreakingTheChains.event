@@ -2,22 +2,23 @@
 //Based off of Camtech75's Skeleton
 #include EAstdlib.event
 
-EventPointerTable(plCh4_5A_Event, Dummy_ThisChapter)
+EventPointerTable(plCh4_5A_Event, Ch4A5_ThisChapter)
 
-Dummy_ThisChapter:
-	POIN Dummy_TurnBasedEvents
-	POIN Dummy_CharacterBasedEvents
-	POIN Dummy_LocationBasedEvents
-	POIN Dummy_MiscBasedEvents
-	POIN Dummy_Dunno Dummy_Dunno Dummy_Dunno
-	POIN Dummy_Tutorial
-	POIN Dummy_Ballista1 Dummy_Ballista2
+Ch4A5_ThisChapter:
+	POIN Ch4A5_TurnBasedEvents
+	POIN Ch4A5_CharacterBasedEvents
+	POIN Ch4A5_LocationBasedEvents
+	POIN Ch4A5_MiscBasedEvents
+	POIN Ch4A5_Dunno Ch4A5_Dunno Ch4A5_Dunno
+	POIN Ch4A5_Tutorial
+	POIN Ch4A5_Ballista1 Ch4A5_Ballista2
 	POIN PlayerPlacement PlayerPlacement
 	POIN $0 $0 $0 
 	POIN EnemyUnits EnemyUnits EnemyUnits
-	POIN Dummy_BeginningScene Dummy_EndingScene
+	POIN Ch4A5_BeginningScene Ch4A5_EndingScene
 
-Dummy_TurnBasedEvents:
+Ch4A5_TurnBasedEvents:
+    TurnEventEnemy(0x11,ZekeTurnsBlue,0,256)
     TurnEventPlayer(0x0,IfTatianaThenBandits,3)
     TurnEventPlayer(0x0,LoadSouthwest,5)
     TurnEventPlayer(0x0,LoadNortheast,7)
@@ -39,7 +40,7 @@ LoadNortheast:
     ReinforcementEvent(ReinforcementsNE)
     ENDA
 
-Dummy_CharacterBasedEvents:
+Ch4A5_CharacterBasedEvents:
 	CharacterEvent(0x09,TalkToZeke,Tatiana,Zeke)
 	CharacterEvent(0x09,TalkToZekeAlm,Alm,Zeke)
 	CHAR
@@ -50,12 +51,12 @@ TalkToZeke:
 	MapText(Ch4_5A_TatianaRecruitsZeke)
 	SVAL 0x1 0x0
 	CHAI Zeke
-	//CHAI Rigel_Cav
 	STAL 5
 	CUSA Zeke
 	STAL 0x14
 	CharacterJoinedNotification(Notif_ZekeJoin)
 	MURE 0x05
+    CALL ZekeAIChange
 	EVBIT_MODIFY 0x1
 	ENUT gZekeRecruited
 	EVBIT_MODIFY 0x0
@@ -68,19 +69,69 @@ TalkToZekeAlm:
 	MapText(Ch4_5A_AlmRecruitsZeke)
 	SVAL 0x1 0x0
 	CHAI Zeke
-	//CHAI Rigel_Cav
 	STAL 5
 	CUSA Zeke
 	STAL 0x14
 	CharacterJoinedNotification(Notif_ZekeJoin)
 	MURE 0x05
+    CALL ZekeAIChange
 	EVBIT_MODIFY 0x1
 	ENUT gZekeRecruited
 	EVBIT_MODIFY 0x0
 	NoFade
 	ENDA
+    
+ZekeAIChange:
+    SVAL 0xB Coords(16,6)
+    CHECK_ALLEGIANCE (-2)
+    BEQ 0x301 rC r0
+        CUSN (-2)
+    LABEL 0x301
+    SVAL 0xB Coords(16,7)
+    CHECK_ALLEGIANCE (-2)
+    BEQ 0x302 rC r0
+        CUSN (-2)
+    LABEL 0x302
+    SVAL 0xB Coords(17,10)
+    CHECK_ALLEGIANCE (-2)
+    BEQ 0x303 rC r0
+        CUSN (-2)
+    LABEL 0x303
+    SVAL 0xB Coords(16,9)
+    CHECK_ALLEGIANCE (-2)
+    BEQ 0x304 rC r0
+        CUSN (-2)
+    LABEL 0x304
+    SVAL 0xB Coords(18,11)
+    CHECK_ALLEGIANCE (-2)
+    BEQ 0x305 rC r0
+        CUSN (-2)
+    LABEL 0x305
+    SVAL 0xB Coords(18,4)
+    CHECK_ALLEGIANCE (-2)
+    BEQ 0x306 rC r0
+        CUSN (-2)
+    LABEL 0x306
+    SVAL 0xB Coords(20,10)
+    CHECK_ALLEGIANCE (-2)
+    BEQ 0x307 rC r0
+        CUSN (-2)
+    LABEL 0x307
+    SVAL 0xB Coords(21,7)
+    CHECK_ALLEGIANCE (-2)
+    BEQ 0x308 rC r0
+        CUSN (-2)
+    LABEL 0x308
+    //SVAL 0x1 0x00080300
+    SetAIParameters(0x0,0x3,0x8,0x0)
+    CHAI Rigel_Cav
+    //SVAL 0x1 0x2004030F
+    SetAIParameters(0xF,0x3,0x4,0x20)
+    CHAI [18,4]
+    NoFade
+    ENDA
 
-Dummy_LocationBasedEvents:
+Ch4A5_LocationBasedEvents:
 	#ifdef __DEBUG__
 	  Seize(12,17)
 	#endif
@@ -148,32 +199,40 @@ HouseEvent3:
     EVBIT_T 0x7
 	ENDA
 
-Dummy_MiscBasedEvents:
+Ch4A5_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Dummy_EndingScene)
-	AFEV 0x11 ZekeTurnsBlue gZekeRecruited
+	DefeatAll(Ch4A5_EndingScene)
+	//AFEV 0x11 ZekeTurnsBlue gZekeRecruited
 	MournQuoteAFEVS
 	AFEV
 	
 ZekeTurnsBlue:
+    CHECK_EVENTID Local_BossDeath
+    BNE 0x501 rC r0
+	CHECK_EVENTID gZekeRecruited
+    BNE 0x500 rC r0
+        ENUF 0x11
+        GOTO 0x501
+    LABEL 0x500
 	MUSI
 	CameraCursor(JeromeCh4_5)
 	MapText(Ch4_5A_ZekeTurnsBlue)
 	MUNO
+    LABEL 0x501
 	NoFade
 	ENDA
 
-Dummy_Dunno:
+Ch4A5_Dunno:
 	END_MAIN
 
-Dummy_Tutorial:
+Ch4A5_Tutorial:
 	END_MAIN
 
-Dummy_Ballista1:
+Ch4A5_Ballista1:
 	BLST
 	ALIGN 4
 
-Dummy_Ballista2:
+Ch4A5_Ballista2:
 	BLST
 	ALIGN 4
 
@@ -221,9 +280,9 @@ EnemyUnits:
     UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [20,15] 0x00 0x00 0x0 0x00 [SteelAxe] [0x0,0x0,0xC,0x0]
     UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [12,11] 0x00 0x00 0x0 0x00 [BaseSword] [0x0,0x3,0xC,0x0]
     
-    UNIT Rigel_Cav GoldKnight JeromeCh4_5 Level(2, Enemy, True) [2,9] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0,0x12,0xC,0x0]
-	UNIT Rigel_Cav Paladin JeromeCh4_5 Level(12, Enemy, True) [3,7] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
-	UNIT Rigel_Cav Paladin JeromeCh4_5 Level(12, Enemy, True) [1,11] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
+    UNIT Rigel_Soldier GoldKnight JeromeCh4_5 Level(2, Enemy, True) [2,9] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0,0x12,0xC,0x0]
+	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [3,7] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
+	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [1,11] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
 	
 	UNIT
     
@@ -231,12 +290,16 @@ MoreEnemies:
 	UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [11,2] 0x00 0x00 0x0 0x00 [IronAxe] [0x0,0x12,0xC,0x0]
     UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [15,2] 0x00 0x00 0x0 0x00 [SteelSword] [0x0,0x0,0xC,0x0]
     UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [SteelSword] [0x0,0x0,0xC,0x0]
-	UNIT Rigel_Cav Paladin JeromeCh4_5 Level(12, Enemy, True) [23,10] 0x00 0x00 0x0 0x00 [Javelin] [0x0,0x0,0xC,0x0]
-	UNIT Rigel_Cav Paladin JeromeCh4_5 Level(12, Enemy, True) [23,11] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [23,10] 0x00 0x00 0x0 0x00 [Javelin] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [23,11] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x0,0xC,0x0]
 	UNIT Rigel_Soldier Berserker JeromeCh4_5 Level(4, Enemy, True) [2,3] 0x00 0x00 0x0 0x00 [SteelAxe] [0x0,0x0,0xC,0x0]
 	UNIT Rigel_Soldier Berserker JeromeCh4_5 Level(4, Enemy, True) [1,4] 0x00 0x00 0x0 0x00 [PoisonAxe] [0x0,0x0,0xC,0x0]
     UNIT
 	
+ZekeSolo:
+	UNIT Zeke GoldKnight 0x00 Level(3,Ally,False) [18,8] 0x00 0x00 0x0 0x00 [SilverLance, BaseLance] NoAI
+	UNIT
+/*
 ZekeUnits:
 	UNIT Zeke GoldKnight 0x00 Level(3,NPC,False) [18,8] 0x00 0x00 0x0 0x00 [SilverLance, BaseLance] [0x3,0x3,0xC,0x20]
 	UNIT Rigel_Cav Paladin Zeke Level(12, NPC, True) [16,6] 0x00 0x00 0x0 0x00 [Javelin, Axereaver] [0x3,0x3,0x8,0x20]
@@ -247,6 +310,19 @@ ZekeUnits:
 	UNIT Rigel_Cav Sage Zeke Level(4, NPC, True) [18,4] 0x00 0x00 0x0 0x00 [Thunder, Physic] [0xF,0x3,0x4,0x20]
 	UNIT Rigel_Cav BowKnight Zeke Level(2, NPC, True) [20,10] 0x00 0x00 0x0 0x00 [BaseBow] [0x0,0x3,0x8,0x0]
 	UNIT Rigel_Cav BowKnight Zeke Level(2, NPC, True) [21,7] 0x00 0x00 0x0 0x00 [BaseBow] [0x0,0x3,0x8,0x0]
+	UNIT
+*/
+
+ZekeUnits:
+	UNIT Zeke GoldKnight 0x00 Level(3,Enemy,False) [18,8] 0x00 0x00 0x0 0x00 [SilverLance, BaseLance] DoNothingAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [16,6] 0x00 0x00 0x0 0x00 [Javelin, Axereaver] DoNothingAI
+	UNIT Rigel_Cav Paladin Zeke Level(12, Enemy, True) [16,7] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] DoNothingAI
+	UNIT Rigel_Cav Paladin Zeke Level(8, Enemy, True) [17,10] 0x00 0x00 0x0 0x00 [SteelLance] DoNothingAI
+	UNIT Rigel_Cav Paladin Zeke Level(8, Enemy, True) [16,9] 0x00 0x00 0x0 0x00 [IronLance] DoNothingAI
+	UNIT Rigel_Cav Paladin Zeke Level(8, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [IronLance] DoNothingAI
+	UNIT Rigel_Cav Sage Zeke Level(4, Enemy, True) [18,4] 0x00 0x00 0x0 0x00 [Thunder, Physic] DoNothingAI
+	UNIT Rigel_Cav BowKnight Zeke Level(2, Enemy, True) [20,10] 0x00 0x00 0x0 0x00 [BaseBow] DoNothingAI
+	UNIT Rigel_Cav BowKnight Zeke Level(2, Enemy, True) [21,7] 0x00 0x00 0x0 0x00 [BaseBow] DoNothingAI
 	UNIT
 	
 ZekeEnemyUnits:
@@ -278,7 +354,7 @@ ReinforcementsNE:
     UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(12, Enemy, True) [23,0] 0x00 0x00 0x1 REDA23R1 [IronAxe] [0x0,0x0,0xC,0x0]
     UNIT
 
-Dummy_BeginningScene:
+Ch4A5_BeginningScene:
 
 	LOAD1 0x1 EnemyUnits
 	ENUN
@@ -327,8 +403,6 @@ Dummy_BeginningScene:
 		TEXTCLEAR
 
 		STAL 20
-		CUSN ZekeBoss
-		STAL 20
 		CameraCursor(Alm)
 		STAL 5
 		MapText(Ch4_5A_OpeningText_4)
@@ -357,7 +431,7 @@ Dummy_BeginningScene:
 	GotoPrepScreen
 	ENDA
 
-Dummy_EndingScene:
+Ch4A5_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter4A5Completed
 	EVBIT_MODIFY 0x0
@@ -386,7 +460,7 @@ Dummy_EndingScene:
 		FADU 5
 		STAL 60
 		CgText(Ch4_5A_EndingText_Good_2)
-		CgText( Ch4_5A_EndingText_Good_3)
+		CgText(Ch4_5A_EndingText_Good_3)
 		FADI 5
 		TEXTMODE 1
 		SetBackground(0x02, 5)
@@ -396,8 +470,18 @@ Dummy_EndingScene:
         TEXTCLEAR
 		FADI 2
 		MUSCMID SongID_Silence
+        
+        //check if Zeke survived and add him to the party if so
+        CHECK_EVENTID gZekeRecruited
+        BNE 0x401 rC r0
+            LOAD1 0x1 ZekeSolo
+            ENUN
+            ENUT gZekeRecruited
+            SetBackground(BlackBackground,5)
+			CharacterJoinedNotification(Notif_ZekeJoin)
+        LABEL 0x401
 		STAL 60
-		
+        
 		//Alm questions the prophecy
 		MUSC SongID_Env_Night
 		SetBackground(0x43, 2)

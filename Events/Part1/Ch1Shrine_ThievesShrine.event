@@ -94,7 +94,7 @@ ThiefShrine_BeginningScene:
 	ENDA
 
 ThiefShrine_EndingScene:
-    CALL EndMusicAndMMS
+    FadeOutMusic
 	SVAL 0x3 0x3
 	ASMC 0x85C65
 	//SADD 0x32

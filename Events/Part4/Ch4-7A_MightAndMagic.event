@@ -81,7 +81,6 @@ HouseEvent3:
 
 Ch4A7_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch4A7_EndingScene)
     AFEV 0xE BridgeOpenEvent 0xD
 	MournQuoteAFEVS
 	AFEV
@@ -103,9 +102,9 @@ Ch4A7_Ballista2:
 BridgeOpenEvent:
     CAMERA_CENTERED [5,10]
 	STAL 20
+	SOUN 0x2D7 //bridge forming
 	TILECHANGE 0x0 //bridge
 	STAL 30
-	SOUN 0xAF //bridge forming
 	STAL 30
     NoFade
     ENDA

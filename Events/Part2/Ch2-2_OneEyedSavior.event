@@ -157,7 +157,9 @@ Ch2_2_BeginningScene:
 	FlashCursor(PirateCelica1, 60)
 	MapText(Ch2_2_Pirates)
 	//Trigger map change 1 here
-	SOUN 0xF2
+    CAMERA_CENTERED [7,8]
+    STAL 20
+	SOUN 0x2D7
 	TILECHANGE 0x1
 	STAL 60
 

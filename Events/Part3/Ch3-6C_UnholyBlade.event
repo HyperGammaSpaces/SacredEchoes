@@ -112,13 +112,13 @@ CutsceneUnits:
 
 EnemyUnits:
 	//total: ~22
-	UNIT Blake Myrmidon	Blake Level(5, Enemy, False) [23,1]	DropItem 0x00 0x0 0x00 [Shadowblade] NeverMoveAI
+	UNIT Blake Myrmidon	Blake Level(5, Enemy, False) [22,2] DropItem 0x00 0x0 0x00 [Shadowblade] AttackInRangeAI
 	//witches, mercs, myrms, sorcerers, archers, snipers
 	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(7, Enemy, True) [24,2]	0x00 0x00 0x0 0x00 [Miasma,Physic] [0x0F,0x03]
-	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(7, Enemy, True) [22,2]	0x00 0x00 0x0 0x00 [Selene] NeverMoveAI
+	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(7, Enemy, True) [23,1]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
 	UNIT Rigel_Merc Myrmidon	Blake Level(7, Enemy, True) [25,5]	0x00 0x00 0x0 0x00 [Rapier] DelayedRushAI
 	UNIT Rigel_Merc Myrmidon	Blake Level(5, Enemy, True) [24,8]	0x00 0x00 0x0 0x00 [Lancereaver] DelayedRushAI
-	UNIT DumaFaith_Witch Witch	Blake Level(6, Enemy, True) [20,6]	0x00 0x00 0x0 0x00 [Thunder, Rewarp] WitchWarpAI
+	UNIT DumaFaith_Witch Witch	Blake Level(6, Enemy, True) [20,6]	0x00 0x00 0x0 0x00 [Thunder, WitchWarpItem] WitchWarpAI
 	//Snipers
 	UNIT Rigel_Archer Sniper	Blake Level(4, Enemy, True) [12,11]	DropItem 0x00 0x0 0x00 [SilverBow] ChaseOnceApproachedAI
 	UNIT Rigel_Archer Sniper	Blake Level(7, Enemy, True) [6,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
@@ -131,7 +131,6 @@ EnemyUnits:
 	UNIT Rigel_Merc Mercenary	Blake Level(13, Enemy, True) [18,8]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
 	UNIT Rigel_Merc Mercenary	Blake Level(14, Enemy, True) [19,9]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman	Blake Level(14, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Miasma, Heal] AttackInRangeAI
-	UNIT DumaFaith_Sorcerer Shaman	Blake Level(14, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT Rigel_Archer Archer	Blake Level(13, Enemy, True) [10,7]	0x00 0x00 0x0 0x00 [KillerBow] NeverMoveAI
 	UNIT DumaFaith_Sorcerer Shaman	Blake Level(9, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [Mire] NoAI
 	//South fort

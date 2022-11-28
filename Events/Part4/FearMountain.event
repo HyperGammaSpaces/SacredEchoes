@@ -129,7 +129,7 @@ FearMtn_BeginningScene:
 	ENDA
 
 FearMtn_EndingScene:
-    CALL EndMusicAndMMS
+    FadeOutMusic
     CHECK_EVENTID gFearMountainShrineCompleted
 	BNE 0x102 0xC 0x0
         EVBIT_MODIFY 0x1

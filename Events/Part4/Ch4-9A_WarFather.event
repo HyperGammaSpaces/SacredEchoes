@@ -99,7 +99,7 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT RudolfEnemy GoldKnight	RudolfEnemy Level(20, Enemy, True) [15,4]	DropItem 0x00 0x0 0x00 [Imperius,EmperorShield] NeverMoveAI
+	UNIT RudolfEnemy GoldKnight	RudolfEnemy Level(20, Enemy, True) [15,4]	DropItem 0x00 0x0 0x00 [Imperius,EmperorShield] [0x09, 0x03, 0x04, 0x0]
 	UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
     UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [11,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
     UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [18,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
@@ -150,11 +150,17 @@ MovGuys:
     UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [29,15] 0x00 0x00 0x1 REDA29R15 [SilverLance] NoAI
     UNIT
     
+MycenJoins:
+    UNIT Mycen GoldKnight 0x00 Level(7, Ally, True) [14,25] 0x00 0x00 0x0 0x00 [BaseLance, SilverLance] NoAI
+    UNIT
+    
 RudolfAlmAfter:
 	MUSI
 	CameraCursor(Alm)
 	STAL 20
 	MapText(Ch4A_9_BossQuote_Alm_After)
+        //SetAI(RudolfEnemy,0x9,0x3,0x0,0x0)
+        //CHAI RudolfEnemy
 	STAL 20
 	MUNO
 	NoFade
@@ -211,6 +217,8 @@ Ch4A9_EndingScene:
     CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
 	FADI 2
+    LOAD1 0x1 MycenJoins
+    ENUN
     MUSC SongID_Env_Wind
     STAL 5
     //put Rudolf's death coords in sB

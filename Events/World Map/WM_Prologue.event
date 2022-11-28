@@ -349,6 +349,8 @@ WM_Act3Start: //setup act 3 routes and remove path between harbor and castle
 	WM_DRAWPATH 0x0 0x10 0x0 //alm path
 	EVBIT_MODIFY 0x0
 	STAL 70
+    CHECK_EVENTID gLordSwitchTutorialShown
+    BNE 0x123A rC r0
 	//tutorial
 
 /*	
@@ -378,7 +380,9 @@ WM_Act3Start: //setup act 3 routes and remove path between harbor and castle
 	TEXTEND
 	TEXTCLEAR
 	WM_REMOVEPATH 0x34 //castle <-> harbor
+    ENUT gLordSwitchTutorialShown
 	//end tutorial
+    LABEL 0x123A
 	WM_MAKELORDVISIBLE 0x0
 	EVBIT_MODIFY 0x1
 	CALL 0x591F40
@@ -711,6 +715,7 @@ WM_Act4_Final:
     STAL 40
     WM_DRAWPATH 0x0 0x33 0x0 //alm path
 	STAL 70
+	MUSC 0x8
 	WM_MAKELORDVISIBLE 0x0
 	EVBIT_MODIFY 0x1
 	CALL 0x591F40

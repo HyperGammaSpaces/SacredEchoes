@@ -45,7 +45,9 @@ Ch4A8_LocationBasedEvents:
 
 Ch4A8_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch4A8_EndingScene)
+	//DefeatAll(Ch4A8_EndingScene)
+    AFEV 0x10 DoubleBossCheck 0xE
+    AFEV 0x10 DoubleBossCheck 0xF
 	MournQuoteAFEVS
 	AFEV
 
@@ -62,6 +64,19 @@ Ch4A8_Ballista1:
 Ch4A8_Ballista2:
 	BLST
 	ALIGN 4
+    
+DoubleBossCheck:
+    CHECK_EVENTID 0x0F
+    BEQ 0x0 r0 rC
+      CHECK_EVENTID 0x0E
+      BEQ 0x0 r0 rC
+          CALL Ch4A8_EndingScene
+          GOTO 0x1
+    LABEL 0x0
+      ENUF 0x10 // Or whatever event ID you attach to the AFEVs.
+    LABEL 0x1
+    NoFade
+    ENDA
 
 PlayerPlacement:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI

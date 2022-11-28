@@ -141,7 +141,7 @@ EnemyUnitsBoat2:
 
 EnemyUnitsWitches:
 	UNIT DumaFaith_Witch Mage_F SorcererBoss Level(3,Enemy,True) [11,0] 0x00 0x00 0x1 REDA11R2 [Thunder] DefaultAI
-	UNIT DumaFaith_Witch_Slow Witch SorcererBoss Level(2,Enemy,True) [14,0] 0x00 0x00 0x1 REDA14R2 [Nosferatu, Rewarp] WitchWarpAI
+	UNIT DumaFaith_Witch_Slow Witch SorcererBoss Level(2,Enemy,True) [14,0] 0x00 0x00 0x1 REDA14R2 [Nosferatu, WitchWarpItem] WitchWarpAI
 	UNIT
 
 Ch2_6_BeginningScene:
@@ -168,16 +168,15 @@ Ch2_6_BeginningScene:
         STAL 5
 		
 	LABEL 0x100
-	FADU 4
 	MUSCFAST SongID_Silence
-	STAL 10
+	STAL 5
 	CAMERA_CENTERED Celica
 	EARTHQUAKE_START 0x100
-	STAL 60
+	FADU 4
+	STAL 90
 	EARTHQUAKE_END
 	STAL 10
 	MUSC SongID_Tension
-	FADU 16
 	STAL 20
 	CAMERA_CENTERED Jarth
 	FlashCursor(Jarth, 60)

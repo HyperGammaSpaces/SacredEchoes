@@ -179,7 +179,7 @@ ChestEvent:
 	ENDA
 
 Hideout_EndingScene:
-    CALL EndMusicAndMMS
+    FadeOutMusic
 	EVBIT_MODIFY 0x1
 	CHECK_EVENTID gDeliveranceHideoutCompleted //has Clive joined?
 	BNE 0x103 0xC 0x0 //if true, skip cutscene

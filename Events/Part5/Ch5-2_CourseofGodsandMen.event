@@ -451,8 +451,20 @@ Ch5F2_EndingScene:
     TEXTEND
     FadeOutMusic
     STAL 20
+    TEXTCLEAR
+    
+    EVBIT_MODIFY 0x1
+    TEXTMODE 1
     MUSCSLOW SongID_MilaStatue
-    TEXTCONT
+    BACKGROUND_CHANGE MilaRevivedCG 0x1 0x4
+    STAL 90
+    CgText(Ch5_2_MilaRevived_CG)
+    STAL 20
+    BACKGROUND_CHANGE 0x2C 0x1 0x4
+    EVBIT_MODIFY 0x0
+    
+    TEXTMODE 1
+    TEXTSHOW Ch5_2_EndingText_6
     TEXTEND
     MUSCSLOW SongID_Silence
     TEXTCONT
@@ -469,6 +481,8 @@ Ch5F2_EndingScene:
     ENUT gConvoyMergeEnabled
     SETVAL 1 0x00000201
     SHORT $0D40 $0; POIN CombineConvoyPartitionsASMC|1
+    SHORT $0D40 $0; POIN MergeGoldpile|1
+    SHORT $0D40 $0; POIN Act5SetupASMC|1
     REVEAL Celica
     REVEAL Mae
     REVEAL Boey
@@ -500,6 +514,7 @@ Ch5F2_EndingScene:
     LABEL 0x133A
     REVEAL Nomah
     REVEAL Conrad
+	SHORT $0D40 $0; POIN ResetJedahCounterASMC|1
 	
 	MNC2 0x2F
 	ENDA

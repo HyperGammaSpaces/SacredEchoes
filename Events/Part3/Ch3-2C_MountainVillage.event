@@ -72,7 +72,7 @@ VillageEvent:
 
 Ch3_2C_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch3_2C_EndingScene)
+	DefeatBoss(Ch3_2C_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
@@ -106,8 +106,6 @@ PlayerPlacement:
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [13,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [4,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [3,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [1,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [2,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1,Ally,True) [14,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
     UNIT
 
@@ -122,8 +120,6 @@ Ch3_2C_PlayerSkirmishUnits:
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [13,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [4,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [3,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [1,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [2,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
 
 AxeBros:
@@ -136,13 +132,11 @@ AtlasJoins:
 	UNIT
 
 EnemyUnits:
-	UNIT Boss_Monster Entombed Boss_Monster Level(3,Enemy,True) [4,1] DropItem 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI 
-	UNIT Terror_Bael Bael Boss_Monster Level(12,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
-	UNIT Terror_Bael Bael Boss_Monster Level(12,Enemy,True) [10,6] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI 
+	UNIT Boss_Monster Entombed Boss_Monster Level(3,Enemy,True) [4,1] DropItem 0x00 0x0 0x00 [RottenClaw,Item100G] NeverMoveAI 
+	UNIT Terror_Bael Bael Boss_Monster Level(12,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
 	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
 	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [5,13] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
-	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [6,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
-	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [9,16] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI 
+	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [6,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
 	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [10,15] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
 	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(7,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
 	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(6,Enemy,True) [3,10] 0x00 0x00 0x0 0x00 [Axereaver] MonsterAI 

@@ -70,7 +70,7 @@ SShrine_LocationBasedEvents:
 
 SShrine_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(SShrine_EndingScene)
+	//DefeatAll(SShrine_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
@@ -81,6 +81,8 @@ SShrine_Tutorial:
 	END_MAIN
 
 SShrine_Ballista1:
+	BlueSigil(0,7)
+	BlueSigil(0,8)
 	BLST
 	ALIGN 4
 
@@ -136,8 +138,8 @@ EnemyUnits:
 	UNIT
 
 BackupsReinforcements:
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [5,7] 0x00 0x00 0x1 REDA5R7 [ToxinLance] NoAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(10,Enemy,True) [13,13] 0x00 0x00 0x1 REDA13R13 [HeavySpear] NoAI 
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [IronLance] NoAI 
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(10,Enemy,True) [13,13] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI 
 	UNIT
 
 SShrine_BeginningScene:
@@ -160,7 +162,7 @@ SShrine_BeginningScene:
 	ENDA
 
 SShrine_EndingScene:
-    CALL EndMusicAndMMS
+    FadeOutMusic
 	EVBIT_MODIFY 0x1
 	ENUT gSylvanShrineCompleted
 	EVBIT_MODIFY 0x0

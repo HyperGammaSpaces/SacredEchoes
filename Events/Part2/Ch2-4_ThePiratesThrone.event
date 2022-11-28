@@ -178,7 +178,7 @@ Ch2_4_EndingScene:
 	//Check if Valbar is dead. If he's OK call the following
 	EVBIT_MODIFY 0x1
 	CHECK_ALIVE Valbar
-	BEQ 0x6 0xC 0x0 //if not, goto NoFaye
+	BEQ 0x6 0xC 0x0
 		EVBIT_MODIFY 0x0
 		MUSC SongID_Victory
 		CUSA Valbar
@@ -213,7 +213,7 @@ Ch2_4_EndingScene:
         LABEL 0x8
         EVBIT_MODIFY 0x0
         FADI 2
-		GOTO 0xA
+		GOTO 0xB
         
 	LABEL 0x6 //if Valbar is dead
 	EVBIT_MODIFY 0x0
@@ -249,6 +249,7 @@ Ch2_4_EndingScene:
     LABEL 0xA
     EVBIT_MODIFY 0x0
     FADI 16
+    LABEL 0xB
     STAL 5
     MNCH 0x0C
 	ENDA

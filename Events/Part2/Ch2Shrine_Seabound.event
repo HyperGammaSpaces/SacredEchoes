@@ -119,6 +119,7 @@ SeaboundShrine_BeginningScene:
 			TEXTMODE 1
 			TEXTSHOW SeaboundShrine_KamuiIntro
 			TEXTEND
+            STAL 20
 			SOUN 0x37B //necrodragon roar
 			STAL 20
 			//kamuiscream.wav
@@ -129,6 +130,7 @@ SeaboundShrine_BeginningScene:
 			TEXTMODE 1
 			TEXTSHOW SeaboundShrine_BoeyIntro
 			TEXTEND
+            STAL 20
 			SOUN 0x37B //necrodragon roar
 			STAL 20
 			//boeyscream.wav
@@ -184,11 +186,10 @@ SeraphimEvent:
 	ENDA
 
 SeaboundShrine_EndingScene:
-    CALL EndMusicAndMMS
+    FadeOutMusic
 	EVBIT_MODIFY 0x1
-	SVAL 0x1 0x1
 	CHECK_EVENTID gSeaboundShrineCompleted 
-	IFNE 0x6 0xC 0x1 
+	BNE 0x6 0xC 0x0
 		//EVBIT_MODIFY 0x0
 		SVAL 0x3 0x3
 		ASMC 0x85C65
