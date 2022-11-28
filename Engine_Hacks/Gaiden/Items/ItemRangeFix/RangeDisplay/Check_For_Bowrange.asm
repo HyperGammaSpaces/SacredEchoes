@@ -8,6 +8,7 @@
 
 .set GetWeaponType, 0x8017548
 .set GetItemAttributes, 0x801756c
+.equ GetItemIdROMStruct, 0x80177B0
 .set BonusWeaponType, 0x3
 .set ArcM, 0x19
 .set ArcF, 0x1A
@@ -75,10 +76,31 @@ add r0, r0, r1
 ldrb r1, [r0, #0x0]
 cmp r1, #MageRing
 beq CaseArcher
-add r4, #0x1
-cmp r4, #0x4
-ble CheckForMageRingInInventory
-b End
+    @if another ring or shield is above the mage ring, don't boost
+    mov  r0, r1
+    blh  GetItemIdROMStruct
+    mov  r1, #0x8
+    ldr  r0, [r0, r1]    @ item attr bitfield
+    lsl  r1, r1, #0x14   @ passive boost bit
+    and  r1, r0
+    cmp  r1, #0x0
+    bne  End
+    @also check for accessories with passive healing
+    mov  r1, #0x4
+    lsl  r1, r1, #0x14   @ passive heal bit
+    and  r1, r0
+    cmp  r1, #0x0
+    beq  ContinueLoop
+        mov  r1, #1
+        and  r1, r0
+        cmp  r1, #0x0   @ is it a weapon? if not, exit
+        beq  End
+    
+ContinueLoop:
+add  r4, #0x1
+cmp  r4, #0x4
+ble  CheckForMageRingInInventory
+b    End
 
 CaseArcher:
   add r5, r5, #T1RangeBonus
