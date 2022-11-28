@@ -7,12 +7,130 @@ PUSH
     BYTE $06
     ORG $1E7FC
     BYTE $0C
-
+    
+    //affects droppable items from monsters
+    ORG $17B2E
+    SHORT $46C0 $46C0
+    
+    //setup active unit
+    ORG $1867C
+    BYTE $02 $73 $45 $74 $05 $74 $85 $71 $11 $48 $01 $1C $3D $31 $0D $70 $3F $30 $FF $21 $01 $70
+    BL($2C334)
+    BYTE $32 $68 $D0 $68 $01 $21 $08 $43 $D0 $60 $11 $20 $20 $56 $0A $49 $09 $68 $80 $00 $40 $18 $10 $21 $61 $56 $00 $68 $40 $18 $05 $70 $70 $BC $01 $BC $00 $47
+    
     //Legendary weapon flash
     ORG $58AD2
     #incbin "Legendary_Weapon_Flash.dmp"
     POIN Legendary_Flash_Table
     
+    //fix prep screen use statbars
+    ORG $9C0CA
+    SHORT $7CE8 //ldrb r0, [r5, #0x13]
+    SHORT $46C0 //nop
+    ORG $9C0F4
+    SHORT $7D28 //ldrb r0, [r5, #0x14]
+    SHORT $46C0 //nop
+    ORG $9C110
+    SHORT $7D68 //ldrb r0, [r5, #0x15]
+    SHORT $46C0 //nop
+    ORG $9C12C
+    SHORT $7DA8 //ldrb r0, [r5, #0x16]
+    SHORT $46C0 //nop
+    ORG $9C148
+    SHORT $7E68 //ldrb r0, [r5, #0x19]
+    SHORT $46C0 //nop
+    ORG $9C15E
+    SHORT $7DE8 //ldrb r0, [r5, #0x17]
+    SHORT $46C0 //nop
+    ORG $9C17A
+    SHORT $7E28 //ldrb r0, [r5, #0x18]
+    SHORT $46C0 //nop
+    
+    ORG $9C25A
+    SHORT $7CE0 //ldrb r0, [r4, #0x13]
+    SHORT $46C0 //nop
+    ORG $9C284
+    SHORT $7CE0 //ldrb r0, [r4, #0x13]
+    SHORT $46C0 //nop
+    ORG $9C296
+    SHORT $7D20 //ldrb r0, [r4, #0x14]
+    SHORT $46C0 //nop
+    ORG $9C2AC
+    SHORT $7D20 //ldrb r0, [r4, #0x14]
+    SHORT $46C0 //nop
+    ORG $9C2C0
+    SHORT $7D60 //ldrb r0, [r4, #0x15]
+    SHORT $46C0 //nop
+    ORG $9C2D6
+    SHORT $7D60 //ldrb r0, [r4, #0x15]
+    SHORT $46C0 //nop
+    ORG $9C2EC
+    SHORT $7DA0 //ldrb r0, [r4, #0x16]
+    SHORT $46C0 //nop
+    ORG $9C302
+    SHORT $7DA0 //ldrb r0, [r4, #0x16]
+    SHORT $46C0 //nop
+    ORG $9C316
+    SHORT $7E60 //ldrb r0, [r4, #0x19]
+    SHORT $46C0 //nop
+    ORG $9C324
+    SHORT $7E60 //ldrb r0, [r4, #0x19]
+    SHORT $46C0 //nop
+    ORG $9C338
+    SHORT $7DE0 //ldrb r0, [r4, #0x17]
+    SHORT $46C0 //nop
+    ORG $9C34E
+    SHORT $7DE0 //ldrb r0, [r4, #0x17]
+    SHORT $46C0 //nop
+    ORG $9C362
+    SHORT $7E20 //ldrb r0, [r4, #0x18]
+    SHORT $46C0 //nop
+    ORG $9C378
+    SHORT $7E20 //ldrb r0, [r4, #0x18]
+    SHORT $46C0 //nop
+    
+    ORG $9CDEC
+    SHORT $7CC0 //ldrb r0, [r0, #0x13]
+    SHORT $46C0 //nop
+    ORG $9CDF8
+    SHORT $7D00 //ldrb r0, [r0, #0x14]
+    SHORT $46C0 //nop
+    ORG $9CE04
+    SHORT $7D40 //ldrb r0, [r0, #0x15]
+    SHORT $46C0 //nop
+    ORG $9CE10
+    SHORT $7D80 //ldrb r0, [r0, #0x16]
+    SHORT $46C0 //nop
+    ORG $9CE1C
+    SHORT $7E40 //ldrb r0, [r0, #0x19]
+    SHORT $46C0 //nop
+    ORG $9CE28
+    SHORT $7DC0 //ldrb r0, [r0, #0x17]
+    SHORT $46C0 //nop
+    ORG $9CE34
+    SHORT $7E00 //ldrb r0, [r0, #0x18]
+    SHORT $46C0 //nop
+    ORG $9CE78
+    SHORT $7CC0 //ldrb r0, [r0, #0x13]
+    SHORT $46C0 //nop
+    ORG $9CE84
+    SHORT $7D00 //ldrb r0, [r0, #0x14]
+    SHORT $46C0 //nop
+    ORG $9CE90
+    SHORT $7D40 //ldrb r0, [r0, #0x15]
+    SHORT $46C0 //nop
+    ORG $9CE9C
+    SHORT $7D80 //ldrb r0, [r0, #0x16]
+    SHORT $46C0 //nop
+    ORG $9CEA8
+    SHORT $7E40 //ldrb r0, [r0, #0x19]
+    SHORT $46C0 //nop
+    ORG $9CEB4
+    SHORT $7DC0 //ldrb r0, [r0, #0x17]
+    SHORT $46C0 //nop
+    ORG $9CEC0
+    SHORT $7E00 //ldrb r0, [r0, #0x18]
+    SHORT $46C0 //nop
 POP
 
 //Legendary weapon flash table

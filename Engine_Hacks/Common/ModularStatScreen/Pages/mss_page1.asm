@@ -126,10 +126,21 @@ RescueCheckEnd:
     draw_def_bar_at 16, 11
     draw_res_bar_at 16, 13
     draw_rating_at 18, 15 @rating
-    b        NextColumn
+    b        DrawSkills
 
     .align
     .ltorg
+    
+DrawSkills:
+    mov     r1, r8
+    ldr     r1, [r1]
+    ldr     r1, [r1, #0x28]
+    mov     r0, #0x1
+    lsl     r0, r0, #0x10
+    and     r0, r1
+    cmp     r0, #0
+    beq     NextColumn
+    draw_textID_at 22, 17, textID=0x047, colour=Green
 
 NextColumn:
     draw_textID_at 22, 3, textID=0x4F6 @move

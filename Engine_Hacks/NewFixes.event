@@ -70,16 +70,8 @@ PUSH
 	BYTE $E0
 	
 	//fix supply before ch2
-	ORG $31644
-	WORD $0
-	ORG $31648
-	WORD $0
-    ORG $23f6e //Access Supply
-    SHORT $0
-	ORG $31630
-	SHORT $DB0E //Access supply in overworld
-    ORG $31646 //send to supply
-    SHORT $0
+	ORG $3161E
+    SHORT $2001 $E01A
 	
 	//Fix Formation maybe being disabled
 	ORG $33686

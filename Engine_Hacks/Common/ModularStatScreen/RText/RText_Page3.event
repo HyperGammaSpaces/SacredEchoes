@@ -6,7 +6,7 @@ POP
 
 //weapon rank left
 WR_Name:
-	RMenu(0,WR_Class,WR_Class,ST_Weaponrank,0x18,0x50,0x0,NameDescGetter)
+	RMenu(0,WR_Class,0,WR_Promo,0x18,0x50,0x0,NameDescGetter)
 WR_Class:
 	RMenu(WR_Name,WR_Level,0,ST_Spells_5,0x6,0x68,0x6E8,ClassDescGetter)
 WR_Level:
@@ -15,9 +15,12 @@ WR_Exp:
 	RMenu(WR_Class,WR_HP,WR_Level,ST_Spells_6,0x26,0x78,0x543)
 WR_HP:
 	RMenu(WR_Level,0,0,0,0x6,0x88,0x544)
+WR_Promo:
+	RMenu(0,WR_Class,WR_Name,ST_Weaponrank,0x50,0x50,0,StatscreenPromoLooper,StatscreenPromoGetter)
+
 //weapon rank page right
 ST_Weaponrank:
-	RMenu(0, 0, WR_Name, ST_Spells_1, 0x68, 0x18, 0x568)
+	RMenu(0, 0, WR_Promo, ST_Spells_1, 0x68, 0x18, 0x568)
 ST_Spells_1:
 	RMenu(0, ST_Spells_2, ST_Weaponrank, 0, 0xA8, 0x18, 0x00, SpellStatscreenRtextLooper, SpellStatscreenRtextGetter)
 ST_Spells_2:

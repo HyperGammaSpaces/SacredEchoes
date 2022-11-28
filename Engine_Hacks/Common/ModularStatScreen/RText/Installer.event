@@ -32,6 +32,7 @@ WORD 0
 	#define ClassDescGetter 0x88C00
 	#define ConditionGetter 0x88A2C
 	#define StrMagGetter 0x88B08
+    #include "StatscreenPromoRtext.lyn.event"
 
 	RText_Page1:
 	{
@@ -56,5 +57,6 @@ WORD 0
 		#include "RText_Page4.event"
 	}
     ALIGN 4
+    
 
 #endif
