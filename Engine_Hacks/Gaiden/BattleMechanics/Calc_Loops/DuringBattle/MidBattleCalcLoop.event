@@ -32,6 +32,10 @@ ALIGN 4
 MidBattle_StatusWeapons:
 #incbin "StatusWeapons2.dmp"
 
+ALIGN 4
+MidBattle_EclipseEffect:
+#include "EclipseEffect.lyn.event"
+
 
 ALIGN 4
 MidBattleCalcLoop:
@@ -45,5 +49,6 @@ MidBattleCalcLoopTable:
     //POIN MidBattle_StatusWeapons //commented out while weapon effects are being finalized 
     #ifdef GAIDEN_MAGIC_INSTALLED
         POIN MidBattle_UpdateHPFromCost
+        POIN MidBattle_EclipseEffect
     #endif
     POIN MidBattleLoopEnd 0

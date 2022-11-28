@@ -5,9 +5,15 @@
 // hack by Stan.
 
 Event_WaitForSupportFx:
-    STAL 0x24
+    STAL 0x28
     NoFade
     ENDA
+ALIGN 4
+
+SupportFX_SimpleDelay:
+    PROC_YIELD
+    PROC_CALL_ROUTINE(SupportFX_SimpleDelay_Start)
+    PROC_END
 
 #include "Src/MapAuraFxUpdate.lyn.event"
 #include "PostBattleSupports.lyn.event"

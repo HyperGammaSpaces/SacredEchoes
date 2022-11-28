@@ -436,7 +436,26 @@ _UpdateBattleItemProperties:
     StoreWeaponType:
     mov     r3, r4
     add     r3, #0x50
-    strb    r0, [r3, #0x0]
+    strb    r0, [r3]
+    
+    UpdateASCalc:
+    @first we need raw spd from the unit struct
+    ldrb    r0, [r4, #0xB]
+    blh     GetUnitStruct
+    add     r0, #0x16
+    ldrb    r0, [r0]
+    mov     r1, r4
+    add     r1, #0x16
+    strb    r0, [r1]
+    @then we use our getter to handle any boosts/penalties
+    mov     r0, r4
+    blh     prBattleStructSpdGetter
+    mov     r3, r4
+    add     r3, #0x5E
+    strh    r0, [r3]
+    mov     r3, r4
+    add     r3, #0x16
+    strb    r0, [r3]
             
     BattleItemProperties_Finish:
     pop     {r4}
@@ -1126,7 +1145,7 @@ SaveUnit_CleanOutSpellBuffer:
     cmp     r0, #0x8F		@naglfar
     beq     SaveItem_After
     cmp     r0, #0xAC		@shadowshot
-    beq     SaveItem_After
+    beq     SaveItem_Update
     cmp     r0, #0xB3		@evil eye
     beq     SaveItem_After
     cmp     r0, #0xB4		@crimson eye

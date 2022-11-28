@@ -33,7 +33,8 @@
 .equ GetUnitPortraitOrClassCard, 0x080192B8
 .equ GetUnitStruct, 0x08019430
 .equ GetUnitCurrentHP, 0x08019150
-.equ GetUnitMaxHP, 0x08019190	
+.equ GetUnitMaxHP, 0x08019190
+.equ GetUnitSpeed, 0x08019210
 .equ SetUnitHP, 0x08019368
 .equ CanUnitUseAsWeapon, 0x08016574
 .equ CanUnitWieldWeapon, 0x08016574

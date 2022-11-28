@@ -68,11 +68,8 @@ POP
 	ItemEffectivenessPtr(Sagittae, FlierEffectiveness)
 	ItemEffectivenessPtr(Seraphim, MonsterEffectiveness)
 	ItemEffectivenessPtr(0x84, FlierEffectiveness) //luna bow
-	ItemEffectivenessPtr(Falchion, DragonEffectiveness)
-	ItemEffectivenessPtr(Gradivus, MonsterEffectiveness)
-	ItemEffectivenessPtr(Mercurius, MonsterEffectiveness)
-	ItemEffectivenessPtr(Hauteclere, MonsterEffectiveness)
-	ItemEffectivenessPtr(Parthia, FlierAndMonster1)
+	ItemEffectivenessPtr(Falchion, FalchionEffectiveness)
+	ItemEffectivenessPtr(Parthia, FlierEffectiveness)
 	ItemEffectivenessPtr(HolySword, MonsterEffectiveness)
 	ItemEffectivenessPtr(HolyLance, MonsterEffectiveness)
 	ItemEffectivenessPtr(HolyAxe, MonsterEffectiveness)
@@ -94,6 +91,9 @@ POP
 	WORD 0
 	DragonEffectiveness:
 	SetWeaponEffectiveness(DragonType, 6)
+	WORD 0
+	FalchionEffectiveness:
+	SetWeaponEffectiveness(DragonType|MonsterType, 6)
 	WORD 0
 	FlierEffectiveness:
 	SetWeaponEffectiveness(FlierType, 6)

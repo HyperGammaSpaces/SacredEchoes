@@ -14,6 +14,13 @@ DamageHalvingSkillsBeforeBattle:
     push    {lr}
     mov     r4, r0      @attacker
     mov     r5, r1      @defender
+    ldr     r0, [r5] @pointer to unit
+    cmp     r0, #0x0
+    beq     End
+    ldr     r0, [r5, #0x4] @defender class will be 0 if not a real battle
+    cmp     r0, #0
+    beq     End
+    
     @make sure attacker has magic weapon
     mov     r0, r4
     mov     r1, #0x4c   @Move to the attacker's weapon ability

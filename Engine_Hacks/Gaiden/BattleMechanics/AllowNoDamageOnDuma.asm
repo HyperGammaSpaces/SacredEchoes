@@ -5,9 +5,16 @@
 .equ Opponent_Unit_Ptr, 0xC
 .equ gBattleDisplayedDamage, 0x0203E1BC
 .equ DumaClassID, 0x66
+.equ DumaFlagID, 0x85
 .equ NosferatuID, 0x3F
 .equ FalchionID, 0x85
 
+mov r0, #DumaFlagID
+ldr r1, =#0x08083da8 @CheckEventId
+mov lr, r1
+.short 0xf800
+cmp r0, #0
+beq exit_57B14
 mov r1, r9
 mov r2, r10
 ldr r1, [r1, #4]

@@ -1,9 +1,5 @@
 PUSH
 
-	//Support menu
-	ORG $A36C4
-	BYTE 0x03 0x20 //Always say that there are three conversations.
-	
 	//Music - Turnwheel theme
 	ORG $951F6
 	BYTE $2C
@@ -19,15 +15,12 @@ PUSH
 	
 	#ifdef __DEBUG__
 		ORG $AB93A
-		BYTE 0x00 0x00 //Always display the support screen on the extra menu.
+		SHORT $46C0 //Always display the support screen on the extra menu.
 		//A3500 counts completed supports
-		ORG $A0DE0
-		SHORT $46C0
-		SHORT $46C0
-		SHORT $46C0
-		SHORT $46C0
-		SHORT $46C0
-		
+        ORG $A36C4
+        BYTE 0x03 0x20 //Always say that there are three conversations.
+        
+		//count all allies as known
 		ORG $A0E7E
 		SHORT $2001 $46C0
 		

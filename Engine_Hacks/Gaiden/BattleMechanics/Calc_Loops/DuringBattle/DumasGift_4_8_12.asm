@@ -97,3 +97,14 @@ DumasGift:
 
 .align
 .ltorg
+
+.global ResetJedahCounterASMC
+ResetJedahCounterASMC:
+push {lr}
+ldr  r1, =gJedahCounter
+mov  r0, #0
+strb r0, [r1]
+pop  {r0}
+bx   r0
+.align
+.ltorg

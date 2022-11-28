@@ -13,7 +13,6 @@ struct MapAuraFxProc
 
 	/* 2C */ unsigned blend;
 	/* 30 */ int vSpeed;
-	/* 32 */ int elapsedTime;
 };
 
 static void MapAuraFx_OnInit(struct MapAuraFxProc* proc);
@@ -23,11 +22,10 @@ static void MapAuraFx_OnEnd(struct MapAuraFxProc* proc);
 static const struct ProcCmd sProc_MapAuraFx[] = {
 	PROC_SET_NAME("Map Aura Fx"),
 
-	PROC_SET_DESTRUCTOR(MapAuraFx_OnEnd),
 	PROC_CALL_ROUTINE(MapAuraFx_OnInit),
+	PROC_SET_DESTRUCTOR(MapAuraFx_OnEnd),
 
 	PROC_LOOP_ROUTINE(MapAuraFx_OnLoop),
-	PROC_YIELD,
 
 	PROC_END
 };
@@ -137,23 +135,14 @@ static void MapAuraFx_OnInit(struct MapAuraFxProc* proc)
 
 	proc->vSpeed = 8;
 	proc->blend  = 4;
-	proc->elapsedTime  = 0;
 
 	// Calling this once to perhaps avoid flickering?
 	// (I didn't notice any flickering without it but just in case)
 	MapAuraFx_OnLoop(proc);
-	proc->elapsedTime  = 0;
 }
 
 static void MapAuraFx_OnLoop(struct MapAuraFxProc* proc)
 {
-    proc->elapsedTime++;
-    if(proc->elapsedTime > 32) {Proc_Break(proc);}
-    unsigned newBlend = proc->blend + 1;
-    if(newBlend >= 16) {newBlend = (32 - newBlend);}
-    else if(newBlend < 8) {newBlend = proc->blend + 2;}
-    else {newBlend = 16;}
-    proc->blend = newBlend;
 	SetBgPosition(2, 0, (proc->vSpeed * GetGameClock() / 32) % 32);
 	SetColorEffectsParameters(1, proc->blend, 16, 0);
 }
@@ -166,7 +155,6 @@ static void MapAuraFx_OnEnd(struct MapAuraFxProc* proc)
 
 	FillBgMap(gBg2MapBuffer, 0);
 	EnableBgSyncByIndex(2);
-    Proc_EndEach(sProc_MapAuraFx_Unit);
 }
 
 static void MapAuraFx_Unit_OnInit(struct MapAuraFxUnitProc* proc)
@@ -209,17 +197,17 @@ static void MapAuraFx_Unit_OnEnd(struct MapAuraFxUnitProc* proc)
 
 void StartMapAuraFx(void)
 {
-	Proc_Start(sProc_MapAuraFx, ROOT_PROC_3);
+	ProcStart(sProc_MapAuraFx, ROOT_PROC_3);
 }
 
 void EndMapAuraFx(void)
 {
-	Proc_EndEach(sProc_MapAuraFx);
+	EndEachProc(sProc_MapAuraFx);
 }
 
 int IsMapAuraFxActive(void)
 {
-	return Proc_Find(sProc_MapAuraFx) ? TRUE : FALSE;
+	return ProcFind(sProc_MapAuraFx) ? TRUE : FALSE;
 }
 
 void SetMapAuraFxSpeed(int speed)
@@ -234,7 +222,7 @@ void SetMapAuraFxSpeed(int speed)
 
 void SetMapAuraFxBlend(unsigned blend)
 {
-	struct MapAuraFxProc* proc = (struct MapAuraFxProc*) Proc_Find(sProc_MapAuraFx);
+	struct MapAuraFxProc* proc = (struct MapAuraFxProc*) ProcFind(sProc_MapAuraFx);
 
 	if (proc)
 	{
@@ -244,7 +232,7 @@ void SetMapAuraFxBlend(unsigned blend)
 
 void SetMapAuraFxPalette(const u16 palette[])
 {
-	struct MapAuraFxProc* proc = (struct MapAuraFxProc*) Proc_Find(sProc_MapAuraFx);
+	struct MapAuraFxProc* proc = (struct MapAuraFxProc*) ProcFind(sProc_MapAuraFx);
 
 	if (proc)
 	{
@@ -257,15 +245,14 @@ void AddMapAuraFxUnit(struct Unit* unit)
 {
 	if (UNIT_IS_VALID(unit) && unit->pMapSpriteHandle)
 	{
-		struct MapAuraFxProc* parent = Proc_Find(sProc_MapAuraFx);
+		struct Proc* parent = ProcFind(sProc_MapAuraFx);
 
 		if (parent)
 		{
 			struct MapAuraFxUnitProc* unitProc =
-				(struct MapAuraFxUnitProc*) Proc_Start(sProc_MapAuraFx_Unit, parent);
+				(struct MapAuraFxUnitProc*) ProcStart(sProc_MapAuraFx_Unit, parent);
 
 			unitProc->pUnit = unit;
-			parent->elapsedTime  = 0;
 		}
 	}
 }

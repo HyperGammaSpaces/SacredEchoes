@@ -45,7 +45,7 @@ DumaHpHack:
     b       DumaHpFix
     
     DumaHpFix:
-        add     r0, #0x12
+        add     r0, #0x13
         ldrb    r1, [r0]
         cmp     r1, #0
         bgt     ReturnFalse

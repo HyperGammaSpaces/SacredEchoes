@@ -15,7 +15,8 @@
 .equ GetUnitSupportingUnit, 0x080281F4
 .equ AddSupportPoints, 0x08028290
 .equ gGenericBuffer, 0x02020188
-.equ gSupportAuraDisplayArray, 0x203A5EC
+.equ gBattleActor, 0x0203A4EC
+.equ gSupportAuraDisplayArray, 0x203A5EC @repurposed from BattleRoundsArray
 .equ gSupportIndexArray, gSupportAuraDisplayArray+8
 
 	@ build using lyn
@@ -42,37 +43,16 @@
 
 	.type   StartSupportAuraFX, function
 	.global StartSupportAuraFX
+	.type   SupportFX_SimpleDelay_Start, function
+	.global SupportFX_SimpleDelay_Start
 
-	.type SupportAuraFX_OnInit, function
-	.type SupportAuraFX_OnLoop, function
-	.type SupportAuraFX_OnEnd,  function
-
-SupportAuraFXProc:
-	.word 1, SupportAuraFXProc.name
-
-	.word 14, 0
-
-	.word 2, SupportAuraFX_OnInit
-	.word 4, SupportAuraFX_OnEnd
-
-	.word 3, SupportAuraFX_OnLoop
-    
-    .word 14, 0
-
-	.word 0, 0 @ end
-
-SupportAuraFXProc.name:
-	.asciz "SupportUp Fx"
-
-	.align
-
-SupportAuraFX_OnInit:
+SupportFX_SimpleDelay_Start:
 	push {lr}
 
 	@ Set [proc+2C] to 0
 	@ It will be our clock
-	mov r1, #0
-	str r1, [r0, #0x2C]
+	@mov r1, #0
+	@str r1, [r0, #0x2C]
 
 	@ start map aura fx
 
@@ -82,18 +62,9 @@ SupportAuraFX_OnInit:
 	@ add units to aura fx
 
 	ldr r3, =ForEachAuraDisplayUnit
-
 	ldr r0, =AddMapAuraFxUnit @ arg r0 = function
 	@ unused                  @ arg r1 = user argument
     add r3, #1
-
-	bl BXR3
-
-	@ set aura fx thing speed
-
-	ldr r3, =SetMapAuraFxSpeed
-
-	mov r0, #32 @ arg r0 = speed
 
 	bl BXR3
 
@@ -103,17 +74,13 @@ SupportAuraFX_OnInit:
 	lsl r0, r0, #0x1E
 	blt SkipSoundEffect
 
-	ldr r3, =m4aSongNumStart
+        ldr r3, =m4aSongNumStart
+        mov r0, #170 @ arg r0 = sound ID (some kind of staff sound?)
+        bl BXR3
 
-	mov r0, #170 @ arg r0 = sound ID (some kind of staff sound?)
-
-	bl BXR3
-
-SkipSoundEffect:
-
+    SkipSoundEffect:
 	@ if 2 or more different rallies, use generic palette
 	ldr r0, =gSupportEffectPalette
-
 	ldr r3, =SetMapAuraFxPalette
 
 	@ implied @ arg r0 = palette
@@ -126,72 +93,10 @@ SkipSoundEffect:
 .align
 .ltorg
 
-SupportAuraFX_OnEnd:
-	push {lr}
-
-	@ end map aura fx
-
-	ldr r3, =EndMapAuraFx
-	bl  BXR3
-
-	pop {r1}
-	bx r1
-
-.align
-.ltorg
-
-SupportAuraFX_OnLoop:
-
-@normal function starts here.
-	ldr r1, [r0, #0x2C]
-	add r1, #1
-	str r1, [r0, #0x2C]
-
-	cmp r1, #0x20
-	beq SupportAuraFX_OnLoop.break
-
-	cmp r1, #0x10
-	bge 1f
-
-2:
-	cmp r1, #0x08
-	blt 3f
-
-	mov r0, #0x10
-	b 0f
-
-3:
-	lsl r0, r1, #1
-	b 0f
-
-1:
-	@ r1 = 0x20 - r1
-	mov r0, #0x20
-	sub r1, r0, r1
-
-	b 2b
-
-0:
-	ldr r3, =SetMapAuraFxBlend
-
-	@ implied @ arg r0 = blend
-
-	bx r3 @ jump
-
-SupportAuraFX_OnLoop.break:
-	ldr r3, =BreakProcLoop
-
-	@ implied @ r0 = proc
-
-	bx r3 @ jump
-
-.align
-.ltorg
-
 StartSupportAuraFX:
-	ldr     r3, =StartProc
+	ldr     r3, =StartProcBlocking
 
-	ldr     r0, =SupportAuraFXProc @ arg r0 = proc scr
+	ldr     r0, =SupportFX_SimpleDelay @ arg r0 = proc scr
 	mov     r1, #3           @ arg r1 = parent
     bx      r3
 
@@ -249,7 +154,12 @@ PostBattleSupports.ActorIsBlue:
     bne     PostBattleSupports.notStaff
 
     @now we know we are a blue unit who used a staff on a blue unit
-        ldrb    r0, [r6, #0x6] @itemID
+        @ldrb    r0, [r6, #0x6] @itemID
+        ldr     r3, =gBattleActor
+        add     r3, #0x48
+        ldrh    r3, [r3]
+        mov     r0, #0xFF
+        and     r0, r3
         blh     IsHealStaff
         cmp     r0, #0x2
         bne     PostBattleSupports.end
