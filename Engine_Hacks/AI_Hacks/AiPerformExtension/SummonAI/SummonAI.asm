@@ -83,15 +83,21 @@ CheckIfCanSummon:
 	cmp  r2, #0
 	beq  CantSummon
 	cmp  r0, r2
-	beq  CheckIfSlotsLeft
+	beq  CheckHP
 	add  r1, r3
 	b    SummonTableLoop
 	
+	CheckHP:
+    ldrb r2, [r1, #0x3]     @ hp cost
+	ldr  r0, =ActiveUnitDataPointer
+	ldr  r0, [r0]           @ load location of struct
+    ldrb r3, [r0, #0x13]
+    cmp  r2, r3
+    bge  CantSummon
+    
 	CheckIfSlotsLeft:
 	mov  r5, #0x0
 
-	ldr  r0, =ActiveUnitDataPointer
-	ldr  r0, [r0]           @ load location of struct
 	mov  r2, #0xB
 	ldsb r2, [r0, r2]       @ Unit party data index
 	mov  r0, #0xC0          @ used to check allegiance

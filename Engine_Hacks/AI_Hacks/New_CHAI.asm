@@ -1,135 +1,135 @@
 .thumb
 
-.macro BLH to, reg=r3
+.macro blh to, reg=r3
   ldr \reg, =\to
   mov lr, \reg
   .short 0xf800
 .endm
 
 NewCHAI:
-	PUSH {r4-r7,lr}
-	LDR  r2, [r0, #0x38] @event instr pointer
-	LDRB r0, [r2, #0x0]
-	MOV  r3, #0xF
-	AND  r3, r0
-	LDR  r4, =0x030004B8 @MemorySlot0
-	LDR  r7, [r4, #0x4] @MemorySlot01
-	CMP  r3, #0x0
-	BEQ  CHAI_ByCharID
+	push {r4-r7,lr}
+	ldr  r2, [r0, #0x38] @event instr pointer
+	ldrb r0, [r2, #0x0]
+	mov  r3, #0xF
+	and  r3, r0
+	ldr  r4, =0x030004B8 @MemorySlot0
+	ldr  r7, [r4, #0x4] @MemorySlot01
+	cmp  r3, #0x0
+	beq  CHAI_ByCharID
 	
-		CMP  r3, #0x1
-		BEQ  CHAI_ByCoords
-			B    CHAI_Return
+		cmp  r3, #0x1
+		beq  CHAI_ByCoords
+			b    CHAI_Return
 
 CHAI_ByCharID:
-    LDRH r1, [r2, #0x2] @char ID in event data
-    MOV  r3, #0x2
-    LDSH r0, [r2, r3]
-    CMP  r0, #0x0
-    BGE  CHAI_GotUnitID
+    ldrh r1, [r2, #0x2] @char ID in event data
+    mov  r3, #0x2
+    ldsh r0, [r2, r3]
+    cmp  r0, #0x0
+    bge  CHAI_GotUnitID
 	
 		@if 0xFFFF, load unitID from slot2
-        LDRH r1, [r4, #0x8] @MemorySlot2
+        ldrh r1, [r4, #0x8] @MemorySlot2
 		
 CHAI_GotUnitID:
-    LSL  r0, r1, #0x18
-    LSR  r0, r0, #0x18
-    MOV  r1, r7
-    BL   ChangeAllUnitsAI
-    B    CHAI_Return
+    lsl  r0, r1, #0x18
+    lsr  r0, r0, #0x18
+    mov  r1, r7
+    bl   ChangeAllUnitsAI
+    b    CHAI_Return
 	
 CHAI_ByCoords:
-	LDRH r0, [r2, #0x2]
-	LSR  r1, r0, #0x8
-	LDRB r3, [r2, #0x2]
-	MOV  r0, #0x2
-	LDSB r0, [r2, r0]
-	CMP  r0, #0x0
-	BLT  CHAI_GetCoordsSlotB
+	ldrh r0, [r2, #0x2]
+	lsr  r1, r0, #0x8
+	ldrb r3, [r2, #0x2]
+	mov  r0, #0x2
+	ldsb r0, [r2, r0]
+	cmp  r0, #0x0
+	blt  CHAI_GetCoordsSlotB
 	
-		LSL  r0, r1, #0x18
-		CMP  r0, #0x0
-		BGE  CHAI_GotCoords
+		lsl  r0, r1, #0x18
+		cmp  r0, #0x0
+		bge  CHAI_GotCoords
 		
 CHAI_GetCoordsSlotB:
-    LDRH r0, [r4, #0x2C] @MemorySlot0B
-    LSL  r0, r0, #0x18
-    LSR  r3, r0, #0x18
-    LDRH r0, [r4, #0x2E]
-    LSL  r0, r0, #0x18
-    LSR  r1, r0, #0x18
+    ldrh r0, [r4, #0x2C] @MemorySlot0B
+    lsl  r0, r0, #0x18
+    lsr  r3, r0, #0x18
+    ldrh r0, [r4, #0x2e]
+    lsl  r0, r0, #0x18
+    lsr  r1, r0, #0x18
 	
 CHAI_GotCoords:
-	LSL  r1, r1, #0x18
-	LDR  r0, =0x0202E4D8 @gMapUnit
-	LDR  r0, [r0, #0x0]
-	ASR  r1, r1, #0x16
-	ADD  r1, r1, R0
-	LSL  r0, r3, #0x18
-	ASR  r0, r0, #0x18
-	LDR  r1, [r1, #0x0]
-	ADD  r1, r1, R0
-	LDRB r0, [r1, #0x0]
-	CMP  r0, #0x0
-	BEQ  label106D0
+	lsl  r1, r1, #0x18
+	ldr  r0, =0x0202E4D8 @gMapUnit
+	ldr  r0, [r0, #0x0]
+	asr  r1, r1, #0x16
+	add  r1, r1, r0
+	lsl  r0, r3, #0x18
+	asr  r0, r0, #0x18
+	ldr  r1, [r1, #0x0]
+	add  r1, r1, r0
+	ldrb r0, [r1, #0x0]
+	cmp  r0, #0x0
+	beq  label106D0
 	
-		BLH  0x08019430 @GetUnitStruct
-		B    label106D2
+		blh  0x08019430 @GetUnitStruct
+		b    label106D2
 
 label106D0:
-	MOV  r0, #0x0
+	mov  r0, #0x0
 	
 label106D2:
-	MOV  r1, r7
-	BL   ChangeAI
+	mov  r1, r7
+	bl   ChangeAI
 	
 CHAI_Return:
-	MOV  r0, #0x0
-	POP  {r4-r7}
-	POP  {r1}
-	BX   r1
+	mov  r0, #0x0
+	pop  {r4-r7}
+	pop  {r1}
+	bx   r1
 
 .align
 .ltorg
 
 @params r0 = unit ID, r1 = AI word
 ChangeAllUnitsAI:
-	PUSH {r4-r7,lr}
-	MOV  r7, r8
-	PUSH {r7}
-	LSL  r0, r0, #0x18
-	LSR  r0, r0, #0x18
-	MOV  r8, r0
-	MOV  r7, r1
-	MOV  r4, #0x1
+	push {r4-r7,lr}
+	mov  r7, r8
+	push {r7}
+	lsl  r0, r0, #0x18
+	lsr  r0, r0, #0x18
+	mov  r8, r0
+	mov  r7, r1
+	mov  r4, #0x1
 	
 CHAI_SearchLoop:
-	MOV  r0, r4
-	BLH  0x08019430 @GetUnitStruct
-	MOV  r1, r0
-	CMP  r1, #0x0
-	BEQ  CHAI_SearchNextUnit
+	mov  r0, r4
+	blh  0x08019430 @GetUnitStruct
+	mov  r1, r0
+	cmp  r1, #0x0
+	beq  CHAI_SearchNextUnit
 	
-		LDR  r0, [r1, #0x0] @unit pointer
-		CMP  r0, #0x0
-		BEQ  CHAI_SearchNextUnit
+		ldr  r0, [r1, #0x0] @unit pointer
+		cmp  r0, #0x0
+		beq  CHAI_SearchNextUnit
 		
-			LDRB r0, [r0, #0x4] @unit ID
-			CMP  r0, r8
-			BNE  CHAI_SearchNextUnit
-				MOV  r0, r1
-				MOV  r1, r7
-				BL   ChangeAI
+			ldrb r0, [r0, #0x4] @unit id
+			cmp  r0, r8
+			bne  CHAI_SearchNextUnit
+				mov  r0, r1
+				mov  r1, r7
+				bl   ChangeAI
 				
 CHAI_SearchNextUnit:
-	ADD  r4, #0x1
-	CMP  r4, #0xBF
-	BLE  CHAI_SearchLoop
-	POP  {r3}
-	MOV  r8, r3
-	POP  {r4-r7}
-	POP  {r0}
-	BX   r0
+	add  r4, #0x1
+	cmp  r4, #0xBF
+	ble  CHAI_SearchLoop
+	pop  {r3}
+	mov  r8, r3
+	pop  {r4-r7}
+	pop  {r0}
+	bx   r0
 
 .align
 .ltorg

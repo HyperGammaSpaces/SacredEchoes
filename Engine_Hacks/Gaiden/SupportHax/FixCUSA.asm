@@ -11,7 +11,15 @@ beq VanillaCUSASkip
 	ldrb r0, [ r4, #0x0B ]
 	strb r0, [ r1, #0x1B ]
 VanillaCUSASkip: @ Some weird vanilla shit about rescuing. All vanilla above here.
+ldr r0, [r4] @ROM character address
+ldr r0, [r0, #0x2C] @support data
+cmp r0, #0x0
+beq Fix
+ldrb r0, [r0, #0xD] @initial value for 7th support
+b Store7thSupport
+Fix:
 mov r0, #0x00
+Store7thSupport:
 mov r1, #0x38
 strb r0, [ r4, r1 ] @ Set the character leader byte to 0. (Interferes with support data)
 pop { r4 - r6 }

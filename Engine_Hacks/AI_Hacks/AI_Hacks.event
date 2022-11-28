@@ -31,6 +31,10 @@ PUSH
 
 	ORG $10644
 	replaceWithHack(New_CHAI)
+    
+//disable thief stealing
+    ORG $3D4D4
+    SHORT $E011
 
 // healer ai fix; stop them from healing max hp units
 // changes bhi to bhs
@@ -101,7 +105,13 @@ InjectAi1(0x04, AiDontAttackTatiana)
 InjectAi1(0x05, AiStaffButDontAttackTatiana)
 InjectAi1(0x09, AiDontAttackAlm)
 
-
+ALIGN 4
+AiThiefFix:
+    AiLoot
+    AiChangeAi(0x0C, 0x0C)
+    AiRestart
+    
+InjectAi2(0x05, AiThiefFix)
 
 
 /*

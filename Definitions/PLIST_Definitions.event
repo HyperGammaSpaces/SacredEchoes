@@ -212,7 +212,7 @@
 #define plCh4_1C_Chg 		plDummy_Chg
 #define plCh4_1C_Event 		0xB8
 #define plCh4_2C_Map 		0xB9
-#define plCh4_2C_Chg 		plDummy_Chg
+#define plCh4_2C_Chg 		0xD0 //late add
 #define plCh4_2C_Event 		0xBA
 #define plCh4_3C_Map 		0xBB
 #define plCh4_3C_Chg 		0xBC
@@ -235,9 +235,8 @@
 #define plCh5_2_Event 		0xCB
 #define plCh5_3_Map			0xCC
 #define plCh5_3_Event 		0xCD
-#define plFinalMapPalette   0xCE
+#define plFinalMapPalette	0xCE
 #define plSwampyCaveConf 	0xCF
-//0xD0 free
 
 //Special maps
 #define plCh1_7x_Map 		0xD1

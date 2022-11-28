@@ -2,6 +2,7 @@
 
 InjectAi1(0x14, EnemySummonAI)
 InjectAi1(0x12, MogallAIScript)
+InjectAi1(0x02, NoStaffAIScript)
 
 ALIGN 4
 EnemySummonAI:
@@ -12,6 +13,11 @@ EnemySummonAI:
 	//AiNop
 	AiRestart
 	AiLabel(1)
+	AiFuncPercentChance(AttackOnlyNoStaff|1, 100)
+	AiRestart
+    
+ALIGN 4
+NoStaffAIScript:
 	AiFuncPercentChance(AttackOnlyNoStaff|1, 100)
 	AiRestart
 
