@@ -10,6 +10,7 @@
 .equ gWorldmapData, 0x03005280
 .equ gWorldmapMUData, 0x03005290
 .equ GetUnitByCharId, 0x0801829C
+.equ GetChapterDefinition, 0x08034618
 .equ CheckEventId, 0x08083DA8
 .equ ProcFind, 0x08002E9C
 .equ ProcGoto, 0x08002F24
@@ -20,6 +21,8 @@
 
 .global Act3SetupASMC
 .type Act3SetupASMC, %function
+.global Act5SetupASMC
+.type Act5SetupASMC, %function
 .global LordSwitchFunction
 .type LordSwitchFunction, %function
 .global SwitchCommandUsability
@@ -45,6 +48,94 @@ Act3SetupASMC:
 	str r1, [r2]
 	ldr r1, =0x00010901
 	str r1, [r0]
+
+	mov r0, #0x17
+	pop {r1}
+	bx r1
+
+.align
+.ltorg
+
+Act5SetupASMC:
+	push {lr}
+	ldr r0, =gWorldmapMUData
+	mov r1, #0
+	mov r2, r0
+	add r2, #0x18 @MU7 offset
+	str r1, [r2]
+
+	mov r0, #0x17
+	pop {r1}
+	bx r1
+
+.align
+.ltorg
+
+.global SplitGoldpile
+SplitGoldpile:
+	push {lr}
+	ldr r0, =gChapterData
+    mov r2, r0
+    add r2, #0x42
+	ldrb r2, [r2]
+	mov r1, #0x20
+	and r2, r1
+    cmp r2, #0
+	beq SplitGoldpile_End
+        ldr r1, [r0, #0x8] @current gold amount
+        mov r2, #0
+        str r1, [r0, #0x20] @other party's gold
+        str r2, [r0, #0x8]
+    SplitGoldpile_End:
+	mov r0, #0x17
+	pop {r1}
+	bx r1
+
+.align
+.ltorg
+
+.global SwitchGoldpile
+SwitchGoldpile:
+	push {lr}
+	ldr r0, =gChapterData
+    mov r2, r0
+    add r2, #0x42
+	ldrb r2, [r2]
+	mov r1, #0x20
+	and r2, r1
+    cmp r2, #0
+	beq SwitchGoldpile_End
+	ldr r1, [r0, #0x8] @current gold amount
+    ldr r2, [r0, #0x20] @other party's gold
+    cmp r2, #0
+    bne SwitchGoldpile_Continue
+        mov r2, r1
+    SwitchGoldpile_Continue:
+    str r1, [r0, #0x20]
+    str r2, [r0, #0x8]
+    SwitchGoldpile_End:
+	mov r0, #0x17
+	pop {r1}
+	bx r1
+
+.align
+.ltorg
+
+.global MergeGoldpile
+MergeGoldpile:
+	push {lr}
+	ldr r0, =gChapterData
+	ldr r1, [r0, #0x8] @current gold amount
+    ldr r2, [r0, #0x20] @other party's gold
+    add r1, r1, r2
+    ldr r3, =0xF423F @999999 G
+    cmp r1, r3
+    ble MergeGoldpile_Continue
+        mov r1, r3
+    MergeGoldpile_Continue:
+    str r1, [r0, #0x8]
+    mov r1, #0
+    str r1, [r0, #0x20]
 
 	mov r0, #0x17
 	pop {r1}
@@ -113,51 +204,59 @@ LordSwitchFunction:
 	push {r4-r7, lr}
     mov r7, #0
 	ldr r0, =gChapterData
+	ldrb r1, [r0, #0x1B] @mode byte
+	cmp r1, #0x1
+	ble EndLordswitchFunc
+    
+	mov r2, #0x1
+	eor r1, r2
+	strb r1, [r0, #0x1B] @mode byte
     @Switch the party unless it's postgame
         ldrb r1, [r0, #0x14]
         mov r2, #0x20 @postgame flag
         and r2, r1
         cmp r2, #0x0
-        bne PostgameCase
-	ldrb r1, [r0, #0x1B] @mode byte
-	cmp r1, #0x1
-	ble EndFunc
-    
-	mov r2, #0x1
-	eor r1, r2
-	strb r1, [r0, #0x1B] @mode byte
-    b NotPostgame
+        beq NotPostgame
 
     PostgameCase:
-    mov r7, #0x1
-    
-    NotPostgame:
 	ldr r3, =gWorldmapMUData
 	ldr r4, [r3]
-    cmp r7, #0
-    beq SkipVisibility_1
-		ldr r1, =0xFFFFFFFE
-		and r4, r1 @unset the "visible" flag
-    SkipVisibility_1:
+	ldrb r1, [r0, #0x1B] @mode byte
+	cmp r1, #0x2
+    bne CelicaCheck1
+        mov r0, #0x1
+        strb r0, [r3, #0x2]
+        b EndLordswitchFunc
+    CelicaCheck1:
+    cmp r1, #0x3
+    bne EndLordswitchFunc
+        mov r0, #0xC
+        strb r0, [r3, #0x2]
+        b EndLordswitchFunc
+    
+    NotPostgame:
+    bl SwitchGoldpile
+	ldr r3, =gWorldmapMUData
+	ldr r4, [r3]
+	ldr r1, =0xFFFFFFFE
+	and r4, r1 @unset the "visible" flag
     lsl r6, r4, #0x10
     lsr r6, r6, #0x18 @get just the location byte
 	mov r2, r3
 	add r2, #0x18 @MU7 offset
 	ldr r5, [r2]
-    cmp r7, #0
-    beq SkipVisibility_2
-		mov r1, #0x1
-		orr r5, r1 @set the "visible" flag
-    SkipVisibility_2:
+	mov r1, #0x1
+	orr r5, r1 @set the "visible" flag
 	str r4, [r2]
 	str r5, [r3]
     @now check if first lord unit is on a paralogue node
     mov r0, r6
     @bl ParalogueChecker
     cmp r0, r6
-    beq EndFunc
+    beq LordPositionCheck
     
         @handle doing _A640 stuff if location has changed
+        SetLordLocation:
         strb r0, [r3, #0x1]
         mov r2, r0
         ldr r0, =WorldMapProc
@@ -166,7 +265,29 @@ LordSwitchFunction:
         mov r1, #0x0 @lord unit index
         blh GmMU_SetNode
     
-	EndFunc:
+	LordPositionCheck:
+    ldr r0, =gChapterData
+	ldrb r1, [r0, #0x1B] @mode byte
+	cmp r1, #0x2
+    bne CelicaCheck2
+        mov r0, #0x1
+        b FixLordCoords
+    CelicaCheck2:
+    mov r0, #0xC
+    FixLordCoords:
+	blh GetUnitByCharId
+    mov r7, r0
+    cmp r0, #0
+    beq EndLordswitchFunc
+        ldr r0, =gWorldmapMUData
+        ldrb r0, [r0, #0x1] @location ID
+        blh 0x080BB5B0 @WMLoc_GetChapterID
+        blh GetChapterDefinition
+        ldrb r1, [r0, #0x10]
+        strb r1, [r7, #0x10]
+        ldrb r1, [r0, #0x11]
+        strb r1, [r7, #0x11]
+    EndLordswitchFunc:
 	pop {r4-r7}
 	pop {r0}
 	bx r0

@@ -1,0 +1,128 @@
+PUSH
+    ORG $D8018
+    ExtraUnitsTable:
+    WORD gFernandCCFlag; POIN UNIT_FernandPostgame
+    WORD gBerkutCCFlag; POIN UNIT_BerkutPostgame
+    WORD gRineaCCFlag; POIN UNIT_RineaPostgame
+    WORD gEmmaCCFlag; POIN UNIT_EmmaPostgame
+    WORD gYuzuCCFlag; POIN UNIT_YuzuPostgame
+    WORD gRandalCCFlag; POIN UNIT_RandalPostgame
+    WORD gShadeCCFlag; POIN UNIT_ShadePostgame
+    WORD gNuibabaCCFlag; POIN UNIT_NuibabaPostgame
+    WORD gRudolfCCFlag; POIN UNIT_RudolfPostgame
+    WORD 0 0 0 0
+POP
+
+ALIGN 4
+PostgameDungeon_Init:
+    //37c40 with 0 or 1 in r0
+    ENDA
+    
+//Save Rudolf unlock for the bonus map
+
+ALIGN 4
+PostgameUnlockChecker:
+    CHECK_EVENTID gPostgameEnabled
+    BEQ 0x9663 rC r0
+    CHECK_POSTGAME
+    BEQ 0x9663 rC r0
+        //This ASMC updates "dungeon enemy defeat count" and unlocks bonus units based on that value
+        //ASMC 0x08037D58|1
+        CHECK_LUCK 0x0
+        SADD 0xC2
+        RANDOMNUMBER 0xC8
+        BLT 0x9663 0x2 0xC
+            //now choose a flag based on the rn modulo 8
+            SVAL 0x1 0x8
+            SMOD slotsParam(r2, rC, r1)
+            BEQ 0x9667 rC r0
+            SVAL 0x1 0x1
+            BEQ 0x9668 rC r1
+            SVAL 0x1 0x2
+            BEQ 0x9669 rC r1
+            SVAL 0x1 0x3
+            BEQ 0x966A rC r1
+            SVAL 0x1 0x4
+            BEQ 0x966B rC r1
+            SVAL 0x1 0x5
+            BEQ 0x966C rC r1
+            SVAL 0x1 0x6
+            BEQ 0x966D rC r1
+            SVAL 0x1 0x7
+            BEQ 0x966E rC r1
+            GOTO 0x9663
+        LABEL 0x9667
+        ENUT gFernandCCFlag
+        GOTO 0x9663
+        LABEL 0x9668
+        ENUT gRineaCCFlag
+        GOTO 0x9663
+        LABEL 0x9669
+        ENUT gBerkutCCFlag
+        GOTO 0x9663
+        LABEL 0x966A
+        ENUT gEmmaCCFlag
+        GOTO 0x9663
+        LABEL 0x966B
+        ENUT gYuzuCCFlag
+        GOTO 0x9663
+        LABEL 0x966C
+        ENUT gRandalCCFlag
+        GOTO 0x9663
+        LABEL 0x966D
+        ENUT gShadeCCFlag
+        GOTO 0x9663
+        LABEL 0x966E
+        ENUT gNuibabaCCFlag
+    LABEL 0x9663
+    ENDA
+
+ALIGN 4
+UNIT_FernandPostgame:
+    UNIT FernandPlayable Cavalier 0x00 Level(6, Ally, False) [11,13] 0x00 0x00 0x0 0x00 [BaseLance, Javelin, Soma] NoAI
+    UNIT
+
+ALIGN 4
+UNIT_BerkutPostgame:
+    UNIT BerkutCC RigelPrince 0x00 Level(12, Ally, False) [11,13] 0x00 0x00 0x0 0x00 [BaseLance, Rhomphaia, RoyalShield] NoAI
+    UNIT
+
+ALIGN 4
+UNIT_RineaPostgame:
+    UNIT RineaCC Dancer 0x00 Level(2, Ally, False) [11,13] 0x00 0x00 0x0 0x00 [KeepsakeRing, Nectar] NoAI
+    UNIT
+
+ALIGN 4
+UNIT_RudolfPostgame:
+    UNIT RudolfCC GoldKnight 0x00 Level(20, Ally, False) [11,13] 0x00 0x00 0x0 0x00 [BaseLance, Imperius, AngelRing] NoAI
+    UNIT
+
+ALIGN 4
+UNIT_EmmaPostgame:
+    UNIT EmmaCC Dracoknight_F 0x00 Level(1, Ally, False) [11,13] 0x00 0x00 0x0 0x00 [BaseLance, Axereaver, IotesShield] NoAI
+    UNIT
+    
+ALIGN 4
+UNIT_YuzuPostgame:
+    UNIT YuzuCC Priestess 0x00 Level(1, Ally, False) [11,13] 0x00 0x00 0x0 0x00 [BaseSword, BraveSword, Thunderblade] NoAI
+    UNIT
+    
+ALIGN 4
+UNIT_RandalPostgame:
+    UNIT RandalCC Paladin 0x00 Level(5, Ally, False) [11,13] 0x00 0x00 0x0 0x00 [BaseLance, Ridersbane, PrayerRing] NoAI
+    UNIT
+
+ALIGN 4
+UNIT_ShadePostgame:
+    UNIT ShadeCC Saint 0x00 Level(3, Ally, False) [11,13] 0x00 0x00 0x0 0x00 [Nosferatu, Ambrosia, GrimoireRing] NoAI
+    UNIT
+
+ALIGN 4
+UNIT_NuibabaPostgame:
+    UNIT NuibabaCC Cantor_F 0x00 Level(16, Ally, False) [11,13] 0x00 0x00 0x0 0x00 [Miasma, SilverShield, MageRing] NoAI
+    UNIT
+
+ALIGN 4
+UNIT_JedahPostgame:
+    UNIT JedahCC Necromancer 0x00 Level(20, Ally, False) [11,13] 0x00 0x00 0x0 0x00 [Miasma, Dracoshield] NoAI
+    UNIT

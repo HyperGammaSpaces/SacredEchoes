@@ -55,7 +55,11 @@ RetreatableChapterBehavior: @bd1a8
     cmp     r5, r0 @is match to current chapterID?
     bne     KeepLooping
         @if yes then enable retreat
-        
+        cmp     r5, #0x43
+        bne     NotLostwoods
+            cmp r4, #0x34
+            blt KeepLooping
+        NotLostwoods:
         ldrb    r0, [r6, #0x1] @map skirmish type
         cmp     r0, #0x2 @2 means skirmish enabled
         blt     NormalChapterBehavior @if 1 or 0, dont do anything

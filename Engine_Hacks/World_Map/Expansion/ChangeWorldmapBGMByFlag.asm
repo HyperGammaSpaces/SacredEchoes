@@ -12,7 +12,7 @@ and r0, r1
 cmp r0, #0x0
 beq NotPostgame
 	
-	mov r4, #0x8 @postgame map theme id
+	mov r4, #0x6 @postgame map theme id
 	b ChangeMusic
 
 NotPostgame:
@@ -58,7 +58,7 @@ ldrh r4, [r0]
 b ChangeMusic
 
 DefaultMusic:
-	mov r4, #0x4 @where the wind rustles
+	mov r4, #0x6 @where the wind rustles
 ChangeMusic:
 ldr r3, =0x08002258 @CheckBGMID
 mov lr, r3

@@ -42,12 +42,12 @@ ENDA
 EndMusicAndMMS:
     FadeOutMusic
 EndPlayerMMS:
-    CHECK_ALLEGIANCE 0x7FFF
+    CHECK_ALLEGIANCE 0xFFFF
     BNE 0x1337 rC r0
         ASMC 0x790A4|1		//praise Teq
         SVAL 0x1 0x00000043
-        SET_CONDITION 0x7FFF
-        SET_ENDTURN 0x7FFF
+        SET_CONDITION 0xFFFF
+        SET_ENDTURN 0xFFFF
         SET_ACTIVE 0
     LABEL 0x1337
     ENDA
@@ -58,14 +58,6 @@ UnifiedBEXPCaller:
 	ASMC ApplyBonusEXPToParty|1
 	NOTIFY BEXP_Notif_Text 0x5A 0x0
 	ENDA
-    
-PostgameUnlockChecker:
-    CHECK_EVENTID gPostgameEnabled
-    BEQ 0x9663 rC r0
-        //This ASMC updates "dungeon enemy defeat count" and unlocks bonus units based on that value
-        //ASMC 0x08037D58|1
-    LABEL 0x9663
-    ENDA
 	
 #define CharacterJoinedNotification(textID) "EVBIT_T 0x5; EVBIT_T 0x7; SOUN 0xE8; NOTIFY textID 0x0 0x0;EVBIT_F 0x5; STAL 30; EVBIT_F 0x7"
 
@@ -202,13 +194,14 @@ Act3RandomChest:
 	ALIGN 4
 
 Act4RandomChest:
-	BYTE SilverShield 22
-	BYTE DumaIcon 22
+	BYTE SilverShield 20
+	BYTE DumaIcon 20
 	BYTE BraveSword 11
 	BYTE DumasLance 11
 	BYTE KillerAxe 11
 	BYTE KillerBow 11
-	BYTE GrimoireRing 8
+	BYTE GrimoireRing 7
+	BYTE JunaFruit 5
 	BYTE Talisman 2
 	BYTE Swiftsole 2
 	BYTE $0 $0 //term
@@ -224,6 +217,8 @@ SecretRandomChest:
 	BYTE SpeedRing 4
 	BYTE $0 $0 //term
 	ALIGN 4
+
+#include "PostgameUnits.event"
 
 ALIGN 4
 {
