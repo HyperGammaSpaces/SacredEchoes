@@ -6,18 +6,8 @@ PUSH
     ORG $1A258
     jumpToHack(HPRestorationLoopFunc)
     
-    ORG $25954
-    SHORT $2800 $DB08 $1C28
-    BL($19150) //GetCurrentHP
-    SHORT $1C04 $1C28
-    BL($19190) //GetMaxHP
-    SHORT $4284 $D011
-    SHORT $1C30
-    BL($1A258)
-    SHORT $46C0 $46C0 $46C0 $46C0 $46C0 $46C0
-    
-    ORG $259C6
-    SHORT $2300 $46C0 //make "heal status" have 0
+    ORG $25904
+    #incbin "MakeTerrainTargetList_New.dmp"
     ORG $35F1C
     SHORT $D104
     ORG $35F8C
@@ -69,7 +59,7 @@ ALIGN 4
 HPRestorationLoop: //for each, r0 = unit and r1 = current heal %; return modified heal % in r0
 POIN HealingWeapons
 POIN HealingItems
-//POIN SoothingLight 
+POIN SoothingLight 
 WORD 0 //terminator
 
 
