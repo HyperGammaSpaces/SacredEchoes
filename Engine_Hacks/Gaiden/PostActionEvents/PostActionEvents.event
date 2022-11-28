@@ -29,9 +29,6 @@ PostCombatLoop:
     POIN PostCombatActions
 
 PostCombatActions: 
-    #ifdef UNLOCK_STAFF_ON_CHESTS
-        POIN PostCombat_Unlock
-    #endif
     POIN Lifetaker
     #ifdef HAX_MAP_AURA_FX
         POIN PostBattleSupports 

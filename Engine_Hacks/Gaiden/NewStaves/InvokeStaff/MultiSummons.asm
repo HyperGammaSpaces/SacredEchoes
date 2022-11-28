@@ -5,12 +5,23 @@
 .equ HandleSummonBatch, 0x0807B1C0
 .equ GetUnitStruct, 0x08019430
 .equ Goto6CLabel, 0x08002F24
+.equ SlotQueuePush, 0x0800D528
 .equ EnsureCameraOntoPosition, 0x08015E0C
 .equ GetROMClassStruct, 0x08019444
 .equ ClearUnitStruct, 0x080177F4
 .equ LoadUnits, 0x08017A34
 .equ GetUnitByCharID, 0x0801829C
 .equ memcpy, 0x080D1C0C
+
+.equ summonerByte, 0x3B
+.equ gBattleActor, 0x0203a4ec
+.equ gBattleTarget, 0x0203a56c
+.equ gBattleStats, 0x0203a4d4
+.equ gActionData, 0x0203a958
+.equ gUnitArray, 0x0202be4c
+.equ gUnitArrayRed, 0x0202cfbc
+.equ gUnitArrayGreen, 0x0202ddcc
+.equ gEventSlotQP, 0x030004ec
 
 .macro blh to, reg=r3
   ldr \reg, =\to
@@ -322,29 +333,14 @@ DoInvoke_Multi:
 	ldr r0, [r0]
 	ldr r0, [r0]
 	ldrb r0, [r0, #0x4]		@unit ID
-	ldr r4, =SummonTable
-	mov r3, r4
-
-	DoInvokeMulti_LoopStart:
-		ldrb r1, [r3]
-		lsl r1, r1, #0x18
-		lsr r1, r1, #0x18
-		cmp r1, #0x0
-		bne DontExit
-			b DoInvokeMulti_End
-			
-		DontExit:
-		cmp r0, r1
-		beq FoundSummonTableEntry
-		add r3, #0x4
-		b DoInvokeMulti_LoopStart
+	bl GetSummonData
+    mov r7, r0
+    cmp r0, #0
+    bne FoundSummonTableEntry
+		b DoInvokeMulti_End
 
 	FoundSummonTableEntry:
-		mov  r4, r3
-		mov  r7, r3
-		add  r4, #0x2			@r4 is now at SummonedUnitClass
-
-		ldrb r0, [r4]			@get summoned class
+		lsr  r0, r7, #0x8		@get summoned class
 		cmp  r0, #0x65			@necrodragon
 		bne  NotNecrodragon
 			mov r3, #0x25		@force to level 5 enemy
@@ -379,7 +375,7 @@ DoInvoke_Multi:
 		mov  r2, #0x1			@autolevel bit
 		orr  r3, r2
 		
-		ldrb r0, [r4]			@get summoned class
+		lsr  r0, r7, #0x8		@get summoned class
 		ldr  r6, =0x03001C50 	@Summoned Unit Buffer
 		strb r0, [r6, #0x1]		@store it to buffer
 
@@ -393,27 +389,33 @@ DoInvoke_Multi:
 		bne  DoInvokeMulti_EnemyCase
 
 	DoInvokeMulti_PlayerCase:
-		mov r4,	#0x3F			@start of player summons
-		mov r3, #0x9			@player summons at level 1
+		mov  r4, #0x3F			@start of player summons
+		mov  r3, #0x9			@player summons at level 1
 		b StoreAllegiance
 
 	DoInvokeMulti_EnemyCase:
-		cmp r2, #0x80
-		bne DoInvokeMulti_GreenCase
-			ldrb r4, [r7, #0x1] @summoned unit ID
-			mov r0, #0x4
-			orr r3, r0
+		cmp  r2, #0x80
+		bne  DoInvokeMulti_GreenCase
+            lsl  r4, r7, #0x18
+			lsr  r4, r4, #0x18 @summoned unit ID
+			mov  r0, #0x4
+			orr  r3, r0
 			b StoreAllegiance
 
 	DoInvokeMulti_GreenCase:
-		mov r4,	#0x3F		@start of player summons
-		mov r3, #0xB		@npcs also summon at level 1
+		mov  r4, #0x3F		@start of player summons
+		mov  r3, #0xB		@npcs also summon at level 1
 
 	StoreAllegiance:
 		strb r4, [r6, #0x0]		@unit id
 		strb r3, [r6, #0x3]		@allegiance and level
 
 	DetermineInventoryItem:
+        mov  r0, #0x0
+        str  r0, [r6, #0xC]     @clear inventory from buffer
+        str  r0, [r6, #0x10]    @clear ai from buffer
+        mov  r0, #0x4
+        strb r0, [r6, #0x12]    @remove retreat ai
 		ldrb r0, [r6, #0x1]		@class
 		cmp  r0, #0x5F
 		blt  NotMogall
@@ -511,7 +513,7 @@ DoInvoke_Multi:
 		ldr r0, =0xFFFFF03F
 		and r0, r2
 		orr r0, r1
-		strh r0, [r6, #0x4]		//position
+		strh r0, [r6, #0x4]		@position
 
 		mov r0, r6
 		blh LoadUnits
@@ -520,19 +522,30 @@ DoInvoke_Multi:
 		ldrb r0, [r6, #0x0]
 
 		mov r4, r0
-		ldr r6, =0x0859A5D0
-		mov r5, #0x1
 		ldr r7, =0x03004E50	
 		ldr r7, [r7, #0x0]		@summoner's ram slot
+        mov r0, #0xB
+        ldsb r0, [r7, r0]
+        mov r2, #0xC0
+        and r0, r2
+        cmp r0, #0x0
+        bne CheckEnemyUnits
+        CheckPlayerUnits:
+            mov r5, #63
+            ldr r6, =gUnitArray
+            b StartLoopingThroughSummons
+        CheckEnemyUnits:
+        cmp r0, #0x80
+        bne CheckGreenUnits
+            mov r5, #50
+            ldr r6, =gUnitArrayRed
+            b StartLoopingThroughSummons
+        CheckGreenUnits:
+            mov r5, #20
+            ldr r6, =gUnitArrayGreen
 
 	StartLoopingThroughSummons:
-		mov r0, r5
-		lsl r0, r0, #0x2
-		add r0, r6				@increment by 4
-		ldr r2, [r0]
-		cmp r2, #0x0
-		beq LoopToNextUnit
-		ldr r0, [r2]
+		ldr r0, [r6]
 		cmp r0, #0x0
 		beq LoopToNextUnit
 		ldrb r0, [r0, #0x4]
@@ -540,20 +553,23 @@ DoInvoke_Multi:
 		bne LoopToNextUnit
 
 	FoundAUnit:
-		mov r3, r2				@summoned unit ram pointer	
+		mov r3, r6				@summoned unit ram pointer	
 		ldrb r0, [r7, #0x8]		@level of summoner
 		strb r0, [r3, #0x8]		@store to summoned unit
 		mov r0, #0xFF
 		strb r0, [r3, #0x9]		@no exp for summoned unit
 
-		mov r2, #0xB
+		mov  r2, #0xB
 		ldsb r2, [r7, r2]		@Unit party data index
+        mov  r1, r3
+        add  r1, #summonerByte
+        strb r2, [r1]
 		mov r0, #0xC0			@used to check allegiance
 		and r2, r0
 		cmp r2, #0x0
 		bne LoopToNextUnit
 
-			@set "use 4th palette" for player summons
+			PlayerSummonPalette:
 			ldr r1, [r3, #0xC]
 			mov r0, #0x80
 			lsl r0, r0, #0x14
@@ -561,9 +577,10 @@ DoInvoke_Multi:
 			str r1, [r3, #0xC]
 
 	LoopToNextUnit:
-		add r5, #0x1
-		cmp r5, #0x40
-		blt StartLoopingThroughSummons
+        add r6, #0x48
+		sub r5, #0x1
+		cmp r5, #0
+		bgt StartLoopingThroughSummons
 
 DoInvokeMulti_End:
 	pop {r4-r7}
@@ -972,6 +989,189 @@ NewGetRAMUnitSlot:
 	pop  {r4-r7}
 	pop  {r1}
 	bx   r1
+
+.align
+.ltorg
+
+@r0 = unit id
+@return: halfword with unit and class
+GetSummonData:
+    push {lr}
+    ldr r2, =SummonTable
+
+	SummonData_LoopStart:
+		ldrb r1, [r2]
+		lsl r1, r1, #0x18
+		lsr r1, r1, #0x18
+		cmp r1, #0x0
+		bne SummonData_DontExit
+            mov r0, #0x0
+			b SummonData_End
+			
+		SummonData_DontExit:
+		cmp r0, r1
+		beq SummonDataFound
+		add r2, #0x4
+		b SummonData_LoopStart
+
+	SummonDataFound:
+	ldr r0, [r2]
+    
+    SummonData_End:
+    lsl r0, r0, #0x08
+    lsr r0, r0, #0x10
+    pop {r1}
+    bx r1
+
+.align
+.ltorg
+
+.global Summoner_Clear
+@include in PostCombatLoop
+Summoner_Clear:
+    push {r4-r7, lr}
+    ldr r4, =gBattleActor
+    ldr r5, =gBattleTarget
+    ldr r6, =gActionData
+    
+    ldrb r0, [r6, #0x11]
+    cmp r0, #0x2
+    bne SummonClear_End
+    
+    ldrb r0, [r4, #0x13]
+    cmp r0, #0x0
+    beq GetKilledUnitID
+    
+    ldrb r0, [r5, #0x13]
+    cmp r0, #0x0
+    bne SummonClear_End @ nobody died; exit
+        mov r4, r5
+    
+    @r4 = whichever battle struct contains the dead unit
+    GetKilledUnitID:
+    ldr r1, [r4]
+    ldrb r0, [r1, #0x4]
+    bl GetSummonData
+    mov r7, r0
+    cmp r0, #0x0
+    beq SummonClear_End
+    
+    @now we know a summon-capable unit was killed
+    ldr r0, [r4, #0x4]
+    ldrb r0, [r0, #0x4]
+    cmp r0, #0x2c
+    beq SummoningClassFound
+    cmp r0, #0x31
+    beq SummoningClassFound
+    cmp r0, #0x32
+    beq SummoningClassFound
+    cmp r0, #0x4F
+    beq SummoningClassFound
+    b SummonClear_End
+    
+    @now we check allegiance
+    SummoningClassFound:
+    mov  r2, #0xB
+	ldsb r2, [r4, r2]		@Unit party data index
+    mov  r4, r2
+	mov  r0, #0xC0			@used to check allegiance
+	and  r2, r0
+	cmp  r2, #0x0
+	bne  SummonCleanup_EnemyCase
+
+	SummonCleanup_PlayerCase:
+        mov r5, #63
+        ldr r6, =gUnitArray
+		b FindSummonedUnits
+
+	SummonCleanup_EnemyCase:
+	cmp  r2, #0x80
+	bne  SummonCleanup_GreenCase
+        mov r5, #50
+        ldr r6, =gUnitArrayRed
+        b FindSummonedUnits
+        
+    SummonCleanup_GreenCase:
+        mov r5, #20
+        ldr r6, =gUnitArrayGreen
+    
+    FindSummonedUnits:
+    ldr r3, =gEventSlotQP
+    mov r0, #0
+    str r0, [r3] @reset queue size
+    
+    ldr  r1, =gBattleStats
+    ldrh r1, [r1]
+    mov  r2, #0x80
+    and  r1, r2
+    cmp  r1, #0x0
+    beq  FindSummonedUnits_Loop
+        @if map anim, kill the dead guy
+        mov  r0, r4
+        blh  GetUnitStruct
+        ldr  r2, [r0, #0xC]
+        mov  r1, #0x5
+        orr  r2, r1
+        str  r2, [r0, #0xC]
+        
+    
+    FindSummonedUnits_Loop:
+    ldr  r0, [r6]
+    cmp  r0, #0x0
+    beq  FindSummonedUnits_Next
+    ldrb r0, [r0, #0x4]
+    lsl  r1, r7, #0x18
+    lsr  r1, r1, #0x18 @summoned unit ID
+    cmp  r0, r1
+    bne  FindSummonedUnits_Next
+        ldr  r0, [r6, #0x4]
+        ldrb r0, [r0, #0x4]
+        lsr  r1, r7, #0x8 @summoned class
+        cmp  r0, r1
+        bne  FindSummonedUnits_Next
+            mov r0, r6
+            add r0, #summonerByte
+            mov r1, #0
+            ldsb r0, [r0, r1]
+            cmp r0, r4
+            bne FindSummonedUnits_Next
+            
+            @found a unit!
+            @#define Coords(xcoord,ycoord) "(ycoord<<16)|xcoord"
+            ldrb r0, [r6, #0x11]
+            lsl  r0, r0, #0x10
+            ldrb r1, [r6, #0x10]
+            orr  r0, r1
+            lsl  r1, r1, #0x18
+            asr  r1, r1, #0x18
+            cmp  r1, #0 @error trap for undeployed units
+            blt  FindSummonedUnits_Next
+            blh  SlotQueuePush
+        
+    FindSummonedUnits_Next:
+    sub r5, #1
+    cmp r5, #0
+    blt SummonClear_CheckForEvents
+    add r6, #0x48
+    b FindSummonedUnits_Loop
+    
+    SummonClear_CheckForEvents:
+    ldr r3, =gEventSlotQP
+    ldr r3, [r3]
+    cmp r3, #0x0
+    beq SummonClear_End
+    
+    ldr r0, =#0x0800D07C @CallEventEngine
+    mov lr, r0
+    ldr r0, =SummonerCleanupEvent
+    mov r1, #1
+    .short 0xf800
+    
+    SummonClear_End:
+    pop {r4-r7}
+    pop {r0}
+    bx r0
+
 
 .align
 .ltorg

@@ -67,7 +67,13 @@ PUSH
 	ORG 0x9A3600
 		// Replace the weapon broke/wrank got popup calls with construction of the anims off popup loop
 		PROC_NEW_CHILD_BLOCKING(gProc_PopR_AnimsOnWrapper)
-		PROC_JUMP(0x9A3620)
+        PROC_CALL_ROUTINE($7A940|1)
+        PROC_SLEEP(2)
+        PROC_CALL_ROUTINE($15370|1)
+        PROC_CALL_ROUTINE($7A80C|1)
+        PROC_CALL_ROUTINE(Summoner_Clear|1)
+        PROC_WHILE_EXISTS($591AC0)
+        PROC_END
 
 	// For Anims-On, however, we replaced everything
 	// So all we need to do is redirect the initializer and everything else is in our stuff

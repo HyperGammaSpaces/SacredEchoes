@@ -11,6 +11,9 @@ ApplyStatusToUnitIDASMC:
 ALIGN 4
 //#include "ASMCCheckSuite/ASMCGetterSetterInstaller.event"
 
+#include "SetSummonerASMC.lyn.event"
+#define SetSummonerID(Character,SummonerID) "SVAL 0x2 Character; SVAL 0x3 SummonerID; ASMC SetSummonerASMC|1"
+
 ALIGN 4
 RemoveItemFromAnyASMC:
 #include "item_collect.lyn.event"
@@ -25,6 +28,11 @@ ALIGN 4
 GiveAllItemsASMC:
 #incbin "SendAllTransporter.dmp"
 #define DumpToConvoy(unitID) "SHORT $0D40 unitID; POIN GiveAllItemsASMC+1"
+
+ALIGN 4
+RevertSupportGainsASMC:
+#incbin "RevertSupportGains.dmp"
+#define RevertUnitSupport(unitID,slotID) "SHORT $0D40; BYTE unitID slotID; POIN RevertSupportGainsASMC+1"
 
 ALIGN 4
 Change_AI_All:

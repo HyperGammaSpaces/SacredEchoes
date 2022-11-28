@@ -18,7 +18,7 @@ PUSH
 		POIN UnlockStaff_RangeSetup|1
         
     #ifdef ItemEffectRevamp
-        IER_setItemEffect(IER_FX_Unlock, $28B3C, PUNull, UnlockStaff_GetTargetList, $2FEAC)
+        IER_setItemEffect(IER_FX_Unlock, $28B3C, PUNull, UnlockStaff_GetTargetList, $2FEAC, UnlockAfter_Effect)
     #else
         ORG $28EC0
         POIN UnlockStaff_GetTargetList

@@ -163,6 +163,11 @@ GiveExperienceASMC:
     cmp  r0, #0
     beq  GiveExp_ReturnFalse
         blh  0x080790a4 @ClearMOVEUNITs
+        ldr  r0, [r4, #0xC]
+        mov  r1, #0x43
+        orr  r0, r1
+        str  r0, [r4, #0xC]
+        
         mov  r0, r5
         bl   BeginMapAnimExp
 		ldr  r1, =MemorySlotC

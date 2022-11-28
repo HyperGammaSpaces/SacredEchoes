@@ -1,5 +1,6 @@
 //Invoke functionality
 #include "MultiSummons.lyn.event"
+#include "EnemySummon.lyn.event"
 PUSH
     
 #ifdef ItemEffectRevamp
@@ -24,7 +25,18 @@ PUSH
 	POIN InvokeStaff_GetTargetList
 
 #endif
-
+    
+    ORG $59DAFC //at the end of the Battle proc, we're cutting into the Arena proc a bit but who cares
+    PROC_CALL_ROUTINE(Summoner_Clear|1)
+    PROC_LABEL(1)
+    PROC_CALL_ROUTINE_2($328D0|1)
+    PROC_CALL_ROUTINE($3286C|1)
+    PROC_YIELD
+    PROC_END
+    
+    ORG $32554
+    replaceWithHack(EnemySummonAction)
+    
     ORG $2900C
     InvokeStaff_GetTargetList:
 		SHORT $1C28
@@ -98,20 +110,37 @@ InvokeStaff_RangeSetup:
 ALIGN 4
 
 SummonTable:
-BYTE Silque 			PlayerUnitSummon 	DreadFighter 	0
-BYTE Tatiana 			PlayerUnitSummon 	PegasusKnight 	0
-BYTE Genny 				PlayerUnitSummon 	Soldier 		0
-BYTE Mikhail			Terror_Gargoyle		Gargoyle		0
-BYTE Garcia				Terror_Gargoyle		Gargoyle		0
-BYTE Cantor_Gargs		Terror_Gargoyle		Gargoyle		0
-BYTE Dolth				Terror_Necrodragon	Necrodragon		0
-BYTE Jedah_Ch4			Terror_Mogall		Mogall			0
-BYTE Terror_Mogall		Terror_Mogall		Mogall			0
-BYTE Terror_ArchMogall		Terror_ArchMogall		ArchMogall			0
-BYTE MogallBoss			Terror_Mogall		Mogall			0
-BYTE CantorBoss_Celica5 		Terror_Revenant 	Revenant 		0
-BYTE CantorBoss_Bonewalkers Terror_Bonewalker Bonewalker 0
-BYTE 0 			0 		0 				0
+BYTE Silque 					PlayerUnitSummon	DreadFighter 	12
+BYTE Tatiana 					PlayerUnitSummon	PegasusKnight 	12
+BYTE Genny 						PlayerUnitSummon	Soldier 		12
+BYTE CantorBoss_Celica5 		Terror_Revenant		Revenant		1
+BYTE CantorBoss_Bonewalkers		Terror_Bonewalker	Bonewalker		2
+BYTE Mikhail					Terror_Gargoyle		Gargoyle		4
+BYTE Garcia						Terror_Gargoyle		Gargoyle		4
+BYTE Cantor_Gargs				Terror_Gargoyle		Gargoyle		4
+BYTE Dolth						Terror_Necrodragon	Necrodragon		6
+BYTE Nuibaba						Terror_Gorgon	Gorgon		2
+BYTE Jedah_Ch4					Terror_Mogall		Mogall			0
+BYTE Terror_Mogall				Terror_Mogall		Mogall			0
+BYTE Terror_ArchMogall			Terror_ArchMogall	ArchMogall		0
+BYTE MogallBoss					Terror_Mogall		Mogall			0
+BYTE 0							0					0				0
+
+ALIGN 4
+SummonerCleanupEvent:
+    LABEL 0x2A02
+    BEQ 0x2A03 0xD 0x0
+        //Pop from queue into slot B
+        SLOTS_SETFROMQUEUE 0xB
+        SET_SOMETHING (-2)
+        DISA_IF (-2)
+        CHECK_ENEMIES
+        BNE 0x2A02 0xC 0x0
+            ENUT Local_EnemyRouted
+            GOTO 0x2A02
+    LABEL 0x2A03
+    NoFade
+    ENDA
 
 //General phantom fixes to work with expanded summon table
 #include "Phantom/PhantomRework.event"

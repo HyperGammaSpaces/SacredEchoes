@@ -71,6 +71,8 @@ LoadLeftCavalry:
 	ReinforcementEvent(CavReinforcementLeft)
 	
 DesaixCommand:
+    CHECK_EVENTID Local_BossDeath
+    BNE 0x666 rC r0
 	MUSI
 	STAL 20
 	CAMERA_CENTERED Desaix
@@ -81,6 +83,7 @@ DesaixCommand:
 	STAL 20
 	MUNO
 	//ReinforcementEvent(DesaixCommandUnits)
+    LABEL 0x666
 	NoFade
 	ENDA
 
@@ -128,13 +131,13 @@ Ch3_4A_Units1:
 
 EnemyUnits:
 	UNIT Desaix Baron 0x0 Level(5, Enemy, False) [9,2] 0x00 0x00 0x0 0x00 [Javelin, SteelSword] NeverMoveAI
-	UNIT CantorBoss_Bonewalkers Cantor Desaix Level(7, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma, Invoke] CantorAI
+	UNIT CantorBoss_Bonewalkers Cantor Desaix Level(7, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma, Conjure] CantorAI
 	
 	// Cell guard knight
 	UNIT Rigel_Soldier Knight	Desaix Level(5, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] NeverMoveAI
 
 	// Outside Witch
-	UNIT Rigel_Witch Witch	Desaix Level(4, Enemy, True) [17,20]	0x00 0x00 0x0 0x00 [Fire,Rewarp] WitchWarpAI
+	UNIT Rigel_Witch Witch	Desaix Level(4, Enemy, True) [17,20]	0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
 	
 	// Main gate guard
 	UNIT Rigel_Soldier Soldier	Desaix Level(13, Enemy, True) [8,13]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
@@ -188,8 +191,8 @@ CavReinforcementRight:
 	UNIT
 	
 CavReinforcementLeft:
-	UNIT Remnant_Cav Cavalier Desaix Level(13,Enemy,True) [0,19] 0x00 0x00 0x1 REDA0R19 [Javelin] NoAI
-	UNIT Remnant_Cav Cavalier_F Desaix Level(14,Enemy,True) [0,20] 0x00 0x00 0x1 REDA0R20 [SteelLance] NoAI
+	UNIT Remnant_Cav Cavalier Desaix Level(11,Enemy,True) [0,19] 0x00 0x00 0x1 REDA0R19 [Javelin] NoAI
+	UNIT Remnant_Cav Cavalier_F Desaix Level(10,Enemy,True) [0,20] 0x00 0x00 0x1 REDA0R20 [SteelLance] NoAI
 	UNIT
 
 SniperReinforcement:

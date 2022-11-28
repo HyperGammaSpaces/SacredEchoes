@@ -5,17 +5,30 @@
 .equ GiveBowEvent,  GiveAxeEvent+4
 
 @r4=funky struct
+push    {r4-r5, lr}
+mov     r4, r0
 ldr		r0, CurrentCharPtr
-ldr		r0, [r0]
-ldr     r2, =0x0202BE48 @store current unit position to fix a bug with suspending during promotion screen.
-ldrb    r1, [r0,  #0x10]
-strh	r1, [r2]
-ldrb    r1, [r0,  #0x11]
-strh	r1, [r2,  #0x2]
+ldr		r5, [r0]
+
+@   ldr     r2, =0x0202BE48 @store current unit position to fix a bug with suspending during promotion screen.
+@   ldrb    r1, [r5, #0x10]
+@   strh	r1, [r2]
+@   ldrb    r1, [r5, #0x11]
+@   strh	r1, [r2, #0x2]
+@   ldr     r1, [r5]
+@   ldrb    r1, [r1, #0x4]
+@   ldr     r2, =0x0202BE44
+@   strb    r1, [r2]
+@   ldr     r0, Fill_Movement_Map_At
+@   mov		r14, r0
+@   mov     r0, r5
+@   ldrb    r2, [r5, #0x10]
+@   ldrb    r3, [r5, #0x11]
+@   .short	0xF800
+
 ldr		r0, Get_Equipped_Weapon
 mov		r14, r0
-ldr		r0, CurrentCharPtr
-ldr		r0, [r0]
+mov     r0, r5
 .short	0xF800
 ldr		r1, AttackerStruct
 ldr		r2, DefenderStruct

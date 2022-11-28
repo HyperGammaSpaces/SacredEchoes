@@ -90,7 +90,7 @@ CutsceneUnits_Ending:
 
 EnemyUnits:
 	UNIT Jamil Arcanist	Jamil Level(18, Enemy, True) [11,10]	0x00 0x00 0x0 0x00 [Thanatos, Upheaval] NeverMoveAI
-	UNIT Cantor_Gargs Cantor Jamil Level(4, Enemy, True) [8,10] 0x00 0x00 0x0 0x00 [Mire, Invoke] CantorAI
+	UNIT Cantor_Gargs Cantor Jamil Level(4, Enemy, True) [8,10] 0x00 0x00 0x0 0x00 [Mire, Conjure] CantorAI
 	UNIT Rigel_Mage Arcanist Jamil Level(9, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT Rigel_Mage Arcanist Jamil Level(9, Enemy, True) [13,14] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT 0xB3 Fiend Jamil Level(4, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
@@ -99,20 +99,20 @@ EnemyUnits:
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [11,6] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [13,12] DropItem 0x00 0x0 0x00 [BraveSword] NeverMoveAI
+	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [13,12] DropItem 0x00 0x0 0x00 [BraveSword,Thunderblade] NeverMoveAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [14,12] 0x00 0x00 0x0 0x00 [IronSword] NoAI
 	
 	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [11,16] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [12,16] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [13,8] 0x00 0x00 0x0 0x00 [Nosferatu,SilverShield] NeverMoveAI
 	
-	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [27,10] 0x00 0x00 0x0 0x00 [Thunder,Rewarp] WitchWarpAI
-	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [27,9] 0x00 0x00 0x0 0x00 [Thunder,Rewarp] WitchWarpAI
-	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [28,8] 0x00 0x00 0x0 0x00 [Aura,Rewarp] WitchWarpAI
+	UNIT DumaFaith_Witch Witch Jamil Level(10, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
+	UNIT DumaFaith_Witch Witch Jamil Level(10, Enemy, True) [3,12] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
+	UNIT DumaFaith_Witch Witch Jamil Level(10, Enemy, True) [28,8] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
 	
 	UNIT DumaFaith_Witch Witch DumaFaith_Witch_Slow Level(10, Enemy, True) [21,9] 0x00 0x00 0x0 0x00 [Nosferatu] MoveWithLeaderAI
 	UNIT DumaFaith_Witch Witch DumaFaith_Witch_Slow Level(10, Enemy, True) [22,9] 0x00 0x00 0x0 0x00 [Excalibur] MoveWithLeaderAI
-	UNIT DumaFaith_Witch_Slow Witch DumaFaith_Witch_Slow Level(12, Enemy, True) [22,10] 0x00 0x00 0x0 0x00 [Sagittae] NoAI
+	UNIT DumaFaith_Witch_Slow Witch DumaFaith_Witch_Slow Level(12, Enemy, True) [22,10] 0x00 0x00 0x0 0x00 [Aura] NoAI
 	UNIT DumaFaith_Witch Witch DumaFaith_Witch_Slow Level(10, Enemy, True) [23,10] 0x00 0x00 0x0 0x00 [Fire] MoveWithLeaderAI
 	
 	UNIT

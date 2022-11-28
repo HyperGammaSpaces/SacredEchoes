@@ -38,11 +38,20 @@ LoadSummons:
 	// Counter at value
 	LABEL 3
 	COUNTER_SET 0 0 // reset counter
-	CAMERA_CENTERED Dolth // cam on summoner
+	CameraCursor(Dolth) // cam on summoner
 	ENUN
 	STAL 20
+    CAMERA_CENTERED [6,20]
 	WarpInReinforcementsAt(DracoSummons,6,20)
 	EVBIT_T 0x7
+    SetSummonerID(Terror_Necrodragon, 0x81)
+        
+        CheckCurrentHP(Dolth)
+        SMOV r1 0x6
+        BGE 0 r1 rC
+        SSUB slotsParam(r1, rC, r1)
+        SET_HP Dolth
+        STAL 5
 	GOTO 0
 
 	LABEL 1
@@ -113,7 +122,7 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Dolth Cantor	Dolth Level(9, Enemy, True) [9,17]	0x00 0x00 0x0 0x00 [Thanatos] NeverMoveAI
+	UNIT Dolth Cantor	Dolth Level(9, Enemy, True) [9,17]	0x00 0x00 0x0 0x00 [Thanatos, Conjure] CantorBossAI
 	UNIT Rigel_Archer Sniper Dolth Level(10, Enemy, True) [6,12] 0x00 0x00 0x0 0x00 [SilverBow] ChaseOnceApproachedAI
 	UNIT Rigel_Archer Sniper Dolth Level(10, Enemy, True) [5,14] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
 	UNIT Rigel_Archer Sniper Dolth Level(10, Enemy, True) [4,14] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
@@ -126,10 +135,10 @@ EnemyUnits:
 	UNIT
 	
 DracoSummons:
-	UNIT 0xB4 Necrodragon 0xB4 Level(6, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R20 [FireFang] MonsterAI
-	UNIT 0xBD Necrodragon 0xB4 Level(3, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R19 [FireFang] MoveWithLeaderAI
-	UNIT 0xBD Necrodragon 0xB4 Level(3, Enemy, True) [6,20] 0x00 0x00 0x1 REDA5R20 [FireFang] MoveWithLeaderAI
-	UNIT 0xBD Necrodragon 0xB4 Level(3, Enemy, True) [6,20] 0x00 0x00 0x1 REDA7R20 [FireFang] MoveWithLeaderAI
+	UNIT Terror_Necrodragon Necrodragon Dolth Level(6, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R20 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Dolth Level(3, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R19 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Dolth Level(3, Enemy, True) [6,20] 0x00 0x00 0x1 REDA5R20 [FireFang] DelayedRushAI
+	UNIT Terror_Necrodragon Necrodragon Dolth Level(3, Enemy, True) [6,20] 0x00 0x00 0x1 REDA7R20 [FireFang] DelayedRushAI
 	UNIT
 
 Evt_BeginningScene:

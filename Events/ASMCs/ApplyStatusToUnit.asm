@@ -18,7 +18,10 @@ mov lr,r5
 
 ldr r1, =0x30004c0		@ slot2
 ldrb r1, [r1, #0x0]		
-add	r1, #0x50			@
+cmp r1, #0x0
+beq StoreStatus
+    add	r1, #0x50			@
+StoreStatus:
 mov	r2, #0x30			@ #0x30 is index of status
 strb r1, [r0, r2]		@
 

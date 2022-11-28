@@ -1,0 +1,269 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(plLostwoodsEvent, Lostwoods_ThisChapter)
+
+Lostwoods_ThisChapter:
+	POIN Lostwoods_TurnBasedEvents
+	POIN Lostwoods_CharacterBasedEvents
+	POIN Lostwoods_LocationBasedEvents
+	POIN Lostwoods_MiscBasedEvents
+	POIN Lostwoods_Dunno Lostwoods_Dunno Lostwoods_Dunno
+	POIN Lostwoods_Tutorial
+	POIN Lostwoods_Ballista1 Lostwoods_Ballista2
+	POIN PlayerPlacement PlayerPlacement
+	POIN $0 $0 $0 
+	POIN EnemyUnitsReplay EnemyUnitsReplay EnemyUnitsReplay
+	POIN Lostwoods_BeginningScene Lostwoods_EndingScene
+
+Lostwoods_TurnBasedEvents:
+	TURN
+
+Lostwoods_CharacterBasedEvents:
+	CHAR
+
+Lostwoods_LocationBasedEvents:
+	#ifdef __DEBUG__
+	  Seize(3,28)
+	#endif
+	Arrive(26,0)
+	Arrive(27,0)
+	CHESRANDOM 0x9 Act3RandomChest|IsPointer [28, 2]
+	CHESRANDOM 0x0 Act4RandomChest|IsPointer [2, 2]
+	CHESRANDOM 0x0 Act4RandomChest|IsPointer [24, 27]
+	CHESRANDOM 0x0 Act3RandomChest|IsPointer [13, 27]
+	LOCA
+
+Lostwoods_MiscBasedEvents:
+	CauseGameOverIfLordDies
+	AFEV 0xA ChestEvent 0x9
+	MournQuoteAFEVS
+	AFEV
+
+Lostwoods_Dunno:
+	END_MAIN
+
+Lostwoods_Tutorial:
+	END_MAIN
+
+Lostwoods_Ballista1:
+	BlueWarp(11,14,3,19)
+	RedWarp(26,20,2,8)
+	GreenWarp(27,12,27,25)
+	BlueWarp(10,5,18,9)
+	RedWarp(12,7,4,3)
+	GreenWarp(12,5,11,25)
+	RedWarp(15,25,20,9)
+	BLST
+	ALIGN 4
+
+Lostwoods_Ballista2:
+	BLST
+	ALIGN 4
+	
+ChestEvent:
+	SVAL 0x1 0x1
+	CHECK_EVENTID gLostWoodsCompleted 
+	IFNE 0x6 0xC 0x1 
+		SVAL 0x3 Ambrosia
+		GIVEITEMTO 0xFFFF
+		GOTO 0x6
+	LABEL 0x6
+	NoFade
+	ENDA
+
+PlayerPlacement:
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [4,27] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [3,28] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [2,27] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [6,27] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [1,26] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [3,26] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [5,26] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [5,28] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
+
+CutsceneUnits:
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [3,29] 0x00 0x00 0x1 REDA4R27 [BaseSword, Vulnerary] NoAI
+	UNIT Conrad Paladin 0x00 Level(1, NPC, 1) [3,29] 0x00 0x00 0x1 REDA3R28 [BaseLance, Vulnerary] NoAI 
+	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [3,29] 0x00 0x00 0x1 REDA2R27 [Fire, Vulnerary] NoAI
+	UNIT
+
+EnemyUnits:
+	UNIT Terror_Fiend Fiend	0x0 Level(5, Enemy, True) [26,2]	DropItem 0x00 0x0 0x00 [SteelLance,Ambrosia] AttackInRangeAI
+	UNIT 0xB1 Chiron 0x0 Level(7, Enemy, True) [26,3] 0x00 0x00 0x0 0x00 [Halberd] AttackInRangeAI
+	UNIT 0xB1 Deathgoyle 0x0 Level(7, Enemy, True) [25,2] 0x00 0x00 0x0 0x00 [Axereaver] AttackInRangeAI
+	
+	UNIT 0xB1 Fiend 0x0 Level(2, Enemy, True) [3,2] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	
+	UNIT 0xB0 ElderBael 0xB0 Level(9, Enemy, True) [13,25] 0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
+	UNIT 0xB1 ElderBael 0xB0 Level(7, Enemy, True) [12,26] 0x00 0x00 0x0 0x00 [SharpClaw] MoveWithLeaderAI
+    
+	UNIT 0xB1 ElderBael 0xB0 Level(7, Enemy, True) [9,4] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	
+	UNIT 0xB1 ElderBael 0x0 Level(6, Enemy, True) [26,26] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
+	
+	UNIT 0xB1 ElderBael 0x0 Level(6, Enemy, True) [2,17] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT 0xB1 Entombed 0x0 Level(4, Enemy, True) [1,18] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
+	
+	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [22,15] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB1 Gorgon 0x0 Level(4, Enemy, True) [10,16] 0x00 0x00 0x0 0x00 [EvilEye] MonsterAI
+    UNIT 0xB1 Kerberos 0x0 Level(4, Enemy, True) [24,20] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB1 Wight_Bow 0x0 Level(5, Enemy, True) [20,18] 0x0 0x00 0x0 0x00 [SilverBow] NeverMoveAI
+	
+	UNIT 0xB1 ElderBael 0x0 Level(4, Enemy, True) [14,15] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT 0xB1 ElderBael 0x0 Level(8, Enemy, True) [15,16] 0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
+	UNIT 0xB1 ElderBael 0x0 Level(4, Enemy, True) [15,20] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT 0xB1 ElderBael 0x0 Level(8, Enemy, True) [16,21] 0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
+	UNIT
+	
+EnemyUnitsReplay:
+	UNIT Terror_Fiend Fiend	0x0 Level(5, Enemy, True) [26,2]	0x00 0x00 0x0 0x00 [DumasLance] AttackInRangeAI
+	UNIT 0xB1 Random_ElderBael 0x0 Level(7, Enemy, True) [26,3] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT 0xB1 Random_ElderBael 0x0 Level(7, Enemy, True) [25,2] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	
+	UNIT 0xB1 Random_BigBulky 0x0 Level(2, Enemy, True) [3,2] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	
+	UNIT 0xB0 ElderBael 0xB0 Level(9, Enemy, True) [13,25] 0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
+	UNIT 0xB1 ElderBael 0xB0 Level(7, Enemy, True) [12,26] 0x00 0x00 0x0 0x00 [SharpClaw] MoveWithLeaderAI
+	UNIT 0xB1 ElderBael 0xB0 Level(7, Enemy, True) [14,26] 0x00 0x00 0x0 0x00 [SharpClaw] MoveWithLeaderAI
+    
+    UNIT 0xB1 Random_ElderBael 0x0 Level(7, Enemy, True) [9,4] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	
+	UNIT 0xB1 Random_ElderBael 0x0 Level(6, Enemy, True) [26,26] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	
+	UNIT 0xB1 Random_ElderBael 0x0 Level(6, Enemy, True) [2,17] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT 0xB1 Entombed 0x0 Level(4, Enemy, True) [1,18] 0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
+	
+	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [17,15] RandomizePosition 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB1 Hellhound 0x0 Level(16, Enemy, True) [18,20] RandomizePosition 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB1 Kerberos 0x0 Level(4, Enemy, True) [10,16] RandomizePosition 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB1 Wight_Bow 0x0 Level(5, Enemy, True) [20,18] 0x0 0x00 0x0 0x00 [SilverBow] NeverMoveAI
+	
+	UNIT 0xB1 Random_ElderBael 0x0 Level(4, Enemy, True) [14,15] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT 0xB1 ElderBael 0x0 Level(8, Enemy, True) [15,16] 0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
+	UNIT 0xB1 Random_ElderBael 0x0 Level(4, Enemy, True) [15,20] MonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT 0xB1 ElderBael 0x0 Level(8, Enemy, True) [16,21] 0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
+	UNIT
+
+Lostwoods_BeginningScene:
+	CHECK_EVENTID gLostWoodsCompleted
+	BNE 0x100 0xC 0x0
+	
+		MUSC SongID_Env_Night
+		FADU 5
+		LOAD2 0x0 CutsceneUnits
+		ENUN
+		STAL 20
+		CameraCursor(Celica)
+		TEXTMODE 0
+		TEXTSHOW LostTreescape_Entrance_Text
+		TEXTEND
+		CAMERA_CENTERED [26, 0]
+		STAL 30
+		FlashCursor(26, 0, 60)
+		STAL 30
+		CAMERA_CENTERED Celica
+		STAL 30
+		TEXTCONT
+		TEXTEND
+		TEXTCLEAR
+        CALL $591F40
+		SVAL 0x3 TorchItem
+		GIVEITEMTO Celica
+		EVBIT_T 0x7
+		STAL 20
+		FADI 5
+		CLEA 0x0
+		CLEN 0x0
+		LOAD1 0x1 EnemyUnits
+		ENUN
+		GOTO 0x101
+		
+	LABEL 0x100
+		SVAL 0x2 0x0 //Number of skirmish enemies to load
+		
+		CALL EnemyRandomizerHelper
+		LOAD1 0x1 EnemyUnitsReplay
+		ENUN
+		
+	LABEL 0x101
+	LOAD3 0x0 PlayerPlacement 
+	ENUN
+	GotoPrepScreen
+	ENDA
+
+Lostwoods_EndingScene:
+    FadeOutMusic
+	CHECK_EVENTID gLostWoodsCompleted
+	BNE 0x102 0xC 0x0
+    
+        CALL UnifiedBEXPCaller
+        FADI 2
+        STAL 5
+        CLEE 0x0
+        
+		MUSC SongID_Revelations
+		SetBackground(0x4A,5)
+		EVBIT_MODIFY 0x1
+		ENUT gLostWoodsCompleted
+		EVBIT_MODIFY 0x0
+		BackgroundText(LostTreescape_Halcyon)
+		FADI 2
+		CLEAN
+        STAL 5
+		
+		//Give Hero's Proof to Alm
+		SetBackground(0x48,5)
+        EVBIT_MODIFY 0x4
+		REVEAL Alm
+		Event_SetAlmMode
+        SET_ACTIVE Alm
+        CALL $591F40
+		SVAL 0x3 HerosProof 
+		GIVEITEMTO Alm
+		EVBIT_T 0x7
+		STAL 20
+		Event_SetCelicaMode
+        SET_ACTIVE Celica
+		REMU Alm
+        EVBIT_MODIFY 0x0
+		FADI 2
+		CLEAN
+        
+		STAL 5
+		SetBackground(0x4A,5)
+		BackgroundText(LostTreescape_Halcyon_2)
+		MUSCMID SongID_Silence
+		FADI 2
+        
+		STAL 5
+		SetBackground(0x48,5)
+		TEXTMODE 1
+		TEXTSHOW LostTreescape_CelicaProjection
+		TEXTEND
+		FAWI 5
+		STAL 20
+		FAWU 5
+		MUSCSLOW SongID_DistantPromise
+		TEXTCONT
+		TEXTEND
+		TEXTCLEAR
+		MUSCMID SongID_Silence
+		
+		FADI 2
+		MNCH 0x21
+		GOTO 0x103
+	
+	LABEL 0x102
+    SVAL 0x3 0x3
+	ASMC 0x85C65
+    CALL UnifiedBEXPCaller
+    FADI 2
+    SVAL 0x2 0x43
+	MNCH 0xFFFF
+    CALL PostgameUnlockChecker
+	
+	LABEL 0x103
+	ENDA

@@ -6,34 +6,38 @@
 .endm
 
 .equ UnlockChest, 0x080831C8
+.equ GetUnit, 0x08019430
 .equ gMapTerrain, 0x0202E4DC
+.equ gActionData, 0x0203A958
 .equ ChestTerrainType, 0x21
 .equ UnlockID, 0x58
 
-.global PostCombat_Unlock
-PostCombat_Unlock:
-	push	{lr}
-	ldrb 	r0, [r6,#0x11]	@action taken this turn
-	cmp	    r0, #0x3        @used a staff
-	bne	    EndUnlockCheck
-
-	ldrb 	r0, [r6,#0x0C]	@allegiance byte of the current character taking action
-	ldrb	r1, [r4,#0x0B]	@allegiance byte of the character we are checking
-	cmp	    r0, r1		    @check if same character
-	bne	    EndUnlockCheck
-
-@now check if Unlock was used
-	ldrb    r0, [r6, #0x6]          @item id
-	mov     r1, #0xFF
-	and     r0, r1
-	cmp     r0, #UnlockID
-	bne     EndUnlockCheck
+.global UnlockAfter_Effect
+UnlockAfter_Effect:
+	push	{r4-r5,lr}
+	@get active unit
+    ldr     r4, =gActionData
+    ldrb    r0, [r4, #0xC]
+    blh     GetUnit
+    mov     r5, r0
+    @get item id
+    ldrb    r2, [r4, #0x6]
+    mov     r1, #0x12
+    ldsb    r1, [r4, r1]
+    cmp     r1, #0
+    blt     ItemFound
+    
+    lsl     r1, r1, #0x1
+    add     r1, #0x1E
+    ldrh    r2, [r5, r1]
+    
+    ItemFound:
 
 @finally, check if valid chest at target location
 	mov     r0, #0x13
-	ldsb    r2, [r6, r0]            @target x
+	ldsb    r2, [r4, r0]            @target x
 	mov     r1, #0x14
-	ldsb    r3, [r6, r1]            @target y
+	ldsb    r3, [r4, r1]            @target y
 
 	ldr     r0, =gMapTerrain
 	ldr     r1, [r0]
@@ -59,6 +63,7 @@ PostCombat_Unlock:
 			blh     0x080D01FC      @PlaySound
 
 	EndUnlockCheck:
+    pop     {r4-r5}
 	pop	    {r0}
 	bx	    r0
 

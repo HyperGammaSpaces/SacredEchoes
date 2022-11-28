@@ -535,6 +535,132 @@ UnpackPlayerSuspendSaveUnit:
 	.pool
 	.align
 
+PackRedSuspendSaveUnit:
+	@ arguments:
+	@ - r0 = target buffer address
+	@ - r1 = source unit
+	@ returns:
+	@ - r0 = target buffer address
+
+	push {r4, lr}
+
+	mov r4, r1
+
+	bl PackGameSaveUnit
+
+	mov  r2, #0x2C
+	add  r2, r0 @ r2 = su+0x2C, for easier addressing (0x2C+ is out of ldrb/strb range)
+
+	ldrb r1, [r4, #0x13] @ r1 = u->chp
+	strb r1, [r2, #0x00] @ su->chp = u->chp
+
+	mov  r1, #0x3B
+    ldrb r1, [r4, r1]
+	strb r1, [r2, #0x01] @ su->rescue = u->rescue
+
+	ldrb r1, [r4, #0x1C] @ r1 = u->blst
+	strb r1, [r2, #0x02] @ su->blst = u->blst
+
+	mov  r1, #0x30
+	ldrb r1, [r4, r1]    @ r1 = u->sd
+	strb r1, [r2, #0x03] @ su->sd = u->sd
+
+	mov  r1, #0x31
+	ldrb r1, [r4, r1]    @ r1 = u->tb
+	strb r1, [r2, #0x04] @ su->tb = u->tb
+
+	mov  r3, #0x40
+	add  r3, r4 @ r3 = unit+0x40, for easier addressing
+
+	ldrb r1, [r3, #0x02] @ r1 = u->ai1
+	strb r1, [r2, #0x05] @ su->ai1 = u->ai1
+
+	ldrb r1, [r3, #0x04] @ r1 = u->ai2
+	strb r1, [r2, #0x06] @ su->ai2 = u->ai2
+
+	ldrb r1, [r3, #0x03] @ r1 = u->ai1Cur
+	strb r1, [r2, #0x07] @ su->ai1Cur = u->ai1Cur
+
+	ldrb r1, [r3, #0x05] @ r1 = u->ai2Cur
+	strb r1, [r2, #0x08] @ su->ai2Cur = u->ai2Cur
+
+	ldrb r1, [r4, #0x0A] @ r1 = u->aiFlag
+	strb r1, [r2, #0x09] @ su->aiFlag = u->aiFlag
+
+	ldrh r1, [r3, #0x00] @ r1 = u->aiConf
+	strh r1, [r2, #0x0A] @ su->aiConf = u->aiConf
+
+	pop {r4}
+
+	pop {r1}
+	bx  r1
+
+	.pool
+	.align
+
+UnpackRedSuspendSaveUnit:
+	@ arguments:
+	@ - r0 = target unit
+	@ - r1 = source buffer address
+	@ returns:
+	@ - r0 = target unit
+
+	push {r4, lr}
+
+	mov r4, r1
+
+	bl UnpackGameSaveUnit
+
+	mov  r2, #0x2C
+	add  r2, r4 @ r2 = su+0x2C, for easier addressing (0x2C+ is out of ldrb/strb range)
+
+	ldrb r1, [r2, #0x00] @ r1 = su->chp
+	strb r1, [r0, #0x13] @ u->chp = su->chp
+
+	mov  r3, #0x3B
+	ldrb r1, [r2, #0x01] @ r1 = su->rescue
+	strb r1, [r0, r3] @ u->rescue = su->rescue
+
+	ldrb r1, [r2, #0x02] @ r1 = su->blst
+	strb r1, [r0, #0x1C] @ u->blst = su->blst
+
+	mov  r3, #0x30
+	ldrb r1, [r2, #0x03] @ r1 = su->sd
+	strb r1, [r0, r3]    @ u->sd = su->sd
+
+	mov  r3, #0x31
+	ldrb r1, [r2, #0x04] @ r1 = su->tb
+	strb r1, [r0, r3]    @ u->tb = su->tb
+
+	mov  r3, #0x40
+	add  r3, r0 @ r3 = unit+0x40, for easier addressing
+
+	ldrb r1, [r2, #0x05] @ r1 = su->ai1
+	strb r1, [r3, #0x02] @ u->ai1 = su->ai1
+
+	ldrb r1, [r2, #0x06] @ r1 = su->ai2
+	strb r1, [r3, #0x04] @ u->ai2 = su->ai2
+
+	ldrb r1, [r2, #0x07] @ r1 = su->ai1Cur
+	strb r1, [r3, #0x03] @ u->ai1Cur = su->ai1Cur
+
+	ldrb r1, [r2, #0x08] @ r1 = su->ai2Cur
+	strb r1, [r3, #0x05] @ u->ai2Cur = su->ai2Cur
+
+	ldrb r1, [r2, #0x09] @ r1 = su->aiFlag
+	strb r1, [r0, #0x0A] @ u->aiFlag = su->aiFlag
+
+	ldrh r1, [r2, #0x0A] @ r1 = su->aiConf
+	strh r1, [r3, #0x00] @ u->aiConf = su->aiConf
+
+	pop {r4}
+
+	pop {r1}
+	bx  r1
+
+	.pool
+	.align
+
 PackOtherSuspendSaveUnit:
 	@ arguments:
 	@ - r0 = target buffer address
@@ -616,6 +742,7 @@ UnpackOtherSuspendSaveUnit:
 	ldrb r1, [r2, #0x00] @ r1 = su->chp
 	strb r1, [r0, #0x13] @ u->chp = su->chp
 
+	ldrb r1, [r2, #0x0B] @ r1 = su->allegiance
 	ldrb r1, [r2, #0x01] @ r1 = su->rescue
 	strb r1, [r0, #0x1B] @ u->rescue = su->rescue
 
@@ -714,21 +841,28 @@ UnpackOtherSuspendSaveUnit:
         
         mov r1, r8
         cmp r1, #0
-        bne \Name\().pack
+        bne \Name\().know
         
         mov r1, #1
         ldr r3, =RemoveExcessBaseWeapons
         orr r3, r1
         bl  BXR3
         
-    \Name\().pack:
+    \Name\().know:
     
         .ifeq \Allegiance
             ldr r0, [r7]
+            cmp r0, #0
+            beq \Name\().pack
             ldrb r0, [r0, #0x4]
+            cmp r0, #0x3F
+            bge \Name\().pack
+            mov r1, #0
             ldr r3, =SGM_SetCharacterKnown
             bl BXR3
         .endif
+        
+    \Name\().pack:
 
 		mov r1, r7
 		mov r0, sp
@@ -858,5 +992,5 @@ UnpackOtherSuspendSaveUnit:
 	LOAD_UNIT_FUNC ESU_LoadGreenSuspendUnits, UnpackOtherSuspendSaveUnit, OtherSuspendSaveUnit.size, 0x40
 
 	@ Suspend red units
-	SAVE_UNIT_FUNC ESU_SaveRedSuspendUnits, PackOtherSuspendSaveUnit,   OtherSuspendSaveUnit.size, 0x80
-	LOAD_UNIT_FUNC ESU_LoadRedSuspendUnits, UnpackOtherSuspendSaveUnit, OtherSuspendSaveUnit.size, 0x80
+	SAVE_UNIT_FUNC ESU_SaveRedSuspendUnits, PackRedSuspendSaveUnit,   OtherSuspendSaveUnit.size, 0x80
+	LOAD_UNIT_FUNC ESU_LoadRedSuspendUnits, UnpackRedSuspendSaveUnit, OtherSuspendSaveUnit.size, 0x80

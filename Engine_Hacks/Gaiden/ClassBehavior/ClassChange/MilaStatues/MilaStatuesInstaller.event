@@ -16,9 +16,11 @@ PUSH
 	WORD 0
 	WORD 0
 	
+    ORG $CD250
+    BYTE $1F
 POP
 
-SetUnitAction(0xD, ActionRoutine(PromoteFromUnitMenu+1))
+SetUnitAction(0xD, ActionRoutine(PromoteFromUnitMenu+1, True))
 
 MilaTileCheck:
 #incbin "MilaTileCheck.dmp"

@@ -31,15 +31,27 @@ LoadSummons:
 
 	// Counter at value
 	COUNTER_SET 0 0 // reset counter
-	CAMERA_CENTERED Nuibaba // cam on summoner
+	CameraCursor(Nuibaba) // cam on summoner
 	ENUN
 	SOUN 0x3BF // summoning SFX
-	STAL 20
-    WARPIN [15, 5]
+	STAL 60
+    EVBIT_T 0x9
+    CAMERA_CENTERED [15,5]
+    WARPIN [15,5]
     LOAD1 0 GorgonSummons
     ENDWARP
     ENUN
+    EVBIT_F 0x9
 	EVBIT_T 0x7
+    SetSummonerID(Terror_Gorgon, 0x81)
+        
+        CheckCurrentHP(Nuibaba)
+        SMOV r1 0x2
+        BGE 0 r1 rC
+        SSUB slotsParam(r1, rC, r1)
+        SET_HP Nuibaba
+        STAL 5
+    
 	GOTO 0
 
 	LABEL 1
@@ -187,26 +199,27 @@ EnemyCutsceneUnits:
 EnemyUnits:
 	UNIT Nuibaba Cantor_F	Nuibaba Level(16, Enemy, True) [4,1]	DropItem 0x00 0x0 0x00 [Medusa, Fortify, MageRing] DontAttackTatianaBossAI
 	//1 witch buddy
-	UNIT 0xB9 Gorgon	Nuibaba Level(6, Enemy, True) [4,6]	0x00 0x00 0x0 0x00 [EvilEye, Shadowshot, Fortify] DontAttackTatianaMageAI
-	UNIT 0xB9 Gorgon	Nuibaba Level(4, Enemy, True) [3,7]	0x00 0x00 0x0 0x00 [EvilEye] AttackInRangeExceptTatianaAI
-	UNIT 0xB9 Gorgon	Nuibaba Level(4, Enemy, True) [5,7]	0x00 0x00 0x0 0x00 [EvilEye] AttackInRangeExceptTatianaAI
-	UNIT 0xB9 Deathgoyle	Nuibaba Level(5, Enemy, True) [4,8]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeExceptTatianaAI
+	UNIT Terror_Gorgon Gorgon	Nuibaba Level(6, Enemy, True) [4,6]	0x00 0x00 0x0 0x00 [EvilEye, Shadowshot, Fortify] DontAttackTatianaMageAI
+	UNIT Rigel_Archer BowKnight	Nuibaba Level(4, Enemy, True) [3,7]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeExceptTatianaAI
+	UNIT Terror_Gorgon Gorgon	Nuibaba Level(4, Enemy, True) [5,7]	0x00 0x00 0x0 0x00 [EvilEye] AttackInRangeExceptTatianaAI
+	UNIT Terror_Deathgoyle Deathgoyle	Nuibaba Level(5, Enemy, True) [4,8]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeExceptTatianaAI
+	UNIT Rigel_Merc DreadFighter Nuibaba Level(3, Enemy, True) [3,5] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeExceptTatianaAI
 	//1 BK
 	UNIT Rigel_Archer BowKnight Nuibaba Level(2, Enemy, True) [11,7] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeExceptTatianaAI
 	//4 arcanists
-	UNIT Rigel_Mage Arcanist Nuibaba Level(10, Enemy, True) [12,3] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist Nuibaba Level(10, Enemy, True) [12,3] 0x00 0x00 0x0 0x00 [Mire] NoAI
 	UNIT Rigel_Mage Arcanist Nuibaba Level(10, Enemy, True) [14,4] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
-	UNIT Rigel_Mage Arcanist Nuibaba Level(10, Enemy, True) [18,3] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT Rigel_Mage Arcanist Nuibaba Level(9, Enemy, True) [20,4] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT Rigel_Merc DreadFighter Nuibaba Level(2, Enemy, True) [18,3] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
 	//3 DFs
-	UNIT Rigel_Merc DreadFighter Nuibaba Level(2, Enemy, True) [9,9] 0x00 0x00 0x0 0x00 [SteelSword] NeverMoveAI
-	UNIT Rigel_Soldier Baron Nuibaba Level(2, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist Nuibaba Level(10, Enemy, True) [9,9] 0x00 0x00 0x0 0x00 [Mire,SteelShield] NeverMoveAI
+	UNIT Rigel_Soldier Baron Nuibaba Level(2, Enemy, True) [9,8] DropItem 0x00 0x0 0x00 [SteelAxe,HandAxe] AttackInRangeAI
 	UNIT Rigel_Merc Myrmidon Nuibaba Level(9, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
-	UNIT Rigel_Merc Myrmidon Nuibaba Level(9, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [Zanbato] AttackInRangeAI
+	UNIT Rigel_Merc Myrmidon Nuibaba Level(9, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [Zanbato] NoAI
 	UNIT
 	
 GorgonSummons:
-	UNIT 0xB9 Gorgon	Nuibaba Level(8, Enemy, True) [15,5]	0x00 0x00 0x1 REDA15R5 [EvilEye] NoAI
+	UNIT Terror_Gorgon Gorgon	Nuibaba Level(8, Enemy, True) [15,5]	0x00 0x00 0x1 REDA15R5 [EvilEye] NoAI
 	UNIT
 
 Dummy_BeginningScene:

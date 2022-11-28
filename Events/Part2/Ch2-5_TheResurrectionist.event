@@ -31,7 +31,7 @@ Ch2_5_LocationBasedEvents:
 
 Ch2_5_MiscBasedEvents:
 	CauseGameOverIfLordDies
-	DefeatAll(Ch2_5_EndingScene)
+	DefeatBoss(Ch2_5_EndingScene)
 	MournQuoteAFEVS
 	AFEV
 
@@ -60,25 +60,26 @@ PlayerUnits:
 	UNIT
 	
 EnemyUnits:
-	UNIT CantorBoss_Celica5 Cantor CantorBoss_Celica5 Level(1,Enemy,True) [13,5] 0x06 0x00 0x0 0x00 [Miasma, Lifefruit] NeverMoveAI 
-	UNIT 0xAA Revenant CantorBoss_Celica5 Level(11,Enemy,True) [13,14] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
-	UNIT 0xAA Revenant CantorBoss_Celica5 Level(9,Enemy,True) [11,6] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
-	UNIT 0xAA Revenant CantorBoss_Celica5 Level(9,Enemy,True) [11,8] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
-	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(9,Enemy,True) [12,7] 0x04 0x00 0x0 0x00 [Zanbato] AttackInRangeAI
-	UNIT 0xAA Revenant CantorBoss_Celica5 Level(10,Enemy,True) [13,9] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT CantorBoss_Celica5 Cantor CantorBoss_Celica5 Level(1,Enemy,True) [13,5] DropItem 0x00 0x0 0x00 [Miasma, Conjure, Lifefruit] CantorBossAI 
+	UNIT 0xAC Revenant CantorBoss_Celica5 Level(11,Enemy,True) [13,14] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Revenant CantorBoss_Celica5 Level(9,Enemy,True) [11,6] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Revenant CantorBoss_Celica5 Level(9,Enemy,True) [11,8] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(9,Enemy,True) [12,7] 0x04 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT 0xAC Revenant CantorBoss_Celica5 Level(10,Enemy,True) [13,9] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
 	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(7,Enemy,True) [11,13] 0x04 0x00 0x0 0x00 [IronLance] MonsterAI
 	UNIT 0xAD Bonewalker_Bow CantorBoss_Celica5 Level(7,Enemy,True) [15,14] 0x04 0x00 0x0 0x00 [IronBow] MonsterAI
 	UNIT
 	
 ZombieGroup:
-	UNIT 0xB0 Bael CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x04 0x00 0x1 REDA13R6 [RottenClaw] MonsterAI
-	UNIT 0xAA Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x04 0x00 0x1 REDA12R5 [RottenClaw] MonsterAI
-	UNIT 0xAA Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x04 0x00 0x1 REDA14R5 [RottenClaw] MonsterAI
+	UNIT Terror_Revenant Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x00 0x00 0x1 REDA13R6 [RottenClaw] MonsterAI
+	UNIT Terror_Revenant Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x00 0x00 0x1 REDA12R5 [RottenClaw] MonsterAI
+	UNIT Terror_Revenant Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x00 0x00 0x1 REDA14R5 [RottenClaw] MonsterAI
 	UNIT
 
 Ch2_5_BeginningScene:
 	LOAD3 0x0 PlayerUnits 
 	ENUN
+    CAMERA_CENTERED Celica
 	FADU 5
 	MUSC SongID_Env_Water
 	STAL 20
@@ -149,6 +150,14 @@ LoadSummons: //every other turn, shamelessly stolen from VBA for now lol
         LOAD1 0 ZombieGroup
         ENUN
         STAL 20
+        SetSummonerID(Terror_Revenant, 0x81)
+        
+        CheckCurrentHP(CantorBoss_Celica5)
+        SMOV r1 0x1
+        BGE 0x0 r1 rC
+        SSUB slotsParam(r1, rC, r1)
+        SET_HP CantorBoss_Celica5
+        STAL 5
 	LABEL 0x0
 	NoFade
 	ENDA

@@ -149,7 +149,7 @@ EnemyUnits:
 	UNIT Rigel_Soldier Knight	Grieth Level(4, Enemy, True) [10,17]	0x00 0x00 0x0 0x00 [HeavySpear] NeverMoveAI
 	UNIT Rigel_Soldier Knight	Grieth Level(4, Enemy, True) [19,17]	0x00 0x00 0x0 0x00 [Hammer] NeverMoveAI
 	UNIT Rigel_Soldier Knight	Grieth Level(4, Enemy, True) [9,17]	DropItem 0x00 0x0 0x00 [HandAxe] NeverMoveAI
-	UNIT DumaFaith_Witch Witch	Grieth Level(7, Enemy, True) [11,14]	0x00 0x00 0x0 0x00 [Fire, Rewarp] WitchWarpAI
+	UNIT DumaFaith_Witch Witch	Grieth Level(7, Enemy, True) [11,14]	0x00 0x00 0x0 0x00 [Fire, WitchWarpItem] WitchWarpAI
 	UNIT Bandit_Bow Sniper	Grieth Level(5, Enemy, True) [4,7]	0x00 0x00 0x0 0x00 [IronBow] AttackInHalfRangeAI
 	UNIT Bandit_Sword Mercenary	Grieth Level(14, Enemy, True) [5,9]	DropItem 0x00 0x0 0x00 [Ilwoon] NoAI
 	UNIT Rigel_Soldier Knight	Grieth Level(5, Enemy, True) [3,13]	0x00 0x00 0x0 0x00 [SteelAxe] NeverMoveAI
@@ -161,7 +161,7 @@ EnemyUnits:
 	UNIT
 
 SpawnCantor:
-	UNIT CantorBoss_Bonewalkers Cantor Grieth Level(5, Enemy, True) [16,2] 0x00 0x00 0x0 0x00 [Miasma, Invoke] CantorAI
+	UNIT CantorBoss_Bonewalkers Cantor Grieth Level(5, Enemy, True) [16,2] 0x00 0x00 0x0 0x00 [Miasma, Conjure] CantorAI
 	UNIT
 
 ArcherReinforcements:
@@ -169,7 +169,7 @@ ArcherReinforcements:
 	UNIT
 	
 ThiefReinforcement:
-	UNIT TreasureHunter Thief 0x00 Level(15, Enemy, True) [4,5]	0x00 0x00 0x1 REDA4R5 [BaseSword,Lockpick] StealingThiefAI
+	UNIT TreasureHunter Thief 0x00 Level(15, Enemy, True) [4,5]	0x00 0x00 0x1 REDA4R5 [BaseSword,Lockpick] LootingThiefAI
 	UNIT
 	
 PirateReinforcements:

@@ -4,9 +4,19 @@ PUSH
 	ORG $725CC
 		POIN $726A4
         
-    ORG $28ADC
+    ORG $28F50
 	RewarpUsabilityCheck:
-		New_Use(RewarpStaff_RangeSetup)
+	SHORT $2000 $4905 $7B89 //ldr r1, =gChapterData
+    SHORT $292E $D004 //if chapterID = 0x2E mov r0, #0; b return
+    SHORT $4904 //ldr r1, =RescueStaff_RangeSetup|1
+    SHORT $1C20 //mov r0, r4
+    SHORT $1C2A //mov r2, r5
+    BL($29068)
+    //return:
+    SHORT $4902 //ldr r1, =0x08028bfe
+    SHORT $468F //mov r15, r1
+    WORD $0202BCF0
+    POIN RewarpStaff_RangeSetup|1 $28BFE
         
     ORG $28FB4
     RewarpStaff_GetTargetList:

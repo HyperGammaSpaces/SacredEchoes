@@ -33,7 +33,21 @@ Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	DefeatAll(Evt_EndingScene)
 	MournQuoteAFEVS
+    AFEV 0x11 RevealIsland 0x2
 	AFEV
+    
+RevealIsland:
+    CAMERA_CENTERED [6,8]
+    STAL 20
+	EARTHQUAKE_START 0x100
+	STAL 60
+	EARTHQUAKE_END
+	STAL 30
+	SOUN 0xBD //water going down
+	TILECHANGE 0x0
+	STAL 30
+	NoFade
+	ENDA
 
 Evt_Dunno:
 	END_MAIN
@@ -50,14 +64,15 @@ Evt_Ballista2:
 	ALIGN 4
 
 PlayerPlacement:
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [15,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [7,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [9,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [3,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [17,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [15,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [14,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [14,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [13,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [16,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [17,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [20,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [20,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    //bottom block
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [21,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [22,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
@@ -76,12 +91,13 @@ CutsceneUnits:
 	UNIT
 
 EnemyUnits:
-	UNIT Boss_Monster Necrodragon	Boss_Monster Level(10, Enemy, True) [10,2]	DropItem 0x00 0x0 0x00 [HellFang,HolyRing] MonsterAI
-	UNIT 0xBD Necrodragon Boss_Monster Level(7, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
-	UNIT 0xBD Necrodragon Boss_Monster Level(7, Enemy, True) [10,13] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
-	UNIT 0xBD Necrodragon Boss_Monster Level(7, Enemy, True) [1,14] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
-	UNIT 0xBD Necrodragon Boss_Monster Level(7, Enemy, True) [7,17] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
-	UNIT 0xBD Necrodragon Boss_Monster Level(5, Enemy, True) [14,23] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT Cantor_Gargs Cantor	Cantor_Gargs Level(6, Enemy, True) [5,4]	0x00 0x00 0x0 0x00 [Mire, Conjure] CantorAI
+	UNIT Boss_Monster Necrodragon	Boss_Monster Level(10, Enemy, True) [10,2]	DropItem 0x00 0x0 0x00 [HellFang,PrayerRing] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(7, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(7, Enemy, True) [10,13] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(7, Enemy, True) [1,14] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(7, Enemy, True) [7,17] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(5, Enemy, True) [14,23] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT
 
 Evt_BeginningScene:

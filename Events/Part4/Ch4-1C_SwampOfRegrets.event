@@ -79,28 +79,29 @@ CutsceneUnits:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [2,19] 0x00 0x00 0x1 REDA8R17 [BaseSword, Vulnerary] NoAI
 	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [2,19] 0x00 0x00 0x1 REDA7R18 [BaseSword, Vulnerary] NoAI 
 	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [2,19] 0x00 0x00 0x1 REDA8R18 [Fire, Vulnerary] NoAI
+	UNIT Conrad Paladin 0x00 Level(1, NPC, 1) [2,19] 0x00 0x00 0x1 REDA7R17 [BaseLance, Vulnerary] NoAI
 	UNIT
 	
 CutsceneUnits_Ending:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [16,5] 0x00 0x00 0x1 REDA12R0 [BaseSword, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(1, NPC, 1) [16,5] 0x00 0x00 0x1 REDA11R0 [BaseSword, Vulnerary] NoAI
+	UNIT Conrad Paladin 0x00 Level(1, NPC, 1) [16,5] 0x00 0x00 0x1 REDA11R0 [BaseLance, Vulnerary] NoAI
 	UNIT
 
 EnemyUnits:
-	UNIT Garcia Cantor	Garcia Level(10, Enemy, False) [16,5]	0x00 0x00 0x0 0x00 [Mire, Invoke] CantorAI
+	UNIT Garcia Cantor	Garcia Level(10, Enemy, False) [16,5]	0x00 0x00 0x0 0x00 [Mire, Conjure] CantorAI
 	UNIT Cantor_Gargs Cantor	Garcia Level(8, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0E,0x03]
 	UNIT Rigel_Archer Sniper Garcia Level(4, Enemy, True) [15,3] DropItem 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
 	UNIT Rigel_Archer Sniper Garcia Level(4, Enemy, True) [18,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	UNIT Rigel_Mage Arcanist	Garcia Level(8, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	
-	UNIT Cantor_Gargs Cantor	Garcia Level(6, Enemy, True) [12,7]	0x00 0x00 0x0 0x00 [Mire, Invoke] MoveAndHealAI
+	UNIT Cantor_Gargs Cantor	Garcia Level(6, Enemy, True) [19,17]	0x00 0x00 0x0 0x00 [Mire, Conjure] CantorAI
 	UNIT DumaFaith_Witch Witch	Garcia Level(8, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Aura] NoAI
 	UNIT Rigel_Mage Arcanist	Garcia Level(4, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Mire] NoAI
 	UNIT Rigel_Mage Arcanist	Garcia Level(6, Enemy, True) [13,6]	0x00 0x00 0x0 0x00 [Miasma] NoAI
-	UNIT Rigel_Merc DreadFighter	Garcia Level(2, Enemy, True) [14,7]	0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Rigel_Merc DreadFighter	Garcia Level(2, Enemy, True) [18,12]	0x00 0x00 0x0 0x00 [IronSword] NoAI
 	UNIT Rigel_Merc Myrmidon	Garcia Level(7, Enemy, True) [11,9]	0x00 0x00 0x0 0x00 [IronSword] NoAI
 	UNIT Rigel_Merc Myrmidon	Garcia Level(7, Enemy, True) [12,10]	0x00 0x00 0x0 0x00 [IronSword] NoAI
-	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [3,0]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [3,0]	0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [2,1]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT
 
@@ -129,8 +130,12 @@ Evt_BeginningScene:
 	STAL 20
 	CameraCursor(Celica)
 	MapText(Ch4C_1_OpeningText)
+    STAL 20
+    MOVE 0x08 Conrad [2,19]
 	FADI 5
+	ENUN
 	CLEA 0x0
+	CLEN 0x0
 	
 	LOAD1 0x1 EnemyUnits
 	ENUN
