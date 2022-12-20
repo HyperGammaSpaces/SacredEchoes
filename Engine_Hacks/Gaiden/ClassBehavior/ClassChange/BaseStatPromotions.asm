@@ -144,10 +144,14 @@ CheckWeaponMutation:
 	beq     SetLance
 	
 	CheckBows:
+	cmp     r1, #0x04
+	beq     SetBow
 	cmp     r1, #0x19
 	beq     SetBow
 	cmp     r1, #0x1A
 	beq     SetBow
+	cmp     r1, #0x40
+	beq     AtlasCase
 	
 	CheckMagic:
 	cmp     r1, #0x25
@@ -170,6 +174,8 @@ CheckWeaponMutation:
 	mov     r0, #0x14		@lance
 	b       UpdateInventory
 	
+	AtlasCase:
+	mov     r7, #0x1F
 	SetBow:
 	mov     r0, #0x2d		@bow
 	b       UpdateInventory
