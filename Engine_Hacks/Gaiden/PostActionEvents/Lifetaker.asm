@@ -26,6 +26,10 @@ cmp	    r0, #0
 bne	    End
 
 @check for weapon
+ldr     r1, =SelectedSpellPointer
+ldrh    r1, [r1, #0x0]
+cmp     r1, #0x0
+bne     End
 mov	    r0, r4
 add     r0, #0x1E
 ldrh    r0, [r0]
