@@ -59,8 +59,6 @@ FortifyUseEffect:
 		mov     r0, r7
 		bl      GetTarget
 		ldrb    r0, [r0, #0x2]
-		lsl     r0, r0, #0x18
-		asr     r0, r0, #0x18
 		bl      GetUnitStruct
 		mov     r1, r6
 		bl      UnitTryHeal
@@ -71,6 +69,9 @@ FortifyUseEffect:
 DoneLoop:
     mov     r0, r4
 	bl      FinishUpItemBattle
+    ldr     r0, =0x0203E1C8
+    mov     r1, #0
+    str     r1, [r0]
 	bl      BeginBattleAnimations
 	
     pop     {r4-r7}
