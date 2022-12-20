@@ -682,7 +682,7 @@ RecruitmentTheme_4:
 @ 000   ----------------------------------------
 RecruitmentTheme_4_LOOP:
         .byte           VOICE , 87
-        .byte           VOL   , 48
+        .byte           VOL   , 61
         .byte           N21   , An1 , v114
         .byte   W36
         .byte           N10
@@ -965,17 +965,17 @@ RecruitmentTheme_5_LOOP:
 @ 008   ----------------------------------------
         .byte           N12
         .byte           N24   , Fs3
-        .byte           N12   , Fs4
+        .byte           N12   , Cn3
         .byte           N12   , Ds4 , v101
         .byte   W24
         .byte           N06   , Cn1 , v110
         .byte           N06   , Ds1
-        .byte           N12   , Gn4
+        .byte           N12   , Cs3
         .byte   W12
         .byte           N06   , Cn1
         .byte           N06   , Ds1
         .byte           N24   , Fs3
-        .byte           N12   , Gn4
+        .byte           N12   , Cs3
         .byte   W12
         .byte           N06   , Cn1
         .byte           N06   , Ds1
@@ -983,27 +983,27 @@ RecruitmentTheme_5_LOOP:
         .byte                   Cn1
         .byte           N06   , Ds1
         .byte           N12   , Fs3
-        .byte           N12   , Fs4
+        .byte           N12   , Cn3
         .byte   W12
         .byte           N06   , Cn1
         .byte           N06   , Ds1
         .byte           N24   , Fn3
-        .byte           N12   , Gn4
+        .byte           N12   , Cs3
         .byte   W12
         .byte           N06   , Cn1
         .byte           N06   , Ds1
-        .byte           N12   , Gn4
+        .byte           N12   , Cs3
         .byte   W12
 @ 009   ----------------------------------------
         .byte                   Cn1
         .byte           N12   , Dn1
         .byte           N24   , Fs3
         .byte           N36   , As2
-        .byte           N12   , Fs4
+        .byte           N12   , Cn3
         .byte   W24
         .byte                   Cn1
         .byte   W12
-        .byte                   Fs4
+        .byte                   Cn3
         .byte   W12
         .byte           N09   , Cn1
         .byte   W12

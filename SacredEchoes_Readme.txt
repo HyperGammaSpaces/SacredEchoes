@@ -34,6 +34,7 @@ Specifically:
   - Expel has been buffed to 100% accuracy but only affects monster classes. It will hit all enemies in Mag/2 range which are of a Monster class type, and reduce them to 1 HP.
   - Promoted magic units will learn their whole unpromoted spell list. (This is why Mage/Cleric promotion levels are so high)
 - A (mostly) working world map that you can explore, with two lords you can alternate between after a certain point in the story.
+- A reworked support system with no limits (press R on the statscreen to see the bonuses).
 - Lion Heads/Sacred Springs which can be visited in the repeatable maps to gain stat boosts, experience, and even revive dead units...
 
 Optional QOL fixes to GBAFE are included:
@@ -232,7 +233,7 @@ Some things are still under development for later releases.
 - Stan's Movement Skills
 - laqieer's world map installation utilities
 - Huichelaar's world map flags upgrades
-- Assorted small tweaks and patches by StanH, Tequila, Crazycolorz5, Vennobennu, Leonarth, 7743 and aera
+- Assorted small tweaks and patches by StanH, Tequila, Crazycolorz5, Vennobennu, Leonarth, Vesly, 7743 and aera
   - Extra shout out to StanH and Snakey1 for finally squashing the remaining bugs in the magic system!
 - Music hacking utilities by Sme and Alusq, including Alusq's expanded percussion kit
 - Music arrangements based on Echoes OST and on Gaiden MIDI remixes by 雨原
@@ -240,12 +241,14 @@ Some things are still under development for later releases.
   - "What Lies at the End" sheet music by TorbyBrand on Musescore
   - "Revelations" sheet music by hinaflower on Musescore
   - "Heritors of Arcadia" arrangement by bigyihsuan on Musescore
+  - "Twilight of the Gods" piano part by Sme
   - Title theme sheet music by Spencer Riffle on Musescore
   - "Omen", "Preparations (Deliverance)", "Preparations (Pilgrimage)", "Pride and Arrogance", "The Scions' Dance in Purgatory", and "A Distant Promise" by Uzel and The_Burger_King_420
 - NGMansion for original save expansion patch; StanH for Expanded Modular Save and Tequila for Convoy Split
 - Portraits:
   - Jedah, Dragon Duma, and Rodney by L95
   - Zopyrus by RandomWizard and Levin64
+  - Xaizor by epicer
   - all others by hypergammaspaces or IS
 - Battle Animations: 
   - Duma battle animation by Nuramon and L95; mapsprite by L95
@@ -298,6 +301,7 @@ Some things are still under development for later releases.
 - Snakey1's REDA helpers, Support rework, MSS fixes and event cleanup
 - Pikmin1211 for eventing and enemy placement on "The Warship", "Zofia Harbor", "Invaders Descend" and "The Siege"
 - ZoramineFae for "The Warship" map
+- Pandan for Fear Mountain map
 - KrashBoomBang for "Unholy Blade", "Shattered Earth" and Sylvan Shrine map
 - Frigid for "Heir of Disgrace", "Maiden of Darkness" and "Breaking the Chains" maps
 - Dancer_A for Grieth's Citadel and Nuibaba's Abode maps, boss conversations

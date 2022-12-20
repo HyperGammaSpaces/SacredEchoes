@@ -6,6 +6,8 @@ PUSH
 	POIN MenuStyleGraphicsTable
 	ORG $4E0D0
 	POIN MenuStylePaletteTable
+	ORG $CEF08
+	POIN MenuTilesPalette
 
 	ORG $A1D448 //Palette of Glowy UI bar that goes underneath currently highlighted item
 	#incbin "A1D448_glowy.pal.bin"

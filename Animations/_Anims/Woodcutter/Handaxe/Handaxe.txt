@@ -1,5 +1,5 @@
 #######################################################
-#17 wcut_ax2 Woodcutter Hand Axe
+#51 wcut_ax2 Woodcutter Hand Axe
 #
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
@@ -13,7 +13,7 @@ C07                               #Start attack animation; need 03 right before 
 C34                               #Play heavy stepping SFE
 5 p- Handaxe_004.png
 4 p- Handaxe_005.png
-C41                               #EMPTY
+C41                               #Play Axe rising SFE
 3 p- Handaxe_006.png
 C05                               #Call spell associated with equipped weapon
 2 p- Handaxe_007.png
@@ -22,9 +22,9 @@ C05                               #Call spell associated with equipped weapon
 C13                               #ranged attack - hand axe for Hector
 3 p- Handaxe_010.png
 3 p- Handaxe_011.png
-1 p- Handaxe_005.png
+1 p- Handaxe_012.png
 C01                               #NOP
-3 p- Handaxe_004.png
+3 p- Handaxe_013.png
 5 p- Handaxe_003.png
 3 p- Handaxe_002.png
 4 p- Handaxe_001.png
@@ -37,20 +37,20 @@ C0D                               #End of dodge animation. preceeded by 0x06
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Handaxe_000.png
-4 p- Handaxe_012.png
-3 p- Handaxe_013.png
-12 p- Handaxe_014.png
-C42                               #Play long axe swinging SFE
+4 p- Handaxe_014.png
 3 p- Handaxe_015.png
-2 p- Handaxe_016.png
-2 p- Handaxe_017.png
+12 p- Handaxe_016.png
+C42                               #Play Axe falling SFE; long axe swinging SFE
+3 p- Handaxe_017.png
 2 p- Handaxe_018.png
-15 p- Handaxe_019.png
-4 p- Handaxe_020.png
-3 p- Handaxe_021.png
-2 p- Handaxe_022.png
-C41                               #EMPTY
-2 p- Handaxe_023.png
+2 p- Handaxe_019.png
+2 p- Handaxe_020.png
+15 p- Handaxe_021.png
+4 p- Handaxe_022.png
+3 p- Handaxe_023.png
+2 p- Handaxe_024.png
+C41                               #Play Axe rising SFE
+2 p- Handaxe_025.png
 2 p- Handaxe_006.png
 C05                               #Call spell associated with equipped weapon
 2 p- Handaxe_007.png
@@ -59,9 +59,9 @@ C05                               #Call spell associated with equipped weapon
 C13                               #ranged attack - hand axe for Hector
 3 p- Handaxe_010.png
 3 p- Handaxe_011.png
-1 p- Handaxe_005.png
+1 p- Handaxe_012.png
 C01                               #NOP
-3 p- Handaxe_004.png
+3 p- Handaxe_013.png
 5 p- Handaxe_003.png
 3 p- Handaxe_002.png
 4 p- Handaxe_001.png
@@ -80,7 +80,7 @@ C07                               #Start attack animation; need 03 right before 
 C34                               #Play heavy stepping SFE
 5 p- Handaxe_004.png
 4 p- Handaxe_005.png
-C41                               #EMPTY
+C41                               #Play Axe rising SFE
 3 p- Handaxe_006.png
 C05                               #Call spell associated with equipped weapon
 2 p- Handaxe_007.png
@@ -89,9 +89,9 @@ C05                               #Call spell associated with equipped weapon
 C13                               #ranged attack - hand axe for Hector
 3 p- Handaxe_010.png
 3 p- Handaxe_011.png
-1 p- Handaxe_005.png
+1 p- Handaxe_012.png
 C01                               #NOP
-3 p- Handaxe_004.png
+3 p- Handaxe_013.png
 5 p- Handaxe_003.png
 3 p- Handaxe_002.png
 4 p- Handaxe_001.png
@@ -104,20 +104,20 @@ C0D                               #End of dodge animation. preceeded by 0x06
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Handaxe_000.png
-4 p- Handaxe_012.png
-3 p- Handaxe_013.png
-12 p- Handaxe_014.png
-C42                               #Play long axe swinging SFE
+4 p- Handaxe_014.png
 3 p- Handaxe_015.png
-2 p- Handaxe_016.png
-2 p- Handaxe_017.png
+12 p- Handaxe_016.png
+C42                               #Play Axe falling SFE; long axe swinging SFE
+3 p- Handaxe_017.png
 2 p- Handaxe_018.png
-15 p- Handaxe_019.png
-4 p- Handaxe_020.png
-3 p- Handaxe_021.png
-2 p- Handaxe_022.png
-C41                               #EMPTY
-2 p- Handaxe_023.png
+2 p- Handaxe_019.png
+2 p- Handaxe_020.png
+15 p- Handaxe_021.png
+4 p- Handaxe_022.png
+3 p- Handaxe_023.png
+2 p- Handaxe_024.png
+C41                               #Play Axe rising SFE
+2 p- Handaxe_025.png
 2 p- Handaxe_006.png
 C05                               #Call spell associated with equipped weapon
 2 p- Handaxe_007.png
@@ -126,9 +126,9 @@ C05                               #Call spell associated with equipped weapon
 C13                               #ranged attack - hand axe for Hector
 3 p- Handaxe_010.png
 3 p- Handaxe_011.png
-1 p- Handaxe_005.png
+1 p- Handaxe_012.png
 C01                               #NOP
-3 p- Handaxe_004.png
+3 p- Handaxe_013.png
 5 p- Handaxe_003.png
 3 p- Handaxe_002.png
 4 p- Handaxe_001.png
@@ -142,12 +142,12 @@ C0D                               #End of dodge animation. preceeded by 0x06
 C02                               #Start of dodge
 1 p- Handaxe_000.png
 C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
-3 p- Handaxe_024.png
-3 p- Handaxe_025.png
+3 p- Handaxe_026.png
+3 p- Handaxe_027.png
 1 p- Handaxe_003.png
 C01                               #NOP
-3 p- Handaxe_025.png
-3 p- Handaxe_024.png
+3 p- Handaxe_027.png
+3 p- Handaxe_026.png
 1 p- Handaxe_000.png
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
@@ -156,26 +156,36 @@ C0D                               #End of dodge animation. preceeded by 0x06
 C02                               #Start of dodge
 1 p- Handaxe_000.png
 C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
-3 p- Handaxe_024.png
-3 p- Handaxe_025.png
+3 p- Handaxe_026.png
+3 p- Handaxe_027.png
 1 p- Handaxe_003.png
 C01                               #NOP
-3 p- Handaxe_025.png
-3 p- Handaxe_024.png
+3 p- Handaxe_027.png
+3 p- Handaxe_026.png
 1 p- Handaxe_000.png
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 9               #Equiped with Melee Weapon
-1 p- Handaxe_000.png
-C01                               #NOP
+4 p- Handaxe_028.png
+3 p- Handaxe_029.png
+6 p- Handaxe_030.png
+3 p- Handaxe_031.png
+4 p- Handaxe_032.png
+6 p- Handaxe_033.png
+6 p- Handaxe_000.png
 ~~~
 /// - Mode 10               #Standing motions
-1 p- Handaxe_000.png
+2 p- Handaxe_000.png
 C01                               #NOP
 ~~~
 /// - Mode 11               #Equiped with Ranged weapon
-1 p- Handaxe_000.png
-C01                               #NOP
+4 p- Handaxe_028.png
+3 p- Handaxe_029.png
+6 p- Handaxe_030.png
+3 p- Handaxe_031.png
+4 p- Handaxe_032.png
+6 p- Handaxe_033.png
+6 p- Handaxe_000.png
 ~~~
 /// - Mode 12               #Attack Missed Animation
 C03                               #Start attack animation; need 07 right after this.
@@ -187,7 +197,7 @@ C07                               #Start attack animation; need 03 right before 
 C34                               #Play heavy stepping SFE
 5 p- Handaxe_004.png
 4 p- Handaxe_005.png
-C41                               #EMPTY
+C41                               #Play Axe rising SFE
 3 p- Handaxe_006.png
 C05                               #Call spell associated with equipped weapon
 2 p- Handaxe_007.png
@@ -196,9 +206,9 @@ C05                               #Call spell associated with equipped weapon
 C13                               #ranged attack - hand axe for Hector
 3 p- Handaxe_010.png
 3 p- Handaxe_011.png
-1 p- Handaxe_005.png
+1 p- Handaxe_012.png
 C01                               #NOP
-3 p- Handaxe_004.png
+3 p- Handaxe_013.png
 5 p- Handaxe_003.png
 3 p- Handaxe_002.png
 4 p- Handaxe_001.png

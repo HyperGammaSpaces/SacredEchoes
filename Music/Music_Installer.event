@@ -237,6 +237,12 @@ ALIGN 4
 ALIGN 4
 
 {
+	#include "S_Files/EverythingIntoTheDark.event"
+	SongTable(SongID_JedahBattle,EverythingIntoTheDark,BattleMusicGroup)
+}
+ALIGN 4
+
+{
 	#include "S_Files/TheDarkGodsTempest.event"
 	SongTable(SongID_DarkGodsTempest,TheDarkGodsTempest,BattleMusicGroup)
 }
