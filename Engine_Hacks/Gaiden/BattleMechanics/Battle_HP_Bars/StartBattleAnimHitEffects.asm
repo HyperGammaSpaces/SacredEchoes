@@ -136,6 +136,9 @@ CheckDevilFlags:
         b  ProcessHpUpdates
     
 DevilHit_SwitchDamagedUnit:
+    mov  r0, #0
+    str  r0, [sp, #SP_WasHitMissOrTink]
+    mov  r5, r4
 	ldr  r0, [sp, #SP_AttackerBackAis] @ mov r8, r9
 	str  r0, [sp, #SP_DefenderBackAis] @ mov r8, r9
     b PassDefenderToHpBarAnimator
@@ -165,7 +168,7 @@ ProcessHpUpdates:
     cmp  r0, #0         @ bool isMiss
     bne  CheckAttackerHpChange
         cmp  r6, r7
-        bne  CheckForMagic
+        bne  CheckForMagicSword
             mov  r0, #2
             str  r0, [sp, #SP_WasHitMissOrTink]
             
@@ -197,6 +200,20 @@ ProcessHpUpdates:
                 cmp  r0, #1 @miss
                 bne  PassDefenderToHpBarAnimator
                 
+    CheckForMagicSword:
+    mov  r0, r4
+    blh  GetAisSubjectId
+    ldr  r1, =gpUnitLeft_BattleStruct
+    lsl  r0, r0, #2
+    add  r1, r0, r1
+    ldr  r1, [r1]
+    add  r1, #0x4C
+    ldr  r1, [r1]
+    mov  r0, #0x40
+    and  r0, r1
+    cmp  r0, #0x0
+    bne  PassDefenderToHpBarAnimator
+    
     CheckForMagic:
     mov  r0, r4
     blh  GetAisSubjectId

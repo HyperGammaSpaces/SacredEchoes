@@ -78,6 +78,12 @@ PUSH
     SHORT $1866 //add r6, r4, r1
     SHORT $E003 //jump down to 7241C
     SHORT $46C0 $46C0 $46C0 $46C0
+    
+    //fix C51 command
+    ORG $58d88
+    POIN $595A4
+    ORG $595C4
+    BL($6D6E8)
 
 	ORG $624D4
 	jumpToHack(SilenceFix)
