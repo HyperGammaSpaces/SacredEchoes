@@ -243,10 +243,11 @@ PostBattleSupports.end:
 PopulateSupportIncreaseList:
     push    {r4-r7, lr}
     mov     r4, r0          @save current unit
+    mov     r7, #0
     
     blh     GetROMUnitSupportCount
     cmp     r0, #0x0
-    beq     SupportedUnits.end
+    beq     SupportedUnits.none
     
     mov     r6, r8
     push    {r6}
@@ -301,7 +302,7 @@ PopulateSupportIncreaseList:
     mov     r8, r6
 
     cmp     r7, #0x0
-    beq     SupportedUnits.end
+    beq     SupportedUnits.none
 
     adr     r0, MarkForSupportIncrease
     add     r0, #1
@@ -309,9 +310,11 @@ PopulateSupportIncreaseList:
     mov     r2, #1
     bl      ForEachSupportPartner
     @r0 = count of units that will display fx
+    b       SupportedUnits.end
 
-    SupportedUnits.end:
+    SupportedUnits.none:
     mov     r0, r7
+    SupportedUnits.end:
     pop     {r4-r7}
     pop     {r1}
     bx      r1
@@ -485,7 +488,7 @@ ForEachSupportPartner:
     mov     r7, #0x0
     ldr     r4, =gSupportIndexArray
 ForEachSupportPartner.lop:
-    ldrb    r1, [r4, r7]
+    ldrb    r1, [r4]
     cmp     r1, #0
     beq     ForEachSupportPartner.end
     
@@ -495,10 +498,14 @@ ForEachSupportPartner.lop:
     mov     r0, r6
     mov     r2, r7
     bl      BXR3
+    add     r4, #1
+    cmp     r0, #0
+    beq     ForEachSupportPartner.lop
     add     r7, #1
     b       ForEachSupportPartner.lop
     
 ForEachSupportPartner.end:
+    mov     r0, r7
     pop     {r4-r7}
     pop     {r1}
     bx      r1
