@@ -160,12 +160,18 @@ PUSH
 	BYTE Worldmap_Node_Count
 	ORG $BD1FE
 	BYTE Worldmap_Node_Count
+
+    ORG $BBA64
+    BYTE (Worldmap_Node_Count+1)
+    ORG $BBA68
+    SHORT $2100 $46C0 $46C0
 	
 	//Map size scroll controls
 	//Check out B9472 for where to break to troubleshoot.
 	ORG $B94E6
 	SHORT $DA03//bge b94f0
 	BYTE $0 //mov r2, #0x0
+#ifndef ROTATE_WORLD_MAP
 	ORG $B94f0
 	BYTE $1C		//(map width -2) <<4
 	ORG $B94f4
@@ -174,7 +180,7 @@ PUSH
 	BYTE $13		//(map height -1) <<4
 	ORG $B9506
 	BYTE $13		//(map height -1) <<4
-    
+#endif
     //Compares a node to 0x1F and sets some OAM properties on it?? Disabling this because it just causes graphical glitches
     ORG $BB864
     SHORT $1C18

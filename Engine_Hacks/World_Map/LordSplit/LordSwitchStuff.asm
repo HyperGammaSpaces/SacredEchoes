@@ -778,6 +778,48 @@ HandleActClosureSaves:
 .ltorg
 
 GM_EntryNodeFix:
+    ldr  r0, =Act3EndFlag_List
+    ldr  r0, [r0]
+    blh  CheckEventId
+    cmp  r0, #0
+    bne  EntryNodeFix1_Vanilla
+        ldr  r0, =Act3EndFlag_List
+        ldr  r0, [r0, #0x4]
+        blh  CheckEventId
+        cmp  r0, #0
+        beq  EntryNodeFix1_Vanilla
+        ldr  r0, =Act3EndFlag_List
+        ldr  r0, [r0, #0x8]
+        blh  CheckEventId
+        cmp  r0, #0
+        beq  EntryNodeFix1_Vanilla
+            @if we're here, whatever causes the rigel border fuckup has happened.
+            ldr  r2, =gWorldmapData
+            ldrb r1, [r2]
+            mov  r0, #0xFD
+            and  r1, r0
+            strb r1, [r2]
+    EntryNodeFix1_Vanilla:
+    ldr  r2, =gWorldmapData
+    ldrb r1, [r2]
+    mov  r0, #2
+    and  r0, r1
+    cmp  r0, #0
+    bne  EntryNode_DoNothing
+        ldr  r6, =gChapterData
+        ldrb r1, [r6, #0x14]
+        mov  r0, #0x4
+        and  r0, r1
+        cmp  r0, #0
+        beq  GM_EntryNodeFix_2
+    EntryNode_DoNothing:
+    ldr  r0, [r5, #0x2C]
+    blh  0x080BA008
+    ldr  r1, =0x080BA3BC+1
+    b    EntryNode_Return
+    .align
+    .ltorg
+GM_EntryNodeFix_2:
     ldrb r0, [r2, #0x11]
     mov  r1, r2
     add  r1, #0xC8

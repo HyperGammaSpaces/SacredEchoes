@@ -1,0 +1,84 @@
+#include "PathData.event"
+
+#define WorldMapRoadEntry(gfxPtr,fromNode,toNode) "POIN gfxPtr; BYTE fromNode toNode; SHORT 0; WORD 0"
+#define WorldMapRoadEntry(gfxPtr,fromNode,toNode,pathingPtr) "POIN gfxPtr; BYTE fromNode toNode; SHORT 0; POIN pathingPtr"
+
+
+PUSH
+ORG $C2C0
+POIN WorldMapPathList
+ORG $C3FC
+POIN WorldMapPathList
+ORG $BBCC0
+POIN WorldMapPathList
+ORG $BC3EC
+POIN WorldMapPathList
+ORG $BCA08
+POIN WorldMapPathList
+ORG $BCE04
+POIN WorldMapPathList
+ORG $BCF00
+POIN WorldMapPathList
+ORG $BCFAC
+POIN WorldMapPathList
+POP
+
+ALIGN 4
+WorldMapPathList:
+WorldMapRoadEntry(Road01_Gfx,GMLoc_RamVillage,GMLoc_RamForest)
+WorldMapRoadEntry(Road01_Gfx,GMLoc_RamVillage,GMLoc_RamForest)
+WorldMapRoadEntry(Road02_Gfx,GMLoc_RamForest,GMLoc_ThiefShrine)
+WorldMapRoadEntry(Road03_Gfx,GMLoc_RamForest,GMLoc_RamValley,Road03_Path)
+WorldMapRoadEntry(Road04_Gfx,GMLoc_RamValley,GMLoc_SouthernOutpost)
+WorldMapRoadEntry(Road05_Gfx,GMLoc_SouthernOutpost,GMLoc_SouthZofia1,Road05_Path)
+WorldMapRoadEntry(Road06_Gfx,GMLoc_SouthZofia1,GMLoc_SouthZofia2)
+WorldMapRoadEntry(Road07_Gfx,GMLoc_SouthZofia2,GMLoc_DeliveranceHideout)
+WorldMapRoadEntry(Road08_Gfx,GMLoc_SouthZofia2,GMLoc_ZofiaCastle,Road08_Path)
+WorldMapRoadEntry(Road09_Gfx,GMLoc_NovisPriory,GMLoc_NovisCemetery)
+WorldMapRoadEntry(Road0A_Gfx,GMLoc_NovisCemetery,GMLoc_NovisPort)
+WorldMapRoadEntry(Road0B_Gfx,GMLoc_NovisPort,GMLoc_PirateThrone,Road0B_Path)
+WorldMapRoadEntry(Road0C_Gfx,GMLoc_PirateThrone,GMLoc_ZofiaStrait)
+WorldMapRoadEntry(Road0D_Gfx,GMLoc_ZofiaStrait,GMLoc_SeaboundShrine,Road0D_Path)
+WorldMapRoadEntry(Road0E_Gfx,GMLoc_ZofiaStrait,GMLoc_Meridium)
+WorldMapRoadEntry(Road0F_Gfx,GMLoc_Meridium,GMLoc_ZofiaHarbor)
+WorldMapRoadEntry(Road10_Gfx,GMLoc_ZofiaCastle,GMLoc_NorthZofia)
+WorldMapRoadEntry(Road11_Gfx,GMLoc_NorthZofia,GMLoc_ForestVillage,Road11_Path)
+WorldMapRoadEntry(Road12_Gfx,GMLoc_ForestVillage,GMLoc_ZofiaForest1)
+WorldMapRoadEntry(Road13_Gfx,GMLoc_ZofiaForest1,GMLoc_DesaixFort)
+WorldMapRoadEntry(Road14_Gfx,GMLoc_DesaixFort,GMLoc_ZofiaForest2)
+WorldMapRoadEntry(Road15_Gfx,GMLoc_ZofiaForest2,GMLoc_SylvanShrine)
+WorldMapRoadEntry(Road16_Gfx,GMLoc_ZofiaForest2,GMLoc_ForestNorthSide)
+WorldMapRoadEntry(Road17_Gfx,GMLoc_ForestNorthSide,GMLoc_SluiceGate)
+WorldMapRoadEntry(Road18_Gfx,GMLoc_ZofiaHarbor,GMLoc_ZofiaBay)
+WorldMapRoadEntry(Road19_Gfx,GMLoc_ZofiaBay,GMLoc_MtnGraveyard)
+WorldMapRoadEntry(Road1A_Gfx,GMLoc_MtnGraveyard,GMLoc_DesertBastion)
+WorldMapRoadEntry(Road1B_Gfx,GMLoc_DesertBastion,GMLoc_ZofiaDesert)
+WorldMapRoadEntry(Road1C_Gfx,GMLoc_ZofiaDesert,GMLoc_GriethsBase)
+WorldMapRoadEntry(Road1D_Gfx,GMLoc_MtnGraveyard,GMLoc_ValleyApproach)
+WorldMapRoadEntry(Road1E_Gfx,GMLoc_ValleyApproach,GMLoc_DragonShrine)
+WorldMapRoadEntry(Road1F_Gfx,GMLoc_ValleyApproach,GMLoc_MilaTemple,Road1F_Path)
+WorldMapRoadEntry(Road20_Gfx,GMLoc_MilaTemple,GMLoc_DeadMansMire,Road20_Path)
+WorldMapRoadEntry(Road21_Gfx,GMLoc_DeadMansMire,GMLoc_MireBoneyard)
+WorldMapRoadEntry(Road22_Gfx,GMLoc_MireBoneyard,GMLoc_DolthKeep)
+WorldMapRoadEntry(Road23_Gfx,GMLoc_DolthKeep,GMLoc_SagesHamlet,Road23_Path)
+WorldMapRoadEntry(Road24_Gfx,GMLoc_SagesHamlet,GMLoc_DumaGate)
+WorldMapRoadEntry(Road25_Gfx,GMLoc_DumaGate,GMLoc_DumaSwamp)
+WorldMapRoadEntry(Road26_Gfx,GMLoc_DumaSwamp,GMLoc_DumaTower,Road26_Path)
+WorldMapRoadEntry(Road27_Gfx,GMLoc_SluiceGate,GMLoc_RigelForest1)
+WorldMapRoadEntry(Road28_Gfx,GMLoc_RigelForest1,GMLoc_RigelForest2)
+WorldMapRoadEntry(Road29_Gfx,GMLoc_RigelForest2,GMLoc_FearMtnPass,Road29_Path)
+WorldMapRoadEntry(Road2A_Gfx,GMLoc_FearMtnPass,GMLoc_FearMtnShrine)
+WorldMapRoadEntry(Road2B_Gfx,GMLoc_FearMtnPass,GMLoc_NuibabaManor,Road2B_Path)
+WorldMapRoadEntry(Road2C_Gfx,GMLoc_RigelForest2,GMLoc_RigelVillage,Road2C_Path)
+WorldMapRoadEntry(Road2D_Gfx,GMLoc_RigelVillage,GMLoc_DragonsMaw)
+WorldMapRoadEntry(Road2D_Gfx,GMLoc_RigelVillage,GMLoc_DragonsMaw)
+WorldMapRoadEntry(Road2F_Gfx,GMLoc_DragonsMaw,GMLoc_RigelFalls,Road2F_Path)
+WorldMapRoadEntry(Road30_Gfx,GMLoc_RigelFalls,GMLoc_LastBastion,Road30_Path)
+WorldMapRoadEntry(Road31_Gfx,GMLoc_RigelFalls,GMLoc_SecretShrine)
+WorldMapRoadEntry(Road32_Gfx,GMLoc_LastBastion,GMLoc_RigelCastle,Road32_Path)
+WorldMapRoadEntry(Road33_Gfx,GMLoc_RigelCastle,GMLoc_DumaTower,Road33_Path)
+WorldMapRoadEntry(Road34_Gfx,GMLoc_ZofiaCastle,GMLoc_ZofiaHarbor)
+WorldMapRoadEntry(Road02_Gfx,GMLoc_RamForest,GMLoc_ThiefShrineStory)
+WorldMapRoadEntry(Road36_Gfx,GMLoc_SagesHamlet,GMLoc_LostTreescape)
+WorldMapRoadEntry(Road0A_Gfx,GMLoc_NovisCemetery,GMLoc_NovisPort)
+WORD $0 $0 $0

@@ -35,6 +35,7 @@ PUSH
 	
 	//BBC54 has something to do with drawing the paths to BG2.
 	//02019d00 seems to be the buffer. looks like it goes all the way up to 201A660 (or possibly 201AFF0??). Shouldn't need repointing but i'm putting it here just in case.
+    //0201b01d actual end
 	ORG $BBC80
 	WORD PathDrawingBuffer
 	ORG $BBCC4

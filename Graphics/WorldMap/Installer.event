@@ -1,17 +1,5 @@
 //World map
 PUSH
-  ORG $A83364
-  ValentiaWorldMap:
-  #incbin "valentia-sideways480x320.img.bin"
-  ORG $A95F64
-  #incbin "valentia-sideways480x320.pal.bin"
-  ORG $A95FE4
-  #incbin "valentia-sideways480x320.pal.bin"
-  //ORG $AA1280 for mini map image
-  ORG $C3E6C
-  POIN NewMiniMap
-  ORG $AA188C
-  #incbin "valentia-minimap.pal.bin"
   
   ORG $BF11C
   POIN WorldmapLevelLabels
@@ -26,10 +14,6 @@ PUSH
   BYTE $08 $02
   */
 POP
-
-ALIGN 4
-NewMiniMap:
-#incbin "valentia-minimap.dmp"
 
 ALIGN 4
 WorldmapLevelLabels:

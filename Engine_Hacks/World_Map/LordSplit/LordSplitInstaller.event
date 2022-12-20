@@ -35,6 +35,11 @@ BYTE gChapter4C5Completed 	GMLoc_DumaTower
 BYTE gPostgameEnabled       $FF
 BYTE $0 $0 //term
 
+Act3EndFlag_List:
+WORD gPart3Completed
+WORD gChapter3A7Completed
+WORD gChapter3C7Completed
+
 //Create a menu option to switch between Alm and Celica. Should only be available with event flag. menudefs are at A3E04C
 #include "LordSwitchStuff.lyn.event"
 //TUTORIALTEXTBOX as soon as Act 3 begins, explaining how to switch
@@ -113,7 +118,7 @@ PUSH
 	ORG $20686E
 	BYTE $2 //default allegiance palette for MU7
     
-    ORG $BA368
+    ORG $BA340
     jumpToHack(GM_EntryNodeFix)
 
 	ORG $A3E12C

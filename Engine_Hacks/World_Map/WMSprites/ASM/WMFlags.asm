@@ -267,7 +267,7 @@ DrawWMMiniFlags:
 		mov   r1, #0x18
 		ldsh  r1, [r0, r1]                @ Node X
 		mov   r0, #0x2F
-		ldsb  r4, [r5, r0]
+		ldsb  r4, [r5, r0] @x-pos
 		lsl   r4, #0x3
 		lsl   r0, r1, #0x6
 		sub   r0, r1
@@ -287,7 +287,7 @@ DrawWMMiniFlags:
 		bl    GOTO_R10
 		
 		mov   r1, #0x30
-		ldsb  r3, [r5, r1]
+		ldsb  r3, [r5, r1] @y-pos
 		lsl   r3, #0x3
 		add   r3, r0
 		sub   r1, r4, #0x1

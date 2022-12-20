@@ -1,0 +1,263 @@
+#define NoShop $A3EFB4
+
+#define GMIcon_Cave 0x0
+#define GMIcon_BigFort 0x1
+#define GMIcon_BigFortBlue 0x2
+#define GMIcon_MiniCastle 0x5
+#define GMIcon_BlueCastle 0x6
+#define GMIcon_Pyramid 0x7
+#define GMIcon_RedCastle 0x8
+#define GMIcon_SmallVillage 0x9
+#define GMIcon_LargeVillage 0xA
+#define GMIcon_Fort 0xB
+#define GMIcon_Temple 0xC
+#define GMIcon_Tower 0xD
+#define GMIcon_Ruins 0xE
+#define GMIcon_Point 0xF
+
+#define WorldMapNodeEntry(nodeType,iconType,chapterID,nextDest,xPos,yPos,nameStr,boatFlag,paralogueFlag) "SHORT nodeType; BYTE iconType iconType; BYTE chapterID chapterID; SHORT 0xFFFF; BYTE nextDest nextDest nextDest nextDest; POIN NoShop NoShop NoShop; SHORT xPos yPos nameStr; BYTE boatFlag paralogueFlag"
+#define WorldMapNodeEntry(nodeType,iconType,chapterID,nextDest,xPos,yPos,nameStr,boatFlag,paralogueFlag,eid) "SHORT nodeType; BYTE iconType iconType; BYTE chapterID chapterID; SHORT eid; BYTE nextDest nextDest nextDest nextDest; POIN NoShop NoShop NoShop; SHORT xPos yPos nameStr; BYTE boatFlag paralogueFlag"
+
+
+#define setAlternateChapter(nodeID,eid,chTrue,destTrue1,destTrue2) "PUSH; ORG (WorldMapNodeList+(nodeID*0x20)+5); BYTE chTrue; SHORT eid; ORG (WorldMapNodeList+(nodeID*0x20)+10); BYTE destTrue1 destTrue2; POP"
+#define setParalogue(nodeID,eid) "PUSH; ORG (WorldMapNodeList+(nodeID*0x20)+6); SHORT eid; WORD 0xFFFFFFFF; ORG (WorldMapNodeList+(nodeID*0x20)+31); BYTE True; POP"
+#define setShopsPtr(nodeID,armoryPtr,shopPtr,secretPtr) "PUSH; ORG (WorldMapNodeList+(nodeID*0x20)+12); POIN armoryPtr shopPtr secretPtr; POP"
+
+PUSH
+ORG $BE84
+POIN WorldMapNodeList
+ORG $BED0
+POIN WorldMapNodeList
+ORG $BF9C
+POIN WorldMapNodeList
+ORG $C04C
+POIN WorldMapNodeList
+ORG $CB44
+POIN WorldMapNodeList
+ORG $B8CBC
+POIN WorldMapNodeList
+ORG $B8D2C
+POIN WorldMapNodeList
+ORG $B9070
+POIN WorldMapNodeList
+ORG $B9310
+POIN WorldMapNodeList
+ORG $B93C8
+POIN WorldMapNodeList
+ORG $B9618
+POIN WorldMapNodeList
+ORG $B96D0
+POIN WorldMapNodeList
+ORG $B9B74
+POIN WorldMapNodeList
+ORG $B9CAC
+POIN WorldMapNodeList
+ORG $B9D78
+POIN WorldMapNodeList
+ORG $B9E3C
+POIN WorldMapNodeList
+ORG $BB5D0
+POIN WorldMapNodeList
+ORG $BB5E0
+POIN WorldMapNodeList
+ORG $BB614
+POIN WorldMapNodeList
+ORG $BB66C
+POIN WorldMapNodeList
+ORG $BB7F0
+POIN WorldMapNodeList
+ORG $BB8D8
+POIN WorldMapNodeList
+ORG $BBA48
+POIN WorldMapNodeList
+ORG $BC6A0
+POIN WorldMapNodeList
+ORG $BC6D8
+POIN WorldMapNodeList
+ORG $BC71C
+POIN WorldMapNodeList
+ORG $BCF04
+POIN WorldMapNodeList
+ORG $BCFB0
+POIN WorldMapNodeList
+ORG $BD1E8
+POIN WorldMapNodeList
+ORG $BD370
+POIN WorldMapNodeList
+ORG $BD3E4
+POIN WorldMapNodeList
+ORG $BD5A0
+POIN WorldMapNodeList
+ORG $BD9D0
+POIN WorldMapNodeList
+ORG $BDA74
+POIN WorldMapNodeList
+ORG $BDFA0
+POIN WorldMapNodeList
+ORG $BE290
+POIN WorldMapNodeList
+ORG $BE3E4
+POIN WorldMapNodeList
+ORG $BEA10
+POIN WorldMapNodeList
+ORG $BFA44
+POIN WorldMapNodeList
+ORG $BFA6C
+POIN WorldMapNodeList
+ORG $BFAE0
+POIN WorldMapNodeList
+ORG $C1A48
+POIN WorldMapNodeList
+ORG $C1B58
+POIN WorldMapNodeList
+ORG $C37F8
+POIN WorldMapNodeList
+ORG $C3FB0
+POIN WorldMapNodeList
+ORG $C3FDC
+POIN WorldMapNodeList
+ORG $C4008
+POIN WorldMapNodeList
+POP
+
+ALIGN 4
+WorldMapNodeList:
+//GMLoc_RamVillage
+WorldMapNodeEntry(0x100,GMIcon_SmallVillage,0x0,GMLoc_RamForest,0x38,0x28,Loc_RamVillage,0x0,0x0,gEnableWorldMap)
+//GMLoc_RamForest
+WorldMapNodeEntry(0x101,GMIcon_Point,0x1,GMLoc_ThiefShrineStory,0x38,0x48,Loc_FleecersForest,0x0,0x0)
+    setAlternateChapter(GMLoc_RamForest, gThiefShrineCompleted, 0x1, GMLoc_RamValley,GMLoc_RamValley)
+//GMLoc_ThiefShrineStory
+WorldMapNodeEntry(0x100,GMIcon_Cave,0x2,GMLoc_RamValley,0x58,0x48,Loc_ThievesShrine,0x0,0x0)
+//GMLoc_ThiefShrine
+WorldMapNodeEntry(0x303,GMIcon_Cave,0x3e,0xff,0x58,0x48,Loc_ThievesShrine,0x0,0x1)
+//GMLoc_RamValley
+WorldMapNodeEntry(0x100,GMIcon_Point,0x3,GMLoc_SouthernOutpost,0x58,0x68,Loc_RamValley,0x0,0x0)
+//GMLoc_SouthernOutpost
+WorldMapNodeEntry(0x100,GMIcon_Fort,0x4,GMLoc_SouthZofia1,0x78,0x78,Loc_SouthernOutpost,0x0,0x0)
+//GMLoc_SouthZofia1
+WorldMapNodeEntry(0x100,GMIcon_Point,0x5,GMLoc_SouthZofia2,0x88,0x58,Loc_SouthernZofia1,0x0,0x0)
+//GMLoc_SouthZofia2
+WorldMapNodeEntry(0x100,GMIcon_Point,0x6,GMLoc_ZofiaCastle,0x98,0x58,Loc_SouthernZofia2,0x0,0x0)
+//GMLoc_DeliveranceHideout
+WorldMapNodeEntry(0x303,GMIcon_Cave,0x3f,0xff,0x98,0x48,Loc_DeliveranceHideout,0x0,0x1)
+//GMLoc_ZofiaCastle
+//this one's special
+WorldMapNodeEntry(0x100,GMIcon_BlueCastle,0x7,GMLoc_NovisPriory,0xb8,0x78,Loc_ZofiaCastle,0x0,0x0)
+    setAlternateChapter(GMLoc_ZofiaCastle,gPart2Completed,0x7,GMLoc_NorthZofia,GMLoc_ZofiaBay)
+//GMLoc_NovisPriory
+WorldMapNodeEntry(0x100,GMIcon_MiniCastle,0x4d,GMLoc_NovisCemetery,0x38,0x108,Loc_NovisPriory,0x0,0x0)
+//GMLoc_NovisCemetery
+WorldMapNodeEntry(0x200,GMIcon_Point,0x8,GMLoc_NovisPort,0x58,0x108,Loc_NovisCemetery,0x0,0x1)
+    setAlternateChapter(GMLoc_NovisCemetery,gNovisCemeteryCompleted,0x8,0xff,0xff)
+//GMLoc_NovisPort
+WorldMapNodeEntry(0x100,GMIcon_LargeVillage,0x9,GMLoc_PirateThrone,0x58,0xe8,Loc_NovisPort,0x1,0x0)
+//GMLoc_PirateThrone
+WorldMapNodeEntry(0x100,GMIcon_Fort,0xa,GMLoc_ZofiaStrait,0xa8,0x118,Loc_PirateThrone,0x1,0x0)
+//GMLoc_ZofiaStrait
+WorldMapNodeEntry(0x100,GMIcon_Point,0xc,GMLoc_Meridium,0xa8,0xf8,Loc_ZofiaStrait,0x1,0x0)
+//GMLoc_SeaboundShrine
+WorldMapNodeEntry(0x303,GMIcon_Cave,0x40,0xff,0x98,0xd8,Loc_SeaboundShrine,0x1,0x1)
+//GMLoc_Meridium
+WorldMapNodeEntry(0x100,GMIcon_Point,0xd,GMLoc_ZofiaHarbor,0xb8,0xf8,Loc_MareMeridium,0x1,0x0)
+//GMLoc_ZofiaHarbor
+WorldMapNodeEntry(0x100,GMIcon_LargeVillage,0xe,GMLoc_ZofiaCastle,0xb8,0xa8,Loc_ZofiaHarbor,0x1,0x0)
+    setAlternateChapter(GMLoc_ZofiaHarbor,gEnableLordSwitch,0xe,GMLoc_ZofiaBay,GMLoc_ZofiaBay)
+//GMLoc_NorthZofia
+WorldMapNodeEntry(0x100,GMIcon_Fort,0xf,GMLoc_ForestVillage,0xd8,0x78,Loc_NorthernZofia,0x0,0x0)
+//GMLoc_ForestVillage
+WorldMapNodeEntry(0x100,GMIcon_SmallVillage,0x10,GMLoc_ZofiaForest1,0xe8,0x58,Loc_ForestVillage,0x0,0x0)
+//GMLoc_ZofiaForest1
+WorldMapNodeEntry(0x200,GMIcon_Point,0x11,GMLoc_DesaixFort,0xe8,0x38,Loc_ZofiaForest1,0x0,0x0,gChapter3A3Completed)
+//GMLoc_DesaixFort
+WorldMapNodeEntry(0x100,GMIcon_BigFort,0x12,GMLoc_ZofiaForest2,0xd8,0x20,Loc_DesaixFortress,0x0,0x0)
+//GMLoc_ZofiaForest2
+WorldMapNodeEntry(0x100,GMIcon_Point,0x13,GMLoc_ForestNorthSide,0xf8,0x28,Loc_ZofiaForest2,0x0,0x0)
+//GMLoc_SylvanShrine
+WorldMapNodeEntry(0x303,GMIcon_Cave,0x41,0xff,0xf8,0x18,Loc_SylvanShrine,0x0,0x1)
+//GMLoc_ForestNorthSide
+WorldMapNodeEntry(0x200,GMIcon_Point,0x14,GMLoc_SluiceGate,0x118,0x48,Loc_ForestNorthside,0x0,0x0,gChapter3A6Completed)
+//GMLoc_SluiceGate
+WorldMapNodeEntry(0x100,GMIcon_Point,0x15,GMLoc_RigelForest1,0x138,0x58,Loc_SluiceGate,0x0,0x0)
+//GMLoc_ZofiaBay
+WorldMapNodeEntry(0x100,GMIcon_Point,0x16,GMLoc_MtnGraveyard,0xc8,0xa8,Loc_ZofiaBay,0x0,0x0)
+//GMLoc_MtnGraveyard
+WorldMapNodeEntry(0x200,GMIcon_SmallVillage,0x17,GMLoc_DesertBastion,0xf8,0xa8,Loc_MountainVillage,0x0,0x0,gChapter3C2Completed)
+//GMLoc_DesertBastion
+WorldMapNodeEntry(0x100,GMIcon_Fort,0x18,GMLoc_ZofiaDesert,0xf8,0xd8,Loc_DesertBastion,0x0,0x0)
+//GMLoc_ZofiaDesert
+WorldMapNodeEntry(0x100,GMIcon_Point,0x19,GMLoc_GriethsBase,0xf8,0xf8,Loc_ZofiaDesert,0x0,0x0)
+    setAlternateChapter(GMLoc_ZofiaDesert,gFightSonyaChosen,0x1a,GMLoc_GriethsBase,GMLoc_GriethsBase)
+//GMLoc_GriethsBase
+WorldMapNodeEntry(0x200,GMIcon_Ruins,0x1b,GMLoc_ValleyApproach,0x118,0x118,Loc_GriethCitadel,0x0,0x0,gChapter3C5Completed)
+//GMLoc_ValleyApproach
+WorldMapNodeEntry(0x100,GMIcon_Point,0x1c,GMLoc_MilaTemple,0x118,0xa8,Loc_ValleyApproach,0x0,0x0)
+//GMLoc_DragonShrine
+WorldMapNodeEntry(0x303,GMIcon_Cave,0x42,0xff,0x118,0x88,Loc_DragonShrine,0x0,0x1)
+//GMLoc_MilaTemple
+WorldMapNodeEntry(0x100,GMIcon_Temple,0x1d,GMLoc_DeadMansMire,0x138,0xd8,Loc_MilaTemple,0x0,0x0)
+//GMLoc_DeadMansMire
+WorldMapNodeEntry(0x100,GMIcon_Point,0x1e,GMLoc_MireBoneyard,0x158,0x108,Loc_DeadMansMire,0x0,0x0)
+//GMLoc_MireBoneyard
+WorldMapNodeEntry(0x200,GMIcon_Point,0x1f,GMLoc_DolthKeep,0x178,0x108,Loc_MireBoneyard,0x0,0x0,gChapter4C2Completed)
+//GMLoc_DolthKeep
+WorldMapNodeEntry(0x100,GMIcon_Fort,0x20,GMLoc_SagesHamlet,0x168,0xe8,Loc_DolthKeep,0x0,0x0)
+//GMLoc_SagesHamlet
+WorldMapNodeEntry(0x100,GMIcon_Point,0x43,GMLoc_DumaGate,0x198,0x108,Loc_SagesHamlet,0x0,0x0,gLostWoodsCompleted)
+//GMLoc_DumaGate
+WorldMapNodeEntry(0x100,GMIcon_Fort,0x21,GMLoc_DumaSwamp,0x1b8,0xf8,Loc_DumaGate,0x0,0x0)
+//GMLoc_DumaSwamp
+WorldMapNodeEntry(0x100,GMIcon_Point,0x22,GMLoc_DumaTower,0x1b8,0xd8,Loc_DumaSwamp,0x0,0x0)
+//GMLoc_DumaTower
+WorldMapNodeEntry(0x100,GMIcon_Tower,0x28,GMLoc_DragonsMaw,0x1c8,0xb8,Loc_DumaTower,0x0,0x0)
+    setAlternateChapter(GMLoc_DumaTower,gChapter4C6Completed,0x2d,GMLoc_DragonsMaw,GMLoc_DragonsMaw)
+//GMLoc_RigelForest1
+WorldMapNodeEntry(0x100,GMIcon_Point,0x23,GMLoc_RigelForest2,0x148,0x58,Loc_RigelForest1,0x0,0x0)
+//GMLoc_RigelForest2
+WorldMapNodeEntry(0x200,GMIcon_Point,0x24,GMLoc_FearMtnPass,0x158,0x58,Loc_RigelForest2,0x0,0x0,gChapter4A2Completed)
+//GMLoc_FearMtnPass
+WorldMapNodeEntry(0x100,GMIcon_Point,0x25,GMLoc_NuibabaManor,0x148,0x98,Loc_FearMountainPass,0x0,0x0)
+//GMLoc_FearMtnShrine
+WorldMapNodeEntry(0x303,GMIcon_Cave,0x44,0xff,0x148,0xa8,Loc_FearMountainShrine,0x0,0x1)
+//GMLoc_NuibabaManor
+WorldMapNodeEntry(0x100,GMIcon_MiniCastle,0x26,GMLoc_RigelVillage,0x168,0xa8,Loc_NuibabasAbode,0x0,0x0)
+//GMLoc_RigelVillage
+WorldMapNodeEntry(0x100,GMIcon_SmallVillage,0x27,GMLoc_DragonsMaw,0x158,0x28,Loc_RigelValley,0x0,0x0)
+//GMLoc_DragonsMaw
+WorldMapNodeEntry(0x200,GMIcon_Point,0x29,GMLoc_RigelFalls,0x188,0x28,Loc_DragonsMaw,0x0,0x0,gChapter4A6Completed)
+//GMLoc_RigelFalls
+WorldMapNodeEntry(0x100,GMIcon_Point,0x2a,GMLoc_LastBastion,0x178,0x68,Loc_RigelFalls,0x0,0x0)
+//GMLoc_SecretShrine
+WorldMapNodeEntry(0x303,GMIcon_Cave,0x45,0xff,0x178,0x88,Loc_SecretShrine,0x0,0x1)
+//GMLoc_LastBastion
+WorldMapNodeEntry(0x100,GMIcon_Fort,0x2b,GMLoc_RigelCastle,0x198,0x58,Loc_LastBastion,0x0,0x0)
+//GMLoc_RigelCastle
+WorldMapNodeEntry(0x100,GMIcon_RedCastle,0x2c,GMLoc_DumaTower,0x1b8,0x48,Loc_RigelCastle,0x0,0x0)
+//GMLoc_LostTreescape
+WorldMapNodeEntry(0x303,GMIcon_SmallVillage,0x43,0xff,0x1a8,0x128,Loc_LostTreescape,0x0,0x1)
+//UNUSED
+WorldMapNodeEntry(0x100,GMIcon_SmallVillage,0x43,0xff,0x1a8,0x128,Loc_SagesHamlet,0x0,0x1)
+
+//special cases
+setParalogue(GMLoc_ThiefShrine,gThiefShrineCompleted)
+setParalogue(GMLoc_DeliveranceHideout,gDeliveranceHideoutCompleted)
+setParalogue(GMLoc_SeaboundShrine,gSeaboundShrineCompleted)
+setParalogue(GMLoc_SylvanShrine,gSylvanShrineCompleted)
+setParalogue(GMLoc_DragonShrine,gDragonShrineCompleted)
+setParalogue(GMLoc_FearMtnShrine,gFearMountainShrineCompleted)
+setParalogue(GMLoc_SecretShrine,gSecretShrineCompleted)
+setParalogue(GMLoc_LostTreescape,gLostWoodsCompleted)
+setParalogue(0x35,gLostWoodsCompleted)
+
+//and shops
+setShopsPtr(GMLoc_RamVillage,NoShop,RamVillageShop,NoShop)
+setShopsPtr(GMLoc_ZofiaCastle,Shop_Act1Armory,NoShop,NoShop)
+setShopsPtr(GMLoc_NovisPort,NoShop,NovisPortShop,NoShop)
+setShopsPtr(GMLoc_ZofiaHarbor,Shop_Act1Armory,NoShop,NoShop)
+setShopsPtr(GMLoc_ForestVillage,Act3Armory_1,NovisPortShop,NoShop)
+setShopsPtr(GMLoc_DesaixFort,Act3Armory_2,NoShop,NoShop)
+setShopsPtr(GMLoc_MtnGraveyard,Act3Armory_1,NovisPortShop,NoShop)
+setShopsPtr(GMLoc_GriethsBase,Act3Armory_2,NoShop,NoShop)
+setShopsPtr(GMLoc_DolthKeep,NoShop,NoShop,Act4SecretShop)
+setShopsPtr(GMLoc_SagesHamlet,Act4Armory_1,NovisPortShop,NoShop) 
+setShopsPtr(GMLoc_RigelVillage,Act4Armory_1,NovisPortShop,NoShop)

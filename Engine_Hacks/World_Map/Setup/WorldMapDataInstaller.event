@@ -1,0 +1,46 @@
+#ifdef ROTATE_WORLD_MAP
+    #include "VerticalRoads/WorldMapPathTable.event"
+    #include "WorldMapNodeTable.event"
+#else
+#include "SidewaysRoads/WorldMapPathTable.event"
+    #include "OLD_WorldMapNodeTable.event"
+#endif
+
+PUSH
+  //ba7fc,
+  ORG $A83364
+  ValentiaWorldMap:
+  #ifdef ROTATE_WORLD_MAP
+    #incbin "valentia-worldmap.img.bin"
+  #else
+    #incbin "valentia-sideways480x320.img.bin"
+  #endif
+  
+  ORG $A95F64
+  #incbin "valentia-worldmap.pal.bin"
+  ORG $A95FE4
+  #incbin "valentia-worldmap.pal.bin"
+  
+  //ORG $AA1280 for mini map image
+  ORG $C3E6C
+  POIN NewMiniMap
+  ORG $AA188C
+  #incbin "valentia-minimap.pal.bin"
+  #ifdef ROTATE_WORLD_MAP
+    ORG $C3AB0
+    POIN GM_MinimapTSA
+  #endif
+POP
+
+
+ALIGN 4
+NewMiniMap:
+#ifdef ROTATE_WORLD_MAP
+    #incbin "valentia-minimap.img.bin"
+#else
+    #incbin "valentia-minimap-sideways.dmp"
+#endif
+ALIGN 4
+GM_MinimapTSA:
+#incbin "valentia-minimap.map.bin"
+ALIGN 4

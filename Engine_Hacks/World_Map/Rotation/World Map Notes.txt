@@ -1,0 +1,453 @@
+//World Map Doc by StanH and hypergammaspaces
+
+FUNCS THAT NEED DATA SQUISHING FOR NODES:
+Change all lsls to #0x1 for shorts or #0x0 for bytes.
+	0C1CC - 0C1D2 lsl r1, r1, #0x1
+	0C1E8 - 0C1EE lsl r1, r1, #0x1
+	0C204 -
+			0C218 lsl r1, r2, #0x1
+			0C22E lsl r0, r2, #0x1
+	0C254 -
+			0C26E lsl r0, r3, #0x1
+			0C290 lsl r0, r3, #0x1
+			0C2B0 lsl r0, r3, #0x1
+	0C2DC - 0C33C lsl r0, r6, #0x1
+	0C36C - 
+			0C386 lsl r0, r6, #0x1
+			0C3AA lsl r0, r6, #0x1
+			0C3CA lsl r1, r6, #0x1
+			0C418 lsl r1, r6, #0x1
+	0C468 - 0C476 lsl r0, r5, #0x1
+	0C4C8 - 0C4CE lsl r1, r1, #0x1
+	0C4E4 - 0C4FC lsl r1, r4, #0x1
+	0C528 - 0C530 lsl r2, r2, #0x1
+	B8B60 - B8B66 lsl r0, r3, #0x1
+	B8BA4 - B8C02 lsl r0, r0, #0x1
+	B9114 -
+			B9144 add r3, #0x2 
+			B9148 cmp r2, #0x35 (or whatever max)
+	B92D0 -
+			B92DE lsl r0, r4, #0x1
+			B9376 lsl r0, r4, #0x1
+			B93B2 lsl r0, r4, #0x1
+	B955C -
+			B9566 cmp r5, #0x35 (or whatever max)
+			B957A cmp r0, #0x35 (or whatever max)
+			B957E sub r0, #0x36 (or whatever max+1)
+			B9586 lsl r0, r2, #0x1
+			B95A2 cmp r4, #0x35 (or whatever max)
+	B95B0 -
+			B95CE lsl r0, r4, #0x1
+			B9602 cmp r4, #0x35 (or whatever max)
+	BB628 -
+			BB644 lsl r0, r2, #0x1
+			BB6E2 cmp r7, #0x35 (or whatever max)
+	BB798 -
+			BB7C8 lsl r1, r7, #0x1
+			BB896 cmp r7, #0x35 (or whatever max)
+			BB8B6 lsl r1, r7, #0x1
+			BB940 lsl r0, r0, #0x1
+	BC674 - BC67A lsl r0, r2, #0x1
+	BC6AC - BC6B2 lsl r0, r2, #0x1
+	BC6E4 - BC6EA lsl r0, r2, #0x1
+	BC72C - BC732 lsl r0, r0, #0x1
+	BC754 - BC75A lsl r0, r0, #0x1
+	BCFB4 -
+			BCFBE mov r3, #0x35 (or whatever max)
+			BCFC8 add r2, #0x2
+	BD014 - WM_GetNextLocID
+			BD036 add r2, #0x2
+			BD03A cmp r3, #0x35 (or whatever max)
+	BD068 - GetChapterThing
+			BD1CE lsl r0, r4, #0x1
+			BD1FE cmp r4, #0x35
+
+	BE9D8 - BE9DE lsl r0, r2, #0x1
+	BF804 - BF836 lsl r1, r1, #0x1
+	BF8CC - BF90A lsl r0, r0, #0x1
+	BFA1C - BFA26 lsl r0, r2, #0x1
+	
+FUNCS THAT NEED DATA SQUISHING FOR PATHS:
+A4 -> 84?
+	0C164 - 0C16E A4 offset
+	0C198 - 0C1A2 A4 offset
+	BC81C InitWM - BC832 A4 offset for paths, bl to bc898
+	BF58C - BF596 A4 offset
+	BC970 - BC990 A4 offset, BCA04 (node size<<1)
+	BC898 - pathsize at BC8B0, pathsize-1 at BC8AA
+	BC8BC - SetupNewWMRoute - pathsize at BC8BE
+	BC8EC - WM_RemovePath - pathsize at BC8F4 & BC932
+	
+FUNCS TO REWRITE FOR PATHFINDING:
+	BCAB8 - some recursive pathfinding func
+	BCBAC - some recursive pathfinding func
+	BCCFC - MovePlayerOnWorldmap
+	
+
+(If we can bitpack the routes we won't need to repoint)
+
+POINTERS TO 3005280:
+	BE48 //Event83_WM_SETCAM
+	BE88 //Event84_WM_SETCAMONLOC
+	BECC //Event85_WM_SETCAMONSPRITE
+	BF0C //Event86_WM_MOVECAM
+	BFA0 //Event87_WM_MOVECAMTO
+	C048 //Event88_
+	C0C4 //Event8A_WM_SHOWCURSOR
+	C0D0 //Event8B_WM_HIDECURSOR
+	C0EC //Event8C_WM_SETCURSORAT (?)
+	C190 //Event91_WM_DRAWPATH_Silent (offset A4 at C16E)
+	C1C4 //Event92_REMOVEPATH (offset A4 at C1A2)
+	C1E4 //Event93_WM_LOADLOCATION2
+	C200 //Event94_WM_REMOVELOCATION
+	C228, C250 //Event95_WM_LOADLOCATION3
+	C2C4 //Event96_WM_DRAWPATH3
+	C334 //Event97_WM_CREATENEXTDESTINATION
+	C400, C430 //Event98_
+	C4B4 //Event9A_WM_SETDESTINATION
+	C4E0 //Event9B_WM_SETDESTINATION2
+	C520 //Event9C_WM_SETDESTINATION3
+	C550 //Event9D_WM_UNSETDESTINATION
+	C684 //EventA6_WM_SETLORDLOCATION
+	C790 //EventA9_WM_MOVESPRITETO (just touches the MU, not node data itself)
+	CC00 //EventC1_SKIPWM //sets flag 0x40 at +0
+	CC14 //EventC2_ //sets flag 0x80 at +0
+	CC3C //EventC3_WM_SPAWNLORD (just touches MU1)
+	
+	2A48C //SetupBattleStructFromUnitAndWeapon??? checks bit 0x1 at +0x0
+	31638 //HasConvoyAccess, also checks bit 0x1 at offset +0x0
+	341B4 //34194, some prep screen proc. Also checks bit 0x1 at offset 0x0
+	83394 //GetChapterAllyUnitsPointer - uses array at +C9 and byte at +CC to determine if to load skirmishes
+	833E4 //GetChapterEnemyUnitsPointer - uses array at +C9 and byte at +CC to determine if to load skirmishes
+	897F8 //Get chapter title ID. Made irrelevant by MNC2Fix. 
+	95018 //CanPrepScreenSave, also checks bit 0x1 at offset +0x0
+	953A8 //also checks bit 0x1 at offset +0. BLs to C4088 if bit set (loads from base menu proc)
+	953D8 //also checks bit 0x1 at offset +0. BLs to C409C if bit set (stores to base menu proc)
+	98C04 //also checks bit 0x1 at offset +0. i think this cleans up prep screen stuff.
+	98D94
+	98E14 //both part of 98CC0 PrepScreenItemsMenu
+	991A4 //part of 99120 PrepScreenItemsMenuIdle. checks bit 0x1 of flag +0
+	992C4 //part of 99120 PrepScreenItemsMenuIdle. checks bit ??? of flag +0.
+	99468 //99328 DrawPrepScreenItemMenu. checks bit 0x1 of flag +0
+	99738 //some button press handler for prep items screen. checks bit 0x1 of flag +0
+	998A4 //checks bit 0x1 of flag +0
+	99A68 //same func, more item menu stuff
+	99E94 //also checks bit 0x1 at offset. BLs to C409C if bit set (stores to base menu proc)
+	9A1C4 //more item menu stuff, same flag
+	9A2E8 //more item menu stuff, same flag
+	9CCD0 //Backing out of item menu, checks which music to go back to. same flag.
+	9D5B0 //same flag. Trade menu in items screen
+	9EAA0 //same flag. Backing out of trade menu (clears gfx)?
+	9EBA8 //same flag. Backing out of trade menu??
+	9F120 //same flag. Clears mugs 
+	A46E0 //in BWL_AddWinOrLoss, checks if in a skirmish. If so, checks current WMNodeID. (i think this is checking where the unit died at idk)
+	
+	A5120 //SaveGame - overwritten by EMS
+	A5214 //LoadGame - overwritten by EMS
+	A5C00 //SaveSuspendedGame - overwritten by EMS
+	A5D9C //LoadSuspendedGame - overwritten by EMS
+	
+	A71F4 //a71e4 jumps to bd260, cpuset to offset 0xCE
+	A7208 //a71f8 jumps to bd270, cpuset to offset 0xCE
+	A8B30 //SaveMenu_LoadNextChapterName. 
+		Checks bits 0x2 and 0x1. If both flags are on, you're doing a worldmap save, so it checks BD014 GetNextDestinationID and then BB5B0 WMLoc_GetChapterID. Also passes WMStruct in r0 to BD224 Worldmap_GetNextChapterID.
+	A8C20 //as above
+	
+	B4BA8 //shop setup, checks bit 0x1 of flag +0x0 to see if you're coming from worldmap or chapter
+	B4BDC //as above, but destructor i think
+	
+	B82A4 //checks bit 0x8 of flag +0x0, returns 1 if false, 2 if true.
+	B82C4 //checks bit 0x8 of flag +0x0, returns 0x1800 if false, 0x5000 if true.
+	
+	B872C //B86CC, also checks bit 0x8 of flag +0x0. This func draws a portrait of some kind, might be the map status screen?
+	B8898 //B8844, also checks bit 0x8 of flag +0x0.
+	
+	B8A78 //in B8A18 GM_OnEnd, ANDs the flag byte at +0x0 with 0xFFBE and then with 0x7F, then ANDs again with 0xFFFE, stores back to +0x0
+    
+
+3005280:
+    +02 | short | camera x (in what units?)
+    +04 | short | camera y (in what units?)
+    +08 | word  | cursor x (pixels, increments by 0x10)
+    +0C | word  | cursor y (pixels, increments by 0x10)
+
+    
+	B8B00 //stores r2 to +0x1 "show cursor", saves WMstruct to r8. Also saves camera positions
+	B8B90 //B8B60. whatever is in r0 (nodeID? gets multiplied by 4, added to WMStruct+30 (i think this checks if it is your destination because it ANDs with 0x2)
+	B8CB8
+	B8D28
+	B8FE8 //GM_80B8FD4? sets bit 0x1 at +0
+	B9010 //calls bd014
+	B906C //puts sprites on map, no change needed
+	B9110 //shows sprites walking, disappearing into node if it is destination
+	B9140 //i think this puts the flag on the destination
+	B9210 //calls BCA0C, also checks bit 0x2.
+	B9260 //gets cursor and camera coords. i think this just handles scrolling
+	B930C //B92D0, sets up some node stuff i guess
+	B94A8 //B93E0, handles moving map cursor (loads cursor X/y, calls SFX 0x65)
+	B959C //B955C, gets next destination?
+	B9614 //checks for activated map nodes at current cursor position?
+	B96D4 //handles cursor and camera position
+	B9728 //something to do with bit 0x4 of flag +0. Also stores cursor pos.
+	B97F4 //part of above func
+	B9800 //literally just forces the cursor visible
+	B9A8C //b9a58, gets some data about current node
+	B9B34 //b9aec, handles skirmish guys on map
+	B9B70 //B9B38 WorldMap_InitChapterTransition, mostly just hiding cursor and getting current nodeID.
+	B9BA0 //same as above
+	B9C04
+	B9C6C //i think these call the effects for drawing a node
+	B9D10 //literally just sets bit 0x2
+	B9D2C //gets some data from current node?
+	B9E38 //B9DE0, puts cursor on current node?
+	B9E60 //make cursor visible, break 6c loop
+	B9EA0 //camera/cursor
+	B9F90 //b9f54 WorldMapBGMGetter, just calls BD014.
+	BA000 //also calls BD014.
+	BA328 //GM_Start, checks bit 0x2
+	BA360 //GM_SetupChapterStuff, just gets current node
+	BAB34 //camera
+	BACAC //GmapUnit_Loop? checks bit 0x8
+	BB670 //load graphics for WM nodes
+	BB7EC //GmapScreen2_Loop animates flag on destination i think
+	BB8DC //as above
+	BBBB4 //GmapCursor_Destructor
+	BC47C //draws WM menu, hides cursor.
+	BC5E0 //WM Shop setup? checks byte +CD
+	BC620 //as above
+	BC66C //menu destructor, sets +CD to 0
+	BC69C //check if can enter armory
+	BC6D4 //shop
+	BC718 //secret shop
+	BC748 //more shop stuff
+	BC770 //more shop stuff
+	BC79C //more shop stuff
+	BC7C4 //more shop stuff
+	BC7EC //more shop stuff
+	BC814 //above here is more shop stuff
+	BC890 //something to do with paths
+	BCA3C //sprites
+	BCA8C //also sprites
+	BCFD8 //GM_ClearAllStoryLocations
+	BD05C //CanLoadGmapSkirmishes
+	BD1EC //BD068 ThatBigMNC2Func
+	BD82C //BD740, camera stuff?
+	BD9D4 //????
+	BDBFC //camera
+	BDC94, BDD24 //sprites and MUs
+	BDD70, BDD90 //remove MUs
+	BDDF0, BDE38 //MUs
+	BDE6C, BDEB0 //more MUs
+	BE294, BE32C //MUs and camera
+	BEA0C //BE9D8, draw infobox on node hover
+	BEC54 //camera
+	BED18 //camera
+	BEE78 //MUs
+	BEEDC //MUs
+	BEFB4 //camera
+	BF044 //camera
+	BF18C //sync cursor and camera
+	BF1F0, BF20C cursor
+	BF244 //scrolling cursor
+	BF2CC //sets camera pos
+	BF360 //sets camera pos
+	BF3BC //sets camera pos
+	BF5B8 //WM_DrawPath
+	BF88C //BaseEntry
+	BF95C //more BaseEntry
+	BFA40 //more BaseEntry
+	BFB8C //MU BaseEntry
+	BFC14 //more MU BaseEntry
+	
+	C07AC //skirmish start? just gets camera location
+	C0928 //cursor/camera
+	C099C //IsExtraMap_WorldmapSkirmishes - calls BD014
+	C0C20 //C0A9C - i think this draws the map status screen?
+	C0CB4 //gets MU data and draws lord sprite (map status screen?)
+	C1024 //checks bit 0x8 at +0
+	C11C8, C1250 //checks bit 0x8 at +0 and also camera pos
+	C138C, C13AC //checks bit 0x8 at +0
+	C18DC //C1774 GetGmapSkirmishLocation. Checks current node and ensures not to spawn monsters on it
+	C1A54 //draws monster sprites, checks MU data.
+	C1B54 //MU stuff
+	C1FD8 //unsets bit 0x8 and 0x1 at +0
+	C2248 //unsets bit 0x8 and 0x1 at +0
+	C22D4 //removes stuff from WM, checks flag 0x1 on MU1
+	C2394 //sets bit 0x8 at +0. bit 0x8 is hide sprites??
+	C2418 //unsets bit 0x8 and 0x1 at +0
+	C2590 //unsets bit 0x8 and 0x1 at +0
+	C3174 //Auto-MU, sets given MU's nodeID to value from proc
+	C375C //gets cursor position
+	C37F4 //calls BD014; draws destination flag on minimap
+	C38A4 //C380C, draws player minimap location, checks flag 0x1 on MU1
+	C38BC //draws enemy minimap location
+	C3A10 //checks flag 0x1 on MU (id=r1)
+	C3B38 //minimap? checks bit 0x4 (minimap enabled)
+	C3BDC //minimap, checks bit 0x4 (minimap enabled)
+	C3C18 //minimap. bit 0x10 +0 = display on right (ON), left (OFF)
+	C3FAC //checks current node id for armory data
+	C3FD8 //checks current node id for shop data
+	C4004 //checks current node id for secret shop data
+	The rest are in custom code.
+	
+WM data is at FE8U:03005280 and is layed out as follows:
+    +00 | byte  | flags?
+    +01 | byte  | "display cursor"?
+    +02 | short | camera x (in what units?)
+    +04 | short | camera y (in what units?)
+    +08 | word  | cursor x (in what units?)
+    +0C | word  | cursor y (in what units?)
+    +10 | units[7], struct:
+        +00 | byte  | flags (&1 = enabled?, &2 = use class instead of char)
+        +01 | byte  | location id
+        +02 | short | character/class id
+    +30 | nodes[0x1C], struct:
+        +00 | byte  | flags (&1 = enabled?, &2 = is next story location?)
+    +A4 | byte[0x20] | enabled paths
+    +C4 | word | path count
+    +C8 | byte | entry node id?
+    +C9 | byte[3] | ?
+    +CC | byte | ?
+    +CD | byte | ?
+
+referencing FE8U:080A70B0 ("SaveWMStuff"), load func is FE8U:080A7138 ("LoadWMStuff")
+
+saves 0x24 bytes (writes to sp before calling the save writing function)
+
+bytes 0x00 to 0x07 are location/node data:
+    080A6DA0 saves for each location/node two bits of info, packed
+    Since there's room for 0x1C nodes, this means 0x38 bits = 7 bytes are used (one unused?)
+    
+    load func is 080A6E24
+TODO: expand this to 0x00 to 0x0F, allowing for 0x38 nodes (0x70 bits)
+
+bytes 0x08 to 0x0B are route/path data:
+    080A6EB0 saves a bitmap. Each bit represents a route id.
+    for ex: if route 2 and 3 are active, it will save (binary) 0...0110
+    there's 4 bytes, so max route id is 32
+    
+    load func is 080A6F0C
+TODO: expand this to 0x10 to 0x17, allowing 8 bytes/max route id 64
+
+bytes 0x0C to 0x19 are actor/unit data: (this is what's at 03005280+$10)
+    080A6F50 saves for each actor/unit a short (2 bytes), packed as follows:
+        +00bit | 1bit | flag 0 at actor+00 (enabled?)
+        +01bit | 6bit | location/node (actor+01)
+        +07bit | 1bit | flag 1 at actor+00 (use class instead of char)
+        +08bit | 8bit | character or class id (actor+02)
+    there's 14 bytes for 7 actors/units
+    
+    load func is 080A6FBC
+TODO: expand this to 0x18 to 0x1F
+
+bytes 0x1A and 0x1B are saved cursor x and y, respectively
+TODO: expand to 0x20 and 0x21
+
+byte 0x1C is as follows:
+    +00bit | 1bit | flag 1 (&2) of data+00
+    +01bit | 1bit | flag 2 (&4) of data+00
+    +02bit | 2bit | flags 4&5 (&0x30) of data+00
+    
+    I think, math is hard (I'm referencing 080A70F0~080A7124 if u don't trust me (you shouldn't))
+TODO: expand to 0x22
+
+bytes 0x1D to 0x1F is the array at data+C9, copied verbatim (func 080A7034 saves, 080A7054 loads)
+TODO: expand to 0x23-0x27
+
+byte 0x20 is byte at data+CC copied verbatim
+TODO: expand to 0x28
+
+
+
+FE8U
+
+World Map Proc:
+    3E | byte | Current WM Location Id?
+    44 | word | Gmap Screen Proc
+    4C | word | Gmap Unit (Container) Proc (scr: 08A3DEFC)
+    50 | word | Gmap Cursor Proc
+    54 | word | Gmap MU Proc
+
+GmapScreen Proc:
+    29 | byte  | some bitfield
+    2A | byte  | (0 initially)
+    2B | byte  | (0 initially)
+    2C | byte  | (0 initially)
+    2D | byte  | (0 initially)
+    2E | byte  | (0 initially)
+    2F | byte  | (0 initially)
+    30 | byte  | (0 initially)
+    31 | byte  | (0 initially)
+    32 | byte  | (0 initially)
+    33 unused?
+    34 | short | (0 initially)
+    36 | short | (0 initially)
+    38 | short | (0 initially)
+    3A | short | (0 initially)
+    3C | word  | some pointer to ROM (8A83364 initially)
+    40 | word  | pointer to BG Tilemap buffer
+    44 | word  | pointer to some decompressed data (from 8A96064 initially)
+    4C | word  | GmapRoute 6C pointer
+
+GMapScreenVSync Proc:
+    2C | word  | GmapScreen.3C
+    30 | word  | GmapScreen.40
+    
+
+GmapRoute Proc:
+    2C | word  | 0x5000
+    32 | byte  | bitfield?
+    34 | byte  | 
+    35 | byte  | transition effect bg index
+    3C | short | timing denominator factor?
+    3E | short | timing numerator factor?
+    40 | word  | pointer to 03005324 (displayed route id list thing)
+
+Gmap MU Proc:
+    2C | Array of 7 Gmap MU prim proc pointers
+
+Gmap MU prim Proc:
+    29 | byte  | idk ()
+    2A | byte  | Gmap MU prim index in the Gmap MU (<0 when unused)
+    2B | byte  | index of the linked Gmap Unit ((-1) at start)
+    2C | byte  | idk (0 initially)
+    40 | short | idk (0 initially)
+    
+
+At 03005290 (03005280+$10) seems to be an array of struct { byte; byte; short; } that's strongly tied to Gmap MUs (It's indexed the same way)
+    00 | byte  | some bitfield (&1 = set when linked Gmap MU prim is used?, &2 = Use class (char otherwise))
+    01 | byte  | Current WM Location Index?
+    02 | short | Char/Class ID
+
+WM Location Entry (in RAM):
+    00 | byte | flags :: 1 = enabled, 2 = is story location
+
+WM Location Static Data Entry: (in ROM)
+    00 | byte | type? :: 3 = dungeon
+
+GmapUnit (container) Proc (Scr at: 08A3DEFC):
+    2C | word    | something
+    34 | 7 words | pointers to GmapUnit 6C, all deleted when this one is deleted
+
+GmapUnit Proc (Scr at: 08A3DECC):
+    2A | short | bitfield (0 initially, &4 = ?)
+    2C | short | 8 initially (AP obj priority node)
+    2E | short | 0x100 initially
+    30 | word  | same as container:2C (base tile index for SMS gfx?)
+    34 | byte  | index within container
+    35 | byte  | Allegience color index
+    36 | byte  | Palette index
+    37 | byte  | current AP anim id (4 initially)
+    38 | short | class initially
+    3A | short | class initially
+    3C | short | X pos (0 initially)
+    3E | short | Y pos (0 initially)
+    40 | word  | AP pointer
+
+WORD MAP EVENT CODES:
+    80
+    81
+    82
+    83
+    84 | Sets camera position on a WM location?
+    85 | Same as 84, but given on a sprite's WM location
