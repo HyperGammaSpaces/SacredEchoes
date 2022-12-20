@@ -132,6 +132,30 @@ EnemyUnits:
 	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT
 	
+EnemyUnits_Hard:
+	UNIT XaizorCh4_2 DreadFighter	XaizorCh4_2 Level(7, Enemy, True) [2,12]	0x00 0x00 0x0 0x00 [SteelSword] GuardTileAI
+	UNIT Rigel_Merc DreadFighter XaizorCh4_2 Level(3, Enemy, True) [3,3] 0x00 0x00 0x0 0x00 [Zanbato,Thunderblade] NeverMoveAI
+	//knights
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(9, Enemy, True) [2,4] 0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(9, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [SteelLance,HandAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(9, Enemy, True) [4,4] 0x00 0x00 0x0 0x00 [SteelAxe,Javelin] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(9, Enemy, True) [8,12] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(7, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
+	UNIT Rigel_Soldier Knight XaizorCh4_2 Level(9, Enemy, True) [14,6] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	//archers
+	UNIT Rigel_Archer Sniper XaizorCh4_2 Level(9, Enemy, True) [6,2] 0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper XaizorCh4_2 Level(7, Enemy, True) [9,9] 0x00 0x00 0x0 0x00 [SilverBow] NeverMoveAI
+	UNIT Rigel_Archer Sniper XaizorCh4_2 Level(9, Enemy, True) [11,6] 0x00 0x00 0x0 0x00 [RadiantBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper XaizorCh4_2 Level(9, Enemy, True) [17,4] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper XaizorCh4_2 Level(9, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	//mages and witches
+	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [3,5] 0x00 0x00 0x0 0x00 [Selene] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [Sisyphus] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [9,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [18,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT
+	
 CavReinforcements:
 	UNIT Rigel_Cav Paladin	XaizorCh4_2 Level(5, Enemy, True) [18,0]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT Rigel_Cav Paladin	XaizorCh4_2 Level(5, Enemy, True) [21,6]	0x00 0x00 0x0 0x00 [IronLance] NoAI
@@ -148,8 +172,13 @@ AlmEndReda3:
 Evt_BeginningScene:
 
 	MUSC SongID_Env_Night
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4A02 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4A02
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	
 	SetBackground(0x31)
 	BackgroundText(Ch4A_2_OpeningText) //alm gets introspective

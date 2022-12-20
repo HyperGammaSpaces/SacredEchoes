@@ -1,0 +1,128 @@
+//Made by CrazyColorz5 of Fire Emblem Universe
+//Based off of Camtech75's Skeleton
+#include EAstdlib.event
+
+EventPointerTable(plBossRush_Event, Evt_ThisChapter)
+
+Evt_ThisChapter:
+    POIN Evt_TurnBasedEvents
+    POIN Evt_CharacterBasedEvents
+    POIN Evt_LocationBasedEvents
+    POIN Evt_MiscBasedEvents
+    POIN Evt_Dunno Evt_Dunno Evt_Dunno
+    POIN Evt_Tutorial
+    POIN Evt_Ballista1 Evt_Ballista2
+    POIN PlayerUnits PlayerUnits
+    POIN $0 $0 $0 
+    POIN EnemyUnits EnemyUnits EnemyUnits
+    POIN Evt_BeginningScene Evt_EndingScene
+
+Evt_TurnBasedEvents:
+    TURN
+
+Evt_CharacterBasedEvents:
+    CHAR
+
+Evt_LocationBasedEvents:
+    CHESRANDOM 0x9 Act4RandomChest|IsPointer [10, 4]
+    LOCA
+
+Evt_MiscBasedEvents:
+    CauseGameOverIfLordDies
+    DefeatAll(Evt_EndingScene)
+    MournQuoteAFEVS
+    AFEV
+
+Evt_Dunno:
+    END_MAIN
+
+Evt_Tutorial:
+    END_MAIN
+
+Evt_Ballista1:
+    BLST
+    ALIGN 4
+
+Evt_Ballista2:
+    BLST
+    ALIGN 4
+
+PlayerUnits:
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+    UNIT
+
+CutsceneUnits:
+    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x1 REDA11R22 [BaseSword, Vulnerary] NoAI 
+    UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x1 REDA12R22 [BaseLance] NoAI
+    UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x1 REDA10R23 [BaseLance, Vulnerary] NoAI 
+    UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x1 REDA13R23 [BaseLance, Vulnerary] NoAI 
+    UNIT
+
+EnemyUnits:
+    UNIT BerkutPossessed FallenPrince   RineaEnemy Level(20, Enemy, False) [10,5]   0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NeverMoveAI
+    UNIT RineaEnemy Witch_Rinea BerkutPossessed Level(19, Enemy, False) [9,6] 0x00 0x00 0x0 0x00 [Seraphim, Fortify,PrayerRing] AttackInRangeAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [11,6] DropItem 0x00 0x0 0x00 [Ridersbane] NoAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [8,8] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [12,8] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [4,10] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+    UNIT Terror_Mogall Mogall BerkutPossessed Level(15, Enemy, True) [16,10] 0x00 0x00 0x0 0x00 [Tackle_Mogall,DivideAbility] MogallAI
+    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(16, Enemy, True) [4,13] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F,0x03]
+    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [16,13] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+    UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(3, Enemy, True) [15,15] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+    UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(3, Enemy, True) [9,20] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [11,20] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [10,21] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+    UNIT
+        
+EnemyUnits_Hard:
+    UNIT BerkutPossessed FallenPrince   RineaEnemy Level(20, Enemy, False) [10,5]   0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NeverMoveAI
+    UNIT RineaEnemy Witch_Rinea BerkutPossessed Level(19, Enemy, False) [9,6] 0x00 0x00 0x0 0x00 [Seraphim, Fortify,PrayerRing] AttackInRangeAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [11,6] DropItem 0x00 0x0 0x00 [Ridersbane] NoAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [8,8] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [12,8] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [4,10] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+    UNIT Terror_Mogall Mogall BerkutPossessed Level(15, Enemy, True) [16,10] 0x00 0x00 0x0 0x00 [Tackle_Mogall,DivideAbility] MogallAI
+    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(16, Enemy, True) [4,13] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F,0x03]
+    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [16,13] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+    UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(3, Enemy, True) [15,15] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+    UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(3, Enemy, True) [9,20] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [11,20] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+    UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [10,21] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+    UNIT
+
+Evt_BeginningScene:
+    SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x5A01 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x5A01
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
+    LOAD3 0x0 PlayerUnits 
+    ENUN
+    GotoPrepScreen
+    ENDA
+
+
+Evt_EndingScene:
+    FadeOutMusic
+    SVAL 0x3 0x3
+	ASMC 0x85C65
+	//SADD 0x32
+	CALL UnifiedBEXPCaller
+    FADI 2
+	SVAL 0x2 0x46
+	MNCH 0xFFFF //go to world map
+    CALL PostgameUnlockChecker
+    ENDA

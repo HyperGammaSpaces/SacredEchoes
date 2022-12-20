@@ -102,10 +102,26 @@ EnemyUnitsSonya:
 	UNIT Rigel_Merc Mercenary	SonyaBoss Level(15, Enemy, True) [9,5]	DropItem 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
 	UNIT Rigel_Witch Witch	SonyaBoss Level(7, Enemy, True) [9,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
 	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [11,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
-	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [8,18]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	UNIT Rigel_Witch Witch	SonyaBoss Level(5, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [Nosferatu] NoAI
-	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [7,12]	0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
-	UNIT Rigel_Witch Witch	SonyaBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [8,18]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(5, Enemy, True) [7,12]	0x00 0x00 0x0 0x00 [Nosferatu] NoAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
+	UNIT Rigel_Witch Mage_F	SonyaBoss Level(10, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT Rigel_Witch Mage_F	SonyaBoss Level(12, Enemy, True) [7,17]	0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT Rigel_Witch Mage_F	SonyaBoss Level(9, Enemy, True) [5,6]	0x00 0x00 0x0 0x00 [Aura] AttackInRangeAI
+	UNIT Rigel_Witch Mage_F	SonyaBoss Level(12, Enemy, True) [8,8]	0x00 0x00 0x0 0x00 [Fire] NoAI
+	UNIT Rigel_Merc Mercenary	SonyaBoss Level(15, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+	UNIT
+	    
+EnemyUnitsSonya_Hard:
+	UNIT SonyaBoss Mage_F SonyaBoss Level(10, Enemy, False) [10,18] 0x00 0x00 0x0 0x00 [Excalibur,SteelShield] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	SonyaBoss Level(15, Enemy, True) [9,5]	DropItem 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(7, Enemy, True) [9,16]	0x00 0x00 0x0 0x00 [Thunder] DelayedRushAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [11,16]	0x00 0x00 0x0 0x00 [Fire] DelayedRushAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [8,18]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(5, Enemy, True) [7,12]	0x00 0x00 0x0 0x00 [Nosferatu] NoAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(6, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
+	UNIT Rigel_Witch Witch	SonyaBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
 	UNIT Rigel_Witch Mage_F	SonyaBoss Level(10, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [Thunder] NoAI
 	UNIT Rigel_Witch Mage_F	SonyaBoss Level(12, Enemy, True) [7,17]	0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT Rigel_Witch Mage_F	SonyaBoss Level(9, Enemy, True) [5,6]	0x00 0x00 0x0 0x00 [Aura] AttackInRangeAI
@@ -119,8 +135,13 @@ ReinforcementsSonya:
 
 Ch3_4C_BeginningScene:
 	MUSC SongID_LandOfShiftingSand
-	LOAD1 0x1 EnemyUnitsSonya
-	ENUN
+	SVAL 0x2 (EnemyUnitsSonya|IsPointer)
+    CHECK_HARD
+    BEQ 0x3C04 rC r0
+        SVAL 0x2 (EnemyUnitsSonya_Hard|IsPointer)
+    LABEL 0x3C04
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	FADU 5
 	WEA1 0x6
 

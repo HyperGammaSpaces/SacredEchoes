@@ -113,8 +113,8 @@ LoadSlayde:
     UNIT
 
 EnemyUnits:
-	UNIT MuellerCh4_8 BowKnight	MuellerCh4_8 Level(15, Enemy, True) [12,15]	DropItem 0x00 0x0 0x00 [SilverBow] NeverMoveAI
-	UNIT SlaydeGK GoldKnight MuellerCh4_8 Level(8, Enemy, True) [13,4] DropItem 0x00 0x0 0x00 [SilverLance] NeverMoveAI
+	UNIT MuellerCh4_8 BowKnight	MuellerCh4_8 Level(15, Enemy, True) [12,15]	DropItem 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT SlaydeGK GoldKnight MuellerCh4_8 Level(8, Enemy, True) [13,4] DropItem 0x00 0x0 0x00 [SilverLance] NoAI
     UNIT Rigel_Cav GoldKnight SlaydeGK Level(4, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [SteelLance] MoveWithLeaderAI
     UNIT Rigel_Cav GoldKnight SlaydeGK Level(4, Enemy, True) [12,11] 0x00 0x00 0x0 0x00 [Saunion] AttackInRangeAI
     UNIT Rigel_Cav GoldKnight SlaydeGK Level(4, Enemy, True) [13,11] 0x00 0x00 0x0 0x00 [Saunion] AttackInRangeAI
@@ -128,14 +128,44 @@ EnemyUnits:
     UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [16,6] 0x00 0x00 0x0 0x00 [HandAxe] NeverMoveAI
     UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [20,6] 0x00 0x00 0x0 0x00 [SteelAxe] NeverMoveAI
     //hallways
-    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [IronBow] NoAI
     UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [7,11] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
     UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [22,11] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [22,11] 0x00 0x00 0x0 0x00 [IronBow] NoAI
     UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [3,16] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [7,16] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [18,16] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [7,16] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [18,16] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
     UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [22,16] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [3,17] 0x00 0x00 0x0 0x00 [Selene] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [7,17] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [18,17] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [22,17] 0x00 0x00 0x0 0x00 [Selene] AttackInRangeAI
+	UNIT
+    
+EnemyUnits_Hard:
+	UNIT MuellerCh4_8 BowKnight	MuellerCh4_8 Level(15, Enemy, True) [12,15]	DropItem 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT SlaydeGK GoldKnight MuellerCh4_8 Level(8, Enemy, True) [13,4] DropItem 0x00 0x0 0x00 [SilverLance] NoAI
+    UNIT Rigel_Cav GoldKnight SlaydeGK Level(4, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [KillerLance] MoveWithLeaderAI
+    UNIT Rigel_Cav GoldKnight SlaydeGK Level(4, Enemy, True) [12,11] 0x00 0x00 0x0 0x00 [Saunion] AttackInRangeAI
+    UNIT Rigel_Cav GoldKnight SlaydeGK Level(4, Enemy, True) [13,11] 0x00 0x00 0x0 0x00 [Saunion] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [13,15] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [12,17] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    //door blockers
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [5,6] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [Sisyphus] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [Sisyphus] AttackInRangeAI
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [16,6] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+    UNIT Rigel_Soldier Baron MuellerCh4_8 Level(4, Enemy, True) [20,6] 0x00 0x00 0x0 0x00 [SilverAxe] AttackInRangeAI
+    //hallways
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [IronBow] NoAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [7,11] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [22,11] 0x00 0x00 0x0 0x00 [IronBow] NoAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [3,16] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [7,16] 0x00 0x00 0x0 0x00 [KillerBow] NoAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [18,16] 0x00 0x00 0x0 0x00 [RadiantBow] NoAI
+    UNIT Rigel_Archer BowKnight MuellerCh4_8 Level(4, Enemy, True) [22,16] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
     UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [3,17] 0x00 0x00 0x0 0x00 [Selene] AttackInRangeAI
     UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [7,17] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
     UNIT Rigel_Mage Arcanist MuellerCh4_8 Level(4, Enemy, True) [18,17] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
@@ -204,7 +234,12 @@ Ch4A8_BeginningScene:
     
     CLEA 0x0
     CLEE 0x0
-    LOAD1 0x1 EnemyUnits
+    SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4A08 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4A08
+    LOAD1 0x1 0xFFFFFFFF
     ENUN
     LOAD3 0x0 PlayerPlacement 
 	ENUN

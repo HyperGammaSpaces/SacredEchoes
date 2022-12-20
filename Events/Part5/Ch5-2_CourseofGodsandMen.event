@@ -25,8 +25,8 @@ Ch5F2_TurnBasedEvents:
     InfiniteTurnEventPlayer(0x8, Room1Check, 1)
     InfiniteTurnEventPlayer(0x9, Room2Check, 2)
     InfiniteTurnEventPlayer(0xA, Room3Check, 3)
-    InfiniteTurnEventPlayer(0xB, LoadStairsReinforcements, 4)
-    InfiniteTurnEventPlayer(0xC, LoadHallReinforcements, 5)
+    TurnEventPlayer(0xB, LoadStairsReinforcements, 4, 20)
+    TurnEventPlayer(0xC, LoadHallReinforcements, 5, 20)
 	TURN
     
 BlockReinforcements:
@@ -161,7 +161,7 @@ JedahREDA:
     REDA [21,15] NoFlags Walk_Slow 0x00 0x14
 
 EnemyUnits:
-	UNIT Boss_Monster Gorgon	Boss_Monster Level(9, Enemy, True) [20,15]	0x00 0x00 0x0 0x00 [EvilEye] NeverMoveAI
+	UNIT Boss_Monster Gorgon	Boss_Monster Level(9, Enemy, True) [20,15]	DropItem 0x00 0x0 0x00 [EvilEye,AngelRing] AttackInRangeAI
 	//9 lvl 18 wights
 	UNIT Terror_Fiend Fiend Boss_Monster Level(3, Enemy, True) [9,12] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
 	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [7,13] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
@@ -180,6 +180,28 @@ EnemyUnits:
 	UNIT Terror_WhiteDragon WhiteDragon Boss_Monster Level(7, Enemy, True) [21,10] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
 	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(13, Enemy, True) [18,14] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
 	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(13, Enemy, True) [22,14] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT
+	
+EnemyUnits_Hard:
+	UNIT Boss_Monster Gorgon	Boss_Monster Level(9, Enemy, True) [20,15]	DropItem 0x00 0x0 0x00 [EvilEye,Shadowshot,AngelRing] AttackInRangeAI
+	//9 lvl 18 wights
+	UNIT Terror_Fiend Fiend Boss_Monster Level(3, Enemy, True) [9,12] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [7,13] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [11,13] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [6,14] 0x00 0x00 0x0 0x00 [SteelSword] MonsterAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [12,14] 0x00 0x00 0x0 0x00 [SteelSword] MonsterAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [6,16] 0x00 0x00 0x0 0x00 [SteelSword] MonsterAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [12,16] 0x00 0x00 0x0 0x00 [SteelSword] MonsterAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [7,18] 0x00 0x00 0x0 0x00 [IronSword] MonsterAI
+	UNIT Terror_Wight Wight Boss_Monster Level(18, Enemy, True) [11,18] 0x00 0x00 0x0 0x00 [IronSword] MonsterAI
+	//2 lv15 deathgoyles
+	UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(15, Enemy, True) [6,3] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
+	UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(15, Enemy, True) [10,3] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
+	//2 lv 7 white dragons and 2 lv 13 necrodragons
+	UNIT Terror_WhiteDragon WhiteDragon Boss_Monster Level(7, Enemy, True) [19,10] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT Terror_WhiteDragon WhiteDragon Boss_Monster Level(7, Enemy, True) [21,10] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(10, Enemy, True) [18,14] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(10, Enemy, True) [22,14] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT
 	
 StairsReinforcements:
@@ -353,8 +375,13 @@ Ch5F2_BeginningScene:
 	CLEA 0x0
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x5A02 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x5A02
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	GotoPrepScreen
 	ENDA
 

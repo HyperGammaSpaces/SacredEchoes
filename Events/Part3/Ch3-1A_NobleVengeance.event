@@ -79,6 +79,8 @@ Ch3_1A_Units1:
 	UNIT Acantha Thief_F 0x00 Level(9,Ally,True) [19,16] 0x00 0x00 0x0 0x00 [BaseSword,Lockpick,Thunderblade] NoAI
 	UNIT Clair PegasusKnight 0x00 Level(9,Ally,True) [18,17] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
 	UNIT Clive Paladin 0x00 Level(3,Ally,True) [16,17] 0x00 0x00 0x0 0x00 [BaseLance,SteelLance] NoAI
+	UNIT Forsyth Soldier 0x00 Level(1, Ally, 1) [17,15] 0x00 0x00 0x0 0x00 [BaseLance, Forscythe] NoAI
+	UNIT Python Archer 0x00 Level(1, Ally, 1) [18,15] 0x00 0x00 0x0 0x00 [BaseBow,IronBow] NoAI
 	UNIT
 #else
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
@@ -91,6 +93,8 @@ Ch3_1A_Units1:
 	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [19,16] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [18,17] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [16,17] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Forsyth Soldier 0x00 Level(1, Ally, 1) [17,15] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Python Archer 0x00 Level(1, Ally, 1) [18,15] 0x00 0x00 0x0 0x00 [BaseBow] NoAI
 	UNIT
 #endif
 
@@ -102,9 +106,9 @@ CutsceneUnits:
 
 EnemyUnits:
 	UNIT Zaxon Knight	0x00 Level(8, Enemy, False) [4,2]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-	UNIT Rigel_Mage Shaman	Zaxon Level(9, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI 
-	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [7,1]	0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
-	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [9,2]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT Rigel_Mage Shaman	Zaxon Level(9, Enemy, True) [7,2]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI 
+	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [18,5]	0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
+	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	UNIT Rigel_Soldier Soldier	Zaxon Level(11, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
 	UNIT Rigel_Soldier Soldier	Zaxon Level(11, Enemy, True) [12,3]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
 	UNIT Rigel_Soldier Soldier	Zaxon Level(9, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
@@ -112,6 +116,24 @@ EnemyUnits:
 	UNIT Rigel_Soldier Knight	Zaxon Level(4, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
 	UNIT Rigel_Archer Archer	Zaxon Level(10, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT Rigel_Archer Archer	Zaxon Level(11, Enemy, True) [15,8]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier_F	Zaxon Level(11, Enemy, True) [6,5]	0x00 0x00 0x0 0x00 [Axereaver] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier	Zaxon Level(11, Enemy, True) [8,5]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Rigel_Archer Archer_F	Zaxon Level(13, Enemy, True) [7,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT
+    
+EnemyUnits_Hard:
+	UNIT Zaxon Knight	0x00 Level(8, Enemy, False) [4,2]	0x00 0x00 0x0 0x00 [Ridersbane,Javelin] NeverMoveAI
+	UNIT Rigel_Mage Shaman	Zaxon Level(9, Enemy, True) [7,2]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI 
+	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [18,5]	0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
+	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT Rigel_Soldier Soldier	Zaxon Level(11, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Soldier Soldier	Zaxon Level(11, Enemy, True) [12,3]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Rigel_Soldier Soldier	Zaxon Level(9, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Zaxon Level(3, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Zaxon Level(4, Enemy, True) [15,9]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Archer Archer	Zaxon Level(10, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer Archer	Zaxon Level(11, Enemy, True) [6,12]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Rigel_Archer Archer	Zaxon Level(11, Enemy, True) [15,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT Rigel_Cav Cavalier_F	Zaxon Level(11, Enemy, True) [6,5]	0x00 0x00 0x0 0x00 [Axereaver] AttackInRangeAI
 	UNIT Rigel_Cav Cavalier	Zaxon Level(11, Enemy, True) [8,5]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
 	UNIT Rigel_Archer Archer_F	Zaxon Level(13, Enemy, True) [7,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
@@ -145,8 +167,13 @@ BrigandsReinforcements:
 
 Ch3_1A_BeginningScene:
 	CAMERA_CENTERED [16, 15]
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x3A01 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x3A01
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	

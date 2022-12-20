@@ -300,7 +300,13 @@ Hideout_EndingScene:
 		SETVAL 0x2 (CliveFernandCG)
 		TEXTMODE 1
 		BACG 0xFFFF
-		STAL 60
+        CALL $591F40
+        SOUN 0xD2
+        STAL 3
+        EARTHQUAKE_START 0x0
+        STAL 45
+        EARTHQUAKE_END
+		STAL 15
 		_0x1A22
 		TEXTSHOW DeliveranceHideout_CGText_1
 		TEXTEND

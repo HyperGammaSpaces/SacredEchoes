@@ -130,6 +130,31 @@ EnemyUnits:
 	UNIT Bandit_Sword Mercenary Jarth Level(10,Enemy,True) [1,9] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
 	UNIT Bandit_Sword Mercenary Jarth Level(11,Enemy,True) [5,9] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
 	UNIT
+	
+EnemyUnits_Hard:
+	// Upper Deck
+	UNIT Jarth Mercenary Jarth Level(13,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [SteelSword,IronShield,Item100G] NeverMoveAI 
+	UNIT Bandit_Bow Archer Jarth Level(10,Enemy,True) [4,0] 0x00 0x00 0x0 0x0 [SteelBow] NeverMoveAI
+	UNIT Bandit_Axe Pirate Jarth Level(12,Enemy,True) [3,1] 0x00 0x00 0x0 0x0 [HandAxe,IronShield] NeverMoveAI
+	UNIT Bandit_Axe Pirate Jarth Level(12,Enemy,True) [5,1] 0x00 0x00 0x0 0x0 [SteelAxe,HideShield] AttackInRangeAI
+	UNIT Bandit_Bow Archer_F Jarth Level(10,Enemy,True) [1,2] 0x00 0x00 0x0 0x0 [IronBow] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary Jarth Level(10,Enemy,True) [2,4] 0x00 0x00 0x0 0x0 [IronSword] AttackInRangeAI
+	UNIT Bandit_Axe Brigand Jarth Level(11,Enemy,True) [5,5] 0x00 0x00 0x0 0x0 [IronAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F Jarth Level(12,Enemy,True) [3,8] 0x00 0x00 0x0 0x0 [HandAxe,SteelAxe] NeverMoveAI
+	UNIT Bandit_Axe Pirate Jarth Level(12,Enemy,True) [4,8] 0x00 0x00 0x0 0x0 [HandAxe,HideShield] NeverMoveAI
+	UNIT Bandit_Bow Mage Jarth Level(10,Enemy,True) [4,4] 0x00 0x00 0x0 0x0 [Thunder] AttackInRangeAI
+
+	// Lower Deck
+	UNIT Bandit_Bow Archer Jarth Level(11,Enemy,True) [6,9] 0x00 0x00 0x0 0x0 [SteelBow] AttackInRangeAI
+	UNIT Bandit_Axe Soldier Jarth Level(10,Enemy,True) [5,14] 0x00 0x00 0x0 0x0 [Javelin] AttackInRangeAI
+	UNIT Bandit_Axe Soldier Jarth Level(10,Enemy,True) [4,15] 0x00 0x00 0x0 0x0 [Javelin,HideShield] NeverMoveAI
+	UNIT Bandit_Axe Pirate Jarth Level(11,Enemy,True) [3,14] 0x00 0x00 0x0 0x0 [IronAxe] DefaultAI
+	UNIT Bandit_Axe Pirate_F Jarth Level(10,Enemy,True) [2,14] DropItem 0x00 0x0 0x0 [HandAxe] DefaultAI
+	UNIT Bandit_Axe Pirate Jarth Level(10,Enemy,True) [3,13] 0x00 0x00 0x0 0x0 [SteelAxe] DefaultAI
+	UNIT Bandit_Bow Mage Jarth Level(10,Enemy,True) [5,12] 0x00 0x00 0x0 0x0 [Fire] DefaultAI
+	UNIT Bandit_Sword Mercenary Jarth Level(10,Enemy,True) [1,9] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary Jarth Level(11,Enemy,True) [5,9] 0x00 0x00 0x0 0x0 [IronSword] AttackInRangeAI
+	UNIT
 
 EnemyUnitsBoat2: 
 	UNIT SorcererBoss Shaman SorcererBoss Level(9,Enemy,False) [14,3] DropItem 0x00 0x0 0x00 [Miasma,Item100G] NeverMoveAI 
@@ -152,8 +177,13 @@ Ch2_6_BeginningScene:
 		LOAD3 0x0 PlayerUnits 
 		ENUN
 	#endif
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x206 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x206
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	
 	CHECK_ALIVE Genny
 	BEQ 0x100 0xC 0x0

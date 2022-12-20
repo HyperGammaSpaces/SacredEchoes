@@ -99,11 +99,28 @@ EnemyUnits:
 	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(7, Enemy, True) [7,17] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
 	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(5, Enemy, True) [14,23] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT
+    
+EnemyUnits_Hard:
+	UNIT Cantor_Gargs Cantor	Cantor_Gargs Level(6, Enemy, True) [5,4]	0x00 0x00 0x0 0x00 [Mire, Conjure] CantorAI
+	UNIT Boss_Monster Necrodragon	Boss_Monster Level(10, Enemy, True) [10,2]	DropItem 0x00 0x0 0x00 [HellFang,PrayerRing] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(7, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(7, Enemy, True) [10,13] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(7, Enemy, True) [1,14] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(7, Enemy, True) [7,17] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(5, Enemy, True) [14,23] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(5, Enemy, True) [25,6] 0x00 0x00 0x0 0x00 [HellFang] [0x00,0x12,0x04,0x00]
+	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(5, Enemy, True) [27,17] 0x00 0x00 0x0 0x00 [HellFang] [0x00,0x12,0x04,0x00]
+	UNIT
 
 Evt_BeginningScene:
 
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4C02 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4C02
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	CHECK_EVENTID gChapter4C2Completed
 	BNE 0x101 0xC 0x0
 	

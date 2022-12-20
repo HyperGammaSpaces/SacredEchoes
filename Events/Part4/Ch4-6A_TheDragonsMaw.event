@@ -19,19 +19,34 @@ Dummy_ThisChapter:
 
 Dummy_TurnBasedEvents:
     TurnEventPlayer(0x0,LoadFirstWave,4)
-    TurnEventPlayer(0x0,LoadHumans,5)
     TurnEventPlayer(0x0,LoadSecondWave,6)
     TurnEventPlayer(0x0,LoadThirdWave,8)
+    TurnEventPlayer(0x0,LoadHumans,10)
 	TURN
     
 LoadFirstWave:
-    ReinforcementEvent(WaveFirst)
-    ENDA    
+    CHECK_HARD
+    BEQ 0x46 rC r0
+    CAMERA_CENTERED [7,0]
+    STAL 20
+    LoadReinforcements(WaveFirst)
+    LABEL 0x46
+    NoFade
+    ENDA
+    
 LoadSecondWave:
-    ReinforcementEvent(WaveSecond)
-    ENDA    
+    CAMERA_CENTERED [15,2]
+    STAL 20
+    LoadReinforcements(WaveSecond)
+    NoFade
+    ENDA
+    
 LoadThirdWave:
+    CAMERA_CENTERED [0,10]
+    STAL 20
+    EVBIT_T 0x9
     LoadReinforcements(WaveThird)
+    EVBIT_F 0x9
     STAL 20
     CAMERA_CENTERED Boss_Monster
     STAL 20
@@ -41,9 +56,16 @@ LoadThirdWave:
     CHAI Boss_Monster
 	STAL 20
     NoFade
-    ENDA    
+    ENDA
+    
 LoadHumans:
-    ReinforcementEvent(HumanEnemies)
+    CHECK_HARD
+    BEQ 0x47 rC r0
+    CAMERA_CENTERED [27,0]
+    STAL 20
+    LoadReinforcements(HumanEnemies)
+    LABEL 0x47
+    NoFade
     ENDA
 
 Dummy_CharacterBasedEvents:
@@ -134,6 +156,17 @@ EnemyUnits:
 	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [FireFang] NoAI
 	UNIT
     
+EnemyUnits_Hard:
+	UNIT Boss_Monster Necrodragon	Boss_Monster Level(9, Enemy, True) [5,4]	DropItem 0x00 0x0 0x00 [HellFang, 0x9F] AttackInRangeAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [1,14] 0x00 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(6, Enemy, True) [1,7] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(6, Enemy, True) [10,5] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [15,5] 0x00 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [22,1] 0x00 0x00 0x0 0x00 [HellFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(6, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [FireFang] NoAI
+	UNIT
+    
 SkirmishEnemies:
 	UNIT Boss_Monster Necrodragon	Boss_Monster Level(9, Enemy, True) [5,4]	DropItem 0x00 0x0 0x00 [HellFang, 0xB9] AttackInRangeAI
 	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [1,14] RandomizePosition 0x00 0x0 0x00 [FireFang] NoAI
@@ -162,17 +195,22 @@ WaveThird:
     UNIT
     
 HumanEnemies:
-    UNIT Bandit_Strong Berserker 0x0 Level(4, Enemy, True) [27,0] 0x00 0x00 0x1 REDA27R0 [IronAxe,IronShield] [0x0,0x0,0xC,0x0]
-    UNIT Bandit_Axe Berserker Bandit_Strong Level(2, Enemy, True) [27,0] 0x00 0x00 0x1 REDA26R0 [BaseAxe] [0x0,0x0,0xC,0x0]
-    UNIT Bandit_Axe Berserker Bandit_Strong Level(2, Enemy, True) [27,0] 0x00 0x00 0x1 REDA28R0 [BaseAxe] [0x0,0x0,0xC,0x0]
+    UNIT Bandit_Strong Berserker 0x0 Level(4, Enemy, True) [27,0] 0x00 0x00 0x1 REDA27R0 [KillerAxe,IronShield] [0x0,0x0,0xC,0x0]
+    UNIT Bandit_Axe Berserker Bandit_Strong Level(2, Enemy, True) [27,0] 0x00 0x00 0x1 REDA26R0 [IronAxe] [0x0,0x0,0xC,0x0]
+    UNIT Bandit_Axe Berserker Bandit_Strong Level(2, Enemy, True) [27,0] 0x00 0x00 0x1 REDA28R0 [IronAxe] [0x0,0x0,0xC,0x0]
     UNIT Bandit_Sword Rogue Bandit_Strong Level(3, Enemy, True) [27,0] DropItem 0x00 0x1 REDA27R1 [Shadowblade] [0x0,0x0,0xC,0x0]
     UNIT
 
 Dummy_BeginningScene:
     WEA1 Weather_None
     MUSCSLOW SongID_Env_Lava
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4A06 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4A06
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
     CHECK_EVENTID gChapter4A6Completed
     BNE 0x202 0xC 0x0
         TILECHANGE 0x0

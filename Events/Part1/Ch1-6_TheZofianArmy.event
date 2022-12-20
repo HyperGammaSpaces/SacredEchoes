@@ -78,6 +78,17 @@ FernandJoins:
 	UNIT 0x2D Cavalier 0x00 Level(1, Ally, 1) [0,9] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
+EnemyUnits_Hard:
+	UNIT SoldierAlm6 Soldier	0x00 Level(11, Enemy, 1) [13,2]	0x00 0x00 0x0 0x00 [IronLance,Javelin] NeverMoveAI
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [11,2]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI 
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [14,3]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
+	UNIT Zofia_Merc Mercenary	SoldierAlm6 Level(3, Enemy, 1) [11,4]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI  
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(7, Enemy, 1) [13,5]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI  
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(7, Enemy, 1) [11,6]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Zofia_Archer Archer_F	SoldierAlm6 Level(7, Enemy, 1) [9,6]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT
+    
 EnemyUnits:
 	UNIT SoldierAlm6 Soldier	0x00 Level(11, Enemy, 1) [13,2]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
 	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [11,2]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
@@ -100,8 +111,13 @@ Ch1_6_BeginningScene:
 	MUSC SongID_Advance
 	LOAD2 0x1 BeginningCutsceneUnits
 	ENUN
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x106 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x106
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	CAMERA_CENTERED [9,8]
 
 	SetBackground(0x1B)

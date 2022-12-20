@@ -153,6 +153,19 @@ EnemyUnits:
 	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [DumasLance] MonsterAI
 	UNIT
     
+EnemyUnits_Hard:
+	UNIT Jedah_Ch4 Necromancer	Jedah_Ch4 Level(15, Enemy, False) [18,5]	DropItem 0x00 0x0 0x00 [Thanatos, Dracoshield] AttackInRangeAI
+	UNIT MogallBoss Mogall Jedah_Ch4 Level(20, Enemy, True) [11,1] 0x00 0x00 0x0 0x00 [Tackle_Mogall,EvilEye, DivideAbility] MogallAI
+	UNIT 0xB3 Kerberos Jedah_Ch4 Level(5, Enemy, True) [7,1] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB3 Kerberos Jedah_Ch4 Level(5, Enemy, True) [4,0] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB3 Necrodragon Jedah_Ch4 Level(5, Enemy, True) [21,1] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [15,4] 0x00 0x00 0x0 0x00 [Ridersbane] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(10, Enemy, True) [12,4] 0x00 0x00 0x0 0x00 [HeavySpear] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [6,3] 0x00 0x00 0x0 0x00 [Javelin] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [7,6] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
+	UNIT 0xB3 Fiend Jedah_Ch4 Level(7, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [DumasLance] MonsterAI
+	UNIT
+    
 
 Evt_BeginningScene:
 	
@@ -244,8 +257,13 @@ Evt_BeginningScene:
 	
 	CLEA 0x0
 	CLEE 0x0
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4C05 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4C05
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	GotoPrepScreen

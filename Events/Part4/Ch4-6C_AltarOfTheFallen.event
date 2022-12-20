@@ -282,36 +282,107 @@ AfterTopLeft:
     SVAL 0xB Coords(3,14)
     CALL WarpOutFromThrone
     CheckIfRoomsCleared(0xB)
+    CHECK_INAREA Celica [2,14] [2,3]
+    BNE 0x800 r0 rC
+    CHECK_INAREA Conrad [2,14] [2,3]
+    BNE 0x800 r0 rC
+    GOTO 0x801
+        LABEL 0x800
+        STAL 20
+        SOUN 0xB1
+        TILEREVERSE Tilechange_TopLeftDoor
+        STAL 20
+    LABEL 0x801
     NoFade
     ENDA
+    
 AfterMidLeft:
     SVAL 0xB Coords(2,19)
     CALL WarpOutFromThrone
     CheckIfRoomsCleared(0xB)
+    CHECK_INAREA Celica [1,19] [2,3]
+    BNE 0x802 r0 rC
+    CHECK_INAREA Conrad [1,19] [2,3]
+    BNE 0x802 r0 rC
+    GOTO 0x803
+        LABEL 0x802
+        STAL 20
+        SOUN 0xB1
+        TILEREVERSE Tilechange_MidLeftDoor
+        STAL 20
+    LABEL 0x803
     NoFade
     ENDA
+    
 AfterBottomLeft:
     SVAL 0xB Coords(4,24)
     CALL WarpOutFromThrone
     CheckIfRoomsCleared(0xB)
+    CHECK_INAREA Celica [3,24] [2,3]
+    BNE 0x804 r0 rC
+    CHECK_INAREA Conrad [3,24] [2,3]
+    BNE 0x804 r0 rC
+    GOTO 0x805
+        LABEL 0x804
+        STAL 20
+        SOUN 0xB1
+        TILEREVERSE Tilechange_BottomLeftDoor
+        STAL 20
+    LABEL 0x805
     NoFade
     ENDA
+    
 AfterTopRight:
     SVAL 0xB Coords(15,14)
     CALL WarpOutFromThrone
     CheckIfRoomsCleared(0xB)
+    CHECK_INAREA Celica [14,14] [2,3]
+    BNE 0x806 r0 rC
+    CHECK_INAREA Conrad [14,14] [2,3]
+    BNE 0x806 r0 rC
+    GOTO 0x807
+        LABEL 0x806
+        STAL 20
+        SOUN 0xB1
+        TILEREVERSE Tilechange_TopRightDoor
+        STAL 20
+    LABEL 0x807
     NoFade
     ENDA
+    
 AfterMidRight:
     SVAL 0xB Coords(16,19)
     CALL WarpOutFromThrone
     CheckIfRoomsCleared(0xB)
+    CHECK_INAREA Celica [15,19] [2,3]
+    BNE 0x808 r0 rC
+    CHECK_INAREA Conrad [15,19] [2,3]
+    BNE 0x808 r0 rC
+    GOTO 0x809
+        LABEL 0x808
+        STAL 20
+        SOUN 0xB1
+        TILEREVERSE Tilechange_MidRightDoor
+        STAL 20
+    LABEL 0x809
     NoFade
     ENDA
+    
 AfterBottomRight:
     SVAL 0xB Coords(14,24)
     CALL WarpOutFromThrone
     CheckIfRoomsCleared(0xB)
+    CHECK_INAREA Celica [13,24] [2,3]
+    BNE 0x80A r0 rC
+    CHECK_INAREA Conrad [13,24] [2,3]
+    BNE 0x80A r0 rC
+    GOTO 0x80B
+        LABEL 0x80A
+        STAL 20
+        SOUN 0xB1
+        TILEREVERSE Tilechange_BottomRightDoor
+        STAL 20
+    LABEL 0x80B
     NoFade
     ENDA
 
@@ -321,120 +392,54 @@ AfterBottomRight:
 
 BottomRightRoomReinforcementEvent:
     CHECK_EVENTID 0x11
-    BNE 0x800 rC r0
+    BNE 0x60B rC r0
         WarpInReinforcementsAt(BottomRightSpawns,14,24)
         ENUF 0x17
-        GOTO 0x60B
-    LABEL 0x800
-    CHECK_INAREA Celica [13,24] [2,3]
-    BNE 0x60A r0 rC
-    CHECK_INAREA Conrad [13,24] [2,3]
-    BNE 0x60A r0 rC
-    GOTO 0x60B
-        LABEL 0x60A
-        SOUN 0xB1
-        TILEREVERSE Tilechange_BottomRightDoor
-        STAL 20
     LABEL 0x60B
     NoFade
     ENDA    
     
 BottomLeftRoomReinforcementEvent:
     CHECK_EVENTID 0xE
-    BNE 0x801 rC r0
+    BNE 0x605 rC r0
         WarpInReinforcementsAt(BottomLeftSpawns,4,24)
         ENUF 0x14
-        GOTO 0x605
-    LABEL 0x801
-    CHECK_INAREA Celica [3,24] [2,3]
-    BNE 0x604 r0 rC
-    CHECK_INAREA Conrad [3,24] [2,3]
-    BNE 0x604 r0 rC
-    GOTO 0x605
-        LABEL 0x604
-        SOUN 0xB1
-        TILEREVERSE Tilechange_BottomLeftDoor
-        STAL 20
     LABEL 0x605
     NoFade
     ENDA
      
 MidRightRoomReinforcementEvent:
     CHECK_EVENTID 0x10
-    BNE 0x802 rC r0
+    BNE 0x609 rC r0
         WarpInReinforcementsAt(MidRightSpawns,16,19)
         ENUF 0x16
-        GOTO 0x609
-    LABEL 0x802
-    CHECK_INAREA Celica [15,19] [2,3]
-    BNE 0x608 r0 rC
-    CHECK_INAREA Conrad [15,19] [2,3]
-    BNE 0x608 r0 rC
-    GOTO 0x609
-        LABEL 0x608
-        SOUN 0xB1
-        TILEREVERSE Tilechange_MidRightDoor
-        STAL 20
     LABEL 0x609
     NoFade
     ENDA    
     
 MidLeftRoomReinforcementEvent:
     CHECK_EVENTID 0xD
-    BNE 0x803 rC r0
+    BNE 0x603 rC r0
         WarpInReinforcementsAt(MidLeftSpawns,2,19)
         ENUF 0x13
-        GOTO 0x603
-    LABEL 0x803
-    CHECK_INAREA Celica [1,19] [2,3]
-    BNE 0x602 r0 rC
-    CHECK_INAREA Conrad [1,19] [2,3]
-    BNE 0x602 r0 rC
-    GOTO 0x603
-        LABEL 0x602
-        SOUN 0xB1
-        TILEREVERSE Tilechange_MidLeftDoor
-        STAL 20
     LABEL 0x603
     NoFade
     ENDA
       
 TopRightRoomReinforcementEvent:
     CHECK_EVENTID 0xF
-    BNE 0x804 rC r0
+    BNE 0x607 rC r0
         WarpInReinforcementsAt(TopRightSpawns,15,14)
         ENUF 0x15
-        GOTO 0x607
-    LABEL 0x804
-    CHECK_INAREA Celica [14,14] [2,3]
-    BNE 0x606 r0 rC
-    CHECK_INAREA Conrad [14,14] [2,3]
-    BNE 0x606 r0 rC
-    GOTO 0x607
-        LABEL 0x606
-        SOUN 0xB1
-        TILEREVERSE Tilechange_TopRightDoor
-        STAL 20
     LABEL 0x607
     NoFade
     ENDA    
     
 TopLeftRoomReinforcementEvent:
     CHECK_EVENTID 0xC
-    BNE 0x805 rC r0
+    BNE 0x601 rC r0
         WarpInReinforcementsAt(TopLeftSpawns,3,14)
         ENUF 0x12
-        GOTO 0x601
-    LABEL 0x805
-    CHECK_INAREA Celica [2,14] [2,3]
-    BNE 0x600 r0 rC
-    CHECK_INAREA Conrad [2,14] [2,3]
-    BNE 0x600 r0 rC
-    GOTO 0x601
-        LABEL 0x600
-        SOUN 0xB1
-        TILEREVERSE Tilechange_TopLeftDoor
-        STAL 20
     LABEL 0x601
     NoFade
     ENDA
@@ -693,6 +698,35 @@ EnemyUnits:
 	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [13,25] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [15,25] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT
+    	
+EnemyUnits_Hard:
+	UNIT Jedah_Ch4 Necromancer	Jedah_Ch4 Level(15, Enemy, False) [9,5]	0x00 0x00 0x0 0x0 [Thanatos] AttackInRangeAI
+    //three guys per room. strongest on throne tile with nevermoveAI.
+    //top left
+	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(7, Enemy, True) [3,14] DropItem 0x00 0x0 0x00 [DumasLance,Saunion] NeverMoveAI
+	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [2,15] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
+	UNIT Terror_Fiend Fiend Jedah_Ch4 Level(3, Enemy, True) [4,15] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
+    //top right
+	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(7, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [KillerAxe,HandAxe] NeverMoveAI
+	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [14,15] 0x00 0x00 0x0 0x00 [SteelAxe] MonsterAI
+	UNIT Terror_Cyclops Cyclops Jedah_Ch4 Level(3, Enemy, True) [16,15] 0x00 0x00 0x0 0x00 [SteelAxe] MonsterAI
+    //mid left
+	UNIT Terror_Wight DreadFighter Jedah_Ch4 Level(6, Enemy, True) [2,19] 0x00 0x00 0x0 0x00 [SilverSword,Thunderblade] NeverMoveAI
+	UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [1,20] 0x00 0x00 0x0 0x00 [BraveSword] MonsterAI
+	UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [3,20] DropItem 0x00 0x0 0x00 [Ladyblade] MonsterAI
+    //mid right
+	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(8, Enemy, True) [16,19] DropItem 0x00 0x0 0x00 [SilverLance,Gradivus] NeverMoveAI
+	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [15,20] 0x00 0x00 0x0 0x00 [Saunion] MonsterAI
+	UNIT Terror_Deathgoyle Deathgoyle Jedah_Ch4 Level(3, Enemy, True) [17,20] 0x00 0x00 0x0 0x00 [Rhomphaia] MonsterAI
+    //bottom left
+	UNIT Terror_Necrodragon WhiteDragon Jedah_Ch4 Level(3, Enemy, False) [4,24] 0x00 0x00 0x0 0x00 [HellFang] NeverMoveAI
+	UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(5, Enemy, False) [3,25] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Jedah_Ch4 Level(5, Enemy, False) [5,25] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+    //bottom right
+	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(9, Enemy, False) [14,24] 0x00 0x00 0x0 0x00 [HellFang] NeverMoveAI
+	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [13,25] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [15,25] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
+	UNIT
     
 Reinforcements_Stairs:
     UNIT 0xB8 ArchMogall Jedah_Ch4 Level(8, Enemy, True) [9,13] 0x00 0x00 0x1 REDA8R15 [Tackle_Mogall, EvilEye] MonsterAI
@@ -734,8 +768,8 @@ Evt_BeginningScene:
         CHECK_EVENTID gChapter4A6Completed
         BNE 0x500 rC r0
             
-            SetBackground(BlackBackground, 5)
             EVBIT_MODIFY 0x4
+            SetBackground(BlackBackground)
             CALL $591F40
             STAL 20
             CenterTextbox(DumaTower_AlmRouteOpen)
@@ -770,8 +804,13 @@ Evt_BeginningScene:
             
         LABEL 0x501
         //end dragons maw stuff
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4C06 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4C06
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
     EVBIT_MODIFY 0x1

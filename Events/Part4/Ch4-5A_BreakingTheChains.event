@@ -21,6 +21,7 @@ Ch4A5_TurnBasedEvents:
     TurnEventEnemy(0x11,ZekeTurnsBlue,0,256)
     TurnEventPlayer(0x0,IfTatianaThenBandits,3)
     TurnEventPlayer(0x0,LoadSouthwest,5)
+    TurnEventPlayer(0x0,LoadNormalMode,6)
     TurnEventPlayer(0x0,LoadNortheast,7)
 	TURN
     
@@ -33,11 +34,27 @@ IfTatianaThenBandits:
     ENDA
     
 LoadSouthwest:
-    ReinforcementEvent(ReinforcementsSW)
+    CHECK_HARD
+    BEQ 0x44 rC r0
+    LoadReinforcements(ReinforcementsSW)
+    LABEL 0x44
+    NoFade
+    ENDA
+    
+LoadNormalMode:
+    CHECK_HARD
+    BNE 0x45 rC r0
+    LoadReinforcements(ReinforcementsNormal)
+    LABEL 0x45
+    NoFade
     ENDA
     
 LoadNortheast:
-    ReinforcementEvent(ReinforcementsNE)
+    CHECK_HARD
+    BEQ 0x46 rC r0
+    LoadReinforcements(ReinforcementsNE)
+    LABEL 0x46
+    NoFade
     ENDA
 
 Ch4A5_CharacterBasedEvents:
@@ -286,6 +303,31 @@ EnemyUnits:
 	
 	UNIT
     
+EnemyUnits_Hard:
+	UNIT JeromeCh4_5 GoldKnight	JeromeCh4_5 Level(9, Enemy, True) [10,5]	0x00 0x00 0x0 0x00 [SilverLance,Javelin] NeverMoveAI
+	UNIT Rigel_Soldier Baron JeromeCh4_5 Level(2, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelLance] [0x3,0x3,0xC,0x20]
+	UNIT Rigel_Soldier Baron JeromeCh4_5 Level(2, Enemy, True) [10,8] 0x00 0x00 0x0 0x00 [SteelAxe] [0x3,0x3,0xC,0x20]
+	UNIT Rigel_Mage Sage JeromeCh4_5 Level(8, Enemy, True) [9,7] 0x00 0x00 0x0 0x00 [Thunder] [0x3,0x3,0xC,0x20]
+	UNIT Rigel_Archer Sniper JeromeCh4_5 Level(12, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [RadiantBow] [0x3,0x3,0xC,0x20]
+	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(4, Enemy, True) [12,7] 0x00 0x00 0x0 0x00 [Mire,Physic] [0xE,0x3,0x4,0x20]
+	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(4, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [Selene,Physic] [0xE,0x3,0x4,0x20]
+    //bridge
+	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(2, Enemy, True) [4,13] 0x00 0x00 0x0 0x00 [SteelBow] [0x3,0x3,0x4,0x20]
+	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(2, Enemy, True) [9,13] 0x00 0x00 0x0 0x00 [SteelBow] [0x3,0x3,0x4,0x20]
+    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [6,14] DropItem 0x00 0x0 0x00 [HeavySpear] [0x0,0x0,0xC,0x0]
+    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [7,14] 0x00 0x00 0x0 0x00 [Halberd,HandAxe] [0x0,0x0,0xC,0x0]
+    
+    //further out
+    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [Hammer] [0x0,0x0,0xC,0x0]
+    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [20,15] 0x00 0x00 0x0 0x00 [Halberd] [0x0,0x0,0xC,0x0]
+    UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [12,11] DropItem 0x00 0x0 0x00 [Zweihander] [0x0,0x3,0xC,0x0]
+    
+    UNIT Rigel_Soldier GoldKnight JeromeCh4_5 Level(2, Enemy, True) [2,9] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0,0x12,0xC,0x0]
+	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [3,7] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
+	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [1,11] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
+	
+	UNIT
+    
 MoreEnemies:
 	UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [11,2] 0x00 0x00 0x0 0x00 [IronAxe] [0x0,0x12,0xC,0x0]
     UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [15,2] 0x00 0x00 0x0 0x00 [SteelSword] [0x0,0x0,0xC,0x0]
@@ -347,6 +389,11 @@ BanditReinforcements:
 ReinforcementsSW:
     UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [0,21] 0x00 0x00 0x1 REDA0R20 [IronAxe] [0x0,0x0,0xC,0x0]
     UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [0,21] 0x00 0x00 0x1 REDA1R21 [IronAxe] [0x0,0x0,0xC,0x0]
+    UNIT    
+        
+ReinforcementsNormal:
+    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [23,0] 0x00 0x00 0x1 REDA22R0 [IronAxe] [0x0,0x0,0xC,0x0]
+    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [23,0] 0x00 0x00 0x1 REDA23R1 [IronAxe] [0x0,0x0,0xC,0x0]
     UNIT    
     
 ReinforcementsNE:
@@ -412,8 +459,13 @@ Ch4A5_BeginningScene:
 	CLEA 0x0
 	CLEE 0x0
 	CLEN 0x0
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4A05 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4A05
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	CHECK_EVENTID gTatianaRecruited

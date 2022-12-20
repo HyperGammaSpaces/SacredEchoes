@@ -19,10 +19,10 @@ Ch4A7_ThisChapter:
 
 Ch4A7_TurnBasedEvents:
     TurnEventPlayer(0x0,NorthSpawn,3)
-    TurnEventPlayer(0x0,SWSpawn,5)
-	TurnEventPlayer(0x0,NESpawn,8)
-    TurnEventPlayer(0x0,SESpawn,11)
-	TurnEventPlayer(0x0,NWSpawn,13)
+    TurnEventPlayer(0x0,SWSpawn,6)
+	TurnEventPlayer(0x0,NESpawn,9)
+    TurnEventPlayer(0x0,SESpawn,12)
+	TurnEventPlayer(0x0,NWSpawn,14)
 	TURN
     
 NorthSpawn:
@@ -46,11 +46,23 @@ NWSpawn:
     EVBIT_T 0x7
     ENDA
 NESpawn:
-	ReinforcementEvent(ReinforcementsNE)
+    CHECK_HARD
+    BEQ 0x404 rC r0
+	LoadReinforcements(ReinforcementsNE)
+    LABEL 0x404
+    NoFade
+    ENDA
+    
 SWSpawn:
 	ReinforcementEvent(ReinforcementsSW)
+    
 SESpawn:
-	ReinforcementEvent(ReinforcementsSE)
+    CHECK_HARD
+    BEQ 0x405 rC r0
+	LoadReinforcements(ReinforcementsSE)
+    LABEL 0x405
+    NoFade
+    ENDA
 
 Ch4A7_CharacterBasedEvents:
 	CHAR
@@ -188,7 +200,7 @@ LoadHestia:
     UNIT
 
 EnemyUnits:
-	UNIT MagnusCh4_7 Baron	MagnusCh4_7 Level(15, Enemy, True) [6,1]	0x00 0x00 0x0 0x00 [SilverLance] NeverMoveAI
+	UNIT MagnusCh4_7 Baron	MagnusCh4_7 Level(15, Enemy, True) [6,1]	0x00 0x00 0x0 0x00 [SilverLance,HandAxe] NeverMoveAI
     UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [4,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
     UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [5,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
     //hestia pals
@@ -218,7 +230,6 @@ EnemyUnits:
     UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
     UNIT Rigel_Archer BowKnight MagnusCh4_7 Level(4, Enemy, True) [13,4] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
     UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Miasma] [0x3,0x3,0x8,0x20]
-    UNIT Rigel_Soldier Knight MagnusCh4_7 Level(12, Enemy, True) [16,26] 0x00 0x00 0x0 0x00 [BaseAxe,HandAxe] [0x3,0x3,0x8,0x20]
     UNIT Rigel_Archer Sniper MagnusCh4_7 Level(9, Enemy, True) [26,6] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
     UNIT Rigel_Cav Paladin MagnusCh4_7 Level(16, Enemy, True) [22,10] 0x00 0x00 0x0 0x00 [IronLance] NoAI
     UNIT Rigel_Cav Paladin MagnusCh4_7 Level(16, Enemy, True) [28,11] 0x00 0x00 0x0 0x00 [IronLance] NoAI
@@ -226,6 +237,46 @@ EnemyUnits:
     UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(14, Enemy, True) [22,18] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
     UNIT Rigel_Merc Myrmidon MagnusCh4_7 Level(8, Enemy, True) [26,19] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
     UNIT Rigel_Merc DreadFighter MagnusCh4_7 Level(5, Enemy, True) [22,2] 0x00 0x00 0x0 0x00 [BaseSword] ChaseOnceApproachedAI
+	UNIT
+
+EnemyUnits_Hard:
+	UNIT MagnusCh4_7 Baron	MagnusCh4_7 Level(15, Enemy, True) [6,1]	0x00 0x00 0x0 0x00 [SilverLance,Pugi] NeverMoveAI
+    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [4,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [5,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    //hestia pals
+	UNIT Rigel_Soldier Baron MagnusCh4_7 Level(4, Enemy, True) [4,11] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Soldier Baron MagnusCh4_7 Level(4, Enemy, True) [6,11] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+    UNIT Rigel_Merc Myrmidon MagnusCh4_7 Level(4, Enemy, True) [5,12] 0x00 0x00 0x0 0x00 [Zweihander,SteelShield] AttackInRangeAI
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(4, Enemy, True) [2,10] 0x00 0x00 0x0 0x00 [SteelAxe] DelayedRushAI
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(4, Enemy, True) [8,10] 0x00 0x00 0x0 0x00 [SteelAxe] DelayedRushAI
+    //cliffs
+    UNIT Rigel_Archer Fleet MagnusCh4_7 Level(14, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [BallistaWeapon] [0x3,0x3,0x0,0x20]
+    UNIT Rigel_Archer Fleet MagnusCh4_7 Level(14, Enemy, True) [18,11] 0x00 0x00 0x0 0x00 [BallistaWeapon] [0x3,0x3,0x0,0x20]
+    UNIT Rigel_Archer Sniper MagnusCh4_7 Level(4, Enemy, True) [10,16] 0x00 0x00 0x0 0x00 [SilverBow] NoAI
+    UNIT Rigel_Cav GoldKnight MagnusCh4_7 Level(4, Enemy, True) [11,17] 0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
+    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(14, Enemy, True) [9,17] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(10, Enemy, True) [14,21] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(10, Enemy, True) [12,19] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+    UNIT Rigel_Archer BowKnight MagnusCh4_7 Level(4, Enemy, True) [2,18] 0x00 0x00 0x0 0x00 [SteelBow] [0x3,0x3,0x0,0x20]
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(12, Enemy, True) [1,19] 0x00 0x00 0x0 0x00 [Swordreaver] [0x3,0x3,0x8,0x20]
+    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(14, Enemy, True) [3,19] 0x00 0x00 0x0 0x00 [Ridersbane,Javelin] [0x3,0x3,0x8,0x20]
+    //bridge
+    UNIT Rigel_Archer Sniper MagnusCh4_7 Level(9, Enemy, True) [18,26] 0x00 0x00 0x0 0x00 [KillerBow] [0x3,0x3,0x8,0x20]
+    UNIT Rigel_Soldier Knight MagnusCh4_7 Level(12, Enemy, True) [16,26] 0x00 0x00 0x0 0x00 [KillerAxe] [0x3,0x3,0x8,0x20]
+    UNIT Rigel_Soldier Knight MagnusCh4_7 Level(12, Enemy, True) [19,26] 0x00 0x00 0x0 0x00 [KillerLance] [0x3,0x3,0x0,0x20]
+    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [17,26] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0xF,0x3,0x0,0x20]
+    //right side
+    UNIT Rigel_Cav GoldKnight MagnusCh4_7 Level(4, Enemy, True) [15,4] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight MagnusCh4_7 Level(4, Enemy, True) [13,4] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+    UNIT Rigel_Mage Arcanist MagnusCh4_7 Level(4, Enemy, True) [19,6] 0x00 0x00 0x0 0x00 [Miasma] [0x3,0x3,0x8,0x20]
+    UNIT Rigel_Archer Sniper MagnusCh4_7 Level(9, Enemy, True) [26,6] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(16, Enemy, True) [22,10] 0x00 0x00 0x0 0x00 [Axereaver] NoAI
+    UNIT Rigel_Cav Paladin MagnusCh4_7 Level(16, Enemy, True) [28,11] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+    UNIT Rigel_Soldier Berserker MagnusCh4_7 Level(6, Enemy, True) [27,11] 0x00 0x00 0x0 0x00 [HandAxe] [0x0,0x3,0x8,0x0]
+    UNIT Rigel_Wyvern WyvernLord MagnusCh4_7 Level(14, Enemy, True) [22,18] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+    UNIT Rigel_Merc Myrmidon MagnusCh4_7 Level(8, Enemy, True) [26,19] 0x00 0x00 0x0 0x00 [Ilwoon] NoAI
+    UNIT Rigel_Merc DreadFighter MagnusCh4_7 Level(5, Enemy, True) [22,2] 0x00 0x00 0x0 0x00 [SteelSword] ChaseOnceApproachedAI
 	UNIT
     
 ReinforcementsNorth:
@@ -276,8 +327,13 @@ ReinforcementsSE:
 
 Ch4A7_BeginningScene:
     MUSC SongID_Env_WindBirds
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4A07 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4A07
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
     CAMERA_CENTERED MagnusCh4_7
     FADU 2
     //hestia warps in

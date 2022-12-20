@@ -19,7 +19,16 @@ Evt_ThisChapter:
 
 Evt_TurnBasedEvents:
     TURN 0x0 WyvernCharge [4,0] 0x0
+    TurnEventPlayer(0x0,LoadHardFliers,5,(256-5))
 	TURN
+
+LoadHardFliers:
+    CHECK_HARD
+    BEQ 0x105 rC r0
+        LoadReinforcements(WyvernReinforcements)
+    LABEL 0x105
+    NoFade
+    ENDA
 
 Evt_CharacterBasedEvents:
 	CHAR
@@ -89,7 +98,7 @@ CutsceneUnits_Ending:
 
 EnemyUnits:
 	UNIT Garcia Cantor	Garcia Level(10, Enemy, False) [16,5]	0x00 0x00 0x0 0x00 [Mire, Conjure] CantorAI
-	UNIT Cantor_Gargs Cantor	Garcia Level(8, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0E,0x03]
+	UNIT Rigel_Mage Arcanist	Garcia Level(8, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0E,0x03]
 	UNIT Rigel_Archer Sniper Garcia Level(4, Enemy, True) [15,3] DropItem 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
 	UNIT Rigel_Archer Sniper Garcia Level(4, Enemy, True) [18,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	UNIT Rigel_Mage Arcanist	Garcia Level(8, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
@@ -103,6 +112,30 @@ EnemyUnits:
 	UNIT Rigel_Merc Myrmidon	Garcia Level(7, Enemy, True) [12,10]	0x00 0x00 0x0 0x00 [IronSword] NoAI
 	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [3,0]	0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [2,1]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT
+
+EnemyUnits_Hard:
+	UNIT Garcia Cantor	Garcia Level(10, Enemy, False) [16,5]	0x00 0x00 0x0 0x00 [Mire, Conjure] CantorAI
+	UNIT Rigel_Mage Arcanist	Garcia Level(8, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0E,0x03]
+	UNIT Rigel_Archer Sniper Garcia Level(4, Enemy, True) [15,3] DropItem 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper Garcia Level(4, Enemy, True) [18,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist	Garcia Level(8, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	
+	UNIT Cantor_Gargs Cantor	Garcia Level(6, Enemy, True) [19,17]	0x00 0x00 0x0 0x00 [Mire, Conjure] CantorAI
+	UNIT DumaFaith_Witch Witch	Garcia Level(8, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Aura] NoAI
+	UNIT DumaFaith_Witch Witch	Garcia Level(8, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
+	UNIT Rigel_Mage Arcanist	Garcia Level(4, Enemy, True) [15,7]	0x00 0x00 0x0 0x00 [Mire] NoAI
+	UNIT Rigel_Mage Arcanist	Garcia Level(6, Enemy, True) [13,6]	0x00 0x00 0x0 0x00 [Miasma] NoAI
+	UNIT Rigel_Merc DreadFighter	Garcia Level(2, Enemy, True) [18,12]	0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Rigel_Merc Myrmidon	Garcia Level(7, Enemy, True) [11,9]	0x00 0x00 0x0 0x00 [Zweihander] NoAI
+	UNIT Rigel_Merc Myrmidon	Garcia Level(7, Enemy, True) [12,10]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [3,0]	0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [2,1]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [20,11]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT
+    
+WyvernReinforcements:
+	UNIT Rigel_Wyvern WyvernLord	Garcia Level(7, Enemy, True) [2,0]	0x00 0x00 0x0 0x00 [SteelAxe] NoAI
 	UNIT
 
 WyvernCharge:
@@ -137,8 +170,13 @@ Evt_BeginningScene:
 	CLEA 0x0
 	CLEN 0x0
 	
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4C01 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4C01
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	LOAD3 0x0 PlayerPlacement 
 	ENUN
 	GotoPrepScreen

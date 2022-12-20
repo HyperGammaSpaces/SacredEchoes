@@ -82,7 +82,9 @@ DesaixCommand:
 	MapText(Ch3_4A_DesaixText2)
 	STAL 20
 	MUNO
-	//ReinforcementEvent(DesaixCommandUnits)
+    CHECK_HARD
+    BEQ 0x666 rC r0
+	LoadReinforcements(DesaixCommandUnits)
     LABEL 0x666
 	NoFade
 	ENDA
@@ -179,6 +181,56 @@ EnemyUnits:
 	UNIT Remnant_Soldier Soldier	Desaix Level(14, Enemy, True) [16,6]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
 	UNIT
 
+EnemyUnits_Hard:
+	UNIT Desaix Baron 0x0 Level(5, Enemy, False) [9,2] 0x00 0x00 0x0 0x00 [Zanbato,Javelin] NeverMoveAI
+	UNIT CantorBoss_Bonewalkers Cantor Desaix Level(7, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma, Conjure] CantorAI
+	
+	// Cell guard knight
+	UNIT Rigel_Soldier Knight	Desaix Level(5, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] NeverMoveAI
+
+	// Outside Witch
+	UNIT Rigel_Witch Witch	Desaix Level(4, Enemy, True) [17,20]	0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
+	
+	// Main gate guard
+	UNIT Rigel_Soldier Soldier	Desaix Level(13, Enemy, True) [8,13]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Desaix Level(6, Enemy, True) [9,13]	DropItem 0x00 0x0 0x00 [Hammer] AttackInRangeAI
+	UNIT Rigel_Soldier Soldier	Desaix Level(14, Enemy, True) [10,13]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+
+	// Main gate behind
+	UNIT Rigel_Archer Archer Desaix Level(13, Enemy, True) [8,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper Desaix Level(7, Enemy, True) [9,11]	DropItem 0x00 0x0 0x00 [SteelBow,Elixir] [0x00,0x03,0x04,0x00]
+	UNIT Rigel_Archer Archer Desaix Level(13, Enemy, True) [10,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT Rigel_Mage Mage	Desaix Level(8, Enemy, True) [13,10]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	Desaix Level(9, Enemy, True) [15,11]	DropItem 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
+
+	// Throne room
+	UNIT Rigel_Mage Shaman	Desaix Level(12, Enemy, True) [4,1]	0x00 0x00 0x0 0x00 [Miasma,Heal] [0x0E,0x06]
+	UNIT Rigel_Mage Shaman	Desaix Level(12, Enemy, True) [14,1]	0x00 0x00 0x0 0x00 [Miasma,Heal] [0x0E,0x06]
+	UNIT Rigel_Archer Archer	Desaix Level(13, Enemy, True) [7,3]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer Archer	Desaix Level(13, Enemy, True) [11,3]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Remnant_Soldier Soldier	Desaix Level(18, Enemy, True) [3,4]	0x00 0x00 0x0 0x00 [Ridersbane,IronShield] AttackInRangeAI
+	UNIT Remnant_Soldier Soldier	Desaix Level(16, Enemy, True) [4,4]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT Rigel_Witch Arcanist	Desaix Level(1, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [Physic,Sisyphus] [0x0E,0x03,0x0,0x20]
+	UNIT Rigel_Witch Arcanist	Desaix Level(1, Enemy, True) [5,2]	0x00 0x00 0x0 0x00 [Physic,Sisyphus] [0x0E,0x03,0x0,0x20]
+
+	// Left hall
+	UNIT Rigel_Archer Archer	Desaix Level(12, Enemy, True) [18,9]	0x00 0x00 0x0 0x00 [IronBow] NoAI
+	UNIT Rigel_Archer Archer	Desaix Level(14, Enemy, True) [18,3]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Rigel_Soldier Soldier	Desaix Level(13, Enemy, True) [3,11]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Desaix Level(5, Enemy, True) [1,10]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Desaix Level(6, Enemy, True) [1,11]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Soldier	Desaix Level(13, Enemy, True) [1,6]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	Desaix Level(12, Enemy, True) [0,7]	DropItem 0x00 0x0 0x00 [Zanbato] NoAI
+	UNIT Rigel_Mage Shaman	Desaix Level(10, Enemy, True) [3,5]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+
+	// Right hall
+	UNIT Rigel_Archer Archer	Desaix Level(12, Enemy, True) [0,9]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Desaix Level(6, Enemy, True) [17,10]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Desaix Level(5, Enemy, True) [17,11]	0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Remnant_Soldier Soldier	Desaix Level(11, Enemy, True) [16,5]	0x00 0x00 0x0 0x00 [IronLance,HideShield] AttackInRangeAI
+	UNIT Remnant_Soldier Soldier	Desaix Level(14, Enemy, True) [16,6]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT
+
 	
 ThiefReinforcement:
 	UNIT TreasureHunter Thief Desaix Level(10,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [BaseSword, Lockpick] LootingThiefAI
@@ -198,6 +250,11 @@ CavReinforcementLeft:
 SniperReinforcement:
 	UNIT Rigel_Archer Sniper Desaix Level(6, Enemy, True) [4,2]	0x00 0x00 1 REDA4R2 [SteelBow] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Archer Sniper Desaix Level(6, Enemy, True) [14,2]	0x00 0x00 1 REDA14R2 [SteelBow] [0x0,0x12,0x0,0x0]
+	UNIT
+	
+DesaixCommandUnits:
+	UNIT Remnant_Cav Cavalier Desaix Level(11, Enemy, True) [0,6]	0x00 0x00 1 REDA0R6 [SteelLance] NoAI
+	UNIT Remnant_Cav Cavalier Desaix Level(11, Enemy, True) [18,6]	DropItem 0x00 1 REDA18R6 [HeavySpear] [0x0,0x12,0x0,0x0]
 	UNIT
 	
 CutsceneFernand:
@@ -251,8 +308,13 @@ Ch3_4A_BeginningScene:
 	STAL 40
 	LOAD2 0x1 CutsceneAllies
 	ENUN
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x3A04 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x3A04
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	FADU 2
 
 	//Then load Desaix and set BG to 0xE

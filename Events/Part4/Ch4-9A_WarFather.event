@@ -23,7 +23,7 @@ Ch4A9_TurnBasedEvents:
     TurnEventPlayer(0x0,LoadBowGuys,5)
     TurnEventPlayer(0x0,LoadBigGuys,8)
     TurnEventPlayer(0x0,LoadBowGuys,9)
-    TurnEventPlayer(0x0,LoadMovGuys,13,(256-13))
+    TurnEventPlayer(0x0,LoadMovGuys,14,(256-14))
 	TURN
     
 LoadBowGuys:
@@ -31,7 +31,13 @@ LoadBowGuys:
 LoadBigGuys:
     ReinforcementEvent(BigGuys)
 LoadMovGuys:
-    ReinforcementEvent(MovGuys)
+    EVBIT_T 0x9
+    LoadReinforcements(MovGuys1)
+    STAL 20
+    LoadReinforcements(MovGuys2)
+    EVBIT_F 0x9
+    NoFade
+    ENDA
 
 Ch4A9_CharacterBasedEvents:
 	CHAR
@@ -129,6 +135,37 @@ EnemyUnits:
     UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	UNIT
     
+EnemyUnits_Hard:
+	UNIT RudolfEnemy GoldKnight	RudolfEnemy Level(20, Enemy, True) [15,4]	DropItem 0x00 0x0 0x00 [Imperius,EmperorShield] [0x09, 0x03, 0x04, 0x0]
+	UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [11,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [18,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+    UNIT Rigel_Mage Sage RudolfEnemy Level(14, Enemy, True) [4,2] 0x00 0x00 0x0 0x00 [Aura] [0x0, 0x6, 0x0, 0x0]
+    UNIT Rigel_Mage Sage RudolfEnemy Level(14, Enemy, True) [25,2] 0x00 0x00 0x0 0x00 [Aura] [0x0, 0x6, 0x0, 0x0]
+    //door guards
+    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [9,5] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0, 0x6, 0x0, 0x0]
+    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [10,5] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [19,5] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [20,5] 0x00 0x00 0x0 0x00 [HeavySpear] [0x0, 0x6, 0x0, 0x0]
+    UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [10,9] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+    UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [19,9] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+    //armor wall
+	UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+    UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [14,6] 0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
+    UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [Halberd] AttackInRangeAI
+    UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [16,5] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+    //left corridor
+    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [6,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,9] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,12] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    //right corridor
+    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [23,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,9] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,12] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT
+    
 BowGuys:
     UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [6,9] 0x00 0x00 0x1 REDA6R9 [IronBow] NoAI
     UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [11,17] 0x00 0x00 0x1 REDA11R17 [IronBow] NoAI
@@ -143,11 +180,11 @@ BigGuys:
     UNIT Rigel_Merc Berserker RudolfEnemy Level(8, Enemy, True) [29,15] 0x00 0x00 0x1 REDA29R15 [SteelAxe] NoAI
     UNIT
     
-MovGuys:
+MovGuys1:
     UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [0,14] 0x00 0x00 0x1 REDA0R14 [SilverAxe] NoAI
-    UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [0,15] 0x00 0x00 0x1 REDA0R15 [SilverAxe] NoAI
+    UNIT
+MovGuys2:
     UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [29,14] 0x00 0x00 0x1 REDA29R14 [SilverLance] NoAI
-    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [29,15] 0x00 0x00 0x1 REDA29R15 [SilverLance] NoAI
     UNIT
     
 MycenJoins:
@@ -180,8 +217,13 @@ Ch4A9_BeginningScene:
     FADI 2
     CLEAN
     STAL 5
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4A09 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4A09
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
     CAMERA_CENTERED RudolfEnemy
     MUSCSLOW SongID_Env_GustyWind
     FADU 2
@@ -269,6 +311,7 @@ Ch4A9_EndingScene:
     FADI 5
     SetBackground(BlackBackground, 5)
     EVBIT_MODIFY 0x4
+    CALL $591F40
 	STAL 30
     CenterTextbox(Ch4_Alm_EndingText)
     EVBIT_MODIFY 0x0

@@ -115,7 +115,7 @@ EnemyUnits:
 	UNIT Blake Myrmidon	Blake Level(5, Enemy, False) [22,2] DropItem 0x00 0x0 0x00 [Shadowblade] AttackInRangeAI
 	//witches, mercs, myrms, sorcerers, archers, snipers
 	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(7, Enemy, True) [24,2]	0x00 0x00 0x0 0x00 [Miasma,Physic] [0x0F,0x03]
-	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(7, Enemy, True) [23,1]	0x00 0x00 0x0 0x00 [Mire] NeverMoveAI
+	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(7, Enemy, True) [23,1]	0x00 0x00 0x0 0x00 [Mire,MageRing] NeverMoveAI
 	UNIT Rigel_Merc Myrmidon	Blake Level(7, Enemy, True) [25,5]	0x00 0x00 0x0 0x00 [Rapier] DelayedRushAI
 	UNIT Rigel_Merc Myrmidon	Blake Level(5, Enemy, True) [24,8]	0x00 0x00 0x0 0x00 [Lancereaver] DelayedRushAI
 	UNIT DumaFaith_Witch Witch	Blake Level(6, Enemy, True) [20,6]	0x00 0x00 0x0 0x00 [Thunder, WitchWarpItem] WitchWarpAI
@@ -136,6 +136,34 @@ EnemyUnits:
 	//South fort
 	UNIT DumaFaith_Sorcerer Shaman	Blake Level(14, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
 	UNIT DumaFaith_Sorcerer Shaman	Blake Level(10, Enemy, True) [21,12]	0x00 0x00 0x0 0x00 [Mire] DelayedRushAI
+	UNIT
+	
+EnemyUnits_Hard:
+	//total: ~22
+	UNIT Blake Myrmidon	Blake Level(5, Enemy, False) [22,2] DropItem 0x00 0x0 0x00 [Shadowblade] AttackInRangeAI
+	//witches, mercs, myrms, sorcerers, archers, snipers
+	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(7, Enemy, True) [24,2]	0x00 0x00 0x0 0x00 [Miasma,Physic] [0x0F,0x03]
+	UNIT DumaFaith_Sorcerer Arcanist	Blake Level(7, Enemy, True) [23,1]	0x00 0x00 0x0 0x00 [Mire,MageRing] NeverMoveAI
+	UNIT Rigel_Merc Myrmidon	Blake Level(7, Enemy, True) [25,5]	0x00 0x00 0x0 0x00 [Rapier] DelayedRushAI
+	UNIT Rigel_Merc Myrmidon	Blake Level(5, Enemy, True) [24,8]	0x00 0x00 0x0 0x00 [Lancereaver] DelayedRushAI
+	UNIT DumaFaith_Witch Witch	Blake Level(6, Enemy, True) [20,6]	0x00 0x00 0x0 0x00 [Thunder, WitchWarpItem] WitchWarpAI
+	//Snipers
+	UNIT Rigel_Archer Sniper	Blake Level(4, Enemy, True) [12,11]	DropItem 0x00 0x0 0x00 [SilverBow] ChaseOnceApproachedAI
+	UNIT Rigel_Archer Sniper	Blake Level(7, Enemy, True) [6,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper	Blake Level(6, Enemy, True) [3,9]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	//Forts North
+	UNIT Rigel_Merc Mercenary	Blake Level(15, Enemy, True) [14,3]	0x00 0x00 0x0 0x00 [Armorslayer] NoAI
+	UNIT Rigel_Merc Mercenary	Blake Level(15, Enemy, True) [14,4]	DropItem 0x00 0x0 0x00 [SteelSword] NoAI
+	//Middle area
+	UNIT Rigel_Merc Mercenary	Blake Level(15, Enemy, True) [17,7]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	Blake Level(13, Enemy, True) [18,8]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	Blake Level(14, Enemy, True) [19,9]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Shaman	Blake Level(14, Enemy, True) [14,8]	0x00 0x00 0x0 0x00 [Miasma, Heal] AttackInRangeAI
+	UNIT Rigel_Archer Archer	Blake Level(13, Enemy, True) [10,7]	0x00 0x00 0x0 0x00 [KillerBow] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Shaman	Blake Level(9, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [Mire] NoAI
+	//South fort
+	UNIT DumaFaith_Sorcerer Shaman	Blake Level(14, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT DumaFaith_Sorcerer Shaman	Blake Level(10, Enemy, True) [21,12]	0x00 0x00 0x0 0x00 [Mire,SteelShield] DelayedRushAI
 	UNIT
 	
 SkirmishEnemies:
@@ -175,8 +203,13 @@ Ch3_6C_BeginningScene:
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	CAMERA_CENTERED Celica
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x3C06 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x3C06
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	SetBackground(0x1D)
 	BackgroundText(Ch3_6C_OpeningText)
 	ClearBackgroundSmooth
@@ -196,6 +229,9 @@ Ch3_6C_BeginningScene:
 Ch3_6C_EndingScene:
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C6Completed
+    CALL $591F40
+	SVAL 0x3 MageRing
+	GIVEITEMTO Celica
 	EVBIT_MODIFY 0x0
     CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller

@@ -42,7 +42,13 @@ LoadSummons:
 	ENUN
 	STAL 20
     CAMERA_CENTERED [6,20]
-	WarpInReinforcementsAt(DracoSummons,6,20)
+    CHECK_HARD
+    BNE 0x666 rC r0
+        WarpInReinforcementsAt(DracoSummons,6,20)
+        GOTO 0x667
+    LABEL 0x666
+        WarpInReinforcementsAt(DracoSummons_Hard,6,20)
+    LABEL 0x667
 	EVBIT_T 0x7
     SetSummonerID(Terror_Necrodragon, 0x81)
         
@@ -133,6 +139,21 @@ EnemyUnits:
 	UNIT Rigel_Merc DreadFighter Dolth Level(1, Enemy, True) [3,15] DropItem 0x00 0x0 0x00 [BraveSword,Elixir] NoAI
 	UNIT 0x8A DreadFighter Dolth Level(4, Enemy, True) [13,15] 0x00 0x00 0x0 0x00 [SteelSword] ChaseOnceApproachedAI
 	UNIT
+
+EnemyUnits_Hard:
+	UNIT Dolth Cantor	Dolth Level(9, Enemy, True) [9,17]	0x00 0x00 0x0 0x00 [Thanatos, Conjure] CantorBossAI
+	UNIT Rigel_Archer Sniper Dolth Level(10, Enemy, True) [6,12] 0x00 0x00 0x0 0x00 [SilverBow] ChaseOnceApproachedAI
+	UNIT Rigel_Archer Sniper Dolth Level(10, Enemy, True) [5,14] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper Dolth Level(10, Enemy, True) [4,14] 0x00 0x00 0x0 0x00 [RadiantBow] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist Dolth Level(8, Enemy, True) [12,16] 0x00 0x00 0x0 0x00 [Mire] NoAI
+	UNIT Rigel_Mage Arcanist Dolth Level(4, Enemy, True) [12,19] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist Dolth Level(4, Enemy, True) [13,18] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F, 0x03]
+	UNIT Rigel_Wyvern WyvernLord Dolth Level(8, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Rigel_Wyvern WyvernLord Dolth Level(8, Enemy, True) [16,10] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Rigel_Mage Arcanist Dolth Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [Mire] NoAI
+	UNIT Rigel_Merc DreadFighter Dolth Level(1, Enemy, True) [3,15] DropItem 0x00 0x0 0x00 [BraveSword,Elixir] NoAI
+	UNIT Rigel_Merc DreadFighter Dolth Level(4, Enemy, True) [13,15] 0x00 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
+	UNIT
 	
 DracoSummons:
 	UNIT Terror_Necrodragon Necrodragon Dolth Level(6, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R20 [FireFang] MonsterAI
@@ -141,10 +162,22 @@ DracoSummons:
 	UNIT Terror_Necrodragon Necrodragon Dolth Level(3, Enemy, True) [6,20] 0x00 0x00 0x1 REDA7R20 [FireFang] DelayedRushAI
 	UNIT
 
+DracoSummons_Hard:
+	UNIT Terror_Necrodragon Necrodragon Dolth Level(6, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R20 [HellFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Dolth Level(4, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R19 [FireFang] MonsterAI
+	UNIT Terror_Necrodragon Necrodragon Dolth Level(4, Enemy, True) [6,20] 0x00 0x00 0x1 REDA5R20 [FireFang] DelayedRushAI
+	UNIT Terror_Necrodragon Necrodragon Dolth Level(4, Enemy, True) [6,20] 0x00 0x00 0x1 REDA7R20 [FireFang] DelayedRushAI
+	UNIT
+
 Evt_BeginningScene:
 	MUSCSLOW SongID_Env_Lava
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x4C03 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x4C03
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	CAMERA_CENTERED [7,0]
 	FADU 2
 	EVBIT_T 0x9

@@ -18,8 +18,6 @@ Ch3_1C_TurnBasedEvents:
     TURN
 
 Ch3_1C_CharacterBasedEvents:
-    CharacterEventBothWays(8, TalkToCatria, Celica, Catria)
-    CharacterEventBothWays(8, TalkToPalla, Celica, Palla)
     CHAR
 
 Ch3_1C_LocationBasedEvents:
@@ -69,7 +67,9 @@ Cutscene_ChapterIntro:
 
 PlayerPlacement:
 #ifdef __DEBUG__
-	UNIT Celica CelicaPriestess 0x00 Level(9,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI  
+	UNIT Celica CelicaPriestess 0x00 Level(9,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI 
+	UNIT Palla PegasusKnight 0x00 Level(8,Ally,False) [10,2] 0x00 0x00 0x0 0x00 [Javelin, BaseLance, Vulnerary] NoAI 
+	UNIT Catria PegasusKnight 0x00 Level(5,Ally,False) [10,1] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing] NoAI 
 	UNIT Mae Mage_F 0x00 Level(9,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(9,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Genny Cleric 0x00 Level(9,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI 
@@ -79,7 +79,9 @@ PlayerPlacement:
 	UNIT Kamui Mercenary 0x00 Level(9,Ally,True) [13,8] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
 	UNIT
 #else
-	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Palla PegasusKnight 0x00 Level(8,Ally,False) [10,2] 0x00 0x00 0x0 0x00 [Javelin, BaseLance, Vulnerary] NoAI 
+	UNIT Catria PegasusKnight 0x00 Level(5,Ally,False) [10,1] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing] NoAI
 	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Boey Mage 0x00 Level(1,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
 	UNIT Genny Cleric 0x00 Level(1,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
@@ -122,9 +124,41 @@ EnemyUnits:
 	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [20,4] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	UNIT
 	
+	
+EnemyUnits_Hard:
+	//Pier
+	UNIT Garth Pirate Garth Level(15,Enemy,False) [19,14] DropItem 0x00 0x0 0x00 [KillerAxe, HandAxe, _200G] AttackInRangeAI 
+	UNIT Bandit_Bow Archer Garth Level(9, Enemy,True) [20,15] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary Garth Level(10,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(12,Enemy,True) [13,13] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(14,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [HandAxe] StallOneTurnAI
+	UNIT Enemy_Mercenary Mercenary Garth Level(10,Enemy,True) [18,11] 0x00 0x00 0x0 0x00 [Lancereaver] StallOneTurnAI
+	UNIT Bandit_Sword Mercenary Garth Level(10,Enemy,True) [19,10] 0x00 0x00 0x0 0x00 [SteelSword] StallOneTurnAI
+	UNIT Bandit_Strong Pirate_F Garth Level(11,Enemy,True) [11,9] 0x00 0x00 0x0 0x00 [Hammer,IronShield] NeverMoveAI
+	//West block
+	UNIT Enemy_Mercenary Mercenary Garth Level(10,Enemy,True) [8,7] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Bandit_Bow Archer_F Garth Level(9, Enemy,True) [8,6] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F Garth Level(13,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+	UNIT Bandit_Strong Pirate_F Garth Level(12,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [Swordreaver] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(10,Enemy,True) [9,6] 0x00 0x00 0x0 0x00 [Hammer] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [7,7] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [8,5] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F Garth Level(10,Enemy,True) [7,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Bandit_Axe Brigand Garth Level(12,Enemy,True) [6,5] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	//North block
+	UNIT Enemy_Mercenary Mercenary Garth Level(10,Enemy,True) [16,3] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Bandit_Axe Pirate_F Garth Level(10,Enemy,True) [15,3] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT Bandit_Axe Pirate_F Garth Level(9,Enemy,True) [14,3] 0x00 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(10,Enemy,True) [18,2] 0x00 0x00 0x0 0x00 [HandAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [19,2] 0x00 0x00 0x0 0x00 [Swordreaver] NoAI
+	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [18,3] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F Garth Level(10,Enemy,True) [21,3] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [20,4] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT
+	
 PegasusKnights:
-	UNIT Palla PegasusKnight 0x00 Level(8,NPC,False) [10,0] 0x00 0x00 0x1 REDA10R2 [Javelin, BaseLance, Vulnerary] PallaTalkAI 
-	UNIT Catria PegasusKnight 0x00 Level(5,NPC,False) [9,0] 0x00 0x00 0x1 REDA10R1 [BaseLance, AngelRing] CatriaTalkAI 
+	UNIT Palla PegasusKnight 0x00 Level(8,Ally,False) [10,0] 0x00 0x00 0x1 REDA10R2 [Javelin, BaseLance, Vulnerary] NoAI 
+	UNIT Catria PegasusKnight 0x00 Level(5,Ally,False) [9,0] 0x00 0x00 0x1 REDA10R1 [BaseLance, AngelRing] NoAI
 	UNIT
 
 Ch3_1C_BeginningScene:
@@ -149,6 +183,11 @@ Ch3_1C_BeginningScene:
 	CAMERA_CENTERED Conrad
     STAL 20
 	FlashCursor(Conrad, 60)
+    CALL $591F40
+    RemoveItemFromAny(Elixir)
+	SVAL 0x3 Elixir
+	GIVEITEMTO Celica
+	STAL 20
 	SetBackground(0x1F)
 	BackgroundText(Ch3_Celica_Start_3)
 	FADI 2
@@ -159,8 +198,13 @@ Ch3_1C_BeginningScene:
 	CLEN 0x0
 	LOMA 0x16
 	MUSC SongID_Tension
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x3C01 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x3C01
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	CAMERA_CENTERED [0,16]
 	FADU 5
 	
@@ -209,29 +253,6 @@ Ch3_1C_BeginningScene:
 		GotoPrepScreen
 	#endif
 	ENDA
-	
-TalkToCatria:
-	MUSS SongID_Recruitment
-	STAL 33
-	MapText(Ch3_1C_RecruitCatria)
-	REVEAL Catria
-	CUSA Catria
-	CUSA Palla
-	STAL 20
-	NoFade
-	MURE 0x05
-	ENDA
-	
-TalkToPalla:
-	MUSS SongID_Recruitment
-	STAL 33
-	MapText(Ch3_1C_RecruitPalla)
-	CUSA Palla
-	CUSA Catria
-	STAL 20
-	NoFade
-	MURE 0x05
-	ENDA
 
 Ch3_1C_EndingScene:
 	EVBIT_MODIFY 0x1
@@ -249,21 +270,14 @@ Ch3_1C_EndingScene:
 			MUSC SongID_Victory
 			SetBackground(0x29)
 			BackgroundText(Ch3_1C_EndingText) //both alive
-			FADI 5
-            CLEAN
-			CUSA Palla
-			CUSA Catria
-            SetBackground(0x29)
+            CALL $591F40
 			CharacterJoinedNotification(Notif_PallaCatriaJoin)
 			GOTO 0x3
 		LABEL 0x4 //only palla
 		MUSC SongID_ShadowOfVictory
 		SetBackground(0x29)
 		BackgroundText(Ch3_1C_EndingText_CatriaDied)
-		FADI 5
-        CLEAN
-		CUSA Palla
-        SetBackground(0x29)
+		CALL $591F40
 		CharacterJoinedNotification(Notif_PallaJoin)
 		GOTO 0x3
 	LABEL 0x1
@@ -273,10 +287,7 @@ Ch3_1C_EndingScene:
 		//only catria
 		SetBackground(0x29)
 		BackgroundText(Ch3_1C_EndingText_PallaDied)
-		FADI 5
-        CLEAN
-		CUSA Catria
-        SetBackground(0x29)
+		CALL $591F40
 		CharacterJoinedNotification(Notif_CatriaJoin)
 		GOTO 0x3 
 	LABEL 0x2 //both died

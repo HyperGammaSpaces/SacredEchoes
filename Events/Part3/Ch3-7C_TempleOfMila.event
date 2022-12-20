@@ -196,6 +196,45 @@ EnemyUnits:
 	UNIT Terror_Bael Bael	Mikhail Level(12, Enemy, True) [4,14]	0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
 	UNIT
 	
+EnemyUnits_Hard:
+	//put 25ish guys down
+	UNIT Mikhail Cantor	Mikhail Level(9, Enemy, True) [12,3]	0x00 0x00 0x0 0x00 [Mire, Conjure] CantorBossAI
+	UNIT Terror_Wight_Bow Wight_Bow Mikhail Level(2, Enemy, True) [7,5] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
+	UNIT Terror_Wight_Bow Wight_Bow Mikhail Level(2, Enemy, True) [17,5] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
+	//gargoyles
+	UNIT Terror_Gargoyle Deathgoyle	Mikhail Level(2, Enemy, True) [3,4]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Terror_Gargoyle Deathgoyle	Mikhail Level(2, Enemy, True) [21,4]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	
+	//fat wights
+	UNIT Terror_Wight Wight	Mikhail Level(2, Enemy, True) [5,9]	0x00 0x00 0x0 0x00 [SteelLance,Javelin] NeverMoveAI
+	UNIT Terror_Wight_Bow Wight_Bow	Mikhail Level(2, Enemy, True) [5,10]	DropItem 0x00 0x0 0x00 [IronBow] NeverMoveAI
+	UNIT Terror_Wight Wight	Mikhail Level(2, Enemy, True) [19,9]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Terror_Wight_Bow Wight_Bow	Mikhail Level(2, Enemy, True) [19,10]	0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
+	
+	//main hallway
+	UNIT Terror_Gargoyle Gargoyle	Mikhail Level(12, Enemy, True) [11,8]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Terror_Gargoyle Deathgoyle	Mikhail Level(2, Enemy, True) [12,9]	0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
+	UNIT Terror_Gargoyle Gargoyle	Mikhail Level(12, Enemy, True) [13,8]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT DumaFaith_Witch Witch	Mikhail Level(9, Enemy, True) [10,12]	0x00 0x00 0x0 0x00 [Thunder, WitchWarpItem] WitchWarpAI
+	UNIT Terror_Entombed Entombed	Mikhail Level(5, Enemy, True) [12,11]	0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
+	UNIT DumaFaith_Witch Witch	Mikhail Level(10, Enemy, True) [14,12]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	
+	//tarvos
+	UNIT Terror_Tarvos Tarvos	Mikhail Level(11, Enemy, True) [2,10]	0x00 0x00 0x0 0x00 [Hammer] DelayedRushAI
+	UNIT Terror_Tarvos Tarvos	Mikhail Level(11, Enemy, True) [22,10]	0x00 0x00 0x0 0x00 [SteelAxe] DelayedRushAI
+	
+	//misc mix
+	UNIT DumaFaith_Sorcerer Shaman	Mikhail Level(14, Enemy, True) [11,10]	0x00 0x00 0x0 0x00 [Sisyphus] AttackInHalfRangeAI
+	UNIT DumaFaith_Sorcerer Arcanist	Mikhail Level(7, Enemy, True) [8,11]	0x00 0x00 0x0 0x00 [Miasma, Physic] [0x0F, 0x03]
+	UNIT DumaFaith_Sorcerer Arcanist	Mikhail Level(7, Enemy, True) [13,10]	0x00 0x00 0x0 0x00 [Miasma, Physic] [0x0F, 0x03]
+	UNIT DumaFaith_Sorcerer Shaman	Mikhail Level(14, Enemy, True) [16,11]	0x00 0x00 0x0 0x00 [Selene] AttackInHalfRangeAI
+	UNIT DumaFaith_Sorcerer Shaman	Mikhail Level(14, Enemy, True) [7,16]	0x00 0x00 0x0 0x00 [Selene] NoAI
+	UNIT DumaFaith_Sorcerer Shaman	Mikhail Level(10, Enemy, True) [12,15]	0x00 0x00 0x0 0x00 [Selene,Silence] [0x0F,0x03]
+	UNIT Terror_ElderBael ElderBael	Mikhail Level(2, Enemy, True) [15,17]	0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
+	UNIT Terror_Bael Bael	Mikhail Level(13, Enemy, True) [20,14]	0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT Terror_Bael Bael	Mikhail Level(12, Enemy, True) [4,14]	0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
+	UNIT
+	
 MikhailSummons:
 	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,4] MonsterTemplate 0x00 0x1 REDA11R4 NoItems MonsterAI
 	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,4] MonsterTemplate 0x00 0x1 REDA13R4 NoItems MonsterAI
@@ -212,8 +251,13 @@ Ch3_7C_BeginningScene:
     LOAD2 0x1 CutsceneUnits
     ENUN
     CLEA 0x0
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x3C07 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x3C07
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
     CAMERA_CENTERED [12,13]
     FADU 5
     STAL 60
@@ -256,9 +300,6 @@ Ch3_7C_EndingScene:
 	TEXTCLEAR
 	EVBIT_MODIFY 0x1
 	ENUT gChapter3C7Completed
-    CALL $591F40
-	SVAL 0x3 TheZofia 
-	GIVEITEMTO Celica
 	EVBIT_T 0x7
 	
 	FADI 16
@@ -284,6 +325,11 @@ Ch3_7C_EndingScene:
 	//Ending continues
 	SetBackground(0x2F, 2)
 	BackgroundText(Ch3_7C_EndingText_3)
+    CALL $591F40
+    RemoveItemFromAny(GoldDagger)
+	SVAL 0x3 TheZofia 
+	GIVEITEMTO Celica
+	BackgroundText(Ch3_7C_EndingText_4)
 	
 	//Nomah and priestesses here
 	CHECK_OTHERS

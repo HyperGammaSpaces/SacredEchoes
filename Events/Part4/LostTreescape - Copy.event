@@ -215,11 +215,11 @@ Lostwoods_EndingScene:
         STAL 5
 		
 		//Give Hero's Proof to Alm
-		SetBackground(0x48,5)
         EVBIT_MODIFY 0x4
 		REVEAL Alm
 		Event_SetAlmMode
         SET_ACTIVE Alm
+        SetBackground(0x48,5)
         CALL $591F40
 		SVAL 0x3 HerosProof 
 		GIVEITEMTO Alm

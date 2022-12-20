@@ -192,6 +192,7 @@ Lostwoods_BeginningScene:
 		TEXTEND
 		TEXTCLEAR
         CALL $591F40
+        RemoveItemFromAny(TorchItem)
 		SVAL 0x3 TorchItem
 		GIVEITEMTO Celica
 		EVBIT_T 0x7
@@ -231,7 +232,16 @@ Lostwoods_EndingScene:
 		EVBIT_MODIFY 0x1
 		ENUT gLostWoodsCompleted
 		EVBIT_MODIFY 0x0
-		BackgroundText(LostTreescape_Halcyon)
+		TEXTMODE 1
+        TEXTSHOW LostTreescape_Halcyon
+        TEXTEND
+        FAWI 5
+        SOUN 0x2EA
+        STAL 5
+        FAWU 2
+        TEXTCONT
+        TEXTEND
+        REMA
 		FADI 2
 		CLEAN
         STAL 5
@@ -239,19 +249,19 @@ Lostwoods_EndingScene:
 		//Give Hero's Proof to Alm
         EVBIT_MODIFY 0x4
 		REVEAL Alm
-		SetBackground(0x48,5)
 		Event_SetAlmMode
         SET_ACTIVE Alm
+		SetBackground(0x48,5)
         CALL $591F40
 		SVAL 0x3 HerosProof 
 		GIVEITEMTO Alm
 		EVBIT_T 0x7
 		STAL 20
+		FADI 2
 		Event_SetCelicaMode
         SET_ACTIVE Celica
 		REMU Alm
         EVBIT_MODIFY 0x0
-		FADI 2
 		CLEAN
         
 		STAL 5

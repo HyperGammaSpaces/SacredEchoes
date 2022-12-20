@@ -111,6 +111,22 @@ EnemyUnitsDeen:
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(14, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(15, Enemy, True) [8,4]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(13, Enemy, True) [8,7]	0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
+	UNIT    
+    
+EnemyUnitsDeen_Hard:
+	UNIT DeenBoss Myrmidon DeenBoss Level(12, Enemy, False) [2,1] 0x00 0x00 0x0 0x00 [BraveSword,DeensSword,Thunderblade] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(14, Enemy, True) [3,3]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(13, Enemy, True) [2,4]	0x00 0x00 0x0 0x00 [BraveSword] NoAI
+	UNIT Rigel_Merc Myrmidon	DeenBoss Level(6, Enemy, True) [6,2]	0x00 0x00 0x0 0x00 [IronSword] DelayedRushAI
+	UNIT Rigel_Merc Myrmidon	DeenBoss Level(7, Enemy, True) [4,4]	0x00 0x00 0x0 0x00 [Armorslayer] DelayedRushAI
+	UNIT Rigel_Merc Myrmidon	DeenBoss Level(6, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT Rigel_Merc Myrmidon	DeenBoss Level(6, Enemy, True) [5,12]	0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Rigel_Merc Myrmidon	DeenBoss Level(7, Enemy, True) [7,10]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(15, Enemy, True) [6,7]	DropItem 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
+	UNIT Rigel_Witch Mage_F	DeenBoss Level(12, Enemy, True) [7,9]	0x00 0x00 0x0 0x00 [Thunder] NoAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(14, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(15, Enemy, True) [8,4]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	UNIT Rigel_Merc Mercenary	DeenBoss Level(13, Enemy, True) [8,7]	0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
 	UNIT
 
 ReinforcementsDeen:
@@ -119,8 +135,13 @@ ReinforcementsDeen:
 
 Ch3_4C_BeginningScene:
 	MUSC SongID_LandOfShiftingSand
-	LOAD1 0x1 EnemyUnitsDeen
-	ENUN
+	SVAL 0x2 (EnemyUnitsDeen|IsPointer)
+    CHECK_HARD
+    BEQ 0x3C04 rC r0
+        SVAL 0x2 (EnemyUnitsDeen_Hard|IsPointer)
+    LABEL 0x3C04
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	FADU 5
 	WEA1 0x6
 	

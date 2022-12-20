@@ -160,6 +160,40 @@ EnemyUnits:
 	UNIT DumaFaith_Sorcerer Shaman	Grieth Level(11, Enemy, True) [13,15]	0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT
 
+EnemyUnits_Hard:
+	UNIT Grieth DreadFighter Grieth Level(5, Enemy, False) [20,2] DropItem 0x00 0x0 0x00 [SteelSword,Thunderblade,Pegacheese] NeverMoveAI
+	
+	UNIT DumaFaith_Sorcerer Arcanist	Grieth Level(6, Enemy, True) [19,3]	0x00 0x00 0x0 0x00 [Miasma, Heal] MoveAndHealAI
+	UNIT DumaFaith_Sorcerer Arcanist	Grieth Level(6, Enemy, True) [21,3]	0x00 0x00 0x0 0x00 [Miasma, Heal] MoveAndHealAI
+
+	//outside throne room
+	UNIT Rigel_Soldier Knight	Grieth Level(5, Enemy, True) [14,4]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Shaman	Grieth Level(13, Enemy, True) [8,5]	0x00 0x00 0x0 0x00 [Miasma] NoAI
+	
+	UNIT Bandit_Sword Myrmidon	Grieth Level(6, Enemy, True) [12,6]	DropItem 0x00 0x0 0x00 [Zanbato,SteelShield,DoorKey] AttackInRangeAI
+	UNIT DumaFaith_Witch Witch	Grieth Level(6, Enemy, True) [13,7]	0x00 0x00 0x0 0x00 [Fire] AttackInHalfRangeAI
+	UNIT DumaFaith_Witch Witch	Grieth Level(6, Enemy, True) [11,7]	0x00 0x00 0x0 0x00 [Nosferatu] AttackInHalfRangeAI
+	
+	UNIT Bandit_Bow Sniper	Grieth Level(5, Enemy, True) [11,4]	DropItem 0x00 0x0 0x00 [RadiantBow,DoorKey] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary	Grieth Level(15, Enemy, True) [10,12]	0x00 0x00 0x0 0x00 [Armorslayer] DelayedRushAI
+	UNIT Bandit_Axe Pirate_F	Grieth Level(15, Enemy, True) [14,12]	0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+	UNIT Bandit_Axe Pirate	Grieth Level(15, Enemy, True) [15,12]	0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Bandit_Sword Mercenary	Grieth Level(14, Enemy, True) [19,12]	0x00 0x00 0x0 0x00 [SteelSword] DelayedRushAI
+	UNIT Rigel_Soldier Knight	Grieth Level(4, Enemy, True) [20,17]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Grieth Level(4, Enemy, True) [10,17]	0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Grieth Level(4, Enemy, True) [19,17]	0x00 0x00 0x0 0x00 [Hammer] NoAI
+	UNIT Rigel_Soldier Knight	Grieth Level(4, Enemy, True) [9,17]	DropItem 0x00 0x0 0x00 [HandAxe] NoAI
+	UNIT DumaFaith_Witch Witch	Grieth Level(7, Enemy, True) [11,14]	0x00 0x00 0x0 0x00 [Fire, WitchWarpItem] WitchWarpAI
+	UNIT Bandit_Bow Sniper	Grieth Level(5, Enemy, True) [4,7]	0x00 0x00 0x0 0x00 [IronBow] AttackInHalfRangeAI
+	UNIT Bandit_Sword Mercenary	Grieth Level(14, Enemy, True) [5,9]	DropItem 0x00 0x0 0x00 [Ilwoon] NoAI
+	UNIT Rigel_Soldier Knight	Grieth Level(5, Enemy, True) [3,13]	0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Knight	Grieth Level(6, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Bandit_Bow Sniper	Grieth Level(4, Enemy, True) [14,15]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Bandit_Bow Sniper	Grieth Level(4, Enemy, True) [15,15]	DropItem 0x00 0x0 0x00 [IronBow,DoorKey] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Shaman	Grieth Level(11, Enemy, True) [16,15]	0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Shaman	Grieth Level(11, Enemy, True) [13,15]	0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
+	UNIT
+
 SpawnCantor:
 	UNIT CantorBoss_Bonewalkers Cantor Grieth Level(5, Enemy, True) [16,2] 0x00 0x00 0x0 0x00 [Miasma, Conjure] CantorAI
 	UNIT
@@ -185,7 +219,7 @@ EstJoins:
 	UNIT
 	
 SonyaJoins:
-	UNIT Sonya Mage_F	0x0 Level(5, Ally, False) [15,8]	0x00 0x00 0x0 0x00 [Fire,SteelShield,MageRing] NoAI
+	UNIT Sonya Mage_F	0x0 Level(5, Ally, False) [15,8]	0x00 0x00 0x0 0x00 [Fire,SteelShield] NoAI
 	UNIT
 	
 DeenJoins:
@@ -194,8 +228,13 @@ DeenJoins:
 
 Ch3_5C_BeginningScene:
 	MUSC SongID_Tension
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x3C05 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x3C05
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	SetBackground(0x0C) //fortress hall
 	BackgroundText(Ch3_5C_OpeningText) //grieth and bandit
 	FADI 16

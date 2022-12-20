@@ -170,6 +170,52 @@ EnemyUnits:
 
 	UNIT
 
+EnemyUnits_Hard:
+	//main entrance
+	UNIT Lawson Paladin 0x00 Level(5,Enemy,False) [11,18] 0x00 0x00 0x0 0x00 [Ridersbane, Javelin, IronShield] NeverMoveAI
+	UNIT 0x87 Sage Lawson Level(1,Enemy,True) [10,19] 0x00 0x00 0x0 0x00 [Thunder,Physic] [0x0F,0x03,0x04,0x20]
+	UNIT 0x87 Sniper Lawson Level(3,Enemy,True) [12,19] DropItem 0x00 0x0 0x00 [RadiantBow] NeverMoveAI
+	UNIT 0x87 Paladin_F Lawson Level(2,Enemy,True) [9,18] 0x00 0x00 0x0 0x00 [IronLance,HideShield] NeverMoveAI
+	UNIT 0x87 Paladin Lawson Level(2,Enemy,True) [13,18] 0x00 0x00 0x0 0x00 [HeavySpear,HideShield] NeverMoveAI
+	UNIT 0x87 Witch Lawson Level(4,Enemy,True) [9,19] DropItem 0x00 0x0 0x00 [Thunder,Elixir] NeverMoveAI
+	
+	UNIT TreasureHunter Thief Lawson Level(12,Enemy,True) [5,19] DropItem 0x00 0x0 0x00 [Zanbato,Soma] [0x6,0xC,0x0,0x0]
+	
+	//turrets
+	UNIT Rigel_Archer Sniper Lawson Level(2,Enemy,True) [2,16] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer Sniper_F Lawson Level(3,Enemy,True) [23,16] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Soldier Knight Lawson Level(4,Enemy,True) [2,7] 0x00 0x00 0x0 0x00 [SteelAxe,Javelin] AttackInRangeAI
+	UNIT Rigel_Soldier Knight Lawson Level(4,Enemy,True) [23,7] 0x00 0x00 0x0 0x00 [SteelLance,HandAxe] AttackInRangeAI
+	UNIT Rigel_Archer Archer_F Lawson Level(10,Enemy,True) [2,3] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT Rigel_Archer Archer Lawson Level(14,Enemy,True) [23,3] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	
+	//north
+	UNIT Rigel_Wyvern WyvernRider Lawson Level(14,Enemy,True) [5,1] 0x00 0x00 0x0 0x00 [SteelAxe] AttackSnagsAI
+	UNIT Rigel_Wyvern WyvernRider Lawson Level(11,Enemy,True) [4,0] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Rigel_Wyvern WyvernRider Lawson Level(11,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	
+	UNIT Rigel_Archer Sniper_F Lawson Level(3,Enemy,True) [19,1] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer Archer_F Lawson Level(14,Enemy,True) [18,0] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Rigel_Archer Archer Lawson Level(14,Enemy,True) [20,0] 0x00 0x00 0x0 0x00 [IronBow] AttackSnagsAI
+	UNIT Rigel_Archer Archer Lawson Level(14,Enemy,True) [20,2] 0x00 0x00 0x0 0x00 [Longbow] NoAI
+	
+	//cav squadrons
+	UNIT Rigel_Cav Paladin_F Lawson Level(3,Enemy,True) [1,12] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] [0x0,0x12,0x0,0x0]
+	UNIT Rigel_Cav Cavalier Lawson Level(9,Enemy,True) [0,11] 0x00 0x00 0x0 0x00 [IronLance,IronShield] NoAI
+	UNIT Rigel_Cav Cavalier_F Lawson Level(9,Enemy,True) [0,12] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
+	UNIT Rigel_Cav Cavalier Lawson Level(9,Enemy,True) [0,13] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0x0,0x0]
+	
+    UNIT Rigel_Cav Paladin Lawson Level(3,Enemy,True) [24,12] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
+	UNIT Rigel_Cav Cavalier Lawson Level(9,Enemy,True) [25,11] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
+	UNIT Rigel_Cav Cavalier_F Lawson Level(9,Enemy,True) [25,12] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
+	UNIT Rigel_Cav Cavalier_F Lawson Level(9,Enemy,True) [25,13] 0x00 0x00 0x0 0x00 [SteelLance,IronShield] NoAI
+
+	
+	UNIT Rigel_Mage Mage Lawson Level(7,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+	UNIT Rigel_Witch Mage_F Lawson Level(6,Enemy,True) [25,8] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+
+	UNIT
+
 LeftCavs:
 	UNIT Rigel_Cav Cavalier Lawson Level(11,Enemy,True) [0,11] 0x00 0x00 0x1 REDA0R11 [SteelLance] NoAI
 	UNIT Rigel_Cav Cavalier_F Lawson Level(11,Enemy,True) [0,12] 0x00 0x00 0x1 REDA0R12 [IronLance] NoAI
@@ -219,8 +265,13 @@ Ch3_5A_BeginningScene:
     FadeOutMusic
 	ClearBackgroundSmooth
 	
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x3A05 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x3A05
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	FADU 2
 	SOUN 0x9B
 	STAL 5

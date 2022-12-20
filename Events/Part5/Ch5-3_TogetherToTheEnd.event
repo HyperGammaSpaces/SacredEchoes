@@ -5,6 +5,7 @@
 EventPointerTable(plCh5_3_Event, Ch5F3_ThisChapter)
 
 //quote flags: 0xC-0xE
+#define Local_WitchFlag 0x1A
 
 Ch5F3_ThisChapter:
 	POIN Ch5F3_TurnBasedEvents
@@ -21,12 +22,43 @@ Ch5F3_ThisChapter:
 
 Ch5F3_TurnBasedEvents:
     OpeningTurnEvent(OpeningTurn_MogallEvent)
+    TurnEventPlayer(Local_WitchFlag,WitchSpawns,4,(256-4))
 	TURN
+    
+WitchSpawns:
+    //Marla
+    CHECK_EVENTID 0x17
+    BNE 0x7701 rC r0
+        ENUF Local_WitchFlag
+        CHECK_AT [18,7]
+        BNE 0x7701 rC r0
+            CAMERA_CENTERED MarlaFinal
+            STAL 20
+            WARPIN [18,7]
+            LOAD1 0 WitchSpawn_Marla
+            ENDWARP
+            ENUN
+    LABEL 0x7701
+    //Hestia
+    CHECK_EVENTID 0x18
+    BNE 0x7702 rC r0
+        ENUF Local_WitchFlag
+        CHECK_AT [23,6]
+        BNE 0x7702 rC r0
+            CAMERA_CENTERED HestiaFinal
+            STAL 20
+            WARPIN [23,6]
+            LOAD1 0 WitchSpawn_Hestia
+            ENDWARP
+            ENUN
+    LABEL 0x7702
+    NoFade
+    ENDA
     
 OpeningTurn_MogallEvent:
     MUSC SongID_TwilightOfTheGods
     CameraCursor(JedahFinal)
-    Text(Ch5_3_OpeningText_2)
+    MapText(Ch5_3_OpeningText_2)
     STAL 20
 	CAMERA_CENTERED JedahFinal
 	WARPIN [22, 13]
@@ -34,6 +66,7 @@ OpeningTurn_MogallEvent:
     ENDWARP
     ENUN
 	STAL 20
+    ENUT Local_BossQuote
     CALL EnableUnitSelectEvents
     NoFade
     ENDA
@@ -197,6 +230,7 @@ DumaRefillEvent:
     STAL 20
     CameraCursor(Alm)
     MapText(Duma_Refill)
+    ENUF Local_BossQuote
     NoFade
     ENDA
 
@@ -231,7 +265,7 @@ PlayerPlacement:
     //Celica group
     UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [24,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
     UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [24,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [23,23] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [25,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
     UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
     UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
     UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
@@ -281,19 +315,38 @@ EnemyUnits:
     UNIT MarlaFinal Witch Duma Level(20, Enemy, False) [18,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
     UNIT HestiaFinal Witch Duma Level(20, Enemy, False) [22,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
     //These two can spam witches
+    UNIT Gharn Arcanist Duma Level(25, Enemy, False) [20,6] 0x00 0x00 0x0 0x00 [Medusa,Fortify] StaffMageAI
+    //the generic squad
+    UNIT Argentum BowKnight Duma Level(15, Enemy, False) [21,5] 0x00 0x00 0x0 0x00 [SteelBow] [0x0, 0x6, 0x0, 0x0]
+    UNIT Aurum BowKnight Duma Level(15, Enemy, False) [19,5] 0x00 0x00 0x0 0x00 [SteelBow] [0x0, 0x6, 0x0, 0x0]
+    UNIT Hades GoldKnight Duma Level(15, Enemy, False) [4,6] 0x00 0x00 0x0 0x00 [SteelLance] [0x0, 0x6, 0x0, 0x0]
+    UNIT Cerberus DreadFighter Duma Level(15, Enemy, False) [2,7] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+    UNIT Naberius DreadFighter Duma Level(15, Enemy, False) [6,7] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
+    UNIT
+    
+EnemyUnits_Hard:
+    //When Duma falls below 52 HP, replace OcularBeam with Oculus.
+    //Someone needs Upheaval.
+    //TODO: also give him Invoke for Mogalls.
+	UNIT Duma FellGod	Duma Level(30, Enemy, False) [20,4]	0x0 0x00 0x0 0x00 [OcularBeam, Tentacle] AttackInRangeAI
+    //TODO: also give him Invoke for Mogalls.
+	UNIT JedahFinal Necromancer Duma Level(25, Enemy, False) [22,13] 0x00 0x00 0x0 0x00 [Thanatos,Conjure, AnimusRing] [0x14, 0x03, 0x04, 0x00]
+    UNIT MarlaFinal Witch Duma Level(20, Enemy, False) [18,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
+    UNIT HestiaFinal Witch Duma Level(20, Enemy, False) [22,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
+    //These two can spam witches
     UNIT Gharn Arcanist Duma Level(25, Enemy, False) [20,6] 0x00 0x00 0x0 0x00 [Medusa,Fortify,SilverShield] StaffMageAI
     //the generic squad
     UNIT Argentum BowKnight Duma Level(15, Enemy, False) [21,5] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
     UNIT Aurum BowKnight Duma Level(15, Enemy, False) [19,5] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
     UNIT Hades GoldKnight Duma Level(15, Enemy, False) [4,6] 0x00 0x00 0x0 0x00 [SilverLance] [0x0, 0x6, 0x0, 0x0]
-    UNIT Cerberus DreadFighter Duma Level(15, Enemy, False) [2,7] 0x00 0x00 0x0 0x00 [SilverSword] [0x0, 0x6, 0x0, 0x0]
+    UNIT Cerberus DreadFighter Duma Level(15, Enemy, False) [2,7] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
     UNIT Naberius DreadFighter Duma Level(15, Enemy, False) [6,7] 0x00 0x00 0x0 0x00 [SilverSword] NoAI
     UNIT
 
 MogallSpamWave:
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA24R15 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA18R15 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA20R17 [Tackle_Mogall] AttackInRangeAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA24R15 [Tackle_Mogall,DivideAbility] MogallAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA18R15 [Tackle_Mogall,DivideAbility] MogallAI
+    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA20R17 [Tackle_Mogall,DivideAbility] MogallAI
     UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA17R18 [Tackle_Mogall] AttackInRangeAI
     UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA15R18 [Tackle_Mogall] AttackInRangeAI
     UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA22R19 [Tackle_Mogall] AttackInRangeAI
@@ -303,12 +356,25 @@ MogallSpamWave:
     UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA19R26 [Tackle_Mogall] AttackInRangeAI
 	UNIT
 
+WitchSpawn_Marla:
+    UNIT Rigel_Witch Witch MarlaFinal Level(16, Enemy, False) [18,7] 0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
+    UNIT
+    
+WitchSpawn_Hestia:
+    UNIT Rigel_Witch Witch HestiaFinal Level(16, Enemy, False) [23,6] 0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
+    UNIT
+
 Ch5F3_BeginningScene:
     MUSC SongID_Env_Lava
     
     //initial coord [9,22]
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x5A03 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x5A03
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
     FADU 5
     //Load Alm and Celica
     LOAD2 0x0 CutsceneUnits_Left

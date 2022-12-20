@@ -25,8 +25,13 @@ BallistaEvent:
 	MUSI
 	CAMERA_CENTERED [5, 5]
 	STAL 30
-	LOAD1 0x1 BrigandsCh7
-	ENUN
+	SVAL 0x2 (BrigandsCh7|IsPointer)
+    CHECK_HARD
+    BEQ 0x207 rC r0
+        SVAL 0x2 (BrigandsCh7_Hard|IsPointer)
+    LABEL 0x207
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	STAL 10
 	FlashCursor(5, 5, 60)
 	TEXTSTART 
@@ -108,8 +113,23 @@ EnemyUnits:
 	UNIT Zofia_Cav Cavalier_F	CavalierAlm7 Level(9, Enemy, 1) [15,6]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
 	UNIT Zofia_Merc Mercenary	CavalierAlm7 Level(8, Enemy, 1) [13,11]	0x00 0x00 0x0 0x00 [BaseSword] NoAI 
 	UNIT Zofia_Soldier Soldier	CavalierAlm7 Level(9, Enemy, 1) [12,11]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
-	UNIT Zofia_Archer Archer_F	CavalierAlm7 Level(9, Enemy, 1) [11,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
+	UNIT Zofia_Archer Archer_F	CavalierAlm7 Level(7, Enemy, 1) [11,8]	DropItem 0x00 0x0 0x00 [IronBow,IronShield] AttackInRangeAI  
 	UNIT Zofia_Cav Cavalier	CavalierAlm7 Level(9, Enemy, 1) [18,10]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Zofia_Cav Cavalier	CavalierAlm7 Level(9, Enemy, 1) [19,11]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Zofia_Archer Archer	CavalierAlm7 Level(8, Enemy, 1) [9,9]	0x00 0x00 0x0 0x00 [BaseBow] NoAI 
+	UNIT Zofia_Cav Cavalier	CavalierAlm7 Level(7, Enemy, 1) [17,12]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Zofia_Soldier Soldier	CavalierAlm7 Level(10, Enemy, 1) [15,4]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI 
+	UNIT
+
+EnemyUnits_Hard:
+	UNIT CavalierAlm7 Cavalier	0x00 Level(12, Enemy, 1) [15,3]	0x00 0x00 0x0 0x00 [SteelLance,Javelin] NeverMoveAI
+	UNIT Zofia_Cav Cavalier	CavalierAlm7 Level(9, Enemy, 1) [17,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Zofia_Cav Cavalier	CavalierAlm7 Level(9, Enemy, 1) [13,5]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
+	UNIT Zofia_Cav Cavalier_F	CavalierAlm7 Level(9, Enemy, 1) [15,6]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
+	UNIT Zofia_Merc Mercenary	CavalierAlm7 Level(8, Enemy, 1) [13,11]	0x00 0x00 0x0 0x00 [BaseSword] NoAI 
+	UNIT Zofia_Soldier Soldier	CavalierAlm7 Level(9, Enemy, 1) [12,11]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Zofia_Archer Archer_F	CavalierAlm7 Level(7, Enemy, 1) [11,8]	DropItem 0x00 0x0 0x00 [IronBow,IronShield] AttackInRangeAI  
+	UNIT Zofia_Cav Cavalier	CavalierAlm7 Level(9, Enemy, 1) [18,10]	0x00 0x00 0x0 0x00 [IronLance] NoAI 
 	UNIT Zofia_Cav Cavalier	CavalierAlm7 Level(9, Enemy, 1) [19,11]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
 	UNIT Zofia_Archer Archer	CavalierAlm7 Level(8, Enemy, 1) [9,9]	0x00 0x00 0x0 0x00 [BaseBow] NoAI 
 	UNIT Zofia_Cav Cavalier	CavalierAlm7 Level(7, Enemy, 1) [17,12]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
@@ -119,6 +139,12 @@ EnemyUnits:
 BrigandsCh7:
 	UNIT Bandit_Axe Brigand	CavalierAlm7 Level(9, Enemy, 1) [0,4]	0x00 0x00 0x1 Brigand1Reda [BaseAxe,Torch] BrigandAI 
 	UNIT Bandit_Axe Brigand	CavalierAlm7 Level(9, Enemy, 1) [0,4]	0x00 0x00 0x1 Brigand2Reda [BaseAxe,Torch] BrigandAI 
+	UNIT Bandit_Axe Brigand	CavalierAlm7 Level(9, Enemy, 1) [0,4]	0x00 0x00 0x1 Brigand3Reda [BaseAxe,Torch] BrigandAI 
+	UNIT
+    
+BrigandsCh7_Hard:
+	UNIT Bandit_Axe Brigand	CavalierAlm7 Level(9, Enemy, 1) [0,4]	0x00 0x00 0x1 Brigand1Reda [IronAxe,Torch] BrigandAI 
+	UNIT Bandit_Axe Brigand	CavalierAlm7 Level(9, Enemy, 1) [0,4]	0x00 0x00 0x1 Brigand2Reda [HandAxe,Torch] BrigandAI 
 	UNIT Bandit_Axe Brigand	CavalierAlm7 Level(9, Enemy, 1) [0,4]	0x00 0x00 0x1 Brigand3Reda [BaseAxe,Torch] BrigandAI 
 	UNIT
 
@@ -134,8 +160,13 @@ Ch1_7_BeginningScene:
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	CAMERA_CENTERED [8, 11]
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x107 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x107
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	FADU 10
 
 	STAL 20

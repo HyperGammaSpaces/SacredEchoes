@@ -152,6 +152,28 @@ EnemyUnits:
 	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,8] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
 	UNIT
 	
+EnemyUnits_Hard:
+	UNIT Boss_Monster Entombed Boss_Monster Level(3,Enemy,True) [4,1] DropItem 0x00 0x0 0x00 [FetidClaw,Item100G] AttackInRangeAI 
+	UNIT Terror_Bael Bael Boss_Monster Level(12,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
+	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
+	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [5,13] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
+	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [6,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
+	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [10,15] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(7,Enemy,True) [15,4] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(7,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI 
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(6,Enemy,True) [3,10] 0x00 0x00 0x0 0x00 [Axereaver] MonsterAI 
+	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(5,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI 
+	UNIT Terror_Bonewalker_Bow Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
+	UNIT Terror_Bonewalker_Bow Bonewalker_Bow Boss_Monster Level(6,Enemy,True) [3,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI 
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [3,4] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI 
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [7,9] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
+	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,6] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI 
+	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,8] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT
+	
 BrigandsReinforcements:
 	UNIT Bandit_Axe Brigand Boss_Monster Level(13,Enemy,True) [14,9] 0x00 0x00 0x1 REDA14R9 [SteelAxe,Torch] BrigandAI
 	UNIT
@@ -235,8 +257,13 @@ Ch3_2C_BeginningScene:
 	BNE 0x6 rC r0 //if true, skip cutscene
 		EVBIT_MODIFY 0x0
 		MUSC SongID_Env_Night
-		LOAD1 0x1 EnemyUnits
-		ENUN
+		SVAL 0x2 (EnemyUnits|IsPointer)
+        CHECK_HARD
+        BEQ 0x3C02 rC r0
+            SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+        LABEL 0x3C02
+        LOAD1 0x1 0xFFFFFFFF
+        ENUN
 		FADU 5
 
 		LOAD2 0x1 Ch3_2C_CutsceneUnits

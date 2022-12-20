@@ -70,6 +70,18 @@ EnemyUnits:
 	UNIT 0xAD Bonewalker_Bow CantorBoss_Celica5 Level(7,Enemy,True) [15,14] 0x04 0x00 0x0 0x00 [IronBow] MonsterAI
 	UNIT
 	
+EnemyUnits_Hard:
+	UNIT CantorBoss_Celica5 Cantor CantorBoss_Celica5 Level(1,Enemy,True) [13,5] DropItem 0x00 0x0 0x00 [Miasma, Conjure, Lifefruit] CantorBossAI 
+	UNIT 0xAC Revenant CantorBoss_Celica5 Level(11,Enemy,True) [13,14] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Revenant CantorBoss_Celica5 Level(10,Enemy,True) [11,6] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Revenant CantorBoss_Celica5 Level(10,Enemy,True) [11,8] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(9,Enemy,True) [12,7] 0x04 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
+	UNIT 0xAC Revenant CantorBoss_Celica5 Level(10,Enemy,True) [13,9] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(7,Enemy,True) [14,6] 0x04 0x00 0x0 0x00 [IronLance] MonsterAI
+	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(7,Enemy,True) [11,13] 0x04 0x00 0x0 0x00 [IronLance] MonsterAI
+	UNIT 0xAD Bonewalker_Bow CantorBoss_Celica5 Level(7,Enemy,True) [15,14] 0x04 0x00 0x0 0x00 [IronBow] MonsterAI
+	UNIT
+	
 ZombieGroup:
 	UNIT Terror_Revenant Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x00 0x00 0x1 REDA13R6 [RottenClaw] MonsterAI
 	UNIT Terror_Revenant Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x00 0x00 0x1 REDA12R5 [RottenClaw] MonsterAI
@@ -113,8 +125,13 @@ Ch2_5_BeginningScene:
 	STAL 30
 	EARTHQUAKE_END
 	TILECHANGE 0x0 // Boat
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x205 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x205
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	FADU 16
 	STAL 20
 	CAMERA_CENTERED CantorBoss_Celica5

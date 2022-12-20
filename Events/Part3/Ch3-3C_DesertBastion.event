@@ -135,6 +135,28 @@ EnemyUnits:
 	UNIT Bandit_Bow Archer	Wolff Level(15, Enemy, True) [15,6]	0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
 	UNIT
 
+EnemyUnits_Hard:
+	UNIT Wolff Sniper Wolff Level(6, Enemy, False) [11,3] 0x00 0x00 0x0 0x00 [SteelBow,CoralRing] NeverMoveAI
+	UNIT Bandit_Bow Sniper	Wolff Level(5, Enemy, True) [21,13]	0x00 0x00 0x0 0x00 [IronBow] NoAI
+	UNIT Bandit_Bow Sniper	Wolff Level(5, Enemy, True) [3,7]	0x00 0x00 0x0 0x00 [SteelBow] NoAI
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(12, Enemy, True) [10,8]	0x00 0x00 0x0 0x00 [Rapier, IronShield] AttackInRangeAI
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(12, Enemy, True) [11,8]	0x00 0x00 0x0 0x00 [BraveSword, IronShield] NeverMoveAI
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(12, Enemy, True) [12,8]	0x00 0x00 0x0 0x00 [Zweihander, IronShield] AttackInRangeAI
+	UNIT Bandit_Bow Archer	Wolff Level(15, Enemy, True) [10,6]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Bandit_Bow Archer	Wolff Level(13, Enemy, True) [12,6]	0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(11, Enemy, True) [19,6]	DropItem 0x00 0x0 0x00 [Lancereaver,DoorKey] GuardTileAI
+	UNIT Bandit_Axe Pirate	Wolff Level(14, Enemy, True) [18,2]	0x00 0x00 0x0 0x00 [SteelAxe] GuardTileAI	
+	UNIT Enemy_Mercenary Mercenary	Wolff Level(11, Enemy, True) [17,3]	0x00 0x00 0x0 0x00 [Zweihander] GuardTileAI	
+	UNIT Bandit_Axe Pirate	Wolff Level(11, Enemy, True) [2,3]	0x00 0x00 0x0 0x00 [SteelAxe] [0xC, 0x3, 0x0, 0x0]
+	UNIT Bandit_Bow Archer	Wolff Level(14, Enemy, True) [8,4]	0x00 0x00 0x0 0x00 [SteelBow] DefensiveTerrainAI
+	UNIT Bandit_Bow Archer	Wolff Level(14, Enemy, True) [14,4]	0x00 0x00 0x0 0x00 [IronBow] DefensiveTerrainAI
+	UNIT DumaFaith_Sorcerer Shaman	Wolff Level(9, Enemy, True) [10,7]	0x00 0x00 0x0 0x00 [Miasma] NoAI
+	UNIT DumaFaith_Sorcerer Shaman	Wolff Level(9, Enemy, True) [11,7]	0x00 0x00 0x0 0x00 [Miasma, Physic] MoveAndHealAI
+	UNIT DumaFaith_Sorcerer Shaman	Wolff Level(9, Enemy, True) [12,7]	0x00 0x00 0x0 0x00 [Miasma] NoAI
+	UNIT Bandit_Bow Archer	Wolff Level(13, Enemy, True) [7,6]	0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
+	UNIT Bandit_Bow Archer	Wolff Level(15, Enemy, True) [15,6]	0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
+	UNIT
+
 Reinforcements1:
 	UNIT Enemy_Mercenary Mercenary	Wolff Level(10, Enemy, True) [11,16]	0x00 0x00 0x1 REDA11R16 [BaseSword] NoAI
 	UNIT Enemy_Mercenary Mercenary	Wolff Level(9, Enemy, True) [12,16]	0x00 0x00 0x1 REDA12R16 [IronSword] NoAI
@@ -174,8 +196,13 @@ REDA [20,3] NoFlags Walk_Slow 0x0 0x10
 
 Ch3_3C_BeginningScene:
 	MUSC SongID_SolveTheRiddle
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x3C03 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x3C03
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	FADU 5
 	STAL 20
 	CAMERA_CENTERED Wolff

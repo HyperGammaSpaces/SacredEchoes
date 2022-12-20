@@ -82,13 +82,26 @@ EnemyUnits:
 	UNIT Bandit_Bow Archer_F PirateCelica2 Level(4,Enemy,True) [17,8] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
 	UNIT Bandit_Bow Archer PirateCelica2 Level(4,Enemy,True) [17,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
 	UNIT
+    
+EnemyUnits_Hard:
+	UNIT PirateCelica2 Pirate_F PirateCelica2 Level(6,Enemy,False) [16,13] DropItem 0x00 0x0 0x00 [HandAxe,Item100G] AttackInRangeAI 
+	UNIT Bandit_Sword Mercenary PirateCelica2 Level(2,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate PirateCelica2 Level(5,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [IronAxe] NoAI 
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(6,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [IronAxe] NoAI 
+	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(5,Enemy,True) [15,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(6,Enemy,True) [15,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate PirateCelica2 Level(5,Enemy,True) [14,5] 0x00 0x00 0x0 0x00 [IronAxe] NoAI 
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(4,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
+	UNIT Bandit_Bow Archer_F PirateCelica2 Level(4,Enemy,True) [17,8] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT Bandit_Bow Archer PirateCelica2 Level(4,Enemy,True) [17,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT
 
 Boat2Enemies:
 	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(8,Enemy,True) [1,14] DropItem 0x00 0x1 REDA2R14 [BaseAxe,Item100G] NoAI 
 	UNIT Bandit_Bow Archer_F PirateCelica2 Level(4,Enemy,True) [1,14] DropItem 0x00 0x1 REDA1R13 [IronBow,Talisman] NoAI 
 	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(4,Enemy,True) [1,14] 0x00 0x00 0x1 REDA2R11 [BaseAxe] NoAI 
 	UNIT Bandit_Axe Pirate PirateCelica2 Level(6,Enemy,True) [1,14] 0x00 0x00 0x1 REDA3R13 [BaseAxe] NoAI
-	UNIT Bandit_Sword Thief PirateCelica2 Level(6,Enemy,True) [1,14] DropItem 0x00 0x1 REDA0R10 [IronSword] NoAI
+	UNIT Bandit_Sword Thief PirateCelica2 Level(6,Enemy,True) [1,14] DropItem 0x00 0x1 REDA0R10 [IronSword,Lockpick] NoAI
 	UNIT
 
 Ch2_3_BeginningScene:
@@ -100,8 +113,13 @@ Ch2_3_BeginningScene:
 		LOAD3 0x0 Ch2_3_Units1
 		ENUN
 	#endif
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x203 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x203
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	
 	CHECK_ALIVE Mae
 	BEQ 0x100 0xC 0x0

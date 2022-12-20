@@ -173,6 +173,29 @@ EnemyUnits:
 	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(6,Enemy,True) [14,1] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT Bandit_Sword Mercenary ArcanistBoss Level(9,Enemy,True) [14,15] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
 	UNIT
+	
+EnemyUnits_Hard:
+	UNIT ArcanistBoss Arcanist ArcanistBoss Level(3,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [Miasma,AngelRing,Item100G] AttackInRangeAI 
+	UNIT Enemy_Mercenary Mercenary ArcanistBoss Level(9,Enemy,True) [3,3] 0x00 0x00 0x0 0x00 [Armorslayer] NeverMoveAI 
+	UNIT Bandit_Bow Mage ArcanistBoss Level(9,Enemy,True) [5,9] 0x00 0x00 0x0 0x00 [Fire,IronShield] NeverMoveAI 
+	UNIT Bandit_Bow Archer_F ArcanistBoss Level(12,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
+	UNIT Bandit_Axe Pirate ArcanistBoss Level(11,Enemy,True) [2,14] 0x00 0x00 0x0 0x00 [IronAxe] NoAI 
+	UNIT Bandit_Axe Pirate ArcanistBoss Level(10,Enemy,True) [5,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI 
+	UNIT Bandit_Sword Mercenary ArcanistBoss Level(8,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	UNIT Bandit_Axe Pirate ArcanistBoss Level(12,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary ArcanistBoss Level(9,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT Bandit_Bow Archer ArcanistBoss Level(13,Enemy,True) [2,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
+	UNIT Remnant_Soldier Knight ArcanistBoss Level(3,Enemy,False) [11,5] 0x00 0x00 0x0 0x00 [SteelAxe,Javelin] NeverMoveAI 
+	UNIT Bandit_Sword Mercenary ArcanistBoss Level(10,Enemy,True) [16,8] 0x00 0x00 0x0 0x00 [IronSword,HideShield] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate_F ArcanistBoss Level(12,Enemy,True) [16,11] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI 
+	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(9,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Miasma,Heal] HealUnits 
+	UNIT DumaFaith_Sorcerer_2 Shaman ArcanistBoss Level(8,Enemy,True) [2,2] 0x00 0x00 0x0 0x00 [Miasma,Heal] AttackInRangeAI 
+	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(8,Enemy,True) [9,2] 0x00 0x00 0x0 0x00 [Miasma,Silence] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(8,Enemy,True) [17,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Remnant_Soldier Soldier ArcanistBoss Level(12,Enemy,True) [9,8] 0x00 0x00 0x0 0x00 [HeavySpear,IronShield] AttackInRangeAI 
+	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(6,Enemy,True) [14,1] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary ArcanistBoss Level(9,Enemy,True) [14,15] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	UNIT
 
 CavWestREDAs:
 	UNIT Remnant_Cav Cavalier ArcanistBoss Level(11,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [IronLance,IronShield] DefaultAI 
@@ -207,8 +230,13 @@ CutsceneEnemies2:
 	UNIT
 
 Ch2_7_BeginningScene:
-	LOAD1 0x1 EnemyUnits
-	ENUN
+	SVAL 0x2 (EnemyUnits|IsPointer)
+    CHECK_HARD
+    BEQ 0x207 rC r0
+        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+    LABEL 0x207
+    LOAD1 0x1 0xFFFFFFFF
+    ENUN
 	CAMERA_CENTERED [11,16]
 	FADU 16
 	MUSC Tension
