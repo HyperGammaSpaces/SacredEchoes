@@ -1,6 +1,6 @@
 .thumb
 
-push {r4,r5,r6,lr}
+push {r4-r6,lr}
 mov 	r4, r0
 mov 	r5, r1
 ldr 	r2, =#0x859BA90 @WeaponTriangle table
@@ -12,19 +12,17 @@ add 	r0, #0x50
 ldrb 	r1, [r0, #0x0]
 mov 	r0, #0x0
 ldsb 	r0, [r2, r0]
-mov 	r3, #0x3		@bow type
-cmp		r1, r3
-beq		HandleAttackerBow
+cmp		r1, #0x3		@bow type
+beq		HandleBow
 cmp 	r1, r0
 bne LoopNext
     mov 	r0, r5
     add 	r0, #0x50
     ldrb 	r1, [r0, #0x0]
     mov 	r0, #0x1
-    ldsb 	r0, [r2, r0] 
-	mov 	r3, #0x3		@bow type
-	cmp		r1, r3
-	beq		HandleDefenderBow
+    ldsb 	r0, [r2, r0]
+	cmp		r1, #0x3		@bow type
+	beq		HandleBow
     cmp 	r1, r0
     bne LoopNext
         ldrb 	r0, [r2, #0x2] 
@@ -46,11 +44,6 @@ bne LoopNext
         strb 	r0, [r1, #0x0]
         b ReaverCheck
 		
-HandleAttackerBow:
-mov r1, r4
-b HandleBow
-HandleDefenderBow:
-mov r1, r5
 HandleBow:
 	push {r6, r7}
 	ldrb r0, [ r4, #0x10 ]
@@ -71,6 +64,29 @@ HandleBow:
 	cmp r0, #0x01
 	bne LongRange
 		@now we have bow at 1-range, apply debuff
+                
+        mov 	r0, r4
+        add 	r0, #0x50
+        ldrb 	r1, [r0, #0x0]
+        cmp     r1, #0x3		@bow type
+        bne     BowDefender
+        mov     r1, r4
+		mov 	r0, #15 
+        neg 	r0, r0
+        add 	r1, #0x53
+        strb 	r0, [r1, #0x0]
+        mov		r0, #1 
+        neg 	r0, r0
+        add 	r1, #0x1
+        strb 	r0, [r1, #0x0]
+        
+        BowDefender:
+        mov 	r0, r5
+        add 	r0, #0x50
+        ldrb 	r1, [r0, #0x0]
+        cmp     r1, #0x3		@bow type
+        bne     LongRange
+        mov     r1, r5
 		mov 	r0, #15 
         neg 	r0, r0
         add 	r1, #0x53
@@ -113,7 +129,7 @@ beq EndFunc
 @    mov 	r1, r5
 @    bl BattleCheckReaver
 EndFunc:
-pop {r4,r5,r6}
+pop {r4-r6}
 pop {r0}
 bx r0
 
