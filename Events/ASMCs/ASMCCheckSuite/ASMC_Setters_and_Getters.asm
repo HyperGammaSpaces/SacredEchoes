@@ -71,6 +71,9 @@ ExitGiveExp:
 
 BeginMapAnimExp:
 	push {r4-r5, lr}
+    mov  r4, r0
+    mov  r5, r1
+    blh  0x08003C94 @Font_InitForUiDefault
 	ldr  r1, =0x0203E1F0		@ gMapAnimStruct
 	mov  r12, r1
 	add  r1, #0x5F				@ unknown 1
@@ -89,13 +92,19 @@ BeginMapAnimExp:
 	add  r1, #0x1				@ defending actor id
 	strb r2, [r1]
 	ldr  r0, =0x0203a4ec		@ gBattleActor
+    mov  r2, r0
+    add  r2, #0x4A
+	mov  r3, #0
+	mov  r1, #0x4F
+	strh r1, [r2, #0]
 	ldr  r1, =0x0203A56C		@ gBattleTarget
 	ldr  r2, =0x0807b738
 	ldr  r2, [r2]				@ battle buffer
 	blh  0x0807b900 			@ SetupMapBattleAnim
 	ldr  r0, =MapAnimGetExp
-	mov  r1, r5
+	mov  r1, r4
 	blh  0x08002CE0 			@ Proc_Start_Blocking
+    bl   HideMMSFunc
 	pop  {r4-r5}
 	pop  {r0}
 	bx   r0
@@ -141,7 +150,49 @@ CheckCanGiveExp_End:
 	pop  {r4-r5}
 	pop  {r0}
 	bx   r0
+.align
+.ltorg
 
+ClearExtraAnim:
+    push	{lr}
+
+	ldr r0, =0x089A2C48	@(Procs MoveUnit )	{U}
+	blh	0x08002e9c	@Find6C	{U}
+	blh	0x08002d6c	@Delete6C	{U}
+
+	pop	{r0}
+	bx	r0
+
+HideMMSFunc:
+    push {r4, lr}
+    ldr r4, =0x03004E50	@CurrentUnit	@{U}
+    ldr r4, [r4]
+    cmp r4, #0x0
+    beq HideMMSFunc_Exit
+    blh 0x080790a4  @ ClearMOVEUNITs	@{U}
+    ldr r0, =0x089A2C48	@(Procs MoveUnit )	{U}
+    blh	0x08002e9c	@Find6C	{U}
+    cmp r0, #0 
+    beq HideMMSFunc_SkipHidingInProc
+
+    add r0, #0x40 @this is what MU_Hide does @MU_Hide, 0x80797D5
+    mov r1, #1 
+    strb r1, [r0] @ store back 0 to show active MMS again aka @MU_Show, 0x80797DD
+
+    HideMMSFunc_SkipHidingInProc: 
+    ldr r1, [r4, #0x0C] @ Unit state 
+    mov r2, #1 @ Hide 
+    bic r1, r2 @ Show SMS 
+    str r1, [r4, #0x0C] 
+
+    blh  0x0801A1F4   @RefreshFogAndUnitMaps	@{U}
+    blh  0x080271a0   @SMS_UpdateFromGameData	@{U}
+    blh  0x08019c3c   @UpdateGameTilesGraphics	@{U}
+    
+    HideMMSFunc_Exit:
+    pop {r4}
+    pop {r0}
+    bx r0
 
 GiveExperienceASMC:
 	push {r4,r5,r14}
@@ -162,16 +213,15 @@ GiveExperienceASMC:
 	bl   GiveExpToActiveUnit
     cmp  r0, #0
     beq  GiveExp_ReturnFalse
-        blh  0x080790a4 @ClearMOVEUNITs
-        ldr  r0, [r4, #0xC]
-        mov  r1, #0x43
-        orr  r0, r1
-        str  r0, [r4, #0xC]
-        
+        ldr  r0, =0x0859BAC4
+        mov  r1, r5
+        blh  0x08002CE0 			@ Proc_Start_Blocking
         mov  r0, r5
+        mov  r1, r4
         bl   BeginMapAnimExp
 		ldr  r1, =MemorySlotC
 		str  r0, [r1]
+        bl   ClearExtraAnim
 		b    GiveExp_End
 	
 GiveExp_ReturnFalse:	

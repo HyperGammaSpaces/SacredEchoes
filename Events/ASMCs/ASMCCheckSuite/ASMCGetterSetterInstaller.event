@@ -8,6 +8,17 @@ ALIGN 4
 ALIGN 4
 
 MapAnimGetExp:
+    PROC_CALL_ROUTINE($15360|1) //AddSkipThread2
+    PROC_SLEEP(2)
+    PROC_CALL_ROUTINE($7A940|1) //MoveCameraOntoSubject
+    PROC_SLEEP(2) //Wait 2frame
+    PROC_CALL_ROUTINE($7AA4C|1) //DisplayMapAnimExpBar
+    PROC_YIELD
+    PROC_NEW_CHILD_BLOCKING(gProc_PopR_AnimsOnWrapper)
+    PROC_CALL_ROUTINE($15370|1) //SubSkipThread2
+    PROC_CALL_ROUTINE($7A80C|1) //MapAnim_Cleanup
+    PROC_END
+/*
     PROC_CALL_ROUTINE($15360+1) //AddSkipThread2
     PROC_CALL_ROUTINE($7a940+1) //MoveCameraOntoSubject
     PROC_SLEEP(2) //Wait 2frame
@@ -19,6 +30,7 @@ MapAnimGetExp:
     PROC_JUMP($9A3620) //goto MapBattleEndCleanup
     PROC_END
     ALIGN 4
+*/
 
 //Getters
 #define CheckLevel(Character) "SVAL 0x2 Character; ASMC CheckLevelASMC|1"
