@@ -250,14 +250,27 @@ static const struct MenuDef Menu_SelectWeaponType =
     .onHelpBox = (void*) (0x08024588|1),
 };
 
+u8 Menu_SelectWeaponType_Cancel_Equip(MenuProc* menu) {
+    EndAllMenus();
+    Text_InitFont();
+    ClearBG0BG1();
+    FillBgMap(gBg0MapBuffer, 0);
+    RedrawItemMenu_Equip(menu);
+    EndMenu(menu->proc_parent);
+    return MENU_ACT_SKIPCURSOR | MENU_ACT_CLEAR;
+}
+
+void Menu_SelectWeaponType_OnEnd_Equip(MenuProc* menu) {}
+
 static const struct MenuDef Menu_SelectWeaponType_Equip =
 {
     .rect = { 0, 0, 7, 0 },
     .style = 1,
     .menuItems = MenuCommands_SelectWeaponType_Equip,
 
-    .onEnd = (void*) (0x080234F0|1),
-    .onBPress = (void*) (0x080234FC|1),
+    .onEnd = (void*) Menu_SelectWeaponType_OnEnd_Equip,
+    //.onBPress = (void*) (0x080234FC|1),
+    .onBPress = (void*) Menu_SelectWeaponType_Cancel_Equip,
     .onRPress = (void*) (0x0804F520|1),
     .onHelpBox = (void*) (0x08024588|1),
 };
