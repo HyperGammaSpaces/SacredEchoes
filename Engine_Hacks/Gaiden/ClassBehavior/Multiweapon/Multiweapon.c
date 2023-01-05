@@ -14,6 +14,7 @@ extern void PrepareSubmenuGraphics(int x, int y); // 0x080234AC.
 extern u8 UnitActionMenu_Attack(MenuProc* menu, MenuItemProc* menuCommand); // 0x08022B30.
 extern void RedrawItemMenu_Equip(MenuProc* menu); // 0x08023550.
 extern void RedrawItemMenu(MenuProc* menu); // 0x080235A8.
+extern void MakeRTextBox(int xOff, int yOff, int itemID); // 0x08088E60.
 
 void RemoveExcessBaseWeapons(Unit* unit);
 u8 EquipCommand_OnSelect(MenuProc* menu, MenuItemProc* menuCommand);
@@ -238,6 +239,12 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType_Equip[] =
     {} // END
 };
 
+
+void Menu_SelectWeaponType_HelpBox(MenuProc* menu, MenuItemProc* menuCommand) {
+    int itemID = Multiweapon_BaseWeaponsList[menuCommand->commandDefinitionIndex];
+    MakeRTextBox(menuCommand->xDrawTile<<3,menuCommand->yDrawTile<<3,itemID);
+}
+
 static const struct MenuDef Menu_SelectWeaponType =
 {
     .rect = { 0, 0, 7, 0 },
@@ -247,7 +254,8 @@ static const struct MenuDef Menu_SelectWeaponType =
     .onEnd = (void*) (0x080234F0|1),
     .onBPress = (void*) (0x080234FC|1),
     .onRPress = (void*) (0x0804F520|1),
-    .onHelpBox = (void*) (0x08024588|1),
+    // .onHelpBox = (void*) (0x08024588|1), // See note for equip menu.
+    .onHelpBox = (void*) Menu_SelectWeaponType_HelpBox,
 };
 
 u8 Menu_SelectWeaponType_Cancel_Equip(MenuProc* menu) {
@@ -272,7 +280,8 @@ static const struct MenuDef Menu_SelectWeaponType_Equip =
     //.onBPress = (void*) (0x080234FC|1),
     .onBPress = (void*) Menu_SelectWeaponType_Cancel_Equip,
     .onRPress = (void*) (0x0804F520|1),
-    .onHelpBox = (void*) (0x08024588|1),
+    //.onHelpBox = (void*) (0x08024588|1), // This routine gets the item menu help box...
+    .onHelpBox = (void*) Menu_SelectWeaponType_HelpBox,
 };
 
 int IsWeaponEligible(int item) {
