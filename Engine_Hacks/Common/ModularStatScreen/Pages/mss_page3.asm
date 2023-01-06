@@ -56,7 +56,7 @@ EndRanks:
         ldrb    r2, [r1]
         cmp     r2, #0x16
         bne     NotDF
-            add     r7, #0x20
+            add     r7, #0x40
         NotDF:
         mov     r2, #0x29
         ldrb    r1, [r1, r2] @class ability 2

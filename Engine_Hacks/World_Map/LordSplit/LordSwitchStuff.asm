@@ -12,6 +12,7 @@
 .equ GetUnitByCharId, 0x0801829C
 .equ GetChapterDefinition, 0x08034618
 .equ CheckEventId, 0x08083DA8
+.equ SetEventId, 0x08083D80
 .equ ProcFind, 0x08002E9C
 .equ ProcGoto, 0x08002F24
 .equ WMLoc_GetNextLocID, 0x080BB5E4
@@ -65,6 +66,58 @@ Act5SetupASMC:
 	str r1, [r2]
 
 	mov r0, #0x17
+	pop {r1}
+	bx r1
+
+.align
+.ltorg
+
+@node 0x35 and path 0x37
+.equ PostgameMap_NodeID, 0x35
+.equ PostgameMap_PathID, 0x37
+.equ gBossRushUnlocked, 0xAC
+EnablePostgameMap:
+	push {r4-r5,lr}
+    ldr r0, =gWorldmapData
+    @add node
+    mov r1, #0x30
+    add r1, r0
+    add r1, #PostgameMap_NodeID
+    mov r2, #1
+    strb r2, [r1]
+    @add path
+    mov r2, #0x84
+    add r2, r0
+    add r2, #0x32
+    mov r1, #0x34
+    strb r1, [r2]
+    mov r1, #0x36
+    strb r1, [r2, #1]
+    mov r1, #PostgameMap_PathID
+    strb r1, [r2, #2]
+    @update path count
+    mov r2, #0xC4
+    add r2, r0
+    mov r1, #0x35
+    strb r1, [r2]
+    @update paths map
+    mov r1, #0x84
+    add r1, r0
+    blh 0x080BCA0C @RefreshGmNodeLinks
+    ldr r0, =WorldMapProc
+    blh ProcFind
+    ldr r0, [r0, #0x44]
+    ldr r1, [r0, #0x4C]
+    add r1, #0x31
+    ldrb r2, [r1]
+    mov r0, #0x3
+    orr r0, r2
+    strb r0, [r1]
+    @set flag to not update again
+    mov r0, #gBossRushUnlocked
+    blh SetEventId
+	mov r0, #0x17
+	pop {r4-r5}
 	pop {r1}
 	bx r1
 
@@ -587,7 +640,15 @@ SwitchCommandEffect:
     mov r2, #0x20 @postgame flag
     and r2, r0
     cmp r2, #0x0
-    bne DonePartyStuff
+    beq SwitchParty
+        mov r0, #gBossRushUnlocked
+        blh CheckEventId
+        cmp r0, #0
+        bne DonePartyStuff
+            bl EnablePostgameMap
+            b DonePartyStuff
+    SwitchParty:
+        ldr r1, =gChapterData
         ldrb r0, [r1, #0x1B] @mode byte
         bl HandlePartySwitch
 	DonePartyStuff:

@@ -20,9 +20,9 @@ Specifically:
   - The Soldier line gets access to additional weapon types as it progresses. (Promotion to Knight adds Axes, and promotion to Baron adds Swords)
   - Bows suffer from weapon triangle disadvantage at point-blank range, with the same penalties as vanilla FE8 (-1 Atk, -15 Hit). There is also a 5% falloff to Hit for each tile over 2-range. Place your archers carefully!
 - Promotion brings units up to the new class's bases rather than giving promo gains
-- Promotion is no longer item based but is done through the Mila option in the menu when they reach promotion level, and when the unit is standing next to a Mila statue on the map. Mila statues are available in repeatable dungeon maps which you can replay as needed (Thief Shrine, Deliverance Hideout, and Seabound Shrine). You will see a notification when a unit has reached the level they can promote at, and the unit will have a Mila icon beside their name on the statscreen.
+- Promotion is no longer item based but is done through the Mila option in the menu when they reach promotion level, and when the unit is standing next to a Mila statue on the map. Mila statues are available in repeatable dungeon maps which you can replay as needed (Thief Shrine, Deliverance Hideout, and Seabound Shrine, for example). You will see a notification when a unit has reached the level they can promote at, and the unit will have a Mila icon beside their name on the statscreen.
   - Class promotions become available at the same levels as in SoV. Female archers (not present in SoV) follow the same promotion levels as male. The playable Thief class promotes at level 14.
-  - As in Gaiden/Echoes, Dread Fighters can promote back into Villager, so units in the Mercenary class line can be further customized.
+  - As in Gaiden/Echoes, Dread Fighters (called "Dreadknight" in-game for text space reasons) can promote back into Villager, so units in the Mercenary class line can be further customized.
   - Additionally, the Priestess class that promotes from female Mages can now promote into a magic-wielding Dread Fighter. Female Dread Fighters can also reclass into female Villagers.
 - Villager classes can promote into any of 5 first-tier classes
   - Villager_F: Cleric, Peg Knight, Mage, Cavalier, Archer
@@ -33,7 +33,7 @@ Specifically:
   - Warp/Rescue use their GBAFE ranges. (Mag/2)
   - Expel has been buffed to 100% accuracy but only affects monster classes. It will hit all enemies in Mag/2 range which are of a Monster class type, and reduce them to 1 HP.
   - Promoted magic units will learn their whole unpromoted spell list. (This is why Mage/Cleric promotion levels are so high)
-- A (mostly) working world map that you can explore, with two lords you can alternate between after a certain point in the story.
+- A working world map that you can explore, with two lords you can alternate between after a certain point in the story.
 - A reworked support system with no limits (press R on the statscreen to see the bonuses).
 - Lion Heads/Sacred Springs which can be visited in the repeatable maps to gain stat boosts, experience, and even revive dead units...
 
@@ -97,7 +97,7 @@ Spell lists are largely the same as SoV.
   - Lv1 Heal
   - Lv7 Warp/Rescue
   - Lv14 Expel
-  - Lv18 Invoke (DF)
+  - Lv18 Invoke (Dreadknight)
   - Lv1 (Saint) Seraphim
 - Celica
   - Lv1 Fire
@@ -191,6 +191,13 @@ Spell lists are largely the same as SoV.
   - Lv1 (Saint) Fortify
   - Lv5 (Saint) Rewarp
   - Lv10 (Saint) Entrap
+- Tatiana
+  - Lv1 Nosferatu
+  - Lv1 Physic
+  - Lv1 (Saint) Seraphim
+  - Lv4 (Saint) Fortify
+  - Lv7 (Saint) Invoke (Pegasus Knight)
+  - Lv8 (Saint) Warp
 - Nomah
   - Lv1 Fire
   - Lv1 Excalibur
@@ -218,12 +225,14 @@ This hack does not make use of the skill system, but there are some skills which
 
 #Known issues
 
-Some things are still under development for later releases.
+While all major bugs have now been addressed, some minor bugs remain. A V1.1 release some time in the future will address these remaining issues.
 
-- The game has only been balanced for Normal mode (hard mode results may vary). It is recommended to only play on Easy or Normal for now.
-- Some support conversations have been implemented while others are still placeholders. (Roughly 80% complete)
-- Some issues have been reported with Rewarp.
-- The world map is rotated 90 degrees from the original. The final release will address this.
+- Some issues have been reported with Rewarp on large dungeon maps. The bug has been confirmed, but my testing has not been able to replicate it.
+- Certain frame-perfect inputs may cause issues with pop-up notification background transparency.
+- Some glitches may occur when hard-resetting and resuming while in the middle of a player phase action. Choosing "Suspend" from the battle map menu works as intended.
+- (For the above three, if you encounter these issues, please provide me with files to replicate the issue--whether these are savestates or TAS inputs or a .sav file in which the issue persists after resuming the chapter)
+- Some issues with Lukas having a blank item in his inventory upon starting Act 3 have been reported. I think this one will require a Lua script to effectively debug. In the meantime, depositing the blank item should allow you to continue without ill effects.
+- I still don't like that one CG of Alm and Zeke and plan to re-draw it.
 
 #Credits
 
@@ -249,6 +258,7 @@ Some things are still under development for later releases.
   - Jedah, Dragon Duma, and Rodney by L95
   - Zopyrus by RandomWizard and Levin64
   - Xaizor by epicer
+  - Shade, Emma, and Young Clair by MogSynthesizer
   - all others by hypergammaspaces or IS
 - Battle Animations: 
   - Duma battle animation by Nuramon and L95; mapsprite by L95
@@ -288,11 +298,13 @@ Some things are still under development for later releases.
 - Battle palettes by Hypergammaspaces, Nuramon, and Dancer_A
 - LordGlenn's Cipher icons for weapon ranks, weapon icons for Regalia weapons
 - Cardcafe's Echoes item icons and FEier's Weapon icons, Dark magic icons by epicer and ilmoro
-- New support writing contributed by Meadows, Flare, Ese, and CaptinSpike
-  - Meadows: Alm/Tobin, Alm/Gray, Kliff/Gray, Kliff/Silque, Tobin/Clair, Tobin/Faye, Silque/Tatiana, Valbar/Deen, Valbar/Kamui, Mae/Est, Boey/Nomah
-  - Ese: Alm/Celica, Alm/Kliff, Alm/Faye, Alm/Mycen, Celica/Boey, Celica/Genny, Celica/Saber, Gray/Acantha, Tobin/Gray, Tobin/Clair, Tobin/Kliff, Silque/Jesse, Python/Acantha, Kamui/Hyas, Atlas/Hyas, Palla/Hyas, Boey/Conrad
+- New support writing contributed by Meadows, Flare, Ese, MogSynthesizer, and CaptinSpike
+  - Meadows: Alm/Tobin, Alm/Gray, Kliff/Gray, Kliff/Silque, Tobin/Clair, Tobin/Faye, Silque/Tatiana, Valbar/Deen, Valbar/Kamui, Mae/Est, Boey/Nomah, Zeke/Luthier
+  - Ese: Alm/Celica, Alm/Kliff, Alm/Faye, Alm/Mycen, Celica/Boey, Celica/Genny, Celica/Saber, Gray/Acantha, Gray/Faye, Tobin/Gray, Tobin/Clair, Tobin/Kliff, Silque/Jesse, Python/Acantha, Kamui/Hyas, Atlas/Hyas, Palla/Hyas, Boey/Conrad
   - CaptinSpike: Saber/Sonya C and B, assorted boss conversations
   - Flare: Clive/Mathilda B and A
+  - MogSynthesizer: Zeke/Luthier, Silque/Luthier, Clair/Fernand
+  - Levin64: Clive/Fernand, Fernand/Mathilda
 - Pearl for boss conversations in Chapter 16A
 - RandomWizard for boss conversations and text formatting help, and "The Siege" map
 - Levin64 and Tea for story writing assistance and English proofreading
