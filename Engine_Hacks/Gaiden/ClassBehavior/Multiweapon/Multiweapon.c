@@ -262,9 +262,7 @@ u8 Menu_SelectWeaponType_Cancel_Equip(MenuProc* menu) {
     EndAllMenus();
     Text_InitFont();
     ClearBG0BG1();
-    FillBgMap(gBg0MapBuffer, 0);
     RedrawItemMenu_Equip(menu);
-    EndMenu(menu->proc_parent);
     return MENU_ACT_SKIPCURSOR | MENU_ACT_CLEAR;
 }
 
