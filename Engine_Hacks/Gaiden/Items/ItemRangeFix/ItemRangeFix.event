@@ -121,9 +121,9 @@
 		SHORT $BC01 $4700 $0
 		POIN HammerneStaff_RangeSetup|1
     DancerRingTargetSelect:
-		SHORT $B500 $1C22 $4902
+		SHORT $1C28 $1C22 $4902
 		BL(SetupDancerRingTargetSelection)
-		SHORT $BC01 $4700 $0
+		SHORT $BC30 $BC01 $4700
 		POIN DancerRing_RangeSetup|1
     SetupDancerRingTargetSelection:
         SHORT $B530 $1C15

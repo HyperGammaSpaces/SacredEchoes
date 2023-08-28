@@ -30,7 +30,14 @@ CelicaTalkEvent:
 		MUSI
 		STAL 30
 		FlashCursor(Celica, 60)
-		Text(Ch2_1_TutorialText)
+		TEXTMODE 0
+        TEXTSHOW Ch2_1_TutorialText
+		TEXTEND
+		STAL 30
+		FlashCursor(0, 8, 60)
+		FlashCursor(6, 8, 60)
+		TEXTCONT
+		TEXTEND
 		MUNO
 	LABEL 0x8
 	EVBIT_MODIFY 0x0

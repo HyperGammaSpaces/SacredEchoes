@@ -425,6 +425,7 @@ Ch3_7A_EndingScene:
 			LOAD1 0x1 DeltheaJoins
 			ENUN
             SetBackground(BlackBackground,5)
+            CALL $591F40
 			CharacterJoinedNotification(Notif_DeltheaJoin)
 			EVBIT_MODIFY 0x0
             FADI 5
@@ -456,6 +457,7 @@ Ch3_7A_EndingScene:
 		LOAD1 0x1 DeltheaJoins
 		ENUN
         SetBackground(BlackBackground,5)
+        CALL $591F40
 		CharacterJoinedNotification(Notif_DeltheaJoin)
 		EVBIT_MODIFY 0x0
         FADI 5

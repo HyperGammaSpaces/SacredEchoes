@@ -318,6 +318,7 @@ Ch3_5C_EndingScene:
 			NoFade
 	LABEL 0x5
 	BackgroundText(Ch3_5C_EndingText_EstOnly)
+    CALL $591F40
 	CharacterJoinedNotification(Notif_EstJoin)
 	FADI 5
 	CLEAN
@@ -330,6 +331,7 @@ Ch3_5C_EndingScene:
 	CHECK_EVENTID gFightSonyaChosen
 	BEQ 0x6 0xC 0x0
 		BackgroundText(Ch3_5C_EndingText_GetDeen)
+        CALL $591F40
 		CharacterJoinedNotification(Notif_DeenJoin)
         FadeOutMusic
 		FADI 2
@@ -339,6 +341,7 @@ Ch3_5C_EndingScene:
 		GOTO 0x7
 	LABEL 0x6
 		BackgroundText(Ch3_5C_EndingText_GetSonya)
+        CALL $591F40
 		CharacterJoinedNotification(Notif_SonyaJoin)
         FadeOutMusic
 		FADI 2

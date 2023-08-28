@@ -2,7 +2,7 @@
 
 #define GMIcon_Cave 0x0
 #define GMIcon_BigFort 0x1
-#define GMIcon_BigFortBlue 0x2
+#define GMIcon_DumaTower 0x2
 #define GMIcon_MiniCastle 0x5
 #define GMIcon_BlueCastle 0x6
 #define GMIcon_Pyramid 0x7
@@ -320,7 +320,7 @@ WorldMapNodeEntry(0x100,GMIcon_Fort,0x21,GMLoc_DumaSwamp,252,40,Loc_DumaGate,0x0
 //GMLoc_DumaSwamp
 WorldMapNodeEntry(0x100,GMIcon_Point,0x22,GMLoc_DumaTower,216,40,Loc_DumaSwamp,0x0,0x0)
 //GMLoc_DumaTower
-WorldMapNodeEntry(0x100,GMIcon_Tower,0x28,GMLoc_DragonsMaw,194,28,Loc_DumaTower,0x0,0x0)
+WorldMapNodeEntry(0x100,GMIcon_DumaTower,0x28,GMLoc_DragonsMaw,194,28,Loc_DumaTower,0x0,0x0)
     setAlternateChapter(GMLoc_DumaTower,gChapter4C6Completed,0x2d,GMLoc_DragonsMaw,GMLoc_DragonsMaw)
 //GMLoc_RigelForest1
 WorldMapNodeEntry(0x100,GMIcon_Point,0x23,GMLoc_RigelForest2,88,152,Loc_RigelForest1,0x0,0x0)

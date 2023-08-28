@@ -11,21 +11,21 @@ extern void MakeTargetListForWeapon(Unit* unit, int item); // 0x080251B4.
 extern void DrawItemMenuLine(struct TextHandle* text, int item, s8 isGrayed, u16* mapOut); // 0x08016848.
 extern s8 CanUnitUseItem(Unit* unit, int item); // 0x08028870.
 extern void PrepareSubmenuGraphics(int x, int y); // 0x080234AC.
-extern u8 UnitActionMenu_Attack(MenuProc* menu, MenuItemProc* menuCommand); // 0x08022B30.
+extern u8 UnitActionMenu_Attack(MenuProc* menu, MenuCommandProc* menuCommand); // 0x08022B30.
 extern void RedrawItemMenu_Equip(MenuProc* menu); // 0x08023550.
 extern void RedrawItemMenu(MenuProc* menu); // 0x080235A8.
 extern void MakeRTextBox(int xOff, int yOff, int itemID); // 0x08088E60.
 
 void RemoveExcessBaseWeapons(Unit* unit);
-u8 EquipCommand_OnSelect(MenuProc* menu, MenuItemProc* menuCommand);
-int AttackingWeapon_OnDraw(MenuProc* menu, MenuItemProc* menuCommand);
-u8 AttackingWeapon_OnSelect(MenuProc* menu, MenuItemProc* menuCommand);
-u8 WeaponType_OnCancel(MenuProc* menu, MenuItemProc* menuCommand);
-u8 WeaponType_UsabilityCheck(const struct MenuItemDef* menuEntry, int index);
-u8 WeaponType_UsabilityCheck_Equip(const struct MenuItemDef* menuEntry, int index);
-int WeaponType_OnDraw(MenuProc* menu, MenuItemProc* menuCommand);
-u8 WeaponType_OnSelect(MenuProc* menu, MenuItemProc* menuCommand);
-u8 WeaponType_OnSelect_Equip(MenuProc* menu, MenuItemProc* menuCommand);
+int EquipCommand_OnSelect(MenuProc* menu, MenuCommandProc* menuCommand);
+int AttackingWeapon_OnDraw(MenuProc* menu, MenuCommandProc* menuCommand);
+int AttackingWeapon_OnSelect(MenuProc* menu, MenuCommandProc* menuCommand);
+int WeaponType_OnCancel(MenuProc* menu, MenuCommandProc* menuCommand);
+int WeaponType_UsabilityCheck(const struct MenuCommandDefinition* menuEntry, int index);
+int WeaponType_UsabilityCheck_Equip(const struct MenuCommandDefinition* menuEntry, int index);
+int WeaponType_OnDraw(MenuProc* menu, MenuCommandProc* menuCommand);
+int WeaponType_OnSelect(MenuProc* menu, MenuCommandProc* menuCommand);
+int WeaponType_OnSelect_Equip(MenuProc* menu, MenuCommandProc* menuCommand);
 
 enum {
     //Constants for drawing
@@ -53,10 +53,10 @@ enum {
     MULTIWEAP_EQUIP_HIGHLANDER = (MULTIWEAP_AXE | MULTIWEAP_BOW),
 };
 
-static const struct MenuItemDef MenuCommands_SelectWeaponType[] =
+static const struct MenuCommandDefinition MenuCommands_SelectWeaponType[] =
 {
     {
-        .overrideId = ITYPE_SWORD,
+        ._u09 = ITYPE_SWORD,
         .isAvailable = WeaponType_UsabilityCheck,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -67,18 +67,7 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType[] =
     },
 
     {
-        .overrideId = ITYPE_LANCE,
-        .isAvailable = WeaponType_UsabilityCheck,
-
-        .onDraw = (void*) WeaponType_OnDraw,
-        .onEffect = WeaponType_OnSelect,
-        
-        //.onSwitchIn = (void*) (0x08022D84|1),
-        //.onSwitchOut = (void*) (0x08022DD8|1),
-    },
-    
-    {
-        .overrideId = ITYPE_AXE,
+        ._u09 = ITYPE_LANCE,
         .isAvailable = WeaponType_UsabilityCheck,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -89,7 +78,7 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType[] =
     },
     
     {
-        .overrideId = ITYPE_BOW,
+        ._u09 = ITYPE_AXE,
         .isAvailable = WeaponType_UsabilityCheck,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -100,7 +89,7 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType[] =
     },
     
     {
-        .overrideId = ITYPE_STAFF,
+        ._u09 = ITYPE_BOW,
         .isAvailable = WeaponType_UsabilityCheck,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -111,7 +100,7 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType[] =
     },
     
     {
-        .overrideId = ITYPE_ANIMA,
+        ._u09 = ITYPE_STAFF,
         .isAvailable = WeaponType_UsabilityCheck,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -122,7 +111,7 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType[] =
     },
     
     {
-        .overrideId = ITYPE_LIGHT,
+        ._u09 = ITYPE_ANIMA,
         .isAvailable = WeaponType_UsabilityCheck,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -133,7 +122,18 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType[] =
     },
     
     {
-        .overrideId = ITYPE_DARK,
+        ._u09 = ITYPE_LIGHT,
+        .isAvailable = WeaponType_UsabilityCheck,
+
+        .onDraw = (void*) WeaponType_OnDraw,
+        .onEffect = WeaponType_OnSelect,
+        
+        //.onSwitchIn = (void*) (0x08022D84|1),
+        //.onSwitchOut = (void*) (0x08022DD8|1),
+    },
+    
+    {
+        ._u09 = ITYPE_DARK,
         .isAvailable = WeaponType_UsabilityCheck,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -146,10 +146,10 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType[] =
     {} // END
 };
 
-static const struct MenuItemDef MenuCommands_SelectWeaponType_Equip[] =
+static const struct MenuCommandDefinition MenuCommands_SelectWeaponType_Equip[] =
 {
     {
-        .overrideId = ITYPE_SWORD,
+        ._u09 = ITYPE_SWORD,
         .isAvailable = WeaponType_UsabilityCheck_Equip,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -160,18 +160,7 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType_Equip[] =
     },
 
     {
-        .overrideId = ITYPE_LANCE,
-        .isAvailable = WeaponType_UsabilityCheck_Equip,
-
-        .onDraw = (void*) WeaponType_OnDraw,
-        .onEffect = WeaponType_OnSelect_Equip,
-        
-        //.onSwitchIn = (void*) (0x08022D84|1),
-        //.onSwitchOut = (void*) (0x08022DD8|1),
-    },
-    
-    {
-        .overrideId = ITYPE_AXE,
+        ._u09 = ITYPE_LANCE,
         .isAvailable = WeaponType_UsabilityCheck_Equip,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -182,7 +171,7 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType_Equip[] =
     },
     
     {
-        .overrideId = ITYPE_BOW,
+        ._u09 = ITYPE_AXE,
         .isAvailable = WeaponType_UsabilityCheck_Equip,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -193,7 +182,7 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType_Equip[] =
     },
     
     {
-        .overrideId = ITYPE_STAFF,
+        ._u09 = ITYPE_BOW,
         .isAvailable = WeaponType_UsabilityCheck_Equip,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -204,7 +193,7 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType_Equip[] =
     },
     
     {
-        .overrideId = ITYPE_ANIMA,
+        ._u09 = ITYPE_STAFF,
         .isAvailable = WeaponType_UsabilityCheck_Equip,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -215,7 +204,7 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType_Equip[] =
     },
     
     {
-        .overrideId = ITYPE_LIGHT,
+        ._u09 = ITYPE_ANIMA,
         .isAvailable = WeaponType_UsabilityCheck_Equip,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -226,7 +215,18 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType_Equip[] =
     },
     
     {
-        .overrideId = ITYPE_DARK,
+        ._u09 = ITYPE_LIGHT,
+        .isAvailable = WeaponType_UsabilityCheck_Equip,
+
+        .onDraw = (void*) WeaponType_OnDraw,
+        .onEffect = WeaponType_OnSelect_Equip,
+        
+        //.onSwitchIn = (void*) (0x08022D84|1),
+        //.onSwitchOut = (void*) (0x08022DD8|1),
+    },
+    
+    {
+        ._u09 = ITYPE_DARK,
         .isAvailable = WeaponType_UsabilityCheck_Equip,
 
         .onDraw = (void*) WeaponType_OnDraw,
@@ -240,16 +240,16 @@ static const struct MenuItemDef MenuCommands_SelectWeaponType_Equip[] =
 };
 
 
-void Menu_SelectWeaponType_HelpBox(MenuProc* menu, MenuItemProc* menuCommand) {
+void Menu_SelectWeaponType_HelpBox(MenuProc* menu, MenuCommandProc* menuCommand) {
     int itemID = Multiweapon_BaseWeaponsList[menuCommand->commandDefinitionIndex];
     MakeRTextBox(menuCommand->xDrawTile<<3,menuCommand->yDrawTile<<3,itemID);
 }
 
-static const struct MenuDef Menu_SelectWeaponType =
+static const struct MenuDefinition Menu_SelectWeaponType =
 {
-    .rect = { 0, 0, 7, 0 },
+    .geometry = { 0, 0, 7, 0 },
     .style = 1,
-    .menuItems = MenuCommands_SelectWeaponType,
+    .commandList = MenuCommands_SelectWeaponType,
 
     .onEnd = (void*) (0x080234F0|1),
     .onBPress = (void*) (0x080234FC|1),
@@ -263,16 +263,16 @@ u8 Menu_SelectWeaponType_Cancel_Equip(MenuProc* menu) {
     Text_InitFont();
     ClearBG0BG1();
     RedrawItemMenu_Equip(menu);
-    return MENU_ACT_SKIPCURSOR | MENU_ACT_CLEAR;
+    return ME_DISABLE | ME_CLEAR_GFX;
 }
 
 void Menu_SelectWeaponType_OnEnd_Equip(MenuProc* menu) {}
 
-static const struct MenuDef Menu_SelectWeaponType_Equip =
+static const struct MenuDefinition Menu_SelectWeaponType_Equip =
 {
-    .rect = { 0, 0, 7, 0 },
+    .geometry = { 0, 0, 7, 0 },
     .style = 1,
-    .menuItems = MenuCommands_SelectWeaponType_Equip,
+    .commandList = MenuCommands_SelectWeaponType_Equip,
 
     .onEnd = (void*) Menu_SelectWeaponType_OnEnd_Equip,
     //.onBPress = (void*) (0x080234FC|1),

@@ -50,21 +50,21 @@ PUSH
   
 //Put weather behind UI
 	ORG $30366 //change 80 to 80/A0/C0/E0 light snow
-	BYTE $C0
+	BYTE $E0
 	ORG $3066D //change 10 to 10/14/18/1C heavy snow
-	BYTE $18
+	BYTE $1C
 	ORG $59D95F 
-	BYTE $18
+	BYTE $1C
 	ORG $59D967 //change 10 to 10/14/18/1C rain
-	BYTE $18
+	BYTE $1C
 	ORG $309B2 //change A0 to A0/A4/A8/AC BBQ
-	BYTE $A8
-	ORG $3053C //change 10 to 10/14/18/1C sandstorm
-	BYTE $18
+	BYTE $AC
+	ORG $3053D //change 10 to 10/14/18/1C sandstorm
+	BYTE $1C
 	ORG $304DC
 	BYTE $00 //fix sandstorm graphics
 	ORG $30B31 //change AC to A0/A4/A8/AC clouds
-	BYTE $A8
+	BYTE $AC
 
 //Break HP Cap for Players/NPCs (credit Solum)
   // ORG $181EE
@@ -179,15 +179,20 @@ PUSH
   ORG $10804
   BYTE $00 $20
 
-//Prevent Freeze For Unit State Event 0x34.
-//(REMU,REVEAL,CUSA,CUSN,CUSE,SET_HP,SET_ENDTURN,SET_STATE,SET_SOMETHING,DISA_IF,REMU,DISA)
-  ORG $102D4
-  BYTE $00 $20
-
 //Prevent Freeze For Unit State Event 0x33.
 //(CHECK_STATUS,CHECK_COORDS,CHECK_CLASS,CHECK_LUCK,CHECK_COORDS,CHECK_CLASS,CHECK_DEPLOYED,CHECK_ACTIVEID,CHECK_ALLEGIANCE,CHECK_EXISTS)
   ORG $1027C
   BYTE $00 $20 $02 $E0
+
+//Prevent Freeze For Unit State Event 0x34.
+//(REMU,REVEAL,CUSA,CUSN,CUSE,SET_HP,SET_ENDTURN,SET_STATE,SET_SOMETHING,DISA_IF,REMU,DISA)
+  ORG $102D4
+  BYTE $00 $20
+  
+//Prevent Freeze For Unit State Event 0x38.
+//(SET_ACTIVE)
+  ORG $1063C
+  BYTE $00 $20
   
 //Fix coordinate loading in WARP codes when not loading from slot B
   ORG $10C18

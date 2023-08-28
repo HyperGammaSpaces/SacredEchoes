@@ -87,13 +87,6 @@
 		#include "asm/StatusStaffEffect.lyn.event"
 */
 		
-	//change checks for dancer rings to check for the effect id instead
-	ORG $2FBBC	//$2FBEA
-	#ifndef DancerRingRefresh
-		#include "asm/DancerRingEffect.lyn.event"
-	#else
-		#include "asm/DancerRingEffect_Refresh.lyn.event"
-	#endif //DancerRingRefresh
 		
 	//replace nightmare snowflakery with a generalized effect proc
     //TODO: make a proper checker jump
@@ -104,6 +97,20 @@
     SHORT $6302 //str r2, [r0, #0x30]
     SHORT $E00B $46C0
 	POIN ItemEffectAfterAnimProc
+    
+	//change checks for dancer rings to check for the effect id instead
+    ORG $2FF90
+    DancerRingEffectCheck:
+		SHORT $1C30
+		BL(DancerRingEffect)
+		B($2FF76)
+	ORG $29238	//$2FBEA
+    DancerRingEffect:
+	#ifndef DancerRingRefresh
+		#include "asm/DancerRingEffect.lyn.event"
+	#else
+		#include "asm/DancerRingEffect_Refresh.lyn.event"
+	#endif //DancerRingRefresh
 	
 	//change part that updates status effect on BattleTargetUnit
 	ORG $3001C

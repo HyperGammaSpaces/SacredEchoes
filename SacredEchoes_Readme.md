@@ -19,9 +19,9 @@ Specifically:
 - The Weapon Triangle is in effect for equipped weapons (so a Sword has no disadvantage against a Lance, but an Iron Sword has disadvantage against any type of Lance)
   - The Soldier line gets access to additional weapon types as it progresses. (Promotion to Knight adds Axes, and promotion to Baron adds Swords)
   - Bows suffer from weapon triangle disadvantage at point-blank range, with the same penalties as vanilla FE8 (-1 Atk, -15 Hit). There is also a 5% falloff to Hit for each tile over 2-range. Place your archers carefully!
-- Promotion brings units up to the new class's bases rather than giving promo gains
+- Promotion brings units up to the new class's bases rather than giving promo gains. Changing class early is recommended to make the most of these boosts!
 - Promotion is no longer item based but is done through the Mila option in the menu when they reach promotion level, and when the unit is standing next to a Mila statue on the map. Mila statues are available in repeatable dungeon maps which you can replay as needed (Thief Shrine, Deliverance Hideout, and Seabound Shrine, for example). You will see a notification when a unit has reached the level they can promote at, and the unit will have a Mila icon beside their name on the statscreen.
-  - Class promotions become available at the same levels as in SoV. Female archers (not present in SoV) follow the same promotion levels as male. The playable Thief class promotes at level 14.
+  - Class promotions become available at the same levels as in SoV. Female archers (not present in SoV) follow the same promotion levels as male. The playable Thief class promotes at level 12.
   - As in Gaiden/Echoes, Dread Fighters (called "Dreadknight" in-game for text space reasons) can promote back into Villager, so units in the Mercenary class line can be further customized.
   - Additionally, the Priestess class that promotes from female Mages can now promote into a magic-wielding Dread Fighter. Female Dread Fighters can also reclass into female Villagers.
 - Villager classes can promote into any of 5 first-tier classes
@@ -40,6 +40,7 @@ Specifically:
 Optional QOL fixes to GBAFE are included:
 
 - Includes Talk and Support Fixes that don't end the unit's turn
+- Includes modern L-button cycling to quickly jump between all units on the map regardless of allegiance.
 - Includes HP bars and effective weapon notices on the map
 - Includes danger zone highlighting with Select button
 - Includes battle stats and hit effects with animations off (with a UI inspired by the original Gaiden battle frame)
@@ -53,8 +54,8 @@ When a unit is at or above this level while in one of these classes, they can pr
 - Level 3: Villager
 - Level 7: Cavalier, Mercenary, Archer, Soldier, Woodcutter
 - Level 10: Paladin, Armor Knight, Myrmidon, Dread Fighter, Sniper, Axeman
-- Level 12: Mage (M), Priestess (non-Celica), Pegasus Knight, Cleric
-- Level 14: Thief, Mage (F)
+- Level 12: Mage (M), Priestess (non-Celica), Pegasus Knight, Cleric, Thief
+- Level 14: Mage (F)
 - Item promotion only: Alm, Celica
 
 #Spell lists
@@ -152,6 +153,7 @@ Spell lists are largely the same as SoV.
   - Lv10 Thunder
   - Lv15 Sagittae
   - Lv1 (Sage) Heal
+  - Lv8 (Sage) Silence
 - Delthea (Mage)
   - Lv1 Fire
   - Lv1 Aura
@@ -206,6 +208,8 @@ Spell lists are largely the same as SoV.
   - Lv1 (Bishop) Restore
   - Lv5 (Bishop) Warp
 
+For compatibility with Reverse Recruitment mods, anyone not listed here will use a very limited default spell list if put into a magic class. Conrad shares a spell list with Nomah, and Atlas shares a spell list with Hyas.
+
   
 #Class skills
 
@@ -216,21 +220,26 @@ This hack does not make use of the skill system, but there are some skills which
 - Cavalier/Paladin/GoldKnight/Pegasus Knight/Falcoknight: Canto - Allows unit to spend their remaining movement points after taking non-combat actions.
 - Mage/Sage/Priestess/Celica: Swap - Allows unit to switch places with an ally.
 - Armor/Baron: Pivot - Allows unit to move to the other side of an ally.
-- Baron: Heavy Armor - halves damage from bows.
-- Dread Fighter: Apotrope - halves damage from magic, and grants Res +5.
-- Archer: Bowrange +1 - adds 1 extra range when attacking with a bow.
-- Sniper/Bow Knight: Bowrange +2 - adds 2 extra range when attacking with a bow.
-- Falcoknight: Slayer - gains effective damage against monsters.
-- Alm/Celica/Rogues: Locktouch - can open chests and doors for free.
+- Baron: Heavy Armor - Halves damage from bows.
+- Dread Fighter: Apotrope - Halves damage from magic, and grants Res +5.
+- Archer: Bowrange +1 - Adds 1 extra range when attacking with a bow.
+- Sniper/Bow Knight: Bowrange +2 - Adds 2 extra range when attacking with a bow.
+- Falcoknight: Slayer - Grants unit's attacks effective damage against monsters.
+- Alm/Celica/Rogues: Locktouch - Allows unit to open chests and doors for free.
+
+#Supports
+
+Many additional supports have been added (e.g. Alm now supports his friends from Ram Village), and some of the SoV supports have been revised to add length or better characterize the units (e.g. Faye/Silque, Kliff/Tobin). Like in SoV, support points increase by having units defeat enemies while within 3 tiles of their partner, or by using healing magic on each other. There is no limit to the number of supports each unit can have per playthrough. Supports are displayed on page 4 of the statscreen (which is hidden if the unit has no support ranks), and pressing the R button on this screen will display detailed information about the stat bonuses granted.
+
+Also like in SoV, some support levels are tied to story progression. In general, B supports will unlock upon completing Act 2 and A supports will unlock upon completing Act 3, though some supports may grow more quickly than that. If a support is taking unusually long, try progressing in the story.
 
 #Known issues
 
 While all major bugs have now been addressed, some minor bugs remain. A V1.1 release some time in the future will address these remaining issues.
 
-- Some issues have been reported with Rewarp on large dungeon maps. The bug has been confirmed, but my testing has not been able to replicate it.
 - Certain frame-perfect inputs may cause issues with pop-up notification background transparency.
 - Some glitches may occur when hard-resetting and resuming while in the middle of a player phase action. Choosing "Suspend" from the battle map menu works as intended.
-- (For the above three, if you encounter these issues, please provide me with files to replicate the issue--whether these are savestates or TAS inputs or a .sav file in which the issue persists after resuming the chapter)
+- (For the above two, if you encounter these issues, please provide me with files to replicate the issue--whether these are savestates or TAS inputs or a .sav file in which the issue persists after resuming the chapter)
 - Some issues with Lukas having a blank item in his inventory upon starting Act 3 have been reported. I think this one will require a Lua script to effectively debug. In the meantime, depositing the blank item should allow you to continue without ill effects.
 - I still don't like that one CG of Alm and Zeke and plan to re-draw it.
 
@@ -250,6 +259,7 @@ While all major bugs have now been addressed, some minor bugs remain. A V1.1 rel
   - "What Lies at the End" sheet music by TorbyBrand on Musescore
   - "Revelations" sheet music by hinaflower on Musescore
   - "Heritors of Arcadia" arrangement by bigyihsuan on Musescore
+  - "The Voice That Calls You" arrangement by sunny
   - "Twilight of the Gods" piano part by Sme
   - Title theme sheet music by Spencer Riffle on Musescore
   - "Omen", "Preparations (Deliverance)", "Preparations (Pilgrimage)", "Pride and Arrogance", "The Scions' Dance in Purgatory", and "A Distant Promise" by Uzel and The_Burger_King_420

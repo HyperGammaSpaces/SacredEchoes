@@ -31,6 +31,12 @@ PUSH
 	//Don't clear supports when unit dies
 	ORG $18422
 	SHORT $46C0 $46C0
+    
+    //Fernand unlocker
+    //check params for 8371C
+    //then call A3724 r0=fernand r1=clive/mathilda r2=level
+    ORG $A3880
+    jumpToHack(FernandRanksPatch)
 
 	ORG $18480
 	jumpToHack(FixCUSA)
@@ -52,7 +58,7 @@ PUSH
 	ORG $28508
 	BYTE $04 		//Max number of support convos
 	
-	//Green glowy if maxed support count
+	//Green glowy on statscreen if maxed support count
     ORG $876AC
     BL($281C8) //Get total support count
     SHORT $4682 //mov r10, r0
@@ -71,6 +77,12 @@ PUSH
     SHORT $DA50 //bge $87770
     PROTECT $876AC $876CC
 	
+    //Only glow green if all unit's supports are unlocked (ignore vanilla's 5 per playthrough)
+    ORG $A0F76
+    SHORT $2000
+    ORG $A0F7C
+    SHORT $46C0 $46C0 $46C0 $46C0 $46C0 $46C0
+    
 	ORG $A208C		//Always display remaining max no. of convos on support screen
 	SHORT $2500 $E008
 	
@@ -141,3 +153,7 @@ ALIGN 4
 ALIGN 4
 //Change some other ending stuff to account for new party size
 #include "CharacterEndingByFlag/CharacterEndingTables.event"
+
+ALIGN 4
+FernandRanksPatch:
+#include "FernandRanksPatch.lyn.event"

@@ -193,7 +193,15 @@ Evt_BeginningScene:
 	EVBIT_F 0x9
 	MUSCMID SongID_Silence
 	CameraCursor(Alm)
-	CharacterConditionalDialog(Mathilda, Ch4A_2_OpeningText_2, Ch4A_2_OpeningText_2_NoMathilda) //something about the forest
+    CHECK_EXISTS Mathilda
+		BEQ 7 0x0 0xC
+		CHECK_ALIVE Mathilda
+		BEQ 7 0x0 0xC
+        MapText(Ch4A_2_OpeningText_2)
+        GOTO 8
+    LABEL 7
+    MapText(Ch4A_2_OpeningText_2_NoMathilda) //something about the forest
+    LABEL 8
 	FADI 5
 	
 	CLEA 0x0

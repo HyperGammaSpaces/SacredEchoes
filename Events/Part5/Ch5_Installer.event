@@ -32,3 +32,9 @@ DumaDeathEvent:
     NoFade
     ENDA
     
+ALIGN 4
+#include "EndingMusicChecker.lyn.event"
+ALIGN 4
+EndingMusicSwitchProc:
+    PROC_LOOP_ROUTINE(EndingMusicChecker|1)
+    PROC_END

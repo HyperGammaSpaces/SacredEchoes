@@ -71,6 +71,7 @@ TalkToZeke:
 	STAL 5
 	CUSA Zeke
 	STAL 0x14
+    CALL $591F40
 	CharacterJoinedNotification(Notif_ZekeJoin)
 	MURE 0x05
     CALL ZekeAIChange
@@ -89,6 +90,7 @@ TalkToZekeAlm:
 	STAL 5
 	CUSA Zeke
 	STAL 0x14
+    CALL $591F40
 	CharacterJoinedNotification(Notif_ZekeJoin)
 	MURE 0x05
     CALL ZekeAIChange
@@ -530,6 +532,7 @@ Ch4A5_EndingScene:
             ENUN
             ENUT gZekeRecruited
             SetBackground(BlackBackground,5)
+            CALL $591F40
 			CharacterJoinedNotification(Notif_ZekeJoin)
         LABEL 0x401
 		STAL 60

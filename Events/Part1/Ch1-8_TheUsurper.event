@@ -126,7 +126,7 @@ Bosses_EndingCutscene:
 EnemyUnits:
 	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [12,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
 	UNIT Zofia_Archer Archer_F	Desaix Level(10, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT Zofia_Soldier Knight	Desaix Level(2, Enemy, 0) [11,5]	DropItem 0x00 0x0 0x00 [BaseLance, Hammer] NeverMoveAI
+	UNIT Zofia_Soldier Knight	Desaix Level(2, Enemy, 0) [11,5]	DropItem 0x00 0x0 0x00 [IronLance, Hammer] NeverMoveAI
 	UNIT Zofia_Mage Shaman	Desaix Level(7, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] [0xE, 0x0, 0x0, 0x0]
 	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [11,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
 	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [9,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
@@ -146,7 +146,7 @@ EnemyUnits:
 EnemyUnits_Hard:
 	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [12,5]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
 	UNIT Zofia_Archer Archer_F	Desaix Level(10, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
-	UNIT Zofia_Soldier Knight	Desaix Level(2, Enemy, 0) [11,5]	DropItem 0x00 0x0 0x00 [BaseLance, Hammer] AttackInRangeAI
+	UNIT Zofia_Soldier Knight	Desaix Level(2, Enemy, 0) [11,5]	DropItem 0x00 0x0 0x00 [IronLance, Hammer] AttackInRangeAI
 	UNIT Zofia_Mage Shaman	Desaix Level(7, Enemy, 1) [9,5]	0x00 0x00 0x0 0x00 [Miasma, Heal] [0xF, 0x0, 0x0, 0x0]
 	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [11,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
 	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [9,8]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
@@ -478,22 +478,26 @@ CelicaZofiaCastleEvent:
 		BNE 0x8 rC r0
 			SetBackground(0x04) //sunset village
 			Text(Ch2_KliffJoins)
+            CALL $591F40
+			CharacterJoinedNotification(Notif_KliffJoin)
 			FADI 5
+            CLEAN
 			LOAD1 0x0 KliffJoins
 			ENUN
 			TEXTCLEAR
-			CharacterJoinedNotification(Notif_KliffJoin)
 
 		LABEL 0x8
 		CHECK_EVENTID gFayeRecruited
 		BNE 0x9 rC r0
 			SetBackground(0x04) //sunset village
 			Text(Ch2_FayeJoins)
+            CALL $591F40
+			CharacterJoinedNotification(Notif_FayeJoin)
 			FADI 5
+            CLEAN
 			LOAD1 0x0 FayeJoins
 			ENUN
 			TEXTCLEAR
-			CharacterJoinedNotification(Notif_FayeJoin)
 			
 
 		LABEL 0x9
@@ -529,6 +533,7 @@ CelicaZofiaCastleEvent:
 	TEXTEND
 	TEXTCLEAR
 	MUNO
+    GOTO 0x203
     
     LABEL 0x202
         MUSI

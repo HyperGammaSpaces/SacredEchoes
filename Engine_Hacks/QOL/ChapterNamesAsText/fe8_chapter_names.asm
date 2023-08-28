@@ -536,9 +536,15 @@ b       GotCharacterIndex
 		
 	Check_Colon:
 	cmp     r1,#0x3A     
-	bne     Check_CD     
+	bne     Check_C9     
 	mov     r0,#0x43     
 	b       GotCharacterIndex  
+	
+	Check_C9:        @Í but it's E
+	cmp     r1,#0xC9
+	bne     Check_CD    
+	mov     r0,#0x57   
+	b       GotCharacterIndex 
 	
 	Check_CD:        @Í
 	cmp     r1,#0xCD
@@ -548,10 +554,16 @@ b       GotCharacterIndex
 	
 	Check_9C:        @œ
 	cmp     r1,#0x9C
-	bne     Check_E0
+	bne     Check_DA
 	mov     r0,#0x45
 	b       GotCharacterIndex 
 	
+	Check_DA:        @Í but it's U
+	cmp     r1,#0xDA
+	bne     Check_E0
+	mov     r0,#0x58
+	b       GotCharacterIndex
+    
 	Check_E0:        @à
 	cmp     r1,#0xE0
 	bne     Check_E1

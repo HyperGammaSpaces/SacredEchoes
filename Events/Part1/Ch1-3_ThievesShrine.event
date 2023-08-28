@@ -256,6 +256,7 @@ TalkToAcantha:
 	Text(RecruitAcantha_Text)
 	CUSA Acantha
 	STAL 20
+    CALL $591F40
 	CharacterJoinedNotification(Notif_AcanthaJoin)
 	NoFade
 	MURE 0x05
@@ -267,6 +268,7 @@ TalkToAcanthaWithSilque:
 	Text(RecruitAcantha_Silque_Text)
 	CUSA Acantha
 	STAL 20
+    CALL $591F40
 	CharacterJoinedNotification(Notif_AcanthaJoin)
 	NoFade
 	MURE 0x05
@@ -305,6 +307,7 @@ Ch1_3_EndingScene:
 	TEXTSHOW Ch1_3_PostBattle_AfterCG
 	TEXTEND
 	TEXTCLEAR
+    CALL $591F40
 	CharacterJoinedNotification(Notif_SilqueJoin)
 	FADI 2
 	MNCH 0x03 //go to ch3

@@ -13,6 +13,9 @@ PUSH
 	ORG $CCCD6 		//check whether game has been beaten and third promo option can be shown
 	BYTE $01		//force true
 	
+	ORG $CCD70 //terrain of branch promotion screen
+	BYTE $39
+	
 	ORG $CC6FC
 	POIN NewAutopromoTable
 	
@@ -96,8 +99,8 @@ BYTE Paladin_F 			0x0A
 BYTE Soldier 			0x07
 BYTE Knight 			0x0A
 BYTE Knight_F 			0x0A
-BYTE Thief 				0x0E
-BYTE Thief_F 			0x0E
+BYTE Thief 				0x0C
+BYTE Thief_F 			0x0C
 BYTE Mercenary 			0x07
 BYTE Mercenary_F 		0x07
 BYTE Myrmidon 			0x0A

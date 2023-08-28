@@ -39,8 +39,8 @@ RewarpUseEffect:
     strb    r1, [r6, #0x11]
     ldr     r3, =#0x0203A4EC    @ gBattleActor
     mov     r2, r3
-    add     r2, #0x73
-    add     r3, #0x74
+    add     r2, #0x68
+    add     r3, #0x69
     strb    r0, [r2]
     strb    r1, [r3]
     

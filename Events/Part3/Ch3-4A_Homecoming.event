@@ -37,6 +37,7 @@ TalkToMathilda:
 	STAL 5
 	CUSA Mathilda
 	STAL 0x14
+    CALL $591F40
 	CharacterJoinedNotification(Notif_MathildaJoin)
 	MURE 0x05
 	NoFade
@@ -262,7 +263,7 @@ CutsceneFernand:
 	UNIT
 	
 MathildaJoins:
-	UNIT Mathilda Paladin_F 0x00 Level(1, NPC, False) [9,6] 0x00 0x00 0x0 0x00 [BaseLance] [0x06, 0x0D, 0x00, 0x00]
+	UNIT Mathilda Paladin_F 0x00 Level(1, NPC, False) [9,6] 0x00 0x00 0x0 0x00 [BaseLance,Vulnerary] [0x06, 0x0D, 0x00, 0x00]
 	UNIT
 
 Ch3_4A_BeginningScene:
@@ -342,7 +343,16 @@ Ch3_4A_EndingScene:
 	FADI 2
     STAL 5
 	MUSC SongID_CastleTheme
-	
+	CHECK_EVENTID 8
+    BEQ 0x072 0xC 0x1
+    //Let Mathilda join if she is alive
+    CHECK_OTHERS
+    BEQ 0x072 0xC 0x0
+        SVAL 0x1 0x0
+        CHAI Mathilda
+        STAL 5
+        CUSA Mathilda
+    LABEL 0x072
 	CHECK_ALIVE Tobin 
 	BEQ 0x4 0xC 0x0
 	

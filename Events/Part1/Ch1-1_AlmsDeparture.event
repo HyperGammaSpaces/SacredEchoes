@@ -195,10 +195,8 @@ Ch1_1_BeginningScene:
 	MUSC SongID_Reunion
 	TEXTCONT
 	TEXTEND
-    FadeOutMusic
 	EndConvo
 
-	MUSC SongID_Advance
 	STAL 0x14
 	MOVE 0x10 Gray [4, 3]
 	MOVE 0x10 Tobin [2, 8]
@@ -292,6 +290,7 @@ TalkToKliff:
 	CHAI Kliff
 	STAL 5
 	CUSA Kliff
+    CALL $591F40
 	CharacterJoinedNotification(Notif_KliffJoin)
 	STAL 0x14
 	MURE 0x05
@@ -306,6 +305,7 @@ TalkToFaye:
 	CHAI Faye
 	STAL 5
 	CUSA Faye
+    CALL $591F40
 	CharacterJoinedNotification(Notif_FayeJoin)
 	STAL 0x14
 	MURE 0x05

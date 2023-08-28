@@ -892,10 +892,18 @@ NewSetupBattleStructForStaffUser:
     ldrh    r3, [r3, #0x0]
     cmp     r3, #0x0
     beq     SetupHealScreen_LoadFromInventory
+    SetupHealScreen_Failsafe:
     mov     r6, r3
     b       SetupHealScreen_StoreSlot
+    
+    SetupHealScreen_Failsafe2:
+    ldr     r3, =gActionStruct
+    ldrb    r3, [r3, #0x6]
+    b       SetupHealScreen_Failsafe
 
     SetupHealScreen_LoadFromInventory:
+    cmp     r7, #0x0
+    blt     SetupHealScreen_Failsafe2
     mov     r0, r2
     lsl     r1, r7, #0x1
     add     r0, #0x1E
@@ -1001,7 +1009,7 @@ NewSetupBattleStructForStaffUser:
 .global StaffUseEffect_GetSlot
 .type   StaffUseEffect_GetSlot, function
     
-@hook at 2FC58, r4 = gActionData
+@hook at 2FC58, r4 = gActionStruct
 
 StaffUseEffect_GetSlot:
     mov     r5, r0
@@ -1013,7 +1021,7 @@ StaffUseEffect_GetSlot:
     cmp     r0, #0x0
     beq     StaffUseEffect_LoadFromInventory
     mov     r1, #0xFE
-    strb    r1, [r4, #0x12]         @gActionData itemSlotIndex
+    strb    r1, [r4, #0x12]         @gActionStruct itemSlotIndex
     b       StaffUseEffect_GotItem
 
     StaffUseEffect_LoadFromInventory:
@@ -1025,7 +1033,7 @@ StaffUseEffect_GetSlot:
     ldrh    r0, [r0, #0x0]
     
     StaffUseEffect_GotItem:  
-        strb    r0, [r4, #0x6]      @gActionData itemID
+        strb    r0, [r4, #0x6]      @gActionStruct itemID
 
     StaffUseEffect_EndFunc:
     ldr     r2, =#0x0802FC62+1

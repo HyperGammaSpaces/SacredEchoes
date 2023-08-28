@@ -121,6 +121,8 @@ PUSH
 	ORG $87784
 	WORD $02003D2E //scoot stuff to the left - was 02003D34
   
+    ORG $87048
+    jumpToHack(BWLFix)
 POP
 
   ALIGN 4
@@ -194,3 +196,7 @@ PageNumberCheck:
 ALIGN 4
 DontBlinkLeft:
     #incbin "DontBlinkLeft.dmp"
+
+ALIGN 4
+BWLFix:
+    #include "BWLFix.lyn.event"

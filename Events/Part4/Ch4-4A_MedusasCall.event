@@ -52,11 +52,16 @@ LoadSummons:
         SET_HP Nuibaba
         STAL 5
     
-	GOTO 0
+	GOTO 2
 
 	LABEL 1
 	// Counter not at value
 	COUNTER_ADD 0 0 // counter 0 ++
+    
+    LABEL 2
+    CHECK_ALIVE Tatiana
+    BEQ 0 0xC 0x0
+    ApplyStatusToCoords(4,2,0x03) //9 turns of silence
 
 	LABEL 0
 	// event end
@@ -126,13 +131,15 @@ Dummy_MiscBasedEvents:
 TatianaFreed:
 	//Remove the trap tile at [4,2]
 	RemoveTrapAtCoords(4,2)
-	ApplyStatusToCoords(4,2,0x00)
 	CHECK_ALIVE Tatiana
 	BEQ 0x1 0xC 0x0
+		ApplyStatusToCoords(4,2,0x00)
 		MUSS SongID_Recruitment
 		STAL 33
 		CameraCursor(Tatiana)
 		MapText(Ch4_4A_TatianaFreed)
+        //Tatiana has 6 con, 30 - 6 = 0x18
+        GiveConstitution(Tatiana,0xFFFFFFE8)
 		CALL $591F40
 		SVAL 0x1 0x0
 		CHAI Tatiana
@@ -263,6 +270,7 @@ Dummy_BeginningScene:
 	LOAD2 0x1 CutsceneUnits
 	ENUN
 	EVBIT_F 0x9
+    STAL 30
 	
 	CameraCursor(Nuibaba)
 	MapText(Ch4_4A_OpeningText)
@@ -296,6 +304,8 @@ Dummy_BeginningScene:
 	STAL 20
 	ENUF 0x84
 	ApplyStatusToCoords(4,2,0x43) //9 turns of silence
+    //Tatiana has 6 con, 30 - 6 = 0x18
+    GiveConstitution(Tatiana,0x18)
 	
 	CameraCursor(Nuibaba)
 	MapText(Ch4_4A_OpeningText_3)
@@ -337,6 +347,7 @@ Dummy_EndingScene:
 		MUSC SongID_Victory
 		BackgroundText(Ch4_4A_EndingText)
 		STAL 20
+        CALL $591F40
 		EVBIT_MODIFY 0x1
 		CharacterJoinedNotification(Notif_TatianaJoin)
 		ENUT gTatianaRecruited

@@ -22,6 +22,10 @@ PUSH
 	ORG $115AA
 	BYTE $9B
 	
+	//Text ID for the weapon type thing
+	//ORG $1EA3C
+	//SHORT 0x0529
+	
 	//Don't draw uses for unbreakables
 	ORG $16A60
 	//BL($A3B8)
@@ -104,15 +108,6 @@ PUSH
 	SHORT $46C0 $46C0 $E005
 	//(alternately, BYTE $XX 38 $YY where X = unsaveable range start and Y = length)
 	
-	//Evaluate completion data for all chapters
-	ORG $A4404
-	SHORT $2001 $4770 //mov r0, #1; bx lr
-	
-	//Crash prevention for ending clear turn list
-	ORG $B78CC
-	SHORT $4800 $4687
-	POIN FixDrawClearturnGlitch|1
-	
 	//ChapterID to not call save menu on when MNCH'd to
 	ORG $9DEC
 	BYTE $38
@@ -128,35 +123,29 @@ PUSH
 	//tutorial killer
 	ORG $0E120
 	SHORT $0
+    
+    //floor tile type for forced or prep-screen promotion
+    ORG $5756C
+    BYTE $20
+    
+    //monster max level
+    ORG $78310
+    BYTE $19
+    ORG $78314
+    BYTE $19
 	
 	//additional font for class name text
 	ORG $B2C9C
 	BYTE $20 $5C
 	ORG $CCB8A
 	BYTE $20 $5C
-	
-	//fast stealing
-	ORG $9A32D8
-		PROC_SLEEP(1)
-	ORG $9A32E8
-		PROC_SLEEP(1)
-	ORG $9A32F0
-		PROC_SLEEP(1)
-	ORG $9A3348
-		PROC_SLEEP(1)
-	ORG $9A3388
-		PROC_SLEEP(1)
-	ORG $9A33B0
-		PROC_SLEEP(1)
+    
+    //skip novis priory chapter title thingy
+    ORG $15518
+    BYTE $4D
 
 POP
 
 ALIGN 4
 CutsceneImportantUnitsTable:
 	BYTE Lukas Clair Clive Mathilda Saber Mae Conrad Nomah Mycen 0x00
-
-ALIGN 4
-FixDrawClearturnGlitch:
-	SHORT $6818 $0640 $0E40 $4906 $4288 $DA02 $4682 $4902 $4708 $4902 $4708 $46C0
-	POIN $B78D5 $B7B17
-	WORD $4F

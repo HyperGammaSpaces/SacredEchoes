@@ -319,6 +319,7 @@ Ch3_2C_EndingScene:
 			STAL 20
 			BackgroundText(Ch3_2C_EndingText_GetAxeBros)
 			//if the village is visited, you get both
+            CALL $591F40
 			CharacterJoinedNotification(Notif_AtlasHyasJoin)
 			FADI 2
 			CLEAN
@@ -329,6 +330,7 @@ Ch3_2C_EndingScene:
 			SetBackground(0x42)
 			STAL 20
 			BackgroundText(Ch3_2C_EndingText_VillageDestroyed)
+            CALL $591F40
 			//if the village is destroyed you only get atlas
 			CharacterJoinedNotification(Notif_AtlasJoin)
 			FADI 2

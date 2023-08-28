@@ -1,5 +1,20 @@
 PUSH
 
+    //Make units blink on trade/support screen
+    ORG $5EA8
+    WORD 0
+    ORG $1E0CC; BYTE $0
+    ORG $22BB2; BYTE $0
+    ORG $22C08; BYTE $0
+    ORG $2326E; BYTE $0
+    ORG $23324; BYTE $0
+    ORG $23582; BYTE $0
+    ORG $2361A; BYTE $0
+    ORG $23B06; BYTE $0
+    ORG $2999E; BYTE $0
+    ORG $2D802; BYTE $0
+    ORG $2D80A; BYTE $0
+
     //Monster Weapon display fix
     ORG $16E20
     #incbin "Monsterweapon.dmp"
@@ -156,4 +171,8 @@ ALIGN 4
 //Can't remove key items
 ALIGN 4
 #include "Untradeables/Installer.event"
+
+//Custom item sort order
+ALIGN 4
+#include "ItemSortOrder/Install.event"
 

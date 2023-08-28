@@ -24,12 +24,12 @@ AfterSound:
 LDR r3, =gMapAnimStruct
 LDR r1, =gBattleUnitData
 MOV r0 ,r1
-ADD r0, #0x73
+ADD r0, #0x68
 LDRB r2, [r0, #0x0] @ destination x
 MOV r0 ,r3
 ADD r0, #0x60 //some x position
 STRB r2, [r0, #0x0]
-ADD r1, #0x74
+ADD r1, #0x69
 LDRB r0, [r1, #0x0] @ destination y
 MOV r1 ,r3
 ADD r1, #0x61 //some y position

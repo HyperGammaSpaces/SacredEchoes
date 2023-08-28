@@ -30,7 +30,7 @@ PostgameUnlockChecker:
         //ASMC 0x08037D58|1
         CHECK_LUCK 0x0
         SADD 0xC2
-        RANDOMNUMBER 0xC8
+        RANDOMNUMBER 0x64
         BLT 0x9663 0x2 0xC
             //now choose a flag based on the rn modulo 8
             SVAL 0x1 0x8

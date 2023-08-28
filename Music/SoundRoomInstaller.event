@@ -3,7 +3,13 @@
 #define SoundRoomTerminator "WORD 0xFFFFFFFF 0 0 0"
 
 PUSH
-ORG 0x1BC14   
+//Allow slightly longer song titles
+ORG 0x0B0110
+BYTE 0x20
+ORG 0x0B0134
+BYTE 0x05
+
+ORG 0x1BC14
 POIN NewSoundRoom
 ORG 0x1BCC4
 POIN NewSoundRoom
@@ -75,11 +81,13 @@ SoundRoomEntry(SongID_GameOver,36,SoundRoom_GameOver)
 SoundRoomEntry(SongID_Victory,45,SoundRoom_Victory)
 SoundRoomEntry(SongID_ShadowOfVictory,30,SoundRoom_ShadowOfVictory)
 SoundRoomEntry(SongID_Revelations,112,SoundRoom_Revelations)
-SoundRoomEntry(SongID_Advance,53,SoundRoom_Advance)
+SoundRoomEntry(SongID_Advance,112,SoundRoom_Advance) //DQ7 Overworld (Moving Through the Present)
 SoundRoomEntry(SongID_Tension,100,SoundRoom_Tension)
 SoundRoomEntry(SongID_Uprising,40,SoundRoom_Uprising)
-SoundRoomEntry(SongID_SolveTheRiddle,55,SoundRoom_SolveTheRiddle)
-SoundRoomEntry(SongID_Reunion,45,SoundRoom_Reunion)
+//SoundRoomEntry(SongID_SolveTheRiddle,55,SoundRoom_SolveTheRiddle)
+SoundRoomEntry(SongID_SolveTheRiddle,59,SoundRoom_SolveTheRiddle) //the proud commander
+//SoundRoomEntry(SongID_Reunion,45,SoundRoom_Reunion)
+SoundRoomEntry(SongID_Reunion,74,SoundRoom_Reunion) //DSFE Soldiers' Daily Lives
 SoundRoomEntry(SongID_SongOfPeace,24,SoundRoom_SongOfPeace)
 SoundRoomEntry(SongID_CastleTheme,80,SoundRoom_CastleTheme)
 SoundRoomEntry(SongID_HerosPath,78,SoundRoom_HerosPath)
@@ -95,5 +103,8 @@ SoundRoomEntryNoLoop(SongID_SilverGarden,100,SoundRoom_SilverGarden)
 SoundRoomEntry(SongID_Omen,92,SoundRoom_Omen)
 SoundRoomEntry(SongID_DistantPromise,140,SoundRoom_DistantPromise)
 SoundRoomEntry(SongID_ImportantBattle,71,SoundRoom_ImportantBattle)
+SoundRoomEntry(SongID_CoronationDay,93,SoundRoom_Epilogue)
+SoundRoomEntryNoLoop(SongID_EndingMedley,402,SoundRoom_Epilogue) //ending medley
 SoundRoomEntryNoLoop(SongID_Epilogue,250,SoundRoom_Epilogue) //heritors
+SoundRoomEntry(SongID_VoiceThatCalls,178,SoundRoom_Epilogue) //voice that calls
 SoundRoomTerminator

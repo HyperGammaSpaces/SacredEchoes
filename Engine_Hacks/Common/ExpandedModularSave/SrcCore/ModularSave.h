@@ -33,7 +33,7 @@ extern const struct SaveChunkDecl gSuspendSaveChunks[];
 void* MS_GetSaveAddressBySlot(unsigned slot);
 const struct SaveChunkDecl* MS_FindGameSaveChunk(unsigned chunkId);
 const struct SaveChunkDecl* MS_FindSuspendSaveChunk(unsigned chunkId);
-void MS_LoadChapterStateFromGameSave(unsigned slot, struct RAMChapterData* target);
+void MS_LoadChapterStateFromGameSave(unsigned slot, struct ChapterState* target);
 u32 MS_GetClaimFlagsFromGameSave(unsigned slot);
 
 // TODO: add to libgbafe

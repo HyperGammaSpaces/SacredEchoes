@@ -328,7 +328,6 @@ HeritorsOfArcadia_0_50:
 // 060   ----------------------------------------
         BYTE   W72
 // 061   ----------------------------------------
-HeritorsOfArcadia_0_LOOP:
         BYTE   W72
 // 062   ----------------------------------------
         BYTE   W72
@@ -570,8 +569,7 @@ HeritorsOfArcadia_0_87:
         BYTE   W60
         BYTE   TEMPO   78/2
         BYTE   W11
-        BYTE   GoTo
-         POIN2  HeritorsOfArcadia_0_LOOP
+        BYTE   TEMPO   76/2
         BYTE   FINE
 
 //****************** Track 1 (Midi-Chn.1) ******************//
@@ -992,8 +990,7 @@ HeritorsOfArcadia_1_38:
         BYTE           N32     Dn4   v049   gtp3
         BYTE   W36
 // 061   ----------------------------------------
-HeritorsOfArcadia_1_LOOP:
-        BYTE           N11     As2   v049
+        BYTE           N11     As2
         BYTE   W12
         BYTE                   Fn3
         BYTE   W12
@@ -1306,8 +1303,6 @@ HeritorsOfArcadia_1_87:
         BYTE                   Cn4
         BYTE   W68
         BYTE   W03
-        BYTE   GoTo
-         POIN2  HeritorsOfArcadia_1_LOOP
         BYTE   FINE
 
 //****************** Track 2 (Midi-Chn.2) ******************//
@@ -1665,7 +1660,6 @@ HeritorsOfArcadia_2_26:
         BYTE                   An3
         BYTE   W72
 // 061   ----------------------------------------
-HeritorsOfArcadia_2_LOOP:
         BYTE   W72
 // 062   ----------------------------------------
         BYTE   W72
@@ -1674,7 +1668,7 @@ HeritorsOfArcadia_2_LOOP:
 // 064   ----------------------------------------
         BYTE   W72
 // 065   ----------------------------------------
-        BYTE           N68     Fs3   v092   gtp3
+        BYTE                   Fs3   v092
         BYTE   W72
 // 066   ----------------------------------------
         BYTE                   En3   v080
@@ -1922,8 +1916,6 @@ HeritorsOfArcadia_2_88:
         BYTE                   Gn3   v049
         BYTE   W68
         BYTE   W03
-        BYTE   GoTo
-         POIN2  HeritorsOfArcadia_2_LOOP
         BYTE   FINE
 
 //****************** Track 3 (Midi-Chn.3) ******************//
@@ -2245,8 +2237,7 @@ HeritorsOfArcadia_3_18:
         BYTE           N32     Bn3   v049   gtp3
         BYTE   W36
 // 061   ----------------------------------------
-HeritorsOfArcadia_3_LOOP:
-        BYTE           N11     As2   v049
+        BYTE           N11     As2
         BYTE   W12
         BYTE                   Fn3
         BYTE   W12
@@ -2505,8 +2496,6 @@ HeritorsOfArcadia_3_86:
 // 106   ----------------------------------------
         BYTE   W68
         BYTE   W03
-        BYTE   GoTo
-         POIN2  HeritorsOfArcadia_3_LOOP
         BYTE   FINE
 
 //****************** Track 4 (Midi-Chn.4) ******************//
@@ -2889,7 +2878,6 @@ HeritorsOfArcadia_4_39:
         BYTE           N11     Dn3   v096
         BYTE   W12
 // 061   ----------------------------------------
-HeritorsOfArcadia_4_LOOP:
         BYTE           N01     Gn3   v080
         BYTE   W02
         BYTE           N32     An3   v096   gtp1
@@ -3411,8 +3399,6 @@ HeritorsOfArcadia_4_99:
         BYTE   W60
         BYTE           N11     Dn3   v096
         BYTE   W11
-        BYTE   GoTo
-         POIN2  HeritorsOfArcadia_4_LOOP
         BYTE   FINE
 
 //****************** Track 5 (Midi-Chn.5) ******************//
@@ -3786,7 +3772,6 @@ HeritorsOfArcadia_5_50:
 // 060   ----------------------------------------
         BYTE   W72
 // 061   ----------------------------------------
-HeritorsOfArcadia_5_LOOP:
         BYTE   W72
 // 062   ----------------------------------------
         BYTE   W72
@@ -3933,8 +3918,6 @@ HeritorsOfArcadia_5_LOOP:
         BYTE                   Dn2
         BYTE   W68
         BYTE   W03
-        BYTE   GoTo
-         POIN2  HeritorsOfArcadia_5_LOOP
         BYTE   FINE
 
 //****************** Track 6 (Midi-Chn.6) ******************//
@@ -4097,7 +4080,6 @@ HeritorsOfArcadia_6:
 // 060   ----------------------------------------
         BYTE   W72
 // 061   ----------------------------------------
-HeritorsOfArcadia_6_LOOP:
         BYTE   W72
 // 062   ----------------------------------------
         BYTE   W72
@@ -4233,8 +4215,6 @@ HeritorsOfArcadia_6_LOOP:
 // 106   ----------------------------------------
         BYTE   W68
         BYTE   W03
-        BYTE   GoTo
-         POIN2  HeritorsOfArcadia_6_LOOP
         BYTE   FINE
 
 

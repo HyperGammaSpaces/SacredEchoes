@@ -4,6 +4,7 @@
 #When importing to FEditorAdv delete # and after each line.
 #######################################################
 /// - Mode 1               #Melee Animation
+1 p- Lance_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Lance_000.png
@@ -22,7 +23,7 @@ C38                               #Play heavy spear spinning SFE
 3 p- Lance_009.png
 3 p- Lance_010.png
 3 p- Lance_011.png
-C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
+C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit
 C24                               #Play sword slashing air SFE
 3 p- Lance_012.png
 C1A                               #Normal hit
@@ -46,6 +47,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 3               #Melee Critical Animation
+1 p- Lance_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Lance_000.png
@@ -84,7 +86,7 @@ C38                               #Play heavy spear spinning SFE
 3 p- Lance_009.png
 3 p- Lance_010.png
 3 p- Lance_011.png
-C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
+C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit
 C24                               #Play sword slashing air SFE
 3 p- Lance_012.png
 C0C                               #Critical hit
@@ -108,6 +110,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 5               #Ranged Animation 
+1 p- Lance_033.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Lance_033.png
@@ -125,6 +128,7 @@ C06                               #Begin opponent's turn after hit.next code 0D.
 C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 6               #Ranged Critical Animation
+1 p- Lance_033.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Lance_033.png
@@ -193,8 +197,6 @@ C0D                               #End of dodge animation. preceeded by 0x06
 ~~~
 /// - Mode 10               #Standing motions
 1 p- Lance_000.png
-C03                               #Start attack animation; need 07 right after this.
-C07                               #Start attack animation; need 03 right before this.
 C01                               #NOP
 ~~~
 /// - Mode 11               #Equiped with Ranged weapon
@@ -210,6 +212,7 @@ C01                               #NOP
 4 p- Lance_000.png
 ~~~
 /// - Mode 12               #Attack Missed Animation
+1 p- Lance_000.png
 C03                               #Start attack animation; need 07 right after this.
 C07                               #Start attack animation; need 03 right before this.
 1 p- Lance_000.png
@@ -228,7 +231,7 @@ C38                               #Play heavy spear spinning SFE
 3 p- Lance_009.png
 3 p- Lance_010.png
 3 p- Lance_011.png
-C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit; Magic only.
+C04                               #Prepare HP depletion routine; needed to animate return to standing frame after hit
 C24                               #Play sword slashing air SFE
 3 p- Lance_057.png
 3 p- Lance_058.png

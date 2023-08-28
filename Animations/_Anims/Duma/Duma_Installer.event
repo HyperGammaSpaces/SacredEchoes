@@ -1,15 +1,15 @@
 //Nura, L95
 Duma_BeamAnim:
 {
-    #include "OcularBeam/duma_ob1 Installer.event"
+    #include "OcularBeam/duma_ob1_Installer.event"
 }
 Duma_MagicAnim:
 {
-    #include "Magic/duma_mg1 Installer.event"
+    #include "Magic/duma_mg1_Installer.event"
 }
 Duma_PhysicalAnim:
 {
-    #include "Monster/duma_at1 Installer.event"
+    #include "Monster/duma_at1_Installer.event"
 }
 
 #define OAMWait(delay) "WORD ($84000000 + delay)"

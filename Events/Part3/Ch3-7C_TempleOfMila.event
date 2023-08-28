@@ -29,6 +29,7 @@ LoadNomah:
 	CameraCursor(Nomah)
 	MUSS SongID_Recruitment
 	MapText(Ch3_7C_NomahArrives)
+    CALL $591F40
 	CharacterJoinedNotification(Notif_NomahJoin)
 	MURE 0x5
 	NoFade
@@ -70,7 +71,6 @@ LoadSummons:
 	SOUN 0x3BF // summoning SFX
 	STAL 20
 	SummonReinforcementEvent(RearSummons)
-    
         SetSummonerID(Terror_Gargoyle, 0x81)
         
         CheckCurrentHP(Mikhail)
@@ -236,13 +236,13 @@ EnemyUnits_Hard:
 	UNIT
 	
 MikhailSummons:
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,4] MonsterTemplate 0x00 0x1 REDA11R4 NoItems MonsterAI
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,4] MonsterTemplate 0x00 0x1 REDA13R4 NoItems MonsterAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [11,4] MonsterTemplate 0x00 0x1 REDA11R4 NoItems MonsterAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [13,4] MonsterTemplate 0x00 0x1 REDA13R4 NoItems MonsterAI
 	UNIT
 	
 RearSummons:
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [11,21] MonsterTemplate 0x00 0x1 REDA11R21 NoItems MonsterAI
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(12, Enemy, True) [13,21] MonsterTemplate 0x00 0x1 REDA13R21 NoItems MonsterAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [11,21] MonsterTemplate 0x00 0x1 REDA11R21 NoItems MonsterAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [13,21] MonsterTemplate 0x00 0x1 REDA13R21 NoItems MonsterAI
 	UNIT
 	
 

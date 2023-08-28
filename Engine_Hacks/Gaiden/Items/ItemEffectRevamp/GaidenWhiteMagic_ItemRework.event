@@ -160,5 +160,10 @@ PUSH
     SHORT $468F //mov r15, r1
     WORD $0202BCF0
     POIN RescueStaff_RangeSetup|1 $28BFE
+    
+    ORG $2626E //make Warp only usable on blue units
+    BL($24DA4)
+    ORG $260B2 //make Rescue only usable on blue units
+    BL($24DA4)
 
 POP

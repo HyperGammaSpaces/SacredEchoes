@@ -5,6 +5,7 @@ ORG CURRENTOFFSET+$38;Revival_IsUnitEligible:
 ORG CURRENTOFFSET+$28;Revival_DrawName:
 ORG CURRENTOFFSET+$98;Revival_Effect:
 ORG CURRENTOFFSET+$44;prCallRevivalMenu:
+ORG CURRENTOFFSET+$88;RevivalMenu_CapOptions:
 POP
 SHORT $B510 $2401 $1C20 $4B0A $469E
 BYTE $0 $F8
@@ -56,3 +57,7 @@ POIN pRevivalMenuDefinition
 BYTE $C8 $EB $4 $8
 POIN LionHead_HelpTextPointer
 BYTE $40 $A2 $0 $8 $8 $57 $3 $8
+SHORT $9902 $290B $DA09 $4806 $1C29 $4B06 $469E
+BYTE $0 $F8
+SHORT $1C02 $9802 $81 $4804 $E000 $4804 $4700 $46C0
+BYTE $10 $65 $5B $8 $7C $2C $0 $8 $B7 $ED $4 $8 $3 $EE $4 $8

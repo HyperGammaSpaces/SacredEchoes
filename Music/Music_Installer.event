@@ -2,7 +2,7 @@
 //SongTable(99,My_song,MapMusicGroup)
 //#include "S_Files/My_song.event"
 
-#include "advanced music installer suite/music installer.event"
+#include "advanced_music_installer_suite/music_installer.event"
 
 PUSH
 
@@ -297,6 +297,24 @@ ALIGN 4
 ALIGN 4
 
 {
+	#include "S_Files/TheProudCommander.event"
+	SongTable(SongID_SolveTheRiddle,TheProudCommander,CutsceneMusicGroup)
+}
+ALIGN 4
+
+{
+	#include "S_Files/Advance_DS.event"
+	SongTable(SongID_Reunion,Advance_DS,CutsceneMusicGroup)
+}
+ALIGN 4
+
+{
+	#include "S_Files/DQ7overworld.event"
+	SongTable(SongID_Advance,DQ7overworld,CutsceneMusicGroup)
+}
+ALIGN 4
+
+{
 	#include "S_Files/Sadness_Theme.event"
 	SongTable(SongID_Sorrow,Sadness_Theme,CutsceneMusicGroup)
 }
@@ -370,6 +388,18 @@ ALIGN 4
 ALIGN 4
 
 {
+	#include "S_Files/Coronation_Day.event"
+	SongTable(SongID_CoronationDay,Coronation_Day,CutsceneMusicGroup)
+}
+ALIGN 4
+
+{
+	#include "S_Files/Records_Medley.event"
+	SongTable(SongID_EndingMedley,Records_Medley,CutsceneMusicGroup)
+}
+ALIGN 4
+
+{
 	#include "S_Files/FalteringPrayer.event"
 	SongTable(SongID_Death,FalteringPrayer,BattleMusicGroup)
 }
@@ -391,6 +421,13 @@ ALIGN 4
 {
 	#include "S_Files/HeritorsOfArcadia.event"
 	SongTable(SongID_Epilogue,HeritorsOfArcadia, CutsceneMusicGroup)
+}
+ALIGN 4
+
+//by sunny
+{
+	#include "S_Files/The_Voice_That_Calls_You.event"
+	SongTable(SongID_VoiceThatCalls,The_Voice_That_Calls_You, CutsceneMusicGroup)
 }
 ALIGN 4
 

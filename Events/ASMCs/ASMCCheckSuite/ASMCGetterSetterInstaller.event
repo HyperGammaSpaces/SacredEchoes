@@ -66,6 +66,8 @@ MapAnimGetExp:
 #define GiveLuck(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; ASMC GiveLuckASMC|1"
 #define GiveDefense(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; ASMC GiveDefenseASMC|1"
 #define GiveResistance(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; ASMC GiveResistanceASMC|1"
+#define GiveConstitution(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; ASMC GiveConstitutionASMC|1"
+#define GiveMovement(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; ASMC GiveMovementASMC|1"
 //Rank is in slot 4
 #define GiveSwordRank(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; SVAL 0x4 0; ASMC GiveWeaponRankASMC|1"
 #define GiveLanceRank(Character,Amount) "SVAL 0x2 Character; SVAL 0x3 Amount; SVAL 0x4 1; ASMC GiveWeaponRankASMC|1"

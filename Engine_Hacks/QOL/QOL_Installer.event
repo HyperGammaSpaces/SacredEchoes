@@ -1,6 +1,26 @@
 
 PUSH
 
+    //Resolve a bug with backing out of battle forecast too fast
+    ORG 0x22E64
+    jumpToHack(BattleForecast_OnBPress)
+    //Protect hooked function
+    PROTECT 0x22E64 0x22E88
+    
+    //DSFE L Button cycling
+    ORG 0x1DB4C
+    SHORT 0xB500 //push {r14}
+
+    ORG 0x1DB5A
+    SHORT 0x7808 //ldrb r0, [r1]
+    SHORT 0x4B02 //ldr r3 (FindNextCursorUnit)
+    SHORT 0x469E //mov lr, r3
+    SHORT 0xF800 //bl lr+0
+    SHORT 0xBC01 //pop {r0}
+    SHORT 0x4700 //bx {r0}
+    SHORT 0
+    POIN FindNextCursorUnit
+
     //Fast promo dings
     #define Time_Between_Stats 5 //default is 20
 
@@ -31,6 +51,62 @@ PUSH
     PROC_SLEEP(4)
     ORG $9A480C
     PROC_SLEEP(10)
+    
+    //Faster map poison fx
+    ORG $9A6FA0
+    BYTE $4
+    ORG $9A6FA4
+    BYTE $4
+    ORG $9A6FA8
+    BYTE $4
+    ORG $9A6FAC
+    BYTE $4
+    ORG $9A6FB0
+    BYTE $4
+    ORG $9A6FB4
+    BYTE $4
+    ORG $9A6FB8
+    BYTE $3
+    ORG $9A6FBC
+    BYTE $3
+    ORG $9A6FC0
+    BYTE $2
+    ORG $9A6FC4
+    BYTE $2
+    ORG $9A6FC8
+    BYTE $2
+    ORG $9A6FCC
+    BYTE $1
+    ORG $7A92E
+    BYTE $50
+    
+    //Faster poison damage fx
+    ORG $9A50AC
+        PROC_SLEEP(30)
+    ORG $9A50BC
+        PROC_SLEEP(15)
+    ORG $9A50CC
+        PROC_SLEEP(5)
+    
+    //fast chapter titles
+    ORG $59B1C0
+        PROC_SLEEP(15)
+    ORG $59B2D0
+        PROC_SLEEP(15)
+	
+	//fast stealing
+	ORG $9A32D8
+		PROC_SLEEP(1)
+	ORG $9A32E8
+		PROC_SLEEP(1)
+	ORG $9A32F0
+		PROC_SLEEP(1)
+	ORG $9A3348
+		PROC_SLEEP(1)
+	ORG $9A3388
+		PROC_SLEEP(1)
+	ORG $9A33B0
+		PROC_SLEEP(1)
 
     #ifdef LANGUAGE_ES
         //Fix unit list Aid text for Spanish
@@ -61,8 +137,11 @@ PUSH
 	SHORT $202B $46C0
 	ORG $95AAC
 	SHORT $202B $46C0
-  
+    
+    ORG $56558
+    jumpToHack(FixBattleAnimeExitNoise)
 POP
+
 
 /*
   ORG $8D280
@@ -231,3 +310,19 @@ ALIGN 4
 //Show heal amount and use item might for heal amount
 ALIGN 4
 #include "HealStaffStuff/HealStaffStuff.event"
+
+ALIGN 4
+BattleForecast_OnBPress:
+#incbin "BattleForecastFix.dmp"
+
+ALIGN 4
+FindNextCursorUnit:
+#incbin "FindNextCursorUnit.dmp"
+
+ALIGN 4
+FixBattleAnimeExitNoise:
+#incbin "FixBattleAnimeExitNoise.dmp"
+
+//Post game turn counts
+ALIGN 4
+#include "TurnCountRecord/Installer.event"

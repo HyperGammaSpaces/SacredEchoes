@@ -10,6 +10,34 @@ ALIGN 4
 SpellAssociationTable:
 FILL (256*4)
 
+GenericMageSpellList:
+BYTE $01 Fire
+BYTE $08 Thunder
+BYTE $21 Heal
+BYTE $00 $00
+ALIGN 4
+SetSpellListPointer(Lukas, GenericMageSpellList)
+SetSpellListPointer(Clive, GenericMageSpellList)
+SetSpellListPointer(Forsyth, GenericMageSpellList)
+SetSpellListPointer(Python, GenericMageSpellList)
+SetSpellListPointer(Valbar, GenericMageSpellList)
+SetSpellListPointer(Leon, GenericMageSpellList)
+SetSpellListPointer(Mathilda, GenericMageSpellList)
+SetSpellListPointer(Zeke, GenericMageSpellList)
+SetSpellListPointer(Mycen, GenericMageSpellList)
+
+GenericClericSpellList:
+BYTE $01 Nosferatu
+BYTE $21 Seraphim
+BYTE $01 Heal
+BYTE $00 $00
+ALIGN 4
+SetSpellListPointer(Clair, GenericClericSpellList)
+SetSpellListPointer(Palla, GenericClericSpellList)
+SetSpellListPointer(Catria, GenericClericSpellList)
+SetSpellListPointer(Est, GenericClericSpellList)
+SetSpellListPointer(Acantha, GenericClericSpellList)
+
 GraySpellList:
 BYTE $01 Fire
 BYTE $09 Sagittae
@@ -168,6 +196,7 @@ BYTE $01 Excalibur
 BYTE $0A Thunder
 BYTE $0F Sagittae
 BYTE $21 Heal
+BYTE $28 Silence
 BYTE $00 $00
 ALIGN 4
 SetSpellListPointer(Luthier, LuthierSpellList)
@@ -202,6 +231,7 @@ BYTE $24 Rescue
 BYTE $29 TorchStaff
 BYTE $00 $00
 ALIGN 4
+SetSpellListPointer(Atlas, AtlasSpellList)
 SetSpellListPointer(Hyas, AtlasSpellList)
 
 JesseSpellList:
@@ -266,6 +296,7 @@ BYTE $25 Warp
 BYTE $00 $00
 ALIGN 4
 SetSpellListPointer(Nomah, NomahSpellList)
+SetSpellListPointer(Conrad, NomahSpellList)
 
 YuzuSpellList:
 BYTE $01 Fire
@@ -311,6 +342,7 @@ BYTE $00 $00
 ALIGN 4
 
 NuibabaSpellList:
+BYTE $01 Miasma
 BYTE $01 Mire
 BYTE $01 Thanatos
 BYTE $01 Medusa

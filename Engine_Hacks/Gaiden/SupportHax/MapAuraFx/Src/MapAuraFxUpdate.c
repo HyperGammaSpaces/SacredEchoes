@@ -20,7 +20,7 @@ static void MapAuraFx_OnInit(struct MapAuraFxProc* proc);
 static void MapAuraFx_OnLoop(struct MapAuraFxProc* proc);
 static void MapAuraFx_OnEnd(struct MapAuraFxProc* proc);
 
-static const struct ProcCmd sProc_MapAuraFx[] = {
+static const struct ProcInstruction sProc_MapAuraFx[] = {
 	PROC_SET_NAME("Map Aura Fx"),
 
 	PROC_SET_DESTRUCTOR(MapAuraFx_OnEnd),
@@ -43,7 +43,7 @@ static void MapAuraFx_Unit_OnInit(struct MapAuraFxUnitProc* proc);
 static void MapAuraFx_Unit_OnLoop(struct MapAuraFxUnitProc* proc);
 static void MapAuraFx_Unit_OnEnd(struct MapAuraFxUnitProc* proc);
 
-static const struct ProcCmd sProc_MapAuraFx_Unit[] = {
+static const struct ProcInstruction sProc_MapAuraFx_Unit[] = {
 	PROC_SET_NAME("Map Aura Fx Unit"),
 
 	PROC_SLEEP(0),
@@ -84,9 +84,9 @@ static void UnpackGraphics(void)
 static void InitSpecialEffects(void)
 {
     //DISPCNT works when 00 9F. This code should do exactly that.
-	gLCDIOBuffer.dispControl.win0_on = FALSE;
-	gLCDIOBuffer.dispControl.win1_on = FALSE;
-	gLCDIOBuffer.dispControl.objWin_on = TRUE;
+	gLCDIOBuffer.dispControl.enableWin0 = FALSE;
+	gLCDIOBuffer.dispControl.enableWin1 = FALSE;
+	gLCDIOBuffer.dispControl.enableObjWin = TRUE;
 
     //idk the exact values for WININ tbh but this works
     //3C 20 works
@@ -148,7 +148,7 @@ static void MapAuraFx_OnInit(struct MapAuraFxProc* proc)
 static void MapAuraFx_OnLoop(struct MapAuraFxProc* proc)
 {
     proc->elapsedTime++;
-    if(proc->elapsedTime > 32) {Proc_Break(proc);}
+    if(proc->elapsedTime > 32) {BreakProcLoop(proc);}
     unsigned newBlend = proc->blend + 1;
     if(newBlend >= 16) {newBlend = (32 - newBlend);}
     else if(newBlend < 8) {newBlend = proc->blend + 2;}
@@ -160,13 +160,13 @@ static void MapAuraFx_OnLoop(struct MapAuraFxProc* proc)
 
 static void MapAuraFx_OnEnd(struct MapAuraFxProc* proc)
 {
-	gLCDIOBuffer.dispControl.win0_on = FALSE;
-	gLCDIOBuffer.dispControl.win1_on = FALSE;
-	gLCDIOBuffer.dispControl.objWin_on = FALSE;
+	gLCDIOBuffer.dispControl.enableWin0 = FALSE;
+	gLCDIOBuffer.dispControl.enableWin1 = FALSE;
+	gLCDIOBuffer.dispControl.enableObjWin = FALSE;
 
 	FillBgMap(gBg2MapBuffer, 0);
 	EnableBgSyncByIndex(2);
-    Proc_EndEach(sProc_MapAuraFx_Unit);
+    EndEachProc(sProc_MapAuraFx_Unit);
 }
 
 static void MapAuraFx_Unit_OnInit(struct MapAuraFxUnitProc* proc)
@@ -209,17 +209,17 @@ static void MapAuraFx_Unit_OnEnd(struct MapAuraFxUnitProc* proc)
 
 void StartMapAuraFx(void)
 {
-	Proc_Start(sProc_MapAuraFx, ROOT_PROC_3);
+	ProcStart(sProc_MapAuraFx, ROOT_PROC_3);
 }
 
 void EndMapAuraFx(void)
 {
-	Proc_EndEach(sProc_MapAuraFx);
+	EndEachProc(sProc_MapAuraFx);
 }
 
 int IsMapAuraFxActive(void)
 {
-	return Proc_Find(sProc_MapAuraFx) ? TRUE : FALSE;
+	return ProcFind(sProc_MapAuraFx) ? TRUE : FALSE;
 }
 
 void SetMapAuraFxSpeed(int speed)
@@ -234,7 +234,7 @@ void SetMapAuraFxSpeed(int speed)
 
 void SetMapAuraFxBlend(unsigned blend)
 {
-	struct MapAuraFxProc* proc = (struct MapAuraFxProc*) Proc_Find(sProc_MapAuraFx);
+	struct MapAuraFxProc* proc = (struct MapAuraFxProc*) ProcFind(sProc_MapAuraFx);
 
 	if (proc)
 	{
@@ -244,7 +244,7 @@ void SetMapAuraFxBlend(unsigned blend)
 
 void SetMapAuraFxPalette(const u16 palette[])
 {
-	struct MapAuraFxProc* proc = (struct MapAuraFxProc*) Proc_Find(sProc_MapAuraFx);
+	struct MapAuraFxProc* proc = (struct MapAuraFxProc*) ProcFind(sProc_MapAuraFx);
 
 	if (proc)
 	{
@@ -257,12 +257,12 @@ void AddMapAuraFxUnit(struct Unit* unit)
 {
 	if (UNIT_IS_VALID(unit) && unit->pMapSpriteHandle)
 	{
-		struct MapAuraFxProc* parent = Proc_Find(sProc_MapAuraFx);
+		struct MapAuraFxProc* parent = ProcFind(sProc_MapAuraFx);
 
 		if (parent)
 		{
 			struct MapAuraFxUnitProc* unitProc =
-				(struct MapAuraFxUnitProc*) Proc_Start(sProc_MapAuraFx_Unit, parent);
+				(struct MapAuraFxUnitProc*) ProcStart(sProc_MapAuraFx_Unit, parent);
 
 			unitProc->pUnit = unit;
 			parent->elapsedTime  = 0;

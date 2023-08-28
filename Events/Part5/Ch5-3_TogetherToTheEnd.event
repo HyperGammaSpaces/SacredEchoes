@@ -422,7 +422,7 @@ Ch5F3_BeginningScene:
     LABEL 0x101
     MUSCMID SongID_Silence
     FADI 2
-    //TODO: make celica party take up the last 10 slots
+    SHORT $0D40 $0; POIN SplitPartySort|1
     CLEA 0x0
     SVAL 0x1 0x0C
     SET_HP JedahFinal
@@ -472,7 +472,7 @@ EpilogueEvents:
     LOMA 0x7 //zofia castle
     LOAD2 0x0 CutsceneUnits_Epilogue_Alm
     ENUN
-    MUSC SongID_CastleTheme
+    MUSC SongID_CoronationDay
     FADU 5
     BROWNBOXTEXT Loc_ZofiaCastle [8,8]
     STAL 20
@@ -484,20 +484,38 @@ EpilogueEvents:
     SetBackground(0x0A, 5)
     BackgroundText(Ch5_3_Epilogue)
     FADI 3
+    //song: Gaiden Ending Medley
+    MUSC SongID_EndingMedley
     SetBackground(EpilogueCG, 3)
     STAL 75
     CenterTextbox(Ch5_3_Epilogue_Narration)
     STAL 30
-    FadeOutMusic
+    //FadeOutMusic
     FADI 3
     EVBIT_MODIFY 0x0
     ASMC 0x30185 //clears map tilesets?
     
+    #ifdef SHOW_CLEAR_TURNS
+    //turn counts display
+    //song: Gaiden Ending Medley (cont'd)
+    //SetBackground(Part1EndCG, 3)
+    ASMC 0xB8175
+    STAL 30
+    FadeOutMusic
+    STAL 10
+    #endif
+    
     MUSC SongID_Epilogue //4:10
+    SHORT $0D40 $0; POIN EndingMusicSwitcher|1
     ASMC 0xC4879 //roll credits
     STAL 90
+    
+    //have it switch to MUSC SongID_VoiceThatCalls when Heritors is done
     CALL 0xA0036C //character endings
     STAL 90
+    
+    //the FIN thing is at A3D498
+    
     /*
     //Mila Tree CG
     TEXTMODE 2
@@ -510,10 +528,5 @@ EpilogueEvents:
     EVBIT_F 0x2
     */
     
-    /*
-    //turn counts display
-    ASMC 0xB8175
-    STAL 90
-    */
     MNTS 0x0 //return to title screen
     ENDA

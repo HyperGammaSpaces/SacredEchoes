@@ -105,6 +105,9 @@ SeraphimAnim_Main:
 		
 		EndSpellcastEffects:
 		end_spell_fx_with_bglayer
+        ldr r3, =SomeRAMAddressMaybe
+        mov r2, #0x0
+        str r2, [r3]
 
 	EndSpellMainFunc:
 	spell_anim_main_end

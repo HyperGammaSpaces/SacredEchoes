@@ -5,35 +5,35 @@ void DrawWeaponTypeMenuLine(struct TextHandle* text, int item, s8 isUsable, u16*
     Text_Display(text, mapOut);
 }
 
-u8 WeaponType_UsabilityCheck(const struct MenuItemDef* menuEntry, int index)
+int WeaponType_UsabilityCheck(const struct MenuCommandDefinition* menuEntry, int index)
 {
     //Is there a valid entry?
 	int weapon = Multiweapon_BaseWeaponsList[index];
-	if ( !weapon ) { return MENU_NOTSHOWN; }
+	if ( !weapon ) { return MCA_NONUSABLE; }
 	
     // Does unit have rank in baseWeapons[n].weaponType?
     int wType = GetItemType(weapon);
-	if ( GetItemRequiredExp(weapon) > gActiveUnit->ranks[wType] ) { return MENU_NOTSHOWN; }
+	if ( GetItemRequiredExp(weapon) > gActiveUnit->ranks[wType] ) { return MCA_NONUSABLE; }
     
 	//Now, let's grey out the weapon type if there are no valid targets.
-	return ( DoesWeaponHaveTargets(gActiveUnit,weapon) ? MENU_ENABLED : MENU_DISABLED );
+	return ( DoesWeaponHaveTargets(gActiveUnit,weapon) ? MCA_USABLE : MCA_GRAYED );
 }
 
-u8 WeaponType_UsabilityCheck_Equip(const struct MenuItemDef* menuEntry, int index)
+int WeaponType_UsabilityCheck_Equip(const struct MenuCommandDefinition* menuEntry, int index)
 {
     //Is there a valid entry?
 	int weapon = Multiweapon_BaseWeaponsList[index];
-	if ( !weapon ) { return MENU_NOTSHOWN; }
+	if ( !weapon ) { return MCA_NONUSABLE; }
 	
     // Does unit have rank in baseWeapons[n].weaponType?
     int wType = GetItemType(weapon);
-	if ( GetItemRequiredExp(weapon) > gActiveUnit->ranks[wType] ) { return MENU_NOTSHOWN; }
+	if ( GetItemRequiredExp(weapon) > gActiveUnit->ranks[wType] ) { return MCA_NONUSABLE; }
     
 	//Now, let's grey out the weapon type if there are no valid targets.
-	return MENU_ENABLED;
+	return MCA_USABLE;
 }
 
-int WeaponType_OnDraw(MenuProc* menu, MenuItemProc* menuCommand) 
+int WeaponType_OnDraw(MenuProc* menu, MenuCommandProc* menuCommand) 
 {
     int item = Multiweapon_BaseWeaponsList[menuCommand->commandDefinitionIndex];
     int canUse = CanUnitUseWeapon(gActiveUnit, item);
@@ -43,13 +43,13 @@ int WeaponType_OnDraw(MenuProc* menu, MenuItemProc* menuCommand)
     return 0;
 }
 
-u8 WeaponType_OnSelect(MenuProc* menu, MenuItemProc* menuCommand) 
+int WeaponType_OnSelect(MenuProc* menu, MenuCommandProc* menuCommand) 
 {
-    if ( menuCommand->availability == MENU_DISABLED )
+    if ( menuCommand->availability == MCA_GRAYED )
     {
         //this weapon is greyed out because there are no targets.
         MenuCallHelpBox(menu,gNoTargetsErrorText);
-        return MENU_ACT_SND6B;
+        return ME_PLAY_BOOP;
     }
     else
     {
@@ -69,17 +69,17 @@ u8 WeaponType_OnSelect(MenuProc* menu, MenuItemProc* menuCommand)
         //and call target select.
         MakeTargetListForWeapon(gActiveUnit, newItem);
         StartTargetSelection(&gSelect_Attack);
-        return MENU_ACT_SKIPCURSOR | MENU_ACT_SND6A | MENU_ACT_ENDFACE;
+        return ME_DISABLE | ME_PLAY_BEEP | ME_END_FACE0;
     }
 }
 
-u8 WeaponType_OnSelect_Equip(MenuProc* menu, MenuItemProc* menuCommand) 
+int WeaponType_OnSelect_Equip(MenuProc* menu, MenuCommandProc* menuCommand) 
 {
-    if ( menuCommand->availability == MENU_DISABLED )
+    if ( menuCommand->availability == MCA_GRAYED )
     {
         //this weapon is greyed out because there are no targets.
         MenuCallHelpBox(menu,gNoTargetsErrorText);
-        return MENU_ACT_SND6B;
+        return ME_PLAY_BOOP;
     }
     else
     {
@@ -97,14 +97,14 @@ u8 WeaponType_OnSelect_Equip(MenuProc* menu, MenuItemProc* menuCommand)
         ClearBG0BG1();
         FillBgMap(gBg0MapBuffer, 0);
         RedrawItemMenu_Equip(menu);
-        return MENU_ACT_SKIPCURSOR | MENU_ACT_CLEAR;
+        return ME_DISABLE | ME_CLEAR_GFX;
         //return MENU_ACT_SKIPCURSOR | MENU_ACT_SND6A | MENU_ACT_ENDFACE;
     }
 }
 
 //Restores buffered graphics overwritten by PrepareSubmenuGraphics.
 //TODO: redraw with 22B30
-u8 WeaponType_OnCancel(MenuProc* menu, MenuItemProc* menuCommand)
+int WeaponType_OnCancel(MenuProc* menu, MenuCommandProc* menuCommand)
 {
     Text_InitFont();
     BgMapCopyRect(gpStatScreenPageBg0Map, &gBg0MapBuffer[SUBMENU_DRAW_Y * 32 + SUBMENU_DRAW_X],9,19);
@@ -113,7 +113,7 @@ u8 WeaponType_OnCancel(MenuProc* menu, MenuItemProc* menuCommand)
     HideMoveRangeGraphics();
         RedrawItemMenu(menu);
     //return MENU_ACT_SKIPCURSOR | MENU_ACT_END | MENU_ACT_SND6B | MENU_ACT_CLEAR | MENU_ACT_ENDFACE;
-        return MENU_ACT_SKIPCURSOR;
+        return ME_DISABLE;
 }
 
 void WeaponType_OnEnd(MenuProc* menu)

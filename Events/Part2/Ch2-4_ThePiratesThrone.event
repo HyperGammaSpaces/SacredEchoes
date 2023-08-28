@@ -224,6 +224,7 @@ Ch2_4_EndingScene:
 		_0x2141 0x07 0x1 0x4
 		TEXTMODE 1
 		BackgroundText(Ch2_4_PostBattle_2)
+        CALL $591F40
 		EVBIT_MODIFY 0x1
 		CHECK_EVENTID lFlag_ValbarTalked
 		BEQ 0x9 0xC 0x0
@@ -242,7 +243,7 @@ Ch2_4_EndingScene:
 	MUSC SongID_ShadowOfVictory
 	SetBackground(0x07)
 	BackgroundText(Ch2_4_PostBattle_NoValbar_1)
-	TEXTCLEAR
+	CLEAN
 	EVBIT_MODIFY 0x1
 	CHECK_ALIVE Leon
 	BEQ 0x7 0xC 0x0
@@ -252,6 +253,7 @@ Ch2_4_EndingScene:
 		CUSA Leon
 		SetBackground(0x07)
 		Text(Ch2_4_PostBattle_NoValbar_Leon)
+        CALL $591F40
 		EVBIT_MODIFY 0x1
 		CharacterJoinedNotification(Notif_LeonJoin)
         EVBIT_MODIFY 0x0
@@ -260,6 +262,7 @@ Ch2_4_EndingScene:
 	BEQ 0xA 0xC 0x0
 		EVBIT_MODIFY 0x0
         FADI 16
+        CLEAN
         STAL 5
 		CUSA Kamui
 		SetBackground(0x07)
@@ -267,6 +270,7 @@ Ch2_4_EndingScene:
 		EVBIT_MODIFY 0x1
 		CHECK_EVENTID lFlag_KamuiTalked
 		BEQ 0xA 0xC 0x0
+            CALL $591F40
 			CharacterJoinedNotification(Notif_KamuiJoin)
     LABEL 0xA
     EVBIT_MODIFY 0x0
@@ -283,11 +287,13 @@ TalkToValbar:
 	CHECK_ALIVE Leon 
 	IFEQ 0x2 0xC 0x1 //if not, goto NoFaye
 		Text(Ch2_4_GetValbar)
+        CALL $591F40
 		CUSA Leon
 		CharacterJoinedNotification(Notif_ValbarLeonJoin)
 		GOTO 0x3
 	LABEL 0x2
 	Text(Ch2_4_GetValbar_NoLeon)
+    CALL $591F40
 	CharacterJoinedNotification(Notif_ValbarJoin)
 	LABEL 0x3
 	CUSA Valbar
@@ -302,6 +308,7 @@ TalkToKamui:
 	Text(Ch2_4_GetKamui)
 	CUSA Kamui
 	STAL 0x14
+    CALL $591F40
 	CharacterJoinedNotification(Notif_KamuiJoin)
 	MURE 0x05
 	NoFade
@@ -317,6 +324,7 @@ TalkToKamuiCelica:
 	LABEL 0x4
 	MUSS SongID_Recruitment
 	Text(Ch2_4_GetKamui_ValbarDead)
+    CALL $591F40
 	CUSA Kamui
 	CharacterJoinedNotification(Notif_KamuiJoin)
 	LABEL 0x5

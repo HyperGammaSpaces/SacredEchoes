@@ -1,5 +1,10 @@
 //for FE8U
 
+PUSH //consolidate endings list
+ORG 0xB699A
+B(0xB69B0)
+POP
+
 //Install AddFlagByED2
 //BIN:$FREEAREA:1=AddFlagByED2.dmp
 //JUMP:0xB672C:$r3=AddFlagByED2.dmp

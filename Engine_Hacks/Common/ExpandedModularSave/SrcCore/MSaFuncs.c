@@ -12,18 +12,18 @@ enum
 // If a Suspend chunk function is also used in a Save chunk, it will be here
 
 void MSa_SaveChapterState(void* target, unsigned size) {
-	gRAMChapterData.unk0 = GetGameClock();
-	WriteAndVerifySramFast(&gRAMChapterData, target, size);
+	gChapterData._u00 = GetGameClock();
+	WriteAndVerifySramFast(&gChapterData, target, size);
 }
 
 void MSa_LoadChapterState(void* source, unsigned size) {
-	ReadSramFast(source, &gRAMChapterData, size);
-	SetGameClock(gRAMChapterData.unk0);
+	ReadSramFast(source, &gChapterData, size);
+	SetGameClock(gChapterData._u00);
 }
 
 void MSa_SaveUnits(void* target, unsigned size) {
 	struct SaveGlobalMetadata sgm;
-    u32 gameOptions = gRAMChapterData.unk40_1;
+    u32 gameOptions = gChapterData.unk40_1;
 	LoadGeneralGameMetadata(&sgm);
 
 	for (unsigned i = 0; i < 51; ++i) {
@@ -40,7 +40,7 @@ void MSa_SaveUnits(void* target, unsigned size) {
 	}
     
     //we'll use this unused options byte as a flag for patched save.
-    gRAMChapterData.unk40_1 = gameOptions|BASE_WEAPON_PATCH_BYTE;
+    gChapterData.unk40_1 = gameOptions|BASE_WEAPON_PATCH_BYTE;
 
 	SaveGeneralGameMetadata(&sgm);
 }

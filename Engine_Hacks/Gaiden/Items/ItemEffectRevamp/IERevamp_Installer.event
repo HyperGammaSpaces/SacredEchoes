@@ -82,10 +82,10 @@ ALIGN 4
     IER_setItemEffect(IER_FX_Upheaval, AoEDamageStaffUsability, PUNull, AoEDamageStaffTargeting, AoEStaffEffectJump, ApplyStaffDamageAfterBattle)
     
     //Dancer rings
-    IER_setItemEffect(IER_FX_FillasMight, $28BD8, PUNull, DancerRingTargetSelect, $2FF68)
-    IER_setItemEffect(IER_FX_NinisGrace, $28BD8, PUNull, DancerRingTargetSelect, $2FF68)
-    IER_setItemEffect(IER_FX_ThorsIre, $28BD8, PUNull, DancerRingTargetSelect, $2FF68)
-    IER_setItemEffect(IER_FX_SetsLitany, $28BD8, PUNull, DancerRingTargetSelect, $2FF68)
+    IER_setItemEffect(IER_FX_FillasMight, $28BD8, PUNull, DancerRingTargetSelect, DancerRingEffectCheck)
+    IER_setItemEffect(IER_FX_NinisGrace, $28BD8, PUNull, DancerRingTargetSelect, DancerRingEffectCheck)
+    IER_setItemEffect(IER_FX_ThorsIre, $28BD8, PUNull, DancerRingTargetSelect, DancerRingEffectCheck)
+    IER_setItemEffect(IER_FX_SetsLitany, $28BD8, PUNull, DancerRingTargetSelect, DancerRingEffectCheck)
     
     //Promo items
     IER_setItemEffect(IER_FX_HerosProof, $28B56, $2A0DA, ITNull, $2FEEC)

@@ -10,6 +10,8 @@ PUSH
     ORG $237F8
     replaceWithHack(EquipCommand_OnSelect)
     
+    //this is the dancer ring select!
+    /*
     ORG $59C69C
     POIN EquipItem_OnDraw|1
     ORG $59C6C0
@@ -20,6 +22,7 @@ PUSH
     POIN EquipItem_OnDraw|1
     ORG $59C72C
     POIN EquipItem_OnDraw|1
+    */
     
     ORG $59C84C
     POIN EquipItem_OnDraw|1

@@ -1,14 +1,16 @@
 .thumb
 
+@r0 = attacker's BattleUnitStruct
+@r1 = defender's BattleUnitStruct
 push {r4-r6,lr}
 mov 	r4, r0
 mov 	r5, r1
-ldr 	r2, =#0x859BA90 @WeaponTriangle table
+ldr 	r2, =#0x859BA90 @pointer to WeaponTriangle bonuses/penalties table
 b StartLoop
 
 LoopPoint:
 mov 	r0, r4
-add 	r0, #0x50
+add 	r0, #0x50       @BattleUnitStruct@WeaponType
 ldrb 	r1, [r0, #0x0]
 mov 	r0, #0x0
 ldsb 	r0, [r2, r0]
@@ -27,11 +29,11 @@ bne LoopNext
     bne LoopNext
         ldrb 	r0, [r2, #0x2] 
         mov 	r1, r4
-        add 	r1, #0x53
+        add 	r1, #0x53   @BattleUnitStruct@WTA_HitBonus
         strb 	r0, [r1, #0x0]
         ldrb 	r1, [r2, #0x3] 
         mov 	r0, r4
-        add 	r0, #0x54
+        add 	r0, #0x54   @BattleUnitStruct@WTA_AtkBonus
         strb 	r1, [r0, #0x0]
         ldrb 	r0, [r2, #0x2] 
         neg 	r0, r0
@@ -44,7 +46,7 @@ bne LoopNext
         strb 	r0, [r1, #0x0]
         b ReaverCheck
 		
-HandleBow:
+HandleBow: @Makes bows get WTD at 1-range.
 	push {r6, r7}
 	ldrb r0, [ r4, #0x10 ]
 	ldrb r6, [ r5, #0x10 ]
@@ -107,6 +109,7 @@ ldsb 	r0, [r2, r0]
 cmp 	r0, #0x0
 bge LoopPoint
 
+@Finally, we check if anyone's weapon has a Reaver effect.
 ReaverCheck:
 ldr 	r0, [r4, #0x4c]
 ldr 	r1, [r5, #0x4c]

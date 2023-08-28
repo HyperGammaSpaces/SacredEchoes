@@ -201,6 +201,8 @@ Hideout_EndingScene:
 		BEQ 0x105 0xC 0x0
 			LOAD2 0x1 CutsceneAlliesFernand
 			ENUN
+            RemoveItemFromUnit(FernandPlayable,BaseLance)
+            DumpToConvoy(FernandPlayable)
 			CHECK_CLASS FernandPlayable
 			SVAL 0x2 Paladin
 			BEQ 0x108 0xC 0x2
@@ -340,6 +342,7 @@ Hideout_EndingScene:
 		TEXTSHOW DeliveranceHideout_AfterCGText
 		TEXTEND
 		TEXTCLEAR
+        CALL $591F40
 		
 		CharacterJoinedNotification(Notif_ForsythPythonJoin)
 		CharacterJoinedNotification(Notif_CliveJoin)

@@ -96,6 +96,7 @@ Ch2_2_BeginningScene:
 	SetBackground(0x07) //Port town
 	BackgroundText(Ch2_2_Intro1)
 	FADI 5
+    CLEAN
 	STAL 5
 
 	LOAD1 0x1 SaberJoins
@@ -133,8 +134,10 @@ Ch2_2_BeginningScene:
 	TEXTMODE 1
 
 	Text(Ch2_2_RecruitSaber_2)
+    CALL $591F40
 	CharacterJoinedNotification(Notif_SaberJoin)
 	FADI 2
+    CLEAN
 
 	#ifdef __DEBUG__
 		LOAD1 0x1 Ch2_2_Units1

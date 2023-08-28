@@ -327,7 +327,6 @@ HeritorsOfArcadia_0_50:
 @ 060   ----------------------------------------
         .byte   W72
 @ 061   ----------------------------------------
-HeritorsOfArcadia_0_LOOP:
         .byte   W72
 @ 062   ----------------------------------------
         .byte   W72
@@ -569,8 +568,7 @@ HeritorsOfArcadia_0_87:
         .byte   W60
         .byte   TEMPO , 78/2
         .byte   W11
-        .byte   GOTO
-         .word  HeritorsOfArcadia_0_LOOP
+        .byte   TEMPO , 76/2
         .byte   FINE
 
 @****************** Track 1 (Midi-Chn.1) ******************@
@@ -991,8 +989,7 @@ HeritorsOfArcadia_1_38:
         .byte           N32   , Dn4 , v049 , gtp3
         .byte   W36
 @ 061   ----------------------------------------
-HeritorsOfArcadia_1_LOOP:
-        .byte           N11   , As2 , v049
+        .byte           N11   , As2
         .byte   W12
         .byte                   Fn3
         .byte   W12
@@ -1305,8 +1302,6 @@ HeritorsOfArcadia_1_87:
         .byte                   Cn4
         .byte   W68
         .byte   W03
-        .byte   GOTO
-         .word  HeritorsOfArcadia_1_LOOP
         .byte   FINE
 
 @****************** Track 2 (Midi-Chn.2) ******************@
@@ -1664,7 +1659,6 @@ HeritorsOfArcadia_2_26:
         .byte                   An3
         .byte   W72
 @ 061   ----------------------------------------
-HeritorsOfArcadia_2_LOOP:
         .byte   W72
 @ 062   ----------------------------------------
         .byte   W72
@@ -1673,7 +1667,7 @@ HeritorsOfArcadia_2_LOOP:
 @ 064   ----------------------------------------
         .byte   W72
 @ 065   ----------------------------------------
-        .byte           N68   , Fs3 , v092 , gtp3
+        .byte                   Fs3 , v092
         .byte   W72
 @ 066   ----------------------------------------
         .byte                   En3 , v080
@@ -1921,8 +1915,6 @@ HeritorsOfArcadia_2_88:
         .byte                   Gn3 , v049
         .byte   W68
         .byte   W03
-        .byte   GOTO
-         .word  HeritorsOfArcadia_2_LOOP
         .byte   FINE
 
 @****************** Track 3 (Midi-Chn.3) ******************@
@@ -2244,8 +2236,7 @@ HeritorsOfArcadia_3_18:
         .byte           N32   , Bn3 , v049 , gtp3
         .byte   W36
 @ 061   ----------------------------------------
-HeritorsOfArcadia_3_LOOP:
-        .byte           N11   , As2 , v049
+        .byte           N11   , As2
         .byte   W12
         .byte                   Fn3
         .byte   W12
@@ -2504,8 +2495,6 @@ HeritorsOfArcadia_3_86:
 @ 106   ----------------------------------------
         .byte   W68
         .byte   W03
-        .byte   GOTO
-         .word  HeritorsOfArcadia_3_LOOP
         .byte   FINE
 
 @****************** Track 4 (Midi-Chn.4) ******************@
@@ -2888,7 +2877,6 @@ HeritorsOfArcadia_4_39:
         .byte           N11   , Dn3 , v096
         .byte   W12
 @ 061   ----------------------------------------
-HeritorsOfArcadia_4_LOOP:
         .byte           N01   , Gn3 , v080
         .byte   W02
         .byte           N32   , An3 , v096 , gtp1
@@ -3410,8 +3398,6 @@ HeritorsOfArcadia_4_99:
         .byte   W60
         .byte           N11   , Dn3 , v096
         .byte   W11
-        .byte   GOTO
-         .word  HeritorsOfArcadia_4_LOOP
         .byte   FINE
 
 @****************** Track 5 (Midi-Chn.5) ******************@
@@ -3785,7 +3771,6 @@ HeritorsOfArcadia_5_50:
 @ 060   ----------------------------------------
         .byte   W72
 @ 061   ----------------------------------------
-HeritorsOfArcadia_5_LOOP:
         .byte   W72
 @ 062   ----------------------------------------
         .byte   W72
@@ -3932,8 +3917,6 @@ HeritorsOfArcadia_5_LOOP:
         .byte                   Dn2
         .byte   W68
         .byte   W03
-        .byte   GOTO
-         .word  HeritorsOfArcadia_5_LOOP
         .byte   FINE
 
 @****************** Track 6 (Midi-Chn.6) ******************@
@@ -4096,7 +4079,6 @@ HeritorsOfArcadia_6:
 @ 060   ----------------------------------------
         .byte   W72
 @ 061   ----------------------------------------
-HeritorsOfArcadia_6_LOOP:
         .byte   W72
 @ 062   ----------------------------------------
         .byte   W72
@@ -4232,8 +4214,6 @@ HeritorsOfArcadia_6_LOOP:
 @ 106   ----------------------------------------
         .byte   W68
         .byte   W03
-        .byte   GOTO
-         .word  HeritorsOfArcadia_6_LOOP
         .byte   FINE
 
 

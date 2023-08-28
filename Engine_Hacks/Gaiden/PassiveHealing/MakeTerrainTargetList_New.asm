@@ -89,7 +89,9 @@ MakeTerrainTargetList:
             and r0, r1
             cmp r0, #0
             beq _Loop1
-            cmp r0, #0xD
+            cmp r0, #0x5 @atk ring
+            beq _Loop1
+            cmp r0, #0xD @petrify
             bne ContinueStatus
                 mov r3, #0x10
                 neg r3, r3

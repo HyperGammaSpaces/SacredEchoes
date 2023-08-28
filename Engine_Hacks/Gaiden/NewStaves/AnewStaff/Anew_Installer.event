@@ -48,6 +48,9 @@ PUSH
         ORG $2FCCC
         POIN AnewEffectCheck
     #endif
+    
+    ORG $9B0AD0
+    #incbin "anim.img.bin"
 POP
 
 ALIGN 4

@@ -19,7 +19,7 @@ void SomeBattlePlaySound_8071990(int id, int volume) __attribute__((long_call));
 
 struct PopupReworkAnimsOnProc {
 	struct PopupReworkProc popr;
-	struct Anim* iconAis;
+	struct AnimationInterpreter* iconAis;
 };
 
 static void PopR_AnimsOnAddIcon(struct PopupReworkProc* proc, unsigned iconId, unsigned xOffset);
@@ -27,7 +27,7 @@ static void PopR_AnimsOnDraw(struct PopupReworkAnimsOnProc* proc);
 static void PopR_AnimsOnWait(struct PopupReworkAnimsOnProc* proc);
 static void PopR_AnimsOnCleanup(struct PopupReworkAnimsOnProc* proc);
 
-static const struct ProcCmd sProc_PopRAnimsOnPopup[] = {
+static const struct ProcInstruction sProc_PopRAnimsOnPopup[] = {
 	PROC_SET_DESTRUCTOR(PopR_AnimsOnCleanup),
 
 	PROC_SLEEP(0),
@@ -39,7 +39,7 @@ static const struct ProcCmd sProc_PopRAnimsOnPopup[] = {
 };
 
 static struct PopupReworkProc* PopR_StartAnimsOnPopup(const u32* definition, unsigned time, struct Proc* parent) {
-	struct PopupReworkAnimsOnProc* proc = (struct PopupReworkAnimsOnProc*) Proc_StartBlocking(
+	struct PopupReworkAnimsOnProc* proc = (struct PopupReworkAnimsOnProc*) ProcStartBlocking(
 		sProc_PopRAnimsOnPopup, parent
 	);
 
@@ -64,11 +64,11 @@ static void PopR_AnimsOnAddIcon(struct PopupReworkProc* proc, unsigned iconId, u
 	struct PopupReworkAnimsOnProc* const pproc = (struct PopupReworkAnimsOnProc*) proc;
 
 	if (pproc->iconAis)
-		AnimDelete(pproc->iconAis);
+		DeleteAIS(pproc->iconAis);
 
-	pproc->iconAis = AnimCreate(gAnimScr_PopupIcon, 150);
+	pproc->iconAis = CreateAIS(gAnimScr_PopupIcon, 150);
 
-	pproc->iconAis->oam2Base  = 0x2440;
+	pproc->iconAis->oam2base  = 0x2440;
 	pproc->iconAis->xPosition = proc->pop.xTileReal + 0x10 + xOffset;
 	pproc->iconAis->yPosition = proc->pop.yTileReal + 0x08;
 
@@ -123,11 +123,11 @@ static void PopR_AnimsOnDraw(struct PopupReworkAnimsOnProc* proc) {
 
 static void PopR_AnimsOnWait(struct PopupReworkAnimsOnProc* proc) {
 	if (proc->popr.pop.clock < 0) {
-		if (gKeyState.newKeys & KEY_BUTTON_A)
-			Proc_Break((struct Proc*) (proc));
+		if (gKeyState.pressedKeys & KEY_BUTTON_A)
+			BreakProcLoop((struct Proc*) (proc));
 	} else {
 		if (proc->popr.pop.clock == 0)
-			Proc_Break((struct Proc*) (proc));
+			BreakProcLoop((struct Proc*) (proc));
 		else
 			proc->popr.pop.clock--;
 	}
@@ -135,7 +135,7 @@ static void PopR_AnimsOnWait(struct PopupReworkAnimsOnProc* proc) {
 
 static void PopR_AnimsOnCleanup(struct PopupReworkAnimsOnProc* proc) {
 	if (proc->iconAis)
-		AnimDelete(proc->iconAis);
+		DeleteAIS(proc->iconAis);
 
 	FillBgMap(gBg1MapBuffer, 0);
 	EnableBgSyncByIndex(1);
@@ -151,7 +151,7 @@ struct AnimsOnWrapperProc {
 static void PopR_AnimsOnWrapperLoop(struct AnimsOnWrapperProc* proc);
 static void PopR_AnimsOnWrapperCleanup(struct AnimsOnWrapperProc* proc);
 
-static const struct ProcCmd sProc_PopR_AnimsOnWrapper[] = {
+static const struct ProcInstruction sProc_PopR_AnimsOnWrapper[] = {
 	PROC_SET_DESTRUCTOR(PopR_AnimsOnWrapperCleanup),
 	PROC_SLEEP(10),
 
@@ -166,7 +166,7 @@ PROC_LABEL(1),
 };
 
 void PopR_StartBattlePopups(void) {
-	struct AnimsOnWrapperProc* proc = (struct AnimsOnWrapperProc*) Proc_Start(sProc_PopR_AnimsOnWrapper, ROOT_PROC_3);
+	struct AnimsOnWrapperProc* proc = (struct AnimsOnWrapperProc*) ProcStart(sProc_PopR_AnimsOnWrapper, ROOT_PROC_3);
 
 	gpBattlePopupProc = (struct Proc*) (proc);
 	gBattlePopupEnded = FALSE;
@@ -186,12 +186,12 @@ static void PopR_AnimsOnWrapperLoop(struct AnimsOnWrapperProc* proc) {
 	const struct BattlePopupType type = *proc->itPop++;
 
 	if (!type.tryInit) {
-		Proc_Goto((struct Proc*) (proc), 1);
+		ProcGoto((struct Proc*) (proc), 1);
 		return;
 	}
 
 	if (!type.tryInit()) {
-		Proc_Goto((struct Proc*) (proc), 0);
+		ProcGoto((struct Proc*) (proc), 0);
 		return;
 	}
     
@@ -200,7 +200,7 @@ static void PopR_AnimsOnWrapperLoop(struct AnimsOnWrapperProc* proc) {
     }
 	PopR_StartAnimsOnPopup(type.definition, type.time, (struct Proc*) (proc));
 
-	Proc_Break((struct Proc*) (proc));
+	BreakProcLoop((struct Proc*) (proc));
 }
 
 static void PopR_AnimsOnWrapperCleanup(struct AnimsOnWrapperProc* proc) {

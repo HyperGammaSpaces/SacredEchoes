@@ -18,6 +18,8 @@
 .global GiveLuckASMC
 .global GiveDefenseASMC
 .global GiveResistanceASMC
+.global GiveMovementASMC
+.global GiveConstitutionASMC
 .global GiveWeaponRankASMC
 
 @ bl GetCharacter just as with the getters
@@ -526,6 +528,117 @@ GiveResistance_Store:
 	str  r0, [r1]
 	
 GiveResistance_End:	
+	pop  {r4}
+	pop  {r0}
+	bx   r0
+
+.align
+.ltorg
+
+GiveMovementASMC:
+	push {r4,r14}
+	bl   GetCharacter
+	cmp  r0, #0
+	beq  GiveMov_ReturnFalse
+	
+	@get stat (TODO: replace with mov getter)
+	mov  r4, r0
+	mov  r2, #0x1D				@ RAM mov
+	ldrb r2, [r4, r2]
+	
+	@get amount
+	ldr  r0, =MemorySlot3
+	ldrh r0, [r0]
+	
+	@add it
+	add  r2, r0
+	
+	@check against cap
+	mov  r0, #0xF				@ flat cap of 15
+	cmp  r2, r0
+	ble  GiveMov_Store
+
+GiveMov_ReturnFalse:	
+		mov  r0, #0x0
+		ldr  r1, =MemorySlotC
+		str  r0, [r1]
+		b    GiveMov_End
+	
+GiveMov_Store:
+	mov  r1, #0x1D				@ RAM mov
+	strb r2, [r4, r1]
+	
+	@return true
+	mov  r0, #0x1
+	ldr  r1, =MemorySlotC
+	str  r0, [r1]
+	
+GiveMov_End:	
+	pop  {r4}
+	pop  {r0}
+	bx   r0
+
+.align
+.ltorg
+
+GiveConstitutionASMC:
+	push {r4,r14}
+	bl   GetCharacter
+	cmp  r0, #0
+	beq  GiveCon_ReturnFalse
+	
+	@get stat
+	mov  r4, r0
+	mov  r2, #0x13				@ char con
+	ldr  r0, [r4]
+	ldrb r0, [r0, r2]
+	mov  r2, #0x11				@ class base con
+	ldr  r1, [r4, #0x4]
+	ldrb r1, [r1, r2]
+	mov  r2, #0x1A				@ RAM con
+	ldrb r2, [r4, r2]
+	add  r2, r0
+	add  r2, r1
+	
+	@get amount
+	ldr  r0, =MemorySlot3
+    mov  r1, #0
+	ldsh r0, [r0, r1]
+	
+	@add it
+	add  r2, r0
+	
+	@check against cap
+	mov  r1, #0x19				@ class max con
+	ldr  r0, [r4, #0x4]
+	ldrb r0, [r0, r1]
+	cmp  r2, r0
+	ble  GiveCon_Store
+
+GiveCon_ReturnFalse:	
+		mov  r0, #0x0
+		ldr  r1, =MemorySlotC
+		str  r0, [r1]
+		b    GiveCon_End
+	
+GiveCon_Store:
+	mov  r1, #0x13				@ char con
+	ldr  r0, [r4]
+	ldrb r0, [r0, r1]
+	mov  r3, #0x11				@ class base con
+	ldr  r1, [r4, #0x4]
+	ldrb r1, [r1, r3]
+    add  r0, r1
+    sub  r2, r0
+	mov  r1, #0x1A				@ RAM con
+	strb r2, [r4, r1]
+	
+	@return true
+	mov  r0, #0x1
+	ldr  r1, =MemorySlotC
+	str  r0, [r1]
+	
+GiveCon_End:	
 	pop  {r4}
 	pop  {r0}
 	bx   r0

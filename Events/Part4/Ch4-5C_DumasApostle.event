@@ -284,6 +284,8 @@ Evt_EndingScene:
 	BackgroundText(Ch4C_5_EndingText)
 	MUSCSLOW SongID_Legacy
 	BackgroundText(Ch4C_5_EndingText_2)
+	CALL $591F40
+	CharacterJoinedNotification(Notif_ConradJoin)
     MUSCMID SongID_Silence
 	FADI 2
 	

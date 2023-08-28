@@ -49,15 +49,13 @@ VillagerLoop:
 	blh LoadClassBattleSprite
 	mov r1, r5
 	add r1, #0x4C			@dunno what this does, holdover from vanilla
-	add r1, r4
+    lsr r2, r4, #0x1
+	add r1, r2
 	strb r0, [r1, #0x0]
 	mov r0, r6
 	lsl r0, r0, #0x18
 	lsr r0, r0, #0x18 		@isolate the last byte
 	lsr r6, r6, #0x8 		@remove the processed byte from list
-	b label1
-	
-label1:
 	blh GetROMClassStruct	
 	ldrh r0, [r0, #0x2]		@load class description
 	mov r1, #0x5E			@store it at offset 5E of current proc's storage

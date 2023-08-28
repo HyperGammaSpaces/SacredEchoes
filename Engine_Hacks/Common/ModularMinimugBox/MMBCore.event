@@ -803,11 +803,7 @@
 		#ifdef MMBAVOLabel
 			ALIGN 4
 			MMBAVOLabelGraphic:
-			#ifdef LANGUAGE_ES
-				#incbin "Modules/AVOLabel_ES.4bpp"
-			#else
-				#incbin "Modules/AVOLabel.4bpp"
-			#endif
+			#incbin "Modules/AVOLabel.4bpp"
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -816,11 +812,7 @@
 		#ifdef MMBCHRLabel
 			ALIGN 4
 			MMBCHRLabelGraphic:
-			#ifdef LANGUAGE_ES
-				#incbin "Modules/CHRLabel_ES.4bpp"
-			#else
-				#incbin "Modules/CHRLabel.4bpp"
-			#endif
+			#incbin "Modules/CHRLabel.4bpp"
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -829,11 +821,7 @@
 		#ifdef MMBCRTLabel
 			ALIGN 4
 			MMBCRTLabelGraphic:
-			#ifdef LANGUAGE_ES
-				#incbin "Modules/CRTLabel_ES.4bpp"
-			#else
-				#incbin "Modules/CRTLabel.4bpp"
-			#endif
+			#incbin "Modules/CRTLabel.4bpp"
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -842,11 +830,7 @@
 		#ifdef MMBDEFLabel
 			ALIGN 4
 			MMBDEFLabelGraphic:
-			#ifdef LANGUAGE_ES
-				#incbin "Modules/DEFLabel_ES.4bpp"
-			#else
-				#incbin "Modules/DEFLabel.4bpp"
-			#endif
+			#incbin "Modules/DEFLabel.4bpp"
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -855,11 +839,7 @@
 		#ifdef MMBDODLabel
 			ALIGN 4
 			MMBDODLabelGraphic:
-			#ifdef LANGUAGE_ES
-				#incbin "Modules/DODLabel_ES.4bpp"
-			#else
-				#incbin "Modules/DODLabel.4bpp"
-			#endif
+			#incbin "Modules/DODLabel.4bpp"
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -868,11 +848,7 @@
 		#ifdef MMBEXPLabel
 			ALIGN 4
 			MMBEXPLabelGraphic:
-			#ifdef LANGUAGE_ES
-				#incbin "Modules/EXPLabel_ES.4bpp"
-			#else
-				#incbin "Modules/EXPLabel.4bpp"
-			#endif
+			#incbin "Modules/EXPLabel.4bpp"
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -881,11 +857,7 @@
 		#ifdef MMBHITLabel
 			ALIGN 4
 			MMBHITLabelGraphic:
-			#ifdef LANGUAGE_ES
-				#incbin "Modules/ASLabel_ES.4bpp"
-			#else
-				#incbin "Modules/HITLabel.4bpp"
-			#endif
+			#incbin "Modules/HITLabel.4bpp"
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -907,11 +879,7 @@
 		#ifdef MMBRESLabel
 			ALIGN 4
 			MMBRESLabelGraphic:
-			#ifdef LANGUAGE_ES
-				#incbin "Modules/RESLabel_ES.4bpp"
-			#else
-				#incbin "Modules/RESLabel.4bpp"
-			#endif
+			#incbin "Modules/RESLabel.4bpp"
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -920,11 +888,7 @@
 		#ifdef MMBRTGLabel
 			ALIGN 4
 			MMBRTGLabelGraphic:
-			#ifdef LANGUAGE_ES
-				#incbin "Modules/RTGLabel_ES.4bpp"
-			#else
-				#incbin "Modules/RTGLabel.4bpp"
-			#endif
+			#incbin "Modules/RTGLabel.4bpp"
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing

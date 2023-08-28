@@ -14,7 +14,8 @@ GameOptionsEntry(OptID_CasualMode, Text_Options_CasualMode, Text_Options_CasualM
 	//Display retreat quote for allies rather than death quote
 	ORG $83620
 	  jumpToHack(CallRetreatQuote)
-	  
+    ORG $846FE
+	  SHORT $2101
 	//Setup new save to recognize casual mode
 	ORG $30DAC
 	  jumpToHack(CasualMode_SetFlag)

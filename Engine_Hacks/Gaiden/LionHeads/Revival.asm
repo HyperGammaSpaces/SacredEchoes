@@ -248,3 +248,25 @@ bx r0
 .align
 .ltorg
 
+@4EDA8
+.global RevivalMenu_CapOptions
+RevivalMenu_CapOptions:
+    ldr    r1, [sp, #0x8]
+    cmp    r1, #0xB
+    bge    RevivalMenu_CapHit
+        ldr    r0, =0x085B6510 @gProc_MenuCommand
+        mov    r1, r5
+        ldr    r3, =0x08002C7C @ProcStart
+        mov    lr, r3
+        .short 0xf800
+        mov    r2, r0
+        ldr    r0, [sp, #0x8]
+        lsl    r1, r0, #2
+        ldr    r0, =0x0804EDB7
+        b      RevivalMenu_CapEnd
+    RevivalMenu_CapHit:
+    ldr    r0, =0x0804EE03
+    RevivalMenu_CapEnd:
+    bx     r0
+.align
+.ltorg

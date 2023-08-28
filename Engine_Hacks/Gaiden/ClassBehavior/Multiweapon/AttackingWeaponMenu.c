@@ -59,7 +59,7 @@ void DrawMultiweaponMenuLine(struct TextHandle* text, int item, u16* mapOut) {
     DrawIcon(mapOut + 10, 0xAF, 0x4000);
 }
 
-int AttackingWeapon_OnDraw(MenuProc* menu, MenuItemProc* menuCommand) {
+int AttackingWeapon_OnDraw(MenuProc* menu, MenuCommandProc* menuCommand) {
     int item = gActiveUnit->items[menuCommand->commandDefinitionIndex];
     if ( MultiweaponCheck(gActiveUnit,item) ) 
     {
@@ -76,7 +76,7 @@ int AttackingWeapon_OnDraw(MenuProc* menu, MenuItemProc* menuCommand) {
     return 0;
 }
 
-u8 AttackingWeapon_OnSelect(MenuProc* menu, MenuItemProc* menuCommand) {
+int AttackingWeapon_OnSelect(MenuProc* menu, MenuCommandProc* menuCommand) {
     int index = menuCommand->commandDefinitionIndex;
     
     gActionData.itemSlotIndex = index;
@@ -88,15 +88,15 @@ u8 AttackingWeapon_OnSelect(MenuProc* menu, MenuItemProc* menuCommand) {
     {
         //Open the Multiweapon menu
         //reference 0x08023428
-        MenuRect rect = { menuCommand->xDrawTile+9, menuCommand->yDrawTile-1, 7, 0};
+        MenuGeometry geometry = { menuCommand->xDrawTile+9, menuCommand->yDrawTile-1, 7, 0};
         
         //idk what this does, copies tilemap?
-        PrepareSubmenuGraphics(rect.x, rect.y);
+        PrepareSubmenuGraphics(geometry.x, geometry.y);
         
         //spawn the menu at an offset relative to the currently selected option
-        StartMenuAt(&Menu_SelectWeaponType, rect, (Proc*) menu);
+        StartMenuAt(&Menu_SelectWeaponType, geometry, (Proc*) menu);
         //newMenu->parent = menu;
-        return MENU_ACT_SND6A;
+        return ME_PLAY_BEEP;
     }
     else 
     {
@@ -105,11 +105,11 @@ u8 AttackingWeapon_OnSelect(MenuProc* menu, MenuItemProc* menuCommand) {
         ClearBG0BG1();
         MakeTargetListForWeapon(gActiveUnit, item);
         StartTargetSelection(&gSelect_Attack);
-        return MENU_ACT_SKIPCURSOR | MENU_ACT_END | MENU_ACT_SND6A | MENU_ACT_ENDFACE;
+        return ME_DISABLE | ME_END | ME_PLAY_BEEP | ME_END_FACE0;
     }
 }
 
-int EquipItem_OnDraw(MenuProc* menu, MenuItemProc* menuCommand) {
+int EquipItem_OnDraw(MenuProc* menu, MenuCommandProc* menuCommand) {
     int item = gActiveUnit->items[menuCommand->commandDefinitionIndex];
     if ( MultiweaponCheck_Equip(gActiveUnit,item) ) 
     {
@@ -126,7 +126,7 @@ int EquipItem_OnDraw(MenuProc* menu, MenuItemProc* menuCommand) {
     return 0;
 }
 
-u8 EquipCommand_OnSelect(MenuProc* menu, MenuItemProc* menuCommand) {
+int EquipCommand_OnSelect(MenuProc* menu, MenuCommandProc* menuCommand) {
     int index = gActionData.itemSlotIndex;
     
     int item = gActiveUnit->items[index];
@@ -136,20 +136,20 @@ u8 EquipCommand_OnSelect(MenuProc* menu, MenuItemProc* menuCommand) {
     {
         //Open the Multiweapon menu
         //reference 0x08023428
-        MenuRect rect = { menuCommand->xDrawTile-1, menuCommand->yDrawTile-1, 7, 0};
+        MenuGeometry geometry = { menuCommand->xDrawTile-1, menuCommand->yDrawTile-1, 7, 0};
         
         //idk what this does, copies tilemap?
-        PrepareSubmenuGraphics(rect.x, rect.y);
+        PrepareSubmenuGraphics(geometry.x, geometry.y);
         
         //spawn the menu at an offset relative to the currently selected option
-        StartMenuAt(&Menu_SelectWeaponType_Equip, rect, (Proc*) menu);
+        StartMenuAt(&Menu_SelectWeaponType_Equip, geometry, (Proc*) menu);
         //newMenu->parent = menu;
-        return MENU_ACT_SND6A;
+        return ME_PLAY_BEEP;
     }
     else 
     {
         //Vanilla $23F78
         RedrawItemMenu_Equip(menu);
-        return MENU_ACT_SKIPCURSOR;
+        return ME_DISABLE;
     }
 }
