@@ -1,0 +1,64 @@
+#ifndef SHOW_CLEAR_TURNS
+#define SHOW_CLEAR_TURNS True
+#endif
+
+PUSH
+	//0203ECF4 = clear turn data array
+	//0203ECF4 table format:
+	//bit 0-6   | Chapter Id
+	//bit 7-15  | Turn count (capped at 500)
+
+	//TODO: Check for the first and second entry being valid (first entry should &3F = 0, second entry should &3F = 1)
+	
+	//Compress the data used
+	ORG $A4168; BYTE $2
+	ORG $A429C; BYTE $40
+	ORG $A42D6; BYTE $2
+	ORG $A4318; BYTE $2
+	ORG $A43A0; SHORT $0
+	ORG $A43AC; SHORT $4B01 $6818 $4770 $46C0; WORD $0202BCF0
+	ORG $A435E; SHORT $7BA1 $293D $D008 $292F $D81C $E005
+	
+	//Flag 0x03 must be set at the end of each map for it to be counted!
+	
+	//Evaluate completion data for all chapters
+	ORG $A4408
+	SHORT $293D $D017
+	SHORT $292F $D817 $E014
+	
+	//Fix clear turn data being initialized with 0xFF instead of 0x00
+	ORG $A42E0
+	SHORT $4900 $468F
+	POIN FixClearturnInit|1
+	
+	//Evaluate chapters 0x15 and 0x22 normally
+	ORG $B78E2
+    SHORT $283D $D100 $E071 $282C $D800 $E0A8 $E04E
+	ORG $B7A86
+	BYTE $7F
+	
+	//Crash prevention for ending clear turn list
+	ORG $B78CC
+	SHORT $4800 $4687
+	POIN FixDrawClearturnGlitch|1
+    
+    //Custom BGM for clear turn list (specify from event)
+    ORG $B8126
+    SHORT 0 0
+    //Wait time at the final display of turn count list
+    ORG $A3D6B2
+    BYTE 90
+    //Wait time at the end of turn count list
+    ORG $A3D6D2
+    BYTE 30
+    
+POP
+
+ALIGN 4
+FixClearturnInit:
+#incbin "Fix_00_FF.dmp"
+
+ALIGN 4
+FixDrawClearturnGlitch:
+#incbin "fix_drawclearnturn_glitch.dmp"
+WORD $4F

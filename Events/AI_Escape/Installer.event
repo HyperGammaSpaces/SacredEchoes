@@ -1,0 +1,80 @@
+#ifndef EnemyItemAITable
+  #define EnemyItemAITable 0xD8538
+#endif
+#define DoorKeyAI 0x01
+#define LockpickAI 0x02
+#define AntitoxinAI 0x04
+
+#define SetEnemyItemAI(mapID, itemAI) "PUSH; ORG EnemyItemAITable+(mapID*4); BYTE itemAI; POP"
+
+#ifndef EscapePointTable
+  #define EscapePointTable 0x5A8188
+#endif
+//Do not go over map 0x40.
+#define SetEscapePoints(mapID, pointer) "PUSH; ORG EscapePointTable+(mapID*4); POIN pointer; POP"
+
+//Set enemy escape points
+SetEscapePoints(0x02, Ch1_3_ThiefEscape)
+SetEscapePoints(0x04, Ch1_5_ThiefEscape)
+SetEscapePoints(0x07, Ch1_8_ThiefEscape)
+SetEscapePoints(0x0B, Ch2_4_ThiefEscape)
+SetEscapePoints(0x18, Ch3_3C_ThiefEscape)
+SetEscapePoints(0x12, Ch3_4A_ThiefEscape)
+SetEscapePoints(0x13, Ch3_5A_ThiefEscape)
+
+//Set whether AI can use door keys for a chapter (use OR | to combine bits)
+SetEnemyItemAI(0x07, LockpickAI)
+SetEnemyItemAI(0x12, LockpickAI)
+
+ALIGN 4
+
+//Thief escape points.
+Ch1_3_ThiefEscape:
+BYTE $00 $0C //coords
+BYTE $00 //move left
+BYTE $00 //separator
+BYTE $FF $00 $00 $00 //terminator
+Ch1_5_ThiefEscape:
+BYTE $08 $0E //coords
+BYTE $02 //move down
+BYTE $00 //separator
+BYTE $09 $0E //coords
+BYTE $02 //move down
+BYTE $00 //separator
+BYTE $0A $0E //coords
+BYTE $02 //move down
+BYTE $00 //separator
+BYTE $FF $00 $00 $00 //terminator
+Ch1_8_ThiefEscape:
+BYTE $02 $01 //coords
+BYTE $05 //in situ (stairs)
+BYTE $00 //separator
+BYTE $13 $0F //coords
+BYTE $05 //in situ (stairs)
+BYTE $00 //separator
+BYTE $FF $00 $00 $00 //terminator
+Ch2_3_ThiefEscape:
+BYTE $10 $07 //coords
+BYTE $05 //in situ (stairs)
+BYTE $00 //separator
+BYTE $FF $00 $00 $00 //terminator
+Ch2_4_ThiefEscape:
+BYTE $10 $10 //coords
+BYTE $02 //down
+BYTE $00 //separator
+BYTE $FF $00 $00 $00 //terminator
+Ch3_4A_ThiefEscape:
+BYTE $00 $06 //coords
+BYTE $05 //in situ (stairs)
+BYTE $00 //separator
+BYTE $FF $00 $00 $00 //terminator
+Ch3_3C_ThiefEscape:
+BYTE $17 $09 //coords(23,9)
+BYTE $01 //move right
+BYTE $00 //separator
+BYTE $FF $00 $00 $00 //terminator
+Ch3_5A_ThiefEscape:
+BYTE $19 $07 //coords
+BYTE $01 //move right
+BYTE $00 //separator
+BYTE $FF $00 $00 $00 //terminator

@@ -1,0 +1,96 @@
+//ASMC helpers
+ALIGN 4
+ApplyStatusToUnitASMC:
+#incbin "ApplyStatusToUnit.dmp"
+ALIGN 4
+ApplyStatusToUnitIDASMC:
+#incbin "ApplyStatusToUnitID.dmp"
+
+#define ApplyStatus(unitID,status) "SVAL 0x1 unitID; SVAL 0x2 status; SHORT $0D40 $0; POIN ApplyStatusToUnitIDASMC+1"
+#define ApplyStatusToCoords(x,y,status) "SVAL 0xB Coords(x,y); SVAL 0x2 status; SHORT $0D40 $0; POIN ApplyStatusToUnitASMC+1"
+ALIGN 4
+//#include "ASMCCheckSuite/ASMCGetterSetterInstaller.event"
+
+#include "SetSummonerASMC.lyn.event"
+#define SetSummonerID(Character,SummonerID) "SVAL 0x2 Character; SVAL 0x3 SummonerID; ASMC SetSummonerASMC|1"
+
+ALIGN 4
+RemoveItemFromAnyASMC:
+#include "item_collect.lyn.event"
+ALIGN 4
+RemoveItemFromUnitASMC:
+#incbin "item_collect_by_unit.dmp"
+
+#define RemoveItemFromAny(itemID) "SHORT $0D40 itemID; POIN RemoveItemFromAnyASMC+1"
+#define RemoveItemFromUnit(unitID,itemID) "SHORT $0D40; BYTE unitID itemID; POIN RemoveItemFromUnitASMC+1"
+
+ALIGN 4
+GiveAllItemsASMC:
+#incbin "SendAllTransporter.dmp"
+#define DumpToConvoy(unitID) "SHORT $0D40 unitID; POIN GiveAllItemsASMC+1"
+
+ALIGN 4
+RevertSupportGainsASMC:
+#incbin "RevertSupportGains.dmp"
+#define RevertUnitSupport(unitID,slotID) "SHORT $0D40; BYTE unitID slotID; POIN RevertSupportGainsASMC+1"
+
+ALIGN 4
+Change_AI_All:
+#incbin "change_ai_all.dmp"
+
+#define ChangeAIForEnemyClass(ai1, ai2, classID) "SHORT $0540 $0001; BYTE ai1 ai2; SHORT $0 $0D40; BYTE $0 classID; POIN Change_AI_All+1"
+
+ALIGN 4
+GetTotalTurnCountASMC:
+SHORT $B500 $4B03 $469E $F800 $4B02 $6318 $BC02 $4708
+POIN $A43D8
+WORD $030004B8
+
+#define GetTotalTurnCount "SHORT $0D40 $0; POIN GetTotalTurnCountASMC+1"
+
+ALIGN 4
+ChangeEditionASMC:
+SHORT $B500 $6B83 $7899 $4802 $76C1 $2017 $BC02 $4708
+WORD $0202BCF0
+
+#define Event_SetAlmMode "SHORT $0D40 $2; POIN ChangeEditionASMC+1"
+#define Event_SetCelicaMode "SHORT $0D40 $3; POIN ChangeEditionASMC+1"
+
+//Set cond ASMC
+ALIGN 4
+#include "SetConditionASMC/Set_Condition.event"
+
+ALIGN 4
+HijackActionStruct:
+SHORT $B510 $6B83 $7899 $4C07 $7461 //store action type
+SHORT $7B20 $4B06 $469E $F800 //get unit from action struct
+SHORT $7C02 $73A2 $7C43 $73E3 //store coords to action struct
+SHORT $2017 $BC10 $BC02 $4708 //end
+ALIGN 4
+WORD $0203A958
+POIN $19430 //GetUnitByDeploySlot
+
+ALIGN 4
+ShowUnitSMSFromASMC:
+SHORT $B500 $6B81 $2202 $5E88 $4B05 $469E $F800 $2800 $D002 $4B03 $469E $F800 $2017 $BC02 $4708
+ALIGN 4
+POIN $BC50 //GetUnitStructFromEventParameter
+POIN $28130 //ShowUnitSMS
+
+#define EndUnitMMS(unitID) "SHORT $0D40 $0; POIN $790A4|1; SHORT $0D40 unitID; POIN ShowUnitSMSFromASMC+1"
+
+ALIGN 4
+ShowUnitSMSFromASMC_New:
+#incbin "ASMC_ChangeMoveMotionToWaitMotion.dmp"
+
+#define EndUnitMMS_New(unitID) "SVAL 0x1 unitID; SHORT $0D40 $0; POIN ShowUnitSMSFromASMC_New+1"
+#define EndUnitMMS_New(x,y) "SVAL 0xB Coords(x,y); SVAL 0x1 0xFFFFFFFE; SHORT $0D40 $0; POIN ShowUnitSMSFromASMC_New+1"
+
+#define UpdateActionStructFromQueuedMovement "SHORT $0D40 $1; POIN HijackActionStruct+1"
+
+CountInRangeASMC:
+#incbin "CountInRange.dmp"
+
+#define CountClassInRange(classID, topleftX, topleftY, bottomrightX, bottomrightY) "SVAL 0x2 classID; SVAL 0x3 0xFF; SVAL 0x4 Coords(topleftX, topleftY); SVAL 0x5 Coords(bottomrightX, bottomrightY); SHORT $0D40 $0; POIN CountInRangeASMC|1"
+
+#define CountEnemiesInRange(topleftX, topleftY, bottomrightX, bottomrightY) "SVAL 0x2 0x0; SVAL 0x3 0x01; SVAL 0x4 Coords(topleftX, topleftY); SVAL 0x5 Coords(bottomrightX, bottomrightY); SHORT $0D40 $0; POIN CountInRangeASMC|1"

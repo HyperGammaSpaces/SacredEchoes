@@ -1,0 +1,13 @@
+PUSH
+	//Minimug box, may not be needed for some but shrug
+	ORG $8C2EC
+	POIN PlayerEnemyPalette //Ally
+	ORG $8C2F4
+	POIN PlayerEnemyPalette+0x20 //Enemy
+	ORG $8C2FC
+	POIN PlayerEnemyPalette+0x40 //Green unit
+POP
+
+ALIGN 4
+PlayerEnemyPalette:
+#incbin "player-enemy-pal.pal.bin"

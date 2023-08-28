@@ -1,0 +1,227 @@
+//CAMERA_CENTERED is to ensure the given tile is within the camera region
+//CAM2 is to center the camera into the given tile
+//(excect when it's for units, then it's reversed, because EA raws weirdness)
+
+#define MaxTurns(TurnNum) "256 - TurnNum"
+#define InfiniteTurnEventPlayer(flag,event,turn) "TurnEventPlayer(flag,event,turn,MaxTurns(turn))"
+#define SetAI(unitid,ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24); CHAI unitid"
+#define SetAI(x,y,ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24); CHAI [x,y]"
+#define SetAI(unitid,ai1,ai2)"SVAL 0x1 ai1|(ai2<<8); CHAI unitid"
+#define SetAI(x,y,ai1,ai2) "SVAL 0x1 ai1|(ai2<<8); CHAI [x,y]"
+#define DoorFlag(flag,doorx,doory) "DOOR flag [doorx,doory] 0x12"
+#define MapText(text) "TEXTMODE 0; TEXTSHOW text; TEXTEND; TEXTCLEAR"
+#define BackgroundText(text) "TEXTMODE 1; TEXTSHOW text; TEXTEND; TEXTCLEAR"
+#define CgText(text) "TEXTMODE 2; TEXTSHOW text; TEXTEND; TEXTCLEAR"
+#define CenterTextbox(textid) "CenterTutorialTextBox; TEXTMODE 3; TEXTSHOW textid; TEXTEND; TEXTCLEAR"
+#define CharacterConditionalDialog(character,alivetext,deadtext) "CHECK_ALIVE character; BEQ 1 0x0 0xC; Text(alivetext); GOTO 2; LABEL 1; Text(deadtext); LABEL 2"
+#define IfAliveDialog(character,alivetext,label) "CHECK_ALIVE character; BEQ label 0x0 0xC; Text(alivetext); LABEL label"
+#define CameraCursor(character) "CAMERA_CENTERED character; STAL 20; FlashCursor(character,60)"
+#define CameraCursor(x,y) "CAMERA_CENTERED [x,y]; STAL 20; FlashCursor(x,y,60)"
+#define FadeOutMusic "MUSCMID SongID_Silence"
+#define EndMMS "SHORT $0D40 $0; WORD 0x80790a5" //TODO: also wrap 28130
+#define EraseMMS "SHORT $0D40 $0; WORD 0x80790a5" 
+
+
+ALIGN 4
+#include "REDAs.event"
+ALIGN 4
+#include "DeathQuoteChecker.event"
+ALIGN 4
+#include "BossMusicTable.event"
+ALIGN 4
+#include "ForceDeployTable.event"
+ALIGN 4
+#include "Quotes/QuotesInstaller.event"
+
+#define InlineEvents  0x1
+
+TurnOnMapFlags:
+ENUF 0x84
+ENDA
+
+EndMusicAndMMS:
+    FadeOutMusic
+EndPlayerMMS:
+    CHECK_ALLEGIANCE 0xFFFF
+    BNE 0x1337 rC r0
+        ASMC 0x790A4|1		//praise Teq
+        SVAL 0x1 0x00000043
+        SET_CONDITION 0xFFFF
+        SET_ENDTURN 0xFFFF
+        SET_ACTIVE 0
+    LABEL 0x1337
+    ENDA
+
+//BEXP call (in one place for easy updating)
+UnifiedBEXPCaller:
+	ENUT 0x3 //mark chapter as completed
+	ENUT 0x84 //turn off HPbars
+	ASMC ApplyBonusEXPToParty|1
+	NOTIFY BEXP_Notif_Text 0x5A 0x0
+	ENDA
+	
+#define CharacterJoinedNotification(textID) "EVBIT_T 0x5; EVBIT_T 0x7; SOUN 0xE8; NOTIFY textID 0x0 0x0;EVBIT_F 0x5; STAL 30; EVBIT_F 0x7"
+
+#define SetBackground(background,speed) "TEXTMODE 1; BACG background; FADU speed"
+	
+ALIGN 4
+//usage example: 
+//AREA 0x15 HiddenItem(itemID) [20,7] [23,10]
+
+#define HiddenItem(itemID) "SVAL 0x2 0x0; CALL Area_Allegiance_Check; CHECK_LUCK 0xFFFF; SADD 0xC2; SVAL 0x3 itemID; CALL HiddenItem_Check; BNE (0x8100+itemID) 0xC 0x0; CALL Area_Unset_Flag; LABEL (0x8100+itemID); EVBIT_T 0x7; ENDA"
+
+#define SummonReinforcementEvent(unitPtr) "SVAL 0x2 0x0; CALL EnemyRandomizerHelper; SMOV 0x2 (unitPtr|0x8000000); CALL $9EE274; EVBIT_T 0x7"
+
+#define WarpInReinforcementsAt(unitPtr, x, y) "EVBIT_MODIFY 0x4; SVAL 0xB Coords(x,y); CAMERA_CENTERED; WARPIN_SB; SMOV 0x2 (unitPtr|0x8000000); STAL2 0xA; LOAD1 0x1 0xFFFFFFFF; ENUN; ENDWARP; EVBIT_MODIFY 0x0"
+
+Area_Allegiance_Check:
+	CHECK_ALLEGIANCE 0xFFFF
+	BEQ 0x0 0xC 0x2
+	CALL Area_Unset_Flag
+	LABEL 0x0
+	ENDA
+
+Area_Unset_Flag:
+	CHECK_EVENTID
+	SADD 0xC2
+	ENUF_SLOT2
+	EVBIT_T 0x7
+	ENDB
+
+HiddenItem_Check:
+	CHECK_CLASS 0xFFFF
+	SVAL 0x7 Thief
+	BEQ 0x0 0xC 0x7
+	SVAL 0x7 Thief_F
+	BEQ 0x0 0xC 0x7
+	SVAL 0x7 Rogue
+	BEQ 0x0 0xC 0x7
+	SVAL 0x7 Rogue_F
+	BEQ 0x0 0xC 0x7
+	RANDOMNUMBER 0x64
+	BLT 0x1 0x2 0xC
+	LABEL 0x0
+	CALL $591F40
+	GIVEITEMTO 0xFFFF
+	SVAL 0xC 0x1
+	GOTO 0x2
+	LABEL 0x1
+	SVAL 0xC 0x0
+	LABEL 0x2
+	ENDA
+
+ALIGN 4
+Warp_In_Effect:
+	REMU 0xFFFD
+	CAMERA_CENTERED 0xFFFD
+	CHECK_COORDS 0xFFFD
+	SADD 0xCB
+	WARPIN_SB
+	STAL2 0xA
+	REVEAL 0xFFFD
+	ENDWARP
+	ENDA
+
+ALIGN 4
+Warp_Out_Effect:
+	CAMERA_CENTERED 0xFFFD
+	CHECK_COORDS 0xFFFD
+	SADD 0xCB
+	WARPOUT_SB
+	STAL2 0x14
+	REMU 0xFFFD
+	ENDWARP
+	ENDA
+
+ALIGN 4
+#define EventMenuCommand(aTextId) "WORD 0; SHORT aTextId 0; WORD 0; POIN (0x04F448+1); WORD 0; POIN (prEventMenuCommandEffect+1); WORD 0 0 0"
+#define EventMenuCommandEnd "WORD 0 0 0 0 0 0 0 0 0"
+		
+	pDeenSonyaCommandDefinition:
+		EventMenuCommand(Ch3_3C_DeenMenuOption)
+		EventMenuCommand(Ch3_3C_SonyaMenuOption)
+	EventMenuCommandEnd
+
+ALIGN 4
+prEventMenuCommandEffect:
+	SHORT 0xB500 0x203C 0x5C08 0x4B03 0x469E 0xF800 0x2017 0xBC02 0x4708 0x0000 0xD1F8 0x0800
+	
+ALIGN 4
+prCallDeenSonyaEventMenu:
+	SHORT 0xB510 0x1C04 0x4B12 0x469E 0xF800 0x4B12 0x469E 0xF800 0x4A11 0x7850 0x2101 0x4308 0x2102 0x4308 0x2104 0x4308 0x2108 0x4308 0x2110 0x4308 0x7050 0x2000 0x4B0B 0x469E 0xF800 0x4B0B 0x469E 0xF800 0x4B0A 0x469E 0xF800 0x480A 0x6800 0x1C21 0x4B09 0x469E 0xF800 0xBC10 0xBC01 0x4700 0x3D20 0x0800 0xE884 0x0804 0x3080 0x0300 0x3D38 0x0800 0x43A8 0x0800 0xEB68 0x0804 0x04C0 0x0300 0xEBC8 0x0804
+	POIN pDeenSonyaMenuDefinition
+	
+ALIGN 4
+pDeenSonyaMenuDefinition:
+	BYTE 6 8 18 0           // Geometry, order: X, Y, Width, Height (Height doesn't matter)
+	WORD 1                  // style (change it if u want)
+	POIN pDeenSonyaCommandDefinition // Command Definitions
+	WORD 0 0 0 0 0 0        // No routines to handle B press/R press/construction/etc
+
+ALIGN 4
+
+//Probabilities must add up to 100.
+Act1RandomChest:
+	BYTE Vulnerary 44
+	BYTE HideShield 22
+	BYTE SteelSword 11
+	BYTE SteelLance 11
+	BYTE SteelBow 8
+	BYTE Pegacheese 4
+	BYTE $0 $0 //term
+	ALIGN 4
+
+Act2RandomChest:
+	BYTE Vulnerary 44
+	BYTE IronShield 22
+	BYTE SteelBow 11
+	BYTE SteelSword 11
+	BYTE HolySword 8
+	BYTE Nectar 4
+	BYTE $0 $0 //term
+	ALIGN 4
+
+Act3RandomChest:
+	BYTE SteelShield 22
+	BYTE HolyRing 22
+	BYTE SilverLance 11
+	BYTE SilverBow 11
+	BYTE SilverSword 11
+	BYTE SilverAxe 11
+	BYTE HolyLance 5
+	BYTE HolyAxe 5
+	BYTE Soma 2
+	BYTE $0 $0 //term
+	ALIGN 4
+
+Act4RandomChest:
+	BYTE SilverShield 20
+	BYTE DumaIcon 20
+	BYTE BraveSword 11
+	BYTE DumasLance 11
+	BYTE KillerAxe 11
+	BYTE KillerBow 11
+	BYTE GrimoireRing 7
+	BYTE JunaFruit 5
+	BYTE Talisman 2
+	BYTE Swiftsole 2
+	BYTE $0 $0 //term
+	ALIGN 4
+
+SecretRandomChest:
+	BYTE Persephone 21
+	BYTE Lifefruit 21
+	BYTE Nectar 21
+	BYTE Ambrosia 11
+	BYTE Soma 11
+	BYTE Pegacheese 11
+	BYTE SpeedRing 4
+	BYTE $0 $0 //term
+	ALIGN 4
+
+#include "PostgameUnits.event"
+
+ALIGN 4
+{
+  #include "AlmCelicaHandoff1.event"
+}

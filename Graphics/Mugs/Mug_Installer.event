@@ -1,0 +1,552 @@
+ALIGN 4
+NewPortraitTable:
+	FILL (256*28)
+#define PortraitTable NewPortraitTable
+
+#include "Preprocessed/MugData.event"
+
+PUSH
+	//Portrait table repointing
+	ORG $5524
+	POIN PortraitTable
+	
+	//Fix top-right tiles in statscreen
+	ORG $5D20
+    BYTE 5
+
+	//Make Celica not smol
+	ORG $5C3C
+	BYTE $9C
+	//Make Luthier not smol
+	ORG $5C60
+	BYTE $9C
+	//Make Jesse not smol
+	ORG $5C80
+	BYTE $9C
+	//Make Sonya not smol
+	ORG $5C88
+	BYTE $9C
+	//Make Zeke not smol
+	ORG $5C94
+	BYTE $9C
+	
+	//Shopkeeper/supply portraits
+	ORG $9D70E
+	BYTE Portrait_Supply
+	ORG $A00BA
+	BYTE Portrait_Supply
+POP
+
+#define setMugEntry(mugEntry, mugLocation, mouthX, mouthY, eyeX, eyeY) "PUSH; ORG PortraitTable+mugEntry*0x1C; POIN mugLocation; POIN mugLocation+0x1624; POIN mugLocation+0x1604; POIN mugLocation+0x1004; WORD 0x00000000; BYTE mouthX mouthY eyeX eyeY; WORD 0x01; POP"
+#define setMugEntry(mugEntry, mugLocation, mouthX, mouthY, eyeX, eyeY, eyeControl) "PUSH; ORG PortraitTable+mugEntry*0x1C; POIN mugLocation; POIN mugLocation+0x1624; POIN mugLocation+0x1604; POIN mugLocation+0x1004; WORD 0x00000000; BYTE mouthX mouthY eyeX eyeY; WORD eyeControl; POP"
+#define setMugEntry(mugEntry, portraitData, minimugData, paletteData, mouthData, mouthX, mouthY, eyeX, eyeY) "PUSH; ORG PortraitTable+mugEntry*0x1C; POIN portraitData; POIN minimugData; POIN paletteData; POIN mouthData; WORD 0x00000000; BYTE mouthX mouthY eyeX eyeY; WORD 0x01; POP"
+#define setCardEntry(cardEntry,cardLocation,cardPaletteLocation) "PUSH; ORG PortraitTable+cardEntry*0x1C; POIN 0 0 cardPaletteLocation 0 cardLocation; POP"
+#define setBlankMug(cardEntry) "PUSH; ORG PortraitTable+cardEntry*0x1C; POIN $8ABBDC $8ABB44 $8AB524 $8AB544; WORD $0; BYTE $2 $5 $3 $3; WORD $1; POP"
+
+//format: MouthX MouthY EyeX EyeY
+
+//Don't use 0x00
+//Blank
+setBlankMug(0x01)
+setMugEntry(Portrait_Supply, $80DBE8, $80DA18, $80D3F8, $80D418, 2, 5, 3, 3)
+setMugEntry(Portrait_Anna,annaMug,2,6,3,4)
+setMugEntry(Portrait_Armory,armoryMug,0,armoryPalette,armoryFrames,3,2,2,0)
+setMugEntry(Portrait_Vendor,vendorMug,0,vendorPalette,vendorFrames,3,3,2,0)
+setMugEntry(Portrait_SecretShop,secretMug,0,secretPalette,secretFrames,3,3,2,0)
+
+
+
+
+//Prioritize playables for remaining slots below 0xC7
+setMugEntry(Portrait_Alm,  almMug, 3,5,3,3)
+setMugEntry(Portrait_AlmEyesClosed,  almMug, 3,5,3,3,0x6)
+setMugEntry(Portrait_Alm_Promoted,  alm_2Mug, 3,5,3,3) //promoted
+setMugEntry(Portrait_Alm_PromotedEyesClosed,  alm_2Mug, 3,5,3,3,0x6) //promoted
+setMugEntry(Portrait_Alm_Coronation,  alm_coronationMug, 3,5,3,3)
+setMugEntry(Portrait_Alm_Angry,  alm_angryMug, 3,5,3,3)
+setMugEntry(Portrait_Alm_Promoted_Angry,  alm_2_angryMug, 3,5,3,3) //promoted
+setMugEntry(Portrait_Alm_Sad,  alm_sadMug, 3,5,3,3)
+setMugEntry(Portrait_Alm_Promoted_Sad,  alm_2_sadMug, 3,5,3,3) //promoted
+setMugEntry(Portrait_AlmYoung,  almChildMug, 4,7,4,5)
+setMugEntry(Portrait_Lukas,  lukasMug, 3,5,3,3)
+setMugEntry(Portrait_Gray,  grayMug, 3,5,3,3)
+setMugEntry(Portrait_Tobin,  tobinMug, 3,5,3,3)
+setMugEntry(Portrait_Kliff,  kliffMug, 3,6,3,4)
+setMugEntry(Portrait_Kliff_Young,  kliff_youngMug, 2,7,3,5)
+setMugEntry(Portrait_Faye,  fayeMug, 3,6,3,4)
+setMugEntry(Portrait_Silque,  silqueMug, 4,6,4,4)
+setMugEntry(Portrait_Clair,  clairMug, 3,6,3,4)
+setMugEntry(Portrait_Clair_Young,  clairYoungMug, 3,7,3,5)
+setMugEntry(Portrait_Clive,  cliveMug, 3,5,3,3)
+setMugEntry(Portrait_Forsyth,  forsythMug, 3,5,3,3)
+setMugEntry(Portrait_Python,  pythonMug, 3,5,3,3)
+setMugEntry(Portrait_Celica,  celicaMug, 3,5,3,3)
+setMugEntry(Portrait_CelicaEyesClosed,  celicaMug, 3,5,3,3,0x6)
+setMugEntry(Portrait_Celica_Promoted, celica_2Mug, 3,5,3,3) //promoted
+setMugEntry(Portrait_Celica_PromotedEyesClosed, celica_2Mug, 3,5,3,3,0x6) //promoted
+setMugEntry(Portrait_Celica_Hurt, celica_hurtMug, 3,5,3,3)
+setMugEntry(Portrait_Celica_Coronation, celica_coronationMug, 3,5,3,3)
+setMugEntry(Portrait_Celica_Angry, celica_angryMug, 3,5,3,3)
+setMugEntry(Portrait_Celica_Promoted_Angry, celica_2angryMug, 3,5,3,3)
+setMugEntry(Portrait_Celica_Sad, celica_sadMug, 3,5,3,3)
+setMugEntry(Portrait_Celica_Promoted_Sad, celica_2sadMug, 3,5,3,3)
+setMugEntry(Portrait_CelicaYoung,  celicaChildMug, 2,8,3,6)
+setMugEntry(Portrait_Mae, maeMug, 3,6,3,4)
+setMugEntry(Portrait_Boey, boeyMug, 3,6,3,4)
+setMugEntry(Portrait_Genny, gennyMug, 3,6,3,4)
+setMugEntry(Portrait_Saber, saberMug, 3,5,3,3)
+setMugEntry(Portrait_Valbar, valbarMug, 3,6,3,4)
+setMugEntry(Portrait_Leon, leonMug, 3,5,3,3)
+setMugEntry(Portrait_Kamui, kamuiMug, 3,5,3,3)
+setMugEntry(Portrait_Luthier, luthierMug, 3,5,3,3)
+setMugEntry(Portrait_Mathilda, mathildaMug, 3,5,3,3)
+setMugEntry(Portrait_Delthea, deltheaMug, 3,6,3,4)
+setMugEntry(Portrait_Delthea_Possessed, delthea_2Mug, 3,6,3,4) //possessed
+setMugEntry(Portrait_Palla, pallaMug, 3,5,3,3)
+setMugEntry(Portrait_Catria, catriaMug, 3,5,3,3)
+setMugEntry(Portrait_Atlas, atlasMug, 3,5,3,3)
+setMugEntry(Portrait_Hyas, hyasMug, 3,5,3,3)
+setMugEntry(Portrait_Jesse, jesseMug, 2,5,2,3)
+setMugEntry(Portrait_Deen, deenMug, 3,5,3,3)
+setMugEntry(Portrait_Sonya, sonyaMug, 3,5,3,3)
+setMugEntry(Portrait_Est, estMug, 3,6,3,4)
+setMugEntry(Portrait_Tatiana, tatianaMug, 3,5,3,3)
+setMugEntry(Portrait_Zeke, zekeMug, 3,5,3,3)
+setMugEntry(Portrait_Conrad_Maskless, conrad_2Mug, 3,5,3,3) //maskless
+setMugEntry(Portrait_Conrad_Maskless_Sad, conrad_sadMug, 3,5,3,3) //maskless
+setMugEntry(Portrait_Conrad, conradMug, 3,5,3,3) //mask
+setMugEntry(Portrait_ConradYoung, conradYoungMug, 3,6,3,4) //young
+setMugEntry(Portrait_Nomah, nomahMug, 3,5,3,3)
+setMugEntry(Portrait_NomahSepia, nomahMug, nomahMinimug, nomahSepiaPalette, nomahFrames, 3,5,3,3)
+setMugEntry(Portrait_Mycen, mycenMug, 3,5,3,3)
+setMugEntry(Portrait_MycenSepia, mycenMug, mycenMinimug, mycenSepiaPalette, mycenFrames, 3,5,3,3)
+setMugEntry(Portrait_Mila, mila2Mug, 3,5,3,3) //goddess form
+setMugEntry(Portrait_MilaStatue, mila3Mug, 3,5,3,3) //statue form
+setMugEntry(Portrait_Fernand, fernandMug, 3,5,3,3)
+setMugEntry(Portrait_Fernand_Sepia, fernandMug, fernandMinimug, fernandSepiaPalette, fernandFrames, 3,5,3,3)
+setMugEntry(Portrait_FernandPre, fernandPreMug, fernandMinimug, fernandSepiaPalette, fernandPreFrames, 3,5,3,3)
+setMugEntry(Portrait_FernandYoung, fernandYoungMug, fernandMinimug, fernandSepiaPalette, fernandYoungFrames, 3,5,3,3)
+setMugEntry(Portrait_Fernand_Dying, fernandDyingMug, fernandMinimug, fernandDyingPalette, fernandDyingFrames, 3,5,3,3)
+setMugEntry(Portrait_Clive_Sepia, cliveMug, cliveMinimug, cliveSepiaPalette, cliveFrames, 3,5,3,3)
+setMugEntry(Portrait_CliveDLC, cliveDLCMug, cliveDLCMinimug, cliveDLCPalette, cliveDLCFrames, 3,5,3,3)
+setMugEntry(Portrait_CliveYoung, cliveYoungMug, cliveDLCMinimug, cliveDLCPalette, cliveYoungFrames, 3,5,3,3)
+setMugEntry(Portrait_Clive_Sad, cliveSadMug, cliveMinimug, clivePalette, cliveSadFrames, 3,5,3,3)
+setMugEntry(Portrait_Mathilda_Sepia, mathildaMug, mathildaMinimug, mathildaSepiaPalette, mathildaFrames, 3,5,3,3)
+setMugEntry(Portrait_MathildaYoung, mathildaYoungMug, mathildaMinimug, mathildaSepiaPalette, mathildaYoungFrames, 3,5,3,3)
+setMugEntry(Portrait_Clair_Sepia,  clairMug, clairMinimug, clairSepiaPalette, clairFrames, 3,6,3,4)
+setMugEntry(Portrait_Clair_Sad,  clairSadMug, clairMinimug, clairPalette, clairSadFrames, 3,6,3,4)
+
+setMugEntry(Portrait_Slayde, slaydeMug, 3,4,3,2)
+setMugEntry(Portrait_Desaix, desaixMug, 3,5,3,3)
+setMugEntry(Portrait_Acantha, acanthaMug, 3,5,3,3)
+setMugEntry(Portrait_Rinea, rineaMug, 4,5,3,3) //unburnt
+setMugEntry(Portrait_Rinea_Witch, rinea_2Mug, 4,5,3,3) //toasty
+setMugEntry(Portrait_Berkut, berkutMug, 3,5,3,3) //normal
+setMugEntry(Portrait_Berkut2, berkut2Mug, 3,5,3,3) //frayed
+setMugEntry(Portrait_Berkut_Weary, berkut_sadMug, 3,5,3,3) //doomer
+setMugEntry(Portrait_Berkut_Possessed, berkut_dumaMug, 4,5,4,3) //possessed
+
+setMugEntry(Portrait_Brigand1, Echoes_BanditMug, 2, 5, 3, 3) //First boss
+setMugEntry(Portrait_Brigand2, Echoes_Pirate2Mug, 2, 5, 3, 3) //meltyface guy
+setMugEntry(Portrait_BrigandBoss, brigandbossMug, 3, 5, 3, 3)
+setMugEntry(Portrait_Merc, Echoes_MercMug, 3, 5, 3, 3) //leather shield merc
+setMugEntry(Portrait_Soldier_Blue, Echoes_Soldier_BlueMug, 3, 6, 3, 4)
+setMugEntry(Portrait_Soldier, Echoes_SoldierMug, 3, 6, 3, 4) //1-5 boss
+setMugEntry(Portrait_Soldier_2, Echoes_Soldier2Mug, 2, 6, 3, 4) //1-6 boss
+setMugEntry(Portrait_Cavalier, Echoes_CavalierMug, 2, 5, 2, 3) //1-7 boss
+setMugEntry(Portrait_Jarth, barthMug, barthMinimug, jarthPalette, barthFrames, 2, 5, 2, 3)
+//not bazba
+setMugEntry(Portrait_Pirate_F, Echoes_PirateMug, 3, 4, 3, 2) //fpirate boss
+setMugEntry(Portrait_Barth, barthMug, barthMinimug, barthPalette, barthFrames, 2, 5, 2, 3)
+setMugEntry(Portrait_Cantor, DumaFaith_1Mug, 3, 6, 3, 4) //2-5 cantor boss
+setMugEntry(Portrait_Sorcerer, DumaFaith_2Mug, 2, 6, 3, 3) //2-6 shaman miniboss
+setMugEntry(Portrait_Arcanist, DumaFaith_3Mug, 2, 6, 3, 4) //2-7 arcanist boss
+
+//46=zaxon
+setMugEntry(Portrait_Zaxon, zaxonMug, 3, 5, 3, 3)
+//47=xyzas
+setMugEntry(Portrait_Xyzas, xyzasMug, 3, 5, 3, 3)
+//48=lawson
+setMugEntry(Portrait_Lawson, lawsonMug, 2, 5, 3, 3)
+//49=gazelle
+setMugEntry(Portrait_Gazelle, gazelleMug, 3, 5, 3, 3)
+//4a=tatarrah
+setMugEntry(Portrait_Tatarrah, tatarrahMug, 3, 6, 3, 4)
+//4b=garth
+setMugEntry(Portrait_Garth, barthMug, barthMinimug, garthPalette, barthFrames, 2, 5, 2, 3)
+//4c=wolff
+setMugEntry(Portrait_Wolff, wolffMug, 3, 5, 3, 3) 
+//4d=grieth
+setMugEntry(Portrait_Grieth, griethMug, 3, 5, 3, 3)
+//4e=blake
+setMugEntry(Portrait_Blake, blakeMug, 2, 5, 3, 3)
+//4f=mikhail
+setMugEntry(Portrait_Mikhail, mikhailMug, 3, 6, 3, 4) 
+
+//50=garcia
+setMugEntry(Portrait_Garcia, garciaMug, 3, 5, 3, 3)
+//51=dolth
+setMugEntry(Portrait_Dolth, dolthMug, 3, 6, 3, 4) 
+//52=jamil
+setMugEntry(Portrait_Jamil, jamilMug, 3, 6, 3, 4)
+//53=xaizor
+setMugEntry(Portrait_Xaizor, xaizorMug, 3, 5, 3, 3)
+//54=jerome
+setMugEntry(Portrait_Jerome, jeromeMug, 3, 5, 3, 3)
+//55=magnus
+setMugEntry(Portrait_Magnus, magnusMug, 3, 5, 3, 3)
+//56=mueller
+setMugEntry(Portrait_Mueller, muellerMug, 3, 5, 3, 3)
+//57=zopyrus
+setMugEntry(Portrait_Zopyrus, zopyrusMug, 3, 5, 3, 3)
+//58=hades
+setMugEntry(Portrait_Hades, hadesMug, 2, 5, 3, 3)
+//59=gharn
+setMugEntry(Portrait_Gharn, gharnMug, 2, 5, 2, 3)
+//5a=rudolf
+setMugEntry(Portrait_Rudolf, rudolfMug, 3, 5, 3, 3)
+//5b=jedah
+setMugEntry(Portrait_Jedah, jedahMug, 2, 6, 2, 4)
+setMugEntry(Portrait_Jedah_Angry, jedah_angryMug, 2, 6, 2, 4)
+//5c=nuibaba
+setMugEntry(Portrait_Nuibaba, nuibabaMug, 3, 4, 3, 2)
+setMugEntry(Portrait_Nuibaba_Gaiden, nuibaba_2Mug, 2, 5, 2, 3)
+//5d=argentum
+setMugEntry(Portrait_Argentum, argentumMug, 2, 5, 2, 3)
+//5e=aurum
+setMugEntry(Portrait_Aurum, aurumMug, 2, 5, 2, 3)
+//5f=cerberus
+setMugEntry(Portrait_Cerberus, cerberusMug, 3, 5, 3, 3)
+//60=naberius
+setMugEntry(Portrait_Naberius, naberiusMug, 3, 5, 3, 3)
+//61=marla
+setMugEntry(Portrait_Marla, marlaMug, 3,5,3,3)
+//62=hestia
+setMugEntry(Portrait_Hestia, hestiaMug, 3,5,3,3)
+//63=irma
+setMugEntry(Portrait_Irma, irmaMug, 3,6,3,4)
+setMugEntry(Portrait_Halcyon, halcyonMug, 2,5,3,3)
+setMugEntry(Portrait_Massena,massenaMug,2,5,2,3)
+setMugEntry(Portrait_Duma, dumaMug, 2,4,2,2)
+setMugEntry(Portrait_Duma_Human, dumaHumanMug, 3,5,3,3)
+
+//PLACEHOLDER
+setMugEntry(Portrait_Emma, emmaMug,3,6,3,4)
+setMugEntry(Portrait_Yuzu, yuzuMug, 3,6,3,4)
+setMugEntry(Portrait_Shade, shadeMug, 3,5,3,3)
+setMugEntry(Portrait_Randal, randalMug, 2,5,2,3)
+setMugEntry(Portrait_Goose, rodneyMug,2,3,5,1)
+
+//rigelian orphanage
+setMugEntry(Portrait_HolyMother, holymotherMug, 3,6,3,4)
+setMugEntry(Portrait_Orphan,npc_orphanMug,3,6,3,4)
+
+
+
+
+//Generics block
+setMugEntry(Portrait_Moneyman,$843330,$843298,$842C78,$842C98,2,6,3,4)
+setMugEntry(Portrait_Oldman,$841C74,$841BDC,$8415BC,$8415DC,2,7,3,5)
+setMugEntry(Portrait_Man1,$8405B8,$840520,$83FF00,$83FF20,2,5,3,3)
+setMugEntry(Portrait_Man2,$83EEFC,$83EE64,$83E844,$83E864,2,6,3,4)
+setMugEntry(Portrait_Youngman,npc_youngman2Mug,2,5,3,3)
+setMugEntry(Portrait_Boy,$83AAC8,$83AA30,$83A410,$83A430,2,7,3,5)
+setMugEntry(Portrait_Oldwoman,$83940C,$839374,$838D54,$838D74,2,6,3,4)
+setMugEntry(Portrait_Woman,npc_womanMug,2,6,3,4)
+setMugEntry(Portrait_Youngwoman,npc_youngwomanMug,2,6,3,4)
+setMugEntry(Portrait_Girl,$83391C,$833884,$833264,$833284,2,7,3,5)
+
+
+
+
+
+//class cards start at 0xC7
+ALIGN 4
+CavalierCard:
+#incbin "ClassCards/cavalier.img.bin"
+ALIGN 4
+CavalierCardPalette:
+#incbin "ClassCards/cavalier.pal.bin"
+ALIGN 4
+PaladinCard:
+#incbin "ClassCards/paladin.img.bin"
+ALIGN 4
+PaladinCardPalette:
+#incbin "ClassCards/paladin.pal.bin"
+ALIGN 4
+GoldKnightCard:
+#incbin "ClassCards/goldknight.img.bin" 
+ALIGN 4
+GoldKnightCardPalette:
+#incbin "ClassCards/goldknight.pal.bin"
+ALIGN 4
+SoldierCard:
+#incbin "ClassCards/soldier.img.bin"
+ALIGN 4
+SoldierCardPalette:
+#incbin "ClassCards/soldier.pal.bin"
+ALIGN 4 
+KnightCard:
+#incbin "ClassCards/knight.img.bin"
+ALIGN 4
+KnightCardPalette:
+#incbin "ClassCards/knight.pal.bin"
+ALIGN 4
+BaronCard:
+#incbin "ClassCards/baron.img.bin"
+ALIGN 4
+BaronCardPalette:
+#incbin "ClassCards/baron.pal.bin"
+ALIGN 4
+FiendCard:
+#incbin "ClassCards/fiend.img.bin"
+ALIGN 4
+MyrmidonCard: //by Nura
+#incbin "ClassCards/myrmidon.img.bin"
+ALIGN 4
+MyrmidonCardPalette:
+#incbin "ClassCards/myrmidon.pal.bin"
+ALIGN 4
+DFCard: //by Nura
+#incbin "ClassCards/dreadfighter.img.bin"
+ALIGN 4
+DFCardPalette:
+#incbin "ClassCards/dreadfighter.pal.bin"
+ALIGN 4
+ArcherCard: //by Der
+#incbin "ClassCards/archer.img.bin"
+ALIGN 4
+ArcherPalette:
+#incbin "ClassCards/archer.pal.bin"
+ALIGN 4
+FArcherCard: //by Der
+#incbin "ClassCards/archer_f.img.bin"
+ALIGN 4
+FSniperCard: //by L95
+#incbin "ClassCards/sniper_f.img.bin"
+ALIGN 4
+BKCard:
+#incbin "ClassCards/bowknight.img.bin"
+ALIGN 4
+BKCardPalette:
+#incbin "ClassCards/bowknight.pal.bin" 
+ALIGN 4
+
+WRiderCard:
+#incbin "ClassCards/wyvernrider.img.bin"
+ALIGN 4
+WRiderCardPalette:
+#incbin "ClassCards/wyvernrider.pal.bin" 
+ALIGN 4
+WLordCard:
+#incbin "ClassCards/wyvernlord.img.bin"
+ALIGN 4
+WLordCardPalette:
+#incbin "ClassCards/wyvernlord.pal.bin"
+ALIGN 4
+FMageCard: //by L95
+#incbin "ClassCards/mage_f.img.bin"
+ALIGN 4
+MageCard: //by L95
+#incbin "ClassCards/mage.img.bin"
+ALIGN 4
+MageCardPalette:
+#incbin "ClassCards/mage.pal.bin"
+ALIGN 4
+PriestessCard: //base by L95
+#incbin "ClassCards/priestess.img.bin"
+ALIGN 4
+PriestessCardPalette:
+#incbin "ClassCards/priestess.pal.bin"
+ALIGN 4
+WitchCard: //base by MeatOfJustice
+#incbin "ClassCards/witch.img.bin"
+ALIGN 4
+WitchCardPalette:
+#incbin "ClassCards/witch.pal.bin"
+ALIGN 4
+CantorCard:
+#incbin "ClassCards/cantor.img.bin"
+ALIGN 4
+CantorCardPalette:
+#incbin "ClassCards/cantor.pal.bin"
+ALIGN 4
+ClericCard: //by flasuban
+#incbin "ClassCards/cleric.img.bin"
+ALIGN 4
+ClericCardPalette:
+#incbin "ClassCards/cleric.pal.bin"
+ALIGN 4
+SaintCard: //by flasuban
+#incbin "ClassCards/saint.img.bin"
+ALIGN 4
+SaintCardPalette:
+#incbin "ClassCards/saint.pal.bin"
+ALIGN 4
+PegKnightCard: //by flasuban
+#incbin "ClassCards/pegknight.img.bin"
+ALIGN 4
+PegKnightCardPalette:
+#incbin "ClassCards/pegknight.pal.bin"
+ALIGN 4 
+FalcoknightCard: //by flasuban
+#incbin "ClassCards/falcoknight.img.bin"
+ALIGN 4
+FalcoknightCardPalette:
+#incbin "ClassCards/falcoknight.pal.bin"
+ALIGN 4
+VillagerCard: //by ghast
+#incbin "ClassCards/villager.img.bin"
+ALIGN 4
+VillagerCardPalette:
+#incbin "ClassCards/villager.pal.bin"
+ALIGN 4
+BrigandCard:
+#incbin "ClassCards/brigand.img.bin"
+ALIGN 4
+BrigandCardPalette:
+#incbin "ClassCards/brigand.pal.bin"
+ALIGN 4
+FPirateCard:
+#incbin "ClassCards/pirate_f.img.bin" 
+ALIGN 4
+FZerkerCard: //by Der
+#incbin "ClassCards/berserker_f.img.bin"
+ALIGN 4
+EntombedCard: //by SkidMarc25
+#incbin "ClassCards/entombed.img.bin"
+ALIGN 4
+EntombedCardPalette:
+#incbin "ClassCards/entombed.pal.bin"
+ALIGN 4
+DumaCard: //by L95
+#incbin "ClassCards/L95_duma.img.bin"
+ALIGN 4
+DumaCardPalette:
+#incbin "ClassCards/L95_duma.pal.bin"
+
+
+
+
+//Cavalier
+setCardEntry(CC_Cavalier, CavalierCard, CavalierCardPalette)
+//Paladin
+setCardEntry(CC_Paladin, PaladinCard, PaladinCardPalette)
+//GoldKnight
+setCardEntry(CC_GoldKnight, GoldKnightCard, GoldKnightCardPalette) //MAKE TIER 3
+
+//Soldier
+setCardEntry(CC_Soldier, SoldierCard, SoldierCardPalette)
+//Knight
+setCardEntry(CC_Knight, KnightCard, KnightCardPalette) //MAKE TIER 2
+//Baron
+setCardEntry(CC_Baron, BaronCard, BaronCardPalette) //MAKE TIER 3
+
+//Mercenary
+setCardEntry(CC_Mercenary, $81B03C, $81B01C)
+//Myrmidon
+setCardEntry(CC_Myrmidon, MyrmidonCard, MyrmidonCardPalette)
+//DF
+setCardEntry(CC_DF, DFCard, DFCardPalette) //MAKE TIER 3
+
+//Thief
+setCardEntry(CC_Thief, $81BF90, $81BF70)
+//Rogue
+setCardEntry(CC_Rogue, $819444, $819424)
+
+//Archer
+setCardEntry(CC_Archer, ArcherCard, ArcherPalette)
+setCardEntry(CC_Archer_F, FArcherCard, ArcherPalette)
+//Sniper
+setCardEntry(CC_Sniper, $825E44, $825E24)
+setCardEntry(CC_Sniper_F, FSniperCard, $825E24)
+//BK
+setCardEntry(CC_BowKnight, BKCard, BKCardPalette) //MAKE TIER 3
+
+//WRider
+setCardEntry(CC_WyvernRider, WRiderCard, WRiderCardPalette) 
+//WLord
+setCardEntry(CC_WyvernLord, WLordCard, WLordCardPalette)
+
+//Mage
+setCardEntry(CC_Mage, MageCard, MageCardPalette)
+setCardEntry(CC_Mage_F, FMageCard, MageCardPalette)
+//Sage
+setCardEntry(CC_Sage, $8243F8, $8243D8)
+//Priestess
+setCardEntry(CC_Priestess, PriestessCard, PriestessCardPalette)
+///Witch
+setCardEntry(CC_Witch, WitchCard, WitchCardPalette)
+//Cleric
+setCardEntry(CC_Cleric, ClericCard, ClericCardPalette)
+//Saint
+setCardEntry(CC_Saint, SaintCard, SaintCardPalette)
+//Shaman
+setCardEntry(CC_Shaman, $823D64, $823D44)
+//Arcanist
+setCardEntry(CC_Arcanist, $8235D0, $8235B0)
+//Cantor
+setCardEntry(CC_Cantor, CantorCard, CantorCardPalette)
+
+//Villager
+setCardEntry(CC_Villager, VillagerCard, VillagerCardPalette)
+//Brigand
+setCardEntry(CC_Brigand, BrigandCard, BrigandCardPalette)
+
+//Pirate
+setCardEntry(CC_Pirate, $81CD28, $81CD08)
+setCardEntry(CC_Pirate_F, FPirateCard, $81CD08)
+//Berserker
+setCardEntry(CC_Berserker, $81C51C, $81C4FC)
+setCardEntry(CC_Berserker_F, FZerkerCard, $81C4FC)
+
+//Peg Knight
+setCardEntry(CC_PegKnight, PegKnightCard, PegKnightCardPalette)
+//Falcoknight
+setCardEntry(CC_FalcoKnight, FalcoknightCard,FalcoknightCardPalette)
+//DKnight
+setCardEntry(CC_DracoKnight, $819A18, $8199F8)
+
+//Fleet
+setCardEntry(CC_Fleet, $81A2C8, $81A2A8)
+
+//Revenant
+setCardEntry(CC_Revenant, $816E08, $816DE8)
+//Entombed
+setCardEntry(CC_Entombed, EntombedCard, EntombedCardPalette)
+//Bonewalker
+setCardEntry(CC_Bonewalker, $81611C, $8160FC)
+//Wight
+setCardEntry(CC_Wight, $815A74, $815A54)
+//Bael
+setCardEntry(CC_Bael, $815194, $815174)
+//Elder Bael
+setCardEntry(CC_ElderBael, $814898, $814878)
+//Cyclops
+setCardEntry(CC_Cyclops, $814090, $814070)
+//Fiend
+setCardEntry(CC_Fiend, FiendCard, BaronCardPalette)
+//Hellhound
+setCardEntry(CC_Hellhound, $81399C, $81397C)
+//Kerberos
+setCardEntry(CC_Kerberos, $81322C, $81320C)
+//Necrodragon/W.Dragon
+setCardEntry(CC_Necrodragon, $80F5D8, $80F5B8)
+//Tarvos
+setCardEntry(CC_Tarvos, $812A48, $812A28)
+//Chiron
+setCardEntry(CC_Chiron, $81226C, $81224C)
+//Mogall
+setCardEntry(CC_Mogall, $811BB8, $811B98)
+//ArchMogall
+setCardEntry(CC_ArchMogall, $8114D8, $8114B8)
+//Gorgon
+setCardEntry(CC_Gorgon, $810C7C, $810C5C)
+//Gargoyle
+setCardEntry(CC_Gargoyle, $810584, $810564)
+//Deathgoyle
+setCardEntry(CC_Deathgoyle, $80FE74, $80FE54)
+//Duma 
+setCardEntry(CC_Duma, DumaCard, DumaCardPalette)
+
+//0xAB is supply, do not edit

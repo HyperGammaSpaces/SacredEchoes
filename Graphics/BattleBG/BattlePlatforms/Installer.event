@@ -1,0 +1,147 @@
+//Pad to 8 characters
+#define BattlePlatformTableEntry(index, name, image, palette) "PUSH; ORG BattlePlatformTable+(index*0x18); String(name); BYTE 0; WORD 0; POIN image; POIN palette; WORD 0; POP"
+
+#define BattlePlatformTableLength 0x62
+
+/*
+Sound Effects:
+        - 72258 maps terrain id to a value from 0-6.
+            - 2266 = 0 (plain, road, etc)
+            - 2384 = 1 (forest, thicket, etc)
+            - 2388 = 2 rivers, sea, lake
+            - 238c = 3 peak
+            - 2390 = 4 (sand, desert)
+            - 2394 = 5 bridge
+            - 2398 = 6 (floor, armory, vendor, gate)
+*/
+
+PUSH
+    //make swamp terrain sound wet
+    ORG $722A4
+    POIN $72388
+
+	ORG 0x51E48
+	POIN BattlePlatformTable
+	ORG 0x5AAD0
+	POIN BattlePlatformTable
+
+ORG $EE0000
+WORD BattlePlatformTableLength $12F18 //count, data length
+ORG $EE0008
+BattlePlatformTable:
+BattlePlatformTableEntry(Platform_Field, "Plain  ", $EE0C00, $EE1444)
+BattlePlatformTableEntry(Platform_Flat, "Flat   ", $EE1464, $EE1C28)
+BattlePlatformTableEntry(Platform_Gate, "Gate   ", $EE1C48, $EE2570)
+BattlePlatformTableEntry(Platform_Fence, "Fence  ", $EEDD58, $EEE420)
+BattlePlatformTableEntry(Platform_Road, "Road   ", $EE9050, $EE9824)
+BattlePlatformTableEntry(Platform_House, "House  ", $EE9844, $EEA078)
+BattlePlatformTableEntry(Platform_Village, "Village", $EE6244, $EE6A18)
+BattlePlatformTableEntry(Platform_Armory, "Armory ", $EE2590, $EE2D38)
+BattlePlatformTableEntry(Platform_Vendor_Outdoor, "Vendor ", $EE7780, $EE7F50)
+BattlePlatformTableEntry(Platform_Vendor, "Vendor2", $EE7F70, $EE8760)
+BattlePlatformTableEntry(Platform_Arena, "Arena  ", $EEC4F0, $EECC6C) 
+BattlePlatformTableEntry(Platform_Ruins, "Ruins  ", $EE3BCC, $EE4394)
+BattlePlatformTableEntry(Platform_Rubble_Road, "Rubble ", $EEE440, $EEEAB8)
+BattlePlatformTableEntry(Platform_RoadGate, "Gate2  ", $EF08D8, $EF0F84)
+BattlePlatformTableEntry(Platform_Cliff, "Cliff  ", $EE2D58, $EE34C4)
+BattlePlatformTableEntry(Platform_Desert, "Desert ", $EE54FC, $EE5B30)
+BattlePlatformTableEntry(Platform_Sand, "Sand   ", $EEB014, $EEB69C)
+BattlePlatformTableEntry(Platform_Snag, "Snag   ", $EF1B18, $EF24A0)
+BattlePlatformTableEntry(Platform_Bridge_Drawn, "Bridge ", $EE43B4, $EE4C24)
+BattlePlatformTableEntry(Platform_Bridge, "Bridge ", $EE4C44, $EE54DC)
+BattlePlatformTableEntry(Platform_River, "River  ", $EE5B50, $EE6224)
+BattlePlatformTableEntry(Platform_Sea, "Sea    ", $EE6A38, $EE7118)
+BattlePlatformTableEntry(Platform_Lake, "Lake   ", $EE7138, $EE7760)
+BattlePlatformTableEntry(Platform_Forest, "Forest ", $EEA098, $EEA910)
+BattlePlatformTableEntry(Platform_Thicket, "Thicket", $EE8780, $EE9030)
+BattlePlatformTableEntry(Platform_Mountain, "Mountn ", $EECC8C, $EED410)
+BattlePlatformTableEntry(Platform_Peak, "Peak   ", $EEB6BC, $EEBDEC)
+BattlePlatformTableEntry(Platform_Fort, "Fort   ", $EEBE0C, $EEC4D0)
+BattlePlatformTableEntry(Platform_MagicFloor, "M.Floor", $EED430, $EEDD38) 
+BattlePlatformTableEntry(Platform_Floor_Gray, "Floor  ", $EEA930, $EEAFF4)
+BattlePlatformTableEntry(Platform_Throne_Gray, "Throne ", $EE34E4, $EE3BAC)
+BattlePlatformTableEntry(Platform_Rubble_Gray, "Rubble ", $EEEAD8, $EEF194) 
+BattlePlatformTableEntry(Platform_Pillar_Gray, "Pillar ", $EEF1B4, $EEF890)
+BattlePlatformTableEntry(Platform_Chest_Gray, "Chest  ", $EEF8B0, $EF0014)
+BattlePlatformTableEntry(Platform_Ballista, "Blst1  ", $EF0034, $EF08B8)
+BattlePlatformTableEntry(Platform_Stairs, "Stairs ", $EF0FA4, $EF15F8) //arena
+BattlePlatformTableEntry(Platform_WoodDeck, "Deck   ", $EF24C0, $EF2DB8)
+
+//Formerly 2E - snow section
+BattlePlatformTableEntry(Platform_Field_Snow, "S Field", $EE0C00, $EF16B8)
+BattlePlatformTableEntry(Platform_Gate_Snow, "S Gate ", $EE1C48, $EF16D8) //stairs
+BattlePlatformTableEntry(Platform_Armory_Snow, "S Arm  ", $EE2590, $EF16F8)
+BattlePlatformTableEntry(Platform_Cliff_Snow, "S Cliff", $EE2D58, $EF1718)
+BattlePlatformTableEntry(Platform_Ruins_Snow, "S Ruin ", $EE3BCC, $EF1738)
+BattlePlatformTableEntry(Platform_Bridge_Snow, "S Bridg", $EE4C44, $EF1758) //open
+BattlePlatformTableEntry(Platform_River_Snow, "S River", $EE5B50, $EF1778) //unfrozen
+BattlePlatformTableEntry(Platform_Village_Snow, "S Vill ", $EE6244, $EF1798)
+BattlePlatformTableEntry(Platform_Lake_Snow, "S Lake ", $EE7138, $EF17B8)
+BattlePlatformTableEntry(Platform_Vendor_Snow, "S Vend ", $EE7F70, $EF17D8)
+BattlePlatformTableEntry(Platform_Thicket_Snow, "S Thikt", $EE8780, $EF17F8)
+BattlePlatformTableEntry(Platform_Road_Snow, "S Road ", $EE9050, $EF1818)
+BattlePlatformTableEntry(Platform_House_Snow, "S House", $EE9844, $EF1838)
+BattlePlatformTableEntry(Platform_Forest_Snow, "S Trees", $EEA098, $EF1858)
+BattlePlatformTableEntry(Platform_Peak_Snow, "S Peak ", $EEB6BC, $EF1878)
+BattlePlatformTableEntry(Platform_Arena_Snow, "S Arena", $EEC4F0, $EF1898) //outdoor
+BattlePlatformTableEntry(Platform_Mountain_Snow, "S Mntn ", $EECC8C, $EF18B8)
+BattlePlatformTableEntry(Platform_Ballista_Snow, "S Blst ", $EF0034, $EF18D8)
+BattlePlatformTableEntry(Platform_Fort_Snow, "S Fort ", $EEBE0C, $EF18F8)
+BattlePlatformTableEntry(Platform_Glacier, "S River", $EE5B50, $EF1918) //frozen
+BattlePlatformTableEntry(Platform_Floor_Snow, "S Floor", $EEA930, $EF1938)
+BattlePlatformTableEntry(Platform_Chest_Snow, "S Chest", $EEF8B0, $EF1958)
+BattlePlatformTableEntry(Platform_Rubble_Snow, "S Rubbl", $EEEAD8, $EF1978)
+BattlePlatformTableEntry(Platform_Throne_Snow, "S Thron", $EE34E4, $EF1998)
+BattlePlatformTableEntry(Platform_Pillar_Snow, "S Pillr", $EEF1B4, $EF19B8)
+//Night palettes
+BattlePlatformTableEntry(Platform_Floor_Night, "Floor N", $EEA930, $EF1A38)
+BattlePlatformTableEntry(Platform_Chest_Night, "Chest N", $EEF8B0, $EF1A58)
+BattlePlatformTableEntry(Platform_Rubble_Night, "RubbleN", $EEEAD8, $EF1A78)
+BattlePlatformTableEntry(Platform_Throne_Night, "ThroneN", $EE34E4, $EF1A98)
+BattlePlatformTableEntry(Platform_Pillar_Night, "PillarN", $EEF1B4, $EF1AB8)
+BattlePlatformTableEntry(Platform_Field_Night, "Plain N", $EE0C00, $EF1AD8)
+BattlePlatformTableEntry(Platform_River_Night, "River N", $EE5B50, $EF1AF8)
+BattlePlatformTableEntry(Platform_Snag_Night, "Snag  N", $EF1B18, $EF2260)
+BattlePlatformTableEntry(Platform_Bridge_Night, "BridgeN", $EE4C44, $EF2280)
+BattlePlatformTableEntry(Platform_Village_Night, "VillagN", $EE6244, $EF22A0)
+BattlePlatformTableEntry(Platform_Cliff_Night, "Cliff N", $EE2D58, $EF23A0)
+BattlePlatformTableEntry(Platform_Forest_Night, "ForestN", $EEA098, $EF2DD8)
+BattlePlatformTableEntry(Platform_Sea_Night, "Sea   N", $EE6A38, $EF2DF8)
+BattlePlatformTableEntry(Platform_Mountain_Night, "Mntn  N", $EECC8C, $EF2EB8)
+BattlePlatformTableEntry(Platform_Peak_Night, "Peak  N", $EEB6BC, $EF2ED8)
+//Misc outdoor
+BattlePlatformTableEntry(Platform_Field_Plains, "Plain P", $EE0C00, $EF19F8) //plains
+BattlePlatformTableEntry(Platform_River_Plains, "River P", $EE5B50, $EF1A18) //plains
+BattlePlatformTableEntry(Platform_Field_Sunset, "Plain S", $EE0C00, $EF2460) //sunset
+BattlePlatformTableEntry(Platform_Forest_Sunset, "ForestS", $EEA098, $EF2480) //sunset
+BattlePlatformTableEntry(Platform_Field_Purple, "Plain D", $EE0C00, $EF2360) //purple
+BattlePlatformTableEntry(Platform_River_Purple, "River D", $EE5B50, $EF2380) //purple
+
+//Indoor palettes
+BattlePlatformTableEntry(Platform_Floor_Yellow, "Floor Y", $EEA930, $EF1638) //yellow
+BattlePlatformTableEntry(Platform_Throne_Yellow, "ThroneY", $EE34E4, $EF1658)
+BattlePlatformTableEntry(Platform_Chest_Yellow, "Chest Y", $EEF8B0, $EF1678)
+BattlePlatformTableEntry(Platform_Rubble_Yellow, "RubbleY", $EEEAD8, $EF1698)
+BattlePlatformTableEntry(Platform_Pillar_Yellow, "PillarY", $EEF1B4, $EF19D8)
+BattlePlatformTableEntry(Platform_Floor_Tan, "Floor J", $EEA930, $EF23C0) //jehanna
+BattlePlatformTableEntry(Platform_Throne_Tan, "ThroneJ", $EE34E4, $EF2420)
+BattlePlatformTableEntry(Platform_Chest_Tan, "Chest J", $EEF8B0, $EF23E0)
+BattlePlatformTableEntry(Platform_Rubble_Tan, "RubbleJ", $EEEAD8, $EF2400)
+BattlePlatformTableEntry(Platform_Pillar_Tan, "PillarJ", $EEF1B4, $EF2440)
+BattlePlatformTableEntry(Platform_Floor_Purple, "Floor V", $EEA930, $EF22C0) //valni
+BattlePlatformTableEntry(Platform_Throne_Purple, "ThroneV", $EE34E4, $EF2320)
+BattlePlatformTableEntry(Platform_Chest_Purple, "Chest V", $EEF8B0, $EF22E0)
+BattlePlatformTableEntry(Platform_Rubble_Purple, "RubbleV", $EEEAD8, $EF2300)
+BattlePlatformTableEntry(Platform_Pillar_Purple, "PillarV", $EEF1B4, $EF2340)
+POP
+
+//Terminator
+PUSH
+	ORG BattlePlatformTable+(BattlePlatformTableLength*0x18)
+	WORD $0 $0 $0 $0 $0 $0
+POP
+//BattlePlatformGraphicsOffset:
+
+//BattlePlatformPalettesOffset:
+
+#include "PlatformFixes.event"

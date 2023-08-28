@@ -1,0 +1,1040 @@
+#ifndef ClassAnimTable
+  #ifdef _FE8_
+    #define ClassAnimTable (0xc00008-0x20)
+  #endif
+  #ifdef _FE7_
+    #define ClassAnimTable (0xe00008-0x20)
+  #endif
+#endif
+
+#define AnimTableEntry(index) "ORG ClassAnimTable + (index * 0x20)"
+
+//////////////Installed animations go here:
+
+PUSH
+
+  ORG $C02000
+  
+  ALIGN 4
+  AlmT1Sword: //Nuramon
+  {
+    #include "AlmT1/Sword/lorm_sw1_Installer.event"
+    
+
+    PUSH
+    //error suppressing placeholders
+        AnimTableEntry(0x1B)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x1C)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x2E)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x2F)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x3A)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x3B)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+    
+    //0x8f-0x9e free
+        AnimTableEntry(0x8D) //reserved: white dragon breath anim
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x8F)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x90)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x91)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x92)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x93)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x94)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x95)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x96)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x97)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x98)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x99)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x9A)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x9B)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x9C)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x9D)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+        AnimTableEntry(0x9E)
+        WORD 0 0 0
+        POIN Anim_lorm_sw1_sectiondata
+        POIN Anim_lorm_sw1_framedata
+        POIN Anim_lorm_sw1_rtl Anim_lorm_sw1_ltr Anim_lorm_sw1_pal
+    POP
+  }
+  ALIGN 4
+  AlmT1RoyalSword: //Nuramon
+  {
+    #include "AlmT1/RoyalSword/lorm_sw2_Installer.event"
+  }
+  ALIGN 4
+  AlmT1Unarmed: //Nuramon
+  {
+    #include "AlmT1/Unarmed/lorm_ua1_Installer.event"
+  }
+  ALIGN 4
+  AlmT2Sword: //Nuramon
+  {
+    #include "AlmT2/Sword/alm2_sw1_Installer.event"
+  }
+  ALIGN 4
+  AlmT2RoyalSword: //Nuramon
+  {
+    #include "AlmT2/Sword/alm2_sw2_Installer.event"
+  }
+  ALIGN 4
+  AlmT2Shieldtoss: //Nuramon
+  {
+    #include "AlmT2/Sword/alm2_fin_Installer.event"
+  }
+  ALIGN 4
+  AlmT2Falchion: //Nuramon
+  {
+    #include "AlmT2/Sword/alm2_sw3_Installer.event"
+  }
+  ALIGN 4
+  AlmT2Bow: //Nuramon
+  {
+    #include "AlmT2/Bow/alm2_ar1_Installer.event"
+  }
+  ALIGN 4
+  AlmT2Unarmed: //Nuramon
+  {
+    #include "AlmT2/Unarmed/alm2_ua1_Installer.event"
+  }
+  ALIGN 4
+  CelicaT1Sword: //RedBean
+  {
+    #include "CelicaT1/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  CelicaT1Magic: //RedBean
+  {
+    #include "CelicaT1/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  CelicaT2Sword: //RedBean
+  {
+    #include "CelicaT2/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  CelicaT2Magic: //RedBean
+  {
+    #include "CelicaT2/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  VillagerM_Sword: //Nuramon
+  {
+	#include "Villager/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  VillagerM_Unarmed: //Nuramon
+  {
+	#include "Villager/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  VillagerF_Sword: //Nuramon
+  {
+	#include "Villager_F/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  VillagerF_Unarmed: //Nuramon
+  {
+	#include "Villager_F/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  CavLance: //Team SALVAGED
+  {
+    #include "Cavalier/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  CavUnarmed: //Team SALVAGED
+  {
+    #include "Cavalier/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  CavFLance: //Team SALVAGED
+  {
+    #include "Cavalier_F/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  CavFUnarmed: //Team SALVAGED
+  {
+    #include "Cavalier_F/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  PalLance: //Team SALVAGED
+  {
+    #include "Paladin/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  PalUnarmed: //Team SALVAGED
+  {
+    #include "Paladin/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  PalFLance: //Team SALVAGED
+  {
+    #include "Paladin_F/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  PalFUnarmed: //Team SALVAGED
+  {
+    #include "Paladin_F/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  GK_Lance: //Nuramon
+  {
+    #include "GoldKnight/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  GK_Unarmed: //Nuramon
+  {
+    #include "GoldKnight/Unarmed/grkm_ua1_Installer.event"
+  }
+  ALIGN 4
+  Soldier_Lance: //Nuramon, flasuban
+  {
+	#include "Soldier/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  Soldier_Unarmed: //Nuramon, flasuban
+  {
+	#include "Soldier/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Armor_Lance: //Team SALVAGED
+  {
+	#include "Knight/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  Armor_Axe: //Team SALVAGED
+  {
+	#include "Knight/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Armor_Handaxe: //Team SALVAGED
+  {
+	#include "Knight/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Armor_Unarmed: //Team SALVAGED
+  {
+	#include "Knight/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Baron_Lance: //Leo_link, Nuramon, Iscaneus, The_Big_Dededester
+  {
+	#include "Baron/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  Baron_Sword: //Leo_link, Nuramon, Iscaneus, The_Big_Dededester
+  {
+	#include "Baron/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  Baron_Axe: //Leo_link, Nuramon, Iscaneus, The_Big_Dededester
+  {
+	#include "Baron/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Baron_Handaxe: //Leo_link, Nuramon, Iscaneus, The_Big_Dededester, Sax Marine
+  {
+	#include "Baron/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Baron_Unarmed: //Leo_link, Nuramon, Iscaneus, The_Big_Dededester
+  {
+	#include "Baron/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Merc_Sword: //Team SALVAGED
+  {
+	#include "Mercenary/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  Merc_Unarmed: //Team SALVAGED
+  {
+    #include "Mercenary/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Hero_Sword: //Nuramon
+  {
+	#include "Myrmidon/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  Hero_Unarmed: //Nuramon
+  {
+    #include "Myrmidon/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  DF_Sword: //Nuramon
+  {
+	#include "DreadFighter/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  DF_Unarmed: //Nuramon
+  {
+    #include "DreadFighter/Magic/Magic_Installer.event"
+  }
+/*  
+  ALIGN 4
+  DF_F_Sword:
+  {
+	#include "NuraDreadFighterF/Sword/dref_sw1_Installer.event"
+  }
+  ALIGN 4
+  DF_F_Magic:
+  {
+    #include "NuraDreadFighterF/Magic/drem_mg1_Installer.event"
+  }
+  */
+  ALIGN 4
+  ArcherM_Bow: //DerTheVaporeon
+  {
+    #include "Archer/Bow/Bow_Installer.event"
+  }
+  ALIGN 4
+  ArcherM_Ballista: //vanilla
+  {
+    #include "Ballista/Ballista_M_Installer.event"
+  }
+  ALIGN 4
+  ArcherM_Unarmed: //DerTheVaporeon
+  {
+    #include "Archer/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  ArcherF_Bow: //DerTheVaporeon
+  {
+    #include "Archer_F/Bow/Bow_Installer.event"
+  }
+  ALIGN 4
+  ArcherF_Unarmed: //DerTheVaporeon
+  {
+    #include "Archer_F/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  SniperM_Bow: //Nuramon
+  {
+    #include "Sniper/Bow/Bow_Installer.event"
+  }
+  ALIGN 4
+  SniperM_Unarmed: //Nuramon
+  {
+    #include "Sniper/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  SniperF_Bow: //Nuramon
+  {
+    #include "Sniper_F/Bow/Bow_Installer.event"
+  }
+  ALIGN 4
+  SniperF_Unarmed: //Nuramon
+  {
+    #include "Sniper_F/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  BowKnight_Bow: //Spud
+  {
+	#include "BowKnight/Bow/Bow_Installer.event"
+  }
+  ALIGN 4
+  BowKnight_Unarmed: //Spud
+  {
+	#include "BowKnight/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  PegKnight_Lance: //OreoStyx
+  {
+	#include "PegKnight/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  PegKnight_Unarmed: //OreoStyx
+  {
+	#include "PegKnight/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  FalcoKnight_Lance: //TBA
+  {
+	#include "Falcoknight/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  FalcoKnight_Unarmed: //TBA
+  {
+	#include "Falcoknight/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  DracoKnight_Lance: //Feaw
+  {
+	#include "Dracoknight/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  DracoKnight_Unarmed: //Feaw
+  {
+	#include "Dracoknight/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  WyvernRider_Axe: //eCut
+  {
+	#include "WyvernRider/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  WyvernRider_Handaxe: //eCut
+  {
+	#include "WyvernRider/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  WyvernRider_Unarmed: //eCut
+  {
+	#include "WyvernRider/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  WyvernLord_Axe: //Nuramon
+  {
+	#include "WyvernLord/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  WyvernLord_Handaxe: //Nuramon
+  {
+	#include "WyvernLord/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  WyvernLord_Unarmed: //Nuramon
+  {
+	#include "WyvernLord/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Thief_Sword: //Eldritch Abomination
+  {
+	#include "Thief/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  Thief_Unarmed: //Eldritch Abomination
+  {
+    #include "Thief/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  ThiefF_Sword: //Eldritch Abomination
+  {
+	#include "Thief_F/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  ThiefF_Unarmed: //Eldritch Abomination
+  {
+    #include "Thief_F/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  RogueF_Sword:
+  {
+	#include "Rogue_F/Sword_Installer.event"
+  }
+  ALIGN 4
+  RogueF_Unarmed:
+  {
+    #include "Rogue_F/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Rogue_Sword:
+  {
+	#include "Rogue/Sword_Installer.event"
+  }
+  ALIGN 4
+  Rogue_Unarmed:
+  {
+    #include "Rogue/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Woodcutter_Axe: //DerTheVaporeon
+  {
+	#include "Woodcutter/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Woodcutter_Handaxe: //DerTheVaporeon
+  {
+	#include "Woodcutter/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Woodcutter_Unarmed: //DerTheVaporeon
+  {
+	#include "Woodcutter/Disarmed/Disarmed_Installer.event"
+  }
+  ALIGN 4
+  Axeman_Axe: //Leo_link
+  {
+	#include "Axeman/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Axeman_Handaxe: //Leo_link
+  {
+	#include "Axeman/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Axeman_Unarmed: //Leo_link
+  {
+	#include "Axeman/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Highlander_Axe:
+  {
+	#include "Barbarian/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Highlander_Handaxe:
+  {
+	#include "Barbarian/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Highlander_Bow:
+  {
+	#include "Barbarian/Bow/Bow_Installer.event"
+  }
+  ALIGN 4
+  Highlander_Unarmed:
+  {
+	#include "Barbarian/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Brigand_Axe: //Leo_link
+  {
+	#include "Brigand/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Brigand_Handaxe: //Leo_link
+  {
+	#include "Brigand/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Brigand_Unarmed: //Leo_link
+  {
+	#include "Brigand/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Pirate_Axe: //2WB
+  {
+	#include "Pirate/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Pirate_Handaxe: //2WB
+  {
+	#include "Pirate/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Pirate_Unarmed: //2WB
+  {
+	#include "Pirate/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  PirateF_Axe: //Nuramon
+  {
+	#include "Pirate_F/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  PirateF_Handaxe: //Nuramon
+  {
+	#include "Pirate_F/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  PirateF_Unarmed: //Nuramon
+  {
+	#include "Pirate_F/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Zerker_Axe:
+  {
+	#include "BerserkerM/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Zerker_Handaxe:
+  {
+	#include "BerserkerM/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Zerker_Unarmed:
+  {
+	#include "BerserkerM/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  ZerkerF_Axe:
+  {
+	#include "BerserkerF/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  ZerkerF_Handaxe:
+  {
+	#include "BerserkerF/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  ZerkerF_Unarmed:
+  {
+	#include "BerserkerF/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Mage_Unarmed: //L95, Leo_link
+  {
+	#include "Mage/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  FMage_Unarmed: //HGS, Obsidian_Daddy
+  {
+	#include "Mage_F/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Mage_Magic: //L95, Leo_link
+  {
+	#include "Mage/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  FMage_Magic: //HGS, Obsidian_Daddy
+  {
+	#include "Mage_F/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Sage_Magic: //Levin64, Nuramon
+  {
+	#include "Sage/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Sage_Staff: //Levin64, Nuramon
+  {
+    #include "Sage/Staff/Staff_Installer.event"
+  }
+  ALIGN 4
+  FSage_Sword: //HGS, JonoTheRed
+  {
+	#include "Priestess/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  FSage_Staff: //HGS, JonoTheRed
+  {
+    #include "Priestess/Staff/Staff_Installer.event"
+  }
+  ALIGN 4
+  FSage_Magic: //HGS, JonoTheRed
+  {
+	#include "Priestess/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Cleric_Staff: //HGS, flasuban
+  {
+	#include "Cleric/Staff/Staff_Installer.event"
+  }
+  ALIGN 4
+  Cleric_Unarmed: //HGS, flasuban
+  {
+	#include "Cleric/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Saint_Staff: //Melia, Epicer, Feier
+  {
+	#include "Saint/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Saint_Unarmed: //Melia, Epicer, Feier
+  {
+	#include "Saint/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Bishop_Staff: //Eldritch Abomination, Epicer
+  {
+	#include "Bishop/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Bishop_Unarmed: //Eldritch Abomination, Epicer
+  {
+	#include "Bishop/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Witch_Magic: //HGS
+  {
+	#include "Witch/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Witch_Staff: //HGS
+  {
+	#include "Witch/Staff/Staff_Installer.event"
+  }
+  ALIGN 4
+  NuibabaWitch_Magic: //Nuramon
+  {
+	#include "Witch/NuibabaMagic/Magic_Installer.event"
+  }
+  ALIGN 4
+  NuibabaWitch_Staff: //Nuramon
+  {
+	#include "Witch/NuibabaStaff/Staff_Installer.event"
+  }
+  ALIGN 4
+  RineaWitch_Magic: //Nuramon
+  {
+	#include "Vestal_Rinea/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  RineaWitch_Staff: //Nuramon
+  {
+	#include "Vestal_Rinea/Staff/Staff_Installer.event"
+  }
+  ALIGN 4
+  Shaman_Magic:
+  {
+	#include "Shaman/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Shaman_Staff:
+  {
+	#include "Shaman/Staff/Staff_Installer.event"
+  }
+  ALIGN 4
+  Arcanist_Magic: //Nuramon
+  {
+	#include "Arcanist/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Arcanist_Staff: //Nuramon
+  {
+	#include "Arcanist/Staff/Staff_Installer.event"
+  }
+  ALIGN 4
+  Cantor_Magic: //Nuramon
+  {
+	#include "Cantor/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Cantor_Staff: //Nuramon
+  {
+	#include "Cantor/Staff/Staff_Installer.event"
+  }
+  ALIGN 4
+  Jedah_Magic: //Nuramon
+  {
+	#include "Jedah/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Jedah_Staff: //Nuramon
+  {
+	#include "Jedah/Staff/Staff_Installer.event"
+  }
+  ALIGN 4
+  Berkut1Lance: //Teraspark
+  {
+    #include "Berkut/Lance/Lance_Installer.event"
+    
+    PUSH
+        AnimTableEntry(BerkutT2Lance)
+        WORD 0 0 0
+        POIN Anim_Lance_sectiondata
+        POIN Anim_Lance_framedata
+        POIN Anim_Lance_rtl Anim_Lance_ltr Anim_Lance_pal
+    POP
+  }
+  ALIGN 4
+  Berkut1Unarmed: //Teraspark
+  {
+    #include "Berkut/Unarmed/Unarmed_Installer.event"
+    PUSH
+        AnimTableEntry(BerkutT2Unarmed)
+        WORD 0 0 0
+        POIN Anim_Unarmed_sectiondata
+        POIN Anim_Unarmed_framedata
+        POIN Anim_Unarmed_rtl Anim_Unarmed_ltr Anim_Unarmed_pal
+    POP
+  }
+  //Fiend is lance locked for now
+  ALIGN 4
+  Fiend_Lance: //Nuramon
+  {
+	#include "Fiend/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  Fiend_Unarmed: //Nuramon
+  {
+	#include "Fiend/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  WhiteDragon_Anim: //Vanilla
+  {
+	#include "WhiteDragon/Monster/Monster_Installer.event"
+  }
+  
+  //We can fit all human classes in the vanilla anim space
+  PROTECT 0xEDFFE0 0xEDFFFF
+
+POP
+  
+  ALIGN 4
+  Revenant_Anim: //Vanilla
+  {
+	#include "Revenant/Monster/Monster_Installer.event"
+  }
+  ALIGN 4
+  Entombed_Anim: //Vanilla
+  {
+	#include "Entombed/Monster/Monster_Installer.event"
+  }
+  ALIGN 4
+  Bonewalker_SwordAnim: //Vanilla
+  {
+	#include "Bonewalker/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  Bonewalker_LanceAnim: //Vanilla
+  {
+	#include "Bonewalker/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  Bonewalker_BowAnim: //Vanilla
+  {
+	#include "Bonewalker/Bow/Bow_Installer.event"
+  }
+  ALIGN 4
+  Bonewalker_UnarmedAnim: //Vanilla
+  {
+	#include "Bonewalker/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Wight_SwordAnim: //Teraspark
+  {
+	#include "Wight/Sword/Sword_Installer.event"
+  }
+  ALIGN 4
+  Wight_LanceAnim: //Teraspark
+  {
+	#include "Wight/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  Wight_BowAnim: //Teraspark
+  {
+	#include "Wight/Bow/Bow_Installer.event"
+  }
+  ALIGN 4
+  Wight_UnarmedAnim: //Teraspark
+  {
+	#include "Wight/Unarmed/Unarmed_Installer.event"
+  }  
+  ALIGN 4
+  Bael_Anim: //Vanilla
+  {
+	#include "Bael/Monster/Monster_Installer.event"
+  }
+  ALIGN 4
+  ElderBael_Anim: //Vanilla
+  {
+	#include "ElderBael/Monster/Monster_Installer.event"
+  }  
+  ALIGN 4
+  Hellhound_Anim: //Vanilla
+  {
+	#include "Hellhound/Monster/Monster_Installer.event"
+  }
+  ALIGN 4
+  Kerberos_Anim: //Vanilla
+  {
+	#include "Kerberos/Monster/Monster_Installer.event"
+  }  
+  ALIGN 4
+  Cyclops_Axe: //Vanilla
+  {
+	#include "Cyclops/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Cyclops_Handaxe: //Vanilla
+  {
+	#include "Cyclops/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Cyclops_Unarmed: //Vanilla
+  {
+	#include "Cyclops/Unarmed/Unarmed_Installer.event"
+  }  
+  ALIGN 4
+  Tarvos_Axe: //Vanilla
+  {
+	#include "Tarvos/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Tarvos_Handaxe: //Vanilla
+  {
+	#include "Tarvos/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Tarvos_Unarmed: //Vanilla
+  {
+	#include "Tarvos/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Chiron_Axe: //Vanilla
+  {
+	#include "Chiron/Axe/Axe_Installer.event"
+  }
+  ALIGN 4
+  Chiron_Handaxe: //Vanilla
+  {
+	#include "Chiron/Handaxe/Handaxe_Installer.event"
+  }
+  ALIGN 4
+  Chiron_Bow: //Vanilla
+  {
+	#include "Chiron/Bow/Bow_Installer.event"
+  }
+  ALIGN 4
+  Chiron_Unarmed: //Vanilla
+  {
+	#include "Chiron/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Mogall_Tackle: //Epicer
+  {
+	#include "Mogall/Monster/Monster_Installer.event"
+  }
+  ALIGN 4
+  Mogall_Magic: //Vanilla
+  {
+	#include "Mogall/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  ArchMogall_Tackle: //Epicer
+  {
+	#include "ArchMogall/Monster/Monster_Installer.event"
+  }
+  ALIGN 4
+  ArchMogall_Magic: //Vanilla
+  {
+	#include "ArchMogall/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Gorgon_Magic: //Vanilla
+  {
+	#include "Gorgon/Magic/Magic_Installer.event"
+  }
+  ALIGN 4
+  Gargoyle_Lance: //Vanilla
+  {
+	#include "Gargoyle/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  Gargoyle_Unarmed: //Vanilla
+  {
+	#include "Gargoyle/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Deathgoyle_Lance: //L95, Teraspark
+  {
+	#include "Deathgoyle/Lance/Lance_Installer.event"
+  }
+  ALIGN 4
+  Deathgoyle_Unarmed: //L95, Teraspark
+  {
+	#include "Deathgoyle/Unarmed/Unarmed_Installer.event"
+  }
+  ALIGN 4
+  Necrodragon_BreathAnim: //vanilla
+  {
+	#include "Necrodragon/Necrodragon_Installer.event"
+  }
+  ALIGN 4
+  //Nura, L95
+  Duma_Installer:
+  {
+    #include "Duma/Duma_Installer.event"
+  }
+
+
+PUSH
+    ORG $C00000
+    BYTE $C4 //banim_number (CHANGE FOR FINAL REORG)
+    
+    AnimTableEntry(0xC5) //end
+    WORD 0 0 0 0 0 0 0 0
+    AnimTableEntry(0xC6) //end
+    WORD 0 0 0 0 0 0 0 0
+    AnimTableEntry(0xC7) //end
+    WORD 0 0 0 0 0 0 0 0
+    AnimTableEntry(0xC8) //end
+    WORD 0 0 0 0 0 0 0 0
+    AnimTableEntry(0xC9) //end
+    WORD 0 0 0 0 0 0 0 0
+
+POP
+
+//And finally, add guards for the anim table
+  PROTECT 0xC00000 0xC00007
