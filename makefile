@@ -19,10 +19,11 @@ else
 endif
 
 SOURCE_ROM			:= $(realpath .)/FE8_clean.gba
-TARGET_ROM			:= $(realpath .)/Dist/Build_0.gba
-TARGET_SYM			:= $(realpath .)/Dist/Build_0.sym
+TARGET_ROM			:= $(realpath .)/Dist/SacredEchoes.gba
+TARGET_UPS			:= $(realpath .)/Dist/SacredEchoes.ups
+TARGET_SYM			:= $(realpath .)/Dist/SacredEchoes.sym
 DIST_FOLDER			:= $(realpath .)/Dist
-MAIN_EVENT			:= $(realpath .)/Buildfile.event
+MAIN_EVENT			:= $(realpath .)/Buildfile_EN.event
 EA					:= $(realpath .)/Tools/EventAssembler
 EADEP				:= $(realpath .)/Tools/EventAssembler/ea-dep$(EXE)
 COLORZCORE 			:= $(realpath .)/Tools/EventAssembler/ColorzCore$(EXE)
@@ -132,17 +133,42 @@ $(TEXT_INSTALLER) $(TEXT_DEFINITIONS): $(TEXT_MAIN) $(ALL_TEXTFILES)
 %.bin:
 	: do nothing for $@
 
-
 include Wizardry.mk
 
-hack_es: LANGUAGE := Spanish
+hack_debug: MAIN_EVENT	:= $(realpath .)/DebugBuildfile.event
+hack_debug: TARGET_ROM	:= $(realpath .)/Dist/SacredEchoesDEBUG.gba
+hack_debug: TARGET_UPS	:= $(realpath .)/Dist/SacredEchoesDEBUG.ups
+hack_debug: TARGET_SYM	:= $(realpath .)/Dist/SacredEchoesDEBUG.sym
+hack_debug: hack
+
+hack_es: LANGUAGE	:= Spanish
+hack_es: MAIN_EVENT	:= $(realpath .)/Buildfile_ES.event
+hack_es: TARGET_ROM	:= $(realpath .)/Dist/SacredEchoes_ES.gba
+hack_es: TARGET_UPS	:= $(realpath .)/Dist/SacredEchoes_ES.ups
+hack_es: TARGET_SYM	:= $(realpath .)/Dist/SacredEchoes_ES.sym
 hack_es: hack
 
-hack_fr: LANGUAGE := French
+hack_fr: LANGUAGE	:= French
+hack_fr: MAIN_EVENT	:= $(realpath .)/Buildfile_FR.event
+hack_fr: TARGET_ROM	:= $(realpath .)/Dist/SacredEchoes_FR.gba
+hack_fr: TARGET_UPS	:= $(realpath .)/Dist/SacredEchoes_FR.ups
+hack_fr: TARGET_SYM	:= $(realpath .)/Dist/SacredEchoes_FR.sym
 hack_fr: hack
 
-hack_pt: LANGUAGE := PT-BR
+hack_pt: LANGUAGE	:= PT-BR
+hack_pt: MAIN_EVENT	:= $(realpath .)/Buildfile_PT-BR.event
+hack_pt: TARGET_ROM	:= $(realpath .)/Dist/SacredEchoes_PT-BR.gba
+hack_pt: TARGET_UPS	:= $(realpath .)/Dist/SacredEchoes_PT-BR.ups
+hack_pt: TARGET_SYM	:= $(realpath .)/Dist/SacredEchoes_PT-BR.sym
 hack_pt: hack
+
+# Actual text translation for ZH is handled by a different team
+hack_zh: LANGUAGE	:= English
+hack_zh: MAIN_EVENT	:= $(realpath .)/Buildfile_ZH.event
+hack_zh: TARGET_ROM	:= $(realpath .)/Dist/SacredEchoes_ZH_base.gba
+hack_zh: TARGET_UPS	:= $(realpath .)/Dist/SacredEchoes_ZH_base.ups
+hack_zh: TARGET_SYM	:= $(realpath .)/Dist/SacredEchoes_ZH_base.sym
+hack_zh: hack
 
 clean:
 	@rm -rf Dist

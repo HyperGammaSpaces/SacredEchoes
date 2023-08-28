@@ -1,5 +1,20 @@
 #define LANGUAGE_PT 0x4
 #define __LANGUAGE__ LANGUAGE_PT
 
-#include "Buildfile.event"
+#ifdef _FE8_
 
+	#include "EAstdlib.event"
+	#include "./Definitions/_Master_Definition_Installer.event"
+
+	ORG EndSpace
+	//Text installer first for ID definitions
+	TextSpace:
+	MESSAGE "Installing PT-BR text"
+	#include "Text/_PT-BR/InstallTextData.event"
+	MESSAGE Text space used is__ (currentOffset - TextSpace)
+
+	#include "Buildfile.event"
+
+#else
+	ERROR You are not assembling FE8 events!
+#endif

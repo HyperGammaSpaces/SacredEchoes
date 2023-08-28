@@ -1,5 +1,20 @@
 #define LANGUAGE_FR 0x3
 #define __LANGUAGE__ LANGUAGE_FR
 
-#include "Buildfile.event"
+#ifdef _FE8_
 
+	#include "EAstdlib.event"
+	#include "./Definitions/_Master_Definition_Installer.event"
+
+	ORG EndSpace
+	//Text installer first for ID definitions
+	TextSpace:
+	MESSAGE "Installing French text"
+	#include "Text/_French/InstallTextData.event"
+	MESSAGE Text space used is__ (currentOffset - TextSpace)
+
+	#include "Buildfile.event"
+
+#else
+	ERROR You are not assembling FE8 events!
+#endif

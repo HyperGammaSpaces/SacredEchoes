@@ -2,5 +2,21 @@
 #define __LANGUAGE__ LANGUAGE_ZH
 #define CHAPTER_NAMES_AS_IMG True
 
-#include "Buildfile.event"
+#ifdef _FE8_
 
+	#include "EAstdlib.event"
+	#include "./Definitions/_Master_Definition_Installer.event"
+
+	ORG EndSpace
+
+	//Text installer first for ID definitions
+	TextSpace:
+		MESSAGE "Installing English text"
+		#include "Text/_English/InstallTextData.event"
+		MESSAGE Text space used is__ (currentOffset - TextSpace)
+
+	#include "Buildfile.event"
+
+#else
+	ERROR You are not assembling FE8 events!
+#endif
