@@ -4,62 +4,7 @@ ExitWithR3:
     bx r3
     .align
     
-.global DrawHPCostForSpell
-.type   DrawHPCostForSpell, function
 
-@hooks at 168A4 with r3
-
-DrawHPCostForSpell:
-    ldr     r0, [r4, #0x8]		@ weapon ability 1
-    mov     r2, r0
-    mov     r1, #0x2			@ magic
-    and     r2, r1
-    cmp     r2, #0x0
-    bne     DrawItemUses_Magic
-    mov     r2, r0
-    mov     r1, #0x4			@ staff
-    and     r2, r1
-    cmp     r2, #0x0
-    bne     DrawItemUses_Magic
-
-    DrawItemUses_NoMagicCost:
-    mov     r2, r0
-    mov     r1, #0x8			@ unbreakable
-    and     r2, r1
-    cmp     r2, #0x0
-    bne     DrawItemUses_NoUses
-    asr     r2, r6, #0x8
-    b       DrawItemUses_Return
-
-    DrawItemUses_Magic:
-    mov     r1, #0x6
-    ldrb    r2, [r4, r1]
-    cmp     r2, #0x38           @ item id (since table doesn't cover the whole item slot list)
-    blt     DrawItemUses_NoMagicCost
-        mov     r1, #0x38
-        sub     r1, r2, r1
-        cmp     r1, #0x22
-        bgt     DrawItemUses_NoMagicCost
-            ldr     r2, =SpellCostList
-            lsl     r1, r1, #0x1
-            add     r2, r2, r1
-            add     r2, r2, #0x1
-            ldrb    r2, [r2]    @ cost
-    b   DrawItemUses_Return
-
-    DrawItemUses_NoUses:
-        ldr     r0, =0x080168B8+1
-        bx      r0
-
-DrawItemUses_Return:
-    mov     r3, r7
-    add     r3, #0x16
-    ldr     r0, =0x080168B0+1
-    bx      r0
-
-    .align
-    .ltorg
-    
 .global GetUnitRangeMask_Fix
 .type   GetUnitRangeMask_Fix, function
 

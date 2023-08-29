@@ -4,9 +4,6 @@
 
 PUSH
 
-    ORG $168A4
-	jumpToHack(DrawHPCostForSpell)
-    
     ORG $171EC
 	jumpToHack(GetUnitRangeMask_Fix)
     

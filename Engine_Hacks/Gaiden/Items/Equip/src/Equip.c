@@ -4,3 +4,4 @@
 #include "StatGetters.c" // Equipment stat bonuses
 #include "MSS.c" // Modular stat screen equip display
 #include "ItemMenu.c" // Item menu additions
+#include "EquipMenu.c" // Equip/Unequip menu

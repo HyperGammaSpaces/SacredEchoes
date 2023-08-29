@@ -23,27 +23,8 @@ PUSH
 	BYTE $9B
 	
 	//Text ID for the weapon type thing
-	//ORG $1EA3C
-	//SHORT 0x0529
-	
-	//Don't draw uses for unbreakables
-	ORG $16A60
-	//BL($A3B8)
-	SHORT $1C01 $4640
-	BL($4004) //Text_DrawString
-	SHORT $68B0 $2308 $4018 $2800
-	SHORT $D124 //BNE($16ABC) //$16A70
-	SHORT $2400 $2D01 $D100 $2401
-	SHORT $1C38 $3018 $1C21 $2216
-	BL($4B0C) //DrawSpecialUIChar
-	SHORT $2401 $2D01 $D000 $2402
-	SHORT $1C38 $3016 $464B $121A $1C21
-	BL($4B94) //DrawUINumberOr2Dashes
-	SHORT $1C39 $311C $7D32 $1C08 $1C21
-	BL($4B94) //DrawUINumberOr2Dashes
-	B($16ABC)
-	ORG $169FC
-	B($16A06)
+	// ORG $1EA3C
+	// SHORT 0x0529
 	
 	//Disable Link Arena
 	ORG $AB90E

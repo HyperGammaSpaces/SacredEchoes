@@ -11,49 +11,52 @@ Specifically:
 - Magic costs HP to cast.
   - When out of HP to cast a spell, that spell is disarmed until HP is restored enough to cast it.
   - Unit HP is updated visually when casting spells with cost.
+- Equippable accessories like shields and rings which grant different effects inside and outside of battle.
 - Hit and Avoid calcs are adjusted to mirror Echoes calcs.
-  - Magic has fixed hitrate and is not affected by Skill or terrain
-  - CON no longer factors into weapon weight/AS calcs - a Steel Lance will slow the user by 1 point no matter who uses it
+  - Magic has fixed hitrate and is not affected by Skill or terrain.
+  - CON no longer factors into weapon weight/AS calcs - a Steel Lance will slow the user by 1 point no matter who uses it.
   - The doubling threshold is now 2 AS instead of 4 AS.
 - Effective weapons deal (3x Weapon Might + 5) damage (as compensation for the overall lower weapon might in Valentia's combat system).
-- The Weapon Triangle is in effect for equipped weapons (so a Sword has no disadvantage against a Lance, but an Iron Sword has disadvantage against any type of Lance)
-  - The Soldier line gets access to additional weapon types as it progresses. (Promotion to Knight adds Axes, and promotion to Baron adds Swords)
+- The Weapon Triangle is in effect for equipped weapons, so a Sword has no disadvantage against a Lance, but an Iron Sword has disadvantage against any type of Lance.
+  - The Soldier line gets access to additional weapon types as it progresses. (Promotion to Knight adds Axes, and promotion to Baron adds Swords).
   - Bows suffer from weapon triangle disadvantage at point-blank range, with the same penalties as vanilla FE8 (-1 Atk, -15 Hit). There is also a 5% falloff to Hit for each tile over 2-range. Place your archers carefully!
 - Promotion brings units up to the new class's bases rather than giving promo gains. Changing class early is recommended to make the most of these boosts!
-- Promotion is no longer item based but is done through the Mila option in the menu when they reach promotion level, and when the unit is standing next to a Mila statue on the map. Mila statues are available in repeatable dungeon maps which you can replay as needed (Thief Shrine, Deliverance Hideout, and Seabound Shrine, for example). You will see a notification when a unit has reached the level they can promote at, and the unit will have a Mila icon beside their name on the statscreen.
-  - Class promotions become available at the same levels as in SoV. Female archers (not present in SoV) follow the same promotion levels as male. The playable Thief class promotes at level 12.
+- Promotion is no longer item-based but is done through the Mila option in the menu when they reach promotion level, and when the unit is standing next to a Mila statue on the map. Mila statues are available in repeatable dungeon maps which you can replay as needed (Thief Shrine, Deliverance Hideout, and Seabound Shrine, for example). You will see a notification when a unit has reached the level they can promote at, and the unit will have a Mila icon beside their name on the statscreen.
+  - Class promotions become available at the same levels as in SoV.
+    - Female archers (not present in SoV) follow the same promotion levels as male.
+    - The playable Thief class promotes at level 12.
   - As in Gaiden/Echoes, Dread Fighters (called "Dreadknight" in-game for text space reasons) can promote back into Villager, so units in the Mercenary class line can be further customized.
   - Additionally, the Priestess class that promotes from female Mages can now promote into a magic-wielding Dread Fighter. Female Dread Fighters can also reclass into female Villagers.
-- Villager classes can promote into any of 5 first-tier classes
+- Villager classes can promote into any of 5 first-tier classes:
   - Villager_F: Cleric, Peg Knight, Mage, Cavalier, Archer
   - Villager_M: Archer, Mage, Soldier, Cavalier, Mercenary
     - Battle palettes have been expanded to cover full promotions for each branch.
-- Units learn spells at particular levels rather than spells existing as inventory items
+- Units learn spells at particular levels rather than spells existing as inventory items.
   - Invoke can be used to summon multiple units onto the field.
   - Warp/Rescue use their GBAFE ranges. (Mag/2)
   - Expel has been buffed to 100% accuracy but only affects monster classes. It will hit all enemies in Mag/2 range which are of a Monster class type, and reduce them to 1 HP.
-  - Promoted magic units will learn their whole unpromoted spell list. (This is why Mage/Cleric promotion levels are so high)
+  - Promoted magic units will learn their whole unpromoted spell list. (This is why Mage/Cleric promotion levels are so high.)
 - A working world map that you can explore, with two lords you can alternate between after a certain point in the story.
 - A reworked support system with no limits (press R on the statscreen to see the bonuses).
 - Lion Heads/Sacred Springs which can be visited in the repeatable maps to gain stat boosts, experience, and even revive dead units...
 
 Optional QOL fixes to GBAFE are included:
 
-- Includes Talk and Support Fixes that don't end the unit's turn
+- Includes Talk and Support Fixes that don't end the unit's turn.
 - Includes modern L-button cycling to quickly jump between all units on the map regardless of allegiance.
-- Includes HP bars and effective weapon notices on the map
-- Includes danger zone highlighting with Select button
-- Includes battle stats and hit effects with animations off (with a UI inspired by the original Gaiden battle frame)
+- Includes HP bars and effective weapon notices on the map.
+- Includes danger zone highlighting with Select button.
+- Includes battle stats and hit effects with animations off (with a UI inspired by the original Gaiden battle frame).
 - Includes the option to play on Casual mode, which can be selected at game start or toggled during gameplay.
 - The Guide has been updated to include details on the game's mechanics. The doubling threshold is viewable in-game by checking the help text of the Speed stat on the statscreen.
 
 #Promotion levels
 
-When a unit is at or above this level while in one of these classes, they can promote when standing next to a Mila statue. The Thief class (not in SoV) promotes to Rogue. The Priestess (non-Celica) can now promote to Dread Fighter. The Woodcutter (not in SoV) promotes to Axeman, which promotes to Highlander.
+When a unit is at or above this level while in one of these classes, they can promote when standing next to a Mila statue. The Thief class (not in SoV) promotes to Rogue. The Priestess (non-Celica) can now promote to Dread Fighter. Any Dread Fighter may "promote" back to a Villager if desired. The Woodcutter (not in SoV) promotes to Axeman, which promotes to Highlander.
 
 - Level 3: Villager
 - Level 7: Cavalier, Mercenary, Archer, Soldier, Woodcutter
-- Level 10: Paladin, Armor Knight, Myrmidon, Dread Fighter, Sniper, Axeman
+- Level 10: Paladin, Myrmidon, Dread Fighter, Sniper, Armor Knight, Axeman
 - Level 12: Mage (M), Priestess (non-Celica), Pegasus Knight, Cleric, Thief
 - Level 14: Mage (F)
 - Item promotion only: Alm, Celica
@@ -210,7 +213,7 @@ Spell lists are largely the same as SoV.
 
 For compatibility with Reverse Recruitment mods, anyone not listed here will use a very limited default spell list if put into a magic class. Conrad shares a spell list with Nomah, and Atlas shares a spell list with Hyas.
 
-  
+
 #Class skills
 
 This hack does not make use of the skill system, but there are some skills which carry over from Echoes.
@@ -226,6 +229,7 @@ This hack does not make use of the skill system, but there are some skills which
 - Sniper/Bow Knight: Bowrange +2 - Adds 2 extra range when attacking with a bow.
 - Falcoknight: Slayer - Grants unit's attacks effective damage against monsters.
 - Alm/Celica/Rogues: Locktouch - Allows unit to open chests and doors for free.
+- Certain boss characters: Pact - Negates HP cost for spells. Indicated on the first page of the unit's status screen.
 
 #Supports
 
@@ -241,7 +245,6 @@ While all major bugs have now been addressed, some minor bugs remain. A V1.1 rel
 - Some glitches may occur when hard-resetting and resuming while in the middle of a player phase action. Choosing "Suspend" from the battle map menu works as intended.
 - (For the above two, if you encounter these issues, please provide me with files to replicate the issue--whether these are savestates or TAS inputs or a .sav file in which the issue persists after resuming the chapter)
 - Some issues with Lukas having a blank item in his inventory upon starting Act 3 have been reported. I think this one will require a Lua script to effectively debug. In the meantime, depositing the blank item should allow you to continue without ill effects.
-- I still don't like that one CG of Alm and Zeke and plan to re-draw it.
 
 #Credits
 
@@ -318,13 +321,13 @@ While all major bugs have now been addressed, some minor bugs remain. A V1.1 rel
 - Pearl for boss conversations in Chapter 16A
 - RandomWizard for boss conversations and text formatting help, and "The Siege" map
 - Levin64 and Tea for story writing assistance and English proofreading
-- The_Burger_King_420, Uzel, and ilmoro for Spanish translation
+- The_Burger_King_420, Uzel, ilmoro, and Aer for Spanish translation
 - marc_ and luciel for Spanish proofreading
 - Snakey1's REDA helpers, Support rework, MSS fixes and event cleanup
-- Pikmin1211 for eventing and enemy placement on "The Warship", "Zofia Harbor", "Invaders Descend" and "The Siege"
+- Pikmin1211 for Equippable Items, eventing and enemy placement on "The Warship", "Zofia Harbor", "Invaders Descend" and "The Siege"
 - ZoramineFae for "The Warship" map
 - Pandan for Fear Mountain map
-- KrashBoomBang for "Unholy Blade", "Shattered Earth" and Sylvan Shrine map
+- KrashBoomBang for "Unholy Blade", "Shattered Earth" and Sylvan Shrine maps
 - Frigid for "Heir of Disgrace", "Maiden of Darkness" and "Breaking the Chains" maps
 - Dancer_A for Grieth's Citadel and Nuibaba's Abode maps, boss conversations
 - Sme for TrapRework and assistance with summoner AI
