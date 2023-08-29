@@ -8937,6 +8937,18 @@ __TEXTPROCESS4D9:
 #incbin ".TextEntries/text_buildfileMogallTackle_Desc.fetxt.dmp"
 setText($4D9, __TEXTPROCESS4D9)
 
+__TEXTPROCESS4DA:
+#incbin ".TextEntries/text_buildfileEquipEquipmentDescription.fetxt.dmp"
+setText($4DA, __TEXTPROCESS4DA)
+
+__TEXTPROCESS4DB:
+#incbin ".TextEntries/text_buildfileUnequipName.fetxt.dmp"
+setText($4DB, __TEXTPROCESS4DB)
+
+__TEXTPROCESS4DC:
+#incbin ".TextEntries/text_buildfileUnequipEquipmentDescription.fetxt.dmp"
+setText($4DC, __TEXTPROCESS4DC)
+
 }
 
 #endif // TEXT_INSTALLER_TEXT_BUILDFILE_TXT

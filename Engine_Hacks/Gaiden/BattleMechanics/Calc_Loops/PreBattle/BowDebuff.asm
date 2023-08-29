@@ -14,7 +14,7 @@ BowDebuff:
     push {lr}
     mov     r4, r0
     mov     r5, r1
-    blh     0x08016B28, r1 @GetUnitEquippedItem
+    blh     0x08016B28, r1 @GetUnitEquippedWeapon
     lsl     r0, r0, #24
     lsr     r0, r0, #24 @ Trims off item uses
     cmp     r0, #0x35 @ballista ID

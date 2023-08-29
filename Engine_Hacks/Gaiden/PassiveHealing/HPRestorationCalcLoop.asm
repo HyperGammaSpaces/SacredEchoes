@@ -126,46 +126,21 @@ HealingItems:
 	mov  r4, r0 @r4 = unit
 	mov  r5, r1 @r5 = heal %
 
-	mov  r2, #1 @counter
-	neg  r2, r2
-
-	HealingItems_Loop:
-	add  r2, #1
-	cmp  r2, #4
-	bgt  HealingItems_GoBack
-
-	lsl  r1, r2, #1
-
-	ldr  r0, =GetItemAttributes
+	ldr  r0, =GetUnitEquippedItem
 	mov  r14, r0
 	mov  r0, r4
-	add  r0, #0x1E
-	add  r0, r0, r1
-	ldrh r0, [r0, #0x0]
+	.short 0xF800
+	ldr  r1, =GetItemAttributes
+	mov  r14, r1
 	.short 0xF800
 
-	@skip checking if equippable
-	mov  r1, #1 @equippable
-	and  r1, r0
-	cmp  r1, #0
-	bne  HealingItems_Loop
-
-	@if we find both boost and heal, break and add the bonus.
-	@if we find heal, break and add the bonus.
+	mov  r2, r0
 	mov  r1, #0x40
 	lsl  r1, r1, #0x10 @bit for heal item
-	and  r1, r0
-	cmp  r1, #0
-	bne  HealingItems_AddBonus
-	@if we find boost, break and don't add.
-        mov  r1, #0x80
-        lsl  r1, r1, #0x10 @bit for boost item
-        and  r0, r1
-        cmp  r0, #0
-        beq  HealingItems_Loop
-        b    HealingItems_GoBack
+	and  r0, r1
+	cmp  r0, #0
+	beq  HealingItems_GoBack
 
-	HealingItems_AddBonus:
 	add  r5, #5
 
 	HealingItems_GoBack:
@@ -176,6 +151,62 @@ HealingItems:
 
 	.align
 	.ltorg
+
+@ HealingItems:
+@ 	push {r4-r5, r14}
+@ 	mov  r4, r0 @r4 = unit
+@ 	mov  r5, r1 @r5 = heal %
+
+@ 	mov  r2, #1 @counter
+@ 	neg  r2, r2
+
+@ 	HealingItems_Loop:
+@ 	add  r2, #1
+@ 	cmp  r2, #4
+@ 	bgt  HealingItems_GoBack
+
+@ 	lsl  r1, r2, #1
+
+@ 	ldr  r0, =GetItemAttributes
+@ 	mov  r14, r0
+@ 	mov  r0, r4
+@ 	add  r0, #0x1E
+@ 	add  r0, r0, r1
+@ 	ldrh r0, [r0, #0x0]
+@ 	.short 0xF800
+
+@ 	@skip checking if equippable
+@ 	mov  r1, #1 @equippable
+@ 	and  r1, r0
+@ 	cmp  r1, #0
+@ 	bne  HealingItems_Loop
+
+@ 	@if we find both boost and heal, break and add the bonus.
+@ 	@if we find heal, break and add the bonus.
+@ 	mov  r1, #0x40
+@ 	lsl  r1, r1, #0x10 @bit for heal item
+@ 	and  r1, r0
+@ 	cmp  r1, #0
+@ 	bne  HealingItems_AddBonus
+@ 	@if we find boost, break and don't add.
+@ 		mov  r1, #0x80
+@ 		lsl  r1, r1, #0x10 @bit for boost item
+@ 		and  r0, r1
+@ 		cmp  r0, #0
+@ 		beq  HealingItems_Loop
+@ 		b    HealingItems_GoBack
+
+@ 	HealingItems_AddBonus:
+@ 	add  r5, #5
+
+@ 	HealingItems_GoBack:
+@ 	mov  r0, r5
+@ 	pop  {r4-r5}
+@ 	pop  {r1}
+@ 	bx   r1
+
+@ 	.align
+@ 	.ltorg
 
 @r0=x r1=y
 GetUnitAtCoords:

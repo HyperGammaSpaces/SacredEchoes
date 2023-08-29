@@ -1,4 +1,3 @@
-
 .thumb
 
 .macro blh to, reg

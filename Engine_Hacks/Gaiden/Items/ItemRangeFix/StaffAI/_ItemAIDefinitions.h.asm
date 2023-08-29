@@ -59,7 +59,7 @@
             @r0 = unit deployment id
         @returns:
             @r0 = unit pointer
-    .set GetUnitEquippedItem,          0x08016B28
+    .set GetUnitEquippedWeapon,        0x08016B28
         @ arguments: r0 = Unit Struct pointer;
         @ returns: r0 = Item Short
     

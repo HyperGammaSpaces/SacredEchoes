@@ -35,39 +35,49 @@ Miracle:
     cmp     r0, r1
     blt     End             @not gonna die
 
-    @check for Miracle
-    mov     r4, r5          @defender data
-    add     r4, #0x1E
-    mov     r2, #0x0
-    ItemCheckLoop:
-        ldrb    r1, [r4, r2]
-        cmp     r1, #PrayerRingID
-        beq     DoMiracle
+    @ check for Miracle
+    @ the new way
+    CheckPrayerRing:
+    mov     r0, r5
+    blh     GetUnitEquippedItem
+    cmp     r0, #PrayerRingID
+    beq     DoMiracle
+    b       End
+
+
+    @ the old way
+    @ mov     r4, r5          @defender data
+    @ add     r4, #0x1E
+    @ mov     r2, #0x0
+    @ ItemCheckLoop:
+    @     ldrb    r1, [r4, r2]
+    @     cmp     r1, #PrayerRingID
+    @     beq     DoMiracle
         
-        mov  r0, r1
-        blh  GetItemIdROMStruct
-        mov  r1, #0x8
-        ldr  r0, [r0, r1]    @ item attr bitfield
-        lsl  r1, r1, #0x14   @ passive boost bit
-        and  r1, r0
-        cmp  r1, #0x0
-        bne  End
-        @also check for accessories with passive healing
-        mov  r1, #0x4
-        lsl  r1, r1, #0x14   @ passive heal bit
-        and  r1, r0
-        cmp  r1, #0x0
-        beq  ContinueLoop
-            mov  r1, #1
-            and  r1, r0
-            cmp  r1, #0x0   @ is it a weapon? if not, exit
-            beq  End
+    @     mov  r0, r1
+    @     blh  GetItemIdROMStruct
+    @     mov  r1, #0x8
+    @     ldr  r0, [r0, r1]    @ item attr bitfield
+    @     lsl  r1, r1, #0x14   @ passive boost bit
+    @     and  r1, r0
+    @     cmp  r1, #0x0
+    @     bne  End
+    @     @also check for accessories with passive healing
+    @     mov  r1, #0x4
+    @     lsl  r1, r1, #0x14   @ passive heal bit
+    @     and  r1, r0
+    @     cmp  r1, #0x0
+    @     beq  ContinueLoop
+    @         mov  r1, #1
+    @         and  r1, r0
+    @         cmp  r1, #0x0   @ is it a weapon? if not, exit
+    @         beq  End
         
-    ContinueLoop:
-        add     r2, #0x2
-        cmp     r2, #0xA
-        blt     ItemCheckLoop
-    b   End
+    @ ContinueLoop:
+    @     add     r2, #0x2
+    @     cmp     r2, #0xA
+    @     blt     ItemCheckLoop
+    @ b   End
 
     DoMiracle:
     ldr     r2, [r6]    

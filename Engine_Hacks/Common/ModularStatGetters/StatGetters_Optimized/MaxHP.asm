@@ -4,6 +4,7 @@
 
 .equ GetStatBonus, GetItemHPBonus
 .equ stat_offset, 0x12
+.equ stat_boost_offset, 0x0
 
 @r0 = unit RAM (or stack pocket holding unit struct data)
 prMHPGetter:
@@ -22,36 +23,41 @@ prMHPGetter:
     blh     GetStatBonus
     add     r5, r5, r0
     
-    AddPassiveStatBonus:
+    @ AddPassiveStatBonus:
+    @ mov     r0, r4
+    @ blh     GetUnitItemCount
+    @ mov     r2, #0x0
+    @ mov     r7, r0
+    
+    @ PassiveStatBonusLoop:
+    @ lsl     r0, r2, #0x1
+    @ add     r0, #0x1E
+    @ ldrh    r0, [r4, r0]    @ item id
+    @ mov     r6, r0
+    @ mov     r1, #0xFF
+    @ and     r0, r1
+    @ blh     GetItemIdROMStruct
+    @ mov     r1, #0x8
+    @ ldr     r0, [r0, r1]    @ item attr bitfield
+    @ lsl     r1, r1, #0x14   @ passive boost bit
+    @ and     r1, r0
+    @ cmp     r1, #0x0
+    @ bne     PassiveStatBonus_Found
+    @ add     r2, #0x1
+    @ cmp     r2, r7
+    @ blt     PassiveStatBonusLoop
+    @ b       EnforceMinZero
+    
+    @ PassiveStatBonus_Found:
+    @ mov     r0, r6
+    @ blh     GetStatBonus
+    @ add     r5, r5, r0
+    EquipBonus:
     mov     r0, r4
-    blh     GetUnitItemCount
-    mov     r2, #0x0
-    mov     r7, r0
-    
-    PassiveStatBonusLoop:
-    lsl     r0, r2, #0x1
-    add     r0, #0x1E
-    ldrh    r0, [r4, r0]    @ item id
-    mov     r6, r0
-    mov     r1, #0xFF
-    and     r0, r1
-    blh     GetItemIdROMStruct
-    mov     r1, #0x8
-    ldr     r0, [r0, r1]    @ item attr bitfield
-    lsl     r1, r1, #0x14   @ passive boost bit
-    and     r1, r0
-    cmp     r1, #0x0
-    bne     PassiveStatBonus_Found
-    add     r2, #0x1
-    cmp     r2, r7
-    blt     PassiveStatBonusLoop
-    b       EnforceMinZero
-    
-    PassiveStatBonus_Found:
-    mov     r0, r6
-    blh     GetStatBonus
+    mov     r1, #stat_boost_offset
+    blh     GetEquipmentStatBonus
     add     r5, r5, r0
-    
+
     EnforceMinZero:
     cmp     r5, #0x0
     bge     ReturnStat

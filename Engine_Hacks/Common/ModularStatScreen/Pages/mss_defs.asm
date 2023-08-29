@@ -680,6 +680,9 @@
   lsl     r2, r2, #0x6
   mov     r1, r4
   blh     BgMap_ApplyTsa
+  ldr     r6, =StatScreenStruct
+  ldr     r0, [r6, #0xC]
+  blh     DrawUnitEquippedItem
   ldr     r0, =#0x8205A24     @map of text labels and positions
   blh     DrawStatscreenTextMap
   ldr     r6, =StatScreenStruct
@@ -743,7 +746,11 @@
   
   cmp     r5, #0x0
   bne     SS_DoneEquipHighlightBar
-  
+  b       SkipPool
+
+  .ltorg
+  SkipPool:
+
   SS_ItemBox_GetID:
   ldr     r0, [r6, #0xC]
   add     r0, #0x1E

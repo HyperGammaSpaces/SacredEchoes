@@ -31,12 +31,12 @@ POP
 	
 	ALIGN 4
 	Redone_Slayer:
-	#incbin "Redone_Slayer.dmp"
+	#include "Redone_Slayer.lyn.event"
 	POIN SlayerTable
 	
 	ALIGN 4
 	Redone_Effectiveness:
-	#incbin "Redone_Effectiveness.dmp"
+	#include "Redone_Effectiveness.lyn.event"
 	
 	#define SlayerTableEntry(class_id, type_list, coefficient_times_2) "BYTE class_id coefficient_times_2; SHORT type_list"
 	ALIGN 4

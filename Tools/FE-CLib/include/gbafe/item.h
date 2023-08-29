@@ -9,6 +9,8 @@ typedef u16 Item;
 
 typedef struct ItemData ItemData;
 
+typedef struct ItemStatBonuses ItemStatBonuses;
+
 struct ItemStatBonuses
 {
 	s8 hpBonus;

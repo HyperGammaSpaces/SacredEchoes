@@ -9,7 +9,7 @@ PUSH
     //Make units be able to use both magic and melee animations
     ORG $18A58
     SHORT $B500 //push {lr}
-    BL($16B28) //GetUnitEquippedItem
+    BL($16B28) //GetUnitEquippedWeapon
     BL($1756C) //GetItemAttributes
     SHORT $2102 //mov r1, #2
     SHORT $4008 //and r0, r1
