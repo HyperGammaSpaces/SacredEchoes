@@ -79,7 +79,7 @@ MMBDrawAffinity:
 
 	@ draw palette
 
-	ldr		r0, =WeaponIconsPal
+	ldr		r0, =(WeaponIconsPal+0x20)
 	mov		r1, #0x15
 	lsl		r1, r1, #0x05
 	mov		r2, #0x20
