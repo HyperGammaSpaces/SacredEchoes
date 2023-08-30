@@ -91,5 +91,6 @@
 .equ BWLTable, 0x203E884
 
 .include "Battle/GaidenMagic_Core.asm"
+.include "SetupBattleWeaponData.asm"
 .include "ItemSelectMenu/ItemSelectMenu_Core.asm"
 .include "UnitMenu/UnitMenuCommands.asm"
