@@ -8949,6 +8949,18 @@ __TEXTPROCESS4DC:
 #incbin ".TextEntries/text_buildfileUnequipEquipmentDescription.fetxt.dmp"
 setText($4DC, __TEXTPROCESS4DC)
 
+__TEXTPROCESS4DD:
+#incbin ".TextEntries/text_buildfileRing_UseScreen.fetxt.dmp"
+setText($4DD, __TEXTPROCESS4DD)
+
+__TEXTPROCESS4DE:
+#incbin ".TextEntries/text_buildfileProtector_UseScreen.fetxt.dmp"
+setText($4DE, __TEXTPROCESS4DE)
+
+__TEXTPROCESS4DF:
+#incbin ".TextEntries/text_buildfileShield_UseScreen.fetxt.dmp"
+setText($4DF, __TEXTPROCESS4DF)
+
 }
 
 #endif // TEXT_INSTALLER_TEXT_BUILDFILE_TXT

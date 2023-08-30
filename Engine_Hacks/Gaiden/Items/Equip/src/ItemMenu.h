@@ -6,7 +6,7 @@
 #define glyph_arrowR 0x26
 #define glyph_E_equip 0x35
 
-enum
+/*enum
 {
 	// Item attributes
 
@@ -39,6 +39,6 @@ enum
 	IA_UNTRADEABLE    = (1 << 24),
 	IA_UNSTEALABLE    = (1 << 25),
 
-};
+};*/
 
 void ListItems(Proc* procState);
