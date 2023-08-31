@@ -22,14 +22,14 @@ Evt_TurnBasedEvents:
 	TURN
 	
 LoadSummons:
-	CHECK_EVENTID 0xA
+	CHECK_FLAG 0xA
 	BNE 2 0xC 0x0
 		CameraCursor(Dolth)
 		MapText(Ch4C_3_SummonText)
-		ENUT 0xA
+		FLAG_T 0xA
 		GOTO 3
 	LABEL 2
-	CHECK_EVENTID 0x2 // boss death quote
+	CHECK_FLAG 0x2 // boss death quote
 	BNE 0 0xC 0x0 // branch label 0 if summoner dead
 	COUNTER_CHECK 0 // slot c = counter 0 value
 	SVAL 0x1 2 // number of turns between summons (2)
@@ -41,49 +41,49 @@ LoadSummons:
 	CameraCursor(Dolth) // cam on summoner
 	ENUN
 	STAL 20
-    CAMERA_CENTERED [6,20]
-    CHECK_HARD
-    BNE 0x666 rC r0
-        WarpInReinforcementsAt(DracoSummons,6,20)
-        GOTO 0x667
-    LABEL 0x666
-        WarpInReinforcementsAt(DracoSummons_Hard,6,20)
-    LABEL 0x667
+	CAMERA_CENTERED [6,20]
+	CHECK_ISHARD
+	BNE 0x666 rC r0
+		WarpInReinforcementsAt(DracoSummons,6,20)
+		GOTO 0x667
+	LABEL 0x666
+		WarpInReinforcementsAt(DracoSummons_Hard,6,20)
+	LABEL 0x667
 	EVBIT_T 0x7
-    SetSummonerID(Terror_Necrodragon, 0x81)
-        
-        CheckCurrentHP(Dolth)
-        SMOV r1 0x6
-        BGE 0 r1 rC
-        SSUB slotsParam(r1, rC, r1)
-        SET_HP Dolth
-        STAL 5
+	SetSummonerID(Terror_Necrodragon, 0x81)
+
+		CheckCurrentHP(Dolth)
+		SMOV r1 0x6
+		BGE 0 r1 rC
+		SSUB slotsParam(r1, rC, r1)
+		SET_HP Dolth
+		STAL 5
 	GOTO 0
 
 	LABEL 1
 	// Counter not at value
-	COUNTER_ADD 0 0 // counter 0 ++
+	COUNTER_INC 0 // counter 0 ++
 
 	LABEL 0
 	// event end
 	NoFade
-	ENDA
+	END
 
 Evt_CharacterBasedEvents:
 	CHAR
 
 Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(8,1)
+		Seize(8,1)
 	#endif
 	Seize(9,17)
 	House(0, HouseEvent, 9,1)
 	SecretShop(Act4SecretShop,10,15)
 	LOCA
-	
+
 HouseEvent:
 	HouseEvent(Ch4C_3_HouseText,0x01)
-	ENDA
+	END
 
 Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -97,7 +97,7 @@ Evt_Tutorial:
 	END_MAIN
 
 Evt_Ballista1:
-    BLST [6,8] 0x35
+	BLST [6,8] 0x35
 	BLST
 	ALIGN 4
 
@@ -117,13 +117,13 @@ PlayerPlacement:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [5,1] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [6,1] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [6,2] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Kliff Villager 0x00 Level(1, Ally, 1) [10,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [10,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 
 
 CutsceneUnits:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [7,0] 0x00 0x00 0x1 REDA8R1 [BaseSword, Vulnerary] NoAI
-	UNIT Mae Mage 0x00 Level(1, Ally, 1) [7,0] 0x00 0x00 0x1 REDA9R2 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage 0x00 Level(1, Ally, 1) [7,0] 0x00 0x00 0x1 REDA9R2 [Fire, Vulnerary] NoAI
 	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [7,0] 0x00 0x00 0x1 REDA10R2 [Fire, Vulnerary] NoAI
 	UNIT
 
@@ -154,7 +154,7 @@ EnemyUnits_Hard:
 	UNIT Rigel_Merc DreadFighter Dolth Level(1, Enemy, True) [3,15] DropItem 0x00 0x0 0x00 [BraveSword,Elixir] NoAI
 	UNIT Rigel_Merc DreadFighter Dolth Level(4, Enemy, True) [13,15] 0x00 0x00 0x0 0x00 [Lancereaver] AttackInRangeAI
 	UNIT
-	
+
 DracoSummons:
 	UNIT Terror_Necrodragon Necrodragon Dolth Level(6, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R20 [FireFang] MonsterAI
 	UNIT Terror_Necrodragon Necrodragon Dolth Level(3, Enemy, True) [6,20] 0x00 0x00 0x1 REDA6R19 [FireFang] MonsterAI
@@ -172,43 +172,43 @@ DracoSummons_Hard:
 Evt_BeginningScene:
 	MUSCSLOW SongID_Env_Lava
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x4C03 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x4C03
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
+	CHECK_ISHARD
+	BEQ 0x4C03 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x4C03
+	LOAD_S2 0x1
+	ENUN
 	CAMERA_CENTERED [7,0]
-	FADU 2
+	FADEOUT 2
 	EVBIT_T 0x9
-	LOAD2 0x0 CutsceneUnits
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
 	EVBIT_F 0x9
 	STAL 20
 	CameraCursor(Dolth)
 	MapText(Ch4C_3_OpeningText)
-	FADI 5
-	
-	CLEA 0x0
-	LOAD3 0x0 PlayerPlacement 
+	FADEIN 5
+
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Evt_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4C3Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter4C3Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
-    STAL 5
-	CLEE 0x0
-	
-	MUSC SongID_Victory
-	SetBackground(0x12,5)
+	FADEIN 2
+	STAL 5
+	REMOVEALL_RED
+
+	MUSIC SongID_Victory
+	SetBackground(Castle_Hall_4,5)
 	BackgroundText(Ch4C_3_EndingText)
-    MUSCMID SongID_Silence
-	FADI 2
-	MNCH 0x43
-	ENDA
+	MUSCMID SongID_Silence
+	FADEIN 2
+	GOTO_CHAPTER 0x43
+	END

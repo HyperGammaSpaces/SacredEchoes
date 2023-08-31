@@ -1,64 +1,64 @@
-#define MournQuoteAFEVS "AFEV gGrayMourned GrayMournQuotes gGrayDied ; AFEV gTobinMourned TobinMournQuotes gTobinDied ; AFEV gClairMourned ClairMournQuotes gClairDied ; AFEV gCliveMourned CliveMournQuotes gCliveDied ; AFEV gForsythMourned ForsythMournQuotes gForsythDied ; AFEV gPythonMourned PythonMournQuotes gPythonDied ; AFEV gMaeMourned MaeMournQuotes gMaeDied ; AFEV gBoeyMourned BoeyMournQuotes gBoeyDied ; AFEV gValbarMourned ValbarMournQuotes gValbarDied ; AFEV gLeonMourned LeonMournQuotes gLeonDied ; AFEV gMathildaMourned MathildaMournQuotes gMathildaDied ; AFEV gPallaMourned PallaMournQuotes gPallaDied ; AFEV gCatriaMourned CatriaMournQuotes gCatriaDied ; AFEV gAtlasMourned AtlasMournQuotes gAtlasDied ; AFEV gDeltheaMourned DeltheaMournQuotes gDeltheaDied ; AFEV gLuthierMourned LuthierMournQuotes gLuthierDied ; AFEV gEstMourned EstMournQuotes gEstDied ; AFEV gTatianaMourned TatianaMournQuotes gTatianaDied ; AFEV gZekeMourned ZekeMournQuotes gZekeDied ; AFEV gHyasMourned HyasMournQuotes gHyasDied"
+#define MournQuoteAFEVS "AFEV gGrayMourned GrayMournQuotes gGrayDied; AFEV gTobinMourned TobinMournQuotes gTobinDied; AFEV gClairMourned ClairMournQuotes gClairDied; AFEV gCliveMourned CliveMournQuotes gCliveDied; AFEV gForsythMourned ForsythMournQuotes gForsythDied; AFEV gPythonMourned PythonMournQuotes gPythonDied; AFEV gMaeMourned MaeMournQuotes gMaeDied; AFEV gBoeyMourned BoeyMournQuotes gBoeyDied; AFEV gValbarMourned ValbarMournQuotes gValbarDied; AFEV gLeonMourned LeonMournQuotes gLeonDied; AFEV gMathildaMourned MathildaMournQuotes gMathildaDied; AFEV gPallaMourned PallaMournQuotes gPallaDied; AFEV gCatriaMourned CatriaMournQuotes gCatriaDied; AFEV gAtlasMourned AtlasMournQuotes gAtlasDied; AFEV gDeltheaMourned DeltheaMournQuotes gDeltheaDied; AFEV gLuthierMourned LuthierMournQuotes gLuthierDied; AFEV gEstMourned EstMournQuotes gEstDied; AFEV gTatianaMourned TatianaMournQuotes gTatianaDied; AFEV gZekeMourned ZekeMournQuotes gZekeDied; AFEV gHyasMourned HyasMournQuotes gHyasDied"
 
 /*
-AFEV 7 GrayMournQuotes gGrayDied ; 
-AFEV 7 TobinMournQuotes gTobinDied ; 
-AFEV 7 ClairMournQuotes gClairDied ; 
-AFEV 7 CliveMournQuotes gCliveDied ; 
-AFEV 7 ForsythMournQuotes gForsythDied ; 
-AFEV 7 PythonMournQuotes gPythonDied ; 
-AFEV 7 MaeMournQuotes gMaeDied ; 
-AFEV 7 BoeyMournQuotes gBoeyDied ; 
-AFEV 7 ValbarMournQuotes gValbarDied ; 
-AFEV 7 LeonMournQuotes gLeonDied ; 
-AFEV 7 MathildaMournQuotes gMathildaDied ; 
-AFEV 7 PallaMournQuotes gPallaDied ; 
-AFEV 7 CatriaMournQuotes gCatriaDied ; 
-AFEV 7 AtlasMournQuotes gAtlasDied ; 
-AFEV 7 DeltheaMournQuotes gDeltheaDied ; 
-AFEV 7 LuthierMournQuotes gLuthierDied ; 
-AFEV 7 EstMournQuotes gEstDied ; 
-AFEV 7 TatianaMournQuotes gTatianaDied ; 
-AFEV 7 ZekeMournQuotes gZekeDied ; 
+AFEV 7 GrayMournQuotes gGrayDied;
+AFEV 7 TobinMournQuotes gTobinDied;
+AFEV 7 ClairMournQuotes gClairDied;
+AFEV 7 CliveMournQuotes gCliveDied;
+AFEV 7 ForsythMournQuotes gForsythDied;
+AFEV 7 PythonMournQuotes gPythonDied;
+AFEV 7 MaeMournQuotes gMaeDied;
+AFEV 7 BoeyMournQuotes gBoeyDied;
+AFEV 7 ValbarMournQuotes gValbarDied;
+AFEV 7 LeonMournQuotes gLeonDied;
+AFEV 7 MathildaMournQuotes gMathildaDied;
+AFEV 7 PallaMournQuotes gPallaDied;
+AFEV 7 CatriaMournQuotes gCatriaDied;
+AFEV 7 AtlasMournQuotes gAtlasDied;
+AFEV 7 DeltheaMournQuotes gDeltheaDied;
+AFEV 7 LuthierMournQuotes gLuthierDied;
+AFEV 7 EstMournQuotes gEstDied;
+AFEV 7 TatianaMournQuotes gTatianaDied;
+AFEV 7 ZekeMournQuotes gZekeDied;
 AFEV 7 HyasMournQuotes gHyasDied
 */
 
-#define MournQuote(TextId) "MUSI; Text(TextId); MUNO"
+#define MournQuote(TextId) "MUSIC_QUIET_T; Text(TextId); MUSIC_QUIET_F"
 
-#define DoubleMournQuote(TextId1,TextId2) "MUSI; Text(TextId1); Text(TextId2); MUNO"
+#define DoubleMournQuote(TextId1,TextId2) "MUSIC_QUIET_T; Text(TextId1); Text(TextId2); MUSIC_QUIET_F"
 
-#define StandardMournQuote(Mourner,TextId) "CasualCheckASMC ; BNE 1 0x0 0xC ; CHECK_EXISTS Mourner ; BEQ 1 0x0 0xC ; CHECK_DEPLOYED Mourner ; BEQ 1 0x0 0xC ; CHECK_ALIVE Mourner ; BEQ 1 0x0 0xC ; MournQuote(TextId) ; LABEL 1 ; NoFade ; ENDA"
+#define StandardMournQuote(Mourner,TextId) "CasualCheckASMC; BNE 1 0x0 0xC; CHECK_EXISTS Mourner; BEQ 1 0x0 0xC; CHECK_ISDEPLOYED Mourner; BEQ 1 0x0 0xC; CHECK_ISALIVE Mourner; BEQ 1 0x0 0xC; MournQuote(TextId); LABEL 1; NoFade; END"
 
 /*
 CasualCheckASMC
 BNE 1 0x0 0xC
 CHECK_EXISTS Mourner
 BEQ 1 0x0 0xC
-CHECK_DEPLOYED Mourner
+CHECK_ISDEPLOYED Mourner
 BEQ 1 0x0 0xC
 MournQuote(TextId)
 LABEL 1
 NoFade
-ENDA
+END
 */
 
-#define DoubleStandardMournQuote(Mourner1,Mourner2,TextId1,TextId2) "CasualCheckASMC ; BNE 3 0x0 0xC ; CHECK_EXISTS Mourner1 ; BEQ 4 0x0 0xC ; CHECK_DEPLOYED Mourner1 ; BEQ 4 0x0 0xC ; CHECK_ALIVE Mourner1 ; BEQ 4 0x0 0xC ; CHECK_EXISTS Mourner2 ; BEQ 2 0x0 0xC ; CHECK_DEPLOYED Mourner2 ; BEQ 2 0x0 0xC ; CHECK_ALIVE Mourner2 ; BEQ 2 0x0 0xC ; DoubleMournQuote(TextId1,TextId2) ; GOTO 3 ; LABEL 2 ;MournQuote(TextId1) ; GOTO 3 ; LABEL 4 ; StandardMournQuote(Mourner2,TextId2) ; LABEL 3 ; NoFade ; ENDA"
+#define DoubleStandardMournQuote(Mourner1,Mourner2,TextId1,TextId2) "CasualCheckASMC; BNE 3 0x0 0xC; CHECK_EXISTS Mourner1; BEQ 4 0x0 0xC; CHECK_ISDEPLOYED Mourner1; BEQ 4 0x0 0xC; CHECK_ISALIVE Mourner1; BEQ 4 0x0 0xC; CHECK_EXISTS Mourner2; BEQ 2 0x0 0xC; CHECK_ISDEPLOYED Mourner2; BEQ 2 0x0 0xC; CHECK_ISALIVE Mourner2; BEQ 2 0x0 0xC; DoubleMournQuote(TextId1,TextId2); GOTO 3; LABEL 2;MournQuote(TextId1); GOTO 3; LABEL 4; StandardMournQuote(Mourner2,TextId2); LABEL 3; NoFade; END"
 
 /*
-CHECK_DEPLOYED Mourner1 ; 
-BEQ 4 0x0 0xC ; 
-	CHECK_DEPLOYED Mourner2 ; 
-	BEQ 2 0x0 0xC ; 
-		DoubleMournQuote(TextId1,TextId2) ; 
-		GOTO 3 ; 
-	LABEL 2 ;
-	MournQuote(TextId1) ; 
-	GOTO 3 ; 
-LABEL 4 ; 
-StandardMournQuote(Mourner2,TextId2) ; 
-LABEL 3 ; 
-NoFade ; 
-ENDA
+CHECK_ISDEPLOYED Mourner1;
+BEQ 4 0x0 0xC;
+	CHECK_ISDEPLOYED Mourner2;
+	BEQ 2 0x0 0xC;
+		DoubleMournQuote(TextId1,TextId2);
+		GOTO 3;
+	LABEL 2;
+	MournQuote(TextId1);
+	GOTO 3;
+LABEL 4;
+StandardMournQuote(Mourner2,TextId2);
+LABEL 3;
+NoFade;
+END
 */
 
 GrayMournQuotes:
@@ -124,44 +124,44 @@ CasualCheckASMC
 BNE 99 0x0 0xC
 CHECK_EXISTS Mathilda
 BEQ 1 0x0 0xC
-CHECK_DEPLOYED Mathilda
+CHECK_ISDEPLOYED Mathilda
 BEQ 1 0x0 0xC
-CHECK_ALIVE Mathilda
+CHECK_ISALIVE Mathilda
 BEQ 1 0x0 0xC
 
 	// Mathilda Block
 	CHECK_EXISTS Clair
 	BEQ 2 0x0 0xC
-	CHECK_DEPLOYED Clair
+	CHECK_ISDEPLOYED Clair
 	BEQ 2 0x0 0xC
-	CHECK_ALIVE Clair
+	CHECK_ISALIVE Clair
 	BEQ 2 0x0 0xC
 		DoubleMournQuote(MathildaMournsClive,ClairMournsClive)
 		GOTO 99 // Event End
 	LABEL 2
 	CHECK_EXISTS FernandPlayable
 	BEQ 3 0x0 0xC
-	CHECK_DEPLOYED FernandPlayable
+	CHECK_ISDEPLOYED FernandPlayable
 	BEQ 3 0x0 0xC
-	CHECK_ALIVE FernandPlayable
+	CHECK_ISALIVE FernandPlayable
 	BEQ 3 0x0 0xC
 		DoubleMournQuote(MathildaMournsClive,FernandMournsClive)
 		GOTO 99 // Event End
 	LABEL 3
 	CHECK_EXISTS Forsyth
 	BEQ 4 0x0 0xC
-	CHECK_DEPLOYED Forsyth
+	CHECK_ISDEPLOYED Forsyth
 	BEQ 4 0x0 0xC
-	CHECK_ALIVE Forsyth
+	CHECK_ISALIVE Forsyth
 	BEQ 4 0x0 0xC
 		DoubleMournQuote(MathildaMournsClive,ForsythMournsClive)
 		GOTO 99 // Event End
 	LABEL 4
 	CHECK_EXISTS Lukas
 	BEQ 5 0x0 0xC
-	CHECK_DEPLOYED Lukas
+	CHECK_ISDEPLOYED Lukas
 	BEQ 5 0x0 0xC
-	CHECK_ALIVE Lukas
+	CHECK_ISALIVE Lukas
 	BEQ 5 0x0 0xC
 		DoubleMournQuote(MathildaMournsClive,LukasMournsClive)
 		GOTO 99 // Event End
@@ -175,35 +175,35 @@ LABEL 1 // No Mathilda
 
 CHECK_EXISTS Clair
 BEQ 6 0x0 0xC
-CHECK_DEPLOYED Clair
+CHECK_ISDEPLOYED Clair
 BEQ 6 0x0 0xC
-CHECK_ALIVE Clair
+CHECK_ISALIVE Clair
 BEQ 6 0x0 0xC
 
 	// Clair Block
 	CHECK_EXISTS FernandPlayable
 	BEQ 7 0x0 0xC
-	CHECK_DEPLOYED FernandPlayable
+	CHECK_ISDEPLOYED FernandPlayable
 	BEQ 7 0x0 0xC
-	CHECK_ALIVE FernandPlayable
+	CHECK_ISALIVE FernandPlayable
 	BEQ 7 0x0 0xC
 		DoubleMournQuote(ClairMournsClive,FernandMournsClive)
 		GOTO 99 // Event End
 	LABEL 7
 	CHECK_EXISTS Forsyth
 	BEQ 8 0x0 0xC
-	CHECK_DEPLOYED Forsyth
+	CHECK_ISDEPLOYED Forsyth
 	BEQ 8 0x0 0xC
-	CHECK_ALIVE Forsyth
+	CHECK_ISALIVE Forsyth
 	BEQ 8 0x0 0xC
 		DoubleMournQuote(ClairMournsClive,ForsythMournsClive)
 		GOTO 99 // Event End
 	LABEL 8
 	CHECK_EXISTS Lukas
 	BEQ 9 0x0 0xC
-	CHECK_DEPLOYED Lukas
+	CHECK_ISDEPLOYED Lukas
 	BEQ 9 0x0 0xC
-	CHECK_ALIVE Lukas
+	CHECK_ISALIVE Lukas
 	BEQ 9 0x0 0xC
 		DoubleMournQuote(ClairMournsClive,LukasMournsClive)
 		GOTO 99 // Event End
@@ -216,26 +216,26 @@ LABEL 6 // No Clair
 
 CHECK_EXISTS FernandPlayable
 BEQ 10 0x0 0xC
-CHECK_DEPLOYED FernandPlayable
+CHECK_ISDEPLOYED FernandPlayable
 BEQ 10 0x0 0xC
-CHECK_ALIVE FernandPlayable
+CHECK_ISALIVE FernandPlayable
 BEQ 10 0x0 0xC
 
 	// FernandPlayable Block
 	CHECK_EXISTS Forsyth
 	BEQ 11 0x0 0xC
-	CHECK_DEPLOYED Forsyth
+	CHECK_ISDEPLOYED Forsyth
 	BEQ 11 0x0 0xC
-	CHECK_ALIVE Forsyth
+	CHECK_ISALIVE Forsyth
 	BEQ 11 0x0 0xC
 		DoubleMournQuote(FernandMournsClive,ForsythMournsClive)
 		GOTO 99 // Event End
 	LABEL 11
 	CHECK_EXISTS Lukas
 	BEQ 12 0x0 0xC
-	CHECK_DEPLOYED Lukas
+	CHECK_ISDEPLOYED Lukas
 	BEQ 12 0x0 0xC
-	CHECK_ALIVE Lukas
+	CHECK_ISALIVE Lukas
 	BEQ 12 0x0 0xC
 		DoubleMournQuote(FernandMournsClive,LukasMournsClive)
 		GOTO 99 // Event End
@@ -248,17 +248,17 @@ LABEL 10 // No FernandPlayable
 
 CHECK_EXISTS Forsyth
 BEQ 13 0x0 0xC
-CHECK_DEPLOYED Forsyth
+CHECK_ISDEPLOYED Forsyth
 BEQ 13 0x0 0xC
-CHECK_ALIVE Forsyth
+CHECK_ISALIVE Forsyth
 BEQ 13 0x0 0xC
 
 	// Forsyth Block
 	CHECK_EXISTS Lukas
 	BEQ 14 0x0 0xC
-	CHECK_DEPLOYED Lukas
+	CHECK_ISDEPLOYED Lukas
 	BEQ 14 0x0 0xC
-	CHECK_ALIVE Lukas
+	CHECK_ISALIVE Lukas
 	BEQ 14 0x0 0xC
 		DoubleMournQuote(ForsythMournsClive,LukasMournsClive)
 		GOTO 99 // Event End
@@ -272,12 +272,12 @@ LABEL 13 // No Forsyth
 // So only Lukas
 CHECK_EXISTS Lukas
 BEQ 99 0x0 0xC
-CHECK_DEPLOYED Lukas
+CHECK_ISDEPLOYED Lukas
 BEQ 99 0x0 0xC
-CHECK_ALIVE Lukas
+CHECK_ISALIVE Lukas
 BEQ 99 0x0 0xC
 MournQuote(LukasMournsClive)
 
 LABEL 99 // Event End
 NoFade
-ENDA
+END

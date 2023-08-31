@@ -5,152 +5,152 @@
 EventPointerTable(plBossRush_Event, Evt_ThisChapter)
 
 Evt_ThisChapter:
-    POIN Evt_TurnBasedEvents
-    POIN Evt_CharacterBasedEvents
-    POIN Evt_LocationBasedEvents
-    POIN Evt_MiscBasedEvents
-    POIN Evt_Dunno Evt_Dunno Evt_Dunno
-    POIN Evt_Tutorial
-    POIN Evt_Ballista1 Evt_Ballista2
-    POIN PlayerUnits PlayerUnits
-    POIN $0 $0 $0 
-    POIN EnemyUnits EnemyUnits EnemyUnits
-    POIN Evt_BeginningScene Evt_EndingScene
+	POIN Evt_TurnBasedEvents
+	POIN Evt_CharacterBasedEvents
+	POIN Evt_LocationBasedEvents
+	POIN Evt_MiscBasedEvents
+	POIN Evt_Dunno Evt_Dunno Evt_Dunno
+	POIN Evt_Tutorial
+	POIN Evt_Ballista1 Evt_Ballista2
+	POIN PlayerUnits PlayerUnits
+	POIN $0 $0 $0
+	POIN EnemyUnits EnemyUnits EnemyUnits
+	POIN Evt_BeginningScene Evt_EndingScene
 
 Evt_TurnBasedEvents:
-    TurnEventPlayer(0x0,LeftSpawn,4)
-    TurnEventPlayer(0x0,RightSpawn,8)
-    TurnEventPlayer(0x0,CenterSpawn,12)
-    TURN
-    
+	TurnEventPlayer(0x0,LeftSpawn,4)
+	TurnEventPlayer(0x0,RightSpawn,8)
+	TurnEventPlayer(0x0,CenterSpawn,12)
+	TURN
+
 LeftSpawn:
-    ReinforcementEvent(EnemyUnits_LeftWave)
+	ReinforcementEvent(EnemyUnits_LeftWave)
 RightSpawn:
-    ReinforcementEvent(EnemyUnits_RightWave)
+	ReinforcementEvent(EnemyUnits_RightWave)
 CenterSpawn:
-    ReinforcementEvent(EnemyUnits_CenterWave)
+	ReinforcementEvent(EnemyUnits_CenterWave)
 
 Evt_CharacterBasedEvents:
-    CHAR
+	CHAR
 
 Evt_LocationBasedEvents:
-    CHESRANDOM 0x9 Act4RandomChest|IsPointer [10, 4]
-    LOCA
+	CHESRANDOM 0x9 Act4RandomChest|IsPointer [10, 4]
+	LOCA
 
 Evt_MiscBasedEvents:
-    CauseGameOverIfLordDies
-    DefeatAll(Evt_EndingScene)
-    MournQuoteAFEVS
-    AFEV
+	CauseGameOverIfLordDies
+	DefeatAll(Evt_EndingScene)
+	MournQuoteAFEVS
+	AFEV
 
 Evt_Dunno:
-    END_MAIN
+	END_MAIN
 
 Evt_Tutorial:
-    END_MAIN
+	END_MAIN
 
 Evt_Ballista1:
-    BLST
-    ALIGN 4
+	BLST
+	ALIGN 4
 
 Evt_Ballista2:
-    BLST
-    ALIGN 4
+	BLST
+	ALIGN 4
 
 PlayerUnits:
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 
 CutsceneUnits:
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x1 REDA11R22 [BaseSword, Vulnerary] NoAI 
-    UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x1 REDA12R22 [BaseLance] NoAI
-    UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x1 REDA10R23 [BaseLance, Vulnerary] NoAI 
-    UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x1 REDA13R23 [BaseLance, Vulnerary] NoAI 
-    UNIT
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x1 REDA11R22 [BaseSword, Vulnerary] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x1 REDA12R22 [BaseLance] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x1 REDA10R23 [BaseLance, Vulnerary] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x1 REDA13R23 [BaseLance, Vulnerary] NoAI
+	UNIT
 
 EnemyUnits:
-    UNIT Hades GoldKnight_F Hades Level(15, Enemy, False) [10,5]   0x00 0x00 0x0 0x00 [DumasLance] NoAI
-    UNIT Cerberus DreadFighter Hades Level(15, Enemy, False) [9,6] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
-    UNIT Naberius DreadFighter Hades Level(15, Enemy, False) [11,6] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
-    UNIT Terror_Fiend Fiend Hades Level(6, Enemy, True) [8,8] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
-    UNIT Terror_Fiend Fiend Hades Level(6, Enemy, True) [12,8] 0x00 0x00 0x0 0x00 [Ridersbane] NoAI
-    UNIT Terror_Fiend Fiend Hades Level(8, Enemy, True) [4,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-    UNIT Terror_Fiend Fiend Hades Level(8, Enemy, True) [16,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-    UNIT DumaFaith_Sorcerer Arcanist Hades Level(14, Enemy, True) [15,15] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-    UNIT DumaFaith_Sorcerer Arcanist Hades Level(14, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-    UNIT Aurum BowKnight Hades Level(15, Enemy, False) [16,13] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
-    UNIT Argentum BowKnight Hades Level(15, Enemy, False) [4,13] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
-    UNIT DumaFaith_Sorcerer Arcanist Hades Level(16, Enemy, True) [9,20] 0x00 0x00 0x0 0x00 [Mire, Physic] [0x0F,0x03]
-    UNIT DumaFaith_Sorcerer Arcanist Hades Level(16, Enemy, True) [11,20] 0x00 0x00 0x0 0x00 [Mire, Physic] [0x0F,0x03]
-    UNIT
-    
+	UNIT Hades GoldKnight_F Hades Level(15, Enemy, False) [10,5]   0x00 0x00 0x0 0x00 [DumasLance] NoAI
+	UNIT Cerberus DreadFighter Hades Level(15, Enemy, False) [9,6] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
+	UNIT Naberius DreadFighter Hades Level(15, Enemy, False) [11,6] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
+	UNIT Terror_Fiend Fiend Hades Level(6, Enemy, True) [8,8] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
+	UNIT Terror_Fiend Fiend Hades Level(6, Enemy, True) [12,8] 0x00 0x00 0x0 0x00 [Ridersbane] NoAI
+	UNIT Terror_Fiend Fiend Hades Level(8, Enemy, True) [4,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT Terror_Fiend Fiend Hades Level(8, Enemy, True) [16,10] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Arcanist Hades Level(14, Enemy, True) [15,15] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT DumaFaith_Sorcerer Arcanist Hades Level(14, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT Aurum BowKnight Hades Level(15, Enemy, False) [16,13] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
+	UNIT Argentum BowKnight Hades Level(15, Enemy, False) [4,13] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
+	UNIT DumaFaith_Sorcerer Arcanist Hades Level(16, Enemy, True) [9,20] 0x00 0x00 0x0 0x00 [Mire, Physic] [0x0F,0x03]
+	UNIT DumaFaith_Sorcerer Arcanist Hades Level(16, Enemy, True) [11,20] 0x00 0x00 0x0 0x00 [Mire, Physic] [0x0F,0x03]
+	UNIT
+
 EnemyUnits_LeftWave:
-    UNIT Desaix Baron Desaix Level(20, Enemy, False) [6,7]   0x00 0x00 0x1 REDA6R8 [Pugi,Dracoshield] AttackInRangeAI
-    UNIT SlaydeGK GoldKnight Desaix Level(19, Enemy, False) [6,7] 0x00 0x00 0x1 REDA5R8 [SilverLance,Javelin,DumaIcon] AttackInRangeAI
-    UNIT Grieth DreadFighter Desaix Level(15, Enemy, False) [6,7] 0x00 0x00 0x1 REDA7R8 [BraveSword] NoAI
-    UNIT
-    
+	UNIT Desaix Baron Desaix Level(20, Enemy, False) [6,7]   0x00 0x00 0x1 REDA6R8 [Pugi,Dracoshield] AttackInRangeAI
+	UNIT SlaydeGK GoldKnight Desaix Level(19, Enemy, False) [6,7] 0x00 0x00 0x1 REDA5R8 [SilverLance,Javelin,DumaIcon] AttackInRangeAI
+	UNIT Grieth DreadFighter Desaix Level(15, Enemy, False) [6,7] 0x00 0x00 0x1 REDA7R8 [BraveSword] NoAI
+	UNIT
+
 EnemyUnits_RightWave:
-    UNIT RudolfEnemy GoldKnight RudolfEnemy Level(20, Enemy, False) [14,7] 0x00 0x00 0x1 REDA14R8 [Imperius,AngelRing] AttackInRangeAI
-    UNIT BerkutPossessed FallenPrince   RudolfEnemy Level(20, Enemy, False) [14,7]   0x00 0x00 0x1 REDA13R8 [Kriemhild] AttackInRangeAI
-    UNIT RineaEnemy Witch_Rinea RudolfEnemy Level(19, Enemy, False) [14,7] 0x00 0x00 0x1 REDA15R8 [Seraphim, Fortify] AttackInRangeAI
-    UNIT
-    
+	UNIT RudolfEnemy GoldKnight RudolfEnemy Level(20, Enemy, False) [14,7] 0x00 0x00 0x1 REDA14R8 [Imperius,AngelRing] AttackInRangeAI
+	UNIT BerkutPossessed FallenPrince   RudolfEnemy Level(20, Enemy, False) [14,7]   0x00 0x00 0x1 REDA13R8 [Kriemhild] AttackInRangeAI
+	UNIT RineaEnemy Witch_Rinea RudolfEnemy Level(19, Enemy, False) [14,7] 0x00 0x00 0x1 REDA15R8 [Seraphim, Fortify] AttackInRangeAI
+	UNIT
+
 EnemyUnits_CenterWave:
-    UNIT JedahFinal Necromancer JedahFinal Level(20, Enemy, False) [10,13]   0x00 0x00 0x1 REDA10R14 [Thanatos,AnimusRing] AttackInRangeAI
-    UNIT MarlaFinal Witch JedahFinal Level(15, Enemy, False) [10,13] 0x00 0x00 0x1 REDA9R14 [Aura] NoAI
-    UNIT HestiaFinal Witch JedahFinal Level(15, Enemy, True) [10,13] 0x00 0x00 0x1 REDA11R14 [Aura] NoAI
-    UNIT
-        
+	UNIT JedahFinal Necromancer JedahFinal Level(20, Enemy, False) [10,13]   0x00 0x00 0x1 REDA10R14 [Thanatos,AnimusRing] AttackInRangeAI
+	UNIT MarlaFinal Witch JedahFinal Level(15, Enemy, False) [10,13] 0x00 0x00 0x1 REDA9R14 [Aura] NoAI
+	UNIT HestiaFinal Witch JedahFinal Level(15, Enemy, True) [10,13] 0x00 0x00 0x1 REDA11R14 [Aura] NoAI
+	UNIT
+
 EnemyUnits_Hard:
-    UNIT Hades GoldKnight_F Hades Level(15, Enemy, False) [10,5]   0x00 0x00 0x0 0x00 [DumasLance] NoAI
-    UNIT Cerberus DreadFighter Hades Level(15, Enemy, False) [9,6] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
-    UNIT Naberius DreadFighter Hades Level(15, Enemy, False) [11,6] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
-    UNIT Terror_Fiend Fiend Hades Level(6, Enemy, True) [8,8] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
-    UNIT Terror_Fiend Fiend Hades Level(6, Enemy, True) [12,8] 0x00 0x00 0x0 0x00 [Ridersbane] NoAI
-    UNIT Terror_Fiend Fiend Hades Level(8, Enemy, True) [4,10] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
-    UNIT Terror_Fiend Fiend Hades Level(8, Enemy, True) [16,10] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
-    UNIT DumaFaith_Sorcerer Arcanist Hades Level(14, Enemy, True) [15,15] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-    UNIT DumaFaith_Sorcerer Arcanist Hades Level(14, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-    UNIT Aurum BowKnight Hades Level(15, Enemy, False) [16,13] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
-    UNIT Argentum BowKnight Hades Level(15, Enemy, False) [4,13] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
-    UNIT DumaFaith_Sorcerer Arcanist Hades Level(16, Enemy, True) [9,20] 0x00 0x00 0x0 0x00 [Mire, Physic] [0x0F,0x03]
-    UNIT DumaFaith_Sorcerer Arcanist Hades Level(16, Enemy, True) [11,20] 0x00 0x00 0x0 0x00 [Mire, Physic] [0x0F,0x03]
-    UNIT Terror_ArchMogall ArchMogall Hades Level(15, Enemy, True) [10,21] 0x00 0x00 0x0 0x00 [Tackle_Mogall, DivideAbility] MogallAI
-    UNIT
-    
+	UNIT Hades GoldKnight_F Hades Level(15, Enemy, False) [10,5]   0x00 0x00 0x0 0x00 [DumasLance] NoAI
+	UNIT Cerberus DreadFighter Hades Level(15, Enemy, False) [9,6] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
+	UNIT Naberius DreadFighter Hades Level(15, Enemy, False) [11,6] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
+	UNIT Terror_Fiend Fiend Hades Level(6, Enemy, True) [8,8] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
+	UNIT Terror_Fiend Fiend Hades Level(6, Enemy, True) [12,8] 0x00 0x00 0x0 0x00 [Ridersbane] NoAI
+	UNIT Terror_Fiend Fiend Hades Level(8, Enemy, True) [4,10] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
+	UNIT Terror_Fiend Fiend Hades Level(8, Enemy, True) [16,10] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Arcanist Hades Level(14, Enemy, True) [15,15] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT DumaFaith_Sorcerer Arcanist Hades Level(14, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT Aurum BowKnight Hades Level(15, Enemy, False) [16,13] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
+	UNIT Argentum BowKnight Hades Level(15, Enemy, False) [4,13] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
+	UNIT DumaFaith_Sorcerer Arcanist Hades Level(16, Enemy, True) [9,20] 0x00 0x00 0x0 0x00 [Mire, Physic] [0x0F,0x03]
+	UNIT DumaFaith_Sorcerer Arcanist Hades Level(16, Enemy, True) [11,20] 0x00 0x00 0x0 0x00 [Mire, Physic] [0x0F,0x03]
+	UNIT Terror_ArchMogall ArchMogall Hades Level(15, Enemy, True) [10,21] 0x00 0x00 0x0 0x00 [Tackle_Mogall, DivideAbility] MogallAI
+	UNIT
+
 
 Evt_BeginningScene:
-    SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x5A01 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x5A01
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-    LOAD3 0x0 PlayerUnits 
-    ENUN
-    GotoPrepScreen
-    ENDA
+	SVAL 0x2 (EnemyUnits|IsPointer)
+	CHECK_ISHARD
+	BEQ 0x5A01 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x5A01
+	LOAD_S2 0x1
+	ENUN
+	LOAD_DEPLOYED 0x0 PlayerUnits
+	ENUN
+	GotoPrepScreen
+	END
 
 
 Evt_EndingScene:
-    FadeOutMusic
-    SVAL 0x3 0x3
+	FadeOutMusic
+	SVAL 0x3 0x3
 	ASMC 0x85C65
 	//SADD 0x32
 	CALL UnifiedBEXPCaller
-    FADI 2
+	FADEIN 2
 	SVAL 0x2 0x46
-	MNCH 0xFFFF //go to world map
-    CALL PostgameUnlockChecker
-    ENDA
+	GOTO_CHAPTER 0xFFFF //go to world map
+	CALL PostgameUnlockChecker
+	END

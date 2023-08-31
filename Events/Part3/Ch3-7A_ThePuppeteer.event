@@ -33,126 +33,126 @@ Ch3_7A_TurnBasedEvents:
 	
 WyvernsSpawn:
 	ReinforcementEvent(Reinforcements1)
-	ENDA
-	
+	END
+
 SluiceGateStart:
 	CameraCursor(Tatarrah)
 	MapText(Ch3_7A_SluiceGateStart)
-    STAL 30
+	STAL 30
 	EARTHQUAKE_START 0x100
 	STAL 30
-    CAMERA_CENTERED [1,7]
-    STAL 30
+	CAMERA_CENTERED [1,7]
+	STAL 30
 	EARTHQUAKE_END
-    FlashCursor(1, 6, 60)
+	FlashCursor(1, 6, 60)
 	TILECHANGE 0x1 //tilechange 0x01 (wall)
 	STAL 60
-    CAMERA_CENTERED Alm
+	CAMERA_CENTERED Alm
 	NoFade
-	ENDA
-	
+	END
+
 SluiceGateDrain1:
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
 	STAL 30
-	SOUN 0xBD //water going down
+	SOUND 0xBD //water going down
 	TILECHANGE 0x2 //wlevel half left
 	TILECHANGE 0x3 //wlevel half right
 	STAL 30
 	NoFade
-	ENDA
-	
+	END
+
 SluiceGateDrain2:
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
 	STAL 30
-	SOUN 0xBD //water going down
+	SOUND 0xBD //water going down
 	TILECHANGE 0x4 //wlevel none left
 	TILECHANGE 0x5 //wlevel none right
 	STAL 30
 	NoFade
-	ENDA
-	
+	END
+
 SluiceGateWallCrack1:
 	CAMERA_CENTERED [22,7]
-    STAL 20
+	STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
-    FlashCursor(22, 7, 60)
-	SOUN 0xB0 //cracking wall
+	FlashCursor(22, 7, 60)
+	SOUND 0xB0 //cracking wall
 	TILECHANGE 0x6 //wall right 1
 	STAL 60
 	CameraCursor(Alm)
 	MapText(Ch3_7A_SluiceGateCracking)
 	NoFade
-	ENDA
-	
+	END
+
 SluiceGateWallCrack2:
 	CAMERA_CENTERED [1,7]
-    STAL 20
+	STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
-    FlashCursor(0, 7, 60)
-	SOUN 0xB0 //cracking wall
+	FlashCursor(0, 7, 60)
+	SOUND 0xB0 //cracking wall
 	TILECHANGE 0x7 //wall left 1
 	STAL 60
-    CAMERA_CENTERED Alm
+	CAMERA_CENTERED Alm
 	NoFade
-	ENDA
-	
+	END
+
 SluiceGateWallCrack3:
 	CAMERA_CENTERED [21,7]
-    STAL 20
+	STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
-    FlashCursor(21, 7, 60)
-	SOUN 0xB0 //cracking wall
+	FlashCursor(21, 7, 60)
+	SOUND 0xB0 //cracking wall
 	TILECHANGE 0x8 //wall right 2
 	STAL 60
-    CAMERA_CENTERED Alm
+	CAMERA_CENTERED Alm
 	NoFade
-	ENDA
-	
+	END
+
 SluiceGateWallCrack4:
 	CAMERA_CENTERED [2,7]
-    STAL 20
+	STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
-    FlashCursor(1, 7, 60)
-	SOUN 0xB0 //cracking wall
+	FlashCursor(1, 7, 60)
+	SOUND 0xB0 //cracking wall
 	TILECHANGE 0x9 //wall left 2
 	STAL 60
-    CAMERA_CENTERED Alm
+	CAMERA_CENTERED Alm
 	NoFade
-	ENDA
-	
+	END
+
 SluiceGateFlood:
 	CameraCursor(12,5)
 	EARTHQUAKE_START 0x100
 	STAL 60
-    CHECK_EVENTID Local_BossDeath
-    BNE 0x666 rC r0
-        MapText(Ch3_7A_Flood)
-    LABEL 0x666
-	FADI 2
-    STAL 1
+	CHECK_FLAG Local_BossDeath
+	BNE 0x666 rC r0
+		MapText(Ch3_7A_Flood)
+	LABEL 0x666
+	FADEIN 2
+	STAL 1
 	EARTHQUAKE_END
-    SetBackground(BlackBackground)
+	SetBackground(BlackBackground)
 	GameOver
-	ENDB
+	TERMINATE
 
 Ch3_7A_CharacterBasedEvents:
 	CHAR
 
 Ch3_7A_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(10,20)
+		Seize(10,20)
 	#endif
 	Seize(12,5)
 	LOCA
@@ -178,10 +178,10 @@ Ch3_7A_Ballista2:
 	ALIGN 4
 
 Ch3_7A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [11,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [9,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [11,21] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [9,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [7,21] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [6,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [8,22] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
@@ -193,12 +193,12 @@ Ch3_7A_Units1:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x1 REDA10R20 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x1 REDA11R21 [BaseLance, Vulnerary] NoAI 
-	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x1 REDA9R21 [Fire, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x1 REDA10R20 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x1 REDA11R21 [BaseLance, Vulnerary] NoAI
+	UNIT Luthier Mage 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x1 REDA9R21 [Fire, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x1 REDA12R22 [BaseLance] NoAI
 	UNIT
-	
+
 CutsceneBosses:
 	UNIT Tatarrah Arcanist 0x00 Level(5,Enemy,False) [12,5] 0x00 0x00 0x0 0x00 [Thanatos, Fortify] NeverMoveAI
 	UNIT DeltheaBoss Mage_F 0x00 Level(3,Enemy,False) [12,6] 0x00 0x00 0x0 0x00 [Aura, PrayerRing] NoAI
@@ -212,27 +212,27 @@ EnemyUnits:
 	UNIT Rigel_Soldier Knight Tatarrah Level(7,Enemy,True) [13,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman Tatarrah Level(14,Enemy,True) [11,5] 0x00 0x00 0x0 0x00 [Mire] [0x0,0x12,0x0,0x0]
 	UNIT DumaFaith_Witch Witch Tatarrah Level(7,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [Thunder, WitchWarpItem] WitchWarpAI
-	
+
 	//Left hall
 	UNIT Rigel_Archer Archer_F Tatarrah Level(12,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Mage Tatarrah Level(12,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	
+
 	//Main hall
 	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(11,Enemy,True) [5,3] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
-    UNIT Rigel_Wyvern WyvernRider Tatarrah Level(12,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(12,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT Rigel_Merc Myrmidon Tatarrah Level(5,Enemy,True) [15,3] DropItem 0x00 0x0 0x00 [Zweihander,SteelShield] NeverMoveAI
 
-    UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [8,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-    UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [9,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-    UNIT DumaFaith_Witch Witch Tatarrah Level(8,Enemy,True) [9,7] 0x00 0x00 0x0 0x00 [Nosferatu,IronShield] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [8,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [9,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT DumaFaith_Witch Witch Tatarrah Level(8,Enemy,True) [9,7] 0x00 0x00 0x0 0x00 [Nosferatu,IronShield] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [8,8] 0x00 0x00 0x0 0x00 [Selene,IronShield] AttackInRangeAI
-	
+
 	//Bridge
 	UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(6,Enemy,True) [17,14] 0x00 0x00 0x0 0x00 [Selene,Mire,Physic] NeverMoveAI
 	UNIT DumaFaith_Sorcerer Shaman Tatarrah Level(16,Enemy,True) [16,14] DropItem 0x00 0x0 0x00 [Miasma,Elixir] NeverMoveAI
 	UNIT Rigel_Merc Myrmidon Tatarrah Level(7,Enemy,True) [16,16] 0x00 0x00 0x0 0x00 [Rapier,IronShield] AttackInRangeAI
-    UNIT DumaFaith_Witch Witch Tatarrah Level(8,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	
+	UNIT DumaFaith_Witch Witch Tatarrah Level(8,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
+
 	//Frontline
 	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(14,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(14,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
@@ -243,7 +243,7 @@ EnemyUnits:
 
 	UNIT Rigel_Merc Myrmidon Tatarrah Level(6,Enemy,True) [8,10] 0x00 0x00 0x0 0x00 [Lancereaver] NoAI
 	UNIT Rigel_Merc Myrmidon Tatarrah Level(6,Enemy,True) [9,10] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
-	
+
 	UNIT
 
 EnemyUnits_Hard:
@@ -254,27 +254,27 @@ EnemyUnits_Hard:
 	UNIT Rigel_Soldier Knight Tatarrah Level(7,Enemy,True) [13,5] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman Tatarrah Level(14,Enemy,True) [11,5] 0x00 0x00 0x0 0x00 [Mire] [0x0,0x12,0x0,0x0]
 	UNIT DumaFaith_Witch Witch Tatarrah Level(7,Enemy,True) [11,7] 0x00 0x00 0x0 0x00 [Thunder, WitchWarpItem] WitchWarpAI
-	
+
 	//Left hall
 	UNIT Rigel_Archer Archer_F Tatarrah Level(12,Enemy,True) [6,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Mage Tatarrah Level(12,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	
+
 	//Main hall
 	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(11,Enemy,True) [5,3] 0x00 0x00 0x0 0x00 [SilverAxe] NoAI
-    UNIT Rigel_Wyvern WyvernRider Tatarrah Level(12,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
+	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(12,Enemy,True) [11,3] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT Rigel_Merc Myrmidon Tatarrah Level(5,Enemy,True) [15,3] DropItem 0x00 0x0 0x00 [Zweihander,SteelShield] AttackInRangeAI
 
-    UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [8,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-    UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [9,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-    UNIT DumaFaith_Witch Witch Tatarrah Level(8,Enemy,True) [9,7] 0x00 0x00 0x0 0x00 [Nosferatu,IronShield] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [8,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [9,5] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT DumaFaith_Witch Witch Tatarrah Level(8,Enemy,True) [9,7] 0x00 0x00 0x0 0x00 [Nosferatu,IronShield] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(7,Enemy,True) [8,8] 0x00 0x00 0x0 0x00 [Selene,IronShield] AttackInRangeAI
-	
+
 	//Bridge
 	UNIT DumaFaith_Sorcerer Arcanist Tatarrah Level(6,Enemy,True) [17,14] 0x00 0x00 0x0 0x00 [Selene,Mire,Physic] NeverMoveAI
 	UNIT DumaFaith_Sorcerer Shaman Tatarrah Level(16,Enemy,True) [16,14] DropItem 0x00 0x0 0x00 [Miasma,Elixir] NeverMoveAI
 	UNIT Rigel_Merc Myrmidon Tatarrah Level(7,Enemy,True) [16,16] 0x00 0x00 0x0 0x00 [Rapier,IronShield] AttackInRangeAI
-    UNIT DumaFaith_Witch Witch Tatarrah Level(8,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
-	
+	UNIT DumaFaith_Witch Witch Tatarrah Level(8,Enemy,True) [17,17] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
+
 	//Frontline
 	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(14,Enemy,True) [6,10] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
 	UNIT Rigel_Wyvern WyvernRider Tatarrah Level(14,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
@@ -285,37 +285,37 @@ EnemyUnits_Hard:
 
 	UNIT Rigel_Merc Myrmidon Tatarrah Level(6,Enemy,True) [8,10] 0x00 0x00 0x0 0x00 [Lancereaver] NoAI
 	UNIT Rigel_Merc Myrmidon Tatarrah Level(6,Enemy,True) [9,10] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
-	
+
 	UNIT
 
 Reinforcements1:
 	UNIT Rigel_Wyvern WyvernRider	Tatarrah Level(16, Enemy, True) [19,10]	0x00 0x00 0x1 REDA19R10 [SteelAxe] NoAI
 	UNIT
-	
+
 DeltheaJoins:
 	UNIT Delthea Mage_F	0x0 Level(3, Ally, True) [12,6]	0x00 0x00 0x0 0x00 [Fire,PrayerRing] NoAI
 	UNIT
 
 Ch3_7A_BeginningScene:
-	MUSC SongID_FromTheDarkness
+	MUSIC SongID_FromTheDarkness
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3A07 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x3A07
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	FADU 5
+	CHECK_ISHARD
+	BEQ 0x3A07 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x3A07
+	LOAD_S2 0x1
+	ENUN
+	FADEOUT 5
 	SVAL 0xA 0x0
 	CHECK_EXISTS Luthier
 	SADD 0xCA
-	LOAD2 0x1 CutsceneUnits
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
 	CAMERA_CENTERED [12, 5]
 	STAL 30
 	CameraCursor(Alm)
 	MapText(Ch3_7A_OpeningText)
-	
+
 	SVAL 0x2 Tatarrah
 	_WARP 0xFFFF 0xFFFD [9,17]
 	CALL Warp_In_Effect
@@ -324,32 +324,32 @@ Ch3_7A_BeginningScene:
 	_WARP 0xFFFF 0xFFFD [8,17]
 	CALL Warp_In_Effect
 	STAL 20
-	
+
 	CameraCursor(Tatarrah)
 	MapText(Ch3_7A_OpeningText_2)
 
 	SVAL 0x2 Tatarrah
 	CALL Warp_Out_Effect
 	STAL 0x08
-	DISA Tatarrah
-	
+	REMOVEUNIT Tatarrah
+
 	CAMERA_CENTERED DeltheaBoss
-    EVBIT_T 0x9
+	EVBIT_T 0x9
 	MOVE 0x08 DeltheaBoss [10, 18]
 	ENUN
-    EVBIT_F 0x9
-		
+	EVBIT_F 0x9
+
 	StartBattle
-    SetBattleNumbers(78,19,4,0xFF,0xFF,0xFF)
+	SetBattleNumbers(78,19,4,0xFF,0xFF,0xFF)
 	MissedAttack(0,0)
 	EndAttack
-	FIG1 DeltheaBoss Alm Aura
-	
+	FIGHT DeltheaBoss Alm Aura 0
+
 	CHECK_EXISTS Luthier
 	BNE 0x3 0xC 0xA
-		
+
 		MapText(Ch3_7A_OpeningText_LuthierExists)
-		CHECK_ALIVE Luthier
+		CHECK_ISALIVE Luthier
 		BEQ 0x4 0xC 0x0
 			CameraCursor(Luthier)
 			MapText(Ch3_7A_OpeningText_LuthierAlive)
@@ -361,121 +361,121 @@ Ch3_7A_BeginningScene:
 	SVAL 0x2 DeltheaBoss
 	CALL Warp_Out_Effect
 	STAL 0x08
-	DISA DeltheaBoss
-	
-	FADI 5
-	CLEA 0x0
-	CLEE 0x0
-	LOAD1 0x1 EnemyUnits
+	REMOVEUNIT DeltheaBoss
+
+	FADEIN 5
+	REMOVEALL_BLUE
+	REMOVEALL_RED
+	LOAD 0x1 EnemyUnits
 	ENUN
-	LOAD3 0x0 Ch3_7A_Units1 
+	LOAD_DEPLOYED 0x0 Ch3_7A_Units1
 	ENUN
 	GotoPrepScreen
-	ENDA
-	
+	END
+
 DeltheaWakesUp:
-	CHECK_ALIVE DeltheaBoss
+	CHECK_ISALIVE DeltheaBoss
 	BEQ 0x2 0xC 0x0
-		ENUT DeltheaLocalFlag
-		MUSI
+		FLAG_T DeltheaLocalFlag
+		MUSIC_QUIET_T
 		CameraCursor(DeltheaBoss)
 		MapText(Ch3_7A_DeltheaWakesUp)
 		NoFade
 		STAL 20
-		CUSN DeltheaBoss
+		FACTION_GREEN DeltheaBoss
 		STAL 20
 		SVAL 0x2 DeltheaBoss
 		CALL Warp_Out_Effect
 		STAL 0x08
-		DISA DeltheaBoss
-		MUNO
+		REMOVEUNIT DeltheaBoss
+		MUSIC_QUIET_F
 	LABEL 0x2
 	NoFade
-	ENDA
+	END
 
 Ch3_7A_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3A7Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3A7Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
-    STAL 5
-	SetBackground(0x0B)
-	CHECK_ALIVE Luthier
+	FADEIN 2
+	STAL 5
+	SetBackground(Castle_Hall_Night)
+	CHECK_ISALIVE Luthier
 	BEQ 0x4 0xC 0x0
-		CHECK_EVENTID DeltheaLocalFlag
+		CHECK_FLAG DeltheaLocalFlag
 		BEQ 0x5 0xC 0x0
-			MUSC SongID_Unity
+			MUSIC SongID_Unity
 			TEXTMODE 1
 			TEXTSHOW Ch3_7A_EndingText //both alive
 			TEXTEND
-			FADI 2
+			FADEIN 2
 			STAL 20
-			FADU 2
+			FADEOUT 2
 			TEXTCONT
 			TEXTEND
-			MUSC SongID_CastleTheme
+			MUSIC SongID_CastleTheme
 			TEXTCONT
 			TEXTEND
 			TEXTCLEAR
-			FADI 2
-            CLEAN
-			EVBIT_MODIFY 0x1
-			LOAD1 0x1 DeltheaJoins
+			FADEIN 2
+			CLEAN
+			CONFIG_SKIP 0x1
+			LOAD 0x1 DeltheaJoins
 			ENUN
-            SetBackground(BlackBackground,5)
-            CALL $591F40
+			SetBackground(BlackBackground,5)
+			CALL $591F40
 			CharacterJoinedNotification(Notif_DeltheaJoin)
-			EVBIT_MODIFY 0x0
-            FADI 5
+			CONFIG_SKIP 0x0
+			FADEIN 5
 			GOTO 0x6
 		LABEL 0x5
-			MUSC SongID_SilentGround
+			MUSIC SongID_SilentGround
 			BackgroundText(Ch3_7A_Ending_LuthierOnly)
-			FADI 2
+			FADEIN 2
 			GOTO 0x6
 	LABEL 0x4 //luthier dead
-	CHECK_EVENTID DeltheaLocalFlag
+	CHECK_FLAG DeltheaLocalFlag
 		BEQ 0x6 0xC 0x0
-		MUSC SongID_Recruitment
+		MUSIC SongID_Recruitment
 		TEXTMODE 1
 		TEXTSHOW Ch3_7A_Ending_DeltheaOnly //only delthea
 		TEXTEND
-		FADI 2
+		FADEIN 2
 		STAL 20
-		FADU 2
+		FADEOUT 2
 		TEXTCONT
 		TEXTEND
-		MUSC SongID_CastleTheme
+		MUSIC SongID_CastleTheme
 		TEXTCONT
 		TEXTEND
 		TEXTCLEAR
-		FADI 2
-        CLEAN
-		EVBIT_MODIFY 0x1
-		LOAD1 0x1 DeltheaJoins
+		FADEIN 2
+		CLEAN
+		CONFIG_SKIP 0x1
+		LOAD 0x1 DeltheaJoins
 		ENUN
-        SetBackground(BlackBackground,5)
-        CALL $591F40
+		SetBackground(BlackBackground,5)
+		CALL $591F40
 		CharacterJoinedNotification(Notif_DeltheaJoin)
-		EVBIT_MODIFY 0x0
-        FADI 5
+		CONFIG_SKIP 0x0
+		FADEIN 5
 	LABEL 0x6
-    SetBackground(BlackBackground)
-	EVBIT_MODIFY 0x1
-	CHECK_EVENTID gChapter3C7Completed
+	SetBackground(BlackBackground)
+	CONFIG_SKIP 0x1
+	CHECK_FLAG gChapter3C7Completed
 	BEQ 0x13 0xC 0x0
 		//If gChapter3A7Completed
 		CALL Ch3_EndingScene
 	//else
 	LABEL 0x13
-	EVBIT_MODIFY 0x0
-	SetBackground(0x0B,5)
+	CONFIG_SKIP 0x0
+	SetBackground(Castle_Hall_Night,5)
 	BackgroundText(Ch3_EndingText_SluiceGate_NotOpen)
-	FADI 2
-	
-	MNCH 0x1E
+	FADEIN 2
+
+	GOTO_CHAPTER 0x1E
 	SHORT $0D40 $0
 	POIN Act3EndSwitch|1
-	ENDA
+	END

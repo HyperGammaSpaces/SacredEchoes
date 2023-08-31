@@ -56,7 +56,7 @@ Evt_CharacterBasedEvents:
 
 Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(9,21)
+		Seize(9,21)
 	#endif
 	Arrive(0xC,TopLeftDoorEvent,3,14)
 	Arrive(0xD,MidLeftDoorEvent,2,19)
@@ -100,13 +100,13 @@ WarpOutFromThrone:
 	WARPOUT_SB
 	STAL2 0x14
 	ASMC 0x790A4|1		//praise Teq
-	SET_ENDTURN 0xFFFD
+	SET_HASMOVED 0xFFFD
 	SET_ACTIVE 0
 	SVAL 0x1 0x00000049
 	SET_CONDITION 0xFFFD
 	ENDWARP
 	NoFade
-	ENDA
+	END
 
 
 ALIGN 4
@@ -119,39 +119,39 @@ ProtagDoorEvent:
 	SVAL 0xC 0x0
 	GOTO 0x206
 	LABEL 0x203
-		EVBIT_MODIFY 0x4
-		MUSI
+		CONFIG_SKIP 0x4
+		MUSIC_QUIET_T
 		MapText(DumaTower_Pinnacle_Celica)
 		SADD 0xC2
 		EndUnitMMS(Celica)
 		SET_ACTIVE 0
 		//MOVE_1STEP 0 Celica 2 //2=down
 		//ENUN
-		SET_ENDTURN Celica
-		MUNO
+		SET_HASMOVED Celica
+		MUSIC_QUIET_F
 		SVAL 0xC 0x1
-		EVBIT_MODIFY 0x0
+		CONFIG_SKIP 0x0
 		GOTO 0x206
 	LABEL 0x204
-		EVBIT_MODIFY 0x4
-		MUSI
+		CONFIG_SKIP 0x4
+		MUSIC_QUIET_T
 		MapText(DumaTower_Pinnacle_Conrad)
 		SADD 0xC2
 		EndUnitMMS(Conrad)
 		SET_ACTIVE 0
 		//MOVE_1STEP 0 Conrad 2 //2=down
 		//ENUN
-		SET_ENDTURN Conrad
-		MUNO
+		SET_HASMOVED Conrad
+		MUSIC_QUIET_F
 		SVAL 0xC 0x1
-		EVBIT_MODIFY 0x0
+		CONFIG_SKIP 0x0
 	LABEL 0x206
 		NoFade
-		ENDA
+		END
 
 ALIGN 4
 DoorEvent:
-	MUSI
+	MUSIC_QUIET_T
 	CHECK_ACTIVE
 	SVAL 0x2 Kliff;     BEQ 0x105 0x2 0xC
 	SVAL 0x2 Faye;      BEQ 0x106 0x2 0xC
@@ -226,14 +226,14 @@ DoorEvent:
 		LABEL 0x124
 			MapText(DumaTower_Pinnacle_Hyas)
 	LABEL 0x1FF
-	MUNO
-	COUNTER_ADD 0 0
+	MUSIC_QUIET_F
+	COUNTER_INC 0
 	NoFade
-	ENDA
+	END
 
 RoomClearCheck:
-	ENUT 0xB
-	SOUN 0xB1
+	FLAG_T 0xB
+	SOUND 0xB1
 	TILEREVERSE Tilechange_BottomRightDoor
 	TILEREVERSE Tilechange_BottomLeftDoor
 	TILEREVERSE Tilechange_MidRightDoor
@@ -247,33 +247,33 @@ RoomClearCheck:
 	FlashCursor(9,13,60)
 	MapText(DumaTower_Pinnacle_Phase2)
 	NoFade
-	ENDA
+	END
 
 MainRoomReinforcementsCheck:
-	CHECK_EVENTID 0xB
+	CHECK_FLAG 0xB
 	BEQ 0x0 0x0 0xC
 		EVBIT_T 0x9
 		WarpInReinforcementsAt(Reinforcements_Stairs,9,13)
 		EVBIT_F 0x9
 		GOTO 0x1
 	LABEL 0x0
-		ENUF 0x9
+		FLAG_F 0x9
 	LABEL 0x1
 	NoFade
-	ENDA
+	END
 
 BossClearCheck:
-	CHECK_EVENTID 0x18
+	CHECK_FLAG 0x18
 	BEQ 0x0 0x0 0xC
-		CHECK_EVENTID 0x19
+		CHECK_FLAG 0x19
 		BEQ 0x0 0x0 0xC
 			CALL Evt_EndingScene
 			GOTO 0x1
 	LABEL 0x0
-		ENUF 0xA
+		FLAG_F 0xA
 	LABEL 0x1
 	NoFade
-	ENDA
+	END
 
 
 
@@ -281,167 +281,167 @@ AfterTopLeft:
 	SVAL 0xB Coords(3,14)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_INAREA Celica [2,14] [2,3]
+	CHECK_ISINAREA Celica [2,14] [2,3]
 	BNE 0x800 r0 rC
-	CHECK_INAREA Conrad [2,14] [2,3]
+	CHECK_ISINAREA Conrad [2,14] [2,3]
 	BNE 0x800 r0 rC
 	GOTO 0x801
 		LABEL 0x800
 		STAL 20
-		SOUN 0xB1
+		SOUND 0xB1
 		TILEREVERSE Tilechange_TopLeftDoor
 		STAL 20
 	LABEL 0x801
 	NoFade
-	ENDA
+	END
 
 AfterMidLeft:
 	SVAL 0xB Coords(2,19)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_INAREA Celica [1,19] [2,3]
+	CHECK_ISINAREA Celica [1,19] [2,3]
 	BNE 0x802 r0 rC
-	CHECK_INAREA Conrad [1,19] [2,3]
+	CHECK_ISINAREA Conrad [1,19] [2,3]
 	BNE 0x802 r0 rC
 	GOTO 0x803
 		LABEL 0x802
 		STAL 20
-		SOUN 0xB1
+		SOUND 0xB1
 		TILEREVERSE Tilechange_MidLeftDoor
 		STAL 20
 	LABEL 0x803
 	NoFade
-	ENDA
+	END
 
 AfterBottomLeft:
 	SVAL 0xB Coords(4,24)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_INAREA Celica [3,24] [2,3]
+	CHECK_ISINAREA Celica [3,24] [2,3]
 	BNE 0x804 r0 rC
-	CHECK_INAREA Conrad [3,24] [2,3]
+	CHECK_ISINAREA Conrad [3,24] [2,3]
 	BNE 0x804 r0 rC
 	GOTO 0x805
 		LABEL 0x804
 		STAL 20
-		SOUN 0xB1
+		SOUND 0xB1
 		TILEREVERSE Tilechange_BottomLeftDoor
 		STAL 20
 	LABEL 0x805
 	NoFade
-	ENDA
+	END
 
 AfterTopRight:
 	SVAL 0xB Coords(15,14)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_INAREA Celica [14,14] [2,3]
+	CHECK_ISINAREA Celica [14,14] [2,3]
 	BNE 0x806 r0 rC
-	CHECK_INAREA Conrad [14,14] [2,3]
+	CHECK_ISINAREA Conrad [14,14] [2,3]
 	BNE 0x806 r0 rC
 	GOTO 0x807
 		LABEL 0x806
 		STAL 20
-		SOUN 0xB1
+		SOUND 0xB1
 		TILEREVERSE Tilechange_TopRightDoor
 		STAL 20
 	LABEL 0x807
 	NoFade
-	ENDA
+	END
 
 AfterMidRight:
 	SVAL 0xB Coords(16,19)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_INAREA Celica [15,19] [2,3]
+	CHECK_ISINAREA Celica [15,19] [2,3]
 	BNE 0x808 r0 rC
-	CHECK_INAREA Conrad [15,19] [2,3]
+	CHECK_ISINAREA Conrad [15,19] [2,3]
 	BNE 0x808 r0 rC
 	GOTO 0x809
 		LABEL 0x808
 		STAL 20
-		SOUN 0xB1
+		SOUND 0xB1
 		TILEREVERSE Tilechange_MidRightDoor
 		STAL 20
 	LABEL 0x809
 	NoFade
-	ENDA
+	END
 
 AfterBottomRight:
 	SVAL 0xB Coords(14,24)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_INAREA Celica [13,24] [2,3]
+	CHECK_ISINAREA Celica [13,24] [2,3]
 	BNE 0x80A r0 rC
-	CHECK_INAREA Conrad [13,24] [2,3]
+	CHECK_ISINAREA Conrad [13,24] [2,3]
 	BNE 0x80A r0 rC
 	GOTO 0x80B
 		LABEL 0x80A
 		STAL 20
-		SOUN 0xB1
+		SOUND 0xB1
 		TILEREVERSE Tilechange_BottomRightDoor
 		STAL 20
 	LABEL 0x80B
 	NoFade
-	ENDA
+	END
 
 
 
 
 
 BottomRightRoomReinforcementEvent:
-	CHECK_EVENTID 0x11
+	CHECK_FLAG 0x11
 	BNE 0x60B rC r0
 		WarpInReinforcementsAt(BottomRightSpawns,14,24)
-		ENUF 0x17
+		FLAG_F 0x17
 	LABEL 0x60B
 	NoFade
-	ENDA
+	END
 
 BottomLeftRoomReinforcementEvent:
-	CHECK_EVENTID 0xE
+	CHECK_FLAG 0xE
 	BNE 0x605 rC r0
 		WarpInReinforcementsAt(BottomLeftSpawns,4,24)
-		ENUF 0x14
+		FLAG_F 0x14
 	LABEL 0x605
 	NoFade
-	ENDA
+	END
 
 MidRightRoomReinforcementEvent:
-	CHECK_EVENTID 0x10
+	CHECK_FLAG 0x10
 	BNE 0x609 rC r0
 		WarpInReinforcementsAt(MidRightSpawns,16,19)
-		ENUF 0x16
+		FLAG_F 0x16
 	LABEL 0x609
 	NoFade
-	ENDA
+	END
 
 MidLeftRoomReinforcementEvent:
-	CHECK_EVENTID 0xD
+	CHECK_FLAG 0xD
 	BNE 0x603 rC r0
 		WarpInReinforcementsAt(MidLeftSpawns,2,19)
-		ENUF 0x13
+		FLAG_F 0x13
 	LABEL 0x603
 	NoFade
-	ENDA
+	END
 
 TopRightRoomReinforcementEvent:
-	CHECK_EVENTID 0xF
+	CHECK_FLAG 0xF
 	BNE 0x607 rC r0
 		WarpInReinforcementsAt(TopRightSpawns,15,14)
-		ENUF 0x15
+		FLAG_F 0x15
 	LABEL 0x607
 	NoFade
-	ENDA
+	END
 
 TopLeftRoomReinforcementEvent:
-	CHECK_EVENTID 0xC
+	CHECK_FLAG 0xC
 	BNE 0x601 rC r0
 		WarpInReinforcementsAt(TopLeftSpawns,3,14)
-		ENUF 0x12
+		FLAG_F 0x12
 	LABEL 0x601
 	NoFade
-	ENDA
+	END
 
 
 
@@ -449,166 +449,166 @@ TopLeftRoomReinforcementEvent:
 OpenBottomRightDoor:
 	COUNTER_SET 0 0
 	CAMERA_CENTERED [13,26]
-	SOUN 0xB1
+	SOUND 0xB1
 	TILECHANGE Tilechange_BottomRight
 	STAL 20
 	AddTrap(SigilTrapID,14,24)
 	NoFade
-	ENDA
+	END
 
 OpenBottomLeftDoor:
 	CAMERA_CENTERED [5,26]
-	SOUN 0xB1
+	SOUND 0xB1
 	TILECHANGE Tilechange_BottomLeft
 	STAL 20
 	AddTrap(SigilTrapID,4,24)
 	NoFade
-	ENDA
+	END
 
 OpenMidRightDoor:
 	CAMERA_CENTERED [15,21]
-	SOUN 0xB1
+	SOUND 0xB1
 	TILECHANGE Tilechange_MidRight
 	STAL 20
 	AddTrap(SigilTrapID,16,19)
 	NoFade
-	ENDA
+	END
 
 OpenMidLeftDoor:
 	CAMERA_CENTERED [3,21]
-	SOUN 0xB1
+	SOUND 0xB1
 	TILECHANGE Tilechange_MidLeft
 	STAL 20
 	AddTrap(SigilTrapID,2,19)
 	NoFade
-	ENDA
+	END
 
 OpenTopRightDoor:
 	CAMERA_CENTERED [14,16]
-	SOUN 0xB1
+	SOUND 0xB1
 	TILECHANGE Tilechange_TopRight
 	STAL 20
 	AddTrap(SigilTrapID,15,14)
 	NoFade
-	ENDA
+	END
 
 OpenTopLeftDoor:
 	CAMERA_CENTERED [4,16]
-	SOUN 0xB1
+	SOUND 0xB1
 	TILECHANGE Tilechange_TopLeft
 	STAL 20
 	AddTrap(SigilTrapID,3,14)
 	NoFade
-	ENDA
+	END
 
 
 
 
 TopLeftDoorEvent:
-	EVBIT_MODIFY 0x4
+	CONFIG_SKIP 0x4
 	CAMERA_CENTERED [3,14]
 	CALL ProtagDoorEvent
 	BEQ 0x30C 0x0 0xC
-		ENUF 0xC
+		FLAG_F 0xC
 		GOTO 0x40C
 	LABEL 0x30C
 	RemoveTrapAtCoords(3,14)
 	CALL DoorEvent
-	SOUN 0xAB
+	SOUND 0xAB
 	TILECHANGE Tilechange_TopLeftDoor
 	LABEL 0x40C
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x0
 	NoFade
-	ENDA
+	END
 
 MidLeftDoorEvent:
-	EVBIT_MODIFY 0x4
+	CONFIG_SKIP 0x4
 	CAMERA_CENTERED [2,19]
 	CALL ProtagDoorEvent
 	BEQ 0x30D 0x0 0xC
-		ENUF 0xD
+		FLAG_F 0xD
 		GOTO 0x40D
 	LABEL 0x30D
 	RemoveTrapAtCoords(2,19)
 	CALL DoorEvent
-	SOUN 0xAB
+	SOUND 0xAB
 	TILECHANGE Tilechange_MidLeftDoor
 	LABEL 0x40D
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x0
 	NoFade
-	ENDA
+	END
 
 BottomLeftDoorEvent:
-	EVBIT_MODIFY 0x4
+	CONFIG_SKIP 0x4
 	CAMERA_CENTERED [4,24]
 	CALL ProtagDoorEvent
 	BEQ 0x30E 0x0 0xC
-		ENUF 0xE
+		FLAG_F 0xE
 		GOTO 0x40E
 	LABEL 0x30E
 	RemoveTrapAtCoords(4,24)
 	CALL DoorEvent
-	SOUN 0xAB
+	SOUND 0xAB
 	TILECHANGE Tilechange_BottomLeftDoor
 	LABEL 0x40E
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x0
 	NoFade
-	ENDA
+	END
 
 TopRightDoorEvent:
-	EVBIT_MODIFY 0x4
+	CONFIG_SKIP 0x4
 	CAMERA_CENTERED [15,14]
 	CALL ProtagDoorEvent
 	BEQ 0x30F 0x0 0xC
-		ENUF 0xF
+		FLAG_F 0xF
 		GOTO 0x40F
 	LABEL 0x30F
 	RemoveTrapAtCoords(15,14)
 	CALL DoorEvent
-	SOUN 0xAB
+	SOUND 0xAB
 	TILECHANGE Tilechange_TopRightDoor
 	LABEL 0x40F
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x0
 	NoFade
-	ENDA
+	END
 
 MidRightDoorEvent:
-	EVBIT_MODIFY 0x4
+	CONFIG_SKIP 0x4
 	CAMERA_CENTERED [16,19]
 	CALL ProtagDoorEvent
 	BEQ 0x310 0x0 0xC
-		ENUF 0x10
+		FLAG_F 0x10
 		GOTO 0x410
 	LABEL 0x310
 	RemoveTrapAtCoords(16,19)
 	CALL DoorEvent
-	SOUN 0xAB
+	SOUND 0xAB
 	TILECHANGE Tilechange_MidRightDoor
 	LABEL 0x410
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x0
 	NoFade
-	ENDA
+	END
 
 BottomRightDoorEvent:
-	EVBIT_MODIFY 0x4
+	CONFIG_SKIP 0x4
 	CAMERA_CENTERED [14,24]
 	CALL ProtagDoorEvent
 	BEQ 0x311 0x0 0xC
-		ENUF 0x11
+		FLAG_F 0x11
 		GOTO 0x411
 	LABEL 0x311
 	RemoveTrapAtCoords(14,24)
 	CALL DoorEvent
-	SOUN 0xAB
+	SOUND 0xAB
 	TILECHANGE Tilechange_BottomRightDoor
 	LABEL 0x411
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x0
 	NoFade
-	ENDA
+	END
 
 PlayerPlacement:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [9,24] 0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [9,24] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [10,25] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
@@ -619,12 +619,12 @@ PlayerPlacement:
 
 CutsceneUnits_Start:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [9,29] 0x00 0x00 0x1 CelicaIntroReda [BaseSword, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [10,29] 0x00 0x00 0x1 ConradIntroReda [HolyLance, BaseLance, PrayerRing] NoAI 
+	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [10,29] 0x00 0x00 0x1 ConradIntroReda [HolyLance, BaseLance, PrayerRing] NoAI
 	UNIT
 
 CutsceneUnits_End:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,15] 0x00 0x00 0x1 REDA8R15 [BaseSword, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [10,15] 0x00 0x00 0x1 REDA10R15 [HolyLance, BaseLance, PrayerRing] NoAI 
+	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [10,15] 0x00 0x00 0x1 REDA10R15 [HolyLance, BaseLance, PrayerRing] NoAI
 	UNIT
 
 CutsceneUnits_End_Outside:
@@ -634,7 +634,7 @@ CutsceneUnits_End_Outside:
 CutsceneUnits_End_Outside_2:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x1 REDA4R2 [Fire, Vulnerary] NoAI
 	UNIT Boey Mage 0x00 Level(1, Ally, 1) [4,0] 0x00 0x00 0x1 REDA5R2 [Fire, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [4,0] 0x00 0x00 0x1 REDA5R1 [HolyLance, BaseLance, PrayerRing] NoAI 
+	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [4,0] 0x00 0x00 0x1 REDA5R1 [HolyLance, BaseLance, PrayerRing] NoAI
 	UNIT
 
 CutsceneUnits_End_Sonya:
@@ -652,7 +652,7 @@ BottomLeftSpawns:
 BottomRightSpawns:
 	UNIT Terror_ElderBael Kerberos Jedah_Ch4 Level(3, Enemy, False) [14,24] 0x00 0x00 0x1 REDA13R24 [HellFang] MonsterAI
 	UNIT
-	
+
 MidLeftSpawns:
 	UNIT Terror_Wight Wight Jedah_Ch4 Level(4, Enemy, True) [2,19] 0x00 0x00 0x1 REDA3R19 [SteelSword] MonsterAI
 	UNIT
@@ -733,7 +733,7 @@ Reinforcements_Stairs:
 	UNIT
 
 CutsceneUnits_Alm:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [11,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT
 
@@ -744,10 +744,10 @@ REDA [9,23] NoFlags Walk_Slow 0x0 0x0
 
 Evt_BeginningScene:
 	MUSCSLOW SongID_PinnacleOfFalseBelief
-	FADU 2
+	FADEOUT 2
 	STAL 10
 	EVBIT_T 0x9
-	LOAD2 0x1 CutsceneUnits_Start
+	LOAD_CUTSCENE CutsceneUnits_Start
 	ENUN
 	EVBIT_F 0x9
 	CameraCursor(Celica)
@@ -757,86 +757,86 @@ Evt_BeginningScene:
 	STAL 20
 	FlashCursor(3, 21, 60)
 	FlashCursor(15, 21, 60)
-	SetBackground(0x2D)
+	SetBackground(Shrine_lighter)
 	BackgroundText(DumaTower_Entrance_Celica2)
-	FADI 2
+	FADEIN 2
 	CLEAN
-	CLEA 0x0
+	REMOVEALL_BLUE
 
 		//show alm at dragons maw if he's stuck there
-		CHECK_EVENTID gChapter4A6Completed
+		CHECK_FLAG gChapter4A6Completed
 		BNE 0x500 rC r0
 
-			EVBIT_MODIFY 0x4
+			CONFIG_SKIP 0x4
 			SetBackground(BlackBackground)
 			CALL $591F40
 			STAL 20
 			CenterTextbox(DumaTower_AlmRouteOpen)
-			EVBIT_MODIFY 0x0
+			CONFIG_SKIP 0x0
 			GOTO 0x501
 
 		LABEL 0x500
-			REVEAL Alm
-			REVEAL Clair
+			SHOWUNIT Alm
+			SHOWUNIT Clair
 			Event_SetAlmMode
 			SVAL 0xB Coords(8, 19)
-			LOMA 0x29
-			WEA1 Weather_None
+			LOADMAP 0x29
+			WEATHER Weather_None
 			CAMERA_CENTERED [11,18]
 			TILECHANGE 0x0
-			LOAD2 0x2 CutsceneUnits_Alm
+			LOAD_CUTSCENE CutsceneUnits_Alm
 			ENUN
 			MUSCSLOW SongID_Env_Lava
-			FADU 5
-			WEA1 Weather_Lava
+			FADEOUT 5
+			WEATHER Weather_Lava
 			BROWNBOXTEXT Loc_DragonsMaw [8,8]
 			STAL 20
 			CALL DragonsMaw_Earthquake
 			Event_SetCelicaMode
-			REMU Alm
-			REMU Clair
+			HIDEUNIT Alm
+			HIDEUNIT Clair
 			MUSCMID SongID_Silence
-			WEA1 Weather_None
-			FADI 2
-			CLEA 0x0
-			LOMA 0x28
+			WEATHER Weather_None
+			FADEIN 2
+			REMOVEALL_BLUE
+			LOADMAP 0x28
 
 		LABEL 0x501
 		//end dragons maw stuff
 	SVAL 0x2 (EnemyUnits|IsPointer)
-	CHECK_HARD
+	CHECK_ISHARD
 	BEQ 0x4C06 rC r0
 		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
 	LABEL 0x4C06
-	LOAD1 0x1 0xFFFFFFFF
+	LOAD_S2 0x1
 	ENUN
-	LOAD3 0x0 PlayerPlacement 
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
-	EVBIT_MODIFY 0x1
+	CONFIG_SKIP 0x1
 	COUNTER_SET 0 0
 	CAMERA_CENTERED Celica
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x0
 	GotoPrepScreen
-	ENDA
+	END
 
 Evt_EndingScene:
 	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
+	FADEIN 2
 	STAL 5
-	CLEE 0x0
-	CLEA 0x0
+	REMOVEALL_RED
+	REMOVEALL_BLUE
 	MUSCSLOW SongID_PinnacleOfFalseBelief
-	LOAD1 0x1 BossUnit
+	LOAD 0x1 BossUnit
 	ENUN
-	LOAD2 0x1 CutsceneUnits_End
+	LOAD_CUTSCENE CutsceneUnits_End
 	ENUN
-	FADU 5
+	FADEOUT 5
 	STAL 20
 	CAMERA_CENTERED [9,9]
 	EARTHQUAKE_START 0x100
 	STAL 30
-	SOUN 0xAB
+	SOUND 0xAB
 	STAL 30
 	EARTHQUAKE_END
 	TILECHANGE Tilechange_Altar
@@ -858,17 +858,17 @@ Evt_EndingScene:
 	ENUN
 	EVBIT_F 0x9
 	MUSCMID SongID_Silence
-	FADI 2
+	FADEIN 2
 	STAL 5
-	EVBIT_MODIFY 0x1
+	CONFIG_SKIP 0x1
 	SetBackground(SealedMilaCG,2)
 	STAL 90
 	CgText(DumaTower_Celica_Ending_2)
 	CgText(DumaTower_Celica_Ending_3)
-	FADI 5
-	EVBIT_MODIFY 0x0
+	FADEIN 5
+	CONFIG_SKIP 0x0
 	STAL 5
-	SetBackground(0x2D,5)
+	SetBackground(Shrine_lighter,5)
 	BackgroundText(DumaTower_Celica_Ending_4)
 	ClearBackgroundSmooth
 	MapText(DumaTower_Celica_Ending_5)
@@ -877,7 +877,7 @@ Evt_EndingScene:
 	CALL Warp_Out_Effect
 	STAL 8
 	TILECHANGE Tilechange_AltarDoor
-	SOUN 0xAB
+	SOUND 0xAB
 
 	EVBIT_T 0x9
 	MOVE 0x18 Celica [9,7]
@@ -885,46 +885,46 @@ Evt_EndingScene:
 	EVBIT_F 0x9
 	MapText(DumaTower_Celica_Ending_6)
 	MUSCMID SongID_Silence
-	FADI 2
+	FADEIN 2
 
 	STAL 20
-	CLEA 0x0
-	CLEE 0x0
+	REMOVEALL_BLUE
+	REMOVEALL_RED
 	SVAL 0xB Coords(4, 1)
-	LOMA 0x22
+	LOADMAP 0x22
 	MUSCSLOW SongID_Env_Lava
-	FADU 2
+	FADEOUT 2
 	WARPIN [4, 0]
-	LOAD2 0x2 CutsceneUnits_End_Outside
+	LOAD_CUTSCENE CutsceneUnits_End_Outside
 	ENDWARP
-	LOAD1 0x0 CutsceneUnits_End_Outside_2
+	LOAD 0x0 CutsceneUnits_End_Outside_2
 	ENUN
-	CHECK_EVENTID gFightSonyaChosen
+	CHECK_FLAG gFightSonyaChosen
 	BNE 0x903 rC r0
-		LOAD1 0x0 CutsceneUnits_End_Sonya
+		LOAD 0x0 CutsceneUnits_End_Sonya
 		ENUN
 	LABEL 0x903
 	CameraCursor(Saber)
 	STAL 20
-	CHECK_EVENTID gFightSonyaChosen
+	CHECK_FLAG gFightSonyaChosen
 	BNE 0x901 rC r0
 	CHECK_EXISTS Sonya
 	BEQ 0x901 rC r0
-	CHECK_ALIVE Sonya
+	CHECK_ISALIVE Sonya
 	BEQ 0x901 rC r0
 		MapText(DumaTower_Celica_Ending_7_Sonya)
 		GOTO 0x902
 	LABEL 0x901
 		MapText(DumaTower_Celica_Ending_7)
 	LABEL 0x902
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4C6Completed
-	ENUF gEnableLordSwitch //no more switching
-	EVBIT_MODIFY 0x0
-	FADI 2
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter4C6Completed
+	FLAG_F gEnableLordSwitch //no more switching
+	CONFIG_SKIP 0x0
+	FADEIN 2
 	SVAL 0xB Coords(4, 1)
-	LOMA 0x28
-	MNCH 0x23
+	LOADMAP 0x28
+	GOTO_CHAPTER 0x23
 	SHORT $0D40 $0
 	POIN Act3EndSwitch|1 //this works for act 4 too i guess
-	ENDA
+	END

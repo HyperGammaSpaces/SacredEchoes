@@ -26,19 +26,19 @@ WaveFirst:
 	LoadReinforcements(Reinforcements1)
 	ReinforcementEvent(Reinforcements2)
 	NoFade
-	ENDA
-	
+	END
+
 LoadReinforcementBandits:
 	ReinforcementEvent(BrigandsReinforcements)
 	NoFade
-	ENDA
+	END
 
 Ch3_1A_CharacterBasedEvents:
 	CHAR
 
 Ch3_1A_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(13,15)
+		Seize(13,15)
 	#endif
 	Village(0x8, VillageEvent, 2,14)
 	Seize(4,2)
@@ -46,7 +46,7 @@ Ch3_1A_LocationBasedEvents:
 
 VillageEvent:
 	VillageEventItem(Ch3_1A_Village, Village, HeavySpear)
-	ENDA
+	END
 
 Ch3_1A_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -69,10 +69,10 @@ Ch3_1A_Ballista2:
 
 Ch3_1A_Units1:
 #ifdef __DEBUG__
-	UNIT Alm AlmFighter 0x00 Level(9,Ally,True) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Knight 0x00 Level(5,Ally,True) [14,14] 0x00 0x00 0x0 0x00 [BaseLance, BaseAxe, Vulnerary] NoAI 
-	UNIT Tobin Sniper 0x00 Level(5,Ally,True) [15,15] 0x00 0x00 0x0 0x00 [BaseBow, SteelBow, Vulnerary] NoAI 
-	UNIT Gray Myrmidon 0x00 Level(5,Ally,True) [14,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(9,Ally,True) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Knight 0x00 Level(5,Ally,True) [14,14] 0x00 0x00 0x0 0x00 [BaseLance, BaseAxe, Vulnerary] NoAI
+	UNIT Tobin Sniper 0x00 Level(5,Ally,True) [15,15] 0x00 0x00 0x0 0x00 [BaseBow, SteelBow, Vulnerary] NoAI
+	UNIT Gray Myrmidon 0x00 Level(5,Ally,True) [14,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Mage 0x00 Level(9,Ally,True) [19,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Forsyth Knight 0x00 Level(3,Ally,True) [19,13] 0x00 0x00 0x0 0x00 [BaseAxe,BaseLance,Forscythe] NoAI
 	UNIT Silque Cleric 0x00 Level(9,Ally,True) [18,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
@@ -83,10 +83,10 @@ Ch3_1A_Units1:
 	UNIT Python Archer 0x00 Level(1, Ally, 1) [18,15] 0x00 0x00 0x0 0x00 [BaseBow,IronBow] NoAI
 	UNIT
 #else
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [15,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [14,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [15,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [14,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [19,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [19,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [18,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
@@ -99,14 +99,14 @@ Ch3_1A_Units1:
 #endif
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [14,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 EnemyUnits:
 	UNIT Zaxon Knight	0x00 Level(8, Enemy, False) [4,2]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-	UNIT Rigel_Mage Shaman	Zaxon Level(9, Enemy, True) [7,2]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI 
+	UNIT Rigel_Mage Shaman	Zaxon Level(9, Enemy, True) [7,2]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI
 	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [18,5]	0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
 	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	UNIT Rigel_Soldier Soldier	Zaxon Level(11, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
@@ -120,10 +120,10 @@ EnemyUnits:
 	UNIT Rigel_Cav Cavalier	Zaxon Level(11, Enemy, True) [8,5]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
 	UNIT Rigel_Archer Archer_F	Zaxon Level(13, Enemy, True) [7,4]	0x00 0x00 0x0 0x00 [Longbow] AttackInRangeAI
 	UNIT
-    
+
 EnemyUnits_Hard:
 	UNIT Zaxon Knight	0x00 Level(8, Enemy, False) [4,2]	0x00 0x00 0x0 0x00 [Ridersbane,Javelin] NeverMoveAI
-	UNIT Rigel_Mage Shaman	Zaxon Level(9, Enemy, True) [7,2]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI 
+	UNIT Rigel_Mage Shaman	Zaxon Level(9, Enemy, True) [7,2]	0x00 0x00 0x0 0x00 [Miasma,Heal] MoveAndHealAI
 	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [18,5]	0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
 	UNIT Rigel_Witch Witch	Zaxon Level(2, Enemy, True) [4,13]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	UNIT Rigel_Soldier Soldier	Zaxon Level(11, Enemy, True) [11,4]	0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
@@ -140,11 +140,11 @@ EnemyUnits_Hard:
 	UNIT
 
 FernandUnpromoted:
-	UNIT FernandEnemy1 Cavalier	Zaxon Level(11, Enemy, False) [2,14]	DropItem 0x00 0x1 REDA3R16 [SteelLance, Vulnerary] AttackInRangeAI 
+	UNIT FernandEnemy1 Cavalier	Zaxon Level(11, Enemy, False) [2,14]	DropItem 0x00 0x1 REDA3R16 [SteelLance, Vulnerary] AttackInRangeAI
 	UNIT
 
 FernandPromoted:
-	UNIT FernandEnemy1 Paladin Zaxon Level(3, Enemy, False) [2,14]	DropItem 0x00 0x1 REDA3R16 [SteelLance, DumaIcon] AttackInRangeAI 
+	UNIT FernandEnemy1 Paladin Zaxon Level(3, Enemy, False) [2,14]	DropItem 0x00 0x1 REDA3R16 [SteelLance, DumaIcon] AttackInRangeAI
 	UNIT
 
 CavalierGroup:
@@ -152,14 +152,14 @@ CavalierGroup:
 	UNIT Rigel_Cav Cavalier_F	FernandEnemy1 Level(11, Enemy, True) [6,15]	0x00 0x00 0x0 0x00 [HeavySpear] MoveWithLeaderAI
 	UNIT Rigel_Cav Cavalier	FernandEnemy1 Level(10, Enemy, True) [5,16]	0x00 0x00 0x0 0x00 [IronLance] MoveWithLeaderAI
 	UNIT
-	
+
 Reinforcements1:
 	UNIT Rigel_Cav Cavalier	Zaxon Level(10, Enemy, True) [16,1]	0x00 0x00 0x1 REDA16R1 [IronLance] NoAI
 	UNIT
 Reinforcements2:
 	UNIT Rigel_Cav Cavalier	Zaxon Level(8, Enemy, True) [18,14]	0x00 0x00 0x1 REDA18R14 [SteelLance] NoAI
 	UNIT
-	
+
 BrigandsReinforcements:
 	UNIT Bandit_Axe Brigand Zaxon Level(13,Enemy,True) [17,16] 0x00 0x00 0x1 REDA17R16 [SteelAxe,Torch] BrigandAI
 	UNIT
@@ -168,44 +168,44 @@ BrigandsReinforcements:
 Ch3_1A_BeginningScene:
 	CAMERA_CENTERED [16, 15]
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3A01 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x3A01
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	LOAD2 0x1 CutsceneUnits
+	CHECK_ISHARD
+	BEQ 0x3A01 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x3A01
+	LOAD_S2 0x1
 	ENUN
-	
-	CHECK_ALIVE Gray
+	LOAD_CUTSCENE CutsceneUnits
+	ENUN
+
+	CHECK_ISALIVE Gray
 	BEQ 0x6 0xC 0x0
-		CHECK_ALIVE Tobin
+		CHECK_ISALIVE Tobin
 		BEQ 0x6 0xC 0x0
-			MUSC SongID_SilentGround
-			SetBackground(0x1F)
+			MUSIC SongID_SilentGround
+			SetBackground(Woodland_Evening)
 			BackgroundText(Ch3_Alm_Start)
-			FADI 2
-            STAL 5
+			FADEIN 2
+			STAL 5
 	LABEL 0x6
-	MUSC SongID_Env_WindBirds
+	MUSIC SongID_Env_WindBirds
 	LABEL 0x7
 	SetBackground(0x4C)
 	BackgroundText(Ch3_1A_OpeningText)
-	FADI 2
-    CLEAN
-    STAL 5
+	FADEIN 2
+	CLEAN
+	STAL 5
 
-	CHECK_EVENTID gPlayerPromotedFernand 
-	BEQ 0x2 rC r0 
-		LOAD1 0x1 FernandPromoted
+	CHECK_FLAG gPlayerPromotedFernand
+	BEQ 0x2 rC r0
+		LOAD 0x1 FernandPromoted
 		ENUN
 		GOTO 0x3
 	LABEL 0x2
-	LOAD1 0x1 FernandUnpromoted
+	LOAD 0x1 FernandUnpromoted
 	ENUN
 
 	LABEL 0x3
-    FADU 5
+	FADEOUT 5
 	CAMERA_CENTERED FernandEnemy1
 	STAL 20
 	FlashCursor(FernandEnemy1, 60)
@@ -213,40 +213,40 @@ Ch3_1A_BeginningScene:
 	MapText(Ch3_1A_OpeningText_2)
 	MOVE 0x10 Clive [4,16]
 	ENUN
-	MUSC SongID_Indignation
+	MUSIC SongID_Indignation
 	STAL 20
 	MapText(Ch3_1A_OpeningText_3)
 	MOVE 0x10 Clive [5,16]
 	ENUN
 	STAL 20
 	MOVE 0x10 Clive [14,16]
-	FADI 2
-    ENUN
+	FADEIN 2
+	ENUN
 
-	CLEA 0x0
-	LOAD1 0x1 CavalierGroup
+	REMOVEALL_BLUE
+	LOAD 0x1 CavalierGroup
 	ENUN
 	#ifdef __DEBUG__
-		LOAD1 0x1 Ch3_1A_Units1
+		LOAD 0x1 Ch3_1A_Units1
 		ENUN
 	#else
-		LOAD3 0x0 Ch3_1A_Units1 
+		LOAD_DEPLOYED 0x0 Ch3_1A_Units1
 		ENUN
 		GotoPrepScreen
 	#endif
-	ENDA
+	END
 
 Ch3_1A_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3A1Completed
-	EVBIT_MODIFY 0x0
-	FADI 2
-    STAL 5
-	MUSC SongID_ShadowOfVictory
-	SetBackground(0x1B)
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3A1Completed
+	CONFIG_SKIP 0x0
+	FADEIN 2
+	STAL 5
+	MUSIC SongID_ShadowOfVictory
+	SetBackground(Plain_2)
 	BackgroundText(Ch3_1A_EndingText)
-	FADI 2
-	MNCH 0x10 //go to ch16
-	ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x10 //go to ch16
+	END

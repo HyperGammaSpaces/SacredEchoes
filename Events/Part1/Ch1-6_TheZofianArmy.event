@@ -24,7 +24,7 @@ CHAR
 
 Ch1_6_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(11,10)
+		Seize(11,10)
 	#endif
 	Seize(0x0, Ch1_6_EndingScene, 13, 2)
 	Chest(0x07, 5, 1) //thunder sword
@@ -49,10 +49,10 @@ BLST
 ALIGN 4
 
 Ch1_6_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,10] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [12,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [10,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,10] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [12,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [10,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [14,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [11,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [13,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
@@ -61,16 +61,16 @@ Ch1_6_Units1:
 	UNIT
 
 BeginningCutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,12] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,12] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [0,1] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,3] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [10,2] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [12,3] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [11,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,3] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [10,2] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [12,3] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [11,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [13,2] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
@@ -80,47 +80,47 @@ FernandJoins:
 
 EnemyUnits_Hard:
 	UNIT SoldierAlm6 Soldier	0x00 Level(11, Enemy, 1) [13,2]	0x00 0x00 0x0 0x00 [IronLance,Javelin] NeverMoveAI
-	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [11,2]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI 
-	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [14,3]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
-	UNIT Zofia_Merc Mercenary	SoldierAlm6 Level(3, Enemy, 1) [11,4]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI  
-	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(7, Enemy, 1) [13,5]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI  
-	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(7, Enemy, 1) [11,6]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
-	UNIT Zofia_Archer Archer_F	SoldierAlm6 Level(7, Enemy, 1) [9,6]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [11,2]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [14,3]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Zofia_Merc Mercenary	SoldierAlm6 Level(3, Enemy, 1) [11,4]	0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(7, Enemy, 1) [13,5]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(7, Enemy, 1) [11,6]	0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Zofia_Archer Archer_F	SoldierAlm6 Level(7, Enemy, 1) [9,6]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
-    
+
 EnemyUnits:
 	UNIT SoldierAlm6 Soldier	0x00 Level(11, Enemy, 1) [13,2]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [11,2]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [14,3]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI  
-	UNIT Zofia_Merc Mercenary	SoldierAlm6 Level(3, Enemy, 1) [11,4]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI  
-	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(7, Enemy, 1) [13,5]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI  
-	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(7, Enemy, 1) [11,6]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
-	UNIT Zofia_Archer Archer_F	SoldierAlm6 Level(7, Enemy, 1) [9,6]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI  
-	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [11,2]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [14,3]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Zofia_Merc Mercenary	SoldierAlm6 Level(3, Enemy, 1) [11,4]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(7, Enemy, 1) [13,5]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(7, Enemy, 1) [11,6]	0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Zofia_Archer Archer_F	SoldierAlm6 Level(7, Enemy, 1) [9,6]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT Zofia_Soldier Soldier	SoldierAlm6 Level(8, Enemy, 1) [12,7]	0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 EnemyUnits2:
-	UNIT Zofia_Cav Cavalier_F	SoldierAlm6 Level(5, Enemy, 1) [1,4]	0x00 0x00 0x0 0x00 [Javelin] NoAI 
-	UNIT Zofia_Cav Cavalier	SoldierAlm6 Level(6, Enemy, 1) [0,5]	0x00 0x00 0x0 0x00 [BaseLance] NoAI 
-	UNIT Zofia_Archer Archer	SoldierAlm6 Level(8, Enemy, 1) [6,2]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI  
-	UNIT Zofia_Merc Mercenary	SoldierAlm6 Level(4, Enemy, 1) [4,3]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI  
+	UNIT Zofia_Cav Cavalier_F	SoldierAlm6 Level(5, Enemy, 1) [1,4]	0x00 0x00 0x0 0x00 [Javelin] NoAI
+	UNIT Zofia_Cav Cavalier	SoldierAlm6 Level(6, Enemy, 1) [0,5]	0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Zofia_Archer Archer	SoldierAlm6 Level(8, Enemy, 1) [6,2]	0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Zofia_Merc Mercenary	SoldierAlm6 Level(4, Enemy, 1) [4,3]	0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
 	UNIT
 
 Ch1_6_BeginningScene:
-	MUSC SongID_Advance
-	LOAD2 0x1 BeginningCutsceneUnits
+	MUSIC SongID_Advance
+	LOAD_CUTSCENE BeginningCutsceneUnits
 	ENUN
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x106 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x106
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
+	CHECK_ISHARD
+	BEQ 0x106 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x106
+	LOAD_S2 0x1
+	ENUN
 	CAMERA_CENTERED [9,8]
 
-	SetBackground(0x1B)
+	SetBackground(Plain_2)
 	Text(Ch1_6_OpeningScene)
 	EndConvo
 
@@ -128,33 +128,33 @@ Ch1_6_BeginningScene:
 	MOVE 0x08 Clair [9, 12]
 	ENUN
 
-	FADI 10
-	CLEA 0x0
-	LOAD1 0x1 EnemyUnits2
+	FADEIN 10
+	REMOVEALL_BLUE
+	LOAD 0x1 EnemyUnits2
 	ENUN
-	LOAD3 0x0 Ch1_6_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	LOAD_DEPLOYED 0x0 Ch1_6_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 
-	SetBackground(0x1B)
+	SetBackground(Plain_2)
 	Text(Ch1_6_OpeningScene_2)
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch1_6_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 5
-    STAL 5
-	CLEA 0x0
-	CLEE 0x0
+	FADEIN 5
+	STAL 5
+	REMOVEALL_BLUE
+	REMOVEALL_RED
 	ENUN
-	MUSC SongID_Victory
-	LOAD1 0x1 FernandJoins
+	MUSIC SongID_Victory
+	LOAD 0x1 FernandJoins
 	ENUN
-	LOAD2 0x1 CutsceneUnits
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
 	CAMERA_CENTERED [10, 5]
-	FADU 4
+	FADEOUT 4
 
 	STAL 20
 
@@ -162,19 +162,19 @@ Ch1_6_EndingScene:
 	ENUN
 	MOVE 0x10 Clair [9,2]
 	ENUN
-    FlashCursor(0x2D, 60)
+	FlashCursor(0x2D, 60)
 
-	SetBackground(0x26)
-	TEXTSTART 
+	SetBackground(Fort)
+	TEXTSTART
 	TEXTSHOW Ch1_6_PostBattle_1
 	TEXTEND
-	MUSC SongID_Silence
+	MUSIC SongID_Silence
 	TEXTCONT
 	TEXTEND
-	MUSC SongID_ShadowOfVictory
+	MUSIC SongID_ShadowOfVictory
 	TEXTCONT
 	TEXTEND
-    TEXTCLEAR
+	TEXTCLEAR
 	CALL $591F40
 	CharacterJoinedNotification(Notif_FernandJoin)
 	ClearBackgroundSmooth
@@ -184,9 +184,9 @@ Ch1_6_EndingScene:
 	STAL 20
 
 	SVAL 0x1 0x1
-	CHECK_ALIVE Gray 
-	BEQ 0x4 rC r0 
-	CHECK_ALIVE Tobin 
+	CHECK_ISALIVE Gray
+	BEQ 0x4 rC r0
+	CHECK_ISALIVE Tobin
 	BEQ 0x4 rC r0
 		MOVE 0x10 Gray [9, 3]
 		MOVE 0x10 Tobin [8, 2]
@@ -194,15 +194,15 @@ Ch1_6_EndingScene:
 		STAL 20
 		CameraCursor(Clair)
 
-		SetBackground(0x26)
-		TEXTSTART 
+		SetBackground(Fort)
+		TEXTSTART
 		TEXTSHOW Ch1_6_PostBattle_2
 		TEXTEND
-        TEXTCLEAR
+		TEXTCLEAR
 	LABEL 0x4
-	FADI 2
-	MNCH 0x06 //go to ch6
-	ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x06 //go to ch6
+	END
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

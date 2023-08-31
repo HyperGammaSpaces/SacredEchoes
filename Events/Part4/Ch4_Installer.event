@@ -1,124 +1,124 @@
 ALIGN 4
 {
-  #include "Dummy.event"
+	#include "Dummy.event"
 }
 
 DragonsMaw_Earthquake:
-    CAMERA_CENTERED [8, 19]
-    EARTHQUAKE_START 0x100
-    STAL 15
-    EARTHQUAKE_END
-    CameraCursor(Clair)
-    MapText(Ch4A_6_EndingText)
-    EARTHQUAKE_START 0x100
-    MOVE 0x64 Alm [15,18]
-    MOVE 0x64 Clair [14,17]
-    ENUN
-    STAL 40
-    FADI 5
-    TILEREVERSE 0x0
-    STAL 10
-    FADU 5
-    STAL 40
-    EARTHQUAKE_END
-    STAL 20
-    MOVE 0x64 Alm [11,18]
-    MOVE 0x64 Clair [11,19]
-    ENUN
-    CameraCursor(Alm)
-    TEXTMODE 0
-    TEXTSHOW Ch4A_6_EndingText_2
-    TEXTEND
-    MOVE 0x64 Clair [0,18]
-    ENUN
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    MOVE 0x64 Alm [0,19]
-    ENUN
-    NoFade
-    ENDA
-    
+	CAMERA_CENTERED [8, 19]
+	EARTHQUAKE_START 0x100
+	STAL 15
+	EARTHQUAKE_END
+	CameraCursor(Clair)
+	MapText(Ch4A_6_EndingText)
+	EARTHQUAKE_START 0x100
+	MOVE 0x64 Alm [15,18]
+	MOVE 0x64 Clair [14,17]
+	ENUN
+	STAL 40
+	FADEIN 5
+	TILEREVERSE 0x0
+	STAL 10
+	FADEOUT 5
+	STAL 40
+	EARTHQUAKE_END
+	STAL 20
+	MOVE 0x64 Alm [11,18]
+	MOVE 0x64 Clair [11,19]
+	ENUN
+	CameraCursor(Alm)
+	TEXTMODE 0
+	TEXTSHOW Ch4A_6_EndingText_2
+	TEXTEND
+	MOVE 0x64 Clair [0,18]
+	ENUN
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	MOVE 0x64 Alm [0,19]
+	ENUN
+	NoFade
+	END
+
 
 ALIGN 4
 {
-  #include "Ch4-1C_SwampOfRegrets.event"
+	#include "Ch4-1C_SwampOfRegrets.event"
 }
 ALIGN 4
 {
-  #include "Ch4-2C_WingsOfDeath.event"
+	#include "Ch4-2C_WingsOfDeath.event"
 }
 ALIGN 4
 {
-  #include "Ch4-3C_FortressOfBones.event"
+	#include "Ch4-3C_FortressOfBones.event"
 }
 //Sage's Hamlet/Lost Treescape goes here.
 ALIGN 4
 {
-  #include "LostTreescape.event"
+	#include "LostTreescape.event"
 }
 ALIGN 4
 {
-  #include "Ch4-4C_ShatteredEarth.event"
+	#include "Ch4-4C_ShatteredEarth.event"
 }
 ALIGN 4
 {
-  #include "Ch4-5C_DumasApostle.event"
+	#include "Ch4-5C_DumasApostle.event"
 }
 ALIGN 4
 {
-  #include "Ch4-6C_AltarOfTheFallen.event"
+	#include "Ch4-6C_AltarOfTheFallen.event"
 }
 ALIGN 4
 {
-  #include "Ch4-1A_HeirOfDisgrace.event"
+	#include "Ch4-1A_HeirOfDisgrace.event"
 }
 ALIGN 4
 {
-  #include "Ch4-2A_RigelForest.event"
+	#include "Ch4-2A_RigelForest.event"
 }
 ALIGN 4
 {
-  #include "Ch4-3A_MaidenOfDarkness.event"
+	#include "Ch4-3A_MaidenOfDarkness.event"
 }
 ALIGN 4
 {
-  #include "Ch4-4A_MedusasCall.event"
+	#include "Ch4-4A_MedusasCall.event"
 }
 ALIGN 4
 {
-  #include "Ch4-5A_BreakingTheChains.event"
+	#include "Ch4-5A_BreakingTheChains.event"
 }
 ALIGN 4
 {
-  #include "Ch4-6A_TheDragonsMaw.event"
+	#include "Ch4-6A_TheDragonsMaw.event"
 }
 ALIGN 4
 {
-  #include "Ch4-7A_MightAndMagic.event"
+	#include "Ch4-7A_MightAndMagic.event"
 }
 ALIGN 4
 {
-  #include "Ch4-8A_TheLastBastion.event"
+	#include "Ch4-8A_TheLastBastion.event"
 }
 ALIGN 4
 {
-  #include "Ch4-9A_WarFather.event"
+	#include "Ch4-9A_WarFather.event"
 }
 
 RudolfDeathEvent:
-    MUSI
-    MapText(Ch4A_9_DeathQuote)
-    ENUT Local_BossDeath
-    MUNO
-    NoFade
-    ENDA
+	MUSIC_QUIET_T
+	MapText(Ch4A_9_DeathQuote)
+	FLAG_T Local_BossDeath
+	MUSIC_QUIET_F
+	NoFade
+	END
 
 ALIGN 4
 {
-  #include "FearMountain.event"
+	#include "FearMountain.event"
 }
 ALIGN 4
 {
-  #include "SecretShrine.event"
+	#include "SecretShrine.event"
 }

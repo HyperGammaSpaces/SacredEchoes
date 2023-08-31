@@ -22,7 +22,7 @@ SShrine_TurnBasedEvents:
 	TURN
 
 LoadReinforcements:
-    CHECK_EVENTID 0x2 // boss death quote
+	CHECK_FLAG 0x2 // boss death quote
 	BNE 0 rC r0 // branch label 0 if summoner dead
 	COUNTER_CHECK 0 // slot c = counter 0 value
 	SVAL r1 2 // number of turns between summons (2)
@@ -30,25 +30,25 @@ LoadReinforcements:
 
 	// Counter at value
 	COUNTER_SET 0 0 // reset counter
-    CAMERA_CENTERED [9,10]
+	CAMERA_CENTERED [9,10]
 	LoadReinforcements(BackupsReinforcements)
-    GOTO 0
+	GOTO 0
 
 	// Counter not at value
 	LABEL 4
-	COUNTER_ADD 0 0 // counter 0 ++
-	
+	COUNTER_INC 0 // counter 0 ++
+
 	LABEL 0
 	// event end
 	NoFade
-	ENDA
+	END
 
 SShrine_CharacterBasedEvents:
 	CHAR
 
 SShrine_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+		Seize(4,5)
 	#endif
 	Arrive(0,7)
 	Arrive(0,8)
@@ -106,33 +106,33 @@ SShrine_PlayerUnits:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 EnemyUnits:
 	UNIT Boss_Monster DracoZombie Boss_Monster Level(6,Enemy,True) [15,5] DropItem 0x00 0x0 0x00 [FireFang,Item100G] AttackInRangeAI
-	UNIT Terror_Wight_Bow Random_Wight_Bow Boss_Monster Level(1,Enemy,True) [12,2] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow Boss_Monster Level(10,Enemy,True) [3,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
+	UNIT Terror_Wight_Bow Random_Wight_Bow Boss_Monster Level(1,Enemy,True) [12,2] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow Boss_Monster Level(10,Enemy,True) [3,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
 	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow Boss_Monster Level(10,Enemy,True) [3,2] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
 	UNIT Terror_Wight_Bow Wight_Bow Boss_Monster Level(1,Enemy,True) [17,21] RandomizePosition 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	UNIT Terror_Wight Random_Wight Boss_Monster Level(1,Enemy,True) [14,7] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
+	UNIT Terror_Wight Random_Wight Boss_Monster Level(1,Enemy,True) [14,7] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI
 	UNIT Terror_Wight Random_Wight Boss_Monster Level(1,Enemy,True) [16,7] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI
-	
-	UNIT Terror_ElderBael Random_ElderBael Boss_Monster Level(5,Enemy,True) [16,13] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(11,Enemy,True) [13,17] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(11,Enemy,True) [13,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
-	UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(2,Enemy,True) [3,15] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Gargoyle Random_Gargoyle_FliersOnly Boss_Monster Level(10,Enemy,True) [5,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
-	UNIT Terror_Gargoyle Random_Gargoyle_FliersOnly Boss_Monster Level(10,Enemy,True) [10,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
 
-	UNIT Terror_Chiron Chiron Boss_Monster Level(7,Enemy,True) [7,7] RandomizePosition 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI  
-	UNIT Terror_Tarvos Random_Tarvos Boss_Monster Level(9,Enemy,True) [8,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
-	UNIT Terror_Entombed Random_RevEntombed Boss_Monster Level(4,Enemy,True) [6,15] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT Terror_Tarvos Random_Tarvos Boss_Monster Level(9,Enemy,True) [7,13] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_ElderBael Random_ElderBael Boss_Monster Level(5,Enemy,True) [16,13] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(11,Enemy,True) [13,17] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(11,Enemy,True) [13,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT Terror_Deathgoyle Deathgoyle Boss_Monster Level(2,Enemy,True) [3,15] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Terror_Gargoyle Random_Gargoyle_FliersOnly Boss_Monster Level(10,Enemy,True) [5,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT Terror_Gargoyle Random_Gargoyle_FliersOnly Boss_Monster Level(10,Enemy,True) [10,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+
+	UNIT Terror_Chiron Chiron Boss_Monster Level(7,Enemy,True) [7,7] RandomizePosition 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Terror_Tarvos Random_Tarvos Boss_Monster Level(9,Enemy,True) [8,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
+	UNIT Terror_Entombed Random_RevEntombed Boss_Monster Level(4,Enemy,True) [6,15] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT Terror_Tarvos Random_Tarvos Boss_Monster Level(9,Enemy,True) [7,13] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
 	//Middle of map
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(9,Enemy,True) [8,16] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI 
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(9,Enemy,True) [8,16] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
 	UNIT Terror_Revenant Random_AnyMonster Boss_Monster Level(6,Enemy,True) [10,13] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
 	UNIT Terror_Bael Random_Bael Boss_Monster Level(11,Enemy,True) [13,20] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
 	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [7,20] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NoAI
@@ -140,40 +140,40 @@ EnemyUnits:
 	UNIT
 
 BackupsReinforcements:
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [IronLance] NoAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(10,Enemy,True) [13,13] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI 
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [IronLance] NoAI
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(10,Enemy,True) [13,13] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
 	UNIT
 
 SShrine_BeginningScene:
 	/*
-	MUSC SongID_Env_Lava
-	LOAD2 0x1 CutsceneUnits
+	MUSIC SongID_Env_Lava
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
-	SetBackground(0x1D)
+	SetBackground(Woodland)
 	Text(SShrine_OpeningText)
 
-	FADI 60
+	FADEIN 60
 	TEXTCLEAR
-	CLEA 0x0
+	REMOVEALL_BLUE
 	*/
-	LOAD1 0x1 EnemyUnits
+	LOAD 0x1 EnemyUnits
 	ENUN
-	LOAD3 0x0 SShrine_PlayerUnits //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	LOAD_DEPLOYED 0x0 SShrine_PlayerUnits //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 SShrine_EndingScene:
-    FadeOutMusic
-	EVBIT_MODIFY 0x1
-	ENUT gSylvanShrineCompleted
-	EVBIT_MODIFY 0x0
+	FadeOutMusic
+	CONFIG_SKIP 0x1
+	FLAG_T gSylvanShrineCompleted
+	CONFIG_SKIP 0x0
 	SVAL 0x3 0x3
 	ASMC 0x85C65
 	//SADD 0x32
 	CALL UnifiedBEXPCaller
-    FADI 2
+	FADEIN 2
 	SVAL 0x2 0x41
-	MNCH 0xFFFF //go to world map
-    CALL PostgameUnlockChecker
-	ENDA
+	GOTO_CHAPTER 0xFFFF //go to world map
+	CALL PostgameUnlockChecker
+	END

@@ -25,7 +25,7 @@ Dummy_CharacterBasedEvents:
 
 Dummy_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+		Seize(4,5)
 	#endif
 	Seize(14,5)
 	LOCA
@@ -71,17 +71,15 @@ SkirmishEnemies:
 	UNIT
 
 Dummy_BeginningScene:
-
-	//debug only
-	SetBackground(0x1D)
+	SetBackground(Woodland)
 	Text(Celica_EndDemo)
-	MNTS 0x0
-	ENDA
-	//end debug
+	FADEOUT 16
+	GOTO_TITLE
+	END
 
 Dummy_EndingScene:
-	CALL UnifiedBEXPCaller
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	MNCH 0x12
-	ENDA
+	SetBackground(Woodland)
+	Text(Celica_EndDemo)
+	FADEOUT 16
+	GOTO_TITLE
+	END

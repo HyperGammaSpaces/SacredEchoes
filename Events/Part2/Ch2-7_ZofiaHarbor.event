@@ -21,14 +21,14 @@ Ch2_7_TurnBasedEvents:
 	TURN
 
 PostPrep:
-	MUSC SongID_Env_Water
+	MUSIC SongID_Env_Water
 		CHECK_EXISTS Leon
 		BEQ 0x3 0xC 0x0
-		CHECK_ALIVE Leon
+		CHECK_ISALIVE Leon
 		BEQ 0x3 0xC 0x0
 		CHECK_EXISTS Kamui
 		BEQ 0x3 0xC 0x0
-		CHECK_ALIVE Kamui
+		CHECK_ISALIVE Kamui
 		BEQ 0x3 0xC 0x0
 			CAMERA_CENTERED Celica
 			MapText(Ch2_7_PostPrep_1) //hmm...
@@ -43,32 +43,32 @@ PostPrep:
 	LABEL 0x4
 	TEXTCLEAR
 	NoFade
-	ENDA
+	END
 
 WaveFirst:
 	SVAL 0x1 0x0
-	CHAI DumaFaith_Sorcerer_2
-	CHAI Enemy_Mercenary
+	SET_AI DumaFaith_Sorcerer_2
+	SET_AI Enemy_Mercenary
 	LoadReinforcements(PirateSouthREDAs)
 	NoFade
-	ENDA
+	END
 
 WaveSecond:
-    EVBIT_T 0x9
+	EVBIT_T 0x9
 	LoadReinforcements(PirateNorthREDAs)
-    ENUN
-    STAL 5
+	ENUN
+	STAL 5
 	LoadReinforcements(CavWestREDAs)
-    EVBIT_F 0x9
+	EVBIT_F 0x9
 	NoFade
-	ENDA
+	END
 
 Ch2_7_CharacterBasedEvents:
 	CHAR
 
 Ch2_7_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(12,16)
+		Seize(12,16)
 	#endif
 	Village(0x8, VillageEventWest, 4,8)
 	Village(0x9, VillageEventEast, 13,3)
@@ -78,11 +78,11 @@ Ch2_7_LocationBasedEvents:
 
 VillageEventWest:
 	VillageEventItem(Ch2_7_Village_1, 0x05, Ambrosia)
-	ENDA
+	END
 
 VillageEventEast:
 	VillageEventItem(Ch2_7_Village_2, 0x05, KillerAxe)
-	ENDA
+	END
 
 House1:
 	SVAL 0x2 Celica
@@ -93,7 +93,7 @@ House1:
 	LABEL 0x100
 		HouseEvent(Ch2_7_House_Celica,HouseBG)
 	LABEL 0x101
-	ENDA
+	END
 
 Ch2_7_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -105,15 +105,15 @@ Ch2_7_MiscBasedEvents:
 
 ChangeAIEvent1:
 	SVAL 0x1 0x0
-	CHAI TreasureHunter
+	SET_AI TreasureHunter
 	NoFade
-	ENDA
+	END
 
 ChangeAIEvent2:
 	SVAL 0x1 0x0
-	CHAI Bandit_Strong
+	SET_AI Bandit_Strong
 	NoFade
-	ENDA
+	END
 
 Ch2_7_Dunno:
 	END_MAIN
@@ -130,134 +130,134 @@ Ch2_7_Ballista3:
 
 PlayerUnits:
 #ifdef __DEBUG__
-	UNIT Celica CelicaPriestess 0x00 Level(8,Ally,True) [12,16] 0x00 0x00 0x1 REDA12R15 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(8,Ally,True) [12,16] 0x00 0x00 0x1 REDA13R14 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(7,Ally,True) [11,16] 0x00 0x00 0x1 REDA11R14 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(8,Ally,True) [11,16] 0x00 0x00 0x1 REDA10R15 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Myrmidon 0x00 Level(1,Ally,True) [12,16] 0x00 0x00 0x1 REDA12R13 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(8,Ally,True) [12,16] 0x00 0x00 0x1 REDA12R15 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(8,Ally,True) [12,16] 0x00 0x00 0x1 REDA13R14 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(7,Ally,True) [11,16] 0x00 0x00 0x1 REDA11R14 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(8,Ally,True) [11,16] 0x00 0x00 0x1 REDA10R15 [Nosferatu, Vulnerary] NoAI
+	UNIT Saber Myrmidon 0x00 Level(1,Ally,True) [12,16] 0x00 0x00 0x1 REDA12R13 [BaseSword, Vulnerary] NoAI
 	UNIT Valbar Knight 0x00 Level(3,Ally,True) [11,16] 0x00 0x00 0x1 REDA10R13 [BaseLance,BaseAxe,Vulnerary] NoAI
 	UNIT Leon Sniper 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA13R16 [IronBow, BaseBow, Vulnerary] NoAI
-	UNIT Kamui Mercenary 0x00 Level(8, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R16 [BaseSword] NoAI 
+	UNIT Kamui Mercenary 0x00 Level(8, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R16 [BaseSword] NoAI
 	UNIT
 #else
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA12R15 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA13R14 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R14 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x1 REDA10R15 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA12R13 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA12R15 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA13R14 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R14 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x1 REDA10R15 [Nosferatu, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [12,16] 0x00 0x00 0x1 REDA12R13 [BaseSword, Vulnerary] NoAI
 	UNIT Valbar Knight 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x1 REDA10R13 [BaseLance,BaseAxe,Vulnerary] NoAI
 	UNIT Leon Archer 0x00 Level(4, Ally, 1) [12,16] 0x00 0x00 0x1 REDA13R16 [IronBow, BaseBow, Vulnerary] NoAI
-	UNIT Kamui Mercenary 0x00 Level(3, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R16 [BaseSword] NoAI 
+	UNIT Kamui Mercenary 0x00 Level(3, Ally, 1) [11,16] 0x00 0x00 0x1 REDA11R16 [BaseSword] NoAI
 	UNIT
 #endif
-	
+
 EnemyUnits:
-	UNIT ArcanistBoss Arcanist ArcanistBoss Level(3,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [Miasma,AngelRing,Item100G] NeverMoveAI 
-	UNIT Enemy_Mercenary Mercenary ArcanistBoss Level(9,Enemy,True) [3,3] 0x00 0x00 0x0 0x00 [Armorslayer] NeverMoveAI 
-	UNIT Bandit_Bow Mage ArcanistBoss Level(9,Enemy,True) [5,9] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI 
-	UNIT Bandit_Bow Archer_F ArcanistBoss Level(12,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
-	UNIT Bandit_Axe Pirate ArcanistBoss Level(11,Enemy,True) [2,14] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT Bandit_Axe Pirate ArcanistBoss Level(10,Enemy,True) [5,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI 
+	UNIT ArcanistBoss Arcanist ArcanistBoss Level(3,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [Miasma,AngelRing,Item100G] NeverMoveAI
+	UNIT Enemy_Mercenary Mercenary ArcanistBoss Level(9,Enemy,True) [3,3] 0x00 0x00 0x0 0x00 [Armorslayer] NeverMoveAI
+	UNIT Bandit_Bow Mage ArcanistBoss Level(9,Enemy,True) [5,9] 0x00 0x00 0x0 0x00 [Fire] NeverMoveAI
+	UNIT Bandit_Bow Archer_F ArcanistBoss Level(12,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
+	UNIT Bandit_Axe Pirate ArcanistBoss Level(11,Enemy,True) [2,14] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT Bandit_Axe Pirate ArcanistBoss Level(10,Enemy,True) [5,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
 	UNIT Bandit_Sword Mercenary ArcanistBoss Level(8,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
 	UNIT Bandit_Axe Pirate ArcanistBoss Level(12,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
 	UNIT Bandit_Sword Mercenary ArcanistBoss Level(9,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT Bandit_Bow Archer ArcanistBoss Level(13,Enemy,True) [2,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
-	UNIT Remnant_Soldier Knight ArcanistBoss Level(3,Enemy,False) [11,5] 0x00 0x00 0x0 0x00 [BaseAxe,Javelin] NeverMoveAI 
-	UNIT Bandit_Sword Mercenary ArcanistBoss Level(10,Enemy,True) [16,8] 0x00 0x00 0x0 0x00 [IronSword,HideShield] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate_F ArcanistBoss Level(12,Enemy,True) [16,11] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(9,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Miasma,Heal] HealUnits 
-	UNIT DumaFaith_Sorcerer_2 Shaman ArcanistBoss Level(8,Enemy,True) [2,2] 0x00 0x00 0x0 0x00 [Miasma,Heal] AttackInRangeAI 
+	UNIT Bandit_Bow Archer ArcanistBoss Level(13,Enemy,True) [2,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Remnant_Soldier Knight ArcanistBoss Level(3,Enemy,False) [11,5] 0x00 0x00 0x0 0x00 [BaseAxe,Javelin] NeverMoveAI
+	UNIT Bandit_Sword Mercenary ArcanistBoss Level(10,Enemy,True) [16,8] 0x00 0x00 0x0 0x00 [IronSword,HideShield] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F ArcanistBoss Level(12,Enemy,True) [16,11] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(9,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Miasma,Heal] HealUnits
+	UNIT DumaFaith_Sorcerer_2 Shaman ArcanistBoss Level(8,Enemy,True) [2,2] 0x00 0x00 0x0 0x00 [Miasma,Heal] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(8,Enemy,True) [9,2] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI //Give this guy Silence once it's implemented.
 	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(8,Enemy,True) [17,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT Remnant_Soldier Soldier ArcanistBoss Level(12,Enemy,True) [9,8] 0x00 0x00 0x0 0x00 [BaseLance,HideShield] AttackInRangeAI 
+	UNIT Remnant_Soldier Soldier ArcanistBoss Level(12,Enemy,True) [9,8] 0x00 0x00 0x0 0x00 [BaseLance,HideShield] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(6,Enemy,True) [14,1] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT Bandit_Sword Mercenary ArcanistBoss Level(9,Enemy,True) [14,15] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
 	UNIT
-	
+
 EnemyUnits_Hard:
-	UNIT ArcanistBoss Arcanist ArcanistBoss Level(3,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [Miasma,AngelRing,Item100G] AttackInRangeAI 
-	UNIT Enemy_Mercenary Mercenary ArcanistBoss Level(9,Enemy,True) [3,3] 0x00 0x00 0x0 0x00 [Armorslayer] NeverMoveAI 
-	UNIT Bandit_Bow Mage ArcanistBoss Level(9,Enemy,True) [5,9] 0x00 0x00 0x0 0x00 [Fire,IronShield] NeverMoveAI 
-	UNIT Bandit_Bow Archer_F ArcanistBoss Level(12,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
-	UNIT Bandit_Axe Pirate ArcanistBoss Level(11,Enemy,True) [2,14] 0x00 0x00 0x0 0x00 [IronAxe] NoAI 
-	UNIT Bandit_Axe Pirate ArcanistBoss Level(10,Enemy,True) [5,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI 
+	UNIT ArcanistBoss Arcanist ArcanistBoss Level(3,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [Miasma,AngelRing,Item100G] AttackInRangeAI
+	UNIT Enemy_Mercenary Mercenary ArcanistBoss Level(9,Enemy,True) [3,3] 0x00 0x00 0x0 0x00 [Armorslayer] NeverMoveAI
+	UNIT Bandit_Bow Mage ArcanistBoss Level(9,Enemy,True) [5,9] 0x00 0x00 0x0 0x00 [Fire,IronShield] NeverMoveAI
+	UNIT Bandit_Bow Archer_F ArcanistBoss Level(12,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
+	UNIT Bandit_Axe Pirate ArcanistBoss Level(11,Enemy,True) [2,14] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Bandit_Axe Pirate ArcanistBoss Level(10,Enemy,True) [5,15] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
 	UNIT Bandit_Sword Mercenary ArcanistBoss Level(8,Enemy,True) [11,10] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
 	UNIT Bandit_Axe Pirate ArcanistBoss Level(12,Enemy,True) [9,11] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
 	UNIT Bandit_Sword Mercenary ArcanistBoss Level(9,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT Bandit_Bow Archer ArcanistBoss Level(13,Enemy,True) [2,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
-	UNIT Remnant_Soldier Knight ArcanistBoss Level(3,Enemy,False) [11,5] 0x00 0x00 0x0 0x00 [SteelAxe,Javelin] NeverMoveAI 
-	UNIT Bandit_Sword Mercenary ArcanistBoss Level(10,Enemy,True) [16,8] 0x00 0x00 0x0 0x00 [IronSword,HideShield] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate_F ArcanistBoss Level(12,Enemy,True) [16,11] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI 
-	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(9,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Miasma,Heal] HealUnits 
-	UNIT DumaFaith_Sorcerer_2 Shaman ArcanistBoss Level(8,Enemy,True) [2,2] 0x00 0x00 0x0 0x00 [Miasma,Heal] AttackInRangeAI 
+	UNIT Bandit_Bow Archer ArcanistBoss Level(13,Enemy,True) [2,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Remnant_Soldier Knight ArcanistBoss Level(3,Enemy,False) [11,5] 0x00 0x00 0x0 0x00 [SteelAxe,Javelin] NeverMoveAI
+	UNIT Bandit_Sword Mercenary ArcanistBoss Level(10,Enemy,True) [16,8] 0x00 0x00 0x0 0x00 [IronSword,HideShield] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F ArcanistBoss Level(12,Enemy,True) [16,11] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(9,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [Miasma,Heal] HealUnits
+	UNIT DumaFaith_Sorcerer_2 Shaman ArcanistBoss Level(8,Enemy,True) [2,2] 0x00 0x00 0x0 0x00 [Miasma,Heal] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(8,Enemy,True) [9,2] 0x00 0x00 0x0 0x00 [Miasma,Silence] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(8,Enemy,True) [17,4] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
-	UNIT Remnant_Soldier Soldier ArcanistBoss Level(12,Enemy,True) [9,8] 0x00 0x00 0x0 0x00 [HeavySpear,IronShield] AttackInRangeAI 
+	UNIT Remnant_Soldier Soldier ArcanistBoss Level(12,Enemy,True) [9,8] 0x00 0x00 0x0 0x00 [HeavySpear,IronShield] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman ArcanistBoss Level(6,Enemy,True) [14,1] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT Bandit_Sword Mercenary ArcanistBoss Level(9,Enemy,True) [14,15] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
 	UNIT
 
 CavWestREDAs:
-	UNIT Remnant_Cav Cavalier ArcanistBoss Level(11,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [IronLance,IronShield] DefaultAI 
-	UNIT Remnant_Cav Cavalier_F ArcanistBoss Level(11,Enemy,True) [0,7] 0x00 0x00 0x1 REDA0R7 [Javelin] DefaultAI 
+	UNIT Remnant_Cav Cavalier ArcanistBoss Level(11,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [IronLance,IronShield] DefaultAI
+	UNIT Remnant_Cav Cavalier_F ArcanistBoss Level(11,Enemy,True) [0,7] 0x00 0x00 0x1 REDA0R7 [Javelin] DefaultAI
 	UNIT
 
 PirateSouthREDAs:
-	UNIT TreasureHunter Pirate_F ArcanistBoss Level(11,Enemy,True) [3,16] 0x00 0x00 0x1 REDA3R16 [BaseAxe,Torch] BrigandAI 
-	UNIT TreasureHunter Pirate ArcanistBoss Level(12,Enemy,True) [4,16] 0x00 0x00 0x1 REDA4R16 [BaseAxe,Torch] BrigandAI 
+	UNIT TreasureHunter Pirate_F ArcanistBoss Level(11,Enemy,True) [3,16] 0x00 0x00 0x1 REDA3R16 [BaseAxe,Torch] BrigandAI
+	UNIT TreasureHunter Pirate ArcanistBoss Level(12,Enemy,True) [4,16] 0x00 0x00 0x1 REDA4R16 [BaseAxe,Torch] BrigandAI
 	UNIT
-	
-PirateNorthREDAs:	
-	UNIT Bandit_Strong Pirate ArcanistBoss Level(10,Enemy,True) [10,0] 0x00 0x00 0x1 REDA10R0 [HandAxe,Torch] BrigandAI 
+
+PirateNorthREDAs:
+	UNIT Bandit_Strong Pirate ArcanistBoss Level(10,Enemy,True) [10,0] 0x00 0x00 0x1 REDA10R0 [HandAxe,Torch] BrigandAI
 	UNIT
-	
+
 ConradAppears:
-	UNIT Conrad Paladin 0x00 Level(7,NPC,True) [5,0] 0x00 0x00 0x1 REDA10R4 [BaseLance, Vulnerary] NoAI 
+	UNIT Conrad Paladin 0x00 Level(7,NPC,True) [5,0] 0x00 0x00 0x1 REDA10R4 [BaseLance, Vulnerary] NoAI
 	UNIT
 
 CutsceneUnits:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [10,2] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [11,1] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1, Ally, 1) [10,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [10,2] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [11,1] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [10,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
-	
+
 CutsceneEnemies1:
-	UNIT ArcanistBoss Arcanist 0x00 Level(1, Enemy, 1) [11,9] 0x00 0x00 0x0 0x00 [Miasma, Vulnerary] NoAI 
+	UNIT ArcanistBoss Arcanist 0x00 Level(1, Enemy, 1) [11,9] 0x00 0x00 0x0 0x00 [Miasma, Vulnerary] NoAI
 	UNIT
 CutsceneEnemies2:
-	UNIT SlaydePaladin Paladin 0x00 Level(1, Enemy, 1) [0,7] 0x00 0x00 0x1 REDA0R7 [BaseLance] NoAI 
+	UNIT SlaydePaladin Paladin 0x00 Level(1, Enemy, 1) [0,7] 0x00 0x00 0x1 REDA0R7 [BaseLance] NoAI
 	UNIT
 
 Ch2_7_BeginningScene:
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x207 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x207
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
+	CHECK_ISHARD
+	BEQ 0x207 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x207
+	LOAD_S2 0x1
+	ENUN
 	CAMERA_CENTERED [11,16]
-	FADU 16
-	MUSC Tension
+	FADEOUT 16
+	MUSIC Tension
 	#ifdef __DEBUG__
-		LOAD1 0x1 PlayerUnits
+		LOAD 0x1 PlayerUnits
 		ENUN
 	#else
-		LOAD3 0x0 PlayerUnits
+		LOAD_DEPLOYED 0x0 PlayerUnits
 		ENUN
 	#endif
 		CHECK_EXISTS Valbar
 		BEQ 0x1 0xC 0x0
-		CHECK_ALIVE Valbar
+		CHECK_ISALIVE Valbar
 		BEQ 0x1 0xC 0x0
 		CHECK_EXISTS Leon
 		BEQ 0x1 0xC 0x0
-		CHECK_ALIVE Leon
+		CHECK_ISALIVE Leon
 		BEQ 0x1 0xC 0x0
 		CHECK_EXISTS Kamui
 		BEQ 0x1 0xC 0x0
-		CHECK_ALIVE Kamui
+		CHECK_ISALIVE Kamui
 		BEQ 0x1 0xC 0x0
 			MapText(Ch2_7_OpeningScene) // bandits?
 			CAMERA_CENTERED [4,8]
@@ -278,94 +278,94 @@ Ch2_7_BeginningScene:
 	LABEL 0x2
 	GotoPrepScreen
 	NoFade
-	ENDA
+	END
 
 Ch2_7_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-    FADI 5
-    STAL 5
-	MUSC SongID_Victory
-	CLEN 0x0
-	CLEA 0x0
-	CLEE 0x0
+	FADEIN 5
+	STAL 5
+	MUSIC SongID_Victory
+	REMOVEALL_GREEN
+	REMOVEALL_BLUE
+	REMOVEALL_RED
 	CAMERA_CENTERED [11,0]
-	SetBackground(0x24)
-	
-	CHECK_ALIVE Mae
+	SetBackground(Town_Gate)
+
+	CHECK_ISALIVE Mae
 	BEQ 0x102 0xC 0x0
-	CHECK_ALIVE Boey
+	CHECK_ISALIVE Boey
 	BEQ 0x102 0xC 0x0
-	
+
 		TEXTMODE 1
 		TEXTSHOW Ch2_7_EndingScene_1 //everyone alive
 		TEXTEND
 		GOTO 0x103
-		
+
 	LABEL 0x102
-	
+
 		TEXTMODE 1
 		TEXTSHOW Ch2_7_EndingScene_1_Bad //no mae or boey
 		TEXTEND
-		
+
 	LABEL 0x103
-	
-	MUSC SongID_ShadowOfVictory
+
+	MUSIC SongID_ShadowOfVictory
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
-	FADI 5
-    CLEAN
+	FADEIN 5
+	CLEAN
 	STAL 20
-	
-	//Put the slayde/cantor scene here. 
+
+	//Put the slayde/cantor scene here.
 	CAMERA_CENTERED [11,12]
-    FADU 5
+	FADEOUT 5
 	MUSCFAST SongID_Env_WindBirds
 	//warpin effect pls
-    EVBIT_T 0x9
-    WARPIN [11, 9]
-	LOAD1 0x0 CutsceneEnemies1
-    ENDWARP
+	EVBIT_T 0x9
+	WARPIN [11, 9]
+	LOAD 0x0 CutsceneEnemies1
+	ENDWARP
 	ENUN
-    STAL 20
-	LOAD1 0x0 CutsceneEnemies2
+	STAL 20
+	LOAD 0x0 CutsceneEnemies2
 	ENUN
 	STAL 5
 	MOVE 0x08 SlaydePaladin [12,9]
 	ENUN
-    EVBIT_F 0x09
-	FADI 16
-	CLEE 0x0
+	EVBIT_F 0x09
+	FADEIN 16
+	REMOVEALL_RED
 	CAMERA_CENTERED [9,5]
-	SetBackground(0x24)
+	SetBackground(Town_Gate)
 	TEXTMODE 1
 	TEXTSHOW Ch2_Epilogue2 // blah blah
 	TEXTEND
-		MUSC SongID_FromTheDarkness
+		MUSIC SongID_FromTheDarkness
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
-	FADI 3
+	FADEIN 3
 	CLEAN
 
 	MUSCFAST SongID_Silence
-	FADU 2
+	FADEOUT 2
 	STAL 20
-	LOAD1 0x1 ConradAppears
+	LOAD 0x1 ConradAppears
 	ENUN
 	FlashCursor(Conrad,60)
 	MapText(Ch2_7_ConradAppears) // conrad goes ...
 	//MoveCoords(10,4,17,4)
 	MOVE 0x08 Conrad [17,4]
 
-	FADI 2
+	FADEIN 2
 	ENUN
-	ENUT gPart2Completed
-	ENUT gRouteSplit1Flag
-	MNCH 0x07
-	//MNTS 0x0 //kick to title screen
-	ENDA
+	FLAG_T gPart2Completed
+	FLAG_T gRouteSplit1Flag
+	GOTO_CHAPTER 0x07
+	//GOTO_TITLE //kick to title screen
+	END
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

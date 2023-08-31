@@ -27,8 +27,8 @@ Ch1_3_TurnBasedEvents:
 	TURN
 
 ChestEvent:
-	MUSC SongID_MarchToDeliverance
-	MUSI
+	MUSIC SongID_MarchToDeliverance
+	MUSIC_QUIET_T
 	CAMERA_CENTERED Alm
 	STAL 30
 	FlashCursor(12, 8, 60)
@@ -49,9 +49,9 @@ ChestEvent:
 		TEXTEND
 	#endif
 	TEXTCLEAR
-	MUNO
+	MUSIC_QUIET_F
 	NoFade
-	ENDA
+	END
 
 WaveFirst:
 	LoadReinforcements(Reinforcements1)
@@ -61,23 +61,23 @@ WaveFirst:
 	CAMERA_CENTERED Acantha
 	FlashCursor(Acantha, 60)
 	ConvoEvent(AcanthaAppears_Text)
-	ENDA
+	END
 
 WaveBottom1:
 	ReinforcementEvent(ReinforcementsBottom)
-	ENDA
+	END
 
 WaveSecond:
 	ReinforcementEvent(Reinforcements2)
-	ENDA
+	END
 
 WaveThird:
 	ReinforcementEvent(Reinforcements3)
-	ENDA
+	END
 
 WaveFourth:
 	ReinforcementEvent(Reinforcements4)
-	ENDA
+	END
 
 Ch1_3_CharacterBasedEvents:
 	CharacterEvent(9, TalkToAcanthaWithSilque, Silque, Acantha)
@@ -86,7 +86,7 @@ Ch1_3_CharacterBasedEvents:
 
 Ch1_3_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(8,5)
+		Seize(8,5)
 	#endif
 	Chest(IronSword, 12, 8)
 	Door(12, 6)
@@ -120,9 +120,9 @@ Ch1_3_Ballista3:
 Ch1_3_Units1:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,5] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [8,4] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [8,1] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [6,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [10,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [8,1] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [6,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [10,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [6,2] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [10,2] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
@@ -130,50 +130,50 @@ Ch1_3_Units1:
 SilqueFirst:
 	UNIT Silque Cleric 0x00 Level(1, NPC, 1) [9,0] 0x00 0x00 0x1 SilqueReda [Nosferatu, Vulnerary] [AlternateStavesAndAttackWithoutMoving, DoNotMove, CautiousRecovery, DefaultAI4]
 	UNIT
-	
+
 Ch1_3_CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,4] 0x00 0x00 0x1 AlmReda [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,4] 0x00 0x00 0x1 AlmReda [BaseSword, Vulnerary] NoAI
 	UNIT
-	
+
 AcanthaJoins:
 	UNIT Acantha Thief_F 0x00 Level(3, Enemy, 1) [8,0] 0x00 0x00 0x1 AcanthaReda [BaseSword, Lockpick] LootingThiefAI
 	UNIT
 
 EnemyUnits:
 	UNIT BrigandBoss Brigand 0x00 Level(7, Enemy, 1) [6,11] DropItem 0x00 0x0 0x00 [BaseAxe, _200G] AttackInRangeAI 0x4 0x0
-	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [3,11] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI 
-	UNIT Bandit_Bow Archer BrigandBoss Level(3, Enemy, 1) [16,9] 0x00 0x00 0x0 0x00  [BaseBow] NoAI 
-	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [6,9] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI 
-	UNIT Bandit_Axe Brigand BrigandBoss Level(4, Enemy, 1) [14,4] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI 
-	UNIT Bandit_Axe Brigand BrigandBoss Level(6, Enemy, 1) [16,6] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [3,11] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI
+	UNIT Bandit_Bow Archer BrigandBoss Level(3, Enemy, 1) [16,9] 0x00 0x00 0x0 0x00  [BaseBow] NoAI
+	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [6,9] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI
+	UNIT Bandit_Axe Brigand BrigandBoss Level(4, Enemy, 1) [14,4] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI
+	UNIT Bandit_Axe Brigand BrigandBoss Level(6, Enemy, 1) [16,6] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI
 	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [1,3] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI
-	UNIT Bandit_Bow Archer BrigandBoss Level(3, Enemy, 1) [5,10] 0x00 0x00 0x0 0x00  [BaseBow] NoAI	
+	UNIT Bandit_Bow Archer BrigandBoss Level(3, Enemy, 1) [5,10] 0x00 0x00 0x0 0x00  [BaseBow] NoAI
 	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [8,10] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI
 	UNIT
 
 Reinforcements1:
 	UNIT TreasureHunter Thief BrigandBoss Level(3, Enemy, 1) [16,5] DropItem 0x00 0x1 REDA16R5  [IronSword, Lockpick] LootingThiefAI
 	UNIT
-	
-ReinforcementsBottom: 
+
+ReinforcementsBottom:
 	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [4,15] 0x00 0x00 0x1 REDA4R15  [BaseAxe] NoAI
 	UNIT Bandit_Bow Archer BrigandBoss Level(4, Enemy, 1) [3,15] 0x00 0x00 0x1 REDA3R15  [BaseBow] NoAI
 	UNIT
 
 Reinforcements2:
-	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [0,3] 0x00 0x00 0x1 REDA0R3  [BaseAxe] NoAI 
+	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [0,3] 0x00 0x00 0x1 REDA0R3  [BaseAxe] NoAI
 	UNIT Bandit_Axe Brigand BrigandBoss Level(4, Enemy, 1) [0,4] 0x00 0x00 0x1 REDA0R4  [BaseAxe] NoAI
 	UNIT
 
 Reinforcements3:
-	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [16,4] 0x00 0x00 0x1 REDA16R3  [BaseAxe] NoAI 
+	UNIT Bandit_Axe Brigand BrigandBoss Level(5, Enemy, 1) [16,4] 0x00 0x00 0x1 REDA16R3  [BaseAxe] NoAI
 	UNIT Bandit_Bow Archer BrigandBoss Level(4, Enemy, 1) [16,4] 0x00 0x00 0x1 REDA16R4  [BaseBow] NoAI
 	UNIT
-	
+
 Reinforcements4:
 	UNIT Bandit_Axe Brigand BrigandBoss Level(6, Enemy, 1) [9,0] 0x00 0x00 0x1 REDA9R0  [BaseAxe] NoAI
 	UNIT
-	
+
 AlmReda:
 REDA [8,5] NoFlags Walk_Fast 0x0 0x0
 SilqueReda:
@@ -193,23 +193,23 @@ Brigand2x2Reda:
 REDA [15,4] NoFlags Walk_Fast 0x0 0x0
 
 Ch1_3_BeginningScene:
-	MUSC SongID_FromTheDarkness
-	LOAD1 0x1 EnemyUnits
+	MUSIC SongID_FromTheDarkness
+	LOAD 0x1 EnemyUnits
 	ENUN
-	FADU 0x5
-	
+	FADEOUT 0x5
+
 	//CAMERA_CENTERED [7,5]
 
-	LOAD1 0x1 SilqueFirst
+	LOAD 0x1 SilqueFirst
 	ENUN
 	STAL 30
 	FlashCursor(Silque, 60)
-	SetBackground(0x2E)
+	SetBackground(Shrine_2)
 	Text(Ch1_3_OpeningScene_2)
 	EndConvo
 	STAL 20
-	
-	LOAD2 0x0 Ch1_3_CutsceneUnits //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+
+	LOAD_CUTSCENE Ch1_3_CutsceneUnits //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
 	STAL 30
 	CAMERA_CENTERED BrigandBoss
@@ -221,99 +221,99 @@ Ch1_3_BeginningScene:
 	FlashCursor(Silque, 60)
 	Text(Ch1_3_OpeningScene_3)
 	STAL 30
-	CUSA Silque
-	FADI 5
-    STAL 5
-	CLEA 0x0
-	LOAD3 0x0 Ch1_3_Units1
+	FACTION_BLUE Silque
+	FADEIN 5
+	STAL 5
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 Ch1_3_Units1
 	GotoPrepScreen
-	ENDA
+	END
 
 
 TalkToSilque:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 33
 	Text(RecruitSilque_Text)
-	CUSA Silque
+	FACTION_BLUE Silque
 	STAL 20
 	NoFade
-	MURE 0x05
-	ENDA
+	MUSIC_RESTORE 0x05
+	END
 
 TalkToSilqueWithAcantha:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 33
 	Text(RecruitSilque_Acantha_Text)
-	CUSA Silque
+	FACTION_BLUE Silque
 	STAL 20
 	NoFade
-	MURE 0x05
-	ENDA
+	MUSIC_RESTORE 0x05
+	END
 
 TalkToAcantha:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 33
 	Text(RecruitAcantha_Text)
-	CUSA Acantha
+	FACTION_BLUE Acantha
 	STAL 20
-    CALL $591F40
+	CALL $591F40
 	CharacterJoinedNotification(Notif_AcanthaJoin)
 	NoFade
-	MURE 0x05
-	ENDA
+	MUSIC_RESTORE 0x05
+	END
 
 TalkToAcanthaWithSilque:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 33
 	Text(RecruitAcantha_Silque_Text)
-	CUSA Acantha
+	FACTION_BLUE Acantha
 	STAL 20
-    CALL $591F40
+	CALL $591F40
 	CharacterJoinedNotification(Notif_AcanthaJoin)
 	NoFade
-	MURE 0x05
-	ENDA
+	MUSIC_RESTORE 0x05
+	END
 
 Ch1_3_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gThiefShrineCompleted
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gThiefShrineCompleted
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 10
-    STAL 5
-	MUSC SongID_Victory
-	SetBackground(0x2E)
-	TEXTSTART 
+	FADEIN 10
+	STAL 5
+	MUSIC SongID_Victory
+	SetBackground(Shrine_2)
+	TEXTSTART
 	TEXTSHOW Ch1_3_PostBattle
 	TEXTEND
-	MUSC SongID_Silence
-	FAWI 5
+	MUSIC SongID_Silence
+	FADEIN_WHITE 5
 	STAL 5
-	FAWU 5
-	MUSC SongID_Legacy
+	FADEOUT_WHITE 5
+	MUSIC SongID_Legacy
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
 	TEXTMODE 1
-	
-	_0x2141 TurnwheelCG 0x1 0x4
+
+	BACKGROUND_CHANGE TurnwheelCG 1 4
 	TEXTMODE 1
 	STAL 180
-	_0x2141 0x2E 0x1 0x4
+	BACKGROUND_CHANGE Shrine_2 1 4
 	TEXTMODE 1
 
-	TEXTSTART 
+	TEXTSTART
 	TEXTSHOW Ch1_3_PostBattle_AfterCG
 	TEXTEND
 	TEXTCLEAR
-    CALL $591F40
+	CALL $591F40
 	CharacterJoinedNotification(Notif_SilqueJoin)
-	FADI 2
-	MNCH 0x03 //go to ch3
-	_0xA640 0x0 0x0 0x1
-	ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x03 //go to ch3
+	WM_SETLORDLOCATION 0x1
+	END
 
 #ifndef InlineEvents
-  MESSAGE Events end at offset currentOffset
+	MESSAGE Events end at offset currentOffset
 #endif

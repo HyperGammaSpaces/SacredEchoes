@@ -5,466 +5,466 @@
 EventPointerTable(plCh5_1_Event, Evt_ThisChapter)
 
 Evt_ThisChapter:
-    POIN Evt_TurnBasedEvents
-    POIN Evt_CharacterBasedEvents
-    POIN Evt_LocationBasedEvents
-    POIN Evt_MiscBasedEvents
-    POIN Evt_Dunno Evt_Dunno Evt_Dunno
-    POIN Evt_Tutorial
-    POIN Evt_Ballista1 Evt_Ballista2
-    POIN PlayerUnits PlayerUnits
-    POIN $0 $0 $0 
-    POIN BossUnits BossUnits BossUnits
-    POIN Evt_BeginningScene Evt_EndingScene
+	POIN Evt_TurnBasedEvents
+	POIN Evt_CharacterBasedEvents
+	POIN Evt_LocationBasedEvents
+	POIN Evt_MiscBasedEvents
+	POIN Evt_Dunno Evt_Dunno Evt_Dunno
+	POIN Evt_Tutorial
+	POIN Evt_Ballista1 Evt_Ballista2
+	POIN PlayerUnits PlayerUnits
+	POIN $0 $0 $0
+	POIN BossUnits BossUnits BossUnits
+	POIN Evt_BeginningScene Evt_EndingScene
 
 Evt_TurnBasedEvents:
-    OpeningTurnEvent(RineaIntroductionEvent) 
-    TURN 0x0 LoadReinforcementWitches [5,7] 0x0
-    TURN
-    
+	OpeningTurnEvent(RineaIntroductionEvent)
+	TURN 0x0 LoadReinforcementWitches [5,7] 0x0
+	TURN
+
 RineaIntroductionEvent:
-    MUSCMID SongID_Silence
-    CameraCursor(BerkutPossessed)
-    STAL 5
-    TEXTMODE 0
-    TEXTSHOW BerkutBattle_Opening_3
-    TEXTEND
-    MUSC SongID_ScionsDance
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    CAMERA_CENTERED Alm
-    NoFade
-    ENDA
+	MUSCMID SongID_Silence
+	CameraCursor(BerkutPossessed)
+	STAL 5
+	TEXTMODE 0
+	TEXTSHOW BerkutBattle_Opening_3
+	TEXTEND
+	MUSIC SongID_ScionsDance
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	CAMERA_CENTERED Alm
+	NoFade
+	END
 
 LoadReinforcementWitches:
-    ReinforcementEvent(StairReinforcements)
-    NoFade
-    ENDA
+	ReinforcementEvent(StairReinforcements)
+	NoFade
+	END
 
 Evt_CharacterBasedEvents:
-    CharacterEventBothWays(0x8, CliveMathildaTalk, Clive, Mathilda)
-    CharacterEventBothWays(0x9, CliveClairTalk, Clive, Clair)
-    CHAR
+	CharacterEventBothWays(0x8, CliveMathildaTalk, Clive, Mathilda)
+	CharacterEventBothWays(0x9, CliveClairTalk, Clive, Clair)
+	CHAR
 
 CliveMathildaTalk:
-    MUSI
-    STAL 30
-    MapText(Ch5_1_CliveMathilda)
-    STAL 20
-    NoFade
-    MUNO
-    ENDA
-    
+	MUSIC_QUIET_T
+	STAL 30
+	MapText(Ch5_1_CliveMathilda)
+	STAL 20
+	NoFade
+	MUSIC_QUIET_F
+	END
+
 CliveClairTalk:
-    MUSI
-    STAL 30
-    MapText(Ch5_1_CliveClair)
-    STAL 20
-    NoFade
-    MUNO
-    ENDA
+	MUSIC_QUIET_T
+	STAL 30
+	MapText(Ch5_1_CliveClair)
+	STAL 20
+	NoFade
+	MUSIC_QUIET_F
+	END
 
 Evt_LocationBasedEvents:
-    #ifdef __DEBUG__
-      Seize(10,14)
-    #endif
-    Chest(Hauteclere, 21, 8)
-    LOCA
+	#ifdef __DEBUG__
+		Seize(10,14)
+	#endif
+	Chest(Hauteclere, 21, 8)
+	LOCA
 
 Evt_MiscBasedEvents:
-    CauseGameOverIfLordDies
-    //DefeatAll(Evt_EndingScene)
-    AFEV 0xE RineaDeathAfter 0xC
-    AFEV 0xF DoubleBossCheck 0xB
-    AFEV 0xF DoubleBossCheck 0xC
-    MournQuoteAFEVS
-    AFEV
+	CauseGameOverIfLordDies
+	//DefeatAll(Evt_EndingScene)
+	AFEV 0xE RineaDeathAfter 0xC
+	AFEV 0xF DoubleBossCheck 0xB
+	AFEV 0xF DoubleBossCheck 0xC
+	MournQuoteAFEVS
+	AFEV
 
 Evt_Dunno:
-    END_MAIN
+	END_MAIN
 
 Evt_Tutorial:
-    END_MAIN
+	END_MAIN
 
 Evt_Ballista1:
-    BLST
-    ALIGN 4
+	BLST
+	ALIGN 4
 
 Evt_Ballista2:
-    BLST
-    ALIGN 4
+	BLST
+	ALIGN 4
 
 /*
 I do like the idea of "Berkut doesn't move until Rinea dies", but I'd make him actually show as stationary until then. I know that, at least with the version of the movement-range-nullifying thing that comes with Builder Skillsys, nullifying movement range is done by setting AI4 to "boss AI" (value 20 I think?). Changing AI4 to 0 in the event that changes his AI then allows them to move normally again, but it has to be done with Set Unit Status instead of the vanilla AI change commands for whatever reason
 */
 RineaDeathAfter:
-    CHECK_EVENTID 0x0B
-    BNE 0x0 r0 rC
-        SVAL 0x1 0x0
-        CHAI BerkutPossessed
-        CameraCursor(BerkutPossessed)
-        MapText(Berkut_Act5_RineaDead)
-    LABEL 0x0
-    NoFade
-    ENDA
+	CHECK_FLAG 0x0B
+	BNE 0x0 r0 rC
+		SVAL 0x1 0x0
+		SET_AI BerkutPossessed
+		CameraCursor(BerkutPossessed)
+		MapText(Berkut_Act5_RineaDead)
+	LABEL 0x0
+	NoFade
+	END
 
 DoubleBossCheck:
-    CHECK_EVENTID 0x0B
-    BEQ 0x0 r0 rC
-      CHECK_EVENTID 0x0C
-      BEQ 0x0 r0 rC
-          CALL Evt_EndingScene
-          GOTO 0x1
-    LABEL 0x0
-      ENUF 0xF // Or whatever event ID you attach to the AFEVs.
-    LABEL 0x1
-    NoFade
-    ENDA
+	CHECK_FLAG 0x0B
+	BEQ 0x0 r0 rC
+	  CHECK_FLAG 0x0C
+	  BEQ 0x0 r0 rC
+		  CALL Evt_EndingScene
+		  GOTO 0x1
+	LABEL 0x0
+	  FLAG_F 0xF // Or whatever event ID you attach to the AFEVs.
+	LABEL 0x1
+	NoFade
+	END
 
 PlayerUnits:
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [16,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [16,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 
 CutsceneUnits:
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x1 REDA11R22 [BaseSword, Vulnerary] NoAI 
-    UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x1 REDA12R22 [BaseLance] NoAI
-    UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x1 REDA10R23 [BaseLance, Vulnerary] NoAI 
-    UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x1 REDA13R23 [BaseLance, Vulnerary] NoAI 
-    UNIT
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x1 REDA11R22 [BaseSword, Vulnerary] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x1 REDA12R22 [BaseLance] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x1 REDA10R23 [BaseLance, Vulnerary] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [12,26] 0x00 0x00 0x1 REDA13R23 [BaseLance, Vulnerary] NoAI
+	UNIT
 
 CutsceneUnits_2:
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x1 REDA10R14 [BaseSword, Vulnerary] NoAI 
-    UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,22] 0x00 0x00 0x1 REDA13R14 [BaseLance] NoAI
-    UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [10,23] 0x00 0x00 0x1 REDA11R15 [BaseLance, Vulnerary] NoAI 
-    UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [13,23] 0x00 0x00 0x1 REDA12R15 [BaseLance, Vulnerary] NoAI 
-    UNIT
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x1 REDA10R14 [BaseSword, Vulnerary] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,22] 0x00 0x00 0x1 REDA13R14 [BaseLance] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [10,23] 0x00 0x00 0x1 REDA11R15 [BaseLance, Vulnerary] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [13,23] 0x00 0x00 0x1 REDA12R15 [BaseLance, Vulnerary] NoAI
+	UNIT
 
 BerkutSolo:
-    UNIT BerkutPossessed RigelPrince   BerkutPossessed Level(20, Enemy, False) [11,7]  0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NoAI
-    UNIT
+	UNIT BerkutPossessed RigelPrince   BerkutPossessed Level(20, Enemy, False) [11,7]  0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NoAI
+	UNIT
 
 BerkutPossessedSolo:
-    UNIT BerkutPossessed FallenPrince   BerkutPossessed Level(20, Enemy, False) [11,7]  0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NoAI
-    UNIT
-    
+	UNIT BerkutPossessed FallenPrince   BerkutPossessed Level(20, Enemy, False) [11,7]  0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NoAI
+	UNIT
+
 RineaSolo:
-    UNIT RineaEnemy Dancer BerkutPossessed Level(19, Enemy, False) [12,19] 0x00 0x00 0x1 RineaReda [Seraphim] NoAI
-    UNIT
-    
+	UNIT RineaEnemy Dancer BerkutPossessed Level(19, Enemy, False) [12,19] 0x00 0x00 0x1 RineaReda [Seraphim] NoAI
+	UNIT
+
 RineaReda:
-    REDA [12,7] NoFlags Walk_Slow 0x00 0x0
-    
+	REDA [12,7] NoFlags Walk_Slow 0x00 0x0
+
 FernandTriesToBeAHero:
-    UNIT FernandPaladin Paladin BerkutPossessed Level(10, Enemy, False) [12,26] 0x00 0x00 0x1 REDA12R19 [SteelLance] NoAI
-    UNIT
+	UNIT FernandPaladin Paladin BerkutPossessed Level(10, Enemy, False) [12,26] 0x00 0x00 0x1 REDA12R19 [SteelLance] NoAI
+	UNIT
 
 FernandWounded:
-    UNIT FernandPaladin Peer FernandPaladin Level(10, NPC, False) [12,13] 0x00 0x00 0x0 0x00 NoItems NoAI
-    UNIT
+	UNIT FernandPaladin Peer FernandPaladin Level(10, NPC, False) [12,13] 0x00 0x00 0x0 0x00 NoItems NoAI
+	UNIT
 
 FernandFallen:
-    UNIT FernandPaladin FallenPeer FernandPaladin Level(10, NPC, False) [12,21] 0x00 0x00 0x0 0x00 NoItems NoAI
-    UNIT
+	UNIT FernandPaladin FallenPeer FernandPaladin Level(10, NPC, False) [12,21] 0x00 0x00 0x0 0x00 NoItems NoAI
+	UNIT
 
 BossUnits:
-    UNIT BerkutPossessed FallenPrince   BerkutPossessed Level(20, Enemy, False) [11,7]  0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NoAI
-    UNIT RineaEnemy Witch_Rinea BerkutPossessed Level(19, Enemy, False) [12,7] 0x00 0x00 0x0 0x00 [Seraphim] NoAI
-    UNIT
-    
+	UNIT BerkutPossessed FallenPrince   BerkutPossessed Level(20, Enemy, False) [11,7]  0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NoAI
+	UNIT RineaEnemy Witch_Rinea BerkutPossessed Level(19, Enemy, False) [12,7] 0x00 0x00 0x0 0x00 [Seraphim] NoAI
+	UNIT
+
 BossUnits_Ending:
-    UNIT BerkutPossessed FallenPrince   BerkutPossessed Level(20, Enemy, False) [11,7]  0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NoAI
-    UNIT RineaEnemy Witch_Rinea BerkutPossessed Level(19, Enemy, False) [12,7] 0x00 0x00 0x0 0x00 [Seraphim] NoAI
-    UNIT
-    
+	UNIT BerkutPossessed FallenPrince   BerkutPossessed Level(20, Enemy, False) [11,7]  0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NoAI
+	UNIT RineaEnemy Witch_Rinea BerkutPossessed Level(19, Enemy, False) [12,7] 0x00 0x00 0x0 0x00 [Seraphim] NoAI
+	UNIT
+
 EnemyUnits:
-    UNIT BerkutPossessed FallenPrince   RineaEnemy Level(20, Enemy, False) [11,7]   0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NeverMoveAI
-    UNIT RineaEnemy Witch_Rinea BerkutPossessed Level(19, Enemy, False) [12,7] 0x00 0x00 0x0 0x00 [Seraphim, Fortify,PrayerRing] AttackInRangeAI
-    //mogalls, fiends, DFs, arcanists. Rinea can summon witches.
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [11,9] DropItem 0x00 0x0 0x00 [Ridersbane] NoAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [12,9] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [13,10] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-    UNIT Terror_Mogall Mogall BerkutPossessed Level(15, Enemy, True) [16,9] 0x00 0x00 0x0 0x00 [Tackle_Mogall,DivideAbility] MogallAI
-    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(16, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F,0x03]
-    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [8,7] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [7,5] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-    UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(3, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [IronSword] NoAI
-    UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(3, Enemy, True) [16,4] 0x00 0x00 0x0 0x00 [IronSword] NoAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
-    UNIT
-        
+	UNIT BerkutPossessed FallenPrince   RineaEnemy Level(20, Enemy, False) [11,7]   0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NeverMoveAI
+	UNIT RineaEnemy Witch_Rinea BerkutPossessed Level(19, Enemy, False) [12,7] 0x00 0x00 0x0 0x00 [Seraphim, Fortify,PrayerRing] AttackInRangeAI
+	//mogalls, fiends, DFs, arcanists. Rinea can summon witches.
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [11,9] DropItem 0x00 0x0 0x00 [Ridersbane] NoAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [12,9] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [13,10] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Terror_Mogall Mogall BerkutPossessed Level(15, Enemy, True) [16,9] 0x00 0x00 0x0 0x00 [Tackle_Mogall,DivideAbility] MogallAI
+	UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(16, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F,0x03]
+	UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [8,7] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [7,5] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(3, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(3, Enemy, True) [16,4] 0x00 0x00 0x0 0x00 [IronSword] NoAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
+	UNIT
+
 EnemyUnits_Hard:
-    UNIT BerkutPossessed FallenPrince   RineaEnemy Level(20, Enemy, False) [11,7]   0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NeverMoveAI
-    UNIT RineaEnemy Witch_Rinea BerkutPossessed Level(19, Enemy, False) [12,7] 0x00 0x00 0x0 0x00 [Seraphim, Fortify,PrayerRing] AttackInRangeAI
-    //mogalls, fiends, DFs, arcanists. Rinea can summon witches.
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [11,9] DropItem 0x00 0x0 0x00 [Ridersbane] NoAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [12,9] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [13,10] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
-    UNIT Terror_Mogall Mogall BerkutPossessed Level(15, Enemy, True) [17,5] 0x00 0x00 0x0 0x00 [Tackle_Mogall,DivideAbility] MogallAI
-    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(16, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F,0x03]
-    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [8,7] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-    UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [7,5] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
-    UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(4, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
-    UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(4, Enemy, True) [16,4] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [4,13] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
-    UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [4,14] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
-    UNIT
-    
+	UNIT BerkutPossessed FallenPrince   RineaEnemy Level(20, Enemy, False) [11,7]   0x00 0x00 0x0 0x00 [Kriemhild,KeepsakeRing] NeverMoveAI
+	UNIT RineaEnemy Witch_Rinea BerkutPossessed Level(19, Enemy, False) [12,7] 0x00 0x00 0x0 0x00 [Seraphim, Fortify,PrayerRing] AttackInRangeAI
+	//mogalls, fiends, DFs, arcanists. Rinea can summon witches.
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [11,9] DropItem 0x00 0x0 0x00 [Ridersbane] NoAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [12,9] 0x00 0x00 0x0 0x00 [HeavySpear] NoAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [13,10] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
+	UNIT Terror_Mogall Mogall BerkutPossessed Level(15, Enemy, True) [17,5] 0x00 0x00 0x0 0x00 [Tackle_Mogall,DivideAbility] MogallAI
+	UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(16, Enemy, True) [9,6] 0x00 0x00 0x0 0x00 [Mire, Fortify] [0x0F,0x03]
+	UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [8,7] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT DumaFaith_Sorcerer Arcanist BerkutPossessed Level(14, Enemy, True) [7,5] 0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
+	UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(4, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT DumaFaith_Sorcerer_2 DreadFighter BerkutPossessed Level(4, Enemy, True) [16,4] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [19,13] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(6, Enemy, True) [4,13] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
+	UNIT Terror_Fiend Fiend BerkutPossessed Level(8, Enemy, True) [4,14] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
+	UNIT
+
 StairReinforcements:
-    UNIT DumaFaith_Witch Witch RineaEnemy Level(12, Enemy, True) [3,18] 0x00 0x00 0x1 REDA3R17 [Aura] NoAI
-    UNIT DumaFaith_Witch Witch RineaEnemy Level(12, Enemy, True) [20,18] 0x00 0x00 0x1 REDA20R17 [Aura] NoAI
-    UNIT
-    
+	UNIT DumaFaith_Witch Witch RineaEnemy Level(12, Enemy, True) [3,18] 0x00 0x00 0x1 REDA3R17 [Aura] NoAI
+	UNIT DumaFaith_Witch Witch RineaEnemy Level(12, Enemy, True) [20,18] 0x00 0x00 0x1 REDA20R17 [Aura] NoAI
+	UNIT
+
 MycenJoins:
-    UNIT Mycen GoldKnight 0x00 Level(7, Ally, True) [16,15] 0x00 0x00 0x0 0x00 [BaseLance, SilverLance] NoAI
-    UNIT
+	UNIT Mycen GoldKnight 0x00 Level(7, Ally, True) [16,15] 0x00 0x00 0x0 0x00 [BaseLance, SilverLance] NoAI
+	UNIT
 
 Evt_BeginningScene:
-    
-    MUSCSLOW SongID_PinnacleOfFalseBelief
-    LOAD1 0x1 BerkutSolo
-    ENUN
-    SetBackground(0x2A)
-    TEXTMODE 1
-    TEXTSHOW Ch5_1_BerkutAltar_1 //Berkut ranting in a hallway.
-    TEXTEND
-    TEXTCLEAR
-    ClearBackgroundSmooth
-    
-    CameraCursor(BerkutPossessed)
-    STAL 20
-    TEXTMODE 0
-    TEXTSHOW Ch5_1_BerkutAltar_2 //Berkut is hearing Duma's voice.
-    TEXTEND
-    TEXTCLEAR
-    STAL 20
-    MUSCSLOW SongID_Silence
-    STAL 40
-    MUSCSLOW SongID_Env_SoftSwoosh
-    STAL 20
-    LOAD1 0x1 RineaSolo
-    ENUN
-    CameraCursor(RineaEnemy)
-    TEXTMODE 0
-    TEXTSHOW Ch5_1_BerkutAltar_3 //Rinea and Berkut argue
-    TEXTEND
-    FadeOutMusic
-    TEXTCONT
-    TEXTEND
-    MUSC SongID_PrideAndArrogance //scary music
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    CAMERA_CENTERED [11,19] //bottom of map
-    CLEE 0x0
-    LOAD1 0x1 BossUnits
-    ENUN
-    STAL 20
-    LOAD1 0x1 FernandTriesToBeAHero
-    ENUN
-    STAL 20
-    EVBIT_T 0x9
-    MOVE 0x08 FernandPaladin [11,9]
-    ENUN
-    EVBIT_F 0x9
-    TEXTMODE 0
-    TEXTSHOW Ch5_1_BerkutAltar_Fernand //Fernand's shit gets wrecked.
-    TEXTEND
-    TEXTCLEAR
-    FadeOutMusic
-    FADI 2
-    CLEE 0x0
-    STAL 40
-    //Return to Rigel Castle. 
-    MUSCSLOW SongID_Truth
-    SetBackground(0x0E)
-    BROWNBOXTEXT Loc_RigelCastle [8,8]
-    STAL 30
-    TEXTMODE 1
-    TEXTSHOW Ch5_1_OpeningText //Alm, Mycen, and Massena talk about the underground passage.
-    TEXTEND
-    TEXTCLEAR
-    CALL $591F40
+
+	MUSCSLOW SongID_PinnacleOfFalseBelief
+	LOAD 0x1 BerkutSolo
+	ENUN
+	SetBackground(Fort_2)
+	TEXTMODE 1
+	TEXTSHOW Ch5_1_BerkutAltar_1 //Berkut ranting in a hallway.
+	TEXTEND
+	TEXTCLEAR
+	ClearBackgroundSmooth
+
+	CameraCursor(BerkutPossessed)
+	STAL 20
+	TEXTMODE 0
+	TEXTSHOW Ch5_1_BerkutAltar_2 //Berkut is hearing Duma's voice.
+	TEXTEND
+	TEXTCLEAR
+	STAL 20
+	MUSCSLOW SongID_Silence
+	STAL 40
+	MUSCSLOW SongID_Env_SoftSwoosh
+	STAL 20
+	LOAD 0x1 RineaSolo
+	ENUN
+	CameraCursor(RineaEnemy)
+	TEXTMODE 0
+	TEXTSHOW Ch5_1_BerkutAltar_3 //Rinea and Berkut argue
+	TEXTEND
+	FadeOutMusic
+	TEXTCONT
+	TEXTEND
+	MUSIC SongID_PrideAndArrogance //scary music
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	CAMERA_CENTERED [11,19] //bottom of map
+	REMOVEALL_RED
+	LOAD 0x1 BossUnits
+	ENUN
+	STAL 20
+	LOAD 0x1 FernandTriesToBeAHero
+	ENUN
+	STAL 20
+	EVBIT_T 0x9
+	MOVE 0x08 FernandPaladin [11,9]
+	ENUN
+	EVBIT_F 0x9
+	TEXTMODE 0
+	TEXTSHOW Ch5_1_BerkutAltar_Fernand //Fernand's shit gets wrecked.
+	TEXTEND
+	TEXTCLEAR
+	FadeOutMusic
+	FADEIN 2
+	REMOVEALL_RED
+	STAL 40
+	//Return to Rigel Castle.
+	MUSCSLOW SongID_Truth
+	SetBackground(Castle_Room)
+	BROWNBOXTEXT Loc_RigelCastle [8,8]
+	STAL 30
+	TEXTMODE 1
+	TEXTSHOW Ch5_1_OpeningText //Alm, Mycen, and Massena talk about the underground passage.
+	TEXTEND
+	TEXTCLEAR
+	CALL $591F40
 	CharacterJoinedNotification(Notif_MycenJoin)
-    STAL 20
-    FadeOutMusic
-    FADI 2
-    CLEAN
-    STAL 20
+	STAL 20
+	FadeOutMusic
+	FADEIN 2
+	CLEAN
+	STAL 20
 
-    //Load Alm, Clive, Clair, Mathilda on the bottom half of the map.
-    MUSCSLOW SongID_Env_SoftSwoosh
-    CAMERA_CENTERED [11,25]
-    FADU 2
-    LOAD2 0x0 CutsceneUnits
-    ENUN
-    STAL 20
-    TEXTMODE 0
-    TEXTSHOW FernandFinal_Scene_1 //Clive realizes it's Fernand.
-    TEXTEND
-    //Load Fernand as a Peer, slooooowly dragging himself south.
-    LOAD1 0x1 FernandWounded
-    ENUN
-    MOVE 0x2 FernandPaladin [12,17]
-    ENUN
-    STAL 20
-    TEXTCONT
-    TEXTEND
-    MOVE 0x2 FernandPaladin [12,21]
-    ENUN
-    STAL 20
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    //Replace Peer w Fallen Peer sprite. 
-    SOUN 0x2D9 //thud
-    DISA FernandPaladin
-    LOAD1 0x1 FernandFallen
-    ENUN
-    STAL 20
-    FADI 5
-    CLEA 0x0
-    CLEN 0x0
-    EVBIT_MODIFY 0x1
-    MUSCSLOW SongID_Sorrow
-    TEXTMODE 1
-    SetBackground(FernandDeathCG,5)
-    STAL 60
-    CgText(FernandFinal_Scene_CG)
-    TEXTMODE 1
-    EVBIT_MODIFY 0x0
-    BACKGROUND_CHANGE 0x2A 0x1 0x4
-    
-    CHECK_ALIVE Mathilda
-    BEQ 0x101 rC r0
-        TEXTSHOW FernandFinal_Scene_2
-        TEXTEND
-        TEXTCLEAR
-        GOTO 0x102
-    LABEL 0x101
-    TEXTSHOW FernandFinal_Scene_2_NoMathilda
-    TEXTEND
-    TEXTCLEAR
-    LABEL 0x102
-    FADI 5
-    STAL 5
-    SetBackground(0x2A,5)
+	//Load Alm, Clive, Clair, Mathilda on the bottom half of the map.
+	MUSCSLOW SongID_Env_SoftSwoosh
+	CAMERA_CENTERED [11,25]
+	FADEOUT 2
+	LOAD_CUTSCENE CutsceneUnits
+	ENUN
+	STAL 20
+	TEXTMODE 0
+	TEXTSHOW FernandFinal_Scene_1 //Clive realizes it's Fernand.
+	TEXTEND
+	//Load Fernand as a Peer, slooooowly dragging himself south.
+	LOAD 0x1 FernandWounded
+	ENUN
+	MOVE 0x2 FernandPaladin [12,17]
+	ENUN
+	STAL 20
+	TEXTCONT
+	TEXTEND
+	MOVE 0x2 FernandPaladin [12,21]
+	ENUN
+	STAL 20
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	//Replace Peer w Fallen Peer sprite.
+	SOUND 0x2D9 //thud
+	REMOVEUNIT FernandPaladin
+	LOAD 0x1 FernandFallen
+	ENUN
+	STAL 20
+	FADEIN 5
+	REMOVEALL_BLUE
+	REMOVEALL_GREEN
+	CONFIG_SKIP 0x1
+	MUSCSLOW SongID_Sorrow
+	TEXTMODE 1
+	SetBackground(FernandDeathCG,5)
+	STAL 60
+	CgText(FernandFinal_Scene_CG)
+	TEXTMODE 1
+	CONFIG_SKIP 0x0
+	BACKGROUND_CHANGE Fort_2 1 4
 
-    CHECK_ALIVE Clair
-    BEQ 0x103 rC r0
-        CHECK_ALIVE Mathilda
-        BEQ 0x104 rC r0
-            BackgroundText(FernandFinal_Scene_3) //both alive
-            GOTO 0x108
-        LABEL 0x104 //yes clair no mathilda
-            BackgroundText(FernandFinal_Scene_3_NoMathilda)
-            GOTO 0x108
-    LABEL 0x103 //clair dead
-        CHECK_ALIVE Mathilda
-        BEQ 0x105 rC r0
-            BackgroundText(FernandFinal_Scene_3_NoClair) //yes mathilda no clair
-            GOTO 0x108
-        LABEL 0x105 //both dead
-        BackgroundText(FernandFinal_Scene_3_Neither)
-    LABEL 0x108
-    FadeOutMusic
-    FADI 2
-    STAL 20
-    SetBackground(0x17, 5)
-    MUSCSLOW SongID_PinnacleOfFalseBelief
-    BackgroundText(Ch5_1_Celica_Aside) //Celica, elsewhere in the tower, begins devising a plan.
-    FadeOutMusic
-    FADI 2
-    CLEAN
-    STAL 20
-    MUSCSLOW SongID_Env_SoftSwoosh
-    CAMERA_CENTERED [11,10]
-    LOAD1 0x1 BerkutPossessedSolo
-    ENUN
-    FADU 5
-    LOAD2 0x0 CutsceneUnits_2
-    ENUN
-    FlashCursor(Alm, 60)
-    TEXTMODE 0
-    TEXTSHOW BerkutBattle_Opening
-    TEXTEND
-    MUSC SongID_PrideAndArrogance
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    //fuchsia glow, load enemies
-    SOUN 0x2EA
-    FAWI 5
-    CLEE 0x0
-    SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x5A01 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x5A01
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-    STAL 5
-    FAWU 5
-    STAL 20
-    
-    TEXTMODE 0
-    TEXTSHOW BerkutBattle_Opening_2
-    TEXTEND
-    TEXTCLEAR
-    
-    FADI 16
-    CHECK_EXISTS Mycen
-    BNE 0x300 rC r0
-        LOAD1 0x1 MycenJoins
-        ENUN
-    LABEL 0x300
-    CLEA 0x0
-    LOAD3 0x0 PlayerUnits 
-    ENUN
-    GotoPrepScreen
-    ENDA
+	CHECK_ISALIVE Mathilda
+	BEQ 0x101 rC r0
+		TEXTSHOW FernandFinal_Scene_2
+		TEXTEND
+		TEXTCLEAR
+		GOTO 0x102
+	LABEL 0x101
+	TEXTSHOW FernandFinal_Scene_2_NoMathilda
+	TEXTEND
+	TEXTCLEAR
+	LABEL 0x102
+	FADEIN 5
+	STAL 5
+	SetBackground(Fort_2,5)
+
+	CHECK_ISALIVE Clair
+	BEQ 0x103 rC r0
+		CHECK_ISALIVE Mathilda
+		BEQ 0x104 rC r0
+			BackgroundText(FernandFinal_Scene_3) //both alive
+			GOTO 0x108
+		LABEL 0x104 //yes clair no mathilda
+			BackgroundText(FernandFinal_Scene_3_NoMathilda)
+			GOTO 0x108
+	LABEL 0x103 //clair dead
+		CHECK_ISALIVE Mathilda
+		BEQ 0x105 rC r0
+			BackgroundText(FernandFinal_Scene_3_NoClair) //yes mathilda no clair
+			GOTO 0x108
+		LABEL 0x105 //both dead
+		BackgroundText(FernandFinal_Scene_3_Neither)
+	LABEL 0x108
+	FadeOutMusic
+	FADEIN 2
+	STAL 20
+	SetBackground(Prison_Cell, 5)
+	MUSCSLOW SongID_PinnacleOfFalseBelief
+	BackgroundText(Ch5_1_Celica_Aside) //Celica, elsewhere in the tower, begins devising a plan.
+	FadeOutMusic
+	FADEIN 2
+	CLEAN
+	STAL 20
+	MUSCSLOW SongID_Env_SoftSwoosh
+	CAMERA_CENTERED [11,10]
+	LOAD 0x1 BerkutPossessedSolo
+	ENUN
+	FADEOUT 5
+	LOAD_CUTSCENE CutsceneUnits_2
+	ENUN
+	FlashCursor(Alm, 60)
+	TEXTMODE 0
+	TEXTSHOW BerkutBattle_Opening
+	TEXTEND
+	MUSIC SongID_PrideAndArrogance
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	//fuchsia glow, load enemies
+	SOUND 0x2EA
+	FADEIN_WHITE 5
+	REMOVEALL_RED
+	SVAL 0x2 (EnemyUnits|IsPointer)
+	CHECK_ISHARD
+	BEQ 0x5A01 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x5A01
+	LOAD_S2 0x1
+	ENUN
+	STAL 5
+	FADEOUT_WHITE 5
+	STAL 20
+
+	TEXTMODE 0
+	TEXTSHOW BerkutBattle_Opening_2
+	TEXTEND
+	TEXTCLEAR
+
+	FADEIN 16
+	CHECK_EXISTS Mycen
+	BNE 0x300 rC r0
+		LOAD 0x1 MycenJoins
+		ENUN
+	LABEL 0x300
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 PlayerUnits
+	ENUN
+	GotoPrepScreen
+	END
 
 
 Evt_EndingScene:
-    CALL EndMusicAndMMS
-    CALL UnifiedBEXPCaller
-    FADI 2
-    STAL 5
-    SetBackground(0x2A)
-    TEXTMODE 1
-    TEXTSHOW BerkutFinal_Scene
-    TEXTEND
-    MUSC SongID_SilverGarden
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    EVBIT_MODIFY 0x1
-    CALL $591F40
-    SVAL 0x3 KeepsakeRing
-    GIVEITEMTO Alm
-    EVBIT_T 0x7
-    EVBIT_MODIFY 0x0
-    TEXTMODE 1
-    TEXTSHOW BerkutFinal_Scene_2
-    TEXTEND
-    SOUN 0xD3 //stab
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    FADI 2
-    MNC2 0x2E
-    ENDA
+	CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	FADEIN 2
+	STAL 5
+	SetBackground(Fort_2)
+	TEXTMODE 1
+	TEXTSHOW BerkutFinal_Scene
+	TEXTEND
+	MUSIC SongID_SilverGarden
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	CONFIG_SKIP 0x1
+	CALL $591F40
+	SVAL 0x3 KeepsakeRing
+	GIVEITEM Alm
+	EVBIT_T 0x7
+	CONFIG_SKIP 0x0
+	TEXTMODE 1
+	TEXTSHOW BerkutFinal_Scene_2
+	TEXTEND
+	SOUND 0xD3 //stab
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	FADEIN 2
+	GOTO_CHAPTER_NOWM 0x2E
+	END

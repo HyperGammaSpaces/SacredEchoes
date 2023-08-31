@@ -24,30 +24,30 @@ Dummy_TurnBasedEvents:
 	TURN
 	
 BaronsEvent:
-	CHECK_ALIVE Forsyth
+	CHECK_ISALIVE Forsyth
 	BEQ 0x103 0xC 0x0
-	CHECK_DEPLOYED Forsyth
+	CHECK_ISDEPLOYED Forsyth
 	BEQ 0x103 0xC 0x0
-		MUSC SongID_WhatLiesAtTheEnd
-		MUSI
+		MUSIC SongID_WhatLiesAtTheEnd
+		MUSIC_QUIET_T
 		CAMERA_CENTERED MarlaCh4
 		STAL 30
 		CameraCursor(Forsyth)
 		Text(Ch4_3A_Barons)
-		MUNO
+		MUSIC_QUIET_F
 	LABEL 0x103
 	NoFade
-	ENDA
-	
+	END
+
 LoadSummons:
-	CHECK_EVENTID 0x1D
+	CHECK_FLAG 0x1D
 	BNE 2 0xC 0x0
 		CameraCursor(MarlaCh4)
 		MapText(Ch4_3A_MarlaSummons)
-		ENUT 0x1D
+		FLAG_T 0x1D
 		GOTO 3
 	LABEL 2
-	CHECK_EVENTID 0x2 // boss death quote
+	CHECK_FLAG 0x2 // boss death quote
 	BNE 0 0xC 0x0 // branch label 0 if summoner dead
 	COUNTER_CHECK 0 // slot c = counter 0 value
 	SVAL 0x1 1 // number of turns between summons (1)
@@ -60,45 +60,45 @@ LoadSummons:
 	LABEL 3
 	STAL 20
 	WARPIN [12, 1]
-    LOAD1 0 WitchSummon1
-    ENDWARP
-    ENUN
-    STAL 20
-    WARPIN [16, 1]
-    LOAD1 0 WitchSummon2
-    ENDWARP
-    ENUN
+	LOAD 0 WitchSummon1
+	ENDWARP
+	ENUN
+	STAL 20
+	WARPIN [16, 1]
+	LOAD 0 WitchSummon2
+	ENDWARP
+	ENUN
 	EVBIT_T 0x7
 	GOTO 0
 
 	LABEL 1
 	// Counter not at value
-	COUNTER_ADD 0 0 // counter 0 ++
+	COUNTER_INC 0 // counter 0 ++
 
 	LABEL 0
 	// event end
 	NoFade
-	ENDA
-	
+	END
+
 LoadReinforcementBandits:
 	ReinforcementEvent(BrigandsReinforcements)
 	NoFade
-	ENDA
+	END
 
 Dummy_CharacterBasedEvents:
 	CHAR
 
 Dummy_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(2,15)
+		Seize(2,15)
 	#endif
 	Seize(14,2)
 	Village(0xA, VillageEvent, 26,9)
 	LOCA
-	
+
 VillageEvent:
 	VillageEventItem(Ch4_3A_VillageText,0x05,Saunion)
-	ENDA
+	END
 
 Dummy_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -138,8 +138,8 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,15] 0x00 0x00 0x1 REDA4R14 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [0,15] 0x00 0x00 0x1 REDA4R15 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,15] 0x00 0x00 0x1 REDA4R14 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [0,15] 0x00 0x00 0x1 REDA4R15 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [0,15] 0x00 0x00 0x1 REDA5R15 [BaseLance] NoAI
 	UNIT
 
@@ -164,7 +164,7 @@ EnemyUnits:
 	UNIT Rigel_Cav Paladin MarlaCh4 Level(8, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [SteelLance] NoAI
 	UNIT Rigel_Cav Paladin MarlaCh4 Level(8, Enemy, True) [18,13] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
 	UNIT
-	
+
 EnemyUnits_Hard:
 	UNIT MarlaCh4 Witch	MarlaCh4 Level(9, Enemy, True) [14,2]	0x00 0x00 0x0 0x00 [Aura,CoralRing] NeverMoveAI
 	//4 barons
@@ -186,22 +186,22 @@ EnemyUnits_Hard:
 	UNIT Rigel_Cav Paladin MarlaCh4 Level(8, Enemy, True) [15,14] 0x00 0x00 0x0 0x00 [Ridersbane] NoAI
 	UNIT Rigel_Cav Paladin MarlaCh4 Level(8, Enemy, True) [18,13] 0x00 0x00 0x0 0x00 [SilverLance] AttackInRangeAI
 	UNIT
-	
+
 WitchSummon1:
 	UNIT DumaFaith_Witch Witch	MarlaCh4 Level(8, Enemy, True) [12,1]	0x00 0x00 0x1 REDA12R1 [Thunder, WitchWarpItem] WitchWarpAI
-    UNIT
+	UNIT
 WitchSummon2:
 	UNIT DumaFaith_Witch Witch	MarlaCh4 Level(8, Enemy, True) [16,1]	0x00 0x00 0x1 REDA16R1 [Thunder, WitchWarpItem] WitchWarpAI
 	UNIT
-	
+
 BrigandsReinforcements:
 	UNIT Bandit_Axe Berserker MarlaCh4 Level(5,Enemy,True) [17,9] 0x00 0x00 0x1 REDA17R9 [IronAxe,Torch] BrigandAI
 	UNIT
 
 Dummy_BeginningScene:
-	MUSC SongID_HerosPath
+	MUSIC SongID_HerosPath
 	SetBackground(0x47)
-	CHECK_ALIVE Silque
+	CHECK_ISALIVE Silque
 	BEQ 0x100 0xC 0x0
 		BackgroundText(Ch4_3A_OpeningText)
 		GOTO 0x101
@@ -209,40 +209,40 @@ Dummy_BeginningScene:
 		BackgroundText(Ch4_3A_OpeningText_NoSilque)
 	LABEL 0x101
 	MUSCMID SongID_Silence
-	
-	CHECK_ALIVE Forsyth
+
+	CHECK_ISALIVE Forsyth
 	BEQ 0x102 0xC 0x0
-	CHECK_ALIVE Python
+	CHECK_ISALIVE Python
 	BEQ 0x102 0xC 0x0
-	
+
 		//Forsyth and Python explain the Baron ability through banter?
-		FADI 5
+		FADEIN 5
 		STAL 5
-		MUSC SongID_Reunion
-		FADU 5
+		MUSIC SongID_Reunion
+		FADEOUT 5
 		BackgroundText(Ch4_3A_ForsythPython)
 		MUSCMID SongID_Silence
-	
+
 	LABEL 0x102
-	
-	FADI 2
+
+	FADEIN 2
 	CLEAN
 	STAL 20
-		
-	MUSC SongID_Uprising
+
+	MUSIC SongID_Uprising
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x4A03 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x4A03
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
+	CHECK_ISHARD
+	BEQ 0x4A03 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x4A03
+	LOAD_S2 0x1
+	ENUN
 	CAMERA_CENTERED [1,15]
-	FADU 5
+	FADEOUT 5
 	STAL 20
-	
+
 	EVBIT_T 0x9
-	LOAD2 0x0 CutsceneUnits
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
 	EVBIT_F 0x9
 	STAL 20
@@ -251,34 +251,34 @@ Dummy_BeginningScene:
 	STAL 20
 	CameraCursor(Alm)
 	MapText(Ch4_3A_OpeningText_3)
-	
-	FADI 5
-	CLEA 0x0
-	LOAD3 0x0 PlayerPlacement 
+
+	FADEIN 5
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Dummy_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4A3Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter4A3Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
+	FADEIN 2
 	STAL 5
-	MUSC SongID_ShadowOfVictory
-	SetBackground(0x28) //fort interior
+	MUSIC SongID_ShadowOfVictory
+	SetBackground(Fort_Ruins) //fort interior
 	BackgroundText(Ch4_3A_EndingText)
 	MUSCMID SongID_Silence
-	FADI 2
+	FADEIN 2
 	STAL 5
-	MUSC SongID_SilentGround
-	SetBackground(0x0E)
+	MUSIC SongID_SilentGround
+	SetBackground(Castle_Room)
 	BROWNBOXTEXT Loc_RigelCastle [8,8]
 	BackgroundText(FernandRinea_Ch4A_3)
 	MUSCMID SongID_Silence
-	FADI 2
-	
-	MNCH 0x26
-	ENDA
+	FADEIN 2
+
+	GOTO_CHAPTER 0x26
+	END

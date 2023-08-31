@@ -24,7 +24,7 @@ Hideout_CharacterBasedEvents:
 
 Hideout_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(6,18)
+		Seize(6,18)
 	#endif
 	CHESRANDOM 0x9 Act1RandomChest|IsPointer [4,9]
 	Door(4, 7)
@@ -58,41 +58,41 @@ Hideout_Ballista3:
 	ALIGN 4
 
 PlayerUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [6,18] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [6,18] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,19] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,20] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,21] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [16,18] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [7,19] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [16,20] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [7,21] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [8,17] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [16,20] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [7,21] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [8,17] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,17] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT
-	
+
 CutsceneAlliesFernand:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT FernandPlayable Cavalier 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
-	
+
 CutsceneAlliesNoFernand:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT
-	
+
 CutsceneFernand:
 	UNIT FernandPlayable Cavalier 0x00 Level(1, Ally, 1) [3, 6] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
-	
+
 EnemyUnits:
-	UNIT Boss_Monster Entombed 0x00 Level(1, Enemy, False) [11,3] DropItem 0x00 0x0 0x00 [RottenClaw, _200G] AttackInRangeAI 
+	UNIT Boss_Monster Entombed 0x00 Level(1, Enemy, False) [11,3] DropItem 0x00 0x0 0x00 [RottenClaw, _200G] AttackInRangeAI
 	UNIT 0xAA Revenant 0x00 Level(9, Enemy, 1) [10,2] 0x04 0x00 0x0 0x00 [RottenClaw] MonsterAI
 	UNIT 0xAA Revenant 0x00 Level(11, Enemy, 1) [12,2] 0x04 0x00 0x0 0x00 [RottenClaw] MonsterAI
 	UNIT 0xAD Bonewalker_Bow 0x00 Level(10, Enemy, 1) [10,4] 0x04 0x00 0x0 0x00 [BaseBow] MonsterAI
@@ -101,7 +101,7 @@ EnemyUnits:
 	UNIT 0xAA Revenant 0x00 Level(9, Enemy, 1) [6,15] 0x04 0x00 0x0 0x00 [RottenClaw] MonsterAI
 	UNIT 0xAA Revenant 0x00 Level(7, Enemy, 1) [18,14] 0x04 0x00 0x0 0x00 [RottenClaw] MonsterAI
 	UNIT
-	
+
 EnemyUnits2:
 	UNIT 0xAA Revenant 0x00 Level(10, Enemy, 1) [19,13] 0x04 0x00 0x0 0x00 [RottenClaw] MonsterAI
 	UNIT 0xAC Bonewalker 0x00 Level(7, Enemy, 1) [14,9] 0x04 0x00 0x0 0x00 [BaseSword] MonsterAI
@@ -113,9 +113,9 @@ EnemyUnits2:
 	UNIT 0xAA Revenant 0x00 Level(11, Enemy, 1) [17,6] 0x04 0x00 0x0 0x00 [RottenClaw] MonsterAI
 	UNIT 0xAA Revenant 0x00 Level(10, Enemy, 1) [3,17] 0x04 0x00 0x0 0x00 [RottenClaw] MonsterAI
 	UNIT
-	
+
 EnemyUnitsReplay:
-	UNIT Boss_Monster Entombed 0x00 Level(1, Enemy, True) [11,3] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw, _200G] AttackInRangeAI 
+	UNIT Boss_Monster Entombed 0x00 Level(1, Enemy, True) [11,3] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw, _200G] AttackInRangeAI
 	UNIT 0xAA Random_RevBonewalker 0x00 Level(9, Enemy, 1) [10,2] MonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
 	UNIT 0xAA Random_AnyMonster 0x00 Level(10, Enemy, 1) [12,2] MonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
 	UNIT 0xAD Bonewalker_Bow 0x00 Level(9, Enemy, 1) [10,4] 0x00 0x00 0x0 0x00 [BaseBow] MonsterAI
@@ -133,7 +133,7 @@ EnemyUnitsReplay:
 	UNIT 0xAA Random_RevBonewalker 0x00 Level(9, Enemy, 1) [17,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
 	UNIT 0xAA Random_RevBonewalker 0x00 Level(8, Enemy, 1) [3,17] MonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
 	UNIT
-	
+
 DeliveranceUnits:
 	UNIT Clive Cavalier 0x00 Level(6,Ally,1) [11,2] 0x00 0x00 0x0 0x00 [SteelLance, BaseLance] NoAI
 	UNIT Forsyth Soldier 0x00 Level(4,Ally,1) [10,2] 0x00 0x00 0x0 0x00 [BaseLance,Forscythe] NoAI
@@ -141,68 +141,68 @@ DeliveranceUnits:
 	UNIT
 
 Hideout_BeginningScene:
-	LOAD3 0x0 PlayerUnits //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	LOAD_DEPLOYED 0x0 PlayerUnits //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
-	
-	CHECK_EVENTID gDeliveranceHideoutCompleted //has Clive joined?
+
+	CHECK_FLAG gDeliveranceHideoutCompleted //has Clive joined?
 	BNE 0x205 0xC 0x0 //if true, don't show cutscene
-		LOAD1 0x1 EnemyUnits
+		LOAD 0x1 EnemyUnits
 		ENUN
-		LOAD1 0x1 EnemyUnits2
+		LOAD 0x1 EnemyUnits2
 		ENUN
-		MUSC SongID_Env_Night
-		SetBackground(0x11)
+		MUSIC SongID_Env_Night
+		SetBackground(Castle_Hall_3_Night)
 		TEXTSTART
 		TEXTSHOW DeliveranceHideout_Opening_1
 		TEXTEND
-		FADI 60
+		FADEIN 60
 		TEXTCLEAR
 		GOTO 0x204
 	LABEL 0x205
 		SVAL 0x2 0x0 //Number of skirmish enemies to load
 		CALL EnemyRandomizerHelper
-		LOAD1 0x1 EnemyUnitsReplay
+		LOAD 0x1 EnemyUnitsReplay
 		ENUN
 	LABEL 0x204
 	GotoPrepScreen
 	NoFade
-	ENDA
-	
+	END
+
 ChestEvent:
-	CHECK_EVENTID gDeliveranceHideoutCompleted //has Clive joined?
+	CHECK_FLAG gDeliveranceHideoutCompleted //has Clive joined?
 	BNE 0x302 0xC 0x0 //if true, don't give speedwing
 		SVAL 0x3 Speedwings
-		GIVEITEMTO 0xFFFF
+		GIVEITEM 0xFFFF
 		GOTO 0x302
 	LABEL 0x302
 	NoFade
-	ENDA
+	END
 
 Hideout_EndingScene:
-    FadeOutMusic
-	EVBIT_MODIFY 0x1
-	CHECK_EVENTID gDeliveranceHideoutCompleted //has Clive joined?
+	FadeOutMusic
+	CONFIG_SKIP 0x1
+	CHECK_FLAG gDeliveranceHideoutCompleted //has Clive joined?
 	BNE 0x103 0xC 0x0 //if true, skip cutscene
-		EVBIT_MODIFY 0x0
+		CONFIG_SKIP 0x0
 		CALL UnifiedBEXPCaller
-		FADI 10
-		EVBIT_MODIFY 0x1
-		CLEA 0x0
-		CLEE 0x0
-		MUSC SongID_Victory
-		LOAD1 0x1 DeliveranceUnits
+		FADEIN 10
+		CONFIG_SKIP 0x1
+		REMOVEALL_BLUE
+		REMOVEALL_RED
+		MUSIC SongID_Victory
+		LOAD 0x1 DeliveranceUnits
 		ENUN
-		EVBIT_MODIFY 0x0
+		CONFIG_SKIP 0x0
 		CAMERA_CENTERED [12, 6]
-		FADU 10
-		
-		EVBIT_MODIFY 0x1
-		CHECK_ALIVE FernandPlayable
+		FADEOUT 10
+
+		CONFIG_SKIP 0x1
+		CHECK_ISALIVE FernandPlayable
 		BEQ 0x105 0xC 0x0
-			LOAD2 0x1 CutsceneAlliesFernand
+			LOAD_CUTSCENE CutsceneAlliesFernand
 			ENUN
-            RemoveItemFromUnit(FernandPlayable,BaseLance)
-            DumpToConvoy(FernandPlayable)
+			RemoveItemFromUnit(FernandPlayable,BaseLance)
+			DumpToConvoy(FernandPlayable)
 			CHECK_CLASS FernandPlayable
 			SVAL 0x2 Paladin
 			BEQ 0x108 0xC 0x2
@@ -210,81 +210,81 @@ Hideout_EndingScene:
 			BEQ 0x108 0xC 0x2
 			GOTO 0x106
 				LABEL 0x108
-				ENUT gPlayerPromotedFernand
+				FLAG_T gPlayerPromotedFernand
 				GOTO 0x106
 		LABEL 0x105 //if dead, reload him
-			LOAD2 0x1 CutsceneAlliesNoFernand
+			LOAD_CUTSCENE CutsceneAlliesNoFernand
 			ENUN
-			LOAD1 0x1 CutsceneFernand 
+			LOAD 0x1 CutsceneFernand
 			ENUN
 		LABEL 0x106
-		EVBIT_MODIFY 0x0
-		
-        CHECK_ALIVE Clair
-        BEQ 0x104 0xC 0x0
-            MOVE 0x10 Clair [11,3]
-        LABEL 0x104
+		CONFIG_SKIP 0x0
+
+		CHECK_ISALIVE Clair
+		BEQ 0x104 0xC 0x0
+			MOVE 0x10 Clair [11,3]
+		LABEL 0x104
 		MOVE 0x10 Alm [10,3]
 		MOVE 0x10 Lukas [12, 3]
 		MOVE 0x10 FernandPlayable [11,4]
 		ENUN
-		
-		FADI 10
-		SetBackground(0x2E)
-        CHECK_ALIVE Clair
-        BEQ 0x109 0xC 0x0
-            Text( DeliveranceHideout_PostBattle_1)
-            GOTO 0x10A
-        LABEL 0x109
-            Text(DeliveranceHideout_PostBattle_1_NoClair)
-        LABEL 0x10A
-		
-		CHECK_ALIVE Gray 
-		BEQ 0x107 0xC 0x0 
-		CHECK_ALIVE Tobin 
+
+		FADEIN 10
+		SetBackground(Shrine_2)
+		CHECK_ISALIVE Clair
+		BEQ 0x109 0xC 0x0
+			Text( DeliveranceHideout_PostBattle_1)
+			GOTO 0x10A
+		LABEL 0x109
+			Text(DeliveranceHideout_PostBattle_1_NoClair)
+		LABEL 0x10A
+
+		CHECK_ISALIVE Gray
+		BEQ 0x107 0xC 0x0
+		CHECK_ISALIVE Tobin
 		BEQ 0x107 0xC 0x0
 			ClearBackgroundSmooth
 			MOVE 0x8 Tobin [6, 4]
 			MOVE 0x8 Gray [6, 5]
 			ENUN
 			FlashCursor(6, 5, 60)
-			
+
 			TEXTSTART
 			TEXTSHOW DeliveranceHideout_GrayTobin
 			TEXTEND
 			TEXTCLEAR
 			STAL 30
 			FlashCursor(Clive, 60)
-			SetBackground(0x2E)
+			SetBackground(Shrine_2)
 		LABEL 0x107
-		
+
 		//alm WHAT in hideout - village tension music, keep going until fernand cutscene
 		//start sad music once fernand says "lost my taste for this long ago"
-		
-		CHECK_ALIVE Clair
+
+		CHECK_ISALIVE Clair
 		BEQ 0x100 0xC 0x0
-		
-			TEXTSTART 
+
+			TEXTSTART
 			TEXTSHOW DeliveranceHideout_PostBattle_2
 			TEXTEND
 			GOTO 0x101
-			
+
 		LABEL 0x100
-			TEXTSTART 
+			TEXTSTART
 			TEXTSHOW DeliveranceHideout_PostBattle_2_NoClair
 			TEXTEND
-			
+
 		LABEL 0x101
-		MUSC SongID_Uprising
+		MUSIC SongID_Uprising
 		TEXTCONT
 		TEXTEND
-		MUSC SongID_Reunion
+		MUSIC SongID_Reunion
 		TEXTCONT
 		TEXTEND
 		TEXTCLEAR
 		ClearBackgroundSmooth
-		MUSC SongID_Silence
-		
+		MUSIC SongID_Silence
+
 		MOVE 0x10 FernandPlayable [11,3]
 		MOVE 0x5 Clair [11,4]
 		ENUN
@@ -294,93 +294,93 @@ Hideout_EndingScene:
 		MOVE 0x10 Clive [11,1]
 		ENUN
 		STAL 30
-		FADI 0x5
-		
-		MUSC SongID_Indignation
+		FADEIN 0x5
+
+		MUSIC SongID_Indignation
 		//DeliveranceHideout_CGText
 
 		SETVAL 0x2 (CliveFernandCG)
 		TEXTMODE 1
-		BACG 0xFFFF
-        CALL $591F40
-        SOUN 0xD2
-        STAL 3
-        EARTHQUAKE_START 0x0
-        STAL 45
-        EARTHQUAKE_END
+		BACKGROUND 0xFFFF
+		CALL $591F40
+		SOUND 0xD2
+		STAL 3
+		EARTHQUAKE_START 0x0
+		STAL 45
+		EARTHQUAKE_END
 		STAL 15
-		_0x1A22
+		TEXTMODE 2
 		TEXTSHOW DeliveranceHideout_CGText_1
 		TEXTEND
-		_0x1A22
+		TEXTMODE 2
 		TEXTSHOW DeliveranceHideout_CGText_2
 		TEXTEND
-		_0x1A22
+		TEXTMODE 2
 		TEXTSHOW DeliveranceHideout_CGText_3
 		TEXTEND
-		FADI 5
+		FADEIN 5
 		TEXTCLEAR
-		
-		SetBackground(0x2E)
+
+		SetBackground(Shrine_2)
 		Text(DeliveranceHideout_FernandClive)
 		ClearBackgroundSmooth
-		
-		MUSC SongID_ShadowOfVictory
+
+		MUSIC SongID_ShadowOfVictory
 		//Make Fernand green and move him off the map
-		CUSN FernandPlayable
+		FACTION_GREEN FernandPlayable
 		STAL 20
 		MOVE 0x10 FernandPlayable [20,6]
 		ENUN
-		DISA FernandPlayable
+		REMOVEUNIT FernandPlayable
 		MOVE 0x10 Clive [11,2]
 		ENUN
-		
+
 		//DeliveranceHideout_AfterCGText
-		FADI 10
-		SetBackground(0x2E)
-		TEXTSTART 
+		FADEIN 10
+		SetBackground(Shrine_2)
+		TEXTSTART
 		TEXTSHOW DeliveranceHideout_AfterCGText
 		TEXTEND
 		TEXTCLEAR
-        CALL $591F40
-		
+		CALL $591F40
+
 		CharacterJoinedNotification(Notif_ForsythPythonJoin)
 		CharacterJoinedNotification(Notif_CliveJoin)
-		
-		
-		EVBIT_MODIFY 0x1
-		ENUT gDeliveranceHideoutCompleted //set a flag for clive joining
-		CHECK_EVENTID gPlayerPromotedFernand //has the gaiden condition been met? joined?
-		BEQ 0x10B 0xC 0x0 
+
+
+		CONFIG_SKIP 0x1
+		FLAG_T gDeliveranceHideoutCompleted //set a flag for clive joining
+		CHECK_FLAG gPlayerPromotedFernand //has the gaiden condition been met? joined?
+		BEQ 0x10B 0xC 0x0
 			STAL 20
-			SetBackground(0x2E)
+			SetBackground(Shrine_2)
 			CenterTextbox(DeliveranceHideout_AcceptSidequest)
 			TEXTCLEAR
-			FADI 4
+			FADEIN 4
 			SVAL 0x1 0x1
 			//"Accept side quest?"
 			//yes = 1 no = 2
 			BNE 0x102 0xC 0x1
-				MNC2 0x3D
-			//if yes, MNC2 0x3D
-			ENDB
+				GOTO_CHAPTER_NOWM 0x3D
+			//if yes, GOTO_CHAPTER_NOWM 0x3D
+			TERMINATE
 	LABEL 0x103
 		SVAL 0x3 0x3
 		ASMC 0x85C65
 		CALL UnifiedBEXPCaller
-		EVBIT_MODIFY 0x0
-		FADI 4
+		CONFIG_SKIP 0x0
+		FADEIN 4
 		SVAL 0x2 0x3F
-		MNCH 0xFFFF
-        CALL PostgameUnlockChecker
-        GOTO 0x10C
+		GOTO_CHAPTER 0xFFFF
+		CALL PostgameUnlockChecker
+		GOTO 0x10C
 	LABEL 0x10B
-		FADI 4
+		FADEIN 4
 	LABEL 0x102
 		SVAL 0x2 0x3F
-		MNCH 0xFFFF
-    LABEL 0x10C
-	ENDA
+		GOTO_CHAPTER 0xFFFF
+	LABEL 0x10C
+	END
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

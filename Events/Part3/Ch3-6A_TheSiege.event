@@ -34,16 +34,16 @@ Ch3_6A_CharacterBasedEvents:
 
 Ch3_6A_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(1,7)
+		Seize(1,7)
 	#endif
 	Seize(19,1)
 	Village(8, Village1Event, 23,7)
 	LOCA
-	
+
 ALIGN 4
 Village1Event:
-	VillageEventMoney(Ch3_6A_VillageText,0x05,3000) 
-	ENDA
+	VillageEventMoney(Ch3_6A_VillageText,0x05,3000)
+	END
 
 Ch3_6A_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -65,10 +65,10 @@ Ch3_6A_Ballista2:
 	ALIGN 4
 
 Ch3_6A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [1,7] 0x00 0x00 0x0 0x00 [BaseSword, RoyalSword, Vulnerary] NoAI  
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [2,8] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [2,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [0,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [1,7] 0x00 0x00 0x0 0x00 [BaseSword, RoyalSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [2,8] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [2,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [0,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [0,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [1,9] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [1,5] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
@@ -78,8 +78,8 @@ Ch3_6A_Units1:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,10] 0x00 0x00 0x1 REDA1R7 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [0,10] 0x00 0x00 0x1 REDA3R7 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,10] 0x00 0x00 0x1 REDA1R7 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [0,10] 0x00 0x00 0x1 REDA3R7 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [0,10] 0x00 0x00 0x1 REDA3R5 [BaseLance] NoAI
 	UNIT
 
@@ -130,9 +130,9 @@ EnemyUnits:
 
 	UNIT Rigel_Cav Cavalier_F Gazelle Level(14,Enemy,True) [22,0] 0x00 0x00 0x0 0x00 [IronLance] DefaultAI
 	UNIT Rigel_Cav Cavalier Gazelle Level(14,Enemy,True) [23,0] 0x00 0x00 0x0 0x00 [Javelin] DefaultAI
-	
+
 	UNIT
-	
+
 EnemyUnits_Hard:
 	//witches and bow guys
 	//Boss chases you from left to right
@@ -171,76 +171,76 @@ EnemyUnits_Hard:
 
 	UNIT Rigel_Cav Cavalier_F Gazelle Level(14,Enemy,True) [22,0] 0x00 0x00 0x0 0x00 [IronLance] DefaultAI
 	UNIT Rigel_Cav Cavalier Gazelle Level(14,Enemy,True) [23,0] 0x00 0x00 0x0 0x00 [Javelin] DefaultAI
-	
+
 	UNIT
-	
+
 SkirmishEnemies:
 	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
 
 Ch3_6A_BeginningScene:
 
-	MUSC SongID_Tension
+	MUSIC SongID_Tension
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3A06 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x3A06
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
+	CHECK_ISHARD
+	BEQ 0x3A06 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x3A06
+	LOAD_S2 0x1
+	ENUN
 	CAMERA_CENTERED [1,10]
-	SetBackground(0x1D)
+	SetBackground(Woodland)
 	BackgroundText(Ch3_6A_OpeningText)
 	ClearBackgroundSmooth
-	
+
 	STAL 20
-	LOAD2 0x1 CutsceneUnits
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
 	CameraCursor(Gazelle)
 	MapText(Ch3_6A_OpeningText_2)
 
-	FADI 16
-	CLEA 0x0
-	LOAD3 0x0 Ch3_6A_Units1 
+	FADEIN 16
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 Ch3_6A_Units1
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch3_6A_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3A6Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3A6Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
-    STAL 5
-	MUSC SongID_ShadowOfVictory
-	SetBackground(0x04)
+	FADEIN 2
+	STAL 5
+	MUSIC SongID_ShadowOfVictory
+	SetBackground(Outside_Village_Evening)
 	BackgroundText(Ch3_6A_EndingText)
-    EVBIT_MODIFY 0x1
-    CALL $591F40
+	CONFIG_SKIP 0x1
+	CALL $591F40
 	SVAL 0x3 HolyBow //make fear mountain give holy lance instead
-	GIVEITEMTO Alm
-    FadeOutMusic
-    EVBIT_MODIFY 0x0
-	FADI 2
-	
+	GIVEITEM Alm
+	FadeOutMusic
+	CONFIG_SKIP 0x0
+	FADEIN 2
+
 	STAL 20
-	//scene change (todo: add LOMA and BROWNBOXTEXT)
-	SetBackground(0x0E,2)
+	//scene change (todo: add LOADMAP and BROWNBOXTEXT)
+	SetBackground(Castle_Room,2)
 	BROWNBOXTEXT Loc_RigelCastle [8,8]
 	TEXTMODE 1
 	TEXTSHOW Ch3_6A_RigelCastle_1
 	TEXTEND
-	MUSC SongID_Indignation
+	MUSIC SongID_Indignation
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
-	FADI 5
-	MUSC SongID_PrinceOfDarkness
-	SetBackground(0x0B,5)
+	FADEIN 5
+	MUSIC SongID_PrinceOfDarkness
+	SetBackground(Castle_Hall_Night,5)
 	BackgroundText(Ch3_6A_RigelCastle_2)
-	FADI 2
-	//TODO: LOMA back to this map 0x14 before MNCH to avoid breaking save screen
-	MNCH 0x15
-	ENDA
+	FADEIN 2
+	//TODO: LOADMAP back to this map 0x14 before GOTO_CHAPTER to avoid breaking save screen
+	GOTO_CHAPTER 0x15
+	END

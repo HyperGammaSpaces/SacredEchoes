@@ -29,23 +29,23 @@ Ch3_4A_CharacterBasedEvents:
 	CHAR
 	
 TalkToMathilda:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 0x20
 	MapText(Ch3_4A_MathildaJoins)
 	SVAL 0x1 0x0
-	CHAI Mathilda
+	SET_AI Mathilda
 	STAL 5
-	CUSA Mathilda
+	FACTION_BLUE Mathilda
 	STAL 0x14
-    CALL $591F40
+	CALL $591F40
 	CharacterJoinedNotification(Notif_MathildaJoin)
-	MURE 0x05
+	MUSIC_RESTORE 0x05
 	NoFade
-	ENDA
+	END
 
 Ch3_4A_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(9,19)
+		Seize(9,19)
 	#endif
 	Seize(9,2)
 	Door(8, 15)
@@ -58,7 +58,7 @@ Ch3_4A_LocationBasedEvents:
 	Door(18, 2)
 	Chest(Lancereaver, 1, 0)
 	LOCA
-	
+
 LoadThief:
 	ReinforcementEvent(ThiefReinforcement)
 
@@ -70,11 +70,11 @@ LoadRightCavalry:
 
 LoadLeftCavalry:
 	ReinforcementEvent(CavReinforcementLeft)
-	
+
 DesaixCommand:
-    CHECK_EVENTID Local_BossDeath
-    BNE 0x666 rC r0
-	MUSI
+	CHECK_FLAG Local_BossDeath
+	BNE 0x666 rC r0
+	MUSIC_QUIET_T
 	STAL 20
 	CAMERA_CENTERED Desaix
 	STAL 20
@@ -82,13 +82,13 @@ DesaixCommand:
 	STAL 20
 	MapText(Ch3_4A_DesaixText2)
 	STAL 20
-	MUNO
-    CHECK_HARD
-    BEQ 0x666 rC r0
+	MUSIC_QUIET_F
+	CHECK_ISHARD
+	BEQ 0x666 rC r0
 	LoadReinforcements(DesaixCommandUnits)
-    LABEL 0x666
+	LABEL 0x666
 	NoFade
-	ENDA
+	END
 
 Ch3_4A_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -111,16 +111,16 @@ Ch3_4A_Ballista2:
 	ALIGN 4
 
 CutsceneAllies:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,18] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 Ch3_4A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [7,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [7,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [6,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [8,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [8,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
@@ -135,13 +135,13 @@ Ch3_4A_Units1:
 EnemyUnits:
 	UNIT Desaix Baron 0x0 Level(5, Enemy, False) [9,2] 0x00 0x00 0x0 0x00 [Javelin, SteelSword] NeverMoveAI
 	UNIT CantorBoss_Bonewalkers Cantor Desaix Level(7, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma, Conjure] CantorAI
-	
+
 	// Cell guard knight
 	UNIT Rigel_Soldier Knight	Desaix Level(5, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] NeverMoveAI
 
 	// Outside Witch
 	UNIT Rigel_Witch Witch	Desaix Level(4, Enemy, True) [17,20]	0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
-	
+
 	// Main gate guard
 	UNIT Rigel_Soldier Soldier	Desaix Level(13, Enemy, True) [8,13]	0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
 	UNIT Rigel_Soldier Knight	Desaix Level(6, Enemy, True) [9,13]	DropItem 0x00 0x0 0x00 [Hammer] NeverMoveAI
@@ -185,13 +185,13 @@ EnemyUnits:
 EnemyUnits_Hard:
 	UNIT Desaix Baron 0x0 Level(5, Enemy, False) [9,2] 0x00 0x00 0x0 0x00 [Zanbato,Javelin] NeverMoveAI
 	UNIT CantorBoss_Bonewalkers Cantor Desaix Level(7, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [Miasma, Conjure] CantorAI
-	
+
 	// Cell guard knight
 	UNIT Rigel_Soldier Knight	Desaix Level(5, Enemy, True) [9,10]	0x00 0x00 0x0 0x00 [SteelAxe,HandAxe] NeverMoveAI
 
 	// Outside Witch
 	UNIT Rigel_Witch Witch	Desaix Level(4, Enemy, True) [17,20]	0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
-	
+
 	// Main gate guard
 	UNIT Rigel_Soldier Soldier	Desaix Level(13, Enemy, True) [8,13]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
 	UNIT Rigel_Soldier Knight	Desaix Level(6, Enemy, True) [9,13]	DropItem 0x00 0x0 0x00 [Hammer] AttackInRangeAI
@@ -232,17 +232,17 @@ EnemyUnits_Hard:
 	UNIT Remnant_Soldier Soldier	Desaix Level(14, Enemy, True) [16,6]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
 	UNIT
 
-	
+
 ThiefReinforcement:
 	UNIT TreasureHunter Thief Desaix Level(10,Enemy,True) [0,6] 0x00 0x00 0x1 REDA0R6 [BaseSword, Lockpick] LootingThiefAI
 	UNIT TreasureHunter Thief Desaix Level(11,Enemy,True) [18,0] DropItem 0x00 0x1 REDA18R0 [SteelSword, Lockpick, 0x9F] [0x6,0xC,0x0,0x0]
 	UNIT
-	
+
 CavReinforcementRight:
 	UNIT Rigel_Cav Cavalier_F Desaix Level(13,Enemy,True) [19,17] 0x00 0x00 0x1 REDA19R17 [Javelin] NoAI
 	UNIT Rigel_Cav Cavalier Desaix Level(14,Enemy,True) [19,16] 0x00 0x00 0x1 REDA19R16 [SteelLance] NoAI
 	UNIT
-	
+
 CavReinforcementLeft:
 	UNIT Remnant_Cav Cavalier Desaix Level(11,Enemy,True) [0,19] 0x00 0x00 0x1 REDA0R19 [Javelin] NoAI
 	UNIT Remnant_Cav Cavalier_F Desaix Level(10,Enemy,True) [0,20] 0x00 0x00 0x1 REDA0R20 [SteelLance] NoAI
@@ -252,50 +252,50 @@ SniperReinforcement:
 	UNIT Rigel_Archer Sniper Desaix Level(6, Enemy, True) [4,2]	0x00 0x00 1 REDA4R2 [SteelBow] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Archer Sniper Desaix Level(6, Enemy, True) [14,2]	0x00 0x00 1 REDA14R2 [SteelBow] [0x0,0x12,0x0,0x0]
 	UNIT
-	
+
 DesaixCommandUnits:
 	UNIT Remnant_Cav Cavalier Desaix Level(11, Enemy, True) [0,6]	0x00 0x00 1 REDA0R6 [SteelLance] NoAI
 	UNIT Remnant_Cav Cavalier Desaix Level(11, Enemy, True) [18,6]	DropItem 0x00 1 REDA18R6 [HeavySpear] [0x0,0x12,0x0,0x0]
 	UNIT
-	
+
 CutsceneFernand:
 	UNIT FernandPaladin Paladin 0x00 Level(1, Enemy, False) [0,11] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
-	
+
 MathildaJoins:
 	UNIT Mathilda Paladin_F 0x00 Level(1, NPC, False) [9,6] 0x00 0x00 0x0 0x00 [BaseLance,Vulnerary] [0x06, 0x0D, 0x00, 0x00]
 	UNIT
 
 Ch3_4A_BeginningScene:
 	//Load Fernand and Mathilda, show CG, show textID FernandMathilda_Dungeon
-	MUSC SongID_Env_GustyWind
-	LOAD1 0x1 MathildaJoins
+	MUSIC SongID_Env_GustyWind
+	LOAD 0x1 MathildaJoins
 	ENUN
-	LOAD1 0x1 CutsceneFernand
+	LOAD 0x1 CutsceneFernand
 	ENUN
 	CAMERA_CENTERED Mathilda
 	STAL 4
-	FADU 5
+	FADEOUT 5
 	MOVE 0x08 FernandPaladin [9,10]
 	ENUN
 	STAL 20
 	FlashCursor(FernandPaladin, 60)
-	FADI 5
-	
+	FADEIN 5
+
 	SetBackground(FernandMathildaCG,5)
 	STAL 90
 		CgText(FernandMathilda_Dungeon_CGText_1)
 		CgText( FernandMathilda_Dungeon_CGText_2)
 		CgText(FernandMathilda_Dungeon_CGText_3)
-		FADI 5
-	
-	SetBackground(0x17)
-	TEXTMODE 1 
+		FADEIN 5
+
+	SetBackground(Prison_Cell)
+	TEXTMODE 1
 	TEXTSHOW FernandMathilda_Dungeon
 	TEXTEND
-	MUSC SongID_Env_GustyWindStop
+	MUSIC SongID_Env_GustyWindStop
 	STAL 20
-	MUSC SongID_Truth
+	MUSIC SongID_Truth
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
@@ -303,23 +303,23 @@ Ch3_4A_BeginningScene:
 	MOVE 0x08 FernandPaladin [18,6]
 	ENUN
 	STAL 20
-	FADI 2
+	FADEIN 2
 	MUSCMID SongID_Silence
-	CLEE 0x0
+	REMOVEALL_RED
 	STAL 40
-	LOAD2 0x1 CutsceneAllies
+	LOAD_CUTSCENE CutsceneAllies
 	ENUN
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3A04 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x3A04
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	FADU 2
+	CHECK_ISHARD
+	BEQ 0x3A04 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x3A04
+	LOAD_S2 0x1
+	ENUN
+	FADEOUT 2
 
 	//Then load Desaix and set BG to 0xE
-	MUSC SongID_SolveTheRiddle
+	MUSIC SongID_SolveTheRiddle
 	CAMERA_CENTERED Desaix
 	STAL 20
 	FlashCursor(Desaix, 60)
@@ -327,102 +327,102 @@ Ch3_4A_BeginningScene:
 
 	//SetBackground(0xE)
 	MapText(Ch3_4A_OpeningText)
-	FADI 16
-	CLEA 0x0
-	LOAD3 0x0 Ch3_4A_Units1 
+	FADEIN 16
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 Ch3_4A_Units1
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch3_4A_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3A4Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3A4Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
-    STAL 5
-	MUSC SongID_CastleTheme
-	CHECK_EVENTID 8
-    BEQ 0x072 0xC 0x1
-    //Let Mathilda join if she is alive
-    CHECK_OTHERS
-    BEQ 0x072 0xC 0x0
-        SVAL 0x1 0x0
-        CHAI Mathilda
-        STAL 5
-        CUSA Mathilda
-    LABEL 0x072
-	CHECK_ALIVE Tobin 
+	FADEIN 2
+	STAL 5
+	MUSIC SongID_CastleTheme
+	CHECK_FLAG 8
+	BEQ 0x072 0xC 0x1
+	//Let Mathilda join if she is alive
+	CHECK_COUNT_GREEN
+	BEQ 0x072 0xC 0x0
+		SVAL 0x1 0x0
+		SET_AI Mathilda
+		STAL 5
+		FACTION_BLUE Mathilda
+	LABEL 0x072
+	CHECK_ISALIVE Tobin
 	BEQ 0x4 0xC 0x0
-	
+
 		//If Tobin is alive
 		SetBackground(0xE)
 		TEXTMODE 1
 		TEXTSHOW Ch3_4A_EndingText
 		TEXTEND
-		MUSI
+		MUSIC_QUIET_T
 		TEXTCONT
 		TEXTEND
-		MUNO
-		MUSC SongID_Truth
+		MUSIC_QUIET_F
+		MUSIC SongID_Truth
 		TEXTCONT
 		TEXTEND
 		TEXTCLEAR
-		
-		FADI 2
+
+		FADEIN 2
 		FadeOutMusic
 		STAL 20
-		MUSC SongID_Reunion
+		MUSIC SongID_Reunion
 		SetBackground(0x49)
 		BackgroundText(Ch3_4A_EndingText_2)
 		//CG goes here
 		FadeOutMusic
 		STAL 20
-		MUSC SongID_Env_LegendaryWeapon
-		FADI 8
+		MUSIC SongID_Env_LegendaryWeapon
+		FADEIN 8
 		TEXTMODE 1
 		SetBackground(RoyalSwordCG)
 		STAL 90
 		CgText(Ch3_4A_CGText)
-		FADI 5
-		
-		MUSC SongID_Legacy
+		FADEIN 5
+
+		MUSIC SongID_Legacy
 		SetBackground(0x49)
 		BackgroundText(Ch3_4A_EndingText_3)
 		GOTO 0x3
-	
+
 	LABEL 0x4
 		SetBackground(0xE)
 		BackgroundText(Ch3_4A_EndingText_NoTobin)
-		FADI 2
+		FADEIN 2
 		STAL 20
-		MUSC SongID_CastleTheme
+		MUSIC SongID_CastleTheme
 		SetBackground(0x49)
 		BackgroundText(Ch3_4A_EndingText_2_NoTobin)
 		//CG goes here
 		FadeOutMusic
 		STAL 20
-		MUSC SongID_Env_LegendaryWeapon
-		FADI 8
+		MUSIC SongID_Env_LegendaryWeapon
+		FADEIN 8
 		TEXTMODE 1
 		SetBackground(RoyalSwordCG)
 		STAL 90
 		CgText(Ch3_4A_CGText)
-		FADI 5
-		
-		MUSC SongID_Legacy
+		FADEIN 5
+
+		MUSIC SongID_Legacy
 		SetBackground(0x49)
 		BackgroundText(Ch3_4A_EndingText_3_NoTobin)
 	LABEL 0x3
-	
-	EVBIT_MODIFY 0x1
+
+	CONFIG_SKIP 0x1
 	SetBackground(0x49)
 	SVAL 0x3 RoyalSword
-	GIVEITEMTO Alm
+	GIVEITEM Alm
 	STAL 20
-	EVBIT_MODIFY 0x0
-	
-	FADI 2
-	MNCH 0x13
-	ENDA
+	CONFIG_SKIP 0x0
+
+	FADEIN 2
+	GOTO_CHAPTER 0x13
+	END

@@ -1,48 +1,13 @@
 //use this for narration etc.
 
-/*
+//#define ColdOpen2(Source, Dest) "CONFIG_SKIP 0x1; STAL 6; WM_MOVECAM 0x0 0xFFFF 0xFFFF 0x0 0x7A 0x3C 0x0; WM_WAITFORCAM; WM_MOVESPRITETO 0x0 0x0 0x2 Source Dest 0xFFF9 0x0; WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF; STAL 2 20; FADEIN 16; END"
 
-WM_CLEARPORTRAIT, 0xC540, 8, -game:FE8 -indexMode:8
-#Always 0
-	Value1, 2, 2
-#0x000 = no movement, no fade
-#0x100 = left
-#0x200,all else = right
-	Direction, 4, 2
-	Delay, 6, 2
-
-FE8:
-   WM_MOVECAM val1 X Y val2 val3 Speed Delay 
-
-   Parameters:
-    val1
-    X
-    Y
-    val2
-	val3
-    Speed
-    Delay
-
-  FE8:
-   WM_MOVECAMTO StartX StartY LocationID Speed Delay 
-
-   Parameters:
-    StartX
-    StartY
-    LocationID
-    Speed
-    Delay
-
-*/
-
-//#define ColdOpen2(Source, Dest) "EVBIT_MODIFY 0x1; STAL 6; WM_MOVECAM 0x0 0xFFFF 0xFFFF 0x0 0x7A 0x3C 0x0; WM_WAITFORCAM; WM_MOVESPRITETO 0x0 0x0 0x2 Source Dest 0xFFF9 0x0; WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF; STAL 2 20; FADI 16; ENDA"
-
-#define ColdOpen(Source, Dest) "EVBIT_MODIFY 0x1; STAL 6; WM_MOVECAMTO 0xFFFF 0xFFFF Dest 0xA 0x1; WM_WAITFORCAM; WM_MOVESPRITETO 0x0 0x0 0x2 Source Dest 0xFFF9 0x0; WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF; STAL 5; FADI 16"
-#define ColdOpen2(Source, Dest) "ColdOpen(Source, Dest); ENDA"
+#define ColdOpen(Source, Dest) "CONFIG_SKIP 0x1; STAL 6; WM_MOVECAMTO 0xFFFF 0xFFFF Dest 0xA 0x1; WM_WAITFORCAM; WM_MOVESPRITETO 0x0 0x0 0x2 Source Dest 0xFFF9 0x0; WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF; STAL 5; FADEIN 16"
+#define ColdOpen2(Source, Dest) "ColdOpen(Source, Dest); END"
 
 FadeOut:
-FADI 16
-ENDA
+FADEIN 16
+END
 
 //WorldMapIntroPointerTable(0x0, 0)
 WorldMapIntroPointerTable(0x1,WMIntro_PrologueCutscene)
@@ -50,7 +15,7 @@ WorldMapIntroPointerTable(0x2,WMIntro_PrologueCh1)
 WorldMapIntroPointerTable(0x3,SkipIntro)
 WorldMapIntroPointerTable(0x4,WMIntro_Ch3)
 WorldMapIntroPointerTable(0x5,WMIntro_Ch4)
-WorldMapIntroPointerTable(0x6,WMIntro_Ch5) 
+WorldMapIntroPointerTable(0x6,WMIntro_Ch5)
 WorldMapIntroPointerTable(0x7,WMIntro_Ch6)
 WorldMapIntroPointerTable(0x8,WMIntro_ZofiaCastle)
 WorldMapIntroPointerTable(0x9,WMIntro_Act2Start)
@@ -98,20 +63,20 @@ WorldMapIntroPointerTable(0x39,HideoutIntro) //hideout
 WorldMapIntroPointerTable(0x3a,SkipIntro) //shrines
 
 SkipIntro: //just point all of them here, they're the same
-EVBIT_MODIFY 0x1
+CONFIG_SKIP 0x1
 SKIPWN
-ENDA
+END
 
 WMIntro_PrologueCutscene:
-EVBIT_MODIFY 0x1
-ENUT gEnableWorldMap
-ENDA
+CONFIG_SKIP 0x1
+FLAG_T gEnableWorldMap
+END
 
 /*
 //Bare-bones
 WMIntro_PrologueCh1:
-EVBIT_MODIFY 0x1
-CHECK_EVENTID gEnableWorldMap
+CONFIG_SKIP 0x1
+CHECK_FLAG gEnableWorldMap
 BEQ 0x1 0xC 0x0
 	STAL 6
 	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_RamForest 0x20 0x1
@@ -119,21 +84,21 @@ BEQ 0x1 0xC 0x0
 	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_RamVillage GMLoc_RamForest 0xFFF9 0x0
 	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
 	STAL 2 20
-	FADI 16
+	FADEIN 16
 	GOTO 0x2
 LABEL 0x1
-	EVBIT_MODIFY 0x1
+	CONFIG_SKIP 0x1
 	SKIPWN
 LABEL 0x2
-ENDA
+END
 */
 
 //With narration
 WMIntro_PrologueCh1:
-EVBIT_MODIFY 0x1
-CHECK_EVENTID gEnableWorldMap
+CONFIG_SKIP 0x1
+CHECK_FLAG gEnableWorldMap
 BEQ 0x1 0xC 0x0
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x0
 	STAL 6
 	//maybe put in a music change?? idk
 	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_RamForest 0x20 0x1
@@ -147,7 +112,7 @@ BEQ 0x1 0xC 0x0
 	STAL 16
 	WM_TEXT Act1_WMIntro
 	TEXTEND
-	
+
 	//Move camera to S.Outpost
 	STAL 16
 	WM_LOADLOCATION2 0x0 GMLoc_SouthernOutpost 0x0	//MOVECAM is broken, so my workaround is to load the actual location temporarily and then MOVECAMTO that location
@@ -162,7 +127,7 @@ BEQ 0x1 0xC 0x0
 	//For MOVECAM, X and Y seem to be "top left corner of screen"
 	WM_WAITFORCAM
 	STAL 16
-	
+
 	//Show Desaix and soldiers moving
 	WM_SHOWPORTRAIT Portrait_Desaix 0x534 //2c = Desaix, on left
 	STAL 20
@@ -186,24 +151,24 @@ BEQ 0x1 0xC 0x0
 	TEXTCONT
 	TEXTEND
 	WM_REMOVETEXT
-	
-	EVBIT_MODIFY 0x1
+
+	CONFIG_SKIP 0x1
 	//Move Alm to next location
 	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_RamForest 0x20 0x1
 	WM_WAITFORCAM
 	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_RamVillage GMLoc_RamForest 0xFFF9 0x0
 	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
-	
+
 	STAL 4
-	FADI 16
+	FADEIN 16
 	WM_REMOVELOCATION 0x0 GMLoc_SouthernOutpost 0x0 //getting rid of these locations we used for cutscene
 	WM_REMOVELOCATION 0x0 GMLoc_ZofiaCastle 0x0
 	GOTO 0x2
 LABEL 0x1
-	EVBIT_MODIFY 0x1
+	CONFIG_SKIP 0x1
 	SKIPWN
 LABEL 0x2
-ENDA
+END
 
 WMIntro_Ch2:
 ColdOpen2(GMLoc_RamForest, GMLoc_ThiefShrineStory)
@@ -221,13 +186,13 @@ WMIntro_Ch6:
 ColdOpen2(GMLoc_SouthZofia1, GMLoc_SouthZofia2)
 
 WMIntro_Ch6x:
-ENDA
+END
 
 HideoutIntro:
 MUSCFAST 0x7FFF
-FADI 16
-EVBIT_MODIFY 0x1
-CHECK_EVENTID gDeliveranceHideoutCompleted //is Clive here?
+FADEIN 16
+CONFIG_SKIP 0x1
+CHECK_FLAG gDeliveranceHideoutCompleted //is Clive here?
 BNE 0x1 0xC 0x0 //if he is, skip following
 /*
 	STAL 6
@@ -243,7 +208,7 @@ BNE 0x1 0xC 0x0 //if he is, skip following
 	STAL 6 46
 	WM_TEXT Act1_WM_DeliveranceHideout
 	TEXTEND
-	
+
 	//Move camera to Hideout
 	STAL 62
 	WM_MAKELORDVISIBLE 0x0 //put the lord sprite back where it was
@@ -252,7 +217,7 @@ BNE 0x1 0xC 0x0 //if he is, skip following
 	STAL 46
 	WM_MOVECAMTO 0xFFFF 0xFFFF 0x8 0x20 0x1
 	WM_WAITFORCAM
-	
+
 	//Show Clive on map
 	PUTSPRITE 0x2 0x5 0x0 0x8 //ID, Class, Affiliation, NodeID
 	STAL 6 46
@@ -260,57 +225,57 @@ BNE 0x1 0xC 0x0 //if he is, skip following
 	STAL 6 46
 	TEXTCONT
 	TEXTEND
-	
+
 	//Show Clive and Forsyth portraits
 	WM_SHOWPORTRAIT 0xB 1332 //Clive on left
 	STAL 20
 	WM_SHOWPORTRAIT 0xC 700 //Load Forsyth on right
-	
+
 	STAL 6 46
 	TEXTCONT
 	TEXTEND
 	WM_REMOVETEXT
 
 	STAL 2 20
-	FADI 16
+	FADEIN 16
 */
 	WM_DRAWPATH2 0x0 0x8 0x0 //enable path to castle
 LABEL 0x1
-ENDA
+END
 
 //Castle
 WMIntro_ZofiaCastle:
-CHECK_EVENTID gPart2Completed
+CHECK_FLAG gPart2Completed
 BNE 0x3 0xC 0x0
-	EVBIT_MODIFY 0x1
+	CONFIG_SKIP 0x1
 	STAL 6
 	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_ZofiaCastle 0x20 0x1
 	WM_WAITFORCAM
 	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_SouthZofia2 GMLoc_ZofiaCastle 0xFFF9 0x0
 	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
 	STAL 16
-	FADI 16
+	FADEIN 16
 	GOTO 0x4
 LABEL 0x3
 	//Celica stuff
-	EVBIT_MODIFY 0x1
+	CONFIG_SKIP 0x1
 	STAL 6
 	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_ZofiaCastle 0x20 0x1
 	WM_WAITFORCAM
 	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_ZofiaHarbor GMLoc_ZofiaCastle 0xFFF9 0x0
 	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
 	STAL 16
-	FADI 16
+	FADEIN 16
 LABEL 0x4
-ENDA
+END
 
 //Act 2
 
 WMIntro_Act2Start:
-CHECK_EVENTID gNovisCemeteryCompleted 
+CHECK_FLAG gNovisCemeteryCompleted
 BNE 0x2 0xC 0x0
 	//narration goes here
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x0
 	STAL 6
 	//maybe put in a music change?? idk
 	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_NovisPriory 0x20 0x1
@@ -319,7 +284,7 @@ BNE 0x2 0xC 0x0
 	WM_TEXTSTART
 	WM_TEXT Act2_WMIntro
 	TEXTEND
-	
+
 	//Move camera to Temple of Mila, then back to Priory
 	WM_LOADLOCATION2 0x0 GMLoc_MilaTemple 0x0
 	WM_WAITFORFX
@@ -332,7 +297,7 @@ BNE 0x2 0xC 0x0
 	STAL 16
 	TEXTCONT
 	TEXTEND
-	
+
 	//Move camera to Zofia Harbor, then back to Priory
 	PUTSPRITE 0x2 0x50 0x2 GMLoc_NovisPort //ID, Class, Affiliation, NodeID
 	WM_PUTMOVINGSPRITE 0x0 0x2 0x0 238 392 176 300 0xD2 0x3 0xA 0x0
@@ -347,7 +312,7 @@ BNE 0x2 0xC 0x0
 	STAL 16
 	TEXTCONT
 	TEXTEND
-	
+
 	//Show monsters
 //	STAL 20
 //	PUTSPRITE 0x4 0x52 0x1 0xB
@@ -357,7 +322,7 @@ BNE 0x2 0xC 0x0
 //	STAL 6 46
 //	TEXTCONT
 //	TEXTEND
-	
+
 	//Move Celica to next location
 	STAL 16
 	REMSPRITE 0x4
@@ -365,30 +330,30 @@ BNE 0x2 0xC 0x0
 	TEXTCONT
 	TEXTEND
 	WM_REMOVETEXT
-	EVBIT_MODIFY 0x1
+	CONFIG_SKIP 0x1
 	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_NovisPriory GMLoc_NovisCemetery 0xFFF9 0x0
 	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
 
 	STAL 4
-	FADI 16
+	FADEIN 16
 	WM_REMOVELOCATION 0x0 GMLoc_MilaTemple 0x0
 	//ColdOpen2(10, 11)
 	GOTO 0x3
 LABEL 0x2
-	EVBIT_MODIFY 0x1
+	CONFIG_SKIP 0x1
 	SKIPWN
 LABEL 0x3
-ENDA
+END
 
 WMIntro_Ch9:
 ColdOpen2(GMLoc_NovisCemetery, GMLoc_NovisPort)
 
-WMIntro_Ch10:			
+WMIntro_Ch10:
 ColdOpen2(GMLoc_NovisPort, GMLoc_PirateThrone)
 
 WMIntro_Ch11:
 //ColdOpen2(13, 14)
-ENDA
+END
 
 WMIntro_Ch12:
 ColdOpen2(GMLoc_PirateThrone, GMLoc_ZofiaStrait) //pirate throne -> resurr
@@ -450,20 +415,20 @@ ColdOpen2(GMLoc_DeadMansMire,GMLoc_MireBoneyard)
 WMIntro_Act4_2_Celica:
 ColdOpen2(GMLoc_MireBoneyard, GMLoc_DolthKeep)
 /*
-	EVBIT_MODIFY 0x1
+	CONFIG_SKIP 0x1
 	STAL 6
 	WM_MOVECAMTO 0xFFFF 0xFFFF GMLoc_DolthKeep 0xA 0x1
 	WM_WAITFORCAM
 	WM_MOVESPRITETO 0x0 0x0 0x2 GMLoc_MireBoneyard GMLoc_DolthKeep 0xFFF9 0x0
 	WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF
 	STAL 5
-	FADI 16
-	ENDA
+	FADEIN 16
+	END
 	*/
 
 WMIntro_Act4_3_Celica:
 //ColdOpen2(GMLoc_DolthKeep, GMLoc_SagesHamlet)
-ENDA
+END
 
 WMIntro_Act4_4_Celica:
 ColdOpen2(GMLoc_SagesHamlet, GMLoc_DumaGate)
@@ -475,7 +440,7 @@ WMIntro_Act4_6_Celica:
 ColdOpen(GMLoc_DumaSwamp, GMLoc_DumaTower)
 WM_DRAWPATH2 0x0 0x2F 0x0 //dragons maw path
 WM_REMOVEPATH 0x26
-ENDA
+END
 
 WMIntro_Act4Start_Alm:
 ColdOpen2(GMLoc_SluiceGate, GMLoc_RigelForest1)
@@ -507,7 +472,7 @@ ColdOpen2(GMLoc_LastBastion, GMLoc_RigelCastle)
 WMIntro_Act4_Final:
 ColdOpen(GMLoc_RigelCastle, GMLoc_DumaTower)
 WM_DRAWPATH2 0x0 0x34 0x0 //zofia harbor path
-ENDA
+END
 
 WMIntro_Act5_Final:
-ENDA
+END

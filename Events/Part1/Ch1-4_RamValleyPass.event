@@ -22,17 +22,17 @@ Ch1_4_TurnBasedEvents:
 	TURN
 
 MercEvent:
-	MUSC SongID_MarchToDeliverance
+	MUSIC SongID_MarchToDeliverance
 	CAMERA_CENTERED Alm
 	STAL 30
-	MUSI
+	MUSIC_QUIET_T
 	CAMERA_CENTERED LeatherShieldMerc
 	STAL 30
 	FlashCursor(1, 6, 60)
 	Text(Ch1_4_MercText)
-	MUNO
+	MUSIC_QUIET_F
 	NoFade
-	ENDA
+	END
 
 WaveFirst:
 	ReinforcementEvent(Reinforcements1)
@@ -42,14 +42,14 @@ Ch1_4_CharacterBasedEvents:
 
 Ch1_4_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(2,14)
+		Seize(2,14)
 	#endif
 	Village(0x8, VillageEvent, 6,3)
 	LOCA
 
 VillageEvent:
 	VillageEventItem(Ch1_4_Village, Village, Talisman)
-	ENDA
+	END
 
 Ch1_4_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -72,20 +72,20 @@ Ch1_4_Ballista2:
 
 Ch1_4_Units1:
 #ifdef __DEBUG__
-	UNIT Alm AlmFighter 0x00 Level(4,Ally,True) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(6,Ally,True) [4,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Archer 0x00 Level(1,Ally,True) [8,14] 0x00 0x00 0x0 0x00 [BaseBow, Vulnerary] NoAI 
-	UNIT Gray Mercenary 0x00 Level(1,Ally,True) [6,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(4,Ally,True) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(6,Ally,True) [4,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Archer 0x00 Level(1,Ally,True) [8,14] 0x00 0x00 0x0 0x00 [BaseBow, Vulnerary] NoAI
+	UNIT Gray Mercenary 0x00 Level(1,Ally,True) [6,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Mage 0x00 Level(1,Ally,True) [7,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Faye Cleric 0x00 Level(1,Ally,True) [5,15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(3,Ally,True) [3, 15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
 	UNIT Acantha Thief_F 0x00 Level(3,Ally,True) [1,15] 0x00 0x00 0x0 0x00 [BaseSword, Lockpick] NoAI
 	UNIT
 #else
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [6,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,14] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [6,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [7,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [5,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [3, 15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
@@ -97,14 +97,14 @@ EnemyUnits:
 	UNIT LeatherShieldMerc Mercenary 0x00 Level(8, Enemy, 0) [1,6] DropItem 0x00 0x0 0x00 [BaseSword, HideShield] NoAI
 	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(8, Enemy, 1) [11,2] DropItem 0x00 0x0 0x00 [BaseAxe, _200G] AttackInRangeAI
 	UNIT Bandit_Bow Archer LeatherShieldMerc Level(5, Enemy, 1) [9,3] 0x00 0x00 0x0 0x00  [BaseBow] NoAI
-	UNIT Bandit_Bow Archer LeatherShieldMerc Level(4, Enemy, 1) [14,9] 0x00 0x00 0x0 0x00  [BaseBow] AttackInRangeAI 
-	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [14,3] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI //turn 1 
-	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(5, Enemy, 1) [13,4] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI 
+	UNIT Bandit_Bow Archer LeatherShieldMerc Level(4, Enemy, 1) [14,9] 0x00 0x00 0x0 0x00  [BaseBow] AttackInRangeAI
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [14,3] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI //turn 1
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(5, Enemy, 1) [13,4] 0x00 0x00 0x0 0x00  [BaseAxe] NoAI
 	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [14,4] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI //turn 2
-	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(5, Enemy, 1) [11,5] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [12,9] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
-	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(5, Enemy, 1) [13,10] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
-	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [14,11] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(5, Enemy, 1) [11,5] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [12,9] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(5, Enemy, 1) [13,10] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI
+	UNIT Bandit_Axe Brigand LeatherShieldMerc Level(6, Enemy, 1) [14,11] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI
 	UNIT
 
 Reinforcements1:
@@ -112,17 +112,17 @@ Reinforcements1:
 	UNIT
 
 Ch1_4_BeginningScene:
-	MUSC SongID_Tension
+	MUSIC SongID_Tension
 	#ifdef __DEBUG__
-		LOAD1 0x1 Ch1_4_Units1 
+		LOAD 0x1 Ch1_4_Units1
 		ENUN
 	#else
-		LOAD3 0x0 Ch1_4_Units1 
+		LOAD_DEPLOYED 0x0 Ch1_4_Units1
 		ENUN
 	#endif
-	LOAD1 0x1 EnemyUnits
+	LOAD 0x1 EnemyUnits
 	ENUN
-	FADU 10
+	FADEOUT 10
 	CAMERA_CENTERED Alm
 	STAL 6
 	FlashCursor(Alm, 60)
@@ -141,49 +141,49 @@ Ch1_4_BeginningScene:
 	TEXTEND
 	TEXTCLEAR
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch1_4_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 10
-    STAL 5
-	MUSC SongID_Victory
+	FADEIN 10
+	STAL 5
+	MUSIC SongID_Victory
 	SetBackground(Woodland)
 		CHECK_EXISTS Gray
 		BEQ 0x1 0xC 0x0
-		CHECK_ALIVE Gray
+		CHECK_ISALIVE Gray
 		BEQ 0x1 0xC 0x0
 		CHECK_EXISTS Tobin
 		BEQ 0x1 0xC 0x0
-		CHECK_ALIVE Tobin
+		CHECK_ISALIVE Tobin
 		BEQ 0x1 0xC 0x0
-			TEXTSTART 
+			TEXTSTART
 			TEXTSHOW Ch1_4_PostBattle_1
 			TEXTEND
-			MUSC SongID_Indignation
+			MUSIC SongID_Indignation
 			TEXTCONT
 			TEXTEND
-			MUSC SongID_Reunion
+			MUSIC SongID_Reunion
 			TEXTCONT
 			TEXTEND
 			GOTO 0x2
 	LABEL 0x1
-		TEXTSTART 
+		TEXTSTART
 		TEXTSHOW Ch1_4_PostBattle_1_NoGray
 		TEXTEND
-		MUSC SongID_Indignation
+		MUSIC SongID_Indignation
 		TEXTCONT
 		TEXTEND
-		MUSC SongID_Reunion
+		MUSIC SongID_Reunion
 		TEXTCONT
 		TEXTEND
 	LABEL 0x2
 	TEXTCLEAR
-	FADI 2
-	MNCH 0x04 //go to ch4
-	ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x04 //go to ch4
+	END
 
 #ifndef InlineEvents
-  MESSAGE Events end at offset currentOffset
+	MESSAGE Events end at offset currentOffset
 #endif

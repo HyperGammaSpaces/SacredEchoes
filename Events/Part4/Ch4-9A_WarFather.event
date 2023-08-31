@@ -20,43 +20,43 @@ Ch4A9_ThisChapter:
 	POIN Ch4A9_BeginningScene Ch4A9_EndingScene
 
 Ch4A9_TurnBasedEvents:
-    TurnEventPlayer(0x0,LoadBowGuys,5)
-    TurnEventPlayer(0x0,LoadBigGuys,8)
-    TurnEventPlayer(0x0,LoadBowGuys,9)
-    TurnEventPlayer(0x0,LoadMovGuys,14,(256-14))
+	TurnEventPlayer(0x0,LoadBowGuys,5)
+	TurnEventPlayer(0x0,LoadBigGuys,8)
+	TurnEventPlayer(0x0,LoadBowGuys,9)
+	TurnEventPlayer(0x0,LoadMovGuys,14,(256-14))
 	TURN
-    
+
 LoadBowGuys:
-    ReinforcementEvent(BowGuys)
+	ReinforcementEvent(BowGuys)
 LoadBigGuys:
-    ReinforcementEvent(BigGuys)
+	ReinforcementEvent(BigGuys)
 LoadMovGuys:
-    EVBIT_T 0x9
-    LoadReinforcements(MovGuys1)
-    STAL 20
-    LoadReinforcements(MovGuys2)
-    EVBIT_F 0x9
-    NoFade
-    ENDA
+	EVBIT_T 0x9
+	LoadReinforcements(MovGuys1)
+	STAL 20
+	LoadReinforcements(MovGuys2)
+	EVBIT_F 0x9
+	NoFade
+	END
 
 Ch4A9_CharacterBasedEvents:
 	CHAR
 
 Ch4A9_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(15,25)
+		Seize(15,25)
 	#endif
-    Door(9, 8)
-    Door(10,8)
-    Door(19,8)
-    Door(20,8)
-    Chest(Parthia, 4, 18)
+	Door(9, 8)
+	Door(10,8)
+	Door(19,8)
+	Door(20,8)
+	Chest(Parthia, 4, 18)
 	LOCA
 
 Ch4A9_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	DefeatBoss(Ch4A9_EndingScene)
-    //Add AFEV for Berkut vs Alm battle quote (id 0xa)
+	//Add AFEV for Berkut vs Alm battle quote (id 0xa)
 	AFEV 0x10 RudolfAlmAfter 0xC
 	MournQuoteAFEVS
 	AFEV
@@ -85,237 +85,237 @@ PlayerPlacement:
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [12,25] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,25] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,26] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
-    //block 2
-    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [18,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [19,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [18,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [10,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [20,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Clive Paladin 0x00 Level(1, Ally, 1) [15,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	//block 2
+	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [18,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [11,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [19,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [18,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [10,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [20,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [15,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,27] 0x00 0x00 0x1 REDA15R25 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [15,27] 0x00 0x00 0x1 REDA15R26 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,27] 0x00 0x00 0x1 REDA13R26 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [15,27] 0x00 0x00 0x1 REDA15R25 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [15,27] 0x00 0x00 0x1 REDA15R26 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,27] 0x00 0x00 0x1 REDA13R26 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [15,27] 0x00 0x00 0x1 REDA14R26 [BaseLance] NoAI
-    UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [15,27] 0x00 0x00 0x1 REDA16R26 [BaseLance] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [15,27] 0x00 0x00 0x1 REDA16R26 [BaseLance] NoAI
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [16,27] 0x00 0x00 0x1 REDA17R26 [BaseLance] NoAI
 	UNIT
 
 EnemyUnits:
 	UNIT RudolfEnemy GoldKnight	RudolfEnemy Level(20, Enemy, True) [15,4]	DropItem 0x00 0x0 0x00 [Imperius,EmperorShield] [0x09, 0x03, 0x04, 0x0]
 	UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
-    UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [11,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
-    UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [18,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
-    UNIT Rigel_Mage Sage RudolfEnemy Level(14, Enemy, True) [4,2] 0x00 0x00 0x0 0x00 [Aura] [0x0, 0x6, 0x0, 0x0]
-    UNIT Rigel_Mage Sage RudolfEnemy Level(14, Enemy, True) [25,2] 0x00 0x00 0x0 0x00 [Aura] [0x0, 0x6, 0x0, 0x0]
-    //door guards
-    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [9,5] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0, 0x6, 0x0, 0x0]
-    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [10,5] 0x00 0x00 0x0 0x00 [BaseLance] [0x0, 0x6, 0x0, 0x0]
-    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [19,5] 0x00 0x00 0x0 0x00 [BaseLance] [0x0, 0x6, 0x0, 0x0]
-    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [20,5] 0x00 0x00 0x0 0x00 [HeavySpear] [0x0, 0x6, 0x0, 0x0]
-    UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [10,9] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
-    UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [19,9] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
-    //armor wall
+	UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [11,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+	UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [18,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+	UNIT Rigel_Mage Sage RudolfEnemy Level(14, Enemy, True) [4,2] 0x00 0x00 0x0 0x00 [Aura] [0x0, 0x6, 0x0, 0x0]
+	UNIT Rigel_Mage Sage RudolfEnemy Level(14, Enemy, True) [25,2] 0x00 0x00 0x0 0x00 [Aura] [0x0, 0x6, 0x0, 0x0]
+	//door guards
+	UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [9,5] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0, 0x6, 0x0, 0x0]
+	UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [10,5] 0x00 0x00 0x0 0x00 [BaseLance] [0x0, 0x6, 0x0, 0x0]
+	UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [19,5] 0x00 0x00 0x0 0x00 [BaseLance] [0x0, 0x6, 0x0, 0x0]
+	UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [20,5] 0x00 0x00 0x0 0x00 [HeavySpear] [0x0, 0x6, 0x0, 0x0]
+	UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [10,9] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+	UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [19,9] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+	//armor wall
 	UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-    UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [14,6] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-    UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
-    UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [16,5] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
-    //left corridor
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [6,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,9] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,12] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    //right corridor
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [23,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,9] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,12] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [14,6] 0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
+	UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [16,5] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	//left corridor
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [6,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,9] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,12] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	//right corridor
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [23,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,9] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,12] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	UNIT
-    
+
 EnemyUnits_Hard:
 	UNIT RudolfEnemy GoldKnight	RudolfEnemy Level(20, Enemy, True) [15,4]	DropItem 0x00 0x0 0x00 [Imperius,EmperorShield] [0x09, 0x03, 0x04, 0x0]
 	UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
-    UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [11,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
-    UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [18,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
-    UNIT Rigel_Mage Sage RudolfEnemy Level(14, Enemy, True) [4,2] 0x00 0x00 0x0 0x00 [Aura] [0x0, 0x6, 0x0, 0x0]
-    UNIT Rigel_Mage Sage RudolfEnemy Level(14, Enemy, True) [25,2] 0x00 0x00 0x0 0x00 [Aura] [0x0, 0x6, 0x0, 0x0]
-    //door guards
-    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [9,5] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0, 0x6, 0x0, 0x0]
-    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [10,5] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
-    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [19,5] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
-    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [20,5] 0x00 0x00 0x0 0x00 [HeavySpear] [0x0, 0x6, 0x0, 0x0]
-    UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [10,9] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
-    UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [19,9] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
-    //armor wall
+	UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [11,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+	UNIT Rigel_Mage Arcanist RudolfEnemy Level(14, Enemy, True) [18,4] 0x00 0x00 0x0 0x00 [Mire,Fortify] StaffMageAI
+	UNIT Rigel_Mage Sage RudolfEnemy Level(14, Enemy, True) [4,2] 0x00 0x00 0x0 0x00 [Aura] [0x0, 0x6, 0x0, 0x0]
+	UNIT Rigel_Mage Sage RudolfEnemy Level(14, Enemy, True) [25,2] 0x00 0x00 0x0 0x00 [Aura] [0x0, 0x6, 0x0, 0x0]
+	//door guards
+	UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [9,5] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0, 0x6, 0x0, 0x0]
+	UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [10,5] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [19,5] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [20,5] 0x00 0x00 0x0 0x00 [HeavySpear] [0x0, 0x6, 0x0, 0x0]
+	UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [10,9] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+	UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [19,9] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
+	//armor wall
 	UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [13,5] 0x00 0x00 0x0 0x00 [SteelLance] AttackInRangeAI
-    UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [14,6] 0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
-    UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [Halberd] AttackInRangeAI
-    UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [16,5] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
-    //left corridor
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [6,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,9] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,12] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    //right corridor
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [23,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,9] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,12] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [14,6] 0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
+	UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [15,6] 0x00 0x00 0x0 0x00 [Halberd] AttackInRangeAI
+	UNIT Rigel_Soldier Baron RudolfEnemy Level(7, Enemy, True) [16,5] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	//left corridor
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [6,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,9] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,12] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [5,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	//right corridor
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [23,6] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,9] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,12] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [24,15] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	UNIT
-    
+
 BowGuys:
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [6,9] 0x00 0x00 0x1 REDA6R9 [IronBow] NoAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [11,17] 0x00 0x00 0x1 REDA11R17 [IronBow] NoAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [18,17] 0x00 0x00 0x1 REDA18R17 [IronBow] NoAI
-    UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [23,9] 0x00 0x00 0x1 REDA23R9 [IronBow] NoAI
-    UNIT
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [6,9] 0x00 0x00 0x1 REDA6R9 [IronBow] NoAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [11,17] 0x00 0x00 0x1 REDA11R17 [IronBow] NoAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [18,17] 0x00 0x00 0x1 REDA18R17 [IronBow] NoAI
+	UNIT Rigel_Archer BowKnight RudolfEnemy Level(7, Enemy, True) [23,9] 0x00 0x00 0x1 REDA23R9 [IronBow] NoAI
+	UNIT
 
 BigGuys:
-    UNIT Rigel_Merc DreadFighter RudolfEnemy Level(5, Enemy, True) [0,14] 0x00 0x00 0x1 REDA0R14 [SteelSword] NoAI
-    UNIT Rigel_Merc DreadFighter RudolfEnemy Level(5, Enemy, True) [0,15] 0x00 0x00 0x1 REDA0R15 [SteelSword] NoAI
-    UNIT Rigel_Merc Berserker RudolfEnemy Level(8, Enemy, True) [29,14] 0x00 0x00 0x1 REDA29R14 [SteelAxe] NoAI
-    UNIT Rigel_Merc Berserker RudolfEnemy Level(8, Enemy, True) [29,15] 0x00 0x00 0x1 REDA29R15 [SteelAxe] NoAI
-    UNIT
-    
+	UNIT Rigel_Merc DreadFighter RudolfEnemy Level(5, Enemy, True) [0,14] 0x00 0x00 0x1 REDA0R14 [SteelSword] NoAI
+	UNIT Rigel_Merc DreadFighter RudolfEnemy Level(5, Enemy, True) [0,15] 0x00 0x00 0x1 REDA0R15 [SteelSword] NoAI
+	UNIT Rigel_Merc Berserker RudolfEnemy Level(8, Enemy, True) [29,14] 0x00 0x00 0x1 REDA29R14 [SteelAxe] NoAI
+	UNIT Rigel_Merc Berserker RudolfEnemy Level(8, Enemy, True) [29,15] 0x00 0x00 0x1 REDA29R15 [SteelAxe] NoAI
+	UNIT
+
 MovGuys1:
-    UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [0,14] 0x00 0x00 0x1 REDA0R14 [SilverAxe] NoAI
-    UNIT
+	UNIT Rigel_Wyvern WyvernLord RudolfEnemy Level(17, Enemy, True) [0,14] 0x00 0x00 0x1 REDA0R14 [SilverAxe] NoAI
+	UNIT
 MovGuys2:
-    UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [29,14] 0x00 0x00 0x1 REDA29R14 [SilverLance] NoAI
-    UNIT
-    
+	UNIT Rigel_Cav GoldKnight RudolfEnemy Level(7, Enemy, True) [29,14] 0x00 0x00 0x1 REDA29R14 [SilverLance] NoAI
+	UNIT
+
 MycenJoins:
-    UNIT Mycen GoldKnight 0x00 Level(7, Ally, True) [14,25] 0x00 0x00 0x0 0x00 [BaseLance, SilverLance] NoAI
-    UNIT
-    
+	UNIT Mycen GoldKnight 0x00 Level(7, Ally, True) [14,25] 0x00 0x00 0x0 0x00 [BaseLance, SilverLance] NoAI
+	UNIT
+
 RudolfAlmAfter:
-	MUSI
+	MUSIC_QUIET_T
 	CameraCursor(Alm)
 	STAL 20
 	MapText(Ch4A_9_BossQuote_Alm_After)
-        //SetAI(RudolfEnemy,0x9,0x3,0x0,0x0)
-        //CHAI RudolfEnemy
+		//SetAI(RudolfEnemy,0x9,0x3,0x0,0x0)
+		//SET_AI RudolfEnemy
 	STAL 20
-	MUNO
+	MUSIC_QUIET_F
 	NoFade
-	ENDA
+	END
 
 Ch4A9_BeginningScene:
-	SetBackground(0x0E, 2)
-    MUSC SongID_Env_Wind
-    TEXTMODE 1
-    TEXTSHOW Ch4A_9_OpeningText
-    TEXTEND
-    MUSCSLOW SongID_PrinceOfDarkness
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    MUSCMID SongID_Silence
-    FADI 2
-    CLEAN
-    STAL 5
+	SetBackground(Castle_Room, 2)
+	MUSIC SongID_Env_Wind
+	TEXTMODE 1
+	TEXTSHOW Ch4A_9_OpeningText
+	TEXTEND
+	MUSCSLOW SongID_PrinceOfDarkness
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	MUSCMID SongID_Silence
+	FADEIN 2
+	CLEAN
+	STAL 5
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x4A09 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x4A09
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-    CAMERA_CENTERED RudolfEnemy
-    MUSCSLOW SongID_Env_GustyWind
-    FADU 2
-    STAL 20
-    EVBIT_T 0x9
-    LOAD2 0x2 CutsceneUnits
-    ENUN
-    EVBIT_F 0x9
-    STAL 20
-    CameraCursor(RudolfEnemy)
-    MUSC SongID_LordOfADeadEmpire
-    MapText(Ch4A_9_OpeningText_2)
-    STAL 5
-    MUSI
-    CameraCursor(Alm)
-    CharacterConditionalDialog(Gray,Ch4A_9_OpeningText_3,Ch4A_9_OpeningText_3_NoGray)
-    MUNO
-    
-    FADI 5
-    
-    CLEA 0x0
-    LOAD3 0x0 PlayerPlacement 
+	CHECK_ISHARD
+	BEQ 0x4A09 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x4A09
+	LOAD_S2 0x1
 	ENUN
-    GotoPrepScreen
-	ENDA
+	CAMERA_CENTERED RudolfEnemy
+	MUSCSLOW SongID_Env_GustyWind
+	FADEOUT 2
+	STAL 20
+	EVBIT_T 0x9
+	LOAD_CUTSCENE CutsceneUnits
+	ENUN
+	EVBIT_F 0x9
+	STAL 20
+	CameraCursor(RudolfEnemy)
+	MUSIC SongID_LordOfADeadEmpire
+	MapText(Ch4A_9_OpeningText_2)
+	STAL 5
+	MUSIC_QUIET_T
+	CameraCursor(Alm)
+	CharacterConditionalDialog(Gray,Ch4A_9_OpeningText_3,Ch4A_9_OpeningText_3_NoGray)
+	MUSIC_QUIET_F
+
+	FADEIN 5
+
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 PlayerPlacement
+	ENUN
+	GotoPrepScreen
+	END
 
 Ch4A9_EndingScene:
-    CHECK_COORDS Alm
-    SCOPY 0xB 0xC
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4A9Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CHECK_COORDS Alm
+	SCOPY 0xB 0xC
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter4A9Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
-    LOAD1 0x1 MycenJoins
-    ENUN
-    MUSC SongID_Env_Wind
-    STAL 5
-    //put Rudolf's death coords in sB
-    CLEE 0x0
-    CLEA 0x0
-    SPAWN_ENEMY RudolfEnemy [15,4]
-    SPAWN_CUTSCENE_ALLY Alm [-1, -1]
-    ENUN
-    CAMERA_CENTERED Alm
-    FADU 2
-    //CHECK_ACTIVEID Alm
-    //BNE 0x201 0xC 0x0
-        EVBIT_T 0x9
-        MOVE_NEXTTO 0x08 Alm RudolfEnemy
-        ENUN
-        EVBIT_F 0x9
-    //LABEL 0x201
-    STAL 20
-    FlashCursor(RudolfEnemy, 60)
-    TEXTMODE 0
-    TEXTSHOW Ch4A_9_EndingText
-    TEXTEND
-    MUSCSLOW SongID_Omen
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    FADI 5
-    TEXTMODE 1
-    SetBackground(RudolfDeathCG,5)
-    STAL 60
-    CgText(Ch4A_9_EndingText_2)
-    TEXTMODE 1
-    BACKGROUND_CHANGE RudolfDeathCloseupCG 0x1 0x4
-    CgText(Ch4A_9_EndingText_2_More)
-    MUSCMID SongID_Silence
-    FADI 2
-    CLEAN
-    STAL 40
-    TEXTMODE 1
-    MUSC SongID_Env_Wind
-    SetBackground(0x10, 2)
-    BackgroundText(Ch4A_9_EndingText_3)
-    FADI 5
-    STAL 5
-	MUSC SongID_Truth
-    SetBackground(0x0E, 5)
-    BackgroundText(Ch4A_9_EndingText_4)
-    FADI 5
-    SetBackground(BlackBackground, 5)
-    EVBIT_MODIFY 0x4
-    CALL $591F40
+	FADEIN 2
+	LOAD 0x1 MycenJoins
+	ENUN
+	MUSIC SongID_Env_Wind
+	STAL 5
+	//put Rudolf's death coords in sB
+	REMOVEALL_RED
+	REMOVEALL_BLUE
+	SPAWN_ENEMY RudolfEnemy [15,4]
+	SPAWN_CUTSCENE_ALLY Alm [-1, -1]
+	ENUN
+	CAMERA_CENTERED Alm
+	FADEOUT 2
+	//CHECK_ISACTIVE Alm
+	//BNE 0x201 0xC 0x0
+		EVBIT_T 0x9
+		MOVE_NEXTTO 0x08 Alm RudolfEnemy
+		ENUN
+		EVBIT_F 0x9
+	//LABEL 0x201
+	STAL 20
+	FlashCursor(RudolfEnemy, 60)
+	TEXTMODE 0
+	TEXTSHOW Ch4A_9_EndingText
+	TEXTEND
+	MUSCSLOW SongID_Omen
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	FADEIN 5
+	TEXTMODE 1
+	SetBackground(RudolfDeathCG,5)
+	STAL 60
+	CgText(Ch4A_9_EndingText_2)
+	TEXTMODE 1
+	BACKGROUND_CHANGE RudolfDeathCloseupCG 1 4
+	CgText(Ch4A_9_EndingText_2_More)
+	MUSCMID SongID_Silence
+	FADEIN 2
+	CLEAN
+	STAL 40
+	TEXTMODE 1
+	MUSIC SongID_Env_Wind
+	SetBackground(Castle_Hall_3, 2)
+	BackgroundText(Ch4A_9_EndingText_3)
+	FADEIN 5
+	STAL 5
+	MUSIC SongID_Truth
+	SetBackground(Castle_Room, 5)
+	BackgroundText(Ch4A_9_EndingText_4)
+	FADEIN 5
+	SetBackground(BlackBackground, 5)
+	CONFIG_SKIP 0x4
+	CALL $591F40
 	STAL 30
-    CenterTextbox(Ch4_Alm_EndingText)
-    EVBIT_MODIFY 0x0
-    MUSCMID SongID_Silence
-	FADI 2
-	MNCH 0x2D
-	ENDA
+	CenterTextbox(Ch4_Alm_EndingText)
+	CONFIG_SKIP 0x0
+	MUSCMID SongID_Silence
+	FADEIN 2
+	GOTO_CHAPTER 0x2D
+	END

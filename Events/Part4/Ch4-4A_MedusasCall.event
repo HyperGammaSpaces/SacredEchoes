@@ -23,7 +23,7 @@ Dummy_TurnBasedEvents:
 	TURN
 	
 LoadSummons:
-	CHECK_EVENTID 0x2 // boss death quote
+	CHECK_FLAG 0x2 // boss death quote
 	BNE 0 0xC 0x0 // branch label 0 if summoner dead
 	COUNTER_CHECK 0 // slot c = counter 0 value
 	SVAL 0x1 1 // number of turns between summons (1)
@@ -33,63 +33,63 @@ LoadSummons:
 	COUNTER_SET 0 0 // reset counter
 	CameraCursor(Nuibaba) // cam on summoner
 	ENUN
-	SOUN 0x3BF // summoning SFX
+	SOUND 0x3BF // summoning SFX
 	STAL 60
-    EVBIT_T 0x9
-    CAMERA_CENTERED [15,5]
-    WARPIN [15,5]
-    LOAD1 0 GorgonSummons
-    ENDWARP
-    ENUN
-    EVBIT_F 0x9
+	EVBIT_T 0x9
+	CAMERA_CENTERED [15,5]
+	WARPIN [15,5]
+	LOAD 0 GorgonSummons
+	ENDWARP
+	ENUN
+	EVBIT_F 0x9
 	EVBIT_T 0x7
-    SetSummonerID(Terror_Gorgon, 0x81)
-        
-        CheckCurrentHP(Nuibaba)
-        SMOV r1 0x2
-        BGE 0 r1 rC
-        SSUB slotsParam(r1, rC, r1)
-        SET_HP Nuibaba
-        STAL 5
-    
+	SetSummonerID(Terror_Gorgon, 0x81)
+
+		CheckCurrentHP(Nuibaba)
+		SMOV r1 0x2
+		BGE 0 r1 rC
+		SSUB slotsParam(r1, rC, r1)
+		SET_HP Nuibaba
+		STAL 5
+
 	GOTO 2
 
 	LABEL 1
 	// Counter not at value
-	COUNTER_ADD 0 0 // counter 0 ++
-    
-    LABEL 2
-    CHECK_ALIVE Tatiana
-    BEQ 0 0xC 0x0
-    ApplyStatusToCoords(4,2,0x03) //9 turns of silence
+	COUNTER_INC 0 // counter 0 ++
+
+	LABEL 2
+	CHECK_ISALIVE Tatiana
+	BEQ 0 0xC 0x0
+	ApplyStatusToCoords(4,2,0x03) //9 turns of silence
 
 	LABEL 0
 	// event end
 	NoFade
-	ENDA
+	END
 
 Dummy_CharacterBasedEvents:
 	CHAR
 
 Dummy_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+		Seize(4,5)
 	#endif
 	Seize(4,1)
 	Chest(Rapier, 24, 9)
 	Chest(SilverLance, 21, 13) //TODO: replace item
 	LOCA
-	
+
 SwitchPush:
 	SVAL 0x2 0x0
-	CHECK_ALLEGIANCE 0xFFFF
+	CHECK_FACTION 0xFFFF
 	BEQ 0x0 0xC 0x2
 		//not a blue unit
-		CHECK_EVENTID
+		CHECK_ACTIVE_FLAG
 		SADD 0xC2
 		ENUF_SLOT2
 		EVBIT_T 0x7
-		ENDB
+		TERMINATE
 	LABEL 0x0 //continue
 	MapText(Ch4_4A_SwitchFound)
 	STAL 20
@@ -99,14 +99,14 @@ SwitchPush:
 		BEQ 0x1 0xC 0x1
 		//said no
 		SVAL 0x2 0x0
-		CHECK_EVENTID
+		CHECK_ACTIVE_FLAG
 		SADD 0xC2
 		ENUF_SLOT2
 		EVBIT_T 0x7
-		ENDB
-	
+		TERMINATE
+
 	LABEL 0x1 //said yes
-	SOUN 0xB1 //unlocking
+	SOUND 0xB1 //unlocking
 	TILECHANGE 0x03 //open gate to nuibaba room
 	STAL 60
 	EARTHQUAKE_START 0x100
@@ -114,12 +114,12 @@ SwitchPush:
 	EARTHQUAKE_END
 	STAL 20
 	TILECHANGE 0x04 //open gate to nuibaba room
-	SOUN 0xAB //village destroyed thump
+	SOUND 0xAB //village destroyed thump
 	STAL 20
 	MapText(Ch4_4A_SwitchPushed)
 	STAL 20
 	EVBIT_T 0x7
-	ENDA
+	END
 
 Dummy_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -127,34 +127,34 @@ Dummy_MiscBasedEvents:
 	AREA 0x15 SwitchPush [21,4] [21,5] //switch that opens tilechange 0x04
 	AFEV 0x14 TatianaFreed 0x2
 	AFEV
-	
+
 TatianaFreed:
 	//Remove the trap tile at [4,2]
 	RemoveTrapAtCoords(4,2)
-	CHECK_ALIVE Tatiana
+	CHECK_ISALIVE Tatiana
 	BEQ 0x1 0xC 0x0
 		ApplyStatusToCoords(4,2,0x00)
-		MUSS SongID_Recruitment
+		MUSIC_REPLACE SongID_Recruitment
 		STAL 33
 		CameraCursor(Tatiana)
 		MapText(Ch4_4A_TatianaFreed)
-        //Tatiana has 6 con, 30 - 6 = 0x18
-        GiveConstitution(Tatiana,0xFFFFFFE8)
+		//Tatiana has 6 con, 30 - 6 = 0x18
+		GiveConstitution(Tatiana,0xFFFFFFE8)
 		CALL $591F40
 		SVAL 0x1 0x0
-		CHAI Tatiana
-		CUSA Tatiana
+		SET_AI Tatiana
+		FACTION_BLUE Tatiana
 		STAL 20
 		SVAL 0x3 Nosferatu
-		GIVEITEMTO Tatiana
+		GIVEITEM Tatiana
 		STAL 20
 		SVAL 0x3 HolyRing
-		GIVEITEMTO Tatiana
+		GIVEITEM Tatiana
 		STAL 20
-		MURE 0x05
+		MUSIC_RESTORE 0x05
 	LABEL 0x1
 	NoFade
-	ENDA
+	END
 
 Dummy_Dunno:
 	END_MAIN
@@ -190,11 +190,11 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA14R15 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA13R16 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA14R15 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA13R16 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA12R16 [BaseLance] NoAI
 	UNIT
-	
+
 TatianaLoads:
 	UNIT Tatiana Saint 0x00 Level(1, NPC, 1) [25,3] 0x00 0x00 0x0 0x00 NoItems TatianaAI
 	UNIT
@@ -224,7 +224,7 @@ EnemyUnits:
 	UNIT Rigel_Merc Myrmidon Nuibaba Level(9, Enemy, True) [17,8] 0x00 0x00 0x0 0x00 [Armorslayer] AttackInRangeAI
 	UNIT Rigel_Merc Myrmidon Nuibaba Level(9, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [Zanbato] NoAI
 	UNIT
-	
+
 EnemyUnits_Hard:
 	UNIT Nuibaba Cantor_F	Nuibaba Level(16, Enemy, True) [4,1]	DropItem 0x00 0x0 0x00 [Medusa, Fortify, MageRing] DontAttackTatianaBossAI
 	//1 witch buddy
@@ -248,30 +248,30 @@ EnemyUnits_Hard:
 	UNIT Rigel_Wyvern WyvernLord Nuibaba Level(9, Enemy, True) [25,17] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT Rigel_Wyvern WyvernLord Nuibaba Level(9, Enemy, True) [25,15] 0x00 0x00 0x0 0x00 [SteelAxe] DelayedRushAI
 	UNIT
-	
+
 GorgonSummons:
 	UNIT Terror_Gorgon Gorgon	Nuibaba Level(8, Enemy, True) [15,5]	0x00 0x00 0x1 REDA15R5 [EvilEye] NoAI
 	UNIT
 
 Dummy_BeginningScene:
-	
-	MUSC SongID_WitchsTheme
+
+	MUSIC SongID_WitchsTheme
 	//Load Nuibaba at front entrance
-	LOAD1 0x1 EnemyCutsceneUnits
+	LOAD 0x1 EnemyCutsceneUnits
 	ENUN
-	LOAD1 0x1 TatianaLoads
+	LOAD 0x1 TatianaLoads
 	ENUN
 	CAMERA_CENTERED [16,16]
-	FADU 5
+	FADEOUT 5
 	STAL 20
-	
+
 	//Load cutscene units
 	EVBIT_T 0x9
-	LOAD2 0x1 CutsceneUnits
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
 	EVBIT_F 0x9
-    STAL 30
-	
+	STAL 30
+
 	CameraCursor(Nuibaba)
 	MapText(Ch4_4A_OpeningText)
 	//Warp Nuibaba to the throne
@@ -284,83 +284,83 @@ Dummy_BeginningScene:
 	STAL 20
 	CAMERA_CENTERED Nuibaba
 	STAL 20
-	
+
 	//Warp in Tatiana to [4,2]
 	SVAL 0x2 Tatiana
 	_WARP 0xFFFF 0xFFFD [4,2]
 	CALL Warp_In_Effect
 	STAL 20
-	
-	MUSC SongID_Tension
+
+	MUSIC SongID_Tension
 	MapText(Ch4_4A_OpeningText_2)
-	
+
 	//Silence Tatiana
 	StartBattle
-    SetBattleNumbers(100,0xFF,0xFF,0xFF,0xFF,0xFF)
+	SetBattleNumbers(100,0xFF,0xFF,0xFF,0xFF,0xFF)
 	Poison(0,0xFF)
 	EndAttack
 
-	FIG1 Nuibaba Tatiana Silence
+	FIGHT Nuibaba Tatiana Silence 0
 	STAL 20
-	ENUF 0x84
+	FLAG_F 0x84
 	ApplyStatusToCoords(4,2,0x43) //9 turns of silence
-    //Tatiana has 6 con, 30 - 6 = 0x18
-    GiveConstitution(Tatiana,0x18)
-	
+	//Tatiana has 6 con, 30 - 6 = 0x18
+	GiveConstitution(Tatiana,0x18)
+
 	CameraCursor(Nuibaba)
 	MapText(Ch4_4A_OpeningText_3)
-	
+
 	STAL 20
-	ENUT 0x84
+	FLAG_T 0x84
 	CameraCursor(Alm)
 	MapText(Ch4_4A_OpeningText_4)
-	FADI 16
-	
+	FADEIN 16
+
 	//Clean up and load actual deployments
-	CLEA 0x0
-	CLEE 0x0
-	
+	REMOVEALL_BLUE
+	REMOVEALL_RED
+
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x4A04 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x4A04
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	LOAD3 0x0 PlayerPlacement 
+	CHECK_ISHARD
+	BEQ 0x4A04 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x4A04
+	LOAD_S2 0x1
+	ENUN
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Dummy_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4A4Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter4A4Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
+	FADEIN 2
 	STAL 5
-	SetBackground(0x11)
-	CHECK_ALIVE Tatiana
+	SetBackground(Castle_Hall_3_Night)
+	CHECK_ISALIVE Tatiana
 	BEQ 0x1 0xC 0x0
 		//good ending
-		MUSC SongID_Victory
+		MUSIC SongID_Victory
 		BackgroundText(Ch4_4A_EndingText)
 		STAL 20
-        CALL $591F40
-		EVBIT_MODIFY 0x1
+		CALL $591F40
+		CONFIG_SKIP 0x1
 		CharacterJoinedNotification(Notif_TatianaJoin)
-		ENUT gTatianaRecruited
-		EVBIT_MODIFY 0x0
-        FadeOutMusic
-		FADI 5
+		FLAG_T gTatianaRecruited
+		CONFIG_SKIP 0x0
+		FadeOutMusic
+		FADEIN 5
 		GOTO 0x2
 	LABEL 0x1
 	//bad ending
-	MUSC SongID_Sorrow
+	MUSIC SongID_Sorrow
 	BackgroundText(Ch4_4A_EndingText_Bad)
 	FadeOutMusic
-    FADI 2
+	FADEIN 2
 	LABEL 0x2
-	MNCH 0x27
-	ENDA
+	GOTO_CHAPTER 0x27
+	END

@@ -27,16 +27,16 @@ Ch3_7C_TurnBasedEvents:
 LoadNomah:
 	LoadReinforcements(NomahJoins)
 	CameraCursor(Nomah)
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	MapText(Ch3_7C_NomahArrives)
-    CALL $591F40
+	CALL $591F40
 	CharacterJoinedNotification(Notif_NomahJoin)
-	MURE 0x5
+	MUSIC_RESTORE 0x5
 	NoFade
-	ENDA
+	END
 
 LoadSummons:
-	CHECK_EVENTID 0x2 // boss death quote
+	CHECK_FLAG 0x2 // boss death quote
 	BNE 0 0xC 0x0 // branch label 0 if summoner dead
 	COUNTER_CHECK 0 // slot c = counter 0 value
 	SVAL 0x1 1 // number of turns between summons (1)
@@ -50,52 +50,52 @@ LoadSummons:
 	//COUNTER_SET 0 0 // reset counter
 	CAMERA_CENTERED Mikhail // cam on summoner
 	ENUN
-	SOUN 0x3BF // summoning SFX
+	SOUND 0x3BF // summoning SFX
 	STAL 20
 	SummonReinforcementEvent(MikhailSummons)
-        SetSummonerID(Terror_Gargoyle, 0x81)
-        
-        CheckCurrentHP(Mikhail)
-        SMOV r1 0x4
-        BGE 4 r1 rC
-        SSUB slotsParam(r1, rC, r1)
-        SET_HP Mikhail
-        STAL 5
+		SetSummonerID(Terror_Gargoyle, 0x81)
+
+		CheckCurrentHP(Mikhail)
+		SMOV r1 0x4
+		BGE 4 r1 rC
+		SSUB slotsParam(r1, rC, r1)
+		SET_HP Mikhail
+		STAL 5
 	GOTO 4
-	
+
 	// Counter at value 2
 	LABEL 2
 	COUNTER_SET 0 0 // reset counter
 	CAMERA_CENTERED [12,21] // cam on summoner
 	ENUN
-	SOUN 0x3BF // summoning SFX
+	SOUND 0x3BF // summoning SFX
 	STAL 20
 	SummonReinforcementEvent(RearSummons)
-        SetSummonerID(Terror_Gargoyle, 0x81)
-        
-        CheckCurrentHP(Mikhail)
-        SMOV r1 0x4
-        BGE 0 r1 rC
-        SSUB slotsParam(r1, rC, r1)
-        SET_HP Mikhail
-        STAL 5
+		SetSummonerID(Terror_Gargoyle, 0x81)
+
+		CheckCurrentHP(Mikhail)
+		SMOV r1 0x4
+		BGE 0 r1 rC
+		SSUB slotsParam(r1, rC, r1)
+		SET_HP Mikhail
+		STAL 5
 	GOTO 0
 
 	LABEL 4
 	// Counter not at value
-	COUNTER_ADD 0 0 // counter 0 ++
+	COUNTER_INC 0 // counter 0 ++
 
 	LABEL 0
 	// event end
 	NoFade
-	ENDA
+	END
 
 Ch3_7C_CharacterBasedEvents:
 	CHAR
 
 Ch3_7C_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(12,19)
+		Seize(12,19)
 	#endif
 	Seize(12,3)
 	LOCA
@@ -119,9 +119,9 @@ Ch3_7C_Ballista2:
 	BLST
 	ALIGN 4
 
-PlayerPlacement: 
+PlayerPlacement:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [13,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [12,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	//Left
@@ -136,22 +136,22 @@ PlayerPlacement:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-    UNIT Kliff Villager 0x00 Level(1,Ally,True) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Faye Villager_F 0x00 Level(1,Ally,True) [14,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-    UNIT
+	UNIT Kliff Villager 0x00 Level(1,Ally,True) [10,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Faye Villager_F 0x00 Level(1,Ally,True) [14,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 
 CutsceneUnits:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [11,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1, Ally, 1) [13,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [11,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [13,20] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
-    
+
 CutsceneUnits2:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA12R19 [BaseSword, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA11R20 [BaseSword, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA13R20 [Fire, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA12R19 [BaseSword, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA11R20 [BaseSword, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [12,21] 0x00 0x00 0x1 REDA13R20 [Fire, Vulnerary] NoAI
 	UNIT
-	
+
 NomahJoins:
 	UNIT Nomah Bishop 0x00 Level(7,Ally,False) [12,21] 0x00 0x00 0x1 REDA12R19 [Fire, Elixir] NoAI
 	UNIT 0xC0 Priestess Nomah Level(7,NPC,True) [12,21] 0x00 0x00 0x1 REDA13R20 [HolySword,Fire,HideShield] NoAI
@@ -166,13 +166,13 @@ EnemyUnits:
 	//gargoyles
 	UNIT Terror_Gargoyle Deathgoyle	Mikhail Level(2, Enemy, True) [3,4]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
 	UNIT Terror_Gargoyle Deathgoyle	Mikhail Level(2, Enemy, True) [21,4]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	
+
 	//fat wights
 	UNIT Terror_Wight Wight	Mikhail Level(2, Enemy, True) [5,9]	0x00 0x00 0x0 0x00 [SteelLance] NeverMoveAI
 	UNIT Terror_Wight_Bow Wight_Bow	Mikhail Level(2, Enemy, True) [5,10]	DropItem 0x00 0x0 0x00 [IronBow] NeverMoveAI
 	UNIT Terror_Wight Wight	Mikhail Level(2, Enemy, True) [19,9]	0x00 0x00 0x0 0x00 [IronLance] NeverMoveAI
 	UNIT Terror_Wight_Bow Wight_Bow	Mikhail Level(2, Enemy, True) [19,10]	0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
-	
+
 	//main hallway
 	UNIT Terror_Gargoyle Gargoyle	Mikhail Level(12, Enemy, True) [11,8]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
 	UNIT Terror_Gargoyle Deathgoyle	Mikhail Level(2, Enemy, True) [12,9]	0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
@@ -180,11 +180,11 @@ EnemyUnits:
 	UNIT DumaFaith_Witch Witch	Mikhail Level(9, Enemy, True) [10,12]	0x00 0x00 0x0 0x00 [Fire, WitchWarpItem] WitchWarpAI
 	UNIT Terror_Entombed Entombed	Mikhail Level(5, Enemy, True) [12,11]	0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
 	UNIT DumaFaith_Witch Witch	Mikhail Level(9, Enemy, True) [14,12]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	
+
 	//tarvos
 	UNIT Terror_Tarvos Tarvos	Mikhail Level(11, Enemy, True) [2,10]	0x00 0x00 0x0 0x00 [Hammer] DelayedRushAI
 	UNIT Terror_Tarvos Tarvos	Mikhail Level(11, Enemy, True) [22,10]	0x00 0x00 0x0 0x00 [SteelAxe] DelayedRushAI
-	
+
 	//misc mix
 	UNIT DumaFaith_Sorcerer Shaman	Mikhail Level(14, Enemy, True) [11,10]	0x00 0x00 0x0 0x00 [Sisyphus] AttackInHalfRangeAI
 	UNIT DumaFaith_Sorcerer Arcanist	Mikhail Level(7, Enemy, True) [8,11]	0x00 0x00 0x0 0x00 [Miasma, Physic] [0x0F, 0x03]
@@ -195,7 +195,7 @@ EnemyUnits:
 	UNIT Terror_Bael Bael	Mikhail Level(13, Enemy, True) [20,14]	0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
 	UNIT Terror_Bael Bael	Mikhail Level(12, Enemy, True) [4,14]	0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
 	UNIT
-	
+
 EnemyUnits_Hard:
 	//put 25ish guys down
 	UNIT Mikhail Cantor	Mikhail Level(9, Enemy, True) [12,3]	0x00 0x00 0x0 0x00 [Mire, Conjure] CantorBossAI
@@ -204,13 +204,13 @@ EnemyUnits_Hard:
 	//gargoyles
 	UNIT Terror_Gargoyle Deathgoyle	Mikhail Level(2, Enemy, True) [3,4]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
 	UNIT Terror_Gargoyle Deathgoyle	Mikhail Level(2, Enemy, True) [21,4]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
-	
+
 	//fat wights
 	UNIT Terror_Wight Wight	Mikhail Level(2, Enemy, True) [5,9]	0x00 0x00 0x0 0x00 [SteelLance,Javelin] NeverMoveAI
 	UNIT Terror_Wight_Bow Wight_Bow	Mikhail Level(2, Enemy, True) [5,10]	DropItem 0x00 0x0 0x00 [IronBow] NeverMoveAI
 	UNIT Terror_Wight Wight	Mikhail Level(2, Enemy, True) [19,9]	0x00 0x00 0x0 0x00 [IronLance] AttackInRangeAI
 	UNIT Terror_Wight_Bow Wight_Bow	Mikhail Level(2, Enemy, True) [19,10]	0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
-	
+
 	//main hallway
 	UNIT Terror_Gargoyle Gargoyle	Mikhail Level(12, Enemy, True) [11,8]	0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
 	UNIT Terror_Gargoyle Deathgoyle	Mikhail Level(2, Enemy, True) [12,9]	0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
@@ -218,11 +218,11 @@ EnemyUnits_Hard:
 	UNIT DumaFaith_Witch Witch	Mikhail Level(9, Enemy, True) [10,12]	0x00 0x00 0x0 0x00 [Thunder, WitchWarpItem] WitchWarpAI
 	UNIT Terror_Entombed Entombed	Mikhail Level(5, Enemy, True) [12,11]	0x00 0x00 0x0 0x00 [FetidClaw] AttackInRangeAI
 	UNIT DumaFaith_Witch Witch	Mikhail Level(10, Enemy, True) [14,12]	0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
-	
+
 	//tarvos
 	UNIT Terror_Tarvos Tarvos	Mikhail Level(11, Enemy, True) [2,10]	0x00 0x00 0x0 0x00 [Hammer] DelayedRushAI
 	UNIT Terror_Tarvos Tarvos	Mikhail Level(11, Enemy, True) [22,10]	0x00 0x00 0x0 0x00 [SteelAxe] DelayedRushAI
-	
+
 	//misc mix
 	UNIT DumaFaith_Sorcerer Shaman	Mikhail Level(14, Enemy, True) [11,10]	0x00 0x00 0x0 0x00 [Sisyphus] AttackInHalfRangeAI
 	UNIT DumaFaith_Sorcerer Arcanist	Mikhail Level(7, Enemy, True) [8,11]	0x00 0x00 0x0 0x00 [Miasma, Physic] [0x0F, 0x03]
@@ -234,133 +234,133 @@ EnemyUnits_Hard:
 	UNIT Terror_Bael Bael	Mikhail Level(13, Enemy, True) [20,14]	0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
 	UNIT Terror_Bael Bael	Mikhail Level(12, Enemy, True) [4,14]	0x00 0x00 0x0 0x00 [PoisonClaw] AttackInRangeAI
 	UNIT
-	
+
 MikhailSummons:
 	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [11,4] MonsterTemplate 0x00 0x1 REDA11R4 NoItems MonsterAI
 	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [13,4] MonsterTemplate 0x00 0x1 REDA13R4 NoItems MonsterAI
 	UNIT
-	
+
 RearSummons:
 	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [11,21] MonsterTemplate 0x00 0x1 REDA11R21 NoItems MonsterAI
 	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [13,21] MonsterTemplate 0x00 0x1 REDA13R21 NoItems MonsterAI
 	UNIT
-	
+
 
 Ch3_7C_BeginningScene:
-	MUSC SongID_FromTheDarkness
-    LOAD2 0x1 CutsceneUnits
-    ENUN
-    CLEA 0x0
-	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3C07 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x3C07
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-    CAMERA_CENTERED [12,13]
-    FADU 5
-    STAL 60
-    EVBIT_T 0x9
-	LOAD2 0x1 CutsceneUnits2
+	MUSIC SongID_FromTheDarkness
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
-    EVBIT_F 0x9
-    STAL 20
-    CameraCursor(Celica)
-	SetBackground(0x2F)
+	REMOVEALL_BLUE
+	SVAL 0x2 (EnemyUnits|IsPointer)
+	CHECK_ISHARD
+	BEQ 0x3C07 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x3C07
+	LOAD_S2 0x1
+	ENUN
+	CAMERA_CENTERED [12,13]
+	FADEOUT 5
+	STAL 60
+	EVBIT_T 0x9
+	LOAD_CUTSCENE CutsceneUnits2
+	ENUN
+	EVBIT_F 0x9
+	STAL 20
+	CameraCursor(Celica)
+	SetBackground(Shrine_3)
 	BackgroundText(Ch3_7C_OpeningText)
-	FADI 16
-	CLEA 0x0
-	LOAD3 0x0 PlayerPlacement 
+	FADEIN 16
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch3_7C_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
-    STAL 5
+	FADEIN 2
+	STAL 5
 	MUSCFAST SongID_Victory
-	SetBackground(0x2F)
+	SetBackground(Shrine_3)
 	BackgroundText(Ch3_7C_EndingText)
-	FADI 16
-    STAL 5
-	MUSC SongID_Truth
-	SetBackground(0x2F, 2)
+	FADEIN 16
+	STAL 5
+	MUSIC SongID_Truth
+	SetBackground(Shrine_3, 2)
 	TEXTMODE 1
 	TEXTSHOW Ch3_7C_EndingText_2
 	TEXTEND
-	MUSC SongID_Silence
+	MUSIC SongID_Silence
 	TEXTCONT
 	TEXTEND
-	MUSC SongID_Legacy
+	MUSIC SongID_Legacy
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3C7Completed
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3C7Completed
 	EVBIT_T 0x7
-	
-	FADI 16
-	EVBIT_MODIFY 0x4
-	
+
+	FADEIN 16
+	CONFIG_SKIP 0x4
+
 	//Celica promotes
-	PROM Celica CelicaPrincess ZofianCrown
-	FADI 2
+	PROMOTE Celica CelicaPrincess ZofianCrown
+	FADEIN 2
 	TEXTMODE 1
-	BACG 0x2F
-	
-	MUSC SongID_CastleTheme
-	
+	BACKGROUND 0x2F
+
+	MUSIC SongID_CastleTheme
+
 	//CG
 	SetBackground(FealtyCG,2)
-    STAL 30
-	EVBIT_MODIFY 0x0
+	STAL 30
+	CONFIG_SKIP 0x0
 	STAL 60
 	CgText(Ch3_7C_CGText_1)
 	CgText(Ch3_7C_CGText_2)
-	FADI 5
+	FADEIN 5
 
 	//Ending continues
-	SetBackground(0x2F, 2)
+	SetBackground(Shrine_3, 2)
 	BackgroundText(Ch3_7C_EndingText_3)
-    CALL $591F40
-    RemoveItemFromAny(GoldDagger)
-	SVAL 0x3 TheZofia 
-	GIVEITEMTO Celica
+	CALL $591F40
+	RemoveItemFromAny(GoldDagger)
+	SVAL 0x3 TheZofia
+	GIVEITEM Celica
 	BackgroundText(Ch3_7C_EndingText_4)
-	
+
 	//Nomah and priestesses here
-	CHECK_OTHERS
+	CHECK_COUNT_GREEN
 	SVAL 0x2 0x1
 	BLE 0x12 0xC 0x2
 		//2 alive
-        EVBIT_MODIFY 0x1
+		CONFIG_SKIP 0x1
 		BackgroundText(Ch3_7C_TwoPriestesses)
 		TEXTMODE 1
-		SVAL 0x3 MilasBow 
-		GIVEITEMTO Celica
+		SVAL 0x3 MilasBow
+		GIVEITEM Celica
 		EVBIT_T 0x7
-        EVBIT_MODIFY 0x0
+		CONFIG_SKIP 0x0
 	LABEL 0x12
-	FADI 5
+	FADEIN 5
 	STAL 10
-	SetBackground(0x2F,5)
+	SetBackground(Shrine_3,5)
 	BackgroundText(Ch3_7C_EndingText_SluiceGate)
-	EVBIT_MODIFY 0x1
-	CHECK_EVENTID gChapter3A7Completed
+	CONFIG_SKIP 0x1
+	CHECK_FLAG gChapter3A7Completed
 	BEQ 0x13 0xC 0x0
 		//If gChapter3A7Completed
-        SetBackground(BlackBackground)
+		SetBackground(BlackBackground)
 		CALL Ch3_EndingScene
 	//else
 	LABEL 0x13
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x0
 	BackgroundText(Ch3_7C_EndingText_SluiceGate_NotOpen)
-	FADI 2
-	
-	MNCH 0x1E
+	FADEIN 2
+
+	GOTO_CHAPTER 0x1E
 	SHORT $0D40 $0
 	POIN Act3EndSwitch|1
-	ENDA
+	END

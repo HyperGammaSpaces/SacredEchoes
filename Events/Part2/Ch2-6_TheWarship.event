@@ -23,7 +23,7 @@ SecondBoat:
 	CAMERA_CENTERED [12,0]
 	EARTHQUAKE_START 0x100
 	STAL 30
-	FADI 16
+	FADEIN 16
 	STAL 30
 	EARTHQUAKE_END
 	TILECHANGE 0x1 // Boat
@@ -31,16 +31,16 @@ SecondBoat:
 	SMOV 0x2 (EnemyUnitsBoat2|0x8000000)
 	CALL $9EE274
 	//
-	FADU 16
+	FADEOUT 16
 	STAL 20
 	CAMERA_CENTERED SorcererBoss
 	FlashCursor(SorcererBoss,60)
-	MUSI
+	MUSIC_QUIET_T
 	STAL 20
 	Text(Ch2_6_Reinforcements1) // duma leader says something spooky
-	MUNO
+	MUSIC_QUIET_F
 	NoFade
-	ENDA
+	END
 
 WitchesAppear:
 	//ReinforcementEvent(EnemyUnitsWitches)
@@ -52,14 +52,14 @@ WitchesAppear:
 	FlashCursor(Celica,60)
 	Text(Ch2_6_Reinforcements2) // oh no, witches
 	NoFade
-	ENDA
+	END
 
 Ch2_6_CharacterBasedEvents:
 	CHAR
 
 Ch2_6_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(12,18)
+		Seize(12,18)
 	#endif
 	ChestMoney(3000, 2, 2)
 	LOCA
@@ -85,30 +85,30 @@ Ch2_6_Ballista3:
 
 PlayerUnits:
 #ifdef __DEBUG__
-	UNIT Celica CelicaPriestess 0x00 Level(7,Ally,True) [12,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(6,Ally,True) [11,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(6,Ally,True) [11,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(6,Ally,True) [13,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(7,Ally,True) [12,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(7,Ally,True) [12,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(6,Ally,True) [11,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(6,Ally,True) [11,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(6,Ally,True) [13,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(7,Ally,True) [12,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Valbar Knight 0x00 Level(2,Ally,True) [13,16] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe,Vulnerary] NoAI
 	UNIT Leon Archer 0x00 Level(7,Ally,True) [13,17] 0x00 0x00 0x0 0x00 [BaseBow, IronBow, Vulnerary] NoAI
-	UNIT Kamui Mercenary 0x00 Level(6,Ally,True) [12,15] 0x00 0x00 0x0 0x00 [BaseSword] NoAI 
+	UNIT Kamui Mercenary 0x00 Level(6,Ally,True) [12,15] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
 	UNIT
 #else
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [13,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [12,17] 0x00 0x00 0x0 0x00 [IronSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,18] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [11,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [13,18] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [12,17] 0x00 0x00 0x0 0x00 [IronSword, Vulnerary] NoAI
 	UNIT Valbar Knight 0x00 Level(1, Ally, 1) [13,16] 0x00 0x00 0x0 0x00 [IronLance,IronAxe,Vulnerary] NoAI
 	UNIT Leon Archer 0x00 Level(4, Ally, 1) [13,17] 0x00 0x00 0x0 0x00 [IronBow, IronBow, Vulnerary] NoAI
-	UNIT Kamui Mercenary 0x00 Level(3, Ally, 1) [12,15] 0x00 0x00 0x0 0x00 [IronSword] NoAI 
+	UNIT Kamui Mercenary 0x00 Level(3, Ally, 1) [12,15] 0x00 0x00 0x0 0x00 [IronSword] NoAI
 	UNIT
 #endif
-	
+
 EnemyUnits:
 	// Upper Deck
-	UNIT Jarth Mercenary Jarth Level(13,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [SteelSword,IronShield,Item100G] NeverMoveAI 
+	UNIT Jarth Mercenary Jarth Level(13,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [SteelSword,IronShield,Item100G] NeverMoveAI
 	UNIT Bandit_Bow Archer Jarth Level(10,Enemy,True) [4,0] 0x00 0x00 0x0 0x0 [IronBow] NeverMoveAI
 	UNIT Bandit_Axe Pirate Jarth Level(12,Enemy,True) [3,1] 0x00 0x00 0x0 0x0 [IronAxe,HandAxe] NeverMoveAI
 	UNIT Bandit_Axe Pirate Jarth Level(12,Enemy,True) [5,1] 0x00 0x00 0x0 0x0 [SteelAxe,HideShield] NeverMoveAI
@@ -130,10 +130,10 @@ EnemyUnits:
 	UNIT Bandit_Sword Mercenary Jarth Level(10,Enemy,True) [1,9] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
 	UNIT Bandit_Sword Mercenary Jarth Level(11,Enemy,True) [5,9] 0x00 0x00 0x0 0x0 [BaseSword] AttackInRangeAI
 	UNIT
-	
+
 EnemyUnits_Hard:
 	// Upper Deck
-	UNIT Jarth Mercenary Jarth Level(13,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [SteelSword,IronShield,Item100G] NeverMoveAI 
+	UNIT Jarth Mercenary Jarth Level(13,Enemy,False) [4,1] DropItem 0x00 0x0 0x00 [SteelSword,IronShield,Item100G] NeverMoveAI
 	UNIT Bandit_Bow Archer Jarth Level(10,Enemy,True) [4,0] 0x00 0x00 0x0 0x0 [SteelBow] NeverMoveAI
 	UNIT Bandit_Axe Pirate Jarth Level(12,Enemy,True) [3,1] 0x00 0x00 0x0 0x0 [HandAxe,IronShield] NeverMoveAI
 	UNIT Bandit_Axe Pirate Jarth Level(12,Enemy,True) [5,1] 0x00 0x00 0x0 0x0 [SteelAxe,HideShield] AttackInRangeAI
@@ -156,12 +156,12 @@ EnemyUnits_Hard:
 	UNIT Bandit_Sword Mercenary Jarth Level(11,Enemy,True) [5,9] 0x00 0x00 0x0 0x0 [IronSword] AttackInRangeAI
 	UNIT
 
-EnemyUnitsBoat2: 
-	UNIT SorcererBoss Shaman SorcererBoss Level(9,Enemy,False) [14,3] DropItem 0x00 0x0 0x00 [Miasma,Item100G] NeverMoveAI 
-	UNIT DumaFaith_Sorcerer Shaman SorcererBoss Level(6,Enemy,True) [10,2] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI 
-	UNIT DumaFaith_Sorcerer Mage SorcererBoss Level(7,Enemy,True) [12,4] DropItem 0x00 0x0 0x00 [Fire, HideShield, ChestKey] AttackInRangeAI 
+EnemyUnitsBoat2:
+	UNIT SorcererBoss Shaman SorcererBoss Level(9,Enemy,False) [14,3] DropItem 0x00 0x0 0x00 [Miasma,Item100G] NeverMoveAI
+	UNIT DumaFaith_Sorcerer Shaman SorcererBoss Level(6,Enemy,True) [10,2] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
+	UNIT DumaFaith_Sorcerer Mage SorcererBoss Level(7,Enemy,True) [12,4] DropItem 0x00 0x0 0x00 [Fire, HideShield, ChestKey] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman SorcererBoss Level(6,Enemy,True) [11,1] 0x00 0x00 0x0 0x00 [Miasma] DefaultAI
-	UNIT DumaFaith_Sorcerer Shaman SorcererBoss Level(8,Enemy,True) [10,4] 0x00 0x00 0x0 0x00 [Miasma] DefaultAI 
+	UNIT DumaFaith_Sorcerer Shaman SorcererBoss Level(8,Enemy,True) [10,4] 0x00 0x00 0x0 0x00 [Miasma] DefaultAI
 	UNIT
 
 EnemyUnitsWitches:
@@ -171,49 +171,49 @@ EnemyUnitsWitches:
 
 Ch2_6_BeginningScene:
 	#ifdef __DEBUG__
-		LOAD1 0x1 PlayerUnits
+		LOAD 0x1 PlayerUnits
 		ENUN
 	#else
-		LOAD3 0x0 PlayerUnits 
+		LOAD_DEPLOYED 0x0 PlayerUnits
 		ENUN
 	#endif
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x206 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x206
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	
-	CHECK_ALIVE Genny
+	CHECK_ISHARD
+	BEQ 0x206 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x206
+	LOAD_S2 0x1
+	ENUN
+
+	CHECK_ISALIVE Genny
 	BEQ 0x100 0xC 0x0
-	CHECK_ALIVE Mae
+	CHECK_ISALIVE Mae
 	BEQ 0x100 0xC 0x0
-	
-		MUSC SongID_Env_Water
+
+		MUSIC SongID_Env_Water
 		SetBackground(0x41) //night boat bg
 		BackgroundText(Ch2_6_OpeningScene) // seems spooky huh
-		FADI 16
+		FADEIN 16
 		CLEAN
-        STAL 5
-		
+		STAL 5
+
 	LABEL 0x100
 	MUSCFAST SongID_Silence
 	STAL 5
 	CAMERA_CENTERED Celica
 	EARTHQUAKE_START 0x100
-	FADU 4
+	FADEOUT 4
 	STAL 90
 	EARTHQUAKE_END
 	STAL 10
-	MUSC SongID_Tension
+	MUSIC SongID_Tension
 	STAL 20
 	CAMERA_CENTERED Jarth
 	FlashCursor(Jarth, 60)
 	STAL 20
 		CHECK_EXISTS Valbar
 		BEQ 0x1 0xC 0x0
-		CHECK_ALIVE Valbar
+		CHECK_ISALIVE Valbar
 		BEQ 0x1 0xC 0x0
 		MapText(Ch2_6_OpeningScene_2) // ahh pirates
 		GOTO 0x2
@@ -222,19 +222,19 @@ Ch2_6_BeginningScene:
 	LABEL 0x2
 	GotoPrepScreen
 	NoFade
-	ENDA
+	END
 
 Ch2_6_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 5
-    STAL 5
-	MUSC SongID_Victory
+	FADEIN 5
+	STAL 5
+	MUSIC SongID_Victory
 	SetBackground(0x41) //night boat bg
 	BackgroundText(Ch2_6_EndingText) // yay we won
-    FADI 2
-	MNCH 0x0E //go to world map
-	ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x0E //go to world map
+	END
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

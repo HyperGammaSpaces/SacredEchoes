@@ -25,11 +25,11 @@ Evt_CharacterBasedEvents:
 
 Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+		Seize(4,5)
 	#endif
 	Seize(11,10)
 	Door(8,11)
-    Chest(Mercurius, 13, 14)
+	Chest(Mercurius, 13, 14)
 	LOCA
 
 Evt_MiscBasedEvents:
@@ -74,15 +74,15 @@ PlayerPlacement:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [25,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [26,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [27,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Kliff Villager 0x00 Level(1, Ally, 1) [23,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [23,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 
 CutsceneUnits:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Conrad Paladin 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [0,0] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
-	
+
 CutsceneUnits_Ending:
 	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [16,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Conrad Paladin 0x00 Level(1, NPC, 1) [3,10] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
@@ -95,26 +95,26 @@ EnemyUnits:
 	UNIT Rigel_Mage Arcanist Jamil Level(9, Enemy, True) [13,14] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT 0xB3 Fiend Jamil Level(4, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [Javelin] NeverMoveAI
 	UNIT 0xB3 Fiend Jamil Level(4, Enemy, True) [10,14] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
-	
+
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [IronSword] ChaseOnceApproachedAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [11,6] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [13,12] DropItem 0x00 0x0 0x00 [BraveSword,Thunderblade] NeverMoveAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [14,12] 0x00 0x00 0x0 0x00 [IronSword] NoAI
-	
+
 	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [11,16] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [12,16] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [13,8] 0x00 0x00 0x0 0x00 [Nosferatu,SilverShield] NeverMoveAI
-	
+
 	UNIT DumaFaith_Witch Witch Jamil Level(10, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
 	UNIT DumaFaith_Witch Witch Jamil Level(10, Enemy, True) [3,12] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
 	UNIT DumaFaith_Witch Witch Jamil Level(10, Enemy, True) [28,8] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
-	
+
 	UNIT DumaFaith_Witch Witch DumaFaith_Witch_Slow Level(10, Enemy, True) [21,9] 0x00 0x00 0x0 0x00 [Nosferatu] MoveWithLeaderAI
 	UNIT DumaFaith_Witch Witch DumaFaith_Witch_Slow Level(10, Enemy, True) [22,9] 0x00 0x00 0x0 0x00 [Excalibur] MoveWithLeaderAI
 	UNIT DumaFaith_Witch_Slow Witch DumaFaith_Witch_Slow Level(12, Enemy, True) [22,10] 0x00 0x00 0x0 0x00 [Aura] NoAI
 	UNIT DumaFaith_Witch Witch DumaFaith_Witch_Slow Level(10, Enemy, True) [23,10] 0x00 0x00 0x0 0x00 [Fire] MoveWithLeaderAI
-	
+
 	UNIT
 
 EnemyUnits_Hard:
@@ -124,83 +124,83 @@ EnemyUnits_Hard:
 	UNIT Rigel_Mage Arcanist Jamil Level(9, Enemy, True) [13,14] 0x00 0x00 0x0 0x00 [Mire] AttackInRangeAI
 	UNIT 0xB3 Fiend Jamil Level(4, Enemy, True) [10,10] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] NeverMoveAI
 	UNIT 0xB3 Fiend Jamil Level(4, Enemy, True) [10,14] 0x00 0x00 0x0 0x00 [SteelLance] MonsterAI
-	
+
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [9,10] 0x00 0x00 0x0 0x00 [SteelSword] ChaseOnceApproachedAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [10,6] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [11,6] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [13,12] DropItem 0x00 0x0 0x00 [BraveSword,Thunderblade] NeverMoveAI
 	UNIT Rigel_Merc DreadFighter Jamil Level(4, Enemy, True) [14,12] 0x00 0x00 0x0 0x00 [Rapier] NoAI
-    UNIT Rigel_Archer Sniper Garcia Level(6, Enemy, True) [11,14] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
-	
+	UNIT Rigel_Archer Sniper Garcia Level(6, Enemy, True) [11,14] 0x00 0x00 0x0 0x00 [Longbow] NeverMoveAI
+
 	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [11,16] 0x00 0x00 0x0 0x00 [Aura] AttackInRangeAI
 	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [12,16] 0x00 0x00 0x0 0x00 [Fire] NoAI
 	UNIT DumaFaith_Witch Witch Jamil Level(12, Enemy, True) [13,8] 0x00 0x00 0x0 0x00 [Nosferatu,SilverShield] NeverMoveAI
-	
+
 	UNIT DumaFaith_Witch Witch Jamil Level(10, Enemy, True) [3,11] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
 	UNIT DumaFaith_Witch Witch Jamil Level(10, Enemy, True) [3,12] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
 	UNIT DumaFaith_Witch Witch Jamil Level(10, Enemy, True) [28,8] 0x00 0x00 0x0 0x00 [Thunder,WitchWarpItem] WitchWarpAI
-	
+
 	UNIT DumaFaith_Witch Witch DumaFaith_Witch_Slow Level(10, Enemy, True) [21,9] 0x00 0x00 0x0 0x00 [Nosferatu] MoveWithLeaderAI
 	UNIT DumaFaith_Witch Witch DumaFaith_Witch_Slow Level(10, Enemy, True) [22,9] 0x00 0x00 0x0 0x00 [Excalibur] MoveWithLeaderAI
 	UNIT DumaFaith_Witch_Slow Witch DumaFaith_Witch_Slow Level(12, Enemy, True) [22,10] 0x00 0x00 0x0 0x00 [Aura] NoAI
 	UNIT DumaFaith_Witch Witch DumaFaith_Witch_Slow Level(10, Enemy, True) [23,10] 0x00 0x00 0x0 0x00 [Fire] MoveWithLeaderAI
-	
+
 	UNIT
 
 Evt_BeginningScene:
 
-	MUSC SongID_Tension
-	SetBackground(0x31,5)
+	MUSIC SongID_Tension
+	SetBackground(Forest_Dense,5)
 	BackgroundText(Ch4C_4_OpeningText)
-	FADI 5
-	
+	FADEIN 5
+
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x4C04 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x4C04
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	LOAD3 0x0 PlayerPlacement 
+	CHECK_ISHARD
+	BEQ 0x4C04 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x4C04
+	LOAD_S2 0x1
+	ENUN
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Evt_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4C4Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter4C4Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
-	CLEE 0x0
-	CLEA 0x0
+	FADEIN 2
+	REMOVEALL_RED
+	REMOVEALL_BLUE
 	STAL 5
-	MUSC SongID_Victory
-	SetBackground(0x11,5)
+	MUSIC SongID_Victory
+	SetBackground(Castle_Hall_3_Night,5)
 	BackgroundText(Ch4C_4_EndingText)
-    MUSCMID SongID_Silence
-	FADI 2
+	MUSCMID SongID_Silence
+	FADEIN 2
 	CLEAN
-    STAL 5
-	LOAD2 0x0 CutsceneUnits_Ending
+	STAL 5
+	LOAD_CUTSCENE CutsceneUnits_Ending
 	ENUN
 	CAMERA_CENTERED [3,10]
-	MUSC SongID_Env_Night
-	FADU 5
+	MUSIC SongID_Env_Night
+	FADEOUT 5
 	MOVE 0x08 Saber [3,11]
 	ENUN
 	CameraCursor(Saber)
 	MapText(Ch4C_4_EndingText_2)
 	MOVE 0x08 Saber [0,11]
 	ENUN
-	CLEA 0x0
+	REMOVEALL_BLUE
 	STAL 20
 	MapText(Ch4C_4_EndingText_3)
-    MUSCMID SongID_Silence
-	FADI 2
-	
-	CLEN 0x0
-	
-	MNCH 0x22
-	ENDA
+	MUSCMID SongID_Silence
+	FADEIN 2
+
+	REMOVEALL_GREEN
+
+	GOTO_CHAPTER 0x22
+	END

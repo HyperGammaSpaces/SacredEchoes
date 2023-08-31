@@ -36,35 +36,35 @@ PunishmentPalsSpawn:
 
 
 BossChargeCheck:
-	CHECK_ALLEGIANCE 0xFFFF
+	CHECK_FACTION 0xFFFF
 	BNE 1 0xC 0x0 // branch label 1 if not ally
 		// do nothing (eid 0x8 now true)
 		GOTO 2
 	LABEL 1
-		ENUF 0x8
+		FLAG_F 0x8
 		LABEL 2
 	NoFade
-	ENDA
+	END
 
 BossChargeSetup:
-	CHECK_EVENTID 0x8
+	CHECK_FLAG 0x8
 	BEQ 1 0xC 0x0 // branch label 1 if check not set
 		//Lawson says something
 		CAMERA_CENTERED Lawson
-        STAL 20
+		STAL 20
 		FlashCursor(Lawson, 60)
 		MapText(Ch3_5A_BossWarningText)
-		//CHAI his group
+		//SET_AI his group
 		SetAIParameters(0x0,0x0,0x04,0x0)
-		CHAI Lawson
+		SET_AI Lawson
 		SetAIParameters(0x0D,0x03,0x04,0x0)
-		CHAI 0x87
+		SET_AI 0x87
 		GOTO 2
 	LABEL 1
-		ENUF 0x9
+		FLAG_F 0x9
 		LABEL 2
 	NoFade
-	ENDA
+	END
 
 Ch3_5A_CharacterBasedEvents:
 	CharacterEventBothWays(gSirPurr, AlmLuthierSirPurrTalk, Alm, Luthier)
@@ -72,7 +72,7 @@ Ch3_5A_CharacterBasedEvents:
 
 Ch3_5A_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(12,5)
+		Seize(12,5)
 	#endif
 	Door(11,16)
 	Door(12,16)
@@ -104,10 +104,10 @@ Ch3_5A_Ballista2:
 	ALIGN 4
 
 Ch3_5A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,5] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,5] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [14,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [11,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,5] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,5] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [14,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [11,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [14,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [11,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [10,5] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
@@ -121,8 +121,8 @@ Ch3_5A_Units1:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,12] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,12] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT
 
 EnemyUnits:
@@ -133,9 +133,9 @@ EnemyUnits:
 	UNIT 0x87 Paladin_F Lawson Level(2,Enemy,True) [9,18] 0x00 0x00 0x0 0x00 [IronLance,HideShield] NeverMoveAI
 	UNIT 0x87 Paladin Lawson Level(2,Enemy,True) [13,18] 0x00 0x00 0x0 0x00 [HeavySpear,HideShield] NeverMoveAI
 	UNIT 0x87 Witch Lawson Level(4,Enemy,True) [9,19] DropItem 0x00 0x0 0x00 [Thunder,Elixir] NeverMoveAI
-	
+
 	UNIT TreasureHunter Thief Lawson Level(12,Enemy,True) [5,19] DropItem 0x00 0x0 0x00 [IronSword,Soma] [0x6,0xC,0x0,0x0]
-	
+
 	//turrets
 	UNIT Rigel_Archer Sniper Lawson Level(2,Enemy,True) [2,16] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	UNIT Rigel_Archer Sniper_F Lawson Level(3,Enemy,True) [23,16] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
@@ -143,28 +143,28 @@ EnemyUnits:
 	UNIT Rigel_Soldier Knight Lawson Level(4,Enemy,True) [23,7] 0x00 0x00 0x0 0x00 [SteelLance,HandAxe] AttackInRangeAI
 	UNIT Rigel_Archer Archer_F Lawson Level(10,Enemy,True) [2,3] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
 	UNIT Rigel_Archer Archer Lawson Level(14,Enemy,True) [23,3] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	
+
 	//north
 	UNIT Rigel_Wyvern WyvernRider Lawson Level(14,Enemy,True) [5,1] 0x00 0x00 0x0 0x00 [SteelAxe] AttackSnagsAI
 	UNIT Rigel_Wyvern WyvernRider Lawson Level(11,Enemy,True) [4,0] 0x00 0x00 0x0 0x00 [IronAxe] AttackSnagsAI
 	UNIT Rigel_Wyvern WyvernRider Lawson Level(11,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [IronAxe] AttackSnagsAI
-	
+
 	UNIT Rigel_Archer Sniper_F Lawson Level(3,Enemy,True) [19,1] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	UNIT Rigel_Archer Archer_F Lawson Level(14,Enemy,True) [18,0] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT Rigel_Archer Archer Lawson Level(14,Enemy,True) [20,0] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	
+
 	//cav squadrons
 	UNIT Rigel_Cav Paladin_F Lawson Level(3,Enemy,True) [1,12] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Cav Cavalier Lawson Level(9,Enemy,True) [0,11] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Cav Cavalier_F Lawson Level(9,Enemy,True) [0,12] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Cav Cavalier Lawson Level(9,Enemy,True) [0,13] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0x0,0x0]
-	
-    UNIT Rigel_Cav Paladin Lawson Level(3,Enemy,True) [24,12] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
+
+	UNIT Rigel_Cav Paladin Lawson Level(3,Enemy,True) [24,12] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
 	UNIT Rigel_Cav Cavalier Lawson Level(9,Enemy,True) [25,11] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Cav Cavalier_F Lawson Level(9,Enemy,True) [25,12] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Cav Cavalier_F Lawson Level(9,Enemy,True) [25,13] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0x0,0x0]
 
-	
+
 	UNIT Rigel_Mage Mage Lawson Level(7,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	UNIT Rigel_Witch Mage_F Lawson Level(6,Enemy,True) [25,8] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 
@@ -178,9 +178,9 @@ EnemyUnits_Hard:
 	UNIT 0x87 Paladin_F Lawson Level(2,Enemy,True) [9,18] 0x00 0x00 0x0 0x00 [IronLance,HideShield] NeverMoveAI
 	UNIT 0x87 Paladin Lawson Level(2,Enemy,True) [13,18] 0x00 0x00 0x0 0x00 [HeavySpear,HideShield] NeverMoveAI
 	UNIT 0x87 Witch Lawson Level(4,Enemy,True) [9,19] DropItem 0x00 0x0 0x00 [Thunder,Elixir] NeverMoveAI
-	
+
 	UNIT TreasureHunter Thief Lawson Level(12,Enemy,True) [5,19] DropItem 0x00 0x0 0x00 [Zanbato,Soma] [0x6,0xC,0x0,0x0]
-	
+
 	//turrets
 	UNIT Rigel_Archer Sniper Lawson Level(2,Enemy,True) [2,16] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	UNIT Rigel_Archer Sniper_F Lawson Level(3,Enemy,True) [23,16] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
@@ -188,29 +188,29 @@ EnemyUnits_Hard:
 	UNIT Rigel_Soldier Knight Lawson Level(4,Enemy,True) [23,7] 0x00 0x00 0x0 0x00 [SteelLance,HandAxe] AttackInRangeAI
 	UNIT Rigel_Archer Archer_F Lawson Level(10,Enemy,True) [2,3] 0x00 0x00 0x0 0x00 [SilverBow] AttackInRangeAI
 	UNIT Rigel_Archer Archer Lawson Level(14,Enemy,True) [23,3] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	
+
 	//north
 	UNIT Rigel_Wyvern WyvernRider Lawson Level(14,Enemy,True) [5,1] 0x00 0x00 0x0 0x00 [SteelAxe] AttackSnagsAI
 	UNIT Rigel_Wyvern WyvernRider Lawson Level(11,Enemy,True) [4,0] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
 	UNIT Rigel_Wyvern WyvernRider Lawson Level(11,Enemy,True) [6,0] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
-	
+
 	UNIT Rigel_Archer Sniper_F Lawson Level(3,Enemy,True) [19,1] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
 	UNIT Rigel_Archer Archer_F Lawson Level(14,Enemy,True) [18,0] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT Rigel_Archer Archer Lawson Level(14,Enemy,True) [20,0] 0x00 0x00 0x0 0x00 [IronBow] AttackSnagsAI
 	UNIT Rigel_Archer Archer Lawson Level(14,Enemy,True) [20,2] 0x00 0x00 0x0 0x00 [Longbow] NoAI
-	
+
 	//cav squadrons
 	UNIT Rigel_Cav Paladin_F Lawson Level(3,Enemy,True) [1,12] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Cav Cavalier Lawson Level(9,Enemy,True) [0,11] 0x00 0x00 0x0 0x00 [IronLance,IronShield] NoAI
 	UNIT Rigel_Cav Cavalier_F Lawson Level(9,Enemy,True) [0,12] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Cav Cavalier Lawson Level(9,Enemy,True) [0,13] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0x0,0x0]
-	
-    UNIT Rigel_Cav Paladin Lawson Level(3,Enemy,True) [24,12] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
+
+	UNIT Rigel_Cav Paladin Lawson Level(3,Enemy,True) [24,12] 0x00 0x00 0x0 0x00 [SteelLance,Javelin] AttackInRangeAI
 	UNIT Rigel_Cav Cavalier Lawson Level(9,Enemy,True) [25,11] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Cav Cavalier_F Lawson Level(9,Enemy,True) [25,12] 0x00 0x00 0x0 0x00 [IronLance] [0x0,0x12,0x0,0x0]
 	UNIT Rigel_Cav Cavalier_F Lawson Level(9,Enemy,True) [25,13] 0x00 0x00 0x0 0x00 [SteelLance,IronShield] NoAI
 
-	
+
 	UNIT Rigel_Mage Mage Lawson Level(7,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 	UNIT Rigel_Witch Mage_F Lawson Level(6,Enemy,True) [25,8] 0x00 0x00 0x0 0x00 [Thunder] AttackInRangeAI
 
@@ -237,16 +237,16 @@ TurretArchers:
 	UNIT
 
 Ch3_5A_BeginningScene:
-	VCWF 0x0
-	MUSC SongID_Env_Night
-	LOAD2 0x1 CutsceneUnits
+	FOGVISION 0x0
+	MUSIC SongID_Env_Night
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
 	CAMERA_CENTERED Alm
-	
+
 	SetBackground(0x44)
 	BackgroundText(Ch3_5A_OpeningText)
 	ClearBackground
-	
+
 	//move alm and lukas around
 	EVBIT_T 0x9
 	MOVE 0x08 Alm [12, 10]
@@ -258,63 +258,63 @@ Ch3_5A_BeginningScene:
 	ENUN
 	EVBIT_F 0x9
 	STAL 20
-	VCWF 0x4
-	
+	FOGVISION 0x4
+
 	SetBackground(0x4A)
 	BackgroundText(Ch3_5A_OpeningText_2)
-    FadeOutMusic
+	FadeOutMusic
 	ClearBackgroundSmooth
-	
+
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3A05 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x3A05
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	FADU 2
-	SOUN 0x9B
+	CHECK_ISHARD
+	BEQ 0x3A05 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x3A05
+	LOAD_S2 0x1
+	ENUN
+	FADEOUT 2
+	SOUND 0x9B
 	STAL 5
-	SOUN 0x9C
+	SOUND 0x9C
 	STAL 20
 	CAMERA_CENTERED Lawson
-    STAL 20
+	STAL 20
 	FlashCursor(Lawson, 60)
-	MUSC SongID_SolveTheRiddle
+	MUSIC SongID_SolveTheRiddle
 	MapText(Ch3_5A_OpeningText_3)
-	FADI 5
-	
-	CLEA 0x0
-	LOAD3 0x0 Ch3_5A_Units1 
+	FADEIN 5
+
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 Ch3_5A_Units1
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch3_5A_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3A5Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3A5Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
+	FADEIN 2
 	STAL 5
-	MUSC SongID_SilentGround
+	MUSIC SongID_SilentGround
 	SetBackground(0x44)
-	
+
 	//check Gray and Tobin
-	CHECK_ALIVE Gray
+	CHECK_ISALIVE Gray
 	BEQ 6 0x0 0xC
-		CHECK_ALIVE Tobin
+		CHECK_ISALIVE Tobin
 		BEQ 6 0x0 0xC
 		//check mathilda
 			CHECK_EXISTS Mathilda
 			BEQ 7 0x0 0xC
-			CHECK_ALIVE Mathilda
+			CHECK_ISALIVE Mathilda
 			BEQ 7 0x0 0xC
-			//alive: 
+			//alive:
 			BackgroundText(Ch3_5A_EndingText)
 			GOTO 9
-			//dead: 
+			//dead:
 			LABEL 7
 			BackgroundText(Ch3_5A_EndingText_NoMathilda)
 			GOTO 9
@@ -323,17 +323,17 @@ Ch3_5A_EndingScene:
 		//check mathilda
 		CHECK_EXISTS Mathilda
 		BEQ 8 0x0 0xC
-		CHECK_ALIVE Mathilda
+		CHECK_ISALIVE Mathilda
 		BEQ 8 0x0 0xC
-			//alive: 
+			//alive:
 			BackgroundText(Ch3_5A_EndingText_NoGray)
 			GOTO 9
 			LABEL 8
 			//dead:
 			BackgroundText(Ch3_5A_EndingText_EveryoneDied)
-	
+
 	LABEL 9
-    FadeOutMusic
-	FADI 2
-	MNCH 0x14
-	ENDA
+	FadeOutMusic
+	FADEIN 2
+	GOTO_CHAPTER 0x14
+	END

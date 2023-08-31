@@ -25,21 +25,21 @@ WaveFirst:
 	//Trigger the map change 0 here
 	EARTHQUAKE_START 0x100
 	STAL 30
-	FADI 16
+	FADEIN 16
 	STAL 30
 	EARTHQUAKE_END
 	TILECHANGE 0x0
 	LoadReinforcements(Boat2Enemies)
-	FADU 16
+	FADEOUT 16
 	STAL 20
-	ENDA
+	END
 
 Ch2_3_CharacterBasedEvents:
 	CHAR
 
 Ch2_3_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(10,11)
+		Seize(10,11)
 	#endif
 	LOCA
 
@@ -63,114 +63,116 @@ Ch2_3_Ballista2:
 	ALIGN 4
 
 Ch2_3_Units1:
-	UNIT Celica CelicaPriestess 0x00 Level(3,Ally,True) [10,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(3,Ally,True) [10,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(3,Ally,True) [10,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(3,Ally,True) [9,11] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(3,Ally,True) [9,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(3,Ally,True) [10,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(3,Ally,True) [10,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(3,Ally,True) [10,9] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(3,Ally,True) [9,11] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(3,Ally,True) [9,10] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 EnemyUnits:
-	UNIT PirateCelica2 Pirate_F PirateCelica2 Level(6,Enemy,False) [16,13] DropItem 0x00 0x0 0x00 [BaseAxe,Item100G] AttackInRangeAI 
-	UNIT Bandit_Sword Mercenary PirateCelica2 Level(2,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate PirateCelica2 Level(5,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT Bandit_Axe Brigand PirateCelica2 Level(6,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(5,Enemy,True) [15,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Axe Brigand PirateCelica2 Level(6,Enemy,True) [15,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate PirateCelica2 Level(5,Enemy,True) [14,5] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
-	UNIT Bandit_Axe Brigand PirateCelica2 Level(4,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Bow Archer_F PirateCelica2 Level(4,Enemy,True) [17,8] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT Bandit_Bow Archer PirateCelica2 Level(4,Enemy,True) [17,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT PirateCelica2 Pirate_F PirateCelica2 Level(6,Enemy,False) [16,13] DropItem 0x00 0x0 0x00 [BaseAxe,Item100G] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary PirateCelica2 Level(2,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT Bandit_Axe Pirate PirateCelica2 Level(5,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(6,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(5,Enemy,True) [15,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(6,Enemy,True) [15,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate PirateCelica2 Level(5,Enemy,True) [14,5] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(4,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Bow Archer_F PirateCelica2 Level(4,Enemy,True) [17,8] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT Bandit_Bow Archer PirateCelica2 Level(4,Enemy,True) [17,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
 	UNIT
-    
+
 EnemyUnits_Hard:
-	UNIT PirateCelica2 Pirate_F PirateCelica2 Level(6,Enemy,False) [16,13] DropItem 0x00 0x0 0x00 [HandAxe,Item100G] AttackInRangeAI 
-	UNIT Bandit_Sword Mercenary PirateCelica2 Level(2,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate PirateCelica2 Level(5,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [IronAxe] NoAI 
-	UNIT Bandit_Axe Brigand PirateCelica2 Level(6,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [IronAxe] NoAI 
-	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(5,Enemy,True) [15,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Axe Brigand PirateCelica2 Level(6,Enemy,True) [15,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate PirateCelica2 Level(5,Enemy,True) [14,5] 0x00 0x00 0x0 0x00 [IronAxe] NoAI 
-	UNIT Bandit_Axe Brigand PirateCelica2 Level(4,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Bow Archer_F PirateCelica2 Level(4,Enemy,True) [17,8] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
-	UNIT Bandit_Bow Archer PirateCelica2 Level(4,Enemy,True) [17,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI 
+	UNIT PirateCelica2 Pirate_F PirateCelica2 Level(6,Enemy,False) [16,13] DropItem 0x00 0x0 0x00 [HandAxe,Item100G] AttackInRangeAI
+	UNIT Bandit_Sword Mercenary PirateCelica2 Level(2,Enemy,True) [15,13] 0x00 0x00 0x0 0x00 [BaseSword] AttackInRangeAI
+	UNIT Bandit_Axe Pirate PirateCelica2 Level(5,Enemy,True) [14,10] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(6,Enemy,True) [15,8] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(5,Enemy,True) [15,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(6,Enemy,True) [15,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate PirateCelica2 Level(5,Enemy,True) [14,5] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
+	UNIT Bandit_Axe Brigand PirateCelica2 Level(4,Enemy,True) [14,7] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Bow Archer_F PirateCelica2 Level(4,Enemy,True) [17,8] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
+	UNIT Bandit_Bow Archer PirateCelica2 Level(4,Enemy,True) [17,12] 0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
 	UNIT
 
 Boat2Enemies:
-	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(8,Enemy,True) [1,14] DropItem 0x00 0x1 REDA2R14 [BaseAxe,Item100G] NoAI 
-	UNIT Bandit_Bow Archer_F PirateCelica2 Level(4,Enemy,True) [1,14] DropItem 0x00 0x1 REDA1R13 [IronBow,Talisman] NoAI 
-	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(4,Enemy,True) [1,14] 0x00 0x00 0x1 REDA2R11 [BaseAxe] NoAI 
+	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(8,Enemy,True) [1,14] DropItem 0x00 0x1 REDA2R14 [BaseAxe,Item100G] NoAI
+	UNIT Bandit_Bow Archer_F PirateCelica2 Level(4,Enemy,True) [1,14] DropItem 0x00 0x1 REDA1R13 [IronBow,Talisman] NoAI
+	UNIT Bandit_Axe Pirate_F PirateCelica2 Level(4,Enemy,True) [1,14] 0x00 0x00 0x1 REDA2R11 [BaseAxe] NoAI
 	UNIT Bandit_Axe Pirate PirateCelica2 Level(6,Enemy,True) [1,14] 0x00 0x00 0x1 REDA3R13 [BaseAxe] NoAI
 	UNIT Bandit_Sword Thief PirateCelica2 Level(6,Enemy,True) [1,14] DropItem 0x00 0x1 REDA0R10 [IronSword,Lockpick] NoAI
 	UNIT
 
 Ch2_3_BeginningScene:
-	MUSC SongID_Env_Water
+	MUSIC SongID_Env_Water
 	#ifdef __DEBUG__
-		LOAD1 0x1 Ch2_3_Units1
+		LOAD 0x1 Ch2_3_Units1
 		ENUN
 	#else
-		LOAD3 0x0 Ch2_3_Units1
+		LOAD_DEPLOYED 0x0 Ch2_3_Units1
 		ENUN
 	#endif
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x203 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x203
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	
-	CHECK_ALIVE Mae
+	CHECK_ISHARD
+	BEQ 0x203 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x203
+	LOAD_S2 0x1
+	ENUN
+
+	CHECK_ISALIVE Mae
 	BEQ 0x100 0xC 0x0
-	CHECK_ALIVE Boey
+	CHECK_ISALIVE Boey
 	BEQ 0x100 0xC 0x0
-	
-		SetBackground(0x08) //Boat
+
+		SetBackground(Ship) //Boat
 		TEXTMODE 1
 		TEXTSHOW Ch2_3_OnBoat
 		TEXTEND
 		TEXTCLEAR
 		TEXTMODE 1
-		_0x2141 CelicaBoatCG 0x1 0x4
+		BACKGROUND_CHANGE CelicaBoatCG 0x1 0x4
 		GOTO 0x101
-	
+
 	LABEL 0x100
-	
+
 		SetBackground(CelicaBoatCG)
-	
+
 	LABEL 0x101
 	TEXTMODE 1
 	STAL 60
-	_0x1A22
+	TEXTMODE 2
 	TEXTSHOW Ch2_3_CelicaCG
 	TEXTEND
 	TEXTCLEAR
-	FADI 2
+	FADEIN 2
 	ClearBackground
 
-	MUSC SongID_Tension
+	MUSIC SongID_Tension
 	STAL 20
+	CONFIG_SKIP 0x1
 	CAMERA_CENTERED Celica
+	CONFIG_SKIP 0x0
 	FlashCursor(Celica, 60)
 
 	MapText(Ch2_3_PreBattle)
 
 	NoFade
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch2_3_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-    FADI 5
-    STAL 5
-	MUSC SongID_Victory
-	SetBackground(0x08) //boat
+	FADEIN 5
+	STAL 5
+	MUSIC SongID_Victory
+	SetBackground(Ship) //boat
 	BackgroundText(Ch2_3_PostBattle)
-	FADI 5
-	MNC2 0x0B //skip worldmap
-	ENDA
+	FADEIN 5
+	GOTO_CHAPTER_NOWM 0x0B //skip worldmap
+	END
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

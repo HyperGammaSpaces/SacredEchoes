@@ -21,13 +21,13 @@ Ch1_1_TurnBasedEvents:
 	TURN
 
 WTAEvent:
-	MUSC SongID_MarchToDeliverance // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
-	MUSI
+	MUSIC SongID_MarchToDeliverance // Use MUSIC_REPLACE during turn events to return to the map music, but since this is turn 1, MUSIC is fine.
+	MUSIC_QUIET_T
 	CameraCursor(Lukas)
 	MapText(Ch1_1_LukasAdvice)
-	MUNO
+	MUSIC_QUIET_F
 	NoFade
-	ENDA
+	END
 
 Ch1_1_CharacterBasedEvents:
 	CharacterEvent(gKliffRecruited, TalkToKliff, Alm, Kliff)
@@ -39,7 +39,7 @@ Ch1_1_CharacterBasedEvents:
 
 Ch1_1_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(8,7)
+		Seize(8,7)
 	#endif
 	Village(0xA, VillageEvent, 3,11)
 	House(0x0,House1,4,3)
@@ -48,15 +48,15 @@ Ch1_1_LocationBasedEvents:
 
 VillageEvent:
 	VillageEventItem(Ch1_House3, HouseBG, MetissTome)
-	ENDA
+	END
 
 House1:
 	HouseEvent(Ch1_House1,HouseBG)
-	ENDA
+	END
 
 House2:
 	HouseEvent(Ch1_House2,HouseBG)
-	ENDA
+	END
 
 Ch1_1_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -78,10 +78,10 @@ Ch1_1_Ballista2:
 	ALIGN 4
 
 Ch1_1_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(3, Ally, 1) [9,7] 0x00 0x00 0x0 0x00 [IronLance, BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(2, Ally, 1) [8,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(5, Ally, 1) [8,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [8,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(3, Ally, 1) [9,7] 0x00 0x00 0x0 0x00 [IronLance, BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(2, Ally, 1) [8,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(5, Ally, 1) [8,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 EnemyUnits:
@@ -107,18 +107,18 @@ Ch1_1_Mycen_Green:
 	UNIT
 
 Ch1_1_CutsceneUnits_Green:
-	UNIT Lukas Soldier 0x00 Level(3, NPC, 1) [18,7] 0x00 0x00 0x0 0x00 [IronLance, BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(2, NPC, 1) [5,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(3, NPC, 1) [18,7] 0x00 0x00 0x0 0x00 [IronLance, BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(2, NPC, 1) [5,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Gray Villager 0x00 Level(5, NPC, 1) [5,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, NPC, 1) [6,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, NPC, 1) [6,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 Ch1_1_BeginningScene:
-	MUSC SongID_Advance
-	LOAD1 0x1 Ch1_1_CutsceneUnits
+	MUSIC SongID_Advance
+	LOAD 0x1 Ch1_1_CutsceneUnits
 	ENUN
-	LOAD1 0x1 Ch1_1_CutsceneUnits_Green
+	LOAD 0x1 Ch1_1_CutsceneUnits_Green
 	ENUN
 
 	SetBackground(HouseBG)
@@ -136,63 +136,63 @@ Ch1_1_BeginningScene:
 	TEXTMODE 1
 	TEXTSHOW OpeningScene_2
 	TEXTEND
-	MUSC SongID_ShadowOfVictory
+	MUSIC SongID_ShadowOfVictory
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
-    FadeOutMusic
+		FadeOutMusic
 	ClearBackground
 	CAMERA_CENTERED [7, 5]
 	STAL 0x08
 	MOVE 0x10 Lukas [1, 2]
 	MOVE 0x10 Alm [1, 2]
 	ENUN
-	REMU Lukas
-	REMU Alm
+	HIDEUNIT Lukas
+	HIDEUNIT Alm
 	MUSCSLOW SongID_Env_Birds
 
 	FlashCursor(Kliff, 60)
 	Text(Village,OpeningScene_3)
-    FadeOutMusic
+		FadeOutMusic
 	STAL 0x14
 
-	MUSC SongID_Advance
+	MUSIC SongID_Advance
 	FlashCursor(1, 2, 60)
 	SetBackground(HouseBG)
-    TEXTMODE 1
+		TEXTMODE 1
 	TEXTSHOW OpeningScene_4
 	TEXTEND
 	FadeOutMusic
 	TEXTCONT
 	TEXTEND
-	MUSC SongID_Uprising
+	MUSIC SongID_Uprising
 	TEXTCONT
 	TEXTEND
 	EndConvo
-    FadeOutMusic
+		FadeOutMusic
 
-	REVEAL Lukas
+	SHOWUNIT Lukas
 	STAL 0x30
-    TILECHANGE 0x00
-    EVBIT_T 0x9
+		TILECHANGE 0x00
+		EVBIT_T 0x9
 	MOVE 0x08 Lukas [9, 7]
 	ENUN
-    EVBIT_F 0x9
-    CAMERA_CENTERED Lukas
-    
-	REVEAL Alm
+		EVBIT_F 0x9
+		CAMERA_CENTERED Lukas
+
+	SHOWUNIT Alm
 	STAL 0x14
 	MOVE 0x10 Alm [8, 7]
 	ENUN
 
 	SetBackground(Outside_Village_Day)
-    TEXTMODE 1
+		TEXTMODE 1
 	TEXTSHOW OpeningScene_5
 	TEXTEND
-	MUSC SongID_Uprising
+	MUSIC SongID_Uprising
 	TEXTCONT
 	TEXTEND
-	MUSC SongID_Reunion
+	MUSIC SongID_Reunion
 	TEXTCONT
 	TEXTEND
 	EndConvo
@@ -200,20 +200,20 @@ Ch1_1_BeginningScene:
 	STAL 0x14
 	MOVE 0x10 Gray [4, 3]
 	MOVE 0x10 Tobin [2, 8]
-    MOVE 0x10 Alm [1, 2]
+		MOVE 0x10 Alm [1, 2]
 	ENUN
-	REMU Gray
-	REMU Tobin
+	HIDEUNIT Gray
+	HIDEUNIT Tobin
 	STAL 60
-    MUSI
-    CameraCursor(Alm)
-    MapText(OpeningScene_WheresGrandpa)
-    MUNO
-    STAL 30
-    MOVE 0x10 Alm [8, 7]
-    ENUN
-	REVEAL Gray
-	REVEAL Tobin
+		MUSIC_QUIET_T
+		CameraCursor(Alm)
+		MapText(OpeningScene_WheresGrandpa)
+		MUSIC_QUIET_F
+		STAL 30
+		MOVE 0x10 Alm [8, 7]
+		ENUN
+	SHOWUNIT Gray
+	SHOWUNIT Tobin
 	STAL 0x14
 	MOVE 0x10 Gray [8, 6]
 	MOVE 0x10 Tobin [8, 8]
@@ -221,43 +221,43 @@ Ch1_1_BeginningScene:
 
 	STAL 0x20
 
-	CUSA Gray
-	CUSA Tobin
+	FACTION_BLUE Gray
+	FACTION_BLUE Tobin
 	CharacterJoinedNotification(Notif_GrayTobinJoin)
 
 	STAL 0x20
 	FlashCursor(Alm, 60)
-	FADI 5
-    STAL 5
-	CLEA 0x0
-	CLEE 0x0
-	CLEN 0x0
-	LOAD1 0x1 Ch1_1_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
-	LOAD1 0x1 NeutralUnits
+	FADEIN 5
+		STAL 5
+	REMOVEALL_BLUE
+	REMOVEALL_RED
+	REMOVEALL_GREEN
+	LOAD 0x1 Ch1_1_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	LOAD 0x1 NeutralUnits
 	ENUN
 	SetBackground(Outside_Village_Day)
-    TEXTMODE 1
+		TEXTMODE 1
 	TEXTSHOW OpeningScene_GetGrayAndTobin
 	TEXTEND
 	TEXTCLEAR
 	TEXTMODE 1
-	BACKGROUND_CHANGE AlmPrologueCG 0x1 0x4
+	BACKGROUND_CHANGE AlmPrologueCG 1 4
 	STAL 60
 	CgText(OpeningScene_CelicaCG)
 	EndConvo
-    STAL 5
+		STAL 5
 
-	MUSC SongID_Tension
+	MUSIC SongID_Tension
 	EVBIT_T 0x9
-	LOAD1 0x1 EnemyUnits
+	LOAD 0x1 EnemyUnits
 	ENUN
-    EVBIT_F 0x9
-    STAL 5
+		EVBIT_F 0x9
+		STAL 5
 
 	CameraCursor(BanditAlm1)
 	MapText(Ch1_1_PreBattle)
 
-    CAMERA_CENTERED Alm
+		CAMERA_CENTERED Alm
 	MOVE 0x10 Alm [10,6]
 	MOVE 0x10 Lukas [10,8]
 	MOVE 0x10 Tobin [9,7]
@@ -266,52 +266,52 @@ Ch1_1_BeginningScene:
 
 	NoFade
 	// GotoPrepScreen
-	ENDA
+	END
 
 Ch1_1_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gEnableWorldMap			//enable world map
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gEnableWorldMap			//enable world map
+	CONFIG_SKIP 0x0
+		CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-    FADI 5
-    STAL 5
-	CLEN 0x0
-	MUSC SongID_Victory //victory
+		FADEIN 5
+		STAL 5
+	REMOVEALL_GREEN
+	MUSIC SongID_Victory //victory
 	Text(Plain,Ch1_1_PostBattle)
-	MNCH 0x01 //go to ch1
-	ENDA
+	GOTO_CHAPTER 0x01 //go to ch1
+	END
 
 TalkToKliff:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 0x20
 	MapText(Ch1_1_GetKliff)
 	SVAL 0x1 0x0
-	CHAI Kliff
+	SET_AI Kliff
 	STAL 5
-	CUSA Kliff
-    CALL $591F40
+	FACTION_BLUE Kliff
+		CALL $591F40
 	CharacterJoinedNotification(Notif_KliffJoin)
 	STAL 0x14
-	MURE 0x05
+	MUSIC_RESTORE 0x05
 	NoFade
-	ENDA
+	END
 
 TalkToFaye:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 0x20
 	MapText(Ch1_1_GetFaye)
 	SVAL 0x1 0x0
-	CHAI Faye
+	SET_AI Faye
 	STAL 5
-	CUSA Faye
-    CALL $591F40
+	FACTION_BLUE Faye
+		CALL $591F40
 	CharacterJoinedNotification(Notif_FayeJoin)
 	STAL 0x14
-	MURE 0x05
+	MUSIC_RESTORE 0x05
 	NoFade
-	ENDA
+	END
 
 #ifndef InlineEvents
-  MESSAGE Events end at offset currentOffset
+	MESSAGE Events end at offset currentOffset
 #endif

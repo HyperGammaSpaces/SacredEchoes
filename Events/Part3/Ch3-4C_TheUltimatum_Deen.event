@@ -23,7 +23,7 @@ Ch3_4C_TurnBasedEvents:
 LoadReinforcements:
 	ReinforcementEvent(ReinforcementsDeen)
 	NoFade
-	ENDA
+	END
 
 //Call a LordSplitMenu in previous chapter to choose North (fight Deen) or South (fight Sonya).
 
@@ -32,19 +32,19 @@ Ch3_4C_CharacterBasedEvents:
 
 Ch3_4C_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(7,17)
+		Seize(7,17)
 	#endif
 	House(0, HouseEvent, 11,0)
 	House(0, HouseEvent2, 4,18)
 	LOCA
-	
+
 HouseEvent:
 	HouseEvent(Ch3_4C_HouseText,0x01)
-	ENDA
-	
+	END
+
 HouseEvent2:
 	HouseEvent(Ch3_4C_HouseText_2,0x01)
-	ENDA
+	END
 
 Ch3_4C_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -54,16 +54,16 @@ Ch3_4C_MiscBasedEvents:
 	AREA 0x16 IoteShieldEvent [7,0] [8,1]
 	AREA 0x17 MemberCardEvent [0,6] [1,8]
 	AFEV
-	
+
 BootsEvent:
 	HiddenItem(Swiftsole)
-	ENDA
+	END
 IoteShieldEvent:
 	HiddenItem(DelphiShield)
-	ENDA
+	END
 MemberCardEvent:
 	HiddenItem(MemberCard)
-	ENDA
+	END
 
 Ch3_4C_Dunno:
 	END_MAIN
@@ -78,15 +78,15 @@ Ch3_4C_Ballista1:
 Ch3_4C_Ballista2:
 	BLST
 	ALIGN 4
-	
+
 Ch3_4C_CutsceneUnits:
 	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [7,19] 0x00 0x00 0x1 REDA7R17 [BaseSword, Vulnerary] NoAI
 	UNIT Atlas Woodcutter 0x00 Level(1, Ally, 1) [9,19] 0x00 0x00 0x1 REDA9R17 [BaseLance, Vulnerary] NoAI
 	UNIT
 //start from [7,19].
-	
+
 Ch3_4C_UnitsSouth:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [9,17] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [6,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [8,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -94,9 +94,9 @@ Ch3_4C_UnitsSouth:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [14,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [15,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-    UNIT Kliff Villager 0x00 Level(1,Ally,True) [13,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-    UNIT
-    
+	UNIT Kliff Villager 0x00 Level(1,Ally,True) [13,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
+
 EnemyUnitsDeen:
 	UNIT DeenBoss Myrmidon DeenBoss Level(12, Enemy, False) [2,1] 0x00 0x00 0x0 0x00 [BraveSword,DeensSword] AttackInRangeAI
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(14, Enemy, True) [3,3]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
@@ -111,8 +111,8 @@ EnemyUnitsDeen:
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(14, Enemy, True) [14,9]	0x00 0x00 0x0 0x00 [SteelSword] NoAI
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(15, Enemy, True) [8,4]	0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(13, Enemy, True) [8,7]	0x00 0x00 0x0 0x00 [BraveSword] AttackInRangeAI
-	UNIT    
-    
+	UNIT
+
 EnemyUnitsDeen_Hard:
 	UNIT DeenBoss Myrmidon DeenBoss Level(12, Enemy, False) [2,1] 0x00 0x00 0x0 0x00 [BraveSword,DeensSword,Thunderblade] AttackInRangeAI
 	UNIT Rigel_Merc Mercenary	DeenBoss Level(14, Enemy, True) [3,3]	0x00 0x00 0x0 0x00 [Zweihander] AttackInRangeAI
@@ -134,56 +134,56 @@ ReinforcementsDeen:
 	UNIT
 
 Ch3_4C_BeginningScene:
-	MUSC SongID_LandOfShiftingSand
+	MUSIC SongID_LandOfShiftingSand
 	SVAL 0x2 (EnemyUnitsDeen|IsPointer)
-    CHECK_HARD
-    BEQ 0x3C04 rC r0
-        SVAL 0x2 (EnemyUnitsDeen_Hard|IsPointer)
-    LABEL 0x3C04
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	FADU 5
-	WEA1 0x6
-	
+	CHECK_ISHARD
+	BEQ 0x3C04 rC r0
+		SVAL 0x2 (EnemyUnitsDeen_Hard|IsPointer)
+	LABEL 0x3C04
+	LOAD_S2 0x1
+	ENUN
+	FADEOUT 5
+	WEATHER 0x6
+
 	//due to sandstorm, load units on map.
-	LOAD2 0x1 Ch3_4C_CutsceneUnits
+	LOAD_CUTSCENE Ch3_4C_CutsceneUnits
 	ENUN
 	STAL 20
 	FlashCursor(Celica,60)
 	STAL 20
 
-	SetBackground(0x30)
-	CHECK_ALIVE Atlas
+	SetBackground(Desert)
+	CHECK_ISALIVE Atlas
 	BEQ 0x2 0xC 0x0
 		BackgroundText(Ch3_4C_OpeningText_DeenChosen_Atlas)
 		GOTO 0x3
 	LABEL 0x2
 		BackgroundText(Ch3_4C_OpeningText_DeenChosen)
 	LABEL 0x3
-	FADI 5
-	CLEA 0x0
-	
-	LOAD3 0x0 Ch3_4C_UnitsSouth 
+	FADEIN 5
+	REMOVEALL_BLUE
+
+	LOAD_DEPLOYED 0x0 Ch3_4C_UnitsSouth
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 
 Ch3_4C_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3C4Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3C4Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
-    STAL 5
-	MUSC SongID_Victory
-	SetBackground(0x30)
+	FADEIN 2
+	STAL 5
+	MUSIC SongID_Victory
+	SetBackground(Desert)
 	BackgroundText(Ch3_4C_EndingText)
-	FADI 5
-    STAL 5
+	FADEIN 5
+	STAL 5
 	SetBackground(0x4C)
 	BackgroundText(Ch3_4C_EndingText_SonyaRetreats)
-	FADI 5
-	MNCH 0x1B
-	ENDA
+	FADEIN 5
+	GOTO_CHAPTER 0x1B
+	END

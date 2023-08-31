@@ -27,20 +27,20 @@ Ch3_2C_TurnBasedEvents:
 LoadReinforcements:
 	ReinforcementEvent(ReinforcementZombie)
 	NoFade
-	ENDA
-	
+	END
+
 LoadReinforcementBandits:
-	CHECK_EVENTID gChapter3C2Completed //has map been cleared?
+	CHECK_FLAG gChapter3C2Completed //has map been cleared?
 	BNE 0x9 rC r0 //if true, skip load
 		LoadReinforcements(BrigandsReinforcements)
 	LABEL 0x9
 	NoFade
-	ENDA
-	
+	END
+
 LoadReinforcementBackups:
 	ReinforcementEvent(BackupsReinforcements)
 	NoFade
-	ENDA
+	END
 
 Ch3_2C_CharacterBasedEvents:
 	//talk to atlas
@@ -48,7 +48,7 @@ Ch3_2C_CharacterBasedEvents:
 
 Ch3_2C_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(15,15)
+		Seize(15,15)
 	#endif
 	Village(8, VillageEvent, 15,3)
 	Armory(Act3Armory_1, 17,11)
@@ -59,16 +59,16 @@ Ch3_2C_LocationBasedEvents:
 
 HouseEvent:
 	HouseEvent(Ch3_2C_HouseText2,0x01)
-	ENDA
+	END
 
 HouseEvent2:
 	HouseEvent(Ch3_2C_HouseText,0x01)
-	ENDA
+	END
 
 VillageEvent:
-	ENUT 0x9
-	VillageEventItem(Ch3_2C_VillageText,0x42,DumaIcon) 
-	ENDA
+	FLAG_T 0x9
+	VillageEventItem(Ch3_2C_VillageText,0x42,DumaIcon)
+	END
 
 Ch3_2C_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -90,13 +90,13 @@ Ch3_2C_Ballista2:
 	ALIGN 4
 
 Ch3_2C_CutsceneUnits:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x1 REDA15R15 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [12,19] 0x00 0x00 0x1 REDA15R15 [BaseSword, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [11,19] 0x00 0x00 0x1 REDA17R15 [Fire, Vulnerary] NoAI
 	UNIT Boey Mage 0x00 Level(10, Ally, False) [13,19] 0x00 0x00 0x1 REDA16R16 [Fire, Vulnerary] NoAI
 	UNIT
-	
+
 PlayerPlacement:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [15,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [15,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [17,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [16,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [14,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -106,11 +106,11 @@ PlayerPlacement:
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [13,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [4,18] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [3,19] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-	UNIT Kliff Villager 0x00 Level(1,Ally,True) [14,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-    UNIT
+	UNIT Kliff Villager 0x00 Level(1,Ally,True) [14,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 
 Ch3_2C_PlayerSkirmishUnits:
-	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [15,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [15,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [17,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [16,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(10, Ally, False) [14,16] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -123,57 +123,57 @@ Ch3_2C_PlayerSkirmishUnits:
 	UNIT
 
 AxeBros:
-	UNIT Atlas Woodcutter 0x00 Level(6, Ally, False) [15,3] 0x00 0x00 0x1 REDA15R3 [BaseAxe, Hatchet, Vulnerary] NoAI 
+	UNIT Atlas Woodcutter 0x00 Level(6, Ally, False) [15,3] 0x00 0x00 0x1 REDA15R3 [BaseAxe, Hatchet, Vulnerary] NoAI
 	UNIT Hyas Villager 0x00 Level(3, Ally, False) [15,3] 0x00 0x00 0x1 REDA15R3 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 AtlasJoins:
-	UNIT Atlas Woodcutter 0x00 Level(6, Ally, False) [15,3] 0x00 0x00 0x1 REDA15R3 [BaseAxe, Hatchet, Vulnerary] NoAI 
+	UNIT Atlas Woodcutter 0x00 Level(6, Ally, False) [15,3] 0x00 0x00 0x1 REDA15R3 [BaseAxe, Hatchet, Vulnerary] NoAI
 	UNIT
 
 EnemyUnits:
-	UNIT Boss_Monster Entombed Boss_Monster Level(3,Enemy,True) [4,1] DropItem 0x00 0x0 0x00 [RottenClaw,Item100G] NeverMoveAI 
+	UNIT Boss_Monster Entombed Boss_Monster Level(3,Enemy,True) [4,1] DropItem 0x00 0x0 0x00 [RottenClaw,Item100G] NeverMoveAI
 	UNIT Terror_Bael Bael Boss_Monster Level(12,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
-	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
-	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [5,13] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
+	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
+	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [5,13] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
 	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [6,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
-	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [10,15] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(7,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(6,Enemy,True) [3,10] 0x00 0x00 0x0 0x00 [Axereaver] MonsterAI 
-	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(5,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Bonewalker_Bow Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
-	UNIT Terror_Bonewalker_Bow Bonewalker_Bow Boss_Monster Level(6,Enemy,True) [3,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [3,4] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [7,9] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,6] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,8] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [10,15] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(7,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(6,Enemy,True) [3,10] 0x00 0x00 0x0 0x00 [Axereaver] MonsterAI
+	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(5,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Terror_Bonewalker_Bow Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
+	UNIT Terror_Bonewalker_Bow Bonewalker_Bow Boss_Monster Level(6,Enemy,True) [3,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [3,4] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [7,9] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,6] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,8] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
 	UNIT
-	
+
 EnemyUnits_Hard:
-	UNIT Boss_Monster Entombed Boss_Monster Level(3,Enemy,True) [4,1] DropItem 0x00 0x0 0x00 [FetidClaw,Item100G] AttackInRangeAI 
+	UNIT Boss_Monster Entombed Boss_Monster Level(3,Enemy,True) [4,1] DropItem 0x00 0x0 0x00 [FetidClaw,Item100G] AttackInRangeAI
 	UNIT Terror_Bael Bael Boss_Monster Level(12,Enemy,True) [15,9] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
-	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
-	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [5,13] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
+	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [4,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
+	UNIT Terror_Bael Bael Boss_Monster Level(10,Enemy,True) [5,13] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
 	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [6,14] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
-	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [10,15] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(7,Enemy,True) [15,4] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(7,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(6,Enemy,True) [3,10] 0x00 0x00 0x0 0x00 [Axereaver] MonsterAI 
-	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(5,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI 
-	UNIT Terror_Bonewalker_Bow Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI 
-	UNIT Terror_Bonewalker_Bow Bonewalker_Bow Boss_Monster Level(6,Enemy,True) [3,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [3,4] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [7,9] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,6] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI 
-	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,8] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI 
+	UNIT Terror_Bael Bael Boss_Monster Level(11,Enemy,True) [10,15] 0x00 0x00 0x0 0x00 [SharpClaw] MonsterAI
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(7,Enemy,True) [15,4] 0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(7,Enemy,True) [0,8] 0x00 0x00 0x0 0x00 [HeavySpear] AttackInRangeAI
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(6,Enemy,True) [3,10] 0x00 0x00 0x0 0x00 [Axereaver] MonsterAI
+	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(5,Enemy,True) [7,2] 0x00 0x00 0x0 0x00 [Javelin] AttackInRangeAI
+	UNIT Terror_Bonewalker_Bow Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] 0x00 0x00 0x0 0x00 [SteelBow] NeverMoveAI
+	UNIT Terror_Bonewalker_Bow Bonewalker_Bow Boss_Monster Level(6,Enemy,True) [3,7] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [10,10] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [3,4] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [7,9] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [RottenClaw] MonsterAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,6] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [5,7] 0x00 0x00 0x0 0x00 [SharpClaw] AttackInRangeAI
+	UNIT Terror_Revenant Revenant Boss_Monster Level(13,Enemy,True) [4,8] 0x00 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
 	UNIT
-	
+
 BrigandsReinforcements:
 	UNIT Bandit_Axe Brigand Boss_Monster Level(13,Enemy,True) [14,9] 0x00 0x00 0x1 REDA14R9 [SteelAxe,Torch] BrigandAI
 	UNIT
@@ -192,81 +192,81 @@ For [2B20] and [2B21], if the argument is negative, it will be read from s2.
 
 //Randomized enemies will use flag RandomMonsterTemplate
 Example:
-UNIT 0xAA Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
+UNIT 0xAA Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
 UNIT
 */
 
 EnemyUnitsSkirmish1:
 	UNIT Boss_Monster Entombed Boss_Monster Level(3,Enemy,True) [4,1] DropItemWithRandomPosition 0x00 0x0 0x00 [RottenClaw,Item100G] AttackInRangeAI
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [15,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [10,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [2,10] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Boss_Monster Level(8,Enemy,True) [6,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(7,Enemy,True) [7,2] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [10,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [3,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [7,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [15,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [10,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [2,10] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Boss_Monster Level(8,Enemy,True) [6,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(7,Enemy,True) [7,2] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [10,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [3,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [7,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
 	UNIT
 
 EnemyUnitsSkirmish2:
 	UNIT Boss_Monster Wight Boss_Monster Level(3,Enemy,True) [4,1] DropItemWithRandomPosition 0x00 0x0 0x00 [SteelSword,Item100G] AttackInRangeAI
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [15,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [10,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [2,10] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Boss_Monster Level(8,Enemy,True) [6,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(7,Enemy,True) [7,2] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [10,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [3,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [7,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [15,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [10,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [2,10] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Boss_Monster Level(8,Enemy,True) [6,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(7,Enemy,True) [7,2] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [10,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [3,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [7,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
 	UNIT
 
 EnemyUnitsSkirmish3:
 	UNIT Boss_Monster ElderBael Boss_Monster Level(3,Enemy,True) [4,1] DropItemWithRandomPosition 0x00 0x0 0x00 [SharpClaw,Item100G] AttackInRangeAI
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [15,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [10,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [2,10] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Boss_Monster Level(8,Enemy,True) [6,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(7,Enemy,True) [7,2] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI 
-	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [10,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [3,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [7,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
-	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI 
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [15,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [10,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT Terror_Bael Random_Bael Boss_Monster Level(12,Enemy,True) [4,14] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [2,10] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Boss_Monster Level(8,Enemy,True) [6,12] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Bonewalker Bonewalker Boss_Monster Level(7,Enemy,True) [7,2] RandomizePosition 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
+	UNIT Terror_Bonewalker_Bow Random_Bonewalker_Bow Boss_Monster Level(5,Enemy,True) [14,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems NeverMoveAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [10,10] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [3,4] RandomMonsterTemplate 0x00 0x0 0x00 NoItems AttackInRangeAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [7,9] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
+	UNIT Terror_Revenant Random_RevBonewalker Boss_Monster Level(11,Enemy,True) [6,6] RandomMonsterTemplate 0x00 0x0 0x00 NoItems MonsterAI
 	UNIT
 
 ReinforcementZombie:
-	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [5,3] 0x00 0x00 0x1 REDA5R3 [RottenClaw] MonsterAI 
+	UNIT Terror_Revenant Revenant Boss_Monster Level(11,Enemy,True) [5,3] 0x00 0x00 0x1 REDA5R3 [RottenClaw] MonsterAI
 	UNIT
-	
+
 BackupsReinforcements:
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [12,19] 0x00 0x00 0x1 REDA12R19 [ToxinLance] MonsterAI 
-	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(10,Enemy,True) [13,19] 0x00 0x00 0x1 REDA13R19 [HeavySpear] MonsterAI 
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(9,Enemy,True) [12,19] 0x00 0x00 0x1 REDA12R19 [ToxinLance] MonsterAI
+	UNIT Terror_Gargoyle Gargoyle Boss_Monster Level(10,Enemy,True) [13,19] 0x00 0x00 0x1 REDA13R19 [HeavySpear] MonsterAI
 	UNIT
 
 Ch3_2C_BeginningScene:
 	//only do this the first time.
-	EVBIT_MODIFY 0x1
-	CHECK_EVENTID gChapter3C2Completed //has map been cleared?
+	CONFIG_SKIP 0x1
+	CHECK_FLAG gChapter3C2Completed //has map been cleared?
 	BNE 0x6 rC r0 //if true, skip cutscene
-		EVBIT_MODIFY 0x0
-		MUSC SongID_Env_Night
+		CONFIG_SKIP 0x0
+		MUSIC SongID_Env_Night
 		SVAL 0x2 (EnemyUnits|IsPointer)
-        CHECK_HARD
-        BEQ 0x3C02 rC r0
-            SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-        LABEL 0x3C02
-        LOAD1 0x1 0xFFFFFFFF
-        ENUN
-		FADU 5
+		CHECK_ISHARD
+		BEQ 0x3C02 rC r0
+			SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+		LABEL 0x3C02
+		LOAD_S2 0x1
+		ENUN
+		FADEOUT 5
 
-		LOAD2 0x1 Ch3_2C_CutsceneUnits
+		LOAD_CUTSCENE Ch3_2C_CutsceneUnits
 		ENUN
 		CAMERA_CENTERED Celica
 		STAL 20
@@ -277,86 +277,86 @@ Ch3_2C_BeginningScene:
 		STAL 20
 		FlashCursor(Boss_Monster, 60)
 		//if not first, do following
-		FADI 5
-		CLEA 0x0
-		LOAD3 0x0 PlayerPlacement
+		FADEIN 5
+		REMOVEALL_BLUE
+		LOAD_DEPLOYED 0x0 PlayerPlacement
 		ENUN
 		GOTO 0x07
 	LABEL 0x06
-		EVBIT_MODIFY 0x0
-		LOAD3 0x0 Ch3_2C_PlayerSkirmishUnits
+		CONFIG_SKIP 0x0
+		LOAD_DEPLOYED 0x0 Ch3_2C_PlayerSkirmishUnits
 		ENUN
 		SVAL 0x2 0x0 //Number of skirmish enemies to load
 		CALL EnemyRandomizerHelper
-		LOAD1 0x1 EnemyUnitsSkirmish1
+		LOAD 0x1 EnemyUnitsSkirmish1
 		ENUN
 		NoFade
 	LABEL 0x07
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch3_2C_EndingScene:
-    CALL EndMusicAndMMS
-    CALL UnifiedBEXPCaller
-	EVBIT_MODIFY 0x1
-	CHECK_EVENTID gChapter3C2Completed //has map been cleared?
-    BNE 0x4 rC r0 //if true, skip cutscene
-		ENUT gChapter3C2Completed
-		EVBIT_MODIFY 0x0
-        FADI 2
-        STAL 5
-		MUSC SongID_Victory
+	CALL EndMusicAndMMS
+	CALL UnifiedBEXPCaller
+	CONFIG_SKIP 0x1
+	CHECK_FLAG gChapter3C2Completed //has map been cleared?
+	BNE 0x4 rC r0 //if true, skip cutscene
+		FLAG_T gChapter3C2Completed
+		CONFIG_SKIP 0x0
+		FADEIN 2
+		STAL 5
+		MUSIC SongID_Victory
 		SetBackground(0x43)
 		BackgroundText(Ch3_2C_EndingText)
-		FADI 2
-		
+		FADEIN 2
+
 		STAL 20
-		
-		MUSC SongID_SilentGround
-		CHECK_EVENTID 0x9
+
+		MUSIC SongID_SilentGround
+		CHECK_FLAG 0x9
 		BEQ 0x6 rC r0
 			SetBackground(0x42) //night village
 			STAL 20
 			BackgroundText(Ch3_2C_EndingText_GetAxeBros)
 			//if the village is visited, you get both
-            CALL $591F40
+			CALL $591F40
 			CharacterJoinedNotification(Notif_AtlasHyasJoin)
-			FADI 2
+			FADEIN 2
 			CLEAN
-			LOAD1 0x1 AxeBros
+			LOAD 0x1 AxeBros
 			ENUN
 			GOTO 0x7
 		LABEL 0x6
 			SetBackground(0x42)
 			STAL 20
 			BackgroundText(Ch3_2C_EndingText_VillageDestroyed)
-            CALL $591F40
+			CALL $591F40
 			//if the village is destroyed you only get atlas
 			CharacterJoinedNotification(Notif_AtlasJoin)
-			FADI 2
+			FADEIN 2
 			CLEAN
-			LOAD1 0x1 AtlasJoins
+			LOAD 0x1 AtlasJoins
 			ENUN
-		
+
 		LABEL 0x7
-		
+
 		SetBackground(0x43)
 		BackgroundText(Ch3_2C_SaberWarning)
-		FADI 2
-		
-		MNCH 0x18 
+		FADEIN 2
+
+		GOTO_CHAPTER 0x18
 		GOTO 0x05
 	LABEL 0x04
-		EVBIT_MODIFY 0x0
+		CONFIG_SKIP 0x0
 		SVAL 0x3 0x3
 		ASMC 0x85C65
-        //SADD 0x32
-        FADI 2
+		//SADD 0x32
+		FADEIN 2
 		SVAL 0x2 0x9
-		MNCH 0xFFFF //go to world map
+		GOTO_CHAPTER 0xFFFF //go to world map
 		//ASMC 0x37D59
 	LABEL 0x05
-	ENDA
+	END
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

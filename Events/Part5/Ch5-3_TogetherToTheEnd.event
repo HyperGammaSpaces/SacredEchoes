@@ -21,183 +21,183 @@ Ch5F3_ThisChapter:
 	POIN Ch5F3_BeginningScene Ch5F3_EndingScene
 
 Ch5F3_TurnBasedEvents:
-    OpeningTurnEvent(OpeningTurn_MogallEvent)
-    TurnEventPlayer(Local_WitchFlag,WitchSpawns,4,(256-4))
+	OpeningTurnEvent(OpeningTurn_MogallEvent)
+	TurnEventPlayer(Local_WitchFlag,WitchSpawns,4,(256-4))
 	TURN
-    
+
 WitchSpawns:
-    //Marla
-    CHECK_EVENTID 0x17
-    BNE 0x7701 rC r0
-        ENUF Local_WitchFlag
-        CHECK_AT [18,7]
-        BNE 0x7701 rC r0
-            CAMERA_CENTERED MarlaFinal
-            STAL 20
-            WARPIN [18,7]
-            LOAD1 0 WitchSpawn_Marla
-            ENDWARP
-            ENUN
-    LABEL 0x7701
-    //Hestia
-    CHECK_EVENTID 0x18
-    BNE 0x7702 rC r0
-        ENUF Local_WitchFlag
-        CHECK_AT [23,6]
-        BNE 0x7702 rC r0
-            CAMERA_CENTERED HestiaFinal
-            STAL 20
-            WARPIN [23,6]
-            LOAD1 0 WitchSpawn_Hestia
-            ENDWARP
-            ENUN
-    LABEL 0x7702
-    NoFade
-    ENDA
-    
+	//Marla
+	CHECK_FLAG 0x17
+	BNE 0x7701 rC r0
+		FLAG_F Local_WitchFlag
+		CHECK_AT [18,7]
+		BNE 0x7701 rC r0
+			CAMERA_CENTERED MarlaFinal
+			STAL 20
+			WARPIN [18,7]
+			LOAD 0 WitchSpawn_Marla
+			ENDWARP
+			ENUN
+	LABEL 0x7701
+	//Hestia
+	CHECK_FLAG 0x18
+	BNE 0x7702 rC r0
+		FLAG_F Local_WitchFlag
+		CHECK_AT [23,6]
+		BNE 0x7702 rC r0
+			CAMERA_CENTERED HestiaFinal
+			STAL 20
+			WARPIN [23,6]
+			LOAD 0 WitchSpawn_Hestia
+			ENDWARP
+			ENUN
+	LABEL 0x7702
+	NoFade
+	END
+
 OpeningTurn_MogallEvent:
-    MUSC SongID_TwilightOfTheGods
-    CameraCursor(JedahFinal)
-    MapText(Ch5_3_OpeningText_2)
-    STAL 20
+	MUSIC SongID_TwilightOfTheGods
+	CameraCursor(JedahFinal)
+	MapText(Ch5_3_OpeningText_2)
+	STAL 20
 	CAMERA_CENTERED JedahFinal
 	WARPIN [22, 13]
-    LOAD1 0x1 MogallSpamWave
-    ENDWARP
-    ENUN
+	LOAD 0x1 MogallSpamWave
+	ENDWARP
+	ENUN
 	STAL 20
-    ENUT Local_BossQuote
-    CALL EnableUnitSelectEvents
-    NoFade
-    ENDA
-    
-EnableUnitSelectEvents:
-    QUEUETUTORIAL 0x02 UnitSelectEvent
-    NoFade
-    ENDA
+	FLAG_T Local_BossQuote
+	CALL EnableUnitSelectEvents
+	NoFade
+	END
 
-#define UnitSelectTextEvent(eID,textID) "CHECK_EVENTID eID; BNE 0x1FF 0x0 0xC; ENUT eID; SVAL 0x2 textID; GOTO 0x1FE"
+EnableUnitSelectEvents:
+	QUEUETUTORIAL 0x02 UnitSelectEvent
+	NoFade
+	END
+
+#define UnitSelectTextEvent(eID,textID) "CHECK_FLAG eID; BNE 0x1FF 0x0 0xC; FLAG_T eID; SVAL 0x2 textID; GOTO 0x1FE"
 
 UnitSelectEvent:
-    CHECK_ACTIVE
-    SVAL 0x2 Lukas;     BEQ 0x102 0x2 0xC
-    SVAL 0x2 Gray;      BEQ 0x103 0x2 0xC
-    SVAL 0x2 Tobin;     BEQ 0x104 0x2 0xC
-    SVAL 0x2 Kliff;     BEQ 0x105 0x2 0xC
-    SVAL 0x2 Faye;      BEQ 0x106 0x2 0xC
-    SVAL 0x2 Silque;    BEQ 0x107 0x2 0xC
-    SVAL 0x2 Clair;     BEQ 0x108 0x2 0xC
-    SVAL 0x2 Clive;     BEQ 0x109 0x2 0xC
-    SVAL 0x2 Forsyth;   BEQ 0x10A 0x2 0xC
-    SVAL 0x2 Python;    BEQ 0x10B 0x2 0xC
-    SVAL 0x2 Mae;       BEQ 0x10D 0x2 0xC
-    SVAL 0x2 Boey;      BEQ 0x10E 0x2 0xC
-    SVAL 0x2 Genny;     BEQ 0x10F 0x2 0xC
-    SVAL 0x2 Saber;     BEQ 0x110 0x2 0xC
-    SVAL 0x2 Valbar;    BEQ 0x111 0x2 0xC
-    SVAL 0x2 Leon;      BEQ 0x112 0x2 0xC
-    SVAL 0x2 Kamui;     BEQ 0x113 0x2 0xC
-    SVAL 0x2 Luthier;   BEQ 0x114 0x2 0xC
-    SVAL 0x2 Mathilda;  BEQ 0x115 0x2 0xC
-    SVAL 0x2 Delthea;   BEQ 0x116 0x2 0xC
-    SVAL 0x2 Palla;     BEQ 0x117 0x2 0xC
-    SVAL 0x2 Catria;    BEQ 0x118 0x2 0xC
-    SVAL 0x2 Atlas;     BEQ 0x119 0x2 0xC
-    SVAL 0x2 Jesse;     BEQ 0x11A 0x2 0xC
-    SVAL 0x2 Deen;      BEQ 0x11B 0x2 0xC
-    SVAL 0x2 Sonya;     BEQ 0x11C 0x2 0xC
-    SVAL 0x2 Est;       BEQ 0x11D 0x2 0xC
-    SVAL 0x2 Tatiana;   BEQ 0x11E 0x2 0xC
-    SVAL 0x2 Zeke;      BEQ 0x11F 0x2 0xC
-    SVAL 0x2 Conrad;    BEQ 0x120 0x2 0xC
-    SVAL 0x2 Nomah;     BEQ 0x121 0x2 0xC
-    SVAL 0x2 Mycen;     BEQ 0x122 0x2 0xC
-    SVAL 0x2 Acantha;   BEQ 0x123 0x2 0xC
-    SVAL 0x2 Hyas;      BEQ 0x124 0x2 0xC
-    GOTO 0x1FF
-        LABEL 0x102
-            UnitSelectTextEvent(0x32,Final_SelectQuote_Lukas)
-        LABEL 0x103
-            UnitSelectTextEvent(0x33,Final_SelectQuote_Gray)
-        LABEL 0x104
-            UnitSelectTextEvent(0x34,Final_SelectQuote_Tobin)
-        LABEL 0x105
-            UnitSelectTextEvent(0x35,Final_SelectQuote_Kliff)
-        LABEL 0x106
-            UnitSelectTextEvent(0x36,Final_SelectQuote_Faye)
-        LABEL 0x107
-            UnitSelectTextEvent(0x37,Final_SelectQuote_Silque)
-        LABEL 0x108
-            UnitSelectTextEvent(0x38,Final_SelectQuote_Clair)
-        LABEL 0x109
-            UnitSelectTextEvent(0x39,Final_SelectQuote_Clive)
-        LABEL 0x10A
-            UnitSelectTextEvent(0x3A,Final_SelectQuote_Forsyth)
-        LABEL 0x10B
-            UnitSelectTextEvent(0x3B,Final_SelectQuote_Python)
-        LABEL 0x10D
-            UnitSelectTextEvent(0x3D,Final_SelectQuote_Mae)
-        LABEL 0x10E
-            UnitSelectTextEvent(0x3E,Final_SelectQuote_Boey)
-        LABEL 0x10F
-            UnitSelectTextEvent(0x3F,Final_SelectQuote_Genny)
-        LABEL 0x110
-            UnitSelectTextEvent(0x40,Final_SelectQuote_Saber)
-        LABEL 0x111
-            UnitSelectTextEvent(0x41,Final_SelectQuote_Valbar)
-        LABEL 0x112
-            UnitSelectTextEvent(0x42,Final_SelectQuote_Leon)
-        LABEL 0x113
-            UnitSelectTextEvent(0x43,Final_SelectQuote_Kamui)
-        LABEL 0x114
-            UnitSelectTextEvent(0x44,Final_SelectQuote_Luthier)
-        LABEL 0x115
-            UnitSelectTextEvent(0x45,Final_SelectQuote_Mathilda)
-        LABEL 0x116
-            UnitSelectTextEvent(0x46,Final_SelectQuote_Delthea)
-        LABEL 0x117
-            UnitSelectTextEvent(0x47,Final_SelectQuote_Palla)
-        LABEL 0x118
-            UnitSelectTextEvent(0x48,Final_SelectQuote_Catria)
-        LABEL 0x119
-            UnitSelectTextEvent(0x49,Final_SelectQuote_Atlas)
-        LABEL 0x11A
-            UnitSelectTextEvent(0x4A,Final_SelectQuote_Jesse)
-        LABEL 0x11B
-            UnitSelectTextEvent(0x4B,Final_SelectQuote_Deen)
-        LABEL 0x11C
-            UnitSelectTextEvent(0x4C,Final_SelectQuote_Sonya)
-        LABEL 0x11D
-            UnitSelectTextEvent(0x4D,Final_SelectQuote_Est)
-        LABEL 0x11E
-            UnitSelectTextEvent(0x4E,Final_SelectQuote_Tatiana)
-        LABEL 0x11F
-            UnitSelectTextEvent(0x4F,Final_SelectQuote_Zeke)
-        LABEL 0x120
-            UnitSelectTextEvent(0x50,Final_SelectQuote_Conrad)
-        LABEL 0x121
-            UnitSelectTextEvent(0x51,Final_SelectQuote_Nomah)
-        LABEL 0x122
-            UnitSelectTextEvent(0x52,Final_SelectQuote_Mycen)
-        LABEL 0x123
-            UnitSelectTextEvent(0x53,Final_SelectQuote_Acantha)
-        LABEL 0x124
-            UnitSelectTextEvent(0x54,Final_SelectQuote_Hyas)
-    //Show text, if any
-    LABEL 0x1FE
-        MUSI
-        STAL 5
-        TEXTMODE 0
-        TEXTSHOW 0xFFFF
-        TEXTEND
-        TEXTCLEAR
-        MUNO
-        STAL 5
-    //Re-queue for next movement
-    LABEL 0x1FF
-        CALL EnableUnitSelectEvents
-        NoFade
-        ENDA
+	CHECK_ACTIVE
+	SVAL 0x2 Lukas;     BEQ 0x102 0x2 0xC
+	SVAL 0x2 Gray;      BEQ 0x103 0x2 0xC
+	SVAL 0x2 Tobin;     BEQ 0x104 0x2 0xC
+	SVAL 0x2 Kliff;     BEQ 0x105 0x2 0xC
+	SVAL 0x2 Faye;      BEQ 0x106 0x2 0xC
+	SVAL 0x2 Silque;    BEQ 0x107 0x2 0xC
+	SVAL 0x2 Clair;     BEQ 0x108 0x2 0xC
+	SVAL 0x2 Clive;     BEQ 0x109 0x2 0xC
+	SVAL 0x2 Forsyth;   BEQ 0x10A 0x2 0xC
+	SVAL 0x2 Python;    BEQ 0x10B 0x2 0xC
+	SVAL 0x2 Mae;       BEQ 0x10D 0x2 0xC
+	SVAL 0x2 Boey;      BEQ 0x10E 0x2 0xC
+	SVAL 0x2 Genny;     BEQ 0x10F 0x2 0xC
+	SVAL 0x2 Saber;     BEQ 0x110 0x2 0xC
+	SVAL 0x2 Valbar;    BEQ 0x111 0x2 0xC
+	SVAL 0x2 Leon;      BEQ 0x112 0x2 0xC
+	SVAL 0x2 Kamui;     BEQ 0x113 0x2 0xC
+	SVAL 0x2 Luthier;   BEQ 0x114 0x2 0xC
+	SVAL 0x2 Mathilda;  BEQ 0x115 0x2 0xC
+	SVAL 0x2 Delthea;   BEQ 0x116 0x2 0xC
+	SVAL 0x2 Palla;     BEQ 0x117 0x2 0xC
+	SVAL 0x2 Catria;    BEQ 0x118 0x2 0xC
+	SVAL 0x2 Atlas;     BEQ 0x119 0x2 0xC
+	SVAL 0x2 Jesse;     BEQ 0x11A 0x2 0xC
+	SVAL 0x2 Deen;      BEQ 0x11B 0x2 0xC
+	SVAL 0x2 Sonya;     BEQ 0x11C 0x2 0xC
+	SVAL 0x2 Est;       BEQ 0x11D 0x2 0xC
+	SVAL 0x2 Tatiana;   BEQ 0x11E 0x2 0xC
+	SVAL 0x2 Zeke;      BEQ 0x11F 0x2 0xC
+	SVAL 0x2 Conrad;    BEQ 0x120 0x2 0xC
+	SVAL 0x2 Nomah;     BEQ 0x121 0x2 0xC
+	SVAL 0x2 Mycen;     BEQ 0x122 0x2 0xC
+	SVAL 0x2 Acantha;   BEQ 0x123 0x2 0xC
+	SVAL 0x2 Hyas;      BEQ 0x124 0x2 0xC
+	GOTO 0x1FF
+		LABEL 0x102
+			UnitSelectTextEvent(0x32,Final_SelectQuote_Lukas)
+		LABEL 0x103
+			UnitSelectTextEvent(0x33,Final_SelectQuote_Gray)
+		LABEL 0x104
+			UnitSelectTextEvent(0x34,Final_SelectQuote_Tobin)
+		LABEL 0x105
+			UnitSelectTextEvent(0x35,Final_SelectQuote_Kliff)
+		LABEL 0x106
+			UnitSelectTextEvent(0x36,Final_SelectQuote_Faye)
+		LABEL 0x107
+			UnitSelectTextEvent(0x37,Final_SelectQuote_Silque)
+		LABEL 0x108
+			UnitSelectTextEvent(0x38,Final_SelectQuote_Clair)
+		LABEL 0x109
+			UnitSelectTextEvent(0x39,Final_SelectQuote_Clive)
+		LABEL 0x10A
+			UnitSelectTextEvent(0x3A,Final_SelectQuote_Forsyth)
+		LABEL 0x10B
+			UnitSelectTextEvent(0x3B,Final_SelectQuote_Python)
+		LABEL 0x10D
+			UnitSelectTextEvent(0x3D,Final_SelectQuote_Mae)
+		LABEL 0x10E
+			UnitSelectTextEvent(0x3E,Final_SelectQuote_Boey)
+		LABEL 0x10F
+			UnitSelectTextEvent(0x3F,Final_SelectQuote_Genny)
+		LABEL 0x110
+			UnitSelectTextEvent(0x40,Final_SelectQuote_Saber)
+		LABEL 0x111
+			UnitSelectTextEvent(0x41,Final_SelectQuote_Valbar)
+		LABEL 0x112
+			UnitSelectTextEvent(0x42,Final_SelectQuote_Leon)
+		LABEL 0x113
+			UnitSelectTextEvent(0x43,Final_SelectQuote_Kamui)
+		LABEL 0x114
+			UnitSelectTextEvent(0x44,Final_SelectQuote_Luthier)
+		LABEL 0x115
+			UnitSelectTextEvent(0x45,Final_SelectQuote_Mathilda)
+		LABEL 0x116
+			UnitSelectTextEvent(0x46,Final_SelectQuote_Delthea)
+		LABEL 0x117
+			UnitSelectTextEvent(0x47,Final_SelectQuote_Palla)
+		LABEL 0x118
+			UnitSelectTextEvent(0x48,Final_SelectQuote_Catria)
+		LABEL 0x119
+			UnitSelectTextEvent(0x49,Final_SelectQuote_Atlas)
+		LABEL 0x11A
+			UnitSelectTextEvent(0x4A,Final_SelectQuote_Jesse)
+		LABEL 0x11B
+			UnitSelectTextEvent(0x4B,Final_SelectQuote_Deen)
+		LABEL 0x11C
+			UnitSelectTextEvent(0x4C,Final_SelectQuote_Sonya)
+		LABEL 0x11D
+			UnitSelectTextEvent(0x4D,Final_SelectQuote_Est)
+		LABEL 0x11E
+			UnitSelectTextEvent(0x4E,Final_SelectQuote_Tatiana)
+		LABEL 0x11F
+			UnitSelectTextEvent(0x4F,Final_SelectQuote_Zeke)
+		LABEL 0x120
+			UnitSelectTextEvent(0x50,Final_SelectQuote_Conrad)
+		LABEL 0x121
+			UnitSelectTextEvent(0x51,Final_SelectQuote_Nomah)
+		LABEL 0x122
+			UnitSelectTextEvent(0x52,Final_SelectQuote_Mycen)
+		LABEL 0x123
+			UnitSelectTextEvent(0x53,Final_SelectQuote_Acantha)
+		LABEL 0x124
+			UnitSelectTextEvent(0x54,Final_SelectQuote_Hyas)
+	//Show text, if any
+	LABEL 0x1FE
+		MUSIC_QUIET_T
+		STAL 5
+		TEXTMODE 0
+		TEXTSHOW 0xFFFF
+		TEXTEND
+		TEXTCLEAR
+		MUSIC_QUIET_F
+		STAL 5
+	//Re-queue for next movement
+	LABEL 0x1FF
+		CALL EnableUnitSelectEvents
+		NoFade
+		END
 
 
 Ch5F3_CharacterBasedEvents:
@@ -205,40 +205,40 @@ Ch5F3_CharacterBasedEvents:
 
 Ch5F3_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(7,20)
+		Seize(7,20)
 	#endif
 	LOCA
 
 Ch5F3_MiscBasedEvents:
 	CauseGameOverIfLordDies
-    AFEV 0x9 DumaRefillEvent 0x85
+	AFEV 0x9 DumaRefillEvent 0x85
 	DefeatBoss(Ch5F3_EndingScene)
 	MournQuoteAFEVS
 	AFEV
-    
+
 CleanUpJedahMogalls:
-    ENDA
-    
+	END
+
 DumaRefillEvent:
-    SVAL 0x1 1
-    SET_HP Duma
-    CameraCursor(Duma)
-    RESUMM Duma
-    STAL 20
-    SVAL 0x1 60
-    SET_HP Duma
-    STAL 20
-    CameraCursor(Alm)
-    MapText(Duma_Refill)
-    ENUF Local_BossQuote
-    NoFade
-    ENDA
+	SVAL 0x1 1
+	SET_HP Duma
+	CameraCursor(Duma)
+	SUMMONUNIT Duma
+	STAL 20
+	SVAL 0x1 60
+	SET_HP Duma
+	STAL 20
+	CameraCursor(Alm)
+	MapText(Duma_Refill)
+	FLAG_F Local_BossQuote
+	NoFade
+	END
 
 Ch5F3_Dunno:
 	END_MAIN
 
 Ch5F3_Tutorial:
-    POIN UnitSelectEvent
+	POIN UnitSelectEvent
 	END_MAIN
 
 Ch5F3_Ballista1:
@@ -251,8 +251,8 @@ Ch5F3_Ballista2:
 
 PlayerPlacement:
 	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,20] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [23,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    //Alm group
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [23,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	//Alm group
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,19] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [9,20] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [5,18] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
@@ -262,271 +262,271 @@ PlayerPlacement:
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,17] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [7,18] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
-    //Celica group
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [24,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [24,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [25,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,28] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,28] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [23,28] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	//Celica group
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [24,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [24,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [25,25] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [22,27] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,26] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [20,28] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [21,28] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [23,28] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 CutsceneUnits_Left:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,22] 0x00 0x00 0x1 REDA7R20 [BaseSword, Vulnerary] NoAI 
-    UNIT Celica CelicaPrincess 0x00 Level(1,Ally,True) [7,22] 0x00 0x00 0x1 REDA9R20 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [7,22] 0x00 0x00 0x1 REDA5R17 [BaseSword, Vulnerary] NoAI 
-	UNIT Mycen GoldKnight 0x00 Level(1, Ally, 1) [7,22] 0x00 0x00 0x1 REDA6R16 [BaseLance, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x1 REDA6R17 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,22] 0x00 0x00 0x1 REDA7R20 [BaseSword, Vulnerary] NoAI
+	UNIT Celica CelicaPrincess 0x00 Level(1,Ally,True) [7,22] 0x00 0x00 0x1 REDA9R20 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [7,22] 0x00 0x00 0x1 REDA5R17 [BaseSword, Vulnerary] NoAI
+	UNIT Mycen GoldKnight 0x00 Level(1, Ally, 1) [7,22] 0x00 0x00 0x1 REDA6R16 [BaseLance, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x1 REDA6R17 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Paladin 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x1 REDA5R18 [BaseLance] NoAI
-    UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x1 REDA7R18 [BaseLance] NoAI
+	UNIT Mathilda Paladin_F 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x1 REDA7R18 [BaseLance] NoAI
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x1 REDA6R19 [BaseLance] NoAI
 	UNIT
-    
+
 CutsceneUnits_Right:
-    UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,28] 0x00 0x00 0x1 REDA22R26 [Fire, Vulnerary] NoAI
-    UNIT Boey Mage 0x00 Level(1, Ally, 1) [19,28] 0x00 0x00 0x1 REDA23R26 [Fire, Vulnerary] NoAI
-    UNIT Genny Cleric 0x00 Level(1, Ally, 1) [19,28] 0x00 0x00 0x1 REDA23R28 [Fire, Vulnerary] NoAI
-    UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [19,28] 0x00 0x00 0x1 REDA20R28 [Fire, Vulnerary] NoAI
-    UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [19,28] 0x00 0x00 0x1 REDA21R28 [BaseSword, Vulnerary] NoAI
-	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [19,28] 0x00 0x00 0x1 REDA22R27 [BaseLance] NoAI 
-    UNIT
-    
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [19,28] 0x00 0x00 0x1 REDA22R26 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(1, Ally, 1) [19,28] 0x00 0x00 0x1 REDA23R26 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(1, Ally, 1) [19,28] 0x00 0x00 0x1 REDA23R28 [Fire, Vulnerary] NoAI
+	UNIT Nomah Bishop 0x00 Level(1, Ally, 1) [19,28] 0x00 0x00 0x1 REDA20R28 [Fire, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [19,28] 0x00 0x00 0x1 REDA21R28 [BaseSword, Vulnerary] NoAI
+	UNIT Conrad Paladin 0x00 Level(7, Ally, 1) [19,28] 0x00 0x00 0x1 REDA22R27 [BaseLance] NoAI
+	UNIT
+
 CutsceneUnits_Epilogue_Alm:
-    UNIT Alm AlmHero 0x00 Level(1, Ally, 1) [16,1] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-    UNIT
-    
+	UNIT Alm AlmHero 0x00 Level(1, Ally, 1) [16,1] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
+
 CutsceneUnits_Epilogue_Celica:
-    UNIT Celica CelicaPrincess 0x00 Level(1,Ally,True) [15,0] 0x00 0x00 0x1 CelicaEpilogueREDA [BaseSword, Vulnerary] NoAI 
-    UNIT
-    
+	UNIT Celica CelicaPrincess 0x00 Level(1,Ally,True) [15,0] 0x00 0x00 0x1 CelicaEpilogueREDA [BaseSword, Vulnerary] NoAI
+	UNIT
+
 CelicaEpilogueREDA:
-    REDA [15,1] NoFlags Walk_Slow 0x0 0xA
+	REDA [15,1] NoFlags Walk_Slow 0x0 0xA
 
 EnemyUnits:
-    //When Duma falls below 52 HP, replace OcularBeam with Oculus.
-    //Someone needs Upheaval.
-    //TODO: also give him Invoke for Mogalls.
+	//When Duma falls below 52 HP, replace OcularBeam with Oculus.
+	//Someone needs Upheaval.
+	//TODO: also give him Invoke for Mogalls.
 	UNIT Duma FellGod	Duma Level(30, Enemy, False) [20,4]	0x0 0x00 0x0 0x00 [OcularBeam, Tentacle] AttackInRangeAI
-    //TODO: also give him Invoke for Mogalls.
+	//TODO: also give him Invoke for Mogalls.
 	UNIT JedahFinal Necromancer Duma Level(25, Enemy, False) [22,13] 0x00 0x00 0x0 0x00 [Thanatos,AnimusRing] AttackInRangeAI
-    UNIT MarlaFinal Witch Duma Level(20, Enemy, False) [18,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
-    UNIT HestiaFinal Witch Duma Level(20, Enemy, False) [22,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
-    //These two can spam witches
-    UNIT Gharn Arcanist Duma Level(25, Enemy, False) [20,6] 0x00 0x00 0x0 0x00 [Medusa,Fortify] StaffMageAI
-    //the generic squad
-    UNIT Argentum BowKnight Duma Level(15, Enemy, False) [21,5] 0x00 0x00 0x0 0x00 [SteelBow] [0x0, 0x6, 0x0, 0x0]
-    UNIT Aurum BowKnight Duma Level(15, Enemy, False) [19,5] 0x00 0x00 0x0 0x00 [SteelBow] [0x0, 0x6, 0x0, 0x0]
-    UNIT Hades GoldKnight Duma Level(15, Enemy, False) [4,6] 0x00 0x00 0x0 0x00 [SteelLance] [0x0, 0x6, 0x0, 0x0]
-    UNIT Cerberus DreadFighter Duma Level(15, Enemy, False) [2,7] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
-    UNIT Naberius DreadFighter Duma Level(15, Enemy, False) [6,7] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
-    UNIT
-    
+	UNIT MarlaFinal Witch Duma Level(20, Enemy, False) [18,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
+	UNIT HestiaFinal Witch Duma Level(20, Enemy, False) [22,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
+	//These two can spam witches
+	UNIT Gharn Arcanist Duma Level(25, Enemy, False) [20,6] 0x00 0x00 0x0 0x00 [Medusa,Fortify] StaffMageAI
+	//the generic squad
+	UNIT Argentum BowKnight Duma Level(15, Enemy, False) [21,5] 0x00 0x00 0x0 0x00 [SteelBow] [0x0, 0x6, 0x0, 0x0]
+	UNIT Aurum BowKnight Duma Level(15, Enemy, False) [19,5] 0x00 0x00 0x0 0x00 [SteelBow] [0x0, 0x6, 0x0, 0x0]
+	UNIT Hades GoldKnight Duma Level(15, Enemy, False) [4,6] 0x00 0x00 0x0 0x00 [SteelLance] [0x0, 0x6, 0x0, 0x0]
+	UNIT Cerberus DreadFighter Duma Level(15, Enemy, False) [2,7] 0x00 0x00 0x0 0x00 [SteelSword] AttackInRangeAI
+	UNIT Naberius DreadFighter Duma Level(15, Enemy, False) [6,7] 0x00 0x00 0x0 0x00 [SteelSword] NoAI
+	UNIT
+
 EnemyUnits_Hard:
-    //When Duma falls below 52 HP, replace OcularBeam with Oculus.
-    //Someone needs Upheaval.
-    //TODO: also give him Invoke for Mogalls.
+	//When Duma falls below 52 HP, replace OcularBeam with Oculus.
+	//Someone needs Upheaval.
+	//TODO: also give him Invoke for Mogalls.
 	UNIT Duma FellGod	Duma Level(30, Enemy, False) [20,4]	0x0 0x00 0x0 0x00 [OcularBeam, Tentacle] AttackInRangeAI
-    //TODO: also give him Invoke for Mogalls.
+	//TODO: also give him Invoke for Mogalls.
 	UNIT JedahFinal Necromancer Duma Level(25, Enemy, False) [22,13] 0x00 0x00 0x0 0x00 [Thanatos,Conjure, AnimusRing] [0x14, 0x03, 0x04, 0x00]
-    UNIT MarlaFinal Witch Duma Level(20, Enemy, False) [18,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
-    UNIT HestiaFinal Witch Duma Level(20, Enemy, False) [22,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
-    //These two can spam witches
-    UNIT Gharn Arcanist Duma Level(25, Enemy, False) [20,6] 0x00 0x00 0x0 0x00 [Medusa,Fortify,SilverShield] StaffMageAI
-    //the generic squad
-    UNIT Argentum BowKnight Duma Level(15, Enemy, False) [21,5] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
-    UNIT Aurum BowKnight Duma Level(15, Enemy, False) [19,5] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
-    UNIT Hades GoldKnight Duma Level(15, Enemy, False) [4,6] 0x00 0x00 0x0 0x00 [SilverLance] [0x0, 0x6, 0x0, 0x0]
-    UNIT Cerberus DreadFighter Duma Level(15, Enemy, False) [2,7] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
-    UNIT Naberius DreadFighter Duma Level(15, Enemy, False) [6,7] 0x00 0x00 0x0 0x00 [SilverSword] NoAI
-    UNIT
+	UNIT MarlaFinal Witch Duma Level(20, Enemy, False) [18,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
+	UNIT HestiaFinal Witch Duma Level(20, Enemy, False) [22,6] 0x00 0x00 0x0 0x00 [Aura,GrimoireRing] AttackInRangeAI
+	//These two can spam witches
+	UNIT Gharn Arcanist Duma Level(25, Enemy, False) [20,6] 0x00 0x00 0x0 0x00 [Medusa,Fortify,SilverShield] StaffMageAI
+	//the generic squad
+	UNIT Argentum BowKnight Duma Level(15, Enemy, False) [21,5] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
+	UNIT Aurum BowKnight Duma Level(15, Enemy, False) [19,5] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
+	UNIT Hades GoldKnight Duma Level(15, Enemy, False) [4,6] 0x00 0x00 0x0 0x00 [SilverLance] [0x0, 0x6, 0x0, 0x0]
+	UNIT Cerberus DreadFighter Duma Level(15, Enemy, False) [2,7] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
+	UNIT Naberius DreadFighter Duma Level(15, Enemy, False) [6,7] 0x00 0x00 0x0 0x00 [SilverSword] NoAI
+	UNIT
 
 MogallSpamWave:
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA24R15 [Tackle_Mogall,DivideAbility] MogallAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA18R15 [Tackle_Mogall,DivideAbility] MogallAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA20R17 [Tackle_Mogall,DivideAbility] MogallAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA17R18 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA15R18 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA22R19 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA22R21 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA20R21 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA21R22 [Tackle_Mogall] AttackInRangeAI
-    UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA19R26 [Tackle_Mogall] AttackInRangeAI
+	UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA24R15 [Tackle_Mogall,DivideAbility] MogallAI
+	UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA18R15 [Tackle_Mogall,DivideAbility] MogallAI
+	UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA20R17 [Tackle_Mogall,DivideAbility] MogallAI
+	UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA17R18 [Tackle_Mogall] AttackInRangeAI
+	UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA15R18 [Tackle_Mogall] AttackInRangeAI
+	UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA22R19 [Tackle_Mogall] AttackInRangeAI
+	UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA22R21 [Tackle_Mogall] AttackInRangeAI
+	UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA20R21 [Tackle_Mogall] AttackInRangeAI
+	UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA21R22 [Tackle_Mogall] AttackInRangeAI
+	UNIT Terror_ArchMogall ArchMogall Duma Level(9, Enemy, True) [22,13] 0x00 0x00 0x1 REDA19R26 [Tackle_Mogall] AttackInRangeAI
 	UNIT
 
 WitchSpawn_Marla:
-    UNIT Rigel_Witch Witch MarlaFinal Level(16, Enemy, False) [18,7] 0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
-    UNIT
-    
+	UNIT Rigel_Witch Witch MarlaFinal Level(16, Enemy, False) [18,7] 0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
+	UNIT
+
 WitchSpawn_Hestia:
-    UNIT Rigel_Witch Witch HestiaFinal Level(16, Enemy, False) [23,6] 0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
-    UNIT
+	UNIT Rigel_Witch Witch HestiaFinal Level(16, Enemy, False) [23,6] 0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
+	UNIT
 
 Ch5F3_BeginningScene:
-    MUSC SongID_Env_Lava
-    
-    //initial coord [9,22]
+	MUSIC SongID_Env_Lava
+
+	//initial coord [9,22]
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x5A03 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x5A03
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-    FADU 5
-    //Load Alm and Celica
-    LOAD2 0x0 CutsceneUnits_Left
-    ENUN
-    STAL 40
-    CAMERA_CENTERED [19,28]
-    STAL 20
-    EVBIT_T 0x9
-    //Load Mae, Conrad, Saber etc
-    LOAD2 0x0 CutsceneUnits_Right
-    ENUN
-    EVBIT_F 0x9
-    STAL 20
-    CHECK_ALIVE Mae
-    BEQ 0x100 0xC 0x0
-        CameraCursor(Mae)
-        TEXTMODE 0
-        TEXTSHOW Ch5_3_OpeningText
-        TEXTEND
-        MUSC SongID_Unity
-        CAMERA_CENTERED Celica
-        EVBIT_T 0x9
-        MOVE 0x0C Celica [21,26]
-        ENUN
-        EVBIT_F 0x9
-        CAMERA_CENTERED Mae
-        TEXTCONT
-        TEXTEND
-        TEXTCLEAR
-        GOTO 0x101
-    LABEL 0x100
-        CameraCursor(Conrad)
-        TEXTMODE 0
-        TEXTSHOW Ch5_3_OpeningText_NoMae
-        TEXTEND
-        CAMERA_CENTERED Celica
-        EVBIT_T 0x9
-        MOVE 0x0C Celica [21,26]
-        ENUN
-        EVBIT_F 0x9
-        CAMERA_CENTERED Conrad
-        TEXTCONT
-        TEXTEND
-        TEXTCLEAR
-    LABEL 0x101
-    MUSCMID SongID_Silence
-    FADI 2
-    SHORT $0D40 $0; POIN SplitPartySort|1
-    CLEA 0x0
-    SVAL 0x1 0x0C
-    SET_HP JedahFinal
-    LOAD3 0x0 PlayerPlacement 
+	CHECK_ISHARD
+	BEQ 0x5A03 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x5A03
+	LOAD_S2 0x1
 	ENUN
-    GotoPrepScreen
-	ENDA
+	FADEOUT 5
+	//Load Alm and Celica
+	LOAD_CUTSCENE CutsceneUnits_Left
+	ENUN
+	STAL 40
+	CAMERA_CENTERED [19,28]
+	STAL 20
+	EVBIT_T 0x9
+	//Load Mae, Conrad, Saber etc
+	LOAD_CUTSCENE CutsceneUnits_Right
+	ENUN
+	EVBIT_F 0x9
+	STAL 20
+	CHECK_ISALIVE Mae
+	BEQ 0x100 0xC 0x0
+		CameraCursor(Mae)
+		TEXTMODE 0
+		TEXTSHOW Ch5_3_OpeningText
+		TEXTEND
+		MUSIC SongID_Unity
+		CAMERA_CENTERED Celica
+		EVBIT_T 0x9
+		MOVE 0x0C Celica [21,26]
+		ENUN
+		EVBIT_F 0x9
+		CAMERA_CENTERED Mae
+		TEXTCONT
+		TEXTEND
+		TEXTCLEAR
+		GOTO 0x101
+	LABEL 0x100
+		CameraCursor(Conrad)
+		TEXTMODE 0
+		TEXTSHOW Ch5_3_OpeningText_NoMae
+		TEXTEND
+		CAMERA_CENTERED Celica
+		EVBIT_T 0x9
+		MOVE 0x0C Celica [21,26]
+		ENUN
+		EVBIT_F 0x9
+		CAMERA_CENTERED Conrad
+		TEXTCONT
+		TEXTEND
+		TEXTCLEAR
+	LABEL 0x101
+	MUSCMID SongID_Silence
+	FADEIN 2
+	SHORT $0D40 $0; POIN SplitPartySort|1
+	REMOVEALL_BLUE
+	SVAL 0x1 0x0C
+	SET_HP JedahFinal
+	LOAD_DEPLOYED 0x0 PlayerPlacement
+	ENUN
+	GotoPrepScreen
+	END
 
 //Epilogue fix
 PUSH
-    ORG $9EA4
-    B($9EC4)
-    ORG $9ED8
-    POIN EpilogueEvents
+	ORG $9EA4
+	B($9EC4)
+	ORG $9ED8
+	POIN EpilogueEvents
 POP
 
 DumaDefeated:
-    FadeOutMusic
-    STAL 20
-    CALL EndPlayerMMS
+	FadeOutMusic
+	STAL 20
+	CALL EndPlayerMMS
 
-    STAL 90
-    EARTHQUAKE_START 0x100
-    STAL 90
-    EARTHQUAKE_END
-    STAL 5
-    MUSC SongID_Env_LegendaryWeapon
-    MapText(Ch5_3_EndingText)
-    FadeOutMusic
-    FADI 2
-    ENDA
+	STAL 90
+	EARTHQUAKE_START 0x100
+	STAL 90
+	EARTHQUAKE_END
+	STAL 5
+	MUSIC SongID_Env_LegendaryWeapon
+	MapText(Ch5_3_EndingText)
+	FadeOutMusic
+	FADEIN 2
+	END
 
 Ch5F3_EndingScene:
-    CALL DumaDefeated
-    ENUT gEnableLordSwitch
-    ENUT gPostgameEnabled
-	MNC4 0x0
-	ENDA
-    
+	CALL DumaDefeated
+	FLAG_T gEnableLordSwitch
+	FLAG_T gPostgameEnabled
+	GOTO_EPILOGUE
+	END
+
 EpilogueEvents:
 #ifndef __DEBUG__
-    EVBIT_MODIFY 0x4
+	CONFIG_SKIP 0x4
 #endif
-    ENUT gEnableLordSwitch
-    ENUT gPostgameEnabled
-    SVAL 0xB Coords(15,1)
-    LOMA 0x7 //zofia castle
-    LOAD2 0x0 CutsceneUnits_Epilogue_Alm
-    ENUN
-    MUSC SongID_CoronationDay
-    FADU 5
-    BROWNBOXTEXT Loc_ZofiaCastle [8,8]
-    STAL 20
-    LOAD2 0x0 CutsceneUnits_Epilogue_Celica
-    ENUN
-    FlashCursor(Alm, 60)
-    FADI 16
-    CLEA 0x0
-    SetBackground(0x0A, 5)
-    BackgroundText(Ch5_3_Epilogue)
-    FADI 3
-    //song: Gaiden Ending Medley
-    MUSC SongID_EndingMedley
-    SetBackground(EpilogueCG, 3)
-    STAL 75
-    CenterTextbox(Ch5_3_Epilogue_Narration)
-    STAL 30
-    //FadeOutMusic
-    FADI 3
-    EVBIT_MODIFY 0x0
-    ASMC 0x30185 //clears map tilesets?
-    
-    #ifdef SHOW_CLEAR_TURNS
-    //turn counts display
-    //song: Gaiden Ending Medley (cont'd)
-    //SetBackground(Part1EndCG, 3)
-    ASMC 0xB8175
-    STAL 30
-    FadeOutMusic
-    STAL 10
-    #endif
-    
-    MUSC SongID_Epilogue //4:10
-    SHORT $0D40 $0; POIN EndingMusicSwitcher|1
-    ASMC 0xC4879 //roll credits
-    STAL 90
-    
-    //have it switch to MUSC SongID_VoiceThatCalls when Heritors is done
-    CALL 0xA0036C //character endings
-    STAL 90
-    
-    //the FIN thing is at A3D498
-    
-    /*
-    //Mila Tree CG
-    TEXTMODE 2
-    BACKGROUND_TOCOLOR 0x0 0x0 0x2
-    TEXTSHOW The_End_Text
-    TEXTEND
-    _0x1328 SongID_Silence //MUSCEXTRASLOW
-    FADI 2
-    TEXTCLEAR
-    EVBIT_F 0x2
-    */
-    
-    MNTS 0x0 //return to title screen
-    ENDA
+	FLAG_T gEnableLordSwitch
+	FLAG_T gPostgameEnabled
+	SVAL 0xB Coords(15,1)
+	LOADMAP 0x7 //zofia castle
+	LOAD_CUTSCENE CutsceneUnits_Epilogue_Alm
+	ENUN
+	MUSIC SongID_CoronationDay
+	FADEOUT 5
+	BROWNBOXTEXT Loc_ZofiaCastle [8,8]
+	STAL 20
+	LOAD_CUTSCENE CutsceneUnits_Epilogue_Celica
+	ENUN
+	FlashCursor(Alm, 60)
+	FADEIN 16
+	REMOVEALL_BLUE
+	SetBackground(Castle_Hall, 5)
+	BackgroundText(Ch5_3_Epilogue)
+	FADEIN 3
+	//song: Gaiden Ending Medley
+	MUSIC SongID_EndingMedley
+	SetBackground(EpilogueCG, 3)
+	STAL 75
+	CenterTextbox(Ch5_3_Epilogue_Narration)
+	STAL 30
+	//FadeOutMusic
+	FADEIN 3
+	CONFIG_SKIP 0x0
+	ASMC 0x30185 //clears map tilesets?
+
+	#ifdef SHOW_CLEAR_TURNS
+	//turn counts display
+	//song: Gaiden Ending Medley (cont'd)
+	//SetBackground(Part1EndCG, 3)
+	ASMC 0xB8175
+	STAL 30
+	FadeOutMusic
+	STAL 10
+	#endif
+
+	MUSIC SongID_Epilogue //4:10
+	SHORT $0D40 $0; POIN EndingMusicSwitcher|1
+	ASMC 0xC4879 //roll credits
+	STAL 90
+
+	//have it switch to MUSIC SongID_VoiceThatCalls when Heritors is done
+	CALL 0xA0036C //character endings
+	STAL 90
+
+	//the FIN thing is at A3D498
+
+	/*
+	//Mila Tree CG
+	TEXTMODE 2
+	BACKGROUND_TOCOLOR 0x0 0x0 0x2
+	TEXTSHOW The_End_Text
+	TEXTEND
+	_0x1328 SongID_Silence //MUSCEXTRASLOW
+	FADEIN 2
+	TEXTCLEAR
+	EVBIT_F 0x2
+	*/
+
+	GOTO_TITLE //return to title screen
+	END

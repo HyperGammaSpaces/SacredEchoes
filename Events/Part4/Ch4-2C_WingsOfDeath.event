@@ -25,7 +25,7 @@ Evt_CharacterBasedEvents:
 
 Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+		Seize(4,5)
 	#endif
 	LOCA
 
@@ -33,21 +33,21 @@ Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	DefeatAll(Evt_EndingScene)
 	MournQuoteAFEVS
-    AFEV 0x11 RevealIsland 0x2
+	AFEV 0x11 RevealIsland 0x2
 	AFEV
-    
+
 RevealIsland:
-    CAMERA_CENTERED [6,8]
-    STAL 20
+	CAMERA_CENTERED [6,8]
+	STAL 20
 	EARTHQUAKE_START 0x100
 	STAL 60
 	EARTHQUAKE_END
 	STAL 30
-	SOUN 0xBD //water going down
+	SOUND 0xBD //water going down
 	TILECHANGE 0x0
 	STAL 30
 	NoFade
-	ENDA
+	END
 
 Evt_Dunno:
 	END_MAIN
@@ -72,7 +72,7 @@ PlayerPlacement:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [15,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [14,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    //bottom block
+	//bottom block
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [21,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [22,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [8,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
@@ -81,12 +81,12 @@ PlayerPlacement:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [11,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [13,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [11,22] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT Kliff Villager 0x00 Level(1, Ally, 1) [17,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-    UNIT
+	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [17,23] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 
 CutsceneUnits:
 	UNIT Celica CelicaPrincess 0x00 Level(1, Ally, 1) [9,23] 0x00 0x00 0x1 REDA10R23 [BaseSword, Vulnerary] NoAI
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [9,23] 0x00 0x00 0x1 REDA8R23 [Fire, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [9,23] 0x00 0x00 0x1 REDA8R23 [Fire, Vulnerary] NoAI
 	UNIT Boey Mage 0x00 Level(1, Ally, 1) [9,23] 0x00 0x00 0x1 REDA9R23 [Fire, Vulnerary] NoAI
 	UNIT
 
@@ -99,7 +99,7 @@ EnemyUnits:
 	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(7, Enemy, True) [7,17] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
 	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(5, Enemy, True) [14,23] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT
-    
+
 EnemyUnits_Hard:
 	UNIT Cantor_Gargs Cantor	Cantor_Gargs Level(6, Enemy, True) [5,4]	0x00 0x00 0x0 0x00 [Mire, Conjure] CantorAI
 	UNIT Boss_Monster Necrodragon	Boss_Monster Level(10, Enemy, True) [10,2]	DropItem 0x00 0x0 0x00 [HellFang,PrayerRing] MonsterAI
@@ -115,60 +115,60 @@ EnemyUnits_Hard:
 Evt_BeginningScene:
 
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x4C02 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x4C02
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	CHECK_EVENTID gChapter4C2Completed
+	CHECK_ISHARD
+	BEQ 0x4C02 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x4C02
+	LOAD_S2 0x1
+	ENUN
+	CHECK_FLAG gChapter4C2Completed
 	BNE 0x101 0xC 0x0
-	
+
 		MUSCSLOW SongID_Env_Lava
-		SetBackground(0x31)
+		SetBackground(Forest_Dense)
 		BackgroundText(Ch4C_2_OpeningText)
-		FADI 5
+		FADEIN 5
 		CLEAN
-        STAL 5
-	
-	CHECK_ALIVE Mae
+		STAL 5
+
+	CHECK_ISALIVE Mae
 	BEQ 0x101 0xC 0x0
-	CHECK_ALIVE Boey
+	CHECK_ISALIVE Boey
 	BEQ 0x101 0xC 0x0
-	
+
 		CAMERA_CENTERED [8,23]
-		FADU 2
+		FADEOUT 2
 		STAL 20
-		LOAD2 0x0 CutsceneUnits
+		LOAD_CUTSCENE CutsceneUnits
 		ENUN
 		CameraCursor(Boey)
 		MapText(Ch4C_2_OpeningText_MaeBoey)
-		FADI 2
-		CLEA 0x0
-	
+		FADEIN 2
+		REMOVEALL_BLUE
+
 	LABEL 0x101
-	
-	LOAD3 0x0 PlayerPlacement 
+
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Evt_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	CLEE 0x0
-	CHECK_EVENTID gChapter4C2Completed
+	REMOVEALL_RED
+	CHECK_FLAG gChapter4C2Completed
 	BNE 0x102 0xC 0x0
-        FADI 2
-		MUSC SongID_Env_Night
-        STAL 5
-		SetBackground(0x34,5)
+		FADEIN 2
+		MUSIC SongID_Env_Night
+		STAL 5
+		SetBackground(Temple_Ruins_Inside,5)
 		BackgroundText(Ch4C_2_EndingText)
-        MUSCMID SongID_Silence
-		EVBIT_MODIFY 0x1
-		ENUT gChapter4C2Completed
-		EVBIT_MODIFY 0x0
+		MUSCMID SongID_Silence
+		CONFIG_SKIP 0x1
+		FLAG_T gChapter4C2Completed
+		CONFIG_SKIP 0x0
 	LABEL 0x102
-    FADI 2
-	MNCH 0x20
-	ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x20
+	END

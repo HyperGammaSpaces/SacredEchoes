@@ -35,22 +35,22 @@ TopSpawn:
 	ReinforcementEvent(Reinforcements_Top)
 	
 ArriveAtExitCheck:
-	CHECK_ALLEGIANCE 0xFFFF
+	CHECK_FACTION 0xFFFF
 	BNE 1 rC r0 // branch label 1 if not ally
-		ENUT 0x3
+		FLAG_T 0x3
 		GOTO 2
 	LABEL 1
-		ENUF 0x8
+		FLAG_F 0x8
 		LABEL 2
 	NoFade
-	ENDA
+	END
 
 Ch1_7x_CharacterBasedEvents:
 	CHAR
 
 Ch1_7x_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(10,11)
+		Seize(10,11)
 	#endif
 	Arrive(11,20)
 	Arrive(12,20)
@@ -123,13 +123,13 @@ Reinforcements_Left:
 	UNIT Zofia_Merc Mercenary Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA3R13 [BaseSword] NoAI
 	UNIT Zofia_Soldier Soldier Zopyrus Level(3, Enemy, True) [4,14] 0x00 0x00 0x1 REDA6R15 [Javelin] NoAI
 	UNIT
-	
+
 Reinforcements_Right:
 	UNIT Zofia_Archer Archer Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA19R13 [BaseBow] NoAI
 	UNIT Zofia_Mage Mage Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA21R13 [Fire] NoAI
 	UNIT Zofia_Soldier Soldier Zopyrus Level(3, Enemy, True) [20,14] 0x00 0x00 0x1 REDA18R15 [Javelin] NoAI
 	UNIT
-	
+
 Reinforcements_Top:
 	UNIT Zofia_Cav Cavalier Zopyrus Level(9, Enemy, True) [12,0] 0x00 0x00 0x1 REDA11R8 [BaseLance] NoAI
 	UNIT Zofia_Cav Cavalier Zopyrus Level(9, Enemy, True) [12,0] DropItem 0x00 0x1 REDA12R8 [IronLance,Vulnerary] NoAI
@@ -137,106 +137,106 @@ Reinforcements_Top:
 	UNIT
 
 Ch1_7x_BeginningScene:
-	MUSC SongID_Env_Birds
-	CLEA 0x0
+	MUSIC SongID_Env_Birds
+	REMOVEALL_BLUE
 
-	REMU Alm
-	REMU Lukas
-	REMU Gray
-	REMU Tobin
-	REMU Kliff
-	REMU Faye
-	REMU Silque
-	REMU Clair
-	REMU Acantha
-	
-	LOAD2 0x0 Ch1_7x_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	HIDEUNIT Alm
+	HIDEUNIT Lukas
+	HIDEUNIT Gray
+	HIDEUNIT Tobin
+	HIDEUNIT Kliff
+	HIDEUNIT Faye
+	HIDEUNIT Silque
+	HIDEUNIT Clair
+	HIDEUNIT Acantha
+
+	LOAD_CUTSCENE Ch1_7x_Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
-	LOAD1 0x1 LoadFernandMathilda
+	LOAD 0x1 LoadFernandMathilda
 	ENUN
 	CAMERA_CENTERED Clive
-	
-	FADU 2
+
+	FADEOUT 2
 	BROWNBOXTEXT Ch1_7x_BrownboxText [8,8]
 	FlashCursor(Clive, 60)
-	
-	SetBackground(0x26)
+
+	SetBackground(Fort)
 	Text(Ch1_7x_OpeningText)
 	ClearBackground
-	
+
 	STAL 20
 	CAMERA_CENTERED [12, 18]
 	EVBIT_T 0x9
 	//Boss walks in
-	LOAD1 0x1 Enemy_Envoy
+	LOAD 0x1 Enemy_Envoy
 	ENUN
 	EVBIT_F 0x9
 	CAMERA_CENTERED Zopyrus
 	STAL 20
-	
-	SetBackground(0x26)
+
+	SetBackground(Fort)
 	Text(Ch1_7x_BossIntro)
 	ClearBackground
 
 	//Enemy ambush
-	MUSC SongID_Tension
+	MUSIC SongID_Tension
 	CAMERA_CENTERED [12, 11]
-	CUSE Zopyrus
+	FACTION_RED Zopyrus
 	SVAL 0xB Coords(15,9)
-	CUSE 0xFFFE
+	FACTION_RED 0xFFFE
 	SVAL 0xB Coords(15,11)
-	CUSE 0xFFFE
-	LOAD1 0x1 EnemyUnits
+	FACTION_RED 0xFFFE
+	LOAD 0x1 EnemyUnits
 	ENUN
 
 	Text(Ch1_7x_EnemiesAppear)
 	NoFade
-	ENDA
+	END
 
 Ch1_7x_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 5
-    STAL 5
-    RemoveItemFromUnit(FernandPlayable,BaseLance)
-    RemoveItemFromUnit(Mathilda,BaseLance)
-    DumpToConvoy(FernandPlayable)
-    DumpToConvoy(Mathilda)
+	FADEIN 5
+	STAL 5
+	RemoveItemFromUnit(FernandPlayable,BaseLance)
+	RemoveItemFromUnit(Mathilda,BaseLance)
+	DumpToConvoy(FernandPlayable)
+	DumpToConvoy(Mathilda)
 
-	REVEAL Alm
-	REVEAL Lukas
-	REVEAL Gray
-	REVEAL Tobin
-	REVEAL Silque
-	REVEAL Clair
-	REVEAL Acantha
+	SHOWUNIT Alm
+	SHOWUNIT Lukas
+	SHOWUNIT Gray
+	SHOWUNIT Tobin
+	SHOWUNIT Silque
+	SHOWUNIT Clair
+	SHOWUNIT Acantha
 
 //special
-	CHECK_EVENTID gKliffRecruited
+	CHECK_FLAG gKliffRecruited
 	BEQ 0xA 0xC 0x0
-		REVEAL Kliff
+		SHOWUNIT Kliff
 		GOTO 0xB
 	LABEL 0xA
-		REMU Kliff
+		HIDEUNIT Kliff
 	LABEL 0xB
-	CHECK_EVENTID gFayeRecruited
+	CHECK_FLAG gFayeRecruited
 	BEQ 0xC 0xC 0x0
-		REVEAL Faye
+		SHOWUNIT Faye
 		GOTO 0xD
 	LABEL 0xC
-		REMU Faye
+		HIDEUNIT Faye
 
 	LABEL 0xD
-	DISA FernandPlayable
-	DISA Mathilda
+	REMOVEUNIT FernandPlayable
+	REMOVEUNIT Mathilda
 	RevertUnitSupport(Clive,0)
 
 //Uncomment when re-enabling
 
-	MUSC SongID_Uprising
-	SetBackground(0x25)
+	MUSIC SongID_Uprising
+	SetBackground(Fort_Outside)
 	Text(Ch1_7x_EndingText)
 	MUSCMID SongID_Silence
-	FADI 2
-	MNCH 0x07 //go to ch7
-ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x07 //go to ch7
+END

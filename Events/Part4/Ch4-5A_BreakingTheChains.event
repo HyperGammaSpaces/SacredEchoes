@@ -18,205 +18,205 @@ Ch4A5_ThisChapter:
 	POIN Ch4A5_BeginningScene Ch4A5_EndingScene
 
 Ch4A5_TurnBasedEvents:
-    TurnEventEnemy(0x11,ZekeTurnsBlue,0,256)
-    TurnEventPlayer(0x0,IfTatianaThenBandits,3)
-    TurnEventPlayer(0x0,LoadSouthwest,5)
-    TurnEventPlayer(0x0,LoadNormalMode,6)
-    TurnEventPlayer(0x0,LoadNortheast,7)
+	TurnEventEnemy(0x11,ZekeTurnsBlue,0,256)
+	TurnEventPlayer(0x0,IfTatianaThenBandits,3)
+	TurnEventPlayer(0x0,LoadSouthwest,5)
+	TurnEventPlayer(0x0,LoadNormalMode,6)
+	TurnEventPlayer(0x0,LoadNortheast,7)
 	TURN
-    
+
 IfTatianaThenBandits:
-    CHECK_EVENTID gTatianaRecruited
-    BEQ 0x1 rC r0
-        LoadReinforcements(BanditReinforcements)
-    LABEL 0x1
-    NoFade
-    ENDA
-    
+	CHECK_FLAG gTatianaRecruited
+	BEQ 0x1 rC r0
+		LoadReinforcements(BanditReinforcements)
+	LABEL 0x1
+	NoFade
+	END
+
 LoadSouthwest:
-    CHECK_HARD
-    BEQ 0x44 rC r0
-    LoadReinforcements(ReinforcementsSW)
-    LABEL 0x44
-    NoFade
-    ENDA
-    
+	CHECK_ISHARD
+	BEQ 0x44 rC r0
+	LoadReinforcements(ReinforcementsSW)
+	LABEL 0x44
+	NoFade
+	END
+
 LoadNormalMode:
-    CHECK_HARD
-    BNE 0x45 rC r0
-    LoadReinforcements(ReinforcementsNormal)
-    LABEL 0x45
-    NoFade
-    ENDA
-    
+	CHECK_ISHARD
+	BNE 0x45 rC r0
+	LoadReinforcements(ReinforcementsNormal)
+	LABEL 0x45
+	NoFade
+	END
+
 LoadNortheast:
-    CHECK_HARD
-    BEQ 0x46 rC r0
-    LoadReinforcements(ReinforcementsNE)
-    LABEL 0x46
-    NoFade
-    ENDA
+	CHECK_ISHARD
+	BEQ 0x46 rC r0
+	LoadReinforcements(ReinforcementsNE)
+	LABEL 0x46
+	NoFade
+	END
 
 Ch4A5_CharacterBasedEvents:
 	CharacterEvent(0x09,TalkToZeke,Tatiana,Zeke)
 	CharacterEvent(0x09,TalkToZekeAlm,Alm,Zeke)
 	CHAR
-	
+
 TalkToZeke:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 0x20
 	MapText(Ch4_5A_TatianaRecruitsZeke)
 	SVAL 0x1 0x0
-	CHAI Zeke
+	SET_AI Zeke
 	STAL 5
-	CUSA Zeke
+	FACTION_BLUE Zeke
 	STAL 0x14
-    CALL $591F40
+	CALL $591F40
 	CharacterJoinedNotification(Notif_ZekeJoin)
-	MURE 0x05
-    CALL ZekeAIChange
-	EVBIT_MODIFY 0x1
-	ENUT gZekeRecruited
-	EVBIT_MODIFY 0x0
+	MUSIC_RESTORE 0x05
+	CALL ZekeAIChange
+	CONFIG_SKIP 0x1
+	FLAG_T gZekeRecruited
+	CONFIG_SKIP 0x0
 	NoFade
-	ENDA
-	
+	END
+
 TalkToZekeAlm:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 0x20
 	MapText(Ch4_5A_AlmRecruitsZeke)
 	SVAL 0x1 0x0
-	CHAI Zeke
+	SET_AI Zeke
 	STAL 5
-	CUSA Zeke
+	FACTION_BLUE Zeke
 	STAL 0x14
-    CALL $591F40
+	CALL $591F40
 	CharacterJoinedNotification(Notif_ZekeJoin)
-	MURE 0x05
-    CALL ZekeAIChange
-	EVBIT_MODIFY 0x1
-	ENUT gZekeRecruited
-	EVBIT_MODIFY 0x0
+	MUSIC_RESTORE 0x05
+	CALL ZekeAIChange
+	CONFIG_SKIP 0x1
+	FLAG_T gZekeRecruited
+	CONFIG_SKIP 0x0
 	NoFade
-	ENDA
-    
+	END
+
 ZekeAIChange:
-    SVAL 0xB Coords(16,6)
-    CHECK_ALLEGIANCE (-2)
-    BEQ 0x301 rC r0
-        CUSN (-2)
-    LABEL 0x301
-    SVAL 0xB Coords(16,7)
-    CHECK_ALLEGIANCE (-2)
-    BEQ 0x302 rC r0
-        CUSN (-2)
-    LABEL 0x302
-    SVAL 0xB Coords(17,10)
-    CHECK_ALLEGIANCE (-2)
-    BEQ 0x303 rC r0
-        CUSN (-2)
-    LABEL 0x303
-    SVAL 0xB Coords(16,9)
-    CHECK_ALLEGIANCE (-2)
-    BEQ 0x304 rC r0
-        CUSN (-2)
-    LABEL 0x304
-    SVAL 0xB Coords(18,11)
-    CHECK_ALLEGIANCE (-2)
-    BEQ 0x305 rC r0
-        CUSN (-2)
-    LABEL 0x305
-    SVAL 0xB Coords(18,4)
-    CHECK_ALLEGIANCE (-2)
-    BEQ 0x306 rC r0
-        CUSN (-2)
-    LABEL 0x306
-    SVAL 0xB Coords(20,10)
-    CHECK_ALLEGIANCE (-2)
-    BEQ 0x307 rC r0
-        CUSN (-2)
-    LABEL 0x307
-    SVAL 0xB Coords(21,7)
-    CHECK_ALLEGIANCE (-2)
-    BEQ 0x308 rC r0
-        CUSN (-2)
-    LABEL 0x308
-    //SVAL 0x1 0x00080300
-    SetAIParameters(0x0,0x3,0x8,0x0)
-    CHAI Rigel_Cav
-    //SVAL 0x1 0x2004030F
-    SetAIParameters(0xF,0x3,0x4,0x20)
-    CHAI [18,4]
-    NoFade
-    ENDA
+	SVAL 0xB Coords(16,6)
+	CHECK_FACTION (-2)
+	BEQ 0x301 rC r0
+		FACTION_GREEN (-2)
+	LABEL 0x301
+	SVAL 0xB Coords(16,7)
+	CHECK_FACTION (-2)
+	BEQ 0x302 rC r0
+		FACTION_GREEN (-2)
+	LABEL 0x302
+	SVAL 0xB Coords(17,10)
+	CHECK_FACTION (-2)
+	BEQ 0x303 rC r0
+		FACTION_GREEN (-2)
+	LABEL 0x303
+	SVAL 0xB Coords(16,9)
+	CHECK_FACTION (-2)
+	BEQ 0x304 rC r0
+		FACTION_GREEN (-2)
+	LABEL 0x304
+	SVAL 0xB Coords(18,11)
+	CHECK_FACTION (-2)
+	BEQ 0x305 rC r0
+		FACTION_GREEN (-2)
+	LABEL 0x305
+	SVAL 0xB Coords(18,4)
+	CHECK_FACTION (-2)
+	BEQ 0x306 rC r0
+		FACTION_GREEN (-2)
+	LABEL 0x306
+	SVAL 0xB Coords(20,10)
+	CHECK_FACTION (-2)
+	BEQ 0x307 rC r0
+		FACTION_GREEN (-2)
+	LABEL 0x307
+	SVAL 0xB Coords(21,7)
+	CHECK_FACTION (-2)
+	BEQ 0x308 rC r0
+		FACTION_GREEN (-2)
+	LABEL 0x308
+	//SVAL 0x1 0x00080300
+	SetAIParameters(0x0,0x3,0x8,0x0)
+	SET_AI Rigel_Cav
+	//SVAL 0x1 0x2004030F
+	SetAIParameters(0xF,0x3,0x4,0x20)
+	SET_AI [18,4]
+	NoFade
+	END
 
 Ch4A5_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(12,17)
+		Seize(12,17)
 	#endif
-    House(0, HouseEvent1, 2,7)
+	House(0, HouseEvent1, 2,7)
 	House(0, HouseEvent2, 13,9)
 	House(0, HouseEvent3, 16,15)
 	Village(0xA, VillageEvent, 5,5)
 	LOCA
-	
+
 VillageEvent:
-    MUSI
-    SMOV r2 0x05
-    SMOV r3 Ch4_5A_VillageText_Bad
-    CHECK_EVENTID gTatianaRecruited
-    BEQ 0x201 rC r0
-        SMOV r3 Ch4_5A_VillageText_Good
-    LABEL 0x201
-    CALL $9EE310
-    MUNO
-    CHECK_EVENTID gTatianaRecruited
-    BEQ 0x202 rC r0
-        CALL $591F40
-        SMOV 0x3 BraveSword
-        GIVEITEMTO 0xFFFF
-    LABEL 0x202
-    EVBIT_T 0x7
-	ENDA
-    
+	MUSIC_QUIET_T
+	SMOV r2 0x05
+	SMOV r3 Ch4_5A_VillageText_Bad
+	CHECK_FLAG gTatianaRecruited
+	BEQ 0x201 rC r0
+		SMOV r3 Ch4_5A_VillageText_Good
+	LABEL 0x201
+	CALL $9EE310
+	MUSIC_QUIET_F
+	CHECK_FLAG gTatianaRecruited
+	BEQ 0x202 rC r0
+		CALL $591F40
+		SMOV 0x3 BraveSword
+		GIVEITEM 0xFFFF
+	LABEL 0x202
+	EVBIT_T 0x7
+	END
+
 HouseEvent1:
-	MUSI
-    SMOV r2 0x01
-    SMOV r3 Ch4A_5_House1_Bad
-    CHECK_EVENTID gTatianaRecruited
-    BEQ 0x101 rC r0
-        SMOV r3 Ch4A_5_House1
-    LABEL 0x101
-    CALL $9EE310
-    MUNO
-    EVBIT_T 0x7
-	ENDA
-	
+	MUSIC_QUIET_T
+	SMOV r2 0x01
+	SMOV r3 Ch4A_5_House1_Bad
+	CHECK_FLAG gTatianaRecruited
+	BEQ 0x101 rC r0
+		SMOV r3 Ch4A_5_House1
+	LABEL 0x101
+	CALL $9EE310
+	MUSIC_QUIET_F
+	EVBIT_T 0x7
+	END
+
 HouseEvent2:
-	MUSI
-    SMOV r2 0x01
-    SMOV r3 Ch4A_5_House2_Bad
-    CHECK_EVENTID gTatianaRecruited
-    BEQ 0x102 rC r0
-        SMOV r3 Ch4A_5_House2
-    LABEL 0x102
-    CALL $9EE310
-    MUNO
-    EVBIT_T 0x7
-	ENDA
-    
+	MUSIC_QUIET_T
+	SMOV r2 0x01
+	SMOV r3 Ch4A_5_House2_Bad
+	CHECK_FLAG gTatianaRecruited
+	BEQ 0x102 rC r0
+		SMOV r3 Ch4A_5_House2
+	LABEL 0x102
+	CALL $9EE310
+	MUSIC_QUIET_F
+	EVBIT_T 0x7
+	END
+
 HouseEvent3:
-	MUSI
-    SMOV r2 0x01
-    SMOV r3 Ch4A_5_House3_Bad
-    CHECK_EVENTID gTatianaRecruited
-    BEQ 0x103 rC r0
-        SMOV r3 Ch4A_5_House3
-    LABEL 0x103
-    CALL $9EE310
-    MUNO
-    EVBIT_T 0x7
-	ENDA
+	MUSIC_QUIET_T
+	SMOV r2 0x01
+	SMOV r3 Ch4A_5_House3_Bad
+	CHECK_FLAG gTatianaRecruited
+	BEQ 0x103 rC r0
+		SMOV r3 Ch4A_5_House3
+	LABEL 0x103
+	CALL $9EE310
+	MUSIC_QUIET_F
+	EVBIT_T 0x7
+	END
 
 Ch4A5_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -224,22 +224,22 @@ Ch4A5_MiscBasedEvents:
 	//AFEV 0x11 ZekeTurnsBlue gZekeRecruited
 	MournQuoteAFEVS
 	AFEV
-	
+
 ZekeTurnsBlue:
-    CHECK_EVENTID Local_BossDeath
-    BNE 0x501 rC r0
-	CHECK_EVENTID gZekeRecruited
-    BNE 0x500 rC r0
-        ENUF 0x11
-        GOTO 0x501
-    LABEL 0x500
-	MUSI
+	CHECK_FLAG Local_BossDeath
+	BNE 0x501 rC r0
+	CHECK_FLAG gZekeRecruited
+	BNE 0x500 rC r0
+		FLAG_F 0x11
+		GOTO 0x501
+	LABEL 0x500
+	MUSIC_QUIET_T
 	CameraCursor(JeromeCh4_5)
 	MapText(Ch4_5A_ZekeTurnsBlue)
-	MUNO
-    LABEL 0x501
+	MUSIC_QUIET_F
+	LABEL 0x501
 	NoFade
-	ENDA
+	END
 
 Ch4A5_Dunno:
 	END_MAIN
@@ -275,7 +275,7 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,21] 0x00 0x00 0x1 REDA18R18 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,21] 0x00 0x00 0x1 REDA18R18 [BaseSword, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [14,21] 0x00 0x00 0x1 REDA17R18 [BaseLance] NoAI
 	UNIT Tatiana Saint 0x00 Level(1, Ally, 1) [14,21] 0x00 0x00 0x1 REDA18R17 [Nosferatu] NoAI
 	UNIT
@@ -288,23 +288,23 @@ EnemyUnits:
 	UNIT Rigel_Archer Archer JeromeCh4_5 Level(18, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [RadiantBow] [0x3,0x3,0xC,0x20]
 	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(4, Enemy, True) [12,7] 0x00 0x00 0x0 0x00 [Mire,Physic] [0xE,0x3,0x4,0x20]
 	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(4, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [Selene,Physic] [0xE,0x3,0x4,0x20]
-    //bridge
+	//bridge
 	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(2, Enemy, True) [4,13] 0x00 0x00 0x0 0x00 [SteelBow] [0x3,0x3,0x4,0x20]
 	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(2, Enemy, True) [9,13] 0x00 0x00 0x0 0x00 [SteelBow] [0x3,0x3,0x4,0x20]
-    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [6,14] DropItem 0x00 0x0 0x00 [HeavySpear] [0x0,0x0,0xC,0x0]
-    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [7,14] 0x00 0x00 0x0 0x00 [HandAxe] [0x0,0x0,0xC,0x0]
-    
-    //further out
-    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x0,0xC,0x0]
-    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [20,15] 0x00 0x00 0x0 0x00 [SteelAxe] [0x0,0x0,0xC,0x0]
-    UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [12,11] 0x00 0x00 0x0 0x00 [BaseSword] [0x0,0x3,0xC,0x0]
-    
-    UNIT Rigel_Soldier GoldKnight JeromeCh4_5 Level(2, Enemy, True) [2,9] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0,0x12,0xC,0x0]
+	UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [6,14] DropItem 0x00 0x0 0x00 [HeavySpear] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [7,14] 0x00 0x00 0x0 0x00 [HandAxe] [0x0,0x0,0xC,0x0]
+
+	//further out
+	UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [20,15] 0x00 0x00 0x0 0x00 [SteelAxe] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [12,11] 0x00 0x00 0x0 0x00 [BaseSword] [0x0,0x3,0xC,0x0]
+
+	UNIT Rigel_Soldier GoldKnight JeromeCh4_5 Level(2, Enemy, True) [2,9] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0,0x12,0xC,0x0]
 	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [3,7] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
 	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [1,11] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
-	
+
 	UNIT
-    
+
 EnemyUnits_Hard:
 	UNIT JeromeCh4_5 GoldKnight	JeromeCh4_5 Level(9, Enemy, True) [10,5]	0x00 0x00 0x0 0x00 [SilverLance,Javelin] NeverMoveAI
 	UNIT Rigel_Soldier Baron JeromeCh4_5 Level(2, Enemy, True) [9,8] 0x00 0x00 0x0 0x00 [SteelLance] [0x3,0x3,0xC,0x20]
@@ -313,33 +313,33 @@ EnemyUnits_Hard:
 	UNIT Rigel_Archer Sniper JeromeCh4_5 Level(12, Enemy, True) [10,7] 0x00 0x00 0x0 0x00 [RadiantBow] [0x3,0x3,0xC,0x20]
 	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(4, Enemy, True) [12,7] 0x00 0x00 0x0 0x00 [Mire,Physic] [0xE,0x3,0x4,0x20]
 	UNIT Rigel_Mage Arcanist JeromeCh4_5 Level(4, Enemy, True) [7,8] 0x00 0x00 0x0 0x00 [Selene,Physic] [0xE,0x3,0x4,0x20]
-    //bridge
+	//bridge
 	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(2, Enemy, True) [4,13] 0x00 0x00 0x0 0x00 [SteelBow] [0x3,0x3,0x4,0x20]
 	UNIT Rigel_Archer BowKnight JeromeCh4_5 Level(2, Enemy, True) [9,13] 0x00 0x00 0x0 0x00 [SteelBow] [0x3,0x3,0x4,0x20]
-    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [6,14] DropItem 0x00 0x0 0x00 [HeavySpear] [0x0,0x0,0xC,0x0]
-    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [7,14] 0x00 0x00 0x0 0x00 [Halberd,HandAxe] [0x0,0x0,0xC,0x0]
-    
-    //further out
-    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [Hammer] [0x0,0x0,0xC,0x0]
-    UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [20,15] 0x00 0x00 0x0 0x00 [Halberd] [0x0,0x0,0xC,0x0]
-    UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [12,11] DropItem 0x00 0x0 0x00 [Zweihander] [0x0,0x3,0xC,0x0]
-    
-    UNIT Rigel_Soldier GoldKnight JeromeCh4_5 Level(2, Enemy, True) [2,9] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0,0x12,0xC,0x0]
+	UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [6,14] DropItem 0x00 0x0 0x00 [HeavySpear] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [7,14] 0x00 0x00 0x0 0x00 [Halberd,HandAxe] [0x0,0x0,0xC,0x0]
+
+	//further out
+	UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [19,14] 0x00 0x00 0x0 0x00 [Hammer] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Soldier Knight JeromeCh4_5 Level(9, Enemy, True) [20,15] 0x00 0x00 0x0 0x00 [Halberd] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [12,11] DropItem 0x00 0x0 0x00 [Zweihander] [0x0,0x3,0xC,0x0]
+
+	UNIT Rigel_Soldier GoldKnight JeromeCh4_5 Level(2, Enemy, True) [2,9] 0x00 0x00 0x0 0x00 [Ridersbane] [0x0,0x12,0xC,0x0]
 	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [3,7] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
 	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [1,11] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x12,0xC,0x0]
-	
+
 	UNIT
-    
+
 MoreEnemies:
 	UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [11,2] 0x00 0x00 0x0 0x00 [IronAxe] [0x0,0x12,0xC,0x0]
-    UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [15,2] 0x00 0x00 0x0 0x00 [SteelSword] [0x0,0x0,0xC,0x0]
-    UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [SteelSword] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [15,2] 0x00 0x00 0x0 0x00 [SteelSword] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Merc Myrmidon JeromeCh4_5 Level(9, Enemy, True) [13,6] 0x00 0x00 0x0 0x00 [SteelSword] [0x0,0x0,0xC,0x0]
 	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [23,10] 0x00 0x00 0x0 0x00 [Javelin] [0x0,0x0,0xC,0x0]
 	UNIT Rigel_Soldier Paladin JeromeCh4_5 Level(12, Enemy, True) [23,11] 0x00 0x00 0x0 0x00 [SteelLance] [0x0,0x0,0xC,0x0]
 	UNIT Rigel_Soldier Berserker JeromeCh4_5 Level(4, Enemy, True) [2,3] 0x00 0x00 0x0 0x00 [SteelAxe] [0x0,0x0,0xC,0x0]
 	UNIT Rigel_Soldier Berserker JeromeCh4_5 Level(4, Enemy, True) [1,4] 0x00 0x00 0x0 0x00 [PoisonAxe] [0x0,0x0,0xC,0x0]
-    UNIT
-	
+	UNIT
+
 ZekeSolo:
 	UNIT Zeke GoldKnight 0x00 Level(3,Ally,False) [18,8] 0x00 0x00 0x0 0x00 [SilverLance, BaseLance] NoAI
 	UNIT
@@ -368,7 +368,7 @@ ZekeUnits:
 	UNIT Rigel_Cav BowKnight Zeke Level(2, Enemy, True) [20,10] 0x00 0x00 0x0 0x00 [BaseBow] DoNothingAI
 	UNIT Rigel_Cav BowKnight Zeke Level(2, Enemy, True) [21,7] 0x00 0x00 0x0 0x00 [BaseBow] DoNothingAI
 	UNIT
-	
+
 ZekeEnemyUnits:
 	UNIT ZekeBoss GoldKnight 0x00 Level(3,Enemy,False) [18,8] 0x00 0x00 0x0 0x00 [SilverLance, BaseLance] [0x0,0x0,0xC,0x0]
 	UNIT Rigel_Cav Paladin ZekeBoss Level(12, Enemy, True) [16,6] 0x00 0x00 0x0 0x00 [Javelin, Axereaver] [0x0,0x0,0x8,0x0]
@@ -380,73 +380,73 @@ ZekeEnemyUnits:
 	UNIT Rigel_Cav BowKnight ZekeBoss Level(2, Enemy, True) [20,10] 0x00 0x00 0x0 0x00 [BaseBow] [0x0,0x6,0x8,0x0]
 	UNIT Rigel_Cav BowKnight ZekeBoss Level(2, Enemy, True) [21,7] 0x00 0x00 0x0 0x00 [BaseBow] [0x0,0x6,0x8,0x0]
 	UNIT
-    
+
 BanditReinforcements:
-    UNIT Bandit_Strong Berserker 0x0 Level(4, Enemy, True) [2,0] 0x00 0x00 0x1 REDA2R0 [IronAxe,Torch] [0x0,0x4,0xC,0x0]
-    UNIT Bandit_Axe Brigand Bandit_Strong Level(16, Enemy, True) [2,0] 0x00 0x00 0x1 REDA2R1 [SteelAxe,Torch] [0x0,0x4,0xC,0x0]
-    UNIT Bandit_Axe Brigand Bandit_Strong Level(16, Enemy, True) [2,0] 0x00 0x00 0x1 REDA1R0 [SteelAxe,Torch] [0x0,0x4,0xC,0x0]
-    UNIT Bandit_Axe Brigand Bandit_Strong Level(16, Enemy, True) [2,0] 0x00 0x00 0x1 REDA3R0 [SteelAxe,Torch] [0x0,0x4,0xC,0x0]
-    UNIT
-    
+	UNIT Bandit_Strong Berserker 0x0 Level(4, Enemy, True) [2,0] 0x00 0x00 0x1 REDA2R0 [IronAxe,Torch] [0x0,0x4,0xC,0x0]
+	UNIT Bandit_Axe Brigand Bandit_Strong Level(16, Enemy, True) [2,0] 0x00 0x00 0x1 REDA2R1 [SteelAxe,Torch] [0x0,0x4,0xC,0x0]
+	UNIT Bandit_Axe Brigand Bandit_Strong Level(16, Enemy, True) [2,0] 0x00 0x00 0x1 REDA1R0 [SteelAxe,Torch] [0x0,0x4,0xC,0x0]
+	UNIT Bandit_Axe Brigand Bandit_Strong Level(16, Enemy, True) [2,0] 0x00 0x00 0x1 REDA3R0 [SteelAxe,Torch] [0x0,0x4,0xC,0x0]
+	UNIT
+
 ReinforcementsSW:
-    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [0,21] 0x00 0x00 0x1 REDA0R20 [IronAxe] [0x0,0x0,0xC,0x0]
-    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [0,21] 0x00 0x00 0x1 REDA1R21 [IronAxe] [0x0,0x0,0xC,0x0]
-    UNIT    
-        
+	UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [0,21] 0x00 0x00 0x1 REDA0R20 [IronAxe] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [0,21] 0x00 0x00 0x1 REDA1R21 [IronAxe] [0x0,0x0,0xC,0x0]
+	UNIT
+
 ReinforcementsNormal:
-    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [23,0] 0x00 0x00 0x1 REDA22R0 [IronAxe] [0x0,0x0,0xC,0x0]
-    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [23,0] 0x00 0x00 0x1 REDA23R1 [IronAxe] [0x0,0x0,0xC,0x0]
-    UNIT    
-    
+	UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [23,0] 0x00 0x00 0x1 REDA22R0 [IronAxe] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(8, Enemy, True) [23,0] 0x00 0x00 0x1 REDA23R1 [IronAxe] [0x0,0x0,0xC,0x0]
+	UNIT
+
 ReinforcementsNE:
-    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(12, Enemy, True) [23,0] 0x00 0x00 0x1 REDA22R0 [IronAxe] [0x0,0x0,0xC,0x0]
-    UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(12, Enemy, True) [23,0] 0x00 0x00 0x1 REDA23R1 [IronAxe] [0x0,0x0,0xC,0x0]
-    UNIT
+	UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(12, Enemy, True) [23,0] 0x00 0x00 0x1 REDA22R0 [IronAxe] [0x0,0x0,0xC,0x0]
+	UNIT Rigel_Wyvern WyvernLord JeromeCh4_5 Level(12, Enemy, True) [23,0] 0x00 0x00 0x1 REDA23R1 [IronAxe] [0x0,0x0,0xC,0x0]
+	UNIT
 
 Ch4A5_BeginningScene:
 
-	LOAD1 0x1 EnemyUnits
+	LOAD 0x1 EnemyUnits
 	ENUN
-	LOAD1 0x1 ZekeEnemyUnits
+	LOAD 0x1 ZekeEnemyUnits
 	ENUN
-	
-	MUSC SongID_SolveTheRiddle
+
+	MUSIC SongID_SolveTheRiddle
 	CAMERA_CENTERED [14,6]
-	//FADU 5
+	//FADEOUT 5
 	//CameraCursor(JeromeCh4_5)
-	SetBackground(0x25)
+	SetBackground(Fort_Outside)
 	BackgroundText(Ch4_5A_OpeningText)
-	FADI 5
+	FADEIN 5
 	CLEAN
 	STAL 5
-	FADU 5
+	FADEOUT 5
 	STAL 20
 	CameraCursor(ZekeBoss)
 	MapText(Ch4_5A_OpeningText_Zeke)
 	STAL 20
-	
-	CHECK_EVENTID gTatianaRecruited
+
+	CHECK_FLAG gTatianaRecruited
 	BEQ 0xD rC r0
 		//got tatiana
 		EVBIT_T 0x9
-		LOAD2 0x0 CutsceneUnits
+		LOAD_CUTSCENE CutsceneUnits
 		ENUN
 		EVBIT_F 0x9
 		STAL 20
-		
+
 		CameraCursor(Tatiana)
-        STAL 5
-		MUSI
+		STAL 5
+		MUSIC_QUIET_T
 		MapText(Ch4_5A_OpeningText_2)
-		MUNO
-		
+		MUSIC_QUIET_F
+
 		CameraCursor(ZekeBoss)
-        STAL 5
+		STAL 5
 		MUSCMID SongID_Silence
 		TEXTMODE 0
 		TEXTSHOW Ch4_5A_OpeningText_3
 		TEXTEND
-		MUSC SongID_ImportantBattle
+		MUSIC SongID_ImportantBattle
 		TEXTCONT
 		TEXTEND
 		TEXTCLEAR
@@ -456,89 +456,89 @@ Ch4A5_BeginningScene:
 		STAL 5
 		MapText(Ch4_5A_OpeningText_4)
 	LABEL 0xD
-	
-	FADI 16
-	CLEA 0x0
-	CLEE 0x0
-	CLEN 0x0
+
+	FADEIN 16
+	REMOVEALL_BLUE
+	REMOVEALL_RED
+	REMOVEALL_GREEN
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x4A05 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x4A05
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	LOAD3 0x0 PlayerPlacement 
+	CHECK_ISHARD
+	BEQ 0x4A05 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x4A05
+	LOAD_S2 0x1
 	ENUN
-	CHECK_EVENTID gTatianaRecruited
+	LOAD_DEPLOYED 0x0 PlayerPlacement
+	ENUN
+	CHECK_FLAG gTatianaRecruited
 	BEQ 0xF rC r0
-		LOAD1 0x1 ZekeUnits
+		LOAD 0x1 ZekeUnits
 		ENUN
-        LOAD1 0x1 MoreEnemies
-        ENUN
+		LOAD 0x1 MoreEnemies
+		ENUN
 		GOTO 0x10
 	LABEL 0xF
-		LOAD1 0x1 ZekeEnemyUnits
+		LOAD 0x1 ZekeEnemyUnits
 		ENUN
-		ENUT 0x09 //disable the talk option for alm and zeke
+		FLAG_T 0x09 //disable the talk option for alm and zeke
 	LABEL 0x10
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch4A5_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4A5Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter4A5Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
+	FADEIN 2
 	STAL 5
-	CHECK_EVENTID gTatianaRecruited
+	CHECK_FLAG gTatianaRecruited
 	BEQ 0xA rC r0
-		MUSC SongID_Victory
-		SetBackground(0x02)
+		MUSIC SongID_Victory
+		SetBackground(Village)
 		TEXTMODE 1
 		TEXTSHOW Ch4_5A_EndingText_Good
 		TEXTEND
-		MUSC SongID_Silence
+		MUSIC SongID_Silence
 		TEXTCONT
 		TEXTEND
 		TEXTCLEAR
-		FADI 5
-		MUSC SongID_Truth
-		
+		FADEIN 5
+		MUSIC SongID_Truth
+
 		//CG stuff here
-		EVBIT_MODIFY 0x0
+		CONFIG_SKIP 0x0
 		TEXTMODE 1
-		BACG ZekeBrandCG
-		FADU 5
+		BACKGROUND ZekeBrandCG
+		FADEOUT 5
 		STAL 60
 		CgText(Ch4_5A_EndingText_Good_2)
 		CgText(Ch4_5A_EndingText_Good_3)
-		FADI 5
+		FADEIN 5
 		TEXTMODE 1
-		SetBackground(0x02, 5)
-        TEXTMODE 1
+		SetBackground(Village, 5)
+		TEXTMODE 1
 		TEXTSHOW Ch4_5A_EndingText_Good_4
-        TEXTEND
-        TEXTCLEAR
-		FADI 2
+		TEXTEND
+		TEXTCLEAR
+		FADEIN 2
 		MUSCMID SongID_Silence
-        
-        //check if Zeke survived and add him to the party if so
-        CHECK_EVENTID gZekeRecruited
-        BNE 0x401 rC r0
-            LOAD1 0x1 ZekeSolo
-            ENUN
-            ENUT gZekeRecruited
-            SetBackground(BlackBackground,5)
-            CALL $591F40
+
+		//check if Zeke survived and add him to the party if so
+		CHECK_FLAG gZekeRecruited
+		BNE 0x401 rC r0
+			LOAD 0x1 ZekeSolo
+			ENUN
+			FLAG_T gZekeRecruited
+			SetBackground(BlackBackground,5)
+			CALL $591F40
 			CharacterJoinedNotification(Notif_ZekeJoin)
-        LABEL 0x401
+		LABEL 0x401
 		STAL 60
-        
+
 		//Alm questions the prophecy
-		MUSC SongID_Env_Night
+		MUSIC SongID_Env_Night
 		SetBackground(0x43, 2)
 		TEXTMODE 1
 		TEXTSHOW Ch4_5A_EndingText_Good_5
@@ -547,21 +547,21 @@ Ch4A5_EndingScene:
 		TEXTCONT
 		TEXTEND
 		TEXTCLEAR
-		
+
 		GOTO 0xB
 	LABEL 0xA
-        MUSC SongID_SilentGround
-        SetBackground(0x4B) //demolished village
-        BackgroundText(Ch4_5A_EndingText_Bad)
-        MUSCMID SongID_Silence
-        STAL 20
-        FADI 2
-        STAL 5
-        MUSC SongID_Env_Night
-        SetBackground(0x43, 2)
-        BackgroundText(Ch4_5A_EndingText_Bad_5)
+		MUSIC SongID_SilentGround
+		SetBackground(0x4B) //demolished village
+		BackgroundText(Ch4_5A_EndingText_Bad)
+		MUSCMID SongID_Silence
+		STAL 20
+		FADEIN 2
+		STAL 5
+		MUSIC SongID_Env_Night
+		SetBackground(0x43, 2)
+		BackgroundText(Ch4_5A_EndingText_Bad_5)
 	LABEL 0xB
 	MUSCMID SongID_Silence
-	FADI 2
-	MNCH 0x29
-	ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x29
+	END

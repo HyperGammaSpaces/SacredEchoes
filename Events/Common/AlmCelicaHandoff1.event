@@ -60,89 +60,88 @@ EnemyUnits:
 
 Ch2_1_BeginningScene:
 	CALL DoCelicaStuff
-	ENDA
+	END
 
 Ch2_1_EndingScene:
-	ENDA
+	END
 
 DoCelicaStuff:
-	EVBIT_MODIFY 0x4
-	ENUT gRouteSplit1Flag
-	EVBIT_MODIFY 0x0
+	CONFIG_SKIP 0x4
+	FLAG_T gRouteSplit1Flag
+	CONFIG_SKIP 0x0
 
 	//flashback scene w celica
-	MUSC SongID_Revelations
-	SetBackground(0x06, 5)
+	MUSIC SongID_Revelations
+	SetBackground(Town_Past, 5)
 	BROWNBOXTEXT Ch1_2_FlashbackTimeframe [8,8]
 	STAL 30
 	BackgroundText(Ch2C_1_Flashback)
 	MUSCMID SongID_Silence
 	STAL 20
-	FADI 2
+	FADEIN 2
 
-	SetBackground(0x24, 2) //Town idk
-	SOUN LimaDiesBellSFX_ID
+	SetBackground(Town_Gate, 2) //Town idk
+	SOUND LimaDiesBellSFX_ID
 	STAL 60
 	MUSCMID SongID_Silence
-	MUSC SongID_Env_Birds
+	MUSIC SongID_Env_Birds
 	BackgroundText(CelicaHandoffScene)
 	MUSCMID SongID_Silence
-	FADI 5
+	FADEIN 5
 
-	LOAD1 0x1 NewCelica	//Add Celica first.
+	LOAD 0x1 NewCelica	//Add Celica first.
 	ENUN
 
 	MUSCSLOW SongID_SongOfPeace
-	SetBackground(0x2E) //Shrine
+	SetBackground(Shrine_2) //Shrine
 	BackgroundText(CelicaHandoffScene_2)
 	MUSCMID SongID_Silence
-	FADI 5
+	FADEIN 5
 
-	MUSC SongID_Recruitment
-	SetBackground(0x0C) //Hall
+	MUSIC SongID_Recruitment
+	SetBackground(Castle_Hall_2) //Hall
 	BackgroundText(CelicaHandoffScene_3)
 	STAL 20
 	CALL $591F40
 	SVAL 0x3 MetissTome //secret book
-	GIVEITEMTO Celica
+	GIVEITEM Celica
 	STAL 20
 	CharacterJoinedNotification(Notif_MaeBoeyGennyJoin)
-	FADI 5
+	FADEIN 5
+	CLEAN
 
 	ASMC 0x86581 //Set Celica Mode.
 
-	REMU 0x01 //Remove Alm
+	HIDEUNIT 0x01 //Remove Alm
 	//Check if Lukas is alive, then remove if true
-	REMU 0x02 //Remove Lukas
+	HIDEUNIT 0x02 //Remove Lukas
 	//Check if Gray is alive, then remove if true
-	REMU 0x03 //Remove Gray
+	HIDEUNIT 0x03 //Remove Gray
 	//Check if Tobin is alive, then remove if true
-	REMU 0x04 //Remove Tobin
+	HIDEUNIT 0x04 //Remove Tobin
 	//Check if Kliff is alive, then remove if true
-	REMU 0x05 //Remove Kliff
+	HIDEUNIT 0x05 //Remove Kliff
 	//Check if Faye is alive, then remove if true
-	REMU 0x06 //Remove Faye
+	HIDEUNIT 0x06 //Remove Faye
 	//Check if Silque is alive, then remove if true
-	REMU 0x07 //Remove Silque
+	HIDEUNIT 0x07 //Remove Silque
 	//Check if Clair is alive, then remove if true
-	REMU 0x08 //Remove Clair
+	HIDEUNIT 0x08 //Remove Clair
 	//Check if Clive is alive, then remove if true
-	REMU 0x09 //Remove Clive
+	HIDEUNIT 0x09 //Remove Clive
 	//Check if Forsyth is alive, then remove if true
-	REMU 0x0A //Remove Forsyth
+	HIDEUNIT 0x0A //Remove Forsyth
 	//Check if Python is alive, then remove if true
-	REMU 0x0B //Remove Python
+	HIDEUNIT 0x0B //Remove Python
 	//Check if Acantha is alive, then remove if true
-	REMU 0x23 //Remove Acantha
+	HIDEUNIT 0x23 //Remove Acantha
 
-	STARTFADE
-	FADECOLORS 0x2000 0x8 0x80 0x80 0x80
-	_0xA640 0x0 0x0 0xA //do i need this?
-    ASMC SplitGoldpile|1
-	MNCH 0x08 //celica time
-	EVBIT_MODIFY 0x0
-	ENDB
+	WM_SETLORDLOCATION 0xA
+	ASMC SplitGoldpile|1
+	GOTO_CHAPTER 0x08 //celica time
+	CONFIG_SKIP 0x0
+	TERMINATE
 
 #ifndef InlineEvents
-  MESSAGE Events end at offset currentOffset
+	MESSAGE Events end at offset currentOffset
 #endif

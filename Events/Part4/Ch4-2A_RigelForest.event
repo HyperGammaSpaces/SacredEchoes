@@ -25,13 +25,13 @@ Evt_TurnBasedEvents:
 	
 XaizorCh4_2Moves:
 	SetAIParameters(0x0,0x0,0x4,0x0)
-	CHAI [2,12]
-	MUSI
+	SET_AI [2,12]
+	MUSIC_QUIET_T
 	MapText(Ch4_2A_XaizorMovesText)
-	MUNO
+	MUSIC_QUIET_F
 	NoFade
-	ENDA
-	
+	END
+
 CavWave1:
 	ReinforcementEvent(CavReinforcements)
 
@@ -40,23 +40,23 @@ Evt_CharacterBasedEvents:
 
 Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(11,18)
+		Seize(11,18)
 	#endif
 	Seize(3,3)
 	LOCA 0xA VillageEvent [21,16] 0x10
 	LOCA
-	
+
 VillageEvent:
-	MUSI
+	MUSIC_QUIET_T
 	SetBackground(0x42)
 	BackgroundText(Ch4_2A_VillageText)
 	EndConvo
-	MUNO
+	MUSIC_QUIET_F
 	CALL $591F40
 	SMOV 0x3 DumaIcon
-	GIVEITEMTO 0xFFFF
+	GIVEITEM 0xFFFF
 	EVBIT_T 0x7
-	ENDA
+	END
 
 Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -93,17 +93,17 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x1 REDA11R18 [BaseSword, Vulnerary] NoAI 
-	UNIT Mathilda Paladin 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x1 REDA10R18 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x1 REDA11R18 [BaseSword, Vulnerary] NoAI
+	UNIT Mathilda Paladin 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x1 REDA10R18 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [12,20] 0x00 0x00 0x1 REDA11R19 [BaseLance] NoAI
 	UNIT
-	
+
 CutsceneUnits_End:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3,3] 0x00 0x00 0x1 AlmEndReda1 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [3,3] 0x00 0x00 0x1 AlmEndReda2 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [3,3] 0x00 0x00 0x1 AlmEndReda1 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [3,3] 0x00 0x00 0x1 AlmEndReda2 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [3,3] 0x00 0x00 0x1 AlmEndReda3 [BaseLance] NoAI
 	UNIT
-	
+
 CutsceneUnits_Nuibaba:
 	UNIT Nuibaba Cantor_F 0x00 Level(1, Enemy, 1) [4,1] 0x00 0x00 0x0 0x00 [Medusa, Vulnerary] NoAI
 	UNIT
@@ -131,7 +131,7 @@ EnemyUnits:
 	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [18,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT
-	
+
 EnemyUnits_Hard:
 	UNIT XaizorCh4_2 DreadFighter	XaizorCh4_2 Level(7, Enemy, True) [2,12]	0x00 0x00 0x0 0x00 [SteelSword] GuardTileAI
 	UNIT Rigel_Merc DreadFighter XaizorCh4_2 Level(3, Enemy, True) [3,3] 0x00 0x00 0x0 0x00 [Zanbato,Thunderblade] NeverMoveAI
@@ -155,12 +155,12 @@ EnemyUnits_Hard:
 	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [18,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT Rigel_Mage Arcanist XaizorCh4_2 Level(5, Enemy, True) [14,3] 0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT
-	
+
 CavReinforcements:
 	UNIT Rigel_Cav Paladin	XaizorCh4_2 Level(5, Enemy, True) [18,0]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT Rigel_Cav Paladin	XaizorCh4_2 Level(5, Enemy, True) [21,6]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
-	
+
 AlmEndReda1:
 	REDA [0,0] NoFlags Walk_Slow 0x00 0x00
 AlmEndReda2:
@@ -171,107 +171,107 @@ AlmEndReda3:
 
 Evt_BeginningScene:
 
-	MUSC SongID_Env_Night
+	MUSIC SongID_Env_Night
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x4A02 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x4A02
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	
-	SetBackground(0x31)
+	CHECK_ISHARD
+	BEQ 0x4A02 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x4A02
+	LOAD_S2 0x1
+	ENUN
+
+	SetBackground(Forest_Dense)
 	BackgroundText(Ch4A_2_OpeningText) //alm gets introspective
-	FADI 2
+	FADEIN 2
 	CLEAN
-    STAL 5
-	FADU 2
-	
+	STAL 5
+	FADEOUT 2
+
 	EVBIT_T 0x9
-	LOAD2 0x0 CutsceneUnits
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
 	EVBIT_F 0x9
 	MUSCMID SongID_Silence
 	CameraCursor(Alm)
-    CHECK_EXISTS Mathilda
+	CHECK_EXISTS Mathilda
 		BEQ 7 0x0 0xC
-		CHECK_ALIVE Mathilda
+		CHECK_ISALIVE Mathilda
 		BEQ 7 0x0 0xC
-        MapText(Ch4A_2_OpeningText_2)
-        GOTO 8
-    LABEL 7
-    MapText(Ch4A_2_OpeningText_2_NoMathilda) //something about the forest
-    LABEL 8
-	FADI 5
-	
-	CLEA 0x0
-	LOAD3 0x0 PlayerPlacement 
+		MapText(Ch4A_2_OpeningText_2)
+		GOTO 8
+	LABEL 7
+	MapText(Ch4A_2_OpeningText_2_NoMathilda) //something about the forest
+	LABEL 8
+	FADEIN 5
+
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Evt_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4A2Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter4A2Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
+	FADEIN 2
 	STAL 5
-	CHECK_EVENTID 0x2
+	CHECK_FLAG 0x2
 	BEQ 0x100 0xC 0x0
 		//Xaizor died
-		MUSC SongID_ShadowOfVictory
-		SetBackground(0x26)
+		MUSIC SongID_ShadowOfVictory
+		SetBackground(Fort)
 		BackgroundText(Ch4A_2_EndingText_XaizorDied)
-		
+
 		GOTO 0x101
 	LABEL 0x100 //xaizor lived
-		MUSC SongID_Victory
-		SetBackground(0x26)
+		MUSIC SongID_Victory
+		SetBackground(Fort)
 		BackgroundText(Ch4A_2_EndingText_XaizorLived)
-        CALL $591F40
-		SVAL 0x3 Boots 
-		GIVEITEMTO Alm
+		CALL $591F40
+		SVAL 0x3 Boots
+		GIVEITEM Alm
 		EVBIT_T 0x7
-	
+
 	LABEL 0x101
 	MUSCMID SongID_Silence
-	FADI 2
+	FADEIN 2
 	CLEAN
-	CLEA 0x0
-	CLEE 0x0
-	MUSC SongID_Env_Night
+	REMOVEALL_BLUE
+	REMOVEALL_RED
+	MUSIC SongID_Env_Night
 	CAMERA_CENTERED [3,3]
-	FADU 5
-	LOAD2 0x0 CutsceneUnits_End
-	FADI 5
+	FADEOUT 5
+	LOAD_CUTSCENE CutsceneUnits_End
+	FADEIN 5
 	ENUN
-	CLEA 0x0
+	REMOVEALL_BLUE
 
 	SetBackground(0x48)
 	BackgroundText(Ch4A_2_EndingText)
-	
+
 	MUSCMID SongID_Silence
-	FADI 5
+	FADEIN 5
 	STAL 5
 
 	SVAL 0xB Coords(4, 1)
-	VCWF 0x0
-	LOMA 0x26
-	LOAD1 0x1 CutsceneUnits_Nuibaba
+	FOGVISION 0x0
+	LOADMAP 0x26
+	LOAD 0x1 CutsceneUnits_Nuibaba
 	ENUN
-	FADU 5
-	MUSC SongID_WitchsTheme
-		
+	FADEOUT 5
+	MUSIC SongID_WitchsTheme
+
 	BROWNBOXTEXT Loc_NuibabasAbode [8,8]
 	STAL 20
 	CameraCursor(Nuibaba)
 	MapText(Ch4A_2_EndingText_Nuibaba)
 	MUSCMID SongID_Silence
-	FADI 2
+	FADEIN 2
 	SVAL 0xB Coords(3, 3)
-	LOMA 0x24
+	LOADMAP 0x24
 	STAL 4
-	MNCH 0x25
-	ENDA
+	GOTO_CHAPTER 0x25
+	END

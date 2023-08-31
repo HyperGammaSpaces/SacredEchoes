@@ -10,8 +10,8 @@ ALIGN 4
 #define WorldMapPointerTable(id,offset) "PUSH; ORG WM_Pointer_Table+(4*id); POIN offset; POP"
 
 {
-  #define PrologueWMEventsID 0x1
-  #include "WM_Prologue.event"
+	#define PrologueWMEventsID 0x1
+	#include "WM_Prologue.event"
 }
 
 ALIGN 4
@@ -19,7 +19,7 @@ ALIGN 4
 #define WM_Intro_Pointer_Table 0x8B3AD8
 #define WorldMapIntroPointerTable(id,offset) "PUSH; ORG WM_Intro_Pointer_Table+(4*id); POIN offset; POP"
 {
-  #include "WM2_Prologue.event"
+	#include "WM2_Prologue.event"
 }
 
 ALIGN 4

@@ -31,19 +31,19 @@ Ch3_6C_TurnBasedEvents:
 LoadBrigandsLeft:
 	LoadReinforcements(ReinforcementsTopLeft)
 	NoFade
-	ENDA
-	
+	END
+
 LoadBrigandsRight:
 	ReinforcementEvent(ReinforcementsTopRight)
 	NoFade
-	ENDA
-	
+	END
+
 GargsSpawn:
 	LoadReinforcements(GargoylesLeft)
 	ReinforcementEvent(GargoylesRight)
 	NoFade
-	ENDA
-	
+	END
+
 FortMercsSpawn:
 	ReinforcementEvent(FortTop)
 FortMagesSpawn:
@@ -54,7 +54,7 @@ Ch3_6C_CharacterBasedEvents:
 
 Ch3_6C_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,11)
+		Seize(4,11)
 	#endif
 	Seize(23,1)
 	Village(8, Village1Event, 6,2)
@@ -81,16 +81,16 @@ Ch3_6C_Ballista2:
 	ALIGN 4
 
 Village1Event:
-	VillageEventItem(Ch3_6C_VillageText1,0x05,Longbow) 
-	ENDA
-	
+	VillageEventItem(Ch3_6C_VillageText1,0x05,Longbow)
+	END
+
 Village2Event:
-	VillageEventItem(Ch3_6C_VillageText2,0x05,CoralRing) 
-	ENDA
+	VillageEventItem(Ch3_6C_VillageText2,0x05,CoralRing)
+	END
 
 PlayerPlacement:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [4,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [2,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
@@ -101,13 +101,13 @@ PlayerPlacement:
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [0,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [1,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [3,14] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
-    UNIT Kliff Villager 0x00 Level(1,Ally,True) [0,9] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-    UNIT
+	UNIT Kliff Villager 0x00 Level(1,Ally,True) [0,9] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 
 CutsceneUnits:
-	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1, Ally, 1) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1, Ally, 1) [5,12] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
 	UNIT
 
 EnemyUnits:
@@ -137,7 +137,7 @@ EnemyUnits:
 	UNIT DumaFaith_Sorcerer Shaman	Blake Level(14, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
 	UNIT DumaFaith_Sorcerer Shaman	Blake Level(10, Enemy, True) [21,12]	0x00 0x00 0x0 0x00 [Mire] DelayedRushAI
 	UNIT
-	
+
 EnemyUnits_Hard:
 	//total: ~22
 	UNIT Blake Myrmidon	Blake Level(5, Enemy, False) [22,2] DropItem 0x00 0x0 0x00 [Shadowblade] AttackInRangeAI
@@ -165,7 +165,7 @@ EnemyUnits_Hard:
 	UNIT DumaFaith_Sorcerer Shaman	Blake Level(14, Enemy, True) [21,11]	0x00 0x00 0x0 0x00 [Miasma] DelayedRushAI
 	UNIT DumaFaith_Sorcerer Shaman	Blake Level(10, Enemy, True) [21,12]	0x00 0x00 0x0 0x00 [Mire,SteelShield] DelayedRushAI
 	UNIT
-	
+
 SkirmishEnemies:
 	UNIT Rigel_Cav Cavalier	Blake Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
@@ -174,19 +174,19 @@ SkirmishEnemies:
 ReinforcementsTopLeft:
 	UNIT TreasureHunter Brigand	Blake Level(17, Enemy, True) [0,0]	0x00 0x00 0x1 REDA0R0 [IronAxe,TorchItem] BrigandAI
 	UNIT
-	
+
 ReinforcementsTopRight:
 	UNIT TreasureHunter Brigand	Blake Level(17, Enemy, True) [27,3]	0x00 0x00 0x1 REDA27R3 [IronAxe,TorchItem] BrigandAI
 	UNIT
-	
+
 GargoylesLeft:
 	UNIT 0xBB Gargoyle	Blake Level(12, Enemy, True) [9,1]	0x00 0x00 0x1 REDA9R1 [SteelLance] NoAI
 	UNIT
-	
+
 GargoylesRight:
 	UNIT 0xBB Gargoyle	Blake Level(12, Enemy, True) [27,3]	0x00 0x00 0x1 REDA27R3 [IronLance] NoAI
 	UNIT
-	
+
 //Two forts could spawn some guys too? [13,2] and [15,2]
 FortTop:
 	UNIT Rigel_Merc Myrmidon	Blake Level(3, Enemy, True) [13,2]	0x00 0x00 0x1 REDA13R2 [SteelSword] NoAI
@@ -199,48 +199,48 @@ FortBottom:
 	UNIT
 
 Ch3_6C_BeginningScene:
-	MUSC SongID_Advance
-	LOAD2 0x1 CutsceneUnits
+	MUSIC SongID_Advance
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
 	CAMERA_CENTERED Celica
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3C06 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x3C06
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	SetBackground(0x1D)
+	CHECK_ISHARD
+	BEQ 0x3C06 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x3C06
+	LOAD_S2 0x1
+	ENUN
+	SetBackground(Woodland)
 	BackgroundText(Ch3_6C_OpeningText)
 	ClearBackgroundSmooth
 	STAL 30
 	CAMERA_CENTERED Blake
-	MUSC SongID_FromTheDarkness
-    STAL 20
+	MUSIC SongID_FromTheDarkness
+	STAL 20
 	FlashCursor(Blake,60)
 	MapText(Ch3_6C_OpeningText_2)
-	FADI 16
-	CLEA 0x0
-	LOAD3 0x0 PlayerPlacement 
+	FADEIN 16
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch3_6C_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3C6Completed
-    CALL $591F40
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3C6Completed
+	CALL $591F40
 	SVAL 0x3 MageRing
-	GIVEITEMTO Celica
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	GIVEITEM Celica
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
-    STAL 5
-	MUSC SongID_Victory
-	SetBackground(0x1D)
+	FADEIN 2
+	STAL 5
+	MUSIC SongID_Victory
+	SetBackground(Woodland)
 	BackgroundText(Ch3_6C_EndingText)
-    FadeOutMusic
-	FADI 2
-	MNCH 0x1D
-	ENDA
+	FadeOutMusic
+	FADEIN 2
+	GOTO_CHAPTER 0x1D
+	END

@@ -1,110 +1,112 @@
 ALIGN 4
 Ch3_EndingScene:
-    CHECK_EVBIT 0x8
-    BNE 0x6969 rC r0
-	FADI 16
-    LABEL 0x6969
-	SetBackground(0x0B,16)
+	CHECK_EVBIT 0x8
+	BNE 0x6969 rC r0
+		FADEIN 16
+	LABEL 0x6969
+	SetBackground(Castle_Hall_Night,16)
 	BackgroundText(Ch3_EndingText_SluiceGate_Alm)
-    FadeOutMusic
-	FADI 5
-    SetBackground(BlackBackground,5)
-	EVBIT_MODIFY 0x4
-	MUSC SongID_UndiscoveredHorizons
+	FadeOutMusic
+	FADEIN 5
+
+	SetBackground(BlackBackground,5)
+	CONFIG_SKIP 0x4
+	MUSIC SongID_UndiscoveredHorizons
 	STAL 30
 	CenterTextbox(Ch3_EndingText_BrownBoxText)
-    FadeOutMusic
-	FADI 2
-    STAL 20
+	FadeOutMusic
+	FADEIN 2
+	STAL 20
+
 	MUSCSLOW SongID_PinnacleOfFalseBelief
-	SetBackground(0x33)
+	SetBackground(Temple_Gate)
 	BackgroundText(Ch3_EndingText_Jedah)
-    FadeOutMusic
-	FADI 2
-    SVAL 2 2
-    CHECK_MODE
-    BEQ 0x420 rC r2
-        SHORT $0D40 $0
-        POIN Act3EndSwitch|1
-    LABEL 0x420
-	MNCH 0x1E
-	ENDB
+	FadeOutMusic
+	FADEIN 2
+	SVAL 2 2
+	CHECK_MODE
+	BEQ 0x420 rC r2
+		SHORT $0D40 $0
+		POIN Act3EndSwitch|1
+	LABEL 0x420
+	GOTO_CHAPTER 0x1E
+	TERMINATE
 
 ALIGN 4
 AlmLuthierSirPurrTalk:
-    MUSI
-    STAL 30
-    MapText(AlmLuthier_SirPurr)
-    STAL 20
-    NoFade
-    MUNO
-    ENDA
+	MUSIC_QUIET_T
+	STAL 30
+	MapText(AlmLuthier_SirPurr)
+	STAL 20
+	NoFade
+	MUSIC_QUIET_F
+	END
 
 ALIGN 4
 {
-  #include "Ch3-1A_NobleVengeance.event"
+	#include "Ch3-1A_NobleVengeance.event"
 }
 ALIGN 4
 {
-  #include "Ch3-2A_ForestOfStorms.event"
+	#include "Ch3-2A_ForestOfStorms.event"
 }
 ALIGN 4
 {
-  #include "Ch3-3A_TheElite.event"
+	#include "Ch3-3A_TheElite.event"
 }
 ALIGN 4
 {
-  #include "Ch3-4A_Homecoming.event"
+	#include "Ch3-4A_Homecoming.event"
 }
 ALIGN 4
 {
-  #include "Ch3-5A_InvadersDescend.event"
+	#include "Ch3-5A_InvadersDescend.event"
 }
 ALIGN 4
 {
-  #include "Ch3-6A_TheSiege.event"
+	#include "Ch3-6A_TheSiege.event"
 }
 ALIGN 4
 {
-  #include "Ch3-7A_ThePuppeteer.event"
+	#include "Ch3-7A_ThePuppeteer.event"
 }
 ALIGN 4
 {
-  #include "Ch3-1C_TwoSisters.event"
+	#include "Ch3-1C_TwoSisters.event"
 }
 ALIGN 4
 {
-  #include "Ch3-2C_MountainVillage.event"
+	#include "Ch3-2C_MountainVillage.event"
 }
 ALIGN 4
 {
-  #include "Ch3-3C_DesertBastion.event"
+	#include "Ch3-3C_DesertBastion.event"
 }
 ALIGN 4
 {
-  #include "Ch3-4C_TheUltimatum_Deen.event"
+	#include "Ch3-4C_TheUltimatum_Deen.event"
 }
 ALIGN 4
 {
-  #include "Ch3-4C_TheUltimatum_Sonya.event"
+	#include "Ch3-4C_TheUltimatum_Sonya.event"
 }
 ALIGN 4
 {
-  #include "Ch3-5C_AThroneOfSand.event"
+	#include "Ch3-5C_AThroneOfSand.event"
 }
 ALIGN 4
 {
-  #include "Ch3-6C_UnholyBlade.event"
+	#include "Ch3-6C_UnholyBlade.event"
 }
 ALIGN 4
 {
-  #include "Ch3-7C_TempleOfMila.event"
+	#include "Ch3-7C_TempleOfMila.event"
 }
 ALIGN 4
 {
-  #include "SylvanShrine.event"
+	#include "SylvanShrine.event"
 }
 ALIGN 4
 {
-  #include "DragonShrine.event"
+	#include "DragonShrine.event"
 }

@@ -24,7 +24,7 @@ Ch2_5_CharacterBasedEvents:
 
 Ch2_5_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(5,12)
+		Seize(5,12)
 	#endif
 	Chest(Persephone, 15, 12) //skill statbooster
 	LOCA
@@ -49,18 +49,18 @@ Ch2_5_Ballista3:
 	ALIGN 4
 
 PlayerUnits:
-	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1,Ally,True) [5,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(1,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(1,Ally,True) [5,10] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(1,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Valbar Knight 0x00 Level(1,Ally,True) [3,10] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe,Vulnerary] NoAI
 	UNIT Leon Archer 0x00 Level(4,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
-	UNIT Kamui Mercenary 0x00 Level(3,Ally,True) [4,8] 0x00 0x00 0x0 0x00 [BaseSword] NoAI 
+	UNIT Kamui Mercenary 0x00 Level(3,Ally,True) [4,8] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
 	UNIT
-	
+
 EnemyUnits:
-	UNIT CantorBoss_Celica5 Cantor CantorBoss_Celica5 Level(1,Enemy,True) [13,5] DropItem 0x00 0x0 0x00 [Miasma, Conjure, Lifefruit] CantorBossAI 
+	UNIT CantorBoss_Celica5 Cantor CantorBoss_Celica5 Level(1,Enemy,True) [13,5] DropItem 0x00 0x0 0x00 [Miasma, Conjure, Lifefruit] CantorBossAI
 	UNIT 0xAC Revenant CantorBoss_Celica5 Level(11,Enemy,True) [13,14] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
 	UNIT 0xAC Revenant CantorBoss_Celica5 Level(9,Enemy,True) [11,6] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
 	UNIT 0xAC Revenant CantorBoss_Celica5 Level(9,Enemy,True) [11,8] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
@@ -69,9 +69,9 @@ EnemyUnits:
 	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(7,Enemy,True) [11,13] 0x04 0x00 0x0 0x00 [IronLance] MonsterAI
 	UNIT 0xAD Bonewalker_Bow CantorBoss_Celica5 Level(7,Enemy,True) [15,14] 0x04 0x00 0x0 0x00 [IronBow] MonsterAI
 	UNIT
-	
+
 EnemyUnits_Hard:
-	UNIT CantorBoss_Celica5 Cantor CantorBoss_Celica5 Level(1,Enemy,True) [13,5] DropItem 0x00 0x0 0x00 [Miasma, Conjure, Lifefruit] CantorBossAI 
+	UNIT CantorBoss_Celica5 Cantor CantorBoss_Celica5 Level(1,Enemy,True) [13,5] DropItem 0x00 0x0 0x00 [Miasma, Conjure, Lifefruit] CantorBossAI
 	UNIT 0xAC Revenant CantorBoss_Celica5 Level(11,Enemy,True) [13,14] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
 	UNIT 0xAC Revenant CantorBoss_Celica5 Level(10,Enemy,True) [11,6] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
 	UNIT 0xAC Revenant CantorBoss_Celica5 Level(10,Enemy,True) [11,8] 0x04 0x00 0x0 0x00 [RottenClaw] AttackInRangeAI
@@ -81,7 +81,7 @@ EnemyUnits_Hard:
 	UNIT 0xAC Bonewalker CantorBoss_Celica5 Level(7,Enemy,True) [11,13] 0x04 0x00 0x0 0x00 [IronLance] MonsterAI
 	UNIT 0xAD Bonewalker_Bow CantorBoss_Celica5 Level(7,Enemy,True) [15,14] 0x04 0x00 0x0 0x00 [IronBow] MonsterAI
 	UNIT
-	
+
 ZombieGroup:
 	UNIT Terror_Revenant Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x00 0x00 0x1 REDA13R6 [RottenClaw] MonsterAI
 	UNIT Terror_Revenant Revenant CantorBoss_Celica5 Level(8,Enemy,True) [13,5] 0x00 0x00 0x1 REDA12R5 [RottenClaw] MonsterAI
@@ -89,110 +89,110 @@ ZombieGroup:
 	UNIT
 
 Ch2_5_BeginningScene:
-	LOAD3 0x0 PlayerUnits 
+	LOAD_DEPLOYED 0x0 PlayerUnits
 	ENUN
-    CAMERA_CENTERED Celica
-	FADU 5
-	MUSC SongID_Env_Water
+	CAMERA_CENTERED Celica
+	FADEOUT 5
+	MUSIC SongID_Env_Water
 	STAL 20
-	
+
 	SetBackground(0x41) //nightboat
-	CHECK_ALIVE Valbar
+	CHECK_ISALIVE Valbar
 	BEQ 0x100 0xC 0x0
-		CHECK_ALIVE Leon
+		CHECK_ISALIVE Leon
 		BEQ 0x100 0xC 0x0
 			TEXTMODE 1
-            TEXTSHOW Ch2_5_OpeningText
-            TEXTEND
-            TEXTCLEAR
+			TEXTSHOW Ch2_5_OpeningText
+			TEXTEND
+			TEXTCLEAR
 			GOTO 0x101
 	LABEL 0x100
 	TEXTMODE 1
-    TEXTSHOW Ch2_5_OpeningText_NoValbar
-    TEXTEND
-    TEXTCLEAR
-	
+	TEXTSHOW Ch2_5_OpeningText_NoValbar
+	TEXTEND
+	TEXTCLEAR
+
 	LABEL 0x101
-    FADI 5
-    CLEAN
-    STAL 5
-    FADU 5
-	MUSC SongID_FromTheDarkness
+	FADEIN 5
+	CLEAN
+	STAL 5
+	FADEOUT 5
+	MUSIC SongID_FromTheDarkness
 	CAMERA_CENTERED [12,0]
 	EARTHQUAKE_START 0x100
 	STAL 30
-	FADI 16
+	FADEIN 16
 	STAL 30
 	EARTHQUAKE_END
 	TILECHANGE 0x0 // Boat
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x205 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x205
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	FADU 16
+	CHECK_ISHARD
+	BEQ 0x205 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x205
+	LOAD_S2 0x1
+	ENUN
+	FADEOUT 16
 	STAL 20
 	CAMERA_CENTERED CantorBoss_Celica5
 	STAL 20
 	FlashCursor(CantorBoss_Celica5, 60)
-	
+
 	CharacterConditionalDialog(Boey, Ch2_5_OpeningText_2, Ch2_5_OpeningText_2_NoBoey)
-	
+
 	NoFade
 	GotoPrepScreen
-	ENDA
-	
+	END
+
 CastingSummon:
 	MapText(Ch2_5_SummonText)
 	NoFade
-	ENDA
-	
+	END
+
 LoadSummons: //every other turn, shamelessly stolen from VBA for now lol
-	CHECK_EVENTID 0x2
+	CHECK_FLAG 0x2
 	BNE 0x0 0xC 0x0 //stop if boss killed
-	CHECK_TURNS //store current turn to slot c
+	CHECK_TURNNUMBER //store current turn to slot c
 	//Now get remainder mod 2
 	SMOV r1 0x2
 	SDIV slotsParam(r2, rC, r1) //r2 = rC/2
 	SMUL slotsParam(r1, r2)     //r1 = r2*2
 	SSUB slotsParam(r1, rC, r1) //r1 -= rC, r1 = remainder
 	BNE 0x0 r1 0
-        CAMERA_CENTERED CantorBoss_Celica5
-        STAL 20
-        FlashCursor(CantorBoss_Celica5, 60)
-        RESUMM CantorBoss_Celica5
-        STAL 5
-        LOAD1 0 ZombieGroup
-        ENUN
-        STAL 20
-        SetSummonerID(Terror_Revenant, 0x81)
-        
-        CheckCurrentHP(CantorBoss_Celica5)
-        SMOV r1 0x1
-        BGE 0x0 r1 rC
-        SSUB slotsParam(r1, rC, r1)
-        SET_HP CantorBoss_Celica5
-        STAL 5
+		CAMERA_CENTERED CantorBoss_Celica5
+		STAL 20
+		FlashCursor(CantorBoss_Celica5, 60)
+		SUMMONUNIT CantorBoss_Celica5
+		STAL 5
+		LOAD 0 ZombieGroup
+		ENUN
+		STAL 20
+		SetSummonerID(Terror_Revenant, 0x81)
+
+		CheckCurrentHP(CantorBoss_Celica5)
+		SMOV r1 0x1
+		BGE 0x0 r1 rC
+		SSUB slotsParam(r1, rC, r1)
+		SET_HP CantorBoss_Celica5
+		STAL 5
 	LABEL 0x0
 	NoFade
-	ENDA
+	END
 
 Ch2_5_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-    FADI 5
-    STAL 5
-	CHECK_ALIVE Boey
+	FADEIN 5
+	STAL 5
+	CHECK_ISALIVE Boey
 	BEQ 2 0xC 0x0
-		MUSC SongID_ShadowOfVictory
+		MUSIC SongID_ShadowOfVictory
 		SetBackground(0x41) //nightboat
 		BackgroundText(Ch2_5_PostBattle)
-        FADI 2
+		FADEIN 2
 	LABEL 2
-	MNCH 0x0D //go to world map
-	ENDA
+	GOTO_CHAPTER 0x0D //go to world map
+	END
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

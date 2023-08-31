@@ -18,62 +18,62 @@ Dummy_ThisChapter:
 	POIN Dummy_BeginningScene Dummy_EndingScene
 
 Dummy_TurnBasedEvents:
-    TurnEventPlayer(0x0,LoadFirstWave,4)
-    TurnEventPlayer(0x0,LoadSecondWave,6)
-    TurnEventPlayer(0x0,LoadThirdWave,8)
-    TurnEventPlayer(0x0,LoadHumans,10)
+	TurnEventPlayer(0x0,LoadFirstWave,4)
+	TurnEventPlayer(0x0,LoadSecondWave,6)
+	TurnEventPlayer(0x0,LoadThirdWave,8)
+	TurnEventPlayer(0x0,LoadHumans,10)
 	TURN
-    
+
 LoadFirstWave:
-    CHECK_HARD
-    BEQ 0x46 rC r0
-    CAMERA_CENTERED [7,0]
-    STAL 20
-    LoadReinforcements(WaveFirst)
-    LABEL 0x46
-    NoFade
-    ENDA
-    
-LoadSecondWave:
-    CAMERA_CENTERED [15,2]
-    STAL 20
-    LoadReinforcements(WaveSecond)
-    NoFade
-    ENDA
-    
-LoadThirdWave:
-    CAMERA_CENTERED [0,10]
-    STAL 20
-    EVBIT_T 0x9
-    LoadReinforcements(WaveThird)
-    EVBIT_F 0x9
-    STAL 20
-    CAMERA_CENTERED Boss_Monster
-    STAL 20
-    SOUN 0x37B //necrodragon roar
-    FlashCursor(Boss_Monster, 60)
-    SVAL 0x1 0x0
-    CHAI Boss_Monster
+	CHECK_ISHARD
+	BEQ 0x46 rC r0
+	CAMERA_CENTERED [7,0]
 	STAL 20
-    NoFade
-    ENDA
-    
+	LoadReinforcements(WaveFirst)
+	LABEL 0x46
+	NoFade
+	END
+
+LoadSecondWave:
+	CAMERA_CENTERED [15,2]
+	STAL 20
+	LoadReinforcements(WaveSecond)
+	NoFade
+	END
+
+LoadThirdWave:
+	CAMERA_CENTERED [0,10]
+	STAL 20
+	EVBIT_T 0x9
+	LoadReinforcements(WaveThird)
+	EVBIT_F 0x9
+	STAL 20
+	CAMERA_CENTERED Boss_Monster
+	STAL 20
+	SOUND 0x37B //necrodragon roar
+	FlashCursor(Boss_Monster, 60)
+	SVAL 0x1 0x0
+	SET_AI Boss_Monster
+	STAL 20
+	NoFade
+	END
+
 LoadHumans:
-    CHECK_HARD
-    BEQ 0x47 rC r0
-    CAMERA_CENTERED [27,0]
-    STAL 20
-    LoadReinforcements(HumanEnemies)
-    LABEL 0x47
-    NoFade
-    ENDA
+	CHECK_ISHARD
+	BEQ 0x47 rC r0
+	CAMERA_CENTERED [27,0]
+	STAL 20
+	LoadReinforcements(HumanEnemies)
+	LABEL 0x47
+	NoFade
+	END
 
 Dummy_CharacterBasedEvents:
 	CHAR
 
 Dummy_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(4,5)
+		Seize(4,5)
 	#endif
 	LOCA
 
@@ -136,12 +136,12 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [27,0] 0x00 0x00 0x1 REDA23R11 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [27,0] 0x00 0x00 0x1 REDA23R11 [BaseSword, Vulnerary] NoAI
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [26,0] 0x00 0x00 0x1 REDA24R10 [BaseLance, Vulnerary] NoAI
 	UNIT
-    
+
 CutsceneUnits_End:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [23,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [23,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [24,10] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT
 
@@ -155,7 +155,7 @@ EnemyUnits:
 	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [22,1] 0x00 0x00 0x0 0x00 [FireFang] NoAI
 	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [FireFang] NoAI
 	UNIT
-    
+
 EnemyUnits_Hard:
 	UNIT Boss_Monster Necrodragon	Boss_Monster Level(9, Enemy, True) [5,4]	DropItem 0x00 0x0 0x00 [HellFang, 0x9F] AttackInRangeAI
 	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [1,14] 0x00 0x00 0x0 0x00 [HellFang] NoAI
@@ -166,7 +166,7 @@ EnemyUnits_Hard:
 	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [22,1] 0x00 0x00 0x0 0x00 [HellFang] NoAI
 	UNIT 0xBD Necrodragon Boss_Monster Level(6, Enemy, True) [17,9] 0x00 0x00 0x0 0x00 [FireFang] NoAI
 	UNIT
-    
+
 SkirmishEnemies:
 	UNIT Boss_Monster Necrodragon	Boss_Monster Level(9, Enemy, True) [5,4]	DropItem 0x00 0x0 0x00 [HellFang, 0xB9] AttackInRangeAI
 	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [1,14] RandomizePosition 0x00 0x0 0x00 [FireFang] NoAI
@@ -177,115 +177,115 @@ SkirmishEnemies:
 	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [22,1] RandomizePosition 0x00 0x0 0x00 [FireFang] NoAI
 	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [17,9] RandomizePosition 0x00 0x0 0x00 [FireFang] NoAI
 	UNIT
-    
+
 WaveFirst:
-    UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [7,0] 0x00 0x00 0x1 REDA5R1 [FireFang] NoAI
-    UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [7,0] 0x00 0x00 0x1 REDA7R2 [FireFang] NoAI
-    UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [7,0] 0x00 0x00 0x1 REDA9R1 [FireFang] NoAI
-    UNIT    
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [7,0] 0x00 0x00 0x1 REDA5R1 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [7,0] 0x00 0x00 0x1 REDA7R2 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [7,0] 0x00 0x00 0x1 REDA9R1 [FireFang] NoAI
+	UNIT
 WaveSecond:
-    UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [15,2] 0x00 0x00 0x1 REDA14R2 [FireFang] NoAI
-    UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [15,2] 0x00 0x00 0x1 REDA15R3 [FireFang] NoAI
-    UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [15,2] 0x00 0x00 0x1 REDA16R2 [FireFang] NoAI
-    UNIT    
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [15,2] 0x00 0x00 0x1 REDA14R2 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [15,2] 0x00 0x00 0x1 REDA15R3 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [15,2] 0x00 0x00 0x1 REDA16R2 [FireFang] NoAI
+	UNIT
 WaveThird:
-    UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [0,10] 0x00 0x00 0x1 REDA4R11 [FireFang] NoAI
-    UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [0,10] 0x00 0x00 0x1 REDA3R13 [FireFang] NoAI
-    UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [0,10] 0x00 0x00 0x1 REDA1R14 [FireFang] NoAI
-    UNIT
-    
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [0,10] 0x00 0x00 0x1 REDA4R11 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [0,10] 0x00 0x00 0x1 REDA3R13 [FireFang] NoAI
+	UNIT 0xBD Necrodragon Boss_Monster Level(4, Enemy, True) [0,10] 0x00 0x00 0x1 REDA1R14 [FireFang] NoAI
+	UNIT
+
 HumanEnemies:
-    UNIT Bandit_Strong Berserker 0x0 Level(4, Enemy, True) [27,0] 0x00 0x00 0x1 REDA27R0 [KillerAxe,IronShield] [0x0,0x0,0xC,0x0]
-    UNIT Bandit_Axe Berserker Bandit_Strong Level(2, Enemy, True) [27,0] 0x00 0x00 0x1 REDA26R0 [IronAxe] [0x0,0x0,0xC,0x0]
-    UNIT Bandit_Axe Berserker Bandit_Strong Level(2, Enemy, True) [27,0] 0x00 0x00 0x1 REDA28R0 [IronAxe] [0x0,0x0,0xC,0x0]
-    UNIT Bandit_Sword Rogue Bandit_Strong Level(3, Enemy, True) [27,0] DropItem 0x00 0x1 REDA27R1 [Shadowblade] [0x0,0x0,0xC,0x0]
-    UNIT
+	UNIT Bandit_Strong Berserker 0x0 Level(4, Enemy, True) [27,0] 0x00 0x00 0x1 REDA27R0 [KillerAxe,IronShield] [0x0,0x0,0xC,0x0]
+	UNIT Bandit_Axe Berserker Bandit_Strong Level(2, Enemy, True) [27,0] 0x00 0x00 0x1 REDA26R0 [IronAxe] [0x0,0x0,0xC,0x0]
+	UNIT Bandit_Axe Berserker Bandit_Strong Level(2, Enemy, True) [27,0] 0x00 0x00 0x1 REDA28R0 [IronAxe] [0x0,0x0,0xC,0x0]
+	UNIT Bandit_Sword Rogue Bandit_Strong Level(3, Enemy, True) [27,0] DropItem 0x00 0x1 REDA27R1 [Shadowblade] [0x0,0x0,0xC,0x0]
+	UNIT
 
 Dummy_BeginningScene:
-    WEA1 Weather_None
-    MUSCSLOW SongID_Env_Lava
+	WEATHER Weather_None
+	MUSCSLOW SongID_Env_Lava
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x4A06 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x4A06
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-    CHECK_EVENTID gChapter4A6Completed
-    BNE 0x202 0xC 0x0
-        TILECHANGE 0x0
-    LABEL 0x202
-    FADU 2
-    STAL 5
-    WEA1 Weather_Lava
-    EVBIT_T 0x9
-    LOAD2 0x0 CutsceneUnits
-    ENUN
-    EVBIT_F 0x9
-    STAL 20
-    CameraCursor(Boss_Monster)
-    STAL 20
-    CameraCursor(Alm)
-    Text(Ch4A_6_OpeningText)
-	FADI 2
-    CLEA 0x0
-	LOAD3 0x0 PlayerPlacement 
+	CHECK_ISHARD
+	BEQ 0x4A06 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x4A06
+	LOAD_S2 0x1
+	ENUN
+	CHECK_FLAG gChapter4A6Completed
+	BNE 0x202 0xC 0x0
+		TILECHANGE 0x0
+	LABEL 0x202
+	FADEOUT 2
+	STAL 5
+	WEATHER Weather_Lava
+	EVBIT_T 0x9
+	LOAD_CUTSCENE CutsceneUnits
+	ENUN
+	EVBIT_F 0x9
+	STAL 20
+	CameraCursor(Boss_Monster)
+	STAL 20
+	CameraCursor(Alm)
+	Text(Ch4A_6_OpeningText)
+	FADEIN 2
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Dummy_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4A6Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter4A6Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-    WEA1 Weather_None
-	FADI 2
-    STAL 5
-    CLEE 0x0
-    CLEA 0x0
-    LOAD2 0x0 CutsceneUnits_End
-    ENUN
-    CAMERA_CENTERED [8, 19]
-    MUSCSLOW SongID_Env_Lava
-    FADU 5
-    WEA1 Weather_Lava
-    STAL 15
-    EVBIT_T 0x9
-    MOVE 0x64 Alm [11,18]
-    MOVE 0x64 Clair [11,19]
-    ENUN
-    EVBIT_F 0x9
-    CameraCursor(Alm)
-    EVBIT_MODIFY 0x4
-    MapText(Ch4A_6_EndingText_Bad)
-	CHECK_EVENTID gChapter4C6Completed
+	WEATHER Weather_None
+	FADEIN 2
+	STAL 5
+	REMOVEALL_RED
+	REMOVEALL_BLUE
+	LOAD_CUTSCENE CutsceneUnits_End
+	ENUN
+	CAMERA_CENTERED [8, 19]
+	MUSCSLOW SongID_Env_Lava
+	FADEOUT 5
+	WEATHER Weather_Lava
+	STAL 15
+	EVBIT_T 0x9
+	MOVE 0x64 Alm [11,18]
+	MOVE 0x64 Clair [11,19]
+	ENUN
+	EVBIT_F 0x9
+	CameraCursor(Alm)
+	CONFIG_SKIP 0x4
+	MapText(Ch4A_6_EndingText_Bad)
+	CHECK_FLAG gChapter4C6Completed
 	BNE 0x102 0xC 0x0
-    STAL 20
-	CHECK_EVENTID gLostWoodsCompleted
+	STAL 20
+	CHECK_FLAG gLostWoodsCompleted
 	BNE 0x104 0xC 0x0
-        MapText(Ch4A_6_EndingText_Worst)
-        EVBIT_MODIFY 0x0
-        GOTO 0x103
-        LABEL 0x104
-        MapText(Ch4A_6_EndingText_Bad_2)
-        EVBIT_MODIFY 0x0
-        GOTO 0x103
-    LABEL 0x102
-        EVBIT_MODIFY 0x0
-        CALL DragonsMaw_Earthquake
-    LABEL 0x103
-    MUSCMID SongID_Silence
-    FADI 2
-    CLEA 0x0
-    STAL 5
-    MUSCSLOW SongID_PrinceOfDarkness
-    SetBackground(0x2D,2)
-    BROWNBOXTEXT Loc_DumaTower [8,8]
+		MapText(Ch4A_6_EndingText_Worst)
+		CONFIG_SKIP 0x0
+		GOTO 0x103
+		LABEL 0x104
+		MapText(Ch4A_6_EndingText_Bad_2)
+		CONFIG_SKIP 0x0
+		GOTO 0x103
+	LABEL 0x102
+		CONFIG_SKIP 0x0
+		CALL DragonsMaw_Earthquake
+	LABEL 0x103
+	MUSCMID SongID_Silence
+	FADEIN 2
+	REMOVEALL_BLUE
+	STAL 5
+	MUSCSLOW SongID_PrinceOfDarkness
+	SetBackground(Shrine_lighter,2)
+	BROWNBOXTEXT Loc_DumaTower [8,8]
 	STAL 30
 	BackgroundText(Ch4A_6_EndingText_3)
-    MUSCMID SongID_Silence
-    FADI 2
-	MNCH 0x2A
-	ENDA
+	MUSCMID SongID_Silence
+	FADEIN 2
+	GOTO_CHAPTER 0x2A
+	END

@@ -18,98 +18,98 @@ Ch5F2_ThisChapter:
 	POIN Ch5F2_BeginningScene Ch5F2_EndingScene
 
 Ch5F2_TurnBasedEvents:
-    //Healtiles move.
-    //The C shape drops on turn 3.
-    OpeningTurnEvent(BlockReinforcements)
-    TurnEventPlayer(0x0,LoadHallReinforcements,3)
-    InfiniteTurnEventPlayer(0x8, Room1Check, 1)
-    InfiniteTurnEventPlayer(0x9, Room2Check, 2)
-    InfiniteTurnEventPlayer(0xA, Room3Check, 3)
-    TurnEventPlayer(0xB, LoadStairsReinforcements, 4, 20)
-    TurnEventPlayer(0xC, LoadHallReinforcements, 5, 20)
+	//Healtiles move.
+	//The C shape drops on turn 3.
+	OpeningTurnEvent(BlockReinforcements)
+	TurnEventPlayer(0x0,LoadHallReinforcements,3)
+	InfiniteTurnEventPlayer(0x8, Room1Check, 1)
+	InfiniteTurnEventPlayer(0x9, Room2Check, 2)
+	InfiniteTurnEventPlayer(0xA, Room3Check, 3)
+	TurnEventPlayer(0xB, LoadStairsReinforcements, 4, 20)
+	TurnEventPlayer(0xC, LoadHallReinforcements, 5, 20)
 	TURN
-    
+
 BlockReinforcements:
-    ENUT 0xB
-    ENUT 0xC
-    NoFade
-    ENDA
-    
+	FLAG_T 0xB
+	FLAG_T 0xC
+	NoFade
+	END
+
 LoadStairsReinforcements:
-    ENUF 0xB
-    ReinforcementEvent(StairsReinforcements)
-    
+	FLAG_F 0xB
+	ReinforcementEvent(StairsReinforcements)
+
 LoadHallReinforcements:
-    ENUF 0xC
-    ReinforcementEvent(HallReinforcements)
+	FLAG_F 0xC
+	ReinforcementEvent(HallReinforcements)
 
 Ch5F2_CharacterBasedEvents:
 	CHAR
 
 Ch5F2_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(9,17)
+		Seize(9,17)
 	#endif
 	Seize(20,15)
 	LOCA
-	
+
 
 Ch5F2_MiscBasedEvents:
 	CauseGameOverIfLordDies
 	MournQuoteAFEVS
-    //AREA 0x8 Room1Check [5,9] [13,18]
-    //AFEV 0x8 Room2Check 0x9 //[5,2] [16,9]
-    //AFEV 0x9 Room3Check 0xA //[17,6] [22,10]
-    //AREA 0xB Room4Check [17,11] [23,18]
+	//AREA 0x8 Room1Check [5,9] [13,18]
+	//AFEV 0x8 Room2Check 0x9 //[5,2] [16,9]
+	//AFEV 0x9 Room3Check 0xA //[17,6] [22,10]
+	//AREA 0xB Room4Check [17,11] [23,18]
 	AFEV
 
 Room1Check:
-    CountEnemiesInRange(5,9,13,18)
-    BEQ 0x400 0xC 0x0
-        ENUF 0x8
-        GOTO 0x401
-    LABEL 0x400
-        CAMERA_CENTERED [8,8]
-        STAL 20
-        SOUN 0xB1
-        TILECHANGE 0x02
-        STAL 20
-    LABEL 0x401
-        NoFade
-        ENDA
-        
+	CountEnemiesInRange(5,9,13,18)
+	BEQ 0x400 0xC 0x0
+		FLAG_F 0x8
+		GOTO 0x401
+	LABEL 0x400
+		CAMERA_CENTERED [8,8]
+		STAL 20
+		SOUND 0xB1
+		TILECHANGE 0x02
+		STAL 20
+	LABEL 0x401
+		NoFade
+		END
+
 Room2Check:
-    CountEnemiesInRange(5,2,16,9)
-    BEQ 0x500 0xC 0x0
-        ENUF 0x9
-        GOTO 0x501
-    LABEL 0x500
-        CAMERA_CENTERED [17,6]
-        STAL 20
-        SOUN 0xB1
-        TILECHANGE 0x03
-        STAL 20
-        ENUF 0xB
-    LABEL 0x501
-        NoFade
-        ENDA
+	CountEnemiesInRange(5,2,16,9)
+	BEQ 0x500 0xC 0x0
+		FLAG_F 0x9
+		GOTO 0x501
+	LABEL 0x500
+		CAMERA_CENTERED [17,6]
+		STAL 20
+		SOUND 0xB1
+		TILECHANGE 0x03
+		STAL 20
+		FLAG_F 0xB
+	LABEL 0x501
+		NoFade
+		END
 
 Room3Check:
-    CountEnemiesInRange(17,6,22,10)
-    BEQ 0x600 0xC 0x0
-        ENUF 0xA
-        GOTO 0x601
-    LABEL 0x600
-        CAMERA_CENTERED [20,11]
-        STAL 20
-        SOUN 0xB1
-        TILECHANGE 0x04
-        STAL 20
-        AddTrap(SigilTrapID,20,15)
-        ENUF 0xC
-    LABEL 0x601
-        NoFade
-        ENDA
+	CountEnemiesInRange(17,6,22,10)
+	BEQ 0x600 0xC 0x0
+		FLAG_F 0xA
+		GOTO 0x601
+	LABEL 0x600
+		CAMERA_CENTERED [20,11]
+		STAL 20
+		SOUND 0xB1
+		TILECHANGE 0x04
+		STAL 20
+		AddTrap(SigilTrapID,20,15)
+		FLAG_F 0xC
+	LABEL 0x601
+		NoFade
+		END
 
 Ch5F2_Dunno:
 	END_MAIN
@@ -118,7 +118,7 @@ Ch5F2_Tutorial:
 	END_MAIN
 
 Ch5F2_Ballista1:
-    BLST [2,16] 0x35
+	BLST [2,16] 0x35
 	BLST
 	ALIGN 4
 
@@ -135,30 +135,30 @@ PlayerPlacement:
 	UNIT
 
 CutsceneUnits_Alm:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,24] 0x00 0x00 0x1 REDA9R22 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [9,24] 0x00 0x00 0x1 REDA8R23 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,24] 0x00 0x00 0x1 REDA9R22 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [9,24] 0x00 0x00 0x1 REDA8R23 [BaseLance, Vulnerary] NoAI
 	UNIT Clair PegasusKnight 0x00 Level(1, Ally, 1) [9,24] 0x00 0x00 0x1 REDA10R23 [BaseLance] NoAI
 	UNIT
-    
+
 CutsceneUnits_Celica:
-    UNIT Celica CelicaPrincess 0x00 Level(1,Ally,True) [8,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-    UNIT
+	UNIT Celica CelicaPrincess 0x00 Level(1,Ally,True) [8,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 
 CutsceneUnits_Jedah:
-    UNIT JedahCutsceneUnit Necromancer JedahCutsceneUnit Level(15, Enemy, False) [10,13] 0x00 0x00 0x0 0x0 [Thanatos] AttackInRangeAI
-    UNIT
-    
+	UNIT JedahCutsceneUnit Necromancer JedahCutsceneUnit Level(15, Enemy, False) [10,13] 0x00 0x00 0x0 0x0 [Thanatos] AttackInRangeAI
+	UNIT
+
 CutsceneUnits_End_Alm:
-    UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [19,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-    UNIT 0xC1 FallenPeer 0x00 Level(1, NPC, 1) [19,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-    UNIT
-    
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [19,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT 0xC1 FallenPeer 0x00 Level(1, NPC, 1) [19,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
+
 CutsceneUnits_End_Jedah:
-    UNIT JedahCutsceneUnit Necromancer JedahCutsceneUnit Level(15, Enemy, False) [23,15] 0x00 0x00 0x1 JedahREDA [Thanatos] AttackInRangeAI
-    UNIT
+	UNIT JedahCutsceneUnit Necromancer JedahCutsceneUnit Level(15, Enemy, False) [23,15] 0x00 0x00 0x1 JedahREDA [Thanatos] AttackInRangeAI
+	UNIT
 
 JedahREDA:
-    REDA [21,15] NoFlags Walk_Slow 0x00 0x14
+	REDA [21,15] NoFlags Walk_Slow 0x00 0x14
 
 EnemyUnits:
 	UNIT Boss_Monster Gorgon	Boss_Monster Level(9, Enemy, True) [20,15]	DropItem 0x00 0x0 0x00 [EvilEye,AngelRing] AttackInRangeAI
@@ -181,7 +181,7 @@ EnemyUnits:
 	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(13, Enemy, True) [18,14] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
 	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(13, Enemy, True) [22,14] 0x00 0x00 0x0 0x00 [FireFang] MonsterAI
 	UNIT
-	
+
 EnemyUnits_Hard:
 	UNIT Boss_Monster Gorgon	Boss_Monster Level(9, Enemy, True) [20,15]	DropItem 0x00 0x0 0x00 [EvilEye,Shadowshot,AngelRing] AttackInRangeAI
 	//9 lvl 18 wights
@@ -203,345 +203,345 @@ EnemyUnits_Hard:
 	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(10, Enemy, True) [18,14] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT Terror_Necrodragon Necrodragon Boss_Monster Level(10, Enemy, True) [22,14] 0x00 0x00 0x0 0x00 [HellFang] MonsterAI
 	UNIT
-	
+
 StairsReinforcements:
 	UNIT DumaFaith_Sorcerer Arcanist Boss_Monster Level(5,Enemy,True) [2,5] 0x00 0x00 0x1 REDA2R5 [Mire] NoAI
 	UNIT
-    
+
 HallReinforcements:
 	UNIT DumaFaith_Sorcerer Arcanist Boss_Monster Level(5,Enemy,True) [8,24] 0x00 0x00 0x1 REDA8R23 [Mire] NoAI
 	UNIT DumaFaith_Sorcerer Arcanist Boss_Monster Level(5,Enemy,True) [10,24] 0x00 0x00 0x1 REDA10R23 [Mire] NoAI
 	UNIT
 
 Ch5F2_BeginningScene:
-    
-	MUSC SongID_Env_LegendaryWeapon
-	SetBackground(0x2A,5)
-    BackgroundText(Ch5_2_MilaAltar_1)
-    MUSCMID SongID_Silence
-    FADI 2
-    
-    EVBIT_MODIFY 0x1
-    SetBackground(ThroughTheGrateCG,2) //TODO: thru the grate
-    STAL 90
-    CgText(Ch5_2_MilaAltar_CG_1)
-    CgText(Ch5_2_MilaAltar_CG_2)
-    FADI 5
-    EVBIT_MODIFY 0x0
-    
-    MUSC SongID_DistantPromise
-    SetBackground(0x17,5)
-    BackgroundText(Ch5_2_MilaAltar_2)
-    MUSCMID SongID_Silence
-    FADI 2
-    STAL 20
-    MUSCSLOW SongID_Truth
-    SetBackground(0x2A,2)
-	CHECK_ALIVE Gray
+
+	MUSIC SongID_Env_LegendaryWeapon
+	SetBackground(Fort_2,5)
+	BackgroundText(Ch5_2_MilaAltar_1)
+	MUSCMID SongID_Silence
+	FADEIN 2
+
+	CONFIG_SKIP 0x1
+	SetBackground(ThroughTheGrateCG,2) //TODO: thru the grate
+	STAL 90
+	CgText(Ch5_2_MilaAltar_CG_1)
+	CgText(Ch5_2_MilaAltar_CG_2)
+	FADEIN 5
+	CONFIG_SKIP 0x0
+
+	MUSIC SongID_DistantPromise
+	SetBackground(Prison_Cell,5)
+	BackgroundText(Ch5_2_MilaAltar_2)
+	MUSCMID SongID_Silence
+	FADEIN 2
+	STAL 20
+	MUSCSLOW SongID_Truth
+	SetBackground(Fort_2,2)
+	CHECK_ISALIVE Gray
 	BEQ 0x100 0xC 0x0
-    CHECK_ALIVE Tobin
+	CHECK_ISALIVE Tobin
 	BEQ 0x100 0xC 0x0
-    CHECK_ALIVE Clair
-    BEQ 0x101 0xC 0x0
-        //all here
+	CHECK_ISALIVE Clair
+	BEQ 0x101 0xC 0x0
+		//all here
 		SVAL 0x2 Ch5_2_MilaAltar_3
 		GOTO 0x103
-    LABEL 0x101
-        //no clair
+	LABEL 0x101
+		//no clair
 		SVAL 0x2 Ch5_2_MilaAltar_3_NoClair
 		GOTO 0x103
 	LABEL 0x100
-    //no ram kids
-    CHECK_ALIVE Clair
-    BEQ 0x102 0xC 0x0
-        //clair here
+	//no ram kids
+	CHECK_ISALIVE Clair
+	BEQ 0x102 0xC 0x0
+		//clair here
 		SVAL 0x2 Ch5_2_MilaAltar_3_NoGray
-        GOTO 0x103
-    LABEL 0x102
-        //neither here
-        SVAL 0x2 Ch5_2_MilaAltar_3_NoGrayClair
+		GOTO 0x103
+	LABEL 0x102
+		//neither here
+		SVAL 0x2 Ch5_2_MilaAltar_3_NoGrayClair
 	LABEL 0x103
-    TEXTMODE 1
-    TEXTSHOW 0xFFFF
-    TEXTEND
-    MUSCMID SongID_Unity
-    TEXTCONT
-    TEXTEND
-    FAWI 16
-    SOUN 0x2E9
-    STAL 5
-    FAWU 5
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
+	TEXTMODE 1
+	TEXTSHOW 0xFFFF
+	TEXTEND
+	MUSCMID SongID_Unity
+	TEXTCONT
+	TEXTEND
+	FADEIN_WHITE 16
+	SOUND 0x2E9
+	STAL 5
+	FADEOUT_WHITE 5
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
 	MUSCMID SongID_Silence
-    FADI 2
-    STAL 5
-    MUSC SongID_Env_LegendaryWeapon
-    SetBackground(0x17, 2)
-    BackgroundText(Ch5_2_MilaAltar_4)
-    MUSCMID SongID_Silence
-    FADI 2
-    STAL 5
-    //LOMA to 0x28 at [9,5] and do tilechange 0x0 before fade-in
-    SVAL 0xB Coords(9,5)
-    LOMA 0x28
-    TILECHANGE 0x0
-    LOAD2 0x0 CutsceneUnits_Celica
-    ENUN
-    LOAD1 0x1 CutsceneUnits_Jedah
-    ENUN
-    MUSC SongID_PinnacleOfFalseBelief
-    FADU 2
-	
-    //Walk Celica and Jedah in together
-    MOVE 0x08 Celica [8,5]
+	FADEIN 2
+	STAL 5
+	MUSIC SongID_Env_LegendaryWeapon
+	SetBackground(Prison_Cell, 2)
+	BackgroundText(Ch5_2_MilaAltar_4)
+	MUSCMID SongID_Silence
+	FADEIN 2
+	STAL 5
+	//LOADMAP to 0x28 at [9,5] and do tilechange 0x0 before fade-in
+	SVAL 0xB Coords(9,5)
+	LOADMAP 0x28
+	TILECHANGE 0x0
+	LOAD_CUTSCENE CutsceneUnits_Celica
+	ENUN
+	LOAD 0x1 CutsceneUnits_Jedah
+	ENUN
+	MUSIC SongID_PinnacleOfFalseBelief
+	FADEOUT 2
+
+	//Walk Celica and Jedah in together
+	MOVE 0x08 Celica [8,5]
 	MOVE 0x08 JedahCutsceneUnit [10,5]
 	ENUN
-    STAL 20
-    CameraCursor(JedahCutsceneUnit)
-    SetBackground(0x2D)
-    TEXTMODE 1
-    TEXTSHOW Ch5_2_MilaAltar_5
-    TEXTEND
-    MUSCMID SongID_Silence
-    FAWI 16
-    SOUN 0x101
-    STAL 5
-    FAWU 2
-    TEXTCONT
-    TEXTEND
-    MUSC SongID_ImportantBattle
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    MUSCMID SongID_Silence
-    FADI 2
-    CLEAN
-    REMU Celica
-    CLEA 0x0
-    CLEE 0x0
-    STAL 20
-    
-    //LOMA back to 0x2E at [9,24]. Fade in. Load cutscene allies
-    SVAL 0xB Coords(9,24)
-    LOMA 0x2E
-    MUSC SongID_Env_LegendaryWeapon
-    FADU 2
-    LOAD2 0x0 CutsceneUnits_Alm
-    ENUN
-    STAL 20
-    CameraCursor(Alm)
-    FADI 5
-    SetBackground(0x2A,5)
-    
-    //tbh just use SVAL to display the conditional text
-    CHECK_ALIVE Gray
+	STAL 20
+	CameraCursor(JedahCutsceneUnit)
+	SetBackground(Shrine_lighter)
+	TEXTMODE 1
+	TEXTSHOW Ch5_2_MilaAltar_5
+	TEXTEND
+	MUSCMID SongID_Silence
+	FADEIN_WHITE 16
+	SOUND 0x101
+	STAL 5
+	FADEOUT_WHITE 2
+	TEXTCONT
+	TEXTEND
+	MUSIC SongID_ImportantBattle
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	MUSCMID SongID_Silence
+	FADEIN 2
+	CLEAN
+	HIDEUNIT Celica
+	REMOVEALL_BLUE
+	REMOVEALL_RED
+	STAL 20
+
+	//LOADMAP back to 0x2E at [9,24]. Fade in. Load cutscene allies
+	SVAL 0xB Coords(9,24)
+	LOADMAP 0x2E
+	MUSIC SongID_Env_LegendaryWeapon
+	FADEOUT 2
+	LOAD_CUTSCENE CutsceneUnits_Alm
+	ENUN
+	STAL 20
+	CameraCursor(Alm)
+	FADEIN 5
+	SetBackground(Fort_2,5)
+
+	//tbh just use SVAL to display the conditional text
+	CHECK_ISALIVE Gray
 	BEQ 0x200 0xC 0x0
-    CHECK_ALIVE Clair
-    BEQ 0x201 0xC 0x0
-        //all here
+	CHECK_ISALIVE Clair
+	BEQ 0x201 0xC 0x0
+		//all here
 		SVAL 0x2 Ch5_2_RoyalVault_1
 		GOTO 0x203
-    LABEL 0x201
-        //no clair
+	LABEL 0x201
+		//no clair
 		SVAL 0x2 Ch5_2_RoyalVault_1_NoClair
 		GOTO 0x203
 	LABEL 0x200
-    //no gray
-    CHECK_ALIVE Clair
-    BEQ 0x202 0xC 0x0
-        //clair here
+	//no gray
+	CHECK_ISALIVE Clair
+	BEQ 0x202 0xC 0x0
+		//clair here
 		SVAL 0x2 Ch5_2_RoyalVault_1_NoGray
-        GOTO 0x203
-    LABEL 0x202
-        //neither here
-        SVAL 0x2 Ch5_2_RoyalVault_1_NoGrayClair
+		GOTO 0x203
+	LABEL 0x202
+		//neither here
+		SVAL 0x2 Ch5_2_RoyalVault_1_NoGrayClair
 	LABEL 0x203
-    
-    TEXTMODE 1
-    TEXTSHOW 0xFFFF
-    TEXTEND
-    FAWI 16
-    SOUN 0x2E9
-    STAL 5
-    FAWU 5
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    MUSCMID SongID_Silence
-	FADI 5
-    TILECHANGE 0x1
-	CLEA 0x0
-	LOAD3 0x0 PlayerPlacement 
+
+	TEXTMODE 1
+	TEXTSHOW 0xFFFF
+	TEXTEND
+	FADEIN_WHITE 16
+	SOUND 0x2E9
+	STAL 5
+	FADEOUT_WHITE 5
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	MUSCMID SongID_Silence
+	FADEIN 5
+	TILECHANGE 0x1
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 PlayerPlacement
 	ENUN
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x5A02 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x5A02
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
+	CHECK_ISHARD
+	BEQ 0x5A02 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x5A02
+	LOAD_S2 0x1
+	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch5F2_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
-    STAL 5
-    CLEA 0x0
-    CLEE 0x0
+	FADEIN 2
+	STAL 5
+	REMOVEALL_BLUE
+	REMOVEALL_RED
 	RemoveTrapAtCoords(20,15)
-    MUSC SongID_Env_LegendaryWeapon
-    SetBackground(0x2C,5)
-    TEXTMODE 1
-    TEXTSHOW Ch5_2_EndingText
-    TEXTEND
-    SOUN 0x2D9 //thud
-    TEXTCONT
-    TEXTEND
-    MUSC SongID_Omen
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    FADI 5
-    CLEAN
-    CAMERA_CENTERED [20,15]
-    
-    LOAD2 0x0 CutsceneUnits_End_Alm
-    ENUN
-    FADU 2
-    STAL 20
-    LOAD1 0x1 CutsceneUnits_End_Jedah
-    ENUN
-    FlashCursor(JedahCutsceneUnit, 60)
-    TEXTMODE 0
-    TEXTSHOW Ch5_2_EndingText_2
-    TEXTEND
-    MUSC SongID_ImportantBattle
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    
-    //MOVE Alm towards Jedah
-    //Stop suddenly
-    MOVE 0x18 Alm [20,14]
-    ENUN
-    //TODO: show the "!" bubble?
-    EARTHQUAKE_START 0x100
-    STAL 60
-    FADI 5
-    EARTHQUAKE_END
-    
-    SetBackground(0x2C,5)
-    TEXTMODE 1
-    TEXTSHOW Ch5_2_EndingText_3
-    TEXTEND
-    TEXTCLEAR
-    CALL $591F40
+	MUSIC SongID_Env_LegendaryWeapon
+	SetBackground(Shrine,5)
+	TEXTMODE 1
+	TEXTSHOW Ch5_2_EndingText
+	TEXTEND
+	SOUND 0x2D9 //thud
+	TEXTCONT
+	TEXTEND
+	MUSIC SongID_Omen
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+	FADEIN 5
+	CLEAN
+	CAMERA_CENTERED [20,15]
+
+	LOAD_CUTSCENE CutsceneUnits_End_Alm
+	ENUN
+	FADEOUT 2
+	STAL 20
+	LOAD 0x1 CutsceneUnits_End_Jedah
+	ENUN
+	FlashCursor(JedahCutsceneUnit, 60)
+	TEXTMODE 0
+	TEXTSHOW Ch5_2_EndingText_2
+	TEXTEND
+	MUSIC SongID_ImportantBattle
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+
+	//MOVE Alm towards Jedah
+	//Stop suddenly
+	MOVE 0x18 Alm [20,14]
+	ENUN
+	//TODO: show the "!" bubble?
+	EARTHQUAKE_START 0x100
+	STAL 60
+	FADEIN 5
+	EARTHQUAKE_END
+
+	SetBackground(Shrine,5)
+	TEXTMODE 1
+	TEXTSHOW Ch5_2_EndingText_3
+	TEXTEND
+	TEXTCLEAR
+	CALL $591F40
 	SMOV 0x3 Falchion
-	GIVEITEMTO Alm
-    FADI 16
-    CLEAN
-    FADU 16
-    
-    //Scripted battle
-    MOVE 0x18 Alm [21,14]
-    ENUN
-    StartBattle
-    SetBattleNumbers(83,16,61,53,35,0)
-    CriticalHit(0,48)
-    EndAttack
-    FIG1 Alm JedahCutsceneUnit Falchion
-    
-    CHECK_ALIVE JedahCutsceneUnit
-    BEQ 0x300 0xC 0x0
-        FlashCursor(JedahCutsceneUnit, 60)
-        Text(Ch5_2_EndingText_4)
-        SVAL 0x2 JedahCutsceneUnit
-        CALL Warp_Out_Effect
-    LABEL 0x300
-    STAL 20
-    MOVE 0x18 Alm [20,14]
-    ENUN
-    MUSCMID SongID_Silence
-    STAL 20
-    FADI 5
-    
-    SetBackground(0x2C,5)
-    TEXTMODE 1
-    TEXTSHOW Ch5_2_EndingText_5
-    TEXTEND
-    MUSC SongID_Unity
-    TEXTCONT
-    TEXTEND
-    FadeOutMusic
-    STAL 20
-    TEXTCLEAR
-    
-    EVBIT_MODIFY 0x1
-    TEXTMODE 1
-    MUSCSLOW SongID_MilaStatue
-    BACKGROUND_CHANGE MilaRevivedCG 0x1 0x4
-    STAL 90
-    CgText(Ch5_2_MilaRevived_CG)
-    STAL 20
-    BACKGROUND_CHANGE 0x2C 0x1 0x4
-    EVBIT_MODIFY 0x0
-    
-    TEXTMODE 1
-    TEXTSHOW Ch5_2_EndingText_6
-    TEXTEND
-    MUSCSLOW SongID_Silence
-    TEXTCONT
-    TEXTEND
-    MUSC SongID_Unity
-    TEXTCONT
-    TEXTEND
-    TEXTCLEAR
-    
+	GIVEITEM Alm
+	FADEIN 16
+	CLEAN
+	FADEOUT 16
+
+	//Scripted battle
+	MOVE 0x18 Alm [21,14]
+	ENUN
+	StartBattle
+	SetBattleNumbers(83,16,61,53,35,0)
+	CriticalHit(0,48)
+	EndAttack
+	FIGHT Alm JedahCutsceneUnit Falchion 0
+
+	CHECK_ISALIVE JedahCutsceneUnit
+	BEQ 0x300 0xC 0x0
+		FlashCursor(JedahCutsceneUnit, 60)
+		Text(Ch5_2_EndingText_4)
+		SVAL 0x2 JedahCutsceneUnit
+		CALL Warp_Out_Effect
+	LABEL 0x300
+	STAL 20
+	MOVE 0x18 Alm [20,14]
+	ENUN
 	MUSCMID SongID_Silence
-	FADI 2
-    
-    //Now unite the two parties
-    ENUT gConvoyMergeEnabled
-    SETVAL 1 0x00000201
-    SHORT $0D40 $0; POIN CombineConvoyPartitionsASMC|1
-    SHORT $0D40 $0; POIN MergeGoldpile|1
-    SHORT $0D40 $0; POIN Act5SetupASMC|1
-    REVEAL Celica
-    REVEAL Mae
-    REVEAL Boey
-    REVEAL Genny
-    REVEAL Saber
-    REVEAL Valbar
-    REVEAL Leon
-    REVEAL Kamui
-    REVEAL Atlas
-    REVEAL Hyas
-    REVEAL Jesse
-    REVEAL Palla
-    REVEAL Catria
-    REVEAL Est
-    CHECK_EVENTID gKliffRecruited
-    BNE 0x1337 0x0 0xC
-        REVEAL Kliff
-    LABEL 0x1337
-    CHECK_EVENTID gFayeRecruited
-    BNE 0x1338 0x0 0xC
-        REVEAL Faye
-    LABEL 0x1338
-    CHECK_EVENTID gFightSonyaChosen
-    BEQ 0x1339 0x0 0xC
-        REVEAL Deen
-        GOTO 0x133A
-    LABEL 0x1339
-        REVEAL Sonya
-    LABEL 0x133A
-    REVEAL Nomah
-    REVEAL Conrad
+	STAL 20
+	FADEIN 5
+
+	SetBackground(Shrine,5)
+	TEXTMODE 1
+	TEXTSHOW Ch5_2_EndingText_5
+	TEXTEND
+	MUSIC SongID_Unity
+	TEXTCONT
+	TEXTEND
+	FadeOutMusic
+	STAL 20
+	TEXTCLEAR
+
+	CONFIG_SKIP 0x1
+	TEXTMODE 1
+	MUSCSLOW SongID_MilaStatue
+	BACKGROUND_CHANGE MilaRevivedCG 1 4
+	STAL 90
+	CgText(Ch5_2_MilaRevived_CG)
+	STAL 20
+	BACKGROUND_CHANGE Shrine 1 4
+	CONFIG_SKIP 0x0
+
+	TEXTMODE 1
+	TEXTSHOW Ch5_2_EndingText_6
+	TEXTEND
+	MUSCSLOW SongID_Silence
+	TEXTCONT
+	TEXTEND
+	MUSIC SongID_Unity
+	TEXTCONT
+	TEXTEND
+	TEXTCLEAR
+
+	MUSCMID SongID_Silence
+	FADEIN 2
+
+	//Now unite the two parties
+	FLAG_T gConvoyMergeEnabled
+	SETVAL 1 0x00000201
+	SHORT $0D40 $0; POIN CombineConvoyPartitionsASMC|1
+	SHORT $0D40 $0; POIN MergeGoldpile|1
+	SHORT $0D40 $0; POIN Act5SetupASMC|1
+	SHOWUNIT Celica
+	SHOWUNIT Mae
+	SHOWUNIT Boey
+	SHOWUNIT Genny
+	SHOWUNIT Saber
+	SHOWUNIT Valbar
+	SHOWUNIT Leon
+	SHOWUNIT Kamui
+	SHOWUNIT Atlas
+	SHOWUNIT Hyas
+	SHOWUNIT Jesse
+	SHOWUNIT Palla
+	SHOWUNIT Catria
+	SHOWUNIT Est
+	CHECK_FLAG gKliffRecruited
+	BNE 0x1337 0x0 0xC
+		SHOWUNIT Kliff
+	LABEL 0x1337
+	CHECK_FLAG gFayeRecruited
+	BNE 0x1338 0x0 0xC
+		SHOWUNIT Faye
+	LABEL 0x1338
+	CHECK_FLAG gFightSonyaChosen
+	BEQ 0x1339 0x0 0xC
+		SHOWUNIT Deen
+		GOTO 0x133A
+	LABEL 0x1339
+		SHOWUNIT Sonya
+	LABEL 0x133A
+	SHOWUNIT Nomah
+	SHOWUNIT Conrad
 	SHORT $0D40 $0; POIN ResetJedahCounterASMC|1
-	
-	MNC2 0x2F
-	ENDA
+
+	GOTO_CHAPTER_NOWM 0x2F
+	END

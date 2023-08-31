@@ -15,159 +15,159 @@ SkirmishBeginEventAssociationQueue:
 	SVAL 0xD 0x0 //clear queue size
 	/*
 	//Commenting these out because ugh tilechanges
-	SVAL 0x1 0x3 //Ram Valley Pass //map ID
+	SVAL 1 0x3 //Ram Valley Pass //map ID
 	SAVETOQUEUE
-	SVAL 0x1 GenericSkirmishLoader|IsPointer //event ptr
+	SVAL 1 GenericSkirmishLoader|IsPointer //event ptr
 	SAVETOQUEUE
-	SVAL 0x1 0x6 //S Zofia 2
+	SVAL 1 0x6 //S Zofia 2
 	SAVETOQUEUE
-	SVAL 0x1 GenericSkirmishLoader|IsPointer
+	SVAL 1 GenericSkirmishLoader|IsPointer
 	SAVETOQUEUE
 	*/
-	SVAL 0x1 0x8 //Novis Cemetery
+	SVAL 1 0x8 //Novis Cemetery
 	SAVETOQUEUE
-	SVAL 0x1 GenericSkirmishLoader|IsPointer
+	SVAL 1 GenericSkirmishLoader|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x11 //Z. Forest 1
+	SVAL 1 0x11 //Z. Forest 1
 	SAVETOQUEUE
-	SVAL 0x1 GenericSkirmishLoader|IsPointer
+	SVAL 1 GenericSkirmishLoader|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x14 //Forest Northside
+	SVAL 1 0x14 //Forest Northside
 	SAVETOQUEUE
-	SVAL 0x1 GenericSkirmishLoader|IsPointer
+	SVAL 1 GenericSkirmishLoader|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x17 //Mtn Graveyard
+	SVAL 1 0x17 //Mtn Graveyard
 	SAVETOQUEUE
-	SVAL 0x1 GenericSkirmishLoader|IsPointer
+	SVAL 1 GenericSkirmishLoader|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x1B //Grieth Citadel
+	SVAL 1 0x1B //Grieth Citadel
 	SAVETOQUEUE
-	SVAL 0x1 GenericSkirmishLoader|IsPointer
+	SVAL 1 GenericSkirmishLoader|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x1E //Mire Boneyard
+	SVAL 1 0x1E //Mire Boneyard
 	SAVETOQUEUE
-	SVAL 0x1 GenericSkirmishLoader|IsPointer
+	SVAL 1 GenericSkirmishLoader|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x23 //Rigel Forest 2
+	SVAL 1 0x23 //Rigel Forest 2
 	SAVETOQUEUE
-	SVAL 0x1 GenericSkirmishLoader|IsPointer
+	SVAL 1 GenericSkirmishLoader|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x26 //Rigel Valley
+	SVAL 1 0x26 //Rigel Valley
 	SAVETOQUEUE
-	SVAL 0x1 GenericSkirmishLoader|IsPointer
+	SVAL 1 GenericSkirmishLoader|IsPointer
 	SAVETOQUEUE
 	CALL 0x9FFC0C //Checks chapter number against this list and calls the event mapped to it.
 	TILECHANGE 0xFFFD //execute all tile change IDs from the event queue.
-	LOAD4 0x1 //load skirmish enemy group with no restrictions.
+	LOAD_SKIRMISH 0x1 //load skirmish enemy group with no restrictions.
 	ENUN
 	CALL 0x591FD8 //Prep screen
-	ENDA
+	END
 
 ALIGN 4
 SkirmishEndEventAssociationQueue:
 	SVAL 0xD 0x0
-	SVAL 0x1 0x8 //Novis Cemetery
+	SVAL 1 0x8 //Novis Cemetery
 	SAVETOQUEUE
-	SVAL 0x1 SkirmishUnloader_9h|IsPointer
+	SVAL 1 SkirmishUnloader_9h|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x11 //Z. Forest 1
+	SVAL 1 0x11 //Z. Forest 1
 	SAVETOQUEUE
-	SVAL 0x1 SkirmishUnloader_12h|IsPointer
+	SVAL 1 SkirmishUnloader_12h|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x14 //Forest Northside
+	SVAL 1 0x14 //Forest Northside
 	SAVETOQUEUE
-	SVAL 0x1 SkirmishUnloader_15h|IsPointer
+	SVAL 1 SkirmishUnloader_15h|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x17 //Mtn Graveyard
+	SVAL 1 0x17 //Mtn Graveyard
 	SAVETOQUEUE
-	SVAL 0x1 SkirmishUnloader_18h|IsPointer
+	SVAL 1 SkirmishUnloader_18h|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x1B //Grieth Citadel
+	SVAL 1 0x1B //Grieth Citadel
 	SAVETOQUEUE
-	SVAL 0x1 SkirmishUnloader_1Ch|IsPointer
+	SVAL 1 SkirmishUnloader_1Ch|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x1E //Mire Boneyard
+	SVAL 1 0x1E //Mire Boneyard
 	SAVETOQUEUE
-	SVAL 0x1 SkirmishUnloader_1Fh|IsPointer
+	SVAL 1 SkirmishUnloader_1Fh|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x23 //Rigel Forest 2
+	SVAL 1 0x23 //Rigel Forest 2
 	SAVETOQUEUE
-	SVAL 0x1 SkirmishUnloader_24h|IsPointer
+	SVAL 1 SkirmishUnloader_24h|IsPointer
 	SAVETOQUEUE
-	SVAL 0x1 0x26 //Rigel Valley
+	SVAL 1 0x26 //Rigel Valley
 	SAVETOQUEUE
-	SVAL 0x1 SkirmishUnloader_27h|IsPointer
+	SVAL 1 SkirmishUnloader_27h|IsPointer
 	SAVETOQUEUE
 	CALL 0x9FFC0C
 	CALL UnifiedBEXPCaller
-	MNCH 0xFFFF
-	ENDA
+	GOTO_CHAPTER 0xFFFF
+	END
 
 ALIGN 4
 GenericSkirmishLoader:
-	SVAL 0x2 0x0 //number of enemies to load
+	SVAL 2 0x0 //number of enemies to load
 	CALL EnemyRandomizerHelper 
 	//Below here are tilechange IDs to execute for the map.
 	//If no tilechanges, just set fog range to 0 with VCWF.
-	VCWF 0x0
-	ENDA
+	FOGVISION 0x0
+	END
 
 ALIGN 4
 EnemyRandomizerHelper:
 	CALL SkirmishEnemyCountConfiguration //setup skirmish enemy count with value in s2
 	SVAL 0xD 0x0 //clear queue size
-	SVAL 0x1 0x32
+	SVAL 1 0x32
 	SAVETOQUEUE
-	SVAL 0x1 0x19
+	SVAL 1 0x19
 	SAVETOQUEUE
-	SVAL 0x1 0xF
+	SVAL 1 0xF
 	SAVETOQUEUE
-	SVAL 0x1 0x5
+	SVAL 1 0x5
 	SAVETOQUEUE
-	SVAL 0x1 0x5
+	SVAL 1 0x5
 	SAVETOQUEUE
 	CALL SkirmishEnemyPositionRandomization //randomize positions of enemies
-	ENDA
+	END
 
 ALIGN 4
 SkirmishUnloader_9h:
-SVAL 0x2 0x9
-ENDA
+SVAL 2 0x9
+END
 ALIGN 4
 
 SkirmishUnloader_12h:
-SVAL 0x2 0x12
-ENDA
+SVAL 2 0x12
+END
 ALIGN 4
 
 SkirmishUnloader_15h:
-SVAL 0x2 0x15
-ENDA
+SVAL 2 0x15
+END
 ALIGN 4
 
 SkirmishUnloader_18h:
-SVAL 0x2 0x18
-ENDA
+SVAL 2 0x18
+END
 ALIGN 4
 
 SkirmishUnloader_1Ch:
-SVAL 0x2 0x1C
-ENDA
+SVAL 2 0x1C
+END
 ALIGN 4
 
 SkirmishUnloader_1Fh:
-SVAL 0x2 0x1F
-ENDA
+SVAL 2 0x1F
+END
 ALIGN 4
 
 SkirmishUnloader_24h:
-SVAL 0x2 0x24
-ENDA
+SVAL 2 0x24
+END
 ALIGN 4
 
 SkirmishUnloader_27h:
-SVAL 0x2 0x27
-ENDA
+SVAL 2 0x27
+END
 ALIGN 4
 
 

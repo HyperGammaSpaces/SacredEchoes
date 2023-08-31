@@ -24,7 +24,7 @@ Ch3_2A_TurnBasedEvents:
 LoadReinforcementBandits:
 	ReinforcementEvent(BrigandsReinforcements)
 	NoFade
-	ENDA
+	END
 
 Ch3_2A_CharacterBasedEvents:
 	CharacterEvent(9, TalkToLuthier, Alm, Luthier)
@@ -32,7 +32,7 @@ Ch3_2A_CharacterBasedEvents:
 
 Ch3_2A_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(2,13)
+		Seize(2,13)
 	#endif
 	Village(0x8, VillageEvent, 14,13)
 	Armory(Act3Armory_1, 12,1)
@@ -42,7 +42,7 @@ Ch3_2A_LocationBasedEvents:
 
 VillageEvent:
 	VillageEventItem(Ch3_2A_Village, 0x42, PureWater)
-	ENDA
+	END
 
 Ch3_2A_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -64,10 +64,10 @@ Ch3_2A_Ballista2:
 	ALIGN 4
 
 Ch3_2A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,13] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [1,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,13] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [3,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [1,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [1,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [3,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Silque Cleric 0x00 Level(1, Ally, 1) [4,15] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
@@ -76,14 +76,14 @@ Ch3_2A_Units1:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x1 REDA2R13 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x1 REDA4R13 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x1 REDA2R13 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x1 REDA4R13 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [2,15] 0x00 0x00 0x1 REDA3R14 [BaseLance] NoAI
 	UNIT
 
 EnemyUnits:
 	UNIT ArcanistBoss Arcanist	0x00 Level(1, Enemy, False) [8,1]	0x00 0x00 0x0 0x00 [Mire,Heal] NeverMoveAI
-	UNIT DumaFaith_Sorcerer Mage	ArcanistBoss Level(7, Enemy, True) [2,2]	0x00 0x00 0x0 0x00 [Thunder] NoAI 
+	UNIT DumaFaith_Sorcerer Mage	ArcanistBoss Level(7, Enemy, True) [2,2]	0x00 0x00 0x0 0x00 [Thunder] NoAI
 	UNIT DumaFaith_Sorcerer Shaman	ArcanistBoss Level(8, Enemy, True) [5,4]	0x00 0x00 0x0 0x00 [Miasma] [0x0, 0xE, 0x4, 0x0]
 	UNIT DumaFaith_Sorcerer Shaman	ArcanistBoss Level(9, Enemy, True) [8,3]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Mage	ArcanistBoss Level(7, Enemy, True) [11,12]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
@@ -93,10 +93,10 @@ EnemyUnits:
 	UNIT DumaFaith_Sorcerer Shaman	ArcanistBoss Level(8, Enemy, True) [7,5]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Mage	ArcanistBoss Level(9, Enemy, True) [13,8]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
 	UNIT
-	
+
 EnemyUnits_Hard:
 	UNIT ArcanistBoss Arcanist	0x00 Level(1, Enemy, False) [8,1]	0x00 0x00 0x0 0x00 [Mire,Heal] NeverMoveAI
-	UNIT DumaFaith_Sorcerer Mage	ArcanistBoss Level(7, Enemy, True) [2,2]	0x00 0x00 0x0 0x00 [Thunder] NoAI 
+	UNIT DumaFaith_Sorcerer Mage	ArcanistBoss Level(7, Enemy, True) [2,2]	0x00 0x00 0x0 0x00 [Thunder] NoAI
 	UNIT DumaFaith_Sorcerer Shaman	ArcanistBoss Level(8, Enemy, True) [5,4]	0x00 0x00 0x0 0x00 [Miasma] [0x0, 0xE, 0x4, 0x0]
 	UNIT DumaFaith_Sorcerer Shaman	ArcanistBoss Level(9, Enemy, True) [8,3]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Shaman	ArcanistBoss Level(9, Enemy, True) [9,2]	0x00 0x00 0x0 0x00 [Miasma,Physic] MoveAndHealAI
@@ -108,7 +108,7 @@ EnemyUnits_Hard:
 	UNIT DumaFaith_Sorcerer Shaman	ArcanistBoss Level(8, Enemy, True) [7,5]	0x00 0x00 0x0 0x00 [Miasma] AttackInRangeAI
 	UNIT DumaFaith_Sorcerer Mage	ArcanistBoss Level(9, Enemy, True) [13,8]	0x00 0x00 0x0 0x00 [Fire] AttackInRangeAI
 	UNIT
-	
+
 BrigandsReinforcements:
 	UNIT Bandit_Axe Brigand ArcanistBoss Level(13,Enemy,True) [12,3] DropItem 0x00 0x1 REDA12R3 [SteelAxe,Torch] BrigandAI
 	UNIT
@@ -123,13 +123,13 @@ LuthierJoins:
 	UNIT
 
 Ch3_2A_BeginningScene:
-	VCWF 0x0
-	MUSC SongID_Env_Night
+	FOGVISION 0x0
+	MUSIC SongID_Env_Night
 	CAMERA_CENTERED [8, 11]
 	EVBIT_T 0x9
-	LOAD1 0x1 SlaydeCutscene
+	LOAD 0x1 SlaydeCutscene
 	ENUN
-	FADU 5
+	FADEOUT 5
 	MOVE 0x08 SlaydePaladin [8,2]
 	ENUN
 	EVBIT_F 0x9
@@ -137,7 +137,7 @@ Ch3_2A_BeginningScene:
 	STAL 20
 	FlashCursor(SlaydePaladin, 60)
 
-	SetBackground(0x20)
+	SetBackground(Woodland_Night)
 	BackgroundText(Ch3_2A_OpeningText)
 	ClearBackground
 	STAL 20
@@ -145,41 +145,41 @@ Ch3_2A_BeginningScene:
 	MOVE 0x08 SlaydePaladin [15,2]
 	ENUN
 	EVBIT_F 0x9
-	DISA SlaydePaladin
+	REMOVEUNIT SlaydePaladin
 	STAL 40
-	
-	FADI 5
+
+	FADEIN 5
 	STAL 30
 	CAMERA_CENTERED [0,11]
 
-	EVBIT_MODIFY 0x1
-	VCWF 0x5
-	EVBIT_MODIFY 0x0
-	LOAD2 0x1 CutsceneUnits
+	CONFIG_SKIP 0x1
+	FOGVISION 0x5
+	CONFIG_SKIP 0x0
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
-	FADU 5
-	
+	FADEOUT 5
+
 	FlashCursor(Alm, 60)
 	MapText(Ch3_2A_OpeningText_2)
 
-	FADI 5
-	CLEA 0x0
-	CLEE 0x0
+	FADEIN 5
+	REMOVEALL_BLUE
+	REMOVEALL_RED
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3A02 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x3A02
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-    LOAD3 0x0 Ch3_2A_Units1
+	CHECK_ISHARD
+	BEQ 0x3A02 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x3A02
+	LOAD_S2 0x1
+	ENUN
+	LOAD_DEPLOYED 0x0 Ch3_2A_Units1
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 LuthierAppearsEvent:
-	MUSC SongID_Uprising
-	LOAD1 0x1 LuthierJoins
+	MUSIC SongID_Uprising
+	LOAD 0x1 LuthierJoins
 	ENUN
 	MOVE 0x08 Luthier [12,14]
 	ENUN
@@ -188,30 +188,30 @@ LuthierAppearsEvent:
 	FlashCursor(Luthier, 60)
 	MapText(Ch3_2A_LuthierAppears)
 	NoFade
-	ENDA
+	END
 
 TalkToLuthier:
-	MUSS SongID_Recruitment 
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 33
 	MapText(Ch3_2A_LuthierJoins)
-	CUSA Luthier
+	FACTION_BLUE Luthier
 	STAL 20
-    CALL $591F40
+	CALL $591F40
 	CharacterJoinedNotification(Notif_LuthierJoin)
 	NoFade
-	MURE 0x05
-	ENDA
+	MUSIC_RESTORE 0x05
+	END
 
 Ch3_2A_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3A2Completed
-	EVBIT_MODIFY 0x0
-	FADI 2
-    STAL 5
-	MUSC SongID_SilentGround
-	SetBackground(0x20)
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3A2Completed
+	CONFIG_SKIP 0x0
+	FADEIN 2
+	STAL 5
+	MUSIC SongID_SilentGround
+	SetBackground(Woodland_Night)
 	TEXTMODE 1
 	TEXTSHOW Ch3_2A_EndingText
 	TEXTEND
@@ -221,6 +221,6 @@ Ch3_2A_EndingScene:
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
-	FADI 2
-	MNCH 0x11
-	ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x11
+	END

@@ -3,99 +3,99 @@
 EventPointerTable(plCh3C_1_Event, Ch3_1C_ThisChapter)
 
 Ch3_1C_ThisChapter:
-    POIN Ch3_1C_TurnBasedEvents
-    POIN Ch3_1C_CharacterBasedEvents
-    POIN Ch3_1C_LocationBasedEvents
-    POIN Ch3_1C_MiscBasedEvents
-    POIN Ch3_1C_Dunno Ch3_1C_Dunno Ch3_1C_Dunno
-    POIN Ch3_1C_Tutorial
-    POIN Ch3_1C_Ballista1 Ch3_1C_Ballista3
-    POIN PlayerPlacement PlayerPlacement
-    POIN $0 $0 $0 $0 $0 $0
-    POIN Ch3_1C_BeginningScene Ch3_1C_EndingScene
+	POIN Ch3_1C_TurnBasedEvents
+	POIN Ch3_1C_CharacterBasedEvents
+	POIN Ch3_1C_LocationBasedEvents
+	POIN Ch3_1C_MiscBasedEvents
+	POIN Ch3_1C_Dunno Ch3_1C_Dunno Ch3_1C_Dunno
+	POIN Ch3_1C_Tutorial
+	POIN Ch3_1C_Ballista1 Ch3_1C_Ballista3
+	POIN PlayerPlacement PlayerPlacement
+	POIN $0 $0 $0 $0 $0 $0
+	POIN Ch3_1C_BeginningScene Ch3_1C_EndingScene
 
 Ch3_1C_TurnBasedEvents:
-    TURN
+	TURN
 
 Ch3_1C_CharacterBasedEvents:
-    CHAR
+	CHAR
 
 Ch3_1C_LocationBasedEvents:
-    #ifdef __DEBUG__
-      Seize(5,12)
-    #endif
-    LOCA
+	#ifdef __DEBUG__
+		Seize(5,12)
+	#endif
+	LOCA
 
 Ch3_1C_MiscBasedEvents:
-    CauseGameOverIfLordDies
-    DefeatBoss(Ch3_1C_EndingScene)
-    MournQuoteAFEVS
-    AFEV
+	CauseGameOverIfLordDies
+	DefeatBoss(Ch3_1C_EndingScene)
+	MournQuoteAFEVS
+	AFEV
 
 Ch3_1C_Dunno:
-    END_MAIN
+	END_MAIN
 
 Ch3_1C_Tutorial:
-    END_MAIN
+	END_MAIN
 
 Ch3_1C_Ballista1:
-    BLST [20,15] 0x35
-    BLST
-    ALIGN 4
+	BLST [20,15] 0x35
+	BLST
+	ALIGN 4
 
 Ch3_1C_Ballista3:
-    BLST
-    ALIGN 4
+	BLST
+	ALIGN 4
 
 MountainCutscene_Allies:
-	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [4,3] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1,Ally,True) [3,4] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [2,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [4,3] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(1,Ally,True) [3,4] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [2,4] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
-	
+
 ConradAppears:
 	UNIT Conrad Paladin 0x00 Level(1, NPC, True) [0,5] 0x00 0x00 0x1 REDA6R4 [BaseLance] NoAI
 	UNIT
-	
+
 Cutscene_ChapterIntro:
-	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA3R14 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA3R13 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA1R13 [Fire, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA2R13 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA3R14 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA3R13 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA1R13 [Fire, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [0,15] 0x00 0x00 0x1 REDA2R13 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 PlayerPlacement:
 #ifdef __DEBUG__
-	UNIT Celica CelicaPriestess 0x00 Level(9,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI 
-	UNIT Palla PegasusKnight 0x00 Level(8,Ally,False) [10,2] 0x00 0x00 0x0 0x00 [Javelin, BaseLance, Vulnerary] NoAI 
-	UNIT Catria PegasusKnight 0x00 Level(5,Ally,False) [10,1] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing] NoAI 
-	UNIT Mae Mage_F 0x00 Level(9,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(9,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(9,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI 
-	UNIT Saber Myrmidon 0x00 Level(3,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, GoldDagger, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(9,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword,HolySword, Vulnerary] NoAI
+	UNIT Palla PegasusKnight 0x00 Level(8,Ally,False) [10,2] 0x00 0x00 0x0 0x00 [Javelin, BaseLance, Vulnerary] NoAI
+	UNIT Catria PegasusKnight 0x00 Level(5,Ally,False) [10,1] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing] NoAI
+	UNIT Mae Mage_F 0x00 Level(9,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(9,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(9,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary, HideShield] NoAI
+	UNIT Saber Myrmidon 0x00 Level(3,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, GoldDagger, Vulnerary] NoAI
 	UNIT Valbar Knight 0x00 Level(6,Ally,True) [11,8] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe,Vulnerary] NoAI
 	UNIT Leon Sniper 0x00 Level(3,Ally,True) [12,8] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
 	UNIT Kamui Mercenary 0x00 Level(9,Ally,True) [13,8] 0x00 0x00 0x0 0x00 [BaseSword, SteelSword, Vulnerary] NoAI
 	UNIT
 #else
 	UNIT Celica CelicaPriestess 0x00 Level(1,Ally,True) [5,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
-	UNIT Palla PegasusKnight 0x00 Level(8,Ally,False) [10,2] 0x00 0x00 0x0 0x00 [Javelin, BaseLance, Vulnerary] NoAI 
+	UNIT Palla PegasusKnight 0x00 Level(8,Ally,False) [10,2] 0x00 0x00 0x0 0x00 [Javelin, BaseLance, Vulnerary] NoAI
 	UNIT Catria PegasusKnight 0x00 Level(5,Ally,False) [10,1] 0x00 0x00 0x0 0x00 [BaseLance, AngelRing] NoAI
-	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(1,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(1,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Mae Mage_F 0x00 Level(1,Ally,True) [5,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(1,Ally,True) [3,11] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(1,Ally,True) [4,12] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(1,Ally,True) [4,11] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Valbar Knight 0x00 Level(1,Ally,True) [11,8] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe,Vulnerary] NoAI
 	UNIT Leon Archer 0x00 Level(4,Ally,True) [12,8] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] NoAI
-	UNIT Kamui Mercenary 0x00 Level(3,Ally,True) [13,8] 0x00 0x00 0x0 0x00 [BaseSword] NoAI 
-	UNIT Kliff Villager 0x00 Level(1,Ally,True) [12,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-    UNIT
+	UNIT Kamui Mercenary 0x00 Level(3,Ally,True) [13,8] 0x00 0x00 0x0 0x00 [BaseSword] NoAI
+	UNIT Kliff Villager 0x00 Level(1,Ally,True) [12,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT
 #endif
-	
+
 EnemyUnits:
 	//Pier
-	UNIT Garth Pirate Garth Level(15,Enemy,False) [19,14] DropItem 0x00 0x0 0x00 [KillerAxe, HandAxe, _200G] NeverMoveAI 
+	UNIT Garth Pirate Garth Level(15,Enemy,False) [19,14] DropItem 0x00 0x0 0x00 [KillerAxe, HandAxe, _200G] NeverMoveAI
 	UNIT Bandit_Bow Archer Garth Level(9, Enemy,True) [20,15] 0x00 0x00 0x0 0x00 [IronBow] NeverMoveAI
 	UNIT Bandit_Sword Mercenary Garth Level(10,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [IronSword] NoAI
 	UNIT Bandit_Axe Pirate Garth Level(12,Enemy,True) [13,13] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
@@ -123,11 +123,11 @@ EnemyUnits:
 	UNIT Bandit_Axe Pirate_F Garth Level(10,Enemy,True) [21,3] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [20,4] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	UNIT
-	
-	
+
+
 EnemyUnits_Hard:
 	//Pier
-	UNIT Garth Pirate Garth Level(15,Enemy,False) [19,14] DropItem 0x00 0x0 0x00 [KillerAxe, HandAxe, _200G] AttackInRangeAI 
+	UNIT Garth Pirate Garth Level(15,Enemy,False) [19,14] DropItem 0x00 0x0 0x00 [KillerAxe, HandAxe, _200G] AttackInRangeAI
 	UNIT Bandit_Bow Archer Garth Level(9, Enemy,True) [20,15] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
 	UNIT Bandit_Sword Mercenary Garth Level(10,Enemy,True) [16,14] 0x00 0x00 0x0 0x00 [IronSword] NoAI
 	UNIT Bandit_Axe Pirate Garth Level(12,Enemy,True) [13,13] 0x00 0x00 0x0 0x00 [IronAxe] NoAI
@@ -155,64 +155,64 @@ EnemyUnits_Hard:
 	UNIT Bandit_Axe Pirate_F Garth Level(10,Enemy,True) [21,3] 0x00 0x00 0x0 0x00 [SteelAxe] AttackInRangeAI
 	UNIT Bandit_Axe Pirate Garth Level(11,Enemy,True) [20,4] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	UNIT
-	
+
 PegasusKnights:
-	UNIT Palla PegasusKnight 0x00 Level(8,Ally,False) [10,0] 0x00 0x00 0x1 REDA10R2 [Javelin, BaseLance, Vulnerary] NoAI 
+	UNIT Palla PegasusKnight 0x00 Level(8,Ally,False) [10,0] 0x00 0x00 0x1 REDA10R2 [Javelin, BaseLance, Vulnerary] NoAI
 	UNIT Catria PegasusKnight 0x00 Level(5,Ally,False) [9,0] 0x00 0x00 0x1 REDA10R1 [BaseLance, AngelRing] NoAI
 	UNIT
 
 Ch3_1C_BeginningScene:
 	//earthquake stuff w/conrad
-	MUSC SongID_SilentGround
-	LOMA 0x39
-	LOAD2 0x0 MountainCutscene_Allies
+	MUSIC SongID_SilentGround
+	LOADMAP 0x39
+	LOAD_CUTSCENE MountainCutscene_Allies
 	ENUN
-	SetBackground(0x1F)
+	SetBackground(Woodland_Evening)
 	BackgroundText(Ch3_Celica_Start)
 	ClearBackground
-	MUSS 0x0
+	MUSIC_REPLACE 0x0
 	EARTHQUAKE_START 0x100
 	STAL 60
 	MapText(Ch3_Celica_Start_2)
 	STAL 30
-	LOAD1 0x1 ConradAppears
+	LOAD 0x1 ConradAppears
 	ENUN
 	STAL 20
 	EARTHQUAKE_END
-	MURE 0x0
+	MUSIC_RESTORE 0x0
 	CAMERA_CENTERED Conrad
-    STAL 20
-	FlashCursor(Conrad, 60)
-    CALL $591F40
-    RemoveItemFromAny(Elixir)
-	SVAL 0x3 Elixir
-	GIVEITEMTO Celica
 	STAL 20
-	SetBackground(0x1F)
+	FlashCursor(Conrad, 60)
+	CALL $591F40
+	RemoveItemFromAny(Elixir)
+	SVAL 0x3 Elixir
+	GIVEITEM Celica
+	STAL 20
+	SetBackground(Woodland_Evening)
 	BackgroundText(Ch3_Celica_Start_3)
-	FADI 2
-    STAL 5
-	
+	FADEIN 2
+	STAL 5
+
 	//actual map stuff
-	CLEA 0x0
-	CLEN 0x0
-	LOMA 0x16
-	MUSC SongID_Tension
+	REMOVEALL_BLUE
+	REMOVEALL_GREEN
+	LOADMAP 0x16
+	MUSIC SongID_Tension
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3C01 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x3C01
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
+	CHECK_ISHARD
+	BEQ 0x3C01 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x3C01
+	LOAD_S2 0x1
+	ENUN
 	CAMERA_CENTERED [0,16]
-	FADU 5
-	
-	LOAD2 0x0 Cutscene_ChapterIntro
+	FADEOUT 5
+
+	LOAD_CUTSCENE Cutscene_ChapterIntro
 	ENUN
 	CAMERA_CENTERED Celica
-	
-	//SetBackground(0x29)
+
+	//SetBackground(Fort_Ruins_Outside)
 	TEXTMODE 0
 	TEXTSHOW Ch3_1C_OpeningText
 	TEXTEND
@@ -225,78 +225,78 @@ Ch3_1C_BeginningScene:
 	TEXTEND
 	TEXTCLEAR
 	//ClearBackground
-	
+
 	CAMERA_CENTERED [11,0]
 	STAL 20
-	LOAD1 0x1 PegasusKnights
+	LOAD 0x1 PegasusKnights
 	ENUN
 	STAL 20
-	
+
 	CAMERA_CENTERED Palla
 	STAL 20
 	FlashCursor(Palla, 60)
 	MapText(Ch3_1C_OpeningText_2)
 	STAL 20
-	
+
 	CAMERA_CENTERED Celica
 	STAL 20
 	FlashCursor(Celica, 60)
 	MapText(Ch3_1C_OpeningText_3)
-	
-	FADI 16
+
+	FADEIN 16
 	#ifdef __DEBUG__
-		LOAD1 0x1 PlayerPlacement
+		LOAD 0x1 PlayerPlacement
 		ENUN
 	#else
-		LOAD3 0x0 PlayerPlacement 
+		LOAD_DEPLOYED 0x0 PlayerPlacement
 		ENUN
 		GotoPrepScreen
 	#endif
-	ENDA
+	END
 
 Ch3_1C_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3C1Completed
-	EVBIT_MODIFY 0x0
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3C1Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-    FADI 5
-    STAL 5
-    CLEE 0x0
-	CHECK_ALIVE Palla
+	FADEIN 5
+	STAL 5
+	REMOVEALL_RED
+	CHECK_ISALIVE Palla
 	BEQ 0x1 0xC 0x0
-		CHECK_ALIVE Catria
+		CHECK_ISALIVE Catria
 		BEQ 0x4 0xC 0x0
-			MUSC SongID_Victory
-			SetBackground(0x29)
+			MUSIC SongID_Victory
+			SetBackground(Fort_Ruins_Outside)
 			BackgroundText(Ch3_1C_EndingText) //both alive
-            CALL $591F40
+			CALL $591F40
 			CharacterJoinedNotification(Notif_PallaCatriaJoin)
 			GOTO 0x3
 		LABEL 0x4 //only palla
-		MUSC SongID_ShadowOfVictory
-		SetBackground(0x29)
+		MUSIC SongID_ShadowOfVictory
+		SetBackground(Fort_Ruins_Outside)
 		BackgroundText(Ch3_1C_EndingText_CatriaDied)
 		CALL $591F40
 		CharacterJoinedNotification(Notif_PallaJoin)
 		GOTO 0x3
 	LABEL 0x1
-	MUSC SongID_ShadowOfVictory
-	CHECK_ALIVE Catria
+	MUSIC SongID_ShadowOfVictory
+	CHECK_ISALIVE Catria
 	BEQ 0x2 0xC 0x0
 		//only catria
-		SetBackground(0x29)
+		SetBackground(Fort_Ruins_Outside)
 		BackgroundText(Ch3_1C_EndingText_PallaDied)
 		CALL $591F40
 		CharacterJoinedNotification(Notif_CatriaJoin)
-		GOTO 0x3 
+		GOTO 0x3
 	LABEL 0x2 //both died
-		SetBackground(0x29)
+		SetBackground(Fort_Ruins_Outside)
 		BackgroundText(Ch3_1C_EndingText_BothDied)
 	LABEL 0x3
-    FADI 5
-	MNCH 0x17 //go to world map
-	ENDA
+	FADEIN 5
+	GOTO_CHAPTER 0x17 //go to world map
+	END
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

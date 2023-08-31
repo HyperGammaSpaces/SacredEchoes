@@ -1,40 +1,40 @@
 ALIGN 4
 {
-  #include "Ch5-1_Purgatory.event"
+	#include "Ch5-1_Purgatory.event"
 }
 ALIGN 4
 {
-  #include "Ch5-2_CourseofGodsandMen.event"
+	#include "Ch5-2_CourseofGodsandMen.event"
 }
 ALIGN 4
 {
-  #include "Ch5-3_TogetherToTheEnd.event"
+	#include "Ch5-3_TogetherToTheEnd.event"
 }
 ALIGN 4
 {
-  #include "PostgameBonusMap.event"
+	#include "PostgameBonusMap.event"
 }
 
 Event_SonyaVsJedah:
-    CHECK_EVENTID gSonyaJedahBattleQuote1
-    BNE 0x666 rC r0
-        MapText(Ch4C_5_JedahVsSonya)
-        ENUF 0xF
-    LABEL 0x666
-        MapText(Ch5_JedahVsSonya)
-    LABEL 0x667
-    NoFade
-    ENDA
+	CHECK_FLAG gSonyaJedahBattleQuote1
+	BNE 0x666 rC r0
+		MapText(Ch4C_5_JedahVsSonya)
+		FLAG_F 0xF
+	LABEL 0x666
+		MapText(Ch5_JedahVsSonya)
+	LABEL 0x667
+	NoFade
+	END
 
 DumaDeathEvent:
-    MUSCMID SongID_Silence
-    ENUT Local_BossDeath
-    NoFade
-    ENDA
-    
+	MUSCMID SongID_Silence
+	FLAG_T Local_BossDeath
+	NoFade
+	END
+
 ALIGN 4
 #include "EndingMusicChecker.lyn.event"
 ALIGN 4
 EndingMusicSwitchProc:
-    PROC_LOOP_ROUTINE(EndingMusicChecker|1)
-    PROC_END
+	PROC_LOOP_ROUTINE(EndingMusicChecker|1)
+	PROC_END

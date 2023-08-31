@@ -23,29 +23,29 @@ Evt_TurnBasedEvents:
 	
 PaladinsMove:
 	SetAIParameters(0x0,0x6,0x4,0x0)
-	CHAI BerkutGK
-	CHAI FernandPaladin
+	SET_AI BerkutGK
+	SET_AI FernandPaladin
 	NoFade
-	ENDA
+	END
 
 Evt_CharacterBasedEvents:
 	CHAR
 
 Evt_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(15,22)
+		Seize(15,22)
 	#endif
 	House(0, HouseEvent, 19,13)
 	House(0, HouseEvent2, 4,8)
 	LOCA
-	
+
 HouseEvent:
 	HouseEvent(Ch4A_1_House1,0x01)
-	ENDA
-	
+	END
+
 HouseEvent2:
 	HouseEvent(Ch4A_1_House2,0x01)
-	ENDA
+	END
 
 Evt_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -87,15 +87,15 @@ PlayerUnits:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,24] 0x00 0x00 0x1 REDA15R22 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,24] 0x00 0x00 0x1 REDA15R23 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [14,24] 0x00 0x00 0x1 REDA15R22 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,24] 0x00 0x00 0x1 REDA15R23 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [14,24] 0x00 0x00 0x1 REDA16R22 [BaseLance] NoAI
 	UNIT
-	
+
 CutsceneUnits_Ending:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Soldier 0x00 Level(1, Ally, 1) [10,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [10,15] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Soldier 0x00 Level(1, Ally, 1) [10,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [11,15] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
@@ -103,12 +103,12 @@ BossUnits:
 	UNIT BerkutGK RigelPrince	BerkutGK Level(12, Enemy, False) [11,11]	0x00 0x00 0x1 REDA13R20 [Rhomphaia,KeepsakeRing] ChaseOnceApproachedAI
 	UNIT FernandPaladin Paladin BerkutGK Level(8, Enemy, False) [11,11] 0x00 0x00 0x1 REDA14R19 [Javelin, SteelLance] ChaseOnceApproachedAI
 	UNIT
-	
+
 BossUnits_Ending:
 	UNIT BerkutGK RigelPrince	BerkutGK Level(12, Enemy, False) [10,12]	0x00 0x00 0x0 0x00 [Rhomphaia,KeepsakeRing] ChaseOnceApproachedAI
 	UNIT FernandPaladin Paladin BerkutGK Level(8, Enemy, False) [11,12] 0x00 0x00 0x0 0x00 [Javelin, SteelLance] ChaseOnceApproachedAI
 	UNIT
-	
+
 EnemyUnits:
 	//boss buddies
 	UNIT Rigel_Cav Paladin BerkutGK Level(6, Enemy, True) [9,5] DropItem 0x00 0x0 0x00 [Ridersbane] MoveWithLeaderAI
@@ -134,7 +134,7 @@ EnemyUnits:
 	UNIT Rigel_Soldier Knight BerkutGK Level(8, Enemy, True) [17,12] DropItem 0x00 0x0 0x00 [Swordreaver] NoAI
 	UNIT Rigel_Archer Sniper BerkutGK Level(6, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
 	UNIT
-		
+
 EnemyUnits_Hard:
 	//boss buddies
 	UNIT Rigel_Cav Paladin BerkutGK Level(6, Enemy, True) [9,5] DropItem 0x00 0x0 0x00 [Ridersbane] MoveWithLeaderAI
@@ -160,74 +160,74 @@ EnemyUnits_Hard:
 	UNIT Rigel_Soldier Knight BerkutGK Level(8, Enemy, True) [17,12] DropItem 0x00 0x0 0x00 [Swordreaver] NoAI
 	UNIT Rigel_Archer Sniper BerkutGK Level(6, Enemy, True) [18,12] 0x00 0x00 0x0 0x00 [SteelBow] ChaseOnceApproachedAI
 	UNIT
-	
+
 GenericSoldiers:
 	UNIT 0xC2 Paladin	Alm Level(9, NPC, True) [10,24]	0x00 0x00 0x1 REDA9R23 [IronLance,Vulnerary] DelayedRushAI
 	UNIT 0xC2 Paladin	Alm Level(9, NPC, True) [10,24]	0x00 0x00 0x1 REDA10R22 [IronLance,Vulnerary] DelayedRushAI
 	UNIT 0xC2 Paladin	Alm Level(9, NPC, True) [10,24]	0x00 0x00 0x1 REDA11R23 [IronLance,Vulnerary] DelayedRushAI
 	UNIT
-	
+
 SkirmishEnemies:
 	UNIT Rigel_Cav Cavalier	BerkutGK Level(9, Enemy, True) [12,1]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT
-    
+
 ZekeUnits:
-    UNIT ZekeBoss GoldKnight 0x00 Level(3,Enemy,False) [2,0] 0x00 0x00 0x1 REDA9R10 [SilverLance, BaseLance] NoAI
+	UNIT ZekeBoss GoldKnight 0x00 Level(3,Enemy,False) [2,0] 0x00 0x00 0x1 REDA9R10 [SilverLance, BaseLance] NoAI
 	UNIT DumaFaith_Sorcerer Paladin ZekeBoss Level(12, Enemy, True) [1,0] 0x00 0x00 0x1 REDA8R8 [BaseLance] NoAI
 	UNIT DumaFaith_Sorcerer_2 Paladin ZekeBoss Level(12, Enemy, True) [3,0] 0x00 0x00 0x1 REDA8R9 [BaseLance] NoAI
 	UNIT DumaFaith_Witch BowKnight ZekeBoss Level(2, Enemy, True) [1,0] 0x00 0x00 0x1 REDA9R8 [BaseBow] NoAI
 	UNIT DumaFaith_Witch_Slow BowKnight ZekeBoss Level(2, Enemy, True) [3,0] 0x00 0x00 0x1 REDA9R9 [BaseBow] NoAI
-    UNIT
+	UNIT
 
 Evt_BeginningScene:
 
 	MUSCMID SongID_Env_GustyWind
-	SetBackground(0x20, 5)
+	SetBackground(Woodland_Night, 5)
 	BackgroundText(AlmAct4_OpeningText) //Clive talks about invading Rigel
-	
+
 	//If Gray is alive
-	CHECK_ALIVE Gray
+	CHECK_ISALIVE Gray
 	BEQ 0x1 0xC 0x0
-		FADI 5
+		FADEIN 5
 		STAL 5
-		FADU 5
+		FADEOUT 5
 		BackgroundText(AlmAct4_OpeningText_Gray)
 	LABEL 0x1
 	MUSCMID SongID_Silence
-	FADI 2
+	FADEIN 2
 	STAL 5
-	MUSC SongID_ImportantBattle
+	MUSIC SongID_ImportantBattle
 	SetBackground(0x47, 5)
 	BackgroundText(Ch4A_1_OpeningText) //Lukas
 
 	CAMERA_CENTERED [15,22]
 	ClearBackgroundSmooth
-	
+
 	EVBIT_T 0x9
-	LOAD2 0x0 CutsceneUnits
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
 	EVBIT_F 0x9
 	STAL 40
-	
-	MUSC SongID_PrinceOfDarkness
+
+	MUSIC SongID_PrinceOfDarkness
 	EVBIT_T 0x9
-	LOAD1 0x1 BossUnits
+	LOAD 0x1 BossUnits
 	ENUN
 	EVBIT_F 0x9
 	CameraCursor(BerkutGK)
 	MapText(Ch4A_1_OpeningText_2) //berkut/alm/fernand/clive yelling across the field
 	MUSCMID SongID_Silence
 	STAL 20
-	
+
 	EVBIT_T 0x9
-	LOAD1 0x0 GenericSoldiers
+	LOAD 0x0 GenericSoldiers
 	ENUN
 	EVBIT_F 0x9
 	CameraCursor(Alm)
-	MUSC SongID_Uprising
+	MUSIC SongID_Uprising
 	MapText(Ch4A_1_OpeningText_3)
 	STAL 20
-	
+
 	CameraCursor(BerkutGK)
 	MapText(Ch4A_1_OpeningText_4) //berkut yells at fernand
 	EVBIT_T 0x9
@@ -235,95 +235,95 @@ Evt_BeginningScene:
 	MOVE 0x08 FernandPaladin [10,5]
 	ENUN
 	EVBIT_F 0x9
-	
-	FADI 16
+
+	FADEIN 16
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x4A01 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x4A01
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	
-	CLEA 0x0
-	LOAD3 0x0 PlayerUnits 
+	CHECK_ISHARD
+	BEQ 0x4A01 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x4A01
+	LOAD_S2 0x1
+	ENUN
+
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 PlayerUnits
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 
 Evt_EndingScene:
-	EVBIT_MODIFY 0x1
-	ENUT gChapter4A1Completed
-	EVBIT_MODIFY 0x0 
-    CALL EndMusicAndMMS
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter4A1Completed
+	CONFIG_SKIP 0x0
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 2
+	FADEIN 2
 	STAL 5
 
 	//Check how many green units lived and set a local flag before clearing them.
-	CHECK_OTHERS
+	CHECK_COUNT_GREEN
 	SVAL 0x2 0x2
 	BLE 0x12 0xC 0x2
 		//3 generics survived
-		MUSC SongID_Victory
+		MUSIC SongID_Victory
 		SetBackground(0x47,5)
 		BackgroundText(Ch4A_1_GreenUnitReward)
 		CALL $591F40
 		SVAL 0x3 KillerLance
-		GIVEITEMTO Alm
+		GIVEITEM Alm
 		EVBIT_T 0x7
-		FADI 2
+		FADEIN 2
 		CLEAN
-        STAL 5
+		STAL 5
 	LABEL 0x12
-	CLEA 0x0
-    CLEE 0x0
-	CLEN 0x0
-	
-	MUSC SongID_ShadowOfVictory
-	LOAD1 0x1 BossUnits_Ending
+	REMOVEALL_BLUE
+	REMOVEALL_RED
+	REMOVEALL_GREEN
+
+	MUSIC SongID_ShadowOfVictory
+	LOAD 0x1 BossUnits_Ending
 	ENUN
-	LOAD2 0x0 CutsceneUnits_Ending
+	LOAD_CUTSCENE CutsceneUnits_Ending
 	ENUN
 	CAMERA_CENTERED Alm
-	FADU 2
+	FADEOUT 2
 	MapText(Ch4A_1_EndingText) //Berkut yells at Fernand
-	
-	LOAD1 0x1 ZekeUnits
-    ENUN
-    CameraCursor(ZekeBoss)
-	
+
+	LOAD 0x1 ZekeUnits
+	ENUN
+	CameraCursor(ZekeBoss)
+
 	MUSCSLOW SongID_PrinceOfDarkness
-    TEXTMODE 0
-	TEXTSHOW Ch4A_1_EndingText_2 
-    TEXTEND
+	TEXTMODE 0
+	TEXTSHOW Ch4A_1_EndingText_2
+	TEXTEND
 	TEXTCLEAR
-    MOVE 0x08 DumaFaith_Sorcerer [3,0]
-    MOVE 0x08 DumaFaith_Sorcerer_2 [4,0]
+	MOVE 0x08 DumaFaith_Sorcerer [3,0]
+	MOVE 0x08 DumaFaith_Sorcerer_2 [4,0]
 	MOVE 0x08 DumaFaith_Witch [3,1]
 	MOVE 0x08 DumaFaith_Witch_Slow [2,0]
-    MOVE 0x08 ZekeBoss [2,1]
+	MOVE 0x08 ZekeBoss [2,1]
 	ENUN
-    DISA ZekeBoss
-    STAL 5
+	REMOVEUNIT ZekeBoss
+	STAL 5
 	CameraCursor(FernandPaladin)
 	MapText(Ch4A_1_EndingText_3) //Fernand convinces Berkut to retreat
 	MOVE 0x08 BerkutGK [4,0]
 	MOVE 0x08 FernandPaladin [5,0]
 	ENUN
-	CLEE 0x0
-    MUSCMID SongID_Silence
-    STAL 20
+	REMOVEALL_RED
+	MUSCMID SongID_Silence
+	STAL 20
 	CAMERA_CENTERED Alm
-    STAL 20
+	STAL 20
 	MUSCSLOW SongID_ShadowOfVictory
 	FlashCursor(Alm, 60)
 	MapText(Ch4A_1_EndingText_4) //tobin asks alm if they should give chase
-	FADI 2
-    STAL 5
-	MUSC SongID_PrinceOfDarkness
-	SetBackground(0x0E)
+	FADEIN 2
+	STAL 5
+	MUSIC SongID_PrinceOfDarkness
+	SetBackground(Castle_Room)
 	BROWNBOXTEXT Loc_RigelCastle [8,8]
 	TEXTMODE 1
 	TEXTSHOW Ch4A_1_EndingText_5 //berkut yells at rinea
@@ -334,8 +334,8 @@ Evt_EndingScene:
 	MUSCSLOW SongID_Sorrow
 	TEXTCONT
 	TEXTEND
-    TEXTCLEAR
+	TEXTCLEAR
 	MUSCMID SongID_Silence
-	FADI 2
-	MNCH 0x24
-	ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x24
+	END

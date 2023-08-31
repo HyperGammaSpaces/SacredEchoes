@@ -26,11 +26,11 @@ Ch2_4_TurnBasedEvents:
 	
 BoatWave:
 	ReinforcementEvent(ReinforcementsSouth)
-	ENDA
+	END
 
 CelicaTalkEvent:
-	MUSC SongID_MilasDivineProtection
-	MUSI
+	MUSIC SongID_MilasDivineProtection
+	MUSIC_QUIET_T
 	STAL 20
 	CAMERA_CENTERED Valbar
 	STAL 30
@@ -40,9 +40,9 @@ CelicaTalkEvent:
 	STAL 30
 	FlashCursor(Celica, 60)
 	Text(Ch2_4_PreBattle_CelicaTalk)
-	MUNO
+	MUSIC_QUIET_F
 	NoFade
-	ENDA
+	END
 
 Ch2_4_CharacterBasedEvents:
 	CharacterEvent(lFlag_ValbarTalked, TalkToValbar, Celica, Valbar)
@@ -52,7 +52,7 @@ Ch2_4_CharacterBasedEvents:
 
 Ch2_4_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(2,14)
+		Seize(2,14)
 	#endif
 	Chest(IronSword, 18, 0)
 	LOCA 0xA VillageEvent [18,10] 0x10
@@ -60,18 +60,18 @@ Ch2_4_LocationBasedEvents:
 	LOCA
 
 VillageEvent:
-	MUSI
-	SetBackground(0x09)
+	MUSIC_QUIET_T
+	SetBackground(Inn)
 	Text(Ch2_4_PirateInn)
 	EndConvo
-	MUNO
+	MUSIC_QUIET_F
 	CALL $591F40
 	SMOV 0x3 SteelSword
-	GIVEITEMTO 0xFFFF
+	GIVEITEM 0xFFFF
 	EVBIT_T 0x7
-	ENDA
+	END
 	//VillageEventItem(Ch2_4_PirateInn, 0x09, SteelSword)
-	ENDA
+	END
 
 Ch2_4_MiscBasedEvents:
 	CauseGameOverIfLordDies
@@ -92,17 +92,17 @@ Ch2_4_Ballista2:
 	ALIGN 4
 
 Ch2_4_Units1:
-	UNIT Celica CelicaPriestess 0x00 Level(4,Ally,True) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Mae Mage_F 0x00 Level(4,Ally,True) [2,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Boey Mage 0x00 Level(4,Ally,True) [2,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI 
-	UNIT Genny Cleric 0x00 Level(4,Ally,True) [1,13] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI 
-	UNIT Saber Mercenary 0x00 Level(4,Ally,True) [1,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Celica CelicaPriestess 0x00 Level(4,Ally,True) [2,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Mae Mage_F 0x00 Level(4,Ally,True) [2,15] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Boey Mage 0x00 Level(4,Ally,True) [2,13] 0x00 0x00 0x0 0x00 [Fire, Vulnerary] NoAI
+	UNIT Genny Cleric 0x00 Level(4,Ally,True) [1,13] 0x00 0x00 0x0 0x00 [Nosferatu, Vulnerary] NoAI
+	UNIT Saber Mercenary 0x00 Level(4,Ally,True) [1,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 ValbarJoins:
-	UNIT Valbar Knight 0x00 Level(1, NPC, 1) [6,3] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe] AttackInRangeAI 
-	UNIT Leon Archer 0x00 Level(4, NPC, 1) [7,3] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] [AttackInRange,DoNotMove,DefaultRecovery,GuardTile] 
-	UNIT Kamui Mercenary 0x00 Level(3, NPC, 1) [7,4] 0x00 0x00 0x0 0x00 [BaseSword,Vulnerary] [AttackInRange,DoNotMove,CautiousRecovery,0x0] 
+	UNIT Valbar Knight 0x00 Level(1, NPC, 1) [6,3] 0x00 0x00 0x0 0x00 [BaseLance,BaseAxe] AttackInRangeAI
+	UNIT Leon Archer 0x00 Level(4, NPC, 1) [7,3] 0x00 0x00 0x0 0x00 [IronBow, BaseBow, Vulnerary] [AttackInRange,DoNotMove,DefaultRecovery,GuardTile]
+	UNIT Kamui Mercenary 0x00 Level(3, NPC, 1) [7,4] 0x00 0x00 0x0 0x00 [BaseSword,Vulnerary] [AttackInRange,DoNotMove,CautiousRecovery,0x0]
 	UNIT
 
 EnemyUnits:
@@ -110,228 +110,228 @@ EnemyUnits:
 	UNIT Bandit_Sword Mercenary Barth Level(6,Enemy,True) [13,1] 0x00 0x00 0x0 0x00 [Armorslayer] NeverMoveAI //Make this guy bulky
 	UNIT Bandit_Bow Mage Barth Level(6,Enemy,True) [17,1] DropItem 0x00 0x0 0x00 [Fire, HideShield, ChestKey] NeverMoveAI //Make this guy bulky
 	UNIT Bandit_Bow Archer Barth Level(6,Enemy,True) [14,2] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT Bandit_Axe Pirate_F Barth Level(8,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Sword Thief Barth Level(7,Enemy,True) [13,7] DropItem 0x00 0x0 0x00 [IronSword] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate_F Barth Level(8,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Sword Thief Barth Level(7,Enemy,True) [13,7] DropItem 0x00 0x0 0x00 [IronSword] AttackInRangeAI
 	UNIT Bandit_Axe Pirate Barth Level(8,Enemy,True) [12,8] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
 	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [4,5] 0x00 0x00 0x0 0x00 [HandAxe] NeverMoveAI
 	UNIT Bandit_Sword Mercenary Barth Level(8,Enemy,True) [17,7] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT Bandit_Bow Archer_F Barth Level(7,Enemy,True) [16,13] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [5,1] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate_F Barth Level(8,Enemy,True) [15,10] DropItem 0x00 0x0 0x00 [BaseAxe,IronShield] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [17,5] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI 
+	UNIT Bandit_Bow Archer_F Barth Level(7,Enemy,True) [16,13] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [5,1] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F Barth Level(8,Enemy,True) [15,10] DropItem 0x00 0x0 0x00 [BaseAxe,IronShield] AttackInRangeAI
+	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [17,5] 0x00 0x00 0x0 0x00 [BaseAxe] NoAI
 	UNIT
-    
+
 EnemyUnits_Hard:
 	UNIT Barth Pirate Barth Level(10,Enemy,False) [15,1] DropItem 0x00 0x0 0x00 [SteelAxe,HandAxe,Item100G] NeverMoveAI
 	UNIT Bandit_Sword Mercenary Barth Level(6,Enemy,True) [13,1] DropItem 0x00 0x0 0x00 [Armorslayer,IronShield] NeverMoveAI //Make this guy bulky
 	UNIT Bandit_Bow Mage Barth Level(6,Enemy,True) [17,1] DropItem 0x00 0x0 0x00 [Fire, HideShield, ChestKey] AttackInRangeAI //Make this guy bulky
 	UNIT Bandit_Bow Archer Barth Level(6,Enemy,True) [14,2] 0x00 0x00 0x0 0x00 [IronBow] AttackInRangeAI
-	UNIT Bandit_Axe Pirate_F Barth Level(8,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI 
-	UNIT Bandit_Sword Thief Barth Level(7,Enemy,True) [13,7] DropItem 0x00 0x0 0x00 [IronSword] AttackInRangeAI 
+	UNIT Bandit_Axe Pirate_F Barth Level(8,Enemy,True) [11,6] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
+	UNIT Bandit_Sword Thief Barth Level(7,Enemy,True) [13,7] DropItem 0x00 0x0 0x00 [IronSword] AttackInRangeAI
 	UNIT Bandit_Axe Pirate Barth Level(8,Enemy,True) [12,8] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
 	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [6,6] 0x00 0x00 0x0 0x00 [IronAxe] AttackInRangeAI
 	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [4,5] 0x00 0x00 0x0 0x00 [HandAxe] NeverMoveAI
 	UNIT Bandit_Sword Mercenary Barth Level(8,Enemy,True) [17,7] 0x00 0x00 0x0 0x00 [IronSword] AttackInRangeAI
-	UNIT Bandit_Bow Archer_F Barth Level(7,Enemy,True) [16,13] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [5,1] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate_F Barth Level(8,Enemy,True) [15,10] DropItem 0x00 0x0 0x00 [IronAxe,IronShield] AttackInRangeAI 
-	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [17,5] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI 
+	UNIT Bandit_Bow Archer_F Barth Level(7,Enemy,True) [16,13] 0x00 0x00 0x0 0x00 [SteelBow] AttackInRangeAI
+	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [5,1] 0x00 0x00 0x0 0x00 [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Axe Pirate_F Barth Level(8,Enemy,True) [15,10] DropItem 0x00 0x0 0x00 [IronAxe,IronShield] AttackInRangeAI
+	UNIT Bandit_Axe Pirate Barth Level(7,Enemy,True) [17,5] 0x00 0x00 0x0 0x00 [SteelAxe] NoAI
 	UNIT
 
 EnemyUnitsREDAs:
-	UNIT Bandit_Axe Pirate_F Barth Level(7,Enemy,True) [4,0] 0x00 0x00 0x1 REDA6R10 [BaseAxe] NoAI 
-	UNIT Bandit_Axe Pirate Barth Level(6,Enemy,True) [4,0] 0x00 0x00 0x1 REDA7R9 [BaseAxe] NoAI 
-	UNIT Bandit_Axe Pirate_F Barth Level(8,Enemy,True) [4,0] 0x00 0x00 0x1 REDA5R9 [BaseAxe] NoAI 
+	UNIT Bandit_Axe Pirate_F Barth Level(7,Enemy,True) [4,0] 0x00 0x00 0x1 REDA6R10 [BaseAxe] NoAI
+	UNIT Bandit_Axe Pirate Barth Level(6,Enemy,True) [4,0] 0x00 0x00 0x1 REDA7R9 [BaseAxe] NoAI
+	UNIT Bandit_Axe Pirate_F Barth Level(8,Enemy,True) [4,0] 0x00 0x00 0x1 REDA5R9 [BaseAxe] NoAI
 	UNIT Bandit_Bow Archer Barth Level(7,Enemy,True) [4,0] 0x00 0x00 0x1 REDA6R9 [BaseBow] AttackInRangeAI
 	UNIT
-	
+
 ReinforcementsSouth:
-	UNIT Bandit_Axe Pirate Barth Level(5,Enemy,True) [16,16] 0x00 0x00 0x1 REDA15R16 [IronAxe] NoAI 
-	UNIT Bandit_Axe Pirate_F Barth Level(7,Enemy,True) [16,16] 0x00 0x00 0x1 REDA16R15 [SteelAxe] NoAI 
+	UNIT Bandit_Axe Pirate Barth Level(5,Enemy,True) [16,16] 0x00 0x00 0x1 REDA15R16 [IronAxe] NoAI
+	UNIT Bandit_Axe Pirate_F Barth Level(7,Enemy,True) [16,16] 0x00 0x00 0x1 REDA16R15 [SteelAxe] NoAI
 	UNIT Bandit_Bow Archer Barth Level(6,Enemy,True) [16,16] 0x00 0x00 0x1 REDA17R16 [SteelBow] NoAI
 	UNIT
 
 Ch2_4_BeginningScene:
-	MUSC SongID_Tension
+	MUSIC SongID_Tension
 	#ifdef __DEBUG__
-		LOAD1 0x1 Ch2_4_Units1
+		LOAD 0x1 Ch2_4_Units1
 		ENUN
 	#else
-		LOAD3 0x0 Ch2_4_Units1
+		LOAD_DEPLOYED 0x0 Ch2_4_Units1
 		ENUN
 	#endif
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x204 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x204
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-	LOAD1 0x1 ValbarJoins
+	CHECK_ISHARD
+	BEQ 0x204 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x204
+	LOAD_S2 0x1
 	ENUN
-    CAMERA_CENTERED Celica
+	LOAD 0x1 ValbarJoins
+	ENUN
+	CAMERA_CENTERED Celica
 
-	SetBackground(0x07)
+	SetBackground(Harbor)
 	BackgroundText(Ch2_4_PreBattle)
 	EndConvo
-    STAL 20
+	STAL 20
 
 	CAMERA_CENTERED Valbar
 	STAL 20
-	LOAD1 0x1 EnemyUnitsREDAs
+	LOAD 0x1 EnemyUnitsREDAs
 	ENUN
 	FlashCursor(Valbar, 60)
 	STAL 30
 	MapText(Ch2_4_PreBattle_Valbar)
-    STAL 20
-    CAMERA_CENTERED Celica
-    STAL 20
+	STAL 20
+	CAMERA_CENTERED Celica
+	STAL 20
 
 	NoFade
 	GotoPrepScreen
-	ENDA
+	END
 
 Ch2_4_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-    FADI 5
-    STAL 5
+	FADEIN 5
+	STAL 5
 	//Check if Valbar is dead. If he's OK call the following
-	EVBIT_MODIFY 0x1
-	CHECK_ALIVE Valbar
+	CONFIG_SKIP 0x1
+	CHECK_ISALIVE Valbar
 	BEQ 0x6 0xC 0x0
-		EVBIT_MODIFY 0x0
-		MUSC SongID_Victory
-		CUSA Valbar
-		CUSA Leon
-		CUSA Kamui
-		SetBackground(0x07)
+		CONFIG_SKIP 0x0
+		MUSIC SongID_Victory
+		FACTION_BLUE Valbar
+		FACTION_BLUE Leon
+		FACTION_BLUE Kamui
+		SetBackground(Harbor)
 		TEXTMODE 1
 		TEXTSHOW Ch2_4_PostBattle
 		TEXTEND
 		TEXTCLEAR
 		TEXTMODE 1
-		
-		_0x2141 LeonValbarKamuiCG 0x1 0x4
+
+		BACKGROUND_CHANGE LeonValbarKamuiCG 1 4
 		TEXTMODE 1
 		STAL 20
-		_0x1A22
+		TEXTMODE 2
 		TEXTSHOW Ch2_4_CGText
 		TEXTEND
 		TEXTCLEAR
 		STAL 20
-		_0x2141 0x07 0x1 0x4
+		BACKGROUND_CHANGE Harbor 1 4
 		TEXTMODE 1
 		BackgroundText(Ch2_4_PostBattle_2)
-        CALL $591F40
-		EVBIT_MODIFY 0x1
-		CHECK_EVENTID lFlag_ValbarTalked
+		CALL $591F40
+		CONFIG_SKIP 0x1
+		CHECK_FLAG lFlag_ValbarTalked
 		BEQ 0x9 0xC 0x0
 			CharacterJoinedNotification(Notif_ValbarLeonJoin)
 		LABEL 0x9
-		CHECK_EVENTID lFlag_KamuiTalked
+		CHECK_FLAG lFlag_KamuiTalked
 		BEQ 0x8 0xC 0x0
 			CharacterJoinedNotification(Notif_KamuiJoin)
-        LABEL 0x8
-        EVBIT_MODIFY 0x0
-        FADI 2
+		LABEL 0x8
+		CONFIG_SKIP 0x0
+		FADEIN 2
 		GOTO 0xB
-        
+
 	LABEL 0x6 //if Valbar is dead
-	EVBIT_MODIFY 0x0
-	MUSC SongID_ShadowOfVictory
-	SetBackground(0x07)
+	CONFIG_SKIP 0x0
+	MUSIC SongID_ShadowOfVictory
+	SetBackground(Harbor)
 	BackgroundText(Ch2_4_PostBattle_NoValbar_1)
 	CLEAN
-	EVBIT_MODIFY 0x1
-	CHECK_ALIVE Leon
+	CONFIG_SKIP 0x1
+	CHECK_ISALIVE Leon
 	BEQ 0x7 0xC 0x0
-		EVBIT_MODIFY 0x0
-        FADI 16
-        STAL 5
-		CUSA Leon
-		SetBackground(0x07)
+		CONFIG_SKIP 0x0
+		FADEIN 16
+		STAL 5
+		FACTION_BLUE Leon
+		SetBackground(Harbor)
 		Text(Ch2_4_PostBattle_NoValbar_Leon)
-        CALL $591F40
-		EVBIT_MODIFY 0x1
+		CALL $591F40
+		CONFIG_SKIP 0x1
 		CharacterJoinedNotification(Notif_LeonJoin)
-        EVBIT_MODIFY 0x0
+		CONFIG_SKIP 0x0
 	LABEL 0x7
-	CHECK_ALIVE Kamui
+	CHECK_ISALIVE Kamui
 	BEQ 0xA 0xC 0x0
-		EVBIT_MODIFY 0x0
-        FADI 16
-        CLEAN
-        STAL 5
-		CUSA Kamui
-		SetBackground(0x07)
+		CONFIG_SKIP 0x0
+		FADEIN 16
+		CLEAN
+		STAL 5
+		FACTION_BLUE Kamui
+		SetBackground(Harbor)
 		Text(Ch2_4_PostBattle_NoValbar_Kamui)
-		EVBIT_MODIFY 0x1
-		CHECK_EVENTID lFlag_KamuiTalked
+		CONFIG_SKIP 0x1
+		CHECK_FLAG lFlag_KamuiTalked
 		BEQ 0xA 0xC 0x0
-            CALL $591F40
+			CALL $591F40
 			CharacterJoinedNotification(Notif_KamuiJoin)
-    LABEL 0xA
-    EVBIT_MODIFY 0x0
-    FADI 16
-    LABEL 0xB
-    STAL 5
-    MNCH 0x0C
-	ENDA
+	LABEL 0xA
+	CONFIG_SKIP 0x0
+	FADEIN 16
+	LABEL 0xB
+	STAL 5
+	GOTO_CHAPTER 0x0C
+	END
 
 TalkToValbar:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 0x20
 	SVAL 0x1 0x1
-	CHECK_ALIVE Leon 
+	CHECK_ISALIVE Leon
 	IFEQ 0x2 0xC 0x1 //if not, goto NoFaye
 		Text(Ch2_4_GetValbar)
-        CALL $591F40
-		CUSA Leon
+		CALL $591F40
+		FACTION_BLUE Leon
 		CharacterJoinedNotification(Notif_ValbarLeonJoin)
 		GOTO 0x3
 	LABEL 0x2
 	Text(Ch2_4_GetValbar_NoLeon)
-    CALL $591F40
+	CALL $591F40
 	CharacterJoinedNotification(Notif_ValbarJoin)
 	LABEL 0x3
-	CUSA Valbar
+	FACTION_BLUE Valbar
 	STAL 0x14
-	MURE 0x05
+	MUSIC_RESTORE 0x05
 	NoFade
-	ENDA
+	END
 
 TalkToKamui:
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	STAL 0x20
 	Text(Ch2_4_GetKamui)
-	CUSA Kamui
+	FACTION_BLUE Kamui
 	STAL 0x14
-    CALL $591F40
+	CALL $591F40
 	CharacterJoinedNotification(Notif_KamuiJoin)
-	MURE 0x05
+	MUSIC_RESTORE 0x05
 	NoFade
-	ENDA
+	END
 
 TalkToKamuiCelica:
 	STAL 0x20
-	CHECK_ALIVE Valbar 
+	CHECK_ISALIVE Valbar
 	BEQ 0x4 0xC 0x0
 		Text(Ch2_4_GetKamui_NoValbar)
-		ENUF lFlag_KamuiTalked
+		FLAG_F lFlag_KamuiTalked
 		GOTO 0x5
 	LABEL 0x4
-	MUSS SongID_Recruitment
+	MUSIC_REPLACE SongID_Recruitment
 	Text(Ch2_4_GetKamui_ValbarDead)
-    CALL $591F40
-	CUSA Kamui
+	CALL $591F40
+	FACTION_BLUE Kamui
 	CharacterJoinedNotification(Notif_KamuiJoin)
 	LABEL 0x5
 	STAL 0x14
-	MURE 0x05
+	MUSIC_RESTORE 0x05
 	NoFade
-	ENDA
+	END
 
 #ifndef InlineEvents
   MESSAGE Events end at offset currentOffset

@@ -21,42 +21,42 @@ Ch1_2_TurnBasedEvents:
 	TURN
 
 ArcherEvent:
-	MUSC SongID_MarchToDeliverance // Use MUSS during turn events to return to the map music, but since this is turn 1, MUSC is fine.
-	MUSI
+	MUSIC SongID_MarchToDeliverance // Use MUSIC_REPLACE during turn events to return to the map music, but since this is turn 1, MUSIC is fine.
+	MUSIC_QUIET_T
 	STAL 30
-	//SHOW_ATTACK_RANGE Bandit_Bow
+	//SHOW_MOVERANGE Bandit_Bow
 	//STAL 5
 	FlashCursor(Bandit_Bow, 60)
-	//HIDE_ATTACK_RANGE
+	//HIDE_MOVERANGE
 	//STAL 5
 	Text(Ch1_2_ArcherText)
-	MUNO
+	MUSIC_QUIET_F
 	NoFade
-	ENDA
+	END
 
 Ch1_2_CharacterBasedEvents:
 	CHAR
 
 BossMove:
-	CHECK_ALLEGIANCE 0xFFFF
+	CHECK_FACTION 0xFFFF
 	BNE 0x222 rC r0
-        MUSI
-        STAL 30
-        FlashCursor(BanditAlm2, 60)
-        Text(Boss1_2_MoveQuote)
-		MUNO
-        SVAL 0x1 0x0
-        CHAI BanditAlm2
-        GOTO 0x333
+				MUSIC_QUIET_T
+				STAL 30
+				FlashCursor(BanditAlm2, 60)
+				Text(Boss1_2_MoveQuote)
+		MUSIC_QUIET_F
+				SVAL 0x1 0x0
+				SET_AI BanditAlm2
+				GOTO 0x333
 	LABEL 0x222
-	ENUF 0x8
+	FLAG_F 0x8
 	LABEL 0x333
 	NoFade
-	ENDA
+	END
 
 Ch1_2_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(5,7)
+		Seize(5,7)
 	#endif
 	LOCA
 
@@ -81,14 +81,14 @@ Ch1_2_Ballista2:
 	ALIGN 4
 
 Ch1_2_CutsceneAlm:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [0,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
 
 Ch1_2_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,6] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [2,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [4,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [5,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [4,6] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [2,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [4,8] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [2,6] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [1,7] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT
@@ -98,69 +98,69 @@ EnemyUnits:
 	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [13,2] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
 	UNIT Bandit_Bow Archer BanditAlm2 Level(3, Enemy, 1) [10,2] 0x00 0x00 0x0 0x00  [BaseBow]  AttackSnagsAI
 	UNIT Bandit_Axe Brigand BanditAlm2 Level(2, Enemy, 1) [16,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
-	UNIT Bandit_Axe Brigand BanditAlm2 Level(2, Enemy, 1) [6,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing 
-	UNIT Bandit_Axe Brigand BanditAlm2 Level(2, Enemy, 1) [7,7] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 
-	UNIT Bandit_Axe Brigand BanditAlm2 Level(2, Enemy, 1) [8,8] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing 
-	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [14,6] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI 
-	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [15,7] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI 
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(2, Enemy, 1) [6,3] 0x00 0x00 0x0 0x00  [BaseAxe] DefaultAIWithLessHealing
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(2, Enemy, 1) [7,7] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(2, Enemy, 1) [8,8] 0x00 0x00 0x0 0x00   [BaseAxe] DefaultAIWithLessHealing
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [14,6] 0x00 0x00 0x0 0x00   [BaseAxe] AttackInRangeAI
+	UNIT Bandit_Axe Brigand BanditAlm2 Level(3, Enemy, 1) [15,7] 0x00 0x00 0x0 0x00   [BaseAxe] NoAI
 	UNIT
 
 Ch1_2_BeginningScene:
 
-	LOAD2 0x0 Ch1_2_CutsceneAlm //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	LOAD_CUTSCENE Ch1_2_CutsceneAlm //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	//ENUN // Unecessary here.
-	LOAD1 0x1 EnemyUnits
+	LOAD 0x1 EnemyUnits
 	ENUN
 
 	//flashback scene w celica
-	MUSC SongID_Revelations
-	SetBackground(0x06,5)
+	MUSIC SongID_Revelations
+	SetBackground(Town_Past,5)
 	BROWNBOXTEXT Ch1_2_FlashbackTimeframe [8,8]
 	STAL 30
 	Text(Ch1_2_Flashback)
 	MUSCMID SongID_Silence
 	STAL 20
-	FADI 2
-    STAL 5
+	FADEIN 2
+		STAL 5
 
 	//map start
 	MUSCSLOW SongID_Advance
 	SetBackground(Woodland,2)
 	Text(Ch1_2_OpeningScene_1)
 	EndConvo
-	MUSC SongID_Tension
+	MUSIC SongID_Tension
 	MOVE 0x0 Alm [5, 7]
 	ENUN
-	FADI 5
-    STAL 5
-	CLEA 0x0
-	LOAD3 0x0 Ch1_2_Units1
+	FADEIN 5
+		STAL 5
+	REMOVEALL_BLUE
+	LOAD_DEPLOYED 0x0 Ch1_2_Units1
 	SetBackground(Woodland)
 	Text(Ch1_2_OpeningScene_2) // Changed around the text here.
 	GotoPrepScreen
 	NoFade
-	ENDA 
+	END
 
 Ch1_2_EndingScene:
-    CALL EndMusicAndMMS
+		CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	FADI 10
-    STAL 5
-	MUSC SongID_Victory
+	FADEIN 10
+		STAL 5
+	MUSIC SongID_Victory
 
 	SetBackground(Woodland)
 		CHECK_EXISTS Gray
 		BEQ 0x1 0xC 0x0
-		CHECK_ALIVE Gray
+		CHECK_ISALIVE Gray
 		BEQ 0x1 0xC 0x0
 		Text(Ch1_2_Postbattle)
 		GOTO 0x2
 	LABEL 0x1
 		Text(Ch1_2_Postbattle_NoGray)
 	LABEL 0x2
-	MNCH 0x02 //go to ch2
-	ENDA
+	GOTO_CHAPTER 0x02 //go to ch2
+	END
 
 #ifndef InlineEvents
-  MESSAGE Events end at offset currentOffset
+	MESSAGE Events end at offset currentOffset
 #endif

@@ -21,20 +21,20 @@ Ch3_3A_TurnBasedEvents:
 	TURN
 
 LoadReinforcements:
-	CHECK_EVENTID 0xB
+	CHECK_FLAG 0xB
 	BNE 0x0 0xC 0x0 //stop if boss killed
 		ReinforcementEvent(Reinforcements1)
 	LABEL 0x0
 	NoFade
-	ENDA
+	END
 
 Ch3_3A_CharacterBasedEvents:
-    CharacterEventBothWays(gSirPurr, AlmLuthierSirPurrTalk, Alm, Luthier)
+	CharacterEventBothWays(gSirPurr, AlmLuthierSirPurrTalk, Alm, Luthier)
 	CHAR
 
 Ch3_3A_LocationBasedEvents:
 	#ifdef __DEBUG__
-	  Seize(7,17)
+		Seize(7,17)
 	#endif
 	LOCA
 
@@ -66,10 +66,10 @@ Ch3_3A_Ballista2:
 	ALIGN 4
 
 Ch3_3A_Units1:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
-	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Gray Villager 0x00 Level(1, Ally, 1) [11,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
+	UNIT Tobin Villager 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Gray Villager 0x00 Level(1, Ally, 1) [11,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Kliff Villager 0x00 Level(1, Ally, 1) [13,13] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Faye Villager_F 0x00 Level(1, Ally, 1) [13,12] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
 	UNIT Acantha Thief_F 0x00 Level(1, Ally, 1) [13,14] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
@@ -82,20 +82,20 @@ Ch3_3A_Units1:
 	UNIT
 
 CutsceneUnits:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [7,17] 0x00 0x00 0x0 0x00 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [6,16] 0x00 0x00 0x0 0x00 [BaseLance, Vulnerary] NoAI
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [8,16] 0x00 0x00 0x0 0x00 [BaseLance] NoAI
 	UNIT
 
 BossUnits:
-	UNIT BerkutPaladin RigelPrince	BerkutPaladin Level(7, Enemy, False) [11,3]	0x00 0x00 0x1 REDA8R8 [IronLance, KeepsakeRing] AttackInRangeAI 
-	UNIT FernandEnemy2 Paladin	BerkutPaladin Level(5, Enemy, False) [11,3]	DropItem 0x00 0x1 REDA7R8 [SteelLance, Vulnerary] AttackInRangeAI 
+	UNIT BerkutPaladin RigelPrince	BerkutPaladin Level(7, Enemy, False) [11,3]	0x00 0x00 0x1 REDA8R8 [IronLance, KeepsakeRing] AttackInRangeAI
+	UNIT FernandEnemy2 Paladin	BerkutPaladin Level(5, Enemy, False) [11,3]	DropItem 0x00 0x1 REDA7R8 [SteelLance, Vulnerary] AttackInRangeAI
 	UNIT Xyzas Paladin	BerkutPaladin Level(3, Enemy, False) [11,3]	DropItem 0x00 0x1 REDA9R8 [Javelin,HolyRing] AttackInRangeAI
 	UNIT
 
 BossUnits_Hard:
-	UNIT BerkutPaladin RigelPrince	BerkutPaladin Level(7, Enemy, False) [11,3]	0x00 0x00 0x1 REDA8R8 [Ridersbane, KeepsakeRing] AttackInRangeAI 
-	UNIT FernandEnemy2 Paladin	BerkutPaladin Level(5, Enemy, False) [11,3]	DropItem 0x00 0x1 REDA7R8 [SteelLance, Vulnerary] AttackInRangeAI 
+	UNIT BerkutPaladin RigelPrince	BerkutPaladin Level(7, Enemy, False) [11,3]	0x00 0x00 0x1 REDA8R8 [Ridersbane, KeepsakeRing] AttackInRangeAI
+	UNIT FernandEnemy2 Paladin	BerkutPaladin Level(5, Enemy, False) [11,3]	DropItem 0x00 0x1 REDA7R8 [SteelLance, Vulnerary] AttackInRangeAI
 	UNIT Xyzas Paladin	BerkutPaladin Level(3, Enemy, False) [11,3]	DropItem 0x00 0x1 REDA9R8 [Javelin,HolyRing] NoAI
 	UNIT
 
@@ -108,7 +108,7 @@ EnemyUnits:
 	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(13, Enemy, True) [13,2]	0x00 0x00 0x0 0x00 [IronLance] NoAI
 	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(14, Enemy, True) [14,3]	0x00 0x00 0x0 0x00 [BaseLance] AttackInRangeAI
 	UNIT
-    
+
 EnemyUnits_Hard:
 	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(10, Enemy, True) [2,3]	DropItem 0x00 0x0 0x00 [Ridersbane] NoAI
 	UNIT Rigel_Cav Cavalier	BerkutPaladin Level(13, Enemy, True) [3,2]	DropItem 0x00 0x0 0x00 [IronLance, Vulnerary] NoAI
@@ -124,15 +124,15 @@ Reinforcements1:
 	UNIT
 
 Ch3_3A_BeginningScene:
-	MUSC SongID_Advance
+	MUSIC SongID_Advance
 	CAMERA_CENTERED [11,16]
-	LOAD2 0x1 CutsceneUnits
+	LOAD_CUTSCENE CutsceneUnits
 	ENUN
-	SetBackground(0x1D)
+	SetBackground(Woodland)
 	TEXTMODE 1
 	TEXTSHOW Ch3_3A_OpeningText
 	TEXTEND
-	MUSC SongID_Tension
+	MUSIC SongID_Tension
 	TEXTCONT
 	TEXTEND
 	TEXTCLEAR
@@ -141,73 +141,73 @@ Ch3_3A_BeginningScene:
 	CAMERA_CENTERED [11,5]
 	STAL 20
 	SVAL 0x2 (BossUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3303 rC r0
-        SVAL 0x2 (BossUnits_Hard|IsPointer)
-    LABEL 0x3303
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
+	CHECK_ISHARD
+	BEQ 0x3303 rC r0
+		SVAL 0x2 (BossUnits_Hard|IsPointer)
+	LABEL 0x3303
+	LOAD_S2 0x1
+	ENUN
 
 	STAL 20
 	CAMERA_CENTERED BerkutPaladin
 	STAL 20
-	MUSC SongID_PrinceOfDarkness
+	MUSIC SongID_PrinceOfDarkness
 	FlashCursor(BerkutPaladin, 60)
 	STAL 20
-	SetBackground(0x1D)
+	SetBackground(Woodland)
 	BackgroundText(Ch3_3A_OpeningText_2)
-	FADI 6
-    CLEAN
-	CLEA 0x0
+	FADEIN 6
+	CLEAN
+	REMOVEALL_BLUE
 	SVAL 0x2 (EnemyUnits|IsPointer)
-    CHECK_HARD
-    BEQ 0x3A03 rC r0
-        SVAL 0x2 (EnemyUnits_Hard|IsPointer)
-    LABEL 0x3A03
-    LOAD1 0x1 0xFFFFFFFF
-    ENUN
-    LOAD3 0x0 Ch3_3A_Units1 
+	CHECK_ISHARD
+	BEQ 0x3A03 rC r0
+		SVAL 0x2 (EnemyUnits_Hard|IsPointer)
+	LABEL 0x3A03
+	LOAD_S2 0x1
+	ENUN
+	LOAD_DEPLOYED 0x0 Ch3_3A_Units1
 	ENUN
 	GotoPrepScreen
-	ENDA
+	END
 
 BerkutAlmAfter:
-	MUSI
+	MUSIC_QUIET_T
 	STAL 20
 	FlashCursor(BerkutPaladin, 60)
 	STAL 20
 	MapText(Ch3_3A_BerkutBattleQuote_Alm_After)
 	STAL 20
-	MUNO
+	MUSIC_QUIET_F
 	NoFade
-	ENDA
+	END
 
 CheckIfAllBossesDefeated:
-	CHECK_EVENTID 0x0B
+	CHECK_FLAG 0x0B
 	BEQ 0x0 0x0 0xC
-	  CHECK_EVENTID 0x0C
+	  CHECK_FLAG 0x0C
 	  BEQ 0x0 0x0 0xC
-		CHECK_EVENTID 0x0D
+		CHECK_FLAG 0x0D
 		BEQ 0x0 0x0 0xC
 		  CALL Ch3_3A_EndingScene
 		  GOTO 0x1
 	LABEL 0x0
-	  ENUF 0xF // Or whatever event ID you attach to the AFEVs.
+	  FLAG_F 0xF // Or whatever event ID you attach to the AFEVs.
 	LABEL 0x1
 	NoFade
-	ENDA
+	END
 
 Ch3_3A_EndingScene:
-    CALL EndMusicAndMMS
+	CALL EndMusicAndMMS
 	CALL UnifiedBEXPCaller
-	EVBIT_MODIFY 0x1
-	ENUT gChapter3A3Completed
-	EVBIT_MODIFY 0x0
-	FADI 2
-    STAL 5
-	MUSC SongID_ShadowOfVictory
-	SetBackground(0x1D)
+	CONFIG_SKIP 0x1
+	FLAG_T gChapter3A3Completed
+	CONFIG_SKIP 0x0
+	FADEIN 2
+	STAL 5
+	MUSIC SongID_ShadowOfVictory
+	SetBackground(Woodland)
 	BackgroundText(Ch3_3A_EndingText)
-	FADI 2
-	MNCH 0x12
-	ENDA
+	FADEIN 2
+	GOTO_CHAPTER 0x12
+	END

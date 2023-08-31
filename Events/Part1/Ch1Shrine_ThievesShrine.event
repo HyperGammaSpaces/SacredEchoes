@@ -24,7 +24,7 @@ CHAR
 
 ThiefShrine_LocationBasedEvents:
 #ifdef __DEBUG__
-  Seize(4,5)
+	Seize(4,5)
 #endif
 
 #ifdef LION_HEADS_ENABLED
@@ -54,18 +54,18 @@ BLST
 ALIGN 4
 
 PlayerUnitsReplay:
-	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,14] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [12,13] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [13,14] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [12,13] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [14,13] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,12] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,12] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [13,12] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,14] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
-	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,14] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI 
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [11,14] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [15,14] 0x00 0x00 0x0 0x00 [Vulnerary] NoAI
 	UNIT
-	
+
 EnemyUnitsReplay:
-	UNIT Bandit_Axe Brigand 0x00 Level(7, Enemy, 1) [4,2] DropItemWithRandomPosition 0x00 0x0 0x00 [BaseAxe, Item50G] NeverMoveAI 
+	UNIT Bandit_Axe Brigand 0x00 Level(7, Enemy, 1) [4,2] DropItemWithRandomPosition 0x00 0x0 0x00 [BaseAxe, Item50G] NeverMoveAI
 	UNIT Bandit_Axe Brigand 0x00 Level(6, Enemy, 1) [9,3] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
 	UNIT Bandit_Axe Brigand 0x00 Level(6, Enemy, 1) [7,5] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
 	UNIT Bandit_Axe Brigand 0x00 Level(6, Enemy, 1) [7,15] RandomizePosition 0x00 0x0 0x00 [BaseAxe] NoAI
@@ -79,32 +79,32 @@ EnemyUnitsReplay:
 
 ThiefShrine_BeginningScene:
 
-	LOAD3 0x0 PlayerUnitsReplay //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+	LOAD_DEPLOYED 0x0 PlayerUnitsReplay //0x0 instead of 0x1 seems to be for allies on maps with prep screens
 	ENUN
-	
+
 	//ASMC 0x85C4D //Sets something with DungeonState
 	SVAL 0x2 0x0 //Number of skirmish enemies to load
-	
+
 	CALL EnemyRandomizerHelper
-	
-	LOAD1 0x1 EnemyUnitsReplay
+
+	LOAD 0x1 EnemyUnitsReplay
 	ENUN
 	GotoPrepScreen
 	NoFade
-	ENDA
+	END
 
 ThiefShrine_EndingScene:
-    FadeOutMusic
+	FadeOutMusic
 	SVAL 0x3 0x3
 	ASMC 0x85C65
 	//SADD 0x32
 	CALL UnifiedBEXPCaller
-    FADI 2
+	FADEIN 2
 	SVAL 0x2 0x3E
-	MNCH 0xFFFF //go to world map
+	GOTO_CHAPTER 0xFFFF //go to world map
 	CALL PostgameUnlockChecker
-	ENDA
+	END
 
 #ifndef InlineEvents
-  MESSAGE Events end at offset currentOffset
+	MESSAGE Events end at offset currentOffset
 #endif
