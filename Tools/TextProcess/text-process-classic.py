@@ -264,7 +264,7 @@ def generate_definitions_lines(name, textEntries):
 
 	yield "\n#endif // TEXT_DEFINITIONS_{}\n".format(name)
 
-def generate_text_binary(parseFileExe, textEntry, sourceFile, targetFile):
+def generate_text_binary(parseFileExe, textEntry, sourceFile, targetFile, definitions):
 	import subprocess as sp
 
 	result = sp.run([parseFileExe, sourceFile, "--to-stdout"], stdout = sp.PIPE)
@@ -419,7 +419,7 @@ def main(args):
 						if verbose:
 							sys.stderr.write("TRACE: [write] update `{}`\n".format(dataFileName))
 
-						generate_text_binary(parserExePath, entry, textFileName, dataFileName)
+						generate_text_binary(parserExePath, entry, textFileName, dataFileName, arguments.depends)
 
 				# Write include
 

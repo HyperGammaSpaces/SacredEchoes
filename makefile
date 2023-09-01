@@ -37,6 +37,7 @@ TEXT_INSTALLER 		= $(TEXT_FOLDER)/InstallTextData.event
 TEXT_MAIN			= $(TEXT_FOLDER)/text_buildfile.txt
 ALL_TEXTFILES		= $(shell $(EADEP) $(TEXT_MAIN) --add-missings)
 TEXT_DEFINITIONS	= $(TEXT_FOLDER)/TextDefinitions.event
+PARSE_DEFS_FILE		= $(TEXT_FOLDER)/ParseDefinitions.txt
 
 PORTRAIT_DMPS		:= $(realpath .)/Graphics/Mugs/Preprocessed
 MAPSPRITES_DMPS		:= $(realpath .)/Graphics/MapSprites/Dmp
@@ -49,6 +50,10 @@ COMPRESS			:= $(realpath .)/Tools/EventAssembler/Tools/compress$(EXE)
 PARSEFILE			:= $(realpath .)/Tools/EventAssembler/Tools/ParseFile$(EXE)
 C2EA				:= $(PYTHON3) $(realpath .)/Tools/C2EA/c2ea.py
 TMX2EA				:= $(PYTHON3) $(realpath .)/Tools/tmx2ea/tmx2ea.py
+DEFS_FOLDER			:= $(realpath .)/Definitions
+PORTRAIT_DEFS		:= $(DEFS_FOLDER)/PortraitDefinitions.event
+BASE_PARSEDEFS		:= $(DEFS_FOLDER)/ParseDefinitions.txt
+MAKE_PARSEDEFS		:= $(PYTHON3) $(DEFS_FOLDER)/MakeParseDefs.py
 TEXT_PROCESS		:= $(PYTHON3) $(realpath .)/Tools/TextProcess/text-process-classic.py
 SYMCOMBO			:= $(PYTHON3) $(realpath .)/Tools/sym/SymCombo.py
 PALETTECONDENSER	:= $(PYTHON3) $(realpath .)/Tools/PaletteCondenser/PaletteCondenser.py
@@ -125,8 +130,14 @@ $(PORTRAIT_DMPS):
 	$(NOTIFY_PROCESS)
 	$(PARSEFILE) $< -o $@ > /dev/null
 
-$(TEXT_INSTALLER) $(TEXT_DEFINITIONS): $(TEXT_MAIN) $(ALL_TEXTFILES)
-	cd $(TEXT_FOLDER) && $(TEXT_PROCESS) $(notdir $(TEXT_MAIN)) --installer $(notdir $(TEXT_INSTALLER)) --definitions $(notdir $(TEXT_DEFINITIONS)) --parser-exe $(PARSEFILE)
+$(TEXT_INSTALLER) $(TEXT_DEFINITIONS): $(TEXT_MAIN) $(ALL_TEXTFILES) $(PARSE_DEFS_FILE)
+	@echo $(notdir $(TEXT_MAIN)) '\n--depends' $(PARSE_DEFS_FILE)
+	cd $(TEXT_FOLDER) && $(TEXT_PROCESS) $(notdir $(TEXT_MAIN)) --depends $(PARSE_DEFS_FILE) --installer $(notdir $(TEXT_INSTALLER)) --definitions $(notdir $(TEXT_DEFINITIONS)) --parser-exe $(PARSEFILE)
+
+$(PARSE_DEFS_FILE): $(PORTRAIT_DEFS) $(BASE_PARSE_DEFS)
+	@echo 'parse defs here'
+	cd $(DEFS_FOLDER) && $(MAKE_PARSEDEFS) $(PORTRAIT_DEFS) $(BASE_PARSEDEFS) $(PARSE_DEFS_FILE) 'Portrait_'
+
 
 %.event %_data.dmp: %.tmx
 	$(NOTIFY_PROCESS)
