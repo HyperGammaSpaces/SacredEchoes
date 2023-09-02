@@ -92,21 +92,20 @@ $(PORTRAIT_DMPS):
 %.event: %.csv %.nmm
 	@echo | $(C2EA) -csv $*.csv -nmm $*.nmm -out $*.event $(SOURCE_ROM) > /dev/null
 
-# TODO: give these full path instead of raw $<
 %.4bpp: %.png
-	cd $(dir $<) && $(GRIT) $< $(GRIT4BPPARGS)
+	cd $(dir $<) && $(GRIT) $(realpath .)/$< $(GRIT4BPPARGS)
 	@mv $(basename $<).img.bin $@
 
 %.fontchar: %.png
-	cd $(dir $<) && $(GRIT) $< $(GRIT2BPPARGS)
+	cd $(dir $<) && $(GRIT) $(realpath .)/$< $(GRIT2BPPARGS)
 	@mv $(basename $<).img.bin $@
 
 %.lz77: %.png
-	cd $(dir $<) && $(GRIT) $< $(GRITLZ77ARGS)
+	cd $(dir $<) && $(GRIT) $(realpath .)/$< $(GRITLZ77ARGS)
 	@mv $(basename $<).img.bin $@
 
 %.pal: %.png
-	cd $(dir $<) && $(GRIT) $< $(GRITPALETTEARGS)
+	cd $(dir $<) && $(GRIT) $(realpath .)/$< $(GRITPALETTEARGS)
 	@mv $(basename $<).pal.bin $@
 
 %.btlpal: %.pal
