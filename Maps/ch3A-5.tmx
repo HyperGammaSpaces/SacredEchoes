@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="26" height="20" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="26" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
  <tileset firstgid="1" name="1A001B1C" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/castle.png" trans="ffffff" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="26" height="20">
+ <layer id="1" name="Tile Layer 1" width="26" height="20">
   <properties>
    <property name="Anims1" value="plCastleAnim"/>
    <property name="Anims2" value="0"/>
@@ -11,7 +11,7 @@
    <property name="Main" value=""/>
    <property name="MapChangesID" value="plCh3A_5_Chg"/>
    <property name="MapID" value="plCh3A_5_Map"/>
-   <property name="ObjectType" value="plCastleObj"/>
+   <property name="ObjectType" value="plCastleGfx"/>
    <property name="PaletteID" value="plCastleNightPalette"/>
    <property name="TileConfig" value="plCastleConf"/>
   </properties>
@@ -538,7 +538,7 @@
    <tile gid="713"/>
   </data>
  </layer>
- <layer name="Map Change 0" width="26" height="20">
+ <layer id="2" name="Map Change 0" width="26" height="20">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="0"/>
@@ -1069,7 +1069,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 1" width="26" height="20" visible="0">
+ <layer id="3" name="Map Change 1" width="26" height="20" visible="0">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="1"/>
@@ -1600,7 +1600,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 2" width="26" height="20" visible="0">
+ <layer id="4" name="Map Change 2" width="26" height="20" visible="0">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="2"/>
@@ -2131,7 +2131,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 3" width="26" height="20">
+ <layer id="5" name="Map Change 3" width="26" height="20">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="3"/>

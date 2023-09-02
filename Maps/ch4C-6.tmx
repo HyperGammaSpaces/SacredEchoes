@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="19" height="30" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="19" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="1">
  <tileset firstgid="1" name="31003233" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/dragonsgate.png" trans="ffffff" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="19" height="30">
+ <layer id="1" name="Tile Layer 1" width="19" height="30">
   <properties>
    <property name="Anims1" value="plDragonsGateAnim"/>
    <property name="Anims2" value="0x0"/>
@@ -11,7 +11,7 @@
    <property name="Main" value=""/>
    <property name="MapChangesID" value="plCh4_6C_Chg"/>
    <property name="MapID" value="plCh4_6C_Map"/>
-   <property name="ObjectType1" value="plDragonsGateObj"/>
+   <property name="ObjectType1" value="plDragonsGateGfx"/>
    <property name="PaletteID" value="plDragonsGatePal"/>
    <property name="TileConfig" value="plDragonsGateConf"/>
   </properties>
@@ -588,7 +588,7 @@
    <tile gid="2"/>
   </data>
  </layer>
- <layer name="Map Change 0" width="19" height="30">
+ <layer id="2" name="Map Change 0" width="19" height="30">
   <properties>
    <property name="Height" value="11"/>
    <property name="ID" value="0"/>
@@ -1169,7 +1169,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 1" width="19" height="30" visible="0">
+ <layer id="3" name="Map Change 1" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="5"/>
    <property name="ID" value="1"/>
@@ -1750,7 +1750,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 2" width="19" height="30" visible="0">
+ <layer id="4" name="Map Change 2" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="2"/>
@@ -2331,7 +2331,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 3" width="19" height="30" visible="0">
+ <layer id="5" name="Map Change 3" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="5"/>
    <property name="ID" value="3"/>
@@ -2912,7 +2912,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 4" width="19" height="30" visible="0">
+ <layer id="6" name="Map Change 4" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="4"/>
@@ -3493,7 +3493,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 5" width="19" height="30" visible="0">
+ <layer id="7" name="Map Change 5" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="5"/>
    <property name="ID" value="5"/>
@@ -4074,7 +4074,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 6" width="19" height="30" visible="0">
+ <layer id="8" name="Map Change 6" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="6"/>
@@ -4655,7 +4655,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 7" width="19" height="30" visible="0">
+ <layer id="9" name="Map Change 7" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="5"/>
    <property name="ID" value="7"/>
@@ -5236,7 +5236,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 8" width="19" height="30" visible="0">
+ <layer id="10" name="Map Change 8" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="8"/>
@@ -5817,7 +5817,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 9" width="19" height="30" visible="0">
+ <layer id="11" name="Map Change 9" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="5"/>
    <property name="ID" value="9"/>
@@ -6398,7 +6398,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 10" width="19" height="30" visible="0">
+ <layer id="12" name="Map Change 10" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="10"/>
@@ -6979,7 +6979,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 11" width="19" height="30" visible="0">
+ <layer id="13" name="Map Change 11" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="5"/>
    <property name="ID" value="11"/>
@@ -7560,7 +7560,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 12" width="19" height="30" visible="0">
+ <layer id="14" name="Map Change 12" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="12"/>
@@ -8141,7 +8141,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 13" width="19" height="30" visible="0">
+ <layer id="15" name="Map Change 13" width="19" height="30" visible="0">
   <properties>
    <property name="Height" value="3"/>
    <property name="ID" value="13"/>

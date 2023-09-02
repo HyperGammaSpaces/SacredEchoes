@@ -11,15 +11,15 @@ POP
 
 ALIGN 4
 CaveBattleBGImg:
-#incbin "CaveBattleBGImg.dmp"
+#incbin "CaveBattleBG.lz77"
 
 ALIGN 4
 CaveBattleBGTSA:
-#incbin "CaveBattleBGTSA.dmp"
+#incbin "CaveBattleBG.bgtsa.lz77"
 
 ALIGN 4
 CaveBattleBGPal:
-#incbin "CaveBattleBGPal.dmp"
+#incbin "CaveBattleBG.pal"
 
 #include "BackgroundFixes.event"
 #include "BattlePlatforms/Installer.event"

@@ -1,23 +1,23 @@
 
 ALIGN 4
 VillageTiles:
-#incbin "Village_comp.dmp"
+#incbin "Village.mapchip.dmp"
 
 ALIGN 4
-VillageObjects:
-#incbin "Village.dmp"
+VillageGraphics:
+#incbin "VillageGfx.lz77"
 
 ALIGN 4
 VillageNightPalette:
-#incbin "villagepal-night.pal.bin"
+#incbin "VillageNight.pal"
 
 PUSH
 ORG $1AEAB0
 VillagePalette:
-#incbin "villagepal.pal.bin" 
+#incbin "VillageGfx.pal"
 POP
 
-EventPointerTable(plVillageObj, VillageObjects) //village obj
+EventPointerTable(plVillageGfx, VillageGraphics) //village obj
 EventPointerTable(plVillagePal, VillagePalette) //village pal
 EventPointerTable(plVillageConf, VillageTiles) //village tile
 EventPointerTable(plVillageAnim, 0x59D568) //village anim

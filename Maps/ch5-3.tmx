@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="28" height="30" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="28" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="2" nextobjectid="1">
  <tileset firstgid="1" name="1D003B1F" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
-  <image source="../Graphics/Tilesets/Cave/1D003B1F.png" trans="ffffff" width="512" height="512"/>
+  <image source="Tilesets/cave.png" trans="ffffff" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="28" height="30">
+ <layer id="1" name="Tile Layer 1" width="28" height="30">
   <properties>
    <property name="Anims1" value="plCaveAnim"/>
    <property name="Anims2" value="0x0"/>
    <property name="ChapterID" value="0x2F"/>
    <property name="Main" value=""/>
    <property name="MapID" value="plCh5_3_Map"/>
-   <property name="ObjectType1" value="plCaveObj"/>
+   <property name="ObjectType1" value="plCaveGfx"/>
    <property name="PaletteID" value="plFinalMapPalette"/>
    <property name="TileConfig" value="plSwampyCaveConf"/>
   </properties>

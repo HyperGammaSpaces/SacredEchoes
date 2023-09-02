@@ -6,79 +6,79 @@
 
 #ifdef _FE8_
 
-  {
+	{
 
-  PUSH
-    ORG $276b4
-      jumpToHack(HPBarsOnMapHack)
-	  
+	PUSH
+		ORG $276b4
+			jumpToHack(HPBarsOnMapHack)
+
 	//Need to add SupportCheck as well as existing TalkCheck
 
-    ORG $15690 // Change width of loaded image
-      // BYTE $20
-      BYTE $18
+		ORG $15690 // Change width of loaded image
+			// BYTE $20
+			BYTE $18
 
-    ORG $156ac // Repoint loaded image
-      POIN HPBarGraphic
+		ORG $156ac // Repoint loaded image
+			POIN HPBarGraphic
 
-    ORG $35718 // Force Subtitle Help (option replaced by hp bars toggle)
-      SHORT $46C0
-    ORG $B1E30
-    POIN HpBarGetterFunc
-    ORG $B1FB0
-    POIN HpBarSetterFunc
-    
-    ORG $B1F20 //Actually toggle the hp bars on options screen (option byte 0x41&20)
-    HpBarGetterFunc:
-    SHORT $4802 $3041 $7800 $0680 $E016
-    
-    ORG $B2120 //Actually toggle the hp bars on options screen (option byte 0x41&20)
-    HpBarSetterFunc:    
-    SHORT $4A04 $3241 $2001 $1C19 $4001 $0149 $7813 $2021 $4240 $E022
-  POP
+		ORG $35718 // Force Subtitle Help (option replaced by hp bars toggle)
+			SHORT $46C0
+		ORG $B1E30
+		POIN HpBarGetterFunc
+		ORG $B1FB0
+		POIN HpBarSetterFunc
 
-  ALIGN 4
-  HPFrames:
-    #incbin "bin/HPFrames.bin"
+		ORG $B1F20 //Actually toggle the hp bars on options screen (option byte 0x41&20)
+		HpBarGetterFunc:
+		SHORT $4802 $3041 $7800 $0680 $E016
 
-  ALIGN 4
-  HPFramePointers:
-    POIN HPFrames
-    POIN HPFrames+8
-    POIN HPFrames+16
-    POIN HPFrames+24
-    POIN HPFrames+32
-    POIN HPFrames+40
-    POIN HPFrames+48
-    POIN HPFrames+56
-    POIN HPFrames+64
-    POIN HPFrames+72
-    POIN HPFrames+80
-    POIN HPFrames+88
+		ORG $B2120 //Actually toggle the hp bars on options screen (option byte 0x41&20)
+		HpBarSetterFunc:
+		SHORT $4A04 $3241 $2001 $1C19 $4001 $0149 $7813 $2021 $4240 $E022
+	POP
 
-  ALIGN 4
-  HPBarsOnMapHack:
-    #include "asm/WarningAndHpBars.lyn.event"
+	ALIGN 4
+	HPFrames:
+		#incbin "bin/HPFrames.bin"
 
-  ALIGN 4
-  HPBarGraphic:
-    #incbin "bin/WarningHpSheet.dmp" 
-	
-  ALIGN 4
-  WS_FrameData: //should be the OAM data
+	ALIGN 4
+	HPFramePointers:
+		POIN HPFrames
+		POIN HPFrames+8
+		POIN HPFrames+16
+		POIN HPFrames+24
+		POIN HPFrames+32
+		POIN HPFrames+40
+		POIN HPFrames+48
+		POIN HPFrames+56
+		POIN HPFrames+64
+		POIN HPFrames+72
+		POIN HPFrames+80
+		POIN HPFrames+88
+
+	ALIGN 4
+	HPBarsOnMapHack:
+		#include "asm/WarningAndHpBars.lyn.event"
+
+	ALIGN 4
+	HPBarGraphic:
+		#incbin "bin/WarningHpSheet.4bpp"
+
+	ALIGN 4
+	WS_FrameData: //should be the OAM data
 	WORD 0x000f0001 //8x8 sprite
 	WORD 0x087601ff //the tile is 0x76
-  Killer_FrameData:
+	Killer_FrameData:
 	WORD 0x000f0001
 	WORD 0x087701ff //tile #0x77
-  Talk_FrameData:
+	Talk_FrameData:
 	WORD 0x400f0001 //16x8 sprite
 	WORD 0x087001ee //tile #0x70
 
-  }
+	}
 
 #else // _FE8_
-  ERROR HpBars hack is for FE8
+	ERROR HpBars hack is for FE8
 #endif // _FE8_
 
 #endif // HP_BARS

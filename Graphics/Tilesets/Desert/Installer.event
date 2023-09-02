@@ -1,15 +1,15 @@
 ALIGN 4
 DesertTiles:
-#incbin "DesertTiles_comp.dmp"
+#incbin "Desert.mapchip.dmp"
 
 ALIGN 4
-DesertObjects:
-#incbin "DesertObjects.dmp"
+DesertGraphics:
+#incbin "DesertGfx.lz77"
 
 ALIGN 4
 DesertPalette:
-#incbin "DesertPalette.pal.bin"
+#incbin "DesertGfx.pal"
 
-EventPointerTable(plDesertObj, DesertObjects) //desert obj
+EventPointerTable(plDesertGfx, DesertGraphics) //desert obj
 EventPointerTable(plDesertPal, DesertPalette) //desert pal
 EventPointerTable(plDesertConf, DesertTiles) //desert tile

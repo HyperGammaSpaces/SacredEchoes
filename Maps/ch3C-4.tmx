@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="16" height="20" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="16" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="2" nextobjectid="1">
  <tileset firstgid="1" name="6800696A" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/desert.png" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="16" height="20">
+ <layer id="1" name="Tile Layer 1" width="16" height="20">
   <properties>
    <property name="Anims1" value="plDesertAnim"/>
    <property name="Anims2" value="0x0"/>
    <property name="ChapterID" value="0x19"/>
    <property name="Main" value=""/>
    <property name="MapID" value="plCh3C_4_Map"/>
-   <property name="ObjectType" value="plDesertObj"/>
+   <property name="ObjectType" value="plDesertGfx"/>
    <property name="PaletteID" value="plDesertPal"/>
    <property name="TileConfig" value="plDesertConf"/>
   </properties>

@@ -66,23 +66,23 @@
 	
 	ALIGN 4
 	New_Battle_Anims_Off_Graphics:
-	#incbin "Anims_Off_Battle_Graphic_New.dmp"
+	#incbin "Anims_Off_Battle_Graphic_New.4bpp"
 	
 	ALIGN 4
 	Battle_Anims_Off_Palette:
-	#incbin "Battle_Anims_Off_Palette.pal.bin"
+	#incbin "Battle_Anims_Off_Palette.pal"
 	
 	ALIGN 4
 	New_Battle_Anims_Off_Right_TSA:
-	#incbin "New_Battle_Anims_Off_Right_TSA_new.dmp"
+	#incbin "New_Battle_Anims_Off_Right_TSA.bgtsa.lz77"
 	
 	ALIGN 4
 	New_Battle_Anims_Off_Left_TSA:
-	#incbin "New_Battle_Anims_Off_Left_TSA.newlayout.cprs.dmp"
+	#incbin "New_Battle_Anims_Off_Left_TSA.bgtsa.lz77"
 	
 	ALIGN 4
 	New_Battle_Anims_Off_Solo_TSA:
-	#incbin "New_Battle_Anims_Off_Solo_TSA.cprs.dmp"
+	#incbin "New_Battle_Anims_Off_Solo_TSA.bgtsa.lz77"
 	
 	ALIGN 4
 	Show_Battle_Stats:
@@ -92,18 +92,18 @@
 	ALIGN 4
 	Battle_Name_Graphics:
 	#ifdef LANGUAGE_ES
-		#incbin "New_Stat_Names_ES.dmp"
+		#incbin "New_Stat_Names_ES.4bpp"
 	#else
-		#incbin "New_Stat_Names.dmp"
+		#incbin "New_Stat_Names.4bpp"
 	#endif
 	
 	ALIGN 4
 	Battle_Name_Palette:
-	#incbin "New_Stat_Names.pal.bin" 
+	#incbin "New_Stat_Names.pal"
 	
 	ALIGN 4
 	New_Numbers:
-	#incbin "new_numbers.dmp"
+	#incbin "new_numbers.4bpp"
 	
 // #else
 // 	ERROR "You're not assembling FE8 events!"

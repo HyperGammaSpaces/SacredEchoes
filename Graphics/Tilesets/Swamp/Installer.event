@@ -2,18 +2,18 @@
 
 ALIGN 4
 SwampTiles:
-#incbin "Swamp_comp.dmp"
+#incbin "Swamp.mapchip.dmp"
 
 ALIGN 4
-SwampObjects:
-#incbin "Swamps.img.bin"
+SwampGraphics:
+#incbin "SwampGfx.lz77"
 
 ALIGN 4
 SwampPalette:
-#incbin "Swamps.pal.bin"
+#incbin "SwampGfx.pal"
 
 //Swamp
-EventPointerTable(plSwampObj, SwampObjects) 
+EventPointerTable(plSwampGfx, SwampGraphics)
 EventPointerTable(plSwampPal, SwampPalette) 
 EventPointerTable(plSwampConf, SwampTiles) 
 EventPointerTable(plFieldsAnim, SwampAnimation)

@@ -1,14 +1,14 @@
 
 ALIGN 4
 FortTiles:
-#incbin "FE8_28_comp.dmp"
+#incbin "Fort.mapchip.dmp"
 
 PUSH
 ORG $1AE470
 FortPalette:
-#incbin "fort.pal.bin"
+#incbin "FortGfx.pal"
 POP
 
-EventPointerTable(plFortObj, 0x1816B8) //fort obj
+EventPointerTable(plFortGfx, 0x1816B8) //fort obj
 EventPointerTable(plFortPal, FortPalette) //fort pal
 EventPointerTable(plFortConf, FortTiles) //fort tile

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="30" height="27" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="30" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
  <tileset firstgid="1" name="mountainous" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/nuibaba.png" width="512" height="512"/>
  </tileset>
  <tileset firstgid="1025" name="2800292A" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/snowcastle.png" trans="ffffff" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="30" height="27">
+ <layer id="1" name="Tile Layer 1" width="30" height="27">
   <properties>
    <property name="Anims1" value="plTempleAnim"/>
    <property name="Anims2" value="0"/>
@@ -14,7 +14,7 @@
    <property name="Main" value=""/>
    <property name="MapChangesID" value="plCh4_4C_Chg"/>
    <property name="MapID" value="plCh4_4C_Map"/>
-   <property name="ObjectType" value="plTempleObj"/>
+   <property name="ObjectType" value="plTempleGfx"/>
    <property name="PaletteID" value="plNuibabaPalette"/>
    <property name="TileConfig" value="plTempleConf"/>
   </properties>
@@ -831,7 +831,7 @@
    <tile gid="167"/>
   </data>
  </layer>
- <layer name="Map Change 0" width="30" height="27">
+ <layer id="2" name="Map Change 0" width="30" height="27">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="0"/>
@@ -1652,7 +1652,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 1" width="30" height="27">
+ <layer id="3" name="Map Change 1" width="30" height="27">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="1"/>

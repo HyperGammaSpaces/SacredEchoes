@@ -40,7 +40,7 @@ TEXT_DEFINITIONS	= $(TEXT_FOLDER)/TextDefinitions.event
 PARSE_DEFS_FILE		= $(TEXT_FOLDER)/ParseDefinitions.txt
 
 PORTRAIT_DMPS		:= $(realpath .)/Graphics/Mugs/Preprocessed
-MAPSPRITES_DMPS		:= $(realpath .)/Graphics/MapSprites/Dmp
+MAPSPRITES_DMPS		:= $(realpath .)/Graphics/MapSprites/bin
 
 # tools
 GRIT 				:= $(realpath .)/Tools/grit/grit$(EXE)
@@ -92,6 +92,7 @@ $(PORTRAIT_DMPS):
 %.event: %.csv %.nmm
 	@echo | $(C2EA) -csv $*.csv -nmm $*.nmm -out $*.event $(SOURCE_ROM) > /dev/null
 
+# TODO: give these full path instead of raw $<
 %.4bpp: %.png
 	cd $(dir $<) && $(GRIT) $< $(GRIT4BPPARGS)
 	@mv $(basename $<).img.bin $@
@@ -111,6 +112,9 @@ $(PORTRAIT_DMPS):
 %.btlpal: %.pal
 	$(PALETTECONDENSER) $< $@
 	$(COMPRESS) $@ $@
+
+%.bgtsa: %.png
+	$(TSAGENERATOR) $< $@
 
 %.bgtsa.lz77: %.png
 	$(TSAGENERATOR) $< $@

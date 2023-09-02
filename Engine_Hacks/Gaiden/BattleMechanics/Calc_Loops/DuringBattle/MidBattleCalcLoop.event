@@ -14,9 +14,6 @@ MidBattleLoopEnd:
 #incbin "MidBattleLoopEnd.dmp"
 
 ALIGN 4
-#include "DamageHalvingSkillsDuringBattle.lyn.event"
-
-ALIGN 4
 MidBattle_Sureshot:
 #incbin "SureShot.dmp"
 
@@ -44,7 +41,6 @@ MidBattleCalcLoopTable:
     POIN MidBattleLoopStart
     POIN MidBattle_Sureshot
     POIN MidBattle_PrayerRing
-    //POIN DamageHalvingSkillsDuringBattle //commented out because now in prebattle loop
     POIN MidBattle_DumasGift
     //POIN MidBattle_StatusWeapons //commented out while weapon effects are being finalized 
     #ifdef GAIDEN_MAGIC_INSTALLED

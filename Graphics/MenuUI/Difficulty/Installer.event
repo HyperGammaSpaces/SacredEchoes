@@ -3,47 +3,47 @@ PUSH
 	POIN NewDifficultyButtons
 	//difficulty select palettes
 	ORG $A29498
-	#incbin "difficulty_A29498_easyactive_SUNSET.pal.bin"
+	#incbin "difficulty_A29498_easyactive_SUNSET.pal"
 	ORG $A294B8
-	#incbin "difficulty_A294B8_easyinactive_SUNSET.pal.bin"
+	#incbin "difficulty_A294B8_easyinactive_SUNSET.pal"
 	ORG $A294D8
-	#incbin "difficulty_A294D8_normalactive_SUNSET.pal.bin"
+	#incbin "difficulty_A294D8_normalactive_SUNSET.pal"
 	ORG $A294F8
-	#incbin "difficulty_A294F8_normalinactive_SUNSET.pal.bin"
+	#incbin "difficulty_A294F8_normalinactive_SUNSET.pal"
 	ORG $A29518
-	#incbin "difficulty_A29518_hardactive_SUNSET.pal.bin"
+	#incbin "difficulty_A29518_hardactive_SUNSET.pal"
 	ORG $A29538
-	#incbin "difficulty_A29538_hardinactive_SUNSET.pal.bin"
+	#incbin "difficulty_A29538_hardinactive_SUNSET.pal"
 
 	ORG $A1B638
-	#incbin "pal-a1b638.pal.bin"
+	#incbin "pal-a1b638.pal"
 	ORG $A1E0D8
-	#incbin "pal-a1b638.pal.bin"
+	#incbin "pal-a1b638.pal"
 	ORG $A27F68
-	#incbin "pal-a1b638.pal.bin"
+	#incbin "pal-a1b638.pal"
 	ORG $A2E1D8
-	#incbin "pal-a1b638.pal.bin"
+	#incbin "pal-a1b638.pal"
 	ORG $A29438
-	#incbin "difficulty.pal.bin"
+	#incbin "difficulty.pal"
 	ORG $A27FE8
-	#incbin "pal-a27fe8.pal.bin"
+	#incbin "pal-a27fe8.pal"
 	ORG $A2E1B8
-	#incbin "pal-a2e1b8.pal.bin"
+	#incbin "pal-a2e1b8.pal"
 
 POP
 
 ALIGN 4
 NewDifficultyButtons:
 #ifdef LANGUAGE_ES
-	#incbin "difficulty_ES.dmp"
+	#incbin "difficulty_ES.lz77"
 #else
-	#incbin "difficulty.dmp"
+	#incbin "difficulty.lz77"
 #endif
 
 ALIGN 4
 CasualModeButtons:
 #ifdef LANGUAGE_ES
-	#incbin "casualmode_ES.dmp"
+	#incbin "casualmode_ES.lz77"
 #else
-	#incbin "casualmode.dmp"
+	#incbin "casualmode.lz77"
 #endif

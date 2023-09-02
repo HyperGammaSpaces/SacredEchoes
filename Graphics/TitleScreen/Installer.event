@@ -4,17 +4,17 @@
 	ALIGN 4
 
 	titlebackgroundimage:
-	#incext compress "titlebackgroundimage.img.bin"
+	#incbin "titlebackgroundimage.lz77"
 	
 	ALIGN 4
 	
 	titlebackgroundpalette:
-	#incbin "titlebackgroundimage.pal.bin"
+	#incbin "titlebackgroundimage.pal"
 	
 	ALIGN 4
 	
 	titlebackgroundtsa:
-	#incbin "titlebackgroundtsa.bin"
+	#incbin "titlebackgroundimage.bgtsa"
 	
 	//no intro cinematic, from essential fixes
 	PUSH; ORG $C6714; SHORT 0; POP
@@ -47,8 +47,8 @@ POIN titlebackgroundtsa
 ALIGN 4
 NewTitleScroll:
 #ifdef LANGUAGE_ES
-	#incbin "TitleScroll_ES.dmp"
+	#incbin "TitleScroll_ES.lz77"
 #else
-	#incbin "TitleScroll.dmp"
+	#incbin "TitleScroll.lz77"
 #endif
 	

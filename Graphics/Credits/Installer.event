@@ -169,61 +169,61 @@ WORD $78
 //I'm just using the same palette for all of them because these are just text slides.
 ALIGN 4
 CreditsPal:
-#incbin "CreditsPal.pal.bin"
+#incbin "CreditsPal.pal"
 
 //NOTE: these TSAs are in reverse vertical order, 60 bytes (30 4BPP tiles) per row. The two bytes in front of the map are [width-1, height-1]
 CreditSlide1_Img:
-#incbin "01.img.bin"
+#incbin "01.lz77"
 CreditSlide1_TSA:
 BYTE $1D $13
-#incbin "01.map.bin"
+#incbin "01.bgtsa"
 ALIGN 4
 
 CreditSlide3_Img:
-#incbin "03.img.bin"
+#incbin "03.lz77"
 CreditSlide3_TSA:
 BYTE $1D $13
-#incbin "03.map.bin"
+#incbin "03.bgtsa"
 ALIGN 4
 
 CreditSlide4_Img:
-#incbin "04.img.bin"
+#incbin "04.lz77"
 CreditSlide4_TSA:
 BYTE $1D $13
-#incbin "04.map.bin"
+#incbin "04.bgtsa"
 ALIGN 4
 
 CreditSlide5_Img:
-#incbin "05.img.bin"
+#incbin "05.lz77"
 CreditSlide5_TSA:
 BYTE $1D $13
-#incbin "05.map.bin"
+#incbin "05.bgtsa"
 ALIGN 4
 
 CreditSlide6_Img:
-#incbin "06.img.bin"
+#incbin "06.lz77"
 CreditSlide6_TSA:
 BYTE $1D $13
-#incbin "06.map.bin"
+#incbin "06.bgtsa"
 ALIGN 4
 
 CreditSlide7_Img:
-#incbin "07.img.bin"
+#incbin "07.lz77"
 CreditSlide7_TSA:
 BYTE $1D $13
-#incbin "07.map.bin"
+#incbin "07.bgtsa"
 ALIGN 4
 
 CreditSlide8_Img:
-#incbin "08.img.bin"
+#incbin "08.lz77"
 CreditSlide8_TSA:
 BYTE $1D $13
-#incbin "08.map.bin"
+#incbin "08.bgtsa"
 ALIGN 4
 
 CreditSlide9_Img:
-#incbin "09.img.bin"
+#incbin "09.lz77"
 CreditSlide9_TSA:
 BYTE $1D $13
-#incbin "09.map.bin"
+#incbin "09.bgtsa"
 ALIGN 4

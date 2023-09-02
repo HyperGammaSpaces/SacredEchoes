@@ -4,9 +4,9 @@ PUSH
 	PUSH
 	// fix your romhack IS
 	ORG 0xA07AD8
-	#incbin "SaveSlotHardPal.dmp"
+	#incbin "SaveSlotHardPal.lz77"
 	ORG 0xA07BD8
-	#incbin "SaveSlotHardPal.dmp"
+	#incbin "SaveSlotHardPal.lz77"
 	POP
 	*/
 
@@ -14,13 +14,13 @@ PUSH
 	/*
 	//Stone theme
 	ORG $A07B18
-	#incbin "SavePalette/savepalette_A07B18_normalactive_STONE.pal.bin"
+	#incbin "SavePalette/savepalette_A07B18_normalactive_STONE.pal"
 	ORG $A07B38
-	#incbin "SavePalette/savepalette_A07B38_normalinactive_STONE.pal.bin"
+	#incbin "SavePalette/savepalette_A07B38_normalinactive_STONE.pal"
 	ORG $A07C98
-	#incbin "SaveText/savetext_A07C98_normalactive_STONE.pal.bin"
+	#incbin "SaveText/savetext_A07C98_normalactive_STONE.pal"
 	ORG $A07CB8
-	#incbin "SaveText/savetext_A07CB8_normalinactive_STONE.pal.bin"
+	#incbin "SaveText/savetext_A07CB8_normalinactive_STONE.pal"
 	*/
 	
 	/*
@@ -28,56 +28,56 @@ PUSH
 	*/
 	//easy mode
 	ORG $A07AD8
-	#incbin "SavePalette/savepalette_A07AD8_easyactive_SUNSET.pal.bin"
+	#incbin "SavePalette/savepalette_A07AD8_easyactive_SUNSET.pal"
 	ORG $A07AF8
-	#incbin "SavePalette/savepalette_A07AF8_easyinactive_SUNSET.pal.bin"
+	#incbin "SavePalette/savepalette_A07AF8_easyinactive_SUNSET.pal"
 	//normal mode
 	ORG $A07B18
-	#incbin "SavePalette/savepalette_A07B18_normalactive_SUNSET.pal.bin"
+	#incbin "SavePalette/savepalette_A07B18_normalactive_SUNSET.pal"
 	ORG $A07B38
-	#incbin "SavePalette/savepalette_A07B38_normalinactive_SUNSET.pal.bin"
+	#incbin "SavePalette/savepalette_A07B38_normalinactive_SUNSET.pal"
 	//celica mode
 	ORG $A07B58
-	#incbin "SavePalette/savepalette_A07B58_celicaactive_SUNSET.pal.bin"
+	#incbin "SavePalette/savepalette_A07B58_celicaactive_SUNSET.pal"
 	ORG $A07B78
-	#incbin "SavePalette/savepalette_A07B78_celicainactive_SUNSET.pal.bin"
+	#incbin "SavePalette/savepalette_A07B78_celicainactive_SUNSET.pal"
 	//hard mode
 	ORG $A07B98
-	#incbin "SavePalette/savepalette_A07B98_hardactive_SUNSET.pal.bin"
+	#incbin "SavePalette/savepalette_A07B98_hardactive_SUNSET.pal"
 	ORG $A07BB8
-	#incbin "SavePalette/savepalette_A07BB8_hardinactive_SUNSET.pal.bin"
+	#incbin "SavePalette/savepalette_A07BB8_hardinactive_SUNSET.pal"
 	//celica hardmode
 	ORG $A07BD8
-	#incbin "SavePalette/savepalette_A07BD8_celicahardactive_SUNSET.pal.bin"
+	#incbin "SavePalette/savepalette_A07BD8_celicahardactive_SUNSET.pal"
 	ORG $A07BF8
-	#incbin "SavePalette/savepalette_A07BF8_celicahardinactive_SUNSET.pal.bin"
+	#incbin "SavePalette/savepalette_A07BF8_celicahardinactive_SUNSET.pal"
 	
 	//text palettes
 	//easy mode
 	ORG $A07C58
-	#incbin "SaveText/savetext_A07C58_easyactive_SUNSET.pal.bin"
+	#incbin "SaveText/savetext_A07C58_easyactive_SUNSET.pal"
 	ORG $A07C78
-	#incbin "SaveText/savetext_A07C78_easyinactive_SUNSET.pal.bin"
+	#incbin "SaveText/savetext_A07C78_easyinactive_SUNSET.pal"
 	//normal mode
 	ORG $A07C98
-	#incbin "SaveText/savetext_A07C98_normalactive_SUNSET.pal.bin"
+	#incbin "SaveText/savetext_A07C98_normalactive_SUNSET.pal"
 	ORG $A07CB8
-	#incbin "SaveText/savetext_A07CB8_normalinactive_SUNSET.pal.bin"
+	#incbin "SaveText/savetext_A07CB8_normalinactive_SUNSET.pal"
 	//celica mode
 	ORG $A07CD8
-	#incbin "SaveText/savetext_A07C98_normalactive_SUNSET.pal.bin"
+	#incbin "SaveText/savetext_A07C98_normalactive_SUNSET.pal"
 	ORG $A07CF8
-	#incbin "SaveText/savetext_A07CB8_normalinactive_SUNSET.pal.bin"
+	#incbin "SaveText/savetext_A07CB8_normalinactive_SUNSET.pal"
 	//hard mode
 	ORG $A07D18
-	#incbin "SaveText/savetext_A07D18_hardactive_SUNSET.pal.bin"
+	#incbin "SaveText/savetext_A07D18_hardactive_SUNSET.pal"
 	ORG $A07D38
-	#incbin "SaveText/savetext_A07D38_hardinactive_SUNSET.pal.bin"
+	#incbin "SaveText/savetext_A07D38_hardinactive_SUNSET.pal"
 	//celica hard mode
 	ORG $A07D58
-	#incbin "SaveText/savetext_A07D18_hardactive_SUNSET.pal.bin"
+	#incbin "SaveText/savetext_A07D18_hardactive_SUNSET.pal"
 	ORG $A07D78
-	#incbin "SaveText/savetext_A07D38_hardinactive_SUNSET.pal.bin"
+	#incbin "SaveText/savetext_A07D38_hardinactive_SUNSET.pal"
 	
 	ORG $A8EDC
 	POIN NewSaveMenu
@@ -92,11 +92,11 @@ POP
 ALIGN 4
 NewSaveMenu:
 #ifdef LANGUAGE_ES
-	#incbin "savemenu-A26A74_ES.dmp"
+	#incbin "savemenu-A26A74_ES.lz77"
 #else
-	#incbin "savemenu-A26A74.dmp" 
+	#incbin "savemenu-A26A74.lz77"
 #endif
 
 ALIGN 4
 ColumnGfx:
-#incbin "a09e4c.dmp"
+#incbin "a09e4c.lz77"

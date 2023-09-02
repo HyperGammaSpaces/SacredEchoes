@@ -2,7 +2,7 @@ PUSH
 
 	#ifdef LANGUAGE_ES
         ORG $5BB0C8
-        #incbin "levelup_animsoff_085BB0C8_ES.dmp"
+        #incbin "levelup_animsoff_085BB0C8_ES.lz77"
 	#endif
 
 	ORG $507D4
@@ -23,14 +23,14 @@ PUSH
 	POIN NewExpBarGfx+0x680
 	
 	ORG $803590
-	#incbin "802D44_exp.pal.bin"
+	#incbin "802D44_exp.pal"
 
 	ORG $73D88
 	POIN NewLevelupScreenGfx
 	ORG $7EB84
 	POIN NewLevelupScreenGfx
 	ORG $803b10
-	#incbin "8035b0-levelup.pal.bin"
+	#incbin "8035b0-levelup.pal"
 	
 	#ifdef LANGUAGE_ES
 	ORG $749A8
@@ -49,26 +49,26 @@ POP
 
 ALIGN 4
 NewLevelupScreenGfx:
-#incbin "8035b0-levelup.dmp"
+#incbin "8035b0-levelup.lz77"
 
 ALIGN 4
 NewExpBarGfx:
-#incbin "802D44_exp.dmp"
+#incbin "802D44_exp.lz77"
 
 #ifdef LANGUAGE_ES
 	ALIGN 4
 	LevelUpTextAnimsOn:
-	#incbin "leveluptext_5C5994_ES.dmp"
+	#incbin "leveluptext_5C5994_ES.lz77"
 	LevelUpTextTSA1:
-	#incbin "leveluptext_tsa1_ES.dmp"
+	#incbin "leveluptext_tsa1_ES.lz77"
 	LevelUpTextTSA2:
-	#incbin "leveluptext_tsa2_ES.dmp"
+	#incbin "leveluptext_tsa2_ES.lz77"
 	LevelUpTextTSA3:
-	#incbin "leveluptext_tsa3_ES.dmp"
+	#incbin "leveluptext_tsa3_ES.lz77"
 	LevelUpTextTSA4:
-	#incbin "leveluptext_tsa4_ES.dmp"
+	#incbin "leveluptext_tsa4_ES.lz77"
 	LevelUpTextTSA5:
-	#incbin "leveluptext_tsa5_ES.dmp"
+	#incbin "leveluptext_tsa5_ES.lz77"
 	LevelUpTextTSA6:
-	#incbin "leveluptext_tsa6_ES.dmp"
+	#incbin "leveluptext_tsa6_ES.lz77"
 #endif

@@ -1,7 +1,7 @@
 //Scrolling bg
 PUSH
   ORG $b12db4
-  #incbin "scrollybg.dmp"
+  #incbin "scrollybg.lz77"
   
 /*  ORG $b1754c
   #incbin "bin\scrollybg_pal.dmp" //warning: this includes the second palette not in image
@@ -23,8 +23,8 @@ POP
 
 ALIGN 4
 NewChapterIntroThingy:
-#incbin "chaptertitle_08B19874_edited.dmp"
+#incbin "chaptertitle_08B19874_edited.lz77"
 
 ALIGN 4
 NewPhaseFrame:
-#incbin "PHASE_FRAME_0859F020_new.dmp"
+#incbin "PHASE_FRAME_0859F020_new.lz77"

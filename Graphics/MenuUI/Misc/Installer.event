@@ -51,7 +51,7 @@ PUSH
 	ORG $C0DC4
 	POIN MapStatusScreenGFX
 	ORG $a98dec
-	#incbin "MapStatusScreenPalette.pal.bin"
+	#incbin "MapStatusScreenPalette.pal"
     ORG $B1C7C
     POIN OptionIcons
     
@@ -65,15 +65,15 @@ POP
 //Endings gfx at A3F750
 //2 palettes at A3F710
 NewEndingsGfx:
-#incbin "Endings_A3F750.img.bin"
+#incbin "Endings_A3F750.lz77"
 ALIGN 4
 
 NewEndingsPalette:
-#incbin "Endings_A3F750.pal.bin"
+#incbin "Endings_A3F750.pal"
 ALIGN 4
 
 OptionIcons:
-#incbin "OptionsIcons_08A0754C.img.bin"
+#incbin "OptionsIcons_08A0754C.lz77"
 
 ALIGN 4
 GameOverTSA:
@@ -84,106 +84,106 @@ SHORT $0 $1 $2 $3 $4 $5 $6 $7 $8 $9 $A $B $C $D $E $F $10 $11 $12 $13 $14 $15 $1
 ALIGN 4
 RTextGFX_1:
 #ifdef LANGUAGE_ES
-	#incbin "RText_Help_A02914_ES.dmp"
+	#incbin "RText_Help_A02914_ES.lz77"
 #else
-	#incbin "RText_Help_A02914.dmp"
+	#incbin "RText_Help_A02914.lz77"
 #endif
 ALIGN 4
 RTextGFX_2:
 #ifdef LANGUAGE_ES
-	#incbin "RText_Help_A02980_ES.dmp"
+	#incbin "RText_Help_A02980_ES.lz77"
 #else
-	#incbin "RText_Help_A02980.dmp"
+	#incbin "RText_Help_A02980.lz77"
 #endif
 
 ALIGN 4
 PromotionTextbox:
-#incbin "a30800-promotiontextbox.dmp" 
+#incbin "a30800-promotiontextbox.lz77"
 
 ALIGN 4
 GameOverTextGFX:
 #ifdef LANGUAGE_ES
-	#incbin "GAMEOVER_08A0AB0C_ES.dmp"
+	#incbin "GAMEOVER_08A0AB0C_ES.lz77"
 #else
-	#incbin "GAMEOVER_08A0AB0C.dmp"
+	#incbin "GAMEOVER_08A0AB0C.lz77"
 #endif 
 
 ALIGN 4
 MapClearGFX:
 #ifdef LANGUAGE_ES
-	#incbin "MapClear_089A1E70_ES.dmp"
+	#incbin "MapClear_089A1E70_ES.lz77"
 #else
-	#incbin "MapClear_089A1E70.dmp"
+	#incbin "MapClear_089A1E70.lz77"
 #endif
 
 ALIGN 4
 SkirmishGFX:
 #ifdef LANGUAGE_ES
-	#incbin "skirmish_aa1970_ES.dmp"
+	#incbin "skirmish_aa1970_ES.lz77"
 #else
-	#incbin "skirmish_aa1970.dmp"
+	#incbin "skirmish_aa1970.lz77"
 #endif
 
 ALIGN 4
 UnitMenuPageGFX:
 #ifdef LANGUAGE_ES
-	#incbin "UnitMenu_A1CDC4_ES.dmp"
+	#incbin "UnitMenu_A1CDC4_ES.lz77"
 #else
-	#incbin "UnitMenu_A1CDC4.dmp"
+	#incbin "UnitMenu_A1CDC4.lz77"
 #endif
 
 ALIGN 4
 GuideTitleGFX:
 #ifdef LANGUAGE_ES
-	#incbin "guide_B177C0_ES.dmp"
+	#incbin "guide_B177C0_ES.lz77"
 #else
-	#incbin "guide_B177C0.dmp"
+	#incbin "guide_B177C0.lz77"
 #endif 
 
 ALIGN 4
 GuideButtons:
 #ifdef LANGUAGE_ES
-	#incbin "GuideButtons_B17864_ES.dmp"
+	#incbin "GuideButtons_B17864_ES.lz77"
 #else
-	#incbin "GuideButtons_B17864.dmp"
+	#incbin "GuideButtons_B17864.lz77"
 #endif
 
 ALIGN 4
 AnimationSettingTitleGFX:
 #ifdef LANGUAGE_ES
-	#incbin "AnimPerUnit_A1D288_ES.dmp"
+	#incbin "AnimPerUnit_A1D288_ES.lz77"
 #else
-	#incbin "AnimPerUnit_A1D288.dmp"
+	#incbin "AnimPerUnit_A1D288.lz77"
 #endif 
 
 ALIGN 4
 BattleStatusScreenGFX:
 #ifdef LANGUAGE_ES
-	#incbin "BattleStatus_08A2E214_ES.dmp"
+	#incbin "BattleStatus_08A2E214_ES.lz77"
 #else
-	#incbin "BattleStatus_08A2E214.dmp"
+	#incbin "BattleStatus_08A2E214.lz77"
 #endif 
 
 ALIGN 4
 MapStatusScreenGFX:
 #ifdef LANGUAGE_ES
-	#incbin "WorldMapStatus_a986c0_ES.dmp"
+	#incbin "WorldMapStatus_a986c0_ES.lz77"
 #else
-	#incbin "WorldMapStatus_a986c0.dmp"
+	#incbin "WorldMapStatus_a986c0.lz77"
 #endif 
 
 ALIGN 4
 StatusTextImage:
 #ifdef LANGUAGE_ES
-	#incbin "statusnames-A16DEC_ES.dmp"
+	#incbin "statusnames-A16DEC_ES.lz77"
 #else
-	#incbin "statusnames-A16DEC.dmp"
+	#incbin "statusnames-A16DEC.lz77"
 #endif
 
 ALIGN 4
 TerrainWindowGraphics:
 #ifdef LANGUAGE_ES
-	#incbin "TerrainWindow_A167C8_ES.dmp"
+	#incbin "TerrainWindow_A167C8_ES.lz77"
 #else
-	#incbin "TerrainWindow_A167C8.dmp"
+	#incbin "TerrainWindow_A167C8.lz77"
 #endif

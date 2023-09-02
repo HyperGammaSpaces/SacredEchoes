@@ -11,21 +11,21 @@ PUSH
   ORG $A83364
   ValentiaWorldMap:
   #ifdef ROTATE_WORLD_MAP
-    #incbin "valentia-worldmap.img.bin"
+    #incbin "valentia-worldmap.4bpp"
   #else
-    #incbin "valentia-sideways480x320.img.bin"
+    #incbin "valentia-sideways480x320.4bpp"
   #endif
   
   ORG $A95F64
-  #incbin "valentia-worldmap.pal.bin"
+  #incbin "valentia-worldmap.pal"
   ORG $A95FE4
-  #incbin "valentia-worldmap.pal.bin"
+  #incbin "valentia-worldmap.pal"
   
   //ORG $AA1280 for mini map image
   ORG $C3E6C
   POIN NewMiniMap
   ORG $AA188C
-  #incbin "valentia-minimap.pal.bin"
+  #incbin "valentia-minimap.pal"
   #ifdef ROTATE_WORLD_MAP
     ORG $C3AB0
     POIN GM_MinimapTSA
@@ -36,9 +36,9 @@ POP
 ALIGN 4
 NewMiniMap:
 #ifdef ROTATE_WORLD_MAP
-    #incbin "valentia-minimap.img.bin"
+    #incbin "valentia-minimap.4bpp"
 #else
-    #incbin "valentia-minimap-sideways.dmp"
+    #incbin "valentia-minimap-sideways.4bpp"
 #endif
 ALIGN 4
 GM_MinimapTSA:

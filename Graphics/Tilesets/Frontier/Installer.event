@@ -2,26 +2,26 @@
 
 ALIGN 4
 FrontierTiles:
-#incbin "Frontier_comp.dmp"
+#incbin "Frontier.mapchip.dmp"
 
 ALIGN 4
-FrontierObjects:
-#incbin "Frontier.img.bin"
+FrontierGraphics:
+#incbin "FrontierGfx.lz77"
 
 ALIGN 4
 FrontierPalette:
-#incbin "Frontier.pal.bin"
+#incbin "FrontierGfx.pal"
 
 ALIGN 4
 FrontierNightPalette:
-#incbin "Frontier_night.pal.bin"
+#incbin "Frontier_night.pal"
 
 ALIGN 4
 FrontierSnowPalette:
-#incbin "Frontier_snow.pal.bin"
+#incbin "Frontier_snow.pal"
 
 //Frontier
-EventPointerTable(plFrontierObj, FrontierObjects) 
+EventPointerTable(plFrontierGfx, FrontierGraphics)
 EventPointerTable(plFrontierPal, FrontierPalette) 
 EventPointerTable(plFrontierConf, FrontierTiles)
 EventPointerTable(plFrontierNightPal, FrontierNightPalette) 

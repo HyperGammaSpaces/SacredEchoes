@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="20" height="21" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="20" height="21" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="1">
  <tileset firstgid="1" name="50005152" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/stronghold.png" trans="ffffff" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="20" height="21">
+ <layer id="1" name="Tile Layer 1" width="20" height="21">
   <properties>
    <property name="Anims1" value="plStrongholdAnim"/>
    <property name="Anims2" value="0"/>
@@ -11,7 +11,7 @@
    <property name="Main" value=""/>
    <property name="MapChangesID" value="plCh3A_4_Chg"/>
    <property name="MapID" value="plCh3A_4_Map"/>
-   <property name="ObjectType" value="plStrongholdObj"/>
+   <property name="ObjectType" value="plStrongholdGfx"/>
    <property name="PaletteID" value="plStrongholdPal"/>
    <property name="TileConfig" value="plStrongholdConf"/>
   </properties>
@@ -438,7 +438,7 @@
    <tile gid="870"/>
   </data>
  </layer>
- <layer name="Main Gate" width="20" height="21">
+ <layer id="2" name="Main Gate" width="20" height="21">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="0"/>
@@ -869,7 +869,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Cell Door" width="20" height="21">
+ <layer id="3" name="Cell Door" width="20" height="21">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="1"/>
@@ -1300,7 +1300,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Treasure Chest" width="20" height="21">
+ <layer id="4" name="Treasure Chest" width="20" height="21">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="2"/>
@@ -1731,7 +1731,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Chest Door" width="20" height="21">
+ <layer id="5" name="Chest Door" width="20" height="21">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="3"/>
@@ -2162,7 +2162,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Top Right Door" width="20" height="21">
+ <layer id="6" name="Top Right Door" width="20" height="21">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="4"/>

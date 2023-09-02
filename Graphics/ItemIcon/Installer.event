@@ -4,34 +4,34 @@
 //Item icons start at $5926F4 with $800 between each block of 32
 PUSH
   ORG ItemIconSheetOffset
-  #incbin "item16.img.bin"
-  #incbin "item32.img.bin"
-  #incbin "item48.img.bin"
-  #incbin "item64.img.bin"
-  #incbin "item80.img.bin"
-  #incbin "item96.img.bin"
-  #incbin "item112.img.bin"
-  #incbin "item128.img.bin"
-  #incbin "item144.img.bin"
-  #incbin "item160.img.bin"
-  #incbin "item176.img.bin"
-  #incbin "item192.img.bin"
-  #incbin "item208.img.bin"
-  #incbin "item224.img.bin"
+  #incbin "item16.4bpp"
+  #incbin "item32.4bpp"
+  #incbin "item48.4bpp"
+  #incbin "item64.4bpp"
+  #incbin "item80.4bpp"
+  #incbin "item96.4bpp"
+  #incbin "item112.4bpp"
+  #incbin "item128.4bpp"
+  #incbin "item144.4bpp"
+  #incbin "item160.4bpp"
+  #incbin "item176.4bpp"
+  #incbin "item192.4bpp"
+  #incbin "item208.4bpp"
+  #incbin "item224.4bpp"
 
 // New Weapon Rank Icons
   SetItemIcon(0x70)
-  #incbin "WRankIcons.dmp"
+  #incbin "WRankIcons.4bpp"
   
   SetItemIcon(0x7A)
   AffinityIcons:
-  #incbin "AffinityIcons.dmp"
+  #incbin "AffinityIcons.4bpp"
 
   SetItemIcon(0x81)
-  #incbin "MountTypeIcons.dmp"
+  #incbin "MountTypeIcons.4bpp"
   
   SetItemIcon(0xAD)
-  #incbin "MilaIcon.dmp"
+  #incbin "MilaIcon.4bpp"
 
   //Weapon Icons Palette
   ORG 0x35D0
@@ -57,9 +57,9 @@ POP
 //oh there's a whole bunch of headers from probably the unit sort menu in a compressed image at A1CDC4, then the Animation one is a compressed image at A1D288 (func: 90d80)
 ALIGN 4
 FixedConfigGFX:
-#incbin "Config.dmp"
+#incbin "Config.4bpp"
 
 ALIGN 4
 WeaponIconsPal:
-#incbin "WeaponIconsPal.bin"
+#incbin "WeaponIcons.pal"
 //MESSAGE Weapon Icon Palette is at WeaponIconsPal

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="23" height="23" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="23" height="23" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="1">
  <tileset firstgid="1" name="20002122" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/temple_floor.png" trans="ffffff" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="23" height="23">
+ <layer id="1" name="Tile Layer 1" width="23" height="23">
   <properties>
    <property name="Anims1" value="plTempleAnim"/>
    <property name="Anims2" value="0x0"/>
@@ -11,7 +11,7 @@
    <property name="Main" value=""/>
    <property name="MapChangesID" value="plCh3A_7_Chg"/>
    <property name="MapID" value="plCh3A_7_Map"/>
-   <property name="ObjectType" value="plTempleObj"/>
+   <property name="ObjectType" value="plTempleGfx"/>
    <property name="PaletteID" value="plSluiceGatePalette"/>
    <property name="TileConfig" value="plTempleConf"/>
   </properties>
@@ -547,7 +547,7 @@
    <tile gid="76"/>
   </data>
  </layer>
- <layer name="Bridge 0" width="23" height="23">
+ <layer id="2" name="Bridge 0" width="23" height="23">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="0"/>
@@ -1087,7 +1087,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Wall 1" width="23" height="23">
+ <layer id="3" name="Wall 1" width="23" height="23">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="1"/>
@@ -1627,7 +1627,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Water Level Half Left 2" width="23" height="23">
+ <layer id="4" name="Water Level Half Left 2" width="23" height="23">
   <properties>
    <property name="Height" value="9"/>
    <property name="ID" value="2"/>
@@ -2167,7 +2167,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Water Level Half Right 3" width="23" height="23">
+ <layer id="5" name="Water Level Half Right 3" width="23" height="23">
   <properties>
    <property name="Height" value="9"/>
    <property name="ID" value="3"/>
@@ -2707,7 +2707,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Water Drained Left 4" width="23" height="23">
+ <layer id="6" name="Water Drained Left 4" width="23" height="23">
   <properties>
    <property name="Height" value="10"/>
    <property name="ID" value="4"/>
@@ -3247,7 +3247,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Water Drained Right 5" width="23" height="23">
+ <layer id="7" name="Water Drained Right 5" width="23" height="23">
   <properties>
    <property name="Height" value="9"/>
    <property name="ID" value="5"/>
@@ -3787,7 +3787,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Wall Crack Right 6" width="23" height="23">
+ <layer id="8" name="Wall Crack Right 6" width="23" height="23">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="6"/>
@@ -4327,7 +4327,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Wall Crack Left 7" width="23" height="23">
+ <layer id="9" name="Wall Crack Left 7" width="23" height="23">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="7"/>
@@ -4867,7 +4867,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Wall Crack Right 8" width="23" height="23">
+ <layer id="10" name="Wall Crack Right 8" width="23" height="23">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="8"/>
@@ -5407,7 +5407,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Wall Crack Left 9" width="23" height="23">
+ <layer id="11" name="Wall Crack Left 9" width="23" height="23">
   <properties>
    <property name="Height" value="2"/>
    <property name="ID" value="9"/>

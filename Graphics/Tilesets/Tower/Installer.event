@@ -1,23 +1,23 @@
 
 ALIGN 4
 TowerTiles:
-#incbin "TowerMapchip_comp.dmp"
+#incbin "Tower.mapchip.dmp"
 
 ALIGN 4
-TowerObjects:
-#incbin "TombTiles.dmp"
+TowerGraphics:
+#incbin "TowerGfx.lz77"
 
 PUSH
 ORG $1AD570
 TowerPalette:
-#incbin "tower.pal.bin"
+#incbin "TowerGfx.pal"
 POP
 
 ALIGN 4
 MilaTemplePalette:
-#incbin "milatemplepal.pal.bin"
+#incbin "milatemple.pal"
 
-EventPointerTable(plTowerObj, TowerObjects) //tower obj
+EventPointerTable(plTowerGfx, TowerGraphics) //tower obj
 EventPointerTable(plTowerPal, TowerPalette) //tower pal
 EventPointerTable(plTowerConf, TowerTiles) //tower tile
 EventPointerTable(plMilaTemplePalette, MilaTemplePalette) 

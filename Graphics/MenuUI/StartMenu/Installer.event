@@ -15,27 +15,27 @@ PUSH
 
 	//Main Menu bg
 	  ORG $a21658
-	  #incbin "mainmenu-new.dmp"
+	  #incbin "mainmenu-new.lz77"
 	  ORG $a25dcc
-	  #incbin "mainmenu-new.pal.bin"
+	  #incbin "mainmenu-new.pal"
 	//Remove fog
 	  ORG $a26380
-	  #incbin "no_fog_comp.dmp"
+	  #incbin "no_fog_comp.lz77"
 POP
 
 ALIGN 4
 NewMainMenuGfx:
 #ifdef LANGUAGE_ES
-	#incbin "a2d23c_ES.dmp"
+	#incbin "a2d23c_ES.lz77"
 #else
-	#incbin "a2d23c.dmp"
+	#incbin "a2d23c.lz77"
 #endif
 
 NewExtraMenuGfx:
 #ifdef LANGUAGE_ES
-	#incbin "ExtraMenuString_08A2812C_ES.dmp"
+	#incbin "ExtraMenuString_08A2812C_ES.lz77"
 #else
-	#incbin "ExtraMenuString_08A2812C.dmp"
+	#incbin "ExtraMenuString_08A2812C.lz77"
 #endif
 
 #include "SaveFile/Installer.event"

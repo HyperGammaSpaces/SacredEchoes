@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="21" height="23" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="21" height="23" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="1">
  <tileset firstgid="1" source="Tilesets/dragonsgate.tsx"/>
- <layer name="Tile Layer 1" width="21" height="23">
+ <layer id="1" name="Tile Layer 1" width="21" height="23">
   <properties>
    <property name="Anims1" value="plDragonsGateAnim"/>
    <property name="Anims2" value="0x0"/>
@@ -9,7 +9,7 @@
    <property name="Main" value=""/>
    <property name="MapChangesID" value="plBossRush_Chg"/>
    <property name="MapID" value="plBossRush_Map"/>
-   <property name="ObjectType" value="plDragonsGateObj"/>
+   <property name="ObjectType" value="plDragonsGateGfx"/>
    <property name="PaletteID" value="plDragonsGatePal"/>
    <property name="TileConfig" value="plDragonsGateConf"/>
   </properties>
@@ -499,7 +499,7 @@
    <tile gid="484"/>
   </data>
  </layer>
- <layer name="Map Change 0" width="21" height="23">
+ <layer id="2" name="Map Change 0" width="21" height="23">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="0"/>

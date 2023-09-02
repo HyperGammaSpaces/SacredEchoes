@@ -3,17 +3,17 @@
 
 ALIGN 4
 StrongholdTiles:
-#incbin "StrongholdConfig_comp.dmp"
+#incbin "Stronghold.mapchip.dmp"
 
 ALIGN 4
-StrongholdObjects:
-#incbin "StrongholdObjects.dmp"
+StrongholdGraphics:
+#incbin "StrongholdGfx.lz77"
 
 ALIGN 4
 StrongholdPalette:
-#incbin "StrongholdPalette.pal.bin"
+#incbin "StrongholdGfx.pal"
 
-EventPointerTable(plStrongholdObj, StrongholdObjects) //stronghold obj
+EventPointerTable(plStrongholdGfx, StrongholdGraphics) //stronghold obj
 EventPointerTable(plStrongholdPal, StrongholdPalette) //stronghold pal
 EventPointerTable(plStrongholdConf, StrongholdTiles) //stronghold tile
 EventPointerTable(plStrongholdAnim, StrongholdAnimation) //stronghold anims

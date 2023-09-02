@@ -2,17 +2,17 @@
 
 ALIGN 4
 DragonsGateTiles:
-#incbin "DragonsGateTiles_comp.dmp"
+#incbin "DragonsGate.mapchip.dmp"
 
 ALIGN 4
-DragonsGateObjects:
-#incbin "DragonsGateObjects.img.bin"
+DragonsGateGraphics:
+#incbin "DragonsGateGfx.lz77"
 
 ALIGN 4
 DragonsGatePalette1:
-#incbin "DragonsGateObjects.pal.bin"
+#incbin "DragonsGateGfx.pal"
 
-EventPointerTable(plDragonsGateObj, DragonsGateObjects)
+EventPointerTable(plDragonsGateGfx, DragonsGateGraphics)
 EventPointerTable(plDragonsGatePal, DragonsGatePalette1)
 EventPointerTable(plDragonsGateConf, DragonsGateTiles)
 EventPointerTable(plDragonsGateAnim, DragonsGateAnimation)

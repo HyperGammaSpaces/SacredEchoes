@@ -1,15 +1,15 @@
 
 ALIGN 4
 SnowCastleTiles:
-#incbin "SnowCastle_comp.dmp"
+#incbin "SnowCastle.mapchip.dmp"
 
 ALIGN 4
-SnowCastleObjects:
-#incbin "SnowCastle.img.bin"
+SnowCastleGraphics:
+#incbin "SnowCastleGfx.lz77"
 
 ALIGN 4
 SnowCastlePalette:
-#incbin "SnowCastle.pal.bin"
+#incbin "SnowCastleGfx.pal"
 
 //0x99D5AC
 SHORT $B87B $B87B $B87B $B87B
@@ -21,7 +21,7 @@ SHORT $B87B $B87B $B87B $7BFB
 SHORT $B87B $B87B $B87B $77DA
 
 //SnowCastle
-EventPointerTable(plSnowCastleObj, SnowCastleObjects) 
+EventPointerTable(plSnowCastleGfx, SnowCastleGraphics)
 EventPointerTable(plSnowCastlePal, SnowCastlePalette) 
 EventPointerTable(plSnowCastleConf, SnowCastleTiles) 
 EventPointerTable(plSnowCastleAnim, 0x59D740)

@@ -18,33 +18,33 @@ PUSH
     ORG $80201c
     #incbin "battleTSA.bin"
 	ORG $802558
-    #incbin "battletileset.pal.bin"
+    #incbin "battletileset.pal"
 POP
 
 ALIGN 4
 HitDmgCritImg:
 #ifdef LANGUAGE_ES
-	#incbin "8025D8_ES.dmp"
+	#incbin "8025D8_hitdmgcrit_ES.lz77"
 #else
-	#incbin "8025D8.dmp"
+	#incbin "8025D8_hitdmgcrit.lz77"
 #endif
 
 ALIGN 4
 BattleFrame:
-#incbin "BattleScreenTSA2.dmp"
+#incbin "BattleFrameTiles.lz77"
 
 ALIGN 4
 BF_EN:
-#incbin "EN_Name.img.bin"
+#incbin "EN_Name.lz77"
 
 ALIGN 4
 BF_PN:
-#incbin "PL_Name.img.bin"
+#incbin "PL_Name.lz77"
 
 ALIGN 4
 BF_EW:
-#incbin "EN_Weap.img.bin"
+#incbin "EN_Weap.lz77"
 
 ALIGN 4
 BF_PW:
-#incbin "PL_Weap.img.bin"  
+#incbin "PL_Weap.lz77"

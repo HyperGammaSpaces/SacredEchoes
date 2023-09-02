@@ -1,35 +1,35 @@
 
 ALIGN 4
-TempleObjects:
-#incbin "MountainShrineDark.dmp"
+TempleGraphics:
+#incbin "ShrineGfx.lz77"
 
 ALIGN 4
 TempleTiles:
-#incbin "Temple_comp.dmp"
+#incbin "Shrine.mapchip.dmp"
 
 ALIGN 4
 SluiceGatePalette:
-#incbin "SluiceGatePalette.pal.bin" 
+#incbin "SluiceGatePalette.pal"
 
 ALIGN 4
 NuibabaMapPalette:
-#incbin "Nuibaba.pal.bin" 
+#incbin "NuibabaManor.pal"
 
 PUSH
 ORG $1AD930
 TemplePalette:
-#incbin "mountainfort.pal.bin"
+#incbin "Shrine.pal"
 
 ORG $1A1FC0
 TemplePaletteDark:
-#incbin "MountainShrineDark.pal.bin"
+#incbin "NightShrine.pal"
 
 ORG $1AD430
 ThiefshrinePalette:
-#incbin "MountainShrine.pal.bin"
+#incbin "ThiefShrine.pal"
 POP
 
-EventPointerTable(plTempleObj, TempleObjects) //temple obj
+EventPointerTable(plTempleGfx, TempleGraphics) //temple obj
 EventPointerTable(plTemplePal, TemplePalette) //temple pal
 EventPointerTable(plTempleConf, TempleTiles)
 EventPointerTable(plTempleNightPalette, TemplePaletteDark)

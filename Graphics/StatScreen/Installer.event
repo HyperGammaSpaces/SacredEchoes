@@ -19,15 +19,15 @@ POP
 ALIGN 4
 EquipmentLabelGfx:
 #ifdef LANGUAGE_ES
-	#incbin "Equipment_A020F0_ES.dmp"
+	#incbin "Equipment_A020F0_ES.lz77"
 #else
-	#incbin "Equipment_A020F0.dmp"
+	#incbin "Equipment_A020F0.lz77"
 #endif
 
 ALIGN 4
 NewStatScreen:
-#incbin "StatScreen.dmp"
+#incbin "StatScreen.lz77"
 
 ALIGN 4
 NewStatScreenPal:
-#incbin "StatScreen.pal.bin"
+#incbin "StatScreen.pal"

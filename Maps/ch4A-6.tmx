@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="31" height="20" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="31" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="1">
  <tileset firstgid="1" name="21002223" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/lavacave.png" trans="ffffff" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="31" height="20">
+ <layer id="1" name="Tile Layer 1" width="31" height="20">
   <properties>
    <property name="Anims1" value="0x0"/>
    <property name="Anims2" value="plLavaCaveAnim"/>
@@ -11,7 +11,7 @@
    <property name="Main" value=""/>
    <property name="MapChangesID" value="plCh4_6A_Chg"/>
    <property name="MapID" value="plCh4_6A_Map"/>
-   <property name="ObjectType" value="plLavaCaveObj"/>
+   <property name="ObjectType" value="plLavaCaveGfx"/>
    <property name="PaletteID" value="plLavaCavePal"/>
    <property name="TileConfig" value="plLavaCaveConf"/>
   </properties>
@@ -638,7 +638,7 @@
    <tile gid="249"/>
   </data>
  </layer>
- <layer name="Map Change 0" width="31" height="20">
+ <layer id="2" name="Map Change 0" width="31" height="20">
   <properties>
    <property name="Height" value="3"/>
    <property name="ID" value="0"/>

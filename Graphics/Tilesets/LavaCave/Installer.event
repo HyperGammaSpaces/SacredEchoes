@@ -1,14 +1,14 @@
 //Lava cave
 LavaCavePalette:
-#incbin "FE8LavaCave.pal.bin"
+#incbin "VolcanoGfx.pal"
 
-LavaCaveObjects:
-#incbin "FE8LavaCave.img.bin"
+LavaCaveGraphics:
+#incbin "VolcanoGfx.lz77"
 
 LavaCaveConfig:
-#incbin "Volcano_comp.dmp"
+#incbin "Volcano.mapchip.dmp"
 
-EventPointerTable(plLavaCaveObj, LavaCaveObjects) 
+EventPointerTable(plLavaCaveGfx, LavaCaveGraphics)
 EventPointerTable(plLavaCavePal, LavaCavePalette) 
 EventPointerTable(plLavaCaveConf, LavaCaveConfig) 
 EventPointerTable(plLavaCaveAnim, 0x59D800)

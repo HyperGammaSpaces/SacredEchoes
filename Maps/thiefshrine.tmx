@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="17" height="16" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="17" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
  <tileset firstgid="1" name="6C00A36E" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/temple_floor.png" trans="ffffff" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="17" height="16">
+ <layer id="1" name="Tile Layer 1" width="17" height="16">
   <properties>
    <property name="Anims1" value="plTempleAnim"/>
    <property name="Anims2" value="0x0"/>
@@ -11,7 +11,7 @@
    <property name="Main" value=""/>
    <property name="MapChangesID" value="plThiefshrineChg"/>
    <property name="MapID" value="plThiefshrineMap"/>
-   <property name="ObjectType" value="plTempleObj"/>
+   <property name="ObjectType" value="plTempleGfx"/>
    <property name="PaletteID" value="plThiefshrinePalette"/>
    <property name="TileConfig" value="plTempleConf"/>
   </properties>
@@ -290,7 +290,7 @@
    <tile gid="7"/>
   </data>
  </layer>
- <layer name="Map Change 0" width="17" height="16">
+ <layer id="2" name="Map Change 0" width="17" height="16">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="0"/>
@@ -573,7 +573,7 @@
    <tile/>
   </data>
  </layer>
- <layer name="Map Change 1" width="17" height="16">
+ <layer id="3" name="Map Change 1" width="17" height="16">
   <properties>
    <property name="Height" value="1"/>
    <property name="ID" value="1"/>

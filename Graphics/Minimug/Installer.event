@@ -15,25 +15,25 @@ PUSH
 	ORG $D77D8
 	POIN MonsterMinimug
 	ORG $599F54
-	#incbin "genericminimug_enemy.pal.bin"
+	#incbin "genericminimug_rigel.pal"
 POP
 
 ALIGN 4
 RigelMinimug:
-#incbin "genericminimug_rigel.dmp"
+#incbin "genericminimug_rigel.4bpp"
 
 ALIGN 4
 DumaFaithfulMinimug:
-#incbin "genericminimug_duma.dmp"
+#incbin "genericminimug_duma.4bpp"
 
 ALIGN 4
 ZofiaMinimug:
-#incbin "genericminimug_zofia.dmp"
+#incbin "genericminimug_zofia.4bpp"
 
 ALIGN 4
 MonsterMinimug:
-#incbin "genericminimug_monster.dmp"
+#incbin "genericminimug_monster.4bpp"
 
 ALIGN 4
 BanditMinimug:
-#incbin "genericminimug_bandit.dmp"
+#incbin "genericminimug_bandit.4bpp"

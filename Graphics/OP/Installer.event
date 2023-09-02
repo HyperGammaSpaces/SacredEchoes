@@ -40,10 +40,10 @@ POP
 
 ALIGN 4
 OPBackgroundImage:
-#incbin "Mila_Duma_Mural_OP.dmp"
+#incbin "Mila_Duma_Mural_OP.lz77"
 ALIGN 4
 OPBackgroundImagePal:
-#incbin "Mila_Duma_Mural_OP.pal.bin"
+#incbin "Mila_Duma_Mural_OP.pal"
 
 #ifdef LANGUAGE_ES
 	#include "_Spanish/TextInstaller.event"
