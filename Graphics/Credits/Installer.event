@@ -32,87 +32,87 @@ Proc field +0x44 holds a pointer to the current CreditCGStruct. FE8U:C45E0 does 
 
 PUSH
 
-    //removing the unneeded 10-part cg stuff
-    ORG $C45FA
-    BYTE $00 //was 9 for the 10-parter
-    ORG $C4620
-    SHORT $6849 //TSA is now at +0x04 in the struct
-    ORG $C4630
-    SHORT $6880 //palette is now at +0x08 in the struct
-    ORG $C4648
-    BYTE $01 //was 0xA
-    ORG $C410E
-    SHORT $8980 //timer is now at +0x0C
+	//removing the unneeded 10-part cg stuff
+	ORG $C45FA
+	BYTE $00 //was 9 for the 10-parter
+	ORG $C4620
+	SHORT $6849 //TSA is now at +0x04 in the struct
+	ORG $C4630
+	SHORT $6880 //palette is now at +0x08 in the struct
+	ORG $C4648
+	BYTE $01 //was 0xA
+	ORG $C410E
+	SHORT $8980 //timer is now at +0x0C
 
-    //replacing CreditCGStruct pointers in the credits script. One each for Eirika/Ephraim mode
-    ORG $206E3C
-    POIN CreditSlide1_Struct
-    POIN CreditSlide1_Struct
-    ORG $206E64
-    POIN CreditSlide2_Struct
-    POIN CreditSlide2_Struct
-    ORG $206E8C
-    POIN CreditSlide3_Struct
-    POIN CreditSlide3_Struct
-    ORG $206EB4
-    POIN CreditSlide4_Struct
-    POIN CreditSlide4_Struct
-    ORG $206EF0
-    POIN CreditSlide5_Struct
-    POIN CreditSlide5_Struct
-    ORG $206F18
-    POIN CreditSlide6_Struct
-    POIN CreditSlide6_Struct
-    ORG $206F40
-    POIN CreditSlide7_Struct
-    POIN CreditSlide7_Struct
-    ORG $206F68
-    POIN CreditSlide8_Struct
-    POIN CreditSlide8_Struct
+	//replacing CreditCGStruct pointers in the credits script. One each for Eirika/Ephraim mode
+	ORG $206E3C
+	POIN CreditSlide1_Struct
+	POIN CreditSlide1_Struct
+	ORG $206E64
+	POIN CreditSlide2_Struct
+	POIN CreditSlide2_Struct
+	ORG $206E8C
+	POIN CreditSlide3_Struct
+	POIN CreditSlide3_Struct
+	ORG $206EB4
+	POIN CreditSlide4_Struct
+	POIN CreditSlide4_Struct
+	ORG $206EF0
+	POIN CreditSlide5_Struct
+	POIN CreditSlide5_Struct
+	ORG $206F18
+	POIN CreditSlide6_Struct
+	POIN CreditSlide6_Struct
+	ORG $206F40
+	POIN CreditSlide7_Struct
+	POIN CreditSlide7_Struct
+	ORG $206F68
+	POIN CreditSlide8_Struct
+	POIN CreditSlide8_Struct
 
-    //redoing the events cg list too because why not
-    //this list is unused in sacred echoes, but i don't want it pointing to broken data now that the original CGs are freespace
-    ORG $A3CCEC
-    //entry 0 (lyon in the garden)
-    POIN CreditSlide1_Img
-    POIN CreditsPal
-    POIN CreditSlide1_TSA
-    //entry 1 (dead ismaire)
-    POIN CreditSlide1_Img
-    POIN CreditsPal
-    POIN CreditSlide1_TSA
-    //entry 2 (knoll and the stone)
-    POIN CreditSlide1_Img
-    POIN CreditsPal
-    POIN CreditSlide1_TSA
+	//redoing the events cg list too because why not
+	//this list is unused in sacred echoes, but i don't want it pointing to broken data now that the original CGs are freespace
+	ORG $A3CCEC
+	//entry 0 (lyon in the garden)
+	POIN CreditSlide1_Img
+	POIN CreditsPal
+	POIN CreditSlide1_TSA
+	//entry 1 (dead ismaire)
+	POIN CreditSlide1_Img
+	POIN CreditsPal
+	POIN CreditSlide1_TSA
+	//entry 2 (knoll and the stone)
+	POIN CreditSlide1_Img
+	POIN CreditsPal
+	POIN CreditSlide1_TSA
 
-    POIN CreditSlide3_Img
-    POIN CreditsPal
-    POIN CreditSlide3_TSA
+	POIN CreditSlide3_Img
+	POIN CreditsPal
+	POIN CreditSlide3_TSA
 
-    POIN CreditSlide4_Img
-    POIN CreditsPal
-    POIN CreditSlide4_TSA
+	POIN CreditSlide4_Img
+	POIN CreditsPal
+	POIN CreditSlide4_TSA
 
-    POIN CreditSlide5_Img
-    POIN CreditsPal
-    POIN CreditSlide5_TSA
+	POIN CreditSlide5_Img
+	POIN CreditsPal
+	POIN CreditSlide5_TSA
 
-    POIN CreditSlide6_Img
-    POIN CreditsPal
-    POIN CreditSlide6_TSA
+	POIN CreditSlide6_Img
+	POIN CreditsPal
+	POIN CreditSlide6_TSA
 
-    POIN CreditSlide7_Img
-    POIN CreditsPal
-    POIN CreditSlide7_TSA
+	POIN CreditSlide7_Img
+	POIN CreditsPal
+	POIN CreditSlide7_TSA
 
-    POIN CreditSlide8_Img
-    POIN CreditsPal
-    POIN CreditSlide8_TSA
+	POIN CreditSlide8_Img
+	POIN CreditsPal
+	POIN CreditSlide8_TSA
 
-    POIN CreditSlide9_Img
-    POIN CreditsPal
-    POIN CreditSlide9_TSA
+	POIN CreditSlide9_Img
+	POIN CreditsPal
+	POIN CreditSlide9_TSA
 
 POP
 
@@ -172,12 +172,21 @@ CreditsPal:
 #incbin "CreditsPal.pal"
 
 //NOTE: these TSAs are in reverse vertical order, 60 bytes (30 4BPP tiles) per row. The two bytes in front of the map are [width-1, height-1]
-CreditSlide1_Img:
-#incbin "01.lz77"
-CreditSlide1_TSA:
-BYTE $1D $13
-#incbin "01.bgtsa"
-ALIGN 4
+#ifdef LANGUAGE_ES
+	CreditSlide1_Img:
+	#incbin "01_ES.lz77"
+	CreditSlide1_TSA:
+	BYTE $1D $13
+	#incbin "01_ES.bgtsa"
+	ALIGN 4
+#else
+	CreditSlide1_Img:
+	#incbin "01.lz77"
+	CreditSlide1_TSA:
+	BYTE $1D $13
+	#incbin "01.bgtsa"
+	ALIGN 4
+#endif
 
 CreditSlide3_Img:
 #incbin "03.lz77"

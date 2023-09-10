@@ -9,6 +9,62 @@
 
 {
 
+__TEXTPROCESS030:
+#incbin ".TextEntries/text_buildfileGrowths_Normal.fetxt.dmp"
+setText($30, __TEXTPROCESS030)
+
+__TEXTPROCESS031:
+#incbin ".TextEntries/text_buildfileGrowths_Fixed.fetxt.dmp"
+setText($31, __TEXTPROCESS031)
+
+__TEXTPROCESS032:
+#incbin ".TextEntries/text_buildfileRN_Type_Label.fetxt.dmp"
+setText($32, __TEXTPROCESS032)
+
+__TEXTPROCESS033:
+#incbin ".TextEntries/text_buildfileGrowths_Label.fetxt.dmp"
+setText($33, __TEXTPROCESS033)
+
+__TEXTPROCESS04A:
+#incbin ".TextEntries/text_buildfileRN_Type_GBA.fetxt.dmp"
+setText($4A, __TEXTPROCESS04A)
+
+__TEXTPROCESS04B:
+#incbin ".TextEntries/text_buildfileRN_Type_NES.fetxt.dmp"
+setText($4B, __TEXTPROCESS04B)
+
+__TEXTPROCESS04C:
+#incbin ".TextEntries/text_buildfileRN_Type_3DS.fetxt.dmp"
+setText($4C, __TEXTPROCESS04C)
+
+__TEXTPROCESS04D:
+#incbin ".TextEntries/text_buildfileRN_Type_GBA_Desc.fetxt.dmp"
+setText($4D, __TEXTPROCESS04D)
+
+__TEXTPROCESS04E:
+#incbin ".TextEntries/text_buildfileRN_Type_NES_Desc.fetxt.dmp"
+setText($4E, __TEXTPROCESS04E)
+
+__TEXTPROCESS04F:
+#incbin ".TextEntries/text_buildfileRN_Type_3DS_Desc.fetxt.dmp"
+setText($4F, __TEXTPROCESS04F)
+
+__TEXTPROCESS07A:
+#incbin ".TextEntries/text_buildfileRandomGrowths_Desc.fetxt.dmp"
+setText($7A, __TEXTPROCESS07A)
+
+__TEXTPROCESS07B:
+#incbin ".TextEntries/text_buildfileFixedGrowths_Desc.fetxt.dmp"
+setText($7B, __TEXTPROCESS07B)
+
+__TEXTPROCESS07C:
+#incbin ".TextEntries/text_buildfileZeroGrowths_Desc.fetxt.dmp"
+setText($7C, __TEXTPROCESS07C)
+
+__TEXTPROCESS07D:
+#incbin ".TextEntries/text_buildfileAllGrowths_Desc.fetxt.dmp"
+setText($7D, __TEXTPROCESS07D)
+
 __TEXTPROCESS147:
 #incbin ".TextEntries/text_buildfileMode_Desc_Rtext.fetxt.dmp"
 setText($147, __TEXTPROCESS147)
@@ -3860,6 +3916,22 @@ setText($BF2, __TEXTPROCESSBF2)
 __TEXTPROCESSBF3:
 #incbin ".TextEntries/text_buildfileLoc_RigelCastle.fetxt.dmp"
 setText($BF3, __TEXTPROCESSBF3)
+
+__TEXTPROCESS788:
+#incbin ".TextEntries/text_buildfileSoundRoom_Heritors.fetxt.dmp"
+setText($788, __TEXTPROCESS788)
+
+__TEXTPROCESS789:
+#incbin ".TextEntries/text_buildfileSoundRoom_VoiceThatCalls.fetxt.dmp"
+setText($789, __TEXTPROCESS789)
+
+__TEXTPROCESS78A:
+#incbin ".TextEntries/text_buildfileSoundRoom_Coronation.fetxt.dmp"
+setText($78A, __TEXTPROCESS78A)
+
+__TEXTPROCESS78B:
+#incbin ".TextEntries/text_buildfileSoundRoom_Medley.fetxt.dmp"
+setText($78B, __TEXTPROCESS78B)
 
 __TEXTPROCESS78C:
 #incbin ".TextEntries/text_buildfileSoundRoom_Main.fetxt.dmp"

@@ -93,19 +93,19 @@ $(PORTRAIT_DMPS):
 	@echo | $(C2EA) -csv $*.csv -nmm $*.nmm -out $*.event $(SOURCE_ROM) > /dev/null
 
 %.4bpp: %.png
-	cd $(dir $<) && $(GRIT) $(realpath .)/$< $(GRIT4BPPARGS)
+	cd $(dir $<) && $(GRIT) $< $(GRIT4BPPARGS)
 	@mv $(basename $<).img.bin $@
 
 %.fontchar: %.png
-	cd $(dir $<) && $(GRIT) $(realpath .)/$< $(GRIT2BPPARGS)
+	cd $(dir $<) && $(GRIT) $< $(GRIT2BPPARGS)
 	@mv $(basename $<).img.bin $@
 
 %.lz77: %.png
-	cd $(dir $<) && $(GRIT) $(realpath .)/$< $(GRITLZ77ARGS)
+	cd $(dir $<) && $(GRIT) $< $(GRITLZ77ARGS)
 	@mv $(basename $<).img.bin $@
 
 %.pal: %.png
-	cd $(dir $<) && $(GRIT) $(realpath .)/$< $(GRITPALETTEARGS)
+	cd $(dir $<) && $(GRIT) $< $(GRITPALETTEARGS)
 	@mv $(basename $<).pal.bin $@
 
 %.btlpal: %.pal
