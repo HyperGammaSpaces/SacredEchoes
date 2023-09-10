@@ -1,0 +1,26 @@
+//reimplementation of joe pikman's flag-based 1rn mode hack
+
+#define Enable1RNFlag 0xA6
+#define EnableFatesRNFlag 0xA7
+
+
+PUSH
+
+// Roll1RN
+ORG $CA0
+SHORT 0xB530 // push {r4,r5}
+ORG $CB2
+SHORT 0xBC30 // pop {r4,r5}
+
+// Roll2RN
+ORG $CB8
+jumpToHack(NewRoll2RN)
+
+POP
+
+#include "New2RN.lyn.event"
+
+Enable1RNFlagLink:
+BYTE Enable1RNFlag
+EnableFatesRNFlagLink:
+BYTE EnableFatesRNFlag

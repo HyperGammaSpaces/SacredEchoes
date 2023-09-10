@@ -111,6 +111,7 @@ PUSH
 			BL($A4D34)
 			SHORT $46C0
 			callHack_r3(InitLionheadsForNewSavefile)
+			callHack_r3(SetOptionFlagsASMC)
 			SHORT $1C38
 			B($A4F8C)
 	#else

@@ -303,6 +303,10 @@ ALIGN 4
 ALIGN 4
 #include "CasualMode/CasualMode.event"
 
+//Game options menu
+ALIGN 4
+#include "StartingOptionsMenu/StartingOptionsMenu.event"
+
 //Fix minimug palette flash (by Huichelaar)
 ALIGN 4
 #include "MinimugPaletteFix/Installer.event"
@@ -326,3 +330,7 @@ FixBattleAnimeExitNoise:
 //Post game turn counts
 ALIGN 4
 #include "TurnCountRecord/Installer.event"
+
+//Clear rescued units during "clear all of allegiance" commands
+ALIGN 4
+#include "NewClearUnit/NewClearUnit.event"

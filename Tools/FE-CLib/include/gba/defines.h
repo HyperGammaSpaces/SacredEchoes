@@ -24,4 +24,6 @@
 #define PUREFUNC __attribute__((pure))
 #define ARMFUNC __attribute__((target("arm")))
 
+#define CONST_DATA __attribute__((section(".data")))
+
 #endif // GUARD_GBA_DEFINES

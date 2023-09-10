@@ -92,7 +92,7 @@ int Text_GetColorId(struct TextHandle*); //! FE8U = 0x8003E65
 
 struct TextHandle* Text_SetParameters(struct TextHandle*, int cursor, int color); //! FE8U = 0x8003E69
 
-void Text_Display(struct TextHandle*, u16* bgMap); //! FE8U = 0x8003E71
+void Text_Display(struct TextHandle*, u16* bgMap); //! FE8U = 0x8003E71 //aka PutText
 void Text_DisplayBlank(struct TextHandle*, u16* bgMap); //! FE8U = 0x8003EBD
 
 unsigned Text_GetStringTextWidth(const char*); //! FE8U = 0x8003EDD

@@ -151,6 +151,7 @@ Proc* StartKeyStatusSetter(u16); //! FE8U = 0x8001471
 
 void SetBgPosition(int bg, u16 x, u16 y); //! FE8U = 0x800148D
 void LoadBgConfig(const u16[]); //! FE8U = 0x8001B59
+void SetupBackgrounds(u16 *bgConfig); //! FE8U = 0x8001B59
 u16* GetBgMapBuffer(int bg); //! FE8U = 0x8001C4D
 
 int ShouldSkipHSScreen(void); //! FE8U = 0x8001C69

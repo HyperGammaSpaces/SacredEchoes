@@ -19,10 +19,6 @@ GameOptionsEntry(OptID_CasualMode, Text_Options_CasualMode, Text_Options_CasualM
 	//Setup new save to recognize casual mode
 	ORG $30DAC
 	  jumpToHack(CasualMode_SetFlag)
-	  
-	//New difficulty select proc
-	ORG $AC3F0
-	POIN DifficultySelectProc
     
     //Setup options menu
         
@@ -40,76 +36,9 @@ GameOptionsEntry(OptID_CasualMode, Text_Options_CasualMode, Text_Options_CasualM
 ALIGN 4
 #define CasualCheckASMC "SHORT $0D40 $0; POIN CasualCheck_ASMC+1"
 
-ALIGN 4
-DifficultySelectProc: //at A20A10
-	PROC_SET_NAME(NAME_NewGameDifficultySelect)
-	PROC_SET_DESTRUCTOR($080AC078+1)
-	PROC_CALL_ROUTINE($080AD5B4+1)
-	PROC_YIELD
-	PROC_CALL_ROUTINE($080AC1A8+1)
-	PROC_SLEEP(1)
-	PROC_CALL_ROUTINE($080AD5D8+1) //EnableAllGfx
-	PROC_CALL_ROUTINE_ARG($080AE2D0+1, 8) //NewFadeIn
-	PROC_WHILE_ROUTINE($080AE2A0+1) //FadeInExists
-	
-	PROC_LABEL(0)
-	PROC_LOOP_ROUTINE($080AC288+1)
-	
-	PROC_LABEL(1)
-	PROC_SLEEP(10)
-	PROC_CALL_ROUTINE_ARG($080AE2F4+1, 8)
-	PROC_WHILE_ROUTINE($080AE2B8+1)
-	PROC_GOTO(3)
-	
-	PROC_LABEL(2)
-	PROC_CALL_ROUTINE_ARG($080AE2F4+1, 8)
-	PROC_WHILE_ROUTINE($080AE2B8+1)
-	PROC_GOTO(4)
-	
-	PROC_LABEL(3)
-	PROC_NEW_CHILD_BLOCKING(CasualModeSelectProc)
-	
-	PROC_LABEL(4)
-	PROC_END
-
-ALIGN 4
-CasualModeSelectProc: //based on A20A10 
-	PROC_SET_NAME(NAME_NewGameCasualModeSelect)
-	PROC_SET_DESTRUCTOR($080AC078+1)
-	PROC_CALL_ROUTINE(CM_Kill_SaveMenuCursor+1)	//Cursor is displayed twice, so turn it off.
-	PROC_CALL_ROUTINE($080AD5B4+1) //i/o register setup
-	PROC_YIELD
-	PROC_CALL_ROUTINE(CM_CallGraphicsSetup+1)
-	PROC_SLEEP(1)
-	PROC_CALL_ROUTINE($080AD5D8+1) //EnableAllGfx
-	PROC_CALL_ROUTINE_ARG($080AE2D0+1, 8) //NewFadeIn
-	PROC_WHILE_ROUTINE($080AE2A0+1) //FadeInExists
-	
-	PROC_LABEL(0)
-	PROC_LOOP_ROUTINE(CM_HandleUserInput+1)
-	
-	PROC_LABEL(1)
-	PROC_SLEEP(10)
-	
-	PROC_LABEL(2)
-	PROC_CALL_ROUTINE_ARG($080AE2F4+1, 8) //NewFadeOut
-	PROC_WHILE_ROUTINE($080AE2B8+1) //FadeOutExists
-	PROC_CALL_ROUTINE(CM_Finish+1)
-	PROC_END
-
 //ASM functions
 #include "asm/CasualModeMenu.lyn.event"
 ALIGN 4
-
-NAME_NewGameDifficultySelect:
-String(NewGameDifficultySelect)
-ALIGN 4
-NAME_NewGameCasualModeSelect:
-String(NewGameCasualModeSelect)
-
-ALIGN 4
-CMTextIDs:
-SHORT CasualModeMenuOption ClassicModeMenuOption
 
 ALIGN 4
 #include "ShowDifficulty.event"

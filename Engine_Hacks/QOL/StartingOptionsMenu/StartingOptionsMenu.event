@@ -1,0 +1,27 @@
+//base code epically borrowed from Smethlyn and circles
+
+#include "StartingOptionsMenu.lyn.event"
+
+PUSH
+	ORG $a20164
+	POIN NewDifficultySelectFunc
+POP
+
+FixedGrowthsFlagLink:
+	BYTE FIXED_GROWTHS_FLAG_ID
+OneRNFlagLink:
+	BYTE Enable1RNFlag
+FatesRNFlagLink:
+	BYTE EnableFatesRNFlag
+ZeroGrowthsFlagLink:
+	BYTE ZeroGrowthsFlag
+PerfectGrowthsFlagLink:
+	BYTE PerfectGrowthsFlag
+
+ALIGN 4
+gOptionsMainUIBoxTSA:
+#incbin "StartMenu_Main.bgtsa"
+
+ALIGN 4
+gOptionsDescUIBoxTSA:
+#incbin "StartMenu_Desc.bgtsa"

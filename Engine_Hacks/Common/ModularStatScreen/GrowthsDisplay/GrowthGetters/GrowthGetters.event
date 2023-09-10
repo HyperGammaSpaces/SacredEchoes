@@ -1,0 +1,109 @@
+#include "EAstdlib.event"
+
+//If commented, growths will not be displayed by pressing Select.
+#define PRESS_SELECT_TO_VIEW_GROWTHS
+
+//If true, the stat colors for player units will reflect their growth in the stat.
+#define USE_STAT_COLORS True
+
+//If true, Fixed Growths mode will exist.
+#define FIXED_GROWTHS_MODE True
+
+//ID of flag to use for fixed growths mode, if enabled
+//#define FIXED_GROWTHS_FLAG_ID 0xEF
+
+//If true, passive growth boosters and metis tome will not affect growths in fixed growths mode.
+#define FIXED_GROWTHS_DONT_BOOST False
+
+//If true, enemy/NPC autolevels will use fixed growths as well.
+#define ENEMY_NPC_FIXED_GROWTHS False
+
+//If true, the effects of multiple passive growth boosters can stack.
+//Setting the 0x00800000 bit in the item ability bitfield will enable passive boosts.
+#define STACKABLE_GROWTH_BOOSTS False
+
+//Amount for Metis Tome to boost growths by
+#define METIS_TOME_BOOST 5
+
+//If true, growths will be calculated as (char growth + class growth).
+#define USE_CHAR_AND_CLASS_GROWTHS False
+
+#define Growth_Options "FIXED_GROWTHS_MODE|(FIXED_GROWTHS_DONT_BOOST<<1)|(STACKABLE_GROWTH_BOOSTS<<2)|(ENEMY_NPC_FIXED_GROWTHS<<3)|(USE_STAT_COLORS<<4)|(METIS_TOME_BOOST<<8)|((FIXED_GROWTHS_FLAG_ID&0xFF)<<0x10)|((FIXED_GROWTHS_FLAG_ID&0xFF00)<<0x10)"
+
+#include "GrowthBonuses/GrowthBonuses.event"
+
+	ALIGN 4
+	Growth_Bonus_CalcLoop:
+		POIN GrowthModifierModes MetisTomeCheck ScrollsCheck
+		WORD 0 //Terminator
+
+	ALIGN 4
+	Growth_Getter_Table:
+		POIN Get_Hp_Growth Get_Str_Growth Get_Skl_Growth Get_Spd_Growth Get_Luk_Growth Get_Def_Growth Get_Res_Growth
+
+	ALIGN 4
+	Get_Hp_Growth:
+		#incbin "Get_Hp_Growth.dmp"
+		POIN Extra_Growth_Boosts|1
+		WORD USE_CHAR_AND_CLASS_GROWTHS
+
+	ALIGN 4
+	Get_Str_Growth:
+		#incbin "Get_Str_Growth.dmp"
+		POIN Extra_Growth_Boosts|1
+		WORD USE_CHAR_AND_CLASS_GROWTHS
+
+	ALIGN 4
+	Get_Skl_Growth:
+		#incbin "Get_Skl_Growth.dmp"
+		POIN Extra_Growth_Boosts|1
+		WORD USE_CHAR_AND_CLASS_GROWTHS
+
+	ALIGN 4
+	Get_Spd_Growth:
+		#incbin "Get_Spd_Growth.dmp"
+		POIN Extra_Growth_Boosts|1
+		WORD USE_CHAR_AND_CLASS_GROWTHS
+
+	ALIGN 4
+	Get_Def_Growth:
+		#incbin "Get_Def_Growth.dmp"
+		POIN Extra_Growth_Boosts|1
+		WORD USE_CHAR_AND_CLASS_GROWTHS
+
+	ALIGN 4
+	Get_Res_Growth:
+		#incbin "Get_Res_Growth.dmp"
+		POIN Extra_Growth_Boosts|1
+		WORD USE_CHAR_AND_CLASS_GROWTHS
+
+	ALIGN 4
+	Get_Luk_Growth:
+		#incbin "Get_Luk_Growth.dmp"
+		POIN Extra_Growth_Boosts|1
+		WORD USE_CHAR_AND_CLASS_GROWTHS
+
+	ALIGN 4
+	Extra_Growth_Boosts:
+		#incbin "Extra_Growth_Boosts.dmp"
+		WORD Growth_Options
+		POIN Growth_Bonus_CalcLoop
+
+PUSH
+	ORG $2BA28
+		jumpToHack(Write_Growths_To_Battle_Struct)
+POP
+
+ALIGN 4
+#include "PromotionLevelBonusTable.event"
+
+ALIGN 4
+	Write_Growths_To_Battle_Struct:
+		#incbin "Write_Growths_To_Battle_Struct.dmp"
+		POIN Class_Level_Cap_Table Get_Hp_Growth Get_Str_Growth
+		WORD 0 // Code in this function treats 0 here as strmag not installed and does nothing.
+		POIN Get_Skl_Growth Get_Spd_Growth Get_Def_Growth Get_Res_Growth Get_Luk_Growth
+		WORD Growth_Options
+		POIN PromotedLevelsChart
+
+#include "GrowthModesCheck/GrowthModesCheck.event"

@@ -1,11 +1,7 @@
 #define Stat_Page_Ram_Loc 0x203FFFF //if things don't work properly, this might be getting overwritten (shouldn't, though)
-#include "DisplayGrowthsOptions.event"
+#include "GrowthGetters/GrowthGetters.event"
 
 PUSH
-
-	//Load growths for display
-	ORG $2BA28
-	jumpToHack(Write_Growths_To_Battle_Struct)
 	
 	ORG $8888C //select + R button check
 	BYTE 0x82
@@ -61,12 +57,6 @@ Growths_Order_Table:
 	BYTE 29 30 31 34 32 33 28
 
 ALIGN 4
-Write_Growths_To_Battle_Struct:
-	#incbin "GrowthGetters/Write_Growths_To_Battle_Struct.dmp"
-	POIN Class_Level_Cap_Table Get_Hp_Growth Get_Str_Growth Get_Skl_Growth Get_Spd_Growth Get_Def_Growth Get_Res_Growth Get_Luk_Growth
-	WORD Growth_Options
-
-ALIGN 4
 Load_Page:
 	#incbin "LoadPage.dmp"
 	WORD Stat_Page_Ram_Loc
@@ -112,41 +102,3 @@ ALIGN 4
 New_Palettes:
 	#include "NewGrowthsPalette.event"
 
-ALIGN 4
-Growth_Getter_Table:
-	POIN Get_Hp_Growth Get_Str_Growth Get_Skl_Growth Get_Spd_Growth Get_Luk_Growth Get_Def_Growth Get_Res_Growth
-
-ALIGN 4
-Get_Hp_Growth:
-	#incbin "GrowthGetters/Get_Hp_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-ALIGN 4
-Get_Str_Growth:
-	#incbin "GrowthGetters/Get_Str_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-ALIGN 4
-Get_Skl_Growth:
-	#incbin "GrowthGetters/Get_Skl_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-ALIGN 4
-Get_Spd_Growth:
-	#incbin "GrowthGetters/Get_Spd_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-ALIGN 4
-Get_Def_Growth:
-	#incbin "GrowthGetters/Get_Def_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-ALIGN 4
-Get_Res_Growth:
-	#incbin "GrowthGetters/Get_Res_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-ALIGN 4
-Get_Luk_Growth:
-	#incbin "GrowthGetters/Get_Luk_Growth.dmp"
-	POIN Extra_Growth_Boosts|1
-	
-ALIGN 4
-Extra_Growth_Boosts:
-	#incbin "GrowthGetters/Extra_Growth_Boosts.dmp"
-	WORD Growth_Options
-	POIN ItemTable

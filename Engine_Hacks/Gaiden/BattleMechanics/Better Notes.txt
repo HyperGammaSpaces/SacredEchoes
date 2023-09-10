@@ -393,7 +393,7 @@ The following 3 bytes are at 0x1C/D/E in FE6, dunno why
 	+0x02	Sound effects (set = off, not set = on)
 	+0x04	Window color (set = orange, not set = blue)
 	+0x08	Window color (set = green, not set = blue, set + 0x08 also set = black)
-	+0x10	Something about displaying B/W/L on the stat screen
+	+0x10	Set if this is not the first completed playthrough
 	+0x20	Unused in vanilla? (Used by HPBars)
 	+0x40	Autoend turns (set = off, not set = on)
 	+0x80	Subtitle help (set = off, not set = on)
@@ -404,6 +404,12 @@ The following 3 bytes are at 0x1C/D/E in FE6, dunno why
 	+0x08	Combat info window (set = detail, not set = strat)
 	+0x10	Combat info window (set = off, not set = strat)
 	+0x20	Set if not easy mode
+
+	The lower four bits of +0x43 are used by the debug functions to enable red and green units.
+	0x44 is used for Jedah's counter.
+	After those, we seem to have through 0x47 to add bits to.
+	48 seems to be used in tracking dungeon kills.
+	4A and 4B seem to be used during tutorial events.
 	
 ############
 BATTLE MAP GAME STATE (202bcb0)
