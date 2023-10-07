@@ -105,6 +105,7 @@ PUSH
     BYTE $0
     ORG $77ED6
     BYTE $18
+    //this is also where it fucks up on 2-range
     
     ORG $58D84
     POIN AlmFinisher_CritCode
