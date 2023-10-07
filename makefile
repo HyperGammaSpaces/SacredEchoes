@@ -64,6 +64,8 @@ GRITLZ77ARGS		:= -gu 16 -gzl -gB 4 -p! -m! -ft bin -fh!
 GRIT4BPPARGS		:= -gu 16 -gB 4 -p! -m! -ft bin -fh!
 GRIT2BPPARGS		:= -gu 16 -gb -gB 2 -p! -m! -ft bin -fh!
 GRITPALETTEARGS		:= -g! -m! -p -ft bin -fh!
+MAPPALETTEARGS		:= -pn 160
+BTLPALETTEARGS		:= -pn 80
 
 VANILLASYM			:= $(realpath .)/Tools/sym/VanillaOffsets.sym
 
@@ -108,8 +110,13 @@ $(PORTRAIT_DMPS):
 	cd $(dir $<) && $(GRIT) $< $(GRITPALETTEARGS)
 	@mv $(basename $<).pal.bin $@
 
-%.btlpal: %.pal
-	$(PALETTECONDENSER) $< $@
+%.mappal: %.png
+	cd $(dir $<) && $(GRIT) $< $(GRITPALETTEARGS) $(MAPPALETTEARGS)
+	@mv $(basename $<).pal.bin $@
+
+%.btlpal: ../img/%.png
+	cd $(dir $<) && $(GRIT) $< $(GRITPALETTEARGS) $(BTLPALETTEARGS)
+	$(PALETTECONDENSER) $(basename $<).pal.bin $@
 	$(COMPRESS) $@ $@
 
 %.bgtsa: %.png

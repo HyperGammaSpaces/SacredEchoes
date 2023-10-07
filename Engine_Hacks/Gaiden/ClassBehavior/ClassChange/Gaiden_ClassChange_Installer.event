@@ -6,7 +6,8 @@
 PUSH
 
 	ORG $2BD50
-	#incbin "BaseStatPromotions.dmp"
+	#include "BaseStatPromotions.lyn.event"
+	ALIGN 4
     AlmPromotionFlagLink:
     WORD gAlmPromoted
 	
@@ -123,4 +124,10 @@ BYTE Cleric 			0x0C
 BYTE $FF $FF //terminator
 ALIGN 4
 
+UpdatePromoInventory:
+#include "UpdateInventory.lyn.event"
+PitchforkReplaceWeaponList:
+BYTE BaseSword BaseLance BaseAxe BaseBow Fire Nosferatu 0 0
+
 #include "MilaStatues/MilaStatuesInstaller.event"
+#include "SplitPromoItems/SplitPromoItems.event"

@@ -250,10 +250,11 @@ While all major bugs have now been addressed, some minor bugs remain. A V1.1 rel
 
 - Circleseverywhere's Modular Stat Screens, Custom Spell Animation Engine and everything2ea modules
 - macplustrees' base-stat promotion gains
-- Teraspark's staff/item range rework
+- Teraspark's staff/item range rework and item effect rework
 - Stan's Movement Skills
 - laqieer's world map installation utilities
 - Huichelaar's world map flags upgrades
+- Sme's item-based promotions, starting options menu, TrapRework and assistance with summoner AI
 - Assorted small tweaks and patches by StanH, Tequila, Crazycolorz5, Vennobennu, Leonarth, Vesly, 7743 and aera
   - Extra shout out to StanH and Snakey1 for finally squashing the remaining bugs in the magic system!
 - Music hacking utilities by Sme and Alusq, including Alusq's expanded percussion kit
@@ -308,7 +309,7 @@ While all major bugs have now been addressed, some minor bugs remain. A V1.1 rel
   - Deathgoyle by L95 and Teraspark
   - Mogall (Tackle) by Epicer
 - Map sprites and class cards by flasuban, Tordo45, SkidMarc25, Leif, TAS20XX, Alusq, Melia, Nura, Pikmin1211, WarPath, Seal, L95, StreetHero, Snewping, MeatOfJustice, DerTheVaporeon, FEier, Epicer, and Team SALVAGED
-- Battle palettes by Hypergammaspaces, Nuramon, and Dancer_A
+- Battle palettes by Hypergammaspaces, Nuramon, Dancer_A, Vyland, Snewpiee, Feier, Epicer, L95, Pushwall, ilmoro, Raymond, Struedelmuffin, Sphealnuke, UltraFenix, Stitch, and Nico Beans
 - LordGlenn's Cipher icons for weapon ranks, weapon icons for Regalia weapons
 - Cardcafe's Echoes item icons and FEier's Weapon icons, Dark magic icons by epicer and ilmoro
 - New support writing contributed by Meadows, Flare, Ese, MogSynthesizer, and CaptinSpike
@@ -330,7 +331,6 @@ While all major bugs have now been addressed, some minor bugs remain. A V1.1 rel
 - KrashBoomBang for "Unholy Blade", "Shattered Earth" and Sylvan Shrine maps
 - Frigid for "Heir of Disgrace", "Maiden of Darkness" and "Breaking the Chains" maps
 - Dancer_A for Grieth's Citadel and Nuibaba's Abode maps, boss conversations
-- Sme for TrapRework and assistance with summoner AI
 - Vennobennu's Improved FE8 Boat/Village Tileset
 - DerTheVaporeon's improved cave tileset
 - Improved Stronghold tileset by ZoramineFae, flasuban, and N426

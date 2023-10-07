@@ -16,52 +16,58 @@
     
 	PromoLordCheck:
 	#include "asm/PromoCheck_FlagSkip.lyn.event"
-	BYTE 0x0 0x20 0x0 0x0	//character/class ability bits to compare against
-	//POIN PromoItem_LevelCheck
+	BYTE $0 $20 $0 $0	//character/class ability bits to compare against
+
+	ALIGN 4
+	PitchforkCheck:
+	SHORT $B500			//push r14
+	SHORT $2003			//mov r0, r3
+	SHORT $BC08 $4718	//pop r3; bx r3
 	
+	ALIGN 4
 	PrepPromoEffectCheck:
-	SHORT 0xB500 //push r14
-	SHORT 0x4902	//ldr r1
+	SHORT $B500			//push r14
+	SHORT $4902			//ldr r1
 	BL(IDListLoop)
-	SHORT 0xBC02 0x4708 //pop r1; bx r1
+	SHORT $BC02 $4708	//pop r1; bx r1
 	ALIGN 4
 	POIN PromoEffectList
 	
 	PUSH
-    
-        ORG $1D1E8
-        //check if promo item effect
-        SHORT $46C0     //nop
-		SHORT 0x1C10	//mov r0, r2
+
+		ORG $1D1E8
+		//check if promo item effect
+		SHORT $46C0		//nop
+		SHORT $1C10		//mov r0, r2
 		callHack_r3(PrepPromoEffectCheck)
-		SHORT 0x2800	//cmp r0, 0x0
-		SHORT (BLRange($1D214) & 0xFF) | 0xD000 	//beq
+		SHORT $2800		//cmp r0, $0
+		SHORT (BLRange($1D214) & $FF) | $D000 	//beq
 		B($1D230)
-    
+
 		ORG $291A8
 		#include "asm/PromoItemUsability.lyn.event"
 		PROTECT $291A8 $2922C
 		
 		//Prep Screen Promotion Item Usage
 		ORG $9CB38
-		SHORT 0xB530 	//push r4-r5, r14
+		SHORT $B530 	//push r4-r5, r14
 		
 		ORG $9CB4C
 		//check if juna fruit effect
-		SHORT 0x1C05	//mov r5, r0
+		SHORT $1C05	//mov r5, r0
 		BL(Item_GetStat_EffectID)
-		SHORT 0x2836	//cmp r0, 0x36	@check if juna fruit
-		SHORT (BLRange($9CB98) & 0xFF) | 0xD000 	//beq
+		SHORT $2836	//cmp r0, $36	@check if juna fruit
+		SHORT (BLRange($9CB98) & $FF) | $D000 	//beq
 		
 		//check if promo item effect
-		SHORT 0x1C28	//mov r0, r5
+		SHORT $1C28	//mov r0, r5
 		callHack_r3(PrepPromoEffectCheck)
-		SHORT 0x2800	//cmp r0, 0x0
-		SHORT (BLRange($9CBA0) & 0xFF) | 0xD000 	//beq
+		SHORT $2800	//cmp r0, $0
+		SHORT (BLRange($9CBA0) & $FF) | $D000 	//beq
 		B($9CB78)
 		
 		ORG $9CBA0
-		SHORT 0xBC30	//pop r4-r5
+		SHORT $BC30	//pop r4-r5
 	POP
 	
 #else

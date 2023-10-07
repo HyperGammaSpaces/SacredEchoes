@@ -15,12 +15,12 @@
 	@r0 = unit pointer
 	@r1 = item id
 
-push 	{r4-r7,lr}
+push	{r4-r7,lr}
 mov 	r7, r0
 mov 	r6, r1
 mov 	r4, #0x0
 mov 	r0, r6
-bl 	Item_GetID
+bl		Item_GetID
 ldr 	r2, =#0xFFFF	@marks end of table
 ldr 	r5, =PromotionItemTable
 reloop:
@@ -30,7 +30,7 @@ beq 	Unusable
 cmp 	r1,r0
 beq 	SpecialPromoCheck
 add 	r5, #0xC
-b 	reloop
+b		reloop
 
 SpecialPromoCheck:
 ldr 	r3, [r5,#0x8]
@@ -39,7 +39,7 @@ beq 	PromoLevelCheck
 mov 	r0, r7
 mov 	r1, r6
 mov 	r2, r5
-bl 	bl_to_bx_r3
+bl		bl_to_bx_r3
 mov 	r1, r0
 mov 	r0, #0x1
 and 	r0, r1

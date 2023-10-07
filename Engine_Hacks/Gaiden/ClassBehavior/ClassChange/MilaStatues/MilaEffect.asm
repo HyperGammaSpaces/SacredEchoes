@@ -19,7 +19,8 @@ cmp r0, #0x2
 beq Silenced
     ldr r1, =0x0203A958 @(gActionData )
     mov r0, #0xD
-    strb r0, [r1, #0x11]  
+    strb r0, [r1, #0x11]
+
 	blh	Func_4E884 		@I think this clears backgrounds 0 and 2
 	mov	r0,#0x0
 	blh Func_3D38 @SetFont

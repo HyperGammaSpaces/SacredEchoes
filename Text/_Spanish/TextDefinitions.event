@@ -4,6 +4,20 @@
 #ifndef TEXT_DEFINITIONS_TEXT_BUILDFILE_TXT
 #define TEXT_DEFINITIONS_TEXT_BUILDFILE_TXT
 
+#define Growths_Normal $030
+#define Growths_Fixed $031
+#define RN_Type_Label $032
+#define Growths_Label $033
+#define RN_Type_GBA $04A
+#define RN_Type_NES $04B
+#define RN_Type_3DS $04C
+#define RN_Type_GBA_Desc $04D
+#define RN_Type_NES_Desc $04E
+#define RN_Type_3DS_Desc $04F
+#define RandomGrowths_Desc $07A
+#define FixedGrowths_Desc $07B
+#define ZeroGrowths_Desc $07C
+#define AllGrowths_Desc $07D
 #define Mode_Desc_Rtext $147
 #define Desc_EasyMode $149
 #define Desc_NormalMode $14A
@@ -2788,6 +2802,8 @@
 #define Ring_UseScreen $4DD
 #define Protector_UseScreen $4DE
 #define Shield_UseScreen $4DF
+#define Pitchfork_Name $4E0
+#define Pitchfork_Desc $4E1
 #define Armory_MapPreview_Enter $896
 #define Shop_MapPreview_Enter $897
 #define Armory_MapPreview_Leave $898

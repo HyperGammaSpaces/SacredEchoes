@@ -1,6 +1,13 @@
 @source by macplustrees + vennobennu, modified by hypergammaspaces
 
 .thumb
+
+.macro blh to, reg=r3
+  ldr \reg, =\to
+  mov lr, \reg
+  .short 0xf800
+.endm
+
 .equ origin, 0x0802BD50
 .equ getMaxHP, . + 0x08019190 - origin
 .equ getClass, . + 0x08019444 - origin
@@ -20,7 +27,7 @@ mov     r6, r0 			@r6 = new class
 cmp     r5, #0x4        @alm hero
 bne     StartStatChanges
 
-ldr     r0, LordPromotionFlag
+ldr     r0, =AlmPromotionFlagLink
 bl      SetEventId
 
 StartStatChanges:
@@ -125,89 +132,12 @@ cmp     r7, #0x7
 ble     weaponLevelLoop
 
 @If promoting to a new weapon type, change or add weapon
-
-CheckWeaponMutation:
-	mov     r1, r5
-	mov     r7, #0x1	@by default, replace the sword
-	
-	AddWeapon:
-	cmp     r1, #0x28	@priestess
-	beq     SetSword
-	
-	cmp     r1, #0x5
-	beq     SetLance
-	cmp     r1, #0x6
-	beq     SetLance
-	cmp     r1, #0x48
-	beq     SetLance
-	cmp     r1, #0x4E
-	beq     SetLance
-	
-	CheckBows:
-	cmp     r1, #0x04
-	beq     SetBow
-	cmp     r1, #0x19
-	beq     SetBow
-	cmp     r1, #0x1A
-	beq     SetBow
-	cmp     r1, #0x40
-	beq     AtlasCase
-	
-	CheckMagic:
-	cmp     r1, #0x25
-	beq     SetBMagic
-	cmp     r1, #0x26
-	beq     SetBMagic
-	
-	CheckStaff:
-	cmp     r1, #0x4A
-	beq     SetWMagic
-	mov     r1, #0
-	b       EquipFirstItem
-	
-	SetSword:
-	mov     r0, #0x1		@sword
-	mov     r7, #0x38		@replace fire
-	b       UpdateInventory
-	
-	SetLance:
-	mov     r0, #0x14		@lance
-	b       UpdateInventory
-	
-	AtlasCase:
-	mov     r7, #0x1F
-	SetBow:
-	mov     r0, #0x2d		@bow
-	b       UpdateInventory
-	
-	SetBMagic:
-	mov     r0, #0x38		@fire
-	b       UpdateInventory
-	
-	SetWMagic:
-	mov     r0, #0x3F		@nosferatu
-	
-UpdateInventory:
-	mov     r2, r4
-	add     r2, #0x1E		@inventory start
-    mov     r1, #0          @inventory slot
-ItemReplaceLoop:
-	ldrh    r3, [r2, r1]
-	lsl     r3, #0x18
-	lsr     r3, #0x18
-	cmp     r3, r7			@id to replace
-	beq     MutateItem
-	add     r1, #0x2
-	cmp     r1, #0x8
-	ble     ItemReplaceLoop
-    mov     r1, #0
-	b       EquipFirstItem
-	
-MutateItem:
-	strb    r0, [r2, r1]
-    lsr     r1, #0x1
+mov     r0, r4
+mov     r1, r5
+blh     UpdatePromoInventory
 
 EquipFirstItem:
+mov     r1, r0
 mov     r0, r4
 bl      EquipItemSlotByIndex
 
@@ -228,4 +158,3 @@ bx      r0
 .align
 .ltorg
 
-LordPromotionFlag:

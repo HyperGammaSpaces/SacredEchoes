@@ -1,6 +1,14 @@
+PUSH
+    ORG $8ADF58
+    PitchforkUsableClasses:
+    BYTE Cavalier Cavalier_F Paladin Paladin_F Knight Knight_F Baron Baron_F Mercenary Mercenary_F Myrmidon Myrmidon_F Archer Archer_F Sniper Sniper_F BowKnight BowKnight_F WyvernRider WyvernRider_F WyvernLord WyvernLord_F Dracoknight Dracoknight_F Mage Mage_F Sage Priestess Saint GoldKnight GoldKnight_F PegasusKnight FalcoKnight Cleric Soldier 0 0 0 0
+POP
+
 ALIGN 4
 PromotionItemTable:
     SHORT HerosProof 0; POIN $8ADFA4; POIN PromoLordCheck|1
     SHORT ZofianCrown 0; POIN $8ADFA6; POIN PromoLordCheck|1
+    SHORT PitchforkItem 0; POIN PitchforkUsableClasses; POIN PitchforkCheck|1
     SHORT $FFFF 0; WORD 0 0
-    
+
+

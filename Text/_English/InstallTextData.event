@@ -9033,6 +9033,14 @@ __TEXTPROCESS4DF:
 #incbin ".TextEntries/text_buildfileShield_UseScreen.fetxt.dmp"
 setText($4DF, __TEXTPROCESS4DF)
 
+__TEXTPROCESS4E0:
+#incbin ".TextEntries/text_buildfilePitchfork_Name.fetxt.dmp"
+setText($4E0, __TEXTPROCESS4E0)
+
+__TEXTPROCESS4E1:
+#incbin ".TextEntries/text_buildfilePitchfork_Desc.fetxt.dmp"
+setText($4E1, __TEXTPROCESS4E1)
+
 }
 
 #endif // TEXT_INSTALLER_TEXT_BUILDFILE_TXT
