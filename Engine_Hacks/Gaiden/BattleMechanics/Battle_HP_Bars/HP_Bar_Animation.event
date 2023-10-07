@@ -8,86 +8,86 @@
 //the jank camera happens between efxNoDamageEnd and efxHpBarEnd when defender skill is active.
 
 PUSH
-    #define gProc_EfxNoDamage $5B96B4
-    #define gProc_EfxAvoid $5B9664
-    ORG $5B966C //in gProc_EfxAvoid
+	#define gProc_EfxNoDamage $5B96B4
+	#define gProc_EfxAvoid $5B9664
+	ORG $5B966C //in gProc_EfxAvoid
 	PROC_LOOP_ROUTINE(SimpleBattleAnimWait_Loop|1)
-    ORG $5B96BC //in gProc_EfxNoDamage
+	ORG $5B96BC //in gProc_EfxNoDamage
 	PROC_LOOP_ROUTINE(SimpleBattleAnimWait_Loop|1)
 
-    //StartBattleAnimHitEffects
-    ORG $55298
-    replaceWithHack(StartBattleAnimHitEffects_New)
-    
-    //convert StartBattleAnimHitEffects_Nosferatu into a wrapper for StartBattleAnimHitEffects, since it checks both sides now.
-    ORG $55424
-    SHORT $B500 //push {lr}
-    SHORT $2203 //mov r2, #3
-    SHORT $2305 //mov r3, #5
-    BL($55298)  //bl StartBattleAnimHitEffects
-    SHORT $BC01 //pop {r0}
-    SHORT $4700 //bx r0
-    
-    //convert StartEfxHpBarLive into a wrapper for StartEfxHpBar with the heal param set.
-    ORG $52A0C
-    SHORT $B510 //push {r4, lr}
-    SHORT $1C04 //mov r4, r0
-    BL($5A2B4)  //GetOpposingAis
-    SHORT $1C01 //mov r1, r0
-    SHORT $1C20 //mov r0, r4
-    SHORT $4A03 //ldr r2, =proc
-    SHORT $4C04 //ldr r4, =address
-    BL($D18D0)  //bx_r4
-    SHORT $BC10 //pop {r4}
-    SHORT $BC01 //pop {r0}
-    SHORT $4700 //bx r0
-    ALIGN 4
-    POIN gProc_NewEfxHpBarSpellCost
-    POIN StartEfxHpBar_New|1
-    
+	//StartBattleAnimHitEffects
+	ORG $55298
+	replaceWithHack(StartBattleAnimHitEffects_New)
 
-    //Fix defender skill anim activation
-    ORG $5908C //attacker skill did not activate; check defender skill.
-    SHORT $1C38 //mov r0, r7
-    BL($5A16C) //GetAisSubjectId
-    SHORT $2101 //mov r1, #1
-    SHORT $4041 //eor r1, r0 (makes it check the defender's flags)
-    SHORT $89F8 //ldrh r0, [r7, #0xE]
-    SHORT $3801 //sub r0, #0x1
-    SHORT $0040 //lsl r0, r0, #0x1
-    SHORT $1840 //add r0, r0, r1
-    BL($58A34) //GetBattleAnimRoundTypeFlags
-    SHORT $2180 //mov r1, #0x80
-    SHORT $00C9 //lsl r1, r1, #3
-    SHORT $4001 //tst r1, r0
-    
-    //fix necrodragon stuff to use AIS round number
-    ORG $5300C
-    SHORT $89C1 //ldrh r1, [r0, #0xE]
-    SHORT $0049 //lsl r1, r1, #0x1
-    SHORT $1860 //add r0, r4, r1
-    SHORT $E005 //jump down to 53020
-    
-    //fix sfx/crit stuff to use AIS round number
-    ORG $72404
-    BL($5A16C) //GetAisSubjectId
-    SHORT $1C04 //mov r4, r0
-    SHORT $89E9 //ldrh r1, [r5, #0xE]
-    SHORT $3901 //sub r1, #1
-    SHORT $0049 //lsl r1, r1, #0x1
-    SHORT $1866 //add r6, r4, r1
-    SHORT $E003 //jump down to 7241C
-    SHORT $46C0 $46C0 $46C0 $46C0
-    
-    //fix C51 command
-    ORG $58d88
-    POIN $595A4
-    ORG $595C4
-    BL($6D6E8)
+	//convert StartBattleAnimHitEffects_Nosferatu into a wrapper for StartBattleAnimHitEffects, since it checks both sides now.
+	ORG $55424
+	SHORT $B500 //push {lr}
+	SHORT $2203 //mov r2, #3
+	SHORT $2305 //mov r3, #5
+	BL($55298)  //bl StartBattleAnimHitEffects
+	SHORT $BC01 //pop {r0}
+	SHORT $4700 //bx r0
+
+	//convert StartEfxHpBarLive into a wrapper for StartEfxHpBar with the heal param set.
+	ORG $52A0C
+	SHORT $B510 //push {r4, lr}
+	SHORT $1C04 //mov r4, r0
+	BL($5A2B4)  //GetOpposingAis
+	SHORT $1C01 //mov r1, r0
+	SHORT $1C20 //mov r0, r4
+	SHORT $4A03 //ldr r2, =proc
+	SHORT $4C04 //ldr r4, =address
+	BL($D18D0)  //bx_r4
+	SHORT $BC10 //pop {r4}
+	SHORT $BC01 //pop {r0}
+	SHORT $4700 //bx r0
+	ALIGN 4
+	POIN gProc_NewEfxHpBarSpellCost
+	POIN StartEfxHpBar_New|1
+
+
+	//Fix defender skill anim activation
+	ORG $5908C //attacker skill did not activate; check defender skill.
+	SHORT $1C38 //mov r0, r7
+	BL($5A16C) //GetAisSubjectId
+	SHORT $2101 //mov r1, #1
+	SHORT $4041 //eor r1, r0 (makes it check the defender's flags)
+	SHORT $89F8 //ldrh r0, [r7, #0xE]
+	SHORT $3801 //sub r0, #0x1
+	SHORT $0040 //lsl r0, r0, #0x1
+	SHORT $1840 //add r0, r0, r1
+	BL($58A34) //GetBattleAnimRoundTypeFlags
+	SHORT $2180 //mov r1, #0x80
+	SHORT $00C9 //lsl r1, r1, #3
+	SHORT $4001 //tst r1, r0
+
+	//fix necrodragon stuff to use AIS round number
+	ORG $5300C
+	SHORT $89C1 //ldrh r1, [r0, #0xE]
+	SHORT $0049 //lsl r1, r1, #0x1
+	SHORT $1860 //add r0, r4, r1
+	SHORT $E005 //jump down to 53020
+
+	//fix sfx/crit stuff to use AIS round number
+	ORG $72404
+	BL($5A16C) //GetAisSubjectId
+	SHORT $1C04 //mov r4, r0
+	SHORT $89E9 //ldrh r1, [r5, #0xE]
+	SHORT $3901 //sub r1, #1
+	SHORT $0049 //lsl r1, r1, #0x1
+	SHORT $1866 //add r6, r4, r1
+	SHORT $E003 //jump down to 7241C
+	SHORT $46C0 $46C0 $46C0 $46C0
+
+	//fix C51 command
+	ORG $58d88
+	POIN $595A4
+	ORG $595C4
+	BL($6D6E8)
 
 	ORG $624D4
 	jumpToHack(SilenceFix)
-	
+
 	ORG $62768
 	jumpToHack(SleepFix)
 
@@ -101,9 +101,8 @@ gProc_NewEfxHpBar:
 
 	PROC_LOOP_ROUTINE($52504|1)
 	PROC_LOOP_ROUTINE($525A4|1)
-	
+
 	PROC_END
-    
 
 gProc_NewEfxHpBarSpellCost:
 
@@ -114,9 +113,9 @@ gProc_NewEfxHpBarSpellCost:
 
 	PROC_LOOP_ROUTINE($52504|1)
 	PROC_LOOP_ROUTINE($525A4|1)
-	
+
 	PROC_END
-    
+
 gProc_NewEfxHpBarResire:
 
 	PROC_SET_NAME($DA3F0)
@@ -126,12 +125,15 @@ gProc_NewEfxHpBarResire:
 
 	PROC_LOOP_ROUTINE($52504|1)
 	PROC_LOOP_ROUTINE($525A4|1)
-	
+
 	PROC_END
 
 
 ALIGN 4
 #include "HpBarAnimationFixes.lyn.event"
+
+ALIGN 4
+#include "HPBarColors/HPBars.event"
 
 ALIGN 4
 SilenceFix:

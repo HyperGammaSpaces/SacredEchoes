@@ -66,7 +66,7 @@
 	
 	ALIGN 4
 	New_Battle_Anims_Off_Graphics:
-	#incbin "Anims_Off_Battle_Graphic_New.4bpp"
+	#incbin "Anims_Off_Battle_Graphic_New.lz77"
 	
 	ALIGN 4
 	Battle_Anims_Off_Palette:
@@ -92,9 +92,9 @@
 	ALIGN 4
 	Battle_Name_Graphics:
 	#ifdef LANGUAGE_ES
-		#incbin "New_Stat_Names_ES.4bpp"
+		#incbin "New_Stat_Names_ES.lz77"
 	#else
-		#incbin "New_Stat_Names.4bpp"
+		#incbin "New_Stat_Names.lz77"
 	#endif
 	
 	ALIGN 4
@@ -103,7 +103,7 @@
 	
 	ALIGN 4
 	New_Numbers:
-	#incbin "new_numbers.4bpp"
+	#incbin "new_numbers.lz77"
 	
 // #else
 // 	ERROR "You're not assembling FE8 events!"
