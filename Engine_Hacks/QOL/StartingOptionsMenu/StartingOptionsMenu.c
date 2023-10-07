@@ -75,9 +75,9 @@ static const ProcCode StartingOptionsProc[] = {
 
 	PROC_LOOP_ROUTINE(StartingOptionsLoop), //wait for B button
 
-	PROC_CALL_ROUTINE_ARG(NewFadeOut, 0x10),
+	PROC_CALL_ROUTINE_ARG(NewFadeOut, 8),
 	PROC_WHILE_ROUTINE(FadeOutExists),
-	PROC_SLEEP(10),
+	PROC_SLEEP(5),
 
 	PROC_END
 };
@@ -105,7 +105,7 @@ static const ProcCode NewGameDifficultySelect[] = {
 		PROC_NEW_CHILD_BLOCKING(StartingOptionsProc),
 
 		// PROC_NEW_CHILD_BLOCKING(0x8a2ece0), //config proc
-		PROC_SLEEP(10),
+		PROC_SLEEP(5),
 
 	PROC_LABEL(2),
 	PROC_CALL_ROUTINE_ARG(NewFadeOut, 8),
@@ -177,7 +177,7 @@ void TextUpdater(int index, const char* altString, int xStart)
 
 void UpdateDescText(TextHandle* handles, int msg)
 {
-	BgMapFillRect(gpStatScreenPageBg0Map + TILEMAP_INDEX(0, 10), 24, 4, 0x00);
+	BgMapFillRect(gpStatScreenPageBg0Map + TILEMAP_INDEX(0, 10), 28, 4, 0x00);
 	for ( int i = 0 ; i < 2 ; i++ )
 	{
 		Text_Clear(&handles[i]);
@@ -454,7 +454,7 @@ void Arrows_UpdateAnim(ArrowCtrlProc* proc)
 	if (proc->animSpeedRight > STARTMENU_ANIMSPEED)
 			proc->animSpeedRight--;
 
-	if ((GetGameClock() % 4) == 0)
+	if (Mod(GetGameClock(), 4) == 0)
 	{
 			if (proc->xLeftCursor < STARTMENU_LEFTARROW_X)
 					proc->xLeftCursor++;
@@ -546,7 +546,7 @@ void StartingOptions_Display(OptionsProc* CurrentProc)
 
 	updateOptionsPage(CurrentProc);
 
-	BgMapCopyRect(gpStatScreenPageBg0Map, gBg0MapBuffer+TILEMAP_INDEX(2, 5), 25, 15);
+	BgMapCopyRect(gpStatScreenPageBg0Map, gBg0MapBuffer+TILEMAP_INDEX(2, 5), 28, 15);
 	EnableBgSyncByIndex(0);
 };
 
