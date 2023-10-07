@@ -1,8 +1,9 @@
 #include "Extensions/Hack Installation.txt"
 
-#ifndef CharacterPaletteTable
-	#define CharacterPaletteTable $ef8008 //entry 0 which is invalid is here
-#endif
+ALIGN 4
+//This is a list of palette pointers by ID.
+BattlePaletteDictionary:
+#include "BattlePaletteDictionary.event"
 
 PUSH
 	ORG $5742C
@@ -11,6 +12,11 @@ PUSH
 	ORG $5746A
 	ALIGN 4
 	callHack_r7(PaletteLoadReworkPt1)
+
+	ORG $5A7AC
+	POIN BattlePaletteDictionary
+	ORG $59BFC
+	POIN BattlePaletteDictionary
 	
 	ORG $CD108
 	callHack_r5(PaletteLoadReworkPromoBranch)
@@ -19,24 +25,23 @@ POP
 ALIGN 4
 PaletteLoadReworkPt1:
 #incbin "PaletteLoadReworkPart1.dmp"
-POIN PaletteAssociationTable
-POIN CharacterPaletteTable
+POIN MapClassIdToPalettes
+POIN BattlePaletteDictionary
 ALIGN 4
 
 PaletteLoadReworkPt2:
 #incbin "PaletteLoadReworkPart2.dmp"
-POIN PaletteAssociationTable
-POIN CharacterPaletteTable
+POIN MapClassIdToPalettes
+POIN BattlePaletteDictionary
 ALIGN 4
 
 PaletteLoadReworkPromoBranch:
 #incbin "PaletteLoadReworkPromoBranch.dmp"
-POIN PaletteAssociationTable
-POIN CharacterPaletteTable
+POIN MapClassIdToPalettes
+POIN BattlePaletteDictionary
 ALIGN 4
 
-#include "PaletteEntries.event"
 ALIGN 4
-#include "ClassPaletteList.event"
+#include "ClassPaletteList.event" //list of which palettes in the dictionary map to which classes
 ALIGN 4
 #include "PaletteViewerTables.event" //convenience table for looking at palettes in builder

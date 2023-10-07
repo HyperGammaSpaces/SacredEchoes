@@ -2,7 +2,7 @@
 
 @hooks at $5746A
 
-.equ CharacterPaletteTable, PaletteAssociationTable+4
+.equ BattlePaletteDictionary, MapClassIdToPalettes+4
 
 //at this point:
 //r0: unit id left-shifted by 0x3
@@ -12,7 +12,7 @@
 //r4: class id
 //r5, r6, r7: different parts of 203a4ec / battle struct
 
-ldr r7, PaletteAssociationTable
+ldr r7, MapClassIdToPalettes
 add r1, r2, #0x1
 lsl r6, r4, #0x2
 add r6, r7
@@ -33,7 +33,7 @@ FoundAPalette:
 ldr r0, =0x0203e110 @Battle animation relationship buffer
 add r7, #0x4
 ldr r1, [r7]
-ldr r2, CharacterPaletteTable
+ldr r2, BattlePaletteDictionary
 sub r1, r1, r2
 lsr r1, #0x4
 strh r1, [r0, #0x2]
@@ -45,4 +45,4 @@ bx r1
 .ltorg
 .align
 
-PaletteAssociationTable:
+MapClassIdToPalettes:

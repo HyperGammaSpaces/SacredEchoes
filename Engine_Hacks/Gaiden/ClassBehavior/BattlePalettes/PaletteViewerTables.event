@@ -1,42 +1,43 @@
 //list of classes that the below list of palettes map to
 PUSH
 ORG $95e0a4
-BYTE Soldier Knight Baron Saint PegasusKnight FalcoKnight Cavalier
-BYTE Paladin GoldKnight Cavalier Paladin GoldKnight Soldier Knight
-BYTE Baron Archer Sniper BowKnight Paladin GoldKnight Baron
-BYTE Villager Cavalier Paladin GoldKnight Mercenary Myrmidon DreadFighter
-BYTE Soldier Knight Baron Mage Sage Archer Sniper
-BYTE BowKnight Villager Cavalier Paladin GoldKnight Mercenary Myrmidon
-BYTE DreadFighter Soldier Knight Baron Mage Sage Archer
-BYTE Sniper BowKnight Villager Cavalier Paladin GoldKnight Mercenary
-BYTE Myrmidon DreadFighter Soldier Knight Baron Mage Sage
-BYTE Archer Sniper BowKnight Villager_F Cavalier_F Paladin_F GoldKnight_F
-BYTE Cleric Saint PegasusKnight FalcoKnight Mage_F Priestess DreadFighter_F
-BYTE Archer_F Sniper_F BowKnight_F Villager_F Cavalier_F Paladin_F GoldKnight_F
-BYTE Cleric Saint PegasusKnight FalcoKnight Mage_F Priestess DreadFighter_F
-BYTE Archer_F Sniper_F BowKnight_F Mage Sage Villager Cavalier
-BYTE Paladin GoldKnight Mercenary Myrmidon DreadFighter Soldier Knight
-BYTE Baron Mage Sage Archer Sniper BowKnight Knight
-BYTE Baron Archer Sniper BowKnight Villager Cavalier Paladin
-BYTE GoldKnight Mercenary Myrmidon DreadFighter Soldier Knight Baron
-BYTE Mage Sage Archer Sniper BowKnight Cleric Saint
-BYTE Mage Sage Paladin_F GoldKnight_F Villager_F Cavalier_F Paladin_F
-BYTE GoldKnight_F Cleric Saint PegasusKnight FalcoKnight Mage_F Priestess
-BYTE DreadFighter_F Archer_F Sniper_F BowKnight_F PegasusKnight FalcoKnight PegasusKnight
-BYTE FalcoKnight Villager Cavalier Paladin GoldKnight Mercenary Myrmidon
-BYTE DreadFighter Soldier Knight Baron Mage Sage Archer
-BYTE Sniper BowKnight Thief Rogue DreadFighter Myrmidon BowKnight
+BYTE Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager Villager
+BYTE Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier Cavalier
+BYTE Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin Paladin
+BYTE GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight GoldKnight
+BYTE Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier Soldier
+BYTE Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight Knight
+BYTE Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron Baron
+BYTE Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer Archer
+BYTE Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper Sniper
+BYTE BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight BowKnight
+BYTE Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary Mercenary
+BYTE Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon Myrmidon
+BYTE DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter DreadFighter
+BYTE Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage Mage
+BYTE Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage Sage
+//female classes
+BYTE Villager_F Villager_F Villager_F Villager_F Villager_F Villager_F Villager_F Villager_F Villager_F Villager_F Villager_F Villager_F Villager_F Villager_F Villager_F
+BYTE Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F Cavalier_F
+BYTE Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F Paladin_F
+BYTE GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F GoldKnight_F
+BYTE Archer_F Archer_F Archer_F Archer_F Archer_F Archer_F Archer_F Archer_F Archer_F Archer_F Archer_F Archer_F Archer_F Archer_F Archer_F
+BYTE Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F Sniper_F
+BYTE BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F BowKnight_F
+BYTE Mage_F Mage_F Mage_F Mage_F Mage_F Mage_F Mage_F Mage_F Mage_F Mage_F Mage_F Mage_F Mage_F Mage_F Mage_F
+BYTE Priestess Priestess Priestess Priestess Priestess Priestess Priestess Priestess Priestess Priestess Priestess Priestess Priestess Priestess Priestess
+BYTE DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F DreadFighter_F
+BYTE Cleric Cleric Cleric Cleric Cleric Cleric Cleric Cleric Cleric Cleric Cleric Cleric Cleric Cleric Cleric
+BYTE Saint Saint Saint Saint Saint Saint Saint Saint Saint Saint Saint Saint Saint Saint Saint
+BYTE PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight PegasusKnight
+BYTE FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight FalcoKnight 
+//uniques
+BYTE Thief Rogue
+BYTE Paladin GoldKnight Baron DreadFighter Myrmidon BowKnight
 BYTE Sniper DreadFighter Paladin GoldKnight Baron GoldKnight Arcanist
-BYTE Cantor Cantor Cantor Villager Cavalier Paladin GoldKnight
-BYTE Mercenary Myrmidon DreadFighter Soldier Knight Baron Mage
-BYTE Sage Archer Sniper BowKnight Villager_F Cavalier_F Paladin_F
-BYTE GoldKnight_F Cleric Saint PegasusKnight FalcoKnight Mage_F Priestess
-BYTE DreadFighter_F Archer_F Sniper_F BowKnight_F PegasusKnight FalcoKnight Saint
-BYTE GoldKnight Paladin GoldKnight GoldKnight BowKnight BowKnight GoldKnight_F
+BYTE Cantor Cantor Cantor BowKnight BowKnight GoldKnight_F
 BYTE Witch Witch DreadFighter DreadFighter DreadFighter PegasusKnight Soldier
-BYTE Pirate_F Pirate Cavalier FalcoKnight Saint Paladin GoldKnight
-BYTE Villager_F Cavalier_F Paladin_F GoldKnight_F Cleric Saint PegasusKnight
-BYTE FalcoKnight Mage_F Priestess DreadFighter_F Archer_F Sniper_F BowKnight_F
+BYTE Pirate_F Pirate Cavalier
 BYTE 0x0 0x0 0x0 0x0 0x0 0x0 0x0
 POP
 

@@ -1,765 +1,1690 @@
 //Uses LZ77 compressed palettes
 
+ALIGN 4
 LukasSoldierPalette:
-#incbin "Bin/lukassoldier.cprs.pal.bin"
-
+#incbin "bin/Lukassoldier.btlpal"
+ALIGN 4
 LukasArmorPalette:
-#incbin "Bin/lukasarmor.cprs.pal.bin"
-
+#incbin "bin/Lukasarmor.btlpal"
+ALIGN 4
 LukasBaronPalette:
-#incbin "Bin/lukasbaron.cprs.pal.bin"
+#incbin "bin/Lukasbaron.btlpal"
+ALIGN 4
+LukasVillagerPalette:
+#incbin "bin/Lukasvillager.btlpal"
+ALIGN 4
+LukasMercPalette:
+#incbin "bin/Lukasmerc.btlpal"
+ALIGN 4
+LukasMyrmPalette:
+#incbin "bin/Lukasmyrmidon.btlpal"
+ALIGN 4
+LukasDFPalette:
+#incbin "bin/Lukasdreadfighter.btlpal"
+ALIGN 4
+LukasArcherPalette:
+#incbin "bin/Lukasarcher.btlpal"
+ALIGN 4
+LukasSniperPalette:
+#incbin "bin/Lukassniper.btlpal"
+ALIGN 4
+LukasBKPalette:
+#incbin "bin/Lukasarchknight.btlpal"
+ALIGN 4
+LukasCavPalette:
+#incbin "bin/Lukascavalier.btlpal"
+ALIGN 4
+LukasPaladinPalette:
+#incbin "bin/Lukaspaladin.btlpal"
+ALIGN 4
+LukasGKPalette:
+#incbin "bin/Lukasgoldknight.btlpal"
+ALIGN 4
+LukasMagePalette:
+#incbin "bin/Lukasmage.btlpal"
+ALIGN 4
+LukasSagePalette:
+#incbin "bin/Lukassage.btlpal"
 
+ALIGN 4
+SilqueVillagerPalette:
+#incbin "bin/silquevill.btlpal"
+ALIGN 4
+SilquePegPalette:
+#incbin "bin/silquepeg.btlpal"
+ALIGN 4
+SilqueFalcoPalette:
+#incbin "bin/silquefalco.btlpal"
+ALIGN 4
+SilqueMagePalette:
+#incbin "bin/silquemage.btlpal"
+ALIGN 4
+SilquePriestessPalette:
+#incbin "bin/silquepriestess.btlpal"
+ALIGN 4
+SilqueDFPalette:
+#incbin "bin/silqueDF.btlpal"
+ALIGN 4
+SilqueArcherPalette:
+#incbin "bin/silquearch.btlpal"
+ALIGN 4
+SilqueSniperPalette:
+#incbin "bin/silquesniper.btlpal"
+ALIGN 4
+SilqueBKPalette:
+#incbin "bin/silquebk.btlpal"
+ALIGN 4
+SilqueCavPalette:
+#incbin "bin/silquecav.btlpal"
+ALIGN 4
+SilquePaladinPalette:
+#incbin "bin/silquepal.btlpal"
+ALIGN 4
+SilqueGKPalette:
+#incbin "bin/silqueGK.btlpal"
+ALIGN 4
+SilqueClericPalette:
+#incbin "bin/silquecleric.btlpal"
+ALIGN 4
 SilqueSaintPalette:
-#incbin "Bin/silquesaint.cprs.pal.bin"
+#incbin "bin/silquesaint.btlpal"
 
+ALIGN 4
 ClairPegPalette:
-#incbin "Bin/clairpeg.cprs.pal.bin"
-
+#incbin "bin/clair_peg.btlpal"
+ALIGN 4
 ClairFalcoPalette:
-#incbin "Bin/clairfalco.cprs.pal.bin"
+#incbin "bin/clair_falco.btlpal"
+ALIGN 4
+ClairClericPalette:
+#incbin "bin/clair_cleric.btlpal"
+ALIGN 4
+ClairSaintPalette:
+#incbin "bin/clair_saint.btlpal"
+ALIGN 4
+ClairVillagerPalette:
+#incbin "bin/clair_villager.btlpal"
+ALIGN 4
+ClairMagePalette:
+#incbin "bin/clair_mage.btlpal"
+ALIGN 4
+ClairPriestessPalette:
+#incbin "bin/clair_priestess.btlpal"
+ALIGN 4
+ClairDFPalette:
+#incbin "bin/clair_dread_fighter.btlpal"
+ALIGN 4
+ClairArcherPalette:
+#incbin "bin/clair_archer.btlpal"
+ALIGN 4
+ClairSniperPalette:
+#incbin "bin/clair_sniper.btlpal"
+ALIGN 4
+ClairBKPalette:
+#incbin "bin/clair_bowknight.btlpal"
+ALIGN 4
+ClairCavPalette:
+#incbin "bin/clair_cavalier.btlpal"
+ALIGN 4
+ClairPaladinPalette:
+#incbin "bin/clair_paladin.btlpal"
+ALIGN 4
+ClairGKPalette:
+#incbin "bin/clair_gold_knight.btlpal"
 
+ALIGN 4
 FernandCavPalette:
-#incbin "Bin/fercav.cprs.pal.bin"
-
+#incbin "bin/fernand_cav.btlpal"
+ALIGN 4
 FernandPaladinPalette:
-#incbin "Bin/fernandpal_new.cprs.pal.bin"
-
+#incbin "bin/fernand_paladin.btlpal"
+ALIGN 4
 FernandGKPalette:
-#incbin "Bin/ferGK.cprs.pal.bin"
+#incbin "bin/fernand_GK.btlpal"
+ALIGN 4
+FernandVillagerPalette:
+#incbin "bin/fernand_villager.btlpal"
+ALIGN 4
+FernandMagePalette:
+#incbin "bin/fernand_mage.btlpal"
+ALIGN 4
+FernandSagePalette:
+#incbin "bin/fernand_sage.btlpal"
+ALIGN 4
+FernandMercPalette:
+#incbin "bin/fernand_merc.btlpal"
+ALIGN 4
+FernandMyrmPalette:
+#incbin "bin/fernand_myrmidon.btlpal"
+ALIGN 4
+FernandDFPalette:
+#incbin "bin/fernand_dread_fighter.btlpal"
+ALIGN 4
+FernandSoldierPalette:
+#incbin "bin/fernand_soldier.btlpal"
+ALIGN 4
+FernandArmorPalette:
+#incbin "bin/fernand_armor.btlpal"
+ALIGN 4
+FernandBaronPalette:
+#incbin "bin/fernand_baron.btlpal"
+ALIGN 4
+FernandArcherPalette:
+#incbin "bin/fernand_archer.btlpal"
+ALIGN 4
+FernandSniperPalette:
+#incbin "bin/fernand_sniper.btlpal"
+ALIGN 4
+FernandBKPalette:
+#incbin "bin/fernand_bowknight.btlpal"
 
+ALIGN 4
 CliveCavPalette:
-#incbin "Bin/clivecav.cprs.pal.bin"
-
+#incbin "bin/clive_cav.btlpal"
+ALIGN 4
 ClivePaladinPalette:
-#incbin "Bin/clivepal_new.cprs.pal.bin"
-
+#incbin "bin/clive_pal.btlpal"
+ALIGN 4
 CliveGKPalette:
-#incbin "Bin/cliveGK.cprs.pal.bin"
+#incbin "bin/clive_GK.btlpal"
+ALIGN 4
+CliveArcherPalette:
+#incbin "bin/clive_archer.btlpal"
+ALIGN 4
+CliveSniperPalette:
+#incbin "bin/clive_sniper.btlpal"
+ALIGN 4
+CliveBKPalette:
+#incbin "bin/clive_bowknight.btlpal"
+ALIGN 4
+CliveSoldierPalette:
+#incbin "bin/clive_soldier.btlpal"
+ALIGN 4
+CliveArmorPalette:
+#incbin "bin/clive_armor.btlpal"
+ALIGN 4
+CliveBaronPalette:
+#incbin "bin/clive_baron.btlpal"
+ALIGN 4
+CliveVillagerPalette:
+#incbin "bin/clive_villager.btlpal"
+ALIGN 4
+CliveMagePalette:
+#incbin "bin/clive_mage.btlpal"
+ALIGN 4
+CliveSagePalette:
+#incbin "bin/clive_sage.btlpal"
+ALIGN 4
+CliveMercPalette:
+#incbin "bin/clive_merc.btlpal"
+ALIGN 4
+CliveMyrmPalette:
+#incbin "bin/clive_myrmidon.btlpal"
+ALIGN 4
+CliveDFPalette:
+#incbin "bin/clive_dread_fighter.btlpal"
 
+ALIGN 4
 ForsythSoldierPalette:
-#incbin "Bin/forsythsoldier.cprs.pal.bin"
-
+#incbin "bin/forsythsoldier.btlpal"
+ALIGN 4
 ForsythArmorPalette:
-#incbin "Bin/forsytharmor.cprs.pal.bin"
-
+#incbin "bin/forsytharmor.btlpal"
+ALIGN 4
 ForsythBaronPalette:
-#incbin "Bin/forsythbaron.cprs.pal.bin"
+#incbin "bin/forsythbaron.btlpal"
+ALIGN 4
+ForsythVillagerPalette:
+#incbin "bin/forsythvillager.btlpal"
+ALIGN 4
+ForsythMercPalette:
+#incbin "bin/forsythmerc.btlpal"
+ALIGN 4
+ForsythMyrmPalette:
+#incbin "bin/forsythmyrm.btlpal"
+ALIGN 4
+ForsythDFPalette:
+#incbin "bin/forsythdread.btlpal"
+ALIGN 4
+ForsythMagePalette:
+#incbin "bin/forsythmage.btlpal"
+ALIGN 4
+ForsythSagePalette:
+#incbin "bin/forsythsage.btlpal"
+ALIGN 4
+ForsythArcherPalette:
+#incbin "bin/forsytharcher.btlpal"
+ALIGN 4
+ForsythSniperPalette:
+#incbin "bin/forsythsniper.btlpal"
+ALIGN 4
+ForsythBKPalette:
+#incbin "bin/forsythbk.btlpal"
+ALIGN 4
+ForsythCavPalette:
+#incbin "bin/forsythcav.btlpal"
+ALIGN 4
+ForsythPaladinPalette:
+#incbin "bin/forsythpaladin.btlpal"
+ALIGN 4
+ForsythGKPalette:
+#incbin "bin/forsythgk.btlpal"
 
+ALIGN 4
 PythonArcherPalette:
-#incbin "Bin/pythonarcher2.cprs.pal.bin"
-
+#incbin "bin/pythonarcher.btlpal"
+ALIGN 4
 PythonSniperPalette:
-#incbin "Bin/pythonsniper.cprs.pal.bin"
-
+#incbin "bin/pythonsniper.btlpal"
+ALIGN 4
 PythonBKPalette:
-#incbin "Bin/pythonbk.cprs.pal.bin"
+#incbin "bin/pythonbk.btlpal"
+ALIGN 4
+PythonCavPalette:
+#incbin "bin/pythonhorse.btlpal"
+ALIGN 4
+PythonPaladinPalette:
+#incbin "bin/pythonpaladin.btlpal"
+ALIGN 4
+PythonGKPalette:
+#incbin "bin/pythongk.btlpal"
+ALIGN 4
+PythonSoldierPalette:
+#incbin "bin/pythonsoldier.btlpal"
+ALIGN 4
+PythonArmorPalette:
+#incbin "bin/pythonarmor.btlpal"
+ALIGN 4
+PythonBaronPalette:
+#incbin "bin/pythonbaron.btlpal"
+ALIGN 4
+PythonMagePalette:
+#incbin "bin/pythonmage.btlpal"
+ALIGN 4
+PythonSagePalette:
+#incbin "bin/pythonsage.btlpal"
+ALIGN 4
+PythonVillagerPalette:
+#incbin "bin/pythonvillager.btlpal"
+ALIGN 4
+PythonMercPalette:
+#incbin "bin/pythonmerc.btlpal"
+ALIGN 4
+PythonMyrmPalette:
+#incbin "bin/pythonmyrm.btlpal"
+ALIGN 4
+PythonDFPalette:
+#incbin "bin/pythondread.btlpal"
 
+ALIGN 4
 SlaydePaladinPalette:
-#incbin "Bin/slaydepal_new.cprs.pal.bin"
-
+#incbin "bin/slaydepal.btlpal"
+ALIGN 4
 SlaydeGKPalette:
-#incbin "Bin/slaydeGK.cprs.pal.bin"
+#incbin "bin/slaydeGK.btlpal"
 
+ALIGN 4
 DesaixPalette:
-#incbin "Bin/desaixpal.cprs.pal.bin"
+#incbin "bin/desaixbaron.btlpal"
 
+ALIGN 4
 //Villagers below here
 
 GrayVillagerPalette:
-#incbin "Bin/grayvill.cprs.pal.bin"
-
+#incbin "bin/grayvill.btlpal"
+ALIGN 4
 GrayCavPalette:
-#incbin "Bin/graycav2.cprs.pal.bin"
-
+#incbin "bin/graycav.btlpal"
+ALIGN 4
 GrayPaladinPalette:
-#incbin "Bin/graypal_new.cprs.pal.bin"
-
+#incbin "bin/graypal.btlpal"
+ALIGN 4
 GrayGKPalette:
-#incbin "Bin/grayGK.cprs.pal.bin"
-
+#incbin "bin/grayGK.btlpal"
+ALIGN 4
 GrayMercPalette:
-#incbin "Bin/graymerc_salv.cprs.pal.bin"
-
+#incbin "bin/graymerc.btlpal"
+ALIGN 4
 GrayMyrmPalette:
-#incbin "Bin/graymyrm.cprs.pal.bin"
-
+#incbin "bin/graymyrm.btlpal"
+ALIGN 4
 GrayDFPalette:
-#incbin "Bin/grayDF.cprs.pal.bin"
-
+#incbin "bin/grayDF.btlpal"
+ALIGN 4
 GraySoldierPalette:
-#incbin "Bin/graysoldier.cprs.pal.bin"
-
+#incbin "bin/graysoldier.btlpal"
+ALIGN 4
 GrayArmorPalette:
-#incbin "Bin/grayarmor.cprs.pal.bin"
-
+#incbin "bin/grayarmor.btlpal"
+ALIGN 4
 GrayBaronPalette:
-#incbin "Bin/graybaron.cprs.pal.bin"
-
+#incbin "bin/graybaron.btlpal"
+ALIGN 4
 GrayMagePalette:
-#incbin "Bin/graymage.cprs.pal.bin"
-
+#incbin "bin/graymage.btlpal"
+ALIGN 4
 GraySagePalette:
-#incbin "Bin/graysage_3.pal_comp.dmp"
-
+#incbin "bin/graysage.btlpal"
+ALIGN 4
 GrayArcherPalette:
-#incbin "Bin/grayarch2.cprs.pal.bin"
-
+#incbin "bin/grayarch.btlpal"
+ALIGN 4
 GraySniperPalette:
-#incbin "Bin/graysniper.cprs.pal.bin"
-
+#incbin "bin/graysniper.btlpal"
+ALIGN 4
 GrayBKPalette:
-#incbin "Bin/graybk.cprs.pal.bin"
+#incbin "bin/graybk.btlpal"
 
+ALIGN 4
 TobinVillagerPalette:
-#incbin "Bin/tobinvill.cprs.pal.bin"
-
+#incbin "bin/tobinvill.btlpal"
+ALIGN 4
 TobinCavPalette:
-#incbin "Bin/tobincav.cprs.pal.bin"
-
+#incbin "bin/tobincav.btlpal"
+ALIGN 4
 TobinPaladinPalette:
-#incbin "Bin/tobinpal_new.cprs.pal.bin"
-
+#incbin "bin/tobinpal.btlpal"
+ALIGN 4
 TobinGKPalette:
-#incbin "Bin/tobinGK.cprs.pal.bin"
-
+#incbin "bin/tobinGK.btlpal"
+ALIGN 4
 TobinMercPalette:
-#incbin "Bin/tobinmerc_salv.cprs.pal.bin"
-
+#incbin "bin/tobinmerc.btlpal"
+ALIGN 4
 TobinMyrmPalette:
-#incbin "Bin/tobinmyrm.cprs.pal.bin"
-
+#incbin "bin/tobinmyrm.btlpal"
+ALIGN 4
 TobinDFPalette:
-#incbin "Bin/tobinDF.cprs.pal.bin"
-
+#incbin "bin/tobinDF.btlpal"
+ALIGN 4
 TobinSoldierPalette:
-#incbin "Bin/tobinsoldier.cprs.pal.bin"
-
+#incbin "bin/tobinsoldier.btlpal"
+ALIGN 4
 TobinArmorPalette:
-#incbin "Bin/tobinarmor.cprs.pal.bin"
-
+#incbin "bin/tobinarmor.btlpal"
+ALIGN 4
 TobinBaronPalette:
-#incbin "Bin/tobinbaron.cprs.pal.bin"
-
+#incbin "bin/tobinbaron.btlpal"
+ALIGN 4
 TobinMagePalette:
-#incbin "Bin/tobinmage.cprs.pal.bin"
-
+#incbin "bin/tobinmage.btlpal"
+ALIGN 4
 TobinSagePalette:
-#incbin "Bin/tobinsage_3.pal_comp.dmp"
-
+#incbin "bin/tobinsage.btlpal"
+ALIGN 4
 TobinArcherPalette:
-#incbin "Bin/tobinarcher2.cprs.pal.bin"
-
+#incbin "bin/tobinarcher.btlpal"
+ALIGN 4
 TobinSniperPalette:
-#incbin "Bin/tobinsniper.cprs.pal.bin"
-
+#incbin "bin/tobinsniper.btlpal"
+ALIGN 4
 TobinBKPalette:
-#incbin "Bin/tobinbk.cprs.pal.bin"
+#incbin "bin/tobinbk.btlpal"
 
+ALIGN 4
 KliffVillagerPalette:
-#incbin "Bin/kliffvill.cprs.pal.bin"
-
+#incbin "bin/kliffvill.btlpal"
+ALIGN 4
 KliffCavPalette:
-#incbin "Bin/kliffcav.cprs.pal.bin"
-
+#incbin "bin/kliffcav.btlpal"
+ALIGN 4
 KliffPaladinPalette:
-#incbin "Bin/kliffpal_new.cprs.pal.bin"
-
+#incbin "bin/kliffpal.btlpal"
+ALIGN 4
 KliffGKPalette:
-#incbin "Bin/kliffGK.cprs.pal.bin"
-
+#incbin "bin/kliffGK.btlpal"
+ALIGN 4
 KliffMercPalette:
-#incbin "Bin/kliffmerc_salv.cprs.pal.bin"
-
+#incbin "bin/kliffmerc.btlpal"
+ALIGN 4
 KliffMyrmPalette:
-#incbin "Bin/kliffmyrm.cprs.pal.bin"
-
+#incbin "bin/kliffmyrm.btlpal"
+ALIGN 4
 KliffDFPalette:
-#incbin "Bin/kliffDF.cprs.pal.bin"
-
+#incbin "bin/kliffDF.btlpal"
+ALIGN 4
 KliffSoldierPalette:
-#incbin "Bin/kliffsoldier.cprs.pal.bin"
-
+#incbin "bin/kliffsoldier.btlpal"
+ALIGN 4
 KliffArmorPalette:
-#incbin "Bin/kliffarmor.cprs.pal.bin"
-
+#incbin "bin/kliffarmor.btlpal"
+ALIGN 4
 KliffBaronPalette:
-#incbin "Bin/kliffbaron.cprs.pal.bin"
-
+#incbin "bin/kliffbaron.btlpal"
+ALIGN 4
 KliffMagePalette:
-#incbin "Bin/kliffmage.cprs.pal.bin"
-
+#incbin "bin/kliffmage.btlpal"
+ALIGN 4
 KliffSagePalette:
-#incbin "Bin/kliffsage_3.pal_comp.dmp"
-
+#incbin "bin/kliffsage.btlpal"
+ALIGN 4
 KliffArcherPalette:
-#incbin "Bin/kliffarcher2.cprs.pal.bin"
-
+#incbin "bin/kliffarcher.btlpal"
+ALIGN 4
 KliffSniperPalette:
-#incbin "Bin/kliffsniper.cprs.pal.bin"
-
+#incbin "bin/kliffsniper.btlpal"
+ALIGN 4
 KliffBKPalette:
-#incbin "Bin/kliffbk.cprs.pal.bin"
+#incbin "bin/kliffbk.btlpal"
 
+ALIGN 4
 FayeVillagerPalette:
-#incbin "Bin/fayevill.cprs.pal.bin"
-
+#incbin "bin/fayevill.btlpal"
+ALIGN 4
 FayeCavPalette:
-#incbin "Bin/fayecav.cprs.pal.bin"
-
+#incbin "bin/fayecav.btlpal"
+ALIGN 4
 FayePaladinPalette:
-#incbin "Bin/fayepal_new.cprs.pal.bin"
-
+#incbin "bin/fayepal.btlpal"
+ALIGN 4
 FayeGKPalette:
-#incbin "Bin/fayeGK.cprs.pal.bin"
-
+#incbin "bin/fayeGK.btlpal"
+ALIGN 4
 FayeClericPalette:
-#incbin "Bin/fayecleric.cprs.pal.bin"
-
+#incbin "bin/fayecleric.btlpal"
+ALIGN 4
 FayeSaintPalette:
-#incbin "Bin/fayesaint.cprs.pal.bin"
-
+#incbin "bin/fayesaint.btlpal"
+ALIGN 4
 FayePegPalette:
-#incbin "Bin/fayepeg.cprs.pal.bin"
-
+#incbin "bin/fayepeg.btlpal"
+ALIGN 4
 FayeFalcoPalette:
-#incbin "Bin/fayefalco.cprs.pal.bin"
-
+#incbin "bin/fayefalco.btlpal"
+ALIGN 4
 FayeMagePalette:
-#incbin "Bin/fayemage.cprs.pal.bin"
-
-FayeSagePalette:
-#incbin "Bin/fayepriestess.cprs.pal.bin"
-
+#incbin "bin/fayemage.btlpal"
+ALIGN 4
+FayePriestessPalette:
+#incbin "bin/fayepriestess.btlpal"
+ALIGN 4
 FayeDFPalette:
-#incbin "Bin/fayeDF.cprs.pal.bin"
-
+#incbin "bin/fayeDF.btlpal"
+ALIGN 4
 FayeArcherPalette:
-#incbin "Bin/fayearch2.cprs.pal.bin"
-
+#incbin "bin/fayearch.btlpal"
+ALIGN 4
 FayeSniperPalette:
-#incbin "Bin/fayesniper.cprs.pal.bin"
-
+#incbin "bin/fayesniper.btlpal"
+ALIGN 4
 FayeBKPalette:
-#incbin "Bin/fayebk.cprs.pal.bin"
+#incbin "bin/fayebk.btlpal"
 
+ALIGN 4
 MaeVillagerPalette:
-#incbin "Bin/maevill.cprs.pal.bin"
-
+#incbin "bin/maevill.btlpal"
+ALIGN 4
 MaeCavPalette:
-#incbin "Bin/maecav.cprs.pal.bin"
-
+#incbin "bin/maecav.btlpal"
+ALIGN 4
 MaePaladinPalette:
-#incbin "Bin/maepal.cprs.pal.bin"
-
+#incbin "bin/maepal.btlpal"
+ALIGN 4
 MaeGKPalette:
-#incbin "Bin/maeGK.cprs.pal.bin"
-
+#incbin "bin/maeGK.btlpal"
+ALIGN 4
 MaeClericPalette:
-#incbin "Bin/maecleric.cprs.pal.bin"
-
+#incbin "bin/maecleric.btlpal"
+ALIGN 4
 MaeSaintPalette:
-#incbin "Bin/maesaint.cprs.pal.bin"
-
+#incbin "bin/maesaint.btlpal"
+ALIGN 4
 MaePegPalette:
-#incbin "Bin/maepeg.cprs.pal.bin"
-
+#incbin "bin/maepeg.btlpal"
+ALIGN 4
 MaeFalcoPalette:
-#incbin "Bin/maefalco.cprs.pal.bin"
-
+#incbin "bin/maefalco.btlpal"
+ALIGN 4
 MaeMagePalette:
-#incbin "Bin/maemage.cprs.pal.bin"
-
-MaeSagePalette:
-#incbin "Bin/maepriestess.cprs.pal.bin"
-
+#incbin "bin/maemage.btlpal"
+ALIGN 4
+MaePriestessPalette:
+#incbin "bin/maepriestess.btlpal"
+ALIGN 4
 MaeDFPalette:
-#incbin "Bin/maeDF.cprs.pal.bin"
-
+#incbin "bin/maeDF.btlpal"
+ALIGN 4
 MaeArcherPalette:
-#incbin "Bin/maearch2.cprs.pal.bin"
-
+#incbin "bin/maearch.btlpal"
+ALIGN 4
 MaeSniperPalette:
-#incbin "Bin/maesniper.cprs.pal.bin"
-
+#incbin "bin/maesniper.btlpal"
+ALIGN 4
 MaeBKPalette:
-#incbin "Bin/maebk.cprs.pal.bin"
+#incbin "bin/maebk.btlpal"
 
+ALIGN 4
+BoeyVillagerPalette:
+#incbin "bin/boeyvillager.btlpal"
+ALIGN 4
 BoeyMagePalette:
-#incbin "Bin/boeymage.cprs.pal.bin"
-
+#incbin "bin/boeymage.btlpal"
+ALIGN 4
 BoeySagePalette:
-#incbin "Bin/boeysage_3.pal_comp.dmp"
+#incbin "bin/boeysage.btlpal"
+ALIGN 4
+BoeyArcherPalette:
+#incbin "bin/boeyarcher.btlpal"
+ALIGN 4
+BoeySniperPalette:
+#incbin "bin/boeysniper.btlpal"
+ALIGN 4
+BoeyBKPalette:
+#incbin "bin/boeybowknight.btlpal"
+ALIGN 4
+BoeyCavPalette:
+#incbin "bin/boeycavalier.btlpal"
+ALIGN 4
+BoeyPaladinPalette:
+#incbin "bin/boeypaladin.btlpal"
+ALIGN 4
+BoeyGKPalette:
+#incbin "bin/boeygoldknight.btlpal"
+ALIGN 4
+BoeySoldierPalette:
+#incbin "bin/boeysoldier.btlpal"
+ALIGN 4
+BoeyArmorPalette:
+#incbin "bin/boeyarmor.btlpal"
+ALIGN 4
+BoeyBaronPalette:
+#incbin "bin/boeybaron.btlpal"
+ALIGN 4
+BoeyMercPalette:
+#incbin "bin/boeymerc.btlpal"
+ALIGN 4
+BoeyMyrmPalette:
+#incbin "bin/boeymyrm.btlpal"
+ALIGN 4
+BoeyDFPalette:
+#incbin "bin/boeydreadfighter.btlpal"
 
+ALIGN 4
 GennyClericPalette:
-#incbin "Bin/gennycleric.cprs.pal.bin"
-
+#incbin "bin/gennycleric.btlpal"
+ALIGN 4
 GennySaintPalette:
-#incbin "Bin/gennysaint.cprs.pal.bin"
+#incbin "bin/gennysaint.btlpal"
+ALIGN 4
+GennyPegPalette:
+#incbin "bin/gennypeg.btlpal"
+ALIGN 4
+GennyFalcoPalette:
+#incbin "bin/gennyfalco.btlpal"
+ALIGN 4
+GennyVillagerPalette:
+#incbin "bin/gennyvillager.btlpal"
+ALIGN 4
+GennyMagePalette:
+#incbin "bin/gennymage.btlpal"
+ALIGN 4
+GennyPriestessPalette:
+#incbin "bin/gennypriestess.btlpal"
+ALIGN 4
+GennyDFPalette:
+#incbin "bin/gennyDF.btlpal"
+ALIGN 4
+GennyCavPalette:
+#incbin "bin/gennycav.btlpal"
+ALIGN 4
+GennyPaladinPalette:
+#incbin "bin/gennypal.btlpal"
+ALIGN 4
+GennyGKPalette:
+#incbin "bin/gennyGK.btlpal"
+ALIGN 4
+GennyArcherPalette:
+#incbin "bin/gennyarcher.btlpal"
+ALIGN 4
+GennySniperPalette:
+#incbin "bin/gennysniper.btlpal"
+ALIGN 4
+GennyBKPalette:
+#incbin "bin/gennyBK.btlpal"
 
+ALIGN 4
 SaberVillagerPalette:
-#incbin "Bin/sabervill.cprs.pal.bin"
-
+#incbin "bin/sabervill.btlpal"
+ALIGN 4
 SaberCavPalette:
-#incbin "Bin/sabercav.cprs.pal.bin"
-
+#incbin "bin/sabercav.btlpal"
+ALIGN 4
 SaberPaladinPalette:
-#incbin "Bin/saberpal.cprs.pal.bin"
-
+#incbin "bin/saberpal.btlpal"
+ALIGN 4
 SaberGKPalette:
-#incbin "Bin/saberGK.cprs.pal.bin"
-
+#incbin "bin/saberGK.btlpal"
+ALIGN 4
 SaberMercPalette:
-#incbin "Bin/sabermerc_salv.cprs.pal.bin"
-
+#incbin "bin/sabermerc.btlpal"
+ALIGN 4
 SaberMyrmPalette:
-#incbin "Bin/sabermyrm.cprs.pal.bin"
-
+#incbin "bin/sabermyrm.btlpal"
+ALIGN 4
 SaberDFPalette:
-#incbin "Bin/saberDF.cprs.pal.bin"
-
+#incbin "bin/saberDF.btlpal"
+ALIGN 4
 SaberSoldierPalette:
-#incbin "Bin/sabersoldier.cprs.pal.bin"
-
+#incbin "bin/sabersoldier.btlpal"
+ALIGN 4
 SaberArmorPalette:
-#incbin "Bin/saberarmor.cprs.pal.bin"
-
+#incbin "bin/saberarmor.btlpal"
+ALIGN 4
 SaberBaronPalette:
-#incbin "Bin/saberbaron.cprs.pal.bin"
-
+#incbin "bin/saberbaron.btlpal"
+ALIGN 4
 SaberMagePalette:
-#incbin "Bin/sabermage.cprs.pal.bin"
-
+#incbin "bin/sabermage.btlpal"
+ALIGN 4
 SaberSagePalette:
-#incbin "Bin/sabersage_3.pal_comp.dmp"
-
+#incbin "bin/sabersage.btlpal"
+ALIGN 4
 SaberArcherPalette:
-#incbin "Bin/saberarcher2.cprs.pal.bin"
-
+#incbin "bin/saberarcher.btlpal"
+ALIGN 4
 SaberSniperPalette:
-#incbin "Bin/sabersniper.cprs.pal.bin"
-
+#incbin "bin/sabersniper.btlpal"
+ALIGN 4
 SaberBKPalette:
-#incbin "Bin/saberbk.cprs.pal.bin"
+#incbin "bin/saberbk.btlpal"
 
+ALIGN 4
 LeonArcherPalette:
-#incbin "Bin/leonarcher2.cprs.pal.bin"
-
+#incbin "bin/leonarcher.btlpal"
+ALIGN 4
 LeonSniperPalette:
-#incbin "Bin/leonsniper.cprs.pal.bin"
-
+#incbin "bin/leonsniper.btlpal"
+ALIGN 4
 LeonBKPalette:
-#incbin "Bin/leonbk.cprs.pal.bin"
+#incbin "bin/leonbk.btlpal"
+ALIGN 4
+LeonVillagerPalette:
+#incbin "bin/leonvillager.btlpal"
+ALIGN 4
+LeonMagePalette:
+#incbin "bin/leonmage.btlpal"
+ALIGN 4
+LeonSagePalette:
+#incbin "bin/leonsage.btlpal"
+ALIGN 4
+LeonMercPalette:
+#incbin "bin/leonmerc.btlpal"
+ALIGN 4
+LeonMyrmPalette:
+#incbin "bin/leonmyrm.btlpal"
+ALIGN 4
+LeonDFPalette:
+#incbin "bin/leonDF.btlpal"
+ALIGN 4
+LeonCavPalette:
+#incbin "bin/leoncav.btlpal"
+ALIGN 4
+LeonPaladinPalette:
+#incbin "bin/leonpaladin.btlpal"
+ALIGN 4
+LeonGKPalette:
+#incbin "bin/leonGK.btlpal"
+ALIGN 4
+LeonSoldierPalette:
+#incbin "bin/leonsoldier.btlpal"
+ALIGN 4
+LeonArmorPalette:
+#incbin "bin/leonknight.btlpal"
+ALIGN 4
+LeonBaronPalette:
+#incbin "bin/leonbaron.btlpal"
 
+ALIGN 4
+ValbarVillagerPalette:
+#incbin "bin/valbo_vallager.btlpal"
+ALIGN 4
+ValbarSoldierPalette:
+#incbin "bin/valbo_soldo.btlpal"
+ALIGN 4
 ValbarArmorPalette:
-#incbin "Bin/valbararmor.cprs.pal.bin"
-
+#incbin "bin/valbararmor.btlpal"
+ALIGN 4
 ValbarBaronPalette:
-#incbin "Bin/valbaron.cprs.pal.bin"
+#incbin "bin/valbaron.btlpal"
+ALIGN 4
+ValbarMercPalette:
+#incbin "bin/valbo_merco.btlpal"
+ALIGN 4
+ValbarMyrmPalette:
+#incbin "bin/valbo_myrmibon.btlpal"
+ALIGN 4
+ValbarDFPalette:
+#incbin "bin/valbo_df.btlpal"
+ALIGN 4
+ValbarArcherPalette:
+#incbin "bin/valbo_archo.btlpal"
+ALIGN 4
+ValbarSniperPalette:
+#incbin "bin/valbo_snipo.btlpal"
+ALIGN 4
+ValbarBKPalette:
+#incbin "bin/valbo_valbowknight.btlpal"
+ALIGN 4
+ValbarCavPalette:
+#incbin "bin/valbo_cavalbo.btlpal"
+ALIGN 4
+ValbarPaladinPalette:
+#incbin "bin/valbo_palbo.btlpal"
+ALIGN 4
+ValbarGKPalette:
+#incbin "bin/valbo_gk.btlpal"
+ALIGN 4
+ValbarMagePalette:
+#incbin "bin/valbo_mago.btlpal"
+ALIGN 4
+ValbarSagePalette:
+#incbin "bin/valbo_sago.btlpal"
 
+ALIGN 4
 KamuiVillagerPalette:
-#incbin "Bin/kamuivill.cprs.pal.bin"
-
+#incbin "bin/kamuivill.btlpal"
+ALIGN 4
 KamuiCavPalette:
-#incbin "Bin/kamuicav.cprs.pal.bin"
-
+#incbin "bin/kamuicav.btlpal"
+ALIGN 4
 KamuiPaladinPalette:
-#incbin "Bin/kamuipal.cprs.pal.bin"
-
+#incbin "bin/kamuipal.btlpal"
+ALIGN 4
 KamuiGKPalette:
-#incbin "Bin/kamuiGK.cprs.pal.bin"
-
+#incbin "bin/kamuiGK.btlpal"
+ALIGN 4
 KamuiMercPalette:
-#incbin "Bin/kamuimerc_salv.cprs.pal.bin"
-
+#incbin "bin/kamuimerc.btlpal"
+ALIGN 4
 KamuiMyrmPalette:
-#incbin "Bin/kamuimyrm.cprs.pal.bin"
-
+#incbin "bin/kamuimyrm.btlpal"
+ALIGN 4
 KamuiDFPalette:
-#incbin "Bin/kamuiDF.cprs.pal.bin"
-
+#incbin "bin/kamuiDF.btlpal"
+ALIGN 4
 KamuiSoldierPalette:
-#incbin "Bin/kamuisoldier.cprs.pal.bin"
-
+#incbin "bin/kamuisoldier.btlpal"
+ALIGN 4
 KamuiArmorPalette:
-#incbin "Bin/kamuiarmor.cprs.pal.bin"
-
+#incbin "bin/kamuiarmor.btlpal"
+ALIGN 4
 KamuiBaronPalette:
-#incbin "Bin/kamuibaron.cprs.pal.bin"
-
+#incbin "bin/kamuibaron.btlpal"
+ALIGN 4
 KamuiMagePalette:
-#incbin "Bin/kamuimage.cprs.pal.bin"
-
+#incbin "bin/kamuimage.btlpal"
+ALIGN 4
 KamuiSagePalette:
-#incbin "Bin/kamuisage_3.pal_comp.dmp"
-
+#incbin "bin/kamuisage.btlpal"
+ALIGN 4
 KamuiArcherPalette:
-#incbin "Bin/kamuiarcher2.cprs.pal.bin"
-
+#incbin "bin/kamuiarcher.btlpal"
+ALIGN 4
 KamuiSniperPalette:
-#incbin "Bin/kamuisniper.cprs.pal.bin"
-
+#incbin "bin/kamuisniper.btlpal"
+ALIGN 4
 KamuiBKPalette:
-#incbin "Bin/kamuibk.cprs.pal.bin"
+#incbin "bin/kamuibk.btlpal"
+ALIGN 4
 
-MathildaPalPalette:
-#incbin "Bin/mathildapal_new.cprs.pal.bin"
-
+MathildaVillagerPalette:
+#incbin "bin/mathilda_villager.btlpal"
+ALIGN 4
+MathildaCavPalette:
+#incbin "bin/mathilda_cav.btlpal"
+ALIGN 4
+MathildaPaladinPalette:
+#incbin "bin/mathilda_paladin.btlpal"
+ALIGN 4
 MathildaGKPalette:
-#incbin "Bin/mathildaGK.cprs.pal.bin"
+#incbin "bin/mathilda_GK.btlpal"
+ALIGN 4
+MathildaMagePalette:
+#incbin "bin/mathilda_mage.btlpal"
+ALIGN 4
+MathildaPriestessPalette:
+#incbin "bin/mathilda_priestess.btlpal"
+ALIGN 4
+MathildaDFPalette:
+#incbin "bin/mathilda_dread_fighter.btlpal"
+ALIGN 4
+MathildaArcherPalette:
+#incbin "bin/mathilda_archer.btlpal"
+ALIGN 4
+MathildaSniperPalette:
+#incbin "bin/mathilda_sniper.btlpal"
+ALIGN 4
+MathildaBKPalette:
+#incbin "bin/mathilda_bowknight.btlpal"
+ALIGN 4
+MathildaPegPalette:
+#incbin "bin/mathilda_peg.btlpal"
+ALIGN 4
+MathildaFalcoPalette:
+#incbin "bin/mathilda_falco.btlpal"
+ALIGN 4
+MathildaClericPalette:
+#incbin "bin/mathilda_cleric.btlpal"
+ALIGN 4
+MathildaSaintPalette:
+#incbin "bin/mathilda_saint.btlpal"
+ALIGN 4
 
 LuthierMagePalette:
-#incbin "Bin/luthiermage.cprs.pal.bin"
-
+#incbin "bin/luthiermage.btlpal"
+ALIGN 4
 LuthierSagePalette:
-#incbin "Bin/luthiersage_3.pal_comp.dmp"
+#incbin "bin/luthiersage.btlpal"
+ALIGN 4
+LuthierVillagerPalette:
+#incbin "bin/luthiervillager.btlpal"
+ALIGN 4
+LuthierMercPalette:
+#incbin "bin/luthiermerc.btlpal"
+ALIGN 4
+LuthierMyrmPalette:
+#incbin "bin/luthiermyrm.btlpal"
+ALIGN 4
+LuthierDFPalette:
+#incbin "bin/luthierdread.btlpal"
+ALIGN 4
+LuthierSoldierPalette:
+#incbin "bin/luthiersoldier.btlpal"
+ALIGN 4
+LuthierArmorPalette:
+#incbin "bin/luthierarmor.btlpal"
+ALIGN 4
+LuthierBaronPalette:
+#incbin "bin/luthierbaron.btlpal"
+ALIGN 4
+LuthierArcherPalette:
+#incbin "bin/luthierarcher.btlpal"
+ALIGN 4
+LuthierSniperPalette:
+#incbin "bin/luthiersniper.btlpal"
+ALIGN 4
+LuthierBKPalette:
+#incbin "bin/luthierbowhonse.btlpal"
+ALIGN 4
+LuthierCavPalette:
+#incbin "bin/luthiercav.btlpal"
+ALIGN 4
+LuthierPaladinPalette:
+#incbin "bin/luthierpal.btlpal"
+ALIGN 4
+LuthierGKPalette:
+#incbin "bin/luthiergoldhonse.btlpal"
 
+ALIGN 4
 DeltheaVillagerPalette:
-#incbin "Bin/deltheavill.cprs.pal.bin"
-
+#incbin "bin/deltheavill.btlpal"
+ALIGN 4
 DeltheaCavPalette:
-#incbin "Bin/deltheacav.cprs.pal.bin"
-
+#incbin "bin/deltheacav.btlpal"
+ALIGN 4
 DeltheaPaladinPalette:
-#incbin "Bin/deltheapal.cprs.pal.bin"
-
+#incbin "bin/deltheapal.btlpal"
+ALIGN 4
 DeltheaGKPalette:
-#incbin "Bin/deltheaGK.cprs.pal.bin"
-
+#incbin "bin/deltheaGK.btlpal"
+ALIGN 4
 DeltheaClericPalette:
-#incbin "Bin/deltheacleric.cprs.pal.bin"
-
+#incbin "bin/deltheacleric.btlpal"
+ALIGN 4
 DeltheaSaintPalette:
-#incbin "Bin/deltheasaint.cprs.pal.bin"
-
+#incbin "bin/deltheasaint.btlpal"
+ALIGN 4
 DeltheaPegPalette:
-#incbin "Bin/deltheapeg.cprs.pal.bin"
-
+#incbin "bin/deltheapeg.btlpal"
+ALIGN 4
 DeltheaFalcoPalette:
-#incbin "Bin/deltheafalco.cprs.pal.bin"
-
+#incbin "bin/deltheafalco.btlpal"
+ALIGN 4
 DeltheaMagePalette:
-#incbin "Bin/deltheamage.cprs.pal.bin"
-
-DeltheaSagePalette:
-#incbin "Bin/deltheapriestess.cprs.pal.bin"
-
+#incbin "bin/deltheamage.btlpal"
+ALIGN 4
+DeltheaPriestessPalette:
+#incbin "bin/deltheapriestess.btlpal"
+ALIGN 4
 DeltheaDFPalette:
-#incbin "Bin/deltheaDF.cprs.pal.bin"
-
+#incbin "bin/deltheaDF.btlpal"
+ALIGN 4
 DeltheaArcherPalette:
-#incbin "Bin/deltheaarch2.cprs.pal.bin"
-
+#incbin "bin/deltheaarch.btlpal"
+ALIGN 4
 DeltheaSniperPalette:
-#incbin "Bin/deltheasniper.cprs.pal.bin"
-
+#incbin "bin/deltheasniper.btlpal"
+ALIGN 4
 DeltheaBKPalette:
-#incbin "Bin/deltheabk.cprs.pal.bin"
+#incbin "bin/deltheabk.btlpal"
 
+ALIGN 4
 PallaPegPalette:
-#incbin "Bin/pallapeg.cprs.pal.bin"
-
+#incbin "bin/Palla_Peg.btlpal"
+ALIGN 4
 PallaFalcoPalette:
-#incbin "Bin/pallafalco.cprs.pal.bin"
+#incbin "bin/Palla_Falco.btlpal"
+ALIGN 4
+PallaVillagerPalette:
+#incbin "bin/Palla_Villager.btlpal"
+ALIGN 4
+PallaMagePalette:
+#incbin "bin/Palla_Mage.btlpal"
+ALIGN 4
+PallaPriestessPalette:
+#incbin "bin/Palla_Priestess.btlpal"
+ALIGN 4
+PallaDFPalette:
+#incbin "bin/Palla_Dread.btlpal"
+ALIGN 4
+PallaArcherPalette:
+#incbin "bin/Palla_Archer.btlpal"
+ALIGN 4
+PallaSniperPalette:
+#incbin "bin/Palla_Sniper.btlpal"
+ALIGN 4
+PallaBKPalette:
+#incbin "bin/Palla_Bowknight.btlpal"
+ALIGN 4
+PallaCavPalette:
+#incbin "bin/Palla_Cav.btlpal"
+ALIGN 4
+PallaPaladinPalette:
+#incbin "bin/Palla_Paladin.btlpal"
+ALIGN 4
+PallaGKPalette:
+#incbin "bin/Palla_GoldKnight.btlpal"
+ALIGN 4
+PallaClericPalette:
+#incbin "bin/Palla_Cleric.btlpal"
+ALIGN 4
+PallaSaintPalette:
+#incbin "bin/Palla_Saint.btlpal"
 
+ALIGN 4
 CatriaPegPalette:
-#incbin "Bin/catriapeg.cprs.pal.bin"
-
+#incbin "bin/Catria_Peg.btlpal"
+ALIGN 4
 CatriaFalcoPalette:
-#incbin "Bin/catriafalco.cprs.pal.bin"
+#incbin "bin/Catria_Falco.btlpal"
+ALIGN 4
+CatriaVillagerPalette:
+#incbin "bin/Catria_Villager.btlpal"
+ALIGN 4
+CatriaMagePalette:
+#incbin "bin/Catria_Mage.btlpal"
+ALIGN 4
+CatriaPriestessPalette:
+#incbin "bin/Catria_Priestess.btlpal"
+ALIGN 4
+CatriaDFPalette:
+#incbin "bin/Catria_Dread.btlpal"
+ALIGN 4
+CatriaArcherPalette:
+#incbin "bin/Catria_Archer.btlpal"
+ALIGN 4
+CatriaSniperPalette:
+#incbin "bin/Catria_Sniper.btlpal"
+ALIGN 4
+CatriaBKPalette:
+#incbin "bin/Catria_Bowknight.btlpal"
+ALIGN 4
+CatriaCavPalette:
+#incbin "bin/Catria_Cav.btlpal"
+ALIGN 4
+CatriaPaladinPalette:
+#incbin "bin/Catria_Paladin.btlpal"
+ALIGN 4
+CatriaGKPalette:
+#incbin "bin/Catria_GoldKnight.btlpal"
+ALIGN 4
+CatriaClericPalette:
+#incbin "bin/Catria_Cleric.btlpal"
+ALIGN 4
+CatriaSaintPalette:
+#incbin "bin/Catria_Saint.btlpal"
 
+ALIGN 4
 EstPegPalette:
-#incbin "Bin/estpeg.cprs.pal.bin"
-
+#incbin "bin/Est_Peg.btlpal"
+ALIGN 4
 EstFalcoPalette:
-#incbin "Bin/estfalco.cprs.pal.bin"
+#incbin "bin/Est_Falco.btlpal"
+ALIGN 4
+EstVillagerPalette:
+#incbin "bin/Est_Villager.btlpal"
+ALIGN 4
+EstMagePalette:
+#incbin "bin/Est_Mage.btlpal"
+ALIGN 4
+EstPriestessPalette:
+#incbin "bin/Est_Priestess.btlpal"
+ALIGN 4
+EstDFPalette:
+#incbin "bin/Est_Dread.btlpal"
+ALIGN 4
+EstArcherPalette:
+#incbin "bin/Est_Archer.btlpal"
+ALIGN 4
+EstSniperPalette:
+#incbin "bin/Est_Sniper.btlpal"
+ALIGN 4
+EstBKPalette:
+#incbin "bin/Est_Bowknight.btlpal"
+ALIGN 4
+EstCavPalette:
+#incbin "bin/Est_Cav.btlpal"
+ALIGN 4
+EstPaladinPalette:
+#incbin "bin/Est_Paladin.btlpal"
+ALIGN 4
+EstGKPalette:
+#incbin "bin/Est_GoldKnight.btlpal"
+ALIGN 4
+EstClericPalette:
+#incbin "bin/Est_Cleric.btlpal"
+ALIGN 4
+EstSaintPalette:
+#incbin "bin/Est_Saint.btlpal"
 
+ALIGN 4
 HyasVillagerPalette:
-#incbin "Bin/hyasvill.cprs.pal.bin"
-
+#incbin "bin/hyasvill.btlpal"
+ALIGN 4
 HyasCavPalette:
-#incbin "Bin/hyascav.cprs.pal.bin"
-
+#incbin "bin/hyascav.btlpal"
+ALIGN 4
 HyasPaladinPalette:
-#incbin "Bin/hyaspal.cprs.pal.bin"
-
+#incbin "bin/hyaspal.btlpal"
+ALIGN 4
 HyasGKPalette:
-#incbin "Bin/hyasGK.cprs.pal.bin"
-
+#incbin "bin/hyasGK.btlpal"
+ALIGN 4
 HyasMercPalette:
-#incbin "Bin/hyasmerc_salv.cprs.pal.bin"
-
+#incbin "bin/hyasmerc.btlpal"
+ALIGN 4
 HyasMyrmPalette:
-#incbin "Bin/hyasmyrm.cprs.pal.bin"
-
+#incbin "bin/hyasmyrm.btlpal"
+ALIGN 4
 HyasDFPalette:
-#incbin "Bin/hyasDF.cprs.pal.bin"
-
+#incbin "bin/hyasDF.btlpal"
+ALIGN 4
 HyasSoldierPalette:
-#incbin "Bin/hyassoldier.cprs.pal.bin"
-
+#incbin "bin/hyassoldier.btlpal"
+ALIGN 4
 HyasArmorPalette:
-#incbin "Bin/hyasarmor.cprs.pal.bin"
-
+#incbin "bin/hyasarmor.btlpal"
+ALIGN 4
 HyasBaronPalette:
-#incbin "Bin/hyasbaron.cprs.pal.bin"
-
+#incbin "bin/hyasbaron.btlpal"
+ALIGN 4
 HyasMagePalette:
-#incbin "Bin/hyasmage.cprs.pal.bin"
-
+#incbin "bin/hyasmage.btlpal"
+ALIGN 4
 HyasSagePalette:
-#incbin "Bin/hyassage_3.pal_comp.dmp"
-
+#incbin "bin/hyassage.btlpal"
+ALIGN 4
 HyasArcherPalette:
-#incbin "Bin/hyasarcher2.cprs.pal.bin"
-
+#incbin "bin/hyasarcher.btlpal"
+ALIGN 4
 HyasSniperPalette:
-#incbin "Bin/hyassniper.cprs.pal.bin"
-
+#incbin "bin/hyassniper.btlpal"
+ALIGN 4
 HyasBKPalette:
-#incbin "Bin/hyasbk.cprs.pal.bin"
+#incbin "bin/hyasbk.btlpal"
 
+ALIGN 4
 JesseThiefPalette:
-#incbin "Bin/jessethief.cprs.pal.bin"
-
+#incbin "bin/jessethief.btlpal"
+ALIGN 4
 JesseRoguePalette:
-#incbin "Bin/jesserogue.cprs.pal.bin"
+#incbin "bin/jesserogue.btlpal"
 
+ALIGN 4
 SonyaVillagerPalette:
-#incbin "Bin/sonyavill.cprs.pal.bin"
-
+#incbin "bin/sonyavill.btlpal"
+ALIGN 4
 SonyaCavPalette:
-#incbin "Bin/sonyacav.cprs.pal.bin"
-
+#incbin "bin/sonyacav.btlpal"
+ALIGN 4
 SonyaPaladinPalette:
-#incbin "Bin/sonyapal.cprs.pal.bin"
-
+#incbin "bin/sonyapal.btlpal"
+ALIGN 4
 SonyaGKPalette:
-#incbin "Bin/sonyaGK.cprs.pal.bin"
-
+#incbin "bin/sonyaGK.btlpal"
+ALIGN 4
 SonyaClericPalette:
-#incbin "Bin/sonyacleric.cprs.pal.bin"
-
+#incbin "bin/sonyacleric.btlpal"
+ALIGN 4
 SonyaSaintPalette:
-#incbin "Bin/sonyasaint.cprs.pal.bin"
-
+#incbin "bin/sonyasaint.btlpal"
+ALIGN 4
 SonyaPegPalette:
-#incbin "Bin/sonyapeg.cprs.pal.bin"
-
+#incbin "bin/sonyapeg.btlpal"
+ALIGN 4
 SonyaFalcoPalette:
-#incbin "Bin/sonyafalco.cprs.pal.bin"
-
+#incbin "bin/sonyafalco.btlpal"
+ALIGN 4
 SonyaMagePalette:
-#incbin "Bin/sonyamage.cprs.pal.bin"
-
-SonyaSagePalette:
-#incbin "Bin/sonyapriestess.cprs.pal.bin"
-
+#incbin "bin/sonyamage.btlpal"
+ALIGN 4
+SonyaPriestessPalette:
+#incbin "bin/sonyapriestess.btlpal"
+ALIGN 4
 SonyaDFPalette:
-#incbin "Bin/sonyaDF.cprs.pal.bin"
-
+#incbin "bin/sonyaDF.btlpal"
+ALIGN 4
 SonyaArcherPalette:
-#incbin "Bin/sonyaarch2.cprs.pal.bin"
-
+#incbin "bin/sonyaarch.btlpal"
+ALIGN 4
 SonyaSniperPalette:
-#incbin "Bin/sonyasniper.cprs.pal.bin"
-
+#incbin "bin/sonyasniper.btlpal"
+ALIGN 4
 SonyaBKPalette:
-#incbin "Bin/sonyaBK.cprs.pal.bin"
+#incbin "bin/sonyaBK.btlpal"
 
+ALIGN 4
 DeenVillagerPalette:
-#incbin "Bin/deenvill.cprs.pal.bin"
-
+#incbin "bin/deenvill.btlpal"
+ALIGN 4
 DeenCavPalette:
-#incbin "Bin/deencav.cprs.pal.bin"
-
+#incbin "bin/deencav.btlpal"
+ALIGN 4
 DeenPaladinPalette:
-#incbin "Bin/deenpal.cprs.pal.bin"
-
+#incbin "bin/deenpal.btlpal"
+ALIGN 4
 DeenGKPalette:
-#incbin "Bin/deenGK.cprs.pal.bin"
-
+#incbin "bin/deenGK.btlpal"
+ALIGN 4
 DeenMercPalette:
-#incbin "Bin/deenmerc_salv.cprs.pal.bin"
-
+#incbin "bin/deenmerc.btlpal"
+ALIGN 4
 DeenMyrmPalette:
-#incbin "Bin/deenmyrm.cprs.pal.bin"
-
+#incbin "bin/deenmyrm.btlpal"
+ALIGN 4
 DeenDFPalette:
-#incbin "Bin/deenDF.cprs.pal.bin"
-
+#incbin "bin/deenDF.btlpal"
+ALIGN 4
 DeenSoldierPalette:
-#incbin "Bin/deensoldier.cprs.pal.bin"
-
+#incbin "bin/deensoldier.btlpal"
+ALIGN 4
 DeenArmorPalette:
-#incbin "Bin/deenarmor.cprs.pal.bin"
-
+#incbin "bin/deenarmor.btlpal"
+ALIGN 4
 DeenBaronPalette:
-#incbin "Bin/deenbaron.cprs.pal.bin"
-
+#incbin "bin/deenbaron.btlpal"
+ALIGN 4
 DeenMagePalette:
-#incbin "Bin/deenmage.cprs.pal.bin"
-
+#incbin "bin/deenmage.btlpal"
+ALIGN 4
 DeenSagePalette:
-#incbin "Bin/deensage_3.pal_comp.dmp"
-
+#incbin "bin/deensage.btlpal"
+ALIGN 4
 DeenArcherPalette:
-#incbin "Bin/deenarcher2.cprs.pal.bin"
-
+#incbin "bin/deenarcher.btlpal"
+ALIGN 4
 DeenSniperPalette:
-#incbin "Bin/deensniper.cprs.pal.bin"
-
+#incbin "bin/deensniper.btlpal"
+ALIGN 4
 DeenBKPalette:
-#incbin "Bin/deenbk.cprs.pal.bin"
+#incbin "bin/deenbk.btlpal"
 
+ALIGN 4
+TatianaClericPalette:
+#incbin "bin/taticleric.btlpal"
+ALIGN 4
 TatianaSaintPalette:
-#incbin "Bin/tatisaint.cprs.pal.bin"
+#incbin "bin/tatisaint.btlpal"
+ALIGN 4
+TatianaVillagerPalette:
+#incbin "bin/tativillager.btlpal"
+ALIGN 4
+TatianaMagePalette:
+#incbin "bin/tatimage.btlpal"
+ALIGN 4
+TatianaPriestessPalette:
+#incbin "bin/tatipriestess.btlpal"
+ALIGN 4
+TatianaDFPalette:
+#incbin "bin/tatidread.btlpal"
+ALIGN 4
+TatianaCavPalette:
+#incbin "bin/taticav.btlpal"
+ALIGN 4
+TatianaPaladinPalette:
+#incbin "bin/tatipal.btlpal"
+ALIGN 4
+TatianaGKPalette:
+#incbin "bin/tatiGK.btlpal"
+ALIGN 4
+TatianaArcherPalette:
+#incbin "bin/tatiarcher.btlpal"
+ALIGN 4
+TatianaSniperPalette:
+#incbin "bin/tatisniper.btlpal"
+ALIGN 4
+TatianaBKPalette:
+#incbin "bin/tatiBK.btlpal"
+ALIGN 4
+TatianaPegPalette:
+#incbin "bin/tatipeg.btlpal"
+ALIGN 4
+TatianaFalcoPalette:
+#incbin "bin/tatifalc.btlpal"
 
-BerkutPaladinPalette:
-#incbin "Bin/berkutpal_new.cprs.pal.bin"
-
-BerkutGKPalette:
-#incbin "Bin/berkutGK.cprs.pal.bin"
-
+ALIGN 4
+ConradVillagerPalette:
+#incbin "bin/Conrad_villager.btlpal"
+ALIGN 4
+ConradCavPalette:
+#incbin "bin/Conrad_cavalier.btlpal"
+ALIGN 4
 ConradPaladinPalette:
-#incbin "Bin/conradpal_new.cprs.pal.bin"
-
+#incbin "bin/Conrad_paladin.btlpal"
+ALIGN 4
 ConradGKPalette:
-#incbin "Bin/conradGK.cprs.pal.bin"
+#incbin "bin/Conrad_GK.btlpal"
+ALIGN 4
+ConradSoldierPalette:
+#incbin "bin/Conrad_soldier.btlpal"
+ALIGN 4
+ConradArmorPalette:
+#incbin "bin/Conrad_armor.btlpal"
+ALIGN 4
+ConradBaronPalette:
+#incbin "bin/Conrad_baron.btlpal"
+ALIGN 4
+ConradArcherPalette:
+#incbin "bin/Conrad_archer.btlpal"
+ALIGN 4
+ConradSniperPalette:
+#incbin "bin/Conrad_sniper.btlpal"
+ALIGN 4
+ConradBKPalette:
+#incbin "bin/Conrad_bowknight.btlpal"
+ALIGN 4
+ConradMercPalette:
+#incbin "bin/Conrad_merc.btlpal"
+ALIGN 4
+ConradMyrmPalette:
+#incbin "bin/Conrad_myrm.btlpal"
+ALIGN 4
+ConradDFPalette:
+#incbin "bin/Conrad_dread.btlpal"
+ALIGN 4
+ConradMagePalette:
+#incbin "bin/Conrad_mage.btlpal"
+ALIGN 4
+ConradSagePalette:
+#incbin "bin/Conrad_sage.btlpal"
 
+ALIGN 4
+ZekeCavPalette:
+#incbin "bin/Zekecavalier.btlpal"
+ALIGN 4
+ZekePaladinPalette:
+#incbin "bin/Zekepaladin.btlpal"
+ALIGN 4
 ZekeGKPalette:
-#incbin "Bin/zekeGK.cprs.pal.bin"
+#incbin "bin/ZekeGK.btlpal"
+ALIGN 4
+ZekeArcherPalette:
+#incbin "bin/Zekearcher.btlpal"
+ALIGN 4
+ZekeSniperPalette:
+#incbin "bin/Zekesniper.btlpal"
+ALIGN 4
+ZekeBKPalette:
+#incbin "bin/Zekebowknight.btlpal"
+ALIGN 4
+ZekeSoldierPalette:
+#incbin "bin/Zekesoldier.btlpal"
+ALIGN 4
+ZekeArmorPalette:
+#incbin "bin/Zekearmor.btlpal"
+ALIGN 4
+ZekeBaronPalette:
+#incbin "bin/Zekebaron.btlpal"
+ALIGN 4
+ZekeVillagerPalette:
+#incbin "bin/Zekevillager.btlpal"
+ALIGN 4
+ZekeMercPalette:
+#incbin "bin/Zekemerc.btlpal"
+ALIGN 4
+ZekeMyrmPalette:
+#incbin "bin/Zekemyrm.btlpal"
+ALIGN 4
+ZekeDFPalette:
+#incbin "bin/Zekedread.btlpal"
+ALIGN 4
+ZekeMagePalette:
+#incbin "bin/Zekemage.btlpal"
+ALIGN 4
+ZekeSagePalette:
+#incbin "bin/Zekesage.btlpal"
 
+ALIGN 4
+MycenCavPalette:
+#incbin "bin/cavalier_mycen.btlpal"
+ALIGN 4
+MycenPaladinPalette:
+#incbin "bin/paladin_mycen.btlpal"
+ALIGN 4
 MycenGKPalette:
-#incbin "Bin/mycenGK.cprs.pal.bin"
+#incbin "bin/mycenGK.btlpal"
+ALIGN 4
+MycenVillagerPalette:
+#incbin "bin/villager_mycen.btlpal"
+ALIGN 4
+MycenMercPalette:
+#incbin "bin/merc_mycen.btlpal"
+ALIGN 4
+MycenMyrmPalette:
+#incbin "bin/myrmidon_mycen.btlpal"
+ALIGN 4
+MycenDFPalette:
+#incbin "bin/dread_fighter_mycen.btlpal"
+ALIGN 4
+MycenArcherPalette:
+#incbin "bin/archer_mycen.btlpal"
+ALIGN 4
+MycenSniperPalette:
+#incbin "bin/sniper_mycen.btlpal"
+ALIGN 4
+MycenBKPalette:
+#incbin "bin/bowknight_mycen.btlpal"
+ALIGN 4
+MycenSoldierPalette:
+#incbin "bin/soldier_mycen.btlpal"
+ALIGN 4
+MycenArmorPalette:
+#incbin "bin/armor_mycen.btlpal"
+ALIGN 4
+MycenBaronPalette:
+#incbin "bin/baron_mycen.btlpal"
+ALIGN 4
+MycenMagePalette:
+#incbin "bin/mage_mycen.btlpal"
+ALIGN 4
+MycenSagePalette:
+#incbin "bin/sage_mycen.btlpal"
 
+ALIGN 4
 NuibabaWitchPalette:
-#incbin "Bin/nuibabawitch.cprs.pal.bin"
+#incbin "bin/nuibabawitch.btlpal"
 
+ALIGN 4
 MarlaWitchPalette:
-#incbin "Bin/marlawitch.cprs.pal.bin"
+#incbin "bin/marlawitch.btlpal"
 
+ALIGN 4
 HestiaWitchPalette:
-#incbin "Bin/hestiawitch.cprs.pal.bin"
+#incbin "bin/hestiawitch.btlpal"
 
+ALIGN 4
 PhantomSoldierPalette:
-#incbin "Bin/phantom_soldier.cprs.pal.bin"
+#incbin "bin/phantom_soldier.btlpal"
 
+ALIGN 4
 PhantomPegPalette:
-#incbin "Bin/phantom_peg.cprs.pal.bin"
+#incbin "bin/phantom_peg.btlpal"
 
+ALIGN 4
 PhantomDFPalette:
-#incbin "Bin/phantom_DF.cprs.pal.bin"
+#incbin "bin/phantom_DF.btlpal"
 
+ALIGN 4
 ZopyrusPalette:
-#incbin "Bin/zopyruscav.cprs.pal.bin"
+#incbin "bin/zopyruscav.btlpal"
 
+ALIGN 4
 FpirateBossPalette:
-#incbin "Bin/_fpirate.cprs.pal.bin"
+#incbin "bin/_fpirate.btlpal"
 
+ALIGN 4
 BarthPalette:
-#incbin "Bin/barthpirate.cprs.pal.bin"
+#incbin "bin/barthpirate.btlpal"
 
+ALIGN 4
 XyzasPalette:
-#incbin "Bin/xyzaspal.cprs.pal.bin"
+#incbin "bin/xyzaspal.btlpal"
 
+ALIGN 4
 WolffPalette:
-#incbin "Bin/wolffsniper.cprs.pal.bin"
+#incbin "bin/wolffsniper.btlpal"
 
+ALIGN 4
 GriethDFPalette:
-#incbin "Bin/griethDF.cprs.pal.bin"
+#incbin "bin/griethDF.btlpal"
 
+ALIGN 4
 BlakePalette:
-#incbin "Bin/blakemyrm.cprs.pal.bin"
+#incbin "bin/blakemyrm.btlpal"
 
+ALIGN 4
 MikhailPalette:
-#incbin "Bin/mikhailcantor.cprs.pal.bin"
+#incbin "bin/cantor_mikhail.btlpal"
 
+ALIGN 4
 GarciaPalette:
-#incbin "Bin/garciacantor.cprs.pal.bin"
+#incbin "bin/cantor_garcia.btlpal"
 
+ALIGN 4
 DolthPalette:
-#incbin "Bin/dolthcantor.cprs.pal.bin"
+#incbin "bin/cantor_dolth.btlpal"
 
+ALIGN 4
 ArcanistBossPalette:
-#incbin "Bin/arcanist_boss.cprs.pal.bin"
+#incbin "bin/arcanist_boss.btlpal"
 
+ALIGN 4
 GazellePalette:
-#incbin "Bin/gazellebk.cprs.pal.bin"
+#incbin "bin/gazellebk.btlpal"
 
+ALIGN 4
 XaizorPalette:
-#incbin "Bin/xaizordf.cprs.pal.bin"
+#incbin "bin/xaizordf.btlpal"
 
+ALIGN 4
 JeromePalette:
-#incbin "Bin/jeromeGK.cprs.pal.bin"
+#incbin "bin/jeromeGK.btlpal"
 
+ALIGN 4
 MagnusPalette:
-#incbin "Bin/magnusbaron.cprs.pal.bin"
+#incbin "bin/magnusbaron.btlpal"
+ALIGN 4
 RudolfPalette:
-#incbin "Bin/rudolfGK.cprs.pal.bin"
+#incbin "bin/rudolfGK.btlpal"
 
+ALIGN 4
 ArgentumPalette:
-#incbin "Bin/argentumBK.cprs.pal.bin"
+#incbin "bin/argentumBK.btlpal"
 AurumPalette:
-#incbin "Bin/aurumBK.cprs.pal.bin"
+ALIGN 4
+#incbin "bin/aurumBK.btlpal"
+ALIGN 4
 HadesPalette:
-#incbin "Bin/hadesGK.cprs.pal.bin"
+#incbin "bin/hadesGK.btlpal"
+ALIGN 4
 CerberusPalette:
-#incbin "Bin/cerberusDF.cprs.pal.bin"
+#incbin "bin/cerberusDF.btlpal"
+ALIGN 4
 NaberiusPalette:
-#incbin "Bin/naberiusDF.cprs.pal.bin"
+#incbin "bin/naberiusDF.btlpal"
 
 ALIGN 4
-EmmaPalette:
-#incbin "Bin/emmafalco.pal.bin.compressed"
+EmmaPegPalette:
+#incbin "bin/emmapeg.btlpal"
 ALIGN 4
-ShadePalette:
-#incbin "Bin/shadesaint.pal.bin.compressed"
+EmmaFalcoPalette:
+#incbin "bin/emmafalco.btlpal"
+ALIGN 4
+EmmaVillagerPalette:
+#incbin "bin/emmavillager.btlpal"
+ALIGN 4
+EmmaMagePalette:
+#incbin "bin/emmamage.btlpal"
+ALIGN 4
+EmmaPriestessPalette:
+#incbin "bin/emmapriestess.btlpal"
+ALIGN 4
+EmmaDFPalette:
+#incbin "bin/emmadreadfighter.btlpal"
+ALIGN 4
+EmmaArcherPalette:
+#incbin "bin/emmaarcher.btlpal"
+ALIGN 4
+EmmaSniperPalette:
+#incbin "bin/emmasniper.btlpal"
+ALIGN 4
+EmmaBKPalette:
+#incbin "bin/emmabowknight.btlpal"
+ALIGN 4
+EmmaCavPalette:
+#incbin "bin/emmacavalier.btlpal"
+ALIGN 4
+EmmaPaladinPalette:
+#incbin "bin/emmapaladin.btlpal"
+ALIGN 4
+EmmaGKPalette:
+#incbin "bin/emmagoldknight.btlpal"
+ALIGN 4
+EmmaClericPalette:
+#incbin "bin/emmacleric.btlpal"
+ALIGN 4
+EmmaSaintPalette:
+#incbin "bin/emmasaint.btlpal"
+
+ALIGN 4
+ShadeVillagerPalette:
+#incbin "bin/shadevill.btlpal"
+ALIGN 4
+ShadeMagePalette:
+#incbin "bin/shademage.btlpal"
+ALIGN 4
+ShadePriestessPalette:
+#incbin "bin/shadepriestess.btlpal"
+ALIGN 4
+ShadeDFPalette:
+#incbin "bin/shadeDF.btlpal"
+ALIGN 4
+ShadeCavPalette:
+#incbin "bin/shadecav.btlpal"
+ALIGN 4
+ShadePaladinPalette:
+#incbin "bin/shadepal.btlpal"
+ALIGN 4
+ShadeGKPalette:
+#incbin "bin/shadeGK.btlpal"
+ALIGN 4
+ShadeArcherPalette:
+#incbin "bin/shadearch.btlpal"
+ALIGN 4
+ShadeSniperPalette:
+#incbin "bin/shadesniper.btlpal"
+ALIGN 4
+ShadeBKPalette:
+#incbin "bin/shadeBK.btlpal"
+ALIGN 4
+ShadePegPalette:
+#incbin "bin/shadepeg.btlpal"
+ALIGN 4
+ShadeFalcoPalette:
+#incbin "bin/shadefalco.btlpal"
+ALIGN 4
+ShadeClericPalette:
+#incbin "bin/shadecleric.btlpal"
+ALIGN 4
+ShadeSaintPalette:
+#incbin "bin/shadesaint.btlpal"
+
+ALIGN 4
+RandalVillagerPalette:
+#incbin "bin/Randal_villager.btlpal"
+ALIGN 4
+RandalCavPalette:
+#incbin "bin/Randal_cavalier.btlpal"
 ALIGN 4
 RandalPaladinPalette:
-#incbin "Bin/randalpal.pal.bin.compressed"
+#incbin "bin/Randal_paladin.btlpal"
 ALIGN 4
 RandalGKPalette:
-#incbin "Bin/randalGK.pal.bin.compressed"
+#incbin "bin/Randal_GK.btlpal"
+ALIGN 4
+RandalArcherPalette:
+#incbin "bin/Randal_archer.btlpal"
+ALIGN 4
+RandalSniperPalette:
+#incbin "bin/Randal_sniper.btlpal"
+ALIGN 4
+RandalBKPalette:
+#incbin "bin/Randal_bowknight.btlpal"
+ALIGN 4
+RandalSoldierPalette:
+#incbin "bin/Randal_soldier.btlpal"
+ALIGN 4
+RandalArmorPalette:
+#incbin "bin/Randal_armor.btlpal"
+ALIGN 4
+RandalBaronPalette:
+#incbin "bin/Randal_baron.btlpal"
+ALIGN 4
+RandalMercPalette:
+#incbin "bin/Randal_merc.btlpal"
+ALIGN 4
+RandalMyrmPalette:
+#incbin "bin/Randal_myrm.btlpal"
+ALIGN 4
+RandalDFPalette:
+#incbin "bin/Randal_dread.btlpal"
+ALIGN 4
+RandalMagePalette:
+#incbin "bin/Randal_mage.btlpal"
+ALIGN 4
+RandalSagePalette:
+#incbin "bin/Randal_sage.btlpal"
+
 ALIGN 4
 YuzuVillagerPalette:
-#incbin "Bin/yuzuvill.pal.bin.compressed"
+#incbin "bin/yuzuvill.btlpal"
 ALIGN 4
 YuzuCavPalette:
-#incbin "Bin/yuzucav.pal.bin.compressed"
+#incbin "bin/yuzucav.btlpal"
 ALIGN 4
 YuzuPaladinPalette:
-#incbin "Bin/yuzupal.pal.bin.compressed"
+#incbin "bin/yuzupal.btlpal"
 ALIGN 4
 YuzuGKPalette:
-#incbin "Bin/yuzuGK.pal.bin.compressed"
+#incbin "bin/yuzuGK.btlpal"
 ALIGN 4
 YuzuClericPalette:
-#incbin "Bin/yuzucleric.pal.bin.compressed"
+#incbin "bin/yuzucleric.btlpal"
 ALIGN 4
 YuzuSaintPalette:
-#incbin "Bin/yuzusaint.pal.bin.compressed"
+#incbin "bin/yuzusaint.btlpal"
 ALIGN 4
 YuzuPegPalette:
-#incbin "Bin/yuzupeg.pal.bin.compressed"
+#incbin "bin/yuzupeg.btlpal"
 ALIGN 4
 YuzuFalcoPalette:
-#incbin "Bin/yuzufalco.pal.bin.compressed"
+#incbin "bin/yuzufalco.btlpal"
 ALIGN 4
 YuzuMagePalette:
-#incbin "Bin/yuzumage.pal.bin.compressed"
+#incbin "bin/yuzumage.btlpal"
 ALIGN 4
-YuzuSagePalette:
-#incbin "Bin/yuzupriestess.pal.bin.compressed"
+YuzuPriestessPalette:
+#incbin "bin/yuzupriestess.btlpal"
 ALIGN 4
 YuzuDFPalette:
-#incbin "Bin/yuzuDF.pal.bin.compressed"
+#incbin "bin/yuzuDF.btlpal"
 ALIGN 4
 YuzuArcherPalette:
-#incbin "Bin/yuzuarch.pal.bin.compressed"
+#incbin "bin/yuzuarch.btlpal"
 ALIGN 4
 YuzuSniperPalette:
-#incbin "Bin/yuzusniper.pal.bin.compressed"
+#incbin "bin/yuzusniper.btlpal"
 ALIGN 4
 YuzuBKPalette:
-#incbin "Bin/yuzubk.pal.bin.compressed"
+#incbin "bin/yuzubk.btlpal"
 ALIGN 4
