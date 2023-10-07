@@ -199,6 +199,12 @@ CutsceneUnits:
 	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x1 REDA12R22 [BaseLance] NoAI
 	UNIT
 
+CutsceneUnits_NoLuthier:
+	UNIT Alm AlmFighter 0x00 Level(1, Ally, 1) [9,22] 0x00 0x00 0x1 REDA10R20 [BaseSword, Vulnerary] NoAI
+	UNIT Lukas Soldier 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x1 REDA11R21 [BaseLance, Vulnerary] NoAI
+	UNIT Clive Cavalier 0x00 Level(1, Ally, 1) [10,22] 0x00 0x00 0x1 REDA12R22 [BaseLance] NoAI
+	UNIT
+
 CutsceneBosses:
 	UNIT Tatarrah Arcanist 0x00 Level(5,Enemy,False) [12,5] 0x00 0x00 0x0 0x00 [Thanatos, Fortify] NeverMoveAI
 	UNIT DeltheaBoss Mage_F 0x00 Level(3,Enemy,False) [12,6] 0x00 0x00 0x0 0x00 [Aura, PrayerRing] NoAI
@@ -306,10 +312,14 @@ Ch3_7A_BeginningScene:
 	LOAD_S2 0x1
 	ENUN
 	FADEOUT 5
+
+	SVAL 0x2 (CutsceneUnits_NoLuthier|IsPointer)
 	SVAL 0xA 0x0
 	CHECK_EXISTS Luthier
-	SADD 0xCA
-	LOAD_CUTSCENE CutsceneUnits
+	BEQ 0x3A17 rC r0
+		SVAL 0x2 (CutsceneUnits|IsPointer)
+	LABEL 0x3A17
+	LOAD_CUTSCENE_S2
 	ENUN
 	CAMERA_CENTERED [12, 5]
 	STAL 30

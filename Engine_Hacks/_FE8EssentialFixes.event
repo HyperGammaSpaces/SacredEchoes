@@ -62,7 +62,7 @@ PUSH
 	ORG $3053D //change 10 to 10/14/18/1C sandstorm
 	BYTE $1C
 	ORG $304DC
-	BYTE $00 //fix sandstorm graphics
+	BYTE $80 //fix sandstorm graphics
 	ORG $30B31 //change AC to A0/A4/A8/AC clouds
 	BYTE $AC
 

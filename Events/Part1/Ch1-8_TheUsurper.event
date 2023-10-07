@@ -123,6 +123,11 @@ Bosses_EndingCutscene:
 	UNIT FernandEnemy1 Cavalier 0x00 Level(1, Enemy, 1) [16, 0] 0x00 0x00 0x1 REDA16R1 [BaseLance] NoAI
 	UNIT
 
+Bosses_EndingCutscene_Fernand2:
+	UNIT BerkutPaladin RigelPrince 0x00 Level(1, Enemy, 1) [15, 0] 0x00 0x00 0x1 REDA15R1 [BaseLance] NoAI
+	UNIT FernandEnemy1 Paladin 0x00 Level(1, Enemy, 1) [16, 0] 0x00 0x00 0x1 REDA16R1 [BaseLance] NoAI
+	UNIT
+
 EnemyUnits:
 	UNIT Zofia_Archer Archer	Desaix Level(10, Enemy, 1) [12,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
 	UNIT Zofia_Archer Archer_F	Desaix Level(10, Enemy, 1) [8,5]	0x00 0x00 0x0 0x00 [BaseBow] AttackInRangeAI
@@ -292,8 +297,15 @@ Ch1_8_EndingScene:
 	LOAD_CUTSCENE CutsceneUnits_AlmVictory
 	ENUN
 	FADEOUT 5
-	LOAD 0x1 Bosses_EndingCutscene
+
+	SVAL 0x2 (Bosses_EndingCutscene|IsPointer)
+	CHECK_FLAG gPlayerPromotedFernand
+	BEQ 0x20B rC r0
+		SVAL 0x2 (Bosses_EndingCutscene_Fernand2|IsPointer)
+	LABEL 0x20B
+	LOAD_S2 0x1
 	ENUN
+
 	CAMERA_CENTERED BerkutPaladin
 	FlashCursor(BerkutPaladin, 60)
 	MUSCSLOW SongID_PrinceOfDarkness

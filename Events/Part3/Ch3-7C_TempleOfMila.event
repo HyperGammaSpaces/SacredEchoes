@@ -335,6 +335,10 @@ Ch3_7C_EndingScene:
 	CHECK_COUNT_GREEN
 	SVAL 0x2 0x1
 	BLE 0x12 0xC 0x2
+	CHECK_EXISTS Nomah
+	BEQ 0x12 rC r0
+	CHECK_ISALIVE Nomah
+	BEQ 0x12 rC r0
 		//2 alive
 		CONFIG_SKIP 0x1
 		BackgroundText(Ch3_7C_TwoPriestesses)

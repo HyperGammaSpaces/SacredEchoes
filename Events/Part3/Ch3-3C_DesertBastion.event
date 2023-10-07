@@ -309,7 +309,7 @@ Ch3_3C_EndingScene:
 	STAL 20
 	CONFIG_SKIP 0x1
 	SetBackground(Fort_Ruins)
-	ASMC prCallDeenSonyaEventMenu+1 // Call the Split Menu
+	CallEventMenu(pDeenSonyaMenuDefinition) // Call the Split Menu
 
 	SVAL r1 True
 	BNE 0x0 rC r1
