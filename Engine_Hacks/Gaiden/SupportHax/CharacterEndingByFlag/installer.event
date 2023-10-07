@@ -45,3 +45,24 @@ AddFlagByED3:
 ALIGN 4
 AddFlagByED3_2:
 #incbin "AddFlagByED3_2.dmp"
+
+PUSH
+ORG $B6A4C
+replaceWithHack(CheckPairedEnding_New)
+POP
+
+ALIGN 4
+CheckPairedEnding_New:
+#include "CheckPairedEnding_New.lyn.event"
+
+ALIGN 4
+PairedEndingsLookup:
+BYTE Tobin Faye Faye Tobin
+BYTE Gray Clair Clair Gray
+BYTE Clive Mathilda Mathilda Clive
+BYTE Mae Boey Boey Mae
+BYTE Silque Acantha Acantha Silque
+BYTE Leon Atlas Atlas Leon
+BYTE Saber Sonya Sonya Saber
+BYTE Tatiana Zeke Zeke Tatiana
+WORD 0
