@@ -15,15 +15,15 @@ CaveGraphics:
 
 ALIGN 4
 SeaboundShrinePalette:
-#incbin "Cave_Seabound.pal"
+#incbin "Cave_Seabound.mappal"
 
 ALIGN 4
 DragonShrinePalette:
-#incbin "Cave_Purple.pal"
+#incbin "Cave_Purple.mappal"
 
 ALIGN 4
 FinalCavePalette:
-#incbin "Cave_Final.pal"
+#incbin "Cave_Final.mappal"
 
 EventPointerTable(plCaveGfx, CaveGraphics)
 EventPointerTable(plCavePal, SeaboundShrinePalette)

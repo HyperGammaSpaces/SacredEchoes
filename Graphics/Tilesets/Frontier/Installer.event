@@ -10,15 +10,15 @@ FrontierGraphics:
 
 ALIGN 4
 FrontierPalette:
-#incbin "FrontierGfx.pal"
+#incbin "FrontierGfx.mappal"
 
 ALIGN 4
 FrontierNightPalette:
-#incbin "Frontier_night.pal"
+#incbin "Frontier_night.mappal"
 
 ALIGN 4
 FrontierSnowPalette:
-#incbin "Frontier_snow.pal"
+#incbin "Frontier_snow.mappal"
 
 //Frontier
 EventPointerTable(plFrontierGfx, FrontierGraphics)

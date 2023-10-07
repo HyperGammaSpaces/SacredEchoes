@@ -6,7 +6,7 @@ FortTiles:
 PUSH
 ORG $1AE470
 FortPalette:
-#incbin "FortGfx.pal"
+#incbin "FortGfx.mappal"
 POP
 
 EventPointerTable(plFortGfx, 0x1816B8) //fort obj

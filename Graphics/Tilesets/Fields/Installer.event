@@ -9,16 +9,17 @@ FieldsGraphics:
 
 ALIGN 4
 NightFieldPalette:
-#incbin "NightFields.pal"
+#incbin "NightFields.mappal"
 
 ALIGN 4
 SunsetFieldPalette:
-#incbin "SunsetFields.pal"
+#incbin "SunsetFields.mappal"
 
+//bgp 6
 PUSH
 ORG $1AE5B0
 FieldsPalette:
-#incbin "FieldsGfx.pal"
+#incbin "FieldsGfx.mappal"
 POP
 
 EventPointerTable(plFieldsGfx, FieldsGraphics) //fields obj

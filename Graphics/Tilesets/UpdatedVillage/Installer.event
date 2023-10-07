@@ -9,12 +9,12 @@ VillageGraphics:
 
 ALIGN 4
 VillageNightPalette:
-#incbin "VillageNight.pal"
+#incbin "VillageNight.mappal"
 
 PUSH
 ORG $1AEAB0
 VillagePalette:
-#incbin "VillageGfx.pal"
+#incbin "VillageGfx.mappal"
 POP
 
 EventPointerTable(plVillageGfx, VillageGraphics) //village obj

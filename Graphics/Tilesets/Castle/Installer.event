@@ -5,12 +5,12 @@ CastleTiles:
 
 ALIGN 4
 CastleNightPalette:
-#incbin "castle-night.pal"
+#incbin "castle-night.mappal"
 
 PUSH
 ORG $1AE1F0
 CastlePalette1:
-#incbin "CastleGfx.pal"
+#incbin "CastleGfx.mappal"
 POP
 
 EventPointerTable(plCastleGfx, 0x18B89C) //castle obj

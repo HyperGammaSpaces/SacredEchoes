@@ -9,24 +9,24 @@ TempleTiles:
 
 ALIGN 4
 SluiceGatePalette:
-#incbin "SluiceGatePalette.pal"
+#incbin "SluiceGatePalette.mappal"
 
 ALIGN 4
 NuibabaMapPalette:
-#incbin "NuibabaManor.pal"
+#incbin "NuibabaManor.mappal"
 
 PUSH
 ORG $1AD930
 TemplePalette:
-#incbin "Shrine.pal"
+#incbin "Shrine.mappal"
 
 ORG $1A1FC0
 TemplePaletteDark:
-#incbin "NightShrine.pal"
+#incbin "NightShrine.mappal"
 
 ORG $1AD430
 ThiefshrinePalette:
-#incbin "ThiefShrine.pal"
+#incbin "ThiefShrine.mappal"
 POP
 
 EventPointerTable(plTempleGfx, TempleGraphics) //temple obj
