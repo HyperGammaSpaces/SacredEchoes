@@ -41,11 +41,12 @@ mov r1, r2
 add r1, #0x3B
 strb r0, [r1]
 
+
 @action struct has the slot # our promo item is in
 ldr  r0, =0x203A958 @action struct
 ldrb r1, [r0, #0x11]
 cmp  r1, #0xD
-beq  UsingSplitPromos @assume default promo style when using a mila statue
+beq  NonItemPromos @assume default promo style when using a mila statue
 add  r0, #0x12
 ldrb r0, [r0]
 lsl  r0, r0, #1
@@ -68,6 +69,16 @@ cmp r0, r2
 beq GetPromoList
 add r1, #8
 b PromoItemListCheckStart
+
+NonItemPromos:
+ldr r1, [r7, #0x2C] @unit struct
+ldr r1, [r1, #4] @class data
+ldrb r1, [r1, #4] @class ID
+cmp r1, #0x3D
+beq UsingSplitPromos
+cmp r1, #0x3E
+beq UsingSplitPromos
+b GoBack
 
 GetPromoList:
 add r1, #4

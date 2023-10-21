@@ -6,6 +6,12 @@
   .short 0xf800
 .endm
 
+
+@BEFORE:
+@Alm, Kliff, Clair, Tatiana, Luthier, Clive
+@Silque, Gray, Tobin, Lukas, Faye, Acantha
+@Forsyth, Python, Mathilda, Delthea, Zeke, Mycen
+
 .equ UnitStackBuffer, 0x020111CC
 .equ gChapterData, 0x0202BCF0
 .equ IsUnitNotDeployable, 0x0001000C @checks all of IsREMU, IsDead, and IsNotDeployedLastChapter
@@ -83,6 +89,7 @@ SortAlmUnits_Loop:
                     blt  PushAlmUnit
                     
                     AlmUnit_Undeploy:
+                    ldr  r0, [r7, #0xC]
                     mov  r1, #0x8
                     orr  r0, r1
                     str  r0, [r7, #0xC] @set "not deployed" bit

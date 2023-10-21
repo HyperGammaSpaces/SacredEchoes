@@ -22,7 +22,7 @@ HPRestorationLoopFunc: @r5 = current unit
 	ldr  r2, [r5, #0x4] @class
 	add  r2, #0x50 @class type
 	ldrb r2, [r2]
-	mov  r3, #0x10
+	mov  r3, #0x18
 	and  r2, r3
 	cmp  r2, #0x0
 	bne  NoTerrain

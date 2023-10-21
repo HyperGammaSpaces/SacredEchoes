@@ -20,9 +20,6 @@ PUSH
 	ORG $CC6FC
 	POIN NewAutopromoTable
 	
-	ORG $8ADF76
-	BYTE Cavalier Cavalier_F Paladin Paladin_F Soldier Knight Knight_F Thief Thief_F Mercenary Myrmidon DreadFighter 0x16 Archer Archer_F Sniper Sniper_F WyvernRider WyvernRider_F Mage Mage_F Villager Villager_F Fighter Brigand Pirate Priest PegasusKnight Cleric $0
-	
 	ORG $2F6A0
 	SHORT $2000 $2000    //no weapon display at promotion: promotion screen
 	
@@ -76,7 +73,7 @@ NewAutopromoTable:
 	AutopromoTableEntry(Tobin, 5, Villager)
 	AutopromoTableEntry(Kliff, 5, Villager)
 	AutopromoTableEntry(Faye, 5, Villager_F)
-	AutopromoTableEntry(Atlas, 5, Villager)
+	AutopromoTableEntry(Hyas, 5, Villager)
 
 ALIGN 4
 NewBranchPromoEligibility:
@@ -123,6 +120,14 @@ BYTE PegasusKnight 		0x0C
 BYTE Cleric 			0x0C
 BYTE $FF $FF //terminator
 ALIGN 4
+
+//cc7d0
+//cc824
+//cc860
+//cc8a4
+//cc8ec
+//cce8c
+//cdb74
 
 UpdatePromoInventory:
 #include "UpdateInventory.lyn.event"

@@ -11,7 +11,7 @@ Item_TURange:
     @mov 	r4, r0
     mov 	r4, r1
     mov 	r5, r2
-    ldr 	r2, =#SelectedUnit
+    ldr 	r2, =SelectedUnit
     str 	r0, [r2]
     ldr 	r0, =RangeMapRows
     ldr 	r0, [r0]
@@ -35,6 +35,8 @@ Item_TURangeBuilder:
     push    {r4-r7, r14}
     mov     r7, r0
     mov     r6, r1
+    ldr     r3, =ActionStruct
+    strb    r6, [r3, #0x6]
     ldr     r5, =SelectedUnit
     ldr     r5, [r5]
     mov     r0, r5
@@ -60,6 +62,9 @@ Item_TURangeBuilder:
     ldr     r3, =CheckUnitsInRange+1
     bl      Jump
 End:
+    ldr     r3, =ActionStruct
+    mov     r0, #0
+    strb    r0, [r3, #0x6]
     pop     {r4-r7}
     pop     {r3}
 Jump:

@@ -338,7 +338,7 @@ EnemyUnits_Hard:
 	//the generic squad
 	UNIT Argentum BowKnight Duma Level(15, Enemy, False) [21,5] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
 	UNIT Aurum BowKnight Duma Level(15, Enemy, False) [19,5] 0x00 0x00 0x0 0x00 [SilverBow] [0x0, 0x6, 0x0, 0x0]
-	UNIT Hades GoldKnight Duma Level(15, Enemy, False) [4,6] 0x00 0x00 0x0 0x00 [SilverLance] [0x0, 0x6, 0x0, 0x0]
+	UNIT Hades GoldKnight Duma Level(15, Enemy, True) [4,6] 0x00 0x00 0x0 0x00 [SilverLance] [0x0, 0x6, 0x0, 0x0]
 	UNIT Cerberus DreadFighter Duma Level(15, Enemy, False) [2,7] 0x00 0x00 0x0 0x00 [SilverSword] AttackInRangeAI
 	UNIT Naberius DreadFighter Duma Level(15, Enemy, False) [6,7] 0x00 0x00 0x0 0x00 [SilverSword] NoAI
 	UNIT
@@ -357,11 +357,11 @@ MogallSpamWave:
 	UNIT
 
 WitchSpawn_Marla:
-	UNIT Rigel_Witch Witch MarlaFinal Level(16, Enemy, False) [18,7] 0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
+	UNIT Rigel_Witch Witch MarlaFinal Level(16, Enemy, True) [18,7] 0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
 	UNIT
 
 WitchSpawn_Hestia:
-	UNIT Rigel_Witch Witch HestiaFinal Level(16, Enemy, False) [23,6] 0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
+	UNIT Rigel_Witch Witch HestiaFinal Level(16, Enemy, True) [23,6] 0x00 0x00 0x0 0x00 [Fire,WitchWarpItem] WitchWarpAI
 	UNIT
 
 Ch5F3_BeginningScene:

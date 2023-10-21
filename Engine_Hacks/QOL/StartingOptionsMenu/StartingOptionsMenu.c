@@ -648,22 +648,9 @@ void StartingOptions_OnEnd(OptionsProc* CurrentProc)
 
 void SetOptionFlagsASMC()
 {
-	u32 gameOptions = gChapterData.unk40_1;
 
 	//casual mode
-	switch (OptionsSaved->CasualMode) {
-
-		case 0:
-			gameOptions = (gameOptions & ~CFG_CASUALMODE);
-			break;
-
-		case 1:
-			gameOptions = (gameOptions | CFG_CASUALMODE);
-			break;
-
-		default:
-			break;
-	}
+	gChapterData.unk42_7 = OptionsSaved->CasualMode;
 
 	//growths
 	switch (OptionsSaved->GrowthSetting) {
@@ -699,6 +686,4 @@ void SetOptionFlagsASMC()
 			break;
 	}
 
-	//save config
-	gChapterData.unk40_1 = gameOptions;
 };

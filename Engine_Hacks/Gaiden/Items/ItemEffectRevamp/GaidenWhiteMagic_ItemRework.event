@@ -21,7 +21,7 @@ PUSH
 	SilenceStaff_GetTargetList:
 		SHORT $4900
 		B(StatusStaff_CallTargetingFunc)
-		POIN SilenceStaff_RangeSetup|1
+		POIN SilenceStaff_RangeSetup_New|1
 	FreezeStaff_GetTargetList:
 		SHORT $4902
 	StatusStaff_CallTargetingFunc:
@@ -29,7 +29,7 @@ PUSH
 		SHORT $1C22	//mov r2, r4
 		BL($29CA0)  //TargetSelectionForOffensiveStaff
 		B(EndGetTargetList)
-		POIN SleepStaff_RangeSetup|1
+		POIN SleepStaff_RangeSetup_New|1
 	ORG $28FF4 //unlock goes here
 		SHORT $4901 $4A02 $1C23 
 		B(TileTargetingFuncJump)
@@ -79,10 +79,16 @@ PUSH
 	EndGetTargetList:
 		SHORT $BC30 $BC01 $4700 //pop r4-r5 and bx r0
 
+    ORG $26100
+    Status_Staff_Usability:
+    #include "Status_Staff_Usability.lyn.event"
 POP
 
-
 ALIGN 4
+	SilenceStaff_RangeSetup_New:
+		rfItemRangeSetup($26100+1,Item_TURange)
+	SleepStaff_RangeSetup_New:
+		rfItemRangeSetup($26100+1,Item_TURange)
 
 //#define IER_setItemEffect(effectid,usability,prepscreen_usability,targeting,effect)
 #ifdef ItemEffectRevamp
@@ -167,3 +173,4 @@ PUSH
     BL($24DA4)
 
 POP
+

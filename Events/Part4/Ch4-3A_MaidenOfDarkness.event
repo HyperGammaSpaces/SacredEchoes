@@ -25,9 +25,9 @@ Dummy_TurnBasedEvents:
 	
 BaronsEvent:
 	CHECK_ISALIVE Forsyth
-	BEQ 0x103 0xC 0x0
+	BEQ 0x103 rC r0
 	CHECK_ISDEPLOYED Forsyth
-	BEQ 0x103 0xC 0x0
+	BEQ 0x103 rC r0
 		MUSIC SongID_WhatLiesAtTheEnd
 		MUSIC_QUIET_T
 		CAMERA_CENTERED MarlaCh4
@@ -40,18 +40,18 @@ BaronsEvent:
 	END
 
 LoadSummons:
+	CHECK_FLAG 0x2 // boss death quote
+	BNE 0 rC r0 // branch label 0 if summoner dead
 	CHECK_FLAG 0x1D
-	BNE 2 0xC 0x0
+	BNE 2 rC r0
 		CameraCursor(MarlaCh4)
 		MapText(Ch4_3A_MarlaSummons)
 		FLAG_T 0x1D
 		GOTO 3
 	LABEL 2
-	CHECK_FLAG 0x2 // boss death quote
-	BNE 0 0xC 0x0 // branch label 0 if summoner dead
 	COUNTER_CHECK 0 // slot c = counter 0 value
-	SVAL 0x1 1 // number of turns between summons (1)
-	BNE 1 0xC 0x1 // branch label 1 if counter is not at value
+	SVAL r1 1 // number of turns between summons (1)
+	BNE 1 rC r1 // branch label 1 if counter is not at value
 
 	// Counter at value
 	COUNTER_SET 0 0 // reset counter
@@ -202,7 +202,7 @@ Dummy_BeginningScene:
 	MUSIC SongID_HerosPath
 	SetBackground(0x47)
 	CHECK_ISALIVE Silque
-	BEQ 0x100 0xC 0x0
+	BEQ 0x100 rC r0
 		BackgroundText(Ch4_3A_OpeningText)
 		GOTO 0x101
 	LABEL 0x100
@@ -211,9 +211,9 @@ Dummy_BeginningScene:
 	MUSCMID SongID_Silence
 
 	CHECK_ISALIVE Forsyth
-	BEQ 0x102 0xC 0x0
+	BEQ 0x102 rC r0
 	CHECK_ISALIVE Python
-	BEQ 0x102 0xC 0x0
+	BEQ 0x102 rC r0
 
 		//Forsyth and Python explain the Baron ability through banter?
 		FADEIN 5

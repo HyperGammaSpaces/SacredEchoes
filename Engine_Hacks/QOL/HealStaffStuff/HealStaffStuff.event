@@ -14,7 +14,7 @@ POP
 
 ALIGN 4
 ShowHealAmount:
-#incbin "ShowHealAmount.dmp"
+#include "ShowHealAmount.lyn.event"
 WORD HP_Restore_Arrow
 WORD SelectedSpellPointer
 

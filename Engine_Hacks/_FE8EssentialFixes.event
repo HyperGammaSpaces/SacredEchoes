@@ -5,55 +5,55 @@
 PUSH
 
 //Fix Stone's map animation crashing no$ due to a bad decompression
-  ORG $7E2B4
-  BYTE $8
+	ORG $7E2B4
+	BYTE $8
 
 //Add a check for r0=0 in the decompression routine so that no$gba doesn't crash when trying to decompress something it shouldn't (thanks Teq)
-  //ORG $12F52
-  //BYTE $00 $28 $14 $D0 $FA $22 $12 $06 $52 $18 $0A $4B $01 $25 $9A $42 $00 $D8 $00 $25 $09 $4A $03 $78 $F0 $24 $23 $40 $DB $08 $5B $19 $9B $00 $D2 $18 $12 $68 $C0 $46 $C0 $46
+	//ORG $12F52
+	//BYTE $00 $28 $14 $D0 $FA $22 $12 $06 $52 $18 $0A $4B $01 $25 $9A $42 $00 $D8 $00 $25 $09 $4A $03 $78 $F0 $24 $23 $40 $DB $08 $5B $19 $9B $00 $D2 $18 $12 $68 $C0 $46 $C0 $46
 
 //Make the AddTrap routine have a check to prevent writing past the limit
-  ORG $2E2B8
-  SHORT $B470 $4C07 $4D07 $3408 $42AC $D806 $78A6 $2E00 $D1F9 $7020 $7061 $70A2 $70E3 $1C20 $BC70 $4770 $A60C $0203 $A814 $0203
-  
+	ORG $2E2B8
+	SHORT $B470 $4C07 $4D07 $3408 $42AC $D806 $78A6 $2E00 $D1F9 $7020 $7061 $70A2 $70E3 $1C20 $BC70 $4770 $A60C $0203 $A814 $0203
+
 //SetDestination fix (thanks circles)
-  ORG $C2FC
-  SHORT 0 //don't skip if the next location already exists
-  
+	ORG $C2FC
+	SHORT 0 //don't skip if the next location already exists
+
 //Fixes the world map chapter ID being loaded instead of the actual chapter ID.
-  ORG $897B2
-  SHORT 0 0
-  
+	ORG $897B2
+	SHORT 0 0
+
 //Fixes the game considering some chapters postgame.
-  ORG $897C4
-  SHORT $200E $5620 //mov r0, #0x0E; ldsb r0, [r4, r0]
-  ORG $206948
-  BYTE 0
+	ORG $897C4
+	SHORT $200E $5620 //mov r0, #0x0E; ldsb r0, [r4, r0]
+	ORG $206948
+	BYTE 0
 
 //Set Default Options
-  ORG $30D8A  //animations type 2
-  SHORT $3306
-  ORG $30DA6  //Game/text speed Fast, Autocursor off
-  SHORT $22D0
+	ORG $30D8A  //animations type 2
+	SHORT $3306
+	ORG $30DA6  //Game/text speed Fast, Autocursor off
+	SHORT $22D0
 //Set Support Room text speed to Fast too
-  ORG $A22F0
-  BYTE $40
-  
+	ORG $A22F0
+	BYTE $40
+
 //Allow Visit from any tile except Ruins
-  ORG $23070
-  SHORT $2825 $D021 $E00C
-  
+	ORG $23070
+	SHORT $2825 $D021 $E00C
+
 //Make overworld healing faster (first byte $08 for 2x, $10 for 4x, $20 for 8x)
-  ORG $7BCE2
-  BYTE $10 $34 
-  SHORT $0424 $0C24 $46C0 $46C0 $428C $DA09
-  
+	ORG $7BCE2
+	BYTE $10 $34
+	SHORT $0424 $0C24 $46C0 $46C0 $428C $DA09
+
 //Put weather behind UI
 	ORG $30366 //change 80 to 80/A0/C0/E0 light snow
 	BYTE $E0
 	ORG $3066D //change 10 to 10/14/18/1C heavy snow
 	BYTE $1C
-	ORG $59D95F 
+	ORG $59D95F
 	BYTE $1C
 	ORG $59D967 //change 10 to 10/14/18/1C rain
 	BYTE $1C
@@ -67,136 +67,136 @@ PUSH
 	BYTE $AC
 
 //Break HP Cap for Players/NPCs (credit Solum)
-  // ORG $181EE
-  // SHORT $1C11
-  // ORG $2BF4C
-  // BYTE $7F
-  
+	// ORG $181EE
+	// SHORT $1C11
+	// ORG $2BF4C
+	// BYTE $7F
+
 //Set HP Cap for Players/NPCs
-  //ORG $181E2
-  //ORG $181EE
-  //ORG $2BF4C
-  //ORG $2BF64
-  //ORG $9C0E4
-  //ORG $9C278
-  // BYTE $34 //52 in dec
+	//ORG $181E2
+	//ORG $181EE
+	//ORG $2BF4C
+	//ORG $2BF64
+	//ORG $9C0E4
+	//ORG $9C278
+	// BYTE $34 //52 in dec
 
 //skip hand axe wait for return
-  //ORG $514E
-  //SHORT 0
-  //ORG $58C90
-  //POIN $596CC
-  
+	//ORG $514E
+	//SHORT 0
+	//ORG $58C90
+	//POIN $596CC
+
 //Fix Uncounterable weapon anims
-  ORG $57278
-  SHORT $E016 //change beq to b
+	ORG $57278
+	SHORT $E016 //change beq to b
 
 //allow Wyvern Knights to triangle attack
-  ORG $2B168
-  SHORT 0
+	ORG $2B168
+	SHORT 0
 
 //12 Tracks/16 Sounds Fix (credit Agro/Brendor)
-  ORG $2900
-  SHORT $E00C
-  ORG $2924
-  SHORT $280C $D00E $200C
-  ORG $22440C
-  BYTE $10
-  ORG $224414
-  SHORT $67B0 $0300 $0010
+	ORG $2900
+	SHORT $E00C
+	ORG $2924
+	SHORT $280C $D00E $200C
+	ORG $22440C
+	BYTE $10
+	ORG $224414
+	SHORT $67B0 $0300 $0010
 
 //Fix Weak Promoted Enemies (credit Gryz)
-  ORG $180B4
-  SHORT $2A00 $DC00 $2201
+	ORG $180B4
+	SHORT $2A00 $DC00 $2201
 
 //Hold A to speed up movement (credit Gryz)
-  ORG $794EE
-  SHORT 0
+	ORG $794EE
+	SHORT 0
 
 //Skip H&S screen
-  ORG $CC20C
-  SHORT 0
-  ORG $CC216
-  B(HS_Skip)
-  ORG $CC21C
-  HS_Skip:
-  SHORT $B001 $BC38 $4698 $46A1 $46AA $BCF0 $BC01 $4700
+	ORG $CC20C
+	SHORT 0
+	ORG $CC216
+	B(HS_Skip)
+	ORG $CC21C
+	HS_Skip:
+	SHORT $B001 $BC38 $4698 $46A1 $46AA $BCF0 $BC01 $4700
 
 //Skip Intro and Class Roll (otherwise pre-battle anims will crash this)
-  ORG $C63AD
-  BYTE $E0
-  
+	ORG $C63AD
+	BYTE $E0
+
 //Skip Intro cutscene
-  ORG $C6714
-  SHORT 0
-  
+	ORG $C6714
+	SHORT 0
+
 //Autocursor Fix (credit Vennobennu)
-  ORG $3325A
-  SHORT $E021
+	ORG $3325A
+	SHORT $E021
 
 //Pierce Glitch Fix (credit Brendor)
-  ORG $2B290
-  BYTE $A0
-  /*
-    //Obsoleted
-    ORG $2B482
-    BYTE $A0
-  */
+	ORG $2B290
+	BYTE $A0
+	/*
+		//Obsoleted
+		ORG $2B482
+		BYTE $A0
+	*/
 
 //Unlock Sound Room songs
-  ORG $AEDE0
-  BYTE $FF
-  
+	ORG $AEDE0
+	BYTE $FF
+
 //CG Fade glitch
-  ORG $EBCA
-  BYTE 8
-  ORG $EDE0
-  SHORT $1C0A
+	ORG $EBCA
+	BYTE 8
+	ORG $EDE0
+	SHORT $1C0A
 
 //Enemy Control Glitch Fix (Credits to Brendor)
-  ORG $377A0
-  SHORT $E007
+	ORG $377A0
+	SHORT $E007
 
 //Mode Coefficient EXP fix (credit Vennobennu)
-  ORG $2C474
-  WORD 0
-  
+	ORG $2C474
+	WORD 0
+
 // Fix proc names not being cleared (Stan)
-  ORG $002C9E
-  SHORT $6129 $2026 $5429 $3002 $5429
+	ORG $002C9E
+	SHORT $6129 $2026 $5429 $3002 $5429
 
 // Fix CAM1/CAMERA2 going out of bounds (Stan)
-  ORG $015D52
-  BYTE 14
-  ORG $015D66
-  BYTE 9
-  
+	ORG $015D52
+	BYTE 14
+	ORG $015D66
+	BYTE 9
+
 //Prevent Freeze for Camera
-  ORG $F25C
-  BYTE $00 $20
+	ORG $F25C
+	BYTE $00 $20
 
 //Prevent Freeze for Cursor
-  ORG $10804
-  BYTE $00 $20
+	ORG $10804
+	BYTE $00 $20
 
 //Prevent Freeze For Unit State Event 0x33.
 //(CHECK_STATUS,CHECK_COORDS,CHECK_CLASS,CHECK_LUCK,CHECK_COORDS,CHECK_CLASS,CHECK_DEPLOYED,CHECK_ACTIVEID,CHECK_ALLEGIANCE,CHECK_EXISTS)
-  ORG $1027C
-  BYTE $00 $20 $02 $E0
+	ORG $1027C
+	BYTE $00 $20 $02 $E0
 
 //Prevent Freeze For Unit State Event 0x34.
 //(REMU,REVEAL,CUSA,CUSN,CUSE,SET_HP,SET_ENDTURN,SET_STATE,SET_SOMETHING,DISA_IF,REMU,DISA)
-  ORG $102D4
-  BYTE $00 $20
-  
+	ORG $102D4
+	BYTE $00 $20
+
 //Prevent Freeze For Unit State Event 0x38.
 //(SET_ACTIVE)
-  ORG $1063C
-  BYTE $00 $20
-  
+	ORG $1063C
+	BYTE $00 $20
+
 //Fix coordinate loading in WARP codes when not loading from slot B
-  ORG $10C18
-  SHORT $7891 $78D2 $0608
+	ORG $10C18
+	SHORT $7891 $78D2 $0608
 
 #include "Extensions/Hack Installation.txt"
 POP

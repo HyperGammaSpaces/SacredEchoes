@@ -8,6 +8,8 @@ jumpToHack(SplitPromoItems)
 ORG $CC5DE
 SHORT 0x46C0 //nop
 jumpToHack(SplitPromoItemsPrep)
+//ORG $CCDF2
+//SHORT $2000 ($2000|MilasPromotionBlessing)
 POP
 
 #include "SplitPromoItems.lyn.event"

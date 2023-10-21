@@ -4,10 +4,10 @@
 enum {
     CLASS_NONE                = 0x00,
 
-    CLASS_ALM_T1              = 0x01,
-    CLASS_CELICA_T1           = 0x02,
-    CLASS_ALM_T2              = 0x03,
-    CLASS_CELICA_T2           = 0x04,
+    CLASS_CELICA_T1           = 0x01,
+    CLASS_ALM_T1              = 0x02,
+    CLASS_CELICA_T2           = 0x03,
+    CLASS_ALM_T2              = 0x04,
     CLASS_CAVALIER            = 0x05,
     CLASS_CAVALIER_F          = 0x06,
     CLASS_PALADIN             = 0x07,

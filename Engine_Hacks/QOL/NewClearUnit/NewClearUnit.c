@@ -6,7 +6,8 @@ void NewClearUnit(struct Unit* unit) {
 	if (unit->rescueOtherUnit != 0) {
 			struct Unit* otherUnit = GetUnit(unit->rescueOtherUnit);
 			otherUnit->rescueOtherUnit = 0;
-			otherUnit->state = otherUnit->state & !(US_RESCUED|US_RESCUING);
+			otherUnit->state &= ~US_RESCUED;
+			otherUnit->state &= ~US_RESCUING;
 	}
 	
 	//original function

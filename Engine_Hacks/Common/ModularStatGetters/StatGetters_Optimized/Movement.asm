@@ -3,7 +3,7 @@
 .include "_Definitions.asm"
 
 .equ stat_offset, 0x1D
-.equ stat_boost_offset, 0x8
+.equ stat_boost_offset, 0x7
 
 prMovGetter:
     push    {r4-r7, lr}

@@ -281,9 +281,9 @@ AfterTopLeft:
 	SVAL 0xB Coords(3,14)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_ISINAREA Celica [2,14] [2,3]
+	CHECK_ISINAREA Celica [2,14] [3,2]
 	BNE 0x800 r0 rC
-	CHECK_ISINAREA Conrad [2,14] [2,3]
+	CHECK_ISINAREA Conrad [2,14] [3,2]
 	BNE 0x800 r0 rC
 	GOTO 0x801
 		LABEL 0x800
@@ -299,9 +299,9 @@ AfterMidLeft:
 	SVAL 0xB Coords(2,19)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_ISINAREA Celica [1,19] [2,3]
+	CHECK_ISINAREA Celica [1,19] [3,2]
 	BNE 0x802 r0 rC
-	CHECK_ISINAREA Conrad [1,19] [2,3]
+	CHECK_ISINAREA Conrad [1,19] [3,2]
 	BNE 0x802 r0 rC
 	GOTO 0x803
 		LABEL 0x802
@@ -317,9 +317,9 @@ AfterBottomLeft:
 	SVAL 0xB Coords(4,24)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_ISINAREA Celica [3,24] [2,3]
+	CHECK_ISINAREA Celica [3,24] [3,2]
 	BNE 0x804 r0 rC
-	CHECK_ISINAREA Conrad [3,24] [2,3]
+	CHECK_ISINAREA Conrad [3,24] [3,2]
 	BNE 0x804 r0 rC
 	GOTO 0x805
 		LABEL 0x804
@@ -335,9 +335,9 @@ AfterTopRight:
 	SVAL 0xB Coords(15,14)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_ISINAREA Celica [14,14] [2,3]
+	CHECK_ISINAREA Celica [14,14] [3,2]
 	BNE 0x806 r0 rC
-	CHECK_ISINAREA Conrad [14,14] [2,3]
+	CHECK_ISINAREA Conrad [14,14] [3,2]
 	BNE 0x806 r0 rC
 	GOTO 0x807
 		LABEL 0x806
@@ -353,9 +353,9 @@ AfterMidRight:
 	SVAL 0xB Coords(16,19)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_ISINAREA Celica [15,19] [2,3]
+	CHECK_ISINAREA Celica [15,19] [3,2]
 	BNE 0x808 r0 rC
-	CHECK_ISINAREA Conrad [15,19] [2,3]
+	CHECK_ISINAREA Conrad [15,19] [3,2]
 	BNE 0x808 r0 rC
 	GOTO 0x809
 		LABEL 0x808
@@ -371,9 +371,9 @@ AfterBottomRight:
 	SVAL 0xB Coords(14,24)
 	CALL WarpOutFromThrone
 	CheckIfRoomsCleared(0xB)
-	CHECK_ISINAREA Celica [13,24] [2,3]
+	CHECK_ISINAREA Celica [13,24] [3,2]
 	BNE 0x80A r0 rC
-	CHECK_ISINAREA Conrad [13,24] [2,3]
+	CHECK_ISINAREA Conrad [13,24] [3,2]
 	BNE 0x80A r0 rC
 	GOTO 0x80B
 		LABEL 0x80A

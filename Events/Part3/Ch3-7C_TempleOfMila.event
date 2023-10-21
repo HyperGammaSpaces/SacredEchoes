@@ -236,13 +236,13 @@ EnemyUnits_Hard:
 	UNIT
 
 MikhailSummons:
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [11,4] MonsterTemplate 0x00 0x1 REDA11R4 NoItems MonsterAI
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [13,4] MonsterTemplate 0x00 0x1 REDA13R4 NoItems MonsterAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mikhail Mikhail Level(6, Enemy, True) [11,4] MonsterTemplate 0x00 0x1 REDA11R4 NoItems MonsterAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mikhail Mikhail Level(6, Enemy, True) [13,4] MonsterTemplate 0x00 0x1 REDA13R4 NoItems MonsterAI
 	UNIT
 
 RearSummons:
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [11,21] MonsterTemplate 0x00 0x1 REDA11R21 NoItems MonsterAI
-	UNIT Terror_Gargoyle Random_Gargoyle_Mountain Mikhail Level(6, Enemy, True) [13,21] MonsterTemplate 0x00 0x1 REDA13R21 NoItems MonsterAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mikhail Mikhail Level(6, Enemy, True) [11,21] MonsterTemplate 0x00 0x1 REDA11R21 NoItems MonsterAI
+	UNIT Terror_Gargoyle Random_Gargoyle_Mikhail Mikhail Level(6, Enemy, True) [13,21] MonsterTemplate 0x00 0x1 REDA13R21 NoItems MonsterAI
 	UNIT
 
 
@@ -340,9 +340,9 @@ Ch3_7C_EndingScene:
 	CHECK_ISALIVE Nomah
 	BEQ 0x12 rC r0
 		//2 alive
-		CONFIG_SKIP 0x1
 		BackgroundText(Ch3_7C_TwoPriestesses)
 		TEXTMODE 1
+		CONFIG_SKIP 0x1
 		SVAL 0x3 MilasBow
 		GIVEITEM Celica
 		EVBIT_T 0x7
@@ -360,11 +360,11 @@ Ch3_7C_EndingScene:
 		CALL Ch3_EndingScene
 	//else
 	LABEL 0x13
-	CONFIG_SKIP 0x0
 	BackgroundText(Ch3_7C_EndingText_SluiceGate_NotOpen)
 	FADEIN 2
 
 	GOTO_CHAPTER 0x1E
 	SHORT $0D40 $0
 	POIN Act3EndSwitch|1
+	CONFIG_SKIP 0x0
 	END

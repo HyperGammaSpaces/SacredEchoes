@@ -165,6 +165,7 @@ Ch3_1C_BeginningScene:
 	//earthquake stuff w/conrad
 	MUSIC SongID_SilentGround
 	LOADMAP 0x39
+	SHOWUNIT Celica
 	LOAD_CUTSCENE MountainCutscene_Allies
 	ENUN
 	SetBackground(Woodland_Evening)
@@ -183,11 +184,15 @@ Ch3_1C_BeginningScene:
 	CAMERA_CENTERED Conrad
 	STAL 20
 	FlashCursor(Conrad, 60)
-	CALL $591F40
-	RemoveItemFromAny(Elixir)
-	SVAL 0x3 Elixir
-	GIVEITEM Celica
-	STAL 20
+		CONFIG_SKIP 0x4
+		Event_SetCelicaMode
+		SET_ACTIVE Celica
+		CALL $591F40
+		RemoveItemFromAny(Elixir)
+		SVAL 0x3 Elixir
+		GIVEITEM Celica
+		STAL 20
+		CONFIG_SKIP 0x0
 	SetBackground(Woodland_Evening)
 	BackgroundText(Ch3_Celica_Start_3)
 	FADEIN 2
