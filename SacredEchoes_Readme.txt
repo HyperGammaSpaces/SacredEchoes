@@ -1,4 +1,4 @@
-#What this is
+# What this is
 
 This is a demake of Fire Emblem Echoes: Shadows of Valentia on the GBA. It includes reworked maps and a few new characters, as well as a few changes to the writing and game mechanics. Otherwise, it is largely faithful to the original games. The base game is FE8U.
 
@@ -50,7 +50,7 @@ Optional QOL fixes to GBAFE are included:
 - Includes the option to play on Casual mode, which can be selected at game start or toggled during gameplay.
 - The Guide has been updated to include details on the game's mechanics. The doubling threshold is viewable in-game by checking the help text of the Speed stat on the statscreen.
 
-#Promotion levels
+# Promotion levels
 
 When a unit is at or above this level while in one of these classes, they can promote when standing next to a Mila statue. The Thief class (not in SoV) promotes to Rogue. The Priestess (non-Celica) can now promote to Dread Fighter. Any Dread Fighter may "promote" back to a Villager if desired. The Woodcutter (not in SoV) promotes to Axeman, which promotes to Highlander.
 
@@ -61,7 +61,7 @@ When a unit is at or above this level while in one of these classes, they can pr
 - Level 14: Mage (F)
 - Item promotion only: Alm, Celica
 
-#Spell lists
+# Spell lists
 
 Spell lists are largely the same as SoV.
 - Gray:
@@ -214,7 +214,7 @@ Spell lists are largely the same as SoV.
 For compatibility with Reverse Recruitment mods, anyone not listed here will use a very limited default spell list if put into a magic class. Conrad shares a spell list with Nomah, and Atlas shares a spell list with Hyas.
 
 
-#Class skills
+# Class skills
 
 This hack does not make use of the skill system, but there are some skills which carry over from Echoes.
 
@@ -231,13 +231,13 @@ This hack does not make use of the skill system, but there are some skills which
 - Alm/Celica/Rogues: Locktouch - Allows unit to open chests and doors for free.
 - Certain boss characters: Pact - Negates HP cost for spells. Indicated on the first page of the unit's status screen.
 
-#Supports
+# Supports
 
 Many additional supports have been added (e.g. Alm now supports his friends from Ram Village), and some of the SoV supports have been revised to add length or better characterize the units (e.g. Faye/Silque, Kliff/Tobin). Like in SoV, support points increase by having units defeat enemies while within 3 tiles of their partner, or by using healing magic on each other. There is no limit to the number of supports each unit can have per playthrough. Supports are displayed on page 4 of the statscreen (which is hidden if the unit has no support ranks), and pressing the R button on this screen will display detailed information about the stat bonuses granted.
 
 Also like in SoV, some support levels are tied to story progression. In general, B supports will unlock upon completing Act 2 and A supports will unlock upon completing Act 3, though some supports may grow more quickly than that. If a support is taking unusually long, try progressing in the story.
 
-#Known issues
+# Known issues
 
 While all major bugs have now been addressed, some minor bugs remain. A V1.1 release some time in the future will address these remaining issues.
 
@@ -246,7 +246,7 @@ While all major bugs have now been addressed, some minor bugs remain. A V1.1 rel
 - (For the above two, if you encounter these issues, please provide me with files to replicate the issue--whether these are savestates or TAS inputs or a .sav file in which the issue persists after resuming the chapter)
 - Some issues with Lukas having a blank item in his inventory upon starting Act 3 have been reported. I think this one will require a Lua script to effectively debug. In the meantime, depositing the blank item should allow you to continue without ill effects.
 
-#Credits
+# Credits
 
 - Circleseverywhere's Modular Stat Screens, Custom Spell Animation Engine and everything2ea modules
 - macplustrees' base-stat promotion gains
@@ -263,8 +263,9 @@ While all major bugs have now been addressed, some minor bugs remain. A V1.1 rel
   - "What Lies at the End" sheet music by TorbyBrand on Musescore
   - "Revelations" sheet music by hinaflower on Musescore
   - "Heritors of Arcadia" arrangement by bigyihsuan on Musescore
-  - "The Voice That Calls You" arrangement by sunny
+  - "The Voice That Calls You" arrangement by samisverycool1
   - "Twilight of the Gods" piano part by Sme
+  - "Between Two Islands" composed by Tennant/Lowe and Yuka Tsujiyoko, arranged by hypergammaspaces
   - Title theme sheet music by Spencer Riffle on Musescore
   - "Omen", "Preparations (Deliverance)", "Preparations (Pilgrimage)", "Pride and Arrogance", "The Scions' Dance in Purgatory", and "A Distant Promise" by Uzel and The_Burger_King_420
 - NGMansion for original save expansion patch; StanH for Expanded Modular Save and Tequila for Convoy Split
